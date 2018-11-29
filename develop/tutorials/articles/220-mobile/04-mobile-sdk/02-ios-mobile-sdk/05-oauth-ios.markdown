@@ -1,20 +1,19 @@
 # Using OAuth 2 in the iOS Mobile SDK [](id=using-oauth-2-in-the-ios-mobile-sdk)
 
-The Liferay Mobile SDK for iOS lets you use 
-[OAuth 2](https://oauth.net/2/) 
-to authenticate to the portal. You can use the following 
+You can use [OAuth 2](https://oauth.net/2/) 
+to authenticate using the following 
 [OAuth 2 grant types](https://oauth.net/2/grant-types/): 
 
 -   [**Authorization Code (PKCE for native apps):**](https://oauth.net/2/grant-types/authorization-code/) 
     Redirects users to a page in their mobile browser where they enter their 
     credentials. Following login, the browser redirects users back to the mobile 
-    app. User credentials can't be compromised via the app because it never 
-    accesses them--it uses a token that can be easily revoked. This is also 
-    useful if users don't want to enter their credentials in the app. For 
-    example, users may not want to enter their Twitter credentials directly in a 
-    3rd-party Twitter app, preferring instead to authenticate via Twitter's 
-    official site. Note that the site you redirect to for authentication must 
-    have OAuth 2 implemented. 
+	app. User credentials can't be compromised via the app because it never
+	accesses them---it uses a token that can be easily revoked. This is also
+	useful if users don't want to enter their credentials in the app. For
+	example, users may not want to enter their Twitter credentials directly in
+	a 3rd-party Twitter app, preferring instead to authenticate via Twitter's
+	official site. Note that the site you redirect to for authentication must
+	have OAuth 2 implemented. 
 
 -   [**Resource Owner Password:**](https://oauth.net/2/grant-types/password/) 
     Users authenticate by entering their credentials directly in the app. 
@@ -143,10 +142,10 @@ Here's an example of this workflow:
 
 ## Resource Owner Password [](id=resource-owner-password)
 
-Authenticating via the Resource Owner Password grant type is similar to doing so 
-for the PKCE grant type, except you don't need to configure a redirect URL. You 
-instead handle the user's credentials directly in your iOS app via a slightly 
-different `LROAuth2SignIn.signIn` method: 
+Authenticating via the Resource Owner Password grant type is similar to
+authenticating via the PKCE grant type, except you don't need a redirect URL.
+You instead handle the user's credentials directly in your iOS app via
+a slightly different `LROAuth2SignIn.signIn` method: 
 
     LROAuth2SignIn.signIn(withUsername: String, password: String, session: LRSession, clientId: String, 
         clientSecret: String, scopes: [String], callback: (LRSession?, Error?) -> Void) -> LRSession?

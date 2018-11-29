@@ -1,20 +1,20 @@
 # Using OAuth 2 in the Android Mobile SDK [](id=using-oauth-2-in-the-android-mobile-sdk)
 
-The Liferay Mobile SDK for Android lets you use 
+You can use 
 [OAuth 2](https://oauth.net/2/) 
-to authenticate to the portal. You can use the following 
+to authenticate with the following 
 [OAuth 2 grant types](https://oauth.net/2/grant-types/): 
 
 -   [**Authorization Code (PKCE for native apps):**](https://oauth.net/2/grant-types/authorization-code/) 
     Redirects users to a page in their mobile browser where they enter their 
     credentials. Following login, the browser redirects users back to the mobile 
     app. User credentials can't be compromised via the app because it never 
-    accesses them--it uses a token that can be easily revoked. This is also 
-    useful if users don't want to enter their credentials in the app. For 
-    example, users may not want to enter their Twitter credentials directly in a 
-    3rd-party Twitter app, preferring instead to authenticate via Twitter's 
-    official site. Note that the site you redirect to for authentication must 
-    have OAuth 2 implemented. 
+	accesses them---it uses a token that can be revoked. This is also useful if
+	users don't want to enter their credentials in the app. For example, users
+	may not want to enter their Twitter credentials directly in a 3rd-party
+	Twitter app, preferring instead to authenticate via Twitter's official
+	site. Note that the site you redirect to for authentication must have OAuth
+	2 implemented. 
 
 -   [**Resource Owner Password:**](https://oauth.net/2/grant-types/password/) 
     Users authenticate by entering their credentials directly in the app. 
@@ -54,21 +54,8 @@ Here are descriptions of this method's parameters:
     mobile browser window shown for authentication. 
 
 This `signInWithRedirect` method opens the mobile browser to initiate 
-authentication. You must also configure the redirect URI in your Android app. 
-This lets the browser send the user back to the Android app when authentication 
-completes. 
-
-+$$$
-
-**Note:** To use this redirect workflow with a local server that has an IP 
-address besides `127.0.0.1` or `localhost`, you must whitelist that server's IP 
-via the `redirect.url.ips.allowed` property in `portal-ext.properties`. For 
-example, set this property in your server's `portal-ext.properties` file as 
-follows, replacing `<your-local-ip>` with your local server's IP address: 
-
-    redirect.url.ips.allowed=<your-local-ip>
-
-$$$
+authentication. You must also configure the redirect URI in your Android app, 
+which sends the user back to the Android app when authentication completes. 
 
 Here's an example of this workflow: 
 
@@ -97,7 +84,7 @@ Here's an example of this workflow:
             </intent-filter>
         </activity>
 
-    If you don't want to use a custom scheme and you need to use https, add this 
+    If you don't want to use a custom scheme and you need to use HTTPS, add this 
     instead: 
 
         <activity
@@ -151,10 +138,10 @@ Here's an example of this workflow:
 
 ## Resource Owner Password [](id=resource-owner-password)
 
-Authenticating via the Resource Owner Password grant type is similar to doing so 
-for the PKCE grant type, except you don't need to configure a redirect URL. You 
-instead handle the user's credentials directly in your Android app via a 
-different `OAuth2SignIn` method: 
+Authenticating via the Resource Owner Password grant type is similar to
+authenticating via the PKCE grant type, except you don't need to configure
+a redirect URL. You instead handle the user's credentials directly in your
+Android app via a different `OAuth2SignIn` method: 
 
     public static Session signInWithUsernameAndPassword(String username, String password, Session session,
         String clientId, String clientSecret, List<String> scopes, SessionCallback callback)

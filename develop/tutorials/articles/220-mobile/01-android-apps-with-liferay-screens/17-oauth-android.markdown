@@ -1,22 +1,21 @@
 # Using OAuth 2 in Liferay Screens for Android [](id=using-oauth-2-in-liferay-screens-for-android)
 
-Liferay Screens lets you use 
+You can use 
 [OAuth 2](https://oauth.net/2/) 
-for authentication with 
-[Login Screenlet](/develop/reference/-/knowledge_base/7-1/loginscreenlet-for-android). 
-You can use the following 
+to authenticate using 
+[Login Screenlet](/develop/reference/-/knowledge_base/7-1/loginscreenlet-for-android)
+with the following 
 [OAuth 2 grant types](https://oauth.net/2/grant-types/): 
 
 -   [**Authorization Code (PKCE for native apps):**](https://oauth.net/2/grant-types/authorization-code/) 
     Redirects users to a page in their mobile browser where they enter their 
     credentials. Following login, the browser redirects users back to the mobile 
-    app. User credentials can't be compromised via the app because it never 
-    accesses them--it uses a token that can be easily revoked. This is also 
-    useful if users don't want to enter their credentials in the app. For 
-    example, users may not want to enter their Twitter credentials directly in a 
-    3rd-party Twitter app, preferring instead to authenticate via Twitter's 
-    official site. Note that the site you redirect to for authentication must 
-    have OAuth 2 implemented. 
+    app. User credentials can't be compromised via the app because it never
+    accesses them---it uses a revocable token. This is also useful if users
+    don't want to enter their credentials in the app. For example, users may not
+    want to enter their Twitter credentials directly in a 3rd-party Twitter app,
+    preferring instead to authenticate via Twitter's official site. Note that
+    the site you redirect to for authentication must have OAuth 2 implemented. 
 
 -   [**Resource Owner Password:**](https://oauth.net/2/grant-types/password/) 
     Users authenticate by entering their credentials directly in the app. 
@@ -35,14 +34,14 @@ for instructions on registering an OAuth 2.0 application in the portal.
 Follow these steps to use the Authorization Code grant type with Login 
 Screenlet: 
 
-1.  Configure the URL that the mobile browser will redirect to after the user 
+1.  Configure the URL where the mobile browser redirects after the user 
     authenticates. To do this, follow the first two steps in the 
     [Mobile SDK's Authorization Code instructions](/develop/tutorials/-/knowledge_base/7-1/using-oauth-2-in-the-android-mobile-sdk#authorization-code-pkce). 
     Note that you must configure this URL in both the portal and your Android 
     app. 
 
-2.  Set Login Screenlet's `loginMode` attribute to `oauth2Redirect`. There are 2 
-    ways to do this: 
+2.  Set Login Screenlet's `loginMode` attribute to `oauth2Redirect`. There are
+    two ways to do this: 
 
     -   In code, as the Login Screenlet instance's `authenticationType` 
         variable. You must set this variable via Login Screenlet's 
@@ -94,8 +93,8 @@ Screenlet:
 Follow these steps to use the Resource Owner Password grant type with Login 
 Screenlet: 
 
-1.  Set Login Screenlet's `loginMode` attribute to `oauth2UsernameAndPassword`. 
-    There are 2 ways to do this: 
+1.  Set Login Screenlet's `loginMode` attribute to `oauth2UsernameAndPassword`.
+    There are two ways to do this: 
 
     -   In code, as the Login Screenlet instance's `authenticationType` 
         variable. You must set this variable via Login Screenlet's 
@@ -108,9 +107,8 @@ Screenlet:
         `oauth2UsernameAndPassword`.
 
 2.  In Login Screenlet's XML, set Login Screenlet's `oauth2ClientId` attribute 
-    to the ID of the portal's OAuth 2 application that you want to use. To find 
-    this value, navigate to that application in the portal's OAuth 2 Admin 
-    portlet. 
+    to the ID of the OAuth 2 application that you want to use. To find this
+    value, navigate to that application in the OAuth 2 Admin portlet. 
 
 3.  In Login Screenlet's XML, set Login Screenlet's `oauth2ClientSecret` 
     attribute to the same OAuth 2 application's client secret. 
