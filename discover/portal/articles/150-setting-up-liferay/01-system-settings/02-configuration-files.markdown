@@ -35,6 +35,16 @@ Configuration files use the `.config` property value format defined by the [Apac
 Felix Configuration Admin
 framework](http://felix.apache.org/documentation/subprojects/apache-felix-config-admin.html).
 
++$$$
+
+**Important:** Content generated using templates (e.g., FreeMarker templates and
+Application Display Templates) is cached. Cached content might not reflect
+configuration changes until the cache is invalidated (cleared). The 
+[Server Administration &rarr; Resources tab](/discover/portal/-/knowledge_base/7-0/server-administration)
+provides cache clearing options.
+
+$$$
+
 The `.cfg` file format is common in OSGi environments, so @product@ supports it,
 but `.config` files are preferable. You can specify a property value's type, and
 have multi-valued properties. The syntax described below is for `.config` files.

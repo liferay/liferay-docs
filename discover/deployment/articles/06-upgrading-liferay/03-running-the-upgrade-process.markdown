@@ -30,8 +30,15 @@ line interface. The upgrade tool lets you upgrade everything--the core and all
 the modules--together or separately. 
 
 @product-ver@ bundles include the upgrade tool. If you installed @product-ver@
-manually, you can download the upgrade tool separately from the same location on
-[liferay.com](https://www.liferay.com/). 
+manually, you can download the upgrade tool separately.
+
+- *Liferay DXP 7.0*: Go to the
+[*Liferay DXP 7.0 Downloads* page](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise),
+select *Admin Tools*, and click *Download*. 
+
+- *Liferay Portal CE 7.0*: Go to
+[SourceForge](https://sourceforge.net/projects/lportal/files/Liferay%20Portal/),
+select *7.0 GA[version]*, and click `liferay-ce-portal-tools-[version].zip`. 
 
 To upgrade only the core, add a file called
 `com.liferay.portal.upgrade.internal.configuration.ReleaseManagerConfiguration.cfg`
@@ -82,6 +89,19 @@ Here are all the upgrade tool command line options:
 **--shell** or **-s**: Automatically connects you to the Gogo shell after
 finishing the upgrade process.
 
++$$$
+
+**Note:** Only execute the upgrade process on a server with ideal memory, CPU,
+and database connection configuration. If executing an upgrade remotely using
+`ssh`, make sure to guard against interruptions: 
+
+- If you're executing the upgrade using `ssh`, ignore hangups (connection loss) 
+  by using `nohup` or something similar. 
+- On the machine you're connecting from, disable settings that shutdown or sleep
+  that machine. 
+
+$$$
+
 ### Configuring the Upgrade [](id=configuring-the-core-upgrade)
 
 The core upgrade requires configuration. You can configure it at runtime via the
@@ -99,18 +119,48 @@ Each file's properties are described next.
 
 #### Configuring app-server.properties [](id=configuring-app-server-properties)
 
-Specify the following information to configure the app server on which @product-ver@ is installed: 
+Specify the following information to configure the app server on which 
+@product-ver@ is installed: 
 
-**dir:**  the application server directory *(required)*
+**dir:**  the absolute path of the application server directory. *(required)*
 
 **extra.lib.dirs:**  a comma delimited list of extra directories containing any
-binaries or resources to add to the  class path *(required)*
+binaries or resources to add to the class path. Use all absolute paths OR all 
+paths relative to **dir**. *(required)*
 
-**global.lib.dir:**  the application server's global library directory 
-*(required)*
+**global.lib.dir:**  the application server's global library directory. Use 
+the absolute path or a path relative to **dir**. *(required)*
 
-**portal.dir:**  the directory where portal is installed in your app server
-*(required)*
+**portal.dir:**  the directory where portal is installed in your app server. Use
+the absolute path or a path relative to **dir**. *(required)*
+
+**server.detector.server.id:** ID of a supported application server. 
+(*required*) Here are the IDs:
+
+- `jboss`
+- `jonas`
+- `resin`
+- `tomcat`
+- `weblogic`
+- `websphere`
+- `wildfly`
+
+Relative paths must use Unix style format. The following properties, for
+example, are for Windows and use relative paths:
+
+    dir=D:\
+    extra.lib.dirs=Liferay/liferay-portal-master/tomcat-9.0.10/bin
+    global.lib.dir=Liferay/liferay-portal-master/tomcat-9.0.10/lib
+    portal.dir=Liferay/liferay-portal-master/tomcat-9.0.10/webapps/ROOT
+    server.detector.server.id=tomcat
+
+These properties, for example, are for Unix and use all absolute paths:
+
+    dir=/
+    extra.lib.dirs=/home/user/liferay/liferay-portal-master/tomcat-9.0.10/bin
+    global.lib.dir=/home/user/liferay/liferay-portal-master/tomcat-9.0.10/lib
+    portal.dir=/home/user/liferay/liferay-portal-master/tomcat-9.0.10/webapps/ROOT
+    server.detector.server.id=tomcat
 
 #### Configuring portal-upgrade-database.properties [](id=configuring-portal-upgrade-database-properties)
 

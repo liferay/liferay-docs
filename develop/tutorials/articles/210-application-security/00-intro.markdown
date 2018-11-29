@@ -6,10 +6,7 @@ supports a wide variety of security features. In this section, you can learn
 about these features: 
 
 - Resources, Roles, and Permissions
-- Portal Access Control List (PACL) [coming soon]
 - Custom SSO Providers 
 - Authentication Pipelines 
-- Sanitizers [coming soon]
 - Service Access Policies 
 - Authentication Verifiers 
-- Custom LDAP Synchronization [coming soon]

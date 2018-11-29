@@ -8,6 +8,7 @@
         <%
         long guestbookId = Long.valueOf((Long) renderRequest
                 .getAttribute("guestbookId"));
+
         %>
         
         <liferay-portlet:renderURL varImpl="searchURL">

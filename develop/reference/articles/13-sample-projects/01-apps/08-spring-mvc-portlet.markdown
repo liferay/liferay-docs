@@ -1,7 +1,5 @@
 # Spring MVC Portlet [](id=spring-mvc-portlet)
 
-## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
-
 The Spring MVC portlet provides a way to add various different fields into the
 database and display them in a table. This project is a Spring MVC based portlet
 WAR that implements the same functionality as the

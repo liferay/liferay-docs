@@ -46,14 +46,14 @@ and set it to `INFO` before executing.
 
 **Clear content cached by this VM**
 : Clears content stored in the local cache. Only local JVM scope Ehcache content 
-is cleared, not clustered Ehcache.
+is cleared, not clustered Ehcache. [1](#one)
 
 **Clear content cached across the cluster**
-: Clears the content of the entire clustered Ehcache.
+: Clears the content of the entire clustered Ehcache. [1](#one)
 
 **Clear the database cache**
 : Clears the database cache. Does not clear any Ehcache content except database 
-results at the persistence layer.
+results at the persistence layer. [1](#one)
 
 **Clear the direct servlet cache** 
 : Clears the direct servlet cache. In case emergency fixes must be applied, this
@@ -66,7 +66,7 @@ application server's dispatcher chain. This function is only suitable for cases
 where no filter is required for the JSPs; it should be enabled for production 
 mode to improve performance, but disabled for development mode to allow JSP 
 servlets to be reloaded on the fly. See the Direct Servlet Context section of 
-the `portal.properties` file for details.
+the `portal.properties` file for details. [1](#one)
 
 **Reindex all search indexes**
 : Regenerates all search indexes. If you are not using a Solr search server this
@@ -101,6 +101,11 @@ for Power Users from portal-wide to "User Personal Site."
 **Clean up portlet preferences** 
 : This action cleans up database entries if portlet preferences become orphaned
 in the @product@ database.
+
+[<a name="one">1</a>] Caching occurs at multiple levels. Some higher caching 
+layers aren't aware of lower caching layers. Always clear the cache at the
+lowest (most granular) layer possible, even if you've already cleared a higher
+level cache.
 
 ## Log Levels [](id=log-levels)
 
@@ -212,7 +217,7 @@ $$$
 Once you've installed these tools, you can use the Control Panel's External
 Services tab to configure @product@ to use them.
 
-### OpenOffice/LibreOffice configuration [](id=openoffice-libreoffice-configuration)
+### OpenOffice/LibreOffice Configuration [](id=openoffice-libreoffice-configuration)
 
 OpenOffice and LibreOffice are open source office suites which are usually run
 in graphical mode to create documents, but they can also be run in server
@@ -221,6 +226,15 @@ documents to and from all of the file types it supports. Once configured,
 @product@ uses this feature to convert content on the fly automatically. You can
 install OpenOffice or LibreOffice on the same machine where @product@ is running
 or you can connect to a separate host. 
+
++$$$
+
+**Note:** Running OpenOffice or LibreOffice in server mode on a remote host is 
+not recommended for converting documents in @product@, and is not fully 
+supported. To avoid unexpected behavior during document conversions, you should 
+run OpenOffice or LibreOffice in server mode on the same machine as @product@. 
+
+$$$
 
 You can start LibreOffice or OpenOffice in server mode with the following
 command:

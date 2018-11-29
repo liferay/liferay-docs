@@ -3,7 +3,7 @@
 The Node Gradle plugin lets you run [Node.js](https://nodejs.org/) and
 [NPM](https://www.npmjs.com/) as part of your build.
 
-The plugin has been successfully tested with Gradle 2.5 up to 3.3.
+The plugin has been successfully tested with Gradle 3.5.1 up to 4.10.2.
 
 ## Usage [](id=usage)
 
@@ -12,7 +12,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.node", version: "4.4.0"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.node", version: "4.5.1"
     }
 
     repositories {
@@ -118,7 +118,7 @@ Property Name | Type | Default Value | Description
 `environment` | `Map<Object, Object>` | `[]` | The environment variables for the Node.js invocation.
 `inheritProxy` | `boolean` | `true` | Whether to set the `http_proxy`, `https_proxy`, and `no_proxy` environment variables in the Node.js invocation based on the values of the system properties `https.proxyHost`, `https.proxyPort`, `https.proxyUser`, `https.proxyPassword`, `https.nonProxyHosts`, `https.proxyHost`, `https.proxyPort`, `https.proxyUser`, `https.proxyPassword`, and `https.nonProxyHosts`. If these environment variables are already set, their values will not be overwritten.
 `nodeDir` | `File` | <p>**If [`node.download`](#download) is `true`:** [`node.nodeDir`](#nodedir)</p><p>**Otherwise:** `null`</p> | The directory that contains the executable to invoke. If `null`, the executable must be available in the system `PATH`.
-<a name="npminstallretries"></a>`npmInstallRetries` | `int` | `0` | The number of times the `node_modules` is deleted and `npm install` is retried in case the Node.js invocation defined by this task fails. This can help solving corrupted `node_modules` directories by re-downloading the project's dependencies.
+<a name="npminstallretries"></a>`npmInstallRetries` | `int` | `0` | The number of times the `node_modules` is deleted, the NPM cached data is verified (`npm cache verify`), and `npm install` is retried in case the Node.js invocation defined by this task fails. This can help solving corrupted `node_modules` directories by re-downloading the project's dependencies.
 <a name="workingdir"></a>`workingDir` | `File` | `project.projectDir` | The working directory to use in the Node.js invocation.
 
 The properties of type `File` support any type that can be resolved by
@@ -167,6 +167,7 @@ Property Name | Type | Default Value | Description
 `cacheConcurrent` | `boolean` | <p>**If `node.npmVersion` is greater than or equal to `5.0.0`, or `node.nodeVersion` is greater than or equal to `8.0.0`:** `true`</p><p>**Otherwise:** `false`</p> | Whether to run this task concurrently, in case the version of NPM in use supports multiple concurrent accesses to the same cache directory.
 `cacheDir` | `File` | <p>**If `nodeDir` is `null`, or `node.npmVersion` is greater than or equal to `5.0.0`, or `node.nodeVersion` is greater than or equal to `8.0.0`:** `null`</p><p>**Otherwise:** `"${nodeDir}/.cache"`</p> | The location of NPM's cache directory. It sets the [`--cache`](https://docs.npmjs.com/misc/config#cache) argument. Leave the property `null` to keep the default value.
 `logLevel` | `String` | Value to mirror the log level set in the task's [`logger`](https://docs.gradle.org/current/dsl/org.gradle.api.Task.html#org.gradle.api.Task:logger) object. | The NPM log level. It sets the [--loglevel](https://docs.npmjs.com/misc/config#loglevel) argument.
+`production` | `boolean` | `false` | Whether to run in production mode during the NPM invocation. It sets the [`--production`](https://docs.npmjs.com/misc/config#production) argument.
 `progress` | `boolean` | `true` | Whether to show a progress bar during the NPM invocation. It sets the [`--progress`](https://docs.npmjs.com/misc/config#progress) argument.
 <a name="registry"></a>`registry` | `String` | `null` | The base URL of the NPM package registry. It sets the [`--registry`](https://docs.npmjs.com/misc/config#registry) argument. Leave the property `null` or empty to keep the default value.
 

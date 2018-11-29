@@ -2,7 +2,9 @@
 package com.liferay.docs.guestbook.service.permission;
 
 import com.liferay.docs.guestbook.model.Entry;
+import com.liferay.docs.guestbook.portlet.constants.GuestbookPortletKeys;
 import com.liferay.docs.guestbook.service.EntryLocalService;
+import com.liferay.exportimport.kernel.staging.permission.StagingPermissionUtil;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.security.auth.PrincipalException;
@@ -39,6 +41,14 @@ public class EntryPermission implements BaseModelPermissionChecker {
 	public static boolean contains(
 		PermissionChecker permissionChecker, Entry entry, String actionId) throws
 		PortalException, SystemException {
+
+		Boolean hasPermission = StagingPermissionUtil.hasPermission(
+			permissionChecker, entry.getGroupId(), Entry.class.getName(),
+			entry.getEntryId(), GuestbookPortletKeys.GUESTBOOK, actionId);
+
+			if (hasPermission != null) {
+				return hasPermission.booleanValue();
+			}
 
 		return permissionChecker.hasPermission(entry.getGroupId(), Entry.class.getName(), entry.getEntryId(), actionId);
 	}

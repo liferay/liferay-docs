@@ -1,10 +1,5 @@
 # React npm Portlet [](id=react-npm-portlet)
 
-**Important:** This sample works for Liferay DXP Fix Pack 44+ and Liferay Portal
-CE GA7+.
-
-## What does this sample do when it's deployed? [](id=what-does-this-sample-do-when-its-deployed)
-
 The React npm Portlet sample provides a portlet that uses the
 [React](https://reactjs.org/) framework to render its output.
 
@@ -12,6 +7,9 @@ The React npm Portlet sample provides a portlet that uses the
 
 This portlet showcases the how efficiently React can render components based on
 user interaction.
+
+**Important:** This sample works for Liferay DXP Fix Pack 44+ and Liferay Portal
+CE GA7+.
 
 ## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
 

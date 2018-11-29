@@ -10,7 +10,7 @@ the baseline. If there are any changes, it uses the OSGi semantic versioning
 rules to calculate the minimum new version. If the new bundle has a lower
 version, errors are thrown.
 
-The plugin has been successfully tested with Gradle 2.5 up to 3.3.
+The plugin has been successfully tested with Gradle 3.5.1 up to 4.10.2.
 
 ## Usage [](id=usage)
 
@@ -19,7 +19,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.baseline", version: "1.3.2"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.baseline", version: "2.0.2"
     }
 
     repositories {
@@ -86,9 +86,9 @@ The `baseline` task is automatically configured with sensible defaults:
 
 Property Name | Default Value
 ------------- | -------------
+[`baselineConfiguration`](#baselineconfiguration) | [`configurations.baseline`](#baseline-dependency)
 [`bndFile`](#bndfile) | `${project.projectDir}/bnd.bnd`
 [`newJarFile`](#newjarfile) | [`project.tasks.jar.archivePath`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Jar.html#org.gradle.api.tasks.bundling.Jar:archivePath)
-[`oldJarFile`](#oldjarfile) | [`configurations.baseline.singleFile`](#baseline-dependency)
 [`sourceDir`](#sourcedir) | The first `resources` directory of the `main` source set (by default: `src/main/resources`).
 
 ### BaselineTask [](id=baselinetask)
@@ -97,6 +97,7 @@ Property Name | Default Value
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
+<a name="baselineConfiguration"></a>`baselineConfiguration` | `Configuration` | `null` | The configuration that contains exactly one dependency to the baseline bundle.
 <a name="bndfile"></a>`bndFile` | `File` | `null` | The BND file of the project. If provided, the task will automatically update the [`Bundle-Version`](http://bnd.bndtools.org/heads/bundle_version.html) header.
 `forceCalculatedVersion` | `boolean` | `false` | Whether to fail the baseline check if the `Bundle-Version` has been excessively increased.
 <a name="ignoreexcessiveversionincreases"></a>`ignoreExcessiveVersionIncreases` | `boolean` | `false` | Whether to ignore excessive package version increase warnings.
@@ -104,7 +105,6 @@ Property Name | Type | Default Value | Description
 `logFile` | `File` | `null` | The file to which the results of the baseline check are written. *(Read-only)*
 `logFileName` | `String` | `"baseline/${task.name}.log"` | The name of the file to which the results of the baseline check are written. If the `reporting-base` plugin is applied, the file name is relative to [`reporting.baseDir`](https://docs.gradle.org/current/dsl/org.gradle.api.reporting.ReportingExtension.html#org.gradle.api.reporting.ReportingExtension:baseDir); otherwise, it's relative to the project directory.
 <a name="newjarfile"></a>`newJarFile` | `File` | `null` | The file of the new OSGi bundle.
-<a name="oldjarfile"></a>`oldJarFile` | `File` | `null` | The file of the baseline bundle.
 `reportDiff` | `boolean` | `true` if the project property `baseline.jar.report.level` has either value `"diff"` or `"persist"`; `false` otherwise | Whether to show a granular, differential report of all changes that occurred in the exported packages of the OSGi bundle.
 `reportOnlyDirtyPackages` | `boolean` | Value of the project property `baseline.jar.report.only.dirty.packages` if specified; `true` otherwise. | Whether to show only packages with API changes in the report.
 <a name="sourcedir"></a>`sourceDir` | `File` | `null` | The directory to which the [`packageinfo`](http://bnd.bndtools.org/chapters/170-versioning.html#versioning-packages) files are generated or updated.

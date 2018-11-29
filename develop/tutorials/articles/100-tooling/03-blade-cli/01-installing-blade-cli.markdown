@@ -1,6 +1,6 @@
 # Installing Blade CLI [](id=installing-blade-cli)
 
-You can install Blade CLI using the Liferay Workspace installer. This installs
+You can install Blade CLI using the Liferay Project SDK installer. This installs
 JPM and Blade CLI into your user home folder and optionally initializes a
 [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
 folder.
@@ -22,10 +22,14 @@ If you need to configure proxy settings for Blade CLI, follow the
 
 Follow the steps below to download and install Blade CLI:
 
-1.  Download the
-    [Liferay Workspace installer](https://sourceforge.net/projects/lportal/files/Liferay%20Workspace)
+1.  Download the latest
+    [Liferay Project SDK installer](https://sourceforge.net/projects/lportal/files/Liferay%20IDE/)
     that corresponds with your operating system (e.g., Windows, MacOS, or
-    Linux).
+    Linux). The Project SDK installer is listed under *Liferay IDE*, so the
+    folder versions are based on IDE releases. You can select an installer that
+    does not include @ide@, if you don't intend to use it. The Project SDK
+    installer is available for versions 3.2.0+. Do **not** select the large
+    green download button; this downloads Liferay Portal instead.
 
 2.  Run the installer. Click *Next* to step through the installer's
     introduction.
@@ -58,15 +62,20 @@ CLI tutorials to learn how.
 
 ## Installer Issues on macOS [](id=installer-issues-on-macos)
 
-If you're using macOS, you could experience an issue where the `blade` command
-is not available in your terminal:
+If you're using macOS or Linux, you could experience an issue where the `blade`
+command is not available via command line. This is caused by the installer being
+unable to add JPM's `bin` folder to your user path. JPM is a Java package
+manager used in Blade CLI.
 
-    command not found: blade
+To add the required `bin` folder, execute the appropriate command based on your
+operating system.
 
-This is caused by the installer being unable to add JPM's `bin` folder to your
-user path. JPM is a Java package manager used in Blade CLI. To add the required
-`bin` folder, execute the following command in your terminal:
+macOS:
 
     echo 'export PATH="$PATH:$HOME/Library/PackageManager/bin"' >> ~/.bash_profile
 
-Once you restart your terminal, the `blade` command should be available.
+Linux:
+
+    echo 'export PATH="$PATH:$HOME/jpm/bin"' >> ~/.bash_profile
+
+Once you restart the command line, the `blade` command should be available.

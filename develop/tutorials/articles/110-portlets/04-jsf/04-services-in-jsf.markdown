@@ -1,11 +1,18 @@
 # Services in JSF [](id=services-in-jsf)
 
-Service Builder works the same in a JSF portlet as it would in any other
-standard WAR-style MVC portlet. To learn more about how Service Builder works in
-Liferay, visit the
+Creating services works the same in a JSF portlet as it would in any other
+standard WAR-style MVC portlet; generate custom services as separate API and
+Impl JARs and deploy them as individual modules to @product@. You can generate
+custom services for your JSF portlet using Service Builder. To learn more about
+how Service Builder works in @product@, visit the
 [Service Builder](/develop/tutorials/-/knowledge_base/7-0/service-builder)
-tutorials. You can create a `service.xml` file and run Service Builder in your
-JSF project to build services.
+tutorials.
+
+The JSF WAR can then rely on the API module as a *provided* dependency. The main
+benefit for packaging your services this way is to allow multiple WARs to
+utilize the same custom service API without packaging it inside every WAR's
+`WEB-INF/lib` folder. This practice also enforces a separation of concerns, or
+*modularity*, between the UI layer and service layer of a system.
 
 To call OSGi-based Service Builder services from your JSF portlet, you need a
 mechanism that gives you access to the OSGi service registry, because you can't
