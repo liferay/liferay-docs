@@ -106,10 +106,18 @@ the pomp and circumstance it deserves!
 Type the words *Welcome to the Lunar Resort* in the *Title* field. In the
 *Summary* field, give a short description of the Lunar Resort's facilities. In
 the *Content* field, you'll add the body of your web content article, which
-you'll dive into next. Lastly, leave the *Searchable* switch enabled. Note that
-if you disable the searchability of your article, it only prevents end users
-from finding the article via search. Administrators still have the ability to
-search for the article from the Web Content section in the Menu.
+you'll dive into next. Lastly, leave the *Searchable* switch enabled.
+
+$$$
+
+**Note:** Disabling the *Searchable* switch for an article prevents it from 
+being indexed, so the article will not appear in search results or in the Asset 
+Publisher. The article will only be visible to an Administrator in the list of 
+web content articles displayed in Site Administration or the Web Content 
+Display portlet. This can be useful for items that are needed for display in 
+specific places, but that you don't want users stumbling upon out of context.
+
+$$$
 
 The kneejerk reaction to the simplistic looking WYSIWYG editor is "Where are the
 editor's controls?" Don't let the simplistic look of the editor fool you; the
