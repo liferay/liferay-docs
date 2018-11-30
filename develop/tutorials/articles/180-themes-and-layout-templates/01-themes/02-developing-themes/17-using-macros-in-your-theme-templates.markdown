@@ -6,8 +6,11 @@ templates from becoming cluttered and makes them easier to read. @product@
 defines several macros in 
 [`FTL_Liferay.ftl` template](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/portal-template/portal-template-freemarker/src/main/resources/FTL_liferay.ftl) 
 that you can use in your FreeMarker theme templates to include theme resources, 
-standard portlets, and more. This tutorial shows how to use @product@'s macros 
-in your themes. 
+standard portlets, and more. @product@ also exposes its taglibs as FreeMarker 
+macros. See the corresponding 
+[taglib tutorial](/develop/tutorials/-/knowledge_base/7-1/front-end-taglibs) 
+for more information on using the taglib in your FreeMarker templates. This 
+tutorial shows how to use @product@'s macros in your FreeMarker theme templates. 
 
 Follow these steps:
     
