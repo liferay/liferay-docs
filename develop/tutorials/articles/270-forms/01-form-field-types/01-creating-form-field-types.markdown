@@ -21,7 +21,6 @@ or
 [Liferay Dev Studio](/develop/tutorials/-/knowledge_base/7-1/creating-modules-with-liferay-ide). 
 There's a Blade template for creating form fields. Using the CLI, enter:
 
-
     blade create -t form-field -v 7.1 -p com.liferay.docs.formfieldtype -c Time DDMTypeTime
 
 This gives you a `DDMTypeTime` module with a similar structure to what's above.
