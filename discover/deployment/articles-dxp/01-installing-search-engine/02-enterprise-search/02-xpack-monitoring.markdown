@@ -81,9 +81,8 @@ these steps or refer to
     and navigate to `localhost:5601`. Log in with a 
     [user](https://www.elastic.co/guide/en/x-pack/6.1/native-realm.html#native-add)
     who has the `kibana_user` 
-    [role](https://www.elastic.co/guide/en/x-pack/6.1/built-in-roles.html).
-
-*doesnt have to be kibana_user role, could also be superuser role like the elastic user.*
+    [role](https://www.elastic.co/guide/en/x-pack/6.1/built-in-roles.html) 
+    or a superuser (like the `elastic` user).
 
 ### Configuring Kibana with Encryption [](id=configuring-kibana-with-encryption)
 
@@ -165,7 +164,7 @@ the LPKG file by copying it into the `Liferay Home/deploy` folder.
     First, navigate to Elasticsearch Home and generate a PKSC#12 certificate
     from the CA you created when setting up X-Pack security:
 
-        ./bin/x-pack/certutil cert --ca-cert /path/to/ca.crt --ca-key /path/to/ca.key --ip 127.0.0.1 --dns localhost --name localhost --out /path/to/Elasticsearch_Home/config/localhost.p12
+        ./bin/elasticsearch-certutil cert --ca-cert /path/to/ca.crt --ca-key /path/to/ca.key --ip 127.0.0.1 --dns localhost --name localhost --out /path/to/Elasticsearch_Home/config/localhost.p12
 
     Next use the `keytool` command to generate a truststore:
 

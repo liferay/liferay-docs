@@ -19,7 +19,10 @@ The `interactive` argument sets the passwords for all built-in users. The
 configuration shown in these articles assumes you set all of the passwords to
 *liferay*. Of course, that's not recommended for production systems.
 
-    ./bin/x-pack/setup-passwords interactive
+<!--Dont run commands from /x-pack directory 
+./bin/elasticsearch-x-pack/setup-passwords interactive-->
+
+    ./bin/elasticsearch-setup-passwords interactive
 
 See Elastic's documentation on the 
 [setup-passwords command](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/setup-passwords.html) 
@@ -54,14 +57,14 @@ certificates.
       [X-Pack's `certutil`](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/certutil.html)
       command:
 
-        ./bin/x-pack/certutil ca --pem --ca-dn CN=localhost
+        ./bin/elasticsearch-certutil ca --pem --ca-dn CN=localhost
 
     This generates a ZIP file. Unzip the contents somewhere safe.
 
 2. Generate X.509 certificates and private keys using the CA from Step 1. For
    example:
 
-        ./bin/x-pack/certutil cert --pem --ca-cert /path/to/ca.crt --ca-key /path/to/ca.key --dns localhost --ip 127.0.0.1 --name localhost
+        ./bin/elasticsearch-certutil cert --pem --ca-cert /path/to/ca.crt --ca-key /path/to/ca.key --dns localhost --ip 127.0.0.1 --name localhost
 
     This generates another ZIP file. Extract the contents somewhere in the
     `Elasticsearch Home/config` folder.
@@ -97,7 +100,7 @@ on each node via its `elasticsearch.yml`.
 
 3.  Enable TLS on the HTTP layer to encrypt client communication:
 
-        xpack.security.http.ssl.enabled: true
+        xpack.security.enabled: true
 
 After X-Pack is installed and TLS is enabled, configure the X-Pack Security
 adapter in @product@.

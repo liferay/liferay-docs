@@ -105,7 +105,7 @@ returns
         {"snapshot":"snapshot_1",
         "uuid":"WlSjvJwHRh-xlAny7zeW3w",
         "version_id":6010399,
-        "version":"6.1.3",
+        "version":"6.5.1",
         "indices":["liferay-20099","liferay-0","liferay-47206"],
         "state":"SUCCESS",
         "start_time":"2018-08-15T21:40:17.261Z",

@@ -16,9 +16,11 @@ Here's an overview of using X-Pack to secure the data indexed in Elasticsearch:
 
 1.  Get an Enterprise Search subscription.
 
-2.  [Install X-Pack into Elasticsearch](https://www.elastic.co/guide/en/x-pack/6.1/installing-xpack.html) 
+<!-- X-Pack comes pre-installed on Elasticsearch 6.3+ (no need to manually install x-pack plugins)-->
+<!-- 2.  [Install X-Pack into Elasticsearch](https://www.elastic.co/guide/en/x-pack/6.1/installing-xpack.html) 
     and configure it to require authentication and 
     [encryption](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/configuring-tls.html#configuring-tls).
+-->
 
 3.  Download and install the 
 [Liferay Connector to X-Pack Security](https://web.liferay.com/group/customer/dxp/downloads/enterprise-search) 
@@ -34,7 +36,8 @@ communicating freely with @product@. Read Elastic's documentation to learn about
 additional configuration options, features, and the architecture of
 [X-Pack](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/configuring-security.html). 
 
-## Installing X-Pack [](id=installing-x-pack)
+<!-- X-Pack comes pre-installed on Elasticsearch 6.3+ (no need to manually install x-pack plugins)-->
+<!-- ## Installing X-Pack [](id=installing-x-pack)
 
 1.  To 
     [install X-Pack](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/installing-xpack-es.html)
@@ -88,5 +91,6 @@ additional configuration options, features, and the architecture of
     for more information on automatic index creation.
 
 3.  Restart Elasticsearch. Make sure @product@ is shut down during this step.
+-->
 
 Now configure security and/or monitoring, depending on your needs.

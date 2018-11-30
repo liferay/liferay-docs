@@ -28,7 +28,7 @@ Introduction to Liferay Search (not yet written).
 These terms are useful to understand as you read this guide:
 
 -  *Elasticsearch Home* refers to the root folder of your unzipped Elasticsearch
-   installation (for example, `elasticsearch-6.1.3`). 
+   installation (for example, `elasticsearch-6.5.1`). 
 
 -  [*Liferay Home*](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
    refers to the root folder of your @product@ installation. It contains the
