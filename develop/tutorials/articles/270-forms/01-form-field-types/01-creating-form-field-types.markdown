@@ -19,7 +19,7 @@ There are several steps involved in creating a form field type:
 [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli) 
 or 
 [Liferay Dev Studio](/develop/tutorials/-/knowledge_base/7-1/creating-modules-with-liferay-ide). 
-There's a Blade template for creating form fields. Using the CLI, enter:
+There's a Blade template for creating form fields. Using the CLI, enter
 
     blade create -t form-field -v 7.1 -p com.liferay.docs.formfieldtype -c Time DDMTypeTime
 
