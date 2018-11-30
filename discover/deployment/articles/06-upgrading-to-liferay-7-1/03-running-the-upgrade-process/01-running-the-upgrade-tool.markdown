@@ -83,8 +83,13 @@ by using `nohup` or something similar.
 - On the machine you're connecting from, disable settings that shutdown or sleep
 that machine. 
 
-If upgrade execution is interrupted, check your log file (default file is
-`upgrade.log`) for where execution stopped. 
+Since Liferay DXP 7.1 fix pack 4 and Liferay Portal CE 7.1 GA2, the upgrade
+process continues on the server even if you lose connection to it. If you lose
+connection, reconnect and monitor upgrade status in your log file (default file
+is `upgrade.log`). 
+
+If you're using an earlier version of @product-ver@ and upgrade execution is
+interrupted, check your log file for where execution stopped. 
 
 - If execution stopped during an upgrade process for Core 7.1 or higher, or any
   module upgrade process, restart the upgrade tool to continue the upgrade from
@@ -103,7 +108,9 @@ Home]/tools/portal-tools-db-upgrade-client` folder.
 
 $$$
 
-Before starting the upgrade, decide how to execute non-core module upgrades. 
+Before
+[starting the upgrade](#running-and-managing-the-core-upgrade),
+decide how to execute non-core module upgrades. 
 
 ## Configuring Non-Core Module Upgrades [](id=configuring-module-upgrades)
 
@@ -256,12 +263,28 @@ into `[Liferay Home]/tools/portal-tools-db-upgrade-client/`:
         liferay.home=/home/user/servers/liferay7
         module.framework.base.dir=/home/user/servers/liferay7/osgi
 
-The upgrade tool shows the patch level at the beginning of the upgrade. Then it
-executes the core upgrade processes and verifiers. 
+It's time to start the core upgrade. 
 
-If a core upgrade step for @product@ 7.1 (or newer) fails, executing the upgrade
-tool again starts it from that step. 
+## Running and Managing the Core Upgrade [](id=running-and-managing-the-core-upgrade)
 
-The Gogo shell lets you upgrade modules, check module upgrade status, and verify
-upgrades. Read on to learn how to use Gogo shell commands to use the
-upgrade-related commands. 
+Start the upgrade tool, as explained in the 
+[upgrade tool usage](#upgrade-tool-usage). 
+Here are the core upgrade stages:
+
+1.  Show the upgrade patch level
+
+2.  Execute the core upgrade processes
+
+3.  Execute the core verifiers
+
+Monitor the upgrade via the upgrade tool log file (default file is
+`upgrade.log`). If a core upgrade process fails, analyze the failure and resolve
+it. If a core upgrade step for @product@ 7.1 (or newer) fails, executing the
+upgrade tool again starts it from that step. 
+
+If you
+[configured the upgrade tool to upgrade non-core modules](#configuring-module-upgrades),
+the tool opens a
+Gogo shell and starts upgrading them. The Gogo shell lets you upgrade modules,
+check module upgrade status, verify upgrades, and restart module upgrades. Read
+on to learn how to use Gogo shell commands to complete @product@ upgrades. 
