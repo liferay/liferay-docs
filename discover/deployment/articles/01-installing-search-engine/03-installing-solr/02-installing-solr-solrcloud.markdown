@@ -1,12 +1,10 @@
 # Installing Solr: High Availability with SolrCloud [](id=high-availability-with-solrcloud)
 
-Use SolrCloud if you need a cluster of Solr servers featuring fault
-tolerance and high availability. Note that to use SolrCloud in production, you
-should set up an [external ZooKeeper
-ensemble](https://cwiki.apache.org/confluence/display/solr/Setting+Up+an+External+ZooKeeper+Ensemble).
-[ZooKeeper](http://zookeeper.apache.org/) is a centralized
-coordination service for managing distributed systems, such as your SolrCloud
-cluster.
+Use SolrCloud if you need a cluster of Solr servers. Note that to use SolrCloud
+in production, you should set up an 
+[external ZooKeeper ensemble](https://cwiki.apache.org/confluence/display/solr/Setting+Up+an+External+ZooKeeper+Ensemble).
+[ZooKeeper](http://zookeeper.apache.org/) is a centralized coordination service
+for managing distributed systems like your SolrCloud cluster.
 
 The steps included here should be considered the bare minimum of what must be
 done to configure SolrCloud with @product@. For example, these instructions cover
@@ -24,10 +22,10 @@ assume you've followed the earlier section on *Installing and Configuring Solr
 3. Copy the `conf` folder from `Solr_Home/liferay` to the `liferay_configs`
    folder you just created.
 
-    The `configset/liferay_configs` folder is used to configure the SolrCloud
-    @product@ collection, and is uploaded to ZooKeeper. By copying the `conf`
-    folder from the `liferay` server configured earlier, you're using the
-    `schema.xml` and `solrconfig.xml` files provided with the Liferay Solr
+    The `configset/liferay_configs` folder contains the SolrCloud
+    @product@ collection configuration and is uploaded to ZooKeeper. By copying
+    the `conf` folder from the `liferay` server configured earlier, you're using
+    the `schema.xml` and `solrconfig.xml` files provided with the Liferay Solr
     Adapter.
 
 4. Next launch an interactive SolrCloud session to configure your SolrCloud
@@ -40,7 +38,7 @@ assume you've followed the earlier section on *Installing and Configuring Solr
 
     -  Enter `2` for the number of nodes.
     -  Specify ports `8983` and `7574` (the defaults). Both nodes are
-        started with the start commands printed in the log:
+       started with the start commands printed in the log:
 
                 Starting up Solr on port 8983 using command:
                 "bin/solr" start -cloud -p 8983 -s "example/cloud/node1/solr"
@@ -49,8 +47,8 @@ assume you've followed the earlier section on *Installing and Configuring Solr
     -  Split the collection into two shards.
     -  Specify two replicas per shard.
     -  When prompted to choose a configuration, enter *liferay_configs*. You
-        should see a log message that concludes like this when the cluster has
-        been started:
+       should see a log message that concludes like this when the cluster has
+       been started:
 
                 SolrCloud example running, please visit http://localhost:8983/solr
 
@@ -116,9 +114,8 @@ article(/discover/reference/-/knowledge_base/7-1/solr-settings).
 
 $$$ -->
 
-Now you're able to configure @product@ for Solr, and Solr for @product@.
-Remember that Elasticsearch is the default search engine for @product@, so if
-you're not constrained to use Solr or already a Solr expert, consider
-Elasticsearch for you search engine requirements. If you do use Solr, tell all
-your colleagues that your @product@ installation's search capability is Solr
-powered (pun intended).
+Now you can configure @product@ for Solr and Solr for @product@. Remember that
+Elasticsearch is the default search engine, so if you're not constrained to use
+Solr or already a Solr expert, consider Elasticsearch for your search engine
+requirements. If you do use Solr, tell all your colleagues that your @product@
+installation's search capability is Solr powered (pun intended).
