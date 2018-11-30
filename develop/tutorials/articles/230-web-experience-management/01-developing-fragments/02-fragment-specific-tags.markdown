@@ -35,7 +35,7 @@ as bold, italics, underline, links, and predefined styles.
 +$$$
 
 **Note:** If you want to make text inside of an HTML formatting element, like 
-an `<ul>` unordered list editable, you must use the `rich-text` type. The 
+an `<ul>` unordered list, editable you must use the `rich-text` type. The 
 `text` type  will strip any HTML formatting out of the text before rendering.
 
 $$$
