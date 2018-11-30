@@ -1,15 +1,15 @@
 # Custom Checkout Step [](id=custom-checkout-step)
 
 @commerce@'s checkout process involves several steps. Out of the box, the first
-few steps are used to collect information (billing address, shipping address,
-etc.) from the buyer, while the final steps are used to provide information
-(order summary, order confirmation) to the buyer. This tutorial explains how to
-add custom steps to the checkout process.
+few steps collect information (billing address, shipping address, etc.) from the
+buyer, while the final steps provide information (order summary, order
+confirmation) to the buyer. This tutorial explains how to add custom steps to
+the checkout process.
 
-Adding new a new checkout step involves implementing the `CommerceCheckoutStep`
-interface. The implementation will render a JSP file at a selected point in
-checkout process. Writing the JSP and any supporting code to provide the step's
-business logic is not covered in this tutorial.
+You implement the `CommerceCheckoutStep` interface to add a new checkout step.
+The implementation renders a JSP file at a selected point in checkout process.
+Writing the JSP and any supporting code to provide the step's business logic is
+not covered in this tutorial.
 
 Follow these steps:
 
@@ -66,8 +66,8 @@ Then create your component:
         }
 
 The `getName` method returns the `NAME` constant, which stores the component's
-unique identifier. The constant's value is also used to label the step in the
-UI, and can be localized when tied to an entry in a `Language.properties` file.
+unique identifier. The constant's value labels the step in the UI, and can be
+localized when tied to an entry in a `Language.properties` file.
 
 The step's position in the checkout process is determined by the
 `commerce.checkout.step.order:Integer` property.
@@ -105,12 +105,12 @@ Next, include the `processAction` and `render` methods:
     }
 
 The `processAction` method is called whenever the buyer clicks the *Continue*
-button, and processes new input in checkout fields.
+button. It processes new input in checkout fields.
 
 ![Figure 3: The `processAction` method will save Liferay's address when the user clicks *Continue*.](../../images/continuecheckoutstep.png)
 
-Meanwhile the `render` method renders `view.jsp`, which is located in the
-modules' `src/main/resourcer/checkout_step` folder.
+Meanwhile the `render` method renders `view.jsp`, from the module's
+`src/main/resourcer/checkout_step` folder.
 
 The `CommerceCheckoutStep` interface requires a few more methods:
 
