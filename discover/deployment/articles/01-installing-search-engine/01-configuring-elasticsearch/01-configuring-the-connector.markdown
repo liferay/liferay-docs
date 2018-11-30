@@ -1,7 +1,7 @@
 # Configuring the Liferay Elasticsearch Connector [](id=configuring-the-liferay-elasticsearch-connector)
 
 For detailed Elasticsearch configuration information, refer to the
-[Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/settings.html).
+[Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/settings.html).
 
 The name of your Elasticsearch cluster is important. When you're running
 Elasticsearch in remote mode, the cluster name is used by @product@ to recognize
@@ -137,7 +137,7 @@ testing under load, and tuning again, so we encourage you to examine the
 <!--
 [settings](discover/reference/-/knowledge_base/7-1/elasticsearch-settings) 
 as well as the -->
-[Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/important-settings.html) 
+[Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/important-settings.html) 
 and go through that process once you have a working configuration. 
 
 ## Configuring a Remote Elasticsearch Host [](id=configuring-a-remote-elasticsearch-host)
@@ -166,7 +166,7 @@ On the Elasticsearch side, set the `network.host` property in your
 (the host where Elasticsearch listens for requests) and the *publish host*
 (the host name or IP address Elasticsearch uses to communicate with other
 nodes). See
-[here](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/modules-network.html)
+[here](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/modules-network.html)
 for more information.
 
 ## Clustering Elasticsearch in Remote Operation Mode [](id=clustering-elasticsearch-in-remote-operation-mode)
@@ -175,7 +175,7 @@ Clustering Elasticsearch is easy. First, set `node.max_local_storage_nodes` to
 be something greater than `1`. When you run the Elasticsearch start script,
 a new local storage node is added to the cluster. If you want four nodes running
 locally, for example, run `./bin/elasticsearch` four times. See
-[here](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/modules-node.html#max-local-storage-nodes)
+[here](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/modules-node.html#max-local-storage-nodes)
 for more information.
 
 Configure the number of shards and replicas in the Elasticsearch 6 adapter,
@@ -188,10 +188,10 @@ shards is `1`.
 +$$$
 
 **Note:** Elasticsearch uses the 
-[Zen Discovery Module](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/modules-discovery-zen.html)
+[Zen Discovery Module](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/modules-discovery-zen.html)
 by default, which provides unicast discovery. Additionally, nodes in the cluster
 communicate using the 
-[Transport Module](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/modules-transport.html),
+[Transport Module](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/modules-transport.html),
 through TCP. See the Elasticsearch documentation for the available properties
 (to be set in the `elasticsearch.yml` file), and the @product@ Elasticsearch
 Adapter's settings for the adapter's available settings.

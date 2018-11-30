@@ -68,7 +68,7 @@ A JSON document is returned that looks similar to this:
       "cluster_name" : "LiferayElasticsearchCluster",
       "cluster_uuid" : "Ii6STs04Tg-XzTVV5h7M2Q",
       "version" : {
-        "number" : "6.1.3",
+        "number" : "6.5.1",
         "build_hash" : "af51318",
         "build_date" : "2018-01-26T18:22:55.523Z",
         "build_snapshot" : false,
@@ -80,7 +80,7 @@ A JSON document is returned that looks similar to this:
     }
 
 The version of Elasticsearch that's running is the value of the `"number"` field.
-In this example, it's 6.1.3. 
+In this example, it's 6.5.1. 
 
 Now that you know the version of Elasticsearch you need, go to
 [Elastic's](https://www.elastic.co) website and download that version. 
@@ -175,5 +175,5 @@ and click on *Control Panel* &rarr; *Configuration* &rarr; *Search* and
 click the *Execute* button for *Reindex all search indexes*. When you do that,
 you should see some messages scroll up in the Elasticsearch log. 
 
-For more details refer to the [Elasticsearch installation guide](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/_installation.html).
+For more details refer to the [Elasticsearch installation guide](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/_installation.html).
 
