@@ -82,10 +82,10 @@ section.
 
 $$$
 
-You have the ability to provide a structure and template to your web content
-articles. You'll learn more about the power of web content structures and
-templates later. For now, you'll cover the basics of creating a piece of web
-content by first exploring the editor.
+You can provide a structure and template to your web content articles. You'll
+learn more about the power of web content structures and templates later. For
+now, you'll cover the basics of creating a piece of web content by first
+exploring the editor.
 
 ### Using the WYSIWYG Editor [](id=using-the-wysiwyg-editor)
 
@@ -110,12 +110,11 @@ you'll dive into next. Lastly, leave the *Searchable* switch enabled.
 
 $$$
 
-**Note:** Disabling the *Searchable* switch for an article prevents it from 
-being indexed, so the article will not appear in search results or in the Asset 
-Publisher. The article will only be visible to an Administrator in the list of 
-web content articles displayed in Site Administration or the Web Content 
-Display portlet. This can be useful for items that are needed for display in 
-specific places, but that you don't want users stumbling upon out of context.
+**Note:** Disabling the *Searchable* switch for an article prevents it from
+being indexed. This prevents it from appearing in search results or in the Asset
+Publisher. The article is visible, however, to an Administrator in the list of
+web content articles displayed in Site Administration or the Web Content Display
+portlet. 
 
 $$$
 
