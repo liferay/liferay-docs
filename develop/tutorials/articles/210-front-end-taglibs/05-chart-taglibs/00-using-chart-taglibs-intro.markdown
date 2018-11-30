@@ -5,9 +5,14 @@ you need to model data. Each taglib gives you access to the corresponding
 [Clay component](https://github.com/liferay/clay/tree/develop/packages/clay-charts/src). 
 These components contain the default configuration for the UI.
 
-To use the Chart taglib, add the following declaration to your JSP:
+To use the Chart taglib in your apps, add the following declaration to your JSP:
 
     <%@ taglib prefix="chart" uri="http://liferay.com/tld/chart" %>
+
+The Chart taglib is also available via a macro for your FreeMarker theme 
+templates and web content templates. Follow this syntax:
+
+    <@chart["tag-name"] attribute="string value" attribute=10 />
 
 This section of tutorials covers the types of charts you can create with the 
 Chart taglibs. Each tutorial contains a set of chart examples along with sample 
