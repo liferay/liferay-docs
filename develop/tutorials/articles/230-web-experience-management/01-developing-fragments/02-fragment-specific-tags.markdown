@@ -29,8 +29,16 @@ The following three `type` options are available inside of of `lfr-editable` tag
 `image`: Must contain a valid `<img>` tag which can then be replaced with any
 image before publishing---including those from Documents and Media.
  
-`rich-text`: Similar to the text field, but provides an WYSIWYG editor for
-editing before publication.
+`rich-text`: Provides rich text formatting capabilities to the pages author such
+as bold, italics, underline, links, and predefined styles.
+
++$$$
+
+**Note:** If you want to make text inside of an HTML formatting element, like 
+an `<ul>` unordered list editable, you must use the `rich-text` type. The 
+`text` type  will strip any HTML formatting out of the text before rendering.
+
+$$$
 
 Now add editable text to a Fragment, add the Fragment to a Content Page, 
 and then edit the text before publishing:
