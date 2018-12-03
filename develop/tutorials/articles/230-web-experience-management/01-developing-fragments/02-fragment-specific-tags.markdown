@@ -29,15 +29,14 @@ The following three `type` options are available inside of of `lfr-editable` tag
 `image`: Must contain a valid `<img>` tag which can then be replaced with any
 image before publishing---including those from Documents and Media.
  
-`rich-text`: Similar to the text field, but provides an WYSIWYG editor for
-editing before publication.
+`rich-text`: Provides rich text formatting, such as bold, italics, underline,
+links, and predefined styles.
 
 +$$$
 
-**WARNING:** Be careful with the `rich-text` type. Users can use the editor to
-provide their own HTML in the provided field which may have catastrophic results
-for your layout if misused. Be sure that your content creators understand the
-responsibility that must come with such great power.
+**Note:** If you want to make text inside an HTML element editable, you must use
+the `rich-text` type. The `text` type strips HTML formatting out of the text
+before rendering.
 
 $$$
 
