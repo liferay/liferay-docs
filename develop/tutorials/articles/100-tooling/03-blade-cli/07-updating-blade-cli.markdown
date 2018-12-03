@@ -16,7 +16,9 @@ environment for new features. You can check the released versions of Blade CLI
 at [https://releases.liferay.com/tools/blade-cli/](https://releases.liferay.com/tools/blade-cli/).
 You can check your current installed version by running `blade version`. 
 
-**Important:** If you run `blade version` after updating, but don't see the
++$$$
+
+**Note:** If you run `blade version` after updating, but don't see the
 expected version installed, you may have two separate Blade CLI installations on
 your machine. This is typically caused if you installed an earlier version of
 Blade CLI, and then used the
@@ -32,5 +34,21 @@ present. To do this, navigate to your `GLOBAL_FOLDER/JPM4J` folder and delete
 
 The newest Blade CLI installation in your user home folder is now recognized and
 available.
+
+$$$
+
+Although Blade CLI is frequently released, if you're interested in the bleeding
+edge features not yet available, you can install the latest snapshot version:
+
+    blade update -s
+
+This pulls the latest snapshot version of Blade CLI and installs it to your
+local machine. Running `blade version` after installing a snapshot displays
+output similar to this:
+
+    blade version 3.3.1.SNAPSHOT201811301746
+
+Be careful; snapshot versions are unstable and should only be used for
+experimental purposes.
 
 Awesome! You've successfully learned how to update Blade CLI.
