@@ -35,31 +35,42 @@ framework using Felix Gogo shell and deploys the project directly to the OSGi
 container using Felix File Install commands. The command uses the default
 `11311` port by default.
 
-<!--
-You can also specify a custom port to deploy your module to using the `-p`
-parameter followed by the port number. For instance, you could run `blade deploy
--p 8090` to deploy to port 8090.
--->
-
-<!-- Follow BLADE-189 for info on supporting host and port commands for Blade
-deployment. -Cody -->
-
-You can also watch the deployed module for changes by specifying the `-w`
-parameter.
-
-    blade deploy -w
-
-This parameter automatically redeploys the module when changes are detected.
-
 +$$$
 
 **Note:** The `blade deploy` command requires a Gradle/Maven wrapper to
-successfully execute. To ensure the availability of a build tool wrapper, be
-sure to work in a Liferay Workspace. For more information on Liferay Workspaces,
-see the
+successfully execute. To ensure the availability of a build tool wrapper, work
+in a Liferay Workspace. For more information on Liferay Workspaces, see the
 [Creating a Liferay Workspace with Blade CLI](/develop/tutorials/-/knowledge_base/7-1/creating-a-liferay-workspace-with-blade-cli)
 tutorial.
 
 $$$
+
+Blade CLI also offers a way to *watch* a deployed project, which compiles and
+redeploys a project when changes are detected. There are two ways to do this:
+
+- `blade watch`
+- `blade deploy -w`
+
+The `blade watch` command is the fastest way for Portal to recognize your
+changes. This is because the `watch` command does not rebuild your project every
+time a change is detected. When running `blade watch`, your project is not
+physically deployed to Portal, but rather, is recreated temporarily as an
+exploded JAR and mapped to Portal. This allows the Portal to quickly update your
+project's installation by recognizing changes and only updating the recently
+changed files. When the Portal is shut down, your project is automatically
+uninstalled. The `watch` command is only available for JAR-based projects.
+
++$$$
+
+**Note:** The `blade watch` command is available for Liferay Workspace versions
+1.10.9+ (i.e., the `com.liferay.gradle.plugins.workspace` dependency). Maven
+projects cannot leverage the `watch` feature at this time.
+
+$$$
+
+The `blade deploy -w` command works similarly to `blade watch`, except it
+manually deploys your project to the portal instance and is recompiled and
+deployed every time a change is detected. This causes slower update times, but
+does preserve your deployed project in Portal when it's shut down.
 
 Cool! You've successfully deployed your module project using Blade CLI.
