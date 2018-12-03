@@ -193,6 +193,8 @@ The following configurable properties are available in your workspace's
 - `liferay.workspace.modules.default.repository.enabled`: Set this to `true` to
   configure Liferay CDN as the default repository for module/OSGi projects. The
   default value is `true`.
+- `liferay.workspace.ext.dir`: Set the folder that contains all Ext OSGi modules
+   and Ext plugins. The default value is `ext`.
 - `liferay.workspace.modules.dir`: Set the folder that contains all module/OSGi
   projects. The default value is `modules`.
 - `liferay.workspace.modules.jsp.precompile.enabled`: Set this to `true` to
@@ -200,6 +202,11 @@ The following configurable properties are available in your workspace's
   Zip/Tar. The default value is `false`.
 - `liferay.workspace.plugins.sdk.dir`: Set the folder that contains the Plugins
   SDK environment. The default value is `plugins-sdk`.
+- `liferay.workspace.target.platform.version`: Set the Liferay Portal or DXP
+   bundle version to develop against. This property enables target platform
+   features such as the OSGi `resolve` task and specialized dependency
+   management. Use `7.1.1` for the latest Liferay CE release and `7.1.10` for
+   the latest DXP release.
 - `liferay.workspace.themes.dir`: Set the folder that contains Node.js-style
   theme projects. The default value is `themes`.
 - `liferay.workspace.themes.java.build`: Set this to `true` to build the theme
