@@ -1,7 +1,7 @@
 # Installing X-Pack
 
 X-Pack is an 
-[Elasticsearch extension](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/setup-xpack.html)
+[Elasticsearch extension](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/setup-xpack.html)
 for securing and monitoring Elasticsearch clusters. If you use Elasticsearch,
 you should secure it with X-Pack. The security features of X-Pack include
 authenticating access to the Elasticsearch cluster's data and encrypting
@@ -17,9 +17,9 @@ Here's an overview of using X-Pack to secure the data indexed in Elasticsearch:
 1.  Get an Enterprise Search subscription.
 
 <!-- X-Pack comes pre-installed on Elasticsearch 6.3+ (no need to manually install x-pack plugins)-->
-<!-- 2.  [Install X-Pack into Elasticsearch](https://www.elastic.co/guide/en/x-pack/6.1/installing-xpack.html) 
+<!-- 2.  [Install X-Pack into Elasticsearch](https://www.elastic.co/guide/en/x-pack/6.5/installing-xpack.html) 
     and configure it to require authentication and 
-    [encryption](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/configuring-tls.html#configuring-tls).
+    [encryption](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/configuring-tls.html#configuring-tls).
 -->
 
 3.  Download and install the 
@@ -34,13 +34,13 @@ Here's an overview of using X-Pack to secure the data indexed in Elasticsearch:
 Following these instructions gives you a working installation of Elasticsearch
 communicating freely with @product@. Read Elastic's documentation to learn about
 additional configuration options, features, and the architecture of
-[X-Pack](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/configuring-security.html). 
+[X-Pack](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/configuring-security.html). 
 
 <!-- X-Pack comes pre-installed on Elasticsearch 6.3+ (no need to manually install x-pack plugins)-->
 <!-- ## Installing X-Pack [](id=installing-x-pack)
 
 1.  To 
-    [install X-Pack](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/installing-xpack-es.html)
+    [install X-Pack](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/installing-xpack-es.html)
     and automatically grant it the required permissions (recommended), run
 
         bin/elasticsearch-plugin install x-pack --batch
@@ -78,7 +78,7 @@ additional configuration options, features, and the architecture of
         -> Installed x-pack
 
     See more about the permissions X-Pack needs
-    [here](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/installing-xpack-es.html). 
+    [here](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/installing-xpack-es.html). 
 
 2.  Make sure Elasticsearch allows the automatic creation of indexes. If
     you're unsure, check `elasticsearch.yml` for this property:
@@ -87,7 +87,7 @@ additional configuration options, features, and the architecture of
 
     This property is `true` by default, so if you don't see it in
     `elasticsearch.yml`, there's nothing to worry about. See [Elastic's
-    documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/docs-index_.html#index-creation) 
+    documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/docs-index_.html#index-creation) 
     for more information on automatic index creation.
 
 3.  Restart Elasticsearch. Make sure @product@ is shut down during this step.
