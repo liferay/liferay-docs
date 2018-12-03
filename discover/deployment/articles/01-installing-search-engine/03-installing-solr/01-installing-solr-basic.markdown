@@ -4,8 +4,14 @@ There are two ways to install the Liferay Connector to Solr 7:
 
 1. Navigate to 
    [Liferay Marketplace](https://web.liferay.com/marketplace/)
-   and download the LPKG file for Liferay Connector to Solr 7. Once you
-   do, copy the LPKG to your `Liferay_Home/osgi/marketplace` folder.
+   and download the app that corresponds to your portal:
+
+       [Liferay (CE) Connector to Solr 7]() 
+
+       [Liferay (DXP) Connector to Solr 7](https://web.liferay.com/marketplace/-/mp/application/117931595)
+
+       Once the app LPKG is downloaded, copy it to
+       `Liferay_Home/osgi/marketplace`.
 
 2. In your running portal instance, navigate to *Control Panel* &rarr; *Apps*
    &rarr; *Store*. Sign in using your credentials, search for Solr Search
@@ -22,7 +28,7 @@ the `osgi`, `deploy`, `data`, and `license` folders, among others.
 
 There are two installation steps:
 
-1.  Installing and configuring Solr 7
+1.  Installing and configuring Solr 7.
 
 2.  Installing and configuring the Solr 7 connector for @product@.
 
