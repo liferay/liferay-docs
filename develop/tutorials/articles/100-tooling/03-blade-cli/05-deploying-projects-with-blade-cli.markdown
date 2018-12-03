@@ -25,10 +25,6 @@ copied to the `/deploy` folder. Visit the
 [Using the Felix Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell)
 article for instructions on finding a bundle's ID.
 
-If you run into errors during the build/deploy process of your project, check to
-make sure your workspace is accounting for the
-[appropriate certificates](/develop/tutorials/-/knowledge_base/7-1/configuring-a-liferay-workspace#certification-issues-in-liferay-workspace).
-
 Blade CLI can detect a locally running Liferay instance and automatically
 deploys your project to that Liferay instance. Blade communicates with the OSGi
 framework using Felix Gogo shell and deploys the project directly to the OSGi

@@ -117,10 +117,6 @@ This uses workspace's pre-bundled
 the version of @product@ you specified in your Gradle properties and installs
 your Liferay instance in the `bundles` folder.
 
-If you run into errors during the bundle downloading process, check to make sure
-your workspace is accounting for the
-[appropriate certificates](#certification-issues-in-liferay-workspace).
-
 If you want to skip the downloading process, you can create the `bundles` folder
 manually in your workspace's ROOT folder and unzip your @product@ bundle to that
 folder.
@@ -212,27 +208,5 @@ The following configurable properties are available in your workspace's
 - `liferay.workspace.wars.dir`: Set the folder that contains classic WAR-style
   projects. The default value is `wars`.
 
-## Certification Issues in Liferay Workspace [](id=certification-issues-in-liferay-workspace)
-
-Some of Liferay Workspace's Gradle functionality downloads files from hosting
-sites that depend on certificates that are not included in older versions of the
-JDK. This can cause issues when executing commands that use Gradle (e.g., Blade
-CLI).
-
-To avoid issues with certification issues, you should update your JDK to
-*Java 8u101* or later. If you prefer to stay on the same JDK version, you must
-add the *Let's Encrypt* certificate chain to your JDK. To learn more about the
-certificates and their compatibility, see
-[Let's Encrypt Compatibility](https://letsencrypt.org/docs/certificate-compatibility/).
-
-Not accounting for these certificates could lead to broken executables in
-workspace that rely on Gradle services. For example, downloading a @product@
-bundle via `blade server init` without an updated JDK causes the following
-error:
-
-    Execution failed for task ':downloadBundle'.
-    > javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed:
-    sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
-
-Errors can also be thrown during the Gradle build process of your modules. Make
-sure to update your JDK for optimal performance when using Liferay Workspace.
+That's it! You now have the knowledge to fully leverage the power of Liferay
+Workspace!
