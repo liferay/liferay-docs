@@ -9,6 +9,18 @@ the Elasticsearch cluster. To learn about setting the Elasticsearch cluster name
 on the @product@ side, refer below to the section called Configuring the Liferay
 Elasticsearch Connector.
 
++$$$
+
+**Note:** The `http.enabled` setting in Elasticsearch corresponds to the
+`httpEnabled` setting in the Liferay Connector to Elasticsearch 6 application.
+As this setting was 
+[deprecated in Elasticsearch 6.3](https://www.elastic.co/guide/en/elasticsearch/reference/current/release-notes-6.3.0.html#deprecation-6.3.0), 
+the connector's corresponding setting is now also deprecated. Since this setting
+was only used for configuring the embedded Elasticsearch server, it's
+deprecation is expected to have minimal impact.
+
+$$$
+
 Elasticsearch's configuration files are written in [YAML](http://www.yaml.org)
 and kept in the `[Elasticsearch Home]/config` folder:
 

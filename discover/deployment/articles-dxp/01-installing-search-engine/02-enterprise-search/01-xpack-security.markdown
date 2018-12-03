@@ -43,7 +43,6 @@ the corresponding configuration files.
 
 $$$
 
-
 ### Generate Node Certificates [](id=generate-node-certificates)
 
 [Generate a node certificate](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/configuring-tls.html#node-certificates)

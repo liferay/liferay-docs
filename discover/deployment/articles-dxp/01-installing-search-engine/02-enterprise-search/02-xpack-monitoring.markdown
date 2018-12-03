@@ -10,15 +10,16 @@ Enterprise Search Standard subscription (included with Premium) is necessary for
 this integration.  Contact 
 [Liferay's Sales department for more information](https://www.liferay.com/contact-us#contact-sales).
 
-1.  Download and install Kibana.
+1.  Tell Elasticsearch to enable data collection.
 
-2.  Install X-Pack onto Kibana and configure Kibana with the proper security
-    settings.
+2.  Download and install Kibana.
 
-3.  Download and install the 
+3.  Configure Kibana with the proper security settings.
+
+4.  Download and install the 
     [Liferay Connector to X-Pack Monitoring](https://www.liferay.com/marketplace) [Elastic Stack 6.x].
 
-4.  Configure the connector to communicate with Elasticsearch.
+5.  Configure the connector to communicate with Elasticsearch.
 
 This document assumes you're enabling security *and* monitoring, though
 differences in the process are noted as appropriate.
@@ -26,7 +27,9 @@ differences in the process are noted as appropriate.
 For the X-Pack installation procedure, refer to the 
 [X-Pack security article](/discover/deployment/-/knowledge_base-7-1/installing-x-pack-security).
 
-Start with the installation of Kibana.
+Start by enabling data collection in Elasticsearch.
+
+## Enable Data Collection
 
 ## Install Kibana [](id=install-kibana)
 
@@ -142,10 +145,12 @@ the LPKG file by copying it into the `Liferay Home/deploy` folder.
     settings are picked up by your running instance. There's no need to restart
     the server.
 
-4.  There's one more setting to add to Kibana itself. It sets Kibana's base path
-    to let the Monitoring Portlet act as a proxy for Kibana's monitoring UI. Add
-    this to `kibana.yml`:
+4.  There are two more settings to add to Kibana itself. The first tells Kibana
+    _not_ to rewrite requests prefixed with `server.basePath`. The next sets
+    Kibana's base path to let the Monitoring Portlet act as a proxy for Kibana's
+    monitoring UI. Add this to `kibana.yml`:
 
+        server.rewriteBasePath: false
         server.basePath: "/o/portal-search-elasticsearch-xpack-monitoring/xpack-monitoring-proxy"
 
     Note that once you set the `server.basePath`, you cannot access the Kibana

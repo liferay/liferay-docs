@@ -20,10 +20,9 @@ a single server environment. This article includes more details and information
 on clustering and tuning Elasticsearch. Here, you'll learn to configure your
 existing Elasticsearch installation for use in production environments. 
 
-If you've come here looking for information on search engines in general, or the
-low level search infrastructure of @product@, refer instead to the developer
-tutorial 
-Introduction to Liferay Search (not yet written).
+If you've come here looking for information on search engines in general, or
+the low level search infrastructure of @product@, refer instead to the
+developer tutorial Introduction to Liferay Search (not yet written).
 
 These terms are useful to understand as you read this guide:
 
