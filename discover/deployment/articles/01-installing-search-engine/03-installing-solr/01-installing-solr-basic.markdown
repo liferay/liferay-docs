@@ -28,7 +28,7 @@ There are two installation steps:
 
 Before configuring @product@ for Solr, install and set up Solr.
 
-## Installing and Configuring Solr 7
+## Installing and Configuring Solr 7 [](id=installing-and-configuring-solr-7)
 
 To install and properly configure Solr for @product@:
 
