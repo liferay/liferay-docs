@@ -1,13 +1,11 @@
 # Servlet Filters [](id=servlet-filters)
 
-There are all kinds of things you can do when users hit your site's URLs.
-Servlet filters let you preprocess requests on their way to the server and post
-process responses on their way back to the client browser. Descriptors let you
-use patterns to map the filters to site URLs. When users send requests to these
-URLs, your filters can process them however you want: audit, log, convert,
-forward, and more. Servlet Filter Hook plugins let you deploy and undeploy
-filters without modifying the Liferay web application. Creating and deploying a
-Servlet Filter Hook is straightforward:
+Servlet filters can both pre-process requests as they arrive and post-process
+responses before they go to the client browser. You can use patterns in
+descriptors to map the filters to URLs. When requests arrive at these URLs, your
+filters process them. Servlet Filter Hook plugins let you deploy and undeploy
+filters without modifying the Liferay web application. Here are the steps for
+creating and deploying a servlet filter:
 
 1. [Create a Servlet Filter class](#step-1-create-a-servlet-filter-class)
 
@@ -76,7 +74,7 @@ Here are the
 methods to implement:
 
 
-1.  **`init(FilterConfig)`:** Configure the filter and perform any necessary 
+1.  `init(FilterConfig)`: Configure the filter and perform any necessary 
     initializations.
 
     When `SampleFilter` is initialized, for example, its `init(FilterConfig)`
@@ -84,18 +82,19 @@ methods to implement:
 
         Called SampleFilter.init(com.liferay.portal.kernel.servlet.filters.invoker.InvokerFilterConfig@7c953747) where hello=world
 
-2.  **`doFilter(ServletRequest, ServletResponse, FilterChain)`:** Filter on 
+2.  `doFilter(ServletRequest, ServletResponse, FilterChain)`: Filter on 
     requests and responses here. To apply your filter, invoke
     `filterChain.doFilter(servletRequest, servletResponse)`. 
 
     When users visit URLs mapped for `SampleFilter`, for example, its
     `doFilter(...)` method prints the `ServletResponse` object, `FilterChain`
-    object, and the `ServletRequest` URI, before passing it on by invoking
+    object, and the `ServletRequest` URI before passing control to the next
+    filter by invoking
     `filterChain.doFilter(servletRequest, servletResponse)`. 
 
         Called SampleFilter.doFilter(org.apache.catalina.connector.RequestFacade@68be71e0, com.liferay.portal.servlet.filters.absoluteredirects.AbsoluteRedirectsResponse@2b598f1a, com.liferay.portal.kernel.servlet.filters.invoker.InvokerFilterChain@72220503) for URI /web/guest
 
-3.  **`destroy()`:** Clean up the filter's unneeded resources. 
+3.  `destroy()`: Clean up the filter's unneeded resources. 
 
     When `SampleFilter` is destroyed, its `destroy()` method prints the message:
     `Called SampleFilter.destroy()`. 
@@ -106,7 +105,7 @@ It's time to map URLs to your servlet filter.
 
 Traditionally, specifying a servlet filter and its filter mapping requires
 modifying your web application's `web.xml` file. @product@, however, lets you
-specify them in your plugin---you don't need to modify the @product@ web
+specify them in your plugin, so you don't need to modify the @product@ web
 application. Specify your servlet filter mapping in a descriptor file
 `WEB-INF/liferay-hook.xml`, like this one for Sample Filter: 
 
@@ -142,27 +141,27 @@ Here's how to map URLs to your servlet filter:
 2.  Add a `servlet-filter` element as a sub element of `hook`. Specify your 
     `servlet-filter` sub-elements.
 
-    **`servlet-filter-name`:** Arbitrary name. (required)
-    
-    **`servlet-filter-impl`:** `Filter` implementation class. (required)
+    `servlet-filter-name`: Arbitrary name. (required)
+ 
+    `servlet-filter-impl`: `Filter` implementation class. (required)
 
-    **`init-param` elements:** Initialization parameters. (optional)
+    `init-param` elements: Initialization parameters. (optional)
 
 3.  Add a `servlet-filter-mapping` element as a sub element of `hook`. 
 
-    **`servlet-filter-name`:** Match the one used in the `servlet-filter`. 
+    `servlet-filter-name`: Match the one used in the `servlet-filter`. 
     (required)
 
-    **`after-filter`:** Name of a `servlet-filter` for this filter to go after.
+    `after-filter`: Name of a `servlet-filter` for this filter to go after.
     (optional)
 
-    **`before-filter`:** Name of a `servlet-filter` for this filter to go 
+    `before-filter`: Name of a `servlet-filter` for this filter to go 
     before. (optional)
 
-    **`url-pattern` elements:** Patterns for the URLs you want to filter 
+    `url-pattern` elements: URL patterns you want to filter 
     requests and responses for. (required)
 
-    **`dispatcher` elements:** Specify
+    `dispatcher` elements: Specify
     [`Dispatcher` enumerated constants](https://docs.liferay.com/ce/portal/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/servlet/filters/invoker/Dispatcher.html#enum.constant.summary)
     to
     [constrain how the filter is applied to requests](https://docs.oracle.com/cd/E19798-01/821-1841/bnagf/index.html).
@@ -170,8 +169,8 @@ Here's how to map URLs to your servlet filter:
 
 ## Step 3: Create a Liferay plugin descriptor [](id=step-3-create-a-liferay-plugin-descriptor)
 
-In a `WEB-INF/liferay-plugin-package.properties` file, specify the versions of 
-@product@ your plugin is for:
+In a `WEB-INF/liferay-plugin-package.properties` file, specify the versions of
+@product@ your plugin supports:
 
     liferay-versions=7.1.0+
 
