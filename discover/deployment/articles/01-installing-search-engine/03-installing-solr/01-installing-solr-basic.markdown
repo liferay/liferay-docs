@@ -6,9 +6,9 @@ There are two ways to install the Liferay Connector to Solr 7:
    [Liferay Marketplace](https://web.liferay.com/marketplace/)
    and download the app that corresponds to your portal:
 
-       [Liferay (CE) Connector to Solr 7](https://web.liferay.com/marketplace/-/mp/application/118014614) 
+       **Liferay Portal CE:** [Liferay (CE) Connector to Solr 7](https://web.liferay.com/marketplace/-/mp/application/118014614) 
 
-       [Liferay (DXP) Connector to Solr 7](https://web.liferay.com/marketplace/-/mp/application/117931595)
+       **Liferay DXP:** [Liferay Connector to Solr 7](https://web.liferay.com/marketplace/-/mp/application/117931595)
 
        Once the app LPKG is downloaded, copy it to
        `Liferay_Home/osgi/marketplace`.
