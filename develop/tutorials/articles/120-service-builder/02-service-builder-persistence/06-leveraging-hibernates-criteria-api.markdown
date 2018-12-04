@@ -131,13 +131,15 @@ specific name and that also belong to a Guestbook of a specific name:
         try {
             session = openSession();
 
-            DynamicQuery guestbookQuery = DynamicQueryFactoryUtil.forClass(Guestbook.class)
+            ClassLoader classLoader = getClass().getClassLoader();
+
+            DynamicQuery guestbookQuery = DynamicQueryFactoryUtil.forClass(Guestbook.class, classLoader)
                 .add(RestrictionsFactoryUtil.eq("name", guestbookName))
                 .setProjection(ProjectionFactoryUtil.property("guestbookId"));
 
             Order order = OrderFactoryUtil.desc("modifiedDate");
 
-            DynamicQuery entryQuery = DynamicQueryFactoryUtil.forClass(Entry.class)
+            DynamicQuery entryQuery = DynamicQueryFactoryUtil.forClass(Entry.class, classLoader)
                 .add(RestrictionsFactoryUtil.eq("name", entryName))
                 .add(PropertyFactoryUtil.forName("guestbookId").in(guestbookQuery))
                 .addOrder(order);
@@ -167,7 +169,8 @@ service. Thus, instead of
 
 you use
 
-    DynamicQuery entryQuery = DynamicQueryFactoryUtil.forClass(Entry.class);
+    DynamicQuery entryQuery = DynamicQueryFactoryUtil.forClass(Entry.class, 
+        classLoader);
 
 Most features of Hibernate's Criteria API, including restrictions, projections,
 and orders, can be used on Liferay's dynamic query objects. Restrictions in
@@ -199,7 +202,7 @@ query object. For example, the following snippet demonstrates chaining the
 addition of a restriction criterion and a projection to a dynamic query object
 declaration:
 
-    DynamicQuery guestbookQuery = DynamicQueryFactoryUtil.forClass(Guestbook.class)
+    DynamicQuery guestbookQuery = DynamicQueryFactoryUtil.forClass(Guestbook.class, classLoader)
         .add(RestrictionsFactoryUtil.eq("name", guestbookName))
         .setProjection(ProjectionFactoryUtil.property("guestbookId"));
 
@@ -237,20 +240,19 @@ foreign keys belonging to the list returned by the first query.
 
 Here's the first query:
 
-    DynamicQuery guestbookQuery = DynamicQueryFactoryUtil.forClass(Guestbook.class)
+    DynamicQuery guestbookQuery = DynamicQueryFactoryUtil.forClass(Guestbook.class, classLoader)
         .add(RestrictionsFactoryUtil.eq("name", guestbookName))
         .setProjection(ProjectionFactoryUtil.property("guestbookId"));
 
-By default, `DynamicQueryFactoryUtil.forClass(Guestbook.class)` returns a query
-that retrieves a list of all guestbook entities. Adding the
+By default, `DynamicQueryFactoryUtil.forClass(Guestbook.class, classLoader)`
+returns a query that retrieves a list of all guestbook entities. Adding the
 `.add(RestrictionsFactoryUtil.eq("name", guestbookName))` restriction limits the
-results to only those guestbooks whose guestbook names match the
-`guestbookName` parameter. The
-`.setProjection(ProjectionFactoryUtil.property("guestbookId"))` projection
-changes the result set from a list of guestbook entries to a list of guestbook
-IDs. This is useful since guestbook IDs are much less expensive to retrieve than
-full guestbook entities and the guestbook IDs are all that the guestbook entry
-query requires.
+results to only those guestbooks whose guestbook names match the `guestbookName`
+parameter. The `.setProjection(ProjectionFactoryUtil.property("guestbookId"))`
+projection changes the result set from a list of guestbook entries to a list of
+guestbook IDs. This is useful since guestbook IDs are much less expensive to
+retrieve than full guestbook entities and the guestbook IDs are all that the
+guestbook entry query requires.
 
 Next is an order which applies to the list of entries returned by the
 `findByEntryNameGuestbookName` finder method:
@@ -264,17 +266,18 @@ appear first and the least recently modified entities appear last.
 
 Here's the second query:
 
-    DynamicQuery eventQuery = DynamicQueryFactoryUtil.forClass(Entry.class)
+    DynamicQuery eventQuery = DynamicQueryFactoryUtil.forClass(Entry.class, classLoader)
         .add(RestrictionsFactoryUtil.eq("name", entryName))
         .add(PropertyFactoryUtil.forName("guestbookId").in(guestbookQuery))
         .addOrder(order);
 
     List<Event> entries = _eventLocalService.dynamicQuery(entryQuery);
 
-By default, `DynamicQueryFactoryUtil.forClass(Entry.class)` returns of list of
-all guestbook entry entities. The `.add(RestrictionsFactoryUtil.eq("name",
-entryName))` restriction limits the results to only those guestbook entries
-whose names match the `entryName` parameter of the finder method.
+By default, `DynamicQueryFactoryUtil.forClass(Entry.class, classLoader)` returns
+of list of all guestbook entry entities. The
+`.add(RestrictionsFactoryUtil.eq("name", entryName))` restriction limits the
+results to only those guestbook entries whose names match the `entryName`
+parameter of the finder method.
 [PropertyFactoryUtil](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/dao/orm/PropertyFactoryUtil.html)
 is a Liferay utility class with the method `forName(String propertyName)`, which
 returns the specified property. This property can be passed to another Liferay
