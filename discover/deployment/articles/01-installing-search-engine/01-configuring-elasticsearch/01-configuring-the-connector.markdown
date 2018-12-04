@@ -162,7 +162,7 @@ loses contact with Elasticsearch if that node goes down.
 $$$
 
 On the Elasticsearch side, set the `network.host` property in your
-`elaticsearch.yml` file. This property simultaneously sets both the *bind host*
+`elasticsearch.yml` file. This property simultaneously sets both the *bind host*
 (the host where Elasticsearch listens for requests) and the *publish host*
 (the host name or IP address Elasticsearch uses to communicate with other
 nodes). See
