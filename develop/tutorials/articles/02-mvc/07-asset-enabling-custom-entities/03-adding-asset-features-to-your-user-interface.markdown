@@ -218,7 +218,7 @@ back to the Guestbook Admin portlet, click on *Add Guestbook* or *Actions*
 To further test your entities' integration with Liferay's asset framework, add
 the Tags Navigation, Tag Cloud, and Categories Navigation portlets to the page
 with the Asset Publisher portlet. All of tags that you've created appear in the
-Tags Navigation and Tag Could portlet. All of the categories that you've created
+Tags Navigation and Tag Cloud portlet. All of the categories that you've created
 appear in the Categories Navigation portlet. Click on a tag name or category
 name in any of the portlets that you added. When you do so, check that the Asset
 Publisher dynamically displays only assets with the selected tag or category.
