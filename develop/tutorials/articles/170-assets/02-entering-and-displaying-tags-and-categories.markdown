@@ -19,14 +19,17 @@ for the Blogs portlet:
     <liferay-ui:asset-categories-error />
     <liferay-ui:asset-tags-error />
     ...
-    <aui:fieldset-group markupView="lexicon">
-        ...
-        <aui:fieldset collapsed="<%= true %>" collapsible="<%= true %>" label="categorization">
-            <aui:input name="categories" type="assetCategories" />
+    <aui:fi<aui:fieldset collapsed="<%= true %>" collapsible="<%= true %>" label="categorization">
+		<liferay-asset:asset-categories-selector
+			className="<%= BlogsEntry.class.getName() %>"
+			classPK="<%= entryId %>"
+		/>
 
-            <aui:input name="tags" type="assetTags" />
-        </aui:fieldset>
-        ...
+		<liferay-asset:asset-tags-selector
+			className="<%= BlogsEntry.class.getName() %>"
+			classPK="<%= entryId %>"
+		/>
+		</aui:fieldset>eldset-group markupView="lexicon">
     </aui:fieldset-group>
 
 These category and tag `aui:input` tags generate form controls that let users
