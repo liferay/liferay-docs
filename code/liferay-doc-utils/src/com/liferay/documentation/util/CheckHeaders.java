@@ -12,6 +12,8 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.regex.Pattern;
 
+import org.apache.tools.ant.BuildException;
+
 public class CheckHeaders {
 
 	public static void main(String[] args) throws Exception {
@@ -36,9 +38,13 @@ public class CheckHeaders {
 			File articlesDir = new File("../" + docDir + "/articles" + dirType);
 			File docSetDir = new File("../" + docDir);
 
-			if (!articlesDir.exists() || !articlesDir.isDirectory()) {
-				throw new Exception(
-						"FAILURE - bad articles directory " + articlesDir);
+			if (!articlesDir.exists()) {
+				if (!dirType.contains("dxp")) {
+					throw new BuildException("FAILURE - no articles directory " + articlesDir);
+				}
+				else {
+					continue;
+				}
 			}
 
 			List<File> docSetDirFolders = new ArrayList<File>();
