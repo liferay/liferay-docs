@@ -15,17 +15,16 @@ Elasticsearch Connector.
 `httpEnabled` setting in the Liferay Connector to Elasticsearch 6 application.
 As this setting was 
 [deprecated in Elasticsearch 6.3](https://www.elastic.co/guide/en/elasticsearch/reference/current/release-notes-6.3.0.html#deprecation-6.3.0), 
-the connector's corresponding setting is now also deprecated. Since this setting
-was only used for configuring the embedded Elasticsearch server, it's
-deprecation is expected to have minimal impact.
+the connector's corresponding setting is now also deprecated. This setting was
+only used for configuring the embedded Elasticsearch server, so it's
+deprecation is expected to have minimal impact to production deployments.
 
 $$$
 
 Elasticsearch's configuration files are written in [YAML](http://www.yaml.org)
-and kept in the `[Elasticsearch Home]/config` folder:
-
--  `elasticsearch.yml` is for configuring Elasticsearch modules
--  `logging.yml` is for configuring Elasticsearch logging
+and kept in the `[Elasticsearch Home]/config` folder. The main configuration
+file you'll interact with is `elasticsearch.yml`, used for configuring
+Elasticsearch modules.
 
 To set the name of the Elasticsearch cluster, open `[Elasticsearch
 Home]/config/elasticsearch.yml` and specify
@@ -62,14 +61,13 @@ To run as a daemon in the background, add the `-d` switch to either command:
 
     ./bin/elasticsearch -d
 
-Once both Elasticsearch and @product@ are installed and running, introduce
-@product@ and Elasticsearch to each other. 
+Once both Elasticsearch and @product@ are installed and running, introduce them
+to each other. 
 
 ## Configuring the Liferay Elasticsearch Connector [](id=configuring-the-liferay-elasticsearch-connector)
 
-The Elasticsearch connector provides integration between Elasticsearch and
-@product@. Before you configure the connector, make sure Elasticsearch is
-running.
+The Elasticsearch connector provides integration between Elasticsearch and the
+portal. Before you configure the connector, make sure Elasticsearch is running.
 
 There are two ways to configure the adapter: 
 
@@ -86,8 +84,7 @@ System Settings, and then exporting the `.config` file with your configuration.
 
 ### Configuring the Adapter in the Control Panel [](id=configuring-the-adapter-in-the-control-panel)
 
-Here's how to configure the Elasticsearch adapter from the System Settings
-application:
+To configure the Elasticsearch adapter from the System Settings application:
 
 1.  Start @product@.
 
@@ -114,12 +111,12 @@ $$$
 
 ### Configuring the Adapter with an OSGi `.config` File [](id=configuring-the-adapter-with-an-osgi-config-file)
 
-When preparing a system for production deployment, you should have a repeatable
+When preparing a system for production deployment, you want to use a repeatable
 deployment process. Therefore, it's best to use the OSGi configuration file,
 where your configuration is maintained in a controlled source.
 
-Follow these steps to configure the Elasticsearch adapter using an OSGi
-configuration file:
+Follow these steps to configure the Elasticsearch adapter using a configuration
+file:
 
 1. Create the following file:
     

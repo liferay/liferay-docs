@@ -29,7 +29,7 @@ For the X-Pack installation procedure, refer to the
 
 Start by enabling data collection in Elasticsearch.
 
-## Enable Data Collection
+## Enable Data Collection [](id=enable-data-collection)
 
 ## Install Kibana [](id=install-kibana)
 

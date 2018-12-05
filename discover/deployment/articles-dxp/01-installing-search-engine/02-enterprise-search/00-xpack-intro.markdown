@@ -1,4 +1,4 @@
-# Installing X-Pack
+# Installing X-Pack [](id=installing-x-pack)
 
 X-Pack is an 
 [Elasticsearch extension](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/setup-xpack.html)

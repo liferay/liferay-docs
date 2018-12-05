@@ -30,7 +30,8 @@ Installing Elasticsearch is pretty easy and takes only six steps:
 
 +$$$
 
-**Note:** Before continuing, make sure you have set the [`JAVA_HOME` environment variable](https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/)
+**Note:** Before continuing, make sure you have set the 
+[`JAVA_HOME` environment variable](https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/).
 
 If you have multiple JDKs installed, make sure Elasticsearch and @product@ are
 using the same version. You can specify this in `[Elasticsearch
@@ -43,15 +44,11 @@ $$$
 Now you'll perform these steps, and when you're done, you'll have
 a production-ready instance of @product@ up and running.
 
-<!-- TODO: Add back when articles are available:
-
-After you're done
-following the installation guide, refer to the 
+After you're done following the installation guide, refer to the 
 [Configuring Elasticsearch](discover/deployment/-/knowledge_base/7-1/configuring-elasticsearch-for-liferay-0)
 article for more details on configuring @product@ for Elasticsearch. For more
 information on installing a search engine, see
 [here](discover/deployment/-/knowledge_base/7-1/installing-a-search-engine).
--->
 
 ### Step One: Find the Right Version of Elasticsearch [](id=step-one-find-the-right-version-of-elasticsearch)
 
@@ -82,6 +79,14 @@ A JSON document is returned that looks similar to this:
 The version of Elasticsearch that's running is the value of the `"number"` field.
 In this example, it's 6.5.1. 
 
+Shut down the @product@ server. In a local, single-machine testing environment,
+if you continue without shutting down, the Elasticsearch server you're about to
+install and start will throw errors in the log if its cluster name and HTTP port
+match the already-running embedded Elasticsearch server. An alternative to
+shutting down @product@ is to use a different cluster name (i.e., not
+`LiferayElasticsearchCluster`) and HTTP port (i.e., not `9200`) in the remote
+Elasticsearch server.
+
 Now that you know the version of Elasticsearch you need, go to
 [Elastic's](https://www.elastic.co) website and download that version. 
 
@@ -95,7 +100,7 @@ what you decide, either way you get the benefit of a separately tunable search
 infrastructure. 
 
 Once you have a copy of the right version of Elasticsearch, extract it to
-a folder on the machine where you want it running. That's it!. 
+a folder on the machine where you want it running. That's it! 
 
 ### Step Three: Install Elasticsearch Plugins [](id=step-three-install-elasticsearch-plugins)
 

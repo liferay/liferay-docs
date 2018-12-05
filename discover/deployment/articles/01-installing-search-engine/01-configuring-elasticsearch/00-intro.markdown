@@ -5,13 +5,11 @@ engine.
 
 By default, Elasticsearch runs as an embedded search engine, but it's only
 supported in production as a separate server or cluster. This guide walks you
-through the process of configuring Elasticsearch.
+through the process of configuring Elasticsearch in remote mode.
 
 If you'd rather use Solr, it's also supported. See the documentation on
-Installing Solr if you're interested.
-
-<!-- See [here](discover/deployment/-/knowledge_base/7-1/using-solr) for information
-on installing and configuring Solr. -->
+[Installing Solr](discover/deployment/-/knowledge_base/7-1/installing-solr) 
+if you're interested.
 
 To get up and running quickly with Elasticsearch as a remote server, refer to
 the [Installing Elasticsearch article](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch).
