@@ -2,9 +2,9 @@
 
 ## Requirements [](id=requirements)
 
-- Xcode 9.0
+- Xcode 9.3 or above
 - iOS 11 SDK
-- Liferay Portal 6.2 (CE or EE), Liferay 7.0 CE, Liferay DXP 
+- Liferay Portal 6.2 CE/EE, Liferay CE Portal 7.0/7.1, Liferay DXP
 
 ## Compatibility [](id=compatibility)
 
@@ -88,7 +88,7 @@ The `SignUpScreenletDelegate` protocol lets you implement the following methods:
 - `- screenlet:onSignUpResponseUserAttributes:`: Called when sign up 
   successfully completes. The user attributes are passed as a dictionary of keys 
   (`String` or `NSStrings`) and values (`AnyObject` or `NSObject`). The 
-  supported keys are the same as [Liferay Portal's User entity](https://github.com/liferay/liferay-portal/blob/6.2.x/portal-impl/src/com/liferay/portal/service.xml#L2227).
+  supported keys are the same as [Liferay Portal's User entity](https://github.com/liferay/liferay-portal/blob/7.0.x/portal-impl/src/com/liferay/portal/service.xml#L2686).
 
 - `- screenlet:onSignUpError:`: Called when an error occurs in the process. The 
   `NSError` object describes the error.

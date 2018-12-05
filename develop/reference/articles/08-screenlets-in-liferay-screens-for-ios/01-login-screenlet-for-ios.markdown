@@ -2,11 +2,9 @@
 
 ## Requirements [](id=requirements)
 
-- Xcode 9.0
+- Xcode 9.3 or above
 - iOS 11 SDK
-- Liferay Portal 6.2 (CE or EE), Liferay 7.0 CE, Liferay DXP 
-- OAuth Provider app (OAuth authentication is optional. Note that OAuth only 
-  works with Liferay EE and DXP instances). 
+- Liferay Portal 6.2 CE/EE, Liferay CE Portal 7.0/7.1, Liferay DXP
 
 ## Compatibility [](id=compatibility)
 

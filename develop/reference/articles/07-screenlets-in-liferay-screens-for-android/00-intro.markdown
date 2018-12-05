@@ -14,10 +14,10 @@ methods, and more. The available Screenlets are listed here with links to their
 reference documents: 
 
 - [**Login Screenlet:**](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-android) 
-  Signs users in to a Liferay instance. 
+  Signs users in to a @product@ instance. 
   
 - [**Sign Up Screenlet:**](/develop/reference/-/knowledge_base/7-0/signupscreenlet-for-android) 
-  Registers new users in a Liferay instance. 
+  Registers new users in a @product@ instance. 
   
 - [**Forgot Password Screenlet:**](/develop/reference/-/knowledge_base/7-0/forgotpasswordscreenlet-for-android) 
   Sends emails containing a new password or password reset link to users. 
@@ -64,7 +64,7 @@ reference documents:
 
 - [**Asset Display Screenlet:**](/develop/reference/-/knowledge_base/7-0/asset-display-screenlet-for-android) 
   Displays an asset. Currently, this Screenlet can display Documents and Media 
-  Library files (`DLFileEntry` entities), blogs articles (`BlogsEntry` 
+  Library files (`DLFileEntry` entities), blog articles (`BlogsEntry` 
   entities), and web content articles (`WebContent` entities). You can also use 
   it to display custom assets. 
 
@@ -72,19 +72,20 @@ reference documents:
   Shows a single blog entry. 
 
 - [**Image Display Screenlet:**](/develop/reference/-/knowledge_base/7-0/image-display-screenlet-for-android) 
-  Shows a single image file from a Liferay instance's Documents and Media 
+  Shows a single image file from a @product@ instance's Documents and Media 
   Library. 
 
 - [**Video Display Screenlet:**](/develop/reference/-/knowledge_base/7-0/video-display-screenlet-for-android) 
-  Shows a single video file from a Liferay instance's Documents and Media 
+  Shows a single video file from a @product@ instance's Documents and Media 
   Library. 
 
 - [**Audio Display Screenlet:**](/develop/reference/-/knowledge_base/7-0/audio-display-screenlet-for-android) 
-  Shows a single audio file from a Liferay instance's Documents and Media 
+  Shows a single audio file from a @product@ instance's Documents and Media 
   Library. 
 
 - [**PDF Display Screenlet:**](/develop/reference/-/knowledge_base/7-0/pdf-display-screenlet-for-android) 
-  Shows a single PDF file from a Liferay instance's Documents and Media Library. 
+  Shows a single PDF file from a @product@ instance's Documents and Media 
+  Library. 
 
 - [**Web Screenlet:**](/develop/reference/-/knowledge_base/7-0/web-screenlet-for-android) 
   Displays any web page. You can also customize the web page through injection 

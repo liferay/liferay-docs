@@ -2,12 +2,12 @@
 
 ## Requirements [](id=requirements)
 
-- Android SDK 4.0 (API Level 15) or above
-- Liferay Portal 6.2 (CE or EE), Liferay 7.0 CE, Liferay DXP 
+- Android SDK 4.1 (API Level 16) or above
+- Liferay Portal 6.2 CE/EE, Liferay CE Portal 7.0/7.1, Liferay DXP
 
 ## Compatibility [](id=compatibility)
 
-- Android SDK 4.0 (API Level 15) and above
+- Android SDK 4.1 (API Level 16) or above
 
 ## Xamarin Requirements [](id=xamarin-requirements)
 
@@ -91,6 +91,6 @@ methods:
 
 - `onSignUpSuccess(User user)`: Called when sign up successfully completes. The 
   `user` parameter contains a set of the created user's attributes. The 
-  supported keys are the same as those in the [portal's User entity](https://github.com/liferay/liferay-portal/blob/6.2.x/portal-impl/src/com/liferay/portal/service.xml#L2227).
+  supported keys are the same as those in the [portal's User entity](https://github.com/liferay/liferay-portal/blob/7.0.x/portal-impl/src/com/liferay/portal/service.xml#L2686).
 
 - `onSignUpFailure(Exception e)`: Called when an error occurs in the process.
