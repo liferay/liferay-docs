@@ -22,10 +22,9 @@ and `deleteGuestbook` service methods.
         public Guestbook updateGuestbook(...)
 
     The `@Indexable` annotation indicates that an index update is required
-    following the method execution. The indexing classes control exactly how the
-    indexing happens. Setting the `@Indexable` annotation type to
-    `IndexableType.REINDEX` updates the document in the index that corresponds
-    to the updated Guestbook. 
+    following the method execution. The indexing classes control the type of
+    index: setting the `@Indexable` annotation type to `IndexableType.REINDEX`
+    updates the document in the index that corresponds to the updated Guestbook. 
 
 2.  Add the following annotation above the method signature for the 
     `deleteGuestbook` method: 

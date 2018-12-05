@@ -10,9 +10,9 @@ a `ModelSummaryContributor`.
 
 A summary is a condensed, text-based version of the entity's document that can
 be displayed generically. You create it by combining key parts of the entity's
-data so users can browse through search results to find the entity they want.
+data so users can browse through search resmlts to find the entity they want.
 
-Create a `GuestbookModelSummarySummaryContributor`:
+Create a `GuestbookModelSummaryContributor`:
 
     @Component(
             immediate = true,
@@ -43,7 +43,7 @@ Create a `GuestbookModelSummarySummaryContributor`:
 
     }
 
-First override `getSummary`, and set the maximum summary length on the summary
+First override `getSummary` and set the maximum summary length on the summary
 returned. The value `200` is a Liferay standard. Control the summary creation in
 a utility method called `createSummary`. Create a `prefix` variable using two
 constants, `Field.SNIPPET` and `Stringpool.UNDERLINE`. The `snippet_title` field
@@ -52,14 +52,13 @@ snippet field provides two benefits:
 
 1.  Snippet text can be highlighted so matching keywords are emphasized.
 
-2.  Snippet text can be automatically shortened by the Search application so a
+2.  Snippet text can be shortened automatically by the Search application so a
     sensible portion of the field's text is displayed in the search results. 
 
-Guestbook titles are likely short, so only the highlighting behavior is likely
-to be useful for the title field of Guestbooks. For longer fields (like some
-`content` fields), the clipping behavior is more useful.  Additional
-highlighting behavior can be configured via the `index.search.highlight.*`
-properties in
+Guestbook titles are likely short, so only the highlighting behavior is useful
+for the title field of Guestbooks. For longer fields (like some `content`
+fields), the clipping behavior is more useful. Additional highlighting behavior
+can be configured via the `index.search.highlight.*` properties in
 [portal.properties](https://docs.liferay.com/portal/7.1-latest/propertiesdoc/portal.properties.html#Lucene%20Search).
 
 Create summaries by combining key parts of the entity's data so users can browse

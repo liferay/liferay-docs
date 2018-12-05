@@ -17,7 +17,7 @@ create two classes in the new search package:
 
 ## Implementing `ModelDocumentContributor` [](id=implementing-modeldocumentcontributor)
 
-Create `GuestbookModelDocumentContributor` and populate it with these contents:
+Create `GuestbookModelDocumentContributor` and populate it with this:
 
     @Component(
             immediate = true,
@@ -62,8 +62,7 @@ and goes through the right analysis and
 
 ## Implementing `ModelIndexerWriterContributor` [](id=implementing-modelindexerwritercontributor)
 
-Create `GuestbookModelIndexerWriterContributor` and populate it with these
-contents:
+Create `GuestbookModelIndexerWriterContributor` and populate it with this:
 
     @Component(
             immediate = true,
