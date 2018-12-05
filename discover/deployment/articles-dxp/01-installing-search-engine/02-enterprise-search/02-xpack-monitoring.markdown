@@ -16,8 +16,8 @@ this integration.  Contact
 
 3.  Configure Kibana with the proper security settings.
 
-4.  Download and install the 
-    [Liferay Connector to X-Pack Monitoring](https://www.liferay.com/marketplace) [Elastic Stack 6.x].
+4.  Install the 
+    [Liferay Connector to X-Pack Monitoring](https://web.liferay.com/marketplace/-/mp/application/106163750) [Elastic Stack 6.x].
 
 5.  Configure the connector to communicate with Elasticsearch.
 
@@ -31,6 +31,14 @@ Start by enabling data collection in Elasticsearch.
 
 ## Enable Data Collection [](id=enable-data-collection)
 
+Monitoring is enabled on Elasticsearch by default, but data collection isn't.
+To use Kibana to collect data on your Elasticsearch cluster, enable data
+collection by adding this line to `elasticsearch.yml`.
+
+    xpack.monitoring.collection.enabled: true
+
+Now install Kibana.
+
 ## Install Kibana [](id=install-kibana)
 
 Make sure to install the correct version of Kibana. Check the 
@@ -40,18 +48,14 @@ for details.
 1.  [Download Kibana](https://www.elastic.co/downloads/kibana) and extract it.
     The root folder is referred to as *Kibana Home*.
 
-2.  Install X-Pack into Kibana:
-
-        ./bin/kibana-plugin install x-pack
-
-3.  Tell Kibana where to send monitoring data by setting Elasticsearch's URL in
+2.  Tell Kibana where to send monitoring data by setting Elasticsearch's URL in
     `kibana.yml`:
 
         elasticsearch.url: "http://localhost:9200"
 
     If SSL is enabled on Elasticsearch, this is an `https` URL.
 
-4. If not using X-Pack security, start Kibana by entering
+3. If not using X-Pack security, start Kibana by entering
 
         ./bin/kibana
 
@@ -193,7 +197,5 @@ servers are up and running, add the X-Pack Monitoring portlet to a page:
     the Search category onto the page.
 
 See the Elastic documentation for information on 
-[monitoring Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/es-monitoring.html)
-and 
-[monitoring production systems](https://www.elastic.co/guide/en/x-pack/6.5/monitoring-production.html).
+[monitoring Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/es-monitoring.html).
 

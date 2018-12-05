@@ -3,6 +3,15 @@
 Once X-Pack is installed, start securing Elasticsearch by configuring the
 built-in user passwords.
 
+## Enabling X-Pack Security
+
+The first thing to do is enable X-Pack security. Add this setting in
+`elasticsearch.yml`:
+
+    xpack.security.enabled: true
+
+Now you can set up X-Pack users.
+
 ## Setting Up X-Pack Users [](id=setting-up-x-pack-users)
 
 In a system using X-Pack Security and X-Pack Monitoring, two of the built-in
@@ -96,7 +105,7 @@ on each node via its `elasticsearch.yml`.
 
 3.  Enable TLS on the HTTP layer to encrypt client communication:
 
-        xpack.security.enabled: true
+        xpack.security.http.ssl.enabled: true
 
 After X-Pack is installed and TLS is enabled, configure the X-Pack Security
 adapter in @product@.
