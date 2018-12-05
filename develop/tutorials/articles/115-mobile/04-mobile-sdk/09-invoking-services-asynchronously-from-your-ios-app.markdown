@@ -21,7 +21,7 @@ Objective-C is used in the code snippets that follow. Let the requesting begin!
 
 To configure asynchronous requests, first create a class that conforms to the 
 `LRCallback` protocol. When implementing this callback class, you need to 
-implement its `onFailure` and `onSuccess` methods. These methods respectivley 
+implement its `onFailure` and `onSuccess` methods. These methods respectively 
 determine what your app does when the request fails or succeeds. If a server 
 side exception or a connection error occurs during the request, the `onFailure` 
 method is called with an `NSError` instance that contains information about the 
@@ -115,7 +115,7 @@ make the call:
     [service getUserSites:&error];
 
 When using a block as a callback, take care not to also set an `LRCallback` 
-instance to the session. If you do, it gets overriden. Otherwise, support for 
+instance to the session. If you do, it gets overridden. Otherwise, support for 
 blocks works the same way as described in the previous sections. 
 
 Super! Now you know two different ways to make asynchronous service requests in 

@@ -38,8 +38,8 @@ as the
 **Server Connectors:** a collection of classes that interact with different 
 Liferay versions. These classes abstract away the complexity of communicating 
 with different Liferay versions. This allows the developer to call API methods 
-and the correct Interactor without worrying about the specific Liferay version 
-(currently 6.2 or 7). 
+and the correct Interactor without worrying about the specific @product@ 
+version. 
 
 **Interactors:** implement specific use cases for communicating with servers.
 They can use local and remote data sources. Most Interactors use the

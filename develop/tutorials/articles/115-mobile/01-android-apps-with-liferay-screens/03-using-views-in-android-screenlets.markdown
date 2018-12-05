@@ -7,11 +7,6 @@ with several Views, and more are being developed by Liferay and the community.
 lists the Views available for each Screenlet included with Screens. This 
 tutorial shows you how to use Views in Android Screenlets. It's straightforward; 
 you'll master using Views in no time! 
-<!-- 
-Video is outdated:
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ImAcH3JHYug" frameborder="0" allowfullscreen></iframe>
--->
 
 ## Views and View Sets [](id=views-and-view-sets)
 

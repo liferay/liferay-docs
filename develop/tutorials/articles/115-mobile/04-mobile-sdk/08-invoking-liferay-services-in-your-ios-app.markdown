@@ -53,19 +53,20 @@ parameter.
 
 Using `LRBasicAuthentication` tells the session to authenticate each service 
 call with Basic Authentication. The Mobile SDK also supports OAuth 
-authentication, as long as the OAuth Provider portlet is deployed to your 
-Liferay instance. To learn how to use OAuth authentication with the Mobile SDK, 
-see the
+authentication, as long as the 
+[OAuth Provider app](https://web.liferay.com/marketplace/-/mp/application/45261909) 
+is deployed to your @product@ instance. To learn how to use OAuth authentication 
+with the Mobile SDK, see the
 [OAuth sample app](https://github.com/brunofarache/liferay-ios-sdk-oauth). 
-Also, note that the OAuth Provider portlet is only available to customers with 
-an active Liferay subscription. 
+Also, note that the OAuth Provider app is only available to customers with an 
+active Liferay subscription. 
 
 +$$$
 
 **Warning:** Be careful when using administrator credentials on a production 
-Liferay instance, as you'll have permission to call any service. Make sure not 
+portal instance, as you'll have permission to call any service. Make sure not 
 to modify data accidentally. Of course, the default administrator credentials 
-should be disabled on a production Liferay instance. 
+should be disabled on a production portal instance. 
 
 $$$
 

@@ -16,9 +16,8 @@ The Liferay Mobile SDK project contains a Mobile SDK Builder that generates a
 custom Mobile SDK for the Android and iOS platforms. The Mobile SDK Builder 
 does this by generating client libraries that let your native mobile apps invoke 
 a custom portlet's remote web services. Think of the Mobile SDK Builder as a 
-Service Builder on the client side 
-([click here](/develop/tutorials/-/knowledge_base/7-0/service-builder) 
-to learn about Service Builder). 
+[Service Builder](/develop/tutorials/-/knowledge_base/7-0/service-builder) 
+on the client side. 
 
 This tutorial covers how to build a custom Mobile SDK for Android and iOS. 
 You'll begin by making sure the remote services are configured for any custom 
@@ -168,12 +167,10 @@ example, if you added or changed a service method in the Mobile SDK you
 initially built, you could update it's version by setting `version=1.1` in your 
 module's `gradle.properties` file. 
 
-To learn how to use the Mobile SDK in your Android app, 
-[click here](/develop/tutorials/-/knowledge_base/7-0/creating-android-apps-that-use-the-mobile-sdk) 
-to see the rest of the Android Mobile SDK documentation. You can also use your 
-Mobile SDK to create custom Screenlets in Liferay Screens. 
-[Click here](/develop/tutorials/-/knowledge_base/7-0/android-apps-with-liferay-screens) 
-to see the Liferay Screens documentation for Android.
+To learn how to use the Mobile SDK in your Android app, see the rest of the 
+[Android Mobile SDK documentation](/develop/tutorials/-/knowledge_base/7-0/creating-android-apps-that-use-the-mobile-sdk). 
+You can also use your Mobile SDK to create custom Screenlets in 
+[Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/android-apps-with-liferay-screens). 
 
 ### Packaging Your Mobile SDK for iOS [](id=packaging-your-mobile-sdk-for-ios)
 
@@ -190,12 +187,10 @@ To call your portlet's remote services, you must first install this file in your
 Xcode project. To do so, simply unzip it and add its files to your Xcode 
 project. 
 
-To learn how to use the Mobile SDK in your iOS app, 
-[click here](/develop/tutorials/-/knowledge_base/7-0/creating-ios-apps-that-use-the-mobile-sdk) 
-to see the rest of the iOS Mobile SDK documentation. You can also use your 
-Mobile SDK to create custom Screenlets in Liferay Screens. 
-[Click here](/develop/tutorials/-/knowledge_base/7-0/ios-apps-with-liferay-screens) 
-to see the Liferay Screens documentation for iOS. 
+To learn how to use the Mobile SDK in your iOS app, see the rest of the 
+[iOS Mobile SDK documentation](/develop/tutorials/-/knowledge_base/7-0/creating-ios-apps-that-use-the-mobile-sdk). 
+You can also use your Mobile SDK to create custom Screenlets in 
+[Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/ios-apps-with-liferay-screens). 
 
 ## Related Topics [](id=related-topics)
 

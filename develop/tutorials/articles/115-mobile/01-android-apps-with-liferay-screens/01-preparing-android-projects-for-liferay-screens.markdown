@@ -20,27 +20,20 @@ with your @product@ instance. The last section in this tutorial shows you how to
 do this. 
 
 $$$
-<!--
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ABxCUUg7zhs" frameborder="0" allowfullscreen></iframe>
--->
 
 ## Requirements [](id=requirements)
 
 Liferay Screens for Android includes the Component Library (the Screenlets) and 
 a sample project. It requires the following software:
 
--   Android Studio 2.0 or above.
--   Android SDK 4.0 (API Level 15) or above. Its 
-    [AppCompat library](https://developer.android.com/tools/support-library/features.html#v7-appcompat) 
-    (v7:23.0.1) implements the
-    [recycler view](https://developer.android.com/tools/support-library/features.html#v7-recyclerview) 
-    and offers older devices a material look and feel.
--   [Liferay Portal 6.2 CE/EE, 7.0 CE, Liferay DXP](http://www.liferay.com/downloads/liferay-portal/available-releases).
--   Liferay Screens Compatibility Plugin (
-    [CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
-    [EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
-    depending on your portal edition). This app is preinstalled in Liferay 7.0 CE 
-    and Liferay DXP bundles. 
+-   Android Studio 3.0 or above.
+-   Android SDK 4.1 (API Level 16) or above. 
+-   [Liferay Portal 6.2 CE/EE, Liferay CE Portal 7.0/7.1, or Liferay DXP](http://www.liferay.com/downloads/liferay-portal/available-releases)
+-   Liferay Screens Compatibility Plugin 
+    ([CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
+    [DXP/EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
+    depending on your portal edition). This app is preinstalled in Liferay CE 
+    Portal 7.0/7.1 CE and Liferay DXP. 
 -   Liferay Screens source code. 
 
 Liferay Screens for Android uses
@@ -248,9 +241,12 @@ you want your app to communicate with. In the *Site Administration* menu, select
 `server_context.xml`. 
 
 The `liferay_portal_version` value `70` tells Screens that it's communicating 
-with a @product-ver@ instance. Supported values for are `62` for Liferay Portal 
-6.2, and `70` for @product-ver@. Note that if you leave `liferay_portal_version` 
-out of your `server_context.xml`, it defaults to `62`. 
+with a Liferay CE Portal 7.0 or Liferay DXP 7.0 instance. Here are the supported 
+`liferay_portal_version` values and the portal versions they correspond to: 
+
+-   `71`: Liferay CE Portal 7.1 or Liferay DXP 7.1
+-   `70`: Liferay CE Portal 7.0 or Liferay DXP 7.0
+-   `62`: Liferay Portal 6.2 CE/EE
 
 You can also configure Screenlet properties in your `server_context.xml` file. 
 The example properties listed below, `liferay_recordset_id` and
