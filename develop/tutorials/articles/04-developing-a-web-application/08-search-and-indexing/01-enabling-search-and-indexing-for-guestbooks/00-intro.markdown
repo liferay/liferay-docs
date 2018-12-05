@@ -27,7 +27,7 @@ search functionality:
 - Generating Result Summaries:
 
     - `GuestbookModelSummaryContributor` constructs the result summary for
-        Guestbooks, including specifying which fields to use.
+      Guestbooks, including specifying which fields to use.
 
 After creating the search classes, you'll modify the service layer to update the
 search index when a guestbook is persisted. Specifically,
@@ -36,8 +36,10 @@ search index when a guestbook is persisted. Specifically,
 
 In prior versions of @product@, search and indexing was accomplished with one
 `*Indexer` class that extended `BaseIndexer`. In @product-ver@ is a new pattern
-that relies on composition instead of inheritance. If you want to use the old
-approach, feel free to extend `BaseIndexer`. It's still supported. 
+that relies on [composition instead of
+inheritance](https://stackoverflow.com/questions/2399544/difference-between-inheritance-and-composition).
+If you want to use the old approach, feel free to extend `BaseIndexer`. It's
+still supported. 
 
 Since there's no reason to search for guestbooks in the UI, only back-end work
 is necessary. 
