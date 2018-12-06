@@ -2,8 +2,8 @@
 
 There are various approaches to customizing the auto-generated System Settings
 UI for your configurable application. To replace an application's
-configuration screen with a form that you build from scratch, this tutorial
-provides a full demonstration using these steps:
+auto-generated configuration screen with a form that you build from scratch,
+this tutorial provides a full demonstration using these steps:
 
 1.  Use a `DisplayContext` class to transfer data between backend code and the
     desired JSP markup.
@@ -22,8 +22,8 @@ steps apply for your custom application's auto-generated UI.
 ![Figure 1: The auto-generated UI for the Language Template configuration screen is sub-optimal. A select list with more human readable options is preferable.](../../../images/sys-settings-lang-template-default.png)
 
 Specifically, the text input field labeled DDM Template Key in the
-auto-generated UI will be replaced with a select list field type, populated with
-all possible DDM Template Keys.
+auto-generated UI will be replaced with a select list field type, populated
+with all possible DDM Template Keys.
 
 ## Creating a `DisplayContext` [](id=creating-a-displaycontext)
 
