@@ -7,7 +7,7 @@
 
 ## Compatibility [](id=compatibility)
 
-- Android SDK 4.0 (API Level 15) and above
+- Android SDK 4.1 (API Level 16) or above
 
 ## Xamarin Requirements [](id=xamarin-requirements)
 
