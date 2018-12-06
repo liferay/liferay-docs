@@ -33,10 +33,10 @@ Follow these steps to create the search results JSP:
 3.  Define the `searchURL` and `viewURL` as `renderURL`s. Both use the `mvcPath` 
     parameter that's available to Liferay MVC Portlets:
 
-        <liferay-portlet:renderURL varImpl="searchURL">
+        <portlet:renderURL var="searchURL">
                 <portlet:param name="mvcPath" 
                 value="/guestbookwebportlet/view_search.jsp" />
-        </liferay-portlet:renderURL>
+        </portlet:renderURL>
 
         <portlet:renderURL var="viewURL">
             <portlet:param 
