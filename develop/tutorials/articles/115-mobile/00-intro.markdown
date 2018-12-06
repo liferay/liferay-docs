@@ -29,6 +29,8 @@ sections that show you how to use both:
 
 - [iOS Apps with Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/ios-apps-with-liferay-screens)
 
+- [Using Xamarin with Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/using-xamarin-with-liferay-screens)
+
 - [Liferay Mobile SDK](/develop/tutorials/-/knowledge_base/7-0/mobile-sdk)
 
 Venture forth to become a mobile guru!
