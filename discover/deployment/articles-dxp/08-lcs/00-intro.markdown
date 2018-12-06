@@ -34,11 +34,11 @@ throughout this guide:
 
 As you go through this guide, you'll cover the following topics: 
 
--   [Getting Started](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/getting-started-with-lcs)
--   [LCS Preconfiguration](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/lcs-preconfiguration)
--   [Registering Your @product@ Server with LCS](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/activating-your-liferay-dxp-server-with-lcs)
--   [Using LCS](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/using-lcs)
--   [Troubleshooting Your LCS Connection](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/troubleshooting-your-lcs-connection)
+-   [Getting Started](/discover/deployment/-/knowledge_base/7-1/getting-started-with-lcs)
+-   [LCS Preconfiguration](/discover/deployment/-/knowledge_base/7-1/lcs-preconfiguration)
+-   [Registering Your @product@ Server with LCS](/discover/deployment/-/knowledge_base/7-1/activating-your-liferay-dxp-server-with-lcs)
+-   [Using LCS](/discover/deployment/-/knowledge_base/7-1/using-lcs)
+-   [Troubleshooting Your LCS Connection](/discover/deployment/-/knowledge_base/7-1/troubleshooting-your-lcs-connection)
 
 You'll get started with the configuration steps required to use LCS with 
 @product@. 

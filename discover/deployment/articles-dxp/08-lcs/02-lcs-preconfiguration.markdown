@@ -196,7 +196,7 @@ LCS uses @product@'s patching tool to apply updates. In bundles, the patching
 tool is pre-installed. If you're not running a bundle, you must 
 [download](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise/patching-tool) 
 and 
-[install](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/patching-tool) 
+[install](/discover/deployment/-/knowledge_base/7-1/patching-tool) 
 the patching tool separately. 
 
 Once installed, there are a few steps you must complete before LCS can use the 
@@ -205,7 +205,7 @@ you're running Windows, drop the `.sh` from each command that has it.
 
 1.  Navigate to the `patching-tool` directory on the command line. It's 
     typically located in the 
-    [Liferay Home](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/installing-liferay#liferay-home) 
+    [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home) 
     folder. Liferay Home is usually the parent folder of the application 
     server's folder. 
 
@@ -327,7 +327,7 @@ Once you've addressed the above pre-configuration steps, you're ready to install
 the LCS client app. Follow these steps to install the app:
 
 1.  In your 
-    [Liferay Home](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/installing-liferay#liferay-home) 
+    [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home) 
     folder (usually the parent folder of the application server's folder), 
     delete this file: 
 
@@ -337,7 +337,7 @@ the LCS client app. Follow these steps to install the app:
     `osgi/marketplace`. 
 
 Great! Now you're all set to 
-[register your server with LCS](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/activating-your-liferay-dxp-server-with-lcs). 
+[register your server with LCS](/discover/deployment/-/knowledge_base/7-1/activating-your-liferay-dxp-server-with-lcs). 
 
 The next section shows you how to upgrade the LCS client app. We highly 
 recommend that you do this whenever Liferay releases a new version of the app. 

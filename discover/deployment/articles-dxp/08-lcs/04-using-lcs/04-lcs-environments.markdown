@@ -8,7 +8,7 @@ gateway to managing and monitoring your servers in LCS.
 
 The first time you log in to LCS, a wizard walks you through each step required 
 to create your project's first environment. The 
-[getting started article](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/getting-started-with-lcs) 
+[getting started article](/discover/deployment/-/knowledge_base/7-1/getting-started-with-lcs) 
 explains this in detail. You can create additional environments via the same 
 wizard or a simple form. 
 
@@ -16,7 +16,7 @@ To create an environment, click the *Add Environment* button from the Dashboard.
 This opens the New Environment form. Each section in this form corresponds to a 
 step in the wizard. If you want to use the wizard instead, click the 
 *Open Wizard* link at the top of the form. See the 
-[getting started article](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/getting-started-with-lcs) 
+[getting started article](/discover/deployment/-/knowledge_base/7-1/getting-started-with-lcs) 
 for a description of each setting in the form and wizard. 
 
 +$$$
@@ -57,7 +57,7 @@ The UI is segmented into three tabs:
     handle each separately. 
 
 2.  **Registration:** Generate and download 
-    [*environment tokens*](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/understanding-environment-tokens) 
+    [*environment tokens*](/discover/deployment/-/knowledge_base/7-1/understanding-environment-tokens) 
     that connect your servers to LCS. 
 
 3.  **Environment Settings:** Change the environment's name, location, and

@@ -12,7 +12,7 @@ $$$
 Follow these steps to register your @product@ server with LCS: 
 
 1.  Ensure that you've completed the 
-    [LCS preconfiguration steps](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/lcs-preconfiguration). 
+    [LCS preconfiguration steps](/discover/deployment/-/knowledge_base/7-1/lcs-preconfiguration). 
 
 2.  Log in to 
     [lcs.liferay.com](https://lcs.liferay.com). 
@@ -28,14 +28,14 @@ Follow these steps to register your @product@ server with LCS:
     that a subscription type can only be assigned to an environment when 
     creating the environment. If you have sufficient permissions in your 
     company's project, you can 
-    [create a new environment](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/managing-lcs-environments#creating-environments) 
+    [create a new environment](/discover/deployment/-/knowledge_base/7-1/managing-lcs-environments#creating-environments) 
     by selecting *Add Environment*. 
 
     ![Figure 2: You must register your server in an LCS environment. The red box in this screenshot highlights environments.](../../images-dxp/lcs-registration-select-environment.png)
 
 4.  Select the environment's *Registration* tab. This is where you manage and 
     download the 
-    [environment's token file](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/understanding-environment-tokens), 
+    [environment's token file](/discover/deployment/-/knowledge_base/7-1/understanding-environment-tokens), 
     that registers servers in the environment. 
 
     In the Registration tab's *Services* section, change the LCS service 
@@ -48,7 +48,7 @@ Follow these steps to register your @product@ server with LCS:
     environment. If Portal Property Analysis is selected, you can prevent LCS 
     from analyzing specific properties. Enter them into the box that appears 
     when you select *Show Blacklisted Properties*. Note that 
-    [LCS doesn't access security sensitive properties](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/what-lcs-stores-about-your-liferay-dxp-servers). 
+    [LCS doesn't access security sensitive properties](/discover/deployment/-/knowledge_base/7-1/what-lcs-stores-about-your-liferay-dxp-servers). 
 
     ![Figure 3: An environment's Registration tab lets you manage the token file used to register your server in the environment.](../../images-dxp/lcs-registration.png)
 
@@ -61,14 +61,14 @@ Follow these steps to register your @product@ server with LCS:
 
 6.  Place the token file in your server's `[Liferay Home]/data` folder. Note 
     that 
-    [Liferay Home](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/installing-liferay#liferay-home) 
+    [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home) 
     is usually the parent folder of the application server's folder. If your 
     server is running, it should connect to LCS in about one minute. If your 
     server isn't running, it connects to LCS on startup. 
 
 7.  Celebrate! Your @product@ server is registered in LCS. If for some reason it 
     isn't, see the 
-    [LCS troubleshooting article](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/troubleshooting-your-lcs-connection). 
+    [LCS troubleshooting article](/discover/deployment/-/knowledge_base/7-1/troubleshooting-your-lcs-connection). 
 
 +$$$
 
