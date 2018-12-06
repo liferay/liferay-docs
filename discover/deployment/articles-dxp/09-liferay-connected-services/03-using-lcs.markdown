@@ -63,7 +63,7 @@ By default, LCS stores the following information about your server:
 
 The other data LCS stores depends on the services you enable in your environment 
 token. For more information on this, see 
-[the article on activating servers with LCS](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/registering-your-dxp-server-with-lcs).
+[the article on activating servers with LCS](/discover/deployment/-/knowledge_base/7-0/registering-your-dxp-server-with-lcs).
 When you enable the following services, LCS gathers and stores the data listed 
 for each: 
 
@@ -106,7 +106,7 @@ non-sensitive properties:
 
 LCS also lets you prevent it from analyzing specific properties of your 
 choosing. For more information on this, see 
-[the article on activating servers with LCS](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/registering-your-dxp-server-with-lcs).
+[the article on activating servers with LCS](/discover/deployment/-/knowledge_base/7-0/registering-your-dxp-server-with-lcs).
 
 ## Managing LCS Users in Your Project [](id=managing-lcs-users-in-your-project)
 
@@ -427,7 +427,7 @@ into the following categories:
   file.
 
 - **Dynamic Properties:** Any property values set at runtime. For example, the 
-  [Liferay Home](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/installing-product#liferay-home) 
+  [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home) 
   folder's location depends on your configuration. To always specify this folder 
   when setting any properties that require it, you can use `${liferay.home}` 
   instead of an absolute directory path. 
@@ -632,7 +632,7 @@ interaction is required.
 
 **Note:** For instructions on using and managing your environment tokens, see 
 the instructions on 
-[activating your server with LCS](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/registering-your-dxp-server-with-lcs). 
+[activating your server with LCS](/discover/deployment/-/knowledge_base/7-0/registering-your-dxp-server-with-lcs). 
 
 $$$
 
@@ -689,4 +689,4 @@ $$$
 As you've now seen, LCS is a powerful tool that helps you manage your @product@ 
 servers. In addition to activating your servers, LCS lets you apply fix packs 
 and monitor your servers' performance. If you have any problems with LCS, see 
-[the LCS troubleshooting article](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/troubleshooting-your-lcs-connection). 
+[the LCS troubleshooting article](/discover/deployment/-/knowledge_base/7-0/troubleshooting-your-lcs-connection). 

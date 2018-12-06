@@ -12,7 +12,7 @@ $$$
 Follow these steps to activate your @product@ server with LCS: 
 
 1.  Ensure that you've completed the 
-    [LCS preconfiguration steps](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/lcs-preconfiguration). 
+    [LCS preconfiguration steps](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration). 
 
 2.  Log in to 
     [lcs.liferay.com](https://lcs.liferay.com). 
@@ -27,14 +27,14 @@ Follow these steps to activate your @product@ server with LCS:
     type assigned to the environment. Note that a subscription type can only be 
     assigned to an environment when creating the environment. If you have 
     sufficient permissions in your company's project, you can 
-    [create a new environment](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#creating-an-environment) 
+    [create a new environment](/discover/deployment/-/knowledge_base/7-0/using-lcs#creating-an-environment) 
     by selecting *Add Environment*. 
 
     ![Figure 2: You must activate your server in an LCS environment. The red box in this screenshot highlights environments.](../../images-dxp/lcs-registration-select-environment.png)
 
 4.  Select the environment's *Registration* tab. This is where you manage and 
     download the 
-    [environment's token file](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#using-environment-tokens), 
+    [environment's token file](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-environment-tokens), 
     which you'll use to activate servers in the environment. 
 
     In the Registration tab's *Services* section, change the LCS service 
@@ -48,7 +48,7 @@ Follow these steps to activate your @product@ server with LCS:
     Analysis are selected by default. If Portal Property Analysis is selected, 
     you can prevent LCS from analyzing specific properties. Enter them into the 
     box that appears when you select *Show Blacklisted Properties*. Note that 
-    [LCS doesn't access security sensitive properties](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs#what-lcs-stores-about-your-liferay-servers). 
+    [LCS doesn't access security sensitive properties](/discover/deployment/-/knowledge_base/7-0/using-lcs#what-lcs-stores-about-your-liferay-servers). 
 
     ![Figure 3: An environment's Registration tab lets you manage the token file used to activate your server in the environment.](../../images-dxp/lcs-registration.png)
 
@@ -61,7 +61,7 @@ Follow these steps to activate your @product@ server with LCS:
 
 6.  Place the token file in your server's `[Liferay Home]/data` folder. Note 
     that 
-    [Liferay Home](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/installing-liferay-dxp#liferay-home) 
+    [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home) 
     is usually the parent folder of the application server's folder. If your 
     server is running, it should connect to LCS in about 1 minute. If your 
     server isn't running, it connects to LCS on startup. Upon connection, your 
@@ -71,7 +71,7 @@ Follow these steps to activate your @product@ server with LCS:
 
 7.  Celebrate! Your @product@ server is activated and connected to LCS. If for 
     some reason it isn't, see the 
-    [LCS troubleshooting article](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/troubleshooting-your-lcs-connection). 
+    [LCS troubleshooting article](/discover/deployment/-/knowledge_base/7-0/troubleshooting-your-lcs-connection). 
 
 +$$$
 
@@ -111,5 +111,5 @@ Here's a full description of what a connected LCS client app displays:
 ![Figure 4: The server is connected to LCS.](../../images-dxp/lcs-server-connected.png)
 
 Awesome! Now you know how to activate your server with LCS. See the article on 
-[using LCS](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/using-lcs) 
+[using LCS](/discover/deployment/-/knowledge_base/7-0/using-lcs) 
 for information on using LCS's other features. 
