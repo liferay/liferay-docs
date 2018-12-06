@@ -5,11 +5,12 @@
 </div>
 
 The search registrar for Entries is very similar to the one created for
-Guestbooks.
+Guestbooks. You'll even put it in the same package
+(`com.liferay.docs.guestbook.search`). 
 
-Create the `GuestbookSearchRegistrar`:
+Create the `EntrySearchRegistrar`:
 
-1.  In  `com.liferay.docs.guestbook.search`, create a new class called
+1.  In `com.liferay.docs.guestbook.search`, create a new class called
     `EntrySearchRegistrar` and populate it with two methods, `activate` and
     `deactivate`.
 
@@ -48,7 +49,7 @@ As you did with Guestbooks, set the default selected field names used to
 retrieve results documents from the search engine. For Entries, call
 `setDefaultSelectedLocalizedFieldNames` for the title and content fields. This
 ensures that the localized version of the field is searched and returned. The
-only other difference with Entries is the called to
+only other difference with Entries is the call to
 `setSelectAllLocales(true)`. It takes the fields set in
 `setDefaultSelectedLocalizedFieldNames` and sets those fields for each
 available locale in the `stored_fields` parameter of the search request. If not

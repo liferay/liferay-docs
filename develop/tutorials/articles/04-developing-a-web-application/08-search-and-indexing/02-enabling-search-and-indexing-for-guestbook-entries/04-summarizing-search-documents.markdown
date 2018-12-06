@@ -5,10 +5,10 @@
 </div>
 
 The Search application and the Asset Publisher application display results
-retrieved from the search engine. Control the display by implementing a
-`ModelSummaryContributor`.
+retrieved from the search engine. You can control the display by implementing
+a `ModelSummaryContributor`.
 
-Create a `EntryModelSummarySummaryContributor`:
+Create a `EntryModelSummaryContributor`:
 
     @Component(
             immediate = true,
@@ -42,10 +42,10 @@ Create a `EntryModelSummarySummaryContributor`:
 First override `getSummary`, and set the maximum summary length on the summary
 returned. The value `200` is a Liferay standard. Control the summary creation
 in a utility method called `createSummary`. Guestbooks only included the title
-in the summary, but Entries will use the title and the content (the Entry
-message field) to populate the summary.
+in the summary, but Entries use the title and the content (the Entry message
+field) to populate the summary.
 
 Create summaries by combining key parts of the entity's data.
 
-Once the search and indexing logic is in place, update the service layer so
-`add`, `update`, and `delete` service calls trigger the new logic.
+Now that the search and indexing logic is in place, you can update the service
+layer so `add`, `update`, and `delete` service calls trigger the new logic.

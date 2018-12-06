@@ -5,7 +5,7 @@
 </div>
 
 To control how Entry objects are translated into search engine documents,
-create these classes in the new search package:
+create these classes in the search package:
 
 1.  `ModelDocumentContributor`: The main searchable fields for Entries are
     _Name_ and _Message_. The Guestbook name associated with the entry is
@@ -15,13 +15,13 @@ create these classes in the new search package:
     Entries. This code is executed when Entries are re-indexed from the
     Search administration section of the Control Panel.
 
-3.  A new interface, `EntryBatchReindexer`, with its iplementation,
-    `EntryBatchReindexerImpl`. These classes contain code to ensure that
-    Entries are reindexed when their Guestbook is updated.
+3.  A new interface, `EntryBatchReindexer`, with its implementation,
+    `EntryBatchReindexerImpl`. These classes contain code to ensure that Entries
+    are re-indexed when their Guestbook is updated.
 
 ## Implementing `ModelDocumentContributor` [](id=implementing-modeldocumentcontributor)
 
-Create `EntryModelDocumentContributor` and populate it with these contents:
+Create `EntryModelDocumentContributor` and populate it with this:
 
     @Component(
             immediate = true,
@@ -77,15 +77,14 @@ Create `EntryModelDocumentContributor` and populate it with these contents:
     }
 
 As with Guestbooks, add the localized values for fields that might be
-translated. The site locale is appended to the field (e.g., `title_en_US`), so
+translated. The Site locale is appended to the field (e.g., `title_en_US`), so
 the field gets passed to the search engine and goes through the right analysis
 and
 [tokenization](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/analysis-tokenizers.html). 
 
 ## Implementing `ModelIndexerWriterContributor` [](id=implementing-modelindexerwritercontributor)
 
-Create `EntryModelIndexerWriterContributor` and populate it with these
-contents:
+Create `EntryModelIndexerWriterContributor` and populate it with this:
 
     @Component(
             immediate = true,
@@ -183,9 +182,8 @@ Then create the implementation class, `EntryBatchReindexerImpl`:
 
     }
 
-    The `reindex` method of the interface is called when a Guestbook is
-    updated. The entry documents are reindexed to include the update Guestbook
-    title.
+    The `reindex` method of the interface is called when a Guestbook is updated.
+    The entry documents are re-indexed to include the update Guestbook title.
 
 Once the re-indexing behavior is in place, move on to the code for controlling
 how Entry documents are queried from the search engine.
