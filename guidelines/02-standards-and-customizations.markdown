@@ -92,10 +92,9 @@ documenting. -Cody -->
     `images-dxp` folders that are not used in their corresponding Markdown
     articles.
 
--   `check-links`: (no DXP target) Checks links (CE articles only) on the
-    current checked out liferay-docs branch to ensure all links point to
-    existing header IDs (header IDs are used to formulate links). A list of
-    invalid links are listed if any are found.
+-   `check-links`: Checks links on the current checked out liferay-docs branch
+    to ensure all links point to existing header IDs (header IDs are used to
+    formulate links). A list of invalid links are listed if any are found.
 
     This target can be executed before publishing to the live site since it
     scans the local liferay-docs repo. This also means that links pointing to
@@ -105,7 +104,7 @@ documenting. -Cody -->
 
     The following options are available for the `check-links` task:
 
-    - `-Dapi.links`: Set this to `true` to check API links hosted on
+    - `-Dapi.links`: Set this to `true` to check Javadoc API links hosted on
       [docs.liferay.com](https://docs.liferay.com/).
     - `-Dlegacy.links`: Set this to `true` to check legacy links already
       published to LDN. This checks all links pointing to articles in the
@@ -148,17 +147,21 @@ below:
 
 - `@product@` = Liferay Portal
 - `@product-ver@` = Liferay Portal CE 7.1
-- `@ide@` = IDE
+- `@commerce@` = Emporio
+- `@commerce-ver@` = Emporio 1.0
+- `@ide@` = Dev Studio CE
 - `@app-ref@` = https://docs.liferay.com/ce/apps
 - `@platform-ref@` = https://docs.liferay.com/ce/portal
 
 **DXP Docs**
 
 - `@product@` = Liferay DXP
-- `@product-ver@` = Liferay Digital Enterprise 7.1
-- `@ide@` = Developer Studio
+- `@product-ver@` = Liferay DXP 7.1
+- `@commerce@` = Liferay Commerce
+- `@commerce-ver@` = Liferay Commerce 1.0
+- `@ide@` = Dev Studio DXP
 - `@app-ref@` = https://docs.liferay.com/dxp/apps
-- `@platform-ref@` = https://docs.liferay.com/dxp/digital-enterprise
+- `@platform-ref@` = https://docs.liferay.com/dxp/portal
 
 ## Markdown Image Numbers Tool
 
@@ -565,6 +568,11 @@ receives the notification text.
 
 View the video by clicking the thumbnail on the right-side 
 (or bottom on mobile) of the article.
+
+**Note:** WEBM format is not native to [Blender](https://www.blender.org/) 
+(our video editor of choice), but you can convert an MP4 
+(which is native to Blender) to WEBM with [Handbrake](https://handbrake.fr/). 
+Set the export to VP9 with an MKV container and Opus audio. 
 
 ### Markdown Metadata
 

@@ -6,16 +6,16 @@ bookmarks to technical manuals, part specifications, maintenance tips, and more.
 Administrators can create bookmarks in the widget, and users can access them.
 Both internal pages as well as external sites can be bookmarked. 
 
-+$$$
-
-**Note:** The Bookmarks widget is currently available for Liferay DXP only. 
-
-$$$
-
 ## Creating Bookmarks and Folders [](id=creating-bookmarks-and-folders)
 
-To get started with the Bookmarks widget, first install it from 
-[Liferay Marketplace](https://web.liferay.com/marketplace/-/mp/application/106221974). 
+To get started with the Bookmarks widget, first install it from Liferay 
+Marketplace. It's available for Liferay CE Portal and Liferay DXP via these 
+links: 
+
+-   [Liferay Bookmarks - CE](https://web.liferay.com/marketplace/-/mp/application/106177165)
+
+-   [Liferay Bookmarks - DXP](https://web.liferay.com/marketplace/-/mp/application/106221974)
+
 See the 
 [Marketplace article](/discover/portal/-/knowledge_base/7-1/using-the-liferay-marketplace) 
 if you need help using Marketplace to install apps. 
@@ -46,7 +46,7 @@ Follow these steps to add a bookmark:
 3.  If you want to associate a tag with the bookmark, open the *Categorization* 
     section and use the *Select* button to select an existing tag. You can also 
     create a new tag by entering it in the *Tags* field and clicking *Add*. See 
-    [the documentation on tags](/discover/portal/-/knowledge_base/7-1/organizing-content-with-tags) 
+    [the documentation on tags](/discover/portal/-/knowledge_base/7-1/organizing-content-with-tags-and-categories) 
     for more information. 
 
 4.  If you want to select an existing portal asset (e.g., a media file, blog

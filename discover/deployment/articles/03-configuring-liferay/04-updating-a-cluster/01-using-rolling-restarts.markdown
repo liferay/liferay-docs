@@ -1,4 +1,4 @@
-# Using Rolling Restarts [](id=using-rolling-restarts)
+# Rolling Restarts [](id=using-rolling-restarts)
 
 The rolling restart cluster maintenance process involves shutting down and
 updating nodes one at a time (while the other nodes are running) until they're

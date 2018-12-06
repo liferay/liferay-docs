@@ -16,7 +16,7 @@ this feature can save you the work of duplicating work just to change the text.
 You can make any text of a fragment editable by enclosing it in an 
 `<lfr-editable>` tag like this:
     
-    <lfr-editable id=”unique-id” type="text">
+    <lfr-editable id="unique-id" type="text">
        This is editable text!    
     </lfr-editable>
  
@@ -29,15 +29,14 @@ The following three `type` options are available inside of of `lfr-editable` tag
 `image`: Must contain a valid `<img>` tag which can then be replaced with any
 image before publishing---including those from Documents and Media.
  
-`rich-text`: Similar to the text field, but provides an WYSIWYG editor for
-editing before publication.
+`rich-text`: Provides rich text formatting, such as bold, italics, underline,
+links, and predefined styles.
 
 +$$$
 
-**WARNING:** Be careful with the `rich-text` type. Users can use the editor to
-provide their own HTML in the provided field which may have catastrophic results
-for your layout if misused. Be sure that your content creators understand the
-responsibility that must come with such great power.
+**Note:** If you want to make text inside an HTML element editable, you must use
+the `rich-text` type. The `text` type strips HTML formatting out of the text
+before rendering.
 
 $$$
 
@@ -109,7 +108,7 @@ Navigation Menu portlet is registered as `nav`. Each portlet which is registered
 has an `lfr-widget-[name]` tag that's used to embed it. For example: the Navigation
 Menu tag is `<lfr-widget-nav />`. You could embed it in a block like this:
 
-    <div class=”nav-widget”>
+    <div class="nav-widget">
         <lfr-widget-nav>
         </lfr-widget-nav>
     </div>
@@ -123,9 +122,9 @@ Implement this in your Fragment:
 
 4.  Insert the following code in the main `<div>` in the HTML pane:
     
-        <div class=”container-fluid”>
-          <div class=”row”>
-            <div class=”col-md-10”>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-10">
                <lfr-widget-nav>
                </lfr-widget-nav>
             </div>

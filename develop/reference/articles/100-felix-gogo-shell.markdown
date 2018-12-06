@@ -89,7 +89,7 @@ will update the currently hidden uninstalled version. To remove a
 bundle from Liferay's module framework permanently, manually delete it from the
 `LIFERAY_HOME/osgi` folder. For more information on the `uninstall` command, see
 OSGi's
-[uninstall](https://osgi.org/javadoc/r6/core/org/osgi/framework/Bundle.html#uninstall())
+[uninstall](https://osgi.org/javadoc/r6/core/org/osgi/framework/Bundle.html#uninstall\(\))
 documentation.
 
 For more information about the Gogo shell, visit
