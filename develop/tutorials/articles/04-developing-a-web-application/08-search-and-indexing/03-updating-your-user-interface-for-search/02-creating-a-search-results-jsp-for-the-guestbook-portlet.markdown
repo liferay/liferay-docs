@@ -76,8 +76,7 @@ Follow these steps to create the search results JSP:
 5.  Start a scriptlet to get a search context and set some attributes in it: 
 
         <%
-            SearchContext searchContext = SearchContextFactory
-            .getInstance(request);
+            SearchContext searchContext = SearchContextFactory.getInstance(request);
 
             searchContext.setKeywords(keywords);
             searchContext.setAttribute("paginationType", "more");
@@ -85,7 +84,7 @@ Follow these steps to create the search results JSP:
             searchContext.setEnd(10);
 
     To execute a search, you need a `SearchContext` object. 
-    `SearchContextFactory` lets you create a `SearchContext` from the request
+    `SearchContextFactory` creates a `SearchContext` from the request
     object. Add the user's search query to the `SearchContext` by passing the 
     `keywords` URL parameter to the `setKeywords` method. Then specify details 
     about pagination and how the search results should be displayed. 

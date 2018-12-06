@@ -17,7 +17,7 @@ Create the search bar UI for the Guestbook portlet:
         </liferay-portlet:renderURL>
 
     The render URL points to `/guestbookwebportlet/view_search.jsp` (created in
-    the next Learning Path step). You construct the URL first to specify what
+    the next step). You construct the URL first to specify what
     happens when the user submits a search query. 
 
 2.  Right after the render URL, create an AUI form that adds an input field for
@@ -34,20 +34,6 @@ Create the search bar UI for the Guestbook portlet:
                 <div class="col-md-4">
                     <aui:button type="submit" value="search" />
                 </div>
-            </div>
-        </aui:form>
-
-        <aui:form action="<%= searchURL %>" method="get" name="fm">
-            <liferay-portlet:renderURLParams varImpl="searchURL" />
-
-            <div class="search-form">
-                <span class="aui-search-bar">
-                    <aui:input inlineField="<%= true %>" label="" 
-                    name="keywords" size="30" title="search-entries" type="text"
-                    />
-
-                    <aui:button type="submit" value="search" />
-                </span>
             </div>
         </aui:form>
 
