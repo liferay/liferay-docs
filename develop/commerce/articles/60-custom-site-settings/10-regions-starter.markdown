@@ -12,7 +12,7 @@ developer can populate them automatically by implementing the
 Follow these steps:
 
 1.  Create a new module and add dependencies on `commerce-api` and
-   `commerce-product-api` to its `build.gradle` file.
+    `commerce-product-api` to its `build.gradle` file.
 
 2.  Implement the `com.liferay.commerce.starter.CommerceRegionsStarter` interface.
 
@@ -31,12 +31,11 @@ First, add dependencies to `build.gradle`. It should look like this:
     }
 
 Then create a component to implement the interface. In the example below, the
-class `CanadaCommerceRegionsStarter` contains the the constant
+class `CanadaCommerceRegionsStarter` contains the constant
 `CANADA_NUMERIC_ISO_CODE`. This constant must be set to the country's 3-digit
 numeric ISO code and provides the value for the `commerce.region.starter.key` property.
 This connects the region starter with the correct country in @commerce@'s
 country list.
-
 
     package com.liferay.commerce.sample;
 
@@ -69,7 +68,7 @@ country list.
 Finally, you can add your own logic to the interface's `start` method. The
 example below adds four regions to Canada's region list. Besides the name of each
 region, the method includes a postal code for each region, and a number
-determining the order in which it will be listed.
+determining the order in which it's listed.
 
     @Override
         public void start(ServiceContext serviceContext) throws Exception {
