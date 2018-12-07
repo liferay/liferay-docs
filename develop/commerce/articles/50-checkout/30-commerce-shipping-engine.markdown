@@ -7,9 +7,9 @@ out of the box: *fixed*- and
 shipping costs in-house, while the FedEx method (subscribers only) provides an
 option for you to integrate your system with the multinational courier of the
 same name. Since the provided shipping methods may not meet every user's
-needs---suppose you want to integrate with a shipping company other than FedEx,
-for example---commerce exposes an extension point to allow new methods to be
-developed.
+needs---for example, if you want to integrate with a shipping company
+other than FedEx---commerce exposes an extension point to allow new
+methods to be developed.
 
 The following instructions cover the creation of new shipping methods.
 Business logic to integrate with any particular shipping company (UPS, DHL,
@@ -20,19 +20,19 @@ etc.) is outside the scope of this tutorial.
 Before we dive in, it's important to understand the difference between a
 *shipping option* and a *shipping method*:
 
-A **Shipping Option** determines how an order will be shipped and is selected
-by buyers at the time of checkout.
+A **Shipping Option** determines how an order is shipped. Buyers select this at
+checkout.
 
 ![Figure 1: Buyers choose from among various shipping options at checkout.](../../images/shipping-options.png)
 
 A **Shipping Method** provides a process for calculating the cost of a given
-shipping option. Shipping methods are selected by administrators when they
-create the options to present to buyers.
+shipping option. Administrators select shipping methods when they create the
+options to present to buyers.
 
 ![Figure 2: Every shipping option relies on a cost calculation provided by one of these shipping methods---or by a custom method that you create.](../../images/shipping-methods.png)
 
 Administrators can create any number of shipping options for buyers to select,
-but all of them will will rely on a shipping method to calculate costs.
+but all of them rely on a shipping method to calculate costs.
 
 ## Creating a Custom Method [](id=creating-a-custom-method)
 
@@ -78,7 +78,7 @@ The KEY constant in this example provides a unique identifier for this shipping
 method.
 
 The `getCommerceShippingOptionLabel` method returns a localized value for the
-shipping method's name, and is called when during the checkout process when
+shipping method's name, and is called during the checkout process when
 a buyer is prompted to select a shipping option.
 
     @Override
