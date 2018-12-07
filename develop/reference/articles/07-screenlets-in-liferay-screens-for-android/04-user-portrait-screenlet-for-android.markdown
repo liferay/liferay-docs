@@ -2,13 +2,13 @@
 
 ## Requirements [](id=requirements)
 
-- Android SDK 4.0 (API Level 15) or above
-- Liferay Portal 6.2 (CE or EE), Liferay 7.0 CE, Liferay DXP
+- Android SDK 4.1 (API Level 16) or above
+- Liferay Portal 6.2 CE/EE, Liferay CE Portal 7.0/7.1, Liferay DXP
 - Picasso library
 
 ## Compatibility [](id=compatibility)
 
-- Android SDK 4.0 (API Level 15) and above
+- Android SDK 4.1 (API Level 16) or above
 
 ## Xamarin Requirements [](id=xamarin-requirements)
 

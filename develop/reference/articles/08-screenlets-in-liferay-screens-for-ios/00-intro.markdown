@@ -64,7 +64,7 @@ reference documents:
 
 - [**Asset Display Screenlet:**](/develop/reference/-/knowledge_base/7-0/asset-display-screenlet-for-ios) 
   Displays an asset. Currently, this Screenlet can display Documents and Media 
-  Library files (`DLFileEntry` entities), blogs articles (`BlogsEntry` 
+  Library files (`DLFileEntry` entities), blog articles (`BlogsEntry` 
   entities), and web content articles (`WebContent` entities). You can also use 
   it to display custom assets. 
 

@@ -2,13 +2,13 @@
 
 ## Requirements [](id=requirements)
 
--   Xcode 9.0
+-   Xcode 9.3 or above
 -   iOS 11 SDK
--   Liferay Portal CE 7.0, or Liferay DXP 
--   Liferay Screens Compatibility Plugin (for 
-    [Liferay Portal CE 7.0](http://www.liferay.com/marketplace/-/mp/application/54365664) 
-    or 
-    [Liferay DXP](http://www.liferay.com/marketplace/-/mp/application/54369726)). 
+-   Liferay Portal 6.2 CE/EE, Liferay CE Portal 7.0/7.1, Liferay DXP
+-   Liferay Screens Compatibility app
+    ([CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
+    [EE/DXP](http://www.liferay.com/marketplace/-/mp/application/54369726)). 
+    This app is preinstalled in Liferay CE Portal 7.0/7.1 and Liferay DXP. 
 
 ## Compatibility [](id=compatibility)
 

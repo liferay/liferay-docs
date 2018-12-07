@@ -21,15 +21,15 @@ Screens apps on iOS 9 and above.
 
 Liferay Screens for iOS requires the following software: 
 
-- Xcode 9 or newer
-- iOS 11 SDK
-- [CocoaPods](http://cocoapods.org) 1 or newer
-- [Liferay Portal 6.2 CE/EE, 7.0 CE, Liferay DXP](http://www.liferay.com/downloads/liferay-portal/available-releases)
-- Liferay Screens Compatibility Plugin 
-  ([CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
-  [EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
-  depending on your portal edition). This app is preinstalled in Liferay 7.0 CE 
-  and Liferay DXP instances. 
+-   Xcode 9.3 or newer
+-   iOS 11 SDK
+-   [CocoaPods](http://cocoapods.org) 1 or newer
+-   [Liferay Portal 6.2 CE/EE, Liferay CE Portal 7.0/7.1, or Liferay DXP](http://www.liferay.com/downloads/liferay-portal/available-releases)
+-   Liferay Screens Compatibility Plugin 
+    ([CE](http://www.liferay.com/marketplace/-/mp/application/54365664) or 
+    [DXP/EE](http://www.liferay.com/marketplace/-/mp/application/54369726), 
+    depending on your portal edition). This app is preinstalled in Liferay CE 
+    Portal 7.0/7.1 CE and Liferay DXP. 
 
 ## Securing JSON Web Services [](id=securing-json-web-services)
 
@@ -66,11 +66,11 @@ follow these steps:
         # the rest of your podfile
 
     Note that Liferay Screens and some of its dependencies aren't compatible 
-    with Swift 3.2. If your iOS project is compiled in Swift 3.2, then your 
-    `Podfile` must specify Screens and those dependencies for compilation in 
-    Swift 4. The `post_install` code in the following `Podfile` does this. You 
-    must therefore use this `Podfile` if you want to use Screens in a Swift 3.2 
-    app: 
+    with Swift 3.2 or Swift 4.0. If your iOS project is compiled in Swift 3.2 or 
+    Swift 4.0, then your `Podfile` must specify Screens and those dependencies 
+    for compilation in Swift 4.2. The `post_install` code in the following 
+    `Podfile` does this. You must therefore use this `Podfile` if you want to 
+    use Screens in a Swift 3.2 or Swift 4.0 app: 
 
     	source 'https://github.com/CocoaPods/Specs.git'
 
@@ -95,7 +95,7 @@ follow these steps:
           installer.pods_project.targets.each do |target|
             if incompatiblePods.include? target.name
               target.build_configurations.each do |config|
-                config.build_settings['SWIFT_VERSION'] = '4.0'
+                config.build_settings['SWIFT_VERSION'] = '4.2'
               end
             end
             target.build_configurations.each do |config|
@@ -139,8 +139,9 @@ communicating with your @product@ instance. As an example, refer to
 The values you need to specify in your `liferay-server-context.plist` are:
 
 - `server`: Your @product@ instance's URL.
-- `version`: Your @product@ instance's version. Supported values are `70` for
-  @product-ver@, and `62` for Liferay Portal 6.2.
+- `version`: Your @product@ instance's version. Supported values are `71` for
+  Liferay CE Portal 7.1 or Liferay DXP 7.1, `70` for Liferay CE Portal 7.0 or 
+  Liferay DXP 7.0, and `62` for Liferay Portal 6.2 CE/EE.
 - `companyId`: Your @product@ instance's identifier. You can find this value in
   the *Instance ID* column of *Control Panel* &rarr; *Portal Instances*.
 - `groupId`: The ID of the default site you want Screens to
