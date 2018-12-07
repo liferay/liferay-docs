@@ -1,7 +1,7 @@
 # Using @product@'s Macros in Your Theme [](id=using-liferays-macros-in-your-theme)
 
 [Macros](https://freemarker.apache.org/docs/ref_directive_macro.html) 
-let you assign theme template fragments to a variable. This keeps your theme 
+can assign theme template fragments to a variable. This keeps your theme 
 templates from becoming cluttered and makes them easier to read. @product@ 
 defines several macros in 
 [`FTL_Liferay.ftl` template](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/portal-template/portal-template-freemarker/src/main/resources/FTL_liferay.ftl) 
@@ -10,10 +10,10 @@ standard portlets, and more. @product@ also exposes its taglibs as FreeMarker
 macros. See the corresponding 
 [taglib tutorial](/develop/tutorials/-/knowledge_base/7-1/front-end-taglibs) 
 for more information on using the taglib in your FreeMarker templates. This 
-tutorial shows how to use @product@'s macros in your FreeMarker theme templates. 
+tutorial shows how to use macros in your FreeMarker theme templates. 
 
 Follow these steps:
-    
+
 1.  Select one of the macros shown in the table below:
 
     | Macro | Parameters | Description | Example |
@@ -62,7 +62,7 @@ Follow these steps:
           ) 
         />
         
-    You can also pass multiple portlet preferences in an Object, as shown in the 
+    You can also pass multiple portlet preferences in an object, as shown in the 
     example below for the Navigation Menu portlet:
 
         <#assign secondaryNavigationPreferencesMap = 
@@ -91,8 +91,8 @@ set the portlet preference manually, and then check the values in the
 configure. 
 
 Another approach is to search each app in your bundle for the keyword 
-`preferences--`. This returns some of the app's JSPs that have the portlet 
-preferences defined for the portlet. 
+`preferences--`. This returns app JSPs that have the portlet preferences
+defined for the portlet. 
 
 $$$
 
