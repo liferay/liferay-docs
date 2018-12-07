@@ -84,12 +84,11 @@ by using `nohup` or something similar.
 that machine. 
 
 Since DB Upgrade Tool 2.0.1 (included in Liferay Portal CE 7.1 GA2 and
-downloadable from customer portal for EE subscribers), the upgrade process
-continues on the server even if you lose connection to it. If you lose
-connection, reconnect and monitor upgrade status via the log (default log file
-is `upgrade.log`). If you're using an earlier version of @product-ver@ and
-upgrade execution is interrupted, check your log file for where execution
-stopped. 
+downloadable from help center for EE subscribers), the upgrade process continues
+on the server even if you lose connection to it. If you lose connection,
+reconnect and monitor upgrade status via the log (default log file is
+`upgrade.log`). If you're using an earlier version of @product-ver@ and upgrade
+execution is interrupted, check your log file for where execution stopped. 
 
 - If execution stopped during an upgrade process for Core 7.1 or higher, or any
   module upgrade process, restart the upgrade tool to continue the upgrade from
