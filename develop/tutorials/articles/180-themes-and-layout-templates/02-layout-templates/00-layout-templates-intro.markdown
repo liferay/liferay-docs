@@ -2,7 +2,7 @@
 
 Layout templates define how content can be placed on a page. @product@ includes 
 several default layout templates out-of-the-box that you can use to organize 
-content on your site pages:
+content on your pages:
 
 ![Figure 1: There are many default layout templates to choose from.](../../../images/page-select-layout.png)
 
