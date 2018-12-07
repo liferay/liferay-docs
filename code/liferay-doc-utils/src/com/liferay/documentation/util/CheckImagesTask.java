@@ -70,9 +70,13 @@ public class CheckImagesTask extends Task {
 			File[] articleDirFiles = articleDir.listFiles();
 			List<File> articles = new ArrayList<File>();
 
-			if ((!articleDir.exists() || !articleDir.isDirectory())) {
-				throw new BuildException("Missing articles directory " +
-						articleDir.getAbsolutePath());
+			if (!articleDir.exists()) {
+				if (!dirType.contains("dxp")) {
+					throw new BuildException("FAILURE - no articles directory " + articleDir);
+				}
+				else {
+					continue;
+				}
 			}
 		
 			Queue<File> q = new LinkedList<File>();

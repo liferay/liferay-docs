@@ -165,7 +165,7 @@ table td {
             <strong>Liferay Version</strong>
         </td>
         <td class="second-column">
-            <strong>6.1.x</strong>
+            <strong>6.x</strong>
         </td>
         <td class="third-column">
             <strong>7.0.x</strong>
