@@ -34,8 +34,13 @@ String productType = _productType;
 			System.out.println("Numbering images for files in "
 					+ articleDir.getPath() + " ...");
 
-			if (!articleDir.exists() || !articleDir.isDirectory()) {
-				throw new BuildException("FAILURE - bad chapters directory " + articleDir);
+			if (!articleDir.exists()) {
+				if (!dirType.contains("dxp")) {
+					throw new BuildException("FAILURE - no articles directory " + articleDir);
+				}
+				else {
+					continue;
+				}
 			}
 
 			File[] articleDirFiles = articleDir.listFiles();
