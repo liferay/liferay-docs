@@ -1,8 +1,8 @@
-# Embedding Widgets in Page Fragments
+# Embedding Widgets in Page Fragments [](id=embedding-widgets-in-page-fragments)
 
 You can embed both a selection of Liferay widgets and your own custom widgets in Page Fragments. For a more information on embedding custom widgets, see the [Fragment Specific Tags](/develop/tutorials/-/knowledge_base/7-1/fragment-specific-tags) tutorial.
 
-## Embedding Liferay Widgets
+## Embedding Liferay Widgets [](id=embedding-liferay-widgets)
 
 Many Liferay widgets can be embedded in Page Fragments. Each embeddable widget
 has a specific tag for use in fragments which looks like `<lfr-widget-[widget-name]>`. When you embed the widget, the complete opening and closing tags must be used like this:
