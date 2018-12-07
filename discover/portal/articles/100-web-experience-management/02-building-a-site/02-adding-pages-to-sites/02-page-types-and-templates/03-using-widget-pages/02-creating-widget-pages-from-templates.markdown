@@ -92,11 +92,11 @@ You can read more about staging in the
 
 ## Sharing Widget Page Templates [](id=sharing-widget-page-templates)
 
-When importing pages to a new site or environment, you will also need to import 
-any templates associated with those pages. Generally the templates will be 
-automatically included when an associated page is exported, but if it's not you 
-can export the template collection separately so that the page can be imported 
-to the new environment. To export page templates use the following process:
+When importing pages to a new site or environment, you must also import
+templates associated with those pages. Generally templates are
+included automatically when an associated page is exported, but if not you 
+can export the template collection separately so the page can be imported 
+to the new environment. To export page templates, 
 
 1.  Go to *Site Management* &rarr; *Build* &rarr; *Pages*.
 
@@ -106,8 +106,8 @@ to the new environment. To export page templates use the following process:
     (![Options](../../../../../../images/icon-options.png)) &rarr; 
     *Export/Import*.
 
-4.  On the *Export/Import* page you can choose whether to export configuration 
-    data and change which Collections and templates are being exported.
+4.  On the *Export/Import* page you can choose to export configuration data and
+    change which Collections and templates are being exported.
 
 5.  When you're done configuring the export, click *Export* and save the 
     exported LAR file.
@@ -121,10 +121,11 @@ to the new environment. To export page templates use the following process:
 
 8.  Select the *Import* tab.
 
-9.  Upload the LAR with your template data. Again, if the LAR contains 
-    additional content that you don't want to import you can deselect that here.
+9.  Upload the LAR with your template data. If the LAR contains 
+    additional content you don't want to import, you can deselect it.
 
-Once the template has been imported, the page can now be imported normally to 
-your new environment. For more information on exporting/importing content, 
-visit the [Importing/Exporting Sites and Content](/discover/portal/-/knowledge_base/7-1/importing-exporting-pages-and-content) article. 
+Once the template has been imported, the page can be imported normally to your
+new environment. For more information on exporting/importing content, visit the
+[Importing/Exporting Sites and Content](/discover/portal/-/knowledge_base/7-1/importing-exporting-pages-and-content)
+article. 
 
