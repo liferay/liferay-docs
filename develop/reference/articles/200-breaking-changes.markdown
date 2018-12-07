@@ -643,7 +643,8 @@ Liferay Portal 7.1 CE GA1 provides the Portlet 3.0 API dependency in the runtime
 classpath. Previous versions provided the Portlet 2.0 API.
 
 Full support for Portlet 3.0 will not be available until Liferay Portal 7.1 CE
-GA2 is released.
+GA4 is released. This will serve as a developer preview for the technology until
+it's officially promoted in Liferay Portal 7.2.
 
 #### Who is affected? [](id=who-is-affected-13)
 
