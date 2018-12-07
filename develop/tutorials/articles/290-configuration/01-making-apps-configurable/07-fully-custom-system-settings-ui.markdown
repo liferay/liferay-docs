@@ -1,4 +1,4 @@
-# Configuration Form Renderer
+# Configuration Form Renderer [](id=configuration-form-renderer)
 
 There are various approaches to customizing the auto-generated System Settings
 UI for your configurable application. To replace an application's
@@ -74,7 +74,7 @@ with these contents:
 
 Next implement the `ConfigurationFormRenderer`.
 
-## Implementing a `ConfigurationFormRenderer`
+## Implementing a `ConfigurationFormRenderer` [](id=implementing-a-configurationformrenderer)
 
 First create the component and class declarations. Set the `service` property
 to `ConfigurationFormRenderer.class`:
