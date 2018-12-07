@@ -242,7 +242,7 @@ Follow these steps to create the search results JSP:
 Good work! The Guestbook portlet now supports search! Now your users can find
 those Guestbook Entries they were looking for. 
 
-![Figure x: The Guestbook Application now supports searching for indexed Guestbook Entries.](../../images/guestbook-portlet-search-conclusion.png)
+![Figure 2: The Guestbook Application now supports searching for indexed Guestbook Entries.](../../../../images/guestbook-portlet-search-conclusion.png)
 
 Once indexing is in place, the asset framework can be added to the Guestbook
 application. It provides functionality that's shared across different types of
