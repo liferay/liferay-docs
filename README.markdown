@@ -50,6 +50,10 @@ GitHub.
     </tr>
     <tr>
     <td>&nbsp;master&nbsp;</td>
+    <td>&nbsp;7.2</td>
+    </tr>
+    <tr>
+    <td>&nbsp;7.1.x&nbsp;</td>
     <td>&nbsp;7.1</td>
     </tr>
     <tr>
