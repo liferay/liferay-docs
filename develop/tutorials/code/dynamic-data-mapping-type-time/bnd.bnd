@@ -1,5 +1,0 @@
-Bundle-Name: Liferay Dynamic Data Mapping Type Time
-Bundle-SymbolicName: com.liferay.dynamic.data.mapping.type.time
-Bundle-Version: 1.0.0
-Liferay-JS-Config: /META-INF/resources/config.js
-Web-ContextPath: /dynamic-data-mapping-type-time

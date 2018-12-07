@@ -1,4 +1,0 @@
-Bundle-Name: my-log-text-button
-Bundle-SymbolicName: com.liferay.docs.portlet
-Bundle-Version: 1.0.0
-Web-ContextPath: /my-button-portlet-project
