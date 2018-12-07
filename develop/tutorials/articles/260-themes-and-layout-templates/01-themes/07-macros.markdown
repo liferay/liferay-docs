@@ -1,7 +1,17 @@
 # Macros [](id=freemarker-macros)
 
 Macros let you assign theme template fragments to a variable. This keeps your 
-theme templates from becoming cluttered and makes them easier to read. 
+theme templates from becoming cluttered and makes them easier to read. @product@ 
+defines several FreeMarker macros in 
+[`FTL_liferay.ftl` template](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/foundation/portal-template/portal-template-freemarker/src/main/resources/FTL_liferay.ftl) 
+that you can use in your FreeMarker theme templates to include theme resources, 
+standard portlets, and more. Likewise, Velocity macros are available in 
+[`VM_liferay.vm` template](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/foundation/portal-template/portal-template-velocity/src/main/resources/VM_liferay.vm) 
+@product@ also exposes its taglibs as FreeMarker macros. See the corresponding 
+[taglib tutorial](/develop/tutorials/-/knowledge_base/7-0/front-end-taglibs) 
+for more information on using the taglib in your FreeMarker templates. This 
+tutorial shows how to use @product@'s macros in your FreeMarker and Velocity 
+theme templates.  
 
 Note that **Velocity templates are supported, but deprecated as of Liferay 
 Portal CE 7.0 and Liferay DXP**. We recommend that you convert your Velocity 

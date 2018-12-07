@@ -1,23 +1,28 @@
 # Using the Liferay Util Taglib [](id=using-the-liferay-util-taglib)
 
-The `<liferay-util>` taglib is used to pull in other resources into a portlet 
+The Liferay Util taglib is used to pull in other resources into a portlet 
 or theme, it can be used to dictate which resources need to be inserted at the 
 bottom or top of the HTML source.
 
 ## Using Liferay Util Tags [](id=using-liferay-util-tags)
 
-A list of the available `<liferay-util>` tags can be found [here](@platform-ref@/7.0-latest/taglibs/util-taglib/). 
-To use the Liferay-Util taglib library you must add the following declaration to
-your JSP:
+A list of the available Liferay Util tags can be found [here](@platform-ref@/7.0-latest/taglibs/util-taglib/). 
+To use the Liferay Util taglib library in your apps, you must add the following 
+declaration to your JSP:
 
     <%@ taglib prefix="liferay-util" uri="http://liferay.com/tld/util" %>
+    
+The Liferay Util taglib is also available via a macro for your FreeMarker theme 
+and web content templates. Follow this syntax:
+
+    <@liferay_util["tag-name"] attribute="string value" attribute=10 />
 
 Each taglib has a list of attributes that can be passed to the tag. Some of 
 these are required and some are optional. See the [taglibdocs](@platform-ref@/7.0-latest/taglibs/util-taglib/liferay-util/tld-summary.html) 
 to view the requirements for each tag.
 
-Since each of the `<liferay-util>` taglibs is unique, each tag is covered
-briefly in the sections that follow.
+Since each of the Liferay Util taglibs is unique, each tag is covered briefly in 
+the sections that follow.
 
 ### Using Liferay Util Body Bottom [](id=using-liferay-util-body-bottom)
 
