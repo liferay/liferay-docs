@@ -38,13 +38,11 @@ portlet class). Now you need your model.
     and sets their values:
 
         public Entry() {
-           this.name = null;
-           this.message = null;
         }
 
         public Entry(String name, String message) {
-           setName(name);
-           setMessage(message);
+           this.name = name;
+           this.message = message;
         }
 
 Your completed model class looks like this:
