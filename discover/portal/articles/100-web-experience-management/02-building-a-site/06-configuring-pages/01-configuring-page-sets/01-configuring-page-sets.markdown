@@ -15,7 +15,10 @@ developers and are easily installed using Liferay Marketplace.
 You can apply themes to the entire Site or to individual pages. For the Site,
 go to *Pages* &rarr; the Site (public or private), and click the Gear icon. For
 individual pages, click *Configure* &rarr; *Define a specific look and feel for
-this page* option under the page's *Look and Feel* category. 
+this page* option under the page's *Look and Feel* category. See the 
+[Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-1/themes-and-layout-templates) 
+tutorials section for information on creating and developing your own custom 
+themes.
 
 ![Figure 3: You can define a specific look and feel for a page.](../../../../../images/define-a-specific-look-and-feel.png)
 

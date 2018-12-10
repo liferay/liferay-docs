@@ -40,7 +40,7 @@ To get some feedback from your Liferay instance on registering your
 application's services, configure the instance to log the application's 
 informational messages (i.e., its `INFO ...` messages). See the tutorials on
 Liferay's 
-[logging system](/discover/portal/-/knowledge_base/7-1/server-administration#log-levels) 
+[logging system](/discover/portal/-/knowledge_base/7-1/server-administration) 
 for details. 
 
 To test Liferay's JSON web service registration process, add a simple method to
@@ -186,5 +186,3 @@ excluded from the API.
 [Invoking JSON Web Services](/develop/tutorials/-/knowledge_base/7-1/invoking-json-web-services)
 
 [JSON Web Services Invoker](/develop/tutorials/-/knowledge_base/7-1/json-web-services-invoker)
-
-[JSON Web Services Invocation Examples](/develop/tutorials/-/knowledge_base/7-1/json-web-services-invocation-examples)

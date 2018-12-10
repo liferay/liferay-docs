@@ -21,6 +21,14 @@ Follow these steps to change your base theme:
 
     ![Figure 2: You can extend the styled or unstyled base theme, a globally installed theme, or a theme published to the npm registry.](../../../../images/theme-dev-changing-base-themes-gulp-extend-base-theme-choice.png)
 
+    +$$$
+
+    **Note:** The Classic theme is an implementation of an existing base theme 
+    and is therefore not meant to be extended. Extending Liferay's Classic theme 
+    is strongly discouraged.
+
+    $$$
+
 3.  Your theme's `package.json` contains the updated base theme configuration :
 
         {

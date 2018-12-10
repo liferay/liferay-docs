@@ -68,9 +68,9 @@ Follow these steps to configure your project to use the liferay-npm-bundler:
 
     If you don't have a portlet already, create an empty MVC portlet project. 
     For convenience, you can use 
-    [Blade CLI](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-1/installing-blade-cli)
+    [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/installing-blade-cli)
     to create an empty portlet with the 
-    [mvc portlet blade template](https://dev.liferay.com/develop/reference/-/knowledge_base/7-1/using-the-mvc-portlet-template).
+    [mvc portlet blade template](/develop/reference/-/knowledge_base/7-1/using-the-mvc-portlet-template).
 
     If you don't have a `package.json` file, you can run `npm init -y` to create 
     an empty one based on the project directory's name. 
@@ -208,6 +208,17 @@ for the example widget is shown below:
             - require('core-js/es6/reflect');
             - require('core-js/es7/reflect');
             - require('zone-js/dist/zone');
+
++$$$
+
+**Note:** By default, the AMD Loader times out in seven seconds. Since Liferay 
+DXP Fix Pack 3 and Liferay Portal 7.1 CE GA 2, you can configure this value 
+through System Settings. Open the Control Panel and navigate to *Configuration* 
+&rarr; *System Settings* &rarr; *PLATFORM* &rarr; *Infrastructure*, and select 
+*JavaScript Loader*. Set the *Module Definition Timeout* configuration to the 
+time you want and click *Save*.
+
+$$$
 
 Now you know how to use the liferay-npm-bundler to bundle your npm-based 
 portlets for the Liferay AMD Loader!

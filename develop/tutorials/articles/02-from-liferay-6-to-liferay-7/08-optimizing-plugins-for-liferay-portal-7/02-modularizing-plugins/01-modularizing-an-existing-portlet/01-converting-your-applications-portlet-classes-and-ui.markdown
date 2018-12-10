@@ -225,7 +225,7 @@ Here are the steps for creating the folder structure:
     [`default.xml`](https://github.com/liferay/liferay-portal/blob/master/modules/apps/directory/directory-web/src/main/resources/resource-actions/default.xml).
 
     Note that 
-    [the permissions API has changed in 7.1](https://dev.liferay.com/develop/tutorials/-/knowledge_base/7-1/defining-application-permissions);
+    [the permissions API has changed in 7.1](/develop/tutorials/-/knowledge_base/7-1/defining-application-permissions);
     adapt your permissions helpers accordingly. 
 
 12. Add your language keys to the

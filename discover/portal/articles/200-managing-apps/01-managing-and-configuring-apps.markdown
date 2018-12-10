@@ -1,15 +1,64 @@
 # Managing and Configuring Apps [](id=managing-and-configuring-apps)
 
+@product@ is a platform for deploying apps that comprise modules and components.
+It has conveniences for managing apps and app management best practices for
+maximizing stability.
+[Best practices in production environments](#managing-apps-in-production)
+involve stopping the server before applying changes, but in cases where this
+isn't feasible, you can "hot deploy" changes several different ways.
+
 There are two places in the Control Panel where you can manage and configure 
-apps: the App Manager and the Components listing. The App Manager manages apps
-in the OSGi framework. You can use the App Manager to install, activate,
-deactivate, and delete apps. You can manage apps at the app suite, app, and OSGi
-module levels. 
+apps: the
+[App Manager](#using-the-app-manager)
+and the
+[Components listing](#using-the-components-listing).
+The App Manager manages apps in the OSGi framework. You can use the App Manager
+to install, activate, deactivate, and delete apps. You can manage apps at the
+app suite, app, and OSGi module levels. 
 
 The Components listing views and manages apps at the OSGi component level. It
 differs from the App Manager by showing apps by type (portlet, theme, and layout
 template), and setting app permissions. You can use the Components listing to
-activate and deactivate apps, but it can't install or delete apps. 
+activate and deactivate apps, but it can't install or delete apps.
+
+Start with learning app management best practices in production, or wherever you
+want to maximize stability. 
+
+## Managing Apps in Production [](id=managing-apps-in-production)
+
+Not all apps are designed to be "hot deployed"---deployed while the server is
+running. Deploying that way can cause instabilities, such as class loading leaks
+and memory leaks. On production systems, avoid "hot deploying" apps and
+configurations whenever possible.
+
+If you're installing an app or a component configuration on a production system
+and stopping the server is feasible, follow these steps: 
+
+1.  Stop your server.
+
+2.  Copy your app (`.lpkg`, module `.jar`, or plugin `.war`) to your `[Liferay 
+Home]/deploy` folder, or copy your component configuration (`.config` file) to
+the `[Liferay Home]/osgi/configs` folder. The
+[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
+folder is typically the app server's parent folder. 
+
+3.  Start your server. 
+
+If you're running in cluster, follow the instructions for
+[updating a cluster](/discover/deployment/-/knowledge_base/7-1/updating-a-cluster).
+
++$$$
+
+**Warning:** Avoid repeatedly "hot deploying" new versions of apps that aren't 
+designed for "hot deployment". 
+
+$$$
+
+If it's not feasible to stop your server or you're app *is* designed for "hot
+deployment", @product@ provides several "hot deployment" conveniences. Except
+where stopping/starting the server is explicitly mentioned, the practices
+described in the rest of this article and in the following articles involve "hot
+deployment". 
 
 ## Using the App Manager [](id=using-the-app-manager)
 

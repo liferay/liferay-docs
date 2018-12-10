@@ -7,7 +7,7 @@ default settings.
 Among the measurement units defined, two---one for weight and one for
 distance---must be designated as *primary units*. The primary units are the only
 units used by the catalog and by the 
-[variable-rate shipping method](/web/emporio/documentation/-/knowledge_base/1-0/variable-rate-shipping). 
+[variable-rate shipping method](/web/commerce/documentation/-/knowledge_base/1-0/variable-rate-shipping). 
 
 If you use Courier Shipping to integrate your shipping cost calculations with
 a shipping provider's system, you must have the provider's units defined as

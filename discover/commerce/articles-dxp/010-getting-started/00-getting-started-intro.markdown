@@ -9,7 +9,7 @@ built with @product-ver@ can be integrated seamlessly with a store built with
 ## Overview [](id=overview)
 
 @commerce@ contains a 
-[catalog management](/web/emporio/documentation/-/knowledge_base/1-0/catalog-management)
+[catalog management](/web/commerce/documentation/-/knowledge_base/1-0/catalog-management)
 system that supports both physical and virtual products. The catalog stores
 a wide range of product data---product variations, pricing, images,
 specifications---and makes it readily available to the store's customer-facing
@@ -18,7 +18,7 @@ pages.
 ![Figure 1: The catalog stores inventory levels, category assignments, and other product information.](../../images/catalog.png)
 
 @commerce@ includes a wide range of tools for setting up a 
-[storefront](/web/emporio/documentation/-/knowledge_base/1-0/setting-up-a-storefront).
+[storefront](/web/commerce/documentation/-/knowledge_base/1-0/setting-up-a-storefront).
 New search tools, for instance, are designed specifically for product catalogs,
 while customizable widgets make it easy to add common UI elements---such as
 *Checkout* and *View Cart*---to a page.
@@ -27,7 +27,7 @@ while customizable widgets make it easy to add common UI elements---such as
 
 @commerce@ is optimized for business-to-business (B2B) transactions, combining
 modern site experiences with features that address B2B needs. 
-[Beryl Customer Portal](/web/emporio/documentation/-/knowledge_base/1-0/beryl-customer-portal)
+[Beryl Customer Portal](/web/commerce/documentation/-/knowledge_base/1-0/beryl-customer-portal)
 serves the needs of buyers with approval processes to observe before
 making purchases. When buyers places an order, @commerce@ can send an automated
 email to their managers, prompting them to approve the order so it can be
@@ -37,26 +37,26 @@ account managers.
 
 In addition, @commerce@ features a user control system integrated with
 @product@'s Roles and permissions. 
-[User segmentation](/web/emporio/documentation/-/knowledge_base/1-0/user-segmentation)
+[User segmentation](/web/commerce/documentation/-/knowledge_base/1-0/user-segmentation)
 allows pricing, catalog visibility, and other features to be precisely targeted
 to certain customers. 
 
-[Pricing](/web/emporio/documentation/-/knowledge_base/1-0/pricing) and
-[Tax](/web/emporio/documentation/-/knowledge_base/1-0/taxes) management features
+[Pricing](/web/commerce/documentation/-/knowledge_base/1-0/pricing) and
+[Tax](/web/commerce/documentation/-/knowledge_base/1-0/taxes) management features
 allow almost unlimited flexibility, with support for almost any kind of discount
 and multi-currency transaction. Meanwhile, 
-[payments](/web/emporio/documentation/-/knowledge_base/1-0/payment-methods)
+[payments](/web/commerce/documentation/-/knowledge_base/1-0/payment-methods)
 can be handled through integration with a third-party payment processor such as PayPal.
 
 ![Figure 3: Any number of different payment methods can be added.](../../images/payment-methods.png)
 
 Products can be shipped by a number of different
-[methods](/web/emporio/documentation/-/knowledge_base/1-0/shipping-methods):
+[methods](/web/commerce/documentation/-/knowledge_base/1-0/shipping-methods):
 sellers can impose a flat rate, calculate costs on the basis of weight, or
 integrate their systems closely with the rates of a shipping service, allowing
 buyers to choose directly from the services offered by, say, FedEx or UPS.
 The
-[Warehouses](/web/emporio/documentation/-/knowledge_base/1-0/warehouses)
+[Warehouses](/web/commerce/documentation/-/knowledge_base/1-0/warehouses)
 feature allows @commerce@ to track inventories at different warehouses
 separately and automatically. When an order is placed, @commerce@ determines
 which warehouse is closest to the delivery point and processes the order
@@ -103,20 +103,20 @@ Follow these steps if you have an order number that includes @commerce@:
 6.  Go to *Control Panel* &rarr; *Configuration* &rarr; *Search* and reindex all
     search indexes.
 
-## Site Initializers [](id=site-initializers)
+## Accelerators [](id=accelerators)
 
-The quickest way to get going with @commerce@ is to use a Site Initializer.
-A site initializer is a type of 
+The quickest way to get going with @commerce@ is to use an Accelerator.
+An accelerator is a type of 
 [Site Template]( /discover/portal/-/knowledge_base/7-1/building-sites-from-templates)
 that does much of the initial work of setting up a store. Creating a Site with
-a Site Initializer is an easy way to see what @commerce@ can do, and can be used
+an Accelerator is an easy way to see what @commerce@ can do, and can be used
 to get a head start on a live store: modify the theme to suit your purposes,
 replace the dummy catalog with your own data, and you're well on your way.
 
-At the time of this writing, @commerce@ ships with two site initializers.
+At the time of this writing, @commerce@ ships with two Accelerators.
 Beryl---available to subscribers only---is geared toward B2B selling, while
 Breccia models a UI similar to that used by most major retailers. Both
-initializers include a theme, a complete user interface, and a catalog populated
+Accelerators include a theme, a complete user interface, and a catalog populated
 with sample products. See 
-[Site Initializers](/web/emporio/documentation/-/knowledge_base/1-0/site-initializers)
+[Accelerators](/web/commerce/documentation/-/knowledge_base/1-0/accelerators)
 for more information.

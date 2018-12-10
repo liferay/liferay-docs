@@ -12,7 +12,17 @@ via configuration file. Whatever the reason, configuration files offer another
 configuration approach.
 
 Configuration files use the `.config` property value format defined by the 
-[Apache Felix Configuration Admin framework](http://felix.apache.org/documentation/subprojects/apache-felix-config-admin.html).
+[Apache Felix Configuration Admin framework](http://felix.apache.org/documentation/subprojects/apache-felix-config-admin.html). 
+
++$$$
+
+**Important:** Content generated using templates (e.g., FreeMarker templates and
+Application Display Templates) is cached. Cached content might not reflect
+configuration changes until the cache is invalidated (cleared). The 
+[Server Administration &rarr; Resources tab](/discover/portal/-/knowledge_base/7-1/server-administration-resources)
+provides cache clearing options.
+
+$$$
 
 +$$$
 
@@ -22,5 +32,3 @@ value's type and have multi-valued properties. The syntax described in these
 articles is for `.config` files. 
 
 $$$
-
-

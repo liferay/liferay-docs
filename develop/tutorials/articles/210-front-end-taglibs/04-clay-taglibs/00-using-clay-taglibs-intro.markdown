@@ -11,17 +11,14 @@ use Clay taglibs to avoid future compatibility issues.
 
 $$$
 
-To use the Clay taglib, add the following declaration to your JSP:
+To use the Clay taglib in your apps, add the following declaration to your JSP:
 
     <%@ taglib prefix="clay" uri="http://liferay.com/tld/clay" %>
 
-The 
-[`com.liferay.frontend.taglib.clay.sample.web` portlet](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/frontend-taglib/frontend-taglib-clay-sample-web) 
-is referenced throughout this tutorial as an example. It's included 
-out-of-the-box. Open the Control Menu and add the *Clay Sample* portlet from the 
-*Applications* &rarr; *Sample* menu to see it in action. 
+The Liferay Clay taglib is also available via a macro for your FreeMarker theme 
+templates and web content templates. Follow this syntax:
 
-![Figure 1: The Clay Sample portlet demonstrates the various types of clay components you can create with the clay taglbs.](../../../images/clay-taglib-sample-portlet.png)
+    <@clay["tag-name"] attribute="string value" attribute=10 />
 
 Clay taglibs provide the following UI components for your apps:
 

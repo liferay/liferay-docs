@@ -63,8 +63,7 @@ Collaboration apps to the Lunar Resort Site.
 
 2.  In the menu that appears, expand the *Collaboration* category.
 
-3.  Drag the *Blogs Aggregator* app from the Add Application window to the right
-    column of your page.
+3.  Drag the *Blogs Aggregator* widget onto the right column of your page.
 
 4.  Next, drag the *Wiki* app to the left column.
 

@@ -17,6 +17,14 @@ and Organizations*.
 3.  Fill out the Add User form and click *Save*. At a minimum, provide a Screen
     Name, First Name, Last Name, and Email Address for the User.
 
+    +$$$
+
+    Note: Screen names and email addresses are not interchangeable. A screen
+    name cannot contain an `@` symbol because it is used in the URL to a user's
+    private page.
+    
+    $$$
+
     The Add User functionality is split over several independent forms. Saving
     the first form creates the user, and then you'll see a success message
     saying

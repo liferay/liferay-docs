@@ -2,75 +2,27 @@
 
 The polling interval property is an optional property for all charts. It 
 specifies the time in milliseconds for the chart's data to refresh. You can 
-use this for charts that receive any kind of real time data,  a JSON file that
-changes periodically. This ensures that the chart is up to date, reflecting the
-most recent data. 
+use this for charts that receive any kind of real time data, such as a JSON file 
+that changes periodically. This ensures that the chart is up to date, reflecting 
+the most recent data. This tutorial shows how to configure your portlet's chart 
+to reflect real time data. 
 
-The example configuration below uses the `setPollingInterval()` method to 
-specify a 2 second refresh rate for the line chart's data:
+Use the `setPollingInterval()` method for your chart's configuration object to 
+specify the refresh rate. An example `view.jsp` configuration is shown below:
 
-Java sample data:
+    <%
+    LineChartConfig _pollingIntervalLineChartConfig = new LineChartConfig();
 
-    import com.liferay.frontend.taglib.chart.model.point.line.LineChartConfig;
-    import com.liferay.frontend.taglib.chart.model.MultiValueColumn;
+    _pollingIntervalLineChartConfig.put("data", "/foo.json");
+    
+    _pollingIntervalLineChartConfig.setPollingInterval(2000);
 
-    public class ChartSampleDisplayContext {
-
-        public ChartSampleDisplayContext() {
-          _initPollingIntervalLineChartConfig();
-        }
-
-        public LineChartConfig getPollingIntervalLineChartConfig() {
-      		return _pollingIntervalLineChartConfig;
-      	}
-
-        private void _initPollingIntervalLineChartConfig() {
-          _pollingIntervalLineChartConfig.addColumns(
-            new MultiValueColumn("data1", 100, 20, 30),
-            new MultiValueColumn("data2", 20, 70, 100));
-        
-          _pollingIntervalLineChartConfig.setPollingInterval(2000);
-        }
-        
-        private LineChartConfig _pollingIntervalLineChartConfig = 
-        new LineChartConfig();
-
-    }
-
-JSP:
+    %>
 
     <chart:line
-      componentId="polling-interval-line-chart"
-      config="<%= chartSampleDisplayContext.getPollingIntervalLineChartConfig() %>"
-      id="polling-interval-line-chart"
+    	componentId="polling-interval-line-chart"
+    	config="<%= _pollingIntervalLineChartConfig %>"
     />
-
-To see this in action, you can add the Chart Sample Widget to the page. The 
-polling interval line chart uses the script below to update the chart's data 
-after 2 seconds: 
-
-    <aui:script>
-    	Liferay.componentReady('polling-interval-line-chart').then(
-    		function(chart) {
-    			chart.data = function() {
-    				return Promise.resolve(
-    					[
-    						{
-    							data: 
-                  [Math.random() * 100, Math.random() * 100, Math.random() * 100],
-    							id: 'data1'
-    						},
-    						{
-    							data: 
-                  [Math.random() * 100, Math.random() * 100, Math.random() * 100],
-    							id: 'data2'
-    						}
-    					]
-    				);
-    			};
-    		}
-    	);
-    </aui:script>
 
 ![Figure 1: The polling interval property lets you refresh charts at a given interval to reflect real time data.](../../../images/chart-polling-interval.gif)
 

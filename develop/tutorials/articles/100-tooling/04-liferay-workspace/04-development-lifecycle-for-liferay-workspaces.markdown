@@ -36,10 +36,10 @@ folder set by the `liferay.workspace.wars.dir` property in the
 that create WAR-style projects, which should be stored in the `wars` folder.
 
 To learn more about creating projects in a workspace using Blade CLI or Liferay
-@ide@, visit the
+Dev Studio, visit the
 [Creating Projects with Blade CLI](/develop/tutorials/-/knowledge_base/7-1/creating-projects-with-blade-cli)
 and
-[Creating Modules with Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/creating-modules-with-liferay-ide)
+[Creating Modules with Liferay Dev Studio](/develop/tutorials/-/knowledge_base/7-1/creating-modules-with-liferay-ide)
 tutorials, respectively.
 
 ## Building Projects [](id=building-projects)
@@ -158,6 +158,9 @@ To generate a @product@ bundle with a specific environment configuration to the
 workspace's `/bundles` folder, run
 
     ./gradlew initBundle -Pliferay.workspace.environment=[ENVIRONMENT]
+
+    <!-- `blade server init` is not able to pass the environment param in
+    currently. This new feature is requested in BLADE-343. -Cody -->
 
 To generate a distributable @product@ installation to the workspace's `/build`
 folder, run

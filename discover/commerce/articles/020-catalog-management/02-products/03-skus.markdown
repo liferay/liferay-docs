@@ -13,7 +13,7 @@ variant.
 A product must have a different SKU for each of its variants.  A product has
 different variants if it has been assigned options which are SKU contributors
 (such as color, in the figure above---see
-[Options](/web/emporio/documentation/-/knowledge_base/1-0/options) for
+[Options](/web/commerce/documentation/-/knowledge_base/1-0/options) for
 details). Giving a SKU to each variant allows the inventory engine to track each
 variant individually. It also lets you set a unique price for each variant.
 
@@ -31,7 +31,7 @@ inventory are affected.
 $$$
 
 Since the product variant a SKU represents is defined by a combination of
-[options](/web/emporio/documentation/-/knowledge_base/1-0/options),
+[options](/web/commerce/documentation/-/knowledge_base/1-0/options),
 all options should be finalized before creating or editing SKUs.
 
 ## Creating a SKU [](id=creating-a-sku)
@@ -78,7 +78,7 @@ created. It contains the following fields:
 **Global Trade Item Number, Manufacturer Part Number:** Enter a trade item
 number (such as an ISBN) or a part number if applicable. These numbers can be
 displayed on the product page (see 
-[Displaying Product Pages](/web/emporio/documentation/-/knowledge_base/1-0/displaying-product-pages))
+[Displaying Product Pages](/web/commerce/documentation/-/knowledge_base/1-0/displaying-product-pages))
 and used in search
 results. 
 
@@ -100,7 +100,7 @@ The *Pricing* tab contains three fields:
 **Price:** Set the SKU's base selling price.
 
 **Promo Price:** Enter a promotional rate that overrides the base price. See
-[Pricing](/web/emporio/documentation/-/knowledge_base/1-0/pricing) for
+[Pricing](/web/commerce/documentation/-/knowledge_base/1-0/pricing) for
 more on overriding the base price.
 
 **Cost:** Enter seller's costs to help track margins.
@@ -120,13 +120,13 @@ a price list, go to the *Price Lists* tab:
     segment.
 
 For more information on creating and using price lists, see 
-[Price Lists](/web/emporio/documentation/-/knowledge_base/1-0/price-lists). 
+[Price Lists](/web/commerce/documentation/-/knowledge_base/1-0/price-lists). 
 
 ### Inventory [](id=inventory)
 
 The *Inventory* tab has one field for each warehouse you have in use (if you
 use more than one warehouse, see
-[Warehouses](/web/emporio/documentation/-/knowledge_base/1-0/warehouses)).
+[Warehouses](/web/commerce/documentation/-/knowledge_base/1-0/warehouses)).
 Enter the number in stock at each warehouse. The quantity is adjusted
 automatically as orders are processed.
 
@@ -135,6 +135,6 @@ automatically as orders are processed.
 A product's shipping rate may be adjusted based on its weight or dimensions,
 which are set in *Configuration* tab &rarr; *Shipping*. To override these
 dimensions for a single SKU, enter it the SKU's *Shipping Adjustment* tab. See 
-[Configuration](/web/emporio/documentation/-/knowledge_base/1-0/configuration#shipping) and 
-[Shipping Methods](/web/emporio/documentation/-/knowledge_base/1-0/shipping-methods) 
+[Configuration](/web/commerce/documentation/-/knowledge_base/1-0/configuration#shipping) and 
+[Shipping Methods](/web/commerce/documentation/-/knowledge_base/1-0/shipping-methods) 
 for more details.

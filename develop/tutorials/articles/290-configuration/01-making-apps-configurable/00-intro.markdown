@@ -19,7 +19,7 @@ the System Settings application in the Control Panel and categorizing the
 configuration. Subsequent tutorials show you how to 
 
 1.  Set the *scope* of the configuration. Read more about configuration scope
-    [here](/discover/portal/-/knowledge_base/7-1/configuring-liferay#configuration-scope).
+    [here](/discover/portal/-/knowledge_base/7-1/system-settings#configuration-scope).
 
 2.  Read configuration values from various contexts. 
 
@@ -73,7 +73,7 @@ application's configuration. Here are the most common configuration scopes:
 Enough with the conceptual stuff. You're ready to get started with some code. If
 you already had a portlet or service that was configurable using the traditional
 mechanisms of Liferay Portal 6.2 and before, refer to the
-[Transitioning from Portlet Preferences to the Configuration API](/develop/tutorials/-/knowledge_base/7-1/transitioning-from-portlet-preferences-to-the-configuration-api) tutorial.
+[Transitioning from Portlet Preferences to the Configuration API](/develop/tutorials/-/knowledge_base/7-0/transitioning-from-portlet-preferences-to-the-configuration-api) tutorial.
 
 ## Creating A Configuration Interface [](id=creating-a-configuration-interface)
 

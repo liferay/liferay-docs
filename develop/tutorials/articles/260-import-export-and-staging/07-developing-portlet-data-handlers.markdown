@@ -147,14 +147,10 @@ Bookmarks application.
     services in its portlet data handler; instead, it uses the
     [StagedModelRepository](@app-ref@/web-experience/latest/javadocs/com/liferay/exportimport/staged/model/repository/StagedModelRepository.html)
     framework. This is a new framework, but is a viable option when setting up
-    your portlet data handlers.
-    
-    <!-- TODO: Add back when available:
-    For more information on this, see the
-    [Using the StagedModelRepository Framework (Coming Soon)](develop/tutorials/-/knowledge_base/7-1/using-the-stagedmodelrepository-framework)
-    section. Since local services are more widely used in custom apps, this
-    tutorial covers those instead.
-    -->
+    your portlet data handlers. For more information on this, see the
+    [Providing Entity-Specific Local Services for Staging](/develop/tutorials/-/knowledge_base/7-1/providing-entity-specific-local-services-for-staging)
+    tutorial section. Since local services are more widely used in custom apps,
+    this tutorial covers those instead.
 
 6.  You must create a namespace for your entities so the Export/Import framework
     can identify your application's entities from other entities in @product@.
@@ -290,6 +286,17 @@ Bookmarks application.
 
     This method can also return a modified version of the portlet preferences if
     it contains references to data that no longer exists.
+
+    +$$$
+
+    **Note:** This is a legacy feature that was useful when deletions were not
+    propagated between Sites. This cleaned the portlet's data, allowing you to
+    see everything associated with the portlet during every publication. It's
+    unnecessary now that Staging can recognize deletions across all Sites. It's,
+    however, still offered as a feature of Staging and is implemented in
+    Liferay's Bookmarks app, so it's included here.
+
+    $$$
 
 9.  Add a method that counts the number of affected entities based on the
     current export or staging process:
