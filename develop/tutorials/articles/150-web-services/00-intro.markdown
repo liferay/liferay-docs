@@ -33,7 +33,9 @@ APIs:
 
 -   **Plain Web/REST Services:** This is the old way to build and consume web 
     services in @product@, but is still supported. For example, you can use 
-    JAX-RS, JAX-WS, or 
+    [JAX-RS](/develop/tutorials/-/knowledge_base/7-1/jax-rs), 
+    [JAX-WS](/develop/tutorials/-/knowledge_base/7-1/jax-ws), 
+    or 
     [Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder-web-services) 
     to implement plain REST or SOAP web services. 
 
