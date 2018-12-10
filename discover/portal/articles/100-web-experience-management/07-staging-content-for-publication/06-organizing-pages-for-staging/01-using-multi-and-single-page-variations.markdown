@@ -20,7 +20,19 @@ different look and feel for your pages, different applications on these pages,
 different configuration of these applications, and even different pages. One
 page can exist in just one Site page variation or in several of them. Modifying
 the layout type (e.g., Layout, Panel, Embedded, etc.) or friendly URL of a page,
-however, **does** affect every Site page variation.
+however, **does** affect every Site page variation. For example, if a page
+template is modified, those modifications are propagated to the pages configured
+to inherit changes from the template, overriding Staging's Page Variations and
+Site Pages Variations.
+
++$$$
+
+**Note:** Page templates are not recognized by the Staging framework. This means
+that existing page templates are not viewable or editable on a staged Site. If
+they're created on a staged Site, they cannot be preserved once Staging is
+disabled. You can, however, export and import page templates.
+
+$$$
 
 You'll learn about enabling page versioning next.
 
