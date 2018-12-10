@@ -7,25 +7,32 @@ that facilitates the creation of Apio REST APIs.
 
 +$$$
 
-**Note:** To install Liferay's Hypermedia REST APIs, you must be running 
-Liferay CE Portal 7.1 GA2+, or Liferay DXP 7.1 Fix Pack 3+.
+**Note:** To use Liferay's Hypermedia REST APIs, you must be running Liferay CE 
+Portal 7.1 GA3+, or Liferay DXP 7.1 Fix Pack 5+. 
 
 $$$
 
-To use Liferay's Hypermedia REST APIs, you must install them in your @product@ 
-instance. Follow these steps to do so: 
+Liferay's Hypermedia REST APIs are disabled by default. Follow these steps to 
+enable them: 
 
-1.  Download and install the Hypermedia REST APIs app from Liferay Marketplace. 
-    Be sure to install the app that matches your Liferay product (CE or DXP): 
+1.  Create the config file 
+    `com.liferay.apio.architect.internal.application.ApioApplication-default.config`. 
+    Add this code to the file:
 
-    -   [Liferay Hypermedia REST APIs - CE](https://web.liferay.com/marketplace/-/mp/application/116742743)
-    -   [Liferay Hypermedia REST APIs - DXP](https://web.liferay.com/marketplace/-/mp/application/116775839)
+        auth2.scopechecker.type="none"
+        auth.verifier.auth.verifier.BasicAuthHeaderAuthVerifier.urls.includes="*"
+        auth.verifier.auth.verifier.OAuth2RestAuthVerifier.urls.includes="*"
+        auth.verifier.guest.allowed="true"
 
-    If you need help installing the app from Marketplace, see the 
-    [documentation on using Marketplace](/discover/portal/-/knowledge_base/7-1/using-the-liferay-marketplace). 
+    Note that the last property (`auth.verifier.guest.allowed`) lets guests 
+    access public content via the APIs. To turn this off, set the property to 
+    `false`. 
 
-2.  After installing the app, test the installation by making a request to the 
-    API's root URL: 
+2.  Deploy the config file to `[Liferay Home]/osgi/configs`. Note that 
+    [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home) 
+    is typically the application server's parent folder. 
+
+3.  Test the APIs by making a request to their root URL: 
 
         curl http://localhost:8080/o/api
 
@@ -75,7 +82,7 @@ instance. Follow these steps to do so:
         }, "https://www.w3.org/ns/hydra/core#" ]
         }
 
-That's it! The Liferay Hypermedia REST APIs are now installed. 
+That's it! The Liferay Hypermedia REST APIs are now ready for use. 
 
 ## Related Topics [](id=related-topics)
 
