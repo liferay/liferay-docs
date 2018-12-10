@@ -64,7 +64,7 @@ specifying custom extensions here via [OSGi filters](https://osgi.org/javadoc/r6
 Liferay waits until those extensions are registered in the OSGi framework 
 before creating the CXF servlet and passing the extensions to the servlet. 
 
-![Figure 1: Fill out this form to create a CXF endpoint.](../../images/cxf-endpoint-form.png)
+![Figure 1: Fill out this form to create a CXF endpoint.](../../../images/cxf-endpoint-form.png)
 
 For an app to deploy JAX-WS web services, you must configure a SOAP extender.
 To configure a SOAP extender with the Control Panel, first go to *Control
@@ -96,7 +96,7 @@ to describe the SOAP service. To use a different way to describe the SOAP
 service, you can provide an OSGi filter here that selects an implementation of 
 `com.liferay.portal.remote.soap.extender.SoapDescriptorBuilder`. 
 
-![Figure 2: Fill out this form to create a SOAP extender.](../../images/soap-extenders-form.png)
+![Figure 2: Fill out this form to create a SOAP extender.](../../../images/soap-extenders-form.png)
 
 Next, you'll learn how to create endpoints and extenders programmatically. 
 
