@@ -4,6 +4,20 @@ The view/save lifecycle describes the process behind the scenes when an
 administrator applies a rule to a user segment using the User Segment Editor. 
 You'll implement that now.
 
+When the user opens the User Segment Editor, the render phase begins for the 
+rule creation. During the render phase, the HTML for the form is generated, 
+and, if necessary, the `context` map is generated with any parameters that you 
+need to create the form. Once the HTML is successfully retrieved and the user 
+has set the values and clicked *Save*, the action phase begins.
+        
+When the action phase begins, the `processRule(...)` method is invoked. It 
+contains a parameter named `values` which contains the user defined values from 
+the form. The `processRule` method must also contain the service calls to store 
+values from the form.Once the rule processing ends, the form is reloaded and 
+the lifecycle restarts again. The value(s) selected in the rule are stored and 
+are ready to be accessed once user segment evaluation begins.
+    
+
 In this section, you'll begin defining the weather rule's Java class. This
 assumes that you followed the instructions in the previous [tutorial](/develop/tutorials/-/knowledge_base/7-1/creating-a-custom-rule-type),
 creating the `WeatherRule` class and extending
