@@ -23,13 +23,13 @@ Before we dive in, it's important to understand the difference between a
 A **Shipping Option** determines how an order is shipped. Buyers select this at
 checkout.
 
-![Figure 1: Buyers choose from among various shipping options at checkout.](../../images/shipping-options.png)
+![Figure 1: Buyers choose from among various shipping options at checkout.](../images/shipping-options.png)
 
 A **Shipping Method** provides a process for calculating the cost of a given
 shipping option. Administrators select shipping methods when they create the
 options to present to buyers.
 
-![Figure 2: Every shipping option relies on a cost calculation provided by one of these shipping methods---or by a custom method that you create.](../../images/shipping-methods.png)
+![Figure 2: Every shipping option relies on a cost calculation provided by one of these shipping methods---or by a custom method that you create.](../images/shipping-methods.png)
 
 Administrators can create any number of shipping options for buyers to select,
 but all of them rely on a shipping method to calculate costs.
