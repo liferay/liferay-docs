@@ -6,9 +6,10 @@ the product) to your company's Analytics Cloud project. If you're not the owner
 but still need access to the project, ask an Analytics Cloud system
 administrator to invite you.
 
-Your invitation links you to the Analytics Cloud sign in page, which prompts you
-for your Liferay credentials. Once you've signed in, your company's project
-appears. 
+Your invitation links you to the Analytics Cloud
+[sign in page](https://analytics.liferay.com/),
+which prompts you for your Liferay credentials. Once you've signed in, your
+company's project appears. 
 
 ![Figure 1: Your project's home page welcomes you to all Analytics Cloud offers.](../../images/home-page-intial.png)
 
