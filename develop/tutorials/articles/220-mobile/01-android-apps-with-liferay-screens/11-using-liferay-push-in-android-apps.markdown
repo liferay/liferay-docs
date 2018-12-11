@@ -57,7 +57,7 @@ on the Liferay Push Client for Android:
 
 		...
 
-		compile 'com.liferay.mobile:liferay-push:1.1.1'
+		implementation 'com.liferay.mobile:liferay-push:1.2.1'
 	}
 
 Make sure your app's `liferay-plugin-package.properties` file specifies the Push
