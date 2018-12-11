@@ -1,8 +1,10 @@
 # Creating Themes [](id=creating-themes)
 
 The Liferay Theme Generator lets you create themes, themelets, layout templates 
-and more. There are a few dependencies required to run the generator. If you 
-have NodeJS installed, you're already one step ahead. 
+and more. It is just one of Liferay JS Toolkit's 
+[theme development tools](https://github.com/liferay/liferay-themes-sdk/tree/master/packages). 
+There are a few dependencies required to run the generator. If you have NodeJS 
+installed, you're already one step ahead. 
 
 Follow these steps to install the Liferay Theme Generator and generate a theme:
 

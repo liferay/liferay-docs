@@ -8,7 +8,9 @@ the JS Portlet Extender,
 and 
 [liferay-npm-bundler](/develop/reference/-/knowledge_base/7-1/liferay-npm-bundler), 
 developers can create and develop JavaScript portlets in @product@ using pure 
-JavaScript tooling. 
+JavaScript tooling. These tools, along with @product@'s 
+[theme development tools](https://github.com/liferay/liferay-themes-sdk/tree/master/packages), 
+form the Liferay JS Toolkit. 
 
 ![Figure 1: The JS Portlet Extender lets you use pure JavaScript tooling to write portlets.](../../images/extender-lifecycle.png)
 

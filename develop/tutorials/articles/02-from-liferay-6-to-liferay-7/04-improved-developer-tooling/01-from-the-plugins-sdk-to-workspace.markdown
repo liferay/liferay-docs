@@ -41,7 +41,8 @@ Here's the Workspace anatomy:
 - `gradle/` &rarr; holds the Gradle wrapper files
 - `modules/` &rarr; holds module projects
 - `plugins-sdk/` (generated) &rarr; holds plugins from previous releases
-- `themes/` &rarr; holds Node.js-based theme projects
+- `themes/` &rarr; holds theme projects created with the Liferay Theme 
+  Generator, which use Liferay JS Toolkit's theme development tools
 - `wars/` &rarr; holds traditional web application projects
 - `build.gradle` &rarr; common Gradle build file
 - `gradle-local.properties` &rarr; sets user-specific properties for your

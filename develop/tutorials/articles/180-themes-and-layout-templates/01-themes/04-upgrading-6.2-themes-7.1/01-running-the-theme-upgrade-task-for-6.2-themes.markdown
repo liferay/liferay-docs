@@ -2,11 +2,12 @@
 
 You can upgrade Liferay Portal 6.2 theme @product-ver@, regardless of the
 development environment (Plugins SDK, Maven, etc.) you used. If you migrate your
-theme to the Liferay Themes Node.js SDK first, you can leverage the theme's Gulp
-`upgrade` task. 
+theme to use the Liferay JS Toolkit's theme development tools first, you can 
+leverage the theme's Gulp `upgrade` task. 
 
-Without the Liferay Themes Node.js SDK, you must follow the directions in the
-remaining tutorials in this section to upgrade your theme manually. 
+Without the Liferay JS Toolkit's theme development tools, you must follow the 
+directions in the remaining tutorials in this section to upgrade your theme 
+manually. 
 
 Here's what the Upgrade Task does:
 
@@ -17,10 +18,11 @@ Here's what the Upgrade Task does:
 
 Here are the steps for using the Gulp `upgrade` task:
 
-1.  Migrate your 6.2 theme to use the Liferay Themes Node.js SDK. Note that 
-    **you must** have the 
+1.  Migrate your 6.2 theme to use the Liferay JS Toolkit's theme development 
+    tools. Note that **you must** have the 
     [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-themes) 
-    installed to migrate your theme to use the Liferay Themes Node.js SDK:
+    installed to migrate your theme to use the Liferay JS Toolkit's theme 
+    development tools:
 
         yo liferay-theme:import
 
