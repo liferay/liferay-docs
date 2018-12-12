@@ -8,7 +8,10 @@ that facilitates the creation of Apio REST APIs.
 +$$$
 
 **Note:** To use Liferay's Hypermedia REST APIs, you must be running Liferay CE 
-Portal 7.1 GA3+, or Liferay DXP 7.1 Fix Pack 5+. 
+Portal 7.1 GA3+, or Liferay DXP 7.1 Fix Pack 5+. Alternatively, you can run a 
+Docker image that contains the APIs. See the 
+[Docker Instructions](#docker-instructions) 
+section below for more information. 
 
 $$$
 
@@ -83,6 +86,23 @@ enable them:
         }
 
 That's it! The Liferay Hypermedia REST APIs are now ready for use. 
+
+## Docker Instructions [](id=docker-instructions)
+
+1.  Install Docker if you don't already have it installed. 
+
+2.  Create the config file as instructed in the first step above. 
+
+3.  Store the file in `/Users/liferay/Downloads/xyz123/files/osgi/configs`, 
+    where `/Users/liferay/Downloads/` is the folder where the Docker image will 
+    be downloaded. 
+
+4.  Execute the following command, replacing `/Users/liferay/Downloads/` with 
+    the folder where the Docker image will be downloaded: 
+
+        docker run -it -p 8080:8080 -v /Users/liferay/Downloads/xyz123:/etc/liferay/mount liferay/portal-snapshot:7.1.x-201812071242-af6321a
+
+5.  Test the APIs as instructed in the third step above. 
 
 ## Related Topics [](id=related-topics)
 
