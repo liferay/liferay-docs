@@ -1,4 +1,4 @@
-# Finding Analytics Data
+# Finding Analytics Data [](id=finding-analytics-data)
 
 Combining traditional Page Analytics with Path and Asset Analytics sets Liferay
 Analytics Cloud apart from other analytics tools.

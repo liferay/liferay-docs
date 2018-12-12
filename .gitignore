@@ -12,7 +12,9 @@ git-modified-list.txt
 nbbuild.xml
 properties/
 .DS_Store
-.directory
+.directory 
+**/.gradle
+**/.nb-gradle
 
 /*.ipr
 /*.iws
