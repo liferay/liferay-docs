@@ -31,30 +31,20 @@ framework using Felix Gogo shell and deploys the project directly to the OSGi
 container using Felix File Install commands. The command uses the default
 `11311` port by default.
 
-+$$$
-
-**Note:** The `blade deploy` command requires a Gradle/Maven wrapper to
-successfully execute. To ensure the availability of a build tool wrapper, work
-in a Liferay Workspace. For more information on Liferay Workspaces, see the
-[Creating a Liferay Workspace with Blade CLI](/develop/tutorials/-/knowledge_base/7-1/creating-a-liferay-workspace-with-blade-cli)
-tutorial.
-
-$$$
-
 Blade CLI also offers a way to *watch* a deployed project, which compiles and
 redeploys a project when changes are detected. There are two ways to do this:
 
 - `blade watch`
 - `blade deploy -w`
 
-The `blade watch` command is the fastest way for Portal to recognize your
-changes. This is because the `watch` command does not rebuild your project every
-time a change is detected. When running `blade watch`, your project is not
-physically deployed to Portal, but rather, is recreated temporarily as an
-exploded JAR and mapped to Portal. This allows the Portal to quickly update your
-project's installation by recognizing changes and only updating the recently
-changed files. When the Portal is shut down, your project is automatically
-uninstalled. The `watch` command is only available for JAR-based projects.
+The `blade watch` command is the fastest way to develop and test module changes
+in @product@. This is because the `watch` command does not rebuild your project
+every time a change is detected. When running `blade watch`, your project is not
+copied to Portal, but rather, is installed into the Portal runtime as a
+reference. This means that the Portal does not make a cached copy of the
+project. This allows the Portal to immediately see changes that are made to your
+project's files. When the `watch` task is canceled, your module is automatically
+uninstalled from Portal.
 
 +$$$
 
