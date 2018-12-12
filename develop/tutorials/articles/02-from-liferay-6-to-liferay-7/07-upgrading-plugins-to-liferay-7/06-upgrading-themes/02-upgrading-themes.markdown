@@ -15,7 +15,7 @@ Theme upgrades involve these steps:
 -  Applying Lexicon design patterns
 
 As an example, this tutorial applies the steps to a Liferay Portal 6.2 theme called the
-Lunar Resort theme--developed in the Liferay Portal 6.2 Learning Path [Developing a Liferay Theme](/develop/tutorials/-/knowledge_base/6-2/developing-a-liferay-theme).
+Lunar Resort theme---developed in the Liferay Portal 6.2 Learning Path [Developing a Liferay Theme](/develop/tutorials/-/knowledge_base/6-2/developing-a-liferay-theme).
 It's similar to many Liferay Portal 6.2 themes as it extends the [`_styled` theme](https://github.com/liferay/liferay-portal/tree/6.2.x/portal-web/docroot/html/themes/_styled),
 adding configurable settings and incorporating a responsive design that
 leverages Font Awesome icons and Bootstrap. The theme [ZIP file](/documents/10184/656312/lunar-resort-theme-migration-6.2.zip)
@@ -24,36 +24,39 @@ contains its original source code.
 ![Figure 1: The Lunar Resort example theme upgraded in this tutorial uses a clean, minimal design.](../../../../images/finished-theme.png)
 
 Before upgrading a theme, consider [migrating the theme](/develop/tutorials/-/knowledge_base/7-0/migrating-a-6-2-theme-to-liferay-7)
-to use the [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator).
-@product-ver@ doesn't require this migration, but the Liferay Theme Generator's `upgrade`
-Gulp task automates many upgrade steps. Liferay Theme Generator themes can also
-leverage exclusive new features, such as
+to use the [Liferay JS Toolkit's theme development tools](https://github.com/liferay/liferay-themes-sdk/tree/master/packages), 
+such as those created with the [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator). 
+@product-ver@ doesn't require this migration, but the Liferay JS Toolkit's Gulp 
+`upgrade` task automates many upgrade steps. Themes that use the Liferay JS 
+Toolkit's theme development tools can also leverage exclusive new features, such 
+as the Liferay Theme Generator's sub-generators, and 
 [Themelets](/develop/tutorials/-/knowledge_base/7-0/themelets).
 If you migrate your theme, return here afterward to upgrade it.
 
 No matter the environment in which you're developing your theme, this tutorial
 explains everything required to upgrade it. The easiest option is to use the
-Liferay Theme Generator's `upgrade` Gulp task, so you'll see that first. Then you'll
+Liferay JS Toolkit's Gulp `upgrade` task, so you'll see that first. Then you'll
 see *all* upgrade steps, in case you want to run them manually. 
 
-## Running the Upgrade Task for Liferay Theme Generator Themes [](id=running-the-upgrade-task-for-themes-generator-themes)
+## Running the Upgrade Task for Themes that Use Liferay JS Toolkit [](id=running-the-upgrade-task-for-themes-generator-themes)
 
 A Liferay Portal 6.2 theme can be upgraded to @product-ver@, regardless of its project
-environment (Liferay Theme Generator, Plugins SDK, Maven, etc.). But a theme that's
-been migrated to the Liferay Theme Generator can leverage the theme `upgrade` Gulp task.
-If you're developing your theme in an environment other than the Themes
-Generator, skip to the *Updating Project Metadata* section. 
+environment (Liferay JS Toolkit, Plugins SDK, Maven, etc.). But a theme that's
+been migrated to use the Liferay JS Toolkit's theme development tools can 
+leverage the Gulp `upgrade` task. If you're not going to leverage Liferay JS 
+Toolkit's theme development tools, skip to the *Updating Project Metadata* 
+section. 
 
-Here's what the Gulp Task does:
+Here's what the Upgrade task does:
 
 - Updates the theme's Liferay version
 - Updates the CSS
 - Suggests specific code updates
 
-The Gulp task automatically upgrades CSS code that it can identify. For
-everything else, it suggests upgrades. 
+The Upgrade task automatically upgrades CSS code that it can identify. For
+everything else, it suggests manual upgrades that you can make. 
 
-Here are the steps for using the theme `upgrade` Gulp task:
+Here are the steps for using the theme `gulp upgrade` task:
 
 1.  In your theme's root directory, run this command:
 
@@ -79,7 +82,7 @@ Here are the steps for using the theme `upgrade` Gulp task:
     Sass partials should start with an underscore (e.g., `_custom.scss`). The
     `upgrade` task prompts you for each CSS file to rename.
 
-The Gulp task makes a best effort to upgrade the theme's Bootstrap code from
+The Upgrade task makes a best effort to upgrade the theme's Bootstrap code from
 version 2 to 3. For other areas of the code it suspects might need updates, it
 logs suggestions (covered later). The task also reports changes that may affect
 theme templates. 
@@ -87,16 +90,16 @@ theme templates.
 A *breaking change* is a code modification between versions of @product@ that 
 might be incompatible with existing plugins, including themes. Liferay minimized
 the number of breaking changes, but couldn't avoid some. The [Breaking Changes](/develop/reference/-/knowledge_base/7-0/breaking-changes)
-reference document describes them. The theme `gulp upgrade` command and the 
+reference document describes them. The theme's `gulp upgrade` command and the 
 [Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool),
 in Liferay @ide@ identify and address these changes.
 
-The `upgrade` Gulp task jump-starts the upgrade process, but it doesn't complete
+The Gulp `upgrade` task jump-starts the upgrade process, but it doesn't complete
 it. Manual updates are required. 
 
 The rest of this tutorial explains all the theme upgrade steps, regardless of
-whether the `upgrade` Gulp task performs them. Steps the upgrade task performs
-are noted in context. Even if you've already executed the upgrade task, it's
+whether the Gulp `upgrade` task performs them. Steps the Upgrade task performs
+are noted in context. Even if you've already executed the Upgrade task, it's
 best to learn all the steps and make sure they're applied to your theme.
 
 The next step is to update the theme's metadata. 
@@ -114,9 +117,9 @@ file and change the `liferay-versions` property value to `7.0.0+`:
 
         liferay-versions=7.0.0+
 
-If you're using the Liferay Theme Generator, open the `liferay-look-and-feel.xml` file
-and specify `liferay-look-and-feel_7_0_0.dtd` as the DTD and `7.0.0+` as the
-compatibility version: 
+If you're using the Liferay JS Toolkit's theme development tools, open the 
+`liferay-look-and-feel.xml` file and specify `liferay-look-and-feel_7_0_0.dtd` 
+as the DTD and `7.0.0+` as the compatibility version: 
 
         <?xml version="1.0"?>
         <!DOCTYPE look-and-feel PUBLIC "-//Liferay//DTD Look and Feel 7.0.0//EN"
@@ -131,8 +134,8 @@ compatibility version:
 
         </look-and-feel>
 
-3.  If your theme uses the Liferay Theme Generator and has a `package.json` file,
-    update the file's Liferay version references to `7.0`.
+3.  If your theme uses the Liferay JS Toolkit's theme development tools and has 
+    a `package.json` file, update the file's Liferay version references to `7.0`.
 
 Your theme's Liferay version references are updated for @product-ver@. Next, you'll
 update the CSS.
@@ -159,7 +162,7 @@ Sass files must end in `scss`.
 
 +$$$
 
-**Note**: The `upgrade` Gulp task renames Sass files automatically.
+**Note**: The Gulp `upgrade` task renames Sass files automatically.
 
 $$$
 
@@ -186,13 +189,14 @@ Next, the CSS rules must be updated to use Bootstrap 3 syntax.
 @product-ver@ uses Bootstrap 3's CSS rule syntax. The new syntax lets developers
 leverage Bootstrap 3 features and improvements.
 
-If your theme does not use the Liferay Theme Generator, you can refer to the
+If your theme does not use the Liferay JS Toolkit's theme development tools, you 
+can refer to the 
 [Migrating from 2.x to 3.0 guide](http://getbootstrap.com/migration/#migrating-from-2x-to-30)
 for updating CSS rules to Bootstrap 3. 
 
-If your theme uses the Liferay Theme Generator, the `upgrade` Gulp task reports
-automatic CSS updates and suggested manual updates. For example, here is part of
-the task log for the Lunar Resort theme:
+If your theme uses the Liferay JS Toolkit's theme development tools, the Gulp 
+`upgrade` task reports automatic CSS updates and suggested manual updates. For 
+example, here is part of the task log for the Lunar Resort theme:
 
     ----------------------------------------------------------------
      Bootstrap Upgrade (2 to 3)
@@ -347,7 +351,7 @@ New:
 The new media query `@include media-query(null, $breakpoint_tablet -
 1)` replaces the old mixin `@include respond-to(phone, tablet)`.
 
-The Liferay Theme Generator's `upgrade` Gulp task generates a file
+The Liferay JS Toolkit's Gulp `upgrade` task generates a file
 `_deprecated_mixins.scss`. The file provides deprecated compass mixins that your
 migrated theme might be using. Consider upgrading your use of these mixins. Keep
 the `_deprecated_mixins.scss` file if you're using any of its mixins, but delete
@@ -416,8 +420,8 @@ You should start by addressing the Velocity templates. Since Velocity templates
 have been deprecated, **you should convert your Velocity theme templates to
 FreeMarker**.
 
-If you're using the Liferay Theme Generator, the `gulp upgrade` command reports the
-required theme template changes in the log. 
+If you're using the Liferay JS Toolkit's theme development tools, the 
+`gulp upgrade` command reports the required theme template changes in the log. 
 
 For example, here is the command's output for the Lunar Resort theme:
 
@@ -552,7 +556,7 @@ updated to use the new syntax.
 
 +$$$
 
-**Note**: The `gulp upgrade` command for Liferay Theme Generator themes reports suggested
+**Note**: The Liferay JS Toolkit's `gulp upgrade` command reports suggested 
 theme template changes. 
 
 $$$
@@ -591,8 +595,8 @@ The navigation template is updated.
 That covers most, if not all, of the required theme template changes.
 If you modified any other  FreeMarker theme templates, you
 can compare them with templates in the [`_unstyled` theme](https://github.com/liferay/liferay-portal/tree/7.0.x/modules/apps/foundation/frontend-theme/frontend-theme-unstyled/src/main/resources/META-INF/resources/_unstyled/templates).
-And if your theme uses the Liferay Theme Generator, refer to the suggested
-changes that the `gulp upgrade` command reports. 
+And if your theme uses the Liferay JS Toolkit's theme development tools, refer 
+to the suggested changes that the `gulp upgrade` command reports. 
 
 After updating the theme templates, you can update your theme's resources
 importer code.
@@ -956,7 +960,7 @@ You can apply similar Lexicon design patterns to your theme's HTML files.
 You've updated your theme to @product-ver@! You can deploy it from your theme
 project.
 
-Liferay Theme Generator-based project:
+Liferay JS Toolkit-based project:
 
     gulp deploy
 

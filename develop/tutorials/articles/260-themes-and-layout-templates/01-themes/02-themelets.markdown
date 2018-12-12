@@ -26,9 +26,10 @@ This tutorial demonstrates how to:
 
 - Install a Themelet
 
-In order to create a themelet, you need the Node.js build tools installed. The
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
-tutorial explains how to install these tools and how to create a theme.
+To create a themelet, you need a theme to extend and the Liferay Theme Generator 
+and dependencies installed, as explained in the 
+[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator) 
+tutorial.
 
 ## Creating a Themelet [](id=creating-a-themelet)
 

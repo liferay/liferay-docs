@@ -59,9 +59,10 @@ Now that your theme is prepped, you can start the import process next.
 
 Follow these steps to import your theme:
 
-1.  Install Liferay Theme Generator and its required dependencies. See 
-    [project Readme](https://github.com/liferay/generator-liferay-theme#liferay-theme-generator--)
-    for details.
+1.  Install Liferay Theme Generator and its required dependencies, as explained 
+    in the 
+    [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator) 
+    tutorial.
 
 2.  Navigate to the folder where you want your theme imported: 
 
@@ -82,8 +83,9 @@ Next, you can learn how to update your theme for 7.0.
 ## Updating Your Theme For 7.0 [](id=updating-your-theme-for-7-0)
 
 Now that you've successfully imported your theme, you have the tools necessary 
-to develop your theme for 7.0. These tools are provided by 
-[Liferay Theme Tasks](https://github.com/liferay/liferay-theme-tasks#liferay-theme-tasks-).
+to develop your theme for 7.0. These tools are provided by the 
+[Liferay Theme Tasks](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks), 
+one of the [Liferay JS Toolkit's theme development tools](https://github.com/liferay/liferay-themes-sdk/tree/master/packages).
 
 The first of these tools you'll use is the Upgrade task. This task does a few 
 things:
@@ -170,8 +172,8 @@ For more details, please see the
 [Upgrading Theme Templates](/develop/tutorials/-/knowledge_base/7-0/upgrading-your-theme-from-6-1-to-7-0#upgrading-theme-templates) 
 section in the Appendix.
 
-Additional tasks and info can be found on the 
-[Liferay Theme Tasks project site](https://github.com/liferay/liferay-theme-tasks). 
+Additional tasks and info can be found in the 
+[Liferay Gulp Tasks reference guide](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks). 
 
 Congratulations! You've now completed a major step in upgrading your theme.
 
@@ -179,7 +181,7 @@ Congratulations! You've now completed a major step in upgrading your theme.
 
 This appendix covers the changes you need to make to your theme if you 
 manually update your files, or if you need to make additional changes after 
-using the Update task in Liferay Theme Tasks.
+using the Liferay JS Toolkit's Upgrade task.
 
 ### Upgrading Theme Metadata [](id=upgrading-theme-metadata)
 
