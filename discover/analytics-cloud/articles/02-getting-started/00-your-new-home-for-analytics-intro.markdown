@@ -8,12 +8,22 @@ administrator to invite you.
 
 Your invitation links you to the Analytics Cloud
 [sign in page](https://analytics.liferay.com/),
-which prompts you for your Liferay credentials. Once you've signed in, your
-company's project appears. 
+which prompts you for your Liferay credentials.
+
+First time users are directed to the Workspace creation page. On this page, name
+your workspace, select a server location for hosting your data, and review the
+terms and conditions. After agreeing to the terms and conditions, create the
+workspace. A page appears with a message stating that your Analytics Cloud
+environment is being set up. Next your project home page appears. 
+
+Subsequent visits to
+[https://analytics.liferay.com/](https://analytics.liferay.com/)
+direct you to the Workspace welcome page, where you can select your workspace or
+any other accessible workspaces for working on projects. 
 
 ![Figure 1: Your project's home page welcomes you to all Analytics Cloud offers.](../../images/home-page-intial.png)
 
-The welcome screen describes and links to each key component page:
+The project home page describes and links to each key component page:
 
 **Segments:** Aggregate customers into Segments based on similar profiles and
 behavior data. Track Segment growth and discover patterns of interest. Discover
