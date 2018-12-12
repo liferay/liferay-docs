@@ -28,18 +28,16 @@ Let's create a Form serializer for Yaml format.
 
 First we need to create a class that implements  DDMFormSerializer. Ex:
 
-@Component(immediate = true, property = "ddm.form.serializer.type=yaml")
-public class DDMFormYamlSerializer implements DDMFormSerializer {
-  .....
-}
+@Component(immediate = true, property = "ddm.form.serializer.type=yaml") public
+class DDMFormYamlSerializer implements DDMFormSerializer { .....  }
 
-It's important to notice the property ddm.form.serializer.type=yaml. This property will be used by our DDMFormSerializerTracker to find our yaml serializer.
+It's important to notice the property ddm.form.serializer.type=yaml. This
+property will be used by our DDMFormSerializerTracker to find our yaml
+serializer.
 
-Now we must add our serializing logic to the overridden serialize method.It takes a 
-DDMFormSerializerSerializeRequest and returns a DDMFormSerializerSerializeResponse  with serialized string in it.
-
-
-
+Now we must add our serializing logic to the overridden serialize method.It
+takes a DDMFormSerializerSerializeRequest and returns a
+DDMFormSerializerSerializeResponse  with serialized string in it.
 
 
 
@@ -47,34 +45,33 @@ DDMFormSerializerSerializeRequest and returns a DDMFormSerializerSerializeRespon
 
 
 
-@Override
-    public DDMFormSerializerSerializeResponse serialize(
-        DDMFormSerializerSerializeRequest ddmFormSerializerSerializeRequest) {
 
-        DDMForm ddmForm = ddmFormSerializerSerializeRequest.getDDMForm();
-     ...
-       YOUR CODE GOES HERE
-     ...
-    DDMFormSerializerSerializeResponse.Builder builder =
-        DDMFormSerializerSerializeResponse.Builder.newBuilder(
-            yamlObject.toString());
 
-        return builder.build();
-    }
+
+@Override public DDMFormSerializerSerializeResponse serialize(
+DDMFormSerializerSerializeRequest ddmFormSerializerSerializeRequest) {
+
+        DDMForm ddmForm = ddmFormSerializerSerializeRequest.getDDMForm(); ...
+        YOUR CODE GOES HERE ...  DDMFormSerializerSerializeResponse.Builder
+        builder = DDMFormSerializerSerializeResponse.Builder.newBuilder(
+        yamlObject.toString());
+
+        return builder.build(); }
 
 This is what you need to create your serializer.
 
-Code
-It's very simple to use it. You need to get  your serializer from the DDMFormSerializerTracker, pass the DDMFormSerializerSerializeRequest and receive the DDMFormSerializerSerializeResponse with the serialized value.
+Code It's very simple to use it. You need to get  your serializer from the
+DDMFormSerializerTracker, pass the DDMFormSerializerSerializeRequest and receive
+the DDMFormSerializerSerializeResponse with the serialized value.
 
 DDMFormSerializer ddmFormSerializer =
-            ddmFormSerializerTracker.getDDMFormSerializer("yaml");
+ddmFormSerializerTracker.getDDMFormSerializer("yaml");
 
         DDMFormSerializerSerializeRequest.Builder builder =
-            DDMFormSerializerSerializeRequest.Builder.newBuilder(ddmForm);
+        DDMFormSerializerSerializeRequest.Builder.newBuilder(ddmForm);
 
         DDMFormSerializerSerializeResponse ddmFormSerializerSerializeResponse =
-            ddmFormSerializer.serialize(builder.build());
+        ddmFormSerializer.serialize(builder.build());
 
         return ddmFormSerializerSerializeResponse.getContent();
 
@@ -83,6 +80,7 @@ DDMFormSerializer ddmFormSerializer =
 
 
 
-Documentation for TS
-Provide the underlying technical details that TS would need to support the product (for example, design concepts), if you have not already done so in the sections above. 
+Documentation for TS Provide the underlying technical details that TS would need
+to support the product (for example, design concepts), if you have not already
+done so in the sections above. 
 
