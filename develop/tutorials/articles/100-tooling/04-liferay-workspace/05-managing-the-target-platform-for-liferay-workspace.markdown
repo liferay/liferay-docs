@@ -70,17 +70,20 @@ Setting the version to develop for takes two steps:
     `liferay.workspace.target.platform.version` property to the version you want
     to target. For example,
 
-        liferay.workspace.target.platform.version=7.0-GA7
+        liferay.workspace.target.platform.version=7.0.6
 
     If you're using Liferay DXP, the versions are specified based on service
     packs. For example, you could set your target platform workspace Gradle
     property to
 
-        liferay.workspace.target.platform.version=7.0-sp7
+        liferay.workspace.target.platform.version=7.0.10.7
 
     **Important:** You can leverage the target platform features in Liferay
     Portal GA6+ and Liferay DXP SP7+. Previous versions do not provide these
     features.
+
+    The versions following the SP7 release of DXP follow fix pack versions
+    (e.g., `7.0.10.fp58`, `7.0.10.fp59`, etc.).
 
 2.  Once the target platform is configured, check to make sure no dependencies
     in your Gradle build files specify a version. The versions are now imported
@@ -127,7 +130,7 @@ To do this, your `build.gradle` file should look similar to this:
 
     buildscript {
         dependencies {
-            classpath group: "com.liferay", name: "com.liferay.gradle.plugins.target.platform", version "1.0.1"
+            classpath group: "com.liferay", name: "com.liferay.gradle.plugins.target.platform", version "1.1.6"
         }
         repositories {
             maven {
@@ -139,9 +142,15 @@ To do this, your `build.gradle` file should look similar to this:
     apply plugin: "com.liferay.target.platform"
 
     dependencies {
-        targetPlatformBoms group: "com.liferay", name: "com.liferay.ce.portal.bom", version: "7.0.6"
-        targetPlatformBoms group: "com.liferay", name: "com.liferay.ce.portal.compile.only", version: "7.0.6"
+        targetPlatformBoms group: "com.liferay.portal", name: "release.portal.bom", version: "7.0.6"
+        targetPlatformBoms group: "com.liferay.portal", name: "release.portal.bom.compile.only", version: "7.0.6"
     }
+
+    Liferay DXP users must replace the artifact names and versions:
+
+    - `release.portal.bom` &rarr; `release.dxp.bom`
+    - `release.portal.bom.compile.only` &rarr; `release.dxp.bom.compile.only`
+    - `7.0.6` &rarr; `7.0.10.7`
 
 This Gradle code
 
@@ -149,9 +158,9 @@ This Gradle code
 - configures the repository that provides the necessary artifacts for your
   project build
 - sets the Target Platform plugin's dependencies:
-    - `com.liferay.ce.portal.bom`: provides all the artifacts included in
+    - `release.portal.bom`: provides all the artifacts included in
       @product@.
-    - `com.liferay.ce.portal.compile.only`: provides artifacts that are not
+    - `release.portal.bom.compile.only`: provides artifacts that are not
       included in @product@, but are necessary to reference during the build
       (e.g., `org.osgi.core`).
 
