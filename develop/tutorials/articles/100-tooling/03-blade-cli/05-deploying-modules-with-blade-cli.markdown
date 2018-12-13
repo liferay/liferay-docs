@@ -28,10 +28,6 @@ you've created a WAR style project (e.g., projects based on the Blade templates
 `spring-mvc-portlet`, `theme`, etc.), you'll need to deploy it using a different
 tool like Gradle (e.g., `./gradlew deploy`).
 
-If you run into errors during the build/deploy process of your project, check to
-make sure your workspace is accounting for the
-[appropriate certificates](/develop/tutorials/-/knowledge_base/7-0/configuring-a-liferay-workspace#certification-issues-in-liferay-workspace).
-
 Blade CLI can detect a locally running Liferay instance and automatically
 deploys your module to that Liferay instance. Blade communicates with
 @product@'s OSGi framework using Felix Gogo shell and deploys the module
