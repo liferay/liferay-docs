@@ -116,7 +116,7 @@ administrators' benefit:
 
         return LanguageUtil.get(resourceBundle, KEY);
 
-![The *Name* and *Description* fields are set by the `getName` and `getDescription` methods.](../../images/taxengine-name-description.png)
+![The *Name* and *Description* fields are set by the `getName` and `getDescription` methods.](../images/taxengine-name-description.png)
 
 The `_getResourceBundle` method is not required by the `CommerceTaxEngine`
 interface, but supports `getName` and `getDescription` by providing the language
