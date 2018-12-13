@@ -37,8 +37,8 @@ available.
 
 $$$
 
-Although Blade CLI is frequently released, if you're interested in the bleeding
-edge features not yet available, you can install the latest snapshot version:
+Although Blade CLI is frequently released, if you want bleeding edge features
+not yet available, you can install the latest snapshot version:
 
     blade update -s
 

@@ -37,14 +37,13 @@ redeploys a project when changes are detected. There are two ways to do this:
 - `blade watch`
 - `blade deploy -w`
 
-The `blade watch` command is the fastest way to develop and test module changes
-in @product@. This is because the `watch` command does not rebuild your project
-every time a change is detected. When running `blade watch`, your project is not
-copied to Portal, but rather, is installed into the Portal runtime as a
-reference. This means that the Portal does not make a cached copy of the
-project. This allows the Portal to immediately see changes that are made to your
-project's files. When the `watch` task is canceled, your module is automatically
-uninstalled from Portal.
+The `blade watch` command is the fastest way to develop and test module changes,
+because the `watch` command does not rebuild your project every time
+a change is detected. When running `blade watch`, your project is not copied to
+Portal, but rather, is installed into the runtime as a reference. This means
+that the Portal does not make a cached copy of the project. This allows the
+Portal to see changes that are made to your project's files immediately. When
+you cancel the `watch` task, your module is uninstalled automatically.
 
 +$$$
 
@@ -55,8 +54,8 @@ projects cannot leverage the `watch` feature at this time.
 $$$
 
 The `blade deploy -w` command works similarly to `blade watch`, except it
-manually deploys your project to the portal instance and is recompiled and
-deployed every time a change is detected. This causes slower update times, but
-does preserve your deployed project in Portal when it's shut down.
+manually recompiles and deploys your project every time a change is detected.
+This causes slower update times, but does preserve your deployed project in
+Portal when it's shut down.
 
 Cool! You've successfully deployed your module project using Blade CLI.
