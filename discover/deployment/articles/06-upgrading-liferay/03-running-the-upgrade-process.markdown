@@ -30,40 +30,47 @@ line interface. The upgrade tool lets you upgrade everything--the core and all
 the modules--together or separately. 
 
 @product-ver@ bundles include the upgrade tool. If you installed @product-ver@
-manually, you can download the upgrade tool separately.
+manually, you can download the upgrade tool separately. 
 
 - *Liferay DXP 7.0*: Go to the
-[*Liferay DXP 7.0 Downloads* page](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise),
-select *Admin Tools*, and click *Download*. 
+[*Downloads* page](https://customer.liferay.com/downloads),
+select product *DXP 7.0* and file type *Product*, and select *Download* for
+*Liferay DXP DB Upgrade Client*. 
 
 - *Liferay Portal CE 7.0*: Go to
 [SourceForge](https://sourceforge.net/projects/lportal/files/Liferay%20Portal/),
 select *7.0 GA[version]*, and click `liferay-ce-portal-tools-[version].zip`. 
 
+Before running the upgrade tool, learn the tool's usage and how to configure the
+core upgrade and non-core module upgrades. 
+
+- [Upgrade Tool Usage](#upgrade-tool-usage)
+- [Configuring Non-Core Module Upgrades](#configuring-module-upgrades)
+- [Configuring the Core Upgrade](#configuring-the-core-upgrade)
+
+Start with the tool's usage. 
+
+### Upgrade Tool Usage [](id=upgrade-tool-usage)
+
+The `db_upgrade.sh` script (`db_upgrade.bat` on Windows) invokes the upgrade
+tool. It resides in the  `[Liferay Home]/tools/portal-tools-db-upgrade-client`
+folder. 
+
+This command prints the upgrade tool usage: 
+
+    db_upgrade.sh --help
+
 To upgrade only the core, add a file called
-`com.liferay.portal.upgrade.internal.configuration.ReleaseManagerConfiguration.cfg`
+`com.liferay.portal.upgrade.internal.configuration.ReleaseManagerConfiguration.config`
 to the `[Liferay Home]/osgi/configs` folder with the following content:
 
-    autoUpgrade=false
+    autoUpgrade="false"
 
 This configuration prevents automatic module upgrade, but causes the upgrade
-tool to open a Gogo shell after finishing the core upgrade. 
-
-The upgrade tool resides in the `[Liferay
-Home]/tools/portal-tools-db-upgrade-client` folder. 
-
-This command starts the upgrade tool: 
-
-    java -jar com.liferay.portal.tools.db.upgrade.client.jar
-
-+$$$
-
-**Warning**: To prevent the tool's expanded command from growing too large for
-Windows, execute the initial command in the
-`com.liferay.portal.tools.db.upgrade.client.jar` file's folder.
-
-$$$
-
+tool to open a Gogo shell for
+[upgrading modules](#gogo-shell-commands-for-module-upgrades)
+after finishing the core upgrade. 
+ 
 Here are the tool's default Java parameters:
     
     -Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx2048m 
@@ -72,11 +79,11 @@ The `-j` option lets you override the JVM parameters. For example, these options
 set the JVM memory to 10GB, which is a good starting point for this process
 type:
 
-    java -jar com.liferay.portal.tools.db.upgrade.client.jar -j "-Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx10240m"
+    db_upgrade.sh -j "-Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx10240m"
 
 The `-l` option lets you specify the tool's log file name: 
 
-    java -jar com.liferay.portal.tools.db.upgrade.client.jar -l "output.log"
+    db_upgrade.sh -l "output.log"
 
 Here are all the upgrade tool command line options:
 
@@ -84,7 +91,8 @@ Here are all the upgrade tool command line options:
 
 **--jvm-opts** or **-j** + **[arg]**: Sets any JVM options for the upgrade process.
 
-**--log-file** or **-l** + **[arg]**: Specifies the tool's log file name.
+**--log-file** or **-l** + **[arg]**: Specifies the tool's log file name---the 
+default name is `upgrade.log`.
 
 **--shell** or **-s**: Automatically connects you to the Gogo shell after
 finishing the upgrade process.
@@ -96,16 +104,62 @@ and database connection configuration. If executing an upgrade remotely using
 `ssh`, make sure to guard against interruptions: 
 
 - If you're executing the upgrade using `ssh`, ignore hangups (connection loss) 
-  by using `nohup` or something similar. 
+by using `nohup` or something similar. 
 - On the machine you're connecting from, disable settings that shutdown or sleep
-  that machine. 
+that machine. 
+
+Since DB Upgrade Tool 2.0.1, the upgrade process continues on the server even if
+you lose connection to it. If you lose connection, reconnect and monitor upgrade
+status via the log (default log file is `upgrade.log`). If you're using an
+earlier version of @product-ver@ and upgrade execution is interrupted, check
+your log file for where execution stopped. 
+
+- If execution stopped during an upgrade process for any module upgrade process,
+  restart the upgrade tool to continue the upgrade from that point. You can also
+  use Gogo shell to
+  [check module upgrade status](#gogo-shell-commands-for-module-upgrades)
+  and continue upgrading modules. 
+- If execution stopped during an upgrade process for Core 7.0 or lower, you must
+  [restore the data from a backup](/discover/deployment/-/knowledge_base/7-0/backing-up-a-liferay-installation)
+  and start the upgrade again. 
 
 $$$
 
-### Configuring the Upgrade [](id=configuring-the-core-upgrade)
++$$$
+
+**Warning:** To prevent the tool's expanded command from growing too large for
+Windows, execute the upgrade tool script from the `[Liferay
+Home]/tools/portal-tools-db-upgrade-client` folder.
+
+$$$
+
+Before
+[starting the upgrade](#running-and-managing-the-core-upgrade),
+decide how to execute non-core module upgrades. 
+
+## Configuring Non-Core Module Upgrades [](id=configuring-module-upgrades)
+
+You can configure the upgrade tool to upgrade all installed modules
+automatically or to open a Gogo shell (after core upgrade completes) for you to
+execute module upgrades manually. 
+
+If the upgrade tool's `autoUpgrade` property is set to `true` (the default
+setting), upgrade processes for all installed modules are run too. 
+
+If you set `autoUpgrade="false"` in a file called
+`com.liferay.portal.upgrade.internal.configuration.ReleaseManagerConfiguration.config`
+and copy the file into the `[Liferay Home]/osgi/configs` folder, the upgrade
+tool opens Gogo shell after the core upgrade. In the Gogo shell, you can 
+[administer module upgrades](#gogo-shell-commands-for-module-upgrades). 
+
+Now that you've decided how to do non-core module upgrades, examine the core
+upgrade configuration options. 
+
+## Configuring the Core Upgrade [](id=configuring-the-core-upgrade)
 
 The core upgrade requires configuration. You can configure it at runtime via the
-command line interface or pre-configure it in these files:
+command line interface or pre-configure it in these files in `[Liferay
+Home]/tools/portal-tools-db-upgrade-client/`:
 
 -   `app-server.properties`: Specifies the server's location and libraries.
 -   `portal-upgrade-database.properties`: Configures the database connection.
@@ -117,7 +171,7 @@ command line interface or pre-configure it in these files:
 
 Each file's properties are described next. 
 
-#### Configuring app-server.properties [](id=configuring-app-server-properties)
+### Configuring app-server.properties [](id=configuring-app-server-properties)
 
 Specify the following information to configure the app server on which 
 @product-ver@ is installed: 
@@ -149,35 +203,35 @@ Relative paths must use Unix style format. The following properties, for
 example, are for Windows and use relative paths:
 
     dir=D:\
-    extra.lib.dirs=Liferay/liferay-portal-master/tomcat-9.0.10/bin
-    global.lib.dir=Liferay/liferay-portal-master/tomcat-9.0.10/lib
-    portal.dir=Liferay/liferay-portal-master/tomcat-9.0.10/webapps/ROOT
+    extra.lib.dirs=Liferay/liferay-portal-master/tomcat-8.0.32/bin
+    global.lib.dir=Liferay/liferay-portal-master/tomcat-8.0.32/lib
+    portal.dir=Liferay/liferay-portal-master/tomcat-8.0.32/webapps/ROOT
     server.detector.server.id=tomcat
 
 These properties, for example, are for Unix and use all absolute paths:
 
     dir=/
-    extra.lib.dirs=/home/user/liferay/liferay-portal-master/tomcat-9.0.10/bin
-    global.lib.dir=/home/user/liferay/liferay-portal-master/tomcat-9.0.10/lib
-    portal.dir=/home/user/liferay/liferay-portal-master/tomcat-9.0.10/webapps/ROOT
+    extra.lib.dirs=/home/user/liferay/liferay-portal-master/tomcat-8.0.32/bin
+    global.lib.dir=/home/user/liferay/liferay-portal-master/tomcat-8.0.32/lib
+    portal.dir=/home/user/liferay/liferay-portal-master/tomcat-8.0.32/webapps/ROOT
     server.detector.server.id=tomcat
 
-#### Configuring portal-upgrade-database.properties [](id=configuring-portal-upgrade-database-properties)
+### Configuring portal-upgrade-database.properties [](id=configuring-portal-upgrade-database-properties)
 
 Specify the following information to configure the database you're upgrading.
 Note that these properties correspond exactly to the
 [JDBC portal properties](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#JDBC)
 you'd use in a `portal-ext.properties` file. 
 
-**jdbc.default.driverClassName ***(required)*
+**jdbc.default.driverClassName** *(required)*
 
-**jdbc.default.url ***(required)*
+**jdbc.default.url** *(required)*
 
-**jdbc.default.username ***(required)*
+**jdbc.default.username** *(required)*
 
-**jdbc.default.password ***(required)*
+**jdbc.default.password** *(required)*
 
-#### Configuring portal-upgrade-ext.properties [](id=configuring-portal-upgrade-ext-properties)
+### Configuring portal-upgrade-ext.properties [](id=configuring-portal-upgrade-ext-properties)
 
 Specify the following information to configure the upgrade itself: 
 
@@ -186,9 +240,7 @@ Specify the following information to configure the upgrade itself:
 **hibernate.jdbc.batch_size:** the JDBC batch size used to improve performance;
 set to *250* by default *(optional)* 
 
-#### Example Upgrade Configuration [](id=example-upgrade-configuration)
-
-You can either configure the upgrade via property files or via the command line interface. 
+### Example Upgrade Configuration [](id=example-upgrade-configuration)
 
 Here's an example interaction with the upgrade tool's command line interface:
 
@@ -213,7 +265,8 @@ The command line interface creates the configuration files based on your input.
 If you want to set all of this up ahead of time, however, you'll want to put
 this information into configuration files.
 
-Here are example upgrade configuration files that you can customize: 
+Here are example upgrade configuration files that you can customize and copy
+into `[Liferay Home]/tools/portal-tools-db-upgrade-client/`: 
 
 -   `app-server.properties`:
 
@@ -235,19 +288,30 @@ Here are example upgrade configuration files that you can customize:
         liferay.home=/home/user/servers/liferay7
         module.framework.base.dir=/home/user/servers/liferay7/osgi
 
-The upgrade tool first executes the core's upgrade processes and verifiers.
+It's time to start the core upgrade. 
 
-If the upgrade tool's `autoUpgrade` property is set to `true` (the default
-setting), upgrade processes for all installed modules are run too. 
+## Running and Managing the Core Upgrade [](id=running-and-managing-the-core-upgrade)
 
-If you set `autoUpgrade=false` in a file called
-`com.liferay.portal.upgrade.internal.configuration.ReleaseManagerConfiguration.cfg`
-and copy the file into the `[Liferay Home]/osgi/configs` folder, the upgrade tool opens Gogo shell
-automatically after the core upgrade.
+Start the upgrade tool, as explained in the 
+[upgrade tool usage](#upgrade-tool-usage). 
+Here are the core upgrade stages:
 
-The Gogo shell lets you upgrade modules, check module upgrade status, and verify
-upgrades.  Read on to learn how to use Gogo shell commands to use the
-upgrade-related commands. 
+1.  Show the upgrade patch level
+
+2.  Execute the core upgrade processes
+
+3.  Execute the core verifiers
+
+Monitor the upgrade via the upgrade tool log file (default file is
+`upgrade.log`). If a core upgrade process fails, analyze the failure and resolve
+it. 
+
+If you
+[configured the upgrade tool to upgrade non-core modules](#configuring-module-upgrades),
+the tool opens a
+Gogo shell and starts upgrading them. The Gogo shell lets you upgrade modules,
+check module upgrade status, verify upgrades, and restart module upgrades. Read
+on to learn how to use Gogo shell commands to complete @product@ upgrades. 
 
 ## Gogo shell commands for module upgrades [](id=gogo-shell-commands-for-module-upgrades)
 

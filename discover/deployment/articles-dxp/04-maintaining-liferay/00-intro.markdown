@@ -1,9 +1,22 @@
 # Maintaining @product@ [](id=maintaining-liferay)
 
-In this section, you'll learn about how to maintain a @product@ installation.
-You'll learn how to back up, patch and update your installation. It's generally not much more
-complicated to maintain a running @product@ installation than it is to maintain
-the application server on which it's running. However, Liferay provides tools
-for patching and upgrading @product@ that you should know how to use. It's also
-important to follow secure backup procedures to protect your @product@
-installation's source code, installed apps, database, and properties files.
+Once you have a @product@ installation, there are some things you must do to
+keep it running smoothly. Backing up your installation in case of a hardware
+failure protects your data and helps you get your system back in working order
+quickly. And if you're a DXP customer, patching your system regularly brings the
+latest bug fixes to your running instance.
+
++$$$
+
+Upgrading @product-ver@ to a new GA version can require 
+[data upgrade](/discover/deployment/-/knowledge_base/7-0/upgrading-to-liferay-7). 
+Until you perform all required data upgrades (if any), @product@ startup fails
+with messages like these: 
+
+    2018-11-05 17:22:35.025 INFO  [main][StartupHelper:72] There are no patches installed
+    You must first upgrade to @product-ver@
+    2018-11-05 17:22:35.098 ERROR [main][MainServlet:277] java.lang.RuntimeException: You must first upgrade to @product-ver@
+
+$$$
+
+Read on to learn about how to keep your system running well. 
