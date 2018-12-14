@@ -261,6 +261,14 @@ Please see [JGroups's documentation](http://www.jgroups.org/manual/index.html#pr
 for channel properties. The default configuration sets many properties whose
 settings are discussed there. 
 
+Multicast broadcasts to all devices on the network. Clustered environments on
+the same network communicate with each other by default. Messages and
+information (e.g., scheduled tasks) sent between them can lead to unintended
+consequences. Isolate such cluster environments by either separating them
+logically or physically on the network, or by configuring each cluster's
+`portal-ext.properties` to use different sets of
+[multicast group address and port values](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Multicast). 
+
 JGroups sets a bind address automatically. If you want to set a manual address,
 you can do this. By default, these are set to `localhost`: 
 
