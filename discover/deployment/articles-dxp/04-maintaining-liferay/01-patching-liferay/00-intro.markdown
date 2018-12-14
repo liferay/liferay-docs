@@ -14,12 +14,10 @@ regularly, especially before patching. The patching tool installs code changes
 and some of these make data changes (if necessary) automatically on startup. 
 
 Certain fix packs (service packs) can include data/schema micro
-changes---they're optional and revertible. Module upgrades and any micro changes
-they include are applied at server startup by default, or can be applied
-manually by 
+changes---they're optional and revertible. Module upgrades are applied at server
+startup by default, or can be applied manually by 
 [disabling the `autoUpgrade` property](/discover/deployment/-/knowledge_base/7-0/running-the-upgrade-process#configuring-module-upgrades).
-Server startup skips all Core micro changes. Instead, you can apply them using
-the
+You can apply any upgrades using the
 [upgrade tool](/discover/deployment/-/knowledge_base/7-0/upgrading-to-liferay-7) 
 before server startup. 
 
