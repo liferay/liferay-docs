@@ -1,11 +1,20 @@
 # Servlet Filters [](id=servlet-filters)
 
 Servlet filters can both pre-process requests as they arrive and post-process
-responses before they go to the client browser. You can use patterns in
-descriptors to map the filters to URLs. When requests arrive at these URLs, your
-filters process them. Servlet Filter Hook plugins let you deploy and undeploy
-filters without modifying the Liferay web application. Here are the steps for
-creating and deploying a servlet filter:
+responses before they go to the client browser. They let you apply functionality
+to requests and responses for multiple servlets, without the servlets knowing.
+Here are some common filter use cases:  
+
+- Logging
+- Auditing
+- Transaction management
+- Security
+
+You can use patterns in descriptors to map the filters to servlet URLs. When
+requests arrive at these URLs, your filters process them. Filter chaining lets
+you apply filters in an order you want. Servlet Filter Hook plugins let you
+deploy and undeploy filters without modifying the Liferay web application. Here
+are the steps for creating and deploying a servlet filter:
 
 1. [Create a Servlet Filter class](#step-1-create-a-servlet-filter-class)
 
@@ -17,6 +26,16 @@ creating and deploying a servlet filter:
 
 In a traditional web application (`.war`) project, start with creating your
 servlet filter class. 
+
++$$$
+
+**Note:**
+[Portlet filters](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/filter/PortletFilter.html)
+let you apply functionality to portlet requests and responses. 
+[JSP overrides](/develop/tutorials/-/knowledge_base/7-1/jsp-overrides-using-portlet-filters)
+are one way to use portlet filters. 
+
+$$$
 
 ## Step 1: Create a Servlet Filter class [](id=step-1-create-a-servlet-filter-class)
 
