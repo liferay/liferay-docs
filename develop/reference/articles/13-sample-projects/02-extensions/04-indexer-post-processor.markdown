@@ -67,7 +67,7 @@ the following methods:
 - `postProcessSummary`
 
 For more information on Liferay's Search API, refer to the
-[Introduction to Liferay Search](/developer/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search)
+[Introduction to Liferay Search](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search)
 tutorial.
 
 ## Where Is This Sample? [](id=where-is-this-sample)
