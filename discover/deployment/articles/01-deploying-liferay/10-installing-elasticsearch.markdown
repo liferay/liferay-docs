@@ -11,6 +11,11 @@ gains by putting search on a separate box. If you're more budget-conscious, you
 can still increase performance by running Elasticsearch in a separate,
 individually tunable JVM on the same box. 
 
+Before installing Elasticsearch, refer to the 
+[Preparing to Install Elasticsearch](/discover/deployment/-/knowledge_base/7-1/preparing-to-install-elasticsearch) 
+for guidance on configuring the servers to properly support an Elasticsearch
+deployment. 
+
 Installing Elasticsearch is pretty easy and takes only six steps: 
 
 1. Find the version of Elasticsearch that's embedded in the version of @product@

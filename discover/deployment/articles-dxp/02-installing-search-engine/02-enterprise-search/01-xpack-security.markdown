@@ -1,4 +1,4 @@
-# Installing X-Pack Security [](id=installing-x-pack-security)
+# Installing LES Security [](id=installing-x-pack-security)
 
 Once X-Pack is installed, start securing Elasticsearch by configuring the
 built-in user passwords.

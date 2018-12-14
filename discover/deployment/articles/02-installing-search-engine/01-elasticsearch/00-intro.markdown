@@ -1,4 +1,4 @@
-# Configuring Elasticsearch [](id=configuring-elasticsearch-for-liferay-0)
+# Elasticsearch [](id=configuring-elasticsearch-for-liferay-0)
 
 Elasticsearch is an open source, highly scalable, full-text search and
 analytics engine.
@@ -12,9 +12,10 @@ If you'd rather use Solr, it's also supported. See the documentation on
 if you're interested.
 
 To get up and running quickly with Elasticsearch as a remote server, refer to
-the [Installing Elasticsearch article](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch).
-Those are basic instructions for installing and configuring Elasticsearch in
-a single server environment. This article includes more details and information
+the 
+[Installing Elasticsearch article](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch).
+Those are basic instructions for installing and configuring Elasticsearch in a
+single server environment. This article includes more details and information
 on clustering and tuning Elasticsearch. Here, you'll learn to configure your
 existing Elasticsearch installation for use in production environments. 
 
