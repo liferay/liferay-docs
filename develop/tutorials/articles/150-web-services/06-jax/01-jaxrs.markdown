@@ -93,7 +93,7 @@ must create an
 to provide a way to grant access to your service: 
 
 1.  Go to the *Control Panel* &rarr; *Configuration* &rarr; *OAuth2
-    Administration* and click the ![add](../../images/icon-add.png) button to
+    Administration* and click the ![add](../../../images/icon-add.png) button to
     add an application. 
 
 2.  Give your application a descriptive name. 
