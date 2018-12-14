@@ -3,84 +3,114 @@
 The data collected in forms created by Liferay Forms can be stored in many
 formats. <!--Link to 7.2 Forms Storage Adapters, when available-->
 
-In the [tutorial on Forms Storage Adapters](LINK WHEN AVAILABLE), the serializer
-that ships with @product@, `DDMFormValuesJSONSerializer`, is used for
-serializing saved form data into a `java.io.File` object. To deserialize when
-form data must be retrieved, `DDMFormValuesJSONDeserializer` is leveraged. the
-values when retrieved by @product@. If the serialization functionality provided
-by the Liferay Forms API is sufficient, there's no need to continue. However, if
-you need to write your own serialization and deserialization functionality for
-saving and retrieving form data, you're in the right place.
+<!-- WRONG: the below confuses DDMFormValuesSerializers with
+DDMFormSerializers-->
+In the 
+[tutorial on Forms Storage Adapters](LINK WHEN AVAILABLE), 
+the serializer that ships with @product@, `DDMFormValuesJSONSerializer`, is used
+for serializing saved form data into a JSON format String object. To deserialize
+when form data must be retrieved, `DDMFormValuesJSONDeserializer` is leveraged.
+The values when retrieved by @product@. If the serialization functionality
+provided by the Liferay Forms API is sufficient, there's no need to continue.
+However, if you need to write your own serialization and deserialization
+functionality for saving and retrieving form data, you're in the right place.
 
-The example demonstrated here shows you how to create a serializer for saving
-form data in YAML format. The same principles apply to writing a deserializer. 
+The example here creates a serializer for saving form data in YAML format. The
+same principles apply to writing a deserializer. 
 
 The IO API now allows you to serialize/deserialize your form using  a
 request/response structure, giving you control over what you need to proper
 perform this task. This way you can create personalized
 serializers/deserializers to match the format you want.
 
-## Steps
+## Creating the Serializer
 
-We will use a serializer for this example but it applies to deserializers too.
+The steps used to create this example serializer apply equally to
+deserializers.
 
-Let's create a Form serializer for Yaml format.
+To serialize form data into [YAML](https://yaml.org/) format:
 
-First we need to create a class that implements  DDMFormSerializer. Ex:
+1. Create a class that implements `DDMFormSerializer`:
 
-@Component(immediate = true, property = "ddm.form.serializer.type=yaml") public
-class DDMFormYamlSerializer implements DDMFormSerializer { .....  }
+        @Component(immediate = true, property = "ddm.form.serializer.type=yaml") public
+        class DDMFormYamlSerializer implements DDMFormSerializer { .....  }
 
-It's important to notice the property ddm.form.serializer.type=yaml. This
-property will be used by our DDMFormSerializerTracker to find our yaml
-serializer.
+The property `ddm.form.serializer.type=yaml` marks the Component so that
+`DDMFormSerializerTracker` can find the YAML serializer.
 
-Now we must add our serializing logic to the overridden serialize method.It
-takes a DDMFormSerializerSerializeRequest and returns a
-DDMFormSerializerSerializeResponse  with serialized string in it.
+2.  Add the serializing logic to the overridden serialize method. It takes a
+    `DDMFormSerializerSerializeRequest` and returns a
+    `DDMFormSerializerSerializeResponse`  with the serialized string in it.
 
+        @Override public DDMFormSerializerSerializeResponse serialize(
+        DDMFormSerializerSerializeRequest ddmFormSerializerSerializeRequest) {
 
+                DDMForm ddmForm = ddmFormSerializerSerializeRequest.getDDMForm(); 
 
+                ...YOUR CODE FOR BUILDING A YAML OBJECT GOES HERE ...  
 
+                DDMFormSerializerSerializeResponse.Builder builder = 
+                    DDMFormSerializerSerializeResponse.Builder.newBuilder(yamlObject.toString());
 
+                return builder.build(); }
 
+This is what you need to create your serializer. Of course, _YOUR CODE FOR
+BUILDING A YAML OBJECT GOES HERE_ requires some explanation. While you can
+do whatever you want here, there are several things you really ought to
+do:
 
+**Add the available Language IDs:** Since you have the `DDMForm` object from the
+    request, call `ddmForm.getAvailableLocales()`.
 
+**Add the default Language ID:** Get this from the `DDMForm` object by calling
+    `ddmForm.getDefaultLocale()`.
 
+**Add the Form Fields:** Get these from the `DDMForm` object by calling
+    `ddmForm.getDDMFormFields()`.
 
-@Override public DDMFormSerializerSerializeResponse serialize(
-DDMFormSerializerSerializeRequest ddmFormSerializerSerializeRequest) {
+**Add any Form Rules:** Get them form the `DDMForm` object with
+    `ddmForm.getDDMFormRules()`.
 
-        DDMForm ddmForm = ddmFormSerializerSerializeRequest.getDDMForm(); ...
-        YOUR CODE GOES HERE ...  DDMFormSerializerSerializeResponse.Builder
-        builder = DDMFormSerializerSerializeResponse.Builder.newBuilder(
-        yamlObject.toString());
+**Add Success Page Settings:** Get these from the `DDMForm` with
+    `ddmForm.getDDMFormSuccessPageSettings()`.
 
-        return builder.build(); }
+All these are done in the default form serializer, `DDMFormJSONSerializer`.
 
-This is what you need to create your serializer.
+If you have the @product@ source code, you can find the default serializer in
 
-Code It's very simple to use it. You need to get  your serializer from the
-DDMFormSerializerTracker, pass the DDMFormSerializerSerializeRequest and receive
-the DDMFormSerializerSerializeResponse with the serialized value.
+    modules/apps/dynamic-data-mapping/dynamic-data-mapping-io/src/main/java/com/liferay/dynamic/data/mapping/io/internal/DDMFormJSONSerializer.java
 
-DDMFormSerializer ddmFormSerializer =
-ddmFormSerializerTracker.getDDMFormSerializer("yaml");
+You didn't create serialization code for no reason. You'll want to call it from
+somewhere.
 
-        DDMFormSerializerSerializeRequest.Builder builder =
-        DDMFormSerializerSerializeRequest.Builder.newBuilder(ddmForm);
+## Calling the Serializer 
 
-        DDMFormSerializerSerializeResponse ddmFormSerializerSerializeResponse =
-        ddmFormSerializer.serialize(builder.build());
+To use the serializer:
 
-        return ddmFormSerializerSerializeResponse.getContent();
+1. Get the serializer from the `DDMFormSerializerTracker`.
 
+2.  Pass the `DDMFormSerializerSerializeRequest` to the tracker.
 
+3.  Receive the `DDMFormSerializerSerializeResponse` with the serialized value.
 
+Here's a code example:
 
+    DDMFormSerializer ddmFormSerializer =
+    ddmFormSerializerTracker.getDDMFormSerializer("yaml");
 
+    DDMFormSerializerSerializeRequest.Builder builder =
+    DDMFormSerializerSerializeRequest.Builder.newBuilder(ddmForm);
 
-Documentation for TS Provide the underlying technical details that TS would need
-to support the product (for example, design concepts), if you have not already
-done so in the sections above. 
+    DDMFormSerializerSerializeResponse ddmFormSerializerSerializeResponse =
+    ddmFormSerializer.serialize(builder.build());
+
+    return ddmFormSerializerSerializeResponse.getContent();
+
+In addition to reviewing what I have here, there are some additional questions:
+
+1.  When does this serialization code get called? After a form save?
+2.  Is there configuration in the forms UI to control whichs erializer is used? Or is it entirely backend code?
+3.  If it's all backend, are developers expected to do something so that their serializer replaces the default JSON serializer?
+4.  Is there anything we should tell developers about the deserialization process?
+
 
