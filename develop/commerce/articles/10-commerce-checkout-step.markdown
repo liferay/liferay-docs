@@ -72,7 +72,7 @@ localized when tied to an entry in a `Language.properties` file.
 The step's position in the checkout process is determined by the
 `commerce.checkout.step.order:Integer` property.
 
-![Figure 1: New checkout steps can be interspersed between default steps.](../../images/checkoutsteps.png)
+![Figure 1: New checkout steps can be interspersed between default steps.](../images/checkoutsteps.png)
 
 Out of the box, the `commerce.checkout.step.order:Integer` properties for the
 first four steps---*Billing Address*, *Shipping Address*, *Shipping Method*, and
@@ -83,7 +83,7 @@ first four steps---*Billing Address*, *Shipping Address*, *Shipping Method*, and
 `Integer.MAX_VALUE - 101` will put the demo step in fifth position, right before
 the Order Summary.
 
-![Figure 2: An `order:Integer` value of 41 would have the same effect.](../../images/newcheckoutstep.png)
+![Figure 2: An `order:Integer` value of 41 would have the same effect.](../images/newcheckoutstep.png)
 
 Next, include the `processAction` and `render` methods:
 
@@ -107,7 +107,7 @@ Next, include the `processAction` and `render` methods:
 The `processAction` method is called whenever the buyer clicks the *Continue*
 button. It processes new input in checkout fields.
 
-![Figure 3: The `processAction` method will save Liferay's address when the user clicks *Continue*.](../../images/continuecheckoutstep.png)
+![Figure 3: The `processAction` method will save Liferay's address when the user clicks *Continue*.](../images/continuecheckoutstep.png)
 
 Meanwhile the `render` method renders `view.jsp`, from the module's
 `src/main/resourcer/checkout_step` folder.
