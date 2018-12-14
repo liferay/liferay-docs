@@ -91,16 +91,14 @@ That's it! The Liferay Hypermedia REST APIs are now ready for use.
 
 1.  Install Docker if you don't already have it installed. 
 
-2.  Create the config file as instructed in the first step above. 
+2.  Create the configuration file as instructed in the first step above. 
 
-3.  Store the file in `/Users/liferay/Downloads/xyz123/files/osgi/configs`, 
-    where `/Users/liferay/Downloads/` is the folder where the Docker image will 
-    be downloaded. 
+3.  Store the file in `[Docker Image Location]/xyz123/files/osgi/configs`. 
 
-4.  Execute the following command, replacing `/Users/liferay/Downloads/` with 
-    the folder where the Docker image will be downloaded: 
+4.  Execute the following command, replacing `[Docker Image Location]` with the
+    your Docker image folder: 
 
-        docker run -it -p 8080:8080 -v /Users/liferay/Downloads/xyz123:/etc/liferay/mount liferay/portal-snapshot:7.1.x-201812071242-af6321a
+        docker run -it -p 8080:8080 -v [Docker Image Location]/xyz123:/etc/liferay/mount liferay/portal-snapshot:7.1.x-201812071242-af6321a
 
 5.  Test the APIs as instructed in the third step above. 
 
