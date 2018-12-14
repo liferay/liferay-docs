@@ -92,25 +92,40 @@ You can read more about staging in the
 
 ## Sharing Widget Page Templates [](id=sharing-widget-page-templates)
 
-If you want to export a page that uses a page template to a different 
-environment (through a LAR file or remote publication), the template must be 
-exported and imported manually in advance or the import fails.
+When importing pages to a new site or environment, you must also import
+templates associated with those pages. Generally templates are
+included automatically when an associated page is exported, but if not you 
+can export the template collection separately so the page can be imported 
+to the new environment. To export page templates, 
 
-To export a page using a page template, use the following process:
+1.  Go to *Site Management* &rarr; *Build* &rarr; *Pages*.
 
-1.  Go to Control Panel &rarr; Sites &rarr; Page Templates.
+2.  Select the *Page Templates* tab.
 
-2.  Next to the page template you want to export, click Actions &rarr; Export. 
-    This produces a LAR file you can import later.
+3.  At the top right of the page, click *Options* 
+    (![Options](../../../../../../images/icon-options.png)) &rarr; 
+    *Export/Import*.
 
-3.  On the target environment, go to Control Panel &rarr; Sites &rarr; Page
-    Templates and create a new page template.
+4.  On the *Export/Import* page you can choose to export configuration data and
+    change which Collections and templates are being exported.
 
-4.  Next to the new template, click Actions &rarr; Import.
+5.  When you're done configuring the export, click *Export* and save the 
+    exported LAR file.
 
-5.  Upload the LAR file containing the exported page template from step 3.
+6.  On the target environment, go to *Site Management* &rarr; *Build* &rarr; 
+    *Pages* and select *Page Templates*.
 
-The page template can now be imported normally to your new environment. For 
-more information on exporting/importing content, visit the Importing/Exporting 
-Pages and Content article. 
+7.  At the top right of the page, click *Options* 
+    (![Options](../../../../../../images/icon-options.png)) &rarr; 
+    *Export/Import*.
+
+8.  Select the *Import* tab.
+
+9.  Upload the LAR with your template data. If the LAR contains 
+    additional content you don't want to import, you can deselect it.
+
+Once the template has been imported, the page can be imported normally to your
+new environment. For more information on exporting/importing content, visit the
+[Importing/Exporting Sites and Content](/discover/portal/-/knowledge_base/7-1/importing-exporting-pages-and-content)
+article. 
 

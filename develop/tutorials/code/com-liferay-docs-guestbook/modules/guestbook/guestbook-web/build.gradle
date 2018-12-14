@@ -6,6 +6,5 @@ dependencies {
 	compileOnly group: "jstl", name: "jstl", version: "1.2"
 	compileOnly group: "org.osgi", name: "osgi.cmpn", version: "6.0.0"
 	compileOnly project(":modules:guestbook:guestbook-api")
-    compileOnly project(":modules:guestbook:guestbook-service")
     compileOnly group: "com.liferay", name: "com.liferay.application.list.api", version: "2.0.0"
 }
