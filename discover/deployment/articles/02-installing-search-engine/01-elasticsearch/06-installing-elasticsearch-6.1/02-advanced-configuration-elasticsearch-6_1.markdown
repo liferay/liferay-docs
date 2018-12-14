@@ -22,7 +22,7 @@ Specify the settings you need by using one or more of the
 `additionalConfigurations`, `additionalIndexConfigurations`, or
 `additionalTypeMappings`, and `overrideTypeMappings` settings. 
 
-![Figure 1: You can add Elasticsearch configurations to the ones currently available in System Settings.](../../../images/cfg-elasticsearch-additional-configs.png)
+![Figure 1: You can add Elasticsearch configurations to the ones currently available in System Settings.](../../../../images/cfg-elasticsearch-additional-configs.png)
 
 `additionalConfigurations` defines extra settings (in YAML) for the embedded
 Elasticsearch. This is only useful for testing environments using the embedded

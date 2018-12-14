@@ -1,7 +1,7 @@
 # Preparing to Install Elasticsearch [](id=preparing-to-install-elasticsearch)
 
 By default, @product-ver@ and its 
-[embedded Elasticsearch engine](/discover/deployment/-/knowledge_base/7-1/embedded-vs-remote-operation-mode)
+[embedded Elasticsearch engine](/discover/deployment/-/knowledge_base/7-1/configuring-elasticsearch-for-liferay-0#embedded-vs-remote-operation-mode)
 run in the same JVM. Although this enables out-of-the-box search, it's only
 supported for development. For production use, Elasticsearch must run in a
 separate JVM. See the 
