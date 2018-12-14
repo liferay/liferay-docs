@@ -5,10 +5,10 @@ styling, how to organize your content, and how to create your site. Your page
 layout is unique to the requirements and design for your site. The default page 
 layout that the Unstyled theme provides is organized into three key sections:
 
-- **Header**: contains the navigation, site logo and title (if shown), and 
+- **Header:** contains the navigation, site logo and title (if shown), and 
   sign-in link when the user isn’t logged in
-- **Main Content**: contains the portlets or fragments for the page
-- **Footer**: contains any additional information, such as the copyright or 
+- **Main Content:** contains the portlets or fragments for the page
+- **Footer:** contains any additional information, such as the copyright or 
   author
 
 ![Figure 1: The page layout is broken into three key sections.](../../images/portal-layout-sections.png)
@@ -18,12 +18,12 @@ layout that the Unstyled theme provides is organized into three key sections:
 The `#content` `Section` makes up the majority of the page. The portlets or 
 fragments are contained inside the `#main-content` `div`. While you can write 
 all of your content manually in your theme templates if you wish, @product@ 
-provides a CMS with several portlets OOTB that you can use to help build your 
-site. After all, that’s one of the major benefits of using @product@. For more 
-information on using @product@'s native portlets and CMS system, see the 
-[User & Admin documentation](/discover/portal). 
-You can also create custom portlets for your site. Portlets can be added via the 
-Add Menu (referred to as widget), included in a sitemap through the 
+ships with a default set of applications that provide common functionalities, 
+such as forums and wikis, documents and media, blogs, and more. For more 
+information on using @product@ and its native portlets, see the 
+[User & Admin documentation](/discover/portal). You can also create custom 
+portlets for your site. Portlets can be added via the Add Menu 
+(referred to as widget), included in a sitemap through the 
 [Resources Importer](/develop/tutorials/-/knowledge_base/7-1/importing-resources-with-a-theme), 
 or they can be 
 [embedded in the page's theme or layout template](/develop/tutorials/-/knowledge_base/7-1/embedding-portlets-in-themes-and-layout-templates). 
@@ -77,13 +77,13 @@ The main page layout also contains a few notable sidebars that the user can
 trigger through the Control Menu, if they are signed in and have the proper 
 roles. These are listed below:
 
-- **Add Menu**: lets you add portlets (widgets) and fragments (if applicable) to 
+- **Add Menu:** lets you add portlets (widgets) and fragments (if applicable) to 
   the page
-- **Control Menu**: provides the main navigation for accessing the Add Menu, 
+- **Control Menu:** provides the main navigation for accessing the Add Menu, 
   Product Menu, and Simulation Panel
-- **Product Menu**: contains administrative apps, configuration settings, and 
+- **Product Menu:** contains administrative apps, configuration settings, and 
   user account settings, profile, and dashboard page
-- **Simulation Panel**: lets the user simulate how the page will display across 
+- **Simulation Panel:** lets the user simulate how the page will display across 
   different devices
 
 ![Figure 3: Remember to account for the product navigation sidebars and panels when styling your site.](../../images/portal-layout-nav-control-menu.png)

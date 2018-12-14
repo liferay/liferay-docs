@@ -33,11 +33,9 @@ piece of functionality for the page:
   decorator-specific theme settings. See the 
   [Portlet Decorators](/develop/tutorials/-/knowledge_base/7-1/creating-configurable-styles-for-portlet-wrappers) 
   tutorial for more info.
-- `navigation.ftl`: Contains the navigation markup. Note that this 
-  implementation requires some modifying to work properly in 7.1, as the 
-  reordering and hiding page features have been removed in Site Pages. To 
-  customize pages in the navigation, you must use the `navigation_menu` macro 
-  instead. This lets you leverage 
+- `navigation.ftl`: Contains the navigation markup. To customize pages in the 
+  navigation, you must use the `liferay.navigation_menu` macro. This lets you 
+  leverage 
   [ADTs](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/site-navigation/site-navigation-menu-web/src/main/resources/com/liferay/site/navigation/menu/web/portlet/template/dependencies) 
   for the navigation menu. Note that `navigation.ftl` also defines the hamburger 
   icon and `navbar-collapse` class that provides the simplified navigation 
@@ -60,14 +58,15 @@ piece of functionality for the page:
 
 - `portal_pop_up.ftl`: The theme template for pop up dialogs for the theme's 
   portlets. Similar to `portal_normal.ftl`, `portal_pop_up.ftl` provides the 
-  markup template for all pop-up dialogs, such as a portlet's Configuration menu 
-  (includes `init.ftl`, which includes `init_custom.ftl`).
+  markup template for all pop-up dialogs, such as a portlet's Configuration 
+  menu. It also has access to the FreeMarker variables defined in `init.ftl` and 
+  `init_custom.ftl`.
 
 ![Figure 2: Each theme template provides a portion of the page's markup and functionality.](../../images/portal-layout-theme-templates.png)
 
 ### Theme Template Utilities [](id=theme-template-utilities)
 
-Liferay provides several FreeMarker variables and macros that you can use in 
+@product@ provides several FreeMarker variables and macros that you can use in 
 your theme templates to include portlets, use taglibs, access theme objects, and 
 more. You can see examples of these used in `portal_normal`. These utilities are 
 included in the files listed below:
@@ -78,22 +77,24 @@ included in the files listed below:
   Provides macros for commonly used portlets and theme resources. See the 
   [Macros tutorial](/develop/tutorials/-/knowledge_base/7-1/using-liferays-macros-in-your-theme) 
   for more information.
-- [`taglib-mappings.properties`](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/frontend-taglib/frontend-taglib-util-freemarker-contributor/src/main/resources/META-INF/taglib-mappings.properties): 
-  Maps the portal taglibs to names for FreeMarker macros. Taglibs let you 
-  quickly create common UI components. This properties file is also provided 
-  separately for each app taglib. See the 
+- `taglib-mappings.properties`: 
+  Maps the portal taglibs to FreeMarker macros. Taglibs let you quickly create 
+  common UI components. This properties file is also provided 
+  separately for each app taglib. For convenience, these FreeMarker macros are 
+  listed in the 
+  [FreeMarker Taglib Mappings reference guide](/develop/reference/-/knowledge_base/7-1/freemarker-taglib-macros).
+  See the 
   [Taglib tutorials](/develop/tutorials/-/knowledge_base/7-1/front-end-taglibs) 
   for more information on using each taglib in your theme templates.
 
 ## CSS Frameworks and Extensions [](id=css-frameworks-and-extensions)
 
-As noted above, @product@ supports the SASS CSS extension. CSS files that use 
-SASS should be prefixed with `_`, such as `_custom.scss` (where custom styles 
-are written for themes). This means that you can take full advantage of Sass 
-variables, nesting, and mixins in your CSS.
+As noted above, @product@ supports the Sass CSS extension. This means that you 
+can take full advantage of Sass mixins, nesting, partials, and variables in your 
+CSS.
 
 Also important to note is 
-[Clay CSS](https://claycss.com/), 
+[Clay CSS](https://clayui.com/), 
 the web implementation of Liferay's 
 [Lexicon design language](https://lexicondesign.io/). 
 An extension of Bootstrap, Clay CSS fills the gaps between Bootstrap and the 
@@ -137,19 +138,19 @@ The following extensions and mechanisms are available for themes:
 
 You can customize portlets with these mechanisms and extensions:
 
-- **Portlet FTL Customizations**: customize the base template markup for all 
+- **Portlet FTL Customizations:** customize the base template markup for all 
   portlets. See the 
   [Theming Portlets tutorial](/develop/tutorials/-/knowledge_base/7-1/theming-portlets#portlet-ftl) 
   for more information.
-- **Application Display Templates (ADTs)**: provides an alternate display style 
+- **Application Display Templates (ADTs):** provides an alternate display style 
   for a portlet. Note that not all portlets support ADTs. See the 
   [Application Display Templates (ADTs) User Guide](/discover/portal/-/knowledge_base/7-1/styling-widgets-with-application-display-templates) 
   for more information.
-- **Portlet Decorator**: lets you customize the exterior decoration for a portlet. 
+- **Portlet Decorator:** lets you customize the exterior decoration for a portlet. 
   See the 
   [Portlet Decorators tutorial](/develop/tutorials/-/knowledge_base/7-1/creating-configurable-styles-for-portlet-wrappers) 
   for more information.
-- **Web Content Template**: defines how structures are displayed for web content. 
+- **Web Content Template:** defines how structures are displayed for web content. 
   See the 
   [Web Content Templates User Guide articles](/discover/portal/-/knowledge_base/7-1/designing-web-content-with-templates) 
   for more information.
@@ -160,10 +161,10 @@ You can customize portlets with these mechanisms and extensions:
 
 Themes are built on top of one of the following base themes: 
 
-- **Unstyled**: provides basic markup, functions, and images for Portal
-- **Styled**: inherits from the Unstyled base theme and adds some styling on top
+- **Unstyled:** provides basic markup, functions, and images for Portal
+- **Styled:** inherits from the Unstyled base theme and adds some styling on top
 
-Liferay Portal lets you choose the development tools you're most comfortable 
+@product@ lets you choose the development tools you're most comfortable 
 with so you can focus on creating a well designed theme. The following tools let 
 you build themes:
 
@@ -192,7 +193,7 @@ same though:
     - `_custom.scss`: custom CSS styling
     - `main.js`: the theme's JavaScript
 
-2.  Build and deploy the theme to your Liferay server.
+2.  Build and deploy the theme to your @product@ server.
 
 3.  Apply the theme 
     [through the Look and Feel menu](/discover/portal/-/knowledge_base/7-1/page-set-look-and-feel) 
@@ -203,7 +204,7 @@ The finished theme is bundled as a WAR (Web application ARchive) file.
 
 +$$$
 
-**Note**: While developing your theme, we recommend that you enable 
+**Note:** While developing your theme, we recommend that you enable 
 [Developer Mode](/develop/tutorials/-/knowledge_base/7-1/using-developer-mode-with-themes). 
 This will unminify JS files and disable caching for CSS and FreeMarker template 
 files, making the debugging process much easier.
@@ -214,25 +215,25 @@ During theme development, if you’ve built your theme with the Liferay Theme
 Generator, there are some helpful Gulp tasks that you can use to make the 
 process easier:
 
-- **build**: builds your theme’s files based off of the specified base theme. 
+- **build:** builds your theme’s files based off of the specified base theme. 
   See the 
   [gulp build tutorial](/develop/tutorials/-/knowledge_base/7-1/building-your-themes-files) 
   for more information.
-- **extend**: sets the base theme or themelet to extend. See the 
+- **extend:** sets the base theme or themelet to extend. See the 
   [gulp extend tutorial](/develop/tutorials/-/knowledge_base/7-1/changing-your-base-theme) 
   for more information.
-- **init**: specifies the app server to deploy your theme to (automatically run 
+- **init:** specifies the app server to deploy your theme to (automatically run 
   during the initial. See the 
   [gulp init tutorial](/develop/tutorials/-/knowledge_base/7-1/configuring-your-themes-app-server) 
   for more information. 
-- **kickstart**: copies files from an existing theme into your theme to help 
+- **kickstart:** copies files from an existing theme into your theme to help 
   kickstart it. See the 
   [gulp kickstart tutorial](/develop/tutorials/-/knowledge_base/7-1/copying-an-existing-themes-files) 
   for more information.
-- **status**: lists the base theme/themelets that your theme extends. See the 
+- **status:** lists the base theme/themelets that your theme extends. See the 
   [gulp status tutorial](/develop/tutorials/-/knowledge_base/7-1/listing-your-themes-extensions) 
   for more information.
-- **watch**: watches for changes to your theme’s files and automatically deploys 
+- **watch:** watches for changes to your theme’s files and automatically deploys 
   them to the server when a change is made. See the 
   [gulp watch tutorial](/develop/tutorials/-/knowledge_base/7-1/automatically-deploying-theme-changes) 
   for more information.
