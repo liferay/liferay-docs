@@ -98,10 +98,6 @@ the version of @product@ you specified in your POM file and installs your
 or do not have it installed, the pure Maven equivalent for this command is `mvn
 bundle-support:init`.
 
-If you run into errors during the bundle downloading process, check to make sure
-your workspace is accounting for the
-[appropriate certificates](/develop/tutorials/-/knowledge_base/7-0/configuring-a-liferay-workspace#certification-issues-in-liferay-workspace).
-
 If you want to skip the downloading process, you can create the `bundles` folder
 manually in your workspace's ROOT folder and extract your Liferay Portal bundle to
 that folder.

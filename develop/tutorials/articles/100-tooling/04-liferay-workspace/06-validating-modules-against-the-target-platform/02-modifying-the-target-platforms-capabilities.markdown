@@ -144,7 +144,10 @@ current workspace's @product@ instance, follow the steps below:
 
 3.  From the root folder of your workspace, run the following command:
 
-        bnd remote distro -o custom_distro.jar com.liferay.ce.portal.distro 7.0.6
+        bnd remote distro -o custom_distro.jar release.portal.distro 7.0.6
+
+    Liferay DXP users must replace the `release.portal.distro` artifact name
+    with `release.dxp.distro` and use the `7.0.10.7` version syntax.
 
     This connects to the newly deployed BND agent running in @product@ and
     generates a new distro JAR named `custom_distro.jar`. All other capabilities

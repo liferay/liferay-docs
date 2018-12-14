@@ -29,9 +29,5 @@ projects in @ide@, make sure to follow the methods described above.
 
 $$$
 
-If you run into errors during the build/deploy process of your module, check to
-make sure your Liferay Workspace is accounting for the
-[appropriate certificates](/develop/tutorials/-/knowledge_base/7-0/configuring-a-liferay-workspace#certification-issues-in-liferay-workspace).
-
 That's it! Once your module is deployed to the Liferay server, you can verify
 its installation in @ide@'s Console window.
