@@ -1,4 +1,4 @@
-# Installing LES Security [](id=installing-x-pack-security)
+# Installing Liferay Enterprise Search Security [](id=installing-liferay-enterprise-search-security)
 
 Once X-Pack is installed, start securing Elasticsearch by configuring the
 built-in user passwords.
