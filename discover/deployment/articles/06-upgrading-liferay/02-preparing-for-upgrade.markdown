@@ -149,14 +149,13 @@ Next,
 or
 [use @product@ bundled with your application server of choice](/discover/deployment/-/knowledge_base/7-0/installing-product).
 
-Then
-[install the latest fix pack](/discover/deployment/-/knowledge_base/7-0/patching-liferay). 
+Then if you're upgrading Liferay DXP, install the latest fix pack. 
 
 **Important**: Once you have installed @product-ver@, **DON'T START IT!** In
-previous versions, once you prepared your system for an upgrade, the upgrade
-process ran when you started the new version for the first time. Now
-@product-ver@ ships with an upgrade tool (described in the next article) that
-you must use to upgrade your database.
+Liferay Portal 6.2 and earlier, once you prepared your system for an upgrade,
+the upgrade process ran when you started the new version for the first time. Now
+to streamline server startup, @product@ ships with an upgrade tool (described in
+the next article) that you must use to upgrade your database.
 
 +$$$
 
