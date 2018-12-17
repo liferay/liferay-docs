@@ -1,11 +1,10 @@
 # Enabling Cluster Link [](id=enabling-cluster-link)
 
-Enabling Cluster Link automatically activates distributed caching. Distributed
-caching enables RMI (Remote Method Invocation) cache listeners that replicate
-the cache across a cluster. Cluster Link uses 
-[Ehcache](http://www.ehcache.org), 
-which has robust distributed caching support. The cache is distributed across 
-multiple @product@ nodes running concurrently. The Ehcache global settings are in the
+Enabling Cluster Link automatically activates distributed caching.  The cache is
+distributed across multiple @product@ nodes running concurrently. Cluster Link
+does
+[Ehcache](http://www.ehcache.org)
+replication. The Ehcache global settings are in the
 [`portal.properties` file](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Ehcache). 
 
 By default Liferay does not copy cached entities between nodes. If an entity is
