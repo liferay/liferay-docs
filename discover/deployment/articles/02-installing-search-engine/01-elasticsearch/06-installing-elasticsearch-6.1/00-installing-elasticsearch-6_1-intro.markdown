@@ -1,4 +1,15 @@
-# Installing Elasticsearch [](id=installing-elasticsearch)
+# Installing Elasticsearch 6.1 [](id=installing-elasticsearch-6-1)
+
++$$$
+
+**Note:** Elasticsearch 6.1.x is a supported search engine for @product-ver@,
+but it's not the newest supported version. If you're installing Elasticsearch
+for the first time, considering following the instructions for installing
+Elasticsearch 6.5.x instead, located in the 
+[root of the deployment guide](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch).
+
+$$$
+
 
 @product@ uses Elasticsearch to index its content. By default, it's installed as
 an embedded service. It works, but it's not a supported configuration for
@@ -10,11 +21,6 @@ can separate your search infrastructure from @product@ and reap some performance
 gains by putting search on a separate box. If you're more budget-conscious, you
 can still increase performance by running Elasticsearch in a separate,
 individually tunable JVM on the same box. 
-
-Before installing Elasticsearch, refer to the 
-[Preparing to Install Elasticsearch](/discover/deployment/-/knowledge_base/7-1/preparing-to-install-elasticsearch) 
-for guidance on configuring the servers to properly support an Elasticsearch
-deployment. 
 
 Installing Elasticsearch is pretty easy and takes only six steps: 
 
@@ -35,8 +41,7 @@ Installing Elasticsearch is pretty easy and takes only six steps:
 
 +$$$
 
-**Note:** Before continuing, make sure you have set the 
-[`JAVA_HOME` environment variable](https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/).
+**Note:** Before continuing, make sure you have set the [`JAVA_HOME` environment variable](https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/)
 
 If you have multiple JDKs installed, make sure Elasticsearch and @product@ are
 using the same version. You can specify this in `[Elasticsearch
@@ -48,12 +53,6 @@ $$$
 
 Now you'll perform these steps, and when you're done, you'll have
 a production-ready instance of @product@ up and running.
-
-After you're done following the installation guide, refer to the 
-[Configuring Elasticsearch](discover/deployment/-/knowledge_base/7-1/configuring-elasticsearch-for-liferay-0)
-article for more details on configuring @product@ for Elasticsearch. For more
-information on installing a search engine, see
-[here](discover/deployment/-/knowledge_base/7-1/installing-a-search-engine).
 
 ### Step One: Find the Right Version of Elasticsearch [](id=step-one-find-the-right-version-of-elasticsearch)
 
@@ -70,7 +69,7 @@ A JSON document is returned that looks similar to this:
       "cluster_name" : "LiferayElasticsearchCluster",
       "cluster_uuid" : "Ii6STs04Tg-XzTVV5h7M2Q",
       "version" : {
-        "number" : "6.5.1",
+        "number" : "6.1.3",
         "build_hash" : "af51318",
         "build_date" : "2018-01-26T18:22:55.523Z",
         "build_snapshot" : false,
@@ -82,15 +81,7 @@ A JSON document is returned that looks similar to this:
     }
 
 The version of Elasticsearch that's running is the value of the `"number"` field.
-In this example, it's 6.5.1. 
-
-Shut down the @product@ server. In a local, single-machine testing environment,
-if you continue without shutting down, the Elasticsearch server you're about to
-install and start will throw errors in the log if its cluster name and HTTP port
-match the already-running embedded Elasticsearch server. An alternative to
-shutting down @product@ is to use a different cluster name (i.e., not
-`LiferayElasticsearchCluster`) and HTTP port (i.e., not `9200`) in the remote
-Elasticsearch server.
+In this example, it's 6.1.3. 
 
 Now that you know the version of Elasticsearch you need, go to
 [Elastic's](https://www.elastic.co) website and download that version. 
@@ -105,7 +96,7 @@ what you decide, either way you get the benefit of a separately tunable search
 infrastructure. 
 
 Once you have a copy of the right version of Elasticsearch, extract it to
-a folder on the machine where you want it running. That's it! 
+a folder on the machine where you want it running. That's it!. 
 
 ### Step Three: Install Elasticsearch Plugins [](id=step-three-install-elasticsearch-plugins)
 
@@ -185,5 +176,5 @@ and click on *Control Panel* &rarr; *Configuration* &rarr; *Search* and
 click the *Execute* button for *Reindex all search indexes*. When you do that,
 you should see some messages scroll up in the Elasticsearch log. 
 
-For more details refer to the [Elasticsearch installation guide](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/_installation.html).
+For more details refer to the [Elasticsearch installation guide](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/_installation.html).
 

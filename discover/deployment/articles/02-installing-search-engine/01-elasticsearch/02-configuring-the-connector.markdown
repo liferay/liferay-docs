@@ -1,7 +1,7 @@
 # Configuring the Liferay Elasticsearch Connector [](id=configuring-the-liferay-elasticsearch-connector)
 
 For detailed Elasticsearch configuration information, refer to the
-[Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/settings.html).
+[Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/settings.html).
 
 The name of your Elasticsearch cluster is important. When you're running
 Elasticsearch in remote mode, the cluster name is used by @product@ to recognize
@@ -9,11 +9,22 @@ the Elasticsearch cluster. To learn about setting the Elasticsearch cluster name
 on the @product@ side, refer below to the section called Configuring the Liferay
 Elasticsearch Connector.
 
-Elasticsearch's configuration files are written in [YAML](http://www.yaml.org)
-and kept in the `[Elasticsearch Home]/config` folder:
++$$$
 
--  `elasticsearch.yml` is for configuring Elasticsearch modules
--  `logging.yml` is for configuring Elasticsearch logging
+**Note:** The `http.enabled` setting in Elasticsearch corresponds to the
+`httpEnabled` setting in the Liferay Connector to Elasticsearch 6 application.
+As this setting was 
+[deprecated in Elasticsearch 6.3](https://www.elastic.co/guide/en/elasticsearch/reference/current/release-notes-6.3.0.html#deprecation-6.3.0), 
+the connector's corresponding setting is now also deprecated. This setting was
+only used for configuring the embedded Elasticsearch server, so it's
+deprecation is expected to have minimal impact to production deployments.
+
+$$$
+
+Elasticsearch's configuration files are written in [YAML](http://www.yaml.org)
+and kept in the `[Elasticsearch Home]/config` folder. The main configuration
+file you'll interact with is `elasticsearch.yml`, used for configuring
+Elasticsearch modules.
 
 To set the name of the Elasticsearch cluster, open `[Elasticsearch
 Home]/config/elasticsearch.yml` and specify
@@ -50,14 +61,13 @@ To run as a daemon in the background, add the `-d` switch to either command:
 
     ./bin/elasticsearch -d
 
-Once both Elasticsearch and @product@ are installed and running, introduce
-@product@ and Elasticsearch to each other. 
+Once both Elasticsearch and @product@ are installed and running, introduce them
+to each other. 
 
 ## Configuring the Liferay Elasticsearch Connector [](id=configuring-the-liferay-elasticsearch-connector)
 
-The Elasticsearch connector provides integration between Elasticsearch and
-@product@. Before you configure the connector, make sure Elasticsearch is
-running.
+The Elasticsearch connector provides integration between Elasticsearch and the
+portal. Before you configure the connector, make sure Elasticsearch is running.
 
 There are two ways to configure the adapter: 
 
@@ -74,8 +84,7 @@ System Settings, and then exporting the `.config` file with your configuration.
 
 ### Configuring the Adapter in the Control Panel [](id=configuring-the-adapter-in-the-control-panel)
 
-Here's how to configure the Elasticsearch adapter from the System Settings
-application:
+To configure the Elasticsearch adapter from the System Settings application:
 
 1.  Start @product@.
 
@@ -102,12 +111,12 @@ $$$
 
 ### Configuring the Adapter with an OSGi `.config` File [](id=configuring-the-adapter-with-an-osgi-config-file)
 
-When preparing a system for production deployment, you should have a repeatable
+When preparing a system for production deployment, you want to use a repeatable
 deployment process. Therefore, it's best to use the OSGi configuration file,
 where your configuration is maintained in a controlled source.
 
-Follow these steps to configure the Elasticsearch adapter using an OSGi
-configuration file:
+Follow these steps to configure the Elasticsearch adapter using a configuration
+file:
 
 1. Create the following file:
     
@@ -137,7 +146,7 @@ testing under load, and tuning again, so we encourage you to examine the
 <!--
 [settings](discover/reference/-/knowledge_base/7-1/elasticsearch-settings) 
 as well as the -->
-[Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/important-settings.html) 
+[Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/important-settings.html) 
 and go through that process once you have a working configuration. 
 
 ## Configuring a Remote Elasticsearch Host [](id=configuring-a-remote-elasticsearch-host)
@@ -162,11 +171,11 @@ loses contact with Elasticsearch if that node goes down.
 $$$
 
 On the Elasticsearch side, set the `network.host` property in your
-`elasticsearch.yml` file. This property simultaneously sets both the *bind host*
+`elaticsearch.yml` file. This property simultaneously sets both the *bind host*
 (the host where Elasticsearch listens for requests) and the *publish host*
 (the host name or IP address Elasticsearch uses to communicate with other
 nodes). See
-[here](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/modules-network.html)
+[here](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/modules-network.html)
 for more information.
 
 ## Clustering Elasticsearch in Remote Operation Mode [](id=clustering-elasticsearch-in-remote-operation-mode)
@@ -175,7 +184,7 @@ Clustering Elasticsearch is easy. First, set `node.max_local_storage_nodes` to
 be something greater than `1`. When you run the Elasticsearch start script,
 a new local storage node is added to the cluster. If you want four nodes running
 locally, for example, run `./bin/elasticsearch` four times. See
-[here](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/modules-node.html#max-local-storage-nodes)
+[here](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/modules-node.html#max-local-storage-nodes)
 for more information.
 
 Configure the number of shards and replicas in the Elasticsearch 6 adapter,
@@ -188,10 +197,10 @@ shards is `1`.
 +$$$
 
 **Note:** Elasticsearch uses the 
-[Zen Discovery Module](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/modules-discovery-zen.html)
+[Zen Discovery Module](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/modules-discovery-zen.html)
 by default, which provides unicast discovery. Additionally, nodes in the cluster
 communicate using the 
-[Transport Module](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/modules-transport.html),
+[Transport Module](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/modules-transport.html),
 through TCP. See the Elasticsearch documentation for the available properties
 (to be set in the `elasticsearch.yml` file), and the @product@ Elasticsearch
 Adapter's settings for the adapter's available settings.

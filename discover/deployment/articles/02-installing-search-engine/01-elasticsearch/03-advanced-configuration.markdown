@@ -28,14 +28,14 @@ Specify the settings you need by using one or more of the
 Elasticsearch. This is only useful for testing environments using the embedded
 Elasticsearch server. Any node settings normally set in `elasticsearch.yml` can be
 declared here. See the
-[Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/index.html) 
+[Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/index.html) 
 for a description of all possible node settings.
 
 `additionalIndexConfigurations` defines extra settings (in JSON or
 YAML) that are applied to the @product@ index when it's created. For
 example, you can create custom analyzers and filters using this setting. For
 a complete list of available settings, see the 
-[Elasticsearch reference](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/index-modules.html).
+[Elasticsearch reference](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/index-modules.html).
 
 Here's an example that shows how to configure 
 [analysis](https://www.elastic.co/guide/en/elasticsearch/guide/current/analysis-intro.html#analysis-intro) that can be applied to a
@@ -64,16 +64,16 @@ dynamic template (see below).
 `additionalTypeMappings` defines extra field mappings for the
 `LiferayDocumentType` type definition. These are applied when the index is
 created. Add these field mappings in using JSON syntax. For more information see
-[here](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/mapping.html)
+[here](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/mapping.html)
 and
-[here](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/indices-put-mapping.html).
+[here](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/indices-put-mapping.html).
 Use `additionalTypeMappings` for new field mappings, but do not try to override
 existing `properties` mappings. If any of the `properties` mappings set here
 overlap with existing mappings, index creation fails. Use
 `overrideTypeMappings` to replace the default `properties` mappings.
 
 Here's an example of a 
-[dynamic template](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/dynamic-templates.html)
+[dynamic template](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/dynamic-templates.html)
 that uses the analysis configuration above to analyze all string fields that end
 with `_ja`.
 
@@ -101,7 +101,7 @@ with `_ja`.
 The above code adds a new `template_ja` dynamic template. This overrides the
 existing dynamic template with the same name. As with dynamic templates, you can
 add sub-field mappings to @product@'s type mapping. These are referred to as
-[properties](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/properties.html)
+[properties](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/properties.html)
 in Elasticsearch.
 
     { 
@@ -117,7 +117,7 @@ in Elasticsearch.
     }
 
 See
-[here](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/mapping-types.html)
+[here](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/mapping-types.html)
 for more details on Elasticsearch's field datatypes.
 
 $$$

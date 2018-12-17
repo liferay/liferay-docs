@@ -1,4 +1,4 @@
-# Installing X-Pack Monitoring [](id=installing-x-pack-monitoring)
+# Installing X-Pack Monitoring (6.1) [](id=installing-x-pack-monitoring-6-1)
 
 Monitor Elasticsearch with X-Pack Monitoring. First 
 [install X-Pack onto Elasticsearch](discover/deployment/-/knowledge_base-7-1/installing-x-pack)
@@ -181,7 +181,7 @@ Restart @product@ and Kibana.
 Once Kibana and X-Pack are successfully installed and configured and all the
 servers are up and running, add the X-Pack Monitoring portlet to a page:
 
-1.  Open the *Add* menu on a page and choose *Widgets*
+1.  Open the *Add* menu on a page and choose *Applications*
 
 2.  Search for *monitoring* and drag the *X-Pack Monitoring* application from
     the Search category onto the page.

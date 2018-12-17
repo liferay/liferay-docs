@@ -1,4 +1,4 @@
-# Installing X-Pack Security [](id=installing-x-pack-security)
+# Installing X-Pack Security (6.1) [](id=installing-x-pack-security-6-1)
 
 Once X-Pack is installed, start securing Elasticsearch by configuring the
 built-in user passwords.
@@ -34,15 +34,6 @@ We recommend enabling transport layer security on each node.
 
 The following instructions for enabling TLS use `liferay` as the password
 whenever one is needed. Customize these as appropriate for your installation. 
-
-+$$$
-
-**Important:** Elasticsearch and @product@ must share the keys and certificates
-used to configure SSL. Copy them between servers and point to the local copy in
-the corresponding configuration files.
-
-$$$
-
 
 ### Generate Node Certificates [](id=generate-node-certificates)
 
