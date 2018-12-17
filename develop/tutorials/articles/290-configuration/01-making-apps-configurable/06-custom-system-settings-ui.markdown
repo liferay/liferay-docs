@@ -41,7 +41,6 @@ application:
 
         @Meta.AD(deflt = "GBP|CNY|EUR|JPY|USD", name = "symbols", required = false)
         public String[] symbols();
-
     }
 
 There's one configuration option, symbols, that takes an array of values. 
@@ -49,7 +48,7 @@ There's one configuration option, symbols, that takes an array of values.
 All that's necessary is to customize an auto-generated form is one additional
 class, an implementation of the `ConfigurationFormRenderer` interface.
 
-Implement it's three methods:
+Implement its three methods:
 
 1.  `getPid`: Return the id of the configuration object as defined in the `id`
     property of the `@Meta.OCD` annotation of the `*Configuration` class.
@@ -71,14 +70,12 @@ Here's a complete `ConfigurationFormRenderer` implementation:
 
         @Override
         public String getPid() {
-
             return "com.liferay.currency.converter.web.configuration.CurrencyConverterConfiguration";
         }
 
         @Override
         public void render(HttpServletRequest request, HttpServletResponse response)
-            throws IOException {
-
+                throws IOException {
             String formHtml = "<input name=\"mysymbols\" />";
 
             PrintWriter writer = response.getWriter();
@@ -89,8 +86,7 @@ Here's a complete `ConfigurationFormRenderer` implementation:
 
         @Override
         public Map<String, Object> getRequestParameters(
-            HttpServletRequest request) {
-
+                HttpServletRequest request) {
             Map<String, Object> params = new HashMap<>();
 
             String[] mysymbols = ParamUtil.getParameterValues(request, "mysymbols");
@@ -141,23 +137,17 @@ First declare the class an implementation of `ConfigurationScreen`.
 
     @Override 
     public String getCategoryKey() { 
-
         return "third-party"; 
-        
     }
 
     @Override 
     public String getKey() { 
-    
         return "sample-configuration-screen"; 
-        
     }
 
     @Override 
     public String getName(Locale locale) { 
-    
         return "Sample Configuration Screen"; 
-
     }
 
 Second, set the category key, the configuration entry's key, and its localized
@@ -167,9 +157,7 @@ The String that appears in System Settings is _Sample Configuration Screen_.
 
     @Override 
     public String getScope() { 
-    
         return "system"; 
-        
     }
 
 Third, set the 
@@ -177,11 +165,9 @@ Third, set the
 
     @Override 
     public void render(HttpServletRequest request, HttpServletResponse response) 
-        throws IOException {
-
+            throws IOException {
         _jspRenderer.renderJSP( _servletContext, request, response,
         "/sample_configuration_screen.jsp"); 
-        
     }
 
     @Reference private JSPRenderer _jspRenderer;
@@ -196,7 +182,7 @@ the `JSPRenderer` service to delegate rendering to a JSP.
 
 It's beyond the scope of this tutorial to write the JSP markup. A separate
 tutorial will provide a complete demonstration of the `ConfigurationScreen` and
-implementation and the JSP markup to demonstrate it's usage.
+implementation and the JSP markup to demonstrate its usage.
 
 ## Excluding a Configuration UI from System Settings [](id=excluding-a-configuration-ui-from-system-settings)
 
