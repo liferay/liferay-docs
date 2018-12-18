@@ -110,7 +110,7 @@ These are example values. Adjust as needed.
 
 As with the Slow Log configuration, Elasticsearch's JVM Garbage Collection
 logging is adjustable in the Elasticsearch 6 entry in System Settings. Add these
-settings to the Additional Index Configurations property:
+settings to the Additional Configurations property:
 
     monitor.jvm.gc.enabled: true
     monitor.jvm.gc.overhead.debug: 40
