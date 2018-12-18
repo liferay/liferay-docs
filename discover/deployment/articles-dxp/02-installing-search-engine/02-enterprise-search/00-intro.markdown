@@ -29,8 +29,8 @@ Here's an overview of using X-Pack with @product@:
 4.  Restart Elasticsearch. These steps require a full cluster restart.
 
 Following these instructions gives you a working installation of Elasticsearch
-communicating freely with @product@. Read Elastic's documentation to learn about
-additional configuration options, features, and the architecture of
+communicating freely with @product@. Elastic's documentation explains additional
+configuration options, features, and the architecture of
 [X-Pack](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/configuring-security.html). 
 
 Now configure security and/or monitoring, depending on your needs.

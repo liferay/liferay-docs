@@ -48,11 +48,10 @@ for details.
 
     If SSL is enabled on Elasticsearch, this is an `https` URL.
 
-4. If not using X-Pack security, start Kibana by entering
+4.  If not using X-Pack security, start Kibana by opening a command prompt to 
+    Kibana Home and entering this command:
 
         ./bin/kibana
-
-    from Kibana Home.
 
 If you're using X-Pack's security features on the Elasticsearch server, there's
 additional configuration required before starting Kibana.
@@ -69,16 +68,16 @@ these steps or refer to
         elasticsearch.username: "kibana"
         elasticsearch.password: "liferay"
 
-    The password is whatever you set it to when initially setting up X-Pack.
-    Once Kibana is installed, you can change the built-in user passwords from the
+    Use your `kibana` user password from your X-Pack setup. Once Kibana is
+    installed, you can change the built-in user passwords from the
     *Management* user interface.
 
 2.  If you're not encrypting communication with the Elasticsearch cluster, start
-    Kibana with 
+    Kibana from Kibana home.
 
         ./bin/kibana
 
-    and navigate to `localhost:5601`. Log in with a 
+3.  Go to `localhost:5601` and make sure you can sign in as a  
     [user](https://www.elastic.co/guide/en/x-pack/6.1/native-realm.html#native-add)
     who has the `kibana_user` 
     [role](https://www.elastic.co/guide/en/x-pack/6.1/built-in-roles.html).
@@ -129,17 +128,19 @@ the LPKG file by copying it into the `Liferay Home/deploy` folder.
         kibanaUserName="elastic"
         kibanaURL="http://localhost:5601"
 
-    The values differ depending on your Kibana configuration. For example,
-    `kibanaURL="https://localhost:5601"` if using X-Pack Security features.
+    The values depend on your Kibana configuration. For example, use a secure
+    URL such as `kibanaURL="https://localhost:5601"` if you're using X-Pack
+    Security features.
 
-    Alternatively, configure the monitoring adapter from System Settings.
-    Navigate to Control Panel &rarr; Configuration &rarr; System Settings and
-    find the X-Pack Monitoring entry in the Search category. All the
+    Alternatively, configure the monitoring adapter from
+    [System Settings](/discover/portal/-/knowledge_base/7-1/system-settings).
+    Navigate to *Control Panel* &rarr; *Configuration* &rarr; *System Settings* 
+    and find the X-Pack Monitoring entry in the Search category. All the
     configuration options for the monitoring connector appear there.
 
-3.  Deploy this configuration file to `Liferay Home/osgi/configs`, and the
-    settings are picked up by your running instance. There's no need to restart
-    the server.
+3.  Deploy this configuration file to `Liferay Home/osgi/configs`, and your 
+    running instance applies the settings. There's no need to restart the
+    server.
 
 4.  There's one more setting to add to Kibana itself. It sets Kibana's base path
     to let the Monitoring Portlet act as a proxy for Kibana's monitoring UI. Add
@@ -149,7 +150,7 @@ the LPKG file by copying it into the `Liferay Home/deploy` folder.
 
     Note that once you set the `server.basePath`, you cannot access the Kibana
     UI through Kibana's URL (for example, `https://localhost:5601`). All access
-    to the Kibana UI is through the monitoring portlet, which is only accessible
+    to the Kibana UI is through the Monitoring portlet, which is only accessible
     to logged in @product@ users. Navigate directly to the portlet using this
     URL:
 
@@ -170,7 +171,8 @@ the LPKG file by copying it into the `Liferay Home/deploy` folder.
         keytool -importkeystore -deststorepass liferay -destkeystore /path/to/truststore.jks -srckeystore /path/to/Elasticsearch_Home/config/localhost.p12 -srcstoretype PKCS12 -srcstorepass liferay
 
     Add the trustore path and password to your application server's startup JVM
-    parameters. For a Tomcat server, append this to your existing `CATALINA_OPTS`:
+    parameters. Here are example truststore and path parameters for appending to
+    a Tomcat server's `CATALINA_OPTS`:
 
         -Djavax.net.ssl.trustStore=/path/to/truststore.jks -Djavax.net.ssl.trustStorePassword=liferay
 
@@ -179,15 +181,14 @@ Restart @product@ and Kibana.
 ## Monitoring in @product@ [](id=monitoring-in-product)
 
 Once Kibana and X-Pack are successfully installed and configured and all the
-servers are up and running, add the X-Pack Monitoring portlet to a page:
+servers are running, add the X-Pack Monitoring portlet to a page:
 
-1.  Open the *Add* menu on a page and choose *Applications*
+1.  Open the *Add* menu on a page and choose *Widgets*
 
-2.  Search for *monitoring* and drag the *X-Pack Monitoring* application from
-    the Search category onto the page.
+2.  Search for *monitoring* and drag the *X-Pack Monitoring* widget from the 
+    Search category onto the page.
 
 See the Elastic documentation for information on 
 [monitoring Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/es-monitoring.html)
 and 
 [monitoring production systems](https://www.elastic.co/guide/en/x-pack/6.1/monitoring-production.html).
-

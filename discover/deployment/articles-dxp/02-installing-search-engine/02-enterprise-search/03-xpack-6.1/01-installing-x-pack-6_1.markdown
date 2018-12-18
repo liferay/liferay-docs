@@ -1,17 +1,18 @@
-# Installing X-Pack
+# Installing X-Pack [](id=installing-x-pack-0)
 
 Here are the X-Pack installation steps:
 
 1.  To 
     [install X-Pack](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/installing-xpack-es.html)
-    and automatically grant it the required permissions (recommended), run
+    and automatically grant it the required permissions (recommended), run this
+    command on each Elasticsearch node:
 
         bin/elasticsearch-plugin install x-pack --batch
 
-    on each Elasticsearch node. The `--batch` option bypasses
-    installation prompts for granting permissions to X-Pack. 
+    The `--batch` option bypasses installation prompts for granting permissions
+    to X-Pack. 
 
-    You'll see log output detailing the permissions granted, finishing with
+    The log output details the permissions granted and finishes with
     `Installed x-pack`:
 
         -> Downloading x-pack from elastic
@@ -43,16 +44,15 @@ Here are the X-Pack installation steps:
     See more about the permissions X-Pack needs
     [here](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/installing-xpack-es.html). 
 
-2.  Make sure Elasticsearch allows the automatic creation of indexes. If
-    you're unsure, check `elasticsearch.yml` for this property:
+2.  Make sure Elasticsearch allows automatic index creation by verifying this 
+    property in your `elasticsearch.yml` file:
 
         action.auto_create_index: false
 
-    This property is `true` by default, so if you don't see it in
-    `elasticsearch.yml`, there's nothing to worry about. See [Elastic's
-    documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/docs-index_.html#index-creation) 
-    for more information on automatic index creation.
+    This property is `true` by default. 
+    [Elastic's documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/docs-index_.html#index-creation) 
+    describes more automatic index creation details.
 
-3.  Restart Elasticsearch. Make sure @product@ is shut down during this step.
+3.  Shutdown @product@ and restart Elasticsearch. 
 
 Now configure security and/or monitoring, depending on your needs.
