@@ -51,28 +51,34 @@ Docker Hub's Tags section (e.g.,
 [Liferay Portal Docker Tags](https://hub.docker.com/r/liferay/portal/tags).
 
 Lastly, a new `build/docker` folder is generated in your workspace. This folder
-bridges your local file system to the container's file system. Any projects
-residing in your workspace are automatically compiled and copied to the
-`build/docker/deploy` folder; this means that when the container is started, all
-your projects are deployed to the container. Any configurations are also applied
-to the container. You'll learn more about this next.
+bridges your local file system to the container's file system. This means files
+in workspace's `build/docker` folder are also available in the container's
+`/etc/liferay` folder.
+
+Any projects residing in your workspace are automatically compiled and copied to
+the `build/docker/deploy` folder when the container is created; this means that
+when the container is started, all your projects are deployed to the container.
+All configurations are also applied to the container. You'll learn more about
+configuring your container next.
 
 ## Configuring the Container
 
 Before starting your container, you may want to add additional portal
 configurations. This could include things like
 
-- Overriding properties (e.g., `portal-ext.properties`)
-- Overriding Marketplace apps
-- Configuring the app server
-- Adding a license file
+- Property overrides (e.g., `portal-ext.properties`)
+- Marketplace app overrides
+- App server configurations
+- License files
 
-You can do this by applying files to your workspace's `configs/docker` folder.
-It's treated as your Liferay Home for Docker development; you add additional
-files that overlay your @product@ container's default configuration.
+You can do this by applying files (and their accompanying folder structures, if
+necessary) to your workspace's `configs/docker` folder. This folder is treated
+as your Liferay Home for Docker development; you add additional files that
+overlay your @product@ container's default configuration.
 
 As an example, you'll enable the Gogo shell for your container. Add a
-`configs/docker/portal-ext.properties` file with the following configuration:
+`configs/docker/portal-ext.properties` file to your workspace with the following
+configuration:
 
     module.framework.properties.osgi.console=0.0.0.0:11311
 
@@ -103,7 +109,8 @@ There are five Gradle commands available to interact with a container running
 
 - `startDockerContainer`: starts the container.
 - `logsDockerContainer`: prints the portal runtime's logs. You can exit log
-  tracking mode without stopping the container (e.g., [Ctrl|Command] + C).
+  tracking mode while maintaining a running container (e.g., [Ctrl|Command] +
+  C).
 - `dockerDeploy`: deploys the project to the container's `deploy` folder by
   copying the project archive file to workspace's `build/docker/deploy` folder.
   This command can also be executed from workspace's root folder to deploy all
@@ -147,5 +154,4 @@ To build your custom @product@ image, run
 Your custom image is now available! Run `docker image ls` to verify it's
 availability.
 
-You now have the knowledge to leverage Docker's awesome features in a Liferay
-Workspace!
+You can now manage Liferay's Docker images in Liferay Workspace!
