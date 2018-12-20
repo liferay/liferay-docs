@@ -11,7 +11,7 @@ tutorial provides a full demonstration using these steps:
 3.  Render the configuration form. This tutorial demonstrates the use of a JSP
     and the previously created `DisplayContext` class.
 
-The generalized discussion of System Settings UI customization is found in a
+A generalized discussion on System Settings UI customization is found in a
 [separate tutorial](/develop/tutorials/-/knowledge_base/7-1/customizing-the-system-settings-user-interface).
 
 This tutorial demonstrates replacing the configuration UI for the _Language
@@ -255,8 +255,8 @@ So what does this example look like when all is said and done?
 
 ![Figure 2: A select list provides a more user friendly configuration experience than a text field.](../../../images/sys-settings-lang-template-custom.png)
 
-Some configuration UIs require tweaking with a `ConfigurationFormRenderer`. This
-tutorial shows a particularly good example. Administrators encountering the
-Language Template entry in System Settings won't know the DDM Template Keys they
-can use offhand. Providing the available values in a select field wildly
+Some configuration UIs require tweaking with a `ConfigurationFormRenderer`.
+This tutorial shows a particularly good example. Administrators encountering
+the Language Template entry in System Settings won't know the DDM Template Keys
+they can use offhand. Providing the available values in a select field wildly
 enhances the user experience.
