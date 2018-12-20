@@ -59,6 +59,7 @@ filtering the output:
     differences to an HTML file
     (`<stored-name-1>-<stored-name-2>-[type]-diff.html`) in the `diffs` folder.
     Additions are colored green and deletions are colored red.
+- `collisions`: Shows a list of modified files which collide with deployed plugins.
 
 For detailed usage information, run `patching-tool help diff`.
 
@@ -71,7 +72,21 @@ information for the `diff` command. Here are the `store` command options:
 - `update`: Adds or updates patch level information.
 - `rm`: Removes previously stored patch level information.
 
+
 For detailed usage information, run `patching-tool help store`.
+
+## Showing collisions between patches and deployed plugins [](id=list-collisions)
+
+Some patches update files which can be customized through plugins. 
+In these cases the customizations will need to be updated.
+To help identifying which files are affected, run the `patching-tool list-collisions` command.
+This command is an alias for the "diff" command and is equivalent to running the following:
+
+    patching-tool diff collisions files _base
+
+To be able to use this feature, installed patches must contain source code.
+
+**Note:** As of Patching Tool 2.0.9, only collisions on jsp files in fragment bundles are shown.
 
 ## Separating Patches from the Installation [](id=separating-patches-from-the-installation)
 
