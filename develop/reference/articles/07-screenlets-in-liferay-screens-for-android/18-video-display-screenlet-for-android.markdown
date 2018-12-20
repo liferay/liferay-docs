@@ -83,13 +83,19 @@ If you don't use `entryId`, you must use both of the following attributes:
 
 ## Listener [](id=listener)
 
-Because videos are assets, Video Display Screenlet delegates its events to a 
-class that implements `AssetDisplayListener`. This interface lets you implement 
-the following methods: 
+Video Display Screenlet delegates its events to a class that implements 
+`VideoDisplayListener`. This interface lets you implement these methods: 
 
-- `onRetrieveAssetSuccess(AssetEntry assetEntry)`: Called when the Screenlet 
-  successfully loads the video. 
+-   `onVideoPrepared()`: Called when the video is ready for display.
 
-- `error(Exception e, String userAction)`: Called when an error occurs in the 
-  process. The `userAction` argument distinguishes the specific action in which 
-  the error occurred. 
+-   `onVideoCompleted()`: Called when the video is completed.
+
+-   `onVideoError(Exception e)`: Called when an error occurs displaying the 
+    video. 
+
+-   `onRetrieveAssetSuccess(AssetEntry assetEntry)`: Called when the Screenlet 
+    successfully loads the video. 
+
+-   `error(Exception e, String userAction)`: Called when an error occurs in the 
+    process. The `userAction` argument distinguishes the specific action in 
+    which the error occurred. 
