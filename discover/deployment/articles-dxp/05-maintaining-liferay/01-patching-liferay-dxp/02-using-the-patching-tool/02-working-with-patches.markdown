@@ -5,6 +5,7 @@ Here are some things you might need to do with patches:
 - [Report Patch Levels to Liferay Support](#including-support-info-in-support-tickets)
 - [Uninstall Patches](#uninstalling-patches) 
 - [Compare Patch Levels](#comparing-patch-levels)
+- [Show collisions between patches and deployed plugins](#list-collisions)
 - [Separate Patches from your Installation](#separating-patches-from-the-installation)
 
 Start with reporting patch levels to Liferay Support.
@@ -63,30 +64,39 @@ filtering the output:
 
 For detailed usage information, run `patching-tool help diff`.
 
-`patching-tool store`: Manages patching level information for diff command. Your
-patches must contain source code to store the patch level and to prepare usable
-information for the `diff` command. Here are the `store` command options: 
+`patching-tool store`: Manages patching level information for the `diff`
+command. Your patches must contain source code to store the patch level and to
+prepare usable information for the `diff` command. Here are the `store` command
+options: 
 
 - `info`: Prints the list of patches which make up the stored patch level.
 - `add`: Stores the patch level that can be found in the patches directory.
 - `update`: Adds or updates patch level information.
 - `rm`: Removes previously stored patch level information.
 
-
 For detailed usage information, run `patching-tool help store`.
 
 ## Showing collisions between patches and deployed plugins [](id=list-collisions)
 
-Some patches update files which can be customized through plugins. 
-In these cases the customizations will need to be updated.
-To help identifying which files are affected, run the `patching-tool list-collisions` command.
-This command is an alias for the "diff" command and is equivalent to running the following:
+Some patches update files you might have customized via a plugin. The
+`patching-tool list-collisions` command lists differences (collisions) between
+installed patch files and your plugin's version of them. Here's the command:
+
+    patching-tool list-collisions
+
+It is an alias for the following diff command:
 
     patching-tool diff collisions files _base
 
-To be able to use this feature, installed patches must contain source code.
+`_base` is the literal patch level name. Collisions are only listed for
+installed patches that contain source code files. 
 
-**Note:** As of Patching Tool 2.0.9, only collisions on jsp files in fragment bundles are shown.
++$$$
+
+**Note:** As of Patching Tool 2.0.9, `patching-tool list-collisions` lists only 
+JSP file collisions in fragment bundles.
+
+$$$
 
 ## Separating Patches from the Installation [](id=separating-patches-from-the-installation)
 
