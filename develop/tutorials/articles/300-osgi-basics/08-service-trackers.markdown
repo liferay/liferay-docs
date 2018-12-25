@@ -64,6 +64,34 @@ registered in the OSGi runtime, including your own
 and the services published by Liferay's modules (like the popular
 `UserLocalService`).
 
+## Using Service Tracker Factory [](id=using-service-tracker-factory)
+
+`com.liferay.osgi.util.ServiceTrackerFactory` is a convinient class for getting the service
+tracker of a component. It can return a service tracker that is already opened and ready to use.
+
+Here is a Groovy script example for retrieving the `JournalConverter`
+service to parse a Web Content article (ID `91782`) into the `Fields` class, a nested map
+easier to use than XPath:
+
+    import com.liferay.journal.service.JournalArticleLocalServiceUtil
+    import com.liferay.journal.model.JournalArticle
+    import com.liferay.portal.kernel.service.ClassNameLocalServiceUtil
+    import com.liferay.portal.kernel.xml.Document
+    import com.liferay.journal.util.JournalConverter
+    import com.liferay.dynamic.data.mapping.model.DDMStructure
+    import com.liferay.dynamic.data.mapping.storage.Fields
+    import com.liferay.dynamic.data.mapping.service.DDMStructureLocalServiceUtil
+    import com.liferay.osgi.util.ServiceTrackerFactory
+    import org.osgi.util.tracker.ServiceTracker
+
+    long classNameId = ClassNameLocalServiceUtil.getClassNameId(JournalArticle.class)
+    JournalArticle ja = JournalArticleLocalServiceUtil.getArticle(91782)
+    DDMStructure struct = DDMStructureLocalServiceUtil.getStructure(ja.getGroupId(), classNameId, ja.getDDMStructureKey())
+    Document doc = ja.getDocument()
+    ServiceTracker jc = ServiceTrackerFactory.open(JournalConverter.class)
+    Fields fields = jc.getService().getDDMFields(struct, doc)
+    jc.close()
+
 ## Implementing a Service Tracker [](id=implementing-a-service-tracker)
 
 Although you don't have the luxury of using DS to manage your service
