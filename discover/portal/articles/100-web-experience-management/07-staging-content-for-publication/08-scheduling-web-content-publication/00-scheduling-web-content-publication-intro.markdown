@@ -37,14 +37,15 @@ article.
 5.  Click *Publish*. Your web content article is now created and abides by
     the scheduling parameters you've set.
     
-When you set a Display Date for an existing article it does not effect previous 
+When you set a Display Date for an existing article it does not affect previous 
 versions of the article. If a previous version is published, it will remain the 
 same until the new version is scheduled to display. However, the expiration 
-date effects all versions of the article.
+date affects all versions of the article. Once an article has expired, no 
+version of that article will display.
 
 +$$$
 
-**Tip:** If you only want to expire the latest version of an article, and not every past version, go to *Control Panel* &rarr; *System Settings* &rarr; *Web Content* &rarr; *Virtual Instance Scope* &rarr; *Web Content* and uncheck *Expire All Article Versions Enable*. This will make the previously approved version of an article display if the latest version expires.
+**Tip:** If you want only the latest version of articles to expire, and not every past version, go to *Control Panel* &rarr; *System Settings* &rarr; *Web Content* &rarr; *Virtual Instance Scope* &rarr; *Web Content* and uncheck *Expire All Article Versions Enable*. This will make the previously approved version of an article display if the latest version expires.
 
 $$$
 
