@@ -209,7 +209,7 @@ You can also retrieve a portlet's ID from the UI:
 
 ![Figure 2: The portlet ID appears within the blue box in the *Advanced Styling* tab.](../../../../images/upgrading-themes-portlet-id.png)
 
-The [Portlet ID Quick Reference Guide](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Portlet+ID+Quick+Reference+Guide)
+The [Portlet ID Quick Reference Guide](/develop/reference/-/knowledge_base/7-1/fully-qualified-portlet-ids)
 shows all the default portlet IDs. Check `liferay-portlet.xml` for the portlet
 ID number in 6.2 and replace it with the updated ID in the quick reference
 Guide. 

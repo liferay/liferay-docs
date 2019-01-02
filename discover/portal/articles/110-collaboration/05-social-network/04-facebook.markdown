@@ -1,10 +1,8 @@
 # Integrating with Facebook [](id=integrating-with-facebook)
 
-Facebook is currently the number one social network in the world with somewhere
-over 1 billion active users. If you're trying to build a community on your site, 
-you don't want to neglect a bridge to that many possible users. With that in 
-mind, @product@ provides a few easy ways for you to integrate your Site with 
-Facebook.
+@product@ provides tools for integrating your portal and its content with 
+Facebook. For example, you can use Facebook for authentication and even export 
+widgets as Facebook applications. This article shows you how. 
 
 ## Facebook Sign On [](id=facebook-sign-on)
 

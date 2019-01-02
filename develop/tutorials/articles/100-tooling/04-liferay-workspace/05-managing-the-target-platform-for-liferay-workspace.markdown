@@ -70,14 +70,14 @@ Setting the version to develop for takes two steps:
     `liferay.workspace.target.platform.version` property to the version you want
     to target. For example,
 
-        liferay.workspace.target.platform.version=7.1-GA1
+        liferay.workspace.target.platform.version=7.1.1
 
     If you're using Liferay DXP, you can set the property like this:
 
-        liferay.workspace.target.platform.version=7.1.10.0
+        liferay.workspace.target.platform.version=7.1.10
 
-    The versions following a GA1 release of DXP follow service pack versions
-    (e.g., `7.1-sp2`, `7.1-sp3`, etc.).
+    The versions following a GA1 release of DXP follow fix pack versions (e.g.,
+    `7.1.10.fp1`, `7.1.10.fp2`, etc.).
 
     **Important:** If you're targeting a DXP target platform, you must also pass
     in your credentials to gain access to DXP artifacts. See the
@@ -129,7 +129,7 @@ To do this, your `build.gradle` file should look similar to this:
 
     buildscript {
         dependencies {
-            classpath group: "com.liferay", name: "com.liferay.gradle.plugins.target.platform", version: "1.0.1"
+            classpath group: "com.liferay", name: "com.liferay.gradle.plugins.target.platform", version: "1.1.6"
         }
         repositories {
             maven {
@@ -149,7 +149,7 @@ Liferay DXP users must replace the artifact names and versions:
 
 - `release.portal.bom` &rarr; `release.dxp.bom`
 - `release.portal.bom.compile.only` &rarr; `release.dxp.bom.compile.only`
-- `7.1.0` &rarr; `7.1.10.0`
+- `7.1.0` &rarr; `7.1.10`
 
 This Gradle code
 

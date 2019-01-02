@@ -11,7 +11,8 @@
 **/test-coverage
 **/tmp
 **/.web_bundle_build
-.gradle
+**/.gradle
+**/.nb-gradle
 .idea
 /bundles
 /gradle-*.properties
