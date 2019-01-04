@@ -1019,10 +1019,10 @@ public class CheckLinks {
 
 	// Versions
 
-	private static String COMMERCE_VERSION = "1-0";
-	private static String PORTAL_VERSION = "7-1";
-	private static String PORTAL_VERSION_LEGACY_1 = "7-0";
-	private static String PORTAL_VERSION_LEGACY_2 = "6-2";
+	private static String COMMERCE_VERSION = "1-1";
+	private static String PORTAL_VERSION = "7-2";
+	private static String PORTAL_VERSION_LEGACY_1 = "7-1";
+	private static String PORTAL_VERSION_LEGACY_2 = "7-0";
 
 	// User Guide
 
