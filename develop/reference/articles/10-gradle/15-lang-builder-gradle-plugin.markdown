@@ -12,7 +12,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.lang.builder", version: "3.0.4"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.lang.builder", version: "3.0.5"
     }
 
     repositories {
@@ -107,6 +107,6 @@ manually adding a dependency to the `langBuilder` configuration:
 
 ```gradle
 dependencies {
-    langBuilder group: "com.liferay", name: "com.liferay.lang.builder", version: "1.0.26"
+    langBuilder group: "com.liferay", name: "com.liferay.lang.builder", version: "1.0.28"
 }
 ```
