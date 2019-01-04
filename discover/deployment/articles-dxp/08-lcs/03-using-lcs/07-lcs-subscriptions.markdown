@@ -1,7 +1,7 @@
 # Managing Liferay DXP Subscriptions [](id=managing-liferay-dxp-subscriptions)
 
 LCS lets you use and view your @product@ subscriptions. Recall that when you 
-[create an environment](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/managing-lcs-environments#creating-environments), 
+[create an environment](/discover/deployment/-/knowledge_base/7-1/managing-lcs-environments#creating-environments), 
 you assign its subscription type. Registering a server in that environment 
 consumes an activation key from that subscription type. You can also view your 
 project's available subscriptions and see how they're being used. 
@@ -81,7 +81,7 @@ automatically. You can view data on your elastic servers from the
 
 **Note:** To register elastic servers in an environment, that environment must 
 be set as elastic when it's created. For more information, see the 
-[documentation on creating environments](#creating-an-environment).
+[documentation on creating environments](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/managing-lcs-environments#creating-environments).
 
 $$$
 
