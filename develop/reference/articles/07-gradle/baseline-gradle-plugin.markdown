@@ -97,7 +97,7 @@ Property Name | Default Value
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
-<a name="baselineConfiguration"></a>`baselineConfiguration` | `Configuration` | `null` | The configuration that contains exactly one dependency to the baseline bundle.
+<a name="baselineconfiguration"></a>`baselineConfiguration` | `Configuration` | `null` | The configuration that contains exactly one dependency to the baseline bundle.
 <a name="bndfile"></a>`bndFile` | `File` | `null` | The BND file of the project. If provided, the task will automatically update the [`Bundle-Version`](http://bnd.bndtools.org/heads/bundle_version.html) header.
 `forceCalculatedVersion` | `boolean` | `false` | Whether to fail the baseline check if the `Bundle-Version` has been excessively increased.
 <a name="ignoreexcessiveversionincreases"></a>`ignoreExcessiveVersionIncreases` | `boolean` | `false` | Whether to ignore excessive package version increase warnings.
