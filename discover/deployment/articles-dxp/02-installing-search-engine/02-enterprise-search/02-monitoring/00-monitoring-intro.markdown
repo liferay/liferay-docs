@@ -68,8 +68,8 @@ If X-Pack requires authentication to access the Elasticsearch cluster, follow
 these steps or refer to 
 [Elastic's documentation](https://www.elastic.co/guide/en/kibana/6.5/monitoring-xpack-kibana.html). 
 
-1.  Set the password for the built-in `kibana` user in `Kibana
-    Home/config/kibana.yml`:
+1.  Set the password for the built-in `kibana` user in `[Kibana
+    Home]/config/kibana.yml`:
 
         elasticsearch.username: "kibana"
         elasticsearch.password: "liferay"

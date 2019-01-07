@@ -6,7 +6,7 @@ in a Java class called `ElasticsearchConfiguration`.
 While the Elasticsearch adapter has a lot of configuration options out of the
 box, you might find an Elasticsearch configuration you need that isn't provided
 by default. In this case, add the configuration options you need. If something
-is configurable for Elasticsearch, its configurable using the Elasticsearch
+is configurable for Elasticsearch, it's configurable using the Elasticsearch
 adapter.
 
 ## Adding Settings and Mappings to the Liferay Elasticsearch Adapter [](id=adding-settings-and-mappings-to-the-liferay-elasticsearch-adapter)
@@ -67,7 +67,7 @@ created. Add these field mappings in using JSON syntax. For more information see
 [here](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/mapping.html)
 and
 [here](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/indices-put-mapping.html).
-Use `additionalTypeMappings` for new field mappings, but do not try to override
+Use `additionalTypeMappings` for new field mappings, but don't try to override
 existing `properties` mappings. If any of the `properties` mappings set here
 overlap with existing mappings, index creation fails. Use
 `overrideTypeMappings` to replace the default `properties` mappings.

@@ -19,7 +19,7 @@ Kibana's UI or the
 [Change Password API](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/security-api-change-password.html).
 
 The `interactive` argument sets the passwords for all built-in users. The
-configuration shown in these articles assumes you set all of the passwords to
+configuration shown in these articles assumes you set all passwords to
 *liferay*. Of course, that's not recommended for production systems.
 
     ./bin/x-pack/setup-passwords interactive
@@ -115,7 +115,7 @@ called
 
 The exact contents of the file depend on your X-Pack setup. To configure the
 adapter according to the Elasticsearch setup documented here, populate the file
-with these contents:
+like this:
 
     sslKeyPath="/path/to/[Elasticsearch Home]/config/localhost.key"
     sslCertificatePath="/path/to/[Elasticsearch Home]/config/localhost.crt"

@@ -11,10 +11,10 @@ gains by putting search on a separate box. If you're more budget-conscious, you
 can still increase performance by running Elasticsearch in a separate,
 individually tunable JVM on the same box. 
 
-Before installing Elasticsearch, refer to the 
+Before installing Elasticsearch, refer to 
 [Preparing to Install Elasticsearch](/discover/deployment/-/knowledge_base/7-1/preparing-to-install-elasticsearch) 
-for guidance on configuring the servers to properly support an Elasticsearch
-deployment. 
+for guidance on configuring the servers to support an Elasticsearch
+deployment properly. 
 
 Installing Elasticsearch is pretty easy and takes only six steps: 
 
@@ -86,7 +86,7 @@ In this example, it's 6.5.1.
 
 Shut down the @product@ server. In a local, single-machine testing environment,
 if you continue without shutting down, the Elasticsearch server you're about to
-install and start will throw errors in the log if its cluster name and HTTP port
+install and start throws errors in the log if its cluster name and HTTP port
 match the already-running embedded Elasticsearch server. An alternative to
 shutting down @product@ is to use a different cluster name (i.e., not
 `LiferayElasticsearchCluster`) and HTTP port (i.e., not `9200`) in the remote

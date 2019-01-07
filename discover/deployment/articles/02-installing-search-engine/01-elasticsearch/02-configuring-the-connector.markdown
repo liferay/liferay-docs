@@ -16,15 +16,14 @@ Elasticsearch Connector.
 As this setting was 
 [deprecated in Elasticsearch 6.3](https://www.elastic.co/guide/en/elasticsearch/reference/current/release-notes-6.3.0.html#deprecation-6.3.0), 
 the connector's corresponding setting is now also deprecated. This setting was
-only used for configuring the embedded Elasticsearch server, so it's
-deprecation is expected to have minimal impact to production deployments.
+only used for configuring the embedded Elasticsearch server, so its
+deprecation should have minimal impact to production deployments.
 
 $$$
 
 Elasticsearch's configuration files are written in [YAML](http://www.yaml.org)
 and kept in the `[Elasticsearch Home]/config` folder. The main configuration
-file you'll interact with is `elasticsearch.yml`, used for configuring
-Elasticsearch modules.
+file is `elasticsearch.yml`, used for configuring Elasticsearch modules.
 
 To set the name of the Elasticsearch cluster, open `[Elasticsearch
 Home]/config/elasticsearch.yml` and specify
@@ -32,8 +31,8 @@ Home]/config/elasticsearch.yml` and specify
     cluster.name: LiferayElasticsearchCluster
 
 Since `LiferayElasticsearchCluster` is the default name given to the cluster,
-this would work just fine. Of course, you can name your cluster whatever you'd
-like (we humbly submit the recommendation
+this would work just fine. Of course, you can name your cluster whatever you
+want (we humbly submit the recommendation
 `clustery_mcclusterface`).<sup>[1](#footnote1)</sup> You can configure your node
 name using the same syntax (setting the `node.name` property).
 
@@ -84,7 +83,7 @@ System Settings, and then exporting the `.config` file with your configuration.
 
 ### Configuring the Adapter in the Control Panel [](id=configuring-the-adapter-in-the-control-panel)
 
-To configure the Elasticsearch adapter from the System Settings application:
+To configure the Elasticsearch adapter from the System Settings application,
 
 1.  Start @product@.
 
