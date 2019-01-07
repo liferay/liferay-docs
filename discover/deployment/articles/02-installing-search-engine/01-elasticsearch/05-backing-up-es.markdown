@@ -65,7 +65,7 @@ To snapshot everything, enter
 If `{"accepted":true}` appears in the terminal, the snapshot was a success.
 
 It's possible to be more selective when taking snapshots. For example, if you
-[use X-Pack Monitoring](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/installing-x-pack-monitoring),
+[use X-Pack Monitoring](https://help.liferay.com/hc/en-us/articles/360018176011-Installing-X-Pack-Monitoring-),
 you can exclude the monitoring indexes. Explicitly declare the indexes to
 include in the snapshot:
 
