@@ -221,7 +221,7 @@ the packages @product@ exports.
 
 The Plugins SDK for Liferay Portal 6 provided a way to compile against JARs it
 had. You'd specify these JARs in  the `portal-dependency-jars` property in your
-[`liferay-plugin-package.properties`](@platform-ref@/7.0-latest/propertiesdoc/liferay-plugin-package_7_0_0.properties.html)
+[`liferay-plugin-package.properties`](@platform-ref@/7.1-latest/propertiesdoc/liferay-plugin-package_7_1_0.properties.html)
 file. On seeing a plugin's `portal-dependency-jars` list, the Liferay Plugins
 SDK copied the JARs into the plugin's `WEB-INF/lib`. The Plugins SDK refrained
 from adding the JARs to the plugin WAR. This kept the WARs small for deploying
@@ -237,7 +237,7 @@ can't make available to plugins the same Java classes it did in the past.
 These files list the packages @product-ver@ exports:
 
 -   `modules/core/portal-bootstrap/system.packages.extra.bnd` file in the
-    [GitHub repository](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/core/portal-bootstrap/system.packages.extra.bnd).
+    [GitHub repository](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/core/portal-bootstrap/system.packages.extra.bnd).
     It lists exported packages on separate lines, making them easy to read.
 -   `META-INF/system.packages.extra.mf` file in
     `[LIFERAY_HOME]/osgi/core/com.liferay.portal.bootstrap.jar`. The file is
@@ -273,7 +273,7 @@ the issue.
 
 #### Understanding Excluded JARs [](id=understanding-excluded-jars)
 
-[Portal property `module.framework.web.generator.excluded.paths`](http://docs.liferay.com/ce/portal/7.0-latest/propertiesdoc/portal.properties.html#Module Framework)
+[Portal property `module.framework.web.generator.excluded.paths`](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Module%20Framework)
 declares JARs that are stripped from all @product@ generated WABs. These JARs
 are excluded from WABs because @product@ provides them already. All JARs listed
 for this property are excluded from the WABs, even if the plugins listed the JAR
@@ -284,7 +284,7 @@ you must include them in JARs named differently from the ones
 `module.framework.web.generator.excluded.paths` excludes. 
 
 For example, @product@'s
-[`system.packages.extra.bnd` file](https://github.com/liferay/liferay-portal/blob/7.0.3-ga4/modules/core/portal-bootstrap/system.packages.extra.bnd)
+[`system.packages.extra.bnd` file](https://github.com/liferay/liferay-portal/blob/7.1.1-ga2/modules/core/portal-bootstrap/system.packages.extra.bnd)
 exports Spring Framework version 4.1.9 packages:
 
     Export-Package:\

@@ -29,9 +29,5 @@ projects in Dev Studio, make sure to follow the methods described above.
 
 $$$
 
-If you run into errors during the build/deploy process of your project, check to
-make sure your Liferay Workspace is accounting for the
-[appropriate certificates](/develop/tutorials/-/knowledge_base/7-1/configuring-a-liferay-workspace#certification-issues-in-liferay-workspace).
-
 That's it! Once your project is deployed to the Liferay server, you can verify
 its installation in Dev Studio's Console window.

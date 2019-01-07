@@ -1,9 +1,9 @@
 # Creating Layout Templates [](id=creating-layout-templates-with-the-themes-generator)
 
 Layout Templates specify how content is arranged on your site pages, as shown in 
-the *1-2-1 Columns Layout CE* layout below:
+the *1-2-1 Columns* layout below:
 
-![Figure 1: The *1-2-1 Columns Layout CE* page layout creates a nice flow for your content.](../../../images/layout-template-1-2-1-columns.png)
+![Figure 1: The *1-2-1 Columns* page layout creates a nice flow for your content.](../../../images/layout-template-1-2-1-columns.png)
 
 The 
 [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-themes) 

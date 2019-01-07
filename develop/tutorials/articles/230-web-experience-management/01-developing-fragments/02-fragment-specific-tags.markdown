@@ -156,6 +156,8 @@ Now you need to add it to a Content Page to display it.
 
 10. Now go back to your site, and select your new page.
 
+For the full list of widgets that can be imbedded, see the [Embedding Widgets in Page Fragments](/develop/reference/-/knowledge_base/7-1/embedding-widgets-in-page-fragments) reference article.
+
 ## Embedding Your Widget in a Fragment [](id=embedding-your-widget-in-a-fragment)
 
 If you have a custom widget that you want to embed in a fragment, you can 

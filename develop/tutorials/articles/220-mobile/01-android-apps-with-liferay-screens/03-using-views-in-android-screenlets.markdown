@@ -52,8 +52,8 @@ View Sets as dependencies:
 
     dependencies {
         ...
-        compile 'com.liferay.mobile:liferay-material-viewset:+'
-        compile 'com.liferay.mobile:liferay-westeros-viewset:+'	
+        implementation 'com.liferay.mobile:liferay-material-viewset:+'
+        implementation 'com.liferay.mobile:liferay-westeros-viewset:+'	
         ...
     }
 

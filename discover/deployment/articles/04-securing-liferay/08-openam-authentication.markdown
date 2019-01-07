@@ -26,7 +26,8 @@ OpenAM.
 
 +$$$
 
-**Note**: the only current officially **supported version is OpenAM 13**. 
+**Note**: OpenAM 12 and below work with @product@, but are at end of life.
+Because of this, we recommend only OpenAM 13 for production use. 
 
 $$$
 

@@ -21,8 +21,4 @@ this:
 
         INFO  [fileinstall-C:/liferay-workspace/bundles/osgi/modules][BundleStartStopLogger:35] STARTED com.liferay.docs_1.0.0 [652]
 
-If you run into errors during the build/deploy process of your project, check to
-make sure your Liferay Workspace accounts for the 
-[appropriate certificates](/develop/tutorials/-/knowledge_base/7-1/configuring-a-liferay-workspace#certification-issues-in-liferay-workspace).
-
 That's it! You've successfully deployed your project to @product@!

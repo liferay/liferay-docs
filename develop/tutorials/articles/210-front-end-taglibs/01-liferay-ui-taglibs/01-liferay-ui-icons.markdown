@@ -8,7 +8,7 @@ case is shown below.
 The `image` attribute specifies 
 [Liferay UI icons](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/frontend-theme/frontend-theme-unstyled/src/main/resources/META-INF/resources/_unstyled/images) 
 to use (as defined in the Unstyled theme's `images/common` folder). Here's an
-example configuration:
+example configuration for a JSP:
 
     <div class="col-md-3">
     	<liferay-ui:icon image="subscribe" />
@@ -31,6 +31,24 @@ current language's flag along with a localized message:
             snippetLocale.getDisplayLanguage(locale),
             false
         ) %>'
+    />
+    
+You can achieve the same result in FreeMarker with the following code that uses 
+the available 
+[`init.ftl` variables](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/frontend-theme/frontend-theme-unstyled/src/main/resources/META-INF/resources/_unstyled/templates/init.ftl) 
+and 
+[@product@ macros](/develop/tutorials/-/knowledge_base/7-1/using-liferays-macros-in-your-theme):
+
+    <#assign flag_message>
+        <@liferay.language_format 
+            arguments=language 
+            key="this-result-comes-from-the-x-version-of-this-content" 
+        />
+    </#assign>
+
+    <@liferay_ui["icon"]
+        image="../language/${language_id}"
+        message=flag_message
     />
 
 The full list of available icons is shown in the figures below:

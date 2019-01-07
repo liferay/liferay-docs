@@ -25,41 +25,37 @@ copied to the `/deploy` folder. Visit the
 [Using the Felix Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell)
 article for instructions on finding a bundle's ID.
 
-If you run into errors during the build/deploy process of your project, check to
-make sure your workspace is accounting for the
-[appropriate certificates](/develop/tutorials/-/knowledge_base/7-1/configuring-a-liferay-workspace#certification-issues-in-liferay-workspace).
-
 Blade CLI can detect a locally running Liferay instance and automatically
 deploys your project to that Liferay instance. Blade communicates with the OSGi
 framework using Felix Gogo shell and deploys the project directly to the OSGi
 container using Felix File Install commands. The command uses the default
 `11311` port by default.
 
-<!--
-You can also specify a custom port to deploy your module to using the `-p`
-parameter followed by the port number. For instance, you could run `blade deploy
--p 8090` to deploy to port 8090.
--->
+Blade CLI also offers a way to *watch* a deployed project, which compiles and
+redeploys a project when changes are detected. There are two ways to do this:
 
-<!-- Follow BLADE-189 for info on supporting host and port commands for Blade
-deployment. -Cody -->
+- `blade watch`
+- `blade deploy -w`
 
-You can also watch the deployed module for changes by specifying the `-w`
-parameter.
-
-    blade deploy -w
-
-This parameter automatically redeploys the module when changes are detected.
+The `blade watch` command is the fastest way to develop and test module changes,
+because the `watch` command does not rebuild your project every time
+a change is detected. When running `blade watch`, your project is not copied to
+Portal, but rather, is installed into the runtime as a reference. This means
+that the Portal does not make a cached copy of the project. This allows the
+Portal to see changes that are made to your project's files immediately. When
+you cancel the `watch` task, your module is uninstalled automatically.
 
 +$$$
 
-**Note:** The `blade deploy` command requires a Gradle/Maven wrapper to
-successfully execute. To ensure the availability of a build tool wrapper, be
-sure to work in a Liferay Workspace. For more information on Liferay Workspaces,
-see the
-[Creating a Liferay Workspace with Blade CLI](/develop/tutorials/-/knowledge_base/7-1/creating-a-liferay-workspace-with-blade-cli)
-tutorial.
+**Note:** The `blade watch` command is available for Liferay Workspace versions
+1.10.9+ (i.e., the `com.liferay.gradle.plugins.workspace` dependency). Maven
+projects cannot leverage the `watch` feature at this time.
 
 $$$
+
+The `blade deploy -w` command works similarly to `blade watch`, except it
+manually recompiles and deploys your project every time a change is detected.
+This causes slower update times, but does preserve your deployed project in
+Portal when it's shut down.
 
 Cool! You've successfully deployed your module project using Blade CLI.
