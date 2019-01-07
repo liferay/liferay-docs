@@ -68,18 +68,12 @@ Here are the offline mode policies that you can use with this Screenlet:
 
 ## Required Attributes [](id=attributes)
 
-- `assetEntryId`
-
-If you don't use `assetEntryId`, you must use both of the following attributes:
-
-- `className`
-- `classPK`
+- `assetEntryId` or `classPK`
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------|
 | `assetEntryId` | `number` | The primary key of the blog entry (`BlogsEntry`). |
-| `className` | `string` | The `BlogsEntry` object's fully qualified class name. This is `com.liferay.blogs.model.BlogsEntry`. If you don't use `assetEntryId`, the `className` and `classPK` attributes are required to instantiate the Screenlet. |
-| `classPK` | `number` | The `BlogsEntry` object's unique identifier. If you don't use `assetEntryId`, the `className` and `classPK` attributes are required to instantiate the Screenlet. |
+| `classPK` | `number` | The `BlogsEntry` object's unique identifier. |
 | `autoLoad` | `boolean` | Whether the blog entry automatically loads when the Screenlet appears in the app's UI. The default value is `true`. |
 | `offlinePolicy` | `string` | The offline mode setting. The default value is `remote-first`. See [the Offline section](/develop/reference/-/knowledge_base/7-1/blogs-entry-display-screenlet-for-ios#offline) for details. |
 
