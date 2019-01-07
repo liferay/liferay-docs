@@ -9,12 +9,12 @@ automatically download and install the latest version of Blade CLI:
 
 **Note:** For Windows users on Blade CLI 3.3.0 and older, the `blade update`
 command does not work because Windows cannot update a file that is currently in
-use. To bypass this issue, you can use JPM to update your version of Blade CLI:
+use. To bypass this issue, use JPM to update your version of Blade CLI:
     
     jpm install -f https://releases.liferay.com/tools/blade-cli/latest/blade.jar
 
-The `blade update` command for Windows users on Blade CLI 3.4.1 and newer works
-as expected.
+The `blade update` command for Windows users on Blade CLI 3.4.1+ works as
+expected.
 
 $$$
 
