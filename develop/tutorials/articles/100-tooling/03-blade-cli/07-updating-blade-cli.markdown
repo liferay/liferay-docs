@@ -5,16 +5,26 @@ automatically download and install the latest version of Blade CLI:
 
     blade update
 
-For Windows users, the `blade update` command does not work because Windows
-cannot update a file that is currently in use. To bypass this issue, you can use
-JPM to update your version of Blade CLI:
++$$$
 
+**Note:** For Windows users on Blade CLI 3.3.0 and older, the `blade update`
+command does not work because Windows cannot update a file that is currently in
+use. To bypass this issue, you can use JPM to update your version of Blade CLI:
+    
     jpm install -f https://releases.liferay.com/tools/blade-cli/latest/blade.jar
+
+The `blade update` command for Windows users on Blade CLI 3.4.1 and newer works
+as expected.
+
+$$$
 
 Blade CLI is updated frequently, so it's recommended to update your Blade CLI
 environment for new features. You can check the released versions of Blade CLI
-at [https://releases.liferay.com/tools/blade-cli/](https://releases.liferay.com/tools/blade-cli/).
-You can check your current installed version by running `blade version`. 
+on Nexus by inspecting the
+[com.liferay.blade.cli](https://repository-cdn.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/blade/com.liferay.blade.cli/).
+artifact. You can check your current installed version by running `blade
+version`. When running `blade version`, you are notified if there's a newer
+Blade CLI version available.
 
 +$$$
 
