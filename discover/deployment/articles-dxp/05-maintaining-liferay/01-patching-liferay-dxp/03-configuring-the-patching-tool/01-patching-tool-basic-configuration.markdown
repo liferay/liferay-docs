@@ -20,7 +20,7 @@ If @product@ is not installed in the parent folder, specify its location:
 
 If you specified the wrong location of @product@ or it is not in the parent
 folder, the Patching Tool can't find the
-[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay-portal#liferay-home)
+[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
 and reports an error like this: 
 
     The .liferay-home has not been detected in the given directory tree.

@@ -293,7 +293,7 @@ Your data source is now configured. Next set up the mail session.
 As with database configuration, the easiest way to configure mail is to let
 @product@ handle your mail session. If you want to use @product@'s built-in mail
 session, skip this section and 
-[configure the mail session](/discover/deployment/-/knowledge_base/7-1/installing-product#configuring-mail)
+[configure the mail session](/discover/deployment/-/knowledge_base/7-1/installing-liferay#configuring-mail)
 in the Control Panel.
 
 If you want to manage your mail session with tc Server, follow these steps: 
