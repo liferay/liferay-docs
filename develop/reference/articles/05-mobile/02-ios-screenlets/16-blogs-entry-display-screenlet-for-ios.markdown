@@ -70,6 +70,8 @@ Here are the offline mode policies that you can use with this Screenlet:
 
 - `assetEntryId` or `classPK`
 
+## Attributes [](id=attributes)
+
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------|
 | `assetEntryId` | `number` | The primary key of the blog entry (`BlogsEntry`). |
