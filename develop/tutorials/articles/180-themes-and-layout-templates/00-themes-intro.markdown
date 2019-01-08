@@ -2,17 +2,17 @@
 
 A Theme provides the overall look and feel for a site. 
 [Understanding the page layout](/develop/reference/-/knowledge_base/7-1/understanding-the-page-layout) 
-is crucial to knowing what markup to target for styling, how to organize your content, 
-and how to create your site. Once you understand how the page is organized, you can 
-develop your theme.
+is crucial to targeting the correct markup for styling, organizing your
+content, and creating your site. Once you understand how the page is organized,
+you can develop your theme.
 
-If you want to design a website, you must have three key components: CSS, JS, and 
-HTML. @product@ provides 
+If you want to design a website, you must have three key components: CSS,
+JavaScript, and HTML. @product@ provides 
 [CSS extensions and patterns out-of-the-box](/develop/reference/-/knowledge_base/7-1/theme-components-and-workflow#css-frameworks-and-extensions) 
 and supports SASS, as well as multiple JavaScript frameworks. The HTML, however, is 
 rendered via 
 [FreeMarker](https://freemarker.apache.org/) 
-theme templates.  
+theme templates.
 
 @product@ provides several 
 [default FreeMarker templates](/develop/reference/-/knowledge_base/7-1/theme-components-and-workflow#theme-templates) 
