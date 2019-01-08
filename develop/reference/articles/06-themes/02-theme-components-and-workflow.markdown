@@ -1,11 +1,11 @@
 # Theme Components and Workflow [](id=theme-components-and-workflow)
 
-If you want to develop a website, you must have three key components: CSS, JS, 
-and HTML. @product@ supports SASS as well as multiple JavaScript frameworks. The 
-HTML, however, is rendered via 
-[FreeMarker](https://freemarker.apache.org/) 
-theme templates. This reference guide provides an overview of @product@'s theme 
-development components and workflow, covering the following topics:
+If you want to develop a website, you must have three key components: CSS,
+JavaScript, and HTML. @product@ supports SASS as well as multiple JavaScript
+frameworks. The HTML, however, is rendered via
+[FreeMarker](https://freemarker.apache.org/) theme templates. This reference
+guide provides an overview of @product@'s theme development components and
+workflow, covering the following topics:
 
 - Theme templates
 - Theme customizations and extensions
@@ -18,28 +18,26 @@ development components and workflow, covering the following topics:
 @product@ provides several default FreeMarker templates that each handle a key 
 piece of functionality for the page:
 
-- `portal_normal.ftl`: Similar to a static site’s `index.html`, this file acts 
-  as a hub for all theme templates, as well as provides the basic markup for the 
-  page.
-- `init.ftl`: Contains common FreeMarker variables that are available to use in 
-  your theme templates. Useful for reference if you need access to theme 
-  objects. **We recommended that you DO NOT overwrite this file**.
-- `init_custom.ftl`: Used to overwrite FreeMarker variables found in `init.ftl` 
-  and to define any new ones such as 
-  [theme setting](/develop/tutorials/-/knowledge_base/7-1/making-configurable-theme-settings) 
-  variables.
-- `portlet.ftl`: The theme template for the theme’s portlets. If your theme uses 
+- `portal_normal.ftl`: Similar to a static site's `index.html`, this file acts
+  as a hub for all theme templates and provides the overall markup for the page.
+- `init.ftl`: Contains common FreeMarker variables that can be used in your
+  theme templates. Useful for reference if you need access to theme objects.
+  **We recommended that you DO NOT override this file**.
+- `init_custom.ftl`: Used to override FreeMarker variables in `init.ftl` and to
+  define new variables, such as 
+  [theme settings](/develop/tutorials/-/knowledge_base/7-1/making-configurable-theme-settings).
+- `portlet.ftl`: This template controls the theme's portlets. If your theme uses 
   Portlet Decorators, you can modify this file to create application 
   decorator-specific theme settings. See the 
   [Portlet Decorators](/develop/tutorials/-/knowledge_base/7-1/creating-configurable-styles-for-portlet-wrappers) 
   tutorial for more info.
-- `navigation.ftl`: Contains the navigation markup. To customize pages in the 
-  navigation, you must use the `liferay.navigation_menu` macro. This lets you 
-  leverage 
-  [ADTs](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/site-navigation/site-navigation-menu-web/src/main/resources/com/liferay/site/navigation/menu/web/portlet/template/dependencies) 
-  for the navigation menu. Note that `navigation.ftl` also defines the hamburger 
-  icon and `navbar-collapse` class that provides the simplified navigation 
-  toggle for mobile viewports, as shown in the snippet below for the Classic 
+- `navigation.ftl`: Contains the navigation markup. To customize pages in the
+  navigation, you must use the `liferay.navigation_menu` macro. Then you can
+  leverage
+  [ADTs](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/site-navigation/site-navigation-menu-web/src/main/resources/com/liferay/site/navigation/menu/web/portlet/template/dependencies)
+  for the navigation menu. Note that `navigation.ftl` also defines the hamburger
+  icon and `navbar-collapse` class that provides the simplified navigation
+  toggle for mobile viewports, as shown in the snippet below for the Classic
   theme:
 
       <#if has_navigation && is_setup_complete>
@@ -56,9 +54,9 @@ piece of functionality for the page:
 
 ![Figure 1: The collapsed navbar provides simplified user-friendly navigation for mobile devices.](../../images/portal-layout-mobile-nav.png)
 
-- `portal_pop_up.ftl`: The theme template for pop up dialogs for the theme's 
-  portlets. Similar to `portal_normal.ftl`, `portal_pop_up.ftl` provides the 
-  markup template for all pop-up dialogs, such as a portlet's Configuration 
+- `portal_pop_up.ftl`: The theme template controlling pop up dialogs for the
+  theme's portlets. Similar to `portal_normal.ftl`, `portal_pop_up.ftl` provides
+  the markup template for all pop-up dialogs, such as a portlet's Configuration 
   menu. It also has access to the FreeMarker variables defined in `init.ftl` and 
   `init_custom.ftl`.
 
@@ -68,7 +66,7 @@ piece of functionality for the page:
 
 @product@ provides several FreeMarker variables and macros that you can use in 
 your theme templates to include portlets, use taglibs, access theme objects, and 
-more. You can see examples of these used in `portal_normal`. These utilities are 
+more. You can see examples of these in `portal_normal.ftl`. These utilities are 
 included in the files listed below:
 
 - [`Init.ftl`](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/frontend-theme/frontend-theme-unstyled/src/main/resources/META-INF/resources/_unstyled/templates/init.ftl): 
@@ -79,19 +77,17 @@ included in the files listed below:
   for more information.
 - `taglib-mappings.properties`: 
   Maps the portal taglibs to FreeMarker macros. Taglibs let you quickly create 
-  common UI components. This properties file is also provided 
-  separately for each app taglib. For convenience, these FreeMarker macros are 
-  listed in the 
-  [FreeMarker Taglib Mappings reference guide](/develop/reference/-/knowledge_base/7-1/freemarker-taglib-macros).
+  common UI components. This properties file is also provided separately for
+  each app taglib. For convenience, these FreeMarker macros appear in the
+  [FreeMarker Taglib Mappings reference guide](/develop/reference/-/knowledge_base/7-1/freemarker-taglib-macros). 
   See the 
   [Taglib tutorials](/develop/tutorials/-/knowledge_base/7-1/front-end-taglibs) 
   for more information on using each taglib in your theme templates.
 
 ## CSS Frameworks and Extensions [](id=css-frameworks-and-extensions)
 
-As noted above, @product@ supports the Sass CSS extension. This means that you 
-can take full advantage of Sass mixins, nesting, partials, and variables in your 
-CSS.
+As noted above, @product@ supports the Sass CSS extension, so you can take
+full advantage of Sass mixins, nesting, partials, and variables in your CSS.
 
 Also important to note is 
 [Clay CSS](https://clayui.com/), 
@@ -106,7 +102,7 @@ for more information.
 
 ## Theme Customizations and Extensions [](id=theme-customizations-and-extensions)
 
-The theme templates, along with the CSS, provides much of the overall look and 
+The theme templates, along with the CSS, provide much of the overall look and 
 feel for the page, but additional extension points/customizations are available. 
 The following extensions and mechanisms are available for themes:
 
@@ -128,10 +124,11 @@ The following extensions and mechanisms are available for themes:
   theme, that you want to include on every page. See the 
   [Theme Contributors tutorial](/develop/tutorials/-/knowledge_base/7-1/packaging-independent-ui-resources-for-your-site) 
   for more information. 
-- **Themelet:** small, extendable, and reusable pieces of code that contain CSS 
-  and JS. It can be shared with other developers to provide common components for 
-  themes, and it only requires the files you want to extend. See the 
-  [Themelets tutorial](/develop/tutorials/-/knowledge_base/7-1/creating-reusable-pieces-of-code-for-your-themes) 
+- **Themelet:** small, extendable, and reusable pieces of code that contain CSS
+  and JavaScript. It can be shared with other developers to provide common
+  components for themes, and it only requires the files you want to extend. See
+  the 
+  [Themelets tutorial](/develop/tutorials/-/knowledge_base/7-1/creating-reusable-pieces-of-code-for-your-themes)
   for more information.
 
 ## Portlet Customizations and Extensions [](id=portlet-customizations-and-extensions)
@@ -164,9 +161,9 @@ Themes are built on top of one of the following base themes:
 - **Unstyled:** provides basic markup, functions, and images for Portal
 - **Styled:** inherits from the Unstyled base theme and adds some styling on top
 
-@product@ lets you choose the development tools you're most comfortable 
-with so you can focus on creating a well designed theme. The following tools let 
-you build themes:
+You can use the development tools you're most comfortable with so you can focus
+on creating a well designed theme. The following Liferay tools help you build
+themes:
 
 - [Theme Builder Gradle Plugin](/develop/reference/-/knowledge_base/7-1/theme-builder-gradle-plugin)
 - [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-themes)
@@ -205,17 +202,16 @@ The finished theme is bundled as a WAR (Web application ARchive) file.
 +$$$
 
 **Note:** While developing your theme, we recommend that you enable 
-[Developer Mode](/develop/tutorials/-/knowledge_base/7-1/using-developer-mode-with-themes). 
-This will unminify JS files and disable caching for CSS and FreeMarker template 
+[Developer Mode](/develop/tutorials/-/knowledge_base/7-1/using-developer-mode-with-themes).
+This un-minifies JS files and disable caching for CSS and FreeMarker template
 files, making the debugging process much easier.
 
 $$$
 
-During theme development, if you’ve built your theme with the Liferay Theme 
-Generator, there are some helpful Gulp tasks that you can use to make the 
-process easier:
+During theme development, if you've built your theme with the Liferay Theme
+Generator, you can use some helpful Gulp tasks to make the process easier:
 
-- **build:** builds your theme’s files based off of the specified base theme. 
+- **build:** builds your theme's files based on the specified base theme. 
   See the 
   [gulp build tutorial](/develop/tutorials/-/knowledge_base/7-1/building-your-themes-files) 
   for more information.
@@ -233,7 +229,7 @@ process easier:
 - **status:** lists the base theme/themelets that your theme extends. See the 
   [gulp status tutorial](/develop/tutorials/-/knowledge_base/7-1/listing-your-themes-extensions) 
   for more information.
-- **watch:** watches for changes to your theme’s files and automatically deploys 
+- **watch:** watches for changes to your theme's files and automatically deploys 
   them to the server when a change is made. See the 
   [gulp watch tutorial](/develop/tutorials/-/knowledge_base/7-1/automatically-deploying-theme-changes) 
   for more information.
