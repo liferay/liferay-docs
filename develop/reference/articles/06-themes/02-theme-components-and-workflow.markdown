@@ -218,9 +218,9 @@ Generator, you can use some helpful Gulp tasks to make the process easier:
 - **extend:** sets the base theme or themelet to extend. See the 
   [gulp extend tutorial](/develop/tutorials/-/knowledge_base/7-1/changing-your-base-theme) 
   for more information.
-- **init:** specifies the app server to deploy your theme to (automatically run 
-  during the initial. See the 
-  [gulp init tutorial](/develop/tutorials/-/knowledge_base/7-1/configuring-your-themes-app-server) 
+- **init:** specifies the app server to deploy your theme to (automatically run
+  during the initial creation of the theme). See the 
+  [gulp init tutorial](/develop/tutorials/-/knowledge_base/7-1/configuring-your-themes-app-server)
   for more information. 
 - **kickstart:** copies files from an existing theme into your theme to help 
   kickstart it. See the 
