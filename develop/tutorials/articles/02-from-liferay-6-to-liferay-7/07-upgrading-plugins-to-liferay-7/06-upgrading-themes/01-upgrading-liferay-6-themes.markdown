@@ -85,7 +85,7 @@ Next, you can learn how to update your theme for 7.0.
 Now that you've successfully imported your theme, you have the tools necessary 
 to develop your theme for 7.0. These tools are provided by the 
 [Liferay Theme Tasks](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks), 
-one of the [Liferay JS Toolkit's theme development tools](https://github.com/liferay/liferay-themes-sdk/tree/master/packages).
+part of the [Liferay JS Theme Toolkit](https://github.com/liferay/liferay-themes-sdk/tree/master/packages).
 
 The first of these tools you'll use is the Upgrade task. This task does a few 
 things:
@@ -181,7 +181,7 @@ Congratulations! You've now completed a major step in upgrading your theme.
 
 This appendix covers the changes you need to make to your theme if you 
 manually update your files, or if you need to make additional changes after 
-using the Liferay JS Toolkit's Upgrade task.
+using the Liferay JS Theme Toolkit's Upgrade task.
 
 ### Upgrading Theme Metadata [](id=upgrading-theme-metadata)
 
