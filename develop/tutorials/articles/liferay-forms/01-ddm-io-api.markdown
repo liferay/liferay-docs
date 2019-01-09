@@ -1,11 +1,11 @@
 # Form Serialization with the DDM IO API
 
-When a form creator saves a form, the form itself can be stored in any formats.
-<!--Link to 7.2 Forms Storage Adapters, when available-->
+When a form creator saves a form, the form itself can be stored in any format.
 
-The default format is JSON. A simple form, _My Form_, with one text field,
-_Full Name_, is serialized into JSON and stored in the @product@ database when
-saved.
+<!-- INSERT SCREENSHOT OF UI CONFIG OPTION -->
+
+The default format is JSON. A simple form, _My Form_, with one text field, _Full
+Name_, is serialized into JSON and stored in the @product@ database when saved.
 
     {
         "availableLanguageIds":["en_US"],
@@ -38,8 +38,8 @@ saved.
         "validation":{"expression":"","errorMessage":""}}]
     }
 
-If you'd like to store the form in a different format, you can provide custom
-_serialization_ and _deserialization_ functionality for the form. 
+If you'd like to store forms in a different format, provide custom
+_serialization_ and _deserialization_ functionality.
 
 
 <!-- WRONG: the below confuses DDMFormValuesSerializers with
@@ -124,13 +124,21 @@ somewhere.
 
 ## Calling the Serializer 
 
-To use the serializer:
+To get properly serialized form content, follow these steps:
 
-1. Get the serializer from the `DDMFormSerializerTracker`.
+1.  Get the serializer from the `DDMFormSerializerTracker`, passing in the value
+    of the `ddm.form.serializer.type` property.
 
-2.  Pass the `DDMFormSerializerSerializeRequest` to the tracker.
+2.  Construct a `DDMFormSerializerSerializeRequest` object using its nested
+    static `Builder` class.
 
-3.  Receive the `DDMFormSerializerSerializeResponse` with the serialized value.
+3.  Call the `serialize` method you wrote in the last section to create the
+    `DDMFormSerializerSerializeResponse`, passing the
+    `DDMFormSerializerSerializeRequest`
+    object, via a call to the `Builder`'s `build` method.
+
+4.  Get the serialized form content from the
+    `DDMFormSerializerSerializeResponse` by calling its `getContent` method.
 
 Here's a code example:
 
@@ -143,13 +151,11 @@ Here's a code example:
     DDMFormSerializerSerializeResponse ddmFormSerializerSerializeResponse =
     ddmFormSerializer.serialize(builder.build());
 
-    return ddmFormSerializerSerializeResponse.getContent();
+    ddmFormSerializerSerializeResponse.getContent();
 
-In addition to reviewing what I have here, there are some additional questions:
+You can create a serializer for any format that can be saved in the database as
+a String. Once you create the serializer, make it the default by changing the
+storage format in the Form's Settings menu.
 
-1.  When does this serialization code get called? After a form save?
-2.  Is there configuration in the forms UI to control which serializer is used? Or is it entirely backend code?
-3.  If it's all backend, are developers expected to do something so that their serializer replaces the default JSON serializer?
-4.  Is there anything we should tell developers about the deserialization process?
-5.  Are there any limitations for what formats will work?
+**Make sure you follow these steps and create a deserializer as well.**
 
