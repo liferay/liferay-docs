@@ -4,35 +4,52 @@ Deploying modules to a Liferay server using Blade CLI is easy. To use the Blade
 `deploy` command, you must first have built a module to deploy. See the
 [Creating Projects with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-blade-cli)
 tutorials for more information about creating Liferay projects. Once you've
-built a module, navigate to it in your terminal window and execute the following
-command to deploy it to @product@:
+built a module, navigate to it with your CLI and execute the following command
+to deploy it:
 
     blade deploy
 
-You can also deploy all modules in a folder by running the `deploy` command from
-the parent folder (e.g., `[WORKSPACE_ROOT]/modules`).
+This can be used for WAR-style projects and modules (JARs). You can also deploy
+all projects in a folder by running the `deploy` command from the parent folder
+(e.g., `[WORKSPACE_ROOT]/modules`).
+    
+If you're using Liferay Workspace, the `deploy` command copies your project to
+the @product@ `/deploy` folder, which is found by reading the Liferay Home
+folder set in your workspace's `gradle.properties` or `pom.xml` file. The
+`deploy` command works similarly if you're working outside of workspace; the
+Liferay Home folder, in contrast, is set by loading the Liferay extension object
+(Gradle) or the effective POM (Maven) and searching for the Liferay Home
+property stored there. If it's not stored, Blade prompts you to set it so it's
+available.
+    
++$$$
+    
+**Note:** If you prefer using pure Gradle or Maven to deploy your project, you
+can do this by applying the appropriate plugin and configuring your Liferay Home
+property. Here's how you can do this for Gradle and Maven:
+    
+**Gradle:**
+    
+First ensure the Liferay Gradle plugin is applied in your `build.gradle` file:
+    
+    apply plugin: "com.liferay.plugin"
+    
+Then extend the Liferay extension object to set your Liferay Home and `deploy`
+folder:
+    
+    liferay {
+        liferayHome = "../../../../liferay-ce-portal-7.0.1-ga2"
+        deployDir = file("${liferayHome}/deploy")
+    }
 
-When deploying a module using Blade CLI, the module is directly installed into
-@product@'s OSGi container. This means that the module isn't stored in the
-`LIFERAY_HOME/osgi/modules` folder; only modules copied to the
-`LIFERAY_HOME/deploy` folder (i.e., leveraging the auto deployment mechanism)
-are stored there. A module deployed by Blade CLI is stored only as bytecode in
-`LIFERAY_HOME/osgi/state/org.eclipse.osgi` in a subfolder named after its bundle
-ID. All modules installed in OSGi's registry are stored this way, even those
-copied to the `/deploy` folder. Visit the [Using the Felix Gogo
-Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell)
-article for instructions on finding a bundle's ID.
-
-The `deploy` command is intended for modules that are built into a JAR file. If
-you've created a WAR style project (e.g., projects based on the Blade templates
-`spring-mvc-portlet`, `theme`, etc.), you'll need to deploy it using a different
-tool like Gradle (e.g., `./gradlew deploy`).
-
-Blade CLI can detect a locally running Liferay instance and automatically
-deploys your module to that Liferay instance. Blade communicates with
-@product@'s OSGi framework using Felix Gogo shell and deploys the module
-directly to the OSGi container using Felix File Install commands. The command
-uses the default `11311` port by default.
+**Maven:**
+    
+Ensure the Bundle Support plugin is applied and configure Liferay Home in your
+`pom.xml`. See the
+[Deploying a Module Built with Maven to Liferay Portal](/develop/tutorials/-/knowledge_base/7-0/deploying-a-module-built-with-maven-to-product)
+for details.
+    
+$$$
 
 Blade CLI also offers a way to *watch* a deployed project, which compiles and
 redeploys a project when changes are detected. There are two ways to do this:
