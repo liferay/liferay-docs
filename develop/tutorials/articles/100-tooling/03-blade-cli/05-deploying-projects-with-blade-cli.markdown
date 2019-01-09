@@ -47,7 +47,7 @@ folder:
 
 Ensure the Bundle Support plugin is applied and configure Liferay Home in your
 `pom.xml`. See the
-[Deploying a Project Built with Maven to Liferay Portal](/tutorials/-/knowledge_base/7-1/deploying-a-project-built-with-maven-to-product)
+[Deploying a Project Built with Maven to Liferay Portal](/develop/tutorials/-/knowledge_base/7-1/deploying-a-project-built-with-maven-to-product)
 for details.
 
 $$$
