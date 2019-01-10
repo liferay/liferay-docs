@@ -202,9 +202,10 @@ filtering the output:
 
 For detailed usage information, run `patching-tool help diff`.
 
-`patching-tool store`: Manages patching level information for diff command. Your
-patches must contain source code to store the patch level and to prepare usable information for
-the "diff" command. This command has four options: 
+`patching-tool store`: Manages patching level information for the `diff`
+command. Your patches must contain source code to store the patch level and to
+prepare usable information for the `diff` command. Here are the `store` command
+options: 
 
 - `info`: Prints the list of patches which make up the stored patch level.
 - `add`: Stores the patch level that can be found in the patches directory.
@@ -212,6 +213,28 @@ the "diff" command. This command has four options:
 - `rm`: Removes previously stored patch level information.
 
 For detailed usage information, run `patching-tool help store`.
+
+## Showing collisions between patches and deployed plugins [](id=list-collisions)
+
+Some patches update files you might have customized via a plugin. The
+`patching-tool list-collisions` command lists differences (collisions) between
+installed patch files and your plugin's version of them. Here's the command:
+
+    patching-tool list-collisions
+
+It is an alias for the following diff command:
+
+    patching-tool diff collisions files _base
+
+`_base` is the literal patch level name. Collisions are only listed for
+installed patches that contain source code files. 
+
++$$$
+
+**Note:** As of Patching Tool 2.0.9, `patching-tool list-collisions` lists only 
+JSP file collisions in fragment bundles.
+
+$$$
 
 ## Separating the Patches from the @product@ Installation [](id=separating-the-patches-from-the-product-installation)
 

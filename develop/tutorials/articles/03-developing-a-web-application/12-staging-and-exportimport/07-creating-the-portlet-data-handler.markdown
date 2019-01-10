@@ -227,7 +227,7 @@ Follow the instructions below to create the Guestbook's portlet data handler.
     Staging framework traverses the entity graph during export, the built-in
     components provide an approximate value in some cases.
 
-    ![Figure 4: The number of modified Guestbook entities are displayed in the Export UI.](../../../images/guestbook-staging-entity-counter.png)
+    ![Figure 3: The number of modified Guestbook entities are displayed in the Export UI.](../../../images/guestbook-staging-entity-counter.png)
 
 8.  Organize your imports (*[CTRL]+[SHIFT]+O*), and save the file. **Hint:** Be
     sure to choose the `javax.portlet.PortletPreferences` import package.
@@ -240,12 +240,12 @@ To verify this, when you go to
 [enable Staging](/discover/portal/-/knowledge_base/7-0/enabling-staging), you
 can now enable it for your Guestbook app.
 
-![Figure 5: Enable the Guestbook Staging functionality.](../../../images/guestbook-staging-enable.png)
+![Figure 4: Enable the Guestbook Staging functionality.](../../../images/guestbook-staging-enable.png)
 
 You can also navigate to the Guestbook Admin portlet and manage Staging from the
 Options menu. This menu also offers a way to export and import
 Guestbook LAR files manually. 
 
-![Figure 6: You can manually export and import Guestbook LAR files from the Guestbook Admin portlet.](../../../images/guestbook-export-import.png)
+![Figure 5: You can manually export and import Guestbook LAR files from the Guestbook Admin portlet.](../../../images/guestbook-export-import.png)
 
 The Guestbook is ready for the staging process!
