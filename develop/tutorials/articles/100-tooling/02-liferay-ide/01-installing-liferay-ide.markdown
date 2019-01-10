@@ -78,7 +78,7 @@ To install Liferay Dev Studio into Eclipse from a Zip file, follow these steps:
 1.  Go to the
     [Liferay @ide@](https://community.liferay.com/en_GB/project/-/asset_publisher/TyF2HQPLV1b5/content/ide-installation-instructions)
     downloads page. Under *Other Downloads*, select the *Liferay IDE [version]
-    Archived Update-site* option and click *Download*.
+    Archived Update-site* option to download it.
 
 2.  In Eclipse, go to *Help* &rarr; *Install New Software...*. 
 
