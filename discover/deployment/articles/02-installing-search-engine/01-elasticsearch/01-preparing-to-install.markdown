@@ -1,8 +1,13 @@
 # Preparing to Install Elasticsearch [](id=preparing-to-install-elasticsearch)
 
-By default, @product-ver@ and its embedded Elasticsearch engine run in the same
-JVM. Although this enables out-of-the-box search, it's only supported for
-development. For production use, Elasticsearch must run in a separate JVM.
+By default, @product-ver@ and its 
+[embedded Elasticsearch engine](/discover/deployment/-/knowledge_base/7-1/configuring-elasticsearch-for-liferay-0#embedded-vs-remote-operation-mode)
+run in the same JVM. Although this enables out-of-the-box search, it's only
+supported for development. For production use, Elasticsearch must run in a
+separate JVM. See the 
+[installation guide](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch)
+for information on installing a remote Elasticsearch cluster. 
+
 Because search engines benefit heavily from caching, their JVM memory profiles
 differ substantially from those of a JVM running @product@. Therefore, the two
 applications should always be kept separate in production environments. 

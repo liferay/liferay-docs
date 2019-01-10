@@ -119,7 +119,7 @@ This includes any property values you change via a `portal-ext.properties`
 file.
 
 **Dynamic Properties:** Any property values set at runtime. For example, the 
-[Liferay Home](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/installing-product#liferay-home) 
+[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home) 
 folder's location depends on your configuration. To specify this folder when
 setting any properties that require it, use `${liferay.home}` instead of an
 absolute directory path. 
