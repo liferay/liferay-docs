@@ -2,10 +2,9 @@
 
 When a form creator saves a form, the form itself can be stored in any format.
 
-<!-- INSERT SCREENSHOT OF UI CONFIG OPTION -->
-
-The default format is JSON. A simple form, _My Form_, with one text field, _Full
-Name_, is serialized into JSON and stored in the @product@ database when saved.
+The default form storage format is JSON. A simple form, _My Form_, with one text
+field, _Full Name_, is first created as a `DDMForm` Java object, then
+_serialized_ into JSON for storage in the @product@ database when saved.
 
     {
         "availableLanguageIds":["en_US"],
@@ -13,61 +12,75 @@ Name_, is serialized into JSON and stored in the @product@ database when saved.
         "title":{},
         "enabled":false},
         "defaultLanguageId":"en_US",
-        "fields":[{"autocomplete":false,
-        "ddmDataProviderInstanceId":"[]",
-        "dataType":"string",
-        "predefinedValue":{"en_US":""},
-        "tooltip":{"en_US":""},
-        "readOnly":false,
-        "label":{"en_US":"Full Name"},
-        "type":"text",
-        "required":false,
-        "showLabel":true,
-        "displayStyle":"singleline",
-        "fieldNamespace":"",
-        "indexType":"keyword",
-        "visibilityExpression":"",
-        "ddmDataProviderInstanceOutput":"[]",
-        "repeatable":false,
-        "name":"FullName",
-        "options":[{"label":{"en_US":"Option"},"value":"Option"}],
-        "localizable":true,
-        "tip":{"en_US":""},
-        "placeholder":{"en_US":""},
-        "dataSourceType":"",
-        "validation":{"expression":"","errorMessage":""}}]
+        "fields":[{
+            "autocomplete":false,
+            "ddmDataProviderInstanceId":"[]",
+            "dataType":"string",
+            "predefinedValue":{"en_US":""},
+            "tooltip":{"en_US":""},
+            "readOnly":false,
+            "label":{"en_US":"Full Name"},
+            "type":"text",
+            "required":false,
+            "showLabel":true,
+            "displayStyle":"singleline",
+            "fieldNamespace":"",
+            "indexType":"keyword",
+            "visibilityExpression":"",
+            "ddmDataProviderInstanceOutput":"[]",
+            "repeatable":false,
+            "name":"FullName",
+            "options":[{"label":{"en_US":"Option"},"value":"Option"}],
+            "localizable":true,
+            "tip":{"en_US":""},
+            "placeholder":{"en_US":""},
+            "dataSourceType":"",
+            "validation":{"expression":"","errorMessage":""}
+        }]
     }
+
+From it's Java object initial state as `DDMForm`, the form is _serialized_ into
+JSON format, and upon retrieval from the database, it's _deserialized_, meaning
+the backing JSON object representing the form is translated back into a
+`DDMForm` Java object, with all its requisite fields. For example, the JSON for
+the above example holds each form field in the `fields` attribute. To translate
+this back into the necessary `DDMForm` object (deserialization), first parse the
+data contained in the JSON object into an actual form field using your
+deserialization logic. Here's the logic from `DDMFormJsonDeserializer` that
+parses the JSON `"fields"` element into a list of `DDMFormFields`:
+
+	protected List<DDMFormField> getDDMFormFields(JSONArray jsonArray)
+		throws PortalException {
+
+		List<DDMFormField> ddmFormFields = new ArrayList<>();
+
+		for (int i = 0; i < jsonArray.length(); i++) {
+			DDMFormField ddmFormField = getDDMFormField(
+				jsonArray.getJSONObject(i));
+
+			ddmFormFields.add(ddmFormField);
+		}
+
+		return ddmFormFields;
+	}
+
+Now calling `DDMForm.setDDMFormFields(ddmFormFields)` in the deserializer
+completes the translation process, from the JSON array back to a `DDMFormField`
+object that the `DDMForm` needs.
 
 If you'd like to store forms in a different format, provide custom
 _serialization_ and _deserialization_ functionality.
 
-
-<!-- WRONG: the below confuses DDMFormValuesSerializers with
-DDMFormSerializers-->
-<!--In the 
-[tutorial on Forms Storage Adapters](LINK WHEN AVAILABLE), 
-the serializer that ships with @product@, `DDMFormValuesJSONSerializer`, is used
-for serializing saved form data into a JSON format String object. To deserialize
-when form data must be retrieved, `DDMFormValuesJSONDeserializer` is leveraged.
-The values when retrieved by @product@. If the serialization functionality
-provided by the Liferay Forms API is sufficient, there's no need to continue.
-However, if you need to write your own serialization and deserialization
-functionality for saving and retrieving form data, you're in the right place.-->
-
-The example here creates a serializer for saving form data in YAML format. The
-same principles shown here apply to writing a deserializer. 
-
-The IO API now allows you to serialize/deserialize your form using  a
-request/response structure, giving you control over what you need to proper
-perform this task. This way you can create personalized
-serializers/deserializers to match the format you want.
+The DDM IO API serializes and deserializes forms using  a request/response
+structure. The example here creates a serializer for saving form data in [YAML](https://yaml.org/)
+format. The same principles shown here apply to writing a deserializer. 
 
 ## Creating the Serializer
 
 The steps used to create this example serializer apply equally to
 deserializers.
 
-To serialize form data into [YAML](https://yaml.org/) format:
+To serialize form data into YAML:
 
 1. Create a class that implements `DDMFormSerializer`:
 
@@ -156,6 +169,4 @@ Here's a code example:
 You can create a serializer for any format that can be saved in the database as
 a String. Once you create the serializer, make it the default by changing the
 storage format in the Form's Settings menu.
-
-**Make sure you follow these steps and create a deserializer as well.**
 
