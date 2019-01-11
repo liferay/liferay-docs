@@ -59,6 +59,7 @@ public class CheckLinks {
 		userGuideReferenceHeaders = findHeaders(userGuideReferenceArticles);
 		tutorialHeaders = findHeaders(tutorialArticles);
 		devGuideReferenceHeaders = findHeaders(devGuideReferenceArticles);
+		commerceDevHeaders = findHeaders(commerceDevArticles);
 
 		for (File article : currentArticles) {
 
@@ -68,7 +69,7 @@ public class CheckLinks {
 			while ((line = in.readLine()) != null) {
 
 				if (line.contains("](/develop/") || line.contains("](/discover/") ||
-						line.contains("](/distribute/")) {
+						line.contains("](/distribute/") || line.contains("](/web/commerce/")) {
 
 					String findStr = "/-/knowledge_base/";
 					int urlsInLine = countStrings(line, findStr);
@@ -227,6 +228,10 @@ public class CheckLinks {
 			headers = devGuideReferenceHeaders;
 		}
 
+		else if (lineSubstring.contains(commerceDevDir)) {
+			headers = commerceDevHeaders;
+		}
+
 		return headers;
 	}
 
@@ -250,7 +255,7 @@ public class CheckLinks {
 			}
 
 			if (articleDir.equals(commerceDir)) {
-				commerceArticles = findArticles(commerceDir);
+				commerceArticles = findArticles(commerceGithubDir);
 			}
 
 			if (articleDir.equals(analyticsCloudDir)) {
@@ -267,6 +272,10 @@ public class CheckLinks {
 
 			if (articleDir.equals(devGuideReferenceDir)) {
 				devGuideReferenceArticles = findArticles(devGuideReferenceDir);
+			}
+
+			if (articleDir.equals(commerceDevDir)) {
+				commerceDevArticles = findArticles(commerceGithubDevDir);
 			}
 		}
 	}
@@ -306,7 +315,7 @@ public class CheckLinks {
 			String version = substringLineStart.substring(headerStart, headerStart + 3);
 			boolean differingDefaultVersion = false;
 
-			if (!version.equals("7-1")) {
+			if (!version.equals(PORTAL_VERSION)) {
 				differingDefaultVersion = true;
 			}
 
@@ -927,8 +936,14 @@ public class CheckLinks {
 
 		headers = assignDirHeaders(line, lineIndex);
 
-		// Check 7.1 links from local liferay-docs repo
-		if (line.contains("/7-1/") && !differingDefaultVersion) {
+		// Check 7.1 portal and 1.0 commerce links from local liferay-docs repo
+		if ((line.contains("/" + PORTAL_VERSION + "/") || line.contains("/" + COMMERCE_VERSION + "/")) &&
+				!differingDefaultVersion) {
+
+			// Ensure portal link versions aren't mixed with commerce link versions
+			if (line.contains("/web/commerce/") && !line.contains(COMMERCE_VERSION)) {
+				logInvalidUrl(article, in.getLineNumber(), line, false);
+			}
 
 			if (Validator.isNull(secondaryHeader)) {
 
@@ -946,7 +961,8 @@ public class CheckLinks {
 
 		// Check legacy URLs by checking remote LDN site. These links must be
 		// published to LDN before this tool can verify them.
-		else if (checkLegacyLinks && (line.contains("/7-0/") || line.contains("/6-2/"))) {
+		else if (checkLegacyLinks && (line.contains("/" + PORTAL_VERSION_LEGACY_1 + "/") ||
+				line.contains("/" + PORTAL_VERSION_LEGACY_2 + "/"))) {
 
 			String ldnUrl = extractLdnUrl(line, in.getLineNumber(), article);
 			validURL = isLdnUrlValid(ldnUrl, article, in.getLineNumber());
@@ -1001,6 +1017,13 @@ public class CheckLinks {
 	private static int resultsNumber = 0;
 	private static boolean validUrl;
 
+	// Versions
+
+	private static String COMMERCE_VERSION = "1-1";
+	private static String PORTAL_VERSION = "7-2";
+	private static String PORTAL_VERSION_LEGACY_1 = "7-1";
+	private static String PORTAL_VERSION_LEGACY_2 = "7-0";
+
 	// User Guide
 
 	private static String userGuideDir = "discover/portal";
@@ -1011,7 +1034,8 @@ public class CheckLinks {
 	private static List<File> adminGuideArticles = new ArrayList<File>();
 	private static ArrayList<List<String>> adminGuideHeaders = new ArrayList<List<String>>();
 
-	private static String commerceDir = "discover/commerce";
+	private static String commerceDir = "web/commerce/documentation";
+	private static String commerceGithubDir = "discover/commerce";
 	private static List<File> commerceArticles = new ArrayList<File>();
 	private static ArrayList<List<String>> commerceHeaders = new ArrayList<List<String>>();
 
@@ -1033,6 +1057,11 @@ public class CheckLinks {
 	private static List<File> devGuideReferenceArticles = new ArrayList<File>();
 	private static ArrayList<List<String>> devGuideReferenceHeaders = new ArrayList<List<String>>();
 
+	private static String commerceDevDir = "web/commerce/developer-guide";
+	private static String commerceGithubDevDir = "develop/commerce";
+	private static List<File> commerceDevArticles = new ArrayList<File>();
+	private static ArrayList<List<String>> commerceDevHeaders = new ArrayList<List<String>>();
+
 	private static String[] articleDirs = {userGuideDir, adminGuideDir, commerceDir, analyticsCloudDir, userGuideReferenceDir,
-			tutorialDir, devGuideReferenceDir};
+			tutorialDir, devGuideReferenceDir, commerceDevDir};
 }
