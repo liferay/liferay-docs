@@ -104,8 +104,14 @@ The Web Content Display Screenlet delegates some events to an object that
 conforms to the `WebContentDisplayScreenletDelegate` protocol. This protocol 
 lets you implement the following methods:
 
-- `- screenlet:onWebContentResponse:`: Called when the web content's HTML is 
-  received. 
+-   `- screenlet:onWebContentResponse:`: Called when the web content's HTML is 
+    received. 
 
-- `- screenlet:onWebContentDisplayError:`: Called when an error occurs in the 
-  process. The `NSError` object describes the error. 
+-   `- screenlet:onWebContentError:`: Called when an error occurs in the 
+    process. The `NSError` object describes the error. 
+
+-   `- screenlet:onRecordContentResponse:`: Called when a web content record is 
+    received. 
+
+-   `- screenlet:onUrlClicked:`: Called when a URL is clicked in the web 
+    content. Return `true` to handle the navigation, or `false` to cancel it. 
