@@ -37,7 +37,7 @@ In this tutorial, you'll learn how to do the following tasks within a workspace:
 To create a container based on a @product@ image, run the following command from
 your workspace's root folder:
 
-    ../gradlew createDockerContainer
+    ./gradlew createDockerContainer
 
 This command creates a new container based on the image specified by the
 `liferay.workspace.docker.image.liferay` property in your workspace's
@@ -50,9 +50,11 @@ To find the possible property values you can set, see the official @product@
 Docker Hub's Tags section (e.g.,
 [Liferay Portal Docker Tags](https://hub.docker.com/r/liferay/portal/tags).
 
+The container will be given the name `$projectName-liferayapp`.
+
 Lastly, a new `build/docker` folder is generated in your workspace. This folder
-bridges your local file system to the container's file system. This means files
-in workspace's `build/docker` folder are also available in the container's
+will be mounted from your local file system to the container's file system. This
+means files in workspace's `build/docker` folder are also available in the container's
 `/etc/liferay` folder.
 
 Any projects residing in your workspace are automatically compiled and copied to
@@ -115,7 +117,7 @@ There are five Gradle commands available to interact with a container running
   copying the project archive file to workspace's `build/docker/deploy` folder.
   This command can also be executed from workspace's root folder to deploy all
   projects and copy all Docker configurations (i.e., from the `configs/docker`
-  folder) to the container.
+  folder) to the container or any project to deploy an individual project.
 - `stopDockerContainer`: stops the container.
 - `removeDockerContainer`: removes the container from Docker's system.
 
@@ -138,18 +140,18 @@ Next, you'll learn how to build a custom image.
 ## Building a Custom @product@ Image
 
 You can preserve your container's configuration by building it as an image.
-First, you must create a `Dockerfile` for your container. This serves as the
-instructions for building your image. To do this, run
 
-    ../gradlew createDockerfile
+To build your custom @product@ image, run
+
+    ./gradlew buildDockerImage
+
+A `Dockerfile` is generated for your container when building your image. To do this manually, run
+
+    ./gradlew createDockerfile
 
 The `Dockerfile` is generated in your workspace's `build/docker` folder. For
 more information on how to configure the `Dockerfile`, see Docker's
 [Dockerfile reference documentation](https://docs.docker.com/engine/reference/builder/).
-
-To build your custom @product@ image, run
-
-    ../gradlew buildDockerImage
 
 Your custom image is now available! Run `docker image ls` to verify it's
 availability.
