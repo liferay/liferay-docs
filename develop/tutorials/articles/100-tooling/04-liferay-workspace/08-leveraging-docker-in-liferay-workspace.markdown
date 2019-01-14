@@ -39,10 +39,11 @@ your workspace's root folder:
 
     ./gradlew createDockerContainer
 
-This command creates a new container based on the image specified by the
-`liferay.workspace.docker.image.liferay` property in your workspace's
-`gradle.properties` file. For example, if you want to base your container off
-the Liferay Portal 7.1 GA2 image, you would set this property:
+This command creates a new container named `[projectName]-liferayapp`, which is
+based on the image specified by the `liferay.workspace.docker.image.liferay`
+property in your workspace's `gradle.properties` file. For example, if you want
+to base your container off the Liferay Portal 7.1 GA2 image, you would set this
+property:
 
     liferay.workspace.docker.image.liferay=liferay/portal:7.1.1-ga2
 
@@ -50,12 +51,10 @@ To find the possible property values you can set, see the official @product@
 Docker Hub's Tags section (e.g.,
 [Liferay Portal Docker Tags](https://hub.docker.com/r/liferay/portal/tags).
 
-The container will be given the name `$projectName-liferayapp`.
-
 Lastly, a new `build/docker` folder is generated in your workspace. This folder
-will be mounted from your local file system to the container's file system. This
-means files in workspace's `build/docker` folder are also available in the container's
-`/etc/liferay` folder.
+is mounted into the container's file system. This means files in workspace's
+`build/docker` folder are also available in the container's `/etc/liferay`
+folder.
 
 Any projects residing in your workspace are automatically compiled and copied to
 the `build/docker/deploy` folder when the container is created; this means that
@@ -117,7 +116,7 @@ There are five Gradle commands available to interact with a container running
   copying the project archive file to workspace's `build/docker/deploy` folder.
   This command can also be executed from workspace's root folder to deploy all
   projects and copy all Docker configurations (i.e., from the `configs/docker`
-  folder) to the container or any project to deploy an individual project.
+  folder) to the container.
 - `stopDockerContainer`: stops the container.
 - `removeDockerContainer`: removes the container from Docker's system.
 
@@ -139,13 +138,13 @@ Next, you'll learn how to build a custom image.
 
 ## Building a Custom @product@ Image
 
-You can preserve your container's configuration by building it as an image.
-
-To build your custom @product@ image, run
+You can preserve your container's configuration by building it as an image. To
+build your custom @product@ image, run
 
     ./gradlew buildDockerImage
 
-A `Dockerfile` is generated for your container when building your image. To do this manually, run
+A `Dockerfile` is generated for your container when building your image. To do
+this manually, run
 
     ./gradlew createDockerfile
 
