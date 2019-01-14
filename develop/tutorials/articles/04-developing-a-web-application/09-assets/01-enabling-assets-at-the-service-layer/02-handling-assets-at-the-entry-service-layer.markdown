@@ -54,7 +54,7 @@ entity's service methods. Follow these steps:
 4.  Organize your imports, save the file, and run Service Builder. 
 
 5.  Finally, add these language keys to the
-    `guestbook-web/src/main/resource/content/Language.properties` file:
+    `guestbook-web/src/main/resources/content/Language.properties` file:
 
         model.resource.com.liferay.docs.guestbook.model.Guestbook=Guestbook
         model.resource.com.liferay.docs.guestbook.model.Entry=Guestbook Entry

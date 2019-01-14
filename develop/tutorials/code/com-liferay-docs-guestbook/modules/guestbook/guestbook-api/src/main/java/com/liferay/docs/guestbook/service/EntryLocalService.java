@@ -74,6 +74,7 @@ public interface EntryLocalService extends BaseLocalService,
 	@Indexable(type = IndexableType.REINDEX)
 	public Entry addEntry(Entry entry);
 
+	@Indexable(type = IndexableType.REINDEX)
 	public Entry addEntry(long userId, long guestbookId, String name,
 		String email, String message, ServiceContext serviceContext)
 		throws PortalException;
@@ -106,6 +107,7 @@ public interface EntryLocalService extends BaseLocalService,
 	@Indexable(type = IndexableType.DELETE)
 	public Entry deleteEntry(long entryId) throws PortalException;
 
+	@Indexable(type = IndexableType.DELETE)
 	public Entry deleteEntry(long entryId, ServiceContext serviceContext)
 		throws PortalException;
 
@@ -302,6 +304,7 @@ public interface EntryLocalService extends BaseLocalService,
 	@Indexable(type = IndexableType.REINDEX)
 	public Entry updateEntry(Entry entry);
 
+	@Indexable(type = IndexableType.REINDEX)
 	public Entry updateEntry(long userId, long guestbookId, long entryId,
 		String name, String email, String message, ServiceContext serviceContext)
 		throws PortalException, SystemException;
