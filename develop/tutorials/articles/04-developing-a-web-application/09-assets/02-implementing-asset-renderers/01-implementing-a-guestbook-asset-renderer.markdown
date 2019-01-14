@@ -34,7 +34,7 @@ Follow these steps to create the `GuestbookAssetRenderer` class:
         import com.liferay.portal.kernel.util.HtmlUtil;
         import com.liferay.portal.kernel.util.PortalUtil;
         import com.liferay.portal.kernel.util.StringUtil;
-        import com.liferay.docs.guestbook.portlet.constants.GuestbookPortletKeys;
+        import com.liferay.docs.guestbook.constants.GuestbookPortletKeys;
         import com.liferay.docs.guestbook.model.Guestbook;
         import com.liferay.docs.guestbook.service.permission.GuestbookPermission;
         import java.util.Locale;

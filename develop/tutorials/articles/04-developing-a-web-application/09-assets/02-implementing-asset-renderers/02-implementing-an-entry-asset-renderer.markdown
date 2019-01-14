@@ -31,9 +31,9 @@ following code:
     import com.liferay.portal.kernel.util.HtmlUtil;
     import com.liferay.portal.kernel.util.PortalUtil;
     import com.liferay.portal.kernel.util.StringUtil;
-    import com.liferay.docs.guestbook.portlet.constants.GuestbookPortletKeys;
+    import com.liferay.docs.guestbook.constants.GuestbookPortletKeys;
     import com.liferay.docs.guestbook.model.Entry;
-    import com.liferay.docs.guestbook.service.permission.EntryPermission;
+    import com.liferay.docs.guestbook.web.internal.security.permission.resource.GuestbookEntryPermission;
     import java.util.Locale;
     import javax.portlet.PortletRequest;
     import javax.portlet.PortletResponse;
@@ -54,7 +54,7 @@ following code:
       throws PortalException {
 
         long entryId = _entry.getEntryId();
-        return EntryPermission.contains(permissionChecker, entryId, 
+        return GuestbookEntryPermission.contains(permissionChecker, entryId, 
         ActionKeys.VIEW);
       }
 
@@ -212,8 +212,8 @@ class. Replace its contents with the following code:
     import com.liferay.asset.kernel.model.BaseAssetRendererFactory;
     import com.liferay.docs.guestbook.model.Entry;
     import com.liferay.docs.guestbook.service.EntryLocalService;
-    import com.liferay.docs.guestbook.service.permission.EntryPermission;
-    import com.liferay.docs.guestbook.portlet.constants.GuestbookPortletKeys;
+    import com.liferay.docs.guestbook.web.internal.security.permission.resource.GuestbookEntryPermission;
+    import com.liferay.docs.guestbook.constants.GuestbookPortletKeys;
     import com.liferay.portal.kernel.util.WebKeys;
     import com.liferay.portal.kernel.exception.PortalException;
     import com.liferay.portal.kernel.portlet.LiferayPortletRequest;
@@ -275,7 +275,7 @@ class. Replace its contents with the following code:
             long classPK, String actionId) throws Exception {
 
             Entry entry = _entryLocalService.getEntry(classPK);
-            return EntryPermission.contains(permissionChecker, entry, actionId);
+            return GuestbookEntryPermission.contains(permissionChecker, entry, actionId);
         }
 
         @Override

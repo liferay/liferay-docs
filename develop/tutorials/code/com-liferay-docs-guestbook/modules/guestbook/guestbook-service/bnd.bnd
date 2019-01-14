@@ -4,5 +4,6 @@ Bundle-Version: 1.0.0
 Liferay-Require-SchemaVersion: 1.0.0
 Liferay-Service: true
 Export-Package: 
+    com.liferay.docs.guestbook.asset,\
 	com.liferay.docs.guestbook.service.permission, \
 	com.liferay.docs.guestbook.search
