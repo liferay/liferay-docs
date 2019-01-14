@@ -347,7 +347,8 @@ Follow these steps to create the `GuestbookAssetRendererFactory`:
         long classPK, String actionId) throws Exception {
 
           Guestbook guestbook = _guestbookLocalService.getGuestbook(classPK);
-          return GuestbookPermission.contains(permissionChecker, guestbook, 
+          long groupId = guestbook.getGroupId();
+          return GuestbookPermission.contains(permissionChecker, groupId, 
           actionId);
         }
 
