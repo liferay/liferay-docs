@@ -11,14 +11,26 @@ file resides in the portlet's library.
 Some of the features included in Liferay Faces Portal are: 
 
 - Utilities: Provides the `LiferayPortletHelperUtil` which contains a variety
-Portlet-API and Liferay-specific convenience methods.
+  Portlet-API and Liferay-specific convenience methods.
 
-- JSF Components: Provides a set of JSF equivalents for
-`liferay-ui:captcha`, `liferay-ui:icon`, `liferay-ui:input-editor`, etc. 
+- JSF Components: Provides a set of JSF equivalents for popular @product@ JSP
+  tags (not exhaustive):
+    - `liferay-ui:captcha` &rarr; `portal:captcha`
+    - `liferay-ui:input-editor` &rarr; `portal:inputRichText`
+    - `liferay-ui:search` &rarr; `portal:inputSearch`
+    - `liferay-ui:header` &rarr; `portal:header`
+    - `aui:nav` &rarr; `portal:nav`
+    - `aui:nav-item` &rarr; `portal:navItem`
+    - `aui:nav-bar` &rarr; `portal:navBar`
+    - `liferay-security:permissionsURL` &rarr; `portal:permissionsURL`
+    - `liferay-portlet:runtime` &rarr; `portal:runtime`
+
+    For more information, visit
+    [https://liferayfaces.org/web/guest/portal-showcase](https://liferayfaces.org/web/guest/portal-showcase).
 
 - Expression Language: Adds a set of EL keywords such as `liferay` for getting
-Liferay-specific info, and `i18n` for integration with out-of-the-box Liferay
-internationalized messages. 
+  Liferay-specific info, and `i18n` for integration with out-of-the-box Liferay
+  internationalized messages. 
 
 Great! You now have an understanding of what Liferay Faces Portal is, and what
 it accomplishes in your JSF application. 
