@@ -1,13 +1,12 @@
 # Understanding Liferay Faces Portal [](id=understanding-liferay-faces-portal)
 
 *Liferay Faces Portal* is distributed in a `.jar` file. You can add Liferay
-Faces Portal as a dependency for your portlet projects, in order to use its
-Liferay-specific utilities and UI components. Liferay Faces Portal is included
-in a JSF portlet project automatically when created using Liferay IDE/Developer
-Studio. Examine Figure 1 below and notice you have a
-`com.liferay.faces.portal.[version].jar` in your portlet's library. 
+Faces Portal as a dependency for your portlet projects to use its
+Liferay-specific utilities and UI components. When Liferay Faces Portal is
+included in a JSF portlet project, the `com.liferay.faces.portal.[version].jar`
+file resides in the portlet's library. 
 
-![Figure 1: Maven downloads the required `.jar` files for your JSF portlet, depending on the JSF UI Component Suite you selected.](../../images/jsf-jars-package-explorer.png)
+![Figure 1: The required `.jar` files are downloaded for your JSF portlet based on the JSF UI Component Suite you configured.](../../images/jsf-jars-package-explorer.png)
 
 Some of the features included in Liferay Faces Portal are: 
 
