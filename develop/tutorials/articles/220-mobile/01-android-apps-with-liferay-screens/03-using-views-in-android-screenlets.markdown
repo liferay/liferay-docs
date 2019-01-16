@@ -42,13 +42,13 @@ uses the
 Views with several Screenlets to present the red and white motif you can see 
 [here on Google Play](https://play.google.com/store/apps/details?id=com.liferay.mobile.screens.bankofwesteros). 
 Liferay Screens for Android comes with the Default View Set, but Liferay makes
-additional View Sets, like Material, Lexicon and Westeros, available in jCenter. Anyone
-can create View Sets and publish them in public repositories like Maven Central
-and jCenter. 
+additional View Sets (e.g., Material, Lexicon, and Westeros) available in 
+jCenter. Anyone can create View Sets and publish them in public repositories 
+like Maven Central and jCenter. 
 
 To install View Sets besides Default, add them as dependencies in your project. 
-The `build.gradle` file code snippet below specifies the Material, Lexicon and Westeros 
-View Sets as dependencies: 
+The `build.gradle` file code snippet here specifies the Material, Lexicon, and 
+Westeros View Sets as dependencies: 
 
     dependencies {
         ...
@@ -73,7 +73,7 @@ guidelines. Refer to the
 for instructions on creating your own Views. 
 
 **Lexicon:** Demonstrates Views built from scratch. It follows Liferay's
-[Lexicon Design](https://lexicondesign.io/)
+[Lexicon Design](https://lexicondesign.io/) 
 guidelines.
 
 **Westeros:** Customizes the behavior and appearance of the 
@@ -122,8 +122,8 @@ the following code in an app's `res/values/styles.xml` tells
         ...
     </resources>
 
-To use the Default, Lexicon or Westeros View Set, inherit `default_theme`, `lexicon_theme` or 
-`westeros_theme`, respectively. 
+To use the Default, Lexicon, or Westeros View Set, inherit `default_theme`, 
+`lexicon_theme` or `westeros_theme`, respectively. 
 
 That's it! Great! Now you know how to use Views to spruce up your Android 
 Screenlets. This opens up a world of possibilities, like 
