@@ -1,7 +1,7 @@
 # Handling Low Inventories [](id=handling-low-inventories)
 
 On a product's
-[*Configuration*](/web/emporio/documentation/-/knowledge_base/1-0/configuration)
+[*Configuration*](/web/commerce/documentation/-/knowledge_base/1-0/configuration)
 page, Site administrators can set a *Minimum Stock Quantity*, and select an
 action---a *Low Stock Activity*---to be taken automatically if stock falls to
 that level. Out of the box, only one action---*Set as Unpublished* is
