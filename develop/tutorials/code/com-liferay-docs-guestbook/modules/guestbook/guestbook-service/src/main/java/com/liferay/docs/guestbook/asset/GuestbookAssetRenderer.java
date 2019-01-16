@@ -26,150 +26,143 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class GuestbookAssetRenderer extends BaseJSPAssetRenderer<Guestbook> {
-	
+
 	public GuestbookAssetRenderer(Guestbook guestbook) {
 
-        _guestbook = guestbook;
-}
+		_guestbook = guestbook;
+	}
 
-private Guestbook _guestbook;
+	private Guestbook _guestbook;
 
-@Override
-public boolean hasEditPermission(PermissionChecker permissionChecker) 
-throws PortalException {
+	@Override
+	public boolean hasEditPermission(PermissionChecker permissionChecker) throws PortalException {
 
-  long guestbookId = _guestbook.getGuestbookId();
-  return GuestbookPermission.contains(permissionChecker, guestbookId, 
-  ActionKeys.UPDATE);
-}
+		long guestbookId = _guestbook.getGuestbookId();
+		return GuestbookPermission.contains(permissionChecker, guestbookId, ActionKeys.UPDATE);
+	}
 
-@Override
-public boolean hasViewPermission(PermissionChecker permissionChecker) 
-throws PortalException {
+	@Override
+	public boolean hasViewPermission(PermissionChecker permissionChecker) throws PortalException {
 
-  long guestbookId = _guestbook.getGuestbookId();
-  return GuestbookPermission.contains(permissionChecker, guestbookId, 
-  ActionKeys.VIEW);
-}
-@Override
-public Guestbook getAssetObject() {
-  return _guestbook;
-}
+		long guestbookId = _guestbook.getGuestbookId();
+		return GuestbookPermission.contains(permissionChecker, guestbookId, ActionKeys.VIEW);
+	}
 
-@Override
-public long getGroupId() {
-  return _guestbook.getGroupId();
-}
+	@Override
+	public Guestbook getAssetObject() {
+		return _guestbook;
+	}
 
-@Override
-public long getUserId() {
+	@Override
+	public long getGroupId() {
+		return _guestbook.getGroupId();
+	}
 
-  return _guestbook.getUserId();
-}
+	@Override
+	public long getUserId() {
 
-@Override
-public String getUserName() {
-  return _guestbook.getUserName();
-}
+		return _guestbook.getUserId();
+	}
 
-@Override
-public String getUuid() {
-  return _guestbook.getUuid();
-}
+	@Override
+	public String getUserName() {
+		return _guestbook.getUserName();
+	}
 
-@Override
-public String getClassName() {
-  return Guestbook.class.getName();
-}
+	@Override
+	public String getUuid() {
+		return _guestbook.getUuid();
+	}
 
-@Override
-public long getClassPK() {
-  return _guestbook.getGuestbookId();
-}
+	@Override
+	public String getClassName() {
+		return Guestbook.class.getName();
+	}
 
-@Override
-public String getSummary(PortletRequest portletRequest, PortletResponse 
-  portletResponse) {
-    return "Name: " + _guestbook.getName();
-}
+	@Override
+	public long getClassPK() {
+		return _guestbook.getGuestbookId();
+	}
 
-@Override
-public String getTitle(Locale locale) {
-  return _guestbook.getName();
-}
+	@Override
+	public String getSummary(PortletRequest portletRequest, PortletResponse portletResponse) {
+		return "Name: " + _guestbook.getName();
+	}
 
-@Override
-public boolean include(HttpServletRequest request, HttpServletResponse 
-  response, String template) throws Exception {
-    request.setAttribute("GUESTBOOK", _guestbook);
-    request.setAttribute("HtmlUtil", HtmlUtil.getHtml());
-    request.setAttribute("StringUtil", new StringUtil());
-    return super.include(request, response, template);
-}
+	@Override
+	public String getTitle(Locale locale) {
+		return _guestbook.getName();
+	}
 
-@Override
-public String getJspPath(HttpServletRequest request, String template) {
-  
-  if (template.equals(TEMPLATE_FULL_CONTENT)) {
-    request.setAttribute("gb_guestbook", _guestbook);
+	@Override
+	public boolean include(HttpServletRequest request, HttpServletResponse response, String template) throws Exception {
+		request.setAttribute("GUESTBOOK", _guestbook);
+		request.setAttribute("HtmlUtil", HtmlUtil.getHtml());
+		request.setAttribute("StringUtil", new StringUtil());
+		return super.include(request, response, template);
+	}
 
-    return "/asset/guestbook/" + template + ".jsp";
-  } else {
-    return null;
-  }
-}
+	@Override
+	public String getJspPath(HttpServletRequest request, String template) {
 
-@Override
-public PortletURL getURLEdit(LiferayPortletRequest liferayPortletRequest,
-    LiferayPortletResponse liferayPortletResponse) throws Exception {
-  PortletURL portletURL = liferayPortletResponse.createLiferayPortletURL(
-      getControlPanelPlid(liferayPortletRequest), GuestbookPortletKeys.GUESTBOOK,
-      PortletRequest.RENDER_PHASE);
-  portletURL.setParameter("mvcRenderCommandName", "/guestbookwebportlet/edit_guestbook");
-  portletURL.setParameter("guestbookId", String.valueOf(_guestbook.getGuestbookId()));
-  portletURL.setParameter("showback", Boolean.FALSE.toString());
+		if (template.equals(TEMPLATE_FULL_CONTENT)) {
+			request.setAttribute("gb_guestbook", _guestbook);
 
-  return portletURL;
-}
-  
-  @Override
-  public String getURLViewInContext(LiferayPortletRequest liferayPortletRequest,
-      LiferayPortletResponse liferayPortletResponse, String noSuchEntryRedirect) throws Exception {
-    try {
-      long plid = PortalUtil.getPlidFromPortletId(_guestbook.getGroupId(),
-          GuestbookPortletKeys.GUESTBOOK);
+			return "/asset/guestbook/" + template + ".jsp";
+		} else {
+			return null;
+		}
+	}
 
-      PortletURL portletURL;
-      if (plid == LayoutConstants.DEFAULT_PLID) {
-        portletURL = liferayPortletResponse.createLiferayPortletURL(getControlPanelPlid(liferayPortletRequest),
-            GuestbookPortletKeys.GUESTBOOK, PortletRequest.RENDER_PHASE);
-      } else {
-        portletURL = PortletURLFactoryUtil.create(liferayPortletRequest,
-            GuestbookPortletKeys.GUESTBOOK, plid, PortletRequest.RENDER_PHASE);
-      }
+	@Override
+	public PortletURL getURLEdit(LiferayPortletRequest liferayPortletRequest,
+			LiferayPortletResponse liferayPortletResponse) throws Exception {
+		PortletURL portletURL = liferayPortletResponse.createLiferayPortletURL(
+				getControlPanelPlid(liferayPortletRequest), GuestbookPortletKeys.GUESTBOOK,
+				PortletRequest.RENDER_PHASE);
+		portletURL.setParameter("mvcRenderCommandName", "/guestbookwebportlet/edit_guestbook");
+		portletURL.setParameter("guestbookId", String.valueOf(_guestbook.getGuestbookId()));
+		portletURL.setParameter("showback", Boolean.FALSE.toString());
 
-      portletURL.setParameter("mvcRenderCommandName", "/guestbookwebportlet/view");
-      portletURL.setParameter("guestbookId", String.valueOf(_guestbook.getGuestbookId()));
+		return portletURL;
+	}
 
-      String currentUrl = PortalUtil.getCurrentURL(liferayPortletRequest);
+	@Override
+	public String getURLViewInContext(LiferayPortletRequest liferayPortletRequest,
+			LiferayPortletResponse liferayPortletResponse, String noSuchEntryRedirect) throws Exception {
+		try {
+			long plid = PortalUtil.getPlidFromPortletId(_guestbook.getGroupId(), GuestbookPortletKeys.GUESTBOOK);
 
-      portletURL.setParameter("redirect", currentUrl);
+			PortletURL portletURL;
+			if (plid == LayoutConstants.DEFAULT_PLID) {
+				portletURL = liferayPortletResponse.createLiferayPortletURL(getControlPanelPlid(liferayPortletRequest),
+						GuestbookPortletKeys.GUESTBOOK, PortletRequest.RENDER_PHASE);
+			} else {
+				portletURL = PortletURLFactoryUtil.create(liferayPortletRequest, GuestbookPortletKeys.GUESTBOOK, plid,
+						PortletRequest.RENDER_PHASE);
+			}
 
-      return portletURL.toString();
+			portletURL.setParameter("mvcRenderCommandName", "/guestbookwebportlet/view");
+			portletURL.setParameter("guestbookId", String.valueOf(_guestbook.getGuestbookId()));
 
-    } catch (PortalException e) {
+			String currentUrl = PortalUtil.getCurrentURL(liferayPortletRequest);
 
-    } catch (SystemException e) {
-    }
+			portletURL.setParameter("redirect", currentUrl);
 
-    return noSuchEntryRedirect;
-  }
+			return portletURL.toString();
 
-  @Override
-  public String getURLView(LiferayPortletResponse liferayPortletResponse, 
-  WindowState windowState) throws Exception {
+		} catch (PortalException e) {
 
-    return super.getURLView(liferayPortletResponse, windowState);
-  }
-  
+		} catch (SystemException e) {
+		}
+
+		return noSuchEntryRedirect;
+	}
+
+	@Override
+	public String getURLView(LiferayPortletResponse liferayPortletResponse, WindowState windowState) throws Exception {
+
+		return super.getURLView(liferayPortletResponse, windowState);
+	}
+
 }

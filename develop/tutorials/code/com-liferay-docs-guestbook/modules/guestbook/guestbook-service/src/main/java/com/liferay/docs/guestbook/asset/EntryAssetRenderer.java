@@ -1,6 +1,6 @@
 package com.liferay.docs.guestbook.asset;
 
-    import com.liferay.asset.kernel.model.BaseJSPAssetRenderer;
+import com.liferay.asset.kernel.model.BaseJSPAssetRenderer;
 import com.liferay.docs.guestbook.constants.GuestbookPortletKeys;
 import com.liferay.docs.guestbook.model.Entry;
 import com.liferay.docs.guestbook.web.internal.security.permission.resource.GuestbookEntryPermission;
@@ -170,3 +170,4 @@ import javax.servlet.http.HttpServletResponse;
 
       private Entry _entry;
     }
+ 
