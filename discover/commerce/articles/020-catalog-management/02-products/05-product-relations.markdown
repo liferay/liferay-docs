@@ -5,7 +5,7 @@ typically for the purpose of displaying links to one product on the detail page
 of another.
 
 Here's how it works: Every related product must be assigned to a *Product
-Relationship Type*. These products can then be displayed by a product publisher
+Relation Type*. These products can then be displayed by a product publisher
 widget configured to source data from the appropriate type.
 
 By placing more than one product publisher widget on a product detail page, you
@@ -16,16 +16,16 @@ product.
 
 Follow these steps:
 
-1.  Add product relationship types.
+1.  Add product relation types.
 
-2.  Create product relationships.
+2.  Create product relations.
 
-3.  Configure your product detail page(s) to display relationships.
+3.  Configure your product detail page(s) to display relations.
 
 +$$$
 
 **Note:** If your site was built from an accelerator, then a number of product
-relationship types are already in place:
+relation types are already in place:
 
 **Up-sell:** Display products that are comparable to the featured product
 but have a higher sale value.
@@ -44,11 +44,11 @@ skip the next step.
 
 $$$
 
-## Adding Product Relationship Types [](id=adding-product-relationship-types)
+## Adding Product Relation Types [](id=adding-product-relationship-types)
 
-Since the only function of a product relationship type is to distinguish product
-relationships from those of other types, the only unique property it needs is
-a name. Follow these steps to create and name a new product relationship type:
+Since the only function of a product relation type is to distinguish product
+relations from those of other types, the only unique property it needs is
+a name. Follow these steps to create and name a new type:
 
 1.  Go to *Control Panel* &rarr; *Configuration* &rarr; *System Settings*. Find
     the *Commerce* section, click *Catalog* and go to the *Product Relations*
@@ -67,7 +67,7 @@ Follow these steps:
 1.  Go to the catalog, select a product, and click the *Product Relations*
     tab.
 
-2.  Select a relationship type from the tabs on the left.
+2.  Select a relation type from the tabs on the left.
 
     ![Figure 1: The row of tabs at the left allows you to create multiple sets of related products.](../../../images/product-relations.png)
 
@@ -91,7 +91,7 @@ Follow these steps:
     click *Configuration*.
 
 3.  Set *Product-Selection* to *dataSource*. Then go to the *Data-Source*
-    drop-down  menu and choose a product relationship type to be displayed in
+    drop-down  menu and choose a product relation type to be displayed in
     the widget.
 
 4.  Click *Save* and close the dialog box.
