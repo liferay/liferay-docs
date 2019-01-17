@@ -37,8 +37,7 @@ Liferay's tools also streamline the application upgrade process. Liferay @ide@'s
 adapts traditional plugins to @product-ver@ APIs. The
 [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-themes) 
 [migrates](/develop/tutorials/-/knowledge_base/7-0/migrating-a-6-2-theme-to-liferay-7)
-themes and layout templates to use the new Liferay JS Toolkit's theme 
-development tools and 
+themes and layout templates to use the new Liferay JS Theme Toolkit and 
 [adapts](/develop/tutorials/-/knowledge_base/7-1/upgrading-6-2-themes-intro) 
 them to @product-ver@.
 

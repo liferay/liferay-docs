@@ -3,14 +3,14 @@
 Portlets are a Java standard, so you must have a knowledge and understanding of
 how Java works to write one. This can be quite the hurdle for front-end
 developers who want to use JavaScript frameworks in their portlets. Thanks to 
-the JS Portlet Extender, 
+the Liferay JS Bundle Toolkit( the JS Portlet Extender, 
 [Liferay Bundle Generator](https://www.npmjs.com/package/generator-liferay-bundle), 
 and 
-[liferay-npm-bundler](/develop/reference/-/knowledge_base/7-1/liferay-npm-bundler), 
+[liferay-npm-bundler](/develop/reference/-/knowledge_base/7-1/liferay-npm-bundler)), 
 developers can create and develop JavaScript portlets in @product@ using pure 
 JavaScript tooling. These tools, along with @product@'s 
-[theme development tools](https://github.com/liferay/liferay-themes-sdk/tree/master/packages), 
-form the Liferay JS Toolkit. 
+[Liferay JS Theme Toolkit](https://github.com/liferay/liferay-themes-sdk/tree/master/packages), 
+form the Liferay JS Toolkits. 
 
 ![Figure 1: The JS Portlet Extender lets you use pure JavaScript tooling to write portlets.](../../images/extender-lifecycle.png)
 

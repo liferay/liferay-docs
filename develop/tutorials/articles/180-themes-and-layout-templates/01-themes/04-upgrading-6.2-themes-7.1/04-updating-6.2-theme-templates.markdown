@@ -218,8 +218,8 @@ For example, here are the Lunar Resort theme's updated theme settings:
 That covers most, if not all, of the theme template changes. If you modified any 
 other FreeMarker theme templates, compare them with templates in the 
 [`_unstyled` theme](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/frontend-theme/frontend-theme-unstyled/src/main/resources/META-INF/resources/_unstyled/templates). 
-If your theme uses the Liferay JS Toolkit's theme development tools, refer to 
-the suggested changes that the Gulp `upgrade` task reports. 
+If your theme uses the Liferay JS Theme Toolkit, refer to the suggested changes 
+that the Gulp `upgrade` task reports. 
 
 ## Related Topics [](id=related-topics)
 

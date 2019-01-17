@@ -38,8 +38,8 @@ files you wish to change and copy them into your theme's `webapp` folder.
 The WAR-style theme created by Dev Studio is Gradle/Maven based; this differs
 from themes created with the 
 [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-themes) 
-that use 
-[Liferay JS Toolkit's theme development tools](https://github.com/liferay/liferay-themes-sdk/tree/master/packages). 
+that use the 
+[Liferay JS Theme Toolkit](https://github.com/liferay/liferay-themes-sdk/tree/master/packages). 
 Do not mix these two development strategies. See the
 [Managing Themes in Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/managing-themes-in-liferay-workspace)
 tutorial for more information on how these two strategies are used in Workspace

@@ -3,7 +3,7 @@
 Creating a @product@ theme can be accomplished using two different tools:
 
 - [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-themes)
-  (Node.js-based themes that use Liferay JS Toolkit's theme development tools)
+  (Node.js-based themes that use the Liferay JS Theme Toolkit)
 - [Project template/archetype](/develop/reference/-/knowledge_base/7-1/theme-template)
   (Gradle/Maven-based)
 
@@ -14,8 +14,8 @@ to create Node.js-based themes inside workspace or you can leverage it
 externally and copy themes into Workspace.
 
 Workspace also offers a traditional Java-based theme approach (leveraging
-Gradle/Maven) for those that can't use Liferay JS Toolkit's theme development 
-tools in their CI environment.
+Gradle/Maven) for those that can't use the Liferay JS Theme Toolkit's tools in 
+their CI environment.
 
 Below you'll learn how to manage both Node.js-based themes and
 Gradle/Maven-based themes in Workspace. 
