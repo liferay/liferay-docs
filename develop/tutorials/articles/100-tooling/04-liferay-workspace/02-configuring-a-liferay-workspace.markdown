@@ -208,7 +208,8 @@ The following configurable properties are available in your workspace's
    management. Use `7.1.1` for the latest Liferay CE release and `7.1.10` for
    the latest DXP release.
 - `liferay.workspace.themes.dir`: Set the folder that contains Node.js-style
-  theme projects. The default value is `themes`.
+  theme projects, which use the Liferay JS Theme Toolkit. The default value is 
+  `themes`.
 - `liferay.workspace.themes.java.build`: Set this to `true` to build the theme
   projects using the Liferay Portal Tools Theme Builder. The default value is
   `false`.
