@@ -46,10 +46,10 @@ your search provider's documentation for more information.
 
 ![Figure 5: Use Elastic's Query String syntax to construct advanced search queries.](../../images/search-advanced-syntax.png)
 
-## Multiple Facet and Term Selection [](id=multiple-facet-and-term-selection)
+## Multiple Facet Term Selection [](id=multiple-facet-term-selection)
 Narrow search results using Facets. Continue refining results by selecting as
-many facets and as many terms as necessary. Previously, only one facet term
-could be used at a time.
+many facets terms as necessary. Previously, only one facet term
+could be used at a time per each facet.
 
 ![Figure 6: Facets and their terms can be selected in multiples to refine search results.](../../images/search-multiple-facet-selection.png)
 
