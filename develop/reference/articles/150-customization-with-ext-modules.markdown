@@ -129,6 +129,7 @@ project template/archetype using
 or
 [Maven](/develop/tutorials/-/knowledge_base/7-1/generating-new-projects-using-archetypes).
 
+<!--
 ### Anatomy of an Ext Module [](id=anatomy-of-an-ext-module)
 
 There are a few things to note about an Ext module's folder structure. Below
@@ -225,6 +226,8 @@ Great! You've now created an Ext module and are familiar with its folder
 structure and its most significant files. Next, you'll use your Ext module to
 customize @product@. 
 
+-->
+
 ## Developing an Ext Module [](id=developing-an-ext-module)
 
 An Ext module changes @product@ itself when the module is deployed; it's not a
@@ -234,6 +237,8 @@ important to remember that once an Ext module is deployed, some of its files are
 copied *inside* the Liferay installation; the only way to remove the changes is
 by *redeploying* an unmodified Liferay application. You're also responsible for
 checking that patches and fix packs do not conflict with your Ext module.
+
+<!--
 
 The @product-ver@ compatible Plugins SDK is designed to only develop/deploy one
 Ext module. This means that all your customizations should live inside one Ext
@@ -571,6 +576,8 @@ Now, perform these actions on your server:
     appropriate directory in the application server. 
 
 Next, you'll learn about Liferay's licensing and contributing standards.
+
+-->
 
 ## Licensing and Contributing [](id=licensing-and-contributing)
 
