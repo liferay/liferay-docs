@@ -1,0 +1,27 @@
+# Using Liferay Util Body Bottom [](id=using-liferay-util-body-bottom)
+
+The body bottom tag is not a self-closing tag. It lets you add additional HTML 
+or scripts to the bottom of the `body` tag. content placed between the opening 
+and closing of this tag is passed to the 
+[body_bottom.jsp](https://github.com/liferay/liferay-portal/blob/7.1.x/portal-web/docroot/html/common/themes/body_bottom.jsp#L26-L31) 
+and outputs in this JSP. 
+
+The example configuration below uses the `<liferay-util:body-bottom>` tag to 
+include JavaScript provided by the portlet's bundle:
+    
+    <liferay-util:body-bottom outputKey="addbodybottom" >
+    	<script 
+      src="/o/my-liferay-util-portlet/js/my_custom_javascript_body_bottom.js" 
+      type="text/javascript"></script>
+    </liferay-util:body-bottom>
+
+Now you know how to use the `<liferay-util:body-bottom>` tag to include 
+additional resources in the bottom of the page's body. 
+
+## Related Topics [](id=related-topics)
+
+[Using the Liferay Util HTML Body Top Tag](/develop/tutorials/-/knowledge_base/7-1/using-liferay-util-body-top)
+
+[Using the Liferay Util HTML Top Tag](/develop/tutorials/-/knowledge_base/7-1/using-liferay-util-html-top)
+
+[Using the Liferay UI Taglib](/develop/tutorials/-/knowledge_base/7-1/using-the-liferay-ui-taglib)
