@@ -13,7 +13,7 @@ Before proceeding, download these files from the
 - Dependencies ZIP file
 - OSGi JARs ZIP file
 
-[*Liferay Home*](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home)
+[*Liferay Home*](/discover/deployment/-/knowledge_base/7-0/installing-liferay#liferay-home)
 is the folder containing your JBoss server folder. After installing and
 deploying @product@, the Liferay Home folder contains the JBoss server folder as
 well as `data`, `deploy`, `logs`, and `osgi` folders. `$JBOSS_HOME` refers to
@@ -317,7 +317,7 @@ installation on JBoss. Next you'll configure the database and mail.
 
 The easiest way to handle your database configuration is to let @product@ manage
 your data source. The 
-[Basic Configuration](/discover/deployment/-/knowledge_base/7-1/installing-product#using-liferays-setup-wizard)
+[Basic Configuration](/discover/deployment/-/knowledge_base/7-1/installing-liferay#using-liferays-setup-wizard)
 page lets you configure @product@'s built-in data source. If you want to use the
 built-in data source, skip this section.
 
@@ -387,7 +387,7 @@ Now that you've configured your data source, the mail session is next.
 As with database configuration, the easiest way to configure mail is to let
 @product@ handle your mail session. If you want to use @product@'s built-in mail
 session, skip this section and
-[configure the mail session](/discover/deployment/-/knowledge_base/7-1/installing-product#configuring-mail)
+[configure the mail session](/discover/deployment/-/knowledge_base/7-1/installing-liferay#configuring-mail)
 in the Control Panel.
 
 If you want to manage your mail session with JBoss, follow these steps:
