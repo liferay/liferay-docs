@@ -52,8 +52,8 @@ For example, you could set your target platform workspace Gradle property to
 **Important:** You can leverage the target platform features in Liferay Portal
 GA6+ and Liferay DXP SP7+. Previous versions do not provide these features.
 
-The versions following the SP7 release of DXP follow fix pack versions (e.g.,
-`7.0.10.fp58`, `7.0.10.fp59`, etc.).
+The versions following the SP7 release of DXP follow service pack versions
+(e.g., `7.0.10.8` (SP8), `7.0.10.9` (SP9), etc.).
 
 This provides a static *distro* JAR for the specified version of @product@,
 which contains all the metadata (i.e., capabilities, packages, versions, etc.)
