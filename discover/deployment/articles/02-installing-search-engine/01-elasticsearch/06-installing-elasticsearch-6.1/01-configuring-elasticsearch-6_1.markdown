@@ -209,7 +209,7 @@ documentation on [Elasticsearch Index Settings](https://www.elastic.co/guide/en/
 
 <a name="footnote1">1</a> This is, of course, a nod to all those fans of [Boaty Mcboatface](http://www.theatlantic.com/international/archive/2016/05/boaty-mcboatface-parliament-lessons/482046). 
 
-## Available Elasicsearch Connector System Settings in Embedded and Remote Operation Mode [](id=available-elasicsearch-connector-system-settings-in-embedded-and-eemote-operation-mode)
+## Available Elasticsearch Connector System Settings in Embedded and Remote Operation Mode [](id=available-elasticsearch-connector-system-settings-in-embedded-and-eemote-operation-mode)
 
 The table below shows which adapter settings are available in the given operation modes.
 
