@@ -89,11 +89,9 @@ deprecated, and removed APIs and extension points for search infrastructure.
 ## Solr 7.x Support [](id=solr-7.x-support)
 The Solr Connector application was updated to support Solr 7.x. 
 
-<!-- Add link when available (LRDOCS-4745)
 Read
 [here](discover/deployment/-/knowledge_base/7-1/installing-solr) 
 for more information.
--->
 
 ## Legacy Search [](id=legacy-search)
 We're cheating with this one. It isn't a new feature, but the old way of doing
