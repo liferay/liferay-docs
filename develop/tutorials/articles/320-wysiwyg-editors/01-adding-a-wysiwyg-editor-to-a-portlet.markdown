@@ -1,10 +1,15 @@
 # Adding a WYSIWYG Editor to a Portlet [](id=adding-a-wysiwyg-editor-to-a-portlet)
 
 It's easy to include WYSIWYG editors in your portlet, thanks to the 
-`<liferay-editor:editor />` tag. While you can alternatively use the 
-`<liferay-ui:input-editor />` tag, it is deprecated as of @product-ver@ in favor 
-of the `<liferay-editor:editor />` tag, so we recommend that you use the 
-`<liferay-editor:editor />` tag to avoid future issues. 
+`<liferay-editor:editor />` tag. 
+
++$$$
+
+**Note:** The `<liferay-ui:input-editor />` tag is deprecated as of
+@product-ver@ in favor of the `<liferay-editor:editor />` tag. Use the
+`<liferay-editor:editor />` tag to avoid future issues.
+
+$$$
 
 Below is an example configuration:
 
@@ -54,19 +59,19 @@ tag:
 
 | Attribute | Type | Description |
 | --- | --- | --- |
-| autoCreate | `java.lang.String` | Whether to show the HTML edit view of the editor initially |
+| `autoCreate` | `java.lang.String` | Whether to show the HTML edit view of the editor initially |
 | contents | `java.lang.String` | Sets the initial contents of the editor |
-| contentsLanguageId | `java.lang.String` | Sets the language ID for the input editor's text |
-| cssClass | `java.lang.String` | A CSS class for styling the component. |
+| `contentsLanguageId` | `java.lang.String` | Sets the language ID for the input editor's text |
+| `cssClass` | `java.lang.String` | A CSS class for styling the component. |
 | data | `java.util.Map` | Data that can be used as the editorConfig |
-| editorName | `java.lang.String` | The editor you want to use (alloyeditor, ckeditor, tinymce, simple) |
+| `editorName` | `java.lang.String` | The editor you want to use (alloyeditor, ckeditor, tinymce, simple) |
 | name | `java.lang.String` | A name for the input editor. The default value is `editor`. |
-| onBlurMethod | `java.lang.String` | A function to be called when the input editor loses focus. |
-| onChangeMethod | `java.lang.String` | A function to be called on a change in the input editor. |
-| onFocusMethod | `java.lang.String` | A function to be called when the input editor gets focus. |
-| onInitMethod | `java.lang.String` | A function to be called when the input editor initializes. |
-| placeholder | `java.lang.String` | Placeholder text to display in the input editor. |
-| showSource | `java.lang.String` | Whether to enable editing the HTML source code of the content. The default value  is `true`. |
+| `onBlurMethod` | `java.lang.String` | A function to be called when the input editor loses focus. |
+| `onChangeMethod` | `java.lang.String` | A function to be called on a change in the input editor. |
+| `onFocusMethod` | `java.lang.String` | A function to be called when the input editor gets focus. |
+| `onInitMethod` | `java.lang.String` | A function to be called when the input editor initializes. |
+| `placeholder` | `java.lang.String` | Placeholder text to display in the input editor. |
+| `showSource` | `java.lang.String` | Whether to enable editing the HTML source code of the content. The default value  is `true`. |
 
 See the 
 [taglibdocs](@app-ref@/frontend-editor/latest/taglibdocs/liferay-editor/editor.html) 
