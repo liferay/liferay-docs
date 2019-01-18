@@ -8,9 +8,9 @@ query.
 
 In past versions of @product@, when your asset required indexing, you would
 implement a new Indexer by extending
-`com.liferay.portal.kernel.search.BaseIndexer<T>`. However, in @product-ver@ is
+`com.liferay.portal.kernel.search.BaseIndexer<T>`. @product-ver@ introduces
 a new pattern that relies on 
-[composition instead of inheritance](https://stackoverflow.com/questions/2399544/difference-between-inheritance-and-composition). 
+[composition instead of inheritance](https://stackoverflow.com/questions/2399544/difference-between-inheritance-and-composition).
 If you want to use the old approach, feel free to extend `BaseIndexer`. It's
 still supported. 
 
@@ -43,7 +43,7 @@ indexing cycle.
 ### Indexing 
 
 Model entities store data fields in the database. For example, Guestbooks store
-the _name_ field. During the cycle's Indexing step, you prepare the model entity
+a _name_ field. During the cycle's Indexing step, you prepare the model entity
 to be searchable by defining the model's fields that are sent to the search
 engine, later used during a search.
 
@@ -61,16 +61,16 @@ Search administrative application found in Control Panel &rarr; Configuration
 &rarr; Search, or when a CRUD operation is made on the entity, _if_ the
 `modelIndexed` method is implemented in your contributor.
 
-`DocumentContributor` classes (without any type parameter) are used to
-contribute certain fields to every index document, regardless of what base
-entity is being indexed. For example, the
+`DocumentContributor` classes (without any type parameter) contribute certain
+fields to every index document, regardless of what base entity is being indexed.
+For example, the
 [`GroupedModelDocumentContributor`](https://github.com/liferay/liferay-portal/blob/7.1.1-ga2/modules/apps/portal-search/portal-search/src/main/java/com/liferay/portal/search/internal/contributor/document/GroupedModelDocumentContributor.java)
 contributes the `GROUP_ID` and `SCOPE_GROUP_ID` fields for all documents with a
 backing entity that's also a `GroupedModel`.
  
 ### Searching
 
-Most searches start with a user entering keywords into a search bar. The entered
+Searches start with a user entering keywords into a search bar. The entered
 keywords are processed by the back-end search infrastructure, transformed into a
 *query* the search engine can understand, and used to match against each search
 document's fields.
@@ -79,19 +79,17 @@ document's fields.
 
 [`KeywordQueryContributor`](https://github.com/liferay/liferay-portal/blob/7.1.1-ga2/modules/apps/portal-search/portal-search-spi/src/main/java/com/liferay/portal/search/spi/model/query/contributor/KeywordQueryContributor.java) 
 classes contribute clauses to the ongoing search query. This is called at search
-time, and ensures that all the fields you indexed are also the ones searched.
+time and ensures that all the fields you indexed are also the ones searched.
 For example, if you index fields with the Site locale appended to them
 (`title_en_us`, for example), you want the search query to include the same
-locale when the document is searched. If the search query contain another locale
-(like `title_es_ES`) or searches the plain field (`title`), inaccurate results
-are returned.
+locale when the document is searched. If the search query contains another
+locale (like `title_es_ES`) or searches the plain field (`title`), inaccurate
+results are returned.
 
 [`ModelPreFilterContributor`s](https://github.com/liferay/liferay-portal/blob/7.1.1-ga2/modules/apps/portal-search/portal-search-spi/src/main/java/com/liferay/portal/search/spi/model/query/contributor/ModelPreFilterContributor.java) 
 control how search results are filtered before they're returned from the search
 engine. For example, adding the workflow status to the query ensures that an
-entity in the trash isn't returned in the search results. For the Guestbook
-application, a `ModelPrefilterContributor` isn't necessary until you get to the
-section on workflow-enabling Guestbooks.
+entity in the trash isn't returned in the search results. 
 
 ### Returning Results
 
@@ -108,8 +106,7 @@ content.
 [`ModelVisibilityContributor`](https://github.com/liferay/liferay-portal/blob/7.1.1-ga2/modules/apps/portal-search/portal-search-spi/src/main/java/com/liferay/portal/search/spi/model/result/contributor/ModelVisibilityContributor.java) 
 classes control the visibility of model entities that can be attached to other
 asset types (for example, File Entries can be attached to Wiki Pages), in the
-search context. Since Guestbooks and Guestbook entries won't be attached to
-other assets, a model visibility contributor isn't necessary.
+search context. 
 
 One important step must occur to make sure the above classes are discovered by
 the search framework. 
@@ -182,7 +179,7 @@ this, intervention must be made into the service layer. For Service Builder
 entities, this occurs in the `LocalServiceImpl` classes. There's an annotation
 that simplifies this: `@Indexable`. It takes a `type` property that can have two
 values: `REINDEX` or `DELETE`. Commonly, a `deleteEntity` method in the service
-layer will be annotated like this:
+layer is annotated like this:
 
 
 	@Indexable(type = IndexableType.DELETE)
