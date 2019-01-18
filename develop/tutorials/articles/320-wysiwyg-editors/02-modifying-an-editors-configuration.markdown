@@ -1,14 +1,14 @@
 # Modifying an Editor's Configuration [](id=modifying-an-editors-configuration)
 
-@product@ supports many different kinds of WYSIWYG editors that can be used to 
-edit content in portlets. Depending on the content you're editing, you may want 
-to modify the editor to provide a customized configuration for your needs. In 
-this tutorial, you'll learn how to modify the default configuration for 
-@product@'s supported WYSIWYG editors to meet your requirements. 
+You can use many different kinds of WYSIWYG editors to edit content in
+portlets. Depending on the content you're editing, you may want to modify the
+editor to provide a customized configuration for your needs. In this tutorial,
+you'll learn how to modify the default configuration for @product@'s supported
+WYSIWYG editors to meet your requirements. 
 
 ## Updating the Editor's Configuration [](id=updating-the-editors-configuration)
 
-To modify the editor's configuration, create a module that has a component that 
+To modify the editor's configuration, create a module with a component that 
 implements the 
 [`EditorConfigContributor`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/editor/configuration/EditorConfigContributor.html) 
 interface. Follow these steps to modify one of @product@'s WYSIWYG editors:
@@ -21,7 +21,7 @@ interface. Follow these steps to modify one of @product@'s WYSIWYG editors:
 
 3.  Create a unique package name in the module's `src` directory, and create a 
     new Java class in that package that extends the 
-    [BaseEditorConfigContributor](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/editor/configuration/BaseEditorConfigContributor.html) 
+    [`BaseEditorConfigContributor`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/editor/configuration/BaseEditorConfigContributor.html) 
     class: 
 
 4.  Create a component class that implements the `EditorConfigContributor` 
@@ -48,7 +48,7 @@ interface. Follow these steps to modify one of @product@'s WYSIWYG editors:
 6.  Specify the editor's name, editor's configuration key, and/or the portlet 
     name(s) where the editor resides. These three properties can be specified 
     independently, or together, in any order. See the 
-    [EditorConfigContributor](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/editor/configuration/EditorConfigContributor.html) interface's javadoc for more information about 
+    [`EditorConfigContributor`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/editor/configuration/EditorConfigContributor.html) interface's Javadoc for more information about 
     the available properties and how to use them. The example configuration 
     below modifies the AlloyEditor's Content Editor, identified by the 
     `contentEditor` configuration key and `alloyeditor` name key. Two portlet 
@@ -81,9 +81,9 @@ interface. Follow these steps to modify one of @product@'s WYSIWYG editors:
 
         }
 
-8.  In the `populateConfigJSONObject` method, you need to instantiate a 
-    [JSONObject](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/json/JSONObject.html) 
-    that holds the current configuration of the editor. For instance, you could 
+8.  In the `populateConfigJSONObject` method, you must instantiate a 
+    [`JSONObject`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/json/JSONObject.html) 
+    to hold the current configuration of the editor. For instance, you could 
     use the code snippet below to retrieve the available toolbars for the 
     editor:
 
@@ -97,8 +97,8 @@ interface. Follow these steps to modify one of @product@'s WYSIWYG editors:
     (e.g., `"editor.name=alloyeditor"`, `"editor.name=ckeditor"`, 
     `ckeditor_bbcode` etc.) in the `@Component` annotation  of your 
     `EditorConfigContributor` implementation, as you did in step six. Use the 
-    site links provided at the bottom of this tutorial to view each editor's 
-    configuration options and requirements. 
+    links the bottom of this tutorial to view each editor's configuration
+    options and requirements. 
 
     $$$
 
@@ -106,7 +106,7 @@ interface. Follow these steps to modify one of @product@'s WYSIWYG editors:
     adds a camera button to the AlloyEditor's Add toolbar. It extracts the *Add* 
     buttons out of the toolbar configuration object as 
     a 
-    [JSONArray](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/json/JSONArray.html), 
+    [`JSONArray`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/json/JSONArray.html), 
     and then adds the button to that `JSONArray`:
 
         if (toolbars != null) {
@@ -122,10 +122,9 @@ interface. Follow these steps to modify one of @product@'s WYSIWYG editors:
     The configuration JSON object is passed to the editor with the modifications 
     you've implemented in the `populateConfigJSONObject` method.
 
-10.  Finally, generate the module's JAR file and copy it to your @product@ 
-     instance's `deploy` folder. Once the module is installed and activated in 
-     your instance's service registry, your new editor configuration is 
-     available for use. 
+10.  Finally, generate the module's JAR file and copy it to your `deploy`
+     folder. Once the module is installed and activated in the service
+     registry, your new editor configuration is available for use. 
 
 @product@ supports several different types of WYSIWYG editors, which include 
 (among others):
