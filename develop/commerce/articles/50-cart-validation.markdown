@@ -5,7 +5,7 @@ checks to make sure that the transaction is permissible. This tutorial describes
 how to inject custom behavior into the validation check.
 
 In each product's
-[*Configuration*](/web/emporio/documentation/-/knowledge_base/1-0/configuration)
+[*Configuration*](/web/commerce/documentation/-/knowledge_base/1-0/configuration)
 page, there are several settings administrators can adjust to govern how the
 product can be purchased. Minimum order quantities can be set, out-of-stock
 items may or may not be back-ordered, etc. Out of the box, @commerce@ performs
