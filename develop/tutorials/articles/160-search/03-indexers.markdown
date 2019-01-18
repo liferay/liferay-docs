@@ -1,4 +1,4 @@
-# Indexing Framework
+# Indexing Framework [](id=indexing-framework)
 
 Unless you're searching for model entities using database queries (not
 recommended in most cases), each asset in @product@ must be indexed in the
@@ -14,7 +14,7 @@ a new pattern that relies on
 If you want to use the old approach, feel free to extend `BaseIndexer`. It's
 still supported. 
 
-## Search and Indexing Overview
+## Search and Indexing Overview [](id=search-and-indexing-overview)
 
 Liferay's original Search API was built around the Lucene search and indexing
 library. To this day, familiarity with Lucene will jump-start your understanding
@@ -40,7 +40,7 @@ To understand how search and indexing code makes your custom models seamlessly
 searchable, you must know how to influence each portion of the search and
 indexing cycle.
 
-### Indexing 
+### Indexing [](id=indexing)
 
 Model entities store data fields in the database. For example, Guestbooks store
 a _name_ field. During the cycle's Indexing step, you prepare the model entity
@@ -68,7 +68,7 @@ For example, the
 contributes the `GROUP_ID` and `SCOPE_GROUP_ID` fields for all documents with a
 backing entity that's also a `GroupedModel`.
  
-### Searching
+### Searching [](id=searching)
 
 Searches start with a user entering keywords into a search bar. The entered
 keywords are processed by the back-end search infrastructure, transformed into a
@@ -91,7 +91,7 @@ control how search results are filtered before they're returned from the search
 engine. For example, adding the workflow status to the query ensures that an
 entity in the trash isn't returned in the search results. 
 
-### Returning Results
+### Returning Results [](id=returning-results)
 
 When a model entity's indexed search document is obtained during a search
 request, it's converted into a summary of the model entity.
@@ -111,7 +111,7 @@ search context.
 One important step must occur to make sure the above classes are discovered by
 the search framework. 
 
-### Search Service Registration
+### Search Service Registration [](id=search-service-registration)
 
 **To register model entities with Liferay's search framework,**
 
@@ -124,7 +124,7 @@ and which optional search services are registered for your entity. Registration
 occurs as soon as the Component is activated (during portal startup or
 deployment of the bundle).
 
-## Mapping the Composite Search and Indexing Framework to `Indexer`/`BaseIndexer` Code
+## Mapping the Composite Search and Indexing Framework to `Indexer`/`BaseIndexer` Code [](id=mapping-the-composite-search-and-indexing-framework-to-indexer-baseindexer-)
 
 If you're used to the old way of indexing custom entities (extending
 `BaseIndexer`, the abstract implementation of `Indexer`), the table below
@@ -155,7 +155,7 @@ accomplished in `BaseIndexer`'s `getBaseModelDocument`. Now you implement an
 [`DLFileEntryExpandoBridgeRetriever`](https://github.com/liferay/liferay-portal/blob/7.1.1-ga2/modules/apps/document-library/document-library-service/src/main/java/com/liferay/document/library/internal/search/DLFileEntryExpandoBridgeRetriever.java)
 for an example implementation.
 
-## Permissions Aware Searching and Indexing
+## Permissions Aware Searching and Indexing [](id=permissions-aware-searching-and-indexing)
 
 In previous versions of @product@, search was only _permissions
 aware_ (indexed with the entity's permissions and searched with those
@@ -169,7 +169,7 @@ as described in
 [these tutorials](/develop/tutorials/-/knowledge_base/7-1/defining-application-permissions), 
 is implemented for an application.
 
-## Annotating Service Methods to Trigger Indexing
+## Annotating Service Methods to Trigger Indexing [](id=annotating-service-methods-to-trigger-indexing)
 
 Having entities translated into database entities _and_ search engine documents
 means that there's a possibility for a state mismatch between the database and
