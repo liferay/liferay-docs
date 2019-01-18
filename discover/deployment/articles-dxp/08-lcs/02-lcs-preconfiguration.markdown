@@ -76,7 +76,7 @@ the app, you can skip to step 3 to download it):
 
 Great! You've successfully downloaded the LCS client app. Before installing it,
 however, there are a few additional pre-configuration steps you should complete.
-These appear next, then you'll learn how to install the app. 
+These appear next; then you'll learn how to install the app. 
 
 +$$$
 
@@ -270,8 +270,8 @@ app:
 
 1.  Shut down the application server. 
 
-2.  Now you must add some properties in a `portal-ext.properties` file. Which 
-    properties you add depends on your Liferay DXP 7.1 Fix Pack version. If 
+2.  Now you must add some properties in a `portal-ext.properties` file. The 
+    properties you add depend on your Liferay DXP 7.1 Fix Pack version. If 
     you're running Fix Pack 5+, add these properties: 
 
         module.framework.properties.org.osgi.framework.bootdelegation=\

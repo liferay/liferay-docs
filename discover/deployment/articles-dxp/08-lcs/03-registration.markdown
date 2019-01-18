@@ -3,7 +3,7 @@
 +$$$
 
 **Note:** You must use LCS for activation of containerized instances, cloud 
-deployments, and instances that use Liferay Analytics Cloud and/or elastic 
+deployments, and instances that use Liferay Analytics Cloud and/or Elastic 
 subscriptions. Otherwise, you don't have to use LCS for activation. You can 
 instead request an XML activation key from Liferay Support. 
 
@@ -16,9 +16,9 @@ Follow these steps to register your @product@ server with LCS:
 
 2.  Log in to 
     [lcs.liferay.com](https://lcs.liferay.com). 
-    This takes you to your company's LCS project. If your company has multiple 
-    projects, select the project in which you're registering this server from 
-    the menu to the right of the Dashboard tab. 
+    This takes you to your company's LCS project. If your company has multiple
+    projects, from the menu to the right of the Dashboard tab select the project
+    that's getting a new server. 
 
     ![Figure 1: Select your LCS project from the menu highlighted by the red box in this screenshot.](../../images-dxp/lcs-select-project.png)
 
