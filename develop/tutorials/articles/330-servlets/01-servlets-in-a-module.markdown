@@ -26,10 +26,6 @@ Here's the sample servlet class:
 
     package com.liferay.blade.samples.servlet;
 
-    import com.liferay.petra.string.StringPool;
-    import com.liferay.portal.kernel.servlet.ServletResponseUtil;
-    import com.liferay.portal.kernel.util.ContentTypes;
-
     import java.io.IOException;
 
     import javax.servlet.Servlet;
@@ -96,12 +92,12 @@ Here's the sample servlet class:
          * @param resp
          */
         private void _writeSampleHTML(HttpServletResponse resp) {
-            resp.setCharacterEncoding(StringPool.UTF8);
-            resp.setContentType(ContentTypes.TEXT_HTML_UTF8);
+            resp.setCharacterEncoding("UTF-8");
+            resp.setContentType("text/html; charset=UTF-8");
             resp.setStatus(HttpServletResponse.SC_OK);
 
             try {
-                ServletResponseUtil.write(resp, _generateSampleHTML());
+                resp.getWriter().write(_generateSampleHTML());
             }
             catch (Exception e) {
                 _log.log(LogService.LOG_WARNING, e.getMessage(), e);
@@ -149,26 +145,21 @@ Here's how to create your own servlet:
 
 2.  Add the necessary dependencies. Here they are for Gradle:
 
-        compileOnly group: "com.liferay", name: "com.liferay.petra.string", version: "1.1.0"
-        compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "3.0.0"
         compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
-        compileOnly group: "org.osgi", name: "osgi.cmpn", version: "6.0.0"
-        compileOnly group: "org.osgi", name: "osgi.core", version: "5.0.0"
+        compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.4.0"
+        compileOnly group: "org.osgi", name: "org.osgi.service.log", version: "1.4.0"
 
 3.  Create a servlet class that extends `javax.servlet.http.HttpServlet`. 
 
 4.  Add the following `@Component` annotation. 
 
         @Component(
-            immediate = true,
             property = {
                 "osgi.http.whiteboard.context.path=/",
                 "osgi.http.whiteboard.servlet.pattern=/blade/servlet/*"
             },
             service = Servlet.class
-        )
-
-    `immediate = true`: Activates the component once its dependencies resolve. 
+        ) 
 
     `service = Servlet.class`: Makes the component an OSGi service of type `Servlet`. 
 
