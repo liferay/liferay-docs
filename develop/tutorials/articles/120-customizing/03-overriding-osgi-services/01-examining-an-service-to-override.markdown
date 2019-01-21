@@ -14,7 +14,7 @@ the tutorial
 to determine the service you want to override and components that use that
 service. 
 
-Once know the service and components that use it, use Gogo Shell's Service
+Once you know the service and components that use it, use Gogo Shell's Service
 Component Runtime (SCR) to inspect the components and get the service and
 reference details. The
 [Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell) 
@@ -157,9 +157,8 @@ service.
 
 +$$$
 
-**Note**: OSGi Configuration Admin makes all Declarative Services components
-configurable, even if they don't explicitly declare
-configuration information. Each `@Reference` annotation in the source code has a name
+**Note**: Declarative Services makes all components configurable through OSGi 
+Configuration Admin. Each `@Reference` annotation in the source code has a name
 property, either *explicitly* set in the annotation or *implicitly* derived from
 the name of the member on which the annotation is used.
 

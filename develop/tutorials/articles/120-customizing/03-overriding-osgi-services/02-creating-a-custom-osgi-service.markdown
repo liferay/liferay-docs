@@ -13,7 +13,6 @@ Examine this example code as you follow the steps for creating your custom
 service. 
 
     @Component(
-        immediate = true,
         property = {
             "service.ranking:Integer=100"
         },
@@ -56,9 +55,6 @@ Here are the steps to create a custom OSGi service:
     The example class above is a DS service component of service type
     `SomeService.class`. 
 
-    - Use the component attribute setting `immediate = true` to make the 
-    services available as soon as the OSGi framework resolves it. 
-    
     - Use a `service.ranking:Integer` component property to rank your service 
     higher than existing services. The `"service.ranking:Integer=100"` property
     above sets the example's ranking to `100`. 
