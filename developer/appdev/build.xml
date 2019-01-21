@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<project name="Application Development articles" basedir=".">
+
+	<import file="../build.xml" />
+
+	<property name="doc.dir" value="appdev"/>
+	<property name="doc.type" value="article"/>
+
+</project>

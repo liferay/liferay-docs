@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<project name="Development Framework articles" basedir=".">
+
+	<import file="../build.xml" />
+
+	<property name="doc.dir" value="frameworks"/>
+	<property name="doc.type" value="article"/>
+
+</project>
