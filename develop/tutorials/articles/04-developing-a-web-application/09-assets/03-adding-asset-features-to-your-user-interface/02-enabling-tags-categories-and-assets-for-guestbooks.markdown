@@ -17,7 +17,7 @@ Follow these steps:
 1.  In the `guestbook-web` module's `/guestbookadminportlet/edit_guestbook.jsp`, 
     add the tags `<liferay-ui:asset-categories-error />` and 
     `<liferay-ui:asset-tags-error/>` to the `aui:form` below the closing 
-    `</aui:fieldset>` tag: 
+    `</aui:button-row>` tag: 
 
         <liferay-ui:asset-categories-error />
         <liferay-ui:asset-tags-error />
