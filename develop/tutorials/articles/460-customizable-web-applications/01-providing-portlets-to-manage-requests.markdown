@@ -96,6 +96,6 @@ hardcoding a specific portlet!
 
 [Portlets](/develop/tutorials/-/knowledge_base/7-0/portlets)
 
-[Embedding Portlets in Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-0/embedding-portlets-in-themes-and-layout-templates)
+[Embedding Portlets in Themes](/develop/tutorials/-/knowledge_base/7-0/embedding-portlets-in-themes)
 
 [Customizing Liferay Services](/develop/tutorials/-/knowledge_base/7-0/customizing-liferay-services-service-wrappers)
