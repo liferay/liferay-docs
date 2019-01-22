@@ -6,6 +6,13 @@ allowing you to use OpenAM to integrate @product@ into an infrastructure that
 contains a multitude of different authentication schemes against different
 repositories of identities.
 
++$$$
+
+**Note:** OpenAM is deprecated in @product-ver@ and may be removed from future
+versions. 
+
+$$$
+
 Note that OpenAM relies on cookie sharing between applications. Thus, in order
 for OpenAM to work, **all applications that require SSO must be in the same web
 domain**. You should  also add the following property if you have enabled
