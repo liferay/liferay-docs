@@ -25,7 +25,7 @@ You can also create custom portlets for your site. Portlets can be added via the
 Add Menu (referred to as widget), included in a sitemap through the 
 [Resources Importer](/develop/tutorials/-/knowledge_base/7-1/importing-resources-with-a-theme),
 or they can be 
-[embedded in the page's theme or layout template](/develop/tutorials/-/knowledge_base/7-1/embedding-portlets-in-themes-and-layout-templates).
+[embedded in the page's theme](/develop/tutorials/-/knowledge_base/7-1/embedding-portlets-in-themes).
 See the 
 [portlet tutorials section](/develop/tutorials/-/knowledge_base/7-1/portlets) for more information
 on creating and developing portlets. 
