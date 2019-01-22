@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <project name="Dev Site Documentation Management" basedir=".">
-	<property name="project.dir" value="../.." />
+	<property name="project.dir" value="." />
 
 	<path id="lib.classpath">
 		<fileset dir="${project.dir}/lib" includes="*.jar" />
