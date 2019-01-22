@@ -102,18 +102,16 @@ modules.
 
 You may want to load an AUI module along with an ES2015 module or Metal.js 
 module in an `aui:script`. The `aui:script` tag doesn't support both the 
-`require` and `use` attribute in the same configuration. Not to worry though, 
-there is a solution. You can use the `aui:script`'s `require` attribute to load 
-the ES2015 and Metal.js modules, while loading the AUI module(s) with the 
-`AUI().use()` function within the script. Then you can reference the ES2015 and 
-Metal.js modules in the `AUI().use()` function. Below is an example 
-configuration:
+`require` and `use` attributes in the same configuration. Not to worry though. 
+You can use the `aui:script`'s `require` attribute to load the ES2015 and 
+Metal.js modules, while loading the AUI module(s) with the `AUI().use()` 
+function within the script. Below is an example configuration:
 
-    <aui:script require="path-to/aui/module">
+    <aui:script require="path-to/metal/module">
      AUI().use(
         'liferay-aui-module', 
         function(A) {
-            let var = pathToAuiModule.default;
+            let var = pathToMetalModule.default;
         }
     );
     </aui:script>
