@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<project name="User Guide" basedir=".">
+	<property name="project.dir" value="../../liferay-docs" />
+
+	<import file="../build-common.xml" />
+
+	<property name="purpose.dir" value="."/>
+	<property name="doc.dir" value="user"/>
+
+</project>
