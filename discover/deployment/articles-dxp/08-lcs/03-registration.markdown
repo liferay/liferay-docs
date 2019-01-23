@@ -2,10 +2,9 @@
 
 +$$$
 
-**Note:** You must use LCS for activation of containerized instances, cloud 
-deployments, and instances that use Liferay Analytics Cloud and/or Elastic 
-subscriptions. Otherwise, you don't have to use LCS for activation. You can 
-instead request an XML activation key from Liferay Support. 
+**Note:** You must use LCS for activation of Elastic subscriptions. Otherwise, 
+you don't have to use LCS for activation. You can instead request an XML 
+activation key from Liferay Support. 
 
 $$$
 
