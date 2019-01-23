@@ -49,7 +49,7 @@ Follow these steps to register your @product@ server with LCS:
     when you select *Show Blacklisted Properties*. Note that 
     [LCS doesn't access security sensitive properties](/discover/deployment/-/knowledge_base/7-0/using-lcs#what-lcs-stores-about-your-liferay-servers). 
 
-    ![Figure 3: An environment's Registration tab lets you manage the token file used to activate your server in the environment.](../../images-dxp/lcs-registration.png)
+    ![Figure 3: An environment's Registration tab lets you manage the token file used to register your server in the environment.](../../images-dxp/lcs-registration.png)
 
 5.  What you do now depends on what you did in the previous step: 
 

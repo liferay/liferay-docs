@@ -33,11 +33,11 @@ server or a cluster node.
 
 As you go through this guide, you'll cover the following topics: 
 
--   Getting Started
--   LCS Preconfiguration 
--   Registering Your @product@ Server with LCS 
--   Using LCS 
--   Troubleshooting Your LCS Connection
+-   [Getting Started](/discover/deployment/-/knowledge_base/7-0/getting-started-with-lcs)
+-   [LCS Preconfiguration](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration)
+-   [Registering Your Liferay DXP Server with LCS](/discover/deployment/-/knowledge_base/7-0/registering-your-dxp-server-with-lcs)
+-   [Using LCS](/discover/deployment/-/knowledge_base/7-0/using-lcs)
+-   [Troubleshooting Your LCS Connection](/discover/deployment/-/knowledge_base/7-0/troubleshooting-your-lcs-connection)
 
 You'll get started with the configuration steps required to use LCS with 
 @product@. 
