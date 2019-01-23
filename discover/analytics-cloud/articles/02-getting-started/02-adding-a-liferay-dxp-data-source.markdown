@@ -35,7 +35,7 @@ Liferay DXP 7.1:
 
 1.  Download and install the 
     [Liferay Plugin for OAuth 2.0](https://web.liferay.com/marketplace/-/mp/application/109571986)
-    version 1.1.0 (or newer) .
+    version 1.1.0 (or newer).
 
 2.  The plugin comes with Analytics Cloud pre-registered. Copy the *Client ID*
     and *Client Secret* for connecting DXP with Analytics Cloud, as described
