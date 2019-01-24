@@ -1,11 +1,10 @@
 # Configuration Form Renderer [](id=configuration-form-renderer)
 
 There are various approaches to customizing the auto-generated System Settings
-UI for your configurable application. To replace an application's
-auto-generated configuration screen with a form built from scratch, this
-tutorial provides a full demonstration using these steps:
+UI for your configurable application. To replace an application's auto-generated
+configuration screen with a form built from scratch, you follow these steps:
 
-1.  Use a `DisplayContext` class to transfer data between backend code and the
+1.  Use a `DisplayContext` class to transfer data between back-end code and the
     desired JSP markup.
 2.  Implement the `ConfigurationFormRenderer` interface.
 3.  Render the configuration form. This tutorial demonstrates the use of a JSP
@@ -22,8 +21,8 @@ steps apply when replacing your custom application's auto-generated UI.
 ![Figure 1: The auto-generated UI for the Language Template configuration screen is sub-optimal. A select list with more human readable options is preferable.](../../../images/sys-settings-lang-template-default.png)
 
 Specifically, the text input field labeled *DDM Template Key* in the
-auto-generated UI will be replaced with a select list field type called
-*Language Selection Style*, populated with all possible DDM Template Keys.
+auto-generated UI is replaced with a select list field type called *Language
+Selection Style*, populated with all possible DDM Template Keys.
 
 ## Creating a `DisplayContext` [](id=creating-a-displaycontext)
 
@@ -141,8 +140,8 @@ getters.
 
 Loop through the DDM Template Keys for the given `groupId` and set them into
 the display context with the `addTemplateKey` method. Then set the other
-necessary values that the JSP will need. In this case, set the title, the field
-label, and the redirect URL. Lastly, call `renderJSP` and pass in the
+necessary values that the JSP needs. In this case, set the title, the field
+label, and the redirect URL. Finally, call `renderJSP` and pass in the
 `servletContext`, request, response, and the path to the JSP: 
 
 	@Override
@@ -213,8 +212,8 @@ of the reference target:
 	)
 	private ServletContext _servletContext;
 
-Once the configuration form renderer is implemented, write the JSP markup for
-the form.
+Once the configuration form renderer is implemented, you can write the JSP
+markup for the form.
 
 ## Writing the JSP Markup [](id=writing-the-jsp-markup)
 
@@ -244,7 +243,7 @@ Now write the JSP:
     </aui:select>
 
 The opening scriptlet gets the display context object from the request so that
-all its getters are invoked whenever information from the backend is required.
+all its getters are invoked whenever information from the back-end is required.
 Right away, the `getCurrentTemplateName` method is called, since the current
 template name is needed for the first option's `ddmTemplateKey` display value as
 soon as the form is rendered. This happens in the `<aui:select>` tag. There's

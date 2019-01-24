@@ -2,9 +2,9 @@
 
 A configurable application allows a user with appropriate permissions to change
 certain aspects of the application, within bounds set by the developer.
-Liferay's configuration framework simplifies the task by auto-generating a UI
-with no effort beyond defining the configuration options in a Java interface.
-This way, you don't have to create your own application configuration framework.
+Liferay's configuration framework simplifies the task by auto-generating a UI if
+you define the configuration options in a Java interface. This way, you don't
+have to create your own application configuration framework.
 
 Complete these three high level tasks to integrate your application with the
 configuration framework: 

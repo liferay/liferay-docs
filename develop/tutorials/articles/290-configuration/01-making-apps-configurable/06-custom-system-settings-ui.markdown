@@ -3,10 +3,10 @@
 @product@ applications use the Apache Felix Configuration Admin Service to
 provide application configuration. By specifying a single Configuration
 Interface class, the configuration data is typed and scoped, and the application
-has an auto-generated configuration user interface, available in Control Panel &rarr;
-Configuration &rarr; System Settings as soon as the configuration is registered.
-If this is new information for you, consider first reading the set of tutorials
-on 
+gains an auto-generated configuration user interface, available in Control Panel
+&rarr; Configuration &rarr; System Settings once the configuration is
+registered. If this is new information for you, consider first reading the set
+of tutorials on 
 [Making Applications Configurable](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable).
 
 This tutorial describes how to customize the System Settings entry's user
@@ -15,14 +15,14 @@ interface in the following ways:
 - Provide a custom form for a configuration object.
 
 - Write a completely custom configuration UI. This is useful especially if you
-    aren't using the Configuration Admin service or any of Liferay's
-    Configuration APIs.
+  aren't using the Configuration Admin service or any of Liferay's
+  Configuration APIs.
 
 - Exclude a configuration object from System Settings. If you're providing a
-    completely custom configuration UI but are still using Configuration Admin,
-    you'll want to hide the auto-generated UI. If your configuration is not
-    meant to be accessible to administrative Users (perhaps because it's too low
-    level), you might want to exclude it from the System Settings UI.
+  completely custom configuration UI but are still using Configuration Admin,
+  you'll want to hide the auto-generated UI. If your configuration is not
+  meant to be accessible to administrative Users (perhaps because it's too low
+  level), you might want to exclude it from the System Settings UI.
 
 ## Providing Custom Configuration Forms [](id=providing-custom-configuration-forms)
 
@@ -50,8 +50,8 @@ class, an implementation of the `ConfigurationFormRenderer` interface.
 
 Implement its three methods:
 
-1.  `getPid`: Return the id of the configuration object as defined in the `id`
-    property of the `@Meta.OCD` annotation of the `*Configuration` class.
+1.  `getPid`: Return the configuration object's ID. This is defined in the `id`
+    property in the `*Configuration` class's `@Meta.OCD` annotation.
 
 2.  `getRequestParameters`: Read the parameters sent by the custom form and put
     them in a Map whose keys should be the names of the fields of the
@@ -113,11 +113,11 @@ In some cases, you want a completely custom UI for your configuration. For
 example: 
 
 - Your application doesn't use Config Admin to provide its configuration. You
-    have a completely different configuration backend, and you'll write a
-    completely independent frontend.
+  have a completely different configuration backend, and you'll write a
+  completely independent frontend.
 
 - Your application needs more flexibility in its UI, such as multiple
-    configuration screens.
+  configuration screens.
 
 To accomplish this, write a `ConfigurationScreen` implementation.
 
@@ -203,8 +203,8 @@ instead must exclude your configuration from the System Settings UI? For
 instance, if you're using Config Admin but also providing a
 `ConfigurationScreen` implementation and a custom JSP, you'll get two System
 Settings entries: the custom one you wrote _and_ the auto-generated UI from
-Config Admin. Other times, a configuration is required to be present for backend
-developers but isn't intended to be changed in the UI.
+Config Admin. Other times, a configuration is required to be present for
+back-end developers but isn't intended to be changed in the UI.
 
 To exclude the UI entry, use the `ExtendedObjectClassDefinition` annotation
 property called `generateUI`. It defaults to `true`, so set it to `false` to
