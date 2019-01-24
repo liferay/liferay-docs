@@ -7,6 +7,13 @@ authenticating to a workgroup. @product@ now supports NTLM v2
 authentication. NTLM v2 is more secure and has a stronger authentication process
 than NTLMv1.
 
++$$$
+
+**Note:** NTLM authentication is deprecated in @product-ver@ and may be removed
+in future versions. 
+
+$$$
+
 Note that in order to use NTLM SSO, @product@'s portal instance authentication
 type must be set to screen name. 
 

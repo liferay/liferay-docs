@@ -77,7 +77,7 @@ added.
 
 **User Segment**: To allow only certain customers to take advantage of the
 discount, click *Select* and choose a segment or segments. See 
-[user segmentation](/web/commerce/documentation/-/knowledge_base/7-1/user-segmentation)
+[user segmentation](/web/commerce/documentation/-/knowledge_base/1-0/user-segmentation)
 for details.
 
 **Coupon Code**: Set the toggle to *Yes* and enter text in the field that

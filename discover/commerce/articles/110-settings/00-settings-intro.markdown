@@ -3,7 +3,7 @@
 Several functions are accessed through the *Site Menu* &rarr; *Commerce* &rarr;
 *Settings*. Many of these are described elsewhere: 
 
-- [Orders](/web/commerce/documentation/-/knowledge_base/1-0/orders)
+- [Orders](https://help.liferay.com/hc/en-us/articles/360017870252-Orders-)
 
 - [Payment Methods](/web/commerce/documentation/-/knowledge_base/1-0/payment-methods)
 

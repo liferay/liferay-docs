@@ -5,7 +5,7 @@ select a country (typically to enter an address). @commerce@ also stores lists
 of regions (states or provinces) for each country, but out of the box, only the
 region lists for Italy and the USA are populated. Administrators can populate
 these lists manually, (see
-[Countries](web/emporio/documentation/-/knowledge_base/1-0/countries)) but a
+[Countries](web/commerce/documentation/-/knowledge_base/1-0/countries)) but a
 developer can populate them automatically by implementing the
 `CommerceRegionsStarter` interface.
 

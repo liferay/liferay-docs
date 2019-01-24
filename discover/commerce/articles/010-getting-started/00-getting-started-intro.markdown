@@ -61,7 +61,7 @@ accordingly.
 ## Installation [](id=installation)
 
 @commerce@ can be installed from an `.lpkg` file you can download
-[here](https://dev.liferay.com/en/web/emporio/downloads). You will also need
+[here](https://dev.liferay.com/en/web/commerce/downloads). You will also need
 GA2 or later of @product-ver@; see installation instructions
 [here](/discover/deployment/-/knowledge_base/7-1/deploying-product).
 

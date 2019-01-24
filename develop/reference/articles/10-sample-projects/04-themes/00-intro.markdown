@@ -7,10 +7,4 @@ by visiting the `themes` folder corresponding to your preferred build tool:
 - [Liferay Workspace sample themes](https://github.com/liferay/liferay-blade-samples/tree/7.1/liferay-workspace/themes)
 - [Maven sample themes](https://github.com/liferay/liferay-blade-samples/tree/7.1/maven/themes)
 
-The following samples are documented:
-
-- [Simple Theme](theme)
-- [Template Context Contributor](template-context-contributor)
-- [Theme Contributor](theme-contributor)
-
 Visit a particular sample page to learn more!
