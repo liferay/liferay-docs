@@ -45,9 +45,8 @@ Follow these steps:
     added to the guestbook: 
 
         <aui:fieldset>
-          <aui:input name="categories" type="assetCategories" />
-
-          <aui:input name="tags" type="assetTags" />
+        	<liferay-asset:asset-categories-selector className="<%= Guestbook.class.getName() %>" classPK="<%= guestbook %>" />
+        	<liferay-asset:asset-tags-selector className="<%= Guestbook.class.getName() %>" classPK="<%= guestbook %>" />
         </aui:fieldset>
 
 4.  Add a second `<liferay-ui:panel>` tag under the existing one. In this new 
