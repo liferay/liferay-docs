@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<project name="Developer" basedir=".">
+
+	<import file="../build-common.xml" />
+
+	<property name="purpose.dir" value="developer"/>
+
+</project>

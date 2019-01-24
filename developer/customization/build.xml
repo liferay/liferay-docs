@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<project name="Developer Customization articles" basedir=".">
+	<property name="project.dir" value="../../../liferay-docs" />
+
+	<import file="../build.xml" />
+
+	<property name="doc.dir" value="customization"/>
+	<property name="doc.type" value="article"/>
+
+</project>
