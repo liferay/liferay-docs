@@ -222,7 +222,7 @@ types of log files in this folder:
 
 1.  **Liferay log files:** The files `liferay.[date].log` and 
     `liferay.[date].xml` are the logs for your @product@ installation. Note that 
-    LOG and XML files for the same date contain the same information--the only 
+    LOG and XML files for the same date contain the same information---the only 
     difference is the file format. 
 
 2.  **LCS log files:** The `lcs-portlet-[date].log` files are the LCS client 

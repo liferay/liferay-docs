@@ -1,4 +1,4 @@
-# Managing @product@ with Liferay Connected Services [](id=managing-liferay-with-liferay-connected-services)
+# Managing Liferay DXP with Liferay Connected Services [](id=managing-liferay-with-liferay-connected-services)
 
 Liferay Connected Services (LCS) is a set of tools and services for managing and
 monitoring your @product@ instances. LCS can help you install fix packs, monitor
