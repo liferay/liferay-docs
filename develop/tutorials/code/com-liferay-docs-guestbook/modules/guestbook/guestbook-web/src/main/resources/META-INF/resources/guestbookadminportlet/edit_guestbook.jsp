@@ -39,7 +39,9 @@
           id="guestbookCategorizationPanel" persistState="<%= true %>"
           title="categorization">
 			<aui:fieldset>
+				
 				<liferay-asset:asset-categories-selector className="<%= Guestbook.class.getName() %>" classPK="<%= guestbookId %>" />
+				
 				<liferay-asset:asset-tags-selector className="<%= Guestbook.class.getName() %>" classPK="<%= guestbookId %>" />
             </aui:fieldset>
         </liferay-ui:panel>
