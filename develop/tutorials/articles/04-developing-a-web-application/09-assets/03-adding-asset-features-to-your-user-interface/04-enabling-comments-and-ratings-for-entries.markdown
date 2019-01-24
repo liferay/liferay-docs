@@ -19,7 +19,7 @@ Follow these steps to enable comments and ratings on guestbook entries:
 2.  Add a Java scriptlet to the file you just created. In this scriptlet, use an 
     `entryId` request attribute to get an entry object. For security reasons, 
     convert this object to an escaped model as discussed in the earlier step 
-    [Creating JSPs for Displaying Customs Assets in the Asset Publisher](/develop/tutorials/-/knowledge_base/7.0/creating-jsps-for-displaying-custom-assets-in-the-asset-publisher):
+    [Creating JSPs for Displaying Customs Assets in the Asset Publisher](/develop/tutorials/-/knowledge_base/7.1/creating-jsps-for-displaying-custom-assets-in-the-asset-publisher):
 
         <%@ include file="../init.jsp"%>
 

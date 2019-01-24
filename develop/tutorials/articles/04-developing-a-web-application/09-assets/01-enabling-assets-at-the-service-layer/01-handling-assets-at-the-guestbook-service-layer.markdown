@@ -31,7 +31,7 @@ must update the add, update, and delete methods of your project's
     both adds and updates asset entries because it checks to see whether the
     asset entry already exists in the database and then takes the appropriate 
     action. If you check the 
-    [Javadoc](@platform-ref@/7.0-latest/javadocs/portal-impl/com/liferay/portlet/asset/service/impl/AssetEntryLocalServiceImpl.html) 
+    [Javadoc](@platform-ref@/7.1-latest/javadocs/portal-impl/com/liferay/portlet/asset/service/impl/AssetEntryLocalServiceImpl.html) 
     for @product@'s `AssetEntryLocalServiceUtil.updateEntry`, you'll see that 
     this method is overloaded. Now, why did you use a version of this method 
     with such a long method signature? Because there's only one version of 
