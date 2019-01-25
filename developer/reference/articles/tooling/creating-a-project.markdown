@@ -15,10 +15,11 @@ preconfigured for Liferay project generation:
 - [Liferay IntelliJ Plugin](/developer/reference/-/knowledge_base/7-2/liferay-intellij-plugin)
 - [Maven](/developer/reference/-/knowledge_base/7-2/maven)
 
-With these tools, you can create projects within a
-[Liferay Workspace](/developer/tutorials/-/knowledge_base/7-2/liferay-workspace)
-or in a standalone environment. Visit the appropriate section to learn how to
-create a project with the highlighted tool.
+It's recommended to create Liferay projects within a
+[Liferay Workspace](/developer/tutorials/-/knowledge_base/7-2/liferay-workspace).
+Most tools, however, support creating projects in a standalone environment
+(except for IntelliJ). Visit the appropriate section to learn how to create a
+project with the highlighted tool.
 
 ## Blade CLI [](id=blade-cli)
 
