@@ -23,29 +23,44 @@ DDM Form Screenlet shows a set of fields that can be filled in by the user. The
 fields can contain initial or existing values. The following fields are 
 supported: 
 
--   **Paragraph:** Add a title and/or text in your form.
--   **Text Field:** A single or multiline text area.
--   **Single Selection:** Select one item with a radio button.
--   **Select From List:** Choose one or more items in a list.
--   **Multiple Selection:** Select multiple items via a checkbox.
--   **Date:** Select a date from a date picker.
--   **Grid:** Select items in a matrix.
--   **Numeric:** Enter an integer or decimal number.
--   **Upload:** Upload files via Documents and Media.
+**Paragraph:** Add a title and/or text in your form.
+
+**Text Field:** A single or multiline text area.
+
+**Single Selection:** Select one item with a radio button.
+
+**Select From List:** Choose one or more items in a list.
+
+**Multiple Selection:** Select multiple items via a checkbox.
+
+**Date:** Select a date from a date picker.
+
+**Grid:** Select items in a matrix.
+
+**Numeric:** Enter an integer or decimal number.
+
+**Upload:** Upload files via Documents and Media.
 
 DDM Form Screenlet also supports the following features:
 
--   **Element Sets:** Reuse pre-existing element sets in your form. 
--   **Multiple Pages:** Use multi-page forms. 
--   **Success Page:** Show friendly feedback at the end of your form. 
--   **Autosave:** Automatically save any change in form values to a draft.
--   **Restore Previous Draft:** Automatically restore the last draft when 
-    opening the form, independent of platform.
--   **Rules:** Create complex rules in your form. For example, you can show or 
-    hide fields depending on the input of other fields.
--   **Workflow:** Form submission can trigger a specific workflow.
--   **Required Values:** Require specific values and/or validate form fields. 
--   **Internationalization:** Support i18n in record values and labels.
+**Element Sets:** Reuse pre-existing element sets in your form. 
+
+**Multiple Pages:** Use multi-page forms. 
+
+**Success Page:** Show friendly feedback at the end of your form. 
+**Autosave:** Automatically save any change in form values to a draft.
+
+**Restore Previous Draft:** Automatically restore the last draft when 
+opening the form, independent of platform.
+
+**Rules:** Create complex rules in your form. For example, you can show or 
+hide fields depending on the input of other fields.
+
+**Workflow:** Form submission can trigger a specific workflow.
+
+**Required Values:** Require specific values and/or validate form fields. 
+
+**Internationalization:** Support i18n in record values and labels.
 
 ## Module [](id=module)
 
@@ -152,9 +167,9 @@ DDM Form Screenlet delegates some events to an object that implements to the
 `DDMFormListener` interface. This interface lets you implement the following 
 methods:
 
--   `onFormLoaded(FormInstance formInstance)`: Called when the form instance 
-    successfully loads. 
+`onFormLoaded(FormInstance formInstance)`: Called when the form instance 
+successfully loads. 
 
--   `onError(Exception e)`: Called when an error occurs in the process. For 
-    example, this method is called when an error occurs while loading a form 
-    instance. 
+`onError(Exception e)`: Called when an error occurs in the process. For 
+example, this method is called when an error occurs while loading a form 
+instance. 
