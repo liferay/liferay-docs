@@ -12,13 +12,12 @@ Workspaces, visit its dedicated
 <img src="../../../images/vid-ide-thumbnail.png" alt="video-thumbnail"/>
 </div>
 
-Before creating your Liferay Workspace, you should understand the available Dev
-Studio perspectives specifically designed for @product@ development. You'll
-notice in the Perspectives view the *Liferay Workspace* and *Liferay Plugins*
-perspectives. If you plan on using a Liferay Workspace for your @product@
-development, you should select the *Liferay Workspace* perspective (default).
-This offers development tools that are helpful when using a Liferay Workspace.
-The *Liferay Plugins* perspective is geared towards developers who are using
+Before creating your Liferay Workspace, you should understand the new
+perspectives designed for @product@ development: the *Liferay Workspace* and
+*Liferay Plugins* perspectives. If you plan on using a Liferay Workspace for
+your @product@ development, you should select the *Liferay Workspace*
+perspective (default). This offers development tools that are helpful when using
+a Liferay Workspace. The *Liferay Plugins* perspective is for developers using
 Ant-based development tools such as the Plugins SDK. Since the Plugins SDK is
 only provided for Liferay Portal/DXP 7.0 and older development, this should not
 be used for @product-ver@ development.
@@ -43,8 +42,8 @@ options. Follow the instructions below to create your workspace.
 4.  Choose the @product@ version you plan to develop for (i.e., 7.1 or 7.0).
 
 5.  Select the specific target platform version corresponding to the GA release
-    you intend to develop against (e.g., 7.1.0 &rarr; 7.1 GA1). For more
-    information on target platform benefits, see the
+    you're developing for (e.g., 7.1.0 &rarr; 7.1 GA1). For more information on
+    target platform benefits, see the 
     [Managing the Target Platform for Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/managing-the-target-platform-for-liferay-workspace)
     articles.
 
@@ -62,7 +61,7 @@ options. Follow the instructions below to create your workspace.
 
     $$$
 
-7.  Check the *Add project to working set* checkbox if you'd like the workspace
+7.  Check the *Add project to working set* checkbox if you want the workspace
     to be a part of a larger working set you've already created in Dev Studio.
     For more information on working sets, visit
     [Eclipse Help](http://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.platform.doc.user%2Fconcepts%2Fcworkset.htm).
@@ -85,10 +84,10 @@ Awesome! You've successfully created a Liferay Workspace in Dev Studio!
 
 ## Liferay Workspace Settings in Dev Studio [](id=liferay-workspace-settings-in-ide)
 
-The Liferay Workspace perspective is intended for Gradle or Maven development
-for @product@ projects. Since Liferay Workspaces are used for Gradle/Maven based
-development and the Liferay Plugins perspective is intended for the Plugins SDK
-and Ant based development, the two perspectives are independent of each other.
+The Liferay Workspace perspective is intended for Gradle or Maven projects for
+@product@. Since Liferay Workspaces are used for Gradle/Maven based development
+and the Liferay Plugins perspective is intended for the Plugins SDK and Ant
+based development, the two perspectives are independent of each other.
 
 ![Figure 3: The Liferay Workspace perspective is preferred for @product-ver@ and OSGi module development.](../../../images/liferay-workspace-perspective.png)
 

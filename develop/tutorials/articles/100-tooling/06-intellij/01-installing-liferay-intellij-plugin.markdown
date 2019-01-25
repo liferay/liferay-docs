@@ -1,6 +1,6 @@
 # Installing the Liferay IntelliJ Plugin [](id=installing-the-liferay-intellij-plugin)
 
-You can install the Liferay IntelliJ plugin in IntelliJ IDEA two ways:
+There are two ways to install the IntelliJ plugin for IDEA:
 
 - [via IntelliJ Marketplace](#installing-via-intellij-marketplace)
 - [via Zip file](#installing-via-zip-file)
