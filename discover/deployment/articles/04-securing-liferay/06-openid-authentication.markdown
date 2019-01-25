@@ -6,6 +6,13 @@ vendor can be used by all the web sites that support OpenID. Some high profile
 OpenID vendors are Google, Paypal, Amazon, and Microsoft. Please see the [OpenID
 site](http://www.openid.net/) for a more complete list.
 
++$$$
+
+**Note:** OpenID is deprecated in @product-ver@ and may be removed in future
+versions. 
+
+$$$
+
 With OpenID, users don't have to register for a new account on every site which
 requires an account. Users register on *one* site (the OpenID provider's site)
 and then use those credentials to authenticate to many web sites which support
