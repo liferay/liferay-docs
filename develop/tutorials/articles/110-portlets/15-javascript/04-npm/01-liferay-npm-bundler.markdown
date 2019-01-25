@@ -3,7 +3,22 @@
 The liferay-npm-bundler is a bundler (like [Webpack](https://webpack.github.io/) 
 or [Browserify](http://browserify.org/)) that targets @product@ as a platform 
 and assumes you're using your npm packages from portlets (as opposed to typical
-web applications). 
+web applications). It is just one of the pieces of the Liferay JS Bundle 
+Toolkit. Liferay JS Bundle Toolkit is an abstract umbrella term that refers to 
+the following tools:
+
+- [liferay-npm-bundler](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/liferay-npm-bundler)
+- [Babel plugins](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages)
+- [liferay-npm-bundler plugins](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages)
+- [frontend-js-loader-modules-extender](https://github.com/liferay/liferay-portal/tree/7.0.x/modules/apps/foundation/frontend-js/frontend-js-loader-modules-extender)
+- [Javascript AMD loader](https://github.com/liferay/liferay-amd-loader)
+
++$$$
+
+**Note:** The Liferay JS Bundle Toolkit is supported for Liferay DXP 7.0 Fix 
+Pack 39 and up.
+
+$$$
 
 The workflow for running npm packages inside portlets is slightly different from
 standard bundlers. Instead of bundling the JavaScript in a single file, you must
