@@ -2,12 +2,12 @@
 
 Have you ever wondered why there's no *Head Circumference* field in the form for
 adding users to @product@? Probably because most sites based on @product@ don't
-need it. However, as an administrator at the Lunar Resort, you certainly need to
-know the head circumference of your users so they can be provided with a
-properly fitting helmet. 
+need it. If you're an administrator at the Lunar Resort, however, you certainly
+need to know your guests' head circumference so you can provide them with
+a properly fitting helmet. 
 
-Many of @product@'s assets and resources are designed to let you add new fields
-to their edit forms. Here's the complete list:
+Many of @product@'s assets and resources let you add new fields to their edit
+forms. Here's the complete list:
 
 - Blogs Entry
 - Bookmarks Entry
@@ -31,15 +31,11 @@ to their edit forms. Here's the complete list:
 
 **Developer Use Case:** Adding custom fields to @product@ resources affords
 flexibility to developers. Suppose you must limit the number of users
-that can be assigned to a particular role. First an administrator creates a custom
-field called *max-users* for the role. A developer then creates a module that
-inserts logic before a user is added to that role. If their logic detects that
-the maximum number of role users would be exceeded by completing the action, an
-exception is thrown and the action does not complete. A tutorial is being
-planned to illustrate how this is accomplished using Custom Fields and a [module
-deployed to @product@](/develop/tutorials/-/knowledge_base/7-0/fundamentals#modules).
-
-<!-- Add link to expando tutorial when written -->
+that can be assigned to a particular Role. First an administrator creates a custom
+field called *max-users* for the Role. A developer then creates a module that
+inserts logic before a user is added to that Role. If the logic detects that
+the maximum number of Role users would be exceeded by completing the action, an
+exception is thrown and the action does not complete. 
 
 $$$
 
@@ -60,7 +56,7 @@ To add a custom field to one of the listed entities,
 
     **Note:** The Key you enter here is the name of the new field. It's stored
     in the database and used by developers to access the custom field with the
-    `<liferay-ui:custom-attribute />` tag. It will also be used to label the
+    `<liferay-ui:custom-attribute />` tag. It is also used to label the
     field in the UI.
 
     $$$
@@ -114,7 +110,7 @@ resource. First find the UI location for the resource, and all its custom fields
 are displayed in a Custom Fields panel. For example, consider the Users UI:
 
 Navigate to *Control Panel &rarr; Users and Organizations*. Click on a User to
-open the Edit User form, and scroll down to find your custom field.
+open the Edit User form and scroll down to find your custom field.
 
 ![Figure 2: The Custom Fields panel is found at the bottom of the Edit User form.](../../images/custom-fields-panel.png)
 
@@ -141,7 +137,7 @@ can be granted or removed for these actions:
 permissions.](../../images/custom-fields-edit.png)
 
 Custom fields make many of @product@'s entities extensible directly from the
-administrative user interface. Use them as is, or combine them with some
+administrative user interface. Use them as is or combine them with some
 back-end code, and you have yet another powerful, flexible feature at your
 disposal. As they're fond of saying at The Lunar Resort, "The sky is certainly
 not the limit."
