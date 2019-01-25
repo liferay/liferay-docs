@@ -20,12 +20,22 @@ Liferay DXP 7.1:
 Liferay DXP 7.0: 
 [install fix pack 60](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/patching-liferay) 
 
-### Step 2: Register Analytics Cloud with your Liferay DXP instance [](id=step-2-register-analytics-cloud-with-your-liferay-dxp-instance)
+### Step 2: Make sure Liferay DXP and its JSON web services are accessible 
+
+Make sure your Liferay DXP instance is publicly accessible to Analytics Cloud. 
+
+Liferay DXP's JSON web services are enabled by default. If they're disabled on
+your DXP instance, enable them by deleting setting
+`json.web.service.enabled=false` from your instance's portal properties (e.g.,
+found in a `portal-ext.properties` file). 
+
+### Step 3: Register Analytics Cloud with your Liferay DXP instance [](id=step-2-register-analytics-cloud-with-your-liferay-dxp-instance)
 
 Liferay DXP 7.1: 
 
-1.  Download and install the
-    [Liferay Plugin for OAuth 2.0](https://web.liferay.com/marketplace/-/mp/application/109571986).
+1.  Download and install the 
+    [Liferay Plugin for OAuth 2.0](https://web.liferay.com/marketplace/-/mp/application/109571986)
+    version 1.1.0 (or newer).
 
 2.  The plugin comes with Analytics Cloud pre-registered. Copy the *Client ID*
     and *Client Secret* for connecting DXP with Analytics Cloud, as described
