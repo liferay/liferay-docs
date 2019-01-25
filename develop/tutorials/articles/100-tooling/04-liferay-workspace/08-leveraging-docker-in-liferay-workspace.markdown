@@ -1,4 +1,4 @@
-# Leveraging Docker
+# Leveraging Docker [](id=leveraging-docker)
 
 Docker has become increasingly popular in today's development lifecycle, by
 providing an automated way to package software and its dependencies into
@@ -31,7 +31,7 @@ In this tutorial, you'll learn how to do the following tasks within a workspace:
 - [Interacting with the container](#interacting-with-the-container)
 - [Building a custom @product@ image](#building-a-custom-product-image)
 
-## Creating a @product@ Docker Container
+## Creating a @product@ Docker Container [](id=creating-a-product-docker-container)
 
 1.  Choose the Docker image you need. This is configured in your workspace's
     `gradle.properties` file by customizing this property: 
@@ -61,7 +61,7 @@ the container is started, all your projects are deployed to the container. All
 configurations are also applied to the container. You'll learn more about
 configuring your container next.
 
-## Configuring the Container
+## Configuring the Container [](id=configuring-the-container)
 
 Before starting your container, you may want to add additional portal
 configurations. This could include things like
@@ -101,7 +101,7 @@ $$$
 
 Next, you'll explore the commands for interacting with the container.
 
-##  Interacting with the Container
+##  Interacting with the Container [](id=interacting-with-the-container)
 
 `startDockerContainer`: starts the container.
 
@@ -135,7 +135,7 @@ $$$
 
 Next, you'll learn how to build a custom image.
 
-## Building a Custom @product@ Image
+## Building a Custom @product@ Image [](id=building-a-custom-product-image)
 
 You can preserve your container's configuration by building it as an image. To
 build your custom @product@ image, run
