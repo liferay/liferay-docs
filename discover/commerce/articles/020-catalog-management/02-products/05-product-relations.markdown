@@ -2,8 +2,30 @@
 
 Product relations can be used to connect products irrespective of category,
 typically for the purpose of displaying links to one product on the detail page
-of another. Multiple types of product relations are supported, with the
-following types available out of the box:
+of another.
+
+Here's how it works: Every related product must be assigned to a *Product
+Relation Type*. These products can then be displayed by a product publisher
+widget configured to source data from the appropriate type.
+
+By placing more than one product publisher widget on a product detail page, you
+can list multiple sets of related products. For instance, one widget might
+display a set of products that are alternatives to the product featured on the
+page, while another might display products that are accessories to the featured
+product.
+
+Follow these steps:
+
+1.  Add product relation types.
+
+2.  Create product relations.
+
+3.  Configure your product detail page(s) to display relations.
+
++$$$
+
+**Note:** If your site was built from an accelerator, then a number of product
+relation types are already in place:
 
 **Up-sell:** Display products that are comparable to the featured product
 but have a higher sale value.
@@ -17,15 +39,16 @@ product.
 
 **Cross-sell:** Display products complementary to the featured product.
 
-As far as the software is concerned, all these types are identical---the
-difference is in how you choose to use them. By populating each type with
-different product relations, you gain the ability to display multiple sets of
-relations on a single page.
+If you built your site with an accelerator and these options meet your needs,
+skip the next step.
 
-## Adding Product Relationship Types [](id=adding-product-relationship-types)
+$$$
 
-The different types of product relations are flexible. Since each one functions
-the same way, you can add, remove, or rename types at will. Follow these steps:
+## Adding Product Relation Types [](id=adding-product-relationship-types)
+
+Since the only function of a product relation type is to distinguish product
+relations from those of other types, the only unique property it needs is
+a name. Follow these steps to create and name a new type:
 
 1.  Go to *Control Panel* &rarr; *Configuration* &rarr; *System Settings*. Find
     the *Commerce* section, click *Catalog* and go to the *Product Relations*
@@ -35,9 +58,7 @@ the same way, you can add, remove, or rename types at will. Follow these steps:
     ![Options](../../../images/icon-options.png) button to edit or delete an
     existing one.
 
-3.  Remember, the different relation types differ only in name, so the name is
-    the only setting you have to worry about. Whether you're editing or creating
-    new, just set the name and then click *Save*.
+3.  Enter a name and click *Save*.
 
 ## Creating Product Relations [](id=creating-product-relations)
 
@@ -46,10 +67,9 @@ Follow these steps:
 1.  Go to the catalog, select a product, and click the *Product Relations*
     tab.
 
-2.  Select a relationship type from the tabs on the left.
+2.  Select a relation type from the tabs on the left.
 
-    ![Figure 1: The row of tabs at the left allows you to create multiple sets
-    of related products.](../../../images/product-relations.png)
+    ![Figure 1: The row of tabs at the left allows you to create multiple sets of related products.](../../../images/product-relations.png)
 
 3.  Click the ![Add](../../../images/icon-add.png) button and then check the
     box next to each product you want to set as a product relation of this type.
@@ -71,7 +91,10 @@ Follow these steps:
     click *Configuration*.
 
 3.  Set *Product-Selection* to *dataSource*. Then go to the *Data-Source*
-    drop-down  menu and choose a product relationship type to be displayed in
+    drop-down  menu and choose a product relation type to be displayed in
     the widget.
 
 4.  Click *Save* and close the dialog box.
+
+That's it! Your product page should now display the related products you
+specified.
