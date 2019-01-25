@@ -74,10 +74,8 @@ Each of these steps corresponds to a step in the wizard:
         service, you must activate via an XML file from Liferay support, and 
         such instances must run version 5.0.0 or newer of the LCS client app. 
 
-        Note that you **must** use LCS for activation of containerized 
-        instances, cloud deployments, and instances that use Liferay Analytics 
-        Cloud and/or Elastic subscriptions. Otherwise, you don't have to use LCS 
-        for activation. 
+        Note that you **must** use LCS for activation of Elastic subscriptions. 
+        Otherwise, you don't have to use LCS for activation. 
 
     -   **Portal Analytics:** Enabling this lets LCS collect and display 
         performance metrics for any servers that connect to the environment. 
@@ -105,6 +103,6 @@ Each of these steps corresponds to a step in the wizard:
 After creating your environment, the wizard shows a screen that lets you
 download the LCS client app, download the environment's token file, and go to
 your project's dashboard in LCS. Before registering a server in your new
-environment, however, you must complete the [preconfiguration
-steps](/discover/deployment/-/knowledge_base/7-1/lcs-preconfiguration) for that
-server. 
+environment, however, you must complete the 
+[preconfiguration steps](/discover/deployment/-/knowledge_base/7-1/lcs-preconfiguration) 
+for that server. 
