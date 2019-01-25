@@ -149,7 +149,7 @@ Support team can also assist you with.
 make sure that you've followed the LCS 
 [preconfiguration](/discover/deployment/-/knowledge_base/7-0/lcs-preconfiguration) 
 and 
-[activation](/discover/deployment/-/knowledge_base/7-0/registering-your-dxp-server-with-lcs) 
+[registration](/discover/deployment/-/knowledge_base/7-0/registering-your-dxp-server-with-lcs) 
 steps correctly. 
 
 $$$
@@ -172,19 +172,19 @@ For issues related to your subscription, first review the documentation on
 [managing your subscription](/discover/deployment/-/knowledge_base/7-0/using-lcs#managing-liferay-dxp-subscriptions). 
 Subscription errors usually involve one of these problems:
 
--   Your server can reach LCS, but can't locate a subscription.
+-   Your server can reach LCS, but can't locate a subscription. 
 -   Your server can reach LCS and locate a subscription, but activating your 
-    server would exceed the subscription's allowed number of servers or cores. 
+    server would exceed the subscription's number of activation keys or cores. 
 
 In either case, you must verify that a subscription is available and that you're 
-not exceeding its allowed number of servers or cores. You can find this 
+not exceeding its number of activation keys or cores. You can find this 
 information on the LCS site's Subscriptions page, as described in 
 [the documentation on managing subscriptions](/discover/deployment/-/knowledge_base/7-0/using-lcs#managing-liferay-dxp-subscriptions). 
 If the environment in which you're trying to activate a server isn't assigned 
 the subscription you want to use, then you must create a new environment and 
 assign it the correct subscription. Once assigned, you can't change an 
 environment's subscription. Follow 
-[the initial activation steps](/discover/deployment/-/knowledge_base/7-0/registering-your-dxp-server-with-lcs) 
+[the initial registration steps](/discover/deployment/-/knowledge_base/7-0/registering-your-dxp-server-with-lcs) 
 for instructions on creating a new environment and activating a new server. 
 
 +$$$
@@ -192,9 +192,9 @@ for instructions on creating a new environment and activating a new server.
 **Note:** When shutting down servers, you must ensure that the LCS site receives 
 the server shutdown commands. Otherwise, LCS may not release that server's 
 activation key for reuse and attempts to activate additional servers may exceed 
-the subscription's allowed number of servers. There's a higher 
-likelihood of this happening in rolling deployments and/or when using 
-containers. For more information, see the 
+the subscription's number of activation keys. There's a higher likelihood of 
+this happening in rolling deployments and/or when using containers. For more 
+information, see the 
 [KB article on properly unregistering subscriptions](https://customer.liferay.com/documentation/knowledge-base/-/kb/1464875). 
 
 $$$
@@ -202,7 +202,7 @@ $$$
 ### Invalid Token [](id=invalid-token)
 
 If the token is invalid, first review the documentation on 
-[using environment tokens](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-environment-tokens). 
+[environment tokens](/discover/deployment/-/knowledge_base/7-0/using-lcs#using-environment-tokens). 
 The following table lists causes and solutions for invalid tokens. 
 
 | &nbsp;Cause | &nbsp;Solution |
@@ -222,7 +222,7 @@ types of log files in this folder:
 
 1.  **Liferay log files:** The files `liferay.[date].log` and 
     `liferay.[date].xml` are the logs for your @product@ installation. Note that 
-    LOG and XML files for the same date contain the same information--the only 
+    LOG and XML files for the same date contain the same information---the only 
     difference is the file format. 
 
 2.  **LCS log files:** The `lcs-portlet-[date].log` files are the LCS client 
@@ -236,7 +236,7 @@ There are 2 ways to increase the log levels:
 1.  **In your @product@ instance's Control Panel:** This is a temporary 
     configuration that resets upon shutting down the server. Note that if the 
     server isn't activated, you can't access the Control Panel. In that case,
-    Liferay Support can provide a temporary activation key. 
+    Liferay Support can provide an XML activation key. 
 
 2.  **In a Log4j configuration:** This is a permanent configuration that 
     persists through server shutdown and restart. 
