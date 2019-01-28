@@ -82,8 +82,8 @@ Setting the version to develop for takes two steps:
     Portal GA6+ and Liferay DXP SP7+. Previous versions do not provide these
     features.
 
-    The versions following the SP7 release of DXP follow fix pack versions
-    (e.g., `7.0.10.fp58`, `7.0.10.fp59`, etc.).
+    The versions following the SP7 release of DXP follow service pack versions
+    (e.g., `7.0.10.8` (SP8), `7.0.10.9` (SP9), etc.).
 
 2.  Once the target platform is configured, check to make sure no dependencies
     in your Gradle build files specify a version. The versions are now imported

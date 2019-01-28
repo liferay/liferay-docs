@@ -66,20 +66,16 @@ Here are the offline mode policies that you can use with this Screenlet:
 | `remote-first` | The Screenlet loads the data from the Liferay instance. If this succeeds, the Screenlet shows the data to the user and stores it in the local cache for later use. If a connection issue occurs, the Screenlet retrieves the data from the local cache. If the data doesn't exist there, the Screenlet uses the listener to notify the developer about the error. | Use this policy to show the most recent version of the data when connected, but show an outdated version when there's no connection. |
 | `cache-first` | The Screenlet loads the data from the local cache. If the data isn't there, the Screenlet requests it from the Liferay instance and notifies the developer about any errors that occur (including connectivity errors). | Use this policy to save bandwidth and loading time in case you have local (but probably outdated) data. |
 
-## Required Attributes [](id=attributes)
+## Required Attributes [](id=required-attributes)
 
-- `assetEntryId`
+- `assetEntryId` or `classPK`
 
-If you don't use `assetEntryId`, you must use both of the following attributes:
-
-- `className`
-- `classPK`
+## Attributes [](id=attributes)
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------|
 | `assetEntryId` | `number` | The primary key of the blog entry (`BlogsEntry`). |
-| `className` | `string` | The `BlogsEntry` object's fully qualified class name. This is [`com.liferay.blogs.kernel.model.BlogsEntry`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/blogs/kernel/model/BlogsEntry.html). If you don't use `assetEntryId`, the `className` and `classPK` attributes are required to instantiate the Screenlet. |
-| `classPK` | `number` | The `BlogsEntry` object's unique identifier. If you don't use `assetEntryId`, the `className` and `classPK` attributes are required to instantiate the Screenlet. |
+| `classPK` | `number` | The `BlogsEntry` object's unique identifier. |
 | `autoLoad` | `boolean` | Whether the blog entry automatically loads when the Screenlet appears in the app's UI. The default value is `true`. |
 | `offlinePolicy` | `string` | The offline mode setting. The default value is `remote-first`. See [the Offline section](/develop/reference/-/knowledge_base/7-0/blogs-entry-display-screenlet-for-ios#offline) for details. |
 

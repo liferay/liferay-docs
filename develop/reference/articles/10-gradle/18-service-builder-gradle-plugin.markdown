@@ -4,7 +4,7 @@ The Service Builder Gradle plugin lets you generate a service layer defined in a
 [Service Builder](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
 `service.xml` file.
 
-The plugin has been successfully tested with Gradle 3.5.1 up to 4.10.2.
+The plugin has been successfully tested with Gradle 4.10.2.
 
 ## Usage [](id=usage)
 
@@ -13,7 +13,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.service.builder", version: "2.1.66"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.service.builder", version: "2.2.8"
     }
 
     repositories {
@@ -148,7 +148,7 @@ manually adding a dependency to the `serviceBuilder` configuration:
 
 ```gradle
 dependencies {
-    serviceBuilder group: "com.liferay", name: "com.liferay.portal.tools.service.builder", version: "1.0.247"
+    serviceBuilder group: "com.liferay", name: "com.liferay.portal.tools.service.builder", version: "1.0.257"
 }
 ```
 

@@ -399,7 +399,7 @@ to specify the finder column for this node.
 
 **Important**: DO NOT create finders that use entity primary key as parameters. 
 They're unnecessary as Service Builder automatically generates
-`findeByPrimaryKey` and `fetchByPrimaryKey` methods for all entity primary keys.
+`findByPrimaryKey` and `fetchByPrimaryKey` methods for all entity primary keys.
 On deploying a `*service` module, Service Builder creates indexes for all entity
 primary key columns and finder columns. Adding finders that use entity primary
 keys results in attempts to create multiple indexes for the same

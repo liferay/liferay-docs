@@ -63,12 +63,7 @@ Here are the offline mode policies that you can use with this Screenlet:
 
 ## Required Attributes [](id=required-attributes)
 
-- `entryId`
-
-If you don't use `entryId`, you must use both of the following attributes: 
-
-- `className`
-- `classPK`
+- `entryId` or `classPK`
 
 ## Attributes [](id=attributes)
 
@@ -77,19 +72,24 @@ If you don't use `entryId`, you must use both of the following attributes:
 | `layoutId` | `@layout` | The layout to use to show the View. |
 | `autoLoad` | `boolean` | Whether the video automatically loads when the Screenlet appears in the app's UI. The default value is `true`. |
 | `entryId` | `number` | The primary key of the video file. | 
-| `className` | `string` | The video file's fully qualified class name. Since files in a Documents and Media Library are `DLFileEntry` objects, the `className` is [`com.liferay.document.library.kernel.model.DLFileEntry`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/model/DLFileEntry.html). The `className` and `classPK` attributes are required to instantiate the Screenlet. |
-| `classPK` | `number` | The video file's unique identifier. The `className` and `classPK` attributes are required to instantiate the Screenlet. |
+| `classPK` | `number` | The video file's unique identifier. |
 | `cachePolicy` | `string` | The offline mode setting. See [the Offline section](/develop/reference/-/knowledge_base/7-0/video-display-screenlet-for-android#offline) for details. |
 
 ## Listener [](id=listener)
 
-Because videos are assets, Video Display Screenlet delegates its events to a 
-class that implements `AssetDisplayListener`. This interface lets you implement 
-the following methods: 
+Video Display Screenlet delegates its events to a class that implements 
+`VideoDisplayListener`. This interface lets you implement these methods: 
 
-- `onRetrieveAssetSuccess(AssetEntry assetEntry)`: Called when the Screenlet 
-  successfully loads the video. 
+-   `onVideoPrepared()`: Called when the video is ready for display.
 
-- `error(Exception e, String userAction)`: Called when an error occurs in the 
-  process. The `userAction` argument distinguishes the specific action in which 
-  the error occurred. 
+-   `onVideoCompleted()`: Called when the video is completed.
+
+-   `onVideoError(Exception e)`: Called when an error occurs displaying the 
+    video. 
+
+-   `onRetrieveAssetSuccess(AssetEntry assetEntry)`: Called when the Screenlet 
+    successfully loads the video. 
+
+-   `error(Exception e, String userAction)`: Called when an error occurs in the 
+    process. The `userAction` argument distinguishes the specific action in 
+    which the error occurred. 
