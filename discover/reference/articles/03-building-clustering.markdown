@@ -3,7 +3,7 @@
 +$$$
 
 **Note:** These instructions are for adding the clustering modules to **Liferay
-Portal**. Skip them if you're running Liferay DXP, as clustering is built-in out
+Portal**. Skip them if you're running Liferay DXP or Liferay Portal 7.1.2 GA3, as clustering is built-in out
 of the box. 
 
 $$$
