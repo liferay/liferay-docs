@@ -84,22 +84,87 @@ For example, this table lists the filename you should use when creating custom
 layouts for each field type, for the Lexicon View. Note that because some DDM 
 fields inherit from DDL, they are referenced as DDL. 
 
-| Editor Type | Field Editor ID | Example using Lexicon View |
-|-----------|-----------|-------------| 
-| Checkbox | `ddlfield_checkbox` | `ddlfield_checkbox_lexicon.xml` |
-| Checkbox Multiple | `ddmfield_checkbox` | `ddmfield_checkbox_multiple.xml` |
-| Date | `ddlfield_date` | `ddlfield_date_lexicon.xml` |
-| Number | `ddlfield_number` | `ddlfield_number_lexicon.xml` |
-| Integer | `ddlfield_number` | `ddlfield_number_lexicon.xml` |
-| Decimal | `ddlfield_number` | `ddlfield_number_lexicon.xml` |
-| Radio | `ddlfield_radio` | `ddlfield_radio_lexicon.xml` |
-| Text | `ddlfield_text` | `ddlfield_text_lexicon.xml` |
-| Select | `ddlfield_select` | `ddlfield_select_lexicon.xml` |
-| Text Area | `ddlfield_text_area` | `ddlfield_text_area_lexicon.xml` |
-| Paragraph | `ddmfield_paragraph` | `ddmfield_paragraph_lexicon.xml` |
-| Document | `ddlfield_document` | `ddlfield_document_lexicon.xml` |
-| Grid | `ddmfield_grid` | `ddmfield_grid_lexicon.xml` |
-| Repeatable | `ddmfield_repeatable` | `ddmfield_repeatable_lexicon.xml` |
+<table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>Editor Type</th>
+<th>Field Editor ID</th>
+<th>Example Using Lexicon View</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Checkbox</td>
+<td>ddlfield_checkbox</td>
+<td>ddlfield_checkbox_lexicon.xml</td>
+</tr>
+<tr>
+<td>Checkbox Multiple</td>
+<td>ddmfield_checkbox</td>
+<td>ddmfield_checkbox_multiple.xml</td>
+</tr>
+<tr>
+<td>Date</td>
+<td>ddlfield_date</td>
+<td>ddlfield_date_lexicon.xml</td>
+</tr>
+<tr>
+<td>Number</td>
+<td>ddlfield_number</td>
+<td>ddlfield_number_lexicon.xml</td>
+</tr>
+<tr>
+<td>Integer</td>
+<td>ddlfield_number</td>
+<td>ddlfield_number_lexicon.xml</td>
+</tr>
+<tr>
+<td>Decimal</td>
+<td>ddlfield_number</td>
+<td>ddlfield_number_lexicon.xml</td>
+</tr>
+<tr>
+<td>Radio</td>
+<td>ddlfield_radio</td>
+<td>ddlfield_radio_lexicon.xml</td>
+</tr>
+<tr>
+<td>Text</td>
+<td>ddlfield_text</td>
+<td>ddlfield_text_lexicon.xml</td>
+</tr>
+<tr>
+<td>Select</td>
+<td>ddlfield_select</td>
+<td>ddlfield_select_lexicon.xml</td>
+</tr>
+<tr>
+<td>Text Area</td>
+<td>ddlfield_text_area</td>
+<td>ddlfield_text_area_lexicon.xml</td>
+</tr>
+<tr>
+<td>Paragraph</td>
+<td>ddmfield_paragraph</td>
+<td>ddmfield_paragraph_lexicon.xml</td>
+</tr>
+<tr>
+<td>Document</td>
+<td>ddlfield_document</td>
+<td>ddlfield_document_lexicon.xml</td>
+</tr>
+<tr>
+<td>Grid</td>
+<td>ddmfield_grid</td>
+<td>ddmfield_grid_lexicon.xml</td>
+</tr>
+<tr>
+<td>Repeatable</td>
+<td>ddmfield_repeatable</td>
+<td>ddmfield_repeatable_lexicon.xml</td>
+</tr>
+</tbody>
+</table>
 
 ## Application Configuration [](id=activity-configuration)
 
@@ -134,9 +199,22 @@ Before using DDM Form Screenlet, ensure that the following exist in the portal:
 
 ## Attributes [](id=attributes)
 
-| Attribute | Data Type | Explanation |
-|-----------|-----------|-------------| 
-| `formInstanceId` | `number` | The ID of the form to display in the Screenlet. To find the IDs for your data definitions in the portal, select the site to work in and click *Content* &rarr; *Forms*. The table that lists the site's forms also lists each form's ID. |
+<table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Data Type</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>formInstanceId</td>
+<td>number</td>
+<td>The ID of the form to display in the Screenlet. To find the IDs for your data definitions in the portal, select the site to work in and click Content &rarr; Forms. The table that lists the site's forms also lists each form's ID.</td>
+</tr>
+</tbody>
+</table>
 
 ![Figure 2: The red box in this image highlights a form's ID.](../../../images/screens-portal-ddm-form-id.png)
 
@@ -157,9 +235,22 @@ and Media and select
 
 ## Methods [](id=methods)
 
-| Method | Return Type | Explanation |
-|-----------|-----------|-------------| 
-| `load()` | `void` | Starts the request to load the form. The form fields are shown when the response is received. |
+<table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>Method</th>
+<th>Return Type</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>load()</td>
+<td>void</td>
+<td>Starts the request to load the form. The form fields are shown when the response is received.</td>
+</tr>
+</tbody>
+</table>
 
 ## Listener [](id=listener)
 
