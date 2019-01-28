@@ -23,11 +23,11 @@ description. You can also unregister the server from LCS.
 
 +$$$
 
-**Note:** LCS doesn't support Snapshot Metrics for servers running on JBoss or 
-WildFly. In this scenario, you may see a console message indicating that LCS 
-doesn't support server metrics for your application server. You may also see a 
-benign `NullPointerException` for the LCS `TaskSchedulerServiceImpl` and 
-`ScheduleTasksCommand`. 
+**Note:** LCS only supports Snapshot Metrics for servers running on Tomcat or 
+WebLogic. On other application servers you may see a console message indicating 
+that LCS doesn't support server metrics for your application server. You may 
+also see a benign `NullPointerException` for the LCS `TaskSchedulerServiceImpl` 
+and `ScheduleTasksCommand`. 
 
 $$$
 
@@ -80,15 +80,15 @@ The JVM category, as its name indicates, shows statistics about the JVM running
 on your server. This includes data on the garbage collector and memory. The 
 number of runs, total time, and average time are listed for each garbage 
 collector item. The memory metrics are presented in a bar chart that shows the 
-usage of the PS Survivor Space, PS Old Gen, PS Eden Space, Code Cache, and PS 
-Perm Gen.
+usage of the PS Eden Space, Code Cache, Compressed Class Space, PS Old Gen, PS 
+Survivor Space, and Metaspace. 
 
 ![Figure 3: The LCS JVM metrics show performance data for memory and the garbage collector.](../../../images-dxp/lcs-server-metrics-jvm.png)
 
 Server is the third category in Snapshot Metrics. The Server category shows 
-additional information about how your server is running. For example, a 
-horizontal bar graph shows the number of current threads running on your server. 
-Similarly, horizontal bar graphs represent the JDBC connection pools. 
+additional information about how your server is running. For example, horizontal 
+bar graphs show the number of current threads running on your server, as well as 
+the JDBC connection pools. 
 
 ![Figure 4: The LCS server metrics show current threads and JDBC connection pools.](../../../images-dxp/lcs-metrics-server.png)
 

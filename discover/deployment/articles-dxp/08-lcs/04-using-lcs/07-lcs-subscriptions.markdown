@@ -2,14 +2,20 @@
 
 LCS lets you use and view your @product@ subscriptions. Recall that when you 
 [create an environment](/discover/deployment/-/knowledge_base/7-1/managing-lcs-environments#creating-environments), 
-you assign its subscription type. Registering a server in that environment 
-consumes an activation key from that subscription type. You can also view your 
-project's available subscriptions and see how they're being used. 
+you assign its subscription type and choose whether LCS activates servers that 
+connect to that environment. If you use LCS for activation, registering a server 
+in that environment consumes an activation key from the environment's 
+subscription type. You can also view your project's available activation keys 
+and see how they're being used. 
 
 Depending on your subscription agreement, LCS also lets you register servers via 
 *elastic subscriptions*. Elastic subscriptions let you register an unlimited 
 number servers. This is invaluable in auto-scaling environments, where servers 
-are automatically created and destroyed in response to load. 
+are automatically created and destroyed in response to load. Note that to use 
+elastic subscriptions, you must set the environment as elastic when you create 
+it. Also note that LCS only uses elastic subscriptions for servers that exceed 
+the number that the environment's subscription type allows. In other words, LCS 
+uses the environment's regular subscriptions before any elastic subscriptions. 
 
 You can access these features from the *Subscriptions* tab on the upper-left of 
 the LCS site. This tab contains two other tabs: *Details* and *Elastic 
@@ -29,15 +35,15 @@ There are four tables in the *Details* tab:
     - Platform
     - Product
     - Processor Cores Allowed
-    - Servers Allowed
-    - Servers Used
+    - Activation Keys
+    - Used Activation Keys
 
     Note that *Processor Cores Allowed* shows the number of processor cores that 
     the subscription allows for each server. 
 
 2.  **Subscriptions Summary:** Shows how your subscriptions are currently used 
     in your project. For each subscription type, this table shows the number of 
-    servers allowed, used, and available. 
+    activation keys allowed, used, and available. 
 
 3.  **Project Environments:** Shows your project's environments and their 
     assigned subscription types. Each environment must have a subscription type. 
@@ -50,11 +56,18 @@ Liferay Support.
 
 +$$$
 
-**Note:** If you try to register a server that exceeds the number of processor 
-cores that your subscription allows per server, the registration fails and the 
+**Note:** If you don't use LCS for activating your servers, then you can 
+register as many servers as you want in LCS. 
+
+$$$
+
++$$$
+
+**Note:** If you try to activate a server that exceeds the number of processor 
+cores that your subscription allows per server, the activation fails and the 
 server is locked down. A console error also indicates the server's core count. 
 You can compare this with your subscription's processor cores allowed in LCS's 
-Subscriptions table. To register the server, you can either reduce the number of 
+Subscriptions table. To activate the server, you can either reduce the number of 
 cores it uses (e.g., by deploying to different server hardware, or reducing the 
 number of virtual processors in a VM or container), or contact Liferay Sales to 
 increase the number of processor cores that your subscription allows per server. 
@@ -81,7 +94,7 @@ automatically. You can view data on your elastic servers from the
 
 **Note:** To register elastic servers in an environment, that environment must 
 be set as elastic when it's created. For more information, see the 
-[documentation on creating environments](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/managing-lcs-environments#creating-environments).
+[documentation on creating environments](/discover/deployment/-/knowledge_base/7-1/managing-lcs-environments#creating-environments).
 
 $$$
 

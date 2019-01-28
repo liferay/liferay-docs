@@ -28,10 +28,10 @@ original source code.
 Before upgrading a theme, consider 
 [migrating the theme](/develop/tutorials/-/knowledge_base/7-1/running-the-upgrade-task-for-6-2-themes) 
 to use the 
-[Liferay Themes Node.js SDK](https://github.com/liferay/liferay-themes-sdk/tree/master/packages). 
-@product-ver@ doesn't require this migration, but the Liferay Themes Node.js 
-SDK's Gulp `upgrade` task automates many upgrade steps. Themes that use the 
-Liferay Themes Node.js SDK can also leverage exclusive features, such as 
+[Liferay JS Theme Toolkit](https://github.com/liferay/liferay-themes-sdk/tree/master/packages). 
+@product-ver@ doesn't require this migration, but the Liferay JS Theme Toolkit's 
+Gulp `upgrade` task automates many upgrade steps. Themes that use the Liferay JS 
+Theme Toolkit can also leverage exclusive features, such as 
 [Themelets](/develop/tutorials/-/knowledge_base/7-1/creating-reusable-pieces-of-code-for-your-themes). 
 
 If your theme uses Bootstrap 3 and Lexicon CSS, you can still use Bootstrap
@@ -41,6 +41,6 @@ If your theme uses Bootstrap 3 and Lexicon CSS, you can still use Bootstrap
 
 Follow the steps in the 
 [Running the 6.2 theme upgrade task](/develop/tutorials/-/knowledge_base/7-1/running-the-upgrade-task-for-6-2-themes) 
-tutorial to learn how to migrate your theme to use the Liferay Themes Node.js
-SDK and its Gulp `upgrade` task. Otherwise, you must follow the steps in the
+tutorial to learn how to migrate your theme to use the Liferay JS Theme Toolkit, 
+including its Gulp `upgrade` task. Otherwise, you must follow the steps in the 
 remaining tutorials in this section to upgrade your 6.2 theme to 7.1 manually. 

@@ -66,6 +66,8 @@ that the Portal does not make a cached copy of the project. This allows the
 Portal to see changes that are made to your project's files immediately. When
 you cancel the `watch` task, your module is uninstalled automatically.
 
+The `watch` task does not work with JSF portlets or fragment projects.
+
 +$$$
 
 **Note:** The `blade watch` command is available for Liferay Workspace versions

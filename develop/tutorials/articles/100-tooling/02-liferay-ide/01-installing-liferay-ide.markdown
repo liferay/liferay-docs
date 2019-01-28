@@ -11,12 +11,12 @@ Studio:
 - [install Dev Studio into an existing Eclipse instance using a ZIP file](#install-liferay-ide-into-eclipse-from-a-zip-file)
 
 **Important:** If you're installing Dev Studio into an existing Eclipse
-environment, you must be on Eclipse Oxygen or newer. For instructions on
-upgrading to Oxygen, see Eclipse's
+environment, you must be on Eclipse Photon or newer. For instructions on
+upgrading to Photon, see Eclipse's
 [upgrade documentation](https://wiki.eclipse.org/FAQ_How_do_I_upgrade_Eclipse_IDE%3F#Upgrading_existing_Eclipse_IDE_and_Installed_Features_to_newer_release).
 With this particular upgrade, you should also deactivate the current available
 update sites in the *Window* &rarr; *Preferences* &rarr; *Install/Update* &rarr;
-*Available Software Sites* menu to ensure a successful upgrade (e.g., Neon).
+*Available Software Sites* menu to ensure a successful upgrade (e.g., Oxygen).
 
 ## Install the Dev Studio Bundle [](id=install-the-liferay-ide-bundle)
 

@@ -1,7 +1,10 @@
 # Managing Your LCS Account [](id=managing-your-lcs-account)
 
 To manage your LCS account, select *My Account* from the user menu in the
-Dockbar. This takes you to a UI with three tabs: 
+Dockbar. This takes you to a UI with four tabs: 
+
+**Projects:** Displays your LCS projects in a searchable table that lists the 
+administrator's email address for each project. 
 
 **Email Notifications:** Configure LCS to send you emails when specific 
 events occur in your LCS projects by adding rules that define what events
