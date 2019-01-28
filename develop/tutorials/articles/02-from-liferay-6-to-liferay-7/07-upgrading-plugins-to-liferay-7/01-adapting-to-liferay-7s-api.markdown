@@ -110,7 +110,7 @@ $$$
 
 Now you're ready to configure your project. 
 
-## Step 2: Configure the Project [](id=step-2-configure-the-project)
+## Step 2: Select Projects to Upgrade [](id=step-2-configure-the-project)
 
 The Code Upgrade Tool can upgrade Liferay 6.2 plugins built with the Plugins
 SDK, Maven, or an older version of Liferay Workspace. Browse to the Plugins SDK,
@@ -148,7 +148,7 @@ Use the steps below to import your legacy projects:
     - *Liferay Server Bundle Download URL*: Location of a server bundle to
       download and install 
 
-    ![Figure 4: The Configure Project step imports Plugins SDK projects and integrates them with a @product-ver@ server.](../../../images/code-upgrade-configure-project.png)
+    ![Figure 4: The Select Projects to Upgrade step imports Plugins SDK projects and integrates them with a @product-ver@ server.](../../../images/code-upgrade-configure-project.png)
 
 2.  Click the *Import Projects* button. 
 
@@ -241,8 +241,10 @@ automatically* option. Follow these steps to address problems individually:
 1.  Click the *Find Breaking Changes* icon (![project selection icon](../../../images/icon-code-upgrade-tool-select-project.png))
     to open the project selection window. 
 
-2.  Select the projects in which to find problems and click on the *OK* button. 
-    The Find Breaking Changes window appears: 
+2.  Select the projects in which to find problems and the @product@ version
+    you're upgrading to. You can also select the *Combine existed problems list*
+    checkbox to have all project issues displayed in one list. Then click the
+    *OK* button. The Find Breaking Changes window appears: 
 
     - Upper-left panel: lists the projects that have outstanding problems. The
       *Code Problems* folder holds a tree of projects and project files that
