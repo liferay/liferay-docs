@@ -150,7 +150,7 @@ Configuring contacts imports DXP user data.
     contacts. 
 
 4.  Follow instructions for 
-    [Mapping Contact Data](https://github.com/liferay/liferay-docs/blob/master/discover/analytics-cloud/articles/02-getting-started/04-mapping-contact-data.markdown)
+    [Mapping Contact Data](https://github.com/liferay/liferay-docs/blob/7.1.x/discover/analytics-cloud/articles/02-getting-started/04-mapping-contact-data.markdown)
     to  map contact data from your Liferay DXP instance to your Analytics Cloud
     contact data model. Once you've mapped the data, click *Save*. The Data
     Configuration page appears again; the button for Configure Contacts is

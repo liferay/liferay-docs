@@ -32,7 +32,7 @@ Here's how to integrate contact data from a CSV file:
        formatted the way you want, adjust your CSV file's format. 
 
 5. Follow instructions for
-[Mapping Contact Data](https://github.com/liferay/liferay-docs/blob/master/discover/analytics-cloud/articles/02-getting-started/04-mapping-contact-data.markdown)
+[Mapping Contact Data](https://github.com/liferay/liferay-docs/blob/7.1.x/discover/analytics-cloud/articles/02-getting-started/04-mapping-contact-data.markdown)
 to map contact data from your CSV file to your Analytics Cloud contact data
 model. Once you've mapped the data, click *Next*. 
 

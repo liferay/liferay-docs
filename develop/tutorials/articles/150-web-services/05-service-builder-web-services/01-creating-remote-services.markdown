@@ -230,9 +230,9 @@ failures is not satisfying the dependencies needed by the WSDD Builder for your
 project's code---there's no standard set. That said, the following dependencies
 are often required for portlet development: 
 
-    compileOnly group: "javax.portlet", name: "portlet-api", version: "2.0"
+	compileOnly group: "javax.portlet", name: "portlet-api", version: "3.0.0"
 	compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
-    compileOnly group: "com.liferay", name: "com.liferay.registry.api", version: "1.0.0"
+	compileOnly group: "com.liferay", name: "com.liferay.registry.api", version: "2.0.0"
 
 [Click here](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies) 
 for more information on finding and configuring dependencies for your apps. 
