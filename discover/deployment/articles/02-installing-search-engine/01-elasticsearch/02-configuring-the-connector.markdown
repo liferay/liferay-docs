@@ -215,11 +215,10 @@ $$$
 For more information on configuring an Elasticsearch cluster, see the
 documentation on [Elasticsearch Index Settings](https://www.elastic.co/guide/en/elasticsearch/guide/current/_index_settings.html).
 
-<a name="footnote1">1</a> This is, of course, a nod to all those fans of [Boaty Mcboatface](http://www.theatlantic.com/international/archive/2016/05/boaty-mcboatface-parliament-lessons/482046). 
+## Elasticsearch Connector System Settings, By Operation Mode 
 
-## Available Elasticsearch Connector System Settings in Embedded and Remote Operation Mode [](id=available-elasticsearch-connector-system-settings-in-embedded-and-eemote-operation-mode)
-
-The table below shows which adapter settings are available in the given operation modes.
+Some of the settings available for the Elasticsearch connector are applicable
+for only one operation mode (REMOTE or EMBEDDED). Refer to the table below:
 
 Adapter Setting/Operation Mode | EMBEDDED | REMOTE |
 ------------------------------| :----: | :----: |
@@ -252,3 +251,6 @@ Adapter Setting/Operation Mode | EMBEDDED | REMOTE |
 `syncSearch` | x | -
 
 \* **Note:** Available in the Connector to Elasticsearch 6 only.
+
+<a name="footnote1">1</a> This is, of course, a nod to all those fans of [Boaty Mcboatface](http://www.theatlantic.com/international/archive/2016/05/boaty-mcboatface-parliament-lessons/482046). 
+
