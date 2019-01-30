@@ -17,16 +17,16 @@ Follow these steps to connect your project to your Liferay DXP instance.
 Liferay DXP 7.1: 
 [Download](https://help.liferay.com/hc/en-us/categories/360000872531)
 and
-[install](https://help.liferay.com/hc/en-us/articles/360018176571-Installing-Patches-) 
+[install](/discover/deployment/-/knowledge_base/7-1/installing-patches) 
 fix pack 3. 
 
 Liferay DXP 7.0: 
 [Download](https://help.liferay.com/hc/en-us/categories/360000867932)
 and 
-[install](https://help.liferay.com/hc/en-us/articles/360017896272-Using-the-Patching-Tool-#installing-patches)
+[install](/discover/deployment/-/knowledge_base/7-0/patching-tool#installing-patches)
 fix pack 60. 
 
-### Step 2: Make sure Liferay DXP and its JSON web services are accessible 
+### Step 2: Make sure Liferay DXP and its JSON web services are accessible [](id=step-2-make-sure-liferay-dxp-and-its-json-web-services-are-accessible)
 
 Make sure your Liferay DXP instance is publicly accessible to Analytics Cloud. 
 
@@ -42,7 +42,7 @@ Liferay DXP 7.1:
 1.  Download the 
     [Liferay Plugin for OAuth 2.0](https://web.liferay.com/marketplace/-/mp/application/109571986)
     version 1.1.0 (or newer) and
-    [install](https://help.liferay.com/hc/en-us/articles/360017895412-Installing-Apps-Manually-)
+    [install](/discover/portal/-/knowledge_base/7-1/installing-apps-manually)
     it.
 
 2.  The plugin comes with Analytics Cloud pre-registered. Copy the *Client ID*
@@ -54,10 +54,10 @@ Liferay DXP 7.0:
 1.  Download the
     [Liferay Connector to OAuth 1.0a](https://web.liferay.com/marketplace/-/mp/application/45261909)
     and
-    [install](https://help.liferay.com/hc/en-us/articles/360017877192-Installing-Apps-Manually-)
+    [install](/discover/portal/-/knowledge_base/7-0/installing-apps-manually)
     it. 
 
-2.  [Register](https://help.liferay.com/hc/en-us/articles/360018175331-OAuth-)
+2.  [Register](/discover/deployment/-/knowledge_base/7-0/oauth)
     Analytics Cloud as an OAuth application with the *Write* access level. 
 
 3.  Copy the *Consumer ID* and *Consumer Secret* for connecting DXP with 
