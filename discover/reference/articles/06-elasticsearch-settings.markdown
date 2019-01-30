@@ -37,6 +37,15 @@ value should not be changed under normal conditions. If you change it, you must
 also perform a *reindex all* operation for the portal and then manually delete
 the old index using the Elasticsearch administration console.
 
+`indexNumberOfReplicas=`
+Set the number of replicas for each index. If left unset, no replicas are used.
+A full reindex is required to make changes take effect.
+
+`indexNumberOfShards=`
+Set the number of index shards to use when a Liferay index is created. If left
+unset, a single shard is used. A full reindex is required to make changes take
+effect. 
+
 `bootstrapMlockAll=false`
 : A boolean setting that, when set to `true`, tries to lock the process address
 space into RAM, preventing any Elasticsearch memory from being swapped out (see
@@ -102,6 +111,10 @@ for more information).
 (see [here](https://www.elastic.co/guide/en/elasticsearch/client/java-api/2.2/transport-client.html)
 for more information).
 
+`clientTransportPingTimeout=`
+The time (in seconds) the client node waits for a ping response from a node. If
+unset, the default Elasticsearch `client.transport.ping_timeout` is used.
+
 `clientTransportNodesSamplerInterval=5s`
 : Set this String value to instruct the client node on how often to sample / ping
 the nodes listed and connected (see
@@ -146,18 +159,21 @@ See: Adding Settings to the Liferay Elasticsearch Adapter
 format (refer to the Elasticsearch Put Mapping API for more information)
 See: Adding Settings to the Liferay Elasticsearch Adapter
 
+`overrideTypeMappings=` 
+Settings here override @product@'s default type mappings. This
+is an advanced feature that should be used only if strictly necessary. If you
+set this value, the default mappings used to define the Liferay Document Type in
+@product@ source code (for example, `liferay-type-mappings.json`) are ignored
+entirely, so include the whole mappings definition in this property, not just
+the segment you're modifying.
+
+`syncSearch=true`
+If enabled, search runs on the invoker thread rather than in Elasticsearch's
+search thread pool.
+
 The following settings are only available in the Elasticsearch 6 adapter:
 
-`indexNumberOfReplicas=` 
-: Set the String value for how many replica shards each primary shard has.
-
-`indexNumberOfShards=`
-: Set the String value for the number of primary shards an index has.
-
-`clientTransportPingTimeout=`
-: Set the String value for how long to wait for a node's ping response.
-
-## Configuring the Embedded Elasticsearch Server
+## Configurations only Affecting the Embedded Elasticsearch Server
 
 These settings (defined above) are only meant to use while configuring the
 embedded Elasticsearch server. Configuring these will elicit no effect on
