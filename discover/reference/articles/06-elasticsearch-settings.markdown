@@ -7,17 +7,8 @@ OSGi configuration file named
 `com.liferay.portal.search.elasticsearch.configuration.ElasticsearchConfiguration.cfg`
 and deployed to `[Liferay_Home]/osgi/configs`.
 
-+$$$
-
-**Elasticsearch 6:** The [Elasticsearch 6 connector](MP LINK WHEN RELEASED)
-contains all the settings of the default adapter, along with a few new ones. See
-the end of this article to learn about the settings unique to the
-Elasticsearch 6 connector. 
-
-$$$
-
 The list below is all the configuration settings for Liferay's default
-Elasticsearch 2.x adapter, in the order they appear in the System Settings
+Elasticsearch adapter, in the order they appear in the System Settings
 application:
 
 `clusterName=LiferayElasticsearchCluster`
