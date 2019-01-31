@@ -9,7 +9,8 @@ and deployed to `[Liferay_Home]/osgi/configs`.
 
 +$$$
 
-**Elasticsearch 6:** The [Elasticsearch 6 connector](MP LINK WHEN RELEASED)
+**Elasticsearch 6:** The 
+[Liferay Connector to Elasticsearch 6](https://web.liferay.com/marketplace/-/mp/application/106004266)
 contains all the settings of the default adapter, along with a few new ones. See
 the end of this article to learn about the settings unique to the
 Elasticsearch 6 connector. 
@@ -156,6 +157,23 @@ The following settings are only available in the Elasticsearch 6 adapter:
 
 `clientTransportPingTimeout=`
 : Set the String value for how long to wait for a node's ping response.
+
+## Configurations only Affecting the Embedded Elasticsearch Server
+
+These settings (defined above) are only meant to use while configuring the
+embedded Elasticsearch server. Configuring these will elicit no effect on
+remote Elasticsearch installations:
+
+`bootstrapMlockAll`
+`discoveryZenPingUnicastHostsPort`
+`networkHost`
+`networkBindHost`
+`networkPublishHost`
+`transportTcpPort`
+`httpEnabled`
+`httpCORSEnabled`
+`httpCORSAllowOrigin`
+`httpCORSConfigurations`
 
 You can easily configure these settings in the System Setting application, or
 as mentioned above, you can specify them in a deployable OSGi `.config` file.
