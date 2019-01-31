@@ -106,7 +106,7 @@ for more information).
 The time (in seconds) the client node waits for a ping response from a node. If
 unset, the default Elasticsearch `client.transport.ping_timeout` is used.
 
-`clientTransportNodesSamplerInterval=5s`
+`clientTransportNodesSamplerInterval=`
 : Set this String value to instruct the client node on how often to sample / ping
 the nodes listed and connected (see
 [here](https://www.elastic.co/guide/en/elasticsearch/client/java-api/2.2/transport-client.html)
@@ -114,9 +114,8 @@ for more information).
 
 `httpEnabled=true`
 : Set this boolean to false to disable the http layer entirely on nodes which are
-not meant to serve REST requests directly (see
-[here](https://www.elastic.co/guide/en/elasticsearch/reference/2.2/modules-http.html#_disable_http)
-for more information).
+not meant to serve REST requests directly. As this setting was 
+[deprecated in Elasticsearch 6.3](https://www.elastic.co/guide/en/elasticsearch/reference/current/release-notes-6.3.0.html#deprecation-6.3.0), the connector's corresponding setting is now also deprecated. This setting was only used for configuring the embedded Elasticsearch server, so its deprecation should have minimal impact to production deployments.
 
 `httpCORSEnabled=true`
 : Set this boolean to false to disable cross-origin resource sharing, i.e. whether
