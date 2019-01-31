@@ -11,9 +11,10 @@ were working in isolation.
 Underlying the collaboration suite is a set of powerful APIs so you can leverage
 these features in your own apps. For example, if your app lets users create
 a custom content type, you can tie into the collaboration suite's social API to
-let users comment on and rate that content. You can also customize how your
-app's users select items from the Documents and Media Library, send custom
-alerts and announcements, and much, much more. 
+let users comment on and rate that content. You can also let your app's users 
+work with files in the Documents and Media Library, and much, much more.
+
+Here are a few of the things you can do with the collaboration suite's APIs. 
 
 ## Item Selector
 
