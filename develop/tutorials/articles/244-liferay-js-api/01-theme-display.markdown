@@ -120,7 +120,7 @@ directory |
 | getPlid | string | |
 | getPortalURL | string | |
 | getScopeGroupId | number | Returns the [group ID](/participate/liferaypedia/-/wiki/Main/Group+ID) of the current site |
-| getScopeGroupIdOrLiveGroupId | number | |
+| getSiteGroupIdOrLiveGroupId | number | Returns the [group ID](/participate/liferaypedia/-/wiki/Main/Group+ID) of the live site. Relevant for staging. |
 | getSessionId | number | |
 | getSiteGroupId | number | |
 | getURLControlPanel | string | |
