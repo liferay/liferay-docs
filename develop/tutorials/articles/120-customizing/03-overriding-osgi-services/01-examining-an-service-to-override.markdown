@@ -1,25 +1,33 @@
 # Examining an OSGi Service to Override [](id=examining-an-osgi-service-to-override)
 
 Creating and injecting a custom service in place of an existing service requires
-understanding the service interface, the existing service, and the references to
-the service. Your custom service must implement the service interface, match
-references you want, and might need to invoke the existing service. Lastly,
-getting components to adopt your custom service immediately can require
+three things: 
+
+- Understanding the service interface 
+- The existing service 
+- The references to the service 
+
+Your custom service must implement the service interface, match
+references you want, and might need to invoke the existing service. 
+
+Getting components to adopt your custom service immediately can require
 reconfiguring their references to the service. Here you'll flesh out service
 details to make these decisions. 
 
-Since component service references are extension points, start with following
-the tutorial
-[Finding Extension Points](/develop/tutorials/-/knowledge_base/7-1/finding-extension-points)
-to determine the service you want to override and components that use that
-service. 
+## Gathering Information on a Service
 
-Once you know the service and components that use it, use Gogo Shell's Service
-Component Runtime (SCR) to inspect the components and get the service and
-reference details. The
-[Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell) 
-command `scr:info [componentName]` lists the component's attributes and service
-references.  
+1.  Since component service references are extension points, start with
+    following the tutorial 
+    [Finding Extension Points](/develop/tutorials/-/knowledge_base/7-1/finding-extension-points) 
+    to determine the service you want to override and components that use that
+    service. 
+
+2.  Once you know the service and components that use it, use Gogo Shell's
+    Service Component Runtime (SCR) to inspect the components and get the
+    service and reference details. The 
+    [Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell)
+    command `scr:info [componentName]` lists the component's attributes and
+    service references.
 
 Here's an example `scr:info` command and results (abbreviated with `...`) that
 describe component `override.my.service.reference.OverrideMyServiceReference`
@@ -55,7 +63,7 @@ and its reference to a service of type
             service.id = 6840
             service.scope = bundle
     ...
-    
+ 
 The `scr:info` results, like the ones above, contain information relevant to
 injecting a custom service. Here's what you'll do with the information: 
 
@@ -77,12 +85,12 @@ name.
         Interface Name: override.my.service.reference.service.api.SomeService
         ...
 
-**Copy and save the interface name**, as the type your custom service must
-implement.
+**Copy and save the interface name**, because it's the type your custom service
+must implement.
 
 +$$$
 
-Javadocs for @product@ service interfaces are found at these locations:
+Javadocs for @product@ service interfaces are at these locations:
 
 - [@product@ core Javadocs](@platform-ref@/7.1-latest/javadocs/)
 - [@product@ app Javadocs](@app-ref@)
@@ -95,7 +103,8 @@ $$$
 
 ## Step 2: Copy the Existing Service Name [](id=step-2-copy-the-existing-service-name)
 
-If you want to invoke the existing service along with your custom service, get the existing service name. 
+If you want to invoke the existing service along with your custom service, get
+the existing service name. 
 
 The `src:info` result's Component Configuration section lists the existing
 service's fully qualified name. For example, the
@@ -124,24 +133,25 @@ Here's an example of referencing the service above.
 
 ## Step 3: Gather Reference Configuration Details (if reconfiguration is needed) [](id=step-3-gather-reference-configuration-details-if-reconfiguration-is-needed)
 
-The service reference's policy and policy option determine a component's conditions for adopting a particular service.
+The service reference's policy and policy option determine a component's
+conditions for adopting a particular service.
 
-- If the reference's policy option is `greedy`, it binds to the matching, 
-highest ranking service right away. The reference need not be reconfigured to
-adopt your service. 
+- If the reference's policy option is `greedy`, it binds to the matching,
+  highest ranking service right away. The reference need not be reconfigured to
+  adopt your service. 
 
-- If policy is `static` and its policy option is `reluctant`, however, the  
-component requires one of the following conditions to switch from using the
-existing service it's referencing to using the matching, highest ranking service
-(i.e., you'll rank your custom service highest):
+- If policy is `static` and its policy option is `reluctant`, however, the 
+  component requires one of the following conditions to switch from using the
+  existing service it's referencing to using the matching, highest ranking
+  service (i.e., you'll rank your custom service highest):
 
-    1. The component is reactivated
-    2. The component's existing referenced service is unavailable
-    3. The component's reference is modified so that it does not match the existing service but matches your service
+   1. The component is reactivated
+   2. The component's existing referenced service is unavailable
+   3. The component's reference is modified so that it does not match the
+      existing service but matches your service
 
 [Reconfiguring the reference](/develop/tutorials/-/knowledge_base/7-1/reconfiguring-components-to-use-your-service)
-is straightforward and can be the quickest way for the component to adopt a new
-service. 
+can be the quickest way for the component to adopt a new service. 
 
 **Gather these details:** 
 
@@ -163,13 +173,14 @@ property, either *explicitly* set in the annotation or *implicitly* derived from
 the name of the member on which the annotation is used.
 
 -   If no reference name property is used and the `@Reference` is on a field,
-then the reference name is the field name. If `@Reference` is on a field
-called `_someService`, for example, then the reference name is
-`_someService`.
+    then the reference name is the field name. If `@Reference` is on a field
+    called `_someService`, for example, then the reference name is
+    `_someService`.
 -   If the `@Reference` is on a method, then heuristics derive the reference
-name. Method name suffix is used and prefixes such as `set`, `add`, and `put`
-are ignored. If `@Reference` is on a method called `setSearchEngine(SearchEngine
-se)`, for example, then the reference name is `SearchEngine`. 
+    name. Method name suffix is used and prefixes such as `set`, `add`, and
+    `put` are ignored. If `@Reference` is on a method called
+    `setSearchEngine(SearchEngine se)`, for example, then the reference name is
+    `SearchEngine`. 
 
 $$$
 
