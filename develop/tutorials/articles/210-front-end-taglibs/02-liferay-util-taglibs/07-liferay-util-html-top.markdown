@@ -6,10 +6,14 @@ passed using this taglib, the
 [top_head.jsp](https://github.com/liferay/liferay-portal/blob/master/portal-web/docroot/html/common/themes/top_head.jsp#L147-L153) 
 is passed markup and outputs in this JSP. 
 
+This tag also has an optional `outputKey` attribute. If several portlets 
+on the page include the same resource with this tag, you can specify the same 
+`outputKey` value for each tag so the resource is only loaded once. 
+
 The example configuration below uses the `<liferay-util:html-top>` tag to 
 include additional CSS styles provided by the portlet's bundle:
 
-    <liferay-util:html-top>
+    <liferay-util:html-top outputKey="htmltop">
     				<link data-senna-track="permanent" 
             href="/o/my-liferay-util-portlet/css/my-custom-styles.css" 
             rel="stylesheet" type="text/css" />

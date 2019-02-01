@@ -6,10 +6,14 @@ something is passed using this taglib, the
 [body_top.jsp](https://github.com/liferay/liferay-portal/blob/7.1.x/portal-web/docroot/html/common/themes/body_top.jsp#L25-L31) 
 is passed markup and outputs in this JSP. 
 
+This tag also has an optional `outputKey` attribute. If several portlets 
+on the page include the same resource with this tag, you can specify the same 
+`outputKey` value for each tag so the resource is only loaded once. 
+
 The example configuration below uses the `<liferay-util:body-top>` tag to 
 include JavaScript provided by the portlet's bundle:
 
-    <liferay-util:body-top outputKey="contenttop" >
+    <liferay-util:body-top outputKey="bodytop" >
     	<script 
       src="/o/my-liferay-util-portlet/js/my_custom_javascript_body_top.js" 
       type="text/javascript"></script>

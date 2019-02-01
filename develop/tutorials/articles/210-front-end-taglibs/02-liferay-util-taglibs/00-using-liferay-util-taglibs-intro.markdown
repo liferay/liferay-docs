@@ -13,10 +13,5 @@ templates and web content templates. Follow this syntax:
 
     <@liferay_util["tag-name"] attribute="string value" attribute=10 />
 
-Each Liferay Util tag has an optional `outputKey` attribute. If several portlets 
-on the page include the same JavaScript with the Liferay Util tag, you can 
-specify the same `outputKey` value for each tag so the JavaScript is only 
-loaded once. 
-
 This section of tutorials covers the available Liferay Util tags you can use in 
 your app to inject content into portlets and themes. 

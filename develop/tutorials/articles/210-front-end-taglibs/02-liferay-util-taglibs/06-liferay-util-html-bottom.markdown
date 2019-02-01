@@ -6,10 +6,14 @@ something is passed using this taglib, the
 [bottom.jsp](https://github.com/liferay/liferay-portal/blob/master/portal-web/docroot/html/common/themes/bottom.jsp#L53-L59) 
 is passed markup and outputs in this JSP. 
 
+This tag also has an optional `outputKey` attribute. If several portlets 
+on the page include the same resource with this tag, you can specify the same 
+`outputKey` value for each tag so the resource is only loaded once. 
+
 The example configuration below uses the `<liferay-util:html-bottom>` tag to 
 include JavaScript (a common use case) provided by the portlet's bundle:
     
-    <liferay-util:html-bottom outputKey="addscript">
+    <liferay-util:html-bottom outputKey="htmlbottom">
 
         <script src="/o/my-liferay-util-portlet/js/my_custom_javascript.js" 
         type="text/javascript"></script>
