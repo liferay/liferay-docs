@@ -11,7 +11,8 @@ Liferay ships @product-ver@ fixes through three different channels:
 On a regular schedule, the latest fixes that patch the core are bundled together
 into fix packs that are provided to all of Liferay's customers. Fix packs
 include fixes for both the core and the application suites that ship with the
-product. 
+product. Each fix pack contains all previous fix packs since the last
+service pack. 
 
 ## Hotfixes [](id=hotfixes)
 
@@ -29,6 +30,10 @@ schedule depends on the need and security fix releases. They include the latest
 patches and updates for our customers who are just about to start their new
 projects. The service packs are built on the top of the original @product@
 release and repackaged with the latest fix pack, Patching Tool and modules.
+Since a service pack contains the latest fix pack, it contains all previous fix
+packs since the last service pack. If starting a new project, always start with
+the latest service pack. 
+
 
 Rather than use the service packs to keep existing systems updated, existing
 customers should
@@ -52,4 +57,3 @@ fix for the reported issue is tested by the support engineer who fixed it.
 
 Before releasing a service pack, test suites run on the packaged releases to
 ensure the quality of the packaging.
-
