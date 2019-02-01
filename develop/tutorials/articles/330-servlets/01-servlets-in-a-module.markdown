@@ -1,12 +1,12 @@
 # Servlets in a Module [](id=servlets-in-a-module)
 
-Servlets or
-[JAX-RS](/develop/tutorials/-/knowledge_base/7-1/jax-rs)
-can be used to provide a lightweight web integration in some non-standard
-remoting setup or provide a web endpoint to a browser client for a similar
-reason. Servlets, rather than either a rest endpoint or a portlet, however let
-you control application's entire UI experience. Liferay supports servlet based
-applications and embeds HTTP Whiteboard for servlets. 
+You can use servlets or [JAX-RS](/develop/tutorials/-/knowledge_base/7-1/jax-rs)
+to provide a lightweight web integration or a web endpoint to a browser client.
+Servlets, rather than REST endpoints or portlets, let you control an
+application's entire UI experience. @product@ supports servlet based
+applications and embeds 
+[HTTP Whiteboard](https://osgi.org/specification/osgi.cmpn/7.0.0/service.http.whiteboard.html)
+for servlets. 
 
 Here you'll examine a
 [servlet sample](#servlet-sample)
@@ -16,11 +16,13 @@ and
 ## Servlet Sample [](id=servlet-sample)
 
 The
-[servlet sample](/develop/reference/-/knowledge_base/7-1/servlet),
-uses HTTP Whiteboard to respond to requests at URLs that match the pattern
-`http://localhost:8080/o/blade/servlet/*`.  
+[servlet sample](/develop/reference/-/knowledge_base/7-1/servlet)
+uses 
+[HTTP Whiteboard](https://osgi.org/specification/osgi.cmpn/7.0.0/service.http.whiteboard.html)
+to respond to requests at URLs that match the pattern
+`http://localhost:8080/o/blade/servlet/*`.
 
-![Figure 1: If a users visits `http://localhost:8080/o/blade/servlet`, the servlet sample shows the message `Hello World`.](../../images/servlet-sample.png)
+![Figure 1: If users visit `http://localhost:8080/o/blade/servlet`, the servlet sample shows the message `Hello World`.](../../images/servlet-sample.png)
 
 Here's the sample servlet class:
 
@@ -118,7 +120,7 @@ OSGi service of type `Servlet`. It uses OSGi HTTP Whiteboard to respond to
 requests at URLs matching `http://localhost:8080/o/blade/servlet/*`. Since the
 component's `osgi.http.whiteboard.context.path` and
 `osgi.http.whiteboard.servlet.pattern` properties configure the servlet
-mapping--there's no need to specify one in a `WEB-INF/web.xml` descriptor. 
+mapping, there's no need to specify one in a `WEB-INF/web.xml` descriptor. 
 
 The Portal web application's `WEB-INF/web.xml` defines Liferay's Module
 Framework Servlet mapping: 
@@ -165,9 +167,9 @@ Here's how to create your own servlet:
 
 5.  Set the following `@Component` `property` values to specify a context path
     and servlet URL pattern:
-    
+
     `"osgi.http.whiteboard.context.path=/"`: Sets the servlet's context. Replace
-    the value with your servlet's context path.  
+    the value with your servlet's context path.
 
     `"osgi.http.whiteboard.servlet.pattern=/blade/servlet/*"`: Sets the
     servlet's mapping pattern. Replace the value with your servlet's pattern. 
