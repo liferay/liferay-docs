@@ -38,7 +38,7 @@ Follow these steps:
         <@liferay.search_bar>
         
 3.  Include any required or optional arguments, such as 
-    [portlet preferences](/develop/tutorials/-/knowledge_base/7-1/embedding-portlets-in-themes-and-layout-templates#setting-default-preferences-for-an-embedded-portlet), 
+    [portlet preferences](/develop/tutorials/-/knowledge_base/7-1/embedding-portlets-in-themes#setting-default-preferences-for-an-embedded-portlet), 
     in the macro call. For example, @product@'s `language` macro directive 
     includes a language key parameter:
 
