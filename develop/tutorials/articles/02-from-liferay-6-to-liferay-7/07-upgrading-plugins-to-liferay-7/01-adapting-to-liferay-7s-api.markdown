@@ -241,8 +241,8 @@ automatically* option. Follow these steps to address problems individually:
 1.  Click the *Find Breaking Changes* icon (![project selection icon](../../../images/icon-code-upgrade-tool-select-project.png))
     to open the project selection window. 
 
-2.  Select the projects in which to find problems and the @product@ version
-    you're upgrading to. You can also select the *Combine existed problems list*
+2.  Select the projects where you want to find upgrading problems and the new
+    @product@ version. You can also select the *Combine existing problems list*
     checkbox to have all project issues displayed in one list. Then click the
     *OK* button. The Find Breaking Changes window appears: 
 
