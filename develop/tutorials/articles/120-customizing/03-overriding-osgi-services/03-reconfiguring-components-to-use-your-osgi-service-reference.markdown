@@ -2,18 +2,19 @@
 
 In many cases, assigning your
 [custom service (service)](/develop/tutorials/-/knowledge_base/7-1/creating-a-custom-osgi-service)
-a higher ranking convinces components to unbind from their current service and bind to yours. In other cases, components keep using their
-current service. Why is that? And how do you make components adopt your service?
+a higher ranking convinces components to unbind from their current service and
+bind to yours. In other cases, components keep using their current service. Why
+is that? And how do you make components adopt your service?
 The component's
 [service reference policy option](/develop/tutorials/-/knowledge_base/7-1/examining-an-osgi-service-to-override#step-3-gather-reference-configuration-details-if-reconfiguration-is-needed)
 is the key to determining the service. 
 
 Here are the policy options:
 
-**`greedy`:** The component uses the matching, highest ranking service as soon 
+`greedy`: The component uses the matching, highest ranking service as soon 
 as it's available. 
 
-**`reluctant`:** The component uses the matching, highest ranking service 
+`reluctant`: The component uses the matching, highest ranking service 
 available in the following events:
 
 -   the component is (re)activated
@@ -30,7 +31,7 @@ reference to use your custom service immediately.
 
 This tutorial uses example modules `override-my-service-reference` and
 `overriding-service-reference` to demonstrate reconfiguring a service reference,
-binding the component to a different service.   You can download the modules and
+binding the component to a different service. You can download the modules and
 build them using Gradle (bundled with each module) or you can apply the tutorial
 steps to configure your own customization. Executing `gradlew jar` in each
 example module root generates the module JAR to the `build/libs` folder. 
