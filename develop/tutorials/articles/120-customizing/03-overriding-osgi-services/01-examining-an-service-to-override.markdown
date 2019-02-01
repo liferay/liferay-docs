@@ -14,7 +14,7 @@ Getting components to adopt your custom service immediately can require
 reconfiguring their references to the service. Here you'll flesh out service
 details to make these decisions. 
 
-## Gathering Information on a Service
+## Gathering Information on a Service [](id=gathering-information-on-a-service)
 
 1.  Since component service references are extension points, start with
     following the tutorial 
