@@ -1,12 +1,13 @@
 # Creating a Custom OSGi Service [](id=creating-a-custom-osgi-service)
 
-It's time to implement your custom OSGi service. Make sure to
+It's time to implement your OSGi service. Make sure to
 [examine the service and service reference details](/develop/tutorials/-/knowledge_base/7-1/examining-an-osgi-service-to-override),
 if you haven't done so already. Here you'll create a custom service that
-implement the service interface, declare it an OSGi service of that type, and
-make it the best match for other components to bind to. 
+implements the service interface, declares it an OSGi service of that type, and
+makes it the best match for binding with other components. 
 
-The example custom service `CustomServiceImpl` (from sample module [`overriding-service-reference`](https://dev.liferay.com/documents/10184/656312/overriding-service-reference.zip))
+The example custom service `CustomServiceImpl` (from sample module 
+[`overriding-service-reference`](https://dev.liferay.com/documents/10184/656312/overriding-service-reference.zip))
 implements service interface `SomeService`, declares itself an OSGi service of
 the `SomeService` service type, and even delegates work to the existing service.
 Examine this example code as you follow the steps for creating your custom
@@ -50,14 +51,14 @@ Here are the steps to create a custom OSGi service:
     references to the service interface:
 
     - Use an `@Component` annotation and `service` attribute to make your 
-    classes a Declarative Services (DS) component. This declares your class to
-    be an OSGi service that can be made available in the OSGi service registry.
-    The example class above is a DS service component of service type
-    `SomeService.class`. 
+      classes a Declarative Services (DS) component. This declares your class
+      to be an OSGi service that can be made available in the OSGi service
+      registry. The example class above is a DS service component of service
+      type `SomeService.class`. 
 
     - Use a `service.ranking:Integer` component property to rank your service 
-    higher than existing services. The `"service.ranking:Integer=100"` property
-    above sets the example's ranking to `100`. 
+      higher than existing services. The `"service.ranking:Integer=100"`
+      property above sets the example's ranking to `100`. 
 
 4.  If you want to invoke the existing service implementation, 
     declare a field that uses a Declarative Services reference to the existing
@@ -77,7 +78,7 @@ Here are the steps to create a custom OSGi service:
     work to the existing service implementation (see previous step). 
 
     The example custom service's `doSomething` method delegates work to the
-    original service implementation.  
+    original service implementation.
 
 6.  Register your custom service with the OSGi runtime framework by
     [deploying your module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#building-and-deploying-a-module).

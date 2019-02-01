@@ -122,7 +122,7 @@ bound to a service component whose fully qualified name is
             component.name = override.my.service.reference.service.impl.SomeServiceImpl
 
 **Copy the `component.name`** so you can reference the service in your 
-[custom service](TODO).
+[custom service](/develop/tutorials/-/knowledge_base/7-1/creating-a-custom-osgi-service).
 
 Here's an example of referencing the service above. 
 
