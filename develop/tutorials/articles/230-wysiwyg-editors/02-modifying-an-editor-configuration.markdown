@@ -150,6 +150,6 @@ offers for configuration settings.
 
 [Adding New Behavior to an Editor](/develop/tutorials/-/knowledge_base/7-0/adding-new-behavior-to-an-editor)
 
-[Embedding Portlets in Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-0/embedding-portlets-in-themes-and-layout-templates)
+[Embedding Portlets in Themes](/develop/tutorials/-/knowledge_base/7-0/embedding-portlets-in-themes)
 
 [Developing Portlets](/develop/tutorials/-/knowledge_base/7-0/portlets)
