@@ -175,8 +175,7 @@ Now you can install and configure the Solr adapter:
    &rarr; *Server Administration*, and click *Execute* next to the *Reindex all
    search indexes* option.
 
-   ![Figure 1: Once the Solr adapter is installed, you can reindex your @product@
-   data against your Solr server.](../../../images/solr-reindex.png)
+   ![Figure 1: Once the Solr adapter is installed, you can reindex your @product@ data against your Solr server.](../../images/solr-reindex.png)
 
 In production deployments, specify your edits to the Solr adapter's default
 configurations using a configuration file deployed to the `Liferay_Home/osgi/configs`
@@ -188,8 +187,7 @@ During testing and development, the System Settings app in @product@'s Control
 Panel &rarr; Configuration section is convenient for editing the default
 configurations.
 
-![Figure 2: You can configure Solr from @product@'s System Settings application.
-This is most useful during development and testing.](../../../images/solr-system-settings.png)
+![Figure 2: You can configure Solr from @product@'s System Settings application. This is most useful during development and testing.](../../images/solr-system-settings.png)
 
 ## High Availability with SolrCloud [](id=high-availability-with-solrcloud)
 
