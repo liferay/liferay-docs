@@ -8,11 +8,7 @@ absolutely necessary.**
 The following app servers should be used for Ext plugin development in
 @product@:
 
-- Tomcat 8.0
-
-<!--
-TODO: What app servers are supported for Ext plugins?
--->
+- Tomcat 9.0
 
 In most cases, Ext plugins are not necessary. There are, however, certain cases
 that require the use of an Ext plugin. Liferay only supports the following Ext
@@ -29,80 +25,6 @@ plugin use cases:
 - Modifying @product@'s `web.xml` file.
 - Adding to @product@'s `web.xml` file.
 
-$$$
-
-Ext plugins are powerful tools used to extend @product@. They, however, increase
-the complexity of your @product@ instance and are not recommended unless there
-is absolutely no other way to accomplish your task. @product-ver@ provides many
-extension points that let you customize almost every detail of @product@. If
-there's a way to customize what you want with an extension point, do it that way
-instead. See the
-[More Extensible, Easier to Maintain](/develop/tutorials/-/knowledge_base/7-1/benefits-of-liferay-7-for-liferay-6-developers#more-extensible-easier-to-maintain)
-section for more details on the advantages of using @product@'s extension
-points.
-
-Before deciding to use an Ext plugin, weigh the cost. Ext plugins let you use
-internal APIs and even let you overwrite @product@ core files. This puts
-your deployment at risk of being incompatible with security, performance, or
-feature updates released by Liferay. When upgrading to a new version of
-@product@ (even if it's a maintenance version or a service pack), you have to
-review all changes and manually modify your Ext plugin to merge your changes
-with @product@'s. Additionally, Ext plugins aren't hot deployable. To deploy an	
-Ext plugin, you must restart your server. Additional steps are also required to	
-deploy or redeploy to production systems.
-
-<!-- TODO: Ext plugins are hot deployable now. Make sure this is explained in
-the deployment section. -->
-
-In this tutorial, you'll learn how to
-
-- [Create an Ext plugin](#creating-an-ext-plugin)
-- [Develop an Ext plugin](#developing-an-ext-plugin)
-- [Deploy an Ext plugin in Production](#deploying-in-production)
-
-Before diving into creating an Ext plugin, however, first consider if an Ext
-plugin is even necessary at all.
-
-## Making the Decision to Use Ext Plugins [](id=making-the-decision-to-use-ext-plugins)
-
-There are many parts of @product@ that now provide an extension point via OSGi
-bundle. You should follow this three step process to decide whether an Ext
-plugin is necessary:
-
-1.  Find the OSGi extension point that you need. You can follow the
-    [Finding Extension Points](/develop/tutorials/-/knowledge_base/7-1/finding-extension-points)
-    tutorial as a guide.
-
-2.  If an OSGi extension point does not exist, use an Ext plugin.
-
-3.  Research new extension points after every release of @product@. When a new
-    version of @product@ provides the extension point you need, always use the
-    extension point to replace the existing Ext plugin.
-
-So how do you find an OSGi extension point?
-
-Your first step is to examine the custom projects that extend popular @product@
-extension points stored in the
-[Liferay Blade Samples](https://github.com/liferay/liferay-blade-samples)
-repository. For
-more information on these sample projects, see the
-[Liferay Sample Projects](/develop/tutorials/-/knowledge_base/7-1/liferay-sample-projects)
-tutorial. Usable extension points are also documented throughout Liferay's
-Developer Network categorized by the @product@ section involved. For example,
-[Overriding MVC Commands](/develop/tutorials/-/knowledge_base/7-1/overriding-mvc-commands)
-and
-[Customizing the Product Menu](/develop/tutorials/-/knowledge_base/7-1/customizing-the-product-menu)
-are articles describing how to extend a @product@ extension point. Want to
-learn how to
-[customize JSPs](/develop/tutorials/-/knowledge_base/7-1/customizing-jsps)?
-Those processes are documented too!
-
-There are a few corner cases where you may need an Ext plugin to customize a
-part of @product@ that does not provide an extension point. Refer to the top of
-this tutorial for Ext plugin use cases supported by Liferay.
-
-+$$$
-
 **Note:** In previous versions of Liferay Portal, you needed an Ext plugin to
 specify classes as portal property values (e.g.,
 `global.starup.events.my.custom.MyStartupAction`), since the custom class had to
@@ -112,40 +34,41 @@ legacy properties.
 
 $$$
 
-Now that you know how to make an informed decision on using Ext plugins, you'll
-learn how to create one next.
+Ext plugins are used to customize @product@'s core functionality. You can learn
+more about what the core encompasses in the
+[Finding Core @product@ Artifacts](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies#finding-core-liferay-portal-artifacts)
+section. In this tutorial, you'll learn how to
+
+- [Create an Ext plugin](#creating-an-ext-plugin)
+- [Develop an Ext plugin](#developing-an-ext-plugin)
+- [Deploy an Ext plugin in Production](#deploying-in-production)
+
+You'll start by creating an Ext plugin.
 
 ### Creating an Ext Plugin
 
 An Ext plugin is a powerful tool for extending @product@. Because it increases		
 the complexity of your @product@ installation, you should only use an Ext plugin		
-if you're sure you can't accomplish your goal in a different way. You can only		
-create Ext plugins from a Plugins SDK. If you're using a		
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)		
-to create your @project@ projects, you can		
-[merge a Plugins SDK instance](/develop/tutorials/-/knowledge_base/7-0/configuring-a-liferay-workspace#using-a-plugins-sdk-from-your-workspace)		
-into the workspace.
+if you're sure you can't accomplish your goal in a different way. You can		
+create Ext plugins using the pre-configured `plugins-ext` project
+template/archetype. See the
+[plugins-ext](/develop/reference/-/knowledge_base/7-1/plugins-ext-template)
+project template article for information on how to create an Ext plugin, its
+folder structure, and other important details.
 
-To create a new Ext plugin from the command line, navigate to the `ext` folder
-in your Liferay Plugins SDK and enter the command below appropriate for your
-operating system. The two arguments after the `create` command are the project
-name and display name, respectively. The examples below use the project name
-*example* and the display name *Example*. Make sure to specify values you want
-to use for your Ext plugin's project name and display name.
+<!-- TODO: Verify new project template (plugins-ext?) name when it's available.
+-->
 
-In Linux or Mac OS, enter:
+It's recommended to create and develop your Ext plugin in a
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace).
+Workspace is preconfigured with an `ext` folder, which applies important
+settings (via the `LiferayExtPlugin`) to your Ext plugin when it's deployed to
+@product@. You'll learn more about this in the next section.
 
-    ./create.sh example "Example"
+<!-- TODO: Finish section once there's more info on template and how we want to
+describe folder structure. -->
 
-In Windows, enter:
-
-    create.bat example "Example"
-
-A `BUILD SUCCESSFUL` message from Ant tells you there's a new folder (e.g.,
-folder `example-ext` for a project named *example*) inside your Plugins SDK's
-`ext` folder. The Plugins SDK automatically appends `-ext` to the project name.
-
-### Anatomy of an Ext Plugin [](id=anatomy-of-an-ext-plugin)
+#### Anatomy of an Ext Plugin [](id=anatomy-of-an-ext-plugin)
 
 There are a few things to note about an Ext plugin's folder structure. Below
 is a listing of an Ext folder structure:
@@ -172,39 +95,38 @@ is a listing of an Ext folder structure:
 Here are detailed explanations of the `/docroot/WEB-INF/` subfolders: 
 
 - `ext-impl/src`: Contains the custom implementation classes and classes that
-override core classes from `portal-impl.jar`. 
+  override core classes from `portal-impl.jar`. 
 
 - `ext-lib/global`: Contains libraries to be copied to the application server's
-global classloader upon deployment of the Ext plugin. 
+  global classloader upon deployment of the Ext plugin. 
 
 - `ext-lib/portal`: Contains libraries to be copied inside Liferay's main 
-application. These libraries are usually necessary because they're invoked from 
-classes you add in `ext-impl/src`. 
+  application. These libraries are usually necessary because they're invoked
+  from  classes you add in `ext-impl/src`. 
 
 - `ext-kernel/src`: Contains classes that should be available to other plugins.
-In advanced scenarios, this folder can be used to hold classes that overwrite
-classes from `portal-kernel.jar`.
-
-- `ext-web/docroot`: Contains the web application's configuration files, including
-`WEB-INF/struts-config-ext.xml`, which lets you customize Liferay's core
-struts classes. Note that for @product-ver@, there are very few entities left to
-override in the `struts-config.xml` file. Any JSPs that you're customizing also
-belong here. 
+  In advanced scenarios, this folder can be used to hold classes that overwrite
+  classes from `portal-kernel.jar`. 
 
 - `ext-util-bridges`, `ext-util-java` and `ext-util-taglib`: These folders are
-needed only in scenarios where you must customize these Liferay
-libraries: `util-bridges.jar`, `util-java.jar` and `util-taglib.jar`,
-respectively. If you're not customizing any of these libraries, you can ignore
-these folders. 
+  needed only in scenarios where you must customize these Liferay libraries:
+  `util-bridges.jar`, `util-java.jar` and `util-taglib.jar`, respectively. If
+  you're not customizing any of these libraries, you can ignore these folders. 
+
+- `ext-web/docroot`: Contains the web application's configuration files,
+  including `WEB-INF/struts-config-ext.xml`, which lets you customize Liferay's
+  core struts classes. Note that for @product-ver@, there are very few entities
+  left to override in the `struts-config.xml` file. Any JSPs that you're
+  customizing also belong here. 
 
 By default, several files are also added to the plugin. Here are the most 
 significant files: 
 
-- `build.xml`: The Ant build file for the Ext plugin project. 
+- `build.gradle`/`pom.xml`: The build file for the Ext plugin project. 
 
-- [`docroot/WEB-INF/liferay-plugin-package.properties`](@platform-ref@/7.0-latest/propertiesdoc/liferay-plugin-package_7_0_0.properties.html):
-Contains plugin-specific properties, including the plugin's display name,
-version, author, and license type. 
+- [`docroot/WEB-INF/liferay-plugin-package.properties`](@platform-ref@/7.1-latest/propertiesdoc/liferay-plugin-package_7_1_0.properties.html):
+  Contains plugin-specific properties, including the plugin's display name,
+  version, author, and license type. 
 
 - `docroot/WEB-INF/ext-web/docroot/WEB-INF` files: 
 
@@ -245,17 +167,18 @@ customize @product@.
 
 An Ext plugin changes @product@ itself when the plugin is deployed; it's not a
 separate component that you can easily remove at any time. For this reason, the
-Ext plugin development process is different from other plugin types. It's
+Ext plugin development process is different from other project types. It's
 important to remember that once an Ext plugin is deployed, some of its files are
 copied *inside* the Liferay installation; the only way to remove the changes is
-by *redeploying* an unmodified Liferay application. You're also responsible for
-checking that patches and fix packs do not conflict with your Ext plugin.
+by *redeploying* an unmodified @product@ application. You're also responsible
+for checking that patches and fix packs do not conflict with your Ext plugin.
 
-The @product-ver@ compatible Plugins SDK is designed to only develop/deploy one
-Ext plugin. This means that all your customizations should live inside one Ext
-plugin. The Plugins SDK does not check for conflicts among multiple Ext plugins
-stored in the `/ext` folder, so do **not** develop/deploy multiple Ext plugins
-at once.
+It's strongly recommended to only develop/deploy one Ext plugin. This means that
+all your customizations should live inside one Ext plugin. Liferay Workspace
+does not check for conflicts among multiple Ext plugins stored in the `/ext`
+folder, so do **not** develop/deploy multiple Ext plugins at once.
+
+<!-- TODO: Verify:
 
 The Plugins SDK lets you deploy and redeploy your Ext plugin during your
 development phase. Redeployment involves *cleaning* (i.e., removing) your
@@ -263,7 +186,7 @@ application server and unzipping your specified Liferay bundle to start from
 scratch. That way, any changes made to the Ext plugin during development are
 properly applied, and files removed from your plugin by previous changes aren't
 left behind in the @product@ application. Because of this added complexity, you
-should use another plugin type to accomplish your goals whenever possible. 
+should use another plugin type to accomplish your goals whenever possible. -->
 
 Before digging in to the details, here's an overview of the Ext plugin
 development processes described below: 
@@ -280,35 +203,18 @@ It's time to learn each step of the development process.
 
 ### Set Up the Build Environment [](id=set-up-the-build-environment)
 
-<!-- TODO: Liferay Workspace mentions for build environment. -->
+If you're leveraging
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace),
+you should put your Ext module project in the `/ext` folder (default); you can
+specify a different Ext folder name in workspace's `gradle.properties` by adding
 
-Before deploying an Ext plugin, you must edit the `build.[username].properties`
-file in the root folder of your Plugins SDK. If the file doesn't yet exist,
-create it now. Substitute `[username]` with your user ID on your computer.
-Once you've opened your build properties file, add the following
-properties--make sure the individual paths reflect the right locations on your
-system: 
+    liferay.workspace.ext.dir=EXT_DIR
 
-    ext.work.dir=[work]
+If you are developing an Ext module project in standalone mode (not associated
+with Liferay Workspace), you must declare the Ext Gradle plugin in your
+`build.gradle`:
 
-    app.server.dir=[work]/liferay-ce-portal-[version]/[app server]
-
-    app.server.zip.name=[...]/liferay-ce-portal-[app server].zip
-
-Your `app.server.zip.name` property must specify the path to your @product@
-`.zip` file. The `work` folder you specify for the `ext.work.dir` property is
-where you've unzipped your @product@ runtime. The `app.server.dir` property must
-point to your application server's directory in your work folder. Look in your
-@product@ bundle at the path to the application server to determine the value to
-use for your `app.server.dir` property. 
-
-For example, if your work folder is `C:/work`, specify it as your
-`ext.work.dir` property's value. If your @product@ bundle `.zip` file is
-`C:/downloads/liferay-ce-portal-tomcat-7.0-ga4-[timestamp].zip`, set the
-`app.server.zip.name` property to that file's path. If the *relative path* to
-the application server *within* the @product@ bundle `.zip` file is
-`liferay-ce-portal-7.0-ga4\tomcat-8.0.32`, specify an `app.server.dir` property
-value `C:/work/liferay-ce-portal-7.0-ga4/tomcat-8.0.32`. 
+    apply plugin: 'com.liferay.ext.plugin'
 
 Next you'll modify the Ext plugin you created and deploy it. 
 
@@ -436,7 +342,7 @@ Now that you've learned the basics of Ext plugin development, you'll look at
 some advanced customizations.
 
 -->
-<!--
+
 ### Using Advanced Configuration Files [](id=using-advanced-configuration-files)
 
 @product@ uses several internal configuration files for its own architecture; in
@@ -492,98 +398,3 @@ to the original file in @product@:
 
 You'll learn how to deploy your Ext plugin in production next.
 
--->
-<!--
-
-## Deploying in Production [](id=deploying-in-production)
-
-Often, you can't use Ant to deploy web applications in production or
-pre-production environments. Additionally, some application servers such as
-WebSphere or WebLogic have their own deployment tools and don't work with
-@product@'s auto-deployment process. Here are two methods to consider for
-deploying and redeploying an Ext plugin in production. 
-
-### Method 1: Redeploying Liferay's Web Application [](id=method-1-redeploying-liferays-web-application)
-
-You can use this method in any application server that supports auto-deployment;
-What's the benefit? The only artifact that needs to be transferred to the
-production system is your Ext plugin's `.war` file, produced using the `ant war`
-target. This `.war` file is usually small and easy to transport. Execute these
-steps on the server: 
-
-1.  Redeploy @product@:
-
-    If this is your first time deploying your Ext plugin to this server, skip
-    this step. Otherwise, start by executing the same steps you first used to
-    deploy @product@ on your app server. If you're using a bundle, unzip it
-    again. If you installed @product@ manually on an existing application
-    server, you must redeploy the @product@ `.war` file and copy both the
-    libraries required globally by @product@ and your Ext plugin to the
-    appropriate folder within the application server. 
-
-2.  Copy the Ext plugin `.war` into the auto-deploy folder. For a bundled
-    @product@ distribution, the `deploy` folder is in Liferay's *root* folder of
-    your bundle (e.g., `liferay-ce-portal-[version]/`).
-
-3.  Once the Ext plugin is detected and deployed by @product@, restart your
-    @product@ server. 
-
-### Method 2: Generate an Aggregated WAR File [](id=method-2-generate-an-aggregated-war-file)
-
-Some application servers don't support auto-deploy; WebSphere and WebLogic are
-two examples. With an aggregated `.war` file, the Ext plugin is merged before
-deployment to production. A single `.war` file then contains @product@ plus the
-changes from your Ext plugin. Before you deploy the aggregated @product@
-`.war` file, copy the dependency `.jar` files for @product@ and your Ext plugin
-to the global application server class loader in the production server. The
-precise location varies from server to server; refer to
-[Deployment](/discover/deployment) to get the details for your application
-server. 
-
-To create the aggregated `.war` file, deploy the Ext plugin first to the
-@product@ bundle you are using in your development environment. Once it's
-deployed, restart the server so that the plugin is fully deployed and shut it
-down again. Now the aggregated file is ready. 
-
-Create a `.war` file by zipping the Liferay web application folder from within
-the app server. Copy into your application server's global classpath all of the
-libraries on which your Ext plugin depends. 
-
-Now, perform these actions on your server: 
-
-1.  Redeploy @product@ using the aggregated `.war` file. 
-
-2.  Stop the server and copy the new version of the global libraries to the
-    appropriate directory in the application server. 
-
-Next, you'll learn about Liferay's licensing and contributing standards.
-
--->
-
-## Licensing and Contributing [](id=licensing-and-contributing)
-
-@product@ is Open Source software licensed under the 
-[LGPL 2.1 license](http://www.gnu.org/licenses/lgpl-2.1.html).
-If you reuse any code snippet and redistribute it, whether publicly or to a
-specific customer, make sure your modifications are compliant with the license.
-One common way is to make the source code of your modifications are available to
-the community under the same license. Make sure you read the license text
-yourself to find the option that best fits your needs. 
-
-If your goal in making changes is fixing a bug or improving @product@, it could
-be of interest to a broader audience. Consider contributing it back to the
-project. That benefits all users of the product including you, since you won't
-have to maintain the changes with each newly released version of @product@. You
-can notify Liferay of bugs or improvements at
-[issues.liferay.com](http://issues.liferay.com). Check out Liferay's
-[Participation](/participate/contribute-a-feature) information to learn all the
-ways that you can contribute to Liferay projects. 
-
-In summary, an Ext plugin is a powerful way to extend @product@. There are no
-limits to what you can customize, so use it carefully. Before using
-an Ext plugin, see if you can implement all or part of the desired functionality
-through
-[Application Display Templates](/discover/portal/-/knowledge_base/7-1/styling-apps-and-assets)
-or extension points, without introducing the complexity that's inherent with Ext
-plugins. If you need to use an Ext plugin, make your customization as small as
-possible and follow the instructions in this tutorial carefully to avoid issues.
