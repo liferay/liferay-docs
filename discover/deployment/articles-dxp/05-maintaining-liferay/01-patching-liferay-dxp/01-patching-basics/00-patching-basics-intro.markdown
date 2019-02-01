@@ -12,7 +12,8 @@ The latest fixes that patch the core are bundled together weekly into fix packs
 that are provided to all of Liferay's customers. Fix packs include fixes for
 both the core and the applications and modules that ship with @product@. The
 fixes address regressions or obvious bugs and don't require you to make
-additional changes. 
+additional changes. Each fix pack contains all previous fix packs since the last
+service pack. 
 
 Fixes that don't fit these requirements are considered for service packs or hot
 fixes. 
@@ -30,8 +31,10 @@ a short-term fix. Hotfixes can patch the core, the applications, and modules.
 Every tenth fix pack is a service pack, so their frequency varies. Their version
 numbers always end in a zero (e.g., `10`, `20`, etc.). Service packs are built
 on top of the original @product@ release and repackaged with the latest fix
-pack, Patching Tool, and modules. They include the latest patches and updates.
-If starting a new project, always start with the latest service pack. 
+pack, Patching Tool, and modules. Since a service pack is a fix pack, it
+contains all previous fix packs since the last service pack.  Each one includes
+the most recent latest patches and updates. If starting a new project, always
+start with the latest service pack. 
 
 Service packs can also include changes that have these characteristics:
 
