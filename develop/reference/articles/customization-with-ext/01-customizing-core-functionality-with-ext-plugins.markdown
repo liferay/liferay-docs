@@ -41,11 +41,12 @@ section. In this tutorial, you'll learn how to
 
 - [Create an Ext plugin](#creating-an-ext-plugin)
 - [Develop an Ext plugin](#developing-an-ext-plugin)
-- [Deploy an Ext plugin in Production](#deploying-in-production)
+- [Deploy an Ext plugin](#deploying-an-ext-plugin)
+- [Redeploy an Ext plugin](#redeploying-an-ext-plugin)
 
 You'll start by creating an Ext plugin.
 
-### Creating an Ext Plugin
+## Creating an Ext Plugin
 
 An Ext plugin is a powerful tool for extending @product@. Because it increases		
 the complexity of your @product@ installation, you should only use an Ext plugin		
@@ -63,15 +64,15 @@ It's recommended to create and develop your Ext plugin in a
 [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace).
 Workspace is preconfigured with an `ext` folder, which applies important
 settings (via the `LiferayExtPlugin`) to your Ext plugin when it's deployed to
-@product@. You'll learn more about this in the next section.
+@product@. You'll learn more about this in the
+[Set Up the Build Environment](#set-up-the-build-environment) section.
 
-<!-- TODO: Finish section once there's more info on template and how we want to
-describe folder structure. -->
+Next you'll learn the anatomy of an Ext plugin.
 
-#### Anatomy of an Ext Plugin [](id=anatomy-of-an-ext-plugin)
+### Anatomy of an Ext Plugin [](id=anatomy-of-an-ext-plugin)
 
-There are a few things to note about an Ext plugin's folder structure. Below
-is a listing of an Ext folder structure:
+There are two ways you can structure your Ext plugin. The `plugins-ext` project
+template/archetype creates the default layout:
 
 - `[project name]-ext/`
     - `docroot/`
@@ -81,7 +82,7 @@ is a listing of an Ext folder structure:
             -  `ext-lib/`
                 - `global/`
                 - `portal/`
-            - `ext-service/`
+            - `ext-kernel/`
                 - `src/`
             - `ext-util-bridges/`
                 - `src/`
@@ -91,22 +92,48 @@ is a listing of an Ext folder structure:
                 - `src/`
             - `ext-web/`
                 - `docroot/`
+                    - `WEB-INF/`
 
-Here are detailed explanations of the `/docroot/WEB-INF/` subfolders: 
+There is also an alternative layout you can follow:
+
+- `[project name]-ext/`
+    - `src/`
+        - `extImpl/`
+            - `resources/`
+        - `extLib/`
+            - `global/`
+            - `portal/` 
+        - `extKernel/`
+            - `resources/`
+        - `extUtilBridges/`
+            - `resources/`
+        - `extUtilJava/`
+            - `resources/`
+        - `extUtilTaglib/`
+            - `resources/`
+        - `main/`
+            - `webapp/`
+                - `WEB-INF/`
+                    - `ext-web/`
+                        - `docroot/`
+
+Although the folder names are slightly different, they work the same. This
+article will refer to the default structure and naming. Here are detailed
+explanations of the subfolders: 
 
 - `ext-impl/src`: Contains the custom implementation classes and classes that
   override core classes from `portal-impl.jar`. 
 
 - `ext-lib/global`: Contains libraries to be copied to the application server's
   global classloader upon deployment of the Ext plugin. 
-
+    
 - `ext-lib/portal`: Contains libraries to be copied inside Liferay's main 
   application. These libraries are usually necessary because they're invoked
-  from  classes you add in `ext-impl/src`. 
+  from classes you add in `ext-impl/src`. 
 
-- `ext-kernel/src`: Contains classes that should be available to other plugins.
-  In advanced scenarios, this folder can be used to hold classes that overwrite
-  classes from `portal-kernel.jar`. 
+- `ext-kernel/src`: Contains classes that should be available to other
+  plugins. In advanced scenarios, this folder can be used to hold classes that
+  overwrite classes from `portal-kernel.jar`. 
 
 - `ext-util-bridges`, `ext-util-java` and `ext-util-taglib`: These folders are
   needed only in scenarios where you must customize these Liferay libraries:
@@ -124,30 +151,33 @@ significant files:
 
 - `build.gradle`/`pom.xml`: The build file for the Ext plugin project. 
 
-- [`docroot/WEB-INF/liferay-plugin-package.properties`](@platform-ref@/7.1-latest/propertiesdoc/liferay-plugin-package_7_1_0.properties.html):
+- [`src/main/webapp/WEB-INF/liferay-plugin-package.properties`](@platform-ref@/7.1-latest/propertiesdoc/liferay-plugin-package_7_1_0.properties.html):
   Contains plugin-specific properties, including the plugin's display name,
   version, author, and license type. 
 
-- `docroot/WEB-INF/ext-web/docroot/WEB-INF` files: 
+- `src/main/webapp/WEB-INF/ext-web/docroot/WEB-INF` files: 
 
-   - `portlet-ext.xml`: Used to overwrite the definition of a build-in portlet.
-     The `portlet.xml` file contains very few portlet configurations in
-     @product-ver@ because portlets were modularized and moved out of core. To
-     override this file, copy the complete definition of the desired portlet
-     from `portlet-custom.xml` in Liferay's source code, then apply the
-     necessary changes.
-   - `liferay-portlet-ext.xml`: This file is similar to `portlet-ext.xml`, but
+    - `liferay-portlet-ext.xml`: This file is similar to `portlet-ext.xml`, but
      is for additional definition elements specific to Liferay. The
      `liferay-portlet.xml` file contains very few definition elements in
      @product-ver@ because portlets were modularized and moved out of core. To
      override the remaining definition elements, copy the complete definition of
      the desired portlet from `liferay-portlet.xml` in Liferay's source code,
      then apply the necessary changes.
-   - `struts-config-ext.xml` and `tiles-defs-ext.xml`: These files are used to
+
+    - `portlet-ext.xml`: Used to overwrite the definition of a build-in portlet.
+     The `portlet.xml` file contains very few portlet configurations in
+     @product-ver@ because portlets were modularized and moved out of core. To
+     override this file, copy the complete definition of the desired portlet
+     from `portlet-custom.xml` in Liferay's source code, then apply the
+     necessary changes.
+
+    - `struts-config-ext.xml` and `tiles-defs-ext.xml`: These files are used to
      customize the struts actions used by core portlets. Since most portlets
      were modularized and moved out of core in @product-ver@, the
      `struts-config.xml` and `tiles-defs.xml` files are sparsely used.
-   - `web.xml`: Used to overwrite web application configurations and servlet
+
+    - `web.xml`: Used to overwrite web application configurations and servlet
      information for @product-ver@.
 
 +$$$
@@ -178,35 +208,23 @@ all your customizations should live inside one Ext plugin. Liferay Workspace
 does not check for conflicts among multiple Ext plugins stored in the `/ext`
 folder, so do **not** develop/deploy multiple Ext plugins at once.
 
-<!-- TODO: Verify:
+You can deploy and redeploy your Ext plugin during your development phase.
+Redeployment involves manually removing the Ext plugin and *cleaning* your
+application server (i.e., remove it ); this is recommended so any changes made
+to the Ext plugin during development are properly applied, and files removed
+from your plugin by previous changes aren't left behind in the @product@
+application. Because of this added complexity, you should use another plugin
+type to accomplish your goals whenever possible. 
 
-The Plugins SDK lets you deploy and redeploy your Ext plugin during your
-development phase. Redeployment involves *cleaning* (i.e., removing) your
-application server and unzipping your specified Liferay bundle to start from
-scratch. That way, any changes made to the Ext plugin during development are
-properly applied, and files removed from your plugin by previous changes aren't
-left behind in the @product@ application. Because of this added complexity, you
-should use another plugin type to accomplish your goals whenever possible. -->
-
-Before digging in to the details, here's an overview of the Ext plugin
-development processes described below: 
-
-- *Configure* your Plugins SDK environment to develop Ext plugins for
-  @product@ on your application server. 
-- *Deploy* and *publish* your Ext plugins for the first time. 
-- *Redeploy* normally or use a *clean redeployment* process after making
-  changes to your Ext plugins.
-- *Package* your Ext plugins for distribution. 
-- A list of advanced customization techniques. 
-
-It's time to learn each step of the development process. 
+Now it's time to set up the build environment. 
 
 ### Set Up the Build Environment [](id=set-up-the-build-environment)
 
 If you're leveraging
 [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace),
-you should put your Ext module project in the `/ext` folder (default); you can
-specify a different Ext folder name in workspace's `gradle.properties` by adding
+you should create/develop your Ext module project in the `/ext` folder
+(default); you can specify a different Ext folder name in workspace's
+`gradle.properties` by adding
 
     liferay.workspace.ext.dir=EXT_DIR
 
@@ -216,132 +234,7 @@ with Liferay Workspace), you must declare the Ext Gradle plugin in your
 
     apply plugin: 'com.liferay.ext.plugin'
 
-Next you'll modify the Ext plugin you created and deploy it. 
-
-## Deploying an Ext Plugin
-
-<!--
-
-### Initial Deployment [](id=initial-deployment)
-
-Your environment is set up and you're ready to start customizing. Once you're
-finished, you can deploy the plugin. 
-
-#### Deploy the Plugin [](id=deploy-the-plugin)
-
-Now you'll learn how to deploy your plugin using Liferay @ide@ or the command
-line. 
-
-##### Deploying via the Command Line [](id=deploying-via-the-command-line)
-
-1.  Open a command line window in your Ext plugin project folder and enter one
-    of these commands: 
-
-        ant deploy
-
-        ant direct-deploy
-
-    The `direct-deploy` target deploys all changes directly to the appropriate
-    folders in the Liferay application. The `deploy` target creates a `.war`
-    file with your changes and then deploys it to your server.  Either way, your
-    server must be restarted after the deployment. Using `direct-deploy` is
-    preferred for deploying an Ext plugin during development if your application
-    server supports it. Direct deploy doesn't work in WebLogic or WebSphere
-    application server environments.
-
-    A `BUILD SUCCESSFUL` message indicates your plugin is now being deployed.
-    Your console window running @product@ shows a message like this:
-
-		    Extension environment for [your project]-ext has been applied. You must
-		    reboot the server and redeploy all other plugins
-
-    If any changes applied through the Ext plugin affect the deployment process
-    itself, you must redeploy all other plugins. Even if the Ext plugin doesn't
-    affect the deployment process, it's a best practice to redeploy all your
-    other plugins following initial deployment of the Ext plugin. 
-
-    The `ant deploy` target builds a `.war` file with your changes and copies
-    them to the auto-deploy folder inside the @product@ installation. When the
-    server starts, it detects the `.war` file, inspects it, and copies its
-    contents to the appropriate destinations inside the deployed and running
-    Liferay application.
-
-2.  Restart the server so that it detects and publishes your Ext plugin. 
-
-    Once your server restarts, open @product@ to see the customizations you
-    made with your Ext plugin.
-    
-Frequently, you'll want to add further customizations to your original Ext
-plugin. You can make unlimited customizations to an Ext plugin that has already
-been deployed, but the redeployment process is different from other project
-types. You'll learn more on redeploying your Ext plugin next.
-
-### Redeployment [](id=redeployment)
-
-So far, Ext plugin development has been similar to the development of other
-plugin types. You've now reached the point of divergence. When the plugin is
-first deployed, some of its files are copied into the @product@ installation.
-After changing an Ext plugin, you'll either *clean redeploy* or *redeploy*,
-depending on the modifications you made to your plugin following the initial
-deployment. You'll learn about each redeployment method and when to use each
-one.
-
-#### Clean Redeployment [](id=clean-redeployment)
-
-If you removed part(s) of your plugin, if there are changes to your plugin that
-can affect plugin deployment, or if you want to start with a clean @product@
-environment, *undeploy* your plugin and *clean* your application server before
-redeploying your Ext plugin. By cleaning the application server, the existing
-@product@ installation is removed and the bundle specified in your Plugins SDK
-environment is unzipped in its place. See the instructions below to learn more
-about this process.
-
-##### Using the Command Line [](id=using-the-command-line)
-
-1.  Stop the @product@ server. 
-
-2.  To deploy your Ext plugin, enter the following commands into your console: 
-
-        cd [your-plugin-ext]
-        ant clean-app-server
-        ant direct-deploy
-
-3.  Start the @product@ server. 
-
-#### Redeployment [](id=redeployment-0)
-
-If you only added to your plugin or made modifications that don't affect the
-plugin deployment process, you can redeploy the Ext plugin. Follow the steps
-based on the tool you're using.
-
-##### Using the Command Line [](id=using-the-command-line-0)
-
-Using the same procedure as for initial deployment. Open a command line window
-in your Ext plugin project's directory and execute either `ant deploy` or `ant
-direct-deploy`.
-
-After your plugin is published to @product@, verify that your customizations are
-available.
-
-Next you'll learn how to package an Ext plugin for distribution and production.
-
-### Distribution [](id=distribution)
-
-Once you're finished developing an Ext plugin, you can package it in a `.war`
-file for distribution and production deployment. 
-
-#### Using the Command Line [](id=using-the-command-line-1)
-
-From your Ext plugin's directory execute
-
-    ant war
-
-The `.war` file is written to your `[liferay-plugins]/dist` directory.
-
-Now that you've learned the basics of Ext plugin development, you'll look at
-some advanced customizations.
-
--->
+Next you'll explore an Ext plugin's advanced configuration files.
 
 ### Using Advanced Configuration Files [](id=using-advanced-configuration-files)
 
@@ -396,5 +289,74 @@ to the original file in @product@:
       for adding applications and the categories in which they're organized.
     - **Original file in @product@:** `portal-web/docroot/WEB-INF/liferay-display.xml`
 
-You'll learn how to deploy your Ext plugin in production next.
+Next you'll deploy your Ext plugin. 
 
+## Deploying an Ext Plugin
+
+Deploying an Ext plugin is similar to deploying any other @product@ project. For
+example, you'll step through deploying an Ext plugin in Liferay Workspace.
+
+1.  From your Ext plugin root folder, run `blade deploy` (Gradle or Maven) or
+    `mvn verify` (Maven only).
+
+    The `deploy` target creates a `.war` file with your changes and then deploys
+    it to your server. A `BUILD SUCCESSFUL` message indicates your plugin is now
+    being deployed. Your console window running @product@ shows a message like
+    this:
+
+        Extension environment for sample-ext has been applied. You must
+        reboot the server and redeploy all other plugins.
+
+2.  Restart the server so that it detects and publishes your Ext plugin. Your
+    server must be restarted after the initial deployment and every
+    redeployment.
+
+    If any changes applied through the Ext plugin affect the deployment process
+    itself, you must redeploy all other plugins. Even if the Ext plugin doesn't
+    affect the deployment process, it's a best practice to redeploy all your
+    other plugins following initial deployment of the Ext plugin. 
+
+    When the server starts, it detects the `.war` file, inspects it, and copies
+    its contents to the appropriate destinations inside @product@.
+
+3.  Once your server restarts, open @product@ to see the customizations you
+    made with your Ext plugin.
+
+Frequently, you'll want to add further customizations to your original Ext
+plugin. You can make unlimited customizations to an Ext plugin that has already
+been deployed, but the redeployment process is different from other project
+types. You'll learn more on redeploying your Ext plugin next.
+
+## Redeploying an Ext Plugin
+
+After editing an Ext plugin, you must follow a slightly different process to
+redeploy your Ext plugin. This section assumes you're redeploying an Ext plugin
+in Liferay Workspace.
+
+1.  Stop the @product@ server. 
+
+2.  Delete your Ext plugin bundle, which resides in your app server's `webapps`
+    folder.
+
+3.  (Optional) If you removed part(s) of your plugin, if there are changes to
+    your plugin that can affect plugin deployment, or if you want to start with
+    a clean @product@ environment, you must **also** clean your application
+    server. You can clean the application server by removing the existing
+    @product@ installation (contents in `/webapps/ROOT`) and replacing it with
+    the contents from the @product@ WAR file.
+
+4.  From your Ext plugin root folder, run `blade deploy` (Gradle or Maven) or
+    `mvn verify` (Maven only).
+
+    The `deploy` target creates a `.war` file with your changes and then deploys
+    it to your server. A `BUILD SUCCESSFUL` message indicates your plugin is now
+    being deployed. Your console window running @product@ shows a message
+    like this:
+
+        Extension environment for sample-ext has been applied. You must
+        reboot the server and redeploy all other plugins.
+
+5.  After your plugin is published to @product@, verify that your customizations
+    are available.
+
+You're all set to create, develop, deploy, and redeploy Ext plugins!

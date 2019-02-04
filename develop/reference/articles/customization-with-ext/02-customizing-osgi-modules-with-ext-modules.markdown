@@ -91,8 +91,8 @@ to learn how.
 
 ## Deploying an Ext Module
 
-Before deploying the sample, you must stop the original bundle you intend to
-override. This is because the Ext sample's generated JAR includes the original
+Before deploying your Ext module, you must stop the original bundle you intend
+to override. This is because an Ext module's generated JAR includes the original
 bundle source plus your modified source files. Follow the instructions below to
 do this:
 
