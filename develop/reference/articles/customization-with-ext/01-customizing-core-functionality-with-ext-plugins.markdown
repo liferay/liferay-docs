@@ -202,6 +202,9 @@ important to remember that once an Ext plugin is deployed, some of its files are
 copied *inside* the Liferay installation; the only way to remove the changes is
 by *redeploying* an unmodified @product@ application. You're also responsible
 for checking that patches and fix packs do not conflict with your Ext plugin.
+Additionally, Ext plugins aren't hot deployable. To deploy an	 Ext plugin, you
+must restart your server. Additional steps are also required to	deploy or
+redeploy to production systems.
 
 It's strongly recommended to only develop/deploy one Ext plugin. This means that
 all your customizations should live inside one Ext plugin. Liferay Workspace

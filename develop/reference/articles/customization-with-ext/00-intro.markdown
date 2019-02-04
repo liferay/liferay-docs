@@ -5,10 +5,10 @@ absolutely necessary.**
 
 There are two types of Ext projects deployable to @product@:
 
-- Ext plugins: used to customize @product@'s core functionality. For example,
+- *Ext plugins*: used to customize @product@'s core functionality. For example,
   overwriting a class in a core artifact like `com.liferay.portal.kernel`.
-- Ext modules: used to customize OSGi modules. For example, overwriting a JSP in
-  in the `com.liferay.login.web` module (see
+- *Ext modules*: used to customize OSGi modules. For example, overwriting a JSP
+  in the `com.liferay.login.web` module (see the
   [Login Web Ext sample](/develop/reference/-/knowledge_base/7-1/login-web-ext)).
 
 Ext projects are powerful tools used to extend @product@'s default core and/or
@@ -28,13 +28,6 @@ feature updates released by Liferay. When upgrading to a new version of
 @product@ (even if it's a maintenance version or a service pack), you have to
 review all changes and manually modify your Ext projects to merge your changes
 with @product@'s.
-
-<!-- TODO: Find more info on deployment/redeployment steps for production
-systems before adding this back. 
-
-Additionally, Ext plugins aren't hot deployable. To deploy an	
-Ext plugin, you must restart your server. Additional steps are also required to	
-deploy or redeploy to production systems.-->
 
 Before diving into Ext projects, first consider if an Ext project is even
 necessary at all.
