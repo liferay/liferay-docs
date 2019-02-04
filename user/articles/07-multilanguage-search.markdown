@@ -1,11 +1,12 @@
 # Searching for Localized Content [](id=searching-for-localized-content)
 
 @product@ supports setting a virtual instance-wide 
-[default language](/discover/portal/-/knowledge_base/7-1/miscellaneous-settings#miscellaneous-display-settings) 
+[default language](/discover/portal/-/knowledge_base/7-1/miscellaneous-settings#miscellaneous-display-settings) <!-- update when available on 7.2-->
 and setting a 
-[site-specific language](/discover/portal/-/knowledge_base/7-1/social-settings-and-languages#languages).
+[site-specific language](/discover/portal/-/knowledge_base/7-1/social-settings-and-languages#languages). <!-- Update to 7.2 when available-->
 In addition, many out of the box assets 
 [support translation](/discover/portal/-/knowledge_base/7-1/other-content-options#localizing-content).
+<!--update link to 7.2 -->
 
 How an asset's fields are indexed in the search engine plays an important role
 in the search behavior experienced by the end User. Not all assets are indexed
@@ -18,9 +19,9 @@ that language.
 In localized search, fields are indexed with a two letter locale appended (for
 example, `en` for English, making a localized title field indexed as
 `title_en`). It's then passed to the proper 
-[language analyzer](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/analysis-lang-analyzer.html) 
+[language analyzer](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/analysis-lang-analyzer.html) 
 in the search engine so that the 
-[analysis](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/analysis.html) 
+[analysis](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/analysis.html) 
 process is performed properly. There are two common approaches.
 
 Fully localized search works like this:
@@ -98,9 +99,9 @@ To see fully localized search in action,
 
     - Title: _What time is it?_
     - Summary: _It's soccer time!_
-    - Content: _That's right, it's time for soccer. The 2018 World Cup recently
-        concluded, and teams all over the U.S. are gearing up for Fall Soccer
-        season. It's never too early to start practicing._
+    - Content: _That's right, it's time for soccer. The 2018 World Cup is behund
+        us, and teams all over the U.S. are gearing up for soccer season. It's
+        never too early to start practicing._
 
 2.  Add a second article:
 
@@ -109,7 +110,7 @@ To see fully localized search in action,
     - Content: _Here are the 10 best teams in the world: 1. The Lunar Resort's
         Club Team, Waxing Crescent FC..._
 
-3.  Add a Portuguese (_pt-BR_) translation of the article:
+3.  Add a Portuguese (_pt-BR_) translation for each field:
 
     - Title: _Qual time de futebol é o melhor de todos os tempos?_
     - Summary: _Existem muitas boas equipes. Qual é o melhor?_
@@ -118,9 +119,13 @@ To see fully localized search in action,
 
 4.  Find a search bar widget and enter _time_ as the keyword.
 
-    The first article is returned, and so is the Portuguese translation of the
+    The first article is returned, and so is the appropriate translation of the
     article about soccer teams (because _time_ in Portuguese translates to the
-    English word _team_).
+    English word _team_). Note that if your search context is English, searching
+    for the word _time_ returns the English translation of the Web Content,
+    which does not itself contain the matched keyword. The Portuguese
+    translation contains the matching keyword, while the English translation is
+    returned for English speaking search Users.
 
 In fully localized search, fields are appended with the proper locale, and even
 fields with a locale other than the User's display context are returned if they
