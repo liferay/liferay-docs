@@ -6,7 +6,7 @@ is a set of powerful APIs that add collaboration features to your apps. For
 example, if your app contains a custom content type, you can use the 
 collaboration suite's social API to enable comments and ratings for that 
 content. You can also integrate your app with the Documents and Media Library, 
-and much, much more. 
+and much more. 
 
 Here are a few of the things you can do with the collaboration suite's APIs. 
 
@@ -20,7 +20,7 @@ Item Selector selects files.
 ![Figure 1: Item Selectors select different kinds of entities.](../../images/item-selector-dialog-02.png)
 
 The Item Selector API provides a framework for you to use, extend, and create 
-Item Selectors in your own apps. 
+Item Selectors in your apps. 
 
 Here are some use cases for the Item Selector API: 
 
@@ -35,9 +35,9 @@ Here are some use cases for the Item Selector API:
 The 
 [Adaptive Media](/discover/portal/-/knowledge_base/7-2/adapting-your-media-across-multiple-devices) 
 app tailors the size and quality of images to the device displaying them. For 
-example, you can configure it to send large, high-resolution images only to 
-devices that can display them. Other devices get images that consume less 
-bandwidth and processing power. 
+example, you can configure Adaptive Media to send large, high-resolution images 
+only to devices that can display them. Other devices get images that consume 
+less bandwidth and processing power. 
 
 By default, Adaptive Media integrates with Documents and Media, Blogs, and Web 
 Content. You can also integrate it with your apps. Adaptive Media contains a 
@@ -52,9 +52,9 @@ adapted images.
 Users interact with content via @product@'s social features. For example, users 
 can provide feedback on content, share that content with others, subscribe to 
 receive notifications, and more. Use the social API to enable such functionality 
-in your own apps. 
+in your apps. 
 
-Here's an example of some functionality you can add to your app via the social 
+Here's an example of some functionality you can add to your apps via the social 
 API: 
 
 **Social Bookmarks:** Share content on social media. You can also create new 
@@ -69,22 +69,22 @@ likes, stars, thumbs, etc.).
 
 ## Documents and Media API
 
-The Documents and Media library stores uploaded files so users can use, manage, 
-and share them. For example, users can embed files in content, organize them in 
-folders, edit and collaborate on them with other users, and more. See the 
+Users can use, manage, and share files in the Documents and Media Library. For 
+example, users can embed files in content, organize them in folders, edit and 
+collaborate on them with other users, and more. See the 
 [user guide](/discover/portal/-/knowledge_base/7-2/managing-documents-and-media) 
-for more information on the Documents and Media library's features. 
+for more information on the Documents and Media Library's features. 
 
-A powerful API underlies the Documents and Media library's functionality. You 
-can leverage this API in your own apps. For example, you could create an app 
-that uploads files to the Documents and Media Library. Your app could even 
-update, delete, and copy files. 
+A powerful API underlies the Documents and Media Library's functionality. You 
+can leverage this API in your apps. For example, you could create an app that 
+uploads files to the Documents and Media Library. Your app could even update, 
+delete, and copy files. 
 
 Here's an example of some things you can do with the Documents and Media API: 
 
--   Create files, folders, and shortcuts
--   Delete entities
--   Update entities
--   Check out files for editing, and check them back in
--   Copy and move entities
--   Get entities
+-   Create files, folders, and shortcuts.
+-   Delete entities.
+-   Update entities.
+-   Check out files for editing, and check them back in.
+-   Copy and move entities.
+-   Get entities.
