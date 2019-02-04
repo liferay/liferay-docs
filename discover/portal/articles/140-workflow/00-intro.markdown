@@ -61,7 +61,6 @@ the `com.liferay.workflow.kaleo.runtime.impl-[version].jar`. The definitions are
 in the `META-INF/definitions` folder (see the diagrams
 [here](/develop/tutorials/-/knowledge_base/6-2/designing-a-kaleo-workflow-definition)).
 
-
 <!-- Do you need a real life example to convince you that workflow is
 important? Grab a cup of coffee and settle in. Story about ancient Greek
 philosophers (web sites) competing rhetorically for followers and financial

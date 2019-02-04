@@ -9,7 +9,33 @@ But that's just the beginning of workflow management.
 
 - Because workflow definitions are XML files, they're portable. Thus, they can also be uploaded. 
 
-Start by learning basic workflow management.
+Start by learning about the permissions for editing and publishing workflow
+definitions.
+
+## Workflow Definition Publication Permissions
+
+When a User has permission to edit or publish a workflow definition,
+they can also add 
+[scripts](/discover/portal/-/knowledge_base/7-1/leveraging-the-script-engine-in-workflow) 
+to the workflow. This gives Users with permission to publish workflows access to
+the Java Virtual Machine (JVM) of the server. A User can publish a workflow
+definition containing a script that grants them access to any data within the
+reach of the JVM, such as data contained in a separate 
+[Virtual Instance](/discover/portal/-/knowledge_base/7-1/virtual-instances) 
+of @product@ itself. 
+
+Because of this far-reaching access, permission to create or edit workflow
+definitions is limited to the Omni Admin User (_Test Test_ if you haven't yet
+changed the default User) by default. 
+
+To grant any User with Regular Administrator role the ability to publish or edit
+workflow definitions,
+
+1.  Make sure you understand the access you're granting these admins.
+2.  Navigate to Control Panel &rarr; System Settings &rarr; Workflow &rarr;
+    Workflow Definition. 
+3.  Check the box for the setting _Allow Administrators to Publish and Edit
+    Workflows_.
 
 ## Adding, Editing, and Deleting [](id=adding-editing-and-deleting)
 
