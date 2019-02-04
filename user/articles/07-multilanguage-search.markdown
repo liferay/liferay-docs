@@ -99,7 +99,7 @@ To see fully localized search in action,
 
     - Title: _What time is it?_
     - Summary: _It's soccer time!_
-    - Content: _That's right, it's time for soccer. The 2018 World Cup is behund
+    - Content: _That's right, it's time for soccer. The 2018 World Cup is behind
         us, and teams all over the U.S. are gearing up for soccer season. It's
         never too early to start practicing._
 
