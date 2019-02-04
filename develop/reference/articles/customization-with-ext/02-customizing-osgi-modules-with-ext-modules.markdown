@@ -1,4 +1,4 @@
-# Customizing OSGi Modules with Ext Modules
+# Customizing OSGi Modules with Ext Modules [](id=customizing-osgi-modules-with-ext-modules)
 
 An Ext module is a powerful tool for extending @product@'s OSGi modules. For
 example, if you want to overwrite a default module's JSP to display a different
@@ -40,7 +40,7 @@ Great! You know how to create an Ext module and are familiar with its folder
 structure and most significant files. Next, you'll learn how to develop your Ext
 module to customize @product@. 
 
-## Developing an Ext Module
+## Developing an Ext Module [](id=developing-an-ext-module)
 
 You can create your own Ext module project by
 
@@ -89,7 +89,7 @@ is done by the `buildCSS` task.
 Once you're finished developing your Ext module, you must deploy it. Continue on
 to learn how.
 
-## Deploying an Ext Module
+## Deploying an Ext Module [](id=deploying-an-ext-module)
 
 Before deploying your Ext module, you must stop the original bundle you intend
 to override. This is because an Ext module's generated JAR includes the original

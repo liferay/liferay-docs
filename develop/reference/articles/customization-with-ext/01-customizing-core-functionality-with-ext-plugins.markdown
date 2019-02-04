@@ -1,4 +1,4 @@
-# Customizing Core Functionality with Ext Plugins
+# Customizing Core Functionality with Ext Plugins [](id=customizing-core-functionality-with-ext-plugins)
 
 +$$$
 
@@ -46,7 +46,7 @@ section. In this tutorial, you'll learn how to
 
 You'll start by creating an Ext plugin.
 
-## Creating an Ext Plugin
+## Creating an Ext Plugin [](id=creating-an-ext-plugin)
 
 An Ext plugin is a powerful tool for extending @product@. Because it increases		
 the complexity of your @product@ installation, you should only use an Ext plugin		
@@ -58,6 +58,7 @@ project template article for information on how to create an Ext plugin, its
 folder structure, and other important details.
 
 <!-- TODO: Verify new project template (plugins-ext?) name when it's available.
+Also fix link.
 -->
 
 It's recommended to create and develop your Ext plugin in a
@@ -271,7 +272,7 @@ to the original file in @product@:
       to configure appenders for log file location, naming, and rotation. See
       the
       [Log4j XML Configuration Primer](https://wiki.apache.org/logging-log4j/Log4jXmlFormat). 
-      [Increasing or decreasing the log level of a class or class hierarchy](/develop/tutorials/-/knowledge_base/7-1/adjusting-plugin-logging)
+      [Increasing or decreasing the log level of a class or class hierarchy](/develop/tutorials/-/knowledge_base/7-1/adjusting-module-logging)
       is best done outside of an Ext plugin, in @product@'s' UI or a Log4j XML
       file in a module or the `osgi/log4j` folder. 
     - **Original file in Liferay:** `portal-impl/src/META-INF/portal-log4j.xml`
@@ -294,7 +295,7 @@ to the original file in @product@:
 
 Next you'll deploy your Ext plugin. 
 
-## Deploying an Ext Plugin
+## Deploying an Ext Plugin [](id=deploying-an-ext-plugin)
 
 Deploying an Ext plugin is similar to deploying any other @product@ project. For
 example, you'll step through deploying an Ext plugin in Liferay Workspace.
@@ -330,7 +331,7 @@ plugin. You can make unlimited customizations to an Ext plugin that has already
 been deployed, but the redeployment process is different from other project
 types. You'll learn more on redeploying your Ext plugin next.
 
-## Redeploying an Ext Plugin
+## Redeploying an Ext Plugin [](id=redeploying-an-ext-plugin)
 
 After editing an Ext plugin, you must follow a slightly different process to
 redeploy your Ext plugin. This section assumes you're redeploying an Ext plugin

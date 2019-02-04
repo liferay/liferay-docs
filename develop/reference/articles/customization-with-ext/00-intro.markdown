@@ -1,4 +1,4 @@
-# Customization with Ext
+# Customization with Ext [](id=customization-with-ext)
 
 **Customization with Ext projects is deprecated and should only be used if
 absolutely necessary.**
@@ -32,7 +32,7 @@ with @product@'s.
 Before diving into Ext projects, first consider if an Ext project is even
 necessary at all.
 
-## Making the Decision to Use Ext Projects
+## Making the Decision to Use Ext Projects [](id=making-the-decision-to-use-ext-projects)
 
 There are many parts of @product@ that now provide an extension point via OSGi
 bundle. You should follow this three step process to decide whether an Ext
