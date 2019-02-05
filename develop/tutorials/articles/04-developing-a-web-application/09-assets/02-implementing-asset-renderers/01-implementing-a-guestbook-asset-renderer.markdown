@@ -18,40 +18,15 @@ Follow these steps to create the `GuestbookAssetRenderer` class:
     `guestbook-service` module's `src/main/java` folder. In this package, create
     a `GuestbookAssetRenderer` class that extends @product@'s 
     `BaseJSPAssetRenderer` class. Extending this class gives you a head-start on 
-    implementing the `AssetRenderer` interface. Start with this code: 
-
-        package com.liferay.docs.guestbook.asset;
-
-        import com.liferay.asset.kernel.model.BaseJSPAssetRenderer;
-        import com.liferay.portal.kernel.exception.PortalException;
-        import com.liferay.portal.kernel.exception.SystemException;
-        import com.liferay.portal.kernel.model.LayoutConstants;
-        import com.liferay.portal.kernel.portlet.LiferayPortletRequest;
-        import com.liferay.portal.kernel.portlet.LiferayPortletResponse;
-        import com.liferay.portal.kernel.portlet.PortletURLFactoryUtil;
-        import com.liferay.portal.kernel.security.permission.ActionKeys;
-        import com.liferay.portal.kernel.security.permission.PermissionChecker;
-        import com.liferay.portal.kernel.util.HtmlUtil;
-        import com.liferay.portal.kernel.util.PortalUtil;
-        import com.liferay.portal.kernel.util.StringUtil;
-        import com.liferay.docs.guestbook.constants.GuestbookPortletKeys;
-        import com.liferay.docs.guestbook.model.Guestbook;
-        import com.liferay.docs.guestbook.service.permission.GuestbookPermission;
-        import java.util.Locale;
-        import javax.portlet.PortletRequest;
-        import javax.portlet.PortletResponse;
-        import javax.portlet.PortletURL;
-        import javax.portlet.WindowState;
-        import javax.servlet.http.HttpServletRequest;
-        import javax.servlet.http.HttpServletResponse;
+    implementing the `AssetRenderer` interface: 
 
         public class GuestbookAssetRenderer extends BaseJSPAssetRenderer<Guestbook> {
 
         }
  
-2.  Add the constructor and the guestbook class variable next. Most of the 
-    methods in this class are simply getters that return fields from this 
-    private guestbook object: 
+2.  Add the constructor and the guestbook class variable. Most of the methods in
+    this class are getters that return fields from this private guestbook
+    object: 
       
         public GuestbookAssetRenderer(Guestbook guestbook) {
 
@@ -144,7 +119,7 @@ Follow these steps to create the `GuestbookAssetRenderer` class:
         }
 
     The final method makes several utilities, as well as the `Guestbook`
-    entity, available to @product@ in the `HttpServletRequest` object. 
+    entity, available in the `HttpServletRequest` object. 
 
 5.  Override the `getJspPath` method. This method returns a string that 
     represents the path to the JSP that renders the guestbook asset. When the 
@@ -231,24 +206,6 @@ Follow these steps to create the `GuestbookAssetRenderer` class:
 
 9.  Save the class. 
 
-10. You have an error in your class, because the `guestbook-service` project
-    doesn't have access to the `GuestbookPortletKeys` object that's in the
-    `guestbook-web` project. 
-    
-    It is logical to think this could be corrected by including the project as a
-    dependency in `guestbook-service`'s `build.gradle` file, but that creates a
-    circular dependency. `guestbook-web` already depends on `guestbook-service`,
-    so you can't make `guestbook-service` depend circularly on `guestbook-web`. 
-
-    So now what do you do? 
-
-    Make sure you've opened both `guestbook-api` and `guestbook-web` projects.
-    Drag the `com.liferay.docs.guestbook.portlet.constants` package from the
-    `guestbook-web` project and drop it on the `guestbook-api` project's
-    `src/main/java` folder. Blamo! You fixed the problem. `guestbook-service`
-    depends on `guestbook-api` and implements its interfaces. `guestbook-web`
-    depends on both. Now you have only linear dependencies. 
-
 Next you can create the `AssetRendererFactory` class. 
 
 ## Creating the GuestbookAssetRendererFactory Class [](id=creating-the-guestbookassetrendererfactory-class)
@@ -257,32 +214,7 @@ Follow these steps to create the `GuestbookAssetRendererFactory`:
 
 1.  In the `com.liferay.docs.guestbook.asset` package, create a class called 
     `GuestbookAssetRendererFactory` that extends @product@'s 
-    `BaseAssetRendererFactory` class. Replace its code with this starter code: 
-
-        package com.liferay.docs.guestbook.asset;
-
-        import com.liferay.asset.kernel.model.AssetRenderer;
-        import com.liferay.asset.kernel.model.AssetRendererFactory;
-        import com.liferay.asset.kernel.model.BaseAssetRendererFactory;
-        import com.liferay.docs.guestbook.model.Guestbook;
-        import com.liferay.docs.guestbook.service.EntryLocalService;
-        import com.liferay.docs.guestbook.service.GuestbookLocalService;
-        import com.liferay.docs.guestbook.service.permission.GuestbookPermission;
-        import com.liferay.docs.guestbook.constants.GuestbookPortletKeys;
-        import com.liferay.portal.kernel.util.WebKeys;
-        import com.liferay.portal.kernel.exception.PortalException;
-        import com.liferay.portal.kernel.portlet.LiferayPortletRequest;
-        import com.liferay.portal.kernel.portlet.LiferayPortletResponse;
-        import com.liferay.portal.kernel.security.permission.PermissionChecker;
-        import com.liferay.portal.kernel.theme.ThemeDisplay;
-
-        import javax.portlet.PortletRequest;
-        import javax.portlet.PortletURL;
-        import javax.servlet.ServletContext;
-
-        import org.osgi.service.component.annotations.Component;
-        import org.osgi.service.component.annotations.Reference;
-
+    `BaseAssetRendererFactory` class: 
 
         @Component(immediate = true, 
           property = {"javax.portlet.name=" + GuestbookPortletKeys.GUESTBOOK}, 
@@ -294,10 +226,15 @@ Follow these steps to create the `GuestbookAssetRendererFactory`:
           public GuestbookAssetRendererFactory() {
             setClassName(CLASS_NAME);
             setLinkable(_LINKABLE);
-            setPortletId(GuestbookPortletKeys.GUESTBOOK);
-            setSearchable(true);
-            setSelectable(true);
-          }
+            setPortletId(GuestbookPortletKeys.GUESTBOOK); setSearchable(true);
+            setSelectable(true); 
+          }         
+            
+          private ServletContext _servletContext;
+          private GuestbookLocalService _guestbookLocalService;
+          private static final boolean _LINKABLE = true;
+          public static final String CLASS_NAME = Guestbook.class.getName();
+          public static final String TYPE = "guestbook";
 
     This code contains the class declaration and the constructor. It sets the
     class name it creates an `AssetRenderer` for, a portlet ID, and a boolean
@@ -389,18 +326,12 @@ Follow these steps to create the `GuestbookAssetRendererFactory`:
             public void setServletContext(ServletContext servletContext) {
                     _servletContext = servletContext;
                 }
-                private ServletContext _servletContext;
-
+                
             @Reference(unbind = "-")
                 protected void setGuestbookLocalService(GuestbookLocalService guestbookLocalService) {
                     _guestbookLocalService = guestbookLocalService; 
             }
 
-            private GuestbookLocalService _guestbookLocalService;
-            private static final boolean _LINKABLE = true;
-            public static final String CLASS_NAME = Guestbook.class.getName();
-            public static final String TYPE = "guestbook";
-        }
 
 5.  Organize imports (Ctrl-Shift-O) and save the file. 
 
