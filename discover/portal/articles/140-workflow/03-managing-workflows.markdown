@@ -14,28 +14,35 @@ definitions.
 
 ## Workflow Definition Publication Permissions
 
-When a User has permission to edit or publish a workflow definition,
-they can also add 
-[scripts](/discover/portal/-/knowledge_base/7-1/leveraging-the-script-engine-in-workflow) 
-to the workflow. This gives Users with permission to publish workflows access to
-the Java Virtual Machine (JVM) of the server. A User can publish a workflow
-definition containing a script that grants them access to any data within the
-reach of the JVM, such as data contained in a separate 
+Users with permission to edit or publish workflow definitions can add 
+[Groovy scripts](/discover/portal/-/knowledge_base/7-1/leveraging-the-script-engine-in-workflow) 
+to the workflow. Access to the scripting engine means access to the Java Virtual
+Machine (JVM) of the server. So Users who publish (or edit) workflow definitions
+containing scripts can get access to any data within the reach of the JVM, such
+as data contained in a separate 
 [Virtual Instance](/discover/portal/-/knowledge_base/7-1/virtual-instances) 
 of @product@ itself. 
 
 Because of this far-reaching access, permission to create or edit workflow
-definitions is limited to the Omni Admin User (_Test Test_ if you haven't yet
-changed the default User) by default. 
+definitions is limited to Regular Administrators of the Default Virtual
+Instance. For Liferay DXP customers, Site Administrators who can access the
+Kaleo Designer and Kaleo Forms Admin applications also have the ability to edit
+and publish workflows.
 
-To grant any User with Regular Administrator role the ability to publish or edit
-workflow definitions,
+To grant Users with these roles the workflow publication access in additional
+Virtual Instances,
 
 1.  Make sure you understand the access you're granting these admins.
 2.  Navigate to Control Panel &rarr; System Settings &rarr; Workflow &rarr;
     Workflow Definition. 
 3.  Check the box for the setting _Allow Administrators to Publish and Edit
     Workflows_.
+
+This only applies to Virtual Instances that have been added to the
+system. The Default Virtual Instance provides workflow publication access to
+Regular Administrators (via Control Panel &rarr; Configuration &rarr; Workflow),
+and, if running Liferay DXP, to Site Administrators and others with access to
+the Kaleo Designer and Kaleo Forms Admin applications.
 
 ## Adding, Editing, and Deleting [](id=adding-editing-and-deleting)
 
