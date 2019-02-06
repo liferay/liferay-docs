@@ -356,15 +356,14 @@ this:
 
 Now your guestbook project's entities are fully asset-enabled. To test the
 functionality, add the Asset Publisher portlet to a page and add a few
-guestbooks and guestbook entries. Edit a few of them, too. Then, check the Asset 
-Publisher portlet. The Asset Publisher, by default, dynamically displays assets 
-of any kind from the current site. 
+guestbooks and guestbook entries. Edit a few of them, too. Then check the Asset 
+Publisher portlet. The Asset Publisher dynamically displays assets of any kind
+from the current Site. 
 
 ![Figure 1: After you've implemented and registered your asset renderers for your custom entities, the Asset Publisher can display your entities.](../../../../images/custom-entities-asset-publisher.png)
 
 Confirm that the Asset Publisher displays the guestbooks and guestbook entries
 that you added. 
 
-Great! In the next section, you'll update your portlets' user interfaces to use
-several features of @product@'s asset framework: comments, ratings, tags, 
-categories, and related assets. 
+Great! Next, you'll update your portlets' user interfaces to use several asset
+framework features: comments, ratings, tags, categories, and related assets. 
