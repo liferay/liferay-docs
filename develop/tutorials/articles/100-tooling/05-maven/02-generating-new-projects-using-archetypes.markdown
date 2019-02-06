@@ -33,7 +33,7 @@ Here's a brief list of some popular Maven archetypes provided by Liferay:
 - [Activator](/develop/reference/-/knowledge_base/7-1/activator-template)
 - [Fragment](/develop/reference/-/knowledge_base/7-1/using-the-fragment-template)
 - [MVC Portlet](/develop/reference/-/knowledge_base/7-1/using-the-mvc-portlet-template)
-- [npm Metal.js Portlet](/develop/reference/-/knowledge_base/7-1/npm-metal-js-portlet-template)
+- [npm Angular Portlet](/develop/reference/-/knowledge_base/7-1/npm-angular-portlet-template)
 - [npm React Portlet](/develop/reference/-/knowledge_base/7-1/npm-react-portlet-template)
 - [Panel App](/develop/reference/-/knowledge_base/7-1/panel-app-template)
 - [Portlet Provider](/develop/reference/-/knowledge_base/7-1/portlet-provider-template)

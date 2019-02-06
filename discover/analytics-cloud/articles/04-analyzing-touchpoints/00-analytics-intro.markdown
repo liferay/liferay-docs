@@ -64,7 +64,7 @@ To view detailed metrics for a single page, click a page in the list.
 
 ![Figure 4: Most Page metrics are available in the Overview tab.](../../images/pages-overview.png)
 
-See [Page Analytics](https://github.com/liferay/liferay-docs/blob/master/discover/analytics-cloud/articles/04-analyzing-touchpoints/01-page-analytics.markdown) 
+See [Page Analytics](https://github.com/liferay/liferay-docs/blob/7.1.x/discover/analytics-cloud/articles/04-analyzing-touchpoints/01-page-analytics.markdown) 
 for more information.
 
 ## Finding Asset Data [](id=finding-asset-data)

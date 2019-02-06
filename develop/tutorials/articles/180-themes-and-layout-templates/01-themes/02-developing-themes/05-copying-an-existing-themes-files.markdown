@@ -26,6 +26,13 @@ To kickstart your theme, follow these steps:
     installed themes, themes published on the npm registry, or the classic 
     theme. 
 
+    +$$$
+    
+    **Note:** To globally install a theme, run the `npm link` command from the 
+    theme's root folder. 
+    
+    $$$
+
     ![Figure 2: You can copy files from  globally installed themes.](../../../../images/theme-dev-kickstarting-themes-global-theme.png)
 
 3.  The theme's files are copied into your own theme, jump starting 
