@@ -16,9 +16,9 @@ that language.
 
 ## What is Localized Search? [](id=what-is-localized-search)
 
-In localized search, fields are indexed with a two letter locale appended (for
-example, `en` for English, making a localized title field indexed as
-`title_en`). It's then passed to the proper 
+In localized search, fields are indexed with locale information appended (for
+example, `en_US` for English, making a localized title field indexed as
+`title_en_US`). It's then passed to the proper 
 [language analyzer](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/analysis-lang-analyzer.html) 
 in the search engine so that the 
 [analysis](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/analysis.html) 
@@ -61,7 +61,8 @@ currently limited, and available in the following assets:
 
 Web Content Articles: 
 
-- The `title`, `content`, and `description` fields support fully localized search.
+- The title, content, and description for each Web Content Article support
+    fully localized search.
 
 - At search time, any matching results (with any locale appended) can be
     returned.
@@ -95,7 +96,7 @@ DDM Fields:
 
 To see fully localized search in action,
 
-1.  Add a Basic Web Content article:
+1.  Add a Basic Web Content article in English:
 
     - Title: _What time is it?_
     - Summary: _It's soccer time!_
@@ -103,14 +104,14 @@ To see fully localized search in action,
         us, and teams all over the U.S. are gearing up for soccer season. It's
         never too early to start practicing._
 
-2.  Add a second article:
+2.  Add a second article in English:
 
     - Title: _What is the best soccer team ever?_
     - Summary: _There are many good teams? Which is the best?_
     - Content: _Here are the 10 best teams in the world: 1. The Lunar Resort's
         Club Team, Waxing Crescent FC..._
 
-3.  Add a Portuguese (_pt-BR_) translation for each field:
+3.  Add a Portuguese (_pt-BR_) translation for each field of the second article:
 
     - Title: _Qual time de futebol é o melhor de todos os tempos?_
     - Summary: _Existem muitas boas equipes. Qual é o melhor?_
@@ -140,7 +141,7 @@ To see an example of site-localized search:
 2. Upload it as a Basic Document to the Documents and Media application.
 
 3.  If your site's language is currently set to English, adding this file will
-    append it's content field with the _en_ locale. 
+    append it's content field with the _en\US_ locale. 
 
 4.  Search in the site for the keyword _time_.
 
@@ -162,7 +163,7 @@ To see an example of site-localized search:
 
 8. Search for _time_ in the site's Search Bar again, and now the document is
    returned in the results, because the content field's locale was changed
-   from _en_ to _pt_ when reindexed.
+   from _en\_US_ to _pt\_BR_ when reindexed.
 
    ![Figure 3: Once the field is reindexed with the site's locale, it can be returned as a search result in the site.](../../images/search-site-localized3.png)
 
