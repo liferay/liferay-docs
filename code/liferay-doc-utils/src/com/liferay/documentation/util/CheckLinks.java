@@ -617,8 +617,16 @@ public class CheckLinks {
 			dir = new File("../../" + path + "/articles");
 		}
 
-		File[] dirFiles = dir.listFiles();
 		List<File> articles = new ArrayList<File>();
+
+		if(!dir.exists()) {
+			System.out.println("Warning: Folder " + dir.getPath() + " does not exist. Update"
+					+ " check-links folder paths.");
+			//System.exit(0);
+			return articles;
+		}
+
+		File[] dirFiles = dir.listFiles();
 
 		Queue<File> q = new LinkedList<File>();
 		for (File f : dirFiles) {
