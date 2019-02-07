@@ -72,6 +72,10 @@ public class CheckLinks {
 
 			while ((line = in.readLine()) != null) {
 
+				if (line.contains("](/develop/") && line.contains(PORTAL_VERSION)) {
+					logInvalidUrl(article, in.getLineNumber(), line, false);
+				}
+
 				if (line.contains("](/deployment/") || line.contains("](/developer/") ||
 						line.contains("](/discover/") || line.contains("](/distribute/") ||
 						line.contains("](/web/commerce/") || line.contains("](/user/")) {
