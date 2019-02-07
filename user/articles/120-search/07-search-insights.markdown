@@ -4,7 +4,9 @@
 
 Add the Search Insights Widget to the Search Page to inspect the full query
 string that's constructed by the back-end search code when the User enters a
-keyword. In @product-ver@, an additional feature has been added: the _Explain_
+keyword and the response string returned from the search engine.
+
+In @product-ver@, an additional feature has been added: the _Explain_
 option.
 
 When a search query is processed, results are returned. The concept of
@@ -94,5 +96,5 @@ of the Test Test User, when the searched keyword was simply, _test_:
        ]
     }}]}
 
-Now you're able to see the entire query string and decide whether to enable the
-Explain feature.
+Now you're able to see the entire query string, the response string, and how
+each returned Search Document was scored.
