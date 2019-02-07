@@ -18,8 +18,8 @@ modify the default password policy so that this box becomes usable.
 3.  Deselect the *Change Required* switcher in the Password Changes section. Now
     you can decide whether each user you add must reset his/her password. 
 
-See the article on Password Policies for more information on editing the default
-policy or creating your own.
+See [Password Policies](/discover/tutorials/-/knowledge_base/7-2/password-policies)
+for more information on editing the default policy or creating your own.
 
 ## Adding an Administrative User [](id=adding-an-administrative-user)
 
@@ -52,12 +52,23 @@ certain custom permissions that you'd like all of your portal Users to have, you
 can grant these permissions to the User Role. You can also customize the default
 Roles a new User receives via *Default User Associations*. This is covered in
 the article on 
-[Instance Settings](/discover/portal/-/knowledge_base/7-1/setting-up-a-virtual-instance).
+[Instance Settings](/discover/portal/-/knowledge_base/7-2/setting-up-a-virtual-instance).
 
 $$$
 
 In production, you should always delete or disable the default administrator
 account to secure your portal.
+
+## Gender
+
+To collect data on users' genders, either enable the binary gender field in the
+*Add User* form, or create a 
+[custom field](/discover/portal/-/knowledge_base/7-2/custom-fields)
+that meets your needs.
+
+Enable the binary field by including the following in `portal-ext.properties`:
+
+    `field.enable.com.liferay.portal.kernel.model.Contact.male=true`
 
 ## User Profile Pictures [](id=user-profile-pictures)
 
@@ -89,35 +100,40 @@ human being.
 
 ![Figure 3: If you disable the default initials-based profile picture, this icon is used instead.](../../../images/user-image-not-initials.png)
 
-This is just the default. To override it with your own default image
+This is just the default. To override it with your own default image:
 
 1.  Create at least one image that is a 100x100 px square. Place it somewhere on
-    the application server's classpath.
+    the application server's classpath. For example, in Tomcat you could place
+    it in the `tomcat/webapps/ROOT/WEB-INF/classes` folder. 
 
-2.  Override the values of these 
-[portal properties](https://docs.liferay.com/portal/7.1-latest/propertiesdoc/portal.properties.html):
-     
-        image.default.user.female.portrait=com/liferay/portal/dependencies/user_female_portrait.png
-        image.default.user.male.portrait=com/liferay/portal/dependencies/user_male_portrait.png
+2.  Set the following property in a `portal-ext.properties` file:
+
+        image.default.user.portrait=image-filename-here.png
+
+    This overrides the value of this 
+    [portal property](https://docs.liferay.com/portal/7.2-latest/propertiesdoc/portal.properties.html):
+
+        image.default.user.portrait=com/liferay/portal/dependencies/user_portrait.png
+
+    +$$$
+
+    **NOTE:** If you are using the binary field to collect information on users'
+    genders (see above), then you'll have two default images to override. Set
+    these properties instead:
+
+        image.default.user.female.portrait=image-filename.png
+        image.default.user.male.portrait=image-filename.png
+
+    $$$
 
 3.  Restart the application server.
-
-To make the above work, you must place the new image on the classpath of the
-application server. For example, in Tomcat you could place images in the
-`tomcat/webapps/ROOT/WEB-INF/classes` folder and specify 
-
-    image.default.user.female.portrait=user_female_portrait-override.png
-    image.default.user.male.portrait=user_male_portrait-override.png
-
-in a `portal-ext.properties` file. Once you restart Tomcat, the new default
-images are used in place of the old ones.
 
 +$$$
 
 **Note:** There's a way to adjust which initials are displayed and in what
 order, so you can make the default user icon (with the user initials) work
 for your locale. These settings are configured in a 
-[Language Settings module](/develop/tutorials/-/knowledge_base/7-1/using-liferays-language-settings),
+[Language Settings module](/develop/tutorials/-/knowledge_base/7-2/using-liferays-language-settings),
 so kidnap a friendly developer, give him a cup of coffee, and tell him the
 settings you want to change:
 
