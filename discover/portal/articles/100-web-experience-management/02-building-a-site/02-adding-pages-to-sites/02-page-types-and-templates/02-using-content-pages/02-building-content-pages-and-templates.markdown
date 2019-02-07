@@ -131,5 +131,10 @@ To update a page or template,
     ![Propagate](../../../../../../images/icon-propagate.png))
     
 After you propagate changes, visit any effected pages to verify there were no
-unexpected side effects of the changes. Next you'll learn how to import and
-export Page Fragments.
+unexpected side effects of the changes. Changes to existing `editable` fields 
+will not be propagated since this might overwrite content created in a content 
+page. To force propagation to content in an `editable` field, a developer must 
+change the field ID. Any content created in that field will no longer display 
+in the Content Page when the changes are propagated, but it will remain in the 
+database and can be retrieved using the old ID. Next you'll learn how to import 
+and export Page Fragments.
