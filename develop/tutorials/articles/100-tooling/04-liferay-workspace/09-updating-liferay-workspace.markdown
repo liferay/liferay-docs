@@ -26,6 +26,16 @@ Liferay Workspace is easy; you'll learn how to do it next.
 4.  Execute any Gradle command to initiate the update process for your Workspace
     (e.g., `blade gw tasks`).
 
++$$$
+
+**Note:** The Gradle wrapper provided in a Gradle-based Liferay Workspace must
+be updated if you're migrating from a workspace before version `1.10.14` to the
+latest available version. To update your Gradle wrapper, run
+
+    ./gradlew wrapper --gradle-version=4.10.2
+
+$$$
+
 Awesome! You learned where to check for Liferay Workspace's latest version, how
 to update your Workspace to that version, and how to initiate the update
 process.
