@@ -4,11 +4,11 @@
     <p>Adding Asset Features to Your UI<br>Step 3 of 5</p>
 </div>
 
-Since you already asset-enabled guestbooks at the service layer, guestbook 
-entities can now use @product@'s back-end support for tags and categories. All
-that's left is to enable tags and categories in the UI. In this step, you'll 
-update the Guestbook Admin portlet's `edit_guestbook.jsp` so admins can add,
-edit, or remove tags and categories when adding or updating a guestbook. 
+Since you already asset-enabled guestbooks at the service layer, guestbook
+entities can now support tags and categories. All that's left is to enable them
+in the UI. In this step, you'll update the Guestbook Admin portlet's
+`edit_guestbook.jsp` so administrators can add, edit, or remove tags and
+categories when adding or updating a guestbook. 
 
 ## Enabling Asset Features [](id=enabling-asset-features)
 
@@ -38,11 +38,10 @@ Follow these steps:
 
 3.  Add input fields for tags and categories inside the panel section you just 
     created. Specify the `assetCategories` and `assetTags` types for the 
-    `<aui:input />` tags to tell @product@ that these input tags represent asset
-    categories and asset tags. You can group related input fields together with 
-    an `<aui:fieldset>` tag. @product@ shows the appropriate selectors for tags
-    and categories and displays the tags and categories that have already been 
-    added to the guestbook: 
+    `<aui:input />` tags. These input tags represent asset categories and asset
+    tags. You can group related input fields together with an `<aui:fieldset>`
+    tag. The tags generate the appropriate selectors for tags and categories and
+    displays those that have already been added to the guestbook: 
 
         <aui:fieldset>
         	<liferay-asset:asset-categories-selector className="<%= Guestbook.class.getName() %>" classPK="<%= guestbook %>" />
