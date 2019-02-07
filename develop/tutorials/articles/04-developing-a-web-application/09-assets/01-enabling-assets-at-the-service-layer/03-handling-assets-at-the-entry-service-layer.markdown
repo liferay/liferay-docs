@@ -6,8 +6,8 @@
 
 Now you must update the guestbook entry entity's service methods. In these 
 methods, the calls you'll make to `assetEntryLocalService` and 
-`assetLinkLocalService` are identical to the ones you made in the guestbook 
-entity's service methods. Follow these steps: 
+`assetLinkLocalService` are identical to the ones you made in the guestbook
+entity's service methods, except you're specifying assets for `Entry` entities. 
 
 1.  Open `EntryLocalServiceImpl` and add the asset calls to the `addEntry` 
     method after the resource calls: 
@@ -61,6 +61,5 @@ entity's service methods. Follow these steps:
 
 Excellent! You've asset-enabled your guestbook and guestbook entry entities at
 the service layer. Your next step is to implement asset renderers for these
-entities so they can be fully integrated into @product@'s asset framework.
-Every asset needs an asset renderer class so the Asset Publisher portlet can
-display it.
+entities so they can be fully integrated into the asset framework. Every asset
+needs an asset renderer class so the Asset Publisher portlet can display it.

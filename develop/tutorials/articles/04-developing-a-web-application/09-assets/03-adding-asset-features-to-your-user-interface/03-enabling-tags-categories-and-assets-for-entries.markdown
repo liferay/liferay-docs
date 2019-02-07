@@ -62,8 +62,8 @@ Replace its content with the following code:
                         extended="<%= false %>" id="entryCategorizationPanel" 
                         persistState="<%= true %>" title="categorization">
                                 <aui:fieldset>
-                                   <liferay-asset:asset-categories-selector className="<%= Entry.class.getName() %>" classPK="<%= entry %>" />
-                                   <liferay-asset:asset-tags-selector className="<%= Entry.class.getName() %>" classPK="<%= entry %>" />
+                                   <liferay-asset:asset-categories-selector className="<%= Entry.class.getName() %>" classPK="<%= entryId %>" />
+                                   <liferay-asset:asset-tags-selector className="<%= Entry.class.getName() %>" classPK="<%= entryId %>" />
                                 </aui:fieldset>
                         </liferay-ui:panel>
 

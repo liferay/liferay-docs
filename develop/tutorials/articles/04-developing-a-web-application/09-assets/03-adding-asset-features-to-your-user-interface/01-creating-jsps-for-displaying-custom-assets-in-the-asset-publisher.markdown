@@ -5,10 +5,11 @@
 </div>
 
 Before proceeding, you must tie up a loose end from the previous step. Remember 
-that you implemented `getJspPath` methods in your `GuestbookAssetRenderer` and `EntryAssetRenderer` classes. These methods return paths to the JSPs the Asset 
-Publisher uses to display the assets' full content. The `getJspPath` method of 
-`GuestbookAssetRenderer` returns `"/asset/guestbook/full_content.jsp"`, and 
-the `getJspPath` method of `EntryAssetRenderer` returns 
+that you implemented `getJspPath` methods in your `GuestbookAssetRenderer` and
+`EntryAssetRenderer` classes. These methods return paths to JSPs the Asset
+Publisher uses to display the assets' full content. The `getJspPath` method of
+`GuestbookAssetRenderer` returns `"/asset/guestbook/full_content.jsp"`, and the
+`getJspPath` method of `EntryAssetRenderer` returns
 `"/asset/entry/full_content.jsp"`. It's time to create these JSPs. 
 
 Follow these steps: 
@@ -35,8 +36,8 @@ Follow these steps:
         </dl>
 
     This JSP grabs the guestbook object from the request and displays the
-    guestbook's name. In `GuestbookAssetRenderer`, the `getJspPath` method used 
-    the following to add the `gb_guestbook` request attribute: 
+    guestbook's name. In `GuestbookAssetRenderer`, the `getJspPath` method
+    added the `gb_guestbook` request attribute: 
 
         request.setAttribute("gb_guestbook", _guestbook);
 
@@ -68,9 +69,9 @@ Follow these steps:
                 <dd><%= entry.getMessage() %></dd>
         </dl>
 
-This JSP is almost as simple as the one for guestbooks. The only difference is
-that you're displaying three fields of the guestbook entry entity as opposed to
-one field of the guestbook entity. 
+The only difference in this JSP from the one for guestbooks is that it shows
+three fields of the guestbook entry entity as opposed to one field of the
+guestbook entity. 
 
 Test your new JSPs by clicking a guestbook's or guestbook entry's title in the 
 Asset Publisher. The Asset Publisher renders `full_content.jsp`: 

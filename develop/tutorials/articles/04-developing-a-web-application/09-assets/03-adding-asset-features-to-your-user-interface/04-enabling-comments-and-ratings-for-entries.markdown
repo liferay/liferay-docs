@@ -4,14 +4,11 @@
     <p>Adding Asset Features to Your UI<br>Step 5 of 5</p>
 </div>
 
-@product@'s asset framework lets users comment on and rate assets. As with tags, 
-categories, and related assets, you must update the user interface to expose 
-these features. It's best to separate the page where users comment on and rate 
-assets from the page where users edit assets. You shouldn't have to edit an 
-entry to comment on it; that not only makes no sense, it's a security problem. 
-Comments and ratings should be added in a view mode only. 
-
-Follow these steps to enable comments and ratings on guestbook entries: 
+The asset framework lets users comment on and rate assets. As with tags,
+categories, and related assets, you must update the user interface to expose
+these features. Good application design requires that you have a View page where
+users can rate and comment on assets. Follow these steps to enable comments and
+ratings on guestbook entries: 
 
 1.  Create a new file called `view_entry.jsp` in your `guestbook-web` module 
     project's `/guestbookwebportlet` folder. 
@@ -43,7 +40,7 @@ Follow these steps to enable comments and ratings on guestbook entries:
           AssetEntryLocalServiceUtil.getEntry(Entry.class.getName(), 
           entry.getEntryId());
 
-3.  Next, update the breadcrumb entry with the the current entry's name: 
+3.  Next, update the breadcrumb entry with the current entry's name: 
 
         String currentURL = PortalUtil.getCurrentURL(request);
         PortalUtil.addPortletBreadcrumbEntry(request, entry.getMessage(),
@@ -158,7 +155,7 @@ Next, you'll update the guestbook actions to use the new view.
 
 ## Updating the Entry Actions JSP [](id=updating-the-entry-actions-jsp)
 
-Nothing links to your `view_entry.jsp` page--it's currently orphaned. Fix this 
+Nothing links to your `view_entry.jsp` page---it's currently orphaned. Fix this 
 by adding the *View* option to the Actions Menu. Open the 
 `/guestbookwebportlet/entry_actions.jsp` and find the following line:
 
@@ -179,7 +176,7 @@ Here, you create a URL that points to `view_entry.jsp`. Test this link by
 selecting the *View* option in a guestbook entry's Actions Menu. Then test that 
 comments and ratings work as expected. 
 
-Excellent! You've asset-enabled the guestbook and guestbook entry entities, and 
+Excellent! You've asset-enabled the guestbook and guestbook entry entities and 
 enabled tags, categories, and related assets for both entities. You've also 
 enabled comments and ratings for guestbook entry entities! Great job! 
 

@@ -4,9 +4,8 @@
     <p>Enabling Assets at the Service Layer<br>Step 2 of 3</p>
 </div>
 
-In this section, you'll update the guestbook service layer to use assets. You 
-must update the add, update, and delete methods of your project's 
-`GuestbookLocalServiceImpl`. Follow these steps to do so: 
+Now you'll update the guestbook service layer to use assets. You must update the
+`add`, `update`, and `delete` methods of your project's `GuestbookLocalServiceImpl`:
 
 1.  Open your project's `GuestbookLocalServiceImpl` class and find the 
     `addGuestbook` method. Add the call to add the asset entries below the call 
@@ -32,12 +31,11 @@ must update the add, update, and delete methods of your project's
     asset entry already exists in the database and then takes the appropriate 
     action. If you check the 
     [Javadoc](@platform-ref@/7.1-latest/javadocs/portal-impl/com/liferay/portlet/asset/service/impl/AssetEntryLocalServiceImpl.html) 
-    for @product@'s `AssetEntryLocalServiceUtil.updateEntry`, you'll see that 
-    this method is overloaded. Now, why did you use a version of this method 
-    with such a long method signature? Because there's only one version of 
-    `updateEntry` that takes a `title` parameter (to set the asset entry's 
-    title). Since you want to set the asset title to `guestbook.getName()`, 
-    that's the version you use. 
+    for `AssetEntryLocalServiceUtil.updateEntry`, you'll see that this method is
+    overloaded. Now, why did you use a version of this method with such a long
+    method signature? Because there's only one version of `updateEntry` that
+    takes a `title` parameter (to set the asset entry's title). Since you want
+    to set the asset title to `guestbook.getName()`, that's the version you use. 
 
     Later, you'll update the Guestbook Admin portlet's form for adding 
     guestbooks to allow the selection of related assets, which are stored in the 
