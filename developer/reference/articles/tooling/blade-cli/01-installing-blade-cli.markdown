@@ -8,7 +8,7 @@ instead, follow the instructions for
 [updating Blade CLI](/developer/reference/-/knowledge_base/7-2/updating-blade-cli).
 
 If you need to configure proxy settings for Blade CLI, follow the
-[Installing Blade CLI with Proxy Requirements](/developer/reference/-/knowledge_base/7-2/setting-blade-cli-proxy-requirments)
+[Installing Blade CLI with Proxy Requirements](/developer/reference/-/knowledge_base/7-2/installing-blade-cli-with-proxy-requirements)
 
 Follow the steps below to download and install Blade CLI:
 
