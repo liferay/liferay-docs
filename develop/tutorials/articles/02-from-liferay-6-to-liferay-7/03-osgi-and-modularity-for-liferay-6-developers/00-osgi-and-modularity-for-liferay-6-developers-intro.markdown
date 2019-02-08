@@ -666,13 +666,12 @@ Developers new to OSGi should check out these resources:
     For using OSGi to develop on @product@.
 
 -   [OSGi enRoute](http://enroute.osgi.org/) is a site the OSGi Alliance
-    provides to the OSGi community. These sections are recommended.
+    provides to the OSGi community. Its
+    [Tutorials](https://enroute.osgi.org/Tutorial/)
+    provide hands-on experience with OSGi modules and Declarative Services.
 
-    -   [Documentation](http://enroute.osgi.org/book/210-doc.html): For details
-        on modularity and the OSGi architecture.
-
-    -   [Tutorials](http://enroute.osgi.org/book/150-tutorials.html): For
-        hands-on experience with OSGi modules and Declarative Services.
+-   [OSGi Alliance's Developer](https://www.osgi.org/developer) section
+    explains OSGi's architecture and modularity. 
 
 Developers ready to dive deep into OSGi should read the OSGi specifications.
 They're well-written and provide comprehensive details on all that OSGi offers.
