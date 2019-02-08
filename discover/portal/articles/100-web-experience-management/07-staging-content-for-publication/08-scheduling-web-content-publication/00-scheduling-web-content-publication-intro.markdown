@@ -38,14 +38,19 @@ article.
     the scheduling parameters you've set.
     
 When you set a Display Date for an existing article it does not affect previous 
-versions of the article. If a previous version is published, it will remain the 
+versions of the article. If a previous version is published, it remains the 
 same until the new version is scheduled to display. However, the expiration 
 date affects all versions of the article. Once an article has expired, no 
-version of that article will display.
+version of that article appears.
 
 +$$$
 
-**Tip:** If you want only the latest version of articles to expire, and not every past version, go to *Control Panel* &rarr; *System Settings* &rarr; *Web Content* &rarr; *Virtual Instance Scope* &rarr; *Web Content* and uncheck *Expire All Article Versions Enable*. This will make the previously approved version of an article display if the latest version expires.
+**Tip:** If you want only the latest version of articles to expire, and not
+every past version, go to *Control Panel* &rarr; *Configuration* &rarr; *System
+Settings* &rarr; *Web Content* &rarr; *Virtual Instance Scope* &rarr; *Web
+Content* and uncheck *Expire All Article Versions Enabled*. This makes the
+previously approved version of an article appear if the latest version
+expires.
 
 $$$
 
