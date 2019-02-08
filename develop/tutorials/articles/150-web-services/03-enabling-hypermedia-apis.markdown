@@ -22,7 +22,7 @@ enable them:
     `com.liferay.apio.architect.internal.application.ApioApplication-default.config`. 
     Add this code to the file:
 
-        auth2.scopechecker.type="none"
+        oauth2.scopechecker.type="none"
         auth.verifier.auth.verifier.BasicAuthHeaderAuthVerifier.urls.includes="*"
         auth.verifier.auth.verifier.OAuth2RestAuthVerifier.urls.includes="*"
         auth.verifier.guest.allowed="true"
