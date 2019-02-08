@@ -215,7 +215,7 @@ $$$
 For more information on configuring an Elasticsearch cluster, see the
 documentation on [Elasticsearch Index Settings](https://www.elastic.co/guide/en/elasticsearch/guide/current/_index_settings.html).
 
-## Elasticsearch Connector System Settings, By Operation Mode 
+## Elasticsearch Connector System Settings, By Operation Mode [](id=elasticsearch-connector-system-settings-by-operation-mode)
 
 Some of the settings available for the Elasticsearch connector are applicable
 for only one operation mode (REMOTE or EMBEDDED). Refer to the table below:
@@ -227,28 +227,28 @@ Adapter Setting/Operation Mode | EMBEDDED | REMOTE |
 `indexNamePrefix` | x | x
 `indexNumberOfReplicas*` | x | x
 `indexNumberOfShards*` | x | x
-`bootstrapMlockAll` | x | -
+`bootstrapMlockAll` | x | \-
 `logExceptionsOnly` | x | x
 `retryOnConflict` | x | x
-`discoveryZenPingUnicastHostsPort` | x | -
-`networkHost` | x | -
-`networkBindHost` | x | -
-`networkPublishHost` | x | -
-`transportTcpPort` | x | -
-`transportAddresses` | - | x
-`clientTransportSniff` | - | x
-`clientTransportIgnoreClusterName` | - | x
-`clientTransportPingTimeout*` | - | x
-`clientTransportNodesSamplerInterval` | - | x
-`httpEnabled` | x | -
-`httpCORSEnabled` | x | -
-`httpCORSAllowOrigin` | x | -
-`httpCORSConfigurations` | x | -
+`discoveryZenPingUnicastHostsPort` | x | \-
+`networkHost` | x | \-
+`networkBindHost` | x | \-
+`networkPublishHost` | x | \-
+`transportTcpPort` | x | \-
+`transportAddresses` | \- | x
+`clientTransportSniff` | \- | x
+`clientTransportIgnoreClusterName` | \- | x
+`clientTransportPingTimeout*` | \- | x
+`clientTransportNodesSamplerInterval` | \- | x
+`httpEnabled` | x | \-
+`httpCORSEnabled` | x | \-
+`httpCORSAllowOrigin` | x | \-
+`httpCORSConfigurations` | x | \-
 `additionalConfigurations` | x | x
 `additionalIndexConfigurations` | x | x
 `additionalTypeMappings` | x | x
 `overrideTypeMappings` | x | x
-`syncSearch` | x | -
+`syncSearch` | x | \-
 
 \* **Note:** Available in the Connector to Elasticsearch 6 only.
 
