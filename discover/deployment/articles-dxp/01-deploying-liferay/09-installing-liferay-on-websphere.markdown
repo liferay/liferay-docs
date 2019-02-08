@@ -23,7 +23,7 @@ You should also read the following articles to familiarize yourself with
 @product@'s general installation steps: 
 
 - [Preparing for Install](/discover/deployment/-/knowledge_base/7-1/preparing-for-install)
-- [Installing @product@](/discover/deployment/-/knowledge_base/7-1/installing-product)
+- [Installing @product@](/discover/deployment/-/knowledge_base/7-1/installing-liferay)
 
 Note that the 
 [*Liferay Home* folder](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)

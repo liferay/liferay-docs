@@ -29,5 +29,22 @@ projects in Dev Studio, make sure to follow the methods described above.
 
 $$$
 
+If you're deploying a project using
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace),
+the `watch` Blade CLI task is used to deploy your project. This watches your
+local project and quickly propagates any saved changes to the deployed project.
+With this, project updates are viewable almost instantaneously from your Liferay
+server. For more info on the `watch` task, see the
+[Deploying Projects with Blade CLI](/develop/tutorials/-/knowledge_base/7-1/deploying-projects-with-blade-cli)
+article.
+
++$$$
+
+**Note:** You can deploy standalone projects not residing in a Liferay Workspace
+with the `watch` task by right-clicking the project and selecting *Liferay*
+&rarr; *watch*.
+
+$$$
+
 That's it! Once your project is deployed to the Liferay server, you can verify
 its installation in Dev Studio's Console window.

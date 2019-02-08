@@ -6,7 +6,7 @@ follow the steps below:
 1.  In Dev Studio, go to *Help* &rarr; *Install New Software...*. 
 
 2.  In the *Work with* field, copy in the URL
-    http://releases.liferay.com/tools/ide/latest/updatesite/.
+    http://releases.liferay.com/tools/ide/latest/stable/.
 
 3.  You'll see the Dev Studio components in the list below. Check them off and
     click *Next*.

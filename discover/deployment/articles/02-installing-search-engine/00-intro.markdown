@@ -20,7 +20,7 @@ they work with @product@. In certain cases, you must choose Elasticsearch.
 If you answer _yes_ to either of these questions, you must choose Elasticsearch:
 
 1.  You're using 
-    [@commerce@, Liferay's commerce solution](/web/emporio/documentation/-/knowledge_base/1-0/getting-started).
+    [@commerce@, Liferay's commerce solution](/web/commerce/documentation/-/knowledge_base/1-0/getting-started).
 
 2.  Your custom search code requires the use of the `TermsSetFilter` API or the
     Geolocation APIs that are implemented in the Liferay Connector to

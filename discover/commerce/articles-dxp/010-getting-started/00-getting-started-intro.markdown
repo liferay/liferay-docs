@@ -27,7 +27,7 @@ while customizable widgets make it easy to add common UI elements---such as
 
 @commerce@ is optimized for business-to-business (B2B) transactions, combining
 modern site experiences with features that address B2B needs. 
-[Beryl Customer Portal](/web/commerce/documentation/-/knowledge_base/1-0/beryl-customer-portal)
+[Beryl Customer Portal](/web/commerce/documentation/-/knowledge_base/1-0/customer-portal)
 serves the needs of buyers with approval processes to observe before
 making purchases. When buyers places an order, @commerce@ can send an automated
 email to their managers, prompting them to approve the order so it can be

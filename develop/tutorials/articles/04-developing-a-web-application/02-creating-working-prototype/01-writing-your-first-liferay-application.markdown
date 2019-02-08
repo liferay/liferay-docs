@@ -128,7 +128,7 @@ to be built and deployed.
     (![Add Widget](../../../images/icon-add-app.png)) in the upper right hand 
     corner.
 
-5.  Select *Applications*. In the Applications list, your application should
+5.  Select *Widgets*. In the Applications list, your application should
     appear in the Sample category. Its name is `Guestbook`. 
 
 ![Figure 5: This is the default Liferay home page. It contains the Hello World widget and the initial version of the Guestbook application that you created.](../../../images/default-portlet-application.png)

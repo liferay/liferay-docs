@@ -10,6 +10,7 @@ This is because Themed Views depend on the app or activity theme.
 Each View Set has its own Android theme. These are listed here: 
 
 - **Default View Set:** `default_theme`
+- **Lexicon View Set:** `lexicon_theme`
 - **Material View Set:** `material_theme`
 - **Westeros View Set:** `westeros_theme`
 

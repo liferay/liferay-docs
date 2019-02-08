@@ -1,8 +1,8 @@
 # Updating 6.2 CSS Rules and Imports [](id=updating-6-2-css-rules-and-imports)
 
 @product-ver@ uses Bootstrap 4's CSS rule syntax. Font Awesome icons have also 
-been moved, requiring changes to your imports. If your theme uses the Liferay 
-Themes Node.js SDK, the Gulp `upgrade` task reports automatic CSS updates and 
+been moved, requiring changes to your imports. If your theme uses the Liferay JS 
+Theme Toolkit, the Gulp `upgrade` task reports automatic CSS updates and 
 suggests manual updates. For example, here is part of the task log for the Lunar 
 Resort theme upgrade from 6.2 to 7.0. For each update performed and suggested, 
 the task reports a file name and line number range:
