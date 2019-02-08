@@ -109,6 +109,13 @@ steps for Sync on Windows and Mac are identical.
     specify any unique name and location for the Sync folder. Click *Start 
     Syncing* to begin syncing files. 
 
+    +$$$
+
+    **Note:** Syncing to network drives is not supported because Liferay Sync
+    can't reliably detect local file changes on such drives. 
+
+    $$$
+
     ![Figure 5.20: Specify your local Sync folder's name and location.](../../images/sync-setup-03.png)
 
 4.  Celebrate! You've successfully set up Liferay Sync! Sync congratulates you 
