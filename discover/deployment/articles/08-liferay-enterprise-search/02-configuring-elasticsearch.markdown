@@ -577,6 +577,42 @@ you can read
 [here](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/securing-elasticsearch-with-shield)
 to learn about configuring Shield to secure your Elasticsearch data. 
 
+## Elasticsearch Connector System Settings, By Operation Mode 
+
+Some of the settings available for the Elasticsearch connector are applicable
+for only one operation mode (REMOTE or EMBEDDED). Refer to the table below:
+
+Adapter Setting/Operation Mode | EMBEDDED | REMOTE |
+------------------------------| :----: | :----: |
+`clusterName` | x | x
+`operationMode` | x | x
+`indexNamePrefix` | x | x
+`indexNumberOfReplicas*` | x | x
+`indexNumberOfShards*` | x | x
+`bootstrapMlockAll` | x | \-
+`logExceptionsOnly` | x | x
+`retryOnConflict` | x | x
+`discoveryZenPingUnicastHostsPort` | x | \-
+`networkHost` | x | \-
+`networkBindHost` | x | \-
+`networkPublishHost` | x | \-
+`transportTcpPort` | x | \-
+`transportAddresses` | \- | x
+`clientTransportSniff` | \- | x
+`clientTransportIgnoreClusterName` | \- | x
+`clientTransportPingTimeout*` | \- | x
+`clientTransportNodesSamplerInterval` | \- | x
+`httpEnabled` | x | \-
+`httpCORSEnabled` | x | \-
+`httpCORSAllowOrigin` | x | \-
+`httpCORSConfigurations` | x | \-
+`additionalConfigurations` | x | x
+`additionalIndexConfigurations` | x | x
+`additionalTypeMappings` | x | x
+`overrideTypeMappings` | x | x
+
+\* **Note:** Available in the Connector to Elasticsearch 6 only.
+
 ## Related Topics [](id=related-topics)
 
 [Introduction to Liferay Search](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search)

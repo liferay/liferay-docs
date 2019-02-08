@@ -1,6 +1,8 @@
 #!/bin/sh
 
-classpathDir=$(pwd | sed 's/liferay\-docs.*/liferay\-docs\/lib/')
+scriptPath=$(readlink -f "$0")
+
+classpathDir=$(dirname $(dirname "$scriptPath"))/lib
 
 if [ $# -lt 1 ]; then
 	echo
