@@ -40,6 +40,17 @@
 		</classpath>
 	</taskdef>
 
+	<taskdef name="checkheaders" classname="com.liferay.documentation.util.CheckHeadersTask">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
 	<taskdef name="checkimgssite" classname="com.liferay.documentation.util.CheckImagesTask">
 		<classpath>
 			<fileset dir="${project.dir}/lib" includes="*.jar" />
@@ -137,39 +148,18 @@
 	</target>
 
 	<target name="check-headers" description="Check the headers of Markdown articles found in ${doc.dir}/articles">
-		<java
-			classname="com.liferay.documentation.util.CheckHeaders"
-			classpathref="project.classpath"
-			fork="true"
-			failonerror="true"
-		>
-			<arg value="${doc.dir}"/>
-			<arg value="ce"/>
-		</java>
+		<checkheaders docdir="${doc.dir}" producttype="ce">
+		</checkheaders>
 	</target>
 
 	<target name="check-headers-dist" description="Check the headers of Markdown articles found in ${doc.dir}/articles and ${doc.dir}/articles-dxp">
-		<java
-			classname="com.liferay.documentation.util.CheckHeaders"
-			classpathref="project.classpath"
-			fork="true"
-			failonerror="true"
-		>
-			<arg value="${doc.dir}/${temp.dir}"/>
-			<arg value="dist"/>
-		</java>
+		<checkheaders docdir="${doc.dir}/${temp.dir}" producttype="dist">
+		</checkheaders>
 	</target>
 
 	<target name="check-headers-dxp" description="Check the headers of Markdown articles found in ${doc.dir}/articles">
-		<java
-			classname="com.liferay.documentation.util.CheckHeaders"
-			classpathref="project.classpath"
-			fork="true"
-			failonerror="true"
-		>
-			<arg value="${doc.dir}"/>
-			<arg value="dxp"/>
-		</java>
+		<checkheaders docdir="${doc.dir}" producttype="dxp">
+		</checkheaders>
 	</target>
 
 	<target name="concat-markdown" description="Concatenates the Markdown files in a specific folder for preparation to convert to other formats.">

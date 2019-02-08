@@ -8,23 +8,19 @@ import java.io.LineNumberReader;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Queue;
 import java.util.regex.Pattern;
 
 import org.apache.tools.ant.BuildException;
+import org.apache.tools.ant.Task;
 
-public class CheckHeaders {
+public class CheckHeadersTask extends Task {
 
-	public static void main(String[] args) throws Exception {
-		
-		if (args == null || args.length < 1) {
-			throw new IllegalArgumentException(
-				"Requires 1 argument: ${doc.dir}");
-		}
+	@Override
+	public void execute() throws BuildException {
 
-		String docDir = args[0];
-		String productType = args[1];
+		String docDir = _docdir;
+		String productType = _productType;
 		
 		List<String> dirTypes = new ArrayList<String>();
 		dirTypes.add("");
@@ -122,7 +118,7 @@ public class CheckHeaders {
 
 								in.close();
 
-								throw new Exception(message);
+								throw new BuildException(message);
 							}
 							else if (line.startsWith("<")) {
 
@@ -134,7 +130,7 @@ public class CheckHeaders {
 
 							in.close();
 
-							throw new Exception(message);
+							throw new BuildException(message);
 						}
 					}
 
@@ -143,11 +139,22 @@ public class CheckHeaders {
 					// Throw exception
 
 				} catch (IOException e) {
-					throw new Exception(e.getLocalizedMessage());
+					throw new BuildException(e.getLocalizedMessage());
 				}
 			}
 			
 			System.out.println("Finished checking headers in articles" + dirType);
 		}
 	}
+
+	public void setDocdir(String docdir) {
+		_docdir = docdir;
+	}
+
+	public void setProductType(String productType) {
+		_productType = productType;
+	}
+
+	private String _docdir;
+	private String _productType;
 }
