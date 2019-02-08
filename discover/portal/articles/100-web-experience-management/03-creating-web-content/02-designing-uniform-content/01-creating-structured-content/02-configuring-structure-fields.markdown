@@ -66,11 +66,11 @@ available for Radio and Select fields).
 
 ### Structure Default Values [](id=structure-default-values)
 
-Structure Default Values let you easily fill in values which will be repeated 
-for content created from that structure. You can use Structure Default Values 
-to set defaults for Liferay's standard asset fields (like tags, categories, and 
-related assets) and the content of the structure fields, as well as setting a 
-default template for displaying the structure data.
+You can define Structure Default Values for repeatable values in content created
+from that structure. They can also set defaults for Liferay's standard asset
+fields (like tags, categories, and related assets) and the content of the
+structure fields, while also setting a default template for displaying the
+structure data.
 
 ![Figure 1: You can edit default values via the *Actions* button of the Manage Structures interface.](../../../../../images/structure-actions.png)
 
