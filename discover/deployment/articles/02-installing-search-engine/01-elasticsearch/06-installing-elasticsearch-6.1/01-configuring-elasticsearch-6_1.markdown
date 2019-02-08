@@ -207,4 +207,43 @@ $$$
 For more information on configuring an Elasticsearch cluster, see the
 documentation on [Elasticsearch Index Settings](https://www.elastic.co/guide/en/elasticsearch/guide/current/_index_settings.html).
 
+## Elasticsearch Connector System Settings, By Operation Mode [](id=elasticsearch-connector-system-settings-by-operation-mode)
+
+Some of the settings available for the Elasticsearch connector are applicable
+for only one operation mode (REMOTe or EMBEDDED). Refer to the table below:
+
+Adapter Setting/Operation Mode | EMBEDDED | REMOTE |
+------------------------------| :----: | :----: |
+`clusterName` | x | x
+`operationMode` | x | x
+`indexNamePrefix` | x | x
+`indexNumberOfReplicas*` | x | x
+`indexNumberOfShards*` | x | x
+`bootstrapMlockAll` | x | \-
+`logExceptionsOnly` | x | x
+`retryOnConflict` | x | x
+`discoveryZenPingUnicastHostsPort` | x | \-
+`networkHost` | x | \-
+`networkBindHost` | x | \-
+`networkPublishHost` | x | \-
+`transportTcpPort` | x | \-
+`transportAddresses` | \- | x
+`clientTransportSniff` | \- | x
+`clientTransportIgnoreClusterName` | \- | x
+`clientTransportPingTimeout*` | \- | x
+`clientTransportNodesSamplerInterval` | \- | x
+`httpEnabled` | x | \-
+`httpCORSEnabled` | x | \-
+`httpCORSAllowOrigin` | x | \-
+`httpCORSConfigurations` | x | \-
+`additionalConfigurations` | x | x
+`additionalIndexConfigurations` | x | x
+`additionalTypeMappings` | x | x
+`overrideTypeMappings` | x | x
+`syncSearch` | x | \-
+
+\* **Note:** Available in the Connector to Elasticsearch 6 only.
+
 <a name="footnote1">1</a> This is, of course, a nod to all those fans of [Boaty Mcboatface](http://www.theatlantic.com/international/archive/2016/05/boaty-mcboatface-parliament-lessons/482046). 
+
+

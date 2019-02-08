@@ -59,7 +59,7 @@ To browse the entire list of available fields, inspect the field mappings using
 your search engine's API. 
 
 For Elasticsearch, access the field mappings from your terminal using CURL to
-call the [Get Mapping API](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/indices-get-mapping.html):
+call the [Get Mapping API](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/indices-get-mapping.html):
 
     curl -X GET "localhost:9200/_mapping/LiferayDocumentType"?pretty
 
