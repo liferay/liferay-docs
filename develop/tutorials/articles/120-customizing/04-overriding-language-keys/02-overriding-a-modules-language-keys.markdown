@@ -213,6 +213,15 @@ have the same bundle symbolic name property
 loader component from being targeted, specify an `!` (not) character followed by
 this resource bundle loader's `component.name` property. 
 
++$$$
+
+**Note:** In some instances, there may be another module that is aggregating the
+resource bundle from your targeted resource bundle. To avoid getting a reference
+to another aggregated resource bundle, insert the
+`(!(resource.bundle.aggregate=*))` statement within the `@Reference` annotation.
+
+$$$
+
 The method creates a resource bundle loader that aggregates this module's
 resource bundle loader and the target module's resource bundle loader. The first
 loader's resource bundle is prioritized ahead of the resource bundles that
