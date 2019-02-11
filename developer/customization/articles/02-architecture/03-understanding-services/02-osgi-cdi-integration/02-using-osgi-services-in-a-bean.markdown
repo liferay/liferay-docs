@@ -9,6 +9,7 @@ here's the dependency to use in a Maven `pom.xml` file:
         <dependency>
             <groupId>org.osgi</groupId>
             <artifactId>org.osgi.service.cdi</artifactId>
+            <version>1.0.0</version>
         </dependency>
 
 2.  Obtain and inject the OSGi service by using the 

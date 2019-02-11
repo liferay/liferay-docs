@@ -1,24 +1,27 @@
 # OSGi CDI Integration 
 
-OSGi CDI Integration brings features and capabilities of Contexts and Dependency
-Injection (CDI) to OSGi and makes OSGi services available to beans.  Here's what
-you'll learn how to do:
+[OSGi CDI Integration](https://osgi.org/specification/osgi.enterprise/7.0.0/service.cdi.html)
+brings features and capabilities of
+[Contexts and Dependency Injection (CDI)](http://docs.jboss.org/cdi/spec/2.0/cdi-spec.html)
+to OSGi and makes OSGi services available to beans. Here you'll learn how to:
 
-- Publish CDI beans as OSG services: Register CDI beans as services you can use 
-to customize @product@ components. 
+-   [Publish CDI beans as OSGi services](/developer/customization/-/knowledge_base/7-2/publishing-cdi-beans-as-osgi-services):
+    Register CDI beans as services you can use to customize @product@
+    components. 
 
-- Use OSGi services in beans: Leverage any OSGi service published on @product@ 
-in any bean. 
+-   [Use OSGi services in beans](/developer/customization/-/knowledge_base/7-2/using-osgi-services-in-a-bean):
+    Leverage any OSGi service published on @product@ in any bean. 
 
 The following use cases provide more detail. 
 
 ## Use Case: Registering a CDI bean as an OSGi service 
 
-As a CDI bean developer, you want to use a CDI bean to customize or override an
+As a CDI bean developer, you want to use a CDI bean to provide or override an
 existing OSGi service (e.g., a Liferay service). By implementing the service in
-your bean class and adding the integration's `@Service` annotation to it, you
-register your bean class as providing that OSGi service. In this way,
-service consumers can use your service implementation (i.e., your bean). 
+your bean class and adding the integration's
+`@org.osgi.service.cdi.annotations.Service` annotation to it, you register your
+bean class as providing that OSGi service. In this way, service consumers can
+use your service implementation (i.e., your bean). 
 
 ![Figure 1: OSGi Service Component Runtime (SCR) finds `MyBean` as the best (highest ranked) `S1` service provider and binds it to consumer component `C1`.](../../../../images/injecting-bean-osgi-service.png)
 
