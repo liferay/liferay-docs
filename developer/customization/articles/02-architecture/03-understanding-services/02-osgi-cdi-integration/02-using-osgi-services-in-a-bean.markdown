@@ -1,4 +1,4 @@
-# Using OSGi Services in a Bean 
+# Using OSGi Services in a Bean [](id=using-osgi-services-in-a-bean)
 
 Any bean can use the `@org.osgi.service.cdi.annotations.Reference` annotation to
 inject OSGi services. It's the easiest way for a bean to access an OSGi service. Here's how to do it:

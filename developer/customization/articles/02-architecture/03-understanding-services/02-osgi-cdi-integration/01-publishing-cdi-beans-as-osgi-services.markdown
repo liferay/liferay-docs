@@ -1,11 +1,11 @@
-# Publishing CDI Beans as OSGi Services 
+# Publishing CDI Beans as OSGi Services [](id=publishing-cdi-beans-as-osgi-services)
 
 OSGi CDI Integration lets you publish CDI beans as OSGi services, making them
 accessible via the Liferay's OSGi service registry. Here's how to publish your
 bean as a service:
 
 1.  Add a project dependency on the OSGi CDI Integration artifact. For example, 
-here's the dependency to use in a Maven `pom.xml` file:
+    here's the dependency to use in a Maven `pom.xml` file:
 
         <dependency>
             <groupId>org.osgi</groupId>
@@ -14,7 +14,8 @@ here's the dependency to use in a Maven `pom.xml` file:
         </dependency>
 
 2.  Make your CDI bean implement the service interface you're providing. For 
-example, `ShopImpl` provides the `Shop` service by implementing that interface.
+    example, `ShopImpl` provides the `Shop` service by implementing that
+    interface.
 
         package my.package;
 
@@ -23,7 +24,7 @@ example, `ShopImpl` provides the `Shop` service by implementing that interface.
         }
 
 3.  Annotate your CDI bean class with 
-`@org.osgi.service.cdi.annotations.Service`. 
+    `@org.osgi.service.cdi.annotations.Service`. 
 
         package my.package;
 
@@ -35,7 +36,7 @@ example, `ShopImpl` provides the `Shop` service by implementing that interface.
         }
 
 4.  Deploy the API that defines the service interface, if you haven't deployed 
-it already. 
+    it already. 
 
 5.  Build and deploy your service project bundle. 
 
@@ -50,7 +51,7 @@ For example, here are steps for verifying that a bundle
 1.  Navigate to *Control Panel* &rarr; *Configuration* &rarr; *Gogo Shell*. 
 
 2.  Use the `lb` Gogo command and `grep` (pass in the bundle's symbolic name) to
-find your bundle (and its ID). 
+    find your bundle (and its ID). 
 
     Example command:
 
@@ -63,7 +64,8 @@ find your bundle (and its ID).
     The first column contains the bundle ID.  
 
 3.  Use the `b` Gogo command with your bundle ID to list your bundle's details 
-and verify the bundle includes your service as one of its registered services. 
+    and verify the bundle includes your service as one of its registered
+    services. 
 
     Example command:
         g!: b 924

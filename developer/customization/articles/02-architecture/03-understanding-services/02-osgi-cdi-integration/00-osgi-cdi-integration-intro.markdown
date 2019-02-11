@@ -1,4 +1,4 @@
-# OSGi CDI Integration 
+# OSGi CDI Integration [](id=osgi-cdi-integration)
 
 [OSGi CDI Integration](https://osgi.org/specification/osgi.enterprise/7.0.0/service.cdi.html)
 brings features and capabilities of
@@ -14,7 +14,7 @@ to OSGi and makes OSGi services available to beans. Here you'll learn how to:
 
 The following use cases provide more detail. 
 
-## Use Case: Registering a CDI bean as an OSGi service 
+## Use Case: Registering a CDI bean as an OSGi service [](id=use-case-registering-a-cdi-bean-as-an-osgi-service)
 
 As a CDI bean developer, you want to use a CDI bean to provide or override an
 existing OSGi service (e.g., a Liferay service). By implementing the service in
@@ -28,7 +28,7 @@ use your service implementation (i.e., your bean).
 Once a CDI bean is registered as a service, components can use it as they would
 any other OSGi service. 
 
-## Use Case: Using an OSGi service in a bean 
+## Use Case: Using an OSGi service in a bean [](id=use-case-using-an-osgi-service-in-a-bean)
 
 As a developer, you want use an OSGi service (e.g., one of Liferay's services or
 a third party service published in the service registry). 
@@ -36,4 +36,5 @@ a third party service published in the service registry).
 ![Here Liferay's `UserLocalService` is injected into a bean.](../../../../images/using-a-service-in-a-bean.png) 
 
 These are the most common use cases, but you might have more.  Get started using
-OSGi CDI integration! 
+OSGi CDI integration to
+[publish CDI beans as OSGi services](/developer/customization/-/knowledge_base/7-2/publishing-cdi-beans-as-osgi-services)! 
