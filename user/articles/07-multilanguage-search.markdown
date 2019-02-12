@@ -59,7 +59,7 @@ indexed in the search engine. At this time, no cohesive pan-asset approach to
 indexing assets for localized search exists. Localized search support is
 currently limited, and available in the following assets:
 
-Web Content Articles: 
+### Web Content Articles: [](id=assets-supporting-localized-search_web-content-articles)
 
 - The title, content, and description for each Web Content Article support
     fully localized search.
@@ -67,14 +67,14 @@ Web Content Articles:
 - At search time, any matching results (with any locale appended) can be
     returned.
 
-Categories:
+### Categories: [](id=assets-supporting-localized-search_categories)
 
 - The `name` and `description` fields support fully localized search.
 
 - At search time, any matching results (with any locale appended) can be
     returned.
 
-Document Library File Entries:
+### Documents and Media File Entries: [](id=assets-supporting-localized-search_dm-file-entries)
 
 - The `content` field (which contains the content of an uploaded file) supports
     site-localized search.
@@ -82,9 +82,9 @@ Document Library File Entries:
 - No other fields are indexed with a locale. This means they're always analyzed
     using the default language analyzer.
 
-DDM Fields:
+### Dynamic Data Mapping Fields: [](id=assets-supporting-localized-search_ddm-fields)
 
-- DDM Fields include all form fields created in the Forms application and all
+- Dynamic Data Mapping (aka. DDM) Fields include all form fields created in the Forms application and all
     fields created in Dynamic Data List Data Definitions and Web Content
     Structures. 
 
@@ -94,7 +94,9 @@ DDM Fields:
 
 ## Examples [](id=examples)
 
-To see fully localized search in action,
+To see fully localized search in action refer to the examples below.
+
+### Localized Search for Web Content Articles [](id=examples_localized-search-for-web-content-articles)
 
 1.  Add a Basic Web Content article in English:
 
