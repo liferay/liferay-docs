@@ -44,9 +44,10 @@ local service methods.
 In order to add an entity to the database, you need an ID for the entity.
 Liferay provides a counter service which you call to obtain a unique ID for each
 new entity. It's possible to use the `increment` method of Liferay's
-`CounterLocalService` class, but Service Builder already makes a
-`CounterLocalService` instance available to your app's `*LocalServiceBaseImpl`.
-The `CounterLocalService` instance is injected into a module as an OSGi service:
+[`CounterLocalService`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/counter/kernel/service/CounterLocalService.html)
+class, but Service Builder already makes a `CounterLocalService` instance
+available to your app's `*LocalServiceBaseImpl`. The `CounterLocalService`
+instance is injected into a module as an OSGi service:
 
     @ServiceReference(type=com.liferay.counter.kernel.service.CounterLocalService.class)
     protected com.liferay.counter.kernel.service.CounterLocalService counterLocalService;
@@ -63,8 +64,10 @@ access this `CounterLocalService` instance. See your app's
 have available for use.
 
 You can use either the injected class's `increment` method or you can call
-Liferay's `CounterLocalService`'s `increment` method directly. For example, a
-bookmarks entry is assigned a unique ID like this:
+Liferay's
+[`CounterLocalService`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/counter/kernel/service/CounterLocalService.html)'s
+`increment` method directly. For example, a bookmarks entry is assigned a unique
+ID like this:
 
     long entryId = counterLocalService.increment();
 
@@ -133,4 +136,3 @@ tutorial.
 [Invoking Local Services](/develop/tutorials/-/knowledge_base/7-0/invoking-local-services)
 
 [Creating Remote Services](/develop/tutorials/-/knowledge_base/7-0/creating-remote-services)
-
