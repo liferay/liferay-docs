@@ -169,17 +169,17 @@ These settings (defined above) are only meant to use while configuring the
 embedded Elasticsearch server. Configuring these will elicit no effect on
 remote Elasticsearch installations:
 
-`bootstrapMlockAll`
-`discoveryZenPingUnicastHostsPort`
-`networkHost`
-`networkBindHost`
-`networkPublishHost`
-`transportTcpPort`
-`httpEnabled`
-`httpCORSEnabled`
-`httpCORSAllowOrigin`
-`httpCORSConfigurations`
-`syncSearch`
+- `bootstrapMlockAll`
+- `discoveryZenPingUnicastHostsPort`
+- `networkHost`
+- `networkBindHost`
+- `networkPublishHost` 
+- `transportTcpPort` 
+- `httpEnabled`
+- `httpCORSEnabled` 
+- `httpCORSAllowOrigin` 
+- `httpCORSConfigurations` 
+- `syncSearch`
 
 You can easily configure these settings in the System Setting application, or
 as mentioned above, you can specify them in a deployable OSGi `.config` file.
