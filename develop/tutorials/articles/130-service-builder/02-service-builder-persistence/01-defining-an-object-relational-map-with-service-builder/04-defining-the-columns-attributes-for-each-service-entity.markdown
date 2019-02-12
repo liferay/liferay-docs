@@ -25,6 +25,14 @@ Bookmarks application. However, it's possible to use multiple columns as the
 primary key for an entity. In this case, the combination of columns makes up
 a compound primary key for the entity.
 
++###
+
+**Note:** The
+[Implementing an Add Method](/develop/tutorials/-/knowledge_base/7-1/implementing-an-add-method#generate-a-primary-key)
+article demonstrates how to generate unique primary keys for entity instances. 
+
+###
+
 ## Create Entity Columns [](id=create-entity-columns)
 
 Similar to the way you used the form table for adding entities, add attribute
