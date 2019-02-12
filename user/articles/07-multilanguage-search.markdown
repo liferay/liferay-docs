@@ -61,8 +61,12 @@ currently limited, and available in the following assets:
 
 ### Web Content Articles: [](id=assets-supporting-localized-search_web-content-articles)
 
-- The title, content, and description for each Web Content Article support
+- The `title`, `content`, and `description` fields for each Web Content Article support
     fully localized search.
+    
+    +$$$
+    **Note:** As of @product-ver@ the default (non-localized) version of these fields are not indexed anymore for Web Content Articles, therefore any custom `IndexerPostProcessor`, `ModelDocumentContributor` or `QueryPreFilterContributor` relying on the presence of fields `title`, `content` and `description` must be updated.
+    $$$
 
 - At search time, any matching results (with any locale appended) can be
     returned.
