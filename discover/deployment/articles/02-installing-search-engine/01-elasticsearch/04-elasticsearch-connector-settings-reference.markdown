@@ -1,4 +1,4 @@
-# Elasticsearch Settings [](id=elasticsearch-settings)
+# Elasticsearch Connector Settings Reference [](id=elasticsearch-connector-settings-reference)
 
 Elasticsearch is the default search engine for @product-ver@. The *Liferay
 Foundation* suite includes an adapter for Elasticsearch called *Liferay Connector to
