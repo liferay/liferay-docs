@@ -134,7 +134,7 @@ In fully localized search, fields are appended with the proper locale, and even
 fields with a locale other than the User's display context are returned if they
 contain matches to the searched keyword.
 
-To see an example of site-localized search:
+### Example of Site-localized Search: [](id=examples_site-localized-search)
 
 1.  Create a text file named `search-test.txt` with the following contents: 
 
