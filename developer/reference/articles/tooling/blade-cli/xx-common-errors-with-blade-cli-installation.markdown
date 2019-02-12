@@ -6,12 +6,12 @@ problems.
 
 The following issues are documented:
 
-- [The blade command is not available from my CLI](#the-blade-command-is-not-available-from-my-cli)
+- [The blade command is not available in my CLI](#the-blade-command-is-not-available-in-my-cli)
 - [I can't update my Blade CLI version](#i-cant-update-my-blade-cli-version)
 
 Visit the appropriate section to learn more.
 
-## The blade command is not available from my CLI [](id=the-blade-command-is-not-available-from-my-cli)
+## The blade command is not available in my CLI [](id=the-blade-command-is-not-available-in-my-cli)
 
 The Liferay Project SDK installer attempts to add JPM to your path. For Windows,
 it uses the Windows registry. For Mac/Linux, it updates `.bashrc` or `.zshrc`. 
