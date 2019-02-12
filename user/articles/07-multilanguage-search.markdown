@@ -63,9 +63,16 @@ currently limited, and available in the following assets:
 
 - The `title`, `content`, and `description` fields for each Web Content Article support
     fully localized search.
-    
+
     +$$$
-    **Note:** As of @product-ver@ the default (non-localized) version of these fields are not indexed anymore for Web Content Articles, therefore any custom `IndexerPostProcessor`, `ModelDocumentContributor` or `QueryPreFilterContributor` relying on the presence of fields `title`, `content` and `description` must be updated.
+
+    **Note:** In @product-ver@ the default (non-localized) version of these
+    fields are not indexed for Web Content Articles. Therefore, any custom
+    `IndexerPostProcessor`, `ModelDocumentContributor` or
+    `QueryPreFilterContributor` relying on the presence of fields `title`,
+    `content` and `description` must be updated to use the localized version
+    (e.g., `title_en_US`).
+
     $$$
 
 - At search time, any matching results (with any locale appended) can be
@@ -88,9 +95,9 @@ currently limited, and available in the following assets:
 
 ### Dynamic Data Mapping Fields: [](id=assets-supporting-localized-search_ddm-fields)
 
-- Dynamic Data Mapping (aka. DDM) Fields include all form fields created in the Forms application and all
-    fields created in Dynamic Data List Data Definitions and Web Content
-    Structures. 
+- Dynamic Data Mapping (DDM) Fields include all form fields created in the Forms
+    application and all fields created in Dynamic Data List Data Definitions and
+    Web Content Structures. 
 
 - DDM Fields support fully localized search, with the exception that results can
     only be returned in the current display locale where the search is taking
@@ -98,9 +105,9 @@ currently limited, and available in the following assets:
 
 ## Examples [](id=examples)
 
-To see fully localized search in action refer to the examples below.
+To see localized search in action refer to the examples below.
 
-### Localized Search for Web Content Articles [](id=examples_localized-search-for-web-content-articles)
+### Fully Localized Search for Web Content Articles
 
 1.  Add a Basic Web Content article in English:
 
@@ -138,7 +145,7 @@ In fully localized search, fields are appended with the proper locale, and even
 fields with a locale other than the User's display context are returned if they
 contain matches to the searched keyword.
 
-### Example of Site-localized Search: [](id=examples_site-localized-search)
+### Site-Localized Search for Documents and Media
 
 1.  Create a text file named `search-test.txt` with the following contents: 
 
