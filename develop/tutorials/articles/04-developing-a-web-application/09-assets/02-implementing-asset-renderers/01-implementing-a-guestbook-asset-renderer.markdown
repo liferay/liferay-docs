@@ -217,7 +217,8 @@ Follow these steps to create the `GuestbookAssetRendererFactory`:
 
 1.  In the `com.liferay.docs.guestbook.asset` package, create a class called 
     `GuestbookAssetRendererFactory` that extends @product@'s 
-    `BaseAssetRendererFactory` class: 
+    `BaseAssetRendererFactory` class, and overwrite the generated constructor 
+    with the following: 
 
         @Component(immediate = true, 
           property = {"javax.portlet.name=" + GuestbookPortletKeys.GUESTBOOK}, 
@@ -336,7 +337,8 @@ Follow these steps to create the `GuestbookAssetRendererFactory`:
             }
 
 
-5.  Organize imports (Ctrl-Shift-O) and save the file. 
+5.  Organize imports (Ctrl-Shift-O), selecting the `org.osgi` packages, not 
+    `a.Qute`, when prompted and save the file. 
 
 Great! The guestbook asset renderer is complete. Next, you'll create the entry 
 asset renderer.
