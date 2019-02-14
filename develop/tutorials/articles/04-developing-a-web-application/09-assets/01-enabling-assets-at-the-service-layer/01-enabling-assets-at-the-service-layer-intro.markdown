@@ -42,10 +42,10 @@ layers:
 			<finder-column name="status" />
 		</finder>
 
-3.  Right-click `build.gradle` and select *Gradle* &rarr; *Refresh Gradle
-    Project*. 
-
-4.  Run the `buildService` Gradle task. This task injects the objects referenced above
+3.  Run the `buildService` Gradle task. This task injects the objects referenced above
     into your services for use. 
+
+4.  Right-click `build.gradle` and select *Gradle* &rarr; *Refresh Gradle
+    Project*. 
 
 Great! Next, you'll handle assets in your service layer. 
