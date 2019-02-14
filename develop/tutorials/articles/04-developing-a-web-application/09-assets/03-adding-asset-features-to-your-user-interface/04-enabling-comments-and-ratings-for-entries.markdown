@@ -104,26 +104,45 @@ ratings on guestbook entries:
             id="guestbookCollaborationPanel" persistState="<%=true%>"
             title="Collaboration">
 
-8.  Add the ratings and comments components via the `<liferay-ui:ratings>` and 
-    `<liferay-ui:discussion>` tags, respectively. The latter tag needs an action 
-    URL (in this case, `invokeTaglibDiscussion`) for its `formAction` attribute. 
-    The action URL adds the comment after the user enters a comment and clicks 
-    *Reply*: 
+8.  Add the ratings component with the `<liferay-ui:ratings>` tag:
 
-            <liferay-ui:ratings className="<%=Entry.class.getName()%>"
-              classPK="<%=entry.getEntryId()%>" type="stars" />
+        <liferay-ui:ratings className="<%=Entry.class.getName()%>"
+          classPK="<%=entry.getEntryId()%>" type="stars" />
 
-            <br />
+        <br />
+    
+9.  Next you need to add a scriplet to retrieve the previous comments 
+    discussion:
 
+        <% Discussion discussion = 
+        CommentManagerUtil.getDiscussion(user.getUserId(), 
+        scopeGroupId, Entry.class.getName(), 
+        entry.getEntryId(), new ServiceContextFunction(request));
+        %>
+
+10. And then the tags for displaying the discussion and writing comments. The 
+    latter tag needs an action URL (in this case, `invokeTaglibDiscussion`) for 
+    its `formAction` attribute. The action URL adds the comment after the user 
+    enters a comment and clicks *Reply*: 
+
+        <c:if test="<%= discussion != null %>">
+          <h2>
+            <strong><liferay-ui:message arguments="<%= discussion.getDiscussionCommentsCount() %>" key='<%= (discussion.getDiscussionCommentsCount() == 1) ? "x-comment" : "x-comments" %>' /></strong>
+        
+          </c:if>
             <portlet:actionURL name="invokeTaglibDiscussion" 
             var="discussionURL" />
-
-            <liferay-ui:discussion className="<%=Entry.class.getName()%>"
-              classPK="<%=entry.getEntryId()%>"
-              formAction="<%=discussionURL%>" formName="fm2"
-              ratingsEnabled="<%=true%>" redirect="<%=currentURL%>"
-              userId="<%=entry.getUserId()%>" />
-
+          
+          <liferay-comment:discussion
+            className="<%= Entry.class.getName() %>"
+            classPK="<%= entry.getEntryId() %>"
+            discussion="<%= discussion %>"
+            formName="fm2"
+            ratingsEnabled="<%=true%>"
+            redirect="<%= currentURL %>"
+            userId="<%= entry.getUserId() %>"
+            />
+            
           </liferay-ui:panel>
         </liferay-ui:panel-container>
 

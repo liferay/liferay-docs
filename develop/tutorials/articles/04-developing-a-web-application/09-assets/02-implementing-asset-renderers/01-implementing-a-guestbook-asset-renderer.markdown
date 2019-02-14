@@ -204,7 +204,10 @@ Follow these steps to create the `GuestbookAssetRenderer` class:
             return super.getURLView(liferayPortletResponse, windowState);
           }
 
-9.  Save the class. 
+10.  Organize imports (Ctrl-Shift-O) and save the file. Be sure to use 
+     `com.liferay.petra.*` libraries when prompted, as they are now home
+     to libraries that have been deprecated in Liferay's kernel.
+ 
 
 Next you can create the `AssetRendererFactory` class. 
 
