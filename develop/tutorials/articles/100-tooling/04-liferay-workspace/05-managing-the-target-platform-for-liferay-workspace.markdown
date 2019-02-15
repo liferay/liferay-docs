@@ -128,7 +128,7 @@ To do this, your `build.gradle` file should look similar to this:
         }
         repositories {
             maven {
-                url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+                url "https://repository-cdn.liferay.com/nexus/content/groups/public"
             }
         }
     }
