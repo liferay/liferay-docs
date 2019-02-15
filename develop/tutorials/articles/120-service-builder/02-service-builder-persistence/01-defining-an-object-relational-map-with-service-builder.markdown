@@ -267,6 +267,15 @@ primary key for the entity.
 
 +$$$
 
+**Note:** Each Service Builder generated `*LocalServiceImpl` class has a 
+[`CounterLocalService`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/counter/kernel/service/CounterLocalService.html)
+field for generating unique entity instance primary keys. For details, see
+[Creating Local Services](/develop/tutorials/-/knowledge_base/7-1/creating-local-services). 
+
+$$$
+
++$$$
+
 **Note**: On deploying a `*service` module, Service Builder automatically 
 generates indexes for all entity primary keys. 
 
