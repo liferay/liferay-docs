@@ -73,7 +73,7 @@ labels.
 For example, Figure 1 shows a button that uses Liferay's `publish` default
 language key.
     
-    `publish=Publish`
+    publish=Publish
  
 ![Figure 1: Messages displayed in Liferay's user interface can be customized.](../../images/standard-publish.png)
 
