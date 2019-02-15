@@ -1,22 +1,22 @@
 # Managing user-associated data stored by custom applications
 
-@product-ver@ makes it possible for administrators to delete or
-[anonymize](/discover/portal/-/knowledge_base/7-1/managing-user-data)
-user-associated data (UAD), providing a useful tool for compliance with the EU's
-General Data Protection Regulation (GDPR). Out the box, this tool only works for
+@product-ver@ makes it possible for administrators to [delete or
+anonymize](/discover/portal/-/knowledge_base/7-1/managing-user-data)
+User Associated Data (UAD), providing a useful tool for compliance with the EU's
+General Data Protection Regulation (GDPR). Out of the box, this tool only supports
 Liferay applications (blogs, web content, etc.). This tutorial explains how to
 anonymize data stored by your custom apps as well.
 
-If your app was created using service builder, anonymization is easy.
+If your app was created using Service Builder, anonymization is easy.
 Follow these steps:
 
 1.   Include dependencies on `com.liferay.petra.string` and the
-     `com.liferay.portal.kernel` in your service module's build script.
+     `com.liferay.portal.kernel` in your Service Module's build script.
 
 2.  Identify the fields you want to be able to anonymize in the service module's
     `service.xml` file.
 
-3.  Run service builder. Provide a build script for the `-uad` module that is
+3.  Run Service Builder. Provide a build script for the `-uad` module that is
     generated.
 
 4.  Provide your application's name to the anonymization UI. If you skip this
@@ -40,14 +40,14 @@ module's `build.gradle`:
 
 ## Choose fields to anonymize
 
-Next you must identify fields anonymize by attaching anonymization values to
-columns in the `-service` module's `service.xml` file. There are two ways to do
+Next you must identify fields to anonymize by attaching anonymization attributes to
+elements in the `-service` module's `service.xml` file. There are two ways to do
 this.
 
-- The `uad-anonymize-field-name` value indicates a field whose value is
+- The `uad-anonymize-field-name` attribute indicates a field whose value is
 replaced by that of the anonymous user in the UAD deletion process.
 
-- The `uad-nonanonymizable` value indicates data that cannot be anonymized
+- The `uad-nonanonymizable` attribute indicates data that cannot be anonymized
 automatically and must be reviewed by an administrator.
 
 For example, in the blogs application, `uad-anonymize-field-name="fullName"` is
@@ -68,7 +68,7 @@ UAD.
 
 ## Run Service Builder!
 
-At this point, you're ready to run service builder. This will generate a new
+At this point, you're ready to run Service Builder. This will generate a new
 `-uad` module based on the values you added to `service.xml`. The new module is
 generated without a build script, so you'll need to provide a `build.gradle`.
 It should include dependencies on `kernel`, `Petra`, the `-api` module of the
@@ -128,5 +128,5 @@ it to the second parameter. The end result is that a key from
 `Language.properties` provides the name of the application to the anonymization
 UI---but no additional language keys need to be created or maintained.
 
-That's it! You can now delete or anonymize user-associated data stored by your
+That's it! You can now delete or anonymize User Associated Data stored by your
 app.
