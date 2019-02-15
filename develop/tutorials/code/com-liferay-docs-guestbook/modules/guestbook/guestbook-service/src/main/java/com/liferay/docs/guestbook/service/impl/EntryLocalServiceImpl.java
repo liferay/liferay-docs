@@ -89,6 +89,9 @@ public class EntryLocalServiceImpl extends EntryLocalServiceBaseImpl {
 
 		    entryPersistence.update(entry);
 		    
+		    resourceLocalService.addResources(user.getCompanyId(), groupId, userId,
+		            Entry.class.getName(), entryId, false, true, true);
+		    
 		    AssetEntry assetEntry = assetEntryLocalService.updateEntry(userId,
                     groupId, entry.getCreateDate(), entry.getModifiedDate(),
                     Entry.class.getName(), entryId, entry.getUuid(), 0,
@@ -97,12 +100,9 @@ public class EntryLocalServiceImpl extends EntryLocalServiceBaseImpl {
                     ContentTypes.TEXT_HTML, entry.getMessage(), null, null, null,
                     null, 0, 0, null);
 
-		    assetLinkLocalService.updateLinks(userId, assetEntry.getEntryId(),
+assetLinkLocalService.updateLinks(userId, assetEntry.getEntryId(),
                     serviceContext.getAssetLinkEntryIds(),
                     AssetLinkConstants.TYPE_RELATED);
-		    
-		    resourceLocalService.addResources(user.getCompanyId(), groupId, userId,
-		            Entry.class.getName(), entryId, false, true, true);
 		    
 		    return entry;
 		}
@@ -131,7 +131,12 @@ public class EntryLocalServiceImpl extends EntryLocalServiceBaseImpl {
 
 		    entryPersistence.update(entry);
 		    
-		    AssetEntry assetEntry = assetEntryLocalService.updateEntry(userId,
+	        resourceLocalService.updateResources(
+	                user.getCompanyId(), serviceContext.getScopeGroupId(), 
+	                Entry.class.getName(), entryId, serviceContext.getGroupPermissions(),
+	                serviceContext.getGuestPermissions());
+
+	        AssetEntry assetEntry = assetEntryLocalService.updateEntry(userId,
                     serviceContext.getScopeGroupId(),
                     entry.getCreateDate(), entry.getModifiedDate(),
                     Entry.class.getName(), entryId, entry.getUuid(),
@@ -142,15 +147,9 @@ public class EntryLocalServiceImpl extends EntryLocalServiceBaseImpl {
                     null, null, null, 0, 0,
                     serviceContext.getAssetPriority());
 
-		    assetLinkLocalService.updateLinks(userId, assetEntry.getEntryId(),
+    assetLinkLocalService.updateLinks(userId, assetEntry.getEntryId(),
                     serviceContext.getAssetLinkEntryIds(),
                     AssetLinkConstants.TYPE_RELATED);
-		    
-	        resourceLocalService.updateResources(
-	                user.getCompanyId(), serviceContext.getScopeGroupId(), 
-	                Entry.class.getName(), entryId, serviceContext.getGroupPermissions(),
-	                serviceContext.getGuestPermissions());
-
 		    
 		    return entry;
 		}
@@ -163,16 +162,16 @@ public class EntryLocalServiceImpl extends EntryLocalServiceBaseImpl {
 
 		    entry = deleteEntry(entryId);
 		    
-		    AssetEntry assetEntry = assetEntryLocalService.fetchEntry(
-                    Entry.class.getName(), entryId);
-
-		    assetLinkLocalService.deleteLinks(assetEntry.getEntryId());
-
-	assetEntryLocalService.deleteEntry(assetEntry);
-		    
 		    resourceLocalService.deleteResource(
                     serviceContext.getCompanyId(), Entry.class.getName(),
                     ResourceConstants.SCOPE_INDIVIDUAL, entryId);
+		    
+		    AssetEntry assetEntry = assetEntryLocalService.fetchEntry(
+                    Entry.class.getName(), entryId);
+
+assetLinkLocalService.deleteLinks(assetEntry.getEntryId());
+
+assetEntryLocalService.deleteEntry(assetEntry);
 		    
 		    return entry;
 		}

@@ -24,7 +24,7 @@
         PortalUtil.addPortletBreadcrumbEntry(request, entry.getMessage(),
         currentURL);
         
-         PortalUtil.setPageSubtitle(entry.getMessage(), request);
+        PortalUtil.setPageSubtitle(entry.getMessage(), request);
           PortalUtil.setPageDescription(entry.getMessage(), request);
 
           List<AssetTag> assetTags = 
@@ -34,7 +34,7 @@
           request);
         %>
         
-        <liferay-portlet:renderURL varImpl="viewEntryURL">
+         <liferay-portlet:renderURL varImpl="viewEntryURL">
           <portlet:param name="mvcPath"
             value="/guestbookwebportlet/view_entry.jsp" />
           <portlet:param name="entryId" value="<%=String.valueOf(entryId)%>" />
@@ -57,31 +57,47 @@
           <dt>Message</dt>
           <dd><%=entry.getMessage()%></dd>
         </dl>
+                <c:if test="<%= themeDisplay.isSignedIn() %>">
         
-        <c:if test="<%= themeDisplay.isSignedIn() %>">
-         <liferay-ui:panel-container extended="<%=false%>"
+        <liferay-ui:panel-container extended="<%=false%>"
           id="guestbookCollaborationPanelContainer" persistState="<%=true%>">
           <liferay-ui:panel collapsible="<%=true%>" extended="<%=true%>"
             id="guestbookCollaborationPanel" persistState="<%=true%>"
             title="Collaboration">
-            
-            <liferay-ui:ratings className="<%=Entry.class.getName()%>"
+        
+        <liferay-ui:ratings className="<%=Entry.class.getName()%>"
               classPK="<%=entry.getEntryId()%>" type="stars" />
 
             <br />
 
+		<% Discussion discussion = 
+		CommentManagerUtil.getDiscussion(user.getUserId(), 
+		scopeGroupId, Entry.class.getName(), 
+		entry.getEntryId(), new ServiceContextFunction(request));
+		%>
+
+				<c:if test="<%= discussion != null %>">
+					<h2>
+						<strong><liferay-ui:message arguments="<%= discussion.getDiscussionCommentsCount() %>" key='<%= (discussion.getDiscussionCommentsCount() == 1) ? "x-comment" : "x-comments" %>' /></strong>
+				</c:if>
+
             <portlet:actionURL name="invokeTaglibDiscussion" 
             var="discussionURL" />
-
-            <liferay-ui:discussion className="<%=Entry.class.getName()%>"
-              classPK="<%=entry.getEntryId()%>"
-              formAction="<%=discussionURL%>" formName="fm2"
-              ratingsEnabled="<%=true%>" redirect="<%=currentURL%>"
-              userId="<%=entry.getUserId()%>" />
-
+              
+              <liferay-comment:discussion
+						className="<%= Entry.class.getName() %>"
+						classPK="<%= entry.getEntryId() %>"
+						discussion="<%= discussion %>"
+						formName="fm2"
+						ratingsEnabled="<%=true%>"
+						redirect="<%= currentURL %>"
+						userId="<%= entry.getUserId() %>"
+					/>
+              
           </liferay-ui:panel>
+          
         </liferay-ui:panel-container>
-        </c:if>
+                </c:if>
         
-            
+        
         

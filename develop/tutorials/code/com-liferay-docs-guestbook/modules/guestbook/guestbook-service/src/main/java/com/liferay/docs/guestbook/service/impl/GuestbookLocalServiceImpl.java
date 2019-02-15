@@ -84,6 +84,9 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 
 		    guestbookPersistence.update(guestbook);
 		    
+		    resourceLocalService.addResources(user.getCompanyId(), groupId, userId,
+		    	    Guestbook.class.getName(), guestbookId, false, true, true);
+		    
 		    AssetEntry assetEntry = assetEntryLocalService.updateEntry(userId,
                     groupId, guestbook.getCreateDate(),
                     guestbook.getModifiedDate(), Guestbook.class.getName(),
@@ -93,12 +96,9 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
                     ContentTypes.TEXT_HTML, guestbook.getName(), null, null, null,
                     null, 0, 0, null);
 
-		    assetLinkLocalService.updateLinks(userId, assetEntry.getEntryId(),
+assetLinkLocalService.updateLinks(userId, assetEntry.getEntryId(),
                     serviceContext.getAssetLinkEntryIds(),
                     AssetLinkConstants.TYPE_RELATED);
-		    
-		    resourceLocalService.addResources(user.getCompanyId(), groupId, userId,
-		    	    Guestbook.class.getName(), guestbookId, false, true, true);
 		    
 		    return guestbook;
 
@@ -125,6 +125,12 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 
                 guestbookPersistence.update(guestbook);
                 
+                resourceLocalService.updateResources(serviceContext.getCompanyId(),
+                        serviceContext.getScopeGroupId(), 
+                        Guestbook.class.getName(), guestbookId,
+                        serviceContext.getGroupPermissions(),
+                        serviceContext.getGuestPermissions());
+                
                 AssetEntry assetEntry = assetEntryLocalService.updateEntry(guestbook.getUserId(),
                         guestbook.getGroupId(), guestbook.getCreateDate(),
                         guestbook.getModifiedDate(), Guestbook.class.getName(),
@@ -134,15 +140,10 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
                         null, null, null, ContentTypes.TEXT_HTML, guestbook.getName(), null, null, 
                         null, null, 0, 0, serviceContext.getAssetPriority());
 
-                assetLinkLocalService.updateLinks(serviceContext.getUserId(),
+    assetLinkLocalService.updateLinks(serviceContext.getUserId(),
                         assetEntry.getEntryId(), serviceContext.getAssetLinkEntryIds(),
                         AssetLinkConstants.TYPE_RELATED);
-                
-                resourceLocalService.updateResources(serviceContext.getCompanyId(),
-                        serviceContext.getScopeGroupId(), 
-                        Guestbook.class.getName(), guestbookId,
-                        serviceContext.getGroupPermissions(),
-                        serviceContext.getGuestPermissions());
+
                 
                 return guestbook;
         }
@@ -163,16 +164,16 @@ public class GuestbookLocalServiceImpl extends GuestbookLocalServiceBaseImpl {
 
      guestbook = deleteGuestbook(guestbook);
      
-     AssetEntry assetEntry = assetEntryLocalService.fetchEntry(
-             Guestbook.class.getName(), guestbookId);
-
-     assetLinkLocalService.deleteLinks(assetEntry.getEntryId());
-
-	assetEntryLocalService.deleteEntry(assetEntry);
-     
      resourceLocalService.deleteResource(serviceContext.getCompanyId(),
              Guestbook.class.getName(), ResourceConstants.SCOPE_INDIVIDUAL,
              guestbookId);
+     AssetEntry assetEntry = assetEntryLocalService.fetchEntry(
+             Guestbook.class.getName(), guestbookId);
+
+assetLinkLocalService.deleteLinks(assetEntry.getEntryId());
+
+assetEntryLocalService.deleteEntry(assetEntry);
+
      
      return guestbook;
 }

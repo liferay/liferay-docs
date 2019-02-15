@@ -1,29 +1,27 @@
-package com.liferay.docs.guestbook.asset;
+package com.liferay.docs.guestbook.web.internal.asset;
 
-import com.liferay.asset.kernel.model.BaseJSPAssetRenderer;
-import com.liferay.docs.guestbook.constants.GuestbookPortletKeys;
-import com.liferay.docs.guestbook.model.Entry;
-import com.liferay.docs.guestbook.web.internal.security.permission.resource.GuestbookEntryPermission;
-import com.liferay.portal.kernel.exception.PortalException;
-import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.model.LayoutConstants;
-import com.liferay.portal.kernel.portlet.LiferayPortletRequest;
-import com.liferay.portal.kernel.portlet.LiferayPortletResponse;
-import com.liferay.portal.kernel.portlet.PortletURLFactoryUtil;
-import com.liferay.portal.kernel.security.permission.ActionKeys;
-import com.liferay.portal.kernel.security.permission.PermissionChecker;
-import com.liferay.portal.kernel.util.HtmlUtil;
-import com.liferay.portal.kernel.util.PortalUtil;
-import com.liferay.portal.kernel.util.StringUtil;
-
-import java.util.Locale;
-
-import javax.portlet.PortletRequest;
-import javax.portlet.PortletResponse;
-import javax.portlet.PortletURL;
-import javax.portlet.WindowState;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+    import com.liferay.asset.kernel.model.BaseJSPAssetRenderer;
+    import com.liferay.portal.kernel.exception.PortalException;
+    import com.liferay.portal.kernel.exception.SystemException;
+    import com.liferay.portal.kernel.model.LayoutConstants;
+    import com.liferay.portal.kernel.portlet.LiferayPortletRequest;
+    import com.liferay.portal.kernel.portlet.LiferayPortletResponse;
+    import com.liferay.portal.kernel.portlet.PortletURLFactoryUtil;
+    import com.liferay.portal.kernel.security.permission.ActionKeys;
+    import com.liferay.portal.kernel.security.permission.PermissionChecker;
+    import com.liferay.portal.kernel.util.HtmlUtil;
+    import com.liferay.portal.kernel.util.PortalUtil;
+    import com.liferay.petra.string.StringUtil;
+    import com.liferay.docs.guestbook.constants.GuestbookPortletKeys;
+    import com.liferay.docs.guestbook.model.Entry;
+    import com.liferay.docs.guestbook.web.internal.security.permission.resource.GuestbookEntryPermission;
+    import java.util.Locale;
+    import javax.portlet.PortletRequest;
+    import javax.portlet.PortletResponse;
+    import javax.portlet.PortletURL;
+    import javax.portlet.WindowState;
+    import javax.servlet.http.HttpServletRequest;
+    import javax.servlet.http.HttpServletResponse;
 
     public class EntryAssetRenderer extends BaseJSPAssetRenderer<Entry> {
 
@@ -170,4 +168,3 @@ import javax.servlet.http.HttpServletResponse;
 
       private Entry _entry;
     }
- 

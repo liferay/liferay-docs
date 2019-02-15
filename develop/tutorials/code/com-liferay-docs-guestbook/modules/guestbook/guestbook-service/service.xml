@@ -43,8 +43,7 @@
 			<finder-column name="groupId" />
 			<finder-column name="status" />
 		</finder>
-	
-	     <reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
+<reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
         <reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
 
 	</entity>
@@ -80,11 +79,12 @@
     <finder name="Status" return-type="Collection">
 			<finder-column name="status" />
 		</finder>
+
 		<finder name="G_S" return-type="Collection">
 			<finder-column name="groupId" />
 			<finder-column name="status" />
 		</finder>
-            <reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
+<reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
         <reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
 </entity>
 

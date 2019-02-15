@@ -1,4 +1,4 @@
-  <%@ include file="../init.jsp" %>
+<%@ include file="../init.jsp" %>
 
     <%
     long entryId = ParamUtil.getLong(renderRequest, "entryId");
@@ -48,23 +48,23 @@
                         <liferay-ui:panel defaultState="closed" 
                         extended="<%= false %>" id="entryCategorizationPanel" 
                         persistState="<%= true %>" title="categorization">
-			<aui:fieldset collapsed="<%= true %>" collapsible="<%= true %>" label="categorization">
-											<liferay-asset:asset-categories-selector className="<%= Entry.class.getName() %>" classPK="<%= entryId %>" />
-											
-											<liferay-asset:asset-tags-selector className="<%= Entry.class.getName() %>" classPK="<%= entryId %>" />
+                                <aui:fieldset>
+                                   <liferay-asset:asset-categories-selector className="<%= Entry.class.getName() %>" classPK="<%= entryId %>" />
+                                   <liferay-asset:asset-tags-selector className="<%= Entry.class.getName() %>" classPK="<%= entryId %>" />
                                 </aui:fieldset>
                         </liferay-ui:panel>
 
                         <liferay-ui:panel defaultState="closed" 
                         extended="<%= false %>" id="entryAssetLinksPanel" 
                         persistState="<%= true %>" title="related-assets">
-                                <aui:fieldset>
-                                        <liferay-ui:input-asset-links
-                                                className=
-                                                "<%= Entry.class.getName() %>"
-                                                classPK="<%= entryId %>"
-                                        />
-                                </aui:fieldset>
+                                <aui:fieldset collapsed="<%= true %>" collapsible="<%= true %>" label="related-assets">
+					
+					<liferay-asset:input-asset-links
+						className="<%= Entry.class.getName() %>"
+						classPK="<%= entryId %>"
+					/>
+					
+				</aui:fieldset>
                         </liferay-ui:panel>
 
         <aui:button-row>

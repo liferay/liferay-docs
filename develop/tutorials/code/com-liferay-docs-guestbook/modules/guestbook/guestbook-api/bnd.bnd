@@ -5,6 +5,5 @@ Export-Package:\
 	com.liferay.docs.guestbook.exception,\
 	com.liferay.docs.guestbook.model,\
 	com.liferay.docs.guestbook.service,\
-	com.liferay.docs.guestbook.web.internal.security.permission.resource, \
 	com.liferay.docs.guestbook.service.persistence
 -includeresource: META-INF/service.xml=../guestbook-service/service.xml
