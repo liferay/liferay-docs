@@ -130,11 +130,11 @@ To do this, your `build.gradle` file should look similar to this:
 
     buildscript {
         dependencies {
-            classpath group: "com.liferay", name: "com.liferay.gradle.plugins.target.platform", version "1.1.6"
+            classpath group: "com.liferay", name: "com.liferay.gradle.plugins.target.platform", version: "1.1.6"
         }
         repositories {
             maven {
-                url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+                url "https://repository-cdn.liferay.com/nexus/content/groups/public"
             }
         }
     }
