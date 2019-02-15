@@ -25,6 +25,9 @@ imports to the `guestbook-web` module project's `init.jsp` file:
     <%@ page import="com.liferay.asset.kernel.model.AssetTag" %>
 
     <%@ page import="com.liferay.portal.kernel.util.ListUtil" %>
+    <%@page import="com.liferay.portal.kernel.comment.Discussion" %>
+    <%@page import="com.liferay.portal.kernel.comment.CommentManagerUtil" %>
+    <%@page import="com.liferay.portal.kernel.service.ServiceContextFunction" %>
 
 It's simpler to add these imports now so you don't run into errors as you're 
 working through this section. 

@@ -12,7 +12,7 @@ this code.
 
 ## Creating the EntryAssetRenderer Class [](id=creating-the-entryassetrenderer-class)
 
-In the `com.liferay.docs.guestbook.asset` package, create an 
+In the `com.liferay.docs.guestbook.web.internal.asset` package, create an 
 `EntryAssetRenderer` class that extends @product@'s `BaseJSPAssetRenderer` 
 class. Replace the contents of your `EntryAssetRenderer` class with the 
 following code: 
@@ -201,7 +201,7 @@ methods of `EntryAssetRenderer` are nearly identical to those of
 ## Creating the EntryAssetRendererFactory Class [](id=creating-the-entryassetrendererfactory-class)
 
 Next, you must create the guestbook entry asset renderer's factory class. In the 
-`com.liferay.docs.guestbook.asset` package, create a class called 
+`com.liferay.docs.guestbook.web.internal.asset` package, create a class called 
 `EntryAssetRendererFactory` that extends @product@'s `BaseAssetRendererFactory` 
 class. Replace its contents with the following code: 
 
@@ -352,6 +352,7 @@ this:
 
     Export-Package: com.liferay.docs.guestbook.asset,\
                     com.liferay.docs.guestbook.service.permission,\
+                    com.liferay.docs.guestbook.web.internal.security.permission.resource,\
                     com.liferay.docs.guestbook.search
 
 Now your guestbook project's entities are fully asset-enabled. To test the

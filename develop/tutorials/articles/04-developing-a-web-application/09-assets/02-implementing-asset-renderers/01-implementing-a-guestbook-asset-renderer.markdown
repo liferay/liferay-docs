@@ -14,8 +14,8 @@ Get started by creating the Asset Renderer class first.
 
 Follow these steps to create the `GuestbookAssetRenderer` class: 
 
-1.  Create a new package called `com.liferay.docs.guestbook.asset` in the
-    `guestbook-service` module's `src/main/java` folder. In this package, create
+1.  Create a new package called `com.liferay.docs.guestbook.web.internal.asset` in the
+    `guestbook-web` module's `src/main/java` folder. In this package, create
     a `GuestbookAssetRenderer` class that extends @product@'s 
     `BaseJSPAssetRenderer` class. Extending this class gives you a head-start on 
     implementing the `AssetRenderer` interface: 
@@ -215,7 +215,7 @@ Next you can create the `AssetRendererFactory` class.
 
 Follow these steps to create the `GuestbookAssetRendererFactory`:
 
-1.  In the `com.liferay.docs.guestbook.asset` package, create a class called 
+1.  In the `com.liferay.docs.guestbook.web.internal.asset` package, create a class called 
     `GuestbookAssetRendererFactory` that extends @product@'s 
     `BaseAssetRendererFactory` class, and overwrite the generated constructor 
     with the following: 
