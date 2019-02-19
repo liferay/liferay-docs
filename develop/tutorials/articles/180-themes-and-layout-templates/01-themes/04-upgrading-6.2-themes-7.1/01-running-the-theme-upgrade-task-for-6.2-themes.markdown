@@ -30,7 +30,7 @@ Here are the steps for using the Gulp `upgrade` task:
 2.  Navigate to your theme's root directory and run the command below to 
     initially upgrade your 6.2 theme to 7.0:
 
-        gulp upgrade
+        gulp upgrade -v 6.2
 
     Here's what the 6.2 to 7.0 upgrade task does:
  
