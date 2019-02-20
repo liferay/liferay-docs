@@ -38,10 +38,11 @@ Otherwise, feel free to use Elasticsearch or Solr to index your portal content.
 
 Another factor to consider in your search engine selection is JDK version. The
 search engine and @product@ must use the same JDK version and distribution
-(e.g., Oracle Open JDK 1.8.0_201).Consult the 
-[Elasticsearch compatibility matrix](https://www.elastic.co/support/matrix#matrix_jvm),
-[Solr's system requirements](https://lucene.apache.org/solr/guide/7_0/solr-system-requirements.html),
+(e.g., Oracle Open JDK 1.8.0_201). Consult the 
+[Elasticsearch compatibility matrix](https://www.elastic.co/support/matrix#matrix_jvm)
 and the 
 [@product@ compatibility matrix](https://web.liferay.com/documents/14/21598941/Liferay+DXP+7.1+Compatibility+Matrix/9f9c917a-c620-427b-865d-5c4b4a00be85) 
-to learn more about supported JDK distributions and versions.
+to learn more about supported JDK distributions and versions. This consideration
+is not necessary for Solr, because no JVM level serialization happens between
+the servers. All communication occurs at the HTTP level.
 
