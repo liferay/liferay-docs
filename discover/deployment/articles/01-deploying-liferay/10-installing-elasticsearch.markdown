@@ -39,10 +39,16 @@ Installing Elasticsearch is pretty easy and takes only six steps:
 [`JAVA_HOME` environment variable](https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/).
 
 If you have multiple JDKs installed, make sure Elasticsearch and @product@ are
-using the same version. You can specify this in `[Elasticsearch
-Home]/bin/elasticsearch.in.sh`:
+using the same version and distribution (e.g., Oracle Open JDK 8). You can
+specify this in `[Elasticsearch Home]/bin/elasticsearch.in.sh`:
 
         JAVA_HOME=/path/to/java
+
+Consult the 
+[Elasticsearch compatibility](https://www.elastic.co/support/matrix#matrix_jvm) 
+matrix and the 
+[@product@ compatibility matrix](https://web.liferay.com/documents/14/21598941/Liferay+DXP+7.1+Compatibility+Matrix/9f9c917a-c620-427b-865d-5c4b4a00be85) 
+to learn more about supported JDK distributions and versions.
 
 $$$
 
