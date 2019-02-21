@@ -199,53 +199,48 @@ public class NumberHeadersTask extends Task {
 		BufferedWriter out2 =
 				new BufferedWriter(new FileWriter(outFileTmp2));
 		
-		String header = in.readLine();
-		String headerDxp = in2.readLine();
-		String[] headerCombo = separateTextAndId(header);
-		String[] headerComboDxp = separateTextAndId(headerDxp);
+		String headerIdLineCe = getHeaderIdLine(inFile);
+		String headerIdLineDxp = getHeaderIdLine(inFile2);
 
 		boolean equalHeaders = false;
 		
 		if (filenamesWithPresetHeader.contains(duplicateFile) && 
 				filenamesWithPresetHeader.contains(duplicateFile2)) {
 			
-			if (header.equals(headerDxp)) {
+			if (headerIdLineCe.equals(headerIdLineDxp)) {
 				equalHeaders = true;
 			}
 			else {
-				headerDxp = headerComboDxp[0] + headerCombo[1];
+				headerIdLineDxp = headerIdLineCe;
 			}
 			
 		}
 		else if (filenamesWithPresetHeader.contains(duplicateFile) && 
 				filenamesWithoutPresetHeader.contains(duplicateFile2)) {
 			
-			headerDxp = headerComboDxp[0] + headerCombo[1];
+			headerIdLineDxp = headerIdLineCe;
 		}
 		else if (filenamesWithoutPresetHeader.contains(duplicateFile) && 
 				filenamesWithPresetHeader.contains(duplicateFile2)) {
 			
-			header = headerCombo[0] + headerComboDxp[1];
+			headerIdLineCe = headerIdLineDxp;
 		}
 		else {
-			headerDxp = headerComboDxp[0] + headerCombo[1];
+			headerIdLineDxp = headerIdLineCe;
 		}
 		
 		if (!equalHeaders) {
 			String line;
-			int i = 0;
 			
 			while ((line = in.readLine()) != null) {
-				
-				if (i == 0) {
-					out.append(header);
-					out.append("\n\n");
+				if (line.startsWith(headerIdPrefix)) {
+					out.append(headerIdLineCe);
+					out.append("\n");
 				}
 				else {
 					out.append(line);
 					out.append("\n");
 				}
-				i = i+1;
 			}
 
 			in.close();	
@@ -258,17 +253,15 @@ public class NumberHeadersTask extends Task {
 
 			FileUtils.forceDelete(outFileTmpFile);
 
-			i = 0;
 			while ((line = in2.readLine()) != null) {
-				if (i == 0) {
-					out2.append(headerDxp);
-					out2.append("\n\n");
+				if (line.startsWith(headerIdPrefix)) {
+					out2.append(headerIdLineDxp);
+					out2.append("\n");
 				}
 				else {
 					out2.append(line);
 					out2.append("\n");
 				}
-				i = i+1;
 			}
 
 			in2.close();
@@ -466,6 +459,19 @@ public class NumberHeadersTask extends Task {
 		
 		return fileList;
 	}
+	
+	private static String getHeaderId(String headerIdLine) {
+
+		int idStartIndex = headerIdLine.indexOf(headerIdPrefix) + headerIdPrefix.length();
+		int idEndIndex = headerIdLine.length();
+
+		String id = null;
+		if (idStartIndex > 0 && idEndIndex > (idStartIndex + 1)) {
+			id = headerIdLine.substring(idStartIndex, idEndIndex);
+		}
+		
+		return id;
+	}
 
 	private static String getHeaderIdLine(File file) throws IOException {
 
@@ -502,45 +508,13 @@ public class NumberHeadersTask extends Task {
 		return overrideFile;
 	}
 	
-	private static String[] separateTextAndId(String header) {
-		
-		String[] headers = new String[2];
-		
-		int beginTitleIndex = header.indexOf("#");
-		int endTitleIndex;
-		int endIndexDxp = 0;
-		String headerId = "";
-		
-		if (header.contains("[](")) {
-			endTitleIndex = header.indexOf("[](");
-			endIndexDxp = header.lastIndexOf(")") + 1;
-			headerId = header.substring(endTitleIndex, endIndexDxp);
-		}
-		else {
-			endTitleIndex = header.length();
-		}
-		
-		String headerTitle = header.substring(beginTitleIndex, endTitleIndex);
-		
-		headers[0] = headerTitle;
-		headers[1] = headerId;
-		
-		return headers;
-	}
-	
 	private static void validateHeaderId(String filename, String headerIdLine, int lineNum) {
 
 		filenamesWithPresetHeader.add(filename);
 
 		// Extract the header ID
 
-		int idStartIndex = headerIdLine.indexOf(headerIdPrefix) + headerIdPrefix.length();
-		int idEndIndex = headerIdLine.length();   // indexOf(")", idStartIndex);
-
-		String id = null;
-		if (idStartIndex > 0 && idEndIndex > (idStartIndex + 1)) {
-			id = headerIdLine.substring(idStartIndex, idEndIndex);
-		}
+		String id = getHeaderId(headerIdLine);
 
 		if (id.length() > MAX_ID_LEN) {
 			StringBuilder sb =
