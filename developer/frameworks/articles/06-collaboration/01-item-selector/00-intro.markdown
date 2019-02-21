@@ -5,6 +5,14 @@ manner.
 
 ![Figure 1: Item Selectors select different kinds of entities.](../../../images/item-selector-dialog-02.png)
 
+Here's what you'll learn to do with Item Selectors: 
+
+1.  Selecting Entities with an Item Selector. 
+
+2.  Creating Custom Item Selector Entities. 
+
+3.  Creating Custom Item Selector Views. 
+
 ## Understanding the Item Selector API's Components [](id=understanding-the-item-selector-apis-components)
 
 Before working with the Item Selector API, you should learn about its 
@@ -74,10 +82,75 @@ This diagram shows how these components interact to form a working API.
 
 ![Figure 1: Item Selector views (selection views) are determined by the return type and criterion, and rendered by the markup.](../../../images/item-selector-architecture.png)
 
-Here's what you'll learn to do with Item Selectors: 
+## Getting an Item Selector
 
-1.  Selecting Entities with an Item Selector. 
+To use an Item Selector with your criteria, you must get that Item Selector's 
+URL. The URL is needed to open the Item Selector dialog in your UI. To get this 
+URL, you must get an `ItemSelector` reference and call its 
+[`getItemSelectorURL` method](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelector.html#getItemSelectorURL-com.liferay.portal.kernel.portlet.RequestBackedPortletURLFactory-java.lang.String-com.liferay.item.selector.ItemSelectorCriterion...-) 
+with the following parameters: 
 
-2.  Creating Custom Item Selector Entities. 
+`RequestBackedPortletURLFactory`: A factory that creates portlet URLs. 
 
-3.  Creating Custom Item Selector Views. 
+`ItemSelectedEventName`: A unique, arbitrary JavaScript event name that the Item 
+Selector triggers when the element is selected. 
+
+`ItemSelectorCriterion`: The criterion (or an array of criterion objects) that 
+specifies the type of elements to make available in the Item Selector. 
+
+There are a few things to keep in mind when getting an Item Selector's URL: 
+
+-   You can invoke the URL object's `toString` method to get its value.
+
+-   You can configure an Item Selector to use any number of criterion. The 
+    criterion can use any number of return types. 
+
+-   The order of the Item Selector's criteria determines the selection view 
+    order. For example, if you pass the Item Selector an 
+    `ImageItemSelectorCriterion` followed by a `VideoItemSelectorCriterion`, the 
+    Item Selector displays the image selection views first. 
+
+-   The return type order is also significant. A view uses the first return type 
+    it supports from each criterion's return type list. 
+
+## Understanding Custom Selection Views
+
+The default selection views may provide everything you need for your app. Custom 
+selection views are required, however, for certain situations. For example, if 
+you want your users to be able to select images from an external image provider, 
+then you must create a custom selection view. 
+
+The entity type the user selects determines the view the Item Selector presents. 
+The Item Selector can also render multiple views for the same entity type. For 
+example, several selection views are available for images. Each selection view 
+is a tab in the UI that corresponds to the image's location. An 
+`*ItemSelectorCriterion` class represents each selection view. 
+
+![Figure 1: An entity type can have multiple selection views.](../../../images/item-selector-tabs.png)
+
+### The Selection View's Class
+
+The criterion and return types determine the selection view's class. A selection 
+view's class is an `ItemSelectorView` component class that implements 
+[`ItemSelectorView`](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorView.html), 
+parameterized with the criterion the view requires. Note the following when 
+creating this class: 
+
+-   Configure the title by implementing the 
+    [`getTitle`](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorView.html#getTitle-java.util.Locale-) 
+    method to return the localized title of the tab to display in the Item 
+    Selector dialog. 
+
+-   Configure the search options by implementing the 
+    [`isShowSearch()`](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorView.html#isShowSearch--) 
+    method to return whether your view should show the search field. To 
+    implement search, you must return `true` for this method. The `renderHTML` 
+    method indicates whether a user performed a search based on the value of the 
+    `search` parameter. You can obtain the user's search keywords as follows: 
+
+        String keywords = ParamUtil.getString(request, "keywords");
+
+-   Make your view visible by implementing the 
+    [`isVisible()`](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorView.html#isVisible-com.liferay.portal.kernel.theme.ThemeDisplay-) 
+    method to return `true`. Note that you can use this method to add 
+    conditional logic to disable the view. 
