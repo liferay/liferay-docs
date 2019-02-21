@@ -1,13 +1,16 @@
 # Search Insights
 
 **[Feature intended for testing and development only]**
+**[Works with Elasticsearch only]**
 
 Add the Search Insights Widget to the Search Page to inspect the full query
 string that's constructed by the back-end search code when the User enters a
 keyword and the response string returned from the search engine.
 
-In @product-ver@, an additional feature has been added: the _Explain_
-option.
+In @product-ver@, these additional features were added to the Insights widget:
+the response string was added to the widget's output, and the _Explain_ option
+(enabled by default) prints a relevance score explanation for each returned
+result.
 
 When a search query is processed, results are returned. The concept of
 _Relevance_ is used to determine how well results match the query. Having the
