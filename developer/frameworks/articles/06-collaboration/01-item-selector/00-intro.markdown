@@ -33,7 +33,7 @@ the entities selected by the users. For example, if users select images and you
 want to return the selected image's URL, then you need a URL return type class. 
 Each return type class must implement 
 [`ItemSelectorReturnType`](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorReturnType.html). 
-Such classes are named after the data they return and suffixed with 
+Such classes are named after the return type's data and suffixed with 
 `ItemSelectorReturnType`. For example, the URL return type class is 
 `URLItemSelectorReturnType`. A return type class is used as an identifier by the 
 Item Selector and does not return any information itself (the return type class 
