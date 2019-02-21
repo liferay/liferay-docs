@@ -109,9 +109,12 @@ public class CheckHeadersTask extends Task {
 					String titleLineError1 = null;
 					String titleLineError2 = null;
 					int counter = 0;
+					boolean headerSyntaxExists = false;
 
 					while ((line = in.readLine()) != null) {
 						if (counter == 2) {
+							headerSyntaxExists = true;
+
 							titleLine = Files.readAllLines(Paths.get(filename)).get(in.getLineNumber());
 							titleLineError1 = Files.readAllLines(Paths.get(filename)).get(in.getLineNumber() - 1);
 							titleLineError2 = Files.readAllLines(Paths.get(filename)).get(in.getLineNumber() + 1);
@@ -135,11 +138,11 @@ public class CheckHeadersTask extends Task {
 
 							if (titleLineError1.startsWith("# ") || titleLineError2.startsWith("# ")) {
 								message = "FAILURE - " + filename +
-										":File's single # header is spaced incorrectly.";
+										": File's single # header is spaced incorrectly.";
 							}
 							else {
 								message = "FAILURE - " + filename +
-										":File does not start with a single # for a header";
+										": File does not start with a single # for a header";
 							}
 
 							if (titleLine.startsWith("<!--")) {
@@ -160,6 +163,13 @@ public class CheckHeadersTask extends Task {
 
 							throw new BuildException(message);
 						}
+					}
+
+					if (!headerSyntaxExists) {
+						String message = "FAILURE - " + filename +
+								": File does not start with proper header syntax.";
+						in.close();
+						throw new BuildException(message);
 					}
 
 					in.close();

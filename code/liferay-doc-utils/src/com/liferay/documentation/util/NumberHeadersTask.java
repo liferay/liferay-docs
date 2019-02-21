@@ -298,6 +298,12 @@ public class NumberHeadersTask extends Task {
 
 	private static String extractHeading(String line, int indexOfFirstHeaderChar) {
 		String heading2 = line.substring(indexOfFirstHeaderChar);
+
+		// Applicable for legacy IDs from 7.1 and earlier.
+		// This ignores old header ID syntax.
+		if (heading2.contains(" [](id=")) {
+			heading2 = line.substring(indexOfFirstHeaderChar, line.indexOf(" [](id="));
+		}
 		heading2 = heading2.trim();
 
 		// Replace each spaced dash, space, dot, and slash with a dash
