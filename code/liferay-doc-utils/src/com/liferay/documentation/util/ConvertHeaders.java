@@ -45,6 +45,12 @@ public class ConvertHeaders {
 				String headerPrefix = " [](id=";
 				String newHeaderIdPrefix = "header-id: ";
 				while ((line = in.readLine()) != null) {
+					
+					if (line.startsWith(newHeaderIdPrefix)) {
+						throw new BuildException(filename + ": File already contains "
+								+ "new header syntax.");
+					}
+					
 					if (line.startsWith("#") && !line.startsWith("##") &&
 							line.contains(headerPrefix)) {
 						
@@ -52,7 +58,7 @@ public class ConvertHeaders {
 						int idEndIndex = line.indexOf(")", idStartIndex);
 						
 						String id = line.substring(idStartIndex + headerPrefix.length(), idEndIndex);
-						System.out.println("id: " + id);
+
 						line = line.substring(0, idStartIndex);
 						
 						out.append("---\n");
