@@ -19,11 +19,13 @@ Here are the steps for using the theme Gulp `upgrade` task:
 
 1.  Navigate to your theme's root directory.
 
-2.  Update the liferay-theme.json file accordingly with the new location of Liferay Portal 7.1
+2.  Update the path of your @product@ server in your theme's 
+    `liferay-theme.json` file to point to your 7.1 @product@ server. You can use 
+    the `gulp init` task to update the path to your server. 
 
-3.  Run the command below to update liferay-theme-tasks
+3.  Run the command below to update liferay-theme-tasks to the latest version:
 
-        npm install liferay-theme-tasks@8.0.0-rc.3
+        npm update liferay-theme-tasks
 
 4.  Run the command below to upgrade the theme:
 
