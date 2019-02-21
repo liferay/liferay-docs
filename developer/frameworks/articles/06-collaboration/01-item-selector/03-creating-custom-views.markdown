@@ -278,7 +278,7 @@ applies to @product-ver@. Here's a walkthrough of this `layouts.jsp` file:
     
     This renders the following UI: 
 
-    ![Figure 2: The Layouts Item Selector view uses Lexicon and Liferay Layout taglibs to create the UI.](../../../images/layouts-item-selector-view.png)
+    ![Figure 1: The Layouts Item Selector view uses Lexicon and Liferay Layout taglibs to create the UI.](../../../images/layouts-item-selector-view.png)
 
 4.  This portion of the `aui:script` returns the path for the page:
 
@@ -357,7 +357,7 @@ applies to @product-ver@. Here's a walkthrough of this `layouts.jsp` file:
     Item Selector. The HTML for an instance of the Layouts Item Selector is 
     shown here: 
 
-    ![Figure 3: The URL and UUID can be seen in the `data-url` and `data-uuid` attributes of the Layout Item Selector's HTML.](../../../images/layouts-item-selector-html.png)
+    ![Figure 2: The URL and UUID can be seen in the `data-url` and `data-uuid` attributes of the Layout Item Selector's HTML.](../../../images/layouts-item-selector-html.png)
 
 7.  The JavaScript trigger event specified in the Item Selector return type is 
     fired, passing the data JSON object with the required return type 
