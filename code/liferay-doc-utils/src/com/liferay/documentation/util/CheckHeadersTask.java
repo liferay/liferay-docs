@@ -5,6 +5,8 @@ import java.io.FileReader;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.LineNumberReader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -21,7 +23,7 @@ public class CheckHeadersTask extends Task {
 
 		String docDir = _docdir;
 		String productType = _productType;
-		
+
 		List<String> dirTypes = new ArrayList<String>();
 		dirTypes.add("");
 
@@ -102,25 +104,51 @@ public class CheckHeadersTask extends Task {
 					LineNumberReader in = new LineNumberReader(
 							new FileReader(inFile));
 
-					String line = in.readLine();
-					if (line != null) {
+					String line;
+					String titleLine = null;
+					String titleLineError1 = null;
+					String titleLineError2 = null;
+					int counter = 0;
+
+					while ((line = in.readLine()) != null) {
+						if (counter == 2) {
+							titleLine = Files.readAllLines(Paths.get(filename)).get(in.getLineNumber());
+							titleLineError1 = Files.readAllLines(Paths.get(filename)).get(in.getLineNumber() - 1);
+							titleLineError2 = Files.readAllLines(Paths.get(filename)).get(in.getLineNumber() + 1);
+
+							counter = 0;
+						}
+						if (line.startsWith("---")) {
+							counter++;
+						}
+					}
+
+					if (titleLine != null) {
 
 						// Check whether the markdown file starts with the proper single #
 						// header. 
 						// If it doesn't, throw an exception identifying the file
 
-						if (!line.startsWith("# ")) {
+						if (!titleLine.startsWith("# ")) {
 
-							String message = "FAILURE - " + filename +
-									":Line 1 does not start with a single # for a header";
+							String message;
 
-							if (line.startsWith("<!--")) {
+							if (titleLineError1.startsWith("# ") || titleLineError2.startsWith("# ")) {
+								message = "FAILURE - " + filename +
+										":File's single # header is spaced incorrectly.";
+							}
+							else {
+								message = "FAILURE - " + filename +
+										":File does not start with a single # for a header";
+							}
+
+							if (titleLine.startsWith("<!--")) {
 
 								in.close();
 
 								throw new BuildException(message);
 							}
-							else if (line.startsWith("<")) {
+							else if (titleLine.startsWith("<")) {
 
 								// Allow non-comment tags
 
@@ -142,7 +170,7 @@ public class CheckHeadersTask extends Task {
 					throw new BuildException(e.getLocalizedMessage());
 				}
 			}
-			
+
 			System.out.println("Finished checking headers in articles" + dirType);
 		}
 	}
