@@ -291,6 +291,17 @@
 		<concat destfile="${metadata.file}">base.source.url=https://github.com/${repo.owner}/${repo.name}/blob/${repo.branch}/${purpose.dir}/${base.filepath}</concat>
 	</target>
 
+	<target name="convert-headers" description="Converts legacy header IDs to new format.">
+		<java
+			classname="com.liferay.documentation.util.ConvertHeaders"
+			classpathref="project.classpath"
+			failonerror="true"
+			fork="true"
+		>
+			<arg value="${doc.dir}"/>
+		</java>
+	</target>
+
 	<target name="dist-article-ce" depends="clean-temp, add-article-to-temp, dist-temp" description="Creates a ZIP file for importing the specified article (-Darticle=...), its images, and supporting structure to a Knowledge Base.">
 	</target>
 
