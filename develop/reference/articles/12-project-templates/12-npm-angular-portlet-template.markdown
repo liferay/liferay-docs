@@ -19,6 +19,18 @@ or
 You can also insert the `-b maven` parameter in the Blade command to generate
 a Maven project using Blade CLI.
 
++$$$
+
+**Note:** If you're deploying an Angular 5 portlet that contains JSDoc, you must 
+remove the JSDoc comments before the portlet builds, or the minifier will fail 
+during the build on Liferay DXP 7.0 de-69 and below. To resolve this, use 
+[Grunt](https://gruntjs.com/getting-started) 
+[uglify](https://www.npmjs.com/package/grunt-contrib-uglify) to remove the JSDoc 
+comments. This process may take some time due to the number of files that need 
+pre-processed. 
+
+$$$
+
 The template for this kind of project is `npm-angular-portlet`. Suppose you want
 to create an npm Angular portlet project called `my-npm-angular-portlet` with a
 package name of `com.liferay.npm.angular` and a class name of
