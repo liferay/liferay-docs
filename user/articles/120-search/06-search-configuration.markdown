@@ -16,7 +16,7 @@ importantly, _where_ to find search configuration options.
 ## System Scoped Search Configuration [](id=system-scoped-search-configuration)
 
 System scoped search configurations are primarily found in 
-[System Settings](/discover/portal/-/knowledge_base/7-1/system-settings).
+[System Settings](/discover/portal/-/knowledge_base/7-2/system-settings).
 
 1.  Go to *Control Panel* &rarr; *Configuration* &rarr; *System Settings*.
 
@@ -42,7 +42,7 @@ keyword search query. Specify the entry class names
 The Default Search Result Permission Filter entry allows configuration of
 *post-filtering permission checking* (database permission checking that occurs
 after the results are returned from the search index). Read
-[here](/discover/portal/-/knowledge_base/7-1/search-results-behavior#final-permissions-checking)
+[here](/discover/portal/-/knowledge_base/7-2/search-results-behavior#final-permissions-checking)
 for more information on these settings:
 
 - `permissionFilteredSearchResultAccurateCountThreshold` 
@@ -95,7 +95,7 @@ buffer are executed in one batch and removed from the buffer.
 ### Index Query Preprocessor [](id=index-query-preprocessor)
 
 This entry has one repeatable property (use array syntax if you're defining via 
-[OSGi configuration file](/discover/portal/-/knowledge_base/7-1/creating-configuration-files)):
+[OSGi configuration file](/discover/portal/-/knowledge_base/7-2/creating-configuration-files)):
 
 `fieldNamePatterns`: Fields with names matching the patterns set here are
 treated as non-analyzed keyword fields. Instead of scored full text queries,
@@ -138,7 +138,7 @@ executing a full re-index.
 ### Engine Helper [](id=engine-helper)
 
 This entry has one repeatable property (use array syntax if you're defining via 
-[OSGi configuration file](/discover/portal/-/knowledge_base/7-1/creating-configuration-files)):
+[OSGi configuration file](/discover/portal/-/knowledge_base/7-2/creating-configuration-files)):
 
 `excludedEntryClassNames`: Exclude an asset type from being
 searched in the catchall query constructed for the Search application. For
@@ -151,7 +151,7 @@ the Search application. Thus, Organizations are added to
 
 Configure *pre-filtering permission checking* (permission checking on the
 search index) behavior. See 
-[here](/discover/portal/-/knowledge_base/7-1/search-results-behavior#initial-permissions-checking) 
+[here](/discover/portal/-/knowledge_base/7-2/search-results-behavior#initial-permissions-checking) 
 for more information on these properties:
 
 - `includeInheritedPermission`
@@ -161,7 +161,7 @@ for more information on these properties:
 ### Elasticsearch 6 [](id=elasticsearch-6)
 
 Configure the connection between @product@ and Elasticsearch 6. See
-[here](/discover/deployment/-/knowledge_base/7-1/configuring-the-liferay-elasticsearch-connector) 
+[here](/discover/deployment/-/knowledge_base/7-2/configuring-the-liferay-elasticsearch-connector) 
 for more information on these properties:
 
 - `clusterName`
@@ -197,7 +197,7 @@ This entry contains one property:
 `classicSearchPortletInFrontPage`: Revert the default search experience from
 using the new Search Widgets to the classic Search Portlet that was standard
 in past releases. See
-[here](/discover/portal/-/knowledge_base/7-1/configuring-search-pages#legacy-search-experience)
+[here](/discover/portal/-/knowledge_base/7-2/configuring-search-pages#legacy-search-experience)
 for more information.
 
 ### Reindexing from Search Administration [](id=reindexing-from-search-administration)
@@ -221,9 +221,9 @@ their descriptions and determine if they apply to your search requirements.
 ## Site Scoped Search Configuration [](id=site-scoped-search-configuration)
 
 Search isn't configurable at the Site Scope by the strict definition of 
-[Site Scoped Configuration](/discover/portal/-/knowledge_base/7-1/setting-up#configuration-scope).
+[Site Scoped Configuration](/discover/portal/-/knowledge_base/7-2/setting-up#configuration-scope).
 However, 
-[Search Pages](/discover/portal/-/knowledge_base/7-1/configuring-search-pages)
+[Search Pages](/discover/portal/-/knowledge_base/7-2/configuring-search-pages)
 influence site-specific search behavior. Commonly, Search Pages contain search
 widgets configured to search for all content within a particular Site.
 
@@ -240,7 +240,7 @@ nuances to be aware of when using the new Search widgets:
   always requires a _destination page_ to be set, where Users are redirected
   to complete their search activity, interacting with the other Search widgets
   (Results, Facets, Suggestions etc.). 
-  [Search destination pages](/discover/portal/-/knowledge_base/7-1/configuring-search-pages)
+  [Search destination pages](/discover/portal/-/knowledge_base/7-2/configuring-search-pages)
   are ordinary pages holding the Search widgets. You can have as many pages with
   Search widgets across the Site as you want.
 
@@ -268,7 +268,7 @@ available on the next Fix Pack or GA release.
 $$$
 
 See the documentation on 
-[configuring of a Search Bar](/discover/portal/-/knowledge_base/7-1/searching-for-assets#configuring-the-search-bar) 
+[configuring of a Search Bar](/discover/portal/-/knowledge_base/7-2/searching-for-assets#configuring-the-search-bar) 
 for more information.
 
 ## Widget Scoped Search Configuration [](id=widget-scoped-search-configuration)
@@ -278,17 +278,17 @@ options:
 
 **Search Results**
 :  Configure how search results are displayed. Read 
-[here](/discover/portal/-/knowledge_base/7-1/search-results) for more
+[here](/discover/portal/-/knowledge_base/7-2/search-results) for more
 information.
 
 **Search Bar**
 : Configure the behavior of how search keywords are processed. See
-[here](/discover/portal/-/knowledge_base/7-1/searching-for-assets#configuring-the-search-bar) 
+[here](/discover/portal/-/knowledge_base/7-2/searching-for-assets#configuring-the-search-bar) 
 for more information.
 
 **Search Facets**
 : Configure each facet's behavior and URL parameters. See
-[here](/discover/portal/-/knowledge_base/7-1/facets) for more information.
+[here](/discover/portal/-/knowledge_base/7-2/facets) for more information.
 
 **Search Options**
 : This is a special case, where configuring this widget defines page scoped
@@ -304,7 +304,7 @@ the Search Page:
 
 **Search Suggestions**
 : Suggest better queries and spell check queries. See
-[here](/discover/portal/-/knowledge_base/7-1/searching-for-assets#search-suggestions) 
+[here](/discover/portal/-/knowledge_base/7-2/searching-for-assets#search-suggestions) 
 for more information.
 
 **Search Insights**
