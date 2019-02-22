@@ -1,11 +1,11 @@
-# Selecting Entities with an Item Selector
+# Selecting Entities with an Item Selector [](id=selecting-entities-with-an-item-selector)
 
 The steps here show you how to get and use an Item Selector to select entities 
 in your app. For an explanation of the Item Selector API and more information on 
 these steps, see the 
-[Item Selector introduction](liferay.com). 
+[Item Selector introduction](/develop/tutorials/-/knowledge_base/7-2/item-selector). 
 
-## Get an Item Selector
+## Get an Item Selector [](id=get-an-item-selector)
 
 First, you must get an Item Selector for your use case. Follow these steps to do 
 so: 
@@ -18,7 +18,7 @@ so:
     For example, if you need an Item Selector that selects images and returns 
     their URLs, use `ImageItemSelectorCriterion` and 
     `URLItemSelectorReturnType`. You can 
-    [create](liferay.com)
+    [create](/develop/tutorials/-/knowledge_base/7-2/creating-custom-criterion-and-return-types) 
     criterion and/or return types if there aren't existing ones for your use 
     case. 
 
@@ -218,3 +218,11 @@ Here's the complete example code for these steps:
             }
         );
     </aui:script>
+
+## Related Topics [](id=related-topics)
+
+[Item Selector](/develop/tutorials/-/knowledge_base/7-2/item-selector)
+
+[Creating Custom Criterion and Return Types](/develop/tutorials/-/knowledge_base/7-2/creating-custom-criterion-and-return-types)
+
+[Creating Custom Item Selector Views](/develop/tutorials/-/knowledge_base/7-2/creating-custom-item-selector-views)

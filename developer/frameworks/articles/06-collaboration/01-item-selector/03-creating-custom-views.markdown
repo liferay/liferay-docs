@@ -3,9 +3,9 @@
 You can create your own selection view if an Item Selector doesn't contain the 
 one you need. The steps here show you how. For more information on custom 
 selection views and the Item Selector API, see the 
-[Item Selector introduction](liferay.com). 
+[Item Selector introduction](/develop/tutorials/-/knowledge_base/7-2/item-selector). 
 
-## Configuring Your Selection View's OSGi Module
+## Configuring Your Selection View's OSGi Module [](id=configuring-your-selection-views-osgi-module)
 
 First, you must configure your selection view's OSGi module: 
 
@@ -40,7 +40,7 @@ First, you must configure your selection view's OSGi module:
     resources are. The `Include-Resource` header points to the relative path for 
     the module's resources. 
 
-## Implementing Your Selection View's Class [](id=implementing-the-view)
+## Implementing Your Selection View's Class [](id=implementing-your-selection-views-class)
 
 Follow these steps to implement your selection view's class: 
 
@@ -108,7 +108,7 @@ Follow these steps to implement your selection view's class:
         }
 
     See 
-    [The Selection View's Class](the-selection-views-class) 
+    [The Selection View's Class](/develop/tutorials/-/knowledge_base/7-2/the-selection-views-class) 
     for more information on these methods. 
 
 4.  Implement the 
@@ -381,3 +381,11 @@ applies to @product-ver@. Here's a walkthrough of this `layouts.jsp` file:
 Your new selection view is automatically rendered by the Item Selector in every 
 app that uses the criterion and return types you defined, without modifying 
 anything in those apps. 
+
+## Related Topics [](id=related-topics)
+
+[Item Selector](/develop/tutorials/-/knowledge_base/7-2/item-selector)
+
+[Creating Custom Criterion and Return Types](/develop/tutorials/-/knowledge_base/7-2/creating-custom-criterion-and-return-types)
+
+[Selecting Entities with an Item Selector](/develop/tutorials/-/knowledge_base/7-2/selecting-entities-with-an-item-selector)

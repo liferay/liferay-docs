@@ -74,9 +74,9 @@ named after the criterion's entity and suffixed by
 is `ImageItemSelectorCriterionHandler` and extends 
 `BaseItemSelectorCriterionHandler<ImageItemSelectorCriterion>`. 
 
-![Figure 1: Item Selector views (selection views) are determined by the return type and criterion, and rendered by the markup.](../../../images/item-selector-architecture.png)
+![Figure 2: Item Selector views (selection views) are determined by the return type and criterion, and rendered by the markup.](../../../images/item-selector-architecture.png)
 
-## Getting an Item Selector
+## Getting an Item Selector [](id=getting-an-item-selector)
 
 To use an Item Selector with your criteria, you must get that Item Selector's 
 URL. The URL is needed to open the Item Selector dialog in your UI. To get this 
@@ -107,7 +107,7 @@ Keep in mind the following when getting an Item Selector's URL:
 -   The return type order is also significant. A view uses the first return type 
     it supports from each criterion's return type list. 
 
-## Understanding Custom Selection Views
+## Understanding Custom Selection Views [](id=understanding-custom-selection-views)
 
 The default selection views may provide everything you need for your app. Custom 
 selection views are required, however, for certain situations. For example, you 
@@ -120,9 +120,9 @@ example, several selection views are available for images. Each selection view
 is a tab in the UI that corresponds to the image's location. An 
 `*ItemSelectorCriterion` class represents each selection view. 
 
-![Figure 2: An entity type can have multiple selection views.](../../../images/item-selector-tabs.png)
+![Figure 3: An entity type can have multiple selection views.](../../../images/item-selector-tabs.png)
 
-### The Selection View's Class
+### The Selection View's Class [](id=the-selection-views-class)
 
 The criterion and return types determine the selection view's class. This class 
 is an `ItemSelectorView` component class that implements 

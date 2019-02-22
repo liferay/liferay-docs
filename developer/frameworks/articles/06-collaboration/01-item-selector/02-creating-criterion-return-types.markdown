@@ -1,9 +1,9 @@
-# Creating Custom Criterion and Return Types
+# Creating Custom Criterion and Return Types [](id=creating-custom-criterion-and-return-types)
 
 If there's not a criterion or return type for your use case, you can create 
 them. The steps here show you how. For more detailed information on Item 
 Selector criterion and return types, see the 
-[Item Selector introduction](liferay.com). 
+[Item Selector introduction](/develop/tutorials/-/knowledge_base/7-2/item-selector). 
 
 1.  Create your criterion class by extending 
     [`BaseItemSelectorCriterion`](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/BaseItemSelectorCriterion.html). 
@@ -77,3 +77,11 @@ Selector criterion and return types, see the
         public class TaskItemSelectorReturnType implements ItemSelectorReturnType{
 
         }
+
+## Related Topics [](id=related-topics)
+
+[Item Selector](/develop/tutorials/-/knowledge_base/7-2/item-selector)
+
+[Creating Custom Item Selector Views](/develop/tutorials/-/knowledge_base/7-2/creating-custom-item-selector-views)
+
+[Selecting Entities with an Item Selector](/develop/tutorials/-/knowledge_base/7-2/selecting-entities-with-an-item-selector)
