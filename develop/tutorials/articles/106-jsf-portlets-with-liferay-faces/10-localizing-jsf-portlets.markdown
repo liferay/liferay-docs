@@ -5,9 +5,10 @@ you're unfamiliar with the term localization, you can learn the basics about it
 [here](http://en.wikipedia.org/wiki/Internationalization_and_localization).
 
 The recommended way to handle internationalization with JSF portlets is
-demonstrated in the [jsf-registration-portlet](https://github.com/liferay/liferay-faces-portal/blob/2.0.0/demo/jsf-registration-portlet)
-demo. This method integrates JSF and Liferay very well, because it allows you to
-"hook" into thousands of existing internationalized keys that Liferay Portal
+demonstrated in the
+[jsf-registration-portlet](https://github.com/liferay/liferay-faces-portal/blob/2.0.0/demo/jsf-registration-portlet)
+demo. This method integrates JSF and Liferay seamlessly because it lets you
+*hook* into thousands of existing internationalized keys that Liferay Portal
 includes, and allows you to add your own keys. The following steps demonstrate
 how to do this:
    
@@ -18,7 +19,7 @@ how to do this:
    file can be found in the jsf-registration-portlet
    [here](https://github.com/liferay/liferay-faces-portal/blob/2.0.0/demo/jsf-registration-portlet/src/main/webapp/WEB-INF/liferay-hook.xml).
 
-2. Create internationalized Langauge properties files for each locale and add
+2. Create internationalized Language properties files for each locale and add
    your key/value pairs to them. You can view a sample
    `Language_en_US.properties` [here](https://github.com/liferay/liferay-faces-portal/blob/2.0.0/demo/jsf-registration-portlet/src/main/resources/Language_en_US.properties).
 
@@ -35,7 +36,7 @@ how to do this:
 
     As an example of using the built-in i18n keyword, you can refer to example
     XHTML file [`registrant.xhtml`](https://github.com/liferay/liferay-faces-portal/blob/2.0.0/demo/jsf-registration-portlet/src/main/webapp/WEB-INF/views/registrant.xhtml)
-    from demonstration portlet jsf-registration-portlet.
+    from the demonstration portlet jsf-registration-portlet.
 
 Internationalizing your portlets is especially easy to do using the options that
 Liferay Faces provides. Awesome! You now know how to internationalize your JSF
