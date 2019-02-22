@@ -3,15 +3,15 @@
 An *Item Selector* is a UI component for selecting entities in a user-friendly 
 manner. 
 
-![Figure 1: Item Selectors select different kinds of entities.](../../../images/item-selector-dialog-02.png)
-
 Here's what you'll learn to do with Item Selectors: 
 
-1.  Selecting Entities with an Item Selector. 
+1.  Select Entities. 
 
-2.  Creating Custom Item Selector Entities. 
+2.  Create Custom Item Selector Criteria.
 
-3.  Creating Custom Item Selector Views. 
+3.  Create Custom Item Selector Views. 
+
+![Figure 1: Item Selectors select different kinds of entities.](../../../images/item-selector-dialog-02.png)
 
 ## Understanding the Item Selector API's Components [](id=understanding-the-item-selector-apis-components)
 
