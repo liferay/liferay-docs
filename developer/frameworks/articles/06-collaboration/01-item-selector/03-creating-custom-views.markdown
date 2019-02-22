@@ -108,7 +108,7 @@ Follow these steps to implement your selection view's class:
         }
 
     See 
-    [The Selection View's Class](/develop/tutorials/-/knowledge_base/7-2/the-selection-views-class) 
+    [The Selection View's Class](/develop/tutorials/-/knowledge_base/7-2/item-selector#the-selection-views-class) 
     for more information on these methods. 
 
 4.  Implement the 
