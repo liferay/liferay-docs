@@ -1,14 +1,13 @@
 # Creating Custom Item Selector Views [](id=creating-custom-item-selector-views)
 
 You can create your own selection view if an Item Selector doesn't contain the 
-one your app needs. The steps here show you how to do this. For more information 
-on custom selection views and the Item Selector API, see the 
+one you need. The steps here show you how. For more information on custom 
+selection views and the Item Selector API, see the 
 [Item Selector introduction](liferay.com). 
 
 ## Configuring Your Selection View's OSGi Module
 
-First, you must configure your selection view's OSGi module. To do so, follow 
-these steps: 
+First, you must configure your selection view's OSGi module: 
 
 1.  Add these dependencies to your module's `build.gradle`: 
 
@@ -46,11 +45,11 @@ these steps:
 Follow these steps to implement your selection view's class: 
 
 1.  Create an `ItemSelectorView` component class that implements 
-    [`ItemSelectorView`](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorView.html). 
-    with the criterion's view as a type argument. In the `@Component` 
-    annotation, set the `item.selector.view.order` property to the order you 
-    want it to appear in when displayed alongside other selector views (lower 
-    values get higher priority). 
+    [`ItemSelectorView`](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorView.html) 
+    with the criterion as a type argument. In the `@Component` annotation, set 
+    the `item.selector.view.order` property to the order you want the view to 
+    appear in when displayed alongside other selector views (lower values get 
+    higher priority). 
 
     This example selector view class is for images, so it implements 
     `ItemSelectorView` with 
@@ -65,10 +64,6 @@ Follow these steps to implement your selection view's class:
         )
         public class SampleItemSelectorView
             implements ItemSelectorView<ImageItemSelectorCriterion> {...
-
-    Note that the criteria order can also be specified in the Item Selector's 
-    [`getItemSelectorURL`](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelector.html#getItemSelectorURL-com.liferay.portal.kernel.portlet.RequestBackedPortletURLFactory-java.lang.String-com.liferay.item.selector.ItemSelectorCriterion...-) 
-    method. 
 
 2.  Create getter methods for the criterion class, servlet context, and return 
     types. Do this by implementing the methods 
@@ -93,8 +88,8 @@ Follow these steps to implement your selection view's class:
             return _supportedItemSelectorReturnTypes;
         }
 
-3.  Configure the title, search options, and visibility settings for the 
-    selection view. Here's an example configuration for the `Sample Selector` 
+3.  Configure the selection view's title, search options, and visibility 
+    settings. Here's an example configuration for the `Sample Selector` 
     selection view: 
 
         @Override
@@ -121,7 +116,7 @@ Follow these steps to implement your selection view's class:
     method to set your view's render settings and render its markup. 
 
     Here's an example implementation of a `renderHTML` method that points to a 
-    JSP file (`sample.jsp`) to render the view. Note that the 
+    JSP file (`sample.jsp`) to render the view. Note that 
     `itemSelectedEventName` is passed as a request attribute so it can be used 
     in the view markup. The view markup is specified via the `ServletContext` 
     method `getRequestDispatcher`. Although this example uses a JSP, you can 
@@ -170,10 +165,9 @@ Follow these steps to implement your selection view's class:
     [`URLItemSelectorReturnType`](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/criteria/URLItemSelectorReturnType.html) 
     and 
     [`FileEntryItemSelectorReturnType`](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/criteria/FileEntryItemSelectorReturnType.html) 
-    to the list of supported return types (you can use more return types if 
-    needed). More return types means that the view is more reusable. Also note 
-    that this example defines its servlet context variable at the bottom of the 
-    file:
+    to the list of supported return types (you can use more if needed). More 
+    return types means that the view is more reusable. Also note that this 
+    example defines its servlet context variable at the bottom of the file: 
 
         private static final List<ItemSelectorReturnType>
             _supportedItemSelectorReturnTypes =

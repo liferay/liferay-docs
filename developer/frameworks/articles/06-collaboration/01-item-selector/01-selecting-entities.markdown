@@ -11,10 +11,9 @@ First, you must get an Item Selector for your use case. Follow these steps to do
 so: 
 
 1.  Determine the criterion and return types for the Item Selector. The 
-    criterion corresponds to the entity types users will select (e.g., users, 
-    images, etc.). The return types correspond to the data you expect to receive 
-    from those selections (e.g., URL, `FileEntry`, etc.). For a list of the 
-    criterion and return types that @product@ provides, see 
+    criterion corresponds to the selected entity type, and the return types 
+    correspond to the data you expect to receive from those selections. For a 
+    list of the criterion and return types that @product@ provides, see 
     [Item Selector Criterion and Return Types](/develop/reference/-/knowledge_base/7-2/item-selector-criterion-and-return-types). 
     For example, if you need an Item Selector that selects images and returns 
     their URLs, use `ImageItemSelectorCriterion` and 
@@ -36,9 +35,10 @@ so:
     The component annotations are available in the module 
     [`org.osgi.service.component.annotations`](http://mvnrepository.com/artifact/org.osgi/org.osgi.service.component.annotations). 
 
-3.  Create the factory you'll use to create the URL. To do this, invoke the 
-    `RequestBackedPortletURLFactoryUtil.create` method with the current request 
-    object. The request can be an `HttpServletRequest` or `PortletRequest`: 
+3.  Create the factory you'll use to create the Item Selector's URL. To do this, 
+    invoke the `RequestBackedPortletURLFactoryUtil.create` method with the 
+    current request object. The request can be an `HttpServletRequest` or 
+    `PortletRequest`: 
 
         RequestBackedPortletURLFactory requestBackedPortletURLFactory =
             RequestBackedPortletURLFactoryUtil.create(request);
@@ -63,9 +63,8 @@ so:
             desiredItemSelectorReturnTypes);
 
 7.  Call the Item Selector's `getItemSelectorURL` method to get an Item Selector 
-    URL based on the criterion. The method requires the URL factory, an 
-    arbitrary event name, and a series of criterion instances (one, in this 
-    case): 
+    URL for the criterion. The method requires the URL factory, an arbitrary 
+    event name, and a series of criterion instances (one, in this case): 
 
         PortletURL itemSelectorURL = _itemSelector.getItemSelectorURL(
             requestBackedPortletURLFactory, "sampleTestSelectItem",
@@ -105,7 +104,7 @@ Follow these steps to use the Item Selector's dialog in a JSP:
         </aui:script>
 
 4.  Inside the `<aui:script>` tag, attach an event handler to the UI element you 
-    created in step 2. For example, this attaches a click event and a function 
+    created in step two. For example, this attaches a click event and a function 
     to the *Choose* button: 
 
         <aui:script use="liferay-item-selector-dialog">
@@ -123,7 +122,7 @@ Follow these steps to use the Item Selector's dialog in a JSP:
     `LiferayItemSelectorDialog` AlloyUI component and configure it to use the 
     Item Selector. The next steps walk you through this. 
 
-5.  Now you must create the function logic. First, create a new instance of the 
+5.  Create the function's logic. First, create a new instance of the 
     Liferay Item Selector dialog: 
 
         var itemSelectorDialog = new A.LiferayItemSelectorDialog(  
@@ -142,9 +141,8 @@ Follow these steps to use the Item Selector's dialog in a JSP:
 7.  Immediately after the `eventName` setting, set the `on` attribute to 
     implement a function that operates on the selected item change. For example, 
     this function sets its variables for the newly selected item. The 
-    information available to parse depends on the return type(s) that were set. 
-    As the comment indicates, you must add the logic for using the selected 
-    element: 
+    information available to parse depends on the return type(s). As the comment 
+    indicates, you must add the logic for using the selected element: 
 
         on: {
                 selectedItemChange: function(event) {
@@ -172,14 +170,13 @@ Follow these steps to use the Item Selector's dialog in a JSP:
 
         url: '<%= itemSelectorURL.toString() %>'
 
-10. To conclude the logic of the function from step 4, open the Item Selector 
+10. To conclude the logic of the function from step four, open the Item Selector 
     dialog by calling its `open` method: 
 
         itemSelectorDialog.open();
 
 When the user clicks the *Choose* button, a new dialog opens, rendering the Item
-Selector with the views that support the criterion and return type(s) that were
-set. 
+Selector with the views that support the criterion and return type(s). 
 
 Here's the complete example code for these steps: 
 

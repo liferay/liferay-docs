@@ -1,22 +1,22 @@
 # Creating Custom Criterion and Return Types
 
 If there's not a criterion or return type for your use case, you can create 
-them. The steps here show you how to do this. For more detailed information on 
-Item Selector criterion and return types, see the 
+them. The steps here show you how. For more detailed information on Item 
+Selector criterion and return types, see the 
 [Item Selector introduction](liferay.com). 
 
 1.  Create your criterion class by extending 
     [`BaseItemSelectorCriterion`](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/BaseItemSelectorCriterion.html). 
     Name the class after the entity it represents and suffix it with 
     `ItemSelectorCriterion`. You can use the class to pass information to the 
-    view if needed. Otherwise, your criterion class can be empty. Any fields in 
-    your criterion class should be serializable, and you should expose an empty 
-    public constructor. 
+    view if needed. Otherwise, your criterion class can be empty. If you pass 
+    information to the view, any fields in your criterion class should be 
+    serializable and you should expose an empty public constructor. 
 
     For example, 
     [`JournalItemSelectorCriterion`](@app-ref@/web-experience/latest/javadocs/com/liferay/journal/item/selector/criterion/JournalItemSelectorCriterion.html) 
     is the criterion class for `Journal` entities (Web Content) and passes 
-    information about the primary key so the view can use it: 
+    primary key information to the view: 
 
         public class JournalItemSelectorCriterion extends BaseItemSelectorCriterion {
 
@@ -39,7 +39,8 @@ Item Selector criterion and return types, see the
         
         }
 
-2.  Create an OSGi component class that implements 
+2.  Create a criterion handler by creating an OSGi component class that 
+    implements 
     [`BaseItemSelectorCriterionHandler`](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/BaseItemSelectorCriterionHandler.html). 
     This example creates a criterion handler for the `TaskItemSelectorCriterion` 
     class. The `@Activate` and `@Override` tokens are required to activate this 
@@ -64,9 +65,8 @@ Item Selector criterion and return types, see the
 3.  If you need a new return type, create it by implementing 
     [`ItemSelectorReturnType`](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorReturnType.html). 
     Name your return type class after the return type's data, and suffix it with 
-    `ItemSelectorReturnType`. Specify that data and its format in Javadoc. 
-    Return type classes need no content. For example, here's a return type for a 
-    task: 
+    `ItemSelectorReturnType`. Specify the data and its format in Javadoc. Return 
+    type classes need no content. For example, here's a return type for a task: 
 
         /**
         * This return type should return the task ID and the user who
