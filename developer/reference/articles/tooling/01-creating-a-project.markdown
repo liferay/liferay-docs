@@ -1,4 +1,8 @@
-# Creating a Project [](id=creating-a-project)
+---
+header-id: creating-a-project
+---
+
+# Creating a Project
 
 Liferay provides many project templates you can use to generate starter projects
 formatted in an opinionated way. Visit the [Project
@@ -21,7 +25,7 @@ Most tools, however, support creating projects in a standalone environment
 (except for IntelliJ). Visit the appropriate section to learn how to create a
 project with the highlighted tool.
 
-## Blade CLI [](id=blade-cli)
+## Blade CLI
 
 1.  Print the available project templates by executing this:
 
@@ -40,7 +44,7 @@ Visit the
 [Blade CLI Project Template Commands](path/blade-cli-project-template-commands)
 reference article for additional information on Blade CLI's `create` command.
 
-## Liferay Dev Studio [](id=liferay-dev-studio)
+## Liferay Dev Studio
 
 1.  Navigate to *File* &rarr; *New* &rarr; *Liferay Module Project*.
 
@@ -70,7 +74,7 @@ reference article for additional information on Blade CLI's `create` command.
 
 4.  Click *Finish* to create your project.
 
-## Liferay IntelliJ Plugin [](id=liferay-intellij-plugin)
+## Liferay IntelliJ Plugin
 
 1.  Navigate to *File* &rarr; *New* &rarr; *Liferay Module*.
 
@@ -85,7 +89,7 @@ reference article for additional information on Blade CLI's `create` command.
 
 4.  Give your project a name. Then click *Finish*.
 
-## Maven [](id=maven)
+## Maven
 
 1.  Execute the following Maven command:
 

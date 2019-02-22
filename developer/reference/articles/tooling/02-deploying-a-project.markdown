@@ -1,4 +1,8 @@
-# Deploying a Project [](id=deploying-a-project)
+---
+header-id: deploying-a-project
+---
+
+# Deploying a Project
 
 Deploying a project to @product@ can be completed using your tool of choice. The
 following tools are preconfigured (or can be easily configured) for Liferay
@@ -22,7 +26,7 @@ Most tools, however, support deploying projects in a standalone environment
 (except for IntelliJ). Visit the appropriate section to learn how to deploy a
 project with the highlighted tool.
 
-## Blade CLI [](id=blade-cli)
+## Blade CLI
 
 This is the recommended way to deploy Gradle and Maven projects in a Liferay
 Workspace via command line. Blade CLI is leveraged by Dev Studio and IntelliJ
@@ -32,7 +36,7 @@ too.
 
         blade deploy
 
-## Gradle [](id=gradle)
+## Gradle
 
 Deploying with pure Gradle is not recommended unless you prefer to develop
 outside of a Liferay Workspace. [Blade CLI](#blade-cli) is a better tool for
@@ -54,7 +58,7 @@ deploying Liferay Gradle projects in most cases.
 
         ./gradlew deploy
 
-## Liferay Dev Studio [](id=liferay-dev-studio)
+## Liferay Dev Studio
 
 These steps assume you've
 [installed a Liferay server in Dev Studio](/developer/reference/-/knowledge_base/7-2/installing-a-server-in-liferay-dev-studio).
@@ -70,7 +74,7 @@ These steps assume you've
 3.  Verify your project builds, deploys, and starts successfully by viewing the
     results in the Console window.
 
-## Liferay IntelliJ Plugin [](id=liferay-intellij-plugin)
+## Liferay IntelliJ Plugin
 
 These steps assume you've
 [installed a Liferay server in IntelliJ](/developer/reference/-/knowledge_base/7-2/installing-a-server-in-intellij-idea).
@@ -89,7 +93,7 @@ in IntelliJ.
     Then navigate back to your server's window and confirm it starts in your
     configured @product@ instance.
 
-## Maven [](id=maven)
+## Maven
 
 If you're developing your project in a Liferay Workspace, skip to step 3.
 

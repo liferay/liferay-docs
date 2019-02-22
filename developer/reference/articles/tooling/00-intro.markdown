@@ -1,4 +1,8 @@
-# Tooling [](id=tooling)
+---
+header-id: tooling
+---
+
+# Tooling
 
 You can write code for @product@ using any standard toolset. Liferay is
 tool-agnostic, which frees you to work with whatever you're already productive
