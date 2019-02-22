@@ -79,7 +79,9 @@ public class NumberHeadersTask extends Task {
 				
 				foundDuplicateIds = false;
 				
-				overrideFile = isOverrideFile(filename, duplicateFiles);
+				if (dirType.contains("dxp")) {
+					overrideFile = isOverrideFile(filename, duplicateFiles);
+				}
 
 				try {
 					LineNumberReader in =
@@ -104,7 +106,7 @@ public class NumberHeadersTask extends Task {
 							}
 							// validate existing header
 							else {
-								validateHeaderId(filename, headerIdLine, in.getLineNumber());
+								validateHeaderId(filename, headerIdLine, in.getLineNumber(), true);
 							}
 						}
 						
@@ -145,6 +147,9 @@ public class NumberHeadersTask extends Task {
 				
 				try {
 					checkOverrideHeaders(duplicateFile, duplicateFileDxp);
+					if (foundDuplicateIds) {
+						throw new BuildException("FAILURE - Duplicate header IDs exist");
+					}
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
@@ -224,6 +229,16 @@ public class NumberHeadersTask extends Task {
 				filenamesWithPresetHeader.contains(duplicateFile2)) {
 			
 			headerIdLineCe = headerIdLineDxp;
+
+			// Check cases where there are two DXP override files with matching
+			// header IDs. This case is not checked with the general validation
+			// logic. Add new CE header to ID list and validate it.
+			IDS.put(getHeaderId(headerIdLineCe), inFile.getName());
+
+			// Disable overrideFile flag, so validation for the new header ID can
+			// process.
+			overrideFile = false;
+			validateHeaderId(inFile.getName(), headerIdLineCe, in.getLineNumber(), false);
 		}
 		else {
 			headerIdLineDxp = headerIdLineCe;
@@ -508,10 +523,11 @@ public class NumberHeadersTask extends Task {
 		return overrideFile;
 	}
 	
-	private static void validateHeaderId(String filename, String headerIdLine, int lineNum) {
+	private static void validateHeaderId(String filename, String headerIdLine, int lineNum, boolean presetHeader) {
 
-		filenamesWithPresetHeader.add(filename);
-
+		if (presetHeader) {
+			filenamesWithPresetHeader.add(filename);
+		}
 		// Extract the header ID
 
 		String id = getHeaderId(headerIdLine);
