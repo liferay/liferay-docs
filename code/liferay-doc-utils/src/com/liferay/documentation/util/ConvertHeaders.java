@@ -15,12 +15,13 @@ import java.util.regex.Pattern;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.tools.ant.BuildException;
+import org.apache.tools.ant.Task;
 
-public class ConvertHeaders {
+public class ConvertHeaders extends Task {
 
-	public static void main(String[] args) {
+	public void execute() throws BuildException {
 
-		String docDir = args[0];
+		String docDir = _docdir;
 
 		List<String> ceFileList = getFileList(docDir, "");
 		List<String> dxpFileList = getFileList(docDir, "-dxp");
@@ -156,5 +157,10 @@ public class ConvertHeaders {
 		
 		return fileList;
 	}
-	
+
+	public void setDocdir(String docdir) {
+		_docdir = docdir;
+	}
+
+	private String _docdir;
 }
