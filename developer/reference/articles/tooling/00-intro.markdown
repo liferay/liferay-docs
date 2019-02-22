@@ -1,8 +1,8 @@
 # Tooling [](id=tooling)
 
 You can write code for @product@ using any standard toolset. Liferay is
-tool-agnostic, rather than pigeonholing you into something specific. This frees
-you to work with whatever you're already productive using.
+tool-agnostic, which frees you to work with whatever you're already productive
+using.
 
 Liferay has also created its own tools that streamline @product@ development.
 These tools integrate with popular build environments (e.g., Gradle and Maven).
@@ -32,4 +32,4 @@ and many more
 
 If you're a newbie looking for the best development tool for @product@, or even
 a seasoned veteran looking for a tool you may like more than your current setup,
-this section will answer your tooling questions. 
+this section answers your tooling questions. 

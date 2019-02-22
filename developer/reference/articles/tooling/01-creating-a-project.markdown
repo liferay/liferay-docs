@@ -1,11 +1,11 @@
 # Creating a Project [](id=creating-a-project)
 
-Liferay provides a slew of project templates you can use to generate starter
-projects formatted in an opinionated way. Visit the
-[Project Templates](/developer/reference/-/knowledge_base/7-2/project-templates)
+Liferay provides many project templates you can use to generate starter projects
+formatted in an opinionated way. Visit the [Project
+Templates](/developer/reference/-/knowledge_base/7-2/project-templates)
 reference section for more information on the available project templates. Each
-project template has different configurable options, so be sure to research a
-project template before generating it.
+project template has different configurable options, so be sure to research
+a project template before generating it.
 
 You can use your desired tool to generate a project. The following tools are
 preconfigured for Liferay project generation:
