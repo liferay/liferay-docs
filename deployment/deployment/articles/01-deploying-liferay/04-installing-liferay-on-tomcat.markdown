@@ -311,7 +311,7 @@ it. Mail session configuration is next.
 
 As with database configuration, the easiest way to configure mail is to let
 @product@ handle your mail session. If you want to use @product@'s
-[built-in mail session]((/deployment/deployment/-/knowledge_base/7-2/preparing-for-install#products-built-in-mail-session)),
+[built-in mail session]((/deployment/deployment/-/knowledge_base/7-2/configuring-mail#products-built-in-mail-session)),
 skip this section. 
 
 If you want to manage your mail session with Tomcat, follow these steps:
@@ -344,7 +344,7 @@ If you want to manage your mail session with Tomcat, follow these steps:
 
 2.  In your `portal-ext.properties` file in Liferay Home, reference your mail
     session:
-   
+
         mail.session.jndi.name=mail/MailSession
 
 You've created a mail session for Tomcat to manage and configured @product@ to

@@ -160,7 +160,8 @@ specified.
 Now that @product@ is up and running, you can continue configuring it as
 desired. Here are some suggestions:
 
-1.  Configure your mail session, if you haven't already configured it. 
+1.  [Configure your mail session](/deployment/deployment/-/knowledge_base/7-2/configuring-a-mail-session),
+    if you haven't already configured it. 
 
 2.  Install the Marketplace plugin, if it isn't already installed. If your 
     machine has  restricted access to the public network or if you restricted
