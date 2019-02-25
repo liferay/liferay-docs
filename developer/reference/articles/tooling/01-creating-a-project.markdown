@@ -63,14 +63,10 @@ reference article for additional information on Blade CLI's `create` command.
     properties. The properties you assign are the ones found in the `@Component`
     annotation's `property = {...}` assignment.
 
-    +$$$
-
-    **Note:** You can also create a new component class for a pre-existing
-    module project. Navigate to *File* &rarr; *New* &rarr; *Liferay Component
-    Class*. This is a similar wizard to the previous component class wizard,
-    except you can select a component class template. 
-
-    $$$
+    | **Note:** You can also create a new component class for a pre-existing
+    | module project. Navigate to *File* &rarr; *New* &rarr; *Liferay Component
+    | Class*. This is a similar wizard to the previous component class wizard,
+    | except you can select a component class template. 
 
 4.  Click *Finish* to create your project.
 
@@ -98,13 +94,9 @@ reference article for additional information on Blade CLI's `create` command.
 2.  Select the archetype you want to leverage and proceed through the
     configuration prompts.
 
-+$$$
-
-**Note:** Maven projects can also be generated using Blade CLI. Follow
-[Blade CLI's](#blade-cli-gradle) project creation instructions and insert the
-`-b maven` parameter in the Blade command.
-
-$$$
+| **Note:** Maven projects can also be generated using Blade CLI. Follow [Blade
+| CLI's](#blade-cli-gradle) project creation instructions and insert the `-b
+| maven` parameter in the Blade command.
 
 Archetypes prefixed with `com.liferay.project.templates.[TYPE]` or
 `com.liferay.faces.archetype:[TYPE]` are compatible with @product-ver@. All
