@@ -38,6 +38,15 @@ project with the highlighted tool.
 
         blade create -t [projectTemplate] [option1] [option2] ... [optionN] [projectName]
 
++$$$
+
+**Note:** If you want to generate a project for a previous version (e.g.,
+Liferay Portal 7.0), you can specify this using the `-v` flag. For example, to
+create a project for Liferay Portal 7.0, you would include `-v 7.0` in your
+create command sequence.
+
+$$$
+
 The available configuration options are documented for each
 [project template](/developer/reference/-/knowledge_base/7-2/project-templates).
 Run `blade create --help` for the entire list of available options.
