@@ -1,8 +1,8 @@
 # Troubleshooting Liferay DXP Data Sources [](id=troubleshooting-liferay-dxp-data-sources)
 
-Environment and data source configurations can prevent or disrupt access to
-Liferay DXP (DXP) data sources. Here are troubleshooting steps for resolving DXP
-data source issues.
+Misconfigured environments or data sources can prevent or disrupt access to
+Liferay DXP (DXP) data sources. Here's how to troubleshoot DXP data source
+issues.
 
 ## Retry Authorization [](id=retry-authorization)
 
