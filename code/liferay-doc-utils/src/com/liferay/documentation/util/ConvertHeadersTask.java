@@ -17,7 +17,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Task;
 
-public class ConvertHeaders extends Task {
+public class ConvertHeadersTask extends Task {
 
 	public void execute() throws BuildException {
 
