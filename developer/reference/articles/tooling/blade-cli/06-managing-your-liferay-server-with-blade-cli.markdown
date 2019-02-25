@@ -1,47 +1,72 @@
-# Managing Your Liferay Server with Blade CLI [](id=managing-module-projects-with-blade-cli)
+# Managing Your Liferay Server with Blade CLI [](id=managing-your-liferay-server-with-blade-cli)
 
 In this tutorial, you'll learn how to manage a Liferay server using Blade CLI.
-For example, Blade CLI lets you install, start, stop, inspect, and modify a
-Liferay server.
+Managing a server with Blade CLI should be done in a
+[Liferay Workspace](/developer/reference/-/knowledge_base/7-2/liferay-workspace).
 
-Make sure you're in a Liferay Workspace and have a bundle installed and
-configured in the workspace before testing the Blade CLI commands on your own.
-To learn more about installing a Liferay server in a Liferay Workspace, see the
-[Creating a Liferay Workspace with Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/creating-a-liferay-workspace-with-liferay-ide)
-section. The following Blade CLI commands are covered in this sub-section:
+Blade CLI lets you install, start, stop, inspect, and modify a Liferay server.
 
-- `server`
-- `sh`
+You'll step through a popular use case next.
 
-The first thing that comes to mind when interacting with a server is simply
-turning it on/off. You can use the `server` sub-command to accomplish this. To
-turn on a Liferay server (Tomcat or Wildfly/JBoss), you can run
+1.  Make sure you've created a Liferay Workspace. See the
+    [Creating a Liferay Workspace](/developer/reference/-/knowledge_base/7-2/creating-a-liferay-workspace#blade-cli)
+    article for more information.
 
-    blade server start -b
+2.  Initialize a Liferay server by running
 
-Likewise, to turn off a server, run
+        blade server init
 
-    blade server stop
+    This downloads the @product@ bundle set in your workspace's
+    `gradle.propeties` file. See the
+    [Adding a Liferay Bundle to Workspace](/developer/reference/-/knowledge_base/7-2/adding-a-liferay-bundle-to-workspace)
+    article for more information.
 
-Once you've started your bundle, you can examine your server's OSGi container by
-using the `sh` command, which provides access to your server using the Felix
-Gogo shell. For example, to check if you successfully deployed your application
-from the previous section, you could run:
+3.  Start your Liferay server (Tomcat or Wildfly/JBoss) by running
 
-    blade sh lb
+        blade server start
 
-Your output lists a long list of modules that are active/installed in your
-server's OSGi container.
+    This starts the server in the background. You can tail the logs by adding
+    the `-t` flag. If your prefer starting the server in the foreground, run
+    `blade server run`. Additionally, if you prefer starting the server in debug
+    mode, add the `-d` flag. See the
+    [Blade CLI](/developer/reference/-/knowledge_base/7-2/blade-cli) article for
+    additional flags you can set when starting your Liferay server.
 
-![Figure 1: Blade CLI accesses the Gogo shell script to run the `lb` command.](../../../images/blade-sh.png)
+4.  Examine your server's OSGi container by using Blade CLI's `sh` command,
+    which provides access to your server using the Felix Gogo shell. For
+    example, to check if you successfully deployed your application from the
+    previous section, you could run:
 
-You can run any Gogo command using `blade sh`. This command requires
-[Developer Mode](/develop/tutorials/-/knowledge_base/7-1/using-developer-mode-with-themes#setting-developer-mode-for-your-server-using-portal-developer-properties)
-to be enabled. Developer Mode is enabled in
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace)
-by default. See the
-[Using the Felix Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell)
-section for more information on this tool.
+        blade sh lb
 
-Awesome! You learned how to conveniently interact with @product@ using Blade
-CLI.
+    Your output lists a long list of modules that are active/installed in your
+    server's OSGi container.
+
+    ![Figure 1: Blade CLI accesses the Gogo shell script to run the `lb` command.](../../../images/blade-sh.png)
+
+    You can run any Gogo command using `blade sh`. This command requires
+    [Developer Mode](/develop/tutorials/-/knowledge_base/7-1/using-developer-mode-with-themes#setting-developer-mode-for-your-server-using-portal-developer-properties)
+    to be enabled. Developer Mode is enabled in workspace by default. See the
+    [Using the Felix Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell)
+    section for more information on this tool.
+
+5.  Once you're finished modifying your Liferay bundle, you can package it as a
+    sharable file by running this command:
+
+        ./gradlew distBundle[Zip|Tar]
+
+    This lets you create a ZIP or TAR file to share with others. This option is
+    only available with Gradle at this time.
+
+    <!-- TODO: Add way for producing a distributable workspace using Blade, when
+    available. It can only be done currently with ./gradlew distBundle[Zip|Tar].
+    -->
+
+6.  Turn off your Liferay server:
+
+        blade server stop
+
+For all Blade CLI's available options, see the
+[Blade CLI](/developer/reference/-/knowledge_base/7-2/blade-cli) article.
+
+Awesome! You learned how to interact with @product@ using Blade CLI.
