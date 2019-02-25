@@ -1,4 +1,8 @@
-# Managing Your Liferay Server with Blade CLI [](id=managing-your-liferay-server-with-blade-cli)
+---
+header-id: managing-your-liferay-server-with-blade-cli
+---
+
+# Managing Your Liferay Server with Blade CLI
 
 In this tutorial, you'll learn how to manage a Liferay server using Blade CLI.
 Managing a server with Blade CLI should be done in a

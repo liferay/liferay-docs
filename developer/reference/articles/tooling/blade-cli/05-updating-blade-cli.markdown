@@ -1,4 +1,8 @@
-# Updating Blade CLI [](id=updating-blade-cli)
+---
+header-id: updating-blade-cli
+---
+
+# Updating Blade CLI
 
 Blade CLI is updated frequently, so it's recommended to update your Blade CLI
 environment for new features. You can check the released versions of Blade CLI

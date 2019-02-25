@@ -1,4 +1,8 @@
-# Common Errors with Blade CLI [](id=common-errors-with-blade-cli)
+---
+header-id: common-errors-with-blade-cli
+---
+
+# Common Errors with Blade CLI
 
 If you're experiencing an issue with Blade CLI's installation process, or it
 isn't working as expected, survey this article to find answers to common
@@ -11,7 +15,7 @@ The following issues are documented:
 
 Visit the appropriate section to learn more.
 
-## The blade command is not available in my CLI [](id=the-blade-command-is-not-available-in-my-cli)
+## The blade command is not available in my CLI
 
 The Liferay Project SDK installer attempts to add JPM to your path. For Windows,
 it uses the Windows registry. For Mac/Linux, it updates `.bashrc` or `.zshrc`. 
@@ -34,7 +38,7 @@ Linux:
 
 Once you restart the command line, the `blade` command should be available.
 
-## I can't update my Blade CLI version [](id=i-cant-update-my-blade-cli-version)
+## I can't update my Blade CLI version
 
 If you run `blade version` after updating, but don’t see the expected version
 installed, you may have two separate Blade CLI installations on your machine.

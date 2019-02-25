@@ -1,4 +1,8 @@
-# Installing Blade CLI [](id=installing-blade-cli)
+---
+header-id: installing-blade-cli
+---
+
+# Installing Blade CLI
 
 You can install Blade CLI using the Liferay Project SDK installer. This installs
 JPM and Blade CLI into your user home folder and optionally initializes a

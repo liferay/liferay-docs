@@ -1,4 +1,8 @@
-# Generating Project Samples with Blade CLI [](id=generating-project-samples-with-blade-cli)
+---
+header-id: generating-project-samples-with-blade-cli
+---
+
+# Generating Project Samples with Blade CLI
 
 Liferay provides many
 [sample projects](https://github.com/liferay/liferay-blade-samples) that are

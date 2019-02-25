@@ -1,4 +1,8 @@
-# Blade CLI [](id=blade-cli)
+---
+header-id: blade-cli
+---
+
+# Blade CLI
 
 [Blade CLI](https://github.com/liferay/liferay-blade-cli/) is a command line
 tool that provides the easiest way for Liferay developers to create, manage, and
