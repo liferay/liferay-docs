@@ -131,7 +131,7 @@ and applies them to the `com.liferay.blogs.web` module.
         }
 
     	@Reference(
-    		target = "(&(bundle.symbolic.name=com.liferay.blogs.web)(!(component.name=com.liferay.docs.override.moduleresourcebundle.MyBlogsResourceBundleLoader)))"
+    		target = "(&(bundle.symbolic.name=com.liferay.blogs.web)(!(resource.bundle.aggregate=*))(!(component.name=com.liferay.docs.override.moduleresourcebundle.MyBlogsResourceBundleLoader)))"
     	)
     	public void setResourceBundleLoader(
     		ResourceBundleLoader resourceBundleLoader) {
@@ -192,7 +192,7 @@ The setter method `setResourceBundleLoader` assigns an aggregate of this class's
 resource bundle loader and the target resource bundle loader to the
 `_resourceBundleLoader` field. 
         
-    @Reference(target = "(&(bundle.symbolic.name=com.liferay.blogs.web)(!(component.name=com.liferay.docs.override.moduleresourcebundle.MyBlogsResourceBundleLoader)))"
+    @Reference(target = "(&(bundle.symbolic.name=com.liferay.blogs.web)(!(resource.bundle.aggregate=*))(!(component.name=com.liferay.docs.override.moduleresourcebundle.MyBlogsResourceBundleLoader)))"
     )
     public void setResourceBundleLoader(
         ResourceBundleLoader resourceBundleLoader) {
