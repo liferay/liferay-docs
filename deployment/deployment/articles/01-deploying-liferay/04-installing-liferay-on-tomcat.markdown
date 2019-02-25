@@ -239,11 +239,53 @@ Start with configuring Tomcat to run @product@.
 
         <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" URIEncoding="UTF-8" />
 
-5.  If you're on Unix, Linux, or Mac OS, make the shell scripts in your 
+5.  Refrain from writing access logs (optional) by commenting out the the access
+    log `Valve` element in `$CATALINA_BASE/conf/server.xml`. It's commented out
+    here:
+
+        <!-- <Valve className="org.apache.catalina.valves.AccessLogValve" 
+               directory="logs"
+               prefix="localhost_access_log" suffix=".txt"
+               pattern="%h %l %u %t &quot;%r&quot; %s %b" /> -->
+
+6.  Optionally, set the following log levels in your
+    `$CATALINA_HOME/conf/logging.properties` file:
+
+        org.apache.catalina.startup.Catalina.level=INFO
+        org.apache.catalina.startup.ClassLoaderFactory.level=SEVERE
+        org.apache.catalina.startup.VersionLoggerListener.level=WARNING
+        org.apache.level=WARNING
+
+7.  In `$CATALINA_HOME/conf/web.xml`, set the JSP compiler to  Java 8 and set 
+    @product@'s `TagHandlerPool` class to manage the JSP tag pool. Do this by
+    adding the following elements above the `jsp` servlet element's
+    `<load-on-startup>` element. 
+
+        <init-param>
+            <param-name>compilerSourceVM</param-name>
+            <param-value>1.8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>compilerTargetVM</param-name>
+            <param-value>1.8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>tagpoolClassName</param-name>
+            <param-value>com.liferay.support.tomcat.jasper.runtime.TagHandlerPool</param-value>
+        </init-param>
+
+8.  In `$CATALINA_HOME/conf/web.xml`, specify whether the application server
+    should look for extra metadata, such as annotations in the application's
+    JARs and classes. Setting `web-app` element's attribute
+    `metadata-complete="true"` tells the application server there's no extra
+    metadata. The application server starts up faster this way. The default is
+    to check for extra metadata. 
+
+9.  If you're on Unix, Linux, or Mac OS, make the shell scripts in your 
     `$CATALINA_HOME/bin` and `$CATALINA_BASE/bin` folders executable by running
     this command in each folder:
 
-    `chmod a+x *.sh`
+        chmod a+x *.sh
 
 **Checkpoint:**
 
@@ -262,7 +304,18 @@ Your application server is configured to run @product@.
 
 5.  `$CATALINA_BASE/conf/server.xml` sets UTF-8 encoding.
 
-6.  The scripts in Tomcat's `bin` folders are executable.
+6.  `$CATALINA_BASE/conf/server.xml` doesn't declare any valve for writing host 
+    access logs. (optional)
+
+7.  `$CATALINA_HOME/conf/logging.properties` sets the desired log levels. 
+
+8.  `$CATALINA_HOME/conf/web.xml` sets the tag handler pool and sets Java 8 as 
+    the JSP compiler. 
+
+9.  `$CATALINA_HOME/conf/web.xml` specifies for the application server
+    to refrain from looking for extra metadata. (optional)
+
+10. The scripts in Tomcat's `bin` folders are executable.
 
 ### Database Configuration [](id=database-configuration)
 
