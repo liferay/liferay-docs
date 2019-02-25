@@ -2,10 +2,6 @@
 header-id: collaboration
 ---
 
----
-header-id: collaboration
----
-
 # Collaboration
 
 Underlying the 
