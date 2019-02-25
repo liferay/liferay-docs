@@ -40,9 +40,7 @@ project with the highlighted tool.
 
 The available configuration options are documented for each
 [project template](/developer/reference/-/knowledge_base/7-2/project-templates).
-Visit the
-[Blade CLI Project Template Commands](path/blade-cli-project-template-commands)
-reference article for additional information on Blade CLI's `create` command.
+Run `blade create --help` for the entire list of available options.
 
 ## Liferay Dev Studio
 
