@@ -34,13 +34,9 @@ cloning the repository and manually copy/pasting them to your environment.
 
     The sample is generated in the current folder.
 
-+$$$
-
-**Note:** Interested in generating legacy versions of Blade samples? Pass in the
-`-v` param followed by the @product@ version to target. For example,
-
-    blade samples -v 7.0 ds-portlet
-
-$$$
+| **Note:** Interested in generating legacy versions of Blade samples? Pass in the
+| `-v` param followed by the @product@ version to target. For example,
+| 
+|     blade samples -v 7.0 ds-portlet
 
 Awesome! You've successfully generated a Liferay sample project using Blade CLI!

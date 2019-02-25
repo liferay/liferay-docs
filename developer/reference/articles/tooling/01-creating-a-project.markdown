@@ -38,14 +38,10 @@ project with the highlighted tool.
 
         blade create -t [projectTemplate] [option1] [option2] ... [optionN] [projectName]
 
-+$$$
-
-**Note:** If you want to generate a project for a previous version (e.g.,
-Liferay Portal 7.0), you can specify this using the `-v` flag. For example, to
-create a project for Liferay Portal 7.0, you would include `-v 7.0` in your
-create command sequence.
-
-$$$
+| **Note:** If you want to generate a project for a previous version (e.g.,
+| Liferay Portal 7.0), you can specify this using the `-v` flag. For example, to
+| create a project for Liferay Portal 7.0, you would include `-v 7.0` in your
+| create command sequence.
 
 The available configuration options are documented for each
 [project template](/developer/reference/-/knowledge_base/7-2/project-templates).
@@ -70,14 +66,10 @@ Run `blade create --help` for the entire list of available options.
     properties. The properties you assign are the ones found in the `@Component`
     annotation's `property = {...}` assignment.
 
-    +$$$
-
-    **Note:** You can also create a new component class for a pre-existing
-    module project. Navigate to *File* &rarr; *New* &rarr; *Liferay Component
-    Class*. This is a similar wizard to the previous component class wizard,
-    except you can select a component class template. 
-
-    $$$
+    | **Note:** You can also create a new component class for a pre-existing
+    | module project. Navigate to *File* &rarr; *New* &rarr; *Liferay Component
+    | Class*. This is a similar wizard to the previous component class wizard,
+    | except you can select a component class template. 
 
 4.  Click *Finish* to create your project.
 
@@ -105,13 +97,9 @@ Run `blade create --help` for the entire list of available options.
 2.  Select the archetype you want to leverage and proceed through the
     configuration prompts.
 
-+$$$
-
-**Note:** Maven projects can also be generated using Blade CLI. Follow
-[Blade CLI's](#blade-cli-gradle) project creation instructions and insert the
-`-b maven` parameter in the Blade command.
-
-$$$
+| **Note:** Maven projects can also be generated using Blade CLI. Follow
+| [Blade CLI's](#blade-cli-gradle) project creation instructions and insert the
+| `-b maven` parameter in the Blade command.
 
 Archetypes prefixed with `com.liferay.project.templates.[TYPE]` or
 `com.liferay.faces.archetype:[TYPE]` are compatible with @product-ver@. All
