@@ -26,7 +26,7 @@ You'll step through a popular use case next.
         blade server start
 
     This starts the server in the background. You can tail the logs by adding
-    the `-t` flag. If your prefer starting the server in the foreground, run
+    the `-t` flag. If you prefer starting the server in the foreground, run
     `blade server run`. Additionally, if you prefer starting the server in debug
     mode, add the `-d` flag. See the
     [Blade CLI](/developer/reference/-/knowledge_base/7-2/blade-cli) article for
@@ -45,18 +45,19 @@ You'll step through a popular use case next.
     ![Figure 1: Blade CLI accesses the Gogo shell script to run the `lb` command.](../../../images/blade-sh.png)
 
     You can run any Gogo command using `blade sh`. This command requires
-    [Developer Mode](/develop/tutorials/-/knowledge_base/7-1/using-developer-mode-with-themes#setting-developer-mode-for-your-server-using-portal-developer-properties)
+    [Developer Mode](/develop/tutorials/-/knowledge_base/7-2/using-developer-mode-with-themes#setting-developer-mode-for-your-server-using-portal-developer-properties)
     to be enabled. Developer Mode is enabled in workspace by default. See the
-    [Using the Felix Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell)
+    [Using the Felix Gogo Shell](/develop/reference/-/knowledge_base/7-2/using-the-felix-gogo-shell)
     section for more information on this tool.
 
 5.  Once you're finished modifying your Liferay bundle, you can package it as a
     sharable file by running this command:
 
-        ./gradlew distBundle[Zip|Tar]
+        blade gw distBundle[Zip|Tar]
 
     This lets you create a ZIP or TAR file to share with others. This option is
-    only available with Gradle at this time.
+    only available with Gradle at this time. The above command leverages Blade
+    CLI's `gw` option, which executes the project's Gradle wrapper.
 
     <!-- TODO: Add way for producing a distributable workspace using Blade, when
     available. It can only be done currently with ./gradlew distBundle[Zip|Tar].
@@ -66,7 +67,7 @@ You'll step through a popular use case next.
 
         blade server stop
 
-For all Blade CLI's available options, see the
+To reference all of Blade CLI's available options, see the
 [Blade CLI](/developer/reference/-/knowledge_base/7-2/blade-cli) article.
 
 Awesome! You learned how to interact with @product@ using Blade CLI.

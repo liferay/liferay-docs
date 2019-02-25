@@ -1,8 +1,8 @@
 # Blade CLI [](id=blade-cli)
 
-The [Blade CLI](https://github.com/liferay/liferay-blade-cli/) tool is the
-easiest way for Liferay developers to create and manage Liferay projects (Gradle
-or Maven). Blade CLI lets you
+[Blade CLI](https://github.com/liferay/liferay-blade-cli/) is a command line
+tool that provides the easiest way for Liferay developers to create, manage, and
+deploy Liferay projects (Gradle or Maven). Blade CLI lets you
 
 - create Liferay projects that can be used with any IDE or development
   environment
@@ -27,11 +27,11 @@ Helpful descriptions for the commands are also provided.
 </tr>
 <tr>
 <td><code>create</code></td>
-<td>Creates a new Liferay project from available templates. See the <a href="/developer/reference/-/knowledge_base/7-2/creating-a-project#blade-cli">Creating a Project section for Blade CLI</a> section for more information.</td>
+<td>Creates a new Liferay project from available templates. See the <a href="/developer/reference/-/knowledge_base/7-2/creating-a-project#blade-cli">Creating a Project section for Blade CLI</a> for more information.</td>
 </tr>
 <tr>
 <td><code>deploy</code></td>
-<td>Builds and deploys projects to @product@. See the <a href="/developer/reference/-/knowledge_base/7-2/deploying-a-project#blade-cli">Deploying a Project section for Blade CLI</a> section for more information.</td>
+<td>Builds and deploys projects to @product@. See the <a href="/developer/reference/-/knowledge_base/7-2/deploying-a-project#blade-cli">Deploying a Project section for Blade CLI</a> for more information.</td>
 </tr>
 <tr>
 <td><code>extension install</code></td>
@@ -43,7 +43,7 @@ Helpful descriptions for the commands are also provided.
 </tr>
 <tr>
 <td><code>gw</code></td>
-<td>Executes a Gradle command using the Gradle Wrapper, if detected.</td>
+<td>Executes a Gradle command using the Gradle Wrapper, if detected (e.g., <code>blade gw tasks</code>).</td>
 </tr>
 <tr>
 <td><code>help</code></td>
@@ -63,7 +63,7 @@ Helpful descriptions for the commands are also provided.
 </tr>
 <tr>
 <td><code>server start</code></td>
-<td>Starts the Liferay server in the background. You can add the <code>-d</code> flag to start the server in debug mode. Debug mode can be customized by adding the <code>-p</code> tag to set the port number (defaults are <code>8080</code> for Tomcat and <code>8787</code> for Wildfly) and/or the boolean <code>-s</code> tag to set whether you want to suspend the started server until the debugger is connected. See the <a href="/developer/reference/-/knowledge_base/7-2/managing-your-liferay-server-with-blade-cli">Managing Your Liferay Server with Blade CLI</a> article for more information.</td>
+<td>Starts the Liferay server in the background. You can add the <code>-d</code> flag to start the server in debug mode. Debug mode can be customized by adding the <code>-p</code> tag to set the custom remote debugging port (defaults are <code>8080</code> for Tomcat and <code>8787</code> for Wildfly) and/or the boolean <code>-s</code> tag to set whether you want to suspend the started server until the debugger is connected. See the <a href="/developer/reference/-/knowledge_base/7-2/managing-your-liferay-server-with-blade-cli">Managing Your Liferay Server with Blade CLI</a> article for more information.</td>
 </tr>
 <tr>
 <td><code>server stop</code></td>
