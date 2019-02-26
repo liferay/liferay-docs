@@ -123,8 +123,9 @@ field. This field should match the host you specified as your
 you're configuring an IPv6 address, it must contain brackets when entered into
 the *Remote Host/IP* field (e.g., *[0:0:0:0:0:0:0:1]*).
 
-**Important:** If you configured an IPv6 address, add the
-`-Djava.net.preferIPv4Stack=false` attribute in the
+**Important:** If you configured an IPv6 address, you must configure the app
+server's JVM to not force the usage of IPv4 addresses. For example, if you're
+using Tomcat, add the `-Djava.net.preferIPv4Stack=false` attribute in the
 `$TOMCAT_HOME\bin\setenv.[bat|sh]` file.
 
 If the remote Liferay server is a cluster, you can set the Remote Host/IP to the
