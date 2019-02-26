@@ -147,7 +147,12 @@ servers. To make @product@ aware of the Elasticsearch cluster, set
 
     transportAddresses=[IP address of Elasticsearch Node]:9300
 
-in the Elasticsearch connector's OSGi configuration file. List as many or as few
+Here's an example that sets the IP address of two nodes in the Elasticsearch
+cluster:
+
+    transportAddresses=["192.168.1.1:9300","192.168.1.2:9300"]
+
+Set this in the Elasticsearch connector's OSGi configuration file. List as many
 Elasticsearch nodes in this property as you want. This tells @product@ the IP
 address or host name where search requests should be sent. If using System
 Settings, set the value in the *Transport Addresses* property.
@@ -197,10 +202,14 @@ through TCP. See the Elasticsearch documentation for the available properties
 Adapter's settings for the adapter's available settings.
 <!--reference article](discover/reference/-/knowledge_base/7-1/elasticsearch-settings)-->
 
-At a minimum, provide the list of hosts to act as gossip routers during unicast
-discovery in the `elasticsearch.yml`:
+At a minimum, provide the list of hosts (as `host:port`) to act as gossip
+routers during unicast discovery in the `elasticsearch.yml`:
 
     discovery.zen.ping.unicast.hosts: ["node1.ip.address", "node2.ip.address"]
+
+For example, 
+
+    discovery.zen.ping.unicast.hosts: ["10.10.10.5", "10.10.10,.5:9305"]
 
 $$$
 
