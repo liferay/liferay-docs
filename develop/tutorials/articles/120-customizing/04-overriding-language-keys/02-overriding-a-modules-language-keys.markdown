@@ -10,7 +10,7 @@ Here is the process:
 
 1.  [Find the module and its metadata and language keys](#find-the-module-and-its-metadata-and-language-keys)
 2.  [Write your custom language key values](#providing-language-keys) 
-3.  [Implement a Resource Bundle Loader](#implementing-a-resource-bundle-loader)
+3.  [Prioritize your module's resource bundle](#prioritize-your-modules-resource-bundle)
 
 ## Find the module and its metadata and language keys [](id=find-the-module-and-its-metadata-and-language-keys)
 
@@ -101,168 +101,68 @@ In your module's `src/main/resources/content` folder, create
 for each locale whose keys you want to override. In each language properties
 file, specify your language key overrides. 
 
-Next you'll create a resource bundle loader component to apply the language keys
-to the target module. 
+Next you'll prioritize your module's language keys as a resource bundle for the
+target module. 
 
-## Implement a Resource Bundle Loader [](id=implementing-a-resource-bundle-loader)
+## Prioritize Your Module's Resource Bundle [](id=prioritize-your-modules-resource-bundle)
 
-In this step, you'll create a resource bundle loader component that combines
-your new resource bundle containing the new language key values with the target
-module's existing resource bundle. The new language key values are combined so
-they override the old ones. 
+Now that your language keys are in place, use OSGi manifest headers to specify
+the language keys are for the target module. To compliment the target module's
+resource bundle, you'll aggregate your resource bundle with the target module's
+resource bundle. You'll list your module first to prioritize its resource bundle
+over the target module resource bundle.  Here's an example of module
+`com.liferay.docs.l10n.myapp.lang` prioritizing its resource bundle over target
+module `com.liferay.blogs.web`'s resource bundle:
 
-For example, the following resource bundle loader component combines the current
-bundle's language keys with the `com.liferay.blogs.web` module's language keys
-and applies them to the `com.liferay.blogs.web` module. 
+    Provide-Capability:\
+    liferay.resource.bundle;resource.bundle.base.name="content.Language",\
+    liferay.resource.bundle;resource.bundle.aggregate:String="(bundle.symbolic.name=com.liferay.docs.l10n.myapp.lang),(bundle.symbolic.name=com.liferay.blogs.web)";bundle.symbolic.name=com.liferay.blogs.web;resource.bundle.base.name="content.Language";service.ranking:Long="2";\
+    servlet.context.name=blogs-web
 
-    @Component(
-    	immediate = true,
-    	property = {
-    		"bundle.symbolic.name=com.liferay.blogs.web",
-    		"resource.bundle.base.name=content.Language",
-    		"servlet.context.name=blogs-web"
-    	}
-    )
-    public class MyBlogsResourceBundleLoader implements ResourceBundleLoader {
+Let's examine the example `Provide-Capability` header. 
 
-        @Override
-        public ResourceBundle loadResourceBundle(Locale locale) {
-            return _resourceBundleLoader.loadResourceBundle(locale);
-        }
+1.  `liferay.resource.bundle;resource.bundle.base.name="content.Language"` 
+    declares that the module provides a resource bundle whose base name is
+    `content.language`. 
 
-    	@Reference(
-    		target = "(&(bundle.symbolic.name=com.liferay.blogs.web)(!(resource.bundle.aggregate=*))(!(component.name=com.liferay.docs.override.moduleresourcebundle.MyBlogsResourceBundleLoader)))"
-    	)
-    	public void setResourceBundleLoader(
-    		ResourceBundleLoader resourceBundleLoader) {
+2.  The `liferay.resource.bundle;resource.bundle.aggregate:String=...` directive
+    specifies the list of bundles whose resource bundles are aggregated, the
+    target bundle, the target bundle's resource bundle name, and this service's
+    ranking:
 
-    		_resourceBundleLoader = new AggregateResourceBundleLoader(
-    			new CacheResourceBundleLoader(
-    				new ClassResourceBundleLoader(
-    					"content.Language",
-    					MyBlogsResourceBundleLoader.class.getClassLoader())),
-    			resourceBundleLoader);
-    	}
+    -   `"(bundle.symbolic.name=com.liferay.docs.l10n.myapp.lang),(bundle.symbolic.name=com.liferay.blogs.web)"`:
+        The service aggregates resource bundles from bundles
+        `com.liferay.docs.l10n.myapp.lang` and `com.liferay.blogs.web`.
+        Aggregate as many bundles as desired. Listed bundles are prioritized in
+        descending order. 
+    -   `bundle.symbolic.name=com.liferay.blogs.web;resource.bundle.base.name="content.Language"`:
+        Override the `com.liferay.blogs.web` bundle's resource bundle named
+        `content.Language`.
+    -   `service.ranking:Long="2"`: The resource bundle's service ranking is 
+        `2`. The OSGi framework applies this service if it outranks all other
+        resource bundle services that target `com.liferay.blogs.web`'s
+        `content.Language` resource bundle. 
+    -   `servlet.context.name=blogs-web`: The target resource bundle is in 
+        servlet context `blogs-web`. 
 
-    	private AggregateResourceBundleLoader _resourceBundleLoader;
-
-    }
-
-This class implements
-[`com.liferay.portal.kernel.util.ResourceBundleLoader`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ResourceBundleLoader.html)
-and overrides all its methods. 
-
-The `@Component` annotation registers the class as a resource bundle loader component
-for the target module. The example's target module has the bundle symbolic name
-`com.liferay.blogs.web` and servlet context `blogs-web`. Liferay's modules use a
-base resource bundle named `content.Language`. Attribute setting `immediate =
-true` tells the OSGi framework to activate the component immediately after its
-dependencies resolve.
-
-    @Component(
-    	immediate = true,
-    	property = {
-    		"bundle.symbolic.name=com.liferay.blogs.web",
-    		"resource.bundle.base.name=content.Language",
-    		"servlet.context.name=blogs-web"
-    	}
-    )
-
-Write your `@Component` annotation similarly, making sure to apply the bundle
-symbolic name and servlet context name you recorded earlier to the following
-properties:
-
--   `"bundle.symbolic.name=[target module bundle symbolic name]"`
--   `"servlet.context.name=[target module servlet context name]"`
-
-The class's resource bundle loader field `_resourceBundleLoader` field is an
-`AggregateResourceBundleLoader` for grouping this resource bundle loader and the
-target module's resource bundle loader together. 
-
-    private AggregateResourceBundleLoader _resourceBundleLoader;
-    
-The `loadResourceBundle` method returns a resource bundle based on the locale. 
-
-    @Override
-    public ResourceBundle loadResourceBundle(Locale locale) {
-        return _resourceBundleLoader.loadResourceBundle(locale);
-    }
-
-The setter method `setResourceBundleLoader` assigns an aggregate of this class's
-resource bundle loader and the target resource bundle loader to the
-`_resourceBundleLoader` field. 
-        
-    @Reference(target = "(&(bundle.symbolic.name=com.liferay.blogs.web)(!(resource.bundle.aggregate=*))(!(component.name=com.liferay.docs.override.moduleresourcebundle.MyBlogsResourceBundleLoader)))"
-    )
-    public void setResourceBundleLoader(
-        ResourceBundleLoader resourceBundleLoader) {
-
-        _resourceBundleLoader = new AggregateResourceBundleLoader(
-            new CacheResourceBundleLoader(
-                new ClassResourceBundleLoader(
-                    "content.Language",
-                    MyBlogsResourceBundleLoader.class.getClassLoader())),
-            resourceBundleLoader);
-    }
-
-The `@Reference` annotation tells @product@'s OSGi framework to pass the target
-module's resource bundle loader as the parameter. Specifying the target module
-is tricky because the target module and the resource bundle loader component
-have the same bundle symbolic name property
-(`bundle.symbolic.name=com.liferay.blogs.web`). To prevent this resource bundle
-loader component from being targeted, specify an `!` (not) character followed by
-this resource bundle loader's `component.name` property. 
+[Deploy your module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#building-and-deploying-a-module)
+to see the language keys you've overridden. 
 
 +$$$
 
-**Note:** In some instances, there may be another module that is aggregating the
-resource bundle from your targeted resource bundle. To avoid getting a reference
-to another aggregated resource bundle, insert the
-`(!(resource.bundle.aggregate=*))` statement within the `@Reference` annotation.
+**Tip:** If your override isn't showing, use
+[Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell)
+to check for competing resource bundle services. It may be that another service
+outranks yours. To check for competing resource bundle services whose aggregates
+include `com.liferay.blogs.web`'s resource bundle, for example, execute this
+Gogo Shell command:
+
+    services "(bundle.symbolic.name=com.liferay.login.web)"
+
+Search the results for resource bundle aggregate services whose ranking is
+higher. 
 
 $$$
-
-The method creates a resource bundle loader that aggregates this module's
-resource bundle loader and the target module's resource bundle loader. The first
-loader's resource bundle is prioritized ahead of the resource bundles that
-follow it. Therefore, this class's resource bundle loader and its resource
-bundle (i.e., language keys), take precedence.
-
-If you use the example `setResourceBundleLoader` method, make sure to replace
-`MyBlogsResourceBundleLoader` with your resource bundle loader's class name. 
-
-Resource bundle loader components have these class imports.
-
-    import com.liferay.portal.kernel.util.AggregateResourceBundleLoader;
-    import com.liferay.portal.kernel.util.CacheResourceBundleLoader;
-    import com.liferay.portal.kernel.util.ClassResourceBundleLoader;
-    import com.liferay.portal.kernel.util.ResourceBundleLoader;
-
-    import java.util.Locale;
-    import java.util.ResourceBundle;
-
-    import org.osgi.service.component.annotations.Component;
-    import org.osgi.service.component.annotations.Reference;
-
-You can
-[depend on packages from the following artifacts](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies)
-to provide the classes imported above.
-
- Group | Artifact |
- :------ | :------ |
-`com.liferay.portal` | `com.liferay.portal.kernel` |
- `org.osgi` | `org.osgi.service.component.annotations` | 
-
- **Important**: If your module
- [uses language keys from another module](/develop/tutorials/-/knowledge_base/7-1/localizing-your-application#using-a-language-module)
- and
- [overrides any of that other module's keys](/develop/tutorials/-/knowledge_base/7-1/localizing-your-application#using-a-language-module-from-a-module),
- make sure to use OSGi headers to specify the capabilities your module requires
- and provides. This lets you prioritize resource bundles from the modules. 
-
- To see your language key overrides in action,
- [deploy your module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#building-and-deploying-a-module)
- and visit a portlet that uses the module's language keys. 
 
 Now you can modify the language keys of modules in Liferay's OSGi runtime.
 Remember, language keys you want to override might actually be in Liferay's
