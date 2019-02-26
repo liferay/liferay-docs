@@ -119,17 +119,13 @@ appear.
 
 First, enter your remote Liferay server's IP address into the Remote Host/IP
 field. This field should match the host you specified as your
-`tunnel.servlet.hosts.allowed` property in the `portal-ext.properties` file
-(e.g., *[0:0:0:0:0:0:0:1]*). The brackets for the *Remote Host/IP* field are
-required.
+`tunnel.servlet.hosts.allowed` property in the `portal-ext.properties` file. If
+you're configuring an IPv6 address, it must contain brackets when entered into
+the *Remote Host/IP* field (e.g., *[0:0:0:0:0:0:0:1]*).
 
-+$$$
-
-**Note:** If you're configuring an IPv6 address, add the
+**Important:** If you configured an IPv6 address, add the
 `-Djava.net.preferIPv4Stack=false` attribute in the
 `$TOMCAT_HOME\bin\setenv.[bat|sh]` file.
-
-$$$
 
 If the remote Liferay server is a cluster, you can set the Remote Host/IP to the
 load balanced IP address of the cluster to increase the availability of the

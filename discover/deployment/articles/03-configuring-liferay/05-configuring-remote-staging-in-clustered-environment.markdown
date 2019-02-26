@@ -70,9 +70,9 @@ Let's begin!
 
        `-Djava.net.preferIPv4Stack=false`
 
-3.  Restart both app servers for the new properties to take effect.
+4.  Restart both app servers for the new properties to take effect.
 
-4.  Configure the *TunnelAuthVerifier* property for your nodes' app servers.
+5.  Configure the *TunnelAuthVerifier* property for your nodes' app servers.
     There are two ways to do this:
 
     - **Use a `.config` file (recommended):** In the `$LIFERAY_HOME/osgi/configs`
@@ -96,26 +96,26 @@ Let's begin!
       choose to configure the *TunnelAuthVerifier* this way, you **must** do
       this for all nodes (e.g., App Server 1 and App Server 2).
 
-5.  On your Staging instance, navigate to the Site Administration portion of the
+6.  On your Staging instance, navigate to the Site Administration portion of the
     Product Menu and select *Publishing* &rarr; *Staging*. Then select *Remote
     Live*.
 
     ![Figure 2: When selecting the Remote Staging radio button, you're given a list of options to configure.](../../images/remote-staging-menu.png)
 
-6.  For the Remote Host/IP field, insert the balancer's IP of your web tier.
+7.  For the Remote Host/IP field, insert the balancer's IP of your web tier.
     Configuring the Staging instance with the balancer's IP ensures the
     availability of the environment at the time of publication from staging to
     live.
 
-7.  Enter the port on which the balancer is running into the Remote Port field.
+8.  Enter the port on which the balancer is running into the Remote Port field.
 
-8.  Insert the remote site ID of your app servers into the Remote Site ID field.
+9.  Insert the remote site ID of your app servers into the Remote Site ID field.
     The site ID of all your app servers are the same since they are configured
     for the same database and are shared between nodes.
 
     Navigate to the Site Administration portion of the Product Menu and select
     *Site Settings* to find the site ID.
 
-9. Save the Remote Live settings.
+10. Save the Remote Live settings.
 
 That's it! You've configured remote staging in your clustered environment.
