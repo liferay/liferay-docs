@@ -53,15 +53,15 @@ Let's begin!
     $$$
 
 2.  You must allow the connection between the configured IPs of your app servers
-    and the Staging server. Open both of your app servers'
-    `portal-ext.properties` files and add the following properties:
+    and the Staging server. Open your remote Liferay server's
+    `portal-ext.properties` file and add the following properties:
 
         tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP,STAGING_IP
         tunnel.servlet.https.required=false
 
-    The *SERVER_IP* must be replaced by the current instance's IP you're setting
-    the property for and the *STAGING_IP* must be replaced by the staging
-    instance's IP.
+    The `STAGING_IP` variable must be replaced by the staging server's IP. The
+    `SERVER_IP` constant can remain set for this property; it's automatically
+    replaced by the Liferay server's IP address.
 
 3.  Restart both app servers for the new properties to take effect.
 
