@@ -82,8 +82,8 @@ Setting the version to develop for takes two steps:
     Portal GA6+ and Liferay DXP SP7+. Previous versions do not provide these
     features.
 
-    The versions following the SP7 release of DXP follow service pack versions
-    (e.g., `7.0.10.8` (SP8), `7.0.10.9` (SP9), etc.).
+    The versions following the SP7 release of DXP follow fix pack versions
+    (e.g., `7.0.10.fp69`, `7.0.10.fp70`, etc.).
 
 2.  Once the target platform is configured, check to make sure no dependencies
     in your Gradle build files specify a version. The versions are now imported
@@ -130,11 +130,11 @@ To do this, your `build.gradle` file should look similar to this:
 
     buildscript {
         dependencies {
-            classpath group: "com.liferay", name: "com.liferay.gradle.plugins.target.platform", version "1.1.6"
+            classpath group: "com.liferay", name: "com.liferay.gradle.plugins.target.platform", version: "1.1.6"
         }
         repositories {
             maven {
-                url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+                url "https://repository-cdn.liferay.com/nexus/content/groups/public"
             }
         }
     }
@@ -146,11 +146,11 @@ To do this, your `build.gradle` file should look similar to this:
         targetPlatformBoms group: "com.liferay.portal", name: "release.portal.bom.compile.only", version: "7.0.6"
     }
 
-    Liferay DXP users must replace the artifact names and versions:
+Liferay DXP users must replace the artifact names and versions:
 
-    - `release.portal.bom` &rarr; `release.dxp.bom`
-    - `release.portal.bom.compile.only` &rarr; `release.dxp.bom.compile.only`
-    - `7.0.6` &rarr; `7.0.10.7`
+- `release.portal.bom` &rarr; `release.dxp.bom`
+- `release.portal.bom.compile.only` &rarr; `release.dxp.bom.compile.only`
+- `7.0.6` &rarr; `7.0.10.7`
 
 This Gradle code
 
