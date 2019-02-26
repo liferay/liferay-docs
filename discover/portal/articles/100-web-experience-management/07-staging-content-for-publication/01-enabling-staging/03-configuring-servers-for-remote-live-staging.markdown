@@ -78,23 +78,10 @@ Follow the steps below to configure your servers for Remote Live staging.
     this property; it's automatically replaced by the Liferay server's IP
     addresses.
 
-4.  Validate your remote host IP addresses. For example, validating IPv6
-    addresses requires the following remote live connection configurations:
-
-    4a. Configure the app server's JVM to not force the usage of IPv4 addresses.
-       For example, if you're using Tomcat, add the
-       `-Djava.net.preferIPv4Stack=false` attribute in the
-       `$TOMCAT_HOME\bin\setenv.[bat|sh]` file.
-
-    4b. Select the *Remote Live* radio selector from the Staging page and
-       specify the fields for your remote site. The *Remote Host/IP* field
-       should match the	host you specified as your
-       `tunnel.servlet.hosts.allowed` property in the `portal-ext.properties`
-       file (e.g., *[0:0:0:0:0:0:0:1]*). The brackets for the *Remote Host/IP*
-       field are required.
-
-    Follow this process (excluding step 4a) to set up IPv4 address validation.
-    Be sure to follow the standard IPv4 address syntax too.
+    If you're validating IPv6 addresses, you must configure the app server's JVM
+    to not force the usage of IPv4 addresses. For example, if you're using
+    Tomcat, add the `-Djava.net.preferIPv4Stack=false` attribute in the
+    `$TOMCAT_HOME\bin\setenv.[bat|sh]` file.
 
 5.  Update the *TunnelAuthVerfierConfiguration* of your remote Liferay instance.
     To do this, navigate to the Control Panel &rarr; *Configuration* &rarr;
