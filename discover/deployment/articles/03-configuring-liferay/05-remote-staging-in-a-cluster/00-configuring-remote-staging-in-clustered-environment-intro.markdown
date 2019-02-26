@@ -56,12 +56,30 @@ Let's begin!
     and the Staging server. Open your remote Liferay server's
     `portal-ext.properties` file and add the following properties:
 
-        tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP,STAGING_IP
+        tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP,[STAGING_IP]
         tunnel.servlet.https.required=false
 
-    The `STAGING_IP` variable must be replaced by the staging server's IP. The
-    `SERVER_IP` constant can remain set for this property; it's automatically
-    replaced by the Liferay server's IP address.
+    The `[STAGING_IP]` variable must be replaced by the staging server's IP
+    addresses. The `SERVER_IP` constant can remain set for this property; it's
+    automatically replaced by the Liferay server's IP addresses.
+    
+3.  Validate your remote host IP addresses. For example, validating IPv6
+    addresses requires the following remote live connection configurations:
+
+    3a. Configure the app server's JVM to not force the usage of IPv4 addresses.
+       For example, if you're using Tomcat, add the
+       `-Djava.net.preferIPv4Stack=false` attribute in the
+       `$TOMCAT_HOME\bin\setenv.[bat|sh]` file.
+
+    3b. Select the *Remote Live* radio selector from the Staging page and
+       specify the fields for your remote site. The *Remote Host/IP* field
+       should match the	host you specified as your
+       `tunnel.servlet.hosts.allowed` property in the `portal-ext.properties`
+       file (e.g., *[0:0:0:0:0:0:0:1]*). The brackets for the *Remote Host/IP*
+       field are required.
+
+    Follow this process (excluding step 3a) to set up IPv4 address validation.
+    Be sure to follow the standard IPv4 address syntax too.
 
 3.  Restart both app servers for the new properties to take effect.
 
