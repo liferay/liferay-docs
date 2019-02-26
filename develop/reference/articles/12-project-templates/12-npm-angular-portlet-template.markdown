@@ -21,13 +21,10 @@ a Maven project using Blade CLI.
 
 +$$$
 
-**Note:** If you're deploying an Angular 5 portlet that contains JSDoc, you must 
-remove the JSDoc comments before the portlet builds, or the minifier will fail 
-during the build on Liferay DXP 7.0 de-69 and below. To resolve this, use 
-[Grunt](https://gruntjs.com/getting-started) 
-[uglify](https://www.npmjs.com/package/grunt-contrib-uglify) to remove the JSDoc 
-comments. This process may take some time due to the number of files that need 
-pre-processed. 
+**Note:** If you're deploying an Angular 5 portlet that contains JSDoc, the 
+minifier fails on Liferay DXP 7.0 de-69 and below. To resolve this, use 
+[Grunt](https://gruntjs.com/getting-started) [uglify](https://www.npmjs.com/package/grunt-contrib-uglify) to remove the JSDoc comments. This process may take a long time, depending on 
+the number of files that require an update. 
 
 $$$
 
