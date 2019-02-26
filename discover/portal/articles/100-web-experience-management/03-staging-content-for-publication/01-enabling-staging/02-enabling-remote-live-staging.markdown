@@ -131,23 +131,22 @@ required.
 
 $$$
 
-If the remote Liferay server is a cluster, you can set the Remote Host/IP
-to the load balanced IP address of the cluster in order to increase the
-availability of the publishing process. 
+If the remote Liferay server is a cluster, you can set the Remote Host/IP to the
+load balanced IP address of the cluster to increase the availability of the
+publishing process. 
 
-Next, enter the port on which the remote
-Liferay instance is running into the Remote Port field. You only need to enter a
-Remote Path Context if a non-root portal servlet context is being used on the
-remote Liferay server. Finally, enter the site ID of the site on the remote
-Liferay server that will be used for the Live environment. If a site hasn't
-already been prepared for you on the remote Liferay server, you can log in to
-the remote Liferay server and create a new blank site. After the site has been
-created, note the site ID so you can enter it into the Remote Site ID field on
-your local Liferay server. You can find any site's ID by selecting the site's
-name on the Sites page of the Control Panel. Finally, it's best to check the
-*Use a Secure Network Connection* field to use HTTPS for the publication of
-pages from your local (staging) Liferay server to your remote (live) Liferay
-server.
+Next, enter the port on which the remote Liferay instance is running into the
+Remote Port field. You only need to enter a Remote Path Context if a non-root
+portal servlet context is being used on the remote Liferay server. Finally,
+enter the site ID of the site on the remote Liferay server that will be used for
+the Live environment. If a site hasn't already been prepared for you on the
+remote Liferay server, you can log in to the remote Liferay server and create a
+new blank site. After the site has been created, note the site ID so you can
+enter it into the Remote Site ID field on your local Liferay server. You can
+find any site's ID by selecting the site's name on the Sites page of the Control
+Panel. Finally, it's best to check the *Use a Secure Network Connection* field
+to use HTTPS for the publication of pages from your local (staging) Liferay
+server to your remote (live) Liferay server.
 
 Similar to Local Live staging, it is generally a good idea to turn remote
 staging on at the beginning of your site's development for good performance.
