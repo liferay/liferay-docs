@@ -73,7 +73,7 @@ Let's begin!
 
     3b. Select the *Remote Live* radio selector from the Staging page and
        specify the fields for your remote site. The *Remote Host/IP* field
-       should match the	host you specified as your
+       should match the host you specified as your
        `tunnel.servlet.hosts.allowed` property in the `portal-ext.properties`
        file (e.g., *[0:0:0:0:0:0:0:1]*). The brackets for the *Remote Host/IP*
        field are required.
