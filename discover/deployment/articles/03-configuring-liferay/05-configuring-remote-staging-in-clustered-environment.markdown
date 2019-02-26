@@ -56,12 +56,19 @@ Let's begin!
     and the Staging server. Open both of your app servers'
     `portal-ext.properties` files and add the following properties:
 
-        tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP,STAGING_IP
+        tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP,[STAGING_IP]
         tunnel.servlet.https.required=false
 
-    The *SERVER_IP* must be replaced by the current instance's IP you're setting
-    the property for and the *STAGING_IP* must be replaced by the staging
-    instance's IP.
+    The `[STAGING_IP]` variable must be replaced by the staging server's IP
+    addresses. The `SERVER_IP` constant can remain set for this property; it's
+    automatically replaced by the Liferay server's IP addresses.
+
+3.  If you're validating IPv6 addresses, you must configure the app server's JVM
+    to not force the usage of IPv4 addresses. For example, if you're using
+    Tomcat, add the following attribute in the
+    `$TOMCAT_HOME\bin\setenv.[bat|sh]` file.
+
+       `-Djava.net.preferIPv4Stack=false`
 
 3.  Restart both app servers for the new properties to take effect.
 

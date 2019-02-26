@@ -82,6 +82,18 @@ communication between staging and production environments. Any user with
 possession of the key can manage the production server, execute server-side
 Java code, or worse.
 
+Next, you must allow the connection between the configured IPs of your app
+server and the Staging server. Add the following line to your remote Liferay
+server's `portal-ext.properties` file:
+
+    tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP,[STAGING_IP]
+
+The `[STAGING_IP]` value must be replaced by the staging server's IP addresses.
+If the server has multiple interfaces, each IP address must also be added, which
+would show as a source address for the http(s) requests coming from the staging
+server. The `SERVER_IP` constant can remain set for this property; it's
+automatically replaced by the Liferay server's IP addresses.
+
 One last thing you'll need to do is update the *TunnelAuthVerfierConfiguration*
 of your remote Liferay instance. To do this, navigate to the Control Panel
 &rarr; *Configuration* &rarr; *System Settings* &rarr; *Foundation* &rarr;
@@ -106,9 +118,24 @@ appear.
 ![Figure 1: After your remote Liferay server and local Liferay server have been configured to communicate with each other, you have to specify a few Remote Live connection settings.](../../../../images/remote-live-staging-settings.png)
 
 First, enter your remote Liferay server's IP address into the Remote Host/IP
-field. If the remote Liferay server is a cluster, you can set the Remote Host/IP
+field. This field should match the host you specified as your
+`tunnel.servlet.hosts.allowed` property in the `portal-ext.properties` file
+(e.g., *[0:0:0:0:0:0:0:1]*). The brackets for the *Remote Host/IP* field are
+required.
+
++$$$
+
+**Note:** If you're configuring an IPv6 address, add the
+`-Djava.net.preferIPv4Stack=false` attribute in the
+`$TOMCAT_HOME\bin\setenv.[bat|sh]` file.
+
+$$$
+
+If the remote Liferay server is a cluster, you can set the Remote Host/IP
 to the load balanced IP address of the cluster in order to increase the
-availability of the publishing process. Next, enter the port on which the remote
+availability of the publishing process. 
+
+Next, enter the port on which the remote
 Liferay instance is running into the Remote Port field. You only need to enter a
 Remote Path Context if a non-root portal servlet context is being used on the
 remote Liferay server. Finally, enter the site ID of the site on the remote
@@ -156,23 +183,6 @@ For this reason, it's recommended that you use LDAP to copy selected user
 accounts from your local (staging) Liferay server to your remote (live) Liferay
 server. Liferay's Virtual LDAP Server application, available on Liferay
 Marketplace, makes this easy.
-
-+$$$
-
-**Important:** If your instance is set up to validate IPv6 addresses, you'll
-need to configure your Remote Live Connection Settings. Restart your Liferay
-instance and navigate back to the Staging page. Select the *Remote Live* radio
-selector and specify the fields for your remote site. The *Remote Host/IP* field
-should match the host you specified as your `tunnel.servlet.hosts.allowed`
-property in the `portal-ext.properties` file (e.g., *[0:0:0:0:0:0:0:1]*). Make
-sure to include the brackets. Fill in the rest of the information relevant to
-your site and click *Save*.
-
-To check if the remote site is running on an IPv6 address, add a new application
-to the staged site, and then select *Staging* &rarr; *Publish to Live* from the
-top Control Menu. The changes are published to your remote staged site.
-
-$$$
 
 ## Remote Live Staging Verification [](id=remote-live-staging-verification)
 
