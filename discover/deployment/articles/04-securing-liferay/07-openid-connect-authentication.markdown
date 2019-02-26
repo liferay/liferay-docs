@@ -11,8 +11,8 @@ authenticate to your system.
 
 +$$$
 
-**Note:** You can add multiple providers to your installation, but @product@ can't yet be
-an OpenID Connect provider. 
+**Note:** You can add multiple providers to your installation, but @product@
+can't yet be an OpenID Connect provider. 
 
 $$$
 
@@ -24,13 +24,13 @@ and granted permission.
 
 ## Creating a Client in OpenID Connect Provider [](id=creating-a-client-in-openid-connect-provider)
 
-To use OpenID Connect with @product@, you must first register it as a client in your provider. This
-is an OAuth 2.0 client. The process varies by provider: 
+To use OpenID Connect, you must first register it as a client in your provider.
+This is an OAuth 2.0 client. The process varies by provider: 
 
 1.  Navigate to the provider's website and create a client. 
 
-2.  During the creation process, you must supply an *authorized redirect URLs* that
-    can process the tokens sent from the provider. @product@'s URL is
+2.  During the creation process, you must supply an *authorized redirect URL*
+    that can process the tokens sent from the provider. @product@'s URL is
 
         https://[server.domain]/c/portal/login/openidconnect
 
@@ -90,11 +90,11 @@ Connect authentication.
 
 +$$$
 
-System Settings configuraiton file: 
+System Settings configuration file: 
 
-    com.liferay.portal.security.sso.openid.connect.internal.configuration.OpenIdConnectProviderConfiguration-<name>.config
+    com.liferay.portal.security.sso.openid.connect.internal.configuration.OpenIdConnectProviderConfiguration-[name].config
 
-where `<name>` is a descriptive, but unique name for example `provider1`.
+where `[name]` is a descriptive, but unique name for example `provider1`.
 
 $$$
 
@@ -105,11 +105,13 @@ $$$
 
 2. Click the *Enabled* check box, and then click *Save*. 
 
-**Note:** You can also enable OpenID Connect authentication for the given virtual intance through the *Control Panel* &rarr; *Configuration* &rarr; *Instance Settings* &rarr; *OpenID Connect* tab.
+**Note:** You can also enable OpenID Connect authentication for the given
+virtual instance through the *Control Panel* &rarr; *Configuration* &rarr;
+*Instance Settings* &rarr; *OpenID Connect* tab.
 
 +$$$
 
-System Settings configuraiton file:
+System Settings configuration file:
 
     com.liferay.openid.connect.configuration.OpenIdConnectConfiguration.config
 
