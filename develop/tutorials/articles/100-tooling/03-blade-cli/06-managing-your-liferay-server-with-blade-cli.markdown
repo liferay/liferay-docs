@@ -17,16 +17,22 @@ The first thing that comes to mind when interacting with a server is simply
 turning it on/off. You can use the `server` sub-command to accomplish this. To
 turn on a Liferay server (Tomcat or Wildfly/JBoss), you can run
 
-    blade server start -b
+    blade server start
 
-Likewise, to turn off a server, run
+This starts the server in the background. You can tail the logs by adding the
+`-t` flag. If you prefer starting the server in the foreground, run `blade
+server run`. Additionally, if you prefer starting the server in debug mode, add
+the `-d` flag.
 
-    blade server stop
+Debug mode can be customized by adding the `-p` tag to set the custom remote
+debugging port (defaults are `8000` for Tomcat and `8787` for Wildfly) and/or
+the boolean `-s` tag to set whether you want to suspend the started server until
+the debugger is connected.
 
-Once you've started your bundle, you can examine your server's OSGi container by
-using the `sh` command, which provides access to your server using the Felix
-Gogo shell. For example, to check if you successfully deployed your application
-from the previous section, you could run:
+Once you've started your server, you can examine its OSGi container by using the
+`sh` command, which provides access to your server using the Felix Gogo shell.
+For example, to check if you successfully deployed your application from the
+previous section, you could run:
 
     blade sh lb
 
@@ -42,6 +48,10 @@ to be enabled. Developer Mode is enabled in
 by default. See the
 [Using the Felix Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell)
 section for more information on this tool.
+
+To turn off your server, run
+
+    blade server stop
 
 Awesome! You learned how to conveniently interact with @product@ using Blade
 CLI.
