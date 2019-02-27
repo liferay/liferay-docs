@@ -273,12 +273,11 @@ In this case, the `myapp.web` plugin solely uses the language module's resource
 bundle---the resource bundle aggregate only includes language module
 `myapp.lang`. 
 
-Aggregating resource bundles comes into play when you want to use your a
-language module's resource bundle *in addition to* your plugin's resource
-bundle. These instructions show you how to do this, while prioritizing your
-current plugin's resource bundle over the language module resource bundle. In
-this way, the language module's language keys compliment your plugin's language
-keys. 
+Aggregating resource bundles comes into play when you want to use a language
+module's resource bundle *in addition to* your plugin's resource bundle. These
+instructions show you how to do this, while prioritizing your current plugin's
+resource bundle over the language module resource bundle. In this way, the
+language module's language keys compliment your plugin's language keys. 
 
 For example, a portlet whose bundle symbolic name is `myapp.web` uses keys from
 language module `myapp.lang`, in addition to its own. The portlet's
@@ -289,7 +288,7 @@ language module `myapp.lang`, in addition to its own. The portlet's
     liferay.resource.bundle;resource.bundle.aggregate:String="(bundle.symbolic.name=myapp.web),(bundle.symbolic.name=myapp.lang)";bundle.symbolic.name=myapp.web;resource.bundle.base.name="content.Language";service.ranking:Long="4";\
     servlet.context.name=myapp-web
 
-Let's examine the example `Provide-Capability` header. 
+The example `Provide-Capability` header has two parts: 
 
 1.  `liferay.resource.bundle;resource.bundle.base.name="content.Language"` 
     declares that the module provides a resource bundle whose base name is

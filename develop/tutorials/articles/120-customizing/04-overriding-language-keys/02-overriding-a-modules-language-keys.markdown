@@ -119,14 +119,14 @@ module `com.liferay.blogs.web`'s resource bundle:
     liferay.resource.bundle;resource.bundle.aggregate:String="(bundle.symbolic.name=com.liferay.docs.l10n.myapp.lang),(bundle.symbolic.name=com.liferay.blogs.web)";bundle.symbolic.name=com.liferay.blogs.web;resource.bundle.base.name="content.Language";service.ranking:Long="2";\
     servlet.context.name=blogs-web
 
-Let's examine the example `Provide-Capability` header. 
+The example `Provide-Capability` header has two parts: 
 
-1.  `liferay.resource.bundle;resource.bundle.base.name="content.Language"` 
-    declares that the module provides a resource bundle whose base name is
+1.  `liferay.resource.bundle;resource.bundle.base.name="content.Language"`
+    declares that the module provides a resource bundle with the base name
     `content.language`. 
 
 2.  The `liferay.resource.bundle;resource.bundle.aggregate:String=...` directive
-    specifies the list of bundles whose resource bundles are aggregated, the
+    specifies the list of bundles with resource bundles to aggregate, the
     target bundle, the target bundle's resource bundle name, and this service's
     ranking:
 
