@@ -24,6 +24,9 @@ are the steps for creating and deploying a servlet filter:
 
 4. [Deploy your plugin](#step-4-deploy-your-plugin) 
 
+For reference, you can download the example
+[servlet filter project code](https://dev.liferay.com/documents/10184/1608802/sample-servlet-filter-hook.zip). 
+
 In a traditional web application (`.war`) project, start with creating your
 servlet filter class. 
 

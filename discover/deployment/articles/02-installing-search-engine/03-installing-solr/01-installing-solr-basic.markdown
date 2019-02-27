@@ -178,7 +178,7 @@ Install and configure the Solr connector:
         2018-11-06 19:59:49.490 INFO  [pipe-start 943 944][BundleStartStopLogger:39] STARTED com.liferay.portal.search.solr7.impl_1.0.0 [944]
 
 2.  To re-index against Solr, navigate to *Control Panel* &rarr; *Configuration*
-    &rarr; *Server Administration*, and click *Execute* next to the *Reindex all
+    &rarr; *Search*, and click *Execute* next to the *Reindex all
     search indexes* option.
 
    ![Figure 1: Once the Solr connector is installed, you can re-index your @product@ data against your Solr server.](../../../images/solr-reindex.png)
