@@ -25,7 +25,7 @@ server run`. Additionally, if you prefer starting the server in debug mode, add
 the `-d` flag.
 
 Debug mode can be customized by adding the `-p` tag to set the custom remote
-debugging port (defaults are `8080` for Tomcat and `8787` for Wildfly) and/or
+debugging port (defaults are `8000` for Tomcat and `8787` for Wildfly) and/or
 the boolean `-s` tag to set whether you want to suspend the started server until
 the debugger is connected.
 
