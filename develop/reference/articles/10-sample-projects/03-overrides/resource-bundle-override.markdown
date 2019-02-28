@@ -29,17 +29,19 @@ The steps to override a portlet's language keys are
 - Provide the new language keys that will override the original ones.
 - Prioritize the new module's resource bundle.
 
-First, you should add your custom language keys in new `language.properties`
-files that reside in the folder `src/content` for each locale's keys you want to
-override. Since this example's goal is to only override the English keys, the
-`Language_en.properties` is added.
+This sample's `src/main/resources/content` folder holds the language properties
+file to override. Since this example's goal is to only override the English
+keys, the `Language_en.properties` is added. You can add more language
+properties files for additional language key locales you want to override (e.g.,
+`Language_en.properties` for Spanish).
 
 Once your language keys are in place, you must use OSGi manifest headers to
 specify your custom language keys are for the target module. To compliment the
-target module's resource bundle, you'll aggregate your resource bundle with the
-target module's resource bundle. You'll list your module first to prioritize its
-resource bundle over the target module resource bundle. This is done in the
-resource bundle override module's `bnd.bnd`:
+target module's resource bundle, you must aggregate your resource bundle with
+the target module's resource bundle. This is done by ranking your module first
+to prioritize its resource bundle over the target module resource bundle. See
+this sample's `bnd.bnd` as an example for setting the `Provide-Capability` OSGi
+header:
 
     Provide-Capability:\
         liferay.resource.bundle;\
