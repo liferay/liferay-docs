@@ -4,8 +4,8 @@
     <p>Enabling Assets at the Service Layer<br>Step 2 of 3</p>
 </div>
 
-Before you can update the Service Layer to add the Asset Renderers, you need to
-update your `build.gradle` to provide the `portlet-api` and `javax.servlet-api` 
+Before you can update the Service Layer to add the Asset Renderers, you must
+update your `build.gradle` to provide the `portlet-api` and `javax.servlet-api`
 libraries that the asset link service needs to function.
 
 1.  Open the `build.gradle` file in your `guestbook-service` module.

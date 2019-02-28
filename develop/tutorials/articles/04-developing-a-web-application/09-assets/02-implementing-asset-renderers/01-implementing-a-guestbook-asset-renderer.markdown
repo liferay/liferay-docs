@@ -33,7 +33,8 @@ Follow these steps to create the `GuestbookAssetRenderer` class:
                     _guestbook = guestbook;
         }
         
-        private Guestbook _guestbook;
+        private Guestbook _guestbook;   
+        private Logger logger = Logger.getLogger(this.getClass().getName());
  
 3.  The `BaseJSPAssetRenderer` abstract class that you're extending contains 
     dummy implementations of the `hasEditPermission` and `hasViewPermission`
@@ -188,7 +189,12 @@ Follow these steps to create the `GuestbookAssetRenderer` class:
 
             } catch (PortalException e) {
 
+                logger.log(Level.SEVERE, e.getMessage());
+
             } catch (SystemException e) {
+
+                logger.log(Level.SEVERE, e.getMessage());
+
             }
 
             return noSuchEntryRedirect;
@@ -215,10 +221,10 @@ Next you can create the `AssetRendererFactory` class.
 
 Follow these steps to create the `GuestbookAssetRendererFactory`:
 
-1.  In the `com.liferay.docs.guestbook.web.internal.asset` package, create a class called 
-    `GuestbookAssetRendererFactory` that extends @product@'s 
-    `BaseAssetRendererFactory` class, and overwrite the generated constructor 
-    with the following: 
+1.  In the `com.liferay.docs.guestbook.web.internal.asset` package, create
+    a class called `GuestbookAssetRendererFactory` that extends @product@'s
+    `BaseAssetRendererFactory` class, and overwrite the generated constructor
+    and class variables with this: 
 
         @Component(immediate = true, 
           property = {"javax.portlet.name=" + GuestbookPortletKeys.GUESTBOOK}, 
@@ -239,14 +245,16 @@ Follow these steps to create the `GuestbookAssetRendererFactory`:
           private static final boolean _LINKABLE = true;
           public static final String CLASS_NAME = Guestbook.class.getName();
           public static final String TYPE = "guestbook";
+          private Logger logger = Logger.getLogger(this.getClass().getName());
 
-    This code contains the class declaration and the constructor. It sets the
-    class name it creates an `AssetRenderer` for, a portlet ID, and a boolean
-    (`_LINKABLE`) set to `true`. The boolean denotes the methods that provide 
-    URLs in the generated `AssetRenderer` are implemented. 
+    This code contains the class declaration, the constructor, and the class
+    variables. It sets the class name it creates an `AssetRenderer` for,
+    a portlet ID, and a boolean (`_LINKABLE`) set to `true`. The boolean denotes
+    the methods that provide URLs in the generated `AssetRenderer` that are
+    implemented. 
 
 2.  Implement the `getAssetRenderer` method, which constructs new 
-    `GuestbookAssetRenderer` instances for specific guestbooks. It uses the 
+    `GuestbookAssetRenderer` instances for particular guestbooks. It uses the 
     `classPK` (primary key) parameter to retrieve the guestbook from the 
     database. It then calls the `GuestbookAssetRenderer`'s constructor, passing 
     the retrieved guestbook as an argument: 
@@ -309,8 +317,12 @@ Follow these steps to create the `GuestbookAssetRendererFactory`:
                       GuestbookPortletKeys.GUESTBOOK, PortletRequest.RENDER_PHASE);
                   portletURL.setParameter("mvcRenderCommandName", "/guestbookwebportlet/edit_guestbook");
                   portletURL.setParameter("showback", Boolean.FALSE.toString());
-                } catch (PortalException e) {
-                }
+
+                  } catch (PortalException e) {
+                  
+                        logger.log(Level.SEVERE, e.getMessage()); 
+                        
+                  }
 
                 return portletURL;
               }
@@ -337,8 +349,8 @@ Follow these steps to create the `GuestbookAssetRendererFactory`:
             }
 
 
-5.  Organize imports (Ctrl-Shift-O), selecting the `org.osgi` packages, not 
-    `a.Qute`, when prompted and save the file. 
+5.  Organize imports (Ctrl-Shift-O). Select the `org.osgi` packages (not 
+    `a.Qute`) when prompted and save the file. 
 
 Great! The guestbook asset renderer is complete. Next, you'll create the entry 
 asset renderer.
