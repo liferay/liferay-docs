@@ -8,8 +8,11 @@ import java.io.IOException;
 import java.io.LineNumberReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Task;
 
@@ -103,7 +106,30 @@ public class ConvertSidebarsTask extends Task {
 
 						if (sidebar && (lineNumber > sidebarStartIndexes.get(j) + 1) &&
 								(lineNumber < sidebarEndIndexes.get(j))) {
-							out.append(sidebarSpacing.get(j) + "| " + line.trim());
+
+							String codeSpace = "";
+							String whitespace = " ";
+							int charStart = 0;
+							int sidebarSpacingLength = sidebarSpacing.get(j).length();
+
+							Pattern p = Pattern.compile("[^\\s]");
+							Matcher m = p.matcher(line);
+
+							if (m.find()) {
+								charStart = m.start();
+							}
+
+							if (charStart > sidebarSpacingLength) {
+
+								int spaceDiff = charStart - sidebarSpacingLength;
+
+								codeSpace = StringUtils.repeat(whitespace, spaceDiff);
+
+							}
+
+							String modifiedLine = sidebarSpacing.get(j) + "| " + codeSpace + line.trim();
+
+							out.append(modifiedLine);
 							out.append("\n");
 							continue;
 						}
