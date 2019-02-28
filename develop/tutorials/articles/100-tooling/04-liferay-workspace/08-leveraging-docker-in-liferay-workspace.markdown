@@ -26,7 +26,7 @@ $$$
 
 In this tutorial, you'll learn how to do the following tasks within a workspace:
 
-- [Creating a Docker container based on a provided @product@ image](#creating-a-docker-container-based-on-a-provided-product-image)
+- [Creating a Docker container based on a provided @product@ image](#creating-a-product-docker-container)
 - [Configuring the container](#configuring-the-container)
 - [Interacting with the container](#interacting-with-the-container)
 - [Building a custom @product@ image](#building-a-custom-product-image)
