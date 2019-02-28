@@ -37,6 +37,7 @@ public class ConvertSidebarsTask extends Task {
 						new LineNumberReader(new FileReader(inFile));
 
 				String line;
+				boolean sidebarsExist = false;
 				
 				List<Integer> sidebarStartIndexes = new ArrayList<Integer>();
 				List<Integer> sidebarEndIndexes = new ArrayList<Integer>();
@@ -46,6 +47,7 @@ public class ConvertSidebarsTask extends Task {
 
 					if (line.contains(sidebarPrefix)) {
 						sidebarStartIndexes.add(in.getLineNumber());
+						sidebarsExist = true;
 						
 						String sidebarWhitespace = line.substring(0, line.indexOf(sidebarPrefix));
 						sidebarSpacing.add(sidebarWhitespace);
@@ -57,69 +59,73 @@ public class ConvertSidebarsTask extends Task {
 				}
 				in.close();
 				
-				boolean sidebar = false;
-				int j = 0;
-				
-				LineNumberReader in2 =
-						new LineNumberReader(new FileReader(inFile));
-				
-				BufferedWriter out =
-						new BufferedWriter(new FileWriter(outFileTmp));
-				
-				while ((line = in2.readLine()) != null) {
+				if (sidebarsExist) {
+					boolean sidebar = false;
+					int j = 0;
 
-					int lineNumber = in2.getLineNumber();
-					
-					if (lineNumber == sidebarStartIndexes.get(j)) {
-						sidebar = true;
-						continue;
-					}
-					else if (lineNumber == (sidebarStartIndexes.get(j) + 1)) {
-						continue;
-					}
-					else if (lineNumber == (sidebarEndIndexes.get(j) - 1)) {
-						continue;
-					}
-					else if (lineNumber == sidebarEndIndexes.get(j)) {
-						sidebar = false;
-						boolean moreSidebars = true;
+					LineNumberReader in2 =
+							new LineNumberReader(new FileReader(inFile));
 
-						try {
-							sidebarStartIndexes.get(j+1);
-						} catch (IndexOutOfBoundsException e) {
-							moreSidebars = false;
+					BufferedWriter out =
+							new BufferedWriter(new FileWriter(outFileTmp));
+
+					while ((line = in2.readLine()) != null) {
+
+						int lineNumber = in2.getLineNumber();
+						int sidebarStartIndex = sidebarStartIndexes.get(j);
+						int sidebarEndIndex = sidebarEndIndexes.get(j);
+
+						if (lineNumber == sidebarStartIndex) {
+							sidebar = true;
+							continue;
 						}
-						
-						if (moreSidebars) {
-							j++;
+						else if (lineNumber == (sidebarStartIndex + 1)) {
+							continue;
 						}
-						continue;
-					}
+						else if (lineNumber == (sidebarEndIndex - 1)) {
+							continue;
+						}
+						else if (lineNumber == sidebarEndIndex) {
+							sidebar = false;
+							boolean moreSidebars = true;
 
-					if (sidebar && (lineNumber > sidebarStartIndexes.get(j) + 1) &&
-							(lineNumber < sidebarEndIndexes.get(j))) {
-						out.append(sidebarSpacing.get(j) + "| " + line.trim());
+							try {
+								sidebarStartIndexes.get(j+1);
+							} catch (IndexOutOfBoundsException e) {
+								moreSidebars = false;
+							}
+
+							if (moreSidebars) {
+								j++;
+							}
+							continue;
+						}
+
+						if (sidebar && (lineNumber > sidebarStartIndexes.get(j) + 1) &&
+								(lineNumber < sidebarEndIndexes.get(j))) {
+							out.append(sidebarSpacing.get(j) + "| " + line.trim());
+							out.append("\n");
+							continue;
+						}
+
+						out.append(line);
 						out.append("\n");
-						continue;
 					}
 
-					out.append(line);
-					out.append("\n");
+
+					in2.close();
+
+					out.flush();
+					out.close();
+
+					// Replace original file with modified temp file
+
+					FileUtils.copyFile(
+							new File(outFileTmp),
+							new File(filename));
+
+					FileUtils.forceDelete(new File(outFileTmp));
 				}
-				
-		
-				in2.close();
-				
-				out.flush();
-				out.close();
-
-				// Replace original file with modified temp file
-
-				FileUtils.copyFile(
-						new File(outFileTmp),
-						new File(filename));
-
-				FileUtils.forceDelete(new File(outFileTmp));
 			} catch (IOException e) {
 				throw new BuildException(e.getLocalizedMessage());
 			}
