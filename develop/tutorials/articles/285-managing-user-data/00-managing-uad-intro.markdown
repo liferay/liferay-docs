@@ -1,4 +1,4 @@
-# Managing user-associated data stored by custom applications
+# Managing user-associated data stored by custom applications [](id=managing-user-associated-data-stored-by-custom-applications)
 
 @product-ver@ makes it possible for administrators to [delete or
 anonymize](/discover/portal/-/knowledge_base/7-1/managing-user-data)
@@ -10,8 +10,8 @@ anonymize data stored by your custom apps as well.
 If your app was created using Service Builder, anonymization is easy.
 Follow these steps:
 
-1.   Include dependencies on `com.liferay.petra.string` and the
-     `com.liferay.portal.kernel` in your Service Module's build script.
+1.  Include dependencies on `com.liferay.petra.string` and the
+    `com.liferay.portal.kernel` in your Service Module's build script.
 
 2.  Identify the fields you want to be able to anonymize in the service module's
     `service.xml` file.
@@ -20,15 +20,15 @@ Follow these steps:
     generated.
 
 4.  Provide your application's name to the anonymization UI. If you skip this
-    step, your app will be labeled using its `Bundle-SymbolicName` from the
+    step, your app will be labeled using the `Bundle-SymbolicName` from the
     `-uad` module's `bnd.bnd` file.
 
 Anonymization of apps not created using Service Builder will be covered in
 a separate tutorial.
 
-## Include dependencies
+## Include dependencies [](id=include-dependencies)
 
-In order to complie the code that Service Builder generates, you need
+In order to compile the code that Service Builder generates, you need
 dependencies on Petra and 3.23.0 or later of Liferay `kernel` in your service
 module's `build.gradle`:
 
@@ -38,7 +38,7 @@ module's `build.gradle`:
         ...
     }
 
-## Choose fields to anonymize
+## Choose fields to anonymize [](id=choose-fields-to-anonymize)
 
 Next you must identify fields to anonymize by attaching anonymization attributes to
 elements in the `-service` module's `service.xml` file. There are two ways to do
@@ -66,19 +66,20 @@ The `uad-nonanonymizable` value of `true` indicates that the `content` field
 will have to be reviewed by an administrator in order to remove a blog author's
 UAD.
 
-## Run Service Builder!
+## Run Service Builder! [](id=run-service-builder)
 
 At this point, you're ready to run Service Builder. This will generate a new
 `-uad` module based on the values you added to `service.xml`. The new module is
-generated without a build script, so you'll need to provide a `build.gradle`.
-It should include dependencies on `kernel`, `Petra`, the `-api` module of the
-UAD application, as well as your own application's `-api` module. The build
-script should look something like this:
+generated without a build script, so you must provide a `build.gradle`. It
+should include dependencies on `osgi.service.component.annotations`, `kernel`,
+`Petra`, the `-api` module of the UAD application, as well as your own
+application's `-api` module. The build script should look something like this:
 
     dependencies {
       compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "3.23.0"
       compileOnly group: "com.liferay", name: "com.liferay.user.associated.data.api", version: "3.0.2"
       compileOnly group: "com.liferay", name: "com.liferay.petra.string", version: "1.0.0"
+      compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
       compileOnly project(":modules:custom:custom-api")
       ...
       }
@@ -87,20 +88,30 @@ At this point you can compile your application. Before you deploy it, however,
 you should to make sure the UAD application recognizes it in a way that makes
 sense to administrators.
 
-## Provide your app's name to the UI
++$$$
 
-The simplest way to provide your app's name to the anonymization UI is simply to
+**Note:** Depending on how you created your project---for instance, if you used
+Blade's Service Builder template rather than Liferay Dev Studio's---you may need
+to include the new `-uad` module in your `settings.gradle` file before you can
+compile:
+
+    include "myapp-api", "myapp-service", "myapp-uad"
+
+$$$
+
+## Provide your app's name to the UI [](id=provide-your-apps-name-to-the-ui)
+
+The simplest way to provide your app's name to the anonymization UI is to
 include a language key in your `Language.properties` file:
 `application.name.[Bundle-SymbolicName]=` where the bracketed text is the
 `Bundle-SymbolicName` from your `-uad` module's `bnd.bnd` file. For example:
 `application.name.com.liferay.docs.custom.portlet=Custom App`.
 
-That's the recommended approach for custom apps, but if you look at the
-source code for @product@ itself, you'll see that it isn't used. Why? Because it
-has the downside of creating multiple language keys to label a single
-application, which can be confusing. To avoid multiplying language keys, Liferay
-applications use the `com.liferay.lang.merger.` plugin. Here's what it looks
-like:
+That's the recommended approach for custom apps, but if you look at the source
+code for @product@ itself, you see that it isn't used. Why not? Because it has
+the downside of creating multiple language keys to label a single application,
+which can be confusing. To avoid multiplying language keys, Liferay applications
+use the `com.liferay.lang.merger.` plugin. Here's what it looks like:
 
     apply plugin: "com.liferay.lang.merger"
 
@@ -118,15 +129,15 @@ like:
         sourceDirs = ["../blogs-web/src/main/resources/content"]
     }
 
-This is from the `build.gradle` file from the `-uad` module in @product@'s
-blogs application. The `setting` property identifies the location of the
-`Language.properties` file (by Gradle convention, the `sourceDirs` property
-must match `setting`). `transformKey` passes in first the language key for the
+This is from the `-uad` module's `build.gradle` file in @product@'s blogs
+application. The `setting` property identifies the location of the
+`Language.properties` file (by Gradle convention, the `sourceDirs` property must
+match `setting`). `transformKey` passes in first the language key for the
 application's name, and then the `Bundle-SymbolicName` from the `-uad` module's
-`bnd.bnd` file. The plugin takes the value of the first parameter and assigns
-it to the second parameter. The end result is that a key from
-`Language.properties` provides the name of the application to the anonymization
-UI---but no additional language keys need to be created or maintained.
+`bnd.bnd` file. The plugin takes the value of the first parameter and assigns it
+to the second parameter. The end result is that a key from `Language.properties`
+provides the name of the application to the anonymization UI---but no additional
+language keys need to be created or maintained.
 
 That's it! You can now delete or anonymize User Associated Data stored by your
 app.
