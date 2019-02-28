@@ -28,4 +28,4 @@ additional resources in the bottom of the page's body.
 
 [Using the Liferay Util HTML Top Tag](/develop/tutorials/-/knowledge_base/7-1/using-liferay-util-html-top)
 
-[Using the Liferay UI Taglib](/develop/tutorials/-/knowledge_base/7-1/using-the-liferay-ui-taglib)
+[Using the Liferay UI Taglib](/develop/tutorials/-/knowledge_base/7-1/using-the-liferay-ui-taglib-in-your-portlets)
