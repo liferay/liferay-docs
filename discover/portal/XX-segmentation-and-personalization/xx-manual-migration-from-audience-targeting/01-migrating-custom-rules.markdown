@@ -1,4 +1,4 @@
-# Manual Migration
+# Migrating Custom Rules
 
 As explained in the previous section, some Audience Targeting rules do not have a direct equivalent in Liferay Portal 7.2 and therefore they cannot be automatically migrated. Nevertheless, in this section we suggest some alternatives for their manual migration:
 
