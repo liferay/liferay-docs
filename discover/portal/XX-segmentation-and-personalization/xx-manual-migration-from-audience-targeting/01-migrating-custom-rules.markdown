@@ -13,7 +13,9 @@ For Audience Targeting rules based on Session attributes, such as Previous Visit
 ## Behavior Rules
 
 For Audience Targeting rules based on behavior (i.e. Analytics), such as Visited Content, Visited Page or Score Points, please refer to the Migrating Behavior-Based features section [LINK TO THE SECTION]
-Migrating Custom Rules
+
+## Migrating Custom Rules
+
 Audience Targeting segmentation features were extensible through custom rules. As part of the planning for the upgrade to Liferay Portal 7.2, their function should be re-evaluated in the view of the features in the new version. 
 
 First, you should check if the existing criteria fields can replace their function. Some criteria fields, such as custom fields, URL or cookies are very powerful and might help you migrate your custom rules with minimal or no additional development. 
