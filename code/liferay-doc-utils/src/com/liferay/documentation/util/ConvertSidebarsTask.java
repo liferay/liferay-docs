@@ -76,7 +76,13 @@ public class ConvertSidebarsTask extends Task {
 
 						int lineNumber = in2.getLineNumber();
 						int sidebarStartIndex = sidebarStartIndexes.get(j);
-						int sidebarEndIndex = sidebarEndIndexes.get(j);
+						int sidebarEndIndex;
+						
+						try {
+							sidebarEndIndex = sidebarEndIndexes.get(j);
+						} catch (IndexOutOfBoundsException e) {
+							throw new BuildException("Malformed legacy sidebar in" + filename);
+						}
 
 						if (lineNumber == sidebarStartIndex) {
 							sidebar = true;
