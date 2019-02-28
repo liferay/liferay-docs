@@ -12,6 +12,14 @@ from `@Component` classes, it's easy: you just use another
 annotation, `@Reference`, to get a service reference. The component activates
 when the referenced service is available. 
 
++$$$
+
+**Note:** The `@Reference` annotation can only be used in a class that is 
+annotated with `@Component`. That is, only a Declarative Services component can
+use `@Reference` to bind to an OSGi service. 
+
+$$$
+
 If you can use DS and leverage the `@Component` and `@Reference` annotations,
 you should. DS handles much of the complexity of handling service dynamism for
 you transparently.

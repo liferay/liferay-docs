@@ -20,7 +20,7 @@ Developing modules for @product@ requires:
 
 There are several good build tools for developing modules. This tutorial
 demonstrates starting a new module using
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace).
+[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace).
 It's Liferay's opinionated build environment based on Gradle and bnd that
 simplifies module development and automates much of it.
 
@@ -31,7 +31,7 @@ providing Liferay Workspace for those who don't already have a preferred build
 environment, Liferay provides good support for Maven and Gradle. The following
 tutorials and samples demonstrate developing in these environments.
 
--   [Maven in Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/using-gradle-in-liferay-ide),
+-   [Maven in Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/using-gradle-in-liferay-ide),
     [Maven tutorials](/develop/tutorials/-/knowledge_base/7-1/maven),
     and [samples](/develop/tutorials/-/knowledge_base/7-1/liferay-sample-projects)
 
@@ -62,7 +62,7 @@ local @product@ bundle.
 ## Setting up a Liferay Workspace [](id=setting-up-a-liferay-workspace)
 
 Creating and configuring a Liferay Workspace (Workspace) is straightforward
-using a tool called [Blade CLI (Blade)](/develop/tutorials/-/knowledge_base/7-0/blade-cli).
+using a tool called [Blade CLI (Blade)](/develop/tutorials/-/knowledge_base/7-1/blade-cli).
 Blade is a command line tool that creates Workspaces and projects and performs
 common tasks.
 
@@ -253,7 +253,7 @@ $$$
 
 Once you've deployed a portlet module, it's available in the Liferay UI under
 the application category and name you specified via the
-[portlet component's `com.liferay.portlet.display-category` and `javax.portlet.display-name` properties](/develop/tutorials/-/knowledge_base/7-0/liferay-mvc-portlet#liferay-mvc-portlet-component).
+[portlet component's `com.liferay.portlet.display-category` and `javax.portlet.display-name` properties](/develop/tutorials/-/knowledge_base/7-1/liferay-mvc-portlet#liferay-mvc-portlet-component).
 
 ![Figure 6: Here's a bare-bones portlet based on a project template.](../../images/starting-module-dev-portlet.png)
 

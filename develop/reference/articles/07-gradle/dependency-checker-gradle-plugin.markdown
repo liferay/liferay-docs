@@ -6,7 +6,7 @@ repository. The plugin eventually fails the build if the dependency age (the
 difference between the timestamp of the current version and the latest version)
 is above a predetermined threshold.
 
-The plugin has been successfully tested with Gradle 3.5.1 up to 4.10.2.
+The plugin has been successfully tested with Gradle 4.10.2.
 
 ## Usage [](id=usage)
 
