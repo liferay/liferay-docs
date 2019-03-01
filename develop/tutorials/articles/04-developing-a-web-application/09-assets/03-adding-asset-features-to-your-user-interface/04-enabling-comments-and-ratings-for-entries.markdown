@@ -111,8 +111,7 @@ ratings on guestbook entries:
 
         <br />
     
-9.  Next you need to add a scriplet to retrieve the previous comments 
-    discussion:
+9.  Next you need to add a scriplet to retrieve the comments discussion object:
 
         <% Discussion discussion = 
         CommentManagerUtil.getDiscussion(user.getUserId(), 
@@ -120,25 +119,21 @@ ratings on guestbook entries:
         entry.getEntryId(), new ServiceContextFunction(request));
         %>
 
-10. And then the tags for displaying the discussion and writing comments. The 
-    latter tag needs an action URL (in this case, `invokeTaglibDiscussion`) for 
-    its `formAction` attribute. The action URL adds the comment after the user 
-    enters a comment and clicks *Reply*: 
+10.  Below that add the tag for tracking the number of comments writing comments:
 
         <c:if test="<%= discussion != null %>">
           <h2>
             <strong><liferay-ui:message arguments="<%= discussion.getDiscussionCommentsCount() %>" key='<%= (discussion.getDiscussionCommentsCount() == 1) ? "x-comment" : "x-comments" %>' /></strong>
-        
-          </c:if>
-            <portlet:actionURL name="invokeTaglibDiscussion" 
-            var="discussionURL" />
+
+11. And then create the `liferay-comment:discussion` tag which handles the 
+    creation of the comments form, *Reply* button, and retrieving the discussion content. It also handles the form action of posting the comment without requiring you to manually create a portlet action URL.
           
           <liferay-comment:discussion
             className="<%= Entry.class.getName() %>"
             classPK="<%= entry.getEntryId() %>"
             discussion="<%= discussion %>"
             formName="fm2"
-            ratingsEnabled="<%=true%>"
+            ratingsEnabled="true"
             redirect="<%= currentURL %>"
             userId="<%= entry.getUserId() %>"
             />
@@ -146,7 +141,7 @@ ratings on guestbook entries:
           </liferay-ui:panel>
         </liferay-ui:panel-container>
 
-9.  To restrict comments and ratings access to logged-in users, wrap the whole 
+12. To restrict comments and ratings access to logged-in users, wrap the whole 
     panel container in a `<c:if>` tag that tests the expression 
     `themeDisplay.isSignedIn()`:
     

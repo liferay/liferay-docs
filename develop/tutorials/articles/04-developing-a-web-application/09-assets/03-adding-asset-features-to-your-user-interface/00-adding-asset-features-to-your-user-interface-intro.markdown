@@ -15,8 +15,10 @@ Now you'll create several new JSPs that need new imports. Add the following
 imports to the `guestbook-web` module project's `init.jsp` file: 
 
 
-    <%@ taglib uri="http://liferay.com/tld/asset" prefix="liferay-asset" %> 
+    <%@ taglib uri="http://liferay.com/tld/asset" prefix="liferay-asset" %>
+    <%@ taglib prefix="liferay-comment" uri="http://liferay.com/tld/comment" %> 
     <%@ page import="java.util.Map" %> <%@ page import="java.util.HashMap" %>
+
 
     <%@ page import="com.liferay.asset.kernel.service.AssetEntryLocalServiceUtil" %>
     <%@ page import="com.liferay.asset.kernel.service.AssetTagLocalServiceUtil" %>
