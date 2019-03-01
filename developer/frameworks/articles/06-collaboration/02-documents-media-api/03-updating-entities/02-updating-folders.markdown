@@ -1,4 +1,8 @@
-# Updating Folders [](id=updating-folders)
+---
+header-id: updating-folders
+---
+
+# Updating Folders
 
 To update a folder with the Documents and Media API, you must use the 
 `updateFolder` method discussed in 
@@ -44,7 +48,7 @@ this `updateFolder` method, as well as the rest of `EditFolderMVCActionCommand`,
 contains additional logic to suit the specific needs of the Documents and Media 
 app. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Creating Folders](liferay.com)
 

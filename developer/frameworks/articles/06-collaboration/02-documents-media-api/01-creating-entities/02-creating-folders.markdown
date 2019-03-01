@@ -1,4 +1,8 @@
-# Creating Folders [](id=creating-folders)
+---
+header-id: creating-folders
+---
+
+# Creating Folders
 
 To create folders (`Folder` entities) in the Documents and Media library, you 
 must use the 
@@ -53,7 +57,7 @@ this `updateFolder` method, as well as the rest of `EditFolderMVCActionCommand`,
 contains additional logic to suit the specific needs of the Documents and Media 
 app. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Updating Folders](/develop/tutorials/-/knowledge_base/7-2/updating-folders)
 

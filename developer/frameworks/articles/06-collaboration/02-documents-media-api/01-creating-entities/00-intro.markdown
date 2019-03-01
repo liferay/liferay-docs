@@ -1,3 +1,7 @@
+---
+header-id: creating-files-folders-and-shortcuts
+---
+
 # Creating Files, Folders, and Shortcuts
 
 A primary use case for the Docs &amp; Media API is to create files, folders, and 
@@ -73,7 +77,7 @@ optional.
 For step-by-step instructions on creating folders with `addFolder`, see 
 [Creating Folders](/develop/tutorials/-/knowledge_base/7-2/creating-folders). 
 
-### Folders and External Repositories [](id=folders-and-external-repositories)
+### Folders and External Repositories
 
 By creating a folder that acts as a proxy for an external repository (e.g., 
 SharePoint), you can effectively mount that repository inside a Site's default 

@@ -1,3 +1,7 @@
+---
+header-id: checking-out-files
+---
+
 # Checking Out Files
 
 To check out a file with the Documents and Media API, use the 
@@ -41,7 +45,7 @@ this `checkOutFileEntries` method, as well as the rest of
 `EditFileEntryMVCActionCommand`, contains additional logic to suit the specific 
 needs of the Documents and Media app. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [File Checkin](liferay.com)
 

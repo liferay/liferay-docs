@@ -1,4 +1,8 @@
-# Updating Files [](id=updating-files)
+---
+header-id: updating-files
+---
+
+# Updating Files
 
 To update a file with the Documents and Media API, you must use one of the three 
 `updateFileEntry` methods discussed in 
@@ -69,7 +73,7 @@ this `updateFileEntry` method, as well as the rest of
 `EditFileEntryMVCActionCommand`, contains additional logic to suit the specific 
 needs of the Documents and Media app. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Creating Files](liferay.com)
 

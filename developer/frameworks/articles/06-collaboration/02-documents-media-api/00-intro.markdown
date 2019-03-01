@@ -1,4 +1,8 @@
-# Documents and Media API [](id=documents-and-media-api)
+---
+header-id: documents-and-media-api
+---
+
+# Documents and Media API
 
 A powerful API underlies the 
 [Documents and Media library](/discover/portal/-/knowledge_base/7-2/managing-documents-and-media). 
@@ -16,7 +20,7 @@ Also note that the Documents and Media app is itself a consumer of this
 API---Liferay's developers used the API to implement the app's functionality.
 Therefore, code from this app is used as an example of how to use the API. 
 
-## Getting Started with the Documents and Media API [](id=getting-started-with-the-documents-and-media-api)
+## Getting Started with the Documents and Media API
 
 Before you start using the Documents and Media API, you must learn these things: 
 
@@ -32,7 +36,7 @@ How to specify which Documents and Media repository to work with.
 [**Specifying Folders:**](#specifying-folders)
 How to specify which Documents and Media folder to work with. 
 
-## Key Interfaces [](id=key-interfaces)
+## Key Interfaces
 
 The Documents and Media API contains several key interfaces: 
 
@@ -60,7 +64,7 @@ Media library. Here are the primary ones you'll use:
 -   `Folder`: Represents a folder. 
 -   `FileShortcut`: Represents a shortcut to a file. 
 
-## Getting a Service Reference [](id=getting-a-service-reference)
+## Getting a Service Reference
 
 Before you can do anything with the Documents and Media API, you must get a 
 service reference. If you're using OSGi modules, use the `@Reference` annotation 
@@ -84,7 +88,7 @@ classes:
 -   [`DLAppServiceUtil`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppServiceUtil.html)
 -   [`DLAppLocalServiceUtil`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppLocalServiceUtil.html)
 
-## Specifying Repositories [](id=specifying-repositories)
+## Specifying Repositories
 
 Many methods in the Documents and Media API contain a `repositoryId` parameter
 that identifies the Documents and Media repository where the operation is
@@ -125,7 +129,7 @@ Note that there are ways to create repositories programmatically, including
 repositories private to specific apps. For simplicity, however, the examples 
 here access the default site repository. 
 
-## Specifying Folders [](id=specifying-folders)
+## Specifying Folders
 
 Many API methods require the ID of a folder that they perform operations in or 
 on. For example, such methods may contain parameters like `folderId` or 

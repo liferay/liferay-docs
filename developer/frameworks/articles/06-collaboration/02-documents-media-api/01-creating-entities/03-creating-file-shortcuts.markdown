@@ -1,4 +1,8 @@
-# Creating File Shortcuts [](id=creating-file-shortcuts)
+---
+header-id: creating-file-shortcuts
+---
+
+# Creating File Shortcuts
 
 To create file shortcuts (`FileShortcut` entities) in the Documents and Media 
 library, you must use the 
@@ -53,7 +57,7 @@ this `updateFileShortcut` method, as well as the rest of
 `EditFileShortcutMVCActionCommand`, contains additional logic to suit the 
 specific needs of the Documents and Media app. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Deleting File Shortcuts](/develop/tutorials/-/knowledge_base/7-2/deleting-file-shortcuts)
 

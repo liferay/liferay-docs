@@ -1,4 +1,8 @@
-# Moving Entities to the Recycle Bin [](id=moving-entities-to-the-recycle-bin)
+---
+header-id: moving-entities-to-the-recycle-bin
+---
+
+# Moving Entities to the Recycle Bin
 
 Follow these steps to use the Capabilities API to move an entity to the Recycle 
 Bin. For an explanation of why you should use the Capabilities API for this, see 
@@ -33,7 +37,7 @@ Bin. For an explanation of why you should use the Capabilities API for this, see
     for information on the methods you can use to move other types of entities 
     to the Recycle Bin. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Deleting Files](liferay.com)
 

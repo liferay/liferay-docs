@@ -1,3 +1,7 @@
+---
+header-id: getting-folders
+---
+
 # Getting Folders
 
 To get folders with the Documents and Media API, use one of the `getFolders` 
@@ -54,7 +58,7 @@ This is one of many methods you can use to get folders. The rest are listed in
 the `DLAppService` 
 [Javadoc](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html). 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Getting Started with the Documents and Media API](liferay.com)
 

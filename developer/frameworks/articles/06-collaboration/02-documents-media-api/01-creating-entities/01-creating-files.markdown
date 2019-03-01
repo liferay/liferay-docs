@@ -1,4 +1,8 @@
-# Creating Files [](id=creating-files)
+---
+header-id: creating-files
+---
+
+# Creating Files
 
 To create a file via the Documents and Media API, use one of the overloaded 
 `addFileEntry` methods in 
@@ -70,7 +74,7 @@ this `updateFileEntry` method, as well as the rest of
 `EditFileEntryMVCActionCommand`, contains additional logic to suit the specific 
 needs of the Documents and Media app. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Updating Files](/develop/tutorials/-/knowledge_base/7-2/updating-files)
 

@@ -1,4 +1,8 @@
-# Deleting Files [](id=deleting-files)
+---
+header-id: deleting-files
+---
+
+# Deleting Files
 
 To delete a file with the Documents and Media API, you must use one of the two 
 `deleteFileEntry*` methods discussed in 
@@ -41,7 +45,7 @@ this `deleteFileEntry` method, as well as the rest of
 `EditFileEntryMVCActionCommand`, contains additional logic to suit the specific 
 needs of the Documents and Media app. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Moving Entities to the Recycle Bin](liferay.com)
 

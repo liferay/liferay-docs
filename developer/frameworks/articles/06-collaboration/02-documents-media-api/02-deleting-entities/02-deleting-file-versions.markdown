@@ -1,4 +1,8 @@
-# Deleting File Versions [](id=deleting-file-versions)
+---
+header-id: deleting-file-versions
+---
+
+# Deleting File Versions
 
 To delete a file version with the Documents and Media API, you must use the 
 `deleteFileVersion` method discussed in 
@@ -37,7 +41,7 @@ this `deleteFileEntry` method, as well as the rest of
 `EditFileEntryMVCActionCommand`, contains additional logic to suit the specific 
 needs of the Documents and Media app. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Deleting Files](liferay.com)
 

@@ -1,4 +1,8 @@
-# Updating File Shortcuts [](id=updating-file-shortcuts)
+---
+header-id: updating-file-shortcuts
+---
+
+# Updating File Shortcuts
 
 To update a file shortcut with the Documents and Media API, you must use the 
 `updateFileShortcut` method discussed in 
@@ -45,7 +49,7 @@ this `updateFileShortcut` method, as well as the rest of
 `EditFileShortcutMVCActionCommand`, contains additional logic to suit the 
 specific needs of the Documents and Media app. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Creating File Shortcuts](liferay.com)
 

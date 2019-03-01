@@ -1,4 +1,8 @@
-# Deleting File Shortcuts [](id=deleting-file-shortcuts)
+---
+header-id: deleting-file-shortcuts
+---
+
+# Deleting File Shortcuts
 
 To delete a file shortcut with the Documents and Media API, you must use the 
 `deleteFileShortcut` method discussed in 
@@ -35,7 +39,7 @@ this `deleteFileShortcut` method, as well as the rest of
 `EditFileShortcutMVCActionCommand`, contains additional logic to suit the 
 specific needs of the Documents and Media app. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Moving Entities to the Recycle Bin](liferay.com)
 

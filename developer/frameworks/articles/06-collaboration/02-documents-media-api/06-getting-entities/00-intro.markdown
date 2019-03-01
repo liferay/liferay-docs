@@ -1,4 +1,8 @@
-# Getting Entities [](id=getting-entities)
+---
+header-id: getting-entities
+---
+
+# Getting Entities
 
 The Documents and Media API contains many methods for getting entities from a 
 repository. Most methods in `DLAppService` get single entities (e.g., a file or 

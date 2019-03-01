@@ -1,3 +1,7 @@
+---
+header-id: checking-in-files
+---
+
 # Checking In Files
 
 To check in a file with the Documents and Media API, use the 
@@ -44,7 +48,7 @@ this `checkInFileEntries` method, as well as the rest of
 `EditFileEntryMVCActionCommand`, contains additional logic to suit the specific 
 needs of the Documents and Media app. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [File Checkout](liferay.com)
 

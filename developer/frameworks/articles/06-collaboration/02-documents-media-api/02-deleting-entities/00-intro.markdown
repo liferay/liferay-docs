@@ -1,4 +1,8 @@
-# Deleting Entities [](id=deleting-entities)
+---
+header-id: deleting-entities
+---
+
+# Deleting Entities
 
 You can delete entities with the Documents and Media API. Note that the exact 
 meaning of *delete* depends on the portal configuration and the delete operation 
@@ -52,7 +56,7 @@ for a description of the parameters. For step-by-step instructions on using this
 method, see 
 [Deleting File Versions](liferay.com). 
 
-### Identifying File Versions [](id=identifying-file-versions)
+### Identifying File Versions
 
 Since there may be many versions of a file, it's useful to programmatically 
 identify old versions for deletion. You can do this with 

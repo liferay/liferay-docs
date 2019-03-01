@@ -1,4 +1,8 @@
-# Deleting Folders [](id=deleting-folders)
+---
+header-id: deleting-folders
+---
+
+# Deleting Folders
 
 To delete a folder with the Documents and Media API, you must use one of the two 
 `deleteFolder` methods discussed in 
@@ -42,7 +46,7 @@ class. This class uses the Documents and Media API to implement almost all the
 contains additional logic to suit the specific needs of the Documents and Media 
 app. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Moving Entities to the Recycle Bin](liferay.com)
 

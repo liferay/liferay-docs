@@ -1,4 +1,8 @@
-# Canceling a Checkout [](id=cancelling-a-checkout)
+---
+header-id: cancelling-a-checkout
+---
+
+# Canceling a Checkout
 
 To cancel a checkout with the Documents and Media API, use the 
 `cancelCheckOut` method discussed in 
@@ -35,7 +39,7 @@ this `cancelFileEntriesCheckOut` method, as well as the rest of
 `EditFileEntryMVCActionCommand`, contains additional logic to suit the specific 
 needs of the Documents and Media app. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [File Checkout](liferay.com)
 

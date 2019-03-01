@@ -1,4 +1,8 @@
-# Copying Folders [](id=copying-folders)
+---
+header-id: copying-folders
+---
+
+# Copying Folders
 
 To copy a folder with the Documents and Media API, use the `copyFolder` method 
 discussed in 
@@ -60,7 +64,7 @@ repository, you would specify that repository's ID in place of the group ID. You
 could also specify a different destination folder, and/or change the new 
 folder's name and/or description. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Getting Started with the Documents and Media API](liferay.com)
 

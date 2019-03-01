@@ -1,4 +1,8 @@
-# File Checkout and Checkin [](id=file-checkout-and-checkin)
+---
+header-id: file-checkout-and-checkin
+---
+
+# File Checkout and Checkin
 
 Users can 
 [check out files](/discover/portal/-/knowledge_base/7-2/checking-out-and-editing-files) 
@@ -33,7 +37,7 @@ parameters, see its
 For step-by-step instructions on using this method, see 
 [Checking Out Files](liferay.com). 
 
-### Fine-tuning Checkout [](id=fine-tuning-checkout)
+### Fine-tuning Checkout
 
 You can control how the checkout is performed by setting the following 
 attributes in the `checkOutFileEntry` method's `ServiceContext` parameter: 

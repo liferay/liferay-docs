@@ -1,4 +1,8 @@
-# Getting Files [](id=getting-files)
+---
+header-id: getting-files
+---
+
+# Getting Files
 
 To get files with the Documents and Media API, use a method from the 
 `getFileEntries` or `getGroupFileEntries` method families discussed in 
@@ -89,7 +93,7 @@ Remember, this is just one of many `getFileEntries` and `getGroupFileEntries`
 methods. To see all such methods, see the `DLAppService` 
 [Javadoc](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html). 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Getting Started with the Documents and Media API](liferay.com)
 

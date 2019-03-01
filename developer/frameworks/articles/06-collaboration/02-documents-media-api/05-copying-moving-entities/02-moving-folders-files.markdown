@@ -1,4 +1,8 @@
-# Moving Folders and Files [](id=moving-folders-and-files)
+---
+header-id: moving-folders-and-files
+---
+
+# Moving Folders and Files
 
 To move folders and files with the Documents and Media API, use the `moveFolder` 
 and `moveFileEntry` methods discussed in 
@@ -43,6 +47,6 @@ a file, respectively. This example does both to demonstrate the procedures:
 
         _dlAppService.moveFileEntry(fileEntryId, newFolderId, serviceContext);
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Copying Folders](liferay.com)

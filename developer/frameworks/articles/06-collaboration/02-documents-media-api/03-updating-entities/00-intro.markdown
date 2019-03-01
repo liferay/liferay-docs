@@ -1,4 +1,8 @@
-# Updating Entities [](id=updating-entities)
+---
+header-id: updating-entities
+---
+
+# Updating Entities
 
 Like 
 [creating](/develop/tutorials/-/knowledge_base/7-2/creating-files-folders-and-shortcuts) 
