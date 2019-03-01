@@ -577,7 +577,7 @@ you can read
 [here](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/securing-elasticsearch-with-shield)
 to learn about configuring Shield to secure your Elasticsearch data. 
 
-## Elasticsearch Connector System Settings, By Operation Mode 
+## Elasticsearch Connector System Settings, By Operation Mode [](id=elasticsearch-connector-system-settings-by-operation-mode)
 
 Some of the settings available for the Elasticsearch connector are applicable
 for only one operation mode (REMOTE or EMBEDDED). Refer to the table below:
