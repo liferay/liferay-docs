@@ -1,24 +1,22 @@
 # Keeping up with Fix packs and Service Packs [](id=keeping-up-with-fix-packs-and-service-packs)
 
-On the
-[Customer Portal](https://web.liferay.com/group/customer/dxp),
-Liferay Subscription Services announces all fix packs and service packs. The
+The *Announcements* section on
+[Liferay's Help Center page](https://help.liferay.com/hc)
+lists all fix pack updates, security alerts, product releases, and system updates. The
 approximate frequency of fix pack and service pack releases is explained
-[here](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/patching-basics).
+[here](/discover/deployment/-/knowledge_base/7-1/patching-basics).
+The *Receive Notifications* sidebar lets you subscribe to the latest updates on
+products, patches, and system improvements. 
 
-Click the *Downloads* button on the
-[Liferay Digital Experience Platform page](https://web.liferay.com/group/customer/dxp)
-to access these items: 
+Click *Downloads* on the
+[Liferay Digital Experience Platform page](https://help.liferay.com/hc/en-us/categories/360000872531)
+to access: 
 
-1. [Latest Patching Tool](https://web.liferay.com/group/customer/dxp/downloads/7-1/patching-tool)
-2. [Latest fix packs](https://web.liferay.com/group/customer/dxp/downloads/7-1/fix-packs)
-3. [All security patches](https://web.liferay.com/group/customer/products/portal/security-vulnerability/known-vulnerabilities)
+-   Latest Release
+-   Fix Packs
+-   Service Packs Archive
+-   Security Advisories
+-   Patching Tool
 
-Click the *Announcements* button in the center of the
-[Liferay Digital Experience Platform page](https://web.liferay.com/group/customer/dxp)
-to follow the most recent updates and see more information about each release.
-Release notes are published for all fix packs and service packs. At the very
-bottom of the
-[Announcements page](https://web.liferay.com/group/customer/support/announcements),
-you can subscribe via RSS or email to receive up-to-date information on fix
-pack, service pack, and security patch availability. 
+Click *Support Information* to access the compatibility matrix, support FAQs,
+and more. 

@@ -26,16 +26,7 @@ and
 [install](/discover/deployment/-/knowledge_base/7-0/patching-tool#installing-patches)
 fix pack 60. 
 
-### Step 2: Make sure Liferay DXP and its JSON web services are accessible [](id=step-2-make-sure-liferay-dxp-and-its-json-web-services-are-accessible)
-
-Make sure your Liferay DXP instance is publicly accessible to Analytics Cloud. 
-
-Liferay DXP's JSON web services are enabled by default. If they're disabled on
-your DXP instance, enable them by deleting setting
-`json.web.service.enabled=false` from your instance's portal properties (e.g.,
-found in a `portal-ext.properties` file). 
-
-### Step 3: Register Analytics Cloud with your Liferay DXP instance [](id=step-2-register-analytics-cloud-with-your-liferay-dxp-instance)
+### Step 2: Register Analytics Cloud with your Liferay DXP instance [](id=step-2-register-analytics-cloud-with-your-liferay-dxp-instance)
 
 Liferay DXP 7.1: 
 
@@ -66,6 +57,13 @@ Liferay DXP 7.0:
 Congratulations on authorizing Analytics Cloud to connect to your Liferay DXP
 instance! It's time to add your DXP instance as a data source. 
 
++$$$
+
+**Tip:** If you have problems connecting to your DXP data source, refer to
+[Troubleshooting Liferay DXP Data Sources](https://github.com/liferay/liferay-docs/blob/7.1.x/discover/analytics-cloud/articles/06-troubleshooting/00-troubleshooting-data-sources-intro.markdown). 
+
+$$$
+
 ## Adding the DXP Data Source [](id=adding-the-dxp-data-source)
 
 Adding a Liferay DXP data source connects your Analytics Cloud project with
@@ -95,7 +93,8 @@ Here's how to authorize your DXP instance as a data source:
 
     *Client Credentials*
 
-    **Consumer Key/Client ID:** Key/ID for Analytics Cloud to access your Liferay DXP instance. 
+    **Consumer Key/Client ID:** Key/ID for Analytics Cloud to access your 
+    Liferay DXP instance. 
 
     **Consumer Secret/Client Secret:** Secret for Analytics Cloud to access your
     Liferay DXP instance. 
@@ -169,11 +168,18 @@ contacts you've imported.
 2.  Select the Liferay DXP Sites to register for analytics and click 
     *Configure*.
 
-5. Click the *Done* button. 
+3.  Click the *Done* button. 
 
 The Contacts and Analytics data start syncing into Analytics Cloud. **Initially 
 the sync takes a while. After the initial sync, changes are synced 
 periodically.**
+
++$$$
+
+**Tip:** If you have problems connecting to your DXP data source, refer to
+[Troubleshooting Liferay DXP Data Sources](https://github.com/liferay/liferay-docs/blob/7.1.x/discover/analytics-cloud/articles/06-troubleshooting/00-troubleshooting-data-sources-intro.markdown). 
+
+$$$
 
 If you have contact profile data from other sources such as a database, you
 might be able to export the data to a CSV file. Then you can add the CSV file as

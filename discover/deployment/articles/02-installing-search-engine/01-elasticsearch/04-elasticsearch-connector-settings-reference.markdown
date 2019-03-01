@@ -1,4 +1,4 @@
-# Elasticsearch Settings [](id=elasticsearch-settings)
+# Elasticsearch Connector Settings: Reference [](id=elasticsearch-connector-settings-reference)
 
 Elasticsearch is the default search engine for @product-ver@. The *Liferay
 Foundation* suite includes an adapter for Elasticsearch called *Liferay Connector to
@@ -163,23 +163,23 @@ search thread pool.
 
 The following settings are only available in the Elasticsearch 6 adapter:
 
-## Configurations only Affecting the Embedded Elasticsearch Server
+## Configurations only Affecting the Embedded Elasticsearch Server [](id=configurations-only-affecting-the-embedded-elasticsearch-server)
 
 These settings (defined above) are only meant to use while configuring the
 embedded Elasticsearch server. Configuring these will elicit no effect on
 remote Elasticsearch installations:
 
-`bootstrapMlockAll`
-`discoveryZenPingUnicastHostsPort`
-`networkHost`
-`networkBindHost`
-`networkPublishHost`
-`transportTcpPort`
-`httpEnabled`
-`httpCORSEnabled`
-`httpCORSAllowOrigin`
-`httpCORSConfigurations`
-`syncSearch`
+- `bootstrapMlockAll`
+- `discoveryZenPingUnicastHostsPort`
+- `networkHost`
+- `networkBindHost`
+- `networkPublishHost` 
+- `transportTcpPort` 
+- `httpEnabled`
+- `httpCORSEnabled` 
+- `httpCORSAllowOrigin` 
+- `httpCORSConfigurations` 
+- `syncSearch`
 
 You can easily configure these settings in the System Setting application, or
 as mentioned above, you can specify them in a deployable OSGi `.config` file.
