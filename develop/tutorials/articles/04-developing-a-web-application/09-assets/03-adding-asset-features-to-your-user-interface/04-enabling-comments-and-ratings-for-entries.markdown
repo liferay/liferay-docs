@@ -119,14 +119,14 @@ ratings on guestbook entries:
         entry.getEntryId(), new ServiceContextFunction(request));
         %>
 
-10.  Below that add the tag for tracking the number of comments writing comments:
+10.  Below that add the tag for tracking the number of comments:
 
         <c:if test="<%= discussion != null %>">
           <h2>
             <strong><liferay-ui:message arguments="<%= discussion.getDiscussionCommentsCount() %>" key='<%= (discussion.getDiscussionCommentsCount() == 1) ? "x-comment" : "x-comments" %>' /></strong>
 
 11. And then create the `liferay-comment:discussion` tag which handles the 
-    creation of the comments form, *Reply* button, and retrieving the discussion content. It also handles the form action of posting the comment without requiring you to manually create a portlet action URL.
+    creation of the comments form, *Reply* button, and retrieving the discussion content. It also handles the form action of posting the comment without requiring you to create a portlet action URL.
           
           <liferay-comment:discussion
             className="<%= Entry.class.getName() %>"
