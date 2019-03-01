@@ -6,9 +6,9 @@ header-id: updating-files
 
 To update a file with the Documents and Media API, you must use one of the three 
 `updateFileEntry` methods discussed in 
-[Updating Entities](liferay.com). 
+[Updating Entities](/develop/tutorials/-/knowledge_base/7-2/updating-entities). 
 The steps here show you how. For general information on using the API, see 
-[Documents and Media API](liferay.com). 
+[Documents and Media API](/develop/tutorials/-/knowledge_base/7-2/documents-and-media-api). 
 
 Note that the example in these steps uses the `updateFileEntry` method that 
 contains `InputStream`, but you can adapt the example to the other methods if 
@@ -75,8 +75,8 @@ needs of the Documents and Media app.
 
 ## Related Topics
 
-[Creating Files](liferay.com)
+[Creating Files](/develop/tutorials/-/knowledge_base/7-2/creating-files)
 
-[Deleting Files](liferay.com)
+[Deleting Files](/develop/tutorials/-/knowledge_base/7-2/deleting-files)
 
-[Moving Folders and Files](liferay.com)
+[Moving Folders and Files](/develop/tutorials/-/knowledge_base/7-2/moving-folders-and-files)

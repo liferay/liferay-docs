@@ -36,7 +36,7 @@ combination of the `folderId` and `title` parameters in `deleteFileEntryByTitle`
 uniquely identify a file because it's impossible for two files in the same 
 folder to share a name. For step-by-step instructions on using these methods, 
 see 
-[Deleting Files](liferay.com). 
+[Deleting Files](/develop/tutorials/-/knowledge_base/7-2/deleting-files). 
 
 ## File Versions
 
@@ -54,7 +54,7 @@ See this method's
 [Javadoc](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#deleteFileVersion-long-java.lang.String-) 
 for a description of the parameters. For step-by-step instructions on using this 
 method, see 
-[Deleting File Versions](liferay.com). 
+[Deleting File Versions](/develop/tutorials/-/knowledge_base/7-2/deleting-file-versions). 
 
 ### Identifying File Versions
 
@@ -90,7 +90,7 @@ with the ID of the shortcut you want to delete:
     deleteFileShortcut(long fileShortcutId)
 
 For step-by-step instructions on using this method, see 
-[Deleting File Shortcuts](liferay.com). 
+[Deleting File Shortcuts](/develop/tutorials/-/knowledge_base/7-2/deleting-file-shortcuts). 
 
 ## Folders
 
@@ -103,7 +103,7 @@ to delete a folder. Click each method to see its Javadoc:
 
 Which method you use is up to you---they both delete a folder. For step-by-step 
 instructions on using these methods, see 
-[Deleting Folders](liferay.com). 
+[Deleting Folders](/develop/tutorials/-/knowledge_base/7-2/deleting-folders). 
 
 ## Recycle Bin
 
@@ -118,4 +118,4 @@ the Recycle Bin. It's therefore a best practice to always use the Capabilities
 API when moving entities to the Recycle Bin. 
 
 For step-by-step instructions on this, see 
-[Moving Entities to the Recycle Bin](liferay.com). 
+[Moving Entities to the Recycle Bin](/develop/tutorials/-/knowledge_base/7-2/moving-entities-to-the-recycle-bin). 

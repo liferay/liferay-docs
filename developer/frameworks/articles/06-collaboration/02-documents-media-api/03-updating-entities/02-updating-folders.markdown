@@ -6,9 +6,9 @@ header-id: updating-folders
 
 To update a folder with the Documents and Media API, you must use the 
 `updateFolder` method discussed in 
-[Updating Entities](liferay.com). 
+[Updating Entities](/develop/tutorials/-/knowledge_base/7-2/updating-entities). 
 The steps here show you how. For general information on using the API, see 
-[Documents and Media API](liferay.com). 
+[Documents and Media API](/develop/tutorials/-/knowledge_base/7-2/documents-and-media-api). 
 
 Follow these steps to update a folder: 
 
@@ -50,10 +50,10 @@ app.
 
 ## Related Topics
 
-[Creating Folders](liferay.com)
+[Creating Folders](/develop/tutorials/-/knowledge_base/7-2/creating-folders)
 
-[Deleting Folders](liferay.com)
+[Deleting Folders](/develop/tutorials/-/knowledge_base/7-2/deleting-folders)
 
-[Copying Folders](liferay.com)
+[Copying Folders](/develop/tutorials/-/knowledge_base/7-2/copying-folders)
 
-[Moving Folders and Files](liferay.com)
+[Moving Folders and Files](/develop/tutorials/-/knowledge_base/7-2/moving-folders-and-files)

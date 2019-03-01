@@ -6,7 +6,7 @@ header-id: moving-entities-to-the-recycle-bin
 
 Follow these steps to use the Capabilities API to move an entity to the Recycle 
 Bin. For an explanation of why you should use the Capabilities API for this, see 
-[Deleting Entities](liferay.com). 
+[Deleting Entities](/develop/tutorials/-/knowledge_base/7-2/deleting-entities). 
 
 1.  Verify that the repository supports the Recycle Bin. Do this by calling the 
     [repository object's](/develop/tutorials/-/knowledge_base/7-2/documents-and-media-api#specifying-repositories) 
@@ -39,10 +39,10 @@ Bin. For an explanation of why you should use the Capabilities API for this, see
 
 ## Related Topics
 
-[Deleting Files](liferay.com)
+[Deleting Files](/develop/tutorials/-/knowledge_base/7-2/deleting-files)
 
-[Deleting Folders](liferay.com)
+[Deleting Folders](/develop/tutorials/-/knowledge_base/7-2/deleting-folders)
 
-[Deleting File Shortcuts](liferay.com)
+[Deleting File Shortcuts](/develop/tutorials/-/knowledge_base/7-2/deleting-file-shortcuts)
 
-[Moving Folders and Files](liferay.com)
+[Moving Folders and Files](/develop/tutorials/-/knowledge_base/7-2/moving-folders-and-files)

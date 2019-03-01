@@ -67,7 +67,7 @@ few useful implementations in the package
 `RepositoryModelTitleComparator`: Sorts by title. 
 
 See 
-[Getting Files](liferay.com) 
+[Getting Files](/develop/tutorials/-/knowledge_base/7-2/getting-files) 
 for step-by-step instructions on using the above method families. 
 
 ## Folders
@@ -91,5 +91,5 @@ method:
 
 Note that there are several other `getFolders` methods in `DLAppService`. Use 
 the one that best matches your use case. See 
-[Getting Folders](liferay.com) 
+[Getting Folders](/develop/tutorials/-/knowledge_base/7-2/getting-folders) 
 for step-by-step instructions on using these `getFolders` methods. 

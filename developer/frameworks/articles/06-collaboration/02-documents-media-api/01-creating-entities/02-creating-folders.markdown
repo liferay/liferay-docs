@@ -9,9 +9,9 @@ must use the
 [`DLAppService`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html) 
 interface's `addFolder` method. The steps here show you how to do this. For more 
 detailed information, see 
-[Creating Files, Folders, and Shortcuts](liferay.com). 
+[Creating Files, Folders, and Shortcuts](/develop/tutorials/-/knowledge_base/7-2/creating-files-folders-and-shortcuts). 
 For general information on using the API, see 
-[Documents and Media API](liferay.com). 
+[Documents and Media API](/develop/tutorials/-/knowledge_base/7-2/documents-and-media-api). 
 
 Follow these steps to create a folder with the `DLAppService` method 
 `addFolder`: 

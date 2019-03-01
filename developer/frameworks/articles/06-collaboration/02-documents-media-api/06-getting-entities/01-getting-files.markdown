@@ -6,7 +6,7 @@ header-id: getting-files
 
 To get files with the Documents and Media API, use a method from the 
 `getFileEntries` or `getGroupFileEntries` method families discussed in 
-[Getting Entities](liferay.com). 
+[Getting Entities](/develop/tutorials/-/knowledge_base/7-2/getting-entities). 
 The steps here show you how, using this 
 [`getFileEntries`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#getFileEntries-long-long-java.lang.String:A-int-int-com.liferay.portal.kernel.util.OrderByComparator-) 
 method as an example: 
@@ -21,7 +21,7 @@ method as an example:
     )
 
 For general information on using the Documents and Media API, see 
-[Documents and Media API](liferay.com). 
+[Documents and Media API](/develop/tutorials/-/knowledge_base/7-2/documents-and-media-api). 
 
 Follow these steps to get a list of files. This example uses the above 
 `getFileEntries` method to get all the PNG images from the root folder of a 
@@ -95,8 +95,6 @@ methods. To see all such methods, see the `DLAppService`
 
 ## Related Topics
 
-[Getting Started with the Documents and Media API](liferay.com)
-
-[Getting Folders](liferay.com)
+[Getting Folders](/develop/tutorials/-/knowledge_base/7-2/getting-folders)
 
 [Getting Multiple Entity Types](liferay.com)

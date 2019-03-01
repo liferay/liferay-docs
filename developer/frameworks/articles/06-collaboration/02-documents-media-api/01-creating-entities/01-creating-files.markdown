@@ -10,9 +10,9 @@ To create a file via the Documents and Media API, use one of the overloaded
 The steps here show you how to do this, using the method that contains 
 `InputStream` as an example. For detailed information on this and other 
 `addFileEntry` methods, see 
-[Creating Files, Folders, and Shortcuts](liferay.com). 
+[Creating Files, Folders, and Shortcuts](/develop/tutorials/-/knowledge_base/7-2/creating-files-folders-and-shortcuts). 
 For general information on using the API, see 
-[Documents and Media API](liferay.com). 
+[Documents and Media API](/develop/tutorials/-/knowledge_base/7-2/documents-and-media-api). 
 
 Follow these steps to create a file via the Documents and Media API: 
 

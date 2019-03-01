@@ -6,9 +6,9 @@ header-id: copying-folders
 
 To copy a folder with the Documents and Media API, use the `copyFolder` method 
 discussed in 
-[Copying and Moving Entities](liferay.com). 
+[Copying and Moving Entities](/develop/tutorials/-/knowledge_base/7-2/copying-and-moving-entities). 
 The steps here show you how. For general information on using the API, see 
-[Documents and Media API](liferay.com). 
+[Documents and Media API](/develop/tutorials/-/knowledge_base/7-2/documents-and-media-api). 
 
 Follow these steps to use `copyFolder` to copy a folder: 
 
@@ -66,14 +66,10 @@ folder's name and/or description.
 
 ## Related Topics
 
-[Getting Started with the Documents and Media API](liferay.com)
+[Creating Folders](/develop/tutorials/-/knowledge_base/7-2/creating-folders)
 
-[Understanding Service Context](liferay.com)
+[Updating Folders](/develop/tutorials/-/knowledge_base/7-2/updating-folders)
 
-[Creating Folders](liferay.com)
+[Deleting Folders](/develop/tutorials/-/knowledge_base/7-2/deleting-folders)
 
-[Updating Folders](liferay.com)
-
-[Deleting Folders](liferay.com)
-
-[Moving Folders and Files](liferay.com)
+[Moving Folders and Files](/develop/tutorials/-/knowledge_base/7-2/moving-folders-and-files)

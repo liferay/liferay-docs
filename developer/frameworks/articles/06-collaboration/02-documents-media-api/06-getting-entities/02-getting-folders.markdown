@@ -6,14 +6,14 @@ header-id: getting-folders
 
 To get folders with the Documents and Media API, use one of the `getFolders` 
 methods in `DLAppService`. This is discussed in more detail in 
-[Getting Entities](liferay.com). 
+[Getting Entities](/develop/tutorials/-/knowledge_base/7-2/getting-entities). 
 The steps here show you how to call these `getFolders` methods. As an example, 
 this method is used to get a parent folder's subfolders: 
 
     getFolders(long repositoryId, long parentFolderId, boolean includeMountFolders)
 
 For general information on using the Documents and Media API, see 
-[Documents and Media API](liferay.com). 
+[Documents and Media API](/develop/tutorials/-/knowledge_base/7-2/documents-and-media-api). 
 
 Follow these steps to call a `getFolders` method: 
 
@@ -60,8 +60,6 @@ the `DLAppService`
 
 ## Related Topics
 
-[Getting Started with the Documents and Media API](liferay.com)
-
-[Getting Files](liferay.com)
+[Getting Files](/develop/tutorials/-/knowledge_base/7-2/getting-files)
 
 [Getting Multiple Entity Types](liferay.com)

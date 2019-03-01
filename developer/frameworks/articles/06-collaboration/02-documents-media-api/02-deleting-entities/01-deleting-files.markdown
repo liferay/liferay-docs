@@ -6,9 +6,9 @@ header-id: deleting-files
 
 To delete a file with the Documents and Media API, you must use one of the two 
 `deleteFileEntry*` methods discussed in 
-[Deleting Entities](liferay.com). 
+[Deleting Entities](/develop/tutorials/-/knowledge_base/7-2/deleting-entities). 
 The steps here show you how. For general information on using the API, see 
-[Documents and Media API](liferay.com). 
+[Documents and Media API](/develop/tutorials/-/knowledge_base/7-2/documents-and-media-api). 
 
 Follow these steps to delete a file: 
 
@@ -47,10 +47,10 @@ needs of the Documents and Media app.
 
 ## Related Topics
 
-[Moving Entities to the Recycle Bin](liferay.com)
+[Moving Entities to the Recycle Bin](/develop/tutorials/-/knowledge_base/7-2/moving-entities-to-the-recycle-bin)
 
-[Creating Files](liferay.com)
+[Creating Files](/develop/tutorials/-/knowledge_base/7-2/creating-files)
 
-[Updating Files](liferay.com)
+[Updating Files](/develop/tutorials/-/knowledge_base/7-2/updating-files)
 
-[Moving Folders and Files](liferay.com)
+[Moving Folders and Files](/develop/tutorials/-/knowledge_base/7-2/moving-folders-and-files)

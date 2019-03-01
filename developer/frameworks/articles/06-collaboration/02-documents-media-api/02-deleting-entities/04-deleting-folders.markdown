@@ -6,9 +6,9 @@ header-id: deleting-folders
 
 To delete a folder with the Documents and Media API, you must use one of the two 
 `deleteFolder` methods discussed in 
-[Deleting Entities](liferay.com). 
+[Deleting Entities](/develop/tutorials/-/knowledge_base/7-2/deleting-entities). 
 The steps here show you how. For general information on using the API, see 
-[Documents and Media API](liferay.com). 
+[Documents and Media API](/develop/tutorials/-/knowledge_base/7-2/documents-and-media-api). 
 
 Follow these steps to delete a folder: 
 
@@ -48,14 +48,14 @@ app.
 
 ## Related Topics
 
-[Moving Entities to the Recycle Bin](liferay.com)
+[Moving Entities to the Recycle Bin](/develop/tutorials/-/knowledge_base/7-2/moving-entities-to-the-recycle-bin)
 
-[Creating Folders](liferay.com)
+[Creating Folders](/develop/tutorials/-/knowledge_base/7-2/creating-folders)
 
-[Updating Folders](liferay.com)
+[Updating Folders](/develop/tutorials/-/knowledge_base/7-2/updating-folders)
 
-[Copying Folders](liferay.com)
+[Copying Folders](/develop/tutorials/-/knowledge_base/7-2/copying-folders)
 
-[Moving Folders and Files](liferay.com)
+[Moving Folders and Files](/develop/tutorials/-/knowledge_base/7-2/moving-folders-and-files)
 
-[Deleting Files](liferay.com)
+[Deleting Files](/develop/tutorials/-/knowledge_base/7-2/deleting-files)

@@ -6,9 +6,9 @@ header-id: checking-out-files
 
 To check out a file with the Documents and Media API, use the 
 `checkOutFileEntry` method discussed in 
-[File Checkout and Checkin](liferay.com). 
+[File Checkout and Checkin](/develop/tutorials/-/knowledge_base/7-2/file-checkout-and-checkin). 
 The steps here show you how. For general information on using the API, see 
-[Documents and Media API](liferay.com). 
+[Documents and Media API](/develop/tutorials/-/knowledge_base/7-2/documents-and-media-api). 
 
 Follow these steps to check out a file: 
 
@@ -47,8 +47,8 @@ needs of the Documents and Media app.
 
 ## Related Topics
 
-[File Checkin](liferay.com)
+[Checking In Files](/develop/tutorials/-/knowledge_base/7-2/checking-in-files)
 
-[Canceling a Checkout](liferay.com)
+[Canceling a Checkout](/develop/tutorials/-/knowledge_base/7-2/canceling-a-checkout)
 
-[Updating Files](liferay.com)
+[Updating Files](/develop/tutorials/-/knowledge_base/7-2/updating-files)

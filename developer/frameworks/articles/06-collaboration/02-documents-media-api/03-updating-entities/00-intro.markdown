@@ -21,7 +21,7 @@ Here, you'll learn about updating these entities:
 ## Files
 
 Updating a file is a bit more complicated than 
-[creating one](/develop/tutorials/-/knowledge_base/7-1/creating-files). 
+[creating one](/develop/tutorials/-/knowledge_base/7-2/creating-files). 
 This is due to the way the update operation handles a file's metadata and 
 content. To update only a file's content, you must also supply the file's 
 existing metadata. Otherwise, the update operation could lose the metadata. The 
@@ -60,7 +60,7 @@ Keep these things in mind when using these methods:
     value (e.g., from `1.0` to `2.0`, `1.1` to `2.0`, etc.). 
 
 For a step-by-step guide on using these `updateFileEntry` methods, see 
-[Updating Files](liferay.com). 
+[Updating Files](/develop/tutorials/-/knowledge_base/7-2/updating-files). 
 
 ## Folders
 
@@ -76,7 +76,7 @@ All parameters except the description are mandatory. For a full description of
 this method and its parameters, see its 
 [Javadoc](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#updateFolder-long-java.lang.String-java.lang.String-com.liferay.portal.kernel.service.ServiceContext-). 
 For step-by-step instructions on using this method, see 
-[Updating Folders](liferay.com). 
+[Updating Folders](/develop/tutorials/-/knowledge_base/7-2/updating-folders). 
 
 ## File Shortcuts
 
@@ -91,4 +91,4 @@ original values, you must provide them to this method. For a full description of
 the parameters, see the method's 
 [Javadoc](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#updateFileShortcut-long-long-long-com.liferay.portal.kernel.service.ServiceContext-). 
 For step-by-step instructions on using this method, see 
-[Updating File Shortcuts](liferay.com). 
+[Updating File Shortcuts](/develop/tutorials/-/knowledge_base/7-2/updating-file-shortcuts). 

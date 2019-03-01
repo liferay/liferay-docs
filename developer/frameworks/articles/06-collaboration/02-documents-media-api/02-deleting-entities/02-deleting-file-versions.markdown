@@ -6,9 +6,9 @@ header-id: deleting-file-versions
 
 To delete a file version with the Documents and Media API, you must use the 
 `deleteFileVersion` method discussed in 
-[Deleting Entities](liferay.com). 
+[Deleting Entities](/develop/tutorials/-/knowledge_base/7-2/deleting-entities). 
 The steps here show you how. For general information on using the API, see 
-[Documents and Media API](liferay.com). 
+[Documents and Media API](/develop/tutorials/-/knowledge_base/7-2/documents-and-media-api). 
 
 Follow these steps to use `deleteFileVersion` to delete a file version:
 
@@ -43,10 +43,10 @@ needs of the Documents and Media app.
 
 ## Related Topics
 
-[Deleting Files](liferay.com)
+[Deleting Files](/develop/tutorials/-/knowledge_base/7-2/deleting-files)
 
-[Deleting File Shortcuts](liferay.com)
+[Deleting File Shortcuts](/develop/tutorials/-/knowledge_base/7-2/deleting-file-shortcuts)
 
-[Deleting Folders](liferay.com)
+[Deleting Folders](/develop/tutorials/-/knowledge_base/7-2/deleting-folders)
 
-[Moving Entities to the Recycle Bin](liferay.com)
+[Moving Entities to the Recycle Bin](/develop/tutorials/-/knowledge_base/7-2/moving-entities-to-the-recycle-bin)

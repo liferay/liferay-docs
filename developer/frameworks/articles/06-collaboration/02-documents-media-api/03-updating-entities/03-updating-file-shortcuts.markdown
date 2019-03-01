@@ -6,9 +6,9 @@ header-id: updating-file-shortcuts
 
 To update a file shortcut with the Documents and Media API, you must use the 
 `updateFileShortcut` method discussed in 
-[Updating Entities](liferay.com). 
+[Updating Entities](/develop/tutorials/-/knowledge_base/7-2/updating-entities). 
 The steps here show you how. For general information on using the API, see 
-[Documents and Media API](liferay.com). 
+[Documents and Media API](/develop/tutorials/-/knowledge_base/7-2/documents-and-media-api). 
 
 Follow these steps to update a file shortcut:
 
@@ -51,6 +51,6 @@ specific needs of the Documents and Media app.
 
 ## Related Topics
 
-[Creating File Shortcuts](liferay.com)
+[Creating File Shortcuts](/develop/tutorials/-/knowledge_base/7-2/creating-file-shortcuts)
 
-[Deleting File Shortcuts](liferay.com)
+[Deleting File Shortcuts](/develop/tutorials/-/knowledge_base/7-2/deleting-file-shortcuts)
