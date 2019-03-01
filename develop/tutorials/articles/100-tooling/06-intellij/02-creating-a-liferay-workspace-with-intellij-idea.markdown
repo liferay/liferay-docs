@@ -24,8 +24,9 @@ Follow the steps below to create a Liferay Workspace:
 
     ![Figure 1: Choose *Liferay Gradle Workspace* or *Liferay Maven Workspace*, depending on the build you prefer.](../../../images/intellij-workspace-build.png)
 
-4.  Specify your workspace's name, location, intended @product@ version, and
-    SDK (i.e., Java JDK). Then click *Finish*.
+4.  Specify your workspace's name, location, intended @product@ version,
+    [target platform](/develop/tutorials/-/knowledge_base/7-1/managing-the-target-platform-for-liferay-workspace),
+    and SDK (i.e., Java JDK). Then click *Finish*.
 
     ![Figure 2: Specify your workspace's configurations.](../../../images/intellij-workspace-project.png)
 

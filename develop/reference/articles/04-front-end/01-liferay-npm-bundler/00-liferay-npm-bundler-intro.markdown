@@ -15,3 +15,11 @@ its own copy. The liferay-npm-bundler handles this for you.
 
 This section of reference docs covers how Portal supports npm-based portlet 
 projects with the liferay-npm-bundler.
+
++$$$
+
+**Note:** You can also find information for the liferay-npm-bundler in the 
+project's 
+[Wiki](https://github.com/liferay/liferay-npm-build-tools/wiki).
+
+$$$

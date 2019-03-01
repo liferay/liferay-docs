@@ -42,5 +42,5 @@ mapping contacts from your data source to your Analytics Field contact model.
 
 Once you've mapped your contact data and finished adding your data sources, you
 can start learning more about your customers. See 
-[Understanding People](https://github.com/liferay/liferay-docs/blob/master/discover/analytics-cloud/articles/03-understanding-people/00-understanding-people-intro.markdown)
+[Understanding People](https://github.com/liferay/liferay-docs/blob/7.1.x/discover/analytics-cloud/articles/03-understanding-people/00-understanding-people-intro.markdown)
 for more.

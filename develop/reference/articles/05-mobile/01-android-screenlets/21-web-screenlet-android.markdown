@@ -51,10 +51,10 @@ supply the described configuration parameters:
 
 | Method | Return | Explanation |
 |-----------|-----------|-------------| 
-| `addLocalJs(fileName)` | `WebScreenletConfiguration.Builder` | Adds a local JavaScript file with the supplied filename. You must save the JavaScript files in the asset folder's first level. |
-| `addLocalCss(fileName)` | `WebScreenletConfiguration.Builder` | Adds a local CSS file with the supplied filename. You must save the CSS files in the asset folder's first level. |
-| `addRawJs(rawJs, name)` | `WebScreenletConfiguration.Builder` | Adds a JavaScript file from the `res/raw` folder. Reference the file using `R.raw.rawJs`. This method also takes a second parameter called `name`, which is only for debugging purposes. If there's an error, the console displays it with this `name` value. |
-| `addRawCss(rawCss, name)` | `WebScreenletConfiguration.Builder` | Adds a CSS file from the `res/raw` folder. Reference the file using `R.raw.rawCss`. This method also takes a second parameter called `name`, which is only for debugging purposes. If there's an error, the console displays it with this `name` value. |
+| `addLocalJs(fileName)` | `WebScreenletConfiguration.Builder` | Adds a local JavaScript file with the supplied filename. The JavaScript files must be in the first level of your app's `assets` folder. Create this folder at the same level of the `res` folder. |
+| `addLocalCss(fileName)` | `WebScreenletConfiguration.Builder` | Adds a local CSS file with the supplied filename. The CSS files must be in the first level of your app's `assets` folder. Create this folder at the same level of the `res` folder. |
+| `addRawJs(rawJs, name)` | `WebScreenletConfiguration.Builder` | Adds a JavaScript file from your app's `res/raw` folder. Create this folder if it doesn't exist. Reference the file using `R.raw.yourfilename`. This method also takes a second parameter called `name`, which is only for debugging purposes. If there's an error, the console displays it with this `name` value. |
+| `addRawCss(rawCss, name)` | `WebScreenletConfiguration.Builder` | Adds a CSS file from your app's `res/raw` folder. Create this folder if it doesn't exist. Reference the file using `R.raw.yourfilename`. This method also takes a second parameter called `name`, which is only for debugging purposes. If there's an error, the console displays it with this `name` value. |
 | `addRemoteJs(url)` | `WebScreenletConfiguration.Builder` | Adds a JavaScript file from the supplied URL. |
 | `addRemoteCss(url)` | `WebScreenletConfiguration.Builder` | Adds a CSS file from the supplied URL. |
 | `setWebType(webType)` | `WebScreenletConfiguration.Builder` | Sets the [`WebType`](/develop/reference/-/knowledge_base/7-1/web-screenlet-for-android#webtype). |

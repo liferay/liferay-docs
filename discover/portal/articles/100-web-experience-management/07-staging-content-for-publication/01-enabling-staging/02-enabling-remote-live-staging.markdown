@@ -30,6 +30,11 @@ Live staging environment for your site.
     ![Figure 1: After your remote Liferay server and local Liferay server have been configured to communicate with each other, you have to specify a few Remote Live connection settings.](../../../../images/remote-live-staging-settings.png)
 
 3.  Enter your remote Liferay server's IP address into the Remote Host/IP field.
+    This field should match the host you specified as your
+    `tunnel.servlet.hosts.allowed` property in the `portal-ext.properties` file.
+    If you're configuring an IPv6 address, it must contain brackets when entered
+    into the *Remote Host/IP* field (e.g., *[0:0:0:0:0:0:0:1]*).
+
     If the remote Liferay server is a cluster, you can set the Remote Host/IP to
     the load balanced IP address of the cluster in order to increase the
     availability of the publishing process. See the

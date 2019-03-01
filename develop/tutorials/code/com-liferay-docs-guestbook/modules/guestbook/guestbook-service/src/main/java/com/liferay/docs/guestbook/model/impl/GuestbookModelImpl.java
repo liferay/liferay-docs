@@ -45,10 +45,14 @@ import java.io.Serializable;
 import java.sql.Types;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.BiConsumer;
+import java.util.function.Function;
 
 /**
  * The base model implementation for the Guestbook service. Represents a row in the &quot;GB_Guestbook&quot; database table, with each column mapped to a property of this class.
@@ -218,19 +222,15 @@ public class GuestbookModelImpl extends BaseModelImpl<Guestbook>
 	public Map<String, Object> getModelAttributes() {
 		Map<String, Object> attributes = new HashMap<String, Object>();
 
-		attributes.put("uuid", getUuid());
-		attributes.put("guestbookId", getGuestbookId());
-		attributes.put("groupId", getGroupId());
-		attributes.put("companyId", getCompanyId());
-		attributes.put("userId", getUserId());
-		attributes.put("userName", getUserName());
-		attributes.put("createDate", getCreateDate());
-		attributes.put("modifiedDate", getModifiedDate());
-		attributes.put("status", getStatus());
-		attributes.put("statusByUserId", getStatusByUserId());
-		attributes.put("statusByUserName", getStatusByUserName());
-		attributes.put("statusDate", getStatusDate());
-		attributes.put("name", getName());
+		Map<String, Function<Guestbook, Object>> attributeGetterFunctions = getAttributeGetterFunctions();
+
+		for (Map.Entry<String, Function<Guestbook, Object>> entry : attributeGetterFunctions.entrySet()) {
+			String attributeName = entry.getKey();
+			Function<Guestbook, Object> attributeGetterFunction = entry.getValue();
+
+			attributes.put(attributeName,
+				attributeGetterFunction.apply((Guestbook)this));
+		}
 
 		attributes.put("entityCacheEnabled", isEntityCacheEnabled());
 		attributes.put("finderCacheEnabled", isFinderCacheEnabled());
@@ -240,83 +240,300 @@ public class GuestbookModelImpl extends BaseModelImpl<Guestbook>
 
 	@Override
 	public void setModelAttributes(Map<String, Object> attributes) {
-		String uuid = (String)attributes.get("uuid");
+		Map<String, BiConsumer<Guestbook, Object>> attributeSetterBiConsumers = getAttributeSetterBiConsumers();
 
-		if (uuid != null) {
-			setUuid(uuid);
+		for (Map.Entry<String, Object> entry : attributes.entrySet()) {
+			String attributeName = entry.getKey();
+
+			BiConsumer<Guestbook, Object> attributeSetterBiConsumer = attributeSetterBiConsumers.get(attributeName);
+
+			if (attributeSetterBiConsumer != null) {
+				attributeSetterBiConsumer.accept((Guestbook)this,
+					entry.getValue());
+			}
 		}
+	}
 
-		Long guestbookId = (Long)attributes.get("guestbookId");
+	public Map<String, Function<Guestbook, Object>> getAttributeGetterFunctions() {
+		return _attributeGetterFunctions;
+	}
 
-		if (guestbookId != null) {
-			setGuestbookId(guestbookId);
-		}
+	public Map<String, BiConsumer<Guestbook, Object>> getAttributeSetterBiConsumers() {
+		return _attributeSetterBiConsumers;
+	}
 
-		Long groupId = (Long)attributes.get("groupId");
+	private static final Map<String, Function<Guestbook, Object>> _attributeGetterFunctions;
+	private static final Map<String, BiConsumer<Guestbook, Object>> _attributeSetterBiConsumers;
 
-		if (groupId != null) {
-			setGroupId(groupId);
-		}
+	static {
+		Map<String, Function<Guestbook, Object>> attributeGetterFunctions = new LinkedHashMap<String, Function<Guestbook, Object>>();
+		Map<String, BiConsumer<Guestbook, ?>> attributeSetterBiConsumers = new LinkedHashMap<String, BiConsumer<Guestbook, ?>>();
 
-		Long companyId = (Long)attributes.get("companyId");
 
-		if (companyId != null) {
-			setCompanyId(companyId);
-		}
+		attributeGetterFunctions.put(
+			"uuid",
+			new Function<Guestbook, Object>() {
 
-		Long userId = (Long)attributes.get("userId");
+				@Override
+				public Object apply(Guestbook guestbook) {
+					return guestbook.getUuid();
+				}
 
-		if (userId != null) {
-			setUserId(userId);
-		}
+			});
+		attributeSetterBiConsumers.put(
+			"uuid",
+			new BiConsumer<Guestbook, Object>() {
 
-		String userName = (String)attributes.get("userName");
+				@Override
+				public void accept(Guestbook guestbook, Object uuid) {
+					guestbook.setUuid((String)uuid);
+				}
 
-		if (userName != null) {
-			setUserName(userName);
-		}
+			});
+		attributeGetterFunctions.put(
+			"guestbookId",
+			new Function<Guestbook, Object>() {
 
-		Date createDate = (Date)attributes.get("createDate");
+				@Override
+				public Object apply(Guestbook guestbook) {
+					return guestbook.getGuestbookId();
+				}
 
-		if (createDate != null) {
-			setCreateDate(createDate);
-		}
+			});
+		attributeSetterBiConsumers.put(
+			"guestbookId",
+			new BiConsumer<Guestbook, Object>() {
 
-		Date modifiedDate = (Date)attributes.get("modifiedDate");
+				@Override
+				public void accept(Guestbook guestbook, Object guestbookId) {
+					guestbook.setGuestbookId((Long)guestbookId);
+				}
 
-		if (modifiedDate != null) {
-			setModifiedDate(modifiedDate);
-		}
+			});
+		attributeGetterFunctions.put(
+			"groupId",
+			new Function<Guestbook, Object>() {
 
-		Integer status = (Integer)attributes.get("status");
+				@Override
+				public Object apply(Guestbook guestbook) {
+					return guestbook.getGroupId();
+				}
 
-		if (status != null) {
-			setStatus(status);
-		}
+			});
+		attributeSetterBiConsumers.put(
+			"groupId",
+			new BiConsumer<Guestbook, Object>() {
 
-		Long statusByUserId = (Long)attributes.get("statusByUserId");
+				@Override
+				public void accept(Guestbook guestbook, Object groupId) {
+					guestbook.setGroupId((Long)groupId);
+				}
 
-		if (statusByUserId != null) {
-			setStatusByUserId(statusByUserId);
-		}
+			});
+		attributeGetterFunctions.put(
+			"companyId",
+			new Function<Guestbook, Object>() {
 
-		String statusByUserName = (String)attributes.get("statusByUserName");
+				@Override
+				public Object apply(Guestbook guestbook) {
+					return guestbook.getCompanyId();
+				}
 
-		if (statusByUserName != null) {
-			setStatusByUserName(statusByUserName);
-		}
+			});
+		attributeSetterBiConsumers.put(
+			"companyId",
+			new BiConsumer<Guestbook, Object>() {
 
-		Date statusDate = (Date)attributes.get("statusDate");
+				@Override
+				public void accept(Guestbook guestbook, Object companyId) {
+					guestbook.setCompanyId((Long)companyId);
+				}
 
-		if (statusDate != null) {
-			setStatusDate(statusDate);
-		}
+			});
+		attributeGetterFunctions.put(
+			"userId",
+			new Function<Guestbook, Object>() {
 
-		String name = (String)attributes.get("name");
+				@Override
+				public Object apply(Guestbook guestbook) {
+					return guestbook.getUserId();
+				}
 
-		if (name != null) {
-			setName(name);
-		}
+			});
+		attributeSetterBiConsumers.put(
+			"userId",
+			new BiConsumer<Guestbook, Object>() {
+
+				@Override
+				public void accept(Guestbook guestbook, Object userId) {
+					guestbook.setUserId((Long)userId);
+				}
+
+			});
+		attributeGetterFunctions.put(
+			"userName",
+			new Function<Guestbook, Object>() {
+
+				@Override
+				public Object apply(Guestbook guestbook) {
+					return guestbook.getUserName();
+				}
+
+			});
+		attributeSetterBiConsumers.put(
+			"userName",
+			new BiConsumer<Guestbook, Object>() {
+
+				@Override
+				public void accept(Guestbook guestbook, Object userName) {
+					guestbook.setUserName((String)userName);
+				}
+
+			});
+		attributeGetterFunctions.put(
+			"createDate",
+			new Function<Guestbook, Object>() {
+
+				@Override
+				public Object apply(Guestbook guestbook) {
+					return guestbook.getCreateDate();
+				}
+
+			});
+		attributeSetterBiConsumers.put(
+			"createDate",
+			new BiConsumer<Guestbook, Object>() {
+
+				@Override
+				public void accept(Guestbook guestbook, Object createDate) {
+					guestbook.setCreateDate((Date)createDate);
+				}
+
+			});
+		attributeGetterFunctions.put(
+			"modifiedDate",
+			new Function<Guestbook, Object>() {
+
+				@Override
+				public Object apply(Guestbook guestbook) {
+					return guestbook.getModifiedDate();
+				}
+
+			});
+		attributeSetterBiConsumers.put(
+			"modifiedDate",
+			new BiConsumer<Guestbook, Object>() {
+
+				@Override
+				public void accept(Guestbook guestbook, Object modifiedDate) {
+					guestbook.setModifiedDate((Date)modifiedDate);
+				}
+
+			});
+		attributeGetterFunctions.put(
+			"status",
+			new Function<Guestbook, Object>() {
+
+				@Override
+				public Object apply(Guestbook guestbook) {
+					return guestbook.getStatus();
+				}
+
+			});
+		attributeSetterBiConsumers.put(
+			"status",
+			new BiConsumer<Guestbook, Object>() {
+
+				@Override
+				public void accept(Guestbook guestbook, Object status) {
+					guestbook.setStatus((Integer)status);
+				}
+
+			});
+		attributeGetterFunctions.put(
+			"statusByUserId",
+			new Function<Guestbook, Object>() {
+
+				@Override
+				public Object apply(Guestbook guestbook) {
+					return guestbook.getStatusByUserId();
+				}
+
+			});
+		attributeSetterBiConsumers.put(
+			"statusByUserId",
+			new BiConsumer<Guestbook, Object>() {
+
+				@Override
+				public void accept(Guestbook guestbook, Object statusByUserId) {
+					guestbook.setStatusByUserId((Long)statusByUserId);
+				}
+
+			});
+		attributeGetterFunctions.put(
+			"statusByUserName",
+			new Function<Guestbook, Object>() {
+
+				@Override
+				public Object apply(Guestbook guestbook) {
+					return guestbook.getStatusByUserName();
+				}
+
+			});
+		attributeSetterBiConsumers.put(
+			"statusByUserName",
+			new BiConsumer<Guestbook, Object>() {
+
+				@Override
+				public void accept(Guestbook guestbook, Object statusByUserName) {
+					guestbook.setStatusByUserName((String)statusByUserName);
+				}
+
+			});
+		attributeGetterFunctions.put(
+			"statusDate",
+			new Function<Guestbook, Object>() {
+
+				@Override
+				public Object apply(Guestbook guestbook) {
+					return guestbook.getStatusDate();
+				}
+
+			});
+		attributeSetterBiConsumers.put(
+			"statusDate",
+			new BiConsumer<Guestbook, Object>() {
+
+				@Override
+				public void accept(Guestbook guestbook, Object statusDate) {
+					guestbook.setStatusDate((Date)statusDate);
+				}
+
+			});
+		attributeGetterFunctions.put(
+			"name",
+			new Function<Guestbook, Object>() {
+
+				@Override
+				public Object apply(Guestbook guestbook) {
+					return guestbook.getName();
+				}
+
+			});
+		attributeSetterBiConsumers.put(
+			"name",
+			new BiConsumer<Guestbook, Object>() {
+
+				@Override
+				public void accept(Guestbook guestbook, Object name) {
+					guestbook.setName((String)name);
+				}
+
+			});
+
+
+		_attributeGetterFunctions = Collections.unmodifiableMap(attributeGetterFunctions);
+		_attributeSetterBiConsumers = Collections.unmodifiableMap((Map)attributeSetterBiConsumers);
 	}
 
 	@JSON
@@ -332,6 +549,8 @@ public class GuestbookModelImpl extends BaseModelImpl<Guestbook>
 
 	@Override
 	public void setUuid(String uuid) {
+		_columnBitmask |= UUID_COLUMN_BITMASK;
+
 		if (_originalUuid == null) {
 			_originalUuid = _uuid;
 		}
@@ -855,34 +1074,27 @@ public class GuestbookModelImpl extends BaseModelImpl<Guestbook>
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(27);
+		Map<String, Function<Guestbook, Object>> attributeGetterFunctions = getAttributeGetterFunctions();
 
-		sb.append("{uuid=");
-		sb.append(getUuid());
-		sb.append(", guestbookId=");
-		sb.append(getGuestbookId());
-		sb.append(", groupId=");
-		sb.append(getGroupId());
-		sb.append(", companyId=");
-		sb.append(getCompanyId());
-		sb.append(", userId=");
-		sb.append(getUserId());
-		sb.append(", userName=");
-		sb.append(getUserName());
-		sb.append(", createDate=");
-		sb.append(getCreateDate());
-		sb.append(", modifiedDate=");
-		sb.append(getModifiedDate());
-		sb.append(", status=");
-		sb.append(getStatus());
-		sb.append(", statusByUserId=");
-		sb.append(getStatusByUserId());
-		sb.append(", statusByUserName=");
-		sb.append(getStatusByUserName());
-		sb.append(", statusDate=");
-		sb.append(getStatusDate());
-		sb.append(", name=");
-		sb.append(getName());
+		StringBundler sb = new StringBundler((4 * attributeGetterFunctions.size()) +
+				2);
+
+		sb.append("{");
+
+		for (Map.Entry<String, Function<Guestbook, Object>> entry : attributeGetterFunctions.entrySet()) {
+			String attributeName = entry.getKey();
+			Function<Guestbook, Object> attributeGetterFunction = entry.getValue();
+
+			sb.append(attributeName);
+			sb.append("=");
+			sb.append(attributeGetterFunction.apply((Guestbook)this));
+			sb.append(", ");
+		}
+
+		if (sb.index() > 1) {
+			sb.setIndex(sb.index() - 1);
+		}
+
 		sb.append("}");
 
 		return sb.toString();
@@ -890,64 +1102,25 @@ public class GuestbookModelImpl extends BaseModelImpl<Guestbook>
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(43);
+		Map<String, Function<Guestbook, Object>> attributeGetterFunctions = getAttributeGetterFunctions();
+
+		StringBundler sb = new StringBundler((5 * attributeGetterFunctions.size()) +
+				4);
 
 		sb.append("<model><model-name>");
-		sb.append("com.liferay.docs.guestbook.model.Guestbook");
+		sb.append(getModelClassName());
 		sb.append("</model-name>");
 
-		sb.append(
-			"<column><column-name>uuid</column-name><column-value><![CDATA[");
-		sb.append(getUuid());
-		sb.append("]]></column-value></column>");
-		sb.append(
-			"<column><column-name>guestbookId</column-name><column-value><![CDATA[");
-		sb.append(getGuestbookId());
-		sb.append("]]></column-value></column>");
-		sb.append(
-			"<column><column-name>groupId</column-name><column-value><![CDATA[");
-		sb.append(getGroupId());
-		sb.append("]]></column-value></column>");
-		sb.append(
-			"<column><column-name>companyId</column-name><column-value><![CDATA[");
-		sb.append(getCompanyId());
-		sb.append("]]></column-value></column>");
-		sb.append(
-			"<column><column-name>userId</column-name><column-value><![CDATA[");
-		sb.append(getUserId());
-		sb.append("]]></column-value></column>");
-		sb.append(
-			"<column><column-name>userName</column-name><column-value><![CDATA[");
-		sb.append(getUserName());
-		sb.append("]]></column-value></column>");
-		sb.append(
-			"<column><column-name>createDate</column-name><column-value><![CDATA[");
-		sb.append(getCreateDate());
-		sb.append("]]></column-value></column>");
-		sb.append(
-			"<column><column-name>modifiedDate</column-name><column-value><![CDATA[");
-		sb.append(getModifiedDate());
-		sb.append("]]></column-value></column>");
-		sb.append(
-			"<column><column-name>status</column-name><column-value><![CDATA[");
-		sb.append(getStatus());
-		sb.append("]]></column-value></column>");
-		sb.append(
-			"<column><column-name>statusByUserId</column-name><column-value><![CDATA[");
-		sb.append(getStatusByUserId());
-		sb.append("]]></column-value></column>");
-		sb.append(
-			"<column><column-name>statusByUserName</column-name><column-value><![CDATA[");
-		sb.append(getStatusByUserName());
-		sb.append("]]></column-value></column>");
-		sb.append(
-			"<column><column-name>statusDate</column-name><column-value><![CDATA[");
-		sb.append(getStatusDate());
-		sb.append("]]></column-value></column>");
-		sb.append(
-			"<column><column-name>name</column-name><column-value><![CDATA[");
-		sb.append(getName());
-		sb.append("]]></column-value></column>");
+		for (Map.Entry<String, Function<Guestbook, Object>> entry : attributeGetterFunctions.entrySet()) {
+			String attributeName = entry.getKey();
+			Function<Guestbook, Object> attributeGetterFunction = entry.getValue();
+
+			sb.append("<column><column-name>");
+			sb.append(attributeName);
+			sb.append("</column-name><column-value><![CDATA[");
+			sb.append(attributeGetterFunction.apply((Guestbook)this));
+			sb.append("]]></column-value></column>");
+		}
 
 		sb.append("</model>");
 

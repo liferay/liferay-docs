@@ -10,8 +10,4 @@ apps by visiting the `ext` folder corresponding to your preferred build tool:
 - [Maven sample apps](https://github.com/liferay/liferay-blade-samples/tree/7.1/maven/ext)
 -->
 
-The following sample is documented:
-
-- [Login Web Ext Module](login-web-ext)
-
-Visit the particular sample page to learn more!
+Visit the sample page to learn more!

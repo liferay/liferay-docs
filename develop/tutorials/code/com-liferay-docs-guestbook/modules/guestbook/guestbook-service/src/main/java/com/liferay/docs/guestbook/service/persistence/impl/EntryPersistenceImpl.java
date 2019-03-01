@@ -86,33 +86,12 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 		".List1";
 	public static final String FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION = FINDER_CLASS_NAME_ENTITY +
 		".List2";
-	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_ALL = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
-			EntryModelImpl.FINDER_CACHE_ENABLED, EntryImpl.class,
-			FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findAll", new String[0]);
-	public static final FinderPath FINDER_PATH_WITHOUT_PAGINATION_FIND_ALL = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
-			EntryModelImpl.FINDER_CACHE_ENABLED, EntryImpl.class,
-			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findAll", new String[0]);
-	public static final FinderPath FINDER_PATH_COUNT_ALL = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
-			EntryModelImpl.FINDER_CACHE_ENABLED, Long.class,
-			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countAll", new String[0]);
-	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_BY_UUID = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
-			EntryModelImpl.FINDER_CACHE_ENABLED, EntryImpl.class,
-			FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findByUuid",
-			new String[] {
-				String.class.getName(),
-				
-			Integer.class.getName(), Integer.class.getName(),
-				OrderByComparator.class.getName()
-			});
-	public static final FinderPath FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_UUID = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
-			EntryModelImpl.FINDER_CACHE_ENABLED, EntryImpl.class,
-			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findByUuid",
-			new String[] { String.class.getName() },
-			EntryModelImpl.UUID_COLUMN_BITMASK);
-	public static final FinderPath FINDER_PATH_COUNT_BY_UUID = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
-			EntryModelImpl.FINDER_CACHE_ENABLED, Long.class,
-			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countByUuid",
-			new String[] { String.class.getName() });
+	private FinderPath _finderPathWithPaginationFindAll;
+	private FinderPath _finderPathWithoutPaginationFindAll;
+	private FinderPath _finderPathCountAll;
+	private FinderPath _finderPathWithPaginationFindByUuid;
+	private FinderPath _finderPathWithoutPaginationFindByUuid;
+	private FinderPath _finderPathCountByUuid;
 
 	/**
 	 * Returns all the entries where uuid = &#63;.
@@ -178,6 +157,8 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	@Override
 	public List<Entry> findByUuid(String uuid, int start, int end,
 		OrderByComparator<Entry> orderByComparator, boolean retrieveFromCache) {
+		uuid = Objects.toString(uuid, "");
+
 		boolean pagination = true;
 		FinderPath finderPath = null;
 		Object[] finderArgs = null;
@@ -185,11 +166,11 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 		if ((start == QueryUtil.ALL_POS) && (end == QueryUtil.ALL_POS) &&
 				(orderByComparator == null)) {
 			pagination = false;
-			finderPath = FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_UUID;
+			finderPath = _finderPathWithoutPaginationFindByUuid;
 			finderArgs = new Object[] { uuid };
 		}
 		else {
-			finderPath = FINDER_PATH_WITH_PAGINATION_FIND_BY_UUID;
+			finderPath = _finderPathWithPaginationFindByUuid;
 			finderArgs = new Object[] { uuid, start, end, orderByComparator };
 		}
 
@@ -201,7 +182,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 
 			if ((list != null) && !list.isEmpty()) {
 				for (Entry entry : list) {
-					if (!Objects.equals(uuid, entry.getUuid())) {
+					if (!uuid.equals(entry.getUuid())) {
 						list = null;
 
 						break;
@@ -225,10 +206,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 
 			boolean bindUuid = false;
 
-			if (uuid == null) {
-				query.append(_FINDER_COLUMN_UUID_UUID_1);
-			}
-			else if (uuid.equals("")) {
+			if (uuid.isEmpty()) {
 				query.append(_FINDER_COLUMN_UUID_UUID_3);
 			}
 			else {
@@ -405,6 +383,8 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	@Override
 	public Entry[] findByUuid_PrevAndNext(long entryId, String uuid,
 		OrderByComparator<Entry> orderByComparator) throws NoSuchEntryException {
+		uuid = Objects.toString(uuid, "");
+
 		Entry entry = findByPrimaryKey(entryId);
 
 		Session session = null;
@@ -450,10 +430,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 
 		boolean bindUuid = false;
 
-		if (uuid == null) {
-			query.append(_FINDER_COLUMN_UUID_UUID_1);
-		}
-		else if (uuid.equals("")) {
+		if (uuid.isEmpty()) {
 			query.append(_FINDER_COLUMN_UUID_UUID_3);
 		}
 		else {
@@ -535,10 +512,9 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 		}
 
 		if (orderByComparator != null) {
-			Object[] values = orderByComparator.getOrderByConditionValues(entry);
-
-			for (Object value : values) {
-				qPos.add(value);
+			for (Object orderByConditionValue : orderByComparator.getOrderByConditionValues(
+					entry)) {
+				qPos.add(orderByConditionValue);
 			}
 		}
 
@@ -573,7 +549,9 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 */
 	@Override
 	public int countByUuid(String uuid) {
-		FinderPath finderPath = FINDER_PATH_COUNT_BY_UUID;
+		uuid = Objects.toString(uuid, "");
+
+		FinderPath finderPath = _finderPathCountByUuid;
 
 		Object[] finderArgs = new Object[] { uuid };
 
@@ -586,10 +564,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 
 			boolean bindUuid = false;
 
-			if (uuid == null) {
-				query.append(_FINDER_COLUMN_UUID_UUID_1);
-			}
-			else if (uuid.equals("")) {
+			if (uuid.isEmpty()) {
 				query.append(_FINDER_COLUMN_UUID_UUID_3);
 			}
 			else {
@@ -630,19 +605,10 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 		return count.intValue();
 	}
 
-	private static final String _FINDER_COLUMN_UUID_UUID_1 = "entry.uuid IS NULL";
 	private static final String _FINDER_COLUMN_UUID_UUID_2 = "entry.uuid = ?";
 	private static final String _FINDER_COLUMN_UUID_UUID_3 = "(entry.uuid IS NULL OR entry.uuid = '')";
-	public static final FinderPath FINDER_PATH_FETCH_BY_UUID_G = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
-			EntryModelImpl.FINDER_CACHE_ENABLED, EntryImpl.class,
-			FINDER_CLASS_NAME_ENTITY, "fetchByUUID_G",
-			new String[] { String.class.getName(), Long.class.getName() },
-			EntryModelImpl.UUID_COLUMN_BITMASK |
-			EntryModelImpl.GROUPID_COLUMN_BITMASK);
-	public static final FinderPath FINDER_PATH_COUNT_BY_UUID_G = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
-			EntryModelImpl.FINDER_CACHE_ENABLED, Long.class,
-			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countByUUID_G",
-			new String[] { String.class.getName(), Long.class.getName() });
+	private FinderPath _finderPathFetchByUUID_G;
+	private FinderPath _finderPathCountByUUID_G;
 
 	/**
 	 * Returns the entry where uuid = &#63; and groupId = &#63; or throws a {@link NoSuchEntryException} if it could not be found.
@@ -703,12 +669,14 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	@Override
 	public Entry fetchByUUID_G(String uuid, long groupId,
 		boolean retrieveFromCache) {
+		uuid = Objects.toString(uuid, "");
+
 		Object[] finderArgs = new Object[] { uuid, groupId };
 
 		Object result = null;
 
 		if (retrieveFromCache) {
-			result = finderCache.getResult(FINDER_PATH_FETCH_BY_UUID_G,
+			result = finderCache.getResult(_finderPathFetchByUUID_G,
 					finderArgs, this);
 		}
 
@@ -728,10 +696,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 
 			boolean bindUuid = false;
 
-			if (uuid == null) {
-				query.append(_FINDER_COLUMN_UUID_G_UUID_1);
-			}
-			else if (uuid.equals("")) {
+			if (uuid.isEmpty()) {
 				query.append(_FINDER_COLUMN_UUID_G_UUID_3);
 			}
 			else {
@@ -762,8 +727,8 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 				List<Entry> list = q.list();
 
 				if (list.isEmpty()) {
-					finderCache.putResult(FINDER_PATH_FETCH_BY_UUID_G,
-						finderArgs, list);
+					finderCache.putResult(_finderPathFetchByUUID_G, finderArgs,
+						list);
 				}
 				else {
 					Entry entry = list.get(0);
@@ -774,7 +739,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 				}
 			}
 			catch (Exception e) {
-				finderCache.removeResult(FINDER_PATH_FETCH_BY_UUID_G, finderArgs);
+				finderCache.removeResult(_finderPathFetchByUUID_G, finderArgs);
 
 				throw processException(e);
 			}
@@ -815,7 +780,9 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 */
 	@Override
 	public int countByUUID_G(String uuid, long groupId) {
-		FinderPath finderPath = FINDER_PATH_COUNT_BY_UUID_G;
+		uuid = Objects.toString(uuid, "");
+
+		FinderPath finderPath = _finderPathCountByUUID_G;
 
 		Object[] finderArgs = new Object[] { uuid, groupId };
 
@@ -828,10 +795,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 
 			boolean bindUuid = false;
 
-			if (uuid == null) {
-				query.append(_FINDER_COLUMN_UUID_G_UUID_1);
-			}
-			else if (uuid.equals("")) {
+			if (uuid.isEmpty()) {
 				query.append(_FINDER_COLUMN_UUID_G_UUID_3);
 			}
 			else {
@@ -876,30 +840,12 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 		return count.intValue();
 	}
 
-	private static final String _FINDER_COLUMN_UUID_G_UUID_1 = "entry.uuid IS NULL AND ";
 	private static final String _FINDER_COLUMN_UUID_G_UUID_2 = "entry.uuid = ? AND ";
 	private static final String _FINDER_COLUMN_UUID_G_UUID_3 = "(entry.uuid IS NULL OR entry.uuid = '') AND ";
 	private static final String _FINDER_COLUMN_UUID_G_GROUPID_2 = "entry.groupId = ?";
-	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_BY_UUID_C = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
-			EntryModelImpl.FINDER_CACHE_ENABLED, EntryImpl.class,
-			FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findByUuid_C",
-			new String[] {
-				String.class.getName(), Long.class.getName(),
-				
-			Integer.class.getName(), Integer.class.getName(),
-				OrderByComparator.class.getName()
-			});
-	public static final FinderPath FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_UUID_C =
-		new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
-			EntryModelImpl.FINDER_CACHE_ENABLED, EntryImpl.class,
-			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findByUuid_C",
-			new String[] { String.class.getName(), Long.class.getName() },
-			EntryModelImpl.UUID_COLUMN_BITMASK |
-			EntryModelImpl.COMPANYID_COLUMN_BITMASK);
-	public static final FinderPath FINDER_PATH_COUNT_BY_UUID_C = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
-			EntryModelImpl.FINDER_CACHE_ENABLED, Long.class,
-			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countByUuid_C",
-			new String[] { String.class.getName(), Long.class.getName() });
+	private FinderPath _finderPathWithPaginationFindByUuid_C;
+	private FinderPath _finderPathWithoutPaginationFindByUuid_C;
+	private FinderPath _finderPathCountByUuid_C;
 
 	/**
 	 * Returns all the entries where uuid = &#63; and companyId = &#63;.
@@ -972,6 +918,8 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	public List<Entry> findByUuid_C(String uuid, long companyId, int start,
 		int end, OrderByComparator<Entry> orderByComparator,
 		boolean retrieveFromCache) {
+		uuid = Objects.toString(uuid, "");
+
 		boolean pagination = true;
 		FinderPath finderPath = null;
 		Object[] finderArgs = null;
@@ -979,11 +927,11 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 		if ((start == QueryUtil.ALL_POS) && (end == QueryUtil.ALL_POS) &&
 				(orderByComparator == null)) {
 			pagination = false;
-			finderPath = FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_UUID_C;
+			finderPath = _finderPathWithoutPaginationFindByUuid_C;
 			finderArgs = new Object[] { uuid, companyId };
 		}
 		else {
-			finderPath = FINDER_PATH_WITH_PAGINATION_FIND_BY_UUID_C;
+			finderPath = _finderPathWithPaginationFindByUuid_C;
 			finderArgs = new Object[] {
 					uuid, companyId,
 					
@@ -999,7 +947,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 
 			if ((list != null) && !list.isEmpty()) {
 				for (Entry entry : list) {
-					if (!Objects.equals(uuid, entry.getUuid()) ||
+					if (!uuid.equals(entry.getUuid()) ||
 							(companyId != entry.getCompanyId())) {
 						list = null;
 
@@ -1024,10 +972,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 
 			boolean bindUuid = false;
 
-			if (uuid == null) {
-				query.append(_FINDER_COLUMN_UUID_C_UUID_1);
-			}
-			else if (uuid.equals("")) {
+			if (uuid.isEmpty()) {
 				query.append(_FINDER_COLUMN_UUID_C_UUID_3);
 			}
 			else {
@@ -1221,6 +1166,8 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	public Entry[] findByUuid_C_PrevAndNext(long entryId, String uuid,
 		long companyId, OrderByComparator<Entry> orderByComparator)
 		throws NoSuchEntryException {
+		uuid = Objects.toString(uuid, "");
+
 		Entry entry = findByPrimaryKey(entryId);
 
 		Session session = null;
@@ -1266,10 +1213,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 
 		boolean bindUuid = false;
 
-		if (uuid == null) {
-			query.append(_FINDER_COLUMN_UUID_C_UUID_1);
-		}
-		else if (uuid.equals("")) {
+		if (uuid.isEmpty()) {
 			query.append(_FINDER_COLUMN_UUID_C_UUID_3);
 		}
 		else {
@@ -1355,10 +1299,9 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 		qPos.add(companyId);
 
 		if (orderByComparator != null) {
-			Object[] values = orderByComparator.getOrderByConditionValues(entry);
-
-			for (Object value : values) {
-				qPos.add(value);
+			for (Object orderByConditionValue : orderByComparator.getOrderByConditionValues(
+					entry)) {
+				qPos.add(orderByConditionValue);
 			}
 		}
 
@@ -1395,7 +1338,9 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 */
 	@Override
 	public int countByUuid_C(String uuid, long companyId) {
-		FinderPath finderPath = FINDER_PATH_COUNT_BY_UUID_C;
+		uuid = Objects.toString(uuid, "");
+
+		FinderPath finderPath = _finderPathCountByUuid_C;
 
 		Object[] finderArgs = new Object[] { uuid, companyId };
 
@@ -1408,10 +1353,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 
 			boolean bindUuid = false;
 
-			if (uuid == null) {
-				query.append(_FINDER_COLUMN_UUID_C_UUID_1);
-			}
-			else if (uuid.equals("")) {
+			if (uuid.isEmpty()) {
 				query.append(_FINDER_COLUMN_UUID_C_UUID_3);
 			}
 			else {
@@ -1456,29 +1398,12 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 		return count.intValue();
 	}
 
-	private static final String _FINDER_COLUMN_UUID_C_UUID_1 = "entry.uuid IS NULL AND ";
 	private static final String _FINDER_COLUMN_UUID_C_UUID_2 = "entry.uuid = ? AND ";
 	private static final String _FINDER_COLUMN_UUID_C_UUID_3 = "(entry.uuid IS NULL OR entry.uuid = '') AND ";
 	private static final String _FINDER_COLUMN_UUID_C_COMPANYID_2 = "entry.companyId = ?";
-	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_BY_G_G = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
-			EntryModelImpl.FINDER_CACHE_ENABLED, EntryImpl.class,
-			FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findByG_G",
-			new String[] {
-				Long.class.getName(), Long.class.getName(),
-				
-			Integer.class.getName(), Integer.class.getName(),
-				OrderByComparator.class.getName()
-			});
-	public static final FinderPath FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_G_G = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
-			EntryModelImpl.FINDER_CACHE_ENABLED, EntryImpl.class,
-			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findByG_G",
-			new String[] { Long.class.getName(), Long.class.getName() },
-			EntryModelImpl.GROUPID_COLUMN_BITMASK |
-			EntryModelImpl.GUESTBOOKID_COLUMN_BITMASK);
-	public static final FinderPath FINDER_PATH_COUNT_BY_G_G = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
-			EntryModelImpl.FINDER_CACHE_ENABLED, Long.class,
-			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countByG_G",
-			new String[] { Long.class.getName(), Long.class.getName() });
+	private FinderPath _finderPathWithPaginationFindByG_G;
+	private FinderPath _finderPathWithoutPaginationFindByG_G;
+	private FinderPath _finderPathCountByG_G;
 
 	/**
 	 * Returns all the entries where groupId = &#63; and guestbookId = &#63;.
@@ -1559,11 +1484,11 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 		if ((start == QueryUtil.ALL_POS) && (end == QueryUtil.ALL_POS) &&
 				(orderByComparator == null)) {
 			pagination = false;
-			finderPath = FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_G_G;
+			finderPath = _finderPathWithoutPaginationFindByG_G;
 			finderArgs = new Object[] { groupId, guestbookId };
 		}
 		else {
-			finderPath = FINDER_PATH_WITH_PAGINATION_FIND_BY_G_G;
+			finderPath = _finderPathWithPaginationFindByG_G;
 			finderArgs = new Object[] {
 					groupId, guestbookId,
 					
@@ -1908,10 +1833,9 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 		qPos.add(guestbookId);
 
 		if (orderByComparator != null) {
-			Object[] values = orderByComparator.getOrderByConditionValues(entry);
-
-			for (Object value : values) {
-				qPos.add(value);
+			for (Object orderByConditionValue : orderByComparator.getOrderByConditionValues(
+					entry)) {
+				qPos.add(orderByConditionValue);
 			}
 		}
 
@@ -2230,10 +2154,9 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 		qPos.add(guestbookId);
 
 		if (orderByComparator != null) {
-			Object[] values = orderByComparator.getOrderByConditionValues(entry);
-
-			for (Object value : values) {
-				qPos.add(value);
+			for (Object orderByConditionValue : orderByComparator.getOrderByConditionValues(
+					entry)) {
+				qPos.add(orderByConditionValue);
 			}
 		}
 
@@ -2270,7 +2193,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 */
 	@Override
 	public int countByG_G(long groupId, long guestbookId) {
-		FinderPath finderPath = FINDER_PATH_COUNT_BY_G_G;
+		FinderPath finderPath = _finderPathCountByG_G;
 
 		Object[] finderArgs = new Object[] { groupId, guestbookId };
 
@@ -2372,25 +2295,9 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 
 	private static final String _FINDER_COLUMN_G_G_GROUPID_2 = "entry.groupId = ? AND ";
 	private static final String _FINDER_COLUMN_G_G_GUESTBOOKID_2 = "entry.guestbookId = ?";
-	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_BY_STATUS = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
-			EntryModelImpl.FINDER_CACHE_ENABLED, EntryImpl.class,
-			FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findByStatus",
-			new String[] {
-				Integer.class.getName(),
-				
-			Integer.class.getName(), Integer.class.getName(),
-				OrderByComparator.class.getName()
-			});
-	public static final FinderPath FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_STATUS =
-		new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
-			EntryModelImpl.FINDER_CACHE_ENABLED, EntryImpl.class,
-			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findByStatus",
-			new String[] { Integer.class.getName() },
-			EntryModelImpl.STATUS_COLUMN_BITMASK);
-	public static final FinderPath FINDER_PATH_COUNT_BY_STATUS = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
-			EntryModelImpl.FINDER_CACHE_ENABLED, Long.class,
-			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countByStatus",
-			new String[] { Integer.class.getName() });
+	private FinderPath _finderPathWithPaginationFindByStatus;
+	private FinderPath _finderPathWithoutPaginationFindByStatus;
+	private FinderPath _finderPathCountByStatus;
 
 	/**
 	 * Returns all the entries where status = &#63;.
@@ -2463,11 +2370,11 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 		if ((start == QueryUtil.ALL_POS) && (end == QueryUtil.ALL_POS) &&
 				(orderByComparator == null)) {
 			pagination = false;
-			finderPath = FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_STATUS;
+			finderPath = _finderPathWithoutPaginationFindByStatus;
 			finderArgs = new Object[] { status };
 		}
 		else {
-			finderPath = FINDER_PATH_WITH_PAGINATION_FIND_BY_STATUS;
+			finderPath = _finderPathWithPaginationFindByStatus;
 			finderArgs = new Object[] { status, start, end, orderByComparator };
 		}
 
@@ -2785,10 +2692,9 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 		qPos.add(status);
 
 		if (orderByComparator != null) {
-			Object[] values = orderByComparator.getOrderByConditionValues(entry);
-
-			for (Object value : values) {
-				qPos.add(value);
+			for (Object orderByConditionValue : orderByComparator.getOrderByConditionValues(
+					entry)) {
+				qPos.add(orderByConditionValue);
 			}
 		}
 
@@ -2823,7 +2729,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 */
 	@Override
 	public int countByStatus(int status) {
-		FinderPath finderPath = FINDER_PATH_COUNT_BY_STATUS;
+		FinderPath finderPath = _finderPathCountByStatus;
 
 		Object[] finderArgs = new Object[] { status };
 
@@ -2867,25 +2773,9 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	}
 
 	private static final String _FINDER_COLUMN_STATUS_STATUS_2 = "entry.status = ?";
-	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_BY_G_S = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
-			EntryModelImpl.FINDER_CACHE_ENABLED, EntryImpl.class,
-			FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findByG_S",
-			new String[] {
-				Long.class.getName(), Integer.class.getName(),
-				
-			Integer.class.getName(), Integer.class.getName(),
-				OrderByComparator.class.getName()
-			});
-	public static final FinderPath FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_G_S = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
-			EntryModelImpl.FINDER_CACHE_ENABLED, EntryImpl.class,
-			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findByG_S",
-			new String[] { Long.class.getName(), Integer.class.getName() },
-			EntryModelImpl.GROUPID_COLUMN_BITMASK |
-			EntryModelImpl.STATUS_COLUMN_BITMASK);
-	public static final FinderPath FINDER_PATH_COUNT_BY_G_S = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
-			EntryModelImpl.FINDER_CACHE_ENABLED, Long.class,
-			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countByG_S",
-			new String[] { Long.class.getName(), Integer.class.getName() });
+	private FinderPath _finderPathWithPaginationFindByG_S;
+	private FinderPath _finderPathWithoutPaginationFindByG_S;
+	private FinderPath _finderPathCountByG_S;
 
 	/**
 	 * Returns all the entries where groupId = &#63; and status = &#63;.
@@ -2963,11 +2853,11 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 		if ((start == QueryUtil.ALL_POS) && (end == QueryUtil.ALL_POS) &&
 				(orderByComparator == null)) {
 			pagination = false;
-			finderPath = FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_G_S;
+			finderPath = _finderPathWithoutPaginationFindByG_S;
 			finderArgs = new Object[] { groupId, status };
 		}
 		else {
-			finderPath = FINDER_PATH_WITH_PAGINATION_FIND_BY_G_S;
+			finderPath = _finderPathWithPaginationFindByG_S;
 			finderArgs = new Object[] {
 					groupId, status,
 					
@@ -3311,10 +3201,9 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 		qPos.add(status);
 
 		if (orderByComparator != null) {
-			Object[] values = orderByComparator.getOrderByConditionValues(entry);
-
-			for (Object value : values) {
-				qPos.add(value);
+			for (Object orderByConditionValue : orderByComparator.getOrderByConditionValues(
+					entry)) {
+				qPos.add(orderByConditionValue);
 			}
 		}
 
@@ -3633,10 +3522,9 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 		qPos.add(status);
 
 		if (orderByComparator != null) {
-			Object[] values = orderByComparator.getOrderByConditionValues(entry);
-
-			for (Object value : values) {
-				qPos.add(value);
+			for (Object orderByConditionValue : orderByComparator.getOrderByConditionValues(
+					entry)) {
+				qPos.add(orderByConditionValue);
 			}
 		}
 
@@ -3673,7 +3561,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 */
 	@Override
 	public int countByG_S(long groupId, int status) {
-		FinderPath finderPath = FINDER_PATH_COUNT_BY_G_S;
+		FinderPath finderPath = _finderPathCountByG_S;
 
 		Object[] finderArgs = new Object[] { groupId, status };
 
@@ -3808,7 +3696,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 		entityCache.putResult(EntryModelImpl.ENTITY_CACHE_ENABLED,
 			EntryImpl.class, entry.getPrimaryKey(), entry);
 
-		finderCache.putResult(FINDER_PATH_FETCH_BY_UUID_G,
+		finderCache.putResult(_finderPathFetchByUUID_G,
 			new Object[] { entry.getUuid(), entry.getGroupId() }, entry);
 
 		entry.resetOriginalValues();
@@ -3884,10 +3772,10 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 				entryModelImpl.getUuid(), entryModelImpl.getGroupId()
 			};
 
-		finderCache.putResult(FINDER_PATH_COUNT_BY_UUID_G, args,
-			Long.valueOf(1), false);
-		finderCache.putResult(FINDER_PATH_FETCH_BY_UUID_G, args,
-			entryModelImpl, false);
+		finderCache.putResult(_finderPathCountByUUID_G, args, Long.valueOf(1),
+			false);
+		finderCache.putResult(_finderPathFetchByUUID_G, args, entryModelImpl,
+			false);
 	}
 
 	protected void clearUniqueFindersCache(EntryModelImpl entryModelImpl,
@@ -3897,19 +3785,19 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 					entryModelImpl.getUuid(), entryModelImpl.getGroupId()
 				};
 
-			finderCache.removeResult(FINDER_PATH_COUNT_BY_UUID_G, args);
-			finderCache.removeResult(FINDER_PATH_FETCH_BY_UUID_G, args);
+			finderCache.removeResult(_finderPathCountByUUID_G, args);
+			finderCache.removeResult(_finderPathFetchByUUID_G, args);
 		}
 
 		if ((entryModelImpl.getColumnBitmask() &
-				FINDER_PATH_FETCH_BY_UUID_G.getColumnBitmask()) != 0) {
+				_finderPathFetchByUUID_G.getColumnBitmask()) != 0) {
 			Object[] args = new Object[] {
 					entryModelImpl.getOriginalUuid(),
 					entryModelImpl.getOriginalGroupId()
 				};
 
-			finderCache.removeResult(FINDER_PATH_COUNT_BY_UUID_G, args);
-			finderCache.removeResult(FINDER_PATH_FETCH_BY_UUID_G, args);
+			finderCache.removeResult(_finderPathCountByUUID_G, args);
+			finderCache.removeResult(_finderPathFetchByUUID_G, args);
 		}
 	}
 
@@ -4095,90 +3983,88 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 		 if (isNew) {
 			Object[] args = new Object[] { entryModelImpl.getUuid() };
 
-			finderCache.removeResult(FINDER_PATH_COUNT_BY_UUID, args);
-			finderCache.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_UUID,
+			finderCache.removeResult(_finderPathCountByUuid, args);
+			finderCache.removeResult(_finderPathWithoutPaginationFindByUuid,
 				args);
 
 			args = new Object[] {
 					entryModelImpl.getUuid(), entryModelImpl.getCompanyId()
 				};
 
-			finderCache.removeResult(FINDER_PATH_COUNT_BY_UUID_C, args);
-			finderCache.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_UUID_C,
+			finderCache.removeResult(_finderPathCountByUuid_C, args);
+			finderCache.removeResult(_finderPathWithoutPaginationFindByUuid_C,
 				args);
 
 			args = new Object[] {
 					entryModelImpl.getGroupId(), entryModelImpl.getGuestbookId()
 				};
 
-			finderCache.removeResult(FINDER_PATH_COUNT_BY_G_G, args);
-			finderCache.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_G_G,
-				args);
+			finderCache.removeResult(_finderPathCountByG_G, args);
+			finderCache.removeResult(_finderPathWithoutPaginationFindByG_G, args);
 
 			args = new Object[] { entryModelImpl.getStatus() };
 
-			finderCache.removeResult(FINDER_PATH_COUNT_BY_STATUS, args);
-			finderCache.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_STATUS,
+			finderCache.removeResult(_finderPathCountByStatus, args);
+			finderCache.removeResult(_finderPathWithoutPaginationFindByStatus,
 				args);
 
 			args = new Object[] {
 					entryModelImpl.getGroupId(), entryModelImpl.getStatus()
 				};
 
-			finderCache.removeResult(FINDER_PATH_COUNT_BY_G_S, args);
-			finderCache.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_G_S,
-				args);
+			finderCache.removeResult(_finderPathCountByG_S, args);
+			finderCache.removeResult(_finderPathWithoutPaginationFindByG_S, args);
 
-			finderCache.removeResult(FINDER_PATH_COUNT_ALL, FINDER_ARGS_EMPTY);
-			finderCache.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_ALL,
+			finderCache.removeResult(_finderPathCountAll, FINDER_ARGS_EMPTY);
+			finderCache.removeResult(_finderPathWithoutPaginationFindAll,
 				FINDER_ARGS_EMPTY);
 		}
 
 		else {
 			if ((entryModelImpl.getColumnBitmask() &
-					FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_UUID.getColumnBitmask()) != 0) {
+					_finderPathWithoutPaginationFindByUuid.getColumnBitmask()) != 0) {
 				Object[] args = new Object[] { entryModelImpl.getOriginalUuid() };
 
-				finderCache.removeResult(FINDER_PATH_COUNT_BY_UUID, args);
-				finderCache.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_UUID,
+				finderCache.removeResult(_finderPathCountByUuid, args);
+				finderCache.removeResult(_finderPathWithoutPaginationFindByUuid,
 					args);
 
 				args = new Object[] { entryModelImpl.getUuid() };
 
-				finderCache.removeResult(FINDER_PATH_COUNT_BY_UUID, args);
-				finderCache.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_UUID,
+				finderCache.removeResult(_finderPathCountByUuid, args);
+				finderCache.removeResult(_finderPathWithoutPaginationFindByUuid,
 					args);
 			}
 
 			if ((entryModelImpl.getColumnBitmask() &
-					FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_UUID_C.getColumnBitmask()) != 0) {
+					_finderPathWithoutPaginationFindByUuid_C.getColumnBitmask()) != 0) {
 				Object[] args = new Object[] {
 						entryModelImpl.getOriginalUuid(),
 						entryModelImpl.getOriginalCompanyId()
 					};
 
-				finderCache.removeResult(FINDER_PATH_COUNT_BY_UUID_C, args);
-				finderCache.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_UUID_C,
+				finderCache.removeResult(_finderPathCountByUuid_C, args);
+				finderCache.removeResult(_finderPathWithoutPaginationFindByUuid_C,
 					args);
 
 				args = new Object[] {
 						entryModelImpl.getUuid(), entryModelImpl.getCompanyId()
 					};
 
-				finderCache.removeResult(FINDER_PATH_COUNT_BY_UUID_C, args);
-				finderCache.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_UUID_C,
+				finderCache.removeResult(_finderPathCountByUuid_C, args);
+				finderCache.removeResult(_finderPathWithoutPaginationFindByUuid_C,
 					args);
 			}
 
 			if ((entryModelImpl.getColumnBitmask() &
-					FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_G_G.getColumnBitmask()) != 0) {
+					_finderPathWithoutPaginationFindByG_G.getColumnBitmask()) != 0) {
 				Object[] args = new Object[] {
 						entryModelImpl.getOriginalGroupId(),
 						entryModelImpl.getOriginalGuestbookId()
 					};
 
-				finderCache.removeResult(FINDER_PATH_COUNT_BY_G_G, args);
-				finderCache.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_G_G,
+				finderCache.removeResult(_finderPathCountByG_G, args);
+				finderCache.removeResult(_finderPathWithoutPaginationFindByG_G,
 					args);
 
 				args = new Object[] {
@@ -4186,43 +4072,43 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 						entryModelImpl.getGuestbookId()
 					};
 
-				finderCache.removeResult(FINDER_PATH_COUNT_BY_G_G, args);
-				finderCache.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_G_G,
+				finderCache.removeResult(_finderPathCountByG_G, args);
+				finderCache.removeResult(_finderPathWithoutPaginationFindByG_G,
 					args);
 			}
 
 			if ((entryModelImpl.getColumnBitmask() &
-					FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_STATUS.getColumnBitmask()) != 0) {
+					_finderPathWithoutPaginationFindByStatus.getColumnBitmask()) != 0) {
 				Object[] args = new Object[] { entryModelImpl.getOriginalStatus() };
 
-				finderCache.removeResult(FINDER_PATH_COUNT_BY_STATUS, args);
-				finderCache.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_STATUS,
+				finderCache.removeResult(_finderPathCountByStatus, args);
+				finderCache.removeResult(_finderPathWithoutPaginationFindByStatus,
 					args);
 
 				args = new Object[] { entryModelImpl.getStatus() };
 
-				finderCache.removeResult(FINDER_PATH_COUNT_BY_STATUS, args);
-				finderCache.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_STATUS,
+				finderCache.removeResult(_finderPathCountByStatus, args);
+				finderCache.removeResult(_finderPathWithoutPaginationFindByStatus,
 					args);
 			}
 
 			if ((entryModelImpl.getColumnBitmask() &
-					FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_G_S.getColumnBitmask()) != 0) {
+					_finderPathWithoutPaginationFindByG_S.getColumnBitmask()) != 0) {
 				Object[] args = new Object[] {
 						entryModelImpl.getOriginalGroupId(),
 						entryModelImpl.getOriginalStatus()
 					};
 
-				finderCache.removeResult(FINDER_PATH_COUNT_BY_G_S, args);
-				finderCache.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_G_S,
+				finderCache.removeResult(_finderPathCountByG_S, args);
+				finderCache.removeResult(_finderPathWithoutPaginationFindByG_S,
 					args);
 
 				args = new Object[] {
 						entryModelImpl.getGroupId(), entryModelImpl.getStatus()
 					};
 
-				finderCache.removeResult(FINDER_PATH_COUNT_BY_G_S, args);
-				finderCache.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_G_S,
+				finderCache.removeResult(_finderPathCountByG_S, args);
+				finderCache.removeResult(_finderPathWithoutPaginationFindByG_S,
 					args);
 			}
 		}
@@ -4493,11 +4379,11 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 		if ((start == QueryUtil.ALL_POS) && (end == QueryUtil.ALL_POS) &&
 				(orderByComparator == null)) {
 			pagination = false;
-			finderPath = FINDER_PATH_WITHOUT_PAGINATION_FIND_ALL;
+			finderPath = _finderPathWithoutPaginationFindAll;
 			finderArgs = FINDER_ARGS_EMPTY;
 		}
 		else {
-			finderPath = FINDER_PATH_WITH_PAGINATION_FIND_ALL;
+			finderPath = _finderPathWithPaginationFindAll;
 			finderArgs = new Object[] { start, end, orderByComparator };
 		}
 
@@ -4586,7 +4472,7 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 */
 	@Override
 	public int countAll() {
-		Long count = (Long)finderCache.getResult(FINDER_PATH_COUNT_ALL,
+		Long count = (Long)finderCache.getResult(_finderPathCountAll,
 				FINDER_ARGS_EMPTY, this);
 
 		if (count == null) {
@@ -4599,12 +4485,11 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 
 				count = (Long)q.uniqueResult();
 
-				finderCache.putResult(FINDER_PATH_COUNT_ALL, FINDER_ARGS_EMPTY,
+				finderCache.putResult(_finderPathCountAll, FINDER_ARGS_EMPTY,
 					count);
 			}
 			catch (Exception e) {
-				finderCache.removeResult(FINDER_PATH_COUNT_ALL,
-					FINDER_ARGS_EMPTY);
+				finderCache.removeResult(_finderPathCountAll, FINDER_ARGS_EMPTY);
 
 				throw processException(e);
 			}
@@ -4630,6 +4515,139 @@ public class EntryPersistenceImpl extends BasePersistenceImpl<Entry>
 	 * Initializes the entry persistence.
 	 */
 	public void afterPropertiesSet() {
+		_finderPathWithPaginationFindAll = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
+				EntryModelImpl.FINDER_CACHE_ENABLED, EntryImpl.class,
+				FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findAll", new String[0]);
+
+		_finderPathWithoutPaginationFindAll = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
+				EntryModelImpl.FINDER_CACHE_ENABLED, EntryImpl.class,
+				FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findAll",
+				new String[0]);
+
+		_finderPathCountAll = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
+				EntryModelImpl.FINDER_CACHE_ENABLED, Long.class,
+				FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countAll",
+				new String[0]);
+
+		_finderPathWithPaginationFindByUuid = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
+				EntryModelImpl.FINDER_CACHE_ENABLED, EntryImpl.class,
+				FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findByUuid",
+				new String[] {
+					String.class.getName(),
+					
+				Integer.class.getName(), Integer.class.getName(),
+					OrderByComparator.class.getName()
+				});
+
+		_finderPathWithoutPaginationFindByUuid = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
+				EntryModelImpl.FINDER_CACHE_ENABLED, EntryImpl.class,
+				FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findByUuid",
+				new String[] { String.class.getName() },
+				EntryModelImpl.UUID_COLUMN_BITMASK);
+
+		_finderPathCountByUuid = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
+				EntryModelImpl.FINDER_CACHE_ENABLED, Long.class,
+				FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countByUuid",
+				new String[] { String.class.getName() });
+
+		_finderPathFetchByUUID_G = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
+				EntryModelImpl.FINDER_CACHE_ENABLED, EntryImpl.class,
+				FINDER_CLASS_NAME_ENTITY, "fetchByUUID_G",
+				new String[] { String.class.getName(), Long.class.getName() },
+				EntryModelImpl.UUID_COLUMN_BITMASK |
+				EntryModelImpl.GROUPID_COLUMN_BITMASK);
+
+		_finderPathCountByUUID_G = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
+				EntryModelImpl.FINDER_CACHE_ENABLED, Long.class,
+				FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countByUUID_G",
+				new String[] { String.class.getName(), Long.class.getName() });
+
+		_finderPathWithPaginationFindByUuid_C = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
+				EntryModelImpl.FINDER_CACHE_ENABLED, EntryImpl.class,
+				FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findByUuid_C",
+				new String[] {
+					String.class.getName(), Long.class.getName(),
+					
+				Integer.class.getName(), Integer.class.getName(),
+					OrderByComparator.class.getName()
+				});
+
+		_finderPathWithoutPaginationFindByUuid_C = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
+				EntryModelImpl.FINDER_CACHE_ENABLED, EntryImpl.class,
+				FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findByUuid_C",
+				new String[] { String.class.getName(), Long.class.getName() },
+				EntryModelImpl.UUID_COLUMN_BITMASK |
+				EntryModelImpl.COMPANYID_COLUMN_BITMASK);
+
+		_finderPathCountByUuid_C = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
+				EntryModelImpl.FINDER_CACHE_ENABLED, Long.class,
+				FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countByUuid_C",
+				new String[] { String.class.getName(), Long.class.getName() });
+
+		_finderPathWithPaginationFindByG_G = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
+				EntryModelImpl.FINDER_CACHE_ENABLED, EntryImpl.class,
+				FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findByG_G",
+				new String[] {
+					Long.class.getName(), Long.class.getName(),
+					
+				Integer.class.getName(), Integer.class.getName(),
+					OrderByComparator.class.getName()
+				});
+
+		_finderPathWithoutPaginationFindByG_G = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
+				EntryModelImpl.FINDER_CACHE_ENABLED, EntryImpl.class,
+				FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findByG_G",
+				new String[] { Long.class.getName(), Long.class.getName() },
+				EntryModelImpl.GROUPID_COLUMN_BITMASK |
+				EntryModelImpl.GUESTBOOKID_COLUMN_BITMASK);
+
+		_finderPathCountByG_G = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
+				EntryModelImpl.FINDER_CACHE_ENABLED, Long.class,
+				FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countByG_G",
+				new String[] { Long.class.getName(), Long.class.getName() });
+
+		_finderPathWithPaginationFindByStatus = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
+				EntryModelImpl.FINDER_CACHE_ENABLED, EntryImpl.class,
+				FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findByStatus",
+				new String[] {
+					Integer.class.getName(),
+					
+				Integer.class.getName(), Integer.class.getName(),
+					OrderByComparator.class.getName()
+				});
+
+		_finderPathWithoutPaginationFindByStatus = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
+				EntryModelImpl.FINDER_CACHE_ENABLED, EntryImpl.class,
+				FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findByStatus",
+				new String[] { Integer.class.getName() },
+				EntryModelImpl.STATUS_COLUMN_BITMASK);
+
+		_finderPathCountByStatus = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
+				EntryModelImpl.FINDER_CACHE_ENABLED, Long.class,
+				FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countByStatus",
+				new String[] { Integer.class.getName() });
+
+		_finderPathWithPaginationFindByG_S = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
+				EntryModelImpl.FINDER_CACHE_ENABLED, EntryImpl.class,
+				FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findByG_S",
+				new String[] {
+					Long.class.getName(), Integer.class.getName(),
+					
+				Integer.class.getName(), Integer.class.getName(),
+					OrderByComparator.class.getName()
+				});
+
+		_finderPathWithoutPaginationFindByG_S = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
+				EntryModelImpl.FINDER_CACHE_ENABLED, EntryImpl.class,
+				FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findByG_S",
+				new String[] { Long.class.getName(), Integer.class.getName() },
+				EntryModelImpl.GROUPID_COLUMN_BITMASK |
+				EntryModelImpl.STATUS_COLUMN_BITMASK);
+
+		_finderPathCountByG_S = new FinderPath(EntryModelImpl.ENTITY_CACHE_ENABLED,
+				EntryModelImpl.FINDER_CACHE_ENABLED, Long.class,
+				FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countByG_S",
+				new String[] { Long.class.getName(), Integer.class.getName() });
 	}
 
 	public void destroy() {

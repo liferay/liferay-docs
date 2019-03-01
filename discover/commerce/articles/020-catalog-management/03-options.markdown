@@ -82,7 +82,7 @@ that use this option.
 
 **SKU Contributor:** a SKU contributor can be assigned a unique price and other
 attributes for each variant via
-[SKUs](/web/commerce/documentation/-/knowledge_base/1-0/SKUs). If
+[SKUs](/web/commerce/documentation/-/knowledge_base/1-0/skus). If
 enabled, the option must have an SKU in order to be sold.
 
 **Key**: A unique identifier for referring to this option programmatically. As
