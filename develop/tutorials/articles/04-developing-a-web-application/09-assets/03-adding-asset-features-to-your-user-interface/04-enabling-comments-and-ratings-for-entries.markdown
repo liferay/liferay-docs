@@ -110,7 +110,7 @@ ratings on guestbook entries:
           classPK="<%=entry.getEntryId()%>" type="stars" />
 
         <br />
-    
+
 9.  Next you need to add a scriptlet to retrieve the comments discussion object:
 
         <% Discussion discussion = 
@@ -125,8 +125,10 @@ ratings on guestbook entries:
           <h2>
             <strong><liferay-ui:message arguments="<%= discussion.getDiscussionCommentsCount() %>" key='<%= (discussion.getDiscussionCommentsCount() == 1) ? "x-comment" : "x-comments" %>' /></strong>
 
-11. And then create the `liferay-comment:discussion` tag which handles the 
-    creation of the comments form, *Reply* button, and retrieving the discussion content. It also handles the form action of posting the comment without requiring you to create a portlet action URL.
+11. Create the `liferay-comment:discussion` tag, which creates the comments
+    form, *Reply* button, and retrieves the discussion content. It also
+    handles the form action of posting the comment without requiring
+    you to create a portlet action URL.
           
           <liferay-comment:discussion
             className="<%= Entry.class.getName() %>"
