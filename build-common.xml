@@ -73,7 +73,7 @@
 		</classpath>
 	</taskdef>
 
-	<taskdef name="convertheaders" classname="com.liferay.documentation.util.ConvertHeaders">
+	<taskdef name="convertheaders" classname="com.liferay.documentation.util.ConvertHeadersTask">
 		<classpath>
 			<fileset dir="${project.dir}/lib" includes="*.jar" />
 			<!-- Use below instead of above fileset when testing changes to classes

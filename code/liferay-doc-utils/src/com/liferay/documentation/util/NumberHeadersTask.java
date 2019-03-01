@@ -155,6 +155,10 @@ public class NumberHeadersTask extends Task {
 				}
 			}
 		}
+
+		// This clears the header IDs stored; this avoids false reports of
+		// duplicated IDs if the task is run again during the same process.
+		IDS.clear();
 	}
 
 	private static String assembleId(String heading, int idCount) {
