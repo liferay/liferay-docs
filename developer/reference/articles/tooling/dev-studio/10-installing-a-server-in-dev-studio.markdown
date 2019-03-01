@@ -1,7 +1,22 @@
-# Installing a Server in Liferay Dev Studio [](id=installing-a-server-in-liferay-ide)
+# Installing a Liferay Server in Dev Studio
 
-Installing a server in Liferay Dev Studio is easy. In just a few steps you'll
-have your server up and running. Follow these steps to install your server:
+Installing a Liferay server in Dev Studio lets you manage it and its deployed
+projects in a single GUI. A server is installed and managed from the Servers
+view (lower left corner in Eclipse).
+
+For reference, here's how the Dev Studio server buttons work with your @product@
+instance:
+
+- *Start* (![Start Server](../../../images/icon-start-server.png)): Starts the
+  server.
+- *Stop* (![Stop Server](../../../images/icon-stop-server.png)): Stops the
+  server.
+- *Debug* (![Debug Server](../../../images/icon-debug-server.png)): Starts the
+  server in debug mode. For more information on debugging in Dev Studio, see the
+  [Debugging @product@ source in Dev Studio](/developer/reference/-/knowledge_base/7-2/debugging-product-source-in-dev-studio)
+  article.
+
+Follow these steps to install your server:
 
 1.  In the Servers view, click the *No Servers are available* link. If you
     already have a server installed, you can install a new server by
@@ -32,27 +47,13 @@ have your server up and running. Follow these steps to install your server:
     Servers tab.
 
 4.  Browse to the installation folder of the @product@ bundle. For example,
-    `C:\liferay-ce-portal-7.1-m1\tomcat-8.0.32`.
+    `C:\liferay-ce-portal-7.2.0-m2\tomcat-9.0.10`.
 
-    ![Figure 2: Specify the installation folder of the bundle.](../../../images/specify-directory.png)
+    ![Figure 2: Specify the installation folder of the bundle.](../../../images/specify-bundle-directory.png)
 
 5.  Select a runtime JRE and click *Finish*. Your new server appears under the
     Servers view.
 
     ![Figure 3: Your new server appears under the *Servers* view.](../../../images/new-server-added.png)
 
-Your server is now available in Liferay Dev Studio!
-
-For reference, here's how the Dev Studio server buttons work with your @product@
-instance:
-
-- *Start* (![Start Server](../../../images/icon-start-server.png)): Starts the
-  server.
-- *Stop* (![Stop Server](../../../images/icon-stop-server.png)): Stops the
-  server.
-- *Debug* (![Debug Server](../../../images/icon-debug-server.png)): Starts the
-  server in debug mode. For more information on debugging in Dev Studio, see the
-  [Debugging @product@ source in Liferay Dev Studio](/develop/tutorials/-/knowledge_base/7-1/debugging-product-source-in-liferay-ide)
-  article.
-
-Now you're ready to use your server in Liferay Dev Studio!
+Congratulations! Your server is now available in Liferay Dev Studio!
