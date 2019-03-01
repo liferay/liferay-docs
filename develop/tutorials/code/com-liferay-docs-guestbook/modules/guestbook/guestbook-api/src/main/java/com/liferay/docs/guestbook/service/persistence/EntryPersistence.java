@@ -21,6 +21,11 @@ import com.liferay.docs.guestbook.model.Entry;
 
 import com.liferay.portal.kernel.service.persistence.BasePersistence;
 
+import java.io.Serializable;
+
+import java.util.Map;
+import java.util.Set;
+
 /**
  * The persistence interface for the entry service.
  *
@@ -40,6 +45,9 @@ public interface EntryPersistence extends BasePersistence<Entry> {
 	 *
 	 * Never modify or reference this interface directly. Always use {@link EntryUtil} to access the entry persistence. Modify <code>service.xml</code> and rerun ServiceBuilder to regenerate this interface.
 	 */
+	@Override
+	public Map<Serializable, Entry> fetchByPrimaryKeys(
+		Set<Serializable> primaryKeys);
 
 	/**
 	* Returns all the entries where uuid = &#63;.
@@ -960,10 +968,6 @@ public interface EntryPersistence extends BasePersistence<Entry> {
 	*/
 	public Entry fetchByPrimaryKey(long entryId);
 
-	@Override
-	public java.util.Map<java.io.Serializable, Entry> fetchByPrimaryKeys(
-		java.util.Set<java.io.Serializable> primaryKeys);
-
 	/**
 	* Returns all the entries.
 	*
@@ -1029,5 +1033,5 @@ public interface EntryPersistence extends BasePersistence<Entry> {
 	public int countAll();
 
 	@Override
-	public java.util.Set<String> getBadColumnNames();
+	public Set<String> getBadColumnNames();
 }
