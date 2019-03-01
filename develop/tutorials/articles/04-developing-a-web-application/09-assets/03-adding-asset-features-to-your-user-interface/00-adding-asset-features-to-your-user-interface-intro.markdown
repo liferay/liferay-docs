@@ -16,7 +16,7 @@ imports to the `guestbook-web` module project's `init.jsp` file:
 
 
     <%@ taglib uri="http://liferay.com/tld/asset" prefix="liferay-asset" %>
-    <%@ taglib prefix="liferay-comment" uri="http://liferay.com/tld/comment" %>
+    <%@ taglib uri="http://liferay.com/tld/comment" prefix="liferay-comment" %>
 
     <%@ page import="java.util.Map" %> 
     <%@ page import="java.util.HashMap" %>
