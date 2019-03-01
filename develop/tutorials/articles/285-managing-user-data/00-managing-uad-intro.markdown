@@ -1,34 +1,34 @@
-# Managing user-associated data stored by custom applications [](id=managing-user-associated-data-stored-by-custom-applications)
+# Managing User-Associated Data Stored by Custom Applications [](id=managing-user-associated-data-stored-by-custom-applications)
 
 @product-ver@ makes it possible for administrators to [delete or
 anonymize](/discover/portal/-/knowledge_base/7-1/managing-user-data)
 User Associated Data (UAD), providing a useful tool for compliance with the EU's
-General Data Protection Regulation (GDPR). Out of the box, this tool only supports
-Liferay applications (blogs, web content, etc.). This tutorial explains how to
-anonymize data stored by your custom apps as well.
+General Data Protection Regulation (GDPR). Out of the box, this tool only
+supports Liferay applications (blogs, web content, etc.), but you can also
+anonymize data stored by your custom apps.
 
 If your app was created using Service Builder, anonymization is easy.
 Follow these steps:
 
-1.  Include dependencies on `com.liferay.petra.string` and the
-    `com.liferay.portal.kernel` in your Service Module's build script.
+1.  Include dependencies on `com.liferay.petra.string` and 
+    `com.liferay.portal.kernel` in your service module's build script.
 
-2.  Identify the fields you want to be able to anonymize in the service module's
+2.  Identify the fields that must be anonymized in the service module's
     `service.xml` file.
 
 3.  Run Service Builder. Provide a build script for the `-uad` module that is
     generated.
 
 4.  Provide your application's name to the anonymization UI. If you skip this
-    step, your app will be labeled using the `Bundle-SymbolicName` from the
+    step, your app is labeled using the `Bundle-SymbolicName` from the
     `-uad` module's `bnd.bnd` file.
 
-Anonymization of apps not created using Service Builder will be covered in
-a separate tutorial.
+Anonymization of apps not created using Service Builder will be covered
+separately.
 
-## Include dependencies [](id=include-dependencies)
+## Include Dependencies [](id=include-dependencies)
 
-In order to compile the code that Service Builder generates, you need
+To compile the code that Service Builder generates, you need
 dependencies on Petra and 3.23.0 or later of Liferay `kernel` in your service
 module's `build.gradle`:
 
@@ -38,7 +38,7 @@ module's `build.gradle`:
         ...
     }
 
-## Choose fields to anonymize [](id=choose-fields-to-anonymize)
+## Choose Fields to Anonymize [](id=choose-fields-to-anonymize)
 
 Next you must identify fields to anonymize by attaching anonymization attributes to
 elements in the `-service` module's `service.xml` file. There are two ways to do
@@ -63,17 +63,16 @@ The content of a blog post, in contrast, cannot be anonymized automatically:
     <column name="content" type="String" uad-nonanonymizable="true" />
 
 The `uad-nonanonymizable` value of `true` indicates that the `content` field
-will have to be reviewed by an administrator in order to remove a blog author's
-UAD.
+must be reviewed by an administrator to remove a blog author's UAD.
 
 ## Run Service Builder! [](id=run-service-builder)
 
-At this point, you're ready to run Service Builder. This will generate a new
-`-uad` module based on the values you added to `service.xml`. The new module is
-generated without a build script, so you must provide a `build.gradle`. It
-should include dependencies on `osgi.service.component.annotations`, `kernel`,
-`Petra`, the `-api` module of the UAD application, as well as your own
-application's `-api` module. The build script should look something like this:
+At this point, you're ready to run Service Builder. This generates a new `-uad`
+module based on the values you added to `service.xml`. The new module is
+generated without a build script, so you must provide one. It should include
+dependencies on `osgi.service.component.annotations`, `kernel`, `Petra`, the
+`-api` module of the UAD application, as well as your own application's `-api`
+module. The build script should look like this:
 
     dependencies {
       compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "3.23.0"
@@ -91,7 +90,7 @@ sense to administrators.
 +$$$
 
 **Note:** Depending on how you created your project---for instance, if you used
-Blade's Service Builder template rather than Liferay Dev Studio's---you may need
+Blade's Service Builder template rather than Liferay Dev Studio's---you may have
 to include the new `-uad` module in your `settings.gradle` file before you can
 compile:
 
@@ -99,7 +98,7 @@ compile:
 
 $$$
 
-## Provide your app's name to the UI [](id=provide-your-apps-name-to-the-ui)
+## Provide Your App's Name to the UI [](id=provide-your-apps-name-to-the-ui)
 
 The simplest way to provide your app's name to the anonymization UI is to
 include a language key in your `Language.properties` file:
@@ -129,7 +128,7 @@ use the `com.liferay.lang.merger.` plugin. Here's what it looks like:
         sourceDirs = ["../blogs-web/src/main/resources/content"]
     }
 
-This is from the `-uad` module's `build.gradle` file in @product@'s blogs
+This is from the `-uad` module's `build.gradle` file in @product@'s Blogs
 application. The `setting` property identifies the location of the
 `Language.properties` file (by Gradle convention, the `sourceDirs` property must
 match `setting`). `transformKey` passes in first the language key for the
