@@ -30,7 +30,7 @@ The steps to override a portlet's language keys are
 - Prioritize the new module's resource bundle.
 
 This sample's `src/main/resources/content` folder holds the language properties
-file to override. Since this example's goal is to only override the English
+file to override. Since this example's goal is to override only the English
 keys, the `Language_en.properties` is added. You can add more language
 properties files for additional language key locales you want to override (e.g.,
 `Language_en.properties` for Spanish).
