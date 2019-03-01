@@ -16,7 +16,7 @@ ratings on guestbook entries:
 2.  Add a Java scriptlet to the file you just created. In this scriptlet, use an 
     `entryId` request attribute to get an entry object. For security reasons, 
     convert this object to an escaped model as discussed in the earlier step 
-    [Creating JSPs for Displaying Customs Assets in the Asset Publisher](/develop/tutorials/-/knowledge_base/7.1/creating-jsps-for-displaying-custom-assets-in-the-asset-publisher):
+    [Creating JSPs for Displaying Custom Assets in the Asset Publisher](/develop/tutorials/-/knowledge_base/7.1/creating-jsps-for-displaying-custom-assets-in-the-asset-publisher):
 
         <%@ include file="../init.jsp"%>
 
@@ -110,9 +110,8 @@ ratings on guestbook entries:
           classPK="<%=entry.getEntryId()%>" type="stars" />
 
         <br />
-    
-9.  Next you need to add a scriplet to retrieve the previous comments 
-    discussion:
+
+9.  Next you must add a scriptlet to retrieve the previous comment discussion:
 
         <% Discussion discussion = 
         CommentManagerUtil.getDiscussion(user.getUserId(), 
@@ -120,7 +119,7 @@ ratings on guestbook entries:
         entry.getEntryId(), new ServiceContextFunction(request));
         %>
 
-10. And then the tags for displaying the discussion and writing comments. The 
+10. Add the tags for displaying the discussion and writing comments. The 
     latter tag needs an action URL (in this case, `invokeTaglibDiscussion`) for 
     its `formAction` attribute. The action URL adds the comment after the user 
     enters a comment and clicks *Reply*: 
@@ -156,27 +155,26 @@ ratings on guestbook entries:
 
     Make sure you add the closing `</c:if>` tag after the closing 
     `</liferay-ui:panel-container>` tag.
-    
-    +$$$
 
-    **Note:** Discussions (comments) are implemented as message board messages 
-    in @product@. In the `MBMessage` table, there's a `classPK` column. This
-    `classPK` represents the `entryId` of the guestbook entry the comment 
-    belongs to. Ratings are stored in the `RatingsEntry` table. Similarly, the 
-    `RatingsEntry` table contains a `classPK` column. This `classPK` represents 
-    the `entryId` of the guestbook entry the rating belongs to. Using a 
-    `classPK` foreign key in one table to represent the primary key of another 
-    table is a common pattern that's used throughout @product@. 
++$$$
 
-    $$$
+**Note:** Discussions (comments) are implemented as message board messages. In
+the `MBMessage` table, there's a `classPK` column. This `classPK` represents
+the guestbook entry's `entryId`, linking the comment to the guestbook. Ratings
+are stored in the `RatingsEntry` table. Similarly, the `RatingsEntry` table
+contains a `classPK` column that links the guestbook entry to the rating. Using
+a `classPK` foreign key in one table to represent the primary key of another
+table is a common pattern throughout @product@. 
+
+$$$
 
 Next, you'll update the guestbook actions to use the new view. 
 
 ## Updating the Entry Actions JSP [](id=updating-the-entry-actions-jsp)
 
-Nothing links to your `view_entry.jsp` page---it's currently orphaned. Fix this 
-by adding the *View* option to the Actions Menu. Open the 
-`/guestbookwebportlet/entry_actions.jsp` and find the following line:
+Your `view_entry.jsp` page is currently orphaned. Fix this by adding the *View*
+option to the Actions Menu. Open the `/guestbookwebportlet/entry_actions.jsp`
+and find the following line:
 
     <liferay-ui:icon-menu>
 
@@ -192,8 +190,8 @@ Add the following lines below it:
     <liferay-ui:icon message="View" url="<%= viewEntryURL.toString() %>" />
 
 Here, you create a URL that points to `view_entry.jsp`. Test this link by
-selecting the *View* option in a guestbook entry's Actions Menu. Then test that 
-comments and ratings work as expected. 
+selecting the *View* option in a guestbook entry's Actions Menu. Then test your
+comments and ratings. 
 
 Excellent! You've asset-enabled the guestbook and guestbook entry entities and 
 enabled tags, categories, and related assets for both entities. You've also 

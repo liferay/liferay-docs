@@ -20,7 +20,7 @@ Before you can enter the address for a warehouse, you may need to enter and
 activate the applicable country and region (state or province) at the
 *Countries* tab at *Site Menu* &rarr; *Commerce* &rarr; *Settings*. For more
 detail see
-[Settings](/web/commerce/documentation/-knowledge_base/1-0/countries).
+[Settings](/web/commerce/documentation/-/knowledge_base/1-0/countries).
 
 $$$
 

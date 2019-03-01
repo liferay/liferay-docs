@@ -6,11 +6,12 @@
 
 Before proceeding, you must tie up a loose end from the previous step. Remember 
 that you implemented `getJspPath` methods in your `GuestbookAssetRenderer` and
-`EntryAssetRenderer` classes. These methods return paths to JSPs the Asset
-Publisher uses to display the assets' full content. The `getJspPath` method of
-`GuestbookAssetRenderer` returns `"/asset/guestbook/full_content.jsp"`, and the
-`getJspPath` method of `EntryAssetRenderer` returns
-`"/asset/entry/full_content.jsp"`. It's time to create these JSPs. 
+`EntryAssetRenderer` classes to JSPs that don't exist yet. These methods return
+paths to JSPs the Asset Publisher uses to display the assets' full content. The
+`getJspPath` method of `GuestbookAssetRenderer` returns
+`"/asset/guestbook/full_content.jsp"`, and the `getJspPath` method of
+`EntryAssetRenderer` returns `"/asset/entry/full_content.jsp"`. It's time to
+create these JSPs. 
 
 Follow these steps: 
 
@@ -69,16 +70,15 @@ Follow these steps:
                 <dd><%= entry.getMessage() %></dd>
         </dl>
 
-The only difference in this JSP from the one for guestbooks is that it shows
-three fields of the guestbook entry entity as opposed to one field of the
-guestbook entity. 
+This JSP shows a combination of fields from the Guestbook and the selected Entry. 
 
-Test your new JSPs by clicking a guestbook's or guestbook entry's title in the 
-Asset Publisher. The Asset Publisher renders `full_content.jsp`: 
+After deploying your changes, test your new JSPs by clicking a guestbook's or
+guestbook entry's title in the Asset Publisher. The Asset Publisher renders
+`full_content.jsp`: 
 
 ![Figure 1: When you click the title for a guestbook or guestbook entry in the Asset Publisher, your `full_content.jsp` should be displayed.](../../../../images/asset-publisher-full-content.png)
 
 By default, when displaying an asset's full view, the Asset Publisher displays 
-additional links for Twitter, Facebook, and Google Plus. These links publicize 
-your asset on social media. The *Back* icon and the *View in Context* link 
-return you to the Asset Publisher's default view. 
+additional links for social media so you can publicize your asset. The *Back*
+icon and the *View in Context* link return you to the Asset Publisher's default
+view. 

@@ -60,7 +60,7 @@ brand. This helps you prepare for conversations with the individual or create
 campaigns based on the interests. 
 
 See
-[Customer Insights](https://github.com/liferay/liferay-docs/blob/master/discover/analytics-cloud/articles/03-understanding-people/04-customer-insights.markdown)
+[Customer Insights](https://github.com/liferay/liferay-docs/blob/7.1.x/discover/analytics-cloud/articles/03-understanding-people/04-customer-insights.markdown)
 for details on the Interests insight.
 
 ## Segments [](id=segments)

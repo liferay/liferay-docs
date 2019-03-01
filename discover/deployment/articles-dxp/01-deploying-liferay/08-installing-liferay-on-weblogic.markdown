@@ -14,8 +14,8 @@ for instructions on setting up and configuring Admin and Managed Servers.
 You should also read the following articles to familiarize yourself with
 @product@'s general installation steps: 
 
-- [@product@ Installation Overview](/discover/deployment/-/knowledge_base/7-1/liferay-installation-overview)
-- [Installing @product@](/discover/deployment/-/knowledge_base/7-1/installing-liferay-portal)
+- [Installing @product@](/discover/deployment/-/knowledge_base/7-1/installing-liferay)
+- [Preparing for Install](/discover/deployment/-/knowledge_base/7-1/preparing-for-install)
 - [Installing @product@ Manually](/discover/deployment/-/knowledge_base/7-1/installing-liferay-manually)
 
 Finally, download @product@'s WAR file and dependencies from the 
@@ -156,7 +156,7 @@ Next, you'll set some @product@-specific properties for your @product@ installat
 ## Setting @product@ Properties [](id=setting-liferay-properties)
 
 Before installing @product@, you must set the 
-[*Liferay Home*](/discover/deployment/-/knowledge_base/7-1/installing-liferay-portal#liferay-home)
+[*Liferay Home*](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
 folder's location via the `liferay.home` property in a `portal-ext.properties` 
 file. You can also use this file to override 
 [other @product@ properties](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html) 

@@ -79,11 +79,6 @@ Setting the version to develop for takes two steps:
     The versions following a GA1 release of DXP follow fix pack versions (e.g.,
     `7.1.10.fp1`, `7.1.10.fp2`, etc.).
 
-    **Important:** If you're targeting a DXP target platform, you must also pass
-    in your credentials to gain access to DXP artifacts. See the
-    [Accessing DXP Artifacts for the Target Platform](https://customer.liferay.com/documentation/7.1/develop/tutorials/-/official_documentation/tutorials/accessing-dxp-artifacts-for-the-target-platform)
-    for details.
-
 2.  Once the target platform is configured, check to make sure no dependencies
     in your Gradle build files specify a version. The versions are now imported
     from the configured target platform's BOM. For example, a simple MVC
@@ -133,7 +128,7 @@ To do this, your `build.gradle` file should look similar to this:
         }
         repositories {
             maven {
-                url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+                url "https://repository-cdn.liferay.com/nexus/content/groups/public"
             }
         }
     }

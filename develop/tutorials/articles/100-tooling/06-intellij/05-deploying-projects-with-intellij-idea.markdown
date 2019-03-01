@@ -21,4 +21,11 @@ this:
 
         INFO  [fileinstall-C:/liferay-workspace/bundles/osgi/modules][BundleStartStopLogger:35] STARTED com.liferay.docs_1.0.0 [652]
 
+The `watch` Blade CLI task deploys your project. This watches your local project
+and propagates saved changes to the deployed project. With this, project updates
+are viewable almost instantaneously from your Liferay server. For more info on
+the `watch` task, see the 
+[Deploying Projects with Blade CLI](/develop/tutorials/-/knowledge_base/7-1/deploying-projects-with-blade-cli)
+article.
+
 That's it! You've successfully deployed your project to @product@!
