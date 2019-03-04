@@ -1,21 +1,16 @@
 # Getting Multiple Entity Types [](id=getting-multiple-entity-types)
 
-There are also methods in the Documents and Media API that retrieve lists 
-containing several entity types. These methods use many of the same parameters 
-as those already described for retrieving files and folders. For example, 
-[this method](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#getFileEntriesAndFileShortcuts-long-long-int-int-int-) 
-gets files and shortcuts from a given repository and folder. The `status` 
-parameter specifies a 
-[workflow](/discover/portal/-/knowledge_base/7-2/workflow) 
-status. As before, the `start` and `end` parameters control pagination of the 
-entities: 
+There are several methods in 
+[`DLAppService`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html) 
+that get lists containing multiple entity types. This is discussed in more 
+detail in 
+[Getting Entities](/develop/tutorials/-/knowledge_base/7-2/getting-entities). 
+The steps here show you how to use the 
+[`getFileEntriesAndFileShortcuts`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#getFileEntriesAndFileShortcuts-long-long-int-int-int-) 
+method, but you can apply them to other such methods as well. 
+For general information on using the Documents and Media API, see 
+[Documents and Media API](/develop/tutorials/-/knowledge_base/7-2/documents-and-media-api). 
 
-    getFileEntriesAndFileShortcuts(long repositoryId, long folderId, int status, int start, int end)
-
-To see all such methods, see the `DLAppService` 
-[Javadoc](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html). 
-
-Follow these steps to use the above `getFileEntriesAndFileShortcuts` method. 
 Note that the example in these steps gets all the files and shortcuts in the 
 default Site repository's root folder: 
 
@@ -24,15 +19,11 @@ default Site repository's root folder:
         @Reference
         private DLAppService _dlAppService;
 
-    For more information on this, see the section on 
-    [getting a service reference](/develop/tutorials/-/knowledge_base/7-2/documents-and-media-api#getting-a-service-reference) 
-    in the getting started tutorial. 
-
 2.  Get the data needed to populate the method's arguments any way you wish. To
     specify the default Site repository, you can use the group ID as the
     repository ID. This example gets the group ID from the request 
     (`javax.portlet.ActionRequest`) via 
-    [`ParamUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html): 
+    [`ParamUtil`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html): 
 
         long groupId = ParamUtil.getLong(actionRequest, "groupId");
 
@@ -58,21 +49,19 @@ default Site repository's root folder:
     -   `groupId`: Using the group ID as the repository ID specifies that the 
         operation takes place in the default site repository. 
     -   `DLFolderConstants.DEFAULT_PARENT_FOLDER_ID`: Uses the 
-        [`DLFolderConstants`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/model/DLFolderConstants.html) 
+        [`DLFolderConstants`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/model/DLFolderConstants.html) 
         constant `DEFAULT_PARENT_FOLDER_ID` to specify the repository's root 
         folder. 
     -   `WorkflowConstants.STATUS_APPROVED`: Uses the 
-        [`WorkflowConstants`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/workflow/WorkflowConstants.html) 
+        [`WorkflowConstants`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/workflow/WorkflowConstants.html) 
         constant `STATUS_APPROVED` to specify only files/folders that have been 
         approved via workflow. 
     -   `QueryUtil.ALL_POS`: Uses the 
-        [`QueryUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/dao/orm/QueryUtil.html) 
+        [`QueryUtil`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/dao/orm/QueryUtil.html) 
         constant `ALL_POS` for the start and end positions in the results. This 
         specifies all results, bypassing pagination. 
 
 ## Related Topics [](id=related-topics)
-
-[Getting Started with the Documents and Media API](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api)
 
 [Getting Files](/develop/tutorials/-/knowledge_base/7-1/getting-files)
 

@@ -16,6 +16,7 @@ Here, you'll learn about getting these entities:
 
 -   [Files](#files)
 -   [Folders](#folders)
+-   [Multiple Entity Types](#multiple-entity-types)
 
 ## Files
 
@@ -93,3 +94,22 @@ Note that there are several other `getFolders` methods in `DLAppService`. Use
 the one that best matches your use case. See 
 [Getting Folders](/develop/tutorials/-/knowledge_base/7-2/getting-folders) 
 for step-by-step instructions on using these `getFolders` methods. 
+
+## Multiple Entity Types
+
+There are also methods in the Documents and Media API that retrieve lists 
+containing several entity types. These methods use many of the same parameters 
+as those already described for retrieving files and folders. For example, the 
+[`getFileEntriesAndFileShortcuts`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#getFileEntriesAndFileShortcuts-long-long-int-int-int-) 
+method gets files and shortcuts from a given repository and folder. Its `status` 
+parameter specifies a 
+[workflow](/discover/portal/-/knowledge_base/7-2/workflow) 
+status. As before, the `start` and `end` parameters control pagination of the 
+entities: 
+
+    getFileEntriesAndFileShortcuts(long repositoryId, long folderId, int status, int start, int end)
+
+For step-by-step instructions on calling this method and others like it, see 
+[Getting Multiple Entity Types](/develop/tutorials/-/knowledge_base/7-2/getting-multiple-entity-types). 
+To see all such methods, see the `DLAppService` 
+[Javadoc](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html). 
