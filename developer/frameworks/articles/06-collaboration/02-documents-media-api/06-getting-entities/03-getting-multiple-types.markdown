@@ -1,4 +1,8 @@
-# Getting Multiple Entity Types [](id=getting-multiple-entity-types)
+---
+header-id: getting-multiple-entity-types
+---
+
+# Getting Multiple Entity Types
 
 There are several methods in 
 [`DLAppService`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html) 
@@ -61,7 +65,7 @@ default Site repository's root folder:
         constant `ALL_POS` for the start and end positions in the results. This 
         specifies all results, bypassing pagination. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Getting Files](/develop/tutorials/-/knowledge_base/7-1/getting-files)
 

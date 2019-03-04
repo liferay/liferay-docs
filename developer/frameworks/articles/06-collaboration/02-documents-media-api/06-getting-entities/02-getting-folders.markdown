@@ -62,4 +62,4 @@ the `DLAppService`
 
 [Getting Files](/develop/tutorials/-/knowledge_base/7-2/getting-files)
 
-[Getting Multiple Entity Types](liferay.com)
+[Getting Multiple Entity Types](/develop/tutorials/-/knowledge_base/7-2/getting-multiple-entity-types)

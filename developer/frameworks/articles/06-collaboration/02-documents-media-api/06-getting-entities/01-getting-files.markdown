@@ -97,4 +97,4 @@ methods. To see all such methods, see the `DLAppService`
 
 [Getting Folders](/develop/tutorials/-/knowledge_base/7-2/getting-folders)
 
-[Getting Multiple Entity Types](liferay.com)
+[Getting Multiple Entity Types](/develop/tutorials/-/knowledge_base/7-2/getting-multiple-entity-types)
