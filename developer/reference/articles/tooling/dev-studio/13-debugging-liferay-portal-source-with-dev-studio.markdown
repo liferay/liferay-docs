@@ -1,8 +1,8 @@
-# Debugging @product@ Source in Liferay Dev Studio [](id=debugging-product-source-in-liferay-ide)
+# Debugging @product@ Source in Dev Studio
 
-You can use Liferay Dev Studio to debug @product@ source code to help resolve errors.
-Debugging @product@ code follows most of the same techniques associated with
-debugging in Eclipse. If you need some help with general debugging, you can
+You can use Liferay Dev Studio to debug @product@ source code to help resolve
+errors. Debugging @product@ code follows most of the same techniques associated
+with debugging in Eclipse. If you need some help with general debugging, you can
 visit Eclipse's documentation. Here's some helpful Eclipse links to visit:
 
 - [Debugger](http://help.eclipse.org/oxygen/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2Fconcepts%2Fcdebugger.htm&cp=1_2_9)
@@ -20,12 +20,12 @@ Let's explore these Liferay-specific debugging configurations.
 ## Configure Your Target Platform [](id=configure-your-target-platform)
 
 To configure your target platform, you must be developing in a
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace).
+[Liferay Workspace](/developer/reference/-/knowledge_base/7-2/liferay-workspace).
 Liferay Workspace is able to provide debugging capabilities by targeting a
 specific @product@ version, which indexes the configured @product@ source code.
 Without specifying a target platform, @product@'s source code
 cannot be accessed by Dev Studio. See the
-[Managing the Target Platform in Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/managing-the-target-platform-for-liferay-workspace)
+[Managing the Target Platform in Liferay Workspace](/developer/reference/-/knowledge_base/7-2/managing-the-target-platform-for-liferay-workspace)
 tutorial for more information on how this works.
 
 **Important:** The target platform should match the Liferay server version you
@@ -42,11 +42,11 @@ reference. Now you must configure a Liferay server matching the target platform
 version so you can deploy the custom code you wish to debug.
 
 1.  Set up your @product@ server to run in Dev Studio. See the
-    [Installing a Server in Liferay Dev Studio](/develop/tutorials/-/knowledge_base/7-1/installing-a-server-in-liferay-ide)
+    [Installing a Server in  Dev Studio](/developer/reference/-/knowledge_base/7-2/installing-a-server-in-dev-studio)
     for more details.
 
 2.  Start the server in debug mode. To do this, click the debug button in the 
-    Servers pane of Liferay Dev Studio.
+    Servers pane of Dev Studio.
 
     ![Figure 1: The red box in this screenshot highlights the debug button. Click this button to start the server in debug mode.](../../../images/ide-debug.png)
 
