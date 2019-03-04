@@ -7,23 +7,28 @@ header-id: adaptive-media
 The 
 [Adaptive Media](/discover/portal/-/knowledge_base/7-2/adapting-your-media-across-multiple-devices) 
 app tailors the size and quality of images to the device displaying them. Here, 
-you'll learn about displaying adapted images in your apps, finding adapted 
-images, and customizing Adaptive Media's image scaling. 
+you'll learn about the following:
 
-## Displaying Adapted Images in Your App
+-   [The Adaptive Media Taglib](#the-adaptive-media-taglib)
+-   [Adaptive Media's Finder API](#adaptive-medias-finder-api)
+-   [Image Scaling in Adaptive Media](#image-scaling-in-adaptive-media)
+
+## The Adaptive Media Taglib
 
 To display adapted images in your apps, Adaptive Media offers a convenient tag 
 library in the module 
 [`com.liferay.adaptive.media.image.taglib`](https://github.com/liferay/com-liferay-adaptive-media/tree/master/adaptive-media-image-taglib). 
-The only mandatory attribute for the taglib is `fileVersion`, which indicates 
-the file version of the adapted image that you want to display. The taglib uses 
-the file version you give it to query Adaptive Media's finder API and display 
-the adapted image appropriate for the device making the request. You can also 
-add as many attributes as needed, such as `class`, `style`, `data-sample`, and 
-so on. Any attributes you add are then added to the adapted images in the markup 
-the taglib renders. 
+The only mandatory attribute for the taglib is `fileVersion`. It indicates the 
+file version of the adapted image to display. The taglib uses this file version 
+to query Adaptive Media's finder API and display the adapted image appropriate 
+for the device making the request. You can also add as many attributes as 
+needed, such as `class`, `style`, `data-sample`, and so on. Any attributes you 
+add are then added to the adapted images in the markup the taglib renders. 
 
-## Finding Adapted Images
+For step-by-step instructions on using this taglib, see 
+[Displaying Adapted Images in Your App](/develop/tutorials/-/knowledge_base/7-2/displaying-adapted-images-in-your-app). 
+
+## Adaptive Media's Finder API
 
 If you need more control than the taglib offers for finding adapted images, you 
 can query Adaptive Media's finder API directly. For example, if you have an app 
@@ -37,12 +42,12 @@ that match a file version or resolution, or are ordered by an attribute like
 image width. You can even get adapted images that match approximate attribute 
 values. 
 
-### Calling Adaptive Media's API
+### Calling the API
 
-The entry point to Adaptive Media's API is the 
-[`AMImageFinder`](@app-ref@/adaptive-media/latest/javadocs/com/liferay/adaptive/media/image/finder/AMImageFinder.html) 
-interface. To use it, you must first inject the OSGi component in your class, 
-which must also be an OSGi component, as follows: 
+The entry point to Adaptive Media's API is 
+[`AMImageFinder`](@app-ref@/adaptive-media/latest/javadocs/com/liferay/adaptive/media/image/finder/AMImageFinder.html). 
+To use it, you must first inject the OSGi component in your class (which must 
+also be an OSGi component) as follows: 
 
     @Reference
     private AMImageFinder _amImageFinder;
@@ -72,9 +77,12 @@ adapted images. The `done()` call that follows this, however, isn't a
 placeholder--it creates and returns the `AMQuery` regardless of which 
 `AMImageQueryBuilder` methods you call. 
 
-For more information on creating `AMQuery` instances, see 
-[the Javadoc](@app-ref@/adaptive-media/latest/javadocs/com/liferay/adaptive/media/image/finder/AMImageQueryBuilder.html) 
-for `AMImageQueryBuilder`. 
+For more information on creating `AMQuery` instances, see the 
+`AMImageQueryBuilder` 
+[Javadoc](@app-ref@/adaptive-media/latest/javadocs/com/liferay/adaptive/media/image/finder/AMImageQueryBuilder.html). 
+
+For step-by-step instructions on calling Adaptive Media's API, see 
+[Finding Adapted Images](/develop/tutorials/-/knowledge_base/7-2/finding-adapted-images). 
 
 ### Adaptive Media API Constants
 
@@ -100,13 +108,14 @@ approximately 400px returns this order in the stream: 350px, 600px, 150px,
 So how close, exactly, is *close*? It depends on the attribute. In the case of 
 width, height, and length, a numeric comparison orders the images. In the case 
 of content type, file name, or UUID, the comparison is more tricky because these 
-attributes are strings and thus delegated to 
-[the Java `String.compareTo` method](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#compareTo-java.lang.String-). 
+attributes are strings and thus delegated to Java's 
+[`String.compareTo`](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#compareTo-java.lang.String-) 
+method. 
 
-## Understanding Image Scaling in Adaptive Media
+## Image Scaling in Adaptive Media
 
 As described in 
-[the Adaptive Media user guide](/discover/portal/-/knowledge_base/7-2/adapting-your-media-across-multiple-devices), 
+[Adaptive Media's user guide](/discover/portal/-/knowledge_base/7-2/adapting-your-media-across-multiple-devices), 
 Adaptive Media scales images to match the image resolutions defined by the 
 @product@ administrator. The default scaling is usually suitable, but Adaptive 
 Media contains an extension point that lets you replace the way it scales 
@@ -115,45 +124,44 @@ images. The
 interface defines Adaptive Media's image scaling logic. Out of the box, Adaptive 
 Media provides two implementations of this interface: 
 
--   [`AMDefaultImageScaler`](https://github.com/liferay/com-liferay-adaptive-media/blob/master/adaptive-media-image-impl/src/main/java/com/liferay/adaptive/media/image/internal/scaler/AMDefaultImageScaler.java): 
-    The default image scaler. It's always enabled and uses `java.awt` for its 
-    image processing and scaling. 
+[`AMDefaultImageScaler`](https://github.com/liferay/com-liferay-adaptive-media/blob/master/adaptive-media-image-impl/src/main/java/com/liferay/adaptive/media/image/internal/scaler/AMDefaultImageScaler.java): 
+The default image scaler. It's always enabled and uses `java.awt` for its image 
+processing and scaling. 
 
--   [`AMGIFImageScaler`](https://github.com/liferay/com-liferay-adaptive-media/blob/master/adaptive-media-image-impl/src/main/java/com/liferay/adaptive/media/image/internal/scaler/AMGIFImageScaler.java): 
-    A scaler that works only with GIF images. It depends on the installation of 
-    the external tool 
-    [gifsicle](https://www.lcdf.org/gifsicle/) 
-    in the @product@ instance. This scaler must be enabled in *Control Panel* 
-    &rarr; *System Settings*. 
+[`AMGIFImageScaler`](https://github.com/liferay/com-liferay-adaptive-media/blob/master/adaptive-media-image-impl/src/main/java/com/liferay/adaptive/media/image/internal/scaler/AMGIFImageScaler.java): 
+A scaler that works only with GIF images. It depends on the installation of the 
+external tool 
+[gifsicle](https://www.lcdf.org/gifsicle/) 
+in the @product@ instance. This scaler is disabled by default. Administrators 
+can enable it in *Control Panel* &rarr; *System Settings*. 
 
 You must register image scalers in @product@'s OSGi container using the 
 `AMImageScaler` interface. Each scaler must also set the `mime.type` property to 
 the MIME type it handles. For example, if you set a scaler's MIME type to 
 `image/jpeg`, then that scaler can only handle `image/jpeg` images. If you 
 specify the special MIME type `*`, the scaler can process any image. Note that 
-[`AMDefaultImageScaler`](https://github.com/liferay/com-liferay-adaptive-media/blob/master/adaptive-media-image-impl/src/main/java/com/liferay/adaptive/media/image/internal/scaler/AMDefaultImageScaler.java) 
-is registered using `mime.type=*`, while 
-[`AMGIFImageScaler`](https://github.com/liferay/com-liferay-adaptive-media/blob/master/adaptive-media-image-impl/src/main/java/com/liferay/adaptive/media/image/internal/scaler/AMGIFImageScaler.java) 
-is registered using `mime.type=image/gif`. Both scalers, like all scalers, 
-implement `AMImageScaler`. 
+`AMDefaultImageScaler` is registered using `mime.type=*`, while 
+`AMGIFImageScaler` is registered using `mime.type=image/gif`. Both scalers, like 
+all scalers, implement `AMImageScaler`. 
 
-You can add as many image scalers as you need, even for the same MIME type. Even 
-so, Adaptive Media uses only one scaler per image, using this process to 
+You can add as many image scalers as you need, even for the same MIME type. 
+However, Adaptive Media uses only one scaler per image, using this process to 
 determine the best one: 
 
 1.  Select only the image scalers registered with the same MIME type as the 
     image. 
 
 2.  Select the enabled scalers from those selected in the first step 
-    (the 
-    [`AMImageScaler`](https://github.com/liferay/com-liferay-adaptive-media/blob/master/adaptive-media-image-api/src/main/java/com/liferay/adaptive/media/image/scaler/AMImageScaler.java) 
-    method `isEnabled()` returns `true` for enabled scalers). 
+    (the `AMImageScaler` method `isEnabled()` returns `true` for enabled 
+    scalers). 
 
-3.  Of the scalers selected in the second step, select the scaler with the 
-    highest `service.ranking`. 
+3.  Of the scalers selected in the second step, select the one with the highest 
+    `service.ranking`. 
 
-If these steps return no results, they're repeated, but the first step uses the 
-special MIME type `*`. Also note that if an image scaler is registered for 
-specific MIME types and has a higher `service.ranking`, it's more likely to be 
-chosen than if it's registered for the special MIME type `*` or has a lower 
-`service.ranking`. 
+If these steps return no results, they're repeated with the special MIME type 
+`*`. Also note that if an image scaler is registered for specific MIME types and 
+has a higher `service.ranking`, it's more likely to be chosen than if it's 
+registered for the special MIME type `*` or has a lower `service.ranking`. 
+
+For step-by-step instructions on creating your own image scaler, see 
+[Creating an Image Scaler](/develop/tutorials/-/knowledge_base/7-2/creating-an-image-scaler). 
