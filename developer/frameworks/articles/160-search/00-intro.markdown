@@ -68,6 +68,7 @@ The Solr `schema.xml` can be seen in the `portal-search-solr7` module's source c
 
 Access the Solr 7 module's source code from the `liferay-portal` repository 
 [here](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/portal-search-solr7/portal-search-solr7-impl/src/main/resources/META-INF/resources/schema.xml)
+<!-- CHANGE LINK TO 7.2 ONCE the 7.2.x BRANCH IS CREATED -->
 
 These are default mapping files that are shipped with the product. You can
 further customize these mappings to fit your needs. For example, you might want
@@ -88,7 +89,7 @@ several things:
 
 3.  Apply permission checking on the results.
 
-4.  Summarizing returned results.
+4.  Summarize returned results.
 
 That's just a taste of Liferay's Search Infrastructure. Continue reading to
 learn more.
