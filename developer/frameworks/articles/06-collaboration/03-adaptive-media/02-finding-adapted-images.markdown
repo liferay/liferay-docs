@@ -1,4 +1,8 @@
-# Finding Adapted Images [](id=finding-adapted-images)
+---
+header-id: finding-adapted-images
+---
+
+# Finding Adapted Images
 
 If you need more control than the 
 [Adaptive Media taglib](liferay.com) 
@@ -47,7 +51,7 @@ invoke the `withConfigurationStatus` method with the constant
 Use the constant `AMImageQueryBuilder.ConfigurationStatus.DISABLED` to get 
 adapted images for only disabled image resolutions. 
 
-## Getting the Adapted Images for a Specific Image Resolution [](id=getting-the-adapted-images-for-a-specific-image-resolution)
+## Getting the Adapted Images for a Specific Image Resolution
 
 By providing an image resolution's UUID to `AMImageFinder`, you can get that 
 resolution's adapted images. This UUID is defined when 
@@ -74,7 +78,7 @@ Follow these steps to get adapted images for an image resolution:
             amImageQueryBuilder -> amImageQueryBuilder.forFileVersion(fileVersion)
                 .forConfiguration("hd-resolution").done());
 
-## Getting Adapted Images in a Specific Order [](id=getting-adapted-images-in-a-specific-order)
+## Getting Adapted Images in a Specific Order
 
 It's also possible to define the order in which `getAdaptiveMediaStream` returns 
 adapted images. Follow these steps to do so: 
@@ -123,7 +127,7 @@ values. Follow these steps to do so:
                 amImageQueryBuilder -> amImageQueryBuilder.forFileVersion(_fileVersion)
                     .with(AMImageAttribute.AM_IMAGE_ATTRIBUTE_HEIGHT, 400).done());
 
-## Using the Adaptive Media Stream [](id=using-the-adaptive-media-stream)
+## Using the Adaptive Media Stream
 
 Once you have the 
 [`AdaptiveMedia`](@app-ref@/adaptive-media/latest/javadocs/com/liferay/adaptive/media/AdaptiveMedia.html) 

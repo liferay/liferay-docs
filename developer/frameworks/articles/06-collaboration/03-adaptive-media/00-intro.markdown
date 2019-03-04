@@ -1,4 +1,8 @@
-# Adaptive Media [](id=adaptive-media)
+---
+header-id: adaptive-media
+---
+
+# Adaptive Media
 
 The 
 [Adaptive Media](/discover/portal/-/knowledge_base/7-2/adapting-your-media-across-multiple-devices) 
@@ -33,7 +37,7 @@ that match a file version or resolution, or are ordered by an attribute like
 image width. You can even get adapted images that match approximate attribute 
 values. 
 
-### Calling Adaptive Media's API [](id=calling-adaptive-medias-api)
+### Calling Adaptive Media's API
 
 The entry point to Adaptive Media's API is the 
 [`AMImageFinder`](@app-ref@/adaptive-media/latest/javadocs/com/liferay/adaptive/media/image/finder/AMImageFinder.html) 
@@ -99,7 +103,7 @@ of content type, file name, or UUID, the comparison is more tricky because these
 attributes are strings and thus delegated to 
 [the Java `String.compareTo` method](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#compareTo-java.lang.String-). 
 
-## Understanding Image Scaling in Adaptive Media [](id=understanding-image-scaling-in-adaptive-media)
+## Understanding Image Scaling in Adaptive Media
 
 As described in 
 [the Adaptive Media user guide](/discover/portal/-/knowledge_base/7-2/adapting-your-media-across-multiple-devices), 

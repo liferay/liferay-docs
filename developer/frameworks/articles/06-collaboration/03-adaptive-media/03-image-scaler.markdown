@@ -1,4 +1,8 @@
-## Creating an Image Scaler [](id=creating-an-image-scaler)
+---
+header-id: creating-an-image-scaler
+---
+
+# Creating an Image Scaler
 
 Adaptive Media scales images to match the image resolutions defined by the 
 @product@ administrator. The default scaling is usually suitable, but you can 

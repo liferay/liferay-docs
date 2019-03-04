@@ -1,4 +1,8 @@
-# Displaying Adapted Images in Your App [](id=displaying-adapted-images-in-your-app)
+---
+header-id: displaying-adapted-images-in-your-app
+---
+
+# Displaying Adapted Images in Your App
 
 Follow these steps to display adapted images in your app with the Adaptive Media 
 [taglib](https://github.com/liferay/com-liferay-adaptive-media/tree/master/adaptive-media-image-taglib). 
