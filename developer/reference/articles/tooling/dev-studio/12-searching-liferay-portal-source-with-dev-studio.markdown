@@ -1,10 +1,10 @@
-# Searching @product@ Source in Liferay Dev Studio [](id=searching-product-source-in-liferay-ide)
+# Searching @product@ Source in Dev Studio
 
 In Liferay Dev Studio, you can search through @product@'s source code to aid in
 the development of your project. Liferay provides great resources to help with
 development (e.g., official documentation,
 [docs.liferay.com](https://docs.liferay.com/),
-[sample projects](/develop/reference/-/knowledge_base/7-1/sample-projects),
+[sample projects](/developer/reference/-/knowledge_base/7-2/sample-projects),
 etc.), but sometimes, searching through Liferay's codebase (i.e., platform and
 official apps) for patterns is just as useful. For example, if you're creating a
 custom app that extends a class provided in Liferay's `portal-kernel` JAR, you
@@ -12,11 +12,11 @@ can inspect that class and research how it's used in other areas of @product@'s
 codebase.
 
 To do this, you must be developing in a
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace).
+[Liferay Workspace](/developer/reference/-/knowledge_base/7-2/liferay-workspace).
 Liferay Workspace is able to provide this functionality by targeting a specific
 @product@ version, which indexes the configured @product@ source code to provide
 advanced search. See the
-[Managing the Target Platform in Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/managing-the-target-platform-for-liferay-workspace)
+[Managing the Target Platform in Liferay Workspace](/developer/reference/-/knowledge_base/7-2/managing-the-target-platform-for-liferay-workspace)
 tutorial for more information on how this works.
 
 In this tutorial, you'll explore three use cases where advanced search would be
@@ -36,9 +36,14 @@ for a comprehensive guide.
 Inspecting classes that extend a similar superclass can help you find useful
 patterns and examples for how you can develop your own app. For example, suppose
 your app extends the
-[MVCPortlet](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCPortlet.html)
-class. You an search classes that extend that same class in Dev Studio by
-right-clicking the `MVCPortlet` declaration and selecting *Open Type Hierarchy*.
+[MVCPortlet](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCPortlet.html)
+class. You an search classes that extend that same class in Dev Studio. Complete
+the steps below for a simple example:
+
+1.  Right-click the `MVCPortlet` declaration.
+
+2.  Select *Open Type Hierarchy*.
+
 This opens a window that lets you inspect all classes residing in the target
 platform that extend `MVCPortlet`.
 
@@ -50,16 +55,18 @@ class/interface to aid in your quest for developing the perfect app.
 ## Search Method Declarations [](id=search-method-declarations)
 
 Sometimes you want a search to be more granular, exploring the declarations of a
-specific method provided by a class/interface. Liferay Dev Studio's advanced
-search has no limits; Liferay Workspace's target platform indexing provides
-method exploration too!
+specific method provided by a class/interface. Dev Studio's advanced search has
+no limits; Liferay Workspace's target platform indexing provides method
+exploration too!
 
 Suppose in the
-[MVCPortlet](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCPortlet.html)
+[MVCPortlet](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCPortlet.html)
 class you're extending, you'd like to search for declarations of its `doView`
-method you're overriding. You can do this by right-clicking the `doView` method
-declaration in your custom app's class and selecting *Declarations* &rarr;
-*Workspace*.
+method you're overriding. Here's how to do it:
+
+1.  Right-click the `doView` method declaration in your custom app's class.
+
+2.  Select *Declarations* &rarr; *Workspace*.
 
 ![Figure 2: All declarations of the method are returned in the Search window.](../../../images/inspect-declared-method.png)
 
@@ -75,8 +82,11 @@ platform, you can find how they could be used in your own app.
 For example, you may find some official documentation on using the `@Reference`
 annotation in an OSGi module and implement it in your custom app. It could be
 useful to reference real world examples in @product@'s apps to check how it was
-used elsewhere. You could search for this by right-clicking the annotation in a
-class and selecting *References* &rarr; *Workspace*.
+used elsewhere. You can complete this search like this:
+
+1.  Right-click the `@Reference` annotation in a class.
+
+2.  Select *References* &rarr; *Workspace*.
 
 ![Figure 3: All matching annotations are displayed in the Search window.](../../../images/inspect-references-ide.png)
 
