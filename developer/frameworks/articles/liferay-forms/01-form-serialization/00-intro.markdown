@@ -39,15 +39,15 @@ _serialized_ into JSON for storage in the @product@ database when saved.
         }]
     }
 
-From it's Java object initial state as `DDMForm`, the form is _serialized_ into
-JSON format, and upon retrieval from the database, it's _deserialized_, meaning
-the backing JSON object representing the form is translated back into a
-`DDMForm` Java object, with all its requisite fields. For example, the JSON for
-the above example holds each form field in the `fields` attribute. To translate
-this back into the necessary `DDMForm` object (deserialization), first parse the
-data contained in the JSON object into an actual form field using your
-deserialization logic. Here's the logic from `DDMFormJsonDeserializer` that
-parses the JSON `"fields"` element into a list of `DDMFormFields`:
+From its initial state as a `DDMForm` Java object, the form is _serialized_ into
+JSON format, and upon retrieval from the database, it's _deserialized_: 
+the JSON object representing the form is translated back into a `DDMForm` Java
+object, with all its requisite fields. For example, the JSON for the above
+example holds each form field in the `fields` attribute. To translate
+this back into the necessary `DDMForm` object, first parse the data contained in
+the JSON object into an actual form field using your deserialization logic.
+Here's the logic from `DDMFormJsonDeserializer` that parses the JSON `"fields"`
+element into a list of `DDMFormFields`:
 
 	protected List<DDMFormField> getDDMFormFields(JSONArray jsonArray)
 		throws PortalException {
@@ -65,7 +65,7 @@ parses the JSON `"fields"` element into a list of `DDMFormFields`:
 	}
 
 Now calling `DDMForm.setDDMFormFields(ddmFormFields)` in the deserializer
-completes the translation process, from the JSON array back to a `DDMFormField`
+completes the translation process from the JSON array back to a `DDMFormField`
 object that the `DDMForm` needs.
 
 If you'd like to store forms in a different format, provide custom

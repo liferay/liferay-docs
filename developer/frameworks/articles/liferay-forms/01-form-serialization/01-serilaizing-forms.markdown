@@ -1,8 +1,8 @@
 # Serializing Forms
 
-The DDM IO API serializes and deserializes forms using  a request/response
+The DDM IO API serializes and deserializes forms using a request/response
 structure. The example here creates a serializer for saving form data in
-[YAML](https://yaml.org/) format. The same principles shown here apply to
+[YAML](https://yaml.org) format. The same principles shown here apply to
 writing a deserializer. 
 
 To serialize form data into YAML:
@@ -15,9 +15,9 @@ To serialize form data into YAML:
 The property `ddm.form.serializer.type=yaml` marks the Component so that
 `DDMFormSerializerTracker` can find the YAML serializer.
 
-2.  Add the serializing logic to the overridden serialize method. It takes a
+2.  Add the serializing logic to the overridden `serialize` method. It takes a
     `DDMFormSerializerSerializeRequest` and returns a
-    `DDMFormSerializerSerializeResponse`  with the serialized string in it.
+    `DDMFormSerializerSerializeResponse` with the serialized string in it.
 
         @Override public DDMFormSerializerSerializeResponse serialize(
         DDMFormSerializerSerializeRequest ddmFormSerializerSerializeRequest) {
@@ -31,8 +31,8 @@ The property `ddm.form.serializer.type=yaml` marks the Component so that
 
                 return builder.build(); }
 
-This is what you need to create your serializer. Of course, _YOUR CODE FOR
-BUILDING A YAML OBJECT GOES HERE_ requires some explanation. While you can
+This is what you need to create your serializer. Of course, `YOUR CODE FOR
+BUILDING A YAML OBJECT GOES HERE` requires some explanation. While you can
 do whatever you want here, there are several things you really ought to
 do:
 
