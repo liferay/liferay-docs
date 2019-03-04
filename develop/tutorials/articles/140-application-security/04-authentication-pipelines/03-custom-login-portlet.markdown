@@ -17,7 +17,9 @@ and then redirect the user to a location of your choice.
 
 You can use the example project 
 [in this ZIP file](https://dev.liferay.com/documents/10184/656312/MyCustomLoginPortlet.zip) 
-as a starting point for your own. 
+as a starting point for your own. When using the example project please use the following 
+portal property ```session.timeout.auto.extend.offset=45```. This property will help you
+avoid a known issue while learning how to work with a custom login portlet.
 
 It has only one view, which is used for logging in or showing the user who is
 already logged in: 
@@ -126,6 +128,23 @@ want.
 
 Implementing your own login portlet gives you complete control over the
 authentication process. 
+
+## Portal property changes needed when working with the example project
+
+As noted above when using the example project please make sure that 
+```session.timeout.auto.extend.offset=45``` has been set within the 
+portal-ext.properties file for Liferay bundle that will be hosting the 
+example project. The declared 45 seconds above are a starting point and
+any optimization of the property will need to be determined as the 
+environment is utilized.
+
+This is needed due to a change implemented by LPS-68543 which sets 
+```session.timeout.auto.extend.offset=0```as the default within the Liferay
+bundle. When this property is set to 0 an issue can occur when using this 
+example project where the browser will execute an "extend_session" call which
+will force any users who attempt to login to have to log in twice in order to 
+access the bundle.
+
 
 ## Related Topics [](id=related-topics)
 
