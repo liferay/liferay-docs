@@ -146,10 +146,15 @@ reCAPTCHA instead of the native CAPTCHA solution.
 This tab is for upgrading @product@ or migrating its data from one system to
 another without writing custom scripts.
 
-The first section, under *Migrate data from one database to another.* was useful
-in past versions of @product@ for copying the entire @product@ database to a new
-database. However, the database migration tool cannot be used in the current
-version of @product@ and will be removed in the next version of @product@.
+The first section, under *Migrate data from one database to another*, was useful
+in past versions of @product@ for migrating data from an embedded HSQL @product@
+database to a new database. However, it was only ever intended for migrating
+Service Builder entities---it's not intended for migrating other data. The
+feature was provided as a convenience only. To properly migrate @product@ data
+from one database (no matter the vendor) to a new database vendor or database
+version, use your target database vendor's tools or proper manual steps. For
+detailed steps, see
+[Migrating a @product@ Database](/discover/deployment/-/knowledge_base/7-0/migrating-a-liferay-database).  
 
 The second section, *Migrate documents from one repository to another*, helps
 you migrate your documents to a new repository on a different disk or in a new 
