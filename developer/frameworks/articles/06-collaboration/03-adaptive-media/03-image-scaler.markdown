@@ -22,15 +22,11 @@ steps customizes the scaling of PNG images:
     service ranking property must be higher than that of the other scalers. If 
     `service.ranking` isn't set, it defaults to `0`. 
 
-    +$$$
-
-    **Note:** The `service.ranking` property isn't set for the image scalers 
-    included with Adaptive Media (`AMDefaultImageScaler` and 
-    `AMGIFImageScaler`). Their service ranking therefore defaults to `0`. To 
-    replace either scaler, you must set your scaler to the same MIME type and 
-    give it a service ranking higher than `0`. 
-
-    $$$
+    | **Note:** The `service.ranking` property isn't set for the image scalers 
+    | included with Adaptive Media (`AMDefaultImageScaler` and 
+    | `AMGIFImageScaler`). Their service ranking therefore defaults to `0`. To 
+    | replace either scaler, you must set your scaler to the same MIME type and 
+    | give it a service ranking higher than `0`. 
 
     This example image scaler scales PNG and x-PNG images and has a service 
     ranking of `100`: 

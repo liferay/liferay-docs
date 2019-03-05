@@ -82,10 +82,10 @@ Follow these steps to get adapted images for an image resolution:
     an image resolution with the UUID `hd-resolution`. It returns the adapted 
     images regardless of whether the resolution is enabled or disabled: 
 
-    Stream<AdaptiveMedia<AMImageProcessor>> adaptiveMediaStream =
-        _amImageFinder.getAdaptiveMediaStream(
-            amImageQueryBuilder -> amImageQueryBuilder.forFileVersion(fileVersion)
-                .forConfiguration("hd-resolution").done());
+        Stream<AdaptiveMedia<AMImageProcessor>> adaptiveMediaStream =
+            _amImageFinder.getAdaptiveMediaStream(
+                amImageQueryBuilder -> amImageQueryBuilder.forFileVersion(fileVersion)
+                    .forConfiguration("hd-resolution").done());
 
 ## Getting Adapted Images in a Specific Order
 
