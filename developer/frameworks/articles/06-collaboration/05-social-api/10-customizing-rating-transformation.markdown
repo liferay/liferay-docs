@@ -1,3 +1,7 @@
+---
+header-id: customizing-rating-value-transformation
+---
+
 # Customizing Rating Value Transformation
 
 To customize rating value transformation, you must create an OSGi component that 

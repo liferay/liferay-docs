@@ -1,4 +1,8 @@
-# Applying Social Bookmarks [](id=applying-social-bookmarks)
+---
+header-id: applying-social-bookmarks
+---
+
+# Applying Social Bookmarks
 
 When you enable social bookmarks, icons for sharing on Twitter, Facebook, and
 Google Plus appear below your application's content. Taglibs provide the markup
@@ -56,7 +60,7 @@ Follow these steps to add social bookmarks to your app:
                 url="<%= PortalUtil.getCanonicalURL(bookmarkURL.toString(), themeDisplay, layout) %>"
         />
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Social Bookmarks Reference](liferay.com)
 

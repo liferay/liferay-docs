@@ -1,4 +1,8 @@
-# Rating Assets [](id=rating-assets)
+---
+header-id: rating-assets
+---
+
+# Rating Assets
  
 In only a few lines of code, you can use a taglib to enable ratings for your 
 app's content. The steps here show you how. For more information on this taglib 
@@ -38,7 +42,7 @@ simple messages in a guestbook.
         <liferay-ui:ratings className="<%=Entry.class.getName()%>"
             classPK="<%=entry.getEntryId()%>" type="stars" />
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Ratings](liferay.com)
 

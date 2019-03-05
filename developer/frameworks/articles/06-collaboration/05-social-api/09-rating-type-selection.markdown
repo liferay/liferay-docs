@@ -1,3 +1,7 @@
+---
+header-id: implementing-rating-type-selection
+---
+
 # Implementing Rating Type Selection
 
 For administrators to change your app's rating type (e.g. likes, stars, thumbs), 
@@ -33,7 +37,7 @@ detailed explanation of these steps and rating type selection, see
             return PortletKeys.BLOGS;
         }
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Rating Type Selection](liferay.com)
 

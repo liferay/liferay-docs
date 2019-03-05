@@ -1,11 +1,19 @@
-# Social API [](id=social-api)
+---
+header-id: social-api
+---
+
+# Social API
 
 You can use the social API to integrate @product@'s social features with your 
-apps. 
+apps. Here, you'll learn about the following topics: 
+
+-   [Social Bookmarks](#social-bookmarks)
+-   [Adding Comments to Your App](/develop/tutorials/-/knowledge_base/7-2/adding-comments-to-your-app)
+-   [Ratings](#ratings)
+-   [Flagging Inappropriate Asset Content](/develop/tutorials/-/knowledge_base/7-2/flagging-inappropriate-asset-content)
 
 ## Social Bookmarks
 
-<!-- Put in reference instead? -->
 To apply social bookmarks to your app's content, you must use the 
 `liferay-social-bookmarks` taglib. This taglib contains the 
 `liferay-social-bookmarks:bookmarks` tag, which adds the social bookmarks 
@@ -31,6 +39,11 @@ omit this attribute or use `<%= null %>` for its value.
 constructs an SEO-friendly URL from the page's full URL. For more information, 
 see the 
 [method's Javadoc](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/PortalUtil.html#getCanonicalURL-java.lang.String-com.liferay.portal.kernel.theme.ThemeDisplay-com.liferay.portal.kernel.model.Layout-). 
+
+For instructions on using this tag, see 
+[Applying Social Bookmarks](/develop/tutorials/-/knowledge_base/7-2/applying-social-bookmarks). 
+For instructions on creating your own social bookmarks, see 
+[Creating Social Bookmarks](/develop/tutorials/-/knowledge_base/7-2/creating-social-bookmarks). 
 
 ![Figure 1: With `displayStyle` set to `inline`, the first three social bookmarks appear in a row and the rest appear in a menu.](../../../images/social-bookmarks-inline.png)
 

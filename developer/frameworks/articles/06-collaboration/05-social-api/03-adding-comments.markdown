@@ -1,4 +1,8 @@
-# Adding Comments to Your App [](id=adding-comments-to-your-app)
+---
+header-id: adding-comments-to-your-app
+---
+
+# Adding Comments to Your App
 
 Liferay provides taglibs that enable comments on your app's content. Here, 
 you'll learn how to use these taglibs, using a sample Guestbook app as an 
@@ -64,7 +68,7 @@ If you haven't already connected your portlet's view to the JSP for your entity,
 see 
 [Configuring JSP Templates for an Asset Renderer](/develop/tutorials/-/knowledge_base/7-2/configuring-jsp-templates-for-an-asset-renderer). 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Asset Framework](/develop/tutorials/-/knowledge_base/7-1/asset-framework)
 

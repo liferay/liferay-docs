@@ -1,11 +1,15 @@
-# Creating Social Bookmarks [](id=creating-social-bookmarks)
+---
+header-id: creating-social-bookmarks
+---
+
+# Creating Social Bookmarks
 
 By default, @product@ contains social bookmarks for Twitter, Facebook, and 
 LinkedIn. You can also create your own social bookmark by registering a
 component that implements the `SocialBookmark` interface from the module
 `com.liferay.social.bookmarks.api`. 
 
-## Implementing the SocialBookmark Interface [](id=implementing-the-socialbookmark-interface)
+## Implementing the SocialBookmark Interface
 
 Follow these steps to implement the `SocialBookmark` interface: 
 
@@ -86,7 +90,7 @@ Follow these steps to implement the `SocialBookmark` interface:
 
 Next, you'll see an example of how to create a `page.jsp` file.
 
-## Creating Your JSP [](id=creating-your-jsp)
+## Creating Your JSP
 
 The `page.jsp` file referenced in the above `SocialBookmark` implementation uses 
 [a Clay link](/develop/tutorials/-/knowledge_base/7-2/clay-labels-and-links) 
@@ -146,7 +150,7 @@ these steps to create a JSP for your own social bookmark:
 To see a complete, real-world example of a social bookmark implementation, see 
 [Liferay's Twitter social bookmark code](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/social/social-bookmark-twitter). 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Applying Social Bookmarks](/develop/tutorials/-/knowledge_base/7-2/applying-social-bookmarks)
 

@@ -1,4 +1,8 @@
-# Flagging Inappropriate Asset Content [](id=flagging-inappropriate-asset-content)
+---
+header-id: flagging-inappropriate-asset-content
+---
+
+# Flagging Inappropriate Asset Content
 
 The asset framework supports a system for flagging inappropriate content in 
 apps. The steps here show you how to enable it in your app. 
@@ -42,7 +46,7 @@ Follow these steps to enable content flagging in your app:
     The `reportedUserId` attribute specifies the ID of the user who flagged the 
     asset. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Asset Framework](/develop/tutorials/-/knowledge_base/7-1/asset-framework)
 
