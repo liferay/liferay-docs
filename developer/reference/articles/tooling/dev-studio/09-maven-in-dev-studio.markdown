@@ -68,7 +68,7 @@ Awesome! Your Dev Studio is ready to develop Maven projects for @product@!
 
 You'll learn about creating Maven projects in Dev Studio next.
 
-## Importing Maven Projects [](id=importing-maven-projects)
+## Importing Maven Projects
 
 To import a pre-existing Maven project into Dev Studio, follow the steps
 outlined below:
@@ -89,7 +89,7 @@ outlined below:
 Now your Maven project is available from the Package Explorer. Next you'll learn
 about Dev Studio's POM graphical editor.
 
-### Using the POM Graphic Editor [](id=using-the-pom-graphic-editor)
+### Using the POM Graphic Editor
 
 You're provided a nifty POM graphic editor when opening your Maven project's
 `pom.xml` in Dev Studio. This gives you several different ways to leverage

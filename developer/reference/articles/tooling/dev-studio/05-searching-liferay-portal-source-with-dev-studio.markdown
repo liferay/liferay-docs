@@ -31,7 +31,7 @@ Studio. See Eclipse's documentation on
 [Java Search](http://help.eclipse.org/oxygen/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2Fconcepts%2Fconcept-java-search.htm&resultof=%22%6a%61%76%61%22%20)
 for a comprehensive guide.
 
-## Search Class Hierarchy [](id=search-class-hierarchy)
+## Search Class Hierarchy
 
 Inspecting classes that extend a similar superclass can help you find useful
 patterns and examples for how you can develop your own app. For example, suppose
@@ -52,7 +52,7 @@ platform that extend `MVCPortlet`.
 Great! Now you can search for all extensions and implementations of a
 class/interface to aid in your quest for developing the perfect app.
 
-## Search Method Declarations [](id=search-method-declarations)
+## Search Method Declarations
 
 Sometimes you want a search to be more granular, exploring the declarations of a
 specific method provided by a class/interface. Dev Studio's advanced search has
@@ -73,7 +73,7 @@ method you're overriding. Here's how to do it:
 The rendered Search window displays the other occurrences in the target platform
 where that method was overridden.
 
-## Search Annotation References [](id=search-annotation-references)
+## Search Annotation References
 
 Annotations used in @product@'s source code can sometimes be cryptic. With the
 ability to search where these types of annotations reside in Liferay's target

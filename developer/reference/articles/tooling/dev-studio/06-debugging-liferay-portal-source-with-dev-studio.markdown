@@ -17,7 +17,7 @@ There are a couple Liferay-specific configurations to know before debugging
 
 Let's explore these Liferay-specific debugging configurations.
 
-## Configure Your Target Platform [](id=configure-your-target-platform)
+## Configure Your Target Platform
 
 To configure your target platform, you must be developing in a
 [Liferay Workspace](/developer/reference/-/knowledge_base/7-2/liferay-workspace).
@@ -35,7 +35,7 @@ Once the target platform is configured in your workspace, Eclipse has access to
 all of @product@'s source code. Next, you'll configure a Liferay server and
 learn how to start it in Debug mode.
 
-## Configure a Liferay Server and Start It in Debug Mode [](id=configure-a-liferay-server-and-start-it-in-debug-mode)
+## Configure a Liferay Server and Start It in Debug Mode
 
 Configuring your target platform gives Eclipse @product@'s source code to
 reference. Now you must configure a Liferay server matching the target platform

@@ -18,7 +18,7 @@ With this particular upgrade, you should also deactivate the current available
 update sites in the *Window* &rarr; *Preferences* &rarr; *Install/Update* &rarr;
 *Available Software Sites* menu to ensure a successful upgrade (e.g., Oxygen).
 
-## Install the Dev Studio Bundle [](id=install-the-liferay-ide-bundle)
+## Install the Dev Studio Bundle
 
 1.  Download and install [Java](http://java.oracle.com). Liferay runs on Java,
     so you'll need it to run everything else. Because you'll be developing apps
@@ -48,7 +48,7 @@ Project SDK folder's `liferay-developer-studio`. To run Dev Studio, execute the
 `DeveloperStudio` executable. A Liferay Workspace has also been initialized in
 that same folder.
 
-## Install Dev Studio into Eclipse [](id=install-liferay-ide-into-eclipse)
+## Install Dev Studio into Eclipse
 
 If you already have an Eclipse environment that you're using for other
 things, it's easy to add Dev Studio to your existing Eclipse installation. 
@@ -68,7 +68,7 @@ things, it's easy to add Dev Studio to your existing Eclipse installation.
     installed. Like other Eclipse plugins you'll have to restart Eclipse to
     enable it. 
 
-## Install Dev Studio into Eclipse from a ZIP File [](id=install-liferay-ide-into-eclipse-from-a-zip-file)
+## Install Dev Studio into Eclipse from a ZIP File
 
 To install Liferay Dev Studio into Eclipse from a Zip file, follow these steps: 
 
