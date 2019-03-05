@@ -32,8 +32,7 @@ Follow these steps to install your server:
     available options. For a standard server, open the *Liferay, Inc.* folder
     and select the *Liferay 7.x* option. You can change the server name to
     something more unique too; this is the name displayed in the Servers view.
-    Then click *Next*. If you're creating a server for the first time, continue
-    to the next step.
+    Then click *Next*.
 
     ![Figure 1: Choose the type of server you want to create.](../../../images/define-new-server.png)
 

@@ -26,8 +26,8 @@ and
 [deploying Gradle projects](/developer/reference/-/knowledge_base/7-2/deploying-a-project#liferay-dev-studio)
 with Dev Studio are covered in their respective articles.
 
-The first thing you'll learn about in this tutorial is creating Gradle projects
-in Dev Studio.
+The first thing you'll learn about in this tutorial is creating pure Gradle
+projects in Dev Studio.
 
 ## Creating Pure Gradle Projects
 
@@ -36,17 +36,18 @@ for good reason; it's the recommended developer environment for Liferay
 projects. You can, however, create pure Gradle projects and manually configure
 them to be deployable to @product@.
 
-You can create a Gradle project by using the Gradle Project wizard.
+You can create a pure Gradle project by using the Gradle Project wizard.
 
-1. Navigate to *File* &rarr; *New* &rarr; *Project...* and select *Gradle*
-   &rarr; *Gradle Project*. Finally, click *Next* &rarr; *Next*.
+1.  Navigate to *File* &rarr; *New* &rarr; *Project...*.
 
-2. Enter a valid project name. You can also specify your project location and
-   working sets.
+2.  Select *Gradle* &rarr; *Gradle Project*. Then click *Next* &rarr; *Next*.
 
-3. Optionally, you can navigate to the next page and specify your Gradle
-   distribution and other advanced options. Once you're finished, select
-   *Finish*.
+3.  Enter a valid project name. You can also specify your project location and
+    working sets.
+
+4.  Optionally, you can navigate to the next page and specify your Gradle
+    distribution and other advanced options. Once you're finished, select
+    *Finish*.
 
 ![Figure 2: You can specify your Gradle distribution and advanced options such as home directories, JVM options, and program arguments.](../../../images/new-gradle-project.png)
 
@@ -56,24 +57,26 @@ Excellent! You've created a pure Gradle project using Dev Studio.
 
 You can also import existing pure Gradle projects in Dev Studio.
 
-1. Go to *File* &rarr; *Import...* &rarr; *Gradle* &rarr; *Existing Gradle
-    Project* &rarr; *Next* &rarr; *Next*.
+1.  Go to *File* &rarr; *Import...*.
+
+2.  Select *Gradle* &rarr; *Existing Gradle Project* &rarr; *Next* &rarr;
+    *Next*.
 
     ![Figure 3: You can specify what Gradle project to import from the *Import Gradle Project* wizard.](../../../images/import-gradle-project.png)
 
-2. Click the *Browse...* button to choose a Gradle project.
+3.  Click the *Browse...* button to choose a Gradle project.
 
-3. Optionally, you can navigate to the next page and specify your Gradle
-   distribution and other advanced options. Once you're finished, click *Next*
-   again to review the import configuration. Select *Finish* once you've
-   confirmed your Gradle project import.
+4.  Optionally, you can navigate to the next page and specify your Gradle
+    distribution and other advanced options. Once you're finished, click *Next*
+    again to review the import configuration. Select *Finish* once you've
+    confirmed your Gradle project import.
 
 Next you'll learn about Gradle tasks and executions, and learn how to run and
-display them in Liferay Dev Studio.
+display them in Dev Studio.
 
 ## Gradle Tasks and Executions
 
-Dev Studio provides two views to enhance your developing experience using
+Dev Studio provides two views to enhance your development experience using
 Gradle: Gradle Tasks and Gradle Executions. You can open these views by
 following the instructions below.
 

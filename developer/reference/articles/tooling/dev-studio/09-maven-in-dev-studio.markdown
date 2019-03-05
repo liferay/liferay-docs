@@ -42,7 +42,7 @@ Maven plugins for Dev Studio manually below.
 1.  Navigate to *Help* &rarr; *Install New Software*. In the *Work with* field,
     insert the following value:
 
-        Liferay IDE repository - http://releases.liferay.com/tools/ide/latest/stable/
+        http://releases.liferay.com/tools/ide/latest/stable/
 
 2.  Check the *Liferay IDE Maven Support* option. This bundles all the required
     Maven plugins you need to begin developing Maven projects for @product@.
@@ -59,23 +59,24 @@ Maven plugins for Dev Studio manually below.
 3.  Click *Next*, review the install details, accept the term and license
     agreements, and select *Finish*.
 
-Both Maven and Eclipse have their own standard build project lifecycles that are
-independent from each other. For both to work together and run seamlessly within
-Dev Studio, a lifecycle mapping is required to link both lifecycles into one
-combined lifecycle. Normally, this would have to be done manually by the user.
-Fortunately, the m2e-liferay plugin combines the lifecycle metadata mapping and
-Eclipse build lifecycles, to provide a seamless user experience. The lifecycle
-mappings for your project can be viewed by right-clicking your project and
-selecting *Properties* &rarr; *Maven* &rarr; *Lifecycle Mapping*.
+| **Note:** Both Maven and Eclipse have their own standard build project
+| lifecycles that are independent from each other. For both to work together and
+| run seamlessly within Dev Studio, a lifecycle mapping is required to link both
+| lifecycles into one combined lifecycle. Normally, this would have to be done
+| manually by the user. Fortunately, the m2e-liferay plugin combines the
+| lifecycle metadata mapping and Eclipse build lifecycles, to provide a seamless
+| user experience. The lifecycle mappings for your project can be viewed by
+| right-clicking your project and selecting *Properties* &rarr; *Maven* &rarr;
+| *Lifecycle Mapping*.
 
 Awesome! Your Dev Studio is ready to develop Maven projects for @product@!
 
-You'll learn about creating Maven projects in Dev Studio next.
+You'll learn about importing Maven projects in Dev Studio next.
 
 ## Importing Maven Projects
 
-To import a pre-existing Maven project into Dev Studio, follow the steps
-outlined below:
+To import a pre-existing, non-Liferay Maven project into Dev Studio, follow the
+steps outlined below:
 
 1.  Navigate to *File* &rarr; *Import* &rarr; *Maven* &rarr; *Existing Maven
     Projects* and click *Next*.
@@ -90,8 +91,10 @@ outlined below:
 
 3.  Click *Finish*.
 
-Now your Maven project is available from the Package Explorer. Next you'll learn
-about Dev Studio's POM graphical editor.
+Now your Maven project is available from the Package Explorer. To import a
+Liferay project built with Maven, see the
+[Importing Projects in Dev Studio](/developer/reference/-/knowledge_base/7-2/importing-projects-in-dev-studio)
+Next you'll learn about Dev Studio's POM graphical editor.
 
 ### Using the POM Graphic Editor
 

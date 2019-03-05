@@ -33,7 +33,7 @@ update sites in the *Window* &rarr; *Preferences* &rarr; *Install/Update* &rarr;
     page. 
 
 2.  Download Liferay's latest
-    [Project SDK with @ide@](https://sourceforge.net/projects/lportal/files/Liferay%20IDE/)
+    [Project SDK with Dev Studio](https://sourceforge.net/projects/lportal/files/Liferay%20IDE/)
     executable that correlates to your operating system. The Project SDK
     includes @ide@,
     [Liferay Workspace](/developer/reference/-/knowledge_base/7-2/liferay-workspace),
@@ -42,7 +42,7 @@ update sites in the *Window* &rarr; *Preferences* &rarr; *Install/Update* &rarr;
 3.  Run the Project SDK executable and step through the installer to install
     everything to your machine. For help with setting up proxy settings (if
     necessary), see the
-    [Liferay IDE Proxy Settings](/developer/reference/-/knowledge_base/7-2/setting-proxy-requirements-for-liferay-ide)
+    [Dev Studio Proxy Settings](/developer/reference/-/knowledge_base/7-2/setting-proxy-requirements-for-liferay-ide)
     and
     [Liferay Workspace Proxy Settings](/developer/reference/-/knowledge_base/7-2/setting-proxy-requirements-for-liferay-workspace)
     articles for more information.
@@ -77,7 +77,7 @@ things, it's easy to add Dev Studio to your existing Eclipse installation.
 To install Liferay Dev Studio into Eclipse from a Zip file, follow these steps: 
 
 1.  Go to the
-    [Liferay @ide@](https://community.liferay.com/en_GB/project/-/asset_publisher/TyF2HQPLV1b5/content/ide-installation-instructions)
+    [Dev Studio](https://community.liferay.com/en_GB/project/-/asset_publisher/TyF2HQPLV1b5/content/ide-installation-instructions)
     downloads page. Under *Other Downloads*, select the *Liferay IDE [version]
     Archived Update-site* option to download it.
 
