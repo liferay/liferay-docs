@@ -10,6 +10,7 @@ and more) can be addressed *after* deploying @product@. Start with familiarizing
 yourself with the pre-installation topics here. 
 
 - [JDK Requirements](#jdk-requirements)
+- [JVM Requirements](#jvm-requirements)
 - [Preparing a Database](#preparing-a-database) 
 
 +$$$
@@ -49,6 +50,15 @@ versions:
 
 JDK 11 is backwards compatible with JDK 8 applications. Applications
 and customizations developed on JDK 8 run on JDK 8 or JDK 11 runtimes. This makes JDK 8 best for developing on @product-ver@. 
+
+## JVM Requirements [](id=jvm-requirements)
+
+@product@ requires that the application server JVM use the GMT Timezone and UTF8
+file encoding. Include these JVM arguments to set the required values. 
+
+    -Dfile.encoding=UTF8 -Duser.timezone=GMT
+
+It's time to prepare your database. 
 
 ## Preparing a Database [](id=preparing-a-database)
 

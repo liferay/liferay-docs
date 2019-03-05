@@ -56,6 +56,13 @@ the Tomcat bundle provides the `startup.sh` script in `$CATALINA_HOME/bin`.
 
 $$$
 
++$$$
+
+**Important:** @product@ requires that the application server JVM use the GMT 
+Timezone and UTF8 file encoding. They're preset in your @product@ bundle. 
+
+$$$
+
 The first time @product@ starts, it creates all of its database tables. On
 completing startup, it automatically launches a web browser that displays the
 Basic Configuration page. If for some reason your browser doesn't load the Basic
