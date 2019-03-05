@@ -1,7 +1,7 @@
 # Aggregations
 
 * Target Audience: Developers
-* Article Type: Developer Reference
+* Article Type: Development Frameworks
 
 ## External References
 https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html#_structuring_aggregations
