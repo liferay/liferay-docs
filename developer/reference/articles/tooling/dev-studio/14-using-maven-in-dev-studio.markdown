@@ -1,26 +1,28 @@
-# Using Maven in Liferay Dev Studio [](id=using-maven-in-liferay-ide)
+# Maven in Dev Studio
 
-You can take full advantage of Maven in Liferay Dev Studio with its built-in
-Maven support. In this tutorial, you'll learn about the following topics:
+You can take full advantage of [Maven](https://maven.apache.org/) in Liferay Dev
+Studio with its built-in Maven support. In this article, you'll learn about the
+following topics:
 
 - [Installing Maven Plugins for Liferay Dev Studio](#installing-maven-plugins-for-liferay-ide)
-- [Creating Maven Projects](#creating-maven-projects)
 - [Importing Maven Projects](#importing-maven-projects)
 - [Using the POM Graphic Editor](#using-the-pom-graphic-editor)
 
+Note that
+[creating](/developer/reference/-/knowledge_base/7-2/creating-a-project#liferay-dev-studio)
+and
+[deploying](/developer/reference/-/knowledge_base/7-2/deploying-a-project#liferay-dev-studio)
+Maven projects with Dev Studio are covered in their respective articles.
+
 First you'll install the necessary Maven plugins for Dev Studio.
 
-## Installing Maven Plugins for Liferay Dev Studio [](id=installing-maven-plugins-for-liferay-ide)
+## Installing Maven Plugins for Dev Studio
 
-In order to support Maven projects in Dev Studio properly, you first need a
-mechanism to recognize Maven projects as Dev Studio projects. Dev Studio
-projects are recognized in Eclipse as faceted web projects that include the
-appropriate Liferay plugin facet. Therefore, all Dev Studio projects are also
-Eclipse web projects (faceted projects with the web facet installed). For Dev
-Studio to recognize the Maven project and for it to be able to leverage Java EE
-tooling features (e.g., the Servers view) with the project, the project must be
-a flexible web project. Dev Studio relies on the following Eclipse plugins to
-provide this capability:
+To support Maven projects in Dev Studio properly, you first need a mechanism to
+recognize Maven projects as Dev Studio projects. For Dev Studio to recognize the
+Maven project and for it to be able to leverage Java EE tooling features (e.g.,
+the Servers view) with the project, the project must be a flexible web project.
+Dev Studio relies on the following Eclipse plugins to provide this capability:
 
 - `m2e` (Maven integration for Eclipse)
 - `m2e-wtp` (Maven integration for WTP)
@@ -28,8 +30,8 @@ provide this capability:
 All you have to do is install them so you can begin developing Maven projects
 for @product@.
 
-When first installing Liferay Dev Studio, the installation startup screen lets
-you select whether you'd like to install the Maven plugins automatically. Don't
+When first installing Dev Studio, the installation startup screen lets you
+select whether you'd like to install the Maven plugins automatically. Don't
 worry if you missed this during setup. You'll learn how to install the required
 Maven plugins for Dev Studio manually below.
 
@@ -53,44 +55,18 @@ Maven plugins for Dev Studio manually below.
 3.  Click *Next*, review the install details, accept the term and license
     agreements, and select *Finish*.
 
-<!--
 Both Maven and Eclipse have their own standard build project lifecycles that are
 independent from each other. For both to work together and run seamlessly within
-Liferay IDE, a lifecycle mapping is required to link both lifecycles into one
+Dev Studio, a lifecycle mapping is required to link both lifecycles into one
 combined lifecycle. Normally, this would have to be done manually by the user.
 Fortunately, the m2e-liferay plugin combines the lifecycle metadata mapping and
 Eclipse build lifecycles, to provide a seamless user experience. The lifecycle
 mappings for your project can be viewed by right-clicking your project and
-selecting Properties &rarr; Maven &rarr; Lifecycle Mapping.
--->
-
-<!-- Find out if Maven Lifecycle Mapping still works properly in IDE. -Cody -->
+selecting *Properties* &rarr; *Maven* &rarr; *Lifecycle Mapping*.
 
 Awesome! Your Dev Studio is ready to develop Maven projects for @product@!
 
 You'll learn about creating Maven projects in Dev Studio next.
-
-## Creating Maven Projects [](id=creating-maven-projects)
-
-You can create a Maven project based on Liferay's provided Maven archetypes.
-
-1.  Navigate to *File* &rarr; *New* &rarr; *Liferay Module Project*.
-
-2.  Give your project a name, select the `Maven` build type, and choose the
-    project template (archetype) to use.
-
-    ![Figure 2: The New Liferay Module Project wizard lets you generate a Maven project.](../../../images/create-maven-ide-project.png)
-
-3.  (Optional) Click *Next* and name your component class name and package. You
-    can also specify your component class's properties in the Properties menu.
-
-4.  Click *Finish*.
-
-That's it! You've created a Liferay module project using Maven!
-
-If you created your Maven project outside of Dev Studio with another tool, you
-can still manage that project in Dev Studio, but you must first import it.
-You'll learn how to do this next.
 
 ## Importing Maven Projects [](id=importing-maven-projects)
 
@@ -100,13 +76,13 @@ outlined below:
 1.  Navigate to *File* &rarr; *Import* &rarr; *Maven* &rarr; *Existing Maven
     Projects* and click *Next*.
 
-    ![Figure 3: Dev Studio offers the Maven folder in the Import wizard.](../../../images/import-maven-project.png)
+    ![Figure 2: Dev Studio offers the Maven folder in the Import wizard.](../../../images/import-maven-project.png)
 
 2.  Click *Browse...* and select the root folder for your Maven project. Once
     you've selected it, the `pom.xml` for that project should be visible in the
     Projects menu.
 
-    ![Figure 4: Use the Import Maven Projects wizard to import your pre-existing project.](../../../images/select-maven-import.png)
+    ![Figure 3: Use the Import Maven Projects wizard to import your pre-existing project.](../../../images/select-maven-import.png)
 
 3.  Click *Finish*.
 
@@ -136,7 +112,7 @@ the power of Maven in your project:
 
 The figure below shows the `pom.xml` file editor and its modes.
 
-![Figure 5: Liferay Dev Studio provides five interactive modes to help you edit and organize your POM..](../../../images/pom-editor-features.png)
+![Figure 4: Liferay Dev Studio provides five interactive modes to help you edit and organize your POM..](../../../images/pom-editor-features.png)
 
 By taking advantage of these interactive modes, Dev Studio makes modifying and
 organizing your POM and its dependencies a snap! 

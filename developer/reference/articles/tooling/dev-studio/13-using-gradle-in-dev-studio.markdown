@@ -16,6 +16,12 @@ Studio.
 - [Importing Pure Gradle Projects](#importing-pure-gradle-projects)
 - [Gradle Tasks and Executions](#gradle-tasks-and-executions)
 
+Note that
+[creating Liferay Gradle projects](/developer/reference/-/knowledge_base/7-2/creating-a-project#liferay-dev-studio)
+and
+[deploying Gradle projects](/developer/reference/-/knowledge_base/7-2/deploying-a-project#liferay-dev-studio)
+with Dev Studio are covered in their respective articles.
+
 The first thing you'll learn about in this tutorial is creating Gradle projects
 in Dev Studio.
 
