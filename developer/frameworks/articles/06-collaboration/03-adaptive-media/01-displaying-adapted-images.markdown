@@ -6,16 +6,16 @@ header-id: displaying-adapted-images-in-your-app
 
 Follow these steps to display adapted images in your app with the Adaptive Media 
 [taglib](https://github.com/liferay/com-liferay-adaptive-media/tree/master/adaptive-media-image-taglib). 
-For more information on this taglib, see the 
-[Adaptive Media introduction](liferay.com). 
+For more information, see 
+[The Adaptive Media Taglib](/develop/tutorials/-/knowledge_base/7-2/adaptive-media#the-adaptive-media-taglib). 
 
-1.  Include the module taglib dependency in your project. If you're using 
-    Gradle, for example, you must add the following line in your project's 
-    `build.gradle` file: 
+1.  Include the taglib dependency in your project. For example, if you're using 
+    Gradle you must add the following line in your project's `build.gradle` 
+    file: 
 
         provided group: "com.liferay", name: "com.liferay.adaptive.media.image.taglib", version: "1.0.0"
 
-2.  Declare the taglib in your JSP:
+2.  Declare the taglib in your JSP: 
 
         <%@ taglib uri="http://liferay.com/tld/adaptive-media-image" prefix="liferay-adaptive-media" %>
 
@@ -26,10 +26,7 @@ For more information on this taglib, see the
 
     For example, this `view.jsp` uses the taglib to display the adapted images 
     in a grid with the `col-md-6` 
-    [column container class](/develop/tutorials/-/knowledge_base/7-1/creating-layout-templates-manually). 
-    Looking at the markup the app generates, you can see that it uses the 
-    `<picture>` tag as described in the article 
-    [Creating Content with Adapted Images](/discover/portal/-/knowledge_base/7-1/creating-content-with-adapted-images). 
+    [column container class](/develop/tutorials/-/knowledge_base/7-2/creating-layout-templates-manually): 
 
         <%@ include file="/init.jsp" %>
 
@@ -65,4 +62,16 @@ For more information on this taglib, see the
 
         </div>
 
+    Looking at the generated markup, you can see that it uses the `<picture>` 
+    tag as described in 
+    [Creating Content with Adapted Images](/discover/portal/-/knowledge_base/7-2/creating-content-with-adapted-images). 
+
     ![Figure 1: The Adaptive Media Samples app shows all the site's adapted images.](../../../images/adaptive-media-sample.png)
+
+## Related Topics
+
+[Adaptive Media](/develop/tutorials/-/knowledge_base/7-2/adaptive-media)
+
+[Finding Adapted Images](/develop/tutorials/-/knowledge_base/7-2/finding-adapted-images)
+
+[Creating an Image Scaler](/develop/tutorials/-/knowledge_base/7-2/creating-an-image-scaler)

@@ -8,7 +8,7 @@ Adaptive Media scales images to match the image resolutions defined by the
 @product@ administrator. The default scaling is usually suitable, but you can 
 customize it by creating an image scaler. The steps here show you how. For 
 detailed information on these steps, see 
-[Understanding Image Scaling in Adaptive Media](liferay.com). 
+[Image Scaling in Adaptive Media](/develop/tutorials/-/knowledge_base/7-2/adaptive-media#image-scaling-in-adaptive-media). 
 
 Follow these steps to create a custom image scaler. The example scaler in these 
 steps customizes the scaling of PNG images: 
@@ -32,8 +32,8 @@ steps customizes the scaling of PNG images:
 
     $$$
 
-    For example, this sample image scaler scales PNG and x-PNG images, and has a 
-    service ranking of `100`: 
+    This example image scaler scales PNG and x-PNG images and has a service 
+    ranking of `100`: 
 
         @Component(
             immediate = true,
@@ -49,8 +49,8 @@ steps customizes the scaling of PNG images:
 
 2.  Implement the `isEnabled()` method to return `true` when you want to enable 
     the scaler. In many cases, you always want the scaler enabled, so you can 
-    simply return `true` in this method. This is the case with the example 
-    `SampleAMPNGImageScaler`: 
+    simply return `true` in this method. This is the case with the image scaler 
+    in this example: 
 
         @Override
         public boolean isEnabled() {
@@ -68,13 +68,13 @@ steps customizes the scaling of PNG images:
         }
 
 3.  Implement the `scaleImage` method. This method contains the scaler's 
-    business logic, and must return an `AMImageScaledImage` instance. For 
-    example, the example `scaleImage` implementation in `SampleAMPNGImageScaler` 
-    uses `AMImageConfigurationEntry` to get the maximum height and width values 
-    for the scaled image, and `FileVersion` to get the image to scale. The 
-    scaling is done with the help of a private inner class, assuming that the 
-    methods `_scalePNG`, `_getScalePNGHeight`, `_getScalePNGWidth`, and 
-    `_getScalePNGSize` implement the actual scaling: 
+    business logic and must return an `AMImageScaledImage` instance. For 
+    example, the `scaleImage` implementation in this example uses 
+    `AMImageConfigurationEntry` to get the maximum height and width values for 
+    the scaled image, and `FileVersion` to get the image to scale. The scaling 
+    is done via a private inner class, assuming that the methods `_scalePNG`, 
+    `_getScalePNGHeight`, `_getScalePNGWidth`, and `_getScalePNGSize` implement 
+    the actual scaling: 
 
         @Override
         public AMImageScaledImage scaleImage(FileVersion fileVersion,
@@ -148,3 +148,11 @@ steps customizes the scaling of PNG images:
         import com.liferay.portal.kernel.util.GetterUtil;
         import java.io.InputStream;
         import java.util.Map;
+
+## Related Topics
+
+[Adaptive Media](/develop/tutorials/-/knowledge_base/7-2/adaptive-media)
+
+[Displaying Adapted Images in Your App](/develop/tutorials/-/knowledge_base/7-2/displaying-adapted-images-in-your-app)
+
+[Finding Adapted Images](/develop/tutorials/-/knowledge_base/7-2/finding-adapted-images)

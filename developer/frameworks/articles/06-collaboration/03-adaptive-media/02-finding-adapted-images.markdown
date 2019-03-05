@@ -5,11 +5,18 @@ header-id: finding-adapted-images
 # Finding Adapted Images
 
 If you need more control than the 
-[Adaptive Media taglib](liferay.com) 
+[Adaptive Media taglib](/develop/tutorials/-/knowledge_base/7-2/displaying-adapted-images-in-your-app) 
 offers for finding adapted images to display in your app, you can query Adaptive 
-Media's finder API directly. The steps here show you how. For detailed 
-information on these steps, see the 
-[Adaptive Media introduction](liferay.com). 
+Media's finder API directly. The steps here show you how for these scenarios: 
+
+-   [Getting Adapted Images for File Versions](#getting-adapted-images-for-file-versions)
+-   [Getting the Adapted Images for a Specific Image Resolution](#getting-the-adapted-images-for-a-specific-image-resolution)
+-   [Getting Adapted Images in a Specific Order](#getting-adapted-images-in-a-specific-order)
+-   [Using Approximate Attributes](#using-approximate-attributes)
+-   [Using the Adaptive Media Stream](#using-the-adaptive-media-stream)
+
+For background information on these topics, see 
+[Adaptive Media's Finder API](/develop/tutorials/-/knowledge_base/7-2/adaptive-media#adaptive-medias-finder-api). 
 
 ## Getting Adapted Images for File Versions
 
@@ -23,9 +30,10 @@ calls here only return adapted images for
         private AMImageFinder _amImageFinder;
 
 2.  To get adapted images for a specific file version, call the 
-    [`AMImageQueryBuilder`] method `forFileVersion` with a 
-    [`FileVersion` object](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/repository/model/FileVersion.html) 
-    as an argument: 
+    [`AMImageQueryBuilder`](@app-ref@/adaptive-media/latest/javadocs/com/liferay/adaptive/media/image/finder/AMImageQueryBuilder.html) 
+    method `forFileVersion` with a 
+    [`FileVersion`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/repository/model/FileVersion.html) 
+    object as an argument: 
 
         Stream<AdaptiveMedia<AMImageProcessor>> adaptiveMediaStream =
             _amImageFinder.getAdaptiveMediaStream(
@@ -33,7 +41,8 @@ calls here only return adapted images for
 
 3.  To get the adapted images for the latest approved file version, use the 
     `forFileEntry` method with a 
-    [`FileEntry` object](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/repository/model/FileEntry.html): 
+    [`FileEntry`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/repository/model/FileEntry.html) 
+    object: 
 
         Stream<AdaptiveMedia<AMImageProcessor>> adaptiveMediaStream =
             _amImageFinder.getAdaptiveMediaStream(
@@ -93,11 +102,11 @@ adapted images. Follow these steps to do so:
     specifies the image attribute to sort by (e.g., width/height), while the 
     second specifies the sort order (e.g., ascending/descending). The Adaptive 
     Media API provides 
-    [constants](liferay.com) 
+    [constants](/develop/tutorials/-/knowledge_base/7-2/adaptive-media#adaptive-media-api-constants) 
     that you can use for these arguments. 
 
     For example, this code gets all the adapted images regardless of whether the 
-    image resolution is enabled, and puts them in ascending order by the image 
+    image resolution is enabled, and puts them in ascending order by image 
     width: 
 
         Stream<AdaptiveMedia<AMImageProcessor>> adaptiveMediaStream =
@@ -109,7 +118,7 @@ adapted images. Follow these steps to do so:
 
 ## Using Approximate Attributes
 
-Adaptive Media also lets you get adapted images that match approximate attribute 
+You can use the API to get adapted images that match approximate attribute 
 values. Follow these steps to do so: 
 
 1.  Get an `AMImageFinder` reference: 
@@ -118,7 +127,7 @@ values. Follow these steps to do so:
         private AMImageFinder _amImageFinder;
 
 2.  Call the `with` method with your search criteria just before calling the 
-    `done()` method. The `with` method takes two arguments: the image attribute, 
+    `done()` method. The `with` method takes two arguments: the image attribute 
     and that attribute's approximate value. For example, this code gets adapted 
     images whose height is approximately 400px: 
 
@@ -129,7 +138,8 @@ values. Follow these steps to do so:
 
 ## Using the Adaptive Media Stream
 
-Once you have the 
+The Adaptive Media stream flows like a babbling brook through the sands of time. 
+Just kidding; it's not like that at all. Once you have the 
 [`AdaptiveMedia`](@app-ref@/adaptive-media/latest/javadocs/com/liferay/adaptive/media/AdaptiveMedia.html) 
 stream, you can get the information you need from it. For example, this code 
 prints the URI for each adapted image: 
@@ -151,3 +161,11 @@ Here are a few examples:
 
     // Get the image height
     adaptiveMedia.getValueOptional(AMImageAttribute.AM_IMAGE_ATTRIBUTE_HEIGHT)
+
+## Related Topics
+
+[Adaptive Media](/develop/tutorials/-/knowledge_base/7-2/adaptive-media)
+
+[Displaying Adapted Images in Your App](/develop/tutorials/-/knowledge_base/7-2/displaying-adapted-images-in-your-app)
+
+[Creating an Image Scaler](/develop/tutorials/-/knowledge_base/7-2/creating-an-image-scaler)
