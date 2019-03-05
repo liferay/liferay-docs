@@ -1,3 +1,7 @@
+---
+header-id: updating-liferay-dev-studio
+---
+
 # Updating Liferay Dev Studio
 
 If you're already using Liferay Dev Studio but need to update your environment,

@@ -1,3 +1,7 @@
+---
+header-id: installing-liferay-dev-studio
+---
+
 # Installing Liferay Dev Studio
 
 Liferay Dev Studio is a plugin for Eclipse that brings many Liferay-specific

@@ -1,3 +1,7 @@
+---
+header-id: installing-a-liferay-server-in-dev-studio
+---
+
 # Installing a Liferay Server in Dev Studio
 
 Installing a Liferay server in Dev Studio lets you manage it and its deployed

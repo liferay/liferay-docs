@@ -1,3 +1,7 @@
+---
+header-id: gradle-in-dev-studio
+---
+
 # Gradle in Dev Studio
 
 [Gradle](http://gradle.org/) is a popular open source build automation system.

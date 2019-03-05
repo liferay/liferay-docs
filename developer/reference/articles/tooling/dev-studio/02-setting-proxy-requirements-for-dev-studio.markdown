@@ -1,3 +1,7 @@
+---
+header-id: setting-proxy-requirements-for-dev-studio
+---
+
 # Setting Proxy Requirements for Dev Studio
 
 If you have proxy server requirements and want to configure your http(s) proxy		

@@ -1,3 +1,7 @@
+---
+header-id: using-the-gogo-shell-in-dev-studio
+---
+
 # Using the Gogo Shell in Dev Studio
 
 If you're using Dev Studio to develop and deploy your projects, you may be

@@ -1,3 +1,7 @@
+---
+header-id: debugging-product-source-in-dev-studio
+---
+
 # Debugging @product@ Source in Dev Studio
 
 You can use Liferay Dev Studio to debug @product@ source code to help resolve

@@ -1,3 +1,7 @@
+---
+header-id: maven-in-dev-studio
+---
+
 # Maven in Dev Studio
 
 You can take full advantage of [Maven](https://maven.apache.org/) in Liferay Dev
