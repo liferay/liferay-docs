@@ -15,7 +15,7 @@ Listed those which are relevant for developers.
 
 API (FQCN) | Provided by Artifact | Notes |
 -----------|:--------------------:|:--------:|
-`com.liferay.portal.search.aggregation.*` | com.liferay.portal.search.api | The whole ["aggregation" package|https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/aggregation] is new as of @product_ver@
+`com.liferay.portal.search.aggregation.*` | com.liferay.portal.search.api | The whole ["aggregation" package](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/aggregation) is new as of @product_ver@
 
 Aggregations take a search query and provide aggregated data based on it.
 Aggregations can be composed to provide complex data summaries.
