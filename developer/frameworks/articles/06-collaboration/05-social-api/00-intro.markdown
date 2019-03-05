@@ -21,7 +21,7 @@ component. This tag contains these attributes:
 
 `className`: The entity's class name. 
 
-`classPK`: The entity's Java class primary key. 
+`classPK`: The entity's primary key. 
 
 `displayStyle`: The social bookmarks' display style. Possible values are 
 `inline`, which displays them in a row, and `menu`, which hides them in a menu. 
@@ -37,8 +37,8 @@ omit this attribute or use `<%= null %>` for its value.
 `url`: A URL to the portal content being shared. The `PortalUtil` method 
 `getCanonicalURL` is often called to populate this attribute. This method 
 constructs an SEO-friendly URL from the page's full URL. For more information, 
-see the 
-[method's Javadoc](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/PortalUtil.html#getCanonicalURL-java.lang.String-com.liferay.portal.kernel.theme.ThemeDisplay-com.liferay.portal.kernel.model.Layout-). 
+see the method's
+[Javadoc](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/PortalUtil.html#getCanonicalURL-java.lang.String-com.liferay.portal.kernel.theme.ThemeDisplay-com.liferay.portal.kernel.model.Layout-). 
 
 For instructions on using this tag, see 
 [Applying Social Bookmarks](/develop/tutorials/-/knowledge_base/7-2/applying-social-bookmarks). 
@@ -51,7 +51,7 @@ For instructions on creating your own social bookmarks, see
 
 ## Ratings
 
-[The asset framework](/develop/tutorials/-/knowledge_base/7-1/asset-framework) 
+[The asset framework](/develop/tutorials/-/knowledge_base/7-2/asset-framework) 
 supports a content rating system. This feature appears in many of @product@'s 
 built-in apps. For example, users can rate articles published in the Blogs app. 
 There are three different rating types: 
@@ -67,13 +67,9 @@ instructions on this, see
 
 ### Rating Type Selection
 
-Prior to 7.0, there was no way for portal or site administrators to select a 
-rating type---it was hard-coded in each app. In 7.0 and later, admins can select 
-the rating type for an app's entities via the Control Panel and Site 
-Administration: 
-
--   **Portal admins:** can set the default rating type for the portal
--   **Site admins:** can override the default rating type for their site
+Admins can select the rating type for an app's entities via the Control Panel 
+and Site Administration. Portal admins can set the default rating type for the 
+portal, while Site admins can override the default rating type for their Site. 
 
 A ratings-enabled app must define its rating type in an OSGi component that 
 implements the `PortletRatingsDefinition` interface. This class declares the 
@@ -83,22 +79,21 @@ methods that you must implement:
 
 `getDefaultRatingsType`: Returns the entity's default rating type, which portal 
 and site admins can override. You can do this via the 
-[`RatingsType`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/ratings/kernel/RatingsType.html) 
-enum, which lets you use `LIKE`, `STARS`, or `THUMBS` to set the rating type.
+[`RatingsType`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/ratings/kernel/RatingsType.html) 
+enum, which contains `LIKE`, `STARS`, or `THUMBS`. 
 
 `getPortletId`: Returns the portlet ID of the main portlet that uses the entity. 
 You can do this via the 
-[`PortletKeys`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/PortletKeys.html) 
+[`PortletKeys`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/PortletKeys.html) 
 enum, which defines many constants that correspond to the portlet IDs of the 
 built-in portlets. 
 
-To add support for rating type selection in your app, see 
+To add support for rating type selection in your app, follow the instructions in 
 [Implementing Rating Type Selection](/develop/tutorials/-/knowledge_base/7-2/implementing-rating-type-selection). 
-Once you've implemented rating type selection, you can configure the default 
-rating type via the Control Panel at *Configuration* &rarr; *Instance Settings* 
-&rarr; *Social*. To override the default values for a site, go to Site 
-Administration (your Site's menu) &rarr; *Configuration* &rarr; *Site Settings* 
-&rarr; *Social*. 
+Once you've done so, you can configure the default rating type via the Control 
+Panel at *Configuration* &rarr; *Instance Settings* &rarr; *Social*. To override 
+the default values for a site, go to Site Administration (your Site's menu) 
+&rarr; *Configuration* &rarr; *Site Settings* &rarr; *Social*. 
 
 ### Rating Value Transformation
 
@@ -109,21 +104,21 @@ default transformations between rating types:
 
 1.  When changing from stars to: 
 
-    - **Like:** A value of 3, 4, or 5 stars is considered a like; a value of 1 
+    **Like:** A value of 3, 4, or 5 stars is considered a like; a value of 1 
     or 2 stars is omitted. 
-    - **Thumbs up/down:** A value of 3, 4, or 5 stars is considered a thumbs up; 
+    **Thumbs up/down:** A value of 3, 4, or 5 stars is considered a thumbs up; 
     a value of 1 or 2 stars is considered a thumbs down.
 
 2.  When changing from thumbs up/down to: 
 
-    - **Like:** A like is considered a thumbs up.
-    - **Stars:** A thumbs down is considered 1 star; a thumbs up is considered 5 
+    **Like:** A like is considered a thumbs up.
+    **Stars:** A thumbs down is considered 1 star; a thumbs up is considered 5 
     stars. 
 
 3.  When changing from like to: 
 
-    - **Stars:** A like is considered 5 stars.
-    - **Thumbs up/down:** A like is considered a thumbs up.
+    **Stars:** A like is considered 5 stars.
+    **Thumbs up/down:** A like is considered a thumbs up.
 
 There may be some cases, however, where you want to apply different criteria to 
 determine the new rating values. A mechanism exists that permits this, but it 
@@ -131,14 +126,10 @@ modifies the stored rating values. To define such transformations, create an
 OSGi component that implements 
 [`RatingsDataTransformer`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/ratings/kernel/transformer/RatingsDataTransformer.html). 
 
-+$$$
-
-**Note:** The portal doesn't provide a default `RatingsDataTransformer` 
-implementation. Unless you provide such an implementation, the stored rating 
-values always remain the same while the portal interprets existing values for 
-the selected rating type. 
-
-$$$
+| **Note:** The portal doesn't provide a default `RatingsDataTransformer` 
+| implementation. Unless you provide such an implementation, the stored rating 
+| values always remain the same while the portal interprets existing values for 
+| the selected rating type. 
 
 When implementing `RatingsDataTransformer`, implement the `transformRatingsData` 
 method to transform the data. This method's arguments include the `RatingsType` 
@@ -150,4 +141,4 @@ transformation's logic. You can write this logic by implementing the interface
 transformation's logic. 
 
 For instructions on implementing `RatingsDataTransformer`, see 
-[Customizing Rating Value Transformation](liferay.com). 
+[Customizing Rating Value Transformation](/develop/tutorials/-/knowledge_base/7-2/customizing-rating-value-transformation). 
