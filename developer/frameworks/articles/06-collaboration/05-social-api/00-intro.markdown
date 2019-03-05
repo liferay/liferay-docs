@@ -106,19 +106,22 @@ default transformations between rating types:
 
     **Like:** A value of 3, 4, or 5 stars is considered a like; a value of 1 
     or 2 stars is omitted. 
+
     **Thumbs up/down:** A value of 3, 4, or 5 stars is considered a thumbs up; 
     a value of 1 or 2 stars is considered a thumbs down.
 
 2.  When changing from thumbs up/down to: 
 
-    **Like:** A like is considered a thumbs up.
+    **Like:** A like is considered a thumbs up. 
+
     **Stars:** A thumbs down is considered 1 star; a thumbs up is considered 5 
     stars. 
 
 3.  When changing from like to: 
 
-    **Stars:** A like is considered 5 stars.
-    **Thumbs up/down:** A like is considered a thumbs up.
+    **Stars:** A like is considered 5 stars. 
+
+    **Thumbs up/down:** A like is considered a thumbs up. 
 
 There may be some cases, however, where you want to apply different criteria to 
 determine the new rating values. A mechanism exists that permits this, but it 
