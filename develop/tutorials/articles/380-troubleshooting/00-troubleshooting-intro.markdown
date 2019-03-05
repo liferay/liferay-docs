@@ -80,6 +80,14 @@ Click a question to view the answer.
 
 <br/>
 <div class="ldn-faq-question">
+  <span class="ldn-faq-toggle-button" data-show="false" style="font-weight: normal;">Why doesn't the package I use from the fragment host resolve?&nbsp;<span class="icon-caret-right" style="pointer-events:none;"></span></span>
+  <div class="hide">  
+    <p><a href="/develop/tutorials/-/knowledge_base/7-1/why-is-a-package-i-use-from-the-fragment-host-unresolved">Refrain from importing (<code>Import-Package: ...</code>) host packages that the host doesn't export</a>. </p>
+  </div>
+</div>
+
+<br/>
+<div class="ldn-faq-question">
   <span class="ldn-faq-toggle-button" data-show="false" style="font-weight: normal;">The application server and database started, but @product@ failed to connect to the database. What happened and how can I fix this?&nbsp;<span class="icon-caret-right" style="pointer-events:none;"></span></span>
   <div class="hide">  
     <p>@product@ initialization can fail while attempting to connect to a database server that isn't ready. <a href="/develop/tutorials/-/knowledge_base/7-1/portal-failed-to-initialize-because-the-database-wasnt-ready">Configuring startup to retry JDBC connections</a> facilitates connecting @product@ to databases. </p>
