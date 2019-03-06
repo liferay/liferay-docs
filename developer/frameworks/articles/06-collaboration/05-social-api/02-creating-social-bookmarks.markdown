@@ -5,9 +5,11 @@ header-id: creating-social-bookmarks
 # Creating Social Bookmarks
 
 By default, @product@ contains social bookmarks for Twitter, Facebook, and 
-LinkedIn. You can also create your own social bookmark by registering a
-component that implements the `SocialBookmark` interface from the module
-`com.liferay.social.bookmarks.api`. 
+LinkedIn. You can also create your own social bookmark by registering a 
+component that implements the 
+[`SocialBookmark`](@app-ref@/social/latest/javadocs/com/liferay/social/bookmarks/SocialBookmark.html) 
+interface from the module 
+`com.liferay.social.bookmarks.api`. The steps here show you how to do this. 
 
 ## Implementing the SocialBookmark Interface
 
@@ -33,7 +35,7 @@ Follow these steps to implement the `SocialBookmark` interface:
         private ResourceBundleLoader _resourceBundleLoader;
 
 3.  Implement the `getName` method to return the social bookmark's name as a 
-    `String`. This method takes a 
+    string. This method takes a 
     [`Locale`](https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html) 
     object that you can use for localization via 
     [`LanguageUtil`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/language/LanguageUtil.html) 
@@ -66,11 +68,10 @@ Follow these steps to implement the `SocialBookmark` interface:
         )
         private ServletContext _servletContext;
 
-6.  Implement the `render` method, which is called when the inline
-    display style is selected. Typically, this method renders a link to the
-    share URL (e.g., a share button), but you can use it for whatever you need. 
-    To keep a consistent look and feel with the default social bookmarks, you
-    can use a 
+6.  Implement the `render` method, which is called when the inline display style 
+    is selected. Typically, this method renders a link to the share URL (e.g., a 
+    share button), but you can use it for whatever you need. To keep a 
+    consistent look and feel with the default social bookmarks, you can use a 
     [Clay icon](/develop/tutorials/-/knowledge_base/7-2/clay-icons). 
 
     This example gets a `RequestDispatcher` for the JSP that contains a Clay 
@@ -87,8 +88,6 @@ Follow these steps to implement the `SocialBookmark` interface:
 
                 requestDispatcher.include(request, response);
         }
-
-Next, you'll see an example of how to create a `page.jsp` file.
 
 ## Creating Your JSP
 
@@ -118,37 +117,40 @@ these steps to create a JSP for your own social bookmark:
         String url = GetterUtil.getString((String)request.getAttribute("liferay-social-bookmarks:bookmark:url"));
         %>
 
-    The title and URL are set via the `liferay-social-bookmarks` tag library 
-    when 
+    The title and URL are set via the `liferay-social-bookmarks` taglib when 
     [applying the social bookmark](/develop/tutorials/-/knowledge_base/7-2/applying-social-bookmarks). 
 
-4.  Add the Clay link. See the 
-    [`clay:link` documentation](https://clayui.com/docs/components/link.html) 
+4.  Add the Clay link. See the `clay:link` 
+    [documentation](https://clayui.com/docs/components/link.html) 
     for a full description of its attributes. 
+
+        <clay:link
+                buttonStyle="secondary"
+                elementClasses="btn-outline-borderless btn-sm lfr-portal-tooltip"
+                href="<%= socialBookmark.getPostURL(title, url) %>"
+                icon="twitter"
+                title="<%= socialBookmark.getName(locale) %>"
+        />
 
     This example sets the following `clay:link` attributes: 
 
-    -   `buttonStyle`: This example renders 
-        [The button's type](/develop/tutorials/-/knowledge_base/7-1/clay-buttons#types)
-        as a secondary button.
-    -   `elementClasses`: The custom CSS to use for styling the button (optional).
-    -   `href`: The button's URL. You should specify this by calling your 
-        `SocialBookmark` instance's `getPostURL` method. 
-    -   `icon`: The button's icon. This example specifies the Twitter icon 
-        included in Clay (`twitter`). 
-    -   `title`: The button's title. This example uses the `SocialBookmark` 
-        instance's `getName` method. 
+    `buttonStyle`: This example renders the button's 
+    [type](/develop/tutorials/-/knowledge_base/7-2/clay-buttons#types) 
+    as a secondary button. 
 
-            <clay:link
-                    buttonStyle="secondary"
-                    elementClasses="btn-outline-borderless btn-sm lfr-portal-tooltip"
-                    href="<%= socialBookmark.getPostURL(title, url) %>"
-                    icon="twitter"
-                    title="<%= socialBookmark.getName(locale) %>"
-            />
+    `elementClasses`: The custom CSS to use for styling the button (optional). 
+
+    `href`: The button's URL. You should specify this by calling your 
+    `SocialBookmark` instance's `getPostURL` method. 
+
+    `icon`: The button's icon. This example specifies the Twitter icon included 
+    in Clay (`twitter`). 
+
+    `title`: The button's title. This example uses the `SocialBookmark` 
+    instance's `getName` method. 
 
 To see a complete, real-world example of a social bookmark implementation, see 
-[Liferay's Twitter social bookmark code](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/social/social-bookmark-twitter). 
+[Liferay's Twitter social bookmark code](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/social/social-bookmark-twitter). 
 
 ## Related Topics
 
