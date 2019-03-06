@@ -68,12 +68,6 @@ For example, the
 contributes the `GROUP_ID` and `SCOPE_GROUP_ID` fields for all documents with a
 backing entity that's also a `GroupedModel`.
 
-#### How to contribute Query clauses to every search, regardless of what base entity is being searched [](id=indexing-global-keyword-query-contributor)
-
-You can implement a `KeywordQueryContributor` as an OSGi _@Component_ and register without an `indexer.class.name` property.
-
-**Example:** `AlwaysPresentFieldsKeywordQueryContributor` ([link-to-source](https://github.com/liferay/liferay-portal/blob/7.1.0-ga1/modules/apps/portal-search/portal-search/src/main/java/com/liferay/portal/search/internal/contributor/query/AlwaysPresentFieldsKeywordQueryContributor.java))
-
 ### Searching [](id=searching)
 
 Searches start with a user entering keywords into a search bar. The entered
@@ -96,6 +90,12 @@ results are returned.
 control how search results are filtered before they're returned from the search
 engine. For example, adding the workflow status to the query ensures that an
 entity in the trash isn't returned in the search results. 
+
+#### How to contribute Query clauses to every search, regardless of what base entity is being searched [](id=indexing-global-keyword-query-contributor)
+
+You can implement a `KeywordQueryContributor` as an OSGi _@Component_ and register without an `indexer.class.name` property.
+
+**Example:** `AlwaysPresentFieldsKeywordQueryContributor` ([link-to-source](https://github.com/liferay/liferay-portal/blob/7.1.0-ga1/modules/apps/portal-search/portal-search/src/main/java/com/liferay/portal/search/internal/contributor/query/AlwaysPresentFieldsKeywordQueryContributor.java))
 
 ### Returning Results [](id=returning-results)
 
