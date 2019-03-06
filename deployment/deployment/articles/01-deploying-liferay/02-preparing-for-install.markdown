@@ -53,8 +53,8 @@ and customizations developed on JDK 8 run on JDK 8 or JDK 11 runtimes. This make
 
 ## JVM Requirements [](id=jvm-requirements)
 
-@product@ requires that the application server JVM use the GMT Timezone and UTF8
-file encoding. Include these JVM arguments to set the required values. 
+@product@ requires that the application server JVM use the GMT time zone and
+UTF-8 file encoding. Include these JVM arguments to set the required values. 
 
     -Dfile.encoding=UTF8 -Duser.timezone=GMT
 

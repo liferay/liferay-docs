@@ -149,13 +149,13 @@ Start with configuring Tomcat to run @product@.
 
     Unix: 
 
-        CATALINA_OPTS="$CATALINA_OPTS -Dfile.encoding=UTF8 -Djava.net.preferIPv4Stack=true -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx2048m -XX:MaxMetaspaceSize=512m"
+        CATALINA_OPTS="$CATALINA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx2048m -XX:MaxMetaspaceSize=512m"
 
     Windows:
 
-        set "CATALINA_OPTS=%CATALINA_OPTS% -Dfile.encoding=UTF8 -Djava.net.preferIPv4Stack=true -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx2048m -XX:MaxMetaspaceSize=512m"
+        set "CATALINA_OPTS=%CATALINA_OPTS% -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx2048m -XX:MaxMetaspaceSize=512m"
 
-    This sets the file encoding to UTF8, prefers an IPv4 stack over IPv6,
+    This sets the file encoding to UTF-8, prefers an IPv4 stack over IPv6,
     prevents Tomcat from working around garbage collection bugs relating to
     static or final fields (these bugs don't exist in @product@ and working
     around them causes problems with the logging system), sets the time zone to
@@ -164,7 +164,7 @@ Start with configuring Tomcat to run @product@.
     +$$$
     
     **Important:** @product@ requires that the application server JVM use the 
-    GMT Timezone and UTF8 file encoding. 
+    GMT time zone and UTF-8 file encoding. 
     
     $$$
 

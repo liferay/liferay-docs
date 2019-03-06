@@ -59,7 +59,7 @@ $$$
 +$$$
 
 **Important:** @product@ requires that the application server JVM use the GMT 
-Timezone and UTF8 file encoding. They're preset in your @product@ bundle. 
+time zone and UTF-8 file encoding. They're preset in your @product@ bundle. 
 
 $$$
 
