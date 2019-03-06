@@ -68,6 +68,12 @@ For example, the
 contributes the `GROUP_ID` and `SCOPE_GROUP_ID` fields for all documents with a
 backing entity that's also a `GroupedModel`.
 
+#### How to contribute fields to every index Document, regardless of what base entity is being indexed [](id=indexing-global-document-field-contributor)
+
+You can implement a `DocumentContributor` as an OSGi _@Component_ and register it without an `indexer.class.name` property.
+
+**Example:** `GroupedModelDocumentContributor` ([link-to-source](https://github.com/liferay/liferay-portal/blob/7.1.0-ga1/modules/apps/portal-search/portal-search/src/main/java/com/liferay/portal/search/internal/contributor/document/GroupedModelDocumentContributor.java))
+
 ### Searching [](id=searching)
 
 Searches start with a user entering keywords into a search bar. The entered
@@ -91,11 +97,21 @@ control how search results are filtered before they're returned from the search
 engine. For example, adding the workflow status to the query ensures that an
 entity in the trash isn't returned in the search results. 
 
-#### How to contribute Query clauses to every search, regardless of what base entity is being searched [](id=indexing-global-keyword-query-contributor)
+#### How to contribute Query clauses to every search, regardless of what base entity is being searched [](id=searching-global-keyword-query-contributor)
 
 You can implement a `KeywordQueryContributor` as an OSGi _@Component_ and register without an `indexer.class.name` property.
 
 **Example:** `AlwaysPresentFieldsKeywordQueryContributor` ([link-to-source](https://github.com/liferay/liferay-portal/blob/7.1.0-ga1/modules/apps/portal-search/portal-search/src/main/java/com/liferay/portal/search/internal/contributor/query/AlwaysPresentFieldsKeywordQueryContributor.java))
+
+#### How to contribute Filter clauses to every search, regardless of what base entity is being searched [](id=searching-global-query-pre-filter-contributor)
+
+You can implement a `QueryPreFilterContributor` as an OSGi _@Component_. QueryPreFilterContributor is constructed only once under the root filter during a search.
+
+**Example:** `AssetCategoryTitlesKeywordQueryContributor` ([link-to-source](https://github.com/liferay/liferay-portal/blob/7.1.0-ga1/modules/apps/portal-search/portal-search/src/main/java/com/liferay/portal/search/internal/contributor/query/AssetCategoryTitlesKeywordQueryContributor.java))
+
+#### What's the difference between QueryPreFilterContributor and ModelPreFilterContributor [](id=searching-difference-between-QueryPreFilterContributor-and-ModelPreFilterContributor)
+
+QueryPreFilterContributor is constructed only once under the root filter during a search, while ModelPreFilterContributor filter is constructed once per entity, and added under each specific entity’s subfilter.
 
 ### Returning Results [](id=returning-results)
 
