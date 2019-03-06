@@ -21,11 +21,6 @@ import com.liferay.docs.guestbook.model.Guestbook;
 
 import com.liferay.portal.kernel.service.persistence.BasePersistence;
 
-import java.io.Serializable;
-
-import java.util.Map;
-import java.util.Set;
-
 /**
  * The persistence interface for the guestbook service.
  *
@@ -45,9 +40,6 @@ public interface GuestbookPersistence extends BasePersistence<Guestbook> {
 	 *
 	 * Never modify or reference this interface directly. Always use {@link GuestbookUtil} to access the guestbook persistence. Modify <code>service.xml</code> and rerun ServiceBuilder to regenerate this interface.
 	 */
-	@Override
-	public Map<Serializable, Guestbook> fetchByPrimaryKeys(
-		Set<Serializable> primaryKeys);
 
 	/**
 	* Returns all the guestbooks where uuid = &#63;.
@@ -957,6 +949,10 @@ public interface GuestbookPersistence extends BasePersistence<Guestbook> {
 	*/
 	public Guestbook fetchByPrimaryKey(long guestbookId);
 
+	@Override
+	public java.util.Map<java.io.Serializable, Guestbook> fetchByPrimaryKeys(
+		java.util.Set<java.io.Serializable> primaryKeys);
+
 	/**
 	* Returns all the guestbooks.
 	*
@@ -1022,5 +1018,5 @@ public interface GuestbookPersistence extends BasePersistence<Guestbook> {
 	public int countAll();
 
 	@Override
-	public Set<String> getBadColumnNames();
+	public java.util.Set<String> getBadColumnNames();
 }

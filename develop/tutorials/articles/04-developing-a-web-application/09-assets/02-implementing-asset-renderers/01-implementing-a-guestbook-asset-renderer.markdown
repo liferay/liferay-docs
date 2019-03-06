@@ -24,44 +24,56 @@ Follow these steps to create the `GuestbookAssetRenderer` class:
 
         }
  
-2.  Add the constructor and the guestbook class variable. Most of the methods in
-    this class are getters that return fields from this private guestbook
-    object: 
+2.  Add the constructor, the guestbook class variable, and the permissions 
+    model resource. Most of the methods in this class are getters that return 
+    fields from the private `_guestbook` object. Methods which require a 
+    permission check will use `_guestbookModelResourcePermission`: 
       
-        public GuestbookAssetRenderer(Guestbook guestbook) {
+        public GuestbookAssetRenderer(Guestbook guestbook, ModelResourcePermission<Guestbook> modelResourcePermission) {
 
                     _guestbook = guestbook;
+                    _guestbookModelResourcePermission = modelResourcePermission;
         }
         
-        private Guestbook _guestbook;   
+        private Guestbook _guestbook;
+        private final ModelResourcePermission<Guestbook> _guestbookModelResourcePermission;   
         private Logger logger = Logger.getLogger(this.getClass().getName());
  
 3.  The `BaseJSPAssetRenderer` abstract class that you're extending contains 
     dummy implementations of the `hasEditPermission` and `hasViewPermission`
     methods that you must override. Override these dummy implementations with 
-    actual permission checks using the `GuestbookPermission` class that you 
+    actual permission checks using the permissions resources that you 
     created earlier:
 
         @Override
         public boolean hasEditPermission(PermissionChecker permissionChecker) 
-        throws PortalException {
+        {
+        	try {
+        		return _guestbookModelResourcePermission.contains(
+        			permissionChecker, _guestbook, ActionKeys.UPDATE);
+        	}
+        	catch (Exception e) {
+        	}
 
-          long guestbookId = _guestbook.getGuestbookId();
-          return GuestbookPermission.contains(permissionChecker, guestbookId, 
-          ActionKeys.UPDATE);
+        	return false;
         }
 
         @Override
         public boolean hasViewPermission(PermissionChecker permissionChecker) 
-        throws PortalException {
+        {
+        	try {
+        		return _guestbookModelResourcePermission.contains(
+        			permissionChecker, _guestbook, ActionKeys.VIEW);
+        	}
+        	catch (Exception e) {
+        	}
 
-          long guestbookId = _guestbook.getGuestbookId();
-          return GuestbookPermission.contains(permissionChecker, guestbookId, 
-          ActionKeys.VIEW);
+        	return true;
         }
+        
 
-4.  Add the following getter methods to retrieve information about the guestbook 
-    asset: 
+4.  Add the following getter methods to retrieve information about the 
+    guestbook asset: 
             
         @Override
         public Guestbook getAssetObject() {
@@ -246,6 +258,8 @@ Follow these steps to create the `GuestbookAssetRendererFactory`:
           public static final String CLASS_NAME = Guestbook.class.getName();
           public static final String TYPE = "guestbook";
           private Logger logger = Logger.getLogger(this.getClass().getName());
+          private ModelResourcePermission<Guestbook>
+          _guestbookModelResourcePermission;
 
     This code contains the class declaration, the constructor, and the class
     variables. It sets the class name it creates an `AssetRenderer` for,
@@ -257,7 +271,7 @@ Follow these steps to create the `GuestbookAssetRendererFactory`:
     `GuestbookAssetRenderer` instances for particular guestbooks. It uses the 
     `classPK` (primary key) parameter to retrieve the guestbook from the 
     database. It then calls the `GuestbookAssetRenderer`'s constructor, passing 
-    the retrieved guestbook as an argument: 
+    the retrieved guestbook and permissions resource model as arguments: 
 
         @Override
         public AssetRenderer<Guestbook> getAssetRenderer(long classPK, int type) 
@@ -266,7 +280,7 @@ Follow these steps to create the `GuestbookAssetRendererFactory`:
           Guestbook guestbook = _guestbookLocalService.getGuestbook(classPK);
 
           GuestbookAssetRenderer guestbookAssetRenderer = 
-          new GuestbookAssetRenderer(guestbook);
+          new GuestbookAssetRenderer(guestbook, _guestbookModelResourcePermission);
 
           guestbookAssetRenderer.setAssetRendererType(type);
           guestbookAssetRenderer.setServletContext(_servletContext);
