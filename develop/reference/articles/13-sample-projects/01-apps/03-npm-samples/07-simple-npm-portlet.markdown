@@ -6,6 +6,18 @@ output.
 
 ![Figure 1: The portlet's status and actions are displayed as output.](../../../../images/simple-npm-sample.png)
 
++$$$
+
+**Note:** If you're deploying a portlet that requires the JS to be minified, 
+either through a dependency or your own project, the minifier fails on Liferay 
+DXP 7.0 de-69 and below. To resolve this, use 
+[Grunt](https://gruntjs.com/getting-started) 
+[uglify](https://www.npmjs.com/package/grunt-contrib-uglify) 
+to remove any code causing the issue, such as JSDoc comments. This process may 
+take a long time, depending on the number of files that require an update. 
+
+$$$
+
 **Important:** This sample works for Liferay DXP Fix Pack 44+ and Liferay Portal
 CE GA7+.
 

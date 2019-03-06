@@ -19,6 +19,18 @@ or
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
 
++$$$
+
+**Note:** If you're deploying a portlet that requires the JS to be minified, 
+either through a dependency or your own project, the minifier fails on Liferay 
+DXP 7.0 de-69 and below. To resolve this, use 
+[Grunt](https://gruntjs.com/getting-started) 
+[uglify](https://www.npmjs.com/package/grunt-contrib-uglify) 
+to remove any code causing the issue, such as JSDoc comments. This process may 
+take a long time, depending on the number of files that require an update. 
+
+$$$
+
 The template for this kind of project is `npm-vuejs-portlet`. Suppose you want
 to create an npm Vue.js portlet project called `my-npm-vuejs-portlet` with a
 package name of `com.liferay.npm.vuejs` and a class name of
