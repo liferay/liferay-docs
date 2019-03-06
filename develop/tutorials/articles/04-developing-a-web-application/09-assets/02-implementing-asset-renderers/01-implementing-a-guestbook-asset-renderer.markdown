@@ -171,8 +171,8 @@ Follow these steps to create the `GuestbookAssetRenderer` class:
             return portletURL;
           }
 
-7.  Override the `getURLViewInContext` method. This method returns a URL to view 
-    the asset in its native application: 
+7.  Override the `getURLViewInContext` method. This method returns a URL to 
+    view the asset in its native application: 
 
           @Override
           public String getURLViewInContext(LiferayPortletRequest liferayPortletRequest,
@@ -224,7 +224,8 @@ Follow these steps to create the `GuestbookAssetRenderer` class:
 
 10.  Organize imports (Ctrl-Shift-O) and save the file. Be sure to use 
      `com.liferay.petra.*` libraries when prompted, as they are now home
-     to libraries that have been deprecated in Liferay's kernel.
+     to libraries that have been deprecated in Liferay's kernel, and also 
+     `java.util.logging.Logger` and `java.util.logging.Level`.
  
 
 Next you can create the `AssetRendererFactory` class. 
@@ -361,7 +362,7 @@ Follow these steps to create the `GuestbookAssetRendererFactory`:
                 protected void setGuestbookLocalService(GuestbookLocalService guestbookLocalService) {
                     _guestbookLocalService = guestbookLocalService; 
             }
-
+        }
 
 5.  Organize imports (Ctrl-Shift-O). Select the `org.osgi` packages (not 
     `a.Qute`) when prompted and save the file. 

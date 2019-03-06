@@ -90,4 +90,10 @@ Replace its content with the following code:
 Test your JSP by using the Guestbook portlet to add and update Guestbook 
 entries. Add and remove tags, categories, and related assets. 
 
++$$$
+
+**Note:** Setting your custom asset as the *Main Asset* of a page, which is required to fully utilize certain aspects of the integration between the Guestbook and Liferay's built in widgets, is part of the process for configuring [Friendly URL](/develop/tutorials/-/knowledge_base/7-1/making-urls-friendlier) which will be added to the Guestbook later.
+
+$$$
+
 Well done! Next, you'll enable comments and ratings for guestbook entries. 
