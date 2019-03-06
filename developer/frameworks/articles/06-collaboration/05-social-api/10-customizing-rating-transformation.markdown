@@ -9,7 +9,7 @@ implements
 [`RatingsDataTransformer`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/ratings/kernel/transformer/RatingsDataTransformer.html). 
 The steps here show you how. For a detailed explanation of these steps and 
 rating value transformation, see 
-[Rating Value Transformation](liferay.com). 
+[Rating Value Transformation](/develop/tutorials/-/knowledge_base/7-2/social-api#rating-value-transformation). 
 
 1.  Create an OSGi component class that implements `RatingsDataTransformer`: 
 
@@ -53,14 +53,14 @@ rating value transformation, see
             }
         }
 
-    This example irreversibly transforms the rating type from like to stars, 
+    This example irreversibly transforms the rating type from likes to stars, 
     resetting the value to `0`. The `if` statement uses the `fromRatingsType` 
     and `toRatingsType` values to specify that the transformation only occurs 
     when going from likes to stars. The transformation is performed via 
     `RatingsEntry` and its `-LocalServiceUtil`. After getting a 
-    [`RatingsEntry`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/ratings/kernel/model/RatingsEntry.html) 
+    [`RatingsEntry`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/ratings/kernel/model/RatingsEntry.html) 
     object, its `setScore` method sets the rating score to `0`. The 
-    [`RatingsEntryLocalServiceUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/ratings/kernel/service/RatingsEntryLocalServiceUtil.html) 
+    [`RatingsEntryLocalServiceUtil`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/ratings/kernel/service/RatingsEntryLocalServiceUtil.html) 
     method `updateRatingsEntry` then updates the `RatingsEntry` in the database. 
 
 Here's the complete class for this example: 
@@ -96,8 +96,8 @@ Here's the complete class for this example:
 
 ## Related Topics
 
-[Rating Value Transformation](liferay.com)
+[Rating Value Transformation](/develop/tutorials/-/knowledge_base/7-2/social-api#rating-value-transformation)
 
-[Implementing Rating Type Selection](liferay.com)
+[Implementing Rating Type Selection](/develop/tutorials/-/knowledge_base/7-2/implementing-rating-type-selection)
 
 [Rating Assets](/develop/tutorials/-/knowledge_base/7-2/rating-assets)

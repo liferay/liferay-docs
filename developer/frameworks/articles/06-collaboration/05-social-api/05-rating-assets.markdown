@@ -3,17 +3,17 @@ header-id: rating-assets
 ---
 
 # Rating Assets
- 
+
 In only a few lines of code, you can use a taglib to enable ratings for your 
 app's content. The steps here show you how. For more information on this taglib 
 and ratings in general, see 
-[Ratings](liferay.com). 
+[Ratings](/develop/tutorials/-/knowledge_base/7-2/social-api#ratings). 
 
-![Figure 1: Ratings let users quickly provide feedback on content.](../../../images/social-ratings-thumbs.png)
+![Figure 1: Users can rate content to let others know how they really feel about it.](../../../images/social-ratings-thumbs.png)
 
-Follow these steps to enable ratings in your app. Note that these steps use the 
-Guestbook app as an example. As its name implies, this app lets users leave 
-simple messages in a guestbook. 
+Follow these steps to enable ratings in your app. Note that these steps use a 
+sample Guestbook app as an example. This app lets users leave simple messages in 
+a guestbook. 
 
 1.  Make sure your entity is 
     [asset enabled](/develop/tutorials/-/knowledge_base/7-2/asset-framework). 
@@ -27,9 +27,11 @@ simple messages in a guestbook.
 
         <%@ taglib prefix="liferay-ui" uri="http://liferay.com/tld/ui" %>
 
-4.  Use `ParamUtil` to get the entity's ID from the render request. Then create
-    an entity object using the `-LocalServiceUtil` class. Here's an example that 
-    does this for a guestbook entry in the example Guestbook app:
+4.  Use 
+    [`ParamUtil`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html) 
+    to get the entity's ID from the render request. Then create an entity object 
+    using the `-LocalServiceUtil` class. Here's an example that does this for a 
+    guestbook entry in the example Guestbook app: 
 
         <%
         long entryId = ParamUtil.getLong(renderRequest, "entryId");
@@ -44,8 +46,8 @@ simple messages in a guestbook.
 
 ## Related Topics
 
-[Ratings](liferay.com)
+[Ratings](/develop/tutorials/-/knowledge_base/7-2/social-api#ratings)
 
-[Implementing Rating Type Selection](liferay.com)
+[Implementing Rating Type Selection](/develop/tutorials/-/knowledge_base/7-2/implementing-rating-type-selection)
 
-[Customizing Rating Value Transformation](liferay.com)
+[Customizing Rating Value Transformation](/develop/tutorials/-/knowledge_base/7-2/customizing-rating-value-transformation)

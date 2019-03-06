@@ -72,10 +72,11 @@ and Site Administration. Portal admins can set the default rating type for the
 portal, while Site admins can override the default rating type for their Site. 
 
 A ratings-enabled app must define its rating type in an OSGi component that 
-implements the `PortletRatingsDefinition` interface. This class declares the 
-usage of ratings (specifying the portlet and the entity) and the default rating 
-type (that can be overridden by portal and site admins). This interface has two 
-methods that you must implement: 
+implements the 
+[`PortletRatingsDefinition`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/ratings/kernel/definition/PortletRatingsDefinition.html) 
+interface. This class declares the usage of ratings (specifying the portlet and 
+the entity) and the default rating type (that can be overridden by portal and 
+site admins). This interface has two methods that you must implement: 
 
 `getDefaultRatingsType`: Returns the entity's default rating type, which portal 
 and site admins can override. You can do this via the 
