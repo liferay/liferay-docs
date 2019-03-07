@@ -1,4 +1,8 @@
-# Item Selector [](id=item-selector)
+---
+header-id: item-selector
+---
+
+# Item Selector
 
 An *Item Selector* is a UI component for selecting entities in a user-friendly 
 manner. 
@@ -13,7 +17,7 @@ Here's what you'll learn to do with Item Selectors:
 
 ![Figure 1: Item Selectors select entities.](../../../images/item-selector-dialog-02.png)
 
-## Understanding the Item Selector API's Components [](id=understanding-the-item-selector-apis-components)
+## Understanding the Item Selector API's Components
 
 Before working with the Item Selector API, you should learn about its 
 components. You'll work with these components as you leverage the API in your 
@@ -76,7 +80,7 @@ is `ImageItemSelectorCriterionHandler` and extends
 
 ![Figure 2: Item Selector views (selection views) are determined by the return type and criterion, and rendered by the markup.](../../../images/item-selector-architecture.png)
 
-## Getting an Item Selector [](id=getting-an-item-selector)
+## Getting an Item Selector
 
 To use an Item Selector with your criteria, you must get that Item Selector's 
 URL. The URL is needed to open the Item Selector dialog in your UI. To get this 
@@ -107,7 +111,7 @@ Keep in mind the following when getting an Item Selector's URL:
 -   The return type order is also significant. A view uses the first return type 
     it supports from each criterion's return type list. 
 
-## Understanding Custom Selection Views [](id=understanding-custom-selection-views)
+## Understanding Custom Selection Views
 
 The default selection views may provide everything you need for your app. Custom 
 selection views are required, however, for certain situations. For example, you 
@@ -122,7 +126,7 @@ is a tab in the UI that corresponds to the image's location. An
 
 ![Figure 3: An entity type can have multiple selection views.](../../../images/item-selector-tabs.png)
 
-### The Selection View's Class [](id=the-selection-views-class)
+### The Selection View's Class
 
 The criterion and return types determine the selection view's class. This class 
 is an `ItemSelectorView` component class that implements 

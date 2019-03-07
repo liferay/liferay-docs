@@ -1,11 +1,15 @@
-# Selecting Entities with an Item Selector [](id=selecting-entities-with-an-item-selector)
+---
+header-id: selecting-entities-with-an-item-selector
+---
+
+# Selecting Entities with an Item Selector
 
 The steps here show you how to get and use an Item Selector to select entities 
 in your app. For an explanation of the Item Selector API and more information on 
 these steps, see the 
 [Item Selector introduction](/develop/tutorials/-/knowledge_base/7-2/item-selector). 
 
-## Get an Item Selector [](id=get-an-item-selector)
+## Get an Item Selector
 
 First, you must get an Item Selector for your use case. Follow these steps to do 
 so: 
@@ -70,7 +74,7 @@ so:
             requestBackedPortletURLFactory, "sampleTestSelectItem",
             imageItemSelectorCriterion);
 
-## Using the Item Selector Dialog [](id=using-the-item-selector-dialog)
+## Using the Item Selector Dialog
 
 To open the Item Selector in your UI, you must use the JavaScript component 
 `LiferayItemSelectorDialog` from 
@@ -219,7 +223,7 @@ Here's the complete example code for these steps:
         );
     </aui:script>
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Item Selector](/develop/tutorials/-/knowledge_base/7-2/item-selector)
 

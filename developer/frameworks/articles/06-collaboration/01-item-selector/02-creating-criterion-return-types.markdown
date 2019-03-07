@@ -1,4 +1,8 @@
-# Creating Custom Criterion and Return Types [](id=creating-custom-criterion-and-return-types)
+---
+header-id: creating-custom-criterion-and-return-types
+---
+
+# Creating Custom Criterion and Return Types
 
 If there's not a criterion or return type for your use case, you can create 
 them. The steps here show you how. For more detailed information on Item 
@@ -78,7 +82,7 @@ Selector criterion and return types, see the
 
         }
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Item Selector](/develop/tutorials/-/knowledge_base/7-2/item-selector)
 

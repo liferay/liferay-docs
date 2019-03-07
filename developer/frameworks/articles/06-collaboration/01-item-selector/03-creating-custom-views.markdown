@@ -1,11 +1,15 @@
-# Creating Custom Item Selector Views [](id=creating-custom-item-selector-views)
+---
+header-id: creating-custom-item-selector-views
+---
+
+# Creating Custom Item Selector Views
 
 You can create your own selection view if an Item Selector doesn't contain the 
 one you need. The steps here show you how. For more information on custom 
 selection views and the Item Selector API, see the 
 [Item Selector introduction](/develop/tutorials/-/knowledge_base/7-2/item-selector). 
 
-## Configuring Your Selection View's OSGi Module [](id=configuring-your-selection-views-osgi-module)
+## Configuring Your Selection View's OSGi Module
 
 First, you must configure your selection view's OSGi module: 
 
@@ -40,7 +44,7 @@ First, you must configure your selection view's OSGi module:
     resources are. The `Include-Resource` header points to the relative path for 
     the module's resources. 
 
-## Implementing Your Selection View's Class [](id=implementing-your-selection-views-class)
+## Implementing Your Selection View's Class
 
 Follow these steps to implement your selection view's class: 
 
@@ -183,7 +187,7 @@ Follow these steps to implement your selection view's class:
 For a real-world example of a view class, see 
 [`SiteNavigationMenuItemItemSelectorView`](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/site-navigation/site-navigation-item-selector-web/src/main/java/com/liferay/site/navigation/item/selector/web/internal/SiteNavigationMenuItemItemSelectorView.java). 
 
-## Writing Your View Markup [](id=writing-your-view-markup)
+## Writing Your View Markup
 
 You can write your view markup however you wish---there's no typical or average 
 case. You can write it with taglibs, AUI components, or even pure HTML and 
@@ -382,7 +386,7 @@ Your new selection view is automatically rendered by the Item Selector in every
 app that uses the criterion and return types you defined, without modifying 
 anything in those apps. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Item Selector](/develop/tutorials/-/knowledge_base/7-2/item-selector)
 
