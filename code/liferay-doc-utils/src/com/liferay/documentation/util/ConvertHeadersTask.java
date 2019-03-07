@@ -17,7 +17,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Task;
 
-public class ConvertHeaders extends Task {
+public class ConvertHeadersTask extends Task {
 
 	public void execute() throws BuildException {
 
@@ -48,8 +48,9 @@ public class ConvertHeaders extends Task {
 				while ((line = in.readLine()) != null) {
 					
 					if (line.startsWith(newHeaderIdPrefix)) {
-						throw new BuildException(filename + ": File already contains "
-								+ "new header syntax.");
+						out.append(line);
+						out.append("\n");
+						continue;
 					}
 					
 					if (line.startsWith("#") && !line.startsWith("##") &&
@@ -66,7 +67,7 @@ public class ConvertHeaders extends Task {
 						out.append(newHeaderIdPrefix + id + "\n");
 						out.append("---\n\n");
 						
-						
+						System.out.println("Converted header(s) for " + filename);
 					}
 					else if (line.startsWith("##") && line.contains(headerPrefix)) {
 						int idStartIndex = line.indexOf(" [](id=");
