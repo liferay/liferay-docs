@@ -6,9 +6,9 @@ header-id: moving-folders-and-files
 
 To move folders and files with the Documents and Media API, use the `moveFolder` 
 and `moveFileEntry` methods discussed in 
-[Copying and Moving Entities](/develop/tutorials/-/knowledge_base/7-2/copying-and-moving-entities). 
+[Copying and Moving Entities](/developer/frameworks/-/knowledge_base/7-2/copying-and-moving-entities). 
 The steps here show you how. For general information on using the API, see 
-[Documents and Media API](/develop/tutorials/-/knowledge_base/7-2/documents-and-media-api). 
+[Documents and Media API](/developer/frameworks/-/knowledge_base/7-2/documents-and-media-api). 
 
 Follow these steps to use `moveFolder` and `moveFileEntry` to move a folder and 
 a file, respectively. This example does both to demonstrate the procedures: 
@@ -36,7 +36,7 @@ a file, respectively. This example does both to demonstrate the procedures:
                 DLFileEntry.class.getName(), actionRequest);
 
     For more information on `ServiceContext`, see the tutorial 
-    [Understanding ServiceContext](/develop/tutorials/-/knowledge_base/7-2/understanding-servicecontext). 
+    [Understanding ServiceContext](/developer/frameworks/-/knowledge_base/7-2/understanding-servicecontext). 
 
 3.  Call the service reference's method(s). This example calls `moveFolder` to 
     move a folder (`folderId`) to a different folder (`newFolderId`). It then 
@@ -49,4 +49,4 @@ a file, respectively. This example does both to demonstrate the procedures:
 
 ## Related Topics
 
-[Copying Folders](/develop/tutorials/-/knowledge_base/7-2/copying-folders)
+[Copying Folders](/developer/frameworks/-/knowledge_base/7-2/copying-folders)

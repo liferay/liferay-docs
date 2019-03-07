@@ -6,9 +6,9 @@ header-id: checking-out-files
 
 To check out a file with the Documents and Media API, use the 
 `checkOutFileEntry` method discussed in 
-[File Checkout and Checkin](/develop/tutorials/-/knowledge_base/7-2/file-checkout-and-checkin). 
+[File Checkout and Checkin](/developer/frameworks/-/knowledge_base/7-2/file-checkout-and-checkin). 
 The steps here show you how. For general information on using the API, see 
-[Documents and Media API](/develop/tutorials/-/knowledge_base/7-2/documents-and-media-api). 
+[Documents and Media API](/developer/frameworks/-/knowledge_base/7-2/documents-and-media-api). 
 
 Follow these steps to check out a file: 
 
@@ -29,7 +29,7 @@ Follow these steps to check out a file:
         ServiceContext serviceContext = ServiceContextFactory.getInstance(actionRequest);
 
     For more information on `ServiceContext`, see the tutorial 
-    [Understanding ServiceContext](/develop/tutorials/-/knowledge_base/7-2/understanding-servicecontext). 
+    [Understanding ServiceContext](/developer/frameworks/-/knowledge_base/7-2/understanding-servicecontext). 
 
 3.  Call the service reference's `checkOutFileEntry` method with the data from 
     the previous step: 
@@ -47,8 +47,8 @@ needs of the Documents and Media app.
 
 ## Related Topics
 
-[Checking In Files](/develop/tutorials/-/knowledge_base/7-2/checking-in-files)
+[Checking In Files](/developer/frameworks/-/knowledge_base/7-2/checking-in-files)
 
-[Canceling a Checkout](/develop/tutorials/-/knowledge_base/7-2/canceling-a-checkout)
+[Canceling a Checkout](/developer/frameworks/-/knowledge_base/7-2/canceling-a-checkout)
 
-[Updating Files](/develop/tutorials/-/knowledge_base/7-2/updating-files)
+[Updating Files](/developer/frameworks/-/knowledge_base/7-2/updating-files)

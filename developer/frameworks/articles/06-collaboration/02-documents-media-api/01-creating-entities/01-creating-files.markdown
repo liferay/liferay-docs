@@ -10,9 +10,9 @@ To create a file via the Documents and Media API, use one of the overloaded
 The steps here show you how to do this, using the method that contains 
 `InputStream` as an example. For detailed information on this and other 
 `addFileEntry` methods, see 
-[Creating Files, Folders, and Shortcuts](/develop/tutorials/-/knowledge_base/7-2/creating-files-folders-and-shortcuts). 
+[Creating Files, Folders, and Shortcuts](/developer/frameworks/-/knowledge_base/7-2/creating-files-folders-and-shortcuts). 
 For general information on using the API, see 
-[Documents and Media API](/develop/tutorials/-/knowledge_base/7-2/documents-and-media-api). 
+[Documents and Media API](/developer/frameworks/-/knowledge_base/7-2/documents-and-media-api). 
 
 Follow these steps to create a file via the Documents and Media API: 
 
@@ -47,7 +47,7 @@ Follow these steps to create a file via the Documents and Media API:
         }
 
     For more information on `ServiceContext`, see 
-    [Understanding ServiceContext](/develop/tutorials/-/knowledge_base/7-2/understanding-servicecontext). 
+    [Understanding ServiceContext](/developer/frameworks/-/knowledge_base/7-2/understanding-servicecontext). 
 
 3.  Call the service reference's `addFileEntry` method with the data from the 
     previous step. Note that this example does so inside the previous step's 
@@ -76,12 +76,12 @@ needs of the Documents and Media app.
 
 ## Related Topics
 
-[Updating Files](/develop/tutorials/-/knowledge_base/7-2/updating-files)
+[Updating Files](/developer/frameworks/-/knowledge_base/7-2/updating-files)
 
-[Deleting Files](/develop/tutorials/-/knowledge_base/7-2/deleting-files)
+[Deleting Files](/developer/frameworks/-/knowledge_base/7-2/deleting-files)
 
-[Moving Folders and Files](/develop/tutorials/-/knowledge_base/7-2/moving-folders-and-files)
+[Moving Folders and Files](/developer/frameworks/-/knowledge_base/7-2/moving-folders-and-files)
 
-[Creating Folders](/develop/tutorials/-/knowledge_base/7-2/creating-folders)
+[Creating Folders](/developer/frameworks/-/knowledge_base/7-2/creating-folders)
 
-[Creating File Shortcuts](/develop/tutorials/-/knowledge_base/7-2/creating-file-shortcuts)
+[Creating File Shortcuts](/developer/frameworks/-/knowledge_base/7-2/creating-file-shortcuts)

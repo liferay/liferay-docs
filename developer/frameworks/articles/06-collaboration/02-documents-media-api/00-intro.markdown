@@ -50,10 +50,10 @@ Documents and Media functionality:
     permission checks. 
 
     Note that Liferay used 
-    [Service Builder](/develop/tutorials/-/knowledge_base/7-2/service-builder) 
+    [Service Builder](/developer/frameworks/-/knowledge_base/7-2/service-builder) 
     to create these services. Because the remote service contains permission 
     checks, it's a 
-    [best practice](/develop/tutorials/-/knowledge_base/7-2/creating-remote-services#using-service-builder-to-generate-remote-services) 
+    [best practice](/developer/frameworks/-/knowledge_base/7-2/creating-remote-services#using-service-builder-to-generate-remote-services) 
     to call it instead of the local service. See below for instructions on 
     getting a service reference. 
 
@@ -69,18 +69,18 @@ Media library. Here are the primary ones you'll use:
 Before you can do anything with the Documents and Media API, you must get a 
 service reference. If you're using OSGi modules, use the `@Reference` annotation 
 to 
-[get a service reference in an OSGi component via Declarative Services](/develop/tutorials/-/knowledge_base/7-2/osgi-services-and-dependency-injection-with-declarative-services).
+[get a service reference in an OSGi component via Declarative Services](/developer/frameworks/-/knowledge_base/7-2/osgi-services-and-dependency-injection-with-declarative-services).
 For example, this code gets a reference to `DLAppService`: 
 
     @Reference
     private DLAppService _dlAppService;
 
 If you're using a standard web module (WAR file), use a 
-[Service Tracker](/develop/tutorials/-/knowledge_base/7-2/service-trackers) 
+[Service Tracker](/developer/frameworks/-/knowledge_base/7-2/service-trackers) 
 to get a reference to the service instead. 
 
 Getting the reference this way ensures that you leverage OSGi's 
-[dependency management](/develop/tutorials/-/knowledge_base/7-2/leveraging-dependencies)
+[dependency management](/developer/frameworks/-/knowledge_base/7-2/leveraging-dependencies)
 features. If you must use the Documents and Media services outside of an OSGi
 component (e.g., in a JSP), then you can use the services' static `*Util` 
 classes: 

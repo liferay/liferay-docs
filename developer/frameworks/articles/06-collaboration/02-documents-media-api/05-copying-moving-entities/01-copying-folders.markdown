@@ -6,9 +6,9 @@ header-id: copying-folders
 
 To copy a folder with the Documents and Media API, use the `copyFolder` method 
 discussed in 
-[Copying and Moving Entities](/develop/tutorials/-/knowledge_base/7-2/copying-and-moving-entities). 
+[Copying and Moving Entities](/developer/frameworks/-/knowledge_base/7-2/copying-and-moving-entities). 
 The steps here show you how. For general information on using the API, see 
-[Documents and Media API](/develop/tutorials/-/knowledge_base/7-2/documents-and-media-api). 
+[Documents and Media API](/developer/frameworks/-/knowledge_base/7-2/documents-and-media-api). 
 
 Follow these steps to use `copyFolder` to copy a folder: 
 
@@ -46,7 +46,7 @@ Follow these steps to use `copyFolder` to copy a folder:
                     DLFolder.class.getName(), actionRequest);
 
     For more information on `ServiceContext`, see the tutorial 
-    [Understanding ServiceContext](/develop/tutorials/-/knowledge_base/7-2/understanding-servicecontext). 
+    [Understanding ServiceContext](/developer/frameworks/-/knowledge_base/7-2/understanding-servicecontext). 
 
 3.  Call the service reference's `copyFolder` method with the data from the 
     previous step. Note that this example uses the 
@@ -66,10 +66,10 @@ folder's name and/or description.
 
 ## Related Topics
 
-[Creating Folders](/develop/tutorials/-/knowledge_base/7-2/creating-folders)
+[Creating Folders](/developer/frameworks/-/knowledge_base/7-2/creating-folders)
 
-[Updating Folders](/develop/tutorials/-/knowledge_base/7-2/updating-folders)
+[Updating Folders](/developer/frameworks/-/knowledge_base/7-2/updating-folders)
 
-[Deleting Folders](/develop/tutorials/-/knowledge_base/7-2/deleting-folders)
+[Deleting Folders](/developer/frameworks/-/knowledge_base/7-2/deleting-folders)
 
-[Moving Folders and Files](/develop/tutorials/-/knowledge_base/7-2/moving-folders-and-files)
+[Moving Folders and Files](/developer/frameworks/-/knowledge_base/7-2/moving-folders-and-files)

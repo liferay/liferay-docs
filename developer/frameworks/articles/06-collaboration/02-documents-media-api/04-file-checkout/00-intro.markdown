@@ -35,7 +35,7 @@ and repeat the operation. For a full description of the method and its
 parameters, see its 
 [Javadoc](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#checkOutFileEntry-long-com.liferay.portal.kernel.service.ServiceContext-). 
 For step-by-step instructions on using this method, see 
-[Checking Out Files](/develop/tutorials/-/knowledge_base/7-2/checking-out-files). 
+[Checking Out Files](/developer/frameworks/-/knowledge_base/7-2/checking-out-files). 
 
 ### Fine-tuning Checkout
 
@@ -79,12 +79,12 @@ For a full description of the method and its parameters, see its
 [Javadoc](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#checkInFileEntry-long-boolean-java.lang.String-com.liferay.portal.kernel.service.ServiceContext-). 
 This method uses the private working copy to create a new version of the file. 
 As 
-[Updating Files](/develop/tutorials/-/knowledge_base/7-2/updating-files) 
+[Updating Files](/developer/frameworks/-/knowledge_base/7-2/updating-files) 
 explains, the `majorVersion` parameter's setting determines how the file's 
 version number is incremented. 
 
 For step-by-step instructions on using this method, see 
-[Checking In Files](/develop/tutorials/-/knowledge_base/7-2/checking-in-files). 
+[Checking In Files](/developer/frameworks/-/knowledge_base/7-2/checking-in-files). 
 
 ## Canceling a Checkout
 
@@ -101,4 +101,4 @@ the private working copy and unlocked the file. Other users should now be able
 to check out and edit the file. 
 
 For step-by-step instructions on using this method, see 
-[Canceling a Checkout](/develop/tutorials/-/knowledge_base/7-2/canceling-a-checkout). 
+[Canceling a Checkout](/developer/frameworks/-/knowledge_base/7-2/canceling-a-checkout). 

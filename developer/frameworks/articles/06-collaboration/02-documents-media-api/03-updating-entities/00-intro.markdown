@@ -5,9 +5,9 @@ header-id: updating-entities
 # Updating Entities
 
 Like 
-[creating](/develop/tutorials/-/knowledge_base/7-2/creating-files-folders-and-shortcuts) 
+[creating](/developer/frameworks/-/knowledge_base/7-2/creating-files-folders-and-shortcuts) 
 and 
-[deleting](/develop/tutorials/-/knowledge_base/7-2/deleting-entities) 
+[deleting](/developer/frameworks/-/knowledge_base/7-2/deleting-entities) 
 entities, updating entities is a key task when working with Documents and Media. 
 The methods in the Documents and Media API for creating and updating entities 
 are similar. There are, however, a few important differences. 
@@ -21,7 +21,7 @@ Here, you'll learn about updating these entities:
 ## Files
 
 Updating a file is a bit more complicated than 
-[creating one](/develop/tutorials/-/knowledge_base/7-2/creating-files). 
+[creating one](/developer/frameworks/-/knowledge_base/7-2/creating-files). 
 This is due to the way the update operation handles a file's metadata and 
 content. To update only a file's content, you must also supply the file's 
 existing metadata. Otherwise, the update operation could lose the metadata. The 
@@ -60,12 +60,12 @@ Keep these things in mind when using these methods:
     value (e.g., from `1.0` to `2.0`, `1.1` to `2.0`, etc.). 
 
 For a step-by-step guide on using these `updateFileEntry` methods, see 
-[Updating Files](/develop/tutorials/-/knowledge_base/7-2/updating-files). 
+[Updating Files](/developer/frameworks/-/knowledge_base/7-2/updating-files). 
 
 ## Folders
 
 You can use the Documents and Media API to 
-[copy or move](/develop/tutorials/-/knowledge_base/7-2/copying-and-moving-entities) 
+[copy or move](/developer/frameworks/-/knowledge_base/7-2/copying-and-moving-entities) 
 folders to a different location. Options for in-place folder updates, however, 
 are limited. You can only update a folder's name and description. You can do 
 this with the `DLAppService` method `updateFolder`: 
@@ -76,7 +76,7 @@ All parameters except the description are mandatory. For a full description of
 this method and its parameters, see its 
 [Javadoc](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#updateFolder-long-java.lang.String-java.lang.String-com.liferay.portal.kernel.service.ServiceContext-). 
 For step-by-step instructions on using this method, see 
-[Updating Folders](/develop/tutorials/-/knowledge_base/7-2/updating-folders). 
+[Updating Folders](/developer/frameworks/-/knowledge_base/7-2/updating-folders). 
 
 ## File Shortcuts
 
@@ -91,4 +91,4 @@ original values, you must provide them to this method. For a full description of
 the parameters, see the method's 
 [Javadoc](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#updateFileShortcut-long-long-long-com.liferay.portal.kernel.service.ServiceContext-). 
 For step-by-step instructions on using this method, see 
-[Updating File Shortcuts](/develop/tutorials/-/knowledge_base/7-2/updating-file-shortcuts). 
+[Updating File Shortcuts](/developer/frameworks/-/knowledge_base/7-2/updating-file-shortcuts). 

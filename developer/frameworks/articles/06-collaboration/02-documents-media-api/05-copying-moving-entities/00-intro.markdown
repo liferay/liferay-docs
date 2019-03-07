@@ -38,7 +38,7 @@ For a full description of the method and its parameters, see its
 [Javadoc](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#copyFolder-long-long-long-java.lang.String-java.lang.String-com.liferay.portal.kernel.service.ServiceContext-). 
 
 For step-by-step instructions on using this method, see 
-[Copying Folders](/develop/tutorials/-/knowledge_base/7-2/copying-folders). 
+[Copying Folders](/developer/frameworks/-/knowledge_base/7-2/copying-folders). 
 
 ## Moving Folders and Files
 
@@ -77,4 +77,4 @@ For a full description of this method and its parameters, see its
 [Javadoc](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#moveFileEntry-long-long-com.liferay.portal.kernel.service.ServiceContext-). 
 
 For step-by-step instructions on using `moveFolder` and `moveFileEntry`, see 
-[Moving Folders and Files](/develop/tutorials/-/knowledge_base/7-2/moving-folders-and-files). 
+[Moving Folders and Files](/developer/frameworks/-/knowledge_base/7-2/moving-folders-and-files). 

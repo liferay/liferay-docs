@@ -68,7 +68,7 @@ few useful implementations in the package
 `RepositoryModelTitleComparator`: Sorts by title. 
 
 See 
-[Getting Files](/develop/tutorials/-/knowledge_base/7-2/getting-files) 
+[Getting Files](/developer/frameworks/-/knowledge_base/7-2/getting-files) 
 for step-by-step instructions on using the above method families. 
 
 ## Folders
@@ -92,7 +92,7 @@ method:
 
 Note that there are several other `getFolders` methods in `DLAppService`. Use 
 the one that best matches your use case. See 
-[Getting Folders](/develop/tutorials/-/knowledge_base/7-2/getting-folders) 
+[Getting Folders](/developer/frameworks/-/knowledge_base/7-2/getting-folders) 
 for step-by-step instructions on using these `getFolders` methods. 
 
 ## Multiple Entity Types
@@ -110,6 +110,6 @@ entities:
     getFileEntriesAndFileShortcuts(long repositoryId, long folderId, int status, int start, int end)
 
 For step-by-step instructions on calling this method and others like it, see 
-[Getting Multiple Entity Types](/develop/tutorials/-/knowledge_base/7-2/getting-multiple-entity-types). 
+[Getting Multiple Entity Types](/developer/frameworks/-/knowledge_base/7-2/getting-multiple-entity-types). 
 To see all such methods, see the `DLAppService` 
 [Javadoc](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html). 

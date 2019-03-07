@@ -6,9 +6,9 @@ header-id: canceling-a-checkout
 
 To cancel a checkout with the Documents and Media API, use the 
 `cancelCheckOut` method discussed in 
-[File Checkout and Checkin](/develop/tutorials/-/knowledge_base/7-2/file-checkout-and-checkin). 
+[File Checkout and Checkin](/developer/frameworks/-/knowledge_base/7-2/file-checkout-and-checkin). 
 The steps here show you how. For general information on using the API, see 
-[Documents and Media API](/develop/tutorials/-/knowledge_base/7-2/documents-and-media-api). 
+[Documents and Media API](/developer/frameworks/-/knowledge_base/7-2/documents-and-media-api). 
 
 Follow these steps to cancel a checkout: 
 
@@ -41,8 +41,8 @@ needs of the Documents and Media app.
 
 ## Related Topics
 
-[Checking Out Files](/develop/tutorials/-/knowledge_base/7-2/checking-out-files)
+[Checking Out Files](/developer/frameworks/-/knowledge_base/7-2/checking-out-files)
 
-[Checking In Files](/develop/tutorials/-/knowledge_base/7-2/checking-in-files)
+[Checking In Files](/developer/frameworks/-/knowledge_base/7-2/checking-in-files)
 
-[Updating Files](/develop/tutorials/-/knowledge_base/7-2/updating-files)
+[Updating Files](/developer/frameworks/-/knowledge_base/7-2/updating-files)

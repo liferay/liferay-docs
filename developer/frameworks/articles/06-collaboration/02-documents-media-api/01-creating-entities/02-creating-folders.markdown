@@ -9,9 +9,9 @@ must use the
 [`DLAppService`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html) 
 interface's `addFolder` method. The steps here show you how to do this. For more 
 detailed information, see 
-[Creating Files, Folders, and Shortcuts](/develop/tutorials/-/knowledge_base/7-2/creating-files-folders-and-shortcuts). 
+[Creating Files, Folders, and Shortcuts](/developer/frameworks/-/knowledge_base/7-2/creating-files-folders-and-shortcuts). 
 For general information on using the API, see 
-[Documents and Media API](/develop/tutorials/-/knowledge_base/7-2/documents-and-media-api). 
+[Documents and Media API](/developer/frameworks/-/knowledge_base/7-2/documents-and-media-api). 
 
 Follow these steps to create a folder with the `DLAppService` method 
 `addFolder`: 
@@ -36,7 +36,7 @@ Follow these steps to create a folder with the `DLAppService` method
                     DLFolder.class.getName(), actionRequest);
 
     For more information on `ServiceContext`, see the tutorial 
-    [Understanding ServiceContext](/develop/tutorials/-/knowledge_base/7-2/understanding-servicecontext). 
+    [Understanding ServiceContext](/developer/frameworks/-/knowledge_base/7-2/understanding-servicecontext). 
 
 3.  Call the service reference's `addFolder` method with the data from the 
     previous step: 
@@ -59,10 +59,10 @@ app.
 
 ## Related Topics
 
-[Updating Folders](/develop/tutorials/-/knowledge_base/7-2/updating-folders)
+[Updating Folders](/developer/frameworks/-/knowledge_base/7-2/updating-folders)
 
-[Deleting Folders](/develop/tutorials/-/knowledge_base/7-2/deleting-folders)
+[Deleting Folders](/developer/frameworks/-/knowledge_base/7-2/deleting-folders)
 
-[Copying Folders](/develop/tutorials/-/knowledge_base/7-2/copying-folders)
+[Copying Folders](/developer/frameworks/-/knowledge_base/7-2/copying-folders)
 
-[Moving Folders and Files](/develop/tutorials/-/knowledge_base/7-2/moving-folders-and-files)
+[Moving Folders and Files](/developer/frameworks/-/knowledge_base/7-2/moving-folders-and-files)
