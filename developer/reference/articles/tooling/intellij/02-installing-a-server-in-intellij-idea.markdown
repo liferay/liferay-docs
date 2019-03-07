@@ -1,14 +1,14 @@
-# Installing a Server in IntelliJ IDEA [](id=installing-a-server-in-intellij-idea)
+---
+header-id: installing-a-server-in-intellij-idea
+---
+
+# Installing a Server in IntelliJ IDEA
 
 Installing a Liferay server in IntelliJ is easy. In just a few steps, you'll
 have your server up and running.
 
-+$$$
-
-**Note:** Tomcat and Wildfly are the only supported Liferay app server bundles
-available to install in IntelliJ.
-
-$$$
+| **Note:** Tomcat and Wildfly are the only supported Liferay app server bundles
+| available to install in IntelliJ.
 
 Follow these steps to install your server:
 
