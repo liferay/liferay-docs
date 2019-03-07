@@ -60,13 +60,9 @@ Note that criterion and return types together form an Item Selector's
 *criteria*. The Item Selector uses its criteria to decide which selection views 
 to show. 
 
-+$$$
-
-**Note:** For a list of the criterion classes and return types that @product@ 
-provides, see 
-[Item Selector Criterion and Return Types](/develop/reference/-/knowledge_base/7-2/item-selector-criterion-and-return-types). 
-
-$$$
+| **Note:** For a list of the criterion classes and return types that @product@
+| provides, see
+| [Item Selector Criterion and Return Types](/develop/reference/-/knowledge_base/7-2/item-selector-criterion-and-return-types).
 
 **Criterion Handler:** A class that gets the appropriate selection view. Each 
 criterion requires a criterion handler. Criterion handler classes extend 
