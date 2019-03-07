@@ -8,9 +8,9 @@ You can use the social API to integrate @product@'s social features with your
 apps. Here, you'll learn about the following topics: 
 
 -   [Social Bookmarks](#social-bookmarks)
--   [Adding Comments to Your App](/develop/tutorials/-/knowledge_base/7-2/adding-comments-to-your-app)
+-   [Adding Comments to Your App](/developer/frameworks/-/knowledge_base/7-2/adding-comments-to-your-app)
 -   [Ratings](#ratings)
--   [Flagging Inappropriate Asset Content](/develop/tutorials/-/knowledge_base/7-2/flagging-inappropriate-asset-content)
+-   [Flagging Inappropriate Asset Content](/developer/frameworks/-/knowledge_base/7-2/flagging-inappropriate-asset-content)
 
 ## Social Bookmarks
 
@@ -41,9 +41,9 @@ see the method's
 [Javadoc](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/PortalUtil.html#getCanonicalURL-java.lang.String-com.liferay.portal.kernel.theme.ThemeDisplay-com.liferay.portal.kernel.model.Layout-). 
 
 For instructions on using this tag, see 
-[Applying Social Bookmarks](/develop/tutorials/-/knowledge_base/7-2/applying-social-bookmarks). 
+[Applying Social Bookmarks](/developer/frameworks/-/knowledge_base/7-2/applying-social-bookmarks). 
 For instructions on creating your own social bookmarks, see 
-[Creating Social Bookmarks](/develop/tutorials/-/knowledge_base/7-2/creating-social-bookmarks). 
+[Creating Social Bookmarks](/developer/frameworks/-/knowledge_base/7-2/creating-social-bookmarks). 
 
 ![Figure 1: With `displayStyle` set to `inline`, the first three social bookmarks appear in a row and the rest appear in a menu.](../../../images/social-bookmarks-inline.png)
 
@@ -51,7 +51,7 @@ For instructions on creating your own social bookmarks, see
 
 ## Ratings
 
-[The asset framework](/develop/tutorials/-/knowledge_base/7-2/asset-framework) 
+[The asset framework](/developer/frameworks/-/knowledge_base/7-2/asset-framework) 
 supports a content rating system. This feature appears in many of @product@'s 
 built-in apps. For example, users can rate articles published in the Blogs app. 
 There are three different rating types: 
@@ -63,7 +63,7 @@ There are three different rating types:
 To enable ratings in your app, you must use the `liferay-ui:ratings` tag and set 
 its `type` attribute to the rating type (`like`, `stars`, or `thumbs`). For 
 instructions on this, see 
-[Rating Assets](/develop/tutorials/-/knowledge_base/7-2/rating-assets). 
+[Rating Assets](/developer/frameworks/-/knowledge_base/7-2/rating-assets). 
 
 ### Rating Type Selection
 
@@ -90,7 +90,7 @@ enum, which defines many constants that correspond to the portlet IDs of the
 built-in portlets. 
 
 To add support for rating type selection in your app, follow the instructions in 
-[Implementing Rating Type Selection](/develop/tutorials/-/knowledge_base/7-2/implementing-rating-type-selection). 
+[Implementing Rating Type Selection](/developer/frameworks/-/knowledge_base/7-2/implementing-rating-type-selection). 
 Once you've done so, you can configure the default rating type via the Control 
 Panel at *Configuration* &rarr; *Instance Settings* &rarr; *Social*. To override 
 the default values for a site, go to Site Administration (your Site's menu) 
@@ -145,4 +145,4 @@ transformation's logic. You can write this logic by implementing the interface
 transformation's logic. 
 
 For instructions on implementing `RatingsDataTransformer`, see 
-[Customizing Rating Value Transformation](/develop/tutorials/-/knowledge_base/7-2/customizing-rating-value-transformation). 
+[Customizing Rating Value Transformation](/developer/frameworks/-/knowledge_base/7-2/customizing-rating-value-transformation). 
