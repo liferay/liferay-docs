@@ -19,7 +19,7 @@ environment, follow the steps below:
 
 4.  Once it's downloaded, click the *Restart IDE* button.
 
-    ![Figure 2: The Available Updates prompt also prints the plugin version to which you're updating.](../../../intellij-update-restart.png)
+    ![Figure 2: The Available Updates prompt also prints the plugin version to which you're updating.](../../../images/intellij-update-restart.png)
 
 Once IntelliJ restarts, the Liferay IntelliJ plugin is updated and ready for
 use.
