@@ -16,15 +16,17 @@ Follow these steps to enable content flagging in your app:
 
 2.  Choose a read-only view of the entity you want to enable flags on. You can 
     display flags in one of your app's views, or if you've 
-    [implemented asset rendering](/develop/tutorials/-/knowledge_base/7-1/rendering-an-asset) 
+    [implemented asset rendering](/develop/tutorials/-/knowledge_base/7-2/rendering-an-asset) 
     you can display it in the full content view in the Asset Publisher app. 
 
-3.  In your JSP, include the `liferay-flags` taglib declaration:
+3.  In your JSP, include the `liferay-flags` taglib declaration: 
 
         <%@ taglib prefix="liferay-flags" uri="http://liferay.com/tld/flags" %>
 
-4.  Use `ParamUtil` to get the entity's ID from the render request. Then use 
-    your `-LocalServiceUtil` class to create an entity object: 
+4.  Use 
+    [`ParamUtil`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html) 
+    to get the entity's ID from the render request. Then use your 
+    `-LocalServiceUtil` class to create an entity object: 
 
         <%
         long entryId = ParamUtil.getLong(renderRequest, "entryId");
@@ -48,6 +50,8 @@ Follow these steps to enable content flagging in your app:
 
 ## Related Topics
 
-[Asset Framework](/develop/tutorials/-/knowledge_base/7-1/asset-framework)
+[Rating Assets](/develop/tutorials/-/knowledge_base/7-2/rating-assets)
 
-[Rating Assets](/develop/tutorials/-/knowledge_base/7-1/rating-assets)
+[Social API](/develop/tutorials/-/knowledge_base/7-2/social-api)
+
+[Asset Framework](/develop/tutorials/-/knowledge_base/7-2/asset-framework)
