@@ -13,7 +13,7 @@ Dev Studio makes Liferay development easier by providing an intuitive GUI. You
 can leverage
 
 - Liferay-specific wizards for creating/developing @product@ projects.
-- Liferay server management, including auto-deploy.
+- Liferay server management and project testing capabilities.
 - Editors for Service Builder files, workflow definitions, POM files, and more.
 - Snippets for tag libraries
 - etc.
@@ -23,6 +23,7 @@ In this section of articles, you'll learn how to
 - [Install Dev Studio](/developer/reference/-/knowledge_base/7-2/installing-liferay-dev-studio)
 - [Set Proxy Requirements](/developer/reference/-/knowledge_base/7-2/setting-proxy-requirements-for-dev-studio)
 - [Install a Liferay server](/developer/reference/-/knowledge_base/7-2/installing-a-liferay-server-in-dev-studio)
+- [Import a Liferay project](/developer/reference/-/knowledge_base/7-2/importing-projects-in-dev-studio)
 - [Use the Gogo Shell](/developer/reference/-/knowledge_base/7-2/using-the-gogo-shell-in-dev-studio)
 - [Search @product@ source](/developer/reference/-/knowledge_base/7-2/searching-product-source-in-dev-studio)
 - [Debug @product@ source](/developer/reference/-/knowledge_base/7-2/debugging-product-source-in-dev-studio)
