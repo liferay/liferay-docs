@@ -6,24 +6,22 @@ header-id: selecting-entities-with-an-item-selector
 
 The steps here show you how to get and use an Item Selector to select entities 
 in your app. For an explanation of the Item Selector API and more information on 
-these steps, see the 
-[Item Selector introduction](/develop/tutorials/-/knowledge_base/7-2/item-selector). 
+these steps, see the [Item Selector introduction](/developer/frameworks/-/knowledge_base/7-2/item-selector). 
 
 ## Get an Item Selector
 
-First, you must get an Item Selector for your use case. Follow these steps to do 
-so: 
+First, you must get an Item Selector for your use case. Follow these steps: 
 
 1.  Determine the criterion and return types for the Item Selector. The 
     criterion corresponds to the selected entity type, and the return types 
     correspond to the data you expect to receive from those selections. For a 
     list of the criterion and return types that @product@ provides, see 
-    [Item Selector Criterion and Return Types](/develop/reference/-/knowledge_base/7-2/item-selector-criterion-and-return-types). 
-    For example, if you need an Item Selector that selects images and returns 
-    their URLs, use `ImageItemSelectorCriterion` and 
-    `URLItemSelectorReturnType`. You can 
-    [create](/develop/tutorials/-/knowledge_base/7-2/creating-custom-criterion-and-return-types) 
-    criterion and/or return types if there aren't existing ones for your use 
+    [Item Selector Criterion and Return Types](/developer/reference/-/knowledge_base/7-2/item-selector-criterion-and-return-types).
+    For example, if you need an Item Selector that selects images and returns
+    their URLs, use `ImageItemSelectorCriterion` and
+    `URLItemSelectorReturnType`. You can
+    [create](/developer/frameworks/-/knowledge_base/7-2/creating-custom-criterion-and-return-types)
+    criterion and/or return types if there aren't existing ones for your use
     case. 
 
 2.  Use Declarative Services to get an `ItemSelector` OSGi Service Component: 
@@ -78,7 +76,7 @@ so:
 
 To open the Item Selector in your UI, you must use the JavaScript component 
 `LiferayItemSelectorDialog` from 
-[AlloyUI's](http://alloyui.com/) 
+[AlloyUI's](http://alloyui.com) 
 `liferay-item-selector-dialog` module. The component listens for the item 
 selected event that you specified for the Item Selector URL. The event returns 
 the selected element's information according to its return type. 
@@ -89,7 +87,7 @@ Follow these steps to use the Item Selector's dialog in a JSP:
 
         <%@ taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
 
-2.  Define the UI element that you'll use to open the Item Selector dialog. For 
+2.  Define the UI element you'll use to open the Item Selector dialog. For 
     example, this creates a *Choose* button with the ID `chooseImage`:
 
         <aui:button name="chooseImage" value="Choose" />
@@ -137,7 +135,7 @@ Follow these steps to use the Item Selector's dialog in a JSP:
 
 6.  Inside the braces of the `LiferayItemSelectorDialog` constructor, first set 
     set the `eventName` attribute. This makes the dialog listen for the item 
-    selected event. The event name is the the Item Selector's event name that 
+    selected event. The event name is the Item Selector's event name that 
     you specified in your Java code (the code that gets the Item Selector URL): 
 
         eventName: 'ItemSelectedEventName',
@@ -145,8 +143,8 @@ Follow these steps to use the Item Selector's dialog in a JSP:
 7.  Immediately after the `eventName` setting, set the `on` attribute to 
     implement a function that operates on the selected item change. For example, 
     this function sets its variables for the newly selected item. The 
-    information available to parse depends on the return type(s). As the comment 
-    indicates, you must add the logic for using the selected element: 
+    information available to parse depends on the return type(s). As the comment
+    below indicates, you must add the logic for using the selected element: 
 
         on: {
                 selectedItemChange: function(event) {
@@ -225,8 +223,8 @@ Here's the complete example code for these steps:
 
 ## Related Topics
 
-[Item Selector](/develop/tutorials/-/knowledge_base/7-2/item-selector)
+[Item Selector](/developer/frameworks/-/knowledge_base/7-2/item-selector)
 
-[Creating Custom Criterion and Return Types](/develop/tutorials/-/knowledge_base/7-2/creating-custom-criterion-and-return-types)
+[Creating Custom Criterion and Return Types](/developer/frameworks/-/knowledge_base/7-2/creating-custom-criterion-and-return-types)
 
-[Creating Custom Item Selector Views](/develop/tutorials/-/knowledge_base/7-2/creating-custom-item-selector-views)
+[Creating Custom Item Selector Views](/developer/frameworks/-/knowledge_base/7-2/creating-custom-item-selector-views)
