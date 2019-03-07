@@ -7,7 +7,7 @@ header-id: creating-custom-item-selector-views
 You can create your own selection view if an Item Selector doesn't contain the 
 one you need. The steps here show you how. For more information on custom 
 selection views and the Item Selector API, see the 
-[Item Selector introduction](/develop/tutorials/-/knowledge_base/7-2/item-selector). 
+[Item Selector introduction](/developer/frameworks/-/knowledge_base/7-2/item-selector). 
 
 ## Configuring Your Selection View's OSGi Module
 
@@ -111,8 +111,7 @@ Follow these steps to implement your selection view's class:
             return true;
         }
 
-    See 
-    [The Selection View's Class](/develop/tutorials/-/knowledge_base/7-2/item-selector#the-selection-views-class) 
+    See [The Selection View's Class](/developer/frameworks/-/knowledge_base/7-2/item-selector#the-selection-views-class)
     for more information on these methods. 
 
 4.  Implement the 
@@ -185,13 +184,13 @@ Follow these steps to implement your selection view's class:
          private ServletContext _servletContext;
 
 For a real-world example of a view class, see 
-[`SiteNavigationMenuItemItemSelectorView`](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/site-navigation/site-navigation-item-selector-web/src/main/java/com/liferay/site/navigation/item/selector/web/internal/SiteNavigationMenuItemItemSelectorView.java). 
+[`SiteNavigationMenuItemItemSelectorView`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/site-navigation/site-navigation-item-selector-web/src/main/java/com/liferay/site/navigation/item/selector/web/internal/SiteNavigationMenuItemItemSelectorView.java). 
 
 ## Writing Your View Markup
 
 You can write your view markup however you wish---there's no typical or average 
-case. You can write it with taglibs, AUI components, or even pure HTML and 
-JavaScript. Regardless, the markup must do two key things: 
+case. You can write it with taglibs, AUI components, or even pure HTML and
+JavaScript. The markup must do two key things: 
 
 -   Render the entities for the user to select. 
 -   When an entity is selected, pass the return type information via a 
@@ -243,9 +242,9 @@ applies to @product-ver@. Here's a walkthrough of this `layouts.jsp` file:
                 portlet.getTimestamp()) 
                 %>" rel="stylesheet" type="text/css" />
         </liferay-util:html-top>
-    
+
     You can learn more about using the `liferay-util` taglibs in 
-    [Using the Liferay Util Taglib](/develop/tutorials/-/knowledge_base/7-2/using-the-liferay-util-taglib). 
+    [Using the Liferay Util Taglib](/developer/frameworks/-/knowledge_base/7-2/using-the-liferay-util-taglib). 
 
 3.  This snippet creates the UI to display the layout entities. It uses the 
     [`liferay-layout:layouts-tree`](@app-ref@/layout/latest/taglibdocs/liferay-layout/layouts-tree.html) 
@@ -273,7 +272,7 @@ applies to @product-ver@. Here's a walkthrough of this `layouts.jsp` file:
                     </div>
             </div>
         </div>
-    
+ 
     This renders the following UI: 
 
     ![Figure 1: The Layouts Item Selector view uses Lexicon and Liferay Layout taglibs to create the UI.](../../../images/layouts-item-selector-view.png)
@@ -388,8 +387,8 @@ anything in those apps.
 
 ## Related Topics
 
-[Item Selector](/develop/tutorials/-/knowledge_base/7-2/item-selector)
+[Item Selector](/developer/frameworks/-/knowledge_base/7-2/item-selector)
 
-[Creating Custom Criterion and Return Types](/develop/tutorials/-/knowledge_base/7-2/creating-custom-criterion-and-return-types)
+[Creating Custom Criterion and Return Types](/developer/frameworks/-/knowledge_base/7-2/creating-custom-criterion-and-return-types)
 
-[Selecting Entities with an Item Selector](/develop/tutorials/-/knowledge_base/7-2/selecting-entities-with-an-item-selector)
+[Selecting Entities with an Item Selector](/developer/frameworks/-/knowledge_base/7-2/selecting-entities-with-an-item-selector)
