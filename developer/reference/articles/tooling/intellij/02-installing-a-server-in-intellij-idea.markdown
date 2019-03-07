@@ -1,8 +1,8 @@
 ---
-header-id: installing-a-server-in-intellij-idea
+header-id: installing-a-server-in-intellij
 ---
 
-# Installing a Server in IntelliJ IDEA
+# Installing a Server in IntelliJ
 
 Installing a Liferay server in IntelliJ is easy. In just a few steps, you'll
 have your server up and running.
@@ -12,7 +12,7 @@ have your server up and running.
 
 Follow these steps to install your server:
 
-1.  Right-click your Liferay workspace and select *Liferay* &rarr; *InitBundle*.
+1.  Right-click your Liferay Workspace and select *Liferay* &rarr; *InitBundle*.
 
     This downloads the @product@ bundle specified in your workspace's
     `gradle.properties` file. You can change the default bundle by updating the
