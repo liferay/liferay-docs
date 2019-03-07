@@ -7,7 +7,7 @@ header-id: displaying-adapted-images-in-your-app
 Follow these steps to display adapted images in your app with the Adaptive Media 
 [taglib](https://github.com/liferay/com-liferay-adaptive-media/tree/master/adaptive-media-image-taglib). 
 For more information, see 
-[The Adaptive Media Taglib](/develop/tutorials/-/knowledge_base/7-2/adaptive-media#the-adaptive-media-taglib). 
+[The Adaptive Media Taglib](/developer/frameworks/-/knowledge_base/7-2/adaptive-media#the-adaptive-media-taglib). 
 
 1.  Include the taglib dependency in your project. For example, if you're using 
     Gradle you must add the following line in your project's `build.gradle` 
@@ -26,7 +26,7 @@ For more information, see
 
     For example, this `view.jsp` uses the taglib to display the adapted images 
     in a grid with the `col-md-6` 
-    [column container class](/develop/tutorials/-/knowledge_base/7-2/creating-layout-templates-manually): 
+    [column container class](/developer/frameworks/-/knowledge_base/7-2/creating-layout-templates-manually): 
 
         <%@ include file="/init.jsp" %>
 
@@ -70,8 +70,8 @@ For more information, see
 
 ## Related Topics
 
-[Adaptive Media](/develop/tutorials/-/knowledge_base/7-2/adaptive-media)
+[Adaptive Media](/developer/frameworks/-/knowledge_base/7-2/adaptive-media)
 
-[Finding Adapted Images](/develop/tutorials/-/knowledge_base/7-2/finding-adapted-images)
+[Finding Adapted Images](/developer/frameworks/-/knowledge_base/7-2/finding-adapted-images)
 
-[Creating an Image Scaler](/develop/tutorials/-/knowledge_base/7-2/creating-an-image-scaler)
+[Creating an Image Scaler](/developer/frameworks/-/knowledge_base/7-2/creating-an-image-scaler)

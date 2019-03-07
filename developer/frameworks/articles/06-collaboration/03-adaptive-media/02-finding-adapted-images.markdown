@@ -5,7 +5,7 @@ header-id: finding-adapted-images
 # Finding Adapted Images
 
 If you need more control than the 
-[Adaptive Media taglib](/develop/tutorials/-/knowledge_base/7-2/displaying-adapted-images-in-your-app) 
+[Adaptive Media taglib](/developer/frameworks/-/knowledge_base/7-2/displaying-adapted-images-in-your-app) 
 offers for finding adapted images to display in your app, you can query Adaptive 
 Media's finder API directly. The steps here show you how for these scenarios: 
 
@@ -16,7 +16,7 @@ Media's finder API directly. The steps here show you how for these scenarios:
 -   [Using the Adaptive Media Stream](#using-the-adaptive-media-stream)
 
 For background information on these topics, see 
-[Adaptive Media's Finder API](/develop/tutorials/-/knowledge_base/7-2/adaptive-media#adaptive-medias-finder-api). 
+[Adaptive Media's Finder API](/developer/frameworks/-/knowledge_base/7-2/adaptive-media#adaptive-medias-finder-api). 
 
 ## Getting Adapted Images for File Versions
 
@@ -102,7 +102,7 @@ adapted images. Follow these steps to do so:
     specifies the image attribute to sort by (e.g., width/height), while the 
     second specifies the sort order (e.g., ascending/descending). The Adaptive 
     Media API provides 
-    [constants](/develop/tutorials/-/knowledge_base/7-2/adaptive-media#adaptive-media-api-constants) 
+    [constants](/developer/frameworks/-/knowledge_base/7-2/adaptive-media#adaptive-media-api-constants) 
     that you can use for these arguments. 
 
     For example, this code gets all the adapted images regardless of whether the 
@@ -164,8 +164,8 @@ Here are a few examples:
 
 ## Related Topics
 
-[Adaptive Media](/develop/tutorials/-/knowledge_base/7-2/adaptive-media)
+[Adaptive Media](/developer/frameworks/-/knowledge_base/7-2/adaptive-media)
 
-[Displaying Adapted Images in Your App](/develop/tutorials/-/knowledge_base/7-2/displaying-adapted-images-in-your-app)
+[Displaying Adapted Images in Your App](/developer/frameworks/-/knowledge_base/7-2/displaying-adapted-images-in-your-app)
 
-[Creating an Image Scaler](/develop/tutorials/-/knowledge_base/7-2/creating-an-image-scaler)
+[Creating an Image Scaler](/developer/frameworks/-/knowledge_base/7-2/creating-an-image-scaler)

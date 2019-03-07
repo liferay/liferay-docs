@@ -8,7 +8,7 @@ Adaptive Media scales images to match the image resolutions defined by the
 @product@ administrator. The default scaling is usually suitable, but you can 
 customize it by creating an image scaler. The steps here show you how. For 
 detailed information on these steps, see 
-[Image Scaling in Adaptive Media](/develop/tutorials/-/knowledge_base/7-2/adaptive-media#image-scaling-in-adaptive-media). 
+[Image Scaling in Adaptive Media](/developer/frameworks/-/knowledge_base/7-2/adaptive-media#image-scaling-in-adaptive-media). 
 
 Follow these steps to create a custom image scaler. The example scaler in these 
 steps customizes the scaling of PNG images: 
@@ -147,8 +147,8 @@ steps customizes the scaling of PNG images:
 
 ## Related Topics
 
-[Adaptive Media](/develop/tutorials/-/knowledge_base/7-2/adaptive-media)
+[Adaptive Media](/developer/frameworks/-/knowledge_base/7-2/adaptive-media)
 
-[Displaying Adapted Images in Your App](/develop/tutorials/-/knowledge_base/7-2/displaying-adapted-images-in-your-app)
+[Displaying Adapted Images in Your App](/developer/frameworks/-/knowledge_base/7-2/displaying-adapted-images-in-your-app)
 
-[Finding Adapted Images](/develop/tutorials/-/knowledge_base/7-2/finding-adapted-images)
+[Finding Adapted Images](/developer/frameworks/-/knowledge_base/7-2/finding-adapted-images)
