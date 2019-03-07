@@ -28,8 +28,7 @@ different sources. For example, an Item Selector configured to show images might
 show selection views from Documents and Media, a third-party image provider, or 
 a drag-and-drop UI. Selection views are the framework's key components. 
 
-**Markup:** A markup file that renders the selection view. You have a great deal 
-of flexibility in the markup language you choose. For example, you can use a 
+**Markup:** A markup file that renders the selection view. You can choose from
 JSP, FreeMarker, or even pure HTML and JavaScript. 
 
 **Return Type:** A class that represents the data type that entity selections 
@@ -45,16 +44,16 @@ class, which is empty and returns no information, as an identifier. The view
 ensures that the proper information is returned. If you create your own return 
 type, you should specify its data type and format in Javadoc. 
 
-**Criterion:** A class that represents the selected entity. For example, if 
-users select images then you need an image criterion class. Each criterion class 
-must implement 
-[`ItemSelectorCriterion`](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorCriterion.html). 
-Such classes are named for the entity they represent and suffixed with 
-`ItemSelectorCriterion`. For example, the criterion class for images is 
-`ImageItemSelectorCriterion`. If you create your own criterion class, extend 
-[`BaseItemSelectorCriterion`](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/BaseItemSelectorCriterion.html). 
-This base class implements `ItemSelectorCriterion` and provides methods that 
-handle the Item Selector's return types. Your criterion class can therefore be 
+**Criterion:** A class that represents the selected entity. For example, if
+users select images, you need an image criterion class. Each criterion class
+must implement
+[`ItemSelectorCriterion`](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorCriterion.html).
+Such classes are named for the entity they represent and suffixed with
+`ItemSelectorCriterion`. For example, the criterion class for images is
+`ImageItemSelectorCriterion`. If you create your own criterion class, extend
+[`BaseItemSelectorCriterion`](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/BaseItemSelectorCriterion.html).
+This base class implements `ItemSelectorCriterion` and provides methods that
+handle the Item Selector's return types. Your criterion class can therefore be
 empty, unless you also want to use it to pass information to the view. 
 
 Note that criterion and return types together form an Item Selector's 
@@ -96,7 +95,7 @@ Selector triggers when the entity is selected.
 `ItemSelectorCriterion`: The criterion (or an array of criterion objects) that 
 specifies the type of entities to make available in the Item Selector. 
 
-Keep in mind the following when getting an Item Selector's URL: 
+Keep these points in mind when getting an Item Selector's URL: 
 
 -   You can invoke the URL object's `toString` method to get its value. 
 
@@ -130,9 +129,9 @@ is a tab in the UI that corresponds to the image's location. An
 
 The criterion and return types determine the selection view's class. This class 
 is an `ItemSelectorView` component class that implements 
-[`ItemSelectorView`](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorView.html) 
-parameterized with the view's criterion. Note the following when creating this 
-class: 
+[`ItemSelectorView`](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorView.html)
+parameterized with the view's criterion. Remember these things when creating
+this class: 
 
 -   Configure the title by implementing the 
     [`getTitle`](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorView.html#getTitle-java.util.Locale-) 
