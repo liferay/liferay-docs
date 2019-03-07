@@ -4,10 +4,10 @@ header-id: creating-custom-criterion-and-return-types
 
 # Creating Custom Criterion and Return Types
 
-If there's not a criterion or return type for your use case, you can create 
-them. The steps here show you how. For more detailed information on Item 
+If an existing criterion or return type doesn't fit your use case, you can
+create them. The steps here show you how. For more detailed information on Item
 Selector criterion and return types, see the 
-[Item Selector introduction](/develop/tutorials/-/knowledge_base/7-2/item-selector). 
+[Item Selector introduction](/developer/frameworks/-/knowledge_base/7-2/item-selector). 
 
 1.  Create your criterion class by extending 
     [`BaseItemSelectorCriterion`](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/BaseItemSelectorCriterion.html). 
@@ -68,7 +68,7 @@ Selector criterion and return types, see the
 
 3.  If you need a new return type, create it by implementing 
     [`ItemSelectorReturnType`](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorReturnType.html). 
-    Name your return type class after the return type's data, and suffix it with 
+    Name your return type class after the return type's data and suffix it with 
     `ItemSelectorReturnType`. Specify the data and its format in Javadoc. Return 
     type classes need no content. For example, here's a return type for a task: 
 
@@ -84,8 +84,8 @@ Selector criterion and return types, see the
 
 ## Related Topics
 
-[Item Selector](/develop/tutorials/-/knowledge_base/7-2/item-selector)
+[Item Selector](/developer/frameworks/-/knowledge_base/7-2/item-selector)
 
-[Creating Custom Item Selector Views](/develop/tutorials/-/knowledge_base/7-2/creating-custom-item-selector-views)
+[Creating Custom Item Selector Views](/developer/frameworks/-/knowledge_base/7-2/creating-custom-item-selector-views)
 
-[Selecting Entities with an Item Selector](/develop/tutorials/-/knowledge_base/7-2/selecting-entities-with-an-item-selector)
+[Selecting Entities with an Item Selector](/developer/frameworks/-/knowledge_base/7-2/selecting-entities-with-an-item-selector)
