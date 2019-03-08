@@ -8,6 +8,17 @@ The Vue.js npm Portlet sample provides a portlet that uses the
 This portlet showcases Vue.js's speed and performance when rendering a user
 interface.
 
++$$$
+
+**Note:** The minifier fails on Liferay DXP 7.0 when JSDoc is present in a 
+portlet. To resolve this, use 
+[Grunt](https://gruntjs.com/getting-started) 
+[uglify](https://www.npmjs.com/package/grunt-contrib-uglify) 
+to remove the JSDoc comments. This process may take a long time, depending on 
+the number of files that require an update. 
+
+$$$
+
 **Important:** This sample works for Liferay DXP Fix Pack 44+ and Liferay Portal
 CE GA7+.
 
