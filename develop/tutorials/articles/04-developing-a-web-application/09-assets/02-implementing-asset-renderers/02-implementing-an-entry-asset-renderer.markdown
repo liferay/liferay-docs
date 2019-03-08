@@ -192,7 +192,6 @@ following code:
     	private final ModelResourcePermission<Entry> _entryModelResourcePermission;
     	private Entry _entry;
     }
-    
 
 This class is similar to the `GuestbookAssetRenderer` class. For the
 `EntryAssetRenderer.getSummary` method, you return a summary that displays the 
