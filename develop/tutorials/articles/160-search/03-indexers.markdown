@@ -86,26 +86,27 @@ locale when the document is searched. If the search query contains another
 locale (like `title_es_ES`) or searches the plain field (`title`), inaccurate
 results are returned.
 
+To contribute query clauses to every search, regardless of what base entity is
+being searched, implement a `KeywordQueryContributor` class registered without
+an `indexer.class.name` component property. For example, see 
+[`AlwaysPresentFieldsKeywordQueryContributor`](https://github.com/liferay/liferay-portal/blob/7.1.0-ga1/modules/apps/portal-search/portal-search/src/main/java/com/liferay/portal/search/internal/contributor/query/AlwaysPresentFieldsKeywordQueryContributor.java).
+
 [`ModelPreFilterContributor`s](https://github.com/liferay/liferay-portal/blob/7.1.1-ga2/modules/apps/portal-search/portal-search-spi/src/main/java/com/liferay/portal/search/spi/model/query/contributor/ModelPreFilterContributor.java) 
 control how search results are filtered before they're returned from the search
 engine. For example, adding the workflow status to the query ensures that an
 entity in the trash isn't returned in the search results. 
 
-#### How to contribute Query clauses to every search, regardless of what base entity is being searched [](id=searching-global-keyword-query-contributor)
+To contribute Filter clauses to every search, regardless of what base entity is
+being searched, implement a `QueryPreFilterContributor`.
+`QueryPreFilterContributor` is constructed only once under the root filter
+during a search. For example, see 
+[`AssetCategoryTitlesKeywordQueryContributor`](https://github.com/liferay/liferay-portal/blob/7.1.0-ga1/modules/apps/portal-search/portal-search/src/main/java/com/liferay/portal/search/internal/contributor/query/AssetCategoryTitlesKeywordQueryContributor.java).
 
-You can implement a `KeywordQueryContributor` as an OSGi _@Component_ and register without an `indexer.class.name` property.
-
-**Example:** `AlwaysPresentFieldsKeywordQueryContributor` ([link-to-source](https://github.com/liferay/liferay-portal/blob/7.1.0-ga1/modules/apps/portal-search/portal-search/src/main/java/com/liferay/portal/search/internal/contributor/query/AlwaysPresentFieldsKeywordQueryContributor.java))
-
-#### How to contribute Filter clauses to every search, regardless of what base entity is being searched [](id=searching-global-query-pre-filter-contributor)
-
-You can implement a `QueryPreFilterContributor` as an OSGi _@Component_. QueryPreFilterContributor is constructed only once under the root filter during a search.
-
-**Example:** `AssetCategoryTitlesKeywordQueryContributor` ([link-to-source](https://github.com/liferay/liferay-portal/blob/7.1.0-ga1/modules/apps/portal-search/portal-search/src/main/java/com/liferay/portal/search/internal/contributor/query/AssetCategoryTitlesKeywordQueryContributor.java))
-
-#### What's the difference between QueryPreFilterContributor and ModelPreFilterContributor [](id=searching-difference-between-QueryPreFilterContributor-and-ModelPreFilterContributor)
-
-QueryPreFilterContributor is constructed only once under the root filter during a search, while ModelPreFilterContributor filter is constructed once per entity, and added under each specific entity’s subfilter.
+What's the difference between `QueryPreFilterContributor` and
+`ModelPreFilterContributor`? `QueryPreFilterContributor` is constructed only
+once under the root filter during a search, while `ModelPreFilterContributor` is
+constructed once per model entity, and added under each specific entity's
+subfilter.
 
 ### Returning Results [](id=returning-results)
 
