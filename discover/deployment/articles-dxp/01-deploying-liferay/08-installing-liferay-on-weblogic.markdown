@@ -143,10 +143,10 @@ if you're on Windows.
         export WLS_MEM_ARGS_32BIT
 
 4.  Set the Java file encoding to UTF-8 in 
-    `your-domain/bin/SetDomainEnv.[cmd|sh]` by appending `-Dfile.encoding=utf8`
+    `your-domain/bin/SetDomainEnv.[cmd|sh]` by appending `-Dfile.encoding=UTF-8`
     ahead of your other Java properties:  
 
-        JAVA_PROPERTIES="-Dfile.encoding=utf8 ${JAVA_PROPERTIES} ${CLUSTER_PROPERTIES}"
+        JAVA_PROPERTIES="-Dfile.encoding=UTF-8 ${JAVA_PROPERTIES} ${CLUSTER_PROPERTIES}"
 
 5.  You must also ensure that the Node Manager sets @product@'s memory
     requirements when starting the Managed Server. In the Admin Server's console
