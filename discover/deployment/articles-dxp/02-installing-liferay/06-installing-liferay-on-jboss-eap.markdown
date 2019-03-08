@@ -221,6 +221,13 @@ below:
 
     JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Dsecmgr -Djava.security.policy=$JBOSS_HOME/bin/server.policy -Djboss.home.dir=$JBOSS_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxMetaspaceSize=384m"
 
++$$$
+
+**Important:** For @product@ to work properly, the application server JVM must 
+use the `GMT` time zone and `UTF-8` file encoding. 
+
+$$$
+
 Make sure you replace the `$JBOSS_HOME` references with the appropriate
 directory. You'll notice some Java security options. You'll finish configuring
 the Java security options in the *Security Configuration* section. 
