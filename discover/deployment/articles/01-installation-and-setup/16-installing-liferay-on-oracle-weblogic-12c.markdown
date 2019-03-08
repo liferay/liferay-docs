@@ -66,7 +66,7 @@ Set the permanent generation space for 64 bit and 32 bit architectures
 to `-XX:PermSize=256m`.
 
 Lastly, make sure to specify UTF-8 for Java's file encoding, by including Java
-property `-Dfile.encoding=UTF8`.
+property `-Dfile.encoding=UTF-8`.
 
 To specify all of these settings on Windows, for example, you'd edit your
 `setDomainEnv.cmd` file and find the call to the `commEnv.cmd` script. After
@@ -86,10 +86,10 @@ settings to be like the following code:
     set MEM_PERM_SIZE_32BIT=-XX:PermSize=256m
 
 Later in the `setDomainEnv.cmd` file's clustering support section, you'd set
-the UTF-8 file encoding by appending `-Dfile.encoding=UTF8` to the front of the
+the UTF-8 file encoding by appending `-Dfile.encoding=UTF-8` to the front of the
 list of Java property values. Here's what that setting could look like: 
 
-    set JAVA_PROPERTIES=-Dfile.encoding=utf8 %JAVA_PROPERTIES% %CLUSTER_PROPERTIES%
+    set JAVA_PROPERTIES=-Dfile.encoding=UTF-8 %JAVA_PROPERTIES% %CLUSTER_PROPERTIES%
 
 Next, you need to specify local environment settings to support Liferay's
 memory requirements, its use of the [Apache Lucene](http://en.wikipedia.org/wiki/Lucene) 

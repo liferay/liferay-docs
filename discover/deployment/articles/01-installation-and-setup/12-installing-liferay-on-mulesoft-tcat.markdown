@@ -101,7 +101,7 @@ perhaps), provide a description if you wish, select the workspace where you'll
 keep your profile (`/Profiles` is a logical choice), and click the *Add
 Variable* button. Name it `CATALINA_OPTS` and give it the following value: 
 
-        -Dfile.encoding=UTF8 -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
+        -Dfile.encoding=UTF-8 -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=256m"
 
     This sets the character encoding to UTF-8, sets the time zone to Greenwich
     Mean Time and allocates memory to the Java virtual machine.
