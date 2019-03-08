@@ -1,12 +1,13 @@
-<%@include file="../../init.jsp"%>
+ <%@include file="../../init.jsp"%>
 
-<%
-Guestbook guestbook = (Guestbook)request.getAttribute("gb_guestbook");
+        <%
+        Guestbook guestbook = (Guestbook)request.getAttribute("gb_guestbook");
 
-guestbook = guestbook.toEscapedModel();
-%>
+        guestbook = guestbook.toEscapedModel();
+        %>
 
-<dl>
-    <dt>Name</dt>
-    <dd><%= guestbook.getName() %></dd>
-</dl>
+        <dl>
+                <dt>Name</dt>
+                <dd><%= guestbook.getName() %></dd>
+        </dl>
+                
