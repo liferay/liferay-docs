@@ -61,18 +61,12 @@ Search administrative application found in Control Panel &rarr; Configuration
 &rarr; Search, or when a CRUD operation is made on the entity, _if_ the
 `modelIndexed` method is implemented in your contributor.
 
-`DocumentContributor` classes (without any type parameter) contribute certain
-fields to every index document, regardless of what base entity is being indexed.
-For example, the
+`DocumentContributor` classes (without any `indexer.class.name`  component
+property or type parameter) contribute certain fields to every index document,
+regardless of what base entity is being indexed. For example, the
 [`GroupedModelDocumentContributor`](https://github.com/liferay/liferay-portal/blob/7.1.1-ga2/modules/apps/portal-search/portal-search/src/main/java/com/liferay/portal/search/internal/contributor/document/GroupedModelDocumentContributor.java)
 contributes the `GROUP_ID` and `SCOPE_GROUP_ID` fields for all documents with a
 backing entity that's also a `GroupedModel`.
-
-#### How to contribute fields to every index Document, regardless of what base entity is being indexed [](id=indexing-global-document-field-contributor)
-
-You can implement a `DocumentContributor` as an OSGi _@Component_ and register it without an `indexer.class.name` property.
-
-**Example:** `GroupedModelDocumentContributor` ([link-to-source](https://github.com/liferay/liferay-portal/blob/7.1.0-ga1/modules/apps/portal-search/portal-search/src/main/java/com/liferay/portal/search/internal/contributor/document/GroupedModelDocumentContributor.java))
 
 ### Searching [](id=searching)
 
