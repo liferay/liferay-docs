@@ -109,10 +109,17 @@ if you're on Windows.
     Add the following variables to both `startWebLogic.[cmd|sh]` scripts:
 
         export DERBY_FLAG="false"
-        export JAVA_OPTIONS="${JAVA_OPTIONS} -Dfile.encoding=UTF-8 -da:org.apache.lucene... -da:org.aspectj..."
+        export JAVA_OPTIONS="${JAVA_OPTIONS} -Dfile.encoding=UTF-8 -Duser.timezone=GMT -da:org.apache.lucene... -da:org.aspectj..."
         export MW_HOME="/your/weblogic/directory"
         export USER_MEM_ARGS="-Xmx2048m"
 
+    +$$$
+
+    **Important:** For @product@ to work properly, the application server JVM 
+    must use the `GMT` time zone and `UTF-8` file encoding.
+
+    $$$
+    
     The `DERBY_FLAG` setting disables the Derby server built in to WebLogic, as 
     @product@ doesn't require this server. The remaining settings support @product@'s 
     memory requirements, UTF-8 requirement, Lucene usage, and Aspect Oriented 
