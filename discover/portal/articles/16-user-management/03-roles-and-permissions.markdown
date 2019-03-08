@@ -43,6 +43,17 @@ Read
 [here](/discover/portal/-/knowledge_base/6-2/creating-teams-for-advanced-site-membership-management)For
 more information about teams.
 
++$$$
+
+**Note:** Some permissions cannot be handled from the control panel.
+Asset-level permissions (for instance, permission to edit an individual blog
+post, or view a folder in the Documents and Media library) are managed from the
+individual asset. See 
+[Permissions](/discover/portal/-/knowledge_base/6-2/permissions) 
+for details.
+
+$$$
+
 ![Figure 16.9: To examine all the roles defined for your portal, navigate to the Control Panel and click on *Roles*.](../../images/01-roles-and-role-actions.png)
 
 After you save, Liferay redirects you to the list of roles. To see what
