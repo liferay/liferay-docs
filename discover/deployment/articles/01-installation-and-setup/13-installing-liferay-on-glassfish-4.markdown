@@ -67,7 +67,7 @@ Modify
 merging in the following JVM options into the current lists of JVM options
 within any `<java-config>` element in the file: 
 
-    <jvm-options>-Dfile.encoding=UTF8</jvm-options> 
+    <jvm-options>-Dfile.encoding=UTF-8</jvm-options> 
     <jvm-options>-Djava.net.preferIPv4Stack=true</jvm-options>
     <jvm-options>-Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false</jvm-options>
     <jvm-options>-Duser.timezone=GMT</jvm-options>
