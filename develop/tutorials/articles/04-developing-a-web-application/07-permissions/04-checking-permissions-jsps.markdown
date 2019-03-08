@@ -27,7 +27,7 @@ First, you'll create the guestbook tabs and check permissions for them:
 
                     for (int i = 0; i < guestbooks.size(); i++) {
 
-                        Guestbook curGuestbook = (Guestbook) guestbooks.get(i);
+                        Guestbook curGuestbook = guestbooks.get(i);
                         String cssClass = StringPool.BLANK;
 
                         if (curGuestbook.getGuestbookId() == guestbookId) {
@@ -105,16 +105,6 @@ actions. To do this, follow these steps:
             %>
 
             <liferay-ui:icon-menu>
-
-                <portlet:renderURL var="viewEntryURL">
-                    <portlet:param name="entryId" value="<%= String.valueOf(entry.getEntryId()) %>" />
-                    <portlet:param name="mvcPath" value="/guestbookwebportlet/view_entry.jsp" />
-                </portlet:renderURL>
-
-                <liferay-ui:icon
-                    message="View"
-                    url="<%= viewEntryURL.toString() %>"
-                />
 
                 <c:if
                     test="<%= GuestbookEntryPermission.contains(permissionChecker, entry.getEntryId(), ActionKeys.UPDATE) %>">
