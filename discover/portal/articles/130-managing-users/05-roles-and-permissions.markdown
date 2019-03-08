@@ -15,7 +15,16 @@ is likely to have permissions relevant to the specific Message Board portlets
 delegated to it. Users with this role inherit the permissions collected underneath
 the umbrella of the role.
 
-Roles are managed through the Control Panel.
++$$$
+
+**NOTE:** Roles are managed through the Control Panel, but not all permissions
+are. Asset-level permissions (for instance, permission to edit an individual
+blog post, or view a folder in the Documents and Media library) are managed from
+the individual asset. See 
+[Application Permissions](/discover/portal/-/knowledge_base/7-0/application-permissions)
+for details.
+
+$$$
 
 ## Managing Roles in Liferay [](id=managing-roles-in-liferay)
 
