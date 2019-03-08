@@ -8,16 +8,16 @@
 `GuestbookAssetRendererFactory` that instantiates the `GuestbookAssetRenderer`'s
 private guestbook object. Here, you'll create both classes. 
 
-Get started by creating the Asset Renderer class first. 
+You'll create the Asset Renderer class first. 
 
 ## Creating the AssetRenderer Class [](id=creating-the-assetrenderer-class)
 
 Follow these steps to create the `GuestbookAssetRenderer` class: 
 
-1.  Create a new package called `com.liferay.docs.guestbook.web.internal.asset` in the
-    `guestbook-web` module's `src/main/java` folder. In this package, create
-    a `GuestbookAssetRenderer` class that extends @product@'s 
-    `BaseJSPAssetRenderer` class. Extending this class gives you a head-start on 
+1.  Create a new package called `com.liferay.docs.guestbook.web.internal.asset`
+    in the `guestbook-web` module's `src/main/java` folder. In this package,
+    create a `GuestbookAssetRenderer` class that extends @product@'s
+    `BaseJSPAssetRenderer` class. Extending this class gives you a head-start on
     implementing the `AssetRenderer` interface: 
 
         public class GuestbookAssetRenderer extends BaseJSPAssetRenderer<Guestbook> {
@@ -26,8 +26,8 @@ Follow these steps to create the `GuestbookAssetRenderer` class:
  
 2.  Add the constructor, the guestbook class variable, and the permissions 
     model resource. Most of the methods in this class are getters that return 
-    fields from the private `_guestbook` object. Methods which require a 
-    permission check will use `_guestbookModelResourcePermission`: 
+    fields from the private `_guestbook` object. Methods requiring a 
+    permission check use `_guestbookModelResourcePermission`: 
       
         public GuestbookAssetRenderer(Guestbook guestbook, ModelResourcePermission<Guestbook> modelResourcePermission) {
 
@@ -41,9 +41,8 @@ Follow these steps to create the `GuestbookAssetRenderer` class:
  
 3.  The `BaseJSPAssetRenderer` abstract class that you're extending contains 
     dummy implementations of the `hasEditPermission` and `hasViewPermission`
-    methods that you must override. Override these dummy implementations with 
-    actual permission checks using the permissions resources that you 
-    created earlier:
+    methods that you must override with actual permission checks using the
+    permissions resources that you created earlier:
 
         @Override
         public boolean hasEditPermission(PermissionChecker permissionChecker) 
@@ -70,7 +69,6 @@ Follow these steps to create the `GuestbookAssetRenderer` class:
 
         	return true;
         }
-        
 
 4.  Add the following getter methods to retrieve information about the 
     guestbook asset: 
@@ -131,17 +129,16 @@ Follow these steps to create the `GuestbookAssetRenderer` class:
             return super.include(request, response, template);
         }
 
-    The final method makes several utilities, as well as the `Guestbook`
-    entity, available in the `HttpServletRequest` object. 
+    The final method makes several utilities and the `Guestbook`
+    entity available in the `HttpServletRequest` object. 
 
-5.  Override the `getJspPath` method. This method returns a string that 
-    represents the path to the JSP that renders the guestbook asset. When the 
-    Asset Publisher displays an asset's full content, it invokes the asset 
-    renderer class's `getJspPath` method and passes a `template` string 
-    parameter that equals `"full_content"`. This returns 
-    `/asset/guestbook/full_content.jsp` when the `full_content` template string 
-    is passed as a parameter. You'll create this JSP later when updating your 
-    application's user interface: 
+5.  Override the `getJspPath` method. It returns a string representing the
+    path to the JSP that renders the guestbook asset. When the Asset Publisher
+    displays an asset's full content, it invokes the asset renderer class's
+    `getJspPath` method and passes a `template` string parameter that equals
+    `"full_content"`. This returns `/asset/guestbook/full_content.jsp` when the
+    `full_content` template string is passed as a parameter. You'll create this
+    JSP later when updating your application's user interface: 
 
           @Override
           public String getJspPath(HttpServletRequest request, String template) {
@@ -222,10 +219,10 @@ Follow these steps to create the `GuestbookAssetRenderer` class:
             return super.getURLView(liferayPortletResponse, windowState);
           }
 
-10.  Organize imports (Ctrl-Shift-O) and save the file. Be sure to use 
-     `com.liferay.petra.*` libraries when prompted, as they are now home
-     to libraries that have been deprecated in Liferay's kernel, and also 
-     `java.util.logging.Logger` and `java.util.logging.Level`.
+10.  Organize imports (Ctrl-Shift-O) and save the file. Choose
+     `com.liferay.petra.*` libraries when prompted, to avoid the deprecated ones
+     in Liferay's kernel. For logging, choose `java.util.logging.Logger` and
+     `java.util.logging.Level`.
  
 
 Next you can create the `AssetRendererFactory` class. 
@@ -264,9 +261,8 @@ Follow these steps to create the `GuestbookAssetRendererFactory`:
 
     This code contains the class declaration, the constructor, and the class
     variables. It sets the class name it creates an `AssetRenderer` for,
-    a portlet ID, and a boolean (`_LINKABLE`) set to `true`. The boolean denotes
-    the methods that provide URLs in the generated `AssetRenderer` that are
-    implemented. 
+    a portlet ID, and a `true` boolean (`_LINKABLE`). The boolean denotes
+    implemented methods that provide URLs in the generated `AssetRenderer`. 
 
 2.  Implement the `getAssetRenderer` method, which constructs new 
     `GuestbookAssetRenderer` instances for particular guestbooks. It uses the 
