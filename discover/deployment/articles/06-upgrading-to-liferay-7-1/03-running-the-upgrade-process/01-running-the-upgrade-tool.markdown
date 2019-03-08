@@ -48,13 +48,13 @@ after finishing the core upgrade.
  
 Here are the tool's default Java parameters:
     
-    -Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx2048m 
+    -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx2048m 
 
 The `-j` option lets you override the JVM parameters. For example, these options
 set the JVM memory to 10GB, which is a good starting point for this process
 type:
 
-    db_upgrade.sh -j "-Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx10240m"
+    db_upgrade.sh -j "-Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx10240m"
 
 The `-l` option lets you specify the tool's log file name: 
 
