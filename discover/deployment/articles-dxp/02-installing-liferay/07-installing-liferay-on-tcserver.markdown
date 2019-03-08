@@ -162,7 +162,7 @@ runtime instance.
 
     with this one
 
-        JVM_OPTS="-Xmx1024M -Xss512K -XX:MaxMetaspaceSize=512m"
+        JVM_OPTS="-Dfile.encoding=UTF-8 -Duser.timezone=GMT -Xmx1024M -Xss512K -XX:MaxMetaspaceSize=512m"
 
     In `setenv.bat` replace
 
@@ -170,8 +170,14 @@ runtime instance.
 					
     with
 
-        set JVM_OPTS=-Xmx1024M -Xss512K -XX:MaxMetaspaceSize=512m
+        set JVM_OPTS=-Dfile.encoding=UTF-8 -Duser.timezone=GMT -Xmx1024M -Xss512K -XX:MaxMetaspaceSize=512m
 
+    +$$$
+    
+    **Important:** For @product@ to work properly, the application server JVM must 
+    use the `GMT` time zone and `UTF-8` file encoding. 
+    
+    $$$
 
 2. Next, you should make sure that UTF-8 URI encoding is used consistently. Open
 `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/conf/server.xml` and make sure the
@@ -206,9 +212,17 @@ runtime instance.
         wrapper.java.additional.10="-XX:MaxMetaspaceSize=256M"
         wrapper.java.additional.11="-Dfile.encoding=UTF-8"
 
+    +$$$
+
+    **Important:** For @product@ to work properly, the application server JVM 
+    must use the `GMT` time zone and `UTF-8` file encoding. If your Java wrapper
+    doesn't already specify the `GMT` time zone, add an entry for it:
+
+        wrapper.java.additional.12=-Duser.timezone=GMT
+
+    $$$
 
 4. Last, open `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/conf/web.xml` and add the following after `<load-on-startup>3</load-on-startup>`    
-
 
         <init-param>
             <param-name>compilerSourceVM</param-name>

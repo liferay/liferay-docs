@@ -83,9 +83,16 @@ if you're on Windows.
 Add the following variables to both `startWebLogic.[cmd|sh]` scripts:
 
     export DERBY_FLAG="false"
-    export JAVA_OPTIONS="${JAVA_OPTIONS} -Dfile.encoding=UTF-8 -da:org.apache.lucene... -da:org.aspectj..."
+    export JAVA_OPTIONS="${JAVA_OPTIONS} -Dfile.encoding=UTF-8  -Duser.timezone=GMT -da:org.apache.lucene... -da:org.aspectj..."
     export MW_HOME="/your/weblogic/directory"
     export USER_MEM_ARGS="-Xmx1024m -XX:MetaspaceSize=512m"
+
++$$$
+
+**Important:** For @product@ to work properly, the application server JVM must 
+use the `GMT` time zone and `UTF-8` file encoding. 
+
+$$$
 
 The `DERBY_FLAG` setting disables the Derby server built in to WebLogic, as 
 @product@ doesn't require this server. The remaining settings support @product@'s 
@@ -104,11 +111,11 @@ Start* tab. Enter the following into the *Arguments* field:
 
 Click *Save* when you're finished. 
 
-The UTF-8 file encoding must also be set in your environment's Java properties.
-In your `setDomainEnv.[sh|cmd]` script, append `-Dfile.encoding=utf8` ahead of
-your other Java properties: 
+The UTF-8 file encoding and GMT time zone must also be set in your environment's
+Java properties. In your `setDomainEnv.[sh|cmd]` script, append
+`-Dfile.encoding=UTF-8 -Duser.timezone=GMT` ahead of your other Java properties: 
 
-    JAVA_PROPERTIES="-Dfile.encoding=utf8 ${JAVA_PROPERTIES} ${CLUSTER_PROPERTIES}"
+    JAVA_PROPERTIES="-Dfile.encoding=UTF-8 -Duser.timezone=GMT ${JAVA_PROPERTIES} ${CLUSTER_PROPERTIES}"
 
 Next, you'll set some @product@-specific properties for your @product@ installation. 
 
