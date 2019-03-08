@@ -92,7 +92,11 @@ entries. Add and remove tags, categories, and related assets.
 
 +$$$
 
-**Note:** Setting your custom asset as the *Main Asset* of a page, which is required to fully utilize certain aspects of the integration between the Guestbook and Liferay's built in widgets, is part of the process for configuring [Friendly URL](/develop/tutorials/-/knowledge_base/7-1/making-urls-friendlier) which will be added to the Guestbook later.
+**Note:** Setting your custom asset as the *Main Asset* of a page is
+required to display related assets in the Related Assets portlet. This is done
+when creating 
+[Friendly URLs](/develop/tutorials/-/knowledge_base/7-1/making-urls-friendlier) 
+in a later step.
 
 $$$
 
