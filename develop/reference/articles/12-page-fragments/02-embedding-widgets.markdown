@@ -14,40 +14,21 @@ Here is the full list of widgets that can be embedded:
 
 | Widget Name    | Tag |
 | -------- | --- |	
-|Blogs          |`<lfr-widget-blogs>`              |
 |DDL Display	|`<lfr-widget-dynamic-data-list>`  |
 |Form           |`<lfr-widget-form>`               |
-|Message Boards	|`<lfr-widget-message-boards>`     |
-|Recent Bloggers|`<lfr-widget-recent-bloggers>`|
-|Page Comments	|`<lfr-widget-page-comments>`      |
-|Page Flags	    |`<lfr-widget-page-flags>`         |
-|Page Ratings	|`<lfr-widget-page-ratings>`       |
 |Asset Publisher|`<lfr-widget-asset-list>`     |
-|Breadcrumb	    |`<lfr-widget-asset-breadcrumb>` |
-|Categories Navigation |`<lfr-widget-asset-categories-nav>` |
-|Flash	|`<lfr-widget-asset-flash>`|
-|Knowledge base Article	|`<lfr-widget-asset-kb-article>`|
-|Knowledge base Display	|`<lfr-widget-asset-kb>`|
-|Knowledge base Search	|`<lfr-widget-asset-kb-search>`|
-|Media Gallery	|`<lfr-widget-asset-media-gallery>`|
-|Navigation Menu	|`<lfr-widget-asset-nav>`|
-|Nested Portlets	|`<lfr-widget-asset-nested-portlets>`|
-|Polls Display	|`<lfr-widget-asset-polls>`|
-|Related Assets	|`<lfr-widget-asset-related-assets>`|
-|Site Map	|`<lfr-widget-asset-site-map>`|
-|Tag Cloud	|`<lfr-widget-asset-tag-cloud>`|
-|Tags Navigation	|`<lfr-widget-asset-tags-nav>`|
-|Web Content Display	|`<lfr-widget-asset-web-content>`
-|Rss Publisher (Deprecated)	|`<lfr-widget-asset-rss>`|
-|Weather	|`<lfr-widget-asset-weather>`|
-|Iframe	|`<lfr-widget-asset-iframe>`|
-|Folder Facet	|`<lfr-widget-asset-search-facet-folder>`|
-|Search Bar	|`<lfr-widget-asset-search-bar>`|
-|Search Insights	|`<lfr-widget-asset-search-insights>`|
-|Search results	|`<lfr-widget-asset-search-results>`|
-|Site Facet	|`<lfr-widget-asset-search-facet-site>`|
-|Type Facet	|`<lfr-widget-asset-search-facet-type>`|
-|User Facet	|`<lfr-widget-asset-search-facet-user>`|
-|Sign in	|`<lfr-widget-asset-sign-in>`|
-|Wiki	|`<lfr-widget-asset-wiki>`|
+|Breadcrumb	    |`<lfr-widget-breadcrumb>` |
+|Categories Navigation |`<lfr-widget-categories-nav>` |
+|Flash	|`<lfr-widget-flash>`|
+|Media Gallery	|`<lfr-widget-media-gallery>`|
+|Navigation Menu	|`<lfr-widget-nav>`|
+|Polls Display	|`<lfr-widget-polls>`|
+|Related Assets	|`<lfr-widget-related-assets>`|
+|Site Map	|`<lfr-widget-site-map>`|
+|Tag Cloud	|`<lfr-widget-tag-cloud>`|
+|Tags Navigation	|`<lfr-widget-tags-nav>`|
+|Web Content Display	|`<lfr-widget-web-content>`
+|Rss Publisher (Deprecated)	|`<lfr-widget-rss>`|
+|Iframe	|`<lfr-widget-iframe>`|
+
 
