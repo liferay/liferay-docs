@@ -235,7 +235,7 @@ There are also a few other things to consider when using the agent. Due to class
 loading issues, the agent starts in a separate JVM. You can specify options for
 it with the `patching.tool.agent.jvm.opts` property. 
 
-        -Dpatching.tool.agent.jvm.opts="-Xmx1024m -Xms512m -Dfile.encoding=UTF8"
+        -Dpatching.tool.agent.jvm.opts="-Xmx1024m -Xms512m -Dfile.encoding=UTF-8"
 
 You may also experience issues on Windows if the user starting the app server
 doesn't have administrator privileges. Here are some examples of the errors you 
@@ -247,7 +247,7 @@ may see:
 To solve this, set the `java.io.tmpdir` system property as follows in the
 `patching.tool.agent.jvm.opts` property:
 
-        -Dpatching.tool.agent.jvm.opts="-Xmx1024m -Xms512m -Dfile.encoding=UTF8 -Djava.io.tmpdir=%TMP%"
+        -Dpatching.tool.agent.jvm.opts="-Xmx1024m -Xms512m -Dfile.encoding=UTF-8 -Djava.io.tmpdir=%TMP%"
 
 The agent also has some flags you can set to control how it behaves:
 

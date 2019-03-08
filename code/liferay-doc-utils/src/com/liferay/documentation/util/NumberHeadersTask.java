@@ -16,17 +16,16 @@ import java.util.Queue;
 import java.util.regex.Pattern;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Task;
 
-public class NumberHeaders extends Task {
+public class NumberHeadersTask extends Task {
 
-	public static void main(String[] args) throws Exception {
-		if (args == null || args.length < 1) {
-			throw new IllegalArgumentException("Requires 1 argument: docDir");
-		}
+	@Override
+	public void execute() throws BuildException {
 
-		String docDir = args[0];
-		String productType = args[1];
+		String docDir = _docdir;
+		String productType = _productType;
 
 		boolean dxpBuild = false;
 		boolean foundDuplicateIds = false;
@@ -50,7 +49,7 @@ public class NumberHeaders extends Task {
 		}
 		
 		if (ceFileList.size() == 0 && dxpFileList.size() == 0) {
-			throw new Exception(
+			throw new BuildException(
 					"FAILURE - No files in this directory");
 		}
 
@@ -123,12 +122,12 @@ public class NumberHeaders extends Task {
 
 					FileUtils.forceDelete(new File(outFileTmp));
 				} catch (IOException e) {
-					throw new Exception(e.getLocalizedMessage());
+					throw new BuildException(e.getLocalizedMessage());
 				}
 			}
 
 			if (foundDuplicateIds && !overrideFile) {
-				throw new Exception("FAILURE - Duplicate header IDs exist");
+				throw new BuildException("FAILURE - Duplicate header IDs exist");
 			}
 		}
 		
@@ -142,9 +141,17 @@ public class NumberHeaders extends Task {
 				duplicateFileDxp = duplicateFileDxp.replace(
 						"/articles/", "/articles-dxp/");
 				
-				checkOverrideHeaders(duplicateFile, duplicateFileDxp);
+				try {
+					checkOverrideHeaders(duplicateFile, duplicateFileDxp);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
 		}
+
+		// This clears the header IDs stored; this avoids false reports of
+		// duplicated IDs if the task is run again during the same process.
+		IDS.clear();
 	}
 
 	private static String assembleId(String heading, int idCount) {
@@ -334,7 +341,7 @@ public class NumberHeaders extends Task {
 
 	private static List<String> getDuplicateFiles(String docDir,
 			List<String> dirTypes)
-		throws Exception {
+		throws BuildException {
 		
 		List<String> convertedFileList = new ArrayList<String>();
 		List<String> duplicateFiles = new ArrayList<String>();
@@ -352,13 +359,13 @@ public class NumberHeaders extends Task {
 	}
 	
 	private static List<String> getFileList(String docDir, String dirType)
-			throws Exception {
+			throws BuildException {
 		
 		File articlesDir = new File("../" + docDir + "/articles" + dirType);
 		File docSetDir = new File("../" + docDir);
 
 		if (!articlesDir.exists() || !articlesDir.isDirectory()) {
-			throw new Exception(
+			throw new BuildException(
 					"FAILURE - bad articles directory " + articlesDir);
 		}
 		List<File> docSetDirFolders = new ArrayList<File>();
@@ -411,7 +418,7 @@ public class NumberHeaders extends Task {
 	}
 
 	private static String handleHeaderLine(String line, String filename,
-		int lineNum,  Map<String, Integer> secondaryIds) throws Exception {
+		int lineNum,  Map<String, Integer> secondaryIds) throws BuildException {
 
 		String newHeadingLine = null;
 
@@ -439,7 +446,7 @@ public class NumberHeaders extends Task {
 				sb.append(filename);
 				sb.append(" - ");
 				sb.append(id);
-				throw new Exception(sb.toString());
+				throw new BuildException(sb.toString());
 			}
 			
 			// Check if the ID is already in use
@@ -512,7 +519,7 @@ public class NumberHeaders extends Task {
 				heading = extractHeading(line, indexOfFirstHeaderChar);
 			}
 			else {
-				throw new Exception("WARNING - "  + filename + ":" +
+				throw new BuildException("WARNING - "  + filename + ":" +
 					lineNum + " is missing header text.");
 			}
 
@@ -622,5 +629,16 @@ public class NumberHeaders extends Task {
 
 		headerIdPattern = Pattern.compile(patternArg);
 	}
+
+	public void setDocdir(String docdir) {
+		_docdir = docdir;
+	}
+
+	public void setProductType(String productType) {
+		_productType = productType;
+	}
+
+	private String _docdir;
+	private String _productType;
 
 }

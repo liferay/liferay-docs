@@ -150,9 +150,17 @@ Administrators can set the UTF-8 properties in the `server.xml` file. This is
 required or else special characters will not be parsed correctly. Add the
 following inside the `jvmEntries` tag:
 
-    <jvmEntries xmi:id="JavaVirtualMachine_1183122130078" ...genericJvmArguments="-Dfile.encoding=UTF-8">
+    <jvmEntries xmi:id="JavaVirtualMachine_1183122130078" ...genericJvmArguments="-Dfile.encoding=UTF-8 -Duser.timezone=GMT">
 
-Alternately, administrators can set the UTF-8 properties from the WebSphere Admin Console. (See below.)
++$$$
+
+**Important:** For @product@ to work properly, the application server JVM must 
+use the `GMT` time zone and `UTF-8` file encoding. 
+
+$$$
+    
+Alternately, you can set the UTF-8 properties from the WebSphere Admin Console.
+(See below.)
 
 ### Removing the secureSessionCookie Tag [](id=removing-the-securesessioncookie-tag)
 

@@ -109,10 +109,17 @@ if you're on Windows.
     Add the following variables to both `startWebLogic.[cmd|sh]` scripts:
 
         export DERBY_FLAG="false"
-        export JAVA_OPTIONS="${JAVA_OPTIONS} -Dfile.encoding=UTF-8 -da:org.apache.lucene... -da:org.aspectj..."
+        export JAVA_OPTIONS="${JAVA_OPTIONS} -Dfile.encoding=UTF-8 -Duser.timezone=GMT -da:org.apache.lucene... -da:org.aspectj..."
         export MW_HOME="/your/weblogic/directory"
         export USER_MEM_ARGS="-Xmx2048m"
 
+    +$$$
+
+    **Important:** For @product@ to work properly, the application server JVM 
+    must use the `GMT` time zone and `UTF-8` file encoding.
+
+    $$$
+    
     The `DERBY_FLAG` setting disables the Derby server built in to WebLogic, as 
     @product@ doesn't require this server. The remaining settings support @product@'s 
     memory requirements, UTF-8 requirement, Lucene usage, and Aspect Oriented 
@@ -136,10 +143,10 @@ if you're on Windows.
         export WLS_MEM_ARGS_32BIT
 
 4.  Set the Java file encoding to UTF-8 in 
-    `your-domain/bin/SetDomainEnv.[cmd|sh]` by appending `-Dfile.encoding=utf8`
+    `your-domain/bin/SetDomainEnv.[cmd|sh]` by appending `-Dfile.encoding=UTF-8`
     ahead of your other Java properties:  
 
-        JAVA_PROPERTIES="-Dfile.encoding=utf8 ${JAVA_PROPERTIES} ${CLUSTER_PROPERTIES}"
+        JAVA_PROPERTIES="-Dfile.encoding=UTF-8 ${JAVA_PROPERTIES} ${CLUSTER_PROPERTIES}"
 
 5.  You must also ensure that the Node Manager sets @product@'s memory
     requirements when starting the Managed Server. In the Admin Server's console
