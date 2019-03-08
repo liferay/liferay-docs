@@ -19,6 +19,20 @@ You can use the example project
 [in this ZIP file](https://dev.liferay.com/documents/10184/656312/MyCustomLoginPortlet.zip) 
 as a starting point for your own. 
 
++$$$
+
+**Note:** When using the example project, set the session timeout portal
+property like this: 
+
+    session.timeout.auto.extend.offset=45
+
+This is needed because the default (as of 
+[LPS-68543](https://issues.liferay.com/browse/LPS-68543)) setting is `0`,
+causing the browser to execute an `extend_session` call. This may force users
+attempting to log in to make the attempt twice. 
+
+$$$
+
 It has only one view, which is used for logging in or showing the user who is
 already logged in: 
 
