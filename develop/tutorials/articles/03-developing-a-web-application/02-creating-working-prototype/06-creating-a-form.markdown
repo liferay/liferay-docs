@@ -10,7 +10,8 @@ entry itself.
 
 Add the following tags to the end of your `edit_entry.jsp` file: 
 
-    <aui:form action="<%= addEntryURL %>" name="<portlet:namespace />fm">
+    <c:set var="portletNamespace"><portlet:namespace/></c:set>
+    <aui:form action="<%= addEntryURL %>" name="${portletNamespace}fm">
             <aui:fieldset>
                 <aui:input name="name"></aui:input>
                 <aui:input name="message"></aui:input>
