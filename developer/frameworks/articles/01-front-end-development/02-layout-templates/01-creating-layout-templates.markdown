@@ -1,4 +1,8 @@
-# Creating Layout Templates [](id=creating-layout-templates-with-the-themes-generator)
+---
+header-id: creating-layout-templates-with-the-themes-generator
+---
+
+# Creating Layout Templates
 
 This tutorial shows how to use the Liferay Theme Generator's Layouts 
 sub-generator to create a layout template. 
@@ -44,7 +48,7 @@ to the one below:
     - `package-lock.json`
     - `package.json`
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 - [Creating Layout Template Thumbnail Previews](/develop/tutorials/-/knowledge_base/7-2/creating-custom-layout-template-thumbnail-previews)
 - [Bundling Layout Templates with a Theme](/develop/tutorials/-/knowledge_base/7-2/including-layout-templates-with-a-theme)

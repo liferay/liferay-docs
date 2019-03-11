@@ -1,4 +1,8 @@
-# Theme Components [](id=theme-components)
+---
+header-id: theme-components
+---
+
+# Theme Components
 
 This guide provides an overview of the theme development components and 
 workflow, covering the following topics:
@@ -8,7 +12,7 @@ workflow, covering the following topics:
 - [Theme Customizations and Extensions](#theme-customizations-and-extensions)
 - [Portlet Customizations and Extensions](#portlet-customizations-and-extensions)
 
-## Theme Templates [](id=theme-templates)
+## Theme Templates
 
 @product@ provides several default FreeMarker templates that each handle a key 
 piece of functionality for the page:
@@ -57,7 +61,7 @@ piece of functionality for the page:
 
 ![Figure 2: Each theme template provides a portion of the page's markup and functionality.](../../../images/portal-layout-theme-templates.png)
 
-### Theme Template Utilities [](id=theme-template-utilities)
+### Theme Template Utilities
 
 @product@ provides several FreeMarker variables and macros that you can use in 
 your theme templates to include portlets, use taglibs, access theme objects, and 
@@ -79,7 +83,7 @@ included in the files listed below:
   [Taglib tutorials](/develop/tutorials/-/knowledge_base/7-2/front-end-taglibs) 
   for more information on using each taglib in your theme templates.
 
-## CSS Frameworks and Extensions [](id=css-frameworks-and-extensions)
+## CSS Frameworks and Extensions
 
 As noted above, @product@ supports the Sass CSS extension, so you can take
 full advantage of Sass mixins, nesting, partials, and variables in your CSS.
@@ -95,7 +99,7 @@ Atlas, a custom Bootstrap theme, creates @product@'s Classic theme. See the
 [importing Clay CSS tutorial](/develop/tutorials/-/knowledge_base/7-2/importing-clay-css-into-a-theme) 
 for more information.
 
-## Theme Customizations and Extensions [](id=theme-customizations-and-extensions)
+## Theme Customizations and Extensions
 
 The theme templates, along with the CSS, provide much of the overall look and 
 feel for the page, but additional extension points/customizations are available. 
@@ -126,7 +130,7 @@ The following extensions and mechanisms are available for themes:
   [Themelets tutorial](/develop/tutorials/-/knowledge_base/7-2/creating-reusable-pieces-of-code-for-your-themes)
   for more information.
 
-## Portlet Customizations and Extensions [](id=portlet-customizations-and-extensions)
+## Portlet Customizations and Extensions
 
 You can customize portlets with these mechanisms and extensions:
 

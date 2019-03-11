@@ -1,4 +1,8 @@
-# Understanding the Page Layout [](id=understanding-the-page-layout)
+---
+header-id: understanding-the-page-layout
+---
+
+# Understanding the Page Layout
 
 Understanding the layout's structure is crucial to targeting the correct markup 
 for styling, organizing your content, and creating your site. Your page layout 
@@ -13,7 +17,7 @@ default page layout is organized into three key sections:
 
 ![Figure 1: The page layout is broken into three key sections.](../../../images/portal-layout-sections.png)
 
-## Portlets or Fragments [](id=portlets-or-fragments)
+## Portlets or Fragments
 
 The `#content` `Section` makes up the majority of the page. Portlets or 
 fragments are contained inside the `#main-content` `div`. @product@ ships with 
@@ -50,7 +54,7 @@ JavaScript, and HTML---that provide key pieces of functionality for the page
 collections of fragments that you can then add to the page. These fragments can 
 be edited on the page to suit your vision. 
 
-## Layout Templates, Page Templates, and Site Templates [](id=layout-templates-page-templates-and-site-templates)
+## Layout Templates, Page Templates, and Site Templates
 
 The page layout within the `#content` Section is determined by the 
 [Layout Template](/develop/tutorials/-/knowledge_base/7-2/layout-templates-intro). 
@@ -68,7 +72,7 @@ template for the page. Climbing further up the scope chain, you can create
 which can define the pages, page templates, layout templates, and theme(s) to 
 use for site pages. 
 
-## Product Navigation Sidebars and Panels [](id=product-navigation-sidebars-and-panels)
+## Product Navigation Sidebars and Panels
 
 The main page layout also contains a few notable sidebars an administrative user 
 can trigger through the Control Menu. These are listed below:

@@ -1,4 +1,8 @@
-# Themes [](id=themes-introduction)
+---
+header-id: themes-introduction
+---
+
+# Themes
 
 Themes customize the default look and feel of your site. You can inject your own
 flavor and personality and represent the visual identity of your brand or
@@ -26,7 +30,7 @@ come out-of-the-box, and support SASS, and multiple JavaScript frameworks.
 Several mechanisms are available for customizing, developing, and extending
 themes. 
 
-## Theme Workflow [](id=theme-workflow)
+## Theme Workflow
 
 Themes are built on top of one of the following base themes: 
 
@@ -72,14 +76,10 @@ same:
 
 The finished theme is bundled as a WAR (Web application ARchive) file. 
 
-+$$$
-
-**Note:** While developing your theme, you should enable 
-[Developer Mode](/developer/frameworks/-/knowledge_base/7-2/using-developer-mode-with-themes).
-This disables the JavaScript minifier and caching for CSS and FreeMarker
-template files, which makes debugging easier.
-
-$$$
+| **Note:** While developing your theme, you should enable
+| [Developer Mode](/developer/frameworks/-/knowledge_base/7-2/using-developer-mode-with-themes).
+| This disables the JavaScript minifier and caching for CSS and FreeMarker
+| template files, which makes debugging easier.
 
 If you've built your theme with the Liferay Theme Generator, you can use some
 helpful Gulp tasks to streamline the process: 
