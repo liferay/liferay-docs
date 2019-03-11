@@ -44,10 +44,10 @@ The plugin adds a series of tasks to your project:
 Name | Depends On | Type | Description
 ---- | ---------- | ---- | -----------
 <a name="downloadgo"></a>`downloadGo` | \- | [`DownloadGoTask`](#downloadgotask) | Downloads and unpacks the local Go distribution for the project.
-[`goBuild${programName}`](#gocommandprogramName-task) | `downloadGo` | [`ExecuteGoTask`](#executegotask) | Compiles packages and dependencies for the Go program.
-[`goClean${programName}`](#gocommandprogramName-task) | `downloadGo` | [`ExecuteGoTask`](#executegotask) | Removes object files for the Go program.
-[`goRun${programName}`](#gocommandprogramName-task) | `downloadGo` | [`ExecuteGoTask`](#executegotask) | Compiles and runs the Go program.
-[`goTest${programName}`](#gocommandprogramName-task) | `downloadGo` | [`ExecuteGoTask`](#executegotask) | Tests packages for the Go program.
+[`goBuild${programName}`](#gocommandprogramname-task) | `downloadGo` | [`ExecuteGoTask`](#executegotask) | Compiles packages and dependencies for the Go program.
+[`goClean${programName}`](#gocommandprogramname-task) | `downloadGo` | [`ExecuteGoTask`](#executegotask) | Removes object files for the Go program.
+[`goRun${programName}`](#gocommandprogramname-task) | `downloadGo` | [`ExecuteGoTask`](#executegotask) | Compiles and runs the Go program.
+[`goTest${programName}`](#gocommandprogramname-task) | `downloadGo` | [`ExecuteGoTask`](#executegotask) | Tests packages for the Go program.
 
 ### DownloadGoTask [](id=downloadgotask)
 
@@ -98,7 +98,7 @@ Method | Description
 
 ### go${command}${programName} Task [](id=gocommandprogramname-task)
 
-For each Go program in [`workingDir`](#workingDir), four tasks of type
+For each Go program in [`workingDir`](#workingdir), four tasks of type
 [`ExecuteGoTask`](#executegotask) are added. Each of these tasks are
 automatically configured with sensible defaults:
 
