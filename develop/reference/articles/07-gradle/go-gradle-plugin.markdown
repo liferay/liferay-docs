@@ -80,7 +80,7 @@ Property Name | Type | Default Value | Description
 `inheritProxy` | `boolean` | `true` | Whether to set the `http_proxy`, `https_proxy`, and `no_proxy` environment variables in the Go invocation based on the values of the system properties `https.proxyHost`, `https.proxyPort`, `https.proxyUser`, `https.proxyPassword`, `https.nonProxyHosts`, `https.proxyHost`, `https.proxyPort`, `https.proxyUser`, `https.proxyPassword`, and `https.nonProxyHosts`. If these environment variables are already set, their values will not be overwritten.
 `goDir` | `File` | `go.goDir`](#godir) | The directory that contains the executable to invoke.
 `useGradleExec` | `boolean` | <p>**If running in a [Gradle Daemon](https://docs.gradle.org/current/userguide/gradle_daemon.html):** `true`</p><p>**Otherwise:** `false`</p> | Whether to invoke Go using [`project.exec`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:exec\(org.gradle.api.Action\)), which can solve hanging problems with the Gradle Daemon.
-<a name="workingdir"></a>`workingDir` | `File` | `go.workingDir`](#workingdir) | The working directory to use in the Go invocation.
+<a name="workingdirproperty"></a>`workingDir` | `File` | `go.workingDir`](#workingdir) | The working directory to use in the Go invocation.
 
 The type `File` properties support any type that can be resolved by
 [`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file\(java.css.Object\)).
@@ -98,7 +98,7 @@ Method | Description
 
 ### go${command}${programName} Task [](id=gocommandprogramname-task)
 
-For each Go program in [`workingDir`](#workingdir), four tasks of type
+For each Go program in [`workingDir`](#workingdirproperty), four tasks of type
 [`ExecuteGoTask`](#executegotask) are added. Each of these tasks are
 automatically configured with sensible defaults:
 
