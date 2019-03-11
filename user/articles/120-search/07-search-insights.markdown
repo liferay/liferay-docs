@@ -8,9 +8,9 @@ string that's constructed by the back-end search code when the User enters a
 keyword and the response string returned from the search engine.
 
 In @product-ver@, these additional features were added to the Insights widget:
-the response string was added to the widget's output, and the _Explain_ option
-(enabled by default) prints a relevance score explanation for each returned
-result.
+the response string was added to the widget's output, and the _Enable Score
+Explanation_ option (enabled by default) prints a relevance score explanation
+for each returned result.
 
 When a search query is processed, results are returned. The concept of
 _Relevance_ is used to determine how well results match the query. Having the
@@ -36,7 +36,7 @@ portlet displays the returned query string in all its glory.
 To enable or disable the Explain option,
 
 1.  Open the Search Insight widget's Configuration screen.
-2.  There's just one option: _Explain_.
+2.  There's just one option: _Enable Score Explanation_.
     It's a boolean field that's enabled by default.
     De-select it to disable the explanation of each result's relevance score.
 
