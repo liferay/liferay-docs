@@ -46,12 +46,11 @@ You can target the elements and IDs shown in the table below to style the page:
 
 As shown in the diagram above, you can also add 
 [fragments](/discover/portal/-/knowledge_base/7-2/creating-fragments) 
-to a page. You can have a page that contains portlets or a content page that
-contains fragments, but not both. Fragments are components---composed of CSS,
-JavaScript, and HTML---that provide key pieces of functionality for the page
-(i.e. a carousel or banner). @product@ provides an editor for creating
-collections of fragments that you can then add to the page. These fragments can
-be edited on the page to suit your vision. 
+to a page. Fragments are components---composed of CSS, JavaScript, and
+HTML---that provide key pieces of functionality for the page (i.e. a carousel or
+banner). @product@ provides an editor for creating collections of fragments that
+you can then add to the page. These fragments can be edited on the page to suit
+your vision. 
 
 ## Layout Templates, Page Templates, and Site Templates
 
