@@ -213,8 +213,11 @@ Specify the following information to configure the upgrade itself:
 
 **liferay.home:** the [Liferay home folder](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home) *(required)*
 
+**dl.store.impl:** the document library server will use this implementation to persist documents. Copy the same value you are using in your current portal-ext.properties (required when you do not use the default implementation `com.liferay.portal.store.file.system.FileSystemStore`)
+
 **hibernate.jdbc.batch_size:** the JDBC batch size used to improve performance;
-set to *250* by default *(optional)* 
+set to *250* by default *(optional)*
+
 
 ### Example Upgrade Configuration [](id=example-upgrade-configuration)
 
