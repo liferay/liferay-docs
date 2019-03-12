@@ -112,37 +112,50 @@ provide property details and examples.
 
 ## Step 6: Configuring Your Documents and Media File Store [](id=configuring-your-documents-and-media-file-store)
 
-Your next task is to review your Documents and Media configuration. Look at
-[Document Library documentation](/discover/deployment/-/knowledge_base/7-1/document-repository-configuration)
-to see all the options in @product-ver@ before executing an upgrade process.
-There are, however, two important pieces of configuration that have changed: 
+It's time to set migrate and update your document store configuration to
+@product-ver@. Here's what's changed for document stores:
 
--   The file store location is no longer specified in a portal properties file
-    (e.g., `portal-ext.properties`).
--   Store implementation package names have changed from
-    `com.liferay.portlet.documentlibrary.store` to `com.liferay.portal.store.*`
-    and you must configure the appropriate updated implementation name rather
-    than copying over the name from your 6.2 `portal-ext.properties`.
+-   Store implementation class package names changed from 
+    `com.liferay.portlet.documentlibrary.store.*` in Liferay Portal 6.2 to
+    `com.liferay.portal.store.*` in @product@ 7.0+. Make sure your
+    `portal-ext.properties` sets the `dl.store.impl` property one of these ways:
 
-If you use the default store but don't want to store the files in the default
-location (`[Liferay Home]/data/document_library`), you must create a file called
-`com.liferay.portal.store.file.system.configuration.FileSystemStoreConfiguration.config`
-in your `[Liferay Home]/osgi/configs` folder and add the following content:
+        dl.store.impl=com.liferay.portal.store.file.system.FileSystemStore
+        dl.store.impl=com.liferay.portal.store.db.DBStore
+        dl.store.impl=com.liferay.portal.store.file.system.AdvancedFileSystemStore
+        dl.store.impl=com.liferay.portal.store.s3.S3Store
 
-    rootDir="{document_library_path}"
+-   JCR Store was deprecated as of Liferay DXP Digital Enterprise 7.0 Fix Pack 
+    14 and Liferay Portal CE 7.0 GA4. The
+    [Document Repository Configuration](/discover/deployment/-/knowledge_base/7-1/document-repository-configuration)
+    documentation describes other store options.
 
-Replace `{document_library_path}` with the path to your document library. 
+-   Since @product@ 7.0, document store specific configuration (e.g., 
+    configurations specific to Simple File Store, Advanced File Store, S3, etc.)
+    is done in the Control Panel at *Configuration &rarr; System Settings &rarr;
+    File Storage* or done using OSGi configuration files (`.config` files).
 
-If you use the Advanced File System Store method to persist document library
-files, you'd call that file
-`com.liferay.portal.store.file.system.configuration.AdvancedFileSystemStoreConfiguration.config`.
+    Note, general document store configuration (e.g., `dl.store.impl=[File Store
+    Impl Class]`) continues to be done using `portal-ext.properties`.  
 
-The configuration file name must match the name of the class that implements the
-configuration. 
+    Here are steps, for example, that create a `.config` file that specifies an
+    Advanced File Store's root file location:
+
+    1.  Create a `.config` file named after the store implementation class 
+        (i.e., the class assigned to your `dl.store.impl` property):
+
+            com.liferay.portal.store.file.system.configuration.AdvancedFileSystemStoreConfiguration.config
+
+    2.  Set the following property in the `.config` file and replace 
+        `{document_library_path}` with  your file store's path. 
+
+            rootDir="{document_library_path}"
+
+    3.  Copy the `.config` file to your `[Liferay Home]/osgi/configs` folder
 
 The
-[Document Repository Configuration documentation](/discover/deployment/-/knowledge_base/7-1/document-repository-configuration)
-provides more information.
+[Document Repository Configuration](/discover/deployment/-/knowledge_base/7-1/document-repository-configuration)
+provides document store configuration details.
 
 ## Step 7: Install @product-ver@ [](id=install-the-new-version-of-product)
 
