@@ -42,20 +42,20 @@ of tools to get your themes up and running quickly.
 
 The following Liferay tools help you build themes:
 
-- [Theme Builder Gradle Plugin](/develop/reference/-/knowledge_base/7-2/theme-builder-gradle-plugin)
+- [Theme Builder Gradle Plugin](/developer/reference/-/knowledge_base/7-2/theme-builder-gradle-plugin)
 - [Liferay Theme Generator](/developer/frameworks/-/knowledge_base/7-2/creating-themes)
 - [Dev Studio](/developer/frameworks/-/knowledge_base/7-2/creating-themes-with-liferay-ide)
 - [Blade CLI](/developer/frameworks/-/knowledge_base/7-2/blade-cli)'s 
-  [Theme Template](/develop/reference/-/knowledge_base/7-2/theme-template). 
+  [Theme Template](/developer/reference/-/knowledge_base/7-2/theme-template). 
 
 Depending on the tool you choose 
 (
-  [Theme Generator](/develop/reference/-/knowledge_base/7-2/theme-reference-guide), 
-  [Gradle](/develop/reference/-/knowledge_base/7-2/theme-builder-gradle-plugin), 
-  [Blade CLI](/develop/reference/-/knowledge_base/7-2/theme-template), 
-  [Maven](/develop/reference/-/knowledge_base/7-2/theme-template), 
+  [Theme Generator](/developer/reference/-/knowledge_base/7-2/theme-reference-guide), 
+  [Gradle](/developer/reference/-/knowledge_base/7-2/theme-builder-gradle-plugin), 
+  [Blade CLI](/developer/reference/-/knowledge_base/7-2/theme-template), 
+  [Maven](/developer/reference/-/knowledge_base/7-2/theme-template), 
   or 
-  [Dev Studio](/develop/reference/-/knowledge_base/7-2/theme-template)
+  [Dev Studio](/developer/reference/-/knowledge_base/7-2/theme-template)
 ), 
 the theme anatomy can be different. The overall development process is the 
 same: 
@@ -108,7 +108,7 @@ helpful Gulp tasks to streamline the process:
   for more information.
 
 See 
-[Theme Components](/develop/reference/-/knowledge_base/7-2/theme-components) 
+[Theme Components](/developer/frameworks/-/knowledge_base/7-2/theme-components) 
 and 
-[Understanding the Page Layout](/develop/reference/-/knowledge_base/7-2/understanding-the-page-layout) 
+[Understanding the Page Layout](/developer/frameworks/-/knowledge_base/7-2/understanding-the-page-layout) 
 to get a top-level overview of how themes work. 
