@@ -218,7 +218,6 @@ Specify the following information to configure the upgrade itself:
 **hibernate.jdbc.batch_size:** the JDBC batch size used to improve performance;
 set to *250* by default *(optional)*
 
-
 ### Example Upgrade Configuration [](id=example-upgrade-configuration)
 
 Here's an example interaction with the upgrade tool's command line interface:
