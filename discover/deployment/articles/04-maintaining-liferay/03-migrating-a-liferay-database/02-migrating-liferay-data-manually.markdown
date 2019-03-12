@@ -15,7 +15,15 @@ manually.
 
 5.  Export the current database as script of `INSERT` statements.
 
-6.  Run the script on the new database. 
+6.  Run the script on the new database.
+
+    +$$$
+
+    **Note:** The length for certain fields an slightly vary due to the different
+    database limitations. If you get `too large` errors during the import, please
+    edit or truncate those values to adjust them to the target field length.
+
+    $$$
 
 7.  Stop the new @product@ installation. 
 
