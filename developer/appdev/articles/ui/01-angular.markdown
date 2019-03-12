@@ -9,40 +9,41 @@ Follow these steps:
 
 1. Install the Liferay Bundle Generator, if it's not already installed.
 
-2.  Copy the `app.component.html` file to the generated bundle's `assets/app/` 
-folder and overwrite the existing `app.component.html`. Copy any other HTML 
-templates you have over to the `assets/app/` folder as well.
+2.  Overwrite the existing `app.component.html` file in the generated bundle's 
+    `assets/app/` folder with your app's `app.component.html`. Copy any other 
+    HTML templates you have over to the `assets/app/` folder as well.
 
 3.  Copy all folders and `.ts` files from the `app/` folder over to the 
-generated bundle's `src/app` folder, making sure to overwrite existing files 
-when prompted.
+    generated bundle's `src/app` folder, making sure to overwrite existing files 
+    when prompted.
         
 4.  Update any relative paths for `templateUrl`s to use the generated portlet's 
-web context path, specified in the portlet's `.npmbundlerrc` file. An example 
-configuration is shown below:
+    web context path, specified in the portlet's `.npmbundlerrc` file. An 
+    example configuration is shown below:
 
         /o/[web-context]/app/add-entry.component.html
 
 6.  Update the app to use portlet-level styling. Remove the `styleUrl`s from 
-your component classes, along with the selector properties, and copy the 
-`app.component.css` file to `assets/css/`, along with any other component CSS 
-files you have.
+    your component classes, along with the selector properties, and copy the 
+    `app.component.css` file, along with any other component CSS files you have 
+    to `assets/css/` folder.
 
 7.  Import `app.component.css` at the top of the `styles.css` file, along with 
-any other component CSS files you copied into the `css` folder.
+    any other component CSS files you copied into the `css` folder in the last 
+    step.
 
         @import "app.component.css";
         
 8.  Update routing for @product@. Add `{provide: APP_BASE_HREF, useValue: '/'}` 
-to the `app.module.ts` `providers` to specify the base href for the router. Also 
-remove `AppComponent` from the `bootstrap` property. 
+    to the `app.module.ts` `providers` to specify the base href for the router. 
+    Also remove `AppComponent` from the `bootstrap` property. 
 
 9.  Set `useHash` to `true` and `enableTracing` to `false` in the `@NgModule` 
-`imports` property of the `app-routing.module.ts` file. This enables client-side 
-routing for @product@, which @product@ requires.
+    `imports` property of the `app-routing.module.ts` file. This enables 
+    client-side routing for @product@, which @product@ requires.
 
-10.  Still inside `app-routing.module.ts`, export your routing 
-     component views. An example configuration is shown below:
+10.  Still inside `app-routing.module.ts`, export your routing component views. 
+     An example configuration is shown below:
      
         export 
         const routingComponents = [ViewGuestbookComponent, AddEntryComponent]
