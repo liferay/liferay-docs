@@ -1,4 +1,8 @@
-# Publishing CDI Beans as OSGi Services [](id=publishing-cdi-beans-as-osgi-services)
+---
+header-id=publishing-cdi-beans-as-osgi-services
+---
+
+# Publishing CDI Beans as OSGi Services
 
 OSGi CDI Integration lets you publish CDI beans as OSGi services, making them
 accessible via the Liferay's OSGi service registry. Here's how to publish your

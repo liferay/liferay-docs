@@ -1,7 +1,12 @@
-# Using OSGi Services in a Bean [](id=using-osgi-services-in-a-bean)
+---
+header-id=using-osgi-services-in-a-bean
+---
+
+# Using OSGi Services in a Bean
 
 Any bean can use the `@org.osgi.service.cdi.annotations.Reference` annotation to
-inject OSGi services. It's the easiest way for a bean to access an OSGi service. Here's how to do it:
+inject OSGi services. It's the easiest way for a bean to access an OSGi service.
+Here's how to do it:
 
 1.  Add a project dependency on the OSGi CDI Integration artifact. For example, 
 here's the dependency to use in a Maven `pom.xml` file:
