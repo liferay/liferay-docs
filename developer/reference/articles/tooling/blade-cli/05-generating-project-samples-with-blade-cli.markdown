@@ -4,18 +4,16 @@ header-id: generating-project-samples-with-blade-cli
 
 # Generating Project Samples with Blade CLI
 
-Liferay provides many
-[sample projects](https://github.com/liferay/liferay-blade-samples) that are
-useful for those interested in learning best practices on structuring their
-@product@ projects to accomplish specific tasks. You can learn more about these
-samples by visiting the
-[Sample Projects](/developer/reference/-/knowledge_base/7-1/sample-projects)
-reference section.
+Liferay provides many useful 
+[sample projects](https://github.com/liferay/liferay-blade-samples) for those
+interested in learning best practices for @product@ projects. You can learn more
+about these samples by visiting 
+[Sample Projects](/developer/reference/-/knowledge_base/7-1/sample-projects).
 
-You can generate these samples using Blade CLI for convenience, instead of
-cloning the repository and manually copy/pasting them to your environment.
+Rather than cloning the repository, you can generate these samples using Blade
+CLI for convenience.
 
-1.  Print the available sample projects by executing this:
+1.  List the available sample projects:
 
         blade samples
 
