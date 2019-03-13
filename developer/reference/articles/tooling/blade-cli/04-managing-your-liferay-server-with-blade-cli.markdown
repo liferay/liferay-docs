@@ -4,13 +4,12 @@ header-id: managing-your-liferay-server-with-blade-cli
 
 # Managing Your Liferay Server with Blade CLI
 
-In this tutorial, you'll learn how to manage a Liferay server using Blade CLI.
-Managing a server with Blade CLI should be done in a
+You can  manage a Liferay server using Blade CLI. Managing a server with Blade
+CLI should be done in a 
 [Liferay Workspace](/developer/reference/-/knowledge_base/7-2/liferay-workspace).
 
-Blade CLI lets you install, start, stop, inspect, and modify a Liferay server.
-
-You'll step through a popular use case next.
+Blade CLI has commands for installing, starting, stopping, inspecting, and
+modifying a Liferay server:
 
 1.  Make sure you've created a Liferay Workspace. See the
     [Creating a Liferay Workspace](/developer/reference/-/knowledge_base/7-2/creating-a-liferay-workspace#blade-cli)
