@@ -4,10 +4,10 @@ header-id: updating-blade-cli
 
 # Updating Blade CLI
 
-Blade CLI is updated frequently, so it's recommended to update your Blade CLI
+Blade CLI is updated frequently, so you should update your Blade CLI
 environment for new features. You can check the released versions of Blade CLI
 on Nexus by inspecting the
-[`com.liferay.blade.cli`](https://repository-cdn.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/blade/com.liferay.blade.cli/).
+[`com.liferay.blade.cli`](https://repository-cdn.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/blade/com.liferay.blade.cli/)
 artifact. You can check your current installed version by running `blade
 version`.
 
