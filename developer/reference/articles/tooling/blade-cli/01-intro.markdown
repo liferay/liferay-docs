@@ -5,17 +5,16 @@ header-id: blade-cli
 # Blade CLI
 
 [Blade CLI](https://github.com/liferay/liferay-blade-cli/) is a command line
-tool that provides the easiest way for Liferay developers to create, manage, and
-deploy Liferay projects (Gradle or Maven). Blade CLI lets you
+tool that makes it easy for Liferay developers to create, manage, and deploy
+Liferay projects (Gradle or Maven). Blade CLI can
 
-- create Liferay projects that can be used with any IDE or development
-  environment
-- create/manage @product@ instances
-- deploy Liferay projects
-- etc.
+- Create Liferay projects usable in any IDE or development environment
+- Create/manage @product@ instances
+- Deploy Liferay projects
+- And more
 
-The table below lists all Blade CLI commands for the latest Blade CLI release.
-Helpful descriptions for the commands are also provided.
+The table below describes all Blade CLI commands for the latest Blade CLI
+release. 
 
 Command | Description
 ------- | -------------
@@ -37,7 +36,7 @@ Command | Description
 `watch` | Watches for changes to a deployed project and automatically redeploys it when changes are detected. This command does not rebuild your project and copy it to Portal every time a change is detected, but rather, installs it into the runtime as a reference. This means that the Portal does not make a cached copy of the project. This allows the Portal to see changes that are made to your project's files immediately. When you cancel the `watch` task, your module is uninstalled automatically. The `blade deploy -w` command works similarly to `blade watch`, except it manually recompiles and deploys your project every time a change is detected. This causes slower update times, but does preserve your deployed project in Portal when it's shut down.
 `version` | Displays version information about Blade CLI.
 
-<!-- TODO: Find more about new `upgradeProps` property. --Cody-->
+<!-- TODO: Find more about new `upgradeProps` property. -Cody-->
 
 For information on command options, run the command with the `--help` flag
 (e.g., `blade samples --help`).
