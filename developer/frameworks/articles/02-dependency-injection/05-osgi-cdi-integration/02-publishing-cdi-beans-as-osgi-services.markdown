@@ -4,9 +4,8 @@ header-id=publishing-cdi-beans-as-osgi-services
 
 # Publishing CDI Beans as OSGi Services
 
-OSGi CDI Integration lets you publish CDI beans as OSGi services, making them
-accessible via the Liferay's OSGi service registry. Here's how to publish your
-bean as a service:
+You can publish CDI beans as OSGi services, making them accessible via the
+Liferay's OSGi service registry. Here's how: 
 
 1.  Add a project dependency on the OSGi CDI Integration artifact. For example, 
     here's the dependency to use in a Maven `pom.xml` file:
@@ -65,13 +64,14 @@ For example, here are steps for verifying that a bundle
 
         924|Active     |   10|com.github.rotty3000.cdi.jar.portlet (0.0.1.201901252134)|0.0.1.201901252134
 
-    The first column contains the bundle ID.  
+    The first column contains the bundle ID. 
 
 3.  Use the `b` Gogo command with your bundle ID to list your bundle's details 
     and verify the bundle includes your service as one of its registered
     services. 
 
     Example command:
+
         g!: b 924
 
     Results:
