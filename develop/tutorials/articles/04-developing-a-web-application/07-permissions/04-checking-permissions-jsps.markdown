@@ -72,7 +72,7 @@ First, you'll create the guestbook tabs and check permissions for them:
     `<aui:button-row cssClass="guestbook-buttons">`. Just below this line, add 
     the following line of code to check for the `ADD_ENTRY` permission: 
 
-        <c:if test='<%= GuestbookPermission.contains(permissionChecker, guestbookId, "ADD_ENTRY") %>'>
+        <c:if test='<%= GuestbookPermission.contains(permissionChecker, scopeGroupId, "ADD_ENTRY") %>'>
 
 3.  After this is the code that creates the `addEntryURL` and the Add Entry 
     button. After the `aui:button` tag and above the `</aui:button-row>` tag, 
