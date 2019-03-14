@@ -21,8 +21,10 @@ covered in this section of tutorials:
 
 +$$$
 
-**Note:** Each taglib is available as a FreeMarker macro. The tutorials in this 
-section provide the proper syntax to use for each macro. See the 
+**Note:** Each taglib is available as a FreeMarker macro, except for the Chart 
+taglib. The Chart taglib is **not** available as a FreeMarker macro. The 
+tutorials in this section provide the proper syntax to use for each macro. See 
+the 
 [FreeMarker Taglib Mappings reference](/develop/reference/-/knowledge_base/7-1/freemarker-taglib-macros) 
 for a complete list of the available FreeMarker taglib macros.
 
