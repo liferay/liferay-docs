@@ -19,6 +19,10 @@ or
 - Dependencies ZIP file
 - OSGi JARs ZIP file
 
+| **Important:** 
+| [Prepare for the install](/deployment/deployment/-/knowledge_base/7-2/prepare-for-install)
+| before continuing. 
+
 Here are the basic steps for installing @product@ on Tomcat:
 
 - [Installing dependencies to your application server](#installing-liferay-dependencies)
