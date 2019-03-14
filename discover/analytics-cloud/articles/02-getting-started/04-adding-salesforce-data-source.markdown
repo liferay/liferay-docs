@@ -25,10 +25,10 @@ as a data source. Here, you'll learn how.
     Note that this may take some time, depending how much data exists in the 
     Salesforce instance. 
 
-    ![Figure 1: Enter the information needed to connect to your Salesforce instance.](../../images/salesforce-auth.png)
-
 5.  The import progress is visible on the *CONFIGURE DATA SOURCE* tab. Click 
     *View* to see the mapping of each Salesforce field (for Accounts and 
     Individuals) to its corresponding Analytics Cloud field. 
 
-    ![Figure 2: The CONFIGURE DATA SOURCE tab shows the status of the accounts and individuals imported from Salesforce, as well as the field mapping.](../../images/salesforce-config.png)
+![Figure 1: Enter the information needed to connect to your Salesforce instance.](../../images/salesforce-auth.png)
+
+![Figure 2: The CONFIGURE DATA SOURCE tab shows the status of the accounts and individuals imported from Salesforce, as well as the field mapping.](../../images/salesforce-config.png)
