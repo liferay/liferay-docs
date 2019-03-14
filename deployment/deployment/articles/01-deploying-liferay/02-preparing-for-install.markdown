@@ -82,9 +82,12 @@ steps:
     @product@ database.
 
 @product@ uses this database user's credentials to connect to the database
-either directly or through its application server. During @product@'s initial
-startup, it creates the database tables it needs. It does this automatically,
-complete with indexes.
+either
+[directly](#using-the-built-in-data-source)
+or
+[through its application server](#using-a-data-source-on-your-application-server).
+@product@ creates the database tables on server startup after you've configured
+the database connection. It does this automatically, complete with indexes.
 
 This is the recommended way to set up @product@. It enables @product@ to
 maintain its database automatically during upgrades or when various @product@
