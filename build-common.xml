@@ -73,6 +73,28 @@
 		</classpath>
 	</taskdef>
 
+	<taskdef name="convertheaders" classname="com.liferay.documentation.util.ConvertHeadersTask">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
+	<taskdef name="convertsidebars" classname="com.liferay.documentation.util.ConvertSidebarsTask">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
 	<taskdef name="distdiff" classname="com.liferay.documentation.util.DistDiffTask">
 		<classpath>
 			<fileset dir="${project.dir}/lib" includes="*.jar" />
@@ -289,6 +311,16 @@
 		<property name="metadata.file" value="${project.dir}/${purpose.dir}/${base.filepath}/${metadata.filename}"/>
 		<delete file="${metadata.file}" failonerror="false"/>
 		<concat destfile="${metadata.file}">base.source.url=https://github.com/${repo.owner}/${repo.name}/blob/${repo.branch}/${purpose.dir}/${base.filepath}</concat>
+	</target>
+
+	<target name="convert-headers" description="Converts legacy header IDs to new format. Run this before running the number-headers task for the first time.">
+		<convertheaders docdir="${doc.dir}">
+		</convertheaders>
+	</target>
+
+	<target name="convert-sidebars" description="Converts legacy sidebars to new format.">
+		<convertsidebars docdir="${doc.dir}">
+		</convertsidebars>
 	</target>
 
 	<target name="dist-article-ce" depends="clean-temp, add-article-to-temp, dist-temp" description="Creates a ZIP file for importing the specified article (-Darticle=...), its images, and supporting structure to a Knowledge Base.">

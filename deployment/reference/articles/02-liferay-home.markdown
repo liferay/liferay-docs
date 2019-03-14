@@ -11,32 +11,31 @@ applies configurations, loads JAR files, and generates logs.
     covering that app server (e.g., *Installing @product@ on [app server]*) for
     the Liferay Home location. 
 
-@product@ bundles contain this folder structure regardless of application
-server: 
+Bundles contain this folder structure regardless of application server: 
 
 -   **[Liferay Home]**
-    -   **[Application Server]**: This folder name depends on the bundle you're
-        using. It contains the application server @product@ is installed in. 
+    -   **[Application Server]**: This folder is named after the application
+        server where @product@ is installed. 
     -   `data` (if HSQL database is selected): Stores an embedded HSQL database,
         @product@'s file repository,
-        and @product@'s search indexes. @product@ is initially configured to use
-        the embedded HSQL database but the HSQL database is primarily intended
-        for demonstration and trial purposes.
+        and search indexes. The embedded HSQL database is configured by default,
+        but it's intended for demonstration and trial
+        purposes only. The
         [Portal property `jdbc.default.url`](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#JDBC)
         sets the Hypersonic embedded HSQL database location.
-    -   `deploy`: To auto-deploy @product@ plugins, copy them to this folder. 
+    -   `deploy`: To auto-deploy plugins, copy them to this folder. 
         It supports application `.lpkg` files from Liferay Marketplace, plugin
-        `.war` files, and plugin `.jar` files.
+        `.war` files, and plugin `.jar` files. The
         [Portal property `auto.deploy.deploy.dir`](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Auto%20Deploy)
         sets the auto-deploy location.
     -   `license`: @product@'s copyright and version files are here.
-    -   `logs`: @product@ generates log files here. Examine them as you diagnose
+    -   `logs`: Log files go here. Examine them as you diagnose
         problems. `portal-impl.jar`'s
         `portal-impl/src/META-INF/portal-log4j.xml` file sets the log file
         location. To override the log file location, you must
         [use an `ext-impl/src/META-INF/portal-log4j-ext.xml` file in an Ext plugin](/develop/tutorials/-/knowledge_base/7-0/advanced-customization-with-ext-plugins#using-advanced-configuration-files).
     -   `osgi`: All the JAR files and a few configuration files for the 
-        OSGi runtime belong in this folder.
+        OSGi runtime belong in this folder. The
         [Portal property `module.framework.base.dir`](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Module%20Framework)
         sets the OSGi folder location. Here are its subfolders:
 
@@ -50,8 +49,8 @@ server:
         -   `target-platform`: Target platform index.
         -   `test`: Modules that support test integration.
         -   `war`: WAR plugins you've deployed.
-    -   `patching-tool`: (Liferay DXP only) This folder contains patches for 
-        @product@ and files for installing the patches.
+    -   `patching-tool`: (Liferay DXP only) This folder contains patches and 
+        a utility for installing the patches.
     -   `tools`: For @product@ upgrade and target platform indexer.
     -   `work`: Module Jasper work files.
 
