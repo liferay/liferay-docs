@@ -1,7 +1,7 @@
 # JSP Overrides Using OSGi Fragments [](id=jsp-overrides-using-osgi-fragments)
 
-OSGi fragments let you override entire JSPs. This approach is powerful but can
-make things unstable when the host module is upgraded: 
+You can completely override JSPs using OSGi fragments. This approach is powerful
+but can make things unstable when the host module is upgraded: 
 
 1.  By overriding an entire JSP, you might not account for new content or new 
     widgets essential to new host module versions. 
@@ -123,18 +123,19 @@ If you must post-process the output, you can update the pattern to include
 
 +$$$
 
-**Note:** A fragment can access all of the fragment host's packages, even 
-internal packages (i.e., packages the host doesn't export). It's not only
-unnecessary for a fragment to import (i.e., list the package in an OSGi manifest
-header `Import-Package: [package],...`) a host's internal packages, it's also
-incorrect---attempting to install a fragment bundle (or any bundle) that imports
-a package that isn't exported to the OSGi runtime fails as an `Unresolved
-requirement`. 
+**Note:** An OSGi fragment can access all of the fragment host's packages---it 
+doesn't need to import them from another bundle. bnd adds external packages the
+fragment uses (even ones in the fragment host) to the fragment's
+`Import-Package: [package],...` OSGi manifest header. That's fine for packages
+exported to the OSGi runtime. The problem is, however, when bnd tries to import
+a host's internal package (a package the host doesn't export). The OSGi runtime
+can't activate the fragment because the internal package remains an `Unresolved
+requirement`---a fragment shouldn't import a fragment host's packages. 
 
-If the JSP you're overriding imports a class from the host bundle's internal packages, use an OSGi manifest
-header, like the one below, to explicitly exclude the package from package
-imports. This header, for example, prevents importing packages that match
-`com.liferay.portal.search.web.internal.*`. 
+If your fragment uses an internal package from the fragment host, continue using
+it but explicitly exclude the package from your bundle's `Import-Package` OSGi
+manifest header. This `Import-Package` header, for example, excludes packages
+that match `com.liferay.portal.search.web.internal.*`. 
 
     Import-Package: !com.liferay.portal.search.web.internal.*,*
 
