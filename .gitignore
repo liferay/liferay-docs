@@ -6,6 +6,7 @@
 *-tmp.html
 .project
 .classpath
+.METADATA
 .settings
 git-modified-list.txt
 nbbuild.xml
