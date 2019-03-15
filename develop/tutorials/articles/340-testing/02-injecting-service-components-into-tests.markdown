@@ -1,9 +1,20 @@
-# Injecting Service Components into Tests [](id=injecting-service-components-into-tests)
+# Injecting Service Components into Integration Tests [](id=injecting-service-components-into-tests)
 
-You can use @product@'s `@Inject` annotation to inject service components into a
-test, like you use the
+You can use @product@'s `@Inject` annotation to inject service components into
+an integration test, like you use the
 [`@Reference` annotation to inject service components](/develop/tutorials/-/knowledge_base/7-1/osgi-services-and-dependency-injection-with-declarative-services)
-into a module component.
+into an OSGi component. 
+
++$$$
+
+**Note:** 
+[Arquillian](http://arquillian.org/)
+plus
+[JUnit](https://junit.org)
+annotations is one way to develop integration tests. Liferay lets you use
+whatever testing framework you want. 
+
+$$$
 
 `@Inject` uses reflection to inject a field with a service component object
 matching the field's interface.
@@ -80,5 +91,3 @@ Great! Now you can inject service components into your tests.
 ## Related Articles [](id=related-articles)
 
 [Service Trackers](/develop/tutorials/-/knowledge_base/7-1/service-trackers)
-
-Unit Testing with JUnit
