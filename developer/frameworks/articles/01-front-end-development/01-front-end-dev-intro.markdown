@@ -4,8 +4,8 @@ header-id: front-end-development
 
 # Front-End Development
 
-You have complete Front-End development freedom. You can use @product@'s 
-Front-End frameworks, along with the Front-End technologies you love the most:
+You have complete front-end development freedom. You can use @product@'s 
+front-end frameworks, along with the front-end technologies you love the most:
 
 -   EcmaScript ES2015+
 -   React, Angular, Vue, etc.
@@ -15,11 +15,10 @@ Front-End frameworks, along with the Front-End technologies you love the most:
 -   Lodash (included, but disabled by default)
 
 To load modules, you must know when they are needed, where they are at build
-time, if you want to bundle them together or load them independently, and you
-must assemble them at runtime. Keeping track of these tasks can be a hassle.
-Liferay's Loaders (YUI/AUI, AMD, and npm in AMD format) handle loading for
-you, so you don't have to worry about all the details. Just provide a small bit
-of information about your module, and the loaders take care of the rest. 
+time, whether they should be bundled together or loaded independently, and
+you must assemble them at runtime. Liferay's Loaders (YUI/AUI, AMD, and npm in
+AMD format) handle loading for you. All you must do is provide a small bit of
+information about your module. 
 
 The Liferay JS Bundle Toolkit(the 
 [JS Portlet Extender](https://web.liferay.com/marketplace/-/mp/application/115542926), 
@@ -80,11 +79,11 @@ a well designed theme.
 
 ## Front-End Extensions
 
-@product@'s modularity has many benefits for the Front-End developer, in the 
+@product@'s modularity has many benefits for the front-end developer, in the 
 form of development customizations and extension points. These extensions assure 
 the stability, conformity, and future evolution of your applications. 
 
-Below are some of the available Front-End extensions:
+Below are some of the available front-end extensions:
 
 - [Theme Contributors](/developer/frameworks/-/knowledge_base/7-2/packaging-independent-ui-resources-for-your-site)
 - [Context Contributors](/developer/frameworks/-/knowledge_base/7-2/injecting-additional-context-variables-into-your-templates)
