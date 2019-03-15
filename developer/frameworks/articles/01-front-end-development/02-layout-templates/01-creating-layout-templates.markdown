@@ -4,6 +4,8 @@ header-id: creating-layout-templates-with-the-themes-generator
 
 # Creating Layout Templates
 
+[TOC levels=1-4]
+
 This tutorial shows how to use the Liferay Theme Generator's Layouts 
 sub-generator to create a layout template. 
 

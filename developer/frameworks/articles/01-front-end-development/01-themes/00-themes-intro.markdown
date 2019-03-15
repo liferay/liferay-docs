@@ -4,6 +4,8 @@ header-id: themes-introduction
 
 # Themes
 
+[TOC levels=1-4]
+
 Themes customize the default look and feel of your site. You can inject your own
 flavor and personality and represent the visual identity of your brand or
 company. 

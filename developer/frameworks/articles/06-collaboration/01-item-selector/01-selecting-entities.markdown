@@ -4,6 +4,8 @@ header-id: selecting-entities-with-an-item-selector
 
 # Selecting Entities with an Item Selector
 
+[TOC levels=1-4]
+
 The steps here show you how to get and use an Item Selector to select entities 
 in your app. For an explanation of the Item Selector API and more information on 
 these steps, see the [Item Selector introduction](/developer/frameworks/-/knowledge_base/7-2/item-selector). 

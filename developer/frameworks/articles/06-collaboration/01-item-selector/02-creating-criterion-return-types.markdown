@@ -4,6 +4,8 @@ header-id: creating-custom-criterion-and-return-types
 
 # Creating Custom Criterion and Return Types
 
+[TOC levels=1-4]
+
 If an existing criterion or return type doesn't fit your use case, you can
 create them. The steps here show you how. For more detailed information on Item
 Selector criterion and return types, see the 

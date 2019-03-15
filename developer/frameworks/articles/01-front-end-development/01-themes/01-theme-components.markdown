@@ -4,6 +4,8 @@ header-id: theme-components
 
 # Theme Components
 
+[TOC levels=1-4]
+
 This guide provides an overview of the theme development components and 
 workflow, covering the following topics:
 

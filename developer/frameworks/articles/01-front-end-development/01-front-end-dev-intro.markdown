@@ -4,6 +4,8 @@ header-id: front-end-development
 
 # Front-End Development
 
+[TOC levels=1-4]
+
 You have complete front-end development freedom. You can use @product@'s 
 front-end frameworks, along with the front-end technologies you love the most:
 
