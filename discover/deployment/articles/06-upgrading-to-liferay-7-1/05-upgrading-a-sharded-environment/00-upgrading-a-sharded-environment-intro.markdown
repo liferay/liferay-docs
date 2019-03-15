@@ -1,61 +1,89 @@
-# Upgrading a Sharded environment [](id=upgrading-sharded-environment)
+# Upgrading a Sharded Environment [](id=upgrading-sharded-environment)
 
 Since @product@ 7.0, Liferay removed its own physical partitioning
 implementation (also known as sharding) in favor of the capabilities provided
-natively by database vendors. Liferay will continue to support its logical
-partitioning capabilities (also known as instances) for the foreseeable future.
+natively by database vendors. Upgrading a sharded installation to @product-ver@
+requires migrating it to as many non-sharded @product@ installations (servers)
+as you have shards. 
 
-If you come from a sharded installation of Liferay Portal 6.2, you can upgrade
-to @product-ver@ by following these steps. Please note that after the upgrade,
-your installation will no longer be sharded and as a result you will have as
-many independent databases as shards you had in the past. The example below
-upgrades an installation with three shards. 
++$$$
 
-## Upgrading default shard [](id=upgrading-default-shard)
+**Note:** Liferay continues to support its logical partitioning capabilities 
+(also known as instances) for the foreseeable future. 
 
-Configure the
-[JDBC properties](/discover/deployment/-/knowledge_base/7-1/running-the-upgrade#configuring-portal-upgrade-database-properties)
-for all shards in the default shard's `[Liferay
-Home]/tools/portal-tools-db-upgrade-client/portal-upgrade-database.properties`
-file, because the upgrade process must copy the control tables from the default
-shard to the other shards.
+$$$
 
-      jdbc.default.driverClassName=com.mysql.jdbc.Driver
-      jdbc.default.url=jdbc:mysql://localhost/lportal?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
-      jdbc.default.username=
-      jdbc.default.password=
+Here are the upgrade steps:
 
-      jdbc.one.driverClassName=com.mysql.jdbc.Driver
-      jdbc.one.url=jdbc:mysql://localhost/lportal_one?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
-      jdbc.one.username=
-      jdbc.one.password=
+1.  If you're on Liferay Portal 6.1 or lower,
+    [upgrade to Liferay Portal 6.2](/discover/deployment/-/knowledge_base/6-2/upgrading-liferay). 
 
-      jdbc.two.driverClassName=com.mysql.jdbc.Driver
-      jdbc.two.url=jdbc:mysql://localhost/lportal_two?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
-      jdbc.two.username=
-      jdbc.two.password=
+2.  [Remove unneeded objects from your portal](/discover/deployment/-/knowledge_base/7-1/pre-upgrade-speed-up-the-process). 
 
-## Upgrading second Shard [](id=upgrading-second-shard)
+3.  [Prepare for upgrading to @product-ver@](/discover/deployment/-/knowledge_base/7-1/preparing-an-upgrade-to-liferay-7). 
 
-Once the default shard is upgraded, you must upgrade the second shard. In this
-example, its database name is `lportal_one`. The `default` JDBC properties
-map to the second shard's properties.
+4.  [Run the upgrade process](/discover/deployment/-/knowledge_base/7-1/running-the-upgrade-process).
+    The upgrade tool copies the control table entries from the default shard
+    database to the non-default shard databases. 
 
-      jdbc.default.driverClassName=com.mysql.jdbc.Driver
-      jdbc.default.url=jdbc:mysql://localhost/lportal_one?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
-      jdbc.default.username=
-      jdbc.default.password=
+5.  [Prepare a @product-ver@ server](/discover/deployment/-/knowledge_base/7-1/deploying-product)
+    for each non-default shard database.  
 
-## Upgrading third shard [](id=upgrading-third-shard)
+6.  Create a `portal-ext.properties` on each new server you just added and 
+    define each server's JDBC default properties:
 
-Once the second shard is upgraded, upgrade the third shard, which has the
-database name `lportal_two`. Again, the `default` JDBC properties map to the
-third shard's properties.
+    -   Add the original JDBC properties for the respective non-default shard 
+        database. For example, shard `one`'s original properties might start with `jdbc.one.`:
 
-      jdbc.default.driverClassName=com.mysql.jdbc.Driver
-      jdbc.default.url=jdbc:mysql://localhost/lportal_two?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
-      jdbc.default.username=
-      jdbc.default.password=
+            jdbc.one.driverClassName=com.mysql.jdbc.Driver
+            jdbc.one.url=jdbc:mysql://localhost/lportal_one?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
+            jdbc.one.username=
+            jdbc.one.password=
 
-Once you've upgraded your last shard, you're finished! This procedure lets you
-migrate old sharded Liferay Portal 6.2 installations to @product-ver@. 
+    -   Rename the properties to start with `jdbc.default.`. For example, 
+
+            jdbc.default.driverClassName=com.mysql.jdbc.Driver
+            jdbc.default.url=jdbc:mysql://localhost/lportal_one?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
+            jdbc.default.username=
+            jdbc.default.password=
+
+7.  Remove the non-default shard JDBC properties from the original
+    `portal-ext.properties` file (on the default shard server), leaving only
+    the default shard database `jdbc.default.*` properties. For example,
+
+    Old JDBC properties: 
+
+        jdbc.default.driverClassName=com.mysql.jdbc.Driver
+        jdbc.default.url=jdbc:mysql://localhost/lportal?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
+        jdbc.default.username=
+        jdbc.default.password=
+
+        jdbc.one.driverClassName=com.mysql.jdbc.Driver
+        jdbc.one.url=jdbc:mysql://localhost/lportal_one?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
+        jdbc.one.username=
+        jdbc.one.password=
+
+        jdbc.two.driverClassName=com.mysql.jdbc.Driver
+        jdbc.two.url=jdbc:mysql://localhost/lportal_two?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
+        jdbc.two.username=
+        jdbc.two.password=
+
+    New JDBC properties:
+
+        jdbc.default.driverClassName=com.mysql.jdbc.Driver
+        jdbc.default.url=jdbc:mysql://localhost/lportal?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
+        jdbc.default.username=
+        jdbc.default.password=
+
+8.  [Run the upgrade process](/discover/deployment/-/knowledge_base/7-1/running-the-upgrade-process)
+    for the @product-ver@ servers associated with each non-default shard
+    database. 
+
+Congratulations! You've migrated your original shards to separate @product-ver@
+servers: 
+
+-   One @product-ver@ server for the default shard
+-   A @product-ver@ server for each non-default shard
+
+For further assistance with sharding contact
+[Liferay Global Services](https://www.liferay.com/consulting). 
