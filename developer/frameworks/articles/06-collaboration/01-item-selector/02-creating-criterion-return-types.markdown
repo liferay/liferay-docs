@@ -22,6 +22,8 @@ Selector criterion and return types, see the
     is the criterion class for `Journal` entities (Web Content) and passes 
     primary key information to the view: 
 
+    ```java
+
         public class JournalItemSelectorCriterion extends BaseItemSelectorCriterion {
 
                 public JournalItemSelectorCriterion() {
@@ -43,12 +45,16 @@ Selector criterion and return types, see the
         
         }
 
+    ```
+
 2.  Create a criterion handler by creating an OSGi component class that 
     implements 
     [`BaseItemSelectorCriterionHandler`](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/BaseItemSelectorCriterionHandler.html). 
     This example creates a criterion handler for the `TaskItemSelectorCriterion` 
     class. The `@Activate` and `@Override` tokens are required to activate this 
     OSGi component: 
+
+    ```java
 
         @Component(service = ItemSelectorCriterionHandler.class)
         public class TaskItemSelectorCriterionHandler extends 
@@ -66,11 +72,15 @@ Selector criterion and return types, see the
 
         }
 
+    ```
+
 3.  If you need a new return type, create it by implementing 
     [`ItemSelectorReturnType`](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorReturnType.html). 
     Name your return type class after the return type's data and suffix it with 
     `ItemSelectorReturnType`. Specify the data and its format in Javadoc. Return 
     type classes need no content. For example, here's a return type for a task: 
+
+    ```java
 
         /**
         * This return type should return the task ID and the user who
@@ -81,6 +91,8 @@ Selector criterion and return types, see the
         public class TaskItemSelectorReturnType implements ItemSelectorReturnType{
 
         }
+
+    ```
 
 ## Related Topics
 
