@@ -173,7 +173,7 @@
 	</target>
 
 	<target name="add-toc-dist" description="Adds the Table of Contents syntax for each Markdown article when generating Zip.">
-		<addtoc docdir="${doc.dir}" producttype="dist">
+		<addtoc docdir="${doc.dir}/${temp.dir}" producttype="dist">
 		</addtoc>
 	</target>
 
