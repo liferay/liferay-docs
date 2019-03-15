@@ -1,8 +1,19 @@
 # Data Handler Fundamentals [](id=data-handler-fundamentals)
 
-To leverage the Export/Import framework's ability to export/import a LAR file,
-you can implement Data Handlers in your application. There are two types of data
-handlers: *Portlet Data Handlers* and *Staged Model Data Handlers*.
+A common requirement for many data driven applications is to import and export
+data. This *could* be accomplished by accessing your database directly and
+running SQL queries to export/import data; however, this has several drawbacks:
+
+- Working with different database vendors might require customized SQL scripts.
+- Access to the database may be tightly controlled, restricting the ability to
+  export/import on demand.
+- You'd have to come up with your own means of storing and parsing the data. 
+
+Liferay provides data handlers as a more convenient and reliable way to
+export/import your data (as a LAR file) without accessing the database.
+
+There are two types of data handlers: *Portlet Data Handlers* and *Staged Model
+Data Handlers*.
 
 A Portlet Data Handler imports/exports portlet specific data to a LAR file.
 These classes only have the role of querying and coordinating between staged
