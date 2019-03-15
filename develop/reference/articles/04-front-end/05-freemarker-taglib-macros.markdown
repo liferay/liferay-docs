@@ -62,11 +62,6 @@ files. For convenience, these macros are listed in the table below:
 <td>liferay-clay.tld</td>
 </tr>
 <tr>
-<td>chart</td>
-<td>chart</td>
-<td>liferay-chart.tld</td>
-</tr>
-<tr>
 <td>liferay_map</td>
 <td>liferay-map</td>
 <td>liferay-map.tld</td>
@@ -163,5 +158,3 @@ files. For convenience, these macros are listed in the table below:
 </tr>
 </tbody>
 </table>
-
-| liferay_product_navigation | liferay-product-navigation | liferay-product-navigation.tld |
