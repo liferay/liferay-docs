@@ -34,102 +34,110 @@ public class AddTOCTask extends Task {
 			List<String> fileListNoTOC = new ArrayList<String>();
 
 			try {
-
-				for (int i = 0; i < fileList.size(); i++) {
-					String filename = fileList.get(i);
-					File inFile = new File(filename);
-
-					LineNumberReader in =
-							new LineNumberReader(new FileReader(inFile));
-
-					String line;
-					boolean tocExists = false;
-					//Integer tocLineNum = null;
-					int tocLineNum = -2;
-
-					while ((line = in.readLine()) != null) {
-
-						if (line.equals(tocSyntax)) {
-
-							tocExists = true;
-							tocLineNum = in.getLineNumber();
-						}
-						else if (line.contains(tocSyntax)) {
-							in.close();
-							throw new BuildException("Filename: " + filename + ":" +
-									in.getLineNumber() + " TOC syntax should not be accompanied by " +
-									"any additional text! Also verify there is no whitespace " +
-									"with the TOC syntax.");
-						}
-						else if (in.getLineNumber() == (tocLineNum + 1) && tocExists) {
-							if (!line.equals("")) {
-								in.close();
-								throw new BuildException("Filename: " + filename + ":" +
-										in.getLineNumber() +  "The line following the TOC syntax should " +
-										"be blank.");
-							}
-						}
-					}
-
-					if (!tocExists) {
-						fileListNoTOC.add(filename);
-					}
-
-					in.close();
-				}
-				for (int j = 0; j < fileListNoTOC.size(); j++) {
-					String filenameNoTOC = fileListNoTOC.get(j);
-					File inFile2 = new File(filenameNoTOC);
-					File outFile = new File(filenameNoTOC);
-					String outFileTmp = outFile + ".tmp";
-
-					LineNumberReader in2 =
-							new LineNumberReader(new FileReader(inFile2));
-
-					BufferedWriter out =
-							new BufferedWriter(new FileWriter(outFileTmp));
-
-					String line2;
-					while ((line2 = in2.readLine()) != null) {
-
-						if (line2.startsWith("#") && !line2.startsWith("##")) {
-							out.append(line2);
-							out.append("\n\n");
-							out.append(tocSyntax);
-							out.append("\n");
-							continue;
-						}
-						else {
-							out.append(line2);
-							out.append("\n");
-						}
-
-					}
-
-
-					in2.close();
-
-					out.flush();
-					out.close();
-
-					// Replace original file with modified temp file
-
-					FileUtils.copyFile(
-							new File(outFileTmp),
-							new File(filenameNoTOC));
-
-					FileUtils.forceDelete(new File(outFileTmp));
-				}
-
+				fileListNoTOC = getFilesWithNoTOC(fileList);
+				addTOCs(fileListNoTOC);
 			} catch (IOException e) {
-						throw new BuildException(e.getLocalizedMessage());
-					}
+				throw new BuildException(e.getLocalizedMessage());
 			}
+
 		}
-	
-	private static void getFilesWithNoTOC(String duplicateFile, String duplicateFile2) 
-			{
-		
+	}
+
+	private static void addTOCs(List<String> fileListNoTOC) throws IOException {
+
+		for (int i = 0; i < fileListNoTOC.size(); i++) {
+			String filenameNoTOC = fileListNoTOC.get(i);
+			File inFile = new File(filenameNoTOC);
+			File outFile = new File(filenameNoTOC);
+			String outFileTmp = outFile + ".tmp";
+
+			LineNumberReader in =
+					new LineNumberReader(new FileReader(inFile));
+
+			BufferedWriter out =
+					new BufferedWriter(new FileWriter(outFileTmp));
+
+			String line;
+			while ((line = in.readLine()) != null) {
+
+				if (line.startsWith("#") && !line.startsWith("##")) {
+					out.append(line);
+					out.append("\n\n");
+					out.append(tocSyntax);
+					out.append("\n");
+					continue;
+				}
+				else {
+					out.append(line);
+					out.append("\n");
+				}
+
+			}
+
+			in.close();
+
+			out.flush();
+			out.close();
+
+			// Replace original file with modified temp file
+
+			FileUtils.copyFile(
+					new File(outFileTmp),
+					new File(filenameNoTOC));
+
+			FileUtils.forceDelete(new File(outFileTmp));
+		}
+	}
+
+	private static List<String> getFilesWithNoTOC(List<String> fileList)
+			throws IOException {
+
+		List<String> fileListNoTOC = new ArrayList<String>();
+
+		for (int i = 0; i < fileList.size(); i++) {
+			String filename = fileList.get(i);
+			File inFile = new File(filename);
+
+			LineNumberReader in =
+					new LineNumberReader(new FileReader(inFile));
+
+			String line;
+			boolean tocExists = false;
+			//Integer tocLineNum = null;
+			int tocLineNum = -2;
+
+			while ((line = in.readLine()) != null) {
+
+				if (line.equals(tocSyntax)) {
+
+					tocExists = true;
+					tocLineNum = in.getLineNumber();
+				}
+				else if (line.contains(tocSyntax)) {
+					in.close();
+					throw new BuildException("Filename: " + filename + ":" +
+							in.getLineNumber() + " TOC syntax should not be accompanied by " +
+							"any additional text! Also verify there is no whitespace " +
+							"with the TOC syntax.");
+				}
+				else if (in.getLineNumber() == (tocLineNum + 1) && tocExists) {
+					if (!line.equals("")) {
+						in.close();
+						throw new BuildException("Filename: " + filename + ":" +
+								in.getLineNumber() +  "The line following the TOC syntax should " +
+								"be blank.");
+					}
+				}
+			}
+
+			if (!tocExists) {
+				fileListNoTOC.add(filename);
+			}
+
+			in.close();
+		}
+
+		return fileListNoTOC;
 	}
 
 	public void setDocdir(String docdir) {
