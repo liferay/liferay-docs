@@ -1,7 +1,7 @@
 # JSP Overrides Using OSGi Fragments [](id=overriding-a-modules-jsps)
 
-OSGi fragments let you override an entire JSP. This approach is powerful but can
-be unstable with respect to new versions of the host module: 
+You can completely override JSPs using OSGi fragments. This approach is powerful
+but can make things unstable when the host module is upgraded:  
 
 1.  By overriding an entire JSP, you might not account for new content or new 
     widgets that are essential to new host module versions. 
@@ -113,6 +113,26 @@ original `create_account.jsp`:
     %>
     
     <%=html %>
+
++$$$
+
+**Note:** An OSGi fragment can access all of the fragment host's packages---it 
+doesn't need to import them from another bundle. bnd adds external packages the
+fragment uses (even ones in the fragment host) to the fragment's
+`Import-Package: [package],...` OSGi manifest header. That's fine for packages
+exported to the OSGi runtime. The problem is, however, when bnd tries to import
+a host's internal package (a package the host doesn't export). The OSGi runtime
+can't activate the fragment because the internal package remains an `Unresolved
+requirement`---a fragment shouldn't import a fragment host's packages. 
+
+If your fragment uses an internal package from the fragment host, continue using
+it but explicitly exclude the package from your bundle's `Import-Package` OSGi
+manifest header. This `Import-Package` header, for example, excludes packages
+that match `com.liferay.portal.search.web.internal.*`. 
+
+    Import-Package: !com.liferay.portal.search.web.internal.*,*
+
+$$$
 
 Now you can easily modify the JSPs of any application in Liferay.
 
