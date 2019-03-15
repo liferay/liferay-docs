@@ -46,7 +46,9 @@ as a data source. Here, you'll learn how.
 
 5.  The import progress is visible on the *CONFIGURE DATA SOURCE* tab. Click 
     *View* to see the mapping of each Salesforce field (for Accounts and 
-    Individuals) to its corresponding Analytics Cloud field. 
+    Individuals) to its corresponding Analytics Cloud field. You can also view 
+    this information later from *Settings* &rarr; *Data Sources* &rarr; 
+    *(Your Salesforce)* &rarr; *CONFIGURE DATA SOURCE*. 
 
 ![Figure 1: Enter the information needed to connect to your Salesforce instance.](../../images/salesforce-auth.png)
 
