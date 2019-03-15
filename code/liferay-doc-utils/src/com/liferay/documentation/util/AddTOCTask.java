@@ -51,6 +51,8 @@ public class AddTOCTask extends Task {
 			File outFile = new File(filenameNoTOC);
 			String outFileTmp = outFile + ".tmp";
 
+			System.out.println("Adding TOC syntax for " + filenameNoTOC);
+
 			LineNumberReader in =
 					new LineNumberReader(new FileReader(inFile));
 
@@ -112,6 +114,7 @@ public class AddTOCTask extends Task {
 
 					tocExists = true;
 					tocLineNum = in.getLineNumber();
+					break;
 				}
 				else if (line.contains(tocSyntax)) {
 					in.close();
