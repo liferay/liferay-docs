@@ -4,6 +4,8 @@ header-id: installing-blade-cli-with-proxy-requirements
 
 # Installing Blade CLI with Proxy Requirements
 
+[TOC levels=1-4]
+
 If you have proxy server requirements and want to use Blade CLI, you must
 configure your http(s) proxy for it using JPM: 
 

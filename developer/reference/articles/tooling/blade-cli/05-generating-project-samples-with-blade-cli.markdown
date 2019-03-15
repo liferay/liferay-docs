@@ -4,6 +4,8 @@ header-id: generating-project-samples-with-blade-cli
 
 # Generating Project Samples with Blade CLI
 
+[TOC levels=1-4]
+
 Liferay provides many useful 
 [sample projects](https://github.com/liferay/liferay-blade-samples) for those
 interested in learning best practices for @product@ projects. You can learn more
