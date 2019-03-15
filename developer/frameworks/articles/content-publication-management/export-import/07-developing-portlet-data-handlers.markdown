@@ -1,24 +1,8 @@
 # Developing Portlet Data Handlers [](id=developing-portlet-data-handlers)
 
-There are two types of data handlers you can implement: *Portlet Data Handlers*
-and *Staged Model Data Handlers*. For more information on the fundamentals
-behind Liferay's data handlers and how a LAR file is constructed, see the
-[Understanding Data Handlers](/develop/tutorials/-/knowledge_base/7-1/understanding-data-handlers)
-tutorial. In this tutorial, you'll create a Portlet Data Handler for a Bookmarks
-application.
-
-+$$$
-
-**Note:** You must ensure your application is properly configured to use data
-handlers. For more information on how to do this, see the
-[Data Handler Fundamentals](/develop/tutorials/-/knowledge_base/7-1/understanding-data-handlers#data-handler-fundamentals)
-section.
-
-$$$
-
 A Portlet Data Handler imports/exports portlet specific data to a LAR file.
 These classes only have the role of querying and coordinating between
-[staged model data handlers](/develop/tutorials/-/knowledge_base/developing-staged-model-data-handlers).
+[staged model data handlers](/developer/tutorials/-/knowledge_base/developing-staged-model-data-handlers).
 For example, the Bookmarks application's portlet data handler tracks system
 events dealing with Bookmarks entities. It also configures the Export/Import UI
 options for the Bookmarks application.

@@ -53,23 +53,36 @@ handlers:
 - Portlet Data Handlers
 - Staged Model Data Handlers
 
-See each section for more information.
+A Portlet Data Handler imports/exports portlet specific data to a LAR file.
+These classes only have the role of querying and coordinating between staged
+model data handlers.
 
-### Portlet Data Handlers
+A Staged Model Data Handler supplies information about a staged model (entity)
+to the Export/Import framework, defining a display name for the UI, deleting an
+entity, etc. It's also responsible for exporting referenced content.
 
-
-
-
-
-
-### Staged Model Data Handlers
-
-
-
+Visit the
+[Understanding Data Handlers](/developer/reference/-/knowledge_base/7-2/understanding-data-handlers)
+reference article for more information.
 
 ## Provide Entity Specific Local Services
 
+When creating your data handlers, you must leverage your app's local services to
+perform Export/Import and Staging related tasks for its entities. When these
+frameworks operates on entities (i.e., staged models), it often cannot manage
+important information from the entity's local services alone; instead, you're
+forced to reinvent basic functionality so the framework can access it. This is
+caused by services not sharing a common ancestor (i.e., interface or base
+class).
 
+The *Staged Model Repository* framework removes this barrier by linking an app's
+staged model to a local service.
+
+![Figure 1: Staged Model Repositories provide a Staging-specific layer of functionality for your local services.](../../../images/staged-model-repository.png)
+
+This lets the Staging framework call a staged model repository independently
+based on the entity being processed. This gives you access to entity-specific
+methods tailored specifically for the staged model data you're handling.
 
 ## Export/Import Event Listeners
 
