@@ -1,18 +1,4 @@
-# Understanding Data Handlers [](id=understanding-data-handlers)
-
-A common requirement for many data driven applications is to import and export
-data. This *could* be accomplished by accessing your database directly and
-running SQL queries to export/import data; however, this has several drawbacks:
-
-- Working with different database vendors might require customized SQL scripts.
-- Access to the database may be tightly controlled, restricting the ability to
-  export/import on demand.
-- You'd have to come up with your own means of storing and parsing the data. 
-
-Liferay provides a more convenient and reliable way to export/import your data
-without accessing the database.
-
-## Liferay Archive (LAR) File [](id=liferay-archive-lar-file)
+# Liferay Archive (LAR) File [](id=liferay-archive-lar-file)
 
 An easier way to export/import your application's data is to use a Liferay
 ARchive (LAR) file. Liferay provides the LAR feature to address the need to
@@ -39,7 +25,7 @@ Knowing how a LAR file is constructed, however, is beneficial to understand the
 overall purpose of your application's data handlers. Next, you'll explore a LAR
 file's anatomy.
 
-### LAR File Anatomy [](id=lar-file-anatomy)
+## LAR File Anatomy [](id=lar-file-anatomy)
 
 What is a LAR file? You know the general concept for *why* it's used, but you
 may want to know what lives inside to make your export/import processes work.
@@ -61,6 +47,10 @@ single Bookmarks entry and the portlet's configuration:
                     - `20143`
                         - `portlet-data.xml`
     - `manifest.xml`
+
+You'll dissect the anatomy structure next.
+
+## LAR Manifest
 
 You can tell from the LAR's generated name what information is contained in
 the LAR: the Bookmarks Admin app's data. The `manifest.xml` file sits at the
@@ -86,11 +76,11 @@ pages of content. There are four main parts (tags) to a `manifest.xml` file.
   points to the generated `portlet.xml` for more specialized portlet
   information.
 - `manifest-summary`: contains information on what has been exported. The
-   Staging and Export frameworks export or publish some entities even
-   though they weren't marked for it, because the process respects data
-   integrity. This section holds information for all the entities that have
-   been processed. The entities defining a non-zero `addition-count` attribute
-   are displayed in the Export/Import UI.
+  Staging and Export frameworks export or publish some entities even
+  though they weren't marked for it, because the process respects data
+  integrity. This section holds information for all the entities that have
+  been processed. The entities defining a non-zero `addition-count` attribute
+  are displayed in the Export/Import UI.
 
 The `manifest.xml` file also defines layout information if you've exported pages
 in your LAR. For example, your manifest could have `LayoutSet`, `Layout`, and
@@ -99,7 +89,11 @@ in an exported page.
 
 Now that you've learned about the LAR's `manifest.xml` and how it's used to
 store high-level data about your export process, you can dive deeper into the
-LAR file's `group` folder. The `group` folder has two main parts:
+LAR file's folders.
+
+## LAR Folders
+
+The `group` folder has two main parts:
 
 - Entities
 - Portlets
@@ -147,65 +141,3 @@ construction, see the diagram below.
 
 Excellent! You now have a fundamental understanding for how a LAR file is
 generated and how it's structured.
-
-Next, you'll learn about data handler fundamentals and the prerequisites
-required to implement them.
-
-## Data Handler Fundamentals [](id=data-handler-fundamentals)
-
-To leverage the Export/Import framework's ability to export/import a LAR file,
-you can implement Data Handlers in your application. There are two types of data
-handlers: *Portlet Data Handlers* and *Staged Model Data Handlers*.
-
-A Portlet Data Handler imports/exports portlet specific data to a LAR file.
-These classes only have the role of querying and coordinating between staged
-model data handlers. For example, the Bookmarks application's portlet data
-handler tracks system events dealing with Bookmarks entities. It also configures
-the Export/Import UI options for the Bookmarks application.
-
-To track each entity of an application for staging, you should create staged
-models by implementing the
-[StagedModel](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/StagedModel.html)
-interface. Staged models are the parent interface of an entity in the Staging
-framework. For more information on staged models, see the
-[Understanding Staged Models](/develop/tutorials/-/knowledge_base/7-1/understanding-staged-models)
-tutorial.
-
-A Staged Model Data Handler supplies information about a staged model (entity)
-to the Export/Import framework, defining a display name for the UI, deleting an
-entity, etc. It's also responsible for exporting referenced content. For
-example, if a Bookmarks entry resides in a Bookmarks folder, the
-`BookmarksEntry` staged model data handler invokes the export of the
-`BookmarksFolder`.
-
-![Figure 2: The Data Handler framework uses portlet data handlers and staged model data handlers to track and export/import portlet and staged model information, respectively.](../../images/data-handler-diagram.png)
-
-You're not required to implement a staged model data handler for every entity in
-your application, but they're necessary for any entity you want to export/import
-or have the staging framework track.
-
-Before implementing data handlers, make sure your application is ready for the
-Export/Import and Staging frameworks by running Service Builder in your
-application. Using Service Builder to create staged models is not required, but
-is recommended since it generates many requirements for you. To ensure Service
-Builder recognizes your entity as a staged model, you must set the `uuid`
-attribute to `true` in your `service.xml` file and have the following columns
-declared:
-
-- `companyId`
-- `groupId`
-- `userId`
-- `userName`
-- `createDate`
-- `modifiedDate`
-
-You can learn how to create a `service.xml` file for your application by
-visiting the
-[Defining an Object-Relational Map with Service Builder](/develop/tutorials/-/knowledge_base/7-1/defining-an-object-relational-map-with-service-builder)
-tutorial.
-
-To learn how to develop data handlers for your app, visit the
-[Developing Portlet Data Handlers](/develop/tutorials/-/knowledge_base/7-1/developing-portlet-data-handlers)
-and
-[Developing Staged Model Data Handlers](/develop/tutorials/-/knowledge_base/7-1/developing-staged-model-data-handlers)
-tutorials.

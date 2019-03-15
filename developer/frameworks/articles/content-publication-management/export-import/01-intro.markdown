@@ -1,24 +1,155 @@
 # Export/Import
 
 The Export/Import feature lets users export content from the portal and import
-external content into the portal. Providing the export feature in your
-application gives users the flexibility of exporting content they've created in
-your application to other places, such as another portal instance, or to save
-the content for a later use. Import does the opposite: it brings the data from a
-LAR file into your portal.
+external content into the portal. Providing the ability to export/import your
+application's assets makes using your application much more site
+administrator-friendly. If you want to export your application's assets to use
+in another place or you need to clear its data but save a copy, you can
+implement the export feature. Implementing the import feature lets you bring
+your assets/data back into your application.
 
-For instance, suppose you're managing an online education course. Because of the
-nature of an online course, the site's data (grades, assignments, etc.) is
-purged every semester to make way for new incoming students. In a scenario like
-this, there is a need to frequently store a complete record of all data given
-during a course. The institution offering the course must keep records of the
-course's data for a minimum number of years. To abide by these requirements,
-having a gradebook application with an export/import feature would let you clear
-the application's data for a new semester, but save the previous class's work.
-You could export the students' grades as a LAR file and save it outside the
-course's site. If the grades ever needed to be accessed again, you could import
-the LAR and view the student records.
+Here's what you'll learn to do with the Export/Import framework: 
 
-To learn more about using the Export/Import feature, visit the
-[Exporting/Importing App Data](/discover/portal/-/knowledge_base/7-2/exporting-importing-widget-data)
-User Guide section.
+- Create Staged Models
+- Develop Portlet Data Handlers
+- Develop Staged Model Data Handlers
+- Provide entity-specific local services for Export/Import framework
+- Listen to export/import events
+- Initiate new export/import processes programmatically
+
+## Staged Models
+
+To track an entity of an application with the Export/Import framework, you must
+implement the
+[StagedModel](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/StagedModel.html)
+interface in the app's model classes. It provides the behavior contract for
+entities during the Export/Import and Staging processes. There are two ways to
+create staged models for your application's entities:
+
+- [Generate them using Service Builder](/developer/frameworks/-/knowledge_base/7-2/generating-staged-models-using-service-builder)
+- [Implement the appropriate interfaces manually](/developer/frameworks/-/knowledge_base/7-2/creating-staged-models-manually)
+
+Using Service Builder to generate your staged models is the easiest way to
+create staged models for your app. You define the necessary columns in your
+`service.xml` file and set the `uuid` attribute to `true`. Then you run
+Service Builder, which generates the required code for your new staged models.
+
+Implementing the necessary staged model logic *manually* should be done if you
+**don't** want to extend your model with special attributes only required to
+generate Staging logic (i.e., not needed by your business logic). In this case,
+you should adapt your business logic to meet the Staging framework's needs.
+You'll learn more about this later.
+
+See the [Understanding Staged Models](/developer/reference/-/knowledge_base/7-2/understanding-staged-models)
+reference section for more information on the Staged Model architecture.
+
+## Data Handlers
+
+To leverage the Export/Import framework's ability to export/import a
+[LAR file](/developer/reference/-/knowledge_base/7-2/liferay-archive-lar-file),
+you can implement Data Handlers in your application. There are two types of data
+handlers:
+
+- Portlet Data Handlers
+- Staged Model Data Handlers
+
+See each section for more information.
+
+### Portlet Data Handlers
+
+
+
+
+
+
+### Staged Model Data Handlers
+
+
+
+
+## Provide Entity Specific Local Services
+
+
+
+## Export/Import Event Listeners
+
+The `ExportImportLifecycleListener` framework lets developers write code that
+listens for certain staging or export/import events during the publication
+process. The staging and export/import processes have many behind-the-scenes
+events that you cannot listen to by default. Some of these, like export
+successes and import failures, may be events on which you'd want to take some
+action. You can also listen for processes comprised of many events and implement
+custom code when these processes are initiated. Here is a short list of events
+you could listen for: 
+
+- Staging has started
+- A portlet export has failed
+- An entity export has succeeded
+
+The concept of listening for export/import and staging events sounds cool, but
+you may be curious as to why listening for certain events is useful. Listening
+for events can help you know more about your application's state. Suppose you'd
+like a detailed log of when certain events occur during an import process. You
+could configure a listener to listen for certain import events you're interested
+in and print information about those events to your console when they occur.
+
+@product@ uses this framework by default in several cases. For instance, the
+cache is cleared when a web content import process finishes. To accomplish this,
+the lifecycle listener framework listens for an event that specifies that a web
+content import process has completed. Once that event occurs, there is an event
+listener that automatically clears the cache. You could implement this sort of
+functionality yourself for any event. You can listen for a specific event and
+then complete an action based on when that event occurs. For a list of events
+you can listen for during Export/Import and Staging processes, see
+[ExportImportLifecycleConstants](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lifecycle/ExportImportLifecycleConstants.html).
+
+Some definitions are in order: 
+
+**Events** are particular actions that occur during processing (example event
+listener:
+[CacheExportImportLifecycleListener](@app-ref@/web-experience/latest/javadocs/com/liferay/exportimport/lifecycle/CacheExportImportLifecycleListener.html)).
+
+**Processes** are longer running groups of events (example process listener:
+[ExportImportProcessCallbackLifecycleListener](@app-ref@/web-experience/latest/javadocs/com/liferay/exportimport/lifecycle/ExportImportProcessCallbackLifecycleListener.html)).
+
+Use the listener type that is most appropriate for your use case.
+
+## Export/Import Processes
+
+Instead of initiating export/import through @product@'s UI, you can start the
+process programmatically. This lets you provide new interfaces or mimic the
+functionality of these features in your own application.
+
+To initiate an export/import or staging process, you must pass in an
+[ExportImportConfiguration](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/model/ExportImportConfiguration.html)
+object. This object encapsulates many parameters and settings that are required
+while the export/import is running. Having one single object with all your
+necessary data makes executing these frameworks quick and easy.
+
+For example, when you want to implement the export feature, you must call
+services offered by the
+[ExportImportService](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/service/ExportImportService.html)
+interface. All the methods in this interface require an
+`ExportImportConfiguration` object. @product@ provides a way to generate these
+configuration objects, so you can easily pass them in your service methods.
+
+There are three useful factory classes that are useful to create an
+`ExportImportConfiguration` object:
+
+- `ExportImportConfigurationSettingsMapFactory`: provides many `build` methods
+  to create settings maps for various scenarios, like importing, exporting, and
+  publishing layouts and portlets. For examples, you can reference
+  [UserGroupLocalServiceImpl.exportLayouts(...)](@platform-ref@/7.2-latest/javadocs/portal-impl/com/liferay/portal/service/impl/UserGroupLocalServiceImpl.html#exportLayouts-long-java.util.Map-)
+  and
+  [GroupLocalServiceImpl.addDefaultGuestPublicLayoutsByLAR(...)](@platform-ref@/7.2-latest/javadocs/portal-impl/com/liferay/portal/service/impl/GroupLocalServiceImpl.html#addDefaultGuestPublicLayoutsByLAR-com.liferay.portal.kernel.model.Group-java.io.File-).
+- [ExportImportConfigurationFactory](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/configuration/ExportImportConfigurationFactory.html):
+  This factory builds `ExportImportConfiguration` objects used for default
+  local/remote publishing.
+- [ExportImportConfigurationParameterMapFactory](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/configuration/ExportImportConfigurationParameterMapFactory.html):
+  This factory builds parameter maps, which are required during
+  export/import and publishing.
+
+It's also important to know that `ExportImportConfiguration` is an @product@
+entity, similar to `User` or `Group`. This means that the
+`ExportImportConfiguration` framework offers local and remote services, models,
+persistence classes, and more.

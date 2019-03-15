@@ -14,7 +14,7 @@ important question to consider during the decision process is
 When Staging is enabled, all pages and applications are staged automatically.
 @product@'s architecture separates the application and its configuration from
 the actual content, meaning that content can exist without any application to
-display it and vice versa. Although Staging  supports all applications and their
+display it and vice versa. Although Staging supports all applications and their
 configurations by default, not all applications' content is supported by
 Staging.
 
