@@ -69,12 +69,6 @@ Supply this basic portal information:
 button. This immediately localizes your portal content, including the Basic
 Configuration page. 
 
-**Add Sample Data** Selecting this checkbox, adds sample data to your 
-database. This data includes users, sites, and organizations for demo purposes.
-If you're installing @product@ on your own machine to explore features, the
-sample data may be useful. If, however, you're installing @product@ on a real
-server, start with a clean system by unselecting this checkbox. 
-
 ### Administrator User 
 
 For the administrator, supply the following information:
@@ -100,6 +94,13 @@ or trial purposes.
 Click the *Change* link, if you want to use @product@'s built-in data source and
 configure it to use the
 [database you created earlier](/deployment/deployment/-/knowledge_base/7-2/preparing-for-install#database-preparation). 
+
+The database configuration section also has an *Add Sample Data* checkbox for
+adding sample data to your database. This data includes users, sites, and
+organizations for demo purposes. If you're installing @product@ on your own
+machine to explore features, the sample data may be useful. If, however, you're
+installing @product@ on a real server, start with a clean system by leaving this
+checkbox unselected. 
 
 | **Warning:** HSQL should not be used in production @product@ instances. 
 | Configure @product@ to use a different database; specify that database via the
