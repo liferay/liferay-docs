@@ -1,4 +1,10 @@
-# Configuring Mail 
+---
+header-id: configuring-mail
+---
+
+# Configuring Mail
+
+[TOC levels=1-4]
 
 @product@ uses a mail server and SMTP to email notifications. @product@'s
 built-in mail session is the easiest way to configure mail and it's recommended.

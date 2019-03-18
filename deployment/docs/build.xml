@@ -5,7 +5,7 @@
 
 	<import file="../build.xml" />
 
-	<property name="doc.dir" value="deployment"/>
+	<property name="doc.dir" value="docs"/>
 	<property name="doc.type" value="article"/>
 
 </project>

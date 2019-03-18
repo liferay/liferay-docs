@@ -1,4 +1,10 @@
+---
+header-id: preparing-for-install
+---
+
 # Preparing for Install
+
+[TOC levels=1-4]
 
 @product@ doesn't require much to deploy. You need a Java Development Kit (JDK)
 and a database. Several configuration topics (e.g.,

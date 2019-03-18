@@ -1,4 +1,10 @@
+---
+header-id: installing-product
+---
+
 # Installing @product@
+
+[TOC levels=1-4]
 
 Now that you've
 [prepared for installing @product@](/deployment/deployment/-/knowledge_base/7-2/preparing-for-install),

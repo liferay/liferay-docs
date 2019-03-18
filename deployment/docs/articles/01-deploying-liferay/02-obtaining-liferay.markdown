@@ -1,4 +1,10 @@
-# Obtaining @product@ 
+---
+header-id: obtaining-product
+---
+
+# Obtaining @product@
+
+[TOC levels=1-4]
 
 Downloading and installing @product@ is easy. But before you begin, you should
 answer a few questions. 
