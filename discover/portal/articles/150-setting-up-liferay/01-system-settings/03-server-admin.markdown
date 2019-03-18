@@ -154,7 +154,7 @@ feature was provided as a convenience only. To properly migrate @product@ data
 from one database (no matter the vendor) to a new database vendor or database
 version, use your target database vendor's tools or proper manual steps. For
 detailed steps, see
-[Migrating a @product@ Database](/discover/deployment/-/knowledge_base/7-0/migrating-a-liferay-database).  
+[Migrating a @product@ Database](/discover/deployment/-/knowledge_base/7-0/migrating-a-product-database). 
 
 The second section, *Migrate documents from one repository to another*, helps
 you migrate your documents to a new repository on a different disk or in a new 
