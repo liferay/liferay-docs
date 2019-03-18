@@ -45,6 +45,7 @@
 			destdir="${javac.destdir}"
 			includeAntRuntime="false"
 			srcdir="${javac.srcdir}"
+			debug="on"
 		/>
 	</target>
 
