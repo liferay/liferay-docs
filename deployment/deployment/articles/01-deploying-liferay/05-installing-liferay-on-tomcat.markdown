@@ -1,4 +1,4 @@
-# Installing @product@ on Tomcat [](id=installing-product-on-tomcat)
+# Installing @product@ on Tomcat
 
 @product-ver@ bundled with Tomcat 9 is available on the
 [Help Center](https://help.liferay.com/hc)
@@ -25,15 +25,15 @@ or
 
 Here are the basic steps for installing @product@ on Tomcat:
 
-- [Installing dependencies to your application server](#installing-liferay-dependencies)
+- [Installing dependencies to your application server](#installing-dependencies)
 - [Configuring your application server for @product@](#tomcat-configuration)
-- [Deploying the @product@ WAR file to your application server](#deploying-liferay)
+- [Deploying the @product@ WAR file to your application server](#deploying-product)
 
 [*Liferay Home*](/deployment/reference/-/knowledge_base/7-2/liferay-home)
 is Tomcat server's parent folder. `$TOMCAT_HOME` refers to your Tomcat server
 folder. It is usually named `tomcat-[version]` or `apache-tomcat-[version]`.
 
-## Installing Dependencies [](id=installing-liferay-dependencies)
+## Installing Dependencies 
 
 @product@ depends on many JARs included by @product@ Tomcat bundle. Some of the
 bundle's JARs are not strictly required but can still be useful. If you don't
@@ -328,7 +328,7 @@ Your application server is configured to run @product@.
 
 10. The scripts in Tomcat's `bin` folders are executable.
 
-### Database Configuration [](id=database-configuration)
+### Database Configuration
 
 The easiest way to handle your database configuration is to let @product@ manage
 your data source. If you want to use the
@@ -371,7 +371,7 @@ If you want Tomcat to manage your data source, follow these steps:
 You created a data source for Tomcat to manage and configured @product@ to use
 it. Mail session configuration is next.
 
-### Mail Configuration [](id=mail-configuration)
+### Mail Configuration
 
 As with database configuration, the easiest way to configure mail is to let
 @product@ handle your mail session. If you want to use @product@'s
@@ -414,7 +414,7 @@ If you want to manage your mail session with Tomcat, follow these steps:
 You've created a mail session for Tomcat to manage and configured @product@ to
 use it. 
 
-## Deploying @product@ [](id=deploying-liferay)
+## Deploying @product@
 
 Now you're ready to deploy @product@ using the @product@ WAR file.
 

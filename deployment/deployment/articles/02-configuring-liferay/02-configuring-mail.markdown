@@ -1,11 +1,10 @@
-# Configuring Mail [](id=configuring-mail)
+# Configuring Mail 
 
 @product@ uses a mail server and SMTP to email notifications. @product@'s
 built-in mail session is the easiest way to configure mail and it's recommended.
-You can
-[configure the built-in mail session](/deployment/deployment/-/knowledge_base/7-2/configuring-a-mail-session#products-built-in-mail-session)
-before or after deploying @product@. Alternatively, you can
-[configure @product@ to use a mail session on the application server](/deployment/deployment/-/knowledge_base/7-2/configuring-a-mail-session#application-server-mail-session). 
+You can configure the built-in mail session before or after deploying @product@.
+Alternatively, you can configure @product@ to use a mail session on the
+application server. 
 
 Creating a mail session in @product@ or on the application server requires this information: 
 
@@ -17,28 +16,22 @@ Creating a mail session in @product@ or on the application server requires this 
 -   SMTP Password
 -   All JavaMail properties you want to use
 
-Here are the two ways to configure your mail session:
-
--   [@product@'s built-in mail session (recommended)](#products-built-in-mail-session)
-
--   [A mail session on your application server](#application-server-mail-session)
-
 Built-in mail session setup is recommended and easiest. 
 
-### @product@'s Built-in Mail Session [](id=products-built-in-mail-session)
+## Configuring @product@'s Built-in Mail Session 
 
 The built-in mail session setup can be done using either of these methods:
 
--   [Control Panel](#built-in-mail-session-in-the-control-panel)
+-   Control Panel
 
--   [Portal properties](#built-in-mail-session-portal-properties)
+-   Portal properties
 
-#### Built-in Mail Session in the Control Panel [](id=built-in-mail-session-in-the-control-panel)
+### Built-in Mail Session in the Control Panel 
 
 After deploying @product@, you can configure the mail session from the Control Panel. 
 
 1.  Sign in as the administrative user (the user you specified on the
-    [Basic Configuration page](/deployment/deployment/-/knowledge_base/7-2/installing-liferay#basic-configuration)). 
+    [Basic Configuration page](/deployment/deployment/-/knowledge_base/7-2/installing-product#using-the-setup-wizard)). 
 
 2.  Navigate to *Control Panel &rarr; Configuration &rarr; Server Administration
     &rarr; Mail*.
@@ -79,7 +72,7 @@ After deploying @product@, you can configure the mail session from the Control P
 
 @product@ connects to the mail session immediately.  
 
-#### Built-in Mail Session Portal Properties [](id=built-in-mail-session-portal-properties)
+### Built-in Mail Session Portal Properties 
 
 If you prefer specifying your mail session offline or before deploying @product@, use portal properties. 
 
@@ -110,7 +103,7 @@ If you prefer specifying your mail session offline or before deploying @product@
 
 @product@ connects to the mail session on the next startup. 
 
-### Application Server Mail Session [](id=application-server-mail-session)
+## Configuring a Mail Session on the Application Server 
 
 You can manage a mail session for @product@ on your application server. Here's how:
 
@@ -126,3 +119,5 @@ You can manage a mail session for @product@ on your application server. Here's h
         `[LIFERAY_HOME]/portal-ext.properties` file. Here's an example property:
 
             mail.session.jndi.name=mail/MailSession
+
+Congratulations on configuring mail for @product@. 

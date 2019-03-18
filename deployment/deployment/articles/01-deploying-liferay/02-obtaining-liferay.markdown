@@ -1,4 +1,4 @@
-# Obtaining Liferay [](id=obtaining-liferay)
+# Obtaining @product@ 
 
 Downloading and installing @product@ is easy. But before you begin, you should
 answer a few questions. 
@@ -28,15 +28,15 @@ Liferay enterprise subscribers can download Liferay DXP from the
 [Support page](https://help.liferay.com/hc/categories/360000894391-Product-Support)
 for a complete listing). Here are the ways to install @product@:
 
--   [Install @product@ as a bundle](#liferay-bundles)
+-   [Install @product@ as a bundle](#product-bundles)
     (an application server with @product@ pre-installed).
 
--   [Install the @product@ `.war`](#installing-the-liferay-war)
+-   [Install the @product@ `.war`](#installing-the-product-war)
     (and supporting libraries) onto an existing application server.
 
 Since bundles is the easiest way, it's described first. 
 
-## @product@ Bundles [](id=product-bundles)
+## @product@ Bundles 
 
 Bundles include an application server with @product@ pre-installed. There are
 bundles for several application servers; choose the one that best fits your
@@ -46,18 +46,15 @@ straightforward bundles to configure. If you have an open source application
 server preference, choose the server you prefer from the available @product@
 bundles. 
 
-+$$$
-
-**Note:** Application server bundles for proprietary application servers such as
-WebLogic or WebSphere aren't available because the licenses for these servers
-don't allow for redistribution. @product@'s commercial offering, however, runs
-just as well on these application servers as it does on the others. 
-
-$$$
+| **Note:** Application server bundles for proprietary application servers such
+| as WebLogic or WebSphere aren't available because the licenses for these
+| servers don't allow for redistribution. @product@'s commercial offering,
+| however, runs just as well on these application servers as it does on the
+| others. 
 
 Bundles are released as 7-Zip (`.7z`) and gzipped (`.tar.gz`) compressed file
 archive formats. 
-[Installing @product@](/deployment/deployment/-/knowledge_base/7-2/installing-liferay)
+[Installing @product@](/deployment/deployment/-/knowledge_base/7-2/installing-product)
 demonstrates installing @product@ from a bundle. Follow its instructions once
 you've completed prepared for installing @product@ (see the next article). 
 
@@ -73,7 +70,7 @@ of using a bundle.
 
 Manual installation is described next. 
 
-## Installing the @product@ WAR [](id=installing-the-product-war)
+## Installing the @product@ WAR
 
 Manual installation requires installing the @product@ `.war` and required JARs
 onto the application server. There are specific configuration and script changes
@@ -85,4 +82,5 @@ your application server. The article titles follow this format, with
 
 *Installing @product@ on \[Application Server\]*
 
-You've determined the @product@ install format that's right for you. Download @product@ now. Preparing for @product@ installation is next!
+You've determined the install format that's right for you. Download @product@
+now. Preparing for installation is next!

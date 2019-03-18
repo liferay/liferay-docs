@@ -1,44 +1,31 @@
-# Preparing for Install [](id=preparing-for-install)
+# Preparing for Install
 
 @product@ doesn't require much to deploy. You need a Java Development Kit (JDK)
 and a database. Several configuration topics (e.g.,
 [search engine integration]((/deployment/deployment/-/knowledge_base/7-2/installing-a-search-engine),
 [document repository configuration](/deployment/deployment/-/knowledge_base/7-2/document-repository-configuration),
-[security management](/deployment/deployment/-/knowledge_base/7-2/securing-liferay),
-[clustering](/deployment/deployment/-/knowledge_base/7-2/liferay-clustering),
-and more) can be addressed *after* deploying @product@. Start with familiarizing
-yourself with the pre-installation topics here. 
+[security management](/deployment/deployment/-/knowledge_base/7-2/securing-product),
+[clustering](/deployment/deployment/-/knowledge_base/7-2/product-clustering),
+and more) can be addressed *after* deploying @product@. 
 
-- [JDK Requirements](#jdk-requirements)
-- [JVM Requirements](#jvm-requirements)
-- [Preparing a Database](#preparing-a-database) 
+| **Note:** If you are installing @product@ to multiple machines (e.g., in a 
+| [cluster](/deployment/deployment/-/knowledge_base/7-2/product-clustering))
+| or prefer centralizing configuration in a file, using portal properties in a
+| [`[LIFERAY_HOME]/portal-ext.properties` file](/deployment/reference/-/knowledge_base/7-2/portal-properties)
+| is the recommended way to configure. The install preparation topics here and
+| the configuration topics throughout this guide demonstrate using applicable
+| portal properties. 
 
-+$$$
-
-**Note:** If you are installing @product@ to multiple machines (e.g., in a 
-[cluster](/deployment/deployment/-/knowledge_base/7-2/liferay-clustering))
-or prefer centralizing configuration in a file, using portal properties in a
-[`[LIFERAY_HOME]/portal-ext.properties` file](/deployment/reference/-/knowledge_base/7-2/portal-properties)
-is the recommended way to configure. The install preparation topics here and the
-configuration topics throughout this guide demonstrate using applicable portal
-properties. 
-
-$$$
-
-+$$$
-
-**Note:** `LIFERAY_HOME` is the location from which @product@ launches 
-applications, applies configurations, loads JAR files, and generates logs.
-Liferay Home is customizable and can differ between application servers. The
-[Liferay Home reference](/deployment/reference/-/knowledge_base/7-2/liferay-home)
-describes its folder structure. 
-
-$$$
+| **Note:** `LIFERAY_HOME` is the location from which @product@ launches 
+| applications, applies configurations, loads JAR files, and generates logs.
+| Liferay Home is customizable and can differ between application servers. The
+| [Liferay Home reference](/deployment/reference/-/knowledge_base/7-2/liferay-home)
+| describes its folder structure. 
 
 Start preparing for @product@ install, by installing a supported Java
 Development Kit. 
 
-## JDK Requirements [](id=jdk-requirements)
+## JDK Requirements
 
 @product@ deployment requires a JDK. The 
 [Support page](https://help.liferay.com/hc/categories/360000894391-Product-Support)
@@ -48,10 +35,11 @@ versions:
 - JDK 8
 - JDK 11
 
-JDK 11 is backwards compatible with JDK 8 applications. Applications
-and customizations developed on JDK 8 run on JDK 8 or JDK 11 runtimes. This makes JDK 8 best for developing on @product-ver@. 
+JDK 11 is backwards compatible with JDK 8 applications. Applications and
+customizations developed on JDK 8 run on JDK 8 or JDK 11 runtimes. This makes
+JDK 8 best for developing on @product-ver@. 
 
-## JVM Requirements [](id=jvm-requirements)
+## JVM Requirements
 
 @product@ requires that the application server JVM use the GMT time zone and
 UTF-8 file encoding. Include these JVM arguments to set the required values. 
@@ -60,7 +48,7 @@ UTF-8 file encoding. Include these JVM arguments to set the required values.
 
 It's time to prepare your database. 
 
-## Preparing a Database [](id=preparing-a-database)
+## Preparing a Database
 
 The recommended way to set up your @product@ database is also the simplest.
 @product@ takes care of just about everything. Here are the steps:
@@ -75,12 +63,8 @@ The recommended way to set up your @product@ database is also the simplest.
     multilingual application and needs UTF-8 encoding to display all of its
     supported character sets.
 
-    +$$$
-
-    **Note:** If you plan to migrate from one database vendor to another,
-    [configure the database to use the default query result order you expect for entities @product@ lists](/develop/tutorials/-/knowledge_base/7-2/sort-order-changed-with-a-different-database). 
-
-    $$$
+    | **Note:** If you plan to migrate from one database vendor to another,
+    | [configure the database to use the default query result order you expect for entities @product@ lists](/develop/tutorials/-/knowledge_base/7-2/sort-order-changed-with-a-different-database). 
 
 3.  Create a database user for accessing this database. Grant this database user
     all rights, including the rights to create and drop tables, to the blank
@@ -99,22 +83,18 @@ maintain its database automatically during upgrades or when various @product@
 plugins that create database tables of their own are installed. This method is
 by far the best way to set up your database. 
 
-+$$$
-
-**Warning:** If you're using an Oracle database, use the `ojdbc8.jar` driver 
-library with at least Oracle 12.2.0.1.0 JDBC 4.2 versioning because
-[data truncation issues](https://issues.liferay.com/browse/LPS-79229)
-have been detected reading data from CLOB columns.
-
-$$$
+| **Warning:** If you're using an Oracle database, use the `ojdbc8.jar` driver 
+| library with at least Oracle 12.2.0.1.0 JDBC 4.2 versioning because
+| [data truncation issues](https://issues.liferay.com/browse/LPS-79229)
+| have been detected reading data from CLOB columns. 
 
 You can connect @product@ with your database using @product@'s built-in data
 source (recommended) or using a data source you create on your app server. 
 
-### Using the Built-in Data Source [](id=using-the-built-in-data-source)
+### Using the Built-in Data Source
 
 You can configure the built-in data source from the
-[Basic Configuration page](/deployment/deployment/-/knowledge_base/7-2/installing-liferay#basic-configuration-page)
+[Basic Configuration page](/deployment/deployment/-/knowledge_base/7-2/installing-product#using-the-setup-wizard)
 (available when @product@ starts up the first time) or by specifying it using 
 portal properties. 
 
@@ -131,7 +111,7 @@ Here's how set it using portal properties:
 3.  Modify the `jdbc.*` property values to specify your database and database 
     user credentials. 
 
-3.  Put the `portal-ext.properties` file into your
+4.  Put the `portal-ext.properties` file into your
     [LIFERAY_HOME](/deployment/reference/-/knowledge_base/7-2/liferay-home)
     once you've established it based on your installation. 
 
@@ -140,7 +120,7 @@ Here's how set it using portal properties:
 As an alternative to the build-in data source, you can use  a data source on
 your application server. 
 
-### Using a Data Source on Your Application Server [](id=using-a-data-source-on-your-application-server)
+### Using a Data Source on Your Application Server
 
 Although using @product@'s built-in data source is recommended, you can use a data source on your application server. Here are the steps:
 
@@ -168,22 +148,18 @@ continue with all database rights is recommended. If you're fine with that user
 having the recommended permissions, skip the next section on limiting
 database access. 
 
-### Limiting Database Access [](id=limiting-database-access)
+### Limiting Database Access
 
-+$$$
-
-**Warning:** The instructions below are not ideal for @product@ installations
-The following procedure is documented so that enterprises with more restrictive
-standards can install @product@ with stricter (but sub-optimal) database
-settings. If it's at all possible, allow the database user that initializes the
-database to continue using the database with the same recommended permissions.
-The start of this section
-([Database Preparation](#database-prepartation)) 
-describes the recommended procedure for initializing the @product@ database and
-preserving that user's permissions for maintaining the @product@ database and
-updating the database as plugin installations and plugin updates require. 
-
-$$$ 
+| **Warning:** The instructions below are not ideal for @product@ installations
+| The following procedure is documented so that enterprises with more
+| restrictive standards can install @product@ with stricter (but sub-optimal)
+| database settings. If it's at all possible, allow the database user that
+| initializes the database to continue using the database with the same
+| recommended permissions. The start of this section
+| ([Database Preparation](#database-prepartation)) 
+| describes the recommended procedure for initializing the @product@ database
+| and preserving that user's permissions for maintaining the @product@ database
+| and updating the database as plugin installations and plugin updates require. 
 
 Even though it's recommended for @product@ to use the same database user to
 create and maintain its database automatically, your organizations might insist
@@ -221,7 +197,7 @@ database before you attempt to install the plugins.
 You installed the required JDK and prepared your @product@ database for the
 @product@ installation. @product@ has many more configurable features; but they
 can wait until *after* deployment. The
-[Configuring @product@](/deployment/deployment/-/knowledge_base/7-2/configuring-liferay)
+[Configuring @product@](/deployment/deployment/-/knowledge_base/7-2/configuring-product)
 section explains them. 
 
 You've prepared for deploying @product@. It's time to install @product@. 
