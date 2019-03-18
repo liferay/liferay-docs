@@ -152,8 +152,10 @@ Start with configuring Tomcat to run @product@.
     you must set its location in in these files so Tomcat can run. Do this by
     pointing the `JAVA_HOME` environment variable to a @product@-supported JRE:
 
-        export JAVA_HOME=/usr/lib/jvm/java-8-jdk
-        export PATH=$JAVA_HOME/bin:$PATH
+    ```bash
+    export JAVA_HOME=/usr/lib/jvm/java-8-jdk
+    export PATH=$JAVA_HOME/bin:$PATH
+    ```
 
     Then configure Catalina's JVM options to support @product@.
 
@@ -268,10 +270,12 @@ Start with configuring Tomcat to run @product@.
 6.  Optionally, set the following log levels in your
     `$CATALINA_HOME/conf/logging.properties` file:
 
-        org.apache.catalina.startup.Catalina.level=INFO
-        org.apache.catalina.startup.ClassLoaderFactory.level=SEVERE
-        org.apache.catalina.startup.VersionLoggerListener.level=WARNING
-        org.apache.level=WARNING
+    ```properties
+    org.apache.catalina.startup.Catalina.level=INFO
+    org.apache.catalina.startup.ClassLoaderFactory.level=SEVERE
+    org.apache.catalina.startup.VersionLoggerListener.level=WARNING
+    org.apache.level=WARNING
+    ```
 
 7.  In `$CATALINA_HOME/conf/web.xml`, set the JSP compiler to  Java 8 and set 
     @product@'s `TagHandlerPool` class to manage the JSP tag pool. Do this by
@@ -372,7 +376,9 @@ If you want Tomcat to manage your data source, follow these steps:
 3.  In a `portal-ext.properties` file in your Liferay Home, specify your data 
     source:
 
-        jdbc.default.jndi.name=jdbc/LiferayPool
+    ```properties
+    jdbc.default.jndi.name=jdbc/LiferayPool
+    ```
 
 You created a data source for Tomcat to manage and configured @product@ to use
 it. Mail session configuration is next.
@@ -415,7 +421,9 @@ If you want to manage your mail session with Tomcat, follow these steps:
 2.  In your `portal-ext.properties` file in Liferay Home, reference your mail
     session:
 
-        mail.session.jndi.name=mail/MailSession
+    ```properties
+    mail.session.jndi.name=mail/MailSession
+    ```
 
 You've created a mail session for Tomcat to manage and configured @product@ to
 use it. 

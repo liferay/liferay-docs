@@ -141,7 +141,9 @@ Although using @product@'s built-in data source is recommended, you can use a da
 3.  Add the `jdbc.default.jndi.name` property set to the data source's JNDI 
     name. Here's an example:
 
-        jdbc.default.jndi.name=jdbc/LiferayPool
+    ```properties
+    jdbc.default.jndi.name=jdbc/LiferayPool
+    ```
 
 4.  Put the `portal-ext.properties` file into your
     [LIFERAY_HOME](/deployment/reference/-/knowledge_base/7-2/liferay-home),

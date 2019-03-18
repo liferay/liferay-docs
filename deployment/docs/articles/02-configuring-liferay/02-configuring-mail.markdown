@@ -88,18 +88,20 @@ If you prefer specifying your mail session offline or before deploying @product@
 
 2.  Copy these default property settings into your `portal-ext.properties` file:
 
-        mail.session.mail=false
-        mail.session.mail.pop3.host=localhost
-        mail.session.mail.pop3.password=
-        mail.session.mail.pop3.port=110
-        mail.session.mail.pop3.user=
-        mail.session.mail.smtp.auth=false
-        mail.session.mail.smtp.host=localhost
-        mail.session.mail.smtp.password=
-        mail.session.mail.smtp.port=25
-        mail.session.mail.smtp.user=
-        mail.session.mail.store.protocol=pop3
-        mail.session.mail.transport.protocol=smtp.
+    ```properties
+    mail.session.mail=false
+    mail.session.mail.pop3.host=localhost
+    mail.session.mail.pop3.password=
+    mail.session.mail.pop3.port=110
+    mail.session.mail.pop3.user=
+    mail.session.mail.smtp.auth=false
+    mail.session.mail.smtp.host=localhost
+    mail.session.mail.smtp.password=
+    mail.session.mail.smtp.port=25
+    mail.session.mail.smtp.user=
+    mail.session.mail.store.protocol=pop3
+    mail.session.mail.transport.protocol=smtp
+    ```
 
 3.  Replace the default mail session values with your own. 
 
