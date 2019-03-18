@@ -161,7 +161,9 @@ Start with configuring Tomcat to run @product@.
 
     Unix: 
 
-        CATALINA_OPTS="$CATALINA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx2048m -XX:MaxMetaspaceSize=512m"
+    ```bash
+    CATALINA_OPTS="$CATALINA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx2048m -XX:MaxMetaspaceSize=512m"
+    ```
 
     Windows:
 
@@ -173,12 +175,8 @@ Start with configuring Tomcat to run @product@.
     around them causes problems with the logging system), sets the time zone to
     GMT, gives the JVM 2GB of RAM, and limits Metaspace to 500MB. 
 
-    +$$$
-    
-    **Important:** @product@ requires that the application server JVM use the 
-    GMT time zone and UTF-8 file encoding. 
-    
-    $$$
+    | **Important:** @product@ requires that the application server JVM use the 
+    | GMT time zone and UTF-8 file encoding. 
 
     After installation, tune your system (including these JVM options) for
     performance. 
