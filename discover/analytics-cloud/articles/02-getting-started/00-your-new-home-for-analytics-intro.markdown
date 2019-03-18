@@ -31,6 +31,11 @@ The project home page describes and links to each key component page:
 behavior data. Track Segment growth and discover patterns of interest. Discover
 your target audience.
 
+**Accounts:** Learn how individuals that belong to Salesforce accounts interact 
+with your sites. By combining Salesforce account data with data from other 
+sources, Analytics Cloud presents a holistic view of the account and those in 
+it. 
+
 **Individuals:** Learn how individual customers interact with your Sites. View
 holistic profiles that combine customer's profile data with their page and asset
 interactions for deep insight into their interests. 
