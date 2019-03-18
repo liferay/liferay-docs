@@ -62,8 +62,8 @@ to the Export/Import framework, defining a display name for the UI, deleting an
 entity, etc. It's also responsible for exporting referenced content.
 
 Visit the
-[Understanding Data Handlers](/developer/reference/-/knowledge_base/7-2/understanding-data-handlers)
-reference article for more information.
+[Data Handlers](/developer/frameworks/-/knowledge_base/7-2/data-handlers)
+section for more information.
 
 ## Provide Entity Specific Local Services
 
