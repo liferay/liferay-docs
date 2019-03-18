@@ -55,6 +55,38 @@ Once you have the XML definition files locally, upload them into Liferay:
 Alternatively, you can look at the pre-existing definitions to get ideas while
 designing and building your own definition. 
 
+## Workflow Assignees Have Implicit Asset Permissions [](id=workflow-assignees-have-implicit-asset-permissions)
+
+A user who has permission to execute a workflow task (e.g., a User with the
+Portal Content Reviewer Role) has full resource action permissions over the
+asset they're able to review. These permissions apply in the My Workflow Tasks
+widget in the User's personal page, and anywhere else actions on the Asset can
+be performed.
+
+For example, consider a User with two permissions:
+
+- The Portal Content Reviewer Role enables the User to review workflow
+    submissions, and grants edit and delete permissions on the content they're
+    reviewing. 
+- The User also has permission to view Web Content Articles in the Site's
+    _Content_ section. 
+
+Neither permission explicitly grants the User management permissions on Web
+Content Articles. The User cannot normally edit or delete a Web Content Article,
+for example. However, if a Web Content Article is sent to the workflow, the User
+can access the Web Content Article for review (in their _Assigned to Me_ or
+_Assigned to my Roles_ section of My Workflow Tasks), and they can edit or
+delete the content while reviewing it in the workflow. While it's in the status
+_Pending_, they can also edit or delete the article from Site Administration
+&rarr; Content &rarr; Web Content because of their implicit permissions granted
+by the workflow system. This additional permission is temporary, and the normal
+resource permissions are activated once the Web Content Article exists the
+workflow process (for example, it's rejected or approved).
+
+![Figure 1: A User with VIEW permission on Web Content cannot manage Approved Articles.](../../images/workflow-approved-permissions.png)
+
+![Figure 2: A User with access to Web Content in the Workflow can manage Pending Articles.](../../images/workflow-pending-permissions.png)
+
 <!-- Do you need a real life example to convince you that workflow is
 important? Grab a cup of coffee and settle in. Story about ancient Greek
 philosophers (web sites) competing rhetorically for followers and financial
