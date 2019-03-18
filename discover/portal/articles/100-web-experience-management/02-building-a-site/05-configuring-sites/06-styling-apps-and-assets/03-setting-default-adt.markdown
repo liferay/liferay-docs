@@ -17,7 +17,7 @@ Group ID* and a *Display Style* option.
 To enter a Display Style, you first need the **Template Key** for the template
 you want to use. To get the Template Key, go to the *Application Display 
 Template* list for a given Site and retrieve it from the ADT listing. Then
-enter the display style as `ddmTemplate_[template-key]`.
+enter the display style as `[template-key]`.
 
 ## Default ADT Example [](id=default-adt-example)
 
@@ -42,7 +42,7 @@ Now that you have the ID, you can change the template from System Settings.
 2.  Find *Localization* under the *Platform* heading and select *Language 
     Selector* from the options on the left.
  
-3.  In the *Display Style* field, enter `ddmTemplate_LANGUAGE-ICON-FTL`.
+3.  In the *Display Style* field, enter `LANGUAGE-ICON-FTL`.
  
 Now any Language Selector widgets are added to a page use the new defaults.
 This doesn't affect widgets already added to a page and configured.
