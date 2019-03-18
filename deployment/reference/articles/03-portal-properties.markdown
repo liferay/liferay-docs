@@ -1,4 +1,10 @@
-# Portal Properties [](id=portal-properties)
+---
+header-id: portal-properties
+---
+
+# Portal Properties
+
+[TOC levels=1-4]
 
 Portal properties let you configure and override @product@ features. Your
 installation's `portal-impl.jar` embeds the default properties file: 
@@ -15,26 +21,24 @@ installation's `portal-impl.jar` embeds the default properties file:
 Overriding a portal property requires creating an *extension* portal properties
 file that specifies the properties you're overriding. 
 
-+$$$
-
-**Note:** In a portal properties extension file, specify only the properties
-you're overriding. 
-
-$$$
+| **Note:** In a portal properties extension file, specify only the properties
+| you're overriding. 
 
 Here's an example of setting Portal's data source to a MySQL database by adding
 override properties in a `[Liferay Home]/portal-ext.properties` file:
 
-    jdbc.default.driverClassName=com.mysql.jdbc.Driver
-    jdbc.default.url=jdbc:mysql://localhost/myportal?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
-    jdbc.default.username=jbloggs
-    jdbc.default.password=pass123
+```properties
+jdbc.default.driverClassName=com.mysql.jdbc.Driver
+jdbc.default.url=jdbc:mysql://localhost/myportal?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
+jdbc.default.username=jbloggs
+jdbc.default.password=pass123
+```
 
 The
 [`include-and-override`](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Properties Override)
-property specifies portal property files that override the
-defaults. It specifies the order the files are read---the last file read takes
-highest priority. 
+property specifies portal property files that override the defaults. It
+specifies the order the files are read---the last file read takes highest
+priority. 
 
 Properties file prioritization (highest to lowest):
 
