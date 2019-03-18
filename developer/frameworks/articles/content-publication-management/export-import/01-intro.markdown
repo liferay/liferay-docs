@@ -3,10 +3,10 @@
 The Export/Import feature lets users export content from the portal and import
 external content into the portal. Providing the ability to export/import your
 application's assets makes using your application much more site
-administrator-friendly. If you want to export your application's assets to use
-in another place or you need to clear its data but save a copy, you can
-implement the export feature. Implementing the import feature lets you bring
-your assets/data back into your application.
+administrator-friendly. For example, if you want to export your application's
+assets to use in another place or you need to clear its data but save a copy,
+you can implement the export feature. Implementing the import feature lets you
+bring your assets/data back into your application.
 
 Here's what you'll learn to do with the Export/Import framework: 
 
@@ -38,9 +38,9 @@ Implementing the necessary staged model logic *manually* should be done if you
 **don't** want to extend your model with special attributes only required to
 generate Staging logic (i.e., not needed by your business logic). In this case,
 you should adapt your business logic to meet the Staging framework's needs.
-You'll learn more about this later.
 
-See the [Understanding Staged Models](/developer/reference/-/knowledge_base/7-2/understanding-staged-models)
+See the
+[Understanding Staged Models](/developer/reference/-/knowledge_base/7-2/understanding-staged-models)
 reference section for more information on the Staged Model architecture.
 
 ## Data Handlers
@@ -69,7 +69,7 @@ reference article for more information.
 
 When creating your data handlers, you must leverage your app's local services to
 perform Export/Import and Staging related tasks for its entities. When these
-frameworks operates on entities (i.e., staged models), it often cannot manage
+frameworks operate on entities (i.e., staged models), it often cannot manage
 important information from the entity's local services alone; instead, you're
 forced to reinvent basic functionality so the framework can access it. This is
 caused by services not sharing a common ancestor (i.e., interface or base
@@ -118,11 +118,11 @@ you can listen for during Export/Import and Staging processes, see
 
 Some definitions are in order: 
 
-**Events** are particular actions that occur during processing (example event
+**Events:** particular actions that occur during processing (example event
 listener:
 [CacheExportImportLifecycleListener](@app-ref@/web-experience/latest/javadocs/com/liferay/exportimport/lifecycle/CacheExportImportLifecycleListener.html)).
 
-**Processes** are longer running groups of events (example process listener:
+**Processes:** longer running groups of events (example process listener:
 [ExportImportProcessCallbackLifecycleListener](@app-ref@/web-experience/latest/javadocs/com/liferay/exportimport/lifecycle/ExportImportProcessCallbackLifecycleListener.html)).
 
 Use the listener type that is most appropriate for your use case.
