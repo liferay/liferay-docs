@@ -32,6 +32,12 @@ explanation of basic Fragment creation using Liferay's built in tools, see
 [Creating a Fragment](link). For more information on creating and managing 
 Fragments, see [Managing Page Fragments with Desktop Tools](link).
 
+### Fragment CLI
+
+To streamline fragment development, @product-ver@ provides command line tools 
+for generating, importing, and exporting fragments and fragment collections. 
+For instructions on setting up the CLI, see the [Setting up the Fragment Generator](link) reference. Using this CLI is also covered in the [Managing Page Fragments with Desktop Tools](link) section.
+
 ## Contributed Collections
 
 In most cases, Page Fragments are created by web developers and imported 
