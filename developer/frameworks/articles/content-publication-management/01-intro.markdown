@@ -1,3 +1,7 @@
+---
+header-id: content-publication-management
+---
+
 # Content Publication Management
 
 Managing content publication is primarily controlled by two frameworks:

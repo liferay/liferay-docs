@@ -1,3 +1,7 @@
+---
+header-id: staging
+---
+
 # Staging
 
 Staging lets you change your Site behind the scenes without affecting the live

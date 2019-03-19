@@ -1,4 +1,8 @@
-# Generating Staged Models Using Service Builder [](id=generating-staged-models-using-service-builder)
+---
+header-id: generating-staged-models-using-service-builder
+---
+
+# Generating Staged Models Using Service Builder
 
 Instead of having to create staged models for your app manually, you can
 leverage

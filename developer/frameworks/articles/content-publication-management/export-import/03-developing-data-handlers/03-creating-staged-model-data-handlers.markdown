@@ -1,4 +1,8 @@
-# Developing Staged Model Data Handlers [](id=developing-staged-model-data-handlers)
+---
+header-id: developing-staged-model-data-handlers
+---
+
+# Developing Staged Model Data Handlers
 
 There are two types of data handlers you can implement: *Portlet Data Handlers*
 and *Staged Model Data Handlers*. For more information on the fundamentals
@@ -7,14 +11,10 @@ behind Liferay's data handlers and how a LAR file is constructed, see the
 tutorial. In this tutorial, you'll learn how to create a Staged Model Data
 Handler for a Bookmarks application.
 
-+$$$
-
-**Note:** You must ensure your application is properly configured to use data
-handlers. For more information on how to do this, see the
-[Data Handler Fundamentals](/develop/tutorials/-/knowledge_base/7-1/understanding-data-handlers#data-handler-fundamentals)
-section.
-
-$$$
+| **Note:** You must ensure your application is properly configured to use data
+| handlers. For more information on how to do this, see the
+| [Data Handler Fundamentals](/develop/tutorials/-/knowledge_base/7-1/understanding-data-handlers#data-handler-fundamentals)
+| section.
 
 A Staged Model Data Handler supplies information about a staged model (entity)
 to the Export/Import framework, defining a display name for the UI, deleting an
@@ -54,14 +54,10 @@ done for Bookmark entries.
     immediately once its provided module has started. The `service` element
     should point to the `StagedModelDataHandler.class` interface.
 
-    +$$$
-
-    **Note:** In previous versions of @product@, you had to register the staged
-    model data handler in a portlet's `liferay-portlet.xml` file. The
-    registration process is now completed automatically by OSGi using the
-    `@Component` annotation.
-
-    $$$
+    | **Note:** In previous versions of @product@, you had to register the staged
+    | model data handler in a portlet's `liferay-portlet.xml` file. The
+    | registration process is now completed automatically by OSGi using the
+    | `@Component` annotation.
 
 4.  Create a getter and setter method for the local service of the staged model
     for which you want to provide a data handler:

@@ -1,4 +1,8 @@
-# Developing Portlet Data Handlers [](id=developing-portlet-data-handlers)
+---
+header-id: developing-portlet-data-handlers
+---
+
+# Developing Portlet Data Handlers
 
 A Portlet Data Handler imports/exports portlet specific data to a LAR file.
 These classes only have the role of querying and coordinating between

@@ -1,4 +1,8 @@
-# Initiating New Export/Import Processes [](id=initiating-new-export-import-processes)
+---
+header-id: initiating-new-export-import-processes
+---
+
+# Initiating New Export/Import Processes
 
 In this tutorial, you'll learn about the `ExportImportConfiguration` framework
 and how you can take advantage of provided services and factories to create
@@ -51,16 +55,12 @@ initiate your custom export/import or staging process.
     layouts from @product@. Although this example code resides in @product@, you
     could easily use this framework from your own project.
 
-    +$$$
-
-    **Note:** If you're not calling the export/import or staging service methods
-    from an OSGi module, you should not use the interface. The Liferay
-    OSGi container automatically handles interface referencing, which is why
-    using the interface is permitted for modules. If you're calling
-    export/import or staging service methods outside of a module, you should use
-    their service Util classes (e.g., `ExportImportLocalServiceUtil`).
-
-    $$$
+    | **Note:** If you're not calling the export/import or staging service methods
+    | from an OSGi module, you should not use the interface. The Liferay
+    | OSGi container automatically handles interface referencing, which is why
+    | using the interface is permitted for modules. If you're calling
+    | export/import or staging service methods outside of a module, you should use
+    | their service Util classes (e.g., `ExportImportLocalServiceUtil`).
 
 It's that easy! To start your own export/import or staging process, you must
 create an `ExportImportConfiguration` object using a combination of the three

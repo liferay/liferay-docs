@@ -1,4 +1,8 @@
-# Staged Models
+---
+header-id: developing-staged-models
+---
+
+# Developing Staged Models
 
 To track an entity of an application with the Staging framework, you must
 implement the
@@ -13,7 +17,7 @@ and both implement the `StagedModel` interface. Once you've configured your
 staged models, you can create staged model data handlers, which supply
 information about a staged model (entity) and its referenced content to the
 Export/Import and Staging frameworks. See the
-[Understanding Data Handlers](/developer/reference/-/knowledge_base/7-2/understanding-data-handlers)
+[Developing Data Handlers](/developer/reference/-/knowledge_base/7-2/developing-data-handlers)
 tutorial for more information.
 
 There are two ways to create staged models for your application's entities:
@@ -141,5 +145,5 @@ To adapt your model classes to staged models, follow the steps outlined below:
 
 To step through the process for leveraging the Model Adapter Builder for an
 existing app, visit the
-[Creating Staged Models Manually](/develop/tutorials/-/knowledge_base/7-1/creating-staged-models-manually)
+[Creating Staged Models Manually](/developer/frameworks/-/knowledge_base/7-2/creating-staged-models-manually)
 article.

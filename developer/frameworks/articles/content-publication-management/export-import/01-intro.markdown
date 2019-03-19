@@ -1,3 +1,7 @@
+---
+header-id: export-import
+---
+
 # Export/Import
 
 The Export/Import feature lets users export content from the portal and import
@@ -40,8 +44,8 @@ generate Staging logic (i.e., not needed by your business logic). In this case,
 you should adapt your business logic to meet the Staging framework's needs.
 
 See the
-[Understanding Staged Models](/developer/reference/-/knowledge_base/7-2/understanding-staged-models)
-reference section for more information on the Staged Model architecture.
+[Developing Staged Models](/developer/frameworks/-/knowledge_base/7-2/developing-staged-models)
+section for more information on the Staged Model architecture.
 
 ## Data Handlers
 
@@ -62,7 +66,7 @@ to the Export/Import framework, defining a display name for the UI, deleting an
 entity, etc. It's also responsible for exporting referenced content.
 
 Visit the
-[Data Handlers](/developer/frameworks/-/knowledge_base/7-2/data-handlers)
+[Developing Data Handlers](/developer/frameworks/-/knowledge_base/7-2/developing-data-handlers)
 section for more information.
 
 ## Provide Entity Specific Local Services
