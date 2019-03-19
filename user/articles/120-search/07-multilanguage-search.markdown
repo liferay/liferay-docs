@@ -1,18 +1,17 @@
 # Searching for Localized Content [](id=searching-for-localized-content)
 
 @product@ supports setting a virtual instance-wide 
-[default language](/discover/portal/-/knowledge_base/7-1/miscellaneous-settings#miscellaneous-display-settings) <!-- update when available on 7.2-->
+[default language](/documentation/user/-/knowledge_base/7-2/miscellaneous-settings#miscellaneous-display-settings) <!-- update when available on 7.2-->
 and setting a 
-[site-specific language](/discover/portal/-/knowledge_base/7-1/social-settings-and-languages#languages). <!-- Update to 7.2 when available-->
+[site-specific language](/documentation/user/-/knowledge_base/7-2/social-settings-and-languages#languages). <!-- Update to 7.2 when available-->
 In addition, many out of the box assets 
-[support translation](/discover/portal/-/knowledge_base/7-1/other-content-options#localizing-content).
+[support translation](/documentation/user/-/knowledge_base/7-2/other-content-options#localizing-content).
 <!--update link to 7.2 -->
 
 How an asset's fields are indexed in the search engine plays an important role
-in the search behavior experienced by the end User. Not all assets are indexed
-in a way that supports searching in a language other than the default language.
-Even assets that are translatable might not support searching for the content in
-that language.
+in the end user's experience. Not all assets are indexed in a way that supports
+searching in a language other than the default language. Even assets that are
+translatable might not support searching for the content in that language.
 
 ## What is Localized Search? [](id=what-is-localized-search)
 
@@ -22,7 +21,8 @@ example, `en_US` for English, making a localized title field indexed as
 [language analyzer](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/analysis-lang-analyzer.html) 
 in the search engine so that the 
 [analysis](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/analysis.html) 
-process is performed properly. There are two common approaches.
+process is performed properly. There are two common approaches: fully localized
+search and site-localized search.
 
 Fully localized search works like this:
 
@@ -33,9 +33,8 @@ Fully localized search works like this:
 2.  The fields are indexed with the appended locale and analyzed with the
     corresponding language analyzer.
 
-3.  At search time, the user can be sure that content existing in a certain
-    language was analyzed properly, and will be properly returned according to
-    search engine's relevance algorithms.
+3.  At search time, properly indexed and analyzed content is returned according
+    to search engine's relevance algorithms.
 
 Site-localized search works like this:
 
@@ -46,18 +45,17 @@ Site-localized search works like this:
     site locale to the indexed fields and analyze with the corresponding
     language analyzer.
 
-2.  At search time, the user can be sure that if content exists matching the
-    language of the site, it's properly returned according to the search
-    engine's algorithms.
+2.  At search time, if content exists matching the language of the site, it's
+    properly returned according to the search engine's algorithms.
 
 Not all assets support localized search, however.
 
 ## Assets Supporting Localized Search [](id=assets-supporting-localized-search)
 
-Whether or not an asset supports localized search depends on how the asset was
-indexed in the search engine. At this time, no cohesive pan-asset approach to
-indexing assets for localized search exists. Localized search support is
-currently limited, and available in the following assets:
+Whether an asset supports localized search depends on how the asset was indexed
+in the search engine. At this time, no cohesive pan-asset approach to indexing
+assets for localized search exists. Localized search support is currently
+limited to the following assets:
 
 ### Web Content Articles: [](id=assets-supporting-localized-search_web-content-articles)
 
@@ -75,14 +73,14 @@ currently limited, and available in the following assets:
 
     $$$
 
-- At search time, any matching results (with any locale appended) can be
+- At search time, matching results (with any locale appended) can be
     returned.
 
 ### Categories: [](id=assets-supporting-localized-search_categories)
 
 - The `name` and `description` fields support fully localized search.
 
-- At search time, any matching results (with any locale appended) can be
+- At search time, matching results (with any locale appended) can be
     returned.
 
 ### Documents and Media File Entries: [](id=assets-supporting-localized-search_dm-file-entries)
@@ -105,7 +103,7 @@ currently limited, and available in the following assets:
 
 ## Examples [](id=examples)
 
-To see localized search in action refer to the examples below.
+To see localized search in action, refer to the examples below.
 
 ### Fully Localized Search for Web Content Articles
 
@@ -114,7 +112,7 @@ To see localized search in action refer to the examples below.
     - Title: _What time is it?_
     - Summary: _It's soccer time!_
     - Content: _That's right, it's time for soccer. The 2018 World Cup is behind
-        us, and teams all over the U.S. are gearing up for soccer season. It's
+        us, and teams all over the US are gearing up for soccer season. It's
         never too early to start practicing._
 
 2.  Add a second article in English:
@@ -139,7 +137,7 @@ To see localized search in action refer to the examples below.
     for the word _time_ returns the English translation of the Web Content,
     which does not itself contain the matched keyword. The Portuguese
     translation contains the matching keyword, while the English translation is
-    returned for English speaking search Users.
+    returned for English speaking search users.
 
 In fully localized search, fields are appended with the proper locale, and even
 fields with a locale other than the User's display context are returned if they
@@ -153,8 +151,8 @@ contain matches to the searched keyword.
 
 2. Upload it as a Basic Document to the Documents and Media application.
 
-3.  If your site's language is currently set to English, adding this file will
-    append it's content field with the _en\US_ locale. 
+3.  If your site's language is currently set to English, adding this file 
+    appends its content field with the _en\US_ locale. 
 
 4.  Search in the site for the keyword _time_.
 
