@@ -2,10 +2,6 @@
 header-id: deployment-reference
 ---
 
----
-header-id: deployment-reference
----
-
 # Deployment Reference
 
 [TOC levels=1-4]
