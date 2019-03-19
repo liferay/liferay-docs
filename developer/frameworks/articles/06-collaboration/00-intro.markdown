@@ -1,4 +1,10 @@
-# Collaboration [](id=collaboration)
+---
+header-id: collaboration
+---
+
+# Collaboration
+
+[TOC levels=1-4]
 
 Underlying the 
 [collaboration suite](/discover/portal/-/knowledge_base/7-2/collaboration) 
@@ -10,7 +16,9 @@ and much more.
 
 Here are a few of the things you can do with the collaboration suite's APIs. 
 
-## Item Selector [](id=item-selector)
+[TOC levels=4 hierarchy]
+
+## Item Selector
 
 An *Item Selector* is a UI component for selecting entities in a user-friendly
 manner. Many Liferay apps use Item Selectors to select items such as images, 
@@ -30,7 +38,7 @@ Here are some use cases for the Item Selector API:
 
 3.  Adding a new *selection view* to customize the selection experience.
 
-## Adaptive Media [](id=adaptive-media)
+## Adaptive Media
 
 The 
 [Adaptive Media](/discover/portal/-/knowledge_base/7-2/adapting-your-media-across-multiple-devices) 
@@ -47,7 +55,7 @@ match other criteria (e.g., a specific resolution, a range of attributes, etc.).
 You can even customize the image scaling that Adaptive Media uses to produce 
 adapted images. 
 
-## Social API [](id=social-api)
+## Social API
 
 Users interact with content via @product@'s social features. For example, users 
 can provide feedback on content, share that content with others, subscribe to 
@@ -67,7 +75,7 @@ likes, stars, thumbs, etc.).
 
 **Flags:** Flag inappropriate content. 
 
-## Documents and Media API [](id=documents-and-media-api)
+## Documents and Media API
 
 Users can use, manage, and share files in the Documents and Media Library. For 
 example, users can embed files in content, organize them in folders, edit and 
