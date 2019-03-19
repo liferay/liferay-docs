@@ -29,17 +29,56 @@ The sections that follow describe each.
 
 ## Overview 
 
-The Overview tab presents a summary of the account's data. It displays summaries
-of the following account data: 
+The Overview tab presents summaries of the account's data. It displays these 
+summaries via these panes: 
 
--   Activities
--   Firmographics
--   Contact information
--   Individuals
--   Interest topics
--   Segments 
+-   Account Activities
+-   Account Firmographics
+-   Contact Information
+-   Account Interest Topics
+-   Known Individuals
+-   Associated Segments
 
 If more information is available for each, you can access it via its link. For 
 example, a *View All Activities* link is at the bottom of the Account Activities 
-pane. Click this link to view the Activities tab, which shows much more detailed 
-information about activities. 
+pane. Clicking this link takes you to the Activities tab, which shows more 
+detailed information about activities. 
+
+![Figure 2: The Overview tab displays summaries of the account's data.](../../images/accounts-overview.png)
+
+## Activities
+
+The Activities tab shows the activities of the individuals in the account. A 
+histogram shows the number of activities by date and the average engagement 
+score for the account's individuals. A searchable table below the histogram 
+shows more detail about the activities. 
+
+![Figure 2: The Activities tab displays data on activities of the account's individuals.](../../images/accounts-activities.png)
+
+## Interests
+
+The Interests tab shows the topics of interest for the account's individuals. 
+Analytics Cloud identifies these topics via the same methodology it uses for 
+individuals. For more information, see 
+[Customer Insights](liferay.com). 
+
+## Segments
+
+The Segments tab shows the segments for the account's individuals. These 
+segments function the same as segments in general. The only difference is that 
+the segments here apply to the individuals in the account. For more information 
+on segments, see the documentation on 
+[creating](liferay.com) 
+and 
+[profiling](liferay.com) 
+segments. 
+
+## Individuals
+
+The Individuals tab shows information about the individuals in the account. For 
+more information on individuals in Analytics Cloud, see 
+[Profiling Individuals](liferay.com).
+
+## Details
+
+The Details tab shows additional information about the account. 
