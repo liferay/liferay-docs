@@ -1,4 +1,8 @@
-# Searching for Localized Content [](id=searching-for-localized-content)
+---
+header-id: searching-for-localized-content
+---
+
+# Searching for Localized Content
 
 @product@ supports setting a virtual instance-wide 
 [default language](/documentation/user/-/knowledge_base/7-2/miscellaneous-settings#miscellaneous-display-settings) <!-- update when available on 7.2-->
@@ -13,7 +17,7 @@ in the end user's experience. Not all assets are indexed in a way that supports
 searching in a language other than the default language. Even assets that are
 translatable might not support searching for the content in that language.
 
-## What is Localized Search? [](id=what-is-localized-search)
+## What is Localized Search?
 
 In localized search, fields are indexed with locale information appended (for
 example, `en_US` for English, making a localized title field indexed as
@@ -50,40 +54,36 @@ Site-localized search works like this:
 
 Not all assets support localized search, however.
 
-## Assets Supporting Localized Search [](id=assets-supporting-localized-search)
+## Assets Supporting Localized Search
 
 Whether an asset supports localized search depends on how the asset was indexed
 in the search engine. At this time, no cohesive pan-asset approach to indexing
 assets for localized search exists. Localized search support is currently
 limited to the following assets:
 
-### Web Content Articles: [](id=assets-supporting-localized-search_web-content-articles)
+### Web Content Articles:
 
 - The `title`, `content`, and `description` fields for each Web Content Article support
     fully localized search.
 
-    +$$$
-
-    **Note:** In @product-ver@ the default (non-localized) version of these
-    fields are not indexed for Web Content Articles. Therefore, any custom
-    `IndexerPostProcessor`, `ModelDocumentContributor` or
-    `QueryPreFilterContributor` relying on the presence of fields `title`,
-    `content` and `description` must be updated to use the localized version
-    (e.g., `title_en_US`).
-
-    $$$
+    | **Note:** In @product-ver@ the default (non-localized) version of these
+    | fields are not indexed for Web Content Articles. Therefore, any custom
+    | `IndexerPostProcessor`, `ModelDocumentContributor` or
+    | `QueryPreFilterContributor` relying on the presence of fields `title`,
+    | `content` and `description` must be updated to use the localized version
+    | (e.g., `title_en_US`).
 
 - At search time, matching results (with any locale appended) can be
     returned.
 
-### Categories: [](id=assets-supporting-localized-search_categories)
+### Categories:
 
 - The `name` and `description` fields support fully localized search.
 
 - At search time, matching results (with any locale appended) can be
     returned.
 
-### Documents and Media File Entries: [](id=assets-supporting-localized-search_dm-file-entries)
+### Documents and Media File Entries:
 
 - The `content` field (which contains the content of an uploaded file) supports
     site-localized search.
@@ -91,7 +91,7 @@ limited to the following assets:
 - No other fields are indexed with a locale. This means they're always analyzed
     using the default language analyzer.
 
-### Dynamic Data Mapping Fields: [](id=assets-supporting-localized-search_ddm-fields)
+### Dynamic Data Mapping Fields:
 
 - Dynamic Data Mapping (DDM) Fields include all form fields created in the Forms
     application and all fields created in Dynamic Data List Data Definitions and
@@ -101,7 +101,7 @@ limited to the following assets:
     only be returned in the current display locale where the search is taking
     place.
 
-## Examples [](id=examples)
+## Examples
 
 To see localized search in action, refer to the examples below.
 

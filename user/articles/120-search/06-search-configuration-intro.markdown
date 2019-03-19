@@ -1,4 +1,8 @@
-# Configuring Search [](id=configuring-search)
+---
+header-id: configuring-search
+---
+
+# Configuring Search
 
 _Configuring Search_ could mean lots of different things: 
 
@@ -13,7 +17,7 @@ In fact, _Configuring Search_ means all those things. This is a high level
 overview of what search behavior is configurable out of the box, and
 importantly, _where_ to find search configuration options.
 
-## System Scoped Search Configuration [](id=system-scoped-search-configuration)
+## System Scoped Search Configuration
 
 System scoped search configurations are primarily found in 
 [System Settings](/documentation/user/-/knowledge_base/7-2/system-settings).
@@ -28,7 +32,7 @@ System scoped search configurations are primarily found in
 
 These system scoped configurations are available in System Settings:
 
-### Default Keyword Query [](id=default-keyword-query)
+### Default Keyword Query
 
 The Default Keyword Query entry contains one setting:
 
@@ -37,7 +41,7 @@ automatically adds `description`, `userName`, and `title` fields to the
 keyword search query. Specify the entry class names
 `DefaultKeywordQueryContributor` should ignore.
 
-### Default Search Result Permission Filter [](id=default-search-result-permission-filter)
+### Default Search Result Permission Filter
 
 The Default Search Result Permission Filter entry allows configuration of
 *post-filtering permission checking* (database permission checking that occurs
@@ -49,7 +53,7 @@ for more information on these settings:
 
 - `searchQueryResultWindowLimit`
 
-### Index Status Manager [](id=index-status-manager)
+### Index Status Manager
 
 The Index Status Manager entry has one setting:
 
@@ -58,7 +62,7 @@ search engine. Searches return only the documents already indexed. This is
 useful for speeding up large data imports, but it should be disabled and a full
 re-index executed once the import is finished.
 
-### Indexer Writer Helper [](id=indexer-writer-helper)
+### Indexer Writer Helper
 
 The Index Writer Helper entry contains only one valid entry. The second,
 `indexReadOnly`, is deprecated and unused, so setting it has no effect. Use
@@ -77,7 +81,7 @@ newly added content. See the
 [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/guide/current/near-real-time.html)
 for more information.
 
-### Index Registry [](id=index-registry)
+### Index Registry
 
 Configure the buffering of index requests:
 
@@ -92,7 +96,7 @@ requests are executed immediately.
 only the specified percent of space left, the existing requests in the
 buffer are executed in one batch and removed from the buffer.
 
-### Index Query Preprocessor [](id=index-query-preprocessor)
+### Index Query Preprocessor
 
 This entry has one repeatable property (use array syntax if you're defining via 
 [OSGi configuration file](/documentation/user/-/knowledge_base/7-2/creating-configuration-files)):
@@ -105,7 +109,7 @@ larger. For substring matching, relying on the
 [ngram tokenizer](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/analysis-ngram-tokenizer.html)
 usually performs better.
 
-### Reindex [](id=reindex)
+### Reindex
 
 This entry contains only one property:
 
@@ -135,7 +139,7 @@ per batch for model types that support batch indexing. Defaults to 10000. For
 models with large documents, decreasing this value may improve stability when
 executing a full re-index.
 
-### Engine Helper [](id=engine-helper)
+### Engine Helper
 
 This entry has one repeatable property (use array syntax if you're defining via 
 [OSGi configuration file](/documentation/user/-/knowledge_base/7-2/creating-configuration-files)):
@@ -147,7 +151,7 @@ from the Users and Organizations application, but should not be searched in
 the Search application. Thus, Organizations are added to
 `excludedEntryClassNames`.
 
-### Permission Checker [](id=permission-checker)
+### Permission Checker
 
 Configure *pre-filtering permission checking* (permission checking on the
 search index) behavior. See 
@@ -158,7 +162,7 @@ for more information on these properties:
 
 - `permissionTermsLimit`
 
-### Elasticsearch 6 [](id=elasticsearch-6)
+### Elasticsearch 6
 
 Configure the connection between @product@ and Elasticsearch 6. See
 [here](/discover/deployment/-/knowledge_base/7-2/configuring-the-liferay-elasticsearch-connector) 
@@ -191,7 +195,7 @@ for more information on these properties:
 - `overrideTypeMappings`
 - `synchronizedSearch`
 
-### Search Web [](id=search-web)
+### Search Web
 
 This entry contains one property:
 `classicSearchPortletInFrontPage`: Revert the default search experience from
@@ -200,7 +204,7 @@ in past releases. See
 [here](/documentation/user/-/knowledge_base/7-2/configuring-search-pages#legacy-search-experience)
 for more information.
 
-### Reindexing from Search Administration [](id=reindexing-from-search-administration)
+### Reindexing from Search Administration
 
 In addition to the System Settings for Search, the action of recreating the
 search indexes is a system scoped action. 
@@ -218,7 +222,7 @@ Portal properties are system scoped configurations as well. The
 portal properties configure low level search behavior. Review the properties and
 their descriptions and determine if they apply to your search requirements.
 
-## Site Scoped Search Configuration [](id=site-scoped-search-configuration)
+## Site Scoped Search Configuration
 
 Search isn't configurable at the Site Scope by the strict definition of 
 [Site Scoped Configuration](/documentation/user/-/knowledge_base/7-2/setting-up#configuration-scope).
@@ -260,7 +264,7 @@ See the documentation on
 [configuring of a Search Bar](/documentation/user/-/knowledge_base/7-2/searching-for-assets#configuring-the-search-bar) 
 for more information.
 
-## Widget Scoped Search Configuration [](id=widget-scoped-search-configuration)
+## Widget Scoped Search Configuration
 
 Several search widgets are available, and each one has its own configuration
 options:
