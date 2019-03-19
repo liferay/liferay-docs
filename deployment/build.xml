@@ -6,5 +6,6 @@
 	<import file="../build-common.xml" />
 
 	<property name="purpose.dir" value="deployment"/>
-
+	<property name="doc.dir" value="deployment"/>
+	<property name="doc.type" value="article"/>
 </project>
