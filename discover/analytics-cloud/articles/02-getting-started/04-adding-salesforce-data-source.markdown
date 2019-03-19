@@ -14,9 +14,20 @@ as a data source. Here, you'll learn how.
 2.  Select *Salesforce*. This opens the Configure Salesforce screen. 
 
 3.  In the *Authorization* tab, enter the Salesforce instance's name and URL. 
-    Under the *CLIENT CREDENTIALS* section, enter the Salesforce instance's 
-    OAuth client ID and client secret. If you need help finding this 
-    information, see the 
+    Under the *CLIENT CREDENTIALS* section, enter the client ID and client 
+    secret of the OAuth connected app in Salesforce. Note that the Salesforce 
+    instance's administrator must create this connected app with the following 
+    settings: 
+
+    **Callback URL:** `https://analytics.liferay.com/oauth/receive`
+
+    **OAuth Scopes:** 
+    -   Access your basic information (id, profile, email address, phone) 
+    -   Access and manage your data (api) 
+    -   Perform requests on your behalf at any time (refresh_token, offline_access) 
+
+    For instructions on creating an OAuth connected app in Salesforce, and 
+    locating its client ID and client secret, see the 
     [Salesforce documentation](https://help.salesforce.com/articleView?id=connected_app_overview.htm&type=5). 
 
 4.  Click *Authorize & Save*. This begins importing the leads, contacts, and 
