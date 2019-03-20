@@ -1,4 +1,10 @@
+---
+header-id: aggregations
+---
+
 # Aggregations
+
+[TOC levels=1-4]
 
 Aggregations take a search query and provide aggregated data based on it.
 Aggregations can be composed to provide complex data summaries.
