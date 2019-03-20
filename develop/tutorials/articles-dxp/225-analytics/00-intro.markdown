@@ -102,3 +102,8 @@ contains the poll's instructions:
     ...
     </div>
 
+## Related Topics [](id=related-topics)
+
+[Asset Framework](/develop/tutorials/-/knowledge_base/7-1/asset-framework)
+
+[Liferay Analytics Cloud Admin Guide](https://help.liferay.com/hc/en-us/categories/360000608871-Liferay-Analytics-Cloud-Admin-Guide)
