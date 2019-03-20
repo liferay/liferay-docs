@@ -1,4 +1,10 @@
+---
+header-id: search
+---
+
 # Search [](id=introduction-to-liferay-search)
+
+[TOC levels=1-4]
 
 Liferay stores its information in a database, so why not search the database
 directly? Why add the complexity of a search engine? First, because database

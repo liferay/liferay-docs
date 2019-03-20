@@ -1,4 +1,10 @@
+---
+header-id: creating-aggregations-in-low-level-search-calls
+---
+
 # Creating Aggregations in Low Level Search Calls
+
+[TOC levels=1-4]
 
 Each aggregation has a different purpose and should be processed differently
 once returned from the search engine, but the way you'll add the aggregation
