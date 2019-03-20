@@ -1,5 +1,7 @@
 # Users and Organizations [](id=users-and-organizations)
 
+[TOC levels=1-4]
+
 Bacon ipsum dolor amet ea prosciutto turducken shoulder. T-bone pork velit
 sirloin meatball irure landjaeger. Spare ribs andouille tri-tip velit jerky
 biltong et tongue flank aliquip beef pastrami. Excepteur minim veniam est jowl

@@ -1,5 +1,7 @@
 # Search Insights
 
+[TOC levels=1-4]
+
 **[Feature intended for testing and development only]**
 
 **[Works with Elasticsearch only]**

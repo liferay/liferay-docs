@@ -1,5 +1,7 @@
 # User Management: Additional Topics [](id=user-management-additional-topics)
 
+[TOC levels=1-4]
+
 You've learned the basics on adding and editing Users, but there are additional
 important topics that go beyond the most basic tasks an administrator must
 perform. Read on to learn about these. 
