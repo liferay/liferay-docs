@@ -37,7 +37,7 @@ The built-in mail session setup can be done using either of these methods:
 After deploying @product@, you can configure the mail session from the Control Panel. 
 
 1.  Sign in as the administrative user (the user you specified on the
-    [Basic Configuration page](/deployment/deployment/-/knowledge_base/7-2/installing-product#using-the-setup-wizard)). 
+    [Basic Configuration page](/deployment/-/knowledge_base/7-2/installing-product#using-the-setup-wizard)). 
 
 2.  Navigate to *Control Panel &rarr; Configuration &rarr; Server Administration
     &rarr; Mail*.
@@ -76,14 +76,15 @@ After deploying @product@, you can configure the mail session from the Control P
 
 4.  Click *Save*. 
 
-@product@ connects to the mail session immediately.  
+@product@ connects to the mail session immediately. 
 
 ### Built-in Mail Session Portal Properties 
 
-If you prefer specifying your mail session offline or before deploying @product@, use portal properties. 
+If you prefer specifying your mail session offline or before deploying
+@product@, use portal properties. 
 
 1.  Create a
-    [`portal-ext.properties` file](/deployment/reference/-/knowledge_base/7-2/portal-properties),
+    [`portal-ext.properties` file](/deployment/-/knowledge_base/7-2/portal-properties),
     if you haven't already created one. 
 
 2.  Copy these default property settings into your `portal-ext.properties` file:
@@ -116,7 +117,7 @@ If you prefer specifying your mail session offline or before deploying @product@
 You can manage a mail session for @product@ on your application server. Here's how:
 
 1.  Create a mail session on your application server, following your application
-    server documentation.  
+    server documentation.
 
 2.  Point @product@ to that mail session using the Control Panel or 
     portal properties. Here are instructions for both:
@@ -126,6 +127,8 @@ You can manage a mail session for @product@ on your application server. Here's h
     -   Set a `mail.session.jndi.name` portal property in a
         `[LIFERAY_HOME]/portal-ext.properties` file. Here's an example property:
 
+        ```properties
             mail.session.jndi.name=mail/MailSession
+        ```
 
 Congratulations on configuring mail for @product@. 
