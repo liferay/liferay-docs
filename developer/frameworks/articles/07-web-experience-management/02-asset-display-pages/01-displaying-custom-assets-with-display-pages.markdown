@@ -1,6 +1,12 @@
+---
+header-id: asset-display-pages
+---
+
 # Asset Display Pages
 
-Asset Display Pages display assets in highly customizable ways using [Page Fragments](/develop/tutorials/-/knowledge_base/7-1/developing-fragments). Out 
+[TOC levels=1-4]
+
+Asset Display Pages display assets in highly customizable ways using [Page Fragments](/developer/frameworks/-/knowledge_base/7-2/developing-fragments). Out 
 of the box, Liferay supports using Asset Display Pages to map the fields of 
 certain assets, like Web Content, to fields defined in a Page Fragment. The 
 asset can then be displayed on a page using the Page Fragment as a 
@@ -10,13 +16,13 @@ For example, you could use this to have a specific design for displaying
 Web Content Articles. Web Content articles have three primary fields that an
 author can enter content into, the *Title*, *Summary*, and *Body*.
 
-![Figure X: Creating a Web Content Article with a title, summary, and body.](../../../images/display-pages-creating-default-web-content.png) 
+![Figure 1: Creating a Web Content Article with a title, summary, and body.](../../../images/display-pages-creating-default-web-content.png) 
 
 
 The default display will only display the Title and Body, but you could use a 
 Display Page to view the article with the Summary with the following steps:
 
-![Figure X: The default display for a Web Content article with only the title and body.](../../../images/display-pages-default-web-content.png) 
+![Figure 2: The default display for a Web Content article with only the title and body.](../../../images/display-pages-default-web-content.png) 
 
 1.  Create a Page Fragment which contains editable elements for each of the 
     entity fields that you want to display, like the title, abstract, 
@@ -32,7 +38,7 @@ Display Page to view the article with the Summary with the following steps:
     with the content from the article and the design and styling from the Page 
     Fragment.
     
-![Figure X: The Display Page both changes the style, and displays additional fields.](../../../images/display-pages-web-content-with-display-page.png) 
+![Figure 3: The Display Page both changes the style, and displays additional fields.](../../../images/display-pages-web-content-with-display-page.png) 
 
 In addition to doing this with the default assets, if you integrate your 
 application's entities with the [Asset Framework](/developer/frameworks/-/knowledge_base/7-2/asset-framework) you can 

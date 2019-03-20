@@ -1,4 +1,10 @@
+---
+header-id: integrating-display-pages-into-asset-creation
+---
+
 # Integrating Display Pages into Asset Creation
+
+[TOC levels=1-4]
 
 After you add support for Asset Display Pages in your custom entities,
 you can integrate display page configuration into your entity's creation form.
@@ -22,4 +28,4 @@ To provide the Asset Display Page selector for Bookmarks after you
 Now, a selector will be available to define a default Asset Display Page when 
 editing or creating a Bookmarks Entry.
 
-![Figure X: You need to add the Display Page selection to your asset's create/edit page to define the Display Page for each instance of that asset.](../../../images/display-pages-select-default-display-page.png)
+![Figure 1: You need to add the Display Page selection to your asset's create/edit page to define the Display Page for each instance of that asset.](../../../images/display-pages-select-default-display-page.png)

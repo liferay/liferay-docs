@@ -1,4 +1,10 @@
-# Asset Display Contributor Example 
+---
+header-id: asset-display-contributor-example
+---
+
+# Asset Display Contributor Example
+
+[TOC levels=1-4]
 
 Now create an Asset Display Contributor for the Bookmarks application. Remember 
 the two main steps:
@@ -12,7 +18,7 @@ In this example, you'll create the Asset Display Contributor and then create
 one Asset Display Contributor Field for the Blogs Entry Title.
  
 
-## Creating the Blogs Contributor 
+## Creating the Bookmarks Contributor 
 
 First you must create the contributor.
 
@@ -26,7 +32,7 @@ First you must create the contributor.
 
         @Component(immediate = true, service = AssetDisplayContributor.class)
         public class BookmarksEntryAssetDisplayContributor
-          extends BaseAssetDisplayContributor<BlogsEntry> {
+          extends BaseAssetDisplayContributor<BookmarksEntry> {
 
           @Override
           public String getClassName() {
@@ -43,7 +49,7 @@ First you must create the contributor.
 
 4.  Save your file and redeploy the module.
 
-This adds Bookmakrs Entries to the list of asset types eligible for use with 
+This adds Bookmarks Entries to the list of asset types eligible for use with 
 Asset Display Pages.
 
 1.  Go to *Site Administration* &rarr; *Build* &rarr; *Pages*.
@@ -54,14 +60,14 @@ Asset Display Pages.
 
 4.  In the Display Page editor, click *Mapping* from the menu on the right side.
 
-5.  Select the Blogs Asset Type.
+5.  Select the Bookmarks Asset Type.
 
 ![Figure 1: You can now select the Bookmarks Asset Type.](../../../images/select-asset-type.png)
 
 This isn't complete yet because while you can select the asset type, you don't 
 have any fields that can be mapped.
 
-## Creating the Bookmarks Entry Name Field Contributor [](id=creating-the-blogs-entry-title-field-contributor)
+## Creating the Bookmarks Entry Name Field Contributor 
 
 Now create a display contributor field for the Bookmarks Entry Title so that 
 you can map it to the page.
