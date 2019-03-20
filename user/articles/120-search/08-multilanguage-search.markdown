@@ -4,6 +4,8 @@ header-id: searching-for-localized-content
 
 # Searching for Localized Content
 
+[TOC levels=1-4]
+
 @product@ supports setting a virtual instance-wide 
 [default language](/documentation/user/-/knowledge_base/7-2/miscellaneous-settings#miscellaneous-display-settings) <!-- update when available on 7.2-->
 and setting a 

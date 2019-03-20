@@ -4,6 +4,8 @@ header-id: configuring-search
 
 # Configuring Search
 
+[TOC levels=1-4]
+
 _Configuring Search_ could mean lots of different things: 
 
 - System scoped search configuration
