@@ -8,14 +8,14 @@ header-id: preparing-for-install
 
 @product@ doesn't require much to deploy. You need a Java Development Kit (JDK)
 and a database. Several configuration topics (e.g.,
-[search engine integration]((/deployment/deployment/-/knowledge_base/7-2/installing-a-search-engine),
-[document repository configuration](/deployment/deployment/-/knowledge_base/7-2/document-repository-configuration),
-[security management](/deployment/deployment/-/knowledge_base/7-2/securing-product),
-[clustering](/deployment/deployment/-/knowledge_base/7-2/product-clustering),
+[search engine integration]((/deployment/-/knowledge_base/7-2/installing-a-search-engine),
+[document repository configuration](/deployment/-/knowledge_base/7-2/document-repository-configuration),
+[security management](/deployment/-/knowledge_base/7-2/securing-product),
+[clustering](/deployment/-/knowledge_base/7-2/product-clustering),
 and more) can be addressed *after* deploying @product@. 
 
 | **Note:** If you are installing @product@ to multiple machines (e.g., in a 
-| [cluster](/deployment/deployment/-/knowledge_base/7-2/product-clustering))
+| [cluster](/deployment/-/knowledge_base/7-2/product-clustering))
 | or prefer centralizing configuration in a file, using portal properties in a
 | [`[LIFERAY_HOME]/portal-ext.properties` file](/deployment/reference/-/knowledge_base/7-2/portal-properties)
 | is the recommended way to configure. The install preparation topics here and
@@ -25,10 +25,10 @@ and more) can be addressed *after* deploying @product@.
 | **Note:** `LIFERAY_HOME` is the location from which @product@ launches 
 | applications, applies configurations, loads JAR files, and generates logs.
 | Liferay Home is customizable and can differ between application servers. The
-| [Liferay Home reference](/deployment/reference/-/knowledge_base/7-2/liferay-home)
+| [Liferay Home reference](/deployment/-/knowledge_base/7-2/liferay-home)
 | describes its folder structure. 
 
-Start preparing for @product@ install, by installing a supported Java
+Start preparing for @product@ install by installing a supported Java
 Development Kit. 
 
 ## JDK Requirements
@@ -70,7 +70,7 @@ The recommended way to set up your @product@ database is also the simplest.
     supported character sets.
 
     | **Note:** If you plan to migrate from one database vendor to another,
-    | [configure the database to use the default query result order you expect for entities @product@ lists](/develop/tutorials/-/knowledge_base/7-2/sort-order-changed-with-a-different-database). 
+    | [configure the database to use the default query result order you expect for entities @product@ lists](/developer/frameworks/-/knowledge_base/7-2/sort-order-changed-with-a-different-database). 
 
 3.  Create a database user for accessing this database. Grant this database user
     all rights, including the rights to create and drop tables, to the blank
@@ -80,9 +80,9 @@ The recommended way to set up your @product@ database is also the simplest.
 either
 [directly](#using-the-built-in-data-source)
 or
-[through its application server](#using-a-data-source-on-your-application-server).
-@product@ creates the database tables on server startup after you've configured
-the database connection. It does this automatically, complete with indexes.
+[through its application server](#using-a-data-source-on-your-application-server). 
+After you've configured the database connection, @product@ creates its tables in
+the database automatically, complete with indexes.
 
 This is the recommended way to set up @product@. It enables @product@ to
 maintain its database automatically during upgrades or when various @product@
@@ -100,42 +100,42 @@ source (recommended) or using a data source you create on your app server.
 ### Using the Built-in Data Source
 
 You can configure the built-in data source from the
-[Basic Configuration page](/deployment/deployment/-/knowledge_base/7-2/installing-product#using-the-setup-wizard)
+[Basic Configuration page](/deployment/-/knowledge_base/7-2/installing-product#using-the-setup-wizard)
 (available when @product@ starts up the first time) or by specifying it using 
 portal properties. 
 
 Here's how set it using portal properties:
 
 1.  Create a 
-    [`portal-ext.properties` file](/deployment/reference/-/knowledge_base/7-2/portal-properties)
+    [`portal-ext.properties` file](/deployment/-/knowledge_base/7-2/portal-properties)
     if you haven't created one already. 
 
 2.  Copy a set of `jdbc.*` properties from one of the
-    [JDBC templates](/deployment/reference/-/knowledge_base/7-2/jdbc-templates)
+    [JDBC templates](/deployment/-/knowledge_base/7-2/jdbc-templates)
     into your `portal-ext.properties` file.
 
 3.  Modify the `jdbc.*` property values to specify your database and database 
     user credentials. 
 
 4.  Put the `portal-ext.properties` file into your
-    [LIFERAY_HOME](/deployment/reference/-/knowledge_base/7-2/liferay-home)
+    [LIFERAY_HOME](/deployment/-/knowledge_base/7-2/liferay-home)
     once you've established it based on your installation. 
 
 @product@ connects to the data source on startup. 
 
-As an alternative to the build-in data source, you can use  a data source on
-your application server. 
+As an alternative to the built-in data source, you can use your application
+server's data source. 
 
 ### Using a Data Source on Your Application Server
 
-Although using @product@'s built-in data source is recommended, you can use a data source on your application server. Here are the steps:
+Here's how to use your application server's data source: 
 
 1.  Create your data source based on the instructions in the *Installing 
-    @product@ on \[Application Server\]* article (for your application server)
+    @product@ on [Application Server]* article (for your application server)
     and your application server's documentation.
 
 2.  Create a
-    [`portal-ext.properties` file](/deployment/reference/-/knowledge_base/7-2/portal-properties),
+    [`portal-ext.properties` file](/deployment/-/knowledge_base/7-2/portal-properties),
     if you haven't created one already. 
 
 3.  Add the `jdbc.default.jndi.name` property set to the data source's JNDI 
@@ -173,9 +173,9 @@ Even though it's recommended for @product@ to use the same database user to
 create and maintain its database automatically, your organizations might insist
 on revoking database initialization and maintenance permissions from that user
 once the database is initialized. If permissions for Select, Insert, Update and
-Delete operations are the only ones you will continue to allow for that user,
-you must initialize and maintain the database manually (even though it's not
-recommended). Here is the manual procedure: 
+Delete operations are the only ones you allow for that user, you must initialize
+and maintain the database manually (even though it's not recommended). Here is
+the manual procedure: 
 
 1.  Create a new, blank, database for @product@.
 
@@ -190,22 +190,21 @@ recommended). Here is the manual procedure:
     Update and Delete operations. 
 
 There are some caveats to running @product@ like this. Many plugins create new
-tables when they're deployed. Additionally, @product@'s automatic database
-upgrade function runs when @product@ is upgraded. If the @product@ database user
-doesn't have adequate rights to create/modify/drop tables in the database, you
-must grant those rights to that user before you deploy one of these plugins or
-start upgrading @product@. Once the tables are created or the upgrade completes,
-you can remove those rights until the next deploy or upgrade. Additionally, your
-own developers might create plugins that need to create their own tables. These
-are just like @product@ plugins that do the same thing, and they can only be
+tables when they're deployed. Additionally, you must run the database upgrade
+function to upgrade @product@. If the @product@ database user doesn't have
+adequate rights to create/modify/drop tables in the database, you must grant
+those rights to that user before you deploy one of these plugins or start
+upgrading @product@. Once the tables are created or the upgrade completes, you
+can remove those rights until the next deploy or upgrade. Additionally, your own
+developers might create plugins that must create their own tables. These are
+just like @product@ plugins that do the same thing, and they can only be
 installed if @product@ can create database tables. Installing these plugins
 requires granting the @product@ database user rights to create tables in the
 database before you attempt to install the plugins. 
 
-You installed the required JDK and prepared your @product@ database for the
-@product@ installation. @product@ has many more configurable features; but they
+@product@ has many more configurable features; but they
 can wait until *after* deployment. The
 [Configuring @product@](/deployment/deployment/-/knowledge_base/7-2/configuring-product)
 section explains them. 
 
-You've prepared for deploying @product@. It's time to install @product@. 
+Now it's time to install @product@. 

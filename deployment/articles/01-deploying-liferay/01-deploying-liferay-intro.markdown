@@ -14,14 +14,13 @@ on a multi-node cluster running a commercial application server, or on anything
 in between. In fact, @product@ is used successfully in all of these scenarios
 every day. 
 
-You'll find that because @product@ is extremely flexible in its deployment
-options, it is also easy to install. If you already have an application server,
-you can use your application server's deployment tools to install @product@. If
-you don't already have an application server, Liferay provides several
-application server bundles from which to choose. These are pre-configured
-application servers with @product@ already installed on them. They're easy to
-install and with a small amount of configuration can be made into
-production-ready systems.
+You'll find that because of @product@'s flexibility in its deployment options,
+it is also easy to install. If you already have an application server, you can
+use your application server's deployment tools to install @product@. If you
+don't already have an application server, Liferay provides several application
+server bundles from which to choose. These are pre-configured application
+servers with @product@ already installed on them. With a small amount of
+configuration, these can be made into production-ready systems.
 
 There are some preparations to make before installing. You must create
 a database and install a supported Java Development Kit (JDK). It can also be

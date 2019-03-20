@@ -7,7 +7,7 @@ header-id: installing-product
 [TOC levels=1-4]
 
 Now that you've
-[prepared for installing @product@](/deployment/deployment/-/knowledge_base/7-2/preparing-for-install),
+[prepared for installing @product@](/deployment/-/knowledge_base/7-2/preparing-for-install),
 you can install and deploy it! This involves uncompressing the archive (the
 7-Zip or gzip bundle file), possibly copying a JDBC driver to your application
 server, and starting the application server. Lastly, @product@ provides a setup
@@ -15,7 +15,8 @@ wizard to configure portal essentials.
 
 | **Note:** Since bundles are the easiest way to complete an installation, the 
 | installation steps here assume you're installing a @product@ bundle. If you 
-| plan to install @product@ manually, please refer to the *Installing @product@ | on \[Application Server\]* article for the application server you're
+| plan to install @product@ manually, please refer to the *Installing @product@ 
+| on [Application Server]* article for the application server you're
 | installing on. 
 
 ## Extracting a @product@ Bundle 

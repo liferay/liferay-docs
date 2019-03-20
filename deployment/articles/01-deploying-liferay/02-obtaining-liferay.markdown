@@ -6,10 +6,9 @@ header-id: obtaining-product
 
 [TOC levels=1-4]
 
-Downloading and installing @product@ is easy. But before you begin, you should
-answer a few questions. 
+Before you begin, you should answer a few questions. 
 
--   Which version of Liferay will you install?
+-   Which version of @product@ will you install?
 -   Is your installation for development purposes or are you preparing to run in
     production?
 -   Are you installing @product@ in a clustered environment? 
@@ -60,13 +59,12 @@ bundles.
 
 Bundles are released as 7-Zip (`.7z`) and gzipped (`.tar.gz`) compressed file
 archive formats. 
-[Installing @product@](/deployment/deployment/-/knowledge_base/7-2/installing-product)
+[Installing @product@](/deployment/-/knowledge_base/7-2/installing-product)
 demonstrates installing @product@ from a bundle. Follow its instructions once
-you've completed prepared for installing @product@ (see the next article). 
+you've prepared for installing @product@ (see the next article). 
 
-Although being the easiest way, @product@ bundles might not be appropriate for
-you. Here are some reasons for installing the @product@ `.war` manually instead
-of using a bundle. 
+@product@ bundles might not be appropriate for you. Here are some reasons for
+installing the @product@ `.war` manually instead of using a bundle. 
 
 -   There is no @product@ bundle for the application server you want to use. 
 
@@ -84,9 +82,9 @@ required on each application.
 
 After preparing for install (next), follow the @product@ installation steps for
 your application server. The article titles follow this format, with
-*\[Application Server\]* replaced by the application server name. 
+*[Application Server]* replaced by the application server name. 
 
-*Installing @product@ on \[Application Server\]*
+*Installing @product@ on [Application Server]*
 
-You've determined the install format that's right for you. Download @product@
-now. Preparing for installation is next!
+Once you've determined the install format that's right for you, download
+@product@. Preparing for installation is next!
