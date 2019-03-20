@@ -48,7 +48,7 @@ available. You can use Gogo Shell commands can verify that the service
 registered. 
 
 For example, here are steps for verifying that a bundle
-`com.github.rotty3000.cdi.jar.portlet` registers a service called
+`com.liferay.portal.samples.cdi.jar.portlet` registers a service called
 `org.apache.portals.samples.Users`. 
 
 1.  Navigate to *Control Panel* &rarr; *Configuration* &rarr; *Gogo Shell*. 
@@ -58,11 +58,11 @@ For example, here are steps for verifying that a bundle
 
     Example command:
 
-        g!: lb | grep com.github.rotty3000.cdi.jar.portlet
+        g!: lb | grep com.liferay.portal.samples.cdi.jar.portlet
 
     Results:
 
-        924|Active     |   10|com.github.rotty3000.cdi.jar.portlet (0.0.1.201901252134)|0.0.1.201901252134
+        924|Active     |   10|com.liferay.portal.samples.cdi.jar.portlet (0.0.1.201901252134)|0.0.1.201901252134
 
     The first column contains the bundle ID. 
 
@@ -76,11 +76,11 @@ For example, here are steps for verifying that a bundle
 
     Results:
 
-        com.github.rotty3000.cdi.jar.portlet_0.0.1.201901252134 [924]
+        com.liferay.portal.samples.cdi.jar.portlet_0.0.1.201901252134 [924]
         Id=924, Status=ACTIVE      Data Root=C:\git\bundles\osgi\state\org.eclipse.osgi\924\data
         "Registered Services"
           ...
-          {org.apache.portals.samples.Users}={osgi.command.scope=cdiportlet, service.id=4232, service.bundleid=924, service.scope=singleton, osgi.command.function=[getUsersCount], component.name=com.github.rotty3000.cdi.jar.portlet, component.id=1}
+          {org.apache.portals.samples.Users}={osgi.command.scope=cdiportlet, service.id=4232, service.bundleid=924, service.scope=singleton, osgi.command.function=[getUsersCount], component.name=com.liferay.portal.samples.cdi.jar.portlet, component.id=1}
           ...
 
 Congratulations on publishing your CDI bean as an OSGi service! 
