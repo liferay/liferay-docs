@@ -20,23 +20,27 @@ Liferay's OSGi service registry. Here's how:
     example, `ShopImpl` provides the `Shop` service by implementing that
     interface.
 
-        package my.package;
+    ```java
+    package my.package;
 
-        public class ShopImpl implements Shop {
-            ...
-        }
+    public class ShopImpl implements Shop {
+        ...
+    }
+    ```
 
 3.  Annotate your CDI bean class with 
     `@org.osgi.service.cdi.annotations.Service`. 
 
-        package my.package;
+    ```java
+    package my.package;
 
-        import org.osgi.service.cdi.annotations.Service;
+    import org.osgi.service.cdi.annotations.Service;
 
-        @Service 
-        public class ShopImpl implements Shop {
-            ...
-        }
+    @Service 
+    public class ShopImpl implements Shop {
+        ...
+    }
+    ```
 
 4.  Deploy the API that defines the service interface, if you haven't deployed 
     it already. 

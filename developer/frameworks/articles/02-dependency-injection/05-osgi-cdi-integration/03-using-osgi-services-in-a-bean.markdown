@@ -22,20 +22,22 @@ Here's how:
     annotations respectively. Here's an example of injecting a service of type
     `ProductStore`. 
 
-        import javax.inject.Inject;
+    ```java
+    import javax.inject.Inject;
 
-        import org.osgi.service.cdi.annotations.Reference;
+    import org.osgi.service.cdi.annotations.Reference;
 
-        import package.path.ProductStore;
+    import package.path.ProductStore;
 
-        public class MyBean {
+    public class MyBean {
 
-            @Inject
-            @Reference
-            ProductStore productStore;
+        @Inject
+        @Reference
+        ProductStore productStore;
 
-            ...
-        }
+        ...
+    }
+    ```
 
 3.  Deploy your bean project to @product@. 
 
