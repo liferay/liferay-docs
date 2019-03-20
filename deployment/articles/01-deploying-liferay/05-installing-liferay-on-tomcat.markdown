@@ -11,9 +11,9 @@ header-id: installing-product-on-tomcat
 (DXP) or the
 [Community Downloads page](https://www.liferay.com/downloads-community)
 (Portal CE). The Tomcat bundle contains JARs, scripts, and configuration files
-required for deploying @product-ver@ the Tomcat 9 application server @product@
-is pre-installed on. Copying these files from the @product@ Tomcat bundle
-facilitates installing @product@ on an existing Tomcat application server.
+required for deploying @product-ver@ Copying these files from the @product@
+Tomcat bundle facilitates installing @product@ on an existing Tomcat application
+server.
 
 Whether you copy bundle files (recommended) or download and create the files,
 you must download these files for
@@ -35,7 +35,7 @@ Here are the basic steps for installing @product@ on Tomcat:
 - [Configuring your application server for @product@](#tomcat-configuration)
 - [Deploying the @product@ WAR file to your application server](#deploying-product)
 
-[*Liferay Home*](/deployment/reference/-/knowledge_base/7-2/liferay-home)
+[*Liferay Home*](/deployment/-/knowledge_base/7-2/liferay-home)
 is Tomcat server's parent folder. `$TOMCAT_HOME` refers to your Tomcat server
 folder. It is usually named `tomcat-[version]` or `apache-tomcat-[version]`.
 
@@ -43,8 +43,9 @@ folder. It is usually named `tomcat-[version]` or `apache-tomcat-[version]`.
 
 @product@ depends on many JARs included by @product@ Tomcat bundle. Some of the
 bundle's JARs are not strictly required but can still be useful. If you don't
-have a bundle, download the required JARs from third-parties, as described
-below.
+have a bundle, you can download the Liferay JARs by downloading the
+*Dependencies* archive and the *OSGi Dependencies* archive, and you can download
+the third-party JARs as described below.
 
 1.  Create the folder `$TOMCAT_HOME/lib/ext` if it doesn't exist and extract the
     JARs from the dependencies ZIP to it. Here are the JARs:
@@ -127,7 +128,7 @@ Checkpoint:
 
 ## Configuring Tomcat [](id=tomcat-configuration)
 
-Configuring Tomcat to run @product@ includes these things:
+Configuring Tomcat to run @product@ includes
 
 - Setting environment variables
 - Specifying a web application context for @product@
@@ -173,7 +174,7 @@ Start with configuring Tomcat to run @product@.
     prevents Tomcat from working around garbage collection bugs relating to
     static or final fields (these bugs don't exist in @product@ and working
     around them causes problems with the logging system), sets the time zone to
-    GMT, gives the JVM 2GB of RAM, and limits Metaspace to 500MB. 
+    GMT, gives the JVM 2GB of RAM, and limits Metaspace to 512MB. 
 
     | **Important:** @product@ requires that the application server JVM use the 
     | GMT time zone and UTF-8 file encoding. 
@@ -232,7 +233,9 @@ Start with configuring Tomcat to run @product@.
     your `$CATALINA_BASE/conf/catalina.properties` file and appending this
     value to the `common.loader` property: 
 
+    ```properties
         ,"${catalina.home}/lib/ext/global","${catalina.home}/lib/ext/global/*.jar","${catalina.home}/lib/ext","${catalina.home}/lib/ext/*.jar"
+    ```
 
 4.  Make sure to use UTF-8 URI encoding consistently. If you have a @product@ 
     Tomcat bundle, copy the `$CATALINA_BASE/conf/server.xml` file to your
@@ -256,7 +259,7 @@ Start with configuring Tomcat to run @product@.
 
         <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" URIEncoding="UTF-8" />
 
-5.  Refrain from writing access logs (optional) by commenting out the the access
+5.  Refrain from writing access logs (optional) by commenting out the access
     log `Valve` element in `$CATALINA_BASE/conf/server.xml`. It's commented out
     here:
 
@@ -275,7 +278,7 @@ Start with configuring Tomcat to run @product@.
     org.apache.level=WARNING
     ```
 
-7.  In `$CATALINA_HOME/conf/web.xml`, set the JSP compiler to  Java 8 and set 
+7.  In `$CATALINA_HOME/conf/web.xml`, set the JSP compiler to Java 8 and set 
     @product@'s `TagHandlerPool` class to manage the JSP tag pool. Do this by
     adding the following elements above the `jsp` servlet element's
     `<load-on-startup>` element. 
@@ -340,7 +343,7 @@ Your application server is configured to run @product@.
 
 The easiest way to handle your database configuration is to let @product@ manage
 your data source. If you want to use the
-[built-in data source (recommended)](/deployment/deployment/-/knowledge_base/7-2/preparing-for-install#using-the-built-in-data-source),
+[built-in data source (recommended)](/deployment/-/knowledge_base/7-2/preparing-for-install#using-the-built-in-data-source),
 skip this section.
 
 If you want Tomcat to manage your data source, follow these steps:
@@ -385,7 +388,7 @@ it. Mail session configuration is next.
 
 As with database configuration, the easiest way to configure mail is to let
 @product@ handle your mail session. If you want to use @product@'s
-[built-in mail session]((/deployment/deployment/-/knowledge_base/7-2/configuring-mail#products-built-in-mail-session)),
+[built-in mail session]((/deployment/-/knowledge_base/7-2/configuring-mail#products-built-in-mail-session)),
 skip this section. 
 
 If you want to manage your mail session with Tomcat, follow these steps:
