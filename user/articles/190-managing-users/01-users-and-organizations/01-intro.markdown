@@ -1,4 +1,8 @@
-# Users and Organizations [](id=users-and-organizations)
+---
+header-id: users-and-organizations
+---
+
+# Users and Organizations
 
 [TOC levels=1-4]
 

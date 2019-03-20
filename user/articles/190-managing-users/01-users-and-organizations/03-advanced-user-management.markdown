@@ -1,4 +1,8 @@
-# User Management: Additional Topics [](id=user-management-additional-topics)
+---
+header-id: user-management-additional-topics
+---
+
+# User Management: Additional Topics
 
 [TOC levels=1-4]
 
@@ -6,7 +10,7 @@ You've learned the basics on adding and editing Users, but there are additional
 important topics that go beyond the most basic tasks an administrator must
 perform. Read on to learn about these. 
 
-## Password Resets [](id=password-resets)
+## Password Resets
 
 The Add User functionality includes a *Require Password Reset* checkbox at the
 bottom of the Password form. The default password policy does not even allow
@@ -18,61 +22,57 @@ modify the default password policy so that this box becomes usable.
 2.  Click on the *Default Password Policy*.
 
 3.  Deselect the *Change Required* switcher in the Password Changes section. Now
-    you can decide whether each user you add must reset his/her password. 
+    you can decide whether users you add must reset their passwords. 
 
 See [Password Policies](/discover/tutorials/-/knowledge_base/7-2/password-policies)
 for more information on editing the default policy or creating your own.
 
-## Adding an Administrative User [](id=adding-an-administrative-user)
+## Adding an Administrative User
 
-If you're setting up a portal for the first time, you're likely to be
-using the default administrator account, the account of one of those famous
-Liferay Administrators, *Test Test* or her cousin, *Joe Bloggs*. Because these
-are default accounts, hackers know about them, so it's better to set up your own
+If you're setting things up for the first time, you're likely to be using the
+default administrator account, the account of one of those famous Liferay
+Administrators, *Test Test* or her cousin, *Joe Bloggs*. Because these are
+default accounts, hackers know about them, so it's better to set up your own
 administrator account. Add a user with your information, then give your user
 account the same administrative rights as the default administrator's account: 
 
 1.  Click the *Roles* link in the left navigation pane (in the *Edit User*
-    page's *General* tab).  This page of the form shows the Roles to which your
-    account is currently assigned. No roles appear by default (the User role
+    page's *General* tab). This page of the form shows the Roles to which your
+    account is currently assigned. No Roles appear by default (the User role
     does not appear since it can't be removed). 
 
 2.  Click *Select* under Regular Roles and assign the Administrator Role to your
     user account. A dialog box pops up with a list of all the regular
-    (portal-scoped) Roles in the portal. Select the Administrator role from the
-    list (click *Choose*). The dialog box disappears and the role is added to
+    (portal-scoped) Roles in the portal. Select the Administrator Role from the
+    list (click *Choose*). The dialog box disappears and the Role is added to
     the list of Roles associated with your account. You are now a portal
     administrator. Log out and then log back in with your own user account. 
 
-+$$$
-
-**Power Users:** Users are not assigned the Power User role by default. The
-Power User role grants more permissions than the User role. If the User role is
-sufficient for you, ignore the Power User role. Alternatively, use it to provide
-a second level of User permissions and assign it to those Users. If there are
-certain custom permissions that you'd like all of your portal Users to have, you
-can grant these permissions to the User Role. You can also customize the default
-Roles a new User receives via *Default User Associations*. This is covered in
-the article on 
-[Instance Settings](/discover/portal/-/knowledge_base/7-2/setting-up-a-virtual-instance).
-
-$$$
+| **Power Users:** Users are not assigned the Power User Role by default. The
+| Power User Role grants more permissions than the User Role. If the User Role is
+| sufficient for you, ignore the Power User Role. Alternatively, use it to provide
+| a second level of User permissions and assign it to those Users. If there are
+| certain custom permissions that you'd like all of your portal Users to have, you
+| can grant these permissions to the User Role. You can also customize the default
+| Roles a new User receives via *Default User Associations*. This is covered in
+| the article on
+| [Instance Settings](/documentation/user/-/knowledge_base/7-2/setting-up-a-virtual-instance).
 
 In production, you should always delete or disable the default administrator
 account to secure your portal.
 
-## Gender [](id=gender)
+## Gender
 
-To collect data on users' genders, either enable the binary gender field in the
-*Add User* form, or create a 
-[custom field](/discover/portal/-/knowledge_base/7-2/custom-fields)
+To collect data on users' genders, enable the binary gender field in the *Add
+User* form or create a 
+[custom field](/documentation/user/-/knowledge_base/7-2/custom-fields)
 that meets your needs.
 
 Enable the binary field by including the following in `portal-ext.properties`:
 
     `field.enable.com.liferay.portal.kernel.model.Contact.male=true`
 
-## User Profile Pictures [](id=user-profile-pictures)
+## User Profile Pictures
 
 Users have profile pictures. Administrative Users can upload images in the Edit
 User form, and any User can update her own account information, including image,
@@ -117,41 +117,33 @@ This is just the default. To override it with your own default image:
 
         image.default.user.portrait=com/liferay/portal/dependencies/user_portrait.png
 
-    +$$$
-
-    **NOTE:** If you are using the binary field to collect information on users'
-    genders (see above), then you'll have two default images to override. Set
-    these properties instead:
-
-        image.default.user.female.portrait=image-filename.png
-        image.default.user.male.portrait=image-filename.png
-
-    $$$
+    | **NOTE:** If you are using the binary field to collect information on users'
+    | genders (see above), then you'll have two default images to override. Set
+    | these properties instead:
+    | 
+    |     image.default.user.female.portrait=image-filename.png
+    |     image.default.user.male.portrait=image-filename.png
 
 3.  Restart the application server.
 
-+$$$
+| **Note:** There's a way to adjust which initials are displayed and in what
+| order, so you can make the default user icon (with the user initials) work
+| for your locale. These settings are configured in a
+| [Language Settings module](/develop/tutorials/-/knowledge_base/7-2/using-liferays-language-settings),
+| so kidnap a friendly developer, give him a cup of coffee, and tell him the
+| settings you want to change:
+| 
+| `lang.user.default.portrait=initials` sets the type of icon to use for avatars.
+| The default value is *initials*. If set to initials, the next property
+| configures which initials to display, and in what order. Alternatively, specify
+| *image*, which gives you the same non-initials default image shown above.
+| 
+| `lang.user.initials.fields=first-name,last-name` determines which initials
+| appear in the user portrait and in what order. The setting here only matters if
+| `lang.user.default.portrait` is set to *initials*.  Valid values are first name,
+| middle name, last name, with first and last name as the defaults.
 
-**Note:** There's a way to adjust which initials are displayed and in what
-order, so you can make the default user icon (with the user initials) work
-for your locale. These settings are configured in a 
-[Language Settings module](/develop/tutorials/-/knowledge_base/7-2/using-liferays-language-settings),
-so kidnap a friendly developer, give him a cup of coffee, and tell him the
-settings you want to change:
-
-`lang.user.default.portrait=initials` sets the type of icon to use for avatars.
-The default value is *initials*. If set to initials, the next property
-configures which initials to display, and in what order. Alternatively, specify
-*image*, which gives you the same non-initials default image shown above.
-
-`lang.user.initials.fields=first-name,last-name` determines which initials
-appear in the user portrait and in what order. The setting here only matters if
-`lang.user.default.portrait` is set to *initials*.  Valid values are first name,
-middle name, last name, with first and last name as the defaults.
-
-$$$
-
-## Numeric Screen Names [](id=numeric-screen-names)
+## Numeric Screen Names
 
 In prior versions, numeric user screen names were disabled out of the box via
 the default portal property
