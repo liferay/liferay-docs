@@ -4,6 +4,8 @@ header-id: liferay-home
 
 # Liferay Home
 
+[TOC levels=1-4]
+
 *Liferay Home* is the location from which @product@ launches applications, 
 applies configurations, loads JAR files, and generates logs. 
 
@@ -58,9 +60,10 @@ Bundles contain this folder structure regardless of application server:
     -   `tools`: For @product@ upgrade and target platform indexer.
     -   `work`: Module Jasper work files.
 
-| **Note:** If @product@ is unable to create the resources it needs in the Liferay
-| Home folder or if it finds itself running on certain application servers, it
-| creates a folder called `liferay` in the home folder of the operating system
-| user that is running @product@. In this case, that `liferay` folder becomes
-| Liferay Home. For example, if the operating system user's name is jbloggs, the
-| `liferay` folder path is `/home/jbloggs/liferay` or `C:\Users\jbloggs\liferay`.
+| **Note:** If @product@ cannot create resources in the 
+| Liferay Home folder or if it finds itself running on certain application
+| servers, it creates a folder called `liferay` in the home folder of the
+| operating system user that is running @product@. In this case, that `liferay`
+| folder becomes Liferay Home. For example, if the operating system user's name
+| is jbloggs, the `liferay` folder path is `/home/jbloggs/liferay` or
+| `C:\Users\jbloggs\liferay`.
