@@ -104,23 +104,34 @@ you could listen for:
 - An entity export has succeeded
 
 The concept of listening for export/import and staging events sounds cool, but
-you may be curious as to why listening for certain events is useful. Listening
-for events can help you know more about your application's state. Suppose you'd
-like a detailed log of when certain events occur during an import process. You
-could configure a listener to listen for certain import events you're interested
-in and print information about those events to your console when they occur.
+you may be curious as to why listening for certain events is useful. Here are
+two examples:
 
-@product@ uses this framework by default in several cases. For instance, the
-cache is cleared when a web content import process finishes. To accomplish this,
-the lifecycle listener framework listens for an event that specifies that a web
-content import process has completed. Once that event occurs, there is an event
-listener that automatically clears the cache. You could implement this sort of
-functionality yourself for any event. You can listen for a specific event and
-then complete an action based on when that event occurs. For a list of events
-you can listen for during Export/Import and Staging processes, see
+- listen for certain import events you're interested in and print information
+  about those events to your console when they occur.
+- listen for an event that specifies that a web content import process has
+  completed. Once that event occurs, have an event listener automatically clear
+  the cache.
+
+You can listen for a specific event and then complete an action based on when
+that event occurs. For a list of events you can listen for during Export/Import
+and Staging processes, see
 [ExportImportLifecycleConstants](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lifecycle/ExportImportLifecycleConstants.html).
 
-Some definitions are in order: 
+You must extend one of the two Base classes provided with the Export/Import
+Lifecycle Listener framework to leverage its power:
+
+- [`BaseExportImportLifecycleListener`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lifecycle/BaseExportImportLifecycleListener.html):
+  listens for specific *events* during a lifecycle. For example, you may want to
+  write custom code if a layout export fails.
+
+- [`BaseProcessExportImportLifecycleListener`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lifecycle/BaseProcessExportImportLifecycleListener.html):
+  listens for *processes* during a lifecycle. For example, you may want to write
+  custom code if a site publication fails. Keep in mind that a process usually
+  consists of many individual events. Methods provided by this base class are
+  only run once when the desired process action occurs.
+
+What's the difference between events and processes? 
 
 **Events:** particular actions that occur during processing (example event
 listener:
@@ -150,21 +161,34 @@ interface. All the methods in this interface require an
 `ExportImportConfiguration` object. @product@ provides a way to generate these
 configuration objects, so you can easily pass them in your service methods.
 
-There are three useful factory classes that are useful to create an
+There are three factory classes that are useful to create an
 `ExportImportConfiguration` object:
 
 - `ExportImportConfigurationSettingsMapFactory`: provides many `build` methods
   to create settings maps for various scenarios, like importing, exporting, and
   publishing layouts and portlets. For examples, you can reference
-  [UserGroupLocalServiceImpl.exportLayouts(...)](@platform-ref@/7.2-latest/javadocs/portal-impl/com/liferay/portal/service/impl/UserGroupLocalServiceImpl.html#exportLayouts-long-java.util.Map-)
+  [`UserGroupLocalServiceImpl.exportLayouts(...)`](@platform-ref@/7.2-latest/javadocs/portal-impl/com/liferay/portal/service/impl/UserGroupLocalServiceImpl.html#exportLayouts-long-java.util.Map-)
   and
-  [GroupLocalServiceImpl.addDefaultGuestPublicLayoutsByLAR(...)](@platform-ref@/7.2-latest/javadocs/portal-impl/com/liferay/portal/service/impl/GroupLocalServiceImpl.html#addDefaultGuestPublicLayoutsByLAR-com.liferay.portal.kernel.model.Group-java.io.File-).
-- [ExportImportConfigurationFactory](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/configuration/ExportImportConfigurationFactory.html):
+  [`GroupLocalServiceImpl.addDefaultGuestPublicLayoutsByLAR(...)`](@platform-ref@/7.2-latest/javadocs/portal-impl/com/liferay/portal/service/impl/GroupLocalServiceImpl.html#addDefaultGuestPublicLayoutsByLAR-com.liferay.portal.kernel.model.Group-java.io.File-).
+- [`ExportImportConfigurationFactory`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/configuration/ExportImportConfigurationFactory.html):
   This factory builds `ExportImportConfiguration` objects used for default
   local/remote publishing.
-- [ExportImportConfigurationParameterMapFactory](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/configuration/ExportImportConfigurationParameterMapFactory.html):
-  This factory builds parameter maps, which are required during
-  export/import and publishing.
+- [`ExportImportConfigurationParameterMapFactory`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/configuration/ExportImportConfigurationParameterMapFactory.html):
+  This factory builds parameter maps, which are required during export/import
+  and publishing.
+
+There are two important service interfaces that primarily use
+`ExportImportConfiguration` objects for exporting, importing, and staging:
+[ExportImportLocalService](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/service/ExportImportLocalService.html)
+and
+[StagingLocalService](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/service/StagingLocalService.html).
+
+| **Note:** If you're not calling the export/import or staging service methods
+| from an OSGi module, you should not use the interface. The Liferay
+| OSGi container automatically handles interface referencing, which is why
+| using the interface is permitted for modules. If you're calling
+| export/import or staging service methods outside of a module, you should use
+| their service Util classes (e.g., `ExportImportLocalServiceUtil`).
 
 It's also important to know that `ExportImportConfiguration` is an @product@
 entity, similar to `User` or `Group`. This means that the

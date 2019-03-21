@@ -11,7 +11,7 @@ lifecycles.
 To begin creating your lifecycle listener, you must create a module. Follow the
 steps below:
 
-1.  [Create an OSGi module](/developer/reference/-/knowledge_base/7-2/starting-module-development#creating-a-project). 
+1.  [Create an OSGi module](/developer/reference/-/knowledge_base/7-2/creating-a-project). 
 
 2.  Create a unique package name in the module's `src` directory and create a
     new Java class in that package. To follow naming conventions, begin the
@@ -21,21 +21,11 @@ steps below:
 
 3.  You must extend one of the two Base classes provided with the
     Export/Import Lifecycle Listener framework:
-    [BaseExportImportLifecycleListener](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lifecycle/BaseExportImportLifecycleListener.html)
-    or
-    [BaseProcessExportImportLifecycleListener](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lifecycle/BaseProcessExportImportLifecycleListener.html).
-    To choose, you'll need to consider what parts of a lifecycle you want to
-    listen for.
-
-    Extend the `BaseExportImportLifecycleListener` class if you want to listen
-    for specific *events* during a lifecycle. For example, you may want to write
-    custom code if a layout export fails.
-
-    Extend the `BaseProcessExportImportLifecycleListener` class if you want to
-    listen for *processes* during a lifecycle. For example, you may want to
-    write custom code if a site publication fails. Keep in mind that a process
-    usually consists of many individual events. Methods provided by this base
-    class are only run once when the desired process action occurs.
+    [BaseExportImportLifecycleListener](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lifecycle/BaseExportImportLifecycleListener.html)
+    (event listener) or
+    [BaseProcessExportImportLifecycleListener](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lifecycle/BaseProcessExportImportLifecycleListener.html).
+    (process listener). To choose, you'll need to consider what parts of a
+    lifecycle you want to listen for (event or process).
 
 4.  Directly above the class's declaration, insert the following annotation:
 
