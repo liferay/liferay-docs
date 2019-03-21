@@ -4,6 +4,8 @@ header-id: copying-folders
 
 # Copying Folders
 
+[TOC levels=1-4]
+
 To copy a folder with the Documents and Media API, use the `copyFolder` method 
 discussed in 
 [Copying and Moving Entities](/developer/frameworks/-/knowledge_base/7-2/copying-and-moving-entities). 

@@ -4,6 +4,8 @@ header-id: getting-folders
 
 # Getting Folders
 
+[TOC levels=1-4]
+
 To get folders with the Documents and Media API, use one of the `getFolders` 
 methods in `DLAppService`. This is discussed in more detail in 
 [Getting Entities](/developer/frameworks/-/knowledge_base/7-2/getting-entities). 

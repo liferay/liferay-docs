@@ -4,6 +4,8 @@ header-id: deleting-files
 
 # Deleting Files
 
+[TOC levels=1-4]
+
 To delete a file with the Documents and Media API, you must use one of the two 
 `deleteFileEntry*` methods discussed in 
 [Deleting Entities](/developer/frameworks/-/knowledge_base/7-2/deleting-entities). 

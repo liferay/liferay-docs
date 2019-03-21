@@ -4,6 +4,8 @@ header-id: getting-files
 
 # Getting Files
 
+[TOC levels=1-4]
+
 To get files with the Documents and Media API, use a method from the 
 `getFileEntries` or `getGroupFileEntries` method families discussed in 
 [Getting Entities](/developer/frameworks/-/knowledge_base/7-2/getting-entities). 

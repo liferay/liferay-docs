@@ -4,6 +4,8 @@ header-id: deleting-file-shortcuts
 
 # Deleting File Shortcuts
 
+[TOC levels=1-4]
+
 To delete a file shortcut with the Documents and Media API, you must use the 
 `deleteFileShortcut` method discussed in 
 [Deleting Entities](/developer/frameworks/-/knowledge_base/7-2/deleting-entities). 

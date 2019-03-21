@@ -4,6 +4,8 @@ header-id: copying-and-moving-entities
 
 # Copying and Moving Entities
 
+[TOC levels=1-4]
+
 Although the Documents and Media API can copy and move entities, these 
 operations have some important caveats and limitations. Keep these things in 
 mind when copying entities: 

@@ -4,6 +4,8 @@ header-id: displaying-adapted-images-in-your-app
 
 # Displaying Adapted Images in Your App
 
+[TOC levels=1-4]
+
 Follow these steps to display adapted images in your app with the Adaptive Media 
 [taglib](https://github.com/liferay/com-liferay-adaptive-media/tree/master/adaptive-media-image-taglib). 
 For more information, see 
@@ -14,25 +16,25 @@ For more information, see
     file: 
 
 ```groovy
-        provided group: "com.liferay", name: "com.liferay.adaptive.media.image.taglib", version: "1.0.0"
+    provided group: "com.liferay", name: "com.liferay.adaptive.media.image.taglib", version: "1.0.0"
 ```
 
 2.  Declare the taglib in your JSP: 
 
 ```markup
-        <%@ taglib uri="http://liferay.com/tld/adaptive-media-image" prefix="liferay-adaptive-media" %>
+    <%@ taglib uri="http://liferay.com/tld/adaptive-media-image" prefix="liferay-adaptive-media" %>
 ```
 
 3.  Use the taglib wherever you want the adapted image to appear in your app's 
     JSP files: 
 
 ```markup
-        <liferay-adaptive-media:img class="img-fluid" fileVersion="<%= fileEntry.getFileVersion() %>" />
+    <liferay-adaptive-media:img class="img-fluid" fileVersion="<%= fileEntry.getFileVersion() %>" />
 ```
 
-    For example, this `view.jsp` uses the taglib to display the adapted images 
-    in a grid with the `col-md-6` 
-    [column container class](/developer/frameworks/-/knowledge_base/7-2/creating-layout-templates-manually): 
+For example, this `view.jsp` uses the taglib to display the adapted images 
+in a grid with the `col-md-6` 
+[column container class](/developer/frameworks/-/knowledge_base/7-2/creating-layout-templates-manually): 
 
 ```markup
         <%@ include file="/init.jsp" %>
@@ -70,11 +72,11 @@ For more information, see
         </div>
 ```
 
-    Looking at the generated markup, you can see that it uses the `<picture>` 
-    tag as described in 
-    [Creating Content with Adapted Images](/discover/portal/-/knowledge_base/7-2/creating-content-with-adapted-images). 
+Looking at the generated markup, you can see that it uses the `<picture>` 
+tag as described in 
+[Creating Content with Adapted Images](/discover/portal/-/knowledge_base/7-2/creating-content-with-adapted-images). 
 
-    ![Figure 1: The Adaptive Media Samples app shows all the site's adapted images.](../../../images/adaptive-media-sample.png)
+![Figure 1: The Adaptive Media Samples app shows all the site's adapted images.](../../../images/adaptive-media-sample.png)
 
 ## Related Topics
 

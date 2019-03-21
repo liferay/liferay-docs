@@ -4,6 +4,8 @@ header-id: getting-entities
 
 # Getting Entities
 
+[TOC levels=1-4]
+
 The Documents and Media API contains many methods for getting entities from a 
 repository. Most methods in `DLAppService` get single entities (e.g., a file or 
 folder), a collection of entities that match certain characteristics, or the 

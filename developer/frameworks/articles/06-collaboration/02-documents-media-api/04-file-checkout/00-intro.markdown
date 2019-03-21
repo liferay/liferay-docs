@@ -4,6 +4,8 @@ header-id: file-checkout-and-checkin
 
 # File Checkout and Checkin
 
+[TOC levels=1-4]
+
 Users can 
 [check out files](/discover/portal/-/knowledge_base/7-2/checking-out-and-editing-files) 
 from the Document Library for editing. Only the user who checked out the file 

@@ -4,6 +4,8 @@ header-id: creating-files
 
 # Creating Files
 
+[TOC levels=1-4]
+
 To create a file via the Documents and Media API, use one of the overloaded 
 `addFileEntry` methods in 
 [`DLAppService`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html). 

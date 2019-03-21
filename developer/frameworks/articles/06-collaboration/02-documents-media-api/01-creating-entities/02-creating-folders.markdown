@@ -4,6 +4,8 @@ header-id: creating-folders
 
 # Creating Folders
 
+[TOC levels=1-4]
+
 To create folders (`Folder` entities) in the Documents and Media library, you 
 must use the 
 [`DLAppService`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html) 

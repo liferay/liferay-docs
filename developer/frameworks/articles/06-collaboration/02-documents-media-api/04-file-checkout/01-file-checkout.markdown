@@ -4,6 +4,8 @@ header-id: checking-out-files
 
 # Checking Out Files
 
+[TOC levels=1-4]
+
 To check out a file with the Documents and Media API, use the 
 `checkOutFileEntry` method discussed in 
 [File Checkout and Checkin](/developer/frameworks/-/knowledge_base/7-2/file-checkout-and-checkin). 

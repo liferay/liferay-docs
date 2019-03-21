@@ -4,6 +4,8 @@ header-id: deleting-file-versions
 
 # Deleting File Versions
 
+[TOC levels=1-4]
+
 To delete a file version with the Documents and Media API, you must use the 
 `deleteFileVersion` method discussed in 
 [Deleting Entities](/developer/frameworks/-/knowledge_base/7-2/deleting-entities). 

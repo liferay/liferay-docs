@@ -4,6 +4,8 @@ header-id: updating-folders
 
 # Updating Folders
 
+[TOC levels=1-4]
+
 To update a folder with the Documents and Media API, you must use the 
 `updateFolder` method discussed in 
 [Updating Entities](/developer/frameworks/-/knowledge_base/7-2/updating-entities). 

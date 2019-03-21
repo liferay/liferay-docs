@@ -4,6 +4,8 @@ header-id: updating-file-shortcuts
 
 # Updating File Shortcuts
 
+[TOC levels=1-4]
+
 To update a file shortcut with the Documents and Media API, you must use the 
 `updateFileShortcut` method discussed in 
 [Updating Entities](/developer/frameworks/-/knowledge_base/7-2/updating-entities). 

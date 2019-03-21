@@ -4,6 +4,8 @@ header-id: deleting-folders
 
 # Deleting Folders
 
+[TOC levels=1-4]
+
 To delete a folder with the Documents and Media API, you must use one of the two 
 `deleteFolder` methods discussed in 
 [Deleting Entities](/developer/frameworks/-/knowledge_base/7-2/deleting-entities). 

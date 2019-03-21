@@ -4,6 +4,8 @@ header-id: canceling-a-checkout
 
 # Canceling a Checkout
 
+[TOC levels=1-4]
+
 To cancel a checkout with the Documents and Media API, use the 
 `cancelCheckOut` method discussed in 
 [File Checkout and Checkin](/developer/frameworks/-/knowledge_base/7-2/file-checkout-and-checkin). 

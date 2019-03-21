@@ -4,6 +4,8 @@ header-id: deleting-entities
 
 # Deleting Entities
 
+[TOC levels=1-4]
+
 You can delete entities with the Documents and Media API. Note that the exact 
 meaning of *delete* depends on the portal configuration and the delete operation 
 you choose. This is because the 

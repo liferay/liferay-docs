@@ -4,6 +4,8 @@ header-id: getting-multiple-entity-types
 
 # Getting Multiple Entity Types
 
+[TOC levels=1-4]
+
 There are several methods in 
 [`DLAppService`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html) 
 that get lists containing multiple entity types. This is discussed in more 

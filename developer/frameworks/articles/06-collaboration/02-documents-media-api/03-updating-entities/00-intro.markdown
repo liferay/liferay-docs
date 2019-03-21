@@ -4,6 +4,8 @@ header-id: updating-entities
 
 # Updating Entities
 
+[TOC levels=1-4]
+
 Like 
 [creating](/developer/frameworks/-/knowledge_base/7-2/creating-files-folders-and-shortcuts) 
 and 

@@ -4,6 +4,8 @@ header-id: documents-and-media-api
 
 # Documents and Media API
 
+[TOC levels=1-4]
+
 A powerful API underlies the 
 [Documents and Media library](/discover/portal/-/knowledge_base/7-2/managing-documents-and-media). 
 You can leverage this API in your own apps. For example, you could create an app 

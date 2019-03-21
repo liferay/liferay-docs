@@ -4,6 +4,8 @@ header-id: finding-adapted-images
 
 # Finding Adapted Images
 
+[TOC levels=1-4]
+
 If you need more control than the 
 [Adaptive Media taglib](/developer/frameworks/-/knowledge_base/7-2/displaying-adapted-images-in-your-app) 
 offers for finding adapted images to display in your app, you can query Adaptive 

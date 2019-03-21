@@ -4,6 +4,8 @@ header-id: updating-files
 
 # Updating Files
 
+[TOC levels=1-4]
+
 To update a file with the Documents and Media API, you must use one of the three 
 `updateFileEntry` methods discussed in 
 [Updating Entities](/developer/frameworks/-/knowledge_base/7-2/updating-entities). 

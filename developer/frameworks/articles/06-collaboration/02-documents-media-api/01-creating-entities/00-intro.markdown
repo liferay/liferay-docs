@@ -4,6 +4,8 @@ header-id: creating-files-folders-and-shortcuts
 
 # Creating Files, Folders, and Shortcuts
 
+[TOC levels=1-4]
+
 A primary use case for the Docs &amp; Media API is to create files, folders, and 
 file shortcuts in the Documents and Media library. 
 

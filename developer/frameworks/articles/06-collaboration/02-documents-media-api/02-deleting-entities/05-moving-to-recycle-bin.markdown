@@ -4,6 +4,8 @@ header-id: moving-entities-to-the-recycle-bin
 
 # Moving Entities to the Recycle Bin
 
+[TOC levels=1-4]
+
 Follow these steps to use the Capabilities API to move an entity to the Recycle 
 Bin. For an explanation of why you should use the Capabilities API for this, see 
 [Deleting Entities](/developer/frameworks/-/knowledge_base/7-2/deleting-entities). 

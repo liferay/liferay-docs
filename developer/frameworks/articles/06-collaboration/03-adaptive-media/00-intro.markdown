@@ -4,6 +4,8 @@ header-id: adaptive-media
 
 # Adaptive Media
 
+[TOC levels=1-4]
+
 The 
 [Adaptive Media](/discover/portal/-/knowledge_base/7-2/adapting-your-media-across-multiple-devices) 
 app tailors the size and quality of images to the device displaying them. Here, 

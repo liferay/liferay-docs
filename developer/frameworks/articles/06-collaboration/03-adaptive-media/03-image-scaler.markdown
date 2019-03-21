@@ -4,6 +4,8 @@ header-id: creating-an-image-scaler
 
 # Creating an Image Scaler
 
+[TOC levels=1-4]
+
 Adaptive Media scales images to match the image resolutions defined by the 
 @product@ administrator. The default scaling is usually suitable, but you can 
 customize it by creating an image scaler. The steps here show you how. For 

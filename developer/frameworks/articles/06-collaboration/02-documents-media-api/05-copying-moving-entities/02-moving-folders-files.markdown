@@ -4,6 +4,8 @@ header-id: moving-folders-and-files
 
 # Moving Folders and Files
 
+[TOC levels=1-4]
+
 To move folders and files with the Documents and Media API, use the `moveFolder` 
 and `moveFileEntry` methods discussed in 
 [Copying and Moving Entities](/developer/frameworks/-/knowledge_base/7-2/copying-and-moving-entities). 
