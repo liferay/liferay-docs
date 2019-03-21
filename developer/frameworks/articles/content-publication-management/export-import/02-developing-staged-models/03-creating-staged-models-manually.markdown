@@ -8,13 +8,13 @@ There are times when using
 [Service Builder to generate your staged models](/developer/frameworks/-/knowledge_base/7-2/generating-staged-models-using-service-builder)
 is not practical. In these cases, you should create your staged models manually.
 Make sure to read the
-[Adapting Your Business Logic to Build Staged Models](/developer/reference/-/knowledge_base/7-2/understanding-staged-models#adapting-your-business-logic-to-build-staged-models)
+[Adapting Your Business Logic to Build Staged Models](/developer/frameworks/-/knowledge_base/7-2/understanding-staged-models#adapting-your-business-logic-to-build-staged-models)
 section to determine if creating staged models manually is beneficial for your
 use case.
 
 In this tutorial, you'll explore how the Asset Link framework (a @product@
 framework used for
-[relating assets](/discover/portal/-/knowledge_base/7-2/defining-content-relationships))
+[relating assets](/user/-/knowledge_base/7-2/defining-content-relationships))
 manually creates staged models. This framework is separate from Export/Import
 and is referenced solely as an example for how to leverage the
 [ModelAdapterBuilder](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/adapter/builder/ModelAdapterBuilder.html)
@@ -166,14 +166,10 @@ Follow the steps below to leverage the Model Adapter Builder in your app.
             assetLink, AssetLink.class, StagedAssetLink.class);
 
     Once you've created
-    [Staged Model Data Handlers](/developer/frameworks/-/knowledge_base/7-2/developing-staged-model-data-handlers),
+    [Staged Model Data Handlers](/developer/frameworks/-/knowledge_base/7-2/creating-staged-model-data-handlers),
     you can begin exporting/importing your now Staging-compatible entities:
 
         StagedModelDataHandlerUtil.exportStagedModel(
             portletDataContext, stagedAssetLink);
-
-    Visit the
-    [Understanding Data Handlers](/developer/reference/-/knowledge_base/7-2/understanding-data-handlers)
-    tutorial if you're unfamiliar with how data handlers work.
 
 Awesome! You've successfully adapted your business logic to build staged models!

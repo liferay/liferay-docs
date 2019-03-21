@@ -34,7 +34,7 @@ example, if a Bookmarks entry resides in a Bookmarks folder, the
 `BookmarksEntry` staged model data handler invokes the export of the
 `BookmarksFolder`.
 
-![Figure 1: The Data Handler framework uses portlet data handlers and staged model data handlers to track and export/import portlet and staged model information, respectively.](../../images/data-handler-diagram.png)
+![Figure 1: The Data Handler framework uses portlet data handlers and staged model data handlers to track and export/import portlet and staged model information, respectively.](../../../../images/data-handler-diagram.png)
 
 You're not required to implement a staged model data handler for every entity in
 your application, but they're necessary for any entity you want to export/import
@@ -51,9 +51,9 @@ These classes only have the role of querying and coordinating between
 [staged model data handlers](/developer/frameworks/-/knowledge_base/7-2/developing-staged-model-data-handlers).
 
 To create a portlet data handler for your staged model, you must implement the
-[PortletDataHandler](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/PortletDataHandler.html)
+[`PortletDataHandler`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/PortletDataHandler.html)
 interface. This is typically done by extending the
-[BasePortletDataHandler](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/BasePortletDataHandler.html)
+[`BasePortletDataHandler`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/BasePortletDataHandler.html)
 class. Visit the API reference documentation for this interface/class for useful
 information on the methods provided.
 
@@ -74,7 +74,7 @@ interface is provided below:
 - The `activate` method sets what the portlet data handler controls. It also
   configures the portlet's Export/Import and Staging UI. This method is called
   during initialization of the component by using the
-  [@Activate](https://osgi.org/javadoc/r6/residential/org/osgi/service/component/annotations/Activate.html)
+  [`@Activate`](https://osgi.org/javadoc/r6/residential/org/osgi/service/component/annotations/Activate.html)
   annotation; it's invoked after dependencies are set and before services are
   registered. Four callable `set` methods are described below:
 
@@ -87,15 +87,15 @@ interface is provided below:
       are rendered in the Export UI. For example, the Bookmarks app, adds a
       checkbox to select Bookmarks content (entries) to export.
     - `setStagingControls`: adds the Staging UI to your app. This lets your
-      app's entities to be managed by the Staging framework.
+      app's entities be managed by the Staging framework.
     <!--
     - `setImportControls`: adds fine grained controls over import behavior that
       are rendered in the Import UI. For the Bookmarks application, a checkbox
       is added to select Bookmarks content (entries) to import.-->
 
 - The `doExportData` method checks if anything should be exported. For example,
-  the Bookmarks app leverages the `portletDataContext` to check if the user
-  selected Bookmarks entries for export. Later, the
+  the Bookmarks app uses this method to check if the user selected Bookmarks
+  entries for export by leveraging the `portletDataContext`. Later, the
   `ExportImportActionableDynamicQuery` framework runs a query against
   bookmarks folders and entries to find ones which should be exported to the
   LAR file.
@@ -108,8 +108,8 @@ interface is provided below:
 
 - The `doImportData` method queries for entity data in the imported LAR file
   that should be added to the database. This is done by extracting XML elements
-  from the LAR file by using utility methods like the
-  [StagedModelDataHandlerUtil](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/StagedModelDataHandlerUtil.html)
+  from the LAR file by using utility methods in the
+  [`StagedModelDataHandlerUtil`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/StagedModelDataHandlerUtil.html)
   class. The extracted elements tell @product@ what data to import from the LAR
   file.
 
@@ -121,10 +121,10 @@ interface is provided below:
   used to perform component related validation before importing data. It's added
   to the
   [LAR file](/developer/reference/-/knowledge_base/7-2/liferay-archive-file) for
-  each application being processed. During import, the environment's
-  schema version is compared to the LAR file's schema version. Validating the
-  schema version avoids broken data when importing. See the
-  [PortletDataHandler.getSchemaVersion()](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/PortletDataHandler.html#getSchemaVersion--)
+  each application being processed. During import, the environment's schema
+  version is compared to the LAR file's schema version. Validating the schema
+  version avoids broken data when importing. See the
+  [`PortletDataHandler.getSchemaVersion()`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/PortletDataHandler.html#getSchemaVersion--)
   method's Javadoc for more information.
 
 Next you'll learn about the `StagedModelDataHandler` interface.
@@ -132,16 +132,16 @@ Next you'll learn about the `StagedModelDataHandler` interface.
 ## Understanding the `StagedModelDataHandler` Interface
 
 A Staged Model Data Handler supplies information about a staged model (entity)
-to the Export/Import framework, defining a display name for the UI, deleting an
-entity, etc. It's also responsible for exporting referenced content. For
+to the Export/Import framework, defines a display name for the UI, deletes
+entities, etc. It's also responsible for exporting referenced content. For
 example, if a Bookmarks entry resides in a Bookmarks folder, the
 `BookmarksEntry` staged model data handler invokes the export of the
 `BookmarksFolder`.
 
 To create a staged model data handler for your staged model, you must implement the
-[StagedModelDataHandler](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/StagedModelDataHandler.html)
+[`StagedModelDataHandler`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/StagedModelDataHandler.html)
 interface. This is typically done by extending the
-[BaseStagedModelDataHandler](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/BaseStagedModelDataHandler.html)
+[`BaseStagedModelDataHandler`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/BaseStagedModelDataHandler.html)
 class. Visit the API reference documentation for this interface/class for useful
 information on the methods provided.
 
@@ -166,18 +166,18 @@ provided below:
 
 - The `doExportStagedModel` method retrieves your app entity's data element
   from the
-  [PortletDataContext](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/PortletDataContext.html)
+  [`PortletDataContext`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/PortletDataContext.html)
   and then adds the class model characterized by that data element to the
   `PortletDataContext`. The `PortletDataContext` is used to populate the LAR
   file with your application's data during the export process.
 
-    A staged model data handler should ensure everything required for its
-    operation is also exported. For example, in the Bookmarks application, an
-    entry requires its folder to keep the folder structure intact. Therefore,
-    the folder should be exported first followed by the entry. Note that once an
-    entity has been exported, subsequent calls to the export method won't
-    actually repeat the export process multiple times, ensuring optimal
-    performance.
+    | **Note:** A staged model data handler should ensure everything required
+    | for its operation is also exported. For example, in the Bookmarks
+    | application, an entry requires its folder to keep the folder structure
+    | intact. Therefore, the folder should be exported first followed by the
+    | entry. Note that once an entity has been exported, subsequent calls to the
+    | export method won't actually repeat the export process multiple times,
+    | ensuring optimal performance.
 
 - The `doImportStagedModel` method imports the staged model data. An important
   feature of the import process is that all exported reference elements are
@@ -203,19 +203,15 @@ provided below:
 
     For example, if you republish an updated bookmarks folder to the live Site
     and did not include some of its existing entries in the publication, these
-    entries are considered missing references. A more practical example of this
-    would be an image included in a web content article. If the image included
-    in the web content lives on a different Site (i.e., the image is contained
-    in a different group) or was not included in the publication process, it's
-    considered a missing reference of the web content article.
+    entries are considered missing references.
 
     Since you have references from two separate Sites with differing IDs, the
-    system can't match them during publication. For example, suppose you export
-    a bookmark entry as a missing reference with a primary key (ID) of `1`. When
-    importing that information, the LAR only provides the ID but not the entry
-    itself. Therefore, during the import process, the Data Handler framework
-    searches for the entry to replace by its UUID, but the entry to replace has
-    a different ID (primary key) of `2`. You must provide a way to handle these
+    system can't match them during publication. Suppose you export a bookmark
+    entry as a missing reference with a primary key (ID) of `1`. When importing
+    that information, the LAR only provides the ID but not the entry itself.
+    Therefore, during the import process, the Data Handler framework searches
+    for the entry to replace by its UUID, but the entry to replace has a
+    different ID (primary key) of `2`. You must provide a way to handle these
     missing references.
 
     To do this, you must add a method that maps the missing reference's primary

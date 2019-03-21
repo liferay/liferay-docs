@@ -4,7 +4,7 @@ header-id: developing-staged-models
 
 # Developing Staged Models
 
-To track an entity of an application with the Staging framework, you must
+To track an entity of an application with the Export/Import framework, you must
 implement the
 [StagedModel](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/StagedModel.html)
 interface in the app's model classes. It provides the behavior contract for 
@@ -17,8 +17,8 @@ and both implement the `StagedModel` interface. Once you've configured your
 staged models, you can create staged model data handlers, which supply
 information about a staged model (entity) and its referenced content to the
 Export/Import and Staging frameworks. See the
-[Developing Data Handlers](/developer/reference/-/knowledge_base/7-2/developing-data-handlers)
-tutorial for more information.
+[Developing Data Handlers](/developer/frameworks/-/knowledge_base/7-2/developing-data-handlers)
+section for more information.
 
 There are two ways to create staged models for your application's entities:
 
@@ -105,8 +105,9 @@ If you want a staged grouped model, also include the `groupId` and
 ## Adapting Your Business Logic to Build Staged Models
 
 What if you don't want to extend your model with special attributes that may not
-be needed in your business logic? In this case, you should adapt your business
-logic to meet the Staging framework's needs. Liferay provides the
+be needed in your business logic (removing the ability to leverage Service
+Builder's auto-generation of staged models)? In this case, you should adapt your
+business logic to meet the Staging framework's needs. Liferay provides the
 [ModelAdapterBuilder](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/adapter/builder/ModelAdapterBuilder.html)
 framework, which lets you adapt your model classes to staged models.
 
@@ -139,9 +140,9 @@ To adapt your model classes to staged models, follow the steps outlined below:
 4.  Adapt your existing model and call one of the provided APIs to export or
     import the entity automatically.
 
-![Figure 1: The Staged Model Adapter class extends your entity and staged model interfaces.](../../images/staged-model-adapter-diagram.png)
+![Figure 1: The Staged Model Adapter class extends your entity and staged model interfaces.](../../../../images/staged-model-adapter-diagram.png)
 
-![Figure 2: The Model Adapter Builder gets an instance of the model and outputs a staged model.](../../images/model-adapter-builder-diagram.png)
+![Figure 2: The Model Adapter Builder gets an instance of the model and outputs a staged model.](../../../../images/model-adapter-builder-diagram.png)
 
 To step through the process for leveraging the Model Adapter Builder for an
 existing app, visit the

@@ -17,10 +17,12 @@ about Staging, visit the
 [Staging Content for Publication](/discover/portal/-/knowledge_base/7-2/staging-content-for-publication)
 section.
 
-Keep in mind that Staging leverages the Export/Import framework. When publishing
-your staged content to the live Site, you're essentially importing content from
-the staged Site and exporting it to the live Site. You can visit the
+**Important:** Staging is built on top of the Export/Import framework. When
+publishing your staged content to the live Site, you're essentially importing
+content from the staged Site and exporting it to the live Site. This means that
+the majority of Staging's APIs are shared with the Export/Import framework. You
+can visit the
 [Export/Import](/developer/frameworks/-/knowledge_base/7-2/export-import)
 framework's articles for the base APIs that both it and the Staging frameworks
-share. In this section of articles, you'll learn about the Staging-specific
-configurations that are not shared by Export/Import.
+share. In this section, you'll learn about the Staging-specific configurations
+that are not shared by Export/Import.

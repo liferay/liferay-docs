@@ -65,7 +65,7 @@ cases you'll experience when implementing its methods:
 The
 [`BookmarksEntryStagedModelRepository.addStagedModel(...)`](https://github.com/liferay/liferay-portal/blob/7.2.0-a1/modules/apps/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/internal/exportimport/staged/model/repository/BookmarksEntryStagedModelRepository.java#L51-L71)
 method is an example where only calling the local service would not satisfy the
-staged model data handler's needs (i.e., the UUID requirement). With the staged
+staged model data handler's needs (i.e., its UUID requirement). With the staged
 model repository layer, however, you can add export/import specific requirements
 on top of the present local services to serve your data handlers' needs.
 

@@ -59,7 +59,8 @@ handlers:
 
 A Portlet Data Handler imports/exports portlet specific data to a LAR file.
 These classes only have the role of querying and coordinating between staged
-model data handlers.
+model data handlers. They also configure the Export/Import and Staging UI
+options.
 
 A Staged Model Data Handler supplies information about a staged model (entity)
 to the Export/Import framework, defining a display name for the UI, deleting an
@@ -116,7 +117,7 @@ two examples:
 You can listen for a specific event and then complete an action based on when
 that event occurs. For a list of events you can listen for during Export/Import
 and Staging processes, see
-[ExportImportLifecycleConstants](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lifecycle/ExportImportLifecycleConstants.html).
+[`ExportImportLifecycleConstants`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lifecycle/ExportImportLifecycleConstants.html).
 
 You must extend one of the two Base classes provided with the Export/Import
 Lifecycle Listener framework to leverage its power:
@@ -135,10 +136,10 @@ What's the difference between events and processes?
 
 **Events:** particular actions that occur during processing (example event
 listener:
-[CacheExportImportLifecycleListener](@app-ref@/web-experience/latest/javadocs/com/liferay/exportimport/lifecycle/CacheExportImportLifecycleListener.html)).
+[`CacheExportImportLifecycleListener`](@app-ref@/web-experience/latest/javadocs/com/liferay/exportimport/lifecycle/CacheExportImportLifecycleListener.html)).
 
 **Processes:** longer running groups of events (example process listener:
-[ExportImportProcessCallbackLifecycleListener](@app-ref@/web-experience/latest/javadocs/com/liferay/exportimport/lifecycle/ExportImportProcessCallbackLifecycleListener.html)).
+[`ExportImportProcessCallbackLifecycleListener`](@app-ref@/web-experience/latest/javadocs/com/liferay/exportimport/lifecycle/ExportImportProcessCallbackLifecycleListener.html)).
 
 Use the listener type that is most appropriate for your use case.
 
@@ -149,14 +150,14 @@ process programmatically. This lets you provide new interfaces or mimic the
 functionality of these features in your own application.
 
 To initiate an export/import or staging process, you must pass in an
-[ExportImportConfiguration](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/model/ExportImportConfiguration.html)
+[`ExportImportConfiguration`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/model/ExportImportConfiguration.html)
 object. This object encapsulates many parameters and settings that are required
 while the export/import is running. Having one single object with all your
 necessary data makes executing these frameworks quick and easy.
 
 For example, when you want to implement the export feature, you must call
 services offered by the
-[ExportImportService](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/service/ExportImportService.html)
+[`ExportImportService`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/service/ExportImportService.html)
 interface. All the methods in this interface require an
 `ExportImportConfiguration` object. @product@ provides a way to generate these
 configuration objects, so you can easily pass them in your service methods.
@@ -164,9 +165,10 @@ configuration objects, so you can easily pass them in your service methods.
 There are three factory classes that are useful to create an
 `ExportImportConfiguration` object:
 
-- `ExportImportConfigurationSettingsMapFactory`: provides many `build` methods
-  to create settings maps for various scenarios, like importing, exporting, and
-  publishing layouts and portlets. For examples, you can reference
+- [`ExportImportConfigurationSettingsMapFactory`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/configuration/ExportImportConfigurationSettingsMapFactory.html):
+  provides many `build` methods to create settings maps for various scenarios,
+  like importing, exporting, and publishing layouts and portlets. For examples,
+  you can reference
   [`UserGroupLocalServiceImpl.exportLayouts(...)`](@platform-ref@/7.2-latest/javadocs/portal-impl/com/liferay/portal/service/impl/UserGroupLocalServiceImpl.html#exportLayouts-long-java.util.Map-)
   and
   [`GroupLocalServiceImpl.addDefaultGuestPublicLayoutsByLAR(...)`](@platform-ref@/7.2-latest/javadocs/portal-impl/com/liferay/portal/service/impl/GroupLocalServiceImpl.html#addDefaultGuestPublicLayoutsByLAR-com.liferay.portal.kernel.model.Group-java.io.File-).
@@ -179,9 +181,9 @@ There are three factory classes that are useful to create an
 
 There are two important service interfaces that primarily use
 `ExportImportConfiguration` objects for exporting, importing, and staging:
-[ExportImportLocalService](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/service/ExportImportLocalService.html)
+[`ExportImportLocalService`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/service/ExportImportLocalService.html)
 and
-[StagingLocalService](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/service/StagingLocalService.html).
+[`StagingLocalService`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/service/StagingLocalService.html).
 
 | **Note:** If you're not calling the export/import or staging service methods
 | from an OSGi module, you should not use the interface. The Liferay

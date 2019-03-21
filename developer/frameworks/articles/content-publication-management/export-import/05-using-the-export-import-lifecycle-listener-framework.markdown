@@ -23,7 +23,7 @@ steps below:
     Export/Import Lifecycle Listener framework:
     [BaseExportImportLifecycleListener](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lifecycle/BaseExportImportLifecycleListener.html)
     (event listener) or
-    [BaseProcessExportImportLifecycleListener](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lifecycle/BaseProcessExportImportLifecycleListener.html).
+    [BaseProcessExportImportLifecycleListener](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lifecycle/BaseProcessExportImportLifecycleListener.html)
     (process listener). To choose, you'll need to consider what parts of a
     lifecycle you want to listen for (event or process).
 

@@ -5,7 +5,7 @@ header-id: using-the-staged-model-repository-framework
 # Using the Staged Model Repository Framework
 
 Leveraging the Staged Model Repository framework in your app is easy once you've
-[created staged model repository implementation classes](/develop/tutorials/-/knowledge_base/7-1/implementing-the-staged-model-repository-framework).
+[created staged model repository implementation classes](/developer/frameworks/-/knowledge_base/7-2/implementing-the-staged-model-repository-framework).
 
 You'll step through a quick example to demonstrate leveraging the
 `StagedModelRepository` interface in a staged model data handler. The code

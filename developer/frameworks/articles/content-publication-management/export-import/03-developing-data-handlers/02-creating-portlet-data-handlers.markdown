@@ -1,13 +1,13 @@
 ---
-header-id: developing-portlet-data-handlers
+header-id: creating-portlet-data-handlers
 ---
 
-# Developing Portlet Data Handlers
+# Creating Portlet Data Handlers
 
 In this tutorial, you'll create the `BookmarksPortletModelDataHandler` class
 used for the Bookmarks application. The Bookmarks application's portlet data
 handler tracks system events dealing with Bookmarks entities. It also configures
-the Export/Import UI options for the Bookmarks application.
+the Export/Import and Staging UI options for the Bookmarks application.
 
 1.  Create a new package in your existing Service Builder project for your data
     handler classes. For instance, the Bookmarks application's data handler
@@ -34,7 +34,7 @@ the Export/Import UI options for the Bookmarks application.
         )
 
 4.  Set what the portlet data handler controls and the portlet's Export/Import
-    UI by adding an `activate` method:
+    and Staging UIs by adding an `activate` method:
 
         @Activate
         protected void activate() {
@@ -49,7 +49,7 @@ the Export/Import UI options for the Bookmarks application.
             setStagingControls(getExportControls());
         }
 
-    ![Figure 1: You can select the content types you'd like to export/import in the UI.](../../images/export-import-controls.png)
+    ![Figure 1: You can select the content types you'd like to export/import in the UI.](../../../../images/export-import-controls.png)
 
 5.  For the Bookmarks portlet data handler to reference its entry and folder
     staged models successfully, you must set them in your class:
@@ -80,7 +80,7 @@ the Export/Import UI options for the Bookmarks application.
 
     **Important:** @product@'s official Bookmarks app does not use local
     services in its portlet data handler; instead, it uses the
-    [StagedModelRepository](@app-ref@/web-experience/latest/javadocs/com/liferay/exportimport/staged/model/repository/StagedModelRepository.html)
+    [`StagedModelRepository`](@app-ref@/web-experience/latest/javadocs/com/liferay/exportimport/staged/model/repository/StagedModelRepository.html)
     framework. This is a new framework, but is a viable option when setting up
     your portlet data handlers. For more information on this, see the
     [Providing Entity-Specific Local Services for Staging](/developer/frameworks/-/knowledge_base/7-2/providing-entity-specific-local-services-for-staging)
@@ -207,7 +207,7 @@ the Export/Import UI options for the Bookmarks application.
     Staging framework traverses the entity graph during export, the built-in
     components provide an approximate value in some cases.
 
-    ![Figure 2: The number of modified Bookmarks entities are displayed in the Export UI.](../../images/manifest-summary-count.png)
+    ![Figure 2: The number of modified Bookmarks entities are displayed in the Export UI.](../../../../images/manifest-summary-count.png)
 
 9.  Set the XML schema version for the XML files included in your exported LAR
     file:
@@ -228,5 +228,5 @@ the Export/Import UI options for the Bookmarks application.
 Awesome! You've set up your portlet data handler and your application can now
 support the Export/Import framework and display a UI for it. Be sure to also
 implement staged model data handlers for your staged models. See the
-[Developing Staged Model Data Handlers](/developer/frameworks/-/knowledge_base/7-2/developing-staged-model-data-handlers)
+[Creating Staged Model Data Handlers](/developer/frameworks/-/knowledge_base/7-2/creating-staged-model-data-handlers)
 for more information.

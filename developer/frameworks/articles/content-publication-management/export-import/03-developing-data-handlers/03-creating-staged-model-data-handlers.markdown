@@ -1,15 +1,15 @@
 ---
-header-id: developing-staged-model-data-handlers
+header-id: creating-staged-model-data-handlers
 ---
 
-# Developing Staged Model Data Handlers
+# Creating Staged Model Data Handlers
 
 In this tutorial, you'll create the `BookmarksStagedModelDataHandler` class used
 for the Bookmarks application. The Bookmarks application has two staged models:
 entries and folders. Creating data handlers for these two entities is similar,
 so you'll examine how this is done for Bookmark entries. This tutorial assumes
 you've already created
-[staged models](/develop/tutorials/-/knowledge_base/7-1/understanding-staged-models).
+[staged models](/developer/frameworks/-/knowledge_base/7-2/developing-staged-models).
 
 1.  Create a new package in your existing Service Builder project for your data
     handler classes. For instance, the Bookmarks application's data handler
@@ -18,7 +18,7 @@ you've already created
 
 2.  Create a `-StagedModelDataHandler` class in the `-exportimport.data.handler`
     package. The staged model data handler class should extend the
-    [BaseStagedModelDataHandler](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/BaseStagedModelDataHandler.html)
+    [`BaseStagedModelDataHandler`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/BaseStagedModelDataHandler.html)
     class and the entity type should be specified as its parameter. You can see
     how this was done for the `BookmarksEntryStagedModelDataHandler` class
     below:
@@ -52,16 +52,16 @@ you've already created
 
     **Important:** @product@'s official Bookmarks app does not use local
     services in its staged model data handlers; instead, it uses the
-    [StagedModelRepository](@app-ref@/web-experience/latest/javadocs/com/liferay/exportimport/staged/model/repository/StagedModelRepository.html)
+    [`StagedModelRepository`](@app-ref@/web-experience/latest/javadocs/com/liferay/exportimport/staged/model/repository/StagedModelRepository.html)
     framework. This is a new framework, but is a viable option when setting up
     your staged model data handlers. For more information on this, see the
-    [Providing Entity-Specific Local Services for Staging](/develop/tutorials/-/knowledge_base/7-1/providing-entity-specific-local-services-for-staging)
+    [Providing Entity-Specific Local Services for Staging](/developer/frameworks/-/knowledge_base/7-2/providing-entity-specific-local-services-for-staging)
     tutorial section. Since local services are more widely used in custom apps,
     this tutorial covers those instead.
 
 5.  Provide the class names of the models the data handler tracks. You can do
     this by overriding the
-    [StagedModelDataHandler](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/StagedModelDataHandler.html)'s
+    [`StagedModelDataHandler`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/StagedModelDataHandler.html)'s
     `getClassnames()` method:
 
         public static final String[] CLASS_NAMES = {BookmarksEntry.class.getName()};
@@ -81,7 +81,7 @@ you've already created
     The display name is presented with the progress bar during the export/import
     process.
 
-    ![Figure 1: Your staged model data handler provides the display name in the Export/Import UI.](../../images/staged-model-display-name.png)
+    ![Figure 1: Your staged model data handler provides the display name in the Export/Import UI.](../../../../images/staged-model-display-name.png)
 
 7.  Add methods that import and export your staged model and its references.
 
@@ -170,5 +170,5 @@ Fantastic! You've created a data handler for your staged model. The
 Export/Import framework can now track your entity's behavior and data. Be sure
 to also implement a portlet data handler to manage portlet specific data. See
 the
-[Developing Portlet Data Handlers](/develop/tutorials/-/knowledge_base/7-1/developing-portlet-data-handlers).
-to do this for the Bookmarks app.
+[Creating Portlet Data Handlers](/developer/frameworks/-/knowledge_base/7-2/creating-portlet-data-handlers)
+article to do this for the Bookmarks app.
