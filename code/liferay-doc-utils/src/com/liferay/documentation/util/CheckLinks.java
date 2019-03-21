@@ -55,15 +55,11 @@ public class CheckLinks {
 		userGuideHeaders = findHeaders(userGuideArticles);
 		deploymentGuideHeaders = findHeaders(deploymentGuideArticles);
 		distributeGuideHeaders = findHeaders(distributeGuideArticles);
-		analyticsCloudHeaders = findHeaders(analyticsCloudArticles);
-		commerceHeaders = findHeaders(commerceArticles);
-		userGuideReferenceHeaders = findHeaders(userGuideReferenceArticles);
 		appDevHeaders = findHeaders(appDevArticles);
 		frameworksDevHeaders = findHeaders(frameworksDevArticles);
 		customizationDevHeaders = findHeaders(customizationDevArticles);
 		tutorialsHeaders = findHeaders(tutorialsArticles);
 		referenceDevHeaders = findHeaders(referenceDevArticles);
-		commerceDevHeaders = findHeaders(commerceDevArticles);
 
 		for (File article : currentArticles) {
 
@@ -217,18 +213,6 @@ public class CheckLinks {
 			headers = deploymentGuideHeaders;
 		}
 
-		else if (lineSubstring.contains(commerceDir)) {
-			headers = commerceHeaders;
-		}
-
-		else if (lineSubstring.contains(analyticsCloudDir)) {
-			headers = analyticsCloudHeaders;
-		}
-
-		else if (lineSubstring.contains(userGuideReferenceDir)) {
-			headers = userGuideReferenceHeaders;
-		}
-
 		else if (lineSubstring.contains(distributeGuideDir)) {
 			headers = distributeGuideHeaders;
 		}
@@ -251,10 +235,6 @@ public class CheckLinks {
 
 		else if (lineSubstring.contains(referenceDevDir)) {
 			headers = referenceDevHeaders;
-		}
-
-		else if (lineSubstring.contains(commerceDevDir)) {
-			headers = commerceDevHeaders;
 		}
 
 		return headers;
@@ -283,18 +263,6 @@ public class CheckLinks {
 				distributeGuideArticles = findArticles(distributeGuideDir);
 			}
 
-			if (articleDir.equals(commerceDir)) {
-				commerceArticles = findArticles(commerceGithubDir);
-			}
-
-			if (articleDir.equals(analyticsCloudDir)) {
-				analyticsCloudArticles = findArticles(analyticsCloudDir);
-			}
-
-			if (articleDir.equals(userGuideReferenceDir)) {
-				userGuideReferenceArticles = findArticles(userGuideReferenceDir);
-			}
-
 			if (articleDir.equals(appDevDir)) {
 				appDevArticles = findArticles(appDevDir);
 			}
@@ -313,10 +281,6 @@ public class CheckLinks {
 
 			if (articleDir.equals(referenceDevDir)) {
 				referenceDevArticles = findArticles(referenceDevDir);
-			}
-
-			if (articleDir.equals(commerceDevDir)) {
-				commerceDevArticles = findArticles(commerceGithubDevDir);
 			}
 		}
 	}
@@ -1087,19 +1051,6 @@ public class CheckLinks {
 	private static List<File> userGuideArticles = new ArrayList<File>();
 	private static ArrayList<List<String>> userGuideHeaders = new ArrayList<List<String>>();
 
-	private static String userGuideReferenceDir = "discover/reference";
-	private static List<File> userGuideReferenceArticles = new ArrayList<File>();
-	private static ArrayList<List<String>> userGuideReferenceHeaders = new ArrayList<List<String>>();
-
-	private static String commerceDir = "web/commerce/documentation";
-	private static String commerceGithubDir = "discover/commerce";
-	private static List<File> commerceArticles = new ArrayList<File>();
-	private static ArrayList<List<String>> commerceHeaders = new ArrayList<List<String>>();
-
-	private static String analyticsCloudDir = "discover/analytics-cloud";
-	private static List<File> analyticsCloudArticles = new ArrayList<File>();
-	private static ArrayList<List<String>> analyticsCloudHeaders = new ArrayList<List<String>>();
-
 	// Deployment Guide
 
 	private static String deploymentGuideDir = "deployment";
@@ -1115,11 +1066,6 @@ public class CheckLinks {
 	private static String appDevDir = "developer/appdev";
 	private static List<File> appDevArticles = new ArrayList<File>();
 	private static ArrayList<List<String>> appDevHeaders = new ArrayList<List<String>>();
-
-	private static String commerceDevDir = "web/commerce/developer-guide";
-	private static String commerceGithubDevDir = "developer/commerce";
-	private static List<File> commerceDevArticles = new ArrayList<File>();
-	private static ArrayList<List<String>> commerceDevHeaders = new ArrayList<List<String>>();
 
 	private static String customizationDevDir = "developer/customization";
 	private static List<File> customizationDevArticles = new ArrayList<File>();
@@ -1138,6 +1084,5 @@ public class CheckLinks {
 	private static ArrayList<List<String>> referenceDevHeaders = new ArrayList<List<String>>();
 
 	private static String[] articleDirs = {appDevDir, customizationDevDir, frameworksDevDir, userGuideDir,
-			deploymentGuideDir, distributeGuideDir, commerceDir, analyticsCloudDir, userGuideReferenceDir,
-			tutorialsDir, referenceDevDir, commerceDevDir};
+			deploymentGuideDir, distributeGuideDir, tutorialsDir, referenceDevDir};
 }
