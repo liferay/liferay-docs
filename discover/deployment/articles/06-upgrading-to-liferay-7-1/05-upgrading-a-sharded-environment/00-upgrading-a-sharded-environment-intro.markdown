@@ -22,9 +22,11 @@ Here are the upgrade steps:
 
 3.  [Prepare for upgrading to @product-ver@](/discover/deployment/-/knowledge_base/7-1/preparing-an-upgrade-to-liferay-7). 
 
-4.  [Run the upgrade process for the default shard](/discover/deployment/-/knowledge_base/7-1/running-the-upgrade-process).
-    The upgrade tool copies the control table entries from the default shard
-    database to the non-default shard databases. You will need to include the jdbc connections for all shards in your portal-upgrade-database.properties. If you have 3 shards, something like this:
+4.  [Run the upgrade process](/discover/deployment/-/knowledge_base/7-1/running-the-upgrade-process)
+    for the default shard. As part of the configuration, copy all of the shard
+    JDBC connection properties from  your `portal-ext.properties` to your
+    `portal-upgrade-database.properties`. For example, JDBC connections for a
+    default shard and two non-default shards might look like this:
 
         jdbc.default.driverClassName=com.mysql.jdbc.Driver
         jdbc.default.url=jdbc:mysql://localhost/lportal?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
@@ -42,32 +44,35 @@ Here are the upgrade steps:
         jdbc.two.password=
 
 5.  [Prepare a @product-ver@ server](/discover/deployment/-/knowledge_base/7-1/deploying-product)
-    for each non-default shard database.
+    for each non-default shard.
 
-6.  [Run the upgrade process for every shard](/discover/deployment/-/knowledge_base/7-1/running-the-upgrade-process)
-    for the @product-ver@ servers associated with each non-default shard
-    database. You need to define each server's JDBC default properties in the portal-upgrade-database.properties:
+6.  [Run the upgrade process](/discover/deployment/-/knowledge_base/7-1/running-the-upgrade-process)
+    for each non-default shard. The JDBC *default* connection properties in each
+    server's `portal-upgrade-database.properties` must specify the associated
+    shard. Here's how: 
 
     -   Add the original JDBC properties for the respective non-default shard 
-        database. For example, shard `one`'s original properties might start with `jdbc.one.`:
+        database. For example, shard `one`'s original properties might start with `jdbc.one`:
 
             jdbc.one.driverClassName=com.mysql.jdbc.Driver
             jdbc.one.url=jdbc:mysql://localhost/lportal_one?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
             jdbc.one.username=
             jdbc.one.password=
 
-    -   Rename the properties to start with `jdbc.default.`. For example, 
+    -   Rename the properties to start with `jdbc.default`. For example, 
 
             jdbc.default.driverClassName=com.mysql.jdbc.Driver
             jdbc.default.url=jdbc:mysql://localhost/lportal_one?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
             jdbc.default.username=
             jdbc.default.password=
 
-7.  Create a `portal-ext.properties` on each new server an define the each server's JDBC default properties as before.
-    
-8.  Remove the non-default shard JDBC properties from the original
-    `portal-ext.properties` file (on the default shard server), leaving only
-    the default shard database `jdbc.default.*` properties. For example,
+7.  In each server's `portal-ext.properties`, use the JDBC *default* properties
+    you specified in the `portal-upgrade-database.properties` (see the previous
+    step). 
+
+8.  Remove the non-default shard JDBC properties from the default shard server's
+    `portal-ext.properties` file, leaving only the default shard database
+    `jdbc.default` properties. For example,
 
     Old JDBC properties: 
 
