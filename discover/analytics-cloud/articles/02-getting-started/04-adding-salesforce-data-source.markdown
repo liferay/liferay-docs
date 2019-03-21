@@ -11,9 +11,9 @@ as a data source. Here, you'll learn how.
 1.  Select *Settings* &rarr; *Data Sources* &rarr; *Add Data Source*. This opens 
     the Add Data Source screen. 
 
-    ![Figure 1: Select Salesforce from the Add Data Source screen.](../../images/salesforce-data-source.png)
-
 2.  Select *Salesforce*. This opens the Configure Salesforce screen. 
+
+    ![Figure 1: Select Salesforce from the Add Data Source screen.](../../images/salesforce-data-source.png)
 
 3.  In the *Authorization* tab, enter the Salesforce instance's name and URL. 
     Under the *CLIENT CREDENTIALS* section, enter the client ID and client 
