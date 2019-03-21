@@ -23,7 +23,7 @@ Subsequent visits to
 show the Workspace welcome page, where you can select your workspace or
 any other accessible workspaces for working on projects. 
 
-![Figure 1: Your project's home page welcomes you to all Analytics Cloud offers.](../../images/home-page-intial.png)
+![Figure 1: Your project's home page welcomes you to all Analytics Cloud offers.](../../images/home-page-initial.png)
 
 The project home page describes and links to each key component page:
 
