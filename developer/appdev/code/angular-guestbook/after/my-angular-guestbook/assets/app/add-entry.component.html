@@ -1,0 +1,29 @@
+<!--
+<form>
+ <fieldset>
+   <label>Name
+     <input #name />
+   </label><br/>
+   <label>Message
+     <input #message />
+   </label>
+ </fieldset>
+ 
+ <div class="button-footer">
+   <button class="main-btn" (click)="add(name.value, message.value)">Add</button>
+   <button class="plain-btn" (click)="goBack()">Cancel</button>
+ </div>
+</form>
+-->
+<form>
+  <div class="form-group">
+    <label for="addEntryNameInput">Name</label>
+    <input #name class="form-control" id="addEntryNameInput" aria-label="name">
+  </div>
+  <div class="form-group mb-4">
+    <label for="addEntryMessageInput">Message</label>
+    <input #message class="form-control" id="addEntryMessageInput" aria-label="message">
+  </div>
+  <button class="btn btn-primary mr-2" (click)="add(name.value, message.value)">Save</button>
+  <button class="btn btn-outline-secondary" (click)="goBack()">Cancel</button>
+</form>

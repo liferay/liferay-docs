@@ -1,0 +1,18 @@
+{
+	"compilerOptions": {
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"inlineSources": true,
+		"lib": ["es2015", "dom"],
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"noImplicitAny": true,
+		"noStrictGenericChecks": true,
+		"outDir": "build",
+		"sourceMap": true,
+		"suppressImplicitAnyIndexErrors": true,
+		"target": "es5",
+		"typeRoots": ["./node_modules/@types/"]
+	},
+	"include": ["./src/**/*.ts"]
+}
