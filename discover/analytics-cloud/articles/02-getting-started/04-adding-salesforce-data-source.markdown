@@ -11,6 +11,8 @@ as a data source. Here, you'll learn how.
 1.  Select *Settings* &rarr; *Data Sources* &rarr; *Add Data Source*. This opens 
     the Add Data Source screen. 
 
+    ![Figure 1: Select Salesforce from the Add Data Source screen.](../../images/salesforce-data-source.png)
+
 2.  Select *Salesforce*. This opens the Configure Salesforce screen. 
 
 3.  In the *Authorization* tab, enter the Salesforce instance's name and URL. 
@@ -61,6 +63,6 @@ as a data source. Here, you'll learn how.
     this information later from *Settings* &rarr; *Data Sources* &rarr; 
     *(Your Salesforce)* &rarr; *CONFIGURE DATA SOURCE*. 
 
-![Figure 1: Enter the information needed to connect to your Salesforce instance.](../../images/salesforce-auth.png)
+![Figure 2: Enter the information needed to connect to your Salesforce instance.](../../images/salesforce-auth.png)
 
-![Figure 2: The CONFIGURE DATA SOURCE tab shows the status of the accounts and individuals imported from Salesforce, as well as the field mapping.](../../images/salesforce-config.png)
+![Figure 3: The CONFIGURE DATA SOURCE tab shows the status of the accounts and individuals imported from Salesforce, as well as the field mapping.](../../images/salesforce-config.png)
