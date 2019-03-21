@@ -54,7 +54,7 @@ multiple Liferay DXP sites and custom data sources.
 Additional shortcuts and overviews are displayed on the right:
 
 **Add Data Source:** Quick access to adding data sources for customer profiles
-and behavior data.
+and behavior data. 
 
 **Usage:** Compares the number of Individuals and Pages you're analyzing to your
 Liferay Analytics Cloud Plan. 
@@ -66,13 +66,13 @@ The *Liferay Analytics Cloud* icon
 of the navigation panel takes you to the home page from wherever you are in the
 application. Beneath it are several other links:
 
-**People**: Learn more about your customers by analyzing them individually as
-*Individuals* or aggregated as *Segments*. 
+**People**: Learn more about your customers by analyzing them individually as 
+*Individuals*, aggregated as *Segments*, or as part of Salesforce *Accounts*. 
 
-**Touchpoints**: Analyze *page* and *asset* performance and view paths users
+**Touchpoints**: Analyze *page* and *asset* performance and view paths users 
 take to your pages. 
 
-**User icon:** Switch projects or sign out.
+**User icon:** Switch projects or sign out. 
 
 **Settings**: Provides options for managing data sources, users, and updating
 your Analytics Cloud usage. 
