@@ -22,15 +22,31 @@ Here are the upgrade steps:
 
 3.  [Prepare for upgrading to @product-ver@](/discover/deployment/-/knowledge_base/7-1/preparing-an-upgrade-to-liferay-7). 
 
-4.  [Run the upgrade process](/discover/deployment/-/knowledge_base/7-1/running-the-upgrade-process).
+4.  [Run the upgrade process for the default shard](/discover/deployment/-/knowledge_base/7-1/running-the-upgrade-process).
     The upgrade tool copies the control table entries from the default shard
-    database to the non-default shard databases. 
+    database to the non-default shard databases. You will need to include the jdbc connections for all shards in your portal-upgrade-database.properties. If you have 3 shards, something like this:
+
+        jdbc.default.driverClassName=com.mysql.jdbc.Driver
+        jdbc.default.url=jdbc:mysql://localhost/lportal?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
+        jdbc.default.username=
+        jdbc.default.password=
+
+        jdbc.one.driverClassName=com.mysql.jdbc.Driver
+        jdbc.one.url=jdbc:mysql://localhost/lportal_one?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
+        jdbc.one.username=
+        jdbc.one.password=
+
+        jdbc.two.driverClassName=com.mysql.jdbc.Driver
+        jdbc.two.url=jdbc:mysql://localhost/lportal_two?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
+        jdbc.two.username=
+        jdbc.two.password=
 
 5.  [Prepare a @product-ver@ server](/discover/deployment/-/knowledge_base/7-1/deploying-product)
-    for each non-default shard database.  
+    for each non-default shard database.
 
-6.  Create a `portal-ext.properties` on each new server you just added and 
-    define each server's JDBC default properties:
+6.  [Run the upgrade process for every shard](/discover/deployment/-/knowledge_base/7-1/running-the-upgrade-process)
+    for the @product-ver@ servers associated with each non-default shard
+    database. You need to define each server's JDBC default properties in the portal-upgrade-database.properties:
 
     -   Add the original JDBC properties for the respective non-default shard 
         database. For example, shard `one`'s original properties might start with `jdbc.one.`:
@@ -47,7 +63,9 @@ Here are the upgrade steps:
             jdbc.default.username=
             jdbc.default.password=
 
-7.  Remove the non-default shard JDBC properties from the original
+7.  Create a `portal-ext.properties` on each new server an define the each server's JDBC default properties as before.
+    
+8.  Remove the non-default shard JDBC properties from the original
     `portal-ext.properties` file (on the default shard server), leaving only
     the default shard database `jdbc.default.*` properties. For example,
 
@@ -74,10 +92,6 @@ Here are the upgrade steps:
         jdbc.default.url=jdbc:mysql://localhost/lportal?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
         jdbc.default.username=
         jdbc.default.password=
-
-8.  [Run the upgrade process](/discover/deployment/-/knowledge_base/7-1/running-the-upgrade-process)
-    for the @product-ver@ servers associated with each non-default shard
-    database. 
 
 Congratulations! You've migrated your original shards to separate @product-ver@
 servers: 
