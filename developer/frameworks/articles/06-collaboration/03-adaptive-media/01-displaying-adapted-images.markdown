@@ -13,21 +13,28 @@ For more information, see
     Gradle you must add the following line in your project's `build.gradle` 
     file: 
 
+```groovy
         provided group: "com.liferay", name: "com.liferay.adaptive.media.image.taglib", version: "1.0.0"
+```
 
 2.  Declare the taglib in your JSP: 
 
+```markup
         <%@ taglib uri="http://liferay.com/tld/adaptive-media-image" prefix="liferay-adaptive-media" %>
+```
 
 3.  Use the taglib wherever you want the adapted image to appear in your app's 
     JSP files: 
 
+```markup
         <liferay-adaptive-media:img class="img-fluid" fileVersion="<%= fileEntry.getFileVersion() %>" />
+```
 
     For example, this `view.jsp` uses the taglib to display the adapted images 
     in a grid with the `col-md-6` 
     [column container class](/developer/frameworks/-/knowledge_base/7-2/creating-layout-templates-manually): 
 
+```markup
         <%@ include file="/init.jsp" %>
 
         <div class="container">
@@ -61,6 +68,7 @@ For more information, see
         %>
 
         </div>
+```
 
     Looking at the generated markup, you can see that it uses the `<picture>` 
     tag as described in 
