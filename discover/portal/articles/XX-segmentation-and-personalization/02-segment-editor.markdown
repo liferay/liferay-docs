@@ -8,13 +8,11 @@ editor for defining User Segments.
 
 2.  Open the *Members* section and select *Segments*.
 
-![You use the Segment Editor to create new Segments.](../../images/sp-segment-editor-full.png)
-
 At the top of the editor you can set the name, view the current members of the
 segment as it is defined, and choose to *Save* the Segment or *Cancel* to 
 discard changes.
 
-![The top portion of the Segment Editor.](../../images/sp-editor-top.png)
+![Figure X: The top portion of the Segment Editor.](../../images/sp-editor-top.png)
 
 Below that there are three main sections:
 
@@ -23,6 +21,8 @@ Below that there are three main sections:
 - Organization Properties
 
 - Session Properties
+
+![Figure X: You use the Segment Editor to create new Segments.](../../images/sp-segment-editor-full.png)
 
 ## User Properties
 
@@ -42,3 +42,7 @@ information. Things like the current browser, screen resolution, and platform.
 You can use this to target categories like "iPhone users" or "Internet Explorer 
 Users."
 
+## Comparators
+
+There are a number of different ways to evaluate properties, and different ways that you can relate different fields. For a comprehensive list
+see the [Defining Segment Criteria Reference](link).
