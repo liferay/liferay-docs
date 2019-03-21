@@ -53,7 +53,7 @@ histogram shows the number of activities by date and the average engagement
 score for the account's individuals. A searchable table below the histogram 
 shows more detail about the activities. 
 
-![Figure 2: The Activities tab displays data on activities of the account's individuals.](../../images/accounts-activities.png)
+![Figure 3: The Activities tab displays data on activities of the account's individuals.](../../images/accounts-activities.png)
 
 ## Interests
 
@@ -81,4 +81,16 @@ more information on individuals in Analytics Cloud, see
 
 ## Details
 
-The Details tab shows additional information about the account. 
+The Details tab shows information about the account's properties. The properties 
+appear in a searchable table that shows each account property in Analytics Cloud 
+and its value. The table also has columns for these values: 
+
+**Source Name:** The corresponding property name in the Salesforce data source. 
+For example, the Analytics Cloud `accountId` property is `id` in Salesforce. 
+Therefore, `id` appears in the Source Name column of the `accountId` row. 
+
+**Data Source:** The data source the property's value originated from. 
+
+**Last Modified:** The date the property's value was most recently changed. 
+
+![Figure 4: The Details tab contains a searchable table that shows the account's properties and their values.](../../images/salesforce-accounts-details.png)
