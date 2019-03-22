@@ -119,7 +119,7 @@ public class CheckHeadersTask extends Task {
 							titleLineError1 = Files.readAllLines(Paths.get(filename)).get(in.getLineNumber() - 1);
 							titleLineError2 = Files.readAllLines(Paths.get(filename)).get(in.getLineNumber() + 1);
 
-							counter = 0;
+							break;
 						}
 						if (line.startsWith("---")) {
 							counter++;
