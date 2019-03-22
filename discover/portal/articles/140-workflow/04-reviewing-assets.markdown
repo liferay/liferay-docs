@@ -13,30 +13,30 @@ the workflow definition determines the next step. A user assigned a Role
 associated to the workflow task receives a Notification indicating that there is
 a workflow task to complete.
 
-**Workflow Assignees Have Implicit Asset Permissions:** A user who has
-permission to execute a workflow task (e.g., a User with the Portal Content
-Reviewer Role) has full resource action permissions over the asset they're able
-to review. These permissions apply in the My Workflow Tasks widget in the User's
-personal page, and anywhere else actions on the Asset can be performed.
+**Workflow Assignees Have Implicit Asset Permissions:** Users with permission to
+execute a workflow task (e.g., Users with the Portal Content Reviewer Role) have
+full resource action permissions over the assets they can review. These
+permissions apply in the My Workflow Tasks widget in the User's personal page
+and anywhere else actions on the Asset can be performed.
 
 For example, consider a User with two permissions:
 
-- The Portal Content Reviewer Role enables the User to review workflow
-    submissions, and grants edit and delete permissions on the content they're
+- The Portal Content Reviewer Role enables Users to review workflow
+    submissions and grants edit and delete permissions on the content they're
     reviewing. 
-- The User also has permission to view Web Content Articles in the Site's
+- Users also have permission to view Web Content Articles in the Site's
     _Content_ section. 
 
 Neither permission explicitly grants the User management permissions on Web
-Content Articles. The User cannot normally edit or delete a Web Content Article,
-for example. However, if a Web Content Article is sent to the workflow, the User
+Content Articles. Users cannot normally edit or delete a Web Content Article,
+for example. However, if a Web Content Article is sent to the workflow, Users
 can access the Web Content Article for review (in their _Assigned to Me_ or
 _Assigned to my Roles_ section of My Workflow Tasks), and they can edit or
 delete the content while reviewing it in the workflow. While it's in the status
 _Pending_, they can also edit or delete the article from Site Administration
 &rarr; Content &rarr; Web Content because of their implicit permissions granted
 by the workflow system. This additional permission is temporary, and the normal
-resource permissions are activated once the Web Content Article exists the
+resource permissions are activated once the Web Content Article exits the
 workflow process (for example, it's rejected or approved).
 
 ![Figure 2: A User with VIEW permission on Web Content cannot manage Approved Articles.](../../images/workflow-approved-permissions.png)
