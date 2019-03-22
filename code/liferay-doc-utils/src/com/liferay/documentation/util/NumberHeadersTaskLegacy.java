@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Queue;
 import java.util.regex.Pattern;
 
@@ -18,7 +19,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Task;
 
-public class NumberHeadersTask extends Task {
+public class NumberHeadersTaskLegacy extends Task {
 
 	@Override
 	public void execute() throws BuildException {
@@ -27,7 +28,8 @@ public class NumberHeadersTask extends Task {
 		String productType = _productType;
 
 		boolean dxpBuild = false;
-
+		boolean foundDuplicateIds = false;
+		
 		ceFileList = getFileList(docDir, "");
 		
 		List<String> dirTypes = new ArrayList<String>();
@@ -42,7 +44,8 @@ public class NumberHeadersTask extends Task {
 			
 				dxpFileList = getFileList(docDir, "-dxp");
 			}
-
+			
+			
 		}
 		
 		if (ceFileList.size() == 0 && dxpFileList.size() == 0) {
@@ -77,11 +80,9 @@ public class NumberHeadersTask extends Task {
 				File outFile = new File(filename);
 				String outFileTmp = outFile + ".tmp";
 				
-				foundDuplicateIds = false;
-				
-				if (dirType.contains("dxp")) {
-					overrideFile = isOverrideFile(filename, duplicateFiles);
-				}
+				overrideFile = isOverrideFile(filename, duplicateFiles);
+
+				Map<String, Integer> secondaryIds = new HashMap<String, Integer>();
 
 				try {
 					LineNumberReader in =
@@ -90,37 +91,21 @@ public class NumberHeadersTask extends Task {
 							new BufferedWriter(new FileWriter(outFileTmp));
 
 					String line;
-					int titleHeaderLineNum = -2;
 					while ((line = in.readLine()) != null) {
-
-						int lineNum = in.getLineNumber();
-
-						if (line.startsWith("#") && !line.startsWith("##")) {
+						if (line.startsWith("#")) {
 						
-							titleHeaderLineNum = in.getLineNumber();
 							line = line.trim();
-							
-							// search for header ID; if header DNE, generate header
-							String headerIdLine = getHeaderIdLine(inFile);
-								
-							if (headerIdLine == null) {
-								String headerId = generateNewHeader(filename, line, in.getLineNumber());
-								out.append("---\n");
-								out.append(headerIdPrefix + headerId + "\n");
-								out.append("---\n\n");
+
+							String newHeadingLine = handleHeaderLine(line,
+									filename, in.getLineNumber(), secondaryIds);
+							if (newHeadingLine != null) {
+								line = newHeadingLine;
 							}
-							// validate existing header
 							else {
-								validateHeaderId(filename, headerIdLine, in.getLineNumber(), true);
+								foundDuplicateIds = true;
 							}
 						}
-						if (lineNum == titleHeaderLineNum + 1) {
-							if (!line.equals("")) {
-								throw new BuildException("Filename: " + filename +
-										" Line following main title header must be blank.");
-							}
-						}
-						
+
 						out.append(line);
 						out.append("\n");
 					}
@@ -158,9 +143,6 @@ public class NumberHeadersTask extends Task {
 				
 				try {
 					checkOverrideHeaders(duplicateFile, duplicateFileDxp);
-					if (foundDuplicateIds) {
-						throw new BuildException("FAILURE - Duplicate header IDs exist");
-					}
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
@@ -219,58 +201,53 @@ public class NumberHeadersTask extends Task {
 		BufferedWriter out2 =
 				new BufferedWriter(new FileWriter(outFileTmp2));
 		
-		String headerIdLineCe = getHeaderIdLine(inFile);
-		String headerIdLineDxp = getHeaderIdLine(inFile2);
+		String header = in.readLine();
+		String headerDxp = in2.readLine();
+		String[] headerCombo = separateTextAndId(header);
+		String[] headerComboDxp = separateTextAndId(headerDxp);
 
 		boolean equalHeaders = false;
 		
 		if (filenamesWithPresetHeader.contains(duplicateFile) && 
 				filenamesWithPresetHeader.contains(duplicateFile2)) {
 			
-			if (headerIdLineCe.equals(headerIdLineDxp)) {
+			if (header.equals(headerDxp)) {
 				equalHeaders = true;
 			}
 			else {
-				headerIdLineDxp = headerIdLineCe;
+				headerDxp = headerComboDxp[0] + headerCombo[1];
 			}
 			
 		}
 		else if (filenamesWithPresetHeader.contains(duplicateFile) && 
 				filenamesWithoutPresetHeader.contains(duplicateFile2)) {
 			
-			headerIdLineDxp = headerIdLineCe;
+			headerDxp = headerComboDxp[0] + headerCombo[1];
 		}
 		else if (filenamesWithoutPresetHeader.contains(duplicateFile) && 
 				filenamesWithPresetHeader.contains(duplicateFile2)) {
 			
-			headerIdLineCe = headerIdLineDxp;
-
-			// Check cases where there are two DXP override files with matching
-			// header IDs. This case is not checked with the general validation
-			// logic. Add new CE header to ID list and validate it.
-			IDS.put(getHeaderId(headerIdLineCe), inFile.getName());
-
-			// Disable overrideFile flag, so validation for the new header ID can
-			// process.
-			overrideFile = false;
-			validateHeaderId(inFile.getName(), headerIdLineCe, in.getLineNumber(), false);
+			header = headerCombo[0] + headerComboDxp[1];
 		}
 		else {
-			headerIdLineDxp = headerIdLineCe;
+			headerDxp = headerComboDxp[0] + headerCombo[1];
 		}
 		
 		if (!equalHeaders) {
 			String line;
+			int i = 0;
 			
 			while ((line = in.readLine()) != null) {
-				if (line.startsWith(headerIdPrefix)) {
-					out.append(headerIdLineCe);
-					out.append("\n");
+				
+				if (i == 0) {
+					out.append(header);
+					out.append("\n\n");
 				}
 				else {
 					out.append(line);
 					out.append("\n");
 				}
+				i = i+1;
 			}
 
 			in.close();	
@@ -283,15 +260,17 @@ public class NumberHeadersTask extends Task {
 
 			FileUtils.forceDelete(outFileTmpFile);
 
+			i = 0;
 			while ((line = in2.readLine()) != null) {
-				if (line.startsWith(headerIdPrefix)) {
-					out2.append(headerIdLineDxp);
-					out2.append("\n");
+				if (i == 0) {
+					out2.append(headerDxp);
+					out2.append("\n\n");
 				}
 				else {
 					out2.append(line);
 					out2.append("\n");
 				}
+				i = i+1;
 			}
 
 			in2.close();
@@ -321,12 +300,6 @@ public class NumberHeadersTask extends Task {
 
 	private static String extractHeading(String line, int indexOfFirstHeaderChar) {
 		String heading2 = line.substring(indexOfFirstHeaderChar);
-
-		// Applicable for legacy IDs from 7.1 and earlier.
-		// This ignores old header ID syntax.
-		if (heading2.contains(" [](id=")) {
-			heading2 = line.substring(indexOfFirstHeaderChar, line.indexOf(" [](id="));
-		}
 		heading2 = heading2.trim();
 
 		// Replace each spaced dash, space, dot, and slash with a dash
@@ -351,53 +324,6 @@ public class NumberHeadersTask extends Task {
 		return heading2;
 	}
 	
-	private static String generateNewHeader(String filename, String line, int lineNum) {
-
-		filenamesWithoutPresetHeader.add(filename);
-
-		// Find the start of the header text
-
-		int indexOfFirstHeaderChar = -1;
-		for (int i = 0; i < line.length(); i++) {
-			char ch = line.charAt(i);
-			if (ch != '#' && ch != ' ' && ch != '\t') {
-				indexOfFirstHeaderChar = i;
-				break;
-			}
-		}
-
-		String heading = null;
-		if (indexOfFirstHeaderChar > 0) {
-			heading = extractHeading(line, indexOfFirstHeaderChar);
-		}
-		else {
-			throw new BuildException("WARNING - "  + filename + ":" +
-				lineNum + " is missing header text.");
-		}
-
-		int idCount = -1;
-		String newHeading = null;
-		while (true) {
-
-			newHeading = assembleId(heading, idCount);
-
-				if (IDS.get(newHeading) == null) {
-
-					// Heading is unique for the document set
-
-					// Map the ID to the filename
-
-					IDS.put(newHeading, filename);
-
-					break;
-				}
-
-			idCount++;
-		}
-
-		return newHeading;
-	}
-
 	private static String getArticlesDirName(String filename) {
 		int index1 = filename.indexOf("articles");
 		int index2;
@@ -414,7 +340,8 @@ public class NumberHeadersTask extends Task {
 	}
 
 	private static List<String> getDuplicateFiles(String docDir,
-			List<String> dirTypes) {
+			List<String> dirTypes)
+		throws BuildException {
 		
 		List<String> convertedFileList = new ArrayList<String>();
 		List<String> duplicateFiles = new ArrayList<String>();
@@ -489,38 +416,151 @@ public class NumberHeadersTask extends Task {
 		
 		return fileList;
 	}
-	
-	private static String getHeaderId(String headerIdLine) {
 
-		int idStartIndex = headerIdLine.indexOf(headerIdPrefix) + headerIdPrefix.length();
-		int idEndIndex = headerIdLine.length();
+	private static String handleHeaderLine(String line, String filename,
+		int lineNum,  Map<String, Integer> secondaryIds) throws BuildException {
 
-		String id = null;
-		if (idStartIndex > 0 && idEndIndex > (idStartIndex + 1)) {
-			id = headerIdLine.substring(idStartIndex, idEndIndex);
-		}
-		
-		return id;
-	}
+		String newHeadingLine = null;
 
-	private static String getHeaderIdLine(File file) throws IOException {
+		// Check if the header contains an ID
 
-		String headerIdLine;
+		if (headerIdPattern.matcher(line).matches()) {
+			
+			filenamesWithPresetHeader.add(filename);
 
-		LineNumberReader in = new LineNumberReader(new FileReader(file));
+			// Extract the header ID
 
-		while ((headerIdLine = in.readLine()) != null) {
-			if (headerIdLine.startsWith(headerIdPrefix)) {
-				break;
+			int idStartIndex = line.indexOf("=");
+			int idEndIndex = line.indexOf(")", idStartIndex);
+
+			String id = null;
+			if (idStartIndex > 0 && idEndIndex > (idStartIndex + 1)) {
+				id = line.substring(idStartIndex + 1, idEndIndex);
+			}
+
+			if (id.length() > MAX_ID_LEN) {
+				StringBuilder sb =
+					new StringBuilder("FAILURE - ID longer than ");
+				sb.append(MAX_ID_LEN);
+				sb.append(" chars in ");
+				sb.append(filename);
+				sb.append(" - ");
+				sb.append(id);
+				throw new BuildException(sb.toString());
+			}
+			
+			// Check if the ID is already in use
+
+			if (line.startsWith("##")) {
+
+				// Handle secondary ID, checking if already used in this file.
+
+				Integer lineNum2 = secondaryIds.get(id);
+				if (lineNum2 != null) {
+
+					//print error
+
+					System.out.println("Dup id:" + id + " file:" +
+						filename + " line:" + lineNum + " (already used at line:" +
+						lineNum2 + ")");
+					return newHeadingLine;
+				}
+				else {
+
+					// Add the ID
+
+					secondaryIds.put(id, new Integer(lineNum));
+					newHeadingLine = line;
+				}
+			}
+			else {
+
+				// Handle primary ID, checking if already used in this file or other files.
+
+				String filename2 = IDS.get(id);
+				
+				if (filename2 != null && !overrideFile) {
+
+					//print error
+
+					System.out.println("Dup id:" + id + " file:" +
+						filename + " line:" + lineNum + " (already used by file:" +
+						filename2 + ")");
+					return newHeadingLine;
+				}
+				else {
+
+					// Add the ID
+
+					IDS.put(id, filename);
+					newHeadingLine = line;
+				}
 			}
 		}
-		in.close();
+		else {
+			
+			// Generate an ID based on the header text and counter
 
-		if (headerIdLine != null) {
-			headerIdLine = headerIdLine.trim();
+			filenamesWithoutPresetHeader.add(filename);
+
+			// Find the start of the header text
+
+			int indexOfFirstHeaderChar = -1;
+			for (int i = 0; i < line.length(); i++) {
+				char ch = line.charAt(i);
+				if (ch != '#' && ch != ' ' && ch != '\t') {
+					indexOfFirstHeaderChar = i;
+					break;
+				}
+			}
+
+			String heading = null;
+			if (indexOfFirstHeaderChar > 0) {
+				heading = extractHeading(line, indexOfFirstHeaderChar);
+			}
+			else {
+				throw new BuildException("WARNING - "  + filename + ":" +
+					lineNum + " is missing header text.");
+			}
+
+			int idCount = -1;
+			String newHeading = null;
+			while (true) {
+
+				newHeading = assembleId(heading, idCount);
+
+				if (line.startsWith("##")) {
+					if (secondaryIds.get(newHeading) == null) {
+
+						// Heading is unique for the article
+
+						// Map the ID to the line number
+
+						secondaryIds.put(newHeading, lineNum);
+
+						break;
+					}
+				}
+				else {
+					if (IDS.get(newHeading) == null) {
+
+						// Heading is unique for the document set
+
+						// Map the ID to the filename
+
+						IDS.put(newHeading, filename);
+
+						break;
+					}
+				}
+
+				idCount++;
+			}
+
+			newHeadingLine = line + " [](id=" + newHeading + ")";
 		}
 
-		return headerIdLine;
+		return newHeadingLine;
 	}
 
 	private static boolean isOverrideFile(String filename, List<String> duplicateFiles) {
@@ -538,55 +578,37 @@ public class NumberHeadersTask extends Task {
 		return overrideFile;
 	}
 	
-	private static void validateHeaderId(String filename, String headerIdLine, int lineNum, boolean presetHeader) {
-
-		if (presetHeader) {
-			filenamesWithPresetHeader.add(filename);
-		}
-		// Extract the header ID
-
-		String id = getHeaderId(headerIdLine);
-
-		if (id.length() > MAX_ID_LEN) {
-			StringBuilder sb =
-				new StringBuilder("FAILURE - ID longer than ");
-			sb.append(MAX_ID_LEN);
-			sb.append(" chars in ");
-			sb.append(filename);
-			sb.append(" - ");
-			sb.append(id);
-			throw new BuildException(sb.toString());
-		}
+	private static String[] separateTextAndId(String header) {
 		
-		// Check if the primary ID is already in use
-
-		String filename2 = IDS.get(id);
-
-		if (filename2 != null && !overrideFile) {
-
-			//print error
-
-			System.out.println("Dup id:" + id + " file:" +
-					filename + " line:" + lineNum + " (already used by file:" +
-					filename2 + ")");
-
-			foundDuplicateIds = true;
+		String[] headers = new String[2];
+		
+		int beginTitleIndex = header.indexOf("#");
+		int endTitleIndex;
+		int endIndexDxp = 0;
+		String headerId = "";
+		
+		if (header.contains("[](")) {
+			endTitleIndex = header.indexOf("[](");
+			endIndexDxp = header.lastIndexOf(")") + 1;
+			headerId = header.substring(endTitleIndex, endIndexDxp);
 		}
 		else {
-
-			// Add the ID
-
-			IDS.put(id, filename);
+			endTitleIndex = header.length();
 		}
+		
+		String headerTitle = header.substring(beginTitleIndex, endTitleIndex);
+		
+		headers[0] = headerTitle;
+		headers[1] = headerId;
+		
+		return headers;
 	}
-
-	private static boolean foundDuplicateIds;
-
-	private static boolean overrideFile;
 
 	private static final int MAX_ID_LEN = 75;
 
 	private static HashMap<String, String> IDS = new HashMap<String, String>();
+
+	private static Pattern headerIdPattern;
 	
 	private static List<String> ceFileList = new ArrayList<String>();
 	
@@ -595,8 +617,18 @@ public class NumberHeadersTask extends Task {
 	private static List<String> filenamesWithPresetHeader = new ArrayList<String>();
 	
 	private static List<String> filenamesWithoutPresetHeader = new ArrayList<String>();
+	
+	private static boolean overrideFile;
 
-	private static String headerIdPrefix = "header-id: ";
+	static {
+		String patternArg = "(#)+([^\\\\\\[\\]\\|%<>]*)" +
+				Pattern.quote("[") + Pattern.quote("]") +
+				Pattern.quote("(") + "id" + Pattern.quote("=") +
+				"([^\\\\\\[\\]\\|:;%]+)" + Pattern.quote(")") + 
+				"([ \\t\\n\\x0B\\f\\r]*?)";
+
+		headerIdPattern = Pattern.compile(patternArg);
+	}
 
 	public void setDocdir(String docdir) {
 		_docdir = docdir;
@@ -608,4 +640,5 @@ public class NumberHeadersTask extends Task {
 
 	private String _docdir;
 	private String _productType;
+
 }

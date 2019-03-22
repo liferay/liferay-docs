@@ -5,8 +5,6 @@ import java.io.FileReader;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.LineNumberReader;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -16,14 +14,14 @@ import java.util.regex.Pattern;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Task;
 
-public class CheckHeadersTask extends Task {
+public class CheckHeadersTaskLegacy extends Task {
 
 	@Override
 	public void execute() throws BuildException {
 
 		String docDir = _docdir;
 		String productType = _productType;
-
+		
 		List<String> dirTypes = new ArrayList<String>();
 		dirTypes.add("");
 
@@ -104,54 +102,25 @@ public class CheckHeadersTask extends Task {
 					LineNumberReader in = new LineNumberReader(
 							new FileReader(inFile));
 
-					String line;
-					String titleLine = null;
-					String titleLineError1 = null;
-					String titleLineError2 = null;
-					int counter = 0;
-					boolean headerSyntaxExists = false;
-
-					while ((line = in.readLine()) != null) {
-						if (counter == 2) {
-							headerSyntaxExists = true;
-
-							titleLine = Files.readAllLines(Paths.get(filename)).get(in.getLineNumber());
-							titleLineError1 = Files.readAllLines(Paths.get(filename)).get(in.getLineNumber() - 1);
-							titleLineError2 = Files.readAllLines(Paths.get(filename)).get(in.getLineNumber() + 1);
-
-							break;
-						}
-						if (line.startsWith("---")) {
-							counter++;
-						}
-					}
-
-					if (titleLine != null) {
+					String line = in.readLine();
+					if (line != null) {
 
 						// Check whether the markdown file starts with the proper single #
 						// header. 
 						// If it doesn't, throw an exception identifying the file
 
-						if (!titleLine.startsWith("# ")) {
+						if (!line.startsWith("# ")) {
 
-							String message;
+							String message = "FAILURE - " + filename +
+									":Line 1 does not start with a single # for a header";
 
-							if (titleLineError1.startsWith("# ") || titleLineError2.startsWith("# ")) {
-								message = "FAILURE - " + filename +
-										": File's single # header is spaced incorrectly.";
-							}
-							else {
-								message = "FAILURE - " + filename +
-										": File does not start with a single # for a header";
-							}
-
-							if (titleLine.startsWith("<!--")) {
+							if (line.startsWith("<!--")) {
 
 								in.close();
 
 								throw new BuildException(message);
 							}
-							else if (titleLine.startsWith("<")) {
+							else if (line.startsWith("<")) {
 
 								// Allow non-comment tags
 
@@ -160,16 +129,9 @@ public class CheckHeadersTask extends Task {
 							}
 
 							in.close();
-System.out.println("titleLine: " + titleLine);
+
 							throw new BuildException(message);
 						}
-					}
-
-					if (!headerSyntaxExists) {
-						String message = "FAILURE - " + filename +
-								": File does not start with proper header syntax.";
-						in.close();
-						throw new BuildException(message);
 					}
 
 					in.close();
@@ -180,7 +142,7 @@ System.out.println("titleLine: " + titleLine);
 					throw new BuildException(e.getLocalizedMessage());
 				}
 			}
-
+			
 			System.out.println("Finished checking headers in articles" + dirType);
 		}
 	}
