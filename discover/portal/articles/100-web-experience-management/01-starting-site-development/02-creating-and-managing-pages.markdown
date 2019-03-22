@@ -411,15 +411,15 @@ Page Settings. -Cody -->
 
 This option only appears if you have embedded one or more portlets on
 the page. Previous to @product@ 7.0, you were able to embed portlets on a page by
-acquring their portlet ID and using a `runtime-portlet` tag in the Web Content
+acquiring their portlet ID and using a `runtime-portlet` tag in the Web Content
 Display app to embed a portlet on a page. This is no longer possible.
 
 Applications can now be embedded on a page via web content template. To learn
 more about this, see the
 [Adding Templates](/discover/portal/-/knowledge_base/7-0/designing-uniform-content#adding-templates)
-section. Also, you can embed a portlet on a page layout or theme programtically.
+section. Also, you can embed a portlet in themes programmatically.
 If you're interested in learning more about this, visit the
-[Embedding Portlets in Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-0/embedding-portlets-in-themes-and-layout-templates)
+[Embedding Portlets in Themes](/develop/tutorials/-/knowledge_base/7-0/embedding-portlets-in-themes)
 tutorial.
 
 #### Customization Settings [](id=customization-settings)
@@ -432,7 +432,7 @@ section.
 
 ### Enhancing Page Intelligence [](id=enhancing-page-intelligence)
 
-Your page's configuration options offers several oppurtunities to improve your
+Your page's configuration options offers several opportunities to improve your
 page's data optimization and JavaScript, among others. To enhance your page's
 intelligence, configure the options described below.
 
