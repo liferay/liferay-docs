@@ -1,8 +1,8 @@
 # Migrating @product@ Data Using Vendor Tools [](id=migrating-product-data-using-vendor-tools)
 
 If the vendor whose database you're migrating to provides or suggests a
-migration tool, consider using it. These data migration steps incorporate using
-a tool:
+migration tool, consider using it. These are the high level data migration steps
+when using a tool:
 
 1.  Create the target database. 
 
@@ -14,7 +14,7 @@ a tool:
 
     +$$$
 
-    **Tip:** The suggested way to check the migrated data is to compare the it 
+    **Tip:** The suggested way to check the migrated data is to compare it 
     on the target database to data on a new  database, freshly initialized by
     @product@. Here's how to initialize a new empty database: 
     
@@ -35,7 +35,8 @@ a tool:
 
 7.  Re-start your application server. 
 
-Congratulations! You've migrated your data to a new database.
+Following these high level steps should result in a successful migration to
+a new database. If you need detailed help, please contact Liferay Support.
 
 ## Related Topics 
 
