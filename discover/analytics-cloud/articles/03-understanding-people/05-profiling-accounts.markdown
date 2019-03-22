@@ -1,4 +1,4 @@
-# Profiling Accounts
+# Profiling Accounts [](id=profiling-accounts)
 
 If you have a Salesforce data source, Analytics Cloud can import and analyze 
 Salesforce account data. By combining Salesforce account data with data from 
@@ -27,7 +27,7 @@ Click an account to view its information, which is organized into these tabs:
 
 The sections that follow describe each. 
 
-## Overview 
+## Overview [](id=overview)
 
 The Overview tab presents summaries of the account's data. It displays these 
 summaries via these panes: 
@@ -46,7 +46,7 @@ detailed information about activities.
 
 ![Figure 2: The Overview tab displays summaries of the account's data.](../../images/accounts-overview.png)
 
-## Activities
+## Activities [](id=activities)
 
 The Activities tab shows the activities of the individuals in the account. A 
 histogram shows the number of activities by date and the average engagement 
@@ -55,31 +55,31 @@ shows more detail about the activities.
 
 ![Figure 3: The Activities tab displays data on activities of the account's individuals.](../../images/accounts-activities.png)
 
-## Interests
+## Interests [](id=interests)
 
 The Interests tab shows the topics of interest for the account's individuals. 
 Analytics Cloud identifies these topics via the same methodology it uses for 
 individuals. For more information, see 
-[Customer Insights](liferay.com). 
+[Customer Insights](https://help.liferay.com/hc/en-us/articles/360006947951-Customer-Insights). 
 
-## Segments
+## Segments [](id=segments)
 
 The Segments tab shows the segments for the account's individuals. These 
 segments function the same as segments in general. The only difference is that 
 the segments here apply to the individuals in the account. For more information 
 on segments, see the documentation on 
-[creating](liferay.com) 
+[creating](https://help.liferay.com/hc/en-us/articles/360006947671-Creating-Segments) 
 and 
-[profiling](liferay.com) 
+[profiling](https://help.liferay.com/hc/en-us/articles/360006947851-Profiling-Segments) 
 segments. 
 
-## Individuals
+## Individuals [](id=individuals)
 
 The Individuals tab shows information about the individuals in the account. For 
 more information on individuals in Analytics Cloud, see 
-[Profiling Individuals](liferay.com).
+[Profiling Individuals](https://help.liferay.com/hc/en-us/articles/360006946171-Profiling-Individuals).
 
-## Details
+## Details [](id=details)
 
 The Details tab shows information about the account's properties. The properties 
 appear in a searchable table that shows each account property in Analytics Cloud 
