@@ -8,8 +8,8 @@ There's
 [JUnit](https://junit.org)
 for unit testing,
 [Arquillian](http://arquillian.org/)
-for integration testing, and more; consult the testing framework's
-documentation for details. 
+plus JUnit annotations for integration testing, and more; consult the testing
+framework's documentation for details. 
 
 Here are the ways Liferay facilitates testing:
 
