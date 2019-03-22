@@ -29,6 +29,17 @@
 
 	<!-- taskdefs -->
 
+	<taskdef name="addtoc" classname="com.liferay.documentation.util.AddTOCTask">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
 	<taskdef name="checkarticleimgssite" classname="com.liferay.documentation.util.CheckArticleImagesTask">
 		<classpath>
 			<fileset dir="${project.dir}/lib" includes="*.jar" />
@@ -176,6 +187,21 @@
 			<arg value="${article}"/>
 			<arg value="${build.dir}/${article}.html"/>
 		</java>
+	</target>
+
+	<target name="add-toc" description="Adds the Table of Contents syntax for each CE Markdown article.">
+		<addtoc docdir="${doc.dir}" producttype="ce">
+		</addtoc>
+	</target>
+
+	<target name="add-toc-dist" description="Adds the Table of Contents syntax for each Markdown article when generating Zip.">
+		<addtoc docdir="${doc.dir}/${temp.dir}" producttype="dist">
+		</addtoc>
+	</target>
+
+	<target name="add-toc-dxp" description="Adds the Table of Contents syntax for each DXP Markdown article.">
+		<addtoc docdir="${doc.dir}" producttype="dxp">
+		</addtoc>
 	</target>
 
 	<target name="article-to-html-dxp" depends="prepare, check-article-images-dxp" description="Converts a single Markdown DXP article to an HTML file.">
@@ -558,7 +584,7 @@
 		<mkdir dir="${dist.dir}"/>
 	</target>
 
-	<target name="prepare-dist-test" depends="convert-headers-test, convert-sidebars-test, check-images-dist, check-intros-dist, clean-dist, number-headers-dist, number-images-dist, check-headers-dist, create-metadata-file" description="Prepares the document for distribution.">
+	<target name="prepare-dist-test" depends="convert-headers-test, convert-sidebars-test, add-toc-dist, check-images-dist, check-intros-dist, clean-dist, number-headers-dist, number-images-dist, check-headers-dist, create-metadata-file" description="Prepares the document for distribution.">
 		<echo message="... creating ${dist.dir} directory"/>
 		<mkdir dir="${dist.dir}"/>
 	</target>
