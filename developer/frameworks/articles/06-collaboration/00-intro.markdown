@@ -4,6 +4,8 @@ header-id: collaboration
 
 # Collaboration
 
+[TOC levels=1-4]
+
 Underlying the 
 [collaboration suite](/discover/portal/-/knowledge_base/7-2/collaboration) 
 is a set of powerful APIs that add collaboration features to your apps. For 

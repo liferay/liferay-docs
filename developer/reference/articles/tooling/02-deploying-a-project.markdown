@@ -4,6 +4,8 @@ header-id: deploying-a-project
 
 # Deploying a Project
 
+[TOC levels=1-4]
+
 Deploying a project to @product@ can be completed using your tool of choice. The
 following tools are preconfigured (or can be easily configured) for Liferay
 project generation:

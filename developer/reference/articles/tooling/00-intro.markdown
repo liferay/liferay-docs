@@ -4,6 +4,8 @@ header-id: tooling
 
 # Tooling
 
+[TOC levels=1-4]
+
 You can write code for @product@ using any standard toolset. Liferay is
 tool-agnostic, which frees you to work with whatever you're already productive
 using.
