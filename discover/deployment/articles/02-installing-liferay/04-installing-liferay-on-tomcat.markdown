@@ -124,13 +124,20 @@ Next, you need to configure Tomcat for running @product@.
 
     Once you've done this, configure Catalina's options to support @product@: 
 
-        CATALINA_OPTS="$CATALINA_OPTS -Dfile.encoding=UTF8 -Djava.net.preferIPv4Stack=true  -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=384m" 
+        CATALINA_OPTS="$CATALINA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true  -Dorg.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false -Duser.timezone=GMT -Xmx1024m -XX:MaxPermSize=384m" 
 
     This sets the file encoding to UTF-8, prefers an IPv4 stack over IPv6,
     prevents Tomcat from working around garbage collection bugs relating to
     static or final fields (these bugs don't exist in @product@ and working
     around them causes problems with the logging system), sets the time zone to
     GMT, and gives the JVM 1GB of RAM. 
+
+    +$$$
+
+    **Important:** For @product@ to work properly, the application server JVM 
+    must use the `GMT` time zone and `UTF-8` file encoding. 
+
+    $$$
 
     These are initial settings. After installation you should tune your system
     for performance. As a result of that process, you may find you want to

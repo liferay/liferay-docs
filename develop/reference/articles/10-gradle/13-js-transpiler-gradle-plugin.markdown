@@ -4,6 +4,14 @@ The JS Transpiler Gradle plugin lets you run [`metal-cli`](https://github.com/me
 to build [Metal.js](http://metaljs.com/) code, compile Soy files, and transpile
 ES6 to ES5.
 
++$$$
+
+**Important:** If you're using [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace) 
+to create your app, the JS Transpiler Gradle plugin is applied by default. Do 
+not apply the JS Transpiler Gradle plugin if you're using Liferay Workspace. 
+
+$$$
+
 The plugin has been successfully tested with Gradle 4.10.2.
 
 ## Usage [](id=usage)
@@ -13,7 +21,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.js.transpiler", version: "2.4.21"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.js.transpiler", version: "2.4.24"
     }
 
     repositories {
