@@ -74,8 +74,8 @@ public class CheckLinks {
 				}
 
 				if (line.contains("](/deployment/") || line.contains("](/developer/") ||
-						line.contains("](/discover/") || line.contains("](/distribute/") ||
-						line.contains("](/web/commerce/") || line.contains("](/user/")) {
+						line.contains("](/distribute/") || line.contains("](/web/commerce/") ||
+						line.contains("](/user/")) {
 
 					String findStr = "/-/knowledge_base/";
 					int urlsInLine = countStrings(line, findStr);
@@ -756,6 +756,7 @@ public class CheckLinks {
 					secondaryHeaders.add(header);
 				}
 			}
+			//secondaryHeaders.clear();
 			in.close();
 		}
 
@@ -1044,7 +1045,8 @@ public class CheckLinks {
 		headers = assignDirHeaders(line, lineIndex);
 
 		// If headers is empty, the assignDirHeaders method could not match the
-		// relative URL with the header list (e.g., discover/portal).
+		// relative URL with the header list (e.g., developer/user). This only
+		// happens when the first folder is valid but its subfolder isn't.
 		if (headers.isEmpty()) {
 			logInvalidUrl(article, in.getLineNumber(), line, false);
 		}
