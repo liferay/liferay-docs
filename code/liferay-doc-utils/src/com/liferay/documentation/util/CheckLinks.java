@@ -8,6 +8,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
@@ -187,6 +188,32 @@ public class CheckLinks {
 		}
 
 		return articles;
+	}
+
+	private static String assembleId(String heading, int idCount) {
+
+		String count = "";
+		if (idCount > -1) {
+			count = "-" + idCount;
+		}
+
+		int idLength = heading.length() + count.length();
+		if (idLength >  MAX_ID_LEN) {
+			heading = heading.substring(
+				0,
+				(heading.length() - Math.abs(idLength -  MAX_ID_LEN)));
+		}
+
+		StringBuffer sb = new StringBuffer(heading);
+		sb.append(count);
+
+		String finalHeaderId = sb.toString();
+
+		if (finalHeaderId.contains("--")) {
+			finalHeaderId = finalHeaderId.replaceAll("--", "-");
+		}
+
+		return finalHeaderId;
 	}
 
 	/**
@@ -461,6 +488,35 @@ public class CheckLinks {
 		return header;
 	}
 
+	private static String extractHeading(String line) {
+
+		int indexOfFirstHeaderChar = line.indexOf("# ") + 2;
+
+		String heading = line.substring(indexOfFirstHeaderChar);
+		heading = heading.trim();
+
+		// Replace each spaced dash, space, dot, and slash with a dash
+
+		heading = heading.replace(" - ", "-");
+		heading = heading.replace(' ', '-');
+		heading = heading.replace('.', '-');
+		heading = heading.replace('/', '-');
+		heading = heading.toLowerCase();
+
+		// Filter out characters other than dashes, letters, and digits
+
+		StringBuffer headingSb = new StringBuffer();
+		for (int i = 0; i < heading.length(); i++) {
+			char ch = heading.charAt(i);
+
+			if (ch == '-' || Character.isLetterOrDigit(ch)) {
+				headingSb.append(ch);
+			}
+		}
+		heading = headingSb.toString();
+		return heading;
+	}
+
 	/**
 	 * Returns a map of headers paired with their line indexes. This method is
 	 * used to extract multiple headers (from relative links) that are contained
@@ -680,23 +736,25 @@ public class CheckLinks {
 
 			LineNumberReader in = new LineNumberReader(new FileReader(article));
 			String line = null;
+			String header;
 
 			while ((line = in.readLine()) != null) {
 
-				if (line.contains("#") && line.contains("[](id=")) {
+				if (line.startsWith(headerSyntax)) {
 
-					int begIndex = line.indexOf("[](id=") + 6;
-					int endIndex = line.lastIndexOf(")");
-					String header = line.substring(begIndex, endIndex);
+					int begIndex = headerSyntax.length();
+					int endIndex = line.length();
+					System.out.println("line: " + line);
 
-					if (line.contains("##")) {
-						secondaryHeaders.add(header);
-					}
-					else {
-						primaryHeaders.add(header);
-					}
+					header = line.substring(begIndex, endIndex);
+
+					primaryHeaders.add(header);
 				}
+				else if (line.startsWith("## ")) {
 
+					header = generateVirtualSecondaryHeader(line, article.getPath());
+					secondaryHeaders.add(header);
+				}
 			}
 			in.close();
 		}
@@ -706,6 +764,34 @@ public class CheckLinks {
 		headers.add(secondaryHeaders);
 
 		return headers;
+	}
+
+	private static String generateVirtualSecondaryHeader(String line, String filename) {
+
+		String heading = extractHeading(line);
+
+		int idCount = -1;
+		String newHeading = null;
+		while (true) {
+
+			newHeading = assembleId(heading, idCount);
+
+				if (secondaryIDs.get(newHeading) == null) {
+
+					// Heading is unique for the document set
+
+					// Map the ID to the filename
+
+					secondaryIDs.put(newHeading, filename);
+
+					break;
+				}
+
+			idCount++;
+		}
+		String generatedHeader = assembleId(heading, idCount);
+
+		 return generatedHeader;
 	}
 
 	/**
@@ -957,8 +1043,14 @@ public class CheckLinks {
 
 		headers = assignDirHeaders(line, lineIndex);
 
+		// If headers is empty, the assignDirHeaders method could not match the
+		// relative URL with the header list (e.g., discover/portal).
+		if (headers.isEmpty()) {
+			logInvalidUrl(article, in.getLineNumber(), line, false);
+		}
+
 		// Check 7.1 portal and 1.0 commerce links from local liferay-docs repo
-		if ((line.contains("/" + PORTAL_VERSION + "/") || line.contains("/" + COMMERCE_VERSION + "/")) &&
+		else if ((line.contains("/" + PORTAL_VERSION + "/") || line.contains("/" + COMMERCE_VERSION + "/")) &&
 				!differingDefaultVersion) {
 
 			// Ensure portal link versions aren't mixed with commerce link versions
@@ -1032,10 +1124,13 @@ public class CheckLinks {
 	private static boolean checkDxpLinks;
 	private static boolean checkLegacyLinks;
 	private static List<File> fileOverrides = new ArrayList<File>();
+	private static String headerSyntax = "header-id: ";
 	private static String ldnArticle;
+	private static final int MAX_ID_LEN = 75;
 	private static String platformReferenceSite;
 	private static String platformToken;
 	private static int resultsNumber = 0;
+	private static HashMap<String, String> secondaryIDs = new HashMap<String, String>();
 	private static boolean validUrl;
 
 	// Versions
