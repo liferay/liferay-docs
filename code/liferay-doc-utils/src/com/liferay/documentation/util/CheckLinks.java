@@ -113,6 +113,11 @@ public class CheckLinks {
 						checkMultiLinks(article, line, in, findStr);
 					}
 				}
+				// Check for old links no longer available in 7.2
+				else if (line.contains("](/discover/")) {
+					logInvalidUrl(article, in.getLineNumber(), line, false);
+				}
+
 				if (line.contains("](#")) {
 
 					String findStr = "](#";
@@ -744,7 +749,6 @@ public class CheckLinks {
 
 					int begIndex = headerSyntax.length();
 					int endIndex = line.length();
-					System.out.println("line: " + line);
 
 					header = line.substring(begIndex, endIndex);
 
