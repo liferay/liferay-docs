@@ -18,17 +18,18 @@ your app's publication process.
 
 The Export/Import and Staging frameworks are closely tied together, both
 implementing the same interfaces and sharing the same extension points. This
-means that by implementing one of these frameworks in your app, you can leverage
-the other with a few simple configurations.
+means that by implementing one of these frameworks in your app, you
+automatically leverage the other. There are a few simple configurations that can
+be set to customize them separately. You'll learn about this later.
 
 Generally, Export/Import can be viewed as the base feature and Staging is built
-on top of it. This documentation is positioned with this in mind. You can
-visit the
+on top of it (although they're implemented together). This documentation is
+positioned with this in mind. You can visit the
 [Export/Import](/developer/frameworks/-/knowledge_base/7-2/export-import)
 framework's articles for the base APIs that both it and the Staging frameworks
 share. Reference the
 [Staging](/developer/frameworks/-/knowledge_base/7-2/staging) framework's
-articles for additional APIs/configuration pertaining only to it.
+articles for additional configuration pertaining only to it.
 
 Here are a few of the things you can do with the Export/Import and Staging APIs. 
 
@@ -37,7 +38,7 @@ Here are a few of the things you can do with the Export/Import and Staging APIs.
 The Export/Import feature adds another dimension to your application by letting
 you produce reusable content and import content from other places. You can even
 leverage this feature to backup your content. @product@ packages its content in
-LAR files (Liferay ARchive).
+[LAR files (Liferay ARchive)](/developer/reference/-/knowledge_base/7-2/liferay-archive-lar-file).
 
 ![Figure 1: Leveraging the Export/Import feature in your app is useful for sharing content.](../../images/export-import-preview.png)
 
@@ -63,3 +64,6 @@ APIs:
 - Remote Staging environment tracking
 - Single asset publishing
 - Content tracking on page variations
+
+Continue on to learn more about the frameworks that bring content publication
+management to life!

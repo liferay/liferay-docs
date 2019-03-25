@@ -42,6 +42,11 @@ You're not required to implement a staged model data handler for every entity in
 your application, but they're necessary for any entity you want to export/import
 or have the staging framework track.
 
+| **Note:** Creating data handlers for your app means it's automatically tracked
+| by the Staging framework. You can further customize how Staging handles your
+| app, but creating staged models and data handlers is what registers your app
+| for Staging.
+
 Before implementing data handlers, make sure your application is ready for the
 Export/Import and Staging frameworks by creating
 [staged models](/developer/frameworks/-/knowledge_base/7-2/staged-models).
@@ -85,15 +90,13 @@ interface is provided below:
     - `setDeletionSystemEventStagedModelTypes`: sets the staged model deletions
       that the portlet data handler should track. For example, the Bookmarks app
       tracks Bookmark entries and folders.
-    - `setExportControls`: adds fine grained controls over export behavior that
-      are rendered in the Export UI. For example, the Bookmarks app, adds a
+    - `setExportControls`: adds fine grained controls over export/import
+      behavior that is rendered in the Export/Import UI. This also sets the
+      `setImportControls` method. For example, the Bookmarks app adds a
       checkbox to select Bookmarks content (entries) to export.
-    - `setStagingControls`: adds the Staging UI to your app. This lets your
-      app's entities be managed by the Staging framework.
-    <!--
-    - `setImportControls`: adds fine grained controls over import behavior that
-      are rendered in the Import UI. For the Bookmarks application, a checkbox
-      is added to select Bookmarks content (entries) to import.-->
+    - `setStagingControls`: adds fine grained controls over staging behavior
+      that is rendered in the Staging UI. For example, this enables your
+      app's checkboxes in the Content section displayed during publication.
 
 - The `doExportData` method checks if anything should be exported. For example,
   the Bookmarks app uses this method to check if the user selected Bookmarks
