@@ -4,6 +4,8 @@ header-id: using-the-export-import-lifecycle-listener-framework
 
 # Using the Export/Import Lifecycle Listener Framework
 
+[TOC levels=1-4]
+
 In this tutorial, you'll learn how to use the `ExportImportLifecycleListener`
 framework to listen for processes/events during the staging and export/import
 lifecycles.

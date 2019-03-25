@@ -4,6 +4,8 @@ header-id: content-publication-management
 
 # Content Publication Management
 
+[TOC levels=1-4]
+
 Managing content publication is primarily controlled by two frameworks:
 
 <!-- - Change Lists -->

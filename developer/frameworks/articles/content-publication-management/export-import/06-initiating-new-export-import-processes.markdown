@@ -4,6 +4,8 @@ header-id: initiating-new-export-import-processes
 
 # Initiating New Export/Import Processes
 
+[TOC levels=1-4]
+
 In this tutorial, you'll learn about the `ExportImportConfiguration` framework
 and how you can take advantage of provided services and factories to create
 these controller objects. Once they're created, you can easily implement
