@@ -75,7 +75,9 @@ interface is provided below:
       once its provided module has started.
     - `property`: sets various properties for the component service. You must
       associate the portlet you wish to handle with this service so they
-      function properly in the export/import environment.
+      function properly in the export/import environment. You should have one
+      portlet data handler for each portlet (e.g., Bookmarks and Bookmarks
+      Admin).
     - `service`: points to the `PortletDataHandler.class` interface.
 
 - The `activate` method sets what the portlet data handler controls. It also
@@ -155,7 +157,7 @@ provided below:
 
 - The `@Component` annotation section above the implementation class's
   declaration registers the class as a staged model data handler in the OSGi
-  service registry. There are a few annotation attributes you should set:
+  service registry. There are two annotation attributes you should set:
 
     - `immediate`: directs the container to activate the component immediately
       once its provided module has started.
