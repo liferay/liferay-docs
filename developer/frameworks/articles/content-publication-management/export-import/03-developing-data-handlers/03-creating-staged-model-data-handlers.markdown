@@ -4,6 +4,8 @@ header-id: creating-staged-model-data-handlers
 
 # Creating Staged Model Data Handlers
 
+[TOC levels=1-4]
+
 In this tutorial, you'll create the `BookmarksStagedModelDataHandler` class used
 for the Bookmarks application. The Bookmarks application has two staged models:
 entries and folders. Creating data handlers for these two entities is similar,

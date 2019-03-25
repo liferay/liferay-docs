@@ -4,6 +4,8 @@ header-id: providing-entity-specific-local-services-for-export-import
 
 # Providing Entity-Specific Local Services for Export/Import
 
+[TOC levels=1-4]
+
 Data handlers often must leverage your app's local services to perform
 Export/Import-related tasks for its entities. When the Export/Import framework
 operates on entities (i.e., staged models), it often cannot manage important

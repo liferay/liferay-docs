@@ -4,6 +4,8 @@ header-id: generating-staged-models-using-service-builder
 
 # Generating Staged Models Using Service Builder
 
+[TOC levels=1-4]
+
 Instead of having to create staged models for your app manually, you can
 leverage
 [Service Builder](/developer/frameworks/-/knowledge_base/7-2/service-builder) to

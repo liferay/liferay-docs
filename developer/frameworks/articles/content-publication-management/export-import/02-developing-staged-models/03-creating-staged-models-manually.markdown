@@ -4,6 +4,8 @@ header-id: creating-staged-models-manually
 
 # Creating Staged Models Manually
 
+[TOC levels=1-4]
+
 There are times when using
 [Service Builder to generate your staged models](/developer/frameworks/-/knowledge_base/7-2/generating-staged-models-using-service-builder)
 is not practical. In these cases, you should create your staged models manually.

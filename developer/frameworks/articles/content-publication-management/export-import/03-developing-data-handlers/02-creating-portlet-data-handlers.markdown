@@ -4,6 +4,8 @@ header-id: creating-portlet-data-handlers
 
 # Creating Portlet Data Handlers
 
+[TOC levels=1-4]
+
 In this tutorial, you'll create the `BookmarksPortletModelDataHandler` class
 used for the Bookmarks application. The Bookmarks application's portlet data
 handler tracks system events dealing with Bookmarks entities. It also configures

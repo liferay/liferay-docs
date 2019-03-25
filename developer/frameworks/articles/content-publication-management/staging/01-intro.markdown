@@ -4,6 +4,8 @@ header-id: staging
 
 # Staging
 
+[TOC levels=1-4]
+
 Staging lets you change your Site behind the scenes without affecting the live
 Site, and then you can publish all the changes in one fell swoop. If you include
 staging support in your application, your users can stage its content until it's

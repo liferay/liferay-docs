@@ -4,6 +4,8 @@ header-id: developing-staged-models
 
 # Developing Staged Models
 
+[TOC levels=1-4]
+
 To track an entity of an application with the Export/Import framework, you must
 implement the
 [StagedModel](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/StagedModel.html)

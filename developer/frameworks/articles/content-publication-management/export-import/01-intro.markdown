@@ -4,6 +4,8 @@ header-id: export-import
 
 # Export/Import
 
+[TOC levels=1-4]
+
 The Export/Import feature lets users export content from the portal and import
 external content into the portal. Providing the ability to export/import your
 application's assets makes using your application much more site

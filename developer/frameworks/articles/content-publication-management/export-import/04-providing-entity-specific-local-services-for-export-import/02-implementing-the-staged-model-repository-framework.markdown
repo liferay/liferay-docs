@@ -4,6 +4,8 @@ header-id: implementing-the-staged-model-repository-framework
 
 # Implementing the Staged Model Repository Framework
 
+[TOC levels=1-4]
+
 In this article, you'll step through a quick example that demonstrates
 implementing the `StagedModelRepository` interface to use for a staged model.
 This example references Liferay's Bookmarks app and Bookmarks Entry entities.

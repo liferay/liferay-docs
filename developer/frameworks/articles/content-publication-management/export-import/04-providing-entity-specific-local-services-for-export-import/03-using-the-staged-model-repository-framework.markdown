@@ -4,6 +4,8 @@ header-id: using-the-staged-model-repository-framework
 
 # Using the Staged Model Repository Framework
 
+[TOC levels=1-4]
+
 Leveraging the Staged Model Repository framework in your app is easy once you've
 [created staged model repository implementation classes](/developer/frameworks/-/knowledge_base/7-2/implementing-the-staged-model-repository-framework).
 

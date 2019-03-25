@@ -4,6 +4,8 @@ header-id: developing-data-handlers
 
 # Developing Data Handlers
 
+[TOC levels=1-4]
+
 A common requirement for many data driven applications is to import and export
 data. This *could* be accomplished by accessing your database directly and
 running SQL queries to export/import data; however, this has several drawbacks:

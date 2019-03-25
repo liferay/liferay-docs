@@ -4,6 +4,8 @@ header-id: liferay-archive-lar-file
 
 # Liferay Archive (LAR) File
 
+[TOC levels=1-4]
+
 An easier way to export/import your application's data is to use a Liferay
 ARchive (LAR) file. Liferay provides the LAR feature to address the need to
 export/import data in a database agnostic manner. So what exactly is a LAR file?
