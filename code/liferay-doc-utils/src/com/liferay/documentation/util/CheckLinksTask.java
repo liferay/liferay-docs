@@ -8,7 +8,6 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
@@ -16,6 +15,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 
+import org.apache.tools.ant.BuildException;
+import org.apache.tools.ant.Task;
 import org.htmlparser.Parser;
 import org.htmlparser.filters.NodeClassFilter;
 import org.htmlparser.tags.LinkTag;
@@ -24,24 +25,25 @@ import org.htmlparser.util.ParserException;
 
 import com.liferay.portal.kernel.util.Validator;
 
-public class CheckLinks {
+/**
+ * @author Cody Hoag
+ */
+public class CheckLinksTask extends Task {
 
-	public static void main(String[] args) throws Exception {
+	@Override
+	public void execute() throws BuildException {
 
-		String legacyLinks = args[0];
-		checkLegacyLinks = Boolean.parseBoolean(legacyLinks);
+		checkApiLinks = _apiLinks;
+		checkDxpLinks = _dxpCheck;
+		checkLegacyLinks = _legacyLinks;
 
-		String apiLinks = args[1];
-		checkApiLinks = Boolean.parseBoolean(apiLinks);
+		String docDir = _docdir;
 
-		String docDir = args[2];
-		platformToken = args[3];
-		appToken = args[4];
-		platformReferenceSite = args[5];
-		appReferenceSite = args[6];
+		appToken = _appToken;
+		platformToken = _platformToken;
 
-		String dxpLinks = args[7];
-		checkDxpLinks = Boolean.parseBoolean(dxpLinks);
+		platformReferenceSite = _platformReferenceSite;
+		appReferenceSite = _appReferenceSite;
 
 		// e.g., docDir = tutorials
 		File currentArticleDir = new File("../" + docDir + "/articles");
@@ -53,6 +55,7 @@ public class CheckLinks {
 
 		assignReferencedDirArticles(articleDirs);
 
+		try {
 		userGuideHeaders = findHeaders(userGuideArticles);
 		deploymentGuideHeaders = findHeaders(deploymentGuideArticles);
 		distributeGuideHeaders = findHeaders(distributeGuideArticles);
@@ -150,12 +153,47 @@ public class CheckLinks {
 
 			in.close();
 		}
+		} catch (IOException e) {
+			throw new BuildException(e.getLocalizedMessage());
+		}
 		if (resultsNumber > 0) {
-			throw new Exception("\n\n**Total Broken Links: " + resultsNumber + "**\n");
+			throw new BuildException("\n\n**Total Broken Links: " + resultsNumber + "**\n");
 		}
 		else {
 			System.out.println("\nNo Broken Links!");
 		}
+	}
+
+	public void setApiLinks(boolean apiLinks) {
+		_apiLinks = apiLinks;
+	}
+
+	public void setDocdir(String docdir) {
+		_docdir = docdir;
+	}
+
+	public void setLegacyLinks(boolean legacyLinks) {
+		_legacyLinks = legacyLinks;
+	}
+
+	public void setAppReferenceSite(String appReferenceSite) {
+		_appReferenceSite = appReferenceSite;
+	}
+
+	public void setPlatformReferenceSite(String platformReferenceSite) {
+		_platformReferenceSite = platformReferenceSite;
+	}
+
+	public void setAppToken(String appToken) {
+		_appToken = appToken;
+	}
+
+	public void setPlatformToken(String platformToken) {
+		_platformToken = platformToken;
+	}
+
+	public void setDxpCheck(boolean dxpCheck) {
+		_dxpCheck = dxpCheck;
 	}
 
 	/**
@@ -1220,6 +1258,15 @@ public class CheckLinks {
 				" Line: " + line + "\n");
 
 	}
+
+	private boolean _apiLinks;
+	private String _docdir;
+	private boolean _legacyLinks;
+	private String _appReferenceSite;
+	private String _platformReferenceSite;
+	private String _appToken;
+	private String _platformToken;
+	private boolean _dxpCheck;
 
 	private static String appReferenceSite;
 	private static String appToken;
