@@ -4,6 +4,8 @@ header-id: installing-the-liferay-intellij-plugin
 
 # Installing the Liferay IntelliJ Plugin
 
+[TOC levels=1-4]
+
 There are two ways to install the Liferay IntelliJ plugin:
 
 - [via IntelliJ Marketplace](#installing-via-intellij-marketplace)

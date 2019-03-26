@@ -4,6 +4,8 @@ header-id: installing-a-server-in-intellij
 
 # Installing a Server in IntelliJ
 
+[TOC levels=1-4]
+
 Installing a Liferay server in IntelliJ is easy. In just a few steps, you'll
 have your server up and running.
 

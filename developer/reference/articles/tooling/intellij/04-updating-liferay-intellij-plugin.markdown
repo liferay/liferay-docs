@@ -4,6 +4,8 @@ header-id: updating-liferay-intellij-plugin
 
 # Updating Liferay IntelliJ Plugin
 
+[TOC levels=1-4]
+
 If you're already using the Liferay IntelliJ plugin but need to update your
 environment, follow the steps below:
 
