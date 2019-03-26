@@ -4,6 +4,8 @@ header-id: searching-product-source-in-dev-studio
 
 # Searching @product@ Source in Dev Studio
 
+[TOC levels=1-4]
+
 In Liferay Dev Studio, you can search through @product@'s source code to aid in
 the development of your project. Liferay provides great resources to help with
 development (e.g., official documentation,

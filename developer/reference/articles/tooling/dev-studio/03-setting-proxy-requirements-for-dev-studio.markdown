@@ -4,6 +4,8 @@ header-id: setting-proxy-requirements-for-dev-studio
 
 # Setting Proxy Requirements for Dev Studio
 
+[TOC levels=1-4]
+
 If you have proxy server requirements and want to configure your http(s) proxy		
 to work with Liferay Dev Studio, follow the instructions below.
 

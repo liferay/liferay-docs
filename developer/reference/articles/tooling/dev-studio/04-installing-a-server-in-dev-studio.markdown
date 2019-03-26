@@ -4,6 +4,8 @@ header-id: installing-a-liferay-server-in-dev-studio
 
 # Installing a Liferay Server in Dev Studio
 
+[TOC levels=1-4]
+
 Dev Studio offers a single GUI for managing a Liferay server and its deployed
 projects. A server is installed and managed from the Servers view (lower left
 corner in Eclipse).

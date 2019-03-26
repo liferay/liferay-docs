@@ -4,6 +4,8 @@ header-id: maven-in-dev-studio
 
 # Maven in Dev Studio
 
+[TOC levels=1-4]
+
 You can take full advantage of [Maven](https://maven.apache.org/) in Liferay Dev
 Studio with its built-in Maven support. In this article, you'll learn about the
 following topics:

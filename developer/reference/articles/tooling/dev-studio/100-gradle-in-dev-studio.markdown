@@ -4,6 +4,8 @@ header-id: gradle-in-dev-studio
 
 # Gradle in Dev Studio
 
+[TOC levels=1-4]
+
 [Gradle](http://gradle.org/) is a popular open source build automation system.
 You can take full advantage of Gradle in Liferay Dev Studio through
 [Buildship](https://projects.eclipse.org/releases/photon), a collection

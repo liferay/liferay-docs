@@ -4,6 +4,8 @@ header-id: importing-projects-in-dev-studio
 
 # Importing Projects in Dev Studio
 
+[TOC levels=1-4]
+
 There are two types of Liferay projects you can import into Dev Studio:
 
 - Liferay Module Project (this also includes WAR-style projects)

@@ -4,6 +4,8 @@ header-id: updating-liferay-dev-studio
 
 # Updating Liferay Dev Studio
 
+[TOC levels=1-4]
+
 If you're already using Liferay Dev Studio but must update your environment,
 follow the steps below:
 

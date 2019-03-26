@@ -4,6 +4,8 @@ header-id: using-the-gogo-shell-in-dev-studio
 
 # Using the Gogo Shell in Dev Studio
 
+[TOC levels=1-4]
+
 If you're using Dev Studio to develop and deploy your projects, you may be
 interested in managing them after they're deployed with Dev Studio too. You can
 do this with the Dev Studio's

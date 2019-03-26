@@ -4,6 +4,8 @@ header-id: debugging-product-source-in-dev-studio
 
 # Debugging @product@ Source in Dev Studio
 
+[TOC levels=1-4]
+
 You can debug @product@ source code in Dev Studio to help resolve errors.
 Debugging @product@ code follows most of the same techniques associated with
 debugging in Eclipse. If you need help with general debugging, you can visit
