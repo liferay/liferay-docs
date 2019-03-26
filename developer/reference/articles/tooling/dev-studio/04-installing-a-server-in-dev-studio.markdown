@@ -4,9 +4,9 @@ header-id: installing-a-liferay-server-in-dev-studio
 
 # Installing a Liferay Server in Dev Studio
 
-Installing a Liferay server in Dev Studio lets you manage it and its deployed
-projects in a single GUI. A server is installed and managed from the Servers
-view (lower left corner in Eclipse).
+Dev Studio offers a single GUI for managing a Liferay server and its deployed
+projects. A server is installed and managed from the Servers view (lower left
+corner in Eclipse).
 
 For reference, here's how the Dev Studio server buttons work with your @product@
 instance:
@@ -20,7 +20,8 @@ instance:
   [Debugging @product@ source in Dev Studio](/developer/reference/-/knowledge_base/7-2/debugging-product-source-in-dev-studio)
   article.
 
-Follow these steps to install your server:
+Follow these steps to install your server. Note you must have already downloaded
+and de-compressed the server bundle: 
 
 1.  In the Servers view, click the *No Servers are available* link. If you
     already have a server installed, you can install a new server by

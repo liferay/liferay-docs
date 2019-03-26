@@ -4,7 +4,7 @@ header-id: updating-liferay-dev-studio
 
 # Updating Liferay Dev Studio
 
-If you're already using Liferay Dev Studio but need to update your environment,
+If you're already using Liferay Dev Studio but must update your environment,
 follow the steps below:
 
 1.  In Dev Studio, go to *Help* &rarr; *Install New Software...*. 

@@ -34,10 +34,10 @@ Dev Studio relies on the following Eclipse plugins to provide this capability:
 All you have to do is install them so you can begin developing Maven projects
 for @product@.
 
-When first installing Dev Studio, the installation startup screen lets you
-select whether you'd like to install the Maven plugins automatically. Don't
-worry if you missed this during setup. You'll learn how to install the required
-Maven plugins for Dev Studio manually below.
+When first installing Dev Studio, the installation startup screen asks if you
+want to install the Maven plugins automatically. Don't worry if you missed this
+during setup. You'll learn how to install the required Maven plugins for Dev
+Studio manually below.
 
 1.  Navigate to *Help* &rarr; *Install New Software*. In the *Work with* field,
     insert the following value:
@@ -52,7 +52,7 @@ Maven plugins for Dev Studio manually below.
     If the *Liferay IDE Maven Support* option does not appear, then it's already
     installed. To verify that it's installed, uncheck the *Hide items that are
     already installed* checkbox and look for *Liferay IDE Maven Support* in the
-    list of installed plugins. Also, if you'd like to view everything that is
+    list of installed plugins. Also, if you want to view everything that is
     bundled with the *Liferay IDE Maven Support* option, uncheck the *Group
     items by category* checkbox.
 
@@ -98,7 +98,7 @@ Next you'll learn about Dev Studio's POM graphical editor.
 
 ### Using the POM Graphic Editor
 
-You're provided a nifty POM graphic editor when opening your Maven project's
+You're provided a graphical POM editor when opening your Maven project's
 `pom.xml` in Dev Studio. This gives you several different ways to leverage
 the power of Maven in your project:
 

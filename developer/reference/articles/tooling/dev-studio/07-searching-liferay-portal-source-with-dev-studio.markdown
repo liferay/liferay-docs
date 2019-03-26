@@ -9,11 +9,11 @@ the development of your project. Liferay provides great resources to help with
 development (e.g., official documentation,
 [docs.liferay.com](https://docs.liferay.com/),
 [sample projects](/developer/reference/-/knowledge_base/7-2/sample-projects),
-etc.), but sometimes, searching through Liferay's codebase (i.e., platform and
-official apps) for patterns is just as useful. For example, if you're creating a
-custom app that extends a class provided in Liferay's `portal-kernel` JAR, you
-can inspect that class and research how it's used in other areas of @product@'s
-codebase.
+etc.), but sometimes searching through Liferay's codebase (i.e., platform and
+official apps) for patterns is just as useful. For example, if you're creating
+an application that extends a class provided in Liferay's `portal-kernel` JAR,
+you can inspect that class and research how it's used in other areas of
+@product@'s codebase.
 
 To do this, you must be developing in a
 [Liferay Workspace](/developer/reference/-/knowledge_base/7-2/liferay-workspace).
@@ -41,7 +41,7 @@ Inspecting classes that extend a similar superclass can help you find useful
 patterns and examples for how you can develop your own app. For example, suppose
 your app extends the
 [MVCPortlet](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCPortlet.html)
-class. You an search classes that extend that same class in Dev Studio. Complete
+class. You can search classes that extend that same class in Dev Studio. Complete
 the steps below for a simple example:
 
 1.  Right-click the `MVCPortlet` declaration.
@@ -65,7 +65,7 @@ exploration too!
 
 Suppose in the
 [MVCPortlet](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCPortlet.html)
-class you're extending, you'd like to search for declarations of its `doView`
+class you're extending, you want to search for declarations of its `doView`
 method you're overriding. Here's how to do it:
 
 1.  Right-click the `doView` method declaration in your custom app's class.
@@ -79,11 +79,11 @@ where that method was overridden.
 
 ## Search Annotation References
 
-Annotations used in @product@'s source code can sometimes be cryptic. With the
-ability to search where these types of annotations reside in Liferay's target
-platform, you can find how they could be used in your own app.
+Annotations used in @product@'s source code can sometimes be cryptic. You can
+find out how they can be used in your own application by searching for where
+these types of annotations exist in Liferay's target platform.
 
-For example, you may find some official documentation on using the `@Reference`
+For example, you may find some documentation on using the `@Reference`
 annotation in an OSGi module and implement it in your custom app. It could be
 useful to reference real world examples in @product@'s apps to check how it was
 used elsewhere. You can complete this search like this:

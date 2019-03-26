@@ -5,9 +5,9 @@ header-id: gradle-in-dev-studio
 # Gradle in Dev Studio
 
 [Gradle](http://gradle.org/) is a popular open source build automation system.
-You can take full advantage of Gradle in Liferay Dev Studio by utilizing
-[Buildship](https://projects.eclipse.org/releases/photon), which is a collection
-of Eclipse plugin-ins that provide support for building software using Gradle
+You can take full advantage of Gradle in Liferay Dev Studio through
+[Buildship](https://projects.eclipse.org/releases/photon), a collection
+of Eclipse plugins that provide support for building software using Gradle
 with Liferay Dev Studio. Buildship is bundled with Liferay Dev Studio versions
 3.0 and higher.
 

@@ -9,8 +9,8 @@ Liferay Dev Studio is an extension for the
 plugins. It works with build tools such as Gradle and Maven and configuration
 tools like BndTools.
 
-Dev Studio makes Liferay development easier by providing an intuitive GUI. You
-can leverage
+Dev Studio makes Liferay development easier by providing an intuitive GUI. It
+contains
 
 - Liferay-specific wizards for creating/developing @product@ projects.
 - Liferay server management and project testing capabilities.
@@ -18,7 +18,7 @@ can leverage
 - Snippets for tag libraries
 - etc.
 
-In this section of articles, you'll learn how to
+Here you'll learn how to
 
 - [Install Dev Studio](/developer/reference/-/knowledge_base/7-2/installing-liferay-dev-studio)
 - [Set Proxy Requirements](/developer/reference/-/knowledge_base/7-2/setting-proxy-requirements-for-dev-studio)

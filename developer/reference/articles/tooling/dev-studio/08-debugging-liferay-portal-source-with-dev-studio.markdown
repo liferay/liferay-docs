@@ -4,10 +4,10 @@ header-id: debugging-product-source-in-dev-studio
 
 # Debugging @product@ Source in Dev Studio
 
-You can use Liferay Dev Studio to debug @product@ source code to help resolve
-errors. Debugging @product@ code follows most of the same techniques associated
-with debugging in Eclipse. If you need some help with general debugging, you can
-visit Eclipse's documentation. Here's some helpful Eclipse links to visit:
+You can debug @product@ source code in Dev Studio to help resolve errors.
+Debugging @product@ code follows most of the same techniques associated with
+debugging in Eclipse. If you need help with general debugging, you can visit
+Eclipse's documentation. Here's some helpful Eclipse links to visit:
 
 - [Debugger](http://help.eclipse.org/oxygen/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2Fconcepts%2Fcdebugger.htm&cp=1_2_9)
 - [Local Debugging](http://help.eclipse.org/oxygen/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2Fconcepts%2Fclocdbug.htm&cp=1_2_11)
