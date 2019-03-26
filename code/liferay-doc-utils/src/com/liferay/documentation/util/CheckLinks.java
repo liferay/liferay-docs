@@ -198,7 +198,7 @@ public class CheckLinks {
 	private static String assembleId(String heading, int idCount) {
 
 		String count = "";
-		if (idCount > -1) {
+		if (idCount > 0) {
 			count = "-" + idCount;
 		}
 
@@ -628,6 +628,33 @@ public class CheckLinks {
 		return header;
 	}
 
+	private static File findArticleMatchingLink(List<File> articles, String primaryHeader)
+			throws IOException {
+
+		File matchingArticle = null;
+
+		for (File article: articles) {
+
+			LineNumberReader in = new LineNumberReader(new FileReader(article));
+			String line = null;
+
+			while ((line = in.readLine()) != null) {
+
+				if (line.startsWith(headerSyntax + primaryHeader)) {
+					matchingArticle = article;
+					break;
+				}
+			}
+			in.close();
+
+			if (matchingArticle != null) {
+				break;
+			}
+		}
+
+		return matchingArticle;	
+	}
+
 	/**
 	 * Returns the Markdown articles contained in the given path.
 	 *
@@ -756,11 +783,10 @@ public class CheckLinks {
 				}
 				else if (line.startsWith("## ")) {
 
-					header = generateVirtualSecondaryHeader(line, article.getPath());
-					secondaryHeaders.add(header);
+					String headerKeyValue = generateVirtualSecondaryHeader(line, article.getCanonicalPath());
+					secondaryHeaders.add(headerKeyValue);
 				}
 			}
-			//secondaryHeaders.clear();
 			in.close();
 		}
 
@@ -775,28 +801,32 @@ public class CheckLinks {
 
 		String heading = extractHeading(line);
 
-		int idCount = -1;
-		String newHeading = null;
+		int idCount = 0;
+		String generatedSecondaryHeader = null;
 		while (true) {
 
-			newHeading = assembleId(heading, idCount);
+			generatedSecondaryHeader = assembleId(heading, idCount);
 
-				if (secondaryIDs.get(newHeading) == null) {
+				if (!secondaryKeyValues.contains(generatedSecondaryHeader + filename)) {
 
-					// Heading is unique for the document set
+					// Heading is unique for the document set. Map the ID to
+					// the filename.
+					//secondaryIDs.put(generatedSecondaryHeader, filename);
 
-					// Map the ID to the filename
+					//Easiest way to check/track key-value pairs
+					secondaryKeyValues.add(generatedSecondaryHeader + filename);
 
-					secondaryIDs.put(newHeading, filename);
+					System.out.println("generatedSecondaryHeader: " + generatedSecondaryHeader);
+					System.out.println("filename: " + filename);
+					System.out.println("secIDFileValue: " + secondaryIDs.get(generatedSecondaryHeader));
 
 					break;
 				}
 
 			idCount++;
 		}
-		String generatedHeader = assembleId(heading, idCount);
 
-		 return generatedHeader;
+		 return generatedSecondaryHeader + filename;
 	}
 
 	/**
@@ -829,6 +859,47 @@ public class CheckLinks {
 		}
 
 		return dxpArticles;
+	}
+
+	private static String getHeaderDir(String line, int lineIndex) {
+		
+		String lineSubstring = line.substring(lineIndex, line.length());
+		String path = "";
+
+		// The first link in the substring will have its headers applied.
+		if (lineSubstring.contains(userGuideDir)) {
+			path = userGuideDir;
+		}
+
+		else if (lineSubstring.contains(deploymentGuideDir)) {
+			path = deploymentGuideDir;
+		}
+
+		else if (lineSubstring.contains(distributeGuideDir)) {
+			path = distributeGuideDir;
+		}
+
+		else if (lineSubstring.contains(appDevDir)) {
+			path = appDevDir;
+		}
+
+		else if (lineSubstring.contains(customizationDevDir)) {
+			path = customizationDevDir;
+		}
+
+		else if (lineSubstring.contains(frameworksDevDir)) {
+			path = frameworksDevDir;
+		}
+
+		else if (lineSubstring.contains(tutorialsDir)) {
+			path = tutorialsDir;
+		}
+
+		else if (lineSubstring.contains(referenceDevDir)) {
+			path = referenceDevDir;
+		}
+		
+		return path;
 	}
 
 	/**
@@ -1005,12 +1076,13 @@ public class CheckLinks {
 		LineNumberReader in = new LineNumberReader(new FileReader(article));
 		String line = null;
 
+		if (secondaryKeyValues.contains(secondaryHeader + article.getCanonicalPath())) {
+			validUrl = true;
+		}
+
 		while ((line = in.readLine()) != null) {
 
-			if (line.contains("[](id=" + secondaryHeader + ")")) {
-				validUrl = true;
-			}
-			else if (line.contains("<a name=" + quotation + secondaryHeader + quotation + ">")) {
+			if (line.contains("<a name=" + quotation + secondaryHeader + quotation + ">")) {
 				validUrl = true;
 			}
 			else if (line.contains("<div") && line.contains("id=" + quotation + secondaryHeader + quotation + ">")) {
@@ -1071,8 +1143,18 @@ public class CheckLinks {
 				}
 			}
 			else {
+				//System.out.println("Path: " + article.getCanonicalPath());
+				//System.out.println("headers.get(0): " + headers.get(0));
+				//System.out.println("headers.get(1): " + headers.get(1));
+				//System.out.println("primaryHeader: " + primaryHeader);
+				//System.out.println("secondaryHeader: " + secondaryHeader);
+								
+				String linkDir = getHeaderDir(line, lineIndex);
+				List<File> articles = findArticles(linkDir);
+				File matchingArticle = findArticleMatchingLink(articles, primaryHeader);
+
 				if (headers.get(0).contains(primaryHeader) &&
-						headers.get(1).contains(secondaryHeader)) {
+						headers.get(1).contains(secondaryHeader + matchingArticle.getCanonicalPath())) {
 					validURL = true;
 				}
 			}
@@ -1131,6 +1213,7 @@ public class CheckLinks {
 	private static boolean checkLegacyLinks;
 	private static List<File> fileOverrides = new ArrayList<File>();
 	private static String headerSyntax = "header-id: ";
+	private static List<String> secondaryKeyValues = new ArrayList<String>();
 	private static String ldnArticle;
 	private static final int MAX_ID_LEN = 75;
 	private static String platformReferenceSite;
