@@ -628,6 +628,14 @@ public class CheckLinks {
 		return header;
 	}
 
+	/**
+	 * Returns the article characterized by the primary header.
+	 *
+	 * @param  articles the articles to search for the primary header
+	 * @param  primaryHeader the header to search the articles for
+	 * @return the article characterized by the primary header
+	 * @throws IOException if an IO exception occurred
+	 */
 	private static File findArticleMatchingLink(List<File> articles, String primaryHeader)
 			throws IOException {
 
@@ -797,6 +805,14 @@ public class CheckLinks {
 		return headers;
 	}
 
+	/**
+	 * Returns the generated virtual secondary header ID for the line's
+	 * sub-header.
+	 *
+	 * @param  line the line containing the sub-header
+	 * @param  filename the article name
+	 * @return the generated virtual secondary header ID
+	 */
 	private static String generateVirtualSecondaryHeader(String line, String filename) {
 
 		String heading = extractHeading(line);
@@ -811,14 +827,9 @@ public class CheckLinks {
 
 					// Heading is unique for the document set. Map the ID to
 					// the filename.
-					//secondaryIDs.put(generatedSecondaryHeader, filename);
 
-					//Easiest way to check/track key-value pairs
+					//Easiest way to check/track unique key-value pairs
 					secondaryKeyValues.add(generatedSecondaryHeader + filename);
-
-					System.out.println("generatedSecondaryHeader: " + generatedSecondaryHeader);
-					System.out.println("filename: " + filename);
-					System.out.println("secIDFileValue: " + secondaryIDs.get(generatedSecondaryHeader));
 
 					break;
 				}
@@ -861,8 +872,17 @@ public class CheckLinks {
 		return dxpArticles;
 	}
 
+	/**
+	 * Returns the folder represented by the link's directory header in the line
+	 * (e.g., <code>developer/frameworks</code>).
+	 *
+	 * @param  line the line containing the relative link
+	 * @param  lineIndex the header's index on the line. This is useful when
+	 *         there are multiple relative links on one line.
+	 * @return the folder represented by the link's directory header
+	 */
 	private static String getHeaderDir(String line, int lineIndex) {
-		
+
 		String lineSubstring = line.substring(lineIndex, line.length());
 		String path = "";
 
@@ -898,7 +918,7 @@ public class CheckLinks {
 		else if (lineSubstring.contains(referenceDevDir)) {
 			path = referenceDevDir;
 		}
-		
+
 		return path;
 	}
 
@@ -1143,12 +1163,7 @@ public class CheckLinks {
 				}
 			}
 			else {
-				//System.out.println("Path: " + article.getCanonicalPath());
-				//System.out.println("headers.get(0): " + headers.get(0));
-				//System.out.println("headers.get(1): " + headers.get(1));
-				//System.out.println("primaryHeader: " + primaryHeader);
-				//System.out.println("secondaryHeader: " + secondaryHeader);
-								
+
 				String linkDir = getHeaderDir(line, lineIndex);
 				List<File> articles = findArticles(linkDir);
 				File matchingArticle = findArticleMatchingLink(articles, primaryHeader);
@@ -1219,7 +1234,6 @@ public class CheckLinks {
 	private static String platformReferenceSite;
 	private static String platformToken;
 	private static int resultsNumber = 0;
-	private static HashMap<String, String> secondaryIDs = new HashMap<String, String>();
 	private static boolean validUrl;
 
 	// Versions
