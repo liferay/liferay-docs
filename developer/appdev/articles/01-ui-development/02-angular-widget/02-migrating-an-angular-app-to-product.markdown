@@ -219,7 +219,7 @@ The @product@ console confirms your bundle started:
     2019-03-22 20:17:53.181 INFO  [fileinstall-C:/git/bundles/osgi/modules][BundleStartStopLogger:39] STARTED my-angular-guestbook_1.0.0 [1695]
 
 Find your widget by selecting the *Add* icon
-(![Add](../../images/icon-add-app.png))
+(![Add](../../../images/icon-add-app.png))
 and navigating to *Widgets* and the category you specified to the Liferay Bundle
 Generator (*Sample* is the default category). 
 
