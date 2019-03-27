@@ -26,7 +26,8 @@ prerequisites for setting up Liferay authentication:
     NGNIX, or IIS. The web server must also support injecting a header to be used 
     as a token in the @product@ configuration (see below). 
 
-5.  Of course, you need a @product@ installation. 
+5.  Of course, you need a @product@ installation that can also resolve by name
+    the other servers. It should never run on the Active Directory server.
 
 When you have all of these prerequisites in place, you're ready to configure
 Kerberos authentication. 
@@ -42,7 +43,8 @@ First, a properly configured web browser sends a negotiate request using
 encrypted Windows user data. To configure this, the browser must recognize the
 site as a trusted site (explained below). The web server's Kerberos module uses
 the keytab file to bind over the Kerberos protocol to AD and verify the user
-information. If all is okay, the AD server sends an HTTP code 200 (OK). 
+information. If all is okay, the AD server confirms the connection with a valid
+response. 
 
 The web server you choose must support both the Kerberos protocol and the
 injection of a custom header into the request that @product@ can later read.
@@ -63,7 +65,7 @@ Windows&trade; clients.
 
 2.  Generate a Kerberos keytab file using `ktpass`: 
 
-        ktpass -prince HTTP/[web server host name]@[domain] -mapuser [user name]@[domain] -crypto ALL -ptype KRB5_NT_PRINCIPAL -pass [password] -out c:\kerberos.keytab
+        ktpass -princ HTTP/[web server host name]@[domain] -mapuser [user name]@[domain] -crypto ALL -ptype KRB5_NT_PRINCIPAL -pass [password] -out c:\kerberos.keytab
 
 	For example: 
 
