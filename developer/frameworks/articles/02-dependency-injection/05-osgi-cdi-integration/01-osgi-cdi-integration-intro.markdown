@@ -1,8 +1,10 @@
 ---
-header-id=osgi-cdi-integration
+header-id: osgi-cdi-integration
 ---
 
 # OSGi CDI Integration
+
+[TOC levels=1-4]
 
 @product@'s runtime environment consists of services (OSGi services). The OSGi
 service registry and Service Component Runtime (SCR) facilitate providing and

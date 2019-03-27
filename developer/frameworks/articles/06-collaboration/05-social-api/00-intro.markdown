@@ -4,6 +4,8 @@ header-id: social-api
 
 # Social API
 
+[TOC levels=1-4]
+
 You can use the social API to integrate @product@'s social features with your 
 apps. Here, you'll learn about the following topics: 
 

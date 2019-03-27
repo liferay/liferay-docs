@@ -4,6 +4,8 @@ header-id: creating-social-bookmarks
 
 # Creating Social Bookmarks
 
+[TOC levels=1-4]
+
 By default, @product@ contains social bookmarks for Twitter, Facebook, and 
 LinkedIn. You can also create your own social bookmark by registering a 
 component that implements the 

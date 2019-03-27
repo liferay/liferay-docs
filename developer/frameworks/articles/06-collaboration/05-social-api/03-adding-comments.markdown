@@ -4,6 +4,8 @@ header-id: adding-comments-to-your-app
 
 # Adding Comments to Your App
 
+[TOC levels=1-4]
+
 Liferay provides taglibs that enable comments on your app's content. Here, 
 you'll learn how to use these taglibs, using a sample Guestbook app as an 
 example. 

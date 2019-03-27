@@ -4,6 +4,8 @@ header-id: flagging-inappropriate-asset-content
 
 # Flagging Inappropriate Asset Content
 
+[TOC levels=1-4]
+
 The asset framework supports a system for flagging inappropriate content in 
 apps. The steps here show you how to enable it in your app. 
 
