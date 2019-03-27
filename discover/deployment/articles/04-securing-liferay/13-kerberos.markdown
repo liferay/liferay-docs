@@ -1,4 +1,4 @@
-# Authenticating with Kerberos
+# Authenticating with Kerberos [](id=authenticating-with-kerberos)
 
 You can use Kerberos to authenticate Microsoft Windows &trade; accounts with
 @product@. This is done completely through configuration by using a combination
@@ -32,7 +32,7 @@ prerequisites for setting up Liferay authentication:
 When you have all of these prerequisites in place, you're ready to configure
 Kerberos authentication. 
 
-## How Kerberos Authentication Works
+## How Kerberos Authentication Works [](id=how-kerberos-authentication-works)
 
 From the prerequisites, you may be able to guess that there are several moving
 parts to how SSO works with Kerberos. 
@@ -53,13 +53,13 @@ obtain the user data and authenticate the user.
 
 Next, you'll learn how to get all of this working. 
 
-## Configuring Kerberos Authentication
+## Configuring Kerberos Authentication [](id=configuring-kerberos-authentication)
 
 There are four components to configure: a user keytab from Active
 Directory, a web server in front of your application server, @product@, and your
 Windows&trade; clients. 
 
-### Creating the User Keytab
+### Creating the User Keytab [](id=creating-the-user-keytab)
 
 1.  Create a user so @product@ can bind to Active Directory. 
 
@@ -74,7 +74,7 @@ Windows&trade; clients.
 3.  Ensure that the AD domain controller and the web server can see each other
     on the network via DNS configuration or `hosts` file. 
 
-### Configuring Your Web Server
+### Configuring Your Web Server [](id=configuring-your-web-server)
 
 1.  Configure Kerberos authentication. On Linux, this involves installing `krb5`
     and configuring it to match your realm that's already configured for Active
@@ -146,7 +146,7 @@ Windows&trade; clients.
         </VirtualHost>
         Listen 10080
 
-### Connecting @product@ to Active Directory over LDAP
+### Connecting @product@ to Active Directory over LDAP [](id=connecting-product-to-active-directory-over-ldap)
 
 1.  Finally, configure @product@ to access Active Directory via the LDAP
     protocol. Change authentication to be by Screen Name by selecting it in
@@ -186,7 +186,7 @@ Windows&trade; clients.
 Excellent! You've configured your servers. All that's left is to configure your
 clients. 
 
-### Configuring your Clients
+### Configuring your Clients [](id=configuring-your-clients)
 
 You must do two things: make your computer log into the domain and configure
 your @product@ server as a trusted Internet site. 
