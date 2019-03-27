@@ -9,9 +9,8 @@ To create a Contributed Fragment Collection, a developer must,
 
 3.  Add fragments as resources in the module.
 
-Once you deploy the module, any fragments contained in it will be available for use. 
-
-
+Once you deploy the module, any fragments contained in it will be available for 
+use. 
 
 To better understand Contributed Fragment Collections, create one called `DemoFragmentCollectionContributor`.
 

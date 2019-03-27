@@ -1,25 +1,7 @@
 # Fragment Specific Tags
 
-You can make text, images, and links inside of a fragment editable by using it  
-an `<lfr-editable>` tag. The `<lfr-editable>` tag require a unique `id`, a 
-type, and some content of the specified type inside.
-
-The following three `type` options are available inside of of an `lfr-editable` 
-tag:
-
-`text`: Creates a space for plain text that can be edited before publishing. 
-
-`image`: Must contain a valid `<img>` tag which can then be replaced with any
-image before publishing---including those from Documents and Media.
- 
-`rich-text`: Provides rich text formatting, such as bold, italics, underline,
-links, and predefined styles.
-
-`link`: Provides a link for which the style, target URL, and link text can be 
-edited before publishing.
-
-The text or images that you provide here are the default values for the fields. 
-In some cases, you may want to have default values that will be displayed in the final version of the page, but in other cases it will be filler text that is intended to be completely replaced before the page is published.
+You can use Liferay specific tags to create editable, text, image, and link 
+fields, as well as embedding widgets.
 
 ## Making Text Editable
 
@@ -67,15 +49,15 @@ SCREENSHOT!
 
 ## Creating Editable Links
 
-
+There is also a specific syntax for creating editable link elements:
     
     <lfr-editable id="unique-id" type="link">
         <a href="default-target-url-goes-here">Link text goes here</a>
     </lfr-editable>
     
-After you add the `lfr-editable` tag with the type `image` to a Fragment, when 
-you add that Fragment to a page, you can then click on the editable image and 
-select a replacement.
+Marketers will be provided with the option to edit the link text, target URL, and basic link styling - primary button, secondary button, link.
+
+SCREENSHOT!
 
 ## Including Widgets Within A Fragment [](id=including-widgets-within-a-fragment)
 

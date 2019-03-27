@@ -21,7 +21,7 @@ than regular web content.
 ## Creating Page Fragments
 
 There are two types of Page Fragments, *Sections* and *Components*. A Section
-is intended to ... A Component is intended to ... 
+is Page Fragment which defines columns, padding, and spacing on the page. A Component is a Page Fragment which contains content that is added to a Section.
 
 Fragments are created inside of Collections. Collections provide an easy way to 
 manage and share groups of related Fragments. They are also used when a user is 
@@ -65,11 +65,11 @@ publishing it. This means that Web Developers can create simple, reusable
 fragments with identical formatting, but with elements that are easily 
 adaptable to the specific context.
 
-You can make text, images, and links inside of a fragment editable by using it  
+You can make text, images, and links inside of a fragment editable by using  
 an `<lfr-editable>` tag. The `<lfr-editable>` tag require a unique `id`, a 
 type, and some content of the specified type inside.
 
-The following three `type` options are available inside of of an `lfr-editable` 
+The following four `type` options are available inside of of an `lfr-editable` 
 tag:
 
 `text`: Creates a space for plain text that can be edited before publishing. 
@@ -80,8 +80,8 @@ image before publishing---including those from Documents and Media.
 `rich-text`: Provides rich text formatting, such as bold, italics, underline,
 links, and predefined styles.
 
-`link`: Provides a link for which the style, target URL, and link text can be 
-edited before publishing.
+`link`: Must contain a valid anchor tag for which the style, target URL, and 
+link text can be edited before publishing.
 
 The text or images that you provide here are the default values for the fields. 
 In some cases, you may want to have default values that will be displayed in 
