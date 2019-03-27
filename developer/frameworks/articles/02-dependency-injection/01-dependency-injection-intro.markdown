@@ -1,5 +1,5 @@
 ---
-header-id=dependency-injection
+header-id: dependency-injection
 ---
 
 # Dependency Injection

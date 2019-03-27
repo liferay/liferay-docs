@@ -1,5 +1,5 @@
 ---
-header-id=osgi-cdi-integration
+header-id: osgi-cdi-integration
 ---
 
 # OSGi CDI Integration

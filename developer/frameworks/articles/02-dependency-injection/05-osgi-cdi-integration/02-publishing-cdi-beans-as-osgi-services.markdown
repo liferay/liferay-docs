@@ -1,5 +1,5 @@
 ---
-header-id=publishing-cdi-beans-as-osgi-services
+header-id: publishing-cdi-beans-as-osgi-services
 ---
 
 # Publishing CDI Beans as OSGi Services

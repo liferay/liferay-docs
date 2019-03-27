@@ -1,5 +1,5 @@
 ---
-header-id=using-osgi-services-in-a-bean
+header-id: using-osgi-services-in-a-bean
 ---
 
 # Using OSGi Services in a Bean
