@@ -85,13 +85,15 @@ interface is provided below:
   during initialization of the component by using the
   [`@Activate`](https://osgi.org/javadoc/r6/residential/org/osgi/service/component/annotations/Activate.html)
   annotation; it's invoked after dependencies are set and before services are
-  registered. Four callable `set` methods are described below:
+  registered. Five callable `set` methods are described below:
 
     - `setDataPortletPreferences`: sets portlet preferences your app should
       handle.
     - `setDeletionSystemEventStagedModelTypes`: sets the staged model deletions
       that the portlet data handler should track. For example, the Bookmarks app
       tracks Bookmark entries and folders.
+    - `setPublishToLiveByDefault`: controls whether your app is selected to
+      publish on the Publication screen by default.
     - `setExportControls`: adds fine grained controls over export/import
       behavior that is rendered in the Export/Import UI. This also sets the
       `setImportControls` method. For example, the Bookmarks app adds a
