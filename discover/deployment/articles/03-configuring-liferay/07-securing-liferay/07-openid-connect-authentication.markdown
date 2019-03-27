@@ -1,5 +1,12 @@
 # Authenticating with OpenID Connect [](id=authenticating-with-openid-connect)
 
++$$$
+
+**Note:** OpenID Connect authentication is available in @product@ on Fix Pack 79 or higher patch level.
+
+$$$
+
+
 OpenID Connect is a lightweight authentication layer built on top of the 
 [OAuth 2.0](https://oauth.net/2/) 
 authorization protocol. It compliments having local accounts by enabling users
