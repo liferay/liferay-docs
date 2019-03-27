@@ -29,9 +29,11 @@ contents in the following format:
   - `[resources]/`: a folder containing any additional images or other external
       files needed for the fragment.
  
-A collection can contain any number of fragments, so you can have lots of
+A collection can contain any number of fragments, so you can have multiple
 subfolders in the collection. This format is the same as what's exported from
-within Liferay.
+within Liferay. If you import a `.zip` file that is not organized like this, 
+any fragments that are found will be imported into special collection called 
+"Imported" which is created for orphaned fragments.
 
 ## Fragment CLI
 

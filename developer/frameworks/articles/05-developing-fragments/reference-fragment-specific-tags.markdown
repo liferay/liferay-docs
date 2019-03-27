@@ -1,19 +1,11 @@
-# Fragment Specific Tags [](id=fragment-specific-tags)
+# Fragment Specific Tags
 
-The following is a list of Fragment Specific tags in Liferay and their usage.
+You can make text, images, and links inside of a fragment editable by using it  
+an `<lfr-editable>` tag. The `<lfr-editable>` tag require a unique `id`, a 
+type, and some content of the specified type inside.
 
-## Making Text Editable [](id=making-text-editable)
-
-You can make any text of a fragment editable by enclosing it in an 
-`<lfr-editable>` tag like this:
-    
-    <lfr-editable id="unique-id" type="text">
-       This is editable text!    
-    </lfr-editable>
- 
-The `lfr-editable` tag doesn't render without a unique `id`. 
-
-The following three `type` options are available inside of of `lfr-editable` tag:
+The following three `type` options are available inside of of an `lfr-editable` 
+tag:
 
 `text`: Creates a space for plain text that can be edited before publishing. 
 
@@ -23,6 +15,31 @@ image before publishing---including those from Documents and Media.
 `rich-text`: Provides rich text formatting, such as bold, italics, underline,
 links, and predefined styles.
 
+`link`: Provides a link for which the style, target URL, and link text can be 
+edited before publishing.
+
+The text or images that you provide here are the default values for the fields. 
+In some cases, you may want to have default values that will be displayed in the final version of the page, but in other cases it will be filler text that is intended to be completely replaced before the page is published.
+
+## Making Text Editable
+
+You can make any text of a fragment editable by enclosing it in an 
+`<lfr-editable>` tag like this:
+    
+    <lfr-editable id="unique-id" type="text">
+       This is editable text!    
+    </lfr-editable>
+ 
+If you need to provide formatting options, like applying text styles, you must 
+use `rich-text`:
+    
+    <lfr-editable id="unique-id" type="rich-text">
+       This is editable text that I can make bold or italic!    
+    </lfr-editable>
+ 
+The `lfr-editable` tag doesn't render without a unique `id`. 
+
+
 +$$$
 
 **Note:** If you want to make text inside an HTML element editable, you must use
@@ -31,15 +48,31 @@ before rendering.
 
 $$$
 
-## Making Images Editable [](id=making-images-editable)
+SCREENSHOT!
 
-Images use the same `<lfr-editable>` tag as text, but with the `image` type, like 
-this:
+## Making Images Editable
+
+Images use the same `<lfr-editable>` tag as text, but with the `image` type, 
+like this:
     
     <lfr-editable id="unique-id" type="image">
        <img src="...">
     </lfr-editable>
 
+After you add the `lfr-editable` tag with the type `image` to a Fragment, when 
+you add that Fragment to a page, you can then click on the editable image and 
+select a replacement.
+
+SCREENSHOT!
+
+## Creating Editable Links
+
+
+    
+    <lfr-editable id="unique-id" type="link">
+        <a href="default-target-url-goes-here">Link text goes here</a>
+    </lfr-editable>
+    
 After you add the `lfr-editable` tag with the type `image` to a Fragment, when 
 you add that Fragment to a page, you can then click on the editable image and 
 select a replacement.

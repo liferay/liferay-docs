@@ -13,10 +13,10 @@ have three tools at your disposal to accomplish this:
 
 The HTML, CSS, and JavaScript are all completely standard, just like anywhere
 else on the web, but are also enhanced with Liferay-specific features. You can
-specify text and images as editable, as well as providing for "rich text": that
-is, text with additional formatting. Liferay portlets can also be embedded in
-Fragments as "widgets," making pages with Fragments more dynamic than regular
-web content.
+specify text, images, and links as editable, as well as providing for "rich 
+text": that is, text with additional formatting. Liferay portlets can also be 
+embedded in Fragments as "widgets," making pages with Fragments more dynamic 
+than regular web content.
 
 ## Creating Page Fragments
 
@@ -60,19 +60,44 @@ In addition to the standard HTML, CSS, and JavaScript used for creating
 Fragments, there are a number of Liferay specific tags that you will need to 
 use to make editable sections, or embed widgets in your Fragment.
 
-Making text editable allows the marketer or web admin to modify the text before
-publishing it. This way, you can reuse a single fragment with different headings
-or different text for different pages. Fragments make creating content easy and
-this feature can save you the work of duplicating work just to change the text. 
+Making elements editable allows the marketer or web admin to modify them before 
+publishing it. This means that Web Developers can create simple, reusable 
+fragments with identical formatting, but with elements that are easily 
+adaptable to the specific context.
 
-Like text, you can set images as editable. An editable image can be
-selected from the user's local files or from the Documents and Media Library.
-You must be careful with defining styles for editable images since an image that
-without the proper dimensions or that is forced into a poorly sized space can
-have major negative effects on your layout. 
+You can make text, images, and links inside of a fragment editable by using it  
+an `<lfr-editable>` tag. The `<lfr-editable>` tag require a unique `id`, a 
+type, and some content of the specified type inside.
 
-You can add more dynamic behavior to a Fragment by including a widget. 
+The following three `type` options are available inside of of an `lfr-editable` 
+tag:
+
+`text`: Creates a space for plain text that can be edited before publishing. 
+
+`image`: Must contain a valid `<img>` tag which can then be replaced with any
+image before publishing---including those from Documents and Media.
+ 
+`rich-text`: Provides rich text formatting, such as bold, italics, underline,
+links, and predefined styles.
+
+`link`: Provides a link for which the style, target URL, and link text can be 
+edited before publishing.
+
+The text or images that you provide here are the default values for the fields. 
+In some cases, you may want to have default values that will be displayed in 
+the final version of the page, but in other cases it will be filler text that 
+is intended to be completely replaced before the page is published.
+
+All of these work together to help you create dynamic, reusable elements for 
+building a site. For example, if you need a small text box with an image and 
+link to provide a  product description, you can create a fragment with filler 
+text set to editable, space for an editable image, the appropriate formatting, 
+and an editable link. Then that fragment can be added to multiple pages, and a 
+marketer can define the image, text, and link for each product they need to 
+describe. 
+
+You can also add more dynamic behavior to a Fragment by including a widget. 
 Currently, you can only embed a portlet as a widget, but other types of widgets
 will be available in the future.
 
-You can find a complete list of these in the [Page Fragments Reference](link).
+You can find a complete list and usage examples of these in the [Page Fragments Reference](link).
