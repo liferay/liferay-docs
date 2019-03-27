@@ -1,16 +1,20 @@
+---
+header-id: migrating-an-angular-app-to-product
+---
+
 # Migrating an Angular App to @product@
 
-Migrating an existing Angular app to @product@ involves a few minor 
-modifications to the routes, dependencies, and CSS. The 
-liferay-npm-bundler and the Liferay Bundle Generator facilitate the 
-process. 
+[TOC levels=1-4]
+
+Migrating an existing Angular app to @product@ makes the app available as a
+widget for using on site pages. The migration involves merging your files into a
+portlet bundle, adapting your routes and CSS, and deploying your bundle. The
+Liferay Bundle Generator and liferay-npm-bundler facilitate the process. 
 
 Follow these steps:
 
 1.  Install the Liferay Bundle Generator, using
-    [npm](https://www.npmjs.com/)
-    and
-    [Yeoman](https://yeoman.io/):
+    [npm](https://www.npmjs.com/):
 
         npm install -g yo generator-liferay-bundle
 
@@ -50,9 +54,9 @@ Follow these steps:
 
     | File type | Destination | Comments |
     | --------- | ----------- | -------- |
-    | HTML | `assets/app/` | Merge with the existing `app.component.html`. Don't add subfolders to `assets/app/`.  |
+    | HTML | `assets/app/` | Merge your main component with the existing `app.component.html`. |
     | CSS  | `assets/css/` | Overwrite `styles.css`. |
-    | TypeScript and JavaScript | `src/app/` |  Merge with all files **except** `app.module.ts`---merging the root module is explained in a later step. |
+    | TypeScript and JavaScript | `src/app/` |  Merge with all files **except** `app.module.ts`---the root module merge is explained in a later step. |
 
 4.  Update your component class `templateUrl`s to use the `web-context` value 
     declared in your project's `.npmbundlerrc`  file. Here's the format: 
@@ -61,7 +65,7 @@ Follow these steps:
 
     Here's an example:
 
-        templateUrl: '/o/my-angular-guestbook/app/add-entry.component.html'
+        templateUrl: '/o/my-angular-guestbook/app/add-entry/add-entry.component.html'
 
 5.  Update your bundle to use portlet-level styling. 
 
@@ -109,8 +113,8 @@ Follow these steps:
     | DOM. The DOM is determined at run time when the portlet's page is
     | rendered. 
 
-    -   Import the `routingComponents` constant along with your app routing 
-        module class from your app routing module. For example,
+    -   Import the `routingComponents` constant and the app routing module class
+        from your app routing module. For example,
 
         ```
         import { AppRoutingModule, routingComponents } from './app-routing.module';
@@ -128,40 +132,32 @@ Follow these steps:
         })
         ```
 
-    -   Declare the main component and `routingComponents` constant in your 
-        `@NgModule` decorator. 
+    -   Declare the `routingComponents` constant in your `@NgModule` decorator. 
 
         ```
         declarations: [
-            AppComponent,
             routingComponents,
             ...
         ],
         ```
 
-    -   Add main component to the `@NgModule` `entryComponents` array property. 
+    -   Make sure your `@NgModule` `bootstrap` property has no components. All 
+        components are loaded dynamically using the `entryComponents` array
+        property. The empty `ngDoBootstrap()` method nullifies the default
+        bootstrap implementation. 
 
         ```
-        entryComponents: [AppComponent]
+        @NgModule({
+    	    entryComponents: [AppComponent],
+            bootstrap: []
+            ...
+        })
+        export class AppModule {
+            ngDoBootstrap() {}
+            ...
+        }
         ```
 
-    -   Remove all components from your `@NgModule`'s `bootstrap` property. All 
-        components are loaded dynamically using the `entryComponents` array. 
-
-        ```
-        bootstrap: []
-        ```
-
-    -  Implement an empty `ngDoBootstrap()` method to nullify the default 
-       implementation. 
-
-       ```
-       export class AppModule {
-           //...
-           ngDoBootstrap() {}
-       }
-       ```
-       
     -   Comment out any HTTP client and in-memory data module code before 
         deploying your bundle, as @product@ handles the requests and data via 
         the bundle's portlet. 
@@ -183,10 +179,10 @@ Follow these steps:
         AppRoutingModule,
         // more imports ...
       ],
-      // more properties ...
       entryComponents: [AppComponent],
       providers: [{provide: APP_BASE_HREF, useValue: '/'}],
-      bootstrap: []
+      bootstrap: [],
+      // more properties ...
     })
     export class AppModule {
         ngDoBootstrap() {}
@@ -196,7 +192,12 @@ Follow these steps:
     ```
 
 9.  Merge your app `package.json` file's `dependencies` and `devDevependencies` 
-    into the project's `package.json`. 
+    into the project's `package.json`.
+    
+    | **Note:** To work around build errors caused by the `rxjs` dependency, set
+    | the dependency to version `"6.0.0"`. See
+    | [LPS-92848](https://issues.liferay.com/browse/LPS-92848)
+    | for details. 
 
 10. If you're building on Windows, set `"process-serially": true` in your 
     bundle's `.npmbundlerrc` file. 
@@ -205,15 +206,30 @@ Follow these steps:
 
         npm run deploy
 
-Your bundle deploys and npm confirms the deployment with a message like this:
+Congratulations! Your Angular app is deployed and now available as a widget that
+you can add to site pages. 
+
+The liferay-npm-bundler confirms the deployment:
 
     Report written to liferay-npm-bundler-report.html
     Deployed my-angular-guestbook-1.0.0.jar to c:\git\bundles
 
-The @product@ console confirms your bundle started. 
+The @product@ console confirms your bundle started: 
 
     2019-03-22 20:17:53.181 INFO  [fileinstall-C:/git/bundles/osgi/modules][BundleStartStopLogger:39] STARTED my-angular-guestbook_1.0.0 [1695]
 
-Congratulations! Your Angular app is now available as a widget that you can add
-to site pages. Find your widget by clicking *Add* and going to *Widgets* &rarr;
-*Sample*. 
+Find your widget by selecting the *Add* icon
+(![Add](../../images/icon-add-app.png))
+and navigating to *Widgets* and the category you specified to the Liferay Bundle
+Generator (*Sample* is the default category). 
+
+## Related Topics
+
+- [Web Services](/docs/7-2/frameworks/-/knowledge_base/appdev/web-services
+)
+
+- [Service Builder](/docs/7-2/frameworks/-/knowledge_base/frameworks/service-builder
+)
+
+- [Localization]([Service Builder](/docs/7-2/frameworks/-/knowledge_base/frameworks/localization
+))
