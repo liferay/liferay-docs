@@ -1,7 +1,7 @@
 # Authenticating with OpenID Connect [](id=authenticating-with-openid-connect)
 
 OpenID Connect is a lightweight authentication layer built on top of the 
-[OAuth 2.0](/discover/deployment/-/knowledge_base/7-1/oauth-2-0) 
+[OAuth 2.0](https://oauth.net/2/) 
 authorization protocol. It compliments having local accounts by enabling users
 to authenticate using accounts they have on other systems. Users who avoid
 signing up for new accounts can then use an account they already have to sign
@@ -44,8 +44,7 @@ next.
 
 ## Configuring an OpenID Connect Provider Connection [](id=configuring-an-openid-connect-provider-connection)
 
-Go to *Control Panel* &rarr; *Configuration* &rarr; *System Settings* &rarr;
-*Security* &rarr; *SSO* and select ***OpenID Connect Provider*** under the *System Scope* and follow these steps: 
+Go to *Control Panel* &rarr; *Configuration* &rarr; *System Settings* &rarr; *Foundation* and select ***OpenID Connect Provider*** (*System Scope*) and follow these steps: 
 
 1.  Add the provider by clicking the *Add* button. 
 
@@ -101,7 +100,7 @@ $$$
 ## Enabling OpenID Connect Authentication [](id=enabling-openid-connect-authentication)
 
 1. Go to *Control Panel* &rarr; *Configuration* &rarr; *System Settings*
-   &rarr; *Security* &rarr; *SSO* and select ***OpenID Connect*** under *Virtual Instance Scope*. 
+   &rarr; *Foundation* and select ***OpenID Connect***. 
 
 2. Click the *Enabled* check box, and then click *Save*. 
 
