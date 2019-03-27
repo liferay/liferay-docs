@@ -126,7 +126,7 @@ Checkpoint:
     - `target-platform`
     - `test`
 
-## Configuring Tomcat [](id=tomcat-configuration)
+## Configuring Tomcat
 
 Configuring Tomcat to run @product@ includes
 
