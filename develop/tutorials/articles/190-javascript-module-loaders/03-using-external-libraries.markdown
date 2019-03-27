@@ -49,6 +49,16 @@ Liferay AMD Loader to use your Library. Follow these steps:
 
 3.  Uncheck the `expose global` option. 
 
++$$$
+
+**Note:**  Once this option is unchecked, you can no longer use the 
+`Liferay.Loader.define` or `Liferay.Loader.require` functions in your app. Also, 
+if you're using third party libraries that are AMD compatible, they could stop 
+working after unchecking this option because they usually use global functions 
+like `require()` or `define()`.
+
+$$$
+
 Now you know how to adapt external libraries for Liferay's JavaScript Loaders.
 
 ## Related Topics [](id=related-topics)
