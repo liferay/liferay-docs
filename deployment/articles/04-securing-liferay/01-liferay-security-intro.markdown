@@ -4,6 +4,8 @@ header-id: securing-product
 
 # Securing @product@
 
+[TOC levels=1-4]
+
 Liferay follows the OWASP Top 10 (2013) and CWE/SANS Top 25 lists to ensure
 @product@ is as secure as possible. Following these recommendations protects the
 product against known kinds of attacks and security vulnerabilities. For

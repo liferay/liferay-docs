@@ -4,6 +4,8 @@ header-id: authenticating-with-kerberos
 
 # Authenticating with Kerberos
 
+[TOC levels=1-4]
+
 You can use Kerberos to authenticate Microsoft Windows &trade; accounts with
 @product@. This is done completely through configuration by using a combination
 of @product@'s LDAP support and a web server that supports the Kerberos
