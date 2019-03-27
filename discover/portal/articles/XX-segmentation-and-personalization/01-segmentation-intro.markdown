@@ -1,14 +1,17 @@
 # Segmentation and Personalization
 
 Segmentation and Personalization provides a way to evaluate users so that you 
-can dynamically provide personal experiences that are relevant to each user. 
-For example, if you're building a website for a bank, and you want to provide 
-special offers for certain customers, you need a way to only display offers to 
-customers who are eligible or likely to be interested in those offers. You 
-don't want to display information on a basic free checking account for a 
-customer with multiple accounts with very large deposits, but you do want to 
-show that information to a college student with a small balance in a savings 
-account. Segmentation is the solution for showing both customers what they need.
+can dynamically provide personal experiences that are relevant to each visitor 
+to the site. For example, if you're building a website for a bank, and you want 
+to display special offers, you need a way to only display offers to customers 
+who are eligible or likely to be interested in those offers. You don't want to 
+display information on a basic free checking account for a customer with 
+multiple accounts with very large deposits, but you do want to show that 
+information to a college student with a small balance in a savings account. At 
+the same time, you probably don't want to recommend retirement account options 
+to the college student, but the other customer might be a great target for that 
+campaign. Segmentation and Personalization are the tools you need for showing 
+both customers what they need.
 
 ## Defining Segments
 
