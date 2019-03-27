@@ -1,0 +1,15 @@
+<form>
+ <fieldset>
+   <label>Name
+     <input #name />
+   </label><br/>
+   <label>Message
+     <input #message />
+   </label>
+ </fieldset>
+ 
+ <div class="button-footer">
+   <button class="main-btn" (click)="add(name.value, message.value)">Add</button>
+   <button class="plain-btn" (click)="goBack()">Cancel</button>
+ </div>
+</form>
