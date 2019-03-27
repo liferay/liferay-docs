@@ -1,7 +1,7 @@
 # Authenticating with Kerberos
 
 You can use Kerberos to authenticate Microsoft Windows &trade; accounts with
-@product@. This is done completely through configuration, by using a combination
+@product@. This is done completely through configuration by using a combination
 of @product@'s LDAP support and a web server that supports the Kerberos
 protocol. 
 
@@ -49,7 +49,7 @@ response.
 The web server you choose must support both the Kerberos protocol and the
 injection of a custom header into the request that @product@ can later read.
 When the web server forwards the request to @product@, it reads the header to
-obtain the user data and uses that data to authenticate the user. 
+obtain the user data and authenticate the user. 
 
 Next, you'll learn how to get all of this working. 
 
@@ -61,7 +61,7 @@ Windows&trade; clients.
 
 ### Creating the User Keytab
 
-1.  Create a user for @product@ to use to bind to Active Directory. 
+1.  Create a user so @product@ can bind to Active Directory. 
 
 2.  Generate a Kerberos keytab file using `ktpass`: 
 
@@ -78,8 +78,8 @@ Windows&trade; clients.
 
 1.  Configure Kerberos authentication. On Linux, this involves installing `krb5`
     and configuring it to match your realm that's already configured for Active
-    Directory. The example domain for the user configured in step two would look
-    like this: 
+    Directory. The example domain for the user configured in step two above
+    would look like this: 
 
         [libdefaults]
         	default_realm = INTDOMAIN.LOCAL
@@ -95,7 +95,7 @@ Windows&trade; clients.
             kdc = winserver.intdomain.local
         }
 
-2.  Copy the keytab file you generated in step two above to your web server. 
+2.  Copy the keytab file you generated on your AD server to your web server. 
 
 3.  Configure your web server, making sure you set the correct server name,
     Kerberos service name, Kerberos authentication realms, and the path to the
@@ -132,7 +132,7 @@ Windows&trade; clients.
                         KrbMethodK5Passwd   Off
                         #KrbLocalUserMapping On
 
-                        # Below directives puts logon name of authenticated user into http header X-User-Global-ID
+                        # Below directives put logon name of authenticated user into http header X-User-Global-ID
                         RequestHeader unset X-User-Global-ID
                         RewriteEngine On
                         RewriteCond   %{LA-U:REMOTE_USER} (.+)
@@ -196,14 +196,14 @@ your @product@ server as a trusted Internet site.
 
 2.  Log in as a user in that domain. 
 
-3.  Internet Explorer, Edge, and Chrome use the Windows&trade settings for
+3.  Internet Explorer, Edge, and Chrome use the Windows&trade; settings for
     trusted sites. If you use these browsers, go to Internet Options &rarr;
     Security &rarr; Local Intranet Sites and add your @product@ server's URL.
     For example, add `http://mywebserver.intdomain.local:10080`. 
 
-4. Firefox contains its own configuration which can be accessed by typing
-   `about:config` in its address bar. Search for the below two preferences and
-   add the @product@ server's URL as the value for both: 
+4. Firefox can be configured by typing `about:config` in its address bar. Search
+   for the below two preferences and add the @product@ server's URL as the value
+   for both: 
 
    - `network.negotiate-auth.delegation-uris`
    - `network.negotiate-auth.trusted-uris`
