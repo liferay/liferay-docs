@@ -231,5 +231,5 @@ Generator (*Sample* is the default category).
 - [Service Builder](/docs/7-2/frameworks/-/knowledge_base/frameworks/service-builder
 )
 
-- [Localization]([Service Builder](/docs/7-2/frameworks/-/knowledge_base/frameworks/localization
-))
+- [Localization](/docs/7-2/frameworks/-/knowledge_base/frameworks/localization
+)
