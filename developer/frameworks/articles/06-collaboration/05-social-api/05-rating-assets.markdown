@@ -4,6 +4,8 @@ header-id: rating-assets
 
 # Rating Assets
 
+[TOC levels=1-4]
+
 In only a few lines of code, you can use a taglib to enable ratings for your 
 app's content. The steps here show you how. For more information on this taglib 
 and ratings in general, see 

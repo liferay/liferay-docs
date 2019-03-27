@@ -4,6 +4,8 @@ header-id: implementing-rating-type-selection
 
 # Implementing Rating Type Selection
 
+[TOC levels=1-4]
+
 For administrators to change your app's rating type (e.g. likes, stars, thumbs), 
 you must implement rating type selection. The steps here show you how. For a 
 detailed explanation of these steps and rating type selection, see 

@@ -4,6 +4,8 @@ header-id: customizing-rating-value-transformation
 
 # Customizing Rating Value Transformation
 
+[TOC levels=1-4]
+
 To customize rating value transformation, you must create an OSGi component that 
 implements 
 [`RatingsDataTransformer`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/ratings/kernel/transformer/RatingsDataTransformer.html). 
