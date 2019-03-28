@@ -12,7 +12,7 @@ information to the search request is quite similar between all aggregations.
 
 ## Instantiate and Construct the Aggregation
 
-1.  Use the `Aggregations` interface to instantiate the aggregation you'll
+1.  Use the `com.liferay.portal.search.aggregation.Aggregations` to instantiate the aggregation you'll
 construct. For example,
 
     ```java
@@ -21,8 +21,8 @@ construct. For example,
     ```
 
     To discover what fields each aggregation must have (e.g., `Sting name, String
-    field` in the case of the above `PercentilesAggregation`), DOCUMENT OR LINK TO
-    AGGREGATIONS INTERFACE?
+    field` in the case of the above `PercentilesAggregation`),LINK TO
+    AGGREGATIONS INTERFACE
 
 2.  Build out the aggregation to get the desired response. This will look
     different for each aggregation type, but you can understand the
@@ -56,7 +56,7 @@ Once the aggregation itself is in good shape, feed it to the search query.
 
     ```java
     SearchRequest searchRequest =
-    searchRequestBuilder.addAggregation(percentilesAggregation).build();
+        searchRequestBuilder.addAggregation(percentilesAggregation).build();
     ```
 ## Execute the Search Query
 
