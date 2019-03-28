@@ -1,4 +1,10 @@
+---
+header-id: statistical-aggregations
+---
+
 # Statistical Aggregations
+
+[TOC levels=1-4]
 
 Support for 
 [GroupBy](https://github.com/liferay/liferay-portal/blob/7.2.x/portal-kernel/src/com/liferay/portal/kernel/search/GroupBy.java) 
