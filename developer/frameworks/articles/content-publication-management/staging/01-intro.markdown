@@ -57,10 +57,10 @@ portlet data handler's `activate()` method:
   the
   [AssetTagsPortletDataHandler](https://github.com/liferay/liferay-portal/blob/7.2.0-m2/modules/apps/asset/asset-tags-service/src/main/java/com/liferay/asset/tags/internal/exportimport/data/handler/AssetTagsPortletDataHandler.java#L82-L84)
   class for an example of not copying the Export UI for the Staging UI.
-  - `setDataAlwaysStaged`: defines whether you can enable/disable your app's
-    content staging (i.e., selectable from the Publication screen). For example,
-    setting this method to `true` automatically stages your app's content,
-    removing the ability to choose whether its content should be staged.
+- `setDataAlwaysStaged`: defines whether you can enable/disable your app's
+  content staging (i.e., selectable from the Publication screen). For example,
+  setting this method to `true` automatically stages your app's content,
+  removing the ability to choose whether its content should be staged.
 
 Other setter methods are available that control both Export/Import and Staging
 settings. You can reference them by visiting the
@@ -77,8 +77,8 @@ public boolean isConfigurationEnabled() {
 }
 ```
 
-When this is set to `false`, your app is not enabled on the Staged Content
-screen. This is set to `true` by default.
+When this is set to `false`, your app is disabled on the Staged Content screen.
+This is set to `true` by default.
 
 ![Figure 1: There are many apps available to select from the Staged Content screen.](../../../images/staged-content-screen.png)
 
