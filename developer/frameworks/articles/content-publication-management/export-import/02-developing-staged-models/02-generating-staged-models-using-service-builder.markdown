@@ -34,7 +34,9 @@ staged model type.
 2.  Open your project's `[Entity]Model.java` interface and observe the inherited
     interfaces.
 
-        public interface FooModel extends BaseModel<Foo>, ShardedModel, StagedModel {
+    ```java
+    public interface FooModel extends BaseModel<Foo>, ShardedModel, StagedModel {
+    ```
 
     Your model was generated as a staged model! This is because the
     `service.xml` file sets the UUID to `true` and defines the `companyId`,
@@ -44,24 +46,32 @@ staged model type.
 
 3.  Add the `userId` and `userName` columns to your `service.xml` file:
 
-		    <column name="userId" type="long" />
-		    <column name="userName" type="String" />
+    ```markup
+    <column name="userId" type="long" />
+    <column name="userName" type="String" />
+    ```
 
 4.  Rerun Service Builder and observe your `[Entity]Model.java` interface again:
 
-        public interface FooModel extends BaseModel<Foo>, GroupedModel, ShardedModel,
-            StagedAuditedModel {
+    ```java
+    public interface FooModel extends BaseModel<Foo>, GroupedModel, ShardedModel,
+        StagedAuditedModel {
+    ```
 
     Your model is now a staged audited model!
 
 5.  Add the `lastPublishDate` column to your `service.xml` file:
 
-        <column name="lastPublishDate" type="Date" />
+    ```markup
+    <column name="lastPublishDate" type="Date" />
+    ```
 
 6.  Rerun Service Builder and observe your `[Entity]Model.java` interface again:
 
-        public interface FooModel extends BaseModel<Foo>, ShardedModel,
-            StagedGroupedModel {
+    ```java
+    public interface FooModel extends BaseModel<Foo>, ShardedModel,
+        StagedGroupedModel {
+    ```
 
     Your model is now a staged grouped model! The `groupId` column is also
     required to extend the `StagedGroupedModel` interface, but it was already

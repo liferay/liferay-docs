@@ -18,20 +18,24 @@ initiate your custom export/import or staging process.
     [`ExportImportConfigurationSettingsMapFactory`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/configuration/ExportImportConfigurationSettingsMapFactory.html)
     class to create a layout export settings map:
 
-        Map<String, Serializable> exportLayoutSettingsMap =
-            ExportImportConfigurationSettingsMapFactory.
-                buildExportLayoutSettingsMap(...);
+    ```java
+    Map<String, Serializable> exportLayoutSettingsMap =
+        ExportImportConfigurationSettingsMapFactory.
+            buildExportLayoutSettingsMap(...);
+    ```
 
 2.  Create the `ExportImportConfiguration` object by using an *add* method in
     the entity's local service. The map created previously is used as a
     parameter to create the `ExportImportConfiguration` object.
 
-        ExportImportConfiguration exportImportConfiguration =
-            exportImportConfigurationLocalService.
-                addDraftExportImportConfiguration(
-                    user.getUserId(),
-                    ExportImportConfigurationConstants.TYPE_EXPORT_LAYOUT,
-                    exportLayoutSettingsMap);
+    ```java
+    ExportImportConfiguration exportImportConfiguration =
+        exportImportConfigurationLocalService.
+            addDraftExportImportConfiguration(
+                user.getUserId(),
+                ExportImportConfigurationConstants.TYPE_EXPORT_LAYOUT,
+                exportLayoutSettingsMap);
+    ```
 
     The
     [ExportImportConfigurationLocalService](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/service/ExportImportConfigurationLocalService.html)
@@ -42,8 +46,10 @@ initiate your custom export/import or staging process.
     `ExportImportConfiguration` object to initiate an export/import or staging
     process. For example,
 
-        files[0] = exportImportLocalService.exportLayoutsAsFile(
-            exportImportConfiguration);
+    ```java
+    files[0] = exportImportLocalService.exportLayoutsAsFile(
+        exportImportConfiguration);
+    ```
 
     Notice that your `ExportImportConfiguration` object is the only needed
     parameter in the method. Your configuration object holds all the required

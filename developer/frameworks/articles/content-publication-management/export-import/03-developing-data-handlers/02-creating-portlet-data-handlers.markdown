@@ -23,55 +23,63 @@ the Export/Import and Staging UI options for the Bookmarks application.
     [BasePortletDataHandler](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/BasePortletDataHandler.html)
     class. For example,
 
-        public class BookmarksPortletDataHandler extends BasePortletDataHandler {
+    ```java
+    public class BookmarksPortletDataHandler extends BasePortletDataHandler {
+    ```
 
 3.  Create an `@Component` annotation section above the class declaration:
 
-        @Component(
-            immediate = true,
-            property = {
-                "javax.portlet.name=" + BookmarksPortletKeys.BOOKMARKS
-            },
-            service = PortletDataHandler.class
-        )
+    ```java
+    @Component(
+        immediate = true,
+        property = {
+            "javax.portlet.name=" + BookmarksPortletKeys.BOOKMARKS
+        },
+        service = PortletDataHandler.class
+    )
+    ```
 
 4.  Set what the portlet data handler controls and the portlet's Export/Import
     and Staging UIs by adding an `activate` method:
 
-        @Activate
-        protected void activate() {
-            setDataPortletPreferences("rootFolderId");
-            setDeletionSystemEventStagedModelTypes(
-                new StagedModelType(BookmarksEntry.class),
-                new StagedModelType(BookmarksFolder.class));
-            setExportControls(
-                new PortletDataHandlerBoolean(
-                    NAMESPACE, "entries", true, false, null,
-                    BookmarksEntry.class.getName()));
-            setStagingControls(getExportControls());
-        }
+    ```java
+    @Activate
+    protected void activate() {
+        setDataPortletPreferences("rootFolderId");
+        setDeletionSystemEventStagedModelTypes(
+            new StagedModelType(BookmarksEntry.class),
+            new StagedModelType(BookmarksFolder.class));
+        setExportControls(
+            new PortletDataHandlerBoolean(
+                NAMESPACE, "entries", true, false, null,
+                BookmarksEntry.class.getName()));
+        setStagingControls(getExportControls());
+    }
+    ```
 
     ![Figure 1: You can select the content types you'd like to export/import in the UI.](../../../../images/export-import-controls.png)
 
 5.  For the Bookmarks portlet data handler to reference its entry and folder
     staged models successfully, you must set them in your class:
 
-        @Reference(unbind = "-")
-        protected void setBookmarksEntryLocalService(
-            BookmarksEntryLocalService bookmarksEntryLocalService) {
+    ```java
+    @Reference(unbind = "-")
+    protected void setBookmarksEntryLocalService(
+        BookmarksEntryLocalService bookmarksEntryLocalService) {
 
-            _bookmarksEntryLocalService = bookmarksEntryLocalService;
-        }
+        _bookmarksEntryLocalService = bookmarksEntryLocalService;
+    }
 
-        @Reference(unbind = "-")
-        protected void setBookmarksFolderLocalService(
-            BookmarksFolderLocalService bookmarksFolderLocalService) {
+    @Reference(unbind = "-")
+    protected void setBookmarksFolderLocalService(
+        BookmarksFolderLocalService bookmarksFolderLocalService) {
 
-            _bookmarksFolderLocalService = bookmarksFolderLocalService;
-        }
+        _bookmarksFolderLocalService = bookmarksFolderLocalService;
+    }
 
-        private BookmarksEntryLocalService _bookmarksEntryLocalService;
-        private BookmarksFolderLocalService _bookmarksFolderLocalService;
+    private BookmarksEntryLocalService _bookmarksEntryLocalService;
+    private BookmarksFolderLocalService _bookmarksFolderLocalService;
+    ```
 
     The `set` methods must be annotated with the
     [@Reference](https://osgi.org/javadoc/r6/residential/org/osgi/service/component/annotations/Reference.html)
@@ -93,7 +101,9 @@ the Export/Import and Staging UI options for the Bookmarks application.
     can identify your application's entities from other entities in @product@.
     The Bookmarks application's namespace declaration looks like this:
 
-        public static final String NAMESPACE = "bookmarks";
+    ```java
+    public static final String NAMESPACE = "bookmarks";
+    ```
 
     You'll see how this namespace is used later.
 
@@ -101,109 +111,113 @@ the Export/Import and Staging UI options for the Bookmarks application.
     model entities so it can properly export/import it. Add this functionality
     by inserting the following methods:
 
-        @Override
-        protected String doExportData(
-                final PortletDataContext portletDataContext, String portletId,
-                PortletPreferences portletPreferences)
-            throws Exception {
+    ```java
+    @Override
+    protected String doExportData(
+            final PortletDataContext portletDataContext, String portletId,
+            PortletPreferences portletPreferences)
+        throws Exception {
 
-            Element rootElement = addExportDataRootElement(portletDataContext);
+        Element rootElement = addExportDataRootElement(portletDataContext);
 
-            if (!portletDataContext.getBooleanParameter(NAMESPACE, "entries")) {
-                return getExportDataRootElementString(rootElement);
-            }
-
-            portletDataContext.addPortletPermissions(
-                BookmarksConstants.RESOURCE_NAME);
-
-            rootElement.addAttribute(
-                "group-id", String.valueOf(portletDataContext.getScopeGroupId()));
-
-            ExportActionableDynamicQuery folderActionableDynamicQuery =
-                _bookmarksFolderLocalService.
-                    getExportActionableDynamicQuery(portletDataContext);
-
-            folderActionableDynamicQuery.performActions();
-
-            ActionableDynamicQuery entryActionableDynamicQuery =
-                _bookmarksEntryLocalService.
-                    getExportActionableDynamicQuery(portletDataContext);
-
-            entryActionableDynamicQuery.performActions();
-
+        if (!portletDataContext.getBooleanParameter(NAMESPACE, "entries")) {
             return getExportDataRootElementString(rootElement);
         }
 
-        @Override
-        protected PortletPreferences doImportData(
-                PortletDataContext portletDataContext, String portletId,
-                PortletPreferences portletPreferences, String data)
-            throws Exception {
+        portletDataContext.addPortletPermissions(
+            BookmarksConstants.RESOURCE_NAME);
 
-            if (!portletDataContext.getBooleanParameter(NAMESPACE, "entries")) {
-                return null;
-            }
+        rootElement.addAttribute(
+            "group-id", String.valueOf(portletDataContext.getScopeGroupId()));
 
-            portletDataContext.importPortletPermissions(
-                BookmarksConstants.RESOURCE_NAME);
+        ExportActionableDynamicQuery folderActionableDynamicQuery =
+            _bookmarksFolderLocalService.
+                getExportActionableDynamicQuery(portletDataContext);
 
-            Element foldersElement = portletDataContext.getImportDataGroupElement(
-                BookmarksFolder.class);
+        folderActionableDynamicQuery.performActions();
 
-            List<Element> folderElements = foldersElement.elements();
+        ActionableDynamicQuery entryActionableDynamicQuery =
+            _bookmarksEntryLocalService.
+                getExportActionableDynamicQuery(portletDataContext);
 
-            for (Element folderElement : folderElements) {
-                StagedModelDataHandlerUtil.importStagedModel(
-                    portletDataContext, folderElement);
-            }
+        entryActionableDynamicQuery.performActions();
 
-            Element entriesElement = portletDataContext.getImportDataGroupElement(
-                BookmarksEntry.class);
+        return getExportDataRootElementString(rootElement);
+    }
 
-            List<Element> entryElements = entriesElement.elements();
+    @Override
+    protected PortletPreferences doImportData(
+            PortletDataContext portletDataContext, String portletId,
+            PortletPreferences portletPreferences, String data)
+        throws Exception {
 
-            for (Element entryElement : entryElements) {
-                StagedModelDataHandlerUtil.importStagedModel(
-                    portletDataContext, entryElement);
-            }
-
+        if (!portletDataContext.getBooleanParameter(NAMESPACE, "entries")) {
             return null;
         }
+
+        portletDataContext.importPortletPermissions(
+            BookmarksConstants.RESOURCE_NAME);
+
+        Element foldersElement = portletDataContext.getImportDataGroupElement(
+            BookmarksFolder.class);
+
+        List<Element> folderElements = foldersElement.elements();
+
+        for (Element folderElement : folderElements) {
+            StagedModelDataHandlerUtil.importStagedModel(
+                portletDataContext, folderElement);
+        }
+
+        Element entriesElement = portletDataContext.getImportDataGroupElement(
+                BookmarksEntry.class);
+
+        List<Element> entryElements = entriesElement.elements();
+
+        for (Element entryElement : entryElements) {
+            StagedModelDataHandlerUtil.importStagedModel(
+                portletDataContext, entryElement);
+        }
+
+        return null;
+    }
+    ```
 
 8.  Add a method that counts the number of affected entities based on the
     current export or staging process:
 
-        @Override
-        protected void doPrepareManifestSummary(
-                PortletDataContext portletDataContext,
-                PortletPreferences portletPreferences)
-            throws Exception {
+    ```java
+    @Override
+    protected void doPrepareManifestSummary(
+            PortletDataContext portletDataContext,
+            PortletPreferences portletPreferences)
+        throws Exception {
 
-            if (ExportImportDateUtil.isRangeFromLastPublishDate(
-                    portletDataContext)) {
+        if (ExportImportDateUtil.isRangeFromLastPublishDate(
+                portletDataContext)) {
 
-                _staging.populateLastPublishDateCounts(
-                    portletDataContext,
-                    new StagedModelType[] {
-                        new StagedModelType(BookmarksEntry.class.getName()),
-                        new StagedModelType(BookmarksFolder.class.getName())
-                    });
+            _staging.populateLastPublishDateCounts(
+                portletDataContext,
+                new StagedModelType[] {
+                    new StagedModelType(BookmarksEntry.class.getName()),
+                    new StagedModelType(BookmarksFolder.class.getName())
+                });
 
-            			return;
-            		}
+            	return;
+          	}
 
-            ActionableDynamicQuery entryExportActionableDynamicQuery =
-                _bookmarksEntryLocalService.
-                    getExportActionableDynamicQuery(portletDataContext);
+        ActionableDynamicQuery entryExportActionableDynamicQuery =
+            _bookmarksEntryLocalService.
+                getExportActionableDynamicQuery(portletDataContext);
 
-            entryExportActionableDynamicQuery.performCount();
+        entryExportActionableDynamicQuery.performCount();
 
-            ActionableDynamicQuery folderExportActionableDynamicQuery =
-                _bookmarksFolderLocalService.
-                    getExportActionableDynamicQuery(portletDataContext);
+        ActionableDynamicQuery folderExportActionableDynamicQuery =
+            _bookmarksFolderLocalService.
+                getExportActionableDynamicQuery(portletDataContext);
 
-            folderExportActionableDynamicQuery.performCount();
-        }
+        folderExportActionableDynamicQuery.performCount();
+    }
+    ```
 
     This number is displayed in the Export and Staging UI. Note that since the
     Staging framework traverses the entity graph during export, the built-in
@@ -214,18 +228,20 @@ the Export/Import and Staging UI options for the Bookmarks application.
 9.  Set the XML schema version for the XML files included in your exported LAR
     file:
 
-        public static final String SCHEMA_VERSION = "1.0.0";
+    ```java
+    public static final String SCHEMA_VERSION = "1.0.0";
 
-        @Override
-        public String getSchemaVersion() {
-            return SCHEMA_VERSION;
-        }
+    @Override
+    public String getSchemaVersion() {
+        return SCHEMA_VERSION;
+    }
 
-        @Override
-        public boolean validateSchemaVersion(String schemaVersion) {
-            return _portletDataHandlerHelper.validateSchemaVersion(
-                schemaVersion, getSchemaVersion());
-        }
+    @Override
+    public boolean validateSchemaVersion(String schemaVersion) {
+        return _portletDataHandlerHelper.validateSchemaVersion(
+            schemaVersion, getSchemaVersion());
+    }
+    ```
 
 Awesome! You've set up your portlet data handler and your application can now
 support the Export/Import framework and display a UI for it. Be sure to also

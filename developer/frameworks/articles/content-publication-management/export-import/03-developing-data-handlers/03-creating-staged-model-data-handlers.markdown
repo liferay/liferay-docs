@@ -25,29 +25,35 @@ you've already created
     how this was done for the `BookmarksEntryStagedModelDataHandler` class
     below:
 
-        public class BookmarksEntryStagedModelDataHandler
-            extends BaseStagedModelDataHandler<BookmarksEntry> {
+    ```java
+    public class BookmarksEntryStagedModelDataHandler
+        extends BaseStagedModelDataHandler<BookmarksEntry> {
+    ```
 
 3.  Create an `@Component` annotation section above the class declaration.
 
-        @Component(immediate = true, service = StagedModelDataHandler.class)
+    ```java
+    @Component(immediate = true, service = StagedModelDataHandler.class)
+    ```
 
 4.  Create a getter and setter method for the local service of the staged model
     for which you want to provide a data handler:
 
-        @Override
-        protected BookmarksEntryLocalService getBookmarksEntryLocalService() {
-            return _bookmarksEntryLocalService;
-        }
+    ```java
+    @Override
+    protected BookmarksEntryLocalService getBookmarksEntryLocalService() {
+        return _bookmarksEntryLocalService;
+    }
 
-        @Reference(unbind = "-")
-        protected void setBookmarksEntryLocalService(
-            BookmarksEntryLocalService bookmarksEntryLocalService) {
+    @Reference(unbind = "-")
+    protected void setBookmarksEntryLocalService(
+        BookmarksEntryLocalService bookmarksEntryLocalService) {
 
-            _bookmarksEntryLocalService = bookmarksEntryLocalService;
-        }
+        _bookmarksEntryLocalService = bookmarksEntryLocalService;
+    }
 
-        private BookmarksEntryLocalService _bookmarksEntryLocalService;
+    private BookmarksEntryLocalService _bookmarksEntryLocalService;
+    ```
 
     These methods are used to link this data handler with the staged model for
     bookmark entries.
@@ -66,19 +72,23 @@ you've already created
     [`StagedModelDataHandler`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/StagedModelDataHandler.html)'s
     `getClassnames()` method:
 
-        public static final String[] CLASS_NAMES = {BookmarksEntry.class.getName()};
+    ```java
+    public static final String[] CLASS_NAMES = {BookmarksEntry.class.getName()};
 
-        @Override
-        public String[] getClassNames() {
-            return CLASS_NAMES;
-        }
+    @Override
+    public String[] getClassNames() {
+        return CLASS_NAMES;
+    }
+    ```
 
 6.  Add a method that retrieves the staged model's display name:
 
-        @Override
-        public String getDisplayName(BookmarksEntry entry) {
-            return entry.getName();
-        }
+    ```java
+    @Override
+    public String getDisplayName(BookmarksEntry entry) {
+        return entry.getName();
+    }
+    ```
 
     The display name is presented with the progress bar during the export/import
     process.
@@ -87,86 +97,90 @@ you've already created
 
 7.  Add methods that import and export your staged model and its references.
 
-        @Override
-        protected void doExportStagedModel(
-                PortletDataContext portletDataContext, BookmarksEntry entry)
-            throws Exception {
+    ```java
+    @Override
+    protected void doExportStagedModel(
+            PortletDataContext portletDataContext, BookmarksEntry entry)
+        throws Exception {
 
-            if (entry.getFolderId() !=
-                    BookmarksFolderConstants.DEFAULT_PARENT_FOLDER_ID) {
+        if (entry.getFolderId() !=
+                BookmarksFolderConstants.DEFAULT_PARENT_FOLDER_ID) {
 
-                StagedModelDataHandlerUtil.exportReferenceStagedModel(
-                    portletDataContext, entry, entry.getFolder(),
-                    PortletDataContext.REFERENCE_TYPE_PARENT);
-            }
-
-            Element entryElement = portletDataContext.getExportDataElement(entry);
-
-            portletDataContext.addClassedModel(
-                entryElement, ExportImportPathUtil.getModelPath(entry), entry);
+            StagedModelDataHandlerUtil.exportReferenceStagedModel(
+                portletDataContext, entry, entry.getFolder(),
+                PortletDataContext.REFERENCE_TYPE_PARENT);
         }
 
-        @Override
-        protected void doImportStagedModel(
-                PortletDataContext portletDataContext, BookmarksEntry entry)
-            throws Exception {
+        Element entryElement = portletDataContext.getExportDataElement(entry);
 
-            Map<Long, Long> folderIds =
-                (Map<Long, Long>)portletDataContext.getNewPrimaryKeysMap(
-                    BookmarksFolder.class);
+        portletDataContext.addClassedModel(
+            entryElement, ExportImportPathUtil.getModelPath(entry), entry);
+    }
 
-            long folderId = MapUtil.getLong(
-                folderIds, entry.getFolderId(), entry.getFolderId());
+    @Override
+    protected void doImportStagedModel(
+            PortletDataContext portletDataContext, BookmarksEntry entry)
+        throws Exception {
 
-            ServiceContext serviceContext =
-                portletDataContext.createServiceContext(entry);
+        Map<Long, Long> folderIds =
+            (Map<Long, Long>)portletDataContext.getNewPrimaryKeysMap(
+                BookmarksFolder.class);
 
-            BookmarksEntry importedEntry = null;
+        long folderId = MapUtil.getLong(
+            folderIds, entry.getFolderId(), entry.getFolderId());
 
-            if (portletDataContext.isDataStrategyMirror()) {
+        ServiceContext serviceContext =
+            portletDataContext.createServiceContext(entry);
 
-                BookmarksEntry existingEntry =
-                    _bookmarksEntryLocalService. fetchBookmarksEntryByUuidAndGroupId(
-                        entry.getUuid(), portletDataContext.getScopeGroupId());
+        BookmarksEntry importedEntry = null;
 
-                if (existingEntry == null) {
+        if (portletDataContext.isDataStrategyMirror()) {
 
-                    serviceContext.setUuid(entry.getUuid());
-                    importedEntry = _bookmarksEntryLocalService.addEntry(					
-                      userId, portletDataContext.getScopeGroupId(), folderId, entry.getName(), entry.getUrl(), entry.getDescription(), serviceContext);
-                }
-                else {
-                    importedEntry = _bookmarksEntryLocalService.updateEntry(
-                        userId, existingEntry.getEntryId(), portletDataContext.getScopeGroupId(), folderId, entry.getName(), entry.getUrl(), entry.getDescription(),	serviceContext);
-                }
+            BookmarksEntry existingEntry =
+                _bookmarksEntryLocalService. fetchBookmarksEntryByUuidAndGroupId(
+                    entry.getUuid(), portletDataContext.getScopeGroupId());
+
+            if (existingEntry == null) {
+
+                serviceContext.setUuid(entry.getUuid());
+                importedEntry = _bookmarksEntryLocalService.addEntry(					
+                  userId, portletDataContext.getScopeGroupId(), folderId, entry.getName(), entry.getUrl(), entry.getDescription(), serviceContext);
             }
             else {
-                importedEntry = _bookmarksEntryLocalService.addEntry(userId, portletDataContext.getScopeGroupId(), folderId,entry.getName(), entry.getUrl(), entry.getDescription(),	serviceContext);
+                importedEntry = _bookmarksEntryLocalService.updateEntry(
+                    userId, existingEntry.getEntryId(), portletDataContext.getScopeGroupId(), folderId, entry.getName(), entry.getUrl(), entry.getDescription(),	serviceContext);
             }
-
-            portletDataContext.importClassedModel(entry, importedEntry);
         }
+        else {
+            importedEntry = _bookmarksEntryLocalService.addEntry(userId, portletDataContext.getScopeGroupId(), folderId,entry.getName(), entry.getUrl(), entry.getDescription(),	serviceContext);
+        }
+
+        portletDataContext.importClassedModel(entry, importedEntry);
+    }
+    ```
 
 8.  Add the `doImportMissingReference` method to your class:
 
-        @Override
-        protected void doImportMissingReference(
-                PortletDataContext portletDataContext, String uuid, long groupId,
-                long entryId)
-            throws Exception {
+    ```java
+    @Override
+    protected void doImportMissingReference(
+            PortletDataContext portletDataContext, String uuid, long groupId,
+            long entryId)
+        throws Exception {
 
-            BookmarksEntry existingEntry = fetchMissingReference(uuid, groupId);
+        BookmarksEntry existingEntry = fetchMissingReference(uuid, groupId);
 
-            if (existingEntry == null) {
-                return;
-            }
-
-            Map<Long, Long> entryIds =
-                (Map<Long, Long>)portletDataContext.getNewPrimaryKeysMap(
-                    BookmarksEntry.class);
-
-            entryIds.put(entryId, existingEntry.getEntryId());
+        if (existingEntry == null) {
+            return;
         }
+
+        Map<Long, Long> entryIds =
+            (Map<Long, Long>)portletDataContext.getNewPrimaryKeysMap(
+                BookmarksEntry.class);
+
+        entryIds.put(entryId, existingEntry.getEntryId());
+    }
+    ```
 
 Fantastic! You've created a data handler for your staged model. The
 Export/Import framework can now track your entity's behavior and data. Be sure

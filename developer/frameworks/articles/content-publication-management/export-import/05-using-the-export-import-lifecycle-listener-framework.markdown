@@ -31,8 +31,9 @@ steps below:
 
 4.  Directly above the class's declaration, insert the following annotation:
 
-        @Component(immediate = true, 
-                    service = ExportImportLifecycleListener.class)
+    ```java
+    @Component(immediate = true, service = ExportImportLifecycleListener.class)
+    ```
 
     This annotation declares the implementation class of the component and
     specifies that the portal should start the module immediately. 
@@ -45,37 +46,41 @@ steps below:
 
 6.  Add the `getStagedModelLogFragment(...)` method:
 
-        protected String getStagedModelLogFragment(StagedModel stagedModel) {
-            StringBundler sb = new StringBundler(8);
+    ```java
+    protected String getStagedModelLogFragment(StagedModel stagedModel) {
+        StringBundler sb = new StringBundler(8);
 
-            sb.append(StringPool.OPEN_CURLY_BRACE);
-            sb.append("class: ");
-            sb.append(ExportImportClassedModelUtil.getClassName(stagedModel));
+        sb.append(StringPool.OPEN_CURLY_BRACE);
+        sb.append("class: ");
+        sb.append(ExportImportClassedModelUtil.getClassName(stagedModel));
 
-            if (stagedModel instanceof StagedGroupedModel) {
-                StagedGroupedModel stagedGroupedModel =
-                    (StagedGroupedModel)stagedModel;
+        if (stagedModel instanceof StagedGroupedModel) {
+            StagedGroupedModel stagedGroupedModel =
+                (StagedGroupedModel)stagedModel;
 
-                sb.append(", groupId: ");
-                sb.append(stagedGroupedModel.getGroupId());
-            }
-
-            sb.append(", uuid: ");
-            sb.append(stagedModel.getUuid());
-            sb.append(StringPool.CLOSE_CURLY_BRACE);
-
-            return sb.toString();
+            sb.append(", groupId: ");
+            sb.append(stagedGroupedModel.getGroupId());
         }
+
+        sb.append(", uuid: ");
+        sb.append(stagedModel.getUuid());
+        sb.append(StringPool.CLOSE_CURLY_BRACE);
+
+        return sb.toString();
+    }
+    ```
 
     This retrieves the staged model's log fragment, which is the lifecycle
     listener's logging information on events.
 
 7.  Add the `isParallel()` method:
 
-        @Override
-        public boolean isParallel() {
-            return false;
-        }
+    ```java
+    @Override
+    public boolean isParallel() {
+        return false;
+    }
+    ```
 
     This determines whether your listener should run in parallel with the
     import/export process, or if the calling method should stop, execute the
@@ -84,17 +89,19 @@ steps below:
 
 8.  Add the `onExportImportLifecycleEvent(...)` method:
 
-        @Override
-        public void onExportImportLifecycleEvent(
-                ExportImportLifecycleEvent exportImportLifecycleEvent)
-            throws Exception {
+    ```java
+    @Override
+    public void onExportImportLifecycleEvent(
+            ExportImportLifecycleEvent exportImportLifecycleEvent)
+        throws Exception {
 
-            if (!_log.isDebugEnabled()) {
-                return;
-            }
-
-            super.onExportImportLifecycleEvent(exportImportLifecycleEvent);
+        if (!_log.isDebugEnabled()) {
+            return;
         }
+
+        super.onExportImportLifecycleEvent(exportImportLifecycleEvent);
+    }
+    ```
 
     This consumes the lifecycle event and passes it through the base class's
     method (as long as Debug mode is not enabled).
@@ -103,19 +110,21 @@ steps below:
     For example, when a layout export fails, logging information directly
     related to that event is printed:
 
-        @Override
-        protected void onLayoutExportFailed(
-                PortletDataContext portletDataContext, Throwable throwable)
-            throws Exception {
+    ```java
+    @Override
+    protected void onLayoutExportFailed(
+            PortletDataContext portletDataContext, Throwable throwable)
+        throws Exception {
 
-            if (!_log.isDebugEnabled()) {
-                return;
-            }
-
-            _log.debug(
-                "Layout export failed for group " + portletDataContext.getGroupId(),
-                throwable);
+        if (!_log.isDebugEnabled()) {
+            return;
         }
+
+        _log.debug(
+            "Layout export failed for group " + portletDataContext.getGroupId(),
+            throwable);
+    }
+    ```
 
     In summary, the `LoggerExportImportLifecycleListener` uses the lifecycle
     listener framework to print messages to the log when an export/import event

@@ -22,8 +22,10 @@ This example references Liferay's Bookmarks app and Bookmarks Entry entities.
     the `StagedModelRepository` interface in the class' declaration. For
     example,
 
-        public class BookmarksEntryStagedModelRepository
-            implements StagedModelRepository<BookmarksEntry> {
+    ```java
+    public class BookmarksEntryStagedModelRepository
+        implements StagedModelRepository<BookmarksEntry> {
+    ```
 
     Be sure also to include the staged model type parameter for this repository
     (e.g., `BookmarksEntry`).
@@ -31,11 +33,13 @@ This example references Liferay's Bookmarks app and Bookmarks Entry entities.
 3.  Add an `@Component` annotation for your staged model repository class that
     looks like this:
 
-        @Component(
-            immediate = true,
-            property = "model.class.name=com.liferay.bookmarks.model.BookmarksEntry",
-            service = StagedModelRepository.class
-        )
+    ```java
+    @Component(
+        immediate = true,
+        property = "model.class.name=com.liferay.bookmarks.model.BookmarksEntry",
+        service = StagedModelRepository.class
+    )
+    ```
 
 4.  Implement the `StagedModelRepository` interface's methods in your staged
     model repository. You can reference the
@@ -48,27 +52,29 @@ This example references Liferay's Bookmarks app and Bookmarks Entry entities.
 5.  Implement the `addStagedModel(...)` method. The Bookmarks entry example
     looks like this:
 
-        @Override
-        public BookmarksEntry addStagedModel(
-                PortletDataContext portletDataContext,
-                BookmarksEntry bookmarksEntry)
-            throws PortalException {
+    ```java
+    @Override
+    public BookmarksEntry addStagedModel(
+            PortletDataContext portletDataContext,
+            BookmarksEntry bookmarksEntry)
+        throws PortalException {
 
-            long userId = portletDataContext.getUserId(
-                bookmarksEntry.getUserUuid());
+        long userId = portletDataContext.getUserId(
+            bookmarksEntry.getUserUuid());
 
-            ServiceContext serviceContext = portletDataContext.createServiceContext(
-                bookmarksEntry);
+        ServiceContext serviceContext = portletDataContext.createServiceContext(
+            bookmarksEntry);
 
-            if (portletDataContext.isDataStrategyMirror()) {
-                serviceContext.setUuid(bookmarksEntry.getUuid());
-            }
-
-            return _bookmarksEntryLocalService.addEntry(
-                userId, bookmarksEntry.getGroupId(), bookmarksEntry.getFolderId(),
-                bookmarksEntry.getName(), bookmarksEntry.getUrl(),
-                bookmarksEntry.getDescription(), serviceContext);
+        if (portletDataContext.isDataStrategyMirror()) {
+            serviceContext.setUuid(bookmarksEntry.getUuid());
         }
+
+        return _bookmarksEntryLocalService.addEntry(
+            userId, bookmarksEntry.getGroupId(), bookmarksEntry.getFolderId(),
+            bookmarksEntry.getName(), bookmarksEntry.getUrl(),
+            bookmarksEntry.getDescription(), serviceContext);
+    }
+    ```
 
     This provides the UUID for the local service.
 
@@ -76,14 +82,16 @@ This example references Liferay's Bookmarks app and Bookmarks Entry entities.
     Implementing the `deleteStagedModels` method calls the local service
     directly.
 
-        @Override
-        public void deleteStagedModels(PortletDataContext portletDataContext)
-            throws PortalException {
+    ```java
+    @Override
+    public void deleteStagedModels(PortletDataContext portletDataContext)
+        throws PortalException {
 
-            _bookmarksEntryLocalService.deleteEntries(
-                portletDataContext.getScopeGroupId(),
-                BookmarksFolderConstants.DEFAULT_PARENT_FOLDER_ID);
-        }
+        _bookmarksEntryLocalService.deleteEntries(
+            portletDataContext.getScopeGroupId(),
+            BookmarksFolderConstants.DEFAULT_PARENT_FOLDER_ID);
+    }
+    ```
 
 7.  Finish implementing the `StagedModelRepository` so it's usable in your data
     handlers.

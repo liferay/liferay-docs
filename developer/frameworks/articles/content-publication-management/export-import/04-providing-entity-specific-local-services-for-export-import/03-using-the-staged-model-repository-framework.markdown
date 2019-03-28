@@ -16,35 +16,41 @@ snippets originate from Liferay's Bookmarks app and Bookmarks Entries.
 1.  Create a getter and setter method to make a `StagedModelRepository` object
     available for the `BookmarksEntry` entity:
 
-        @Override
-        protected StagedModelRepository<BookmarksEntry> getStagedModelRepository() {
-            return _stagedModelRepository;
-        }
+    ```java
+    @Override
+    protected StagedModelRepository<BookmarksEntry> getStagedModelRepository() {
+        return _stagedModelRepository;
+    }
 
-        @Reference(
-            target = "(model.class.name=com.liferay.bookmarks.model.BookmarksEntry)",
-            unbind = "-"
-        )
-        protected void setStagedModelRepository(
-            StagedModelRepository<BookmarksEntry> stagedModelRepository) {
+    @Reference(
+        target = "(model.class.name=com.liferay.bookmarks.model.BookmarksEntry)",
+        unbind = "-"
+    )
+    protected void setStagedModelRepository(
+        StagedModelRepository<BookmarksEntry> stagedModelRepository) {
 
-            _stagedModelRepository = stagedModelRepository;
-        }
+        _stagedModelRepository = stagedModelRepository;
+    }
 
-        private StagedModelRepository<BookmarksEntry> _stagedModelRepository;
+    private StagedModelRepository<BookmarksEntry> _stagedModelRepository;
+    ```
 
 2.  Call your `_stagedModelRepository` object to leverage its specialized
     export/import logic. For example,
 
-        newEntry = _stagedModelRepository.updateStagedModel(portletDataContext, importedEntry);
+    ```java
+    newEntry = _stagedModelRepository.updateStagedModel(portletDataContext, importedEntry);
+    ```
 
     Without the staged model repository logic, you would've called your local
     service like this:
 
-        serviceContext.setUuid(entry.getUuid());
+    ```java
+    serviceContext.setUuid(entry.getUuid());
 
-        newEntry = _bookmarksEntryLocalService.addEntry(
-            userId, portletDataContext.getScopeGroupId(), folderId, entry.getName(), entry.getUrl(), entry.getDescription(), serviceContext);
+    newEntry = _bookmarksEntryLocalService.addEntry(
+        userId, portletDataContext.getScopeGroupId(), folderId, entry.getName(), entry.getUrl(), entry.getDescription(), serviceContext);
+    ```
 
     The large number of parameters and UUID setter the local service method
     requires aren't needed when leveraging the staged model repository.

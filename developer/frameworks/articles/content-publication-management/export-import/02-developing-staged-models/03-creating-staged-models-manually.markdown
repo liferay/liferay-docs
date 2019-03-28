@@ -28,9 +28,11 @@ Follow the steps below to leverage the Model Adapter Builder in your app.
     [staged model interfaces](/developer/reference/-/knowledge_base/7-2/staged-model-interfaces)
     and your model specific interface. For example,
 
-        public interface StagedAssetLink extends AssetLink, StagedModel {
+    ```java
+    public interface StagedAssetLink extends AssetLink, StagedModel {
 
-        }
+    }
+    ```
 
     | **Note:** Staged model interfaces typically follow the `Staged[Entity]`
     | naming convention. The Asset Link framework uses a generic entity called
@@ -39,9 +41,11 @@ Follow the steps below to leverage the Model Adapter Builder in your app.
 2.  Define methods required for your model to qualify as a staged model. For
     asset links, methods for retrieving entry UUIDs (among others) are defined:
 
-        public String getEntry1Uuid();
+    ```java
+    public String getEntry1Uuid();
 
-        public String getEntry2Uuid();
+    public String getEntry2Uuid();
+    ```
 
     | **Note:** Asset links do not provide UUIDs by default; however, they still
     | need to be tracked in the Staging and Export/Import frameworks. Therefore,
@@ -55,85 +59,89 @@ Follow the steps below to leverage the Model Adapter Builder in your app.
 2.  Create an implementation class that implements your new `Staged[Entity]`.
     For example, the Asset Link framework does this:
 
-        public class StagedAssetLinkImpl implements StagedAssetLink {
+    ```java
+    public class StagedAssetLinkImpl implements StagedAssetLink {
 
-        }
+    }
+    ```
 
     This class provides necessary logic for your entity model to be recognized
     as a staged model. Below is a subset of logic in the example
     `StagedAssetLinkImpl` class used to populate UUIDs for asset link entries:
 
-        public StagedAssetLinkImpl(AssetLink assetLink) {
-             _assetLink = assetLink;
+    ```java
+    public StagedAssetLinkImpl(AssetLink assetLink) {
+         _assetLink = assetLink;
 
-            ...
+        ...
 
-             populateUuid();
-        }
+         populateUuid();
+    }
 
-        @Override
-        public String getEntry1Uuid() {
-            if (Validator.isNotNull(_entry1Uuid)) {
-                return _entry1Uuid;
-            }
-
-            populateEntry1Attributes();
-
+    @Override
+    public String getEntry1Uuid() {
+        if (Validator.isNotNull(_entry1Uuid)) {
             return _entry1Uuid;
         }
 
-        @Override
-        public String getEntry2Uuid() {
-            if (Validator.isNotNull(_entry2Uuid)) {
+        populateEntry1Attributes();
+
+        return _entry1Uuid;
+    }
+
+    @Override
+    public String getEntry2Uuid() {
+        if (Validator.isNotNull(_entry2Uuid)) {
                 return _entry2Uuid;
+        }
+
+        populateEntry2Attributes();
+
+        return _entry2Uuid;
+    }
+
+    protected void populateEntry1Attributes() {
+
+        ...
+
+        AssetEntry entry1 = AssetEntryLocalServiceUtil.fetchAssetEntry(
+            _assetLink.getEntryId1());
+
+        ...
+
+        _entry1Uuid = entry1.getClassUuid();
+    }
+
+    protected void populateEntry2Attributes() {
+
+        ...
+
+        AssetEntry entry2 = AssetEntryLocalServiceUtil.fetchAssetEntry(
+            _assetLink.getEntryId2());
+
+        ...
+
+        _entry2Uuid = entry2.getClassUuid();
+    }
+
+    protected void populateUuid() {
+
+        ...
+
+        String entry1Uuid = getEntry1Uuid();
+        String entry2Uuid = getEntry2Uuid();
+
+        ...
+
+        _uuid = entry1Uuid + StringPool.POUND + entry2Uuid;
             }
+    }
 
-            populateEntry2Attributes();
-
-            return _entry2Uuid;
-        }
-
-        protected void populateEntry1Attributes() {
-
-            ...
-
-            AssetEntry entry1 = AssetEntryLocalServiceUtil.fetchAssetEntry(
-                _assetLink.getEntryId1());
-
-            ...
-
-            _entry1Uuid = entry1.getClassUuid();
-        }
-
-        protected void populateEntry2Attributes() {
-
-            ...
-
-            AssetEntry entry2 = AssetEntryLocalServiceUtil.fetchAssetEntry(
-                _assetLink.getEntryId2());
-
-            ...
-
-            _entry2Uuid = entry2.getClassUuid();
-        }
-
-        protected void populateUuid() {
-
-            ...
-
-            String entry1Uuid = getEntry1Uuid();
-            String entry2Uuid = getEntry2Uuid();
-
-            ...
-
-            _uuid = entry1Uuid + StringPool.POUND + entry2Uuid;
-                }
-        }
-
-        private AssetLink _assetLink;
-        private String _entry1Uuid;
-        private String _entry2Uuid;
-        private String _uuid;
+    private AssetLink _assetLink;
+    private String _entry1Uuid;
+    private String _entry2Uuid;
+    private String _uuid;
+    ```
 
     This logic retrieves asset link entries and populates UUIDs for them usable
     by the Staging and Export/Import frameworks. With the newly generated UUIDs,
@@ -144,15 +152,17 @@ Follow the steps below to leverage the Model Adapter Builder in your app.
     interface. You should define the entity type and your Staged Model Adapter
     class when implementing the interface:
 
-        public class StagedAssetLinkModelAdapterBuilder
-            implements ModelAdapterBuilder<AssetLink, StagedAssetLink> {
+    ```java
+    public class StagedAssetLinkModelAdapterBuilder
+        implements ModelAdapterBuilder<AssetLink, StagedAssetLink> {
 
-            @Override
-            public StagedAssetLink build(AssetLink assetLink) {
-                return new StagedAssetLinkImpl(assetLink);
-            }
-
+        @Override
+        public StagedAssetLink build(AssetLink assetLink) {
+            return new StagedAssetLinkImpl(assetLink);
         }
+
+    }
+    ```
 
     For the `StagedAssetLinkModelAdapterBuilder`, the entity type is `AssetLink`
     and the Staged Model Adapter is `StagedAssetLink`. Your app should follow a
@@ -164,14 +174,18 @@ Follow the steps below to leverage the Model Adapter Builder in your app.
     [ModelAdapterUtil](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/adapter/ModelAdapterUtil.html)
     class to create an instance of your Staged Model Adapter:
 
-        StagedAssetLink stagedAssetLink = ModelAdapterUtil.adapt(
-            assetLink, AssetLink.class, StagedAssetLink.class);
+    ```java
+    StagedAssetLink stagedAssetLink = ModelAdapterUtil.adapt(
+        assetLink, AssetLink.class, StagedAssetLink.class);
+    ```
 
     Once you've created
     [Staged Model Data Handlers](/developer/frameworks/-/knowledge_base/7-2/creating-staged-model-data-handlers),
     you can begin exporting/importing your now Staging-compatible entities:
 
-        StagedModelDataHandlerUtil.exportStagedModel(
-            portletDataContext, stagedAssetLink);
+    ```java
+    StagedModelDataHandlerUtil.exportStagedModel(
+        portletDataContext, stagedAssetLink);
+    ```
 
 Awesome! You've successfully adapted your business logic to build staged models!

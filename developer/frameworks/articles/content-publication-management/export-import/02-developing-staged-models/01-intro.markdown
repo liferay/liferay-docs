@@ -69,8 +69,10 @@ As an example for extending your model class, you can visit the
 class, which extends the `StagedGroupedModel` interface; this is done because
 bookmark entries are group models.
 
-    public interface BookmarksEntryModel extends BaseModel<BookmarksEntry>,
-        ShardedModel, StagedGroupedModel, TrashedModel, WorkflowedModel {
+```java
+public interface BookmarksEntryModel extends BaseModel<BookmarksEntry>,
+    ShardedModel, StagedGroupedModel, TrashedModel, WorkflowedModel {
+```
 
 Now you have a better understanding about staged model interfaces.
 
