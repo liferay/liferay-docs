@@ -12,8 +12,8 @@ provides mechanisms for building, testing, and deploying apps written using all
 kinds of popular technologies. The point is, Liferay makes it easy to get apps
 up and running on your @product@ site. 
 
-Services (web services) are a key ingredient to apps too. Whether they're
-@product@'s services, third-party services, or
+Services (web services and local services) are a key ingredient to apps too.
+Whether they're @product@'s services, third-party services, or
 [services you develop](/docs/7-2/frameworks/-/knowledge_base/appdev/services-development),
 you'll learn how to connect with them here. 
 
@@ -99,12 +99,10 @@ these:
 
 -   Localization
 -   Permissions
--   Persistence
 -   Search and indexing
 -   Workflow
 -   Staging
 -   Data export and import
--   Data upgrade
 
 @product@ integrates with standard frameworks that implement these features and
 Liferay also provides frameworks that integrate these features fast. As you
