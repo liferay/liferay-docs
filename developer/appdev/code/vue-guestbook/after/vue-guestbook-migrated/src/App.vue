@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="/o/vue-guestbook-migrated/logo.png">
+    <img alt="Vue logo" class="vue-app-logo" src="/o/vue-guestbook-migrated/logo.png">
     <router-view :entries="entries" :add="add"/>
   </div>
 </template>
@@ -52,3 +52,11 @@ export default {
   }
 }
 </script>
+
+<style>
+.test-class{
+  background-color: red;
+  width: 900px;
+  height: auto;
+}
+</style>
