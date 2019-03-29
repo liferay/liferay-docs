@@ -9,7 +9,7 @@ header-id: migrating-an-angular-app-to-product
 Migrating an existing Angular app to @product@ makes the app available as a
 widget for using on site pages. The migration involves merging your files into a
 portlet bundle, adapting your routes and CSS, and deploying your bundle. The
-Liferay Bundle Generator and liferay-npm-bundler facilitate the process. 
+Liferay Bundle Generator and Liferay NPM Bundler facilitate the process. 
 
 Follow these steps:
 
@@ -26,24 +26,27 @@ Follow these steps:
 
     Select `Angular based portlet` and opt for generating sample code. Here's the bundle's structure: 
 
-    -   `my-angular-portlet-bundle`
-        -   `assets` &rarr; CSS, HTML templates, and resources
-            -   `css` &rarr; CSS files
+    -   `[my-angular-portlet-bundle]`
+        -   `assets/` &rarr; CSS, HTML templates, and resources
+            -   `css/` &rarr; CSS files
                 -   `styles.css` &rarr; Default CSS file
-            -   `app` &rarr; HTML templates
+            -   `app/` &rarr; HTML templates
                 -   `app.component.html` &rarr; Root component template
-        - `features` &rarr; @product@ bundle features
-            -   `localization` &rarr; Resource bundles
+        - `features/` &rarr; @product@ bundle features
+            -   `localization/` &rarr; Resource bundles
                 -   `Language.properties` &rarr; Default language keys
-        -   `src` &rarr; JavaScript an TypeScript files
-            -   `app` &rarr; Application modules and Components
+        -   `src/` &rarr; JavaScript an TypeScript files
+            -   `app/` &rarr; Application modules and Components
                 -   `app.component.ts` &rarr; Main component
                 -   `app.module.ts` &rarr; Root module
-                -   `dynamic.loader.ts` &rarr; Loads an Angular component dynamically for the portlet to attach to
-            -   `types`
-                -    `LiferayParams.ts` &rarr; Parameters passed by @product@ to the JavaScript module
+                -   `dynamic.loader.ts` &rarr; Loads an Angular component 
+                    dynamically for the portlet to attach to
+            -   `types/`
+                -   `LiferayParams.ts` &rarr; Parameters passed by @product@ to
+                    the JavaScript module
             -   `index.ts` &rarr; Main module invoked by the "bootstrap" module to initialize the portlet
-            -   `polyfills.ts` &rarr; Fills in browser JavaScript implementation gaps
+            -   `polyfills.ts` &rarr; Fills in browser JavaScript implementation
+                gaps
         -   `package.json` &rarr; npm bundle configuration
         -   `README.md`
         -   `.npmbuildrc` &rarr; Build configuration
@@ -106,8 +109,8 @@ Follow these steps:
     export const routingComponents = [ViewComponent1, ViewComponent2]
     ```
 
-8.  Merge your root module with `src/app/app.module.ts`, following these steps 
-    to dynamically load components. 
+8.  Merge your root module with `src/app/app.module.ts`, configuring it to 
+    dynamically load components. 
 
     | **Note:** Components must be loaded dynamically to attach to the portlet's
     | DOM. The DOM is determined at run time when the portlet's page is
@@ -191,8 +194,8 @@ Follow these steps:
     }
     ```
 
-9.  Merge your app `package.json` file's `dependencies` and `devDevependencies` 
-    into the project's `package.json`.
+9.  Merge your app `package.json` file's `dependencies` and `devDependencies` 
+    into the bundle's `package.json`.
     
     | **Note:** To work around build errors caused by the `rxjs` dependency, set
     | the dependency to version `"6.0.0"`. See
@@ -202,14 +205,14 @@ Follow these steps:
 10. If you're building on Windows, set `"process-serially": true` in your 
     bundle's `.npmbundlerrc` file. 
  
-11. Finally, deploy your portlet bundle:
+11. Finally, deploy your bundle:
 
         npm run deploy
 
 Congratulations! Your Angular app is deployed and now available as a widget that
 you can add to site pages. 
 
-The liferay-npm-bundler confirms the deployment:
+The Liferay NPM Bundler confirms the deployment:
 
     Report written to liferay-npm-bundler-report.html
     Deployed my-angular-guestbook-1.0.0.jar to c:\git\bundles
@@ -218,9 +221,9 @@ The @product@ console confirms your bundle started:
 
     2019-03-22 20:17:53.181 INFO  [fileinstall-C:/git/bundles/osgi/modules][BundleStartStopLogger:39] STARTED my-angular-guestbook_1.0.0 [1695]
 
-Find your widget by selecting the *Add* icon
-(![Add](../../../images/icon-add-app.png))
-and navigating to *Widgets* and the category you specified to the Liferay Bundle
+To find your widget, select the *Add* icon
+(![Add](../../../images/icon-add-app.png)),
+navigate to *Widgets* and then the category you specified to the Liferay Bundle
 Generator (*Sample* is the default category). 
 
 ## Related Topics
