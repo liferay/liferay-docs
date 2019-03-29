@@ -1,4 +1,10 @@
+---
+header-id: form-serialization-with-the-ddm-io-api
+---
+
 # Form Serialization with the DDM IO API
+
+[TOC levels=1-4]
 
 When a form creator saves a form in the Liferay Forms application, the Form
 object is _serialized_ (converted) into JSON for storage in the @product@

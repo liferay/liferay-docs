@@ -1,4 +1,10 @@
+---
+header-id: serializing-forms
+---
+
 # Serializing Forms
+
+[TOC levels=1-4]
 
 The DDM IO API serializes and deserializes forms using a request/response
 structure. The example here creates a serializer for saving form data in
