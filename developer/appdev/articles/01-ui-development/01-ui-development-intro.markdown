@@ -12,7 +12,12 @@ provides mechanisms for building, testing, and deploying apps written using all
 kinds of popular technologies. The point is, Liferay makes it easy to get apps
 up and running on your @product@ site. 
 
-## Using Popular Development Frameworks
+Services (web services) are a key ingredient to apps too. Whether they're
+@product@'s services, third-party services, or
+[services you develop](/docs/7-2/frameworks/-/knowledge_base/appdev/services-development),
+you'll learn how to connect with them here. 
+
+## Using Popular Frameworks
 
 Liferay gives you a jumpstart on deploying and developing apps that use these
 popular Java and JavaScript-based technologies:
