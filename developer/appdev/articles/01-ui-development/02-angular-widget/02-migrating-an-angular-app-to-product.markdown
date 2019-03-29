@@ -9,7 +9,7 @@ header-id: migrating-an-angular-app-to-product
 Migrating an existing Angular app to @product@ makes the app available as a
 widget for using on site pages. The migration involves merging your files into a
 portlet bundle, adapting your routes and CSS, and deploying your bundle. The
-Liferay Bundle Generator and Liferay NPM Bundler facilitate the process. 
+Liferay Bundle Generator and Liferay npm Bundler facilitate the process. 
 
 Follow these steps:
 
@@ -212,7 +212,7 @@ Follow these steps:
 Congratulations! Your Angular app is deployed and now available as a widget that
 you can add to site pages. 
 
-The Liferay NPM Bundler confirms the deployment:
+The Liferay npm Bundler confirms the deployment:
 
     Report written to liferay-npm-bundler-report.html
     Deployed my-angular-guestbook-1.0.0.jar to c:\git\bundles
