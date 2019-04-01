@@ -51,7 +51,8 @@ provided below.
             property = {
                 "editor.config.key=contentEditor", "editor.name=alloyeditor",
                 "javax.portlet.name=com_liferay_blogs_web_portlet_BlogsPortlet",
-                "javax.portlet.name=com_liferay_blogs_web_portlet_BlogsAdminPortlet", "service.ranking:Integer=100"
+                "javax.portlet.name=com_liferay_blogs_web_portlet_BlogsAdminPortlet", 
+                "service.ranking:Integer=100"
             },
 			
             service = EditorConfigContributor.class
@@ -63,6 +64,47 @@ provided below.
     to all editors in those portlets. Lastly, the service ranking is listed,
     which prioritizes this service over others that are currently deployed in
     @product@.
+
+    +$$$
+    
+    **NOTE:** If you want to create a global configuration that applies to an 
+    editor everywhere it's used, you must create two separate configurations: 
+    one configuration that targets just the editor and a second configuration 
+    that targets the Blogs and Blogs Admin portlets. For example, the two 
+    separate configurations below apply the updates to AlloyEditor everywhere 
+    it's used:
+    
+    Configuration one:
+    
+    ```java
+    @Component(
+        immediate = true, 
+        property = {
+            "editor.name=alloyeditor", 
+            "service.ranking:Integer=100"
+        },
+    
+        service = EditorConfigContributor.class
+    )
+    ```
+    
+    Configuration two:
+    
+    ```java
+    @Component(
+        immediate = true, 
+        property = {
+            "editor.name=alloyeditor",
+            "javax.portlet.name=com_liferay_blogs_web_portlet_BlogsPortlet",
+            "javax.portlet.name=com_liferay_blogs_web_portlet_BlogsAdminPortlet", 
+            "service.ranking:Integer=100"
+        },
+    
+        service = EditorConfigContributor.class
+    )
+    ```
+    
+    $$$
 
 4.  Now that you've specified which editor configurations you want to modify,
     you must specify what about them must change. Add the following method to
