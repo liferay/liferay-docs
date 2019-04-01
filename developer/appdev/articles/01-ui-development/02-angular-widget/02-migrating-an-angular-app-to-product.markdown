@@ -11,6 +11,8 @@ widget for using on site pages. The migration involves merging your files into a
 portlet bundle, adapting your routes and CSS, and deploying your bundle. The
 Liferay Bundle Generator and Liferay npm Bundler facilitate the process. 
 
+![Figure 1: Apps like this Guestbook app are easy to migrate to @product@.](../../../images/appdev-angular-app-migrated.png)
+
 Follow these steps:
 
 1.  Install the Liferay Bundle Generator, using
