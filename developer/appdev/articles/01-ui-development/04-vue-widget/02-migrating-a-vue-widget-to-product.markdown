@@ -13,6 +13,8 @@ bundle. The Liferay Bundle Generator and liferay-npm-bundler facilitate the
 process. The steps below demonstrate how easy it is to migrate a Vue app that 
 uses single file components (`.vue` files) with multiple views. 
 
+![Figure 1: Vue Apps like this Guestbook App are easy to migrate, and they look great in @product@.](../../../images/appdev-vue-migrated.png)
+
 Follow these steps:
 
 1.  Install the Liferay Bundle Generator, using
