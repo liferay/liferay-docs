@@ -133,11 +133,10 @@ field.
 
 **Example:** https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-search/portal-search-test-util/src/main/java/com/liferay/portal/search/test/util/stats/BaseStatisticsTestCase.java#L128
 
-<!-->
 ### Using the Legacy `Stats` Object
 
-If you prefer, you can continue using the legacy
-`com.liferay.portal.kernel.search.Stats` object:
+The legacy `com.liferay.portal.kernel.search.Stats` object continues to be fully
+supported:
 
 1. Create a `Stats` instance with the desired metrics:
 ```java
@@ -159,7 +158,6 @@ If you prefer, you can continue using the legacy
 ```
 
 **Example:** https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-search/portal-search-test-util/src/main/java/com/liferay/portal/search/test/util/stats/BaseStatisticsTestCase.java#L42
-</!-->
 
 ## External References
 

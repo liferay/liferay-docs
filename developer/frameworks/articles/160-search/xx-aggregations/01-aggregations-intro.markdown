@@ -9,12 +9,9 @@ header-id: aggregations
 Aggregations take a search query and provide aggregated data based on it.
 Aggregations can be composed to provide complex data summaries.
 
-**Note from Russ:  I know it's a diverse feature set, but we should provide some use cases for
-these aggregations. If a developer isn't sure what these can be used for they
-won't know whether they are needed for their goals.** 
-
 @product@ has an API that exposes 
-[Elasticsearch's native Aggregation functionality](LINK TO ES DOCS). 
+[Elasticsearch's native Aggregation functionality](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html). 
+
 
 Currently, these aggregation types are supported:
 
@@ -91,7 +88,7 @@ this:
 3.  Process the search response
 
 These steps are covered in more detail (with examples) 
-[here](LINK to aggregations code article).
+[here](/7-2/frameworks/-/knowledge_base/frameworks/creating-aggregations-in-low-level-search-calls).
 
 ## External References
 * https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html
