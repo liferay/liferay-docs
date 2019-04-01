@@ -166,12 +166,12 @@ Follow these steps:
     "presets": ["@babel/preset-env"]
     ```
 
-9.  Replace the build script in the `package.json` with the one below to use 
-    `vue-cli-service`. The updated build script uses vue-cli to access the main 
-    entrypoint for the app (`index.js` in the example below) and combines all 
-    the Vue templates and JS files into one single file named `index.common.js` 
-    and generates a `index.css` file for any internal CSS included with 
-    `<style>` tags in `.vue` files:
+9.  If you're using `.vue` files, replace the build script in the `package.json` 
+    with the one below to use `vue-cli-service`. The updated build script uses 
+    vue-cli to access the main entrypoint for the app (`index.js` in the example 
+    below) and combines all the Vue templates and JS files into one single file 
+    named `index.common.js` and generates an `index.css` file for any internal 
+    CSS included with `<style>` tags in `.vue` files:
 
     ```json
     "scripts": {
