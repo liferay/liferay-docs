@@ -68,6 +68,45 @@ interface. Follow these steps to modify one of @product@'s WYSIWYG editors:
             service = EditorConfigContributor.class
         )
 
+    +$$$
+
+    **NOTE:** If you want to create a global configuration that applies to an 
+    editor everywhere it's used, you must create two separate configurations: 
+    one configuration that targets just the editor and a second configuration 
+    that targets the Blogs and Blogs Admin portlets. For example, the two 
+    separate configurations below apply the updates to AlloyEditor everywhere 
+    it's used:
+
+    Configuration one:
+    ```java
+    @Component(
+        immediate = true, 
+        property = {
+            "editor.name=alloyeditor", 
+            "service.ranking:Integer=100"
+        },
+
+        service = EditorConfigContributor.class
+    )
+    ```
+
+    Configuration two:
+    ```java
+    @Component(
+        immediate = true, 
+        property = {
+            "editor.name=alloyeditor",
+            "javax.portlet.name=com_liferay_blogs_web_portlet_BlogsPortlet",
+            "javax.portlet.name=com_liferay_blogs_web_portlet_BlogsAdminPortlet", 
+            "service.ranking:Integer=100"
+        },
+
+        service = EditorConfigContributor.class
+    )
+    ```
+
+    $$$
+
 7.  Override the `populateConfigJSONObject()` method to provide the custom 
     configuration for the editor. This method updates the original configuration 
     JSON object. It can also Update or delete existing configurations, or any 
