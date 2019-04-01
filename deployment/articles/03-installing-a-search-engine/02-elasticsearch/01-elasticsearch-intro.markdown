@@ -1,4 +1,10 @@
+---
+header-id: elasticsearch
+---
+
 # Elasticsearch
+
+[TOC levels=1-4]
 
 Elasticsearch is an open source, highly scalable, full-text search and
 analytics engine.
@@ -7,7 +13,7 @@ By default, Elasticsearch runs as an embedded search engine, but it's only
 supported in production as a separate server or cluster. This guide walks you
 through the process of configuring Elasticsearch in remote mode.
 
-![Figure x: To see information about the currently connected search engine, go to _Control Panel &rarr; Configuration &rarr; Search_. ](../../../images/search-admin-engineinfo.png)
+![Figure 1: To see information about the currently connected search engine, go to _Control Panel &rarr; Configuration &rarr; Search_. ](../../../images/search-admin-engineinfo.png)
 
 <!-- Uncomment this when we release the Solr adapter
 If you'd rather use Solr, it's also supported. See the documentation on

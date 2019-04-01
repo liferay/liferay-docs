@@ -1,4 +1,10 @@
+---
+header-id: installing-a-search-engine
+---
+
 # Installing a Search Engine
+
+[TOC levels=1-4]
 
 A search engine is a critical component of your @product@ installation. If
 you're here, you probably know the basics already and want to configure a

@@ -1,4 +1,10 @@
-# Preparing to Install Elasticsearch 
+---
+header-id: preparing-to-install-elasticsearch
+---
+
+# Preparing to Install Elasticsearch
+
+[TOC levels=1-4]
 
 By default, @product-ver@ and its 
 [embedded Elasticsearch engine](/7-2/deploy/-/knowledge_base/deploy/configuring-elasticsearch-for-liferay-0#embedded-vs-remote-operation-mode)
