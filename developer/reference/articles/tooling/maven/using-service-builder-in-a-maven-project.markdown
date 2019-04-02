@@ -3,8 +3,8 @@
 The easiest way to add
 [Service Builder](/develop/frameworks/-/knowledge_base/7-2/what-is-service-builder)
 to your Maven project is to create a new Maven project using Liferay's provided
-Service Builder archetype; it's generated in the new project by default. You can
-learn how to generate a Service Builder Maven project by visiting the
+Service Builder archetype; it's configured in the new project by default. You
+can learn how to generate a Service Builder Maven project by visiting the
 [Service Builder Template](/developer/reference/-/knowledge_base/7-2/service-builder-template)
 article.
 
@@ -83,7 +83,7 @@ project!
     </plugin>
     ```
 
-    The WSDD Builder is necessary to generate your project's remote services.
+    The WSDD Builder is required to generate your project's remote services.
     Visit the
     [Creating Remote Services](/developer/frameworks/-/knowledge_base/7-2/creating-remote-services)
     tutorial for more information on WSDD (Web Service Deployment Descriptor).
