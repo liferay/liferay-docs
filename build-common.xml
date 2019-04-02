@@ -29,7 +29,29 @@
 
 	<!-- taskdefs -->
 
+	<taskdef name="addtoc" classname="com.liferay.documentation.util.AddTOCTask">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
 	<taskdef name="checkarticleimgssite" classname="com.liferay.documentation.util.CheckArticleImagesTask">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
+	<taskdef name="checkheaderslegacy" classname="com.liferay.documentation.util.CheckHeadersTaskLegacy">
 		<classpath>
 			<fileset dir="${project.dir}/lib" includes="*.jar" />
 			<!-- Use below instead of above fileset when testing changes to classes
@@ -106,6 +128,17 @@
 		</classpath>
 	</taskdef>
 
+	<taskdef name="numberheaderslegacy" classname="com.liferay.documentation.util.NumberHeadersTaskLegacy">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
 	<taskdef name="numberheaders" classname="com.liferay.documentation.util.NumberHeadersTask">
 		<classpath>
 			<fileset dir="${project.dir}/lib" includes="*.jar" />
@@ -156,6 +189,21 @@
 		</java>
 	</target>
 
+	<target name="add-toc" description="Adds the Table of Contents syntax for each CE Markdown article.">
+		<addtoc docdir="${doc.dir}" producttype="ce">
+		</addtoc>
+	</target>
+
+	<target name="add-toc-dist" description="Adds the Table of Contents syntax for each Markdown article when generating Zip.">
+		<addtoc docdir="${doc.dir}/${temp.dir}" producttype="dist">
+		</addtoc>
+	</target>
+
+	<target name="add-toc-dxp" description="Adds the Table of Contents syntax for each DXP Markdown article.">
+		<addtoc docdir="${doc.dir}" producttype="dxp">
+		</addtoc>
+	</target>
+
 	<target name="article-to-html-dxp" depends="prepare, check-article-images-dxp" description="Converts a single Markdown DXP article to an HTML file.">
 		<echo message="... converting ${article} to html file ${build.dir}/${article}.html"/>
 		<java
@@ -167,6 +215,21 @@
 			<arg value="${article}"/>
 			<arg value="${build.dir}/${article}.html"/>
 		</java>
+	</target>
+
+	<target name="check-headers-legacy" description="Check the headers of Markdown articles found in ${doc.dir}/articles">
+		<checkheaderslegacy docdir="${doc.dir}" producttype="ce">
+		</checkheaderslegacy>
+	</target>
+
+	<target name="check-headers-dist-legacy" description="Check the headers of Markdown articles found in ${doc.dir}/articles and ${doc.dir}/articles-dxp">
+		<checkheaderslegacy docdir="${doc.dir}/${temp.dir}" producttype="dist">
+		</checkheaderslegacy>
+	</target>
+
+	<target name="check-headers-dxp-legacy" description="Check the headers of Markdown articles found in ${doc.dir}/articles">
+		<checkheaderslegacy docdir="${doc.dir}" producttype="dxp">
+		</checkheaderslegacy>
 	</target>
 
 	<target name="check-headers" description="Check the headers of Markdown articles found in ${doc.dir}/articles">
@@ -193,11 +256,11 @@
         </copy>
 	</target>
 
-	<target name="check" depends="check-images, check-intros, number-headers, number-images, check-headers, check-links" description="Checks for necessary requirements before CE distribution.">
+	<target name="check" depends="check-images, check-intros, number-headers-legacy, number-images, check-headers-legacy, check-links" description="Checks for necessary requirements before CE distribution.">
 
 	</target>
 
-	<target name="check-dxp" depends="check-images-dxp, check-intros-dxp, number-headers-dxp, number-images-dxp, check-headers-dxp, check-links-dxp" description="Checks for necessary requirements before DXP distribution.">
+	<target name="check-dxp" depends="check-images-dxp, check-intros-dxp, number-headers-dxp-legacy, number-images-dxp, check-headers-dxp-legacy, check-links-dxp" description="Checks for necessary requirements before DXP distribution.">
 
 	</target>
 
@@ -323,10 +386,30 @@
 		</convertsidebars>
 	</target>
 
+	<target name="convert-headers-test" description="Converts legacy header IDs to new format. Run this before running the number-headers task for the first time.">
+		<convertheaders docdir="${doc.dir}/${temp.dir}">
+		</convertheaders>
+	</target>
+
+	<target name="convert-sidebars-test" description="Converts legacy sidebars to new format.">
+		<convertsidebars docdir="${doc.dir}/${temp.dir}">
+		</convertsidebars>
+	</target>
+
 	<target name="dist-article-ce" depends="clean-temp, add-article-to-temp, dist-temp" description="Creates a ZIP file for importing the specified article (-Darticle=...), its images, and supporting structure to a Knowledge Base.">
 	</target>
 
-	<target name="dist-ce" depends="dist-ce-temp, prepare-dist, number-headers, number-images" description="Processes the CE articles and images and zips them up for importing.">
+	<target name="dist-test" depends="dist-ce-temp, prepare-dist-test, number-headers, number-images" description="Processes the CE articles and images and zips them up for importing.">
+		<zip destfile="${dist.dir}/${product.abbrev}-${product.community}-${product.version}-${purpose.dir}-${doc.dir}.zip">
+			<fileset dir="${temp.dir}" includes="articles/" />
+			<fileset dir="${temp.dir}" includes="images/" />
+			<fileset dir="./" includes="${metadata.filename}" />
+		</zip>
+
+		<delete dir="${temp.dir}"/>
+	</target>
+
+	<target name="dist-ce" depends="dist-ce-temp, prepare-dist, number-headers-legacy, number-images" description="Processes the CE articles and images and zips them up for importing.">
 		<zip destfile="${dist.dir}/${product.abbrev}-${product.community}-${product.version}-${purpose.dir}-${doc.dir}.zip">
 			<fileset dir="${temp.dir}" includes="articles/" />
 			<fileset dir="${temp.dir}" includes="images/" />
@@ -364,7 +447,7 @@
 		</copy>
 	</target>
 
-	<target name="dist-dxp" depends="dist-dxp-temp, prepare-dist, number-headers-dxp, number-images-dxp" description="Processes the article tokens and copies the DXP articles and images to temp/ for zipping up.">
+	<target name="dist-dxp" depends="dist-dxp-temp, prepare-dist, number-headers-dxp-legacy, number-images-dxp" description="Processes the article tokens and copies the DXP articles and images to temp/ for zipping up.">
 		<zip destfile="${dist.dir}/${product.abbrev}-${product.enterprise}-${product.version}-${purpose.dir}-${doc.dir}.zip">
 			<fileset dir="${temp.dir}" includes="articles/" />
 			<fileset dir="${temp.dir}" includes="images/" />
@@ -424,13 +507,28 @@
 		</zip>
 	</target>
 
-	<target name="dist-temp"  depends="prepare-dist, number-headers" description="Prepares the temp files and zips them up for importing.">
+	<target name="dist-temp"  depends="prepare-dist, number-headers-legacy" description="Prepares the temp files and zips them up for importing.">
 		<property file="${project.dir}/release-site.properties" />
 		<zip destfile="${dist.dir}/${product.abbrev}-${product.community}-${product.version}-${purpose.dir}-${doc.dir}.zip">
 			<fileset dir="${temp.dir}" includes="articles/" />
 			<fileset dir="${temp.dir}" includes="images/" />
 			<fileset dir="./" includes="${metadata.filename}" />
 		</zip>
+	</target>
+
+	<target name="number-headers-legacy" description="Numbers the headers of Markdown articles found in ${doc.dir}/articles">
+		<numberheaderslegacy docdir="${doc.dir}" producttype="ce">
+		</numberheaderslegacy>
+	</target>
+
+	<target name="number-headers-dist-legacy" description="Numbers the headers of Markdown articles.">
+		<numberheaderslegacy docdir="${doc.dir}/${temp.dir}" producttype="dist">
+		</numberheaderslegacy>
+	</target>
+
+	<target name="number-headers-dxp-legacy" description="Numbers the headers of Markdown articles.">
+		<numberheaderslegacy docdir="${doc.dir}" producttype="dxp">
+		</numberheaderslegacy>
 	</target>
 
 	<target name="number-headers" description="Numbers the headers of Markdown articles found in ${doc.dir}/articles">
@@ -481,7 +579,12 @@
 		</copy>
 	</target>
 
-	<target name="prepare-dist" depends="check-images-dist, check-intros-dist, clean-dist, number-headers-dist, number-images-dist, check-headers-dist, create-metadata-file" description="Prepares the document for distribution.">
+	<target name="prepare-dist" depends="check-images-dist, check-intros-dist, clean-dist, number-headers-dist-legacy, number-images-dist, check-headers-dist-legacy, create-metadata-file" description="Prepares the document for distribution.">
+		<echo message="... creating ${dist.dir} directory"/>
+		<mkdir dir="${dist.dir}"/>
+	</target>
+
+	<target name="prepare-dist-test" depends="convert-headers-test, convert-sidebars-test, add-toc-dist, check-images-dist, check-intros-dist, clean-dist, number-headers-dist, number-images-dist, check-headers-dist, create-metadata-file" description="Prepares the document for distribution.">
 		<echo message="... creating ${dist.dir} directory"/>
 		<mkdir dir="${dist.dir}"/>
 	</target>

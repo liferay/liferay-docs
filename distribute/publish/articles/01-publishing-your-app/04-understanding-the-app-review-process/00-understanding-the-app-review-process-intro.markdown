@@ -188,7 +188,8 @@ table td {
         <tr>
             <td class="first-column"> Application Server * </td>
             <td class="second-column">Tomcat 7</td>
-            <td class="third-column" colspan="2">Tomcat 8</td>
+            <td class="third-column">Tomcat 8</td>
+            <td class="fourth-column">Tomcat 9</td>            
         </tr>
         <tr>
             <td class="first-column"> JDK </td>
