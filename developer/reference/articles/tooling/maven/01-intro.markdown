@@ -9,15 +9,11 @@ easy to obtain and are required for Liferay Maven module development. In this
 section, you'll learn how to
 
 - Install Liferay Maven artifacts
-- Build an OSGi Module JAR with Maven
 - Create/Manage a Maven Repository
-- Use Service Builder in a Maven project
-- Compile Sass files in a Maven project
-- Build a Liferay theme with Maven
+- Apply Maven plugins
 
 Because @product@ is tool agnostic, Maven is fully supported for @product@
-development. Read on for details on some additional info on these topics. The
-articles in this section cover these topics in greater detail.
+development. Read on for details about these topics.
 
 ## Installing Liferay Maven Artifacts
 
@@ -62,12 +58,59 @@ If you can't access remote repositories (e.g., restrictions due to a corporate
 firewall), you can still install Liferay Maven artifacts from a local
 repository (as a ZIP file).
 
+## Managing Maven Artifacts in a Repository
 
+You'll frequently want to share Liferay artifacts and modules with teammates or
+manage your repositories using a GUI. You can do this using
+[Sonatype Nexus](http://www.sonatype.org/nexus/). It's a Maven repository
+management server that facilitates creating and managing release servers,
+snapshot servers, and proxy servers. There are several other Maven repository
+management servers you can use (for example,
+[Artifactory](https://www.jfrog.com/artifactory/)), but this section focuses on
+Nexus.
 
+You'll learn how to
 
+- [Create a repository](/developer/reference/-/knowledge_base/7-2/creating-a-maven-repository)
+- [Configure a repository](/developer/reference/-/knowledge_base/7-2/configuring-local-maven-settings-to-access-repositories)
+- [Deploy artifacts to a repository](/developer/reference/-/knowledge_base/7-2/deploying-liferay-maven-artifacts-to-a-repository)
 
+Before using a repository server, you must specify them in your Maven
+environment settings. Your repository settings let Maven find the repository and
+retrieve and install artifacts. You can configure your local Maven settings in
+the `[USER_HOME]/.m2/settings.xml` file.
 
+| **Note**: You only need to configure a repository server if you're sharing
+| artifacts (e.g., Liferay artifacts and/or your modules) with others. If you're
+| automatically installing Liferay artifacts from the Central/Liferay Repository
+| and aren't interested in sharing artifacts, you don't need a repository server
+| specified in your Maven settings. You can find out more about installing
+| artifacts from the Central Repository or Liferay's own Nexus repository in the
+| [Installing Remote Liferay Maven Artifacts](/developer/reference/-/knowledge_base/7-2/installing-remote-liferay-maven-artifacts)
+| article.
 
+To deploy to a remote repository, your Liferay project should be packaged using
+Maven. Maven provides a packaging command that creates an artifact (JAR) that
+can be easily deployed to your remote repository.
 
+Once you've created a deployable artifact, you can configure your module project
+to communicate with your remote repository and use Maven's `deploy` command to
+send it on its way. Once your module project resides on the remote repository,
+other developers can configure your remote repository in their projects and set
+dependencies in their project POMs to reference it.
 
+## Applying Maven Plugins
 
+There are several important Maven plugins that provide important functionality
+to Liferay Maven projects. The available Liferay Maven plugins are available in
+the [Maven Plugins](/developer/reference/-/knowledge_base/7-2/maven-plugins)
+section.
+
+Applying the following functionalities is covered in this section:
+
+- [Building themes](/developer/reference/-/knowledge_base/7-2/building-a-theme-with-maven)
+- [Building an OSGi module JAR](/developer/reference/-/knowledge_base/7-2/building-an-osgi-module-jar-with-maven)
+- [Compiling Sass files](/developer/reference/-/knowledge_base/7-2/compiling-sass-files-in-a-maven-project)
+- [Using Service Builder](/developer/reference/-/knowledge_base/7-2/using-service-builder-in-a-maven-project)
+
+Read on to learn more!
