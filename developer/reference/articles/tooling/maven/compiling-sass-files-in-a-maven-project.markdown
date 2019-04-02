@@ -1,4 +1,4 @@
-# Compiling Sass Files in a Maven Project [](id=compiling-sass-files-in-a-maven-project)
+# Compiling Sass Files in a Maven Project
 
 If your Liferay Maven project uses Sass files to style its UI, you must
 configure the project to convert its Sass files into CSS files so they are
@@ -6,7 +6,7 @@ recognizable for Maven's build lifecycle. It would be a real pain to convert
 your Sass files into CSS files manually before building your Maven project!
 
 Liferay provides the
-[CSS Builder](/develop/reference/-/knowledge_base/7-1/css-builder-plugin)
+[CSS Builder](/developer/reference/-/knowledge_base/7-2/css-builder-plugin)
 plugin, which converts Sass files into CSS files so the Maven build can parse
 your style sheets.
 
