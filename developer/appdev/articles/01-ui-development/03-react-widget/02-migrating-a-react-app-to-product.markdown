@@ -12,6 +12,8 @@ portlet bundle, adapting your static resource paths, and deploying your
 bundle. The Liferay Bundle Generator and Liferay npm Bundler facilitate the 
 process. 
 
+![Figure 1: Apps like this Guestbook app are easy to migrate to @product@.](../../../images/appdev-react-app-migrated.png)
+
 Follow these steps:
 
 1.  Install the Liferay Bundle Generator, using
@@ -30,13 +32,12 @@ Follow these steps:
 
     -   `my-react-portlet-bundle`
         -   `assets/` &rarr; CSS and resources
-            -   `css/` &rarr; You can remove this folder since the CSS is 
-                included in the `.vue` file.
+            -   `css/` &rarr; CSS files
+                - `styles.css` &rarr; Default CSS file
         -   `features/` &rarr; @product@ bundle features
             -   `localization` &rarr; Resource bundles
                 -   `Language.properties` &rarr; Default language keys
-            -   `settings.json` &rarr; Placeholder System Settings
-        -   `src/` &rarr; JavaScript and Vue files
+        -   `src/` &rarr; JavaScript and React component files
             -   `AppComponent.js` &rarr; Sample React component that you can remove
             -   `index.js` &rarr; Main module used to initialize the portlet
         -   `.babelrc` &rarr; Babel configuration
@@ -53,13 +54,7 @@ Follow these steps:
     | JavaScript | `src/` |  Merge with all files **except** `index.js`---the main module merge is explained in a later step. |
     | Static resources | `assets/` |  Include resources such as image files here |
 
-4.  Update your bundle to use portlet-level styling. 
-
-    -   Remove any CSS imports you have in your JS files, such as the one below:
-
-        ```javascript
-        import './index.css';
-        ```
+4.  Update your bundle to use portlet-level styling.
 
     -   Import all component CSS files through the CSS file (default is 
         `styles.css`) your bundle's `package.json` file sets for your portlet.
@@ -68,13 +63,15 @@ Follow these steps:
         ```json
         "portlet": {
 		    "com.liferay.portlet.header-portlet-css": "/css/styles.css",
-        ...
+            ...
         }
         ```
+        
+    -   Remove any CSS imports you have in your JS files
 
 5.  Update any static resource references to use the `web-context` value 
     declared in your project's `.npmbundlerrc`  file, and remove any imports for 
-    the resource. For example, if you have an image file included in the 
+    the resource. For example, if you have an image file called `logo.png` in your 
     `assets` folder, you would use the format below. Note that the `assets` 
     folder is not included in the path.
 
@@ -107,8 +104,8 @@ Follow these steps:
     -   Place your code inside the `main()` function.
     
     -   Render your app inside the `portletElementId` element that is passed in 
-        the `main()` function. This renders the React app inside the portlet. 
-        Without this, the app will not render:
+        the `main()` function. This is required to render the React app inside
+        the portlet.
 
     Your entry module `index.js` should look like this. 
 
@@ -145,13 +142,13 @@ you can add to site pages.
 The Liferay npm Bundler confirms the deployment:
 
     Report written to liferay-npm-bundler-report.html
-    Deployed my-vue-guestbook-1.0.0.jar to c:\git\bundles
+    Deployed my-react-guestbook-1.0.0.jar to c:\git\bundles
 
 The @product@ console confirms your bundle started: 
 
     2019-03-22 20:17:53.181 INFO  
     [fileinstall-C:/git/bundles/osgi/modules][BundleStartStopLogger:39] 
-    STARTED my-vue-guestbook_1.0.0 [1695]
+    STARTED my-react-guestbook_1.0.0 [1695]
 
 To Find your widget, click the *Add* icon 
 (![Add](../../../images/icon-add-app.png)), 
