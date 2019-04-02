@@ -25,7 +25,7 @@ Click an account to view its information, which is organized into these tabs:
 -   Individuals
 -   Details
 
-The sections that follow describe each. 
+The sections that follow describe each tab. 
 
 ## Overview [](id=overview)
 
@@ -39,7 +39,7 @@ summaries via these panes:
 -   Known Individuals
 -   Associated Segments
 
-If more information is available for each, you can access it via its link. For 
+If more information is available for each tab, you can access it via its link. For 
 example, a *View All Activities* link is at the bottom of the Account Activities 
 pane. Clicking this link takes you to the Activities tab, which shows more 
 detailed information about activities. 

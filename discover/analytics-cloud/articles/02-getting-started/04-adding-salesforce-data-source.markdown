@@ -4,7 +4,7 @@ Analytics Cloud can integrate Salesforce data with data from Liferay DXP and
 other sources, automatically blending the data to build a comprehensive customer 
 profile. This lets you create more accurate segmentation and enhance your site's 
 personalization strategy. To do this, you must first add a Salesforce instance 
-as a data source. Here, you'll learn how. 
+as a data source. 
 
 ## Adding the Data Source [](id=adding-the-data-source)
 
@@ -15,8 +15,8 @@ as a data source. Here, you'll learn how.
 
     ![Figure 1: Select Salesforce from the Add Data Source screen.](../../images/salesforce-data-source.png)
 
-3.  In the *Authorization* tab, enter the Salesforce instance's name and URL. 
-    Under the *CLIENT CREDENTIALS* section, enter the client ID and client 
+3.  In the Authorization tab, enter the Salesforce instance's name and URL. 
+    Under the CLIENT CREDENTIALS section, enter the client ID and client 
     secret of the OAuth connected app in Salesforce. Note that the Salesforce 
     instance's administrator must create this connected app with the following 
     settings: 
@@ -28,7 +28,7 @@ as a data source. Here, you'll learn how.
     -   Access and manage your data (api) 
     -   Perform requests on your behalf at any time (refresh_token, offline_access) 
 
-    For instructions on creating an OAuth connected app in Salesforce, and 
+    For instructions on creating an OAuth connected app in Salesforce and 
     locating its client ID and client secret, see the 
     [Salesforce documentation](https://help.salesforce.com/articleView?id=connected_app_overview.htm&type=5). 
 
