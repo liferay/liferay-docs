@@ -65,7 +65,7 @@ this document for simplicity.
 |`/portlet-app/portlet/portlet-info/keywords`|`javax.portlet.info.keywords=<String>`|
 |`/portlet-app/portlet/portlet-info/short-title`|`javax.portlet.info.short-title=<String>`|
 |`/portlet-app/portlet/portlet-info/title`|`javax.portlet.info.title=<String>`|
-|`/portlet-app/portlet/portlet-name`|`javax.portlet.name=<String>`|
+|`/portlet-app/portlet/portlet-name` [10](#ten)|`javax.portlet.name=<String>` [10](#ten)|
 |`/portlet-app/portlet/portlet-preferences`|`javax.portlet.preferences=<String>`<br/>OR<br/>`javax.portlet.preferences=classpath:<path_to_file_in_jar>`|
 |`/portlet-app/portlet/portlet-preferences/preferences-validator`|`javax.portlet.preferences-validator=<String>` [1](#one)|
 |`/portlet-app/portlet/resource-bundle`|`javax.portlet.resource-bundle=<String>`|
@@ -281,3 +281,15 @@ this document for simplicity.
         public class MyFilter implements RenderFilter {
             ...
         }
+
+-   [<a name="ten">10</a>] @product@ creates each portlet's ID based on the 
+    portlet's name (i.e., the `portlet-name` descriptor in `liferay-portlet.xml`
+    or the `javax.portlet.name` OSGi service property). Dashes, periods, and
+    spaces are allowed in the portlet name, but they and all other JavaScript
+    unsafe characters are stripped from the name value that's used for the
+    portlet ID. Therefore, make your portlet name unique in light of the
+    characters that are removed. Otherwise, if you try to deploy a portlet whose
+    ID is the same as a portlet that's already deployed, @product@ logs a
+    message like this:
+
+        Portlet id [portletId] is already in use
