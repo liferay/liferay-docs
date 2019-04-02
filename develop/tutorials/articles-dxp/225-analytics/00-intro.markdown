@@ -4,25 +4,25 @@
 can detect and analyze built-in Liferay DXP assets like Forms, Blogs, Documents 
 and Media, and Web Content. To analyze assets in your custom app, however, you 
 must tag your app's HTML so the Analytics Cloud JavaScript plugin can detect and 
-track user interaction with your assets. Here, you'll learn how. 
+track user interaction with your assets. 
 
 ## Asset Events [](id=asset-events)
 
 The Analytics Cloud JavaScript plugin contains the following events that you can 
 track: 
 
-**AssetClicked:** User clicks the asset area. Also carries information about the 
+`AssetClicked`: User clicks the asset area. Also carries information about the 
 tag clicked. 
 
-**AssetDepthReached:** Scroll event in the asset area. Also carries information 
+`AssetDepthReached`: Scroll event in the asset area. Also carries information 
 about the content depth the user reached (e.g., how far down a blog post the 
 user scrolled). 
 
-**AssetViewed:** User views the asset. 
+`AssetViewed`: User views the asset. 
 
-**AssetDownloaded:** User clicks a link that downloads the asset. 
+`AssetDownloaded`: User clicks a link that downloads the asset. 
 
-**AssetSubmitted:** Form submission in the asset area. This requires an input 
+`AssetSubmitted`: Form submission in the asset area. This requires an input 
 type of `submit` to be placed under an HTML `form` element. 
 
 ## Required Metadata [](id=required-metadata)
@@ -47,8 +47,8 @@ this is `data-analytics-asset-title`.
 
 ## Tracking Asset Events [](id=tracking-asset-events)
 
-For example, imagine that you want to track a poll in a custom Polls app. Here's 
-the example HTML for such a poll: 
+For example, if you want to track a poll in a custom Polls app, you might use
+HTML like this: 
 
     <div>
     <h1> What's your favorite food? </h1>
