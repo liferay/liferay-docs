@@ -317,6 +317,13 @@ found [here](@platform-ref@/7.0-latest/definitions/liferay-portlet-app_7_0_0.dtd
             <role-link>User</role-link>
         </role-mapper>
     </liferay-portlet-app>
+    
++$$$
+
+**Important:** Make your portlet name unique, considering how 
+[@product@ uses the name to create the portlet's ID](/develop/reference/-/knowledge_base/7-0/portlet-descriptor-to-osgi-service-property-map#six). 
+
+$$$
 
 You'll also notice the `role-mapper` elements included above. They're for
 defining the Liferay roles used in the portlet. 
