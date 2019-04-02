@@ -59,11 +59,26 @@ provided below.
         )
 
     This annotation declares that the following service is applied for the
-    AlloyEditor identified by the `contentEditor` configuration key. Two portlet
-    names are specified (Blogs and Blogs Admin), which means the service applies
-    to all editors in those portlets. Lastly, the service ranking is listed,
-    which prioritizes this service over others that are currently deployed in
-    @product@.
+    AlloyEditor identified by the `contentEditor` configuration key. 
+    
+    +$$$
+    
+    **Note:** If you're targeting all editors for a portlet, the 
+    `editor.config.key` is not required. For example, if you just want to target 
+    the Web Content portlet's editors, you can provide the configuration below:
+    
+        @Component(
+          property = {"editor.name=ckeditor",
+          "javax.portlet.name=com_liferay_journal_web_portlet_JournalPortlet",
+          "service.ranking:Integer=100"
+        }
+    
+    $$$
+    
+    Two portlet names are specified (Blogs and Blogs Admin), which means the 
+    service applies to all editors in those portlets. Lastly, the service 
+    ranking is listed, which prioritizes this service over others that are 
+    currently deployed in @product@.
 
     +$$$
     
