@@ -1,4 +1,4 @@
-# Workflow Task Nodes [](id=workflow-task-nodes)
+# Workflow Task Nodes 
 
 Task nodes are fundamental parts of a workflow definition. When you define your
 organization's business processes and design corresponding workflows, you likely
@@ -19,6 +19,7 @@ own article (this one).
 Check out the Review task in the Single Approver definition, noting that several
 `<role>` tags are excluded from this snippet for brevity:
 
+```xml
 	<task>
 		<name>review</name>
 		<actions>
@@ -62,6 +63,7 @@ Check out the Review task in the Single Approver definition, noting that several
 			</transition>
 		</transitions>
 	</task>
+```
 
 There are two `actions` in the review task, both `<notification>`s. Each
 notification may contain a name, template, notification-type, execution-type,
@@ -70,7 +72,7 @@ These have a name and a
 [script](/discover/portal/-/knowledge_base/7-1/leveraging-the-script-engine-in-workflow) 
 and are more often used in state nodes than tasks.
 
-## Assignments [](id=assignments)
+## Assignments 
 
 Workflow tasks are completed by a user. Assignments make sure the right users
 can access the tasks. You can choose how you want to configure your assignments. 
@@ -81,6 +83,7 @@ resource actions, or to specific users. Additionally, you can write a script to
 define the assignment. For an example, see the
 `single-approver-definition-scripted-assignment.xml`.
 
+```xml
     <assignments>
         <roles>
             <role>
@@ -89,60 +92,65 @@ define the assignment. For an example, see the
             </role>
         </roles>
     </assignments>
+```
 
 The above assignment specifies that an Organization Administrator must complete
 the task.
 
+```xml
     <assignments>
         <user>
             <user-id>20156</user-id>
         </user>
     </assignments>
+```
 
 The above assignment specifies that only the user with the user ID of 20156 may
 complete the task. Alternatively, specify the `<screen-name>` or
 `<email-address>` of the user.
 
-		<assignments>
-			<scripted-assignment>
-				<script>
-					<![CDATA[
-							import com.liferay.portal.kernel.model.Group;
-							import com.liferay.portal.kernel.model.Role;
-							import com.liferay.portal.kernel.service.GroupLocalServiceUtil;
-							import com.liferay.portal.kernel.service.RoleLocalServiceUtil;
-							import com.liferay.portal.kernel.util.GetterUtil;
-							import com.liferay.portal.kernel.workflow.WorkflowConstants;
+```xml
+<assignments>
+    <scripted-assignment>
+        <script>
+            <![CDATA[
+                    import com.liferay.portal.kernel.model.Group;
+                    import com.liferay.portal.kernel.model.Role;
+                    import com.liferay.portal.kernel.service.GroupLocalServiceUtil;
+                    import com.liferay.portal.kernel.service.RoleLocalServiceUtil;
+                    import com.liferay.portal.kernel.util.GetterUtil;
+                    import com.liferay.portal.kernel.workflow.WorkflowConstants;
 
-							long companyId = GetterUtil.getLong((String)workflowContext.get(WorkflowConstants.CONTEXT_COMPANY_ID));
+                    long companyId = GetterUtil.getLong((String)workflowContext.get(WorkflowConstants.CONTEXT_COMPANY_ID));
 
-							long groupId = GetterUtil.getLong((String)workflowContext.get(WorkflowConstants.CONTEXT_GROUP_ID));
+                    long groupId = GetterUtil.getLong((String)workflowContext.get(WorkflowConstants.CONTEXT_GROUP_ID));
 
-							Group group = GroupLocalServiceUtil.getGroup(groupId);
+                    Group group = GroupLocalServiceUtil.getGroup(groupId);
 
-							roles = new ArrayList<Role>();
+                    roles = new ArrayList<Role>();
 
-							Role adminRole = RoleLocalServiceUtil.getRole(companyId, "Administrator");
+                    Role adminRole = RoleLocalServiceUtil.getRole(companyId, "Administrator");
 
-							roles.add(adminRole);
+                    roles.add(adminRole);
 
-							if (group.isOrganization()) {
-								Role role = RoleLocalServiceUtil.getRole(companyId, "Organization Content Reviewer");
+                    if (group.isOrganization()) {
+                        Role role = RoleLocalServiceUtil.getRole(companyId, "Organization Content Reviewer");
 
-								roles.add(role);
-							}
-							else {
-								Role role = RoleLocalServiceUtil.getRole(companyId, "Site Content Reviewer");
+                        roles.add(role);
+                    }
+                    else {
+                        Role role = RoleLocalServiceUtil.getRole(companyId, "Site Content Reviewer");
 
-								roles.add(role);
-							}
+                        roles.add(role);
+                    }
 
-							user = null;
-						]]>
-					</script>
-				<script-language>groovy</script-language>
-			</scripted-assignment>
-		</assignments>
+                    user = null;
+                ]]>
+            </script>
+        <script-language>groovy</script-language>
+    </scripted-assignment>
+</assignments>
+```
 
 The above assignment assigns the task to the *Administrator* role, then checks
 whether the *group* of the asset is an Organization. If it is, the *Organization
@@ -161,7 +169,7 @@ UPDATE action in an assignment, then anyone who has permission to update the
 type of asset being processed in the workflow is assigned to the task. You can
 configure multiple assignments for a task.
 
-## Resource Action Assignments [](id=resource-action-assignments)
+## Resource Action Assignments 
 
 *Resource actions* are operations performed by users on an application or
 entity. For example, a user might have permission to update Message Boards
@@ -185,11 +193,13 @@ permission for the VIEW action on the roles resource).
 
 Here's what the assignment's XML looks like:
 
+```xml
     <assignments>
         <resource-actions>
             <resource-action>UPDATE</resource-action>
         </resource-actions>
     </assignments>
+```
 
 Now when the workflow proceeds to the task with the resource action assignment,
 users with `UPDATE` permission on the resource (for example, Message Boards
@@ -213,13 +223,14 @@ resource. For example, in Message Boards, one of the permissions displayed on
 that screen is *Add Discussion*. Convert that to all uppercase and replace the
 space with an underscore, and you have the action name. 
 
-## Task Timers [](id=task-timers)
+## Task Timers 
 
 Task timers trigger an action after a specified time period passes. Timers are
 useful for ensuring a task does not go unattended for a long time. Available
 timer actions include sending an additional notification, reassigning the asset,
 or creating a timer action.
 
+```xml
     <task-timers>
         <task-timer>
             <name></name>
@@ -242,6 +253,7 @@ or creating a timer action.
             </timer-actions>
         </task-timer>
     </task-timers>
+```
 
 The above task timer creates a notification. Specify a time period in the
 `<delay>` tag, and specify what action to take when the time expires in the
@@ -252,6 +264,7 @@ a `scale`, as demonstrated above. The above recurrence element specifies that
 the timer actions run again every ten minutes after the initial occurrence.
 Setting blocking to true prevents timer actions from recurring.
 
+```xml
     <timer-actions>
         <reassignments>
            <assignments>
@@ -265,11 +278,13 @@ Setting blocking to true prevents timer actions from recurring.
            </assignments>
         </reassignments>
     </timer-actions>
+```
 
 The above snippet demonstrates how to set up a reassignment action.
 
 Like `<action>` elements, `<timer-action>` elements can contain scripts.
 
+```xml
     <timer-actions>
         <timer-action>
             <name>doSomething</name>
@@ -280,23 +295,19 @@ Like `<action>` elements, `<timer-action>` elements can contain scripts.
             <script-language>groovy</script-language>
         </timer-action>
     </timer-actions>
+```
 
 The above example isn't functional but it demonstrates setting up a `<script>`
-in your task timer. 
-[Read the Scripting in Workflow article](/discover/portal/-/knowledge_base/7-1/leveraging-the-script-engine-in-workflow) 
+in your task timer.
+[Read the _Scripting in Workflow_ article](/7-2/user/-/knowledge_base/user/leveraging-the-script-engine-in-workflow)
 for more information.
 
-+$$$
-
-**Note:** A `timer-action` can contain all the same tags as an `action`, with
-one exception: `execution-type`. Timer actions are always triggered once the
-time is up, so specifying and execution type of `onEntry`, for example, isn't
-meaningful inside a timer. 
-
-$$$
+| **Note:** A `timer-action` can contain all the same tags as an `action`, with
+|one exception: `execution-type`. Timer actions are always triggered once the
+|time is up, so specifying and execution type of `onEntry`, for example, isn't
+|meaningful inside a timer. 
 
 Tasks are at the core of the workflow definition. Once you understand how to
 create tasks and the other
-[workflow
-nodes](/develop/tutorials/-/knowledge_base/7-1/workflow-definition-nodes) and add
+[workflow nodes](7-2/frameworks/-/knowledge_base/frameworks/workflow-definition-nodes) and add
 transitions between the nodes, you're on the cusp of workflow wizard-hood.
