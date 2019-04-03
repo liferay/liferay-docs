@@ -2,7 +2,7 @@
 header-id: deploying-liferay-maven-artifacts-to-a-repository
 ---
 
-# Deploying Liferay Maven Artifacts to a Repository [](id=deploying-liferay-maven-artifacts-to-a-repository)
+# Deploying Liferay Maven Artifacts to a Repository
 
 [TOC levels=1-4]
 
