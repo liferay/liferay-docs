@@ -214,10 +214,10 @@ Specify the following information to configure the upgrade itself:
 **liferay.home:** the [Liferay home folder](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home) *(required)*
 
 **dl.store.impl:** the implementation for persisting documents to the document
-library store. This property is mandatory if you're using a `*FileSystemStore`
+library store. The default value for this property is `FileSystemStore`
 implementation. If you
 [updated this property in your `portal-ext.properties`](/discover/deployment/-/knowledge_base/7-1/preparing-an-upgrade-to-liferay-7#configuring-your-documents-and-media-file-store),
-copy it here. Otherwise, set the property one of these ways:
+copy it here using one of the possible values:
 
     dl.store.impl=com.liferay.portal.store.file.system.FileSystemStore
     dl.store.impl=com.liferay.portal.store.db.DBStore
