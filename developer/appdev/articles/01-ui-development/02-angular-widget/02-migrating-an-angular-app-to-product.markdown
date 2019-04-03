@@ -2,25 +2,24 @@
 header-id: migrating-an-angular-app-to-product
 ---
 
-# Migrating an Angular App to @product@
+# Developing an Angular Application
 
 [TOC levels=1-4]
 
-Migrating an existing Angular app to @product@ makes the app available as a
-widget for using on site pages. The migration involves merging your files into a
-portlet bundle, adapting your routes and CSS, and deploying your bundle. The
-Liferay Bundle Generator and Liferay npm Bundler facilitate the process. 
+Running an existing Angular app on @product@ makes the app available as a
+widget for using on site pages. You must use the Liferay Bundle Generator and
+Liferay npm Bundler to merge your files into a portlet bundle,
+adapt your routes and CSS, and deploy your bundle. 
 
 ![Figure 1: Apps like this Guestbook app are easy to migrate to @product@.](../../../images/appdev-angular-app-migrated.png)
 
 Follow these steps:
 
-1.  Install the Liferay Bundle Generator, using
-    [npm](https://www.npmjs.com/):
+1.  Using [npm](https://www.npmjs.com), install the Liferay Bundle Generator:
 
         npm install -g yo generator-liferay-bundle
 
-2.  Generate an Angular based portlet bundle project for deploying your app to 
+2.  Generate an Angular-based portlet bundle project for deploying your app to 
     your 
     [@product@ installation](/deployment/docs/installing-product). 
 
@@ -121,13 +120,13 @@ Follow these steps:
     -   Import the `routingComponents` constant and the app routing module class
         from your app routing module. For example,
 
-        ```
+        ```javascript
         import { AppRoutingModule, routingComponents } from './app-routing.module';
         ```
 
     -   Specify the base href for the router to use in the navigation URLs. 
 
-        ```
+        ```javascript
         import { APP_BASE_HREF } from '@angular/common';
         ...
         
@@ -167,7 +166,7 @@ Follow these steps:
         deploying your bundle, as @product@ handles the requests and data via 
         the bundle's portlet. 
 
-    Your root module `app.module.ts` should look like this. 
+    Your root module `app.module.ts` should look like this: 
 
     ```javascript
     import { APP_BASE_HREF } from '@angular/common';
@@ -198,7 +197,7 @@ Follow these steps:
 
 9.  Merge your app `package.json` file's `dependencies` and `devDependencies` 
     into the bundle's `package.json`.
-    
+
     | **Note:** To work around build errors caused by the `rxjs` dependency, set
     | the dependency to version `"6.0.0"`. See
     | [LPS-92848](https://issues.liferay.com/browse/LPS-92848)
@@ -230,11 +229,8 @@ Generator (*Sample* is the default category).
 
 ## Related Topics
 
-- [Web Services](/docs/7-2/frameworks/-/knowledge_base/appdev/web-services
-)
+[Web Services](/docs/7-2/appdev/-/knowledge_base/appdev/web-services)
 
-- [Service Builder](/docs/7-2/frameworks/-/knowledge_base/frameworks/service-builder
-)
+[Service Builder](/docs/7-2/appdev/-/knowledge_base/frameworks/service-builder)
 
-- [Localization](/docs/7-2/frameworks/-/knowledge_base/frameworks/localization
-)
+[Localization](/docs/7-2/appdev/-/knowledge_base/frameworks/localization)
