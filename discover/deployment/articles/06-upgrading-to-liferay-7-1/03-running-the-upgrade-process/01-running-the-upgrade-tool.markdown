@@ -214,15 +214,11 @@ Specify the following information to configure the upgrade itself:
 **liferay.home:** the [Liferay home folder](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home) *(required)*
 
 **dl.store.impl:** the implementation for persisting documents to the document
-library store. The default value for this property is `FileSystemStore`
-implementation. If you
-[updated this property in your `portal-ext.properties`](/discover/deployment/-/knowledge_base/7-1/preparing-an-upgrade-to-liferay-7#configuring-your-documents-and-media-file-store),
-copy it here using one of the possible values:
-
-    dl.store.impl=com.liferay.portal.store.file.system.FileSystemStore
-    dl.store.impl=com.liferay.portal.store.db.DBStore
-    dl.store.impl=com.liferay.portal.store.file.system.AdvancedFileSystemStore
-    dl.store.impl=com.liferay.portal.store.s3.S3Store
+library store. This property's default value is
+`com.liferay.portal.store.file.system.FileSystemStore`.
+If you updated the property
+[in your `portal-ext.properties`](/discover/deployment/-/knowledge_base/7-1/preparing-an-upgrade-to-liferay-7#configuring-your-documents-and-media-file-store)
+to use a different implementation, specify the updated property here. 
 
 **hibernate.jdbc.batch_size:** the JDBC batch size used to improve performance;
 set to *250* by default *(optional)*
