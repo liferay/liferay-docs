@@ -214,7 +214,8 @@ Specify the following information to configure the upgrade itself:
 **liferay.home:** the [Liferay home folder](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home) *(required)*
 
 **dl.store.impl:** the implementation for persisting documents to the document
-library store. If you
+library store. This property is mandatory if you're using a `*FileSystemStore`
+implementation. If you
 [updated this property in your `portal-ext.properties`](/discover/deployment/-/knowledge_base/7-1/preparing-an-upgrade-to-liferay-7#configuring-your-documents-and-media-file-store),
 copy it here. Otherwise, set the property one of these ways:
 
@@ -273,6 +274,7 @@ into `[Liferay Home]/tools/portal-tools-db-upgrade-client/`:
 
         liferay.home=/home/user/servers/liferay7
         module.framework.base.dir=/home/user/servers/liferay7/osgi
+        dl.store.impl=com.liferay.portal.store.file.system.FileSystemStore
 
 It's time to start the core upgrade. 
 
