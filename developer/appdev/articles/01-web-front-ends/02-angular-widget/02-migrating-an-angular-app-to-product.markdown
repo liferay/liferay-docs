@@ -1,5 +1,5 @@
 ---
-header-id: migrating-an-angular-app-to-product
+header-id: developing-an-angular-application
 ---
 
 # Developing an Angular Application

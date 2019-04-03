@@ -1,30 +1,27 @@
 ---
-header-id: migrating-a-vue-app-to-product
+header-id: developing-a-vue-application
 ---
 
-# Migrating a Vue App to @product@
+# Developing a Vue Application
 
 [TOC levels=1-4]
 
-Migrating an existing Vue app to @product@ makes the app available as a
-widget for using on site pages. The migration involves merging your files into a
-portlet bundle, adapting your static resource paths, and deploying your 
-bundle. The Liferay Bundle Generator and liferay-npm-bundler facilitate the 
-process. The steps below demonstrate how easy it is to migrate a Vue app that 
+Running an existing Vue app on @product@ makes the app available as a
+widget for using on site pages. You must use the Liferay Bundle Generator and
+Liferay npm Bundler to merge your files into a
+portlet bundle, adapt your static resource paths, and deploy your 
+bundle. The steps below demonstrate how easy it is to prepare a Vue app that 
 uses single file components (`.vue` files) with multiple views. 
 
-![Figure 1: Vue Apps like this Guestbook App are easy to migrate, and they look great in @product@.](../../../images/appdev-vue-migrated.png)
+![Figure 1: Vue Apps like this Guestbook App are easy to deploy, and they look great in @product@.](../../../images/appdev-vue-migrated.png)
 
 Follow these steps:
 
-1.  Install the Liferay Bundle Generator, using
-    [npm](https://www.npmjs.com/):
+1.  Using [npm](https://www.npmjs.com/), install the Liferay Bundle Generator:
 
         npm install -g yo generator-liferay-bundle
 
-2.  Generate a Vue based portlet bundle project for deploying your app to 
-    your 
-    [@product@ installation](/deployment/docs/installing-product). 
+2.  Generate a Vue based portlet bundle project: 
 
         yo liferay-bundle
 
@@ -79,7 +76,7 @@ Follow these steps:
 5.  Update any static resource references to use the `web-context` value 
     declared in your project's `.npmbundlerrc`  file. Here's the format: 
 
-    ```html
+    ```
     /o/[web-context]/[resource]
     ```
 
@@ -93,7 +90,7 @@ Follow these steps:
     dynamically load components. 
 
     | **Note:** Components must be loaded dynamically to attach to the portlet's
-    | DOM. The DOM is determined at run time when the portlet's page is
+    | DOM. The DOM is determined at runtime when the portlet's page is
     | rendered. 
 
     -   Use Vue's runtime + compiler module 
@@ -102,7 +99,7 @@ Follow these steps:
         the file.
 
     -   Remove the sample content from the `main()` function (i.e. the `node` 
-        constant and it's use), and replace it with your router code.
+        constant and its use), and replace it with your router code.
 
     -   Make these updates to the `new Vue` instance:
     
@@ -220,8 +217,8 @@ Generator (*Sample* is the default category).
 
 ## Related Topics
 
-- [Web Services](/docs/7-2/frameworks/-/knowledge_base/appdev/web-services)
+[Web Services](/docs/7-2/appdev/-/knowledge_base/appdev/web-services)
 
-- [Service Builder](/docs/7-2/frameworks/-/knowledge_base/frameworks/service-builder)
+[Service Builder](/docs/7-2/appdev/-/knowledge_base/frameworks/service-builder)
 
-- [Localization](/docs/7-2/frameworks/-/knowledge_base/frameworks/localization)
+[Localization](/docs/7-2/appdev/-/knowledge_base/frameworks/localization)
