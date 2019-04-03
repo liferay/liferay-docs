@@ -1,0 +1,12 @@
+/*@import "add-entry.component.css";
+@import "app.component.css";
+@import "view-guestbook.component.css";*/
+
+.tag {
+	font-weight: bold;
+}
+
+.value {
+	font-style: italic;
+}
+
