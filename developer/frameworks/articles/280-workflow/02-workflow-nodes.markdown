@@ -4,10 +4,12 @@ After your definition's schema and metadata are in place, begin defining the
 process. *Node* elements, with their sub-elements, are fundamental building
 blocks making up workflow definitions.
 
-**State Nodes** don't require user input. The workflow does whatever is specified
-in the state node's `actions` tag (a notification and/or a custom script),
-and then moves to the provided transition. Workflows start and end with a
-state. The initial state node often only contains a transition: 
+## State Nodes 
+
+State nodes don't require user input. The workflow does whatever is specified
+in the state node's `actions` tag (a notification and/or a custom script), and
+then moves to the provided transition. Workflows start and end with a state.
+The initial state node often only contains a transition: 
 
 ```xml
 <state>
@@ -44,7 +46,9 @@ many terminal state nodes and marks the asset as approved in the workflow.
 </actions>
 ```
 
-**Conditions** let you inspect the asset (or its execution context) and do
+## Conditions 
+
+Conditions let you inspect the asset (or its execution context) and do
 something, like send it to a particular transition.
 
 Here's the `determine-branch` condition from the Category Specific Approval
@@ -122,10 +126,11 @@ marked with the *legal* category. If not it goes through *Content Review* (to
 the content-review task in the workflow), and if it does it goes through *Legal
 Review* (to the legal-review task in the workflow).
 
-**Forks and Joins:** Forks split the workflow process, and joins bring the
-process back to a unified branch. Processing must always be brought back using
-a Join (or a Join XOR), and the number of forks and joins in a workflow
-definition must be equal.
+## Forks and Joins 
+
+Forks split the workflow process, and joins bring the process back to a unified
+branch. Processing must always be brought back using a Join (or a Join XOR),
+and the number of forks and joins in a workflow definition must be equal.
 
 ```xml
 <fork>
@@ -176,7 +181,9 @@ must complete just one of the forks before processing continues.
 </join-xor>
 ```
 
-[**Task nodes**](/develop/tutorials/-/knowledge_base/7-1/workflow-task-nodes) 
+## Task Nodes
+
+[Task nodes](/develop/tutorials/-/knowledge_base/7-1/workflow-task-nodes) 
 are at the core of the workflow definition. They're the part where a user
 interacts with the asset in some way. Tasks can also have sub-elements,
 including notifications, assignments, and task timers.

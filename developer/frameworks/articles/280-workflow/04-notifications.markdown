@@ -80,7 +80,7 @@ Available recipient tags are
     <recipients>
         <user>
             <user-id>20139</user-id>
-        </user
+        </user>
     </recipients>
 ```
 
