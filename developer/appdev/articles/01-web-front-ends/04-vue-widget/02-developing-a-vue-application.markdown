@@ -184,7 +184,7 @@ Follow these steps:
 10. Update the `main` entry of the `package.json` to match the new 
     [CommonJS](http://www.commonjs.org/) 
     file name specified in the previous step:
-    
+ 
     ```json
     "main": "index.common"
     ```
