@@ -19,12 +19,5 @@ Generator only takes a couple steps.
 2.  Run, `npm-install -g generator liferay-fragments` to install the Fragment 
     Generator.
     
-Now run the generator to create your initial project:
-
-1.  From the workspace location that you want to use for your project, run
-    `yo liferay-fragments`.
-    
-2.  Follow the prompts and answer the questions to set your project name.
-
 Congratulations, you have setup the Fragment Generator, and can now begin 
 fragment development.

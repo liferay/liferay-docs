@@ -22,15 +22,11 @@ use `rich-text`:
 The `lfr-editable` tag doesn't render without a unique `id`. 
 
 
-+$$$
+| **Note:** If you want to make text inside an HTML element editable, you must 
+| use the `rich-text` type. The `text` type strips HTML formatting out of the 
+| text before rendering.
 
-**Note:** If you want to make text inside an HTML element editable, you must use
-the `rich-text` type. The `text` type strips HTML formatting out of the text
-before rendering.
-
-$$$
-
-SCREENSHOT!
+![Figure 1: The Rich Text Editor provides a number of editing options.](../../images/fragment-editor-basic.png)
 
 ## Making Images Editable
 

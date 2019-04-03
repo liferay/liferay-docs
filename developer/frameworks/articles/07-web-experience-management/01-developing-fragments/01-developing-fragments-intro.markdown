@@ -11,17 +11,17 @@ have three tools at your disposal to accomplish this:
 
 **JavaScript**: JavaScript provides dynamic behavior to the fragment.
 
-The HTML, CSS, and JavaScript are all completely standard, just like anywhere
-else on the web, but are also enhanced with Liferay-specific features. You can
-specify text, images, and links as editable, as well as providing for "rich 
-text": that is, text with additional formatting. Liferay portlets can also be 
-embedded in Fragments as "widgets," making pages with Fragments more dynamic 
-than regular web content.
+The HTML, CSS, and JavaScript are all completely standard, but are also 
+enhanced with Liferay-specific features. You can specify text, images, and 
+links as editable, as well as providing for "rich text": that is, text with 
+additional formatting. Liferay portlets can also be embedded in Fragments as 
+"widgets," making pages with Fragments more dynamic than regular web content.
 
 ## Creating Page Fragments
 
 There are two types of Page Fragments, *Sections* and *Components*. A Section
-is Page Fragment which defines columns, padding, and spacing on the page. A Component is a Page Fragment which contains content that is added to a Section.
+is Page Fragment which defines columns, padding, and spacing on the page. A 
+Component is a Page Fragment which contains content that is added to a Section.
 
 Fragments are created inside of Collections. Collections provide an easy way to 
 manage and share groups of related Fragments. They are also used when a user is 
@@ -41,7 +41,7 @@ For instructions on setting up the CLI, see the [Setting up the Fragment Generat
 ## Contributed Collections
 
 In most cases, Page Fragments are created by web developers and imported 
-through the Page Fragments interface, or created directly using the embedded 
+through the Page Fragments interface, or created directly using the built-in 
 tools. Page Fragments created like this can be updated and edited by any user 
 with the necessary privileges and used however they want. This works for many 
 cases, but you may have certain situations where you want to add fragments that 
@@ -51,8 +51,8 @@ Contributed Fragment Collection.
 Contributed Fragment Collections are deployable modules which contain Page 
 Fragments. Those fragments can be used just like regular fragments, but are not 
 contained in the database, and cannot be modified except by updating the module 
-that they are deployed in. Use our [Creating Contributed Collections guide] to 
-learn to create your own Contributed Collections.
+that they are deployed in. Use our [Creating Contributed Collections 
+guide](link) to learn to create your own Contributed Collections.
 
 ## Fragment Specific Tags
 
@@ -61,7 +61,7 @@ Fragments, there are a number of Liferay specific tags that you will need to
 use to make editable sections, or embed widgets in your Fragment.
 
 Making elements editable allows the marketer or web admin to modify them before 
-publishing it. This means that Web Developers can create simple, reusable 
+publishing it. This means that web developers can create simple, reusable 
 fragments with identical formatting, but with elements that are easily 
 adaptable to the specific context.
 

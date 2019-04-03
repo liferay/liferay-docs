@@ -37,7 +37,10 @@ any fragments that are found will be imported into special collection called
 
 ## Fragment CLI
 
-After you [setup the generator](link), create your first project:
+You can manage Fragment creation and deployment manually, or you can use 
+Liferay's Fragment CLI:
+
+1.  Follow these instructions to [Setup the generator](link).
 
 1.  Run `yo liferay-fragments`.
 
@@ -49,7 +52,7 @@ generator can help you with.
 | Note: You can see all of the available tasks inside the `scripts` section in 
 | the Fragment CLI `package.json`.
 
-## Creating Collections
+### Creating Collections
 
 Before you can create any Page Fragments, you need to create a Collection. You 
 can learn more about Collection in the [Creating Page Fragments article](link).
@@ -62,7 +65,7 @@ information about your Collection. To do this,
 
 You can now create Page Fragments inside of this Collection.
 
-## Creating Fragments
+### Creating Fragments
 
 A Page Fragment is made up of three primary files, `index.html`, `index.css`, 
 and `index.js`. However, the files need to be properly arranged in the folder 

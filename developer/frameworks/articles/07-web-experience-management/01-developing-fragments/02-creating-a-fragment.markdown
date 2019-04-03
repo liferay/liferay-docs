@@ -25,17 +25,38 @@ You're now on the Fragment editing page. There are four panes on this screen.
 You enter HTML in the top left pane, CSS in the top right, JavaScript in the
 bottom left, and preview the results in the bottom right.
 
-![Figure 1: The Fragment editor provides autocomplete for Liferay Fragment specific tags..](../../../images/fragment-editor-autocomplete.png)
+![Figure 1: The Fragment editor provides autocomplete for Liferay Fragment specific tags..](../../images/fragment-editor-autocomplete.png)
 
 You can look at the three editing panes as if each were writing to a separate 
 file. Everything in the HTML pane goes to `index.html`, the CSS pane goes to 
 `index.css`, and the JavaScript one goes to `index.js`. The preview pane renders
-everything as it will look on the page. Here's how this works:
+everything as it will look on the page. 
+
+A Section is designed to define a space to work in. Now, create a section with an editable rich text area where content can be entered:
 
 1.  Add the following code inside the HTML pane:
-    **NEED A NEW EXAMPLE**
 
-2.  Add the following code to the CSS pane inside the fragment block:
+        <div class="basic-section">
+	        <div class="container">
+		        <div class="row">
+                    <div class="card-body">
+				        <lfr-editable id="card00" type="rich-text">
+					        <p class="card-text">This is a space for the user to enter content</p>
+        				</lfr-editable>
+	        		</div>
+		        </div>
+        	</div>
+        </div>
+
+2.  Replace the code in the CSS pane with the following:
+
+        .basic-section {
+        }
+
+        .basic-section .aspect-ratio {
+        	max-width: inherit;
+    	    width: 100%;
+        }    
 
 3. Click *Publish* to save your work and make it available to add to a content
    page.
@@ -45,23 +66,29 @@ everything as it will look on the page. Here's how this works:
 
 As you work, you can observe the preview in the preview pane.
 
-![Figure 2: The Fragment editor with HTML and CSS code and a live preview.](../../../images/fragment-editor-basic.png)
+![Figure 2: The Fragment editor with HTML and CSS code and a live preview.](../../images/fragment-editor-basic.png)
 
 ## Creating a Component
 
-Next create a Component:
+Components are intended to by simple, reusable elements for building a parts of a page. Next create a button with a link as a Component:
 
 1.  Add the following code inside the HTML pane:
-    **NEED A NEW EXAMPLE**
+   
+        <div class="basic-link-button">
+        	<lfr-editable id="btn00" type="link">
+        		<a href="#" class="btn btn-primary">Read More</a>
+        	</lfr-editable>
+        </div>
 
-2.  Add the following code to the CSS pane inside the fragment block:
-
-3.  Click *Publish* to save your work and make it available to add to a content
+2.  Click *Publish* to save your work and make it available to add to a content 
     page.
 
+This fragment did not require any CSS. For the button link, no target is 
+provided by default, so the link will need to be configured when it is added
+to the page.
+
 From here, the Fragment can be added to a Page. To see this process in action, 
-see the [Building Content Pages from Fragments](link) tutorial. Next, you'll 
-explore some Fragment-specific tags. 
+see the [Building Content Pages from Fragments](link) tutorial.
 
 ## Managing Fragments and Collections
 
