@@ -1,23 +1,21 @@
 ---
-header-id: migrating-a-react-app-to-product
+header-id: developing-a-react-application
 ---
 
-# Migrating a React App to @product@
+# Developing a React Application
 
 [TOC levels=1-4]
 
-Migrating an existing React app to @product@ makes the app available as a 
-widget for using on site pages. The migration involves merging your files into a 
-portlet bundle, adapting your static resource paths, and deploying your 
-bundle. The Liferay Bundle Generator and Liferay npm Bundler facilitate the 
-process. 
+Running an existing React app on @product@ makes the app available as a 
+widget for using on site pages. You must use the Liferay Bundle Generator and
+Liferay npm Bundler to merge your files into a portlet bundle, adapt your static
+resource paths, and deploy your bundle. 
 
 ![Figure 1: Apps like this Guestbook app are easy to migrate to @product@.](../../../images/appdev-react-app-migrated.png)
 
 Follow these steps:
 
-1.  Install the Liferay Bundle Generator, using
-    [npm](https://www.npmjs.com/):
+1.  Using [npm](https://www.npmjs.com/), install the Liferay Bundle Generator:
 
         npm install -g yo generator-liferay-bundle
 
@@ -60,13 +58,13 @@ Follow these steps:
         `styles.css`) your bundle's `package.json` file sets for your portlet.
         Here's the default setting:
 
-        ```json
+       ```json
         "portlet": {
 		    "com.liferay.portlet.header-portlet-css": "/css/styles.css",
             ...
         }
         ```
-        
+
     -   Remove any CSS imports you have in your JS files
 
 5.  Update any static resource references to use the `web-context` value 
@@ -76,7 +74,7 @@ Follow these steps:
     folder is not included in the path.
 
     Here is the format:
-    
+ 
     ```html
     /o/[web-context]/[resource]
     ```
@@ -96,13 +94,13 @@ Follow these steps:
 
     -   Use the `HashRouter` for routing between component views, as @product@ 
         requires hash routing for proper portal navigation:
-        
-        ```javascript
+ 
+       ```javascript
         import { HashRouter as Router } from 'react-router-dom';
         ```
-        
+
     -   Place your code inside the `main()` function.
-    
+
     -   Render your app inside the `portletElementId` element that is passed in 
         the `main()` function. This is required to render the React app inside
         the portlet.
@@ -157,8 +155,8 @@ Generator (*Sample* is the default category).
 
 ## Related Topics
 
-- [Web Services](/docs/7-2/frameworks/-/knowledge_base/appdev/web-services)
+[Web Services](/docs/7-2/appdev/-/knowledge_base/appdev/web-services)
 
-- [Service Builder](/docs/7-2/frameworks/-/knowledge_base/frameworks/service-builder)
+[Service Builder](/docs/7-2/frameworks/-/knowledge_base/frameworks/service-builder)
 
-- [Localization](/docs/7-2/frameworks/-/knowledge_base/frameworks/localization)
+[Localization](/docs/7-2/frameworks/-/knowledge_base/frameworks/localization)
