@@ -17,7 +17,7 @@ Zip.
 
 <!-- TODO: Upload Zip file to new site when available. -Cody -->
 
-Now it's time to deploy a maven artifact to a Nexus repository.
+Now it's time to deploy a Maven artifact to your Nexus repository.
 
 1.  Create a folder anywhere on your machine to serve as the parent folder
     for your Liferay modules. Unzip the `portlet.ds` module project into that

@@ -92,8 +92,7 @@ project!
     article for more information on the configuration properties.
 
 Terrific! You've successfully configured your Maven project to use Service
-Builder by applying the `com.liferay.portal.tools.service.builder` and
-`com.liferay.portal.tools.wsdd.builder` plugins in your project's POM. To run
-Service Builder, see the
+Builder by applying the Service Builder and WSDD Builder plugins in your
+project's POM. To run Service Builder, see the
 [Running Service Builder and Understanding the Generated Code](/developer/frameworks/-/knowledge_base/7-2/running-service-builder)
-tutorial for instructions.
+article for instructions.

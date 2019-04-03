@@ -17,7 +17,7 @@ development. Read on for details about these topics.
 
 ## Installing Liferay Maven Artifacts
 
-To create Liferay modules using Maven, you'll need the archives required by
+To create Liferay projects using Maven, you'll need the archives required by
 Liferay (e.g., JAR and WAR files). This isn't a problem--Liferay provides
 them as Maven artifacts. 
 
@@ -108,8 +108,8 @@ section.
 
 Applying the following functionalities is covered in this section:
 
-- [Building themes](/developer/reference/-/knowledge_base/7-2/building-a-theme-with-maven)
 - [Building an OSGi module JAR](/developer/reference/-/knowledge_base/7-2/building-an-osgi-module-jar-with-maven)
+- [Building themes](/developer/reference/-/knowledge_base/7-2/building-a-theme-with-maven)
 - [Compiling Sass files](/developer/reference/-/knowledge_base/7-2/compiling-sass-files-in-a-maven-project)
 - [Using Service Builder](/developer/reference/-/knowledge_base/7-2/using-service-builder-in-a-maven-project)
 

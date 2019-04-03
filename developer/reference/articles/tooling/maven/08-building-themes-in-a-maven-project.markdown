@@ -1,8 +1,8 @@
 # Building a Theme with Maven
 
-Liferay's Theme Builder is a tool used to build @product@ theme files in your
-project. You can incorporate the Theme Builder into your Maven project to
-generate WAR-style
+Liferay's Theme Builder is used to build @product@ theme files in your project.
+You can incorporate the Theme Builder into your Maven project to generate
+WAR-style
 [themes](/developer/frameworks/-/knowledge_base/7-2/themes-and-layout-templates)
 deployable to @product@.
 
@@ -114,10 +114,12 @@ leverage Theme Builder. You'll learn how to do this next.
     correctly packaged as a WAR file. This tag can be placed with your project's
     `groupId`, `artifactId`, and `version` specifications like this:
 
-        <groupId>com.liferay</groupId>
-        <artifactId>com.liferay.project.templates.theme</artifactId>
-        <version>1.0.0</version>
-        <packaging>war</packaging>
+    ```xml
+    <groupId>com.liferay</groupId>
+    <artifactId>com.liferay.project.templates.theme</artifactId>
+    <version>1.0.0</version>
+    <packaging>war</packaging>
+    ```
 
 5.  Building themes requires certain dependencies. You can 
     [configure these dependenices](/developer/customization/-/knowledge_base/7-2/configuring-dependencies) 
