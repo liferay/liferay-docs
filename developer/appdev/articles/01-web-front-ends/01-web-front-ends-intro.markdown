@@ -1,8 +1,8 @@
 ---
-header-id: ui-development
+header-id: web-front-ends
 ---
 
-# Developing User Interfaces
+# Developing Web Front-Ends
 
 [TOC levels=1-4]
 
