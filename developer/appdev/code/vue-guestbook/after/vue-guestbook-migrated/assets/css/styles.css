@@ -1,0 +1,11 @@
+@import "custom.css";
+@import "../index.css";
+
+.tag {
+	font-weight: bold;
+}
+
+.value {
+	font-style: italic;
+}
+

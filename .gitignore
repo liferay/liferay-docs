@@ -16,6 +16,8 @@ properties/
 .gradle
 .nb-gradle
 
+node_modules/
+
 /*.ipr
 /*.iws
 /*.patch

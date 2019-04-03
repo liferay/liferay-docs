@@ -1,0 +1,11 @@
+{
+	"liferayDir": "C:\\Users\\liferay\\opt\\Liferay\\bundles\\liferay-ce-portal-tomcat-7.1.2-ga3-ldn\\liferay-ce-portal-7.1.2-ga3\\",
+	"webpack": {
+		"rules": [
+			{
+				"test": "src\\\\.*\\.js$",
+				"use": "babel-loader"
+			}
+		]
+	}
+}
