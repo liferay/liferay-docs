@@ -289,7 +289,7 @@ this document for simplicity.
     unsafe characters are stripped from the name value that's used for the
     portlet ID. Therefore, make your portlet name unique in light of the
     characters that are removed. Otherwise, if you try to deploy a portlet whose
-    ID is the same as a portlet that's already deployed, @product@ logs a
-    message like this:
+    ID is the same as a portlet that's already deployed, your portlet deployment
+    fails and @product@ logs a message like this:
 
         Portlet id [portletId] is already in use
