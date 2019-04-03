@@ -1,0 +1,14 @@
+<table class="entries">
+  <tr>
+    <th>Name</th>
+    <th>Message</th>
+  </tr>
+  <tr *ngFor="let entry of entries" (click)="onSelect(entry)">
+    <td>{{entry.name}}</td>
+    <td>{{entry.message}}</td>
+  </tr>
+</table>
+
+<div class="button-footer">
+  <button routerLink="/add-entry">Add Entry</button>
+</div>
