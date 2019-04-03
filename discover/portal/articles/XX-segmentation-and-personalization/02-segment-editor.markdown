@@ -37,10 +37,10 @@ Organization Properties lets you select specific Organizations to include in you
 
 ## Session Properties
 
-Session Properties contains criteria based on the user's browser and system 
-information. Things like the current browser, screen resolution, and platform. 
-You can use this to target categories like "iPhone users" or "Internet Explorer 
-Users."
+Session Properties contains criteria based on the user's activity, browser, 
+system  information. You can use this to target simple information like if the 
+user is using an iOS or Android device, or for activity based criteria like if 
+a user entered the website through a specific campaign driven landing page or 
 
 ## Comparators
 
