@@ -1,4 +1,10 @@
+---
+header-id: installing-remote-liferay-maven-artifacts
+---
+
 # Installing Remote Liferay Maven Artifacts
+
+[TOC levels=1-4]
 
 If you haven't configured your project to retrieve artifacts from a custom Maven
 repository, your project will leverage the artifacts from the Central

@@ -1,4 +1,10 @@
+---
+header-id: compiling-sass-files-in-a-maven-project
+---
+
 # Compiling Sass Files in a Maven Project
+
+[TOC levels=1-4]
 
 If your Liferay Maven project uses Sass files to style its UI, you must
 configure the project to convert its Sass files into CSS files so they are

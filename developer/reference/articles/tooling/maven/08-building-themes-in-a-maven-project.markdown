@@ -1,4 +1,10 @@
+---
+header-id: building-a-theme-with-maven
+---
+
 # Building a Theme with Maven
+
+[TOC levels=1-4]
 
 Liferay's Theme Builder is used to build @product@ theme files in your project.
 You can incorporate the Theme Builder into your Maven project to generate

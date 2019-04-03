@@ -1,4 +1,10 @@
+---
+header-id: maven
+---
+
 # Maven
+
+[TOC levels=1-4]
 
 [Maven](https://maven.apache.org/) is a viable option for managing Liferay
 projects if you don't want to use Liferay's default Gradle management system.

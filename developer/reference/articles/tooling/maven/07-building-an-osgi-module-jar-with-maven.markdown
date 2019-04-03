@@ -1,4 +1,10 @@
+---
+header-id: building-an-osgi-module-jar-with-maven
+---
+
 # Building an OSGi Module JAR with Maven
+
+[TOC levels=1-4]
 
 If you have an existing Liferay module built with Maven that you created from
 scratch, or you're upgrading your Maven project from a previous version of

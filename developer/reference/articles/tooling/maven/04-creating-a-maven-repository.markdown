@@ -1,4 +1,10 @@
+---
+header-id: creating-a-maven-repository
+---
+
 # Creating a Maven Repository
+
+[TOC levels=1-4]
 
 To create a Maven repository using Nexus, download
 [Nexus](https://help.sonatype.com/display/NXRM2/Download) and follow the

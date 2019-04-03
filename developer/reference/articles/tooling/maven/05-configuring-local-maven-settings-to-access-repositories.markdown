@@ -1,4 +1,10 @@
+---
+header-id: configuring-local-maven-settings-to-access-repositories
+---
+
 # Configuring Local Maven Settings to Access Repositories
+
+[TOC levels=1-4]
 
 To configure your Maven environment to access your repository servers, do the
 following:

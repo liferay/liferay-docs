@@ -1,4 +1,10 @@
+---
+header-id: using-service-builder-in-a-maven-project
+---
+
 # Using Service Builder in a Maven Project
+
+[TOC levels=1-4]
 
 The easiest way to add
 [Service Builder](/develop/frameworks/-/knowledge_base/7-2/what-is-service-builder)
