@@ -14,7 +14,7 @@ and [ServiceMix Bundles](https://servicemix.apache.org/developers/source/bundles
 convert hundreds of traditional Java libraries to OSGi modules. Their artifacts
 are available at these locations:
 
-- [Eclipse Orbit](download.eclipse.org/tools/orbit/downloads/drops/R20170919201930/)
+- [Eclipse Orbit](https://download.eclipse.org/tools/orbit/downloads/drops/R20170919201930/)
 - [ServiceMix Bundles](https://mvnrepository.com/artifact/org.apache.servicemix.bundles)
 
 Deploying the module to Liferay's OSGi framework lets you share it on the
