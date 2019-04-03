@@ -112,7 +112,7 @@ provide property details and examples.
 
 ## Step 6: Configuring Your Documents and Media File Store [](id=configuring-your-documents-and-media-file-store)
 
-It's time to set migrate and update your document store configuration to
+It's time to migrate and update your document store configuration to
 @product-ver@. Here's what's changed for document stores:
 
 -   Store implementation class package names changed from 
