@@ -12,8 +12,6 @@ company.
 
 You'll learn these things:
 
-- [Creating Themes](/developer/frameworks/-/knowledge_base/7-2/creating-themes): 
-  Learn how to create themes using various tools.
 - [Developing Themes](/developer/frameworks/-/knowledge_base/7-2/developing-themes): 
   Learn how to use @product@'s tools and features to develop your theme.
 - [Extending Themes](/developer/frameworks/-/knowledge_base/7-2/extending-themes): 
@@ -45,14 +43,14 @@ of tools to get your themes up and running quickly.
 The following Liferay tools help you build themes:
 
 - [Theme Builder Gradle Plugin](/developer/reference/-/knowledge_base/7-2/theme-builder-gradle-plugin)
-- [Liferay Theme Generator](/developer/frameworks/-/knowledge_base/7-2/creating-themes)
+- [Liferay Theme Generator](/developer/reference/-/knowledge_base/7-2/installing-the-theme-generator-and-creating-a-theme)
 - [Dev Studio](/developer/frameworks/-/knowledge_base/7-2/creating-themes-with-liferay-ide)
 - [Blade CLI](/developer/frameworks/-/knowledge_base/7-2/blade-cli)'s 
   [Theme Template](/developer/reference/-/knowledge_base/7-2/theme-template). 
 
 Depending on the tool you choose 
 (
-  [Theme Generator](/developer/reference/-/knowledge_base/7-2/theme-reference-guide), 
+  [Theme Generator](/developer/reference/-/knowledge_base/7-2/theme-generator), 
   [Gradle](/developer/reference/-/knowledge_base/7-2/theme-builder-gradle-plugin), 
   [Blade CLI](/developer/reference/-/knowledge_base/7-2/theme-template), 
   [Maven](/developer/reference/-/knowledge_base/7-2/theme-template), 

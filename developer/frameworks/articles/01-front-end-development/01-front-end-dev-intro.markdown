@@ -70,7 +70,7 @@ tools you prefer.
 From the 
 [Theme Builder Gradle Plugin](/developer/reference/-/knowledge_base/7-2/theme-builder-gradle-plugin), 
 to the 
-[Liferay Theme Generator](/developer/frameworks/-/knowledge_base/7-2/creating-themes), 
+[Liferay Theme Generator](/developer/reference/-/knowledge_base/7-2/installing-the-theme-generator-and-creating-a-theme), 
 to 
 [@ide@](/developer/frameworks/-/knowledge_base/7-2/creating-themes-with-liferay-ide), 
 to 
