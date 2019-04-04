@@ -345,9 +345,9 @@ in Liferay Workspace.
 3.  (Optional) If you removed part(s) of your plugin, if there are changes to
     your plugin that can affect plugin deployment, or if you want to start with
     a clean @product@ environment, you must **also** clean your application
-    server. You can clean the application server by removing the existing
-    @product@ installation (contents in `/webapps/ROOT`) and replacing it with
-    the contents from the @product@ WAR file.
+    server. You can clean the application server by deleting your Liferay Home
+    and regenerating the bundle. This is done in Liferay Workspace by calling
+    `blade server init`.
 
 4.  From your Ext plugin root folder, run `blade deploy` (Gradle or Maven) or
     `mvn verify` (Maven only).

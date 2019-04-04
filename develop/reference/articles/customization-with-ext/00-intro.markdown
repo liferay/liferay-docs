@@ -13,8 +13,10 @@ There are two types of Ext projects deployable to @product@:
 
 Ext projects are powerful tools used to extend @product@'s default core and/or
 module projects. They, however, increase the complexity of your @product@
-instance and are not recommended unless there is absolutely no other way to
-accomplish your task. @product-ver@ provides many extension points that let you
+instance because they are a fork of the default project. Ext projects are not
+recommended unless there is absolutely no other way to accomplish your task.
+
+@product-ver@ provides many extension points that let you
 customize almost every detail of @product@. If there's a way to customize what
 you want with an extension point, do it that way instead. See the
 [More Extensible, Easier to Maintain](/develop/tutorials/-/knowledge_base/7-1/benefits-of-liferay-7-for-liferay-6-developers#more-extensible-easier-to-maintain)
