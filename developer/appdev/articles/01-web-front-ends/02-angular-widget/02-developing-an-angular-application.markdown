@@ -77,10 +77,11 @@ Follow these steps:
         `styles.css`) your bundle's `package.json` file sets for your portlet.
         Here's the default setting:
 
-        ```
+        ```json
         "portlet": {
 		    "com.liferay.portlet.header-portlet-css": "/css/styles.css",
-            ...
+        ...
+        }
         ```
 
     -   Remove `selector` and `styleUrls` properties from your component 
@@ -96,8 +97,7 @@ Follow these steps:
 
     ```javascript
     @NgModule({
-      imports: [RouterModule.forRoot(routes,
-          {useHash: true})],
+      imports: [RouterModule.forRoot(routes, {useHash: true})],
       exports: [RouterModule]
     })
     export class AppRoutingModule { }
@@ -138,11 +138,14 @@ Follow these steps:
 
     -   Declare the `routingComponents` constant in your `@NgModule` decorator. 
 
-        ```
-        declarations: [
-            routingComponents,
-            ...
-        ],
+        ```javascript
+        @NgModule({
+          declarations: [
+              routingComponents,
+              ...
+          ],
+          ...
+        })
         ```
 
     -   Make sure your `@NgModule` `bootstrap` property has no components. All 
@@ -150,10 +153,11 @@ Follow these steps:
         property. The empty `ngDoBootstrap()` method nullifies the default
         bootstrap implementation. 
 
-        ```
+        ```javascript
         @NgModule({
+          ...
     	    entryComponents: [AppComponent],
-            bootstrap: []
+            bootstrap: [],
             ...
         })
         export class AppModule {
