@@ -90,9 +90,14 @@ public class NumberHeadersTask extends Task {
 							new BufferedWriter(new FileWriter(outFileTmp));
 
 					String line;
+					int titleHeaderLineNum = -2;
 					while ((line = in.readLine()) != null) {
+
+						int lineNum = in.getLineNumber();
+
 						if (line.startsWith("#") && !line.startsWith("##")) {
 						
+							titleHeaderLineNum = in.getLineNumber();
 							line = line.trim();
 							
 							// search for header ID; if header DNE, generate header
@@ -107,6 +112,12 @@ public class NumberHeadersTask extends Task {
 							// validate existing header
 							else {
 								validateHeaderId(filename, headerIdLine, in.getLineNumber(), true);
+							}
+						}
+						if (lineNum == titleHeaderLineNum + 1) {
+							if (!line.equals("")) {
+								throw new BuildException("Filename: " + filename +
+										" Line following main title header must be blank.");
 							}
 						}
 						

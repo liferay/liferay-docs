@@ -29,6 +29,17 @@
 
 	<!-- taskdefs -->
 
+	<taskdef name="addtoc" classname="com.liferay.documentation.util.AddTOCTask">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+	
 	<taskdef name="checkarticleimgssite" classname="com.liferay.documentation.util.CheckArticleImagesTask">
 		<classpath>
 			<fileset dir="${project.dir}/lib" includes="*.jar" />
@@ -63,6 +74,17 @@
 	</taskdef>
 
 	<taskdef name="checkintros" classname="com.liferay.documentation.util.CheckIntrosTask">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
+	<taskdef name="checklinks" classname="com.liferay.documentation.util.CheckLinksTask">
 		<classpath>
 			<fileset dir="${project.dir}/lib" includes="*.jar" />
 			<!-- Use below instead of above fileset when testing changes to classes
@@ -156,6 +178,21 @@
 		</java>
 	</target>
 
+	<target name="add-toc" description="Adds the Table of Contents syntax for each CE Markdown article.">
+		<addtoc docdir="${doc.dir}" producttype="ce">
+		</addtoc>
+	</target>
+
+	<target name="add-toc-dist" description="Adds the Table of Contents syntax for each Markdown article when generating Zip.">
+		<addtoc docdir="${doc.dir}/${temp.dir}" producttype="dist">
+		</addtoc>
+	</target>
+
+	<target name="add-toc-dxp" description="Adds the Table of Contents syntax for each DXP Markdown article.">
+		<addtoc docdir="${doc.dir}" producttype="dxp">
+		</addtoc>
+	</target>
+
 	<target name="article-to-html-dxp" depends="prepare, check-article-images-dxp" description="Converts a single Markdown DXP article to an HTML file.">
 		<echo message="... converting ${article} to html file ${build.dir}/${article}.html"/>
 		<java
@@ -193,11 +230,11 @@
         </copy>
 	</target>
 
-	<target name="check" depends="check-images, check-intros, number-headers, number-images, check-headers, check-links" description="Checks for necessary requirements before CE distribution.">
+	<target name="check" depends="add-toc, check-images, check-intros, number-headers, number-images, check-headers, check-links" description="Checks for necessary requirements before CE distribution.">
 
 	</target>
 
-	<target name="check-dxp" depends="check-images-dxp, check-intros-dxp, number-headers-dxp, number-images-dxp, check-headers-dxp, check-links-dxp" description="Checks for necessary requirements before DXP distribution.">
+	<target name="check-dxp" depends="add-toc-dxp, check-images-dxp, check-intros-dxp, number-headers-dxp, number-images-dxp, check-headers-dxp, check-links-dxp" description="Checks for necessary requirements before DXP distribution.">
 
 	</target>
 
@@ -326,7 +363,7 @@
 	<target name="dist-article-ce" depends="clean-temp, add-article-to-temp, dist-temp" description="Creates a ZIP file for importing the specified article (-Darticle=...), its images, and supporting structure to a Knowledge Base.">
 	</target>
 
-	<target name="dist-ce" depends="dist-ce-temp, prepare-dist, number-headers, number-images" description="Processes the CE articles and images and zips them up for importing.">
+	<target name="dist-ce" depends="dist-ce-temp, prepare-dist, add-toc, number-headers, number-images" description="Processes the CE articles and images and zips them up for importing.">
 		<zip destfile="${dist.dir}/${product.abbrev}-${product.community}-${product.version}-${purpose.dir}-${doc.dir}.zip">
 			<fileset dir="${temp.dir}" includes="articles/" />
 			<fileset dir="${temp.dir}" includes="images/" />
@@ -364,7 +401,7 @@
 		</copy>
 	</target>
 
-	<target name="dist-dxp" depends="dist-dxp-temp, prepare-dist, number-headers-dxp, number-images-dxp" description="Processes the article tokens and copies the DXP articles and images to temp/ for zipping up.">
+	<target name="dist-dxp" depends="dist-dxp-temp, prepare-dist, add-toc-dxp, number-headers-dxp, number-images-dxp" description="Processes the article tokens and copies the DXP articles and images to temp/ for zipping up.">
 		<zip destfile="${dist.dir}/${product.abbrev}-${product.enterprise}-${product.version}-${purpose.dir}-${doc.dir}.zip">
 			<fileset dir="${temp.dir}" includes="articles/" />
 			<fileset dir="${temp.dir}" includes="images/" />
@@ -481,47 +518,39 @@
 		</copy>
 	</target>
 
-	<target name="prepare-dist" depends="check-images-dist, check-intros-dist, clean-dist, number-headers-dist, number-images-dist, check-headers-dist, create-metadata-file" description="Prepares the document for distribution.">
+	<target name="prepare-dist" depends="add-toc-dist, check-images-dist, check-intros-dist, clean-dist, number-headers-dist, number-images-dist, check-headers-dist, create-metadata-file" description="Prepares the document for distribution.">
 		<echo message="... creating ${dist.dir} directory"/>
 		<mkdir dir="${dist.dir}"/>
 	</target>
 
 	<target name="check-links" description="Checks Community (LDN) URL links to see if they're broken.">
 		<property file="${project.dir}/release-site.properties" />
-		<java
-			classname="com.liferay.documentation.util.CheckLinks"
-			classpathref="project.classpath"
-			failonerror="true"
-			fork="true"
+		<checklinks
+			apilinks="${api.links}"
+			docdir="${doc.dir}"
+			legacylinks="${legacy.links}"
+			appreferencesite="${product.app.reference}"
+			platformreferencesite="${product.platform.reference}"
+			apptoken="${product.token.app.reference}"
+			platformtoken="${product.token.platform.reference}"
+			dxpcheck="false"
 		>
-			<arg value="${legacy.links}"/>
-			<arg value="${api.links}"/>
-			<arg value="${doc.dir}"/>
-			<arg value="${product.token.platform.reference}"/>
-			<arg value="${product.token.app.reference}"/>
-			<arg value="${product.platform.reference}"/>
-			<arg value="${product.app.reference}"/>
-			<arg value="false"/>
-		</java>
+		</checklinks>
 	</target>
 
 	<target name="check-links-dxp" description="Checks Community (LDN) and DXP (Customer Portal) URL links to see if they're broken.">
 		<property file="${project.dir}/release-site.properties" />
-		<java
-			classname="com.liferay.documentation.util.CheckLinks"
-			classpathref="project.classpath"
-			failonerror="true"
-			fork="true"
+		<checklinks
+			apilinks="${api.links}"
+			docdir="${doc.dir}"
+			legacylinks="${legacy.links}"
+			appreferencesite="${product.app.enterprise.reference}"
+			platformreferencesite="${product.platform.enterprise.reference}"
+			apptoken="${product.token.app.reference}"
+			platformtoken="${product.token.platform.reference}"
+			dxpcheck="true"
 		>
-			<arg value="${legacy.links}"/>
-			<arg value="${api.links}"/>
-			<arg value="${doc.dir}"/>
-			<arg value="${product.token.platform.reference}"/>
-			<arg value="${product.token.app.reference}"/>
-			<arg value="${product.platform.enterprise.reference}"/>
-			<arg value="${product.app.enterprise.reference}"/>
-			<arg value="true"/>
-		</java>
+		</checklinks>
 	</target>
 
 	<target name="process-article-to-temp"  description="Generates the target article's parent structure and then processes the articles' tokens. The resulting articles are copied (no images) to temp/.">

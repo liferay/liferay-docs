@@ -4,6 +4,8 @@ header-id: item-selector
 
 # Item Selector
 
+[TOC levels=1-4]
+
 An *Item Selector* is a UI component for selecting entities in a user-friendly 
 manner. 
 

@@ -4,6 +4,8 @@ header-id: updating-blade-cli
 
 # Updating Blade CLI
 
+[TOC levels=1-4]
+
 Blade CLI is updated frequently, so you should update your Blade CLI
 environment for new features. You can check the released versions of Blade CLI
 on Nexus by inspecting the

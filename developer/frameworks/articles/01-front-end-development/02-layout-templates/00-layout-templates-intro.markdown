@@ -4,6 +4,8 @@ header-id: layout-templates-intro
 
 # Layout Templates
 
+[TOC levels=1-4]
+
 Layout templates dictate where content and apps can be placed on a page. 
 There are several default layout templates for organizing content on your
 pages:

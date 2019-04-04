@@ -4,6 +4,8 @@ header-id: selecting-entities-with-an-item-selector
 
 # Selecting Entities with an Item Selector
 
+[TOC levels=1-4]
+
 The steps here show you how to get and use an Item Selector to select entities 
 in your app. For an explanation of the Item Selector API and more information on 
 these steps, see the [Item Selector introduction](/developer/frameworks/-/knowledge_base/7-2/item-selector). 
@@ -26,6 +28,7 @@ First, you must get an Item Selector for your use case. Follow these steps:
 
 2.  Use Declarative Services to get an `ItemSelector` OSGi Service Component: 
 
+    ```java
         import com.liferay.item.selector.ItemSelector;
         import org.osgi.service.component.annotations.Reference;
 
@@ -33,6 +36,7 @@ First, you must get an Item Selector for your use case. Follow these steps:
 
         @Reference
         private ItemSelector _itemSelector
+    ```
 
     The component annotations are available in the module 
     [`org.osgi.service.component.annotations`](http://mvnrepository.com/artifact/org.osgi/org.osgi.service.component.annotations). 
@@ -42,35 +46,55 @@ First, you must get an Item Selector for your use case. Follow these steps:
     current request object. The request can be an `HttpServletRequest` or 
     `PortletRequest`: 
 
+    ```java
+
         RequestBackedPortletURLFactory requestBackedPortletURLFactory =
             RequestBackedPortletURLFactoryUtil.create(request);
 
+    ```
+
 4.  Create a list of return types expected for the entity. For example, the 
     return types list here consists of `URLItemSelectorReturnType`: 
+
+    ```java
 
         List<ItemSelectorReturnType> desiredItemSelectorReturnTypes =
             new ArrayList<>();
         desiredItemSelectorReturnTypes.add(new URLItemSelectorReturnType());
 
+    ```
+
 5.  Create an object for the criterion. This example creates a new 
     `ImageItemSelectorCriterion`: 
+
+    ```java
 
         ImageItemSelectorCriterion imageItemSelectorCriterion =
             new ImageItemSelectorCriterion();
 
+    ```
+
 6.  Use the criterion's `setDesiredItemSelectorReturnTypes` method to set the 
     return types list to the criterion: 
 
+    ```java
+
         imageItemSelectorCriterion.setDesiredItemSelectorReturnTypes(
             desiredItemSelectorReturnTypes);
+
+    ```
 
 7.  Call the Item Selector's `getItemSelectorURL` method to get an Item Selector 
     URL for the criterion. The method requires the URL factory, an arbitrary 
     event name, and a series of criterion instances (one, in this case): 
 
+    ```java
+
         PortletURL itemSelectorURL = _itemSelector.getItemSelectorURL(
             requestBackedPortletURLFactory, "sampleTestSelectItem",
             imageItemSelectorCriterion);
+
+    ```
 
 ## Using the Item Selector Dialog
 
@@ -85,7 +109,11 @@ Follow these steps to use the Item Selector's dialog in a JSP:
 
 1.  Declare the AUI tag library: 
 
+    ```java
+
         <%@ taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
+
+    ```
 
 2.  Define the UI element you'll use to open the Item Selector dialog. For 
     example, this creates a *Choose* button with the ID `chooseImage`:
@@ -182,6 +210,8 @@ Selector with the views that support the criterion and return type(s).
 
 Here's the complete example code for these steps: 
 
+```java
+
     <%@ taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
 
     <aui:button name="chooseImage" value="Choose" />
@@ -220,6 +250,8 @@ Here's the complete example code for these steps:
             }
         );
     </aui:script>
+
+```
 
 ## Related Topics
 

@@ -1,0 +1,57 @@
+{
+	"name": "vue-guestbook-migrated",
+	"version": "1.0.0",
+	"description": "Vue Guestbook Migrated",
+	"devDependencies": {
+		"liferay-npm-bundler": "^2.6.2",
+		"liferay-npm-build-support": "^2.6.2",
+		"copy-webpack-plugin": "^4.5.4",
+		"webpack": "^4.0.0",
+		"webpack-cli": "^3.0.0",
+		"webpack-dev-server": "^3.0.0",
+		"@babel/cli": "^7.0.0",
+		"@babel/preset-env": "^7.4.2",
+		"babel-loader": "^7.0.0",
+		"@vue/cli-plugin-babel": "^3.4.0",
+		"@vue/cli-plugin-eslint": "^3.4.0",
+		"@vue/cli-service": "^3.4.0",
+		"babel-eslint": "^10.0.1",
+		"eslint": "^5.13.0",
+		"eslint-plugin-vue": "^5.1.0",
+		"vue-template-compiler": "^2.6.1",
+		"vueify": "9.4.1"
+	},
+	"dependencies": {
+		"vue": "^2.6.6",
+		"vue-router": "^3.0.2"
+	},
+	"eslintConfig": {
+		"root": true,
+		"env": {
+			"node": true
+		},
+		"extends": [
+			"plugin:vue/essential",
+			"eslint:recommended"
+		],
+		"rules": {},
+		"parserOptions": {
+			"parser": "babel-eslint"
+		}
+	},
+	"scripts": {
+		"build": "babel --source-maps -d build src && vue-cli-service build --dest build/ --formats commonjs --target lib --name index ./src/index.js && npm run copy-assets && liferay-npm-bundler",
+		"copy-assets": "lnbs-copy-assets",
+		"deploy": "npm run build && lnbs-deploy",
+		"start": "lnbs-start"
+	},
+	"portlet": {
+		"com.liferay.portlet.display-category": "category.sample",
+		"com.liferay.portlet.header-portlet-css": "/css/styles.css",
+		"com.liferay.portlet.instanceable": true,
+		"javax.portlet.name": "vue_guestbook_migrated",
+		"javax.portlet.security-role-ref": "power-user,user",
+		"javax.portlet.display-name": "Vue Guestbook Migrated"
+	},
+	"main": "index.common"
+}

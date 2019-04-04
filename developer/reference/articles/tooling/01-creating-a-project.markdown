@@ -4,6 +4,8 @@ header-id: creating-a-project
 
 # Creating a Project
 
+[TOC levels=1-4]
+
 Liferay provides many project templates you can use to generate starter projects
 formatted in an opinionated way. Visit the [Project
 Templates](/developer/reference/-/knowledge_base/7-2/project-templates)

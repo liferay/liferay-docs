@@ -1,0 +1,31 @@
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #000;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.button-footer {
+  display: flex;
+  margin-top: 1.5rem;
+}
+
+.button-footer > button {
+  margin-right: 1rem;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 0.25rem;
+}
+
+input {
+  display: block
+}

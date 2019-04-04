@@ -4,6 +4,8 @@ header-id: managing-your-liferay-server-with-blade-cli
 
 # Managing Your Liferay Server with Blade CLI
 
+[TOC levels=1-4]
+
 You can  manage a Liferay server using Blade CLI. Managing a server with Blade
 CLI should be done in a 
 [Liferay Workspace](/developer/reference/-/knowledge_base/7-2/liferay-workspace).

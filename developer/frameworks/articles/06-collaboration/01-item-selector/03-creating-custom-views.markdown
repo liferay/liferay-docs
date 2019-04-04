@@ -4,6 +4,8 @@ header-id: creating-custom-item-selector-views
 
 # Creating Custom Item Selector Views
 
+[TOC levels=1-4]
+
 You can create your own selection view if an Item Selector doesn't contain the 
 one you need. The steps here show you how. For more information on custom 
 selection views and the Item Selector API, see the 

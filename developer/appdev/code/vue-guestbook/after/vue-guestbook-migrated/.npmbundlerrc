@@ -1,0 +1,17 @@
+{
+	"create-jar": {
+		"output-dir": "dist",
+		"features": {
+			"js-extender": true,
+			"web-context": "/vue-guestbook-migrated"
+		}
+	},
+	"config": {
+		"imports": {
+			"vuejs-provider": {
+				"vue": "^2.0.0"
+			}
+		}
+	},
+	"dump-report": true
+}

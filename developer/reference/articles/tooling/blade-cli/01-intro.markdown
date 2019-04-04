@@ -4,6 +4,8 @@ header-id: blade-cli
 
 # Blade CLI
 
+[TOC levels=1-4]
+
 [Blade CLI](https://github.com/liferay/liferay-blade-cli/) is a command line
 tool that makes it easy for Liferay developers to create, manage, and deploy
 Liferay projects (Gradle or Maven). Blade CLI can

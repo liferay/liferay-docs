@@ -4,6 +4,8 @@ header-id: common-errors-with-blade-cli
 
 # Common Errors with Blade CLI
 
+[TOC levels=1-4]
+
 If Blade CLI isn't working as expected, you may find answers here.
 
 The following issues are documented:
