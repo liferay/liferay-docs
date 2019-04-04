@@ -1,19 +1,19 @@
-# Configuring SAML [](id=configuring-saml)
+---
+header-id: configuring-saml
+---
+
+# Configuring SAML
 
 As noted in the previous tutorials, anything related to configuring SP
 connections must be done through the SAML Admin UI where configurations are
 saved to Liferay's database. SP connections can no longer be made via properties
 files as they were in versions prior to 3.1.0. 
 
-+$$$
-
-**Note:** Don't use OSGi `.config` files or @product@'s System Settings Control
-Panel application to configure SAML providers (IdP or SP). The System Settings
-UI is auto-generated, and is for advanced admins. It does not perform the
-enhanced validation on the fields that the SAML Admin UI performs, so it could
-allow administrators to create invalid configurations. 
-
-$$$
+| **Note:** Don't use OSGi `.config` files or @product@'s System Settings Control
+| Panel application to configure SAML providers (IdP or SP). The System Settings
+| UI is auto-generated, and is for advanced admins. It does not perform the
+| enhanced validation on the fields that the SAML Admin UI performs, so it could
+| allow administrators to create invalid configurations.
 
 This is an portal instance scoped configuration which can be managed via OSGi
 Configuration Admin. The affected properties are those in the

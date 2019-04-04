@@ -1,4 +1,8 @@
-# Setting up @product@ as a SAML Identity Provider [](id=setting-up-liferay-as-a-saml-identity-provider)
+---
+header-id: setting-up-liferay-as-a-saml-identity-provider
+---
+
+# Setting up @product@ as a SAML Identity Provider
 
 An identity provider is a trusted provider that provides single sign-on for
 users to access other websites. A service provider is a website that hosts
@@ -99,7 +103,7 @@ required keystore.
     check the *Enabled* box at the top of the General tab and click *Save*.
     You successfully set @product@ up as a SAML Identity Provider!
 
-## Changing the Identity Provider Settings [](id=changing-the-identity-provider-settings)
+## Changing the Identity Provider Settings
 
 To configure @product@'s SAML Identity Provider Settings, navigate to the *Identity
 Provider* tab of the SAML Admin Control Panel entry.
@@ -129,7 +133,7 @@ again after a certain period of time.
 Even if the session maximum age is unlimited, the SSO session expires whenever
 the user's idle time reaches the limit set by the session timeout property.
 
-## Checkpoint [](id=checkpoint)
+## Checkpoint
 
 Before adding a Service Provider (SP), verify you've completed these tasks:
 
@@ -159,7 +163,7 @@ Before adding a Service Provider (SP), verify you've completed these tasks:
 If this URL does not display correctly, then the SAML instance has not been
 enabled. Use the URL or click *Save* in the browser to generate an actual `XML` file.
 
-## Adding a SAML Service Provider [](id=adding-a-saml-service-provider)
+## Adding a SAML Service Provider
 
 Of course, setting up @product@ as a SAML Identity Provider is only useful if you
 can connect to one or more SAML Service Providers. Navigate to the Service
@@ -241,7 +245,7 @@ a @product@ IdP, their sessions can be kept alive as long as they keep a
 browser window open to one of them. Configure this only if the SP is @product@.
 The URL is `https://[SP host name]/c/portal/saml/keep_alive`. 
 
-### Checkpoint [](id=checkpoint-0)
+### Checkpoint
 
 Verify your settings are correct when connecting the @product@-based IdP to its
 first SP. SPs connect to only one IdP, so if the first one doesn't work, the

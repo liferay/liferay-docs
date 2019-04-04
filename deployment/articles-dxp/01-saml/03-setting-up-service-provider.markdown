@@ -1,4 +1,8 @@
-# Setting up @product@ as a SAML Service Provider [](id=setting-up-liferay-as-a-saml-service-provider)
+---
+header-id: setting-up-liferay-as-a-saml-service-provider
+---
+
+# Setting up @product@ as a SAML Service Provider
 
 Many of these steps are similar to configuring @product@ as a SAML Identity
 Provider. As a reminder, a single @product@ installation can be configured as a
@@ -6,13 +10,9 @@ SAML Identify Provider *or* as a SAML Service Provider but not as both. If you
 already set up one @product@ installation as a SAML Identity Provider, use a
 *different* @product@ installation as a SAML Service Provider.
 
-+$$$
-
-**Note:** If you're using a third party IdP with @product@ as the SP, all
-messages coming from the IdP must be signed. If they're not, an error message
-appears and communication between the IdP and @product@ fails.
-
-$$$
+| **Note:** If you're using a third party IdP with @product@ as the SP, all
+| messages coming from the IdP must be signed. If they're not, an error message
+| appears and communication between the IdP and @product@ fails.
 
 1.  Install the Liferay SAML 2.0 Provider app. To confirm that the app was
     successfully deployed, look for the *SAML Admin* entry in the Configuration
@@ -102,7 +102,7 @@ Note that the SAML Service Provider session is tied to the normal session on
 the application server. Session expiration on the application server terminates
 the session on the Service Provider but does not initiate single logout. 
 
-## Checkpoint [](id=checkpoint-1)
+## Checkpoint
 
 1. A SAML keystore has been generated.
 
@@ -125,7 +125,7 @@ the session on the Service Provider but does not initiate single logout.
 
         [host]:[port]/c/portal/saml/metadata
 
-## Changing the SAML Service Provider Settings [](id=changing-the-saml-service-provider-settings)
+## Changing the SAML Service Provider Settings
 
 If you'd like to configure @product@'s SAML Service Provider Settings, navigate to
 the Service Provider tab of the SAML Admin portlet.
@@ -135,17 +135,13 @@ The Service Provider tab includes these options:
 **Require Assertion Signature?:** When this box is checked, SAML assertions
 must be individually signed in addition to the entire SAML message.
 
-+$$$
-
-**Note:** Individual assertions need not be signed as long as the SAML response
-itself is signed. The SP and IdP should always communicate over `https` to have
-encryption at the transport level. 
-
-If you believe man-in-the-middle attacks are possible, the SAML response can be
-signed. The only reason to sign the assertions is if the SAML response is not
-signed. In this case, assertions should not only be signed but also encrypted.
-
-$$$
+| **Note:** Individual assertions need not be signed as long as the SAML response
+| itself is signed. The SP and IdP should always communicate over `https` to have
+| encryption at the transport level.
+| 
+| If you believe man-in-the-middle attacks are possible, the SAML response can be
+| signed. The only reason to sign the assertions is if the SAML response is not
+| signed. In this case, assertions should not only be signed but also encrypted.
 
 **Clock Skew:** Clock skew is a tolerance in milliseconds used by the Service
 Provider for verifying expiration of messages and assertions. This can be used
@@ -165,7 +161,7 @@ even if the Identity Provider metadata indicates that it's not required.
 **SSL Required:** When this box is checked, any SAML messages that are not sent
 over HTTPS are rejected. This does not affect how URLs are generated.
 
-## Changing the SAML Identity Provider Connection Settings [](id=changing-the-saml-identity-provider-connection-settings)
+## Changing the SAML Identity Provider Connection Settings
 
 If you'd like to configure @product@'s SAML Identity Provider Settings, navigate to
 the Identity Provider Connection tab of the SAML Admin portlet.
@@ -228,25 +224,21 @@ through the SAML Control Panel interface and not via properties. Some features
 of the Liferay SAML 2.0 Provider app are not available as properties.
 
 
-+$$$
-
-**Limitation:** The Liferay SAML app can only be used with a single virtual
-host. Technically, this means that in the SAML metadata for @product@, only one
-binding can be added in this form:
-
-    <md:EntityDescriptor>
-    ...
-    <md:SPSSODescriptor>
-    ...
-    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://portal.domain.com/c/portal/saml/acs" index="1" isDefault="true" />
-    ...
-    </md:SPSSODescriptor>
-    </md:EntityDescriptor>
-
-$$$
+| **Limitation:** The Liferay SAML app can only be used with a single virtual
+| host. Technically, this means that in the SAML metadata for @product@, only one
+| binding can be added in this form:
+| 
+|     <md:EntityDescriptor>
+|     ...
+|     <md:SPSSODescriptor>
+|     ...
+|     <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://portal.domain.com/c/portal/saml/acs" index="1" isDefault="true" />
+|     ...
+|     </md:SPSSODescriptor>
+|     </md:EntityDescriptor>
 
 
-## Setting Up @product@ as a SAML Service Provider in a Clustered Environment [](id=setting-up-liferay-as-a-saml-service-provider-in-a-clustered-environment)
+## Setting Up @product@ as a SAML Service Provider in a Clustered Environment
 
 If you want to use the Liferay SAML 2.0 Provider app as an SSO solution for a
 clustered @product@ environment, follow the steps in this section. Before
