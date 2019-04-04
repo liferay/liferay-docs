@@ -158,7 +158,7 @@ The following settings are only available in the Elasticsearch 6 adapter:
 `clientTransportPingTimeout=`
 : Set the String value for how long to wait for a node's ping response.
 
-## Configurations only Affecting the Embedded Elasticsearch Server
+## Configurations only Affecting the Embedded Elasticsearch Server [](id=configurations-only-affecting-the-embedded-elasticsearch-server)
 
 These settings (defined above) are only meant to use while configuring the
 embedded Elasticsearch server. Configuring these will elicit no effect on
