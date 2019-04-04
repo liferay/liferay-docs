@@ -2,9 +2,9 @@
 
 To demonstrate the various features of segmentation and its flexibility, 
 define two segments for the fictional Westeros Bank site. The segments will use 
-the **Westeros America** organization for evaluating the users location. The 
-first Segment, *American Engineers* will use standard fields as criteria, while 
-the second, *Premium Card Prospects* will use a custom field and a cookie.
+user data like the *Job Title* field as well as organization membership for  
+evaluating segments. The first Segment, *American Engineers* will use standard 
+fields as criteria.
 
 To get started, navigate to the Segments page.
 

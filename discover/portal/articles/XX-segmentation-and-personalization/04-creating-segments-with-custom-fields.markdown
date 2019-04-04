@@ -57,6 +57,9 @@ So far, you've used criteria derived from user profiles to determine whether or
 not they should be members of a segment; now it's time to use session data to
 make your criteria more effective.
 
+| Note: For this exercise to work, you would need to have set a cookie on the 
+| specified page either through a widget or a JavaScript call.
+
 1.  Click the icon to edit *Session Properties* from the *Premium Card 
     Prospects* segment.
     
