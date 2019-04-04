@@ -63,7 +63,7 @@ Follow these steps:
 		    "com.liferay.portlet.header-portlet-css": "/css/styles.css",
             ...
         }
-        ```
+       ```
 
     -   Remove any CSS imports you have in your JS files
 
@@ -97,7 +97,7 @@ Follow these steps:
  
        ```javascript
         import { HashRouter as Router } from 'react-router-dom';
-        ```
+       ```
 
     -   Place your code inside the `main()` function.
 
