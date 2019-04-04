@@ -27,6 +27,23 @@ channels. To learn more about Segmentation options have a look at the [overview
 of the Segment editor](link), practice [creating basic Segments](link), or 
 create more complicated [Segments with custom fields and session data](link).
 
+## Integrating Segments with Analytics Cloud
+
+There are two different stories that User Segments can tell. One is the story of
+using Segments to target content to specific audiences and encourage engagement 
+and positive user experiences. The other is the story of using Segments to 
+define groups of users and vistors to analyze their behavior and interactions 
+with your site. To tell the second story, you need to integrate with Analytics 
+Cloud.
+
+Analytics Cloud is a Liferay service that provides in depth information on who
+is using your site, and how they are using it. Analytics Cloud is a key 
+component to fully utilizing Segments and Personalization, since it enables you 
+to see the full picture of how users and visitors on your site are behaving and 
+interacting with both standard and targeted content. You can learn more about
+this in the [Using Analytics Cloud with User Segments article](link).
+
+
 ## Using Segments to Personalize Experiences
 
 ...

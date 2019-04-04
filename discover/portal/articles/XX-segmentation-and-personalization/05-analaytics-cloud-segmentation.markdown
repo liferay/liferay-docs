@@ -1,22 +1,9 @@
 # Using Analytics Cloud With User Segments
 
-There are two different stories that User Segments can tell. One is the story of
-using Segments to target content to specific audiences and encourage engagement 
-and positive user experiences. The other is the story of using Segments to 
-define groups of users and vistors to analyze their behavior and interactions 
-with your site. To tell the second story, you need to integrate with Analytics 
-Cloud.
-
-Analytics Cloud is a Liferay service that provides in depth information on who
-is using your site, and how they are using it. Analytics Cloud is a key 
-component to fully utilizing Segments and Personalization, since it enables you 
-to see the full picture of how users and visitors on your site are behaving and 
-interacting with both standard and targeted content.
-
-To get started, you'll need connect your DXP data source to Analytics Cloud and 
-enable synchronization of user and analytics. For more information about 
-Analytics Cloud, including instructions for connecting it with DXP, see the 
-official [Analytics Cloud Documentation](link).
+To use Analytics Cloud with User Segments, you first need connect your DXP data 
+source to Analytics Cloud and enable synchronization of user and analytics. For 
+more information about Analytics Cloud, including instructions for connecting 
+it with DXP, see the official [Analytics Cloud Documentation](link).
 
 Once you're connected to Analytics Cloud, you can start working on creating 
 Segments to analyze user behavior. In this case, you're looking at how users 
@@ -26,7 +13,7 @@ for a marketing campaign.
 ## Creating a new Segment
 
 Synchronization with Analytics Cloud is not instant, so once you have connected 
-Analytics Cloud and Liferay DXP, you first must wait for the users to 
+Analytics Cloud and Liferay DXP, you first must wait for the users and data to 
 synchronize. After that completes you can create Segments in Analytics Cloud to 
 capture data in DXP. First define the basic details of the Segment:
 
@@ -49,8 +36,6 @@ any users that meet that criteria, while Static segments are manually selected,
 and do not update dynamically.
 
 Once a Segment is created, you can view the analytics data for that Segment. 
-Since there is currently not criteria defined, the data will not be 
-particularly interesting or useful.
 
 ![Figure X: You can view all of the analytics data for your new segment in Analytics Cloud.](../../images/sements-ac-analytics.png)
 
@@ -72,3 +57,6 @@ personalization in DXP. Changing the Segment criteria here will not affect the
 analytics data that is gathered, unless it is configured in some way that 
 restricts its members from viewing content that you are using as an Analytics 
 Cloud criteria.
+
+When you put it all together to provide personalized experiences and analyze 
+user behavior, you can see the true power of Segmentation.
