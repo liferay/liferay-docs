@@ -51,10 +51,25 @@ interface. Follow these steps to modify one of @product@'s WYSIWYG editors:
     [`EditorConfigContributor`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/editor/configuration/EditorConfigContributor.html) interface's Javadoc for more information about 
     the available properties and how to use them. The example configuration 
     below modifies the AlloyEditor's Content Editor, identified by the 
-    `contentEditor` configuration key and `alloyeditor` name key. Two portlet 
-    names are declared (Blogs and Blogs Admin), specifying that the service 
-    applies to the content editors in those portlets. Lastly, the configuration 
-    overrides the default one by providing a higher 
+    `contentEditor` configuration key and `alloyeditor` name key. 
+    
+    +$$$
+    
+    **Note:** If you're targeting all editors for a portlet, the 
+    `editor.config.key` is not required. For example, if you just want to target 
+    the Web Content portlet's editors, you can provide the configuration below:
+    
+        @Component(
+        property = {"editor.name=ckeditor",
+        "javax.portlet.name=com_liferay_journal_web_portlet_JournalPortlet",
+        "service.ranking:Integer=100"
+        }
+    
+    $$$
+    
+    Two portlet names are declared (Blogs and Blogs Admin), specifying that the 
+    service applies to the content editors in those portlets. Lastly, the 
+    configuration overrides the default one by providing a higher 
     [service ranking](/develop/tutorials/-/knowledge_base/7-1/fundamentals#services):
 
         @Component(
@@ -67,6 +82,45 @@ interface. Follow these steps to modify one of @product@'s WYSIWYG editors:
 			
             service = EditorConfigContributor.class
         )
+
+    +$$$
+
+    **NOTE:** If you want to create a global configuration that applies to an 
+    editor everywhere it's used, you must create two separate configurations: 
+    one configuration that targets just the editor and a second configuration 
+    that targets the Blogs and Blogs Admin portlets. For example, the two 
+    separate configurations below apply the updates to AlloyEditor everywhere 
+    it's used:
+
+    Configuration one:
+    ```java
+    @Component(
+        immediate = true, 
+        property = {
+            "editor.name=alloyeditor", 
+            "service.ranking:Integer=100"
+        },
+
+        service = EditorConfigContributor.class
+    )
+    ```
+
+    Configuration two:
+    ```java
+    @Component(
+        immediate = true, 
+        property = {
+            "editor.name=alloyeditor",
+            "javax.portlet.name=com_liferay_blogs_web_portlet_BlogsPortlet",
+            "javax.portlet.name=com_liferay_blogs_web_portlet_BlogsAdminPortlet", 
+            "service.ranking:Integer=100"
+        },
+
+        service = EditorConfigContributor.class
+    )
+    ```
+
+    $$$
 
 7.  Override the `populateConfigJSONObject()` method to provide the custom 
     configuration for the editor. This method updates the original configuration 
