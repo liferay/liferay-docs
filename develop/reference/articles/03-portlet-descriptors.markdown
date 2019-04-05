@@ -28,7 +28,7 @@ this document for simplicity.
 |`portlet.xml` XPath | OSGi Portlet Service Property|
 |----|----|
 |`/portlet-app/portlet/description`|`javax.portlet.description=<String>`|
-|`/portlet-app/portlet/portlet-name`|`javax.portlet.name=<String>`|
+|`/portlet-app/portlet/portlet-name` [6](#six)|`javax.portlet.name=<String>` [6](#six)|
 |`/portlet-app/portlet/display-name`|`javax.portlet.display-name=<String>`|
 |`/portlet-app/portlet/portlet-class`|[1](#one)|
 |`/portlet-app/portlet/init-param/name`|`javax.portlet.init-param.<name>=<value>`|
@@ -156,8 +156,20 @@ this document for simplicity.
 |`/liferay-portlet-app/portlet/include`|not supported|
 
 
-- [<a name="one">1</a>] Portlets are registered as concrete objects.
-- [<a name="two">2</a>] Multiples of these properties may be used. This results in an array of values.
-- [<a name="three">3</a>] This type is registered as an OSGi service.
-- [<a name="four">4</a>] http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd
-- [<a name="five">5</a>] http://www.liferay.com/dtd/liferay-portlet-app_7_0_0.dtd
+-   [<a name="one">1</a>] Portlets are registered as concrete objects.
+-   [<a name="two">2</a>] Multiples of these properties may be used. This 
+    results in an array of values.
+-   [<a name="three">3</a>] This type is registered as an OSGi service.
+-   [<a name="four">4</a>] http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd
+-   [<a name="five">5</a>] http://www.liferay.com/dtd/liferay-portlet-app_7_0_0.dtd
+-   [<a name="six">6</a>] @product@ creates each portlet's ID based on the 
+    portlet's name (i.e., the `portlet-name` descriptor in `liferay-portlet.xml`
+    or the `javax.portlet.name` OSGi service property). Dashes, periods, and
+    spaces are allowed in the portlet name, but they and all other JavaScript
+    unsafe characters are stripped from the name value that's used for the
+    portlet ID. Therefore, make your portlet name unique in light of the
+    characters that are removed. Otherwise, if you try to deploy a portlet whose
+    ID is the same as a portlet that's already deployed, your portlet deployment
+    fails and @product@ logs a message like this:
+
+        Portlet id [portletId] is already in use
