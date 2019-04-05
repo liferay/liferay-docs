@@ -7,8 +7,6 @@ header-id: setting-up-liferay-as-a-saml-identity-provider
 An identity provider is a trusted provider that provides single sign-on for
 users to access other websites. A service provider is a website that hosts
 applications and grants access only to identified users with proper credentials.
-SAML is maintained by the 
-[OASIS Security Services Technical Committee](https://www.oasis-open.org/ committees/security/).
 Liferay Portal 6.1 EE and later versions support SAML 2.0 integration via the 
 [Liferay SAML 2.0 Provider](https://web.liferay.com/marketplace/-/mp/application/15188711)
 application. It is provided from Liferay Marketplace and allows @product@ to act
@@ -17,28 +15,27 @@ as a SAML 2.0 identity provider or as a service provider.
 service provider, but **not both**. Both configurations are covered in this
 article.
 
-To set @product@ up to act as a SAML Identity Provider, follow the steps below.
-Before proceeding, note that in step 3 below, you generate a keystore for SAML.
-This keystore has two storage options:
+## Storing Your Keystore
 
-    - In the file system
-    - In the Documents and Media library
+Your first step is to determine where to store your keystore. You have two
+options:
+
+- In the file system
+- In the Documents and Media library
  
 The file system keystore manager is used by default and the default location is
 the `[Liferay Home]/data` directory. To use Documents and Media library storage
-for your keystore instead of file system storage, use the document library
-keystore manager.
-
-To select a keystore manager, go to *Control Panel* &rarr; *System Settings*
-&rarr; *SAML KeyStoreManager Implementation Configuration*. There, the options
-are *Filesystem Keystore Manager* and *Document Library Keystore Manager*.
+for your keystore instead of file system storage, go to *Control Panel* &rarr;
+*System Settings* &rarr; *SAML KeyStoreManager Implementation Configuration*.
+Select from the two options: *Filesystem Keystore Manager* or *Document Library
+Keystore Manager*.
 
 The great thing about using Document Library storage is that you can use any number
-of [back end file stores](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration).
+of [back end file stores](/docs/7-2/deploy/-/knowledge_base/deploy/document-repository-configuration).
 These are protected not only by the system in which you're storing the key, but
 also by @product@'s permissions system.
 
-Here are the steps for setting up @product@ to act as a SAML Identity Provider:
+## Configuring @product@ as a SAML Identity Provider
 
 1.  Install the Liferay SAML 2.0 Provider app. To access the SAML Admin
     interface, click on *Control Panel* &rarr; *Configuration* and then on *SAML Admin*.
@@ -46,16 +43,14 @@ Here are the steps for setting up @product@ to act as a SAML Identity Provider:
 2.  To begin configuring @product@ to use SAML, select a SAML role for @product@ and
     choose an entity ID.
 
-    <!-- [Figure 1: Select a SAML role for Liferay and enter an entity ID.](../../../images-dxp/saml-initial-config.png) -->
+    [Figure 1: Select a SAML role for Liferay and enter an entity ID.](../../../images-dxp/saml-initial-config.png)
 
-    Select the *Identity Provider* SAML role. Enter *liferaysamlidp* if you're
-    setting up an example @product@ instance. Alternatively, choose your own
-	entity ID. Then click *Save*. A new Certificate and Private Key section
-	appears. 
+    Select the *Identity Provider* SAML role. Enter your own entity ID. Then
+    click *Save*. A new Certificate and Private Key section appears. 
 
 3.  The Certificate and Private Key section lets you create a keystore for SAML.
     Click on *Create Certificate* and enter the following information:
-    
+ 
     - Your common name (your first and last name)
     - The name of your organization
     - The name of your organizational unit
