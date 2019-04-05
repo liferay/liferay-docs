@@ -113,7 +113,7 @@ virtual instance through the *Control Panel* &rarr; *Configuration* &rarr;
 
 System Settings configuration file:
 
-    com.liferay.openid.connect.configuration.OpenIdConnectConfiguration.config
+    com.liferay.portal.security.sso.openid.connect.configuration.OpenIdConnectConfiguration.config
 
 $$$
     
