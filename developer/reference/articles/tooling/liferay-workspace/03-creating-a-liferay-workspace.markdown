@@ -75,7 +75,7 @@ You can also create a Maven-based workspace with Blade CLI. See the
     | `liferay.workspace.home.dir` property.
 
 8.  Check the Add project to working set checkbox if you want the workspace to
-    be a part of a larger working set you’ve already created in Dev Studio. For
+    be a part of a larger working set you've already created in Dev Studio. For
     more information on working sets, visit
     [Eclipse Help](https://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.platform.doc.user%2Fconcepts%2Fcworkset.htm).
 
