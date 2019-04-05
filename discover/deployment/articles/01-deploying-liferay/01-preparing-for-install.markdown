@@ -120,6 +120,13 @@ steps:
 
     $$$
 
+    +$$$
+
+    **Note:** If you use Sybase, configure the database to allow null values by 
+    default. 
+
+    $$$
+
 2.  Create a database user for accessing this database. Grant this database user
     all rights, including the rights to create and drop tables, to the blank
     @product@ database.
