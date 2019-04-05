@@ -77,7 +77,7 @@ from the bad URL character list. Restart SiteMinder to make your configuration
 update take effect. For more information, please refer to SiteMinder's
 [documentation](https://support.ca.com/cadocs/0/CA%20SiteMinder%20r6%200%20SP6-ENU/Bookshelf_Files/HTML/index.htm?toc.htm?258201.html)
 
-# Summary [](id=summary)
+## Summary [](id=summary)
 
 @product@'s token-based SSO authentication mechanism is highly flexible
 and compatible with any SSO solution which can provide it with a valid @product@
