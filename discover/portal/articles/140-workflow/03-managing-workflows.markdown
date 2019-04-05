@@ -17,19 +17,19 @@ definitions.
 Users with permission to edit or publish workflow definitions can add 
 [Groovy scripts](/discover/portal/-/knowledge_base/7-1/leveraging-the-script-engine-in-workflow) 
 to the workflow. Access to the scripting engine means access to the Java Virtual
-Machine (JVM) of the server. So Users who publish (or edit) workflow definitions
-containing scripts can get access to any data within the reach of the JVM, such
-as data contained in a separate 
+Machine (JVM) of the server. Users who publish (or edit) workflow definitions
+containing scripts, therefore, can get access to any data within the reach of
+the JVM, such as data contained in a separate 
 [Virtual Instance](/discover/portal/-/knowledge_base/7-1/virtual-instances) 
 of @product@ itself. 
 
 Because of this far-reaching access, permission to create or edit workflow
 definitions is limited to Regular Administrators of the Default Virtual
 Instance. For Liferay DXP customers, Site Administrators who can access the
-Kaleo Designer and Kaleo Forms Admin applications also have the ability to edit
-and publish workflows.
+Kaleo Designer and Kaleo Forms Admin applications can also edit and publish
+workflows.
 
-To grant Users with these roles the workflow publication access in additional
+To grant Users with these Roles the workflow publication access in additional
 Virtual Instances,
 
 1.  Make sure you understand the access you're granting these admins.
