@@ -1,4 +1,4 @@
-# Customizing Core Functionality with Ext Plugins [](id=customizing-core-functionality-with-ext-plugins)
+# Customizing Core Functionality with Ext [](id=customizing-core-functionality-with-ext)
 
 +$$$
 
