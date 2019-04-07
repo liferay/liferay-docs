@@ -9,7 +9,9 @@ as you have shards.
 +$$$
 
 **Note:** Liferay continues to support its logical partitioning capabilities 
-(also known as instances) for the foreseeable future. 
+(also known as
+[virtual instances](/discover/portal/-/knowledge_base/7-1/setting-up-a-virtual-instance))
+for the foreseeable future. 
 
 $$$
 
@@ -98,11 +100,9 @@ Here are the upgrade steps:
         jdbc.default.username=
         jdbc.default.password=
 
-Congratulations! You've migrated your original shards to separate @product-ver@
-servers: 
+Congratulations! You have migrated off of a sharded environment to virtual
+instances on separate @product@ servers. You have also upgraded to
+@product-ver@. Your virtual instances are ready for action. 
 
--   One @product-ver@ server for the default shard
--   A @product-ver@ server for each non-default shard
-
-For further assistance with sharding contact
+For any further assistance with sharding contact Liferay Support or
 [Liferay Global Services](https://www.liferay.com/consulting). 
