@@ -1,4 +1,8 @@
-# Adding Image Resolutions [](id=adding-image-resolutions)
+---
+header-id: adding-image-resolutions
+---
+
+# Adding Image Resolutions
 
 To use Adaptive Media, you must first define the resolutions for the images 
 delivered to users' devices. Adaptive Media then generates new images scaled to 
@@ -19,7 +23,7 @@ section for details).
 
 ![Figure 1: Adaptive Media's image resolutions are listed in a table.](../../../images/adaptive-media-image-resolutions.png)
 
-## Adding a New Image Resolution [](id=adding-a-new-image-resolution)
+## Adding a New Image Resolution
 
 The number of image resolutions required and the values for each depend on the 
 use case. More resolutions may optimize image delivery, but generating 

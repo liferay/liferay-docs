@@ -1,4 +1,8 @@
-# Adapting Your Media Across Multiple Devices [](id=adapting-your-media-across-multiple-devices)
+---
+header-id: adapting-your-media-across-multiple-devices
+---
+
+# Adapting Your Media Across Multiple Devices
 
 Media providers must consider differences between devices (phones, laptops,
 tablets, etc.) when delivering content: not only their screen size but also

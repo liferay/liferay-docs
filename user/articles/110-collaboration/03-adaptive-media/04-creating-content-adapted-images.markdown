@@ -1,4 +1,8 @@
-# Creating Content with Adapted Images [](id=creating-content-with-adapted-images)
+---
+header-id: creating-content-with-adapted-images
+---
+
+# Creating Content with Adapted Images
 
 Adaptive Media is mostly invisible for blog and web content creators. Once
 an image is added to the content, the app works behind the scenes to
@@ -13,7 +17,7 @@ prior to those images.
 | **Note:** If Adaptive Media is uninstalled, the original images are displayed 
 | in the blog entries and web content articles.
 
-## Including Adapted Images in Content [](id=including-adapted-images-in-content)
+## Including Adapted Images in Content
 
 Since Adaptive Media delivers the adapted images behind the scenes, content 
 creators should add images to 
@@ -67,7 +71,7 @@ This example uses three different images, each with a different resolution. A
 `source` tag defines each of these images. Also note the original image (`img`) 
 is used as a fallback in case the adapted images aren't available. 
 
-## Using Adapted Images in Structured Web Content [](id=using-adapted-images-in-structured-web-content)
+## Using Adapted Images in Structured Web Content
 
 To use adapted images in 
 [structured web content](/discover/portal/-/knowledge_base/7-2/designing-uniform-content), 
@@ -93,7 +97,7 @@ the file entry ID to replace the `<img>` element automatically with a
 `<picture>` element that contains the available adapted images for each 
 resolution (see the `<picture>` example above). 
 
-## Staging Adapted Images [](id=staging-adapted-images)
+## Staging Adapted Images
 
 Adaptive Media is fully integrated with @product@'s 
 [content staging](/discover/portal/-/knowledge_base/7-2/staging-content-for-publication) 

@@ -1,4 +1,8 @@
-# Installing Adaptive Media [](id=installing-adaptive-media)
+---
+header-id: installing-adaptive-media
+---
+
+# Installing Adaptive Media
 
 The Adaptive Media app is installed in @product@ by default. The following 
 sections describe the Adaptive Media app's modules, and how to prepare Adaptive 
@@ -9,7 +13,7 @@ Media to handle animated GIFs.
 | [Liferay Marketplace](https://web.liferay.com/marketplace) 
 | to update the app causes an error. 
 
-## Adaptive Media's Modules [](id=adaptive-medias-modules)
+## Adaptive Media's Modules
 
 Some modules in the Adaptive Media app are mandatory and must be enabled for 
 Adaptive Media to function, while others can be disabled. The Adaptive Media API 
@@ -74,7 +78,7 @@ Media. The next section discusses the installation requirements for using
 animated GIFs with Adaptive Media. If you don't need to use GIFs, you can skip 
 ahead to the article on adding image resolutions to Adaptive Media. 
 
-## Processing Animated GIFs [](id=processing-animated-gifs)
+## Processing Animated GIFs
 
 To process animated GIFs, Adaptive Media uses an external tool called 
 [Gifsicle](https://www.lcdf.org/gifsicle). 

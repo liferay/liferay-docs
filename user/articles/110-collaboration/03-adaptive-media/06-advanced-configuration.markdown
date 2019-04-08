@@ -1,4 +1,8 @@
-# Advanced Configuration Options [](id=advanced-configuration-options)
+---
+header-id: advanced-configuration-options
+---
+
+# Advanced Configuration Options
 
 Adaptive Media's advanced configuration options are available in System 
 Settings. Open the Control Panel and go to *Configuration* &rarr; 

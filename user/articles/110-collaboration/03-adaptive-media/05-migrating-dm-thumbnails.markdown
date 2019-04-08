@@ -1,4 +1,8 @@
-# Migrating Documents and Media Thumbnails to Adaptive Media [](id=migrating-documents-and-media-thumbnails-to-adaptive-media)
+---
+header-id: migrating-documents-and-media-thumbnails-to-adaptive-media
+---
+
+# Migrating Documents and Media Thumbnails to Adaptive Media
 
 @product@ automatically generates thumbnails for images in Documents and Media.
 Once you deploy the Adaptive Media app, however, @product@ doesn't display 
@@ -11,7 +15,7 @@ through this migration process.
 You'll get started by creating image resolutions for the thumbnails in Adaptive 
 Media. 
 
-## Adding the Replacement Image Resolutions [](id=adding-the-replacement-image-resolutions)
+## Adding the Replacement Image Resolutions
 
 To migrate the existing Documents and Media thumbnails, you must add new image 
 resolutions in Adaptive Media that have maximum height and maximum width values 
@@ -38,7 +42,7 @@ section of the Adaptive Media user guide.
 
 Now you're ready to to create the Adaptive Media images. 
 
-## Creating the Adaptive Media Images [](id=creating-the-adaptive-media-images)
+## Creating the Adaptive Media Images
 
 Once the required image resolutions exist, you can convert the Documents and 
 Media thumbnails to Adaptive Media images. As mentioned in 
@@ -61,7 +65,7 @@ the existing thumbnails to Adaptive Media, which performs better because it
 avoids the computationally expensive scaling operation. The next section 
 describes the steps to run this process. 
 
-### Running the Migration Process [](id=running-the-migration-process)
+### Running the Migration Process
 
 The migration process is a set of Gogo console commands. You can learn more
 about using the Gogo console in 
