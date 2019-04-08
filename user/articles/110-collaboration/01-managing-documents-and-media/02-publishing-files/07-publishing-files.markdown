@@ -1,4 +1,8 @@
-# Publishing Files [](id=publishing-files-site)
+---
+header-id: publishing-files-site
+---
+
+# Publishing Files
 
 Once your Document Library contains files, you may want to publish them in your
 site. Here are some ways to publish files:
@@ -10,7 +14,7 @@ site. Here are some ways to publish files:
 
 Here, you'll learn to use the Media Gallery. 
 
-## Using the Media Gallery [](id=using-the-media-gallery)
+## Using the Media Gallery
 
 The Media Gallery publishes your media files in a simple gallery-like style. It
 shows a large thumbnail of each media file, lets the user download files, and

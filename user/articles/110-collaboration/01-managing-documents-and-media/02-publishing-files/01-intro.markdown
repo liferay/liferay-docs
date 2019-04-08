@@ -1,4 +1,8 @@
-# Publishing Files [](id=publishing-files)
+---
+header-id: publishing-files
+---
+
+# Publishing Files
 
 As you create sites, you'll probably want to share files on them. The Documents
 and Media library (Document Library) lets you upload and publish all kinds of

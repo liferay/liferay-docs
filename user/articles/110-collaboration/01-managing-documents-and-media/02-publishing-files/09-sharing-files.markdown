@@ -1,4 +1,8 @@
-# Sharing Files [](id=sharing-files)
+---
+header-id: sharing-files
+---
+
+# Sharing Files
 
 @product@'s 
 [role-based permissions system](/discover/portal/-/knowledge_base/7-2/roles-and-permissions) 
@@ -34,7 +38,7 @@ the receiving user. There are, however, some important restrictions on this:
 Also note that the receiving user must be part of the same instance, but doesn't 
 have to be a member of the same site. 
 
-## Sharing Files in Documents and Media [](id=sharing-files-in-documents-and-media)
+## Sharing Files in Documents and Media
 
 To share a file, you must be the owner of that file or an administrator. You 
 must share files via the Documents and Media app in Site Administration, or the 
@@ -87,7 +91,7 @@ Follow these steps to share a file:
 
 6.  Click *Share*. 
 
-## Working with Shared Files [](id=working-with-shared-files)
+## Working with Shared Files
 
 You can access files shared with you in three places: 
 
@@ -113,7 +117,7 @@ You can access files shared with you in three places:
 
     ![Figure 3: The Shared Assets app lists the files shared with you, and the files you shared.](../../../../images/sharing-app.png)
 
-## Managing Shared Files [](id=managing-shared-files)
+## Managing Shared Files
 
 After sharing a file, you can unshare it or modify its permissions on a per-user 
 basis. This can only be done by Administrators, the file's owner, or any user 

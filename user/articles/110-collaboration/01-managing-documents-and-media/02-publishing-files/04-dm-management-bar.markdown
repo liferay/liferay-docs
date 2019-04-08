@@ -1,4 +1,8 @@
-# Using the Documents and Media Management Bar [](id=using-the-documents-and-media-management-bar)
+---
+header-id: using-the-documents-and-media-management-bar
+---
+
+# Using the Documents and Media Management Bar
 
 The Documents and Media *Management Bar* is where people who manage documents 
 go to unwind after a long day at work. Just kidding. The Management Bar, as its 
@@ -17,7 +21,7 @@ rest of the Management Bar.
 | to switch your view to another page or configure the page to display more 
 | items per page. 
 
-## View Types [](id=view-types)
+## View Types
 
 The *View Types* button is to the left of the Add button. It lets you choose how 
 to display the Document Library's items. The View Types button's icon depends on 
@@ -43,7 +47,7 @@ available in when viewing each item separately.
 
 ![Figure 2: The Cards View type shows items in large card-like renderings.](../../../../images/dm-images-in-admin.png)
 
-## The Info Panel [](id=the-info-panel)
+## The Info Panel
 
 To display an info panel with the current folder's details, click the 
 *Information* icon
@@ -57,7 +61,7 @@ notifications about files added to or modified in the folder.
 **Actions** (![Actions](../../../../images/icon-actions.png)): Lists actions you 
 can perform on the current folder. 
 
-## Finding and Arranging Items [](id=finding-and-arranging-items)
+## Finding and Arranging Items
 
 The Management Bar also contains tools that help you locate and arrange items in 
 the Document Library. The most prominent of these tools is the *Search* bar, 
@@ -86,7 +90,7 @@ You can also select from the following criteria for ordering items:
 -   Create Date
 -   Title
 
-## Selecting Items [](id=selecting-items)
+## Selecting Items
 
 The checkbox on the left-most side of the Management Bar selects all currently 
 displayed items. Selecting multiple items lets you act on all of them at once. 

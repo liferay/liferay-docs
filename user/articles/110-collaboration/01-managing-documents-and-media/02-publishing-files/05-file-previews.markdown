@@ -1,4 +1,8 @@
-# Viewing File Previews [](id=viewing-file-previews)
+---
+header-id: viewing-file-previews
+---
+
+# Viewing File Previews
 
 File previews help users browse and find media efficiently. To view a preview of 
 a file, click the file's name in the Document Library. If the file is an image,
@@ -9,7 +13,7 @@ for the file, a generic image based on the file type appears.
 
 ![Figure 1: File previews let you view and manage a file.](../../../../images/dm-file-entry-details.png)
 
-## File Preview Apps [](id=file-preview-apps)
+## File Preview Apps
 
 Whenever possible, @product@ generates previews of documents added to the
 Document Library. Out of the box, Java-based APIs generate previews. The only
@@ -50,7 +54,7 @@ document's pages. You can also view and play multimedia documents (audio or
 video). If the browser supports HTML5, the viewer uses the browser's native 
 player. Otherwise it falls back to a Flash player. 
 
-## Managing Files [](id=managing-files)
+## Managing Files
 
 You can also manage a file from its preview. The bar above the preview contains 
 these buttons: 
