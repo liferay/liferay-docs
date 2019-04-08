@@ -1,4 +1,8 @@
-# Document Types [](id=document-types)
+---
+header-id: document-types
+---
+
+# Document Types
 
 Document types are made of metadata fields and help users define the purpose of
 Document Library files. For example, a *Contract* document type may need 
@@ -10,7 +14,7 @@ works on file metadata so users can find files faster. You can also apply
 workflows to specific document types. And you can more cleanly organize document 
 libraries by designating folders to hold particular document types exclusively. 
 
-## Managing Document Types [](id=managing-document-types)
+## Managing Document Types
 
 To see the available document types, open the *Menu* 
 (![Product Menu](../../../images/icon-menu.png)), 
@@ -29,7 +33,7 @@ Recycle Bin. Once you delete a document type, it's gone forever.
 
 ![Figure 1: The Document Types management window lets you view existing document types and create new ones.](../../../images/dm-doc-types-list.png)
 
-## Creating Document Types [](id=creating-document-types)
+## Creating Document Types
 
 Follow these steps to create a document type: 
 
