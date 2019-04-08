@@ -1,10 +1,11 @@
 <?xml version="1.0"?>
 
-<project name="deployment Conversion" basedir=".">
+<project name="deployment reference" basedir=".">
 	<property name="project.dir" value="../../liferay-docs" />
 
 	<import file="../build-common.xml" />
 
-	<property name="purpose.dir" value="deployment"/>
-
+	<property name="doc.dir" value="deployment"/>
+    <property name="purpose.dir" value="." />
+	<property name="doc.type" value="article"/>
 </project>

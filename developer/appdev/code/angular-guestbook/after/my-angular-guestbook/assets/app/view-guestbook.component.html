@@ -1,0 +1,16 @@
+<table class="table table-striped table-bordered mb-4">
+  <thead class="thead-light">
+    <tr>
+      <th>Name</th>
+      <th>Message</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let entry of entries">
+      <td>{{entry.name}}</td>
+      <td>{{entry.message}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<button class="btn btn-outline-secondary" routerLink="/add-entry">Add Entry</button>

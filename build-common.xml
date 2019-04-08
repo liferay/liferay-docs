@@ -84,6 +84,17 @@
 		</classpath>
 	</taskdef>
 
+	<taskdef name="checklinks" classname="com.liferay.documentation.util.CheckLinksTask">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
 	<taskdef name="convertheaders" classname="com.liferay.documentation.util.ConvertHeadersTask">
 		<classpath>
 			<fileset dir="${project.dir}/lib" includes="*.jar" />
@@ -514,40 +525,32 @@
 
 	<target name="check-links" description="Checks Community (LDN) URL links to see if they're broken.">
 		<property file="${project.dir}/release-site.properties" />
-		<java
-			classname="com.liferay.documentation.util.CheckLinks"
-			classpathref="project.classpath"
-			failonerror="true"
-			fork="true"
+		<checklinks
+			apilinks="${api.links}"
+			docdir="${doc.dir}"
+			legacylinks="${legacy.links}"
+			appreferencesite="${product.app.reference}"
+			platformreferencesite="${product.platform.reference}"
+			apptoken="${product.token.app.reference}"
+			platformtoken="${product.token.platform.reference}"
+			dxpcheck="false"
 		>
-			<arg value="${legacy.links}"/>
-			<arg value="${api.links}"/>
-			<arg value="${doc.dir}"/>
-			<arg value="${product.token.platform.reference}"/>
-			<arg value="${product.token.app.reference}"/>
-			<arg value="${product.platform.reference}"/>
-			<arg value="${product.app.reference}"/>
-			<arg value="false"/>
-		</java>
+		</checklinks>
 	</target>
 
 	<target name="check-links-dxp" description="Checks Community (LDN) and DXP (Customer Portal) URL links to see if they're broken.">
 		<property file="${project.dir}/release-site.properties" />
-		<java
-			classname="com.liferay.documentation.util.CheckLinks"
-			classpathref="project.classpath"
-			failonerror="true"
-			fork="true"
+		<checklinks
+			apilinks="${api.links}"
+			docdir="${doc.dir}"
+			legacylinks="${legacy.links}"
+			appreferencesite="${product.app.enterprise.reference}"
+			platformreferencesite="${product.platform.enterprise.reference}"
+			apptoken="${product.token.app.reference}"
+			platformtoken="${product.token.platform.reference}"
+			dxpcheck="true"
 		>
-			<arg value="${legacy.links}"/>
-			<arg value="${api.links}"/>
-			<arg value="${doc.dir}"/>
-			<arg value="${product.token.platform.reference}"/>
-			<arg value="${product.token.app.reference}"/>
-			<arg value="${product.platform.enterprise.reference}"/>
-			<arg value="${product.app.enterprise.reference}"/>
-			<arg value="true"/>
-		</java>
+		</checklinks>
 	</target>
 
 	<target name="process-article-to-temp"  description="Generates the target article's parent structure and then processes the articles' tokens. The resulting articles are copied (no images) to temp/.">

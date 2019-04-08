@@ -29,7 +29,6 @@ First, you must get an Item Selector for your use case. Follow these steps:
 2.  Use Declarative Services to get an `ItemSelector` OSGi Service Component: 
 
     ```java
-
         import com.liferay.item.selector.ItemSelector;
         import org.osgi.service.component.annotations.Reference;
 
@@ -37,7 +36,6 @@ First, you must get an Item Selector for your use case. Follow these steps:
 
         @Reference
         private ItemSelector _itemSelector
-
     ```
 
     The component annotations are available in the module 

@@ -1,0 +1,11 @@
+{
+	"create-jar": {
+		"output-dir": "dist",
+		"features": {
+			"js-extender": true,
+			"web-context": "/my-angular-guestbook"
+		}
+	},
+	"dump-report": true,
+	"process-serially": true
+}
