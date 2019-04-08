@@ -1,4 +1,8 @@
-# Configuring Google Docs™ Integration [](id=configuring-google-docs-integration)
+---
+header-id: configuring-google-docs-integration
+---
+
+# Configuring Google Docs™ Integration
 
 Before you can use Google Docs&trade; to create and edit Documents and Media 
 files, you must configure @product@ to connect with an application in the 

@@ -1,4 +1,8 @@
-# Creating and Editing Files with Google Docs™ [](id=creating-and-editing-files-with-google-docs)
+---
+header-id: creating-and-editing-files-with-google-docs
+---
+
+# Creating and Editing Files with Google Docs™
 
 The Documents and Media Library lets you use Google Docs&trade; to create and 
 edit text documents, spreadsheets, or presentations. When you finish your Google 
@@ -10,7 +14,7 @@ Docs&trade; for the following:
 -   [Editing Files](#editing-files)
 -   [Multiple Editing Sessions](#multiple-editing-sessions)
 
-## Creating Files [](id=creating-files)
+## Creating Files
 
 Follow these steps to create a new Documents and Media file via Google 
 Docs&trade;:
@@ -65,7 +69,7 @@ Docs&trade;:
 
     ![Figure 2: Save or discard your changes by using the toolbar in the editor.](../../../../images/google-docs-save-discard.png)
 
-## Editing Files [](id=editing-files)
+## Editing Files
 
 You can use Google Docs&trade; to edit the following types of Documents and 
 Media files: 
@@ -94,7 +98,7 @@ Follow these steps to edit a Documents and Media file in Google Docs&trade;:
 3.  Edit the file in Google Docs&trade;. The editing process is exactly the same 
     as described above for creating files. 
 
-## Multiple Editing Sessions [](id=multiple-editing-sessions)
+## Multiple Editing Sessions
 
 When you create or edit a Documents and Media file in Google Docs&trade;, you 
 can save or discard your changes by clicking *Save and Return to Liferay* or 

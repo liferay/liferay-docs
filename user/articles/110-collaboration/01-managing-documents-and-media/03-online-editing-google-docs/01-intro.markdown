@@ -1,4 +1,8 @@
-# Online File Creation and Editing with Google Docs™ [](id=online-file-creation-and-editing-with-google-docs)
+---
+header-id: online-file-creation-and-editing-with-google-docs
+---
+
+# Online File Creation and Editing with Google Docs™
 
 Although you can 
 [add](/discover/portal/-/knowledge_base/7-2/adding-files-to-a-document-library#using-the-add-menu) 
