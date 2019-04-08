@@ -30,6 +30,8 @@ generate adapted images for all source images regardless of size, set this to
 significant amounts of memory, you can specify a lower *Max Image Size* to avoid 
 out of memory errors. 
 
+![Figure 1: You can configure Gifsicle and the maximum image size for Adaptive Media.](../../../images/adaptive-media-config-01.png)
+
 The *Processes* configuration is related to Adaptive Media's asynchronous 
 processing. These values can be modified to improve performance for specific 
 scenarios or use cases. The following options are available: 
@@ -49,3 +51,5 @@ adapted media. The default value is `2`. This setting can't exceed the
 | *Adaptive Media Image* configuration, which is described next. You should run 
 | performance tests to optimize these settings for the amount of memory 
 | available on your system. 
+
+![Figure 2: You can also configure Adaptive Media's image processing resources.](../../../images/adaptive-media-config-02.png)
