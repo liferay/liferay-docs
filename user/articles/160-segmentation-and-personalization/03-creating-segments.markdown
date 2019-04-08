@@ -57,5 +57,23 @@ you are correctly defining the Segment.
 
 ![Figure 2: You can view the list of Segment members at any time.](../../images/sp-segment-members.png)
 
+## Managing Segments
+
+After you create your Segment, you can see it in the list of Segments on the 
+*People* &rarr; *Segments* page. From there you can edit the segment, delete 
+it, or change the permissions for it. Changing permissions only affects who has 
+access to manage the Segment; it will not change any aspect of Segment 
+membership or criteria.
+
+1.  Go to *People* &rarr; *Segments*.
+
+2.  Click the [Options](../../images/icon-options.png) Next to the *American 
+    Engineers* .
+
+You can manage the options here. You can also just click on the Segment's name 
+to edit it.
+
+![Figure 1: You can edit, delete or manage permissions from the options menu.](../../images/sp-options.png)
+
 Next, you'll define a Custom Field and use it as part of your Segmentation 
 criteria.
