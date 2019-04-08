@@ -35,6 +35,11 @@ There are several elements that can be specified in a `<notification>`:
 used to display the notification in the _My Workflow Tasks_ widget of a User's
 personal Site.
 
+**Description**
+: The `<description>` element contains the subject of the notification if the
+notification type is `email`. The syntax is determined by the template language
+you're using.
+
 **Template**
 : The `<template>` element contains the message of the notification. The syntax
 is determined by the template language you're using. 
