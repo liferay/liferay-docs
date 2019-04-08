@@ -12,14 +12,10 @@ familiar with the Management Bar's *Add* button
 (![Add](../../../../images/icon-add.png)). The sections that follow describe the 
 rest of the Management Bar. 
 
-+$$$
-
-**Note:** If a Document Library contains more items than it can display at once, 
-you can use the navigation tool that appears at the bottom of the window to 
-switch your view to another page or configure the page to display more items
-per page. 
-
-$$$
+| **Note:** If a Document Library contains more items than it can display at 
+| once, you can use the navigation tool that appears at the bottom of the window 
+| to switch your view to another page or configure the page to display more 
+| items per page. 
 
 ## View Types [](id=view-types)
 

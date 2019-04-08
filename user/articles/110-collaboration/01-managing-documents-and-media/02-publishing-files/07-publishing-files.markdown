@@ -48,14 +48,10 @@ Follow these steps to create a page that contains a Media Gallery widget:
     the Media Gallery's root folder, the Media Gallery can no longer access the 
     parent folder. 
 
-    +$$$
-
-    **Note**: To access the Carousel display template in Media Gallery, your 
-    role must have View access for that template. Since the Carousel template is 
-    in the Global scope, a Global-scope administrator must grant the role 
-    permission to view the template. 
-
-    $$$
+    | **Note**: To access the Carousel display template in Media Gallery, your 
+    | role must have View access for that template. Since the Carousel template 
+    | is in the Global scope, a Global-scope administrator must grant the role 
+    | permission to view the template. 
 
     ![Figure 1: You can configure the Media Gallery to use any Documents and Media folder as its root folder.](../../../../images/dm-select-root-folder.png)
 
