@@ -1,0 +1,15 @@
+.button-footer {
+  display: flex;
+  margin-top: 1.5rem;
+}
+
+.button-footer > button {
+  margin-right: 1rem;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 0.25rem;
+}
+
+input {
+  display: block
+}
