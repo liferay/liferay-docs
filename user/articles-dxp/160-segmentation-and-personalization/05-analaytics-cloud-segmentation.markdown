@@ -9,7 +9,7 @@ header-id: using-analytics-cloud-with-user-segments
 To use Analytics Cloud with User Segments, you first need connect your DXP data 
 source to Analytics Cloud and enable synchronization of user and analytics. For 
 more information about Analytics Cloud, including instructions for connecting 
-it with DXP, see the official [Analytics Cloud Documentation](link).
+it with DXP, see the official [Analytics Cloud Documentation](https://help.liferay.com/hc/en-us/articles/360006608732).
 
 Once you're connected to Analytics Cloud, you can start working on creating 
 Segments to analyze user behavior. In this case, you're looking at how users 
