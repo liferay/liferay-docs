@@ -1,4 +1,4 @@
-# Workflow Notifications 
+# Workflow Notifications
 
 While an asset is in a workflow, relevant Users should be notified about certain
 events, like when a review task is completed. Any workflow node with an
@@ -26,7 +26,7 @@ once a task assignment is created. But who receives the notification? If no
 recipients are explicitly specified via a `recipients` tag, the asset's creator
 receives the notification.
 
-## Notification Options 
+## Notification Options
 
 There are several elements that can be specified in a `<notification>`:
 
@@ -42,11 +42,11 @@ you're using.
 
 **Template**
 : The `<template>` element contains the message of the notification. The syntax
-is determined by the template language you're using. 
+is determined by the template language you're using.
 
 **Template Language**
 : Choose from `freemarker`, `velocity`, or plain `text` in the
-`<template-language>` tag. 
+`<template-language>` tag.
 
 **Notification Type**
 : Choose whether to send an `email`, `user-notification` (via the Notification
@@ -61,7 +61,7 @@ widget), `im` (instant message), or `private-message` in the
 : Choose to link the sending of the notification to entry into the node
 (`onEntry`), when a task is assigned (`onAssignment`), or when the workflow
 processing is leaving a node (`onExit`). If you specify a notification to be
-sent on assignment, the assignee is notified automatically. 
+sent on assignment, the assignee is notified automatically.
 
 **Recipients**
 : Decide who should receive the notification in the `<recipients>` tag:
@@ -72,9 +72,9 @@ sent on assignment, the assignee is notified automatically.
     </recipients>
 ```
 
-Available recipient tags are 
+Available recipient tags are
 
-- `<user>`: notify the User that sent the asset through the workflow. 
+- `<user>`: notify the User that sent the asset through the workflow.
   Specify the tag as `<user />`. To notify a specific user, enter the
   `userId`:
 
@@ -141,6 +141,6 @@ attribute of the `<recipients>` tag as _To_, _CC_, or _BCC_.
 
 By default, `recipientType` is `to`.
 
-As always, read the 
+As always, read the
 [schema for all the details](https://www.liferay.com/dtd/liferay-workflow-definition_7_1_0.xsd).
 
