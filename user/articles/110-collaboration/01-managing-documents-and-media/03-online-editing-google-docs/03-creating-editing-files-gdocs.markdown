@@ -75,12 +75,8 @@ Media files:
 -   Spreadsheet files (`.xlsx`, `.ods`, `.csv`, `.tsv`)
 -   PDF files
 
-+$$$
-
-**Note:** Google Docs&trade; doesn't support older, non-XML-based Microsoft 
-Office file types (`.doc`, `.ppt`, `.xls`). 
-
-$$$
+| **Note:** Google Docs&trade; doesn't support older, non-XML-based Microsoft 
+| Office file types (`.doc`, `.ppt`, `.xls`). 
 
 Follow these steps to edit a Documents and Media file in Google Docs&trade;: 
 

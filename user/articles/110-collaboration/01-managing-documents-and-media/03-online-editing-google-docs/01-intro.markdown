@@ -10,13 +10,9 @@ however, create and edit Documents and Media files online in Google Docs&trade;,
 Google Sheets&trade;, and Google Slides&trade;. The articles in this section 
 explain how. 
 
-+$$$
-
-**Note:** For simplicity and readability, this documentation refers only to 
-Google Docs&trade;. The material, however, also applies to Google Sheets&trade; 
-and Google Slides&trade;. 
-
-$$$
+| **Note:** For simplicity and readability, this documentation refers only to 
+| Google Docs&trade;. The material, however, also applies to Google 
+| Sheets&trade; and Google Slides&trade;. 
 
 Note that when you use Google Docs&trade; to create or edit a Documents and 
 Media file, that file isn't permanently stored in Google Docs&trade;. Google 
