@@ -115,7 +115,7 @@ method, which injects a modified variable (`bodyCssClass`) and a new variable
         contextObjects.put(
             "bodyCssClass", cssClass + StringPool.SPACE + productMenuState);
 
-            contextObjects.put("liferay_product_menu_state", productMenuState);
+        contextObjects.put("liferay_product_menu_state", productMenuState);
     }
 
 This method prepares the context contributor to inject variables into the theme
