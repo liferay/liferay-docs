@@ -26,7 +26,6 @@ then be converted to other formats for publication. We have switched to using
 Markdown for the Liferay 6.1 documentation. It's allowing us to single-source
 our documentation for the web, for ebooks, and for print.
 
-
 ## Ant Target Quick Reference
 
 Each Ant target described in this section is for Liferay's CE docs only (unless
@@ -162,6 +161,35 @@ below:
 - `@ide@` = Dev Studio DXP
 - `@app-ref@` = https://docs.liferay.com/dxp/apps
 - `@platform-ref@` = https://docs.liferay.com/dxp/portal
+
+## Syntax Highlighting
+
+The documentation site supports syntax highlighting. You can format your code
+by surrounding the snippet with three back ticks (e.g., \`\`\`) and assigning it to a code alias. For example, a Java code snippet would look like this:
+
+    ```java
+    long fileEntryId = ParamUtil.getLong(actionRequest, "fileEntryId");
+    ```
+
+The available syntax highlighting aliases are listed below:
+
+- Markup: `markup`
+- HTML: `html`
+- XML: `xml`
+- SVG: `svg`
+- MathML: `mathml`
+- CSS: `css`
+- C-like: `clike`
+- JavaScript: `javascript`, `js`
+- Bash: `bash`
+- Shell: `shell`
+- Docker: `docker`, `dockerfile`
+- Groovy: `groovy`
+- Java: `java`
+- .properties: `properties`
+- Sass: `sass`
+- TypeScript: `typescript`, `ts`
+- YAML: `yaml`, `yml`
 
 ## Markdown Image Numbers Tool
 
