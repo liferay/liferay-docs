@@ -65,16 +65,12 @@ Sync Connector Admin has three tabs:
     as doing so **deletes** files for that Site from the Sync clients. Disabling
     Sync for a Site, however, doesn't affect the Site's files on the server. 
 
-    +$$$
-
-    **Warning:** Disabling Sync for specific Sites from Sync Connector Admin can 
-    result in data loss across clients. If Sync is disabled for a Site users are 
-    currently syncing, any files in the clients' sync folders for that Site are 
-    automatically deleted from their clients. If a user is offline when Sync is 
-    disabled for a Site, any offline changes or additions they make are deleted 
-    upon client reconnection. 
-
-    $$$
+    | **Warning:** Disabling Sync for specific Sites from Sync Connector Admin 
+    | can result in data loss across clients. If Sync is disabled for a Site 
+    | users are currently syncing, any files in the clients' sync folders for 
+    | that Site are automatically deleted from their clients. If a user is 
+    | offline when Sync is disabled for a Site, any offline changes or additions 
+    | they make are deleted upon client reconnection. 
 
     You can enable Sync for a Site by selecting *Enable Sync Site* from its 
     Actions button. Make sure that each Site for which Sync is enabled has a 

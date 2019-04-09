@@ -15,15 +15,11 @@ to choose an install location. Select an appropriate location and click
 time Sync runs, you must configure it to connect and sync with @product@. The
 configuration steps are shown below. 
 
-+$$$
-
-**Note:** You can upgrade previous versions of the desktop Liferay Sync client
-to version 3.0. When doing so, however, you must set up your account again in
-the new version of the client. Prior to upgrading, it's typically best to shut
-down Liferay Sync, backup files from your local Sync folder, and delete that
-folder. 
-
-$$$
+| **Note:** You can upgrade previous versions of the desktop Liferay Sync client
+| to version 3.0. When doing so, however, you must set up your account again in
+| the new version of the client. Prior to upgrading, it's typically best to shut
+| down Liferay Sync, backup files from your local Sync folder, and delete that
+| folder. 
 
 The Liferay Sync client for Mac is packaged in a DMG file. Double-clicking on
 the DMG file mounts it as a disk image and opens a window showing the image's
@@ -85,12 +81,8 @@ steps for Sync on Windows and Mac are identical.
     the user's documents folder. You can, of course, specify any unique name and
     location for the Sync folder. Click *Start Syncing* to begin syncing files. 
 
-    +$$$
-
-    **Note:** Syncing to network drives is not supported because Liferay Sync
-    can't reliably detect local file changes on such drives. 
-
-    $$$
+    | **Note:** Syncing to network drives is not supported because Liferay Sync 
+    | can't reliably detect local file changes on such drives. 
 
     ![Figure 6: Specify your local Sync folder's name and location.](../../../../images/sync-setup-03.png)
 

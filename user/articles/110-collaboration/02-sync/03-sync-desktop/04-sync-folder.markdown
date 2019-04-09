@@ -10,15 +10,11 @@ recovered from the instance's Recycle Bin, which is enabled by default. Note, if
 the administrator has disabled the Recycle Bin, recovering deleted files is
 impossible. 
 
-+$$$
-
-**Warning:** Deleting a file in your Sync folder also deletes it in the 
-@product@ instance and in other clients. If you accidentally delete a file, it 
-can be recovered from the instance's Recycle Bin. The Recycle Bin is enabled by 
-default. File recovery is, however, impossible if the instance or Site 
-administrator has disabled the Recycle Bin. 
-
-$$$
+| **Warning:** Deleting a file in your Sync folder also deletes it in the 
+| @product@ instance and in other clients. If you accidentally delete a file, it 
+| can be recovered from the instance's Recycle Bin. The Recycle Bin is enabled 
+| by default. File recovery is, however, impossible if the instance or Site 
+| administrator has disabled the Recycle Bin. 
 
 You can run through the following exercise to familiarize yourself with how to
 create, edit, download, and upload files with Sync. First, open the Sync folder

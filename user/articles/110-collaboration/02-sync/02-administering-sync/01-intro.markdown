@@ -6,9 +6,5 @@ and also discuss important topics like preventing accidental file deletion and
 ensuring Sync security. As such, make sure you thoroughly read each article 
 before letting your users connect to Sync. 
 
-+$$$
-
-**Note:** To install and configure Liferay Sync on your @product@ server, you 
-must be an administrator. 
-
-$$$
+| **Note:** To install and configure Liferay Sync on your @product@ server, you 
+| must be an administrator. 
