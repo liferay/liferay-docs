@@ -5,7 +5,7 @@ header-id: using-liferay-sync-on-your-mobile-device
 # Using Liferay Sync on Your Mobile Device
 
 Liferay Sync for Android and iOS contains most of the
-[desktop Sync client](/discover/portal/-/knowledge_base/7-1/using-liferay-sync-on-your-desktop)'s
+[desktop Sync client](/discover/portal/-/knowledge_base/7-2/using-liferay-sync-on-your-desktop)'s
 functionality. The mobile client can, however, only be connected to one 
 @product@ account at a time. Also, mobile Sync doesn't automatically download
 files to your device. To save storage space on your device, the Sync mobile app

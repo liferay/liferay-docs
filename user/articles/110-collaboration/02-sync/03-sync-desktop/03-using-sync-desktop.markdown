@@ -61,7 +61,7 @@ to add, delete, or edit an account, respectively. You should use caution when
 deleting an account from your Sync client, as doing so also deletes any local
 files and folders for that account. Adding an account takes you through the
 same set of steps you used to set up the Sync client. [Click
-here](/discover/portal/-/knowledge_base/7-1/installing-and-configuring-the-desktop-liferay-sync-client#configuring-the-liferay-sync-desktop-client) 
+here](/discover/portal/-/knowledge_base/7-2/installing-and-configuring-the-desktop-liferay-sync-client#configuring-the-liferay-sync-desktop-client) 
 for instructions on this. 
 
 **Syncing Sites:** The Sites you have permission to sync with for the selected 
@@ -70,7 +70,7 @@ Other Sites available for syncing are shown under *Unselected Sites*. To
 change the Sites you sync with, click the *Manage Sites* button. The window 
 that appears lets you select and/or unselect Sites to sync with. This window 
 is identical to the one that appeared when you first configured the client. 
-[Click here](/discover/portal/-/knowledge_base/7-1/installing-and-configuring-the-desktop-liferay-sync-client#configuring-the-liferay-sync-desktop-client) 
+[Click here](/discover/portal/-/knowledge_base/7-2/installing-and-configuring-the-desktop-liferay-sync-client#configuring-the-liferay-sync-desktop-client) 
 and see step two for instructions on using it. Use caution when de-selecting
 Sites. De-selecting a Site deletes its folder on your machine. 
 
