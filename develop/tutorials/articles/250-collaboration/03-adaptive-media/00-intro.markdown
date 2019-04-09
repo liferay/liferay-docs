@@ -1,7 +1,6 @@
 # Adaptive Media [](id=adaptive-media)
 
-The Adaptive Media app on 
-[Liferay Marketplace](https://web.liferay.com/marketplace) 
+The Adaptive Media app, now preinstalled in Liferay's DXP Bundle,
 lets administrators tailor the quality of images to the device viewing those
 images. For information on using this app, see 
 [the Adaptive Media user guide](/discover/portal/-/knowledge_base/7-1/adapting-your-media-across-multiple-devices). 
