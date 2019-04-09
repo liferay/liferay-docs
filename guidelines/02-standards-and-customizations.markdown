@@ -165,7 +165,8 @@ below:
 ## Syntax Highlighting
 
 The documentation site supports syntax highlighting. You can format your code
-by surrounding the snippet with three back ticks (e.g., \`\`\`) and assigning it to a code alias. For example, a Java code snippet would look like this:
+by surrounding the snippet with three back ticks (e.g., \`\`\`) and assigning it
+to a code alias. For example, a Java code snippet would look like this:
 
     ```java
     long fileEntryId = ParamUtil.getLong(actionRequest, "fileEntryId");
