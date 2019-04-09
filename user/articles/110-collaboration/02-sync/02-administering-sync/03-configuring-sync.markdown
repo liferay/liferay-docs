@@ -1,4 +1,8 @@
-# Configuring Liferay Sync [](id=configuring-liferay-sync)
+---
+header-id: configuring-liferay-sync
+---
+
+# Configuring Liferay Sync
 
 Sync Connector lets you manage how, or if, clients connect to your @product@
 server. You can also configure default file permissions on a per-Site basis, and

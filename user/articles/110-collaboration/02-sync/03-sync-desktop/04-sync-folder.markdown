@@ -1,4 +1,8 @@
-# Using Your Local Liferay Sync Folder [](id=using-your-local-liferay-sync-folder)
+---
+header-id: using-your-local-liferay-sync-folder
+---
+
+# Using Your Local Liferay Sync Folder
 
 Once you configure and run Sync, Sync automatically uploads to @product@ any
 files you add or modify in your Sync folder. Sync also downloads to your Sync

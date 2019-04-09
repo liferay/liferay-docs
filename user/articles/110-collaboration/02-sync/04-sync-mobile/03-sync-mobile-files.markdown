@@ -1,4 +1,8 @@
-# Managing Files and Folders in Liferay Sync Mobile [](id=managing-files-and-folders-in-liferay-sync-mobile)
+---
+header-id: managing-files-and-folders-in-liferay-sync-mobile
+---
+
+# Managing Files and Folders in Liferay Sync Mobile
 
 Whether you're working in My Documents or My Sites, you manage files and folders
 the same way. Pressing a Site or folder shows you a list of its files and

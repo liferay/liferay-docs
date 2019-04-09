@@ -1,4 +1,8 @@
-# Administering Liferay Sync [](id=administering-liferay-sync)
+---
+header-id: administering-liferay-sync
+---
+
+# Administering Liferay Sync
 
 Before your users can use Liferay Sync with their Sites, you must install and 
 configure it on your @product@ server. The articles here walk you through this 

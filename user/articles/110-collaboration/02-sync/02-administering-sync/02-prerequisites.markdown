@@ -1,4 +1,8 @@
-# Installing Liferay Sync's Prerequisites [](id=installing-liferay-syncs-prerequisites)
+---
+header-id: installing-liferay-syncs-prerequisites
+---
+
+# Installing Liferay Sync's Prerequisites
 
 Liferay Sync requires the *Liferay CE Sync Connector* app from 
 [Liferay Marketplace](https://web.liferay.com/marketplace). This app enables and
