@@ -1,8 +1,8 @@
 ---
-header-id: asset-display-contributor-example
+header-id: creating-an-asset-display-contributor
 ---
 
-# Asset Display Contributor Example
+# Creating an Asset Display Contributor 
 
 [TOC levels=1-4]
 
@@ -14,9 +14,9 @@ the two main steps:
 2.  Create the Asset Display Contributor Field classes for the fields you want 
     to be available for Asset Display Pages.
  
-In this example, you'll create the Asset Display Contributor and then create 
-one Asset Display Contributor Field for the Blogs Entry Title.
- 
+In this example, you'll create an Asset Display Contributor for Liferay's
+Bookmarks application, and then you'll create one Asset Display Contributor
+Field for the Bookmarks Entry Title.
 
 ## Creating the Bookmarks Contributor 
 

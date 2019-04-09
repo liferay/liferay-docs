@@ -12,7 +12,7 @@ you can integrate display page configuration into your entity's creation form.
 ## Asset Display Page Taglib examples
 
 To provide the Asset Display Page selector for Bookmarks after you 
-[created fields for it](/developer/frameworks/-/knowledge_base/7-2/creating-a-display-contributor),
+[created fields for it](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-an-asset-display-contributor),
 
 1.  Open `.../META-INF/resources/bookmarks/edit_entry.jsp`.
 
@@ -25,7 +25,7 @@ To provide the Asset Display Page selector for Bookmarks after you
             	groupId="<%= scopeGroupId %>"
          />
 
-Now, a selector will be available to define a default Asset Display Page when 
+Now, a selector is available to define a default Asset Display Page when 
 editing or creating a Bookmarks Entry.
 
 ![Figure 1: You need to add the Display Page selection to your asset's create/edit page to define the Display Page for each instance of that asset.](../../../images/display-pages-select-default-display-page.png)
