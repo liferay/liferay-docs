@@ -379,7 +379,7 @@ is a sure-fire way to verify existing module installations.
 
 [Development Reference](/develop/reference/-/knowledge_base/7-1/development-reference)
 
-[Classes Moved from portal-serice.jar](/develop/reference/-/knowledge_base/7-1/classes-moved-from-portal-service-jar)
+[Classes Moved from portal-service.jar](/develop/reference/-/knowledge_base/7-1/classes-moved-from-portal-service-jar)
 
 [Modularizing an Existing Portlet](/develop/tutorials/-/knowledge_base/7-1/modularizing-an-existing-portlet)
 
