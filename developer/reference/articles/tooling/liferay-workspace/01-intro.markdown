@@ -17,9 +17,10 @@ You'll cover the following topics in this section:
 - [Setting Environment Configurations]()
 - Managing the Target Platform
 - Managing Themes
-- Leveraging Docker
-- Updating Liferay Workspace
-- Updating Default Plugins Provided by Liferay Workspace
+- [Leveraging Docker]()
+- [Updating Liferay Workspace]()
+- Validating Modules Against the Target Platform
+- [Updating Default Plugins Provided by Liferay Workspace]()
 
 Liferay Workspaces can be used in many different development environments, which
 makes it flexible and applicable to many different developers. For example, a
