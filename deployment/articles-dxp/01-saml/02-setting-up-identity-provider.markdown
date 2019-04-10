@@ -74,7 +74,7 @@ also by @product@'s permissions system.
     replace the current certificate with a new one if your old one has expired
     or if you want to change the key's password. 
 
-    <!-- [Figure 2: The General tab of the SAML Admin portlet displays information about the current certificate and private key and allows administrators to download the certificate or replace the certificate.](../../../images-dxp/saml-keystore-info.png) -->
+    [Figure 2: The General tab of the SAML Admin portlet displays information about the current certificate and private key and allows administrators to download the certificate or replace the certificate.](../../../images-dxp/saml-keystore-info.png) 
 
     Three more tabs now appear: 
 
