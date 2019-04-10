@@ -14,7 +14,7 @@ This example references Liferay's Bookmarks app and Bookmarks Entry entities.
     Model Repository classes (e.g.,
     `com.liferay.bookmarks.exportimport.staged.model.repository`). If you do not
     have a `-service` bundle, visit the
-    [Service Builder](/developer/frameworks/-/knowledge_base/7-2/service-builder)
+    [Service Builder](/docs/7-2/frameworks/-/knowledge_base/frameworks/service-builder)
     articles for info on generating an app's services. You must have them to
     leverage most Export/Import and Staging features.
 
@@ -99,5 +99,5 @@ This example references Liferay's Bookmarks app and Bookmarks Entry entities.
 Awesome! You've implemented the Staged Model Repository framework for your app!
 If you're interested in leveraging this framework after the implementation
 process, see the
-[Using the Staged Model Repository Framework](/developer/frameworks/-/knowledge_base/7-2/using-the-staged-model-repository-framework)
+[Using the Staged Model Repository Framework](/docs/7-2/frameworks/-/knowledge_base/frameworks/using-the-staged-model-repository-framework)
 article.

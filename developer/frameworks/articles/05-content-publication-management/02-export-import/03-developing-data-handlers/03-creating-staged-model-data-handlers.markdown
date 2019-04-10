@@ -11,7 +11,7 @@ for the Bookmarks application. The Bookmarks application has two staged models:
 entries and folders. Creating data handlers for these two entities is similar,
 so you'll examine how this is done for Bookmark entries. This tutorial assumes
 you've already created
-[staged models](/developer/frameworks/-/knowledge_base/7-2/developing-staged-models).
+[staged models](/docs/7-2/frameworks/-/knowledge_base/frameworks/developing-staged-models).
 
 1.  Create a new package in your existing Service Builder project for your data
     handler classes. For instance, the Bookmarks application's data handler
@@ -63,7 +63,7 @@ you've already created
     [`StagedModelRepository`](@app-ref@/web-experience/latest/javadocs/com/liferay/exportimport/staged/model/repository/StagedModelRepository.html)
     framework. This is a new framework, but is a viable option when setting up
     your staged model data handlers. For more information on this, see the
-    [Providing Entity-Specific Local Services for Staging](/developer/frameworks/-/knowledge_base/7-2/providing-entity-specific-local-services-for-staging)
+    [Providing Entity-Specific Local Services for Staging](/docs/7-2/frameworks/-/knowledge_base/frameworks/providing-entity-specific-local-services-for-staging)
     tutorial section. Since local services are more widely used in custom apps,
     this tutorial covers those instead.
 
@@ -186,5 +186,5 @@ Fantastic! You've created a data handler for your staged model. The
 Export/Import framework can now track your entity's behavior and data. Be sure
 to also implement a portlet data handler to manage portlet specific data. See
 the
-[Creating Portlet Data Handlers](/developer/frameworks/-/knowledge_base/7-2/creating-portlet-data-handlers)
+[Creating Portlet Data Handlers](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-portlet-data-handlers)
 article to do this for the Bookmarks app.

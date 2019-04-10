@@ -84,7 +84,7 @@ the Export/Import and Staging UI options for the Bookmarks application.
     The `set` methods must be annotated with the
     [@Reference](https://osgi.org/javadoc/r6/residential/org/osgi/service/component/annotations/Reference.html)
     annotation. Visit the
-    [Invoking Local Services](/developer/frameworks/-/knowledge_base/7-2/invoking-local-services)
+    [Invoking Local Services](/docs/7-2/frameworks/-/knowledge_base/frameworks/invoking-local-services)
     article for more information on using the `@Reference` annotation in
     @product@.
 
@@ -93,7 +93,7 @@ the Export/Import and Staging UI options for the Bookmarks application.
     [`StagedModelRepository`](@app-ref@/web-experience/latest/javadocs/com/liferay/exportimport/staged/model/repository/StagedModelRepository.html)
     framework. This is a new framework, but is a viable option when setting up
     your portlet data handlers. For more information on this, see the
-    [Providing Entity-Specific Local Services for Staging](/developer/frameworks/-/knowledge_base/7-2/providing-entity-specific-local-services-for-staging)
+    [Providing Entity-Specific Local Services for Staging](/docs/7-2/frameworks/-/knowledge_base/frameworks/providing-entity-specific-local-services-for-staging)
     tutorial section. Since local services are more widely used in custom apps,
     this tutorial covers those instead.
 
@@ -246,5 +246,5 @@ the Export/Import and Staging UI options for the Bookmarks application.
 Awesome! You've set up your portlet data handler and your application can now
 support the Export/Import framework and display a UI for it. Be sure to also
 implement staged model data handlers for your staged models. See the
-[Creating Staged Model Data Handlers](/developer/frameworks/-/knowledge_base/7-2/creating-staged-model-data-handlers)
+[Creating Staged Model Data Handlers](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-staged-model-data-handlers)
 for more information.

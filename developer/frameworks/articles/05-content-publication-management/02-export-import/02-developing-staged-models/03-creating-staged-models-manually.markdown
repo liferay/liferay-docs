@@ -7,10 +7,10 @@ header-id: creating-staged-models-manually
 [TOC levels=1-4]
 
 There are times when using
-[Service Builder to generate your staged models](/developer/frameworks/-/knowledge_base/7-2/generating-staged-models-using-service-builder)
+[Service Builder to generate your staged models](/docs/7-2/frameworks/-/knowledge_base/frameworks/generating-staged-models-using-service-builder)
 is not practical. In these cases, you should create your staged models manually.
 Make sure to read the
-[Adapting Your Business Logic to Build Staged Models](/developer/frameworks/-/knowledge_base/7-2/understanding-staged-models#adapting-your-business-logic-to-build-staged-models)
+[Adapting Your Business Logic to Build Staged Models](/docs/7-2/frameworks/-/knowledge_base/frameworks/understanding-staged-models#adapting-your-business-logic-to-build-staged-models)
 section to determine if creating staged models manually is beneficial for your
 use case.
 
@@ -180,7 +180,7 @@ Follow the steps below to leverage the Model Adapter Builder in your app.
     ```
 
     Once you've created
-    [Staged Model Data Handlers](/developer/frameworks/-/knowledge_base/7-2/creating-staged-model-data-handlers),
+    [Staged Model Data Handlers](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-staged-model-data-handlers),
     you can begin exporting/importing your now Staging-compatible entities:
 
     ```java
