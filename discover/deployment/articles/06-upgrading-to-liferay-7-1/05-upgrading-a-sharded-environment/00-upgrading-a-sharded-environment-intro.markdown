@@ -4,7 +4,9 @@ Since @product@ 7.0, Liferay removed its own physical partitioning
 implementation (also known as sharding) in favor of the capabilities provided
 natively by database vendors. Upgrading a sharded installation to @product-ver@
 requires migrating it to as many non-sharded @product@ installations (servers)
-as you have shards. 
+as you have shards. These steps guide you through configuring the new @product@
+servers to use your formerly sharded data and upgrading the data to
+@product-ver@. 
 
 +$$$
 
@@ -12,6 +14,13 @@ as you have shards.
 (also known as
 [virtual instances](/discover/portal/-/knowledge_base/7-1/setting-up-a-virtual-instance))
 for the foreseeable future. 
+
+$$$
+
++$$$
+
+For any further assistance with sharding contact your Liferay account manager or
+Liferay Support. 
 
 $$$
 
@@ -103,6 +112,3 @@ Here are the upgrade steps:
 Congratulations! You have migrated off of a sharded environment to virtual
 instances on separate @product@ servers. You have also upgraded to
 @product-ver@. Your virtual instances are ready for action. 
-
-For any further assistance with sharding contact Liferay Support or
-[Liferay Global Services](https://www.liferay.com/consulting). 
