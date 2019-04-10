@@ -102,13 +102,13 @@ exchange agreed upon, non user-centric data, you can bypass the Allow/Deny
 screen for users and authorize the client. This is called the Client Credentials
 flow, and you'd use this URL pattern: 
 
-    https://[hostname]/o/oauth2/authorize?response_type=code&grant_type=client_credentials&client_id=[client ID]&client_secret=[client secret]
+    https://[hostname]/o/oauth2/token?grant_type=client_credentials&client_id=[client ID]&client_secret=[client secret]
 
 A final flow, where users trust the application with their passwords is rare,
 but possible. This is called the Resource Owner Password flow, and its URL
 pattern looks like this: 
 
-    https://[hostname]/o/oauth2/authorize?response_type=code&grant_type=password&client_id=[client ID]&client_secret=[client secret]&username=[user@emailaddress.com]&password=
+    https://[hostname]/o/oauth2/token?grant_type=password&client_id=[client ID]&client_secret=[client secret]&username=[user@emailaddress.com]&password=
 
 Users are prompted for their passwords, and upon successful log in, receive an
 authorization code. 
