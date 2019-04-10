@@ -6,7 +6,7 @@ header-id: providing-entity-specific-local-services-for-export-import
 
 [TOC levels=1-4]
 
-Data handlers often must leverage your app's local services to perform
+Data handlers must often call your app's local services to perform
 Export/Import-related tasks for its entities. When the Export/Import framework
 operates on entities (i.e., staged models), it often cannot manage important
 information from the entity's local services alone. The *Staged Model
@@ -17,19 +17,19 @@ specifically for the staged model data you're handling.
 What kind of *entity-specific* methods are we talking about here? Your data
 handlers only expose a specific set of actions, like export and import methods.
 The Staged Model Repository framework provides CRUD operations for a specific
-staged model that are not exposed using local services.
+staged model that local services don't expose.
 
 The staged model repository does not avoid using your app's local services. It
 only provides an additional layer that provides Export/Import-specific
-functionality. So how does this work? A brief process outline is provided below:
+functionality. Here's how this works: 
 
 - `*StagedModelDataHandler`: de-serializes the provided
-  [LAR file's](/developer/reference/-/knowledge_base/7-2/liferay-archive-file)
+  [LAR file's](/docs/7-2/reference/-/knowledge_base/reference/liferay-archive-file)
   XML into a model.
 - `*StagedModelRepository`: updates the model based on the environment and
   business logic, providing entity-specific CRUD operations for Staging purposes
   (e.g., UUID manipulation).
-- Local services are called from the `*StagedModelRepository` and handles the
+- Local services are called from the `*StagedModelRepository` and handle the
   remainder of the process.
 
 Pretty cool, right? The first thing you must do is implement the
@@ -47,8 +47,8 @@ implementation class's declaration. This registers the class as a staged model
 repository in the OSGi service registry. There are a few annotation attributes
 you should set:
 
-- `immediate`: directs the container to activate the component immediately
-  once its provided module has started.
+- `immediate`: activates the component immediately once its provided module has
+  started.
 - `property`: sets various properties for the component service. You must
   associate the model class you wish to handle with this service so it's
   recognized by the data handlers leveraging it. This property must set the
@@ -71,15 +71,15 @@ staged model data handler's needs (i.e., its UUID requirement). With the staged
 model repository layer, however, you can add export/import specific requirements
 on top of the present local services to serve your data handlers' needs.
 
-The method completes the following
+The method does this: 
 
-- sets the user ID and service context based on the
+- Sets the user ID and service context based on the
   [`PortletDataContext`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/PortletDataContext.html)
   (used to populate the LAR file with your application's data during the
   export process).
-- sets the UUID, which is required to differentiate staged content between
+- Sets the UUID, which is required to differentiate staged content between
   Sites.
-- calls the entity's local service.
+- Calls the entity's local service.
 
 Not every method implementation requires additional export/import information.
 For example, deleting Bookmarks Entries and deleting Bookmarks Entry staged
@@ -101,15 +101,15 @@ You can leverage a staged model repository by
 
 The getter and setter methods instantiate a `StagedModelRepository` object that
 the staged model data handler can use to access your entity's CRUD operations.
-The setter method should have a `@Reference` annotation listed above its method
+The setter method should have an `@Reference` annotation listed above its method
 signature. This injects the component service of the `*StagedModelRepository`
 into the staged model repository object. The component service was created when
 you set the `@Component` annotation in the implementation class.
 
-Once you have access to the `StagedModelRepository` object, call it to leverage
-its specialized export/import logic. Now that you have access to CRUD operations
-via the `StagedModelRepository` object, you can skip the headache of providing a
-slew of parameters and additional functionality in the local service to do
+Once you have access to the `StagedModelRepository` object, call it to use its
+specialized export/import logic. Now that you have access to CRUD operations via
+the `StagedModelRepository` object, you can skip the headache of providing
+a slew of parameters and additional functionality in the local service to do
 simple things like add a Bookmarks entry. The staged model repository abstracts
 these requirements away from the data handler.
 
