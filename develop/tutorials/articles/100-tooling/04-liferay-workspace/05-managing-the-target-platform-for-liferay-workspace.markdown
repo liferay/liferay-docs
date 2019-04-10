@@ -1,8 +1,5 @@
 # Managing the Target Platform for Liferay Workspace [](id=managing-the-target-platform-for-liferay-workspace)
 
-**Important:** The Target Platform feature is provisional and is not officially
-supported at this time.
-
 Liferay Workspace helps you target a specific release of @product@, so
 dependencies get resolved properly. This makes upgrades easy: specify your
 target platform, and Workspace points to the new version. All your dependencies
