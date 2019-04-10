@@ -9,11 +9,12 @@ header-id: form-serialization-with-the-ddm-io-api
 When a form creator saves a form in the Liferay Forms application, the Form
 object is _serialized_ (converted) into JSON for storage in the @product@
 database. That's the default behavior; if you need the form in a different
-format just write your own serialization and deserialization code. Why would you
-want to do that? Maybe you think JSON storage is not secure, or you have another
-tool that can consume the form if it's in YAML. Whatever your reasons, the form
-can be stored in any format as long as you write a `DDMFormSerializer`, and its
-corresponding `DDMFormDeserializer` with the proper logic.
+format, you must write your own serialization and deserialization code. Why
+would you want to do that? Maybe you think JSON storage is not secure, or you
+have another tool that can consume the form if it's in YAML. Whatever your
+reasons, the form can be stored in any format as long as you write
+a `DDMFormSerializer` and its corresponding `DDMFormDeserializer` with the
+proper logic.
 
 First consider what form data looks like by default, in JSON. A simple form, _My
 Form_, with one text field, _Full Name_, is first created as a `DDMForm` Java
