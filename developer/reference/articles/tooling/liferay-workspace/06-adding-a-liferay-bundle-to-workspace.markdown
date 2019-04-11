@@ -47,14 +47,10 @@ following command:
 
 Your distribution file is available from the workspace's `/build` folder.
 
-+$$$
-
-**Note:** You can define different environments for your Liferay bundle for
-easy testing. You can learn more about this in the
-[Testing Modules](/develop/tutorials/-/knowledge_base/7-1/development-lifecycle-for-a-liferay-workspace#testing-projects)
-section.
-
-$$$
+| **Note:** You can define different environments for your Liferay bundle for
+| easy testing. You can learn more about this in the
+| [Testing Modules](/develop/tutorials/-/knowledge_base/7-1/development-lifecycle-for-a-liferay-workspace#testing-projects)
+| section.
 
 The Liferay Workspace is a great development environment for Liferay module
 development; however, what if you'd like to also stick with developing WAR-style

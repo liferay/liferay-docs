@@ -1,4 +1,8 @@
-# Installing Liferay Workspace [](id=installing-liferay-workspace)
+---
+header-id: installing-liferay-workspace
+---
+
+# Installing Liferay Workspace
 
 You can install Liferay Workspace using the Liferay Project SDK installer. This
 installs JPM and
