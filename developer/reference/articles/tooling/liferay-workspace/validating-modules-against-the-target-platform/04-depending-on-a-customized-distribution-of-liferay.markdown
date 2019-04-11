@@ -1,4 +1,10 @@
+---
+header-id: depending-on-a-customized-distribution-of-product
+---
+
 # Depending on a Customized Distribution of @product@
+
+[TOC levels=1-4]
 
 To regenerate the target platform's capabilities (distro JAR) based on the
 current workspace's @product@ instance, follow the steps below:

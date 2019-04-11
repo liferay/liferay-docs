@@ -1,4 +1,10 @@
+---
+header-id: setting-environment-configurations-for-liferay-workspace
+---
+
 # Setting Environment Configurations for Liferay Workspace
+
+[TOC levels=1-4]
 
 Liferay Workspace offers the `configs` folder, which provides a way to
 organize multiple environment settings and generate a Liferay bundle for each

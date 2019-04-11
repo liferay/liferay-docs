@@ -1,4 +1,10 @@
+---
+header-id: including-the-resolver-in-your-gradle-build
+---
+
 # Including the Resolver in Your Gradle Build
+
+[TOC levels=1-4]
 
 To call the `resolve` task during the `check` task automatically, follow the
 instructions below:

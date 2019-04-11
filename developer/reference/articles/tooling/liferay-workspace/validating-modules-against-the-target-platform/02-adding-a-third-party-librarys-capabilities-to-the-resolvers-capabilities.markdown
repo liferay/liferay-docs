@@ -1,4 +1,10 @@
+---
+header-id: adding-a-third-party-librarys-capabilities-to-the-resolvers-capabilities
+---
+
 # Adding a Third Party Library's Capabilities to the Resolver's Capabilities
+
+[TOC levels=1-4]
 
 You can add your third party dependencies to the target platform's default list
 of capabilities by listing them as provided modules.

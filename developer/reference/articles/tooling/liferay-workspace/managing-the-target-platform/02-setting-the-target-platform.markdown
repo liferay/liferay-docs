@@ -1,4 +1,10 @@
+---
+header-id: setting-the-target-platform
+---
+
 # Setting the Target Platform
+
+[TOC levels=1-4]
 
 Setting the version to develop for takes two steps: 
 

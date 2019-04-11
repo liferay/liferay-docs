@@ -1,4 +1,10 @@
+---
+header-id: creating-a-product-docker-container
+---
+
 # Creating a @product@ Docker Container
+
+[TOC levels=1-4]
 
 To create a @product@ Docker container in Liferay Workspace, complete the steps
 below.

@@ -1,4 +1,10 @@
+---
+header-id: building-gradle-maven-themes-in-liferay-workspace
+---
+
 # Building Gradle/Maven Themes in Liferay Workspace
+
+[TOC levels=1-4]
 
 Liferay Workspace provides the `wars` folder for any WAR-style project. Themes
 created with [Blade CLI](/docs/reference/7-2/-/knowledge_base/reference/blade-cli) or

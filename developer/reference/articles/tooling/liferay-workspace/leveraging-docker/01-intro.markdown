@@ -1,4 +1,10 @@
+---
+header-id: leveraging-docker
+---
+
 # Leveraging Docker
+
+[TOC levels=1-4]
 
 Docker has become increasingly popular in today's development lifecycle, by
 providing an automated way to package software and its dependencies into

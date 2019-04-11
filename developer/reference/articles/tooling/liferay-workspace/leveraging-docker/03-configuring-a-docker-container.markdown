@@ -1,4 +1,10 @@
+---
+header-id: configuring-a-docker-container
+---
+
 # Configuring a Docker Container
+
+[TOC levels=1-4]
 
 Before starting your container, you may want to add additional portal
 configurations. This could include things like

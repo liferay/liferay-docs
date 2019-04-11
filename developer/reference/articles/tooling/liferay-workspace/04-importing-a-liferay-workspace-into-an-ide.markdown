@@ -1,4 +1,10 @@
+---
+header-id: importing-a-liferay-workspace-into-an-ide
+---
+
 # Importing a Liferay Workspace into an IDE
+
+[TOC levels=1-4]
 
 Liferay supports two IDEs with preconfigured Liferay Workspace wizards and
 functionalities

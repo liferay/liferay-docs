@@ -1,4 +1,10 @@
+---
+header-id: adding-a-liferay-bundle-to-workspace
+---
+
 # Adding a Liferay Bundle to Workspace
+
+[TOC levels=1-4]
 
 Liferay Workspaces can generate and hold a Liferay Server. This lets you
 build/test your workspace's plugins against a running Liferay instance. Follow

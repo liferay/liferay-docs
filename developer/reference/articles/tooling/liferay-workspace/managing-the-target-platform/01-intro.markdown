@@ -1,4 +1,10 @@
+---
+header-id: managing-the-target-platform
+---
+
 # Managing the Target Platform
+
+[TOC levels=1-4]
 
 Liferay Workspace helps you target a specific release of @product@, so
 dependencies get resolved properly. This makes upgrades easy: specify your

@@ -1,4 +1,10 @@
+---
+header-id: building-node-js-themes-in-workspace
+---
+
 # Building Node.js Themes in Workspace
+
+[TOC levels=1-4]
 
 Liferay Workspace reserves the `themes` folder only for themes that are created 
 with the Themes Generator. There are no Blade CLI-provided commands or Maven 

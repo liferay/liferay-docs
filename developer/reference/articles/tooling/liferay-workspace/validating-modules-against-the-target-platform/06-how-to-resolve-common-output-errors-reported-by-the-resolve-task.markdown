@@ -1,4 +1,10 @@
+---
+header-id: how-to-resolve-common-output-errors-reported-by-the-resolve-task
+---
+
 # How to Resolve Common Output Errors Reported by the Resolve Task
+
+[TOC levels=1-4]
 
 [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace)
 provides the `resolve` Gradle task to

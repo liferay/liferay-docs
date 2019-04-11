@@ -1,4 +1,10 @@
+---
+header-id: updating-liferay-workspace
+---
+
 # Updating Liferay Workspace
+
+[TOC levels=1-4]
 
 Liferay Workspace is continuously being updated with new features. If you
 created your workspace a while ago, you may be missing out on some of the latest

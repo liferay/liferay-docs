@@ -1,4 +1,10 @@
+---
+header-id: skipping-the-resolving-process-for-a-module
+---
+
 # Skipping the Resolving Process for a Module
+
+[TOC levels=1-4]
 
 It may be easiest to skip validating a particular module during the resolve
 process.

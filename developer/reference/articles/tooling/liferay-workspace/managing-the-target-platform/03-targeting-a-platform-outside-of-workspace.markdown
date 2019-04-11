@@ -1,4 +1,10 @@
+---
+header-id: targeting-a-platform-outside-of-workspace
+---
+
 # Targeting a Platform Outside of Workspace
+
+[TOC levels=1-4]
 
 If you prefer to not use Liferay Workspace, but still want to target a platform,
 you must apply the 

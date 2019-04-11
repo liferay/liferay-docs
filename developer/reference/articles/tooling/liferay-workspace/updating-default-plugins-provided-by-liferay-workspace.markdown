@@ -1,4 +1,10 @@
+---
+header-id: updating-default-plugins-provided-by-liferay-workspace
+---
+
 # Updating Default Plugins Provided by Liferay Workspace
+
+[TOC levels=1-4]
 
 Liferay Workspace comes with a slew of plugins like these: 
 

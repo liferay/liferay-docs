@@ -1,4 +1,10 @@
+---
+header-id: building-a-custom-docker-image
+---
+
 # Building a Custom Docker Image
+
+[TOC levels=1-4]
 
 You can preserve your container's configuration by building it as an image.
 
