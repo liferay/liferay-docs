@@ -216,7 +216,7 @@ All the supported queries and filters found in the `portal-search-api` module's
 `com.liferay.portal.search.query` and `com.liferay.portal.search.filter`
 packages.
 
-Legacy quaries and filters can be found in the `com.liferay.portal.kernel.search.*` packages provided by `portal-kernel`.
+Legacy queries and filters can be found in the `com.liferay.portal.kernel.search.*` packages provided by `portal-kernel`.
 
 ## Using Queries and Filters
 
