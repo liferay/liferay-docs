@@ -13,7 +13,7 @@ In the same folder your `view.jsp` is in, create the `edit_entry.jsp` file:
 
 3.  Add this line to the top of the file:
 
-        <%@ include file="init.jsp" %>
+        <%@ include file="view.jsp" %>
 
     Remember, it's a best practice to add all JSP imports and tag library
     declarations to a single file that's imported by your application's other 
