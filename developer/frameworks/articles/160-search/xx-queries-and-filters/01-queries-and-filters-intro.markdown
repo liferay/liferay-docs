@@ -7,102 +7,6 @@ As the ancient wisdom holds,
 To get sensible results from the search engine, you must provide a sensible
 query. 
 
-## Search Queries in Liferay's Code
-
-The new APIs for creating queries were introduced in @product-ver@, but already
-there are a couple usages in Liferay's own code:
-
-1.  The new 
-[Change Tracking Service](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/change-tracking-service/src/main/java/com/liferay/change/tracking/service/impl/CTEntryLocalServiceImpl.java) 
-constructs a complex search request containing a Terms Query using the new
-`Queries` interface.
-
-    ```java
-    ```
-
-2.  In Liferay DXP, the Workflow Reports Service (proprietary code, so no source
-    code can be provided without a little palm greasing first) searches its own
-    custom index (another new capability). 
-    
-    ```java
-    searchSearchRequest.setQuery(new BooleanQueryImpl() { ...}
-    ```
-dkjflkjsd
-
-```java
-protected List<Document> getDocuments(
-    long companyId, long instanceId, LocalDateTime lastCheckLocalDateTime) {
-
-    SearchSearchRequest searchSearchRequest = new SearchSearchRequest();
-
-    searchSearchRequest.addSorts(
-        _sorts.field(
-            Field.getSortableFieldName(
-                StringBundler.concat(
-                    "createDate", StringPool.UNDERLINE, "Number")),
-            SortOrder.ASC));
-    searchSearchRequest.setIndexNames("workflow-metrics-tokens");
-    searchSearchRequest.setQuery(
-        new BooleanQueryImpl() {
-            {
-                setPreBooleanFilter(
-                    new BooleanFilter() {
-                        {
-                            addRequiredTerm("companyId", companyId);
-                            addRequiredTerm("deleted", false);
-                            addRequiredTerm("instanceId", instanceId);
-
-                            if (lastCheckLocalDateTime != null) {
-                                add(
-                                    _createCompletionDateRangeFilter(
-                                        lastCheckLocalDateTime),
-                                    BooleanClauseOccur.SHOULD);
-                                add(
-                                    new BooleanFilter() {
-                                        {
-                                            add(
-                                                new ExistsFilter(
-                                                    "completionDate"),
-                                                BooleanClauseOccur.
-                                                    MUST_NOT);
-                                        }
-                                    },
-                                    BooleanClauseOccur.SHOULD);
-                            }
-                        }
-                    });
-            }
-        });
-    searchSearchRequest.setSize(10000);
-
-    SearchSearchResponse searchSearchResponse =
-        _searchRequestExecutor.executeSearchRequest(searchSearchRequest);
-
-    SearchHits searchHits = searchSearchResponse.getSearchHits();
-
-    return Stream.of(
-        searchHits.getSearchHits()
-    ).flatMap(
-        List::parallelStream
-    ).map(
-        SearchHit::getDocument
-    ).collect(
-        Collectors.toList()
-    );
-}
-```
-
-
-
-
-so there aren't many example
-usages throughout the source code. Here are a couple of modules 
-
-To see how the @product@ Search application constructs its main query string,
-WHERE IS THIS DONE IN OUR CODE?
-
-`com.liferay.portal.search.elasticsearch6.internal.query.ElasticsearchQueryTranslator`?
-
 ## Queries and Filters, at the Search Engine Level
 
 Elasticsearch and Solr do not make API level distinctions between queries and
@@ -251,13 +155,25 @@ search code is like this:
 These steps are covered in more detail (with examples) 
 [here](LINK to query/filter code article).
 
+## Search Queries in Liferay's Code
+
+The new APIs for creating queries were introduced in @product-ver@, but already
+there are a couple usages in Liferay's own code: for example the new 
+[Change Tracking Service](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/change-tracking-service/src/main/java/com/liferay/change/tracking/service/impl/CTEntryLocalServiceImpl.java) 
+constructs a complex search request containing a `TermsQuery` using the new
+`Queries` API:
+
+    ```java
+    TermsQuery termsQuery = _queries.terms("field");
+    ```
+
 ## External References
 * <https://www.elastic.co/guide/en/elasticsearch/reference/6.5/query-dsl.html>
 * <https://lucene.apache.org/solr/guide/7_1/query-syntax-and-parsing.html>
 
 ## Search Engine Connector Support
 * Elasticsearch 6: Yes
-* Solr 7: Yes
+* Solr 7: Yes* (`TermsSetFilter` is not supported.)
 
 ## New/Related APIs
 Listed those which are relevant for developers.
