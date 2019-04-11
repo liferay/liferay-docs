@@ -9,16 +9,9 @@ header-id: upgrading-to-product-ver
 Your sites are critical to you and Liferay wants to make sure your upgrade to
 @product-ver@ is safe, complete, and efficient. Upgrading involves upgrading
 your data and code (your custom apps). Here you'll learn how to upgrade your
-data. Here's what makes upgrading @product@ easier than ever: 
+data. 
 
--   Liferay Upgrade Plan: A detailed workflow for upgrading to @product-ver@. It
-    identifies parallel tasks and transitions for redoing tasks associated with
-    any issues you encounter. As you upgrade, use the plan to track your
-    progress. 
-
--   Database tuning instructions: Best practices to quicken data upgrades. 
-
-Upgrading comprises these main steps:
+Upgrading data comprises these main steps:
 
 1.  *Plan for handling the deprecated applications:* Every application 
     deprecation has different ramifications. You'll learn how the deprecations
