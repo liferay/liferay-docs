@@ -10,7 +10,7 @@ environments is straightforward.
     another class that isn't on the runtime classpath.
 
 In OSGi environments, however, there are additional cases where a
-`ClassNotFoundException` or `NoClassDefFoundError` can occur. Here are three:
+`ClassNotFoundException` or `NoClassDefFoundError` can occur. Here are four:
 
 1.  The missing class belongs to a module dependency that's an OSGi module. 
 2.  The missing class belongs to a module dependency that's *not* an OSGi 
