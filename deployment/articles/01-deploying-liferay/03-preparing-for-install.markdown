@@ -72,6 +72,9 @@ The recommended way to set up your @product@ database is also the simplest.
     | **Note:** If you plan to migrate from one database vendor to another,
     | [configure the database to use the default query result order you expect for entities @product@ lists](/developer/frameworks/-/knowledge_base/7-2/sort-order-changed-with-a-different-database). 
 
+    | **Note:** If you use Sybase, configure the database to allow nulls by 
+    | default. 
+
 3.  Create a database user for accessing this database. Grant this database user
     all rights, including the rights to create and drop tables, to the blank
     @product@ database.
