@@ -61,18 +61,13 @@ A selector gives the user a select box with a set of options to choose from.
 
 The Java scriplet below creates eight dummy options for the selector: 
 
-    <%
-    List<Map<String, Object>> options = new ArrayList<>();
+<%
+	List<SelectOption> options = new ArrayList<>();
 
-    for (int i = 0; i < 8; i++) {
-    	Map<String, Object> option = new HashMap<>();
-
-    	option.put("label", "Sample " + i);
-    	option.put("value", i);
-
-    	options.add(option);
-    }
-    %>
+	for (int i = 0; i < 8; i++) {
+		options.add(new SelectOption("Sample " + i, String.valueOf(i)));
+	}
+%>
 
     <clay:select 
 				label="Regular Select Element" 
