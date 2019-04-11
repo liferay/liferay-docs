@@ -34,114 +34,189 @@ of matched documents before the query examines them for scoring.
 
 Liferay's Search API supports the following types of queries:
 
-Full text queries:
+### Full Text Queries
 
-- MatchQuery: Full text matching, scored by relevance.
-- MultiMatchQuery: MatchQuery over several fields.
-- StringQuery: Uses Lucene query syntax
+* Match Query: Full text matching, scored by relevance.
+* Multi Match Query: MatchQuery over several fields.
+* String Query: Uses Lucene query syntax
 
-    Match Query
-    Match Phrase Query
-    Match Phrase Prefix Query
-    Multi Match Query
-    Common Terms Query
-    Query String Query
-    Simple Query String Query
+    ```java
+    CommonTermsQuery
+    MatchPhraseQuery
+    MatchPhrasePrefixQuery
+    MatchQuery
+    MultiMatchQuery
+    SimpleStringQuery
+    StringQuery
+    ```
+<!--
+TODO: Brief desription for each.
+-->
 
-- Term queries:
 
-    Term Query
-    Terms Query
-    Terms Set Query
-    Range Query
-    Exists Query
-    Prefix Query
-    Wildcard Query
-    Regexp Query
-    Fuzzy Query
-    Type Query
-    Ids Query
+### Term Queries
 
-- TermQuery: Exact matching on keyword fields and indexed terms
-- TermRangeQuery: TermQuery with a range
-- WildcardQuery: Wildcard (* and ?) matching on keyword fields and indexed terms
-- FuzzyQuery: Scrambles characters in input before matching
+Term queries look for exact matching on keyword fields and indexed terms.
 
-Compound queries:
-    Constant Score Query
-    Bool Query
-    Dis Max Query
-    Function Score Query
-    Boosting Query
-- BooleanQuery: Allows a combo of several query types. Individual queries are
+    ```java
+    ExistsQuery
+    FuzzyQuery
+    IdsQuery
+    PrefixQuery
+    RangeQuery    
+    RegexpQuery
+    TermQuery
+    TermsQuery
+    TermRangeQuery
+    TermsSetQuery
+    WildcardQuery
+    ```
+
+* Wildcard Query: Wildcard (`*` and `?`) matching on keyword fields and indexed terms
+* Fuzzy Query: Scrambles characters in input before matching
+
+<!--
+TODO: Cover the rest of Term Queries
+-->
+
+### Compound Queries
+
+<!--
+TODO: Intro.
+-->
+
+    ```java
+    BooleanQuery
+    BoostingQuery
+    ConstantScoreQuery
+    DisMaxQuery
+    FunctionScoreQuery
+    ```
+
+* Boolean Query: Allows a combo of several query types. Individual queries are
   as clauses with `SHOULD` | `MUST` | `MUST_NOT` | `FILTER`
-- DisMaxQuery
+* DisMaxQuery
 
-Joining Queries:
+<!--
+TODO: Cover the rest of Compound Queries
+-->
 
-    Nested Query
-    Has Child Query
-    Has Parent Query
-    Parent Id Query
+### Joining Queries
 
-Geo Queries:
+<!--
+TODO: Intro.
+-->
 
-    GeoShape Query
-    Geo Bounding Box Query
-    Geo Distance Query
-    Geo Polygon Query
+    ```java
+    NestedQuery
+    ```
+<!--
+TODO: Cover Joining Queries
+-->
 
-Specialized Queries:
+## Geo Queries
 
-More Like This Query
-Script Query
-Percolate Query
+<!--
+TODO: Intro.
+-->
 
-Other queries:
+    ```java
+    GeoBoundingBoxQuery
+    GeoDistanceQuery
+    GeoDistanceRangeQuery
+    GeoPolygonQuery
+    GeoShapeQuery
+    ```
 
-- MoreLikeThisQuery
-- MatchAllQuery: Matches all documents
+<!--
+TODO: Cover Geo Queries
+-->
+
+### Specialized Queries
+
+<!--
+TODO: Intro.
+-->
+
+    ```java
+    MoreLikeThisQuery
+    PercolateQuery
+    ScriptQuery
+    ```
+<!--
+TODO: Cover Specialized Queries
+-->
+
+### Other Queries
+
+* `MatchAllQuery`: Matches all documents
 
 ## Supported Filter Types
 
 Liferay's Search API supports the following types of filters:
 
-Term filters:
+### Term Filters
 
-- TermFilter
-- TermsFilter
-- PrefixFilter
-- ExistsFilter
-- MissingFilter
-- RangeTermFilter
+Note: These filters are provided by the `com.liferay.portal.kernel.search.filter` package.
 
-Compound filters:
+* TermFilter
+* TermsFilter
+* PrefixFilter
+* ExistsFilter
+* MissingFilter
+* RangeTermFilter
 
-- BooleanFilter
+<!--
+TODO: Cover Term Filters
+-->
 
-Geo filters: (Geolocation filters help filter documents based on the latitude
-and longitude fields)
+### Compound Filters
 
-- GeoDistanceFilter
-- GeoDistanceRangeFilter
-- GeoBoundingBoxFilter
-- GeoPolygonFilter
+Note: This filter is provided by the `com.liferay.portal.kernel.search.filter` package.
 
-Other filters:
+* BooleanFilter:
 
-- QueryFilter: Turns any query into a filter. E.g., can a BooleanQuery into a BooleanFilter
-- MatchAllFilter: Matches all documents
+<!--
+TODO: Cover BooleanFilter
+-->
+
+### Geo Filters
+
+Note: These filters are provided by the `com.liferay.portal.kernel.search.filter` package.
+
+Geolocation filters help filter documents based on the latitude
+and longitude fields.
+
+* GeoDistanceFilter
+* GeoDistanceRangeFilter
+* GeoBoundingBoxFilter
+* GeoPolygonFilter
+
+<!--
+TODO: Cover Geo Filters
+-->
+
+### Other Filters
+
+<!--
+TODO: Intro Other Filters
+-->
+
+* QueryFilter: Turns any query into a filter. E.g., can a BooleanQuery into a BooleanFilter
+* MatchAllFilter: Matches all documents
 
 The proper search query is entirely context- and search engine-specific, so you
 should read the Query documentation straight from
 [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/query-dsl.html) 
 or 
 [Solr](https://lucene.apache.org/solr/guide/7_1/query-syntax-and-parsing.html)
-To determine which queries are available and what they do.
+to determine which queries are available and what they do.
 
 All the supported queries and filters found in the `portal-search-api` module's
 `com.liferay.portal.search.query` and `com.liferay.portal.search.filter`
 packages.
+
+Legacy quaries and filters can be found in the `com.liferay.portal.kernel.search.*` packages provided by `portal-kernel`.
 
 ## Using Queries and Filters
 
@@ -173,7 +248,7 @@ constructs a complex search request containing a `TermsQuery` using the new
 
 ## Search Engine Connector Support
 * Elasticsearch 6: Yes
-* Solr 7: Yes* (`TermsSetFilter` is not supported.)
+* Solr 7: No* (Only the "legacy" query types from `com.liferay.portal.kernel.search.*` are supported as of @product@ Beta 2.)
 
 ## New/Related APIs
 Listed those which are relevant for developers.
