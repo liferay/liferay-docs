@@ -210,6 +210,9 @@ Eclipse workspace). Inside the `bundles/data` folder is a `hypersonic` folder.
 Shut down @product@, remove everything from this folder, and then restart. After
 adding guestbook to a page, the portlet will work normally. 
 
+Alternatively you can connect to the database (hypersonic) using any support DB client
+and delete the entried from table. You need to stop Liferay before in order to
+delete the old entries
 $$$
 
 Now see if you can do the same for the Guestbook Admin portlet. Don't worry if
