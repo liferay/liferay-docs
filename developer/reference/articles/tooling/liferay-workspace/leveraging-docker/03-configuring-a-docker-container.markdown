@@ -14,7 +14,7 @@ as your Liferay Home for Docker development; you add additional files that
 overlay your @product@ container's default configuration.
 
 As an example, you'll enable the
-[Gogo shell](/developer/reference/-/knowledge_base/7-2/using-the-felix-gogo-shell)
+[Gogo shell](/docs/reference/7-2/-/knowledge_base/reference/using-the-felix-gogo-shell)
 for your container.
 
 1.  Add a `portal-ext.properties` file to your workspace's `configs/docker`

@@ -38,13 +38,13 @@ Setting the version to develop for takes two steps:
 | **Note**: The `liferay.workspace.target.platform.version` property also sets
 | the distro JAR, which can be used to validate your projects during the build
 | process. See the
-| [Validating Modules Against the Target Platform](/developer/reference/-/knowledge_base/7-2/validating-modules-against-the-target-platform)
+| [Validating Modules Against the Target Platform](/docs/reference/7-2/-/knowledge_base/reference/validating-modules-against-the-target-platform)
 | tutorials for more info.
 
 | **Note:** The target platform functionality is available in Liferay Workspace
 | version 1.9.0+. If you have an older version, you must update it to leverage
 | platform targeting. See the
-| [Updating Liferay Workspace](/developer/reference/-/knowledge_base/7-2/updating-liferay-workspace)
+| [Updating Liferay Workspace](/docs/reference/7-2/-/knowledge_base/reference/updating-liferay-workspace)
 | article to do this.
 
 You've configured your target platform in workspace. You're all set!

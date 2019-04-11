@@ -62,11 +62,15 @@ this, open your workspace's `gradle.properties` file and set the
 `liferay.workspace.target.platform.version` property to the version you want to
 target. For example,
 
-    liferay.workspace.target.platform.version=7.1.0
+    ```properties
+    liferay.workspace.target.platform.version=7.2.0
+    ```
 
 If you're using Liferay DXP, you can set the property like this:
 
-    liferay.workspace.target.platform.version=7.1.10
+    ```properties
+    liferay.workspace.target.platform.version=7.2.10
+    ```
 
 The versions following a GA1 release of DXP follow fix pack versions (e.g.,
 `7.1.10.fp1`, `7.1.10.fp2`, etc.).
@@ -78,9 +82,11 @@ is a complete snapshot of everything provided in the OSGi runtime; this serves
 as the target platform's list of capabilities that your modules are validated
 against.
 
-You can now validate your module projects before deploying them! Sometimes, you
-must modify the `resolve` task's default behavior to successfully validate your
-app. See the next section for more information.
+You can now validate your module projects before deploying them! If the resolver
+throws errors, see the article on
+[how to resolve common output errors reported by the `resolve` task](/docs/reference/7-2/-/knowledge_base/reference/how-to-resolve-common-output-errors-reported-by-the-resolve-task).
+Sometimes, you must modify the `resolve` task's default behavior to successfully
+validate your app. See the next section for more information.
 
 ## Modifying the Target Platform's Capabilities
 

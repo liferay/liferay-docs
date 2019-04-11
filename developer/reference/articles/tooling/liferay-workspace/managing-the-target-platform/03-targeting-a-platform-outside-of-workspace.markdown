@@ -2,7 +2,7 @@
 
 If you prefer to not use Liferay Workspace, but still want to target a platform,
 you must apply the 
-[Target Platform Gradle plugin](/developer/reference/-/knowledge_base/7-2/target-platform-gradle-plugin)
+[Target Platform Gradle plugin](/docs/reference/7-2/-/knowledge_base/reference/target-platform-gradle-plugin)
 to the root `build.gradle` file of your custom multi-module Gradle build.
 
 To do this, follow the steps below.
@@ -55,11 +55,11 @@ To do this, follow the steps below.
     - `7.1.0` &rarr; `7.1.10`
 
 4.  If you're interested in
-[advanced search](/developer/reference/-/knowledge_base/7-2/searching-product-source-in-dev-studio)
+[advanced search](/docs/reference/7-2/-/knowledge_base/reference/searching-product-source-in-dev-studio)
 and/or
-[debugging](/developer/reference/-/knowledge_base/7-2/debugging-product-source-in-dev-studio)
+[debugging](/docs/reference/7-2/-/knowledge_base/reference/debugging-product-source-in-dev-studio)
 @product@'s source using
-[Liferay Dev Studio](/developer/reference/-/knowledge_base/7-2/liferay-dev-studio),
+[Liferay Dev Studio](/docs/reference/7-2/-/knowledge_base/reference/liferay-dev-studio),
 you must also apply the following configuration:
 
     ```groovy

@@ -121,5 +121,5 @@ Once you know the correct BSN/version to reference, update your `Fragment-Host`
 header to resolve the error.
 
 For more information on fragments, see the
-[JSP Overrides Using OSGi Fragments](/developer/customization/-/knowledge_base/7-2/overriding-a-modules-jsps)
+[JSP Overrides Using OSGi Fragments](/docs/customization/7-2/-/knowledge_base/customization/overriding-a-modules-jsps)
 tutorial.

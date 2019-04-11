@@ -36,8 +36,8 @@ Command | Description
 
 In this section, you'll learn how to
 
-- [Create a Docker container based on a provided @product@ image](/developer/reference/-/knowledge_base/7-2/creating-a-product-docker-container)
-- [Configure the container](/developer/reference/-/knowledge_base/7-2/configuring-a-docker-container)
-- [Build a custom image](/developer/reference/-/knowledge_base/7-2/building-a-custom-product-image)
+- [Create a Docker container based on a provided @product@ image](/docs/reference/7-2/-/knowledge_base/reference/creating-a-product-docker-container)
+- [Configure the container](/docs/reference/7-2/-/knowledge_base/reference/configuring-a-docker-container)
+- [Build a custom image](/docs/reference/7-2/-/knowledge_base/reference/building-a-custom-product-image)
 
 Continue on to learn more.

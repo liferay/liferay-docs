@@ -13,7 +13,7 @@ current workspace's @product@ instance, follow the steps below:
 3.  From the root folder of your workspace, run the following command:
 
     ```bash
-    bnd remote distro -o custom_distro.jar release.portal.distro 7.1.0
+    bnd remote distro -o custom_distro.jar release.portal.distro 7.2.0
     ```
 
     Liferay DXP users must replace the `release.portal.distro` artifact name

@@ -1,4 +1,4 @@
-# Validating Modules Outside of Workspace [](id=validating-modules-outside-of-workspace)
+# Validating Modules Outside of Workspace
 
 If you prefer to not use Liferay Workspace, but still want to validate modules
 against a target platform, you must apply the
@@ -16,17 +16,19 @@ instructions below to do this.
 2.  Add the `targetPlatformDistro` dependency to the list of dependencies. It
     should look like this:
 
+    ```groovy
     dependencies {
-        targetPlatformBoms group: "com.liferay.portal", name: "release.portal.bom", version: "7.1.0"
-        targetPlatformBoms group: "com.liferay.portal", name: "release.portal.bom.compile.only", version: "7.1.0"
-        targetPlatformDistro group: "com.liferay.portal", name "release.portal.distro", version: "7.1.0"
+        targetPlatformBoms group: "com.liferay.portal", name: "release.portal.bom", version: "7.2.0"
+        targetPlatformBoms group: "com.liferay.portal", name: "release.portal.bom.compile.only", version: "7.2.0"
+        targetPlatformDistro group: "com.liferay.portal", name "release.portal.distro", version: "7.2.0"
     }
+    ```
 
     Liferay DXP users must replace the artifact names and versions:
     
     - `release.portal.bom` &rarr; `release.dxp.bom`
     - `release.portal.bom.compile.only` &rarr; `release.dxp.bom.compile.only`
     - `release.portal.distro` &rarr; `release.dxp.distro`
-    - `7.1.0` &rarr; `7.1.10`
+    - `7.2.0` &rarr; `7.2.10`
 
 Now you can validate your non-workspace modules against a target platform!

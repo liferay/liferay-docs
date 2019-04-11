@@ -3,7 +3,7 @@
 Liferay Workspace reserves the `themes` folder only for themes that are created 
 with the Themes Generator. There are no Blade CLI-provided commands or Maven 
 archetypes to generate a theme for this folder. You must leverage the 
-[Liferay Theme Generator](/developer/reference/-/knowledge_base/7-2/theme-generator) 
+[Liferay Theme Generator](/docs/reference/7-2/-/knowledge_base/reference/theme-generator) 
 from within the `themes` folder to create them; you can also copy a generated
 theme into the folder.
 
@@ -26,7 +26,7 @@ Generator's required tooling is installed.
 
     Liferay Workspace builds the front-end theme using Gradle. Under the hood,
     Liferay's 
-    [Node Gradle Plugin](/developer/reference/-/knowledge_base/7-2/node-gradle-plugin)
+    [Node Gradle Plugin](/docs/reference/7-2/-/knowledge_base/reference/node-gradle-plugin)
     is applied and used to build your theme.
 
 3.  Workspace is smart enough to differentiate between theme types. For
@@ -57,4 +57,4 @@ Generator's required tooling is installed.
 Excellent! You learned how generated themes are recognized in workspace and 
 where they should reside. For more information on building Gradle/Maven-based
 themes in workspace, see it's dedicated
-[article](/developer/reference/-/knowledge_base/7-2/building-gradle-maven-themes-in-liferay-workspace).
+[article](/docs/reference/7-2/-/knowledge_base/reference/building-gradle-maven-themes-in-liferay-workspace).

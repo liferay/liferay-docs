@@ -7,7 +7,7 @@ are updated to the latest ones provided in the targeted release.
 
 | **Note:** There are times when configuring dependencies based on a version
 | range is better than tracking exact versions. See the
-| [Semantic Versioning](/developer/reference/-/knowledge_base/7-2/semantic-versioning)
+| [Semantic Versioning](/docs/reference/7-2/-/knowledge_base/reference/semantic-versioning)
 | tutorial for more details.
 
 Next, you'll discover how all of this is possible.
@@ -17,7 +17,7 @@ Next, you'll discover how all of this is possible.
 You can target a version by importing a predefined bill of materials (BOM). This
 only requires that you specify a property in your workspace's
 `gradle.properties` file (see
-[this article](/developer/reference/-/knowledge_base/7-2/setting-the-target-platform)
+[this article](/docs/reference/7-2/-/knowledge_base/reference/setting-the-target-platform)
 for details).
 
 | **Note:** The Target Platform feature is only supported for Gradle projects at
@@ -46,21 +46,21 @@ Studio.
 
 ## Leveraging Target Platform in Dev Studio
 
-[Liferay Dev Studio 3.2+](/developer/reference/-/knowledge_base/7-2/liferay-dev-studio) 
+[Liferay Dev Studio 3.2+](/docs/reference/7-2/-/knowledge_base/reference/liferay-dev-studio) 
 helps you streamline targeting a specific version even more. Dev Studio can
 index the configured @product@ source code to
 
 - provide advanced Java search (Open Type and Reference Searching)
-  ([article](/developer/reference/-/knowledge_base/7-2/searching-product-source-in-dev-studio))
+  ([article](/docs/reference/7-2/-/knowledge_base/reference/searching-product-source-in-dev-studio))
 - debug @product@ sources
-  ([article](/developer/reference/-/knowledge_base/7-2/debugging-product-source-in-dev-studio))
+  ([article](/docs/reference/7-2/-/knowledge_base/reference/debugging-product-source-in-dev-studio))
 
 These options in Dev Studio are only available when developing in a Liferay
 Workspace, or if you have the
-[Target Platform Gradle plugin](/developer/reference/-/knowledge_base/7-2/target-platform-gradle-plugin)
+[Target Platform Gradle plugin](/docs/reference/7-2/-/knowledge_base/reference/target-platform-gradle-plugin)
 applied to your multi-module Gradle project with specific configurations. See
 the
-[Targeting a Platform Outside of Workspace](/developer/reference/-/knowledge_base/7-2/targeting-a-platform-outside-of-workspace)
+[Targeting a Platform Outside of Workspace](/docs/reference/7-2/-/knowledge_base/reference/targeting-a-platform-outside-of-workspace)
 article for more info on applying the Target Platform Gradle plugin.
 
 Continue on to learn how to set the target platform.
