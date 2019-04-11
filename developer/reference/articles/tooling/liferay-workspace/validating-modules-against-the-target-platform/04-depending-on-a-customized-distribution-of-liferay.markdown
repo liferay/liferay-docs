@@ -23,7 +23,7 @@ current workspace's @product@ instance, follow the steps below:
     ```
 
     Liferay DXP users must replace the `release.portal.distro` artifact name
-    with `release.dxp.distro` and use the `7.1.10` version syntax.
+    with `release.dxp.distro` and use the `7.2.10` version syntax.
 
     This connects to the newly deployed BND agent running in @product@ and
     generates a new distro JAR named `custom_distro.jar`. All other capabilities

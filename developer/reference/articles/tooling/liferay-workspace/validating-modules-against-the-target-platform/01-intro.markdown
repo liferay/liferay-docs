@@ -21,9 +21,9 @@ validate your app before deployment. This is done by calling Liferay Workspace's
 
 You'll cover the following topics in this section:
 
-- [Resolving your modules](#resolving-your-modules)
-- [Modifying the target platform's capabilities](#modifying-the-target-platforms-capabilities)
-- [Including the resolver in your Gradle build](#including-the-resolver-in-your-gradle-build)
+- [Resolving your modules](#resolving-your-modules).
+- [Modifying the target platform's capabilities](#modifying-the-target-platforms-capabilities).
+- [Including the resolver in your Gradle build](#including-the-resolver-in-your-gradle-build).
 
 Continue on to learn how this works.
 
@@ -32,9 +32,9 @@ Continue on to learn how this works.
 You can resolve your modules before deployment. This can be done by calling the
 `resolve` Gradle task provided by Liferay Workspace.
 
-    ```bash
-    ./gradlew resolve
-    ```
+```bash
+./gradlew resolve
+```
 
 This task gathers all the capabilities provided by
  
@@ -68,18 +68,18 @@ this, open your workspace's `gradle.properties` file and set the
 `liferay.workspace.target.platform.version` property to the version you want to
 target. For example,
 
-    ```properties
-    liferay.workspace.target.platform.version=7.2.0
-    ```
+```properties
+liferay.workspace.target.platform.version=7.2.0
+```
 
 If you're using Liferay DXP, you can set the property like this:
 
-    ```properties
-    liferay.workspace.target.platform.version=7.2.10
-    ```
+```properties
+liferay.workspace.target.platform.version=7.2.10
+```
 
 The versions following a GA1 release of DXP follow fix pack versions (e.g.,
-`7.1.10.fp1`, `7.1.10.fp2`, etc.).
+`7.2.10.fp1`, `7.2.10.fp2`, etc.).
 
 Setting the target platform property provides a static *distro* JAR for the
 specified version of @product@, which contains all the metadata (i.e.,

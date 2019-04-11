@@ -9,9 +9,11 @@ header-id: liferay-workspace
 A *Liferay Workspace* is a generated environment that is built to hold and
 manage your Liferay projects. This workspace is intended to aid in the
 management of Liferay projects by providing various build scripts and configured
-properties. [Blade CLI](/docs/reference/7-2/-/knowledge_base/reference/blade-cli) is
-bundled with workspace, providing a command line tool intended for workspace
-development.
+properties. You can download the
+[Liferay Project SDK installer](https://sourceforge.net/projects/lportal/files/Liferay%20IDE/)
+and run it to install
+[Blade CLI](/docs/reference/7-2/-/knowledge_base/reference/blade-cli) (default
+CLI for workspace), initialize a new Liferay Workspace, and download @ide@.
 
 Liferay Workspace is the official way to create/manage @product-ver@ projects
 using Gradle. Do you prefer Maven over Gradle? You can also generate a
@@ -19,19 +21,19 @@ Maven-based workspace.
 
 You'll cover the following topics in this section:
 
-- [Installing Liferay Workspace]()
-- [Creating a Liferay Workspace]()
-- [Importing a Liferay Workspace]()
-- [Setting Proxy Requirements]()
-- [Adding a Bundle]()
-- [Setting Environment Configurations]()
-- [Building Node.js Themes]
-- [Building Gradle/Maven Themes]()
-- Managing the Target Platform
-- [Leveraging Docker]()
-- [Updating Liferay Workspace]()
-- Validating Modules Against the Target Platform
-- [Updating Default Plugins Provided by Liferay Workspace]()
+- [Installing Liferay Workspace](/docs/reference/7-2/-/knowledge_base/reference/installing-liferay-workspace)
+- [Creating a Liferay Workspace](/docs/reference/7-2/-/knowledge_base/reference/creating-a-liferay-workspace)
+- [Importing a Liferay Workspace](/docs/reference/7-2/-/knowledge_base/reference/importing-a-liferay-workspace-into-an-ide)
+- [Setting Proxy Requirements](/docs/reference/7-2/-/knowledge_base/reference/setting-proxy-requirements-for-liferay-workspace)
+- [Adding a Bundle](/docs/reference/7-2/-/knowledge_base/reference/adding-a-liferay-bundle-to-liferay-workspace)
+- [Setting Environment Configurations](/docs/reference/7-2/-/knowledge_base/reference/setting-environment-configurations-for-liferay-workspace)
+- [Building Node.js Themes](/docs/reference/7-2/-/knowledge_base/reference/building-node-js-themes-in-liferay-workspace)
+- [Building Gradle/Maven Themes](/docs/reference/7-2/-/knowledge_base/reference/building-gradle-maven-themes-in-liferay-workspace)
+- [Managing the Target Platform](/docs/reference/7-2/-/knowledge_base/reference/managing-the-target-platform)
+- [Validating Modules Against the Target Platform](/docs/reference/7-2/-/knowledge_base/reference/validating-modules-against-the-target-platform)
+- [Leveraging Docker](/docs/reference/7-2/-/knowledge_base/reference/leveraging-docker)
+- [Updating Liferay Workspace](/docs/reference/7-2/-/knowledge_base/reference/updating-liferay-workspace)
+- [Updating Default Plugins Provided by Liferay Workspace](/docs/reference/7-2/-/knowledge_base/reference/updating-default-plugins-provided-by-liferay-workspace)
 
 Liferay Workspaces can be used in many different development environments, which
 makes it flexible and applicable to many different developers. For example, a
@@ -64,7 +66,7 @@ folder structure any way you'd like. The top-level files/folder of a Liferay
   These project types should eventually be migrated to the `wars` folder, if
   possible. This is targeted for @product@ 7.0 to provide a way to migrate from
   the Plugins SDK to Liferay Workspace. See the
-  [Using a Plugins SDK from Your Workspace](/develop/tutorials/-/knowledge_base/7-0/configuring-a-liferay-workspace#using-a-plugins-sdk-from-your-workspace)
+  [Using a Plugins SDK from Your Workspace](/docs/tutorials/7-0/-/knowledge_base/tutorials/configuring-a-liferay-workspace#using-a-plugins-sdk-from-your-workspace)
   section for more information. The Plugins SDK is no longer available for
   @product-ver@.
 - `themes`: holds Node.js-style themes that use the Liferay JS Theme Toolkit, 
@@ -85,8 +87,6 @@ folder structure any way you'd like. The top-level files/folder of a Liferay
 
 If you're using a workspace generated for Maven projects, your folder hierarchy
 is the same, except the Gradle build files are swapped out for a `pom.xml` file.
-See the Maven Workspace tutorial for more info on configuring that kind of
-workspace project.
 
 Visit your workspace's `gradle.properties` file for a list of properties (with
 descriptions) you can define to adapt your workspace. For a Maven-based
@@ -98,9 +98,11 @@ If you'd like to keep the global Gradle properties the same, but want to change
 them for yourself only (perhaps for local testing), you can override the
 `gradle.properties` file with your own `gradle-local.properties` file.
 
+Next, you'll learn about workspace's development lifecycle.
+
 ## Development Lifecycle
 
-Liferay Workspaces offer a full development lifecycle for your modules to make
+Liferay Workspaces offer a full development lifecycle for your projects to make
 your Liferay development easier than ever. The development lifecycle includes
 
 - [Creating projects](#creating-projects)
@@ -123,13 +125,13 @@ the
 [Creating a Project](/docs/reference/7-2/-/knowledge_base/reference/creating-a-project)
 article for more information.
 
-Liferay Workspace manages themes in two separate folders based on how they're
-created:
+Liferay Workspace manages theme projects in two separate folders based on how
+they're created:
 
 - [Liferay Theme Generator](/docs/reference/7-2/-/knowledge_base/reference/theme-generator)
   (Node.js-based themes that use the Liferay JS Theme Toolkit)
 - [Project template/archetype](/docs/reference/7-2/-/knowledge_base/reference/theme-template)
-  (Gradle/Maven-based)
+  (Gradle/Maven-based themes)
 
 Liferay Workspace offers an environment where developers can use the Liferay
 Theme Generator to create themes and their work can be seamlessly integrated
@@ -154,10 +156,12 @@ and
 [Maven Plugins](/docs/reference/7-2/-/knowledge_base/reference/maven-plugins)
 sections for information on some of the plugins provided by workspace.
 
-Gradle-based Workspaces also include a Gradle wrapper in its ROOT folder (e.g.,
+Gradle-based workspaces also include a Gradle wrapper in its ROOT folder (e.g.,
 `gradlew`), which you can leverage to execute Gradle commands. This means that
 you can run familiar Gradle build commands (e.g., `build`, `clean`, `compile`,
 etc.) from a Liferay Workspace without having Gradle installed on your machine.
+For Maven-based workspaces, Maven build commands are supported (e.g., `package`,
+`verify`, `deploy`, etc.).
 
 Liferay Workspace lets you build your projects out-of-the-box without the hassle
 of manual build configurations.
@@ -166,8 +170,7 @@ of manual build configurations.
 
 Liferay Workspace provides easy-to-use deployment mechanisms that let you deploy
 your project to a Liferay server without any custom configuration. To learn more
-about deploying projects from a workspace,
-visit the
+about deploying projects from a workspace, visit the
 [Deploying a Project](/docs/reference/7-2/-/knowledge_base/reference/deploying-a-project)
 article.
 
@@ -184,15 +187,20 @@ different environments in the same workspace. For example, you could configure
 separate @product@ environment settings for development, testing, and production
 in a single Liferay Workspace. So how does it work?
 
-The `configs` folder offers five subfolders:
+The `configs` folder offers six subfolders:
 
-- `common`: holds a common configuration that you want applied to all
-  environments.
-- `dev`: holds the development configuration.
-- `docker`: holds the configuration for a Docker container.
-- `local`: holds the configuration intended for testing locally.
-- `prod`: holds the configuration for a production site.
-- `uat`: holds the configuration for a UAT site.
+`common`: holds a common configuration that you want applied to all
+environments.
+
+`dev`: holds the development configuration.
+
+`docker`: holds the configuration for a Docker container.
+
+`local`: holds the configuration intended for testing locally.
+
+`prod`: holds the configuration for a production site.
+
+`uat`: holds the configuration for a UAT site.
 
 You're not limited to just these environments. You can create any subfolder in
 the `configs` folder (e.g., `aws`, `test`, etc.) to simulate any environment.

@@ -19,10 +19,12 @@ below.
     To find the possible property values you can set, see the official @product@
     Docker Hub's Tags section (e.g.,
     [Liferay Portal Docker Tags](https://hub.docker.com/r/liferay/portal/tags)).
-    For example, if you want to base your container on the Liferay Portal 7.1
-    GA3 image, you would set this property:
+    For example, if you want to base your container on the Liferay Portal 7.2
+    GA1 image, you would set this property:
 
-        liferay.workspace.docker.image.liferay=liferay/portal:7.1.2-ga3
+    ```properties
+    liferay.workspace.docker.image.liferay=liferay/portal:7.2.0-ga1
+    ```
 
 2.  Run the following command from your workspace's root folder:
 

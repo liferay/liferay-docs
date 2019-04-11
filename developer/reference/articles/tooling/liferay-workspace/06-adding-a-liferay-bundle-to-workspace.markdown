@@ -1,8 +1,8 @@
 ---
-header-id: adding-a-liferay-bundle-to-workspace
+header-id: adding-a-liferay-bundle-to-liferay-workspace
 ---
 
-# Adding a Liferay Bundle to Workspace
+# Adding a Liferay Bundle to Liferay Workspace
 
 [TOC levels=1-4]
 
@@ -16,7 +16,7 @@ the instructions below to get started.
     you want to generate and install. For example,
 
     ```properties
-    liferay.workspace.bundle.url=https://releases-cdn.liferay.com/portal/7.1.0-ga1/liferay-ce-portal-tomcat-7.1.0-ga1-20180703012531655.zip
+    liferay.workspace.bundle.url=https://releases-cdn.liferay.com/portal/7.2.0-b1/liferay-ce-portal-tomcat-7.2.0-b1-201903291136.7z
     ```
 
     For DXP subscribers, it would look like this:
@@ -25,11 +25,11 @@ the instructions below to get started.
     liferay.workspace.bundle.url=https://api.liferay.com/downloads/portal/7.1.10/liferay-dxp-tomcat-7.1.10-ga1-20180703090613030.zip
     ```
 
-    | **Note:** The DXP download URL must be set to the ZIP hosted on
-    | *api.liferay.com*. It can be tricky to find the fully qualified ZIP
+    | **Note:** The DXP download URL must be set to the bundle hosted on
+    | *api.liferay.com*. It can be tricky to find the fully qualified bundle
     | name/number for the DXP bundle you want. You cannot access Liferay's API
-    | site directly to find it, so you must start to download DXP manually, take
-    | note of the file name, and append it to
+    | site directly to find it, so you must start to download DXP manually from
+    | Liferay's Customer Portal, take note of the file name, and append it to
     | `https://api.liferay.com/downloads/portal/`.
 
     DXP subscribers must also set the `liferay.workspace.bundle.token.download`
@@ -55,9 +55,7 @@ Your distribution file is available from the workspace's `/build` folder.
 
 | **Note:** You can define different environments for your Liferay bundle for
 | easy testing. You can learn more about this in the
-| [Testing Modules](/develop/tutorials/-/knowledge_base/7-1/development-lifecycle-for-a-liferay-workspace#testing-projects)
+| [Testing Projects](/docs/reference/7-2/-/knowledge_base/reference/liferay-workspace#testing-projects)
 | section.
 
-The Liferay Workspace is a great development environment for Liferay module
-development; however, what if you'd like to also stick with developing WAR-style
-applications? Liferay Workspace can handle that request too!
+You're all set to develop projects for a nested @product@ bundle.

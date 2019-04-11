@@ -8,8 +8,8 @@ header-id: updating-liferay-workspace
 
 Liferay Workspace is continuously being updated with new features. If you
 created your workspace a while ago, you may be missing out on some of the latest
-features that could improve your Liferay development experience. Updating your
-Liferay Workspace is easy; you'll learn how to do it for Gradle and Maven based
+features that could improve your @product@ development experience. Updating your
+Liferay Workspace is easy; you'll learn how to do it for Gradle and Maven-based
 workspaces next.
 
 ## Gradle
@@ -31,7 +31,7 @@ workspaces next.
     ```
 
     Update the `com.liferay.gradle.plugins.workspace` dependency's `version` to
-    the version number you copied from the change log in step 1.
+    the version number you copied in step 1.
 
 4.  Execute any Gradle command to initiate the update process for your Workspace
     (e.g., `blade gw tasks`).
@@ -40,9 +40,11 @@ workspaces next.
 | be updated if you're migrating from a workspace before version `1.10.14` to
 | the latest available version. To update your Gradle wrapper, run
 | 
-|     ./gradlew wrapper --gradle-version=4.10.2
+|    ```bash
+|    ./gradlew wrapper --gradle-version=4.10.2
+|    ```
 
-Awesome! You've upgraded your Gradle based Liferay Workspace!
+Awesome! You've upgraded your Gradle-based Liferay Workspace!
 
 ## Maven
 
@@ -65,9 +67,9 @@ Awesome! You've upgraded your Gradle based Liferay Workspace!
     ```
 
     Update the `com.liferay.portal.tools.bundle.support` artifact's `version` to
-    the version number you copied from the change log in step 1.
+    the version number you copied in step 1.
 
 4.  Execute any Maven command to initiate the update process for your Workspace
     (e.g., `mvn verify`).
 
-Awesome! You've upgraded your Maven based Liferay Workspace!
+Awesome! You've upgraded your Maven-based Liferay Workspace!

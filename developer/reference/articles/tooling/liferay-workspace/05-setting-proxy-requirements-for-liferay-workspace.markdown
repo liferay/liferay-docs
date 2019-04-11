@@ -66,7 +66,7 @@ environment.
                 </proxy>
             </proxies>
         </settings>
-        ```
+    ```
 
     Make sure to replace the proxy host and port values with your own.
 

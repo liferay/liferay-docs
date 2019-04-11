@@ -18,7 +18,7 @@ To do this, follow the steps below.
     ```groovy
     buildscript {
         dependencies {
-            classpath group: "com.liferay", name: "com.liferay.gradle.plugins.target.platform", version: "1.1.6"
+            classpath group: "com.liferay", name: "com.liferay.gradle.plugins.target.platform", version: "1.1.11"
         }
         repositories {
             maven {
@@ -41,24 +41,25 @@ To do this, follow the steps below.
 
     ```groovy
     dependencies {
-        targetPlatformBoms group: "com.liferay.portal", name: "release.portal.bom", version: "7.1.0"
-        targetPlatformBoms group: "com.liferay.portal", name: "release.portal.bom.compile.only", version: "7.1.0"
+        targetPlatformBoms group: "com.liferay.portal", name: "release.portal.bom", version: "7.2.0"
+        targetPlatformBoms group: "com.liferay.portal", name: "release.portal.bom.compile.only", version: "7.2.0"
     }
     ```
 
     These dependencies are described below:
 
-    - `com.liferay.ce.portal.bom`: provides all the artifacts included in
-      @product@.
-    - `com.liferay.ce.portal.compile.only`: provides artifacts that are not
-      included in @product@, but are necessary to reference during the build
-      (e.g., `org.osgi.core`).
+    `com.liferay.ce.portal.bom`: provides all the artifacts included in
+    @product@.
+
+    `com.liferay.ce.portal.compile.only`: provides artifacts that are not
+    included in @product@, but are necessary to reference during the build
+    (e.g., `org.osgi.core`).
 
     Liferay DXP users must replace the artifact names and versions:
 
     - `release.portal.bom` &rarr; `release.dxp.bom`
     - `release.portal.bom.compile.only` &rarr; `release.dxp.bom.compile.only`
-    - `7.1.0` &rarr; `7.1.10`
+    - `7.2.0` &rarr; `7.2.10`
 
 4.  If you're interested in
 [advanced search](/docs/reference/7-2/-/knowledge_base/reference/searching-product-source-in-dev-studio)

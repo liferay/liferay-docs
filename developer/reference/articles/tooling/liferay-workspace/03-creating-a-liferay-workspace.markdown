@@ -59,16 +59,16 @@ You can also create a Maven-based workspace with Blade CLI. See the
     *Use default location* checkbox places your Liferay Workspace in the Eclipse
     workspace you're working in.
 
-4.  Select the build tool you want your workspace to be build with (i.e., Gradle
+4.  Select the build tool you want your workspace to be built with (i.e., Gradle
     or Maven).
 
-5.  Choose the Liferay Portal version you plan to develop for (i.e., 7.2, 7.1 or
-    7.0).
+5.  Choose the Liferay Portal version you plan to develop for (i.e., 7.2, 7.1,
+    or 7.0).
 
 6.  Select the specific target platform version corresponding to the GA release
     you're developing for (e.g., 7.1.0 &rarr; 7.1 GA1). For more information on
     target platform benefits, see the
-    [Managing the Target Platform for Liferay Workspace]()
+    [Managing the Target Platform](/docs/reference/7-2/-/knowledge_base/reference/managing-the-target-platform)
     articles.
 
 7.  Check the *Download Liferay bundle* checkbox if you'd like to auto-generate
@@ -80,12 +80,12 @@ You can also create a Maven-based workspace with Blade CLI. See the
     | configuring it in the workspace's `gradle.properties` file by setting the
     | `liferay.workspace.home.dir` property.
 
-8.  Check the Add project to working set checkbox if you want the workspace to
-    be a part of a larger working set you've already created in Dev Studio. For
-    more information on working sets, visit
+8.  Check the *Add project to working set* checkbox if you want your workspace
+    to be a part of a larger working set you've already created in Dev Studio.
+    For more information on working sets, visit
     [Eclipse Help](https://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.platform.doc.user%2Fconcepts%2Fcworkset.htm).
 
-9  Click *Finish* to create your Liferay Workspace.
+9.  Click *Finish* to create your Liferay Workspace.
 
     ![Figure 2: Dev Studio provides an easy-to-follow menu to create your Liferay Workspace.](../../../images/new-workspace-menu.png)
 

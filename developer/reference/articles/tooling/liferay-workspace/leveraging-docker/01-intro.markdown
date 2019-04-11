@@ -31,7 +31,7 @@ Command | Description
 `createDockerContainer` | Creates a Docker container from the @product@ image and mounts the workspace's `/build/docker` folder to the container's `/etc/liferay` folder.
 `createDockerfile` | Creates a `Dockerfile` to build the Docker image.
 `dockerDeploy` | Deploys the project to the container's `deploy` folder by copying the project archive file to workspace's `build/docker/deploy` folder. This command can also be executed from workspace's root folder to deploy all projects and copy all Docker configurations (i.e., from the `configs/docker` folder) to the container.
-`logsDockerContainer` | Prints the portal runtime's logs. You can exit log tracking mode while maintaining a running container (e.g., [Ctrl|Command] + C).
+`logsDockerContainer` | Prints the portal runtime's logs. You can exit log tracking mode while maintaining a running container (e.g., [Ctrl&#124;Command] + C).
 `pullDockerImage` | Pulls the Docker image.
 `removeDockerContainer` | Removes the container from Docker's system.
 `startDockerContainer` | Starts the Docker container.
@@ -42,8 +42,8 @@ Command | Description
 
 In this section, you'll learn how to
 
-- [Create a Docker container based on a provided @product@ image](/docs/reference/7-2/-/knowledge_base/reference/creating-a-product-docker-container)
-- [Configure the container](/docs/reference/7-2/-/knowledge_base/reference/configuring-a-docker-container)
-- [Build a custom image](/docs/reference/7-2/-/knowledge_base/reference/building-a-custom-product-image)
+- [Create a Docker container based on a provided @product@ image](/docs/reference/7-2/-/knowledge_base/reference/creating-a-product-docker-container).
+- [Configure the container](/docs/reference/7-2/-/knowledge_base/reference/configuring-a-docker-container).
+- [Build a custom image](/docs/reference/7-2/-/knowledge_base/reference/building-a-custom-product-image).
 
 Continue on to learn more.

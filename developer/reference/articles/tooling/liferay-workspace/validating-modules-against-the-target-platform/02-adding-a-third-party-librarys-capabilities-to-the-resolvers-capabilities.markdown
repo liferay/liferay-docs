@@ -11,7 +11,7 @@ of capabilities by listing them as provided modules.
 
 1.  Open your workspace's root `build.gradle` file.
 
-2.  Add the a code snippet similar to this:
+2.  Add a code snippet similar to this:
 
     ```groovy
     dependencies {

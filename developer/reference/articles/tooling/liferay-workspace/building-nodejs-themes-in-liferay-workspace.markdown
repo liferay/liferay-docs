@@ -1,8 +1,8 @@
 ---
-header-id: building-node-js-themes-in-workspace
+header-id: building-node-js-themes-in-liferay-workspace
 ---
 
-# Building Node.js Themes in Workspace
+# Building Node.js Themes in Liferay Workspace
 
 [TOC levels=1-4]
 
@@ -38,7 +38,7 @@ Generator's required tooling is installed.
 3.  Workspace is smart enough to differentiate between theme types. For
     instance, you can't copy a theme built with the Theme Generator into the
     `wars` folder and expect it to build. You can test if your project is
-    recognized by Workspace by running this command from Workspace's root
+    recognized by workspace by running this command from workspace's root
     folder:
 
     ```bash

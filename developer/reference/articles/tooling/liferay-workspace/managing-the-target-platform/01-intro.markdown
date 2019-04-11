@@ -47,7 +47,7 @@ For more information on BOMs, see the
 [Importing Dependencies](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism#Importing_Dependencies)
 section in Maven's official documentation.
 
-Pretty cool, right? Next, you'lllearn how to leverage platform targeting in Dev
+Pretty cool, right? Next, you'll learn how to leverage platform targeting in Dev
 Studio.
 
 ## Leveraging Target Platform in Dev Studio
