@@ -17,7 +17,7 @@ Roles for your site by selecting that Role under the *Invite to Role* heading.
 Once you've added all the Users you want to invite and have selected their
 Roles, click the *Send Invitations* button to invite them. For more information
 on roles, see the 
-[Roles and Permissions documentation](/discover/portal/-/knowledge_base/7-1/roles-and-permissions). 
+[Roles and Permissions documentation](/discover/portal/-/knowledge_base/7-2/roles-and-permissions). 
 
 The Site invitation shows up under the *Requests List* tab on the User's 
 *Notifications* page. The User can then choose to *Confirm* or *Ignore* the 
