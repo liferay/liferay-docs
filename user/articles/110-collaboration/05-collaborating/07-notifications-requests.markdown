@@ -9,7 +9,7 @@ To access notifications and requests, click your user menu and select
 where all your notifications appear. Click the *Requests List* tab to view and 
 manage your requests. 
 
-![Figure 2: The *Notifications List* section displays all your notifications in a paginated list.](../../../images/mentions-notifications-list.png)
+![Figure 2: The *Notifications List* section displays all your notifications in a paginated list.](../../../images/mentions-notification-list.png)
 
 ## Managing Notifications [](id=managing-notifications)
 
@@ -40,10 +40,10 @@ read/unread, or delete the notification.
 
 ### Managing Multiple Notifications [](id=managing-multiple-notifications)
 
-You can also manage multiple notifications at once. Select the checkbox next to
-notifications you want to manage and choose an option from the Management Bar.
-Select the checkbox above the notifications list to select all notifications on
-the current page. The Management Bar shows three actions for selected
+You can also manage multiple notifications at once. Select the checkbox next to 
+notifications you want to manage and choose an option from the Management Bar. 
+Select the checkbox above the notifications list to select all notifications on 
+the current page. The Management Bar shows three actions for selected 
 notifications: 
 
 -   Mark as Read 
