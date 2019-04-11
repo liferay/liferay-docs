@@ -1,8 +1,7 @@
 # Managing Organizations [](id=managing-organizations)
 
-If you're not entirely sure what Organizations are or whether you need them in
-your portal, start
-[here](/discover/deployment/-/knowledge_base/7-0/organizations). 
+If you're not entirely sure what Organizations are or whether you need them, start
+[here](/docs/7-2/deploy/-/knowledge_base/deploy/organizations). 
 This article gets right to the practical stuff: how to manage Organizations.
 
 ## Adding Organizations [](id=adding-organizations)
