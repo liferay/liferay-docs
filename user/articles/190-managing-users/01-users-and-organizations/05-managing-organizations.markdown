@@ -1,10 +1,14 @@
-# Managing Organizations [](id=managing-organizations)
+---
+header-id: managing-organizations
+---
+
+# Managing Organizations
 
 If you're not entirely sure what Organizations are or whether you need them, start
 [here](/docs/7-2/deploy/-/knowledge_base/deploy/organizations). 
 This article gets right to the practical stuff: how to manage Organizations.
 
-## Adding Organizations [](id=adding-organizations)
+## Adding Organizations
 
 Add an Organization (perhaps start by adding the *Physical Plant Department*
 organization to the Lunar Resort): 
@@ -26,23 +30,19 @@ about the Organization. Organizations can have associated multiple email
 addresses, postal addresses, web sites, and phone numbers. The Services link can
 be used to indicate the operating hours of the Organization, if any.
 
-+$$$
+| **Tip:** After creating an Organization, assign the desired user to the
+| Organization Owner Role. The Organization Owner can do everything that an
+| organization Administrator can. In addition to their full administrative rights
+| within the Organization, they can do these things:
+| 
+| - Appoint other Users to be Organization Administrators
+| - Appoint other Users to be Organization Owners
+| - Remove the memberships of other Organization Administrators or Owners
+| 
+| Organization Administrators can't make these Role assignments and can't manage
+| the memberships of other Organization Administrators or Owners.
 
-**Tip:** After creating an Organization, assign the desired user to the
-Organization Owner Role. The Organization Owner can do everything that an
-organization Administrator can. In addition to their full administrative rights
-within the Organization, they can do these things:
-
-- Appoint other Users to be Organization Administrators 
-- Appoint other Users to be Organization Owners
-- Remove the memberships of other Organization Administrators or Owners
-
-Organization Administrators can't make these Role assignments and can't manage
-the memberships of other Organization Administrators or Owners.
-
-$$$
-
-## Editing Organizations [](id=editing-organizations)
+## Editing Organizations
 
 To edit an Organization, go to the Users and Organizations section of the
 Control Panel and click the *Organizations* tab. All active Organizations are
@@ -84,7 +84,7 @@ If you click the Organization name you can view both a list of Users who are
 members of this Organization and a list of all the sub-Organizations of this
 Organization.
 
-## Organization Types [](id=organization-types)
+## Organization Types
 
 By default, @product@ only includes the *Organization* type. Configure the
 existing type or add additional types using the aptly named Organization Type
