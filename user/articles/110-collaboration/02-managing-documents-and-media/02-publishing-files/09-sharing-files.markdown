@@ -25,7 +25,7 @@ time and effort for everyone. After all, sharing is caring.
 | [Configuring Sharing](/discover/portal/-/knowledge_base/7-2/configuring-sharing). 
 
 When you share a file, you grant some of your own permissions for that file to 
-the receiving user. There are, however, some important restrictions on this: 
+the receiving user. However, there are some important caveats: 
 
 -   You can only grant View, Comment, or Update permissions. For example, you 
     can't grant Delete or Override Checkout permissions even if you have those 
@@ -34,6 +34,13 @@ the receiving user. There are, however, some important restrictions on this:
     grant Update permission if you only have View and Comment permissions on the 
     file. 
 -   You must grant at least View permission. 
+-   Traditional role-based permissions always take precedence over sharing 
+    permissions. So although sharing can extend permissions, it can't remove 
+    those granted via roles in the portal. 
+-   By default, the Guest role in the portal has Add Discussion permission. This 
+    overlaps with the Comment permission in sharing. Therefore, all users can 
+    comment on a file regardless of the Comment permission being explicitly 
+    granted via sharing. 
 
 Also note that the receiving user must be part of the same instance, but doesn't 
 have to be a member of the same site. 
