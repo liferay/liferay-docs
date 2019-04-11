@@ -6,9 +6,9 @@ Follow these steps to add a blog entry in Site Administration:
 
 1.  Click the Menu button 
     (![Menu](../../../../images/icon-menu.png)) to open the product menu. Then
-    expand the menu for your site and select *Content* &rarr; *Blogs*. This 
-    takes you to the Blogs app for your site. The *Entries* tab is selected by 
-    default, which lists the site's blog entries. 
+    expand the menu for your site and select *Content & Data* &rarr; *Blogs*. 
+    This takes you to the Blogs app for your site. The *Entries* tab is selected 
+    by default, which lists the site's blog entries. 
 
 2.  Click the *Add* button 
     (![Add](../../../../images/icon-add.png)) to create a new blog entry. This 
@@ -17,9 +17,9 @@ Follow these steps to add a blog entry in Site Administration:
 
     ![Figure 1: This screenshot shows some of the blog entry editor's controls.](../../../../images/blogs-new-entry.png)
 
-3.  The first input field, *Drag \& Drop to Upload*, is for optionally adding
+3.  The first input field, *Drag \& Drop to Upload*, is for optionally adding 
     a cover image for your entry. By default, an 
-    [Asset Publisher](/discover/portal/-/knowledge_base/7-1/publishing-assets)
+    [Asset Publisher](/discover/portal/-/knowledge_base/7-2/publishing-assets)
     shows this cover image as part of the blog entry's abstract. You can insert 
     any image you like in this field, either via drag and drop or the *Select 
     File* button. The latter lets you choose an existing image in the blog, an
@@ -28,13 +28,13 @@ Follow these steps to add a blog entry in Site Administration:
 
     If you select an image from Documents and Media, you can make changes to it
     with the 
-    [Image Editor](/discover/portal/-/knowledge_base/7-1/editing-images). 
+    [Image Editor](/discover/portal/-/knowledge_base/7-2/editing-images). 
     Edits you make are applied automatically to a copy of the image, which you
-    can then use as your cover photo.
+    can then use as your cover photo. 
 
     Upon upload, the image appears in the pane. To center the image, drag it 
     into place. You can also add a caption. If you want to select a different 
-    image, click the *Change* icon
+    image, click the *Change* icon 
     (![Change](../../../../images/icon-change.png)). Clicking the trash 
     can icon removes the image from the blog entry. 
 
@@ -47,11 +47,11 @@ Follow these steps to add a blog entry in Site Administration:
     editing controls appears. This keeps your canvas uncluttered so you can
     focus on writing. You can also add images, videos, and tables in your blog
     entry's content. See 
-    [Using the Blog Entry Editor](/discover/portal/-/knowledge_base/7-1/using-the-blog-entry-editor)
+    [Using the Blog Entry Editor](/discover/portal/-/knowledge_base/7-2/using-the-blog-entry-editor)
     for instructions on creating your blog entry's content. 
 
 6.  Expand the *Categorization* panel and associate your blog entry with 
-    [tags and/or categories](/discover/portal/-/knowledge_base/7-1/organizing-content-with-tags-and-categories). 
+    [tags and/or categories](/discover/portal/-/knowledge_base/7-2/organizing-content-with-tags-and-categories). 
     Although this is optional, it improves search results for blog entries and 
     gives your users more navigation options. For example, you can add the Tags
     Navigation app to another column on your blogs page, which lets users browse 
@@ -63,7 +63,7 @@ Follow these steps to add a blog entry in Site Administration:
     might want to write a blog entry about a discussion that happened on the 
     forums. To link those two assets together, select the forum thread under 
     Related Assets. For more information, see the 
-    [related assets documentation](/discover/portal/-/knowledge_base/7-1/defining-content-relationships).
+    [related assets documentation](/discover/portal/-/knowledge_base/7-2/defining-content-relationships).
 
 8.  Expand the *Configuration* panel if you want to customize your blog entry's 
     URL, abstract, or display date. You can also set whether to allow pingbacks 
@@ -94,7 +94,17 @@ Follow these steps to add a blog entry in Site Administration:
 
     ![Figure 2: When creating a blog entry, the Configuration panel lets you control when and where the blog entry appears, and what to use for the entry's abstract.](../../../../images/blog-entry-configuration.png)
 
-9.  Expand the *Permissions* panel to customize your blog entry's permissions.
+9.  Expand the *Display Page Template* if you want to select a display page 
+    template for your blog entry. The following options are available: 
+
+    **Default Display Page Template:** Use the default display page template.
+
+    **Specific Display Page Template:** Click the *Select* button to select the 
+    display page template you want to use. 
+
+    **No Display Page Template:** Do not use a display page template. 
+
+10. Expand the *Permissions* panel to customize your blog entry's permissions.
     Use the *Viewable by* selector to set who can view the blog entry: 
 
     -   **Anyone (Guest Role):** Anyone, including guests, can view the entry. 
