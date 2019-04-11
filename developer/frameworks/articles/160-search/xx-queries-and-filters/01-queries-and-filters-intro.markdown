@@ -58,7 +58,7 @@ TODO: Brief desription for each.
 
 Term queries look for exact matching on keyword fields and indexed terms.
 
-    ```java
+```java
     ExistsQuery
     FuzzyQuery
     IdsQuery
@@ -70,7 +70,7 @@ Term queries look for exact matching on keyword fields and indexed terms.
     TermRangeQuery
     TermsSetQuery
     WildcardQuery
-    ```
+```
 
 * Wildcard Query: Wildcard (`*` and `?`) matching on keyword fields and indexed terms
 * Fuzzy Query: Scrambles characters in input before matching
@@ -85,13 +85,13 @@ TODO: Cover the rest of Term Queries
 TODO: Intro.
 -->
 
-    ```java
+```java
     BooleanQuery
     BoostingQuery
     ConstantScoreQuery
     DisMaxQuery
     FunctionScoreQuery
-    ```
+```
 
 * Boolean Query: Allows a combo of several query types. Individual queries are
   as clauses with `SHOULD` | `MUST` | `MUST_NOT` | `FILTER`
@@ -107,9 +107,9 @@ TODO: Cover the rest of Compound Queries
 TODO: Intro.
 -->
 
-    ```java
+```java
     NestedQuery
-    ```
+```
 <!--
 TODO: Cover Joining Queries
 -->
@@ -120,13 +120,13 @@ TODO: Cover Joining Queries
 TODO: Intro.
 -->
 
-    ```java
+```java
     GeoBoundingBoxQuery
     GeoDistanceQuery
     GeoDistanceRangeQuery
     GeoPolygonQuery
     GeoShapeQuery
-    ```
+```
 
 <!--
 TODO: Cover Geo Queries
@@ -138,11 +138,11 @@ TODO: Cover Geo Queries
 TODO: Intro.
 -->
 
-    ```java
+```java
     MoreLikeThisQuery
     PercolateQuery
     ScriptQuery
-    ```
+```
 <!--
 TODO: Cover Specialized Queries
 -->
@@ -238,9 +238,9 @@ there are a couple usages in Liferay's own code: for example the new
 constructs a complex search request containing a `TermsQuery` using the new
 `Queries` API:
 
-    ```java
+```java
     TermsQuery termsQuery = _queries.terms("field");
-    ```
+```
 
 ## External References
 * <https://www.elastic.co/guide/en/elasticsearch/reference/6.5/query-dsl.html>
@@ -257,4 +257,3 @@ API (FQCN) | Provided by Artifact | Notes |
 -----------|:--------------------:|:--------:|
 `com.liferay.portal.search.query.*` | com.liferay.portal.search.api | The whole ["query" package](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/query) is new as of @product_ver@
 `com.liferay.portal.search.filter.*` | com.liferay.portal.search.api | The whole ["filter" package](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/filter) is new as of @product_ver@
-
