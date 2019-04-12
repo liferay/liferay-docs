@@ -6,23 +6,22 @@ header-id: setting-up-liferay-as-a-saml-service-provider
 
 Many of these steps are similar to configuring @product@ as a SAML Identity
 Provider. As a reminder, a single @product@ installation can be configured as a
-SAML Identify Provider *or* as a SAML Service Provider but not as both. If you
-already set up one @product@ installation as a SAML Identity Provider, use a
-*different* @product@ installation as a SAML Service Provider.
+SAML Identify Provider *or* as a SAML Service Provider but not as both. If your
+@product@ installation is already a SAML Identity Provider, use a *different*
+@product@ installation as a SAML Service Provider.
 
-| **Note:** If you're using a third party IdP with @product@ as the SP, all
+| **Note:** If you have a third party IdP with @product@ as the SP, all
 | messages coming from the IdP must be signed. If they're not, an error message
 | appears and communication between the IdP and @product@ fails.
 
-1.  Install the Liferay SAML 2.0 Provider app. To confirm that the app was
-    successfully deployed, look for the *SAML Admin* entry in the Configuration
-    section of the Control Panel.
+1.  Install the Liferay SAML 2.0 Provider app. To confirm successful deployment,
+    look for the *SAML Admin* entry in the Configuration section of the Control
+    Panel.
 
 2.  To begin configuring @product@ to use SAML, you must select a SAML role for
-    @product@ and you need to choose an entity ID. Select the *Service
-    Provider* SAML role. Enter *liferaysamlsp* if you're setting up an example
-    @product@ installation. Alternatively, choose your own entity ID. Then
-    click *Save* and a new section entitled Certificate and Private Key appears.
+    @product@ and choose an entity ID. Select the *Service Provider* SAML role.
+    Choose your own entity ID. Then click *Save* and a new section entitled
+    Certificate and Private Key appears.
 
 3.  The Certificate and Private Key section is for creating a keystore for SAML.
     Click *Create Certificate* and enter the following information:
@@ -46,53 +45,50 @@ already set up one @product@ installation as a SAML Identity Provider, use a
     created a keystore. After you create a keystore, additional options
     appear. There are three tabs:
 
-	- *General*:
-    This tab enables or disables SAML IdP and manages the required keystore.
+	**General**: This tab enables or disables SAML IdP and manages the required keystore.
     
-    - *Service Provider*: This tab manages basic and advanced configurations for
-      the SP.
+    **Service Provider**: This tab manages basic and advanced configurations for
+    the SP.
  
-    - *Identity Provider Connection*: This tab manages connections to the IdP.
-      There can be only one IdP connection.
+    **Identity Provider Connection**: This tab manages connections to the IdP.
+    There can be only one IdP connection.
 
     Note that these options are different than if you were setting up @product@ as
     an Identity Provider.
 
-5.  Next, you need to configure an Identity Provider connection. Click on the
-    *Identity Provider Connection* tab. Enter a name for the Identity Provider,
+5.  You can also generate an encryption certificate. This is a separate key for
+    encrypting assertions. If you want assertions encrypted, you must generate
+    a key for this. The procedure is exactly the same as generating your
+    certificate in step 3 above. 
+
+5.  Next, you must configure an Identity Provider connection. Click on the
+    *Identity Provider Connections* tab. Enter a name for the Identity Provider,
     enter its entity ID, and enter its metadata URL. If you have already
     followed the previous instructions and configured a separate @product@
     installation as an Identify provider, you'd enter the following information:
 
     - Name: *Liferay IdP*
-    - Entity ID: *liferaysamlidp*
-	- Clock Skew
-	- Force Authn
+    - Entity ID: [ID of IdP]
+	- Clock Skew: Set the tolerance in milliseconds between SP and IdP.
+	- Force Authn: Whether the IdP should force reauthentication regardless of
+      context.
     - Metadata URL: http://localhost:8080/c/portal/saml/metadata (test this URL
       first)
-	- Name Identifier Format
-	- Attribute Mapping
-	- Keep Alive URL
+	- Name Identifier Format: See settings. 
+	- Attribute Mapping: See settings. 
+	- Keep Alive URL: See settings. 
 
-    **Important**: The Liferay SAML 2.0 Provider app supports using *either*
+    **Important**: The Liferay SAML 3.0 Provider app supports using *either*
     a URL to a SAML IdP metadata file *or* an actual (uploaded) SAML metadata
-    XML file. The value entered in the *Metadata URL* field will only be
-    persisted to the database when there is one entered metadata URL and there
-    is no specified metadata XML file. Otherwise, @product@ keeps the original
-    metadata URL in the database. This behavior ensures that once a metadata URL
-    has been specified, there will always be a metadata URL saved in the
-    database. This way, if a portal administrator forgets the previously entered
-    metadata URL or its format, he or she can simply look at the displayed
-    metadata URL and either choose to modify the displayed metadata URL or to
-    overwrite the previously saved metadata URL by specifying a metadata XML
-    file.
-
-    Currently, the SAML Provider app does not provide a way to "clear"
-    the SAML IdP metadata URL or metadata XML file fields using the Control
-    Panel UI. If you really need to clear these fields, it's possible (but not
-    recommended) to delete the contents of the SAML IdP metadata URL and
-    metadata XML file columns of the `SamlSpIdpConnection` table of @product@'s
-    database.
+    XML file. The value entered in the *Metadata URL* field is persisted to the
+    database only when there a metadata URL and there is no specified metadata
+    XML file. Otherwise, @product@ keeps the original metadata URL in the
+    database. This behavior ensures that once a metadata URL has been specified,
+    there is always a metadata URL saved in the database. This way, if a portal
+    administrator forgets the previously entered metadata URL or its format, he
+    or she can look at the displayed metadata URL and choose to modify the
+    displayed metadata URL or overwrite the previously saved metadata URL by
+    specifying a metadata XML file.
 
 6.  Finally, after you save your certificate and private key information and
     configure an Identity Provider connection, check the *Enabled* box at the top
@@ -101,6 +97,11 @@ already set up one @product@ installation as a SAML Identity Provider, use a
 Note that the SAML Service Provider session is tied to the normal session on
 the application server. Session expiration on the application server terminates
 the session on the Service Provider but does not initiate single logout. 
+
+You can add multiple IdP connections. To add another Identity Provider, click
+*Add Identity Provider* again and enter the details for the other provider. When
+users log in, they are asked to choose an identity provider, so be sure to name
+the providers so users can recognize them. 
 
 ## Checkpoint
 
