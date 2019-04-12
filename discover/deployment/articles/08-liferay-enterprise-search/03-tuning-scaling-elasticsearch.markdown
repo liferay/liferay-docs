@@ -48,4 +48,4 @@ and
 Then you'll be able to predict usage patterns for your @product@ indexes and
 design the optimally scaled and tuned cluster.
 
-Always must perform tests to ensure optimal configurations. 
+Always perform tests to ensure optimal configurations. 
