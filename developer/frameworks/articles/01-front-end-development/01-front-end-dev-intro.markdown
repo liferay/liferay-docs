@@ -26,10 +26,10 @@ The Liferay JS Bundle Toolkit(the
 [JS Portlet Extender](https://web.liferay.com/marketplace/-/mp/application/115542926), 
 [Liferay Bundle Generator](https://www.npmjs.com/package/generator-liferay-bundle), 
 and 
-[`liferay-npm-bundler`](/developer/reference/-/knowledge_base/7-2/liferay-npm-bundler)
+[`liferay-npm-bundler`](/docs/7-2/reference/-/knowledge_base/reference/liferay-npm-bundler)
 ) has the tools you need to create and develop JavaScript portlets with pure 
 JavaScript tooling. You can use the 
-[`liferay-npm-bundler`](/developer/reference/-/knowledge_base/7-2/liferay-npm-bundler)
+[`liferay-npm-bundler`](/docs/7-2/reference/-/knowledge_base/reference/liferay-npm-bundler)
 to bundle npm packages in your applications. It even has several presets for 
 common module types (AMD, React, Angular JS,  etc.) to save you time. It creates 
 an OSGi bundle for you, extracts all npm dependencies, and transpiles your code 
@@ -68,14 +68,14 @@ has all the tools you need to create and develop themes, but you can use the
 tools you prefer.
 
 From the 
-[Theme Builder Gradle Plugin](/developer/reference/-/knowledge_base/7-2/theme-builder-gradle-plugin), 
+[Theme Builder Gradle Plugin](/docs/7-2/reference/-/knowledge_base/reference/theme-builder-gradle-plugin), 
 to the 
-[Liferay Theme Generator](/developer/reference/-/knowledge_base/7-2/installing-the-theme-generator-and-creating-a-theme), 
+[Liferay Theme Generator](/docs/7-2/reference/-/knowledge_base/reference/installing-the-theme-generator-and-creating-a-theme), 
 to 
 [@ide@](/developer/frameworks/-/knowledge_base/7-2/creating-themes-with-liferay-ide), 
 to 
-[Blade CLI](/developer/reference/-/knowledge_base/7-2/blade-cli)'s 
-[Theme Template](/developer/reference/-/knowledge_base/7-2/theme-template), you 
+[Blade CLI](/docs/7-2/reference/-/knowledge_base/reference/blade-cli)'s 
+[Theme Template](/docs/7-2/reference/-/knowledge_base/reference/theme-template), you 
 can choose the development tools you like best, so you can focus on creating 
 a well designed theme. 
 

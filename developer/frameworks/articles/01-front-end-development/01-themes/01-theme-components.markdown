@@ -127,7 +127,7 @@ The following extensions and mechanisms are available for themes:
 - **Themelet:** Small, extendable, and reusable pieces of code containing CSS
   and JavaScript. They can be shared with other developers to provide common
   components for themes. See 
-  [Generating Themelets](/developer/reference/-/knowledge_base/7-2/creating-themelets-with-the-themes-generator)
+  [Generating Themelets](/docs/7-2/reference/-/knowledge_base/reference/creating-themelets-with-the-themes-generator)
   for more information.
 
 ## Portlet Customizations and Extensions
@@ -156,5 +156,5 @@ You can customize portlets with these mechanisms and extensions:
 ## Related Topics
 
 - [Understanding the Page Layout](/developer/frameworks/-/knowledge_base/7-2/understanding-the-page-layout)
-- [Installing the Theme Generator and Creating a Theme](/developer/reference/-/knowledge_base/7-2/installing-the-theme-generator-and-creating-a-theme)
+- [Installing the Theme Generator and Creating a Theme](/docs/7-2/reference/-/knowledge_base/reference/installing-the-theme-generator-and-creating-a-theme)
 - [Developing Themes](/developer/frameworks/-/knowledge_base/7-2/developing-themes)

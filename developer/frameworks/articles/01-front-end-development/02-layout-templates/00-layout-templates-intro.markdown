@@ -15,9 +15,9 @@ pages:
 If the default layouts don't work for your site, you can create your own layout
 template by following the articles listed below: 
 
-- [Create the layout template](/developer/reference/-/knowledge_base/7-2/creating-layout-templates-with-the-themes-generator)
-- [Create the layout template thumbnail preview](/developer/frameworks/-/knowledge_base/7-2/creating-custom-layout-template-thumbnail-previews)
-- [Bundle the layout template with a theme](/developer/frameworks/-/knowledge_base/7-2/including-layout-templates-with-a-theme)
+- [Create the layout template](/docs/7-2/reference/-/knowledge_base/reference/creating-layout-templates-with-the-themes-generator)
+- [Create the layout template thumbnail preview](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-custom-layout-template-thumbnail-previews)
+- [Bundle the layout template with a theme](/docs/7-2/frameworks/-/knowledge_base/frameworks/including-layout-templates-with-a-theme)
 
 Layout Templates specify a number of rows and columns for the page. The rows 
 and columns dictate where apps (and fragments) can be placed on the page. Layout 

@@ -61,7 +61,7 @@ The page layout within the `#content` Section is determined by the
 Several layout templates are included out-of-the-box. You can also 
 [create custom layout templates manually](/developer/frameworks/-/knowledge_base/7-2/creating-layout-templates-manually) 
 or with the 
-[Liferay Theme Generator's layout sub-generator](/developer/reference/-/knowledge_base/7-2/creating-layout-templates-with-the-themes-generator). 
+[Liferay Theme Generator's layout sub-generator](/docs/7-2/reference/-/knowledge_base/reference/creating-layout-templates-with-the-themes-generator). 
 
 Layout templates can be pre-configured depending on the 
 [page type](/discover/portal/-/knowledge_base/7-2/page-types-and-templates) 
@@ -102,6 +102,6 @@ for more information on customizing these menus.
 
 ## Related Topics
 
-- [Creating Layout Templates with the Layouts Sub-generator](/developer/reference/-/knowledge_base/7-2/creating-layout-templates-with-the-themes-generator)
+- [Creating Layout Templates with the Layouts Sub-generator](/docs/7-2/reference/-/knowledge_base/reference/creating-layout-templates-with-the-themes-generator)
 - [Bundling Layout Templates with a Theme](/developer/frameworks/-/knowledge_base/7-2/including-layout-templates-with-a-theme)
-- [Installing the Liferay Theme Generator and Creating a Theme](/developer/reference/-/knowledge_base/7-2/installing-the-theme-generator-and-creating-a-theme)
+- [Installing the Liferay Theme Generator and Creating a Theme](/docs/7-2/reference/-/knowledge_base/reference/installing-the-theme-generator-and-creating-a-theme)
