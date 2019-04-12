@@ -54,22 +54,16 @@ renderer factory.
 3.  Create a constructor for the factory class that presets private attributes
     of the factory.
 
-        public BlogsEntryAssetRendererFactory() {
-            setClassName(BlogsEntry.class.getName());
-            setCategorizable(true);
-            setLinkable(true);
-            setPortletId(BlogsPortletKeys.BLOGS);
-            setSearchable(true);
-            setSelectable(true);
-        }
+        	public BlogsEntryAssetRendererFactory() {
+                setClassName(BlogsEntry.class.getName());
+                setLinkable(true);
+                setPortletId(BlogsPortletKeys.BLOGS);
+                setSearchable(true);
+            }
 
     - *linkable*: other assets can select blogs assets as their related
       assets.
-    - *categorizable*: blogs can be used to delimit the scope of a
-      vocabulary from the Categories Administration.
     - *searchable*: blogs can be found when searching for assets.
-    - *selectable*: blogs can be selected when choosing assets to display in
-      the Asset Publisher.
 
     Setting the class name and portlet ID links the asset renderer factory to
     the entity.
