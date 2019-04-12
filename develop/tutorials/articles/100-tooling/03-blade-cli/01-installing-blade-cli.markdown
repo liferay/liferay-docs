@@ -51,7 +51,8 @@ Follow the steps below to download and install Blade CLI:
 5.  Click *Next* to begin installing Blade CLI/Liferay Workspace on your
     computer.
 
-That's it! Blade CLI is installed on your machine! If you specified a location
+That's it! Blade CLI is installed on your machine! Close and reopen your terminal
+to reload environment variables. If you specified a location
 to initialize a Liferay Workspace folder, that is also available.
 
 Blade CLI offers many
