@@ -40,8 +40,16 @@ find these settings to configure. The values configured here provide the default
 values for all portal instances. Enter the in the same format as you would when
 initializing a Java primitive type with a literal value.
 
++$$$
+
+**Note**: OpenAM 12 and below work with @product@, but are at end of life.
+Because of this, we recommend only OpenAM 13 for production use. OpenAM 13 requires @product@ Fix Pack 80+ patch level.
+
+$$$
+
 Property Label | Property Key | Description | Type
 ----- | ----- | ----- | -----
+**Version** | `version` | OpenAM version to use (12 and below or 13), available in @product@ Fix Pack 80+ | `String`
 **Enabled** | `enabled` | Check this box to enable OpenAM authentication. Note that OpenAM will work only if LDAP authentication is also enabled and @product@'s authentication type is set to screen name. | `boolean`
 **Import from LDAP** | `importFromLDAP` | If this is checked, users authenticated from OpenAM that do not exist in @product@ are imported from LDAP. LDAP must be enabled. | `boolean`
 **Login URL** | `loginURL` | The URL to the login page of the OpenAM server | `String`
