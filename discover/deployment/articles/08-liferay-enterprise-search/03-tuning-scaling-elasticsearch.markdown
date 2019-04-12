@@ -36,33 +36,16 @@ these values.
 
 ## Scaling Your Deployment [](id=scaling-your-deployment)
 
-For deployments with less than 1,000 users, you may choose to deploy the 
-Elasticsearch JVM and @product@ JVM on the same physical or virtual machines. 
-With this configuration, the JVMs share the same CPU and memory resources. You 
-should therefore allocate at least 8 vCPUs/cores and 16 GB of memory. You must 
-also properly monitor resources to avoid over-allocating between the @product@ 
-and Elasticsearch JVMs. For most deployments, we recommend deploying two 
-Elasticsearch servers with at least four vCPUs/core. This is sufficient if the 
-search index doesn't exceed 50 GB. The Elasticsearch JVMs should be configured 
-to hold one index shard and one index replica. 
+Proper scaling and tuning of an Elasticsearch cluster primarily depends on the
+type of indexes it holds and how they're intended to be used. Since @product@ is
+a flexible development platform, no two applications index and search for data
+in exactly the same way. Read the 
+[definitive Elasticsearch guide](https://www.elastic.co/guide/en/elasticsearch/guide/master/distributed-cluster.html),
+and understand the differences between 
+[indexing-intensive applications](https://www.elastic.co/guide/en/elasticsearch/reference/master/tune-for-indexing-speed.html)
+and 
+[search-intensive applications](https://www.elastic.co/guide/en/elasticsearch/reference/master/tune-for-search-speed.html).
+Then you'll be able to predict usage patterns for your @product@ indexes and
+design the optimally scaled and tuned cluster.
 
-If you are planning a more search-intensive site (e.g., 50,000 users with 
-250,000 documents), we recommend a three-server cluster. In such a configuration, 
-you should have two Elasticsearch JVMs on each server: a *master-eligible* JVM and 
-a *data* JVM. A master-eligible JVM handles clustering operations. This includes 
-determining which JVM holds which shard. A data JVM holds the shards that 
-contain the indexed documents. 
-
-A dedicated master-eligible Elasticsearch JVM requires only 1 GB of heap. You 
-should size a dedicated data JVM according to the 
-[guidelines](https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-node.html) 
-in Elastic's documentation. 
- 
-As the amount of indexed data and number of search requests grow, you may add
-additional data nodes as follows: 
-
-1. Each shard should not exceed 50 GB.
-2. Each data JVM or data and master JVM should not exceed 31 GB heap.
-
-Keep in mind that you should only use these guidelines for initial planning. You 
-must perform tests to ensure optimal configurations. 
+Always must perform tests to ensure optimal configurations. 
