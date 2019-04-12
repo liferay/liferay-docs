@@ -21,7 +21,6 @@ This section covers these topics:
 - Creating thumbnail previews for your theme
 - Creating color schemes for your theme
 - Making configurable theme settings
-- Using @product@ macros in your theme
 
 While developing your theme, you may notice that your theme's CSS and JS files 
 are minified. This optimizes performance, but it can make debugging difficult 
