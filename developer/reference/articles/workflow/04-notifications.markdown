@@ -1,4 +1,10 @@
+---
+header-id: workflow-notifications
+---
+
 # Workflow Notifications
+
+[TOC levels=1-4]
 
 While an asset is in a workflow, relevant Users should be notified about certain
 events, like when a review task is completed. Any workflow node with an

@@ -1,4 +1,10 @@
+---
+header-id: making-configurable-theme-settings
+---
+
 # Making Configurable Theme Settings
+
+[TOC levels=1-4]
 
 If you have an aspect of a theme that you want an Administrator to configure 
 without having to manually update and redeploy the theme, you can create a 

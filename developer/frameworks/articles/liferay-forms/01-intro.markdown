@@ -2,7 +2,7 @@
 header-id: liferay-forms
 ---
 
-# Liferay Forms [](id=liferay-forms)
+# Liferay Forms
 
 [TOC levels=1-4]
 

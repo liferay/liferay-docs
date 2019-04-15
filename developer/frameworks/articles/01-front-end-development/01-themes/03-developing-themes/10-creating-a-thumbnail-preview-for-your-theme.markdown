@@ -1,4 +1,10 @@
+---
+header-id: creating-a-thumbnail-preview-for-your-theme
+---
+
 # Creating a Thumbnail Preview for Your Theme
+
+[TOC levels=1-4]
 
 When you apply a theme to your site pages, you have to choose from the list of 
 available themes in the site selector. The only identification for each theme is 

@@ -1,4 +1,10 @@
+---
+header-id: workflow-task-nodes
+---
+
 # Workflow Task Nodes
+
+[TOC levels=1-4]
 
 Task nodes are fundamental parts of a workflow definition. When you define your
 organization's business processes and design corresponding workflows, you likely

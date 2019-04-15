@@ -1,4 +1,10 @@
+---
+header-id: creating-color-schemes-for-your-theme
+---
+
 # Creating Color Schemes for Your Theme
+
+[TOC levels=1-4]
 
 Color schemes give your theme additional color palettes. With just a small 
 amount of changes to your theme's CSS, you can subtly change the look of your 

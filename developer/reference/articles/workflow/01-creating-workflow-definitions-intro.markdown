@@ -1,4 +1,10 @@
+---
+header-id: crafting-xml-workflow-definitions
+---
+
 # Crafting XML Workflow Definitions
+
+[TOC levels=1-4]
 
 You don't need a fancy visual designer to build workflows. To be clear, Kaleo
 Designer may make you a faster workflow designer through its graphical
