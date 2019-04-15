@@ -18,7 +18,7 @@ generate a Bean Portlet project and deploy your Bean Portlet to @product@.
         -DgroupId=com.mycompany \
         -DartifactId=com.mycompany.demo.bean.portlet
 
-    Here's the resulting folder structure for a portlet class named `Foo`:
+    Here's the resulting folder structure for a Bean Portlet class named `Foo`:
 
     -   `com.mycompany.demo.bean.portlet` &rarr; Arbitrary project name.
         -   `src/main/java/`
@@ -26,7 +26,7 @@ generate a Bean Portlet project and deploy your Bean Portlet to @product@.
                 constants.
             -   `com.mycompany.portlet.FooPortlet` &rarr; Bean Portlet class.
         -   `src/main/webapp/WEB-INF/`
-            -   `jsp/view.jsp` &rarr; Default template.
+            -   `jsp/view.jsp` &rarr; Default view template.
             -   `beans.xml` &rarr; Signals CDI to scan the portlet for 
                 annotations.
             
@@ -81,7 +81,7 @@ generate a Bean Portlet project and deploy your Bean Portlet to @product@.
 
 4.  Update your render method `doView` (it's annotated with
     `@RenderMethod`) as you like. It displays the template
-    `/WEB-INF/jsp/view.jsp` by default. 
+    `WEB-INF/jsp/view.jsp` by default. 
 
 5.  Add any other logic you like to your portlet class. 
 
@@ -103,7 +103,7 @@ generate a Bean Portlet project and deploy your Bean Portlet to @product@.
     INFO  [main][PortletHotDeployListener:181] 1 bean portlets for com.mycompany.demo.bean.portlet are available for use
 
 The Bean Portlet is now available in the @product@ UI. The example portlet is in
-the Widget category you assigned it.
+the Widget category you assigned it. 
 
 ![Figure 1: The Foo portlet prints the message returned from `doView` method and shows the included JSP's contents.](../../../images/portlet-3-portlet.png)
 

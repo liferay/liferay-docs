@@ -19,18 +19,16 @@ anything. Your portlet descriptors declare them to be portlets. This gives you
 flexibility to develop portlets the way you like. 
 
 Configuration annotations, phase method annotations, and CDI are some of the
-Portlet 3.0 features these Bean Portlet articles demonstrate. They're described
-here. 
+Portlet 3.0 features you'll see demonstrated. 
 
 ## Portlet Configuration Annotations
 
 The
 [`@PortletConfiguration`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/annotations/PortletConfiguration.html)
-annotation lets you describe your portlet to the portlet container. You can use
-the annotation instead of or in addition to the standard `portlet.xml`
-descriptor file. The `@PortletConfiguration` annotation allows you to stay in
-the portlet code instead of bouncing to a separate file to describe your
-portlet. 
+annotation describes your portlet to the portlet container. You can use the
+annotation instead of or in addition to the standard `portlet.xml` descriptor
+file. The `@PortletConfiguration` annotation allows you to describe your portlet
+in the portlet code instead of a separate file. 
 
 | **Note:** You can configure Bean Portlets using configuration annotations, 
 | descriptors, or both. If using annotations and descriptors, the descriptors 
@@ -64,22 +62,23 @@ public class FooPortlet {
 }
 ```
 
-The `@PortletConfiguration` annotation's `portletName` attribute is where you
-name the portlet. It's the only required attribute. The `title` attribute is
-assigned the key constant `FooPortletKeys.Foo`. You can also specify a title in
-one or more languages using an array of
+`@PortletConfiguration`'s `portletName` attribute names the portlet. It's the
+only required attribute. The `title` attribute typically uses a nicer looking
+name (e.g., uses spaces and capitalization). The `title` above is assigned
+the key constant `FooPortletKeys.Foo`. You can also localize a title to one or
+more languages using an array of
 [`@LocaleString`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/annotations/LocaleString.html)
 annotations, each specifying a different value for the `locale` element. 
 
-The `@LiferayPortletConfiguration` annotation specifies Liferay-specific
-configurable properties. For example, the `portletName` attribute lets you name
-the portlet and the `com.liferay.portlet.display-category` property lets you
-assign the Widget category in which to make the portlet available to users.
-Setting the `com.liferay.portlet.instanceable=true` enables adding multiple
-instances of the portlet to a page. 
+The `@LiferayPortletConfiguration` annotation specifies additional
+Liferay-specific configuration properties. For example, the
+`com.liferay.portlet.display-category` property lets you assign the Widget
+category where users will find your portlet. Setting the
+`com.liferay.portlet.instanceable=true` enables adding multiple instances of the
+portlet to a page. 
 
 | **Note:** The `@PortletConfiguration` and `@LiferayPortletConfiguration` 
-| annotations are synonymous with the `javax.portlet.*` and
+| annotations are respectively synonymous with the `javax.portlet.*` and
 | `com.liferay.portlet.*` properties in the OSGi `@Component` annotation (used 
 | in
 | [Liferay MVC Portlets](/docs/7-2/appdev/-/knowledge_base/appdev/creating-an-mvc-portlet),
@@ -91,12 +90,15 @@ instances of the portlet to a page.
 | `@PortletConfiguration` or `@LiferayPortletConfiguration` equivalent setting 
 | for each `@Component` property. 
 
+Once you've configured your portlet, you'll want to declare the objects it uses
+(depends on). 
+
 ## Dependency Injection
 
-Bean Portlets use the `@Inject` CDI annotation to inject dependencies. Just
-apply the annotation to a field you want injected with an object of the
-specified type. This example portlet injects the portlet's `PortletConfig`
-object. 
+Bean Portlets use the `@Inject` CDI annotation (by default) to inject
+dependencies. Just apply the annotation to a field you want injected with an
+object of the specified type. This example portlet injects the portlet's
+`PortletConfig` object. 
 
 ```java
 import javax.inject.Inject;
@@ -119,13 +121,15 @@ public class FooPortlet {
 | [`UserLocalService`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/UserLocalService.html))
 | in your Bean Portlets. 
 
-Portlet 3.0 defines annotations for setting portlet phase methods too. 
+Portlet 3.0 defines annotations for declaring methods that handle portlet
+phases. 
 
 ## Portlet Phase Methods
 
-Phase method annotations can be applied to methods in any class anywhere in the
-portlet WAR. There's no mandatory method naming convention---just apply phase
-annotations to the method you want to invoke. Here are the annotations:
+Phase method annotations let you apply methods for handling a portlet's phases.
+They can be applied to methods in any class anywhere in the portlet WAR. There's
+no mandatory method naming convention---just assign a phase annotation to the
+methods you want to invoke to process the phase. Here are the annotations:
 
 | Phase    | Annotation |
 | ---------------- | ---------- |
@@ -136,8 +140,7 @@ annotations to the method you want to invoke. Here are the annotations:
 | Resource-serving | [`@ServeResourceMethod`](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/annotations/ServeResourceMethod.html) |
 
 The Header phase lets you specify resource dependencies, such as CSS, prior to
-the Render phase. This phase helps you avoid loading the same resources multiple
-times. 
+the Render phase. It helps you avoid loading the same resources multiple times. 
 
 You'll definitely want to define a Render method. For example, here's a method
 invoked during the Render phase:
@@ -154,10 +157,10 @@ public String doView() {
 ```
 
 The `@RenderMethod` annotation sets the method to be invoked during the Render
-phase of portlets matching any of the names listed for the `portletNames`
-attribute.  
+phase of the WAR's portlets matching any of the names listed for the
+`portletNames` attribute. 
 
-The example render method produces this content:
+The example Render method produces this content:
 
 1.  A string greeting `"Hello from " + portletConfig.getPortletName()`
 
@@ -165,5 +168,5 @@ The example render method produces this content:
     `include` attribute references it. 
 
 These are just a few of the Portlet 3.0 features that facilitate developing
-applications. This section covers more Portlet 3.0 features. Creating and
-deploying your own Bean Portlet is next. 
+applications. This section covers more Portlet 3.0 features and Bean Portlet
+demonstrations. Creating and deploying your own Bean Portlet is next. 
