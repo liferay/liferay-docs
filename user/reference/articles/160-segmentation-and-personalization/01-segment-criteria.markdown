@@ -39,74 +39,71 @@ You can also mix operators to create complex cases.
 
 The following are the criteria available for defining user properties:
 
-<strong>Date Modified:</strong> Provides a date picker and an relationship selector to select
+**Date Modified:** Provides a date picker and an relationship selector to select
 the date that user information was last changed
 
-<strong>Email Address:</strong> Provides a text box to enter the email provided in the user's  
+**Email Address:** Provides a text box to enter the email provided in the user's  
 profile.
 
-<strong>First Name:</strong> Enter the first name provided in the user's profile.
+**First Name:** Enter the first name provided in the user's profile.
 
-<strong>Group:</strong> Select a site that the user is a member of.
+**Group:** Select a site that the user is a member of.
 
-<strong>Job Title:</strong> Enter the job title provided in the user's profile.
+**Job Title:** Enter the job title provided in the user's profile.
 
-<strong>Last Name:</strong> Enter the last name provided in the user's profile.
+**Last Name:** Enter the last name provided in the user's profile.
 
-<strong>Role:</strong> Select a role that the user is a member of.
+**Role:** Select a role that the user is a member of.
 
-<strong>Screen Name:</strong> Enter the users' screen name.
+**Screen Name:** Enter the users' screen name.
 
-<strong>Team:</strong> Select a team that the user is a member of.
+**Team:** Select a team that the user is a member of.
 
-<strong>User Group:</strong> Select a user group that the user is a member of.
+**User Group:** Select a user group that the user is a member of.
 
-<strong>User:</strong> Select a specific user from a list.
+**User:** Select a specific user from a list.
 
-<strong>Name:</strong> The full name of the user.
+**Name:** The full name of the user.
 
 ## Organization Properties
 
-<strong>Date Modified:</strong> Enter the date that the organization information was last modified.
+**Date Modified:** Enter the date that the organization information was last modified.
 
-<strong>Name:</strong> Enter the name of the organization.
+**Name:** Enter the name of the organization.
 
-<strong>Name Tree Path:</strong>
+**Hierarchy Path:** Enter the name of an ancestor organization.
 
-<strong>Organization:</strong> Select a specific organization.
+**Organization:** Select a specific organization.
 
-<strong>Parent Organization:</strong> Select a specific parent organization.
+**Parent Organization:** Select a specific parent organization.
 
-<strong>Tree Path: </strong>
-
-<strong>Type:</strong> Select the type of organization, if organization types have been defined.
+**Type:** Select the type of organization, if organization types have been defined.
 
 ## Session Properties
 
-<strong>Browser:</strong> Enter a property from the browser.
+**Browser:** Enter a property from the browser.
 
-<strong>Cookies:</strong> Enter the name of a browser cookie.
+**Cookies:** Enter the name of a browser cookie.
 
-<strong>Device Brand:</strong> Enter the brand name of the device being used.
+**Device Brand:** Enter the brand name of the device being used.
 
-<strong>Device Model:</strong> Enter the model name of the device being used.
+**Device Model:** Enter the model name of the device being used.
 
-<strong>Device Screen Resolution Height:</strong> Enter the screen resolution 
+**Device Screen Resolution Height:** Enter the screen resolution 
 height value.
 
-<strong>Device Screen Resolution Width:</strong> Enter the screen resolution width value.
+**Device Screen Resolution Width:** Enter the screen resolution width value.
 
-<strong>Language:</strong> Select the current Language.
+**Language:** Select the current Language.
 
-<strong>Last Sign In Date:</strong> Select the date of the user's last sign in.
+**Last Sign In Date:** Select the date of the user's last sign in.
 
-<strong>Local Date:</strong> Select the current date where the user is located.
+**Local Date:** Select the current date where the user is located.
 
-<strong>Referrer URL:</strong> Enter the URL that the user last visited.
+**Referrer URL:** Enter the URL that the user last visited.
 
-<strong>Signed In:</strong> Select whether the user is signed in.
+**Signed In:** Select whether the user is signed in.
 
-<strong>URL:</strong> Enter the current URL.
+**URL:** Enter the current URL.
 
-<strong>User Agent:</strong> Enter a User Agent property.
-
+**User Agent:** Enter a User Agent property.
