@@ -10,16 +10,16 @@ header-id: bean-portlet
 [JSR 362](https://jcp.org/en/jsr/detail?id=362)
 Portlet 3.0 standard from the Java Community Process (JCP). Portlet 3.0 features
 a new style of portlet development called "bean portlets" that use Contexts and
-Dependency Injection (CDI). Bean portlets fully leverage
+Dependency Injection (CDI). Bean Portlets fully leverage
 [all the new Portlet 3.0 features](https://portals.apache.org/pluto/v301/v3Features.html)
 in compliant portals, such as Liferay. 
 
-Bean portlets are plain old Java objects (POJOs)---they don't need to extend
+Bean Portlets are plain old Java objects (POJOs)---they don't need to extend
 anything. Your portlet descriptors declare them to be portlets. This gives you
 flexibility to develop portlets the way you like. 
 
 Configuration annotations, phase method annotations, and CDI are some of the
-Portlet 3.0 features these bean portlet articles demonstrate. They're described
+Portlet 3.0 features these Bean Portlet articles demonstrate. They're described
 here. 
 
 ## Portlet Configuration Annotations
@@ -32,7 +32,7 @@ descriptor file. The `@PortletConfiguration` annotation allows you to stay in
 the portlet code instead of bouncing to a separate file to describe your
 portlet. 
 
-| **Note:** You can configure bean portlets using configuration annotations, 
+| **Note:** You can configure Bean Portlets using configuration annotations, 
 | descriptors, or both. If using annotations and descriptors, the descriptors 
 | take precedence. Annotations, however, configure the portlet in its source
 | code. 
@@ -93,7 +93,7 @@ instances of the portlet to a page.
 
 ## Dependency Injection
 
-Bean portlets use the `@Inject` CDI annotation to inject dependencies. Just
+Bean Portlets use the `@Inject` CDI annotation to inject dependencies. Just
 apply the annotation to a field you want injected with an object of the
 specified type. This example portlet injects the portlet's `PortletConfig`
 object. 
@@ -117,7 +117,7 @@ public class FooPortlet {
 | [OSGi Integration](/docs/7-2/frameworks/-/knowledge_base/frameworks/osgi-cdi-integration) 
 | allows you to use OSGi services (e.g., Liferay's 
 | [`UserLocalService`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/UserLocalService.html))
-| in your bean portlets. 
+| in your Bean Portlets. 
 
 Portlet 3.0 defines annotations for setting portlet phase methods too. 
 
@@ -166,4 +166,4 @@ The example render method produces this content:
 
 These are just a few of the Portlet 3.0 features that facilitate developing
 applications. This section covers more Portlet 3.0 features. Creating and
-deploying your own bean portlet is next. 
+deploying your own Bean Portlet is next. 

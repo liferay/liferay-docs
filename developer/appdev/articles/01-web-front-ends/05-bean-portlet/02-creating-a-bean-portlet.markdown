@@ -6,10 +6,10 @@ header-id: creating-a-bean-portlet
 
 [TOC levels=1-4]
 
-Your first step in developing a Bean portlet is to create one. Here you'll
-generate a Bean portlet project and deploy your Bean portlet to @product@. 
+Your first step in developing a Bean Portlet is to create one. Here you'll
+generate a Bean Portlet project and deploy your Bean Portlet to @product@. 
 
-1.  Generate a bean portlet project using a Maven command like this: 
+1.  Generate a Bean Portlet project using a Maven command like this: 
 
         mvn archetype:generate \
         -DarchetypeGroupId=com.liferay \
@@ -32,7 +32,7 @@ generate a Bean portlet project and deploy your Bean portlet to @product@.
             
         - `pom.xml` &rarr; Specifies the project's dependencies and packaging.
 
-    Here's the example bean portlet class:
+    Here's the example Bean Portlet class:
     
     ```java
     package com.mycompany.portlet;
@@ -102,12 +102,12 @@ generate a Bean portlet project and deploy your Bean portlet to @product@.
     ...
     INFO  [main][PortletHotDeployListener:181] 1 bean portlets for com.mycompany.demo.bean.portlet are available for use
 
-The Bean portlet is now available in the @product@ UI. The example portlet is in
+The Bean Portlet is now available in the @product@ UI. The example portlet is in
 the Widget category you assigned it.
 
 ![Figure 1: The Foo portlet prints the message returned from `doView` method and shows the included JSP's contents.](../../../images/portlet-3-portlet.png)
 
-Congratulations on creating and deploying a Bean portlet! 
+Congratulations on creating and deploying a Bean Portlet! 
 
 ## Related Topics 
 
