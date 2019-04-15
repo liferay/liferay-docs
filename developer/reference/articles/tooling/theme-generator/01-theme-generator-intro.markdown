@@ -16,8 +16,8 @@ required versions are listed in the table below:
 
 | Liferay Version | Liferay Theme Generator Version | Command |
 | --- | --- | --- |
-| 6.2 | 8.x.x | `npm install -g generator-liferay-theme@^8.x.x` |
-| 7.0 | 8.x.x or 8.x.x | Same as above or below |
+| 6.2 | 7.x.x | `npm install -g generator-liferay-theme@^7.x.x` |
+| 7.0 | 7.x.x or 8.x.x | Same as above or below |
 | 7.1 | 8.x.x | `npm install -g generator-liferay-theme@^8.x.x` |
 | 7.2 | 9.x.x | `npm install -g generator-liferay-theme |
 
