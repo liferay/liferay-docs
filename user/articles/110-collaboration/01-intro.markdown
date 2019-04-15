@@ -26,5 +26,10 @@ users communicate, produce, and present.
 The guides that follow show you how to leverage these features, and more, in 
 detail. 
 
+![Figure 1: You can use the Documents and Media Library to manage and use documents in the portal.](../../images/dm-images-in-admin.png)
+
+![Figure 2: You can also make your blog entries look great.](../../images/blog-entry-abstract.png)
+
+![Figure 3: The Message Boards app is fantastic for facilitating discussions.](../../images/message-boards-category-threads.png)
 
 
