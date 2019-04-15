@@ -1,19 +1,17 @@
 ---
-header-id: layouts-sub-generator-reference
+header-id: layouts-sub-generator-options
 ---
 
-# Layouts Sub-generator Reference
+# Layouts Sub-generator Options
 
 [TOC levels=1-4]
 
 The 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-themes) 
-provides a Layouts sub-generator that helps automate layout template creation. 
-This tutorial covers how to use this tool to create layout templates.
-
-| **Note:** Run the Layouts sub-generator from the theme's root folder to
-| bundle it with the theme. This adds the layout template to the theme's
-| `src/layouttpl/custom` folder. This **only works** for generated themes.
+[Liferay Theme Generator](/developer/reference/-/knowledge_base/7-2/installing-the-theme-generator-and-creating-a-theme) 
+includes a 
+[Layouts sub-generator](/developer/reference/-/knowledge_base/7-2/creating-layout-templates-with-the-themes-generator) 
+that helps automate layout template creation. This article covers the available 
+options for the Layouts sub-generator. 
 
 ![Figure 1: You must specify the width for each column in the row.](../../../images/layout-column-widths.png)
 

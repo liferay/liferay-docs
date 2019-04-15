@@ -2,7 +2,7 @@
 header-id: creating-an-asset-display-contributor
 ---
 
-# Creating an Asset Display Contributor 
+# Creating an Asset Display Contributor
 
 [TOC levels=1-4]
 
