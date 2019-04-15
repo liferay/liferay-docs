@@ -23,8 +23,7 @@ To kickstart your theme, follow these steps:
     ![Figure 1: Run the `gulp kickstart` task to copy a theme's files into your own theme.](../../../../images/theme-dev-kickstarting-themes-gulp-kickstart.png)
 
 2.  Select where the theme is located. You can copy files from globally 
-    installed themes, themes published on the npm registry, or the classic 
-    theme. 
+    installed themes or themes published on the npm registry.
 
     +$$$
     
