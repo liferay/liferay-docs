@@ -1,4 +1,8 @@
-# Aggregating Blogs [](id=aggregating-blogs)
+---
+header-id: aggregating-blogs
+---
+
+# Aggregating Blogs
 
 You can set up a whole web site devoted just to blogging if you wish. The Blogs 
 Aggregator lets you publish entries from multiple bloggers on one page, giving 

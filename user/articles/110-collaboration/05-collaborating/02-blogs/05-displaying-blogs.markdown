@@ -1,4 +1,8 @@
-# Displaying Blogs [](id=displaying-blogs)
+---
+header-id: displaying-blogs
+---
+
+# Displaying Blogs
 
 The Blogs app in Site Administration lets you 
 [add](https://www.liferay.com/), 

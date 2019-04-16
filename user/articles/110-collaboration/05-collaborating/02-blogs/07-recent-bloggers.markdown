@@ -1,4 +1,8 @@
-# Highlighting Recent Bloggers [](id=highlighting-recent-bloggers)
+---
+header-id: highlighting-recent-bloggers
+---
+
+# Highlighting Recent Bloggers
 
 The Recent Bloggers widget lets you highlight the work of your site's most 
 recent blog authors. This widget lists each recent author's name, profile 
