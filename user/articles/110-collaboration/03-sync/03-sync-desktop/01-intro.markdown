@@ -4,6 +4,8 @@ header-id: using-liferay-sync-on-your-desktop
 
 # Using Liferay Sync on Your Desktop
 
+[TOC levels=1-4]
+
 Liferay Sync synchronizes files between your @product@ Sites and desktop 
 devices. It lets you work with your files without using a browser. The Sync 
 clients also ensure that the files are updated with the latest changes made by 
