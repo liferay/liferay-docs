@@ -3,8 +3,8 @@
 The Blogs app in Site Administration helps bloggers and blog administrators 
 manage blog entries. To access this app, click the Menu button 
 (![Menu](../../../../images/icon-menu.png)) to open the product menu, then 
-expand the menu for your site and select *Content* &rarr; *Blogs*. The *Entries* 
-tab is selected by default, which lists the site's blog entries. 
+expand the menu for your site and select *Content & Data* &rarr; *Blogs*. The 
+*Entries* tab is selected by default, which lists the site's blog entries. 
 
 ![Figure 1: The Blogs app in Site Administration lists the site's blog entries.](../../../../images/blog-entries-site-admin.png)
 
@@ -20,21 +20,21 @@ The *View Types* button is to the left of the Add button. It lets you choose how
 to display the blog entries in the Blogs app. The View Types button's icon 
 depends on the selected view type: 
 
--   **Cards** (![Cards](../../../../images/icon-view-type-cards.png)): Shows a 
-    card-like rendering of the blog entry, with the author's profile picture. If 
-    the entry doesn't contain a cover image, a generic rendering of the entry is 
-    displayed. Each card also contains the entry's timestamp, title, 
-    [workflow](/discover/portal/-/knowledge_base/7-1/workflow) 
-    status (e.g., Approved, Draft, etc.), and an Actions menu 
-    (![Actions](../../../../images/icon-actions.png)). 
+**Cards** (![Cards](../../../../images/icon-view-type-cards.png)): Shows a 
+card-like rendering of the blog entry, with the author's profile picture. If the 
+entry doesn't contain a cover image, a generic rendering of the entry is 
+displayed. Each card also contains the entry's timestamp, title, 
+[workflow](/discover/portal/-/knowledge_base/7-2/workflow) 
+status (e.g., Approved, Draft, etc.), and an Actions menu 
+(![Actions](../../../../images/icon-actions.png)). 
 
--   **List** (![List](../../../../images/icon-view-type-list.png)): 
-    Shows the same information as the Cards view type, in a list with the 
-    author's profile picture instead of the blog entry's cover image. 
+**List** (![List](../../../../images/icon-view-type-list.png)): 
+Shows the same information as the Cards view type, in a list with the author's 
+profile picture instead of the blog entry's cover image. 
 
--   **Table** (![Table](../../../../images/icon-view-type-table.png)): Shows the 
-    same information as the other view types, in a list with no file renderings. 
-    Also, the blog entry information is in columns. 
+**Table** (![Table](../../../../images/icon-view-type-table.png)): Shows the 
+same information as the other view types, in a list with no file renderings. 
+Also, the blog entry information is in columns. 
 
 ## Finding and Arranging Blog Entries [](id=finding-and-arranging-blog-entries)
 
@@ -49,10 +49,11 @@ or descending order.
 You can also arrange entries via the *Filter and Order* selector using these
 criteria: 
 
--   **All:** Shows all of the site's entries. 
--   **Mine:** Shows only the current user's entries. 
--   **Title:** Orders the entries by title. 
--   **Display Date:** Orders the entries by display date. 
+**All:** Shows all of the site's entries. 
+
+**Mine:** Shows only the current user's entries. 
+
+**Display Date:** Orders the entries by display date. 
 
 ## Selecting Blog Entries [](id=selecting-blog-entries)
 
@@ -64,7 +65,7 @@ changes to reflect the actions you can take on the selected entries.
 
 Click the *Trash* button 
 (![Trash](../../../../images/icon-trash.png)) to move the selected entries to 
-the Recycle Bin. Click *Deselect all* to deselect all the selected entries and 
-return the Management Bar to its normal view. 
+the Recycle Bin. Unselect the checkbox to return the Management Bar to its 
+normal view. 
 
 ![Figure 2: With multiple blog entries selected, the management bar changes to reflect the actions you can take on the selected entries.](../../../../images/blog-management-bar-selected.png)
