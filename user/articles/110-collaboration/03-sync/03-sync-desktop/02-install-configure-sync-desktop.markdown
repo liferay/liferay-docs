@@ -4,6 +4,8 @@ header-id: installing-and-configuring-the-desktop-liferay-sync-client
 
 # Installing and Configuring the Desktop Liferay Sync Client
 
+[TOC levels=1-4]
+
 You can download the desktop client from the
 [Liferay Sync downloads page](https://www.liferay.com/downloads/liferay-sync). 
 Note that you'll need a Liferay account for this. Once you've downloaded the 

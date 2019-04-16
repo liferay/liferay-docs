@@ -4,6 +4,8 @@ header-id: liferay-sync
 
 # Liferay Sync
 
+[TOC levels=1-4]
+
 Liferay Sync synchronizes files between your @product@ server and users' desktop 
 and mobile environments. With Liferay Sync, users can publish and access shared 
 documents and files from their native environments without using a browser. 

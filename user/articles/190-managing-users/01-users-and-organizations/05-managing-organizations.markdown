@@ -4,6 +4,8 @@ header-id: managing-organizations
 
 # Managing Organizations
 
+[TOC levels=1-4]
+
 If you're not entirely sure what Organizations are or whether you need them, start
 [here](/docs/7-2/deploy/-/knowledge_base/deploy/organizations). 
 This article gets right to the practical stuff: how to manage Organizations.

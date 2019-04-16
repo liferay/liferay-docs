@@ -4,6 +4,8 @@ header-id: installing-liferay-syncs-prerequisites
 
 # Installing Liferay Sync's Prerequisites
 
+[TOC levels=1-4]
+
 Liferay Sync requires the *Liferay CE Sync Connector* app from 
 [Liferay Marketplace](https://web.liferay.com/marketplace). This app enables and
 configures Sync in your @product@ instance. For example, you can disable Sync
