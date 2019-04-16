@@ -15,3 +15,6 @@ by its cover, but a blog post with a nice cover image is more likely to draw
 readers. 
 
 Read on to learn about Liferay's blogging platform.
+
+![Figure 1: This blog entry looks fascinating.](../../../../images/blog-entry-abstract.png)
+
