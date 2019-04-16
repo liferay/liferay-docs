@@ -4,6 +4,8 @@ header-id: managing-blog-entries
 
 # Managing Blog Entries
 
+[TOC levels=1-4]
+
 The Blogs app in Site Administration helps bloggers and blog administrators 
 manage blog entries. To access this app, click the Menu button 
 (![Menu](../../../../images/icon-menu.png)) to open the product menu, then 

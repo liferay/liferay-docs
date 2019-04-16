@@ -4,6 +4,8 @@ header-id: displaying-blogs
 
 # Displaying Blogs
 
+[TOC levels=1-4]
+
 The Blogs app in Site Administration lets you 
 [add](https://www.liferay.com/), 
 [manage](https://www.liferay.com/), 
