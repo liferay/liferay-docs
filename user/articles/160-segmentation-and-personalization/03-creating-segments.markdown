@@ -69,7 +69,7 @@ access to manage the Segment; it doesn't change Segment membership or criteria.
 You can manage the options here. You can also click on the Segment's name to
 edit it.
 
-![Figure 3: You can edit, delete or manage permissions from the options menu.](../../images/sp-options.png)
+![Figure 4: You can edit, delete or manage permissions from the options menu.](../../images/sp-options.png)
 
 Next, you'll define a Custom Field and use it as part of your Segmentation 
 criteria.

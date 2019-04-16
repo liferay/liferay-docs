@@ -103,7 +103,7 @@ types:
     example, MLB would not allow Division Organization types to be
     sub-Organizations of Team Organizations.
 
-![Figure 2: Create new organization types through the System Settings entry called Organization Types.](../../../images/orgs-organization-type.png)
+![Figure 1: Create new organization types through the System Settings entry called Organization Types.](../../../images/orgs-organization-type.png)
 
 Check out the configuration options that configure the default *Organization*
 type and then configure an additional type.
@@ -133,8 +133,7 @@ parent type.
 Once you configure additional Organization types and click Save, you'll find
 your new type(s) available for selection in the Add Organization form.
 
-![Figure 3: Custom configuration types are available in the Add Organization
-form.](../../../images/orgs-add-custom-organization.png)
+![Figure 2: Custom configuration types are available in the Add Organization form.](../../../images/orgs-add-custom-organization.png)
 
 Users can join or be assigned to Sites when they share a common interest. Users
 can be assigned to Organizations when they fit into a hierarchical structure.
