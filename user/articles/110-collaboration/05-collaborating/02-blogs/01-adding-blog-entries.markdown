@@ -94,8 +94,9 @@ Follow these steps to add a blog entry in Site Administration:
 
     ![Figure 2: When creating a blog entry, the Configuration panel lets you control when and where the blog entry appears, and what to use for the entry's abstract.](../../../../images/blog-entry-configuration.png)
 
-9.  Expand the *Display Page Template* if you want to select a display page 
-    template for your blog entry. The following options are available: 
+9.  Expand the *Display Page Template* panel if you want to select a 
+    [display page template](/discover/portal/-/knowledge_base/7-2/display-pages-for-web-content) 
+    for displaying your blog entry. The following options are available: 
 
     **Default Display Page Template:** Use the default display page template.
 
@@ -107,21 +108,29 @@ Follow these steps to add a blog entry in Site Administration:
 10. Expand the *Permissions* panel to customize your blog entry's permissions.
     Use the *Viewable by* selector to set who can view the blog entry: 
 
-    -   **Anyone (Guest Role):** Anyone, including guests, can view the entry. 
-    -   **Site members:** Only site members can view the entry.
-    -   **Owner:** Only the entry's owner can view the entry.
+    **Anyone (Guest Role):** Anyone, including guests, can view the entry. 
+
+    **Site members:** Only site members can view the entry. 
+
+    **Owner:** Only the entry's owner can view the entry. 
 
     Click the *More Options* link to bring up a permissions table that lets you 
     grant or revoke the following permissions for guests and site members: 
 
-    -   **Update**: Edit and modify the blog entry.
-    -   **Permissions**: View and modify the blog entry's permissions.
-    -   **Delete**: Move the blog entry to the 
-        [Recycle Bin](/discover/portal/-/knowledge_base/7-1/using-the-recycle-bin).
-    -   **View**: View the blog entry.
-    -   **Update Discussion**: Edit another user's comment on the blog entry.
-    -   **Delete Discussion**: Delete any comments on the blog entry.
-    -   **Add Discussion**: Comment on the blog entry. 
+    **Update Discussion**: Edit another user's comment on the blog entry.
+
+    **Delete**: Move the blog entry to the 
+    [Recycle Bin](/discover/portal/-/knowledge_base/7-2/using-the-recycle-bin).
+
+    **Permissions**: View and modify the blog entry's permissions.
+
+    **Delete Discussion**: Delete any comments on the blog entry.
+
+    **Update**: Edit and modify the blog entry.
+
+    **View**: View the blog entry.
+
+    **Add Discussion**: Comment on the blog entry. 
 
 10. Click *Publish* to publish your blog entry. It now appears in the *Entries* 
     tab. 
