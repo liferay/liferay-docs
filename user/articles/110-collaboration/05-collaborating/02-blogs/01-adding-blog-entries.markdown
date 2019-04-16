@@ -83,7 +83,7 @@ Follow these steps to add a blog entry in Site Administration:
     Updated* toggle appears. Setting this to *YES* sends an email to any
     subscribers when the blog entry is updated. You can customize this email
     when 
-    [configuring the Blogs app](/discover/portal/-/knowledge_base/7-1/configuring-the-blogs-app). 
+    [configuring the Blogs app](/discover/portal/-/knowledge_base/7-2/configuring-the-blogs-app). 
 
     Finally, you can allow *pingbacks* for the blog entry. Pingbacks are XML-RPC
     requests that are sent automatically when you link to another site. If you
