@@ -4,6 +4,8 @@ header-id: creating-content-with-adapted-images
 
 # Creating Content with Adapted Images
 
+[TOC levels=1-4]
+
 Adaptive Media is mostly invisible for blog and web content creators. Once
 an image is added to the content, the app works behind the scenes to
 deliver an adapted image appropriate to the device in use. Content creators

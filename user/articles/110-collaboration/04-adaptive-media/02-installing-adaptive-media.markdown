@@ -4,6 +4,8 @@ header-id: installing-adaptive-media
 
 # Installing Adaptive Media
 
+[TOC levels=1-4]
+
 The Adaptive Media app is installed in @product@ by default. The following 
 sections describe the Adaptive Media app's modules, and how to prepare Adaptive 
 Media to handle animated GIFs. 

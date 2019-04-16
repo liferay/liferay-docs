@@ -4,6 +4,8 @@ header-id: migrating-documents-and-media-thumbnails-to-adaptive-media
 
 # Migrating Documents and Media Thumbnails to Adaptive Media
 
+[TOC levels=1-4]
+
 @product@ automatically generates thumbnails for images in Documents and Media.
 Once you deploy the Adaptive Media app, however, @product@ doesn't display 
 thumbnails until you migrate them to Adaptive Media. This article walks you

@@ -4,6 +4,8 @@ header-id: using-the-liferay-sync-desktop-client
 
 # Using the Liferay Sync Desktop Client
 
+[TOC levels=1-4]
+
 When Liferay Sync is running, its icon appears in your task bar (Windows) or menu 
 bar (Mac). Clicking this icon opens a menu that lets you work with and manage 
 Liferay Sync. 

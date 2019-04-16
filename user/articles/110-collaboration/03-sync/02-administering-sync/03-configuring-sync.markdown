@@ -4,6 +4,8 @@ header-id: configuring-liferay-sync
 
 # Configuring Liferay Sync
 
+[TOC levels=1-4]
+
 Sync Connector lets you manage how, or if, clients connect to your @product@
 server. You can also configure default file permissions on a per-Site basis, and
 manage the devices that connect to your @product@ instance. To access Sync
