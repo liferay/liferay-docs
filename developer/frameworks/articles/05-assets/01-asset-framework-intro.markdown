@@ -1,9 +1,12 @@
 # Asset Framework
 
-The asset framework powers the core Liferay features so you can add them to your
-application. For example, if you build an event management application that
+The asset framework is behind many of Liferay's most powerful features. It 
+provides tools for displaying and interacting with various types of content and 
+data. For example, if you build an event management application that
 displays a list of upcoming events, you can use the asset framework to let users
-add tags, categories, or comments to make entries more self-descriptive. 
+add tags, categories, or comments to make entries more self-descriptive. Using 
+the asset framework is also the first step for integrating other important 
+frameworks like Segmentation and Personalization or Workflow.
 
 As background, the term *asset* refers to any type of content in the portal.
 This could be text, a file, a URL, an image, documents, blog entries, bookmarks,
@@ -14,7 +17,7 @@ to generate your persistence layer, that you've implemented permissions on the
 entities that you're persisting, and that you've enabled them for search and
 indexing. You can learn more about Liferay's Service Builder and how to use it
 in the
-[Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder)
+[Service Builder](/developer/frameworks/-/7-2/service-builder)
 tutorial section. After that is completed, you can get started asset enabling 
 your application.
 
@@ -31,12 +34,8 @@ your app:
    create category hierarchies. 
 -  Relate assets to one another. 
 
-Before diving head first into the tutorials, you must implement a way to let the
-framework know whenever any of your custom content entries is added, updated, or
-deleted. The next tutorial covers that. From that point onward, each tutorial
-shows you how to leverage a particular asset framework feature in your UI.
-It's time to start your asset framework training!
-
+There are several steps to creating an asset an taking full advantage of the 
+asset framework.
 
 ##Persistence Operations for Assets 
 
@@ -70,16 +69,17 @@ additional coding. For instance, you might want these additional things:
 You can dictate your asset's rendering capabilities by providing the *Asset
 Renderer* framework. 
 
-## Implementing Asset Categorization and Tagging
+## Asset Features
 
-Next, you'll enable tags and categories entities in the UI through
-a set of JSP tags. Before beginning, your entities should be
-[asset-enabled](/develop/tutorials/-/knowledge_base/7-1/adding-updating-and-deleting-assets)
-and you should have asset renderers enabled for them.
+Once you have done the necessary work to have your assets in the persistance layer, and render them, you can start integrating a number of other features, like Tags, Categories, and Related Assets.
+
+### Tags and Categories
+
+Tags and Categories are two ways that you can organize and connect assets. Tags are simple ah hoc groups. Anything two entities that have the same tag are connected by that tag. Categories are a form of hierarchical organization where an administrator can define a number of categories for organization content, images, or other types of assets and use those categories to help users find what they're looking for.
 
 ![Figure 1: Adding category and tag input options lets authors aggregate and label custom entities.](../../images/asset-fw-categories-and-tags-options.png)
 
-## Relating Assets
+### Relating Assets
 
 Relating assets connects individual pieces of content across your site or
 portal. This helps users discover related content, particularly when there's an
@@ -87,12 +87,6 @@ abundance of other available content. For example, assets related to a web
 content article appear alongside that entry in the Asset Publisher application.
 
 ![Figure 1: You and your users can find it helpful to relate assets to entities, such as this blogs entry.](../../images/asset-related-content-asset-publisher.png)
-
-Now you'll learn how to provide a way for authors to relate content.
-This tutorial assumes that you've
-[Adding, Updating, and Deleting Assets](/develop/tutorials/-/knowledge_base/7-1/adding-updating-and-deleting-assets)
-your application. If you've already done this, go ahead and begin relating your
-assets!
 
 ## Implementing Asset Priority
 
