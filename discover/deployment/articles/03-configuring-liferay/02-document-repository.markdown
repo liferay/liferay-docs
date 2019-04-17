@@ -281,6 +281,13 @@ Other app servers also need this configuration if they don't contain a
 that resides in your @product@ installation's class path  (e.g.,
 `/WEB-INF/classes/`).
 
++$$$
+
+**Note:** No action is required to support AWS Signature Version 4 request 
+authorization. 
+
+$$$
+
 Consult the Amazon Simple Storage documentation for additional details on using
 Amazon's service.
 
