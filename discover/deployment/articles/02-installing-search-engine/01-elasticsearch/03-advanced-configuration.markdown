@@ -22,24 +22,28 @@ Specify the settings you need by using one or more of the
 `additionalConfigurations`, `additionalIndexConfigurations`, or
 `additionalTypeMappings`, and `overrideTypeMappings` settings. 
 
-![Figure 1: You can add Elasticsearch configurations to the ones currently available in System Settings.](../../../images/cfg-elasticsearch-additional-configs.png)
+### Additional Configurations
 
-`additionalConfigurations` defines extra settings (in YAML) for the embedded
-Elasticsearch. This is only useful for testing environments using the embedded
-Elasticsearch server. Any node settings normally set in `elasticsearch.yml` can be
-declared here. See the
+The `additionalConfigurations` configuration defines extra settings (in YAML)
+for the embedded Elasticsearch. This is only useful for testing environments
+using the embedded Elasticsearch server. Any node settings normally set in
+`elasticsearch.yml` can be declared here. See the
 [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/index.html) 
 for a description of all possible node settings.
 
-`additionalIndexConfigurations` defines extra settings (in JSON or
-YAML) that are applied to the @product@ index when it's created. For
-example, you can create custom analyzers and filters using this setting. For
-a complete list of available settings, see the 
+![Figure 1: You can add Elasticsearch configurations to the ones currently available in System Settings.](../../../images/cfg-elasticsearch-additional-configs.png)
+
+### Adding Index Configurations
+
+The `additionalIndexConfigurations` configuration defines extra settings (in
+JSON or YAML) that are applied to the @product@ index when it's created. For
+example, you can create custom analyzers and filters using this setting. For a
+complete list of available settings, see the 
 [Elasticsearch reference](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/index-modules.html).
 
 Here's an example that shows how to configure 
-[analysis](https://www.elastic.co/guide/en/elasticsearch/guide/current/analysis-intro.html#analysis-intro) that can be applied to a
-dynamic template (see below).
+[analysis](https://www.elastic.co/guide/en/elasticsearch/guide/current/analysis-intro.html#analysis-intro)
+that can be applied to a dynamic template (see below).
 
     {  
         "analysis": {
@@ -61,45 +65,20 @@ dynamic template (see below).
         }
     }
 
+### Adding Type Mappings 
+
 `additionalTypeMappings` defines extra field mappings for the
 `LiferayDocumentType` type definition. These are applied when the index is
 created. Add these field mappings in using JSON syntax. For more information see
 [here](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/mapping.html)
 and
 [here](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/indices-put-mapping.html).
-Use `additionalTypeMappings` for new field mappings, but don't try to override
-existing `properties` mappings. If any of the `properties` mappings set here
-overlap with existing mappings, index creation fails. Use
+Use `additionalTypeMappings` for new field (`properties`) mappings, but don't
+try to override existing `properties` mappings. If any of the `properties`
+mappings set here overlap with existing mappings, index creation fails. Use
 `overrideTypeMappings` to replace the default `properties` mappings.
 
-Here's an example of a 
-[dynamic template](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/dynamic-templates.html)
-that uses the analysis configuration above to analyze all string fields that end
-with `_ja`.
-
-    {
-        "LiferayDocumentType": {
-            "dynamic_templates": [
-                {
-                    "template_ja": {
-                        "mapping": {
-                            "analyzer": "kuromoji_liferay_custom",
-                            "index": "analyzed",
-                            "store": "true",
-                            "term_vector": "with_positions_offsets",
-                            "type": "string"
-                        },
-                        "match": "\\w+_ja\\b|\\w+_ja_[A-Z]{2}\\b",
-                        "match_mapping_type": "string",
-                        "match_pattern": "regex"
-                    }
-                }
-            ]
-        }
-    }
-
-The above code adds a new `template_ja` dynamic template. This overrides the
-existing dynamic template with the same name. As with dynamic templates, you can
+As with dynamic templates, you can
 add sub-field mappings to @product@'s type mapping. These are referred to as
 [properties](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/properties.html)
 in Elasticsearch.
@@ -146,6 +125,8 @@ you want to see the mappings that were used to create the index with that name.
 
 $$$
 
+### Overriding Type Mappings
+
 Use `overrideTypeMappings` to override @product@'s default type mappings. This
 is an advanced feature that should be used only if strictly necessary. If you
 set this value, the default mappings used to define the Liferay Document Type in
@@ -171,9 +152,36 @@ Then, from the end of the mappings, delete the concluding three curly braces.
     }
 
 Now modify whatever mappings you'd like. The changes take effect once you save
-the changes and trigger a re-index from Server Administration. If you need to add
-new custom mappings without overriding any defaults, use
-`additionalTypeMappings` instead.
+the changes and trigger a re-index from Server Administration. 
+
+Here's a partial example, showing a 
+[dynamic template](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/dynamic-templates.html)
+that uses the analysis configuration from `additionalIndexConfigurations` to
+analyze all string fields that end with `_ja`. You'd include this with all the
+other default mappings, replacing the provided `template_ja` with this custom
+one:
+
+    {
+        "LiferayDocumentType": {
+            "dynamic_templates": [
+                {
+                    "template_ja": {
+                        "mapping": {
+                            "analyzer": "kuromoji_liferay_custom",
+                            "index": "analyzed",
+                            "store": "true",
+                            "term_vector": "with_positions_offsets",
+                            "type": "string"
+                        },
+                        "match": "\\w+_ja\\b|\\w+_ja_[A-Z]{2}\\b",
+                        "match_mapping_type": "string",
+                        "match_pattern": "regex"
+                    }
+                    ...
+                }
+            ]
+        }
+    }
 
 ## Multi-line YAML Configurations [](id=multi-line-yaml-configurations)
 
