@@ -65,5 +65,12 @@ limitation.
 
 $$$
 
++$$$
+
+**Note:** No action is required to support AWS Signature Version 4 request 
+authorization. 
+
+$$$
+
 Consult the Amazon Simple Storage documentation for additional details on using
 Amazon's service.
