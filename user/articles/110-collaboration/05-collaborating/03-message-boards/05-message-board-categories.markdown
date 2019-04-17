@@ -13,7 +13,7 @@ Follow these steps to create a message board category:
 
 1.  Open the Message Boards app in your scope's Site Administration menu, as 
     described in 
-    [the article on creating message boards](/discover/portal/-/knowledge_base/7-1/creating-message-boards).
+    [Creating Message Boards](/discover/portal/-/knowledge_base/7-2/creating-message-boards).
 
 2.  Click the *Add* icon
     (![Add](../../../../images/icon-add.png)) and select *Category*. This opens 
@@ -26,12 +26,13 @@ Follow these steps to create a message board category:
 4.  Select the category's *Display Style*. This controls how threads in the 
     category appear. By default, you can choose these display styles: 
 
-    -   **Default:** Classic display style for general purpose discussions.
-    -   **Question:** Threads appear in a question and answer style. 
+    **Default:** Classic display style for general purpose discussions. 
+
+    **Question:** Threads appear in a question and answer style. 
 
     You can create custom display styles and make them available for selection
-    in this form. You must set the available display styles via the [portal
-    property](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Message%20Boards%20Portlet)
+    in this form. You must set the available display styles via the 
+    [portal property](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Message Boards Portlet)
     `message.boards.category.display.styles`. Similarly, you can set the default
     display style in `message.boards.category.display.styles.default`. 
 
@@ -40,7 +41,7 @@ Follow these steps to create a message board category:
     to *YES*. To enable anonymous emails in the list, set the *Allow Anonymous 
     Emails* toggle to *YES*. The default for both toggles is *NO*. For an 
     explanation of these features, see 
-    [the documentation on mailing lists for Message Boards](/discover/portal/-/knowledge_base/7-1/user-subscriptions-and-mailing-lists#mailing-lists). 
+    [the documentation on mailing lists for Message Boards](/discover/portal/-/knowledge_base/7-2/user-subscriptions-and-mailing-lists#mailing-lists). 
 
 6.  Open the *Permissions* section and set the category's permissions. The
     *Viewable by* selector lets you pick who can view the category: 
@@ -53,37 +54,40 @@ Follow these steps to create a message board category:
     the rest of the category's permissions, which you can assign to the Guest 
     and Site Member roles: 
 
+    **Delete:** Remove the category. 
+
+    **Permissions:** View and modify permissions. 
+
+    **Add File:** Attach a file to any of your messages. 
+
+    **Reply to Message:** Respond to existing messages. 
+
     **Lock Thread:** Stop any further additions or modifications to a 
     thread's messages. 
-
-    **Add Subcategory:** Add a new category within this category. 
 
     **Update:** Edit the category. 
 
     **Subscribe:** Receive notifications on new and modified posts. 
 
-    **Reply to Message:** Respond to existing messages. 
+    **View:** View the category. 
 
-    **Add File:** Attach a file to any of your messages. 
-
-    **Permissions:** View and modify permissions. 
-
-    **Delete:** Remove the category. 
-
-    **Add Message:** Post a new thread. 
-
-    **Update Thread Priority:** Modify a thread's priority. 
+    **Add Message:** Post a new thread.
 
     **Move Thread:** Move a thread to a different category or subcategory. 
 
+    **Add Subcategory:** Add a new category within this category. 
+
+    **Update Thread Priority:** Modify a thread's priority. 
+
     Note that after creating a category, you can revisit its permission options 
     by clicking the category's *Actions* icon
-    (![Actions](../../../../images/icon-actions.png)) and selecting *Permissions*. 
+    (![Actions](../../../../images/icon-actions.png)) and selecting 
+    *Permissions*. 
 
 7.  Click *Save* when you're finished. Your category now appears in the table. 
 
-As you add categories to a message board, they appear on the message board's
-home screen. The list displays the category names and the numbers of
+As you add categories to a message board, they appear on the message board's 
+home screen. The list displays the category names and the numbers of 
 subcategories, threads, and posts in each one. 
 
 ![Figure 2: Categories help you organize threads so users can find topical threads that interest them.](../../../../images/message-boards-home.png)
@@ -96,12 +100,12 @@ categories too deep, users can have trouble finding them.
 Follow these steps to add a subcategory to a category:
 
 1.  Click the category's name in the list, then click the *Add* icon 
-    (![Add](../../../../images/icon-add.png)) and select *Subcategory*. The Add 
-    Subcategory form appears. 
+    (![Add](../../../../images/icon-add.png)) and select *Category*. The Add 
+    Category form appears. 
 
-2.  Fill out the Add Subcategory form with the values and settings you want to 
-    use for the subcategory. This form is identical to the Add Category form, 
-    and is populated with the parent category's properties by default. 
+2.  Fill out the Add Category form with the values and settings you want to use 
+    for the subcategory. This form is populated with the parent category's 
+    properties by default. 
 
 3.  Click *Save* when you're finished. Your subcategory now appears in the 
     table. 

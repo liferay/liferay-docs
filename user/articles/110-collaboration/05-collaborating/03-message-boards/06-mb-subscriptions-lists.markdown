@@ -1,19 +1,15 @@
 # User Subscriptions and Mailing Lists [](id=user-subscriptions-and-mailing-lists)
 
-The Message Boards notifies users of message boards activity via email in two
-ways:
+The Message Boards app notifies users of message boards activity via email in 
+two ways:
 
 -   User subscriptions
 -   Mailing lists
 
-+$$$
-
-**Note:** Since multiple sites can use a globally scoped message board, such 
-message boards don't support user subscriptions or mailing lists. Make sure to 
-use a site-scoped or page-scoped message board if you need user subscriptions or 
-a mailing list. 
-
-$$$
+| **Note:** Since multiple sites can use a globally scoped message board, such 
+| message boards don't support user subscriptions or mailing lists. Make sure to 
+| use a site-scoped or page-scoped message board if you need user subscriptions 
+| or a mailing list. 
 
 ## User Subscriptions [](id=user-subscriptions)
 
@@ -71,16 +67,12 @@ new mail every minute, but you can set it to whatever you like:
 
     pop.server.notifications.interval=1
 
-+$$$
-
-**Note**: Depending on your mail provider, if you use multiple devices to access
-email through POP, you might need to configure in your POP settings something
-like Gmail's *recent mode*. In Gmail, recent mode assures that emails go to all
-your devices instead of only the first client that receives the email. To
-enable recent mode in Gmail, for example, prefix the value of your POP client's
-Username or Email field with `recent:`. 
-
-$$$
+| **Note**: Depending on your mail provider, if you use multiple devices to 
+| access email through POP, you might need to configure in your POP settings 
+| something like Gmail's *recent mode*. In Gmail, recent mode assures that 
+| emails go to all your devices instead of only the first client that receives 
+| the email. To enable recent mode in Gmail, for example, prefix the value of 
+| your POP client's Username or Email field with `recent:`. 
 
 ## Mailing Lists [](id=mailing-lists)
 

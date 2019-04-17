@@ -1,22 +1,26 @@
 # Using the Message Boards [](id=using-the-message-boards)
 
 You can add a Message Boards widget to a page from the *Add* 
-(![Add](../../../../images/icon-control-menu-add.png)) menu's *Collaboration*
-section. The Message Boards interface is similar to other message boards 
-that populate the Internet. In any case, it can't hurt to explore how to use 
-@product@'s Message Boards and discover its features. 
+(![Add](../../../../images/icon-add-app.png)) menu's *Widgets* &rarr; 
+*Collaboration* section. The Message Boards interface is similar to other 
+message boards that populate the Internet. In any case, it can't hurt to explore 
+how to use @product@'s Message Boards and discover its features. 
 
 ![Figure 1: The Message Boards widget lets you explore its categories, interact with message threads, and post new messages.](../../../../images/message-boards-category-threads.png)
 
 Threads can be viewed many ways. At the top of the widget is a set of tabs: 
 
--   **Categories:** The message board's categories.
--   **Recent Posts:** Posts from all categories, sorted by date.
--   **My Posts:** The current user's posts. 
--   **My Subscriptions:** Lets users view and manage their thread subscriptions. 
--   **Statistics:** The number of categories, posts, participants, and a list of 
-    the top contributors. You can also access this from the same tab in Site 
-    Administration's Message Board app. 
+**Categories:** The message board's categories. 
+
+**Recent Posts:** Posts from all categories, sorted by date.
+
+**My Posts:** The current user's posts. 
+
+**My Subscriptions:** Lets users view and manage their thread subscriptions. 
+
+**Statistics:** The number of categories, posts, participants, and a list of the 
+top contributors. You can also access this from the same tab in Site 
+Administration's Message Board app. 
 
 You can also use the search bar at the top of the widget to search for threads 
 and posts. Although search works on threads and posts within categories, it 
@@ -39,9 +43,9 @@ Follow these steps to post a new thread:
 3.  Create your thread's content in the *Body* field. This field uses the same 
     editor as the Blogs app, except that it uses BBCode instead of HTML. For 
     further instructions, see the documentation on 
-    [using the editor](/discover/portal/-/knowledge_base/7-1/using-the-blog-entry-editor). 
+    [using the editor](/discover/portal/-/knowledge_base/7-2/using-the-blog-entry-editor). 
     Also note that you can 
-    [mention](/discover/portal/-/knowledge_base/7-1/mentioning-users) 
+    [mention](/discover/portal/-/knowledge_base/7-2/mentioning-users) 
     other users by entering the `@` character and their user name. 
 
 4.  If you want to add attachments, open the *Attachments* section and add them 
@@ -50,7 +54,7 @@ Follow these steps to post a new thread:
 5.  If you want to associate a tag with the message, open the *Categorization* 
     section and use the *Select* button to select an existing tag. You can also 
     create a new tag by entering it in the *Tags* field and clicking *Add*. See 
-    [the documentation on tags](/discover/portal/-/knowledge_base/7-1/tagging-content) 
+    [the documentation on tags](/discover/portal/-/knowledge_base/7-2/tagging-content) 
     for more information. 
 
 6.  If you want to select an existing asset in the portal (e.g., a media file, 
@@ -59,19 +63,22 @@ Follow these steps to post a new thread:
 
 7.  Open the *More Settings* section and select the settings you want to use: 
 
-    -   **Mark as a Question:** Whether to mark this thread as a question. This 
-        lets you later select a post in the thread as the answer. 
-    -   **Anonymous:** Whether this thread is posted anonymously. 
-    -   **Subscribe Me:** Receive notifications for activity on the 
-        thread. 
-    -   **Priority:** The thread's priority in the Message Board. By default, 
-        you can choose *Urgent*, *Sticky*, or *Announcement*. Additional 
-        priorities can also be 
-        [configured](/discover/portal/-/knowledge_base/7-1/configuring-message-boards) 
-        in the Message Boards app in Site Administration. 
-    -   **Allow Pingbacks:** Whether 
-        [pingbacks](https://en.wikipedia.org/wiki/Pingback) 
-        are allowed for your thread. 
+    **Mark as a Question:** Whether to mark this thread as a question. This lets 
+    you later select a post in the thread as the answer. 
+
+    **Anonymous:** Whether this thread is posted anonymously. 
+
+    **Subscribe Me:** Receive notifications for activity on the thread. 
+
+    **Priority:** The thread's priority in the Message Board. By default, you 
+    can choose *Urgent*, *Sticky*, or *Announcement*. Additional priorities can 
+    also be 
+    [configured](/discover/portal/-/knowledge_base/7-2/configuring-message-boards) 
+    in the Message Boards app in Site Administration. 
+
+    **Allow Pingbacks:** Whether 
+    [pingbacks](https://en.wikipedia.org/wiki/Pingback) 
+    are allowed for your thread. 
 
 8.  Open the *Permissions* section and set the thread's permissions. Possible 
     values in the *Viewable by* selector are
@@ -82,11 +89,15 @@ Follow these steps to post a new thread:
 
     You can also click the *More Options* link to select additional permissions: 
 
-    -   **Update:** Edit the thread. 
-    -   **Subscribe:** Receive notifications for thread activity. 
-    -   **Permissions:** Grant/revoke thread permissions. 
-    -   **Delete:** Remove the thread. 
-    -   **View:** View the thread. 
+    **Delete:** Remove the thread. 
+
+    **Permissions:** Grant/revoke thread permissions. 
+
+    **Update:** Edit the thread. 
+
+    **Subscribe:** Receive notifications for thread activity. 
+
+    **View:** View the thread. 
 
     Note that you can revisit the thread's permissions after posting it. To do 
     so, select the thread's Actions menu 

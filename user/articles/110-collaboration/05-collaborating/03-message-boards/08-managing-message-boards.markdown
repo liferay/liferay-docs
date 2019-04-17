@@ -3,7 +3,7 @@
 Message boards can become unwieldy if left unmanaged. The Message Boards in Site 
 Administration facilitates day-to-day thread administration. You may wish to 
 assign this function to a 
-[Role](/discover/portal/-/knowledge_base/7-1/roles-and-permissions) 
+[Role](/discover/portal/-/knowledge_base/7-2/roles-and-permissions) 
 that you give to one or more users. This frees you to concentrate on other areas 
 of your Site. For example, you can create a Role called 
 *Message Board Administrator* scoped to the portal (globally), an Organization,
@@ -18,8 +18,8 @@ Follow these steps to create a global Role:
 2.  Select or create the Role.
 
 3.  Select the Role's *Define Permissions* tab and navigate to 
-    *Site Administration* &rarr; *Content* &rarr; *Message Boards*. A screen 
-    appears that lets you configure Message Board permissions. 
+    *Site Administration* &rarr; *Content & Data* &rarr; *Message Boards*. 
+    A screen appears that lets you configure Message Board permissions. 
 
     ![Figure 1: Define the permissions you want to use for the message boards administrators.](../../../../images/message-boards-role-permissions.png)
 

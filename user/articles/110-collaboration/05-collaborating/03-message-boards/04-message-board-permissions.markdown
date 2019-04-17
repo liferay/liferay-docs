@@ -10,28 +10,28 @@ for granting and revoking access to message board functions.
 
 The permissions enable a Role to perform the following actions: 
 
+**Permissions:** View and modify permissions. 
+
+**Add File:** Attach a file to a message. 
+
+**Ban User:** Forbid a user from participating in the message board. 
+
+**Add Category:** Add a new category to the message board. 
+
+**Reply to Message:** Respond to an existing message. 
+
 **Lock Thread:** Stop any further additions or modifications to a thread's
 messages. 
 
 **Subscribe:** Receive notifications on new and modified posts. 
 
-**Reply to Message:** Respond to an existing message. 
-
-**Add File:** Attach a file to a message. 
-
-**Permissions:** View and modify permissions. 
+**View:** View all the contents of message threads. 
 
 **Add Message:** Post a new thread. 
 
-**View:** View all the contents of message threads. 
-
-**Add Category:** Add a new category to the message board. 
+**Move Thread:** Move a thread to a different category or subcategory. 
 
 **Update Thread Priority:** Modify a thread's priority. 
-
-**Ban User:** Forbid a user from participating in the message board. 
-
-**Move Thread:** Move a thread to a different category or subcategory. 
 
 Configure the Roles with the permissions you want and *Save* your changes. 
 
