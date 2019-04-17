@@ -14,14 +14,13 @@ filters. Since they're each used in different circumstances, Liferay's API
 explicitly provides two sets of APIs, one for queries and one for filters. Both
 APIs are in the `portal-search-api` module.
 
-*Filters* ask a yes or no question for every document. 
+*Filters* ask a yes or no question for every document. A filter might ask _is
+the status field equal to staging or live?_
 
-*Queries* ask the same yes or no question AND how well a document
-matches the specified criteria. This is the concept of 
-[relevance scoring](https://www.elastic.co/guide/en/elasticsearch/guide/current/scoring-theory.html).
-
-For instance, a filter might ask _is the status field equal to staging or live?_
-A query might ask _does the document's content field field contains the words
+*Queries* ask the same yes or no question AND how well a document matches the
+specified criteria. This is the concept of 
+[relevance scoring](https://www.elastic.co/guide/en/elasticsearch/guide/current/scoring-theory.html). 
+A query might ask _does the document's content field field contain the words
 "Liferay", "Content", or "Management", and how relevant is the content of the
 document to the searched keywords?_
 
@@ -37,7 +36,7 @@ Liferay's Search API supports the following types of queries:
 ### Full Text Queries
 
 * Match Query: Full text matching, scored by relevance.
-* Multi Match Query: MatchQuery over several fields.
+* Multi Match Query: `MatchQuery` over several fields.
 * String Query: Uses Lucene query syntax
 
     ```java
@@ -251,7 +250,6 @@ constructs a complex search request containing a `TermsQuery` using the new
 * Solr 7: No* (Only the "legacy" query types from `com.liferay.portal.kernel.search.*` are supported as of @product@ Beta 2.)
 
 ## New/Related APIs
-Listed those which are relevant for developers.
 
 API (FQCN) | Provided by Artifact | Notes |
 -----------|:--------------------:|:--------:|
