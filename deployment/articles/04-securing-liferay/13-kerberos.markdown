@@ -152,6 +152,16 @@ Windows&trade; clients.
         </VirtualHost>
         Listen 10080
 
+It is possible to map Kerberos only to the authentication process. In this case,
+you would proxy only to the login URL. This changes your reverse proxy
+configuration. For Apache, the lines above for `ProxyPass` and
+`ProxyPassReverse` would change to this: 
+
+    ProxyPass / ajp://localhost:8009/c/portal/login
+    ProxyPassReverse / ajp://localhost:8009/c/portal/login
+
+If you're using a different web server, configure it appropriately. 
+
 ### Connecting @product@ to Active Directory over LDAP
 
 1.  Finally, configure @product@ to access Active Directory via the LDAP
