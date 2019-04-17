@@ -48,17 +48,13 @@ The move operation is more flexible than the copy operation. Copying only works
 with folders, and you can't copy between repositories. The move operation, 
 however, works with files and folders within or between repositories. 
 
-+$$$
-
-**Note:** Depending on the repository implementation, you may get unexpected 
-behavior when moving folders between repositories. Moving a folder also moves 
-its contents via separate move operations for each item in the folder. In some
-repository implementations, if any move sub-operation fails, the parent move
-operation also fails. In other repository implementations, the results of
-successful sub-operations remain even if others fail, which leaves a partially
-complete move of the whole folder. 
-
-$$$
+| **Note:** Depending on the repository implementation, you may get unexpected
+| behavior when moving folders between repositories. Moving a folder also moves
+| its contents via separate move operations for each item in the folder. In some
+| repository implementations, if any move sub-operation fails, the parent move
+| operation also fails. In other repository implementations, the results of
+| successful sub-operations remain even if others fail, which leaves a partially
+| complete move of the whole folder.
 
 To move a folder, use the `DLAppService` method `moveFolder`: 
 

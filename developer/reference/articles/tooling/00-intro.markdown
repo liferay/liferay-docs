@@ -11,8 +11,8 @@ tool-agnostic, which frees you to work with whatever you're already productive
 using.
 
 Liferay has also created its own tools that streamline @product@ development.
-These tools integrate with popular build environments (e.g., Gradle and Maven).
-They include
+These tools integrate with popular build environments (e.g., Gradle, Maven, and 
+NodeJS). They include
 
 - [Blade CLI](/developer/reference/-/knowledge_base/7-2/blade-cli): a command
   line interface used to build and manage Liferay Workspaces and @product@
@@ -24,6 +24,9 @@ They include
   an Eclipse-based IDE supporting development for @product@.
 - [Liferay IntelliJ Plugin](/developer/reference/-/knowledge_base/7-2/intellij-idea):
   a plugin providing support for @product@ development with IntelliJ IDEA.
+- [Liferay Theme Generator](/developer/reference/-/knowledge_base/7-2/theme-generator):
+  a generator that creates themes, layouts templates, and themelets for 
+  @product@ development.
 
 Liferay also provides a plethora of
 [Gradle](/developer/reference/-/knowledge_base/7-2/gradle) and
