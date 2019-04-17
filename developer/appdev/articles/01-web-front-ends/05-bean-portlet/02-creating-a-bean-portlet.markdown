@@ -33,7 +33,7 @@ generate a Bean Portlet project and deploy your Bean Portlet to @product@.
         - `pom.xml` &rarr; Specifies the project's dependencies and packaging.
 
     Here's the example Bean Portlet class:
-    
+
     ```java
     package com.mycompany.portlet;
 
@@ -80,8 +80,8 @@ generate a Bean Portlet project and deploy your Bean Portlet to @product@.
 3.  Inject any CDI beans using the `@Inject` annotation. 
 
 4.  Update your render method `doView` (it's annotated with
-    `@RenderMethod`) as you like. It displays the template
-    `WEB-INF/jsp/view.jsp` by default. 
+    `@RenderMethod`). It displays the template `WEB-INF/jsp/view.jsp` by
+    default. 
 
 5.  Add any other logic you like to your portlet class. 
 
@@ -94,9 +94,9 @@ generate a Bean Portlet project and deploy your Bean Portlet to @product@.
     [WAB Generator](/docs/7-2/developer/-/knowledge_base/frameworks/using-the-wab-generator)
     converts the WAR to an OSGi Web Application Bundle (WAB) and installs it to
     Liferay's OSGi container. 
-    
+ 
 @product@ logs the deployment. 
-    
+
     INFO  [main][HotDeployImpl:226] Deploying com.mycompany.demo.bean.portlet from queue
     INFO  [main][PluginPackageUtil:1001] Reading plugin package for com.mycompany.demo.bean.portlet
     ...

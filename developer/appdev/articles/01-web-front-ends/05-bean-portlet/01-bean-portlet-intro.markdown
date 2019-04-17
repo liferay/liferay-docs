@@ -6,37 +6,34 @@ header-id: bean-portlet
 
 [TOC levels=1-4]
 
-@product@ supports the
-[JSR 362](https://jcp.org/en/jsr/detail?id=362)
-Portlet 3.0 standard from the Java Community Process (JCP). Portlet 3.0 features
-a new style of portlet development called "bean portlets" that use Contexts and
-Dependency Injection (CDI). Bean Portlets fully leverage
+Portlet 3.0, the 
+[JSR 362](https://jcp.org/en/jsr/detail?id=362) standard, features
+a new style of portlet development called Bean Portlets that use Contexts and
+Dependency Injection (CDI). Bean Portlets fully leverage 
 [all the new Portlet 3.0 features](https://portals.apache.org/pluto/v301/v3Features.html)
-in compliant portals, such as Liferay. 
+in compliant portals, and are fully supported in @product@. 
 
-Bean Portlets are plain old Java objects (POJOs)---they don't need to extend
-anything. Your portlet descriptors declare them to be portlets. This gives you
-flexibility to develop portlets the way you like. 
+Bean Portlets are plain old Java objects (POJOs): they don't need to extend
+anything. Portlet descriptors declare them to be portlets. 
 
 Configuration annotations, phase method annotations, and CDI are some of the
-Portlet 3.0 features you'll see demonstrated. 
+features you'll use in Portlet 3.0. 
 
 ## Portlet Configuration Annotations
 
 The
 [`@PortletConfiguration`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/annotations/PortletConfiguration.html)
 annotation describes your portlet to the portlet container. You can use the
-annotation instead of or in addition to the standard `portlet.xml` descriptor
-file. The `@PortletConfiguration` annotation allows you to describe your portlet
-in the portlet code instead of a separate file. 
+annotation instead of or in addition to the traditional `portlet.xml` descriptor
+file. The `@PortletConfiguration` annotation describes your portlet in the
+portlet code instead of a separate file. 
 
 | **Note:** You can configure Bean Portlets using configuration annotations, 
 | descriptors, or both. If using annotations and descriptors, the descriptors 
-| take precedence. Annotations, however, configure the portlet in its source
-| code. 
+| take precedence. 
 
 This example portlet was generated using the
-`com.liferay.project.templates.cdi.bean.portlet` archetype and it uses
+`com.liferay.project.templates.cdi.bean.portlet` archetype, and it uses
 `@PortletConfiguration` and `@LiferayPortletConfiguration` annotations:
 
 ```java
@@ -86,18 +83,18 @@ portlet to a page.
 | If you're familiar with the `portlet.xml` and `liferay-portlet.xml` 
 | descriptors, the
 | [Portlet Descriptor to OSGi Service Property Map](/docs/7-2/reference/-/knowledge_base/reference/portlet-descriptor-to-osgi-service-property-map) 
-| shows you the OSGi `@Component` property equivalent---there's an
+| shows you the OSGi `@Component` property equivalent. There's an
 | `@PortletConfiguration` or `@LiferayPortletConfiguration` equivalent setting 
 | for each `@Component` property. 
 
-Once you've configured your portlet, you'll want to declare the objects it uses
+Once you've configured your portlet, you should declare the objects it uses
 (depends on). 
 
 ## Dependency Injection
 
 Bean Portlets use the `@Inject` CDI annotation (by default) to inject
-dependencies. Just apply the annotation to a field you want injected with an
-object of the specified type. This example portlet injects the portlet's
+dependencies. Apply the annotation to a field you want injected with an object
+of the specified type. This example portlet injects the portlet's
 `PortletConfig` object. 
 
 ```java
@@ -126,20 +123,20 @@ phases.
 
 ## Portlet Phase Methods
 
-Phase method annotations let you apply methods for handling a portlet's phases.
-They can be applied to methods in any class anywhere in the portlet WAR. There's
-no mandatory method naming convention---just assign a phase annotation to the
+Phase method annotations apply methods for handling a portlet's phases. You can
+add them to methods in any class anywhere in the portlet WAR. There's no
+mandatory method naming convention: assign a phase annotation to the
 methods you want to invoke to process the phase. Here are the annotations:
 
 | Phase    | Annotation |
 | ---------------- | ---------- |
-| Header (new)     | [`@HeaderMethod`](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/annotations/HeaderMethod.html) |
-| Render           | [`@RenderMethod`](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/annotations/RenderMethod.html) |
-| Action           | [`@ActionMethod`](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/annotations/ActionMethod.html) |
-| Event            | [`@EventMethod`](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/annotations/EventMethod.html)  |
-| Resource-serving | [`@ServeResourceMethod`](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/annotations/ServeResourceMethod.html) |
+| Header (new)     | [`@HeaderMethod`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/annotations/HeaderMethod.html) |
+| Render           | [`@RenderMethod`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/annotations/RenderMethod.html) |
+| Action           | [`@ActionMethod`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/annotations/ActionMethod.html) |
+| Event            | [`@EventMethod`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/annotations/EventMethod.html)  |
+| Resource-serving | [`@ServeResourceMethod`](https://docs.liferay.com/portlet-api/3.0/javadocs/javax/portlet/annotations/ServeResourceMethod.html) |
 
-The Header phase lets you specify resource dependencies, such as CSS, prior to
+You can specify resource dependencies, such as CSS, in the Header phase prior to
 the Render phase. It helps you avoid loading the same resources multiple times. 
 
 You'll definitely want to define a Render method. For example, here's a method
