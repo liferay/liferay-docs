@@ -362,6 +362,28 @@ Once you have these configured, set your store implementation to the `S3Store`:
 Consult the Amazon Simple Storage documentation for additional details on using
 Amazon's service. 
 
++$$$
+
+**Important:** In most AWS Regions, Amazon S3 supports only AWS Signature 
+Version 4 request authorization. To use AWS Signature Version 4, upgrade your
+JetS3t library to version 0.9.3 (or newer):
+
+1.  Download [JetS3t](http://www.jets3t.org/)
+    version 0.9.3 (or newer). 
+
+2.  Stop your server. 
+
+3.  In your @product@ application's `WEB-INF/lib/` folder, replace `jets3t.jar`
+    with the JetS3t JAR you downloaded. 
+
+4.  Restart your server. 
+
+See
+[LPS-67294](https://issues.liferay.com/browse/LPS-67294)
+for details. 
+
+$$$
+
 We have one more store to go over: the Documentum store. 
 
 #### Using the Documentum Store [](id=using-the-documentum-store)
