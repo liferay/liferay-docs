@@ -1,15 +1,15 @@
-# Liferay's Workflow Framework 
+# Liferay's Workflow Framework
 
 Enabling your application's entities to support workflow is so easy, you could do it in
 your sleep (but don't try). To workflow-enable your entities,
 
-1. Create a Workflow Handler 
-2. Update the Service Layer 
-3. Update the User Interface 
+1. Create a Workflow Handler
+2. Update the Service Layer
+3. Update the User Interface
 
-Time to get started. 
+Time to get started.
 
-## Creating a Workflow Handler 
+## Creating a Workflow Handler
 
 If you're in a Service Builder application, the workflow handler goes in your
 `-service` module.
@@ -17,10 +17,7 @@ If you're in a Service Builder application, the workflow handler goes in your
 1.  Create a Component class that extends `BaseWorkflowHandler<T>`.
 
     ```java
-    @Component(
-        property = {"model.class.name=com.my.app.package.model.FooEntity"},
-        service = WorkflowHandler.class
-    )
+    @Component(immediate = true, service = WorkflowHandler.class)
     public class FooEntityWorkflowHandler extends BaseWorkflowHandler<FooEntity>
     ```
 
@@ -38,14 +35,14 @@ If you're in a Service Builder application, the workflow handler goes in your
     }
 
     @Override
-    public FooEntity updateStatus(int status, Map<String, Serializable> workflowContext) {
+    public FooEntity updateStatus(int status, Map<String, Serializable> workflowContext) throws PortalException {
     ... }
     ```
 
     Most of the heavy lifting is in the `updateStatus` method. It returns
     a call to a local service method of the same name (for example,
     `FooEntityLocalService.updateStatus`), so the status returned from the workflow
-    back-end can be persisted to the entity table in the database. 
+    back-end can be persisted to the entity table in the database.
 
     The `updateStatus` method needs a user ID, the primary key for the
     class (for example, `fooEntityId`), the workflow status, the service
@@ -66,10 +63,10 @@ If you're in a Service Builder application, the workflow handler goes in your
                 WorkflowConstants.CONTEXT_ENTRY_CLASS_PK));
 
         ServiceContext serviceContext = (ServiceContext)workflowContext.get(
-            "serviceContext");
+            WorkflowConstants.CONTEXT_SERVICE_CONTEXT);
 
         return _fooEntityLocalService.updateStatus(
-            userId, classPK, status, serviceContext, workflowContext);
+            userId, classPK, status, serviceContext);
     }
     ```
 
@@ -77,14 +74,14 @@ Now your entity can be handled by Liferay's workflow framework. Next, update
 the service methods to account for workflow status and add a new method to
 update the status of an entity in the database.
 
-## Updating the Service Layer 
+## Updating the Service Layer
 
-In most Liferay applications, 
-[Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder) 
-is used to create database fields. First, you must update the service layer: 
+In most Liferay applications,
+[Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder)
+is used to create database fields. First, you must update the service layer:
 
 1.  Make sure your entity database table has `status`, `statusByUserId`,
-    `statusByUserName`, and `statusDate` fields. 
+    `statusByUserName`, and `statusDate` fields.
 
     ```xml
     <column name="status" type="int" />
@@ -104,21 +101,21 @@ is used to create database fields. First, you must update the service layer:
         ```
 
     With Service Builder driven Liferay applications, this is in the local service
-    implementation class (`-LocalServiceImpl`). 
+    implementation class (`-LocalServiceImpl`).
 
 
 1.  At the end of any method that adds a new entity to your database, call the
-    workflow service to enable sending the entity into the workflow backend: 
+    workflow service to enable sending the entity into the workflow backend:
 
     ```java
-    WorkflowHandlerRegistryUtil.startWorkflowInstance(fooEntity.getCompanyId(),
-        fooEntity.getGroupId(), fooEntity.getUserId(), FooEntity.class.getName(),
-        fooEntity.getPrimaryKey(), fooEntity, serviceContext);
+    WorkflowHandlerRegistryUtil.startWorkflowInstance(
+        fooEntity.getCompanyId(), fooEntity.getGroupId(), fooEntity.getUserId(),
+        FooEntity.class.getName(), fooEntity.getPrimaryKey(), fooEntity,
+        serviceContext);
     ```
 
 2.  Implement the `updateStatus` method that must be called in the workflow
-    handler. In the end, persist the updated entity to the database. 
-
+    handler. In the end, persist the updated entity to the database.
 
     ```java
     fooEntity.setStatus(status);
@@ -134,48 +131,44 @@ is used to create database fields. First, you must update the service layer:
 
     ```java
     if (status == WorkflowConstants.STATUS_APPROVED) {
-
-        assetEntryLocalService.updateVisible(FooEntity.class.getName(),
-                fooEntityId, true);
-
-    } else {
-
-        assetEntryLocalService.updateVisible(FooEntity.class.getName(),
-                fooEntityId, false);
+        assetEntryLocalService.updateVisible(
+            FooEntity.class.getName(), fooEntityId, true);
+    }
+    else {
+        assetEntryLocalService.updateVisible(
+            FooEntity.class.getName(), fooEntityId, false);
     }
     ```
 
     Here's what a full `updateStatus` method might look like:
 
     ```java
-	@Indexable(type = IndexableType.REINDEX)
-    public FooEntity updateStatus(long userId, long fooEntityId, int status,
-			ServiceContext serviceContext) throws PortalException,
-			SystemException {
+	  @Indexable(type = IndexableType.REINDEX)
+    public FooEntity updateStatus(
+        long userId, long fooEntityId, int status, ServiceContext serviceContext
+    ) throws PortalException, SystemException {
 
-		User user = userLocalService.getUser(userId);
-		FooEntity fooEntity = getFooEntity(fooEntityId);
+    		User user = userLocalService.getUser(userId);
+    		FooEntity fooEntity = getFooEntity(fooEntityId);
 
-		fooEntity.setStatus(status);
-		fooEntity.setStatusByUserId(userId);
-		fooEntity.setStatusByUserName(user.getFullName());
-		fooEntity.setStatusDate(new Date());
+    		fooEntity.setStatus(status);
+    		fooEntity.setStatusByUserId(userId);
+    		fooEntity.setStatusByUserName(user.getFullName());
+    		fooEntity.setStatusDate(new Date());
 
-		fooEntityPersistence.update(fooEntity);
+    		fooEntityPersistence.update(fooEntity);
 
-		if (status == WorkflowConstants.STATUS_APPROVED) {
+    		if (status == WorkflowConstants.STATUS_APPROVED) {
+    			assetEntryLocalService.updateVisible(
+              FooEntity.class.getName(), fooEntityId, true);
+    		}
+        else {
+    			assetEntryLocalService.updateVisible(
+              FooEntity.class.getName(), fooEntityId, false);
+    		}
 
-			assetEntryLocalService.updateVisible(FooEntity.class.getName(),
-					fooEntityId, true);
-
-		} else {
-
-			assetEntryLocalService.updateVisible(FooEntity.class.getName(),
-					fooEntityId, false);
-		}
-
-		return fooEntity;
-	}
+    		return fooEntity;
+	  }
     ```
 4.  Add a call to `deleteWorkflowInstanceLinks` in the `deleteEntity` method:
 
@@ -201,7 +194,7 @@ For an example of a fully implemented `updateStatus` method, see the
 Once you've accounted for workflow status in your database and service layer,
 there's only one thing left to do: update the user interface.
 
-## Workflow Status and the View Layer 
+## Workflow Status and the View Layer
 
 This is dependent on the needs of you application, but often involves the
 following these steps:
@@ -209,7 +202,7 @@ following these steps:
 **Display only approved entities:**
 
 1.  If you're using Service Builder, define your finder in your application's
-    `service.xml` and let Service Builder generate it for you. 
+    `service.xml` and let Service Builder generate it for you.
 
     ```xml
     <finder name="G_S" return-type="Collection">
@@ -222,9 +215,10 @@ following these steps:
 
     ```jsp
     public List<FooEntity> getFooEntities(long groupId, int status)
-           throws SystemException {
-        return fooEntityPersistence.findByG_S(groupId,
-             WorkflowConstants.STATUS_APPROVED);
+        throws SystemException {
+
+        return fooEntityPersistence.findByG_S(
+            groupId, WorkflowConstants.STATUS_APPROVED);
     }
     ```
 
@@ -232,13 +226,14 @@ following these steps:
 
     ```jsp
     <liferay-ui:search-container-results
-        results="<%=FooEntityLocalServiceUtil.getFooEntities(scopeGroupId,
-                  fooEntityId(), Workflowconstants.STATUS_APPROVED, searchContainer.getStart(),
-                  searchContainer.getEnd())%>"
+        results="<%= FooEntityLocalServiceUtil.getFooEntities(
+            scopeGroupId, fooEntityId(), Workflowconstants.STATUS_APPROVED,
+            searchContainer.getStart(), searchContainer.getEnd()) %>"
+    />
         ...
     ```
 
-**Display the workflow status:** 
+**Display the workflow status:**
 
 When you want to display the workflow status, use the `<aui:worklfow-status>`
 tag.
@@ -249,4 +244,3 @@ tag.
 
 Once your user interface accounts for workflow, your Liferay application is
 fully workflow enabled.
-

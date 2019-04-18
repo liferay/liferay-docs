@@ -8,8 +8,8 @@ use the workflow capabilities in subsequent articles.
 
 A workflow process is a set of steps that an Asset must proceed through before
 it's marked with the workflow status _Approved_. The steps are defined in an XML file
-called a 
-[workflow definition](/7-2/reference/-/knowledge_base/reference/crafting-xml-workflow-definitions). 
+called a
+[workflow definition](/7-2/reference/-/knowledge_base/reference/crafting-xml-workflow-definitions).
 Each Asset is configured to run through a specific workflow definition via the
 [Control Panel](/7-2/user/-/knowledge_base/user/workflow).
 
@@ -45,7 +45,7 @@ Once the database table has the proper status fields, set them in your Entity's
 `addEntity` service method. Initially, set the status as a DRAFT.  It's what
 the workflow framework expects of an entity as it enters the workflow process.
 The status is an `int`, but you don't have to remember which number corresponds
-to the DRAFT status. Instead, use the 
+to the DRAFT status. Instead, use the
 [`WorkflowConstants`](https://github.com/liferay/liferay-portal/blob/7.2.x/portal-kernel/src/com/liferay/portal/kernel/workflow/WorkflowConstants.java)
 in `portal-kernel`. For a draft, pass in
 
@@ -94,7 +94,7 @@ Once the entity is sent to the Workflow Framework, much of the process is
 automated, and you need not worry about the details. Write one class that gives
 the framework some information on how to process the entity. It's called a
 workflow handler (`WorkflowHandler<T>`), and you can create it by extending the
-handy abstract implementation, `BaseWorkflowHandler<T>`. 
+handy abstract implementation, `BaseWorkflowHandler<T>`.
 
 The workflow handler usually goes in the module containing service
 implementations. It's nice to keep your back-end code separate from your view
@@ -106,7 +106,7 @@ is the fully qualified class name for class you pass as the type parameter in
 the class declaration.
 
 In addition to the property, declare the type of service you're providing in the
-Component: `WorkflowHandler.class`. 
+Component: `WorkflowHandler.class`.
 
 Workflow handlers extending the `BaseWorkflowHandler` must override three methods:
 
@@ -143,7 +143,7 @@ Other Workflow Considerations in the Service Layer
 **Blogs Entries, accounting for scheduled publication:**
 [BlogsEntryLocalServiceImpl#updateStatus](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/blogs/blogs-service/src/main/java/com/liferay/blogs/service/impl/BlogsEntryLocalServiceImpl.java#L1505)
 
-Asset 
+Asset
 
 Social
 
@@ -151,7 +151,7 @@ Stats (Blogs)
 
 Trash
 
-Journal, 
+Journal,
 [JournalArticleLocalServiceImpl#updateStatus](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/journal/journal-service/src/main/java/com/liferay/journal/service/impl/JournalArticleLocalServiceImpl.java#L6530)
 
 
@@ -173,7 +173,7 @@ entries in the `workflowinstancelinks` table.
 To get the `WorkflowInstanceLocalService` injected into your
 `*LocalServiceBaseImpl` so you can call its methods in the `LocalServiceImpl`,
 add a `reference entity` to your entity declaration in `service.xml`, specifying
-`WorkflowInstancelink`. 
+`WorkflowInstancelink`.
 
 ## Updating the User Interface
 
