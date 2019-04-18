@@ -1,4 +1,10 @@
-# Adding and Editing Wiki Pages [](id=adding-and-editing-wiki-pages)
+---
+header-id: adding-and-editing-wiki-pages
+---
+
+# Adding and Editing Wiki Pages
+
+[TOC levels=1-4]
 
 Wiki nodes initially have no pages. When you navigate into a node for the first 
 time, a default page called *FrontPage* is created automatically. To view the 

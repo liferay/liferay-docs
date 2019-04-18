@@ -1,4 +1,10 @@
-# Getting Started with Wikis [](id=getting-started-with-wikis)
+---
+header-id: getting-started-with-wikis
+---
+
+# Getting Started with Wikis
+
+[TOC levels=1-4]
 
 The Menu (![Menu](../../../../images/icon-menu.png)) 
 is the best place to start working with your wikis. Click the *Menu* 
@@ -13,7 +19,7 @@ contain many wiki nodes. By default, it contains one node: *Main*.
 
 ![Figure 1: The Wiki app instance has a wiki node named *Main* with a single front page. You can build on the Main node or click the Add icon to create a new node.](../../../../images/wiki-admin-empty.png)
 
-## Configuring Wikis [](id=configuring-wikis)
+## Configuring Wikis
 
 Before adding to your wiki instance, you should configure it. The instance's 
 interfaces for permissions, export and import, configuration, and application 
@@ -40,7 +46,7 @@ apps' notification email settings tabs; they customize who wiki emails come
 from and the format and text of the email sent when a page is added or updated.
 The *RSS* tab lets you configure RSS feeds. 
 
-## Adding Wikis [](id=adding-wikis)
+## Adding Wikis
 
 Follow these steps to create a new wiki node: 
 
@@ -65,7 +71,7 @@ Follow these steps to create a new wiki node:
 
 ![Figure 2: The New Wiki Node form lets you describe your new node, set view permissions, and set permissions for the Guest and Site Member roles.](../../../../images/wiki-new-wiki-node.png)
 
-## Wiki Node Options [](id=wiki-node-options)
+## Wiki Node Options
 
 Next to each listed wiki node is an *Actions* menu 
 (![Actions](../../../../images/icon-actions.png)). Here are the actions available 

@@ -1,4 +1,10 @@
-# Working Together with the Wiki [](id=working-together-with-the-wiki)
+---
+header-id: working-together-with-the-wiki
+---
+
+# Working Together with the Wiki
+
+[TOC levels=1-4]
 
 Wikis are for collaboratively building a collection of information. The most
 famous wiki on the planet is Wikipedia. It's a full encyclopedia developed

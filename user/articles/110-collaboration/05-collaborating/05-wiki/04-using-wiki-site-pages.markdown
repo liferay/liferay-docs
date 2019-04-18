@@ -1,4 +1,10 @@
-# Using the Wiki on Site Pages [](id=using-the-wiki-on-site-pages)
+---
+header-id: using-the-wiki-on-site-pages
+---
+
+# Using the Wiki on Site Pages
+
+[TOC levels=1-4]
 
 You can use the Wiki on Site pages via the Wiki widget. Follow these steps to 
 add the Wiki widget to a page:

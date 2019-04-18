@@ -1,4 +1,10 @@
-# Wiki Page Details [](id=wiki-page-details)
+---
+header-id: wiki-page-details
+---
+
+# Wiki Page Details
+
+[TOC levels=1-4]
 
 When viewing a wiki page, you can view its details by clicking *Details* above 
 the page content. Several tabs appear, to give you access to several
@@ -8,7 +14,7 @@ categories of information about the page.
 
 ![Figure 2: The wiki page's details.](../../../../images/wiki-page-details.png)
 
-## Details [](id=details)
+## Details
 
 The Details tab shows page statistics and lets you perform some actions on the 
 page: 
@@ -36,7 +42,7 @@ modifications notifications for the page and the entire wiki node.
 **Advanced Actions**: Links that let you modify the page's permissions, make a 
 copy of the page, move (rename) the page, or move the page to the recycle bin. 
 
-## History [](id=history)
+## History
 
 The History tab lets you access the page's activities and versions via tabs: 
 
@@ -54,14 +60,14 @@ differences between versions by selecting two versions and then clicking the
 
 ![Figure 3: The Activities tab displays the actions taken on the wiki page.](../../../../images/wiki-page-history.png)
 
-## Incoming/Outgoing Links [](id=incoming-outgoing-links)
+## Incoming/Outgoing Links
 
 The tabs *Incoming Links* and *Outgoing Links* list incoming and outgoing links, 
 respectively. These are wiki links to and from the wiki page. You can use this 
 tab to examine how this page links to other pages and how other pages link back 
 to this page. 
 
-## Attachments [](id=attachments)
+## Attachments
 
 The *Attachments* tab lists the name and size of each file attached to the page.
 You can attach any file to the wiki. Images are the most common type of file 
