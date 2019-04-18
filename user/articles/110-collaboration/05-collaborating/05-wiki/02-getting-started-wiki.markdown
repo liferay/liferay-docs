@@ -3,8 +3,8 @@
 The Menu (![Menu](../../../../images/icon-menu.png)) 
 is the best place to start working with your wikis. Click the *Menu* 
 (![Menu](../../../../images/icon-menu.png)), navigate to your site, and select 
-the *Content* section. If you're updating an existing page-scoped wiki app 
-instance, you can select that page scope from the scope menu the Gear icon
+the *Content & Data* section. If you're updating an existing page-scoped wiki 
+app instance, you can select that page scope from the scope menu the Gear icon 
 (![Gear](../../../../images/icon-control-menu-gear.png)) 
 makes available. The site's wiki app instance is available in the Default scope. 
 Once you're in the proper content scope, click *Wiki*. The Wiki administration 
@@ -24,7 +24,7 @@ templates are accessible from the Options menu. Click the
 The following options are available in this menu: 
 
 **Wikis Permissions**: Specify which
-[Roles](/discover/portal/-/knowledge_base/7-1/roles-and-permissions) can create
+[Roles](/discover/portal/-/knowledge_base/7-2/roles-and-permissions) can create
 wiki nodes and access the Wikis Permissions screen. For example, if you've
 created a specific Role for creating wiki nodes and want to enable that Role to
 create new wiki nodes in this wiki application instance, select the Role's
@@ -32,17 +32,13 @@ check box in the *Add Node* column and then click *Save*.
 
 **Export / Import**: Import existing wiki content into your wiki app instance,
 or export wiki content to a file. For details, refer to 
-[Importing/Exporting Pages and Content](/discover/portal/-/knowledge_base/7-1/importing-exporting-pages-and-content).
+[Importing/Exporting Pages and Content](/discover/portal/-/knowledge_base/7-2/importing-exporting-pages-and-content).
 
 **Configuration**: Configure email notifications and RSS feeds. The *Email
 From*, *Page Added Email*, and *Page Updated Email* tabs are similar to other
 apps' notification email settings tabs; they customize who wiki emails come
 from and the format and text of the email sent when a page is added or updated.
 The *RSS* tab lets you configure RSS feeds. 
-
-**Permissions**: Specify which Roles can view the wiki app instance's Options
-menu, access the menu's Configuration and Permissions options, and access any
-custom preference options added to the wiki app. 
 
 ## Adding Wikis [](id=adding-wikis)
 
@@ -98,7 +94,7 @@ updated, the portal sends you an email notification.
 the wiki node. 
 
 **Move to Recycle Bin**: Moves the wiki node to the 
-[Recycle Bin](/discover/portal/-/knowledge_base/7-1/restoring-deleted-assets). 
+[Recycle Bin](/discover/portal/-/knowledge_base/7-2/restoring-deleted-assets). 
 
 ![Figure 3: Each wiki node's Actions menu lists actions you can perform.](../../../../images/wiki-options.png)
 
@@ -108,4 +104,4 @@ requires an administrator's approval to publish a wiki page modification (add,
 update, or delete). You can access your site's default *Wiki Page* workflow from
 within the Site Administration Menu, by navigating to *Configuration* &rarr; 
 *Workflow* for your site. To learn how to use workflow, see the
-[Workflow](/discover/portal/-/knowledge_base/7-1/workflow) section. 
+[Workflow](/discover/portal/-/knowledge_base/7-2/workflow) section. 

@@ -6,7 +6,7 @@ add the Wiki widget to a page:
 1.  Navigate to the page where you want to place a wiki. 
 
 2.  From the *Add* 
-    (![Add](../../../../images/icon-control-menu-add.png)) menu, open *Widgets* 
+    (![Add](../../../../images/icon-add-app.png)) menu, open *Widgets* 
     &rarr; *Wiki* and add a *Wiki* to the page. 
 
 Your Site's wiki nodes appear in tabs across the top of the widget. 
@@ -23,7 +23,7 @@ Comments*, *Enable Ratings for Comments*, and *Enable Highlighting* check boxes
 enable or disable those features for the Wiki. You can set how you want users
 to interact with wiki documents. The *Display Template* selector menu lets you
 choose the Wiki's 
-[Application Display Template](/discover/portal/-/knowledge_base/7-1/styling-widgets-with-application-display-templates).
+[Application Display Template](/discover/portal/-/knowledge_base/7-2/styling-widgets-with-application-display-templates).
 Below this, you can set which wiki nodes are visible. For example, you might
 host two wikis on a given site, exposing one to the public and keeping the
 other private for site members.
@@ -70,14 +70,14 @@ Once you set the wiki's configuration options the way you want them, click
 The Wiki's Options menu also contains the usual widget options: 
 
 **Look and Feel Configuration:** Set the widget's [look and
-feel](/discover/portal/-/knowledge_base/7-1/look-and-feel-configuration).
+feel](/discover/portal/-/knowledge_base/7-2/look-and-feel-configuration).
 
-**Export/Import:** [Export or import widget data](/discover/portal/-/knowledge_base/7-1/exporting-importing-widget-data).
+**Export/Import:** [Export or import widget data](/discover/portal/-/knowledge_base/7-2/exporting-importing-widget-data).
 
 **Permissions:** Set the widget's permissions.
 
 **Configuration Templates:** Use 
-[configuration templates](/discover/portal/-/knowledge_base/7-1/configuration-templates) to
+[configuration templates](/discover/portal/-/knowledge_base/7-2/configuration-templates) to
 store the widget's current setup or apply an existing archived setup.
 
 **Remove:** Remove the widget from the page. 
@@ -108,12 +108,15 @@ The current wiki page's content shows in the wiki's main viewing area. Several
 features display above the wiki page content, depending on which wiki features 
 are enabled and your permissions: 
 
--   **Add Child Page:** Add a wiki page as a child of the current wiki page. 
--   **Edit:** Edit the wiki page (if you have sufficient permissions). 
--   **Details:** View the wiki page's details (if you have sufficient 
-    permissions). This is explained further in 
-    [the documentation on page details](/discover/portal/-/knowledge_base/7-1/wiki-page-details). 
--   **Print:** Print the wiki page.
+**Add Child Page:** Add a wiki page as a child of the current wiki page. 
+
+**Edit:** Edit the wiki page (if you have sufficient permissions). 
+
+**Details:** View the wiki page's details (if you have sufficient permissions). 
+This is explained further in 
+[the documentation on page details](/discover/portal/-/knowledge_base/7-2/wiki-page-details). 
+
+**Print:** Print the wiki page.
 
 Additional features appear below the wiki page's content. A view counter 
 displays the wiki page's view count. Ratings and comments also appear if they're 

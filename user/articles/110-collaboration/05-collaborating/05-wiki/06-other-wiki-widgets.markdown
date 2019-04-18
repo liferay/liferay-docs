@@ -3,12 +3,14 @@
 The widgets that accompany the main Wiki widget help you display and navigate 
 particular wiki nodes. The following widgets are available: 
 
--   **Page Menu:** Displays a single wiki page's outgoing links.
--   **Tree Menu:** Displays a wiki's page hierarchy as a tree.
--   **Wiki Display:** Displays a single wiki node.
+**Page Menu:** Displays a single wiki page's outgoing links. 
+
+**Tree Menu:** Displays a wiki's page hierarchy as a tree. 
+
+**Wiki Display:** Displays a single wiki node. 
 
 You can find these widgets in the *Add* 
-(![Add](../../../../images/icon-control-menu-add.png)) &rarr; *Widgets* &rarr; 
+(![Add](../../../../images/icon-add-app.png)) &rarr; *Widgets* &rarr; 
 *Wiki* menu. 
 
 ## Page Menu [](id=page-menu)

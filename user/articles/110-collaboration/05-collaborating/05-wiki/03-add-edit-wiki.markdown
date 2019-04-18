@@ -7,13 +7,9 @@ appears and shows a message that explains the page is empty and needs you to add
 content. That message is a link; click it to start editing the page. The wiki 
 page editing form then appears. 
 
-+$$$
-
-**Note:** See the 
-[getting started article](/discover/portal/-/knowledge_base/7-1/getting-started-with-wikis) 
-for instructions on accessing your wiki nodes.
-
-$$$
+| **Note:** See the 
+| [getting started article](/discover/portal/-/knowledge_base/7-2/getting-started-with-wikis) 
+| for instructions on accessing your wiki nodes. 
 
 ![Figure 1: Each empty wiki page presents a default message link you can click to edit the page.](../../../../images/wiki-empty-frontpage.png)
 
@@ -28,15 +24,14 @@ Follow these steps to use the wiki page editing form:
     Help* if you need help with Creole syntax (e.g., syntax for text styling,
     header formatting, link creation, etc.). For a detailed explanation of the
     rest of the editor, see the 
-    [Blogs documentation](/discover/portal/-/knowledge_base/7-1/using-the-blog-entry-editor). 
+    [Blogs documentation](/discover/portal/-/knowledge_base/7-2/using-the-blog-entry-editor). 
 
 2.  If you want to attach files to the page, open the *Attachments* section of 
     the form and add them via drag and drop or the *Select Files* button. 
 
 3.  If you want to associate a tag with the page, open the *Categorization* 
-    section and use the *Select* button to select an existing tag. You can also 
-    create a new tag by entering it in the *Tags* field and clicking *Add*. See 
-    [the documentation on tags](/discover/portal/-/knowledge_base/7-1/tagging-content) 
+    section and enter a new or existing tag in the *Tags* field. See 
+    [the documentation on tags](/discover/portal/-/knowledge_base/7-2/tagging-content) 
     for more information. 
 
 4.  If you want to select an existing asset in the portal (e.g., a media file, 
@@ -44,10 +39,10 @@ Follow these steps to use the wiki page editing form:
     and use the *Select* button to select that asset. 
 
 5.  In the form's *Configuration* section, you can set the page to use Creole 
-    (default), MediaWiki, plain text, or HTML. We recommend that you stick with 
-    the Creole format, as it allows for a much cleaner separation of content and 
-    code. You can also use the Configuration section to summarize your edit, and 
-    specify whether it's a minor edit. 
+    (default), plain text, or HTML. We recommend that you stick with the Creole 
+    format, as it allows for a much cleaner separation of content and code. You 
+    can also use the Configuration section to summarize your edit, and specify 
+    whether it's a minor edit. 
 
 6.  Click *Publish* to publish the page when you're done editing it. 
 
@@ -55,15 +50,11 @@ As is common with wikis in general, if you link to a page that doesn't exist,
 clicking that link opens the new page form with a note stating that the page 
 doesn't exist and that you are creating it. 
 
-+$$$
-
-**Note**: When you create a page by clicking a link to a page that doesn't 
-exist, the new page is **not** a child of the current page. The page is created 
-at the wiki node's root. From Wiki in Site Administration, you can use the 
-page's Move action to assign it a new parent page. Clicking the Move action 
-brings up a window that lets you select a new parent for the wiki page. 
-
-$$$
+| **Note**: When you create a page by clicking a link to a page that doesn't 
+| exist, the new page is **not** a child of the current page. The page is 
+| created at the wiki node's root. From Wiki in Site Administration, you can use 
+| the page's Move action to assign it a new parent page. Clicking the Move 
+| action brings up a window that lets you select a new parent for the wiki page. 
 
 Return to the wiki node view to see a list of the node's top-level pages. If you 
 navigate to a page that has child pages, its child pages are listed. In these 
@@ -83,20 +74,24 @@ page. You're prompted to specify a new title for it.
 **Move**: Opens a dialog that lets you rename the page or assign the page to
 a new parent page within the wiki node. 
 
+**Add Child Page**: Create a new child page of the wiki page. 
+
 **Subscribe (or Unsubscribe)**: Subscribes you to (or unsubscribes you from)
 notifications for the wiki page's modifications. 
 
-**Move to Recycle Bin**: Moves the wiki node to the Recycle Bin.
+**Print**: Print the wiki page. 
+
+**Move to Recycle Bin**: Moves the wiki page to the Recycle Bin.
 
 Each wiki page has a check box next to it. When you select a page's check box, 
 the Management Bar changes to show an Info icon 
 (![Info](../../../../images/icon-information.png)) and Recycle Bin icon 
 (![Recycle Bin](../../../../images/icon-trash.png)). To move the selected page 
 to the Recycle Bin, click the Recycle Bin icon. To get additional information 
-about the page via an info panel, click the Info icon. The info panel provides a 
-star icon that you can select to subscribe to the page's modifications. The info 
+about the page via an info panel, click the Info icon. The info panel has a star 
+icon that you can select to subscribe to the page's modifications. The info 
 panel's Details section displays the page's summary, format, version, creation 
-and modification dates, number of attachments, and RSS link.
+and modification dates, number of attachments, and RSS link. 
 
 There are several more features in the wiki node view's Management Bar. The 
 *Filter and Order* menu orders the pages by title or modification date 
@@ -110,7 +105,7 @@ type:
 **List** (![List](../../../../images/icon-view-type-list.png)): Shows the pages
 in a list with an icon representing each page. Each page's entry contains the
 name of its author, when it was last modified, and its
-[workflow](/discover/portal/-/knowledge_base/7-1/workflow) status (e.g.,
+[workflow](/discover/portal/-/knowledge_base/7-2/workflow) status (e.g.,
 Approved, Draft, etc.). 
 
 **Table** (![Table](../../../../images/icon-view-type-table.png)): Shows the
