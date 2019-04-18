@@ -1,4 +1,10 @@
-# Message Board Permissions [](id=message-board-permissions)
+---
+header-id: message-board-permissions
+---
+
+# Message Board Permissions
+
+[TOC levels=1-4]
 
 Open the Message Boards app in your scope's Site Administration menu, as 
 described in 

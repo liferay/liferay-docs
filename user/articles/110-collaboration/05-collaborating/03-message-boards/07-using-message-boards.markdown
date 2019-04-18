@@ -1,4 +1,10 @@
-# Using the Message Boards [](id=using-the-message-boards)
+---
+header-id: using-the-message-boards
+---
+
+# Using the Message Boards
+
+[TOC levels=1-4]
 
 You can add a Message Boards widget to a page from the *Add* 
 (![Add](../../../../images/icon-add-app.png)) menu's *Widgets* &rarr; 
@@ -26,7 +32,7 @@ You can also use the search bar at the top of the widget to search for threads
 and posts. Although search works on threads and posts within categories, it 
 doesn't work on categories themselves. 
 
-## Posting New Threads [](id=posting-new-threads)
+## Posting New Threads
 
 Follow these steps to post a new thread: 
 
@@ -106,7 +112,7 @@ Follow these steps to post a new thread:
 9.  Click *Publish* to publish the thread. Once it's published, it appears 
     along with the other threads in the category. 
 
-## Participating in Message Board Threads [](id=participating-in-message-board-threads)
+## Participating in Message Board Threads
 
 To find message board threads that interest you, browse a message board's
 Categories or Recent Posts tabs. In the Categories tab, you can view a 

@@ -1,4 +1,10 @@
-# Configuring Message Boards [](id=configuring-message-boards)
+---
+header-id: configuring-message-boards
+---
+
+# Configuring Message Boards
+
+[TOC levels=1-4]
 
 Before using a message board, configure it to your needs. First, open the
 Message Boards app in your scope's Site Administration menu, as described 
@@ -8,7 +14,7 @@ To open the message board's configuration screen, click the message board's
 (![Options](../../../../images/icon-options.png)) and select *Configuration*. 
 The below sections cover these tabs.
 
-## General Setup [](id=general-setup)
+## General Setup
 
 The *General* tab contains general settings: 
 
@@ -47,7 +53,7 @@ following timeframes you define here:
 After the allotted time has passed, the post expires from *Recent Posts*, but is
 still accessible everywhere else in the message board. 
 
-## Email Setup [](id=email-setup)
+## Email Setup
 
 Use these tabs to configure how the Message Boards app handles email 
 notifications:
@@ -78,7 +84,7 @@ a message is added to a topic they subscribe to.
 **Message Updated Email:** This tab is identical to the Message Added Email 
 tab, except it defines the email that users receive when a post is updated. 
 
-## Thread Priorities [](id=thread-priorities)
+## Thread Priorities
 
 The *Thread Priorities* tab defines custom priorities for message threads. This
 lets privileged Roles tag a thread with a certain priority, which highlights it
@@ -104,7 +110,7 @@ lower priority.
 The localized language field lets you name the priorities in each locale. You
 can select the locale, update the priority names for it, and save your updates. 
 
-## User Ranks [](id=user-ranks)
+## User Ranks
 
 The User Ranks tab ranks users by the number of messages they have posted.
 Default ranks from 0 to 1000 are provided, but you can set custom ranks here as
@@ -129,7 +135,7 @@ Group:
 As with thread priority names, the *Localized Language* field localizes rank
 names. 
 
-## RSS [](id=rss)
+## RSS
 
 Message board threads can be published as RSS feeds. The RSS tab
 enables/disables RSS subscriptions and defines how the feeds are generated: 

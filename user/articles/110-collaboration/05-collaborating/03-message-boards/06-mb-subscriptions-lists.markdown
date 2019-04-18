@@ -1,4 +1,10 @@
-# User Subscriptions and Mailing Lists [](id=user-subscriptions-and-mailing-lists)
+---
+header-id: user-subscriptions-and-mailing-lists
+---
+
+# User Subscriptions and Mailing Lists
+
+[TOC levels=1-4]
 
 The Message Boards app notifies users of message boards activity via email in 
 two ways:
@@ -11,7 +17,7 @@ two ways:
 | use a site-scoped or page-scoped message board if you need user subscriptions 
 | or a mailing list. 
 
-## User Subscriptions [](id=user-subscriptions)
+## User Subscriptions
 
 In the user subscriptions mechanism, the Message Boards app uses its configured 
 *Email From* address to send email notifications to subscribed users. The app 
@@ -74,7 +80,7 @@ new mail every minute, but you can set it to whatever you like:
 | the email. To enable recent mode in Gmail, for example, prefix the value of 
 | your POP client's Username or Email field with `recent:`. 
 
-## Mailing Lists [](id=mailing-lists)
+## Mailing Lists
 
 Alternatively, the Message Boards app can use mailing lists to send email 
 notifications. Any category in a message board can have its own mailing list. 

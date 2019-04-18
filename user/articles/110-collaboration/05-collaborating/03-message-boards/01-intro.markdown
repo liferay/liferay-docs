@@ -1,4 +1,10 @@
-# Creating Forums with Message Boards [](id=creating-forums-with-message-boards)
+---
+header-id: creating-forums-with-message-boards
+---
+
+# Creating Forums with Message Boards
+
+[TOC levels=1-4]
 
 Although you're likely already familiar with what a modern forum can do, here's
 a sampling of what users and administrators can do with @product@'s Message
