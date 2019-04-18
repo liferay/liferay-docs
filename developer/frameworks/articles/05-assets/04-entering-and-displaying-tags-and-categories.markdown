@@ -1,4 +1,10 @@
-# Implementing Asset Categorization and Tagging 
+---
+header-id: implementing-asset-categorization-and-tagging
+---
+
+# Implementing Asset Categorization and Tagging
+
+[TOC levels=1-4]
 
 Now it's time to get started with Tags and Categories.
 

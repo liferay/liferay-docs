@@ -1,4 +1,10 @@
-# Adding, Updating, and Deleting Assets 
+---
+header-id: adding-updating-and-deleting-assets
+---
+
+# Adding, Updating, and Deleting Assets
+
+[TOC levels=1-4]
 
 This section shows you how to enable assets for your custom entities and
 implement indexes for them. It's time to get started! 

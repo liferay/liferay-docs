@@ -1,4 +1,10 @@
+---
+header-id: relating-assets
+---
+
 # Relating Assets
+
+[TOC levels=1-4]
 
 After you complete
 [Adding, Updating, and Deleting Assets](/docs/7-2/-/knowledge_base/adding-updating-and-deleting-assets)
@@ -76,7 +82,7 @@ placed inside the `aui:fieldset` tags of the JSP.
     The following screenshot shows the Related Assets menu for an application. Note
     that it is contained in a collapsible panel titled Related Assets.
 
-    ![Figure 2: Your portlet's entity is now available in the Related Assets *Select* menu.](../../images/related-assets-select-menu.png)
+    ![Figure 1: Your portlet's entity is now available in the Related Assets *Select* menu.](../../images/related-assets-select-menu.png)
 
 2.  Unfortunately, the Related Assets menu shows your entity's fully qualified
     class name. To replace it with a simplified name for your entity, add

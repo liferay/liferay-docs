@@ -1,4 +1,10 @@
+---
+header-id: asset-framework
+---
+
 # Asset Framework
+
+[TOC levels=1-4]
 
 The asset framework is behind many of Liferay's most powerful features. It 
 provides tools for displaying and interacting with various types of content and 
@@ -113,7 +119,7 @@ portal. This helps users discover related content, particularly when there's an
 abundance of other available content. For example, assets related to a web
 content article appear alongside that entry in the Asset Publisher application.
 
-![Figure 1: You and your users can find it helpful to relate assets to entities, such as this blogs entry.](../../images/asset-related-content-asset-publisher.png)
+![Figure 2: You and your users can find it helpful to relate assets to entities, such as this blogs entry.](../../images/asset-related-content-asset-publisher.png)
 
 ## Implementing Asset Priority
 
@@ -124,4 +130,4 @@ to set the asset's priority when creating or editing the asset. For example,
 when creating or editing web content, users can assign a priority in the
 Metadata section's Priority field. 
 
-![Figure 1: The Priority field lets users set an asset's priority.](../../images/web-content-categorization.png)
+![Figure 3: The Priority field lets users set an asset's priority.](../../images/web-content-categorization.png)

@@ -1,4 +1,10 @@
+---
+header-id: configuring-jsp-templates-for-an-asset-renderer
+---
+
 # Configuring JSP Templates for an Asset Renderer [](id=configuring-jsp-templates-for-an-asset-renderer)
+
+[TOC levels=1-4]
 
 An asset can be displayed in several different ways in the Asset Publisher.
 There are three templates to implement provided by the `AssetRenderer`

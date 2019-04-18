@@ -1,4 +1,10 @@
+---
+header-id: implementing-asset-priority
+---
+
 # Implementing Asset Priority
+
+[TOC levels=1-4]
 
 This asset priority field isn't enabled when you create an asset. You must 
 manually add support for it. You'll learn how below.
