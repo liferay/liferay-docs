@@ -1,6 +1,15 @@
 # Creating an Asset Renderer [](id=creating-an-asset-renderer)
 
-In this tutorial, you'll learn how to create an `Asset Renderer` and associate your JSP templates with it, along with configuring several other options.
+In this tutorial, you'll learn how to create an `Asset Renderer` and associate 
+your JSP templates with it, along with configuring several other options by 
+studying a Liferay asset: Blogs.
+
+The Blogs application offers many different ways to access and render a blogs 
+asset. You'll learn how a blogs asset provides an edit feature, comment section,
+original context viewing (i.e., viewing an asset from the Blogs application),
+workflow, and more. You'll also learn how it uses JSP templates to display
+various blog views. The Blogs application is an extensive example of how an
+asset renderer can be customized to fit your needs. 
 
 To learn how an asset renderer is created, you'll create the pre-existing
 [`BlogsEntryAssetRenderer`](@app-ref@/collaboration/latest/javadocs/com/liferay/blogs/web/asset/BlogsEntryAssetRenderer.html)
@@ -132,7 +141,7 @@ class, which configures the asset renderer framework for the Blogs application.
     A comments section is an available option if it returns a non-null value. 
     For the comments section to display for your asset, you must enable it in 
     the Asset Publisher's *Options* 
-    (![Options](../../../images/icon-app-options.png)) &rarr;
+    (![Options](../../../images/icon-options.png)) &rarr;
     *Configuration* &rarr; *Setup* &rarr; *Display Settings* section.
 
 8.  At a minimum, you should create a title and summary for your asset. Here's

@@ -70,7 +70,7 @@ asset renderer is put together to satisfy JSP template development requirements.
     view. Using the `include(...)` method, however, follows the best practice
     for MVC portlets.
 
-    ![Figure 1: The abstract and full content views are rendererd differently for blogs.](../../../images/blogs-asset-views.png)
+    ![Figure 1: The abstract and full content views are rendered differently for blogs.](../../../images/blogs-asset-views.png)
 
 Terrific! You've learned how to apply JSPs supported by the Asset Publisher for
 your asset. That's not all you can do with JSP templates, however! The asset
