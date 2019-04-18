@@ -44,3 +44,7 @@ apps and widgets, @product@ provides a unique, integrated approach to building
 Sites. Administrators can concentrate on building their Site while the 
 integration work is done for them. 
 
+![Figure 1: The Message Boards widget lets you explore its categories, interact with message threads, and post new messages.](../../../../images/message-boards-category-threads.png)
+
+![Figure 2: A thread's view displays author information and thread content, for the thread and all replies to the thread.](../../../../images/message-boards-participate-in-threads.png)
+
