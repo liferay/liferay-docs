@@ -1,7 +1,7 @@
 # Relating Assets
 
 After you complete
-[Adding, Updating, and Deleting Assets](/develop/tutorials/-/knowledge_base/7-1/adding-updating-and-deleting-assets)
+[Adding, Updating, and Deleting Assets](/docs/7-2/-/knowledge_base/adding-updating-and-deleting-assets)
 for your application you can go ahead and begin relating your assets!
 
 ## Relating Assets in the Service Layer 
@@ -11,7 +11,7 @@ must implement persisting your entity's asset relationships.
 
 1.  In your portlet's `service.xml`, put the following line of code below any
     finder method elements and then
-    [run](/develop/tutorials/-/knowledge_base/7-1/running-service-builder)
+    [run](/docs/7-2/-/knowledge_base/running-service-builder)
     Service Builder:
 
         <reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
@@ -84,7 +84,7 @@ placed inside the `aui:fieldset` tags of the JSP.
     and the name you want for the value. Put the language key in file
     `docroot/WEB-INF/src/content/Language.properties` in your portlet. You can
     refer to the 
-    [Overriding Language Keys](/develop/tutorials/-/knowledge_base/7-1/overriding-language-keys)
+    [Overriding Language Keys](/docs/7-2/-/knowledge_base/overriding-language-keys)
     tutorial for more documentation on using language properties.
 
     Upon redeploying your portlet, the value you assigned to the fully qualified

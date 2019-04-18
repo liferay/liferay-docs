@@ -17,7 +17,7 @@ to generate your persistence layer, that you've implemented permissions on the
 entities that you're persisting, and that you've enabled them for search and
 indexing. You can learn more about Liferay's Service Builder and how to use it
 in the
-[Service Builder](/developer/frameworks/-/7-2/service-builder)
+[Service Builder](/docs/7-2/-/knowledge_base/service-builder)
 tutorial section. After that is completed, you can get started asset enabling 
 your application.
 
@@ -42,7 +42,7 @@ asset framework.
 To use Liferay's asset framework with an entity, you must inform the 
 asset framework about each entity instance you create, modify, and delete. In
 this sense, it's similar to informing 
-[Liferay's permissions framework](/develop/tutorials/-/knowledge_base/7-1/defining-application-permissions)
+[Liferay's permissions framework](/docs/7-2/-/knowledge_base/defining-application-permissions)
 about a new resource. All you have to do is invoke a method of the asset
 framework that associates an `AssetEntry` with the entity so Liferay can keep
 track of the entity as an asset. When it's time to update the entity, you update
@@ -82,7 +82,7 @@ application does not currently include a non-instanceable portlet, adding a
 configuration interface through a panel app both enhances the usability of 
 the application, and meets the requirement for adding a non-instanceable 
 portlet to the application. See our tutorial on 
-[Adding Custom Panel Apps](/knowledge_base/7-1/customizing-the-product-menu#adding-custom-panel-apps)
+[Adding Custom Panel Apps](/docs/7-2/-/knowledge_base/customizing-the-product-menu#adding-custom-panel-apps)
 to learn how to add one.
 
 
@@ -118,7 +118,7 @@ content article appear alongside that entry in the Asset Publisher application.
 ## Implementing Asset Priority
 
 The 
-[Asset Publisher](/discover/portal/-/knowledge_base/7-1/publishing-assets) 
+[Asset Publisher](/docs/7-2/-/knowledge_base/publishing-assets) 
 lets you order assets by priority. For this to work, however, users must be able
 to set the asset's priority when creating or editing the asset. For example,
 when creating or editing web content, users can assign a priority in the

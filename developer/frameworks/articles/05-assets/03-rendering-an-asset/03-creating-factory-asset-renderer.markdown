@@ -109,7 +109,7 @@ renderer factory.
         private BlogsEntryLocalService _blogsEntryLocalService;
 
     The setter method is annotated with the `@Reference` tag. Visit the
-    [Invoking Local Services](/develop/tutorials/-/knowledge_base/7-0/invoking-local-services)
+    [Invoking Local Services](/docs/7-2/-/knowledge_base/invoking-local-services)
     tutorial for more information.
 
     b. You must specify the resource bundle loader since it was specified in

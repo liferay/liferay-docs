@@ -21,19 +21,19 @@ class, which configures the asset renderer framework for the Blogs application.
 
 2.  Create your `-AssetEntry` class for your application in the new `-.asset`
     package and have it implement the
-    [`AssetEntry`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/asset/kernel/model/AssetEntry.html)
+    [`AssetEntry`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/asset/kernel/model/AssetEntry.html)
     interface. Consider the `BlogsEntryAssetRenderer` class as an example:
 
         public class BlogsEntryAssetRenderer
             extends BaseJSPAssetRenderer<BlogsEntry> implements TrashRenderer {
 
     The `BlogsEntryAssetRenderer` class extends the
-    [`BaseJSPAssetRenderer`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/asset/kernel/model/BaseJSPAssetRenderer.html),
+    [`BaseJSPAssetRenderer`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/asset/kernel/model/BaseJSPAssetRenderer.html),
     which is an extension class intended for those who plan on using JSP
     templates to generate their asset's HTML. The `BaseJSPAssetRenderer` class
     implements the `AssetRenderer` interface. You'll notice the asset renderer
     is also implementing the
-    [`TrashRenderer`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/trash/TrashRenderer.html)
+    [`TrashRenderer`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/trash/TrashRenderer.html)
     interface. This is a common practice for many applications, so they can use
     @product@'s Recycle Bin.
 
@@ -50,7 +50,7 @@ class, which configures the asset renderer framework for the Blogs application.
     The `BlogsEntryAssetRenderer` also sets the resource bundle loader, which
     loads the language keys for a module. You can learn more about the resource
     bundle loader in the
-    [Overriding Language Keys](/develop/tutorials/-/knowledge_base/7-0/overriding-language-keys)
+    [Overriding Language Keys](/develop/tutorials/-/knowledge_base/7-2/overriding-language-keys)
     tutorial.
 
     Also, make sure to define the `_entry` and `_resourceBundleLoader` fields in
