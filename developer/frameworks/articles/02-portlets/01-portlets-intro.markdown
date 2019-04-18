@@ -6,69 +6,51 @@ header-id: portlets
 
 [TOC levels=1-4]
 
-Web apps in @product@ are called *portlets*. Like many web apps, portlets
-process requests and generate responses. In the response, the portlet returns
-content (e.g., HTML, XHTML) for display in browsers. One key difference between
+@product@ started off as a portal server, designed to serve Java-based web
+applications called *portlets* (see [JSR 168](https://jcp.org/en/jsr/detail?id=168), 
+[JSR-286](https://jcp.org/en/jsr/detail?id=286), and 
+[JSR-362](https://jcp.org/en/jsr/detail?id=362)). 
+Portlets process requests and generate
+responses like any other web application. One key difference, however, between
 portlets and other web apps is that portlets run in a portion of the web page.
-When you're writing a portlet application, you only need to worry about that
+When you're writing a portlet application, you need only worry about that
 application: the rest of the page---the navigation, the top banner, and any
 other global components of the interface---is handled by other components.
-Another difference is that portlets run only in a portal server. Portlets can
-therefore use the portal's existing support for user management, authentication,
-permissions, page management, and more. This frees you to focus on developing
-the portlet's core functionality. In many ways, writing your application as a
-portlet is easier than writing a standalone application. 
+Portlets run only in a portal server. They use the portal's existing support for
+user management, authentication, permissions, page management, and more. This
+frees you to focus on developing the portlet's core functionality. In many ways,
+writing your application as a portlet is easier than writing a standalone
+application. 
 
-Portlets can be placed on pages by users (if they have permission) or portal
-administrators, who can place several different portlets on a single page. For
-example, a page in a community site could have a calendar portlet for community
-events, an announcements portlet for important announcements, and a bookmarks
-portlet for links of interest to the community. And because the portal controls
-page layout, you can reposition and resize one or more portlets on a page
-without altering any portlet code. Doing all this in other types of web apps
-would require manual re-coding. Alternatively, a single portlet can take up an
-entire page if it's the only app you need on that page. For example, a message
-boards or wiki portlet is best suited on its own page. In short, portlets
-alleviate many of the traditional pain points associated with developing web
-apps. 
+Many portlets can be placed on a single page by users (if they have permission)
+or portal administrators. For example, a page in a community site could have
+a calendar portlet for community events, an announcements portlet for important
+announcements, and a bookmarks portlet for links of interest to the community.
+You can drag and drop to reposition and resize portlets on a page without
+altering any portlet code. Alternatively, a single portlet can take up an entire
+page if it's the only app you need on that page. For example, message boards
+or Wikis with complex user interfaces are best suited on their own pages. In
+short, portlets alleviate many of the traditional pain points associated with
+developing Java-based web apps. 
 
 ![Figure 1: You can place multiple portlets on a single page.](../../images/portlet-applications.png)
-
-What's more, portals and portlets are standards-based. In 2003, Java Portlet 
-Specification 1.0 
-([JSR-168](https://jcp.org/en/jsr/detail?id=168)) 
-first defined portal and portlet behavior. In 2008, Java Portlet Specification 
-2.0 
-([JSR-286](https://jcp.org/en/jsr/detail?id=286)) 
-refined and built on JSR-168, while maintaining backwards compatibility, to
-define features like inter-portlet communication (IPC) and more. In 2017, Java
-Portlet Specification 3.0 
-([JSR-362](https://jcp.org/en/jsr/detail?id=362)) 
-continued to improve the portlet standard, bringing features such as
-configuration by annotation, a Header phase, and CDI integration. Liferay leads
-in this space by having a member in the Expert Group. 
-
-So what do these specifications define? The links above show the complete
-definition; here we'll briefly summarize how portlets differ from other types of
-servlet-based web apps. 
 
 Portlets handle requests in multiple phases. This makes portlets much more
 flexible than servlets. Each portlet phase executes different operations: 
 
-
--   **Render:** Generates the portlet's contents based on the portlet's current 
-    state. When this phase runs on one portlet, it also runs on all other
-    portlets on the page. The Render phase runs when any portlets on the page
-    complete the Action or Event phases. 
--   **Action:** In response to a user action, the Action phase performs some
+-   **Render:** Generates the portlet's content based on its current state. When
+    this phase runs on one portlet, it also runs on all other portlets on the
+    page. The Render phase runs when any portlets on the page complete the
+    Action or Event phases. 
+-   **Action:** In response to a user action, the Action phase performs
     operations that change the portlet's state. The Action phase can also
     trigger events that are processed by the Event phase. Following the Action
     phase and optional Event phase, the Render phase then regenerates the
     portlet's contents. 
 -   **Event:** Processes events triggered in the Action phase. Events are used 
-    for inter-process communication (IPC). Once the portlet processes all
-    events, the portal calls the Render phase  on all portlets on the page. 
--   **Resource-serving:** Serves a resource independent from the rest of the 
+    for inter-portlet communication (IPC). Once the portlet processes all
+    events, the portal calls the Render phase on all portlets on the page. 
+-   **Resource-serving:** Serves a resource independently from the rest of the 
     lifecycle. This lets a portlet serve dynamic content without running the
     Render phase on all portlets on a page. The Resource-serving phase handles
     AJAX requests. 
@@ -82,8 +64,8 @@ time, you can't create portlet URLs directly. Instead, the portlet API gives you
 methods to create portlet URLs programmatically. Also, because portlets don't
 have direct access to the `javax.servlet.ServletRequest`, they can't read query
 parameters directly from a URL. Portlets instead access a
-`javax.portlet.PortletRequest` object. The portlet specification only provides a
-mechanism for a portlet to read its own URL parameters or those declared as
+`javax.portlet.PortletRequest` object. The portlet specification provides a
+mechanism for a portlet to read only its own URL parameters or those declared as
 public render parameters. @product@ does, however, provide utility methods that
 can access the `ServletRequest` and query parameters. Portlets also have a
 *portlet filter* available for each phase in the portlet lifecycle. Portlet
@@ -97,12 +79,12 @@ Modes distinguish the portlet's current function:
     portlet's main functionality. 
 -   **Edit mode:** The portlet's configuration mode. Use this mode to configure 
     a custom view or behavior. For example, the Edit mode of a weather portlet
-    could let you choose a location to retrieve weather data from. 
+    might let you choose a location to retrieve weather data from. 
 -   **Help mode:** A mode that displays the portlet's help information. 
 
 Most modern applications use View Mode only. 
 
-Portlet window states control the amount of space a portlet takes up on a page. 
+Portlet window states control the amount of space a portlet takes on a page. 
 Window states mimic window behavior in a traditional desktop environment: 
 
 -   **Normal:** The portlet can be on a page that contains other portlets. This 
