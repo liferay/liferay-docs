@@ -9,7 +9,7 @@ header-id: planning-for-deprecated-applications
 As @product@ evolves so do Liferay applications. They may, for example, be
 deprecated in favor of newer and better Liferay applications. The deprecations
 might call for migrating application data to a new application or completely
-removing the application and data. Examine the deprecations:
+removing the application and data. Before upgrading, examine the deprecations:
 
 -   [7.2 deprecations](/docs/7-2/deploy/-/knowledge_base/deploy/deprecated-apps-in-7-2-what-to-do)
 
