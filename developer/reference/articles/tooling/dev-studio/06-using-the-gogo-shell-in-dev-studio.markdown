@@ -9,7 +9,7 @@ header-id: using-the-gogo-shell-in-dev-studio
 If you're using Dev Studio to develop and deploy your projects, you may be
 interested in managing them after they're deployed with Dev Studio too. You can
 do this with the Dev Studio's
-[Gogo Shell](/developer/reference/-/knowledge_base/7-2/using-the-felix-gogo-shell)
+[Gogo Shell](/docs/7-2/reference/-/knowledge_base/reference/using-the-felix-gogo-shell)
 feature.
 
 1.  Right-click your started portal instance in the Servers view.
@@ -28,9 +28,9 @@ feature.
     ![Figure 2: You can check to see if your project deployed successfully to Liferay using the Gogo shell.](../../../images/gogo-deploy-successful.png)
 
 **Important:** Dev Studio's Gogo shell usage requires
-[Developer Mode](/developer/frameworks/-/knowledge_base/7-2/using-developer-mode-with-themes#setting-developer-mode-for-your-server-in-liferay-ide)
+[Developer Mode](/docs/7-2/frameworks/-/knowledge_base/frameworks/using-developer-mode-with-themes#setting-developer-mode-for-your-server-in-liferay-ide)
 to be enabled. Developer Mode is enabled in
-[Liferay Workspace](/developer/reference-/knowledge_base/7-2/liferay-workspace)
+[Liferay Workspace](/docs/7-2/reference/-/knowledge_base/reference/liferay-workspace)
 by default.
 
 Excellent! You've learned how to manage your deployed projects with Dev Studio's

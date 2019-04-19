@@ -10,7 +10,7 @@ In Liferay Dev Studio, you can search through @product@'s source code to aid in
 the development of your project. Liferay provides great resources to help with
 development (e.g., official documentation,
 [docs.liferay.com](https://docs.liferay.com/),
-[sample projects](/developer/reference/-/knowledge_base/7-2/sample-projects),
+[sample projects](/docs/7-2/reference/-/knowledge_base/reference/sample-projects),
 etc.), but sometimes searching through Liferay's codebase (i.e., platform and
 official apps) for patterns is just as useful. For example, if you're creating
 an application that extends a class provided in Liferay's `portal-kernel` JAR,
@@ -18,11 +18,11 @@ you can inspect that class and research how it's used in other areas of
 @product@'s codebase.
 
 To do this, you must be developing in a
-[Liferay Workspace](/developer/reference/-/knowledge_base/7-2/liferay-workspace).
+[Liferay Workspace](/docs/7-2/reference/-/knowledge_base/reference/liferay-workspace).
 Liferay Workspace is able to provide this functionality by targeting a specific
 @product@ version, which indexes the configured @product@ source code to provide
 advanced search. See the
-[Managing the Target Platform in Liferay Workspace](/developer/reference/-/knowledge_base/7-2/managing-the-target-platform-for-liferay-workspace)
+[Managing the Target Platform in Liferay Workspace](/docs/7-2/reference/-/knowledge_base/reference/managing-the-target-platform-for-liferay-workspace)
 tutorial for more information on how this works.
 
 In this tutorial, you'll explore three use cases where advanced search would be

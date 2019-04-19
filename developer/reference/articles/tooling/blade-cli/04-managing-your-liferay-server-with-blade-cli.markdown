@@ -8,13 +8,13 @@ header-id: managing-your-liferay-server-with-blade-cli
 
 You can  manage a Liferay server using Blade CLI. Managing a server with Blade
 CLI should be done in a 
-[Liferay Workspace](/developer/reference/-/knowledge_base/7-2/liferay-workspace).
+[Liferay Workspace](/docs/7-2/reference/-/knowledge_base/reference/liferay-workspace).
 
 Blade CLI has commands for installing, starting, stopping, inspecting, and
 modifying a Liferay server:
 
 1.  Make sure you've created a Liferay Workspace. See the
-    [Creating a Liferay Workspace](/developer/reference/-/knowledge_base/7-2/creating-a-liferay-workspace#blade-cli)
+    [Creating a Liferay Workspace](/docs/7-2/reference/-/knowledge_base/reference/creating-a-liferay-workspace#blade-cli)
     article for more information.
 
 2.  Initialize a Liferay server by running
@@ -23,7 +23,7 @@ modifying a Liferay server:
 
     This downloads the @product@ bundle set in your workspace's
     `gradle.propeties` file. See the
-    [Adding a Liferay Bundle to Workspace](/developer/reference/-/knowledge_base/7-2/adding-a-liferay-bundle-to-workspace)
+    [Adding a Liferay Bundle to Workspace](/docs/7-2/reference/-/knowledge_base/reference/adding-a-liferay-bundle-to-workspace)
     article for more information.
 
 3.  Start your Liferay server (Tomcat or Wildfly/JBoss) by running
@@ -34,7 +34,7 @@ modifying a Liferay server:
     the `-t` flag. If you prefer starting the server in the foreground, run
     `blade server run`. Additionally, if you prefer starting the server in debug
     mode, add the `-d` flag. See the
-    [Blade CLI](/developer/reference/-/knowledge_base/7-2/blade-cli) article for
+    [Blade CLI](/docs/7-2/reference/-/knowledge_base/reference/blade-cli) article for
     additional flags you can set when starting your Liferay server.
 
 4.  Examine your server's OSGi container by using Blade CLI's `sh` command,
@@ -73,6 +73,6 @@ modifying a Liferay server:
         blade server stop
 
 To reference all of Blade CLI's available options, see the
-[Blade CLI](/developer/reference/-/knowledge_base/7-2/blade-cli) article.
+[Blade CLI](/docs/7-2/reference/-/knowledge_base/reference/blade-cli) article.
 
 Awesome! You learned how to interact with @product@ using Blade CLI.

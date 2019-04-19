@@ -12,7 +12,7 @@ recognizable for Maven's build lifecycle. It would be a real pain to convert
 your Sass files into CSS files manually before building your Maven project!
 
 Liferay provides the
-[CSS Builder](/developer/reference/-/knowledge_base/7-2/css-builder-plugin)
+[CSS Builder](/docs/7-2/reference/-/knowledge_base/reference/css-builder-plugin)
 plugin, which converts Sass files into CSS files so the Maven build can parse
 your style sheets.
 
@@ -54,12 +54,12 @@ Here's how to apply Liferay's CSS builder to your Maven project.
     - The
       [configuration](https://maven.apache.org/pom.html#Plugins) tag defines
       two important properties. For more info on these properties, see the
-      [CSS Builder Plugin](/developer/reference/-/knowledge_base/7-2/css-builder-plugin)
+      [CSS Builder Plugin](/docs/7-2/reference/-/knowledge_base/reference/css-builder-plugin)
       article.
 
 2.  If you're using [Bourbon](http://bourbon.io/) in your Sass files, you'll
     need to 
-    [add an additional plugin dependency](/developer/customization/-/knowledge_base/7-2/configuring-dependencies) 
+    [add an additional plugin dependency](/docs/7-2/customization/-/knowledge_base/customization/configuring-dependencies) 
     to your project's POM. If you're not using Bourbon, skip this step. Add the 
     following plugin dependency: 
 

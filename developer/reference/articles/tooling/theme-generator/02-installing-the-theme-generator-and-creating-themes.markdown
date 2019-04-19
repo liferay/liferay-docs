@@ -48,6 +48,6 @@ limit!
 
 ## Related Topics
 
-- [Generating Layout Templates](/developer/reference/-/knowledge_base/7-2/creating-layout-templates-with-the-themes-generator)
-- [Theme Components](/developer/frameworks/-/knowledge_base/7-2/theme-components)
-- [Understanding the Page Layout](/developer/frameworks/-/knowledge_base/7-2/understanding-the-page-layout)
+- [Generating Layout Templates](/docs/7-2/reference/-/knowledge_base/reference/creating-layout-templates-with-the-themes-generator)
+- [Theme Components](/docs/7-2/frameworks/-/knowledge_base/frameworks/theme-components)
+- [Understanding the Page Layout](/docs/7-2/frameworks/-/knowledge_base/frameworks/understanding-the-page-layout)

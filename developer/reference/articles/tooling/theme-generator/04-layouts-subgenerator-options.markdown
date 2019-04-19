@@ -7,9 +7,9 @@ header-id: layouts-sub-generator-options
 [TOC levels=1-4]
 
 The 
-[Liferay Theme Generator](/developer/reference/-/knowledge_base/7-2/installing-the-theme-generator-and-creating-a-theme) 
+[Liferay Theme Generator](/docs/7-2/reference/-/knowledge_base/reference/installing-the-theme-generator-and-creating-a-theme) 
 includes a 
-[Layouts sub-generator](/developer/reference/-/knowledge_base/7-2/creating-layout-templates-with-the-themes-generator) 
+[Layouts sub-generator](/docs/7-2/reference/-/knowledge_base/reference/creating-layout-templates-with-the-themes-generator) 
 that helps automate layout template creation. This article covers the available 
 options for the Layouts sub-generator. 
 

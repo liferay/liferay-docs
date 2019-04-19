@@ -13,7 +13,7 @@ sub-generator to create a layout template.
 
 Your first step in creating a layout template with the Liferay Theme Generator's 
 Layouts sub-generator is installing the 
-[Liferay Theme Generator](/developer/reference/-/knowledge_base/7-2/installing-the-theme-generator-and-creating-a-theme) 
+[Liferay Theme Generator](/docs/7-2/reference/-/knowledge_base/reference/installing-the-theme-generator-and-creating-a-theme) 
 if it's not already installed. Once the generator is installed, you can follow 
 these steps to create a layout template:
 
@@ -34,7 +34,7 @@ these steps to create a layout template:
 
 3.  Run `gulp deploy` to deploy your layout template to the server you 
     specified, or deploy your theme if the layout is 
-    [bundled with it](/developer/frameworks/-/knowledge_base/7-2/including-layout-templates-with-a-theme).
+    [bundled with it](/docs/7-2/frameworks/-/knowledge_base/frameworks/including-layout-templates-with-a-theme).
 
 Awesome! You just created a layout template with the Theme Generator's Layouts 
 sub-generator. Your layout template project should have a file structure similar 
@@ -56,6 +56,6 @@ to the one below:
 
 ## Related Topics
 
-- [Creating Layout Template Thumbnail Previews](/developer/frameworks/-/knowledge_base/7-2/creating-custom-layout-template-thumbnail-previews)
-- [Bundling Layout Templates with a Theme](/developer/frameworks/-/knowledge_base/7-2/including-layout-templates-with-a-theme)
-- [Installing the Liferay Theme Generator and Creating a Theme](/developer/reference/-/knowledge_base/7-2/installing-the-theme-generator-and-creating-a-theme)
+- [Creating Layout Template Thumbnail Previews](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-custom-layout-template-thumbnail-previews)
+- [Bundling Layout Templates with a Theme](/docs/7-2/frameworks/-/knowledge_base/frameworks/including-layout-templates-with-a-theme)
+- [Installing the Liferay Theme Generator and Creating a Theme](/docs/7-2/reference/-/knowledge_base/reference/installing-the-theme-generator-and-creating-a-theme)

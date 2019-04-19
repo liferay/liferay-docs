@@ -12,7 +12,7 @@ There are two types of Liferay projects you can import into Dev Studio:
 - Liferay Workspace Project
 
 You cannot import Liferay projects individually that reside in a
-[Liferay Workspace](/developer/reference/-/knowledge_base/7-2/liferay-workspace).
+[Liferay Workspace](/docs/7-2/reference/-/knowledge_base/reference/liferay-workspace).
 You can either import a non-workspace Liferay project (or group of projects if
 the parent folder is specified) or an entire workspace project with all its
 Liferay projects.
