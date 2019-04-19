@@ -14,7 +14,7 @@ conventions. In general, methods that do similar things have similar names. When
 you must create an entity (whatever it is), look for methods that follow the 
 pattern `add[ModelName]`, where `[ModelName]` is the name of the entity's data 
 model object. As the 
-[intro](/developer/frameworks/-/knowledge_base/7-2/documents-and-media-api)
+[intro](/docs/7-2/frameworks/-/knowledge_base/frameworks/documents-and-media-api)
 explains, you'll use 
 [`DLAppService`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html) 
 to access the API. This service object contains the methods for adding these 
@@ -56,7 +56,7 @@ for the `is` parameter. If you do this, however, you must use `0` for the `size`
 parameter. 
 
 For step-by-step instructions on creating files with `addFileEntry`, see 
-[Creating Files](/developer/frameworks/-/knowledge_base/7-2/creating-files). 
+[Creating Files](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-files). 
 
 ## Folders
 
@@ -77,7 +77,7 @@ for a description of the parameters. Note that the `description` parameter is
 optional. 
 
 For step-by-step instructions on creating folders with `addFolder`, see 
-[Creating Folders](/developer/frameworks/-/knowledge_base/7-2/creating-folders). 
+[Creating Folders](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-folders). 
 
 ### Folders and External Repositories
 
@@ -86,7 +86,7 @@ SharePoint), you can effectively mount that repository inside a Site's default
 repository. When users enter this special folder, they see the external 
 repository. These folders are called *mount points*. You can create one via the 
 API by setting the 
-[Service Context's](/developer/frameworks/-/knowledge_base/7-2/understanding-servicecontext) 
+[Service Context's](/docs/7-2/frameworks/-/knowledge_base/frameworks/understanding-servicecontext) 
 `mountPoint` attribute to `true`, and then using that Service Context in the 
 `addFolder` method: 
 
@@ -126,4 +126,4 @@ Keep these things in mind when creating shortcuts:
 
 For step-by-step instructions on creating file shortcuts with `addFileShortcut`, 
 see 
-[Creating File Shortcuts](/developer/frameworks/-/knowledge_base/7-2/creating-file-shortcuts). 
+[Creating File Shortcuts](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-file-shortcuts). 

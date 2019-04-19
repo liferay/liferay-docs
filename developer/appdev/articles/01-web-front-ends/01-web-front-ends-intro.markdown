@@ -70,7 +70,7 @@ Bean Portlet is the only framework containing all of the Portlet 3 features:
 -   Asynchronous support 
 
 If you're a JavaServer Faces (JSF) developer, the
-[Liferay Faces Bridge](/develop/reference/-/knowledge_base/7-1/understanding-liferay-faces-bridge)
+[Liferay Faces Bridge](/docs/7-1/reference/-/knowledge_base/reference/understanding-liferay-faces-bridge)
 supports deploying JSF web apps as portlets without writing portlet-specific
 Java code. It also contains innovative features that make it possible to
 leverage the power of JSF 2.x inside a portlet application. 

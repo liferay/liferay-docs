@@ -9,7 +9,7 @@ header-id: deleting-entities
 You can delete entities with the Documents and Media API. Note that the exact 
 meaning of *delete* depends on the portal configuration and the delete operation 
 you choose. This is because the 
-[Recycle Bin](/discover/portal/-/knowledge_base/7-2/restoring-deleted-assets), 
+[Recycle Bin](/docs/7-2/user/-/knowledge_base/user/restoring-deleted-assets), 
 which is enabled by default, can be used to recover deleted items. Deletions via 
 [`DLAppService`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html),
 however, are permanent. To send items to the Recycle Bin, you must use the
@@ -38,7 +38,7 @@ combination of the `folderId` and `title` parameters in `deleteFileEntryByTitle`
 uniquely identify a file because it's impossible for two files in the same 
 folder to share a name. For step-by-step instructions on using these methods, 
 see 
-[Deleting Files](/developer/frameworks/-/knowledge_base/7-2/deleting-files). 
+[Deleting Files](/docs/7-2/frameworks/-/knowledge_base/frameworks/deleting-files). 
 
 ## File Versions
 
@@ -56,7 +56,7 @@ See this method's
 [Javadoc](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#deleteFileVersion-long-java.lang.String-) 
 for a description of the parameters. For step-by-step instructions on using this 
 method, see 
-[Deleting File Versions](/developer/frameworks/-/knowledge_base/7-2/deleting-file-versions). 
+[Deleting File Versions](/docs/7-2/frameworks/-/knowledge_base/frameworks/deleting-file-versions). 
 
 ### Identifying File Versions
 
@@ -66,7 +66,7 @@ identify old versions for deletion. You can do this with
 
 The following example creates such a comparator and uses its `compare` method to 
 identify old file versions. The code does so by iterating through each 
-[approved](/discover/portal/-/knowledge_base/7-2/workflow) 
+[approved](/docs/7-2/user/-/knowledge_base/user/workflow) 
 version of the file (`fileVersion`). Each iteration uses the `compare` method to 
 test that file version (`fileVersion.getVersion()`) against the same file's 
 current version (`fileEntry.getVersion()`). If this comparison is greater than 
@@ -92,7 +92,7 @@ with the ID of the shortcut you want to delete:
     deleteFileShortcut(long fileShortcutId)
 
 For step-by-step instructions on using this method, see 
-[Deleting File Shortcuts](/developer/frameworks/-/knowledge_base/7-2/deleting-file-shortcuts). 
+[Deleting File Shortcuts](/docs/7-2/frameworks/-/knowledge_base/frameworks/deleting-file-shortcuts). 
 
 ## Folders
 
@@ -105,12 +105,12 @@ to delete a folder. Click each method to see its Javadoc:
 
 Which method you use is up to you---they both delete a folder. For step-by-step 
 instructions on using these methods, see 
-[Deleting Folders](/developer/frameworks/-/knowledge_base/7-2/deleting-folders). 
+[Deleting Folders](/docs/7-2/frameworks/-/knowledge_base/frameworks/deleting-folders). 
 
 ## Recycle Bin
 
 Instead of deleting entities, you can move them to the 
-[Recycle Bin](/discover/portal/-/knowledge_base/7-2/restoring-deleted-assets). 
+[Recycle Bin](/docs/7-2/user/-/knowledge_base/user/restoring-deleted-assets). 
 Note that the Recycle Bin isn't part of the Documents and Media API. Although 
 you can use the Recycle Bin API directly, in the case of Documents and Media 
 it's better to use the Capabilities API. This is because some third-party 
@@ -120,4 +120,4 @@ the Recycle Bin. It's therefore a best practice to always use the Capabilities
 API when moving entities to the Recycle Bin. 
 
 For step-by-step instructions on this, see 
-[Moving Entities to the Recycle Bin](/developer/frameworks/-/knowledge_base/7-2/moving-entities-to-the-recycle-bin). 
+[Moving Entities to the Recycle Bin](/docs/7-2/frameworks/-/knowledge_base/frameworks/moving-entities-to-the-recycle-bin). 

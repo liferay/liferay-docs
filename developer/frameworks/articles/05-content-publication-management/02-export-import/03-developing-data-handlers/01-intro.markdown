@@ -134,7 +134,7 @@ You must retrieve and manage the schema version. This is done with the
 `getSchemaVersion` and `validateSchemaVersion` methods. The schema version is
 used to perform component related validation before importing data. It's added
 to the
-[LAR file](/developer/reference/-/knowledge_base/7-2/liferay-archive-file) for
+[LAR file](/docs/7-2/reference/-/knowledge_base/reference/liferay-archive-file) for
 each application being processed. During import, the environment's schema
 version is compared to the LAR file's schema version. Validating the schema
 version avoids broken data when importing. See the

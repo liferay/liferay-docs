@@ -38,7 +38,7 @@ for the Liferay AMD Loader.
 While developing JavaScript applications, you may need to access 
 @product@-specific information or web services. The `Liferay` global JavaScript 
 Object 
-[exposes this information for you](/developer/frameworks/-/knowledge_base/7-2/liferay-javascript-apis), 
+[exposes this information for you](/docs/7-2/frameworks/-/knowledge_base/frameworks/liferay-javascript-apis), 
 to use in your JavaScript applications. 
 
 ## Lexicon and Clay
@@ -50,12 +50,12 @@ ecosystem. The web implementation of Lexicon (CSS, JS, and HTML) is called
 [Clay](https://clayui.com/docs/get-started/introduction.html). 
 It is automatically available to application developers through a set of CSS 
 classes or our 
-[tag library](/developer/frameworks/-/knowledge_base/7-2/using-the-clay-taglib-in-your-portlets). 
+[tag library](/docs/7-2/frameworks/-/knowledge_base/frameworks/using-the-clay-taglib-in-your-portlets). 
 
 ## Templates
 
 For templating, you can use Java EE's JSP, FreeMarker, Google's 
-[Soy (aka Closure Templates)](/developer/frameworks/-/knowledge_base/7-2/liferay-soy-portlet), 
+[Soy (aka Closure Templates)](/docs/7-2/frameworks/-/knowledge_base/frameworks/liferay-soy-portlet), 
 or whatever else you like. 
 
 ## Themes
@@ -72,7 +72,7 @@ From the
 to the 
 [Liferay Theme Generator](/docs/7-2/reference/-/knowledge_base/reference/installing-the-theme-generator-and-creating-a-theme), 
 to 
-[@ide@](/developer/frameworks/-/knowledge_base/7-2/creating-themes-with-liferay-ide), 
+[@ide@](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-themes-with-liferay-ide), 
 to 
 [Blade CLI](/docs/7-2/reference/-/knowledge_base/reference/blade-cli)'s 
 [Theme Template](/docs/7-2/reference/-/knowledge_base/reference/theme-template), you 
@@ -87,13 +87,13 @@ the stability, conformity, and future evolution of your applications.
 
 Below are some of the available front-end extensions:
 
-- [Theme Contributors](/developer/frameworks/-/knowledge_base/7-2/packaging-independent-ui-resources-for-your-site)
-- [Context Contributors](/developer/frameworks/-/knowledge_base/7-2/injecting-additional-context-variables-into-your-templates)
-- [Creating Configurable Styles for Portlet Wrappers](/developer/frameworks/-/knowledge_base/7-2/creating-configurable-styles-for-portlet-wrappers)
-- [Dynamic Includes](/developer/frameworks/-/knowledge_base/7-2/adding-new-behavior-to-an-editor)
+- [Theme Contributors](/docs/7-2/frameworks/-/knowledge_base/frameworks/packaging-independent-ui-resources-for-your-site)
+- [Context Contributors](/docs/7-2/frameworks/-/knowledge_base/frameworks/injecting-additional-context-variables-into-your-templates)
+- [Creating Configurable Styles for Portlet Wrappers](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-configurable-styles-for-portlet-wrappers)
+- [Dynamic Includes](/docs/7-2/frameworks/-/knowledge_base/frameworks/adding-new-behavior-to-an-editor)
 
 See 
-[Theme Components](/developer/frameworks/-/knowledge_base/7-2/theme-components) 
+[Theme Components](/docs/7-2/frameworks/-/knowledge_base/frameworks/theme-components) 
 and 
-[Understanding the Page Layout](/developer/frameworks/-/knowledge_base/7-2/understanding-the-page-layout) 
+[Understanding the Page Layout](/docs/7-2/frameworks/-/knowledge_base/frameworks/understanding-the-page-layout) 
 for more information. 

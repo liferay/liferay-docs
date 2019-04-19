@@ -8,9 +8,9 @@ header-id: copying-folders
 
 To copy a folder with the Documents and Media API, use the `copyFolder` method 
 discussed in 
-[Copying and Moving Entities](/developer/frameworks/-/knowledge_base/7-2/copying-and-moving-entities). 
+[Copying and Moving Entities](/docs/7-2/frameworks/-/knowledge_base/frameworks/copying-and-moving-entities). 
 The steps here show you how. For general information on using the API, see 
-[Documents and Media API](/developer/frameworks/-/knowledge_base/7-2/documents-and-media-api). 
+[Documents and Media API](/docs/7-2/frameworks/-/knowledge_base/frameworks/documents-and-media-api). 
 
 Follow these steps to use `copyFolder` to copy a folder: 
 
@@ -48,7 +48,7 @@ Follow these steps to use `copyFolder` to copy a folder:
                     DLFolder.class.getName(), actionRequest);
 
     For more information on `ServiceContext`, see the tutorial 
-    [Understanding ServiceContext](/developer/frameworks/-/knowledge_base/7-2/understanding-servicecontext). 
+    [Understanding ServiceContext](/docs/7-2/frameworks/-/knowledge_base/frameworks/understanding-servicecontext). 
 
 3.  Call the service reference's `copyFolder` method with the data from the 
     previous step. Note that this example uses the 
@@ -68,10 +68,10 @@ folder's name and/or description.
 
 ## Related Topics
 
-[Creating Folders](/developer/frameworks/-/knowledge_base/7-2/creating-folders)
+[Creating Folders](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-folders)
 
-[Updating Folders](/developer/frameworks/-/knowledge_base/7-2/updating-folders)
+[Updating Folders](/docs/7-2/frameworks/-/knowledge_base/frameworks/updating-folders)
 
-[Deleting Folders](/developer/frameworks/-/knowledge_base/7-2/deleting-folders)
+[Deleting Folders](/docs/7-2/frameworks/-/knowledge_base/frameworks/deleting-folders)
 
-[Moving Folders and Files](/developer/frameworks/-/knowledge_base/7-2/moving-folders-and-files)
+[Moving Folders and Files](/docs/7-2/frameworks/-/knowledge_base/frameworks/moving-folders-and-files)

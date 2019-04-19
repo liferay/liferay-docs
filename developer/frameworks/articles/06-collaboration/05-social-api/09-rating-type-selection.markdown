@@ -9,7 +9,7 @@ header-id: implementing-rating-type-selection
 For administrators to change your app's rating type (e.g. likes, stars, thumbs), 
 you must implement rating type selection. The steps here show you how. For a 
 detailed explanation of these steps and rating type selection, see 
-[Rating Type Selection](/developer/frameworks/-/knowledge_base/7-2/social-api#rating-type-selection). 
+[Rating Type Selection](/docs/7-2/frameworks/-/knowledge_base/frameworks/social-api#rating-type-selection). 
 
 1.  Implement the 
     [`PortletRatingsDefinition`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/ratings/kernel/definition/PortletRatingsDefinition.html) 
@@ -43,8 +43,8 @@ detailed explanation of these steps and rating type selection, see
 
 ## Related Topics
 
-[Rating Type Selection](/developer/frameworks/-/knowledge_base/7-2/social-api#rating-type-selection)
+[Rating Type Selection](/docs/7-2/frameworks/-/knowledge_base/frameworks/social-api#rating-type-selection)
 
-[Rating Assets](/developer/frameworks/-/knowledge_base/7-2/rating-assets)
+[Rating Assets](/docs/7-2/frameworks/-/knowledge_base/frameworks/rating-assets)
 
-[Customizing Rating Value Transformation](/developer/frameworks/-/knowledge_base/7-2/customizing-rating-value-transformation)
+[Customizing Rating Value Transformation](/docs/7-2/frameworks/-/knowledge_base/frameworks/customizing-rating-value-transformation)

@@ -91,7 +91,7 @@ Follow the steps below to create theme settings:
     <header style="background-color:${my_hex_code}">
     ```
 
-4.  [Deploy the theme](/developer/frameworks/-/knowledge_base/7-2/deploying-and-applying-themes) 
+4.  [Deploy the theme](/docs/7-2/frameworks/-/knowledge_base/frameworks/deploying-and-applying-themes) 
     to apply the changes. To set the theme setting for a Public or Private page 
     set, click the *Gear icon* next to the page set you want to configure and 
     update the setting under the *Look and Feel* tab. Alternatively, you can set 
@@ -103,6 +103,6 @@ Great! You've created configurable settings for your theme.
 
 ## Related Topics
 
-- [Creating Reusable Pieces of Code for Your Themes](/developer/frameworks/-/knowledge_base/7-2/creating-reusable-pieces-of-code-for-your-themes)
-- [Listing Your Theme's Extensions](/developer/frameworks/-/knowledge_base/7-2/listing-your-themes-extensions)
-- [Importing Resources with a Theme](/developer/frameworks/-/knowledge_base/7-2/importing-resources-with-a-theme)
+- [Creating Reusable Pieces of Code for Your Themes](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-reusable-pieces-of-code-for-your-themes)
+- [Listing Your Theme's Extensions](/docs/7-2/frameworks/-/knowledge_base/frameworks/listing-your-themes-extensions)
+- [Importing Resources with a Theme](/docs/7-2/frameworks/-/knowledge_base/frameworks/importing-resources-with-a-theme)

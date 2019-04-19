@@ -11,7 +11,7 @@ steps to list your theme's extensions with the Status task. Note that this task
 only works for themes that use the 
 [liferay JS Theme Toolkit](https://github.com/liferay/liferay-themes-sdk/tree/master/packages), 
 such as those created with the 
-[Liferay Theme Generator](/developer/reference/-/knowledge_base/7-2/installing-the-theme-generator-and-creating-a-theme).
+[Liferay Theme Generator](/docs/7-2/reference/-/knowledge_base/reference/installing-the-theme-generator-and-creating-a-theme).
 
 1.  Navigate to your theme's root folder.
 
@@ -25,6 +25,6 @@ Your theme's current extensions are also found under the `baseTheme` and
 
 ## Related Topics
 
-- [Changing Your Base Theme](/developer/frameworks/-/knowledge_base/7-2/changing-your-base-theme)
-- [Configuring Your Theme's App Server](/developer/frameworks/-/knowledge_base/7-2/configuring-your-themes-app-server)
-- [Creating Reusable Pieces of Code for Your Themes](/developer/frameworks/-/knowledge_base/7-2/creating-reusable-pieces-of-code-for-your-themes)
+- [Changing Your Base Theme](/docs/7-2/frameworks/-/knowledge_base/frameworks/changing-your-base-theme)
+- [Configuring Your Theme's App Server](/docs/7-2/frameworks/-/knowledge_base/frameworks/configuring-your-themes-app-server)
+- [Creating Reusable Pieces of Code for Your Themes](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-reusable-pieces-of-code-for-your-themes)

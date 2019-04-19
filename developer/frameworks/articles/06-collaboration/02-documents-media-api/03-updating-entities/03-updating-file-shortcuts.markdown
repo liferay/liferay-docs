@@ -8,9 +8,9 @@ header-id: updating-file-shortcuts
 
 To update a file shortcut with the Documents and Media API, you must use the 
 `updateFileShortcut` method discussed in 
-[Updating Entities](/developer/frameworks/-/knowledge_base/7-2/updating-entities). 
+[Updating Entities](/docs/7-2/frameworks/-/knowledge_base/frameworks/updating-entities). 
 The steps here show you how. For general information on using the API, see 
-[Documents and Media API](/developer/frameworks/-/knowledge_base/7-2/documents-and-media-api). 
+[Documents and Media API](/docs/7-2/frameworks/-/knowledge_base/frameworks/documents-and-media-api). 
 
 Follow these steps to update a file shortcut:
 
@@ -34,7 +34,7 @@ Follow these steps to update a file shortcut:
                     DLFileShortcutConstants.getClassName(), actionRequest);
 
     For more information on `ServiceContext`, see the tutorial 
-    [Understanding ServiceContext](/developer/frameworks/-/knowledge_base/7-2/understanding-servicecontext). 
+    [Understanding ServiceContext](/docs/7-2/frameworks/-/knowledge_base/frameworks/understanding-servicecontext). 
 
 3.  Call the service reference's `updateFileShortcut` method with the data from 
     the previous step: 
@@ -53,6 +53,6 @@ specific needs of the Documents and Media app.
 
 ## Related Topics
 
-[Creating File Shortcuts](/developer/frameworks/-/knowledge_base/7-2/creating-file-shortcuts)
+[Creating File Shortcuts](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-file-shortcuts)
 
-[Deleting File Shortcuts](/developer/frameworks/-/knowledge_base/7-2/deleting-file-shortcuts)
+[Deleting File Shortcuts](/docs/7-2/frameworks/-/knowledge_base/frameworks/deleting-file-shortcuts)

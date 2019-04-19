@@ -7,7 +7,7 @@ header-id: collaboration
 [TOC levels=1-4]
 
 Underlying the 
-[collaboration suite](/discover/portal/-/knowledge_base/7-2/collaboration) 
+[collaboration suite](/docs/7-2/user/-/knowledge_base/user/collaboration) 
 is a set of powerful APIs that add collaboration features to your apps. For 
 example, if your app contains a custom content type, you can use the 
 collaboration suite's social API to enable comments and ratings for that 
@@ -41,7 +41,7 @@ Here are some use cases for the Item Selector API:
 ## Adaptive Media
 
 The 
-[Adaptive Media](/discover/portal/-/knowledge_base/7-2/adapting-your-media-across-multiple-devices) 
+[Adaptive Media](/docs/7-2/user/-/knowledge_base/user/adapting-your-media-across-multiple-devices) 
 app tailors the size and quality of images to the device displaying them. For 
 example, you can configure Adaptive Media to send large, high-resolution images 
 only to devices that can display them. Other devices get images that consume 
@@ -80,7 +80,7 @@ likes, stars, thumbs, etc.).
 Users can use, manage, and share files in the Documents and Media Library. For 
 example, users can embed files in content, organize them in folders, edit and 
 collaborate on them with other users, and more. See the 
-[user guide](/discover/portal/-/knowledge_base/7-2/managing-documents-and-media) 
+[user guide](/docs/7-2/user/-/knowledge_base/user/managing-documents-and-media) 
 for more information on the Documents and Media Library's features. 
 
 A powerful API underlies the Documents and Media Library's functionality. You 

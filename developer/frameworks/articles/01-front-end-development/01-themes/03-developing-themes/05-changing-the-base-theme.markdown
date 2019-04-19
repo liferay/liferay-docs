@@ -10,7 +10,7 @@ Follow these steps to change your theme's base theme with the Extend task. Note
 that this task only works for themes that use the 
 [liferay JS Theme Toolkit](https://github.com/liferay/liferay-themes-sdk/tree/master/packages), 
 such as those created with the 
-[Liferay Theme Generator](/developer/reference/-/knowledge_base/7-2/installing-the-theme-generator-and-creating-a-theme). 
+[Liferay Theme Generator](/docs/7-2/reference/-/knowledge_base/reference/installing-the-theme-generator-and-creating-a-theme). 
 
 1.  Navigate to your theme's root folder and run `gulp extend`. 
 
@@ -44,13 +44,13 @@ Your theme's `package.json` contains the updated base theme configuration:
 ```
 
 Great! You've updated your base theme. When you 
-[build your theme's files](/develop/tutorials/-/knowledge_base/7-1/building-your-themes-files) 
+[build your theme's files](/docs/7-1/frameworks/-/knowledge_base/frameworks/building-your-themes-files) 
 or 
-[deploy it](/develop/tutorials/-/knowledge_base/7-1/deploying-your-theme), 
+[deploy it](/docs/7-1/frameworks/-/knowledge_base/frameworks/deploying-your-theme), 
 your theme will inherit the updated base theme's files. 
 
 ## Related Topics
 
-- [Configuring Your Theme's App Server](/developer/frameworks/-/knowledge_base/7-2/configuring-your-themes-app-server)
-- [Deploying and Applying Themes](/developer/frameworks/-/knowledge_base/7-2/deploying-and-applying-themes)
-- [Listing Your Theme's Extensions](/developer/frameworks/-/knowledge_base/7-2/listing-your-themes-extensions)
+- [Configuring Your Theme's App Server](/docs/7-2/frameworks/-/knowledge_base/frameworks/configuring-your-themes-app-server)
+- [Deploying and Applying Themes](/docs/7-2/frameworks/-/knowledge_base/frameworks/deploying-and-applying-themes)
+- [Listing Your Theme's Extensions](/docs/7-2/frameworks/-/knowledge_base/frameworks/listing-your-themes-extensions)

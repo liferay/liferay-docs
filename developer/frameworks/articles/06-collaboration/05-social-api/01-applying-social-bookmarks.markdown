@@ -15,7 +15,7 @@ to add this feature to your app.
 Follow these steps to add social bookmarks to your app: 
 
 1.  Make sure your entity is 
-    [asset enabled](/developer/frameworks/-/knowledge_base/7-2/asset-framework). 
+    [asset enabled](/docs/7-2/frameworks/-/knowledge_base/frameworks/asset-framework). 
 
 2.  In your project's `build.gradle` file, add a dependency to the module 
     [`com.liferay.social.bookmarks.taglib`](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.social.bookmarks.taglib/): 
@@ -25,7 +25,7 @@ Follow these steps to add social bookmarks to your app:
 3.  Choose a view in which to show the social bookmarks. For example, you can 
     display them in one of your app's views. However, note that you don't need 
     to implement social bookmarks in your app's 
-    [asset renderers](/developer/frameworks/-/knowledge_base/7-2/rendering-an-asset). 
+    [asset renderers](/docs/7-2/frameworks/-/knowledge_base/frameworks/rendering-an-asset). 
     The Asset Publisher displays social bookmarks in asset renderers by default. 
 
 4.  In your view's JSP, include the `liferay-social-bookmarks` taglib 
@@ -46,7 +46,7 @@ Follow these steps to add social bookmarks to your app:
 
 6.  Use the `liferay-social-bookmarks:bookmarks` tag to add the social bookmarks 
     component. See 
-    [Social Bookmarks](/developer/frameworks/-/knowledge_base/7-2/social-api#social-bookmarks) 
+    [Social Bookmarks](/docs/7-2/frameworks/-/knowledge_base/frameworks/social-api#social-bookmarks) 
     for information on this tag's attributes. Here's an example of using this 
     tag to add social bookmarks for a blog entry in the Blogs app: 
 
@@ -61,8 +61,8 @@ Follow these steps to add social bookmarks to your app:
 
 ## Related Topics
 
-[Social Bookmarks](/developer/frameworks/-/knowledge_base/7-2/social-api#social-bookmarks)
+[Social Bookmarks](/docs/7-2/frameworks/-/knowledge_base/frameworks/social-api#social-bookmarks)
 
-[Creating Social Bookmarks](/developer/frameworks/-/knowledge_base/7-2/creating-social-bookmarks)
+[Creating Social Bookmarks](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-social-bookmarks)
 
-[Asset Framework](/developer/frameworks/-/knowledge_base/7-2/asset-framework)
+[Asset Framework](/docs/7-2/frameworks/-/knowledge_base/frameworks/asset-framework)

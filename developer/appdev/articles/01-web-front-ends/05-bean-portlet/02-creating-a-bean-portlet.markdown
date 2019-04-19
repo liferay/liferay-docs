@@ -91,7 +91,7 @@ generate a Bean Portlet project and deploy your Bean Portlet to @product@.
 
 7.  Deploy your portlet by copying the portlet WAR to your `[Liferay
     Home]/deploy` folder. The
-    [WAB Generator](/docs/7-2/developer/-/knowledge_base/frameworks/using-the-wab-generator)
+    [WAB Generator](/docs/7-2/frameworks/-/knowledge_base/frameworks/using-the-wab-generator)
     converts the WAR to an OSGi Web Application Bundle (WAB) and installs it to
     Liferay's OSGi container. 
  
@@ -111,4 +111,4 @@ Congratulations on creating and deploying a Bean Portlet!
 
 ## Related Topics 
 
-[OSGi CDI Integration](/docs/7-2/developer/-/knowledge_base/frameworks/osgi-cdi-integration) 
+[OSGi CDI Integration](/docs/7-2/frameworks/-/knowledge_base/frameworks/osgi-cdi-integration) 

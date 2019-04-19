@@ -29,7 +29,7 @@ steps below to create a thumbnail preview for your theme:
     exist).
 
     | **Note:** The 
-    | [Theme Builder Gradle plugin](/developer/reference/-/knowledge_base/7-2/theme-builder-gradle-plugin) 
+    | [Theme Builder Gradle plugin](/docs/7-2/reference/-/knowledge_base/reference/theme-builder-gradle-plugin) 
     | doesn't recognize a `thumbnail.png` file. If you're using this plugin to 
     | build your theme instead, you must create a `screenshot.png` file in your 
     | theme's `images` folder that is 1080 pixels high by 864 pixels wide. The 
@@ -43,6 +43,6 @@ steps below to create a thumbnail preview for your theme:
 
 ## Related Topics
 
-- [Installing the Theme Generator and Creating a Theme](/developer/reference/-/knowledge_base/7-2/installing-the-theme-generator-and-creating-a-theme)
-- [Creating Reusable Pieces of Code for Your Themes](/developer/frameworks/-/knowledge_base/7-2/creating-reusable-pieces-of-code-for-your-themes)
-- [Creating Color Schemes for Your Theme](/developer/frameworks/-/knowledge_base/7-2/creating-color-schemes-for-your-theme)
+- [Installing the Theme Generator and Creating a Theme](/docs/7-2/reference/-/knowledge_base/reference/installing-the-theme-generator-and-creating-a-theme)
+- [Creating Reusable Pieces of Code for Your Themes](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-reusable-pieces-of-code-for-your-themes)
+- [Creating Color Schemes for Your Theme](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-color-schemes-for-your-theme)

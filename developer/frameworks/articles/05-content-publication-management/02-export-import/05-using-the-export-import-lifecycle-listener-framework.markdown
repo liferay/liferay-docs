@@ -13,7 +13,7 @@ lifecycles.
 To begin creating your lifecycle listener, you must create a module. Follow the
 steps below:
 
-1.  [Create an OSGi module](/developer/reference/-/knowledge_base/7-2/creating-a-project). 
+1.  [Create an OSGi module](/docs/7-2/reference/-/knowledge_base/reference/creating-a-project). 
 
 2.  Create a unique package name in the module's `src` directory and create a
     new Java class in that package. To follow naming conventions, begin the

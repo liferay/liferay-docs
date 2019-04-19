@@ -13,11 +13,11 @@ example.
 Follow these steps to enable commenting on your app's content: 
 
 1.  Make sure your entity is 
-    [asset enabled](/developer/frameworks/-/knowledge_base/7-2/asset-framework). 
+    [asset enabled](/docs/7-2/frameworks/-/knowledge_base/frameworks/asset-framework). 
 
 2.  Choose a read-only view of the entity you want to enable comments on. You 
     can display the comments component in your app's view, or if you've 
-    [implemented asset rendering](/developer/frameworks/-/knowledge_base/7-2/rendering-an-asset) 
+    [implemented asset rendering](/docs/7-2/frameworks/-/knowledge_base/frameworks/rendering-an-asset) 
     you can display it in the full content view in the Asset Publisher app. 
 
 3.  Include the `liferay-ui`, `liferay-comment`, and `portlet` taglib 
@@ -70,10 +70,10 @@ Follow these steps to enable commenting on your app's content:
 
 If you haven't already connected your portlet's view to the JSP for your entity, 
 see 
-[Configuring JSP Templates for an Asset Renderer](/developer/frameworks/-/knowledge_base/7-2/configuring-jsp-templates-for-an-asset-renderer). 
+[Configuring JSP Templates for an Asset Renderer](/docs/7-2/frameworks/-/knowledge_base/frameworks/configuring-jsp-templates-for-an-asset-renderer). 
 
 ## Related Topics
 
-[Asset Framework](/developer/frameworks/-/knowledge_base/7-2/asset-framework)
+[Asset Framework](/docs/7-2/frameworks/-/knowledge_base/frameworks/asset-framework)
 
-[Rating Assets](/developer/frameworks/-/knowledge_base/7-2/rating-assets)
+[Rating Assets](/docs/7-2/frameworks/-/knowledge_base/frameworks/rating-assets)

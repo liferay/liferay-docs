@@ -14,11 +14,11 @@ apps. The steps here show you how to enable it in your app.
 Follow these steps to enable content flagging in your app: 
 
 1.  Make sure your entity is 
-    [asset enabled](/developer/frameworks/-/knowledge_base/7-2/asset-framework). 
+    [asset enabled](/docs/7-2/frameworks/-/knowledge_base/frameworks/asset-framework). 
 
 2.  Choose a read-only view of the entity you want to enable flags on. You can 
     display flags in one of your app's views, or if you've 
-    [implemented asset rendering](/developer/frameworks/-/knowledge_base/7-2/rendering-an-asset) 
+    [implemented asset rendering](/docs/7-2/frameworks/-/knowledge_base/frameworks/rendering-an-asset) 
     you can display it in the full content view in the Asset Publisher app. 
 
 3.  In your JSP, include the `liferay-flags` taglib declaration: 
@@ -52,8 +52,8 @@ Follow these steps to enable content flagging in your app:
 
 ## Related Topics
 
-[Rating Assets](/developer/frameworks/-/knowledge_base/7-2/rating-assets)
+[Rating Assets](/docs/7-2/frameworks/-/knowledge_base/frameworks/rating-assets)
 
-[Social API](/developer/frameworks/-/knowledge_base/7-2/social-api)
+[Social API](/docs/7-2/frameworks/-/knowledge_base/frameworks/social-api)
 
-[Asset Framework](/developer/frameworks/-/knowledge_base/7-2/asset-framework)
+[Asset Framework](/docs/7-2/frameworks/-/knowledge_base/frameworks/asset-framework)

@@ -7,7 +7,7 @@ header-id: file-checkout-and-checkin
 [TOC levels=1-4]
 
 Users can 
-[check out files](/discover/portal/-/knowledge_base/7-2/checking-out-and-editing-files) 
+[check out files](/docs/7-2/user/-/knowledge_base/user/checking-out-and-editing-files) 
 from the Document Library for editing. Only the user who checked out the file 
 can edit it. This prevents conflicting edits on the same file from multiple 
 users. The Documents and Media API allows these checkin/checkout operations: 
@@ -37,7 +37,7 @@ and repeat the operation. For a full description of the method and its
 parameters, see its 
 [Javadoc](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#checkOutFileEntry-long-com.liferay.portal.kernel.service.ServiceContext-). 
 For step-by-step instructions on using this method, see 
-[Checking Out Files](/developer/frameworks/-/knowledge_base/7-2/checking-out-files). 
+[Checking Out Files](/docs/7-2/frameworks/-/knowledge_base/frameworks/checking-out-files). 
 
 ### Fine-tuning Checkout
 
@@ -55,7 +55,7 @@ attributes in the `checkOutFileEntry` method's `ServiceContext` parameter:
     time, omit this attribute or set it to `0`. 
 
 -   `fileVersionUuid`: This is used by 
-    [staging](/discover/portal/-/knowledge_base/7-2/staging-content-for-publication), 
+    [staging](/docs/7-2/user/-/knowledge_base/user/staging-content-for-publication), 
     but can be ignored for normal use. Setting this attribute causes the system 
     to create the new private working copy version with the given UUID. 
 
@@ -81,12 +81,12 @@ For a full description of the method and its parameters, see its
 [Javadoc](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#checkInFileEntry-long-boolean-java.lang.String-com.liferay.portal.kernel.service.ServiceContext-). 
 This method uses the private working copy to create a new version of the file. 
 As 
-[Updating Files](/developer/frameworks/-/knowledge_base/7-2/updating-files) 
+[Updating Files](/docs/7-2/frameworks/-/knowledge_base/frameworks/updating-files) 
 explains, the `majorVersion` parameter's setting determines how the file's 
 version number is incremented. 
 
 For step-by-step instructions on using this method, see 
-[Checking In Files](/developer/frameworks/-/knowledge_base/7-2/checking-in-files). 
+[Checking In Files](/docs/7-2/frameworks/-/knowledge_base/frameworks/checking-in-files). 
 
 ## Canceling a Checkout
 
@@ -103,4 +103,4 @@ the private working copy and unlocked the file. Other users should now be able
 to check out and edit the file. 
 
 For step-by-step instructions on using this method, see 
-[Canceling a Checkout](/developer/frameworks/-/knowledge_base/7-2/canceling-a-checkout). 
+[Canceling a Checkout](/docs/7-2/frameworks/-/knowledge_base/frameworks/canceling-a-checkout). 

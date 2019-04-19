@@ -8,9 +8,9 @@ header-id: deleting-file-versions
 
 To delete a file version with the Documents and Media API, you must use the 
 `deleteFileVersion` method discussed in 
-[Deleting Entities](/developer/frameworks/-/knowledge_base/7-2/deleting-entities). 
+[Deleting Entities](/docs/7-2/frameworks/-/knowledge_base/frameworks/deleting-entities). 
 The steps here show you how. For general information on using the API, see 
-[Documents and Media API](/developer/frameworks/-/knowledge_base/7-2/documents-and-media-api). 
+[Documents and Media API](/docs/7-2/frameworks/-/knowledge_base/frameworks/documents-and-media-api). 
 
 Follow these steps to use `deleteFileVersion` to delete a file version:
 
@@ -45,10 +45,10 @@ needs of the Documents and Media app.
 
 ## Related Topics
 
-[Deleting Files](/developer/frameworks/-/knowledge_base/7-2/deleting-files)
+[Deleting Files](/docs/7-2/frameworks/-/knowledge_base/frameworks/deleting-files)
 
-[Deleting File Shortcuts](/developer/frameworks/-/knowledge_base/7-2/deleting-file-shortcuts)
+[Deleting File Shortcuts](/docs/7-2/frameworks/-/knowledge_base/frameworks/deleting-file-shortcuts)
 
-[Deleting Folders](/developer/frameworks/-/knowledge_base/7-2/deleting-folders)
+[Deleting Folders](/docs/7-2/frameworks/-/knowledge_base/frameworks/deleting-folders)
 
-[Moving Entities to the Recycle Bin](/developer/frameworks/-/knowledge_base/7-2/moving-entities-to-the-recycle-bin)
+[Moving Entities to the Recycle Bin](/docs/7-2/frameworks/-/knowledge_base/frameworks/moving-entities-to-the-recycle-bin)

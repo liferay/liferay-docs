@@ -103,12 +103,12 @@ Follow these steps to create color schemes for your theme:
 
 6.  Create a folder for each color scheme in your theme's `images` folder, and 
     add 
-    [a thumbnail preview](/developer/frameworks/-/knowledge_base/7-2/creating-a-thumbnail-preview-for-your-theme) 
+    [a thumbnail preview](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-a-thumbnail-preview-for-your-theme) 
     for them. The folder name *must match* the color scheme's CSS class name.
 
 There you have it. Now you can go color scheme crazy with your themes!
 
 ## Related Topics
 
-- [Generating Layout Templates](/developer/frameworks/-/knowledge_base/7-2/creating-layout-templates-with-the-themes-generator)
-- [Creating a Thumbnail Preview for Your Theme](/developer/frameworks/-/knowledge_base/7-2/creating-a-thumbnail-preview-for-your-theme)
+- [Generating Layout Templates](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-layout-templates-with-the-themes-generator)
+- [Creating a Thumbnail Preview for Your Theme](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-a-thumbnail-preview-for-your-theme)

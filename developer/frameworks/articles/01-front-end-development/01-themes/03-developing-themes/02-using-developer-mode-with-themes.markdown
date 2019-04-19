@@ -89,5 +89,5 @@ immediately on redeploying your theme!
 
 ## Related Topics
 
-- [Generating Layout Templates with the Theme Generator](/developer/reference/-/knowledge_base/7-2/creating-layout-templates-with-the-themes-generator)
-- [Creating Themes with @ide@](/developer/reference/-/knowledge_base/7-2/creating-themes-with-liferay-ide)
+- [Generating Layout Templates with the Theme Generator](/docs/7-2/reference/-/knowledge_base/reference/creating-layout-templates-with-the-themes-generator)
+- [Creating Themes with @ide@](/docs/7-2/reference/-/knowledge_base/reference/creating-themes-with-liferay-ide)

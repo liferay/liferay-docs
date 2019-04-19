@@ -16,11 +16,11 @@ dependency injection.
 brings features and capabilities of CDI to OSGi and makes OSGi services available to
 CDI beans. Here you'll learn how to
 
--   [Publish CDI beans as OSGi services](/developer/customization/-/knowledge_base/7-2/publishing-cdi-beans-as-osgi-services):
+-   [Publish CDI beans as OSGi services](/docs/7-2/customization/-/knowledge_base/customization/publishing-cdi-beans-as-osgi-services):
     Register CDI beans as services you can use to customize @product@
     components. 
 
--   [Use OSGi services in beans](/developer/customization/-/knowledge_base/7-2/using-osgi-services-in-a-bean):
+-   [Use OSGi services in beans](/docs/7-2/customization/-/knowledge_base/customization/using-osgi-services-in-a-bean):
     Leverage any OSGi service published on @product@ in any bean. 
 
 The following use cases provide more detail. 
@@ -75,4 +75,4 @@ and binds it to `SomeBean`'s field `userSvc`.
 
 These are the most common use cases, but you might have more.  Now you can get
 started using OSGi CDI integration to
-[publish CDI beans as OSGi services](/developer/customization/-/knowledge_base/7-2/publishing-cdi-beans-as-osgi-services)! 
+[publish CDI beans as OSGi services](/docs/7-2/customization/-/knowledge_base/customization/publishing-cdi-beans-as-osgi-services)! 

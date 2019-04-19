@@ -12,20 +12,20 @@ company.
 
 You'll learn these things:
 
-- [Developing Themes](/developer/frameworks/-/knowledge_base/7-2/developing-themes): 
+- [Developing Themes](/docs/7-2/frameworks/-/knowledge_base/frameworks/developing-themes): 
   Learn how to use @product@'s tools and features to develop your theme.
-- [Extending Themes](/developer/frameworks/-/knowledge_base/7-2/extending-themes): 
+- [Extending Themes](/docs/7-2/frameworks/-/knowledge_base/frameworks/extending-themes): 
   Learn how to use @product@'s theme extension mechanisms and features to add to 
   your theme.
 
 Themes use the standard components (CSS, JS, and HTML) along with FreeMarker
 templates for rendering. There are several 
-[default FreeMarker templates](/developer/frameworks/-/knowledge_base/7-2/theme-components-and-workflow#theme-templates)
+[default FreeMarker templates](/docs/7-2/frameworks/-/knowledge_base/frameworks/theme-components-and-workflow#theme-templates)
 that each handle a key piece of functionality for the page. There are also 
-[theme template utilities](/developer/frameworks/-/knowledge_base/7-2/theme-components-and-workflow#theme-template-utilities)
+[theme template utilities](/docs/7-2/frameworks/-/knowledge_base/frameworks/theme-components-and-workflow#theme-template-utilities)
 that let you use portlets, taglibs, theme objects, and more in your theme
 templates. 
-[CSS extensions and patterns](/developer/frameworks/-/knowledge_base/7-2/theme-components-and-workflow#css-frameworks-and-extensions)
+[CSS extensions and patterns](/docs/7-2/frameworks/-/knowledge_base/frameworks/theme-components-and-workflow#css-frameworks-and-extensions)
 come out-of-the-box, and support SASS, and multiple JavaScript frameworks.
 Several mechanisms are available for customizing, developing, and extending
 themes. 
@@ -44,8 +44,8 @@ The following Liferay tools help you build themes:
 
 - [Theme Builder Gradle Plugin](/docs/7-2/reference/-/knowledge_base/reference/theme-builder-gradle-plugin)
 - [Liferay Theme Generator](/docs/7-2/reference/-/knowledge_base/reference/installing-the-theme-generator-and-creating-a-theme)
-- [Dev Studio](/developer/frameworks/-/knowledge_base/7-2/creating-themes-with-liferay-ide)
-- [Blade CLI](/developer/frameworks/-/knowledge_base/7-2/blade-cli)'s 
+- [Dev Studio](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-themes-with-liferay-ide)
+- [Blade CLI](/docs/7-2/frameworks/-/knowledge_base/frameworks/blade-cli)'s 
   [Theme Template](/docs/7-2/reference/-/knowledge_base/reference/theme-template). 
 
 Depending on the tool you choose 
@@ -70,14 +70,14 @@ same:
 2.  Build and deploy the theme.
 
 3.  Apply the theme 
-    [through the Look and Feel menu](/discover/portal/-/knowledge_base/7-2/page-set-look-and-feel) 
+    [through the Look and Feel menu](/docs/7-2/user/-/knowledge_base/user/page-set-look-and-feel) 
     by selecting your 
-    [theme's thumbnail](/developer/frameworks/-/knowledge_base/7-2/creating-a-thumbnail-preview-for-your-theme). 
+    [theme's thumbnail](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-a-thumbnail-preview-for-your-theme). 
 
 The finished theme is bundled as a WAR (Web application ARchive) file. 
 
 | **Note:** While developing your theme, you should enable
-| [Developer Mode](/developer/frameworks/-/knowledge_base/7-2/using-developer-mode-with-themes).
+| [Developer Mode](/docs/7-2/frameworks/-/knowledge_base/frameworks/using-developer-mode-with-themes).
 | This disables the JavaScript minifier and caching for CSS and FreeMarker
 | template files, which makes debugging easier.
 
@@ -86,29 +86,29 @@ helpful Gulp tasks to streamline the process:
 
 - **build:** builds your theme's files based on the specified base theme. 
   See the 
-  [gulp build tutorial](/developer/frameworks/-/knowledge_base/7-2/building-your-themes-files) 
+  [gulp build tutorial](/docs/7-2/frameworks/-/knowledge_base/frameworks/building-your-themes-files) 
   for more information.
 - **extend:** sets the base theme or themelet to extend. See the 
-  [gulp extend tutorial](/developer/frameworks/-/knowledge_base/7-2/changing-your-base-theme) 
+  [gulp extend tutorial](/docs/7-2/frameworks/-/knowledge_base/frameworks/changing-your-base-theme) 
   for more information.
 - **init:** specifies the app server to deploy your theme to (automatically run
   during the initial creation of the theme). See the 
-  [gulp init tutorial](/developer/frameworks/-/knowledge_base/7-2/configuring-your-themes-app-server)
+  [gulp init tutorial](/docs/7-2/frameworks/-/knowledge_base/frameworks/configuring-your-themes-app-server)
   for more information. 
 - **kickstart:** copies files from an existing theme into your theme to help 
   kickstart it. See the 
-  [gulp kickstart tutorial](/developer/frameworks/-/knowledge_base/7-2/copying-an-existing-themes-files) 
+  [gulp kickstart tutorial](/docs/7-2/frameworks/-/knowledge_base/frameworks/copying-an-existing-themes-files) 
   for more information.
 - **status:** lists the base theme/themelets that your theme extends. See the 
-  [gulp status tutorial](/developer/frameworks/-/knowledge_base/7-2/listing-your-themes-extensions) 
+  [gulp status tutorial](/docs/7-2/frameworks/-/knowledge_base/frameworks/listing-your-themes-extensions) 
   for more information.
 - **watch:** watches for changes to your theme's files and automatically deploys 
   them to the server when a change is made. See the 
-  [gulp watch tutorial](/developer/frameworks/-/knowledge_base/7-2/automatically-deploying-theme-changes) 
+  [gulp watch tutorial](/docs/7-2/frameworks/-/knowledge_base/frameworks/automatically-deploying-theme-changes) 
   for more information.
 
 See 
-[Theme Components](/developer/frameworks/-/knowledge_base/7-2/theme-components) 
+[Theme Components](/docs/7-2/frameworks/-/knowledge_base/frameworks/theme-components) 
 and 
-[Understanding the Page Layout](/developer/frameworks/-/knowledge_base/7-2/understanding-the-page-layout) 
+[Understanding the Page Layout](/docs/7-2/frameworks/-/knowledge_base/frameworks/understanding-the-page-layout) 
 to get a top-level overview of how themes work. 

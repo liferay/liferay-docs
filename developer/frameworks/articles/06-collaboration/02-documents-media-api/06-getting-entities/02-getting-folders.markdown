@@ -8,14 +8,14 @@ header-id: getting-folders
 
 To get folders with the Documents and Media API, use one of the `getFolders` 
 methods in `DLAppService`. This is discussed in more detail in 
-[Getting Entities](/developer/frameworks/-/knowledge_base/7-2/getting-entities). 
+[Getting Entities](/docs/7-2/frameworks/-/knowledge_base/frameworks/getting-entities). 
 The steps here show you how to call these `getFolders` methods. As an example, 
 this method is used to get a parent folder's subfolders: 
 
     getFolders(long repositoryId, long parentFolderId, boolean includeMountFolders)
 
 For general information on using the Documents and Media API, see 
-[Documents and Media API](/developer/frameworks/-/knowledge_base/7-2/documents-and-media-api). 
+[Documents and Media API](/docs/7-2/frameworks/-/knowledge_base/frameworks/documents-and-media-api). 
 
 Follow these steps to call a `getFolders` method: 
 
@@ -38,7 +38,7 @@ Follow these steps to call a `getFolders` method:
     [`ThemeDisplay`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/theme/ThemeDisplay.html). 
     Calling the `ThemeDisplay` method `getScopeGroupId()` gets the ID of your 
     app's current Site (group). For more information, see 
-    [Data Scopes](/developer/frameworks/-/knowledge_base/7-2/data-scopes). 
+    [Data Scopes](/docs/7-2/frameworks/-/knowledge_base/frameworks/data-scopes). 
 
         ThemeDisplay themeDisplay = (ThemeDisplay) request.getAttribute(WebKeys.THEME_DISPLAY);
         long groupId = themeDisplay.getScopeGroupId();
@@ -62,6 +62,6 @@ the `DLAppService`
 
 ## Related Topics
 
-[Getting Files](/developer/frameworks/-/knowledge_base/7-2/getting-files)
+[Getting Files](/docs/7-2/frameworks/-/knowledge_base/frameworks/getting-files)
 
-[Getting Multiple Entity Types](/developer/frameworks/-/knowledge_base/7-2/getting-multiple-entity-types)
+[Getting Multiple Entity Types](/docs/7-2/frameworks/-/knowledge_base/frameworks/getting-multiple-entity-types)

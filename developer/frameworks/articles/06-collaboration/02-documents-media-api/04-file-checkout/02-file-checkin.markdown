@@ -8,9 +8,9 @@ header-id: checking-in-files
 
 To check in a file with the Documents and Media API, use the 
 `checkInFileEntry` method discussed in 
-[File Checkout and Checkin](/developer/frameworks/-/knowledge_base/7-2/file-checkout-and-checkin). 
+[File Checkout and Checkin](/docs/7-2/frameworks/-/knowledge_base/frameworks/file-checkout-and-checkin). 
 The steps here show you how. For general information on using the API, see 
-[Documents and Media API](/developer/frameworks/-/knowledge_base/7-2/documents-and-media-api). 
+[Documents and Media API](/docs/7-2/frameworks/-/knowledge_base/frameworks/documents-and-media-api). 
 
 Follow these steps to use `checkInFileEntry` to check in a file: 
 
@@ -33,7 +33,7 @@ Follow these steps to use `checkInFileEntry` to check in a file:
         ServiceContext serviceContext = ServiceContextFactory.getInstance(actionRequest);
 
     For more information on `ServiceContext`, see the tutorial 
-    [Understanding ServiceContext](/developer/frameworks/-/knowledge_base/7-2/understanding-servicecontext). 
+    [Understanding ServiceContext](/docs/7-2/frameworks/-/knowledge_base/frameworks/understanding-servicecontext). 
 
 3.  Call the service reference's `checkInFileEntry` method with the data from 
     the previous step: 
@@ -52,8 +52,8 @@ needs of the Documents and Media app.
 
 ## Related Topics
 
-[Checking Out Files](/developer/frameworks/-/knowledge_base/7-2/checking-out-files)
+[Checking Out Files](/docs/7-2/frameworks/-/knowledge_base/frameworks/checking-out-files)
 
-[Canceling a Checkout](/developer/frameworks/-/knowledge_base/7-2/canceling-a-checkout)
+[Canceling a Checkout](/docs/7-2/frameworks/-/knowledge_base/frameworks/canceling-a-checkout)
 
-[Updating Files](/developer/frameworks/-/knowledge_base/7-2/updating-files)
+[Updating Files](/docs/7-2/frameworks/-/knowledge_base/frameworks/updating-files)

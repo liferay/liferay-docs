@@ -8,10 +8,10 @@ header-id: moving-entities-to-the-recycle-bin
 
 Follow these steps to use the Capabilities API to move an entity to the Recycle 
 Bin. For an explanation of why you should use the Capabilities API for this, see 
-[Deleting Entities](/developer/frameworks/-/knowledge_base/7-2/deleting-entities). 
+[Deleting Entities](/docs/7-2/frameworks/-/knowledge_base/frameworks/deleting-entities). 
 
 1.  Verify that the repository supports the Recycle Bin. Do this by calling the 
-    [repository object's](/developer/frameworks/-/knowledge_base/7-2/documents-and-media-api#specifying-repositories) 
+    [repository object's](/docs/7-2/frameworks/-/knowledge_base/frameworks/documents-and-media-api#specifying-repositories) 
     `isCapabilityProvided` method with `TrashCapability.class` as its argument. 
     This example does so in `if` statement's condition: 
 
@@ -41,10 +41,10 @@ Bin. For an explanation of why you should use the Capabilities API for this, see
 
 ## Related Topics
 
-[Deleting Files](/developer/frameworks/-/knowledge_base/7-2/deleting-files)
+[Deleting Files](/docs/7-2/frameworks/-/knowledge_base/frameworks/deleting-files)
 
-[Deleting Folders](/developer/frameworks/-/knowledge_base/7-2/deleting-folders)
+[Deleting Folders](/docs/7-2/frameworks/-/knowledge_base/frameworks/deleting-folders)
 
-[Deleting File Shortcuts](/developer/frameworks/-/knowledge_base/7-2/deleting-file-shortcuts)
+[Deleting File Shortcuts](/docs/7-2/frameworks/-/knowledge_base/frameworks/deleting-file-shortcuts)
 
-[Moving Folders and Files](/developer/frameworks/-/knowledge_base/7-2/moving-folders-and-files)
+[Moving Folders and Files](/docs/7-2/frameworks/-/knowledge_base/frameworks/moving-folders-and-files)

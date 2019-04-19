@@ -8,9 +8,9 @@ header-id: updating-folders
 
 To update a folder with the Documents and Media API, you must use the 
 `updateFolder` method discussed in 
-[Updating Entities](/developer/frameworks/-/knowledge_base/7-2/updating-entities). 
+[Updating Entities](/docs/7-2/frameworks/-/knowledge_base/frameworks/updating-entities). 
 The steps here show you how. For general information on using the API, see 
-[Documents and Media API](/developer/frameworks/-/knowledge_base/7-2/documents-and-media-api). 
+[Documents and Media API](/docs/7-2/frameworks/-/knowledge_base/frameworks/documents-and-media-api). 
 
 Follow these steps to update a folder: 
 
@@ -34,7 +34,7 @@ Follow these steps to update a folder:
                     DLFolder.class.getName(), actionRequest);
 
     For more information on `ServiceContext`, see the tutorial 
-    [Understanding ServiceContext](/developer/frameworks/-/knowledge_base/7-2/understanding-servicecontext). 
+    [Understanding ServiceContext](/docs/7-2/frameworks/-/knowledge_base/frameworks/understanding-servicecontext). 
 
 3.  Call the service reference's `updateFolder` method with the data from the 
     previous step: 
@@ -52,10 +52,10 @@ app.
 
 ## Related Topics
 
-[Creating Folders](/developer/frameworks/-/knowledge_base/7-2/creating-folders)
+[Creating Folders](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-folders)
 
-[Deleting Folders](/developer/frameworks/-/knowledge_base/7-2/deleting-folders)
+[Deleting Folders](/docs/7-2/frameworks/-/knowledge_base/frameworks/deleting-folders)
 
-[Copying Folders](/developer/frameworks/-/knowledge_base/7-2/copying-folders)
+[Copying Folders](/docs/7-2/frameworks/-/knowledge_base/frameworks/copying-folders)
 
-[Moving Folders and Files](/developer/frameworks/-/knowledge_base/7-2/moving-folders-and-files)
+[Moving Folders and Files](/docs/7-2/frameworks/-/knowledge_base/frameworks/moving-folders-and-files)
