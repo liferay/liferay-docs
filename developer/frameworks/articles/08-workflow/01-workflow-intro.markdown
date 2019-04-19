@@ -1,4 +1,10 @@
+---
+header-id: the-workflow-framework
+---
+
 # The Workflow Framework
+
+[TOC levels=1-4]
 
 Blogs Entries, Journal Articles, and Forms Entries are just a few Assets
 supporting workflow. There's nothing stopping you from likewise enabling
@@ -13,7 +19,7 @@ called a
 Each Asset is configured to run through a specific workflow definition via the
 [Control Panel](/7-2/user/-/knowledge_base/user/workflow).
 
-![Figure x: Enable workflow on your custom Asset, and it can be sent through a workflow process just like a native Asset.](../../images/workflow-configuration.png)
+![Figure 1: Enable workflow on your custom Asset, and it can be sent through a workflow process just like a native Asset.](../../images/workflow-configuration.png)
 
 The workflow status is a database field that must be present for an entity to
 support workflow. If a database has the status field, but no workflow code has
