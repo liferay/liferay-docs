@@ -25,3 +25,5 @@ nearly any use case. What's more, it's completely integrated with the portal's
 [tagging](/discover/portal/-/knowledge_base/7-2/tagging-content), and
 [security](/discover/deployment/-/knowledge_base/7-2/securing-product) 
 features. 
+
+![Figure 1: The Wiki widget displays your wiki on a Site page.](../../../../images/wiki-page-full.png)
