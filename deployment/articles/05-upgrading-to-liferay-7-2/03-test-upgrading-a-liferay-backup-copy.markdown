@@ -6,15 +6,15 @@ header-id: test-upgrading-a-product-backup-copy
 
 [TOC levels=1-4]
 
-Before upgrading your production @product@ instance, you'll want to make sure
-that you can upgrade it correctly and efficiently. By removing unused objects
-from @product@, you can both reduce upgrade time and improve your server's
-performance on the new version. Taking the time to optimize your installation
-before upgrading can save time and keep your installation running smoothly.
-Doing a test run (or several test runs) on a production copy makes sense. After
-going through the upgrade process, resolving any issues, and testing the
-upgraded server successfully you can confidently upgrade your @product@
-database. 
+Before upgrading your production @product@ instance, you should test to make
+sure that you can upgrade it correctly and efficiently. By removing unused
+objects from @product@, you can both reduce upgrade time and improve your
+server's performance on the new version. Taking the time to optimize your
+installation before upgrading can save time and keep your installation running
+smoothly. Doing a test run (or several test runs) on a production copy makes
+sense. After going through the upgrade process, resolving any issues, and
+testing the upgraded server successfully you can confidently upgrade your
+@product@ database. 
 
 | **Tip:** This step and
 | [preparing a new @product@ server](/docs/7-2/deploy/-/knowledge_base/deploy/preparing-a-new-product-server-for-data-upgrade)
@@ -23,7 +23,7 @@ database.
 ## Copy the Production Installation to a Test Server
 
 Prepare a test server to use a copy of your production installation. Your test
-server will use the same Liferay version you're using on production. Configure
+server must use the same Liferay version you're using on production. Configure
 your server to use a new empty database for testing data upgrades. 
 
 ## Copy the Production Backup to the Test Database
@@ -38,8 +38,8 @@ to the new empty database.
 ## Remove Duplicate Web Content Structure Field Names
 
 If you've used Web Content Management extensively, you might have structures
-whose field names aren't unique.  
-[Find and remove any duplicate field names](/docs/7-2/deploy/-/knowledge_base/deploy/upgrading-liferay#find-and-remove-duplicate-field-names)
+without unique field names.
+[Find and remove duplicate field names](/docs/7-2/deploy/-/knowledge_base/deploy/upgrading-liferay#find-and-remove-duplicate-field-names)
 before upgrading. If you upgraded to Liferay Portal 6.2 previously and skipped
 doing this, you'll encounter this error: 
 
@@ -51,8 +51,9 @@ If this is the case, roll back to your previous backup of Liferay Portal 6.2 and
 
 ## Find and Remove Unused Objects
 
-In the UI or using database queries, identify unused objects. Then remove them using Liferay's API, via Liferay's UI, the
-[script console](/docs/7-2/user/-/knowledge_base/user/running-scripts-from-the-script-console),
+In the UI or using database queries, identify unused objects. Then remove them
+via Liferay's UI or using Liferay's API through the 
+[script console](/docs/7-2/user/-/knowledge_base/user/running-scripts-from-the-script-console)
 or a portlet you create. 
 
 | **Important**: You should only use Liferay's API because it accounts for 
@@ -61,17 +62,13 @@ or a portlet you create.
 | Never use SQL directly on your database to remove records. Your SQL might miss
 | object relationships, orphaning objects and causing performance problems.
 
-Here are some common places to check for unused objects:
+Here are some common places to check for unused objects.
 
 ### Objects From the Large/Populated Tables
 
-The table records reflect @product@ objects. Tables that are large or that have
-many records might contain lots of unused objects. The greater the following
-values are the longer upgrading takes: 
-
--   Records per table
-
--   Table size 
+Table rows are mapped to @product@ objects. Large tables with many records might
+contain lots of unused objects. The greater the table size and the records per
+table, the longer upgrading takes. 
 
 Finding and removing unused objects associated with such tables reduces upgrade
 times. Your data import log (from the previous step) can provide valuable table
@@ -111,7 +108,8 @@ to delete the objects.
 
 ### Common Object Types Worth Checking 
 
-Some object types are often worthwhile to check for unused objects. Here are some reasons for checking them:
+Some object types should be checked for unused objects. Here are some reasons
+for checking them:
 
 -   Removing them frees related unused objects for removal
 -   They're version objects that aren't worth keeping
@@ -169,10 +167,10 @@ Check these object types:
     because they relate to other entities such as portlet preferences,
     permissions, assets, ratings, and more. Remove unneeded layouts. 
 
--   **Roles**: Remove any roles you don't need. Deleting them also deletes
+-   **Roles**: Remove any Roles you don't need. Deleting them also deletes
     related `ResourceBlockPermission` and `ResourcePermission` objects.
 
--   **Users:** If you have users that aren't active anymore, remove them.
+-   **Users:** If you have Users that aren't active anymore, remove them.
 
 -   **Vocabularies**: Remove any unused vocabularies. Note that removing a
     vocabulary also removes its categories.
@@ -182,15 +180,15 @@ Check these object types:
 
     -   `DLFileEntries` with no file system data.
 
-    -   `ResourcePermission` objects associated to a role, layout, user, 
-        portlet instances, etc. that no longer exists.
+    -   `ResourcePermission` objects associated to a Role, Layout, User, 
+        portlet instance, etc. that no longer exists.
 
     -   `PortletPreference` objects associated with a portlet or layout that
         no longer exists. This is common in environments with many embedded
-        portlets. These portlet instances have a different lifecycle, and
+        portlets. These portlet instances have a different lifecycle and
         aren't deleted when the portlet is removed from a template.
 
-## Test @product@ with its pruned database copy
+## Test @product@ with its Pruned Database Copy
 
 Find and resolve any issues related to the objects you removed. You can always
 restart pruning a new copy of your production database if you can't resolve an
@@ -199,7 +197,7 @@ issue.
 Once you've successfully tested @product@ with its pruned database copy, you can
 upgrade the database to @product-ver@. 
 
-## Install @product-ver@ on a test server and configure it to use the pruned database 
+## Install @product-ver@ on a Test Server and Configure It to Use the Pruned Database 
 
 [Prepare a new test server with @product-ver@](/docs/7-2/deploy/-/knowledge_base/deploy/preparing-a-new-product-server-for-data-upgrade). 
 Configure it to use the pruned database copy. You'll use the new test server's
@@ -209,26 +207,26 @@ Liferay upgrade tool next.
 
 [Tune your database for the upgrade](/docs/7-2/deploy/-/knowledge_base/deploy/tune-your-database-for-the-upgrade). 
 
-## Upgrade the database 
+## Upgrade the Database 
 
 Upgrade the database to @product-ver@ (see
 [Upgrade the Database](/docs/7-2/deploy/-/knowledge_base/deploy/upgrade-the-database));
 then return here. 
 
 If the upgrade took too long, search the upgrade log to identify more unused
-objects. Then restart these steps with a fresh copy of the production database. 
+objects. Then retry these steps with a fresh copy of the production database. 
 
 ## Test the Upgraded Portal and Resolve Any Issues 
 
 Test this upgraded @product-ver@ instance and resolve any issues. If you can't
-resolve an issue, restart these steps with a fresh copy of the production
+resolve an issue, retry these steps with a fresh copy of the production
 database. 
 
-## Checkpoint: You've pruned and upgraded a production database copy 
+## Checkpoint: You've Pruned and Upgraded a Production Database Copy 
 
 By removing unused objects from @product@ in your test environment, you've made
 upgrading feasible to do in production. You identified unused objects,
-documented/scripted their removing them, and successfully upgraded the @product@
+documented/scripted removing them, and successfully upgraded the @product@
 database copy. 
 
 It's time to prepare your production environment for upgrading. 
