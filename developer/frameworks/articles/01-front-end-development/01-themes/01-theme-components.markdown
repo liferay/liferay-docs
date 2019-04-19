@@ -35,7 +35,7 @@ page functionality:
 - `navigation.ftl`: Contains the navigation markup. To customize pages in the
   navigation, you must use the `liferay.navigation_menu` macro. Then you can
   leverage
-  [ADTs](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/site-navigation/site-navigation-menu-web/src/main/resources/com/liferay/site/navigation/menu/web/portlet/template/dependencies)
+  [ADTs](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/site-navigation/site-navigation-menu-web/src/main/resources/com/liferay/site/navigation/menu/web/portlet/template/dependencies)
   for the navigation menu. Note that `navigation.ftl` also defines the hamburger
   icon and `navbar-collapse` class that provides the simplified navigation
   toggle for mobile viewports, as shown in the snippet below for the Classic
@@ -69,12 +69,12 @@ There are several FreeMarker variables and macros you can use to include
 portlets, use taglibs, access theme objects, and more. Examples of these appear
 in `portal_normal.ftl`. These utilities are included in the files listed below:
 
-- [`Init.ftl`](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/frontend-theme/frontend-theme-unstyled/src/main/resources/META-INF/resources/_unstyled/templates/init.ftl):
+- [`Init.ftl`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/frontend-theme/frontend-theme-unstyled/src/main/resources/META-INF/resources/_unstyled/templates/init.ftl):
   Provides access to common theme variables.
-- [`FTL_Liferay.ftl`](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/portal-template/portal-template-freemarker/src/main/resources/FTL_liferay.ftl): 
-  Provides macros for commonly used portlets and theme resources. See the 
-  [Macros tutorial](/developer/frameworks/-/knowledge_base/7-2/using-liferays-macros-in-your-theme) 
-  for more information.
+- [`FTL_Liferay.ftl`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-template/portal-template-freemarker/src/main/resources/FTL_liferay.ftl): 
+  Provides 
+  [macros](/developer/reference/-/knowledge_base/7-2/product-freemarker-macros) 
+  for commonly used portlets and theme resources. 
 - `taglib-mappings.properties`: Maps the portal taglibs to FreeMarker macros.
   Taglibs can quickly create common UI components. This properties file is 
   provided separately for each app taglib. For convenience, these FreeMarker
@@ -126,9 +126,8 @@ The following extensions and mechanisms are available for themes:
   for more information. 
 - **Themelet:** Small, extendable, and reusable pieces of code containing CSS
   and JavaScript. They can be shared with other developers to provide common
-  components for themes. See
-  the 
-  [Themelets tutorial](/developer/frameworks/-/knowledge_base/7-2/creating-reusable-pieces-of-code-for-your-themes)
+  components for themes. See 
+  [Generating Themelets](/docs/7-2/reference/-/knowledge_base/reference/creating-themelets-with-the-themes-generator)
   for more information.
 
 ## Portlet Customizations and Extensions
@@ -157,5 +156,5 @@ You can customize portlets with these mechanisms and extensions:
 ## Related Topics
 
 - [Understanding the Page Layout](/developer/frameworks/-/knowledge_base/7-2/understanding-the-page-layout)
-- [Creating Themes](/developer/frameworks/-/knowledge_base/7-2/creating-themes)
+- [Installing the Theme Generator and Creating a Theme](/docs/7-2/reference/-/knowledge_base/reference/installing-the-theme-generator-and-creating-a-theme)
 - [Developing Themes](/developer/frameworks/-/knowledge_base/7-2/developing-themes)
