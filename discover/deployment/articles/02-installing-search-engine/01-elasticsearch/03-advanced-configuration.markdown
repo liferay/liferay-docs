@@ -21,7 +21,7 @@ You'll just need to use one or more of the `additionalConfigurations`,
 
 ![Figure 1: You can add Elasticsearch configurations to the ones currently available in System Settings.](../../../images/cfg-elasticsearch-additional-configs.png)
 
-### Additional Configurations
+### Additional Configurations [](id=additional-configurations)
 
 The `additionalConfigurations` configuration defines extra settings (in YAML)
 for the embedded Elasticsearch. This is only useful for testing environments
@@ -30,7 +30,7 @@ using the embedded Elasticsearch server. Any node settings normally set in
 [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/index.html) 
 for a description of all possible node settings.
 
-### Adding Index Configurations
+### Adding Index Configurations [](id=adding-index-configurations)
 
 The `additionalIndexConfigurations` configuration defines extra settings (in
 JSON or YAML) that are applied to the @product@ index when it's created. For
@@ -64,7 +64,7 @@ template).
         }
     }
 
-### Adding Type Mappings 
+### Adding Type Mappings [](id=adding-type-mappings)
 
 `additionalTypeMappings` defines extra mappings for the `LiferayDocumentType`
 type definition. These are applied when the index is created. Add the mappings
@@ -124,7 +124,7 @@ you want to see the mappings that were used to create the index with that name.
 
 $$$
 
-### Overriding Type Mappings
+### Overriding Type Mappings [](id=overriding-type-mappings)
 
 Use `overrideTypeMappings` to override @product@'s default type mappings. This
 is an advanced feature that should be used only if strictly necessary. If you
