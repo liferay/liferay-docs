@@ -11,16 +11,15 @@ adapter.
 
 ## Adding Settings and Mappings to the Liferay Elasticsearch Adapter [](id=adding-settings-and-mappings-to-the-liferay-elasticsearch-adapter)
 
-The available configuration options
-<!--available configuration
-options](discover/reference/-/knowledge_base/7-1/elasticsearch-settings)-->
-are
-divided into two groups: the ones used most often by default and a
-catch-all for everything else. If the necessary setting isn't available by
+Think of the available configuration options as being divided into two groups:
+the most common ones that are easily configured, and more complex configurations
+requiring a more brute-force approach. If a necessary setting isn't available by
 default, you can still configure it with the Liferay Elasticsearch adapter.
-Specify the settings you need by using one or more of the
-`additionalConfigurations`, `additionalIndexConfigurations`, or
-`additionalTypeMappings`, and `overrideTypeMappings` settings. 
+You'll just need to use one or more of the `additionalConfigurations`,
+`additionalIndexConfigurations`, or `additionalTypeMappings`, and
+`overrideTypeMappings` settings. 
+
+![Figure 1: You can add Elasticsearch configurations to the ones currently available in System Settings.](../../../images/cfg-elasticsearch-additional-configs.png)
 
 ### Additional Configurations
 
@@ -30,8 +29,6 @@ using the embedded Elasticsearch server. Any node settings normally set in
 `elasticsearch.yml` can be declared here. See the
 [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/index.html) 
 for a description of all possible node settings.
-
-![Figure 1: You can add Elasticsearch configurations to the ones currently available in System Settings.](../../../images/cfg-elasticsearch-additional-configs.png)
 
 ### Adding Index Configurations
 
@@ -43,7 +40,9 @@ complete list of available settings, see the
 
 Here's an example that shows how to configure 
 [analysis](https://www.elastic.co/guide/en/elasticsearch/guide/current/analysis-intro.html#analysis-intro)
-that can be applied to a dynamic template (see below).
+that can be applied to a field or a dynamic template (see
+[below](#overriding-type-mappings) for an example application to a dynamic
+template).
 
     {  
         "analysis": {
@@ -67,16 +66,16 @@ that can be applied to a dynamic template (see below).
 
 ### Adding Type Mappings 
 
-`additionalTypeMappings` defines extra field mappings for the
-`LiferayDocumentType` type definition. These are applied when the index is
-created. Add these field mappings in using JSON syntax. For more information see
+`additionalTypeMappings` defines extra mappings for the `LiferayDocumentType`
+type definition. These are applied when the index is created. Add the mappings
+in using JSON syntax. For more information see
 [here](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/mapping.html)
 and
 [here](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/indices-put-mapping.html).
-Use `additionalTypeMappings` for new field (`properties`) mappings, but don't
-try to override existing `properties` mappings. If any of the `properties`
+Use `additionalTypeMappings` for new field (`properties`) mappings and new
+dynamic templates, but don't try to override existing mappings. If any of the
 mappings set here overlap with existing mappings, index creation fails. Use
-`overrideTypeMappings` to replace the default `properties` mappings.
+`overrideTypeMappings` to replace default mappings.
 
 As with dynamic templates, you can
 add sub-field mappings to @product@'s type mapping. These are referred to as
