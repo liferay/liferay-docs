@@ -132,7 +132,7 @@ There are three ways you can do this:
 | library.
 
 For help resolving third party dependency errors, see the
-[Resolving Third Party Library Package Dependencies](/develop/tutorials/-/knowledge_base/7-1/adding-third-party-libraries-to-a-module)
+[Resolving Third Party Library Package Dependencies](/docs/7-1/frameworks/-/knowledge_base/frameworks/adding-third-party-libraries-to-a-module)
 tutorial.
 
 ### Depending on a Customized Distribution of @product@

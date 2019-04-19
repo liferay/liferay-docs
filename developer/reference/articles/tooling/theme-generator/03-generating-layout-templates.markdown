@@ -25,7 +25,7 @@ these steps to create a layout template:
     | `src/layouttpl/custom` folder. This **only works** for generated themes.
 
 2.  Run The Layouts sub-generator with the command below, and use the 
-    [available options](/develop/reference/-/knowledge_base/7-2/layouts-sub-generator-options) 
+    [available options](/docs/7-2/reference/-/knowledge_base/reference/layouts-sub-generator-options) 
     to create your layout: 
     
         `yo liferay-theme:layout`
