@@ -18,7 +18,7 @@ can still increase performance by running Elasticsearch in a separate,
 individually tunable JVM on the same box. 
 
 Before installing Elasticsearch, refer to 
-[Preparing to Install Elasticsearch](7-2/deploy/-/knowledge_base/deploy/preparing-to-install-elasticsearch) 
+[Preparing to Install Elasticsearch](/docs/7-2/deploy/-/knowledge_base/deploy/preparing-to-install-elasticsearch) 
 for guidance on configuring the servers to support an Elasticsearch deployment
 properly. 
 
@@ -60,10 +60,10 @@ Once you perform these steps, you'll have a production-ready instance of
 @product@ up and running.
 
 After you're done following the installation guide, refer to the 
-[Configuring Elasticsearch](7-2/deploy/-/knowledge_base/deploy/configuring-elasticsearch-for-liferay-0)
+[Configuring Elasticsearch](/docs/7-2/deploy/-/knowledge_base/deploy/configuring-elasticsearch-for-liferay-0)
 article for more details on configuring @product@ for Elasticsearch. For more
 information on installing a search engine, see
-[here](7-2/deploy/-/knowledge_base/deploy/installing-a-search-engine).
+[here](/docs/7-2/deploy/-/knowledge_base/deploy/installing-a-search-engine).
 
 ### Step One: Find the Right Version of Elasticsearch 
 

@@ -12,7 +12,7 @@ of @product@'s LDAP support and a web server that supports the Kerberos
 protocol. 
 
 Note that this configuration is preferred above 
-[NTLM](/discover/deployment/-/knowledge_base/7-1/ntlm-single-sign-on-authentication)
+[NTLM](/docs/7-1/deploy/-/knowledge_base/deploy/ntlm-single-sign-on-authentication)
 because security vulnerabilities persist. 
 
 While it's beyond the scope of this article to explain how to set up Kerberos

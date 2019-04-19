@@ -37,7 +37,7 @@ The built-in mail session setup can be done using either of these methods:
 After deploying @product@, you can configure the mail session from the Control Panel. 
 
 1.  Sign in as the administrative user (the user you specified on the
-    [Basic Configuration page](/deployment/-/knowledge_base/7-2/installing-product#using-the-setup-wizard)). 
+    [Basic Configuration page](/docs/7-2/deploy/-/knowledge_base/deploy/installing-product#using-the-setup-wizard)). 
 
 2.  Navigate to *Control Panel &rarr; Configuration &rarr; Server Administration
     &rarr; Mail*.
@@ -84,7 +84,7 @@ If you prefer specifying your mail session offline or before deploying
 @product@, use portal properties. 
 
 1.  Create a
-    [`portal-ext.properties` file](/deployment/-/knowledge_base/7-2/portal-properties),
+    [`portal-ext.properties` file](/docs/7-2/deploy/-/knowledge_base/deploy/portal-properties),
     if you haven't already created one. 
 
 2.  Copy these default property settings into your `portal-ext.properties` file:
@@ -107,7 +107,7 @@ If you prefer specifying your mail session offline or before deploying
 3.  Replace the default mail session values with your own. 
 
 4.  Put the `portal-ext.properties` file into your
-    [LIFERAY_HOME](/deployment/reference/-/knowledge_base/7-2/liferay-home),
+    [LIFERAY_HOME](/docs/7-2/deploy/-/knowledge_base/deploy/liferay-home),
     once you've established it based on your installation. 
 
 @product@ connects to the mail session on the next startup. 
