@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.LineNumberReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.tools.ant.BuildException;
@@ -46,20 +47,13 @@ public class ConvertLinksTask  extends Task {
 					// /docs/7-2/user/-/knowledge_base/user/headerID
 					// /discover/portal/-/knowledge_base/7-2/headerID
 					
+					// old link syntax checks
 					if (line.contains("](/discover/portal/")) {
 						
-						int startIndex = line.indexOf("/discover/portal/");
-						int endIndex = line.indexOf(")", startIndex);
-						
-						int versionIndex = line.indexOf(findStr) + findStr.length();
-						String version = line.substring(versionIndex, versionIndex + 3);
-						
-						int headerStartIndex = line.indexOf(version) + 4;
-						int headerEndIndex = line.indexOf(")", headerStartIndex);
-						String headerID = line.substring(headerStartIndex, headerEndIndex);
-						
-						String oldLink = line.substring(startIndex, endIndex);
-						
+						String oldLink = getOldLink("/discover/portal/", line, findStr);
+						String version = getVersion(line, findStr);
+						String headerID = getHeaderID(line, findStr, version);
+
 						String newLink = "/docs/" + version + "/user" + findStr +
 								"user/" + headerID;
 						
@@ -67,17 +61,9 @@ public class ConvertLinksTask  extends Task {
 					}
 					else if (line.contains("](/discover/deployment/")) {
 						
-						int startIndex = line.indexOf("/discover/deployment/");
-						int endIndex = line.indexOf(")", startIndex);
-						
-						int versionIndex = line.indexOf(findStr) + findStr.length();
-						String version = line.substring(versionIndex, versionIndex + 3);
-						
-						int headerStartIndex = line.indexOf(version) + 4;
-						int headerEndIndex = line.indexOf(")", headerStartIndex);
-						String headerID = line.substring(headerStartIndex, headerEndIndex);
-						
-						String oldLink = line.substring(startIndex, endIndex);
+						String oldLink = getOldLink("/discover/portal/", line, findStr);
+						String version = getVersion(line, findStr);
+						String headerID = getHeaderID(line, findStr, version);
 						
 						String newLink = "/docs/" + version + "/deploy" + findStr +
 								"deploy/" + headerID;
@@ -87,19 +73,11 @@ public class ConvertLinksTask  extends Task {
 					}
 					else if (line.contains("](/develop/tutorials/")) {
 						
-						int startIndex = line.indexOf("/develop/tutorials/");
-						int endIndex = line.indexOf(")", startIndex);
+						String oldLink = getOldLink("/discover/portal/", line, findStr);
+						String version = getVersion(line, findStr);
+						String headerID = getHeaderID(line, findStr, version);
 						
-						int versionIndex = line.indexOf(findStr) + findStr.length();
-						String version = line.substring(versionIndex, versionIndex + 3);
-						
-						int headerStartIndex = line.indexOf(version) + 4;
-						int headerEndIndex = line.indexOf(")", headerStartIndex);
-						String headerID = line.substring(headerStartIndex, headerEndIndex);
-						
-						String oldLink = line.substring(startIndex, endIndex);
-						
-						String newLink = "/docs/" + version + "/dev/tutorials" + findStr +
+						String newLink = "/docs/" + version + "/tutorials" + findStr +
 								"tutorials/" + headerID;
 						
 						line = line.replace(oldLink, newLink);
@@ -107,28 +85,103 @@ public class ConvertLinksTask  extends Task {
 					}
 					else if (line.contains("](/develop/reference/")) {
 						
-						int startIndex = line.indexOf("/develop/tutorials/");
-						int endIndex = line.indexOf(")", startIndex);
+						String oldLink = getOldLink("/discover/portal/", line, findStr);
+						String version = getVersion(line, findStr);
+						String headerID = getHeaderID(line, findStr, version);
 						
-						int versionIndex = line.indexOf(findStr) + findStr.length();
-						String version = line.substring(versionIndex, versionIndex + 3);
-						
-						int headerStartIndex = line.indexOf(version) + 4;
-						int headerEndIndex = line.indexOf(")", headerStartIndex);
-						String headerID = line.substring(headerStartIndex, headerEndIndex);
-						
-						String oldLink = line.substring(startIndex, endIndex);
-						
-						String newLink = "/docs/" + version + "/dev/reference" + findStr +
+						String newLink = "/docs/" + version + "/reference" + findStr +
 								"reference/" + headerID;
 						
 						line = line.replace(oldLink, newLink);
 						
 					}
-					
-					out.append(line);
-					out.append("\n");
-				}
+					// new syntax check links
+					else if (line.contains("](/developer/reference/")) {
+						
+						String oldLink = getOldLink("/developer/reference/", line, findStr);
+						String version = getVersion(line, findStr);
+						String headerID = getHeaderID(line, findStr, version);
+						
+						String newLink = "/docs/" + version + "/reference" + findStr +
+								"reference/" + headerID;
+						
+						line = line.replace(oldLink, newLink);
+						
+					}
+					else if (line.contains("](/developer/frameworks/")) {
+						
+						String oldLink = getOldLink("/developer/frameworks/", line, findStr);
+						String version = getVersion(line, findStr);
+						String headerID = getHeaderID(line, findStr, version);
+						
+						String newLink = "/docs/" + version + "/frameworks" + findStr +
+								"frameworks/" + headerID;
+						
+						line = line.replace(oldLink, newLink);
+						
+					}
+					else if (line.contains("](/developer/customization/")) {
+						
+						String oldLink = getOldLink("/developer/customization/", line, findStr);
+						String version = getVersion(line, findStr);
+						String headerID = getHeaderID(line, findStr, version);
+						
+						String newLink = "/docs/" + version + "/customization" + findStr +
+								"customization/" + headerID;
+						
+						line = line.replace(oldLink, newLink);
+						
+					}
+					else if (line.contains("](/developer/tutorials/")) {
+						
+						String oldLink = getOldLink("/developer/tutorials/", line, findStr);
+						String version = getVersion(line, findStr);
+						String headerID = getHeaderID(line, findStr, version);
+						
+						String newLink = "/docs/" + version + "/tutorials" + findStr +
+								"tutorials/" + headerID;
+						
+						line = line.replace(oldLink, newLink);
+						
+					}
+					else if (line.contains("](/user/-/knowledge_base/7-")) {
+						
+						String oldLink = getOldLink("/user/", line, findStr);
+						String version = getVersion(line, findStr);
+						String headerID = getHeaderID(line, findStr, version);
+						
+						String newLink = "/docs/" + version + "/user" + findStr +
+								"user/" + headerID;
+						
+						line = line.replace(oldLink, newLink);
+						
+					}
+					else if (line.contains("](/deploy/-/knowledge_base/7-") || 
+							line.contains("](/deployment/-/knowledge_base/7-")) {
+						
+						String oldLink;
+						
+						if (line.contains("deployment")) {
+							oldLink = getOldLink("/deployment/", line, findStr);
+						}
+						else {
+							oldLink = getOldLink("/deploy/", line, findStr);
+						}
+						
+						String version = getVersion(line, findStr);
+						String headerID = getHeaderID(line, findStr, version);
+						
+						String newLink = "/docs/" + version + "/deploy" + findStr +
+								"deploy/" + headerID;
+						
+						line = line.replace(oldLink, newLink);
+						
+					}
+				
+				
+				out.append(line);
+				out.append("\n");
+			}
 
 				in.close();
 
@@ -151,6 +204,33 @@ public class ConvertLinksTask  extends Task {
 
 	public void setDocdir(String docdir) {
 		_docdir = docdir;
+	}
+	
+	private static String getHeaderID(String line, String findStr, String version) {
+		
+		int headerStartIndex = line.indexOf(version) + 4;
+		int headerEndIndex = line.indexOf(")", headerStartIndex);
+		String headerID = line.substring(headerStartIndex, headerEndIndex);
+
+		return headerID;
+	}
+
+	private static String getOldLink(String docType, String line, String findStr) {
+		
+		int startIndex = line.indexOf(docType);
+		int endIndex = line.indexOf(")", startIndex);
+		
+		String oldLink = line.substring(startIndex, endIndex);
+
+		return oldLink;
+	}
+	
+	private static String getVersion(String line, String findStr) {
+		
+		int versionIndex = line.indexOf(findStr) + findStr.length();
+		String version = line.substring(versionIndex, versionIndex + 3);
+
+		return version;
 	}
 
 	private String _docdir;
