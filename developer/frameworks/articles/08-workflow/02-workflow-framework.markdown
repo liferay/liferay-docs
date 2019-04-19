@@ -104,7 +104,7 @@ is used to create database fields. First, you must update the service layer:
     fooEntity.setStatusByUserId(userId);
     fooEntity.setStatusByUserName(user.getFullName());
     fooEntity.setStatusDate(serviceContext.getModifiedDate(null));
-        ```
+    ```
 
     With Service Builder driven Liferay applications, this is in the local service
     implementation class (`-LocalServiceImpl`).
@@ -149,7 +149,7 @@ is used to create database fields. First, you must update the service layer:
     Here's what a full `updateStatus` method might look like:
 
     ```java
-	  @Indexable(type = IndexableType.REINDEX)
+    @Indexable(type = IndexableType.REINDEX)
     public FooEntity updateStatus(
         long userId, long fooEntityId, int status, ServiceContext serviceContext
     ) throws PortalException, SystemException {
