@@ -338,7 +338,7 @@ specify the settings you need by using one or more of the
 ![Figure 3: You can add Elasticsearch configurations to the ones currently available
 in System Settings.](../../images/elasticsearch-additional-configs.png)
 
-#### Adding Configurations
+#### Adding Configurations [](id=adding-configurations)
 
 `additionalConfigurations` is used to define extra settings (defined in YAML)
 for the embedded Elasticsearch or the local Elasticsearch client when running
@@ -361,7 +361,7 @@ reference article for more information. See the [Elasticsearch
 documentation](https://www.elastic.co/guide/en/elasticsearch/client/java-api/2.4/transport-client.html)
 for a description of all the client settings and for an example.
 
-#### Adding Index Configurations
+#### Adding Index Configurations [](id=adding-index-configurations)
 
 `additionalIndexConfigurations` is used to define extra settings (in JSON or
 YAML format) that are applied to the @product@ index when it's created. For
@@ -394,7 +394,7 @@ that can be applied to a field or dynamic template (see
         }
     }
 
-#### Adding Type Mappings
+#### Adding Type Mappings [](id=adding-type-mappings)
 
 `additionalTypeMappings` is used to define extra mappings for the
 `LiferayDocumentType` type definition, which are applied when the index is
@@ -466,7 +466,7 @@ Here's what it would look like for an Elasticsearch instance running on
 In the above URL, `liferay-20116`is the index name. Including it indicates that
 you want to see the mappings that were used to create the index with that name.
 
-#### Overriding Type Mappings
+#### Overriding Type Mappings [](id=overriding-type-mappings)
 
 Use `overrideTypeMappings` to override @product@'s default type mappings. This
 is an advanced feature that should be used only if strictly necessary. If you
