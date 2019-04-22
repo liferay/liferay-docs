@@ -1,4 +1,10 @@
+---
+header-id: installing-local-liferay-maven-artifacts
+---
+
 # Installing Local Liferay Maven Artifacts
+
+[TOC levels=1-4]
 
 Liferay offers a utility that lets you download all of Liferay's artifacts and
 install them to a Maven repository of your choice.
