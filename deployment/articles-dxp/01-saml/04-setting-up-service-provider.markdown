@@ -38,23 +38,24 @@ SAML Identify Provider *or* as a SAML Service Provider but not as both. If your
     - The key length in bits (2048 is the default)
     - The key password
 
-    When you enter all the required information, click *Save*.
+    Remember that the keystore has two storage options: file system storage (the
+    default) and Documents and Media storage.By default, the certificate uses
+    the SHA256 algorithm for encryption and is fingerprinted and self-signed via
+    MD5 and SHA1. When you enter all the required information, click *Save*.
 
 4.  After you clicked *Save*, check that you can view information about your
     certificate or download your certificate. If you can, you successfully
     created a keystore. After you create a keystore, additional options
     appear. There are three tabs:
 
-	**General**: This tab enables or disables SAML IdP and manages the required keystore.
-    
+    **General**: Enables or disables SAML SP and manages the required
+    keystore.
+ 
     **Service Provider**: This tab manages basic and advanced configurations for
     the SP.
  
     **Identity Provider Connection**: This tab manages connections to the IdP.
-    There can be only one IdP connection.
-
-    Note that these options are different than if you were setting up @product@ as
-    an Identity Provider.
+    There can be multiple IdP connections.
 
 5.  You can also generate an encryption certificate. This is a separate key for
     encrypting assertions. If you want assertions encrypted, you must generate
@@ -126,162 +127,37 @@ the providers so users can recognize them.
 
         [host]:[port]/c/portal/saml/metadata
 
-## Changing the SAML Service Provider Settings
-
-If you'd like to configure @product@'s SAML Service Provider Settings, navigate to
-the Service Provider tab of the SAML Admin portlet.
-
-The Service Provider tab includes these options:
-
-**Require Assertion Signature?:** When this box is checked, SAML assertions
-must be individually signed in addition to the entire SAML message.
-
-| **Note:** Individual assertions need not be signed as long as the SAML response
-| itself is signed. The SP and IdP should always communicate over `https` to have
-| encryption at the transport level.
-| 
-| If you believe man-in-the-middle attacks are possible, the SAML response can be
-| signed. The only reason to sign the assertions is if the SAML response is not
-| signed. In this case, assertions should not only be signed but also encrypted.
-
-**Clock Skew:** Clock skew is a tolerance in milliseconds used by the Service
-Provider for verifying expiration of messages and assertions. This can be used
-to mitigate time differences between the clocks of the Identity Provider and
-the Service Provider. This usually only matters when assertions have been made
-to expire very quickly.
-
-**LDAP Import Enabled:** When this box is checked, user information is imported
-from the configured LDAP connection based on the resolved NameID. LDAP
-connections can be configured from Instance Settings.
-
-**Sign Authn Requests:** When this box is checked, the AuthnRequest is signed
-even if the Identity Provider metadata indicates that it's not required.
-
-**Sign Metadata:** When this box is checked, the metadata XML file is signed.
-
-**SSL Required:** When this box is checked, any SAML messages that are not sent
-over HTTPS are rejected. This does not affect how URLs are generated.
-
-## Changing the SAML Identity Provider Connection Settings
-
-If you'd like to configure @product@'s SAML Identity Provider Settings, navigate to
-the Identity Provider Connection tab of the SAML Admin portlet.
-
-**Name:** The name of the Identity Provider with which to connect.
-
-**Entity ID:** The Identity Provider's entity ID. This value must match the
-entity ID declared in the Identity Provider metadata.
-
-**Clock Skew:** Clock skew is a tolerance in milliseconds used by the Service
-Provider for verifying expiration of messages and assertions. This can be used
-to mitigate time differences between the clocks of the Identity Provider and
-the Service Provider. This usually only matters when assertions have been made
-to expire very quickly.
-
-**Force Authn:** When this box is checked, the Service Provider asks the
-Identity Provider to re-authenticate the user before verifying the user.
-
-**Metadata:** You can either provide a URL to the Identity Provider metadata
-XML file or you can manually upload it. If you provide a URL, the XML file is
-automatically retrieved and periodically polled for updates. You can change the
-update interval in System Settings by modifying the
-`saml.metadata.refresh.interval` property which specifies a number of seconds.
-If fetching the metadata XML file by URL fails, you can't enable the Identity
-Provider connection. If the metadata is inaccessible via URL, you can upload the
-XML file manually. In this case, the metadata XML file is not updated
-automatically. 
-
-**Name Identifier Format:** Choose the Name Identifier Format used in the SAML
-Response. This should be set according to what the Service Provider expects to
-receive. For Liferay Service Providers, any selection other than email address
-indicates that the Name Identifier refers to screen name. The formats don't have
-any special meaning to Liferay Identity Providers. The NameID value is defined
-by the Name Identifier attribute.
-
-**Attribute Mapping:** The attribute mapping is done from the attribute name or
-friendly name in the SAML Response to the @product@ attribute name. For example,
-if you want to map a response attribute named `mail` to the @product@ attribute
-`emailAddress`, you'd enter the following mapping:
-
-    mail=emailAddress
-
-Available @product@ attributes are: `emailAddress`, `screenName`, `firstName`,
-`lastName`, `modifiedDate`, and `uuid`.
-
-**Keep Alive URL:** If users are logged into several @product@ SP instances via
-a @product@ IdP, their sessions can be kept alive as long as they keep a browser
-window open to one of them. Configure this only if the IdP is @product@. The URL
-is `https://[IdP host name]/c/portal/saml/keep_alive`. On the @product@ IdP,
-configure this URL the same way, but point back to this SP. 
-
-Save your changes when you are finished configuring the @product@ instance as a
-service provider. There is no need to restart the server and the changes will be
-applied immediately.
-
-The previous two sections explained how to use the SAML 2.0 Provider
-app's Control Panel interface to configure @product@ as an Identity
-Provider or as a Service Provider. Such configurations should only be made
-through the SAML Control Panel interface and not via properties. Some features
-of the Liferay SAML 2.0 Provider app are not available as properties.
-
-
-| **Limitation:** The Liferay SAML app can only be used with a single virtual
-| host. Technically, this means that in the SAML metadata for @product@, only one
-| binding can be added in this form:
-| 
-|     <md:EntityDescriptor>
-|     ...
-|     <md:SPSSODescriptor>
-|     ...
-|     <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://portal.domain.com/c/portal/saml/acs" index="1" isDefault="true" />
-|     ...
-|     </md:SPSSODescriptor>
-|     </md:EntityDescriptor>
-
-
 ## Setting Up @product@ as a SAML Service Provider in a Clustered Environment
 
-If you want to use the Liferay SAML 2.0 Provider app as an SSO solution for a
-clustered @product@ environment, follow the steps in this section. Before
-proceeding, make sure that the following assumptions apply to your scenario.
-
-If you're running a multi-node cluster behind a load balancer, follow these
-steps to enable all the nodes as SPs.
-
-Before you begin, consider the type of keystore manager you want your cluster to
-use.
-
-To select a keystore manager, go to *Control Panel* &rarr; *System Settings*
-&rarr; *SAML KeyStoreManager Implementation Configuration*. There, the options
-are *Filesystem Keystore Manager* and *Document Library Keystore Manager*.
-
-All nodes in the cluster should be configured to use the same Keystore Manager.
+You can use the Liferay SAML 2.0 Provider app as an SSO solution for a
+clustered @product@ environment. If your multi-node cluster is behind a load
+balancer, you must enable all the nodes as SPs, and they must share the
+same keystore manager. 
 
 If using the Filesystem Keystore Manager (the default):
 
-1.  Configure each node of your [@product@
-    cluster](/discover/deployment/-/knowledge_base/7-0/liferay-clustering) as a SAML
-    service provider using the instructions of the previous section.
+1.  Configure each node of your 
+    [@product@ cluster](/docs/7-2/deployment/-/knowledge_base/deployment/liferay-clustering) 
+    as a SAML service provider as above. 
 
 2.  Copy the keystore file (`[Liferay Home]/data/keystore.jks`, by default) from
-    the first @product@ node to the remaining @product@ nodes. This file is the
-    Java keystore that's created by the SAML Provider app. The keystore
-    contains the valid or self-signed certificate managed by the SAML Provider
-    app.
+    the first node to the remaining nodes. This file is the Java keystore that's
+    created by the SAML Provider app. The keystore contains the valid or
+    self-signed certificate managed by the SAML Provider app.
 
 3.  Verify that the service provider metadata has been generated to be used
     either as a URL or an XML file. The metadata is the same for all nodes
     because of the same database back-end. The IdP's request goes through the
     load balancer.
 
-4.  At this point, all the @product@ nodes have the same SAML SP configuration
-    and each of them can respond to web requests and handle the SAML protocol.
-    To test your SSO solution, sign into @product@ via your load balancer,
-    navigate to a few pages of a few different sites, and then log out.
+4.  At this point, all  nodes have the same SAML SP configuration and each of
+    them can respond to web requests and handle the SAML protocol. To test your
+    SSO solution, sign into @product@ via your load balancer, navigate to a few
+    pages of a few different sites, and then log out.
 
-If using the Document Library Keystore Manager, skip step 3 because the keystore
+If using the Document Library Keystore Manager, skip step 2 because the keystore
 file is stored in the database shared by all the nodes.
 
 Now you know how to configure @product@ either as a SAML identity provider
 or a service provider. You also know how to configure SAML in a
-clustered environment.
+clustered environment. 
