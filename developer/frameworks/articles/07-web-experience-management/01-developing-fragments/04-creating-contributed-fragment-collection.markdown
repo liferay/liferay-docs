@@ -1,4 +1,10 @@
+---
+header-id: creating-contributed-fragment-collection
+---
+
 # Creating a Contributed Fragment Collection
+
+[TOC levels=1-4]
 
 To create a Contributed Fragment Collection, a developer must,
 
@@ -66,7 +72,7 @@ module:
 1.  In your module's `resources/` folder, create the folder structure `/com/liferay/fragments/collection/contributor/demo`.
 
 2.  Copy the Fragments you want to distribute into the folder. You can learn 
-    how to create a Fragments in the [Creating Fragments section](link).
+    how to create a Fragments in the [Creating Fragments section](/developer/frameworks/-/knowledge_base/7-2/creating-fragments).
 
 3.  Create a file named `collections.json` in the same folder with this format:
 

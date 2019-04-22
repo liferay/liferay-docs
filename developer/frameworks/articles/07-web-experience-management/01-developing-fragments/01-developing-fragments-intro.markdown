@@ -1,4 +1,10 @@
-# Page Fragments [](id=developing-fragments)
+---
+header-id: page-fragments
+---
+
+# Page Fragments
+
+[TOC levels=1-4]
 
 Page Fragments take your design vision and accurately realize it on a web page. 
 To do this, developers are given a space where they have a "blank slate."  You 
@@ -29,14 +35,14 @@ selecting Fragments to add to a page. @product@ provides a robust interface for
 creating and managing Fragments and Collections without using any external 
 tools, but you can also use your preferred tools for Web Development. For an 
 explanation of basic Fragment creation using Liferay's built in tools, see 
-[Creating a Fragment](link). For more information on creating and managing 
-Fragments, see [Managing Page Fragments with Desktop Tools](link).
+[Creating a Fragment](/developer/frameworks/-/knowledge_base/7-2/creating-fragments). 
 
 ### Fragment CLI
 
 To streamline fragment development, @product-ver@ provides command line tools 
 for generating, importing, and exporting fragments and fragment collections. 
-For instructions on setting up the CLI, see the [Setting up the Fragment Generator](link) reference. Using this CLI is also covered in the [Managing Page Fragments with Desktop Tools](link) section.
+For more information about the CLI, see the [official Liferay Fragments CLI project](https://github.com/liferay/generator-liferay-fragments/blob/master/README.md) reference. Using this CLI is also covered in [Developing a Fragment using Desktop Tools](/developer/frameworks/-/knowledge_base/7-2/page-fragments-desktop-tools).
+
 
 ## Contributed Collections
 
@@ -100,4 +106,4 @@ You can also add more dynamic behavior to a Fragment by including a widget.
 Currently, you can only embed a portlet as a widget, but other types of widgets
 will be available in the future.
 
-You can find a complete list and usage examples of these in the [Page Fragments Reference](link).
+You can find a complete list and usage examples of these in the [Page Fragments Reference](/developer/reference/-/knowledge_base/7-2/fragment-specific-tags).

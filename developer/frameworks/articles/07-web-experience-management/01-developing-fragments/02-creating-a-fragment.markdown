@@ -1,7 +1,13 @@
-# Creating Fragments [](id=creating-a-fragment)
+---
+header-id: creating-fragments
+---
+
+# Creating Fragments
+
+[TOC levels=1-4]
 
 If you aren't sure about the basics of Fragments and Collections, you should 
-read [Creating Page Fragments](link) first so you know what you're getting 
+read [Creating Page Fragments](user-guide-link) first so you know what you're getting 
 yourself into. Once, you're ready, start by creating the Collection:
 
 1.  Go to *Site Administration* and for your selected site click *Build*
@@ -25,7 +31,7 @@ You're now on the Fragment editing page. There are four panes on this screen.
 You enter HTML in the top left pane, CSS in the top right, JavaScript in the
 bottom left, and preview the results in the bottom right.
 
-![Figure 1: The Fragment editor provides autocomplete for Liferay Fragment specific tags..](../../images/fragment-editor-autocomplete.png)
+![Figure 1: The Fragment editor provides autocomplete for Liferay Fragment specific tags..](../../../images/fragment-editor-autocomplete.png)
 
 You can look at the three editing panes as if each were writing to a separate 
 file. Everything in the HTML pane goes to `index.html`, the CSS pane goes to 
@@ -66,13 +72,20 @@ A Section is designed to define a space to work in. Now, create a section with a
 
 As you work, you can observe the preview in the preview pane.
 
-![Figure 2: The Fragment editor with HTML and CSS code and a live preview.](../../images/fragment-editor-basic.png)
+![Figure 2: The Fragment editor with HTML and CSS code and a live preview.](../../../images/fragment-editor-basic.png)
 
 ## Creating a Component
 
 Components are intended to by simple, reusable elements for building a parts of a page. Next create a button with a link as a Component:
 
-1.  Add the following code inside the HTML pane:
+1.  Go back to the *Page Fragments* page, and the *Developing Fragments* 
+    Collection.
+
+2.  Click the [Add](../../../images/icon-add.png) button and select *Component*.
+
+3.  Name it *Basic Component*.
+
+4.  Back in the editor, add the following code inside the HTML pane:
    
         <div class="basic-link-button">
         	<lfr-editable id="btn00" type="link">
@@ -80,7 +93,7 @@ Components are intended to by simple, reusable elements for building a parts of 
         	</lfr-editable>
         </div>
 
-2.  Click *Publish* to save your work and make it available to add to a content 
+5.  Click *Publish* to save your work and make it available to add to a content 
     page.
 
 This fragment did not require any CSS. For the button link, no target is 
@@ -88,7 +101,7 @@ provided by default, so the link will need to be configured when it is added
 to the page.
 
 From here, the Fragment can be added to a Page. To see this process in action, 
-see the [Building Content Pages from Fragments](link) tutorial.
+see the [Building Content Pages from Fragments](user-guide-link) tutorial.
 
 ## Managing Fragments and Collections
 
@@ -119,4 +132,8 @@ To access the fragment management menu,
 2.  Click on the [Options](../../../images/icon-options.png) menu next to the 
     Fragment name.
 
-3.  Select whether you want to *Edit*, *Rename*, *Move*, *Make a Copy*, *Change Thumbnail* *Export*, or *Delete* 
+3.  Select whether you want to *Edit*, *Rename*, *Move*, *Make a Copy*, *Change 
+    Thumbnail* *Export*, or *Delete*.
+
+Now that you've seen how to use Liferay's built-in tools to manage Fragments, 
+you can see how to do it using your own tools of choice and the Fragments CLI.

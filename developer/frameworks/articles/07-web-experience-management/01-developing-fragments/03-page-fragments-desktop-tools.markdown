@@ -1,4 +1,10 @@
+---
+header-id: page-fragments-desktop-tools
+---
+
 # Developing A Fragment Using Desktop Tools
+
+[TOC levels=1-4]
 
 You can develop a fragment using any preferred desktop tools. Since the Fragment
 is HTML, CSS, and JavaScript, you could use a text editor or a specialized tool
@@ -40,11 +46,11 @@ any fragments that are found will be imported into special collection called
 You can manage Fragment creation and deployment manually, or you can use 
 Liferay's Fragment CLI:
 
-1.  Follow these instructions to [Setup the generator](link).
+1.  Follow the project instructions to [setup the generator](https://github.com/liferay/generator-liferay-fragments/blob/master/README.md).
 
-1.  Run `yo liferay-fragments`.
+2.  Run `yo liferay-fragments`.
 
-2.  Follow the prompts to create a fragment.
+3.  Follow the prompts to create a fragment.
 
 Now you will have the basic structure created, but there's still more that the 
 generator can help you with.
@@ -55,7 +61,7 @@ generator can help you with.
 ### Creating Collections
 
 Before you can create any Page Fragments, you need to create a Collection. You 
-can learn more about Collection in the [Creating Page Fragments article](link).
+can learn more about Collections in the [Creating Page Fragments article](user-guide-link).
 Creating a Collection will create the base folder structure and some 
 information about your Collection. To do this,
 

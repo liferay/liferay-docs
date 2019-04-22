@@ -1,4 +1,10 @@
+---
+header-id: fragment-specific-tags
+---
+
 # Fragment Specific Tags
+
+[TOC levels=1-4]
 
 You can use Liferay specific tags to create editable, text, image, and link 
 fields, as well as embedding widgets.
@@ -25,8 +31,6 @@ The `lfr-editable` tag doesn't render without a unique `id`.
 | **Note:** If you want to make text inside an HTML element editable, you must 
 | use the `rich-text` type. The `text` type strips HTML formatting out of the 
 | text before rendering.
-
-![Figure 1: The Rich Text Editor provides a number of editing options.](../../images/fragment-editor-basic.png)
 
 ## Making Images Editable
 
