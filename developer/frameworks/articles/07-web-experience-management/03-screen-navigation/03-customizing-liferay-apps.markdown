@@ -1,10 +1,4 @@
-# Adding Custom Screens to Liferay Applications [](id=adding-custom-screens-to-liferay-applications)
-
-You can extend certain Liferay Applications with custom screens. Custom screens 
-can add configuration for features you've developed, integrating them seamlessly
-with the original application.
-
-## Categories Administration [](id=categories-administration)
+# Extending  Categories Administration
 
 The Categories Administration application supports adding Custom Screens to
 provide additional options for editing a category. To demonstrate adding a new
@@ -67,7 +61,8 @@ Administration.
 4.  Create a `custom-screen.jsp` in the 
     `/resources/META-INF/resources/category/` folder.
  
-5.  At the top of your JSP class, insert the following scriplet at the top to use the Screen Navigation UI:
+5.  At the top of your JSP class, insert the following scriplet to use the 
+    Screen Navigation UI:
 
         <%
         String redirect = ParamUtil.getString(request, "redirect", assetCategoriesDisplayContext.getEditCategoryRedirect());
@@ -86,7 +81,7 @@ Administration.
         renderResponse.setTitle(((category == null) ? LanguageUtil.get(request, "add-new-category") : category.getTitle(locale)));
         %>
 
-6.  Below that insert the following tag:
+6.  Below that, insert the following tag:
 
         <liferay-frontend:screen-navigation key=
         "<%= AssetCategoriesConstants.CATEGORY_KEY_GENERAL %>"

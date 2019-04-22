@@ -1,20 +1,19 @@
-# Using the Framework for Your Application [](id=using-the-framework-for-your-application)
+# Using Screen Navigation for Your Application
 
-The Screen Navigation Framework comprises two parts: Java classes for your
-screens and a tag library for your front-end. First you'll create the necessary
-Java classes and then add the front-end support through JSPs.
+To use the Screen Navigation framework with your application you will create a
+Screen Navigation Category and Entry, and then create the JSP to provide the
+layout for the Screen Navigation Entry.
 
-## Adding Screens to Your Application's Back-end [](id=adding-screens-to-your-applications-back-end)
+## Adding Screens to Your Application's Back-end 
 
-You must create at least one Navigation Category. To add screens to your
-application, first you must add at least one Navigation Category for the top
-level navigation. Then you can add additional Navigation Entries for each page
-that you need.
+To add screens to your application, first you must add at least one Navigation 
+Category for the top level navigation. Then you can add additional Navigation 
+Entries for each page that you need.
 
-First, add a Navigation Category
+To add a Navigation Category,
 
-1.  Create a component that implements the `ScreenNavigationCategory` 
-    interface. 
+1.  Inside of your existing application, create a component that implements the 
+    `ScreenNavigationCategory` interface. 
 
 2.  Implement the following methods in your component:
 
@@ -24,8 +23,38 @@ First, add a Navigation Category
 
     **`getScreenNavigationKey()`**: returns the navigation key that the 
     category belongs in, as defined in your application.
+    
+    Here is an example of what your `ScreenNavigationCategory` class might look 
+    like:
+    
+        @Component(
+        	property = "screen.navigation.category.order:Integer=10",
+        	service = ScreenNavigationCategory.class
+        )
+        public class SampleScreenNavigationCategory
+        	implements ScreenNavigationCategory {
+
+        	@Override
+        	public String getCategoryKey() {
+        		return SampleScreenNavigationConstants.
+        			CATEGORY_KEY_SAMPLE_CONFIGURATION;
+        	}
+
+        	@Override
+        	public String getLabel(Locale locale) {
+        		return LanguageUtil.get(locale, "general");
+        	}
+
+        	@Override
+        	public String getScreenNavigationKey() {
+        		return SampleScreenNavigationConstants.
+        			SAMPLE_KEY_METHOD;
+        	}
+
+        }
+        
  
-Next, add a Navigation Entry. 
+Next, add a Navigation Entry: 
 
 1.  Create a component which implements `ScreenNavigationEntry`.
 
@@ -45,12 +74,111 @@ Next, add a Navigation Entry.
 
     **`render(HttpServletRequest request, HttpServletResponse response)`**: 
     renders the entry.
+    
+    Here is an example of what your class might look like:
+    
+        @Component(
+        	property = "screen.navigation.entry.order:Integer=20",
+        	service = ScreenNavigationEntry.class
+        )
+        public class
+        	SampleScreenNavigationEntry
+        		implements ScreenNavigationEntry<SampleApplication> {
+
+        	public static final String
+        		ENTRY_KEY_SAMPLE_CONFIGURATION =
+        			"your-configuration";
+
+        	@Override
+        	public String getCategoryKey() {
+        		return SampleScreenNavigationConstants.
+        			CATEGORY_KEY_SAMPLE_CONFIGURATION;
+        	}
+
+        	@Override
+        	public String getEntryKey() {
+        		return ENTRY_KEY_SAMPLE_CONFIGURATION;
+        	}
+
+        	@Override
+        	public String getLabel(Locale locale) {
+        		return LanguageUtil.get(
+        			locale,
+        			SampleScreenNavigationConstants.
+        				CATEGORY_KEY_SAMPLE_CONFIGURATION);
+        	}
+
+        	@Override
+        	public String getScreenNavigationKey() {
+        		return SampleScreenNavigationConstants.
+        			SAMPLE_KEY_METHOD;
+        	}
+
+        	@Override
+        	public boolean isVisible(
+        		User user, CommercePaymentMethodGroupRel commercePaymentMethod) {
+
+        		if (SampleCriteria.equals(true) 
+                {
+
+        			return true;
+        		}
+
+        		return false;
+        	}
+
+        	@Override
+        	public void render(
+        			HttpServletRequest httpServletRequest,
+        			HttpServletResponse httpServletResponse)
+        		throws IOException {
+
+        		try {
+        			SampleGroupServiceConfiguration
+        				sampleGroupServiceConfiguration =
+        					_configurationProvider.getConfiguration(
+        						SampleGroupServiceConfiguration.class,
+        						new ParameterMapSettingsLocator(
+        							httpServletRequest.getParameterMap(),
+        							new GroupServiceSettingsLocator(
+        								_portal.getScopeGroupId(httpServletRequest),
+        								SampleMethodConstants.
+        									SERVICE_NAME)));
+
+        			httpServletRequest.setAttribute(
+        				SampleGroupServiceConfiguration.class.getName(),
+        				sampleGroupServiceConfiguration);
+        		}
+        		catch (PortalException pe) {
+        			throw new IOException(pe);
+        		}
+
+        		_jspRenderer.renderJSP(
+        			_servletContext, httpServletRequest, httpServletResponse,
+        			"/configuration.jsp");
+        	}
+
+        	@Reference
+        	private ConfigurationProvider _configurationProvider;
+
+        	@Reference
+        	private JSPRenderer _jspRenderer;
+
+        	@Reference
+        	private Portal _portal;
+
+        	@Reference(
+        		target = "(osgi.web.symbolicname=com.liferay.commerce.payment.method.sample)"
+        	)
+        	private ServletContext _servletContext;
+
+        }
 
 You can implement your render method any way that you want as long as it
 provides a way to render HTML. Liferay developers typically use JSPs, shown
 below. 
 
-## Adding Screens to Your Application's Front-end [](id=adding-screens-to-your-applications-front-end)
+## Adding Screens to Your Application's Front-end 
 
 To use JSPs to render your screens, you must invoke the `JSPRenderer` component
 in your `render` method and create the JSP that renders the HTML.
