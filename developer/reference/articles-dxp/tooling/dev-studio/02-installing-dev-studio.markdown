@@ -1,10 +1,4 @@
----
-header-id: installing-liferay-dev-studio
----
-
 # Installing Liferay Dev Studio
-
-[TOC levels=1-4]
 
 Liferay Dev Studio is a plugin for Eclipse that brings many Liferay-specific
 features to the table. You can install it into your existing Eclipse
@@ -34,8 +28,13 @@ update sites in the *Window* &rarr; *Preferences* &rarr; *Install/Update* &rarr;
     page. 
 
 2.  Download Liferay's latest
-    [Project SDK with Dev Studio](https://sourceforge.net/projects/lportal/files/Liferay%20IDE/)
-    executable that correlates to your operating system. The Project SDK
+    [Project SDK with Dev Studio](https://sourceforge.net/projects/lportal/files/Liferay%20IDE/).
+    Go to the [Downloads](https://customer.liferay.com/group/customer/downloads)
+    page in Liferay's Help Center. Select *Developer Tools* in the Product
+    drop-down and *Developer Studio* for the file type. Then select the
+    executable that correlates to your operating system.
+
+    The Project SDK
     includes @ide@,
     [Liferay Workspace](/developer/reference/-/knowledge_base/7-2/liferay-workspace),
     and [Blade CLI](/developer/reference/-/knowledge_base/7-2/blade-cli).
@@ -58,18 +57,15 @@ that same folder.
 If you already have an Eclipse environment that you're using for other
 things, it's easy to add Dev Studio to your existing Eclipse installation. 
 
-1.  In your browser, go to the
-    [Liferay Dev Studio](https://community.liferay.com/en_GB/project/-/asset_publisher/TyF2HQPLV1b5/content/ide-installation-instructions)
-    page. Copy the URL for the latest stable update site. 
+1.  In Dev Studio, select *Help* &rarr; *Install New Software*. 
 
-2.  Select *Help* &rarr; *Install New Software*. 
+2.  In the *Work with* field, copy in the following URL:
+    https://releases.liferay.com/tools/ide/latest/stable/
 
-3.  In the *Work with* field, copy in the URL.
-
-4.  You'll see the Liferay Dev Studio components in the list below. Check them
+3.  You'll see the Liferay Dev Studio components in the list below. Check them
     off and click *Next*. 
 
-5.  Accept the terms of the agreements and click *Next*, and Dev Studio is
+4.  Accept the terms of the agreements and click *Next*, and Dev Studio is
     installed. Like other Eclipse plugins you'll have to restart Eclipse to
     enable it. 
 
