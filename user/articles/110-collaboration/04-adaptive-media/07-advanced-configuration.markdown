@@ -4,6 +4,8 @@ header-id: advanced-configuration-options
 
 # Advanced Configuration Options
 
+[TOC levels=1-4]
+
 Adaptive Media's advanced configuration options are available in System 
 Settings. Open the Control Panel and go to *Configuration* &rarr; 
 *System Settings*, then select *Adaptive Media*. There are two configurations 

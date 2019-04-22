@@ -4,6 +4,8 @@ header-id: preventing-accidental-file-deletion-in-liferay-sync
 
 # Preventing Accidental File Deletion in Liferay Sync
 
+[TOC levels=1-4]
+
 Liferay Sync's power rests in its ability to propagate between @product@ 
 and connected Sync clients. When a user deletes a file from a connected 
 client, Sync also deletes the file in the instance and in any other connected 
