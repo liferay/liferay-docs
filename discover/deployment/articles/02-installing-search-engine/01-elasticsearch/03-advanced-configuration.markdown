@@ -98,19 +98,15 @@ See
 [here](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/mapping-types.html)
 for more details on Elasticsearch's field datatypes.
 
-$$$
-
 The above example shows how a `fooName` field might be added to @product@'s type
 mapping. Because `fooName` is not an existing property in the mapping, it 
 works fine. If you try to override an existing property mapping, index
 creation fails. Instead use the `overrideTypeMappings` setting to override
 `properties` in the mapping.
 
-+$$$
-
-**Note:** To see that your additional mappings have been added to the
-`LiferayDocumentType`, use `curl` to access this URL after saving your additions
-and re-indexing:
+To see that your additional mappings have been added to the
+`LiferayDocumentType`, use `curl` to access this URL after saving your
+additions and re-indexing:
 
     curl http://[HOST]:[ES_PORT]/liferay-[COMPANY_ID]/_mapping/LiferayDocumentType?pretty
 
@@ -121,8 +117,6 @@ Here's what it would look like for an Elasticsearch instance running on
 
 In the above URL, `liferay-20116`is the index name. Including it indicates that
 you want to see the mappings that were used to create the index with that name.
-
-$$$
 
 ### Overriding Type Mappings [](id=overriding-type-mappings)
 
