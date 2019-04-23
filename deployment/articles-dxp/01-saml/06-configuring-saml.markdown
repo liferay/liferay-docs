@@ -11,11 +11,11 @@ files as they were in versions prior to 3.1.0.
 
 | **Note:** Don't use OSGi `.config` files or @product@'s System Settings Control
 | Panel application to configure SAML providers (IdP or SP). The System Settings
-| UI is auto-generated, and is for advanced admins. It does not perform the
+| UI is auto-generated, and is for advanced administrators. It does not perform the
 | enhanced validation on the fields that the SAML Admin UI performs, so it could
 | allow administrators to create invalid configurations.
 
-This is an portal instance scoped configuration which can be managed via OSGi
+This is a portal instance scoped configuration which can be managed via OSGi
 Configuration Admin. The affected properties are those in the
 `SAMLProviderConfiguration` metatype:
 
@@ -53,6 +53,6 @@ The latter two properties were replaced with the single property
 `saml.runtime.metadata.refresh.interval`.
 
 Note also the introduction of the *SAML KeyStoreManager Implementation
-Configuration* in *Control Panel* &rarr; *System Settings*. The options for
-this configuration are explained above in the Setting up @product@ as a SAML
-Identity Provider section.
+Configuration* in *Control Panel* &rarr; *System Settings* &rarr; Security
+&rarr; SSO. The options for this configuration are explained above in the
+Setting up @product@ as a SAML Identity Provider section.
