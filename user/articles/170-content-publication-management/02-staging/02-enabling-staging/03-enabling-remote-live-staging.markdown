@@ -14,7 +14,7 @@ to the remote live server.
 
 Before enabling Remove Live staging, ensure you've configured your Liferay
 server and remote server appropriately. Follow the
-[Configuring Servers for Remote Live Staging](/discover/portal/-/knowledge_base/7-1/configuring-servers-for-remote-live-staging)
+[Configuring Servers for Remote Live Staging](/docs/7-2/user/-/knowledge_base/user/configuring-servers-for-remote-live-staging)
 article to do this.
 
 You can enable remote staging for a site by navigating to the *Publishing*
@@ -36,9 +36,9 @@ Live staging environment for your site.
     into the *Remote Host/IP* field (e.g., *[0:0:0:0:0:0:0:1]*).
 
     If the remote Liferay server is a cluster, you can set the Remote Host/IP to
-    the load balanced IP address of the cluster in order to increase the
-    availability of the publishing process. See the
-    [Configuring Remote Staging in a Clustered Environment](/discover/deployment/-/knowledge_base/7-1/configuring-remote-staging-in-a-clustered-environment)
+    the load balanced IP address of the cluster to increase the availability of
+    the publishing process. See the
+    [Configuring Remote Staging in a Clustered Environment](/docs/7-2/user/-/knowledge_base/user/configuring-remote-staging-in-a-clustered-environment)
     for details.
 
 4.  Enter the port on which the remote Liferay instance is running into the
@@ -61,7 +61,7 @@ Live staging environment for your site.
 
 7.  Decide whether to enable page versioning and select staged content. For more
     information on these options, see the
-    [Enabling Page Versioning and Staged Content](/discover/portal/-/knowledge_base/7-1/enabling-page-versioning-and-staged-content)
+    [Enabling Page Versioning and Staged Content](/docs/7-2/user/-/knowledge_base/user/enabling-page-versioning-and-staged-content)
     article.
 
 8.  Click *Save*.
@@ -70,7 +70,7 @@ You've officially begun the staging process!
 
 If you fail to configure your current and remote server properly, you won't be
 able to enable staging and an error message appears. If you have issues,
-[verify you've configured your servers properly](/discover/portal/-/knowledge_base/7-1/configuring-servers-for-remote-live-staging).
+[verify you've configured your servers properly](/docs/7-2/user/-/knowledge_base/user/configuring-servers-for-remote-live-staging).
 
 When a user publishes changes from the local (staging) server to the remote
 (live) server, @product@ passes the user's email address, screen name, or user
@@ -91,9 +91,8 @@ accounts from your local (staging) Liferay server to your remote (live) Liferay
 server. Liferay's Virtual LDAP Server application, available on Liferay
 Marketplace, makes this easy.
 
-If you ever need to turn off the staging environment, return back to *Staging*
-from the Publishing dropdown. For more information on this, see the
+See the
 [Disabling Staging](/discover/portal/-/knowledge_base/7-1/disabling-staging)
-article.
+article to learn how to turn off the staging environment.
 
 Great! Now you're ready to use Remote Live Staging.

@@ -9,7 +9,7 @@ configurations, such as the properties set in the `portal-ext.properties` file.
 The cloned site becomes the staging environment and the original site becomes
 the live environment.
 
-You can enable local staging for a site by navigating to the *Publishing &rarr;
+You can enable local staging for a site by navigating to the *Publishing* &rarr;
 *Staging* menu. To get some hands-on experience with enabling Local Live
 staging, you can complete a brief example which creates a Local Live staging
 environment for your site. 
@@ -19,7 +19,7 @@ environment for your site.
 
 2.  Select *Local Live*. You can also enable page versioning and select staged
     content. For more information on these options, see the
-    [Enabling Page Versioning and Staged Content](/discover/portal/-/knowledge_base/7-1/enabling-page-versioning-and-staged-content)
+    [Enabling Page Versioning and Staged Content](/docs/7-2/user/-/knowledge_base/user/enabling-page-versioning-and-staged-content)
     article.
 
 3.  Click *Save*.
@@ -38,7 +38,7 @@ versioning requires staging (either Local Live or Remote Live) to be enabled.
 
 If you ever need to turn off the staging environment, return back to *Staging*
 from the Publishing dropdown. For more information on this, see the
-[Disabling Staging](/discover/portal/-/knowledge_base/7-1/disabling-staging)
+[Disabling Staging](/docs/7-2/user/-/knowledge_base/user/disabling-staging)
 article.
 
 Great! Now you're ready to use Local Live Staging.

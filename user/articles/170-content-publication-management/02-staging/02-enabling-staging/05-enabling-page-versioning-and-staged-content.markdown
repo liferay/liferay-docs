@@ -10,7 +10,7 @@ important to publish a fix quickly.
 You can enable page versioning for public pages or private pages on the Staging
 Configuration page below the menu for selecting your staging environment (Local
 or Remote). If you've already enabled staging, you can navigate to the Product
-Menu &rarr; *Publishing* &rarr; *Staging* and click the
+Menu &rarr; *Publishing* &rarr; *Staging* and click the Options
 (![Options](../../../../images/icon-options.png)) button and select *Staging
 Configuration*.
 
@@ -29,7 +29,6 @@ published with it.
 
 @product@ by default supports the following content groups for staging:
 
-- Application Display Templates
 - Blogs
 - Bookmarks
 - Calendar
@@ -41,28 +40,30 @@ published with it.
 - Mobile Device Families
 - Polls
 - Web Content
+- Widget Templates
 - Wiki
 
-Before you activate staging, choose which of these applications' data you'd
-like to copy to staging. You'll learn about many of the collaboration apps
-listed under the Staged Portlets heading when you read the
-[Collaboration Suite's](/discover/portal/-/knowledge_base/7-1/collaboration)
+Before you activate staging, choose which of these widgets' data you'd
+like to copy to staging. You'll learn about many of the collaboration widgets
+listed under the Staged Content heading when you read the
+[Collaboration Suite's](/docs/7-2/user/-/knowledge_base/user/collaboration)
 section of articles. For now, be aware that you can enable or disable staging
-for any of these applications. Why might you want to enable staging for some
-application types but not others? In the case of collaborative apps, you
-probably *don't* want to enable staging since such applications are designed
-for user interaction. If their content were staged, you'd have to 
-publish your site manually whenever somebody posted a message on the message
-boards to make that message appear on the live site. Generally, you want web
-content to be staged because end users aren't creating that kind of
-content---web content is the stuff you publish to your site. But applications
-like the Message Boards or Wiki should *not* be staged. Notice which
-applications are marked for staging by default: if you enable staging and
-accept the defaults, staging is *not* enabled for the collaborative apps.
+for any of these widgets.
 
-The listed applications, or content groups, contain one or more specific
-entity. For example, selecting the Web Content application does not mean you're
-only selecting web content itself, but also web content folders.
+Why might you want to enable staging for some application types but not others?
+In the case of collaborative apps, you probably *don't* want to enable staging
+since such applications are designed for user interaction. If their content were
+staged, you'd have to  publish your site manually whenever somebody posted a
+message on the message boards to make that message appear on the live site.
+Generally, you want web content to be staged because end users aren't creating
+that kind of content---web content is the stuff you publish to your site. But
+applications like the Message Boards or Wiki should *not* be staged. Notice
+which applications are marked for staging by default: if you enable staging and
+accept the defaults, staging is *not* enabled for the collaborative widgets.
+
+The listed widgets, or content groups, contain one or more specific entity. For
+example, selecting the Web Content widget does not mean you're only selecting
+web content itself, but also web content folders.
 
 Certain content types can be linked together and can reference each other on
 different levels. One of the responsibilities of staging is to discover and

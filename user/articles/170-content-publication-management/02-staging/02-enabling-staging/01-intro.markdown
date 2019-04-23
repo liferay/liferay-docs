@@ -1,9 +1,10 @@
 # Enabling Staging [](id=enabling-staging)
 
 You have two different ways to set up staging:
-[Local Live](/discover/portal/-/knowledge_base/7-1/enabling-local-live-staging)
-and
-[Remote Live](/discover/portal/-/knowledge_base/7-1/enabling-remote-live-staging).
+
+- [Local Live](/docs/7-2/user/-/knowledge_base/user/enabling-local-live-staging)
+- [Remote Live](/docs/7-2/user/-/knowledge_base/user/enabling-remote-live-staging)
+
 Whether you enable Local Live or Remote Live staging, the interface for managing
 and publishing staged pages is the same.
 
@@ -20,7 +21,7 @@ Liferay server.
 With Remote Live staging, your staging and live environments are hosted on
 separate servers, so your data is separated. This lets you deploy new versions
 of apps and content to your staging environment without interfering with your
-live environment. However, publishing is slower with Remote Live staging since
+live environment. Publishing is slower, however, with Remote Live staging since
 data must be transferred over a network. Of course, you also need more
 hardware to run a separate staging server.
 

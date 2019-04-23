@@ -30,7 +30,7 @@ Follow the steps below to configure your servers for Remote Live staging.
     The values for these properties depend on the chosen configured encryption
     algorithm, since different encryption algorithms support keys of different
     lengths. See the
-    [HTTP Tunneling](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#HTTP%20Tunneling)
+    [HTTP Tunneling](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#HTTP%20Tunneling)
     properties documentation for more information. Note that the following key
     lengths are supported by the available encryption algorithms:
 
@@ -85,9 +85,9 @@ Follow the steps below to configure your servers for Remote Live staging.
 
 5.  Update the *TunnelAuthVerfierConfiguration* of your remote Liferay instance.
     To do this, navigate to the Control Panel &rarr; *Configuration* &rarr;
-    *System Settings* &rarr; *API Authentication* &rarr; *Tunnel Authentication
-    Verifiers*. Click */api/liferay/do* and insert the additional IP addresses
-    you're using in the *Hosts allowed* field. Then select *Update*.
+    *System Settings* &rarr; *API Authentication* &rarr; *Tunnel
+    *Authentication*. Click */api/liferay/do* and insert the additional IP
+    *addresses you're using in the *Hosts allowed* field. Then select *Update*.
 
     Alternatively, you can also write this configuration into an OSGi file (e.g.,
     `osgi/configs/com.liferay.portal.security.auth.verifier.tunnel.module.configuration.TunnelAuthVerifierConfiguration-default.config`)
@@ -105,13 +105,9 @@ Follow the steps below to configure your servers for Remote Live staging.
 That's all you need to do to configure Remote Live Staging! You can now
 [enable it](/discover/portal/-/knowledge_base/7-1/enabling-remote-live-staging)!
 
-+$$$
-
-**Note:** Never clone your @product@ database; doing this can duplicate
-important data used by Staging (e.g., UUID), causing the Remote Publication
-process to fail.
-
-$$$
+| **Note:** Never clone your @product@ database; doing this can duplicate
+| important data used by Staging (e.g., UUID), causing the Remote Publication
+| process to fail.
 
 For additional information on configuring Remote Live staging, see the topics
 below.
