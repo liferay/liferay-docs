@@ -55,10 +55,30 @@ Once the query itself is in good shape, feed it to the search request.
     ```java
     SearchRequest searchRequest = searchRequestBuilder.query(termsQuery).build();
     ```
+
+4.  To instead use the constructed query in a filter context, call the
+    `postFilterQuery` method:
+
+    ```java
+    SearchRequest searchRequest = searchRequestBuilder.postFilterQuery(termsQuery).build();
+    ```
+
+    When constructing a search request, you'll often find it necessary to chain
+    the builder methods together:
+
+    ```java
+    SearchRequest searchRequest = 
+        searchRequestBuilder.postFilterQuery(myQuery1).query(myQuery2).build();
+    ```
+
+    Doing this allows you to add filters and queries (and anything else from
+    the builder API) to the same request in one fell swoop.
+
 ### Execute the Search Request
 
-1.  Perform a search using the `com.liferay.portal.search.searcher.Searcher` service and the `SearchRequest` to get
-   a `com.liferay.portal.search.searcher.SearchResponse`:
+1.  Perform a search using the `com.liferay.portal.search.searcher.Searcher`
+    service and the `SearchRequest` to get a
+    `com.liferay.portal.search.searcher.SearchResponse`:
 
     ```java
     SearchResponse searcher.search(searchRequest);
@@ -124,55 +144,18 @@ query-building documentation.
 
 ### Legacy Filters in Legacy Search Calls
 
-```java
-TermFilter termFilter=new TermFilter("fieldName", "filterValue")
-```
-
-indexer.search calls
-
-Constructing the 
-
-, just
-like with, unscored results that are retunred form the
-search enigine fading away.
-Search engines support the construction of a query and The best way to
-construct filters and add them to the
-search request is using the  
-
-Legacy `Filter`s are found in `com.liferay.portal.kernel.search` and are
-instantiated and constructed using this format:
+Constructing the filters found in `portal-kernel`'s
+`com.liferay.portal.kernel.search.filter` package is straightforward, as
+demonstrated by this `new` term filter:
 
 ```java
 TermFilter termFilter=new TermFilter("fieldName", "filterValue")
 ```
 
-```java
-public GeoDistanceFilter(
-    String field, GeoLocationPoint pinGeoLocationPoint,
-    GeoDistance geoDistance) {
+Filters are added in legacy search calls by going through the `Indexer`
+framework's `postProcessContextBooleanFilter` method, which is invoked while the
+search framework is constructing the main search query. See the 
+[`UserIndexer`'s `addContextQueryParams` method](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/users-admin/users-admin-impl/src/main/java/com/liferay/users/admin/internal/search/UserIndexer.java), 
+which is called in the overridden `postProcessContextBooleanFilter` to add the
+filter logic.
 
-    _field = field;
-    _pinGeoLocationPoint = pinGeoLocationPoint;
-    _geoDistance = geoDistance;
-}
-```
-
-`_filterBuilders.dateRangeFilterBuilder()`
-`new TermFilter("fieldName", "filterValue"))`
-`SearchRequestBuilder.postFilterQuery(Query)`
-
-`DateRangeFilterBuilderImpl` is `internal`; only our unit tests are able to `new DateRangeFilterBuilderImpl()`. devs would `_filterBuilders.dateRangeFilterBuilder()` instead (edited)
-
-`TermFilter` is `portal-kernel`; uses legacy instantiation, `new TermFilter("fieldName", "filterValue"))`. I know the lack of consistency is bad; but at the end of the day, we’re abandoning the whole “Filters” thing anyway (more about this in a minute) so there’s little value in adding the `portal-kernel` legacy stuff to `FilterBuilders`.
-We are abandoning the legacy `Filter`. From now on, the recommended way to do “post filter” queries (fully supported by search engines) is `SearchRequestBuilder.postFilterQuery(Query)` (when using `Searcher`) or `SearchSearchRequest.setPostFilterQuery(Query)` (when using Low Level Search API). You will notice we already have `Query` equivalents for all of the legacy `Filter` varieties, for instance: `Queries.dateRangeTerm`, `Queries.term`, `Queries.termsSet` (edited)
-
-
-
-
-André de Oliveira   [5 days ago]
-*[2.]*
-
-`SearchRequestBuilder.query(Query)` (when using `Searcher`) and `searchSearchRequest.setQuery(Query)` (when using Low Level Search API) are equivalent. I know the lack of consistency is bad; we spent more time polishing API for the former than the latter, and for sure there’s still much room for improvement. Worth mentioning: in Low Level Search API, that’s pretty much the only entry point to define what you want to search; in `Searcher`, there’s multiple entry points and it will choose how to search in a “smart” way. If you use that specific method, under the hood it will just delegate to plain Low Level Search (bypassing the Indexer framework.) (edited)
-
-André de Oliveira   [5 days ago]
-If you invoke `Searcher` with a legacy `SearchContext`, via `com.liferay.portal.search.legacy.searcher.SearchRequestBuilderFactory.getSearchRequestBuilder(SearchContext)` it will use the Indexer framework just like the Search Page or Classic Search Portlet.
