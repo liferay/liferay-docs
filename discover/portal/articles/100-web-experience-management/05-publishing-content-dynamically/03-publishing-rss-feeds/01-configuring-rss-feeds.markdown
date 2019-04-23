@@ -1,5 +1,10 @@
 # Configuring RSS Feeds [](id=configuring-rss-feeds)
 
+Before starting to magane Liferay RSS feeds you have to check that you have enabled them. There are two places to look for:
+
+1. Check in `portal-ext.properties` that you haven't disabled `rss.feeds.enabled` by setting it to `false`. By default, it's set to `true` so if you haven't override it, its original value is `true`
+ 2. Check in System Settings that you have activated `Show Feeds` which is deactivated by default. Go to Control Panel > Configuration > System Settings and search for Web Content settings. On Administration under System Scope asser that you have `Show Feeds' enabled (you'll find it at the end of the page).
+ 
 To manage a Liferay site's RSS feeds, navigate to your Site's Site
 Administration &rarr; *Content* page and click *Web Content*. Site
 administrators can use this Web Content menu option to manage their site's web
