@@ -117,14 +117,15 @@ Publisher portlet.
         %>
 
 2.  Use the `liferay-asset:asset-links` tag to show the entity's related assets.
-    For this tag, you should retrieve the entity's class name and the variable
-    holding your instance object, so you can return its ID. The example code
-    below uses the example entity class `Insult` and an instance object
-    variable called `ins`:
+    For this tag, you retrieve the `assetEntryId` from the `assetEntry` object, 
+    retrieve your asset's `className`, and get the entity's primary key 
+    (`classPK`) from the specific `entry`. The tag then retrieves any other 
+    assets linked to your asset.
+    
 
 		<liferay-asset:asset-links
 			assetEntryId="<%= (assetEntry != null) ? assetEntry.getEntryId() : 0 %>"
-			className="<%= [AssetEntry].class.getName() %>"
+			className="<%= [myAssetEntry].class.getName() %>"
 			classPK="<%= entry.getEntryId() %>"
 		/>
 
