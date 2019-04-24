@@ -6,11 +6,10 @@ header-id: preparing-a-new-product-server-for-data-upgrade
 
 [TOC levels=1-4]
 
-As you progress toward upgrading your @product@ database, it's best to prepare a
-new server for hosting @product-ver@. You'll use this server to run the
-@product@ database upgrade and run @product-ver@. In this way your current
-production server continues running while you configure a new server to host
-@product-ver@ exactly the way you want. 
+To upgrade your @product@ database, prepare a new server for hosting
+@product-ver@. You'll use this server to run the database upgrade and run
+@product-ver@. Then you can run your production server while you're configuring
+a new server to host @product-ver@ exactly the way you want. 
 
 | **Note:** these steps can be done in parallel with any of the upgrade 
 | preparation steps: planning for deprecated apps, testing upgrades on a 
@@ -48,12 +47,12 @@ folder.
 ## Migrate Your Portal Properties 
 
 It is likely that you have overridden portal properties to customize your
-installation to your requirements. If so, you must update the properties files
-(e.g., `portal-setup-wizard.properties` and `portal-ext.properties` files) to
-@product-ver@. For features that use OSGi Config Admin, you'll convert your
-properties to OSGi configurations. As you do this, you must account for property
-changes in all versions of @product@ since your current version up to and
-including @product-ver@. Start with updating your portal properties. 
+installation. If so, you must update the properties files (e.g.,
+`portal-setup-wizard.properties` and `portal-ext.properties`) to @product-ver@.
+For features that use OSGi Config Admin, you must convert your properties to
+OSGi configurations. As you do this, you must account for property changes in
+all versions of @product@ since your current version up to and including
+@product-ver@. Start with updating your portal properties. 
 
 ### Update Your Portal Properties 
 
@@ -71,10 +70,11 @@ property-related updates:
 
 When a new version of @product@ is released, there are often changes to default
 settings, and this release is no different. If you rely on the defaults from
-your old version, you'll want to review the changes and decide whether you want
-to keep the defaults from your old version or accept the defaults of the new. 
+your old version, you should review the changes and decide to keep the defaults
+from your old version or accept the defaults of the new. 
 
-Here's a list of the 6.2 properties that have changed in 7.2: 
+Because no properties changed from 7.1 to 7.2, here's a list of the 6.2
+properties that have changed in 7.2: 
 
 ```properties
 users.image.check.token=false
@@ -109,8 +109,8 @@ configurations.
 
 ### Convert Applicable Properties to OSGi Configurations 
 
-Properties in features that have been modularized have changed and must now be
-deployed separately in
+Properties in modularized features have changed and must now be deployed
+separately in
 [OSGi configuration files](/docs/7-2/user/-/knowledge_base/user/system-settings#exporting-and-importing-configurations) 
 (OSGi Config Admin).
 
@@ -118,7 +118,7 @@ Use the
 [`blade upgradeProps`](/docs/7-2/reference/-/knowledge_base/reference/blade-cli)
 command to scan your `portal-ext.properties` file to discover which properties
 are now set via OSGi Config Admin. You can also check the upgrade log from
-previous attemps looking for traces like these:
+previous attempts for traces like these:
 
 ```properties
 2019-03-09 17:05:17.678 ERROR [main][VerifyProperties:161] Portal property "layout.first.pageable[link_to_layout]" is obsolete
@@ -126,7 +126,7 @@ previous attemps looking for traces like these:
 ```
 
 | **Tip:** The Control Panel's *Configuration &rarr; System Settings* screens 
-| are the most accurate way to create `.config` files. They let you
+| are the most accurate way to create `.config` files. Use them to
 | [export a screen's configuration](/docs/7-2/user/-/knowledge_base/user/system-settings#exporting-and-importing-configurations)
 | to a `.config` file. 
 
@@ -139,7 +139,7 @@ changed for document storage:
 -   Store implementation class package names changed from 
     `com.liferay.portlet.documentlibrary.store.*` in Liferay Portal 6.2 to
     `com.liferay.portal.store.*` in @product@ 7.0+. Make sure your
-    `portal-ext.properties` file sets `dl.store.impl` one of these ways:
+    `portal-ext.properties` file sets `dl.store.impl` in one of these ways:
 
     ```properties
     dl.store.impl=com.liferay.portal.store.file.system.FileSystemStore
@@ -152,31 +152,31 @@ changed for document storage:
     [Document Repository Configuration](/docs/7-2/deploy/-/knowledge_base/deploy/document-repository-configuration)
     documentation describes other store options.
 
--   Since @product@ 7.0, document store type specific configuration (e.g., 
+-   Since @product@ 7.0, document store type-specific configuration (e.g., 
     specific to Simple File Store, Advanced File Store, S3, etc.) is done in the
     Control Panel at *Configuration &rarr; System Settings &rarr; File Storage*
-    or done using OSGi configuration files (`.config` files). Type specific
+    or using OSGi configuration files (`.config` files). Type specific
     configuration is no longer done using `portal-ext.properties`. 
 
-    For example, these steps to create a `.config` file that specifies a
-    different root file location for a Simple File Store or Advanced File Store:
-    
-    1.  Create a `.config` file named after your store implementation class.
-    
-        Simple File Store: 
-        `com.liferay.portal.store.file.system.configuration.FileSystemStoreConfiguration.config`
-    
-        Advanced File Store:
-        `com.liferay.portal.store.file.system.configuration.AdvancedFileSystemStoreConfiguration.config`
-    
-    2.  Set the following `rootDir` property and replace 
-        `{document_library_path}` with  your file store's path.
+For example, these steps to create a `.config` file specifying a root file
+location for a Simple File Store or Advanced File Store:
+ 
+1.  Create a `.config` file named after your store implementation class.
 
-        ```properties
-        rootDir="{document_library_path}"
-        ```
-    
-    3.  Copy the `.config` file to your `[Liferay Home]/osgi/configs` folder.
+    Simple File Store: 
+    `com.liferay.portal.store.file.system.configuration.FileSystemStoreConfiguration.config`
+
+    Advanced File Store:
+    `com.liferay.portal.store.file.system.configuration.AdvancedFileSystemStoreConfiguration.config`
+ 
+2.  Set the following `rootDir` property and replace 
+    `{document_library_path}` with  your file store's path.
+
+    ```properties
+    rootDir="{document_library_path}"
+    ```
+
+3.  Copy the `.config` file to your `[Liferay Home]/osgi/configs` folder.
 
 The
 [Document Repository Configuration](/docs/7-2/deploy/-/knowledge_base/deploy/document-repository-configuration)
@@ -186,7 +186,7 @@ provides more document store configuration details.
 
 Before starting the upgrade process in your new installation, you must disable
 indexing to prevent upgrade process performance issues that arise when the
-indexer attempts to reindex content. 
+indexer attempts to re-index content. 
 
 To disable indexing, create a file called
 `com.liferay.portal.search.configuration.IndexStatusManagerConfiguration.config`
@@ -199,4 +199,4 @@ indexReadOnly="true"
 After you complete the upgrade, re-enable indexing by removing the `.config`
 file or setting `indexReadOnly="false"`. 
 
-## Checkpoint: Your new @product-ver@ server is ready for upgrading your database
+Your new @product-ver@ server is ready for upgrading your database. 
