@@ -1,4 +1,4 @@
-# Enabling Staging [](id=enabling-staging)
+# Enabling Staging
 
 You have two different ways to set up staging:
 

@@ -1,4 +1,4 @@
-# Staging Processes and Templates [](id=staging-processes-and-templates)
+# Staging Processes and Templates
 
 When you make a staging publication, it's captured as a staging process and
 stored for future reference. You can manage these processes by navigating to the
@@ -27,31 +27,27 @@ Follow the steps below to create and use a publish template.
 
 2.  Click the *Add* button
     (![Add Publish Template](../../../../images/icon-add.png)) and assign the
-    template a name and description, and then fill out the configuration options
-    as you would during a custom publication process.
+    template a title and description, and then fill out the configuration
+    options as you would during a custom publication process.
 
 3.  Save your publish template. It's available to use from the *Publish
     Templates* tab in the *Publish to Live* menu's Advanced Publication area.
 
 4.  To use the template, click the *Actions* button
     (![Actions](../../../../images/icon-actions.png)) next to the template and
-    select *Publish to Live*.
+    select *Publish*.
 
     This automatically sets the options for publishing pages and their content.
     All you have to do is give the publication process a name. Once you confirm
     the configuration settings, your staging settings are published.
 
-+$$$
-
-**Note:** When staging is enabled, the options available from the *Publishing*
-tab are modified. When in the Live environment, you can only access the *Export*
-feature. When in the Staging environment, you can only access the *Import* and
-*Staging* features. The disabled features for each environment don't make sense
-in that context. For example, you shouldn't be able to import content when in
-the live environment; it must be imported into the staged environment and then
-published before it is available in the live site.
-
-$$$
+| **Note:** When staging is enabled, the options available from the *Publishing*
+| tab are modified. When in the Live environment, you can only access the
+| *Export* feature. When in the Staging environment, you can only access the
+| *Import* and *Staging* features. The disabled features for each environment
+| don't make sense in that context. For example, you shouldn't be able to import
+| content when in the live environment; it must be imported into the staged
+| environment and then published before it is available in the live site.
 
 Now you know how to reference stored/scheduled staging processes and create
 publish templates to streamline publication. 

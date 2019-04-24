@@ -1,4 +1,4 @@
-# Configuring Servers for Remote Live Staging [](id=configuring-servers-for-remote-live-staging)
+# Configuring Servers for Remote Live Staging
 
 Before you can enable Remote Live staging for a site, you must satisfy some
 necessary requirements:
@@ -112,7 +112,7 @@ That's all you need to do to configure Remote Live Staging! You can now
 For additional information on configuring Remote Live staging, see the topics
 below.
 
-## Applying Patches When Using Remote Staging [](id=applying-patches-when-using-remote-staging)
+## Applying Patches When Using Remote Staging
 
 When applying patches to a remote staging environment, you must apply them to
 all your servers. Having servers on different patch levels is not a good
@@ -120,7 +120,7 @@ practice and can lead to import failures and data corruption. It is essential
 that all servers are updated to the same patch level to ensure remote staging
 works correctly.
 
-## Configuring Remote Staging's Buffer Size [](id=configuring-remote-stagings-buffer-size)
+## Configuring Remote Staging's Buffer Size
 
 Similar to Local Live staging, it is a good idea to turn remote staging on at
 the beginning of your site's development for good performance. When you're using

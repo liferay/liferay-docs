@@ -1,4 +1,4 @@
-# Enabling Remote Live Staging [](id=enabling-remote-live-staging)
+# Enabling Remote Live Staging
 
 In Remote Live staging, a connection is established between the current site and
 another site on a remote Liferay server. The remote site becomes the live

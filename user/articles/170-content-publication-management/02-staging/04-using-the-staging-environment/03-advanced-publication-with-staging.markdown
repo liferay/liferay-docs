@@ -1,4 +1,4 @@
-# Advanced Publication with Staging [](id=advanced-publication-with-staging)
+# Advanced Publication with Staging
 
 Once you've finished your changes on the staged site and want to publish them,
 select the *Publish to Live* button from the Staging Bar. To configure advanced
@@ -8,11 +8,11 @@ your content, editing the pages/content to include in the publication, managing
 permissions, etc. This lets you perform advanced editing to your publication
 process.
 
-## Date [](id=date)
+## Date
 
 You have two options for the Date category:
 
-**Now:** immediately pushes any changes to the live site.
+**Now:** immediately pushes any changes to the live Site.
 
 **Schedule:** set a specific date to publish or to set up recurring publishing.
 You could use this to publish all changes made during the week every Monday
@@ -20,7 +20,7 @@ morning without any further intervention.
 
 These options let you plan staging schedules in advance.
 
-## Pages [](id=pages)
+## Pages
 
 This area of the menu gives you the option to choose which pages to include when
 you publish. You can choose the page group (Public or Private) to publish by
@@ -33,7 +33,7 @@ separately if you want to publish both page groups.
 You can also choose specific pages to publish, and the look and feel of those
 pages.
 
-## Content [](id=content)
+## Content
 
 The Content area lets you select the content to be published. If you choose a
 page to be published from the Pages menu, the portlets and their references are
@@ -68,12 +68,8 @@ Content label. Otherwise, the Web Content section is absent.
 The *Categories* content type is not dependent on the date range and is always
 shown in the list.
 
-+$$$
-
-**Note:** Since comments and ratings are meant for the end user, they are not
-supported in staging and can only be added to the live site.
-
-$$$
+| **Note:** Since comments and ratings are meant for the end user, they are not
+| supported in staging and can only be added to the live site.
 
 Unchecking the checkbox next to a certain content type excludes it from the
 current publication to the live site.
@@ -87,15 +83,15 @@ Content, Include Always, Version History*. You can remove items by clicking the
 *Change* button next to the list.
 
 See the
-[Managing Content Types in Staging](/discover/portal/-/knowledge_base/7-1/managing-content-types-in-staging)
+[Managing Content Types in Staging](/docs/7-2/user/-/knowledge_base/user/managing-content-types-in-staging)
 article for more information on managing content during the publication process.
 
-## Deletions [](id=deletions)
+## Deletions
 
 This portion of the menu lets you delete two things: 
 
-- portlet metadata before publishing 
-- operations performed for content types. 
+- portlet metadata before publishing
+- operations performed for content types
 
 You have two options to manage for deletions:
 
@@ -108,7 +104,7 @@ complete an export first.
 **Replicate Individual Deletions:** operations performed for content in the
 staging environment are replicated to the target site.
 
-## Permissions [](id=permissions)
+## Permissions
 
 This area lets you include permissions for the pages and portlets when the
 changes are published. Select the *Publish Permissions* checkbox to enable this
