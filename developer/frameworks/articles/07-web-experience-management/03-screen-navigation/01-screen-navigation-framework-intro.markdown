@@ -25,10 +25,51 @@ of the screen. You can customize this default layout for your needs.
 The Screen Navigation Framework comprises two parts: Java classes for your
 screens and a tag library for your front-end. To use Screen Navigation for your
 application, first you'll create the necessary Java classes and then add the 
-front-end support through JSPs. 
+front-end support through JSPs.
+
+Your `ScreenNavigationCategory` class must be a a component that implements the 
+`ScreenNavigationCategory` interface with these methods:
+
+**`getCategoryKey()`**: returns the category's primary key.
+
+**`getLabel(Locale locale)`**: returns the label of the key.
+
+**`getScreenNavigationKey()`**: returns the navigation key that the 
+category belongs in, as defined in your application.
+
+Your `ScreenNavigationEntry` class, similarly must be a component which 
+implements `ScreenNavigationEntry` with the following methods:
+
+**`getCategoryKey()`**: returns the category's primary key.
+
+**`getEntryKey()`**: returns the entry's primary key.
+
+**`getLabel()`**: returns the entries label.
+
+**`getScreenNavigationKey()`**: returns the navigation key for the category 
+of the current entry.
+
+**`isVisible(User user, T screenModelBean)`**: boolean for whether or not 
+the entry should be visible for the current user.
+
+**`render(HttpServletRequest request, HttpServletResponse response)`**: 
+renders the entry. The `render` method is also where any logic for creating
+the configuration goes.
 
 ## Adding Custom Screens to Liferay Applications 
 
 You can extend certain Liferay Applications with custom screens. Custom screens 
 can add configuration for features you've developed and added to a Liferay 
 application, integrating them seamlessly with the original application.
+
+The parameters it needs are `key`, `modelBean`, and `portletURL`.
+
+* **Key**: a unique name for the navigation in this application.
+
+* **modelBean**: the model that is being rendered
+
+* **portletURL**: the portlet URL used to build the titles for each link.
+
+In addition to these parameters, you must build the page that users will use
+for configuration, and connect it to your business logic through the render 
+command. 

@@ -8,24 +8,41 @@ layout for the Screen Navigation Entry.
 
 To add screens to your application, first you must add at least one Navigation 
 Category for the top level navigation. Then you can add additional Navigation 
-Entries for each page that you need.
+Entries for each page that you need. To demonstrate this, follow the 
+instructions for integrating Screen Navigation for a sample application.
 
-To add a Navigation Category,
+First, create the Navigation Category:
 
-1.  Inside of your existing application, create a component that implements the 
+1.  Inside of your existing application, create a component named 
+    `SampleScreenNavigationCategory` that implements the  
     `ScreenNavigationCategory` interface. 
 
-2.  Implement the following methods in your component:
+2.  Inside of the `@Component` declaration, set your priority property which determines what order items appear in in the side navigation:
 
-    **`getCategoryKey()`**: returns the category's primary key.
+	    property = "screen.navigation.category.order:Integer=10",
 
-    **`getLabel(Locale locale)`**: returns the label of the key.
+3.  Add the following methods to the class body:
 
-    **`getScreenNavigationKey()`**: returns the navigation key that the 
-    category belongs in, as defined in your application.
+    	@Override
+    	public String getCategoryKey() {
+    		return SampleScreenNavigationConstants.
+    			CATEGORY_KEY_SAMPLE_CONFIGURATION;
+    	}
+
+    	@Override
+    	public String getLabel(Locale locale) {
+    		return LanguageUtil.get(locale, "general");
+    	}
+
+    	@Override
+    	public String getScreenNavigationKey() {
+    		return SampleScreenNavigationConstants.
+    			SAMPLE_KEY_METHOD;
+    	}
+        
     
-    Here is an example of what your `ScreenNavigationCategory` class might look 
-    like:
+    When you're finished, your `ScreenNavigationCategory` class will look 
+    like :
     
         @Component(
         	property = "screen.navigation.category.order:Integer=10",
@@ -50,32 +67,80 @@ To add a Navigation Category,
         		return SampleScreenNavigationConstants.
         			SAMPLE_KEY_METHOD;
         	}
-
         }
         
  
 Next, add a Navigation Entry: 
 
-1.  Create a component which implements `ScreenNavigationEntry`.
+1.  Create a component named `SampleScreenNavigationEntry` which implements 
+    `ScreenNavigationEntry`.
 
-2.  Implement the following methods in your component:
+2.  Create the the `@Reference` variables you need for the render logic:
 
-    **`getCategoryKey()`**: returns the category's primary key.
+    	@Reference
+    	private ConfigurationProvider _configurationProvider;
 
-    **`getEntryKey()`**: returns the entry's primary key.
+    	@Reference
+    	private JSPRenderer _jspRenderer;
 
-    **`getLabel()`**: returns the entries label.
+    	@Reference
+    	private Portal _portal;
 
-    **`getScreenNavigationKey()`**: returns the navigation key for the category 
-    of the current entry.
+    	@Reference(
+    		target = "(osgi.web.symbolicname=com.liferay.commerce.payment.method.sample)"
+    	)
+    	private ServletContext _servletContext;
 
-    **`isVisible(User user, T screenModelBean)`**: boolean for whether or not 
-    the entry should be visible for the current user.
+3.  Implement the following methods in your component:
 
-    **`render(HttpServletRequest request, HttpServletResponse response)`**: 
-    renders the entry.
+    	@Override
+    	public String getCategoryKey() {
+    		return SampleScreenNavigationConstants.
+    			CATEGORY_KEY_SAMPLE_CONFIGURATION;
+    	}
+
+    	@Override
+    	public String getEntryKey() {
+    		return SampleScreenNavigationConstants.
+                ENTRY_KEY_SAMPLE_CONFIGURATION;
+    	}
+
+    	@Override
+    	public String getLabel(Locale locale) {
+    		return LanguageUtil.get(
+    			locale,
+    			SampleScreenNavigationConstants.
+    				CATEGORY_KEY_SAMPLE_CONFIGURATION);
+    	}
+
+    	@Override
+    	public String getScreenNavigationKey() {
+    		return SpaceShipScreenNavigationConstants.
+    			SAMPLE_KEY_METHOD;
+    	}
+
+    	@Override
+    	public boolean isVisible(
+    		User user, SamplePermissions spaceShipPermissions) {
+
+    		if (samplePermissions.criteriaMethod()) 
+            {
+
+    			return true;
+    		}
+
+    		return false;
+    	}
+
+        @Override
+        public void render(HttpServletRequest request, HttpServletResponse response)
+        throws IOException {
+            
+            _jspRenderer.renderJSP(request, response, "/my-category/view-category.jsp");
+        }
     
-    Here is an example of what your class might look like:
+    
+    Here is what the `SampleScreenNavigationEntry` class looks like:
     
         @Component(
         	property = "screen.navigation.entry.order:Integer=20",
@@ -84,94 +149,61 @@ Next, add a Navigation Entry:
         public class
         	SampleScreenNavigationEntry
         		implements ScreenNavigationEntry<SampleApplication> {
+    	public static final String
+    		ENTRY_KEY_SAMPLE_CONFIGURATION =
+    			"sample-configuration";
 
-        	public static final String
-        		ENTRY_KEY_SAMPLE_CONFIGURATION =
-        			"your-configuration";
+    	@Override
+    	public String getCategoryKey() {
+    		return SpaceShipScreenNavigationConstants.
+    			CATEGORY_KEY_SAMPLE_CONFIGURATION;
+    	}
 
-        	@Override
-        	public String getCategoryKey() {
-        		return SampleScreenNavigationConstants.
-        			CATEGORY_KEY_SAMPLE_CONFIGURATION;
-        	}
+    	@Override
+    	public String getEntryKey() {
+    		return ENTRY_KEY_SAMPLE_CONFIGURATION;
+    	}
 
-        	@Override
-        	public String getEntryKey() {
-        		return ENTRY_KEY_SAMPLE_CONFIGURATION;
-        	}
+    	@Override
+    	public String getLabel(Locale locale) {
+    		return LanguageUtil.get(
+    			locale,
+    			SpaceShipScreenNavigationConstants.
+    				CATEGORY_KEY_SAMPLE_CONFIGURATION);
+    	}
 
-        	@Override
-        	public String getLabel(Locale locale) {
-        		return LanguageUtil.get(
-        			locale,
-        			SampleScreenNavigationConstants.
-        				CATEGORY_KEY_SAMPLE_CONFIGURATION);
-        	}
+    	@Override
+    	public String getScreenNavigationKey() {
+    		return SpaceShipScreenNavigationConstants.
+    			SAMPLE_KEY_METHOD;
+    	}
 
-        	@Override
-        	public String getScreenNavigationKey() {
-        		return SampleScreenNavigationConstants.
-        			SAMPLE_KEY_METHOD;
-        	}
+    	@Override
+    	public boolean isVisible(
+    		User user, SamplePermissions spaceShipPermissions) {
 
-        	@Override
-        	public boolean isVisible(
-        		User user, CommercePaymentMethodGroupRel commercePaymentMethod) {
+    		if (samplePermissions.criteriaMethod()) 
+            {
 
-        		if (SampleCriteria.equals(true) 
-                {
+    			return true;
+    		}
 
-        			return true;
-        		}
+    		return false;
+    	}
 
-        		return false;
-        	}
+        @Override
+        public void render(HttpServletRequest request, HttpServletResponse response)
+        throws IOException {
+            
+            _jspRenderer.renderJSP(request, response, "/my-category/view-category.jsp");
+        }
+                	
+    	@Reference
+    	private JSPRenderer _jspRenderer;
 
-        	@Override
-        	public void render(
-        			HttpServletRequest httpServletRequest,
-        			HttpServletResponse httpServletResponse)
-        		throws IOException {
-
-        		try {
-        			SampleGroupServiceConfiguration
-        				sampleGroupServiceConfiguration =
-        					_configurationProvider.getConfiguration(
-        						SampleGroupServiceConfiguration.class,
-        						new ParameterMapSettingsLocator(
-        							httpServletRequest.getParameterMap(),
-        							new GroupServiceSettingsLocator(
-        								_portal.getScopeGroupId(httpServletRequest),
-        								SampleMethodConstants.
-        									SERVICE_NAME)));
-
-        			httpServletRequest.setAttribute(
-        				SampleGroupServiceConfiguration.class.getName(),
-        				sampleGroupServiceConfiguration);
-        		}
-        		catch (PortalException pe) {
-        			throw new IOException(pe);
-        		}
-
-        		_jspRenderer.renderJSP(
-        			_servletContext, httpServletRequest, httpServletResponse,
-        			"/configuration.jsp");
-        	}
-
-        	@Reference
-        	private ConfigurationProvider _configurationProvider;
-
-        	@Reference
-        	private JSPRenderer _jspRenderer;
-
-        	@Reference
-        	private Portal _portal;
-
-        	@Reference(
-        		target = "(osgi.web.symbolicname=com.liferay.commerce.payment.method.sample)"
-        	)
-        	private ServletContext _servletContext;
-
+    	@Reference(
+    		target = "(osgi.web.symbolicname=com.liferay.commerce.payment.method.sample);
+    	
         }
 
 You can implement your render method any way that you want as long as it
@@ -180,26 +212,16 @@ below.
 
 ## Adding Screens to Your Application's Front-end 
 
-To use JSPs to render your screens, you must invoke the `JSPRenderer` component
-in your `render` method and create the JSP that renders the HTML.
+The `render` method that you created in your last step references 
+`/my-category/view-category.jsp`. Create the JSP now:
 
-1.  Create a `render` method which uses `JSPRenderer` like this:
+1.  Inside of `/src/resources/META-INF/resources` create the `my-category` 
+    folder.
+    
+2.  Inside of that folder, create `view-category.jsp`.
 
-        @Override
-        public void render(HttpServletRequest request, HttpServletResponse response)
-        throws IOException {
-            
-            _jspRenderer.renderJSP(request, response, "/my-category/view-category.jsp");
-        }
-
-2.  Add the following code at the bottom of your class to use the reference
-    annotation to access the `JSPRenderer`:
-
-        @Reference
-        private JSPRenderer _jspRenderer;
-
-3.  Create a JSP that includes the `liferay-frontend:screen-navigation` taglib
-    and the necessary parameters like this:
+3.  Inside the JSP add the `liferay-frontend:screen-navigation` taglib with the 
+    required parameters:
 
         <liferay-frontend:screen-navigation key=
         "<%= AssetCategoriesConstants.CATEGORY_KEY_GENERAL %>"
@@ -207,13 +229,5 @@ in your `render` method and create the JSP that renders the HTML.
         portletURL="<%= portletURL %>"
         />
 
-The parameters it needs are `key`, `modelBean`, and `portletURL`.
-
-* **Key**: a unique name for the navigation in this application.
-
-* **modelBean**: the model that is being rendered
-
-* **portletURL**: the portlet URL used to build the titles for each link.
-
-In the next section, you'll see how to extend an existing Liferay class with 
-more screens.
+After that tag, you would add the rest of the content of the JSP file to handle
+user interactions and communication with the back-end for configuration.
