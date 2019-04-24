@@ -1,4 +1,10 @@
+---
+header-id: creating-a-form-storage-adapter
+---
+
 # Creating a Form Storage Adapter
+
+[TOC levels=1-4]
 
 There's only one class to create when implementing a Form Storage Adapter, and
 it extends the base `StorageAdapter` implementation.
