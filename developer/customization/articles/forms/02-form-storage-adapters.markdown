@@ -1,4 +1,4 @@
-# Forms Storage Adapters
+# Form Storage Adapters
 
 When a User adds a form record, the Forms API routes the processing of the
 request through the storage adapter API. The same is true for the other *CRUD*
@@ -26,199 +26,63 @@ delete form values.
 The example storage adapter in this tutorial serializes form data to be stored
 in a simple file, stored on the file system.
 
-![Figure 1: Choose a Storage Type for your form records.](../../images/forms-storage-type.png)
+<!-- RECREATE IMAGE: Figure 1: Choose a Storage Type for your form records.](../../images/forms-storage-type.png)-->
 
-Note that these code snippets include the references to the services they're
-calling directly beneath the first method that uses the service. It's a Liferay
-code convention to place these at the very end of the class.
+## Storage Adapter Methods
 
-## Implementing a Storage Adapter [](id=implementing-a-storage-adapter)
+Before worrying about how to handle the CRUD logic, write a `getStorageType`
+method.
 
-First declare the class a `Component` that provides a `StorageAdapter`
-implementation. To implement a storage adapter, extend the abstract
-`BaseStorageAdapter` class.
-
-    @Component(service = StorageAdapter.class)
-    public class FileSystemStorageAdapter extends BaseStorageAdapter {
-
-
-### Step 1: Name the Storage Type [](id=step-1-name-the-storage-type)
-
-The only method without a base implementation in the abstract class is
-`getStorageType`. For the file system storage example, just make it return
-`"File System"`.
-
-    @Override
-    public String getStorageType() {
-        return "File System";
-    }
-
-Return a human readable String, as `getStorageType` determines what appears in
-the UI when the form creator is selecting a storage type for their form. The
+`getStorageType`
+: Return a human readable String, as `getStorageType` determines what appears
+in the UI when the form creator is selecting a storage type for their form. The
 String value you return here is added to the `StorageAdapterRegistry`'s Map of
 storage adapters. 
 
-### Step 2: Override the CRUD Methods [](id=step-2-override-the-crud-methods)
+### The CRUD Methods
 
-Next override the `doCreateMethod` to return a `long` that
-identifies each form record with a unique file ID: 
+`doCreate`:
+Return a `long` that identifies each form record with a unique file ID. Almost
+as important is to validate the form values being sent through the storage
+adapter API. This is as simple as calling
+`DDMFormValuesValidator.validate(ddmFormValues)`. In addition, you'll interact
+with at least two other DDM services to get the form the values are associated
+with, and to make sure they're linked: `DDMStructureVersionLocalService` and
+`DDMStorageLinkLocalService`. Lastly, the form values in the `DDMFormValues`
+object must be serialized (converted) into the right storage format. If JSON
+works for your use case, feel free to use the `DDMFormValuesJSONSerializer`
+service in the Liferay Forms code, as demonstrated in the following article.
+Otherwise you'll need to provide your own serialization service for the form
+values.
 
-    @Override
-    protected long doCreate(
-        long companyId, long ddmStructureId, DDMFormValues ddmFormValues, 
-        ServiceContext serviceContext)
-        throws Exception {
+`doGetDDMFormValues`
+: Return the form values (`DDMFormValues`) for a form. You'll call the
+`deserialize` method after retrieving them, to take them from the storage format
+(e.g., JSON) to a proper `DDMFormValues` object. You can use the Liferay Forms
+`DDMFormValuesJSONDeserializer` if you're retrieving JSON data.
 
-        validate(ddmFormValues, serviceContext);
+`doUpdate`
+: A request to update the values comes from a User in the Liferay Forms
+application, so call the validator again, serialize the values into the proper
+format, and save them.
 
-        long fileId = _counterLocalService.increment();
+`doDeleteByClass`
+: When a delete request is made on a form record directly, delete the form
+values in whatever format they're currently being stored in (this is entirely
+dependent on your own application of the storage adapter). In addition, retrieve
+and delete the DDM class storage link using `DDMStorageLinkLocalService`.
 
-        DDMStructureVersion ddmStructureVersion =
-            _ddmStructureVersionLocalService.getLatestStructureVersion(
-                ddmStructureId);
+`doDeleteByDDMStrcuture`
+: When a delete request is made on an entire form, delete all the form records
+associated with it. In addition, take the form's `ddmStructureId` and delete all
+the DDM structure storage links that were created for it.
 
-        long classNameId = PortalUtil.getClassNameId(
-            FileSystemStorageAdapter.class.getName());
+### Validating Form Entries
 
-        _ddmStorageLinkLocalService.addStorageLink(
-            classNameId, fileId, ddmStructureVersion.getStructureVersionId(),
-            serviceContext);
-
-        saveFile(
-            ddmStructureVersion.getStructureVersionId(), fileId, ddmFormValues);
-
-        return fileId;
-    }
-
-    @Reference
-    private CounterLocalService _counterLocalService;
-
-    @Reference
-    private DDMStorageLinkLocalService _ddmStorageLinkLocalService;
-
-    @Reference
-    private DDMStructureVersionLocalService _ddmStructureVersionLocalService;
-
-The first line in this method (and the subsequent `doUpdate` method) calls a
-[`validate`](#step-3-validating-form-entries) method that's not yet written, so
-don't save the class until you've written that method. 
-
-In addition to returning the file ID, add a storage link via the
-`DDMStorageLinkLocalService`. The DDM Storage Link associates each form record
-with the DDM Structure backing the form.
-
-The `addStorageLink` method takes class name ID as retrieved by
-`PortalUtil.getClassNameId`, the `fileId` (used as the primary key for
-the file storage type), the structure version ID, and the service context.
-There's also a call to a `saveFile` method, which serializes the forms record's
-values and uses two additional utility methods (`getStructureFolder` and
-`getFile`) to write a `java.io.File` object. There are some other utility
-methods invoked as well:
-
-    private File getFile(long structureId, long fileId) {
-        return new File(
-            getStructureFolder(structureId), String.valueOf(fileId));
-    }
-
-    private File getStructureFolder(long structureId) {
-        return new File(String.valueOf(structureId));
-    }
-
-    private void saveFile(
-            long structureVersionId, long fileId, DDMFormValues formValues)
-        throws IOException {
-
-        String serializedDDMFormValues = _ddmFormValuesJSONSerializer.serialize(
-            formValues);
-
-        File formEntryFile = getFile(structureVersionId, fileId);
-
-        FileUtil.write(formEntryFile, serializedDDMFormValues);
-    }
-
-    @Reference
-    private DDMFormValuesJSONSerializer _ddmFormValuesJSONSerializer;
-
-Note the call to the `write` method.`FileUtil` is a Liferay utility class for
-manipulating `java.io.File` objects. By default, the `write` method writes the
-data into the user home folder of your system.
-
-Override the `doDeleteByClass` method to delete the `File` using the `classPK`:
-
-    @Override
-    protected void doDeleteByClass(long classPK) throws Exception {
-        DDMStorageLink storageLink =
-            _ddmStorageLinkLocalService.getClassStorageLink(classPK);
-
-        FileUtil.delete(getFile(storageLink.getStructureId(), classPK));
-
-        _ddmStorageLinkLocalService.deleteClassStorageLink(classPK);
-    }
-
-Once the file is deleted, its storage links should also be deleted. Use
-`doDeleteByDDMStructure` for this logic:
-
-    @Override
-    protected void doDeleteByDDMStructure(long ddmStructureId)
-        throws Exception {
-
-        FileUtil.deltree(getStructureFolder(ddmStructureId));
-
-        _ddmStorageLinkLocalService.deleteStructureStorageLinks(ddmStructureId);
-    }
-
-To retrieve the form record's values from the `File` object where they were
-written, override `doGetDDMFormValues`:
-
-    @Override
-    protected DDMFormValues doGetDDMFormValues(long classPK) throws Exception {
-        DDMStorageLink storageLink =
-            _ddmStorageLinkLocalService.getClassStorageLink(classPK);
-
-        DDMStructureVersion structureVersion =
-            _ddmStructureVersionLocalService.getStructureVersion(
-                storageLink.getStructureVersionId());
-
-        String serializedDDMFormValues = FileUtil.read(
-            getFile(structureVersion.getStructureVersionId(), classPK));
-
-        return _ddmFormValuesJSONDeserializer.deserialize(
-            structureVersion.getDDMForm(), serializedDDMFormValues);
-    }
-
-    @Reference
-    private DDMFormValuesJSONDeserializer _ddmFormValuesJSONDeserializer;
-
-Override the `doUpdate` method so the record's values can be overwritten. This
-example calls the `saveFile`  utility method provided earlier:
-
-    @Override
-    protected void doUpdate(
-            long classPK, DDMFormValues ddmFormValues,
-            ServiceContext serviceContext)
-        throws Exception {
-
-        validate(ddmFormValues, serviceContext);
-
-        DDMStorageLink storageLink =
-            _ddmStorageLinkLocalService.getClassStorageLink(classPK);
-
-        saveFile(
-            storageLink.getStructureVersionId(), storageLink.getClassPK(),
-            ddmFormValues);
-    }
-
-Once the CRUD logic is defined, deploy and test the storage adapter.
-
-## Step 3: Validating Form Entries [](id=step-3-validating-form-entries)
-
-The `doCreate` and `doUpdate` methods above both include this line:
-
-    validate(ddmFormValues, serviceContext);
-
-Because the Storage Adapter handles User entered data, it's important to
-validate that the entries include only appropriate data. Add
-a `validate` method to the `StorageAdapter`:
+Because the Storage Adapter handles User entered data during the `add` and
+`update` operations, it's important to validate that the entries include only
+appropriate data. Add a `validate` method to the `StorageAdapter`, calling the
+Liferay Forms' `DDMFormValuesValidator` method to do the heavy lifting. 
 
 	protected void validate(
         DDMFormValues ddmFormValues, ServiceContext serviceContext)
@@ -236,7 +100,8 @@ a `validate` method to the `StorageAdapter`:
 
 Make sure to do three things:
 
-1.  Retrieve the value of the `validateDDMFormValues` attribute.
+1.  Retrieve the value of the `boolean validateDDMFormValues` attribute from the
+    service context.
 
 2.  If `validateDDMFormValues` is false, exit the validation without doing
     anything.
@@ -249,9 +114,10 @@ Make sure to do three things:
 3.  Otherwise, call the validate method from the `DDMFormValuesValidator`
     service.
 
-Once the necessary logic is in place, deploy and test the Storage Adapter.
+All the Java code for the logic discussed here is shown in the next article,
+[Creating Form Storage Adapters](/docs/7-2/customization/-/knowledge_base/customization/creating-form-storage-adapters).
 
-## Enabling the Storage Adapter [](id=enabling-the-storage-adapter)
+## Enabling the Storage Adapter
 
 The storage adapter is enabled at the individual form level. Create a new form,
 and select the Storage Adapter _before saving or publishing the form_. If you
