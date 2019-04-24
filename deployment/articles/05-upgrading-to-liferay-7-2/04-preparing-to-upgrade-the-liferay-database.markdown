@@ -6,8 +6,8 @@ header-id: preparing-to-upgrade-the-product-database
 
 [TOC levels=1-4]
 
-Now that you've successfully upgraded a copy of your @product@ database, you're
-ready to prepare for upgrading your production database. 
+After testing the upgrade on a copy of your production database, you can apply
+what you learned to your production database. 
 
 | **Tip:** This step and
 | [preparing a new @product@ server](/docs/7-2/deploy/-/knowledge_base/deploy/preparing-a-new-product-server-for-data-upgrade)
@@ -17,14 +17,14 @@ ready to prepare for upgrading your production database.
 
 Previously you identified and removed unused objects from a copy of your
 @product@ production database backup. In the same way (in the script console or
-UI) you removed the noted unused objects from the backup, remove them from your
-production database in your original version of Liferay (NOT @product-ver@). 
+UI) you removed the unused objects from the backup, remove them from your
+pre-upgrade production database. 
 
 ## Test @product@ with its Pruned Database 
 
 Find and resolve any issues related to the objects you removed. By removing the
 objects from production and testing your changes before upgrading, you can more
-easily troubleshoot any issues, knowing that they're not related to upgrade
+easily troubleshoot issues, knowing that they're not related to upgrade
 processes. 
 
 ## Upgrade Your Marketplace Apps 
