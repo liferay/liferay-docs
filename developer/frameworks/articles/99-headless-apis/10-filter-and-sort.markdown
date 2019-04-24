@@ -1,10 +1,14 @@
 # Filter, sort and search [](id=filter-sort-and-search)
 
+Filter, sort and search can be used together at the same time, in order to find the content you are interested in.
+
 ## Filter
 
 It's often useful to filter large collections for the exact data that you need. Not all collections, however, allow filtering. The ones that support it contain the optional parameter `filter` in their OpenAPI profile.
 
 To filter a collection based on the value of one or more fields, use the optional parameter `filter` following a subset of the oData standard.
+
+Filtering mainly applies to fields indexed as keywords in Liferay Search. If the user is interested in finding content by terms contained in fields indexed as text, it is recommended to use Search param instead.
 
 ### Comparison Operators
 
@@ -18,6 +22,7 @@ To filter a collection based on the value of one or more fields, use the optiona
 | ge        | Greater than or equal| price ge 10                         |
 | lt        | Less than            | dateCreated lt 2018-02-13T12:33:12Z |
 | le        | Less than or equal   | dateCreated le 2012-05-29T09:13:28Z |
+| startsWith| Starts with          | addressLocality startsWith 'Lond'   |
 
 ### Logical Operators
 
@@ -55,7 +60,7 @@ The `any` operator applies a boolean expression to each collection member and ev
 
 You can escape a single quote in a value by adding another single quote. 
 
-For example, to filter for a BlogsEntry whose headline is `L'Oreal`:
+For example, to filter for a BlogsEntry whose headline is `New Headless APIs`:
 ```
 ?filter=headline eq 'New Headless APIs'
 ```
@@ -91,6 +96,12 @@ For example, to filter for a BlogsEntry whose headline is `L'Oreal`:
       "pageSize": 20,
       "totalCount": 1
     }
+   
+### Filtering in StructuredContent fields (ContentField)
+
+To filter for a contentField value (that are dinamic, created by the end user), you have to use the endpoints that are scoped to an individual ContentStructure, specifically those with this URL:
+
+    "/content-structures/{contentStructureId}/structured-contents"
 
 ## Search
 
@@ -142,4 +153,4 @@ To sort by more than one parameter, separate the parameter names by commas and p
 
 To specify a descending sort for only one parameter, you must explicitly specify ascending sort order (`:asc`) for the other parameters. For example: 
 
-`?headline:desc,dateCreated:asc`
+`?sort=headline:desc,dateCreated:asc`

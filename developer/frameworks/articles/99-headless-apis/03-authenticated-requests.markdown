@@ -49,11 +49,9 @@ $$$
 Use the encoded value for the HTTP Authorization header when sending the 
 request: 
 
-    curl -H "Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTpMaWZlcmF5Cg==" http://localhost:8080/o/headless-delivery/v1.0/openapi.yaml
+    curl -H "Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTpMaWZlcmF5Cg==" http://localhost:8080/o/headless-delivery/v1.0/sites/{siteId}/blog-postings/
 
-The response contains significantly more data than the response from an 
-unauthenticated request to the same URL. This is because the authenticated user 
-has permission to access the resources in the response. For more information on 
+The response contains data instead of the 403 error that an unauthenticated request will receive. For more information on 
 the response's structure, see the documentation on [API vocabulary]() and [collections](). 
 
     {

@@ -10,13 +10,12 @@ By default, Liferay Headless REST APIs return paginated collections. The
 following attributes in the responses also contain the information needed to 
 navigate between those pages: 
 
--   `totalCount`: The total number of this resource's items. Since this example
-    is for the blog posting resource, it lists the total number of blog postings
-    in that site, which in this case is `1`. 
+-   `totalCount`: The total number of this resource's items.
 -   `pageSize`: The number of this resource's items to be included in this
     response. 
 -   `page`: The number of the current page.
 -   `lastPage`: The last page's number. 
+-   `items`: The elements present in this page. The information received in the items element is the whole data of the elements, there’s no need to perform additional GET requests for each individual elements.
 -   `id`: Each item has an id, to allow a request to retrieve more information.
 
 For example, suppose that there are 123 users your portal and you want to get 

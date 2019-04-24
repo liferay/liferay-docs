@@ -20,7 +20,7 @@ format. The following table lists the MIME type for each supported format.
 | application/json | [application/json](https://www.iana.org/assignments/media-types/application/json) |
 | application/xml | [application/xml](https://www.iana.org/assignments/media-types/application/xml) |
 
-When you send a request without specifying the hypermedia format, the server 
+When you send a request without specifying the API format, the server 
 responds with the default JSON. For example, here's such a request for a list of 
 folder: 
 
@@ -52,7 +52,7 @@ folder:
       "totalCount": 1
     }
 
-If you request the headers, the `Content-Type` lists the hypermedia format: 
+If you request the headers, the `Content-Type` lists the `Content-Type format: 
 
     curl "http://localhost:8080/o/headless-delivery/v1.0/sites/20124/document-folders" \
          -u 'test@liferay.com:test' --head
@@ -104,7 +104,7 @@ information as JSON, but is structured differently:
     	<totalCount>1</totalCount>
     </Page>
 
-Requesting the headers, you can see that the response is in the HAL format: 
+Requesting the headers, you can see that the response is in the XML format: 
 
     curl "http://localhost:8080/o/headless-delivery/v1.0/documents/59203" \
              -H 'Accept: application/xml' \
@@ -121,9 +121,9 @@ Requesting the headers, you can see that the response is in the HAL format:
     Content-Type: application/xml
     Transfer-Encoding: chunked
     
-## Language Negociation
+## Language Negotiation
 
-The same mechanism used for requesting another response format, content negociation, it is used for requesting content in another language.
+The same mechanism used for requesting another response format, content negotiation, it is used for requesting content in another language.
 
 APIs that are available in different languages return the options in a block called `availableLanguages`, like this request to obtain a specific Structured Content:
 
@@ -214,6 +214,12 @@ To request the content in another language, specify your desired locale in the r
       "title": "¿Por qué las APIs Headless son mejores que JSON-WS?",
       "uuid": "e1c4c152-e47c-313f-2d16-2ee4eba5cd26"
     }
+    
+### Creating content with different languages
+
+By default, when sending a POST/PUT request, the `Accept-Language` header will be used as the content language. There is one exception, in some entities where the first POST has to be in the default language of the site, those will throw an error if the request tries to POST a different language.
+
+After creating a new resource, PUT requests with a different language will add that translation, PATCH requests will return an error (you are expected to update, not create, in a PATCH request).
 
 ## Related Topics [](id=related-topics)
 
