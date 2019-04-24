@@ -50,15 +50,15 @@ listed under the Staged Content heading when you read the
 section of articles. For now, be aware that you can enable or disable staging
 for any of these widgets.
 
-Why might you want to enable staging for some application types but not others?
-In the case of collaborative apps, you probably *don't* want to enable staging
-since such applications are designed for user interaction. If their content were
+Why might you want to enable staging for some widget types but not others?
+In the case of collaborative widgets, you probably *don't* want to enable staging
+since such widgets are designed for user interaction. If their content were
 staged, you'd have to  publish your site manually whenever somebody posted a
 message on the message boards to make that message appear on the live site.
 Generally, you want web content to be staged because end users aren't creating
 that kind of content---web content is the stuff you publish to your site. But
-applications like the Message Boards or Wiki should *not* be staged. Notice
-which applications are marked for staging by default: if you enable staging and
+widgets like the Message Boards or Wiki should *not* be staged. Notice
+which widgets are marked for staging by default: if you enable staging and
 accept the defaults, staging is *not* enabled for the collaborative widgets.
 
 The listed widgets, or content groups, contain one or more specific entity. For
@@ -77,13 +77,13 @@ possible to modify the individual portlet configuration once you enable staging.
 In case you need adjustments later on, you must turn staging off and re-enable
 it with your new configuration.
 
-Besides managing the app-specific content, @product@ also has several special
-content types such as pages or users. For instance, pages are a part of the
-site and can reference other content types, but in a special way. The page
-references apps, which means publishing a page also implies publishing its
-apps. The content gives the backbone of the site; however, content alone is
-useless. To display content to the end user, you'll need apps as the building
-blocks for your site.
+Besides managing the widget-specific content, @product@ also has several special
+content types such as pages or users. For instance, pages are a part of the site
+and can reference other content types, but in a special way. The page references
+widgets, which means publishing a page also implies publishing its widgets. The
+content gives the backbone of the site; however, content alone is useless. To
+display content to the end user, you'll need widgets as the building blocks for
+your site.
 
 Before you begin exploring the Staging UI, it's important to understand the
 publishing process for staging to make informed decisions so you use the

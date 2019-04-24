@@ -92,7 +92,7 @@ server. Liferay's Virtual LDAP Server application, available on Liferay
 Marketplace, makes this easy.
 
 See the
-[Disabling Staging](/discover/portal/-/knowledge_base/7-1/disabling-staging)
+[Disabling Staging](/docs/7-2/user/-/knowledge_base/user/disabling-staging)
 article to learn how to turn off the staging environment.
 
 Great! Now you're ready to use Remote Live Staging.

@@ -27,7 +27,7 @@ environment for your site.
 You've officially begun the staging process!
 
 Because Local Live staging creates a clone of your site, you should only
-activate staging on new, clean sites. Having a few pages and some apps (like
+activate staging on new, clean sites. Having a few pages and some widgets (like
 those of the example site you created) is no big deal. If you've already created
 a large amount of content, however, enabling staging can take a lot of time
 since it's a resource intensive operation. Also, if you intend to use page
