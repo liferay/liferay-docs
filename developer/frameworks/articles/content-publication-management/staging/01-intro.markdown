@@ -15,8 +15,8 @@ For example, if you have an application that provides information intended only
 during a specific holiday, supporting the Staging environment lets users save
 your application's assets specific for that holiday. They'll reside
 in the Staging environment until they're ready for publishing. To learn more
-about Staging, visit the
-[Staging Content for Publication](/user/-/knowledge_base/7-2/staging-content-for-publication)
+about using Staging, visit the
+[Staging Content for Publication](/docs/7-2/user/-/knowledge_base/user/staging-content-for-publication)
 section.
 
 Staging and Export/Import share the same base framework. When publishing your
@@ -24,14 +24,14 @@ staged content to the live Site, you're essentially importing content from the
 staged Site and exporting it to the live Site. This means that implementing
 Staging in your app is *almost* the same as implementing the Export/Import
 framework. You can visit the
-[Export/Import](/developer/frameworks/-/knowledge_base/7-2/export-import)
+[Export/Import](/docs/7-2/frameworks/-/knowledge_base/frameworks/export-import)
 framework's articles for the base APIs that both it and the Staging frameworks
 share.
 
 If your app supports Export/Import, it's entities
-([staged models](/developer/frameworks/-/knowledge_base/7-2/developing-staged-models))
+([staged models](/docs/7-2/frameworks/-/knowledge_base/frameworks/developing-staged-models))
 are automatically tracked by Staging with the use of
-[data handlers](/developer/frameworks/-/knowledge_base/7-2/developing-data-handlers).
+[data handlers](/docs/7-2/frameworks/-/knowledge_base/frameworks/developing-data-handlers).
 There are some Staging-specific configurations you can add that are not shared
 by Export/Import. Some Staging-specific actions you can complete include
 
@@ -55,7 +55,7 @@ portlet data handler's `activate()` method:
   what to publish/export), so it leverages its UI. You can set the Staging UI
   differently by configuring the `setStagingControls` method differently. See
   the
-  [AssetTagsPortletDataHandler](https://github.com/liferay/liferay-portal/blob/7.2.0-m2/modules/apps/asset/asset-tags-service/src/main/java/com/liferay/asset/tags/internal/exportimport/data/handler/AssetTagsPortletDataHandler.java#L82-L84)
+  [AssetTagsPortletDataHandler](https://github.com/liferay/liferay-portal/blob/7.2.0-b2/modules/apps/asset/asset-tags-service/src/main/java/com/liferay/asset/tags/internal/exportimport/data/handler/AssetTagsPortletDataHandler.java#L82-L84)
   class for an example of not copying the Export UI for the Staging UI.
 - `setDataAlwaysStaged`: defines whether you can enable/disable your app's
   content staging (i.e., selectable from the Publication screen). For example,
@@ -64,7 +64,7 @@ portlet data handler's `activate()` method:
 
 Other setter methods are available that control both Export/Import and Staging
 settings. You can reference them by visiting the
-[Understanding the `PortletDataHandler` Inteface](/developer/frameworks/-/knowledge_base/7-2/developing-data-handlers#understanding-the-portlet-data-handler-interface)
+[Understanding the `PortletDataHandler` Inteface](/docs/7-2/frameworks/-/knowledge_base/frameworks/developing-data-handlers#understanding-the-portlet-data-handler-interface)
 section.
 
 You can also control whether your app is selectable to enable for Staging by
@@ -116,7 +116,8 @@ your app. For example, you can check if your app is in these states:
 - etc.
 
 A real example filtering for a staging process and state can be found in the
-[`AssetListEntryStagedModelDataHandler`](https://github.com/liferay/liferay-portal/blob/7.2.0-m2/modules/apps/asset/asset-list-service/src/main/java/com/liferay/asset/list/internal/exportimport/data/handler/AssetListEntryStagedModelDataHandler.java#L215-L222):
+[`AssetListEntryStagedModelDataHandler`](https://github.com/liferay/liferay-portal/blob/7.2.0-b2/modules/apps/asset/asset-list-service/src/main/java/com/liferay/asset/list/internal/exportimport/data/handler/AssetListEntryStagedModelDataHandler.java#L215-L222)
+class:
 
 ```java
 if ((assetRendererFactory != null) &&
