@@ -4,23 +4,24 @@ To make an authenticated request, you must authenticate as a specific user.
 
 There are two authentication mechanisms available when invoking web APIs: 
 
--   **Basic Authentication:** Sends the user credentials as an encoded user name
-    and password pair. This is the simplest authentication protocol (available 
-    since HTTP/1.0). 
--   **OAuth 2.0:** In @product-ver@, you can use OAuth 2.0 for authentication. 
-    See the 
-    [OAuth 2.0 documentation](/discover/deployment/-/knowledge_base/7-1/oauth-2-0) 
-    for more information. 
+**Basic Authentication:** Sends the user credentials as an encoded user name 
+and password pair. This is the simplest authentication protocol (available since 
+HTTP/1.0). 
+
+**OAuth 2.0:** In @product-ver@, you can use OAuth 2.0 for authentication. See 
+the 
+[OAuth 2.0 documentation](/discover/deployment/-/knowledge_base/7-2/oauth-2-0) 
+for more information. 
 
 First, you'll learn how send requests with basic authentication. 
 
 ## Basic Authentication [](id=basic-authentication)
 
-Basic authentication requires that you send an HTTP `Authorization` header
-containing the encoded user name and password. You must first get that encoded
-value. To do so, you can use `openssl` or a `Base64` encoder. Either way, you
-must encode the `user:password` string. Here's an example of the `openssl`
-command for encoding the `user:password` string for a user `test@liferay.com`
+Basic authentication requires that you send an HTTP `Authorization` header 
+containing the encoded user name and password. You must first get that encoded 
+value. To do so, you can use `openssl` or a `Base64` encoder. Either way, you 
+must encode the `user:password` string. Here's an example of the `openssl` 
+command for encoding the `user:password` string for a user `test@liferay.com` 
 with the password `Liferay`: 
 
     openssl base64 <<< test@liferay.com:Liferay
@@ -33,26 +34,24 @@ If you don't have `openssl` installed, try the `base64` command:
 
     base64 <<< test@liferay.com:Liferay
 
-+$$$
-
-**Warning:** Encoding a string as shown here does not encrypt the resulting 
-string. Such an encoded string can easily be decoded by executing 
-`base64 <<< the-encoded-string`, which returns the original string. 
-
-Anyone listening to your request could therefore decode the `Authorization` 
-header and reveal your user name and password. To prevent this, ensure that all 
-communication is made through HTTPS, which encrypts the entire message 
-(including headers).
-
-$$$
+| **Warning:** Encoding a string as shown here does not encrypt the resulting 
+| string. Such an encoded string can easily be decoded by executing 
+| `base64 <<< the-encoded-string`, which returns the original string. 
+| 
+| Anyone listening to your request could therefore decode the `Authorization` 
+| header and reveal your user name and password. To prevent this, ensure that 
+| all communication is made through HTTPS, which encrypts the entire message 
+| (including headers). 
 
 Use the encoded value for the HTTP Authorization header when sending the 
 request: 
 
     curl -H "Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTpMaWZlcmF5Cg==" http://localhost:8080/o/headless-delivery/v1.0/sites/{siteId}/blog-postings/
 
-The response contains data instead of the 403 error that an unauthenticated request will receive. For more information on 
-the response's structure, see the documentation on [API vocabulary]() and [collections](). 
+The response contains data instead of the 403 error that an unauthenticated 
+request receives. For more information on the response's structure, see 
+[API Vocabulary](liferay.com) and 
+[Working with Collections of Data](liferay.com). 
 
     {
       "items": [
@@ -107,7 +106,7 @@ the response's structure, see the documentation on [API vocabulary]() and [colle
 
 @product-ver@ supports authorization via OAuth 2.0, which is a token-based 
 authentication mechanism. For more details, see 
-[@product@'s OAuth 2.0 documentation](/discover/deployment/-/knowledge_base/7-1/oauth-2-0). 
+[@product@'s OAuth 2.0 documentation](/discover/deployment/-/knowledge_base/7-2/oauth-2-0). 
 The following sections show you how to use OAuth 2.0 to authenticate web API 
 requests. 
 
@@ -116,19 +115,21 @@ requests.
 Before using OAuth 2.0 to invoke a web API, you must register your application 
 (your web API's consumer) as an authorized OAuth client. To do this, follow the 
 instructions in the 
-[Creating an Application](/discover/deployment/-/knowledge_base/7-1/oauth-2-0#creating-an-application) 
+[Creating an Application](/discover/deployment/-/knowledge_base/7-2/oauth-2-0#creating-an-application) 
 section of the OAuth 2.0 documentation. When creating the application, fill in
 the form as follows: 
 
--   **Application Name:** Your application's name. 
--   **Client Profile:** Headless Server.
--   **Allowed Authorization Types:** Check *Client Credentials*.
+**Application Name:** Your application's name. 
+
+**Client Profile:** Headless Server. 
+
+**Allowed Authorization Types:** Check *Client Credentials*. 
 
 After clicking *Save* to finish creating the application, write down the Client 
 ID and Client Secret values that appear at the top of the form. 
 
 Next, you must get an OAuth 2.0 access token. To do this, see the tutorial 
-[Authorization Account Access with OAuth 2](/discover/deployment/-/knowledge_base/7-1/authorizing-account-access-with-oauth2). 
+[Authorization Account Access with OAuth 2](/discover/deployment/-/knowledge_base/7-2/authorizing-account-access-with-oauth2). 
 
 ### Invoking the Service with an OAuth 2.0 Token [](id=invoking-the-service-with-an-oauth-2-0-token)
 
@@ -139,17 +140,17 @@ For example:
 
     curl -H "Authorization: Bearer d5571ff781dc555415c478872f0755c773fa159" http://localhost:8080/o/headless-delivery/v1.0/sites/{siteId}/blog-postings/
 
-The response contains the resources that the authenticated user has permission 
-to access, just like the response from Basic authentication. 
+The response will contain the resources that the authenticated user has 
+permission to access, just like the response from Basic authentication. 
 
 # Making Unauthenticated Requests [](id=making-unauthenticated-requests)
 
-Liferay's REST APIs unauthenticated requests are disabled by default. Follow these steps to 
-enable them: 
+Unauthenticated requests are disabled by default in @product@'s headless REST 
+APIs. You can, however, enable them manually by following these steps: 
 
 1.  Create the config file 
-    `com.liferay.headless.delivery.internal.jaxrs.application.HeadlessDeliveryApplication-default.config`. 
-    Add this code to the file:
+    `com.liferay.headless.delivery.internal.jaxrs.application.HeadlessDeliveryApplication-default.config` 
+    and add this code to it: 
 
         auth2.scopechecker.type="none"
         auth.verifier.auth.verifier.BasicAuthHeaderAuthVerifier.urls.includes="*"
@@ -161,14 +162,13 @@ enable them:
     `false`. 
 
 2.  Deploy the config file to `[Liferay Home]/osgi/configs`. Note that 
-    [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home) 
+    [Liferay Home](/discover/deployment/-/knowledge_base/7-2/installing-liferay#liferay-home) 
     is typically the application server's parent folder. 
 
-3.  Test the APIs by making a request to their OpenAPI profile URL:
+3.  Test the APIs by making a request to an OpenAPI profile URL: 
 
- 
-    curl "http://localhost:8080/o/headless-delivery/v1.0/openapi.yaml"
+        curl "http://localhost:8080/o/headless-delivery/v1.0/openapi.yaml"
 
-You should get the OpenAPI profile of that suite of APIs.
+You should get the OpenAPI profile for the API you sent the request to. 
 
 ## Related Topics [](id=related-topics)
