@@ -1,6 +1,10 @@
 # Get Started: Invoke a Service [](id=get-started-invoke-a-service)
 
-Once you know which API you want to call via the [OpenAPI profile](/01-discover-api.markdown), you can access do a request to that resource's URL. Suppose you want to retrieve all the blog entries of a site. If you consult the OpenAPI profile for the delivery API you can find this endpoint:
+Once you know which API you want to call via the 
+[OpenAPI profile](/develop/tutorials/-/knowledge_base/7-1/get-started-discover-the-api), 
+you can send a request to that resource's URL. For example, suppose you want to 
+retrieve all the blog entries from a Site. If you consult the OpenAPI profile 
+for @product@'s delivery API, you can find this endpoint: 
 
     "/sites/{siteId}/blog-postings":
             get:
@@ -43,12 +47,17 @@ Once you know which API you want to call via the [OpenAPI profile](/01-discover-
                         description: ""
                 tags: ["BlogPosting"]
 
-The only required parameter is the `siteId`, the identifier of the Site where the content is located. Internally in Liferay is modelled as a groupId and you can retrieve the id from the database, URL or the interface. To retrieve this content, you can make a GET request to the url, including the siteId, like this:
+The only required parameter is `siteId`, the ID of the blog postings' Site. 
+Internally, the `siteId` is a `groupId` that you can retrieve from the database, 
+a URL, or @product@'s UI via the Site Administration menu. The following GET 
+request gets the site's blog postings by providing the site ID (`20124`) in the 
+URL: 
 
     curl "http://localhost:8080/o/headless-delivery/v1.0/sites/20124/blog-postings/" \
          -u 'test@liferay.com:test'
 
-If you do a request to your site with some sample content created you'll get something like this response:
+If you send such a request to a site that contains some blog entries, the 
+response should look something like this: 
 
     {
       "items": [
@@ -79,23 +88,33 @@ If you do a request to your site with some sample content created you'll get som
       "totalCount": 1
     }
     
-The response is a JSON object with information about the collection of blogs and the attributes in this response contain information about the resource: 
+This response is a JSON object with information about the collection of blogs. 
+The response's attributes contain information about the resource (blogs, in this 
+case). Also note that the results are paginated. The `*page*` attributes refer 
+to pages of results. Here's a description of some common attributes: 
 
+`id`: Each item has an ID. You can use the ID to retrieve more information about 
+that item. For example, there are two `id` attributes in the above response: one 
+for the blog posting (`59301`) and one for the blog post's creator (`20130`). 
 
--   `totalCount`: The total number of this resource's items. Since this example
-    is for the blog posting resource, it lists the total number of blog postings
-    in that site, which in this case is `1`. 
--   `pageSize`: The number of this resource's items to be included in this
-    response. 
--   `page`: The number of the current page.
--   `lastPage`: The last page's number. 
--   `id`: Each item has an id, to allow a request to retrieve more information.
-   
-         
-To get information on a specific blog, issue a GET request to the `blogPostingId` 
-resource's URL ("/blog-postings/{blogPostingId}").
+`lastPage`: The page number of the final page of results. The above response 
+only contains a single page, so its last page is `1`. 
 
-This is the response:
+`page`: The page number of the current page. The page in the above response is 
+`1`. 
+
+`pageSize`: The possible number of this resource's items to be included in a 
+single page. In the above response this is `20`. 
+
+`totalCount`: The total number of this resource's existing items (independent of 
+pagination). The above response lists the total number of blog postings (`1`) in 
+a Site. 
+
+To get information on a specific blog posting, send a GET request to the 
+`blogPostingId` resource's URL with the blog posting's ID 
+(`/blog-postings/{blogPostingId}`). For example, the URL for such a request to 
+the blog posting in the above response is `/blog-postings/59301`. Here's an 
+example response: 
 
     {
       "alternativeHeadline": "The power of OpenAPI & Liferay",
@@ -118,9 +137,9 @@ This is the response:
       "siteId": 20124
     }
 
-The API's consumer can select other formats to use (like XML). The [content negotiation tutorial]() discusses this further. 
-
-Note that all the web APIs in @product@ are secured by basic authentication (a header in each request). Next, you'll learn how to make authenticated requests with OAuth or other mechanisms. 
+Although this response is JSON, the API's consumer can select other formats to 
+use (like XML). For more information, see 
+[API Formats and Content Negotiation](liferay.com). 
 
 ## Related Topics [](id=related-topics)
 
