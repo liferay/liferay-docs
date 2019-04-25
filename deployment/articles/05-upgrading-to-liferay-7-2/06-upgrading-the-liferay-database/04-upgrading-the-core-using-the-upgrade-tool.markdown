@@ -7,13 +7,12 @@ header-id: upgrading-the-core-using-the-upgrade-tool
 [TOC levels=1-4]
 
 The upgrade tool provides the easiest way to upgrade the core and installed
-modules. Before running the upgrade tool, learn the tool's usage. 
+modules. Here's how to use it. 
 
 ## Upgrade Tool Usage
 
-The `db_upgrade.sh` script (`db_upgrade.bat` on Windows) invokes the upgrade
-tool. It resides in the  `[Liferay Home]/tools/portal-tools-db-upgrade-client`
-folder. 
+The `db_upgrade.sh` script in the  `[Liferay Home]/tools/portal-tools-db-upgrade-client`
+folder (`db_upgrade.bat` on Windows) invokes the upgrade tool. 
 
 This command prints the upgrade tool usage: 
 
@@ -28,13 +27,12 @@ Here are the tool's default Java parameters:
 
     -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx2048m 
 
-The `-j` option lets you override the JVM parameters. For example, these options
-set the JVM memory to 10GB, which is a good starting point for this process
-type:
+The `-j` option overrides the JVM parameters. For example, these options set the
+JVM memory to 10GB, which is a good starting point for this process type:
 
     db_upgrade.sh -j "-Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx10240m"
 
-The `-l` option lets you specify the tool's log file name: 
+The `-l` option specifies the tool's log file name: 
 
     db_upgrade.sh -l "output.log"
 
@@ -52,7 +50,7 @@ default name is `upgrade.log`.
 finishing the upgrade process.
 
 | **Note:** Only execute the upgrade process on a server with ideal memory, CPU,
-| and database connection configuration. If executing an upgrade remotely using
+| and database connection configurations. If executing an upgrade remotely using
 | `ssh`, make sure to guard against interruptions: 
 | 
 | -   If you're executing the upgrade using `ssh`, ignore hangups (connection
@@ -69,11 +67,11 @@ finishing the upgrade process.
 | -   If execution stopped during an upgrade process for Core 7.1 or higher, or 
 |     any module upgrade process, restart the upgrade tool to continue the 
 |     upgrade from that point. You can also use Gogo shell to
-|     [check module upgrade status](/deployment/docs/-/knowledge_base/7-2gogo-shell-commands-for-module-upgrades#checking-the-upgrade-status)
+|     [check module upgrade status](/docs/7-2/deploy/-/knowledge_base/d/gogo-shell-commands-for-module-upgrades#checking-the-upgrade-status)
 |     and continue upgrading modules. 
 | -   If execution stopped during an upgrade process for Core 7.0 or lower, you 
 |     must
-|     [restore the data from a backup](/deployment/docs/-/knowledge_base/7-2backing-up-a-liferay-installation)
+|     [restore the data from a backup](/docs/7-2/deploy/-/knowledge_base/d/backing-up-a-liferay-installation)
 |     and start the upgrade again. 
 
 | **Warning:** To prevent the tool's expanded command from growing too large for
@@ -99,6 +97,6 @@ it. If a core upgrade step for @product@ 7.1 (or newer) fails, executing the
 upgrade tool again starts it from that step. 
 
 If you configured the upgrade tool to upgrade non-core modules, the tool opens a
-Gogo shell and starts upgrading them. The Gogo shell lets you upgrade modules,
-check module upgrade status, verify upgrades, and restart module upgrades. Read
-on to learn how to use Gogo shell commands to complete @product@ upgrades. 
+Gogo shell and starts upgrading them. The Gogo shell lets you upgrade modules, check
+module upgrade status, verify upgrades, and restart module upgrades. Read on to
+learn how to use Gogo shell commands to complete @product@ upgrades. 
