@@ -7,7 +7,7 @@ header-id: content-publication-management
 [TOC levels=1-4]
 
 Today's enterprises generate an enormous amount of content. You can use advanced
-publishing tools to make the content available for users.
+publishing tools to manage content for a seamless publication experience.
 
 Staging lets you change your Site behind the scenes without affecting the live
 Site. This is done by creating your Site in a temporary staging area (local or
