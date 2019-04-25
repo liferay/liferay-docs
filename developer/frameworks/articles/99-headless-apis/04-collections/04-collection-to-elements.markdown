@@ -1,20 +1,21 @@
 # Navigating from a Collection to its Elements [](id=navigating-from-a-collection-to-its-elements)
 
-When you [get a collection](), 
+When you 
+[get a collection](liferay.com), 
 you can use the response to get an element of that collection. Follow these 
 steps to do so: 
 
-1.  Get a collection. This example gets a list of Sites by sending 
-    [an authenticated request]() 
-    to the `user-account` collection: 
+1.  Get a collection. This example gets a list of users by sending 
+    [an authenticated request](liferay.com) 
+    to the `user-accounts` collection: 
 
         curl "http://localhost:8080/o/headless-admin-user/v1.0/user-accounts" \
              -u 'test@liferay.com:test'
 
-    Recall from the 
-    [Getting Collections tutorial](/develop/tutorials/-/knowledge_base/7-1/getting-collections) 
+    Recall from 
+    [Getting Collections](/develop/tutorials/-/knowledge_base/7-2/getting-collections) 
     that the response's `items` attribute contains the collection elements. In
-    this case, there are two User: Test Test and Javier Gamarra: 
+    this case, the collection contains two users: Test Test and Javier Gamarra: 
 
         {
             "totalItems": 2,
@@ -95,12 +96,14 @@ steps to do so:
                   "totalCount": 2
                 }
 
-2.  In the response, locate the id of the element you want and look in the OpenAPI profile the GET item request corresponding to UserAccount: "/user-accounts/{userAccountId}". 
+2.  In the response, locate the ID of the element you want and look in the 
+    OpenAPI profile for the appropriate GET item endpoint. For example, the 
+    `user-accounts` GET item endpoint is `/user-accounts/{userAccountId}`. 
 
-3.  Send a GET request to that URL. For example, this request gets 
-    information from the *Livingstone Hotels & Resorts* Site: 
+3.  Send a GET request to that endpoint. For example, this request gets 
+    information for the user with the ID `59347` (Javier Gamarra): 
 
-        curl "http://localhost:8080/o/headless-admin-user/v1.0/user-accounts/20130" \
+        curl "http://localhost:8080/o/headless-admin-user/v1.0/user-accounts/59347" \
              -u 'test@liferay.com:test'
 
 ## Related Topics [](id=related-topics)

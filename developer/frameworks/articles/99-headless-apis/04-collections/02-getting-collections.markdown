@@ -1,10 +1,11 @@
 # Getting Collections [](id=getting-collections)
 
 Requests for collection resources are the same as those for non-collection 
-resources. For example, an [authenticated request]()
-to the `UserAccount` endpoint returns a collection containing the portal's users.
-When sending this request, use the credentials of an administrative user who has
-permission to view other portal users: 
+resources. For example, an 
+[authenticated request](liferay.com) 
+to the `UserAccount` endpoint returns a collection containing the portal's 
+users. When sending this request, use the credentials of an administrative user 
+who has permission to view other portal users: 
 
     curl "http://localhost:8080/o/headless-admin-user/v1.0/user-accounts" \
          -u 'test@liferay.com:test'
@@ -12,16 +13,15 @@ permission to view other portal users:
 The response (below) has two main parts: 
 
 -   The list of collection elements, inside the `items` attribute. This example 
-    contains data on two users: an administrator (Test), and a user 
-    named Javier Gamarra. 
+    contains data on two users: an administrator (Test), and a user named Javier 
+    Gamarra. 
 
--   A set of metadata about the collection itself. This is the rest of the data 
-    in the response. This lets clients know how to use the collection. 
+-   A set of metadata about the collection. This is the rest of the data in the 
+    response. This lets clients know how to use the collection. 
 
-This response is in JSON, 
-which is the default response format for web APIs in @product@. For information 
-on specifying other response formats, see the 
-[content negotiation tutorial](). 
+This response is in JSON, which is the default response format for web APIs in 
+@product@. For information on specifying other response formats, see 
+[API Formats and Content Negotiation](liferay.com). 
 
     {
       "items": [
