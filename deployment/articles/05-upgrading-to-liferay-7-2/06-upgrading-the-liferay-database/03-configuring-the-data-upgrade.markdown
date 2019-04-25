@@ -7,9 +7,9 @@ header-id: configuring-the-data-upgrade
 [TOC levels=1-4]
 
 The upgrade tool provides the easiest way to upgrade the core and installed
-modules. You can configure the upgrade from files or inside the tool's command
-line interface. The upgrade tool lets you upgrade everything--the core and all
-the modules--together or separately. 
+modules. You can use text files or the tool's command line interface to
+configure your upgrade. The upgrade tool can upgrade everything---the core
+and all the modules---together or separately. 
 
 @product-ver@ bundles include the upgrade tool. If you installed @product-ver@
 manually, you can download the upgrade tool separately. 
@@ -46,22 +46,21 @@ Each file's properties are described next.
 
 ### Configuring app-server.properties
 
-Specify the following information to configure the app server on which 
-@product-ver@ is installed: 
+Specify the following information to configure @product-ver@'s app server: 
 
-**dir:**  the absolute path of the application server directory. *(required)*
+`dir:` the absolute path of the application server folder. *(required)*
 
-**extra.lib.dirs:**  a comma delimited list of extra directories containing any
+`extra.lib.dirs:` a comma delimited list of extra directories containing any
 binaries or resources to add to the class path. Use all absolute paths OR all 
-paths relative to **dir**. *(required)*
+paths relative to `dir`. *(required)*
 
-**global.lib.dir:**  the application server's global library directory. Use 
-the absolute path or a path relative to **dir**. *(required)*
+`global.lib.dir:` the application server's global library directory. Use 
+the absolute path or a path relative to `dir`. *(required)*
 
-**portal.dir:**  the directory where portal is installed in your app server. Use
-the absolute path or a path relative to **dir**. *(required)*
+`portal.dir:` the directory where portal is installed in your app server. Use
+the absolute path or a path relative to `dir`. *(required)*
 
-**server.detector.server.id:** ID of a supported application server. 
+`server.detector.server.id:` ID of a supported application server. 
 (*required*) Here are the IDs:
 
 - `jboss`
@@ -83,7 +82,7 @@ portal.dir=Liferay/liferay-portal-master/tomcat-9.0.10/webapps/ROOT
 server.detector.server.id=tomcat
 ```
 
-These properties, for example, are for Unix and use all absolute paths:
+These properties, for example, are for Linux and use all absolute paths:
 
 ```properties
 dir=/
@@ -100,32 +99,34 @@ Note that these properties correspond exactly to the
 [JDBC portal properties](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#JDBC)
 you'd use in a `portal-ext.properties` file. 
 
-**jdbc.default.driverClassName** *(required)*
+`jdbc.default.driverClassName` *(required)*
 
-**jdbc.default.url** *(required)*
+`jdbc.default.url` *(required)*
 
-**jdbc.default.username** *(required)*
+`jdbc.default.username` *(required)*
 
-**jdbc.default.password** *(required)*
+`jdbc.default.password` *(required)*
 
 ### Configuring portal-upgrade-ext.properties
 
-Specify the following information to configure the upgrade itself: 
+Specify the following information to configure the upgrade: 
 
-**liferay.home:** the [Liferay home folder](/docs/7-2/deploy/-/knowledge_base/deploy/liferay-home) *(required)*
+`liferay.home:` The [Liferay home folder](/docs/7-2/deploy/-/knowledge_base/deploy/liferay-home) *(required)*
 
-**dl.store.impl:** the implementation for persisting documents to the document
+`dl.store.impl:` The implementation for persisting documents to the document
 library store. This property is mandatory if you're using a `*FileSystemStore`
 implementation. If you
 [updated this property in your `portal-ext.properties`](/docs/7-2/deploy/-/knowledge_base/deploy/preparing-a-new-product-server-for-data-upgrade),
 copy it here. Otherwise, set the property one of these ways:
 
-    dl.store.impl=com.liferay.portal.store.file.system.FileSystemStore
-    dl.store.impl=com.liferay.portal.store.db.DBStore
-    dl.store.impl=com.liferay.portal.store.file.system.AdvancedFileSystemStore
-    dl.store.impl=com.liferay.portal.store.s3.S3Store
+```properties
+dl.store.impl=com.liferay.portal.store.file.system.FileSystemStore
+dl.store.impl=com.liferay.portal.store.db.DBStore
+dl.store.impl=com.liferay.portal.store.file.system.AdvancedFileSystemStore
+dl.store.impl=com.liferay.portal.store.s3.S3Store
+```
 
-**hibernate.jdbc.batch_size:** the JDBC batch size used to improve performance;
+`hibernate.jdbc.batch_size:` The JDBC batch size used to improve performance;
 set to *250* by default *(optional)* 
 
 ### Example Upgrade Configuration
@@ -150,8 +151,8 @@ Here's an example interaction with the upgrade tool's command line interface:
     (etc.)
 
 The command line interface creates the configuration files based on your input.
-If you want to set all of this up ahead of time, however, you'll want to put
-this information into configuration files.
+You can put this information into configuration files to configure the tool
+manually.
 
 Here are example upgrade configuration files that you can customize and copy
 into `[Liferay Home]/tools/portal-tools-db-upgrade-client/`: 
@@ -183,8 +184,7 @@ into `[Liferay Home]/tools/portal-tools-db-upgrade-client/`:
     dl.store.impl=com.liferay.portal.store.file.system.FileSystemStore
     ```
 
-It's time to set whether the upgrade tool should upgrade non-core modules
-automatically.  
+Next, decide if the upgrade tool should upgrade non-core modules automatically.
 
 ## Configuring Non-Core Module Data Upgrades
 
