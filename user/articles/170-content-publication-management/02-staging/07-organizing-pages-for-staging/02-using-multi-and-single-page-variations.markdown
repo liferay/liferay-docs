@@ -1,12 +1,13 @@
-# Using Multi and Single Page Variations [](id=using-multi-and-single-page-variations)
+# Using Multi and Single Page Variations
 
-There are two page variation options available from the Staging Bar:
+There are two page variation options available from the
+[Staging Bar](/docs/7-2/user/-/knowledge_base/user/using-the-staging-environment):
 
-- *Site Pages Variation:* Different variations for a set of Site
-  pages. For instance, you could use this if you had three separate pages and
-  wanted to modify these pages while keeping them together as a set.
-- *Page Variations:* Different variations for a single page. A
-  page variation can only exist inside a Site pages variation.
+- *Site Pages Variation:* Different variations for a set of Site pages. For
+  instance, you could use this if you had three separate pages and wanted to
+  modify these pages while keeping them together as a set.
+- *Page Variations:* Different variations for a single page. A page variation
+  can only exist inside a Site pages variation.
 
 You must enable page versioning in the Staging Configuration menu before the
 above options are available in the Staging Bar. You'll learn more about this
@@ -25,21 +26,17 @@ template is modified, those modifications are propagated to the pages configured
 to inherit changes from the template, overriding Staging's Page Variations and
 Site Pages Variations.
 
-+$$$
-
-**Note:** Page templates are not recognized by the Staging framework. This means
-that existing page templates are not viewable or editable on a staged Site. If
-they're created on a staged Site, they cannot be preserved once Staging is
-disabled. You can, however, export and import page templates.
-
-$$$
+| **Note:** Page templates are not recognized by the Staging framework. This
+| means that existing page templates are not viewable or editable on a staged
+| Site. If they're created on a staged Site, they cannot be preserved once
+| staging is disabled. You can, however, export and import page templates.
 
 You'll learn about enabling page versioning next.
 
-## Enabling Page Versioning [](id=enabling-page-versioning)
+## Enabling Page Versioning
 
 Page Versioning is enabled on the Staging Configuration screen when first
-[enabling staging](/discover/portal/-/knowledge_base/7-1/enabling-staging).
+[enabling staging](/docs/7-2/user/-/knowledge_base/user/enabling-staging).
 
 ![Figure 1: You can enable page versioning for public and/or private pages.](../../../../images/page-versioning.png)
 
@@ -53,7 +50,7 @@ environment, navigate to the Product Menu &rarr; *Publishing* &rarr; *Staging*
 &rarr; *Options* (![Options](../../../../images/icon-options.png)) &rarr;
 *Staging Configuration*. You can enable the page versioning options there.
 
-## Using Site Pages Variations [](id=using-site-pages-variations)
+## Using Site Pages Variations
 
 Site pages variations are useful when you must plan multiple page sets for your
 Site at once. For example, consider this scenario:
@@ -78,7 +75,7 @@ done by creating several page variations within the current Site pages variation
 of their product launch Site. You'll learn more about page variations later.
 
 Once you've
-[created a Site pages variation](/discover/portal/-/knowledge_base/7-1/creating-multi-and-single-page-variations),
+[created a Site pages variation](/docs/7-2/user/-/knowledge_base/user/creating-multi-and-single-page-variations),
 you can now navigate to its home page and change the logo, apply a new theme,
 move applications around, change the order of the pages, configure different
 apps, and more. The other variations aren't affected. You can even delete
@@ -97,7 +94,7 @@ variation called *Mondays* which is published to the live Site every Monday and
 another one called *Day 1* which is published to the live Site every first day
 of each month.
 
-## Using Page Variations [](id=using-page-variations)
+## Using Page Variations
 
 You can also have variations for a single page inside a Site pages variation,
 which lets you work in parallel on different versions of a page. For example,
@@ -106,7 +103,7 @@ Holidays Site pages variation. Page variations only exist inside a Site pages
 variation.
 
 Once you've
-[created a page variation](/discover/portal/-/knowledge_base/7-1/creating-multi-and-single-page-variations),
+[created a page variation](/docs/7-2/user/-/knowledge_base/user/creating-multi-and-single-page-variations),
 you can choose it from the dropdown menu on the Staging Bar. You can always
 switch between different variations by clicking on them from the Staging Bar.
 
@@ -116,14 +113,14 @@ and that is the one that gets published to the live Site. To publish a variation
 to the live Site, click on *Publish to Live* in the staging menu and then select
 *Publish to Live*.
 
-## Managing Variation Permissions [](id=managing-variation-permissions)
+## Managing Variation Permissions
 
 It's also possible to set permissions on each variation, so certain users have
 access to manage some, but not all variations. To do this,
 
 1.  Navigate to the Staging Bar's *Options* button
-    (![Options](../../../../images/icon-options.png)) and select the variation
-    type you want to configure.
+    (![Options](../../../../images/icon-staging-bar-options.png)) and select the
+    variation type you want to configure.
 
 2.  Select the desired variation's *Actions* button
     (![Actions](../../../../images/icon-actions.png)) and select *Permissions*.

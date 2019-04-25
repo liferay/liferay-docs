@@ -1,12 +1,12 @@
-# Merging Site Pages Variations [](id=using-site-pages-variations)
+# Merging Site Pages Variations
 
 Another powerful feature of Staging's Page Versioning framework is the
 possibility of *merging* Site Pages Variations. To merge two Site Pages
 Variations, follow the instructions below.
 
 1.  Click the Staging Bar's *Options* button
-    (![Options](../../../../images/icon-options.png)) and select *Site Pages
-    Variation*.
+    (![Options](../../../../images/icon-staging-bar-options.png)) and select
+    *Site Pages Variation*.
 
 2.  Click the Site Pages Variation's *Actions* button
     (![Actions](../../../../images/icon-actions.png)) you want to use as the

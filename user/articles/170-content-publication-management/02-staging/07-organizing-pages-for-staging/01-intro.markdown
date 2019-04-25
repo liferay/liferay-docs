@@ -1,4 +1,4 @@
-# Organizing Pages for Staging [](id=organizing-pages-for-staging)
+# Organizing Pages for Staging
 
 Say you're working on a product-oriented Site where several major changes are
 required for a page or a set of pages over a short period of time. You must work
