@@ -20,21 +20,21 @@ Here are the ways to upgrade:
     Use the upgrade tool (recommended) or
     [Gogo shell](/docs/7-2/deploy/-/knowledge_base/deploy/upgrading-modules-using-gogo-shell) to upgrade the core. Then use Gogo shell to upgrade each module. 
 
-If you are upgrading from Liferay Portal 6.2 or earlier, it's recommended to use
-the upgrade tool to upgrade everything. It's the easiest, most comprehensive way
-to upgrade from those versions. Since version 7.0, however, @product@'s modular
-framework lets you upgrade modules--even the core--individually. A helpful
-practice for large databases is to focus first on upgrading the core and your
-most important modules; then back up your database before continuing upgrades.
-The point is, the @product-ver@ upgrade process is flexible.
+If you are upgrading from Liferay Portal 6.2 or earlier, use the upgrade tool to
+upgrade everything. It's the easiest, most comprehensive way to upgrade from
+those versions. Since version 7.0, however, @product@'s modular framework lets
+you upgrade modules---even the core---individually. A helpful practice for large
+databases is to focus first on upgrading the core and your most important
+modules; then back up your database before continuing upgrades. Upgrading is
+a flexible process that adjusts to your preferences.
 
 | **Note:** Liferay enterprise subscribers can use the upgrade tool to execute 
 | upgrades for fix packs. Since @product@ 7.1, a fix pack's micro upgrade
 | processes in the core (database schema micro version changes) are not
 | mandatory. This means you can install a fix pack (i.e., core code) without
-| having to execute the database schema micro version changes---you can execute
-| micro version changes when you want, even outside of a major or minor version
-| upgrade. Before using the upgrade tool to execute a fix pack's micro upgrade
+| having to execute the database schema micro version changes. You can execute
+| micro version changes when you want, even outside of major or minor version
+| upgrades. Before using the upgrade tool to execute a fix pack's micro upgrade
 | process, however, you must shut down the server, install the fix pack, and 
 | [back up the @product@ database, installation, and Document Library store](/docs/7-2/deploy/-/knowledge_base/deploy/backing-up-a-liferay-installation). 
 | 
