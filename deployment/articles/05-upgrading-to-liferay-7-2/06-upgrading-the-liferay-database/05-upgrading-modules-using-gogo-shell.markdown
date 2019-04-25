@@ -6,17 +6,17 @@ header-id: upgrading-modules-using-gogo-shell
 
 [TOC levels=1-4]
 
-Liferay's Gogo shell commands let you upgrade and verify individual modules.
-It's a fine grained approach to upgrading the core and non-core modules. If you
+Liferay's Gogo shell can upgrade and verify individual modules. It's
+a fine-grained approach to upgrading the core and non-core modules. If you
 haven't already upgraded your non-core modules using the upgrade tool or if
-there are any modules you need to revisit upgrading, you can upgrade them using
+there are modules you need to revisit upgrading, you can upgrade them using
 Gogo Shell. 
 
-| **Note**:
-| [Configuring the core upgrade](/docs/7-2/deploy/-/knowledge_base/deploy/configuring-the-data-upgrade)
-| is required before using Gogo shell commands to upgrade the core. 
+| **Note**: You must
+| [Configure the core upgrade](/docs/7-2/deploy/-/knowledge_base/deploy/configuring-the-data-upgrade)
+| before using Gogo shell commands to upgrade the core. 
 
-First explore the command usage. 
+Below is a list of commands.
 
 ## Command Usage
 
@@ -24,37 +24,37 @@ If you ran the upgrade tool and it opened Gogo shell, you're already connected.
 Otherwise, you can execute commands using the
 [Gogo Shell portlet](/docs/7-2/reference/-/knowledge_base/reference/using-the-felix-gogo-shell).
 
-Here are the commands available in the `upgrade` namespace:
+Here are the commands:
 
-**exit** or **quit:** exits the Gogo shell
+`exit` or `quit:` Exits the Gogo shell
 
-**upgrade:help:** displays upgrade commands
+`upgrade:help:` Displays upgrade commands
 
-**upgrade:check:** list upgrades pending to execute because they failed in 
+`upgrade:check:` Lists upgrades pending execution because they failed in 
 the past or the module hasn't reached its final version
 
-**upgrade:execute {module_name}:** executes upgrades for that module
+`upgrade:execute {module_name}:` Executes upgrades for that module
 
-**upgrade:executeAll:** executes all pending module upgrade processes
+`upgrade:executeAll:` Executes all pending module upgrade processes
 
-**upgrade:list:** lists all registered upgrades
+`upgrade:list:` Lists all registered upgrades
 
-**upgrade:list {module_name}:** lists the module's required upgrade steps
+`upgrade:list {module_name}:` Lists the module's required upgrade steps
 
-**upgrade:list | grep Registered:** lists registered upgrades and their versions
+`upgrade:list | grep Registered:` Lists registered upgrades and their versions
 
-**verify:help:** displays verify commands
+`verify:help:` Displays verify commands
 
-**verify:check {module_name}:** lists the latest execution result for the
+`verify:check {module_name}:` Lists the latest execution result for the
 module's verify process
 
-**verify:checkAll:** lists the latest execution results for all verify processes
+`verify:checkAll:` Lists the latest execution results for all verify processes
 
-**verify:execute {module_name}:** executes the module's verifier
+`verify:execute {module_name}:` Executes the module's verifier
 
-**verify:executeAll:** executes all verifiers
+`verify:executeAll:` Executes all verifiers
 
-**verify:list:** lists all registered verifiers
+`verify:list:` Lists all registered verifiers
 
 There are many useful
 [Liferay commands and standard commands available in Gogo shell](/docs/7-2/reference/-/knowledge_base/reference/using-the-felix-gogo-shell).
@@ -69,7 +69,7 @@ processes.
 Executing `upgrade:list` in the Gogo shell lists the modules whose upgrade
 dependencies are satisfied. These modules can be upgraded. 
 
-If a module is active but not listed, its dependencies need to be upgraded. The
+If a module is active but not listed, its dependencies must be upgraded. The
 Gogo shell command `scr:info [upgrade_step_class_qualified_name]` shows the
 upgrade step class's unsatisfied dependencies. Here's an example `scr:info`
 command:
@@ -143,22 +143,17 @@ their issues.
 
 ## Checking upgrade status
 
-It's good to know things still need upgrading and why. You might have forgotten
-to upgrade a module or its upgrade failed. In any case, it's important to know
-where your upgrade stands. 
-
 The command `upgrade:check` lists modules that have impending upgrades. 
 
 For example, if module  `com.liferay.dynamic.data.mapping.service` failed in a
-step labeled `1.0.0-step-2`. Executing `upgrade:check` shows this: 
+step labeled `1.0.0-step-2`, executing `upgrade:check` shows this: 
 
     Would upgrade com.liferay.dynamic.data.mapping.service from 1.0.0-step-2 to
     1.0.0 and its dependent modules
 
 Modules often depend on other modules to complete upgrading. Executing `scr:info
 [upgrade_step_class_qualified_name]` shows the upgrade step class's
-dependencies. You must upgrade dependency modules to successfully upgrade
-dependent modules. 
+dependencies. You must upgrade modules on which your module depends. 
 
 To resolve and activate a module, its upgrade must complete. The
 [Apache Felix Dependency Manager](http://felix.apache.org/documentation/subprojects/apache-felix-dependency-manager/tutorials/leveraging-the-shell.html)
@@ -178,7 +173,7 @@ custom portlet `schemaVersion` fields.
 Browsing the @product@ database `Release_` table can help you determine a
 module's upgrade status too. The core's `servletContextName` field value is
 `portal`. If the core's `schemaVersion` field matches your new @product@ version
-(e.g., `7.1.1` for Liferay Portal CE GA2) and the `verified` field is `1`
+(e.g., `7.2.1` for Liferay Portal CE GA2) and the `verified` field is `1`
 (true), the core upgrade completed successfully. 
 
 Each module has one `Release_` table record, and the value for its
@@ -188,12 +183,12 @@ plugins intended for Liferay Portal version 6.2 or earlier).
 
 ## Executing verify processes
 
-Verify processes make sure the upgrade executed successfully. Verify processes
-in the core are automatically executed after upgrading @product@. You can also
-execute them by configuring the
+Some modules have verify processes. These make sure the upgrade executed
+successfully. Verify processes in the core are automatically executed after
+upgrading @product@. You can also execute them by configuring the
 [`verify.*` portal properties](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Verify)
 and restarting your server.
 
-Also, some modules have verify processes. To check for available verify
-processes, enter the Gogo shell command `verify:list`. To run a verify process,
-enter `verify:execute [verify_qualified_name]`. 
+To check for available verify processes, enter the Gogo shell command
+`verify:list`. To run a verify process, enter `verify:execute
+[verify_qualified_name]`. 
