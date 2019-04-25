@@ -1,4 +1,10 @@
+---
+header-id: managing-permissions
+---
+
 # Managing Permissions
+
+[TOC levels=1-4]
 
 The staging environment has many different options for building and managing
 a Site and its pages. Sometimes administrators want to limit access to staging's

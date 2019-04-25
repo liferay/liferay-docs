@@ -1,4 +1,10 @@
+---
+header-id: scheduling-web-content-publication
+---
+
 # Scheduling Web Content Publication
+
+[TOC levels=1-4]
 
 Liferay's Web Content framework lets you define when your content goes live. You
 can determine when the content is displayed, expired, and/or reviewed. This is

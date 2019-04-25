@@ -1,4 +1,10 @@
+---
+header-id: publishing-staged-content-efficiently
+---
+
 # Publishing Staged Content Efficiently
+
+[TOC levels=1-4]
 
 Now that you understand how staging works, you'll dive deeper into the
 publication process and some prerequisites you should follow before publishing.

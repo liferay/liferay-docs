@@ -1,4 +1,10 @@
+---
+header-id: staging-processes-and-templates
+---
+
 # Staging Processes and Templates
+
+[TOC levels=1-4]
 
 When you make a staging publication, it's captured as a staging process and
 stored for future reference. You can manage these processes by navigating to the

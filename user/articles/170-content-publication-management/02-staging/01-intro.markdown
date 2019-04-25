@@ -1,4 +1,10 @@
+---
+header-id: staging
+---
+
 # Staging
+
+[TOC levels=1-4]
 
 Staging is a tool used to manage content publication. The concept of staging is
 simple: you can modify your site behind the scenes and then publish all your

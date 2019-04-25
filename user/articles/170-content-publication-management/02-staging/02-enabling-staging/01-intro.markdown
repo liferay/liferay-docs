@@ -1,4 +1,10 @@
+---
+header-id: enabling-staging
+---
+
 # Enabling Staging
+
+[TOC levels=1-4]
 
 You have two different ways to set up staging:
 

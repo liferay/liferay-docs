@@ -1,4 +1,10 @@
+---
+header-id: using-the-staging-environment
+---
+
 # Using the Staging Environment
+
+[TOC levels=1-4]
 
 After [enabling staging](/docs/7-2/user/-/knowledge_base/user/enabling-staging)
 (either Local Live or Remote Live) for a site, you'll notice additional options

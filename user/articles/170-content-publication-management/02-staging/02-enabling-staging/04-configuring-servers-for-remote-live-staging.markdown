@@ -1,4 +1,10 @@
+---
+header-id: configuring-servers-for-remote-live-staging
+---
+
 # Configuring Servers for Remote Live Staging
+
+[TOC levels=1-4]
 
 Before you can enable Remote Live staging for a site, you must satisfy some
 necessary requirements:

@@ -1,4 +1,10 @@
+---
+header-id: publishing-single-assets-from-a-staged-site
+---
+
 # Publishing Single Assets From a Staged Site
+
+[TOC levels=1-4]
 
 Sometimes, stepping through the entire publication process is not necessary and
 can be overkill. For example,
