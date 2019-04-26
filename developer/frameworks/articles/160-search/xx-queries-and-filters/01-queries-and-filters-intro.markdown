@@ -13,7 +13,8 @@ Elasticsearch and Solr do not make API level distinctions between queries and
 filters. In the past, Liferay's API explicitly provided two sets of APIs, one
 for queries and one for filters. Both APIs lived in `portal-kernel` (the 7.1
 source code for filters is 
-[here](https://github.com/liferay/liferay-portal/tree/7.1.x/portal-kernel/src/com/liferay/portal/kernel/search/filter)
+[here](https://github.com/liferay/liferay-portal/tree/7.1.x/portal-kernel/src/com/liferay/portal/kernel/search/filter).
+
 In @product-ver@, there's a new way of querying and filtering via Liferay's
 Search API, and the APIs for it live in the `portal-search-api` module. Instead
 of calling specific filter APIs, you'll now construct a query and add it to the
@@ -21,6 +22,12 @@ search request, specifying it as a filter using the
 `SearchRequestBuilder.postFilterQuery(Query)` method.(see the
 7.2 Query APIs
 [here](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/query).
+
++$$$
+
+**Note**: The support for "legacy" `com.liferay.portal.kernel.search.Query.getPreBooleanFilter()` is only present in the new Search Request builder and assembler implementation to allow for backwards compatibility with how Liferay's Indexer frameworks handles queries. Ideally, you should not wrap the BooleanQuery with another BooleanQuery. In addition, not all Query should have filters allowed according to Elasticsearch's API.
+
+$$$
 
 Despite the more unified approach, you should understand the functional
 difference between filtering and querying:
