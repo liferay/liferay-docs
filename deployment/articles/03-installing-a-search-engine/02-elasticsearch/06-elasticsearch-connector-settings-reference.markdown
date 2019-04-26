@@ -1,4 +1,4 @@
-# Elasticsearch Connector Settings: Reference [](id=elasticsearch-connector-settings-reference)
+# Elasticsearch Connector Settings: Reference
 
 Elasticsearch is the default search engine for @product-ver@. The *Liferay
 Foundation* suite includes an adapter for Elasticsearch called *Liferay Connector to
@@ -92,7 +92,7 @@ connect to. This value is required when Operation Mode is set to remote (see
 for more information). Specify as many or few nodes as you see fit.
 
 `clientTransportSniff=true`
-: Set this booleant to true to enable cluster sniffing and dynamically discover
+: Set this boolean to true to enable cluster sniffing and dynamically discover
 available data nodes in the cluster
 (see [here](https://www.elastic.co/guide/en/elasticsearch/client/java-api/6.5/transport-client.html)
 for more information).
@@ -131,7 +131,7 @@ for more information).
 
 `httpCORSConfigurations=`
 : Set the String values for custom settings for HTTP CORS, in YML format
-(elasticsearch.yml) (see
+(`elasticsearch.yml`) (see
 [here](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/modules-http.html#_settings_2)
 for more information).
 
@@ -157,13 +157,7 @@ set this value, the default mappings used to define the Liferay Document Type in
 entirely, so include the whole mappings definition in this property, not just
 the segment you're modifying.
 
-`syncSearch=true`
-If enabled, search runs on the invoker thread rather than in Elasticsearch's
-search thread pool.
-
-The following settings are only available in the Elasticsearch 6 adapter:
-
-## Configurations only Affecting the Embedded Elasticsearch Server [](id=configurations-only-affecting-the-embedded-elasticsearch-server)
+## Configurations only Affecting the Embedded Elasticsearch Server
 
 These settings (defined above) are only meant to use while configuring the
 embedded Elasticsearch server. Configuring these will elicit no effect on
@@ -179,7 +173,6 @@ remote Elasticsearch installations:
 - `httpCORSEnabled` 
 - `httpCORSAllowOrigin` 
 - `httpCORSConfigurations` 
-- `syncSearch`
 
 You can easily configure these settings in the System Setting application, or
 as mentioned above, you can specify them in a deployable OSGi `.config` file.

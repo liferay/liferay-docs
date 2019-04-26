@@ -1,4 +1,4 @@
-# Advanced Configuration of the Liferay Elasticsearch Connector [](id=advanced-configuration-of-the-liferay-elasticsearch-adapter)
+# Advanced Configuration of the Liferay Elasticsearch Connector
 
 The default configurations for Liferay's Elasticsearch adapter module are set
 in a Java class called `ElasticsearchConfiguration`.
@@ -9,19 +9,17 @@ by default. In this case, add the configuration options you need. If something
 is configurable for Elasticsearch, it's configurable using the Elasticsearch
 adapter.
 
-## Adding Settings and Mappings to the Liferay Elasticsearch Adapter [](id=adding-settings-and-mappings-to-the-liferay-elasticsearch-adapter)
+## Adding Settings and Mappings to the Liferay Elasticsearch Adapter
 
 Think of the available configuration options as being divided into two groups:
-the most common ones that are easily configured, and more complex configurations
-requiring a more brute-force approach. If a necessary setting isn't available by
-default, you can still configure it with the Liferay Elasticsearch adapter.
-You'll just need to use one or more of the `additionalConfigurations`,
-`additionalIndexConfigurations`, or `additionalTypeMappings`, and
-`overrideTypeMappings` settings. 
+the most common ones that are easily configured, and more complex
+configurations requiring a more brute-force approach: these include the
+`additionalConfigurations`, `additionalIndexConfigurations`,
+`additionalTypeMappings`, and `overrideTypeMappings` settings. 
 
-![Figure 1: You can add Elasticsearch configurations to the ones currently available in System Settings.](../../../images/cfg-elasticsearch-additional-configs.png)
+Figure 1: You can add Elasticsearch configurations to the ones currently available in System Settings.](../../../images/cfg-elasticsearch-additional-configs.png)
 
-### Additional Configurations [](id=additional-configurations)
+### Additional Configurations
 
 The `additionalConfigurations` configuration defines extra settings (in YAML)
 for the embedded Elasticsearch. This is only useful for testing environments
@@ -30,7 +28,7 @@ using the embedded Elasticsearch server. Any node settings normally set in
 [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/index.html) 
 for a description of all possible node settings.
 
-### Adding Index Configurations [](id=adding-index-configurations)
+### Adding Index Configurations
 
 The `additionalIndexConfigurations` configuration defines extra settings (in
 JSON or YAML) that are applied to the @product@ index when it's created. For
@@ -44,27 +42,29 @@ that can be applied to a field or a dynamic template (see
 [below](#overriding-type-mappings) for an example application to a dynamic
 template).
 
-    {  
-        "analysis": {
-            "analyzer": {
-                "kuromoji_liferay_custom": {
-                    "filter": [
-                        "cjk_width",
-                        "kuromoji_baseform",
-                        "pos_filter"
-                    ],
-                    "tokenizer": "kuromoji_tokenizer"
-                }
-            },
-            "filter": {
-                "pos_filter": {
-                    "type": "kuromoji_part_of_speech"
-                }
+```json
+{  
+    "analysis": {
+        "analyzer": {
+            "kuromoji_liferay_custom": {
+                "filter": [
+                    "cjk_width",
+                    "kuromoji_baseform",
+                    "pos_filter"
+                ],
+                "tokenizer": "kuromoji_tokenizer"
+            }
+        },
+        "filter": {
+            "pos_filter": {
+                "type": "kuromoji_part_of_speech"
             }
         }
     }
+}
+```
 
-### Adding Type Mappings [](id=adding-type-mappings)
+### Adding Type Mappings
 
 `additionalTypeMappings` defines extra mappings for the `LiferayDocumentType`
 type definition. These are applied when the index is created. Add the mappings
@@ -77,22 +77,24 @@ dynamic templates, but don't try to override existing mappings. If any of the
 mappings set here overlap with existing mappings, index creation fails. Use
 `overrideTypeMappings` to replace default mappings.
 
-As with dynamic templates, you can
-add sub-field mappings to @product@'s type mapping. These are referred to as
+As with dynamic templates, you can add sub-field mappings to @product@'s type
+mapping. These are referred to as
 [properties](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/properties.html)
 in Elasticsearch.
 
-    { 
-        "LiferayDocumentType": {  
-            "properties": {   
-                "fooName": {
-                    "index": "true",
-                    "store": "true",
-                    "type": "keyword"
-                }
-            }   
-        }
+```json
+{ 
+    "LiferayDocumentType": {  
+        "properties": {   
+            "fooName": {
+                "index": "true",
+                "store": "true",
+                "type": "keyword"
+            }
+        }   
     }
+}
+```
 
 See
 [here](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/mapping-types.html)
@@ -118,7 +120,7 @@ Here's what it would look like for an Elasticsearch instance running on
 In the above URL, `liferay-20116`is the index name. Including it indicates that
 you want to see the mappings that were used to create the index with that name.
 
-### Overriding Type Mappings [](id=overriding-type-mappings)
+### Overriding Type Mappings
 
 Use `overrideTypeMappings` to override @product@'s default type mappings. This
 is an advanced feature that should be used only if strictly necessary. If you
@@ -134,9 +136,11 @@ Copy the contents in as the value of this property (either into System Settings
 or your OSGi configuration file). Leave the opening curly brace `{`, but delete
 lines 2-4 entirely:
 
-    "liferay-[COMPANY_ID]": {
-        "mappings" : {
-            "LiferayDocumentType" : {
+```json
+"liferay-[COMPANY_ID]": {
+    "mappings" : {
+        "LiferayDocumentType" : {
+```
 
 Then, from the end of the mappings, delete the concluding three curly braces.
 
@@ -154,43 +158,47 @@ analyze all string fields that end with `_ja`. You'd include this with all the
 other default mappings, replacing the provided `template_ja` with this custom
 one:
 
-    {
-        "LiferayDocumentType": {
-            "dynamic_templates": [
-                {
-                    "template_ja": {
-                        "mapping": {
-                            "analyzer": "kuromoji_liferay_custom",
-                            "index": "analyzed",
-                            "store": "true",
-                            "term_vector": "with_positions_offsets",
-                            "type": "string"
-                        },
-                        "match": "\\w+_ja\\b|\\w+_ja_[A-Z]{2}\\b",
-                        "match_mapping_type": "string",
-                        "match_pattern": "regex"
-                    }
-                    ...
+```json
+{
+    "LiferayDocumentType": {
+        "dynamic_templates": [
+            {
+                "template_ja": {
+                    "mapping": {
+                        "analyzer": "kuromoji_liferay_custom",
+                        "index": "analyzed",
+                        "store": "true",
+                        "term_vector": "with_positions_offsets",
+                        "type": "string"
+                    },
+                    "match": "\\w+_ja\\b|\\w+_ja_[A-Z]{2}\\b",
+                    "match_mapping_type": "string",
+                    "match_pattern": "regex"
                 }
-            ]
-        }
+                ...
+            }
+        ]
     }
+}
+```
 
-## Multi-line YAML Configurations [](id=multi-line-yaml-configurations)
+## Multi-line YAML Configurations
 
 If you configure the settings from the last section using an OSGi configuration
 file, you might find yourself needing to write YAML snippets that span multiple
 lines. The syntax for that is straightforward and just requires appending each
 line with `\n\`, like this:
 
-    additionalConfigurations=\
-                        cluster.routing.allocation.disk.threshold_enabled: false\n\
-                        cluster.service.slow_task_logging_threshold: 600s\n\
-                        index.indexing.slowlog.threshold.index.warn: 600s\n\
-                        index.search.slowlog.threshold.fetch.warn: 600s\n\
-                        index.search.slowlog.threshold.query.warn: 600s\n\
-                        monitor.jvm.gc.old.warn: 600s\n\
-                        monitor.jvm.gc.young.warn: 600s
+```yaml
+additionalConfigurations=\
+                    cluster.routing.allocation.disk.threshold_enabled: false\n\
+                    cluster.service.slow_task_logging_threshold: 600s\n\
+                    index.indexing.slowlog.threshold.index.warn: 600s\n\
+                    index.search.slowlog.threshold.fetch.warn: 600s\n\
+                    index.search.slowlog.threshold.query.warn: 600s\n\
+                    monitor.jvm.gc.old.warn: 600s\n\
+                    monitor.jvm.gc.young.warn: 600s
+```
 
 From simple configurations to overriding existing type mappings, Elasticsearch
 and Liferay's connector to Elasticsearch are configurable.
