@@ -1,52 +1,75 @@
 # OpenAPI Profiles [](id=api-vocabulary)
 
-All the APIs exposed by Liferay are available under the [liferay6 swaggerhub organization](https://app.swaggerhub.com/organizations/liferay6).
+All the APIs exposed by @product@ are available under the 
+[liferay6 SwaggerHub organization](https://app.swaggerhub.com/organizations/liferay6). 
 
-Regarding Headless APIs, we differenciate between two different use cases, delivering content (delivery APIs) and managing and administering content (admin APIs). This division is demonstrated in the APIs available:
+@product@'s headless APIs are categorized in two different use cases:
 
-**Headless Delivery**
+-   Delivering content (delivery APIs)
+-   Managing and administering content (admin APIs)
 
-* [Headless Delivery](https://app.swaggerhub.com/apis/liferay6/headless-delivery/v1.0) with the following APIs:
+The available APIs demonstrate this categorization. 
 
-    * BlogPosting, that maps the internal model BlogsEntry.
-    * BlogPostingImage, that maps the internal model DLFileEntry associated with a BlogsEntry.
-    * Comment, that maps the internal model DiscussionComment.
-    * ContentDocument, that maps the internal model DLFileEntry associated with a JournalArticle.
-    * ContentSet, that maps the internal model AssetListEntry.
-    * ContentStructure, that maps the internal model DDMStructure.
-    * Document, that maps the internal model DLFileEntry.
-    * DocumentFolder, that maps the internal model Folder.
-    * KnowledgeBaseArticle, that maps the internal model KBArticle.
-    * KnowledgeBaseAttachment, that maps the internal model FileEntry associated with a KBArticle.
-    * KnowledgeBaseFolder, that maps the internal model KBFolder.
-    * MessageBoardAttachment, that maps the internal model FileEntry associated with a MBMessage.
-    * MessageBoardMessage, that maps the internal model MBMessage.
-    * MessageBoardSection, that maps the internal model MBCategory.
-    * MessageBoardThread, that maps the internal model MBThread.
-    * Rating, that maps the internal model RatingsEntry.
-    * StructuredContent, that maps the internal model JournalArticle.
-    * StructuredContentFolder, that maps the internal model JournalFolder.
+## Headless Delivery
 
-**Headless Administration**
+The following table lists the APIs that 
+[Headless Delivery](https://app.swaggerhub.com/apis/liferay6/headless-delivery/v1.0) 
+contains. Note that the second column shows which internal model in @product@ 
+that the API maps to. 
 
-* [Headless Admin User](https://app.swaggerhub.com/apis/liferay6/headless-admin-user/1.0) for managing and retrieving information about Users, Organizations:
+| API | &nbsp;Internal Model | 
+| --------- | ----------------------- | 
+| `BlogPosting` | `BlogsEntry` |
+| `BlogPostingImage` | `DLFileEntry` (associated with a `BlogsEntry`) |
+| `Comment` | `DiscussionComment` |
+| `ContentDocument` | `DLFileEntry` (associated with a `JournalArticle`) |
+| `ContentSet` | `AssetListEntry` |
+| `ContentStructure` | `DDMStructure` |
+| `Document` | `DLFileEntry` |
+| `DocumentFolder` | `Folder` |
+| `KnowledgeBaseArticle` | `KBArticle` |
+| `KnowledgeBaseAttachment` | `FileEntry` (associated with a `KBArticle`) |
+| `KnowledgeBaseFolder` | `KBFolder` |
+| `MessageBoardAttachment` | `FileEntry` (associated with a `MBMessage`) |
+| `MessageBoardMessage` | `MBMessage` |
+| `MessageBoardSection` | `MBCategory` |
+| `MessageBoardThread` | `MBThread` |
+| `Rating` | `RatingsEntry` |
+| `StructuredContent` | `JournalArticle` |
+| `StructuredContentFolder` | `JournalFolder` |
 
-    * EmailAddress.
-    * Organization
-    * Phone
-    * PostalAddress, that maps the internal model Address.
-    * Role
-    * Segment, that maps the internal model SegmentEntry.
-    * SegmentUser
-    * SiteBrief
-    * UserAccount, that maps the internal model User.
-    * WebUrl, that maps the internal model WebSite.
-    
-* [Headless Admin Taxonomy](https://app.swaggerhub.com/apis/liferay6/headless-admin-taxonomy/1.0) for managing AssetCategories, AssetVocabularies and AssetTags.
+## Headless Administration
 
-    * Keyword, that maps the internal model AssetTag.
-    * TaxonomyCategory, that maps AssetCategory.
-    * TaxonomyVocabulary, that maps AssetVocabulary.
+There are several headless admin APIs, each containing its own set of APIs. The 
+following tables list these, as well as any internal models in @prodcut@ that 
+each API maps to. 
 
+[Headless Admin User](https://app.swaggerhub.com/apis/liferay6/headless-admin-user/1.0) 
+contains the following APIs for retrieving and managing information about users 
+and organizations. 
 
-* [Headless Admin Workflow](https://app.swaggerhub.com/apis/liferay6/headless-admin-workflow/1.0) for transitioning workflows.
+| API | &nbsp;Internal Model | 
+| --------- | ----------------------- | 
+| `EmailAddress` | N/A |
+| `Organization` | N/A |
+| `Phone` | N/A |
+| `PostalAddress` | `Address` |
+| `Role` | N/A |
+| `Segment` | `SegmentEntry` |
+| `SegmentUser` | N/A |
+| `SiteBrief` | N/A |
+| `UserAccount` | `User` |
+| `WebUrl` | `WebSite` |
+
+[Headless Admin Taxonomy](https://app.swaggerhub.com/apis/liferay6/headless-admin-taxonomy/1.0) 
+contains the following APIs for managing asset categories, asset vocabularies, 
+and asset tags. 
+
+| API | &nbsp;Internal Model | 
+| --------- | ----------------------- | 
+| `Keyword` | `AssetTag` |
+| `TaxonomyCategory` | `AssetCategory` |
+| `TaxonomyVocabulary` | `AssetVocabulary` |
+
+[Headless Admin Workflow](https://app.swaggerhub.com/apis/liferay6/headless-admin-workflow/1.0) 
+contains APIs for transitioning workflows. 

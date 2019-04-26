@@ -1,6 +1,8 @@
-# Multipart requests [](id=multipart)
+# Multipart Requests
 
-Several operations accept a binary file, via a multipart request, like posting a file to a DocumentFolder:
+Several operations accept a binary file via a multipart request. For example, 
+the definition for posting a file to a `DocumentFolder` specifies a multipart 
+request: 
 
     post:
         operationId: postDocumentFolderDocument
@@ -34,9 +36,13 @@ Several operations accept a binary file, via a multipart request, like posting a
                 description: ""
         tags: ["Document"]
 
-This operation returns a `Document` (in JSON or XML) and, to create it, receives a multipart request with 2 components, a binary file (bytes) in a boundary called file and a json string with the metadata of the binary file in a boundary called document.
+This operation returns a `Document` (in JSON or XML) and, to create it, receives
+a multipart request with 2 components, a binary file (bytes) in a boundary
+called file and a JSON string with the metadata of the binary file in a boundary
+called document.
 
-To send this request, the `Content-Type` should be `multipart/form-data` and you'll have to specify a boundary name (it doesn't matter which).
+To send this request, the `Content-Type` should be `multipart/form-data` and
+you'll have to specify a boundary name (it doesn't matter which).
 
 A sample request (without the bytes of the file) of that API would be:
  
