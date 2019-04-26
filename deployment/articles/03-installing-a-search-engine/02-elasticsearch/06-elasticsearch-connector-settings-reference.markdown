@@ -1,4 +1,10 @@
+---
+header-id: elasticsearch-connector-settings-reference
+---
+
 # Elasticsearch Connector Settings: Reference
+
+[TOC levels=1-4]
 
 Elasticsearch is the default search engine for @product-ver@. The *Liferay
 Foundation* suite includes an adapter for Elasticsearch called *Liferay Connector to

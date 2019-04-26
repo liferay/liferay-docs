@@ -1,4 +1,10 @@
+---
+header-id: configuring-the-liferay-elasticsearch-connector
+---
+
 # Configuring the Liferay Elasticsearch Connector
+
+[TOC levels=1-4]
 
 For detailed Elasticsearch configuration information, refer to the
 [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/settings.html).
