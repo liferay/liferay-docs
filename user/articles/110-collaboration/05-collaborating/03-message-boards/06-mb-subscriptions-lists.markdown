@@ -75,10 +75,12 @@ new mail every minute, but you can set it to whatever you like:
 
 | **Note**: Depending on your mail provider, if you use multiple devices to 
 | access email through POP, you might need to configure in your POP settings 
-| something like Gmail's *recent mode*. In Gmail, recent mode assures that 
-| emails go to all your devices instead of only the first client that receives 
-| the email. To enable recent mode in Gmail, for example, prefix the value of 
+| something like Gmail's *recent mode*, which keeps the last 30 days of email
+| available on the server. Then, more than just the first client can receive 
+| email. To enable recent mode in Gmail, for example, prefix the value of 
 | your POP client's Username or Email field with `recent:`. 
+| 
+| If you don't use Gmail, IMAP may be a better solution for you. 
 
 ## Mailing Lists
 
