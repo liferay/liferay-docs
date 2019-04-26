@@ -6,8 +6,7 @@ header-id: liferays-workflow-framework
 
 [TOC levels=1-4]
 
-Enabling your application's entities to support workflow is so easy, you could do it in
-your sleep (but don't try). To workflow-enable your entities,
+To workflow-enable your entities,
 
 1. Create a Workflow Handler
 2. Update the Service Layer
@@ -54,7 +53,7 @@ If you're in a Service Builder application, the workflow handler goes in your
     class (for example, `fooEntityId`), the workflow status, the service
     context, and the workflow context. The status and the workflow context can
     be obtained from the workflow back-end. The other parameters can be
-    obtained from the workflow context. Here's an example `uodateStatus` method:
+    obtained from the workflow context. Here's an example `updateStatus` method:
 
     ```java
     @Override
@@ -83,7 +82,7 @@ update the status of an entity in the database.
 ## Updating the Service Layer
 
 In most Liferay applications,
-[Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder)
+[Service Builder](/docs/7-2/frameworks/-/knowledge_base/f/service-builder)
 is used to create database fields. First, you must update the service layer:
 
 1.  Make sure your entity database table has `status`, `statusByUserId`,
@@ -110,7 +109,7 @@ is used to create database fields. First, you must update the service layer:
     implementation class (`-LocalServiceImpl`).
 
 
-1.  At the end of any method that adds a new entity to your database, call the
+3.  At the end of any method that adds a new entity to your database, call the
     workflow service to enable sending the entity into the workflow backend:
 
     ```java
@@ -120,7 +119,7 @@ is used to create database fields. First, you must update the service layer:
         serviceContext);
     ```
 
-2.  Implement the `updateStatus` method that must be called in the workflow
+4.  Implement the `updateStatus` method that must be called in the workflow
     handler. In the end, persist the updated entity to the database.
 
     ```java
@@ -132,7 +131,7 @@ is used to create database fields. First, you must update the service layer:
     fooEntityPersistence.update(fooEntity);
     ```
 
-3.  Do anything else that might make sense here, like
+5.  Do anything else that might make sense here, like
     changing the visibility of the asset depending on its workflow status:
 
     ```java
@@ -176,7 +175,7 @@ is used to create database fields. First, you must update the service layer:
     		return fooEntity;
 	  }
     ```
-4.  Add a call to `deleteWorkflowInstanceLinks` in the `deleteEntity` method:
+6.  Add a call to `deleteWorkflowInstanceLinks` in the `deleteEntity` method:
 
     ```java
     workflowInstanceLinkLocalService.deleteWorkflowInstanceLinks(
@@ -202,7 +201,7 @@ there's only one thing left to do: update the user interface.
 
 ## Workflow Status and the View Layer
 
-This is dependent on the needs of you application, but often involves the
+This is dependent on the needs of your application, but often involves the
 following these steps:
 
 **Display only approved entities:**
@@ -219,7 +218,7 @@ following these steps:
 
 2.  Make sure you have a getter in your service layer that uses the new finder.
 
-    ```jsp
+    ```java
     public List<FooEntity> getFooEntities(long groupId, int status)
         throws SystemException {
 
@@ -244,7 +243,7 @@ following these steps:
 When you want to display the workflow status, use the `<aui:worklfow-status>`
 tag.
 
-```markup
+```jsp
 <aui:workflow-status markupView="lexicon" showIcon="<%= false %>" showLabel="<%= false %>" status="<%= fooEntity.getStatus() %>" />
 ```
 
