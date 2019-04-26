@@ -20,8 +20,10 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import com.liferay.knowledge.base.markdown.converter.factory.MarkdownConverterFactoryUtil;
 import com.liferay.knowledge.base.markdown.converter.MarkdownConverter;
+import com.liferay.knowledge.base.markdown.converter.internal.flexmark.LiferayFlexmarkConverter;
+
+
 
 public class MarkdownToHtml {
 
@@ -47,7 +49,7 @@ public class MarkdownToHtml {
 
 	    br.close();
 
-	    MarkdownConverter converter = MarkdownConverterFactoryUtil.create();
+	    MarkdownConverter converter = new LiferayFlexmarkConverter();
 
 	    String html = converter.convert(sb.toString());
 
