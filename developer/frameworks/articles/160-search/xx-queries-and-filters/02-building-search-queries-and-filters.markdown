@@ -133,7 +133,7 @@ aggregations). Simply add the filter to the query using the `postFilterQuery`
 method in the request builder:
 
 ```java 
-SearchRequestBuilder.postFilterQuery(Query)
+SearchRequestBuilder.postFilterQuery(Query);
 ```
 
 As you can see, this takes a `Query` object, not a `Filter`. Therefore, simply
@@ -149,7 +149,7 @@ Constructing the filters found in `portal-kernel`'s
 demonstrated by this `new` term filter:
 
 ```java
-TermFilter termFilter=new TermFilter("fieldName", "filterValue")
+TermFilter termFilter = new TermFilter("fieldName", "filterValue");
 ```
 
 Filters are added in legacy search calls by going through the `Indexer`
