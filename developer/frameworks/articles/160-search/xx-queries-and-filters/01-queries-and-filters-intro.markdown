@@ -35,10 +35,14 @@ A query might ask _does the document's content field field contain the words
 "Liferay", "Content", or "Management", and how relevant is the content of the
 document to the searched keywords?_
 
-Filtering is faster than querying, since the documents matching a filter can be
-easily cached. Queries not only match documents but also calculate scores. Use
-filtering and querying together:filters to reduce the number of matched
++$$$
+
+**Hint:** Filtering is faster than querying, since the documents matching a filter can be
+easily cached. Queries not only match documents but also calculate scores. Therefore we recommend to use
+filtering and querying together: filters to reduce the number of matched
 documents, queries for the final examination.
+
+$$$
 
 ## Supported Query Types
 
@@ -238,16 +242,17 @@ in a query context.
 
 ## New/Related APIs
 
-API (FQCN) | Provided by Artifact | Notes |
+Package | Provided by Artifact | Notes |
 -----------|:--------------------:|:--------:|
-`com.liferay.portal.search.query.*` | com.liferay.portal.search.api | The whole ["query" package](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/query) is new as of @product_ver@
-`com.liferay.portal.search.filter.*` | com.liferay.portal.search.api | The whole ["filter" package](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/filter) is new as of @product_ver@
+`com.liferay.portal.search.query.*` | com.liferay.portal.search.api | Most of the provided [query types](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/query) are new as of @product_ver@
+`com.liferay.portal.search.filter.*` | com.liferay.portal.search.api | Some of the provided [filter types](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/filter) are new as of @product_ver@
 
 <!--What do these do? We're recommending setting queries into the
 SearchRequestBuilder.postFilterQuery(matchAllQuery) method, so why talk about
 the filters? Commenting out for now, add back if necessary-->
 
-<!-- ## Supported Filter Types
+<!--
+## Supported Filter Types
 
 Although the recommended approach is to filter in search requests with
 `SearchRequestBuilder.postFilterQuery(Query)`, the  Search API supports the
@@ -265,9 +270,9 @@ package.
 * MissingFilter
 * RangeTermFilter
 
-<!--
+
 TODO: Cover Term Filters
--->
+
 
 ### Compound Filters
 
@@ -276,9 +281,7 @@ package.
 
 * BooleanFilter:
 
-<!--
 TODO: Cover BooleanFilter
--->
 
 ### Geo Filters
 
@@ -291,9 +294,7 @@ package.
 * GeoBoundingBoxFilter
 * GeoPolygonFilter
 
-<!--
 TODO: Cover Geo Filters
--->
 
 ### Other Filters
 
@@ -301,6 +302,4 @@ These filters don't fit into the other categories.
 
 * QueryFilter: Turns any query into a filter. E.g., can a BooleanQuery into a BooleanFilter
 * MatchAllFilter: Matches all documents
-
 -->
-
