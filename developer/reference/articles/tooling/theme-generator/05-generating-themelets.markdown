@@ -37,10 +37,4 @@ these steps to create a themelet:
     themelet is available to install in your themes. 
 
 Awesome! You just created a themelet with the Theme Generator's Themelets 
-sub-generator.
-
-## Related Topics
-
-- [Installing a Themelet in Your Theme](/docs/7-2/frameworks/-/knowledge_base/frameworks/installing-a-themelet-in-your-theme)
-- [Bundling Layout Templates with a Theme](/docs/7-2/frameworks/-/knowledge_base/frameworks/including-layout-templates-with-a-theme)
-- [Installing the Liferay Theme Generator and Creating a Theme](/docs/7-2/reference/-/knowledge_base/reference/installing-the-theme-generator-and-creating-a-theme)
+sub-generator. 

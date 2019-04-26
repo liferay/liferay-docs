@@ -44,10 +44,4 @@ the Liferay Theme Generator and generate a theme:
     to the server.
  
 Now you have a powerful theme development tool at your disposal. The sky is the 
-limit!
-
-## Related Topics
-
-- [Generating Layout Templates](/docs/7-2/reference/-/knowledge_base/reference/creating-layout-templates-with-the-themes-generator)
-- [Theme Components](/docs/7-2/frameworks/-/knowledge_base/frameworks/theme-components)
-- [Understanding the Page Layout](/docs/7-2/frameworks/-/knowledge_base/frameworks/understanding-the-page-layout)
+limit! 
