@@ -152,7 +152,7 @@ APIs. You can, however, enable them manually by following these steps:
     `com.liferay.headless.delivery.internal.jaxrs.application.HeadlessDeliveryApplication-default.config` 
     and add this code to it: 
 
-        auth2.scopechecker.type="none"
+        oauth2.scopechecker.type="none"
         auth.verifier.auth.verifier.BasicAuthHeaderAuthVerifier.urls.includes="*"
         auth.verifier.auth.verifier.OAuth2RestAuthVerifier.urls.includes="*"
         auth.verifier.guest.allowed="true"
