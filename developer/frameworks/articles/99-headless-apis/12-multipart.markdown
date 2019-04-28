@@ -37,8 +37,8 @@ request:
         tags: ["Document"]
 
 This operation returns a `Document` (in JSON or XML) and, to create it, receives
-a multipart request with 2 components, a binary file (bytes) in a boundary
-called file and a JSON string with the metadata of the binary file in a boundary
+a multipart request with 2 components, a binary file (bytes) in a property
+called file and a JSON string with the metadata of the binary file in a property
 called document.
 
 To send this request, the `Content-Type` should be `multipart/form-data` and
