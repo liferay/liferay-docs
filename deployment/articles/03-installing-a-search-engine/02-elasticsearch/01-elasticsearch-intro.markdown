@@ -68,19 +68,19 @@ run Elasticsearch in embedded mode in production either. Instead, run
 Elasticsearch in *remote operation mode*, as a standalone server or cluster of
 server nodes.
 
-## Troubleshooting Elasticsearch
+## Troubleshooting Elasticsearch Integration
 
 Sometimes things don't go as planned. If you've set up @product@ with
 Elasticsearch in remote mode, but @product@ can't connect to Elasticsearch, check
 these things:
 
 **Cluster name:** 
-: The value of the `cluster.name` property in Elasticsearch must match the
+: The value of the `cluster.name` property in `elasticsearch.yml` must match the
 `clusterName` property you configured for Liferay's Elasticsearch connector.
 
 **Transport address:** 
 : The value of the `transportAddresses` property in the Elasticsearch connector configuration must
-contain at least one valid host and port where Elasticsearch is running. If @product@ is running in
+contain at least one valid host and port where an Elasticsearch node is running. If @product@ is running in
 embedded mode, and you start a standalone Elasticsearch node or cluster, it
 detects that port `9300` is taken and switches to port `9301`. If you then set
 Liferay's Elasticsearch connector to remote mode, it continues to look for
@@ -93,4 +93,4 @@ configuration options in more detail.
 : When integrating @product@ with an Elasticsearch cluster containing multiple and different "node" [types](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/modules-node.html#modules-node), Liferay's Elasticsearch connector may throw `NoNodeAvailableException` in the console log if no `data` node is available on the specified transport addresses. This may happen for example when only `master` type node addresses are configured. This is due to the ["cluster sniffing feature"](https://www.elastic.co/guide/en/elasticsearch/client/java-api/6.5/transport-client.html) of the Elasticsearch Transport Client that Liferay's connector is using internally and it is enabled by default:
    >If, for instance, you initially connect to a master node, after sniffing, no further requests will go to that master node, but rather to any data nodes instead. The reason the transport client excludes non-data nodes is to avoid sending search traffic to master only nodes.
    
-To disable this feature, add `client.transport.sniff: false` to the `additionalConfigurations` for Liferay's Elasticsearch connector configuration.
+To disable cluster sniffing, add `client.transport.sniff: false` to the `additionalConfigurations` property in Liferay's Elasticsearch connector configuration.
