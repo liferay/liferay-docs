@@ -7,14 +7,14 @@ header-id: elasticsearch-connector-settings-reference
 [TOC levels=1-4]
 
 Elasticsearch is the default search engine for @product-ver@. The *Liferay
-Foundation* suite includes an adapter for Elasticsearch called *Liferay Connector to
-Elasticsearch 6*. The adapter is configurable through System Settings or an
+Foundation* suite includes an connector for Elasticsearch called *Liferay Connector to
+Elasticsearch 6*. The connector is configurable through System Settings or an
 OSGi configuration file named
 `com.liferay.portal.search.elasticsearch6.configuration.ElasticsearchConfiguration.cfg`
 and deployed to `[Liferay_Home]/osgi/configs`.
 
 The list below is all the configuration settings for Liferay's default
-Elasticsearch adapter, in the order they appear in the System Settings
+Elasticsearch connector, in the order they appear in the System Settings
 application (The _Elasticsearch 6_ entry under the _Search_ category):
 
 `clusterName=LiferayElasticsearchCluster`
@@ -143,17 +143,17 @@ for more information).
 
 `additionalConfigurations=`
 : Set the String values for custom settings for embedded Elasticsearch, in YML
-format. See: Adding Settings to the Liferay Elasticsearch Adapter
+format. See: Adding Settings to the Liferay Elasticsearch Connector
 
 `additionalIndexConfigurations=`
 : Set the String values for custom settings for the Liferay index, in JSON or YML
 format (refer to the Elasticsearch Create Index API for more information).
-See: Adding Settings to the Liferay Elasticsearch Adapter
+See: Adding Settings to the Liferay Elasticsearch Connector
 
 `additionalTypeMappings=`
 : Set the String values for custom mappings for the `LiferayDocumentType`, in JSON
 format (refer to the Elasticsearch Put Mapping API for more information)
-See: Adding Settings to the Liferay Elasticsearch Adapter
+See: Adding Settings to the Liferay Elasticsearch Connector
 
 `overrideTypeMappings=` 
 Settings here override @product@'s default type mappings. This
