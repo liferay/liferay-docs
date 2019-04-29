@@ -211,7 +211,7 @@ For example,
 
 For more information on configuring an Elasticsearch cluster, see the
 documentation on 
-[Elasticsearch Index Settings](https://www.elastic.co/guide/en/elasticsearch/guide/current/_index_settings.html).
+[Elasticsearch Index Settings](https://www.elastic.co/guide/en/elasticsearch/guide/6.5/_index_settings.html).
 
 +$$$
 
