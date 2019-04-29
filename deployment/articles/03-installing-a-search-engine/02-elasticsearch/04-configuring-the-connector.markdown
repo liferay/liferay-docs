@@ -72,13 +72,13 @@ to each other.
 The Elasticsearch connector provides integration between Elasticsearch and the
 portal. Before configuring the connector, make sure Elasticsearch is running.
 
-There are two ways to configure the adapter: 
+There are two ways to configure the connector: 
 
-1. [Use the System Settings application in the Control Panel.](#configuring-the-adapter-in-the-control-panel) 
+1. [Use the System Settings application in the Control Panel.](#configuring-the-connector-in-the-control-panel) 
 
-2. [Manually create an OSGi configuration file.](#configuring-the-adapter-with-an-osgi-config-file) 
+2. [Manually create an OSGi configuration file.](#configuring-the-connector-with-an-osgi-config-file) 
 
-It's convenient to configure the Elasticsearch adapter from System Settings, but
+It's convenient to configure the Elasticsearch connector from System Settings, but
 this is often only possible during development and testing. If you're not
 familiar with System Settings, read about it
 [here](/docs/7-2/user/-/knowledge_base/user/system-settings).
@@ -86,9 +86,9 @@ Remember that you can generate configuration files for deployment to other
 systems by configuring System Settings, and then exporting the `.config` file
 with your configuration.
 
-### Configuring the Adapter in the Control Panel 
+### Configuring the Connector in the Control Panel 
 
-To configure the Elasticsearch adapter from the System Settings application,
+To configure the Elasticsearch connector from the System Settings application,
 
 1.  Start @product@.
 
@@ -99,7 +99,7 @@ To configure the Elasticsearch adapter from the System Settings application,
     search box) and click the Actions icon
     (![Actions](../../../images/icon-actions.png)), then *Edit*.
 
-    Figure 1: Use the System Settings application in @product@'s Control Panel to configure the Elasticsearch adapter.](../../../images/cfg-elasticsearch-sys-settings.png)
+    Figure 1: Use the System Settings application in @product@'s Control Panel to configure the Elasticsearch connector.](../../../images/cfg-elasticsearch-sys-settings.png)
 
 4.  Make any edits to the configuration and click *Save*.
 
@@ -109,13 +109,13 @@ To configure the Elasticsearch adapter from the System Settings application,
 |trigger a re-index. Navigate to *Control Panel* &rarr; *Configuration* &rarr;
 |*Search*, and click *Execute* next to *Reindex all search indexes.*
 
-### Configuring the Adapter with an OSGi `.config` File 
+### Configuring the Connector with an OSGi `.config` File 
 
 When preparing a system for production deployment, you want to use a repeatable
 deployment process. Therefore, it's best to use the OSGi configuration file,
 where your configuration is maintained in a controlled source.
 
-Follow these steps to configure the Elasticsearch adapter using a configuration
+Follow these steps to configure the Elasticsearch connector using a configuration
 file:
 
 1. Create the following file:
@@ -188,7 +188,7 @@ locally, for example, run `./bin/elasticsearch` four times. See
 [here](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/modules-node.html#max-local-storage-nodes)
 for more information.
 
-Configure the number of shards and replicas in the Elasticsearch 6 adapter,
+Configure the number of shards and replicas in the Elasticsearch 6 connector,
 using the `indexNumberOfShards` and `indexNumberOfReplicas` properties to
 specify the number of primary shards and number of replica shards, respectively.
 Elasticsearch's default configuration works for a cluster of up to ten nodes,
@@ -202,7 +202,7 @@ shards is `1`.
 |[Transport Module](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/modules-transport.html),
 |through TCP. See the Elasticsearch documentation for the available properties
 |(to be set in the `elasticsearch.yml` file), and the @product@ Elasticsearch
-|Adapter's settings for the adapter's available settings.
+|Connector's settings for the connector's available settings.
 |<!--reference article](discover/reference/-/knowledge_base/7-1/elasticsearch-settings)-->
 |
 |At a minimum, provide the list of hosts (as `host:port`)  to act as gossip
@@ -223,7 +223,7 @@ documentation on
 Some of the settings available for the Elasticsearch connector are applicable
 for only one operation mode (REMOTE or EMBEDDED). Refer to the table below:
 
-Adapter Setting/Operation Mode | EMBEDDED | REMOTE |
+Connector Setting/Operation Mode | EMBEDDED | REMOTE |
 ------------------------------| :----: | :----: |
 `clusterName` | x | x
 `operationMode` | x | x
