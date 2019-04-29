@@ -95,12 +95,12 @@ configuration options in more detail.
 : Elasticsearch clusters can have multiple node 
 [types](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/modules-node.html#modules-node).
 [Cluster sniffing](https://www.elastic.co/guide/en/elasticsearch/client/java-api/6.5/transport-client.html), 
-enabled by default enabled by default in the @product@ connector, looks for
-`data` nodes configured in the `transportAddresses` property. If none are
-available, the connector may throw a `NoNodeAvailableException` in the console
-log. If cluster sniffing is to remain enabled, be sure that your configuration
-allows for at least one `data` node's transport address to be "sniffable" at all
-times to avoid this error.
+enabled by default in the @product@ connector, looks for `data` nodes
+configured in the `transportAddresses` property. If none are available, the
+connector may throw a `NoNodeAvailableException` in the console log. If cluster
+sniffing is to remain enabled, be sure that your configuration allows for at
+least one `data` node's transport address to be "sniffable" at all times to
+avoid this error.
 
 To disable cluster sniffing, add `clientTransportSniff=false` to the `.config`
 file or uncheck the Client Transport Sniff property in System Settings.
