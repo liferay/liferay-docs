@@ -1,4 +1,10 @@
+---
+header-id: search-queries-and-filters
+---
+
 # Search Queries and Filters
+
+[TOC levels=1-4]
 
 As the ancient wisdom holds, 
 
