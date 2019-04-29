@@ -6,16 +6,16 @@ header-id: advanced-configuration-of-the-liferay-elasticsearch-connector
 
 [TOC levels=1-4]
 
-The default configurations for Liferay's Elasticsearch adapter module are set
+The default configurations for Liferay's Elasticsearch connector module are set
 in a Java class called `ElasticsearchConfiguration`.
 
-While the Elasticsearch adapter has a lot of configuration options out of the
+While the Elasticsearch connector has a lot of configuration options out of the
 box, you might find an Elasticsearch configuration you need that isn't provided
 by default. In this case, add the configuration options you need. If something
 is configurable for Elasticsearch, it's configurable using the Elasticsearch
-adapter.
+connector.
 
-## Adding Settings and Mappings to the Liferay Elasticsearch Adapter
+## Adding Settings and Mappings to the Liferay Elasticsearch Connector
 
 Think of the available configuration options as being divided into two groups:
 the most common ones that are easily configured, and more complex
