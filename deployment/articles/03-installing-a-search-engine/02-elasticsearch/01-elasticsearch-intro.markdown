@@ -91,5 +91,6 @@ configuration options in more detail.
 
 **Cluster Sniffing (Additional Configurations):**
 : When integrating @product@ with an Elasticsearch cluster containing multiple and different "node" [types](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/modules-node.html#modules-node), Liferay's Elasticsearch connector may throw `NoNodeAvailableException` in the console log if no `data` node is available on the specified transport addresses. This may happen for example when only `master` type node addresses are configured. This is due to the ["cluster sniffing feature"](https://www.elastic.co/guide/en/elasticsearch/client/java-api/6.5/transport-client.html) of the Elasticsearch Transport Client that Liferay's connector is using internally and it is enabled by default:
->If, for instance, you initially connect to a master node, after sniffing, no further requests will go to that master node, but rather to any data nodes instead. The reason the transport client excludes non-data nodes is to avoid sending search traffic to master only nodes.
+   >If, for instance, you initially connect to a master node, after sniffing, no further requests will go to that master node, but rather to any data nodes instead. The reason the transport client excludes non-data nodes is to avoid sending search traffic to master only nodes.
+   
 To disable this feature, add `client.transport.sniff: false` to the `additionalConfigurations` for Liferay's Elasticsearch connector configuration.
