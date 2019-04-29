@@ -119,8 +119,9 @@ Here's the complete code snippet:
 ### Process the Search Response
 
 What you'll do with the `SearchResponse` returned by the `searcher.search` call
-is dependent on the type of query and your specific use case. See [ANOTHER
-ARTICLE]() for more information.
+is dependent on the type of query and your specific use case. See 
+[the documentation on searching programmatically](NOT YET WRITTEN) 
+for more information.
 
 ## Filters
 

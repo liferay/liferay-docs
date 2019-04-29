@@ -23,14 +23,18 @@ search request, specifying it as a filter using the
 7.2 Query APIs
 [here](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/query).
 
-+$$$
+| **Note**: Support for the legacy
+| `com.liferay.portal.kernel.search.Query.getPreBooleanFilter()` is only present
+| in the new search request builder and assembler implementation to allow for
+| backwards compatibility with the `Indexer` framework's handling of queries.
+| The older approach encourages some practices that are not ideal:
+| 
+| - Wrapping a `BooleanQuery` with another `BooleanQuery`. 
+| 
+| - Some queries shouldn't have filters according to Elasticsearch's API.
 
-**Note**: The support for "legacy" `com.liferay.portal.kernel.search.Query.getPreBooleanFilter()` is only present in the new Search Request builder and assembler implementation to allow for backwards compatibility with how Liferay's Indexer frameworks handles queries. Ideally, you should not wrap the BooleanQuery with another BooleanQuery. In addition, not all Query should have filters allowed according to Elasticsearch's API.
-
-$$$
-
-Despite the more unified approach, you should understand the functional
-difference between filtering and querying:
+Despite the more unified filtering and querying code, you should understand the
+functional difference between filtering and querying:
 
 *Filters* ask a yes or no question for every document. A filter might ask _is
 the status field equal to staging or live?_
@@ -42,14 +46,10 @@ A query might ask _does the document's content field field contain the words
 "Liferay", "Content", or "Management", and how relevant is the content of the
 document to the searched keywords?_
 
-+$$$
-
-**Hint:** Filtering is faster than querying, since the documents matching a filter can be
-easily cached. Queries not only match documents but also calculate scores. Therefore we recommend to use
-filtering and querying together: filters to reduce the number of matched
-documents, queries for the final examination.
-
-$$$
+| **Hint:** Filtering is faster than querying, since the documents matching a
+| filter can be easily cached. Queries not only match documents but also calculate
+| scores. We recommend using filtering and querying together: filters to reduce
+| the number of matched documents, queries for the final examination.
 
 ## Supported Query Types
 
