@@ -72,7 +72,7 @@ module:
 1.  In your module's `resources/` folder, create the folder structure `/com/liferay/fragments/collection/contributor/demo`.
 
 2.  Copy the Fragments you want to distribute into the folder. You can learn 
-    how to create a Fragments in the [Creating Fragments section](/developer/frameworks/-/knowledge_base/7-2/creating-fragments).
+    how to create a Fragments in the [Creating Fragments section](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-fragments).
 
 3.  Create a file named `collections.json` in the same folder with this format:
 

@@ -35,13 +35,13 @@ selecting Fragments to add to a page. @product@ provides a robust interface for
 creating and managing Fragments and Collections without using any external 
 tools, but you can also use your preferred tools for Web Development. For an 
 explanation of basic Fragment creation using Liferay's built in tools, see 
-[Creating a Fragment](/developer/frameworks/-/knowledge_base/7-2/creating-fragments). 
+[Creating a Fragment](/docs/7-2/frameworks/-/knowledge_base/developer/frameworks/creating-fragments). 
 
 ### Fragment CLI
 
 To streamline fragment development, @product-ver@ provides command line tools 
 for generating, importing, and exporting fragments and fragment collections. 
-For more information about the CLI, see the [official Liferay Fragments CLI project](https://github.com/liferay/generator-liferay-fragments/blob/master/README.md) reference. Using this CLI is also covered in [Developing a Fragment using Desktop Tools](/developer/frameworks/-/knowledge_base/7-2/page-fragments-desktop-tools).
+For more information about the CLI, see the [official Liferay Fragments CLI project](https://github.com/liferay/generator-liferay-fragments/blob/master/README.md) reference. Using this CLI is also covered in [Developing a Fragment using Desktop Tools](/docs/7-2/frameworks/-/knowledge_base/frameworks/page-fragments-desktop-tools).
 
 
 ## Contributed Collections
@@ -57,8 +57,7 @@ Contributed Fragment Collection.
 Contributed Fragment Collections are deployable modules which contain Page 
 Fragments. Those fragments can be used just like regular fragments, but are not 
 contained in the database, and cannot be modified except by updating the module 
-that they are deployed in. Use our [Creating Contributed Collections 
-guide](link) to learn to create your own Contributed Collections.
+that they are deployed in. Use our [Creating Contributed Collections guide](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-contributed-fragment-collection) to learn to create your own Contributed Collections.
 
 ## Fragment Specific Tags
 
@@ -106,4 +105,4 @@ You can also add more dynamic behavior to a Fragment by including a widget.
 Currently, you can only embed a portlet as a widget, but other types of widgets
 will be available in the future.
 
-You can find a complete list and usage examples of these in the [Page Fragments Reference](/developer/reference/-/knowledge_base/7-2/fragment-specific-tags).
+You can find a complete list and usage examples of these in the [Page Fragments Reference](/docs/7-2/frameworks/-/knowledge_base/frameworks/fragment-specific-tags).
