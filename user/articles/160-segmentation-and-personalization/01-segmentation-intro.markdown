@@ -51,10 +51,27 @@ both standard and targeted content. You can learn more about this in
 [Using Analytics Cloud with User Segments](/documentation/user/-/knowledge_base/7-2/using-analytics-cloud-with-user-segments).
 
 
-## Using Segments to Personalize Experiences
+## Personalizing Experiences
 
-...
+The most important piece of the puzzle isn't defining groups or analyzing use 
+behavior. It's the final step of using all of that to provide users and site 
+visitors with the best possible experience, and driving campaigns and content 
+engagement. If you strategically create segments, you can then use that to 
+enhance user experiences, and make sure that users are seeing the content and 
+promotions that you want them to see. There are two primary pieces of this 
+*Page Personalization* and *Content Personalization*.
 
-coming soon
+### Page Personalization
 
-...
+Page Personalization describes changes to page layout and structure based on
+the person viewing the page. The same page can be used to provide drastically 
+different experiences by displaying different widgets and even different 
+layouts depending on who is viewing the page. 
+
+### Content Personalization
+
+Content Personalization describes changes to the specific pieces of content
+displayed to a user or visitor based on their segment criteria. For example, if 
+a user has already viewed a specific ad on your site today, Content 
+Personalization can prevent that ad from being displayed again to improve their 
+experience.
