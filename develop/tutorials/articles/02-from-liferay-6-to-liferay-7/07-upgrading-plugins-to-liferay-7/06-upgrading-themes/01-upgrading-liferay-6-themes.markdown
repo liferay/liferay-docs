@@ -48,8 +48,14 @@ Make sure these settings are present in your theme:
 
 +$$$
 
-**Note:** Because Liferay Theme Generator doesn't officially support importing 
-6.1 themes, you must set the version of your theme to 6.2 to import it.
+**Note:** Liferay Theme Generator's importer only recognizes 6.2 themes. 
+Therefore, 6.1 themes must be versioned as 6.2+ to be recognized by the 
+importer.
+
+The importer only supports importing 6.2 themes generated with the Plugins SDK. 
+If your theme was not generated with the Plugins SDK, such as those created with 
+Maven, you must modify your theme to match the Plugins SDK structure before 
+importing.
 
 $$$
 
