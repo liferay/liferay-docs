@@ -113,8 +113,13 @@ public class CheckImagesTask extends Task {
 			// Get list of images
 			File imgDir = new File(docDir.getAbsolutePath() + "/images" + dirType);
 			if (!imgDir.exists()) {
-				throw new BuildException("imgdir " + imgDir.getAbsolutePath() +
-						" could not be found");
+				if (!dirType.contains("dxp")) {
+					throw new BuildException("imgdir " + imgDir.getAbsolutePath() +
+							" could not be found");
+				}
+				else {
+					continue;
+				}
 			}
 			if (!docDir.isDirectory()) {
 				throw new BuildException("imgdir " + imgDir.getAbsolutePath() +

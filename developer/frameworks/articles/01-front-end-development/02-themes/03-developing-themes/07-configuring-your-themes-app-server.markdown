@@ -1,5 +1,5 @@
 ---
-header-id: configuring-your-themes-app-server
+header-id: updating-your-themes-app-server
 ---
 
 # Updating Your Theme's App Server
