@@ -6,11 +6,13 @@ header-id: elasticsearch-connector-settings-reference
 
 [TOC levels=1-4]
 
-Elasticsearch is the default search engine for @product-ver@ called *Liferay Connector to
-Elasticsearch 6*. The connector is configurable through System Settings or an
-OSGi configuration file named
-`com.liferay.portal.search.elasticsearch6.configuration.ElasticsearchConfiguration.cfg`
-and deployed to `[Liferay_Home]/osgi/configs`.
+Elasticsearch is the default search engine for @product-ver@. The connection is
+managed through the *Liferay Connector to Elasticsearch 6*, and is configurable
+through System Settings or an OSGi configuration file named
+
+    com.liferay.portal.search.elasticsearch6.configuration.ElasticsearchConfiguration.cfg
+
+Deploy the file to `[Liferay_Home]/osgi/configs` and a listener auto-detects it.
 
 The list below is all the configuration settings for Liferay's default
 Elasticsearch connector, in the order they appear in the System Settings

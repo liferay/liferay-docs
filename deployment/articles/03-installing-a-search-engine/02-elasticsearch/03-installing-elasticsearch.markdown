@@ -195,12 +195,13 @@ When finished, click *Save*. You're almost done.
 ### Step Six: Restart @product@ and Reindex 
 
 Stop and restart @product@. When it's back up, log in as an administrative user
-and click on *Control Panel* &rarr; *Configuration* &rarr; *Search* and
-click the *Execute* button for *Reindex all search indexes* and then *Reindex all spell check indexes*. When you do that,
-you should see some messages scroll up in the Elasticsearch log. 
+and click on *Control Panel* &rarr; *Configuration* &rarr; *Search* and click
+the *Execute* button for *Reindex all search indexes* and then *Reindex all
+spell check indexes*. When you do that, you should see some messages scroll up
+in the Elasticsearch log. 
 
-When restarting @product@, `update_mappings` messages will appear in the Elasticsearch
-logs:
+When restarting @product@, `update_mappings` messages will appear in the
+Elasticsearch logs:
 
     [2019-04-01T17:08:57,462][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-0/m27eNsekTAyP27zDOjGojw] update_mapping [LiferayDocumentType]
     [2019-04-01T17:08:57,474][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-0/m27eNsekTAyP27zDOjGojw] update_mapping [LiferayDocumentType]
@@ -225,7 +226,7 @@ Once you reindex, more log messages appear in Elasticsearch:
     [2019-04-01T17:11:21,282][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-20101/Meacn_uxR06g0tCJonS4eA] update_mapping [LiferayDocumentType]
     [2019-04-01T17:11:21,373][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-20101/Meacn_uxR06g0tCJonS4eA] update_mapping [LiferayDocumentType]
 
-When reindexing the spell check dictionaries, you should see messages like these in @product@'s log:
+Reindexing the spell check dictionaries produces log messages like these:
 
     2019-04-29 14:02:22.034 INFO  [liferay/search_writer/SYSTEM_ENGINE-11][BaseSpellCheckIndexWriter:278] Start indexing dictionary for com/liferay/portal/search/dependencies/spellchecker/en_US.txt
     2019-04-29 14:02:34.166 INFO  [liferay/search_writer/SYSTEM_ENGINE-11][BaseSpellCheckIndexWriter:299] Finished indexing dictionary for com/liferay/portal/search/dependencies/spellchecker/en_US.txt
