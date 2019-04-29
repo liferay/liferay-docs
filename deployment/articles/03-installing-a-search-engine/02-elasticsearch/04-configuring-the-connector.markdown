@@ -15,13 +15,11 @@ the Elasticsearch cluster. To learn about setting the Elasticsearch cluster name
 on the @product@ side, refer below to the section called Configuring the Liferay
 Elasticsearch Connector.
 
-|**Note:** The `http.enabled` setting in Elasticsearch corresponds to the
-|`httpEnabled` setting in the Liferay Connector to Elasticsearch 6 application.
-|As this setting was 
-|[deprecated in Elasticsearch 6.3](https://www.elastic.co/guide/en/elasticsearch/reference/current/release-notes-6.3.0.html#deprecation-6.3.0), 
-|the connector's corresponding setting is now also deprecated. This setting was
-|only used for configuring the embedded Elasticsearch server, so its
-|deprecation should have minimal impact to production deployments.
++$$$
+
+**Note:** The `http.enabled` setting in Elasticsearch corresponds to the `httpEnabled` setting in the Liferay Connector to Elasticsearch 6 application. As this setting was [deprecated in Elasticsearch 6.3](https://www.elastic.co/guide/en/elasticsearch/reference/current/release-notes-6.3.0.html#deprecation-6.3.0), the connector's corresponding setting is now also deprecated. This setting was only used for configuring the embedded Elasticsearch server, so its deprecation should have minimal impact to production deployments.
+
+$$$
 
 Elasticsearch's configuration files are written in [YAML](http://www.yaml.org)
 and kept in the `[Elasticsearch Home]/config` folder. The main configuration
@@ -105,9 +103,11 @@ To configure the Elasticsearch connector from the System Settings application,
 
     Figure 2: Set configurations for the Elasticsearch connector, like settings the Operation Mode to *Remote*.](../../../images/cfg-elasticsearch-sys-settings2.png)
 
-|**Note:** If you switch operation modes (`EMBEDDED` &rarr; `REMOTE`), you must
-|trigger a re-index. Navigate to *Control Panel* &rarr; *Configuration* &rarr;
-|*Search*, and click *Execute* next to *Reindex all search indexes.*
++$$$
+
+**Note:** If you switch operation modes (`EMBEDDED` &rarr; `REMOTE`), you must trigger a re-index. Navigate to *Control Panel* &rarr; *Configuration* &rarr; *Search*, and click *Execute* next to *Reindex all search indexes.*
+
+$$$
 
 ### Configuring the Connector with an OSGi `.config` File 
 
@@ -166,10 +166,11 @@ or as few Elasticsearch nodes in this property as you want. This tells
 @product@ the IP address or host name where search requests should be sent. If
 using System Settings, set the value in the *Transport Addresses* property.
 
-|**Note:** In an Elasticsearch cluster you can list the transport addresses for
-|multiple Elasticsearch nodes as a comma-separated list in the
-|`transportAddresses` property. If you set only one transport address, @product@
-|loses contact with Elasticsearch if that node goes down.
++$$$
+
+**Note:** In an Elasticsearch cluster you can list the transport addresses for multiple Elasticsearch nodes as a comma-separated list in the `transportAddresses` property. If you set only one transport address, @product@ loses contact with Elasticsearch if that node goes down.
+
+$$$
 
 On the Elasticsearch side, set the `network.host` property in your
 `elaticsearch.yml` file. This property simultaneously sets both the *bind host*
@@ -195,28 +196,24 @@ Elasticsearch's default configuration works for a cluster of up to ten nodes,
 since the default number of shards is `5` and the default number of replica
 shards is `1`.
 
-|**Note:** Elasticsearch uses the 
-|[Zen Discovery Module](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/modules-discovery-zen.html)
-|by default, which provides unicast discovery. Additionally, nodes in the cluster
-|communicate using the 
-|[Transport Module](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/modules-transport.html),
-|through TCP. See the Elasticsearch documentation for the available properties
-|(to be set in the `elasticsearch.yml` file), and the @product@ Elasticsearch
-|Connector's settings for the connector's available settings.
-|<!--reference article](discover/reference/-/knowledge_base/7-1/elasticsearch-settings)-->
-|
-|At a minimum, provide the list of hosts (as `host:port`)  to act as gossip
-|routers during unicast discovery in the `elasticsearch.yml`:
-|
-|    discovery.zen.ping.unicast.hosts: ["node1.ip.address", "node2.ip.address"]
-|
-|For example, 
-|
-|    discovery.zen.ping.unicast.hosts: ["10.10.10.5", "10.10.10,.5:9305"]
++$$$
+
+**Note:** Elasticsearch uses the [Zen Discovery Module](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/modules-discovery-zen.html) by default, which provides unicast discovery. Additionally, nodes in the cluster communicate using the [Transport Module](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/modules-transport.html), through TCP. See the Elasticsearch documentation for the available properties (to be set in the `elasticsearch.yml` file), and the @product@ Elasticsearch connector's settings for the connector's available settings.
+<!--reference article](discover/reference/-/knowledge_base/7-1/elasticsearch-settings)-->
+
+At a minimum, provide the list of hosts (as `host:port`)  to act as gossip routers during unicast discovery in the `elasticsearch.yml`:
+
+    discovery.zen.ping.unicast.hosts: ["node1.ip.address", "node2.ip.address"]
+
+For example,
+
+    discovery.zen.ping.unicast.hosts: ["10.10.10.5", "10.10.10,.5:9305"]
 
 For more information on configuring an Elasticsearch cluster, see the
 documentation on 
 [Elasticsearch Index Settings](https://www.elastic.co/guide/en/elasticsearch/guide/current/_index_settings.html).
+
++$$$
 
 ## Elasticsearch Connector System Settings, By Operation Mode 
 
