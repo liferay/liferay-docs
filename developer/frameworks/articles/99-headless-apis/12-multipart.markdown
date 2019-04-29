@@ -36,16 +36,18 @@ request:
                 description: ""
         tags: ["Document"]
 
-This operation returns a `Document` (in JSON or XML) and, to create it, receives
-a multipart request with 2 components, a binary file (bytes) in a property
-called file and a JSON string with the metadata of the binary file in a property
-called document.
+This operation returns a `Document` (in JSON or XML). To create this `Document`, 
+you must supply the operation's multipart request with 2 components: 
 
-To send this request, the `Content-Type` should be `multipart/form-data` and
-you'll have to specify a boundary name (it doesn't matter which).
+-   A binary file (bytes) via the `file` property
+-   A JSON string with the binary file's metadata, via the `document` property
 
-A sample request (without the bytes of the file) of that API would be:
- 
+To send this request, the `Content-Type` must be `multipart/form-data`, and you 
+must also specify a boundary name (the boundary name can be arbitrary). 
+
+Here's an example request (without the file's bytes) that creates a document in 
+the folder with the ID `38549`: 
+
     curl -X "POST" "http://localhost:8080/o/headless-delivery/v1.0/document-folders/38549/documents" \
          -H 'Accept: application/json' \
          -H 'Content-Type: multipart/form-data; boundary=PART' \
@@ -53,7 +55,7 @@ A sample request (without the bytes of the file) of that API would be:
          -F "file=" \
          -F "document={\"title\": \"podcast\"}"
 
-The response to this request is:
+And here's the response: 
 
     {
       "contentUrl": "/documents/20123/38549/podcast.mp3/e978e316-620c-df9f-e0bd-7cc0447cca49?version=1.0&t=1556100111417",

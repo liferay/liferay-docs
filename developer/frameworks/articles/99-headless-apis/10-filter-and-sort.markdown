@@ -176,9 +176,14 @@ To specify a descending sort for only one parameter, you must explicitly specify
 ascending sort order (`:asc`) for the other parameters. For example: 
 
     ?sort=headline:desc,dateCreated:asc
-    
+
 ## Flatten
 
-Some collections (as defined in their OpenAPI profile) allow a query parameter, `flatten`, to return all resources disregarding folders or other hierarchical classifications.
-
-The default value for the `flatten` parameter is false, so a query for Documents in the root folder will return only the ones located directly under the root folder. With `flatten` to true, the query will return all Documents, including the child Documents to all the folders under that site.
+Some collections (as defined in their OpenAPI profile) allow the query parameter 
+`flatten`, which returns all resources and disregards folders or other 
+hierarchical classifications. This parameter's default value is `false`, so a 
+document query to the root folder returns only the documents in that folder. 
+With `flatten` set to `true`, the same query also returns documents in any 
+subfolders, regardless of how deeply those folders are nested. In other words, 
+setting `flatten` set to `true` and querying for documents in a Site's root 
+folder returns all the documents in the Site. 
