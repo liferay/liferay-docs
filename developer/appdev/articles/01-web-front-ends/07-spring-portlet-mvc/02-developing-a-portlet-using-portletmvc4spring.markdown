@@ -7,11 +7,11 @@ header-id: developing-a-portlet-using-portletmvc4spring
 [TOC levels=1-4]
 
 PortletMVC4Spring supports developing portlets that use the Spring Framework and
-the template languages supported by Spring Web MVC such as JSP, Thymeleaf, Velocity, and more.
-The PortletMVC4Spring archetypes include JSP and Thymeleaf templates and
-demonstrate the Model View Controller (MVC) pattern. Your first step in
-developing a PortletMVC4Spring Portlet is to create a PortletMVC4Spring Portlet
-project and deploy your PortletMVC4Spring Portlet to @product@. 
+the template languages supported by Spring Web MVC such as JSP, Thymeleaf,
+Velocity, and more. The PortletMVC4Spring archetypes include JSP and Thymeleaf
+templates and demonstrate the Model View Controller (MVC) pattern. Your first
+step in developing a PortletMVC4Spring Portlet is to create a PortletMVC4Spring
+Portlet project and deploy your PortletMVC4Spring Portlet to @product@. 
 
 1.  Create a PortletMVC4Spring project. Here are Maven commands for generating 
     projects that use JSP (JSPX) and
@@ -197,10 +197,10 @@ project and deploy your PortletMVC4Spring Portlet to @product@.
 10. Modify your `webapp/WEB-INF/web.xml` as desired. It specifies 
     [`ViewRendererServlet`](https://liferay.github.io/portletmvc4spring/apidocs/com/liferay/portletmvc4spring/ViewRendererServlet.html)
     (required). `ViewRendererServlet` converts portlet requests into servlet
-    requests and enables the view to be rendered using the
-    entire normal Spring Web MVC infrastructure and the infrastructure's
-    renderers for JSP, Thymeleaf, Velocity, and more. Here's the
-    `ViewRendererServlet` servlet element:
+    requests and enables the view to be rendered using the entire normal Spring
+    Web MVC infrastructure and the infrastructure's renderers for JSP,
+    Thymeleaf, Velocity, and more. Here's the `ViewRendererServlet` servlet
+    element:
 
     ```xml
     <servlet>
