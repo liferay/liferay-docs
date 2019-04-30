@@ -22,27 +22,27 @@ contains
 
 Here you'll learn how to
 
-- [Install Dev Studio](/developer/reference/-/knowledge_base/7-2/installing-liferay-dev-studio)
-- [Set Proxy Requirements](/developer/reference/-/knowledge_base/7-2/setting-proxy-requirements-for-dev-studio)
-- [Install a Liferay server](/developer/reference/-/knowledge_base/7-2/installing-a-liferay-server-in-dev-studio)
-- [Import a Liferay project](/developer/reference/-/knowledge_base/7-2/importing-projects-in-dev-studio)
-- [Use the Gogo Shell](/developer/reference/-/knowledge_base/7-2/using-the-gogo-shell-in-dev-studio)
-- [Search @product@ source](/developer/reference/-/knowledge_base/7-2/searching-product-source-in-dev-studio)
-- [Debug @product@ source](/developer/reference/-/knowledge_base/7-2/debugging-product-source-in-dev-studio)
-- [Update Dev Studio](/developer/reference/-/knowledge_base/7-2/updating-liferay-dev-studio)
+- [Install Dev Studio](/docs/7-2/reference/-/knowledge_base/r/installing-liferay-dev-studio)
+- [Set Proxy Requirements](/docs/7-2/reference/-/knowledge_base/r/setting-proxy-requirements-for-dev-studio)
+- [Install a Liferay server](/docs/7-2/reference/-/knowledge_base/r/installing-a-liferay-server-in-dev-studio)
+- [Import a Liferay project](/docs/7-2/reference/-/knowledge_base/r/importing-projects-in-dev-studio)
+- [Use the Gogo Shell](/docs/7-2/reference/-/knowledge_base/r/using-the-gogo-shell-in-dev-studio)
+- [Search @product@ source](/docs/7-2/reference/-/knowledge_base/r/searching-product-source-in-dev-studio)
+- [Debug @product@ source](/docs/7-2/reference/-/knowledge_base/r/debugging-product-source-in-dev-studio)
+- [Update Dev Studio](/docs/7-2/reference/-/knowledge_base/r/updating-liferay-dev-studio)
 
 You can also find
-[Gradle](/developer/reference/-/knowledge_base/7-2/gradle-in-dev-studio) and
-[Maven](/developer/reference/-/knowledge_base/7-2/maven-in-dev-studio) reference
+[Gradle](/docs/7-2/reference/-/knowledge_base/r/gradle-in-dev-studio) and
+[Maven](/docs/7-2/reference/-/knowledge_base/r/maven-in-dev-studio) reference
 articles that highlight popular use cases for those respective build tools in
 Dev Studio.
 
 For help
-[creating](/developer/reference/-/knowledge_base/7-2/creating-a-project#liferay-dev-studio)
+[creating](/docs/7-2/reference/-/knowledge_base/r/creating-a-project#liferay-dev-studio)
 and
-[deploying](/developer/reference/-/knowledge_base/7-2/deploying-a-project#liferay-dev-studio)
+[deploying](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project#liferay-dev-studio)
 projects with Dev Studio, or
-[creating a Liferay Workspace](/developer/reference/-/knowledge_base/7-2/creating-a-liferay-workspace#liferay-dev-studio),
+[creating a Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/creating-a-liferay-workspace#liferay-dev-studio),
 visit their respective articles.
 
 Let Dev Studio aid in your conquest for @product@ development. Continue on to

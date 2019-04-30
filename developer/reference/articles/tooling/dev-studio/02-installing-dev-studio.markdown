@@ -37,15 +37,15 @@ update sites in the *Window* &rarr; *Preferences* &rarr; *Install/Update* &rarr;
     [Project SDK with Dev Studio](https://sourceforge.net/projects/lportal/files/Liferay%20IDE/)
     executable that correlates to your operating system. The Project SDK
     includes @ide@,
-    [Liferay Workspace](/developer/reference/-/knowledge_base/7-2/liferay-workspace),
-    and [Blade CLI](/developer/reference/-/knowledge_base/7-2/blade-cli).
+    [Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace),
+    and [Blade CLI](/docs/7-2/reference/-/knowledge_base/r/blade-cli).
 
 3.  Run the Project SDK executable and step through the installer to install
     everything to your machine. For help with setting up proxy settings (if
     necessary), see the
-    [Dev Studio Proxy Settings](/developer/reference/-/knowledge_base/7-2/setting-proxy-requirements-for-liferay-ide)
+    [Dev Studio Proxy Settings](/docs/7-2/reference/-/knowledge_base/r/setting-proxy-requirements-for-liferay-ide)
     and
-    [Liferay Workspace Proxy Settings](/developer/reference/-/knowledge_base/7-2/setting-proxy-requirements-for-liferay-workspace)
+    [Liferay Workspace Proxy Settings](/docs/7-2/reference/-/knowledge_base/r/setting-proxy-requirements-for-liferay-workspace)
     articles for more information.
 
 Congratulations! You've installed Liferay Dev Studio! It's now available in the

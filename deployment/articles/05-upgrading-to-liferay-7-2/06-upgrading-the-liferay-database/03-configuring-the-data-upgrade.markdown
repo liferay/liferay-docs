@@ -40,7 +40,7 @@ Home]/tools/portal-tools-db-upgrade-client/`:
     the upgrade requires. You might want to copy your current portal properties
     (except your database properties) into this file. Before copying your
     current properties, make sure you've
-    [updated the portal properties for @product-ver@](/docs/7-2/deploy/-/knowledge_base/deploy/preparing-to-upgrade-the-product-database). 
+    [updated the portal properties for @product-ver@](/docs/7-2/deploy/-/knowledge_base/d/preparing-to-upgrade-the-product-database). 
 
 Each file's properties are described next. 
 
@@ -111,12 +111,12 @@ you'd use in a `portal-ext.properties` file.
 
 Specify the following information to configure the upgrade: 
 
-`liferay.home:` The [Liferay home folder](/docs/7-2/deploy/-/knowledge_base/deploy/liferay-home) *(required)*
+`liferay.home:` The [Liferay home folder](/docs/7-2/deploy/-/knowledge_base/d/liferay-home) *(required)*
 
 `dl.store.impl:` The implementation for persisting documents to the document
 library store. This property is mandatory if you're using a `*FileSystemStore`
 implementation. If you
-[updated this property in your `portal-ext.properties`](/docs/7-2/deploy/-/knowledge_base/deploy/preparing-a-new-product-server-for-data-upgrade),
+[updated this property in your `portal-ext.properties`](/docs/7-2/deploy/-/knowledge_base/d/preparing-a-new-product-server-for-data-upgrade),
 copy it here. Otherwise, set the property one of these ways:
 
 ```properties
@@ -199,6 +199,6 @@ If you set `autoUpgrade="false"` in a file called
 `com.liferay.portal.upgrade.internal.configuration.ReleaseManagerConfiguration.config`
 and copy the file into the `[Liferay Home]/osgi/configs` folder, the upgrade
 tool opens Gogo shell after the core upgrade. In the Gogo shell, you can 
-[administer module upgrades](/docs/7-2/deploy/-/knowledge_base/deploy/upgrading-modules-using-gogo-shell). 
+[administer module upgrades](/docs/7-2/deploy/-/knowledge_base/d/upgrading-modules-using-gogo-shell). 
 
 It's time to run the upgrade tool. 

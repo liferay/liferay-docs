@@ -18,7 +18,7 @@ Here are the ways to upgrade:
 
 -   **Upgrade the core and the modules separately**:
     Use the upgrade tool (recommended) or
-    [Gogo shell](/docs/7-2/deploy/-/knowledge_base/deploy/upgrading-modules-using-gogo-shell) to upgrade the core. Then use Gogo shell to upgrade each module. 
+    [Gogo shell](/docs/7-2/deploy/-/knowledge_base/d/upgrading-modules-using-gogo-shell) to upgrade the core. Then use Gogo shell to upgrade each module. 
 
 If you are upgrading from Liferay Portal 6.2 or earlier, use the upgrade tool to
 upgrade everything. It's the easiest, most comprehensive way to upgrade from
@@ -36,9 +36,9 @@ a flexible process that adjusts to your preferences.
 | micro version changes when you want, even outside of major or minor version
 | upgrades. Before using the upgrade tool to execute a fix pack's micro upgrade
 | process, however, you must shut down the server, install the fix pack, and 
-| [back up the @product@ database, installation, and Document Library store](/docs/7-2/deploy/-/knowledge_base/deploy/backing-up-a-liferay-installation). 
+| [back up the @product@ database, installation, and Document Library store](/docs/7-2/deploy/-/knowledge_base/d/backing-up-a-liferay-installation). 
 | 
 | Module micro database schema version changes in fix packs execute
 | automatically on server startup unless the
-| [`autoUpgrade` setting](/docs/7-2/deploy/-/knowledge_base/deploy/configuring-the-data-upgrade)
+| [`autoUpgrade` setting](/docs/7-2/deploy/-/knowledge_base/d/configuring-the-data-upgrade)
 | is `false` (the default is `true`). 

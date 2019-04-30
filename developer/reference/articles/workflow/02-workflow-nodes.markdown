@@ -189,7 +189,7 @@ must complete just one of the forks before processing continues.
 
 ## Task Nodes
 
-[Task nodes](/develop/tutorials/-/knowledge_base/7-1/workflow-task-nodes)
+[Task nodes](/docs/7-1/frameworks/-/knowledge_base/frameworks/workflow-task-nodes)
 are at the core of the workflow definition. They're the part where a user
 interacts with the asset in some way. Tasks can also have sub-elements,
 including notifications, assignments, and task timers.
