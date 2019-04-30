@@ -34,8 +34,8 @@ data upgrade environment:
 | **Important:** Test your database configuration to determine tuning that’s 
 | best for your system, and consult your DBA as appropriate. **Never** use
 | database upgrade configurations in production. Always restore your production
-| database settings before starting the server for the regular use in
-| production. 
+| database settings before starting your @product@ server for production use 
+| with the database. 
 
 The configurations you'll see here were optimal for upgrading data in a Liferay
 6.2 EE installation that had these characteristics: 
@@ -114,7 +114,7 @@ In addition to the default database configuration, apply these settings:
 
 ### Oracle Database 
 
-Default configuration worked properly. It configures
+The default configuration works well. It configures
 [asynchronous I/O to disk](https://docs.oracle.com/database/121/REFRN/GUID-FD8D1BD2-0F85-4844-ABE7-57B4F77D1608.htm#REFRN10048)
 automatically. 
 
