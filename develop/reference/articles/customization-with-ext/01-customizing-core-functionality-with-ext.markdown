@@ -51,15 +51,11 @@ You'll start by creating an Ext plugin.
 An Ext plugin is a powerful tool for extending @product@. Because it increases		
 the complexity of your @product@ installation, you should only use an Ext plugin		
 if you're sure you can't accomplish your goal in a different way. You can		
-create Ext plugins using the pre-configured `plugins-ext` project
+create Ext plugins using the pre-configured `war-core-ext` project
 template/archetype. See the
-[plugins-ext](/develop/reference/-/knowledge_base/7-1/plugins-ext-template)
+[war-core-ext](/develop/reference/-/knowledge_base/7-1/war-core-ext-template)
 project template article for information on how to create an Ext plugin, its
 folder structure, and other important details.
-
-<!-- TODO: Verify new project template (plugins-ext?) name when it's available.
-Also fix link.
--->
 
 It's recommended to create and develop your Ext plugin in a
 [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace).
@@ -72,38 +68,13 @@ Next you'll learn the anatomy of an Ext plugin.
 
 ### Anatomy of an Ext Plugin [](id=anatomy-of-an-ext-plugin)
 
-There are two ways you can structure your Ext plugin. The `plugins-ext` project
-template/archetype creates the default layout:
-
-- `[project name]-ext/`
-    - `docroot/`
-        - `WEB-INF/`
-            - `ext-impl/`
-                - `src/`
-            -  `ext-lib/`
-                - `global/`
-                - `portal/`
-            - `ext-kernel/`
-                - `src/`
-            - `ext-util-bridges/`
-                - `src/`
-            - `ext-util-java/`
-                - `src/`
-            - `ext-util-taglib/`
-                - `src/`
-            - `ext-web/`
-                - `docroot/`
-                    - `WEB-INF/`
-
-There is also an alternative layout you can follow:
+There are two ways you can structure your Ext plugin. The `war-core-ext`
+project template/archetype creates the default layout:
 
 - `[project name]-ext/`
     - `src/`
         - `extImpl/`
             - `resources/`
-        - `extLib/`
-            - `global/`
-            - `portal/` 
         - `extKernel/`
             - `resources/`
         - `extUtilBridges/`
@@ -118,34 +89,47 @@ There is also an alternative layout you can follow:
                     - `ext-web/`
                         - `docroot/`
 
+You can also follow the legacy layout that was used for Ext plugins created with
+the Plugins SDK in past versions:
+
+- `[project name]-ext/`
+    - `docroot/`
+        - `WEB-INF/`
+            - `ext-impl/`
+                - `src/`
+            - `ext-kernel/`
+                - `src/`
+            - `ext-util-bridges/`
+                - `src/`
+            - `ext-util-java/`
+                - `src/`
+            - `ext-util-taglib/`
+                - `src/`
+            - `ext-web/`
+                - `docroot/`
+                    - `WEB-INF/`
+
 Although the folder names are slightly different, they work the same. This
 article will refer to the default structure and naming. Here are detailed
 explanations of the subfolders: 
 
-- `ext-impl/src`: Contains the custom implementation classes and classes that
+- `extImpl`: Contains the custom implementation classes and classes that
   override core classes from `portal-impl.jar`. 
 
-- `ext-lib/global`: Contains libraries to be copied to the application server's
-  global classloader upon deployment of the Ext plugin. 
-    
-- `ext-lib/portal`: Contains libraries to be copied inside Liferay's main 
-  application. These libraries are usually necessary because they're invoked
-  from classes you add in `ext-impl/src`. 
+- `extKernel`: Contains classes that should be available to other plugins. In
+  advanced scenarios, this folder can be used to hold classes that overwrite
+  classes from `portal-kernel.jar`. 
 
-- `ext-kernel/src`: Contains classes that should be available to other
-  plugins. In advanced scenarios, this folder can be used to hold classes that
-  overwrite classes from `portal-kernel.jar`. 
-
-- `ext-util-bridges`, `ext-util-java` and `ext-util-taglib`: These folders are
-  needed only in scenarios where you must customize these Liferay libraries:
+- `extUtilBridges`, `extUtilJava` and `extUtilTaglib`: These folders are needed
+  only in scenarios where you must customize these Liferay libraries:
   `util-bridges.jar`, `util-java.jar` and `util-taglib.jar`, respectively. If
   you're not customizing any of these libraries, you can ignore these folders. 
 
-- `ext-web/docroot`: Contains the web application's configuration files,
-  including `WEB-INF/struts-config-ext.xml`, which lets you customize Liferay's
-  core struts classes. Note that for @product-ver@, there are very few entities
-  left to override in the `struts-config.xml` file. Any JSPs that you're
-  customizing also belong here. 
+- `main/webapp/WEB-INF/ext-web/docroot`: Contains the web application's
+  configuration files, including `WEB-INF/struts-config-ext.xml`, which lets you
+  customize Liferay's core struts classes. Note that for @product-ver@, there
+  are very few entities left to override in the `struts-config.xml` file. Any
+  JSPs that you're customizing also belong here. 
 
 By default, several files are also added to the plugin. Here are the most 
 significant files: 
@@ -255,19 +239,19 @@ All the configuration files in @product@ are listed below by their path in an
 Ext plugin folder. Here are descriptions of what each file is for and the path
 to the original file in @product@: 
 
-- `ext-impl/src/META-INF/ext-model-hints.xml`
+- `extImpl/resources/META-INF/ext-model-hints.xml`
     - **Description:** Overrides the default properties of the fields of
       the data models used by @product@'s core portlets. These properties
       determine how the form fields for each model are rendered. 
     - **Original file in @product@:**
       `portal-impl/src/META-INF/portal-model-hints.xml` 
-- `ext-impl/src/META-INF/ext-spring.xml`
+- `extImpl/resources/META-INF/ext-spring.xml`
     - **Description:** Overrides the Spring configuration used by
       @product@ and any of its core portlets. It's most commonly used to
       configure specific data sources or swap the implementation of a default
       service with a custom one.
     - **Original file in @product@:** `portal-impl/src/META-INF/*-spring.xml`
-- `ext-impl/src/META-INF/portal-log4j-ext.xml`
+- `extImpl/resources/META-INF/portal-log4j-ext.xml`
     - **Description:** Allows overriding the Log4j configuration. It can be used
       to configure appenders for log file location, naming, and rotation. See
       the
