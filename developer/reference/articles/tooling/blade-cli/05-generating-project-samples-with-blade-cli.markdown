@@ -10,7 +10,7 @@ Liferay provides many useful
 [sample projects](https://github.com/liferay/liferay-blade-samples) for those
 interested in learning best practices for @product@ projects. You can learn more
 about these samples by visiting 
-[Sample Projects](/docs/7-2/reference/-/knowledge_base/reference/sample-projects).
+[Sample Projects](/docs/7-2/reference/-/knowledge_base/r/sample-projects).
 
 Rather than cloning the repository, you can generate these samples using Blade
 CLI for convenience.

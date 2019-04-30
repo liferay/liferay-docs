@@ -10,12 +10,12 @@ There are several methods in
 [`DLAppService`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html) 
 that get lists containing multiple entity types. This is discussed in more 
 detail in 
-[Getting Entities](/docs/7-2/frameworks/-/knowledge_base/frameworks/getting-entities). 
+[Getting Entities](/docs/7-2/frameworks/-/knowledge_base/f/getting-entities). 
 The steps here show you how to use the 
 [`getFileEntriesAndFileShortcuts`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#getFileEntriesAndFileShortcuts-long-long-int-int-int-) 
 method, but you can apply them to other such methods as well. 
 For general information on using the Documents and Media API, see 
-[Documents and Media API](/docs/7-2/frameworks/-/knowledge_base/frameworks/documents-and-media-api). 
+[Documents and Media API](/docs/7-2/frameworks/-/knowledge_base/f/documents-and-media-api). 
 
 Note that the example in these steps gets all the files and shortcuts in the 
 default Site repository's root folder: 

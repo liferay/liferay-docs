@@ -17,7 +17,7 @@ If you plan to write a new application and deploy it on @product@, you can use
 the frameworks you know along with the build tools (Gradle, Maven) you know.
 Liferay also offers its own development framework called MVC Portlet that it
 uses to develop applications. When you want to integrate with 
-[Liferay services](/docs/7-2/appdev/-/knowledge_base/appdev/services-development)
+[Liferay services](/docs/7-2/appdev/-/knowledge_base/a/services-development)
 and frameworks such as permissions, assets, and indexers, you'll find that these
 easily and seamlessly blend with your application to provide a great user
 experience.

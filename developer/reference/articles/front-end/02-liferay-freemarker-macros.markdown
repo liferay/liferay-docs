@@ -12,7 +12,7 @@ header-id: product-freemarker-macros
 that you can use in your theme templates to include theme resources, standard 
 portlets, and more. @product@ also exposes its taglibs as FreeMarker 
 macros. See each 
-[taglib's documentation](/docs/7-2/frameworks/-/knowledge_base/frameworks/front-end-taglibs) 
+[taglib's documentation](/docs/7-2/frameworks/-/knowledge_base/f/front-end-taglibs) 
 for more information on using the taglib in your FreeMarker templates. This 
 reference guide lists the available FreeMarker macros that @product@ offers. 
 
@@ -41,7 +41,7 @@ along with its language `key` parameter:
     <@liferay.language key="powered-by" />
 
 This example includes the Search portlet with its 
-[Portlet Decorator](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-configurable-styles-for-portlet-wrappers) 
+[Portlet Decorator](/docs/7-2/frameworks/-/knowledge_base/f/creating-configurable-styles-for-portlet-wrappers) 
 portlet preference set to barebone:
 
     <@liferay.search default_preferences=

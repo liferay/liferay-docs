@@ -15,9 +15,9 @@ following topics:
 - [Using the POM Graphic Editor](#using-the-pom-graphic-editor)
 
 Note that
-[creating](/docs/7-2/reference/-/knowledge_base/reference/creating-a-project#liferay-dev-studio)
+[creating](/docs/7-2/reference/-/knowledge_base/r/creating-a-project#liferay-dev-studio)
 and
-[deploying](/docs/7-2/reference/-/knowledge_base/reference/deploying-a-project#liferay-dev-studio)
+[deploying](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project#liferay-dev-studio)
 Maven projects with Dev Studio are covered in their respective articles.
 
 First you'll install the necessary Maven plugins for Dev Studio.
@@ -95,7 +95,7 @@ steps outlined below:
 
 Now your Maven project is available from the Package Explorer. To import a
 Liferay project built with Maven, see the
-[Importing Projects in Dev Studio](/docs/7-2/reference/-/knowledge_base/reference/importing-projects-in-dev-studio)
+[Importing Projects in Dev Studio](/docs/7-2/reference/-/knowledge_base/r/importing-projects-in-dev-studio)
 Next you'll learn about Dev Studio's POM graphical editor.
 
 ### Using the POM Graphic Editor

@@ -64,7 +64,7 @@ to show.
 
 | **Note:** For a list of the criterion classes and return types that @product@
 | provides, see
-| [Item Selector Criterion and Return Types](/docs/7-2/reference/-/knowledge_base/reference/item-selector-criterion-and-return-types).
+| [Item Selector Criterion and Return Types](/docs/7-2/reference/-/knowledge_base/r/item-selector-criterion-and-return-types).
 
 **Criterion Handler:** A class that gets the appropriate selection view. Each 
 criterion requires a criterion handler. Criterion handler classes extend 

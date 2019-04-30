@@ -10,7 +10,7 @@ If you have proxy server requirements and want to use Blade CLI, you must
 configure your http(s) proxy for it using JPM: 
 
 1.  Install JPM and Blade CLI using the Liferay Project SDK installer. Read the
-    [Installing Blade CLI](/docs/7-2/reference/-/knowledge_base/reference/installing-blade-cli)
+    [Installing Blade CLI](/docs/7-2/reference/-/knowledge_base/r/installing-blade-cli)
     tutorial for more details.
 
 2.  Execute the following command to configure your proxy requirements for Blade

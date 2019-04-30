@@ -11,4 +11,4 @@ development.
 
 The topics below are covered in this section:
 
-- [@product@ FreeMarker Macros](/docs/7-2/reference/-/knowledge_base/reference/product-freemarker-macros)
+- [@product@ FreeMarker Macros](/docs/7-2/reference/-/knowledge_base/r/product-freemarker-macros)

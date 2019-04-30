@@ -59,7 +59,7 @@ bundles.
 
 Bundles are released as 7-Zip (`.7z`) and gzipped (`.tar.gz`) compressed file
 archive formats. 
-[Installing @product@](/docs/7-2/deploy/-/knowledge_base/deploy/installing-product)
+[Installing @product@](/docs/7-2/deploy/-/knowledge_base/d/installing-product)
 demonstrates installing @product@ from a bundle. Follow its instructions once
 you've prepared for installing @product@ (see the next article). 
 

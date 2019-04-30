@@ -8,9 +8,9 @@ header-id: moving-folders-and-files
 
 To move folders and files with the Documents and Media API, use the `moveFolder` 
 and `moveFileEntry` methods discussed in 
-[Copying and Moving Entities](/docs/7-2/frameworks/-/knowledge_base/frameworks/copying-and-moving-entities). 
+[Copying and Moving Entities](/docs/7-2/frameworks/-/knowledge_base/f/copying-and-moving-entities). 
 The steps here show you how. For general information on using the API, see 
-[Documents and Media API](/docs/7-2/frameworks/-/knowledge_base/frameworks/documents-and-media-api). 
+[Documents and Media API](/docs/7-2/frameworks/-/knowledge_base/f/documents-and-media-api). 
 
 Follow these steps to use `moveFolder` and `moveFileEntry` to move a folder and 
 a file, respectively. This example does both to demonstrate the procedures: 
@@ -38,7 +38,7 @@ a file, respectively. This example does both to demonstrate the procedures:
                 DLFileEntry.class.getName(), actionRequest);
 
     For more information on `ServiceContext`, see the tutorial 
-    [Understanding ServiceContext](/docs/7-2/frameworks/-/knowledge_base/frameworks/understanding-servicecontext). 
+    [Understanding ServiceContext](/docs/7-2/frameworks/-/knowledge_base/f/understanding-servicecontext). 
 
 3.  Call the service reference's method(s). This example calls `moveFolder` to 
     move a folder (`folderId`) to a different folder (`newFolderId`). It then 
@@ -51,4 +51,4 @@ a file, respectively. This example does both to demonstrate the procedures:
 
 ## Related Topics
 
-[Copying Folders](/docs/7-2/frameworks/-/knowledge_base/frameworks/copying-folders)
+[Copying Folders](/docs/7-2/frameworks/-/knowledge_base/f/copying-folders)

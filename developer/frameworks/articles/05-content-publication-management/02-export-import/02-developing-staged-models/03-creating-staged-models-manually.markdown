@@ -7,16 +7,16 @@ header-id: creating-staged-models-manually
 [TOC levels=1-4]
 
 There are times when using
-[Service Builder to generate your staged models](/docs/7-2/frameworks/-/knowledge_base/frameworks/generating-staged-models-using-service-builder)
+[Service Builder to generate your staged models](/docs/7-2/frameworks/-/knowledge_base/f/generating-staged-models-using-service-builder)
 is not practical. In these cases, you should create your staged models manually.
 Make sure to read the
-[Adapting Your Business Logic to Build Staged Models](/docs/7-2/frameworks/-/knowledge_base/frameworks/understanding-staged-models#adapting-your-business-logic-to-build-staged-models)
+[Adapting Your Business Logic to Build Staged Models](/docs/7-2/frameworks/-/knowledge_base/f/understanding-staged-models#adapting-your-business-logic-to-build-staged-models)
 section to determine if creating staged models manually is beneficial for your
 use case.
 
 In this tutorial, you'll explore how the Asset Link framework (a @product@
 framework used for
-[relating assets](/docs/7-2/user/-/knowledge_base/user/defining-content-relationships))
+[relating assets](/docs/7-2/user/-/knowledge_base/u/defining-content-relationships))
 manually creates staged models. This framework is separate from Export/Import
 and is referenced solely as an example for how to leverage the
 [ModelAdapterBuilder](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/adapter/builder/ModelAdapterBuilder.html)
@@ -25,7 +25,7 @@ framework, which lets you adapt your model classes to staged models.
 Follow the steps below to leverage the Model Adapter Builder in your app.
 
 1.  Create a new interface that extends one of the
-    [staged model interfaces](/docs/7-2/reference/-/knowledge_base/reference/staged-model-interfaces)
+    [staged model interfaces](/docs/7-2/reference/-/knowledge_base/r/staged-model-interfaces)
     and your model specific interface. For example,
 
     ```java
@@ -180,7 +180,7 @@ Follow the steps below to leverage the Model Adapter Builder in your app.
     ```
 
     Once you've created
-    [Staged Model Data Handlers](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-staged-model-data-handlers),
+    [Staged Model Data Handlers](/docs/7-2/frameworks/-/knowledge_base/f/creating-staged-model-data-handlers),
     you can begin exporting/importing your now Staging-compatible entities:
 
     ```java

@@ -29,7 +29,7 @@ Then re-index @product@'s search indexes. Don't just do this blindly,
 however. By default, @product@ ships with an embedded configuration for
 Elasticsearch. This configuration works great for demo purposes, but is not
 supported in production. Make sure to
-[install and configure a standalone Elasticsearch instance to run in production](/docs/7-2/deploy/-/knowledge_base/deploy/installing-elasticsearch).
+[install and configure a standalone Elasticsearch instance to run in production](/docs/7-2/deploy/-/knowledge_base/d/installing-elasticsearch).
 
 ## Enabling Web Content View Permissions
 

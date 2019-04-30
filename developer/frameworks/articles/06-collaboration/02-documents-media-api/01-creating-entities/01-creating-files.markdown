@@ -12,9 +12,9 @@ To create a file via the Documents and Media API, use one of the overloaded
 The steps here show you how to do this, using the method that contains 
 `InputStream` as an example. For detailed information on this and other 
 `addFileEntry` methods, see 
-[Creating Files, Folders, and Shortcuts](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-files-folders-and-shortcuts). 
+[Creating Files, Folders, and Shortcuts](/docs/7-2/frameworks/-/knowledge_base/f/creating-files-folders-and-shortcuts). 
 For general information on using the API, see 
-[Documents and Media API](/docs/7-2/frameworks/-/knowledge_base/frameworks/documents-and-media-api). 
+[Documents and Media API](/docs/7-2/frameworks/-/knowledge_base/f/documents-and-media-api). 
 
 Follow these steps to create a file via the Documents and Media API: 
 
@@ -49,7 +49,7 @@ Follow these steps to create a file via the Documents and Media API:
         }
 
     For more information on `ServiceContext`, see 
-    [Understanding ServiceContext](/docs/7-2/frameworks/-/knowledge_base/frameworks/understanding-servicecontext). 
+    [Understanding ServiceContext](/docs/7-2/frameworks/-/knowledge_base/f/understanding-servicecontext). 
 
 3.  Call the service reference's `addFileEntry` method with the data from the 
     previous step. Note that this example does so inside the previous step's 
@@ -78,12 +78,12 @@ needs of the Documents and Media app.
 
 ## Related Topics
 
-[Updating Files](/docs/7-2/frameworks/-/knowledge_base/frameworks/updating-files)
+[Updating Files](/docs/7-2/frameworks/-/knowledge_base/f/updating-files)
 
-[Deleting Files](/docs/7-2/frameworks/-/knowledge_base/frameworks/deleting-files)
+[Deleting Files](/docs/7-2/frameworks/-/knowledge_base/f/deleting-files)
 
-[Moving Folders and Files](/docs/7-2/frameworks/-/knowledge_base/frameworks/moving-folders-and-files)
+[Moving Folders and Files](/docs/7-2/frameworks/-/knowledge_base/f/moving-folders-and-files)
 
-[Creating Folders](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-folders)
+[Creating Folders](/docs/7-2/frameworks/-/knowledge_base/f/creating-folders)
 
-[Creating File Shortcuts](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-file-shortcuts)
+[Creating File Shortcuts](/docs/7-2/frameworks/-/knowledge_base/f/creating-file-shortcuts)

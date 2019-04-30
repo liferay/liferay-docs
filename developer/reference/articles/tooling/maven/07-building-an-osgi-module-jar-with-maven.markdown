@@ -57,7 +57,7 @@ Continue on to see how this is done.
     | **Note:** Although WABs can be generated using the `bnd-maven-plugin`,
     | this is not supported by Liferay. WABs should be created as a standard WAR
     | project and deployed to the
-    | [Liferay WAB Generator](/docs/7-2/reference/-/knowledge_base/reference/using-the-wab-generator),
+    | [Liferay WAB Generator](/docs/7-2/reference/-/knowledge_base/r/using-the-wab-generator),
     | which generates a WAB for you.
 
 2.  In your project's `pom.xml` file, add the
@@ -101,7 +101,7 @@ Continue on to see how this is done.
     Your Maven JAR is generated in your project's `/target` folder. You can
     deploy it manually into @product@'s `/deploy` folder, or you can configure
     your project to deploy automatically to @product@ by following the
-    [Deploying a Project](/docs/7-2/reference/-/knowledge_base/reference/deploying-a-project#maven)
+    [Deploying a Project](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project#maven)
     article.
 
 Fantastic! You've configured your Liferay Maven project to package itself into a

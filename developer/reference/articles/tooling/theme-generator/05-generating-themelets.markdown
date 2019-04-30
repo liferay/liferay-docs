@@ -12,7 +12,7 @@ sub-generator to create a themelet.
 ![Figure 1: Themelets can be used to modify one aspect of the UI, that you can then reuse in your other themes.](../../../images/product-menu-animation-themelet.png)
 
 Your first step in creating a themelet is installing the 
-[Liferay Theme Generator](/docs/7-2/reference/-/knowledge_base/reference/installing-the-theme-generator-and-creating-a-theme) 
+[Liferay Theme Generator](/docs/7-2/reference/-/knowledge_base/r/installing-the-theme-generator-and-creating-a-theme) 
 if it's not already installed. Once the generator is installed, you can follow 
 these steps to create a themelet:
 

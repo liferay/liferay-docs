@@ -58,7 +58,7 @@ initiate your custom export/import or staging process.
 It's that easy! To start your own export/import or staging process, you must
 create an `ExportImportConfiguration` object using a combination of the three
 provided `ExportImportConfiguration` factories (outlined
-[here](/docs/7-2/frameworks/-/knowledge_base/frameworks/export-import#export-import-processes)).
+[here](/docs/7-2/frameworks/-/knowledge_base/f/export-import#export-import-processes)).
 Once you have your configuration object, provide it as a parameter in one of the
 many service methods available to you by the Export/Import or Staging interfaces
 to begin your desired process.

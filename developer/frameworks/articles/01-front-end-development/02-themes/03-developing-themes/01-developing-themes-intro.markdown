@@ -7,7 +7,7 @@ header-id: developing-themes
 [TOC levels=1-4]
 
 Theme projects created using the 
-[Liferay Theme Generator](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-themes-with-the-liferay-theme-generator) 
+[Liferay Theme Generator](/docs/7-2/frameworks/-/knowledge_base/f/creating-themes-with-the-liferay-theme-generator) 
 have access to several 
 [gulp](https://www.npmjs.com/package/gulp) 
 tasks you can execute to manage and develop your theme. This section covers the 
@@ -45,8 +45,8 @@ caching for layout and FreeMarker templates, lets you see your changes more
 quickly. These developer settings are defined in the 
 [`portal-developer.properties` file](https://github.com/liferay/liferay-portal/blob/7.2.x/portal-impl/src/portal-developer.properties). 
 See 
-[Using Developer Mode with Themes](/docs/7-2/frameworks/-/knowledge_base/frameworks/using-developer-mode-with-themes) 
+[Using Developer Mode with Themes](/docs/7-2/frameworks/-/knowledge_base/f/using-developer-mode-with-themes) 
 to learn how to enable Developer Mode in your app server. You can also use the 
-[Gulp Watch task](/docs/7-2/frameworks/-/knowledge_base/frameworks/automatically-deploying-theme-changes) 
+[Gulp Watch task](/docs/7-2/frameworks/-/knowledge_base/f/automatically-deploying-theme-changes) 
 to test theme changes on a proxy port before deploying your theme to your 
 server. 

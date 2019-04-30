@@ -70,7 +70,7 @@ few useful implementations in the package
 `RepositoryModelTitleComparator`: Sorts by title. 
 
 See 
-[Getting Files](/docs/7-2/frameworks/-/knowledge_base/frameworks/getting-files) 
+[Getting Files](/docs/7-2/frameworks/-/knowledge_base/f/getting-files) 
 for step-by-step instructions on using the above method families. 
 
 ## Folders
@@ -94,7 +94,7 @@ method:
 
 Note that there are several other `getFolders` methods in `DLAppService`. Use 
 the one that best matches your use case. See 
-[Getting Folders](/docs/7-2/frameworks/-/knowledge_base/frameworks/getting-folders) 
+[Getting Folders](/docs/7-2/frameworks/-/knowledge_base/f/getting-folders) 
 for step-by-step instructions on using these `getFolders` methods. 
 
 ## Multiple Entity Types
@@ -105,13 +105,13 @@ as those already described for retrieving files and folders. For example, the
 [`getFileEntriesAndFileShortcuts`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#getFileEntriesAndFileShortcuts-long-long-int-int-int-) 
 method gets files and shortcuts from a given repository and folder. Its `status` 
 parameter specifies a 
-[workflow](/docs/7-2/user/-/knowledge_base/user/workflow) 
+[workflow](/docs/7-2/user/-/knowledge_base/u/workflow) 
 status. As before, the `start` and `end` parameters control pagination of the 
 entities: 
 
     getFileEntriesAndFileShortcuts(long repositoryId, long folderId, int status, int start, int end)
 
 For step-by-step instructions on calling this method and others like it, see 
-[Getting Multiple Entity Types](/docs/7-2/frameworks/-/knowledge_base/frameworks/getting-multiple-entity-types). 
+[Getting Multiple Entity Types](/docs/7-2/frameworks/-/knowledge_base/f/getting-multiple-entity-types). 
 To see all such methods, see the `DLAppService` 
 [Javadoc](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html). 

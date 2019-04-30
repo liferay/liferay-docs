@@ -9,7 +9,7 @@ header-id: displaying-adapted-images-in-your-app
 Follow these steps to display adapted images in your app with the Adaptive Media 
 [taglib](https://github.com/liferay/com-liferay-adaptive-media/tree/master/adaptive-media-image-taglib). 
 For more information, see 
-[The Adaptive Media Taglib](/docs/7-2/frameworks/-/knowledge_base/frameworks/adaptive-media#the-adaptive-media-taglib). 
+[The Adaptive Media Taglib](/docs/7-2/frameworks/-/knowledge_base/f/adaptive-media#the-adaptive-media-taglib). 
 
 1.  Include the taglib dependency in your project. For example, if you're using 
     Gradle you must add the following line in your project's `build.gradle` 
@@ -34,7 +34,7 @@ For more information, see
 
 For example, this `view.jsp` uses the taglib to display the adapted images 
 in a grid with the `col-md-6` 
-[column container class](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-layout-templates-manually): 
+[column container class](/docs/7-2/frameworks/-/knowledge_base/f/creating-layout-templates-manually): 
 
 ```markup
         <%@ include file="/init.jsp" %>
@@ -74,14 +74,14 @@ in a grid with the `col-md-6`
 
 Looking at the generated markup, you can see that it uses the `<picture>` 
 tag as described in 
-[Creating Content with Adapted Images](/docs/7-2/user/-/knowledge_base/user/creating-content-with-adapted-images). 
+[Creating Content with Adapted Images](/docs/7-2/user/-/knowledge_base/u/creating-content-with-adapted-images). 
 
 ![Figure 1: The Adaptive Media Samples app shows all the site's adapted images.](../../../images/adaptive-media-sample.png)
 
 ## Related Topics
 
-[Adaptive Media](/docs/7-2/frameworks/-/knowledge_base/frameworks/adaptive-media)
+[Adaptive Media](/docs/7-2/frameworks/-/knowledge_base/f/adaptive-media)
 
-[Finding Adapted Images](/docs/7-2/frameworks/-/knowledge_base/frameworks/finding-adapted-images)
+[Finding Adapted Images](/docs/7-2/frameworks/-/knowledge_base/f/finding-adapted-images)
 
-[Creating an Image Scaler](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-an-image-scaler)
+[Creating an Image Scaler](/docs/7-2/frameworks/-/knowledge_base/f/creating-an-image-scaler)

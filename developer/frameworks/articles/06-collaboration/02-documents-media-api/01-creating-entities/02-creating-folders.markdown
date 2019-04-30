@@ -11,9 +11,9 @@ must use the
 [`DLAppService`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html) 
 interface's `addFolder` method. The steps here show you how to do this. For more 
 detailed information, see 
-[Creating Files, Folders, and Shortcuts](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-files-folders-and-shortcuts). 
+[Creating Files, Folders, and Shortcuts](/docs/7-2/frameworks/-/knowledge_base/f/creating-files-folders-and-shortcuts). 
 For general information on using the API, see 
-[Documents and Media API](/docs/7-2/frameworks/-/knowledge_base/frameworks/documents-and-media-api). 
+[Documents and Media API](/docs/7-2/frameworks/-/knowledge_base/f/documents-and-media-api). 
 
 Follow these steps to create a folder with the `DLAppService` method 
 `addFolder`: 
@@ -38,7 +38,7 @@ Follow these steps to create a folder with the `DLAppService` method
                     DLFolder.class.getName(), actionRequest);
 
     For more information on `ServiceContext`, see the tutorial 
-    [Understanding ServiceContext](/docs/7-2/frameworks/-/knowledge_base/frameworks/understanding-servicecontext). 
+    [Understanding ServiceContext](/docs/7-2/frameworks/-/knowledge_base/f/understanding-servicecontext). 
 
 3.  Call the service reference's `addFolder` method with the data from the 
     previous step: 
@@ -61,10 +61,10 @@ app.
 
 ## Related Topics
 
-[Updating Folders](/docs/7-2/frameworks/-/knowledge_base/frameworks/updating-folders)
+[Updating Folders](/docs/7-2/frameworks/-/knowledge_base/f/updating-folders)
 
-[Deleting Folders](/docs/7-2/frameworks/-/knowledge_base/frameworks/deleting-folders)
+[Deleting Folders](/docs/7-2/frameworks/-/knowledge_base/f/deleting-folders)
 
-[Copying Folders](/docs/7-2/frameworks/-/knowledge_base/frameworks/copying-folders)
+[Copying Folders](/docs/7-2/frameworks/-/knowledge_base/f/copying-folders)
 
-[Moving Folders and Files](/docs/7-2/frameworks/-/knowledge_base/frameworks/moving-folders-and-files)
+[Moving Folders and Files](/docs/7-2/frameworks/-/knowledge_base/f/moving-folders-and-files)

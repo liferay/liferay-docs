@@ -13,7 +13,7 @@ sub-generator to create a layout template.
 
 Your first step in creating a layout template with the Liferay Theme Generator's 
 Layouts sub-generator is installing the 
-[Liferay Theme Generator](/docs/7-2/reference/-/knowledge_base/reference/installing-the-theme-generator-and-creating-a-theme) 
+[Liferay Theme Generator](/docs/7-2/reference/-/knowledge_base/r/installing-the-theme-generator-and-creating-a-theme) 
 if it's not already installed. Once the generator is installed, you can follow 
 these steps to create a layout template:
 
@@ -25,7 +25,7 @@ these steps to create a layout template:
     | `src/layouttpl/custom` folder. This **only works** for generated themes.
 
 2.  Run The Layouts sub-generator with the command below, and use the 
-    [available options](/docs/7-2/reference/-/knowledge_base/reference/layouts-sub-generator-options) 
+    [available options](/docs/7-2/reference/-/knowledge_base/r/layouts-sub-generator-options) 
     to create your layout: 
     
         yo liferay-theme:layout
@@ -34,7 +34,7 @@ these steps to create a layout template:
 
 3.  Run `gulp deploy` to deploy your layout template to the server you 
     specified, or deploy your theme if the layout is 
-    [bundled with it](/docs/7-2/frameworks/-/knowledge_base/frameworks/including-layout-templates-with-a-theme).
+    [bundled with it](/docs/7-2/frameworks/-/knowledge_base/f/including-layout-templates-with-a-theme).
 
 Awesome! You just created a layout template with the Theme Generator's Layouts 
 sub-generator. Your layout template project should have a file structure similar 

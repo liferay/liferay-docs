@@ -8,7 +8,7 @@ header-id: creating-a-project
 
 Liferay provides many project templates you can use to generate starter projects
 formatted in an opinionated way. Visit the [Project
-Templates](/docs/7-2/reference/-/knowledge_base/reference/project-templates)
+Templates](/docs/7-2/reference/-/knowledge_base/r/project-templates)
 reference section for more information on the available project templates. Each
 project template has different configurable options, so be sure to research
 a project template before generating it.
@@ -16,13 +16,13 @@ a project template before generating it.
 You can use your desired tool to generate a project. The following tools are
 preconfigured for Liferay project generation:
 
-- [Blade CLI](/docs/7-2/reference/-/knowledge_base/reference/blade-cli)
-- [Liferay Dev Studio](/docs/7-2/reference/-/knowledge_base/reference/liferay-dev-studio)
-- [Liferay IntelliJ Plugin](/docs/7-2/reference/-/knowledge_base/reference/liferay-intellij-plugin)
-- [Maven](/docs/7-2/reference/-/knowledge_base/reference/maven)
+- [Blade CLI](/docs/7-2/reference/-/knowledge_base/r/blade-cli)
+- [Liferay Dev Studio](/docs/7-2/reference/-/knowledge_base/r/liferay-dev-studio)
+- [Liferay IntelliJ Plugin](/docs/7-2/reference/-/knowledge_base/r/liferay-intellij-plugin)
+- [Maven](/docs/7-2/reference/-/knowledge_base/r/maven)
 
 It's recommended to create Liferay projects within a
-[Liferay Workspace](/docs/7-2/reference/-/knowledge_base/reference/liferay-workspace).
+[Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace).
 Most tools, however, support creating projects in a standalone environment
 (except for IntelliJ). Visit the appropriate section to learn how to create a
 project with the highlighted tool.
@@ -46,7 +46,7 @@ project with the highlighted tool.
 | create command sequence.
 
 The available configuration options are documented for each
-[project template](/docs/7-2/reference/-/knowledge_base/reference/project-templates).
+[project template](/docs/7-2/reference/-/knowledge_base/r/project-templates).
 Run `blade create --help` for the entire list of available options.
 
 ## Liferay Dev Studio

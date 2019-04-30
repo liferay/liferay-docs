@@ -19,7 +19,7 @@ instance:
   server.
 - *Debug* (![Debug Server](../../../images/icon-debug-server.png)): Starts the
   server in debug mode. For more information on debugging in Dev Studio, see the
-  [Debugging @product@ source in Dev Studio](/docs/7-2/reference/-/knowledge_base/reference/debugging-product-source-in-dev-studio)
+  [Debugging @product@ source in Dev Studio](/docs/7-2/reference/-/knowledge_base/r/debugging-product-source-in-dev-studio)
   article.
 
 Follow these steps to install your server. Note you must have already downloaded

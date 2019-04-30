@@ -23,9 +23,9 @@ Studio.
 - [Gradle Tasks and Executions](#gradle-tasks-and-executions)
 
 Note that
-[creating Liferay Gradle projects](/docs/7-2/reference/-/knowledge_base/reference/creating-a-project#liferay-dev-studio)
+[creating Liferay Gradle projects](/docs/7-2/reference/-/knowledge_base/r/creating-a-project#liferay-dev-studio)
 and
-[deploying Gradle projects](/docs/7-2/reference/-/knowledge_base/reference/deploying-a-project#liferay-dev-studio)
+[deploying Gradle projects](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project#liferay-dev-studio)
 with Dev Studio are covered in their respective articles.
 
 The first thing you'll learn about in this tutorial is creating pure Gradle

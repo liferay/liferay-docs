@@ -8,9 +8,9 @@ header-id: deleting-folders
 
 To delete a folder with the Documents and Media API, you must use one of the two 
 `deleteFolder` methods discussed in 
-[Deleting Entities](/docs/7-2/frameworks/-/knowledge_base/frameworks/deleting-entities). 
+[Deleting Entities](/docs/7-2/frameworks/-/knowledge_base/f/deleting-entities). 
 The steps here show you how. For general information on using the API, see 
-[Documents and Media API](/docs/7-2/frameworks/-/knowledge_base/frameworks/documents-and-media-api). 
+[Documents and Media API](/docs/7-2/frameworks/-/knowledge_base/f/documents-and-media-api). 
 
 Follow these steps to delete a folder: 
 
@@ -50,14 +50,14 @@ app.
 
 ## Related Topics
 
-[Moving Entities to the Recycle Bin](/docs/7-2/frameworks/-/knowledge_base/frameworks/moving-entities-to-the-recycle-bin)
+[Moving Entities to the Recycle Bin](/docs/7-2/frameworks/-/knowledge_base/f/moving-entities-to-the-recycle-bin)
 
-[Creating Folders](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-folders)
+[Creating Folders](/docs/7-2/frameworks/-/knowledge_base/f/creating-folders)
 
-[Updating Folders](/docs/7-2/frameworks/-/knowledge_base/frameworks/updating-folders)
+[Updating Folders](/docs/7-2/frameworks/-/knowledge_base/f/updating-folders)
 
-[Copying Folders](/docs/7-2/frameworks/-/knowledge_base/frameworks/copying-folders)
+[Copying Folders](/docs/7-2/frameworks/-/knowledge_base/f/copying-folders)
 
-[Moving Folders and Files](/docs/7-2/frameworks/-/knowledge_base/frameworks/moving-folders-and-files)
+[Moving Folders and Files](/docs/7-2/frameworks/-/knowledge_base/f/moving-folders-and-files)
 
-[Deleting Files](/docs/7-2/frameworks/-/knowledge_base/frameworks/deleting-files)
+[Deleting Files](/docs/7-2/frameworks/-/knowledge_base/f/deleting-files)
