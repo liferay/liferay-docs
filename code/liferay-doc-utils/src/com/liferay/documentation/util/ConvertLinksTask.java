@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.io.LineNumberReader;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.tools.ant.BuildException;
@@ -44,9 +43,6 @@ public class ConvertLinksTask  extends Task {
 				
 				while ((line = in.readLine()) != null) {
 					
-					// /docs/7-2/user/-/knowledge_base/user/headerID
-					// /discover/portal/-/knowledge_base/7-2/headerID
-					
 					// old link syntax checks
 					if (line.contains("](/discover/portal/")) {
 						
@@ -55,9 +51,10 @@ public class ConvertLinksTask  extends Task {
 						String headerID = getHeaderID(line, findStr, version);
 
 						String newLink = "/docs/" + version + "/user" + findStr +
-								"user/" + headerID;
+								"u/" + headerID;
 						
 						line = line.replace(oldLink, newLink);
+						System.out.println("Converted link for " + filename + ":" + in.getLineNumber());
 					}
 					else if (line.contains("](/discover/deployment/")) {
 						
@@ -66,9 +63,10 @@ public class ConvertLinksTask  extends Task {
 						String headerID = getHeaderID(line, findStr, version);
 						
 						String newLink = "/docs/" + version + "/deploy" + findStr +
-								"deploy/" + headerID;
+								"d/" + headerID;
 						
 						line = line.replace(oldLink, newLink);
+						System.out.println("Converted link for " + filename + ":" + in.getLineNumber());
 						
 					}
 					else if (line.contains("](/develop/tutorials/")) {
@@ -78,9 +76,10 @@ public class ConvertLinksTask  extends Task {
 						String headerID = getHeaderID(line, findStr, version);
 						
 						String newLink = "/docs/" + version + "/tutorials" + findStr +
-								"tutorials/" + headerID;
+								"t/" + headerID;
 						
 						line = line.replace(oldLink, newLink);
+						System.out.println("Converted link for " + filename + ":" + in.getLineNumber());
 						
 					}
 					else if (line.contains("](/develop/reference/")) {
@@ -90,9 +89,10 @@ public class ConvertLinksTask  extends Task {
 						String headerID = getHeaderID(line, findStr, version);
 						
 						String newLink = "/docs/" + version + "/reference" + findStr +
-								"reference/" + headerID;
+								"r/" + headerID;
 						
 						line = line.replace(oldLink, newLink);
+						System.out.println("Converted link for " + filename + ":" + in.getLineNumber());
 						
 					}
 					// new syntax check links
@@ -103,9 +103,23 @@ public class ConvertLinksTask  extends Task {
 						String headerID = getHeaderID(line, findStr, version);
 						
 						String newLink = "/docs/" + version + "/reference" + findStr +
-								"reference/" + headerID;
+								"r/" + headerID;
 						
 						line = line.replace(oldLink, newLink);
+						System.out.println("Converted link for " + filename + ":" + in.getLineNumber());
+						
+					}
+					else if (line.contains("](/developer/appdev/")) {
+						
+						String oldLink = getOldLink("/developer/appdev/", line, findStr);
+						String version = getVersion(line, findStr);
+						String headerID = getHeaderID(line, findStr, version);
+						
+						String newLink = "/docs/" + version + "/appdev" + findStr +
+								"a/" + headerID;
+						
+						line = line.replace(oldLink, newLink);
+						System.out.println("Converted link for " + filename + ":" + in.getLineNumber());
 						
 					}
 					else if (line.contains("](/developer/frameworks/")) {
@@ -115,9 +129,10 @@ public class ConvertLinksTask  extends Task {
 						String headerID = getHeaderID(line, findStr, version);
 						
 						String newLink = "/docs/" + version + "/frameworks" + findStr +
-								"frameworks/" + headerID;
+								"f/" + headerID;
 						
 						line = line.replace(oldLink, newLink);
+						System.out.println("Converted link for " + filename + ":" + in.getLineNumber());
 						
 					}
 					else if (line.contains("](/developer/customization/")) {
@@ -127,9 +142,10 @@ public class ConvertLinksTask  extends Task {
 						String headerID = getHeaderID(line, findStr, version);
 						
 						String newLink = "/docs/" + version + "/customization" + findStr +
-								"customization/" + headerID;
+								"c/" + headerID;
 						
 						line = line.replace(oldLink, newLink);
+						System.out.println("Converted link for " + filename + ":" + in.getLineNumber());
 						
 					}
 					else if (line.contains("](/developer/tutorials/")) {
@@ -139,9 +155,10 @@ public class ConvertLinksTask  extends Task {
 						String headerID = getHeaderID(line, findStr, version);
 						
 						String newLink = "/docs/" + version + "/tutorials" + findStr +
-								"tutorials/" + headerID;
+								"t/" + headerID;
 						
 						line = line.replace(oldLink, newLink);
+						System.out.println("Converted link for " + filename + ":" + in.getLineNumber());
 						
 					}
 					else if (line.contains("](/user/-/knowledge_base/7-")) {
@@ -151,9 +168,10 @@ public class ConvertLinksTask  extends Task {
 						String headerID = getHeaderID(line, findStr, version);
 						
 						String newLink = "/docs/" + version + "/user" + findStr +
-								"user/" + headerID;
+								"u/" + headerID;
 						
 						line = line.replace(oldLink, newLink);
+						System.out.println("Converted link for " + filename + ":" + in.getLineNumber());
 						
 					}
 					else if (line.contains("](/deploy/-/knowledge_base/7-") || 
@@ -172,12 +190,62 @@ public class ConvertLinksTask  extends Task {
 						String headerID = getHeaderID(line, findStr, version);
 						
 						String newLink = "/docs/" + version + "/deploy" + findStr +
-								"deploy/" + headerID;
+								"d/" + headerID;
 						
 						line = line.replace(oldLink, newLink);
+						System.out.println("Converted link for " + filename + ":" + in.getLineNumber());
 						
 					}
-				
+					// newest syntax check links
+					else if (line.contains("](/docs/7-2/reference/-/knowledge_base/reference/")) {
+						
+						line = line.replace(findStr + "reference", findStr + "r");
+
+						System.out.println("Converted link for " + filename + ":" + in.getLineNumber());
+						
+					}
+					else if (line.contains("](/docs/7-2/appdev/-/knowledge_base/appdev/")) {
+						
+						line = line.replace(findStr + "appdev", findStr + "a");
+
+						System.out.println("Converted link for " + filename + ":" + in.getLineNumber());
+						
+					}
+					else if (line.contains("](/docs/7-2/frameworks/-/knowledge_base/frameworks/")) {
+						
+						line = line.replace(findStr + "frameworks", findStr + "f");
+
+						System.out.println("Converted link for " + filename + ":" + in.getLineNumber());
+						
+					}
+					else if (line.contains("](/docs/7-2/customization/-/knowledge_base/customization/")) {
+						
+						line = line.replace(findStr + "customization", findStr + "c");
+
+						System.out.println("Converted link for " + filename + ":" + in.getLineNumber());
+						
+					}
+					else if (line.contains("](/docs/7-2/tutorials/-/knowledge_base/tutorials/")) {
+						
+						line = line.replace(findStr + "tutorials", findStr + "t");
+
+						System.out.println("Converted link for " + filename + ":" + in.getLineNumber());
+						
+					}
+					else if (line.contains("](/docs/7-2/user/-/knowledge_base/user/")) {
+						
+						line = line.replace(findStr + "user", findStr + "u");
+
+						System.out.println("Converted link for " + filename + ":" + in.getLineNumber());
+						
+					}
+					else if (line.contains("](/docs/7-2/deploy/-/knowledge_base/deploy/")) {
+						
+						line = line.replace(findStr + "deploy", findStr + "d");
+
+						System.out.println("Converted link for " + filename + ":" + in.getLineNumber());
+						
+					}
 				
 				out.append(line);
 				out.append("\n");
