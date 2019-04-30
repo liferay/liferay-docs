@@ -14,13 +14,13 @@ The following app servers should be used for Ext module development in
 
 - Tomcat 9.0
 
-In this tutorial, you'll learn how to
+In this section, you'll learn how to
 
-- [Create an Ext module](#creating-an-ext-module)
-- [Develop an Ext module](#developing-an-ext-module)
-- [Deploy an Ext module](#deploying-an-ext-module)
+- [Create an Ext module](/develop/reference/-/knowledge_base/7-1/creating-an-ext-module)
+- [Develop an Ext module](/develop/reference/-/knowledge_base/7-1/developing-an-ext-module)
+- [Deploy an Ext module](/develop/reference/-/knowledge_base/7-1/deploying-an-ext-module)
 
-You'll start by creating an Ext plugin.
+You'll start by creating an Ext module.
 
 ## Creating an Ext Module [](id=creating-an-ext-module)
 
