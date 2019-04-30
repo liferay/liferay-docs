@@ -221,15 +221,22 @@ version, icon, etc.).
 
 ## Additional Requirements for Themes/Site Templates [](id=additional-requirements-for-themes-site-templates)
 
+Themes and Site Templates must include sample content and optionally link to a
+demo website that provides context. This ensures a uniform experience for
+Marketplace users: they download  a Theme or Site Template from Marketplace,
+install it, go to Sites or Site Templates in the Control Panel, and immediately
+see the Theme or Site Template in action. 
+
++$$$
+
+**Important:** Demo sites must be valid. Demo website, Theme, and Site Template sample content must not plagiarize or infringe on copyrights. 
+
+$$$
+
 The
 [Resources Importer](/develop/tutorials/-/knowledge_base/7-1/importing-resources-with-a-theme)
-includes files and web content that imports automatically into Liferay on theme
-deployment. 
-
-All standalone themes uploaded to Liferay Marketplace must use the Resources
-Importer to include files/web content to provide a sample context for their
-theme. This ensures a uniform experience for Marketplace users: users can
-download a theme from Marketplace, install it, go to Sites or Site Templates in
-the Control Panel and immediately see the new theme in action. The 
+includes files and web content that imports automatically into Liferay on Theme
+and Site Template deployment. Use the Resources Importer to include files/web
+content to provide a sample context for your Theme or Site Template.  The 
 [Themes tutorials](/develop/tutorials/-/knowledge_base/7-1/introduction-to-themes)
 provide details. 

@@ -23,13 +23,18 @@ Subsequent visits to
 show the Workspace welcome page, where you can select your workspace or
 any other accessible workspaces for working on projects. 
 
-![Figure 1: Your project's home page welcomes you to all Analytics Cloud offers.](../../images/home-page-intial.png)
+![Figure 1: Your project's home page welcomes you to all Analytics Cloud offers.](../../images/home-page-initial.png)
 
 The project home page describes and links to each key component page:
 
 **Segments:** Aggregate customers into Segments based on similar profiles and
 behavior data. Track Segment growth and discover patterns of interest. Discover
 your target audience.
+
+**Accounts:** Learn how individuals that belong to Salesforce accounts interact 
+with your sites. By combining Salesforce account data with data from other 
+sources, Analytics Cloud presents a holistic view of the account and those in 
+it. 
 
 **Individuals:** Learn how individual customers interact with your Sites. View
 holistic profiles that combine customer's profile data with their page and asset
@@ -49,7 +54,7 @@ multiple Liferay DXP sites and custom data sources.
 Additional shortcuts and overviews are displayed on the right:
 
 **Add Data Source:** Quick access to adding data sources for customer profiles
-and behavior data.
+and behavior data. 
 
 **Usage:** Compares the number of Individuals and Pages you're analyzing to your
 Liferay Analytics Cloud Plan. 
@@ -61,13 +66,13 @@ The *Liferay Analytics Cloud* icon
 of the navigation panel takes you to the home page from wherever you are in the
 application. Beneath it are several other links:
 
-**People**: Learn more about your customers by analyzing them individually as
-*Individuals* or aggregated as *Segments*. 
+**People**: Learn more about your customers by analyzing them individually as 
+*Individuals*, aggregated as *Segments*, or as part of Salesforce *Accounts*. 
 
-**Touchpoints**: Analyze *page* and *asset* performance and view paths users
+**Touchpoints**: Analyze *page* and *asset* performance and view paths users 
 take to your pages. 
 
-**User icon:** Switch projects or sign out.
+**User icon:** Switch projects or sign out. 
 
 **Settings**: Provides options for managing data sources, users, and updating
 your Analytics Cloud usage. 

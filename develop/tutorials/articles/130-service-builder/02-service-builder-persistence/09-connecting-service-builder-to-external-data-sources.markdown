@@ -30,9 +30,29 @@ than `jdbc.default.`. This example uses prefix `jdbc.ext.`:
 
 ## Step 2: Create a Spring Bean that Points to the Data Source [](id=step-2-create-a-spring-bean-that-points-to-the-data-source)
 
-To do this, create an `ext-spring.xml` file in your Service Builder module's
+To do this, create a parent context extension (e.g.,`ext-spring.xml`) in your
+Service Builder module's `src/main/resources/META-INF/spring/parent` folder or
+in your traditional portlet's `WEB-INF/src/META-INF/parent` folder. Create this
+folder if it doesn't exist already. 
+
++$$$
+
+**Note:** Since Liferay DXP 7.1 Fix Pack 3 (included in Service Pack 1) and 
+Liferay Portal 7.1 CE GA2, the Spring extender uses two application contexts for
+Service Builder `*-service` modules. This lets @product@ register extender
+services earlier and separately from the Service Builder services and allows
+disabling features in the parent application context that may no longer be
+needed in the future. For details, see 
+[LPS-85683](https://issues.liferay.com/browse/LPS-85683).
+
+If you're using a prior version of @product@ 7.1, put your parent context
+extension (e.g.,`ext-spring.xml`) in your Service Builder module's
 `src/main/resources/META-INF/spring` folder or in your traditional portlet's
-`WEB-INF/src/META-INF` folder. Define the following elements: 
+`WEB-INF/src/META-INF` folder. 
+
+$$$
+
+Define the following elements: 
 
 1.  A data source factory Spring bean for the data source. It's different based
     on the type.

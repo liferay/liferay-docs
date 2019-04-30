@@ -206,6 +206,15 @@ A complete list of the attributes you can set can be found
         </role-mapper>
     </liferay-portlet-app>
 
+    
+    
++$$$
+
+**Important:** Make your portlet name unique, considering how 
+[@product@ uses the name to create the portlet's ID](/develop/reference/-/knowledge_base/7-1/portlet-descriptor-to-osgi-service-property-map#ten). 
+
+$$$
+
 You'll also notice the `role-mapper` elements included above. They define the
 Liferay roles used in the portlet. 
 

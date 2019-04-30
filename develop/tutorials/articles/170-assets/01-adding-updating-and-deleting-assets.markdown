@@ -111,7 +111,7 @@ method.
         page.getCreateDate(), null, ContentTypes.TEXT_HTML,
         page.getTitle(), null, null, null, null, 0, 0, null);
 
-    Indexer<JournalArticle> indexer = IndexerRegistryUtil.nullSafeGetIndexer(
+    Indexer<WikiPage> indexer = IndexerRegistryUtil.nullSafeGetIndexer(
         WikiPage.class);
 
     indexer.reindex(page);

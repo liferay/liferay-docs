@@ -3,7 +3,7 @@
 The Gulp Gradle plugin lets you run [Gulp](http://gulpjs.com/) tasks as part of
 your build.
 
-The plugin has been successfully tested with Gradle 3.5.1 up to 4.10.2.
+The plugin has been successfully tested with Gradle 4.10.2.
 
 ## Usage [](id=usage)
 
@@ -12,7 +12,7 @@ To use the plugin, include it in your build script:
 ```gradle
 buildscript {
     dependencies {
-        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.gulp", version: "2.0.36"
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.gulp", version: "2.0.46"
     }
 
     repositories {

@@ -1,5 +1,5 @@
-# General Settings[](id=general-settings)
- 
+# General Settings [](id=general-settings)
+
 General virtual instance settings are configured at *Control Panel* &rarr;
 *Configuration* &rarr; *Instance Settings*. The General settings are at the top of
 the first tab, Configuration.

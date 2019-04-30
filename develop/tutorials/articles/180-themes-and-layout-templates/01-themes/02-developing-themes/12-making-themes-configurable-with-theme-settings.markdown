@@ -18,13 +18,9 @@ Follow these steps:
     element inside the parent `<settings>` element for each setting the theme 
     requires:
 
-        <?xml version="1.0"?>
-        <!DOCTYPE look-and-feel PUBLIC "-//Liferay//DTD Look and Feel 7.0.0//EN"
-        "http://www.liferay.com/dtd/liferay-look-and-feel_7_0_0.dtd">
-
         <look-and-feel>
         	<compatibility>
-        		<version>7.0.0+</version>
+        		<version>7.1.0+</version>
         	</compatibility>
         	<theme id="your-theme-name" name="Your Theme Name">
         		<template-extension>ftl</template-extension>

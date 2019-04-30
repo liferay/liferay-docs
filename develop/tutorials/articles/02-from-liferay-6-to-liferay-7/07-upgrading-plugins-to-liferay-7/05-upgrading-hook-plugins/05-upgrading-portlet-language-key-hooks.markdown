@@ -19,7 +19,9 @@ these steps:
 2.  Copy your language properties files into module
     folder `src/main/resources/content/`.
 
-3.  [Create a `ResourceBundleLoader` ](/develop/tutorials/-/knowledge_base/7-1/overriding-a-modules-language-keys#implementing-a-resource-bundle-loader). 
+3.  In your `bnd.bnd` file,
+    [specify OSGi manifest headers](/develop/tutorials/-/knowledge_base/7-1/overriding-a-modules-language-keys)
+    that target the portlet module's resource bundle, but prioritize yours. 
 
 4.  [Deploy your module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#building-and-deploying-a-module). 
 

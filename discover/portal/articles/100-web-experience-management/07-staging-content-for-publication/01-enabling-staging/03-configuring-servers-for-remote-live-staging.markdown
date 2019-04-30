@@ -11,14 +11,8 @@ necessary requirements:
 
 Follow the steps below to configure your servers for Remote Live staging.
 
-1.  Add the following lines to your current Liferay server's
-    `portal-ext.properties` file:
-
-        tunneling.servlet.shared.secret=[secret]
-        tunneling.servlet.shared.secret.hex=true
-
-2.  Add the same lines to your remote Liferay server's `portal-ext.properties`
-    file:
+1.  Add the following lines to your current Liferay server and remote Liferay
+    server's `portal-ext.properties` file:
 
         tunneling.servlet.shared.secret=[secret]
         tunneling.servlet.shared.secret.hex=true
@@ -30,7 +24,7 @@ Follow the steps below to configure your servers for Remote Live staging.
     context (permission checker) from the provided email address, screen name,
     or user ID *without* the user's password.
 
-3.  Specify the values for the servers' `tunneling.servlet.shared.secret`
+2.  Specify the values for the servers' `tunneling.servlet.shared.secret`
     property.
 
     The values for these properties depend on the chosen configured encryption
@@ -49,14 +43,14 @@ Follow the steps below to configure your servers for Remote Live staging.
     To prevent potential character encoding issues, you can use one of the
     following two strategies:
 
-    3a. Use hexadecimal encoding (recommended). For example, if your password
+    2a. Use hexadecimal encoding (recommended). For example, if your password
        was *abcdefghijklmnop*, you'd use the following settings in your
        `portal-ext.properties` file:
 
         tunneling.servlet.shared.secret=6162636465666768696a6b6c6d6e6f70
         tunneling.servlet.shared.secret.hex=true
 
-    3b. Use printable ASCII characters (less secure). This degrades the password
+    2b. Use printable ASCII characters (less secure). This degrades the password
        entropy.
 
     If you don't use hexadecimal encoding (i.e., if you use the default setting
@@ -72,7 +66,24 @@ Follow the steps below to configure your servers for Remote Live staging.
     possession of the key can manage the production server, execute server-side
     Java code, etc.
 
-4.  Update the *TunnelAuthVerfierConfiguration* of your remote Liferay instance.
+3.  Add the following line to your remote Liferay server's
+    `portal-ext.properties` file:
+
+        tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP,[STAGING_IP]
+
+    The `[STAGING_IP]` value must be replaced by the staging server's IP
+    addresses. If the server has multiple interfaces, each IP address must also
+    be added, which would show as a source address for the http(s) requests
+    coming from the staging server. The `SERVER_IP` constant can remain set for
+    this property; it's automatically replaced by the Liferay server's IP
+    addresses.
+
+    If you're validating IPv6 addresses, you must configure the app server's JVM
+    to not force the usage of IPv4 addresses. For example, if you're using
+    Tomcat, add the `-Djava.net.preferIPv4Stack=false` attribute in the
+    `$TOMCAT_HOME\bin\setenv.[bat|sh]` file.
+
+5.  Update the *TunnelAuthVerfierConfiguration* of your remote Liferay instance.
     To do this, navigate to the Control Panel &rarr; *Configuration* &rarr;
     *System Settings* &rarr; *API Authentication* &rarr; *Tunnel Authentication
     Verifiers*. Click */api/liferay/do* and insert the additional IP addresses
@@ -87,7 +98,7 @@ Follow the steps below to configure your servers for Remote Live staging.
         serviceAccessPolicyName=SYSTEM_USER_PASSWORD
         urlsIncludes=/api/liferay/do
 
-5.  Restart both Liferay servers after making these configuration updates. After
+6.  Restart both Liferay servers after making these configuration updates. After
     restarting, log back in to your local Liferay instance as a site
     administrator.
 
@@ -130,18 +141,3 @@ This property sets the file block sizes for remote staging. If a LAR file used
 for remote staging exceeds this size, the file will be split into multiple files
 prior to transmission and then reassembled on the remote server. The default
 buffer size is 10 megabytes.
-
-## Validating IPv6 Addresses [](id=validating-ipv6-addresses)
-
-If your instance is set up to validate IPv6 addresses, you'll need to configure
-your Remote Live Connection Settings. Restart your Liferay instance and navigate
-back to the Staging page. Select the *Remote Live* radio selector and specify
-the fields for your remote site. The *Remote Host/IP* field should match the
-host you specified as your `tunnel.servlet.hosts.allowed` property in the
-`portal-ext.properties` file (e.g., *[0:0:0:0:0:0:0:1]*). Make sure to include
-the brackets. Fill in the rest of the information relevant to your site and
-click *Save*.
-
-To check if the remote site is running on an IPv6 address, add a new application
-to the staged site, and then select *Staging* &rarr; *Publish to Live* from the
-top Control Menu. The changes are published to your remote staged site.

@@ -14,7 +14,7 @@ such as a `Guestbook`. For a user to add an entry to a guestbook, you must check
 if that user has the `ADD_ENTRY` permission for that guestbook. Helper classes
 make it easier to check permissions: 
 
-1.  Right-click the `guestbook-service` module and select *New* &rarr;
+1.  Right-click the `guestbook-web` module and select *New* &rarr;
     *Package*. To follow Liferay's practice, name the package
     `com.liferay.docs.guestbook.web.internal.security.permission.resource`. This
     is where you'll place your helper classes. 

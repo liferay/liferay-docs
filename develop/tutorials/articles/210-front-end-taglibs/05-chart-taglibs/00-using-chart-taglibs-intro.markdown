@@ -9,13 +9,8 @@ To use the Chart taglib in your apps, add the following declaration to your JSP:
 
     <%@ taglib prefix="chart" uri="http://liferay.com/tld/chart" %>
 
-The Chart taglib is also available via a macro for your FreeMarker theme 
-templates and web content templates. Follow this syntax:
-
-    <@chart["tag-name"] attribute="string value" attribute=10 />
-
 This section of tutorials covers the types of charts you can create with the 
 Chart taglibs. Each tutorial contains a set of chart examples along with sample 
-Java data and a figure displaying the rendered results.
+Java data and a figure displaying the rendered results. 
 
 ![Figure 1: You can create many different types of charts with the chart taglibs.](../../../images/chart-taglib-sample-portlet.png)
