@@ -14,6 +14,7 @@ It's recommended to create and develop your Ext plugin in a
 Workspace is preconfigured with an `ext` folder, which applies important
 settings (via the `LiferayExtPlugin`) to your Ext plugin when it's deployed to
 @product@. You'll learn more about this in the
-[Set Up the Build Environment](#set-up-the-build-environment) section.
+[Set Up the Build Environment](/develop/reference/-/knowledge_base/7-1/developing-an-ext-plugin#set-up-the-build-environment)
+section.
 
 Next you'll learn the anatomy of an Ext plugin.
