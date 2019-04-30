@@ -1,30 +1,29 @@
 # Overriding Core Classes with Ext Plugins [](id=overriding-core-classes-with-ext-plugins)
 
-A supported use case for using Ext plugins in Liferay DXP is overriding Liferay
-Digital Enterprise's core classes (e.g., `portal-impl`, `portal-kernel`, etc.).
-You can reference the
-[Finding Core Liferay Portal Artifacts](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies#finding-core-liferay-portal-artifacts)
+A supported use case for using Ext plugins in @product@ is overriding its core
+classes (e.g., `portal-impl`, `portal-kernel`, etc.). You can reference the
+[Finding Core Liferay Portal Artifacts](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies#finding-core-liferay-portal-artifacts)
 section for help distinguishing core classes. Make sure you've reviewed the
 generalized
-[Customization with Ext Plugins](/documentation/7.0/develop/tutorials/-/official_documentation/tutorials/advanced-customization-with-ext-plugins)
-tutorial before creating an Ext plugin.
+[Customization with Ext Plugins](/develop/reference/-/knowledge_base/7-1/customizing-core-functionality-with-ext)
+section before creating an Ext plugin.
 
 As an example, you'll create a sample Ext plugin that overwrites the
-[PortalImpl](https://docs.liferay.com/ce/portal/7.0-latest/javadocs/portal-impl/com/liferay/portal/util/PortalImpl.html)
+[PortalImpl](https://docs.liferay.com/ce/portal/7.1-latest/javadocs/portal-impl/com/liferay/portal/util/PortalImpl.html)
 core class residing in the `portal-impl.jar`. You'll edit the
 `PortalImpl.getComputerName()` method, which returns your server's node name.
 The Ext plugin will override the entire `PortalImpl` class, adding the method
 modifying the server's returned node name.
 
-1.  Navigate into your Plugins SDK's /ext folder and run the following command:
+1.  Navigate to your Liferay Workspace's root folder and run the following
+    command:
 
-        create.[bat|sh]  portal-impl-override "PortalImpl Override"
+        blade create -t war-core-ext portal-impl-override
 
-    Your Ext plugin is generated and now resides in the Plugins SDK's `/ext`
-    folder with the name you assigned followed by `-ext` (e.g.,
-    `portal-impl-override-spring`).
+    Your Ext plugin is generated and now resides in the workspace's `/ext`
+    folder with the name you assigned.
 
-2.  Displaying the server node name in your Liferay DXP installation is set to
+2.  Displaying the server node name in your @product@ installation is set to
     `false` by default. You'll need to enable this property. To do this,
     navigate into your Liferay bundle's root folder and create a
     `portal-ext.properties` file. In that file, insert the following property:
@@ -34,7 +33,7 @@ modifying the server's returned node name.
     Now your server's node name will be displayed once your Liferay bundle is
     restarted.
 
-3.  In the `/ext-impl/src` folder, create the folder structure matching the
+3.  In the `/extImpl/java` folder, create the folder structure matching the
 class's folder structure you'd like to override (e.g., `com/liferay/portal/util`).
 Then create the new Java class that will override the existing core class; your
 new class must have the same name as the original.
@@ -46,7 +45,7 @@ below:
 
         @Override
         public String getComputerName() {
-            return “sample_portalimpl_ext_installed_successfully_�? + _computerName;
+            return “sample_portalimpl_ext_installed_successfully_��? + _computerName;
         }
 
     The method defined in the new class overrides the
@@ -57,7 +56,7 @@ below:
 When your Ext plugin is deployed, your new Java class will override the core
 `PortalImpl` class.
 
-Awesome! You've created an Ext plugin that overrides a core class in Liferay
-Digital Enterprise! Follow the instructions in the
-[Deploy the Plugin](/documentation/7.0/develop/tutorials/-/official_documentation/tutorials/advanced-customization-with-ext-plugins#deploy-the-plugin)
-section to deploy it to your server.
+Awesome! You've created an Ext plugin that overrides a core class in @product@!
+Follow the instructions in the
+[Deploy the Plugin](/develop/reference/-/knowledge_base/7-1/deploying-an-ext-plugin)
+article to deploy it to your server.
