@@ -11,9 +11,9 @@ library, you must use the
 [`DLAppService`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html) 
 interface's `addFileShortcut` method. The steps here show you how to do this. 
 For more detailed information, see 
-[Creating Files, Folders, and Shortcuts](/developer/frameworks/-/knowledge_base/7-2/creating-files-folders-and-shortcuts). 
+[Creating Files, Folders, and Shortcuts](/docs/7-2/frameworks/-/knowledge_base/f/creating-files-folders-and-shortcuts). 
 For general information on using the API, see 
-[Documents and Media API](/developer/frameworks/-/knowledge_base/7-2/documents-and-media-api). 
+[Documents and Media API](/docs/7-2/frameworks/-/knowledge_base/f/documents-and-media-api). 
 
 Follow these steps to create a file shortcut with the `DLAppService` method 
 `addFileShortcut`: 
@@ -38,7 +38,7 @@ Follow these steps to create a file shortcut with the `DLAppService` method
                             DLFileShortcutConstants.getClassName(), actionRequest);
 
     For more information on `ServiceContext`, see the tutorial 
-    [Understanding ServiceContext](/developer/frameworks/-/knowledge_base/7-2/understanding-servicecontext). 
+    [Understanding ServiceContext](/docs/7-2/frameworks/-/knowledge_base/f/understanding-servicecontext). 
 
 3.  Call the service reference's `addFileShortcut` method with the data from the 
     previous step: 
@@ -61,6 +61,6 @@ specific needs of the Documents and Media app.
 
 ## Related Topics
 
-[Deleting File Shortcuts](/developer/frameworks/-/knowledge_base/7-2/deleting-file-shortcuts)
+[Deleting File Shortcuts](/docs/7-2/frameworks/-/knowledge_base/f/deleting-file-shortcuts)
 
-[Updating File Shortcuts](/developer/frameworks/-/knowledge_base/7-2/updating-file-shortcuts)
+[Updating File Shortcuts](/docs/7-2/frameworks/-/knowledge_base/f/updating-file-shortcuts)

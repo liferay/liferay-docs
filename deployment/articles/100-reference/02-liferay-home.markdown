@@ -39,7 +39,7 @@ Bundles contain this folder structure regardless of application server:
         problems. `portal-impl.jar`'s
         `portal-impl/src/META-INF/portal-log4j.xml` file sets the log file
         location. To override the log file location, you must
-        [use an `ext-impl/src/META-INF/portal-log4j-ext.xml` file in an Ext plugin](/develop/tutorials/-/knowledge_base/7-0/advanced-customization-with-ext-plugins#using-advanced-configuration-files).
+        [use an `ext-impl/src/META-INF/portal-log4j-ext.xml` file in an Ext plugin](/docs/7-0/tutorials/-/knowledge_base/tutorials/advanced-customization-with-ext-plugins#using-advanced-configuration-files).
     -   `osgi`: All the JAR files and a few configuration files for the 
         OSGi runtime belong in this folder. The
         [Portal property `module.framework.base.dir`](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Module%20Framework)

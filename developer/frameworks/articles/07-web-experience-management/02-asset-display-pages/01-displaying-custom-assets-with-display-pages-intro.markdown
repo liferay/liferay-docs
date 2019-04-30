@@ -7,7 +7,7 @@ header-id: asset-display-pages
 [TOC levels=1-4]
 
 Asset Display Pages publish assets in highly customizable ways using 
-[Page Fragments](/docs/7-2/frameworks/-/knowledge_base/frameworks/developing-fragments). 
+[Page Fragments](/docs/7-2/frameworks/-/knowledge_base/f/developing-fragments). 
 You can use Asset Display Pages to map fields of certain assets, like Web
 Content, to fields defined in a Page Fragment. Then you can publish the asset
 on a page using the Page Fragment as a template.
@@ -39,7 +39,7 @@ can surface the Summary via the following steps:
 ![Figure 3: The Display Page both changes the style, and displays additional fields.](../../../images/display-pages-web-content-with-display-page.png) 
 
 You can use Liferay's 
-[Asset Framework](/docs/7-2/frameworks/-/knowledge_base/frameworks/asset-framework) 
+[Asset Framework](/docs/7-2/frameworks/-/knowledge_base/f/asset-framework) 
 in your own applications to display your assets: 
 
 1.  Create a Display Contributor class that extends 

@@ -12,7 +12,7 @@ you can integrate display page configuration into your entity's creation form.
 ## Asset Display Page Taglib examples
 
 To provide the Asset Display Page selector for Bookmarks after you 
-[created fields for it](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-an-asset-display-contributor),
+[created fields for it](/docs/7-2/frameworks/-/knowledge_base/f/creating-an-asset-display-contributor),
 
 1.  Open `.../META-INF/resources/bookmarks/edit_entry.jsp`.
 
