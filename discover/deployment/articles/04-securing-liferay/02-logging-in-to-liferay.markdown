@@ -6,9 +6,10 @@ logging into a university portal should not be able to access the same resources
 a professor can. A patient logging into a health care portal should not be able
 to access a doctor's resources. Some content (at least a login page) should be
 available to everybody, including unauthenticated users (called *guest* users).
-<!-- To learn more about how @product@ restricts access to portal resources to
-different users, please see the [Roles and Permissions]() documentation. (Not
-yet written) -->
+To learn more about how @product@ restricts access to portal resources to
+different users, please see the 
+[Roles and Permissions](/discover/portal/-/knowledge_base/7-1/roles-and-permissions) 
+documentation. 
 
 ## Authentication Types [](id=authentication-types)
 
@@ -28,10 +29,12 @@ The default authentication type is by email address, but you can choose screen
 names or user IDs instead. Users choose screen names when they create their
 accounts or administrators can choose them. User IDs are auto-generated when the
 account is created. Regardless of which authentication type is configured, users
-must always enter a password. <!-- For information on
+must always enter a password. For information on
 adding restrictions on the kinds of passwords that are allowed or required
 (e.g., to require a minimum password length or require special characters),
-please see the [Password Policies]() documentation. -->
+please see the 
+[Password Policies](/discover/portal/-/knowledge_base/7-1/password-policies) 
+documentation. 
 
 ## The Sign In Portlet [](id=the-sign-in-portlet)
 
