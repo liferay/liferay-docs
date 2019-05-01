@@ -58,7 +58,7 @@ public class ConvertLinksTask  extends Task {
 					}
 					else if (line.contains("](/discover/deployment/")) {
 						
-						String oldLink = getOldLink("/discover/portal/", line, findStr);
+						String oldLink = getOldLink("/discover/deployment/", line, findStr);
 						String version = getVersion(line, findStr);
 						String headerID = getHeaderID(line, findStr, version);
 						
@@ -71,7 +71,7 @@ public class ConvertLinksTask  extends Task {
 					}
 					else if (line.contains("](/develop/tutorials/")) {
 						
-						String oldLink = getOldLink("/discover/portal/", line, findStr);
+						String oldLink = getOldLink("/develop/tutorials/", line, findStr);
 						String version = getVersion(line, findStr);
 						String headerID = getHeaderID(line, findStr, version);
 						
@@ -84,7 +84,7 @@ public class ConvertLinksTask  extends Task {
 					}
 					else if (line.contains("](/develop/reference/")) {
 						
-						String oldLink = getOldLink("/discover/portal/", line, findStr);
+						String oldLink = getOldLink("/develop/reference/", line, findStr);
 						String version = getVersion(line, findStr);
 						String headerID = getHeaderID(line, findStr, version);
 						
