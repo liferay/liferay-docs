@@ -106,12 +106,12 @@ that are to be computed for each field.
         SearchResponse searcher.search(searchRequest);
 ```
 
-**Example:** https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-search/portal-search-test-util/src/main/java/com/liferay/portal/search/test/util/stats/BaseStatisticsTestCase.java#L128
+[**Click here to see an example from Liferay's codebase**]( https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-search/portal-search-test-util/src/main/java/com/liferay/portal/search/test/util/stats/BaseStatisticsTestCase.java#L128 )
 
 ### `StatsResponse`
 
-Contains the metrics aggregations computed by the search engine for a given
-field.
+The stats response contains the metrics aggregations computed by the search
+engine for a given field.
 
 1. Get the map containing the metrics aggregations computed by the search engine:
 
@@ -131,7 +131,7 @@ field.
         statsResponse.getCardinality();
 ```
 
-**Example:** https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-search/portal-search-test-util/src/main/java/com/liferay/portal/search/test/util/stats/BaseStatisticsTestCase.java#L128
+[**Click here to see an example from Liferay's codebase**](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-search/portal-search-test-util/src/main/java/com/liferay/portal/search/test/util/stats/BaseStatisticsTestCase.java#L128)
 
 ### Using the Legacy `Stats` Object
 
@@ -157,7 +157,7 @@ supported:
         searchRequestBuilder.withSearchContext(searchContext -> searchContext.addStats(stats));
 ```
 
-**Example:** https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-search/portal-search-test-util/src/main/java/com/liferay/portal/search/test/util/stats/BaseStatisticsTestCase.java#L42
+[**Click here to see an example from Liferay's codebase**](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-search/portal-search-test-util/src/main/java/com/liferay/portal/search/test/util/stats/BaseStatisticsTestCase.java#L42)
 
 ## External References
 
@@ -188,4 +188,3 @@ API (FQCN) | Provided by Artifact |
 
 * SearchSearchRequest#getStats()
 * SearchSearchRequest#setStats(Map<String, Stats> stats)
-

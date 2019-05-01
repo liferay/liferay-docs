@@ -7,11 +7,10 @@ header-id: aggregations
 [TOC levels=1-4]
 
 Aggregations take a search query and provide aggregated data based on it.
-Aggregations can be composed to provide complex data summaries.
+They serve many of the same functions as the facet code Aggregations can be composed to provide complex data summaries.
 
 @product@ has an API that exposes 
 [Elasticsearch's native Aggregation functionality](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html). 
-
 
 Currently, these aggregation types are supported:
 
@@ -65,7 +64,8 @@ in the @product@ search API:
 (documents) based on a particular field. For example, suppose you wish to group
 the search results based on the asset type (e.g., web content article, document,
 blog post, etc.).  To do so, you would create a search query that contains a
-[com.liferay.portal.kernel.search.GroupBy](https://github.com/liferay/liferay-portal/blob/7.2.x/portal-kernel/src/com/liferay/portal/kernel/search/GroupBy.java) aggregation with the field `entryClassName`.
+[com.liferay.portal.kernel.search.GroupBy](https://github.com/liferay/liferay-portal/blob/7.2.x/portal-kernel/src/com/liferay/portal/kernel/search/GroupBy.java) 
+aggregation with the field `entryClassName`.
 
 Other attributes you can specify for returned groups:
 

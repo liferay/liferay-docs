@@ -2,7 +2,7 @@
 header-id: creating-aggregations-in-low-level-search-calls
 ---
 
-# Creating Aggregations in Low Level Search Calls
+# Creating Aggregations
 
 [TOC levels=1-4]
 
@@ -82,5 +82,5 @@ Once the aggregation itself is in good shape, feed it to the search query.
 ## Process the response
 
 What you'll do with the `SearchResponse` returned by the `searcher.search` call
-is dependent on the type of aggregation and your specific use case. See [ANOTHER
-ARTICLE]() for more information.
+is dependent on the type of aggregation and your specific use case. A separate
+article will be written to demonstrate how to process the response.
