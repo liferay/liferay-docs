@@ -40,7 +40,8 @@ the receiving user. However, there are some important caveats:
 -   By default, the Guest role in the portal has Add Discussion permission. This 
     overlaps with the Comment permission in sharing. Therefore, all users can 
     comment on a file regardless of the Comment permission being explicitly 
-    granted via sharing. 
+    granted via sharing. Administrators can change this by removing the Add 
+    Discussion permission from the Guest role. 
 
 Also note that the receiving user must be part of the same instance, but doesn't 
 have to be a member of the same site. 
@@ -73,6 +74,9 @@ Follow these steps to share a file:
 2.  Click the file's *Actions* button 
     (![Actions](../../../../images/icon-actions.png)) 
     and select *Share*. This opens the Share dialog. 
+
+    Alternatively, click the file in Documents and Media and then click the 
+    *Share* button at the top-right. This opens the same Share dialog. 
 
     ![Figure 1: To share a file, you must fill out the Share dialog as these steps describe.](../../../../images/sharing-file.png)
 
@@ -114,15 +118,14 @@ You can access files shared with you in three places:
 
     ![Figure 2: The Notifications app contains the notifications that are sent when a user shares a file with you.](../../../../images/sharing-notifications.png)
 
-3.  **The Shared Assets app:** This app lists all the files shared with you, and 
-    the files you shared. Access this app by navigating to *Menu* 
-    (![Product Menu](../../../../images/icon-menu.png)) 
-    &rarr; *My Account* &rarr; *Shared Assets*. Each file has an Actions button 
+3.  **The Shared Content app:** This app lists all the content shared with you, 
+    and the content you shared. You can access this app from your user menu. 
+    Each file has an Actions button 
     (![Actions](../../../../images/icon-actions.png)) 
     that you can use to perform any permitted actions on the file (e.g., view, 
     comment, update). 
 
-    ![Figure 3: The Shared Assets app lists the files shared with you, and the files you shared.](../../../../images/sharing-app.png)
+    ![Figure 3: The Shared Content app lists the files shared with you, and the files you shared.](../../../../images/shared-content-app.png)
 
 ## Managing Shared Files
 
