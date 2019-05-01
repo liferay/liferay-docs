@@ -18,26 +18,30 @@ to store your data in XML? YAML? No problem. Because the storage API is
 separated from the regular service calls used to populate the database table for
 form entries, a developer can even choose to store form data outside the Liferay
 database. 
+<!--A Diagram?-->
 
 Define your own format to save form entries by writing your own implementation
 of the `StorageAdapter` interface. The interface follows the *CRUD* approach, so
 implementing it requires that you write methods to create, read, update and
 delete form values.
 
-|**Note:** When you add a new storage adapter, it can only be used with new
-|Forms. All existing Forms continue to use the adapter selected (JSON by default)
-|at the time of their creation, and a different storage adapter cannot be
-|selected.
+| **Note:** The `StorageAdapter` interface and it's abstract implementation,
+| `BaseStorageAdapter`, are deprecated in @product-ver@, with no direct
+| replacement. If you need a storage adapter, this is still the way to create one,
+| but be aware that it will not be available in a future version.
+
+A newly added storage adapter can only be used with new Forms. All existing
+Forms continue to use the adapter selected (JSON by default) at the time of
+their creation, and a different storage adapter cannot be selected.
 
 The example storage adapter in this tutorial serializes form data to be stored
 in a simple file, stored on the file system.
 
-<!-- RECREATE IMAGE: Figure 1: Choose a Storage Type for your form records.](../../images/forms-storage-type.png)-->
+![Figure 1: Choose a Storage Type for your form records.](../../images/forms-storage-type.png)
 
 ## Storage Adapter Methods
 
-Before worrying about how to handle the CRUD logic, write a `getStorageType`
-method.
+Before handling the CRUD logic, write a `getStorageType` method.
 
 `getStorageType`
 : Return a human readable String, as `getStorageType` determines what appears
