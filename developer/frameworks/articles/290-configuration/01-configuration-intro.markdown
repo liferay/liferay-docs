@@ -37,7 +37,7 @@ configuration framework:
 ## Using a Configuration Interface
 
 You can take care of the first two steps by 
-[Creating A Configuration Interface](/developer/frameworks/-/knowledge_base/7-2/creating-a-configuration-interface).
+[Creating A Configuration Interface](/docs/7-2/frameworks/-/knowledge_base/f/creating-a-configuration-interface).
 This Java interface does a number of things:
 
 -   Just by existing, it gives you a UI in *System Settings*, so you don't
@@ -73,7 +73,7 @@ a given application or one of its components.
 : Scope defines where a configuration value applies. Here are the most common
 configuration scopes:
 
--   `SYSTEM`: configuration values apply throughout the system.
+-   `SYSTEM`: Configuration values apply throughout the system.
 
 -   `COMPANY`: One set of configuration values is stored for each
     virtual instance, so each instance can be configured individually.
@@ -100,7 +100,7 @@ a system-wide default in *System Settings, an instance-wide default in
 override a configuration at a wider scope.
 
 Read more about configuration scope
-[here](/discover/portal/-/knowledge_base/7-2/system-settings#configuration-scope).
+[here](/docs/7-2/user/-/knowledge_base/u/system-settings#configuration-scope).
 
 When you complete your configuration interface, you're done with steps 1 and
 2 above.
@@ -111,14 +111,14 @@ The final step is to make your app read the configuration values that users
 enter. There are a number of ways to do that:
 
 If your configuration is scoped to `COMPANY` or `GROUP` you must use
-[`ConfigurationProvider`](/developer/frameworks/-/knowledge_base/7-2/reading-configuration-values-from-a-configuration-provider)
+[`ConfigurationProvider`](/docs/7-2/frameworks/-/knowledge_base/f/reading-configuration-values-from-a-configuration-provider)
 This allows your app to read different configuration values from each site,
 virtual instance, or whatever the configuration is scoped to.
 
 If your configuration is scoped to `PORTLET_INTSANCE`, you can still use
 `ConfigurationProvider`, but using `PortletDisplay` is simpler and more
 convenient. See 
-[`PortletDisplay`](/developer/frameworks/-/knowledge_base/7-2/reading-configuration-values-from-a-configuration-provider#accessing-the-portlet-instance-configuration-through-the-portletdisplay). 
+[`PortletDisplay`](/docs/7-2/frameworks/-/knowledge_base/f/reading-configuration-values-from-a-configuration-provider#accessing-the-portlet-instance-configuration-through-the-portletdisplay). 
 
 If you only want your app to be configurable at the `SYSTEM` scope, you have
 a few options. `ConfigurationProvider` will work fine, but there are
@@ -126,11 +126,11 @@ alternatives that---since they don't need to query multiple sources---can yield
 modest performance benefits. Which one you use depends on what kind of class
 you're using to read configuration values. Here are your options:
 
--   Read with an [MVC portlet's JSP](/developer/frameworks/-/knowledge_base/7-2/reading-configuration-values-from-a-mvc-portlet#accessing-the-configuration-from-a-jsp)
+-   Read with an [MVC portlet's JSP](/docs/7-2/frameworks/-/knowledge_base/f/reading-configuration-values-from-a-mvc-portlet#accessing-the-configuration-from-a-jsp)
 
--   With an [MVC Portlet's Portlet Class](/developer/frameworks/-/knowledge_base/7-2/reading-configuration-values-from-a-mvc-portlet#accessing-configuration-object-in-the-portlet-class)
+-   With an [MVC Portlet's Portlet Class](/docs/7-2/frameworks/-/knowledge_base/7-2/reading-configuration-values-from-a-mvc-portlet#accessing-configuration-object-in-the-portlet-class)
 
--   With any other [Component Class](/developer/frameworks/-/knowledge_base/7-2/reading-configuration-values-from-a-component)
+-   With any other [Component Class](/docs/7-2/frameworks/-/knowledge_base/f/reading-configuration-values-from-a-component)
 
 
 ## Further Customization
@@ -140,7 +140,7 @@ UI?" Relax. There are a number of ways you can customize it, or even suppress it
 entirely so you can put your own UI in its place.
 
 -   Implement the `ConfigurationFormRenderer` 
-    [interface](/developer/frameworks/-/knowledge_base/7-2/configuration-form-renderer)
+    [interface](/docs/7-2/frameworks/-/knowledge_base/f/configuration-form-renderer)
     to customize the auto-generated UI in system settings.
 
 -   If you need more flexibility---perhaps your app needs multiple configuration
@@ -151,10 +151,10 @@ entirely so you can put your own UI in its place.
 -   If you're using a configuration interface but you don't want a UI to be
     generated---maybe you're using a `ConfigurationScreen` implementation
     instead, or maybe you just want configuration to be handled programatically
-    or by [.config file](/discover/portal/-/knowledge_base/7-1/understanding-system-configuration-files)
-    ---you can [just leave it out](/developer/frameworks/-/knowledge_base/7-2/customizing-the-system-settings-user-interface#excluding-a-configuration-ui-from-system-settings).
+    or by [.config file](/docs/7-2/user/-/knowledge_base/u/understanding-system-configuration-files)
+    ---you can [just leave it out](/docs/frameworks/-/knowledge_base/7-2/customizing-the-system-settings-user-interface#excluding-a-configuration-ui-from-system-settings).
 
 Enough conceptual stuff. You're ready to get started with some code. If you
 already have an app that was configurable under an earlier version of
 @product@, see 
-[Upgrading a Legacy App](/developer/frameworks/-/knowledge_base/7-2/upgrading-a-legacy-app).
+[Upgrading a Legacy App](/docs/7-2/frameworks/-/knowledge_base/f/upgrading-a-legacy-app).
