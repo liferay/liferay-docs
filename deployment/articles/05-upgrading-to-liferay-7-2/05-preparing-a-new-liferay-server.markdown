@@ -182,6 +182,13 @@ The
 [Document Repository Configuration](/docs/7-2/deploy/-/knowledge_base/d/document-repository-configuration)
 provides more document store configuration details. 
 
+## Configure Kerberos in place of NTLM 
+
+If you're using NTLM to authenticate Microsoft Windows &trade; accounts with
+@product@, switch to using
+[Kerberos](/web/guest/docs/7-2/deploy/-/knowledge_base/d/authenticating-with-kerberos).
+Security vulnerabilities persist with NTLM. 
+
 ## Disable Indexing
 
 Before starting the upgrade process in your new installation, you must disable
