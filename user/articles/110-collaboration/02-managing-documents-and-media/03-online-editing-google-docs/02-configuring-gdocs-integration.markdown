@@ -45,36 +45,29 @@ configuring those instances separately. Similarly, you can configure only the
 instances you want to connect to your Google project, and leave the global 
 configuration empty. 
 
-## Global Configuration
- 
-Follow these steps to configure all instances in your @product@ installation to 
-use the same settings to connect to your Google project: 
+Follow these steps to configure your @product@ installation to connect to your 
+Google project: 
 
-1.  Go to *Control Panel* &rarr; *Configuration* &rarr; *System Settings* &rarr; 
-    *Documents and Media*. 
+1.  Note that the configuration options are the same in the global and 
+    instance-level configurations. 
+
+    To access the global configuration, go to *Control Panel* &rarr; 
+    *Configuration* &rarr; *System Settings* &rarr; *Documents and Media*. 
+
+    To access the instance-level configuration, go to *Control Panel* &rarr; 
+    *Configuration* &rarr; *Instance Settings* &rarr; *Documents and Media*. 
 
 2.  Under *VIRTUAL INSTANCE SCOPE*, select *Google Drive*. 
 
 3.  Enter your Google project's OAuth 2 client ID and client secret into the 
     *Client ID* and *Client Secret* fields. 
 
-4.  Click *Save*.
+4.  Click *Save*. 
+
+| **Note:** To turn this feature off, delete the client ID and client secret 
+| values from the form. 
 
 | **Note:** You can ignore the *Picker API Key* field. This field is unrelated 
 | to the Google Docs&trade; online editing features in @product@. 
 
 ![Figure 1: Enter your Google project's OAuth 2 client ID and client secret.](../../../../images/google-drive-system-settings.png)
-
-## Instance Configuration
-
-Follow these steps to configure an individual instance to connect to your Google 
-project: 
-
-1.  Go to *Control Panel* &rarr; *Configuration* &rarr; *Instance Settings* 
-    &rarr; *Documents and Media*. 
-<!-- Merge with previous section -->
-
-
-That's it! Now your users can create and edit Documents and Media files online 
-via Google Docs&trade;. Note that if you want to disable this feature, you can 
-delete the client ID and client secret values from the form in the last step. 
