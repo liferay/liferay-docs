@@ -8,10 +8,10 @@ Because @product@'s headless REST APIs leverage
 to know the OpenAPI profile from which to discover the rest of the API. 
 
 @product@'s headless APIs are available in SwaggerHub at 
-[`https://app.swaggerhub.com/organizations/liferay6`](https://app.swaggerhub.com/organizations/liferay6). 
+[`https://app.swaggerhub.com/organizations/liferayinc`](https://app.swaggerhub.com/organizations/liferayinc). 
 Each API has its own URL in SwaggerHub. For example, you can access the delivery 
 API definition at 
-[`https://app.swaggerhub.com/apis/liferay6/headless-delivery/v1.0`](https://app.swaggerhub.com/apis/liferay6/headless-delivery/v1.0). 
+[`https://app.swaggerhub.com/apis/liferayinc/headless-delivery/v1.0`](https://app.swaggerhub.com/apis/liferayinc/headless-delivery/v1.0). 
 
 Each OpenAPI profile is also deployed dynamically in your portal instance under 
 this schema: 

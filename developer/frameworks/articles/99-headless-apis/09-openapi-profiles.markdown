@@ -1,7 +1,7 @@
 # OpenAPI Profiles [](id=api-vocabulary)
 
 All the APIs exposed by @product@ are available under the 
-[liferay6 SwaggerHub organization](https://app.swaggerhub.com/organizations/liferay6). 
+[liferayinc SwaggerHub organization](https://app.swaggerhub.com/organizations/liferayinc). 
 
 @product@'s headless APIs are categorized in two different use cases:
 
@@ -13,7 +13,7 @@ The available APIs demonstrate this categorization.
 ## Headless Delivery
 
 The following table lists the APIs that 
-[Headless Delivery](https://app.swaggerhub.com/apis/liferay6/headless-delivery/v1.0) 
+[Headless Delivery](https://app.swaggerhub.com/apis/liferayinc/headless-delivery/v1.0) 
 contains. Note that the second column shows which internal model in @product@ 
 that the API maps to. 
 
@@ -44,7 +44,7 @@ There are several headless admin APIs, each containing its own set of APIs. The
 following tables list these, as well as any internal models in @prodcut@ that 
 each API maps to. 
 
-[Headless Admin User](https://app.swaggerhub.com/apis/liferay6/headless-admin-user/1.0) 
+[Headless Admin User](https://app.swaggerhub.com/apis/liferayinc/headless-admin-user/1.0) 
 contains the following APIs for retrieving and managing information about users 
 and organizations. 
 
@@ -61,7 +61,7 @@ and organizations.
 | `UserAccount` | `User` |
 | `WebUrl` | `WebSite` |
 
-[Headless Admin Taxonomy](https://app.swaggerhub.com/apis/liferay6/headless-admin-taxonomy/1.0) 
+[Headless Admin Taxonomy](https://app.swaggerhub.com/apis/liferayinc/headless-admin-taxonomy/1.0) 
 contains the following APIs for managing asset categories, asset vocabularies, 
 and asset tags. 
 
@@ -71,5 +71,5 @@ and asset tags.
 | `TaxonomyCategory` | `AssetCategory` |
 | `TaxonomyVocabulary` | `AssetVocabulary` |
 
-[Headless Admin Workflow](https://app.swaggerhub.com/apis/liferay6/headless-admin-workflow/1.0) 
+[Headless Admin Workflow](https://app.swaggerhub.com/apis/liferayinc/headless-admin-workflow/1.0) 
 contains APIs for transitioning workflows. 
