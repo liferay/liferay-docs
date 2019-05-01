@@ -28,14 +28,13 @@ implementations can be deployed as modules containing implementations of the
 `AuthVerifier` interface that are registered as services in the OSGi runtime.
 
 Note: The authentication verification layer's focus is on verifying
-authentication, not on providing credentials. The authentication verification
-layer is NOT responsible for issuing tokens, credentials, or displaying Sign In
-portlets. Instead, the layer verifies existing credentials and authenticated
-sessions and is therefore a complement to authentication endpoints. However, to
-ensure backwards compatibility, the default implementations support requests
-providing user name and password credentials. Thus, the authentication
-verification layer stands on the border between authentication and
-authorization.
+authentication, not on providing credentials. It does NOT issue tokens,
+credentials, or display Sign In portlets. Instead, the layer verifies existing
+credentials and authenticated sessions and is therefore a complement to
+authentication endpoints. To ensure backwards compatibility, however, the
+default implementations support requests providing user name and password
+credentials. Thus, the authentication verification layer stands on the border
+between authentication and authorization.
 
 ## Authentication Verification Process Overview
 
@@ -78,7 +77,7 @@ the product include
 - Request Parameter
 - Tunnel Auth 
 
-Only following Auth Verifiers are enabled by default and can be used to access
+The following Auth Verifiers are enabled by default and can be used to access
 remote API out-of-the-box:
 
 - Basic Auth Header
@@ -116,9 +115,9 @@ the API via `/o/_module_/api/liferay/do`.
 
 Configure it by setting client IP addresses allowed to tunnel. For more
 information, please see 
-[the properties documentation](https://docs.liferay.com/portal/7.1-latest/propertiesdoc/portal.properties.html#HTTP%20Tunneling)
+[the properties documentation](https://docs.liferay.com/portal/7.2-latest/propertiesdoc/portal.properties.html#HTTP%20Tunneling)
 as well as 
-[remote staging](/discover/portal/-/knowledge_base/7-1/enabling-remote-live-staging).
+[remote staging](/docs/7-2/user/-/knowledge_base/u/enabling-remote-live-staging).
 
 Note that this is not a recommended way to export remote APIs; it's far
 better to expose remote services using JAX-RS or Liferay JSON Web Service 
@@ -168,10 +167,10 @@ forbids all access.
 Even though the default configuration is enabled by default, access is
 limited to localhost only. Configure it by setting client IP addresses allowed 
 to tunnel. For more information, please see 
-[the properties documentation](https://docs.liferay.com/portal/7.1-latest/propertiesdoc/portal.properties.html#HTTP%20Tunneling)
+[the properties documentation](https://docs.liferay.com/portal/7.2-latest/propertiesdoc/portal.properties.html#HTTP%20Tunneling)
 as well as 
-[remote staging](/discover/portal/-/knowledge_base/7-1/enabling-remote-live-staging).
+[remote staging](/docs/7-2/user/-/knowledge_base/u/enabling-remote-live-staging).
 
 ## Related Topics
 
-[Service Access Policies](/discover/deployment/-/knowledge_base/7-1/)
+[Service Access Policies](/docs/7-2/deploy/-/knowledge_base/d/service-access-policies)
