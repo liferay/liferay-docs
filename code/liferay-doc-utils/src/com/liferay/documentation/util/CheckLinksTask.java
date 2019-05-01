@@ -72,7 +72,7 @@ public class CheckLinksTask extends Task {
 
 			while ((line = in.readLine()) != null) {
 
-				if ((line.contains("](/develop/") || line.contains("](/discover/")) && line.contains(PORTAL_VERSION)) {
+				if (line.contains("](/develop/") || line.contains("](/discover/")) {
 					logInvalidUrl(article, in.getLineNumber(), line, false);
 				}
 
@@ -115,10 +115,6 @@ public class CheckLinksTask extends Task {
 						checkMultiLinks(article, line, in);
 					}
 				}
-				// Check for old links no longer available in 7.2
-				//else if (line.contains("](/discover/")) {
-				//	logInvalidUrl(article, in.getLineNumber(), line, false);
-				//}
 
 				if (line.contains("](#")) {
 
@@ -232,6 +228,16 @@ public class CheckLinksTask extends Task {
 		return articles;
 	}
 
+	/**
+	 * Assembles the header ID for the given heading. This is used for secondary
+	 * headers since their header IDs do not exist in the Markdown article.
+	 *
+	 * @param  heading the heading to assemble an ID for
+	 * @param  idCount the number of matching header IDs found. This is added to
+	 *         the end of a header ID to differentiate it from other matching
+	 *         headers (e.g., liferay-home-2).
+	 * @return the header ID for the given heading
+	 */
 	private static String assembleId(String heading, int idCount) {
 
 		String count = "";
@@ -525,6 +531,12 @@ public class CheckLinksTask extends Task {
 		return header;
 	}
 
+	/**
+	 * Returns the article's heading found on the line.
+	 *
+	 * @param  line the line to extract the heading from
+	 * @return the article's heading
+	 */
 	private static String extractHeading(String line) {
 
 		int indexOfFirstHeaderChar = line.indexOf("# ") + 2;
@@ -715,7 +727,7 @@ public class CheckLinksTask extends Task {
 		if(!dir.exists()) {
 			System.out.println("Warning: Folder " + dir.getPath() + " does not exist. Update"
 					+ " check-links folder paths.");
-			//System.exit(0);
+
 			return articles;
 		}
 
@@ -1195,10 +1207,8 @@ public class CheckLinksTask extends Task {
 			else {
 
 				String linkDir = getHeaderDir(line, lineIndex);
-				System.out.println("linkDir: " + linkDir);
 				List<File> articles = findArticles(linkDir);
 				File matchingArticle = findArticleMatchingLink(articles, primaryHeader);
-				System.out.println("primaryHeader: " + primaryHeader);
 				if (headers.get(0).contains(primaryHeader) &&
 						headers.get(1).contains(secondaryHeader + matchingArticle.getCanonicalPath())) {
 					validURL = true;
