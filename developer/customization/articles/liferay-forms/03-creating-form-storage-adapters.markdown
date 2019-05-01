@@ -200,4 +200,3 @@ protected void validate(
 ```
 
 Deploy your storage adapter and it's ready to use.
-

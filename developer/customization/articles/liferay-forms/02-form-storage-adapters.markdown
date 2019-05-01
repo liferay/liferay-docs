@@ -13,11 +13,11 @@ default implementation of the storage service is called `JSONStorageAdapter`,
 and as its name implies, it implements the `StorageAdapter` interface to provide
 JSON storage of form entry data.
 
-The DDM backend can *adapt* to other data storage formats for form records. Want
-to store your data in XML? YAML? No problem. Because the storage API is
-separated from the regular service calls used to populate the database table for
-form entries, a developer can even choose to store form data outside the Liferay
-database. 
+The Dynamic Data Mapping (DDM) backend can *adapt* to other data storage formats
+for form records. Want to store your data in XML? YAML? No problem. Because the
+storage API is separated from the regular service calls used to populate the
+database table for form entries, a developer can even choose to store form data
+outside the Liferay database.  
 <!--A Diagram?-->
 
 Define your own format to save form entries by writing your own implementation
@@ -125,7 +125,7 @@ Make sure to do three things:
     service.
 
 All the Java code for the logic discussed here is shown in the next article,
-[Creating Form Storage Adapters](/docs/7-2/customization/-/knowledge_base/customization/creating-form-storage-adapters).
+[Creating Form Storage Adapters](/docs/7-2/customization/-/knowledge_base/c/creating-form-storage-adapters).
 
 ## Enabling the Storage Adapter
 
