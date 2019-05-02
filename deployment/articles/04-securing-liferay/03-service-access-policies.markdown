@@ -74,7 +74,8 @@ com.liferay.document.library.kernel.service.DLAppService#get*
 allows any method from the `UserService` class to be invoked and any method
 from the `DLAppService` whose name starts with `get` to be invoked.
 
-There are six service access policies that are enabled by default:
+There are 16 service access policies that are enabled by default. Six of these
+have to do with the system: 
 
 **ASSET_ENTRY_DEFAULT:** Allows the view counter for assets to be updated when an
 asset is retrieved.
@@ -105,6 +106,26 @@ disallow certain API functions from being invoked, you can change the
 `SYNC_DEFAULT` and `SYSTEM_DEFAULT`, as their names suggest, are default
 service access policies. Default service access policies are applied to all
 incoming requests, including unauthenticated requests. 
+
+The other 10 policies have to do with OAuth and 
+[JSON web services](/docs/7-2/frameworks/-/knowledge_base/f/invoking-json-web-services): 
+
+**OAUTH2_analytics.read/write:** Integrates with 
+[Liferay Analytics Cloud](https://www.liferay.com/products/analytics-cloud), 
+allowing it access to JSON web services. 
+
+**OAUTH2_everything/read/documents/userprofile/write:** The Everything policies
+grant access to all the JSON web services for various reasons. Everything is
+everything: all JSON web services (matches `*`). The others match method
+signatures appropriate to their description. For example, OAUTH2_everything.read
+matches all methods starting with `fetch`, `get`, `has`, `is`, or `search`. 
+
+**OAUTH_READ/WRITE:** These provide access to JSON web services via the OAuth
+1.0a plugin. 
+
+The default configuration opens access to all web services shipped with the
+system. Administrators should review the ones you want to use and disable the
+others. 
 
 You can create new default service access policies: 
 
