@@ -53,11 +53,6 @@ notifications:
 -   Delete 
     (![Delete Button](../../../images/icon-delete.png))
 
-You can also select *Mark all notifications as read* in the Options menu 
-(![Options](../../../images/icon-options.png)). Note that this feature is only 
-available if at least one notification is unread. Clicking it marks all 
-notifications as read, selected or not. 
-
 ## Managing Requests [](id=managing-requests)
 
 When you get a request, it appears in the *Requests List* tab. In each request's 
