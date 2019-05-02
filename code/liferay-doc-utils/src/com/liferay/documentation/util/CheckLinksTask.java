@@ -486,6 +486,51 @@ public class CheckLinksTask extends Task {
 	}
 
 	/**
+	 * Returns <code>true</code> if the link's folder and folder starting letter
+	 * match. For example, the link below returns <code>true</code> because the
+	 * <code>reference</code> string matches the second folder prefix
+	 * <code>r</code>.
+	 * 
+	 * <p>
+	 * <pre>
+	 * <code>
+	 * /docs/7-2/reference/-/knowledge_base/r/test
+	 * </code>
+	 * </pre>
+	 * </p>
+	 *
+	 * <p>
+	 * If the second folder prefix for the above link was <code>f</code>, this
+	 * method would return <code>false</code>.
+	 * </p>
+	 *
+	 * @param  line the line containing the relative link
+	 * @param  lineIndex the header's index on the line. This is useful when
+	 *         there are multiple relative links on one line.
+	 * @return <code>true</code> if the link's folder and folder starting letter
+	 *         match; <code>false</code> otherwise
+	 */
+	private static boolean doesDocFoldersMatch(String line, int lineIndex) {
+		
+		String lineSubstring = line.substring(lineIndex, line.length());
+		boolean foldersMatch = false;
+		
+		int begIndex = lineSubstring.indexOf("/docs/") + 10;
+		//int endIndex = lineSubstring.indexOf("/", begIndex);
+		String folder1 = lineSubstring.substring(begIndex, begIndex + 1);
+		
+		int begIndex2 = lineSubstring.indexOf(findStr) + findStr.length();
+		
+		String folder2 = lineSubstring.substring(begIndex2, begIndex2 + 1);
+		
+		if (folder1.equals(folder2)) {
+			foldersMatch = true;
+		}
+
+		return foldersMatch;
+	}
+
+	/**
 	 * Returns the header ID contained in the given line. For example, the
 	 * following line:
 	 * 
@@ -1168,6 +1213,8 @@ public class CheckLinksTask extends Task {
 	 * @param  secondaryHeader the secondary header ID
 	 * @param  lineIndex the header's index on the line. This is useful when
 	 *         there are multiple relative links on one line.
+	 * @param  differingDefaultVersion whether the link version differs from
+	 *         <code>PORTAL_VERSION</code>
 	 * @return <code>true</code> if the URL is valid; <code>false</code>
 	 *         otherwise
 	 * @throws IOException if an IO exception occurred
@@ -1185,7 +1232,6 @@ public class CheckLinksTask extends Task {
 		// relative URL with the header list (e.g., developer/user). This only
 		// happens when the first folder is valid but its subfolder isn't.
 		if (headers.isEmpty()) {
-			System.out.println("error :-)");
 			logInvalidUrl(article, in.getLineNumber(), line, false);
 		}
 
@@ -1196,6 +1242,11 @@ public class CheckLinksTask extends Task {
 			// Ensure portal link versions aren't mixed with commerce link versions
 			if (line.contains("/web/commerce/") && !line.contains(COMMERCE_VERSION)) {
 				logInvalidUrl(article, in.getLineNumber(), line, false);
+			}
+			
+			boolean docFoldersMatch = doesDocFoldersMatch(line, lineIndex);
+			if (!docFoldersMatch) {
+				logInvalidUrl(article, in.getLineNumber(), line, true);
 			}
 
 			if (Validator.isNull(secondaryHeader)) {
