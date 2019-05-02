@@ -123,9 +123,10 @@ matches all methods starting with `fetch`, `get`, `has`, `is`, or `search`.
 **OAUTH_READ/WRITE:** These provide access to JSON web services via the OAuth
 1.0a plugin. 
 
-The default configuration opens access to all web services shipped with the
-system. Administrators should review the ones you want to use and disable the
-others. 
+The default configuration makes available corresponding scopes that provide
+access to all web services shipped with the system. The scopes must be assigned
+to OAuth 1 or 2 applications before they become usable. Administrators should
+review the ones you want to use and disable the others. 
 
 You can create new default service access policies: 
 
