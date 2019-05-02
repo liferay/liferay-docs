@@ -13,8 +13,8 @@ basis of propagating a token via one of the following mechanisms:
 - HTTP cookie
 - Session attribute
 
-The authentication token contains either the @product@ user's screen name or
-email address, whichever @product@ has been configured to use for the particular
+The authentication token contains the @product@ user's screen name or email
+address, whichever @product@ has been configured to use for the particular
 company (portal instance). Recall that @product@ supports three authentication
 methods:
 
@@ -22,10 +22,9 @@ methods:
 - By screen name
 - By user ID
 
-Note that @product@'s token-based authentication mechanism only supports email
-address and screen name. If the portal is configured to use user ID when a
-token-based authentication is attempted, the `TokenAutoLogin` class logs this
-warning:
+Token-based authentication only supports email address and screen name. If
+@product@ is configured to use user ID when a token-based authentication is
+attempted, the `TokenAutoLogin` class logs this warning:
 
     Incompatible setting for: company.security.auth.type
 
@@ -36,22 +35,19 @@ fronting web server like Apache. The chosen fronting solution must prevent
 malicious @product@ user impersonation that otherwise might be possible by
 sending HTTP requests directly to @product@ from the client's web browser.
 
-Token based authentication is disabled by default. To manage token
-based SSO authentication, navigate to @product@'s Control Panel, click on
+Token-based authentication is disabled by default. To manage token-
+based SSO authentication, navigate to Control Panel &rarr;
 *System Settings*, &rarr; *Security* &rarr; *SSO*. Token Based SSO appears in
-the list at the bottom. Alternately, you can search for *Token* in the Search
-field. Here are the configuration options for the Token Based SSO module:
-
-**Authentication cookies:** Set this to the cookie names that must be removed
-after logout. (Example: `SMIDENTITY`, `SMSESSION`)
+Virtual Instance Scope at the bottom. Here are the configuration options for the
+Token Based SSO module:
 
 **Enabled:** Check this box to enable token-based SSO authentication.
 
-**Import from LDAP:** Check this box to automatically import users from LDAP if
-they do not exist in the portal.
+**Import from LDAP:** Check this box to import users automatically from LDAP if
+they don't exist.
 
-**Logout redirect URL:** When user logs out of @product@, the user is
-redirected to this URL.
+**User token name:** Set equal to the name of the token. This is retrieved
+from the specified location. (Example: SM_USER)
 
 **Token location:** Set this to the location of the user token. As mentioned
 earlier, the options are:
@@ -61,8 +57,11 @@ earlier, the options are:
 - HTTP cookie
 - Session attribute
 
-**User token name:** Set equal to the name of the token. This will be retrieved
-from the specified location. (Example: SM_USER)
+**Authentication cookies:** Set this to the cookie names that must be removed
+after logout. (Example: `SMIDENTITY`, `SMSESSION`)
+
+**Logout redirect URL:** When user logs out of @product@, the user is
+redirected to this URL.
 
 Remember to click *Save* to activate Token Based SSO.
 
@@ -84,5 +83,5 @@ update take effect. For more information, please refer to SiteMinder's
 ## Summary
 
 @product@'s token-based SSO authentication mechanism is highly flexible
-and compatible with any SSO solution which can provide it with a valid @product@
+and compatible with any SSO solution that provides it with a valid @product@
 user's screen name or email address. These include Shibboleth and SiteMinder.
