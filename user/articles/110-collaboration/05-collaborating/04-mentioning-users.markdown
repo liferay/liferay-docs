@@ -33,19 +33,18 @@ enabled for the site's Virtual Instance.
 To access the global Mentions settings for your Virtual Instance, first open the 
 *Menu* 
 (![Menu](../../../images/icon-menu.png)) and navigate to *Control Panel* &rarr; 
-*Configuration* &rarr; *Instance Settings*. Then click *Portal Settings*, select 
-the *Social* tab, and expand the *Mentions* section. By default, all users are 
+*Configuration* &rarr; *Instance Settings*. Then click *Community Tools* and 
+select *Mentions* under *VIRTUAL INSTANCE SCOPE*. By default, all users are 
 allowed to mention fellow site members and friends. To fine tune these options, 
 select *Define Mentions Capability for Users* and specify the settings you want. 
 
 ![Figure 3: You can enable or disable the Mentions feature for all of the Virtual Instance's sites.](../../../images/mentions-global-instance-setting.png)
 
-For Mentions to be available for a site, the app must be enabled for a site's 
+For Mentions to be available for a site, the app must be enabled for that site's 
 Virtual Instance. Site administrators can enable or disable Mentions for a site. 
-A site's Mentions app configuration is accessible from
-within the *Menu* 
+A site's Mentions app configuration is accessible from within the *Menu* 
 (![Menu](../../../images/icon-menu.png)). Once in the menu, navigate to 
-*Site Name* &rarr; *Configuration* &rarr; *Settings*. In the *Social* tab, 
+*[Site Name]* &rarr; *Configuration* &rarr; *Settings*. In the *Social* tab, 
 expand the *Mentions* section. Enable or disable mentions via the toggle labeled 
 *Allow Users to Mention Other Users*. 
 
