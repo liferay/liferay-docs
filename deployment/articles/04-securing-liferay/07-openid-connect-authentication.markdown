@@ -5,13 +5,13 @@ header-id: authenticating-with-openid-connect
 # Authenticating with OpenID Connect
 
 OpenID Connect is a lightweight authentication layer built on top of the 
-[OAuth 2.0](/discover/deployment/-/knowledge_base/7-1/oauth-2-0) 
-authorization protocol. It compliments having local accounts by enabling users
-to authenticate using accounts they have on other systems. Users who avoid
-signing up for new accounts can then use an account they already have to sign
-into your website. By using OpenID Connect, you *delegate* user authentication
-to other providers, making it easy for users with existing accounts to
-authenticate to your system. 
+[OAuth 2.0](/docs/7-2/deploy/-/knowledge_base/d/oauth-2-0) 
+authorization protocol. It compliments local accounts by enabling users to
+authenticate using accounts they have on other systems. Users who avoid signing
+up for new accounts can then use an account they already have to sign into your
+website. By using OpenID Connect, you *delegate* user authentication to other
+providers, making it easy for users with existing accounts to authenticate to
+your system. 
 
 | **Note:** You can add multiple providers to your installation, but @product@
 | can't yet be an OpenID Connect provider.
@@ -34,7 +34,7 @@ This is an OAuth 2.0 client. The process varies by provider:
 
         https://[server.domain]/c/portal/login/openidconnect
 
-3.  The provider will send several pieces of information. Some of these, like
+3.  The provider sends several pieces of information. Some of these, like
     the Discovery Endpoint, Authorization Endpoint, or Issuer URL are the same
     regardless of the client. The two pieces of information unique to your
     request are the `client_id` and the `client_secret`. 
@@ -66,6 +66,9 @@ provider may offer other scopes of user information.
 **Discovery Endpoint:** Other URLs may be obtained from this URL, and they vary
 by provider. 
 
+**Discovery Endpoint Cache in Milliseconds:** Cache the endpoints (URLs)
+discovered for this amount of time. 
+
 **Authorization Endpoint:** This URL points to the provider's URL for
 authorizing the user (i.e., signing the user in). 
 
@@ -74,6 +77,10 @@ who is issuing the user information.
 
 **JWKS URI:** A URL that points to the provider's JSON Web Key Set that contains
 the public keys that can verify the provider's tokens. 
+
+**ID Token Signing Algorithms:** Set the supported ID token algorithms manually.
+Normally, this is "discovered" at the discovery endpoint. You can add as many of
+these as you need. 
 
 **Subject Types:** A Subject Identifier is a unique and never reassigned
 identifier the provider uses to establish who the user is, and is consumed by
@@ -108,7 +115,7 @@ virtual instance through the *Control Panel* &rarr; *Configuration* &rarr;
 | System Settings configuration file:
 | 
 |     com.liferay.portal.security.sso.openid.connect.configuration.OpenIdConnectConfiguration.config
-    
+
 Now users can sign in with OpenID Connect. 
 
 ## Signing In With OpenID Connect
