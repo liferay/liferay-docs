@@ -30,7 +30,7 @@ There are two places where you can create alerts and announcements:
     &rarr; *Configuration* &rarr; *Announcements and Alerts*. Announcements and 
     alerts are in separate tabs in this app. To begin creating an announcement 
     or alert, select the appropriate tab and then click the *Add* button 
-    (![Add](../../../images/icon-add.png)). 
+    (![Add](../../../images/icon-add-app.png)). 
     This app gives administrators a central location to create announcements and 
     alerts that are then displayed on Site pages by the Announcements and Alerts 
     widgets. 
@@ -121,8 +121,7 @@ Announcements Role:
 2.  With the *Regular Roles* tab selected, click the *Add* button 
     (![Add](../../../images/icon-add.png)). This opens the *New Role* form. 
 
-3.  Name your Role *Announcements*, give it a title and description, and click 
-    *Save*. 
+3.  Name your Role *Announcements*, give it a description, and click *Save*. 
 
 4.  Select the Role's *Define Permissions* tab then grant these permissions: 
 
@@ -135,4 +134,4 @@ Announcements Role:
     add alerts and announcements. 
 
 Now you have a simple Announcements Role that can manage your site's general 
-announcements. Of course, you can adjust this Role's permissions. 
+announcements. Of course, you can adjust this Role's permissions as needed. 
