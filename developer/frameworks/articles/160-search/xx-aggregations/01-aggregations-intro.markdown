@@ -7,9 +7,9 @@ header-id: aggregations
 [TOC levels=1-4]
 
 Aggregations take a search query and provide aggregated data based on it.
-They serve many of the same functions as the facet code Aggregations can be composed to provide complex data summaries.
+Aggregations can be composed to provide complex data summaries.
 
-@product@ has an API that exposes 
+@product-ver@ has a new API that exposes 
 [Elasticsearch's native Aggregation functionality](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html). 
 
 Currently, these aggregation types are supported:
@@ -88,19 +88,20 @@ this:
 3.  Process the search response
 
 These steps are covered in more detail (with examples) 
-[here](/7-2/frameworks/-/knowledge_base/frameworks/creating-aggregations-in-low-level-search-calls).
+[here](/7-2/frameworks/-/knowledge_base/f/creating-aggregations-in-low-level-search-calls).
 
 ## External References
+
 * https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html
 * https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html#_structuring_aggregations
 
 ## Search Engine Connector Support
+
 * Elasticsearch 6: Yes
 * Solr 7: No
 
 ## New/Related APIs
-Listed those which are relevant for developers.
 
 API (FQCN) | Provided by Artifact | Notes |
 -----------|:--------------------:|:--------:|
-`com.liferay.portal.search.aggregation.*` | com.liferay.portal.search.api | The whole ["aggregation" package](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/aggregation) is new as of @product_ver@
+`com.liferay.portal.search.aggregation.*` | com.liferay.portal.search.api | The whole ["aggregation" package](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/aggregation) is new as of @product-ver@
