@@ -1,4 +1,10 @@
+---
+header-id: installing-a-themelet-in-your-theme
+---
+
 # Installing a Themelet in Your Theme
+
+[TOC levels=1-4]
 
 After you've created your 
 [themelet](/developer/reference/-/knowledge_base/7-2/creating-themelets-with-the-themes-generator), 

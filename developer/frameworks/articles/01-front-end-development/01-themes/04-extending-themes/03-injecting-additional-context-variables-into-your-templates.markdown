@@ -1,4 +1,10 @@
+---
+header-id: injecting-additional-context-variables-and-functionality-into-your-theme-te
+---
+
 # Injecting Additional Context Variables and Functionality into Your Theme Templates
+
+[TOC levels=1-4]
 
 JSPs are native to Java EE and therefore have access to all the contextual 
 objects inherit to the platform, like the request and session. Through these 
