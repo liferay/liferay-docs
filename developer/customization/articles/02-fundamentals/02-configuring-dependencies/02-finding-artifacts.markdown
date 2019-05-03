@@ -174,3 +174,15 @@ example, if you depend on the class
 
 Now that you know the artifact's attributes, you can configure a  dependency on
 it. 
+
+## Related Topics 
+
+[Specifying Dependencies](/docs/7-2/customization/-/knowledge_base/c/specifying-dependencies)
+
+[Importing Packages](/docs/7-2/customization/-/knowledge_base/c/importing-packages)
+
+[Exporting Packages](/docs/7-2/customization/-/knowledge_base/c/exporting-packages)
+
+[Resolving Third Party Library Package Dependencies](/docs/7-2/customization/-/knowledge_base/c/resolving-third-party-library-package-dependencies)
+
+[Deploying WARs \(WAB Generator\)](/docs/7-2/customization/-/knowledge_base/c/deploying-wars-wab-generator)
