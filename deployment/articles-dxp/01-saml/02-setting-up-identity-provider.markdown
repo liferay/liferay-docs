@@ -69,7 +69,7 @@ also by @product@'s permissions system.
     if one doesn't already exist. As described above, this keystore has two
     storage options: file system storage (the default) and Documents and Media
     storage. By default, the certificate uses the SHA256 algorithm for
-    encryption and is fingerprinted and self-signed via MD5 and SHA1. 
+    encryption and is fingerprinted and self-signed via RSA and SHA256. 
  
 4.  After you click *Save*, you can click *Replace Certificate* at any time to
     replace the current certificate with a new one if your old one has expired
