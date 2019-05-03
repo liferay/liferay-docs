@@ -22,4 +22,8 @@ This guide shows you how to administer and use the collaboration apps:
 -   Knowledge Base
 -   Bookmarks
 
+![Figure 1: This blog entry looks fascinating.](../../../images/blog-entry-abstract.png)
 
+![Figure 2: This is a great thread.](../../../images/message-boards-participate-in-threads.png)
+
+![Figure 3: The Wiki widget displays your wiki on a Site page.](../../../images/wiki-page-full.png)
