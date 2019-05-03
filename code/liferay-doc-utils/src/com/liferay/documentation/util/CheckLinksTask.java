@@ -280,35 +280,35 @@ public class CheckLinksTask extends Task {
 		String lineSubstring = line.substring(lineIndex, line.length());		
 
 		// The first link in the substring will have its headers applied.
-		if (lineSubstring.contains(userGuideLinkFolder)) {
+		if (lineSubstring.contains(userGuideLinkFolder + findStr)) {
 			headers = userGuideHeaders;
 		}
 
-		else if (lineSubstring.contains(deploymentGuideLinkFolder)) {
+		else if (lineSubstring.contains(deploymentGuideLinkFolder + findStr)) {
 			headers = deploymentGuideHeaders;
 		}
 
-		else if (lineSubstring.contains(distributeGuideLinkFolder)) {
+		else if (lineSubstring.contains(distributeGuideLinkFolder + findStr)) {
 			headers = distributeGuideHeaders;
 		}
 
-		else if (lineSubstring.contains(appDevLinkFolder)) {
+		else if (lineSubstring.contains(appDevLinkFolder + findStr)) {
 			headers = appDevHeaders;
 		}
 
-		else if (lineSubstring.contains(customizationDevLinkFolder)) {
+		else if (lineSubstring.contains(customizationDevLinkFolder + findStr)) {
 			headers = customizationDevHeaders;
 		}
 
-		else if (lineSubstring.contains(frameworksDevLinkFolder)) {
+		else if (lineSubstring.contains(frameworksDevLinkFolder + findStr)) {
 			headers = frameworksDevHeaders;
 		}
 
-		else if (lineSubstring.contains(tutorialsDevLinkFolder)) {
+		else if (lineSubstring.contains(tutorialsDevLinkFolder + findStr)) {
 			headers = tutorialsHeaders;
 		}
 
-		else if (lineSubstring.contains(referenceDevLinkFolder)) {
+		else if (lineSubstring.contains(referenceDevLinkFolder + findStr)) {
 			headers = referenceDevHeaders;
 		}
 
@@ -875,7 +875,8 @@ public class CheckLinksTask extends Task {
 
 					primaryHeaders.add(header);
 				}
-				else if (line.startsWith("## ")) {
+				else if (line.startsWith("## ") || line.startsWith("### ") ||
+						line.startsWith("#### ") || line.startsWith("##### ")) {
 
 					String headerKeyValue = generateVirtualSecondaryHeader(line, article.getCanonicalPath());
 					secondaryHeaders.add(headerKeyValue);
