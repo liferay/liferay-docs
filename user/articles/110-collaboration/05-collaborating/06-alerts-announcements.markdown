@@ -1,4 +1,10 @@
-# Sending Alerts and Announcements [](id=sending-alerts-and-announcements)
+---
+header-id: sending-alerts-and-announcements
+---
+
+# Sending Alerts and Announcements
+
+[TOC levels=1-4]
 
 You can use the Alerts and Announcements widgets on Site pages to broadcast 
 important information to users. The Alerts widget is designed for displaying 
@@ -22,7 +28,7 @@ These widgets have two tabs:
 Click an alert/announcement's *Actions* button 
 (![Actions](../../../images/icon-actions.png)) to edit or delete it. 
 
-## Creating Alerts and Announcements [](id=creating-alerts-and-announcements)
+## Creating Alerts and Announcements
 
 There are two places where you can create alerts and announcements: 
 
@@ -30,14 +36,14 @@ There are two places where you can create alerts and announcements:
     &rarr; *Configuration* &rarr; *Announcements and Alerts*. Announcements and 
     alerts are in separate tabs in this app. To begin creating an announcement 
     or alert, select the appropriate tab and then click the *Add* button 
-    (![Add](../../../images/icon-add-app.png)). 
+    (![Add](../../../images/icon-add.png)). 
     This app gives administrators a central location to create announcements and 
     alerts that are then displayed on Site pages by the Announcements and Alerts 
     widgets. 
 
 2.  The Announcements and Alerts widgets, after adding them to a Site page from 
     the *Add* 
-    (![Add](../../../images/icon-control-menu-add.png)) 
+    (![Add](../../../images/icon-add-app.png)) 
     &rarr; *Widgets* &rarr; *News* menu. To begin creating an announcement or 
     alert, click the widget's *Add Alert* or *Add Announcement* button. 
 
@@ -90,7 +96,7 @@ it is the same. Follow these steps to complete the form:
 3.  Click *Save* when you're done. Your alert/announcement then appears in the 
     widget. 
 
-## User Configuration [](id=user-configuration)
+## User Configuration
 
 Users can configure how they'd like to receive announcements. 
 
@@ -109,7 +115,7 @@ Users can configure how they'd like to receive announcements.
 
     ![Figure 4: Each user can choose how they receive alerts and announcements.](../../../images/alerts-delivery.png)
 
-## Alert and Announcement Roles [](id=alert-and-announcement-roles)
+## Alert and Announcement Roles
 
 You can also create roles for users to make general announcements. For instance, 
 if you want someone specific to have strict control over announcements, give

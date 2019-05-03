@@ -1,4 +1,10 @@
-# Mentioning Users [](id=mentioning-users)
+---
+header-id: mentioning-users
+---
+
+# Mentioning Users
+
+[TOC levels=1-4]
 
 Have you ever wanted to include another user in a discussion on the Message
 Boards? Have you ever wanted to give kudos to a colleague in content you're
