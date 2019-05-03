@@ -6,23 +6,21 @@ in the app's WYSIWYG editor or by importing them from Markdown files
 (`.markdown`, `.md`) in a ZIP archive. The sections below cover both ways of 
 creating articles. 
 
-+$$$
-
-**Note:** To access Knowledge Base in Site Administration, a Role must have the 
-permission *Knowledge Base* &rarr; *Access in Site Administration*. To add or 
-act on articles, folders, or suggestions, the Site administrator must grant the 
-appropriate permissions using the Permissions window in Knowledge Base. 
-
-$$$
+| **Note:** To access Knowledge Base in Site Administration, a Role must have 
+| the permission *Knowledge Base* &rarr; *Access in Site Administration*. To add 
+| or act on articles, folders, or suggestions, the Site administrator must grant 
+| the appropriate permissions using the Permissions window in Knowledge Base. 
 
 To navigate to the Knowledge Base app, open the Menu 
 (![Menu](../../../../images/icon-menu.png)) 
-then go to Site Administration (the menu for your Site) &rarr; *Content* &rarr; 
-*Knowledge Base*. The Knowledge Base app has 3 tabs: 
+then go to Site Administration (the menu for your Site) &rarr; *Content & Data* 
+&rarr; *Knowledge Base*. The Knowledge Base app has three tabs: 
 
--   **Articles:** Create and manage articles and folders. 
--   **Templates:** Create and manage templates. 
--   **Suggestions:** Manage user-submitted feedback for articles. 
+**Articles:** Create and manage articles and folders. 
+
+**Templates:** Create and manage templates. 
+
+**Suggestions:** Manage user-submitted feedback for articles. 
 
 Select the *Articles* tab, then proceed to the sections below for instructions 
 on creating articles. 
@@ -68,20 +66,16 @@ Knowledge Base. The Knowledge Base can also prioritize articles by their
 filenames' numerical prefixes. For example, the Knowledge Base would list 
 `01-article.markdown` and `02-article.markdown` in ascending order by their 
 numerical prefix (`01`, `02`). For more information on article priority, see 
-[Managing Knowledge Base Articles](/discover/portal/-/knowledge_base/7-1/managing-the-knowledge-base#managing-knowledge-base-articles)
+[Managing Knowledge Base Articles](/discover/portal/-/knowledge_base/7-2/managing-the-knowledge-base#managing-knowledge-base-articles)
 For detailed information on the Knowledge Base importer, see the following 
 topics: 
 
--   [Importing Knowledge Base Articles](/discover/portal/-/knowledge_base/7-1/importing-knowledge-base-articles)
--   [Knowledge Base ZIP File Requirements](/discover/portal/-/knowledge_base/7-1/knowledge-base-zip-file-requirements)
--   [Knowledge Base Importer FAQs](/discover/portal/-/knowledge_base/7-1/knowledge-base-importer-faqs)
+-   [Importing Knowledge Base Articles](/discover/portal/-/knowledge_base/7-2/importing-knowledge-base-articles)
+-   [Knowledge Base ZIP File Requirements](/discover/portal/-/knowledge_base/7-2/knowledge-base-zip-file-requirements)
+-   [Knowledge Base Importer FAQs](/discover/portal/-/knowledge_base/7-2/knowledge-base-importer-faqs)
 
-+$$$
-
-**Note:** To import articles, your Role must have the permission *Knowledge
-Base* &rarr; *Resource Permissions: Import Articles*. 
-
-$$$
+| **Note:** To import articles, your Role must have the permission *Knowledge
+| Base* &rarr; *Resource Permissions: Import Articles*. 
 
 Follow these steps to import articles into the Knowledge Base: 
 

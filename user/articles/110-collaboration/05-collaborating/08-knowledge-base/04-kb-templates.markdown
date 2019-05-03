@@ -6,16 +6,12 @@ foster consistent formatting and content organization for articles. You can
 create and manage templates from the Knowledge Base app in Site Administration. 
 To navigate to this app, open the Menu
 (![Menu](../../../../images/icon-menu.png)) and go to Site Administration
-(the menu for your Site) &rarr; *Content* &rarr; *Knowledge Base*. 
+(the menu for your Site) &rarr; *Content & Data* &rarr; *Knowledge Base*. 
 
-+$$$
-
-**Note:** To access Knowledge Base in Site Administration, a Role must have the 
-permission *Knowledge Base* &rarr; *Access in Site Administration*. To add or 
-act on articles, folders, or suggestions, the Site administrator must grant the 
-appropriate permissions using the Permissions window in Knowledge Base. 
-
-$$$
+| **Note:** To access Knowledge Base in Site Administration, a Role must have 
+| the permission *Knowledge Base* &rarr; *Access in Site Administration*. To add 
+| or act on articles, folders, or suggestions, the Site administrator must grant 
+| the appropriate permissions using the Permissions window in Knowledge Base. 
 
 ![Figure 1: The Knowledge Base app's Templates tab.](../../../../images/kb-admin-templates.png)
 
