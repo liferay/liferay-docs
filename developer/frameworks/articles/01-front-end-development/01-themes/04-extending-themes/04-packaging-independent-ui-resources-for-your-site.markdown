@@ -10,7 +10,7 @@ If you want to package UI resources independent of a specific theme and include
 them on every page, a *Theme Contributor* is your best option. If, instead, you 
 want to include separate UI resources on a page that are attached to a theme, 
 use 
-[themelets](/develop/reference/-/knowledge_base/7-2/creating-themelets-with-the-themes-generator).
+[themelets](/docs/7-2/reference/-/knowledge_base/r/creating-themelets-with-the-themes-generator).
 
 A Theme Contributor is a module that contains CSS and JS resources to apply to 
 the page. The Control Menu, Product Menu, and Simulation Panel are packaged as 
@@ -26,9 +26,9 @@ to create a Theme Contributor module.
 Follow these steps to create a Theme Contributor:
 
 1.  Create a generic OSGi module using your favorite third party tool, or use 
-    [Blade CLI](/developer/reference/-/knowledge_base/7-2/blade-cli). You can 
+    [Blade CLI](/docs/7-2/reference/-/knowledge_base/r/blade-cli). You can 
     also use the 
-    [Blade Template](/developer/reference/-/knowledge_base/7-2/theme-contributor-template) 
+    [Blade Template](/docs/7-2/reference/-/knowledge_base/r/theme-contributor-template) 
     to create your module, in which case you can skip step 2. 
 
 2.  Add the `Liferay-Theme-Contributor-Type` header to your module's `bnd.bnd` 
@@ -74,6 +74,6 @@ The UI contributions affect every page and aren't affected by theme deployments.
 
 ## Related Topics
 
-- [Developing Themes](/developer/frameworks/-/knowledge_base/7-2/developing-themes)
-- [Generating Themelets](/developer/reference/-/knowledge_base/7-2/creating-themelets-with-the-themes-generator)
-- [Installing a Themelet](/developer/frameworks/-/knowledge_base/7-2/installing-a-themelet-in-your-theme)
+- [Developing Themes](/docs/7-2/frameworks/-/knowledge_base/f/developing-themes)
+- [Generating Themelets](/docs/7-2/reference/-/knowledge_base/r/creating-themelets-with-the-themes-generator)
+- [Installing a Themelet](/docs/7-2/frameworks/-/knowledge_base/f/installing-a-themelet-in-your-theme)

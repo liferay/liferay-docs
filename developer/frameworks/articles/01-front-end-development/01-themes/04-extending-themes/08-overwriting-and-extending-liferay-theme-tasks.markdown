@@ -140,6 +140,6 @@ Now you know how to hook into and overwrite the default Liferay theme tasks!
 
 ## Related Topics
 
-- [Installing the Theme Generator and Creating a Theme](/developer/reference/-/knowledge_base/7-2/installing-the-theme-generator-and-creating-a-theme)
-- [Generating Themelets](/developer/reference/-/knowledge_base/7-2/creating-themelets-with-the-themes-generator)
-- [Using Developer Mode with Themes](/developer/frameworks/-/knowledge_base/7-2/using-developer-mode-with-themes)
+- [Installing the Theme Generator and Creating a Theme](/docs/7-2/reference/-/knowledge_base/r/installing-the-theme-generator-and-creating-a-theme)
+- [Generating Themelets](/docs/7-2/reference/-/knowledge_base/r/creating-themelets-with-the-themes-generator)
+- [Using Developer Mode with Themes](/docs/7-2/frameworks/-/knowledge_base/f/using-developer-mode-with-themes)

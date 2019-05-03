@@ -14,7 +14,7 @@ however, is not the case for FreeMarker templates. To access this information in
 FreeMarker templates, you must inject it yourself into the template's context. 
 @product@ gives you a head start by injecting several common objects into the 
 template's context and exposing them as 
-[FreeMarker macros](/developer/frameworks/-/knowledge_base/7-2/product-freemarker-macros). 
+[FreeMarker macros](/docs/7-2/frameworks/-/knowledge_base/f/product-freemarker-macros). 
 To inject other objects into the FreeMarker template's context, you must create 
 a *Context Contributor*. 
 
@@ -27,7 +27,7 @@ context, and then determine the theme's color based on that information.
 Follow the steps below to create a context contributor:
 
 1.  Create an OSGi module using your favorite third party tool, or use 
-    [Blade CLI](/developer/reference/-/knowledge_base/7-2/blade-cli).
+    [Blade CLI](/docs/7-2/reference/-/knowledge_base/r/blade-cli).
 
 2.  Create a component class that implements the `TemplateContextContributor` 
     service, and set the `type` property to the type of context you're injecting 
@@ -93,6 +93,6 @@ the power of your chosen templating language.
 
 ## Related Topics
 
-- [Customizing the Product Menu](/developer/frameworks/-/knowledge_base/7-2/customizing-the-product-menu)
-- [Developing Themes](/developer/frameworks/-/knowledge_base/7-2/developing-themes)
-- [Theme Contributors](/developer/frameworks/-/knowledge_base/7-2/packaging-independent-ui-resources-for-your-site)
+- [Customizing the Product Menu](/docs/7-2/frameworks/-/knowledge_base/f/customizing-the-product-menu)
+- [Developing Themes](/docs/7-2/frameworks/-/knowledge_base/f/developing-themes)
+- [Theme Contributors](/docs/7-2/frameworks/-/knowledge_base/f/packaging-independent-ui-resources-for-your-site)
