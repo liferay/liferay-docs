@@ -64,7 +64,19 @@ set a dependency for it in your build file. Here's how:
     ```
 
 | **Note**: To configure third-party libraries in a module, see
-| [Adding Third Party Libraries to a Module](/docs/7-1/customization/-/knowledge_base/c/adding-third-party-libraries-to-a-module). 
+| [Adding Third Party Libraries to a Module](/docs/7-2/customization/-/knowledge_base/c/adding-third-party-libraries-to-a-module). 
 
 Nice! You know how to specify artifact dependencies. Now that's a skill you can
 depend on! 
+
+## Related Topics 
+
+[Finding Artifacts](/docs/7-2/customization/-/knowledge_base/c/finding-artifacts)
+
+[Importing Packages](/docs/7-2/customization/-/knowledge_base/c/importing-packages)
+
+[Exporting Packages](/docs/7-2/customization/-/knowledge_base/c/exporting-packages)
+
+[Resolving Third Party Library Package Dependencies](/docs/7-2/customization/-/knowledge_base/c/resolving-third-party-library-package-dependencies)
+
+[Deploying WARs \(WAB Generator\)](/docs/7-2/customization/-/knowledge_base/c/deploying-wars-wab-generator)
