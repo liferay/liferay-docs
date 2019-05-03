@@ -58,19 +58,18 @@ behavior. It's the final step of using all of that to provide users and site
 visitors with the best possible experience, and driving campaigns and content 
 engagement. If you strategically create segments, you can then use that to 
 enhance user experiences, and make sure that users are seeing the content and 
-promotions that you want them to see.
+promotions that you want them to see. Content Page Personalization and Content 
+List Personalization are two key aspects of this.
 
 ### Content Page Personalization
 
-Content Page Personalization describes changes to page layout and content based 
-on who is viewing the page. The same page can be used to provide drastically 
-different experiences by displaying different widgets and even different 
-layouts depending on who is viewing the page. 
+Content Page Personalization let's you dynamically change the page layout and 
+content based on who is viewing the page. You can create *Experiences* for any 
+[Content Page](user-guide-link) which provide different text, images, widgets, and even different 
+layouts based on the segment criteria of the user viewing the page. You can see 
+a step by step demonstration of this in [Content Page Personalization](/documentation/user/-/knowledge_base/7-2/content-page-personalization).
 
-### Content List Personalization
+### Content Set Personalization
 
-Content Personalization describes changes to the specific pieces of content
-displayed to a user or visitor through applications like the Asset Publisher 
-based on their segment criteria. For example, if a user has already viewed a 
-specific ad on your site today, Content List Personalization can prevent that 
-ad from being displayed again to improve their experience.
+[Content Sets](user-guide-link) are a tool for organizing and displaying content. Content Set Personalization provides dynamic selection of Content Sets based on User Segments. This means the Content Set which displays in a given context is determined by their segment criteria. For example, you could use a content list to display "featured" articles at the top of a page. Then you could create a Segment which contains guests who have viewed the featured articles, and display a different content list for the featured articles to help improve engagement for other content. You can see 
+a step by step demonstration of this in [Content Set Personalization](/documentation/user/-/knowledge_base/7-2/content-set-personalization).
