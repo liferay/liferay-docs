@@ -50,26 +50,32 @@ picture of how users and visitors on your site behave and interact with
 both standard and targeted content. You can learn more about this in 
 [Using Analytics Cloud with User Segments](/documentation/user/-/knowledge_base/7-2/using-analytics-cloud-with-user-segments).
 
-
 ## Personalizing Experiences
 
 The most important piece of the puzzle isn't defining groups or analyzing use 
 behavior. It's the final step of using all of that to provide users and site 
 visitors with the best possible experience, and driving campaigns and content 
 engagement. If you strategically create segments, you can then use that to 
-enhance user experiences, and make sure that users are seeing the content and 
-promotions that you want them to see. Content Page Personalization and Content 
-List Personalization are two key aspects of this.
+enhance user experiences, and make sure that users are seeing content
+targeted to them. Content Page Personalization and Content List Personalization 
+are two key aspects of this.
 
 ### Content Page Personalization
 
 Content Page Personalization let's you dynamically change the page layout and 
 content based on who is viewing the page. You can create *Experiences* for any 
-[Content Page](user-guide-link) which provide different text, images, widgets, and even different 
-layouts based on the segment criteria of the user viewing the page. You can see 
-a step by step demonstration of this in [Content Page Personalization](/documentation/user/-/knowledge_base/7-2/content-page-personalization).
+[Content Page](user-guide-link) which provide different text, images, widgets, 
+and even different layouts based on the segment criteria of the user viewing 
+the page. You can see a step by step demonstration of this in [Content Page Personalization](/documentation/user/-/knowledge_base/7-2/content-page-personalization).
 
 ### Content Set Personalization
 
-[Content Sets](user-guide-link) are a tool for organizing and displaying content. Content Set Personalization provides dynamic selection of Content Sets based on User Segments. This means the Content Set which displays in a given context is determined by their segment criteria. For example, you could use a content list to display "featured" articles at the top of a page. Then you could create a Segment which contains guests who have viewed the featured articles, and display a different content list for the featured articles to help improve engagement for other content. You can see 
+[Content Sets](user-guide-link) are a tool for organizing and displaying 
+content. Content Set Personalization provides dynamic selection of Content Sets 
+based on User Segments. This means the Content Set which displays in a given 
+context is determined by their segment criteria. For example, you could use a 
+content list to display "featured" articles at the top of a page. Then you 
+could create a Segments which contain users who should receive more specialized 
+content, rather than the default. Those Segments would then see content 
+personalized to their interest rather than the default. You can see 
 a step by step demonstration of this in [Content Set Personalization](/documentation/user/-/knowledge_base/7-2/content-set-personalization).
