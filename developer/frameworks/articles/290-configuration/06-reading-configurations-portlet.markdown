@@ -1,11 +1,19 @@
-# Reading Configuration Values from a MVC Portlet [](id=reading-configuration-values-from-a-mvc-portlet)
+# Reading Unscoped Configuration Values from an MVC Portlet [](id=reading-configuration-values-from-a-mvc-portlet)
 
-It's very common to read configuration values from a portlet class or its JSPs.
-This tutorial shows how to add a configuration to the request and read it from
-the view layer, and how to read it directly in the portlet class. This tutorial
-uses dummy code from a portlet we'll call the Example Configuration Portlet. The
-import statements are included in the code snippets so that you can see the
-fully qualified class names (FQCNs) of all the classes that are used.
+If your configuration is scoped to `SYSTEM` or is unscoped (which amounts to
+the same thing), you have a couple of options for reading configuration values.
+This section describes how to read values from an MVC portlet. There are two
+ways to do this:
+
+-   Add a configuration to the request and read it from the view layer
+    (commonly a JSP).
+
+-   Read values directly from the portlet class.
+
+This tutorial uses dummy code from a portlet we'll call the Example
+Configuration Portlet. The import statements are included in the code snippets
+so that you can see the fully qualified class names (FQCNs) of all the classes
+that are used.
 
 ## Accessing the Configuration Object in the Portlet Class [](id=accessing-the-configuration-object-in-the-portlet-class)
 
@@ -55,10 +63,9 @@ class.
     Note that you can specify more than one configuration PID here, by enclosing the
     values in curly braces (`{}`) and placing commas between each PID.
 
-3.  Write an `activate`  method annotated with `@Activate` and `@Modified`. See
-    the 
-    [Making Applications Configurable](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable)
-    tutorial if you're unsure why these annotations are necessary:
+3.  Write an `activate`  method annotated with `@Activate` and `@Modified`.
+    This ensures that the method is invoked when the Component is started, and
+    again whenever the configuration is changed.
 
         @Activate
         @Modified
@@ -79,16 +86,6 @@ In the case of reading from a JSP, add the configuration object to the request
 object so its values can be read from the JSPs that comprise the application's
 view layer. 
 
-+$$$
-
-**Note:** There's a shortcut method for obtaining a portlet instance
-configuration. The method described in this section takes a straightforward
-approach that does not use this shortcut. See the 
-[Accessing the Portlet Instance Configuration Through the `PortletDisplay`](/develop/tutorials/-/knowledge_base/7-1/reading-configuration-values-from-a-configuration-provider#accessing-the-portlet-instance-configuration-through-the-portletdisplay) article to learn
-about the shorter method.
-
-$$$
-
 1. Add the configuration object to the request. Here's what it looks like in a
    simple portlet's `doView` method:
 
@@ -104,7 +101,7 @@ $$$
 
     The main difference between this example and the component class covered in
     the
-    [previous tutorial](reading-configuration-values-from-a-component) 
+    [next section](/docs/7-2/frameworks/-/knowledge_base/f/reading-configuration-values-from-a-component) 
     is that this class is a portlet class and it sets the configuration object
     as a request attribute in its `doView()` method. 
 
@@ -132,8 +129,6 @@ $$$
         %>
 
         <p>Favorite color: <span style="color: <%= favoriteColor %>;"><%= favoriteColor %></span></p
-
-<!--[Figure 2: Here, the Example Configuration portlet's `view.jsp` is rendered. This JSP reads the value of the `favoriteColor` configuration and displays it.](../../images/example-configuration-portlet.png)-->
 
 The example code here would make the application display a message like this:
 
@@ -176,6 +171,5 @@ but you can do anything that makes sense for your application's controller
 logic.
 
 That's all there is to reading configuration values in an MVC Portlet. The next
-tutorial covers categorizing the configuration and accessing it through a
-Configuration Provider.
-
+section covers reading configuration values from an OSGi Component class that
+is not part of an MVC portlet.

@@ -1,25 +1,7 @@
 # Reading Configuration Values from a Component [](id=reading-configuration-values-from-a-component)
 
-Once you have the 
-[application configured](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable)
-so that administrators can configure it in System Settings, you might be
-wondering how to read the configuration from your application's Java code.
-
-The answer is that there are several ways. Which one you use depends on the
-context from which the configuration must be read:
-
-1. From any Component class
-
-2. From an MVC portlet's JSP
-
-3. From an MVC portlet's Portlet class
-
-4. From a non-Component class
-
-This tutorial shows the first usage, reading the configuration from a Component
-class.
-
-## Reading Configurations from a Component Class [](id=reading-configurations-from-a-component-class)
+Follow these steps to read `SYSTEM` scoped or unscoped configuration values from
+a Component that isn't part of an MVC portlet:
 
 1.  First set the `configurationPid` Component property as the fully qualified
     class name of the configuration class:
@@ -57,17 +39,13 @@ class.
     method call, presumably so that whatever model car is ordered will be
     ordered in the configured favorite color.
 
-+$$$
-
-**Note:** The bnd library also provides a class called
-`aQute.bnd.annotation.metatype.Configurable` with a `createConfigurable()`
-method. You can use that instead of Liferay's
-`com.liferay.portal.configuration.metatype.bnd.util.ConfigurableUtil` without
-any problems. Liferay's developers created the `ConfigurableUtil` class to
-improve the performance of bnd's implementation, and it's used in internal code.
-Feel free to use whichever method you prefer. 
-
-$$$
+| **Note:** The bnd library also provides a class called
+| `aQute.bnd.annotation.metatype.Configurable` with a `createConfigurable()`
+| method. You can use that instead of Liferay's
+| `com.liferay.portal.configuration.metatype.bnd.util.ConfigurableUtil` without
+| any problems. Liferay's developers created the `ConfigurableUtil` class to
+| improve the performance of bnd's implementation, and it's used in internal code.
+| Feel free to use whichever method you prefer. 
 
 With very few lines of code, you have a configurable application that
 dynamically changes its configuration, has an auto-generated UI, and uses a
