@@ -47,13 +47,13 @@ The following instructions for enabling TLS use `liferay` as the password
 whenever one is needed. Use your own passwords for your installation. 
 
 | **Important:** Elasticsearch and @product@ must share the keys and certificates
-| used to configure SSL. Copy them between servers and point to the local copy in
+| used to configure TLS. Copy them between servers and point to the local copy in
 | the corresponding configuration files.
 
 ### Generate Node Certificates
 
 [Generate a node certificate](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/configuring-tls.html#node-certificates)
-for each node. You can, of course, use a Certificate Authority to obtain node 
+for each node. Alternatively, use a Certificate Authority to obtain node
 certificates.
 
 1.  Create a certificate authority, using 
@@ -115,7 +115,7 @@ To configure the X-Pack adapter, navigate to *Control Panel* &rarr;
 on the *X-Pack Security* entry. You can enter the property values here, but it's
 more common to use a 
 [configuration file](/discover/portal/-/knowledge_base/7-1/understanding-system-configuration-files)
-deployed to `[Liferay Home]/osgi/configs`. For the X-Pack adapter, create a file
+deployed to `[Liferay Home]/osgi/configs`. For the X-Pack security connector, create a file
 called
 
     com.liferay.portal.search.elasticsearch6.xpack.security.internal.configuration.XPackSecurityConfiguration.config
@@ -138,7 +138,7 @@ Note that the `password` should match what you set during the X-Pack password
 setup above. 
 
 Enable authentication by setting `requiresAuthentication` to `true` and providing the
-credentials for the Elasticsearch user. For SSL, enable transport SSL, set the
+credentials for the Elasticsearch user. For TLS, enable transport TLS, set the
 certificate verification mode and certificate format, and provide the path to
 the certificate, key, and certificate authority. Of course, the exact values
 depend on your X-Pack configuration. 

@@ -16,16 +16,12 @@ this integration.  Contact
 
 3.  Configure Kibana with the proper security settings.
 
-4.  Install the 
-    [Liferay Connector to X-Pack Monitoring](https://web.liferay.com/marketplace/-/mp/application/106163750) [Elastic Stack 6.x].
+4.  Install the Liferay Connector to X-Pack Monitoring.
 
 5.  Configure the connector to communicate with Elasticsearch.
 
 This document assumes you're enabling security *and* monitoring, though
 differences in the process are noted as appropriate.
-
-For the X-Pack installation procedure, refer to the 
-[X-Pack security article](/discover/deployment/-/knowledge_base-7-1/installing-x-pack-security).
 
 Start by enabling data collection in Elasticsearch.
 
