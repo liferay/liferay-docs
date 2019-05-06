@@ -6,15 +6,15 @@ header-id: workflow
 
 [TOC levels=1-4]
 
-Liferay's workflow engine is named *Kaleo*. In Greek, Kaleo means "called ones,"
-which is appropriate for a workflow engine that calls users to participate in a
-review process designed for them. Kaleo workflow makes it possible to define any
-number of simple to complex business processes/workflows, deploy them, and
-manage them through a portal interface. The processes have knowledge of Users,
-Groups and Roles. You don't have to write a single line of code to accomplish
-this: it's defined in an XML document, or if you're a Liferay Digital Experience
-Platform (DXP) customer, you have access to a nifty visual designer for
-workflows, called Kaleo Designer. 
+Liferay's workflow engine is named *Kaleo*. In Greek, Kaleo means "called
+ones," which is appropriate for a workflow engine that calls users to
+participate in a review process designed for them. Kaleo workflow makes it
+possible to define any number of simple to complex business
+processes/workflows, deploy them, and manage them through a portal interface.
+The processes have knowledge of Users, Groups and Roles. You don't have to
+write a single line of code to accomplish this: it's defined in an XML
+document. If you're a Liferay Digital Experience Platform (DXP) customer, you
+have access to a nifty visual designer for workflows, called Kaleo Designer. 
 
 There are several steps to effective workflowing: 
 
@@ -55,9 +55,9 @@ There are some noteworthy enhancements to the workflow functionality:
 
 - For DXP subscribers, _Workflow Metrics_ was introduced. Set
     definition-specific deadlines and use a stopwatch-like timer to report
-    metrics on a workflow instance's lifecycle.
+    metrics on the workflow instance's lifecycle.
 
-    ![Figure 3: Use SLAs to define, measure, and report on workflow lifecycles.](../../images/workflow-add-sla.png)
+    ![Figure 3: Use SLAs to define, measure, and report on timed workflow events.](../../images/workflow-add-sla.png)
 
 Create your own workflows from scratch or leverage existing workflows.
 
