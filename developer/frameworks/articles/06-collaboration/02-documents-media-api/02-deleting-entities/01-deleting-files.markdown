@@ -8,9 +8,9 @@ header-id: deleting-files
 
 To delete a file with the Documents and Media API, you must use one of the two 
 `deleteFileEntry*` methods discussed in 
-[Deleting Entities](/developer/frameworks/-/knowledge_base/7-2/deleting-entities). 
+[Deleting Entities](/docs/7-2/frameworks/-/knowledge_base/f/deleting-entities). 
 The steps here show you how. For general information on using the API, see 
-[Documents and Media API](/developer/frameworks/-/knowledge_base/7-2/documents-and-media-api). 
+[Documents and Media API](/docs/7-2/frameworks/-/knowledge_base/f/documents-and-media-api). 
 
 Follow these steps to delete a file: 
 
@@ -49,10 +49,10 @@ needs of the Documents and Media app.
 
 ## Related Topics
 
-[Moving Entities to the Recycle Bin](/developer/frameworks/-/knowledge_base/7-2/moving-entities-to-the-recycle-bin)
+[Moving Entities to the Recycle Bin](/docs/7-2/frameworks/-/knowledge_base/f/moving-entities-to-the-recycle-bin)
 
-[Creating Files](/developer/frameworks/-/knowledge_base/7-2/creating-files)
+[Creating Files](/docs/7-2/frameworks/-/knowledge_base/f/creating-files)
 
-[Updating Files](/developer/frameworks/-/knowledge_base/7-2/updating-files)
+[Updating Files](/docs/7-2/frameworks/-/knowledge_base/f/updating-files)
 
-[Moving Folders and Files](/developer/frameworks/-/knowledge_base/7-2/moving-folders-and-files)
+[Moving Folders and Files](/docs/7-2/frameworks/-/knowledge_base/f/moving-folders-and-files)
