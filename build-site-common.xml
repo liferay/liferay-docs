@@ -72,6 +72,17 @@
 			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
 		</classpath>
 	</taskdef>
+	
+	<taskdef name="convertlinks" classname="com.liferay.documentation.util.ConvertLinksTask">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
 
 	<taskdef name="convertsidebars" classname="com.liferay.documentation.util.ConvertSidebarsTask">
 		<classpath>
@@ -328,6 +339,11 @@
 	<target name="convert-headers" description="Converts legacy header IDs to new format. Run this before running the number-headers task for the first time.">
 		<convertheaders docdir="${doc.dir}">
 		</convertheaders>
+	</target>
+	
+	<target name="convert-links" description="Converts legacy relative links to new format.">
+		<convertlinks docdir="${doc.dir}">
+		</convertlinks>
 	</target>
 
 	<target name="convert-sidebars" description="Converts legacy sidebars to new format.">
