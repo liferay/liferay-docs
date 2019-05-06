@@ -35,9 +35,9 @@ all:
 
 ```gradle
 repositories {
-	maven {
-		url "https://repository-cdn.liferay.com/nexus/content/groups/public"
-	}
+    maven {
+        url "https://repository-cdn.liferay.com/nexus/content/groups/public"
+    }
 }
 ```
 
@@ -52,7 +52,7 @@ Name | Depends On | Type | Description
 ### BuildRESTTask
 
 Tasks of type `BuildRESTTask` extend [`JavaExec`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html),
-so all its properties and methods, such as [`args`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:args(java.lang.Iterable))
+so all its properties and methods, such as [`args`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:args\(java.lang.Iterable\))
 and [`maxHeapSize`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:maxHeapSize)
 are available. They also have the following properties set by default:
 
@@ -75,7 +75,7 @@ are contained in the project directory of `my-rest-app-impl`. In the
 `build.gradle` of the same module, apply the `com.liferay.rest.builder` plugin.
 
 The properties of type `File` supports any type that can be resolved by
-[`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file(java.lang.Object)).
+[`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file\(java.lang.Object\)).
 Moreover, it is possible to use Closures and Callables as values for the
 `String` properties, to defer evaluation until task execution.
 
@@ -90,6 +90,6 @@ a dependency to the latest released version of Liferay REST Builder.
 
 ```gradle
 dependencies {
-	restBuilder group: "com.liferay", name: "com.liferay.portal.tools.rest.builder", version: "1.0.21"
+    restBuilder group: "com.liferay", name: "com.liferay.portal.tools.rest.builder", version: "1.0.21"
 }
 ```
