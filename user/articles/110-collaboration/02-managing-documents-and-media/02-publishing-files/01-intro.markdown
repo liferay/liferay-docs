@@ -20,6 +20,6 @@ several environments, including your browser and local desktop file system.
 
 ![Figure 1: These documents are awesome.](../../../../images/dm-images-in-admin.png)
 
-![Figure 2: You can display images on a Site page.](../../../../images/dm-media-gallery.png)
+![Figure 2: This slideshow rules.](../../../../images/dm-media-gallery-slideshow.png)
 
-![Figure 3: The Media Gallery's slideshow provides a nice way to view images.](../../../../images/dm-media-gallery-slideshow.png)
+![Figure 3: Viewing a file's details is fun.](../../../../images/dm-file-entry-details.png)
