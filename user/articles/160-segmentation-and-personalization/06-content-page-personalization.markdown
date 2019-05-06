@@ -73,17 +73,3 @@ an experience curated just for them.
 | experience at the time that it is created. Any further changes to the
 | *Default* experience will not effect any of experiences for that page.
 
-## Previewing User Experiences
-
-As an administrator, when you view a page, you can preview the different 
-experiences that users will have on that page.
-
-1.  Click the [Simulation](../../images/icon-simulation.png) icon from the top
-    of any page.
-    
-2.  Select a segment from the *Segments* selection to preview the page as a 
-    member of that segment.
-
-
-![Figure 4: You can preview different experiences from the Preview Panel.](../../images/personalization-segment-preview.png)
-

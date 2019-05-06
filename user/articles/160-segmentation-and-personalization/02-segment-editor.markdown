@@ -30,6 +30,9 @@ Below that there are three main sections:
 
 ![Figure 2: You use the Segment Editor to create new Segments.](../../images/sp-segment-editor-full.png)
 
+In addition to the the various properties, there are operations and conjunctions
+that you use to define criteria.
+
 ## User Properties
 
 User Properties are user attributes that you want to capture. This is made up of
@@ -50,8 +53,7 @@ system  information. You can use this to target the user's device or OS, or for
 activity-based criteria like if a user entered the website through a specific
 campaign driven landing page. 
 
-## Comparators
+## Operations and Conjunctions
 
 There are a number of different ways to evaluate properties, and different ways
-that you can relate different fields. For a comprehensive list see the [Defining
-Segment Criteria Reference](link).
+that you can relate different fields. For a comprehensive list see the [Defining Segment Criteria Reference](link).

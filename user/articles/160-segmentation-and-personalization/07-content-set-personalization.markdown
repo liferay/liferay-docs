@@ -59,18 +59,3 @@ Now create the content set for engineers and configure its display.
 Now anytime a member of the *American Engineers* segment views this Content Set 
 being displayed, they will see the personalized version and not the default. 
 Test this now, using the *Simulator*.
-
-## Previewing User Experiences
-
-As an administrator, when you view a page, you can preview the different 
-experiences that users will have on that page.
-
-1.  Click the [Simulation](../../images/icon-simulation.png) icon from the top
-    of any page.
-    
-2.  Select the *American Engineers* segment from the *Segments* selection.
-
-Now you see the Content Set for engineers displayed instead of the default.
-
-![Figure 4: You can preview different experiences from the Preview Panel.](../../images/personalization-content-set-preview.png)
-
