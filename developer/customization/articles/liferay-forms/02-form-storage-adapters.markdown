@@ -17,7 +17,7 @@ The Dynamic Data Mapping (DDM) backend can *adapt* to other data storage formats
 for form records. Want to store your data in XML? YAML? No problem. Because the
 storage API is separated from the regular service calls used to populate the
 database table for form entries, a developer can even choose to store form data
-outside the Liferay database.  
+outside the Liferay database.
 <!--A Diagram?-->
 
 Define your own format to save form entries by writing your own implementation
@@ -25,10 +25,12 @@ of the `StorageAdapter` interface. The interface follows the *CRUD* approach, so
 implementing it requires that you write methods to create, read, update and
 delete form values.
 
-| **Note:** The `StorageAdapter` interface and it's abstract implementation,
-| `BaseStorageAdapter`, are deprecated in @product-ver@, with no direct
-| replacement. If you need a storage adapter, this is still the way to create one,
-| but be aware that it will not be available in a future version.
+| **Note:** The `StorageAdapter` interface and it's abstract implementation, |
+| `BaseStorageAdapter`, are deprecated in @product-ver@. In the future your code
+| should be migrated to implement the `DDMStorageAdapter` interface. If you need a
+| storage adapter, the current extension of `BaseStorageAdapter` (demonstrated in
+| this documentation), is still the way to create one, but be aware that it will
+| not be available in a future version.
 
 A newly added storage adapter can only be used with new Forms. All existing
 Forms continue to use the adapter selected (JSON by default) at the time of
