@@ -15,7 +15,7 @@ are likely to be interested in those offers. You don't want to display
 information on a basic free checking account for an "advanced" customer who 
 carries a high balance across several types of accounts, but you do want to 
 show that information to a visitor who entered the site through a landing page 
-from a promotional at a local college. At the same time, you probably don't 
+from a promotion at a local college. At the same time, you probably don't 
 want to recommend options for optimizing retirement account contributions to 
 the college student, but the other customer might be a great target for that 
 campaign. By using data like user attributes or visitor interactions, you can
@@ -27,7 +27,7 @@ The first part of the equation is defining the types of segments that you need.
 You can create Segments to capture every case. Segments are composed of
 different criteria. In the previous example you might have a segment for *Free
 Checking Account Prospects* that contains criteria based on user data, like
-customers that don't currently have an open checking account, or based on user
+customers that don't currently have an open checking account; or based on user
 behavior, like visitors who came to the site through specific channels. To learn
 more about Segmentation options, see the 
 [overview of the Segment editor](/docs/7-2/user/-/knowledge_base/user/the-segment-editor), practice
