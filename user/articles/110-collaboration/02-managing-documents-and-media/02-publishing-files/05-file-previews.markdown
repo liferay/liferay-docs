@@ -4,6 +4,8 @@ header-id: viewing-file-previews
 
 # Viewing File Previews
 
+[TOC levels=1-4]
+
 File previews help users browse and find media efficiently. To view a preview of 
 a file, click the file's name in the Document Library. If the file is an image,
 the image appears. If an app is installed that can render a preview of the file

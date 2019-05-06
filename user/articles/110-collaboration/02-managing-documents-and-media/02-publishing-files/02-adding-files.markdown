@@ -4,6 +4,8 @@ header-id: adding-files-to-a-document-library
 
 # Adding Files to a Document Library
 
+[TOC levels=1-4]
+
 This article covers the following topics to help you get started adding files to
 your Document Library: 
 

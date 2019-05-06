@@ -1,10 +1,16 @@
-# Configuring Sharing [](id=configuring-sharing)
+---
+header-id: configuring-sharing
+---
+
+# Configuring Sharing
+
+[TOC levels=1-4]
 
 Administrators can choose whether 
 [file sharing](/discover/portal/-/knowledge_base/7-2/sharing-files) 
 is enabled at the global, instance, and Site levels. 
 
-## Global Configuration [](id=global-configuration)
+## Global Configuration
 
 Sharing is enabled globally by default. To configure sharing globally, follow 
 these steps:
@@ -30,7 +36,7 @@ instances. You can change this from *Virtual Instance Sharing* under
 **Enabled:** Whether sharing is enabled by default for all instances in the 
 portal. 
 
-## Instance Configuration [](id=instance-configuration)
+## Instance Configuration
 
 To enable or disable sharing on a per-instance basis, follow these steps: 
 
@@ -44,7 +50,7 @@ To enable or disable sharing on a per-instance basis, follow these steps:
 
 ![Figure 2: You can enable or disable sharing for each instance.](../../../../images/sharing-instance.png)
 
-## Site Configuration [](id=site-configuration)
+## Site Configuration
 
 To enable or disable sharing for a Site, follow these steps: 
 

@@ -4,6 +4,8 @@ header-id: using-the-documents-and-media-management-bar
 
 # Using the Documents and Media Management Bar
 
+[TOC levels=1-4]
+
 The Documents and Media *Management Bar* is where people who manage documents 
 go to unwind after a long day at work. Just kidding. The Management Bar, as its 
 name implies, contains tools for managing the files and folders in your 

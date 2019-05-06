@@ -4,6 +4,8 @@ header-id: publishing-files-site
 
 # Publishing Files
 
+[TOC levels=1-4]
+
 Once your Document Library contains files, you may want to publish them in your
 site. Here are some ways to publish files:
 

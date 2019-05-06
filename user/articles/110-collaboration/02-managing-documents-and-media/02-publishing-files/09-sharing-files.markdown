@@ -4,6 +4,8 @@ header-id: sharing-files
 
 # Sharing Files
 
+[TOC levels=1-4]
+
 @product@'s 
 [role-based permissions system](/discover/portal/-/knowledge_base/7-2/roles-and-permissions) 
 lets administrators choose which actions users can take on assets, including 
