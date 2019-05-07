@@ -8,8 +8,8 @@ Here are the code upgrade steps:
 
 1.  [Upgrade Your Development Environment](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment)
 
-    Legacy projects should be upgraded to the latest version of Liferay
-    Workspace to ensure you leverage all available features.
+    Legacy project environments should be upgraded to the latest version of
+    Liferay Workspace to ensure you leverage all available features.
 
     1.  [Install a Liferay Workspace](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment#installing-a-new-liferay-workspace)
 
@@ -27,7 +27,7 @@ Here are the code upgrade steps:
     4.  [Upgrading Your Maven Build Environment](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-maven-build-environment)
 
     If you're upgrading a Maven build with Liferay Portal 6.2-compatible code or
-    older, you must upgrade the Maven environment.
+    older, you must upgrade your Maven environment.
 
 2. Migrate Plugins SDK Projects to Liferay Workspace
 

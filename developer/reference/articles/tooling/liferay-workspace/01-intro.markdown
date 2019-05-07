@@ -62,13 +62,6 @@ folder structure any way you'd like. The top-level files/folder of a Liferay
 - `ext` (generated): holds the Ext OSGi modules and Ext plugins.
 - `gradle`: holds the Gradle Wrapper used by your workspace.
 - `modules`: holds your custom modules.
-- `plugins-sdk` (generated): holds plugins to migrate from previous releases.
-  These project types should eventually be migrated to the `wars` folder, if
-  possible. This is targeted for @product@ 7.0 to provide a way to migrate from
-  the Plugins SDK to Liferay Workspace. See the
-  [Using a Plugins SDK from Your Workspace](/docs/tutorials/7-0/-/knowledge_base/tutorials/configuring-a-liferay-workspace#using-a-plugins-sdk-from-your-workspace)
-  section for more information. The Plugins SDK is no longer available for
-  @product-ver@.
 - `themes`: holds Node.js-style themes that use the Liferay JS Theme Toolkit, 
   which are built using the Liferay Theme Generator.
 - `wars`: holds traditional WAR-style web application projects and theme
