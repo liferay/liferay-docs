@@ -11,14 +11,14 @@ configure your npm environment:
     directory, like the one shown below. This value specifies where to install 
     global npm packages:
 
-    ```properties
+    ```bash
     prefix=/Users/[username]/.npm-packages
     ```
 
 3.  Set the `NPM_PACKAGES` system environment variable to the `prefix` value you 
     just specified:
 
-    ```properties
+    ```bash
     NPM_PACKAGES=/Users/[username]/.npm-packages (same as prefix value)
     ```
 
@@ -26,6 +26,6 @@ configure your npm environment:
     UNIX and to `%NPM_PACKAGES%` on Windows, make sure to add the appropriate 
     directory to your system path. For example, on UNIX you'd set this:
 
-    ```properties
+    ```bash
     PATH=${PATH}:${NPM_PACKAGES}/bin
     ```
