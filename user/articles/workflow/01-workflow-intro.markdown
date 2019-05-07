@@ -8,19 +8,19 @@ header-id: workflow
 
 Liferay's workflow engine is named *Kaleo*. In Greek, Kaleo means "called
 ones," which is appropriate for a workflow engine that calls users to
-participate in a review process designed for them. Kaleo workflow makes it
-possible to define any number of simple to complex business
-processes/workflows, deploy them, and manage them through a portal interface.
-The processes have knowledge of Users, Groups and Roles. You don't have to
-write a single line of code to accomplish this: it's defined in an XML
-document. If you're a Liferay Digital Experience Platform (DXP) customer, you
-have access to a nifty visual designer for workflows, called Kaleo Designer. 
+participate in a review process designed for them. Workflow makes it possible
+to define any number of simple to complex business processes/workflows, deploy
+them, and manage them through a portal interface. The processes have knowledge
+of Users, Groups and Roles. You don't have to write a single line of code to
+accomplish this: it's defined in an XML document. If you're a Liferay Digital
+Experience Platform (DXP) customer, you have access to a nifty visual designer
+for workflows. 
 
 There are several steps to effective workflowing: 
 
 - [Designing review processes in XML](/docs/7-2/reference/-/knowledge_base/r/crafting-xml-workflow-definitions)
 
-- (DXP only) [Designing review processes in Kaleo Designer](/docs/7-2/user/-/knowledge_base/u/managing-workflows#uploading-workflow-definitions)
+- (DXP only) [Visually designing review processes in the Workflow Designer](/docs/7-2/user/-/knowledge_base/u/workflow-designer)
 
 - [Uploading workflow definitions](/docs/7-2/user/-/knowledge_base/u/managing-workflows#uploading-workflow-definitions)
 
@@ -30,8 +30,8 @@ There are several steps to effective workflowing:
 
 - [Sending assets through review](/docs/7-2/user/-/knowledge_base/u/reviewing-assets)
 
-After all that, you'll be familiar with using Liferay's Kaleo workflow to set up
-approval processes for any 
+After all that, you'll be familiar with using Liferay's workflow engine to set
+up approval processes for any 
 [workflow-enabled content](/docs/7-2/user/-/knowledge_base/u/activating-workflow).
 
 ## What's New with Workflow?
