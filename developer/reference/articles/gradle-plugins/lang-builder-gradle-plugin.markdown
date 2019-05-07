@@ -37,7 +37,7 @@ repositories {
 }
 ```
 
-See [this page](/develop/tutorials/-/knowledge_base/7-1/automatically-generating-language-files)
+See [this page](/docs/7-2/customization/-/knowledge_base/c/automatically-generating-language-files)
 on the *Liferay Developer Network* for more information about usage of the Lang
 Builder Gradle plugin.
 

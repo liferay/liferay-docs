@@ -39,7 +39,7 @@ Name | Depends On | Type | Description
 
 ### ExecuteGulpTask [](id=executegulptask)
 
-Tasks of type `ExecuteGulpTask` extend [`ExecuteNodeScriptTask`](/develop/reference/-/knowledge_base/7-1/node-gradle-plugin#executenodescripttask),
+Tasks of type `ExecuteGulpTask` extend [`ExecuteNodeScriptTask`](/docs/7-2/reference/-/knowledge_base/r/node-gradle-plugin#executenodescripttask),
 so all its properties and methods, such as `args` and `inheritProxy`, are
 available. They also have the following properties set by default:
 

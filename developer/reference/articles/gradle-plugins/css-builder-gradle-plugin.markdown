@@ -103,7 +103,7 @@ recommended to switch to using the Oracle JDK, but if you prefer using the IBM
 JDK, you must use the fallback Ruby compiler. You can do this two ways:
 
 - If you're working in a
-  [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace)
+  [Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace)
   or using the
   [Liferay Gradle Plugins](https://github.com/liferay/liferay-portal/tree/master/modules/sdk/gradle-plugins)
   plugin, set `sass.compiler.class.name=ruby` in your `gradle.properties` file.
