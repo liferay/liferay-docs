@@ -13,19 +13,21 @@ OSGi artifacts.
 
 To use the plugin, include it in your project's root `pom.xml` file:
 
-    <build>
-        <plugins>
-        ...
-            <plugin>
-                <groupId>com.liferay</groupId>
-                <artifactId>com.liferay.deployment.helper</artifactId>
-                <version>1.0.4</version>
-                <configuration>
-                </configuration>
-            </plugin>
-        ...
-        </plugins>
-    </build>
+```xml
+<build>
+    <plugins>
+    ...
+        <plugin>
+            <groupId>com.liferay</groupId>
+            <artifactId>com.liferay.deployment.helper</artifactId>
+            <version>1.0.4</version>
+            <configuration>
+            </configuration>
+        </plugin>
+    ...
+    </plugins>
+</build>
+```
 
 You can view an example POM containing the Deployment Helper configuration
 [here](https://github.com/liferay/liferay-portal/blob/master/modules/util/deployment-helper/samples/pom.xml).

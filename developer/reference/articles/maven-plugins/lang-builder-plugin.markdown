@@ -13,19 +13,21 @@ project.
 
 To use the plugin, include it in your project's root `pom.xml` file:
 
-    <build>
-        <plugins>
-        ...
-            <plugin>
-                <groupId>com.liferay</groupId>
-                <artifactId>com.liferay.lang.builder</artifactId>
-                <version>1.0.28</version>
-                <configuration>
-                </configuration>
-            </plugin>
-        ...
-        </plugins>
-    </build>
+```xml
+<build>
+    <plugins>
+    ...
+        <plugin>
+            <groupId>com.liferay</groupId>
+            <artifactId>com.liferay.lang.builder</artifactId>
+            <version>1.0.28</version>
+            <configuration>
+            </configuration>
+        </plugin>
+    ...
+    </plugins>
+</build>
+```
 
 You can view an example POM containing the Lang Builder configuration
 [here](https://github.com/liferay/liferay-portal/blob/master/modules/util/lang-builder/samples/pom.xml).
@@ -52,4 +54,3 @@ Parameter Name | Type | Default Value | Description
 `portalLanguagePropertiesFileName` | `String` | `null` | The `Language.properties` file of the portal.
 `translate` | `boolean` | `true` | Whether to translate the language keys and generate a language properties file for each locale that's supported by @product@.
 `translateSubscriptionKey` | `String` | `null` | The subscription key for Microsoft Translation integration. Subscription to the Translator Text Translation API on Microsoft Cognitive Services is required. Basic subscriptions, up to 2 million characters a month, are free.
- 

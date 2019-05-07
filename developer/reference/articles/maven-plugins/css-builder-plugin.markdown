@@ -13,28 +13,30 @@ your project.
 
 To use the plugin, include it in your project's root `pom.xml` file:
 
-    <build>
-        <plugins>
-        ...
-            <plugin>
-                <groupId>com.liferay</groupId>
-                <artifactId>com.liferay.css.builder</artifactId>
-                <version>2.1.3</version>
-                <executions>
-                    <execution>
-                        <id>default-build</id>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>build</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                </configuration>
-            </plugin>
-        ...
-        </plugins>
-    </build>
+```xml
+<build>
+    <plugins>
+    ...
+        <plugin>
+            <groupId>com.liferay</groupId>
+            <artifactId>com.liferay.css.builder</artifactId>
+            <version>2.1.3</version>
+            <executions>
+                <execution>
+                    <id>default-build</id>
+                    <phase>compile</phase>
+                    <goals>
+                        <goal>build</goal>
+                    </goals>
+                </execution>
+            </executions>
+            <configuration>
+            </configuration>
+        </plugin>
+    ...
+    </plugins>
+</build>
+```
 
 You can view an example POM containing the CSS Builder configuration
 [here](https://github.com/liferay/liferay-portal/blob/master/modules/util/css-builder/samples/pom.xml).
@@ -68,18 +70,20 @@ You can also manage the `com.liferay.frontend.css.common` default theme
 dependency provided by the CSS Builder in your `pom.xml`. This can be modified
 by adding it as a project dependency:
 
-    <project>
+```xml
+<project>
+    ...
+    <dependencies>
+        <dependency>
+            <groupId>com.liferay</groupId>
+            <artifactId>com.liferay.frontend.css.common</artifactId>
+            <version>3.0.1</version>
+            <scope>provided</scope>
+        </dependency>
         ...
-        <dependencies>
-            <dependency>
-                <groupId>com.liferay</groupId>
-                <artifactId>com.liferay.frontend.css.common</artifactId>
-                <version>3.0.1</version>
-                <scope>provided</scope>
-            </dependency>
-            ...
-        </dependencies>
-    </project>
+    </dependencies>
+</project>
+```
 
 There are additional Liferay theme-related dependencies you can manage this way
 that are provided by the Theme Builder. See

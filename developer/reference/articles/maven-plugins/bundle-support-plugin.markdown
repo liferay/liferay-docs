@@ -14,37 +14,39 @@ as a Maven project.
 
 To use the plugin, include it in your project's root `pom.xml` file:
 
-    <build>
-        <plugins>
+```xml
+<build>
+    <plugins>
+    ...
+        <plugin>
+            <groupId>com.liferay</groupId>
+            <artifactId>com.liferay.portal.tools.bundle.support</artifactId>
+            <version>3.2.5</version>
+            <executions>
+                <execution>
+                    <id>clean</id>
+                    <goals>
+                        <goal>clean</goal>
+                    </goals>
+                    <phase>clean</phase>
+                    <configuration>
+                    </configuration>
+                </execution>
+                <execution>
+                    <id>deploy</id>
+                    <goals>
+                        <goal>deploy</goal>
+                    </goals>
+                    <phase>pre-integration-test</phase>
+                    <configuration>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
         ...
-            <plugin>
-                <groupId>com.liferay</groupId>
-                <artifactId>com.liferay.portal.tools.bundle.support</artifactId>
-                <version>3.2.5</version>
-                <executions>
-                    <execution>
-                        <id>clean</id>
-                        <goals>
-                            <goal>clean</goal>
-                        </goals>
-                        <phase>clean</phase>
-                        <configuration>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>deploy</id>
-                        <goals>
-                            <goal>deploy</goal>
-                        </goals>
-                        <phase>pre-integration-test</phase>
-                        <configuration>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            ...
-        </plugins>
-    </build>
+    </plugins>
+</build>
+```
 
 ## Goals
 
@@ -74,14 +76,16 @@ You can change the default parameter values of the `create-token` goal by
 creating an `<execution>` section containing `<configuration>` tags. For
 example,
 
-    <execution>
-        <id>create-token</id>
-        <goals>
-            <goal>create-token</goal>
-        </goals>
-        <configuration>
-        </configuration>
-    </execution>
+```xml
+<execution>
+    <id>create-token</id>
+    <goals>
+        <goal>create-token</goal>
+    </goals>
+    <configuration>
+    </configuration>
+</execution>
+```
 
 You can set the following parameters in the `create-token` execution's
 `<configuration>` section of the POM:
@@ -116,14 +120,16 @@ Parameter Name | Type | Default Value | Description
 You can change the default parameter values of the `dist` goal by creating an
 `<execution>` section containing `<configuration>` tags. For example,
 
-    <execution>
-        <id>dist</id>
-        <goals>
-            <goal>dist</goal>
-        </goals>
-        <configuration>
-        </configuration>
-    </execution>
+```xml
+<execution>
+    <id>dist</id>
+    <goals>
+        <goal>dist</goal>
+    </goals>
+    <configuration>
+    </configuration>
+</execution>
+```
 
 You can set the following parameters in the `dist` execution's `<configuration>`
 section of the POM:

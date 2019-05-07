@@ -16,19 +16,21 @@ The WSDD Builder plugin lets you generate the
 
 To use the plugin, include it in your project's root `pom.xml` file:
 
-    <build>
-        <plugins>
-        ...
-            <plugin>
-                <groupId>com.liferay</groupId>
-                <artifactId>com.liferay.portal.tools.wsdd.builder</artifactId>
-                <version>1.0.10</version>
-                <configuration>
-                </configuration>
-            </plugin>
-        ...
-        </plugins>
-    </build>
+```xml
+<build>
+    <plugins>
+    ...
+        <plugin>
+            <groupId>com.liferay</groupId>
+            <artifactId>com.liferay.portal.tools.wsdd.builder</artifactId>
+            <version>1.0.10</version>
+            <configuration>
+            </configuration>
+        </plugin>
+    ...
+    </plugins>
+</build>
+```
 
 You can view an example POM containing the WSDD Builder configuration
 [here](https://github.com/liferay/liferay-portal/blob/master/modules/util/portal-tools-wsdd-builder/samples/pom.xml).

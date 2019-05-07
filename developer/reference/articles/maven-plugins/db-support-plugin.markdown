@@ -17,26 +17,28 @@ available:
 
 To use the plugin, include it in your project's `pom.xml` file:
 
-    <build>
-        <plugins>
-        ...
-            <plugin>
-                <groupId>com.liferay</groupId>
-                <artifactId>com.liferay.portal.tools.db.support</artifactId>
-                <version>1.0.6</version>
-                <configuration>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.hsqldb</groupId>
-                        <artifactId>hsqldb</artifactId>
-                        <version>2.4.0</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-        ...
-        </plugins>
-    </build>
+```xml
+<build>
+    <plugins>
+    ...
+        <plugin>
+            <groupId>com.liferay</groupId>
+            <artifactId>com.liferay.portal.tools.db.support</artifactId>
+            <version>1.0.6</version>
+            <configuration>
+            </configuration>
+            <dependencies>
+                <dependency>
+                    <groupId>org.hsqldb</groupId>
+                    <artifactId>hsqldb</artifactId>
+                    <version>2.4.0</version>
+                </dependency>
+            </dependencies>
+        </plugin>
+    ...
+    </plugins>
+</build>
+```
 
 Also notice the configured plugin dependency. You must configure the JDBC driver
 used by your @product@ bundle so the DB Support plugin can properly manage your

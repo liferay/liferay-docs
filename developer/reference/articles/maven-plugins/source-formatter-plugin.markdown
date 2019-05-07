@@ -16,27 +16,29 @@ folder.
 
 To use the plugin, include it in your project's root `pom.xml` file:
 
-    <build>
-        <plugins>
-        ...
-            <plugin>
-                <groupId>com.liferay</groupId>
-                <artifactId>com.liferay.source.formatter</artifactId>
-                <version>1.0.841</version>
-                <executions>
-                    <execution>
-                        <phase>process-sources</phase>
-                        <goals>
-                            <goal>format</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                </configuration>
-            </plugin>
-        ...
-        </plugins>
-    </build>
+```xml
+<build>
+    <plugins>
+    ...
+        <plugin>
+            <groupId>com.liferay</groupId>
+            <artifactId>com.liferay.source.formatter</artifactId>
+            <version>1.0.841</version>
+            <executions>
+                <execution>
+                    <phase>process-sources</phase>
+                    <goals>
+                        <goal>format</goal>
+                    </goals>
+                </execution>
+            </executions>
+            <configuration>
+            </configuration>
+        </plugin>
+    ...
+    </plugins>
+</build>
+```
 
 You can view an example POM containing the Source Formatter configuration
 [here](https://github.com/liferay/liferay-portal/blob/master/modules/util/source-formatter/samples/pom.xml).

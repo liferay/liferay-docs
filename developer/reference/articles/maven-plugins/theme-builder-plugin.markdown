@@ -15,27 +15,29 @@ tutorial to learn more about applying Theme Builder to your Maven project.
 
 To use the plugin, include it in your project's root `pom.xml` file:
 
-    <build>
-        <plugins>
+```xml
+<build>
+    <plugins>
+    ...
+        <plugin>
+            <groupId>com.liferay</groupId>
+            <artifactId>com.liferay.portal.tools.theme.builder</artifactId>
+            <version>1.1.7</version>
+            <executions>
+                <execution>
+                    <phase>generate-resources</phase>
+                    <goals>
+                        <goal>build</goal>
+                    </goals>
+                    <configuration>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
         ...
-            <plugin>
-                <groupId>com.liferay</groupId>
-                <artifactId>com.liferay.portal.tools.theme.builder</artifactId>
-                <version>1.1.7</version>
-                <executions>
-                    <execution>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>build</goal>
-                        </goals>
-                        <configuration>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            ...
-        </plugins>
-    </build>
+    </plugins>
+</build>
+```
 
 You can view an example POM containing the Theme Builder configuration
 [here](https://github.com/liferay/liferay-portal/blob/master/modules/util/portal-tools-theme-builder/samples/pom.xml).
@@ -68,24 +70,26 @@ You can also manage the `com.liferay.frontend.theme.styled` and
 Theme Builder in your `pom.xml`. They can be modified by adding them as project
 dependencies:
 
-    <project>
+```xml
+<project>
+    ...
+    <dependencies>
         ...
-        <dependencies>
-            ...
-            <dependency>
-                <groupId>com.liferay</groupId>
-                <artifactId>com.liferay.frontend.theme.styled</artifactId>
-                <version>3.0.4</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.liferay</groupId>
-                <artifactId>com.liferay.frontend.theme.unstyled</artifactId>
-                <version>3.0.4</version>
-                <scope>provided</scope>
-            </dependency>
-        </dependencies>
-    </project>
+        <dependency>
+            <groupId>com.liferay</groupId>
+            <artifactId>com.liferay.frontend.theme.styled</artifactId>
+            <version>3.0.4</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.liferay</groupId>
+            <artifactId>com.liferay.frontend.theme.unstyled</artifactId>
+            <version>3.0.4</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+</project>
+```
 
 There is an additional Liferay theme-related dependency you can manage this
 way that's provided by the CSS Builder. See

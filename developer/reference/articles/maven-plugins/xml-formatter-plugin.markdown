@@ -12,19 +12,21 @@ The XML Formatter plugin lets you format a project's XML files.
 
 To use the plugin, include it in your project's root `pom.xml` file:
 
-    <build>
-        <plugins>
-        ...
-            <plugin>
-                <groupId>com.liferay</groupId>
-                <artifactId>com.liferay.xml.formatter</artifactId>
-                <version>1.0.5</version>
-                <configuration>
-                </configuration>
-            </plugin>
-        ...
-        </plugins>
-    </build>
+```xml
+<build>
+    <plugins>
+    ...
+        <plugin>
+            <groupId>com.liferay</groupId>
+            <artifactId>com.liferay.xml.formatter</artifactId>
+            <version>1.0.5</version>
+            <configuration>
+            </configuration>
+        </plugin>
+    ...
+    </plugins>
+</build>
+```
 
 You can view an example POM containing the XML Formatter configuration
 [here](https://github.com/liferay/liferay-portal/blob/master/modules/util/xml-formatter/samples/pom.xml).
