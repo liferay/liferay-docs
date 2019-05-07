@@ -15,16 +15,16 @@ Follow these steps to connect your project to your Liferay DXP instance.
 ### Step 1: Install Required Liferay DXP Fix Packs [](id=step-2-install-required-liferay-dxp-fix-packs)
 
 Liferay DXP 7.1: 
-[Download](https://help.liferay.com/hc/en-us/categories/360000872531)
+[Download](https://customer.liferay.com/downloads) 
 and
 [install](/discover/deployment/-/knowledge_base/7-1/installing-patches) 
-fix pack 3. 
+fix pack 10+. 
 
 Liferay DXP 7.0: 
-[Download](https://help.liferay.com/hc/en-us/categories/360000867932)
+[Download](https://customer.liferay.com/downloads)
 and 
 [install](/discover/deployment/-/knowledge_base/7-0/patching-tool#installing-patches)
-fix pack 60. 
+fix pack 79+. 
 
 ### Step 2: Register Analytics Cloud with your Liferay DXP instance [](id=step-2-register-analytics-cloud-with-your-liferay-dxp-instance)
 
