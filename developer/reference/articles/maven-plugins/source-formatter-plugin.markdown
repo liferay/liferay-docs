@@ -4,6 +4,8 @@ header-id: source-formatter-plugin
 
 # Source Formatter Plugin
 
+[TOC levels=1-4]
+
 The Source Formatter plugin formats project files according to Liferay's source
 formatting standards. For more documentation on Source Formatter specific
 functionality, visit the tool's

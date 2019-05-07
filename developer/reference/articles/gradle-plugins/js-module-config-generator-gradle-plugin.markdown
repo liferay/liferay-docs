@@ -4,6 +4,8 @@ header-id: js-module-config-generator-gradle-plugin
 
 # JS Module Config Generator Gradle Plugin
 
+[TOC levels=1-4]
+
 The JS Module Config Generator Gradle plugin lets you run the
 [Liferay AMD Module Config Generator](https://github.com/liferay/liferay-module-config-generator)
 to generate the configuration file needed to load AMD files via combo loader in

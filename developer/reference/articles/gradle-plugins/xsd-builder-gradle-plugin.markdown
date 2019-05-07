@@ -4,6 +4,8 @@ header-id: xsd-builder-gradle-plugin
 
 # XSD Builder Gradle Plugin
 
+[TOC levels=1-4]
+
 The XSD Builder Gradle plugin lets you generate [Apache XMLBeans](https://xmlbeans.apache.org/)
 bindings from XML Schema (XSD) files.
 

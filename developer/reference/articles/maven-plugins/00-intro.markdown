@@ -1,4 +1,10 @@
-# Maven
+---
+header-id: maven-plugins
+---
+
+# Maven Plugins
+
+[TOC levels=1-4]
 
 Liferay provides plugins that you can apply to your Maven project. This
 reference documentation describes

@@ -1,4 +1,10 @@
+---
+header-id: rest-builder-plugin
+---
+
 # REST Builder Plugin
+
+[TOC levels=1-4]
 
 The REST Builder plugin lets you generate a REST layer defined in the REST
 Builder `rest-config.yaml` and `rest-openapi.yaml` files.

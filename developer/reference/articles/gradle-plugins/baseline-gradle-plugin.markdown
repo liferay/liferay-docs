@@ -4,6 +4,8 @@ header-id: baseline-gradle-plugin
 
 # Baseline Gradle Plugin
 
+[TOC levels=1-4]
+
 The Baseline Gradle plugin lets you verify that the OSGi [semantic versioning](http://semver.org/)
 rules are obeyed by your OSGi bundle.
 

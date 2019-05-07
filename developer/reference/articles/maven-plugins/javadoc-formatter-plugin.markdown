@@ -4,6 +4,8 @@ header-id: javadoc-formatter-plugin
 
 # Javadoc Formatter Plugin
 
+[TOC levels=1-4]
+
 The Javadoc Formatter plugin lets you format project Javadoc comments. The tool
 lets you generate:
 

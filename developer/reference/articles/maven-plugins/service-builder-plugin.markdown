@@ -1,4 +1,10 @@
+---
+header-id: service-builder-plugin
+---
+
 # Service Builder Plugin
+
+[TOC levels=1-4]
 
 The Service Builder plugin lets you generate a service layer defined in a
 [Service Builder](/docs/7-2/frameworks/-/knowledge_base/f/what-is-service-builder)

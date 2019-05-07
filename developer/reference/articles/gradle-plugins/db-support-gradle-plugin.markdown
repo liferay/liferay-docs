@@ -4,6 +4,8 @@ header-id: db-support-gradle-plugin
 
 # DB Support Gradle Plugin
 
+[TOC levels=1-4]
+
 The DB Support Gradle plugin lets you run the [Liferay DB Support](https://github.com/liferay/liferay-portal/tree/master/modules/util/portal-tools-db-support)
 tool to execute certain actions on a local Liferay database. So far, the
 following actions are available:

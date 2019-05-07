@@ -4,6 +4,8 @@ header-id: dependency-checker-gradle-plugin
 
 # Dependency Checker Gradle Plugin
 
+[TOC levels=1-4]
+
 The Dependency Checker Gradle plugin lets you warn users if a specific
 configuration dependency is not the latest one available from the Maven central
 repository. The plugin eventually fails the build if the dependency age (the

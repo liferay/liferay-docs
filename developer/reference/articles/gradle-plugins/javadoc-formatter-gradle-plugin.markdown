@@ -4,6 +4,8 @@ header-id: javadoc-formatter-gradle-plugin
 
 # Javadoc Formatter Gradle Plugin
 
+[TOC levels=1-4]
+
 The Javadoc Formatter Gradle plugin lets you format project Javadoc comments
 using the [Liferay Javadoc Formatter tool](https://github.com/liferay/liferay-portal/tree/master/modules/util/javadoc-formatter).
 The tool lets you generate:

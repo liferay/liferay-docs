@@ -4,6 +4,8 @@ header-id: maven-plugin-builder-gradle-plugin
 
 # Maven Plugin Builder Gradle Plugin
 
+[TOC levels=1-4]
+
 The Maven Plugin Builder Gradle Plugin lets you generate the
 [Maven plugin descriptor](https://maven.apache.org/ref/current/maven-plugin-api/plugin.html)
 for any [Mojos](https://maven.apache.org/general.html#What_is_a_Mojo) found in

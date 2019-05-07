@@ -4,6 +4,8 @@ header-id: app-docker-gradle-plugin
 
 # App Docker Gradle Plugin
 
+[TOC levels=1-4]
+
 The App Docker Gradle plugin lets you build a single [Docker](https://www.docker.com/)
 image for an application that spans different subprojects, each one representing
 a different component of the same application. The Docker image can then be

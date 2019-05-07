@@ -4,6 +4,8 @@ header-id: whip-gradle-plugin
 
 # Whip Gradle Plugin
 
+[TOC levels=1-4]
+
 The Whip Gradle plugin lets you use the [Liferay Whip](https://github.com/liferay/liferay-portal/tree/master/modules/test/whip)
 library to ensure that unit tests fully cover your project's code. See
 [here](https://github.com/liferay/liferay-portal/tree/master/modules/sdk/gradle-plugins-whip/src/gradleTest/smoke)

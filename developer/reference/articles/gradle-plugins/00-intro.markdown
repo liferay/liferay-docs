@@ -1,4 +1,10 @@
-# Gradle
+---
+header-id: gradle-plugins
+---
+
+# Gradle Plugins
+
+[TOC levels=1-4]
 
 Liferay provides plugins that you can apply to your Gradle project. This
 reference documentation describes how to apply and use Liferay's Gradle plugins.
