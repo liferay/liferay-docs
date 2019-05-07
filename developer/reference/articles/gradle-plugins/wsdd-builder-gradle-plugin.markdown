@@ -1,4 +1,8 @@
-# WSDD Builder Gradle Plugin [](id=wsdd-builder-gradle-plugin)
+---
+header-id: wsdd-builder-gradle-plugin
+---
+
+# WSDD Builder Gradle Plugin
 
 The WSDD Builder Gradle plugin lets you run the [Liferay WSDD Builder](https://github.com/liferay/liferay-portal/tree/master/modules/util/portal-tools-wsdd-builder)
 tool to generate the [Apache Axis](http://axis.apache.org/axis/) Web Service
@@ -7,7 +11,7 @@ Deployment Descriptor (WSDD) files from a [Service Builder](/docs/7-2/frameworks
 
 The plugin has been successfully tested with Gradle 4.10.2.
 
-## Usage [](id=usage)
+## Usage
 
 To use the plugin, include it in your build script:
 
@@ -42,7 +46,7 @@ repositories {
 }
 ```
 
-## Tasks [](id=tasks)
+## Tasks
 
 The plugin adds one task to your project:
 
@@ -71,7 +75,7 @@ dependency to the `compileJava` task:
 tasks.compileJava.outputs.files + sourceSets.main.compileClasspath + sourceSets.main.runtimeClasspath
 ```
 
-### BuildWSDDTask [](id=buildwsddtask)
+### BuildWSDDTask
 
 Tasks of type `BuildWSDDTask` extend [`JavaExec`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html),
 so all its properties and methods, such as [`args`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:args\(java.lang.Iterable\))
@@ -84,7 +88,7 @@ Property Name | Default Value
 [`classpath`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:classpath) | [`project.configurations.wsddBuilder`](#liferay-wsdd-builder-dependency)
 [`main`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:main) | `"com.liferay.portal.tools.wsdd.builder.WSDDBuilder"`
 
-#### Task Properties [](id=task-properties)
+#### Task Properties
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -98,11 +102,11 @@ The properties of type `File` support any type that can be resolved by [`project
 Moreover, it is possible to use Closures and Callables as values for the
 `String` properties, to defer evaluation until task execution.
 
-## Additional Configuration [](id=additional-configuration)
+## Additional Configuration
 
 There are additional configurations that can help you use the WSDD Builder.
 
-### Liferay WSDD Builder Dependency [](id=liferay-wsdd-builder-dependency)
+### Liferay WSDD Builder Dependency
 
 By default, the plugin creates a configuration called `wsddBuilder` and adds a
 dependency to the latest released version of the Liferay WSDD Builder. It is

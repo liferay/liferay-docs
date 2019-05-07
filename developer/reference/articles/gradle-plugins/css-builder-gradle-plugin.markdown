@@ -1,11 +1,15 @@
-# CSS Builder Gradle Plugin [](id=css-builder-gradle-plugin)
+---
+header-id: css-builder-gradle-plugin
+---
+
+# CSS Builder Gradle Plugin
 
 The CSS Builder Gradle plugin lets you run the [Liferay CSS Builder](https://github.com/liferay/liferay-portal/tree/master/modules/util/css-builder)
 tool to compile [Sass](http://sass-lang.com/) files in your project.
 
 The plugin has been successfully tested with Gradle 4.10.2.
 
-## Usage [](id=usage)
+## Usage
 
 To use the plugin, include it in your build script:
 
@@ -37,7 +41,7 @@ repositories {
 }
 ```
 
-## Tasks [](id=tasks)
+## Tasks
 
 The plugin adds one task to your project:
 
@@ -61,7 +65,7 @@ Property Name | Default Value
 ------------- | -------------
 [`baseDir`](#basedir) | <p>**If the `java` plugin is applied:** The first `resources` directory of the `main` source set (by default: `src/main/resources`).</p><p>**If the `war` plugin is applied:** `project.webAppDir`.</p><p>**Otherwise:** `null`</p>
 
-### BuildCSSTask [](id=buildcsstask)
+### BuildCSSTask
 
 Tasks of type `BuildCSSTask` extend [`JavaExec`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html),
 so all its properties and methods, such as [`args`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:args\(java.css.Iterable\))
@@ -76,7 +80,7 @@ Property Name | Default Value
 [`main`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:main) | `"com.liferay.css.builder.CSSBuilder"`
 [`systemProperties`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:systemProperties) | `["sass.compiler.jni.clean.temp.dir", true]`
 
-#### Task Properties [](id=task-properties)
+#### Task Properties
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -94,36 +98,32 @@ Property Name | Type | Default Value | Description
 `rtlExcludedPathRegexps` | `List<String>` | `[]` | The SCSS file patterns to exclude when converting for right-to-left (RTL) support. It sets the `sass.rtl.excluded.path.regexps` argument.
 `sassCompilerClassName` | `String` | `null` | The type of Sass compiler to use. Supported values are `"jni"` and `"ruby"`. If not set, defaults to `"jni"`. It sets the `sass.compiler.class.name` argument.
 
-+$$$
-
-**Note:** Liferay's CSS Builder is supported for Oracle's JDK and uses a native
-compiler for increased speed. If you're using an IBM JDK, you may experience
-issues when building your Sass files (e.g., when building a theme). It's
-recommended to switch to using the Oracle JDK, but if you prefer using the IBM
-JDK, you must use the fallback Ruby compiler. You can do this two ways:
-
-- If you're working in a
-  [Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace)
-  or using the
-  [Liferay Gradle Plugins](https://github.com/liferay/liferay-portal/tree/master/modules/sdk/gradle-plugins)
-  plugin, set `sass.compiler.class.name=ruby` in your `gradle.properties` file.
-- Otherwise, set `buildCSS.sassCompilerClassName='ruby'` in the project's
-  `build.gradle` file.
-
-The `sass.compiler.class.name=ruby` Gradle property only works for modules, so
-if you're using the Ruby compiler in a WAR project (e.g., theme), you must use
-the second option.
-
-Be aware that the Ruby-based compiler doesn't perform as well as the native
-compiler, so expect longer compile times.
-
-$$$
+| **Note:** Liferay's CSS Builder is supported for Oracle's JDK and uses a native
+| compiler for increased speed. If you're using an IBM JDK, you may experience
+| issues when building your Sass files (e.g., when building a theme). It's
+| recommended to switch to using the Oracle JDK, but if you prefer using the IBM
+| JDK, you must use the fallback Ruby compiler. You can do this two ways:
+| 
+| - If you're working in a
+|   [Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace)
+|   or using the
+|   [Liferay Gradle Plugins](https://github.com/liferay/liferay-portal/tree/master/modules/sdk/gradle-plugins)
+|   plugin, set `sass.compiler.class.name=ruby` in your `gradle.properties` file.
+| - Otherwise, set `buildCSS.sassCompilerClassName='ruby'` in the project's
+|   `build.gradle` file.
+| 
+| The `sass.compiler.class.name=ruby` Gradle property only works for modules, so
+| if you're using the Ruby compiler in a WAR project (e.g., theme), you must use
+| the second option.
+| 
+| Be aware that the Ruby-based compiler doesn't perform as well as the native
+| compiler, so expect longer compile times.
 
 The properties of type `File` support any type that can be resolved by [`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file\(java.css.Object\)).
 Moreover, it is possible to use Closures and Callables as values for the `int`
 and `String` properties, to defer evaluation until task execution.
 
-#### Task Methods [](id=task-methods)
+#### Task Methods
 
 Method | Description
 ------ | -----------
@@ -132,11 +132,11 @@ Method | Description
 `BuildCSSTask rtlExcludedPathRegexps(Iterable<Object> rtlExcludedPathRegexps)` | Adds SCSS file patterns to exclude when converting for right-to-left (RTL) support.
 `BuildCSSTask rtlExcludedPathRegexps(Object... rtlExcludedPathRegexps)` | Adds SCSS file patterns to exclude when converting for right-to-left (RTL) support.
 
-## Additional Configuration [](id=additional-configuration)
+## Additional Configuration
 
 There are additional configurations that can help you use the CSS Builder.
 
-### Liferay CSS Builder Dependency [](id=liferay-css-builder-dependency)
+### Liferay CSS Builder Dependency
 
 By default, the plugin creates a configuration called `cssBuilder` and adds a
 dependency to the latest released version of the Liferay CSS Builder. It is
@@ -149,7 +149,7 @@ dependencies {
 }
 ```
 
-### Liferay Frontend Common CSS Dependency [](id=liferay-frontend-common-css-dependency)
+### Liferay Frontend Common CSS Dependency
 
 By default, the plugin creates a configuration called `portalCommonCSS` and adds
 a dependency to the latest released version of the Liferay Frontend Common CSS

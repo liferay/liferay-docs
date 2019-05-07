@@ -1,4 +1,8 @@
-# WSDD Builder Plugin [](id=wsdd-builder-plugin)
+---
+header-id: wsdd-builder-plugin
+---
+
+# WSDD Builder Plugin
 
 The WSDD Builder plugin lets you generate the
 [Apache Axis](http://axis.apache.org/axis/) Web Service Deployment Descriptor
@@ -6,7 +10,7 @@ The WSDD Builder plugin lets you generate the
 [Service Builder](/docs/7-2/frameworks/-/knowledge_base/f/what-is-service-builder)
 `service.xml` file.
 
-## Usage [](id=usage)
+## Usage
 
 To use the plugin, include it in your project's root `pom.xml` file:
 
@@ -27,7 +31,7 @@ To use the plugin, include it in your project's root `pom.xml` file:
 You can view an example POM containing the WSDD Builder configuration
 [here](https://github.com/liferay/liferay-portal/blob/master/modules/util/portal-tools-wsdd-builder/samples/pom.xml).
 
-## Goals [](id=goals)
+## Goals
 
 The plugin adds one Maven goal to your project:
 
@@ -35,7 +39,7 @@ Name | Description
 ---- | -----------
 `wsdd-builder:build` | Runs the Liferay WSDD Builder to generate the WSDD files.
 
-## Available Parameters [](id=available-parameters)
+## Available Parameters
 
 You can set the following parameters in the `<configuration>` section of the
 POM:

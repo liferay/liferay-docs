@@ -1,4 +1,8 @@
-# Source Formatter Gradle Plugin [](id=source-formatter-gradle-plugin)
+---
+header-id: source-formatter-gradle-plugin
+---
+
+# Source Formatter Gradle Plugin
 
 The Source Formatter Gradle plugin lets you format project files using the
 [Liferay Source Formatter](https://github.com/liferay/liferay-portal/tree/master/modules/util/source-formatter)
@@ -6,7 +10,7 @@ tool.
 
 The plugin has been successfully tested with Gradle 4.10.2.
 
-## Usage [](id=usage)
+## Usage
 
 To use the plugin, include it in your build script:
 
@@ -38,7 +42,7 @@ repositories {
 }
 ```
 
-## Tasks [](id=tasks)
+## Tasks
 
 The plugin adds two tasks to your project:
 
@@ -73,7 +77,7 @@ subprojects {
 The tasks `checkSourceFormatting` and `formatSource` are automatically skipped
 if another task with the same name is being executed in a parent project.
 
-### FormatSourceTask [](id=formatsourcetask)
+### FormatSourceTask
 
 Tasks of type `FormatSourceTask` extend [`JavaExec`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html),
 so all its properties and methods, like [`args`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:args\(java.lang.Iterable\))
@@ -86,7 +90,7 @@ Property Name | Default Value
 [`classpath`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:classpath) | [`project.configurations.sourceFormatter`](#liferay-source-formatter-dependency)
 [`main`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:main) | `"com.liferay.source.formatter.SourceFormatter"`
 
-#### Task Properties [](id=task-properties)
+#### Task Properties
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -109,11 +113,11 @@ Property Name | Type | Default Value | Description
 `showStatusUpdates` | `boolean` | `false` | Whether to show status updates during source formatting, if present. It sets the `show.status.updates` argument.
 `throwException` | `boolean` | `false` | Whether to fail the build if formatting errors are found. It sets the `source.throw.exception` argument.
 
-## Additional Configuration [](id=additional-configuration)
+## Additional Configuration
 
 There are additional configurations that can help you use the Source Formatter.
 
-### Liferay Source Formatter Dependency [](id=liferay-source-formatter-dependency)
+### Liferay Source Formatter Dependency
 
 By default, the plugin creates a configuration called `sourceFormatter` and adds
 a dependency to the latest released version of Liferay Source Formatter. It is
@@ -126,7 +130,7 @@ dependencies {
 }
 ```
 
-### System Properties [](id=system-properties)
+### System Properties
 
 It is possible to set the default values of the `fileExtensions`, `fileNames`,
 `formatCurrentBranch`, `formatLatestAuthor`, and `formatLocalChanges` properties

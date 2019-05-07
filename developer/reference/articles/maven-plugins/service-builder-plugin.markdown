@@ -6,7 +6,7 @@ The Service Builder plugin lets you generate a service layer defined in a
 [Using Service Builder in a Maven Project](/docs/7-2/reference/-/knowledge_base/r/using-service-builder-in-a-maven-project)
 tutorial to learn more about applying Service Builder to your Maven project.
 
-## Usage [](id=usage)
+## Usage
 
 To use the plugin, include it in your project's root `pom.xml` file:
 
@@ -27,7 +27,7 @@ To use the plugin, include it in your project's root `pom.xml` file:
 You can view an example POM containing the Service Builder configuration
 [here](https://github.com/liferay/liferay-portal/blob/master/modules/util/portal-tools-service-builder/samples/pom.xml).
 
-## Goals [](id=goals)
+## Goals
 
 The plugin adds one Maven goal to your project:
 
@@ -35,7 +35,7 @@ Name | Description
 ---- | -----------
 `service-builder:build` |  Runs the Liferay Service Builder.
 
-## Available Parameters [](id=available-parameters)
+## Available Parameters
 
 You can set the following parameters in the `<configuration>` section of the
 POM:

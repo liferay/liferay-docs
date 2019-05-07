@@ -1,4 +1,8 @@
-# Service Builder Gradle Plugin [](id=service-builder-gradle-plugin)
+---
+header-id: service-builder-gradle-plugin
+---
+
+# Service Builder Gradle Plugin
 
 The Service Builder Gradle plugin lets you generate a service layer defined in a
 [Service Builder](/docs/7-2/frameworks/-/knowledge_base/f/what-is-service-builder)
@@ -6,7 +10,7 @@ The Service Builder Gradle plugin lets you generate a service layer defined in a
 
 The plugin has been successfully tested with Gradle 4.10.2.
 
-## Usage [](id=usage)
+## Usage
 
 To use the plugin, include it in your build script:
 
@@ -42,7 +46,7 @@ repositories {
 }
 ```
 
-## Tasks [](id=tasks)
+## Tasks
 
 The plugin adds one task to your project:
 
@@ -84,7 +88,7 @@ buildService {
 While `apiDir` is required, the `testDir` property assignment can be left out,
 in which case Arquillian-based integration test classes are generated.
 
-### BuildServiceTask [](id=buildservicetask)
+### BuildServiceTask
 
 Tasks of type `BuildWSDDTask` extend [`JavaExec`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html),
 so all its properties and methods, such as [`args`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:args\(java.lang.Iterable\))
@@ -98,7 +102,7 @@ Property Name | Default Value
 [`main`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:main) | `"com.liferay.portal.tools.service.builder.ServiceBuilder"`
 [`systemProperties`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:systemProperties) | `["file.encoding": "UTF-8"]`
 
-#### Task Properties [](id=task-properties)
+#### Task Properties
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -135,11 +139,11 @@ The properties of type `File` supports any type that can be resolved by [`projec
 Moreover, it is possible to use Closures and Callables as values for the
 `String` properties, to defer evaluation until task execution.
 
-## Additional Configuration [](id=additional-configuration)
+## Additional Configuration
 
 There are additional configurations that can help you use Service Builder.
 
-### Liferay Service Builder Dependency [](id=liferay-service-builder-dependency)
+### Liferay Service Builder Dependency
 
 By default, the plugin creates a configuration called `serviceBuilder` and adds
 a dependency to the latest released version of Liferay Service Builder. It is
