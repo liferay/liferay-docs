@@ -78,11 +78,11 @@ portlet to a page.
 | annotations are respectively synonymous with the `javax.portlet.*` and
 | `com.liferay.portlet.*` properties in the OSGi `@Component` annotation (used 
 | in
-| [Liferay MVC Portlets](/docs/7-2/appdev/-/knowledge_base/appdev/creating-an-mvc-portlet),
+| [Liferay MVC Portlets](/docs/7-2/appdev/-/knowledge_base/a/creating-an-mvc-portlet),
 | for example).
 | If you're familiar with the `portlet.xml` and `liferay-portlet.xml` 
 | descriptors, the
-| [Portlet Descriptor to OSGi Service Property Map](/docs/7-2/reference/-/knowledge_base/reference/portlet-descriptor-to-osgi-service-property-map) 
+| [Portlet Descriptor to OSGi Service Property Map](/docs/7-2/reference/-/knowledge_base/r/portlet-descriptor-to-osgi-service-property-map) 
 | shows you the OSGi `@Component` property equivalent. There's an
 | `@PortletConfiguration` or `@LiferayPortletConfiguration` equivalent setting 
 | for each `@Component` property. 
@@ -113,7 +113,7 @@ public class FooPortlet {
 ```
 
 | **Note:**
-| [OSGi Integration](/docs/7-2/frameworks/-/knowledge_base/frameworks/osgi-cdi-integration) 
+| [OSGi Integration](/docs/7-2/frameworks/-/knowledge_base/f/osgi-cdi-integration) 
 | allows you to use OSGi services (e.g., Liferay's 
 | [`UserLocalService`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/UserLocalService.html))
 | in your Bean Portlets. 

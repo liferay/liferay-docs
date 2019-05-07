@@ -23,7 +23,7 @@ if you're interested.
 
 To get up and running quickly with Elasticsearch as a remote server, refer to
 the 
-[Installing Elasticsearch article](/7-2/deploy/-/knowledge_base/deploy/installing-elasticsearch).
+[Installing Elasticsearch article](/docs/7-2/deploy/-/knowledge_base/d/installing-elasticsearch).
 Included there are basic instructions for installing and configuring
 Elasticsearch in a single server environment. Additional articles include more
 details and information on configuring and tuning Elasticsearch. 
@@ -37,7 +37,7 @@ These terms are useful to understand as you read this guide:
 -  *Elasticsearch Home* refers to the root folder of your unzipped Elasticsearch
    installation (for example, `elasticsearch-6.5.1`). 
 
--  [*Liferay Home*](/7-2/deploy/-/knowledge_base/deploy/liferay-home)
+-  [*Liferay Home*](/docs/7-2/deploy/-/knowledge_base/d/liferay-home)
    refers to the root folder of your @product@ installation. It contains the
    `osgi`, `deploy`, `data`, and `license` folders, among others.
 
@@ -54,14 +54,10 @@ minimal configuration. Running both servers in the same process has drawbacks:
 -  Elasticsearch must use the same JVM options as @product@.
 -  @product@ and Elasticsearch compete for resources. 
 
-+$$$
-
-**Note:** While it's not a supported production configuration, installing
-Kibana to monitor the embedded Elasticsearch server is useful during
-development and testing. Just be aware that you must install the 
-[OSS only Kibana build](https://www.elastic.co/downloads/kibana-oss).
-
-$$$
+| **Note:** While it's not a supported production configuration, installing
+| Kibana to monitor the embedded Elasticsearch server is useful during
+| development and testing. Just be aware that you must install the
+| [OSS only Kibana build](https://www.elastic.co/downloads/kibana-oss).
 
 You wouldn't run an embedded database like HSQL in production, and you shouldn't
 run Elasticsearch in embedded mode in production either. Instead, run
