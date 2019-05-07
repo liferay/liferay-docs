@@ -6,8 +6,8 @@ header-id: developing-a-portlet-using-portletmvc4spring
 
 [TOC levels=1-4]
 
-PortletMVC4Spring supports developing portlets that use the Spring Framework and
-the template languages supported by Spring Web MVC such as JSP, Thymeleaf,
+PortletMVC4Spring brings the Spring Framework to portlet development. It
+supports template languages supported by Spring Web MVC such as JSP, Thymeleaf,
 Velocity, and more. The PortletMVC4Spring archetypes include JSP and Thymeleaf
 templates and demonstrate the Model View Controller (MVC) pattern. Your first
 step in developing a PortletMVC4Spring Portlet is to create a PortletMVC4Spring
@@ -20,21 +20,25 @@ Portlet project and deploy your PortletMVC4Spring Portlet to @product@.
 
     **JSP Form**
 
-        mvn archetype:generate \
-    	-DarchetypeGroupId=com.liferay.portletmvc4spring.archetype \
-    	-DarchetypeArtifactId=com.liferay.portletmvc4spring.archetype.form.jsp.portlet \
-    	-DarchetypeVersion=5.1.0 \ 
-    	-DgroupId=com.mycompany \ 
-    	-DartifactId=com.mycompany.my.form.jsp.portlet
+    ```bash
+    mvn archetype:generate \
+    -DarchetypeGroupId=com.liferay.portletmvc4spring.archetype \
+    -DarchetypeArtifactId=com.liferay.portletmvc4spring.archetype.form.jsp.portlet \
+    -DarchetypeVersion=5.1.0 \ 
+    -DgroupId=com.mycompany \ 
+    -DartifactId=com.mycompany.my.form.jsp.portlet
+    ```
 
     **Thymeleaf Form**
 
-        mvn archetype:generate \
-    	-DarchetypeGroupId=com.liferay.portletmvc4spring.archetype \
-    	-DarchetypeArtifactId=com.liferay.portletmvc4spring.archetype.form.thymeleaf.portlet \
-    	-DarchetypeVersion=5.1.0 \
-    	-DgroupId=com.mycompany \
-    	-DartifactId=com.mycompany.my.form.thymeleaf.portlet
+    ```bash
+    mvn archetype:generate \
+    -DarchetypeGroupId=com.liferay.portletmvc4spring.archetype \
+    -DarchetypeArtifactId=com.liferay.portletmvc4spring.archetype.form.thymeleaf.portlet \
+    -DarchetypeVersion=5.1.0 \
+    -DgroupId=com.mycompany \
+    -DartifactId=com.mycompany.my.form.thymeleaf.portlet
+    ```
 
     Here's the resulting project structure: 
 
@@ -96,7 +100,7 @@ Portlet project and deploy your PortletMVC4Spring Portlet to @product@.
 
     **Gradle:**
 
-    ```
+    ```groovy
     dependencies {
         compile group: 'com.liferay.portletmvc4spring', name: 'com.liferay.portletmvc4spring.framework', version: '5.1.0'
         compile group: 'com.liferay.portletmvc4spring', name: 'com.liferay.portletmvc4spring.security', version: '5.1.0'
@@ -116,7 +120,7 @@ Portlet project and deploy your PortletMVC4Spring Portlet to @product@.
 7.  Add controller classes, following these basic steps. 
 
     | **Note:**
-    | [PortletMVC4Spring Annotation-based Controller Development](/docs/7-2/appdev/-/knowledge_base/appdev/portletmvc4spring-annotation-based-controller-development)
+    | [PortletMVC4Spring Annotation-based Controller Development](/docs/7-2/appdev/-/knowledge_base/a/portletmvc4spring-annotation-based-controller-development)
     | provides more controller development details. 
 
     1.  Add the
@@ -126,23 +130,23 @@ Portlet project and deploy your PortletMVC4Spring Portlet to @product@.
     2.  Add an
         `org.springframework.web.bind.annotation.RequestMapping`
         annotation (e.g. `@RequestMapping("VIEW")`) for the
-        [portlet mode](/docs/7-2/frameworks/-/knowledge_base/frameworks/portlets)
+        [portlet mode](/docs/7-2/frameworks/-/knowledge_base/f/portlets)
         that the controller handles requests for. Here are the portlet modes:
 
-        -   `VIEW`
-        -   `EDIT`
-        -   `HELP`
+        - `VIEW`
+        - `EDIT`
+        - `HELP`
 
         The `VIEW` mode is the most common mode for handling requests. 
 
     3.  Add request handling methods and use annotations to map them to the 
         portlet phase they handle requests for. Here are the
-        [portlet phase mapping annotations](/docs/7-2/frameworks/-/knowledge_base/frameworks/portlets):
+        [portlet phase mapping annotations](/docs/7-2/frameworks/-/knowledge_base/f/portlets):
 
-        -   `@RenderMapping`
-        -   `@ActionMapping`
-        -   `@EventMapping`
-        -   `@ResourceMapping`
+        - `@RenderMapping`
+        - `@ActionMapping`
+        - `@EventMapping`
+        - `@ResourceMapping`
 
         Optionally, use conditional parameters. For example, this annotation and
         condition maps to a render phase request that has the param
@@ -197,10 +201,9 @@ Portlet project and deploy your PortletMVC4Spring Portlet to @product@.
 10. Modify your `webapp/WEB-INF/web.xml` as desired. It specifies 
     [`ViewRendererServlet`](https://liferay.github.io/portletmvc4spring/apidocs/com/liferay/portletmvc4spring/ViewRendererServlet.html)
     (required). `ViewRendererServlet` converts portlet requests into servlet
-    requests and enables the view to be rendered using the entire normal Spring
-    Web MVC infrastructure and the infrastructure's renderers for JSP,
-    Thymeleaf, Velocity, and more. Here's the `ViewRendererServlet` servlet
-    element:
+    requests and enables the view to be rendered using the Spring Web MVC
+    infrastructure and the infrastructure's renderers for JSP, Thymeleaf,
+    Velocity, and more. Here's the `ViewRendererServlet` servlet element:
 
     ```xml
     <servlet>
@@ -219,7 +222,7 @@ Portlet project and deploy your PortletMVC4Spring Portlet to @product@.
     [Portlet 3.0 deployment descriptor schema](https://docs.liferay.com/portlet-api/3.0/portlet-app_3_0.xsd). 
 
     The
-    [DispatcherPortlet](https://liferay.github.io/portletmvc4spring/apidocs/com/liferay/portletmvc4spring/DispatcherPortlet.html)
+    [`DispatcherPortlet`](https://liferay.github.io/portletmvc4spring/apidocs/com/liferay/portletmvc4spring/DispatcherPortlet.html)
     `<portlet-class>` integrates Spring contexts and sends requests to
     the portlet's controllers and handlers. 
 
@@ -263,12 +266,11 @@ Portlet project and deploy your PortletMVC4Spring Portlet to @product@.
 
 13. Modify your `webapp/WEB-INF/liferay-display.xml` as desired. It configures 
     characteristics for displaying your portlet. For example, this
-    `liferay-display.xml` specifies the Widget category where the portlet is
-    available for users to add to a page. 
+    `liferay-display.xml` specifies the Widget category in the Add Widget menu: 
 
     ```xml
     <?xml version="1.0"?>
-    <!DOCTYPE display PUBLIC "-//Liferay//DTD Display 7.1.0//EN" "http://www.liferay.com/dtd/liferay-display_7_1_0.dtd">
+    <!DOCTYPE display PUBLIC "-//Liferay//DTD Display 7.2.0//EN" "http://www.liferay.com/dtd/liferay-display_7_2_0.dtd">
 
     <display>
     <category name="category.sample">
@@ -289,7 +291,7 @@ Portlet project and deploy your PortletMVC4Spring Portlet to @product@.
     ```
 
     On deploying the WAR file, the
-    [WAB Generator](/develop/tutorials/-/knowledge_base/7-2/using-the-wab-generator)
+    [WAB Generator](/docs/7-2/frameworks/-/knowledge_base/f/using-the-wab-generator)
     adds the specified OSGi metadata to the resulting web application bundle
     (WAB) that's deployed to Liferay's runtime framework.
 
@@ -297,7 +299,7 @@ Portlet project and deploy your PortletMVC4Spring Portlet to @product@.
     [liferay-plugin-package reference document](@platform-ref@/7.2-latest/propertiesdoc/liferay-plugin-package_7_2_0.properties.html)
     describes the `liferay-plugin-package.properties` file. 
 
-15. [Build and deploy your project](/docs/7-2/reference/-/knowledge_base/reference/deploying-a-project). 
+15. [Build and deploy your project](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project). 
 
 @product@ logs the deployment. 
 
