@@ -38,26 +38,46 @@ approval processes for any
 
 There are some noteworthy enhancements to the workflow functionality:
 
-- The Workflow section of the Control Panel is now a top-level section with its
-    own subcategories: Process Builder and Submissions (Metrics, too, if you're
-    a DXP subscriber). In @product@ 7.1 Workflow  was nested under Control Panel
-    &rarr; Configuration.
+### DXP Feature: Workflow Metrics
 
-    ![Figure 1: Workflow has a top-level entry in the Control Panel.](../../images/workflow-menu.png)
+For DXP subscribers, the concept of _Workflow Metrics_ was introduced. Set
+definition-specific deadlines and use a stopwatch-like timer to track and report
+workflow events. There are two new concepts around this feature: Service Level
+Agreements (SLAs), and Workflow Reports.
 
-- The Workflow System Settings category (Control Panel &rarr; Configuration
-    &rarr; System Settings) has a new system scoped configuration entry:
-    _Workflow Definitions_. There's just one configuration option, but it's
-    important: Enabling it gives administrators permission to publish workflows
-    and scripts.
+#### Service Level Agreements (SLAs)
 
-    ![Figure 2: Explicit permission must be granted before administrators are allowed to publish and edit workflow definitions.](../../images/workflow-publication-permission.png)
+SLAs can be formally agreed-upon deadlines between you and your customers,
+tracking the response and resolution times for a submitted workflow instance.
+But you can also set them up informally to track how long any workflow event
+generally takes.
 
-- For DXP subscribers, _Workflow Metrics_ was introduced. Set
-    definition-specific deadlines and use a stopwatch-like timer to report
-    metrics on the workflow instance's lifecycle.
+![Figure 3: Use Service Level Agreements (SLAs) to define how workflow metrics are reported.](../../images/workflow-add-sla.png)
 
-    ![Figure 3: Use SLAs to define, measure, and report on timed workflow events.](../../images/workflow-add-sla.png)
+#### Workflow Reports
+
+Once an SLA is set, workflow submissions that trigger the SLA timer are
+automatically reported on by the workflow engine.
+
+![Figure x: See Workflow Reports generated based on your SLAs.](../../images/workflow-report.png)
+
+### Control Panel Reorganization
+
+The Workflow section of the Control Panel is now a top-level section with its
+own subcategories: Process Builder and Submissions (Metrics, too, if you're a
+DXP subscriber). In @product@ 7.1 Workflow was nested under Control Panel
+&rarr; Configuration.
+
+![Figure 1: Workflow has a top-level entry in the Control Panel.](../../images/workflow-menu.png)
+
+### Workflow Definition Permissions: System Settings
+
+The Workflow System Settings category (Control Panel &rarr; Configuration &rarr;
+System Settings) has a new system scoped configuration entry: _Workflow
+Definitions_. There's just one configuration option, but it's important:
+Enabling it gives administrators permission to publish workflows and scripts.
+
+![Figure 2: Explicit permission must be granted before administrators are allowed to publish and edit workflow definitions.](../../images/workflow-publication-permission.png)
 
 Create your own workflows from scratch or leverage existing workflows.
 
