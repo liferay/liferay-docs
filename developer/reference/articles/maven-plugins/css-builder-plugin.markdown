@@ -77,5 +77,5 @@ by adding it as a project dependency:
 
 There are additional Liferay theme-related dependencies you can manage this way
 that are provided by the Theme Builder. See
-[this section](/develop/reference/-/knowledge_base/7-1/theme-builder-plugin) for
+[this section](/docs/7-2/reference/-/knowledge_base/r/theme-builder-plugin) for
 more information.

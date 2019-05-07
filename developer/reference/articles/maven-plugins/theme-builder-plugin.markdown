@@ -2,7 +2,7 @@
 
 The Theme Builder plugin lets you build Liferay theme files in your project.
 Visit the
-[Building Themes in a Maven Project](/develop/tutorials/-/knowledge_base/7-1/building-themes-in-a-maven-project)
+[Building a Theme with Maven](/docs/7-2/reference/-/knowledge_base/r/building-a-theme-with-maven)
 tutorial to learn more about applying Theme Builder to your Maven project.
 
 ## Usage [](id=usage)
@@ -83,5 +83,5 @@ dependencies:
 
 There is an additional Liferay theme-related dependency you can manage this
 way that's provided by the CSS Builder. See
-[this section](/develop/reference/-/knowledge_base/7-1/css-builder-plugin) for
+[this section](/docs/7-2/reference/-/knowledge_base/r/css-builder-plugin) for
 more information.

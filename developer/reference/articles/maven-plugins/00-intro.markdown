@@ -8,5 +8,4 @@ reference documentation describes
 - The plugin's configuration properties.
 
 If you're looking for additional instructions on using Maven with your modules,
-see the 
-[Maven tutorials](/develop/tutorials/-/knowledge_base/7-1/maven). 
+see the [Maven](/docs/7-2/reference/-/knowledge_base/r/maven) articles.

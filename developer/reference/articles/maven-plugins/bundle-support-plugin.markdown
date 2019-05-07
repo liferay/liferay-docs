@@ -1,11 +1,8 @@
 # Bundle Support Plugin [](id=bundle-support-plugin)
 
 The Bundle Support plugin lets you use
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace)
-as a Maven project. For more information on how a Maven Workspace works and the
-features it provides, see the
-[Maven Workspace](/develop/tutorials/-/knowledge_base/7-1/maven-workspace)
-tutorial.
+[Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace)
+as a Maven project.
 
 ## Usage [](id=usage)
 

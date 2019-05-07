@@ -1,9 +1,9 @@
 # Service Builder Plugin
 
 The Service Builder plugin lets you generate a service layer defined in a
-[Service Builder](/develop/tutorials/-/knowledge_base/7-1/what-is-service-builder)
+[Service Builder](/docs/7-2/frameworks/-/knowledge_base/f/what-is-service-builder)
 `service.xml` file. Visit the
-[Using Service Builder in a Maven Project](/develop/tutorials/-/knowledge_base/7-1/using-service-builder-in-a-maven-project)
+[Using Service Builder in a Maven Project](/docs/7-2/reference/-/knowledge_base/r/using-service-builder-in-a-maven-project)
 tutorial to learn more about applying Service Builder to your Maven project.
 
 ## Usage [](id=usage)
@@ -52,13 +52,13 @@ Parameter Name | Type | Default Value | Description
 `hbmFileName` | `String` | `"src/META-INF/portal-hbm.xml"` | A Hibernate Mapping file to generate.
 `implDirName` | `String` | `"src"` | A directory where the service Java source files are generated.
 `inputFileName` | `String` | `"service.xml"` | The project's `service.xml` file.
-`modelHintsConfigs` | `String` | `"classpath*:META-INF/portal-model-hints.xml, META-INF/portal-model-hints.xml, classpath*:META-INF/ext-model-hints.xml, classpath*:META-INF/portlet-model-hints.xml"` | Paths to the [model hints](/develop/tutorials/-/knowledge_base/7-1/customizing-model-entities-with-model-hints) files for Liferay Service Builder to use in generating the service layer.
+`modelHintsConfigs` | `String` | `"classpath*:META-INF/portal-model-hints.xml, META-INF/portal-model-hints.xml, classpath*:META-INF/ext-model-hints.xml, classpath*:META-INF/portlet-model-hints.xml"` | Paths to the [model hints](/docs/7-2/frameworks/-/knowledge_base/f/customizing-model-entities-with-model-hints) files for Liferay Service Builder to use in generating the service layer.
 `modelHintsFileName` | `String` | `"src/META-INF/portal-model-hints.xml"` | A model hints file for the project.
 `osgiModule` | `boolean` | `null` | Whether to generate the service layer for OSGi modules.
 `pluginName` | `String` | `null` | If specified, a plugin can enable additional generation features, such as `Clp` class generation, for non-OSGi modules.
 `propsUtil` | `String` | `"com.liferay.portal.util.PropsUtil"` | The fully qualified class name of the service properties util class to generate.
 `readOnlyPrefixes` | `String` | `"fetch, get, has, is, load, reindex, search"` | Prefixes of methods to consider read-only.
-`resourceActionsConfigs` | `String` | `"META-INF/resource-actions/default.xml, resource-actions/default.xml"` | Paths to the [resource actions](/develop/tutorials/-/knowledge_base/7-1/defining-application-permissions) files for Liferay Service Builder to use in generating the service layer.
+`resourceActionsConfigs` | `String` | `"META-INF/resource-actions/default.xml, resource-actions/default.xml"` | Paths to the [resource actions](/docs/7-2/frameworks/-/knowledge_base/f/defining-application-permissions) files for Liferay Service Builder to use in generating the service layer.
 `resourcesDirName` | `String` | `"src"` | A directory where the service non-Java files are generated.
 `springFileName` | `String` | `"src/META-INF/portal-spring.xml"` | A service Spring file to generate.
 `springNamespaces` | `String` | `"beans"` | Namespaces of Spring XML Schemas to add to the service Spring file.
