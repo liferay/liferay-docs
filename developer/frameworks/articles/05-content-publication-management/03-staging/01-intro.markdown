@@ -6,32 +6,29 @@ header-id: staging
 
 [TOC levels=1-4]
 
-Staging lets you change your Site behind the scenes without affecting the live
-Site, and then you can publish all the changes in one fell swoop. If you include
-staging support in your application, your users can stage its content until it's
-ready.
+[Staging](docs/7-2/user/-/knowledge_base/u/staging-content-for-publication) lets
+users change a Site without affecting the live Site and then publish all the
+changes in one fell swoop. If you include staging support in your application,
+your users can stage its content until it's ready.
 
-For example, if you have an application that provides information intended only
-during a specific holiday, supporting the Staging environment lets users save
-your application's assets specific for that holiday. They'll reside
-in the Staging environment until they're ready for publishing. To learn more
-about using Staging, visit the
-[Staging Content for Publication](/docs/7-2/user/-/knowledge_base/user/staging-content-for-publication)
-section.
+For example, if your application uses the Staging framework and provides
+information intended only during a specific holiday, users can save your
+application's assets specific for that holiday. They reside in the Staging
+environment until they're ready for publishing. 
 
 Staging and Export/Import share the same base framework. When publishing your
 staged content to the live Site, you're essentially importing content from the
 staged Site and exporting it to the live Site. This means that implementing
 Staging in your app is *almost* the same as implementing the Export/Import
 framework. You can visit the
-[Export/Import](/docs/7-2/frameworks/-/knowledge_base/frameworks/export-import)
+[Export/Import](/docs/7-2/frameworks/-/knowledge_base/f/export-import)
 framework's articles for the base APIs that both it and the Staging frameworks
 share.
 
-If your app supports Export/Import, it's entities
-([staged models](/docs/7-2/frameworks/-/knowledge_base/frameworks/developing-staged-models))
+If your app supports Export/Import, its entities
+([staged models](/docs/7-2/frameworks/-/knowledge_base/f/developing-staged-models))
 are automatically tracked by Staging with the use of
-[data handlers](/docs/7-2/frameworks/-/knowledge_base/frameworks/developing-data-handlers).
+[data handlers](/docs/7-2/frameworks/-/knowledge_base/f/developing-data-handlers).
 There are some Staging-specific configurations you can add that are not shared
 by Export/Import. Some Staging-specific actions you can complete include
 
@@ -55,19 +52,19 @@ portlet data handler's `activate()` method:
   what to publish/export), so it leverages its UI. You can set the Staging UI
   differently by configuring the `setStagingControls` method differently. See
   the
-  [AssetTagsPortletDataHandler](https://github.com/liferay/liferay-portal/blob/7.2.0-b2/modules/apps/asset/asset-tags-service/src/main/java/com/liferay/asset/tags/internal/exportimport/data/handler/AssetTagsPortletDataHandler.java#L82-L84)
+  [`AssetTagsPortletDataHandler`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/asset/asset-tags-service/src/main/java/com/liferay/asset/tags/internal/exportimport/data/handler/AssetTagsPortletDataHandler.java#L82-L84)
   class for an example of not copying the Export UI for the Staging UI.
 - `setDataAlwaysStaged`: defines whether you can enable/disable your app's
   content staging (i.e., selectable from the Publication screen). For example,
-  setting this method to `true` automatically stages your app's content,
-  removing the ability to choose whether its content should be staged.
+  setting this method to `true` automatically stages your app's content.
+  Users can no longer choose whether its content should be staged.
 
 Other setter methods are available that control both Export/Import and Staging
 settings. You can reference them by visiting the
-[Understanding the `PortletDataHandler` Inteface](/docs/7-2/frameworks/-/knowledge_base/frameworks/developing-data-handlers#understanding-the-portlet-data-handler-interface)
+[Understanding the `PortletDataHandler` Interface](/docs/7-2/frameworks/-/knowledge_base/f/developing-data-handlers#understanding-the-portlet-data-handler-interface)
 section.
 
-You can also control whether your app is selectable to enable for Staging by
+You can also control whether your app is enabled on the Staged Content screen by
 adding this method to your portlet data handler:
 
 ```java
@@ -90,14 +87,14 @@ filter for certain staging processes/states. You'll learn about this next.
 
 You can filter for certain staging-specific processes/states and complete
 actions based on the returned status. You can do this by leveraging the
-following from a staged model data handler:
+following classes from a staged model data handler:
 
 - [`ExportImportThreadLocal`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/ExportImportThreadLocal.html)
 - [`StagingGroupHelper`](@app-ref@/staging/latest/javadocs/com/liferay/staging/StagingGroupHelper.html)
 
 The `ExportImportThreadLocal` class provides boolean methods that return whether
-a specific process is in progress. This is intended to check for events
-affecting the entire site. For example, you can check if the following are in
+a specific process is in progress. Use this to check for events affecting the
+entire site. For example, you can check if the following processes are in
 progress:
 
 - Local Staging
