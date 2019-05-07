@@ -6,17 +6,35 @@ section.
 
 Here are the code upgrade steps:
 
-1. Upgrade Your Development Environment
-    1. Install a Liferay Workspace
-        1. Create New Liferay Workspace
-        2. Import Existing Liferay Workspace
-    2. Configure Liferay Workspace
-        1. Configure Bundle URL
-        2. Configure Target Platform Version
-    3. Initialize a Server Bundle
+1.  [Upgrade Your Development Environment](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment)
+
+    Legacy projects should be upgraded to the latest version of Liferay
+    Workspace to ensure you leverage all available features.
+
+    1.  [Install a Liferay Workspace](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment#installing-a-new-liferay-workspace)
+
+    Create a new workspace or import and update an existing one.
+
+    2.  [Configure Liferay Workspace](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment#configuring-liferay-workspace)
+
+    Set the @product@ version in workspace's configuration you intend to upgrade
+    to.
+
+    3.  [Initialize a Server Bundle](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment#initializing-a-server-bundle)
+
+    Download the @product@ bundle you're upgrading to.
+
+    4.  [Upgrading Your Maven Build Environment](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-maven-build-environment)
+
+    If you're upgrading a Maven build with Liferay Portal 6.2-compatible code or
+    older, you must upgrade the Maven environment.
+
 2. Migrate Plugins SDK Projects to Liferay Workspace
+
     1. Import Existing Plugins SDK Projects
+
     2. Migrate Plugins SDK Projects to Workspace
+
 3. Upgrade Build Dependencies
     1. Update Repository URL
     2. Update Workspace Plugin Version
