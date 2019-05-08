@@ -69,7 +69,7 @@ status _on time_ or _overdue_.
 ![Figure 2: See Workflow Reports generated based on your SLAs.](../../images/workflow-report.png)
 
 See the article on 
-[Workflow Metrics](/docs/7-2/user/-/knowledge_base/user/workflow-metrics) 
+[Workflow Metrics](/docs/7-2/user/-/knowledge_base/u/workflow-metrics) 
 to learn more about SLAs and available reports. 
 
 ### Control Panel Reorganization
