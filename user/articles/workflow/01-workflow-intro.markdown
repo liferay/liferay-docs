@@ -6,21 +6,20 @@ header-id: workflow
 
 [TOC levels=1-4]
 
-Liferay's workflow engine is named *Kaleo*. In Greek, Kaleo means "called
-ones," which is appropriate for a workflow engine that calls users to
-participate in a review process designed for them. Workflow makes it possible
-to define any number of simple to complex business processes/workflows, deploy
-them, and manage them through a portal interface. The processes have knowledge
-of Users, Groups and Roles. You don't have to write a single line of code to
-accomplish this: it's defined in an XML document. If you're a Liferay Digital
-Experience Platform (DXP) customer, you have access to a nifty visual designer
-for workflows. 
+Liferay's workflow engine is named *Kaleo*. In Greek, Kaleo means "called ones,"
+which is appropriate for a workflow engine that calls users to participate in a
+review process designed for them. Workflow makes it possible to define any
+number of simple to complex business processes/workflows, deploy them, and
+manage them through a portal interface. The processes have knowledge of Users,
+Groups and Roles. You don't have to write a single line of code to accomplish
+this: it's defined in an XML document. If you're a Liferay Digital Experience
+Platform (DXP) customer, you also have access to a visual process builder.
 
 There are several steps to effective workflowing: 
 
 - [Designing review processes in XML](/docs/7-2/reference/-/knowledge_base/r/crafting-xml-workflow-definitions)
 
-- (DXP only) [Visually designing review processes in the Workflow Designer](/docs/7-2/user/-/knowledge_base/u/workflow-designer)
+- (DXP only) [Visually designing review processes](/docs/7-2/user/-/knowledge_base/u/workflow-designer)
 
 - [Uploading workflow definitions](/docs/7-2/user/-/knowledge_base/u/managing-workflows#uploading-workflow-definitions)
 
@@ -40,24 +39,38 @@ There are some noteworthy enhancements to the workflow functionality:
 
 ### DXP Feature: Workflow Metrics
 
-For DXP subscribers, the concept of _Workflow Metrics_ was introduced. Set
-definition-specific deadlines and use a stopwatch-like timer to track and report
-workflow events. There are two new concepts around this feature: Service Level
-Agreements (SLAs), and Workflow Reports.
+For DXP subscribers, the _Workflow Metrics_ feature was introduced. Configure
+one or more Service Level Agreements (SLAs; think of these as deadlines) on a
+workflow definition's events, and workflow submissions are accordingly tracked
+and reported as on time or overdue. There are two new concepts around this
+feature: 
+
+- SLAs define the deadlines on a workflow process's events. They're like a
+    contract between the workflow participants and Users submitting workflow
+    items.
+- Workflow Reports shows data for all processes with SLAs, including
+    each workflow item's SLA status: on time or overdue.
 
 #### Service Level Agreements (SLAs)
 
 SLAs can be formally agreed-upon deadlines between you and your customers,
-tracking the response and resolution times for a submitted workflow instance.
-But you can also set them up informally to track how long any workflow event
+tracking the response and resolution times for workflow events such as:
+
+- Total time to resolution
+- Time to complete a specific workflow task
+
+You can also set them up informally to track how long any workflow event
 generally takes.
 
 ![Figure 3: Use Service Level Agreements (SLAs) to define how workflow metrics are reported.](../../images/workflow-add-sla.png)
 
+For each workflow event to track, set the SLA duration and when the timer should
+be paused, if at all.
+
 #### Workflow Reports
 
 Once an SLA is set, workflow submissions that trigger the SLA timer are
-automatically reported on by the workflow engine.
+automatically reported on by the workflow metrics framework.
 
 ![Figure x: See Workflow Reports generated based on your SLAs.](../../images/workflow-report.png)
 
