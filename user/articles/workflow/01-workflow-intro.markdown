@@ -42,25 +42,18 @@ There are some noteworthy enhancements to the workflow functionality:
 For DXP subscribers, the _Workflow Metrics_ feature was introduced. Configure
 one or more Service Level Agreements (SLAs; think of these as deadlines) on a
 workflow definition's events, and workflow submissions are accordingly tracked
-and reported as on time or overdue. There are two new concepts around this
-feature: 
-
-- SLAs define the deadlines on a workflow process's events. They're like a
-    contract between the workflow participants and Users submitting workflow
-    items.
-- Workflow Reports shows data for all processes with SLAs, including
-    each workflow item's SLA status: on time or overdue.
+and reported as on time or overdue. 
 
 #### Service Level Agreements (SLAs)
 
-SLAs can be formally agreed-upon deadlines between you and your customers,
-tracking the response and resolution times for workflow events such as:
+SLAs define the deadlines on a workflow process's events. They're like a
+contract between the workflow participants and Users submitting workflow items.
+
+SLAs can be formally agreed-upon deadlines between you and your customers, or
+informally created to meet internal goals, tracking events such as:
 
 - Total time to resolution
 - Time to complete a specific workflow task
-
-You can also set them up informally to track how long any workflow event
-generally takes.
 
 ![Figure 3: Use Service Level Agreements (SLAs) to define how workflow metrics are reported.](../../images/workflow-add-sla.png)
 
@@ -70,9 +63,14 @@ be paused, if at all.
 #### Workflow Reports
 
 Once an SLA is set, workflow submissions that trigger the SLA timer are
-automatically reported on by the workflow metrics framework.
+automatically reported on by the workflow metrics framework, and given the
+status _on time_ or _overdue_.
 
 ![Figure x: See Workflow Reports generated based on your SLAs.](../../images/workflow-report.png)
+
+See the article on 
+[Workflow Metrics](/docs/7-2/user/-/knowledge_base/user/workflow-metrics) 
+to learn more about SLAs and available reports. 
 
 ### Control Panel Reorganization
 
