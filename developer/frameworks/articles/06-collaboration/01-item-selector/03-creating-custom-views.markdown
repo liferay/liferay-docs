@@ -9,7 +9,7 @@ header-id: creating-custom-item-selector-views
 You can create your own selection view if an Item Selector doesn't contain the 
 one you need. The steps here show you how. For more information on custom 
 selection views and the Item Selector API, see the 
-[Item Selector introduction](/developer/frameworks/-/knowledge_base/7-2/item-selector). 
+[Item Selector introduction](/docs/7-2/frameworks/-/knowledge_base/f/item-selector). 
 
 ## Configuring Your Selection View's OSGi Module
 
@@ -113,7 +113,7 @@ Follow these steps to implement your selection view's class:
             return true;
         }
 
-    See [The Selection View's Class](/developer/frameworks/-/knowledge_base/7-2/item-selector#the-selection-views-class)
+    See [The Selection View's Class](/docs/7-2/frameworks/-/knowledge_base/f/item-selector#the-selection-views-class)
     for more information on these methods. 
 
 4.  Implement the 
@@ -246,7 +246,7 @@ applies to @product-ver@. Here's a walkthrough of this `layouts.jsp` file:
         </liferay-util:html-top>
 
     You can learn more about using the `liferay-util` taglibs in 
-    [Using the Liferay Util Taglib](/developer/frameworks/-/knowledge_base/7-2/using-the-liferay-util-taglib). 
+    [Using the Liferay Util Taglib](/docs/7-2/frameworks/-/knowledge_base/f/using-the-liferay-util-taglib). 
 
 3.  This snippet creates the UI to display the layout entities. It uses the 
     [`liferay-layout:layouts-tree`](@app-ref@/layout/latest/taglibdocs/liferay-layout/layouts-tree.html) 
@@ -389,8 +389,8 @@ anything in those apps.
 
 ## Related Topics
 
-[Item Selector](/developer/frameworks/-/knowledge_base/7-2/item-selector)
+[Item Selector](/docs/7-2/frameworks/-/knowledge_base/f/item-selector)
 
-[Creating Custom Criterion and Return Types](/developer/frameworks/-/knowledge_base/7-2/creating-custom-criterion-and-return-types)
+[Creating Custom Criterion and Return Types](/docs/7-2/frameworks/-/knowledge_base/f/creating-custom-criterion-and-return-types)
 
-[Selecting Entities with an Item Selector](/developer/frameworks/-/knowledge_base/7-2/selecting-entities-with-an-item-selector)
+[Selecting Entities with an Item Selector](/docs/7-2/frameworks/-/knowledge_base/f/selecting-entities-with-an-item-selector)

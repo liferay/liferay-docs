@@ -32,8 +32,8 @@ interface in the app's model classes. It provides the behavior contract for
 entities during the Export/Import and Staging processes. There are two ways to
 create staged models for your application's entities:
 
-- [Generate them using Service Builder](/docs/7-2/frameworks/-/knowledge_base/frameworks/generating-staged-models-using-service-builder)
-- [Implement the appropriate interfaces manually](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-staged-models-manually)
+- [Generate them using Service Builder](/docs/7-2/frameworks/-/knowledge_base/f/generating-staged-models-using-service-builder)
+- [Implement the appropriate interfaces manually](/docs/7-2/frameworks/-/knowledge_base/f/creating-staged-models-manually)
 
 Using Service Builder to generate your staged models is the easiest way to
 create staged models for your app. You define the necessary columns in your
@@ -46,13 +46,13 @@ generate Staging logic (i.e., not needed by your business logic). In this case,
 you should adapt your business logic to meet the Staging framework's needs.
 
 See the
-[Developing Staged Models](/docs/7-2/frameworks/-/knowledge_base/frameworks/developing-staged-models)
+[Developing Staged Models](/docs/7-2/frameworks/-/knowledge_base/f/developing-staged-models)
 section for more information on the Staged Model architecture.
 
 ## Data Handlers
 
 You must implement Data Handlers to use the Export/Import framework to process
-[LAR files](/docs/7-2/reference/-/knowledge_base/reference/liferay-archive-lar-file)
+[LAR files](/docs/7-2/reference/-/knowledge_base/r/liferay-archive-lar-file)
 in your application. There are two types of data handlers:
 
 - Portlet Data Handlers
@@ -67,7 +67,7 @@ to the Export/Import framework, defining a display name for the UI, deleting an
 entity, etc. It also exports referenced content.
 
 Visit the
-[Developing Data Handlers](/docs/7-2/frameworks/-/knowledge_base/frameworks/developing-data-handlers)
+[Developing Data Handlers](/docs/7-2/frameworks/-/knowledge_base/f/developing-data-handlers)
 section for more information.
 
 ## Provide Entity Specific Local Services

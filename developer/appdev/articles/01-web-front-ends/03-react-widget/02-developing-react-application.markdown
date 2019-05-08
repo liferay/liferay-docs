@@ -155,8 +155,8 @@ Generator (*Sample* is the default category).
 
 ## Related Topics
 
-[Web Services](/docs/7-2/appdev/-/knowledge_base/appdev/web-services)
+[Web Services](/docs/7-2/appdev/-/knowledge_base/a/web-services)
 
-[Service Builder](/docs/7-2/frameworks/-/knowledge_base/frameworks/service-builder)
+[Service Builder](/docs/7-2/frameworks/-/knowledge_base/f/service-builder)
 
-[Localization](/docs/7-2/frameworks/-/knowledge_base/frameworks/localization)
+[Localization](/docs/7-2/frameworks/-/knowledge_base/f/localization)
