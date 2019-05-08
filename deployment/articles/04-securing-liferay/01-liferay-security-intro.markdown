@@ -44,7 +44,7 @@ solutions:
 
 Note: Although Liferay's SSO solutions are incompatible with WebDAV, they can
 be used with Liferay Sync. See the
-[Publishing Files](/discover/portal/-/knowledge_base/7-1/publishing-files) 
+[Publishing Files](/docs/7-1/user/-/knowledge_base/user/publishing-files) 
 article for more information on WebDAV and Liferay Sync.
 
 You can authenticate and authorize apps remotely using the `AuthVerifier` layer:
@@ -54,7 +54,7 @@ You can authenticate and authorize apps remotely using the `AuthVerifier` layer:
 - Portal session based solution for JavaScript applications
 
 Both user authentication and remote application authentication are
-[extensible](/develop/tutorials/-/knowledge_base/7-1/authentication-pipelines).
+[extensible](/docs/7-1/frameworks/-/knowledge_base/frameworks/authentication-pipelines).
 Developers can create custom Login portlets and plugins, extend the default
 Login portlet `auth.pipeline`, create `AutoLogin` extensions for SSO, or create
 custom `AuthVerifier` implementations.
@@ -80,7 +80,7 @@ Users can be assigned to sites, teams, user groups, or organizations. Custom
 roles can be created, permissions can be assigned to those roles, and those
 roles can be applied to users. Roles are scoped to apply only with a specific
 context like a site, an organization, or globally. See the 
-[Roles and Permissions](/discover/portal/-/knowledge_base/7-1/roles-and-permissions) documentation for more information.
+[Roles and Permissions](/docs/7-1/user/-/knowledge_base/user/roles-and-permissions) documentation for more information.
 
 | Note: @product@ relies on the application server for sanitizing CRLF in
 | HTTP headers. You should, therefore, make sure this is configured properly in

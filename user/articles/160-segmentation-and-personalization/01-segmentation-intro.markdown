@@ -30,10 +30,10 @@ Checking Account Prospects* that contains criteria based on user data, like
 customers that don't currently have an open checking account, or based on user
 behavior, like visitors who came to the site through specific channels. To learn
 more about Segmentation options, see the 
-[overview of the Segment editor](/docs/7-2/user/-/knowledge_base/user/the-segment-editor), practice
-[creating basic Segments](/docs/7-2/user/-/knowledge_base/user/creating-basic-user-segments),
+[overview of the Segment editor](/docs/7-2/user/-/knowledge_base/u/the-segment-editor), practice
+[creating basic Segments](/docs/7-2/user/-/knowledge_base/u/creating-basic-user-segments),
 or create more complicated 
-[Segments with custom fields and session data](/docs/7-2/user/-/knowledge_base/user/creating-segments-with-custom-fields-and-session-data).
+[Segments with custom fields and session data](/docs/7-2/user/-/knowledge_base/u/creating-segments-with-custom-fields-and-session-data).
 
 ## Integrating Segments with Analytics Cloud
 

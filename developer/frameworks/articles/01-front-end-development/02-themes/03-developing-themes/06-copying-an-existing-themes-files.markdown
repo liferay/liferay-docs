@@ -12,7 +12,7 @@ Unlike extending a base theme, which is a dynamic inheritance that applies your
 time inheritance. Note that this task only works for themes that use the 
 [liferay JS Theme Toolkit](https://github.com/liferay/liferay-themes-sdk/tree/master/packages), 
 such as those created with the 
-[Liferay Theme Generator](/developer/reference/-/knowledge_base/7-2/installing-the-theme-generator-and-creating-a-theme).
+[Liferay Theme Generator](/docs/7-2/reference/-/knowledge_base/r/installing-the-theme-generator-and-creating-a-theme).
 
 | **Note:** The gulp kickstart task copies an existing theme's files into 
 | your own, which can potentially overwrite files with the same name. 
@@ -37,6 +37,6 @@ Congrats! Now you have a head start to developing your theme.
  
 ## Related Topics
 
-- [Building Your Theme's files](/developer/frameworks/-/knowledge_base/7-2/building-your-themes-files)
-- [Creating Reusable Pieces of Code for Your Themes](/developer/frameworks/-/knowledge_base/7-2/creating-reusable-pieces-of-code-for-your-themes)
-- [Deploying and Applying Themes](/developer/frameworks/-/knowledge_base/7-2/deploying-and-applying-themes)
+- [Building Your Theme's files](/docs/7-2/frameworks/-/knowledge_base/f/building-your-themes-files)
+- [Creating Reusable Pieces of Code for Your Themes](/docs/7-2/frameworks/-/knowledge_base/f/creating-reusable-pieces-of-code-for-your-themes)
+- [Deploying and Applying Themes](/docs/7-2/frameworks/-/knowledge_base/f/deploying-and-applying-themes)
