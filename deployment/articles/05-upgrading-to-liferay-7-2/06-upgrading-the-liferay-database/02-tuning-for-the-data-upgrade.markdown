@@ -6,17 +6,19 @@ header-id: tuning-for-the-data-upgrade
 
 [TOC levels=1-4]
 
-Differences between the environments and processes used in data upgrades and production
-instances makes it worthwhile to tune your database differently for each case.
+Upgrading impacts the database differently from daily running in production.
+Because of this, you should tune your database for the upgrade process before
+you run it, and then re-apply your production settings after the upgrade
+completes. 
 
 -   Data upgrades execute many more update statements (`INSERT`, `UPDATE`, and
-    `DELETE`) and less `SELECT` statements than production instances. For data
-    upgrade, you should tune your database for executing updates. 
+    `DELETE`) and less `SELECT` statements than production instances. When
+    upgrading, tune your database for executing updates. 
 
 -   Data upgrades should be done in safe environments completely separate from 
     production servers and should use database backup copies. If upgrade errors
-    occur or you make mistakes, they don't impact production and you can always
-    restart using the database backup copy you started with. 
+    occur or you make mistakes, they don't impact production, and you can always
+    restart using your database backup copy. 
 
 The data upgrade tuning instructions given here are a starting point for tuning
 your @product@ data upgrade. They account for data upgrade activities and a safe
@@ -31,7 +33,7 @@ data upgrade environment:
 
 -   Increase the log file size accordingly. 
 
-| **Important:** Test your database configuration to determine tuning that’s 
+| **Important:** Test your database configuration to determine tuning that's 
 | best for your system, and consult your DBA as appropriate. **Never** use
 | database upgrade configurations in production. Always restore your production
 | database settings before starting your @product@ server for production use 
@@ -77,7 +79,9 @@ settings:
 
 Here is the `db_upgrade.sh` command:
 
-    db_upgrade.sh -j "-Xmx15000m -Dfile.encoding=UTF-8 -Duser.timezone=GMT"
+```bash
+db_upgrade.sh -j "-Xmx15000m -Dfile.encoding=UTF-8 -Duser.timezone=GMT"
+```
 
 It's time to tune your database for the data upgrade. 
 
