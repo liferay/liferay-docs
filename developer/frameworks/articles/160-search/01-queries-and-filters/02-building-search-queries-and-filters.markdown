@@ -7,8 +7,7 @@ header-id: building-search-queries-and-filters
 [TOC levels=1-4]
 
 Each filter and query has a different purpose, but the way you'll add the
-information to the search request is quite similar between all queries and
-filters.
+information to the search request is similar between all queries and filters.
 
 ## Queries
 
@@ -27,9 +26,9 @@ your copying and pasting convenience at the end of this section.
     To discover what fields each query must have (e.g., `String field` in
     the case of the above `com.liferay.portal.search.query.TermsQuery`), LINK TO QUERIES INTERFACE
 
-2.  Build out the query to get the desired response. This will look different
-    for each query type, but you can understand the functionality by visiting
-    Elasticsearch's documentation on the query type (for example, 
+2.  Build out the query to get the desired response. This looks different
+    for each query type, but Elasticsearch's documentation on the query type
+    explains it (for example, 
     [Terms Query](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/query-dsl-terms-query.html)).
 
     For a Terms Query, you might just add terms to the query:
@@ -49,7 +48,7 @@ Once the query itself is in good shape, feed it to the search request.
     SearchRequestBuilder searchRequestBuilder = searchRequestBuilderFactory.getSearchRequestBuilder();
     ```
 
-3.  Get a`com.liferay.portal.search.searcher.SearchRequest` instance from the
+3.  Get a `com.liferay.portal.search.searcher.SearchRequest` instance from the
     builder, then add the query to it and run its `build` method:
 
     ```java
@@ -127,27 +126,27 @@ for more information.
 
 Filters as a distinct API-level object in @product@ are going away. It's best to
 mirror the APIs of the search engine, and neither supported search engine makes
-the API level distinction between queries and filters. In recognition of this,
+an API level distinction between queries and filters. In recognition of this,
 there's a new way to perform post-filtering, which is filtering the returned
 search documents at the end of the search request (after calculating any
-aggregations). Simply add the filter to the query using the `postFilterQuery`
-method in the request builder:
+aggregations). Add the filter to the query using the `postFilterQuery` method in
+the request builder:
 
 ```java 
 SearchRequestBuilder.postFilterQuery(Query);
 ```
 
-As you can see, this takes a `Query` object, not a `Filter`. Therefore, simply
-construct the `Query` as in the previous section, and specify it as a
-post-filter while building the request. All of the legacy `Filter` objects form
-`portal-kernel` are now able to be constructed as queries, as per the above
+As you can see, this takes a `Query` object, not a `Filter`. Therefore,
+construct the `Query` as in the previous section, and specify it as
+a post-filter while building the request. All of the legacy `Filter` objects
+from `portal-kernel` can now be constructed as queries, per the above
 query-building documentation.
 
 ### Legacy Filters in Legacy Search Calls
 
 Constructing the filters found in `portal-kernel`'s
-`com.liferay.portal.kernel.search.filter` package is straightforward, as
-demonstrated by this `new` term filter:
+`com.liferay.portal.kernel.search.filter` package is demonstrated by this `new`
+term filter:
 
 ```java
 TermFilter termFilter = new TermFilter("fieldName", "filterValue");
