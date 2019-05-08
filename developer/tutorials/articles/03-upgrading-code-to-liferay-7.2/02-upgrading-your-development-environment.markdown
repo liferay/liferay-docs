@@ -1,8 +1,12 @@
 # Upgrading Your Development Environment
 
-A Liferay Workspace is a generated environment that is built to hold and manage
-your Liferay projects. It is intended to aid in the management of Liferay
-projects by providing various build scripts and configured properties.
+A [Liferay Workspace](/docs/reference/7-2/-/knowledge_base/r/liferay-workspace)
+is a generated environment that is built to hold and manage your Liferay
+projects. It is intended to aid in the management of Liferay projects by
+providing various build scripts and configured properties.
+
+Liferay Workspace is the recommended environment for your code migration;
+therefore, it will be the assumed development environment in this section.
 
 You must set up your workspace development environment before you begin
 upgrading your custom apps.

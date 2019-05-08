@@ -65,6 +65,12 @@ Blade `convert` command:
     6.2 themes, see the
     [Upgrade a 6.2 Theme to 7.2](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-6-2-themes-to-7-2).
 
+| **Note:** When converting a Service Builder project, the `convert` task
+| automatically extracts the project's service interfaces and implementations
+| into OSGi modules (i.e., *-impl and *-api) and places them in the workspace's
+| `modules` folder. Your portlet and controller logic will remain a WAR and
+| reside in the `wars` folder.
+
 Once you run the `convert` command, your project is copied from the Plugins SDK
 into the applicable workspace folder based on the project type. It is also
 converted from Ant to Gradle.
