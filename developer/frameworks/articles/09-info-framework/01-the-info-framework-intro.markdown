@@ -18,9 +18,13 @@ micro-frameworks. This lowers the learning curve and minimizes work for
 developers.
 
 | Note: Liferay veterans may notice some similarities between the [Asset Framework](asset-framework-link) and Info 
-| Frameworks. The Info Framework doesn't yet provide the full array of features 
-| that Assets provide, but it has many similar characteristics and is simpler 
-| to use.
+| Frameworks. The Info Framework is similar in some ways to the Asset 
+| Framework -- both provide for rendering information -- but the Info Framework 
+| is more generalized. Integrating the Asset Framework in your application 
+| requires more effort, but also provides a greater number of features. The two 
+| frameworks should not be viewed as being in competition with each other, but 
+| as complementary. As an example of this, Assets rendered through the Asset
+| Framework are also available through the Info Framework.
 
 ## Using the Info Framework
 
