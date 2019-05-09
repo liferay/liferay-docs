@@ -1,5 +1,9 @@
 # Migrating Plugins SDK Projects to Liferay Workspace
 
+<div class="learn-path-step">
+    <p>Migrating Plugins SDK Projects to Liferay Workspace<br>Step 1 of 1</p>
+</div>
+
 The Plugins SDK was deprecated for @product@ 7.0 and removed for @product@ 7.1.
 Therefore, to upgrade your custom apps to @product-ver@, you must migrate them
 to a new environment. 

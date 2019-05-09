@@ -1,5 +1,9 @@
 # Upgrading Your Development Environment
 
+<div class="learn-path-step">
+    <p>Upgrading Your Development Environment<br>Step 1 of 1</p>
+</div>
+
 A [Liferay Workspace](/docs/reference/7-2/-/knowledge_base/r/liferay-workspace)
 is a generated environment that is built to hold and manage your Liferay
 projects. It is intended to aid in the management of Liferay projects by

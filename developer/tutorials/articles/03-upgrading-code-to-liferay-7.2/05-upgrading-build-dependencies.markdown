@@ -1,5 +1,9 @@
 # Upgrading Build Dependencies
 
+<div class="learn-path-step">
+    <p>Upgrading Build Dependencies<br>Step 1 of 1</p>
+</div>
+
 Now that your projects are readily available in a workspace, you must ensure
 your project build dependencies are upgraded. Your workspace streamlines the
 build dependency upgrade process by only requiring three modifications:

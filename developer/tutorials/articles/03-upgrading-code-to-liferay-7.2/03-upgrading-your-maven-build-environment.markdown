@@ -1,5 +1,9 @@
 # Upgrading Your Maven Build Environment
 
+<div class="learn-path-step">
+    <p>Upgrading Your Maven Build Environment<br>Step 1 of 1</p>
+</div>
+
 | **Note:** This step only applies to projects residing in a pre @product@ 7.0
 | Maven environment that are not upgrading to Liferay Workspace.
 

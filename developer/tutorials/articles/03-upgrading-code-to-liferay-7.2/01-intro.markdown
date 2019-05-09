@@ -36,11 +36,11 @@ Here are the code upgrade steps:
 
 3.  [Upgrade Build Dependencies](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-build-dependencies)
 
-4.  Fix Upgrade Problems
+4.  [Fix Upgrade Problems](/docs/tutorials/7-2/-/knowledge_base/t/fixing-upgrade-problems)
 
-    1.  Resolve a Plugin's Dependencies
+    1.  [Resolve a Project's Dependencies](/docs/tutorials/7-2/-/knowledge_base/t/resolving-a-projects-dependencies)
 
-    2.  Resolve Breaking Changes
+    2.  [Resolve Breaking Changes](/docs/tutorials/7-2/-/knowledge_base/t/resolving-breaking-changes)
 
 
 
@@ -84,3 +84,5 @@ Here are the code upgrade steps:
 Be sure to follow the upgrade topic details outlined above to ensure a
 successful upgrade. Once you've finished the code upgrade steps, your custom
 apps are compatible with @product-ver@!
+
+<a class="go-link btn btn-primary" href="/docs/7-2/tutorials/-/knowledge_base/t/upgrading-your-development-environment">Let's Go!<span class="icon-circle-arrow-right"></span></a>

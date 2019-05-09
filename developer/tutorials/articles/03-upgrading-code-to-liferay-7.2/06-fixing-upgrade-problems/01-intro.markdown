@@ -7,3 +7,5 @@ start upgrading your project(s). The two most common upgrade problems are
 - [Breaking changes](/docs/tutorials/7-2/-/knowledge_base/t/resolving-breaking-changes)
 
 Visit these upgrade problem tutorials for tips on how to fix them.
+
+<a class="go-link btn btn-primary" href="/docs/tutorials/7-2/-/knowledge_base/t/resolving-a-projects-dependencies">Let's Go!<span class="icon-circle-arrow-right"></span></a>

@@ -1,5 +1,9 @@
 # Resolving a Project's Dependencies
 
+<div class="learn-path-step">
+    <p>Fixing Upgrade Problems<br>Step 1 of 2</p>
+</div>
+
 You may have compile errors due to missing Liferay classes or unresolved symbols
 because they've been moved, renamed, or removed. As a part of modularization in
 @product@, many of these classes reside in new modules. 
