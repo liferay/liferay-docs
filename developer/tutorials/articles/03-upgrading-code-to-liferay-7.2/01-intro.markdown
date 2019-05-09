@@ -36,16 +36,21 @@ Here are the code upgrade steps:
 
 3.  [Upgrade Build Dependencies](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-build-dependencies)
 
+    Optimize your workspace's build environment for the most efficient code
+    upgrade experience.
+
 4.  [Fix Upgrade Problems](/docs/tutorials/7-2/-/knowledge_base/t/fixing-upgrade-problems)
+
+    Fix common upgrade problems dealing with your project's dependencies and
+    breaking changes.
 
     1.  [Resolve a Project's Dependencies](/docs/tutorials/7-2/-/knowledge_base/t/resolving-a-projects-dependencies)
 
     2.  [Resolve Breaking Changes](/docs/tutorials/7-2/-/knowledge_base/t/resolving-breaking-changes)
 
+To be continued...
 
-
-
-
+<!--
 
 5. Upgrade Service Builder Services
     1. Remove Legacy Files
@@ -81,8 +86,10 @@ Here are the code upgrade steps:
 11. Upgrade Web Plugins
 12. Upgrade Ext Plugins
 
+-->
+
 Be sure to follow the upgrade topic details outlined above to ensure a
 successful upgrade. Once you've finished the code upgrade steps, your custom
-apps are compatible with @product-ver@!
+apps will be compatible with @product-ver@!
 
 <a class="go-link btn btn-primary" href="/docs/7-2/tutorials/-/knowledge_base/t/upgrading-your-development-environment">Let's Go!<span class="icon-circle-arrow-right"></span></a>
