@@ -1,14 +1,12 @@
 # Upgrading Your Maven Build Environment
 
+| **Note:** This step only applies to projects residing in a pre @product@ 7.0
+| Maven environment that are not upgrading to Liferay Workspace.
+
 If you're an avid Maven user and have been using it for Liferay Portal 6.2
 project development or older, you must upgrade your Maven build to be compatible
-with @product-ver@ development.
-
-| **Note:** If you're upgrading to a Maven-based Liferay Workspace as your
-| development environment, you can skip this step.
-
-There are two main parts of the Maven environment upgrade process that you must
-address:
+with @product-ver@ development. There are two main parts of the Maven
+environment upgrade process that you must address:
 
 - [Upgrading to new @product-ver@ Maven plugins](#upgrading-to-new-product-ver-maven-plugins)
 - [Updating Liferay Maven artifact dependencies](updating-liferay-maven-artifact-dependencies)

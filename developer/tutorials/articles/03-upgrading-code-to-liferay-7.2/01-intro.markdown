@@ -24,26 +24,29 @@ Here are the code upgrade steps:
 
     Download the @product@ bundle you're upgrading to.
 
-    4.  [Upgrading Your Maven Build Environment](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-maven-build-environment)
+    4.  [Upgrade Your Maven Build Environment](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-maven-build-environment)
 
     If you're upgrading a Maven build with Liferay Portal 6.2-compatible code or
     older, you must upgrade your Maven environment.
 
-2. Migrate Plugins SDK Projects to Liferay Workspace
+2.  [Migrate Plugins SDK Projects to Liferay Workspace](/docs/tutorials/7-2/-/knowledge_base/t/migrating-plugins-sdk-projects-to-liferay-workspace)
 
-    1. Import Existing Plugins SDK Projects
+    Copy your Plugins SDK projects into workspace and convert them to
+    Gradle/Maven projects.
 
-    2. Migrate Plugins SDK Projects to Workspace
+3.  [Upgrade Build Dependencies](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-build-dependencies)
 
-3. Upgrade Build Dependencies
-    1. Update Repository URL
-    2. Update Workspace Plugin Version
-    3. Remove Dependency Versions
-4. Fix Upgrade Problems
-    1. Auto-Correct Upgrade Problems
-    2. Find Upgrade Problems
-    3. Resolve Upgrade Problems
-    4. Remove Upgrade Problem Markers
+4.  Fix Upgrade Problems
+
+    1.  Resolve a Plugin's Dependencies
+
+    2.  Resolve Breaking Changes
+
+
+
+
+
+
 5. Upgrade Service Builder Services
     1. Remove Legacy Files
     2. Migrate from Spring DI to OSGi Declarative Services
@@ -60,8 +63,8 @@ Here are the code upgrade steps:
     9. Upgrade Portal Properties Hooks
     10. Upgrade Struts Action Hooks
 7. Upgrade Themes
-    1. Upgrade a 7.0 or 7.1 Theme to 7.2
-    2. Upgrade a 6.2 Theme to 7.2
+    1. [Upgrade a 7.x Theme to 7.2](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-7-x-themes-to-7-2)
+    2. [Upgrade a 6.2 Theme to 7.2](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-6-2-themes-to-7-2)
 8. Upgrade Layout Templates
 9. Upgrade Frameworks & Features
     1. Upgrade JNDI Data Source Usage
