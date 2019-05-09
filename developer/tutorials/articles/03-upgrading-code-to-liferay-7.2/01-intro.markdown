@@ -89,7 +89,10 @@ To be continued...
 -->
 
 Be sure to follow the upgrade topic details outlined above to ensure a
-successful upgrade. Once you've finished the code upgrade steps, your custom
-apps will be compatible with @product-ver@!
+successful upgrade. You can also complete these steps automatically using the
+[Code Upgrade Planner](/docs/reference/7-2/-/knowledge_base/r/code-upgrade-planner).
+
+Once you've finished the code upgrade steps, your custom apps will be compatible
+with @product-ver@!
 
 <a class="go-link btn btn-primary" href="/docs/7-2/tutorials/-/knowledge_base/t/upgrading-your-development-environment">Let's Go!<span class="icon-circle-arrow-right"></span></a>

@@ -61,6 +61,11 @@ Blade `convert` command:
     SDK projects at once, replace the project name variable with `-a` (i.e.,
     specifying all plugins).
 
+    | **Note:** If the `convert` task doesn't work as described above, you may
+    | need to update your Blade CLI version. See the
+    | [Updating Blade CLI](/docs/7-2/reference/-/knowledge_base/r/updating-blade-cli)
+    | article for more information.
+
     This Gradle conversion process also works for themes; they're converted to
     automatically leverage NodeJS. If you're converting a Java-based theme, add
     the `-t` option to your command too. This will incorporate the
