@@ -1,0 +1,37 @@
+{
+	"name": "my-generated-react-guestbook-app",
+	"version": "1.0.0",
+	"description": "My Generated React Guestbook App",
+	"devDependencies": {
+		"liferay-npm-bundler": "^2.6.2",
+		"liferay-npm-build-support": "^2.6.2",
+		"copy-webpack-plugin": "^4.5.4",
+		"webpack": "^4.0.0",
+		"webpack-cli": "^3.0.0",
+		"webpack-dev-server": "^3.0.0",
+		"babel-cli": "^6.26.0",
+		"babel-preset-env": "^1.7.0",
+		"babel-preset-react": "^6.0.0",
+		"babel-loader": "^7.0.0"
+	},
+	"dependencies": {
+		"react": "^16.8.1",
+		"react-dom": "^16.8.1",
+		"react-router-dom": "^4.3.1"
+	},
+	"scripts": {
+		"build": "babel --source-maps -d build src && npm run copy-assets && liferay-npm-bundler",
+		"copy-assets": "lnbs-copy-assets",
+		"deploy": "npm run build && lnbs-deploy",
+		"start": "lnbs-start"
+	},
+	"portlet": {
+		"com.liferay.portlet.display-category": "category.sample",
+		"com.liferay.portlet.header-portlet-css": "/css/styles.css",
+		"com.liferay.portlet.instanceable": true,
+		"javax.portlet.name": "my_generated_react_guestbook_app",
+		"javax.portlet.security-role-ref": "power-user,user",
+		"javax.portlet.display-name": "My Generated React Guestbook App"
+	},
+	"main": "index.js"
+}

@@ -4,9 +4,11 @@ header-id: creating-a-project
 
 # Creating a Project
 
+[TOC levels=1-4]
+
 Liferay provides many project templates you can use to generate starter projects
 formatted in an opinionated way. Visit the [Project
-Templates](/developer/reference/-/knowledge_base/7-2/project-templates)
+Templates](/docs/7-2/reference/-/knowledge_base/r/project-templates)
 reference section for more information on the available project templates. Each
 project template has different configurable options, so be sure to research
 a project template before generating it.
@@ -14,13 +16,13 @@ a project template before generating it.
 You can use your desired tool to generate a project. The following tools are
 preconfigured for Liferay project generation:
 
-- [Blade CLI](/developer/reference/-/knowledge_base/7-2/blade-cli)
-- [Liferay Dev Studio](/developer/reference/-/knowledge_base/7-2/liferay-dev-studio)
-- [Liferay IntelliJ Plugin](/developer/reference/-/knowledge_base/7-2/liferay-intellij-plugin)
-- [Maven](/developer/reference/-/knowledge_base/7-2/maven)
+- [Blade CLI](/docs/7-2/reference/-/knowledge_base/r/blade-cli)
+- [Liferay Dev Studio](/docs/7-2/reference/-/knowledge_base/r/liferay-dev-studio)
+- [Liferay IntelliJ Plugin](/docs/7-2/reference/-/knowledge_base/r/liferay-intellij-plugin)
+- [Maven](/docs/7-2/reference/-/knowledge_base/r/maven)
 
 It's recommended to create Liferay projects within a
-[Liferay Workspace](/developer/tutorials/-/knowledge_base/7-2/liferay-workspace).
+[Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace).
 Most tools, however, support creating projects in a standalone environment
 (except for IntelliJ). Visit the appropriate section to learn how to create a
 project with the highlighted tool.
@@ -38,11 +40,14 @@ project with the highlighted tool.
 
         blade create -t [projectTemplate] [option1] [option2] ... [optionN] [projectName]
 
+| **Note:** If you want to generate a project for a previous version (e.g.,
+| Liferay Portal 7.0), you can specify this using the `-v` flag. For example, to
+| create a project for Liferay Portal 7.0, you would include `-v 7.0` in your
+| create command sequence.
+
 The available configuration options are documented for each
-[project template](/developer/reference/-/knowledge_base/7-2/project-templates).
-Visit the
-[Blade CLI Project Template Commands](path/blade-cli-project-template-commands)
-reference article for additional information on Blade CLI's `create` command.
+[project template](/docs/7-2/reference/-/knowledge_base/r/project-templates).
+Run `blade create --help` for the entire list of available options.
 
 ## Liferay Dev Studio
 
@@ -94,9 +99,9 @@ reference article for additional information on Blade CLI's `create` command.
 2.  Select the archetype you want to leverage and proceed through the
     configuration prompts.
 
-| **Note:** Maven projects can also be generated using Blade CLI. Follow [Blade
-| CLI's](#blade-cli-gradle) project creation instructions and insert the `-b
-| maven` parameter in the Blade command.
+| **Note:** Maven projects can also be generated using Blade CLI. Follow
+| [Blade CLI's](#blade-cli-gradle) project creation instructions and insert the
+| `-b maven` parameter in the Blade command.
 
 Archetypes prefixed with `com.liferay.project.templates.[TYPE]` or
 `com.liferay.faces.archetype:[TYPE]` are compatible with @product-ver@. All

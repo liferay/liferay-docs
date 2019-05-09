@@ -4,6 +4,8 @@ header-id: item-selector
 
 # Item Selector
 
+[TOC levels=1-4]
+
 An *Item Selector* is a UI component for selecting entities in a user-friendly 
 manner. 
 
@@ -62,7 +64,7 @@ to show.
 
 | **Note:** For a list of the criterion classes and return types that @product@
 | provides, see
-| [Item Selector Criterion and Return Types](/develop/reference/-/knowledge_base/7-2/item-selector-criterion-and-return-types).
+| [Item Selector Criterion and Return Types](/docs/7-2/reference/-/knowledge_base/r/item-selector-criterion-and-return-types).
 
 **Criterion Handler:** A class that gets the appropriate selection view. Each 
 criterion requires a criterion handler. Criterion handler classes extend 

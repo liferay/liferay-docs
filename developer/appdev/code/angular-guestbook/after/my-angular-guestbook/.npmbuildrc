@@ -1,0 +1,16 @@
+{
+	"liferayDir": "C:\\Users\\liferay\\opt\\Liferay\\bundles\\liferay-ce-portal-tomcat-7.1.1-ga2-20181105121645556\\liferay-ce-portal-7.1.1-ga2",
+	"webpack": {
+		"rules": [
+			{
+				"test": "src\\\\.*\\.ts$",
+				"use": "ts-loader"
+			}
+		],
+		"extensions": [
+			".ts",
+			".js"
+		],
+		"mainModule": "index.ts"
+	}
+}
