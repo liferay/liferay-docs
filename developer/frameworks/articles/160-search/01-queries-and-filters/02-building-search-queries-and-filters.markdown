@@ -23,8 +23,10 @@ your copying and pasting convenience at the end of this section.
     TermsQuery termsQuery = queries.terms("fieldName");
     ```
 
-    To discover what fields each query must have (e.g., `String field` in
-    the case of the above `com.liferay.portal.search.query.TermsQuery`), LINK TO QUERIES INTERFACE
+    To discover what fields each query must have (e.g., `String field` in the
+    case of the above `com.liferay.portal.search.query.TermsQuery`), see the
+    [`Queries`](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-search/portal-search-api/src/main/java/com/liferay/portal/search/query/Queries.java) 
+    interface.
 
 2.  Build out the query to get the desired response. This looks different
     for each query type, but Elasticsearch's documentation on the query type
@@ -118,9 +120,8 @@ Here's the complete code snippet:
 ### Process the Search Response
 
 What you'll do with the `SearchResponse` returned by the `searcher.search` call
-is dependent on the type of query and your specific use case. See 
-[the documentation on searching programmatically](NOT YET WRITTEN) 
-for more information.
+is dependent on the type of query and your specific use case. See the
+documentation on searching programmatically for more information.
 
 ## Filters
 
