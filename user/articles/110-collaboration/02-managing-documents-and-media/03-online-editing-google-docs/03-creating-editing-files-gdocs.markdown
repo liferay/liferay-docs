@@ -4,6 +4,8 @@ header-id: creating-and-editing-files-with-google-docs
 
 # Creating and Editing Files with Google Docs™
 
+[TOC levels=1-4]
+
 The Documents and Media Library lets you use Google Docs&trade; to create and 
 edit text documents, spreadsheets, or presentations. When you finish your Google 
 Docs&trade; editing session, your changes are automatically saved in the 

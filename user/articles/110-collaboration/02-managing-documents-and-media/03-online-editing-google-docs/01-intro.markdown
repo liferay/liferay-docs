@@ -4,6 +4,8 @@ header-id: online-file-creation-and-editing-with-google-docs
 
 # Online File Creation and Editing with Google Docs™
 
+[TOC levels=1-4]
+
 Although you can 
 [add](/discover/portal/-/knowledge_base/7-2/adding-files-to-a-document-library#using-the-add-menu) 
 and 
@@ -22,3 +24,8 @@ Note that when you use Google Docs&trade; to create or edit a Documents and
 Media file, that file isn't permanently stored in Google Docs&trade;. Google 
 Docs&trade; is only used for its editing UI. Your edits are then saved to the 
 Documents and Media Library. 
+
+![Figure 1: You can create new Google documents in Documents and Media.](../../../../images/google-docs-new.png)
+
+![Figure 2: When creating new Google documents, you can save or discard your changes by using the toolbar in the editor.](../../../../images/google-docs-save-discard.png)
+
