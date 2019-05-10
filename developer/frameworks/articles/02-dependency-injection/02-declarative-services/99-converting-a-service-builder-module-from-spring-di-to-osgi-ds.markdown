@@ -1,6 +1,6 @@
 # Converting a Service Builder Module from Spring DI to OSGi DS
 
-Prior to @product@ 7.2, Service Builder modules used Spring for dependency
+Prior to @product@ 7.2, Service Builder modules could only use Spring for dependency
 injection (DI). Now OSGi Declarative Services (DS) is the default dependency
 injection mechanism for new Service Builder modules. It's easier to learn and
 fosters loose coupling between services. If you have an existing Service Builder
@@ -36,10 +36,11 @@ straightforward.
 
 ## Step 2: Update your Spring bean classes
 
-Service Builder regenerates your the standard interfaces automatically. You must update your non-generated Spring bean classes to use DS. Here are the steps: 
+Service Builder regenerates your service interfaces automatically. You must
+update some of your non-generated Spring bean classes to use DS. Here are the
+steps: 
 
-1.  If the class implements an interface, add the `@Component` class annotation 
-    to it. 
+1.  Add the `org.osgi.service.component.annotations.Component` annotation to your `*LocalServiceImpl`, `*ServiceImpl`, and `*FinderImpl` classes. 
 
     1.  If the class implements a `*Finder` interface, declare the component as 
         that service type. Example: 
@@ -47,7 +48,7 @@ Service Builder regenerates your the standard interfaces automatically. You must
             @Component(service = MyFinder.class) 
     
     2.  If the class implements a remote or local service, declare the component
-        as the `AopService` service type. Example:
+        as the `com.liferay.portal.aop.AopService` service type. Example:
 
             @Component(service = AopService.class)
 
@@ -64,8 +65,8 @@ Service Builder regenerates your the standard interfaces automatically. You must
         tracking by setting the `@Component` property `model.class.name` to the
         service entity's fully qualified class name. 
 
-2.  Replace the `@ServiceReference` and `@BeanReference` annotations with the DS
-    `@Reference` annotation for all fields. 
+2.  Replace all the `@ServiceReference` and `@BeanReference` field annotations 
+    with the DS `@Reference` annotation. 
     
 3.  [Run Service Builder](/developer/frameworks/-/knowledge_base/7-2/running-service-builder)
     to regenerate the interfaces based on your implementation changes. 
@@ -78,18 +79,22 @@ Service Builder regenerates your the standard interfaces automatically. You must
     -   `destroy() {...}` &rarr; `deactivate() {...}` and annotate with 
         `@Deactivate`. 
 
-Lastly, you'll work out any remaining references you need. 
+Next, you'll work out any remaining references you need. 
 
 ## Step 3: Resolve any circular dependencies
 
-Service Builder refrains from adding references it suspects to cause circular 
-    dependencies.
+Service Builder avoids adding references that could cause circular
+dependencies.
     
 1.  Use the `@Reference` DS annotation on fields as desired. 
 
-2.  Deploy your module and restart @product@. 
+2.  Deploy your module. 
 
-3.  Detect and resolve any circular dependencies. Local components failing to resolve can be due to circular dependencies. 
+3.  Detect and resolve any circular dependencies. Local components failing to 
+    resolve can be due to circular dependencies. If you have circular
+    dependencies, they're most likely between `*LocalService` components. All
+    circular dependencies originate from fields you annotate with `@Reference`
+    in step 3.1. 
 
     -   Run `system:check` in Gogo Shell to detect obvious circular dependencies.
     
