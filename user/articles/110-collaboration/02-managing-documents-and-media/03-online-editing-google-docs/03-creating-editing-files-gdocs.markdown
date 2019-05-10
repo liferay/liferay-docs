@@ -62,17 +62,17 @@ Docs&trade;:
 4.  Save or discard your changes by clicking one of these toolbar buttons in the 
     Google Docs&trade; editor: 
 
-    -   **Save and Return to Liferay:** Saves your document as a new file in the 
-        Documents and Media Library, deletes the Google file, and returns you to 
-        the portal. The saved file's format depends on the type of Google 
-        document you selected in step two above: 
+    **Save and Return to Liferay:** Saves your document as a new file in the 
+    Documents and Media Library, deletes the Google file, and returns you to 
+    the portal. The saved file's format depends on the type of Google document 
+    you selected in step two above: 
 
-        -   Google Docs&trade;: Microsoft Word (`.docx`)
-        -   Google Slides&trade;: Microsoft PowerPoint (`.pptx`)
-        -   Google Sheets&trade;: Microsoft Excel (`.xlsx`)
+    -   Google Docs&trade;: Microsoft Word (`.docx`)
+    -   Google Slides&trade;: Microsoft PowerPoint (`.pptx`)
+    -   Google Sheets&trade;: Microsoft Excel (`.xlsx`)
 
-    -   **Discard Changes:** Returns you to the portal without saving your file 
-        in the Documents and Media Library or Google Docs&trade;. 
+    **Discard Changes:** Returns you to the portal without saving your file in 
+    the Documents and Media Library or Google Docs&trade;. 
 
     Note that it's also possible to close the Google Docs&trade; window without 
     clicking either button. In this case, the editing session remains open even 
@@ -125,12 +125,11 @@ When an editing session already exists for a Documents and Media file, the
 following actions are available via that file's Actions icon 
 (![Actions](../../../../images/icon-actions.png)): 
 
--   **Edit in Google Docs:** Resume editing the file in Google Docs&trade;. 
+**Edit in Google Docs:** Resume editing the file in Google Docs&trade;. 
 
--   **Check in:** Saves the Google file (including any changes) to the Documents 
-    and Media file, then deletes the Google file. This is equivalent to clicking 
-    *Save and Return to Liferay* in a Google Docs&trade; editing window. 
+**Check in:** Saves the Google file (including any changes) to the Documents and 
+Media file, then deletes the Google file. This is equivalent to clicking 
+*Save and Return to Liferay* in a Google Docs&trade; editing window. 
 
--   **Cancel Checkout:** Deletes the Google file, discarding any changes. This 
-    is equivalent to clicking *Discard Changes* in a Google Docs&trade; editing 
-    window. 
+**Cancel Checkout:** Deletes the Google file, discarding any changes. This is 
+equivalent to clicking *Discard Changes* in a Google Docs&trade; editing window. 
