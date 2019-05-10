@@ -1,4 +1,4 @@
-# WAR Core Ext
+# WAR Core Ext [](id=war-core-ext)
 
 In this article, you'll learn how to create a Liferay WAR core Ext project. To
 create a WAR core Ext project via the command line using Blade CLI or Maven, use

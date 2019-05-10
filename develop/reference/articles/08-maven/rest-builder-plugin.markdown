@@ -1,9 +1,9 @@
-# REST Builder Plugin
+# REST Builder Plugin [](id=rest-builder-plugin)
 
 The REST Builder plugin lets you generate a REST layer defined in the REST
 Builder `rest-config.yaml` and `rest-openapi.yaml` files.
 
-## Usage
+## Usage [](id=usage)
 
 To use the plugin, include it in your project's root `pom.xml` file:
 
@@ -26,7 +26,7 @@ To use the plugin, include it in your project's root `pom.xml` file:
 You can view an example POM containing the REST Builder configuration
 [here](https://github.com/liferay/liferay-portal/blob/master/modules/util/portal-tools-rest-builder/samples/pom.xml).
 
-## Goals
+## Goals [](id=goals)
 
 The plugin adds one Maven goal to your project:
 
@@ -34,7 +34,7 @@ Name | Description
 ---- | -----------
 `rest-builder:build` | Runs the Liferay REST Builder.
 
-## Available Parameters
+## Available Parameters [](id=available-parameters)
 
 You can set the following parameters in the `<configuration>` section of the
 POM:
