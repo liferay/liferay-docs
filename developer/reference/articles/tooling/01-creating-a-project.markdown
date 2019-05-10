@@ -18,7 +18,7 @@ preconfigured for Liferay project generation:
 
 - [Blade CLI](/docs/7-2/reference/-/knowledge_base/r/blade-cli)
 - [Liferay Dev Studio](/docs/7-2/reference/-/knowledge_base/r/liferay-dev-studio)
-- [Liferay IntelliJ Plugin](/docs/7-2/reference/-/knowledge_base/r/liferay-intellij-plugin)
+- [Liferay IntelliJ Plugin](/docs/7-2/reference/-/knowledge_base/r/intellij)
 - [Maven](/docs/7-2/reference/-/knowledge_base/r/maven)
 
 It's recommended to create Liferay projects within a
@@ -100,7 +100,7 @@ Run `blade create --help` for the entire list of available options.
     configuration prompts.
 
 | **Note:** Maven projects can also be generated using Blade CLI. Follow
-| [Blade CLI's](#blade-cli-gradle) project creation instructions and insert the
+| [Blade CLI's](#blade-cli) project creation instructions and insert the
 | `-b maven` parameter in the Blade command.
 
 Archetypes prefixed with `com.liferay.project.templates.[TYPE]` or

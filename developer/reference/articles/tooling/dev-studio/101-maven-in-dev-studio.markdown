@@ -10,7 +10,7 @@ You can take full advantage of [Maven](https://maven.apache.org/) in Liferay Dev
 Studio with its built-in Maven support. In this article, you'll learn about the
 following topics:
 
-- [Installing Maven Plugins for Liferay Dev Studio](#installing-maven-plugins-for-liferay-ide)
+- [Installing Maven Plugins for Liferay Dev Studio](#installing-maven-plugins-for-dev-studio)
 - [Importing Maven Projects](#importing-maven-projects)
 - [Using the POM Graphic Editor](#using-the-pom-graphic-editor)
 
