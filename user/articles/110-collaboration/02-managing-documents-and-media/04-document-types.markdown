@@ -4,6 +4,8 @@ header-id: document-types
 
 # Document Types
 
+[TOC levels=1-4]
+
 Document types are made of metadata fields and help users define the purpose of
 Document Library files. For example, a *Contract* document type may need 
 metadata fields for the effective date, expiration date, contract type, legal 

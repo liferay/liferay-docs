@@ -4,6 +4,8 @@ header-id: metadata-sets
 
 # Metadata Sets
 
+[TOC levels=1-4]
+
 You can define metadata fields that users fill out when they create or edit
 Document Library files. You do this by creating *metadata sets* and then
 associating them with document types, which wrap Document Library files and thus
@@ -35,10 +37,13 @@ In the table, each metadata set has an Actions button
 (![Actions Menu](../../../images/icon-actions.png)) for performing the following
 actions on that set: 
 
--   **Edit**: Edit the set. Alternatively, click the set's name in the table.
--   **Permissions**: Configure the set's permissions. 
--   **Copy**: Copy the metadata set. 
--   **Delete**: Delete the set. 
+**Edit**: Edit the set. Alternatively, click the set's name in the table.
+
+**Permissions**: Configure the set's permissions. 
+
+**Copy**: Copy the metadata set. 
+
+**Delete**: Delete the set. 
 
 ![Figure 1: The Metadata Sets management window lets you view existing sets and create new ones for applying to document types.](../../../images/dm-metadata-sets-list.png)
 
