@@ -14,7 +14,7 @@ such as those created with the
 
 1.  Navigate to your theme's root folder and run `gulp extend`. 
 
-    ![Figure 1: Run the `gulp extend` task to change your base theme.](../../../../images/theme-dev-changing-base-themes-gulp-extend-base-theme.png)
+    ![Figure 1: Run the `gulp extend` task to change your base theme.](../../../../images/theme-ext-changing-base-themes-gulp-extend-base-theme.png)
     
 2.  Enter 1 to select a new base theme to extend. 
 
@@ -26,7 +26,7 @@ such as those created with the
     theme published on the npm registry. Enter the number for the option you 
     wish to select. 
 
-    ![Figure 2: You can extend the styled or unstyled base theme, a globally installed theme, or a theme published to the npm registry.](../../../../images/theme-dev-changing-base-themes-gulp-extend-base-theme-choice.png)
+    ![Figure 2: You can extend the styled or unstyled base theme, a globally installed theme, or a theme published to the npm registry.](../../../../images/theme-ext-changing-base-themes-gulp-extend-base-theme-choice.png)
 
     | **Note:** The Classic theme is an implementation of an existing base theme 
     | and is therefore not meant to be extended. Extending Liferay's Classic 

@@ -20,7 +20,7 @@ such as those created with the
 
 1.  Navigate to your theme's root folder and run `gulp kickstart`.
 
-    ![Figure 1: Run the `gulp kickstart` task to copy a theme's files into your own theme.](../../../../images/theme-dev-kickstarting-themes-gulp-kickstart.png)
+    ![Figure 1: Run the `gulp kickstart` task to copy a theme's files into your own theme.](../../../../images/theme-ext-kickstarting-themes-gulp-kickstart.png)
 
 2.  Select where to search for the theme to copy. You can copy files from 
     globally installed themes or themes published on the npm registry.
@@ -28,7 +28,7 @@ such as those created with the
     | **Note:** To globally install a theme, run the `npm link` command from the 
     | theme's root folder. 
 
-    ![Figure 2: You can copy files from  globally installed themes.](../../../../images/theme-dev-kickstarting-themes-global-theme.png)
+    ![Figure 2: You can copy files from  globally installed themes.](../../../../images/theme-ext-kickstarting-themes-global-theme.png)
 
 3.  The theme's files are copied into your own theme, jump starting development. 
     Add your changes on top of these files.
