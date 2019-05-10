@@ -9,6 +9,8 @@ files, you must configure @product@ to connect with an application in the
 [Google API Console](https://console.developers.google.com). 
 Here, you'll learn how. 
 
+| **Note:** You must be an administrator to complete these steps. 
+
 ## Configure Your Google Project
 
 First, you must configure your Google project to use the Google Drive&trade; 

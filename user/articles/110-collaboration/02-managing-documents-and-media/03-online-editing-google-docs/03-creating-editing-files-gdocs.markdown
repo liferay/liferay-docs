@@ -14,6 +14,17 @@ Docs&trade; for the following:
 -   [Editing Files](#editing-files)
 -   [Multiple Editing Sessions](#multiple-editing-sessions)
 
+## Authentication
+
+Note that the first time you create or edit a Documents and Media file via 
+Google Docs&trade;, you must authenticate with your Google account. This links 
+Google Drive&trade; to your portal account, so you only need to do this 
+authentication once. You can unlink your account at any time by navigating to 
+User Menu &rarr; *Account Settings* &rarr; *General* &rarr; *Apps*, and clicking 
+*Revoke* next to Google Drive&trade;. 
+
+![Figure 1: You can unlink your Google account from the portal.](../../../../images/google-docs-unlink.png)
+
 ## Creating Files
 
 Follow these steps to create a new Documents and Media file via Google 
@@ -41,7 +52,7 @@ Docs&trade;:
     its linked Google file. For more information, see the section below on 
     [multiple editing sessions](#multiple-editing-sessions). 
 
-    ![Figure 1: Select the type of Google document you want to create.](../../../../images/google-docs-new.png)
+    ![Figure 2: Select the type of Google document you want to create.](../../../../images/google-docs-new.png)
 
 3.  Use the Google Docs&trade; editor to create your document's content. All 
     Google Docs&trade; features are available except for sharing. 
@@ -67,7 +78,7 @@ Docs&trade;:
     section below on 
     [multiple editing sessions](#multiple-editing-sessions). 
 
-    ![Figure 2: Save or discard your changes by using the toolbar in the editor.](../../../../images/google-docs-save-discard.png)
+    ![Figure 3: Save or discard your changes by using the toolbar in the editor.](../../../../images/google-docs-save-discard.png)
 
 ## Editing Files
 
@@ -93,7 +104,7 @@ Follow these steps to edit a Documents and Media file in Google Docs&trade;:
     the file, transfers its content to a new Google Docs&trade; file, and 
     redirects you to that Google Docs&trade; file. 
 
-    ![Figure 3: Select *Edit in Google Docs* from the file's Actions menu.](../../../../images/google-docs-edit.png)
+    ![Figure 4: Select *Edit in Google Docs* from the file's Actions menu.](../../../../images/google-docs-edit.png)
 
 3.  Edit the file in Google Docs&trade;. The editing process is exactly the same 
     as described above for creating files. 
