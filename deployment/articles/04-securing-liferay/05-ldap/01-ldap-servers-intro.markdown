@@ -1,39 +1,44 @@
 ---
-header-id: adding-ldap-servers
+header-id: LDAP
 ---
 
-# Adding LDAP Servers
+# LDAP
 
-Click on the *Add* button beneath the LDAP Servers heading to add an LDAP
-server connection. If you have more than one LDAP server, you can arrange the
-servers by order of preference using the up/down arrows. When you add an LDAP
-Server, you must provide several pieces of data so @product@ can bind to that
-LDAP server and search it for user records. Regardless of how many LDAP servers
-you add, each server has the same configuration options.
+LDAP is a common user store for @product@. You can configure LDAP at the
+system scope in System Settings or at the instance scope in Instance settings.
+Users can be imported from LDAP or exported to LDAP. To access LDAP
+configuration settings, navigate to *Control Panel &rarr; Configuration* &rarr;
+*Instance Settings*. At the bottom of the list on the left, click *Servers*. 
+
+Click the *Add* button to add an LDAP server connection. If you have more than
+one LDAP server, you can arrange the servers by order of preference using the
+up/down arrows. Regardless of how many LDAP servers you add, each server has the
+same configuration options.
 
 **Server Name:** Enter a name for your LDAP server.
 
-**Default Values:** Several leading directory servers are listed here. If you
-are using one of these, select it. The rest of the form is populated with the
-proper default values for that directory.
+**Default Values:** Several common directory servers appear here. If you
+use one of these, select it. The rest of the form is populated with default
+values for that directory.
 
-**Connection:** These settings cover the basic connection to LDAP.
+## Connection
 
-- *Base Provider URL:* The link to the LDAP server. Make sure the @product@ server
-  can communicate with the LDAP server. If there is a firewall between the two
-  systems, check to make sure the appropriate ports are opened.
+These settings cover the connection to LDAP.
 
-- *Base DN:* The Base Distinguished Name for your LDAP directory. It is
-  usually modeled after your organization. For a commercial organization, it may
-  look similar to this: `dc=companynamehere,dc=com`.
+**Base Provider URL:** The link to the LDAP server. Make sure the @product@ server
+can communicate with the LDAP server. If there is a firewall between the two
+systems, make sure the appropriate ports are opened.
 
-- *Principal:* By default, the LDAP administrator user ID is populated here. If
-  you have removed the default LDAP administrator, you must use the fully
-  qualified name of the administrative credential that you use instead. You need
-  an administrative credential because @product@ uses this ID to synchronize
-  user accounts to and from LDAP.
+**Base DN:** The Base Distinguished Name for your LDAP directory. It is
+usually modeled after your organization. It may look similar to this:
+`dc=companynamehere,dc=com`.
 
-- *Credentials:* This is the password for the LDAP administrative user.
+**Principal:** The default LDAP administrator user ID is populated here. If your
+administrator ID differs, use that credential instead. You need an
+administrative credential because @product@ uses this ID to synchronize
+user accounts to and from LDAP.
+
+**Credentials:** This is the password for the LDAP administrative user.
 
 This is all you need to make a regular connection to an LDAP directory. The rest
 of the configuration, however, may need to be customized, as it represents "best
@@ -47,9 +52,8 @@ Connection* button.
 Before proceeding to fine tune @product@'s LDAP connections, ensure the
 following steps have been taken:
 
-1.  The LDAP connection has been enabled in the _Control Panel_. Depending on
-    your needs, LDAP authentication may be required so that only users who have been
-    bound may log in.
+1.  The LDAP connection is enabled. Depending on your needs, LDAP authentication
+    may be required so that only users who have been bound may log in.
 
 2.  *Export/Import*: for users in a clustered environment, Enable Import/Export
     on Startup should be disabled so that there are no massive imports on every
@@ -61,9 +65,9 @@ following steps have been taken:
 
 ## Security
 
-If you run your LDAP directory in SSL mode to prevent credential information
-from passing through the network unencrypted, you must perform extra steps to
-share the encryption key and certificate between the two systems.
+If you run your LDAP directory in SSL mode to encrypt credential information on
+the network, you must perform extra steps to share the encryption key and
+certificate between the two systems.
 
 For example, if your LDAP directory is Microsoft Active Directory on
 Windows Server 2003, you'd share the certificate like this:
@@ -77,7 +81,7 @@ keystore* like this:
 
     keytool -import -trustcacerts -keystore /some/path/java-8-jdk/jre/lib/security/cacerts -storepass changeit -noprompt -alias MyRootCA -file /some/path/MyRootCA.cer
 
-The *keytool* utility ships as part of the Java SDK.
+The `keytool` utility ships as part of the Java SDK.
 
 Once this is done, go back to the LDAP page in the Control Panel. Modify the
 LDAP URL in the Base DN field to the secure version by changing the protocol to
@@ -119,15 +123,11 @@ fields. Though LDAP user attributes may be different from LDAP server to LDAP
 server, there are five fields @product@ requires to be mapped for the user
 to be recognized:
 
-   +   *Screen Name* (e.g., *uid*)
-
-   +   *Password* (e.g., *userPassword*)
-
-   +   *Email Address* (e.g., *mail* or *email*)
-
-   +   *First Name* (e.g., *name* or *givenName*)
-
-   +   *Last Name* (e.g., *sn*)
+-   *Screen Name* (e.g., *uid*)
+-   *Password* (e.g., *userPassword*)
+-   *Email Address* (e.g., *mail* or *email*)
+-   *First Name* (e.g., *name* or *givenName*)
+-   *Last Name* (e.g., *sn*)
 
 **Note:** If you intend to create or import users with no email addresses, then
 you must set `users.email.address.required=false` in your

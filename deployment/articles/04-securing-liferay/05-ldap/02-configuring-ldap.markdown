@@ -1,23 +1,15 @@
 ---
-header-id: ldap
+header-id: configuring-ldap
 ---
 
-# LDAP
+# Configuring LDAP
 
-@product@ fully supports LDAP as a user store. Use the LDAP tab in Instance
-Settings's Authentication page to connect to an LDAP directory. Users can be
-imported from LDAP or exported to LDAP. If your organization already stores user
-information on an LDAP server, it's convenient for both users and administrators
-to import Users. In this article, you'll learn how to connect to an LDAP server
-and how to configure import settings, export settings, and related LDAP
+In this article, you'll
+learn how to configure import settings, export settings, and related LDAP
 configuration settings. 
 
-## Configuring LDAP Settings
-
 To access LDAP configuration settings, navigate to *Control Panel &rarr;
-Configuration* &rarr; *Instance Settings*, then scroll down and expand the
-form's *Authentication* section.  Go to the *LDAP* tab. Use this form to connect
-to an LDAP directory.
+Configuration* &rarr; *Instance Settings*. 
 
 You configure the global values from the LDAP tab of the Authentication page.
 
