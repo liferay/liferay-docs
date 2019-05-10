@@ -1,4 +1,10 @@
-# Semantic Versioning 
+---
+header-id: semantic-versioning
+---
+
+# Semantic Versioning
+
+[TOC levels=1-4]
 
 [Semantic Versioning](https://semver.org)
 is a three tiered versioning system that increments version numbers based on the
