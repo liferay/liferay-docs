@@ -27,5 +27,7 @@ Documents and Media Library.
 
 ![Figure 1: You can create new Google documents in Documents and Media.](../../../../images/google-docs-new.png)
 
-![Figure 2: When creating new Google documents, you can save or discard your changes by using the toolbar in the editor.](../../../../images/google-docs-save-discard.png)
+![Figure 2: You can also use Google's document editor to edit existing Documents and Media files.](../../../../images/google-docs-edit.png)
+
+![Figure 3: When using Google's document editor, you can save or discard your changes via the editor's toolbar.](../../../../images/google-docs-save-discard.png)
 
