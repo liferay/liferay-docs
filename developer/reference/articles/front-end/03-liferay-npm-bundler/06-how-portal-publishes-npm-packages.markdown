@@ -1,7 +1,13 @@
-# How the Liferay npm Bundler Publishes npm Packages [](id=how-liferay-portal-publishes-npm-packages)
+---
+header-id: how-the-liferay-npm-bundler-publishes-npm-packages
+---
+
+# How the Liferay npm Bundler Publishes npm Packages
+
+[TOC levels=1-4]
 
 When you deploy an OSGi bundle with the specified structure, as explained in 
-[The Structure of OSGi Bundles Containing NPM Packages](/develop/reference/-/knowledge_base/7-1/the-structure-of-osgi-bundles-containing-npm-packages) 
+[The Structure of OSGi Bundles Containing NPM Packages](/docs/7-2/reference/-/knowledge_base/r/the-structure-of-osgi-bundles-containing-npm-packages) 
 reference, its modules are made available for consumption through canonical 
 URLs. To better illustrate resolved modules, the example structure below is the 
 standard structure that the liferay-npm-bundler 1.x generates, and therefore 
@@ -59,15 +65,11 @@ available (one for each module):
 
 - [http://localhost/o/js/module/598/isarray@2.0.0/index.js](http://localhost/o/js/module/598/isarray@2.0.0/index.js)
 
-+$$$
-
-**NOTE:** The OSGi bundle ID (598) may vary.
-
-$$$
+| **NOTE:** The OSGi bundle ID (598) may vary.
 
 You can learn about package de-duplication next.
 
-## Package De-duplication [](id=package-deduplication)
+## Package De-duplication
 
 Since two or more OSGi modules may export multiple copies of the same package 
 and version, Liferay Portal must de-duplicate such collisions. To accomplish 
@@ -91,19 +93,15 @@ module URLs shown below:
 
 - [http://localhost/o/js/resolved-module/my-bundle-package$isarray@2.0.0/index.js](http://localhost/o/js/resolved-module/my-bundle-package$isarray@2.0.0/index.js)
 
-+$$$
-
-**NOTE:** The OSGi bundle ID (598 in the example) is removed and module is 
-replaced by `resolved-module`.
-
-$$$
+| **NOTE:** The OSGi bundle ID (598 in the example) is removed and module is 
+| replaced by `resolved-module`.
 
 Next you can learn how the bundler (since version 2.0.0) isolates package 
 dependencies. See 
-[What Changed Between liferay-npm-bundler 1.x and 2.x](/develop/reference/-/knowledge_base/7-1/changes-between-liferay-npm-bundler-1x-and-2x) 
+[What Changed Between liferay-npm-bundler 1.x and 2.x](/docs/7-2/reference/-/knowledge_base/r/changes-between-liferay-npm-bundler-1x-and-2x) 
 for more information on why this change was made. 
 
-## Isolated Package Dependencies [](id=isolated-package-dependencies)
+## Isolated Package Dependencies
 
 A typical OSGi bundle structure generated with liferay-npm-bundler 2.x is shown 
 below:
@@ -149,9 +147,9 @@ below:
 Note that each package dependency is namespaced with the bundle's name 
 (`my-bundle-package$` in the example structure). This lets each project load its 
 own dependencies and avoid potential collisions with projects that export the 
-same package. For example, consider the two portlet projects below:
+same package. For example, consider the two widget projects below:
 
-    - `my-portlet`
+    - `my-widget`
         - package.json
             - dependencies:
                 - a-library 1.0.0
@@ -164,7 +162,7 @@ same package. For example, consider the two portlet projects below:
             - a-helper
                 - version: 1.0.0
 
-    - `another-portlet`
+    - `another-widget`
         - package.json
             - dependencies:
                 - a-library 1.0.0
@@ -180,17 +178,17 @@ same package. For example, consider the two portlet projects below:
 In this example, `a-library` depends on `a-helper` at version 1.0.0 or higher 
 (note the caret ^ expression in the dependencies). The bundler implements 
 isolated dependencies by prefixing the name of the bundle to the modules, so 
-that `my-portlet` gets its `a-helper` at 1.0.0, while `another-portlet` gets its 
+that `my-widget` gets its `a-helper` at 1.0.0, while `another-widget` gets its 
 `a-helper` at 1.2.0.
  
 The dependencies isolation not only avoids collisions between bundles, but also 
-makes peer dependencies behave deterministically as each portlet gets what it 
+makes peer dependencies behave deterministically as each widget gets what it 
 had in its `node_modules` folder when it was developed. 
 
 Now that you understand how namespacing modules isolates bundle dependencies, 
 avoiding collisions, you can learn about de-duplication next. 
 
-## De-duplication through Importing [](id=deduplication-through-importing)
+## De-duplication through Importing
 
 Isolated dependencies are very useful, but there are times when sharing the same 
 package between modules would be more beneficial. To do this, the 
@@ -198,8 +196,8 @@ liferay-npm-bundler lets you import packages from an external OSGi bundle,
 instead of using your own. This lets you put shared dependencies in one project 
 and reference them from the rest. 
 
-Imagine that you have three portlets that compose the homepage of your site: 
-`my-toolbar`, `my-menu`, and `my-content`. These portlets depend on the fake, 
+Imagine that you have three widgets that compose the homepage of your site: 
+`my-toolbar`, `my-menu`, and `my-content`. These widgets depend on the fake, 
 but awesome, Wonderful UI Components (WUI) framework. This quite limited 
 framework is composed of only three packages:
 
@@ -207,11 +205,11 @@ framework is composed of only three packages:
 2.  `button`
 3.  `textfield`
 
-Since the bundler namespaces each dependency package with the portlet's name by 
+Since the bundler namespaces each dependency package with the widget's name by 
 default, you would end up with three namespaced copies of the WUI package on the 
 page. This is not what you want. Since they share the same package, instead you 
 can create a fourth bundle that contains the WUI package, and import the WUI 
-package in the three portlets. This results in the structure below:
+package in the three widgets. This results in the structure below:
 
 - `my-toolbar/`
     - `.npmbundlerrc`
@@ -246,19 +244,25 @@ package in the three portlets. This results in the structure below:
             - textfield: 1.0.0
 
 The bundler switches the namespace of certain packages, thus pointing them to an 
-external bundle. Say that you have the following code in `my-toolbar` portlet:
+external bundle. Say that you have the following code in `my-toolbar` widget:
 
-    var Button = require('button');
+```javascript
+var Button = require('button');
+```
 
 By default, the bundler 2.x transforms this into the following when not imported 
 from another bundle:
 
-    var Button = require('my-toolbar$button');
+```javascript
+var Button = require('my-toolbar$button');
+```
 
 But, because `button` is imported from `wui-provider`, it is instead changed to 
 the value below:
 
-    var Button = require('wui-provider$button');
+```javascript
+var Button = require('wui-provider$button');
+```
 
 Also, a dependency on `wui-provider$button` at version `^1.0.0` is included in 
 `my-toolbar`'s `package.json` file so that the loader finds the correct version. 
@@ -270,7 +274,7 @@ it keeps requiring `wui-provider$` prefixed modules all the way down.
 
 Next, you will learn possible strategies for importing.
 
-## Strategies When Importing Packages [](id=strategies-when-importing-packages)
+## Strategies When Importing Packages
 
 De-duplication by importing is a powerful tool, but you must design a versioning 
 strategy suitable for you so that you don't run into errors. 

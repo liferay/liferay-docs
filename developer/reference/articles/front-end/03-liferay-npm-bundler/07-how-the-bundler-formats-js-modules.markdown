@@ -1,4 +1,10 @@
-# Understanding How liferay-npm-bundler Formats JavaScript Modules for AMD [](id=understanding-how-liferay-npm-bundler-formats-javascript-modules-for-amd)
+---
+header-id: understanding-how-liferay-npm-bundler-formats-javascript-modules-for-amd
+---
+
+# Understanding How liferay-npm-bundler Formats JavaScript Modules for AMD
+
+[TOC levels=1-4]
 
 Liferay AMD Loader is based on the 
 [AMD specification](https://github.com/amdjs/amdjs-api/wiki/AMD). 
@@ -7,7 +13,7 @@ All modules inside an npm OSGi bundle must be in AMD format. This is done for
 a `define` call. The liferay-npm-bundler helps automate this process by wrapping 
 the module for you. This article references the OSGi structure below as an 
 example. You can learn more about this structure in 
-[The Structure of OSGi Bundles Containing NPM Packages](/develop/reference/-/knowledge_base/7-1/the-structure-of-osgi-bundles-containing-npm-packages) 
+[The Structure of OSGi Bundles Containing NPM Packages](/docs/7-2/reference/-/knowledge_base/r/the-structure-of-osgi-bundles-containing-npm-packages) 
 reference.
 
 - `my-bundle/`
@@ -51,40 +57,40 @@ reference.
 For example, the `my-bundle-package$isobject@2.1.0` package's `index.js` file 
 contains the following code:
 
-    'use strict';
+```javascript
+'use strict';
 
-    var isArray = require('my-bundle-package$isarray');
+var isArray = require('my-bundle-package$isarray');
 
-    module.exports = function isObject(val) {
-        return val != null && typeof val === 'object' && isArray(val) === false;
-    };
+module.exports = function isObject(val) {
+    return val != null && typeof val === 'object' && isArray(val) === false;
+};
+```
 
 The updated module code configured for AMD format is shown below:
 
-    define(
-        'my-bundle-package$isobject@2.1.0/index', 
-        ['module', 'require', 'my-bundle-package$isarray'], 
-        function (module, require) {
-            'use strict';
+```javascript
+define(
+    'my-bundle-package$isobject@2.1.0/index', 
+    ['module', 'require', 'my-bundle-package$isarray'], 
+    function (module, require) {
+        'use strict';
 
-            var define = undefined;
+        var define = undefined;
 
-            var isArray = require('my-bundle-package$isarray');
+        var isArray = require('my-bundle-package$isarray');
 
-            module.exports = function isObject(val) {
-                return val != null && typeof val === 'object' 
-                && isArray(val) === false;
-            };
-        }
-    );
+        module.exports = function isObject(val) {
+            return val != null && typeof val === 'object' 
+            && isArray(val) === false;
+        };
+    }
+);
+```
 
-+$$$
-
-**Note:** The module's name must be based on its package, version, and file path 
-(for example `my-bundle-package$isobject@2.1.0/index`), otherwise Liferay AMD 
-Loader can't find it. 
-
-$$$
+| **Note:** The module's name must be based on its package, version, and file 
+| path (for example `my-bundle-package$isobject@2.1.0/index`), otherwise Liferay 
+| AMD Loader can't find it. 
 
 Note the module's dependencies: 
 `['module', 'require', 'my-bundle-package$isarray']`.

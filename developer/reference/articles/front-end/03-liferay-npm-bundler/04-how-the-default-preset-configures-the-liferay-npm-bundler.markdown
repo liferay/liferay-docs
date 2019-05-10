@@ -1,4 +1,10 @@
-# How the Default Preset Configures the liferay-npm-bundler [](id=how-the-default-preset-configures-the-liferay-npm-bundler)
+---
+header-id: how-the-default-preset-configures-the-liferay-npm-bundler
+---
+
+# How the Default Preset Configures the liferay-npm-bundler
+
+[TOC levels=1-4]
 
 The liferay-npm-bundler comes with a default configuration preset: 
 [`liferay-npm-bundler-preset-standard`](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/liferay-npm-bundler-preset-standard)
@@ -10,36 +16,39 @@ liferay-npm-bundler with this preset applies the
 [config file](https://github.com/liferay/liferay-npm-build-tools/blob/master/packages/liferay-npm-bundler-preset-standard/config.json) 
 from `liferay-npm-bundler-preset-standard`:
 
-    {
-    	"/": {
-    		"plugins": ["resolve-linked-dependencies"],
-    		".babelrc": {
-    			"presets": ["liferay-standard"]
-    		},
-    		"post-plugins": ["namespace-packages", "inject-imports-dependencies"]
-    	},
-    	"*": {
-    		"copy-plugins": ["exclude-imports"],
-    		"plugins": ["replace-browser-modules"],
-    		".babelrc": {
-    			"presets": ["liferay-standard"]
-    		},
-    		"post-plugins": [
-    			"namespace-packages",
-    			"inject-imports-dependencies",
-    			"inject-peer-dependencies"
-    		]
-    	}
-    }
+```json
+{
+	"/": {
+		"plugins": ["resolve-linked-dependencies"],
+		".babelrc": {
+			"presets": ["liferay-standard"]
+		},
+		"post-plugins": ["namespace-packages", "inject-imports-dependencies"]
+	},
+	"*": {
+		"copy-plugins": ["exclude-imports"],
+		"plugins": ["replace-browser-modules"],
+		".babelrc": {
+			"presets": ["liferay-standard"]
+		},
+		"post-plugins": [
+			"namespace-packages",
+			"inject-imports-dependencies",
+			"inject-peer-dependencies"
+		]
+	}
+}
+```
 
-+$$$
+The configuration above states that for all npm packages (`*`) the pre-process 
+phase (`plugins`) must run the `replace-browser-modules` plugin. Setting this to 
+`post-plugins` would run it during the post phase instead. 
 
-**Note:** You can override configuration preset values by adding your own 
-configuration to your project's `.npmbundlerrc` file. For instance, using the 
-configuration preset example above, you can define your own `.babelrc` value in 
-`.npmbundlerrc` file to override the defined "liferay-standard" babelrc preset.
-
-$$$
+| **Note:** You can override configuration preset values by adding your own 
+| configuration to your project's `.npmbundlerrc` file. For instance, using the 
+| configuration preset example above, you can define your own `.babelrc` value 
+| in `.npmbundlerrc` file to override the defined "liferay-standard" babelrc 
+| preset.
 
 The 
 [`liferay-standard` preset](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/babel-preset-liferay-standard) 
@@ -63,8 +72,9 @@ applies the following plugins to packages:
   files.
 
 - [replace-browser-modules](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/liferay-npm-bundler-plugin-replace-browser-modules):
-  Replace modules listed under `browser`/`unpkg`/`jsdelivr` section of 
-  `package.json` files.
+  Replaces the server side files for modules listed under 
+  `browser`/`unpkg`/`jsdelivr` section of `package.json` with their browser 
+  counterparts. 
 
 - [resolve-linked-dependencies](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/liferay-npm-bundler-plugin-resolve-linked-dependencies):
   Replace linked dependencies versions appearing in `package.json` files 

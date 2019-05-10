@@ -27,6 +27,8 @@ NodeJS). They include
 - [Liferay Theme Generator](/docs/7-2/reference/-/knowledge_base/r/theme-generator):
   a generator that creates themes, layouts templates, and themelets for 
   @product@ development.
+- [Liferay Bundle Generator](/docs/7-2/reference/-/knowledge_base/r/bundle-generator):
+  a generator that creates JavaScript portlets with JavaScript tooling.
 
 Liferay also provides a plethora of
 [Gradle](/docs/7-2/reference/-/knowledge_base/r/gradle-plugins) and
