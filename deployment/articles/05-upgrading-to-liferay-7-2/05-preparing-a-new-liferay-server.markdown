@@ -186,7 +186,7 @@ provides more document store configuration details.
 
 If you're using NTLM to authenticate Microsoft Windows &trade; accounts with
 @product@, switch to using
-[Kerberos](/web/guest/docs/7-2/deploy/-/knowledge_base/d/authenticating-with-kerberos).
+[Kerberos](/docs/7-2/deploy/-/knowledge_base/d/authenticating-with-kerberos).
 Security vulnerabilities persist with NTLM. 
 
 ## Disable Indexing
