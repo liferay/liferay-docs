@@ -64,6 +64,18 @@ like this:
 The Maven-generated project includes a `pom.xml` file and does not include the
 Gradle-specific files, but otherwise, appears exactly the same.
 
++$$$
+
+**Note:** This project template depends on the `org.osgi.service.jaxrs` package,
+but this is not an included dependency in the `7.1.0` BOM leveraged in the
+[target platform](/develop/tutorials/-/knowledge_base/7-1/managing-the-target-platform-for-liferay-workspace).
+feature. This means that a project generated with this project won't correctly
+resolve if you're pointing to the `7.1.0` target platform version.
+
+The `7.1.1` target platform version has been updated with this dependency.
+
+$$$
+
 The generated module is a working RESTful web service and is deployable to a @product@
 instance. To build upon the generated app, modify the project by adding logic
 and additional files to the folders outlined above.
