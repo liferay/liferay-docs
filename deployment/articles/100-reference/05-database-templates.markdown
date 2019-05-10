@@ -7,7 +7,7 @@ header-id: database-templates
 [TOC levels=1-4]
 
 Below are templates (example
-[portal properties](/deployment/reference/-/knowledge_base/7-2/portal-properties))
+[portal properties](/docs/7-2/deploy/-/knowledge_base/d/portal-properties))
 for configuring various databases as a built-in data source for @product@. 
 
 ## MariaDB
