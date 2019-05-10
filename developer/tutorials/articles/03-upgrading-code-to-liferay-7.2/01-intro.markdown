@@ -13,7 +13,7 @@ Here are the code upgrade steps:
 
     1.  Set up Liferay Workspace
 
-        1.  Create New Liferay Workspace
+        1.  Create New Liferay Workspace <!--commandId="create_new_liferay_workspace"-->
 
             Create a new Liferay Workspace.
 
