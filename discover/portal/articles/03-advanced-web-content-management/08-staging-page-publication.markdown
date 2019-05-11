@@ -282,6 +282,15 @@ likely benefit from *not* being staged. Notice which portlets are marked for
 staging by default: if you enable staging and accept the defaults, staging is
 *not* enabled for the collaborative portlets.
 
+Be aware that disabled staged content types can cause unintended issues if
+you're referring to them on a staged site. For example, the Asset Publisher
+portlet and it's preferences are always staged. If the content types it's set to
+display are not enabled for staging, the Asset Publisher won't be able to access
+them on a staged site. Make sure to plan for the content types you'll need in
+your staged site.
+
+Next you'll learn about using the staging environment.
+
 ## Using the Staging Environment [](id=using-the-staging-environment)
 
 After enabling staging (either Local Live or Remote Live) for a site, you'll
