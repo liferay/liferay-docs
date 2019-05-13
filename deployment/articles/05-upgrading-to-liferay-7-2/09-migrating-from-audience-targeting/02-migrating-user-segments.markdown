@@ -34,10 +34,10 @@ As a result of the upgrade process:
 
 As an example, here is an example user segment as it would appear in Audience Targeting for Liferay 7.1:
 
+![Figure 1: A Liferay 7.1 Audience Targeting Segment](../../../images/migrating-audience-targeting-segment.png)
 
 And here is the same segment migrated to Liferay 7.2:
 
-
-
+![Figure 2: A Liferay 7.2 Segment](../../../images/migrating-new-segment.png)
 
 For those Audience Targeting rules without a direct equivalent, a manual migration is required. If you have any these rules, you can learn about your next steps in the [Manual Migration section](LINK TO THE SECTION).
