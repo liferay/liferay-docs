@@ -33,11 +33,19 @@ data upgrade environment:
 
 -   Increase the log file size accordingly. 
 
+| **Note:** These tuning worked well for us on specific versions of each 
+| database. Please consult your database vendor's documentation for further
+| information on how to optimize executing updates on your specific database 
+| version. 
+
 | **Important:** Test your database configuration to determine tuning that's 
 | best for your system, and consult your DBA as appropriate. **Never** use
 | database upgrade configurations in production. Always restore your production
 | database settings before starting your @product@ server for production use 
 | with the database. 
+
+| **Warning:** Some database properties and configurations are global and affect
+| schemas in the same database. 
 
 The configurations you'll see here were optimal for upgrading data in a Liferay
 6.2 EE installation that had these characteristics: 
@@ -64,7 +72,7 @@ The configurations you'll see here were optimal for upgrading data in a Liferay
     -   3,276 journal article images 
     -   3,100 document folders 
 
-Start with configuring the database upgrade tool. 
+Start with configuring the database upgrade tool's Java process. 
 
 ## Tuning the Database Upgrade Java Process
 
@@ -73,7 +81,7 @@ process. 15GB was appropriate for the test scenario. Also make sure to set the
 file encoding to UTF-8 and the time zone to GMT. Here are the Java process
 settings:
 
--   Xmx  15 GB RAM 
+-   Xmx 15 GB RAM 
 -   File encoding UTF-8 
 -   User time zone GMT
 
@@ -83,20 +91,20 @@ Here is the `db_upgrade.sh` command:
 db_upgrade.sh -j "-Xmx15000m -Dfile.encoding=UTF-8 -Duser.timezone=GMT"
 ```
 
-It's time to tune your database for the data upgrade. 
+It's time to tune your database transaction engine. 
 
-## Database Tuning 
+## Tuning the Database Transaction Engine for Executing Updates 
 
-Database vendors provide different ways to tune their database servers. The
-following sections describe vendor-specific settings that were optimal for
-upgrading the Liferay Portal installation described earlier. 
+Many more update statements are executed during data upgrade than in production.
+Here's how to optimize each database's transaction engine for the updates. 
 
-| **Important:** The following database configurations are only valid for 
-| @product@ *data upgrades*. **Never** use these configurations to *run* 
-| @product@. 
+### IBM DB2 
 
-| **Warning:** Some database properties and configurations are global and affect
-| schemas in the same database. 
+Please consult the IBM's official DB2 documentation. 
+
+### MariaDB
+
+In addition to the default database configuration, turn off InnoDB double-write.
 
 ### Microsoft SQL Server 
 
@@ -104,35 +112,65 @@ In addition to the default database configuration, set
 [transaction durability](https://docs.microsoft.com/en-us/sql/relational-databases/logs/control-transaction-durability)
 to `FORCED`. 
 
-### PostgreSQL 
+### MySQL 
 
-In addition to the default database configuration, apply these settings: 
-
--   Set
-    [synchronous commit](https://www.postgresql.org/docs/10/wal-async-commit.html)
-    to off. 
-
--   Set the
-    [write ahead log writer delay](https://www.postgresql.org/docs/10/wal-async-commit.html)
-    to 1000 ms. 
+In addition to the default database configuration, turn off [InnoDB
+double-write](https://dev.mysql.com/doc/refman/5.7/en/innodb-parameters.html#sysvar_innodb_doublewrite). 
 
 ### Oracle Database 
 
-The default configuration works well. It configures
-[asynchronous I/O to disk](https://docs.oracle.com/database/121/REFRN/GUID-FD8D1BD2-0F85-4844-ABE7-57B4F77D1608.htm#REFRN10048)
+The default configuration works well. It configures [asynchronous I/O to
+disk](https://docs.oracle.com/database/121/REFRN/GUID-FD8D1BD2-0F85-4844-ABE7-57B4F77D1608.htm#REFRN10048)
 automatically. 
+
+### PostgreSQL 
+
+In addition to the default database configuration, turn off [synchronous
+commits](https://www.postgresql.org/docs/10/wal-async-commit.html). 
+
+### Sybase 
+
+Please consult the official Sybase documentation. 
+
+## Tuning the Database Transaction Log
+
+Since data upgrade executes many transactions, write to the transaction log in
+batch instead of after every transaction. Here are log tuning instructions for
+each database.
+
+### IBM DB2 
+
+Please consult IBM's official DB2 documentation. 
+
+### MariaDB
+
+In addition to the default database configuration, set the InnoDB flush log at
+transaction commit to `0`. 
+
+### Microsoft SQL Server 
+
+Use the default database configuration. 
 
 ### MySQL 
 
-In addition to the default database configuration, apply these settings: 
+In addition to the default database configuration, set the [InnoDB flush log at
+transaction
+commit](https://dev.mysql.com/doc/refman/5.7/en/innodb-parameters.html#sysvar_innodb_flush_log_at_trx_commit)
+to `0`. 
 
--   Set the
-    [InnoDB flush log at transaction commit property](https://docs.oracle.com/database/121/REFRN/GUID-FD8D1BD2-0F85-4844-ABE7-57B4F77D1608.htm#REFRN10048)
-    to 0. 
+### Oracle Database 
 
--   Set the
-    [InnoDB double-write property](https://dev.mysql.com/doc/refman/5.7/en/innodb-parameters.html#sysvar_innodb_doublewrite)
-    to off. 
+Use the default database configuration. 
+
+### PostgreSQL 
+
+In addition to the default database configuration, Set the [write ahead log
+writer delay](https://www.postgresql.org/docs/10/wal-async-commit.html) to
+`1000` milliseconds. 
+
+### Sybase 
+
+Please consult the official Sybase documentation. 
 
 Congratulations! You have a starting point to plan your own @product@ data
 upgrade project. Remember, optimal tuning depends on your data, infrastructure
