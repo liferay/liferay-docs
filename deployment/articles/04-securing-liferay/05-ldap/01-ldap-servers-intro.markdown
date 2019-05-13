@@ -63,6 +63,20 @@ following steps have been taken:
     *Connection* values are correct. It is always a good idea to click the *Test
     LDAP Connection* before saving.
 
+## Instance Settings vs. System Settings
+
+You can define an LDAP server connection at the System Settings scope as well.
+Because this user interface is auto-generated, it's not as helpful as the one in
+Instance Settings. For this reason, you should define and troubleshoot your
+settings in Instance Settings first. If you decide you want your LDAP connection
+at the system scope, you can copy your configuration from Instance Settings and
+then delete the server from Instance Settings. 
+
+Of course, you can also configure LDAP servers at the system scope using OSGi
+`.config` files. The easiest way to do this is to use the GUI and export the
+configuration. Then you can use the resulting `.config` file anywhere you need
+it (such as other nodes in a cluster). 
+
 ## Security
 
 If you run your LDAP directory in SSL mode to encrypt credential information on
@@ -100,17 +114,16 @@ groups can be imported.
 
 This section contains settings for finding users in your LDAP directory.
 
-**Authentication Search Filter:** The search filter box can be used to determine
+**Authentication Search Filter:** Use this search filter box to determine
 the search criteria for user logins. By default, @product@ uses users' email
-addresses for their login names. If you have changed this setting, you must
-modify the search filter here, which defaults to use the email address attribute
-from LDAP as a search criterion. For example, if you changed @product@'s
-authentication method to use screen names instead of the email addresses, you
-would modify the search filter so it can match the entered log in name:
+addresses for their login names. The value here must use the authentication
+method you use. For example, if you changed @product@'s authentication method to
+use screen names instead of the email addresses, you would modify the search
+filter so it can match the entered log in name:
 
         (cn=@screen_name@)
 
-**Import Search Filter:** Depending on the **LDAP** server, there are different
+**Import Search Filter:** Depending on the LDAP schema, there are different
 ways to identify the user. The default setting is usually fine:
 
         (objectClass=inetOrgPerson)
@@ -123,24 +136,24 @@ fields. Though LDAP user attributes may be different from LDAP server to LDAP
 server, there are five fields @product@ requires to be mapped for the user
 to be recognized:
 
--   *Screen Name* (e.g., *uid*)
--   *Password* (e.g., *userPassword*)
--   *Email Address* (e.g., *mail* or *email*)
--   *First Name* (e.g., *name* or *givenName*)
--   *Last Name* (e.g., *sn*)
+-   *Screen Name* (e.g., `uid` or `cn`)
+-   *Password* (e.g., `userPassword`)
+-   *Email Address* (e.g., `mail` or `email`)
+-   *First Name* (e.g., `name` or `givenName`)
+-   *Last Name* (e.g., `sn`)
 
-**Note:** If you intend to create or import users with no email addresses, then
-you must set `users.email.address.required=false` in your
-`portal-ext.properties`. With this set, Liferay auto-generates an email address
-combining the user ID plus the suffix defined in the property
-`users.email.address.auto.suffix=`. Finally, make sure to set Liferay and LDAP
-authentication to something other than email address.
+**Note:** If you intend to create or import users with no email addresses, 
+you must set `users.email.address.required=false` in `portal-ext.properties`.
+With this set, Liferay auto-generates an email address combining the user ID
+plus the suffix defined in the property `users.email.address.auto.suffix=`.
+Finally, make sure to set Liferay and LDAP authentication to something other
+than email address.
 
 If you want to import LDAP groups as @product@ user groups, make sure define
 a mapping for the @product@ group field so that membership information is
 preserved:
 
-  +   *Group* (e.g., *member*)
+  -   *Group* (e.g., *member*)
 
 The other LDAP user mapping fields are optional.
 
@@ -151,14 +164,14 @@ You can also add your own mappings.
 click the *Test LDAP Users* button and @product@ attempts to pull LDAP users and
 match them with their mappings as a preview.
 
-![Figure 1: Testing LDAP Users](../../../images/server-configuration-testing-ldap-users.png)
+![Figure 1: You should see a list of users when you click the *Test LDAP Users* button.](../../../images/testing-ldap-users.png)
 
 ### Groups
 
 This section contains settings for mapping LDAP groups to @product@ user groups.
 
-**Import Search Filter:** This is the filter for finding the LDAP groups that
-you want to map to @product@ user groups. For example, 
+**Import Search Filter:** This is the filter for mapping LDAP groups to
+@product@ user groups. For example, 
 
         (objectClass=groupOfNames)
 
@@ -166,11 +179,11 @@ Enter the LDAP group attributes you want retrieved for this mapping. The
 following attributes can be mapped. The *Group Name* and *User* fields are
 required, the *Description* is optional.
 
-  + *Group Name* (e.g., *cn* or *o*)
+  - *Group Name* (e.g., `cn` or `o`)
 
-  + *Description* (e.g., *description*)
+  - *Description* (e.g., `description`)
 
-  + *User* (e.g., *member*)
+  - *User* (e.g., `member`)
 
 **Test LDAP Groups:** Click the *Test LDAP Groups* button to display a list of
 the groups returned by your search filter.
@@ -180,22 +193,22 @@ the groups returned by your search filter.
 This section contains settings for exporting user data from LDAP.
 
 **Users DN:** Enter the location in your LDAP tree where the users are stored.
-When @product@ does an export, it exports the users to this location.
+@product@ exports the users to this location.
 
-**User Default Object Classes:** When a user is exported, the user is created
-with the listed default object classes. To find out what your default object
-classes are, use an LDAP browser tool such as Apache Directory Studio to locate
-a user and view the Object Class attributes stored in LDAP for that user.
+**User Default Object Classes:** Users are exported with the listed default
+object classes. To find out what your default object classes are, use an LDAP
+browser tool such as Apache Directory Studio to locate a user and view the
+Object Class attributes stored in LDAP for that user.
 
 **Groups DN:** Enter the location in your LDAP tree where the groups are stored.
 When @product@ does an export, it exports the groups to this location.
 
 **Group Default Object Classes:** When a group is exported, the group is created
 with the listed default object classes. To find out what your default object
-classes are, use an LDAP browser tool such as Apache Directory Studio to locate
+classes are, use an LDAP browser tool such as [Apache Directory Studio](https://directory.apache.org/studio) to locate
 a group and view the Object Class attributes stored in LDAP for that group.
 
-Once you set all your options and tested your connection, click *Save*. 
+When you've set all your options and tested your connection, click *Save*. 
 
 | **Note:** If a user changes a value like a password in @product@, that change is
 | passed to the LDAP server, provided @product@ has enough schema access to make
