@@ -77,6 +77,13 @@ maintain these references when publishing. Site administrators and content
 creators have control over the process on different levels: staging can be
 enabled for a content group and a content group can be selected for publication.
 
+Be aware that disabled staged content types can cause unintended issues if
+you're referring to them on a staged site. For example, the Asset Publisher
+portlet and it's preferences are always staged. If the content types it's set to
+display are not enabled for staging, the Asset Publisher won't be able to access
+them on a staged site. Make sure to plan for the content types you'll need in
+your staged site.
+
 Turning Staging on and off for individual portlet data could cause data
 inconsistencies between the staging and live sites. Because of this, it's not
 possible to modify the individual portlet configuration once you enable staging.
