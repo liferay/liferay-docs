@@ -1,29 +1,25 @@
 # Workflow Metrics: The Service Level Agreement (SLA)
 
 A brand new feature in Liferay DXP 7.2, _Workflow Metrics_ gives insights into
-the time certain workflow events take to complete. Perhaps more importantly,
-they let you set deadlines in the workflow, called SLAs (Service Level
-Agreements). Once set, Workflow Reports measure compliance with the deadlines.
-
-Workflows can be varied, and the important timelines in the workflow are
-different for every use case, so there's a user interface to specify three SLA
-events:
-
-
-where the events
-
-For DXP subscribers, the _Workflow Metrics_ feature was introduced. Configure
-one or more Service Level Agreements (SLAs; think of these as deadlines) on a
-workflow definition's events, and workflow submissions are accordingly tracked
-and reported as on time or overdue. There are two new concepts around this
-feature:
-
+the time certain workflow events take to complete. To use it, set up deadlines
+on a workflow process's events. These deadline configurations are referred to as
+SLAs (Service Level Agreements). Once defined, Workflow Reports measure compliance
+with the SLAs.
 
 SLAs define the deadlines on a workflow process's events. They're like a
 contract between the workflow participants and Users submitting workflow items.
 
 Workflow Reports shows data for all processes with SLAs, including each
 workflow item's SLA status: on time or overdue.
+
+| **Editing a Workflow with SLAs:** Editing a workflow (e.g., removing nodes, editing a task name) with
+| SLAs defined on it is likely to cause problems, and may invalidate the SLA for
+| items already in the workflow/SLA pipeline.
+| 
+| **Creating or Editing SLAs for Active Processes:** Editing a SLA's duration, or
+| defining a new SLA while items are already in the workflow process will cause a
+| recalculation for all instances currently in the workflow. Completed workflow
+| instances are not recalculated.
 
 ## Adding SLAs
 
@@ -59,23 +55,19 @@ workflow item's SLA status: on time or overdue.
     - Days: Enter a whole number of days. 
     - Hours: Enter hours and minutes in the format HH:MM
 
-| **Note:** By default, there's an internal calendar that assumes the SLA duration
-| should count all the time: 24 hours per day, seven days per week. If you need a
-| different calendar format, create one using the TODO: EXPLAIN THE EXTENSION
-| POINT BRIEFLY
+| **System Calendar:** By default, there's an internal calendar that assumes the
+| SLA duration should continue counting all the time: in other words, 24 hours
+| per day, seven days per week.  If you need a different calendar format, create
+| one using the TODO: EXPLAIN THE EXTENSION POINT BRIEFLY
 | 
 | If you define a new calendar, a new option becomes available in the Add SLA
 | form, allowing you to choose from the default 24/7 calendar or any custom ones
 | you've provided (for example, make the timer run for 9 hours per day, 5 days per
 | week). <!--If can do this, add screenshot-->
 
-#### Valid workflow events
+#### Valid Workflow Events
 
-All workflow process nodes can be used as start or end parameters for the SLA, with the
-obvious exceptions that
-
-- You cannot choose the process's start node as the Stop Event of a SLA. 
-- You cannot choose the process's end node as the Start Event of a SLA.
+Any workflow task can be used as a start or end parameters for the SLA.
 
 When defining the nodes to act as the SLA's Start/Stop Events, you can choose
 between two node events:
