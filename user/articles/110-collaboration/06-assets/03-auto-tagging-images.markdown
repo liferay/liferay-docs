@@ -24,10 +24,7 @@ to automatically tag images.
 
 **Microsoft Cognitive Services:** Uses 
 [Microsoft Cognitive Services](https://azure.microsoft.com/en-us/services/cognitive-services/) 
-to automatically tag images. Note that you must provide a valid 
-[API key](https://azure.microsoft.com/en-us/try/cognitive-services/my-apis/?apiSlug=computer-services) 
-and an endpoint. For more information, see the 
-[Microsoft Cognitive Services documentation](https://docs.microsoft.com/en-us/azure/cognitive-services/). 
+to automatically tag images. 
 
 ![Figure 1: The tags *freight car* and *electric locomotive* were automatically applied to this image.](../../../images/auto-tagging-images.png)
 
@@ -56,6 +53,8 @@ Follow these steps to configure TensorFlow Image Auto Tagging:
 
 3.  Click *Save* to save your changes. 
 
+You can override these settings for each instance from *Control Panel* &rarr; *Configuration* &rarr; *Instance Settings* &rarr; *Documents and Media*. 
+
 ![Figure 2: Configure TensorFlow image auto-tagging for your portal instances.](../../../images/auto-tagging-tensorflow.png)
 
 To optimize performance, you can also control the process that runs the 
@@ -76,21 +75,6 @@ TensorFlow image auto tagging in the portal. Follow these steps to do so:
 3.  Click *Save* to save your changes. 
 
 ![Figure 3: You can fine tune the process that runs the TensorFlow image auto tagging in the portal.](../../../images/auto-tagging-tensorflow-process.png)
-
-### Instance-level Configuration
-
-You can also override the TensorFlow configuration for specific instances. 
-Follow these steps to do so: 
-
-1.  Go to *Control Panel* &rarr; *Configuration* &rarr; *Instance Settings* 
-    &rarr; *Documents and Media*. 
-
-2.  Select *TensorFlow Image Auto Tagging* and configure the settings as 
-    desired (see above for a description of the settings). 
-
-3.  Click *Save* to save your changes. 
-
-![Figure 3: You can configure TensorFlow image auto-tagging for a specific instance.](../../../images/auto-tagging-tensorflow-instance.png)
 
 ## Additional Auto-tagging Providers [](id=additional-auto-tagging-providers)
 
