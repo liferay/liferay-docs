@@ -90,9 +90,9 @@ Here are the code upgrade steps:
 
         Remove problem markers.
 
-5.  Upgrade Liferay Service Builder Services
+5.  Upgrade Service Builder Services
 
-    Upgrade your Liferay Service Builder services.
+    Upgrade your Service Builder services.
 
     1.  Remove Legacy Files
 
@@ -100,27 +100,29 @@ Here are the code upgrade steps:
     
     3.  Rebuild Services
     
-6.  Upgrade Customization Plugins
+6.  [Upgrade Customization Plugins    5.  [Upgrade Core Language Key Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-customization-plugins)
 
-    1.  Upgrade Override/Extension Modules
+    1.  [Upgrade Override/Extension Modules](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-override-extension-hooks)
 
-    2.  Upgrade Liferay Core JSP Hooks
+    2.  [Upgrade Core JSP Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-core-jsp-hooks)
 
-    3.  Upgrade Liferay Portlet JSP Hooks
+    3.  [Upgrade Portlet JSP Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-portlet-jsp-hooks)
 
-    4.  Upgrade Service Wrapper Hooks
+    4.  [Upgrade Service Wrapper Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-service-wrapper-hooks)
 
-    5.  Upgrade Language Key Hooks
+    5.  [Upgrade Core Language Key Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-core-language-key-hooks)
 
-    6.  Upgrade Model Listener Hooks
+    6.  [Upgrade Portlet Language Key Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-portlet-language-key-hooks)
 
-    7.  Upgrade Event Actions Hooks
+    7.  [Upgrade Model Listener Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-model-listener-hooks)
 
-    8.  Upgrade Servlet Filter Hooks
+    8.  [Upgrade Event Action Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-event-action-hooks)
 
-    9.  Upgrade Portal Properties Hooks
+    9.  [Upgrade Servlet Filter Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-servlet-filter-hooks)
 
-    10. Upgrade Struts Action Hooks
+    10.  [Upgrade Portal Properties Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-override-extension-hooks)
+
+    11. [Upgrade Struts Action Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-struts-action-hooks)
 
 7. [Upgrade Themes](https://dev.liferay.com/en/develop/tutorials/-/knowledge_base/7-1/upgrading-6-2-themes-to-7-1)
 
