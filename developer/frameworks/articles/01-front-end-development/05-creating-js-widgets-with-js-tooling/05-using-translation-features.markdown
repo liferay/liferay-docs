@@ -8,9 +8,10 @@ header-id: using-translation-features-in-your-widget
 
 By default, the Liferay Bundle Generator creates an empty configuration for 
 translation. The translate script instructs the user how to add new supported 
-locales or configure the credentials when it is run. The translate target 
-initially reads the language properties files you have, then it adds those 
-locales to the `supportedLocales` key in your `.npmbuildrc` file. 
+locales or configure the credentials when it is run. The translate target reads 
+the supported locales you have defined in the `supportedLocales` key of your 
+`.npmbuildrc` file and checks your `*language.properties` files to make sure 
+they match. 
 
 | **Note:** To use the translation features, you must have a Microsoft 
 | Translator key. Provide your credentials through either the 
@@ -25,12 +26,13 @@ a language properties file for it with translations:
 2.  Run the translate target with the command below:
 
 ```bash
-npm translate
+npm run translate
 ```
 
 3.  The translate target automatically creates a language properties file for 
-    each new locale with translations for your language keys. It also warns 
-    about locales that are not supported, but have a `*.properties` file.
+    each new **supported** locale with translations for your language keys. It 
+    also warns about locales that are not supported, but have a 
+    `*language.properties` file.
     
 Great! Now you know how to use the Liferay Bundle Generator's translation 
 features in your app. 

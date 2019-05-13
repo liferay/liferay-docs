@@ -70,11 +70,12 @@ portlet instance settings for your widget:
 }
 ```
 
-3.  Access a system setting or portlet instance setting's value with the syntax 
-    `configuration.system` or `configuration.portletInstance` respectively. For 
-    instance, to retrieve the `{field id 1}` system setting's value, you would 
-    use `configuration.system.{field id 1}`. Note that all fields are passed as 
-    strings no matter what type they declare in their descriptor.
+3.  Access a system setting's value or a portlet instance setting's value with 
+    the syntax `configuration.system` or `configuration.portletInstance` 
+    respectively. For instance, to retrieve the `{field id 1}` system setting's 
+    value, you would use `configuration.system.{field id 1}`. Note that all 
+    fields are passed as strings no matter what type they declare in their 
+    descriptor.
 
 Awesome! Now you know how to configure system settings and portlet instance 
 settings for your widget. 

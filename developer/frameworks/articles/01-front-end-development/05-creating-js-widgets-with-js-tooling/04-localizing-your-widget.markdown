@@ -6,8 +6,7 @@ header-id: localizing-your-widget
 
 [TOC levels=1-4]
 
-Follow the steps below to learn how to update locales, provide language keys, 
-and enable automatic translation for the locales that your widget supports. 
+Follow the steps below to learn how to localize your widget:
 
 1.  If you didn't choose to use localization when you generated the bundle, 
     follow this step to enable it in your bundle now, otherwise you can skip 
@@ -58,8 +57,7 @@ an-apple=An apple
 3.  Retrieve a language key's localized value in JavaScript with the 
     `Liferay.Language.get('key')` method.
 
-Next you can learn how to automatically translate your language keys into other 
-locales. 
+Great! Now you know how to localize your widget! 
 
 ## Related Topics
 

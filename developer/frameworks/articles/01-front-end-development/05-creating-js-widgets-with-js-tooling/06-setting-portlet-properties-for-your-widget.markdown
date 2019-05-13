@@ -29,7 +29,7 @@ Follow these steps to configure your widget's properties:
     
 3.  Deploy your bundle to apply the changes.
 
-Great! Now you know how to configure your JavaScript widget's properties.
+Great! Now you know how to configure your JavaScript widget's properties. 
 
 ## Related Topics
 
