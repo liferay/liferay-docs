@@ -15,7 +15,7 @@ auto-tagging for specific asset types is documented separately.
 
 <!-- Add list of other articles w/links -->
 
-## Configuring Auto-tagging [](id=configuring-auto-tagging)
+## Configuration Levels
 
 Auto-tagging is enabled by default. You can configure it at three levels:
 
