@@ -21,7 +21,7 @@ such as those created with the
 Your theme's current extensions are also found under the `baseTheme` and 
 `themeletDependencies` headings in your theme's `package.json`.
 
-![Figure 1: Run the `gulp status` task to list your theme's current extensions.](../../../../images/theme-dev-listing-theme-extensions.png)
+![Figure 1: Run the `gulp status` task to list your theme's current extensions.](../../../../images/theme-ext-listing-theme-extensions.png)
 
 ## Related Topics
 

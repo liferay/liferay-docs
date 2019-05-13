@@ -39,7 +39,7 @@ You can resolve your modules before deployment. This can be done by calling the
 This task gathers all the capabilities provided by
  
 - the specified version of @product@ (i.e.,
-  [targeted platform](/docs/7-2/reference/-/knowledge_base/r/managing-the-target-platform-for-liferay-workspace))
+  [targeted platform](/docs/7-2/reference/-/knowledge_base/r/managing-the-target-platform))
 - the current workspace's modules
 
 Some capabilities/information gathered by the `resolve` task that are validated
