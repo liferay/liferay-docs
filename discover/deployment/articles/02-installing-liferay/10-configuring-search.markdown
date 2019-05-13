@@ -72,26 +72,27 @@ this:
     }
 
 The version of Elasticsearch that's running is the value of the `"number"` field.
-In this example, it's 2.4.0. 
+In this example, it's `2.4.0`. 
 
 +$$$
 
-**Elasticsearch 6.1:** Elasticsearch 6.1.x is supported for Liferay Digital
-Enterprise systems running Fix Pack 42 or later, and Liferay Portal GA 7 or
-later. Despite this support, Elasticsearch version 2.x remains the default,
-embedded version. To install Elasticsearch 6.1.x, 
+**Elasticsearch 6.5:** Elasticsearch 6.5.x is supported for Liferay Digital
+Enterprise systems running Fix Pack 79 or later. The latest Liferay Portal, GA
+7 at the time of this writing, does not support Elasticsearc 6.5. Instead use
+Elasticsearch 6.1. In @product-ver@, Elasticsearch version 2.x remains the
+default, embedded version. To install Elasticsearch 6.5.x, 
 
-1.  Make sure you're running at least Digital Enterprise FP-42 or Liferay Portal
-    GA 7.
+1.  Make sure you're running at least Digital Enterprise FP-79.
 
-2.  Install Elasticsearch 6.1.x (follow steps 2-4 in this article for guidance).
+2.  Install Elasticsearch 6.5.x (follow steps 2-4 in this article for guidance).
 
-3.  Install the [Elasticsearch 6 Adapter from Marketplace](https://web.liferay.com/marketplace)
+3.  Install the 
+    [_Liferay Connector to Elasticsearch 6_ from Marketplace](https://web.liferay.com/marketplace)
     and stop the default Elasticsearch adapter.
 
-4.  Configure the Elasticsearch 6 adapter (see step 5 below for guidance).
+4.  Configure the Elasticsearch 6 connector (see step 5 below for guidance).
 
-To learn more about upgrading an existing system to Elasticsearch 6.1, read the
+To learn more about upgrading an existing system to Elasticsearch 6.5, read the
 [upgrade article](/discover/deployment/-/knowledge_base/7-0/upgrading-to-elasticsearch-6).
 
 $$$
@@ -129,9 +130,9 @@ Replace *[plugin-name]* with the Elasticsearch plugin's name.
 
 +$$$
 
-**Elasticsearch 6.1:** The `plugin` executable was renamed in Elasticsearch 6,
+**Elasticsearch 6.5:** The `plugin` executable was renamed in Elasticsearch 6,
 to `elasticsearch-plugin`. The general command syntax for installing plugins to
-6.1 is 
+6.5 is 
 
     ./bin/elasticsearch-plugin install [plugin-name]
 
@@ -176,7 +177,7 @@ can find Elasticsearch on the network.
 
 +$$$
 
-**Elasticsearch 6.1:** Before continuing, install the 
+**Elasticsearch 6.5:** Before continuing, install the 
 [Liferay Connector to Elasticsearch 6 application](https://web.liferay.com/marketplace) 
 from Liferay Marketplace and stop the default Elasticsearch 2.x adapter, which
 connects to Elasticsearch 2.x.

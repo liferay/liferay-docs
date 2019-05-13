@@ -1,15 +1,16 @@
-# Upgrading to Elasticsearch 6 [](id=upgrading-to-elasticsearch-6)
+# Upgrading to Elasticsearch 6
 
-Elasticsearch 6 is supported for Digital Enterprise subscribers running Fix Pack
-42 or later and for Community Edition users running 7.0 CE GA 7 or greater. If
-you're not already running a remote Elasticsearch 2.x server, follow the 
+Elasticsearch 6.5.x is supported for Digital Enterprise subscribers running Fix
+Pack 79 or later. Community Edition users running 7.0 CE GA 7 or greater can
+use up to Elasticsearch 6.1.x. If you're not already running a remote
+Elasticsearch 2.x server, follow the 
 [installation guide](/discover/deployment/-/knowledge_base/7-0/installing-elasticsearch) 
 to install Elasticsearch 6 and the 
 [configuration guide](/discover/deployment/-/knowledge_base/7-0/configuring-elasticsearch-for-liferay-0) 
 to configure the Elasticsearch adapter. Here, you'll learn to upgrade an
-existing Elasticsearch 2.x server (or cluster) to Elasticsearch 6.1.x: 
+existing Elasticsearch 2.x server (or cluster) to Elasticsearch 6.5.x: 
 
-1.  Install and configure Elasticsearch 6.1.x.
+1.  Install and configure Elasticsearch 6.5.x.
 
 3.  Download the Elasticsearch 6 adapter from 
     [Liferay Marketplace](https://web.liferay.com/marketplace).
@@ -35,23 +36,20 @@ for more information.
 **Key Changes:** This list compiles known changes within Elasticsearch that are
 likely to affect @product@ users. For a more complete reckoning of what's
 changed in Elasticsearch, see the 
-[breaking changes for Elasticsearch 6](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/breaking-changes.html),
-and 
-[Elasticsearch 5](https://www.elastic.co/guide/en/elasticsearch/reference/5.0/breaking-changes-5.0.html),
-since the breaking changes from 2.x to 5.x also apply to 2.x to 6.1.
+[breaking changes for Elasticsearch 6.5](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/breaking-changes.html).
 
 *Custom Mappings*
 
 **Aggregations:** Aggregating on analyzed `String` fields was possible in
 Elasticsearch 2.x, but aggregating on analyzed `text` fields is not advised
-in Elasticsearch 6.1. Instead, use a `keyword` field or add 
-[field data](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/fielddata.html).
+in Elasticsearch 6.5. Instead, use a `keyword` field or add 
+[field data](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/fielddata.html).
 Beware; `fielddata` is disabled by default because it is memory-intensive.
 
 *Spell Check and Query Suggestions*
 
 Due to Elastic's 
-[removal of mapping types](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/removal-of-types.html)
+[removal of mapping types](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/removal-of-types.html)
 from search documents, spell check indexes and suggestion dictionaries now
 use a single document type. If your installation was leveraging either
 functionality, you must re-index all spell check indexes (from Control Panel
@@ -59,10 +57,10 @@ functionality, you must re-index all spell check indexes (from Control Panel
 
 $$$
 
-## Installing Elasticsearch 6.1 [](id=installing-elasticsearch-6-1)
+## Installing Elasticsearch 6.5 [](id=installing-elasticsearch-6-5)
 
 1.  Download 
-    [Elasticsearch 6.1.x](https://www.elastic.co/downloads/past-releases)
+    [Elasticsearch 6.5.x](https://www.elastic.co/downloads/past-releases)
     and unzip it wherever you please.
 
 2.  Name the cluster by configuring the `cluster.name` property in
@@ -147,7 +145,7 @@ for more information.
 <!--It starts automatically with log messages like this:
 
 Add when possible -->
-Now configure the adapter to find your Elasticsearch 6.1.x cluster by specifying
+Now configure the adapter to find your Elasticsearch 6.5.x cluster by specifying
 the correct *Cluster Name* and setting *Operation Mode* to *REMOTE*. Make sure
 the *Transport Address* matches the one Elasticsearch is using. If testing
 locally with Elasticsearch's default settings, the default value in the adapter
