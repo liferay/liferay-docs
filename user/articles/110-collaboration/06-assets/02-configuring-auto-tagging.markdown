@@ -10,10 +10,13 @@ without requiring content creators to manually apply them.
 | **Note:** Auto-tagging currently only works for images, text-based documents, 
 | and text-based web content. 
 
-Here, you'll learn how to configure asset auto-tagging in general. Configuring 
-auto-tagging for specific asset types is documented separately. 
+Here, you'll learn how to configure asset auto-tagging in general. This is 
+required prior to configuring auto-tagging for specific asset types, which is 
+documented separately: 
 
-<!-- Add list of other articles w/links -->
+-   [Auto Tagging Images](/discover/portal/-/knowledge_base/7-2/auto-tagging-images)
+-   [Auto Tagging Documents](/discover/portal/-/knowledge_base/7-2/auto-tagging-documents)
+-   [Auto Tagging Web Content](/discover/portal/-/knowledge_base/7-2/auto-tagging-web-content)
 
 ## Configuration Levels
 

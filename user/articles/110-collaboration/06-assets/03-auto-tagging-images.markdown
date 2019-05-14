@@ -9,8 +9,17 @@ without requiring anyone to manually apply them.
 
 | **Note:** Currently, tags applied automatically are English only. 
 
-Note that there are three image auto tagging providers that you can use in 
-@product@: 
+Image auto tagging is disabled by default. To use it, you must do two things: 
+
+1.  Ensure that 
+    [asset auto tagging](/discover/portal/-/knowledge_base/7-2/configuring-asset-auto-tagging) 
+    is enabled. Although it's enabled by default, administrators can disable it. 
+
+2.  Ensure that an image auto tagging provider is enabled in the portal. These 
+    providers are disabled by default. Here, you'll learn how to enable/disable 
+    them. 
+
+Three such providers are available: 
 
 **TensorFlow:** An open-source library that provides machine learning 
 capabilities. TensorFlow image auto-tagging in @product@ is based on 
