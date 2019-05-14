@@ -1,4 +1,4 @@
-# Upgrading Sturts Action Hooks
+# Upgrading Struts Action Hooks
 
 In Liferay Portal 6.1 and 6.2, developers could customize the Portal and Portlet
 Struts Actions using a Hook and `StrutsAction` wrapper. For example, the
@@ -9,7 +9,7 @@ action had this entry:
 <struts-action>
     <struts-action-path>/login/login</struts-action-path>
     <struts-action-impl>
-    com.liferay.sample.hook.action.ExampleStrutsPortletAction
+        com.liferay.sample.hook.action.ExampleStrutsPortletAction
     </struts-action-impl>
 </struts-action>
 ```
@@ -18,7 +18,7 @@ The `liferay-hook.xml` contains the Struts mapping and the new class that
 overrides the default login action. 
 
 The wrapper could extend either `BaseStrutsAction` or `BaseStrutsPortletAction`,
-depending on whether the Struts Action was a portal or portlet action
+depending on whether the Struts Action was a portal or portlet action,
 respectively.
 
 Since @product@ 7.0, this mechanism no longer applies for most portlets because
@@ -67,35 +67,35 @@ code to determine the correct mapping.
 Map to your `MVCCommand` URLs using portlet URL tags:
 
 - `MVCRenderCommand` URLs go in `mvcRenderCommandName` parameters. For
-  example:
+  example,
 
     ```xml
     <portlet:renderURL var="editEntryURL">
         <portlet:param name="mvcRenderCommandName" value="/hello/edit_entry" />
         <portlet:param name="entryId" value="<%= String.valueOf(entry.getEntryId()) %>" />
     </portlet:renderURL>
-    ```  
+    ```
 
 - `MVCActionCommand` URLs go in `actionURL` tag `name` attributes or in a
-  parameter `ActionRequest.ACTION_NAME`. For example:
+  parameter `ActionRequest.ACTION_NAME`. For example,
 
     ```xml
     <portlet:actionURL name="/blogs/edit_entry" var="editEntryURL" />
     ```
  
 - `MVCResourceCommand` URLs go in `resourceURL` tag `id` attributes. For
-  example:
+  example,
 
     ```xml
     <portlet:resourceURL id="/login/captcha" var="captchaURL" />
     ```
 
 Once you have this information, you can override the `MVCCommand` by following
-the instructions found in these `MVCCommand` tutorials:
+the instructions found in these `MVCCommand` articles:
 
--   [Adding Logic to MVCCommands](/docs/tutorials/7-2/-/knowledge_base/t/adding-logic-to-mvc-commands)
--   [Overriding MVCRenderCommands](/docs/tutorials/7-2/-/knowledge_base/t/overriding-mvcrendercommand)
--   [Overriding MVCActionCommands](/docs/tutorials/7-2/-/knowledge_base/t/overriding-mvcactioncommand)
--   [Overriding MVCResourceCommands](/docs/tutorials/7-2/-/knowledge_base/t/overriding-mvcresourcecommand)
+-   [Adding Logic to MVCCommands](/docs/customization/7-2/-/knowledge_base/c/adding-logic-to-mvc-commands)
+-   [Overriding MVCRenderCommands](/docs/customization/7-2/-/knowledge_base/c/overriding-mvcrendercommand)
+-   [Overriding MVCActionCommands](/docs/customization/7-2/-/knowledge_base/c/overriding-mvcactioncommand)
+-   [Overriding MVCResourceCommands](/docs/customization/7-2/-/knowledge_base/c/overriding-mvcresourcecommand)
 
 Now you know how to convert your `StrutsActionWrapper`s to `MVCCommand`s!
