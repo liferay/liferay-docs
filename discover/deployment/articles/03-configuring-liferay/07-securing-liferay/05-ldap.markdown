@@ -75,15 +75,26 @@ Once you've finished configuring LDAP, click the *Save* button.
 
 Although most LDAP configuration can be done from Instance Settings, there are
 several configuration parameters that are only available in System Settings. In
-previous versions of @product@, system scoped settings for LDAP were [set in the
-`portal.properties`
-file](https://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#LDAP)
+previous versions of @product@, system scoped settings for LDAP were 
+[set in the `portal.properties` file](https://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#LDAP)
 and modified using a `portal-ext.properties` file. Those settings must now be
 made via System Settings.
 
 If you need to change any of these options, navigate to *Control Panel* &rarr;
 *Configuration* &rarr; *System Settings*. Go to the *Foundation* section and
 find the entries with LDAP in the title.
+
+**Note:** To use `config` files for LDAP server configuration, you must
+specify the Virtual Instance ID (in the source, the variable name is
+`companyId`) in the exported configuration file, because servers are defined
+at the instance scope, not the system scope. To do this, specify the virtual
+instance ID somewhere in the file like this: 
+
+```properties
+companyId=1234
+```
+You can find your Virtual Instance ID in Control Panel &rarr; Configuration
+&rarr; Virtual Instances.
 
 - On the *LDAP Auth* page, you can set the authentication method and the password
 encryption algorithm. The Bind authentication method is preferred by
