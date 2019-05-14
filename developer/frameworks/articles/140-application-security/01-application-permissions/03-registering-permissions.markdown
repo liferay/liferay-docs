@@ -17,11 +17,13 @@ you're using Service Builder, this is very easy to do.
 
 2.  In your method that adds an entity, add a call to add a resource with the
     entity. For example, Liferay's Blogs application adds resources this way: 
-        
-		resourceLocalService.addResources(
-			entry.getCompanyId(), entry.getGroupId(), entry.getUserId(),
-			BlogsEntry.class.getName(), entry.getEntryId(), false,
-			addGroupPermissions, addGuestPermissions);
+ 
+```java
+resourceLocalService.addResources(
+	entry.getCompanyId(), entry.getGroupId(), entry.getUserId(),
+	BlogsEntry.class.getName(), entry.getEntryId(), false,
+	addGroupPermissions, addGuestPermissions);
+```
 
     This method requires passing in the company ID, the group ID, the user ID,
     the entity's class name, the entity's primary key, and some boolean
@@ -39,7 +41,7 @@ Builder-generated service.
 If you're not using Service Builder, but you are using OSGi modules for your
 application, you should be able to inject the resource service with an
 `@Reference` annotation. If you're building a WAR-style plugin, you need
-a [service tracker](/develop/tutorials/-/knowledge_base/7-1/service-trackers) to
+a [service tracker](/docs/7-2/customization/-/knowledge_base/c/service-trackers) to
 gain access to the service. Note that your model classes must also implement
 Liferay's `ClassedModel` interface. 
 
@@ -47,9 +49,11 @@ Similarly, when you delete an entity, you should also delete its associated
 resource. Here's how the Blogs application does it in its `deleteEntry()`
 method: 
 
-		resourceLocalService.deleteResource(
-			entry.getCompanyId(), BlogsEntry.class.getName(),
-			ResourceConstants.SCOPE_INDIVIDUAL, entry.getEntryId());
+```java
+resourceLocalService.deleteResource(
+	entry.getCompanyId(), BlogsEntry.class.getName(),
+	ResourceConstants.SCOPE_INDIVIDUAL, entry.getEntryId());
+```
 
 As with adding resources, the method needs to know the entity's company ID,
 class, and primary key. Most of the time, its scope is an individual entity of
@@ -79,53 +83,55 @@ class.
     method to register the permissions logic you want for your entities. For
     example, this is how the Blogs application registers its permissions: 
 
-        @Component(immediate = true)
-        public class BlogsEntryModelResourcePermissionRegistrar {
+```java
+@Component(immediate = true)
+public class BlogsEntryModelResourcePermissionRegistrar {
 
-            @Activate
-            public void activate(BundleContext bundleContext) {
-                Dictionary<String, Object> properties = new HashMapDictionary<>();
+    @Activate
+    public void activate(BundleContext bundleContext) {
+        Dictionary<String, Object> properties = new HashMapDictionary<>();
 
-                properties.put("model.class.name", BlogsEntry.class.getName());
+        properties.put("model.class.name", BlogsEntry.class.getName());
 
-                _serviceRegistration = bundleContext.registerService(
-                    ModelResourcePermission.class,
-                    ModelResourcePermissionFactory.create(
-                        BlogsEntry.class, BlogsEntry::getEntryId,
-                        _blogsEntryLocalService::getEntry, _portletResourcePermission,
-                        (modelResourcePermission, consumer) -> {
-                            consumer.accept(
-                                new StagedModelPermissionLogic<>(
-                                    _stagingPermission, BlogsPortletKeys.BLOGS,
-                                    BlogsEntry::getEntryId));
-                            consumer.accept(
-                                new WorkflowedModelPermissionLogic<>(
-                                    _workflowPermission, modelResourcePermission,
-                                    BlogsEntry::getEntryId));
-                        }),
-                    properties);
-            }
+        _serviceRegistration = bundleContext.registerService(
+            ModelResourcePermission.class,
+            ModelResourcePermissionFactory.create(
+                BlogsEntry.class, BlogsEntry::getEntryId,
+                _blogsEntryLocalService::getEntry, _portletResourcePermission,
+                (modelResourcePermission, consumer) -> {
+                    consumer.accept(
+                        new StagedModelPermissionLogic<>(
+                            _stagingPermission, BlogsPortletKeys.BLOGS,
+                            BlogsEntry::getEntryId));
+                    consumer.accept(
+                        new WorkflowedModelPermissionLogic<>(
+                            _workflowPermission, modelResourcePermission,
+                            BlogsEntry::getEntryId));
+                }),
+            properties);
+    }
 
-            @Deactivate
-            public void deactivate() {
-                _serviceRegistration.unregister();
-            }
+    @Deactivate
+    public void deactivate() {
+        _serviceRegistration.unregister();
+    }
 
-            @Reference
-            private BlogsEntryLocalService _blogsEntryLocalService;
+    @Reference
+    private BlogsEntryLocalService _blogsEntryLocalService;
 
-            @Reference(target = "(resource.name=" + BlogsConstants.RESOURCE_NAME + ")")
-            private PortletResourcePermission _portletResourcePermission;
+    @Reference(target = "(resource.name=" + BlogsConstants.RESOURCE_NAME + ")")
+    private PortletResourcePermission _portletResourcePermission;
 
-            private ServiceRegistration<ModelResourcePermission> _serviceRegistration;
+    private ServiceRegistration<ModelResourcePermission> _serviceRegistration;
 
-            @Reference
-            private StagingPermission _stagingPermission;
+    @Reference
+    private StagingPermission _stagingPermission;
 
-            @Reference
-            private WorkflowPermission _workflowPermission;
+    @Reference
+    private WorkflowPermission _workflowPermission;
 
-        }
+}
+```
 
 We call these types of classes Registrars because the classes' job is to configure, 
 register and unregister the `ModelResourcePermission`.
