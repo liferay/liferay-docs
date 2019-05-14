@@ -128,10 +128,6 @@ automatically.
 In addition to the default database configuration, turn off [synchronous
 commits](https://www.postgresql.org/docs/10/wal-async-commit.html). 
 
-### Sybase 
-
-Please consult the official Sybase documentation. 
-
 ## Tuning the Database Transaction Log
 
 Since data upgrade executes many transactions, write to the transaction log in
@@ -167,10 +163,6 @@ Use the default database configuration.
 In addition to the default database configuration, Set the [write ahead log
 writer delay](https://www.postgresql.org/docs/10/wal-async-commit.html) to
 `1000` milliseconds. 
-
-### Sybase 
-
-Please consult the official Sybase documentation. 
 
 Congratulations! You have a starting point to plan your own @product@ data
 upgrade project. Remember, optimal tuning depends on your data, infrastructure
