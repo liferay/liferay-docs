@@ -4,6 +4,11 @@ Upgrading to @product-ver@ involves migrating your installation and code (your
 custom apps) to the new version. You'll learn how to upgrade your code in this
 section.
 
+These tutorials assume you're using the
+[Code Upgrade Planner]().
+To follow along with this section, install the planner and step through the
+upgrade instructions.
+
 Here are the code upgrade steps:
 
 1.  [Upgrade Your Development Environment](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment)
@@ -11,13 +16,13 @@ Here are the code upgrade steps:
     Legacy project environments should be upgraded to the latest version of
     Liferay Workspace to ensure you leverage all available features.
 
-    1.  Set up Liferay Workspace
+    1.  [Set up Liferay Workspace]()
 
-        1.  Create New Liferay Workspace <!--commandId="create_new_liferay_workspace"-->
+        1.  [Create New Liferay Workspace]() <!--commandId="create_new_liferay_workspace"-->
 
             Create a new Liferay Workspace.
 
-        2.  Import Existing Liferay Workspace
+        2.  [Import Existing Liferay Workspace]()
 
             If you do not have an existing 7.x workspace, go to the previous
             step.
@@ -27,15 +32,15 @@ Here are the code upgrade steps:
         Set the @product@ version in workspace's configuration you intend to
         upgrade to.
 
-        1.  Configure Bundle URL
+        1.  [Configure Bundle URL]()
 
             Configure your bundle URL.
 
-        2.  Configure Target Platform Version
+        2.  [Configure Target Platform Version]()
 
             Configure your Target Platform version.
 
-        3.  Initialize Server Bundle
+        3.  [Initialize Server Bundle]()
 
             Initialize your Liferay server bundle.
 
@@ -44,11 +49,11 @@ Here are the code upgrade steps:
     Copy your Plugins SDK projects into workspace and convert them to
     Gradle/Maven projects.
 
-    1.  Import Existing Plugins SDK Projects
+    1.  [Import Existing Plugins SDK Projects]()
 
         Import your existing Plugins SDK projects.
 
-    2.  Migrate Existing Plugins to Workspace
+    2.  [Migrate Existing Plugins to Workspace]()
 
         Migrate existing plugins to Workspace.
 
@@ -57,15 +62,15 @@ Here are the code upgrade steps:
     Optimize your workspace's build environment for the most efficient code
     upgrade experience.
 
-    1.  Update Repository URL
+    1.  [Update Repository URL]()
 
         Update your repository URL.
 
-    2. Update Workspace Plugin Version
+    2.  [Update Workspace Plugin Version]()
 
         Update your Workspace Plugin version
 
-    3.  Remove dependency Versions
+    3.  [Remove dependency Versions]()
 
         Remove dependency versions.
 
@@ -74,31 +79,31 @@ Here are the code upgrade steps:
     Fix common upgrade problems dealing with your project's dependencies and
     breaking changes.
 
-    1.  Auto-Correct Upgrade Problems
+    1.  [Auto-Correct Upgrade Problems]()
 
         Leverage auto-correct to upgrade code.
 
-    2.  Find Upgrade Problems
+    2.  [Find Upgrade Problems]()
 
         Find upgrade problems.
 
-    3.  Resolve Upgrade Problems
+    3.  [Resolve Upgrade Problems]()
 
         Mark upgrade problems as resolved after addressing them.
 
-    4.  Remove Problem Markers
+    4.  [Remove Problem Markers]()
 
         Remove problem markers.
 
-5.  Upgrade Service Builder Services
+5.  [Upgrade Service Builder Services]()
 
     Upgrade your Service Builder services.
 
-    1.  Remove Legacy Files
+    1.  [Remove Legacy Files]()
 
-    2.  Migrate from Spring DI to OSGi Declarative Services
+    2.  [Migrate from Spring DI to OSGi Declarative Services]()
 
-    3.  Rebuild Services
+    3.  [Rebuild Services]()
 
 6.  [Upgrade Customization Plugins](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-customization-plugins)
 
@@ -124,41 +129,41 @@ Here are the code upgrade steps:
 
     11. [Upgrade Struts Action Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-struts-action-hooks)
 
-7. [Upgrade Themes]()
+7.  [Upgrade Themes]()
 
     Upgrade your themes.
 
-8. [Upgrade Layout Templates]()
+8.  [Upgrade Layout Templates]()
 
-9. Upgrade Frameworks & Features
+9.  [Upgrade Frameworks & Features]()
 
-    1. Upgrade JNDI Data Source Usage
+    1.  [Upgrade JNDI Data Source Usage]()
 
-    2. Upgrade Service Builder Service Invocation
+    2.  [Upgrade Service Builder Service Invocation]()
 
-    3. Upgrade Service Builder
+    3.  [Upgrade Service Builder]()
 
-    4. Migrate Off of Velocity Templates
+    4.  [Migrate Off of Velocity Templates]()
 
 10. [Upgrade Portlets](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-portlets)
 
     Upgrade your portlets.
 
-    1. [Upgrade Generic Portlets](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-genericportlet)
+    1.  [Upgrade Generic Portlets](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-genericportlet)
 
-    2. [Upgrade Liferay MVC Portlets](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-liferay-mvc-portlet)
+    2.  [Upgrade Liferay MVC Portlets](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-liferay-mvc-portlet)
 
-    3. [Upgrade JSF Portlets](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-liferay-jsf-portlet)
+    3.  [Upgrade JSF Portlets](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-liferay-jsf-portlet)
 
-    4. [Upgrade Servlet-based Portlets](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-servlet-based-portlet)
+    4.  [Upgrade Servlet-based Portlets](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-servlet-based-portlet)
 
-    5. [Migrate from Spring Portlet MVC to PortletMVC4Spring]()
+    5.  [Migrate from Spring Portlet MVC to PortletMVC4Spring]()
 
-    6. [Upgrade Struts 1 Portlets](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-struts-1-portlet)
+    6.  [Upgrade Struts 1 Portlets](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-struts-1-portlet)
 
-11. Upgrade Web Plugins
+11.  [Upgrade Web Plugins]()
 
-12. Upgrade Ext Plugins
+12.  [Upgrade Ext Plugins]()
 
 <!--
 
@@ -203,12 +208,6 @@ Here are the code upgrade steps:
     1.  [Resolve a Project's Dependencies](/docs/tutorials/7-2/-/knowledge_base/t/resolving-a-projects-dependencies)
 
     2.  [Resolve Breaking Changes](/docs/tutorials/7-2/-/knowledge_base/t/resolving-breaking-changes)
-
-To be continued...
-
--->
-
-<!--
 
 5. Upgrade Service Builder Services
     1. Remove Legacy Files
