@@ -5,7 +5,7 @@ header-id: auto-login
 # Auto Login
 
 While @product@ supports a wide variety of 
-[authentication mechanisms](/discover/deployment/-/knowledge_base/7-0/liferay-portal-security), 
+[authentication mechanisms](/docs/7-2/deploy/-/knowledge_base/d/securing-product), 
 you may use a home-grown system or some other product to authenticate users. To 
 do so, you can write an Auto Login component to support your authentication 
 system. 
@@ -17,40 +17,42 @@ make that association, it can authenticate that user.
 ## Creating an Auto Login Component
 
 Create a 
-[Declarative Services component](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-liferay-ide#creating-component-classes). 
+[Declarative Services component](/docs/7-2/reference/-/knowledge_base/r/creating-a-project). 
 The component should implement the 
 `com.liferay.portal.kernel.security.auto.login.AutoLogin` interface. Here's an 
 example template: 
 
-    import com.liferay.portal.kernel.security.auto.login.AutoLogin;
+```java
+import com.liferay.portal.kernel.security.auto.login.AutoLogin;
 
-    import javax.servlet.http.HttpServletRequest;
-    import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-    import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Component;
 
-    @Component(immediate = true)
-    public class MyAutoLogin implements Autologin {
+@Component(immediate = true)
+public class MyAutoLogin implements Autologin {
 
-        public String[] handleException(
-                HttpServletRequest request, HttpServletResponse response,
-                Exception e)
-            throws AutoLoginException {
+    public String[] handleException(
+            HttpServletRequest request, HttpServletResponse response,
+            Exception e)
+        throws AutoLoginException {
 
-            /* This method is no longer used in the interface and can be 
-          left empty */
-
-        }
-
-        public String[] login(
-                HttpServletRequest request, HttpServletResponse response)
-            throws AutoLoginException {
-
-            /* Your Code Goes Here */
-
-        }
+        /* This method is no longer used in the interface and can be 
+      left empty */
 
     }
+
+    public String[] login(
+            HttpServletRequest request, HttpServletResponse response)
+        throws AutoLoginException {
+
+        /* Your Code Goes Here */
+
+    }
+
+}
+```
 
 As you can see, you have access to the `HttpServletRequest` and the 
 `HttpServletResponse` objects. If your sign-on solution places anything here 
@@ -91,6 +93,6 @@ quickly to provide the integration you need.
 
 ## Related Topics
 
-[Password-Based Authentication Pipelines](/develop/tutorials/-/knowledge_base/7-0/password-based-authentication-pipelines)
+[Password-Based Authentication Pipelines](/docs/7-2/frameworks/-/knowledge_base/f/password-based-authentication-pipelines)
 
-[Writing a Custom Login Portlet](/develop/tutorials/-/knowledge_base/7-0/writing-a-custom-login-portlet)
+[Writing a Custom Login Portlet](/docs/7-2/frameworks/-/knowledge_base/f/writing-a-custom-login-portlet)
