@@ -33,16 +33,18 @@ class) from your permissions logic (contained in the `-ServiceImpl` class).
     check permissions as you've defined them in `default.xml`. Here's how the
     Blogs portlet does this: 
 
-        private static volatile ModelResourcePermission<BlogsEntry>
-            _blogsEntryFolderModelResourcePermission =
-                ModelResourcePermissionFactory.getInstance(
-                    BlogsEntryServiceImpl.class,
-                    "_blogsEntryFolderModelResourcePermission", BlogsEntry.class);
-        private static volatile PortletResourcePermission
-            _portletResourcePermission =
-                PortletResourcePermissionFactory.getInstance(
-                    BlogsEntryServiceImpl.class, "_portletResourcePermission",
-                    BlogsConstants.RESOURCE_NAME);
+```java
+private static volatile ModelResourcePermission<BlogsEntry>
+    _blogsEntryFolderModelResourcePermission =
+        ModelResourcePermissionFactory.getInstance(
+            BlogsEntryServiceImpl.class,
+            "_blogsEntryFolderModelResourcePermission", BlogsEntry.class);
+private static volatile PortletResourcePermission
+    _portletResourcePermission =
+        PortletResourcePermissionFactory.getInstance(
+            BlogsEntryServiceImpl.class, "_portletResourcePermission",
+            BlogsConstants.RESOURCE_NAME);
+```
 
     You declare the class, the variable, and for the portlet resource, the
     resource name from `default.xml`. In the Blogs application,
@@ -61,28 +63,30 @@ class) from your permissions logic (contained in the `-ServiceImpl` class).
     entry requires the `ADD_ENTRY` permission, so the Blogs application does
     this: 
 
-        @Override
-        public BlogsEntry addEntry(
-                String title, String subtitle, String description, String content,
-                int displayDateMonth, int displayDateDay, int displayDateYear,
-                int displayDateHour, int displayDateMinute, boolean allowPingbacks,
-                boolean allowTrackbacks, String[] trackbacks,
-                String coverImageCaption, ImageSelector coverImageImageSelector,
-                ImageSelector smallImageImageSelector,
-                ServiceContext serviceContext)
-            throws PortalException {
+```java
+@Override
+public BlogsEntry addEntry(
+        String title, String subtitle, String description, String content,
+        int displayDateMonth, int displayDateDay, int displayDateYear,
+        int displayDateHour, int displayDateMinute, boolean allowPingbacks,
+        boolean allowTrackbacks, String[] trackbacks,
+        String coverImageCaption, ImageSelector coverImageImageSelector,
+        ImageSelector smallImageImageSelector,
+        ServiceContext serviceContext)
+    throws PortalException {
 
-            _portletResourcePermission.check(
-                getPermissionChecker(), serviceContext.getScopeGroupId(),
-                ActionKeys.ADD_ENTRY);
+    _portletResourcePermission.check(
+        getPermissionChecker(), serviceContext.getScopeGroupId(),
+        ActionKeys.ADD_ENTRY);
 
-            return blogsEntryLocalService.addEntry(
-                getUserId(), title, subtitle, description, content,
-                displayDateMonth, displayDateDay, displayDateYear, displayDateHour,
-                displayDateMinute, allowPingbacks, allowTrackbacks, trackbacks,
-                coverImageCaption, coverImageImageSelector, smallImageImageSelector,
-                serviceContext);
-        }
+    return blogsEntryLocalService.addEntry(
+        getUserId(), title, subtitle, description, content,
+        displayDateMonth, displayDateDay, displayDateYear, displayDateHour,
+        displayDateMinute, allowPingbacks, allowTrackbacks, trackbacks,
+        coverImageCaption, coverImageImageSelector, smallImageImageSelector,
+        serviceContext);
+}
+```
 
     The check throws an exception if it fails, preventing the local service call
     that adds the entry. A convention Liferay uses is to place the action keys
@@ -108,29 +112,31 @@ model permissions. Here's how to create a portlet permission helper:
 2.  Create a component class with at least one static method for checking
     permissions. For example, here's the `BlogsPermission` class: 
 
-        @Component(immediate = true)
-        public class BlogsPermission {
+```java
+@Component(immediate = true)
+public class BlogsPermission {
 
-            public static boolean contains(
-                PermissionChecker permissionChecker, long groupId, String actionId) {
+    public static boolean contains(
+        PermissionChecker permissionChecker, long groupId, String actionId) {
 
-                return _portletResourcePermission.contains(
-                    permissionChecker, groupId, actionId);
-            }
+        return _portletResourcePermission.contains(
+            permissionChecker, groupId, actionId);
+    }
 
-            @Reference(
-                target = "(resource.name=" + BlogsConstants.RESOURCE_NAME + ")",
-                unbind = "-"
-            )
-            protected void setPortletResourcePermission(
-                PortletResourcePermission portletResourcePermission) {
+    @Reference(
+        target = "(resource.name=" + BlogsConstants.RESOURCE_NAME + ")",
+        unbind = "-"
+    )
+    protected void setPortletResourcePermission(
+        PortletResourcePermission portletResourcePermission) {
 
-                _portletResourcePermission = portletResourcePermission;
-            }
+        _portletResourcePermission = portletResourcePermission;
+    }
 
-            private static PortletResourcePermission _portletResourcePermission;
+    private static PortletResourcePermission _portletResourcePermission;
 
-        }
+}
+```
 
     Note the `@Reference` annotation that tells the OSGi container to supply an
     object via the permission registrar you created previously. The
@@ -144,40 +150,42 @@ The procedure for creating a model permission helper is similar:
     method for checking permissions. For example, here's the
     `BlogsEntryPermission` class: 
 
-        @Component(immediate = true)
-        public class BlogsEntryPermission {
+```java
+@Component(immediate = true)
+public class BlogsEntryPermission {
 
-            public static boolean contains(
-                    PermissionChecker permissionChecker, BlogsEntry entry,
-                    String actionId)
-                throws PortalException {
+    public static boolean contains(
+            PermissionChecker permissionChecker, BlogsEntry entry,
+            String actionId)
+        throws PortalException {
 
-                return _blogsEntryFolderModelResourcePermission.contains(
-                    permissionChecker, entry, actionId);
-            }
+        return _blogsEntryFolderModelResourcePermission.contains(
+            permissionChecker, entry, actionId);
+    }
 
-            public static boolean contains(
-                    PermissionChecker permissionChecker, long entryId, String actionId)
-                throws PortalException {
+    public static boolean contains(
+            PermissionChecker permissionChecker, long entryId, String actionId)
+        throws PortalException {
 
-                return _blogsEntryFolderModelResourcePermission.contains(
-                    permissionChecker, entryId, actionId);
-            }
+        return _blogsEntryFolderModelResourcePermission.contains(
+            permissionChecker, entryId, actionId);
+    }
 
-            @Reference(
-                target = "(model.class.name=com.liferay.blogs.model.BlogsEntry)",
-                unbind = "-"
-            )
-            protected void setEntryModelPermission(
-                ModelResourcePermission<BlogsEntry> modelResourcePermission) {
+    @Reference(
+        target = "(model.class.name=com.liferay.blogs.model.BlogsEntry)",
+        unbind = "-"
+    )
+    protected void setEntryModelPermission(
+        ModelResourcePermission<BlogsEntry> modelResourcePermission) {
 
-                _blogsEntryFolderModelResourcePermission = modelResourcePermission;
-            }
+        _blogsEntryFolderModelResourcePermission = modelResourcePermission;
+    }
 
-            private static ModelResourcePermission<BlogsEntry>
-                _blogsEntryFolderModelResourcePermission;
+    private static ModelResourcePermission<BlogsEntry>
+        _blogsEntryFolderModelResourcePermission;
 
-        }
+}
+```
 
     As you can see, this class is almost the same as the portlet permission
     class. The real difference is in the `@Reference` annotation that specifies
@@ -203,39 +211,43 @@ do that:
     The button for this, therefore, should only appear if a user has permission
     to add entries: 
 
-        <c:if test="<%= BlogsPermission.contains(permissionChecker, scopeGroupId, ActionKeys.ADD_ENTRY) %>">
-            <div class="button-holder">
-                <portlet:renderURL var="editEntryURL" windowState="<%= WindowState.MAXIMIZED.toString() %>">
-                    <portlet:param name="mvcRenderCommandName" value="/blogs/edit_entry" />
-                    <portlet:param name="redirect" value="<%= currentURL %>" />
-                </portlet:renderURL>
+```jsp
+<c:if test="<%= BlogsPermission.contains(permissionChecker, scopeGroupId, ActionKeys.ADD_ENTRY) %>">
+    <div class="button-holder">
+        <portlet:renderURL var="editEntryURL" windowState="<%= WindowState.MAXIMIZED.toString() %>">
+            <portlet:param name="mvcRenderCommandName" value="/blogs/edit_entry" />
+            <portlet:param name="redirect" value="<%= currentURL %>" />
+        </portlet:renderURL>
 
-                <aui:button href="<%= editEntryURL %>" icon="icon-plus" value="add-blog-entry" />
-            </div>
-        </c:if>
+        <aui:button href="<%= editEntryURL %>" icon="icon-plus" value="add-blog-entry" />
+    </div>
+</c:if>
+```
 
 2.  Do this for any function. For example, the Permissions function you added in
     [step 3](/develop/tutorials/-/knowledge_base/7-1/associating-permissions-with-resources)
     should definitely be protected by permissions: 
 
-        <c:if test="<%= BlogsEntryPermission.contains(permissionChecker, entry, ActionKeys.PERMISSIONS) %>">
-            <liferay-security:permissionsURL
-                modelResource="<%= BlogsEntry.class.getName() %>"
-                modelResourceDescription="<%= BlogsEntryUtil.getDisplayTitle(resourceBundle, entry) %>"
-                resourceGroupId="<%= String.valueOf(entry.getGroupId()) %>"
-                resourcePrimKey="<%= String.valueOf(entry.getEntryId()) %>"
-                var="permissionsEntryURL"
-                windowState="<%= LiferayWindowState.POP_UP.toString() %>"
-            />
+```jsp
+<c:if test="<%= BlogsEntryPermission.contains(permissionChecker, entry, ActionKeys.PERMISSIONS) %>">
+    <liferay-security:permissionsURL
+        modelResource="<%= BlogsEntry.class.getName() %>"
+        modelResourceDescription="<%= BlogsEntryUtil.getDisplayTitle(resourceBundle, entry) %>"
+        resourceGroupId="<%= String.valueOf(entry.getGroupId()) %>"
+        resourcePrimKey="<%= String.valueOf(entry.getEntryId()) %>"
+        var="permissionsEntryURL"
+        windowState="<%= LiferayWindowState.POP_UP.toString() %>"
+    />
 
-            <liferay-ui:icon
-                label="<%= true %>"
-                message="permissions"
-                method="get"
-                url="<%= permissionsEntryURL %>"
-                useDialog="<%= true %>"
-            />
-        </c:if>
+    <liferay-ui:icon
+        label="<%= true %>"
+        message="permissions"
+        method="get"
+        url="<%= permissionsEntryURL %>"
+        useDialog="<%= true %>"
+    />
+</c:if>
+```
 
     This prevents anyone without the permission to set permissions from seeing
     the permissions button. Say that three times fast! 
