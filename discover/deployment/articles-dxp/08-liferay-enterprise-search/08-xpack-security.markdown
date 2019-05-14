@@ -16,13 +16,12 @@ Here's an overview of using X-Pack to secure the data indexed in Elasticsearch:
 
 1.  Get an Enterprise Search subscription.
 
-2.  [Install X-Pack into Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/installing-xpack-es.html) 
-    and configure it to require authentication and 
+2.  Configure X-Pack to require authentication and 
     [encryption](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/configuring-tls.html#configuring-tls).
 
-3.  Download and install the 
-[Liferay Connector to X-Pack Security](https://web.liferay.com/group/customer/dxp/downloads/enterprise-search) 
-[Elastic Stack 6.x]. 
+3.  Download and install the [Liferay Connector to X-Pack
+    Security](https://web.liferay.com/group/customer/dxp/downloads/enterprise-search)
+    [Elastic Stack 6.x]. 
 
 4.  Configure the X-Pack connector with the proper credentials and encryption
     information.
@@ -34,62 +33,6 @@ Elasticsearch communicating freely with @product@, but read Elastic's
 documentation to learn about additional configuration options, features, and the
 architecture of
 [X-Pack](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/configuring-security.html). 
-
-## Installing X-Pack [](id=installing-x-pack)
-
-1.  To 
-    [install X-Pack](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/installing-xpack-es.html)
-    and automatically grant it the required permissions (recommended), run
-
-        bin/elasticsearch-plugin install x-pack --batch
-
-    on each cluster node. The `--batch` option bypasses installation prompts for
-    granting permissions to X-Pack. 
-
-    You'll see log output detailing the permissions granted, finishing with
-    `Installed x-pack`:
-
-        -> Downloading x-pack from elastic
-        [=================================================] 100%   
-        @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-        @     WARNING: plugin requires additional permissions     @
-        @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-        * java.io.FilePermission \\.\pipe\* read,write
-        * java.lang.RuntimePermission accessClassInPackage.com.sun.activation.registries
-        * java.lang.RuntimePermission getClassLoader
-        * java.lang.RuntimePermission setContextClassLoader
-        * java.lang.RuntimePermission setFactory
-        * java.net.SocketPermission * connect,accept,resolve
-        * java.security.SecurityPermission createPolicy.JavaPolicy
-        * java.security.SecurityPermission getPolicy
-        * java.security.SecurityPermission putProviderProperty.BC
-        * java.security.SecurityPermission setPolicy
-        * java.util.PropertyPermission * read,write
-        See http://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html
-        for descriptions of what these permissions allow and the associated risks.
-        @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-        @        WARNING: plugin forks a native controller        @
-        @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-        This plugin launches a native controller that is not subject to the Java
-        security manager nor to system call filters.
-        Elasticsearch keystore is required by plugin [x-pack], creating...
-        -> Installed x-pack
-
-    See more about the permissions X-Pack needs
-    [here](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/installing-xpack-es.html). 
-
-2.  Make sure Elasticsearch allows the automatic creation of indexes. If
-    you're unsure, check `elasticsearch.yml` for this property:
-
-        action.auto_create_index: false
-
-    This property is `true` by default, so if you don't see it in
-    `elasticsearch.yml`, there's nothing to worry about. See [Elastic's
-    documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/docs-index_.html#index-creation) for more information on automatic index creation.
-
-3.  Restart Elasticsearch.
-
-Once X-Pack is installed, configure its built-in user passwords.
 
 ## Setting Up X-Pack Users [](id=setting-up-x-pack-users)
 
@@ -107,7 +50,7 @@ The `interactive` argument lets you set the passwords for all built-in users.
 The configuraiton shown in these articles assumes you set all of the
 passwords to *liferay*. Of course, that's not recommended for production systems.
 
-    ./bin/x-pack/setup-passwords interactive
+    ./bin/elasticsearch-setup-passwords interactive
 
 See Elastic's documentation on the 
 [setup-passwords command](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/setup-passwords.html) 
@@ -141,14 +84,14 @@ certificates.
       [X-Pack's `certutil`](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/certutil.html)
       command:
 
-        ./bin/x-pack/certutil ca --pem --ca-dn CN=localhost
+        ./bin/elasticsearch-certutil ca --pem --ca-dn CN=localhost
 
     This generates a ZIP file. Unzip the contents somewhere safe.
 
 2. Generate X.509 certificates and private keys using the CA from Step 1. For
    example:
 
-        ./bin/x-pack/certutil cert --pem --ca-cert /path/to/ca.crt --ca-key /path/to/ca.key --dns localhost --ip 127.0.0.1 --name localhost
+        ./bin/elasticsearch-certutil cert --pem --ca-cert /path/to/ca.crt --ca-key /path/to/ca.key --dns localhost --ip 127.0.0.1 --name localhost
 
     This generates another ZIP file. Extract the contents somewhere in the
     `Elasticsearch Home/config` folder.
@@ -216,7 +159,7 @@ these contents:
     certificateFormat="PEM"
     requiresAuthentication="true"
     username="elastic"
-    password="GqhoaEUyTM@tp1*wQd~F"
+    password="liferay"
     sslCertificateAuthoritiesPaths="/path/to/[Elasticsearch Home]/config/ca.crt"
     transportSSLVerificationMode="certificate"
     transportSSLEnabled="true"

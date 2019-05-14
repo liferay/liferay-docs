@@ -10,25 +10,29 @@ Enterprise Search Standard subscription (included with Premium) is necessary for
 this integration. Contact 
 [Liferay's Sales department for more information](https://www.liferay.com/contact-us#contact-sales).
 
-1.  Download and install Kibana.
+1.  Tell Elasticsearch to enable data collection.
 
-2.  Install X-Pack onto Kibana and configure Kibana 
+2.  Download and install Kibana.
 
-    If using X-Pack's security, this includes proper security configuration.
+3.  Configure Kibana with the proper security settings.
 
-3.  Download and install the 
-[Liferay Connector to X-Pack Monitoring](https://www.liferay.com/marketplace)
-[Elastic Stack 6.x].
+4.  Download and install the 
+    [Liferay Connector to X-Pack Monitoring](https://www.liferay.com/marketplace) 
+    [Elastic Stack 6.x].
 
-4.  Configure the connector to communicate with Elasticsearch.
+5.  Configure the connector to communicate with Elasticsearch.
 
-The exact steps differ if you're enabling security *and* monitoring or just
-monitoring. Differences in the process are noted as appropriate.
-
-For the X-Pack installation procedure, refer to the 
+For the X-Pack security procedure, refer to the 
 [X-Pack security article](/discover/deployment/-/knowledge_base/7-0/securing-elasticsearch-6-with-x-pack).
 
-This guide starts with the installation of Kibana.
+## Enable Data Collection [](id=enable-data-collection)
+
+Monitoring is enabled on Elasticsearch by default, but data collection isn't.
+Enable data collection by adding this line to `elasticsearch.yml`.
+
+    xpack.monitoring.collection.enabled: true
+
+Now install Kibana.
 
 ## Install Kibana [](id=install-kibana)
 
@@ -36,29 +40,23 @@ Make sure to install the correct version of Kibana. Check the
 [Liferay Enterprise Search compatibility matrix](https://web.liferay.com/group/customer/dxp/support/compatibility-matrix/enterprise-search)
 for details.
 
-1.  [Download Kibana](https://www.elastic.co/downloads/kibana) and extract it.
-    The root folder is referred to as *Kibana Home*.
+1.  [Download Kibana](https://www.elastic.co/downloads/kibana)
+    and extract it. The root folder is referred to as *Kibana Home*.
 
-2.  Install X-Pack into Kibana:
-
-        ./bin/kibana-plugin install x-pack
-
-3.  Tell Kibana where to send monitoring data by setting Elasticsearch's URL in
+2.  Tell Kibana where to send monitoring data by setting Elasticsearch's URL in
     `kibana.yml`:
 
         elasticsearch.url: "http://localhost:9200"
 
-    If SSL is enabled on Elasticsearch, this is an `https` URL.
+    If encryption is enabled on Elasticsearch, this is an `https` URL.
 
-4. If not using X-Pack security, start Kibana by entering
+3.  If not using X-Pack security, start Kibana by opening a command prompt to 
+    Kibana Home and entering this command:
 
         ./bin/kibana
 
-    from Kibana Home.
-
-If you're using X-Pack's security features, there's additional configuration
-required that you can find below and is related to 
-[Securing Elasticsearch 6 with X-Pack](/discover/deployment/-/knowledge_base/7-0/securing-elasticsearch-6-with-x-pack).
+If you're using X-Pack's security features on the Elasticsearch server, there's
+additional configuration required before starting Kibana.
 
 ### Configure Kibana with Authentication [](id=configure-kibana-with-authentication)
 
@@ -143,10 +141,12 @@ there is to it.
     settings are picked up by your running instance. There's no need to restart
     the server.
 
-4.  There's one more setting to add to Kibana itself. It sets Kibana's base path
-    to let the Monitoring Portlet act as a proxy for Kibana's monitoring UI. Add
-    this to `kibana.yml`:
+4.  There are two more settings to add to Kibana itself. The first forbids 
+    Kibana from rewriting requests prefixed with `server.basePath`. The second
+    sets Kibana's base path for the Monitoring portlet to act as a proxy for
+    Kibana's monitoring UI. Add this to `kibana.yml`:
 
+        server.rewriteBasePath: false
         server.basePath: "/o/portal-search-elasticsearch-xpack-monitoring/xpack-monitoring-proxy"
 
     Note that once you set the `server.basePath`, you cannot access the Kibana
@@ -163,14 +163,15 @@ there is to it.
     First, navigate to Elasticsearch Home and generate a PKSC#12 certificate
     from the CA you created when setting up X-Pack security:
 
-        ./bin/x-pack/certutil cert --ca-cert /path/to/ca.crt --ca-key /path/to/ca.key --ip 127.0.0.1 --dns localhost --name localhost --out /path/to/Elasticsearch_Home/config/localhost.p12
+        ./bin/elasticsearch-certutil cert --ca-cert /path/to/ca.crt --ca-key /path/to/ca.key --ip 127.0.0.1 --dns localhost --name localhost --out /path/to/Elasticsearch_Home/config/localhost.p12
 
     Next use the `keytool` command to generate a truststore:
 
         keytool -importkeystore -deststorepass liferay -destkeystore /path/to/truststore.jks -srckeystore /path/to/Elasticsearch_Home/config/localhost.p12 -srcstoretype PKCS12 -srcstorepass liferay
 
     Add the trustore path and password to your application server's startup JVM
-    parameters. For a Tomcat server, append this to your existing `CATALINA_OPTS`:
+    parameters. Here are example truststore and path parameters for appending to
+    a Tomcat server's `CATALINA_OPTS`:
 
         -Djavax.net.ssl.trustStore=/path/to/truststore.jks -Djavax.net.ssl.trustStorePassword=liferay
 
