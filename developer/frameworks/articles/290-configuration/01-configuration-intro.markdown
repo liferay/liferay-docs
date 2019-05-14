@@ -2,7 +2,11 @@
 header-id: configurable-applications
 ---
 
-# Configurable Applications [](id=configurable-applications)
+---
+header-id: configurable-applications
+---
+
+# Configurable Applications
 
 [TOC levels=1-4]
 
