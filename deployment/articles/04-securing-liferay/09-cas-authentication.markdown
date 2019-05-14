@@ -9,7 +9,9 @@ widely used open source single sign-on solution and was the first SSO product to
 be supported by @product@. @product@'s CAS module includes the CAS client, so
 there's no need to install it separately.
 
-| **Note:** @product@ supports CAS 3.3.x.
+| **Note:** @product@ supports CAS 3.3.x. If you use a later version of CAS, it
+| is best to use CAS's support for standards such as OpenID Connect or SAML to
+| interface with @product@.
 
 The CAS Server application requires your server to have a properly configured
 Secure Socket Layer (SSL) certificate. To generate one yourself, use the
@@ -23,7 +25,9 @@ warning messages about the certificate.
 
 To generate a key, use the following command:
 
-    keytool -genkey -alias tomcat -keypass changeit -keyalg RSA
+```bash
+keytool -genkey -alias tomcat -keypass changeit -keyalg RSA
+```
 
 Instead of the password in the example (`changeit`), use a password you can
 remember. If you are not using Tomcat, you may want to use a different alias as
@@ -32,22 +36,27 @@ server. It cannot be an IP address.
 
 To export the key to a file, use the following command:
 
-    keytool -export -alias tomcat -keypass changeit -file server.cert
+```bash
+keytool -export -alias tomcat -keypass changeit -file server.cert
+```
 
 Finally, to import the key into your Java key store, use the following command:
 
-    keytool -import -alias tomcat -file server.cert -keypass changeit -keystore $JAVA_HOME/jre/lib/security/cacerts
+```bash
+keytool -import -alias tomcat -file server.cert -keypass changeit -keystore $JAVA_HOME/jre/lib/security/cacerts
+```
 
 If you are on a Windows system, replace `$JAVA_HOME` above with `%JAVA_HOME%`.
 Of course, all of this must be done on the system where CAS is running.
 
 Once your CAS server is up and running, configure @product@ to use it.
 CAS configuration can be applied either at the system scope or at the scope of
-a portal instance. To configure the CAS SSO module at the system scope,
-navigate to the Control Panel, click on *Configuration* &rarr; *System
-Settings* &rarr; *Security* &rarr; *SSO*. The values configured there provide
-the default values for all portal instances. Enable CAS authentication and then
-modify the URL properties to point to your CAS server.
+a portal instance. To configure the CAS SSO module at the system or instance
+scope, navigate to the Control Panel, click on *Configuration* &rarr; *System
+Settings* (or *Instance Settings*) &rarr; *Security* &rarr; *SSO*. The values
+configured in System Settings provide the default values for all portal
+instances. Enable CAS authentication and then modify the URL properties to point
+to your CAS server.
 
 **Enabled:** Check this box to enable CAS single sign-on.
 
@@ -55,10 +64,10 @@ modify the URL properties to point to your CAS server.
 @product@. Select this to automatically import users from LDAP if they do not
 exist in @product@. For this to work, LDAP must be enabled.
 
-The rest of the settings are various URLs, with defaults included. Change
+The rest of the settings are various URLs with defaults included. Change
 *localhost* in the default values to point to your CAS server. When you are
 finished, click *Save*. After this, when users click the *Sign In* link, they
-will be directed to the CAS server to sign in to @product@.
+are directed to the CAS server to sign in to @product@.
 
 For some situations, it might be more convenient to specify the system
 configuration via files on the disk. To do so, create the following
