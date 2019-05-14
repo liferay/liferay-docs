@@ -4,6 +4,8 @@ header-id: customizing-core-functionality-with-ext
 
 # Customizing Core Functionality with Ext
 
+[TOC levels=1-4]
+
 | **Ext plugins are deprecated for @product-ver@ and should only be used if
 | absolutely necessary.**
 | 

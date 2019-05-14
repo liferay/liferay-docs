@@ -4,6 +4,8 @@ header-id: developing-an-ext-plugin
 
 # Developing an Ext Plugin
 
+[TOC levels=1-4]
+
 An Ext plugin changes @product@ itself when the plugin is deployed; it's not a
 separate component that you can easily remove at any time. For this reason, the
 Ext plugin development process is different from other project types. It's
@@ -38,13 +40,17 @@ you should create/develop your Ext module project in the `/ext` folder
 (default); you can specify a different Ext folder name in workspace's
 `gradle.properties` by adding
 
-    liferay.workspace.ext.dir=EXT_DIR
+```properties
+liferay.workspace.ext.dir=EXT_DIR
+```
 
 If you are developing an Ext module project in standalone mode (not associated
 with Liferay Workspace), you must declare the Ext Gradle plugin in your
 `build.gradle`:
 
-    apply plugin: 'com.liferay.ext.plugin'
+```gradle
+apply plugin: 'com.liferay.ext.plugin'
+```
 
 Next you'll explore an Ext plugin's advanced configuration files.
 

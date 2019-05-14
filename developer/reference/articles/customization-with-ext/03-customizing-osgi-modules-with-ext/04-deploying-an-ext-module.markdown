@@ -4,6 +4,8 @@ header-id: deploying-an-ext-module
 
 # Deploying an Ext Module
 
+[TOC levels=1-4]
+
 Before deploying your Ext module, you must stop the original bundle you intend
 to override. This is because an Ext module's generated JAR includes the original
 bundle source plus your modified source files.
@@ -19,17 +21,23 @@ Follow the instructions below to deploy your Ext module to a @product@ instance:
 2.  Search for the bundle ID of the original bundle to override. To find the
     `com.liferay.login.web` bundle, execute this command:
 
-        lb -s | grep com.liferay.login.web
+    ```bash
+    lb -s | grep com.liferay.login.web
+    ```
 
     This returns output similar to this:
 
-        423|Active   |   10|com.liferay.login.web (3.0.4)
+    ```bash
+    423|Active   |   10|com.liferay.login.web (3.0.4)
+    ```
 
     Make note of the ID (e.g., `423`).
 
 3.  Stop the bundle:
 
-        stop 423
+    ```bash
+    stop 423
+    ```
 
 Once the original bundle is stopped, deploy the Ext module. Note that you cannot
 leverage Blade or Gradle's `deploy` command to do this. The `deploy` command

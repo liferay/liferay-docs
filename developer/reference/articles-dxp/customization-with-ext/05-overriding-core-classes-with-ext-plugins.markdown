@@ -4,6 +4,8 @@ header-id: overriding-core-classes-with-ext-plugins
 
 # Overriding Core Classes with Ext Plugins
 
+[TOC levels=1-4]
+
 A supported use case for using Ext plugins in @product@ is overriding its core
 classes (e.g., `portal-impl`, `portal-kernel`, etc.). You can reference the
 [Finding Core Liferay Portal Artifacts](/docs/7-2/customization/-/knowledge_base/c/configuring-dependencies#finding-core-liferay-portal-artifacts)

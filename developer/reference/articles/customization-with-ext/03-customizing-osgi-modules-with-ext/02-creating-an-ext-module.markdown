@@ -4,6 +4,8 @@ header-id: creating-an-ext-module
 
 # Creating an Ext Module
 
+[TOC levels=1-4]
+
 You can create an Ext module based off the pre-configured `modules-ext` project
 template/archetype. See the
 [`modules-ext`](/docs/7-2/reference/-/knowledge_base/r/modules-ext-template)

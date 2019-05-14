@@ -4,6 +4,8 @@ header-id: deploying-an-ext-plugin
 
 # Deploying an Ext Plugin
 
+[TOC levels=1-4]
+
 Deploying an Ext plugin is similar to deploying any other @product@ project. For
 example, you'll step through deploying an Ext plugin in Liferay Workspace.
 
@@ -15,8 +17,10 @@ example, you'll step through deploying an Ext plugin in Liferay Workspace.
     being deployed. Your console window running @product@ shows a message like
     this:
 
-        Extension environment for sample-ext has been applied. You must
-        reboot the server and redeploy all other plugins.
+    ```bash
+    Extension environment for sample-ext has been applied. You must
+    reboot the server and redeploy all other plugins.
+    ```
 
 2.  Restart the server so that it detects and publishes your Ext plugin. Your
     server must be restarted after the initial deployment and every

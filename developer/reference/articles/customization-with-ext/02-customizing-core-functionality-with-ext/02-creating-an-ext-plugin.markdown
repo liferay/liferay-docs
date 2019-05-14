@@ -4,6 +4,8 @@ header-id: creating-an-ext-plugin
 
 # Creating an Ext Plugin
 
+[TOC levels=1-4]
+
 An Ext plugin is a powerful tool for extending @product@. Because it increases		
 the complexity of your @product@ installation, you should only use an Ext plugin		
 if you're sure you can't accomplish your goal in a different way. You can		

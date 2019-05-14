@@ -4,6 +4,8 @@ header-id: developing-an-ext-module
 
 # Developing an Ext Module
 
+[TOC levels=1-4]
+
 You can create your own Ext module project by
 
 - Declaring the original module name and version.
@@ -14,20 +16,26 @@ supports Gradle), you must specify the original module's Bundle Symbolic Name
 and the original module's exact version. For example, overriding the
 `com.liferay.login.web` module would be configured like this:
 
-    originalModule group: "com.liferay", name: "com.liferay.login.web", version: "3.0.4"
+```gradle
+originalModule group: "com.liferay", name: "com.liferay.login.web", version: "3.0.4"
+```
 
 If you're leveraging
 [Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace),
 you should put your Ext module project in the `/ext` folder (default); you can
 specify a different Ext folder name in workspace's `gradle.properties` by adding
 
-    liferay.workspace.ext.dir=EXT_DIR
+```properties
+liferay.workspace.ext.dir=EXT_DIR
+```
 
 If you are developing an Ext module project in standalone mode (not associated
 with Liferay Workspace), you must declare the Ext Gradle plugin in your
 `build.gradle`:
 
-    apply plugin: 'com.liferay.osgi.ext.plugin'
+```gradle
+apply plugin: 'com.liferay.osgi.ext.plugin'
+```
 
 Then you must provide your own code intended to replace the original one. **Be
 sure to mimic the original module's folder structure when overriding its JAR.**

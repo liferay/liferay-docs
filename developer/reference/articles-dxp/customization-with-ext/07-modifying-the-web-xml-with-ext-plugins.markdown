@@ -4,6 +4,8 @@ header-id: modifying-the-web-xml-with-ext-plugins
 
 # Modifying the web.xml with Ext Plugins
 
+[TOC levels=1-4]
+
 A supported use case for using Ext Plugins in @product@ is modifying its
 `web.xml` file. Before beginning, make sure you've reviewed the generalized
 [Customization with Ext Plugins](/docs/7-2/reference/-/knowledge_base/r/customizing-core-functionality-with-ext)

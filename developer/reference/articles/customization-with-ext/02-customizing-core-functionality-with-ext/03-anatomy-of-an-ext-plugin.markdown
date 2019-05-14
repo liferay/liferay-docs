@@ -4,6 +4,8 @@ header-id: anatomy-of-an-ext-plugin
 
 # Anatomy of an Ext Plugin
 
+[TOC levels=1-4]
+
 There are two ways you can structure your Ext plugin. The
 [`war-core-ext`](/docs/7-2/reference/-/knowledge_base/r/war-core-ext-template)
 project template/archetype creates the default layout:

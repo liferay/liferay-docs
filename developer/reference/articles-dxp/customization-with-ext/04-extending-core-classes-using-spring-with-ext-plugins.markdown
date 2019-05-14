@@ -4,6 +4,8 @@ header-id: extending-core-classes-using-spring-with-ext-plugins
 
 # Extending Core Classes Using Spring with Ext Plugins
 
+[TOC levels=1-4]
+
 A supported use case for using Ext plugins in @product@ is extending its core
 classes (e.g., `portal-impl`, `portal-kernel`, etc.) using Spring. You can
 reference the

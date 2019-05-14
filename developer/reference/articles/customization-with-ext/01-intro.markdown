@@ -4,6 +4,8 @@ header-id: customization-with-ext
 
 # Customization with Ext
 
+[TOC levels=1-4]
+
 **Customization with Ext projects is deprecated and should only be used if
 absolutely necessary.**
 
@@ -20,9 +22,9 @@ module projects. They, however, increase the complexity of your @product@
 instance because they are a fork of the default project. Ext projects are not
 recommended unless there is absolutely no other way to accomplish your task.
 
-@product-ver@ provides many extension points that let you
-customize almost every detail of @product@. If there's a way to customize what
-you want with an extension point, do it that way instead. See the
+@product-ver@ provides many extension points that let you customize almost every
+detail of @product@. If there's a way to customize what you want with an
+extension point, do it that way instead. See the
 [More Extensible, Easier to Maintain](/docs/7-1/tutorials/-/knowledge_base/t/benefits-of-liferay-7-for-liferay-6-developers#more-extensible-easier-to-maintain)
 section for more details on the advantages of using @product@'s extension
 points.
@@ -90,12 +92,12 @@ project. That benefits all users of the product including you, since you won't
 have to maintain the changes with each newly released version of @product@. You
 can notify Liferay of bugs or improvements at
 [issues.liferay.com](http://issues.liferay.com). Check out Liferay's
-[Participation](/participate/contribute-a-feature) information to learn all the
+[Participation](/participate/feedback/overview) information to learn all the
 ways that you can contribute to Liferay projects. 
 
 In summary, an Ext project is a powerful way to extend @product@. There are no
-limits to what you can customize, so use it carefully. Before using
-an Ext project, see if you can implement all or part of the desired functionality
+limits to what you can customize, so use it carefully. Before using an Ext
+project, see if you can implement all or part of the desired functionality
 through
 [Application Display Templates](/docs/7-2/frameworks/-/knowledge_base/f/styling-apps-and-assets)
 or extension points, without introducing the complexity that's inherent with Ext
