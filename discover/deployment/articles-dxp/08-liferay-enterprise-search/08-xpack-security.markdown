@@ -1,7 +1,7 @@
 # Securing Elasticsearch 6 with X-Pack [](id=securing-elasticsearch-6-with-x-pack)
 
 X-Pack is an 
-[Elastic extension](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/setup-xpack.html)
+[Elastic extension](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/setup-xpack.html)
 for securing and monitoring Elasticsearch clusters. If you use Elasticsearch,
 you should secure it with X-Pack. The security features of X-Pack include
 authenticating access to the Elasticsearch cluster's data and encrypting
@@ -16,9 +16,9 @@ Here's an overview of using X-Pack to secure the data indexed in Elasticsearch:
 
 1.  Get an Enterprise Search subscription.
 
-2.  [Install X-Pack into Elasticsearch](https://www.elastic.co/guide/en/x-pack/6.1/installing-xpack.html) 
+2.  [Install X-Pack into Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/installing-xpack-es.html) 
     and configure it to require authentication and 
-    [encryption](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/configuring-tls.html#configuring-tls).
+    [encryption](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/configuring-tls.html#configuring-tls).
 
 3.  Download and install the 
 [Liferay Connector to X-Pack Security](https://web.liferay.com/group/customer/dxp/downloads/enterprise-search) 
@@ -33,12 +33,12 @@ Following these instructions gives you a basic working installation of
 Elasticsearch communicating freely with @product@, but read Elastic's
 documentation to learn about additional configuration options, features, and the
 architecture of
-[X-Pack](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/configuring-security.html). 
+[X-Pack](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/configuring-security.html). 
 
 ## Installing X-Pack [](id=installing-x-pack)
 
 1.  To 
-    [install X-Pack](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/installing-xpack-es.html)
+    [install X-Pack](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/installing-xpack-es.html)
     and automatically grant it the required permissions (recommended), run
 
         bin/elasticsearch-plugin install x-pack --batch
@@ -76,7 +76,7 @@ architecture of
         -> Installed x-pack
 
     See more about the permissions X-Pack needs
-    [here](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/installing-xpack-es.html). 
+    [here](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/installing-xpack-es.html). 
 
 2.  Make sure Elasticsearch allows the automatic creation of indexes. If
     you're unsure, check `elasticsearch.yml` for this property:
@@ -85,7 +85,7 @@ architecture of
 
     This property is `true` by default, so if you don't see it in
     `elasticsearch.yml`, there's nothing to worry about. See [Elastic's
-    documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/docs-index_.html#index-creation) for more information on automatic index creation.
+    documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/docs-index_.html#index-creation) for more information on automatic index creation.
 
 3.  Restart Elasticsearch.
 
@@ -97,11 +97,11 @@ In a system using X-Pack Security and X-Pack Monitoring, two of the built-in
 X-Pack users are important: `kibana` and `elastic`.
 
 Set the passwords for all X-Pack's 
-[built-in users](https://www.elastic.co/guide/en/x-pack/6.1/setting-up-authentication.html#built-in-users).
+[built-in users](https://www.elastic.co/guide/en/x-pack/current/setting-up-authentication.html#built-in-users).
 The `setup-passwords` command is the simplest method to set the built-in users'
 first-use passwords for the first time. To update a password subsequently, use
 Kibana's UI or the 
-[Change Password API](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/security-api-change-password.html).
+[Change Password API](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/security-api-change-password.html).
 
 The `interactive` argument lets you set the passwords for all built-in users.
 The configuraiton shown in these articles assumes you set all of the
@@ -110,7 +110,7 @@ passwords to *liferay*. Of course, that's not recommended for production systems
     ./bin/x-pack/setup-passwords interactive
 
 See Elastic's documentation on the 
-[setup-passwords command](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/setup-passwords.html) 
+[setup-passwords command](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/setup-passwords.html) 
 for additional options.
 
 Since you're securing Elasticsearch, make sure you keep track of the password
@@ -133,12 +133,12 @@ $$$
 
 ### Generate Node Certificates [](id=generate-node-certificates)
 
-[Generate a node certificate](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/configuring-tls.html#node-certificates)
+[Generate a node certificate](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/configuring-tls.html#node-certificates)
 for each node. You can, of course, use a Certificate Authority toobtain node 
 certificates.
 
 1.  Create a certificate authority, using 
-      [X-Pack's `certutil`](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/certutil.html)
+      [X-Pack's `certutil`](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/certutil.html)
       command:
 
         ./bin/x-pack/certutil ca --pem --ca-dn CN=localhost
@@ -164,7 +164,7 @@ $$$
 
 ### Enable TLS [](id=enable-tls)
 
-[Enable TLS](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/configuring-tls.html#enable-ssl) 
+[Enable TLS](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/configuring-tls.html#enable-ssl) 
 on each node via its `elasticsearch.yml`.
 
 1.  Add the certificate, key and certificate authority paths to each node's

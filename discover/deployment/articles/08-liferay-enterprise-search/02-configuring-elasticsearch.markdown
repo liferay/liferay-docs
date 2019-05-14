@@ -149,9 +149,9 @@ configure the adapter, make sure Elasticsearch is running.
 
 +$$$
 
-**Elasticsearch 6.5:** The Elasticsearch Connector for Elasticsearch 6.5 is called
-*Liferay Connector to Elasticsearch 6*. Download the Elasticcsearch 6.5 connector
-from Liferay Marketplace and install it, following the [Marketplace
+**Elasticsearch 6.5:** The connector for Elasticsearch 6.5 is called *Liferay
+Connector to Elasticsearch 6*. Download the Elasticcsearch 6.5 connector from
+Liferay Marketplace and install it, following the [Marketplace
 documentation](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace)
 if necessary.
 
