@@ -4,9 +4,9 @@ header-id: application-security
 
 # Application Security
 
-Liferay's development framework provides an application security platform that's
-got years of experience behind it. You don't need to roll your own security for
-your applications. Instead, you can specify security for your applications using
+Liferay's development framework provides an application security platform with
+years of experience behind it. You don't need to roll your own security for your
+applications. Instead, you can specify security for your applications using
 Liferay's framework. 
 
 Beyond security for applications, there are many ways to extend the default
@@ -18,3 +18,5 @@ tutorials teaches you about them:
 - Authentication Pipelines 
 - Service Access Policies 
 - Authentication Verifiers 
+
+Read on to learn about implementing Liferay's security framework! 
