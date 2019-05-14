@@ -18,22 +18,24 @@ permissions interface to the UI. Add these two Liferay UI tags to your JSP:
 
 The Blogs application uses these tags like this: 
 
-        <liferay-security:permissionsURL
-                    modelResource="<%= BlogsEntry.class.getName() %>"
-                    modelResourceDescription="<%= BlogsEntryUtil.getDisplayTitle(resourceBundle, entry) %>"
-                    resourceGroupId="<%= String.valueOf(entry.getGroupId()) %>"
-                    resourcePrimKey="<%= String.valueOf(entry.getEntryId()) %>"
-                    var="permissionsEntryURL"
-                    windowState="<%= LiferayWindowState.POP_UP.toString() %>"
-                />
+```jsp
+<liferay-security:permissionsURL
+            modelResource="<%= BlogsEntry.class.getName() %>"
+            modelResourceDescription="<%= BlogsEntryUtil.getDisplayTitle(resourceBundle, entry) %>"
+            resourceGroupId="<%= String.valueOf(entry.getGroupId()) %>"
+            resourcePrimKey="<%= String.valueOf(entry.getEntryId()) %>"
+            var="permissionsEntryURL"
+            windowState="<%= LiferayWindowState.POP_UP.toString() %>"
+        />
 
-                <liferay-ui:icon
-                    label="<%= true %>"
-                    message="permissions"
-                    method="get"
-                    url="<%= permissionsEntryURL %>"
-                    useDialog="<%= true %>"
-                />
+<liferay-ui:icon
+    label="<%= true %>"
+    message="permissions"
+    method="get"
+    url="<%= permissionsEntryURL %>"
+    useDialog="<%= true %>"
+/>
+```
 
 For the `<liferay-security:permissionsURL />` tag, specify these attributes: 
 
