@@ -4,7 +4,7 @@ An Ext module is a powerful tool for extending @product@'s OSGi modules. For
 example, if you want to overwrite a default module's JSP to display a different
 view, you can create an Ext module to customize the original module's JSP (for
 example, see the
-[Login Web Ext sample](/develop/reference/-/knowledge_base/7-1/login-web-ext)).
+[Login Web Ext sample](/docs/7-2/reference/-/knowledge_base/r/login-web-ext)).
 Because this increases the complexity of your @product@ installation, you should
 only use an Ext module if you're sure you can't accomplish your goal in a
 different way (e.g., leveraging an extension point).
@@ -16,9 +16,9 @@ The following app servers should be used for Ext module development in
 
 In this section, you'll learn how to
 
-- [Create an Ext module](/develop/reference/-/knowledge_base/7-1/creating-an-ext-module)
-- [Develop an Ext module](/develop/reference/-/knowledge_base/7-1/developing-an-ext-module)
-- [Deploy an Ext module](/develop/reference/-/knowledge_base/7-1/deploying-an-ext-module)
+- [Create an Ext module](/docs/7-2/reference/-/knowledge_base/r/creating-an-ext-module)
+- [Develop an Ext module](/docs/7-2/reference/-/knowledge_base/r/developing-an-ext-module)
+- [Deploy an Ext module](/docs/7-2/reference/-/knowledge_base/r/deploying-an-ext-module)
 
 You'll start by creating an Ext module.
 
@@ -26,12 +26,12 @@ You'll start by creating an Ext module.
 
 You can create an Ext module based off the pre-configured `modules-ext` project
 template/archetype. See the
-[modules-ext](/develop/reference/-/knowledge_base/7-1/modules-ext-template)
+[modules-ext](/docs/7-2/reference/-/knowledge_base/r/modules-ext-template)
 project template article for information on how to create an Ext module, its
 folder structure, and other important details.
 
 It's recommended to create and develop your Ext module in a
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace).
+[Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace).
 Workspace is preconfigured with an `ext` folder, which applies important
 settings (via the `LiferayOSGiExtPlugin`) to your Ext module when it's deployed
 to @product@. You'll learn more about this in the next section.
@@ -55,7 +55,7 @@ and the original module's exact version. For example, overriding the
     originalModule group: "com.liferay", name: "com.liferay.login.web", version: "3.0.4"
 
 If you're leveraging
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace),
+[Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace),
 you should put your Ext module project in the `/ext` folder (default); you can
 specify a different Ext folder name in workspace's `gradle.properties` by adding
 
@@ -105,7 +105,7 @@ $$$
 Follow the instructions below to deploy your Ext module to a @product@ instance:
 
 1.  Connect to your portal instance using
-    [Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell).
+    [Gogo Shell](/docs/7-2/customization/-/knowledge_base/c/using-the-felix-gogo-shell).
 
 2.  Search for the bundle ID of the original bundle to override. To find the
     `com.liferay.login.web` bundle, execute this command:

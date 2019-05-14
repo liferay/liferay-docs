@@ -16,18 +16,18 @@ plugin use cases:
 
 - Providing custom implementations for any beans declared in @product@'s
   Spring files (when possible, use
-  [service wrappers](/develop/tutorials/-/knowledge_base/7-1/customizing-liferay-services-service-wrappers)
+  [service wrappers](/docs/7-2/customization/-/knowledge_base/c/customizing-liferay-services-service-wrappers)
   instead of an Ext plugin). @product-ver@ removed many beans, so make sure your
   overridden beans are still relevant if converting your legacy Ext plugin
-  ([how to](/develop/reference/-/knowledge_base/7-1/extending-core-classes-using-spring-with-ext-plugins)).
+  ([how to](/docs/7-2/reference/-/knowledge_base/r/extending-core-classes-using-spring-with-ext-plugins)).
 - Overwriting a class in a @product-ver@ core JAR. For a list of core JARs, see
-  the [Finding Core @product@ Artifacts](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies#finding-core-liferay-portal-artifacts)
+  the [Finding Core @product@ Artifacts](/docs/7-2/customization/-/knowledge_base/c/configuring-dependencies#finding-core-liferay-portal-artifacts)
   section
-  ([how to](/develop/reference/-/knowledge_base/7-1/overriding-core-classes-with-ext-plugins)).
+  ([how to](/docs/7-2/reference/-/knowledge_base/r/overriding-core-classes-with-ext-plugins)).
 - Modifying @product@'s `web.xml` file
-  ([how to](/develop/reference/-/knowledge_base/7-1/modifying-the-web-xml-with-ext-plugins)).
+  ([how to](/docs/7-2/reference/-/knowledge_base/r/modifying-the-web-xml-with-ext-plugins)).
 - Adding to @product@'s `web.xml` file
-  ([how to](/develop/reference/-/knowledge_base/7-1/adding-to-the-web-xml-with-ext-plugins)).
+  ([how to](/docs/7-2/reference/-/knowledge_base/r/adding-to-the-web-xml-with-ext-plugins)).
 
 **Note:** In previous versions of Liferay Portal, you needed an Ext plugin to
 specify classes as portal property values (e.g.,
@@ -40,16 +40,16 @@ $$$
 
 Ext plugins are used to customize @product@'s core functionality. You can learn
 more about what the core encompasses in the
-[Finding Core @product@ Artifacts](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies#finding-core-liferay-portal-artifacts)
+[Finding Core @product@ Artifacts](/docs/7-2/customization/-/knowledge_base/c/configuring-dependencies#finding-core-liferay-portal-artifacts)
 article section. In this section, you'll learn how to
 
-- [Create an Ext plugin](/develop/reference/-/knowledge_base/7-1/creating-an-ext-plugin)
-- [Develop an Ext plugin](/develop/reference/-/knowledge_base/7-1/developing-an-ext-plugin)
-- [Deploy an Ext plugin](/develop/reference/-/knowledge_base/7-1/deploying-an-ext-plugin)
-- [Redeploy an Ext plugin](/develop/reference/-/knowledge_base/7-1/redeploying-an-ext-plugin)
+- [Create an Ext plugin](/docs/7-2/reference/-/knowledge_base/r/creating-an-ext-plugin)
+- [Develop an Ext plugin](/docs/7-2/reference/-/knowledge_base/r/developing-an-ext-plugin)
+- [Deploy an Ext plugin](/docs/7-2/reference/-/knowledge_base/r/deploying-an-ext-plugin)
+- [Redeploy an Ext plugin](/docs/7-2/reference/-/knowledge_base/r/redeploying-an-ext-plugin)
 
 You can also dive into the
-[Anatomy of an Ext Plugin](/develop/reference/-/knowledge_base/7-1/anatomy-of-an-ext-plugin)
+[Anatomy of an Ext Plugin](/docs/7-2/reference/-/knowledge_base/r/anatomy-of-an-ext-plugin)
 to familiarize yourself with its structure.
 
 You'll start by creating an Ext plugin.

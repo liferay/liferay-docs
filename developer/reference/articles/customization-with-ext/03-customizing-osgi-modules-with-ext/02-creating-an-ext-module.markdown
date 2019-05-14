@@ -2,12 +2,12 @@
 
 You can create an Ext module based off the pre-configured `modules-ext` project
 template/archetype. See the
-[`modules-ext`](/develop/reference/-/knowledge_base/7-1/modules-ext-template)
+[`modules-ext`](/docs/7-2/reference/-/knowledge_base/r/modules-ext-template)
 project template article for information on how to create an Ext module, its
 folder structure, and other important details.
 
 It's recommended to create and develop your Ext module in a
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace).
+[Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace).
 Workspace is preconfigured with an `ext` folder, which applies important
 settings (via the `LiferayOSGiExtPlugin`) to your Ext module when it's deployed
 to @product@. You'll learn more about this in the next section.

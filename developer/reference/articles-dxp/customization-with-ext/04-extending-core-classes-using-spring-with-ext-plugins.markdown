@@ -3,10 +3,10 @@
 A supported use case for using Ext plugins in @product@ is extending its core
 classes (e.g., `portal-impl`, `portal-kernel`, etc.) using Spring. You can
 reference the
-[Finding Core Liferay Portal Artifacts](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies#finding-core-liferay-portal-artifacts)
+[Finding Core Liferay Portal Artifacts](/docs/7-2/customization/-/knowledge_base/c/configuring-dependencies#finding-core-liferay-portal-artifacts)
 section for help distinguishing core classes. Make sure you've reviewed the
 generalized
-[Customization with Ext Plugins](/develop/reference/-/knowledge_base/7-1/customizing-core-functionality-with-ext)
+[Customization with Ext Plugins](/docs/7-2/reference/-/knowledge_base/r/customizing-core-functionality-with-ext)
 section before creating an Ext plugin.
 
 As an example, you'll create a sample Ext plugin that extends the
@@ -81,5 +81,5 @@ will extend the core `PortalImpl` class.
 
 Awesome! You've created an Ext plugin that extends a core class in @product@!
 Follow the instructions in the
-[Deploy the Plugin](/develop/reference/-/knowledge_base/7-1/deploying-an-ext-plugin)
+[Deploy the Plugin](/docs/7-2/reference/-/knowledge_base/r/deploying-an-ext-plugin)
 article to deploy it to your server.

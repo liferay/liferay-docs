@@ -14,7 +14,7 @@ $$$
 Follow the instructions below to deploy your Ext module to a @product@ instance:
 
 1.  Connect to your portal instance using
-    [Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell).
+    [Gogo Shell](/docs/7-2/customization/-/knowledge_base/c/using-the-felix-gogo-shell).
 
 2.  Search for the bundle ID of the original bundle to override. To find the
     `com.liferay.login.web` bundle, execute this command:
