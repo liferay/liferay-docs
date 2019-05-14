@@ -13,8 +13,8 @@ addition to checking credentials against the database, you can write an
 Because the `Authenticator` is checked by the Login Portlet, you can't use this
 approach if the user must be redirected to the external system or needs a token
 to authenticate. In those cases, you should use an 
-[Auto Login](/develop/tutorials/-/knowledge_base/7-0/auto-login) or an 
-[Auth Verifier](/discover/deployment/-/knowledge_base/7-0/authentication-verifiers). 
+[Auto Login](/docs/7-2/frameworks/-/knowledge_base/f/auto-login) or an 
+[Auth Verifier](/docs/7-2/deploy/-/knowledge_base/d/authentication-verifiers). 
 
 `Authenticator`s let you do these things: 
 
@@ -45,36 +45,38 @@ pipeline. Here are the steps:
 To create an `Authenticator`, create a module and add a component that 
 implements the interface: 
 
-    @Component(
-        immediate = true, property = {"key=auth.pipeline.post"},
-        service = Authenticator.class
-    )
-    public class MyCustomAuth implements Authenticator {
+```java
+@Component(
+    immediate = true, property = {"key=auth.pipeline.post"},
+    service = Authenticator.class
+)
+public class MyCustomAuth implements Authenticator {
 
-        public int authenticateByEmailAddress(
-                long companyId, String emailAddress, String password,
-                Map<String, String[]> headerMap, Map<String, String[]> parameterMap)
-            throws AuthException {
+    public int authenticateByEmailAddress(
+            long companyId, String emailAddress, String password,
+            Map<String, String[]> headerMap, Map<String, String[]> parameterMap)
+        throws AuthException {
 
-    return Authenticator.SUCCESS;
+return Authenticator.SUCCESS;
+}
+
+    public int authenticateByScreenName(
+            long companyId, String screenName, String password,
+            Map<String, String[]> headerMap, Map<String, String[]> parameterMap)
+        throws AuthException {
+
+return Authenticator.SUCCESS;
     }
 
-        public int authenticateByScreenName(
-                long companyId, String screenName, String password,
-                Map<String, String[]> headerMap, Map<String, String[]> parameterMap)
-            throws AuthException {
+    public int authenticateByUserId(
+            long companyId, long userId, String password,
+            Map<String, String[]> headerMap, Map<String, String[]> parameterMap)
+        throws AuthException {
 
-    return Authenticator.SUCCESS;
-        }
-
-        public int authenticateByUserId(
-                long companyId, long userId, String password,
-                Map<String, String[]> headerMap, Map<String, String[]> parameterMap)
-            throws AuthException {
-
-    return Authenticator.SUCCESS;
-        }
+return Authenticator.SUCCESS;
     }
+}
+```
 
 This example has been stripped down so you can see its structure. First, note 
 the `@Component` annotation's contents: 
@@ -106,7 +108,7 @@ example shows the two module approach.
 
 To create an `Authenticator`, create a module for your implementation. The most 
 appropriate Blade template for this is the 
-[service template](/develop/reference/-/knowledge_base/7-0/using-the-service-template). 
+[service template](/docs/7-2/reference/-/knowledge_base/r/using-the-service-template). 
 Once you have the module, creating the `Activator` is straightforward: 
 
 1.  Add the `@Component` annotation to bind your `Activator` to the appropriate
@@ -116,7 +118,7 @@ Once you have the module, creating the `Activator` is straightforward:
     need. 
 
 3.  Deploy your module. If you're using 
-    [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli), do this via 
+    [Blade CLI](/docs/7-2/reference/-/knowledge_base/r/blade-cli), do this via 
     `blade deploy`. 
 
 For this example, you'll do this twice: once for the email address validator
@@ -128,86 +130,88 @@ implementation. Here's what the `Authenticator` module structure looks like:
 
 Since the `Authenticator` is the most relevant, examine it first: 
 
-    package com.liferay.docs.emailaddressauthenticator;
+```java
+package com.liferay.docs.emailaddressauthenticator;
 
-    import java.util.Map;
+import java.util.Map;
 
-    import com.liferay.docs.emailaddressauthenticator.validator.EmailAddressValidator;
-    import com.liferay.portal.kernel.log.Log;
-    import com.liferay.portal.kernel.log.LogFactoryUtil;
-    import com.liferay.portal.kernel.security.auth.AuthException;
-    import com.liferay.portal.kernel.security.auth.Authenticator;
-    import com.liferay.portal.kernel.service.UserLocalService;
+import com.liferay.docs.emailaddressauthenticator.validator.EmailAddressValidator;
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
+import com.liferay.portal.kernel.security.auth.AuthException;
+import com.liferay.portal.kernel.security.auth.Authenticator;
+import com.liferay.portal.kernel.service.UserLocalService;
 
-    import org.osgi.service.component.annotations.Component;
-    import org.osgi.service.component.annotations.Reference;
-    import org.osgi.service.component.annotations.ReferenceCardinality;
-    import org.osgi.service.component.annotations.ReferencePolicy;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
+import org.osgi.service.component.annotations.ReferenceCardinality;
+import org.osgi.service.component.annotations.ReferencePolicy;
 
-    @Component(
-        immediate = true,
-        property = {"key=auth.pipeline.post"},
-        service = Authenticator.class
-    )
-    public class EmailAddressAuthenticator implements Authenticator {
+@Component(
+    immediate = true,
+    property = {"key=auth.pipeline.post"},
+    service = Authenticator.class
+)
+public class EmailAddressAuthenticator implements Authenticator {
 
-        @Override
-        public int authenticateByEmailAddress(long companyId, String emailAddress,
-                String password, Map<String, String[]> headerMap,
-                Map<String, String[]> parameterMap) throws AuthException {
-            
-            return validateDomain(emailAddress);
-        }
-
-        @Override
-        public int authenticateByScreenName(long companyId, String screenName,
-                String password, Map<String, String[]> headerMap,
-                Map<String, String[]> parameterMap) throws AuthException {
-            
-            String emailAddress = 
-                _userLocalService.fetchUserByScreenName(companyId, screenName).getEmailAddress();
-            
-            return validateDomain(emailAddress);
-        }
-
-        @Override
-        public int authenticateByUserId(long companyId, long userId,
-                String password, Map<String, String[]> headerMap,
-                Map<String, String[]> parameterMap) throws AuthException {
-            
-            String emailAddress = 
-                _userLocalService.fetchUserById(userId).getEmailAddress();
-            
-            return validateDomain(emailAddress);
-        }
+    @Override
+    public int authenticateByEmailAddress(long companyId, String emailAddress,
+            String password, Map<String, String[]> headerMap,
+            Map<String, String[]> parameterMap) throws AuthException {
         
-        private int validateDomain(String emailAddress) throws AuthException {
-            
-            if (_emailValidator == null) {
-                
-                String msg = "Email address validator is unavailable, cannot authenticate user";			
-                _log.error(msg);
-                
-                throw new AuthException(msg);
-            }
-            
-            if (_emailValidator.isValidEmailAddress(emailAddress)) {		
-                return Authenticator.SUCCESS;
-            }
-            return Authenticator.FAILURE;
-        }
-        
-        @Reference
-        private volatile UserLocalService _userLocalService;
-        
-        @Reference(
-            policy = ReferencePolicy.DYNAMIC,
-            cardinality = ReferenceCardinality.OPTIONAL
-        )
-        private volatile EmailAddressValidator _emailValidator;
-        
-        private static final Log _log = LogFactoryUtil.getLog(EmailAddressAuthenticator.class);
+        return validateDomain(emailAddress);
     }
+
+    @Override
+    public int authenticateByScreenName(long companyId, String screenName,
+            String password, Map<String, String[]> headerMap,
+            Map<String, String[]> parameterMap) throws AuthException {
+        
+        String emailAddress = 
+            _userLocalService.fetchUserByScreenName(companyId, screenName).getEmailAddress();
+        
+        return validateDomain(emailAddress);
+    }
+
+    @Override
+    public int authenticateByUserId(long companyId, long userId,
+            String password, Map<String, String[]> headerMap,
+            Map<String, String[]> parameterMap) throws AuthException {
+        
+        String emailAddress = 
+            _userLocalService.fetchUserById(userId).getEmailAddress();
+        
+        return validateDomain(emailAddress);
+    }
+    
+    private int validateDomain(String emailAddress) throws AuthException {
+        
+        if (_emailValidator == null) {
+            
+            String msg = "Email address validator is unavailable, cannot authenticate user";			
+            _log.error(msg);
+            
+            throw new AuthException(msg);
+        }
+        
+        if (_emailValidator.isValidEmailAddress(emailAddress)) {		
+            return Authenticator.SUCCESS;
+        }
+        return Authenticator.FAILURE;
+    }
+    
+    @Reference
+    private volatile UserLocalService _userLocalService;
+    
+    @Reference(
+        policy = ReferencePolicy.DYNAMIC,
+        cardinality = ReferenceCardinality.OPTIONAL
+    )
+    private volatile EmailAddressValidator _emailValidator;
+    
+    private static final Log _log = LogFactoryUtil.getLog(EmailAddressAuthenticator.class);
+}
+```
 
 This time, rather than stubs, the three authentication methods contain 
 functionality. The `authenticateByEmailAddress` method directly checks the email 
@@ -229,15 +233,17 @@ and preventing users from logging in.
 
 The only other Java code in this module is the Interface for the validator: 
 
-    package com.liferay.docs.emailaddressauthenticator.validator;
+```java
+package com.liferay.docs.emailaddressauthenticator.validator;
 
-    import aQute.bnd.annotation.ProviderType;
+import aQute.bnd.annotation.ProviderType;
 
-    @ProviderType
-    public interface EmailAddressValidator {
+@ProviderType
+public interface EmailAddressValidator {
 
-        public boolean isValidEmailAddress(String emailAddress);
-    }
+    public boolean isValidEmailAddress(String emailAddress);
+}
+```
 
 This defines a single method for checking the email address. 
 
@@ -247,36 +253,38 @@ Next, you'll address the validator module.
 
 This module contains only one class. It implements the Validator interface: 
 
-    package com.liferay.docs.emailaddressvalidator.impl;
+```java
+package com.liferay.docs.emailaddressvalidator.impl;
 
-    import java.util.Arrays;
-    import java.util.HashSet;
-    import java.util.Set;
-    import org.osgi.service.component.annotations.Component;
-    import com.liferay.docs.emailaddressauthenticator.validator.EmailAddressValidator;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+import org.osgi.service.component.annotations.Component;
+import com.liferay.docs.emailaddressauthenticator.validator.EmailAddressValidator;
 
-    @Component(
-        immediate = true,
-        property = {
-        },
-        service = EmailAddressValidator.class
-    )
-    public class EmailAddressValidatorImpl implements EmailAddressValidator {
+@Component(
+    immediate = true,
+    property = {
+    },
+    service = EmailAddressValidator.class
+)
+public class EmailAddressValidatorImpl implements EmailAddressValidator {
 
-        @Override
-        public boolean isValidEmailAddress(String emailAddress) {
+    @Override
+    public boolean isValidEmailAddress(String emailAddress) {
 
-            if (_validEmailDomains.contains(
-                emailAddress.substring(emailAddress.indexOf('@')))) {
+        if (_validEmailDomains.contains(
+            emailAddress.substring(emailAddress.indexOf('@')))) {
 
-                return true;
-            }
-            return false;
+            return true;
         }
-
-        private Set<String> _validEmailDomains = 
-            new HashSet<String>(Arrays.asList(new String[] {"@liferay.com", "@example.com"}));
+        return false;
     }
+
+    private Set<String> _validEmailDomains = 
+        new HashSet<String>(Arrays.asList(new String[] {"@liferay.com", "@example.com"}));
+}
+```
 
 This code checks to make sure that the email address is from the *@liferay.com* 
 or *@example.com* domains. The only other interesting part of this module is the 
@@ -287,33 +295,18 @@ two projects. This is divided into two files: a `settings.gradle` and a
 The `settings.gradle` file defines the location of the project (the 
 `Authenticator`) the validator depends on: 
 
-    include ':emailAddressAuthenticator'
-    project(':emailAddressAuthenticator').projectDir = new File(settingsDir, '../com.liferay.docs.emailAddressAuthenticator')
+```groovy
+include ':emailAddressAuthenticator'
+project(':emailAddressAuthenticator').projectDir = new File(settingsDir, '../com.liferay.docs.emailAddressAuthenticator')
+```
 
 Since this project contains the interface, it must be on the classpath at 
 compile time, which is when `build.gradle` is running: 
 
-    buildscript {
-        dependencies {
-            classpath group: "com.liferay", name: "com.liferay.gradle.plugins", version: "3.0.23"
-        }
-
-        repositories {
-            mavenLocal()
-
-            maven {
-                url "https://repository-cdn.liferay.com/nexus/content/groups/public"
-            }
-        }
-    }
-
-    apply plugin: "com.liferay.plugin"
-
+```groovy
+buildscript {
     dependencies {
-        compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.0.0"
-        compileOnly group: "org.osgi", name: "org.osgi.compendium", version: "5.0.0"
-
-        compileOnly project(":emailAddressAuthenticator")
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins", version: "3.0.23"
     }
 
     repositories {
@@ -323,6 +316,25 @@ compile time, which is when `build.gradle` is running:
             url "https://repository-cdn.liferay.com/nexus/content/groups/public"
         }
     }
+}
+
+apply plugin: "com.liferay.plugin"
+
+dependencies {
+    compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.0.0"
+    compileOnly group: "org.osgi", name: "org.osgi.compendium", version: "5.0.0"
+
+    compileOnly project(":emailAddressAuthenticator")
+}
+
+repositories {
+    mavenLocal()
+
+    maven {
+        url "https://repository-cdn.liferay.com/nexus/content/groups/public"
+    }
+}
+```
 
 Note the line in the dependencies section that refers to the `Authenticator` 
 project defined in `settings.gradle`. 
@@ -330,12 +342,9 @@ project defined in `settings.gradle`.
 When these projects are deployed, the `Authenticator` you defined runs, 
 enforcing logins for the two domains specified in the validator. 
 
-If you want to examine these projects further, you can download them 
-[in this ZIP file](https://dev.liferay.com/documents/10184/656312/auth-pipelines-authenticator.zip). 
-
 ## Related Topics
 
-[Auto Login](/develop/tutorials/-/knowledge_base/7-0/auto-login)
+[Auto Login](/docs/7-2/frameworks/-/knowledge_base/f/auto-login)
 
-[Writing a Custom Login Portlet](/develop/tutorials/-/knowledge_base/7-0/writing-a-custom-login-portlet)
+[Writing a Custom Login Portlet](/docs/7-2/frameworks/-/knowledge_base/f/writing-a-custom-login-portlet)
 
