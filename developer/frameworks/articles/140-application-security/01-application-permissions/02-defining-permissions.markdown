@@ -40,66 +40,72 @@ application.
 
 1.  Start with the DTD declaration: 
 
-        <?xml version="1.0"?>
-        <!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action Mapping 7.1.0//EN" "http://www.liferay.com/dtd/liferay-resource-action-mapping_7_0_0.dtd">
+```xml
+<?xml version="1.0"?>
+<!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action Mapping 7.2.0//EN" "http://www.liferay.com/dtd/liferay-resource-action-mapping_7_0_0.dtd">
+```
 
 2.  The root tag contains all the resources to be declared: 
 
-        <resource-action-mapping>
+```xml
+<resource-action-mapping>
 
-        </resource-action-mapping> 
+</resource-action-mapping> 
+```
 
 3.  Inside these tags, define your resources. The Blogs application defines two
     portlet resources: 
 
-        <portlet-resource>
-            <portlet-name>com_liferay_blogs_web_portlet_BlogsAdminPortlet</portlet-name>
-            <permissions>
-                <supports>
-                    <action-key>ACCESS_IN_CONTROL_PANEL</action-key>
-                    <action-key>CONFIGURATION</action-key>
-                    <action-key>VIEW</action-key>
-                </supports>
-                <site-member-defaults>
-                    <action-key>VIEW</action-key>
-                </site-member-defaults>
-                <guest-defaults>
-                    <action-key>VIEW</action-key>
-                </guest-defaults>
-                <guest-unsupported>
-                    <action-key>ACCESS_IN_CONTROL_PANEL</action-key>
-                    <action-key>CONFIGURATION</action-key>
-                </guest-unsupported>
-            </permissions>
-        </portlet-resource>
-        <portlet-resource>
-            <portlet-name>com_liferay_blogs_web_portlet_BlogsPortlet</portlet-name>
-            <permissions>
-                <supports>
-                    <action-key>ADD_PORTLET_DISPLAY_TEMPLATE</action-key>
-                    <action-key>ADD_TO_PAGE</action-key>
-                    <action-key>CONFIGURATION</action-key>
-                    <action-key>VIEW</action-key>
-                </supports>
-                <site-member-defaults>
-                    <action-key>VIEW</action-key>
-                </site-member-defaults>
-                <guest-defaults>
-                    <action-key>VIEW</action-key>
-                </guest-defaults>
-                <guest-unsupported>
-                    <action-key>ADD_PORTLET_DISPLAY_TEMPLATE</action-key>
-                    <action-key>CONFIGURATION</action-key>
-                </guest-unsupported>
-            </permissions>
-        </portlet-resource>
+```xml
+<portlet-resource>
+    <portlet-name>com_liferay_blogs_web_portlet_BlogsAdminPortlet</portlet-name>
+    <permissions>
+        <supports>
+            <action-key>ACCESS_IN_CONTROL_PANEL</action-key>
+            <action-key>CONFIGURATION</action-key>
+            <action-key>VIEW</action-key>
+        </supports>
+        <site-member-defaults>
+            <action-key>VIEW</action-key>
+        </site-member-defaults>
+        <guest-defaults>
+            <action-key>VIEW</action-key>
+        </guest-defaults>
+        <guest-unsupported>
+            <action-key>ACCESS_IN_CONTROL_PANEL</action-key>
+            <action-key>CONFIGURATION</action-key>
+        </guest-unsupported>
+    </permissions>
+</portlet-resource>
+<portlet-resource>
+    <portlet-name>com_liferay_blogs_web_portlet_BlogsPortlet</portlet-name>
+    <permissions>
+        <supports>
+            <action-key>ADD_PORTLET_DISPLAY_TEMPLATE</action-key>
+            <action-key>ADD_TO_PAGE</action-key>
+            <action-key>CONFIGURATION</action-key>
+            <action-key>VIEW</action-key>
+        </supports>
+        <site-member-defaults>
+            <action-key>VIEW</action-key>
+        </site-member-defaults>
+        <guest-defaults>
+            <action-key>VIEW</action-key>
+        </guest-defaults>
+        <guest-unsupported>
+            <action-key>ADD_PORTLET_DISPLAY_TEMPLATE</action-key>
+            <action-key>CONFIGURATION</action-key>
+        </guest-unsupported>
+    </permissions>
+</portlet-resource>
+```
 
 The Blogs application comprises two portlets: the Blogs portlet itself and
 the Blogs Admin portlet that appears in the Site menu for administrators.
 Define your portlets by their names, and then list the permissions for the
 portlet. The Blogs portlet, for example, supports four permissions:
-ADD_PORTLET_DISPLAY_TEMPLATE, ADD_TO_PAGE, CONFIGURATION, and VIEW. The Blogs
-Admin portlet has an additional permission: ACCESS_IN_CONTROL_PANEL, which
+`ADD_PORTLET_DISPLAY_TEMPLATE`, `ADD_TO_PAGE`, `CONFIGURATION`, and `VIEW`. The Blogs
+Admin portlet has an additional permission: `ACCESS_IN_CONTROL_PANEL`, which
 defines who can see the entry in the Site menu. 
 
 Once you've defined permissions at the portlet level, you can set default
@@ -139,41 +145,45 @@ Now you're ready to define both your root model and model permissions.
 
 1.  First, create the skeleton for your file: 
 
-        <?xml version="1.0"?>
-        <!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action Mapping 7.1.0//EN" "http://www.liferay.com/dtd/liferay-resource-action-mapping_7_0_0.dtd">
+```xml
+<?xml version="1.0"?>
+<!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action Mapping 7.1.0//EN" "http://www.liferay.com/dtd/liferay-resource-action-mapping_7_0_0.dtd">
 
-        <resource-action-mapping>
+<resource-action-mapping>
 
-        </resource-action-mapping> 
+</resource-action-mapping> 
+```
 
 2.  Inside the `<resource-action-mapping>` tags, use a `<model-resource>` tag to
     define permissions for the root model:
 
-        <model-resource>
-            <model-name>com.liferay.blogs</model-name>
-            <portlet-ref>
-                <portlet-name>com_liferay_blogs_web_portlet_BlogsAdminPortlet</portlet-name>
-                <portlet-name>com_liferay_blogs_web_portlet_BlogsPortlet</portlet-name>
-            </portlet-ref>
-            <root>true</root>
-            <weight>1</weight>
-            <permissions>
-                <supports>
-                    <action-key>ADD_ENTRY</action-key>
-                    <action-key>PERMISSIONS</action-key>
-                    <action-key>SUBSCRIBE</action-key>
-                </supports>
-                <site-member-defaults>
-                    <action-key>SUBSCRIBE</action-key>
-                </site-member-defaults>
-                <guest-defaults />
-                <guest-unsupported>
-                    <action-key>ADD_ENTRY</action-key>
-                    <action-key>PERMISSIONS</action-key>
-                    <action-key>SUBSCRIBE</action-key>
-                </guest-unsupported>
-            </permissions>
-        </model-resource>
+```xml
+<model-resource>
+    <model-name>com.liferay.blogs</model-name>
+    <portlet-ref>
+        <portlet-name>com_liferay_blogs_web_portlet_BlogsAdminPortlet</portlet-name>
+        <portlet-name>com_liferay_blogs_web_portlet_BlogsPortlet</portlet-name>
+    </portlet-ref>
+    <root>true</root>
+    <weight>1</weight>
+    <permissions>
+        <supports>
+            <action-key>ADD_ENTRY</action-key>
+            <action-key>PERMISSIONS</action-key>
+            <action-key>SUBSCRIBE</action-key>
+        </supports>
+        <site-member-defaults>
+            <action-key>SUBSCRIBE</action-key>
+        </site-member-defaults>
+        <guest-defaults />
+        <guest-unsupported>
+            <action-key>ADD_ENTRY</action-key>
+            <action-key>PERMISSIONS</action-key>
+            <action-key>SUBSCRIBE</action-key>
+        </guest-unsupported>
+    </permissions>
+</model-resource>
+```
 
     The model name (`com.liferay.blogs`) is just a package name. The
     `<root>true</root>` tag defines this as a root model. The `<weight>` tag
@@ -185,43 +195,45 @@ Now you're ready to define both your root model and model permissions.
 
 3.  Finally, define your model permissions: 
 
-        <model-resource>
-            <model-name>com.liferay.blogs.model.BlogsEntry</model-name>
-            <portlet-ref>
-                <portlet-name>com_liferay_blogs_web_portlet_BlogsAdminPortlet</portlet-name>
-                <portlet-name>com_liferay_blogs_web_portlet_BlogsPortlet</portlet-name>
-            </portlet-ref>
-            <weight>2</weight>
-            <permissions>
-                <supports>
-                    <action-key>ADD_DISCUSSION</action-key>
-                    <action-key>DELETE</action-key>
-                    <action-key>DELETE_DISCUSSION</action-key>
-                    <action-key>PERMISSIONS</action-key>
-                    <action-key>UPDATE</action-key>
-                    <action-key>UPDATE_DISCUSSION</action-key>
-                    <action-key>VIEW</action-key>
-                </supports>
-                <site-member-defaults>
-                    <action-key>ADD_DISCUSSION</action-key>
-                    <action-key>VIEW</action-key>
-                </site-member-defaults>
-                <guest-defaults>
-                    <action-key>ADD_DISCUSSION</action-key>
-                    <action-key>VIEW</action-key>
-                </guest-defaults>
-                <guest-unsupported>
-                    <action-key>DELETE</action-key>
-                    <action-key>DELETE_DISCUSSION</action-key>
-                    <action-key>PERMISSIONS</action-key>
-                    <action-key>UPDATE</action-key>
-                    <action-key>UPDATE_DISCUSSION</action-key>
-                </guest-unsupported>
-            </permissions>
-        </model-resource>
+```xml
+<model-resource>
+    <model-name>com.liferay.blogs.model.BlogsEntry</model-name>
+    <portlet-ref>
+        <portlet-name>com_liferay_blogs_web_portlet_BlogsAdminPortlet</portlet-name>
+        <portlet-name>com_liferay_blogs_web_portlet_BlogsPortlet</portlet-name>
+    </portlet-ref>
+    <weight>2</weight>
+    <permissions>
+        <supports>
+            <action-key>ADD_DISCUSSION</action-key>
+            <action-key>DELETE</action-key>
+            <action-key>DELETE_DISCUSSION</action-key>
+            <action-key>PERMISSIONS</action-key>
+            <action-key>UPDATE</action-key>
+            <action-key>UPDATE_DISCUSSION</action-key>
+            <action-key>VIEW</action-key>
+        </supports>
+        <site-member-defaults>
+            <action-key>ADD_DISCUSSION</action-key>
+            <action-key>VIEW</action-key>
+        </site-member-defaults>
+        <guest-defaults>
+            <action-key>ADD_DISCUSSION</action-key>
+            <action-key>VIEW</action-key>
+        </guest-defaults>
+        <guest-unsupported>
+            <action-key>DELETE</action-key>
+            <action-key>DELETE_DISCUSSION</action-key>
+            <action-key>PERMISSIONS</action-key>
+            <action-key>UPDATE</action-key>
+            <action-key>UPDATE_DISCUSSION</action-key>
+        </guest-unsupported>
+    </permissions>
+</model-resource>
+```
 
-    Note the lack of a `<root>` tag, the fully qualified class name for the
-    model, and the permissions that operate on an entity with a primary key. 
+Note the lack of a `<root>` tag, the fully qualified class name for the
+model, and the permissions that operate on an entity with a primary key. 
 
 ## Enabling Your Permissions Configuration
 
@@ -232,7 +244,9 @@ permissions definition file. For your service and your web modules, create
 a `portlet.properties` file in `src/main/resources` and make sure it has this
 property: 
 
-    resource.actions.configs=resource-actions/default.xml
+```properties
+resource.actions.configs=resource-actions/default.xml
+```
 
 Once you've defined portlet permissions, root model permissions, and model
 permissions, you've completed step 1 (the *D* in DRAC). Congratulations! You're
