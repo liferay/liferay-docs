@@ -26,7 +26,7 @@ Here are the code upgrade steps:
 
         Set the @product@ version in workspace's configuration you intend to
         upgrade to.
-        
+
         1.  Configure Bundle URL
 
             Configure your bundle URL.
@@ -34,7 +34,7 @@ Here are the code upgrade steps:
         2.  Configure Target Platform Version
 
             Configure your Target Platform version.
-            
+
         3.  Initialize Server Bundle
 
             Initialize your Liferay server bundle.
@@ -97,10 +97,10 @@ Here are the code upgrade steps:
     1.  Remove Legacy Files
 
     2.  Migrate from Spring DI to OSGi Declarative Services
-    
+
     3.  Rebuild Services
-    
-6.  [Upgrade Customization Plugins    5.  [Upgrade Core Language Key Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-customization-plugins)
+
+6.  [Upgrade Customization Plugins](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-customization-plugins)
 
     1.  [Upgrade Override/Extension Modules](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-override-extension-hooks)
 
@@ -120,15 +120,15 @@ Here are the code upgrade steps:
 
     9.  [Upgrade Servlet Filter Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-servlet-filter-hooks)
 
-    10.  [Upgrade Portal Properties Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-override-extension-hooks)
+    10. [Upgrade Portal Properties Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-override-extension-hooks)
 
     11. [Upgrade Struts Action Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-struts-action-hooks)
 
-7. [Upgrade Themes](https://dev.liferay.com/en/develop/tutorials/-/knowledge_base/7-1/upgrading-6-2-themes-to-7-1)
+7. [Upgrade Themes]()
 
     Upgrade your themes.
 
-8. Upgrade Layout Templates
+8. [Upgrade Layout Templates]()
 
 9. Upgrade Frameworks & Features
 
@@ -140,21 +140,21 @@ Here are the code upgrade steps:
 
     4. Migrate Off of Velocity Templates
 
-10. Upgrade Portlets
+10. [Upgrade Portlets](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-portlets)
 
     Upgrade your portlets.
 
-    1. Upgrade JSF Portlets
+    1. [Upgrade Generic Portlets](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-genericportlet)
 
-    2. Migrate from Spring Portlet MVC to PortletMVC4Spring
+    2. [Upgrade Liferay MVC Portlets](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-liferay-mvc-portlet)
 
-    3. Upgrade Liferay MVC Portlets
+    3. [Upgrade JSF Portlets](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-liferay-jsf-portlet)
 
-    4. Upgrade Generic Portlets
+    4. [Upgrade Servlet-based Portlets](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-servlet-based-portlet)
 
-    5. Upgrade Servlet-base Portlets
+    5. [Migrate from Spring Portlet MVC to PortletMVC4Spring]()
 
-    6. Upgrade Struts 1 Portlets
+    6. [Upgrade Struts 1 Portlets](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-struts-1-portlet)
 
 11. Upgrade Web Plugins
 
