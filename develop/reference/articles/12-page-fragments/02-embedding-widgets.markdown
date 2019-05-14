@@ -32,3 +32,11 @@ Here is the full list of widgets that can be embedded:
 |Iframe	|`<lfr-widget-iframe>`|
 
 
+## Embedding Liferay Widgets multiple times in a fragment
+
+If we need to include the same `<lfr-widget-[widget-name]>` more than once in a fragment, we will need to add an `id` attribute with a different value for each repetition
+
+    <lfr-widget-[widget-name] id="myFirstWidget"></lfr-widget-[widget-name]>
+    <lfr-widget-[widget-name] id="mySecondWidget"></lfr-widget-[widget-name]>
+    
+For the id is necessary an alphanumeric value (we can't use symbols like `_`or `-`)
