@@ -6,12 +6,12 @@ header-id: service-access-policies
 
 Service access policies provide web service security beyond user authentication
 to remote services. Together with
-[permissions](/develop/tutorials/-/knowledge_base/7-1/defining-application-permissions),
+[permissions](/docs/7-2/frameworks/-/knowledge_base/f/defining-application-permissions),
 service access policies limit remote service access by remote client
 applications. This forms an additional security layer that protects user data
 from unauthorized access and modification.
 
-To connect to a web service, remote clients must authenticate with credentials
+To connect to a web service, remote clients must authenticate using credentials
 in that instance. This grants the remote client the permissions assigned to
 those credentials in the @product@ installation. Service access policies further
 limit the remote client's access to the services specified in the policy.
@@ -40,24 +40,24 @@ request. The service access policy authorization layer then processes all
 granted policies and lets the request access the remote service(s) permitted by
 the policy.
 
-![The authorization module maps the credentials or token to the proper Service Access Policy.](../../images/service-access-policies-arch.png)
+![Figure 1: The authorization module maps the credentials or token to the proper Service Access Policy.](../../images/service-access-policies-arch.png)
 
 Service Access policies are created in the Control Panel by
 administrators. If you want to start creating policies yourself, see
-[this article on service access policies](/discover/deployment/-/knowledge_base/7-1/service-access-policies)
+[this article on service access policies](/docs/7-2/deploy/-/knowledge_base/d/service-access-policies)
 that documents creating them in the UI.
 
 There may be cases, however, when your server-side Liferay app must use the
 service access policies API:
 
-- It uses [custom remote API authentication](/develop/tutorials/-/knowledge_base/7-1/auto-login)
+- It uses [custom remote API authentication](/docs/7-2/frameworks/-/knowledge_base/f/auto-login)
   (tokens) and require certain services to be available for clients using
   the tokens.
 
 - It requires its services be made available to guest users, with no authentication
   necessary.
 
-- It contains a [remote service authorization layer](/develop/tutorials/-/knowledge_base/7-1/password-based-authentication-pipelines)
+- It contains a [remote service authorization layer](/docs/7-2/frameworks/-/knowledge_base/f/password-based-authentication-pipelines)
   that needs to drive access to remote services based on granted
   privileges.
 
@@ -66,16 +66,16 @@ service access policies API:
 Liferay provides an Interface and a `ThreadLocal` if you don't want to roll your own
 policies. If you want to get low level, an API is provided that
 Liferay itself has used to implement 
-[Liferay Sync](/discover/portal/-/knowledge_base/7-1/administering-liferay-sync). 
+[Liferay Sync](/docs/7-2/user/-/knowledge_base/u/administering-liferay-sync). 
 
-1. The Interface and `ThreadLocal` are available in the [package
-   `com.liferay.portal.kernel.security.service.access.policy`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/security/service/access/policy/package-summary.html).
+1. The Interface and `ThreadLocal` are available in the 
+   [package `com.liferay.portal.kernel.security.service.access.policy`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/security/service/access/policy/package-summary.html).
    This package provides classes for basic access to policies. For example, you
    can use the [singleton
-   `ServiceAccessPolicyManagerUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/security/service/access/policy/ServiceAccessPolicyManagerUtil.html)
+   `ServiceAccessPolicyManagerUtil`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/security/service/access/policy/ServiceAccessPolicyManagerUtil.html)
    to obtain Service Access Policies configured in the system. You can also use
    the [`ServiceAccessPolicyThreadLocal`
-   class](https://docs.liferay.com/portal/7.0/javadocs/portal-kernel/com/liferay/portal/kernel/security/service/access/policy/ServiceAccessPolicyThreadLocal.html)
+   class](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/security/service/access/policy/ServiceAccessPolicyThreadLocal.html)
    to set and obtain Service Access Policies granted to the current request
    thread.
 
@@ -87,7 +87,7 @@ Liferay itself has used to implement
    thread. When a remote client accesses an API, something must tell the
    Liferay instance which policies are assigned to this call. This
    something is in most cases an [`AuthVerifier`
-   implementation](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/security/auth/verifier/AuthVerifier.html).
+   implementation](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/security/auth/verifier/AuthVerifier.html).
    For example, in the case of the OAuth app, an `AuthVerifier` implementation
    assigns the policy chosen by the user in the authorization step.
 
@@ -98,10 +98,8 @@ Liferay itself has used to implement
 - `com.liferay.portal.security.service.access.policy.web.jar`
 
    These OSGi modules are active by default, and you can use them to manage
-   Service Access Policies programmatically. You can find their source code 
-   [here in GitHub](https://github.com/liferay/liferay-portal/tree/master/modules/apps/portal-security).
-   Each module publishes a list of packages and services that can be
-   consumed by other OSGi modules.
+   Service Access Policies programmatically. Each module publishes a list of
+   packages and services that can be consumed by other OSGi modules.
 
 You can use both tools to develop a token verification module (a module that
 implements custom security token verification for use in authorizing remote
@@ -133,50 +131,52 @@ Sync's remote API, these policies grant access to Sync's
 `com.liferay.sync.service.*`, respectively. Here's the code in the
 `sync-security` module that defines and creates these policies:
 
-    @Component(immediate = true)
-    public class SyncSAPEntryActivator {
+```java
+@Component(immediate = true)
+public class SyncSAPEntryActivator {
 
-        // Define the policies
-        public static final Object[][] SAP_ENTRY_OBJECT_ARRAYS = new Object[][] {
-            {
-                "SYNC_DEFAULT",
-                "com.liferay.sync.service.SyncDLObjectService#getSyncContext", true
-            },
-            {"SYNC_TOKEN", "com.liferay.sync.service.*", false}
-        };
+    // Define the policies
+    public static final Object[][] SAP_ENTRY_OBJECT_ARRAYS = new Object[][] {
+        {
+            "SYNC_DEFAULT",
+            "com.liferay.sync.service.SyncDLObjectService#getSyncContext", true
+        },
+        {"SYNC_TOKEN", "com.liferay.sync.service.*", false}
+    };
 
-        ...
+    ...
 
-        // Create the policies
-        protected void addSAPEntry(long companyId) throws PortalException {
-                for (Object[] sapEntryObjectArray : SAP_ENTRY_OBJECT_ARRAYS) {
-                    String name = String.valueOf(sapEntryObjectArray[0]);
-                    String allowedServiceSignatures = String.valueOf(
-                        sapEntryObjectArray[1]);
-                    boolean defaultSAPEntry = GetterUtil.getBoolean(
-                        sapEntryObjectArray[2]);
+    // Create the policies
+    protected void addSAPEntry(long companyId) throws PortalException {
+            for (Object[] sapEntryObjectArray : SAP_ENTRY_OBJECT_ARRAYS) {
+                String name = String.valueOf(sapEntryObjectArray[0]);
+                String allowedServiceSignatures = String.valueOf(
+                    sapEntryObjectArray[1]);
+                boolean defaultSAPEntry = GetterUtil.getBoolean(
+                    sapEntryObjectArray[2]);
 
-                    SAPEntry sapEntry = _sapEntryLocalService.fetchSAPEntry(
-                        companyId, name);
+                SAPEntry sapEntry = _sapEntryLocalService.fetchSAPEntry(
+                    companyId, name);
 
-                    if (sapEntry != null) {
-                        continue;
-                    }
-
-                    Map<Locale, String> map = new HashMap<>();
-
-                    map.put(LocaleUtil.getDefault(), name);
-
-                    _sapEntryLocalService.addSAPEntry(
-                        _userLocalService.getDefaultUserId(companyId),
-                        allowedServiceSignatures, defaultSAPEntry, true, name, map,
-                        new ServiceContext());
+                if (sapEntry != null) {
+                    continue;
                 }
-        }
 
-        ...
+                Map<Locale, String> map = new HashMap<>();
 
+                map.put(LocaleUtil.getDefault(), name);
+
+                _sapEntryLocalService.addSAPEntry(
+                    _userLocalService.getDefaultUserId(companyId),
+                    allowedServiceSignatures, defaultSAPEntry, true, name, map,
+                    new ServiceContext());
+            }
     }
+
+    ...
+
+}
+```
 
 This class creates the policies when the module starts. Note that this module is
 included and enabled by default. You can access these and other policies in
@@ -190,16 +190,18 @@ with the method
 `ServiceAccessPolicyThreadLocal.addActiveServiceAccessPolicyName`, as
 shown in this code snippet:
 
-    if ((permissionChecker != null) && permissionChecker.isSignedIn()) {
-        ServiceAccessPolicyThreadLocal.addActiveServiceAccessPolicyName(
-            String.valueOf(
-                SyncSAPEntryActivator.SAP_ENTRY_OBJECT_ARRAYS[1][0]));
-    }
+```java
+if ((permissionChecker != null) && permissionChecker.isSignedIn()) {
+    ServiceAccessPolicyThreadLocal.addActiveServiceAccessPolicyName(
+        String.valueOf(
+            SyncSAPEntryActivator.SAP_ENTRY_OBJECT_ARRAYS[1][0]));
+}
+```
 
 Now every authenticated call to Sync's remote API, regardless of
 authentication method, has access to `com.liferay.sync.service.*`. To
 see the full code example,
-[click here](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/sync/sync-security/src/main/java/com/liferay/sync/security/servlet/filter/SyncAuthFilter.java).
+[click here](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/sync/sync-security/src/main/java/com/liferay/sync/security/servlet/filter/SyncAuthFilter.java).
 
 Nice! Now you know how to integrate your apps with the Service Access
 Policies.
