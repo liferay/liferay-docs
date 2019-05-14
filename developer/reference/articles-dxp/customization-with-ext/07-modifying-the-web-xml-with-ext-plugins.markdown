@@ -16,19 +16,23 @@ existing `web.xml file` (e.g., in the `/tomcat-[version]/webapps/ROOT/WEB-INF`
 folder). You'll modify the session timeout configuration, which is set to 30
 (minutes) by default:
 
-    <session-config>
-        <session-timeout>30</session-timeout>
-        <cookie-config>
-            <http-only>true</http-only>
-        </cookie-config>
-    </session-config>
+```xml
+<session-config>
+    <session-timeout>30</session-timeout>
+    <cookie-config>
+        <http-only>true</http-only>
+    </cookie-config>
+</session-config>
+```
 
 The Ext plugin will update the session timeout to one minute.
 
 1.  Navigate into your Liferay Workspace's `/ext` folder and run the following
     command:
 
-        blade create -t war-core-ext modify-session-timeout
+    ```bash
+    blade create -t war-core-ext modify-session-timeout
+    ```
 
     Your Ext plugin is generated and now resides in the workspace's `/ext`
     folder with the name you assigned.
@@ -38,12 +42,14 @@ The Ext plugin will update the session timeout to one minute.
 
 3. Insert the following logic between the `<web-app>` tags:
 
-        <session-config>
-            <session-timeout>1</session-timeout>
-            <cookie-config>
-                <http-only>true</http-only>
-            </cookie-config>
-        </session-config>
+    ```xml
+    <session-config>
+        <session-timeout>1</session-timeout>
+        <cookie-config>
+            <http-only>true</http-only>
+        </cookie-config>
+    </session-config>
+    ```
 
 Notice that the `<session-timeout>` tag has been updated to `1`.
 

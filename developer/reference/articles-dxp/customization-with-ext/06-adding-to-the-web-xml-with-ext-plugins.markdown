@@ -19,7 +19,9 @@ folder). You'll add a new printout in the console during startup.
 1.  Navigate to your Liferay Workspace's root folder and run the following
     command:
 
-        blade create -t war-core-ext add-printout
+    ```bash
+    blade create -t war-core-ext add-printout
+    ```
 
     Your Ext plugin is generated and now resides in the workspace's `/ext`
     folder with the name you assigned.
@@ -33,22 +35,23 @@ folder). You'll add a new printout in the console during startup.
     reside in (e.g., `com/liferay/portal/servlet/context`). Then create your new
     Java class:
 
-        package com.liferay.portal.servlet.context;
+    ```java
+    package com.liferay.portal.servlet.context;
 
-        import javax.servlet.ServletContextEvent;
-        import javax.servlet.ServletContextListener;
+    import javax.servlet.ServletContextEvent;
+    import javax.servlet.ServletContextListener;
 
-        public class ExtAddEntryWebXmlPortalContextLoaderListener
-                implements ServletContextListener {
+    public class ExtAddEntryWebXmlPortalContextLoaderListener
+            implements ServletContextListener {
 
-            public void contextDestroyed(ServletContextEvent servletContextEvent) {
-            }
-
-            public void contextInitialized(ServletContextEvent servletContextEvent) {
-                System.out.println("EXT_ADD_ENTRY_WEBXML_INSTALLED_SUCCESSFULLY");
-            }
-
+        public void contextDestroyed(ServletContextEvent servletContextEvent) {
         }
+
+        public void contextInitialized(ServletContextEvent servletContextEvent) {
+            System.out.println("EXT_ADD_ENTRY_WEBXML_INSTALLED_SUCCESSFULLY");
+        }
+    }
+    ```
 
     The above class includes two methods that initialize and destroy your
     servlet context event. Be sure to add the new `web.xml`'s functionality when
@@ -56,7 +59,9 @@ folder). You'll add a new printout in the console during startup.
     plugins installation, a simple print statement was defined in the
     `contextInitialized(...)` method:
 
-        System.out.println("EXT_ADD_ENTRY_WEBXML_INSTALLED_SUCCESSFULLY");
+    ```java
+    System.out.println("EXT_ADD_ENTRY_WEBXML_INSTALLED_SUCCESSFULLY");
+    ```
 
 3.  Now that you've defined a servlet context event, you should add a listener
     to your `web.xml` that listens for it. In the `ext-web/docroot/WEB-INF`
@@ -64,9 +69,11 @@ folder). You'll add a new printout in the console during startup.
 
 4.  Add the following <listener> tag between the <web-app> tags:
 
-        <listener>
-            <listener-class>com.liferay.portal.servlet.context.ExtAddEntryWebXmlPortalContextLoaderListener</listener-class>
-        </listener>
+    ```xml
+    <listener>
+        <listener-class>com.liferay.portal.servlet.context.ExtAddEntryWebXmlPortalContextLoaderListener</listener-class>
+    </listener>
+    ```
 
 Excellent! Now when your Ext plugin is deployed, your @product@ installation
 will create a `ServletContextListener` instance, which will initialize a custom
