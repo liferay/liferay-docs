@@ -79,6 +79,18 @@ Of course, you can also configure LDAP servers at the system scope using OSGi
 configuration. Then you can use the resulting `.config` file anywhere you need
 it (such as other nodes in a cluster). 
 
+**Note:** To use `config` files for LDAP server configuration, you must
+specify the Virtual Instance ID (in the source, the variable name is
+`companyId`) in the exported configuration file, because servers are defined
+at the instance scope, not the system scope. To do this, specify the virtual
+instance ID somewhere in the file like this: 
+
+```properties
+companyId=1234
+```
+You can find your Virtual Instance ID in Control Panel &rarr; Configuration
+&rarr; Virtual Instances.
+
 ## Security
 
 If you run your LDAP directory in SSL mode to encrypt credential information on
