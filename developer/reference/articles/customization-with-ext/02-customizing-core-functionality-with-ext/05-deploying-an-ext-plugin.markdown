@@ -1,4 +1,8 @@
-# Deploying an Ext Plugin [](id=deploying-an-ext-plugin)
+---
+header-id: deploying-an-ext-plugin
+---
+
+# Deploying an Ext Plugin
 
 Deploying an Ext plugin is similar to deploying any other @product@ project. For
 example, you'll step through deploying an Ext plugin in Liferay Workspace.

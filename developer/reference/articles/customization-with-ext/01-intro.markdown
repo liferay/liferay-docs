@@ -1,4 +1,8 @@
-# Customization with Ext [](id=customization-with-ext)
+---
+header-id: customization-with-ext
+---
+
+# Customization with Ext
 
 **Customization with Ext projects is deprecated and should only be used if
 absolutely necessary.**
@@ -34,7 +38,7 @@ with @product@'s.
 Before diving into Ext projects, first consider if an Ext project is even
 necessary at all.
 
-## Making the Decision to Use Ext Projects [](id=making-the-decision-to-use-ext-projects)
+## Making the Decision to Use Ext Projects
 
 There are many parts of @product@ that now provide an extension point via OSGi
 bundle. You should follow this three step process to decide whether an Ext
@@ -70,7 +74,7 @@ Those processes are documented too!
 
 You're now equipped to make an informed decision on using Ext projects.
 
-## Licensing and Contributing [](id=licensing-and-contributing)
+## Licensing and Contributing
 
 @product@ is Open Source software licensed under the 
 [LGPL 2.1 license](http://www.gnu.org/licenses/lgpl-2.1.html).

@@ -1,4 +1,8 @@
-# Creating an Ext Module [](id=creating-an-ext-module)
+---
+header-id: creating-an-ext-module
+---
+
+# Creating an Ext Module
 
 You can create an Ext module based off the pre-configured `modules-ext` project
 template/archetype. See the

@@ -1,4 +1,8 @@
-# Adding to the web.xml with Ext Plugins [](id=adding-to-the-web-xml-with-ext-plugins)
+---
+header-id: adding-to-the-web-xml-with-ext-plugins
+---
+
+# Adding to the web.xml with Ext Plugins
 
 A supported use case for using Ext Plugins in @product@ is adding additional
 functionality to its `web.xml` file. Before beginning, make sure you've reviewed

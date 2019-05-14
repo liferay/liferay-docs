@@ -1,4 +1,8 @@
-# Developing an Ext Module [](id=developing-an-ext-module)
+---
+header-id: developing-an-ext-module
+---
+
+# Developing an Ext Module
 
 You can create your own Ext module project by
 

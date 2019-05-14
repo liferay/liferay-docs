@@ -1,4 +1,8 @@
-# Creating an Ext Plugin [](id=creating-an-ext-plugin)
+---
+header-id: creating-an-ext-plugin
+---
+
+# Creating an Ext Plugin
 
 An Ext plugin is a powerful tool for extending @product@. Because it increases		
 the complexity of your @product@ installation, you should only use an Ext plugin		

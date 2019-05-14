@@ -1,4 +1,8 @@
-# Developing an Ext Plugin [](id=developing-an-ext-plugin)
+---
+header-id: developing-an-ext-plugin
+---
+
+# Developing an Ext Plugin
 
 An Ext plugin changes @product@ itself when the plugin is deployed; it's not a
 separate component that you can easily remove at any time. For this reason, the
@@ -26,7 +30,7 @@ type to accomplish your goals whenever possible.
 
 Now it's time to set up the build environment. 
 
-## Set Up the Build Environment [](id=set-up-the-build-environment)
+## Set Up the Build Environment
 
 If you're leveraging
 [Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace),
@@ -44,7 +48,7 @@ with Liferay Workspace), you must declare the Ext Gradle plugin in your
 
 Next you'll explore an Ext plugin's advanced configuration files.
 
-## Using Advanced Configuration Files [](id=using-advanced-configuration-files)
+## Using Advanced Configuration Files
 
 @product@ uses several internal configuration files for its own architecture; in
 addition, there are configuration files for the libraries and frameworks

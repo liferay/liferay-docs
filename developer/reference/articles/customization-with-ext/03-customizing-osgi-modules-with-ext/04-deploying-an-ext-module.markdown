@@ -1,15 +1,15 @@
-# Deploying an Ext Module [](id=deploying-an-ext-module)
+---
+header-id: deploying-an-ext-module
+---
+
+# Deploying an Ext Module
 
 Before deploying your Ext module, you must stop the original bundle you intend
 to override. This is because an Ext module's generated JAR includes the original
 bundle source plus your modified source files.
 
-+$$$
-
-**Note:** Stopping the original bundle before deploying your Ext module is only
-necessary if you've already started @product@.
-
-$$$
+| **Note:** Stopping the original bundle before deploying your Ext module is only
+| necessary if you've already started @product@.
 
 Follow the instructions below to deploy your Ext module to a @product@ instance:
 
