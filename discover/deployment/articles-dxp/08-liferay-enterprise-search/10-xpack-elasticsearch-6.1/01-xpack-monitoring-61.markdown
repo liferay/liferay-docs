@@ -1,4 +1,8 @@
-# Installing X-Pack Monitoring for Elasticsearch 6 [](id=installing-x-pack-monitoring-for-elasticsearch-6)
+# Installing X-Pack Monitoring for Elasticsearch 6.1 [](id=installing-x-pack-monitoring-for-elasticsearch-6-1)
+
+**Elasticsearch 6.1 is EOL as of [June 13,
+2019](https://www.elastic.co/support/eol). If possible, install Elastic stack
+6.5 products.**
 
 To monitor Elasticsearch, use X-Pack Monitoring. First 
 [install X-Pack onto Elasticsearch](/discover/deployment/-/knowledge_base/7-0/securing-elasticsearch-6-with-x-pack)
@@ -178,7 +182,7 @@ there is to it.
 
 Restart @product@ and Kibana.
 
-## Monitoring in @product@ [](id=monitoring-in-product)
+# Monitoring in @product@ [](id=monitoring-in-product)
 
 Once Kibana and X-Pack are successfully installed and configured and all the
 servers are up and running, add the X-Pack Monitoring portlet to a page:

@@ -1,4 +1,4 @@
-# Installing X-Pack Monitoring for Elasticsearch 6 [](id=installing-x-pack-monitoring-for-elasticsearch-6)
+# Installing X-Pack Monitoring for Elasticsearch 6.5 [](id=installing-x-pack-monitoring-for-elasticsearch-6)
 
 To monitor Elasticsearch, use X-Pack Monitoring. First 
 [install X-Pack onto Elasticsearch](/discover/deployment/-/knowledge_base/7-0/securing-elasticsearch-6-with-x-pack)

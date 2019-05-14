@@ -1,4 +1,8 @@
-# Securing Elasticsearch 6 with X-Pack [](id=securing-elasticsearch-6-with-x-pack)
+# Securing Elasticsearch 6.1 with X-Pack [](id=securing-elasticsearch-6-1-with-x-pack)
+
+**Elasticsearch 6.1 is EOL as of [June 13,
+2019](https://www.elastic.co/support/eol). If possible, install Elastic stack
+6.5 products.**
 
 X-Pack is an 
 [Elastic extension](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/setup-xpack.html)
