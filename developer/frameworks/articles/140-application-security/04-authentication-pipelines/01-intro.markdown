@@ -1,4 +1,8 @@
-# Authentication Pipelines [](id=authentication-pipelines)
+---
+header-id: authentication-pipelines
+---
+
+# Authentication Pipelines
 
 The authentication process is a pipeline through which users can be validated by
 one or several systems. As a developer, you can authenticate users to anything
@@ -31,10 +35,10 @@ the user interface for signing in, you can replace it with your own.
 These tutorials guide you through these customizations. You'll discover three
 kinds of customizations: 
 
-- **Auto Login:** the easiest of the three, this lets you authenticate to @product@ 
-  using credentials provided in the HTTP header from another system. 
+- **Auto Login:** the easiest of the three, this enables authentication to
+  @product@ using credentials provided in the HTTP header from another system. 
 
-- **Authentication Pipelines:** if you need to check credentials against other
+- **Authentication Pipelines:** if you must check credentials against other
   systems instead of or in addition to @product@'s database, you can create a
   pipeline. 
 

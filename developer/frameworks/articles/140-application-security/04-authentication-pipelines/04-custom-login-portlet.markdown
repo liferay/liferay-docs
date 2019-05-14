@@ -1,4 +1,8 @@
-# Writing a Custom Login Portlet [](id=writing-a-custom-login-portlet)
+---
+header-id: writing-a-custom-login-portlet
+---
+
+# Writing a Custom Login Portlet
 
 If you need to customize your users' authentication experience completely, you
 can write your own Login Portlet. The mechanics of this on the macro level are
@@ -13,25 +17,21 @@ authenticates the user. You'll learn how to call the
 [authentication pipeline](/develop/tutorials/-/knowledge_base/7-0/authentication-pipelines) 
 and then redirect the user to a location of your choice. 
 
-## Authenticating to @product@ [](id=authenticating-to-product)
+## Authenticating to @product@
 
 You can use the example project 
 [in this ZIP file](https://dev.liferay.com/documents/10184/656312/MyCustomLoginPortlet.zip) 
 as a starting point for your own. 
 
-+$$$
-
-**Note:** When using the example project, set the session timeout portal
-property like this: 
-
-    session.timeout.auto.extend.offset=45
-
-This is needed because the default (as of 
-[LPS-68543](https://issues.liferay.com/browse/LPS-68543)) setting is `0`,
-causing the browser to execute an `extend_session` call. This may force users
-attempting to log in to make the attempt twice. 
-
-$$$
+| **Note:** When using the example project, set the session timeout portal
+| property like this:
+| 
+|     session.timeout.auto.extend.offset=45
+| 
+| This is needed because the default (as of
+| [LPS-68543](https://issues.liferay.com/browse/LPS-68543)) setting is `0`,
+| causing the browser to execute an `extend_session` call. This may force users
+| attempting to log in to make the attempt twice.
 
 It has only one view, which is used for logging in or showing the user who is
 already logged in: 
@@ -141,7 +141,7 @@ want.
 Implementing your own login portlet gives you complete control over the
 authentication process. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Password-Based Authentication Pipelines](/develop/tutorials/-/knowledge_base/7-0/password-based-authentication-pipelines)
 
