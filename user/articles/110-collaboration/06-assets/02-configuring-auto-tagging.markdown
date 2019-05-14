@@ -7,7 +7,7 @@ content. For example, @product@ can scan an image on upload and automatically
 apply tags that describe the image's content. This lets you leverage tags 
 without requiring content creators to manually apply them. 
 
-| **Note:** Auto-tagging currently only works for images, text-based documents, 
+| **Note:** Auto-tagging currently works only for images, text-based documents, 
 | and text-based web content. 
 
 Here, you'll learn how to configure asset auto-tagging in general. This is 

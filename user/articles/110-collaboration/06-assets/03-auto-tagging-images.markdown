@@ -57,8 +57,6 @@ Follow these steps to configure TensorFlow Image Auto Tagging:
     This field sets the minimum confidence level that TensorFlow needs to apply 
     a tag. Higher values yield fewer tags because TensorFlow needs more 
     confidence before it applies a tag. Likewise, lower values yield more tags. 
-    You can override this value for specific instances, as the next section 
-    shows. 
 
 3.  Click *Save* to save your changes. 
 
@@ -114,7 +112,8 @@ Follow these steps to configure Google Cloud Vision image auto tagging:
 
 3.  Click *Save* to save your changes. 
 
-You can override these settings for each instance from *Control Panel* &rarr; *Configuration* &rarr; *Instance Settings* &rarr; *Documents and Media*. 
+You can override these settings for each instance from *Control Panel* &rarr; 
+*Configuration* &rarr; *Instance Settings* &rarr; *Documents and Media*. 
 
 ![Figure 4: The Google Cloud Vision provider requires an API key.](../../../images/auto-tagging-image-google.png)
 
@@ -144,6 +143,7 @@ Follow these steps to configure Microsoft Cognitive Services image auto tagging:
 
 3.  Click *Save* to save your changes. 
 
-You can override these settings for each instance from *Control Panel* &rarr; *Configuration* &rarr; *Instance Settings* &rarr; *Documents and Media*. 
+You can override these settings for each instance from *Control Panel* &rarr; 
+*Configuration* &rarr; *Instance Settings* &rarr; *Documents and Media*. 
 
 ![Figure 5: The Microsoft Cognitive Services provider requires an API key and an endpoint.](../../../images/auto-tagging-image-microsoft.png)
