@@ -93,21 +93,21 @@ Window states mimic window behavior in a traditional desktop environment:
 -   **Minimized:** Only the portlet's title bar shows.
 
 All of the
-[ways to develop web front-ends](/docs/7-2/appdev/-/knowledge_base/appdev/web-front-ends)
+[ways to develop web front-ends](/docs/7-2/appdev/-/knowledge_base/a/web-front-ends)
 on @product@ involve portlets. The JavaScript-based widgets use Liferay's JS
 Portlet Extender behind the scenes and the Java-based web front-ends are
 explicitly portlets. All of the web front-end types vary in their support of
 Portlet 3.0,
-[dependency injection (DI)](/docs/7-2/frameworks/-/knowledge_base/frameworks/dependency-injection),
+[dependency injection (DI)](/docs/7-2/frameworks/-/knowledge_base/f/dependency-injection),
 Model View Controller (MVC), and modularity, giving you plenty of good options
 for developing portlets. 
 
 ## Related Topics 
 
-[Bean Portlet](/docs/7-2/appdev/-/knowledge_base/appdev/bean-portlet)
+[Bean Portlet](/docs/7-2/appdev/-/knowledge_base/a/bean-portlet)
 
-[Spring Portlet MVC: PortletMVC4Spring](/docs/7-2/appdev/-/knowledge_base/appdev/spring-portlet-mvc)
+[Spring Portlet MVC: PortletMVC4Spring](/docs/7-2/appdev/-/knowledge_base/a/spring-portlet-mvc)
 
-[Liferay MVC Portlet](/docs/7-2/appdev/-/knowledge_base/appdev/liferay-mvc-portlet)
+[Liferay MVC Portlet](/docs/7-2/appdev/-/knowledge_base/a/liferay-mvc-portlet)
 
-[JSF Portlet](/docs/7-2/appdev/-/knowledge_base/appdev/jsf-portlet)
+[JSF Portlet](/docs/7-2/appdev/-/knowledge_base/a/jsf-portlet)
