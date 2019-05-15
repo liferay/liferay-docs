@@ -17,12 +17,12 @@ applications. The URL for this requires the following request parameters:
 - `response_type` 
 - `client_id` 
 
-To construct a URL for this authorization, therefore, follow this pattern: 
+To construct a URL for this authorization, follow this pattern: 
 
     https://[hostname]/o/oauth2/authorize?response_type=code&client_id=[client ID]
 
 The client ID comes from registering the application. It's automatically
-generated (though you can change it if you edit the application). 
+generated (you can change it if you edit the application). 
 
 IMPORTANT: Sometimes the phrase "web application" is used loosely, implying
 applications where the above URL is requested from the web browser directly. If
@@ -34,7 +34,7 @@ Authorization Code flow (see below).
 
 Once the user has authorized the requested permissions to their resources, the
 authorization server returns an authorization code to your application at its
-registered callback URI (a.k.a. redirect URI) as a query string parameter. 
+registered callback URI (A.K.A. redirect URI) as a query string parameter. 
 
 	[your callback URI]?code=[authorization server generated code]
 
@@ -52,7 +52,7 @@ With the following parameters in the body (encoded as
 	code=[authorization server generated code]
 	redirect_uri=[registered callback URI]
 
-In the body of HTTP response to this request, you will receive JSON like this:
+In the body of HTTP response to this request, you receive JSON like this:
 
 	{
 		"access_token": "[authorization server generated access token]",
@@ -65,7 +65,7 @@ In the body of HTTP response to this request, you will receive JSON like this:
 From this you should extract and persist the access token. If you intend to use 
 the token for an indefinite amount of time (beyond 600 seconds from the above 
 example) you also need the refresh token. This can be used in conjunction with 
-the Refresh Token Flow to obtain a new access token, with the same permissions,
+the Refresh Token Flow to obtain a new access token with the same permissions,
 without further user authorization.  The authorization server only issues
 Refresh Tokens if your application registration is registered for this flow.
 
@@ -94,7 +94,7 @@ using PKCE, use a URL containing the `code_challenge` request parameter:
     https://[hostname]/o/oauth2/authorize?response_type=code&client_id=[client ID]&code_challenge=[PKCE code challenge]
 
 The rest of the process is identical to Authorization Code flow, except that
-when making the final request to get the access token, must also provide the
+when making the final request to get the access token, you must also provide the
 following parameter:
 
 	code_verifier=[Code Verifier that was transformed and sent as code_challenge previously]
@@ -144,7 +144,7 @@ time.
 
 ![Figure 1: Users have complete control over what applications have access to their data in their account profiles.](../../../images/oauth-user-apps.png)
 
-In their account area, users can click *OAuth2 Connected Applications* and see
+In their account areas, users can click *OAuth2 Connected Applications* and see
 a list of applications they've allowed to access their accounts. From here,
 they can revoke access by clicking the *Remove Access* item in the Action menu
 or the *Remove Access* button in the detail screen for the application. 
