@@ -7,7 +7,7 @@ header-id: get-started-invoke-a-service
 [TOC levels=1-4]
 
 Once you know which API you want to call via the 
-[OpenAPI profile](/develop/tutorials/-/knowledge_base/7-1/get-started-discover-the-api), 
+[OpenAPI profile](/develop/tutorials/-/knowledge_base/7-2/get-started-discover-the-api), 
 you can send a request to that resource's URL. For example, suppose you want to 
 retrieve all the blog entries from a Site. If you consult the OpenAPI profile 
 for @product@'s delivery API, you can find this endpoint: 
@@ -93,7 +93,7 @@ response should look something like this:
       "pageSize": 20,
       "totalCount": 1
     }
-    
+
 This response is a JSON object with information about the collection of blogs. 
 The response's attributes contain information about the resource (blogs, in this 
 case). Also note that the results are paginated. The `*page*` attributes refer 
@@ -145,7 +145,10 @@ example response:
 
 Although this response is JSON, the API's consumer can select other formats to 
 use (like XML). For more information, see 
-[API Formats and Content Negotiation](liferay.com). 
+[API Formats and Content Negotiation](/develop/tutorials/-/knowledge_base/7-2/api-formats-and-content-negotiation). 
 
 ## Related Topics
 
+[Get Started: Discover the API](/develop/tutorials/-/knowledge_base/7-2/get-started-discover-the-api)
+
+[API Formats and Content Negotiation](/develop/tutorials/-/knowledge_base/7-2/api-formats-and-content-negotiation)

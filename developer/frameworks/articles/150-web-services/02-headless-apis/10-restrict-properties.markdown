@@ -2,7 +2,7 @@
 header-id: restrict-properties
 ---
 
-# Restrict properties
+# Restrict Properties
 
 [TOC levels=1-4]
 
@@ -95,4 +95,8 @@ the headlines for all the blog postings in the Site with the ID `20124`:
 
 ## Related Topics
 
-[Navigating to a Related Resource]()
+[Making Authenticated Requests](/develop/tutorials/-/knowledge_base/7-2/filter-sort-and-search)
+
+[API Formats and Content Negotiation](/develop/tutorials/-/knowledge_base/7-2/api-formats-and-content-negotiation)
+
+[Working with Collections of Data](/develop/tutorials/-/knowledge_base/7-2/working-with-collections-of-data)

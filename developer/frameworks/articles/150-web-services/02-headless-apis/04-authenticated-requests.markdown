@@ -56,8 +56,9 @@ request:
 
 The response contains data instead of the 403 error that an unauthenticated 
 request receives. For more information on the response's structure, see 
-[API Vocabulary](liferay.com) and 
-[Working with Collections of Data](liferay.com). 
+[API Vocabulary](/develop/tutorials/-/knowledge_base/7-2/api-vocabulary) 
+and 
+[Working with Collections of Data](/develop/tutorials/-/knowledge_base/7-2/working-with-collections-of-data). 
 
     {
       "items": [
@@ -149,11 +150,7 @@ For example:
 The response will contain the resources that the authenticated user has 
 permission to access, just like the response from Basic authentication. 
 
----
-header-id: making-unauthenticated-requests
----
-
-# Making Unauthenticated Requests
+## Making Unauthenticated Requests
 
 Unauthenticated requests are disabled by default in @product@'s headless REST 
 APIs. You can, however, enable them manually by following these steps: 
@@ -182,3 +179,9 @@ APIs. You can, however, enable them manually by following these steps:
 You should get the OpenAPI profile for the API you sent the request to. 
 
 ## Related Topics
+
+[Get Started: Invoke a Service](/develop/tutorials/-/knowledge_base/7-2/get-started-invoke-a-service)
+
+[API Vocabulary](/develop/tutorials/-/knowledge_base/7-2/api-vocabulary)
+
+[Working with Collections of Data](/develop/tutorials/-/knowledge_base/7-2/working-with-collections-of-data)

@@ -40,4 +40,4 @@ named to clearly define what they represent and how they should be used.
 
 [Service Builder Web Services](/develop/tutorials/-/knowledge_base/7-2/service-builder-web-services)
 
-[API Formats and Content Negotiation](liferay.com)
+[API Formats and Content Negotiation](/develop/tutorials/-/knowledge_base/7-2/api-formats-and-content-negotiation)

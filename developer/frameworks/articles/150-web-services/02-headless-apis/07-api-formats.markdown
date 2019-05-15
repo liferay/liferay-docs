@@ -1,5 +1,5 @@
 ---
-header-id: hypermedia-formats-and-content-negotiation
+header-id: api-formats-and-content-negotiation
 ---
 
 # API Formats and Content Negotiation
@@ -238,6 +238,4 @@ not create, in a PATCH request).
 
 ## Related Topics
 
-[API Vocabulary]()
-
-[Navigating Between Related Resources]()
+[API Vocabulary](/develop/tutorials/-/knowledge_base/7-2/api-vocabulary)

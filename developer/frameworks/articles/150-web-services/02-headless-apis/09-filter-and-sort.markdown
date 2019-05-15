@@ -193,3 +193,11 @@ With `flatten` set to `true`, the same query also returns documents in any
 subfolders, regardless of how deeply those folders are nested. In other words, 
 setting `flatten` set to `true` and querying for documents in a Site's root 
 folder returns all the documents in the Site. 
+
+## Related Topics
+
+[Making Authenticated Requests](/develop/tutorials/-/knowledge_base/7-2/filter-sort-and-search)
+
+[API Formats and Content Negotiation](/develop/tutorials/-/knowledge_base/7-2/api-formats-and-content-negotiation)
+
+[Working with Collections of Data](/develop/tutorials/-/knowledge_base/7-2/working-with-collections-of-data)

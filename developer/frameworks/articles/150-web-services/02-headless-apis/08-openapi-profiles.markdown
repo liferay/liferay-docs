@@ -1,5 +1,5 @@
 ---
-header-id: api-vocabulary
+header-id: openapi-profiles
 ---
 
 # OpenAPI Profiles
@@ -79,3 +79,9 @@ and asset tags.
 
 [Headless Admin Workflow](https://app.swaggerhub.com/apis/liferayinc/headless-admin-workflow/1.0) 
 contains APIs for transitioning workflows. 
+
+## Related Topics
+
+[API Vocabulary](/develop/tutorials/-/knowledge_base/7-2/api-vocabulary)
+
+[API Formats and Content Negotiation](/develop/tutorials/-/knowledge_base/7-2/api-formats-and-content-negotiation)

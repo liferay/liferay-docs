@@ -84,3 +84,9 @@ And here's the response:
     }
 
 ## Related Topics
+
+[Making Authenticated Requests](/develop/tutorials/-/knowledge_base/7-2/filter-sort-and-search)
+
+[API Formats and Content Negotiation](/develop/tutorials/-/knowledge_base/7-2/api-formats-and-content-negotiation)
+
+[Working with Collections of Data](/develop/tutorials/-/knowledge_base/7-2/working-with-collections-of-data)
