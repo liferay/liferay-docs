@@ -3,7 +3,7 @@
 To better under the `RequestContextContributor` create one now. First you'll 
 create the `SampleRequestContentContributor.java` file which contains the 
 `contribute` method that contributes a new field to the context with a custom 
-attribute.
+attribute. You can view the [full project on Github](https://github.com/liferay/liferay-portal/tree/master/modules/apps/segments/segments-context-extension-sample)
 
 1.  [Create a new module](dev-guide-link).
 

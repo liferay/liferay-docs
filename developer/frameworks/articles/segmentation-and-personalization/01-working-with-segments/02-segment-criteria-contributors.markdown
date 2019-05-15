@@ -9,6 +9,8 @@ The first step is to make your related entity searchable through OData queries. 
 
 *  An `ODataRetriever`, that obtains the `KBArticles` that match a given OData 
     query.
+    
+You can view the [full project on Github](https://github.com/epgarcia/liferay-portal/tree/LPS-86249.criteria.extension.sample.2/modules/apps/segments/segments-criteria-extension-sample).
 
 
 @Component(
