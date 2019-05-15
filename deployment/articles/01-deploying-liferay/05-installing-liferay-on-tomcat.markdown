@@ -178,6 +178,35 @@ Start with configuring Tomcat to run @product@.
 
     | **Important:** @product@ requires that the application server JVM use the 
     | GMT time zone and UTF-8 file encoding. 
+    
+    If you're using JDK 11, you may see *Illegal access* warnings like these:
+
+    ```
+    WARNING: An illegal reflective access operation has occurred
+    WARNING: Illegal reflective access by com.liferay.petra.reflect.ReflectionUtil (file:/Users/malei/dev/project/bundles/master-bundles/tomcat-9.0.10/lib/ext/com.liferay.petra.reflect.jar) to field java.lang.reflect.Field.modifiers
+    WARNING: Please consider reporting this to the maintainers of com.liferay.petra.reflect.ReflectionUtil
+    WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+    WARNING: All illegal access operations will be denied in a future release
+    ```
+
+    This is a known issue:
+    [LPS-87421](https://issues.liferay.com/browse/LPS-87421). As a workaround,
+    you can eliminate these warnings by adding these properties after your
+    application server JVM options:
+
+    ```bash
+    CATALINA_OPTS="$CATALINA_OPTS --add-opens=java.base/java.io=ALL-UNNAMED"
+    CATALINA_OPTS="$CATALINA_OPTS --add-opens=java.base/java.lang.reflect=ALL-UNNAMED"
+    CATALINA_OPTS="$CATALINA_OPTS --add-opens=java.base/java.lang=ALL-UNNAMED"
+    CATALINA_OPTS="$CATALINA_OPTS --add-opens=java.base/java.net=ALL-UNNAMED"
+    CATALINA_OPTS="$CATALINA_OPTS --add-opens=java.base/java.nio=ALL-UNNAMED"
+    CATALINA_OPTS="$CATALINA_OPTS --add-opens=java.base/java.text=ALL-UNNAMED"
+    CATALINA_OPTS="$CATALINA_OPTS --add-opens=java.base/java.util=ALL-UNNAMED"
+    CATALINA_OPTS="$CATALINA_OPTS --add-opens=java.base/sun.nio.ch=ALL-UNNAMED"
+    CATALINA_OPTS="$CATALINA_OPTS --add-opens=java.desktop/java.awt.font=ALL-UNNAMED"
+    CATALINA_OPTS="$CATALINA_OPTS --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED"
+    CATALINA_OPTS="$CATALINA_OPTS --add-opens=java.xml/com.sun.org.apache.xerces.internal.parsers=ALL-UNNAMED"
+    ```
 
     After installation, tune your system (including these JVM options) for
     performance. 
