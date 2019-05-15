@@ -71,6 +71,24 @@ This is a known issue: [LPS-87421](https://issues.liferay.com/browse/LPS-87421).
  --add-opens=java.xml/com.sun.org.apache.xerces.internal.parsers=ALL-UNNAMED
 ```
 
+If you're using JDK 11 on Linux or UNIX and are activating @product@ using an LCS 5.0.0 client, you may see an error like this:
+
+```
+ERROR [LCS Worker 2][BaseScheduledTask:92] java.lang.reflect.InaccessibleObjectException: Unable to make public long com.sun.management.internal.OperatingSystemImpl.getOpenFileDescriptorCount() accessible: module jdk.management does not
+ "opens com.sun.management.internal" to unnamed module @1a3325e5
+java.lang.reflect.InaccessibleObjectException: Unable to make public long com.sun.management.internal.OperatingSystemImpl.getOpenFileDescriptorCount() accessible: module jdk.management does not "opens com.sun.management.internal" to unnamed module @1a3325e5
+at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:
+at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:
+at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:198)
+at java.base/java.lang.reflect.Method.setAccessible(Method.java:192)
+```
+
+To workaround this issue, add this property after your application server JMV options:
+
+```properties
+ --add-opens=jdk.management/com.sun.management.internal=ALL-UNNAMED
+``` 
+
 ## JVM Requirements
 
 @product@ requires that the application server JVM use the GMT time zone and
