@@ -45,6 +45,32 @@ JDK 11 is backwards compatible with JDK 8 applications. Applications and
 customizations developed on JDK 8 run on JDK 8 or JDK 11 runtimes. This makes
 JDK 8 best for developing on @product-ver@. 
 
+If you're using JDK 11, you may see *Illegal Access* warnings like these:
+
+```
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.liferay.petra.reflect.ReflectionUtil (file:/Users/malei/dev/project/bundles/master-bundles/tomcat-9.0.10/lib/ext/com.liferay.petra.reflect.jar) to field java.lang.reflect.Field.modifiers
+WARNING: Please consider reporting this to the maintainers of com.liferay.petra.reflect.ReflectionUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+```
+
+This is a known issue: [LPS-87421](https://issues.liferay.com/browse/LPS-87421). As a workaround, you can eliminate these warnings by adding these properties after your application server JVM options:
+
+```properties
+ --add-opens=java.base/java.io=ALL-UNNAMED \
+ --add-opens=java.base/java.lang.reflect=ALL-UNNAMED \
+ --add-opens=java.base/java.lang=ALL-UNNAMED \
+ --add-opens=java.base/java.net=ALL-UNNAMED \
+ --add-opens=java.base/java.nio=ALL-UNNAMED \
+ --add-opens=java.base/java.text=ALL-UNNAMED \
+ --add-opens=java.base/java.util=ALL-UNNAMED \
+ --add-opens=java.base/sun.nio.ch=ALL-UNNAMED \
+ --add-opens=java.desktop/java.awt.font=ALL-UNNAMED \
+ --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED \
+ --add-opens=java.xml/com.sun.org.apache.xerces.internal.parsers=ALL-UNNAMED
+```
+
 ## JVM Requirements
 
 @product@ requires that the application server JVM use the GMT time zone and
