@@ -5,12 +5,12 @@ header-id: oauth-2-0
 # OAuth 2.0
 
 OAuth 2.0 is an industry-standard authorization protocol. Users can seamlessly
-share select credentials from another website to log into yours. You've probably
-seen this before: any time you see a "Log In with Facebook," or "Log In with
-Google" button, or you authorize a third-party Twitter client, you're seeing
-OAuth 2.0 in action. It works by authorizing password-less access to portions of
-user-owned resources (such as an email address, a user profile picture, or
-something else from your account) and other permissioned resources.
+share select credentials from another website to log into yours. Any time you
+see a "Log In with Facebook," or "Log In with Google" button, or you authorize
+a third-party Twitter client, that's OAuth 2.0 in action. It works by
+authorizing password-less access to portions of user-owned resources (such as an
+email address, a user profile picture, or something else from your account) and
+other permissioned resources.
 
 OAuth 2.0's design encrypts all authorization transport through HTTPS, which
 prevents data passed between the systems from being intercepted. 
@@ -40,10 +40,11 @@ Here's how OAuth 2.0 works:
 3.  The application then requests a more permanent authorization token and
     sends the code with the request (along with the PKCE code verifier). 
 
-4.  If the authorization code matches (and transformed PKCE code verifier matches 
-    the previously sent code challenge), Liferay cryptographically generates an 
-    authorization token for this user and application combination. It sends the 
-    token to the application over HTTPS. Initial authorization is now complete! 
+4.  If the authorization code matches (and the transformed PKCE code verifier
+    matches the previously sent code challenge), Liferay cryptographically
+    generates an authorization token for this user and application combination.
+    It sends the token to the application over HTTPS. Initial authorization is
+    now complete! 
 
 5.  When the application must retrieve data, it sends the token with the request
     to prove it's authorized to have that data.
@@ -128,17 +129,17 @@ If you want to select authorization types manually, select *Other*.
 application supports. Several common combinations are defined for you in the
 various Client Profiles above. 
 
-After you save the form, it reappears with some additional fields: 
+After you save the form, it reappears with additional fields: 
 
 **Client ID:** The system generates this for you; it's an identifier for your
 application, so that @product@ knows what application is being authorized to
 access user data. 
 
 **Client Secret:** Click the *pencil* icon to generate a client secret. The
-secret identifies the client is genuine during the authorization process (see
-figure 1 above). Not all client profiles require a client secret, because
-some are incapable of keeping it secret! This is when the aforementioned PKCE
-code challenge and verifier is needed.
+secret identifies the client during the authorization process (see figure
+1 above). Not all client profiles require a client secret, because some are
+incapable of keeping it secret! This is when the aforementioned PKCE code
+challenge and verifier is needed.
 
 **Icon:** Upload an icon that your application's users identify with your
 application. This is displayed on the authorization screen. 
