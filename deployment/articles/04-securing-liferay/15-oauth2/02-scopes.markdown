@@ -12,12 +12,12 @@ created in two ways:
 
 2.  By developers, by creating a JAX-RS endpoint. By default, scopes are 
     generated based on the HTTP verbs supported by the JAX-RS endpoint.
-    A special annotation override this behavior and register specific scopes. 
+    A special annotation overrides this behavior and registers specific scopes. 
 
 ## Creating a Scope for a JSONWS Service
 
 The most common way to create a scope is to create a 
-[Service Access Policy](/discover/deployment/-/knowledge_base/7-1/service-access-policies)
+[Service Access Policy](/docs/7-2/deploy/-/knowledge_base/d/service-access-policies)
 prefixed with the name `OAUTH2_`. This naming convention causes the policy to appear
 in the OAuth application configuration screen as a scope. 
 
