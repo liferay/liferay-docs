@@ -1,4 +1,10 @@
-# Getting Collections [](id=getting-collections)
+---
+header-id: getting-collections
+---
+
+# Getting Collections
+
+[TOC levels=1-4]
 
 Requests for collection resources are the same as those for non-collection 
 resources. For example, an 
@@ -60,7 +66,7 @@ This response is in JSON, which is the default response format for web APIs in
       "totalCount": 2
     }
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Pagination]()
 

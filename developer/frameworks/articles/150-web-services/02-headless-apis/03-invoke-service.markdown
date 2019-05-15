@@ -1,4 +1,10 @@
-# Get Started: Invoke a Service [](id=get-started-invoke-a-service)
+---
+header-id: get-started-invoke-a-service
+---
+
+# Get Started: Invoke a Service
+
+[TOC levels=1-4]
 
 Once you know which API you want to call via the 
 [OpenAPI profile](/develop/tutorials/-/knowledge_base/7-1/get-started-discover-the-api), 
@@ -141,5 +147,5 @@ Although this response is JSON, the API's consumer can select other formats to
 use (like XML). For more information, see 
 [API Formats and Content Negotiation](liferay.com). 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 

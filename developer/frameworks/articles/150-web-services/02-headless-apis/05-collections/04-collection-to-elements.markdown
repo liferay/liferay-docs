@@ -1,4 +1,10 @@
-# Navigating from a Collection to its Elements [](id=navigating-from-a-collection-to-its-elements)
+---
+header-id: navigating-from-a-collection-to-its-elements
+---
+
+# Navigating from a Collection to its Elements
+
+[TOC levels=1-4]
 
 When you 
 [get a collection](liferay.com), 
@@ -106,7 +112,7 @@ steps to do so:
         curl "http://localhost:8080/o/headless-admin-user/v1.0/user-accounts/59347" \
              -u 'test@liferay.com:test'
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Working with Collections of Data]()
 

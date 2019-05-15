@@ -1,4 +1,10 @@
-# Restrict properties [](id=restrict-properties)
+---
+header-id: restrict-properties
+---
+
+# Restrict properties
+
+[TOC levels=1-4]
 
 Retrieving large entities or collections increases the response's size and uses 
 more bandwidth. You can alleviate this by telling the server via the request 
@@ -87,6 +93,6 @@ the headlines for all the blog postings in the Site with the ID `20124`:
       "totalCount": 2
     }
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Navigating to a Related Resource]()

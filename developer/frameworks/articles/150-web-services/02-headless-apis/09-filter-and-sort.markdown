@@ -1,4 +1,10 @@
-# Filter, Sort, and Search [](id=filter-sort-and-search)
+---
+header-id: filter-sort-and-search
+---
+
+# Filter, Sort, and Search
+
+[TOC levels=1-4]
 
 You can use @product@'s headless REST APIs to search for content you're 
 interested in. You can also sort and filter content. Here, you'll learn how. 

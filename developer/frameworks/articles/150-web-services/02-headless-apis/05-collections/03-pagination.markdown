@@ -1,4 +1,10 @@
-# Pagination [](id=pagination)
+---
+header-id: pagination
+---
+
+# Pagination
+
+[TOC levels=1-4]
 
 A small collection can be transmitted in a single response without difficulty. 
 Transmitting a large collection all at once, however, can consume too much 
@@ -67,6 +73,6 @@ exist on the site with the ID `20124`:
 Similarly, you can customize the number of elements per page via the optional 
 parameter `pageSize` (e.g., `?pageSize=20`). 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Making Authenticated Requests]() 

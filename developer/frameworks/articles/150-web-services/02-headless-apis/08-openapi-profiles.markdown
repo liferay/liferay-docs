@@ -1,4 +1,10 @@
-# OpenAPI Profiles [](id=api-vocabulary)
+---
+header-id: api-vocabulary
+---
+
+# OpenAPI Profiles
+
+[TOC levels=1-4]
 
 All the APIs exposed by @product@ are available under the 
 [liferayinc SwaggerHub organization](https://app.swaggerhub.com/organizations/liferayinc). 

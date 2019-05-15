@@ -1,4 +1,10 @@
+---
+header-id: headless-rest-apis
+---
+
 # Headless REST APIs
+
+[TOC levels=1-4]
 
 @product@'s headless REST APIs follow the 
 [OpenAPI](https://swagger.io/docs/specification/about/) 

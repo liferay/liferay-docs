@@ -1,4 +1,10 @@
-# API Formats and Content Negotiation [](id=hypermedia-formats-and-content-negotiation)
+---
+header-id: hypermedia-formats-and-content-negotiation
+---
+
+# API Formats and Content Negotiation
+
+[TOC levels=1-4]
 
 The responses in the preceding examples use a standard JSON format, which is the 
 default response format for @product@'s headless REST APIs. You can also use 
@@ -230,7 +236,7 @@ After creating a new resource, PUT requests in a different language add that
 translation. PATCH requests will return an error (you are expected to update, 
 not create, in a PATCH request). 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [API Vocabulary]()
 

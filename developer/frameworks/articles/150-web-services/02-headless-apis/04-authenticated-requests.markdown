@@ -1,4 +1,10 @@
-# Making Authenticated Requests [](id=making-authenticated-requests)
+---
+header-id: making-authenticated-requests
+---
+
+# Making Authenticated Requests
+
+[TOC levels=1-4]
 
 To make an authenticated request, you must authenticate as a specific user. 
 
@@ -15,7 +21,7 @@ for more information.
 
 First, you'll learn how send requests with basic authentication. 
 
-## Basic Authentication [](id=basic-authentication)
+## Basic Authentication
 
 Basic authentication requires that you send an HTTP `Authorization` header 
 containing the encoded user name and password. You must first get that encoded 
@@ -102,7 +108,7 @@ request receives. For more information on the response's structure, see
       "totalCount": 2
     }
 
-## OAuth 2.0 Authentication [](id=oauth-2-0-authentication)
+## OAuth 2.0 Authentication
 
 @product-ver@ supports authorization via OAuth 2.0, which is a token-based 
 authentication mechanism. For more details, see 
@@ -110,7 +116,7 @@ authentication mechanism. For more details, see
 The following sections show you how to use OAuth 2.0 to authenticate web API 
 requests. 
 
-### Obtaining the OAuth 2.0 Token [](id=obtaining-the-oauth-2-0-token)
+### Obtaining the OAuth 2.0 Token
 
 Before using OAuth 2.0 to invoke a web API, you must register your application 
 (your web API's consumer) as an authorized OAuth client. To do this, follow the 
@@ -131,7 +137,7 @@ ID and Client Secret values that appear at the top of the form.
 Next, you must get an OAuth 2.0 access token. To do this, see the tutorial 
 [Authorization Account Access with OAuth 2](/discover/deployment/-/knowledge_base/7-2/authorizing-account-access-with-oauth2). 
 
-### Invoking the Service with an OAuth 2.0 Token [](id=invoking-the-service-with-an-oauth-2-0-token)
+### Invoking the Service with an OAuth 2.0 Token
 
 Once you have a valid OAuth 2.0 token, include it in the request's 
 `Authorization` header, specifying that the authentication type is a 
@@ -143,7 +149,11 @@ For example:
 The response will contain the resources that the authenticated user has 
 permission to access, just like the response from Basic authentication. 
 
-# Making Unauthenticated Requests [](id=making-unauthenticated-requests)
+---
+header-id: making-unauthenticated-requests
+---
+
+# Making Unauthenticated Requests
 
 Unauthenticated requests are disabled by default in @product@'s headless REST 
 APIs. You can, however, enable them manually by following these steps: 
@@ -171,4 +181,4 @@ APIs. You can, however, enable them manually by following these steps:
 
 You should get the OpenAPI profile for the API you sent the request to. 
 
-## Related Topics [](id=related-topics)
+## Related Topics

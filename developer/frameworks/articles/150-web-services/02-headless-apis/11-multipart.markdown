@@ -1,4 +1,10 @@
+---
+header-id: multipart-requests
+---
+
 # Multipart Requests
+
+[TOC levels=1-4]
 
 Several operations accept a binary file via a multipart request. For example, 
 the definition for posting a file to a `DocumentFolder` specifies a multipart 
@@ -77,4 +83,4 @@ And here's the response:
       "title": "podcast"
     }
 
-## Related Topics [](id=related-topics)
+## Related Topics

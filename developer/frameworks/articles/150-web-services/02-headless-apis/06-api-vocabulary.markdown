@@ -1,4 +1,10 @@
-# API Vocabulary [](id=api-vocabulary)
+---
+header-id: api-vocabulary
+---
+
+# API Vocabulary
+
+[TOC levels=1-4]
 
 When defining an API, the developer must decide how to expose the representation
 of its resources. This determines its ease of use and how it can evolve. 
@@ -30,7 +36,7 @@ client-server messages represent the APIs' resources. In other words, the APIs'
 schemas are defined first and the attributes, resources, and operations are
 named to clearly define what they represent and how they should be used. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Service Builder Web Services](/develop/tutorials/-/knowledge_base/7-2/service-builder-web-services)
 
