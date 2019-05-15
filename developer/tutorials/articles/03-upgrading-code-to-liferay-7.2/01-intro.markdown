@@ -5,9 +5,12 @@ custom apps) to the new version. You'll learn how to upgrade your code in this
 section.
 
 These tutorials assume you're using the
-[Code Upgrade Planner]().
+[Code Upgrade Planner](/docs/reference/7-2/-/knowledge_base/r/code-upgrade-planner).
 To follow along with this section, install the planner and step through the
 upgrade instructions.
+
+For convenience, this tutorial section also references documentation and
+outlined steps to aid those opting to upgrade their code manually.
 
 Here are the code upgrade steps:
 
@@ -16,33 +19,40 @@ Here are the code upgrade steps:
     Legacy project environments should be upgraded to the latest version of
     Liferay Workspace to ensure you leverage all available features.
 
-    1.  [Set up Liferay Workspace]()
+    1.  [Set Up Liferay Workspace](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment#setting-up-liferay-workspace)
 
-        1.  [Create New Liferay Workspace]() <!--commandId="create_new_liferay_workspace"-->
+        A Liferay Workspace is a generated environment that is built to hold
+        and manage your Liferay projects. Create/import a workspace to get
+        started.
 
-            Create a new Liferay Workspace.
+        1.  [Create New Liferay Workspace](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment#creating-new-liferay-workspace) <!--commandId="create_new_liferay_workspace"-->
 
-        2.  [Import Existing Liferay Workspace]()
+            If you don't have an existing 7.x Liferay Workspace, you must create
+            one. Skip to the next step if you have an existing workspace.
 
-            If you do not have an existing 7.x workspace, go to the previous
-            step.
+        2.  [Import Existing Liferay Workspace](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment#importing-existing-liferay-workspace)
+
+            Import an existing Liferay Workspace. If you don't have one, revisit
+            the previous step.
 
     2.  [Configure Liferay Workspace Settings](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment#configuring-liferay-workspace)
 
         Set the @product@ version in workspace's configuration you intend to
         upgrade to.
 
-        1.  [Configure Bundle URL]()
+        1.  [Configure Bundle URL](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment#configuring-bundle-url)
 
-            Configure your bundle URL.
+            Configure your bundle URL that the @product@ bundle is downloaded
+            from.
 
-        2.  [Configure Target Platform Version]()
+        2.  [Configure Target Platform Version](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment#configuring-target-platform-version)
 
-            Configure your Target Platform version.
+            Configure your Target Platform version, which provides the specific
+            artifacts associated with a @product@ release.
 
-        3.  [Initialize Server Bundle]()
+        3.  [Initialize Server Bundle](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment#initializing-server-bundle)
 
-            Initialize your Liferay server bundle.
+            Download the @product@ bundle you're upgrading to.
 
 2.  [Migrate Plugins SDK Projects](/docs/tutorials/7-2/-/knowledge_base/t/migrating-plugins-sdk-projects-to-liferay-workspace)
 
