@@ -97,7 +97,7 @@ to the original file in @product@:
 - `ext-web/docroot/WEB-INF/liferay-portlet-ext.xml`
     - **Description:** Overrides the Liferay-specific core portlets'
       declarations. It core portlets included in @product@. Refer to the
-      [liferay-portlet-app_7_0_0.dtd](@platform-ref@/7.0-latest/definitions/liferay-portlet-app_7_0_0.dtd.html)
+      [liferay-portlet-app_7_0_0.dtd](@platform-ref@/7.2-latest/definitions/liferay-portlet-app_7_2_0.dtd.html)
       file for details on all the available options. Use this file with care;
       the code of the portlets may be assuming some of these options to be set
       to certain values. 

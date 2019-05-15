@@ -57,7 +57,7 @@ modifying the server's returned node name.
     ```java
     @Override
     public String getComputerName() {
-        return “sample_portalimpl_ext_installed_successfully_��? + _computerName;
+        return "sample_portalimpl_ext_installed_successfully_" + _computerName;
     }
     ```
 
