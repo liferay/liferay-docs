@@ -1,4 +1,10 @@
+---
+header-id: converting-plugins-sdk-projects-with-blade-cli
+---
+
 # Converting Plugins SDK Projects with Blade CLI
+
+[TOC levels=1-4]
 
 Blade CLI offers a command that can automatically migrate a Plugins SDK project
 to a Liferay Workspace folder. During the process, the Ant-based Plugins SDK
