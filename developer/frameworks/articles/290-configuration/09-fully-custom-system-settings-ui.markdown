@@ -1,8 +1,7 @@
 # Configuration Form Renderer [](id=configuration-form-renderer)
 
-There are various approaches to customizing the auto-generated System Settings
-UI for your configurable application. To replace an application's auto-generated
-configuration screen with a form built from scratch, you follow these steps:
+To replace an application's auto-generated configuration screen with a form
+built from scratch, you follow these steps:
 
 1.  Use a `DisplayContext` class to transfer data between back-end code and the
     desired JSP markup.
@@ -11,9 +10,9 @@ configuration screen with a form built from scratch, you follow these steps:
     and the previously created `DisplayContext` class.
 
 A generalized discussion on System Settings UI customization is found in a
-[separate tutorial](/develop/tutorials/-/knowledge_base/7-1/customizing-the-system-settings-user-interface).
+[separate section](/docs/7-2/frameworks/-/knowledge_base/f/customizing-the-system-settings-user-interface).
 
-This tutorial demonstrates replacing the configuration UI for the _Language
+This article demonstrates replacing the configuration UI for the _Language
 Template_ System Settings entry, found in  Control Panel &rarr; Configuration
 &rarr; System Settings &rarr; Localization &rarr; Language Template. The same
 steps apply when replacing your custom application's auto-generated UI. 
@@ -37,39 +36,43 @@ itself.
 For this example, create a `LanguageTemplateConfigurationDisplayContext` class
 with these contents:
 
-    public class LanguageTemplateConfigurationDisplayContext {
+```java
 
-        public void addTemplateValue(
-            String templateKey, String templateDisplayName) {
+public class LanguageTemplateConfigurationDisplayContext {
 
-            _templateValues.add(new String[] {templateKey, templateDisplayName});
-        }
+    public void addTemplateValue(
+        String templateKey, String templateDisplayName) {
 
-        public String getCurrentTemplateName() {
-            return _currentTemplateName;
-        }
-
-        public String getFieldLabel() {
-            return _fieldLabel;
-        }
-
-        public List<String[]> getTemplateValues() {
-            return _templateValues;
-        }
-
-        public void setCurrentTemplateName(String currentTemplateName) {
-            _currentTemplateName = currentTemplateName;
-        }
-
-        public void setFieldLabel(String fieldLabel) {
-            _fieldLabel = fieldLabel;
-        }
-
-        private String _currentTemplateName;
-        private String _fieldLabel;
-        private final List<String[]> _templateValues = new ArrayList<>();
-
+        _templateValues.add(new String[] {templateKey, templateDisplayName});
     }
+
+    public String getCurrentTemplateName() {
+        return _currentTemplateName;
+    }
+
+    public String getFieldLabel() {
+        return _fieldLabel;
+    }
+
+    public List<String[]> getTemplateValues() {
+        return _templateValues;
+    }
+
+    public void setCurrentTemplateName(String currentTemplateName) {
+        _currentTemplateName = currentTemplateName;
+    }
+
+    public void setFieldLabel(String fieldLabel) {
+        _fieldLabel = fieldLabel;
+    }
+
+    private String _currentTemplateName;
+    private String _fieldLabel;
+    private final List<String[]> _templateValues = new ArrayList<>();
+
+}
+
+```
 
 Next implement the `ConfigurationFormRenderer`.
 
@@ -78,55 +81,71 @@ Next implement the `ConfigurationFormRenderer`.
 First create the component and class declarations. Set the `service` property
 to `ConfigurationFormRenderer.class`:
 
-    @Component(
-        configurationPid = "com.liferay.site.navigation.language.web.configuration.SiteNavigationLanguageWebTemplateConfiguration",
-        immediate = true, service = ConfigurationFormRenderer.class
-    )
-    public class LanguageTemplateConfigurationFormRenderer
-        implements ConfigurationFormRenderer {
+```java
+
+@Component(
+    configurationPid = "com.liferay.site.navigation.language.web.configuration.SiteNavigationLanguageWebTemplateConfiguration",
+    immediate = true, service = ConfigurationFormRenderer.class
+)
+public class LanguageTemplateConfigurationFormRenderer
+    implements ConfigurationFormRenderer {
+
+```
 
 Next, write an `activate` method (decorated with `@Activate` and `@Modified`)
 to to convert a map of the configuration's properties to a typed class. The
 configuration is stored in a volatile field. Don't forget to make it volatile
 to prevent thread safety problems. See the article on
-[reading configuration values from a component class](/develop/tutorials/-/knowledge_base/7-1/reading-configuration-values-from-a-component)
-for more informationAdmin: Instance Settings.
+[reading configuration values from a component class](/docs/7-2/frameworks/-/knowledge_base/f/reading-configuration-values-from-a-component)
+for more information.
 
-	@Activate
-	@Modified
-	public void activate(Map<String, Object> properties) {
-		_siteNavigationLanguageWebTemplateConfiguration =
-			ConfigurableUtil.createConfigurable(
-				SiteNavigationLanguageWebTemplateConfiguration.class,
-				properties);
-	}
+```java
 
-    private volatile SiteNavigationLanguageWebTemplateConfiguration
-        _siteNavigationLanguageWebTemplateConfiguration;
+@Activate
+@Modified
+public void activate(Map<String, Object> properties) {
+    _siteNavigationLanguageWebTemplateConfiguration =
+        ConfigurableUtil.createConfigurable(
+            SiteNavigationLanguageWebTemplateConfiguration.class,
+            properties);
+}
+
+private volatile SiteNavigationLanguageWebTemplateConfiguration
+    _siteNavigationLanguageWebTemplateConfiguration;
+
+```
 
 Next override the `getPid` and `getRequestParameters` methods:
 
-	@Override
-	public String getPid() {
-		return "com.liferay.site.navigation.language.web.configuration." +
-			"SiteNavigationLanguageWebTemplateConfiguration";
-	}
+```java
+
+@Override
+public String getPid() {
+    return "com.liferay.site.navigation.language.web.configuration." +
+        "SiteNavigationLanguageWebTemplateConfiguration";
+}
+
+```
 
 Return the full configuration ID, as specified in the `*Configuration` class's
 `@Meta.OCD` annotation.
 
-	@Override
-	public Map<String, Object> getRequestParameters(
-		HttpServletRequest request) {
+```java
 
-		Map<String, Object> params = new HashMap<>();
+@Override
+public Map<String, Object> getRequestParameters(
+    HttpServletRequest request) {
 
-		String ddmTemplateKey = ParamUtil.getString(request, "ddmTemplateKey");
+    Map<String, Object> params = new HashMap<>();
 
-		params.put("ddmTemplateKey", ddmTemplateKey);
+    String ddmTemplateKey = ParamUtil.getString(request, "ddmTemplateKey");
 
-		return params;
-	}
+    params.put("ddmTemplateKey", ddmTemplateKey);
+
+    return params;
+}
+
+```
 
 In the `getRequestParameters` method, map the parameters sent by the custom form
 (obtained from the request) to the keys of the fields in the Configuration
@@ -144,80 +163,90 @@ necessary values that the JSP needs. In this case, set the title, the field
 label, and the redirect URL. Finally, call `renderJSP` and pass in the
 `servletContext`, request, response, and the path to the JSP: 
 
-	@Override
-	public void render(HttpServletRequest request, HttpServletResponse response)
-		throws IOException {
+```java
 
-		Locale locale = LocaleThreadLocal.getThemeDisplayLocale();
+@Override
+public void render(HttpServletRequest request, HttpServletResponse response)
+    throws IOException {
 
-		LanguageTemplateConfigurationDisplayContext
-			languageTemplateConfigurationDisplayContext =
-				new LanguageTemplateConfigurationDisplayContext();
+    Locale locale = LocaleThreadLocal.getThemeDisplayLocale();
 
-		languageTemplateConfigurationDisplayContext.setCurrentTemplateName(
-			_siteNavigationLanguageWebTemplateConfiguration.ddmTemplateKey());
+    LanguageTemplateConfigurationDisplayContext
+        languageTemplateConfigurationDisplayContext =
+            new LanguageTemplateConfigurationDisplayContext();
 
-		long groupId = 0;
+    languageTemplateConfigurationDisplayContext.setCurrentTemplateName(
+        _siteNavigationLanguageWebTemplateConfiguration.ddmTemplateKey());
 
-		Group group = _groupLocalService.fetchCompanyGroup(
-			CompanyThreadLocal.getCompanyId());
+    long groupId = 0;
 
-		if (group != null) {
-			groupId = group.getGroupId();
-		}
+    Group group = _groupLocalService.fetchCompanyGroup(
+        CompanyThreadLocal.getCompanyId());
 
-		List<DDMTemplate> ddmTemplates = _ddmTemplateLocalService.getTemplates(
-			groupId, _portal.getClassNameId(LanguageEntry.class));
+    if (group != null) {
+        groupId = group.getGroupId();
+    }
 
-		for (DDMTemplate ddmTemplate : ddmTemplates) {
-			languageTemplateConfigurationDisplayContext.addTemplateValue(
-				ddmTemplate.getTemplateKey(), ddmTemplate.getName(locale));
-		}
+    List<DDMTemplate> ddmTemplates = _ddmTemplateLocalService.getTemplates(
+        groupId, _portal.getClassNameId(LanguageEntry.class));
 
-		languageTemplateConfigurationDisplayContext.setFieldLabel(
-			LanguageUtil.get(
-				ResourceBundleUtil.getBundle(
-					locale, LanguageTemplateConfigurationFormRenderer.class),
-				"language-selection-style"));
+    for (DDMTemplate ddmTemplate : ddmTemplates) {
+        languageTemplateConfigurationDisplayContext.addTemplateValue(
+            ddmTemplate.getTemplateKey(), ddmTemplate.getName(locale));
+    }
 
-		request.setAttribute(
-			LanguageTemplateConfigurationDisplayContext.class.getName(),
-			languageTemplateConfigurationDisplayContext);
+    languageTemplateConfigurationDisplayContext.setFieldLabel(
+        LanguageUtil.get(
+            ResourceBundleUtil.getBundle(
+                locale, LanguageTemplateConfigurationFormRenderer.class),
+            "language-selection-style"));
 
-		_jspRenderer.renderJSP(
-			_servletContext, request, response,
-			"/configuration/site_navigation_language_web_template.jsp");
-	}
+    request.setAttribute(
+        LanguageTemplateConfigurationDisplayContext.class.getName(),
+        languageTemplateConfigurationDisplayContext);
+
+    _jspRenderer.renderJSP(
+        _servletContext, request, response,
+        "/configuration/site_navigation_language_web_template.jsp");
+}
+
+```
 
 Specify the required service references at the bottom of the class. Be careful
 to target the proper servlet context, passing the `bundle-SymbolicName` of the
 module (found in its `bnd.bnd` file) into the `osgi.web.symbolicname` property
 of the reference target:
 
-	@Reference
-	private DDMTemplateLocalService _ddmTemplateLocalService;
+```java
 
-	@Reference
-	private GroupLocalService _groupLocalService;
+@Reference
+private DDMTemplateLocalService _ddmTemplateLocalService;
 
-	@Reference
-	private JSPRenderer _jspRenderer;
+@Reference
+private GroupLocalService _groupLocalService;
 
-	@Reference
-	private Portal _portal;
+@Reference
+private JSPRenderer _jspRenderer;
 
-	@Reference(
-		target = "(osgi.web.symbolicname=com.liferay.site.navigation.language.web)",
-		unbind = "-"
-	)
-	private ServletContext _servletContext;
+@Reference
+private Portal _portal;
+
+@Reference(
+    target = "(osgi.web.symbolicname=com.liferay.site.navigation.language.web)",
+    unbind = "-"
+)
+private ServletContext _servletContext;
+
+```
 
 Once the configuration form renderer is implemented, you can write the JSP
 markup for the form.
 
 ## Writing the JSP Markup [](id=writing-the-jsp-markup)
-Admin: Instance Settings
+
 Now write the JSP:
+
+```jsp
 
     <%@ include file="/init.jsp" %>
 
@@ -241,6 +270,8 @@ Admin: Instance Settings    String currentTemplateName = languageTemplateConfigu
         %>
 
     </aui:select>
+
+```
 
 The opening scriptlet gets the display context object from the request so that
 all its getters are invoked whenever information from the back-end is required.
