@@ -39,9 +39,8 @@ attendee.
 
 Like other Liferay Applications, the calendar allows data to be exported or
 imported as 
-[LAR files](/discover/portal/-/knowledge_base/7-1/exporting-importing-widget-data)
-LAR files. As with all LAR files, data can only be ported between installations
-of the same version.
+[LAR files](/discover/portal/-/knowledge_base/7-1/exporting-importing-widget-data).
+As with all LAR files, data can only be ported between installations of the same version.
 
 1.  From the calendar widget, click the
     ![Options](../../images/icon-app-options.png) button in the widget header and select
