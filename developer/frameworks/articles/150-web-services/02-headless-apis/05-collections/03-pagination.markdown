@@ -6,35 +6,14 @@ header-id: pagination
 
 [TOC levels=1-4]
 
-A small collection can be transmitted in a single response without difficulty. 
-Transmitting a large collection all at once, however, can consume too much 
-bandwidth, time, and memory. It can also overwhelm the user with too much data. 
-It's therefore best to get and display the elements of a large collection in 
-discrete chunks, or pages. 
-
-By default, @product@'s headless REST APIs return paginated collections. The 
-following attributes in the responses also contain the information needed to 
-navigate between those pages: 
-
-`totalCount`: The total number of this resource's items.
-
-`pageSize`: The number of this resource's items to be included in this
-response. 
-
-`page`: The number of the current page.
-
-`lastPage`: The last page's number. 
-
-`items`: The collection elements present in this page. Each element also 
-contains the data of the object it represents, so there's no need for additional 
-requests for individual elements. 
-
-`id`: The identifier of each item. You can use this, if necessary, to get more 
-information on a specific item. 
+Collection resources are returned in pages of information. 
+[Working with Collections of Data](/develop/tutorials/-/knowledge_base/7-2/working-with-collections-of-data) 
+explains this in more detail. Here, you'll learn how to work with collection 
+pages. 
 
 For example, suppose that there are 123 users your portal and you want to get 
 information on them. To do this, send an 
-[authenticated request](liferay.com) 
+[authenticated request](/develop/tutorials/-/knowledge_base/7-2/making-authenticated-requests) 
 to the UserAccount URL: 
 
     curl "http://localhost:8080/o/headless-admin-user/v1.0/user-accounts" \
@@ -75,4 +54,6 @@ parameter `pageSize` (e.g., `?pageSize=20`).
 
 ## Related Topics
 
-[Making Authenticated Requests]() 
+[Working with Collections of Data](/develop/tutorials/-/knowledge_base/7-2/working-with-collections-of-data)
+
+[Making Authenticated Requests](/develop/tutorials/-/knowledge_base/7-2/making-authenticated-requests)

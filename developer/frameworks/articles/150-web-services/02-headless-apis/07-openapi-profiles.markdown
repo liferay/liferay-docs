@@ -82,6 +82,4 @@ contains APIs for transitioning workflows.
 
 ## Related Topics
 
-[API Vocabulary](/develop/tutorials/-/knowledge_base/7-2/api-vocabulary)
-
 [API Formats and Content Negotiation](/develop/tutorials/-/knowledge_base/7-2/api-formats-and-content-negotiation)

@@ -8,7 +8,7 @@ header-id: getting-collections
 
 Requests for collection resources are the same as those for non-collection 
 resources. For example, an 
-[authenticated request](liferay.com) 
+[authenticated request](/develop/tutorials/-/knowledge_base/7-2/making-authenticated-requests) 
 to the `UserAccount` endpoint returns a collection containing the portal's 
 users. When sending this request, use the credentials of an administrative user 
 who has permission to view other portal users: 
@@ -27,7 +27,7 @@ The response (below) has two main parts:
 
 This response is in JSON, which is the default response format for web APIs in 
 @product@. For information on specifying other response formats, see 
-[API Formats and Content Negotiation](liferay.com). 
+[API Formats and Content Negotiation](/develop/tutorials/-/knowledge_base/7-2/api-formats-and-content-negotiation). 
 
     {
       "items": [
@@ -68,8 +68,8 @@ This response is in JSON, which is the default response format for web APIs in
 
 ## Related Topics
 
-[Pagination]()
+[Pagination](/develop/tutorials/-/knowledge_base/7-2/pagination)
 
-[Making Authenticated Requests]()
+[Making Authenticated Requests](/develop/tutorials/-/knowledge_base/7-2/making-authenticated-requests)
 
-[API Formats and Content Negotiation]()
+[API Formats and Content Negotiation](/develop/tutorials/-/knowledge_base/7-2/api-formats-and-content-negotiation)

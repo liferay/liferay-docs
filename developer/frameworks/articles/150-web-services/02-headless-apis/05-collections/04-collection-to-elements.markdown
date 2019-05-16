@@ -7,12 +7,12 @@ header-id: navigating-from-a-collection-to-its-elements
 [TOC levels=1-4]
 
 When you 
-[get a collection](liferay.com), 
+[get a collection](/develop/tutorials/-/knowledge_base/7-2/getting-collections), 
 you can use the response to get an element of that collection. Follow these 
 steps to do so: 
 
 1.  Get a collection. This example gets a list of users by sending 
-    [an authenticated request](liferay.com) 
+    [an authenticated request](/develop/tutorials/-/knowledge_base/7-2/making-authenticated-requests) 
     to the `user-accounts` collection: 
 
         curl "http://localhost:8080/o/headless-admin-user/v1.0/user-accounts" \
@@ -114,8 +114,8 @@ steps to do so:
 
 ## Related Topics
 
-[Working with Collections of Data]()
+[Getting Collections](/develop/tutorials/-/knowledge_base/7-2/getting-collections)
 
-[Pagination]()
+[Pagination](/develop/tutorials/-/knowledge_base/7-2/pagination)
 
-[Making Authenticated Requests]()
+[Making Authenticated Requests](/develop/tutorials/-/knowledge_base/7-2/making-authenticated-requests)
