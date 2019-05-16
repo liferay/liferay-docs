@@ -13,83 +13,49 @@ choice in this section.
 
 There are two steps you must follow to migrate your custom code to workspace:
 
-1. Copy the Plugins SDK project to the applicable workspace folder.
+1. Import the Plugins SDK project into the Code Upgrade Planner.
 
 2. Convert the Plugins SDK project to a supported workspace build type.
 
-## Copying the Plugins SDK Project
+You'll step through importing a Plugins SDK project first.
 
-The majority of Plugins SDK projects belong in the workspace's `wars` folder.
-You can consult the
-[Workspace Anatomy](/docs/reference/7-2/-/knowledge_base/r/liferay-workspace#workspace-anatomy)
-section for a full overview of a workspace's folder structure and choose where
-your custom app should reside. Once you've made the decision, copy your custom
-apps to the applicable workspace folder. If you plan to use a Gradle-based
-Liferay Workspace, you can execute a Blade CLI command to automate the migration
-process. See the next section for more information. There is not a Maven command
-for the conversion yet, so you must do the copy manually for Maven-based
-workspaces.
+## Importing Existing Plugins SDK Projects
 
-## Converting the Plugins SDK Project
+Initiating this step in the Code Upgrade Planner imports your Plugins SDK
+projects into the Code Upgrade Planner. These projects originate from the
+Plugins SDK you set when the Upgrade Planner process was started.
+
+If you're manually upgrading your code, you can skip this step.
+
+You're now ready to migrate your Plugins SDK projects to your new workspace!
+
+## Migrating Existing Plugins to Workspace
 
 Liferay Workspace can be generated as a Gradle or Maven environment, but it does
 not support the Plugins SDK's Ant build. Because of this, you must convert your
 projects to one of the supported build tools:
 
-- [Gradle](#converting-to-gradle)
-- [Maven](#converting-to-maven)
+- Gradle
+- Maven
 
-There is a [Blade CLI](/docs/reference/7-2/-/knowledge_base/r/blade-cli) command
-that automatically converts your Ant projects to Gradle projects. You'll learn
-how to leverage this next.
+When initiating this step for a Gradle-based workspace, your Ant-based
+Plugins SDK project is copied to the applicable workspace folder based on its
+project type (e.g., wars) and is converted to a Gradle project. There is also a
+Blade CLI command that completes this via the command line. Visit the
+[Converting Plugins SDK Projects with Blade CLI](/docs/reference/7-2/-/knowledge_base/r/converting-plugins-sdk-projects-with-blade-cli)
+article for more information.
 
-### Converting to Gradle
+If you're migrating your Ant project to a Maven workspace, you must manually
+copy the project to the applicable folder based on the project type (e.g.,
+`wars`). The majority of Plugins SDK projects belong in the workspace's `wars`
+folder. You can consult the
+[Workspace Anatomy](/docs/reference/7-2/-/knowledge_base/r/liferay-workspace#workspace-anatomy)
+section for a full overview of a workspace's folder structure and choose where
+your custom app should reside. Once you've made the decision, copy your custom
+app to the applicable workspace folder.
 
-To copy your Plugins SDK project and convert it to Gradle, you can execute the
-Blade `convert` command:
-
-1.  Navigate to the root folder of your workspace in a command line tool.
-
-2.  Execute the following command:
-
-    ```bash
-    blade convert -s [PLUGINS_SDK_PATH] [PLUGINS_SDK_PROJECT_NAME]
-    ```
-
-    You must provide the path of the Plugins SDK your project resides in and the
-    project name you want to convert. If you prefer converting all the Plugins
-    SDK projects at once, replace the project name variable with `-a` (i.e.,
-    specifying all plugins).
-
-    | **Note:** If the `convert` task doesn't work as described above, you may
-    | need to update your Blade CLI version. See the
-    | [Updating Blade CLI](/docs/7-2/reference/-/knowledge_base/r/updating-blade-cli)
-    | article for more information.
-
-    This Gradle conversion process also works for themes; they're converted to
-    automatically leverage NodeJS. If you're converting a Java-based theme, add
-    the `-t` option to your command too. This will incorporate the
-    [Theme Builder](/docs/reference/7-2/-/knowledge_base/r/theme-builder-gradle-plugin)
-    Gradle plugin for the theme instead. For more information on upgrading
-    6.2 themes, see the
-    [Upgrade a 6.2 Theme to 7.2](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-6-2-themes-to-7-2).
-
-| **Note:** When converting a Service Builder project, the `convert` task
-| automatically extracts the project's service interfaces and implementations
-| into OSGi modules (i.e., *-impl and *-api) and places them in the workspace's
-| `modules` folder. Your portlet and controller logic will remain a WAR and
-| reside in the `wars` folder.
-
-Once you run the `convert` command, your project is copied from the Plugins SDK
-into the applicable workspace folder based on the project type. It is also
-converted from Ant to Gradle.
-
-### Converting to Maven
-
-If you're migrating your Ant project to a Maven workspace, you should have
-copied the project to the applicable folder based on the project type (e.g.,
-`wars`). Now you must convert your project from Ant to Maven. You'll have to
+Then you must convert your project from Ant to Maven. You'll have to
 complete this conversion manually.
 
 Once you're finished, you should have your project(s) residing in the applicable
-workspace folders as Maven projects.
+workspace folders as Gradle/Maven projects.
