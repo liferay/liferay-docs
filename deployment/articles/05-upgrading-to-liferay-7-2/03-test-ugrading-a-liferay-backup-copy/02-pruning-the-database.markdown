@@ -1,39 +1,16 @@
 ---
-header-id: test-upgrading-a-product-backup-copy
+header-id: pruning-the-database
 ---
 
-# Test Upgrading a @product@ Backup Copy
+# Pruning the Database
 
 [TOC levels=1-4]
 
-Before upgrading your production @product@ instance, you should test to make
-sure that you can upgrade it correctly and efficiently. By removing unused
-objects from @product@, you can both reduce upgrade time and improve your
-server's performance on the new version. Taking the time to optimize your
-installation before upgrading can save time and keep your installation running
-smoothly. Doing a test run (or several test runs) on a production copy makes
-sense. After going through the upgrade process, resolving any issues, and
-testing the upgraded server successfully you can confidently upgrade your
-@product@ database. 
-
-| **Tip:** This step and
-| [preparing a new @product@ server](/docs/7-2/deploy/-/knowledge_base/deploy/preparing-a-new-product-server-for-data-upgrade)
-| can be done in parallel to save time. 
-
-## Copy the Production Installation to a Test Server
-
-Prepare a test server to use a copy of your production installation. Your test
-server must use the same Liferay version you're using on production. Configure
-your server to use a new empty database for testing data upgrades. 
-
-## Copy the Production Backup to the Test Database
-
-Import data from your
-[production database backup](/docs/7-2/deploy/-/knowledge_base/deploy/backing-up-a-product-installation)
-to the new empty database. 
-
-| **Important:** Make sure to save the data import log---you'll examine it in
-| the next steps. 
+Accumulating unneeded site data is common. For example, you may have many unused
+versions of Web Content articles or Documents and Media files. If you're done
+revising them and don't need the intermediate revisions, you can remove them.
+This saves you space and upgrade time. Here you'll remove unneeded data and then
+test your server. 
 
 ## Remove Duplicate Web Content Structure Field Names
 
@@ -56,8 +33,8 @@ via Liferay's UI or using Liferay's API through the
 [script console](/docs/7-2/user/-/knowledge_base/user/running-scripts-from-the-script-console)
 or a portlet you create. 
 
-| **Important**: You should only use Liferay's API because it accounts for 
-| relationships between @product@ objects. 
+| **Important**: You should only use Liferay's UI or API because they account 
+| for relationships between @product@ objects. 
 |
 | Never use SQL directly on your database to remove records. Your SQL might miss
 | object relationships, orphaning objects and causing performance problems.
@@ -152,11 +129,13 @@ Check these object types:
     -   Global `ResourcePermission` objects
 
 -   **Intermediate web content versions:** @product@ generates a new web
-    content version after any modification (including translations).
-    Consider removing versions you don't need. Removing a Journal Article,
-    for example, also removes related objects such as image files
-    (`JournalArticleImage`) that are part of the content. Removing unneeded
-    image files frees space in your database and file system. 
+    content version after any modification (including translations). Consider
+    removing versions you don't need. Removing a Journal Article, for example,
+    also removes related objects such as image files (`JournalArticleImage`)
+    that are part of the content. Removing unneeded image files frees space in
+    your database and file system. For more details, see [Example: Removing
+    Intermediate Journal Article
+    Versions](/docs/7-2/deploy/-/knowledge_base/deploy/example-removing-intermediate-journal-article-versions).  
 
 -   **Document versions**: As with Journal Articles, if you don't need
     intermediate document versions, delete them. This saves space both
@@ -188,6 +167,8 @@ Check these object types:
         portlets. These portlet instances have a different lifecycle and
         aren't deleted when the portlet is removed from a template.
 
+Next, you'll test @product@ with its pruned database. 
+
 ## Test @product@ with its Pruned Database Copy
 
 Find and resolve any issues related to the objects you removed. You can always
@@ -196,37 +177,3 @@ issue.
 
 Once you've successfully tested @product@ with its pruned database copy, you can
 upgrade the database to @product-ver@. 
-
-## Install @product-ver@ on a Test Server and Configure It to Use the Pruned Database 
-
-[Prepare a new test server with @product-ver@](/docs/7-2/deploy/-/knowledge_base/deploy/preparing-a-new-product-server-for-data-upgrade). 
-Configure it to use the pruned database copy. You'll use the new test server's
-Liferay upgrade tool next. 
-
-## Tune Your Database for the Upgrade 
-
-[Tune your database for the upgrade](/docs/7-2/deploy/-/knowledge_base/deploy/tune-your-database-for-the-upgrade). 
-
-## Upgrade the Database 
-
-Upgrade the database to @product-ver@ (see
-[Upgrade the Database](/docs/7-2/deploy/-/knowledge_base/deploy/upgrade-the-database));
-then return here. 
-
-If the upgrade took too long, search the upgrade log to identify more unused
-objects. Then retry these steps with a fresh copy of the production database. 
-
-## Test the Upgraded Portal and Resolve Any Issues 
-
-Test this upgraded @product-ver@ instance and resolve any issues. If you can't
-resolve an issue, retry these steps with a fresh copy of the production
-database. 
-
-## Checkpoint: You've Pruned and Upgraded a Production Database Copy 
-
-By removing unused objects from @product@ in your test environment, you've made
-upgrading feasible to do in production. You identified unused objects,
-documented/scripted removing them, and successfully upgraded the @product@
-database copy. 
-
-It's time to prepare your production environment for upgrading. 
