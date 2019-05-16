@@ -74,17 +74,20 @@ Here are the code upgrade steps:
     Optimize your workspace's build environment for the most efficient code
     upgrade experience.
 
-    1.  [Update Repository URL]()
+    1.  [Update Repository URL](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-build-dependencies#updating-the-repository-url)
 
-        Update your repository URL.
+        Update your repository URL to Liferay's frequently updated CDN
+        repository.
 
-    2.  [Update Workspace Plugin Version]()
+    2.  [Update Workspace Plugin Version](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-build-dependencies#updating-the-workspace-plugin-version)
 
-        Update your Workspace Plugin version
+        Update your Workspace plugin version to leverage the latest features of
+        Liferay Workspace.
 
-    3.  [Remove dependency Versions]()
+    3.  [Remove Dependency Versions](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-build-dependencies#removing-the-projects-dependency-versions)
 
-        Remove dependency versions.
+        Remove the project's dependency versions since it's leveraging target
+        platform.
 
 4.  [Fix Upgrade Problems](/docs/tutorials/7-2/-/knowledge_base/t/fixing-upgrade-problems)
 
@@ -93,11 +96,15 @@ Here are the code upgrade steps:
 
     1.  [Auto-Correct Upgrade Problems]()
 
-        Leverage auto-correct to upgrade code.
+        Auto-correct upgrade problems. This includes straightforward updates like
+        package imports, JSP tag names, Liferay descriptor versions, and XML
+        descriptor content.
 
     2.  [Find Upgrade Problems]()
 
-        Find upgrade problems.
+        Find upgrade problems. These are problems that cannot be auto-corrected;
+        you can update them manually according to the breaking changes
+        documentation.
 
     3.  [Resolve Upgrade Problems]()
 
@@ -105,7 +112,7 @@ Here are the code upgrade steps:
 
     4.  [Remove Problem Markers]()
 
-        Remove problem markers.
+        After fixing your upgrade problems, remove the problem markers.
 
 5.  [Upgrade Service Builder Services]()
 
@@ -119,7 +126,7 @@ Here are the code upgrade steps:
 
 6.  [Upgrade Customization Plugins](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-customization-plugins)
 
-    1.  [Upgrade Override/Extension Modules](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-override-extension-hooks)
+    1.  [Upgrade Customization Modules]()
 
     2.  [Upgrade Core JSP Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-core-jsp-hooks)
 
