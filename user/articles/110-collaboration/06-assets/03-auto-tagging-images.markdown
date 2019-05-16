@@ -1,4 +1,10 @@
-# Auto Tagging Images [](id=auto-tagging-images)
+---
+header-id: auto-tagging-images
+---
+
+# Auto Tagging Images
+
+[TOC levels=1-4]
 
 [Tags](/discover/portal/-/knowledge_base/7-2/tagging-content) 
 let you find and organize files, including images. With 
@@ -83,7 +89,7 @@ TensorFlow image auto tagging in the portal. Follow these steps to do so:
 
 ![Figure 3: You can fine tune the process that runs the TensorFlow image auto tagging in the portal.](../../../images/auto-tagging-tensorflow-process.png)
 
-## Additional Auto-tagging Providers [](id=additional-auto-tagging-providers)
+## Additional Auto-tagging Providers
 
 As mentioned above, @product@ contains two image auto-tagging providers besides 
 TensorFlow:

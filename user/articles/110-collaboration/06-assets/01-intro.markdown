@@ -1,4 +1,10 @@
+---
+header-id: assets
+---
+
 # Assets
+
+[TOC levels=1-4]
 
 When you think of assets, you probably think of things like houses, cars, money, 
 or gold bricks. Although @product@ is capable of holding many assets, we're not 

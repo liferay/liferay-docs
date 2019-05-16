@@ -1,7 +1,13 @@
+---
+header-id: auto-tagging-documents
+---
+
 # Auto Tagging Documents
 
+[TOC levels=1-4]
+
 Once you've 
-[configured text auto tagging](liferay.com) 
+[configured text auto tagging](/discover/portal/-/knowledge_base/7-2/auto-tagging-text) 
 for your provider of choice, you can enable it to auto tag text-based documents. 
 Recall that there are two text auto tagging providers available in the portal: 
 
@@ -41,4 +47,4 @@ Follow these steps to enable this provider for all portal instances:
 You can override this setting for each instance from *Control Panel* &rarr; 
 *Configuration* &rarr; *Instance Settings* &rarr; *Documents and Media*. 
 
-![Figure 1: Enable OpenNLP text auto tagging for Documents and Media.](../../../images/auto-tagging-docs-open-nlp.png)
+![Figure 2: Enable OpenNLP text auto tagging for Documents and Media.](../../../images/auto-tagging-docs-open-nlp.png)

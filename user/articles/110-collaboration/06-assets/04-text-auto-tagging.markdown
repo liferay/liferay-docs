@@ -1,4 +1,10 @@
+---
+header-id: auto-tagging-text
+---
+
 # Auto Tagging Text
+
+[TOC levels=1-4]
 
 With 
 [asset auto tagging enabled](/discover/portal/-/knowledge_base/7-2/configuring-asset-auto-tagging), 
@@ -25,8 +31,8 @@ Text auto tagging is disabled by default. To use it, you must do the following:
     two. This step is covered in separate articles on text auto tagging for 
     specific asset types: 
 
-    -   [Auto Tagging Documents](liferay.com)
-    -   [Auto Tagging Web Content](liferay.com)
+    -   [Auto Tagging Documents](/discover/portal/-/knowledge_base/7-2/auto-tagging-documents)
+    -   [Auto Tagging Web Content](/discover/portal/-/knowledge_base/7-2/auto-tagging-web-content)
 
 There are two text auto-tagging providers in the portal: 
 
@@ -101,4 +107,4 @@ Follow these steps to configure the OpenNLP Text Auto Tagging provider:
 You can override these settings for each instance from *Control Panel* &rarr; 
 *Configuration* &rarr; *Instance Settings* &rarr; *Assets*. 
 
-![Figure 1: Configure OpenNLP text auto tagging for your portal instances.](../../../images/auto-tagging-text-open-nlp.png)
+![Figure 2: Configure OpenNLP text auto tagging for your portal instances.](../../../images/auto-tagging-text-open-nlp.png)

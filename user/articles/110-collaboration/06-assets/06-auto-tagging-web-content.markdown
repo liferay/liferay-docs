@@ -1,7 +1,13 @@
+---
+header-id: auto-tagging-web-content
+---
+
 # Auto Tagging Web Content
 
+[TOC levels=1-4]
+
 Once you've 
-[configured text auto tagging](liferay.com) 
+[configured text auto tagging](/discover/portal/-/knowledge_base/7-2/auto-tagging-text) 
 for your provider of choice, you can enable it to auto tag text-based web 
 content. Recall that there are two text auto tagging providers available in the 
 portal: 
