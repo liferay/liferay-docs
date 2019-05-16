@@ -7,14 +7,14 @@ header-id: converting-plugins-sdk-projects-with-blade-cli
 [TOC levels=1-4]
 
 Blade CLI offers a command that can automatically migrate a Plugins SDK project
-to a Liferay Workspace folder. During the process, the Ant-based Plugins SDK
-project is copied to the applicable workspace folder based on its project type
-(e.g., `wars`) and is converted to a Gradle-based Liferay Workspace project.
-This drastically speeds up the migration process when upgrading to a Liferay
+to a Liferay Workspace. During the process, the Ant-based Plugins SDK project is
+copied to the applicable workspace folder based on its project type (e.g.,
+`wars`) and is converted to a Gradle-based Liferay Workspace project. This
+drastically speeds up the migration process when upgrading to a Liferay
 Workspace from a legacy Plugins SDK.
 
-| **Note:** There is not a Maven command for the conversion yet, so you must do
-| the migration manually for Maven-based workspaces.
+| **Note:** There is not a Maven command for the migration process yet, so you
+| must complete it manually for Maven-based workspaces.
 
 To copy your Plugins SDK project and convert it to Gradle, you can execute the
 Blade `convert` command:
