@@ -1,17 +1,11 @@
-# Common Segment Operations
+# Segment Management
 
-Here is a quick reference for various methods that you can use to interact with Segments in your application.
-
-## Retrieving Segments
-
-Segments and Segment Members can be retrieved programmatically. This code snippet retrieves an ordered range of active segments of user type, within a site identified by a `groupId`.
-
-```List<SegmentsEntry> segmentsEntries = segmentsEntryService.getSegmentsEntries(groupId, true, User.class.getName(), 0, 10, orderByComparator);
-```
+There are a broad array of uses for Segments and ways that you can integrate 
+them with your application. Below is a reference for different 
 
 ## Defining a Segment
 
-To define a Segment inside of a Java class insert a snippet like this:
+This snippet defines a segment by retrieving `@Reference` objects from `SegmentsCriteriaContributor` and instantiating a new `Criteria` object. It then adds user criteria using the `segmentsEntryService` that the user's `jobTitle` is "Developer" AND belongs to an Organization with a name that contains “America”:
 
 ```private void addSegmentWithCriteria() {
 Criteria criteria = new Criteria();
@@ -32,7 +26,7 @@ private SegmentsCriteriaContributor _organizationSegmentsCriteriaContributor;
 private SegmentsCriteriaContributor _userSegmentsCriteriaContributor;
 ```
 
-This snippet retrieves `@Reference` objects from `SegmentsCriteriaContributor` , instantiates a new `Criteria` object, and then adds a user criteria that the user's `jobTitle` is "Developer" AND belongs to an Organization with a name that contains “America”.
+### Manual Segment Member Assignments
 
 To define manual user-segment member assignments by means of the `SegmentsEntryRelService` use a snippet like this, which assigns a user identified by a `userId` to a segment identified by a `segmentsEntryId`:
 
@@ -40,6 +34,12 @@ To define manual user-segment member assignments by means of the `SegmentsEntryR
 segmentsEntryId, _portal.getClassNameId(User.class), userId, serviceContext)
 ```
 
+## Retrieving Segments
+
+Segments and Segment Members can be retrieved programmatically. This code snippet retrieves an ordered range of active segments of user type, within a site identified by a `groupId`.
+
+```List<SegmentsEntry> segmentsEntries = segmentsEntryService.getSegmentsEntries(groupId, true, User.class.getName(), 0, 10, orderByComparator);
+```
 
 ## Retrieving segment members
 
@@ -50,7 +50,8 @@ This snippet retrieves a range of primary keys of the entities associated to a s
 ```long[] segmentsEntryClassPKs = segmentsEntryProvider.getSegmentsEntryClassPKs(segmentsEntryId, 0, 10);
 ```
 
-In order to obtain the total count of entities associated to a segment, use the `getSegmentsEntryClassPKsCount` method, as shown in the following snippet:
+In order to obtain the total count of entities associated to a segment, use the 
+`getSegmentsEntryClassPKsCount` method, as shown in the following snippet:
 
 ```int segmentsEntryClassPksCount =
 	segmentsEntryProvider.getSegmentsEntryClassPKsCount(

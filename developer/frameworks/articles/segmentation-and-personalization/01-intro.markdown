@@ -22,6 +22,8 @@ The `segmentsEntry` criteria field determines the conditions that a user must me
 
 In the Segments UI, the segments criteria is built using the [Segments Editor](user-doc-link). The available properties are grouped by topic (e.g. User, Organization, Session). Technically, they are what we call a `SegmentsCriteriaContributor`, because they “contribute” conditions to the segments criteria. 
 
+You can see a a number of common Segment management operations with example 
+code in [Segment Management].
 
 ## Extending Segment Criteria
 
@@ -74,6 +76,8 @@ The `contribute` method of the `RequestContextContributor` adds the custom field
 
 ![Figure 1: `RequestContextContributor` service properties.](../../images/request-context-contributor.png)
 
+To create a `RequestContextContributor` through the step by step process, see [Creating a Request Context Contributor](dev-guide-link).
+
 ### SegmentsCriteriaContributor
 
 The [`SegmentsCriteriaContributor` interface](repo-link) provides a mechanism 
@@ -104,3 +108,5 @@ contributes a subquery to the global user query (AND/OR the user belongs to the
 organizations found in the Organization model query). To put it simple, it 
 allows to filter users based on aspects of a different but related entity, such 
 as the organization.
+
+To create a `SegmentsCriteriaContributor` through the step by step process, see [Creating Segment Criteria Contributors](dev-guide-link).

@@ -1,4 +1,4 @@
-# Request Context Contributor
+# Creating a Request Context Contributor
 
 To better under the `RequestContextContributor` create one now. First you'll 
 create the `SampleRequestContentContributor.java` file which contains the 
