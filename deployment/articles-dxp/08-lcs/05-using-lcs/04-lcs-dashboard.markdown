@@ -4,6 +4,8 @@ header-id: using-the-dashboard
 
 # Using the Dashboard
 
+[TOC levels=1-4]
+
 The LCS Dashboard shows a project's environments and servers. If you're not
 already at the Dashboard, click it near the upper left-hand corner of your LCS
 site. Clicking *Dashboard* takes you to the project view. From there, you can

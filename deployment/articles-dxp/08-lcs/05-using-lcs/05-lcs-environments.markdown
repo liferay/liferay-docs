@@ -4,6 +4,8 @@ header-id: managing-lcs-environments
 
 # Managing LCS Environments
 
+[TOC levels=1-4]
+
 Environments are the key components of your LCS project. When you register a 
 server in LCS, you do so in an environment. An environment is therefore the 
 gateway to managing and monitoring your servers in LCS. 

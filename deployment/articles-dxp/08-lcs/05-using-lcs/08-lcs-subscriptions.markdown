@@ -4,6 +4,8 @@ header-id: managing-liferay-dxp-subscriptions
 
 # Managing Liferay DXP Subscriptions
 
+[TOC levels=1-4]
+
 LCS lets you use and view your @product@ subscriptions. Recall that when you 
 [create an environment](/discover/deployment/-/knowledge_base/7-2/managing-lcs-environments#creating-environments), 
 you assign its subscription type and choose whether LCS activates servers that 

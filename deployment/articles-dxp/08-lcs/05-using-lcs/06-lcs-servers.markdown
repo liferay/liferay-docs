@@ -4,6 +4,8 @@ header-id: managing-lcs-servers
 
 # Managing LCS Servers
 
+[TOC levels=1-4]
+
 Clicking a server in the Dashboard or environment view takes you to the server 
 view. Server view provides detailed information about a server, including 
 statistics and performance metrics. To protect your users' privacy, LCS doesn't 

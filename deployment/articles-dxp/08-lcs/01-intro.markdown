@@ -4,6 +4,8 @@ header-id: managing-liferay-dxp-with-liferay-connected-services
 
 # Managing Liferay DXP with Liferay Connected Services
 
+[TOC levels=1-4]
+
 Liferay Connected Services (LCS) is a set of tools and services for managing and
 monitoring your @product@ instances. LCS can help you install fix packs, monitor
 your instances' performance, activate your instances, and help you manage your

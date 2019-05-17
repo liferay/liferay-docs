@@ -4,6 +4,8 @@ header-id: managing-your-lcs-account
 
 # Managing Your LCS Account
 
+[TOC levels=1-4]
+
 To manage your LCS account, select *My Account* from the user menu in the
 Dockbar. This takes you to a UI with four tabs: 
 

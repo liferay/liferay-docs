@@ -4,6 +4,8 @@ header-id: managing-lcs-users-in-your-project
 
 # Managing LCS Users in Your Project
 
+[TOC levels=1-4]
+
 The Users section of LCS is where you manage the LCS users that are part of your 
 project. It's here that you can grant or revoke LCS Roles. To manage users, 
 first click the *Users* tab just below the Dashboard tab on the upper-left of 

@@ -4,6 +4,8 @@ header-id: activating-your-liferay-dxp-server-with-lcs
 
 # Registering Your Liferay DXP Server with LCS
 
+[TOC levels=1-4]
+
 | **Note:** You must use LCS for activation of Elastic subscriptions. Otherwise, 
 | you don't have to use LCS for activation. You can instead request an XML 
 | activation key from Liferay Support. 
