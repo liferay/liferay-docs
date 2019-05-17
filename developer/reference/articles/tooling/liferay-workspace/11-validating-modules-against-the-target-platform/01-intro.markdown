@@ -39,7 +39,7 @@ You can resolve your modules before deployment. This can be done by calling the
 This task gathers all the capabilities provided by
  
 - the specified version of @product@ (i.e.,
-  [targeted platform](/docs/7-2/reference/-/knowledge_base/reference/managing-the-target-platform-for-liferay-workspace))
+  [targeted platform](/docs/7-2/reference/-/knowledge_base/r/managing-the-target-platform))
 - the current workspace's modules
 
 Some capabilities/information gathered by the `resolve` task that are validated
@@ -132,7 +132,7 @@ There are three ways you can do this:
 | library.
 
 For help resolving third party dependency errors, see the
-[Resolving Third Party Library Package Dependencies](/develop/tutorials/-/knowledge_base/7-1/adding-third-party-libraries-to-a-module)
+[Resolving Third Party Library Package Dependencies](/docs/7-1/frameworks/-/knowledge_base/frameworks/adding-third-party-libraries-to-a-module)
 tutorial.
 
 ### Depending on a Customized Distribution of @product@
@@ -169,14 +169,14 @@ this, you must regenerate a new list of capabilities that your customized
 
 To regenerate the target platform's capabilities (distro JAR) based on the
 current workspace's @product@ instance, follow the
-[Depending on a Customized Distribution of @product@](/docs/7-2/reference/-/knowledge_base/reference/depending-on-a-customized-distribution-of-product)
+[Depending on a Customized Distribution of @product@](/docs/7-2/reference/-/knowledge_base/r/depending-on-a-customized-distribution-of-product)
 article.
 
 ## Including the Resolver in Your Gradle Build
 
 By default, Liferay Workspace provides the `resolve` task as an independent
 executable. It's provided by the
-[Target Platform](/docs/7-2/reference/-/knowledge_base/reference/target-platform-gradle-plugin)
+[Target Platform](/docs/7-2/reference/-/knowledge_base/r/target-platform-gradle-plugin)
 Gradle plugin and is not integrated in any other Gradle processes. This gives
 you control over your Gradle build without imposing strategies you may not want
 included in your default build process.
@@ -196,7 +196,7 @@ the `resolve` task to run for CI and other test tools that typically run the
 the `check` task, so you can run `gradlew build` and run the resolver too.
 
 You can learn how to include the resolver in your Gradle build by visiting
-[this article](/docs/7-2/reference/-/knowledge_base/reference/including-the-resolver-in-your-gradle-build).
+[this article](/docs/7-2/reference/-/knowledge_base/r/including-the-resolver-in-your-gradle-build).
 
 Continue on for various step-by-step instructions for configuring/manipulating
 the resolver task.

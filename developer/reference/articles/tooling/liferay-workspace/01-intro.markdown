@@ -111,6 +111,8 @@ your Liferay development easier than ever. The development lifecycle includes
 - [Testing projects](#testing-projects)
 - [Releasing projects](#releasing-projects)
 
+- [Test](#development-lifecycle)
+
 You'll learn about each lifecycle option next.
 
 ### Creating Projects
