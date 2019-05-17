@@ -1,7 +1,7 @@
 # Other Knowledge Base Widgets [](id=other-knowledge-base-widgets)
 
 There are other Knowledge Base widgets you can add to Site pages besides 
-[Knowledge Base Display](/discover/portal/-/knowledge_base/7-1/knowledge-base-display): 
+[Knowledge Base Display](/discover/portal/-/knowledge_base/7-2/knowledge-base-display): 
 
 -   **Knowledge Base Article:** Display a single article's content.
 -   **Knowledge Base Section:** Publish articles associated with a specific 
@@ -35,18 +35,14 @@ You can change your selection from the widget's *Options*
 
 Knowledge Base Article shares the same UI as the Knowledge Base Display to 
 display and manage its articles. Refer to the 
-[Knowledge Base Display documentation](/discover/portal/-/knowledge_base/7-1/knowledge-base-display) 
+[Knowledge Base Display documentation](/discover/portal/-/knowledge_base/7-2/knowledge-base-display) 
 for a detailed description of the widget's UI. 
 
 ## Knowledge Base Section [](id=knowledge-base-section)
 
-+$$$
-
-**Note:** as of Knowledge Base 3.0.0, the Knowledge Base Sections widget is 
-deprecated and replaced by 
-[categories](/discover/portal/-/knowledge_base/7-1/organizing-content-with-tags-and-categories). 
-
-$$$
+| **Note:** as of Knowledge Base 3.0.0, the Knowledge Base Sections widget is 
+| deprecated and replaced by 
+| [categories](/discover/portal/-/knowledge_base/7-2/organizing-content-with-tags-and-categories). 
 
 The Knowledge Base Section widget lets you publish articles associated with a 
 specific topic (section). For example, a news Site might have the sections 
@@ -57,7 +53,7 @@ specific topic (section). For example, a news Site might have the sections
 To use sections, an administrator must first configure the feature in System 
 Settings, creating the section names for use in the Knowledge Base Section 
 widget. This process is covered in detail in 
-[Knowledge Base System Settings](/discover/portal/-/knowledge_base/7-1/knowledge-base-system-settings). 
+[Knowledge Base System Settings](/discover/portal/-/knowledge_base/7-2/knowledge-base-system-settings). 
 When creating or editing a Knowledge Base article, authors can then select the 
 article's section in the *Configuration* &rarr; *Section* field. 
 
@@ -82,12 +78,8 @@ The matching articles are displayed in the app beneath their section heading.
 
 ## Knowledge Base Search [](id=knowledge-base-search)
 
-+$$$
-
-**Note:** as of Knowledge Base 3.0.0, the Knowledge Base Search widget is 
-deprecated and replaced by Liferay Search.
-
-$$$
+| **Note:** as of Knowledge Base 3.0.0, the Knowledge Base Search widget is 
+| deprecated and replaced by Liferay Search. 
 
 Even though the Knowledge Base can show the structure of its articles, it may be 
 difficult to find exactly what you're looking for by browsing. That's where the 
