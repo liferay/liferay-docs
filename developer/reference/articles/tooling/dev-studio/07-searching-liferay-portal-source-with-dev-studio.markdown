@@ -22,7 +22,7 @@ To do this, you must be developing in a
 Liferay Workspace is able to provide this functionality by targeting a specific
 @product@ version, which indexes the configured @product@ source code to provide
 advanced search. See the
-[Managing the Target Platform in Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/managing-the-target-platform-for-liferay-workspace)
+[Managing the Target Platform in Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/managing-the-target-platform)
 tutorial for more information on how this works.
 
 In this tutorial, you'll explore three use cases where advanced search would be
