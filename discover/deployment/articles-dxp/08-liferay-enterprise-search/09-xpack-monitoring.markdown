@@ -11,11 +11,11 @@ this integration. Contact
 [Liferay's Sales department for more information](https://www.liferay.com/contact-us#contact-sales).
 
 | **Compatibility:** To use X-Pack Security and/or Monitoring with Elasticsearch
-| 6.5 and @product@, you must make sure you download the proper connector
-| applications. If you've installed Elasticsearch 6.5, you should already be
-| using the [_Liferay Connector to Elasticsearch 6_, version 1.1.0+, from
-| Marketplace](https://web.liferay.com/marketplace). You must be sure to
-| download the corresponding X-Pack connectors (version 1.1.0).
+| 6.5 and @product@, you must use the proper connector to Elasticsearch.  
+| 
+| The [_Liferay Connector to Elasticsearch 6_, version
+| 1.1.0+](https://web.liferay.com/marketplace) is required to set up Elasticsearch
+| 6.5 with security and monitoring.
 
 1.  Tell Elasticsearch to enable data collection.
 
