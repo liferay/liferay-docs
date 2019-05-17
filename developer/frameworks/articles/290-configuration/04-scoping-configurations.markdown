@@ -1,4 +1,10 @@
-# Scoping Configurations [](id=scoping-configurations)
+---
+header-id: scoping-configurations
+---
+
+# Scoping Configurations
+
+[TOC levels=1-4]
 
 Here's how to scope a configuration: 
 
@@ -7,7 +13,7 @@ Here's how to scope a configuration:
 2.  Enable the configuration for scoped retrieval by creating a configuration
     bean declaration.
 
-## Step 1: Setting the Configuration Scope [](id=step-1-setting-the-configuration-scope)
+## Step 1: Setting the Configuration Scope
 
 Use the `@ExtendedObjectClassDefinition` annotation to specify the
 configuration's scope. The scope you choose must match how the configuration
@@ -39,7 +45,7 @@ public interface DDMFormWebConfiguration {
 
 ```
 
-## Step 2: Enabling the Configuration for Scoped Retrieval [](id=enabling-the-configuration-for-scoped-retrieval)
+## Step 2: Enabling the Configuration for Scoped Retrieval
 
 To create a configuration bean declaration:
 
