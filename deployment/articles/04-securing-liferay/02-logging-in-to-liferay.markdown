@@ -4,6 +4,8 @@ header-id: logging-into-liferay
 
 # Logging into @product@
 
+[TOC levels=1-4]
+
 One of the primary functions of a security system is to make pages, content, and
 web applications accessible only to the appropriate users. A student
 logging into a university portal should not be able to access the same resources

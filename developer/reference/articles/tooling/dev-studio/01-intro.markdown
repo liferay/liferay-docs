@@ -42,7 +42,7 @@ For help
 and
 [deploying](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project#liferay-dev-studio)
 projects with Dev Studio, or
-[creating a Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/creating-a-liferay-workspace#liferay-dev-studio),
+[creating a Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/creating-a-liferay-workspace#dev-studio),
 visit their respective articles.
 
 Let Dev Studio aid in your conquest for @product@ development. Continue on to
