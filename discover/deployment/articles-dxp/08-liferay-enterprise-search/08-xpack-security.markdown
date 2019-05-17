@@ -12,6 +12,13 @@ Liferay Enterprise Search Standard subscription gets you the monitoring
 integration. Contact
 [Liferay's Sales department for more information](https://www.liferay.com/contact-us#contact-sales).
 
+| **Compatibility:** To use X-Pack Security and/or Monitoring with Elasticsearch
+| 6.5 and @product@, you must make sure you download the proper connector
+| applications. If you've installed Elasticsearch 6.5, you should already be
+| using the [_Liferay Connector to Elasticsearch 6_, version 1.1.0+, from
+| Marketplace](https://web.liferay.com/marketplace). You must be sure to
+| download the corresponding X-Pack connectors (version 1.1.0).
+
 Here's an overview of using X-Pack to secure the data indexed in Elasticsearch:
 
 1.  Get an Enterprise Search subscription.

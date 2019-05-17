@@ -87,7 +87,7 @@ default, embedded version. To install Elasticsearch 6.5.x,
 2.  Install Elasticsearch 6.5.x (follow steps 2-4 in this article for guidance).
 
 3.  Install the 
-    [_Liferay Connector to Elasticsearch 6_ from Marketplace](https://web.liferay.com/marketplace)
+    [_Liferay Connector to Elasticsearch 6_, verison 1.1.0+, from Marketplace](https://web.liferay.com/marketplace)
     and stop the default Elasticsearch adapter.
 
 4.  Configure the Elasticsearch 6 connector (see step 5 below for guidance).

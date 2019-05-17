@@ -33,32 +33,6 @@ These terms will be useful to understand as you read this guide:
    refers to the root folder of your @product@ installation. It contains the
    `osgi`, `deploy`, `data`, and `license` folders, among others.
 
-<!-- I think the belwo sidebar can be deleted, since nobody should be upgrading to 2.4.x -->
-<!-->
-
-+$$$
-
-**Upgrading to Elasticsearch 2.4.x:** When @product-ver@ was first released,
-Elasticsearch 2.2.x was supported. However, Elasticsearch 2.2.x's [end of
-life](https://www.elastic.co/support/eol) was August 2, 2017. Because of that,
-@product@ supports version 2.4.x starting with Liferay DE 7.0 Fix Pack 22.
-Elasticsearch 2.4.x is supported version for @product-ver@. 
-
-If you are currently running Elasticsearch 2.2.x with @product-ver@, follow the
-[Elasticsearch documentation on upgrading to 2.4](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/setup-upgrade.html).
-The good news is, you can do a [rolling upgrade](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/rolling-upgrades.html),
-meaning you'll be able to upgrade each node on its own, with no down time for end users.
-
-From the @product@ side, all you need to do is install Liferay DE 7.0 Fix Pack
-22 and *be sure to do a full reindex of your data*, just to be on the safe side.
-If you're running Liferay Portal CE 7.0, make sure you're on the latest GA
-release. Elasticsearch 2.4.x can be installed and run successfully with a
-Liferay Portal CE 7.0 GA3 bundle, with no code changes necessary to the portal's
-Elasticsearch adapter.
-
-$$$
-</!-->
-
 +$$$
 
 **Upgrading to Elasticsearch 6.5:** If you have an existing 2.4 or 6.1
