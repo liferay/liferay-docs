@@ -17,7 +17,7 @@ entity's closing `</entity>` tag.
 
     <reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
 
-Then [run Service Builder.](/docs/7-2/-/knowledge_base/running-service-builder)
+Then [run Service Builder.](/docs/7-2/appdev/-/knowledge_base/appdev/service-builder)
 
 Now you're ready to implement adding and updating assets!
 
@@ -28,7 +28,7 @@ Your `-LocalServiceImpl` Java class inherits from its parent base class an
 `assetEntryLocalService`. To add your custom entity as a Liferay asset, you 
 must invoke the `assetEntryLocalService`'s `updateEntry` method. 
 
-Here's what the [`updateEntry`](@platform-ref@/7.1-latest/javadocs/portal-impl/com/liferay/portlet/asset/service/impl/AssetEntryLocalServiceImpl.html#updateEntry-long-long-java.util.Date-java.util.Date-java.lang.String-long-java.lang.String-long-long:A-java.lang.String:A-boolean-boolean-java.util.Date-java.util.Date-java.util.Date-java.util.Date-java.lang.String-java.lang.String-java.lang.String-java.lang.String-java.lang.String-java.lang.String-int-int-java.lang.Double-)
+Here's what the [`updateEntry`](@platform-ref@/7.2-latest/javadocs/portal-impl/com/liferay/portlet/asset/service/impl/AssetEntryLocalServiceImpl.html#updateEntry-long-long-java.util.Date-java.util.Date-java.lang.String-long-java.lang.String-long-long:A-java.lang.String:A-boolean-boolean-java.util.Date-java.util.Date-java.util.Date-java.util.Date-java.lang.String-java.lang.String-java.lang.String-java.lang.String-java.lang.String-java.lang.String-int-int-java.lang.Double-)
 method's signature looks like:
 
     AssetEntry updateEntry(
@@ -75,7 +75,7 @@ Here are descriptions of each of the `updateEntry` method's parameters:
 -   `publishDate`: the date the entity will start to be shown. 
 -   `expirationDate`: the date the entity will no longer be shown. 
 -   `mimetype`: the Multi-Purpose Internet Mail Extensions type, such as
-    [ContentTypes.TEXT_HTML](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ContentTypes.html#TEXT_HTML),
+    [ContentTypes.TEXT_HTML](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ContentTypes.html#TEXT_HTML),
     used for the content.
 -   `title`: the entity's name.
 -   `description`: a `String`-based textual description of the entity.

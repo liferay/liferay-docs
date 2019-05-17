@@ -23,7 +23,7 @@ to generate your persistence layer, that you've implemented permissions on the
 entities that you're persisting, and that you've enabled them for search and
 indexing. You can learn more about Liferay's Service Builder and how to use it
 in the
-[Service Builder](/docs/7-2/-/knowledge_base/service-builder)
+[Service Builder](/docs/7-2/appdev/-/knowledge_base/appdev/service-builder)
 tutorial section. After that is completed, you can get started asset enabling 
 your application.
 
@@ -48,7 +48,7 @@ asset framework.
 To use Liferay's asset framework with an entity, you must inform the 
 asset framework about each entity instance you create, modify, and delete. In
 this sense, it's similar to informing 
-[Liferay's permissions framework](/docs/7-2/-/knowledge_base/defining-application-permissions)
+[Liferay's permissions framework](/docs/7-2/frameworks/-/knowledge_base/frameworks/defining-application-permissions)
 about a new resource. All you have to do is invoke a method of the asset
 framework that associates an `AssetEntry` with the entity so Liferay can keep
 track of the entity as an asset. When it's time to update the entity, you update
