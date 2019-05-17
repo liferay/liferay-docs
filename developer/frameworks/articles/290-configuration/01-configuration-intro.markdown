@@ -2,10 +2,6 @@
 header-id: configurable-applications
 ---
 
----
-header-id: configurable-applications
----
-
 # Configurable Applications
 
 [TOC levels=1-4]
@@ -163,6 +159,10 @@ entirely so you can put your own UI in its place.
     instead, or maybe you just want configuration to be handled programatically
     or by [.config file](/docs/7-2/user/-/knowledge_base/u/understanding-system-configuration-files)
     ---you can [just leave it out](/docs/frameworks/-/knowledge_base/7-2/customizing-the-system-settings-user-interface#excluding-a-configuration-ui-from-system-settings).
+
+-   If you want the UI to render only under certain
+    circumstances, you can write logic to 
+    [do that, too](/developer/frameworks/-/knowledge_base/7-2/customizing-the-system-settings-user-interface#excluding-a-configuration-ui-from-system-settings).
 
 Enough conceptual stuff. You're ready to get started with some code. If you
 already have an app that was configurable under an earlier version of
