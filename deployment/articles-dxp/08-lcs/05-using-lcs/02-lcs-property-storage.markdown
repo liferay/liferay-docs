@@ -1,4 +1,8 @@
-# What LCS Stores About Your Liferay DXP Servers [](id=what-lcs-stores-about-your-liferay-dxp-servers)
+---
+header-id: what-lcs-stores-about-your-liferay-dxp-servers
+---
+
+# What LCS Stores About Your Liferay DXP Servers
 
 To protect your users' privacy, LCS only stores system-specific data. LCS
 doesn't gather or store data on your users. 

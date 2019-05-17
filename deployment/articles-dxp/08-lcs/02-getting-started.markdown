@@ -1,4 +1,8 @@
-# Getting Started with LCS [](id=getting-started-with-lcs)
+---
+header-id: getting-started-with-lcs
+---
+
+# Getting Started with LCS
 
 To use LCS, you must register a server in an LCS environment. An LCS environment 
 represents a physical cluster of servers or a virtual or logical aggregation of 

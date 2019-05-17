@@ -1,4 +1,8 @@
-# Understanding Environment Tokens [](id=understanding-environment-tokens)
+---
+header-id: understanding-environment-tokens
+---
+
+# Understanding Environment Tokens
 
 To register a server in an environment, you must use that environment's token 
 file. LCS Administrators and Environment Managers can generate and distribute 

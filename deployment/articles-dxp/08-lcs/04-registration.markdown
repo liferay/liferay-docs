@@ -1,4 +1,8 @@
-# Registering Your Liferay DXP Server with LCS [](id=activating-your-liferay-dxp-server-with-lcs)
+---
+header-id: activating-your-liferay-dxp-server-with-lcs
+---
+
+# Registering Your Liferay DXP Server with LCS
 
 | **Note:** You must use LCS for activation of Elastic subscriptions. Otherwise, 
 | you don't have to use LCS for activation. You can instead request an XML 
@@ -75,7 +79,7 @@ Follow these steps to register your @product@ server with LCS:
 | active subscriptions have a 30-day grace period to re-establish connectivity 
 | and remain valid. This is ample time for LCS to come back online. 
 
-## Determining Your Server's LCS Connection Status [](id=determining-your-servers-lcs-connection-status)
+## Determining Your Server's LCS Connection Status
 
 In @product@, you can view your LCS connection status in the LCS client app.
 Access the client by clicking *Control Panel* &rarr; *Configuration* &rarr;

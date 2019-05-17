@@ -1,4 +1,8 @@
-# Troubleshooting Your LCS Connection [](id=troubleshooting-your-lcs-connection)
+---
+header-id: troubleshooting-your-lcs-connection
+---
+
+# Troubleshooting Your LCS Connection
 
 If you use LCS to activate @product@, your server must maintain its connection 
 to LCS at all times. If this connection is interrupted, your server enters a 
@@ -29,7 +33,7 @@ levels and then provide your log files. This section shows you how to do this.
 | updates and new version releases, however, LCS is unavailable for a few 
 | minutes while changes are applied. 
 
-## LCS Grace Periods [](id=lcs-grace-periods)
+## LCS Grace Periods
 
 There are 2 grace period types in LCS: 
 
@@ -47,7 +51,7 @@ There are 2 grace period types in LCS:
 | [Subscriptions tab](/discover/deployment/-/knowledge_base/7-2/managing-liferay-dxp-subscriptions) 
 | in LCS. 
 
-### Connection Grace Period [](id=connection-grace-period)
+### Connection Grace Period
 
 If your server's LCS connection is interrupted, the server continues to run and 
 enters a grace period that lasts for up to 30 days to allow for reconnection. 
@@ -85,7 +89,7 @@ an email whenever the server shuts down unexpectedly. The documentation on
 [managing your LCS account](/discover/deployment/-/knowledge_base/7-2/managing-your-lcs-account) 
 explains how to do this. 
 
-### Subscription Grace Period [](id=subscription-grace-period)
+### Subscription Grace Period
 
 At least 90 days before the subscription expires, Liferay will reach out to 
 begin the renewal process. 30 days before expiration, Liferay Support sends 
@@ -105,7 +109,7 @@ messages disappear within 24 hours. Note that by using XML activation keys
 
 ![Figure 2: LCS sends you a notification prior to the expiration of your subscription.](../../images-dxp/lcs-support-expiration.png)
 
-## Troubleshooting [](id=troubleshooting)
+## Troubleshooting
 
 If you encounter issues with LCS, the Liferay Support team is here to help. If 
 you need support, open a 
@@ -120,7 +124,7 @@ Support team can also assist you with.
 | [registration](/discover/deployment/-/knowledge_base/7-2/activating-your-liferay-dxp-server-with-lcs) 
 | steps correctly. 
 
-### Server Can't Reach LCS [](id=server-cant-reach-lcs)
+### Server Can't Reach LCS
 
 If your server can't reach LCS, verify that you can access the public sites
 required by LCS: 
@@ -132,7 +136,7 @@ required by LCS:
         curl -vk -I "https://lcs-gateway.liferay.com"
         telnet lcs-gateway.liferay.com 443
 
-### Subscription Issues [](id=subscription-issues)
+### Subscription Issues
 
 For issues related to your subscription, first review the documentation on 
 [managing your subscription](/discover/deployment/-/knowledge_base/7-2/managing-liferay-dxp-subscriptions). 
@@ -161,7 +165,7 @@ for instructions on creating a new environment and activating a new server.
 | containers. For more information, see the 
 | [KB article on properly unregistering subscriptions](https://customer.liferay.com/documentation/knowledge-base/-/kb/1464875). 
 
-### Invalid Token [](id=invalid-token)
+### Invalid Token
 
 If the token is invalid, first review the documentation on 
 [environment tokens](/discover/deployment/-/knowledge_base/7-2/understanding-environment-tokens). 
@@ -173,7 +177,7 @@ The following table lists causes and solutions for invalid tokens.
 | The token's file name is changed after download. | Download the token again from LCS. |
 | The token is regenerated. | Use the regenerated token. |
 
-## Increasing Log Levels [](id=increasing-log-levels)
+## Increasing Log Levels
 
 If you contact Liferay Support, you're asked to increase your server's log 
 levels and then provide your log files. You can find these log files in 
@@ -205,7 +209,7 @@ There are 2 ways to increase the log levels:
 
 The following sections cover both options. 
 
-### Control Panel [](id=control-panel)
+### Control Panel
 
 Follow these steps to increase the log levels via the Control Panel: 
 
@@ -222,7 +226,7 @@ Follow these steps to increase the log levels via the Control Panel:
     &rarr; *Liferay Connected Services* and take a screenshot of what you see 
     there. This is useful to Liferay Support. 
 
-### Log4j [](id=log4j)
+### Log4j
 
 Follow these steps to increase the log levels via Log4j: 
 
