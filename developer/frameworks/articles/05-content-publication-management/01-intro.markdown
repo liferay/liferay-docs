@@ -24,10 +24,10 @@ separately. You'll learn about this later.
 
 Export/Import can be viewed as the base feature with Staging built on top of it
 (although they're implemented together). You can visit the
-[Export/Import](/docs/7-2/frameworks/-/knowledge_base/frameworks/export-import)
+[Export/Import](/docs/7-2/frameworks/-/knowledge_base/f/export-import)
 framework's articles for the base APIs that both it and the Staging frameworks
 share. You must implement these to implement Staging. Reference the
-[Staging](/docs/7-2/frameworks/-/knowledge_base/frameworks/staging) framework's
+[Staging](/docs/7-2/frameworks/-/knowledge_base/f/staging) framework's
 articles for additional configuration pertaining only to it.
 
 Here are a few of the things you can do with the Export/Import and Staging APIs. 
@@ -36,7 +36,7 @@ Here are a few of the things you can do with the Export/Import and Staging APIs.
 
 The Export/Import feature adds another dimension to your application by
 providing a framework for producing reusable content and importing content from
-other places. By creating [LAR files (Liferay ARchive)](/docs/7-2/reference/-/knowledge_base/reference/liferay-archive-lar-file), 
+other places. By creating [LAR files (Liferay ARchive)](/docs/7-2/reference/-/knowledge_base/r/liferay-archive-lar-file), 
 you can export your data, import it to another system, or even use this feature
 to back up your content.
 
