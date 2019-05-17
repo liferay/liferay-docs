@@ -17,12 +17,12 @@ Here's the process:
     (next step) you'll test against it. 
 
 -   [Pruning the
-    database](/docs/7-2/deploy/-/knowledge_base/deploy/pruning-the-database):
+    database](/docs/7-2/deploy/-/knowledge_base/d/pruning-the-database):
     Free your database of duplicate and unused objects. By removing them you can
     reduce upgrade time and improve your server's performance. 
 
 -   [Upgrading your test server and
-    database](/docs/7-2/deploy/-/knowledge_base/deploy/upgrading-your-test-server-and-database):
+    database](/docs/7-2/deploy/-/knowledge_base/d/upgrading-your-test-server-and-database):
     First you'll optimize your database for the data upgrade. Taking time to do
     this can save upgrade time. Then you'll do an upgrade test run (or several
     test runs) on a the pruned database copy. After going through the upgrade
@@ -30,7 +30,7 @@ Here's the process:
     you can confidently upgrade your production database. 
 
 | **Tip:** These steps and
-| [preparing a new @product@ server](/docs/7-2/deploy/-/knowledge_base/deploy/preparing-a-new-product-server-for-data-upgrade)
+| [preparing a new @product@ server](/docs/7-2/deploy/-/knowledge_base/d/preparing-a-new-product-server-for-data-upgrade)
 | can be done in parallel to save time. 
 
 Now prepare your test environment. 
@@ -48,7 +48,7 @@ your server to use a new empty database for testing data upgrades.
 ### Copy the Production Backup to the Test Database
 
 Import data from your [production database
-backup](/docs/7-2/deploy/-/knowledge_base/deploy/backing-up-a-product-installation)
+backup](/docs/7-2/deploy/-/knowledge_base/d/backing-up-a-product-installation)
 to the new empty database. 
 
 | **Important:** Make sure to save the data import log---you'll examine it in

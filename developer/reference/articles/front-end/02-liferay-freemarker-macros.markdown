@@ -38,36 +38,42 @@ A few reference examples are shown below.
 The example below includes a language key with the `language` macro directive 
 along with its language `key` parameter:
 
-    <@liferay.language key="powered-by" />
+```markup
+<@liferay.language key="powered-by" />
+```
 
 This example includes the Search portlet with its 
 [Portlet Decorator](/docs/7-2/frameworks/-/knowledge_base/f/creating-configurable-styles-for-portlet-wrappers) 
 portlet preference set to barebone:
 
-    <@liferay.search default_preferences=
-      freeMarkerPortletPreferences.getPreferences(
-        "portletSetupPortletDecoratorId", "barebone"
-      ) 
-    />
+```markup
+<@liferay.search default_preferences=
+  freeMarkerPortletPreferences.getPreferences(
+    "portletSetupPortletDecoratorId", "barebone"
+  ) 
+/>
+```
 
 You can also pass multiple portlet preferences in an object, as shown in the 
 example below for the Navigation Menu portlet:
 
-    <#assign secondaryNavigationPreferencesMap = 
-      {
-        "displayStyle": "ddmTemplate_NAVBAR-BLANK-JUSTIFIED-FTL", 
-        "portletSetupPortletDecoratorId": "barebone", 
-        "rootLayoutType": "relative", 
-        "siteNavigationMenuId": "0", 
-        "siteNavigationMenuType": "1"
-      } 
-    />
+```markup
+<#assign secondaryNavigationPreferencesMap = 
+  {
+    "displayStyle": "ddmTemplate_NAVBAR-BLANK-JUSTIFIED-FTL", 
+    "portletSetupPortletDecoratorId": "barebone", 
+    "rootLayoutType": "relative", 
+    "siteNavigationMenuId": "0", 
+    "siteNavigationMenuType": "1"
+  } 
+/>
 
-    <@liferay.navigation_menu
-      default_preferences=
-      freeMarkerPortletPreferences.getPreferences(secondaryNavigationPreferencesMap)
-      instance_id="main_navigation_menu"
-    />
+<@liferay.navigation_menu
+  default_preferences=
+  freeMarkerPortletPreferences.getPreferences(secondaryNavigationPreferencesMap)
+  instance_id="main_navigation_menu"
+/>
+```
 
 | **Note:** Portlet preferences are unique to each portlet, so first you 
 | must determine which preferences you want to configure. There are two ways 

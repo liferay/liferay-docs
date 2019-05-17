@@ -16,7 +16,7 @@ test your server.
 
 If you've used Web Content Management extensively, you might have structures
 without unique field names.
-[Find and remove duplicate field names](/docs/7-2/deploy/-/knowledge_base/deploy/upgrading-liferay#find-and-remove-duplicate-field-names)
+[Find and remove duplicate field names](/docs/7-2/deploy/-/knowledge_base/d/upgrading-liferay#find-and-remove-duplicate-field-names)
 before upgrading. If you upgraded to Liferay Portal 6.2 previously and skipped
 doing this, you'll encounter this error: 
 
@@ -24,13 +24,13 @@ doing this, you'll encounter this error:
     com.liferay.portal.verify.VerifyException: com.liferay.dynamic.data.mapping.validator.DDMFormValidationException$MustNotDuplicateFieldName: The field name page cannot be defined more than once
  
 If this is the case, roll back to your previous backup of Liferay Portal 6.2 and
-[find and remove duplicate field names](/docs/7-2/deploy/-/knowledge_base/deploy/upgrading-liferay#find-and-remove-duplicate-field-names). 
+[find and remove duplicate field names](/docs/7-2/deploy/-/knowledge_base/d/upgrading-liferay#find-and-remove-duplicate-field-names). 
 
 ## Find and Remove Unused Objects
 
 In the UI or using database queries, identify unused objects. Then remove them
 via Liferay's UI or using Liferay's API through the 
-[script console](/docs/7-2/user/-/knowledge_base/user/running-scripts-from-the-script-console)
+[script console](/docs/7-2/user/-/knowledge_base/u/running-scripts-from-the-script-console)
 or a portlet you create. 
 
 | **Important**: You should only use Liferay's UI or API because they account 
@@ -80,7 +80,7 @@ Several items stand out in the example database import:
 
 Search for unused objects associated with the tables that stand out and use
 Liferay's API (e.g., the UI or
-[script console](/docs/7-2/user/-/knowledge_base/user/running-scripts-from-the-script-console))
+[script console](/docs/7-2/user/-/knowledge_base/u/running-scripts-from-the-script-console))
 to delete the objects. 
 
 ### Common Object Types Worth Checking 
@@ -135,7 +135,7 @@ Check these object types:
     that are part of the content. Removing unneeded image files frees space in
     your database and file system. For more details, see [Example: Removing
     Intermediate Journal Article
-    Versions](/docs/7-2/deploy/-/knowledge_base/deploy/example-removing-intermediate-journal-article-versions).  
+    Versions](/docs/7-2/deploy/-/knowledge_base/d/example-removing-intermediate-journal-article-versions).  
 
 -   **Document versions**: As with Journal Articles, if you don't need
     intermediate document versions, delete them. This saves space both
@@ -169,7 +169,7 @@ Check these object types:
 
 If you want to see an example of removing intermediate object versions, read
 [Example: Removing Intermediate Journal Article
-Versions](/docs/7-2/deploy/-/knowledge_base/deploy/example-removing-intermediate-journal-article-versions)
+Versions](/docs/7-2/deploy/-/knowledge_base/d/example-removing-intermediate-journal-article-versions)
 and then return here. 
 
 Next, you'll test @product@ with its pruned database. 
