@@ -167,6 +167,11 @@ Check these object types:
         portlets. These portlet instances have a different lifecycle and
         aren't deleted when the portlet is removed from a template.
 
+If you want to see an example of removing intermediate object versions, read
+[Example: Removing Intermediate Journal Article
+Versions](/docs/7-2/deploy/-/knowledge_base/deploy/example-removing-intermediate-journal-article-versions)
+and then return here. 
+
 Next, you'll test @product@ with its pruned database. 
 
 ## Test @product@ with its Pruned Database Copy
