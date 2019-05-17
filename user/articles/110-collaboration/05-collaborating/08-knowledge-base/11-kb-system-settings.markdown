@@ -5,23 +5,19 @@ configuration (across sites). You can access this UI in *Control Panel* &rarr;
 *Configuration* &rarr; *System Settings* &rarr; *Knowledge Base*. There are five 
 sections of Knowledge Base configuration settings: 
 
--   Knowledge Base Service
+-   Service
 -   Knowledge Base Article
 -   Knowledge Base Display
 -   Knowledge Base Search
 -   Knowledge Base Section
 
-The *Knowledge Base Service* section's settings apply defaults to all the 
-Knowledge Base widgets, and to the Knowledge Base app in Site Administration. 
-The other sections apply to specific Knowledge Base widgets and override the 
-*Knowledge Base Service* defaults. 
+The *Service* section's settings apply defaults to all the Knowledge Base 
+widgets, and to the Knowledge Base app in Site Administration. The other 
+sections apply to specific Knowledge Base widgets and override the 
+*Service* defaults. 
 
-+$$$
-
-**Important:** Advanced configuration of the Knowledge Base application's system
-settings should only be performed by an @product@ administrator. 
-
-$$$
+| **Important:** Advanced configuration of the Knowledge Base application's 
+| system settings should only be performed by an @product@ administrator. 
 
 The Knowledge Base has several optional features that are disabled by default,
 but can be enabled and configured from System Settings. These include source
@@ -35,13 +31,13 @@ assumed as the default. Once defined, the Knowledge Base displays a button
 (default label is *Edit on GitHub*) above each displayed article. Users can
 click the button to navigate to an article's source location.
 
-The source URL settings are accessible in the *Knowledge Base Service* section 
-of the Knowledge Base's System Settings. To enable the source URL, check the 
-*Source URL Enabled* checkbox. 
+The source URL settings are accessible in the *Service* section of the Knowledge 
+Base's System Settings. To enable the source URL, check the *Source URL Enabled* 
+checkbox. 
 
 To change the source URL button's label, specify a new value for the setting 
 *Source URL Edit Message Key*. Best practice is to specify the value as a 
-[language key](/develop/tutorials/-/knowledge_base/7-1/overriding-language-keys). 
+[language key](/develop/tutorials/-/knowledge_base/7-2/overriding-language-keys). 
 For example, if you create a language key `edit-on-bitbucket=Edit on Bitbucket`, 
 you can specify that language key as the button's new label: 
 
@@ -55,8 +51,7 @@ Alternatively, you can specify the label explicitly:
 
 These settings define the supported file extensions, the suffix for parent
 files, and the image folder's path within the imported ZIP files. These settings 
-are accessible in the *Knowledge Base Service* section of the Knowledge Base's 
-System Settings. 
+are accessible in the *Service* section of the Knowledge Base's System Settings. 
 
 The following settings specify the importer's supported file extensions: 
 
@@ -105,11 +100,11 @@ Follow these steps to make new sections available:
 2.  Click the plus button next to the *Admin Knowledge Base Article Sections* 
     setting to add a new field for each section you want. 
  
-3.  Enter a name for each new section and click *Save*. 
+3.  Enter a name for each new section and click *Update*. 
 
 ![Figure 1: Create the sections you want to use with the Knowledge Base Section widget.](../../../../images/kb-section-setting.png)
 
 Once your sections are added, you can follow the steps in the 
-[Knowledge Base Section documentation](/discover/portal/-/knowledge_base/7-1/other-knowledge-base-widgets#knowledge-base-section) 
+[Knowledge Base Section documentation](/discover/portal/-/knowledge_base/7-2/other-knowledge-base-widgets#knowledge-base-section) 
 to learn how to use them.
 

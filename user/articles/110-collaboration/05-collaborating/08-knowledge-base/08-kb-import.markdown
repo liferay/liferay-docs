@@ -7,12 +7,8 @@ before they're published. Articles are imported into the Knowledge Base as
 files. Markdown is a text-only file format that is easy to read, yet supports 
 all the things you'd need to do to format your articles. 
 
-+$$$
-
-**Note:** To import articles, your Role must be granted the *Knowledge Base* 
-&rarr; *Resource Permissions: Import Articles* permission.
-
-$$$
+| **Note:** To import articles, your Role must be granted the *Knowledge Base* 
+| &rarr; *Resource Permissions: Import Articles* permission. 
 
 The Knowledge Base supports a Markdown dialect known as 
 [Multi-Markdown](http://fletcher.github.io/MultiMarkdown-4/). 

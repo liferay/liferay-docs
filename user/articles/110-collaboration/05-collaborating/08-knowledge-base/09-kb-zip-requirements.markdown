@@ -5,22 +5,18 @@ be specified anywhere in the ZIP file's directory structure. They can be nested
 in any number of folders. Image files are the only files supported for 
 attachments. 
 
-+$$$
-
-**Note:** Imported articles are independent of the workflow settings. This 
-means that **imported articles are automatically approved.**
-
-Only users with the *Import Articles* permission assigned to their Role are 
-able to import articles. This permission can be assigned manually through 
-*Control Panel* &rarr; *Users* &rarr; *Roles*. If you've upgraded from Liferay 
-Portal 6.2, you can also assign this Role to every Role that was already able to 
-add articles with a command from the Gogo shell. 
-
-Open the
-[Gogo shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell).
-Type `knowledgeBase:addImportArticlePermissions` and hit enter. 
-
-$$$
+| **Note:** Imported articles are independent of the workflow settings. This 
+| means that **imported articles are automatically approved.**
+| 
+| Only users with the *Import Articles* permission assigned to their Role are 
+| able to import articles. This permission can be assigned manually through 
+| *Control Panel* &rarr; *Users* &rarr; *Roles*. If you've upgraded from Liferay 
+| Portal 6.2, you can also assign this Role to every Role that was already able 
+| to add articles with a command from the Gogo shell. 
+| 
+| Open the
+| [Gogo shell](/develop/reference/-/knowledge_base/7-2/using-the-felix-gogo-shell).
+| Type `knowledgeBase:addImportArticlePermissions` and hit enter. 
 
 The ZIP file's articles are imported in file order (alphanumerically). To 
 designate an article's priority, add a numeric prefix to its file name. For 
@@ -123,7 +119,7 @@ ZIP files must meet the following requirements:
 -  Image files must be in a supported format and must use the appropriate file
    extensions. Supported extensions are `.bmp`,`.gif`,`.jpeg`,`.jpg`, and 
     `.png`. They're specified via an app system setting. For details, see 
-   [Knowledge Base System Settings](/discover/portal/-/knowledge_base/7-1/knowledge-base-system-settings).
+   [Knowledge Base System Settings](/discover/portal/-/knowledge_base/7-2/knowledge-base-system-settings).
 
 Once you have your article ZIP file, it's time to import it.
 
@@ -168,4 +164,4 @@ properties file and uses the base source URL to construct the source URL for
 all of the ZIP file's resulting articles. 
 
 To use the source URL feature, your administrator must enable it via the 
-[Knowledge Base System Settings](/discover/portal/-/knowledge_base/7-1/knowledge-base-system-settings). 
+[Knowledge Base System Settings](/discover/portal/-/knowledge_base/7-2/knowledge-base-system-settings). 
