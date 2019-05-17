@@ -4,6 +4,8 @@ header-id: auto-login
 
 # Auto Login
 
+[TOC levels=1-4]
+
 While @product@ supports a wide variety of 
 [authentication mechanisms](/docs/7-2/deploy/-/knowledge_base/d/securing-product), 
 you may use a home-grown system or some other product to authenticate users. To 
