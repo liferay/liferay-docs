@@ -7,7 +7,9 @@ header-id: example-removing-intermediate-journal-article-versions
 [TOC levels=1-4]
 
 These instructions and code samples demonstrate removing intermediate versions
-of Journal Articles: 
+of Journal Articles. To remove unneeded objects from your database, you can execute similar Java code or Groovy code in the scripting console. 
+
+Here are example steps for removing intermediate Journal Article versions: 
 
 1.  Decide how many of the most recent versions to keep. You must keep the 
     original version and the most recent version, but you may keep older recent
