@@ -4,6 +4,8 @@ header-id: cas-central-authentication-service-single-sign-on-authentication
 
 # CAS (Central Authentication Service) Single Sign On Authentication
 
+[TOC levels=1-4]
+
 CAS is an authentication system originally created at Yale University. It is a
 widely used open source single sign-on solution and was the first SSO product to
 be supported by @product@. @product@'s CAS module includes the CAS client, so

@@ -4,6 +4,8 @@ header-id: oauth-2-0
 
 # OAuth 2.0
 
+[TOC levels=1-4]
+
 OAuth 2.0 is an industry-standard authorization protocol. Users can seamlessly
 share select credentials from another website to log into yours. Any time you
 see a "Log In with Facebook," or "Log In with Google" button, or you authorize

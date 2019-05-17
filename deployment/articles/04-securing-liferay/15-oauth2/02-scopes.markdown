@@ -4,6 +4,8 @@ header-id: oauth2-scopes
 
 # OAuth2 Scopes
 
+[TOC levels=1-4]
+
 In OAuth 2.0, applications are granted access to limited subsets of user data.
 These are called *scopes* (not to be confused with Liferay scopes). They are
 created in two ways: 
