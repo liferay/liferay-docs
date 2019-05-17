@@ -1,4 +1,4 @@
-# Reading Configuration Values from a Component [](id=reading-configuration-values-from-a-component)
+# Reading Unscoped Configuration Values from a Component [](id=reading-unscoped-configuration-values-from-a-component)
 
 Follow these steps to read `SYSTEM` scoped or unscoped configuration values from
 a Component that isn't part of an MVC portlet:
@@ -12,14 +12,16 @@ a Component that isn't part of an MVC portlet:
     method is invoked as soon as the Component is started, and `@Modified` so
     it's invoked whenever the configuration is modified.
 
-        @Activate
-        @Modified
-        protected void activate(Map<String, Object> properties) {
-            _formWebConfiguration = ConfigurableUtil.createConfigurable(
-                DDMFormWebConfiguration.class, properties);
-        }
+    ```java
+    @Activate
+    @Modified
+    protected void activate(Map<String, Object> properties) {
+        _formWebConfiguration = ConfigurableUtil.createConfigurable(
+            DDMFormWebConfiguration.class, properties);
+    }
 
-        private volatile DDMFormWebConfiguration _formWebConfiguration;
+    private volatile DDMFormWebConfiguration _formWebConfiguration;
+    ```
 
     The `activate()` method calls the method
     `ConfigurableUtil.createConfigurable()` to convert a map of the
@@ -30,9 +32,11 @@ a Component that isn't part of an MVC portlet:
 3.  Once the activate method is set up, retrieve particular properties from the
     configuration wherever they're needed:
 
-        public void orderCar(String model) {
-            order("car", model, _configuration.favoriteColor);
-        }
+   ```java 
+    public void orderCar(String model) {
+        order("car", model, _configuration.favoriteColor());
+    }
+    ```
 
     This is dummy code: don't try to find it in the Liferay source code. The
     String configuration value of `favoriteColor` is passed to the `order`
