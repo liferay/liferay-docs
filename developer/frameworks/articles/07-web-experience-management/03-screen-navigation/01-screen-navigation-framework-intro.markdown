@@ -1,4 +1,10 @@
-# Screen Navigation Framework 
+---
+header-id: screen-navigation-framework
+---
+
+# Screen Navigation Framework
+
+[TOC levels=1-4]
 
 The Screen Navigation Framework is for customizing and extending application
 UIs. You can use it to make Liferay's applications your own and to make your
@@ -11,14 +17,14 @@ levels of navigation. Each item in the top level navigation is a
 entries use a second level of navigation. You need not have any Entries in your
 application, but you must have at least one Category.
 
-![Figure 1: A typical application using screen navigation has three categories and numerous entries.](../../../images/screen-nav-sample-screen-1.png)
+![Figure 1: The User Management application has three Screen Navigation Categories: General, Contact, and Preference; and each of those have a number of Screen Navigation Entries](../../../images/screen-nav-sample-screen-1.png)
 
 The Screen structure normally renders Navigation Categories as horizontal tabs
 at the top of the page and Navigation Entries as a vertical list of items along
 the left side of the page. The screen box containing the content uses the rest
 of the screen. You can customize this default layout for your needs.
 
-![Figure 2: Secondary navigation is optional; you may opt to have only tabs.](../../../images/screen-nav-one-level.png)
+![Figure 2: Many application only use Screen Navigation Categories for their functionality, and don't have Screen Navigation Entries. For Blogs, Entries and Images are Categories with no Entries.](../../../images/screen-nav-one-level.png)
 
 ## Using the Framework for Your Application 
 
