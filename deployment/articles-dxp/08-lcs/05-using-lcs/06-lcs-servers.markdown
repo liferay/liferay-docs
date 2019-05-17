@@ -21,15 +21,11 @@ Java version, and hardware.
 **Server Settings:** View or change your server's name, location, and 
 description. You can also unregister the server from LCS. 
 
-+$$$
-
-**Note:** LCS only supports Snapshot Metrics for servers running on Tomcat or 
-WebLogic. On other application servers you may see a console message indicating 
-that LCS doesn't support server metrics for your application server. You may 
-also see a benign `NullPointerException` for the LCS `TaskSchedulerServiceImpl` 
-and `ScheduleTasksCommand`. 
-
-$$$
+| **Note:** LCS only supports Snapshot Metrics for servers running on Tomcat or 
+| WebLogic. On other application servers you may see a console message 
+| indicating that LCS doesn't support server metrics for your application 
+| server. You may also see a benign `NullPointerException` for the LCS 
+| `TaskSchedulerServiceImpl` and `ScheduleTasksCommand`. 
 
 ## Page Analytics [](id=page-analytics)
 
@@ -119,7 +115,7 @@ This includes any property values you change via a `portal-ext.properties`
 file.
 
 **Dynamic Properties:** Any property values set at runtime. For example, the 
-[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home) 
+[Liferay Home](/discover/deployment/-/knowledge_base/7-2/installing-liferay#liferay-home) 
 folder's location depends on your configuration. To specify this folder when
 setting any properties that require it, use `${liferay.home}` instead of an
 absolute directory path. 

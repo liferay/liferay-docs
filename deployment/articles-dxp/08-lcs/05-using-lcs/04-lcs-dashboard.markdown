@@ -28,6 +28,8 @@ environment's gear icon. Clicking an environment shows more information about
 it. This takes you to the environment view. Also note that each environment's
 icon indicates the environment's type and status: 
 
-- **Red icon:** There's a problem with one or more of the environment's servers. 
-- **Green icon:** The environment's servers are operating properly. 
-- **Icon with a circle:** The environment's servers are clustered. 
+**Red icon:** There's a problem with one or more of the environment's servers. 
+
+**Green icon:** The environment's servers are operating properly. 
+
+**Icon with a circle:** The environment's servers are clustered. 

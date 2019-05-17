@@ -60,7 +60,7 @@ Each of these steps corresponds to a step in the wizard:
     useful for bringing additional servers online on a temporary basis for any 
     other purpose, such as business continuity planning. For more information, 
     see 
-    [the documentation on elastic subscriptions](/discover/deployment/-/knowledge_base/7-1/managing-liferay-dxp-subscriptions#elastic-subscriptions). 
+    [the documentation on elastic subscriptions](/discover/deployment/-/knowledge_base/7-2/managing-liferay-dxp-subscriptions#elastic-subscriptions). 
     Also note that you can't change this selection after creating the 
     environment. 
 
@@ -69,29 +69,28 @@ Each of these steps corresponds to a step in the wizard:
 6.  Enable the LCS services you want to use with servers that connect to this 
     environment. The following services are available: 
 
-    -   **Liferay Instance Activation:** Enabling this lets LCS activate any 
-        @product@ instances that connect to the environment. If you disable this 
-        service, you must activate via an XML file from Liferay support, and 
-        such instances must run version 5.0.0 or newer of the LCS client app. 
+    **Liferay Instance Activation:** Enabling this lets LCS activate any 
+    @product@ instances that connect to the environment. If you disable this 
+    service, you must activate via an XML file from Liferay support, and 
+    such instances must run version 5.0.0 or newer of the LCS client app. 
 
-        Note that you **must** use LCS for activation of Elastic subscriptions. 
-        Otherwise, you don't have to use LCS for activation. 
+    Note that you **must** use LCS for activation of Elastic subscriptions. 
+    Otherwise, you don't have to use LCS for activation. 
 
-    -   **Portal Analytics:** Enabling this lets LCS collect and display 
-        performance metrics for any servers that connect to the environment. 
-        This includes page and portlet load times, JVM garbage collector and 
-        memory metrics, and more. 
+    **Portal Analytics:** Enabling this lets LCS collect and display performance 
+    metrics for any servers that connect to the environment. This includes page 
+    and portlet load times, JVM garbage collector and memory metrics, and more. 
 
-    -   **Fix Pack Management:** Enabling this lets you use LCS to check for and
-        install @product@ fix packs. Note that this also lets LCS determine
-        installed fix packs. 
+    **Fix Pack Management:** Enabling this lets you use LCS to check for and
+    install @product@ fix packs. Note that this also lets LCS determine 
+    installed fix packs. 
 
-    -   **Portal Properties Analysis:** Enabling this lets LCS compare the 
-        current portal property settings with their default values for any 
-        servers that connect to the environment. Note that LCS doesn't access 
-        [security sensitive properties](/discover/deployment/-/knowledge_base/7-1/what-lcs-stores-about-your-liferay-dxp-servers). 
-        Click *Blacklisted Properties* to view and change any additional 
-        properties that are blacklisted from analysis. 
+    **Portal Properties Analysis:** Enabling this lets LCS compare the current 
+    portal property settings with their default values for any servers that 
+    connect to the environment. Note that LCS doesn't access 
+    [security sensitive properties](/discover/deployment/-/knowledge_base/7-2/what-lcs-stores-about-your-liferay-dxp-servers). 
+    Click *Blacklisted Properties* to view and change any additional properties     
+    that are blacklisted from analysis. 
 
     ![Figure 7: Enable or disable the LCS services you want to use for servers that connect to the environment, then click *Next*.](../../images-dxp/lcs-onboarding-06.png)
 
@@ -104,5 +103,5 @@ After creating your environment, the wizard shows a screen that lets you
 download the LCS client app, download the environment's token file, and go to
 your project's dashboard in LCS. Before registering a server in your new
 environment, however, you must complete the 
-[preconfiguration steps](/discover/deployment/-/knowledge_base/7-1/lcs-preconfiguration) 
+[preconfiguration steps](/discover/deployment/-/knowledge_base/7-2/lcs-preconfiguration) 
 for that server. 

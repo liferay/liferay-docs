@@ -9,13 +9,9 @@ an activation key from the environment's subscription upon connection. This
 makes it possible to activate servers automatically on startup with no 
 interaction required. 
 
-+$$$
-
-**Note:** For instructions on using and managing your environment tokens, see 
-the instructions on 
-[registering your server with LCS](/discover/deployment/-/knowledge_base/7-1/activating-your-liferay-dxp-server-with-lcs). 
-
-$$$
+| **Note:** For instructions on using and managing your environment tokens, see 
+| the instructions on 
+| [registering your server with LCS](/discover/deployment/-/knowledge_base/7-2/activating-your-liferay-dxp-server-with-lcs). 
 
 There are a few things to keep in mind when using environment tokens: 
 
@@ -34,7 +30,7 @@ There are a few things to keep in mind when using environment tokens:
 
 -   Minimal information (server name, location, etc...) is used to register a 
     server with LCS. You can change this information from 
-    [the server view in LCS](/discover/deployment/-/knowledge_base/7-1/managing-lcs-servers) 
+    [the server view in LCS](/discover/deployment/-/knowledge_base/7-2/managing-lcs-servers) 
     at any time. 
 
 -   Environment tokens connect using OAuth. Using an environment token overrides 
@@ -55,14 +51,10 @@ connection process, environment tokens are valuable in auto-scaling environments
 where algorithms create and destroy servers automatically. In this situation, 
 having clients that activate and configure themselves is crucial. 
 
-+$$$
-
-**Note**: If your auto-scaling environment creates new server nodes from a 
-server in a system image, that server can't require human interaction during 
-setup. When creating such an image, you must change any portal property settings 
-that prevent automatic setup. By default, @product@'s setup wizard requires 
-human interaction. You must therefore set the `setup.wizard.enabled` property to 
-`false` if you want your auto-scaling environment to create new nodes from the 
-server. 
-
-$$$
+| **Note**: If your auto-scaling environment creates new server nodes from a 
+| server in a system image, that server can't require human interaction during 
+| setup. When creating such an image, you must change any portal property 
+| settings that prevent automatic setup. By default, @product@'s setup wizard 
+| requires human interaction. You must therefore set the `setup.wizard.enabled` 
+| property to `false` if you want your auto-scaling environment to create new 
+| nodes from the server. 

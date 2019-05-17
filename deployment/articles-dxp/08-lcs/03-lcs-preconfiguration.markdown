@@ -18,13 +18,9 @@ in this guide shows you how to upgrade the LCS client app once your server is
 registered with LCS. We highly recommend that you upgrade the app whenever 
 Liferay releases a new version of it. 
 
-+$$$
-
-**Note:** You must use LCS for activation of Elastic subscriptions. Otherwise, 
-you don't have to use LCS for activation. You can instead request an XML 
-activation key from Liferay Support. 
-
-$$$
+| **Note:** You must use LCS for activation of Elastic subscriptions. Otherwise, 
+| you don't have to use LCS for activation. You can instead request an XML 
+| activation key from Liferay Support. 
 
 ## Downloading the LCS Client App [](id=downloading-the-lcs-client-app)
 
@@ -33,14 +29,11 @@ bundle starts. The included version of the app, however, may be outdated. To get
 the latest version of the LCS client app, you must first download it via Liferay
 Marketplace. 
 
-+$$$
-
-**Note:** Even though Liferay Marketplace and this guide use the term 
-*purchase*, the LCS client app is free of charge. The purchase process for a 
-free app in Liferay Marketplace adds the app to your Liferay project, much like 
-downloading a free app in a mobile app store adds the app to your account. 
-
-$$$
+| **Note:** Even though Liferay Marketplace and this guide use the term 
+| *purchase*, the LCS client app is free of charge. The purchase process for a 
+| free app in Liferay Marketplace adds the app to your Liferay project, much 
+| like downloading a free app in a mobile app store adds the app to your 
+| account. 
 
 Use these steps to purchase and download the app (if you've already purchased 
 the app, you can skip to step 3 to download it): 
@@ -60,16 +53,12 @@ the app, you can skip to step 3 to download it):
     LCS client app. To download the app, click the *App* button next to the
     latest version of the app. 
 
-    +$$$
-
-    **Note:** If you must download the LCS client app later, such as when
-    [upgrading it](#upgrading-the-lcs-client-app), 
-    select *Purchased Apps* from the User menu at the top-right of Liferay 
-    Marketplace. On the Purchased Apps screen, select the project you associated 
-    with the LCS client app and then select the app. This takes you to the same 
-    downloads page shown in the screenshot. 
-
-    $$$
+    | **Note:** If you must download the LCS client app later, such as when
+    | [upgrading it](#upgrading-the-lcs-client-app), 
+    | select *Purchased Apps* from the User menu at the top-right of Liferay 
+    | Marketplace. On the Purchased Apps screen, select the project you 
+    | associated with the LCS client app and then select the app. This takes you 
+    | to the same downloads page shown in the screenshot. 
 
     ![Figure 3: Click the *App* button next to the version of the app you want to download.](../../images-dxp/lcs-client-download-page.png)
 
@@ -77,14 +66,10 @@ Great! You've successfully downloaded the LCS client app. Before installing it,
 however, there are a few additional pre-configuration steps you should complete.
 These appear next; then you'll learn how to install the app. 
 
-+$$$
-
-**Note:** If your server connects to the Internet through a proxy, you must 
-configure your server or the LCS client app **before** deploying the app. The
-following section contains instructions on this. If your server doesn't connect
-through a proxy, skip this section. 
-
-$$$
+| **Note:** If your server connects to the Internet through a proxy, you must 
+| configure your server or the LCS client app **before** deploying the app. The
+| following section contains instructions on this. If your server doesn't 
+| connect through a proxy, skip this section. 
 
 ## Preconfiguring LCS to Connect Through a Proxy [](id=preconfiguring-lcs-to-connect-through-a-proxy)
 
@@ -106,13 +91,9 @@ you set them in your server or the LCS client app.
     Note that the `user`, `password`, and `https` properties are only needed if 
     your proxy requires authentication. 
 
-    +$$$
-
-    **Note:** If you use JVM app server arguments as instructed in this step,
-    you don't need to pre-configure the LCS client app to connect through the
-    same proxy. 
-
-    $$$
+    | **Note:** If you use JVM app server arguments as instructed in this step,
+    | you don't need to pre-configure the LCS client app to connect through the
+    | same proxy. 
 
 2.  To set the properties inside the LCS client app's WAR file, you must first 
     extract it from the app's LPKG file (the app downloads from Liferay 
@@ -128,7 +109,7 @@ you set them in your server or the LCS client app.
 
     b. Add the following properties at the end of `portlet-ext.properties` and 
        set them to the appropriate values for your proxy: 
-   
+
             proxy.host.name=
             proxy.host.port=
 
@@ -195,7 +176,7 @@ LCS uses @product@'s patching tool to apply updates. In bundles, the patching
 tool is pre-installed. If you're not running a bundle, you must 
 [download](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise/patching-tool) 
 and 
-[install](/discover/deployment/-/knowledge_base/7-1/patching-tool) 
+[install](/discover/deployment/-/knowledge_base/7-2/patching-tool) 
 the patching tool separately. 
 
 Once installed, there are a few steps you must complete before LCS can use the 
@@ -204,7 +185,7 @@ you're running Windows, drop the `.sh` from each command that has it.
 
 1.  Navigate to the `patching-tool` directory on the command line. It's 
     typically located in the 
-    [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home) 
+    [Liferay Home](/discover/deployment/-/knowledge_base/7-2/installing-liferay#liferay-home) 
     folder. Liferay Home is usually the parent folder of the application 
     server's folder. 
 
@@ -360,7 +341,7 @@ Once you've addressed the above pre-configuration steps, you're ready to install
 the LCS client app. Follow these steps to install the app:
 
 1.  In your 
-    [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home) 
+    [Liferay Home](/discover/deployment/-/knowledge_base/7-2/installing-liferay#liferay-home) 
     folder (usually the parent folder of the application server's folder), 
     delete this file: 
 
@@ -370,7 +351,7 @@ the LCS client app. Follow these steps to install the app:
     `osgi/marketplace`. 
 
 Great! Now you're all set to 
-[register your server with LCS](/discover/deployment/-/knowledge_base/7-1/activating-your-liferay-dxp-server-with-lcs). 
+[register your server with LCS](/discover/deployment/-/knowledge_base/7-2/activating-your-liferay-dxp-server-with-lcs). 
 
 The next section shows you how to upgrade the LCS client app. We highly 
 recommend that you do this whenever Liferay releases a new version of the app. 
@@ -385,15 +366,11 @@ pre-configuration steps you followed:
     need to configure the LCS client app (e.g., to connect through a proxy)
     before it deploys. 
 
-    +$$$
-
-    **Note:** If you choose this method and have a clustered environment, you 
-    must perform the upgrade separately on each node in your cluster. Therefore, 
-    you may prefer to upgrade manually as detailed in the next step to ensure 
-    that all your nodes are running the exact same version of the LCS client 
-    app. 
-
-    $$$
+    | **Note:** If you choose this method and have a clustered environment, you 
+    | must perform the upgrade separately on each node in your cluster. 
+    | Therefore, you may prefer to upgrade manually as detailed in the next step 
+    | to ensure that all your nodes are running the exact same version of the 
+    | LCS client app. 
 
     To perform the upgrade, first navigate to *Control Panel* &rarr; *Apps* 
     &rarr; *Purchased*. Apps needing an update are listed first. Click *Update* 
@@ -404,13 +381,9 @@ pre-configuration steps you followed:
     Use this method if you must pre-configure the LCS client app to connect
     through a proxy. 
 
-    +$$$
-
-    **Note:** If you used JVM app server arguments to configure your server to
-    connect through a proxy, then you don't need to pre-configure the LCS client
-    app to connect through the same proxy. 
-
-    $$$
+    | **Note:** If you used JVM app server arguments to configure your server to 
+    | connect through a proxy, then you don't need to pre-configure the LCS 
+    | client app to connect through the same proxy. 
 
     To update the LCS client app manually, follow the previous sections in this
     guide for downloading and pre-configuring the app. Then deploy it to

@@ -10,13 +10,9 @@ like having a single butler that can serve several mansions at once! You can
 find more information about LCS on its 
 [official product page](http://www.liferay.com/products/liferay-connected-services). 
 
-+$$$
-
-**Note:** You must use LCS for activation of Elastic subscriptions. Otherwise, 
-you don't have to use LCS for activation. You can instead request an XML 
-activation key from Liferay Support. 
-
-$$$
+| **Note:** You must use LCS for activation of Elastic subscriptions. Otherwise, 
+| you don't have to use LCS for activation. You can instead request an XML 
+| activation key from Liferay Support. 
 
 Before going any further, you should take note of a few key terms used 
 throughout this guide: 
@@ -33,11 +29,11 @@ server or a cluster node.
 
 As you go through this guide, you'll cover the following topics: 
 
--   [Getting Started](/discover/deployment/-/knowledge_base/7-1/getting-started-with-lcs)
--   [LCS Preconfiguration](/discover/deployment/-/knowledge_base/7-1/lcs-preconfiguration)
--   [Registering Your @product@ Server with LCS](/discover/deployment/-/knowledge_base/7-1/activating-your-liferay-dxp-server-with-lcs)
--   [Using LCS](/discover/deployment/-/knowledge_base/7-1/using-lcs)
--   [Troubleshooting Your LCS Connection](/discover/deployment/-/knowledge_base/7-1/troubleshooting-your-lcs-connection)
+-   [Getting Started](/discover/deployment/-/knowledge_base/7-2/getting-started-with-lcs)
+-   [LCS Preconfiguration](/discover/deployment/-/knowledge_base/7-2/lcs-preconfiguration)
+-   [Registering Your @product@ Server with LCS](/discover/deployment/-/knowledge_base/7-2/activating-your-liferay-dxp-server-with-lcs)
+-   [Using LCS](/discover/deployment/-/knowledge_base/7-2/using-lcs)
+-   [Troubleshooting Your LCS Connection](/discover/deployment/-/knowledge_base/7-2/troubleshooting-your-lcs-connection)
 
 You'll get started with the configuration steps required to use LCS with 
 @product@. 
