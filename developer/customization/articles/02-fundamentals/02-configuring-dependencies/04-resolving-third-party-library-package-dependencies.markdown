@@ -53,16 +53,18 @@ do these things.
 | [Liferay Blade CLI](/docs/7-2/reference/-/knowledge_base/r/blade-cli).
 | 
 | To leverage the `com.liferay.plugin` plugin outside of Liferay Workspace, add
-| code like the listing below to your Gradle project:
+| code like the listing below to your Gradle project and update the version of 
+| the `com.liferay.gradle.plugins` artifact to the latest version found in the 
+| repository:
 | 
 |     buildscript {
 |         dependencies {
-|             classpath group: "com.liferay", name: "com.liferay.gradle.plugins", version: "3.2.29"
+|             classpath group: "com.liferay", name: "com.liferay.gradle.plugins", version: "4.0.4"
 |         }
 | 
 |         repositories {
 |             maven {
-|                 url "https://repository-cdn.liferay.com/nexus/content/groups/public"
+|                 url "https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/"
 |             }
 |         }
 |     }
