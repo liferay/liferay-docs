@@ -216,7 +216,7 @@ you're running Windows, drop the `.sh` from each command that has it.
     folder, you must also specify the `patching-tool` folder's path as an app 
     server JVM argument. Do this with the `patching.tool.home` property: 
 
-        -Dpatching.tool.home=/opt/liferay-dxp-7.1/patching-tool/
+        -Dpatching.tool.home=/opt/liferay-dxp-7.2/patching-tool/
 
 There are also a few other things to consider when using the agent. Due to class
 loading issues, the agent starts in a separate JVM. You can specify options for
