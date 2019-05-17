@@ -8,27 +8,31 @@ This will automatically scope your configuration to `SYSTEM`.
     configuration option. Here is the configuration interface for the Liferay
     Forms application:
 
-        @Meta.OCD(
-            id = "com.liferay.dynamic.data.mapping.form.web.configuration.DDMFormWebConfiguration",
-            localization = "content/Language", name = "ddm-form-web-configuration-name"
+```java
+
+    @Meta.OCD(
+        id = "com.liferay.dynamic.data.mapping.form.web.configuration.DDMFormWebConfiguration",
+        localization = "content/Language", name = "ddm-form-web-configuration-name"
+    )
+    public interface DDMFormWebConfiguration {
+
+        @Meta.AD(
+            deflt = "1", description = "autosave-interval-description",
+            name = "autosave-interval-name", required = false
         )
-        public interface DDMFormWebConfiguration {
+        public int autosaveInterval();
 
-            @Meta.AD(
-                deflt = "1", description = "autosave-interval-description",
-                name = "autosave-interval-name", required = false
-            )
-            public int autosaveInterval();
-
-            @Meta.AD(
-                deflt = "descriptive", name = "default-display-view",
-                optionLabels = {"Descriptive", "List"},
-                optionValues = {"descriptive", "list"}, required = false
-            )
-            public String defaultDisplayView();
+        @Meta.AD(
+            deflt = "descriptive", name = "default-display-view",
+            optionLabels = {"Descriptive", "List"},
+            optionValues = {"descriptive", "list"}, required = false
+        )
+        public String defaultDisplayView();
 
 
-        }
+    }
+
+```
 
     This defines two configuration options, the autosave interval (with a default
     of one minute) and the default display view, which can be descriptive or
@@ -56,28 +60,27 @@ This will automatically scope your configuration to `SYSTEM`.
     on the bnd library. We recommend using bnd version 3. Here's an example of
     how to include this dependency in a Gradle project: 
 
-        dependencies {
-            compile group: "biz.aQute.bnd", name: "biz.aQute.bndlib", version: "3.1.0"
-        }
+```java
 
-    | **Note:** The annotations `@Meta.OCD` and `@Meta.AD` are part of the bnd
-    | library, but as of OSGi standard version R6, they're included in the OSGi core
-    | under the names `@ObjectClassDefinition` and `@AttributeDefinition`. The OSGi
-    | annotations can be used for simple cases like the one described in this
-    | tutorial. However, a key difference between the two libraries is that the bnd
-    | annotations are available at runtime, while the OSGi annotations are not.
-    | Because runtime availability is necessary for some of the Liferay-specific features
-    | described below, we recommend defaulting to the bnd annotations.
+    dependencies {
+        compile group: "biz.aQute.bnd", name: "biz.aQute.bndlib", version: "3.1.0"
+    }
 
-3.  Add the following line to your project's `bnd.bnd` file:
+```
 
-        -metatype: *
+| **Note:** The annotations `@Meta.OCD` and `@Meta.AD` are part of the bnd
+| library, but as of OSGi standard version R6, they're included in the OSGi core
+| under the names `@ObjectClassDefinition` and `@AttributeDefinition`. The OSGi
+| annotations can be used for simple cases like the one described in this
+| tutorial. However, a key difference between the two libraries is that the bnd
+| annotations are available at runtime, while the OSGi annotations are not.
+| Because runtime availability is necessary for some of the Liferay-specific features
+| described below, we recommend defaulting to the bnd annotations.
 
-    This line lets bnd use your configuration interface to generate an XML
-    configuration file. This provides the information about your application's
-    configuration options needed to generate a 
-    [System Settings](/docs/7-2/user/-/knowledge_base/u/system-settings) user 
-    interface automatically.
+| **Also Note:** Your project depends on the `-metatype: *` line in it's
+| `bnd.bnd` file. This line is generated automatically from your bundle's
+| `.build.properties` file, and is required to provide information about your
+| app's configuration options so that a configuration UI can be generated.
 
 When you register a configuration interface, a UI is auto-generated for it in
 *System Settings* &rarr; *Platform* &rarr; *Third Party*. That's the default
