@@ -1,5 +1,9 @@
 # Converting a Service Builder Module from Spring DI to OSGi DS
 
+<div class="learn-path-step">
+    <p>Upgrading Service Builder Services<br>Step 2 of 3</p>
+</div>
+
 Prior to @product@ 7.2, Service Builder modules could only use Spring for
 dependency injection (DI). Now OSGi Declarative Services (DS) is the default
 dependency injection mechanism for new Service Builder modules. It's easier to

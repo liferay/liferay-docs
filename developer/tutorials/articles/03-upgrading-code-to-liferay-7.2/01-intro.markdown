@@ -94,23 +94,21 @@ Here are the code upgrade steps:
     Fix common upgrade problems dealing with your project's dependencies and
     breaking changes.
 
-    1.  [Auto-Correct Upgrade Problems]()
+    1.  [Auto-Correct Upgrade Problems](/docs/tutorials/7-2/-/knowledge_base/t/fixing-upgrade-problems#auto-correcting-upgrade-problems)
 
-        Auto-correct upgrade problems. This includes straightforward updates like
-        package imports, JSP tag names, Liferay descriptor versions, and XML
-        descriptor content.
+        Auto-correct straightforward upgrade problems.
 
-    2.  [Find Upgrade Problems]()
+    2.  [Find Upgrade Problems](/docs/tutorials/7-2/-/knowledge_base/t/fixing-upgrade-problems#finding-upgrade-problems)
 
         Find upgrade problems. These are problems that cannot be auto-corrected;
         you can update them manually according to the breaking changes
         documentation.
 
-    3.  [Resolve Upgrade Problems]()
+    3.  [Resolve Upgrade Problems](/docs/tutorials/7-2/-/knowledge_base/t/fixing-upgrade-problems#resolving-upgrade-problems)
 
         Mark upgrade problems as resolved after addressing them.
 
-    4.  [Remove Problem Markers]()
+    4.  [Remove Problem Markers](/docs/tutorials/7-2/-/knowledge_base/t/fixing-upgrade-problems#removing-problem-markers)
 
         After fixing your upgrade problems, remove the problem markers.
 
