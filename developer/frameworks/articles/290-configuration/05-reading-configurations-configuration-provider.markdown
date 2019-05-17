@@ -1,4 +1,4 @@
-# Reading Scoped Configuration Values [](id=reading-configuration-values-from-a-configuration-provider)
+# Reading Scoped Configuration Values [](id=reading-scoped-configuration-values)
 
 If your configuration is scoped to anything other than `SYSTEM`, you have two
 options for reading configuration values.
@@ -29,15 +29,19 @@ obtain a reference to it:
 
 1.  Here's the approach for components:
 
-        @Referencomponents.e
-        protected void setConfigurationProvider(ConfigurationProvider configurationProvider) {
-            _configurationProvider = configurationProvider;
-        }
+    ```java
+    @Referencomponents
+    protected void setConfigurationProvider(ConfigurationProvider configurationProvider) {
+        _configurationProvider = configurationProvider;
+    }
+    ```
 
 2.  Here's the approach for Service Builder services:
 
-        @ServiceReference(type = ConfigurationProvider.class)
-        protected ConfigurationProvider configurationProvider;
+    ```java
+    @ServiceReference(type = ConfigurationProvider.class)
+    protected ConfigurationProvider configurationProvider;
+    ```
 
 3.  For Spring beans, it is possible to use the same mechanism as for Service
     Builder services (`@ServiceReference`). Check the documentation on 
@@ -53,6 +57,7 @@ obtain a reference to it:
     from the export-import service, which is only called during the import and
     export of content from a running portal:
 
+    ```java
 	protected boolean isValidateLayoutReferences() throws PortalException {
 		long companyId = CompanyThreadLocal.getCompanyId();
 
@@ -62,14 +67,14 @@ obtain a reference to it:
 
 		return exportImportServiceConfiguration.validateLayoutReferences();
 	}
+    ```
 
 To retrieve the configuration, use one of the following methods of the provider:
 
 `getCompanyConfiguration()`
 : Used when you want to support different configurations per virtual instance.
 In this case, the configuration is usually entered by an admin through Control
-Panel &rarr; Configuration &rarr; Instance Settings. Since this UI is not
-automatically generated (yet) you must extend the UI with your own form.
+Panel &rarr; Configuration &rarr; Instance Settings. 
 
 `getGroupConfiguration()`
 : Used when you want to support different configurations per site (or, if
@@ -89,13 +94,15 @@ configuration file.
 
 Here are a couple real world examples from Liferay's source code:
 
-    JournalGroupServiceConfiguration configuration =
-        configurationProvider.getGroupConfiguration(
-            JournalGroupServiceConfiguration.class, groupId);
+```java
+JournalGroupServiceConfiguration configuration =
+    configurationProvider.getGroupConfiguration(
+        JournalGroupServiceConfiguration.class, groupId);
 
-    MentionsGroupServiceConfiguration configuration =
-      _configurationProvider.getCompanyConfiguration(
-         MentionsGroupServiceConfiguration.class, entry.getCompanyId());
+MentionsGroupServiceConfiguration configuration =
+  _configurationProvider.getCompanyConfiguration(
+     MentionsGroupServiceConfiguration.class, entry.getCompanyId());
+```
 
 Next, you'll learn a nifty way to to access a portlet instance configuration
 from a JSP.
@@ -107,9 +114,11 @@ that isn't an OSGi component. To read the settings in these cases, a
 method was added to `PortletDisplay`, which is available as a request object.
 Here is an example of how to use it:
 
-    RSSPortletInstanceConfiguration rssPortletInstanceConfiguration =
-        portletDisplay.getPortletInstanceConfiguration(
-            RSSPortletInstanceConfiguration.class);
+```java
+RSSPortletInstanceConfiguration rssPortletInstanceConfiguration =
+    portletDisplay.getPortletInstanceConfiguration(
+        RSSPortletInstanceConfiguration.class);
+```
 
 As you can see, it knows how to find the values and returns a typed bean
 containing them just by passing the configuration class.
