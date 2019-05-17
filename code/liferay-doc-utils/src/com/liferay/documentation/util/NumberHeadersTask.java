@@ -142,11 +142,12 @@ public class NumberHeadersTask extends Task {
 				} catch (IOException e) {
 					throw new BuildException(e.getLocalizedMessage());
 				}
+
+				if (foundDuplicateIds && !overrideFile) {
+					throw new BuildException("FAILURE - Duplicate header IDs exist");
+				}
 			}
 
-			if (foundDuplicateIds && !overrideFile) {
-				throw new BuildException("FAILURE - Duplicate header IDs exist");
-			}
 		}
 		
 		// Make sure override files have same header IDs as original
@@ -534,6 +535,7 @@ public class NumberHeadersTask extends Task {
 		
 		for (String f : duplicateFiles) {
 			if (f.contains(filename)) {
+				System.out.println("TEST");
 				overrideFile = true;
 			}
 		}
