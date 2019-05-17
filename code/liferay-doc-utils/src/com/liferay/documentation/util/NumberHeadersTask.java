@@ -535,7 +535,6 @@ public class NumberHeadersTask extends Task {
 		
 		for (String f : duplicateFiles) {
 			if (f.contains(filename)) {
-				System.out.println("TEST");
 				overrideFile = true;
 			}
 		}
