@@ -24,7 +24,7 @@ only provides an additional layer that provides Export/Import-specific
 functionality. Here's how this works: 
 
 - `*StagedModelDataHandler`: de-serializes the provided
-  [LAR file's](/docs/7-2/reference/-/knowledge_base/r/liferay-archive-file)
+  [LAR file's](/docs/7-2/reference/-/knowledge_base/r/liferay-archive-lar-file)
   XML into a model.
 - `*StagedModelRepository`: updates the model based on the environment and
   business logic, providing entity-specific CRUD operations for Staging purposes
