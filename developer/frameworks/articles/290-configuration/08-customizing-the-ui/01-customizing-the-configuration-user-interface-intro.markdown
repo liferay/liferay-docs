@@ -44,7 +44,7 @@ Implement `ConfigurationFormRenderers` three methods:
     property in the `*Configuration` class's `@Meta.OCD` annotation.
 
 2.  `getRequestParameters`: Read the parameters sent by the custom form and put
-    them in a Map whose keys should be the names of the fields of the
+    them in a Map whose keys should be the names of the methods of the
     Configuration interface.
 
 3.  `render`: Render the custom form's fields, using your desired method (for
@@ -111,7 +111,7 @@ At a high level you must:
 1.  Write a Component that declares itself an implementation of the
     `ConfigurationScreen` interface.
 
-2.  Implement `Configurationscreen`'s methods.
+2.  Implement `ConfigurationScreen`'s methods.
 
 3.  Create the UI by hand.
 
@@ -153,7 +153,7 @@ public String getName(Locale locale) {
 
 Second, set the category key, the configuration entry's key, and its localized
 name. This example puts the configuration entry, keyed
-`sample-cofniguration-screen`, into the `third-party` System Settings section.
+`sample-configuration-screen`, into the `third-party` System Settings section.
 The String that appears in System Settings is _Sample Configuration Screen_.
 
 ```java
@@ -204,7 +204,7 @@ If you don't want a UI to be generated for you, you have two options.
 -   If you don't want a UI to be generated no matter what, use the `generateUI` property.
 
 -   If you only want the UI to render under specific circumstances (defined by
-    logic you'll write yourself), use the  configuration visibility SPI.
+    logic you'll write yourself), use the configuration visibility SPI.
 
 ### Using `generateUI`
 
@@ -228,14 +228,14 @@ public interface LowLevelConfiguration {
 
 ```
 
-Now no configuration UI will be auto-generated. You can still manage
-configuration via a `ConfigurationScreen` implementation, a 
+Now no UI will be auto-generated for this configuration. You can still manage
+the configuration via a `ConfigurationScreen` implementation, a 
 [.config file](/docs/7-2/user/-/knowledge_base/u/understanding-system-configuration-files),
 or programatically.
 
 ### Using the Configuration Visibility SPI
 
-The configuration visibility SPI involves extending a single interface,
+The configuration visibility SPI involves implementing a single interface,
 `ConfigurationVisibilityController`. You can see the whole interface
 [here](https://github.com/liferay/liferay-portal/blob/48cd71b35a2d3b66e88f47685be7186cb7c52075/modules/apps/configuration-admin/configuration-admin-api/src/main/java/com/liferay/configuration/admin/display/ConfigurationVisibilityController.java).
 

@@ -169,7 +169,7 @@ label, and the redirect URL. Finally, call `renderJSP` and pass in the
 public void render(HttpServletRequest request, HttpServletResponse response)
     throws IOException {
 
-    Locale locale = LocaleThreadLocal.getThemeDisplayLocale();
+    Locale locale = request.getLocale();
 
     LanguageTemplateConfigurationDisplayContext
         languageTemplateConfigurationDisplayContext =
@@ -180,8 +180,9 @@ public void render(HttpServletRequest request, HttpServletResponse response)
 
     long groupId = 0;
 
-    Group group = _groupLocalService.fetchCompanyGroup(
-        CompanyThreadLocal.getCompanyId());
+    long companyId = _portal.getCompanyId(actionRequest);
+
+    Group group = _groupLocalService.fetchCompanyGroup(companyId);
 
     if (group != null) {
         groupId = group.getGroupId();
@@ -285,8 +286,6 @@ So what does this example look like when all is said and done?
 
 ![Figure 2: A select list provides a more user friendly configuration experience than a text field.](../../../images/sys-settings-lang-template-custom.png)
 
-Some configuration UIs require tweaking with a `ConfigurationFormRenderer`.
-This tutorial shows a particularly good example. Administrators encountering
-the Language Template entry in System Settings won't know the DDM Template Keys
-they can use offhand. Providing the available values in a select field wildly
-enhances the user experience.
+Now, administrators encountering the Language Template entry in System Settings
+won't be handicappd by not knowing the available DDM Template Keys. Providing
+the available values in a select field wildly enhances the user experience.
