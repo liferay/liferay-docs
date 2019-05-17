@@ -91,11 +91,12 @@ public class NumberHeadersTask extends Task {
 
 					String line;
 					int titleHeaderLineNum = -2;
+					boolean headerValidated = false;
 					while ((line = in.readLine()) != null) {
 
 						int lineNum = in.getLineNumber();
 
-						if (line.startsWith("#") && !line.startsWith("##")) {
+						if (line.startsWith("#") && !line.startsWith("##") && !headerValidated) {
 						
 							titleHeaderLineNum = in.getLineNumber();
 							line = line.trim();
@@ -113,6 +114,8 @@ public class NumberHeadersTask extends Task {
 							else {
 								validateHeaderId(filename, headerIdLine, in.getLineNumber(), true);
 							}
+
+							headerValidated = true;
 						}
 						if (lineNum == titleHeaderLineNum + 1) {
 							if (!line.equals("")) {
