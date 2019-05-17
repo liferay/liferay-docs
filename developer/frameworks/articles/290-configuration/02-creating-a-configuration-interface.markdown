@@ -1,4 +1,10 @@
-# Creating A Configuration Interface [](id=creating-a-configuration-interface)
+---
+header-id: creating-a-configuration-interface
+---
+
+# Creating A Configuration Interface
+
+[TOC levels=1-4]
 
 First, you'll learn how to create a configuration with no scope declaration.
 This will automatically scope your configuration to `SYSTEM`.
