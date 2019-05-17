@@ -16,9 +16,8 @@ If you have an app with a configuration interface scoped to anything other than
     (This is quick and easy, but won't make your code easier to maintain in the
     long term.)
 
-    For other ways to disable the auto-generated UI, see (Link).
-
-    (/developer/frameworks/-/knowledge_base/7-2/customizing-the-system-settings-user-interface#excluding-a-configuration-ui-from-system-settings).
+    For other ways to disable the auto-generated UI, see
+    [Excluding a Configuration UI](/docs/7-2/frameworks/-/knowledge_base/f/customizing-the-configuration-user-interface#exluding-a-configuration-ui)
 
 -   Write an Upgrade Process to convert your configuration values in
     `PortletPreferences` to an instance-scoped OSGi configuration, using the
@@ -27,7 +26,7 @@ If you have an app with a configuration interface scoped to anything other than
     |You don't have to use `saveCompanyConfiguration`, but doing so meets all
     |the necessary requirements for an upgrade process: it must be a factory
     |instance with a factory PID of `Unknown macro:[base-pid].scoped`, and it
-    |must contain a `companyid` property.
+    |must contain a `companyId` property.
 
     Then remove your custom UI. If you're reading configuration values
     using `ConfigurationProvider`'s `getCompanyConfiguration` method, the
