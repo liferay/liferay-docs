@@ -2,10 +2,6 @@
 header-id: configurable-applications
 ---
 
----
-header-id: configurable-applications
----
-
 # Configurable Applications
 
 [TOC levels=1-4]
@@ -26,14 +22,14 @@ When you define configuration options in a Java interface, Liferay's
 configuration framework auto-generates a UI, sparing you the trouble of
 developing an interface for your users to select configuration options.
 
-|**Note:** To see a working application configuration, deploy the
-|`configuration-action` 
-|[Blade sample](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/configuration-action)
-|and navigate to System Settings (*Control Panel* &rarr; *Configuration* &rarr;
-|*System Settings*). In the Other category, click the *Message display
-|configuration* entry.
-|
-|Add the *Blade Message Portlet* to a page to test your configuration choices.
+| **Note:** To see a working application configuration, deploy the
+| `configuration-action` 
+| [Blade sample](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/configuration-action)
+| and navigate to System Settings (*Control Panel* &rarr; *Configuration* &rarr;
+| *System Settings*). In the Other category, click the *Message display
+| configuration* entry.
+| 
+| Add the *Blade Message Portlet* to a page to test your configuration choices.
 
 Complete these three high level tasks to integrate your application with the
 configuration framework: 
