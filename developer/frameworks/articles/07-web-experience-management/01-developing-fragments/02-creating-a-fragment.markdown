@@ -69,13 +69,13 @@ area where content can be entered:
    }
    ```
 
-3. Click *Publish* to save your work and make it available to add to a content
-   page.
+3.  Click *Publish* to save your work and make it available to add to a content
+    page.
 
 | Note: When you start typing the name of a tag, the HTML editor provides 
 | auto-completion for `lfr` tags like editable elements and embeddable widgets.
 
-As you work, you can observe the preview in the preview pane.
+As you work, you can observe your changes in the preview pane.
 
 ![Figure 2: The Fragment editor with HTML and CSS code and a live preview.](../../../images/fragment-editor-basic.png)
 

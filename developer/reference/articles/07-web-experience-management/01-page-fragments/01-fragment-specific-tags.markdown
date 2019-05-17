@@ -20,8 +20,7 @@ You can make text of a fragment editable by enclosing it in an
 </lfr-editable>
 ```
  
-If you need formatting options like text or color styles, you must use
-`rich-text`:
+If you need formatting options like text or color styles, use `rich-text`:
  
 ```html
 <lfr-editable id="unique-id" type="rich-text">
@@ -47,10 +46,23 @@ like this:
 ```
 
 After you add the `lfr-editable` tag with the type `image` to a Fragment, when 
-you add that Fragment to a page, you can then click on the editable image and 
-select a replacement.
+you add that Fragment to a page, you can then click on the editable image to select an image or configure content mapping for the image.
 
-SCREENSHOT!
+To edit an image from the Content Page editor,
+
+1.  Click on the image you want to replace.
+
+2.  Click ![Image Properties](../../../images/icon-edit.png).
+
+From here you can enter a URL in the *Image* field, click *Select* to upload an 
+image or select it from Docs and Media to define an image. Click *Clear* to 
+reset the image, or define a *URL* target for when a user clicks the image.
+
+![Figure 1: You have several options for defining an image on a Content Page.](../../../images/fragment-image-editor.png)
+
+Content mapping connects editable fields in your Fragment with fields from an 
+Asset type like Web Content or Blogs. For example, you can map an image field 
+to display a preview image for a Web Content Article. For more information on mapping fields, see the [Asset Display Page guide](user-doc-link).
 
 ## Creating Editable Links
 
@@ -65,10 +77,20 @@ There is also a specific syntax for creating editable link elements:
 Marketers can edit the link text, target URL, and basic link styling---primary
 button, secondary button, link.
 
-SCREENSHOT!
+To edit a link from the content page editor,
+
+1.  Click on the link or button that you want to edit.
+
+2.  Click on ![Edit](../../../images/icon-edit.png) to edit the link text.
+
+3.  Click on ![Link](../../../images/icon-link.png) to edit the link properties.
+
+From the Link Properties popup, you can set the *URL* for the link, choose the 
+link *Display Type*, and use the *Target* dropdown to define the link behavior. For more information on various aspects on editing and managing Content Pages, see the [Creating Content Pages guide](user-docs-link).
+
+![Figure 2: You have several options for defining a link's appearance and behavior.](../../../images/fragment-link-editor.png)
 
 ## Including Widgets Within A Fragment 
-
 
 To include a widget, you must know its registered name. For example, the Site 
 Navigation Menu portlet is registered as `nav`. Each registered portlet has an
