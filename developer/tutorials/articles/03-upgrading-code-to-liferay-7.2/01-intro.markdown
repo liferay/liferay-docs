@@ -112,19 +112,27 @@ Here are the code upgrade steps:
 
         After fixing your upgrade problems, remove the problem markers.
 
-5.  [Upgrade Service Builder Services]()
+5.  [Upgrade Service Builder Services](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-service-builder-services)
 
     Upgrade your Service Builder services.
 
-    1.  [Remove Legacy Files]()
+    1.  [Remove Legacy Files](/docs/tutorials/7-2/-/knowledge_base/t/removing-legacy-files)
+
+        Remove legacy files that are no longer leveraged by Service Builder.
 
     2.  [Migrate from Spring DI to OSGi Declarative Services](/docs/tutorials/7-2/-/knowledge_base/t/converting-a-service-builder-module-from-spring-di-to-osgi-ds)
 
-    3.  [Rebuild Services]()
+        Leverage OSGi Declarative Services in your Service Builder project.
+
+    3.  [Rebuild Services](/docs/tutorials/7-2/-/knowledge_base/t/rebuilding-services)
+
+        Rebuild your project's services to persist your updates.
 
 6.  [Upgrade Customization Plugins](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-customization-plugins)
 
-    1.  [Upgrade Customization Modules]()
+    Upgrade your customization plugins so they're deployable to @product-ver@.
+
+    1.  [Upgrade Customization Modules](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-customization-modules)
 
     2.  [Upgrade Core JSP Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-core-jsp-hooks)
 
@@ -164,7 +172,7 @@ Here are the code upgrade steps:
 
 10. [Upgrade Portlets](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-portlets)
 
-    Upgrade your portlets.
+    Upgrade your portlets so they're deployable to @product-ver@.
 
     1.  [Upgrade Generic Portlets](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-genericportlet)
 
