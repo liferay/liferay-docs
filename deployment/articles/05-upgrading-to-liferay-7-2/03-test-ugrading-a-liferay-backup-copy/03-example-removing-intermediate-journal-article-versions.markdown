@@ -87,14 +87,14 @@ Here are example steps for removing intermediate Journal Article versions:
     ```
 
     3.  For each `JournalArticleResource` (there's one for each Journal Article 
-        entity), build a list of intermediate versions whose status is expired
-        (i.e.,
+        entity), build a list of intermediate versions in a status likely to be
+        deleted (i.e.,[WorkflowConstants.STATUS_APPROVED] or
         [WorkflowConstants.STATUS_EXPIRED](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/workflow/WorkflowConstants.html)).
-        Filtering on Journal Articles that are expired assures that those that
-        are drafts or pending approval are *not* added to the list. The
-        `MIN_NUMBER_FIRST_VERSIONS_KEPT` and `MIN_NUMBER_LATEST_VERSIONS_KEPT`
-        variables mark the min and max number of oldest and newest versions to
-        keep. 
+        Filtering on Journal Articles that are in the proper statuses assures
+        that those that are drafts or pending approval are *not* added to the
+        list. The `MIN_NUMBER_FIRST_VERSIONS_KEPT` and
+        `MIN_NUMBER_LATEST_VERSIONS_KEPT` variables mark the min and max number
+        of oldest and newest versions to keep. 
 
     ```java 
     List<Double> journalArticlesVersionsToDelete =
@@ -105,7 +105,7 @@ Here are example steps for removing intermediate Journal Article versions:
 		double version = (double) result.get(i)[1];
 		int status = (int) result.get(i)[2];
 
-		if (status == WorkflowConstants.STATUS_EXPIRED) {
+		if ((status == WorkflowConstants.STATUS_APPROVED) || (status == WorkflowConstants.STATUS_EXPIRED) {
 
 			if (i < MIN_NUMBER_FIRST_VERSIONS_KEPT) {
 				continue;
