@@ -1,20 +1,27 @@
-# Connecting Users [](id=connecting-users)
+---
+header-id: connecting-users
+---
+
+# Connecting Users
+
+[TOC levels=1-4]
 
 By adding the Contacts Center and Activities widgets to users' private 
 Dashboards, administrators can let users form social connections. The Contacts 
 Center widget lets users form these connection types: 
 
--   **Connection:** A two-way relationship formed by a user accepting a 
-    connection request from another user. The Activities widget on each user's 
-    private Dashboard displays the activities of the other user. 
--   **Following:** A one-way relationship in which one user follows another 
-    user. The followed user's activities appear in the Activities widget on the 
-    follower's private Dashboard. 
+**Connection:** A two-way relationship formed by a user accepting a connection 
+request from another user. The Activities widget on each user's private 
+Dashboard displays the activities of the other user. 
+
+**Following:** A one-way relationship in which one user follows another user. 
+The followed user's activities appear in the Activities widget on the follower's 
+private Dashboard. 
 
 To ensure that all users have a page on their private Dashboard that contains 
 the Contacts Center and Activities widgets, you can create a user group and then
 create a page via a Site Template. For instructions on this, see the 
-[user groups documentation](/discover/portal/-/knowledge_base/7-1/user-groups).
+[user groups documentation](/discover/portal/-/knowledge_base/7-2/user-groups). 
 The widgets are in *Add* (![Add](../../../images/icon-add.png)) &rarr; *Widgets*
 &rarr; *Social*. 
 

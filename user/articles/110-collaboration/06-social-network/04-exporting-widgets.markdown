@@ -1,10 +1,16 @@
-# Exporting Widgets To Other Websites [](id=exporting-widgets-to-other-websites)
+---
+header-id: exporting-widgets-to-other-websites
+---
+
+# Exporting Widgets To Other Websites
+
+[TOC levels=1-4]
 
 You can publish its widgets to other websites via OpenSocial. This lets you
 provide your widget or content in the context of another website. Read on to
 find out how this is done. 
 
-## Sharing OpenSocial Gadgets [](id=sharing-opensocial-gadgets)
+## Sharing OpenSocial Gadgets
 
 OpenSocial consists of a set of APIs for social networking. It may be beneficial
 for you to share widgets from your server with other sites, such as 

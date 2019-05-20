@@ -1,4 +1,10 @@
-# Using Social Bookmarks [](id=using-social-bookmarks)
+---
+header-id: using-social-bookmarks
+---
+
+# Using Social Bookmarks
+
+[TOC levels=1-4]
 
 Social bookmarks appear below content as buttons for sharing that content on
 social networks. For example, social bookmarks appear by default in the Blogs
@@ -12,11 +18,12 @@ These social bookmarks are available by default:
 -   Facebook
 -   LinkedIn
 
-![Figure 1: The default social bookmarks appear inline below content.](../../../images/social-bookmarks-menu.png)
+![Figure 1: The default social bookmarks appear in a menu below content.](../../../images/social-bookmarks-menu.png)
 
 You can install the Social Bookmarks app from Liferay Marketplace. This app is
-available for [Liferay CE
-Portal](https://web.liferay.com/marketplace/-/mp/application/15194315) and
+available for 
+[Liferay CE Portal](https://web.liferay.com/marketplace/-/mp/application/15194315) 
+and 
 [Liferay DXP](https://web.liferay.com/marketplace/-/mp/application/15188453). 
 It adds the following social bookmarks: 
 

@@ -1,4 +1,10 @@
-# Using the Activities Widget [](id=using-the-activities-widget)
+---
+header-id: using-the-activities-widget
+---
+
+# Using the Activities Widget
+
+[TOC levels=1-4]
 
 The core social widget is Activities. It displays information about user
 activity on the Site where you added it. User activities tracked include

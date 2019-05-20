@@ -1,18 +1,24 @@
-# Integrating with Facebook [](id=integrating-with-facebook)
+---
+header-id: integrating-with-facebook
+---
+
+# Integrating with Facebook
+
+[TOC levels=1-4]
 
 @product@ provides tools for integrating your portal and its content with 
 Facebook. For example, you can use Facebook for authentication and even export 
 widgets as Facebook applications. This article shows you how. 
 
-## Facebook Sign On [](id=facebook-sign-on)
+## Facebook Sign On
 
 Like many websites you may visit, any site running on @product@ can use
 Facebook for sign in. This makes it easier for users to sign in to your 
 Site, since they don't need to remember another user name and password. See the
-[deployment documentation](/discover/deployment/-/knowledge_base/7-1/facebook-connect-single-sign-on-authentication) 
+[deployment documentation](/discover/deployment/-/knowledge_base/7-2/facebook-connect-single-sign-on-authentication) 
 for information on using Facebook to sign into @product@. 
 
-## Using Your Widget as Facebook Applications [](id=using-your-widget-as-facebook-applications)
+## Using Your Widget as Facebook Applications
 
 You can add any @product@ widget as an app on Facebook. To do this, you must 
 first get a developer key. A link for doing this is provided to you in the 
