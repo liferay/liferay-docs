@@ -9,10 +9,12 @@ header-id: other-knowledge-base-widgets
 There are other Knowledge Base widgets you can add to Site pages besides 
 [Knowledge Base Display](/discover/portal/-/knowledge_base/7-2/knowledge-base-display): 
 
--   **Knowledge Base Article:** Display a single article's content.
--   **Knowledge Base Section:** Publish articles associated with a specific 
-    topic (section).
--   **Knowledge Base Search:** Search for articles.
+**Knowledge Base Article:** Display a single article's content.
+
+**Knowledge Base Section:** Publish articles associated with a specific topic 
+(section).
+
+**Knowledge Base Search:** Search for articles.
 
 You can add these widgets from *Add* 
 (![Add](../../../../images/icon-add-app.png)) 

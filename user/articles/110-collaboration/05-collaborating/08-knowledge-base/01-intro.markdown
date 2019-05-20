@@ -33,4 +33,4 @@ The Knowledge Base has several widgets you can add to Site pages:
 - Knowledge Base Search 
 - Knowledge Base Section 
 
-
+![Figure 1: Knowledge Base Display's navigation and viewing provide a great reading experience.](../../../../images/kb-display.png)
