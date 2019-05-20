@@ -55,15 +55,34 @@ workflow item's SLA status: on time or overdue.
     - Days: Enter a whole number of days. 
     - Hours: Enter hours and minutes in the format HH:MM
 
+7.  Once you click *Save*, you'll see the SLA listed on the SLAs screen.
+
 | **System Calendar:** By default, there's an internal calendar that assumes the
-| SLA duration should continue counting all the time: in other words, 24 hours
-| per day, seven days per week.  If you need a different calendar format, create
-| one using the TODO: EXPLAIN THE EXTENSION POINT BRIEFLY
+| SLA duration should continue counting all the time: in other words, 24 hours 
+| per day, seven days per week. If you need a different calendar format, find a
+| friendly developer to create a custom calendar. Official docs will be written
+| for this extension point, but the basic ideas is to implement the
+| `WorkflowMetricsSLACalendar` interface. New implementations of this service are
+| picked up automatically by the Workflow Metrics applications, so it becomes
+| available as soon as the module holding the service implementation is deployed
+| to @product@. The interface has three methods to implement: 
 | 
-| If you define a new calendar, a new option becomes available in the Add SLA
-| form, allowing you to choose from the default 24/7 calendar or any custom ones
-| you've provided (for example, make the timer run for 9 hours per day, 5 days per
-| week). <!--If can do this, add screenshot-->
+| 
+| - `public Duration getDuration(
+|     LocalDateTime startLocalDateTime, LocalDateTime endLocalDateTime);`
+| 
+| - `public LocalDateTime getOverdueLocalDateTime(
+|     LocalDateTime nowLocalDateTime, Duration remainingDuration);`
+| 
+| - `public String getTitle(Locale locale);`
+| 
+| See the `DefaultWorkflowMetricsSLACalendar` from the
+| `portal-workflow-metrics-service` module for example code. If you define a new
+| calendar, a new option becomes available in the Add SLA form, allowing you to
+| choose from the default 24/7 calendar or any custom ones you've provided (for
+| example, make the timer run for 9 hours per day, 5 days per week).
+
+![Figure x: Manage SLAs from the SLAs screen.](../../images/workflow-metrics-sla-list.png)
 
 #### Valid Workflow Events
 
