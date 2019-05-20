@@ -13,11 +13,11 @@ Here are the code upgrade steps:
 
     1.  Set up Liferay Workspace
 
-        1.  Create New Liferay Workspace <!--commandId="create_new_liferay_workspace"-->
+        1.  Create New Liferay Workspace {commandId='create_new_liferay_workspace'}
 
             Create a new Liferay Workspace.
 
-        2.  Import Existing Liferay Workspace
+        2.  Import Existing Liferay Workspace {commandId='import_existing_liferay_workspace'}
 
             If you do not have an existing 7.x workspace, go to the previous
             step.
@@ -26,16 +26,16 @@ Here are the code upgrade steps:
 
         Set the @product@ version in workspace's configuration you intend to
         upgrade to.
-        
-        1.  Configure Bundle URL
+
+        1.  Configure Bundle URL {commandId='configure_bundle_url'}
 
             Configure your bundle URL.
 
-        2.  Configure Target Platform Version
+        2.  Configure Target Platform Version {commandId='configure_target_platform_version'}
 
             Configure your Target Platform version.
-            
-        3.  Initialize Server Bundle
+
+        3.  Initialize Server Bundle {commandId='initialize_server_bundle'}
 
             Initialize your Liferay server bundle.
 
@@ -44,11 +44,11 @@ Here are the code upgrade steps:
     Copy your Plugins SDK projects into workspace and convert them to
     Gradle/Maven projects.
 
-    1.  Import Existing Plugins SDK Projects
+    1.  Import Existing Plugins SDK Projects {commandId='import_existing_plugins_sdk'}
 
         Import your existing Plugins SDK projects.
 
-    2.  Migrate Existing Plugins to Workspace
+    2.  Migrate Existing Plugins to Workspace {commandId='migrate_existing_plugins_to_workspace'}
 
         Migrate existing plugins to Workspace.
 
@@ -57,15 +57,15 @@ Here are the code upgrade steps:
     Optimize your workspace's build environment for the most efficient code
     upgrade experience.
 
-    1.  Update Repository URL
+    1.  Update Repository URL {commandId='update_repository_url'}
 
         Update your repository URL.
 
-    2. Update Workspace Plugin Version
+    2. Update Workspace Plugin Version {commandId='update_workspace_plguin_version'}
 
         Update your Workspace Plugin version
 
-    3.  Remove dependency Versions
+    3.  Remove dependency Versions {commandId='remove_dependency_version'}
 
         Remove dependency versions.
 
@@ -74,11 +74,11 @@ Here are the code upgrade steps:
     Fix common upgrade problems dealing with your project's dependencies and
     breaking changes.
 
-    1.  Auto-Correct Upgrade Problems
+    1.  Auto-Correct Upgrade Problems {commandId='auto_correct_find_upgrade_problems'}
 
         Leverage auto-correct to upgrade code.
 
-    2.  Find Upgrade Problems
+    2.  Find Upgrade Problems {commandId='find_upgrade_problems'}
 
         Find upgrade problems.
 
@@ -86,7 +86,7 @@ Here are the code upgrade steps:
 
         Mark upgrade problems as resolved after addressing them.
 
-    4.  Remove Problem Markers
+    4.  Remove Problem Markers {commandId='remove_upgrade_problems_markers'}
 
         Remove problem markers.
 
@@ -94,12 +94,12 @@ Here are the code upgrade steps:
 
     Upgrade your Liferay Service Builder services.
 
-    1.  Remove Legacy Files
+    1.  Remove Legacy Files {commandId='remove_legacy_files'}
 
     2.  Migrate from Spring DI to OSGi Declarative Services
-    
-    3.  Rebuild Services
-    
+
+    3.  Rebuild Services {commandId='rebuild_services'}
+
 6.  Upgrade Customization Plugins
 
     1.  Upgrade Override/Extension Modules
