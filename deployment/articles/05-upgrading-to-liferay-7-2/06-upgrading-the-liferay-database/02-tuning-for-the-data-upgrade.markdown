@@ -31,7 +31,7 @@ data upgrade environment:
 
 -   Increase the interval to flush commits to disk. 
 
--   Increase the log file size accordingly. 
+-   Minimize transaction logging.  
 
 | **Note:** These tuning worked well for us on specific versions of each 
 | database. Please consult your database vendor's documentation for further
@@ -130,9 +130,10 @@ commits](https://www.postgresql.org/docs/10/wal-async-commit.html).
 
 ## Tuning the Database Transaction Log
 
-Since data upgrade executes many transactions, write to the transaction log in
-batch instead of after every transaction. Here are log tuning instructions for
-each database.
+In production, transaction logs mark safe states to roll back to. In data
+upgrades, however, the safe state is the original data backup. Since transaction
+logging is insignificant for data upgrades, it should be disabled or minimized.
+Here are log tuning instructions for each database. 
 
 ### IBM DB2 
 
