@@ -60,14 +60,16 @@ public class AddTOCTask extends Task {
 					new BufferedWriter(new FileWriter(outFileTmp));
 
 			String line;
+			boolean tocAdded = false;
 			while ((line = in.readLine()) != null) {
 
-				if (line.startsWith("#") && !line.startsWith("##")) {
+				if (line.startsWith("#") && !line.startsWith("##") && !tocAdded) {
 					out.append(line);
 					out.append("\n\n");
 					out.append(tocSyntax);
 					out.append("\n");
-					continue;
+
+					tocAdded = true;
 				}
 				else {
 					out.append(line);

@@ -26,7 +26,7 @@ or
 - OSGi JARs ZIP file
 
 | **Important:** 
-| [Prepare for the install](/deployment/deployment/-/knowledge_base/7-2/prepare-for-install)
+| [Prepare for the install](/docs/7-2/deploy/-/knowledge_base/d/prepare-for-install)
 | before continuing. 
 
 Here are the basic steps for installing @product@ on Tomcat:
@@ -35,7 +35,7 @@ Here are the basic steps for installing @product@ on Tomcat:
 - [Configuring your application server for @product@](#tomcat-configuration)
 - [Deploying the @product@ WAR file to your application server](#deploying-product)
 
-[*Liferay Home*](/deployment/-/knowledge_base/7-2/liferay-home)
+[*Liferay Home*](/docs/7-2/deploy/-/knowledge_base/d/liferay-home)
 is Tomcat server's parent folder. `$TOMCAT_HOME` refers to your Tomcat server
 folder. It is usually named `tomcat-[version]` or `apache-tomcat-[version]`.
 
@@ -343,7 +343,7 @@ Your application server is configured to run @product@.
 
 The easiest way to handle your database configuration is to let @product@ manage
 your data source. If you want to use the
-[built-in data source (recommended)](/deployment/-/knowledge_base/7-2/preparing-for-install#using-the-built-in-data-source),
+[built-in data source (recommended)](/docs/7-2/deploy/-/knowledge_base/d/preparing-for-install#using-the-built-in-data-source),
 skip this section.
 
 If you want Tomcat to manage your data source, follow these steps:
@@ -388,7 +388,7 @@ it. Mail session configuration is next.
 
 As with database configuration, the easiest way to configure mail is to let
 @product@ handle your mail session. If you want to use @product@'s
-[built-in mail session]((/deployment/-/knowledge_base/7-2/configuring-mail#products-built-in-mail-session)),
+[built-in mail session](/docs/7-2/deploy/-/knowledge_base/d/configuring-mail#products-built-in-mail-session),
 skip this section. 
 
 If you want to manage your mail session with Tomcat, follow these steps:

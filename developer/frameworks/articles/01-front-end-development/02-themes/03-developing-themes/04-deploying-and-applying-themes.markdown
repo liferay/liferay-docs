@@ -10,7 +10,7 @@ Follow these steps to deploy your theme with the Deploy task. Note that this
 task only works for themes that use the 
 [liferay JS Theme Toolkit](https://github.com/liferay/liferay-themes-sdk/tree/master/packages), 
 such as those created with the 
-[Liferay Theme Generator](/developer/reference/-/knowledge_base/7-2/installing-the-theme-generator-and-creating-a-theme).
+[Liferay Theme Generator](/docs/7-2/reference/-/knowledge_base/r/installing-the-theme-generator-and-creating-a-theme).
 
 
 Follow these steps to deploy your theme:
@@ -18,7 +18,7 @@ Follow these steps to deploy your theme:
 1.  Navigate to your theme's root folder and run `gulp deploy`.
 
     | **Note:** If you're running the 
-    | [Felix Gogo shell](/developer/reference/-/knowledge_base/7-2/using-the-felix-gogo-shell), 
+    | [Felix Gogo shell](/docs/7-2/reference/-/knowledge_base/r/using-the-felix-gogo-shell), 
     | you can also deploy your theme using the `gulp deploy:gogo` command.
 
 2.  Your server's log displays that the OSGi bundle is started.
@@ -33,8 +33,8 @@ Wonderful! Your theme is deployed to your server and applied to your site.
 
 ## Related Topics
 
-- [Automatically Deploying Theme Changes](/developer/frameworks/-/knowledge_base/7-2/automatically-deploying-theme-changes)
-- [Copying an Existing Theme's Files](/developer/frameworks/-/knowledge_base/7-2/copying-an-existing-themes-files)
-- [Creating Reusable Pieces of Code for Your Themes](/developer/frameworks/-/knowledge_base/7-2/creating-reusable-pieces-of-code-for-your-themes)
+- [Automatically Deploying Theme Changes](/docs/7-2/frameworks/-/knowledge_base/f/automatically-deploying-theme-changes)
+- [Copying an Existing Theme's Files](/docs/7-2/frameworks/-/knowledge_base/f/copying-an-existing-themes-files)
+- [Creating Reusable Pieces of Code for Your Themes](/docs/7-2/frameworks/-/knowledge_base/f/creating-reusable-pieces-of-code-for-your-themes)
 
 
