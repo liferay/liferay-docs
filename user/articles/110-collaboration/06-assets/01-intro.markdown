@@ -18,3 +18,6 @@ worry, we won't tell anyone).
 Here, you'll learn to configure the portal to automatically apply 
 [tags](/discover/portal/-/knowledge_base/7-2/tagging-content) 
 to assets. 
+
+![Figure 1: The tags *freight car* and *electric locomotive* were automatically applied to this image.](../../../images/auto-tagging-images.png)
+
