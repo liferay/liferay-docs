@@ -130,6 +130,12 @@ previous attempts for traces like these:
 | [export a screen's configuration](/docs/7-2/user/-/knowledge_base/u/system-settings#exporting-and-importing-configurations)
 | to a `.config` file. 
 
+## Update Your Database Driver 
+
+Install the recommended database driver and update your database connection
+driver specified in your `portal-ext.properties`. See the [Database
+Templates](/docs/7-2/deployment/-/knowledge_base/d/database-templates). 
+
 ## Configure Your Documents and Media File Store 
 
 General document store configuration (e.g., `dl.store.impl=[File Store Impl
@@ -149,8 +155,12 @@ changed for document storage:
     ```
 
 -   JCR Store was deprecated in @product@ 7.0. The
-    [Document Repository Configuration](/docs/7-2/deploy/-/knowledge_base/d/document-repository-configuration)
-    documentation describes other store options.
+    [Document Repository
+    Configuration](/docs/7-2/deploy/-/knowledge_base/d/document-repository-configuration)
+    documentation describes other store options. [Migrate to a supported
+    document
+    store](/docs/7-2/user/-/knowledge_base/u/server-administration#data-migration)
+    before upgrading your data. 
 
 -   Since @product@ 7.0, document store type-specific configuration (e.g., 
     specific to Simple File Store, Advanced File Store, S3, etc.) is done in the

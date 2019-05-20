@@ -21,8 +21,11 @@ jdbc.default.password=
 
 ## MySQL
 
+| **Note:** MySQL Connector/J 8.0 is highly recommended for use with MySQL 
+| Server 8.0 and 5.7.
+
 ```properties
-jdbc.default.driverClassName=com.mysql.jdbc.Driver
+jdbc.default.driverClassName=com.mysql.cj.jdbc.Driver
 jdbc.default.url=jdbc:mysql://localhost/lportal?characterEncoding=UTF-8&dontTrackOpenResources=true&holdResultsOpenOverStatementClose=true&useFastDateParsing=false&useUnicode=true
 jdbc.default.username=
 jdbc.default.password=
