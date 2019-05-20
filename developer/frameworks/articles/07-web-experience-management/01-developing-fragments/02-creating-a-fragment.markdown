@@ -6,12 +6,12 @@ header-id: creating-fragments
 
 [TOC levels=1-4]
 
-If you aren't sure about the basics of Fragments and Collections, you should 
-read [Creating Page Fragments](user-guide-link) first so you know what you're getting 
-yourself into. Once, you're ready, start by creating the Collection:
+This tutorial assumes you understand Fragments and Collections. If you don't,
+read [Creating Page Fragments](user-guide-link) first. Once, you're ready, start
+by creating a Collection:
 
-1.  Go to *Site Administration* and for your selected site click *Build*
-    &rarr; *Fragments*.
+1.  From the menu for your selected site, click *Site Builder* &rarr; *Page
+    Fragments*.
  
 2.  Create a new Collection named *Developing Fragments*.
 
@@ -31,44 +31,49 @@ You're now on the Fragment editing page. There are four panes on this screen.
 You enter HTML in the top left pane, CSS in the top right, JavaScript in the
 bottom left, and preview the results in the bottom right.
 
-![Figure 1: The Fragment editor provides autocomplete for Liferay Fragment specific tags..](../../../images/fragment-editor-autocomplete.png)
+![Figure 1: The Fragment editor provides autocomplete for Liferay Fragment specific tags.](../../../images/fragment-editor-autocomplete.png)
 
 You can look at the three editing panes as if each were writing to a separate 
 file. Everything in the HTML pane goes to `index.html`, the CSS pane goes to 
-`index.css`, and the JavaScript one goes to `index.js`. The preview pane renders
-everything as it will look on the page. 
+`index.css`, and the JavaScript pane goes to `index.js`. The preview pane
+renders everything as it looks on the page. 
 
-A Section is designed to define a space to work in. Now, create a section with an editable rich text area where content can be entered:
+A Section defines a work space. Now create a section with an editable rich text
+area where content can be entered:
 
 1.  Add the following code inside the HTML pane:
 
-        <div class="basic-section">
-	        <div class="container">
-		        <div class="row">
-                    <div class="card-body">
-				        <lfr-editable id="card00" type="rich-text">
-					        <p class="card-text">This is a space for the user to enter content</p>
-        				</lfr-editable>
-	        		</div>
-		        </div>
-        	</div>
-        </div>
+    ```html
+    <div class="basic-section">
+        <div class="container">
+	        <div class="row">
+                <div class="card-body">
+			        <lfr-editable id="card00" type="rich-text">
+				        <p class="card-text">This is a space for the user to enter content</p>
+    				</lfr-editable>
+        		</div>
+	        </div>
+    	</div>
+    </div>
+    ```
 
 2.  Replace the code in the CSS pane with the following:
 
-        .basic-section {
-        }
+   ```css
+   .basic-section {
+   }
 
-        .basic-section .aspect-ratio {
-        	max-width: inherit;
-    	    width: 100%;
-        }    
+   .basic-section .aspect-ratio {
+   	    max-width: inherit;
+        width: 100%;
+   }
+   ```
 
 3. Click *Publish* to save your work and make it available to add to a content
    page.
 
 | Note: When you start typing the name of a tag, the HTML editor provides 
-| autocompletion for `lfr` tags like editable elements and embeddable widgets.
+| auto-completion for `lfr` tags like editable elements and embeddable widgets.
 
 As you work, you can observe the preview in the preview pane.
 
@@ -76,7 +81,8 @@ As you work, you can observe the preview in the preview pane.
 
 ## Creating a Component
 
-Components are intended to by simple, reusable elements for building a parts of a page. Next create a button with a link as a Component:
+Components simple, reusable elements for building a parts of a page. Next create
+a button with a link as a Component:
 
 1.  Go back to the *Page Fragments* page, and the *Developing Fragments* 
     Collection.
@@ -86,12 +92,14 @@ Components are intended to by simple, reusable elements for building a parts of 
 3.  Name it *Basic Component*.
 
 4.  Back in the editor, add the following code inside the HTML pane:
-   
-        <div class="basic-link-button">
-        	<lfr-editable id="btn00" type="link">
-        		<a href="#" class="btn btn-primary">Read More</a>
-        	</lfr-editable>
-        </div>
+
+   ```html
+   <div class="basic-link-button">
+   	<lfr-editable id="btn00" type="link">
+   		<a href="#" class="btn btn-primary">Read More</a>
+   	</lfr-editable>
+   </div>
+   ```
 
 5.  Click *Publish* to save your work and make it available to add to a content 
     page.
@@ -112,7 +120,7 @@ managing them. To access the collections management menu,
 
 2.  Click on the [Options](../../../images/icon-options.png) menu next to the 
     collection name.
-    
+ 
 3.  Select whether you want to *Edit*, *Export*, *Import*, or *Delete* the 
     collection.
 
@@ -128,7 +136,7 @@ To access the fragment management menu,
 
 1.  Select the Collection containing the Fragment you want to manage from the 
     *Collections* list.
-    
+ 
 2.  Click on the [Options](../../../images/icon-options.png) menu next to the 
     Fragment name.
 
