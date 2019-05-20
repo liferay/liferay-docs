@@ -1,9 +1,15 @@
+---
+header-id: workflow-metrics-reports
+---
+
 # Workflow Metrics: Reports
+
+[TOC levels=1-4]
 
 As soon as you enter the Metrics screen (Control Panel &rarr; Workflow &rarr;
 Metrics) you're seeing metrics on each workflow installed in the system.
 
-![Figure x: In this view, the only process with pending items is the Single Approver.](../../images/workflow-metrics-reports1.png)
+![Figure 1: In this view, the only process with pending items is the Single Approver.](../../images/workflow-metrics-reports1.png)
 
 A table view of all installed workflow processes shows you how many items are
 Overdue, how many are On Time, and how many are Pending in the workflow process.
@@ -27,7 +33,7 @@ When you first click into the metrics for a specific process, you're presented
 with two valuable reports on pending items: the Pending Items overview and
 Workload by Step.
 
-![Figure x: See data on the Pending Items and the Workload by Step for a process.](../../images/workflow-metrics-reports2.png)
+![Figure 2: See data on the Pending Items and the Workload by Step for a process.](../../images/workflow-metrics-reports2.png)
 
 ### Pending Items
 
@@ -77,7 +83,7 @@ to analyze.
 
 Filter items based on whether they're Overdue, On Time, or Untracked. 
 
-![Figure x: Filter by SLA status: Overdue, On Time, or Untracked.](../../images/workflow-metrics-reports4.png)
+![Figure 3: Filter by SLA status: Overdue, On Time, or Untracked.](../../images/workflow-metrics-reports4.png)
 
 **Overdue**
 : Overdue items have breached at least one SLAs defined deadline.
@@ -109,7 +115,7 @@ Last 180 Days
 Last Year
 All Time
 
-![Figure x: Filter by Process Status and Completion Period.](../../images/workflow-reports-process-status-period.png)
+![Figure 4: Filter by Process Status and Completion Period.](../../images/workflow-reports-process-status-period.png)
  
 ### Filtering by Process Step
 
@@ -124,14 +130,14 @@ example, the screenshot below shows all items in the Single Approver process's
 Review task, that have the status Completed or Pending, whether On time or
 Overdue. Untracked items aren't shown.
 
-![Figure x: Combine filters to see just the items you're interested in.](../../images/workflow-metrics-reports13.png)
+![Figure 5: Combine filters to see just the items you're interested in.](../../images/workflow-metrics-reports13.png)
 
 ## Item Details
 
 To see the metrics for a single workflow process item, click the ID field while
 in the All Items view. A pop-up shows you more detailed information on the item.
 
-![Figure x: Item Details include SLA status information and whether the item is Resolved or Open.](../../images/workflow-reports-item-detail.png)
+![Figure 6: Item Details include SLA status information and whether the item is Resolved or Open.](../../images/workflow-reports-item-detail.png)
 
 From here you can view detailed information about the asset and even click *Go
 to Submission Page*, which redirects you to the item's view in the Submissions

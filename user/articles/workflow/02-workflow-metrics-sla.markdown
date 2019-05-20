@@ -1,4 +1,10 @@
+---
+header-id: workflow-metrics-the-service-level-agreement-sla
+---
+
 # Workflow Metrics: The Service Level Agreement (SLA)
+
+[TOC levels=1-4]
 
 A brand new feature in Liferay DXP 7.2, _Workflow Metrics_ gives insights into
 the time certain workflow events take to complete. To use it, set up deadlines
@@ -30,7 +36,7 @@ workflow item's SLA status: on time or overdue.
     bring you to the reports for that process. You must click the Actions menu
     to go to the SLA screen.
 
-    ![Figure x: Add SLAs to a workflow definition from the Metrics application.](../../images/workflow-add-sla.png)
+    ![Figure 1: Add SLAs to a workflow definition from the Metrics application.](../../images/workflow-add-sla.png)
 
 3.  On the SLAs screen, click the Add button
     (![Add](../../images/icon-add.png)).
@@ -82,7 +88,7 @@ workflow item's SLA status: on time or overdue.
 | choose from the default 24/7 calendar or any custom ones you've provided (for
 | example, make the timer run for 9 hours per day, 5 days per week).
 
-![Figure x: Manage SLAs from the SLAs screen.](../../images/workflow-metrics-sla-list.png)
+![Figure 2: Manage SLAs from the SLAs screen.](../../images/workflow-metrics-sla-list.png)
 
 #### Valid Workflow Events
 
