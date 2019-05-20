@@ -39,7 +39,7 @@ a segment named *Engineers* for employees of Westeros Bank.
 
 6.  Set the comparator between *User Properties* and *Organization Properties* to *and*.
 
-7.  Click the edit icon for *Organization Properties* and drag over an
+7.  Open the *Organization* properties and drag over an
     *Organization* field.
 
 8.  Set the *Organization* field to be *equals* *Westeros America*.

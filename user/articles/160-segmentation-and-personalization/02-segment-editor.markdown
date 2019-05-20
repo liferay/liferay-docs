@@ -56,4 +56,4 @@ campaign driven landing page.
 ## Operations and Conjunctions
 
 There are a number of different ways to evaluate properties, and different ways
-that you can relate different fields. For a comprehensive list see the [Defining Segment Criteria Reference](link).
+that you can relate different fields. For a comprehensive list see the [Defining Segment Criteria Reference](/docs/7-2/user/-/knowledge_base/user/).

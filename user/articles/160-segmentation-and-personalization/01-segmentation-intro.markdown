@@ -30,10 +30,10 @@ Checking Account Prospects* that contains criteria based on user data, like
 customers that don't currently have an open checking account; or based on user
 behavior, like visitors who came to the site through specific channels. To learn
 more about Segmentation options, see the 
-[overview of the Segment editor](/docs/7-2/user/-/knowledge_base/u/the-segment-editor), practice
-[creating basic Segments](/docs/7-2/user/-/knowledge_base/u/creating-basic-user-segments),
+[overview of the Segment editor](/docs/7-2/user/-/knowledge_base/user/the-segment-editor), practice
+[creating basic Segments](/docs/7-2/user/-/knowledge_base/user/creating-basic-user-segments),
 or create more complicated 
-[Segments with custom fields and session data](/docs/7-2/user/-/knowledge_base/u/creating-segments-with-custom-fields-and-session-data).
+[Segments with custom fields and session data](/docs/7-2/user/-/knowledge_base/user/creating-segments-with-custom-fields-and-session-data).
 
 ## Integrating Segments with Analytics Cloud
 
@@ -66,7 +66,7 @@ Content Page Personalization let's you dynamically change the page layout and
 content based on who is viewing the page. You can create *Experiences* for any 
 [Content Page](user-guide-link) which provide different text, images, widgets, 
 and even different layouts based on the segment criteria of the user viewing 
-the page. You can see a step by step demonstration of this in [Content Page Personalization](/documentation/user/-/knowledge_base/7-2/content-page-personalization).
+the page. You can see a step by step demonstration of this in [Content Page Personalization](/docs/7-2/user/-/knowledge_base/user/content-page-personalization).
 
 ### Content Set Personalization
 
@@ -78,4 +78,4 @@ content list to display "featured" articles at the top of a page. Then you
 could create a Segments which contain users who should receive more specialized 
 content, rather than the default. Those Segments would then see content 
 personalized to their interest rather than the default. You can see 
-a step by step demonstration of this in [Content Set Personalization](/documentation/user/-/knowledge_base/7-2/content-set-personalization).
+a step by step demonstration of this in [Content Set Personalization](/docs/7-2/user/-/knowledge_base/user/content-set-personalization).
