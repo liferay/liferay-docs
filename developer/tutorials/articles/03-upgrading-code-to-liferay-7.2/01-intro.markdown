@@ -14,191 +14,189 @@ outlined steps to aid those opting to upgrade their code manually.
 
 Here are the code upgrade steps:
 
-1.  [Upgrade Your Development Environment](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment)
+1.  [Upgrade Your Development Environment](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment) {.title}
 
     Legacy project environments should be upgraded to the latest version of
-    Liferay Workspace to ensure you leverage all available features.
+    Liferay Workspace to ensure you leverage all available features. {.summary}
 
-    1.  [Set Up Liferay Workspace](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment#setting-up-liferay-workspace)
+    1.  [Set Up Liferay Workspace](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment#setting-up-liferay-workspace) {.title}
 
         A Liferay Workspace is a generated environment that is built to hold
         and manage your Liferay projects. Create/import a workspace to get
-        started.
+        started. {.summary}
 
-        1.  [Create New Liferay Workspace](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment#creating-new-liferay-workspace) {commandId='create_new_liferay_workspace'}
+        1.  [Create New Liferay Workspace](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment#creating-new-liferay-workspace) {.title, commandId=create_new_liferay_workspace}
 
             If you don't have an existing 7.x Liferay Workspace, you must create
-            one. Skip to the next step if you have an existing workspace.
+            one. Skip to the next step if you have an existing workspace. {.summary}
 
-        2.  [Import Existing Liferay Workspace](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment#importing-existing-liferay-workspace) {commandId='import_existing_liferay_workspace'}
+        2.  [Import Existing Liferay Workspace](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment#importing-existing-liferay-workspace) {.title, commandId=import_existing_liferay_workspace}
 
             Import an existing Liferay Workspace. If you don't have one, revisit
-            the previous step.
+            the previous step. {.summary}
 
-    2.  [Configure Liferay Workspace Settings](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment#configuring-liferay-workspace)
+    2.  [Configure Liferay Workspace Settings](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment#configuring-liferay-workspace) {.title}
 
         Set the @product@ version in workspace's configuration you intend to
-        upgrade to.
+        upgrade to. {.summary}
 
-        1.  [Configure Bundle URL](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment#configuring-bundle-url) {commandId='configure_bundle_url'}
+        1.  [Configure Bundle URL](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment#configuring-bundle-url) {.title, commandId=configure_bundle_url}
 
             Configure your bundle URL that the @product@ bundle is downloaded
-            from.
+            from. {.summary}
 
-        2.  [Configure Target Platform Version](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment#configuring-target-platform-version) {commandId='configure_target_platform_version'}
+        2.  [Configure Target Platform Version](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment#configuring-target-platform-version) {.title, commandId=configure_target_platform_version}
 
             Configure your Target Platform version, which provides the specific
-            artifacts associated with a @product@ release.
+            artifacts associated with a @product@ release. {.summary}
 
-        3.  [Initialize Server Bundle](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment#initializing-server-bundle) {commandId='initialize_server_bundle'}
+        3.  [Initialize Server Bundle](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment#initializing-server-bundle) {commandId=initialize_server_bundle}
 
             Download the @product@ bundle you're upgrading to.
 
-2.  [Migrate Plugins SDK Projects](/docs/tutorials/7-2/-/knowledge_base/t/migrating-plugins-sdk-projects-to-liferay-workspace)
+2.  [Migrate Plugins SDK Projects](/docs/tutorials/7-2/-/knowledge_base/t/migrating-plugins-sdk-projects-to-liferay-workspace) {.title}
 
     Copy your Plugins SDK projects into workspace and convert them to
-    Gradle/Maven projects.
+    Gradle/Maven projects. {.summary}
 
-    1.  [Import Existing Plugins SDK Projects](/docs/tutorials/7-2/-/knowledge_base/t/migrating-plugins-sdk-projects-to-liferay-workspace#importing-existing-plugins-sdk-projects) {commandId='import_existing_plugins_sdk'}
+    1.  [Import Existing Plugins SDK Projects](/docs/tutorials/7-2/-/knowledge_base/t/migrating-plugins-sdk-projects-to-liferay-workspace#importing-existing-plugins-sdk-projects) {.title, commandId=import_existing_plugins_sdk}
 
-        Import your existing Plugins SDK projects.
+        Import your existing Plugins SDK projects. {.summary}
 
-    2.  [Migrate Existing Plugins to Workspace](/docs/tutorials/7-2/-/knowledge_base/t/migrating-plugins-sdk-projects-to-liferay-workspace#migrating-existing-plugins-to-workspace) {commandId='migrate_existing_plugins_to_workspace'}
+    2.  [Migrate Existing Plugins to Workspace](/docs/tutorials/7-2/-/knowledge_base/t/migrating-plugins-sdk-projects-to-liferay-workspace#migrating-existing-plugins-to-workspace) {.title, commandId=migrate_existing_plugins_to_workspace}
 
         Migrate your existing plugins to workspace. This involves moving the
         plugin to workspace and converting it to the workspace's build
-        environment.
+        environment. {.summary}
 
-3.  [Upgrade Build Dependencies](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-build-dependencies)
+3.  [Upgrade Build Dependencies](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-build-dependencies) {.title}
 
     Optimize your workspace's build environment for the most efficient code
-    upgrade experience.
+    upgrade experience. {.summary}
 
-    1.  [Update Repository URL](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-build-dependencies#updating-the-repository-url) {commandId='update_repository_url'}
+    1.  [Update Repository URL](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-build-dependencies#updating-the-repository-url) {.title, commandId=update_repository_url}
 
         Update your repository URL to Liferay's frequently updated CDN
-        repository.
+        repository. {.summary}
 
-    2. [Update Workspace Plugin Version](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-build-dependencies#updating-the-workspace-plugin-version) {commandId='update_workspace_plguin_version'}
+    2. [Update Workspace Plugin Version](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-build-dependencies#updating-the-workspace-plugin-version) {.title, commandId=update_workspace_plguin_version}
 
         Update your Workspace plugin version to leverage the latest features of
-        Liferay Workspace.
+        Liferay Workspace. {.summary}
 
-    3.  [Remove Dependency Versions](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-build-dependencies#removing-the-projects-dependency-versions) {commandId='remove_dependency_version'}
+    3.  [Remove Dependency Versions](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-build-dependencies#removing-the-projects-dependency-versions) {.title, commandId=remove_dependency_version}
 
         Remove the project's dependency versions since it's leveraging target
-        platform.
+        platform. {.summary}
 
-4.  [Fix Upgrade Problems](/docs/tutorials/7-2/-/knowledge_base/t/fixing-upgrade-problems)
+4.  [Fix Upgrade Problems](/docs/tutorials/7-2/-/knowledge_base/t/fixing-upgrade-problems) {.title}
 
     Fix common upgrade problems dealing with your project's dependencies and
-    breaking changes.
+    breaking changes. {.summary}
 
-    1.  [Auto-Correct Upgrade Problems](/docs/tutorials/7-2/-/knowledge_base/t/fixing-upgrade-problems#auto-correcting-upgrade-problems) {commandId='auto_correct_find_upgrade_problems'}
+    1.  [Auto-Correct Upgrade Problems](/docs/tutorials/7-2/-/knowledge_base/t/fixing-upgrade-problems#auto-correcting-upgrade-problems) {.title, commandId=auto_correct_find_upgrade_problems}
 
-        Auto-correct straightforward upgrade problems.
+        Auto-correct straightforward upgrade problems. {.summary}
 
-    2.  [Find Upgrade Problems](/docs/tutorials/7-2/-/knowledge_base/t/fixing-upgrade-problems#finding-upgrade-problems) {commandId='find_upgrade_problems'}
+    2.  [Find Upgrade Problems](/docs/tutorials/7-2/-/knowledge_base/t/fixing-upgrade-problems#finding-upgrade-problems) {.title, commandId=find_upgrade_problems}
 
         Find upgrade problems. These are problems that cannot be auto-corrected;
         you can update them manually according to the breaking changes
-        documentation.
+        documentation. {.summary}
 
-    3.  [Resolve Upgrade Problems](/docs/tutorials/7-2/-/knowledge_base/t/fixing-upgrade-problems#resolving-upgrade-problems)
+    3.  [Resolve Upgrade Problems](/docs/tutorials/7-2/-/knowledge_base/t/fixing-upgrade-problems#resolving-upgrade-problems) {.title}
 
-        Mark upgrade problems as resolved after addressing them.
+        Mark upgrade problems as resolved after addressing them. {.summary}
 
-    4.  [Remove Problem Markers](/docs/tutorials/7-2/-/knowledge_base/t/fixing-upgrade-problems#removing-problem-markers) {commandId='remove_upgrade_problems_markers'}
+    4.  [Remove Problem Markers](/docs/tutorials/7-2/-/knowledge_base/t/fixing-upgrade-problems#removing-problem-markers) {.title, commandId=remove_upgrade_problems_markers}
 
-        Remove problem markers.
+        After fixing your upgrade problems, remove the problem markers. {.summary}
 
-        After fixing your upgrade problems, remove the problem markers.
+5.  [Upgrade Service Builder Services](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-service-builder-services) {.title}
 
-5.  [Upgrade Service Builder Services](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-service-builder-services)
+    Upgrade your Liferay Service Builder services. {.summary}
 
-    Upgrade your Liferay Service Builder services.
+    1.  [Remove Legacy Files](/docs/tutorials/7-2/-/knowledge_base/t/removing-legacy-files) {.title, commandId=remove_legacy_files}
 
-    1.  [Remove Legacy Files](/docs/tutorials/7-2/-/knowledge_base/t/removing-legacy-files) {commandId='remove_legacy_files'}
+        Remove legacy files that are no longer leveraged by Service Builder. {.summary}
 
-        Remove legacy files that are no longer leveraged by Service Builder.
+    2.  [Migrate from Spring DI to OSGi Declarative Services](/docs/tutorials/7-2/-/knowledge_base/t/converting-a-service-builder-module-from-spring-di-to-osgi-ds) {.title}
 
-    2.  [Migrate from Spring DI to OSGi Declarative Services](/docs/tutorials/7-2/-/knowledge_base/t/converting-a-service-builder-module-from-spring-di-to-osgi-ds)
+        Leverage OSGi Declarative Services in your Service Builder project. {.summary}
 
-        Leverage OSGi Declarative Services in your Service Builder project.
+    3.  [Rebuild Services](/docs/tutorials/7-2/-/knowledge_base/t/rebuilding-services) {.title, commandId=rebuild_services}
 
-    3.  [Rebuild Services](/docs/tutorials/7-2/-/knowledge_base/t/rebuilding-services) {commandId='rebuild_services'}
+        Rebuild your project's services to persist your updates. {.summary}
 
-        Rebuild your project's services to persist your updates.
+6.  [Upgrade Customization Plugins](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-customization-plugins) {.title}
 
-6.  [Upgrade Customization Plugins](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-customization-plugins)
+    Upgrade your customization plugins so they're deployable to @product-ver@. {.summary}
 
-    Upgrade your customization plugins so they're deployable to @product-ver@.
+    1.  [Upgrade Customization Modules](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-customization-modules) {.title}
 
-    1.  [Upgrade Customization Modules](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-customization-modules)
+    2.  [Upgrade Core JSP Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-core-jsp-hooks) {.title}
 
-    2.  [Upgrade Core JSP Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-core-jsp-hooks)
+    3.  [Upgrade Portlet JSP Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-portlet-jsp-hooks) {.title}
 
-    3.  [Upgrade Portlet JSP Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-portlet-jsp-hooks)
+    4.  [Upgrade Service Wrapper Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-service-wrapper-hooks) {.title}
 
-    4.  [Upgrade Service Wrapper Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-service-wrapper-hooks)
+    5.  [Upgrade Core Language Key Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-core-language-key-hooks) {.title}
 
-    5.  [Upgrade Core Language Key Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-core-language-key-hooks)
+    6.  [Upgrade Portlet Language Key Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-portlet-language-key-hooks) {.title}
 
-    6.  [Upgrade Portlet Language Key Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-portlet-language-key-hooks)
+    7.  [Upgrade Model Listener Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-model-listener-hooks) {.title}
 
-    7.  [Upgrade Model Listener Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-model-listener-hooks)
+    8.  [Upgrade Event Action Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-event-action-hooks) {.title}
 
-    8.  [Upgrade Event Action Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-event-action-hooks)
+    9.  [Upgrade Servlet Filter Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-servlet-filter-hooks) {.title}
 
-    9.  [Upgrade Servlet Filter Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-servlet-filter-hooks)
+    10. [Upgrade Portal Properties Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-override-extension-hooks) {.title}
 
-    10. [Upgrade Portal Properties Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-override-extension-hooks)
+    11. [Upgrade Struts Action Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-struts-action-hooks) {.title}
 
-    11. [Upgrade Struts Action Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-struts-action-hooks)
+7.  [Upgrade Themes]() {.title}
 
-7.  [Upgrade Themes]()
+    Upgrade your themes. {.summary}
 
-    Upgrade your themes.
+8.  [Upgrade Layout Templates]() {.title}
 
-8.  [Upgrade Layout Templates]()
+9.  [Upgrade Frameworks & Features](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-frameworks-and-features) {.title}
 
-9.  [Upgrade Frameworks & Features](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-frameworks-and-features)
+    1.  [Upgrade JNDI Data Source Usage](/docs/customization/7-2/-/knowledge_base/c/connecting-to-jndi-data-sources) {.title}
 
-    1.  [Upgrade JNDI Data Source Usage](/docs/customization/7-2/-/knowledge_base/c/connecting-to-jndi-data-sources)
+        Use @product@'s classloader to access the app server's JNDI API. {.summary}
 
-        Use @product@'s classloader to access the app server's JNDI API.
-
-    2.  [Upgrade Service Builder Service Invocation](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-service-builder-service-invocation)
+    2.  [Upgrade Service Builder Service Invocation](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-service-builder-service-invocation) {.title}
 
         For Service Builder logic remaining in a WAR, you must implement a
         service tracker to call services. For logic divided into OSGi modules,
-        you can leverage Declarative Services.
+        you can leverage Declarative Services. {.summary}
 
-    3.  [Upgrade Service Builder](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-service-builder)
+    3.  [Upgrade Service Builder](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-service-builder) {.title}
 
-        Adapt your app to account for Service Builder-specific changes.
+        Adapt your app to account for Service Builder-specific changes. {.summary}
 
-    4.  [Migrate Off of Velocity Templates]()
+    4.  [Migrate Off of Velocity Templates]() {.title}
 
-10. [Upgrade Portlets](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-portlets)
+10. [Upgrade Portlets](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-portlets) {.title}
 
-    Upgrade your portlets so they're deployable to @product-ver@.
+    Upgrade your portlets so they're deployable to @product-ver@. {.summary}
 
-    1.  [Upgrade Generic Portlets](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-genericportlet)
+    1.  [Upgrade Generic Portlets](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-genericportlet) {.title}
 
-    2.  [Upgrade Liferay MVC Portlets](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-liferay-mvc-portlet)
+    2.  [Upgrade Liferay MVC Portlets](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-liferay-mvc-portlet) {.title}
 
-    3.  [Upgrade JSF Portlets](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-liferay-jsf-portlet)
+    3.  [Upgrade JSF Portlets](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-liferay-jsf-portlet) {.title}
 
-    4.  [Upgrade Servlet-based Portlets](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-servlet-based-portlet)
+    4.  [Upgrade Servlet-based Portlets](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-servlet-based-portlet) {.title}
 
-    5.  [Migrate from Spring Portlet MVC to PortletMVC4Spring]()
+    5.  [Migrate from Spring Portlet MVC to PortletMVC4Spring]() {.title}
 
-    6.  [Upgrade Struts 1 Portlets](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-struts-1-portlet)
+    6.  [Upgrade Struts 1 Portlets](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-struts-1-portlet) {.title}
 
-11.  [Upgrade Web Plugins]()
+11.  [Upgrade Web Plugins]() {.title}
 
-12.  [Upgrade Ext Plugins]()
+12.  [Upgrade Ext Plugins]() {.title}
 
 
 
