@@ -1,4 +1,10 @@
-# Knowledge Base System Settings [](id=knowledge-base-system-settings)
+---
+header-id: knowledge-base-system-settings
+---
+
+# Knowledge Base System Settings
+
+[TOC levels=1-4]
 
 Administrators can use the System Settings UI to set the Knowledge Base's global 
 configuration (across sites). You can access this UI in *Control Panel* &rarr; 
@@ -23,7 +29,7 @@ The Knowledge Base has several optional features that are disabled by default,
 but can be enabled and configured from System Settings. These include source
 URL, import file conventions, new article priority increment, and sections. 
 
-## Source URL Settings [](id=source-url-settings)
+## Source URL Settings
 
 The source URL settings define the source location of Markdown files for import.
 This should point to a source repository where the files are stored. GitHub is
@@ -47,7 +53,7 @@ Alternatively, you can specify the label explicitly:
 
     Edit on Bitbucket
 
-## Importer File Convention Settings [](id=importer-file-convention-settings)
+## Importer File Convention Settings
 
 These settings define the supported file extensions, the suffix for parent
 files, and the image folder's path within the imported ZIP files. These settings 
@@ -86,7 +92,7 @@ Alternatively, you can enable or disable the article increment priority
 feature for each widget in the corresponding widget's configuration menu in 
 System Settings. 
 
-## Section Names Setting [](id=section-names-setting)
+## Section Names Setting
 
 The section names setting lets you specify names of arbitrary topics to 
 attribute to articles. Using the Knowledge Base Section widget, you can display 

@@ -1,4 +1,10 @@
-# Knowledge Base Templates [](id=knowledge-base-templates)
+---
+header-id: knowledge-base-templates
+---
+
+# Knowledge Base Templates
+
+[TOC levels=1-4]
 
 Templates give users a starting point. For example, you can create templates
 that contain default headers or other content for articles. Templates help
@@ -15,7 +21,7 @@ To navigate to this app, open the Menu
 
 ![Figure 1: The Knowledge Base app's Templates tab.](../../../../images/kb-admin-templates.png)
 
-## Creating Templates [](id=creating-templates)
+## Creating Templates
 
 To create a new template, follow these steps:
 
@@ -36,7 +42,7 @@ To create a new template, follow these steps:
 
 ![Figure 2: The New Template form.](../../../../images/kb-admin-new-template.png)
 
-## Managing Templates [](id=managing-templates)
+## Managing Templates
 
 Each template appears in a list in the Templates tab. You can take the following 
 actions on each template via its Actions button 

@@ -1,4 +1,10 @@
-# Knowledge Base Display [](id=knowledge-base-display)
+---
+header-id: knowledge-base-display
+---
+
+# Knowledge Base Display
+
+[TOC levels=1-4]
 
 You can use the Knowledge Base Display widget to display your published 
 Knowledge Base articles. You can customize how this widget displays articles, 
@@ -91,7 +97,7 @@ contribute fixes or improvements to articles. If you're interested in this
 feature, you can direct your administrator to follow the instructions in 
 [Knowledge Base System Settings](/discover/portal/-/knowledge_base/7-2/knowledge-base-system-settings). 
 
-## Displaying Different Article Sets [](id=displaying-different-article-sets)
+## Displaying Different Article Sets
 
 As an administrator, say that you've used folders to aggregate similar articles,
 and you want to provide an easy way for users to switch between these sets of

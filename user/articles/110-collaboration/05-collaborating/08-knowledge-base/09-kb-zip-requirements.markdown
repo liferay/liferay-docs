@@ -1,4 +1,10 @@
-# Knowledge Base ZIP File Requirements [](id=knowledge-base-zip-file-requirements)
+---
+header-id: knowledge-base-zip-file-requirements
+---
+
+# Knowledge Base ZIP File Requirements
+
+[TOC levels=1-4]
 
 The Knowledge Base importer supports article hierarchies, so Markdown files can 
 be specified anywhere in the ZIP file's directory structure. They can be nested 

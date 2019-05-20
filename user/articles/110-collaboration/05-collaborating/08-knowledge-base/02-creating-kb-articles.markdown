@@ -1,4 +1,10 @@
-# Creating Knowledge Base Articles [](id=creating-knowledge-base-articles)
+---
+header-id: creating-knowledge-base-articles
+---
+
+# Creating Knowledge Base Articles
+
+[TOC levels=1-4]
 
 The Knowledge Base app in Site Administration contains everything you need to 
 create articles in the Knowledge Base. You can create articles by authoring them 
@@ -27,7 +33,7 @@ on creating articles.
 
 ![Figure 1: The Knowledge Base app in Site Administration lets you create Knowledge Base articles.](../../../../images/kb-admin-articles.png)
 
-## Authoring Articles in the Editor [](id=authoring-articles-in-the-editor)
+## Authoring Articles in the Editor
 
 Follow these steps to create an article in the editor: 
 
@@ -56,7 +62,7 @@ Follow these steps to create an article in the editor:
 Once the article is saved, it is converted automatically to HTML for the 
 Knowledge Base. Articles are listed in a table in the Articles tab. 
 
-## Importing Knowledge Base Articles [](id=importing-knowledge-base-articles)
+## Importing Knowledge Base Articles
 
 You can also create new Knowledge Base articles by importing them from a ZIP 
 archive that contains articles in the Markdown format (`.markdown`, `.md`). For 

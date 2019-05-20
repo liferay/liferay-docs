@@ -1,4 +1,10 @@
-# Managing the Knowledge Base [](id=managing-the-knowledge-base)
+---
+header-id: managing-the-knowledge-base
+---
+
+# Managing the Knowledge Base
+
+[TOC levels=1-4]
 
 The Knowledge Base app in Site Administration manages the Knowledge Base. To
 navigate to this app, open the Menu (![Menu](../../../../images/icon-menu.png))
@@ -12,7 +18,7 @@ then go to Site Administration (the menu for your site) &rarr; *Content & Data*
 
 ![Figure 1: You can manage Knowledge Base articles, folders, and suggestions.](../../../../images/kb-admin-articles.png)
 
-## Setting the Knowledge Base's Options [](id=setting-the-knowledge-bases-options)
+## Setting the Knowledge Base's Options
 
 At the top-right of the Knowledge Base app, the Options menu 
 (![Options](../../../../images/icon-options.png)) 
@@ -37,7 +43,7 @@ RSS (enabled by default), and configure the RSS feed's options.
 
 ![Figure 2: The Knowledge Base App's options.](../../../../images/kb-admin-options.png)
 
-## Managing Knowledge Base Articles [](id=managing-knowledge-base-articles)
+## Managing Knowledge Base Articles
 
 Each article also has a *priority* value that determines its position in the 
 [Knowledge Base Display widget's navigation](/discover/portal/-/knowledge_base/7-2/knowledge-base-display). Each

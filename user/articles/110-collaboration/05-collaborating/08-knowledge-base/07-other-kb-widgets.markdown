@@ -1,4 +1,10 @@
-# Other Knowledge Base Widgets [](id=other-knowledge-base-widgets)
+---
+header-id: other-knowledge-base-widgets
+---
+
+# Other Knowledge Base Widgets
+
+[TOC levels=1-4]
 
 There are other Knowledge Base widgets you can add to Site pages besides 
 [Knowledge Base Display](/discover/portal/-/knowledge_base/7-2/knowledge-base-display): 
@@ -12,7 +18,7 @@ You can add these widgets from *Add*
 (![Add](../../../../images/icon-add-app.png)) 
 &rarr; *Widgets* &rarr; *Content Management*. 
 
-## Knowledge Base Article [](id=knowledge-base-article)
+## Knowledge Base Article
 
 Knowledge Base Article displays a single article's content. It even shows
 abstracts of child articles. You can add multiple Knowledge Base Article
@@ -38,7 +44,7 @@ display and manage its articles. Refer to the
 [Knowledge Base Display documentation](/discover/portal/-/knowledge_base/7-2/knowledge-base-display) 
 for a detailed description of the widget's UI. 
 
-## Knowledge Base Section [](id=knowledge-base-section)
+## Knowledge Base Section
 
 | **Note:** as of Knowledge Base 3.0.0, the Knowledge Base Sections widget is 
 | deprecated and replaced by 
@@ -76,7 +82,7 @@ widget:
 
 The matching articles are displayed in the app beneath their section heading. 
 
-## Knowledge Base Search [](id=knowledge-base-search)
+## Knowledge Base Search
 
 | **Note:** as of Knowledge Base 3.0.0, the Knowledge Base Search widget is 
 | deprecated and replaced by Liferay Search. 
