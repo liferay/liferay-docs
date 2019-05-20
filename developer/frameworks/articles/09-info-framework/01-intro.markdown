@@ -1,4 +1,10 @@
+---
+header-id: introduction-to-content-sets
+---
+
 # Introduction to Content Sets
+
+[TOC levels=1-4]
 
 In previous versions of the Liferay, the Asset Publisher was your most powerful tool for delivering content to users. With the Asset Publisher, administrators define either static lists of assets to display to a user or dynamic lists based on criteria like tags, categories, or asset type. In @product-ver@ Content Sets take the core idea of defining different types of asset lists and expands it. Content Lists are created outside of the context of a specific application or widget and can be used and re-used across different channels and applications.
 
