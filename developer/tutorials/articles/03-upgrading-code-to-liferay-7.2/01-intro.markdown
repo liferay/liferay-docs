@@ -160,13 +160,21 @@ Here are the code upgrade steps:
 
 8.  [Upgrade Layout Templates]()
 
-9.  [Upgrade Frameworks & Features]()
+9.  [Upgrade Frameworks & Features](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-frameworks-and-features)
 
-    1.  [Upgrade JNDI Data Source Usage]()
+    1.  [Upgrade JNDI Data Source Usage](/docs/customization/7-2/-/knowledge_base/c/connecting-to-jndi-data-sources)
 
-    2.  [Upgrade Service Builder Service Invocation]()
+        Use @product@'s classloader to access the app server's JNDI API.
 
-    3.  [Upgrade Service Builder]()
+    2.  [Upgrade Service Builder Service Invocation](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-service-builder-service-invocation)
+
+        For Service Builder logic remaining in a WAR, you must implement a
+        service tracker to call services. For logic divided into OSGi modules,
+        you can leverage Declarative Services.
+
+    3.  [Upgrade Service Builder](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-service-builder)
+
+        Adapt your app to account for Service Builder-specific changes.
 
     4.  [Migrate Off of Velocity Templates]()
 
