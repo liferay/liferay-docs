@@ -22,3 +22,5 @@ Event action hooks can be upgraded by completing these steps:
 
 @product@'s Plugin Compatibility Layer converts the plugin WAR to a Web
 Application Bundle (WAB) and installs it to Liferay's OSGi Runtime.
+
+Your event action hook is now available in @product@.

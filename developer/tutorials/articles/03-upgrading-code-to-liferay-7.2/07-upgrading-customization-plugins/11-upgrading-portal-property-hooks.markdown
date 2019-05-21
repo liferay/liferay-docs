@@ -11,7 +11,8 @@ header-id: upgrading-portal-property-hooks
 </div>
 
 All portal properties in previous @product@ versions that are also used in
-@product-ver@ can be overridden.
+@product-ver@ can be overridden using portal property hooks. To upgrade portal
+property hooks, do this:
 
 1.  Adapt your code to @product-ver@'s API using the Code Upgrade Planner. When
     you ran the planner's *Fix Upgrade Problems* step, many of the existing

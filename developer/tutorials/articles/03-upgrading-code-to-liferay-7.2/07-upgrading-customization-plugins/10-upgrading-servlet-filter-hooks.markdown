@@ -10,7 +10,7 @@ header-id: upgrading-servlet-filter-hooks
     <p>Upgrading Customization Plugins<br>Step 9 of 11</p>
 </div>
 
-If you have Servlet Filter hooks ready to be upgraded, this tutorial's for you.
+If you have servlet filter hooks ready to be upgraded, this tutorial's for you.
 The process is simple:
 
 1.  Adapt your code to @product-ver@'s API using the Code Upgrade Planner. When

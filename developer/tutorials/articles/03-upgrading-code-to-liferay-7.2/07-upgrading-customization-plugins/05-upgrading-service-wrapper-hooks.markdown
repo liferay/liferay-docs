@@ -7,7 +7,7 @@ header-id: upgrading-service-wrapper-hooks
 [TOC levels=1-4]
 
 <div class="learn-path-step">
-    <p>Upgrading Customization Plugins<br>Step 4 of 11</p>
+    <p>Upgrading Customization Plugins<br>Step 4 of 11</p> 
 </div>
 
 Upgrading traditional
@@ -24,3 +24,5 @@ to @product-ver@ is quick and easy.
 
 @product@'s Plugin Compatibility Layer converts the plugin WAR to a Web
 Application Bundle (WAB) and installs it to Liferay's OSGi Runtime.
+
+Your service wrapper hook is now available in @product@.

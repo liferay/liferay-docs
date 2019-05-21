@@ -26,6 +26,8 @@ Follow these steps to upgrade a servlet-based portlet:
 
 3.  [Deploy it](/docs/reference/7-2/-/knowledge_base/r/deploying-a-project)
 
+For an example upgrade scenario, consider this:
+
 Some servlet-based portlets relied on Liferay Portal to provide several
 dependency JAR files. Here's the `portal-dependency-jars` property from a sample
 portlet's `liferay-plugin-package.properties` file: 
@@ -37,13 +39,15 @@ portal-dependency-jars=\
     json-java.jar
 ```
 
-Your upgraded sample portlet can continue to specify these JARs in the
-`portal-dependency-jars` property. @product-ver@'s core system exports the
-package this portlet needs from each of the above dependency JARs. They're made
-available to the portlet at compile time.
-
-| **Note:** Best practices for using packages that @product@ exports are found
-| [here](/docs/customization/7-2/-/knowledge_base/c/configuring-dependencies).
+This property is deprecated in @product-ver@ because importing and exporting
+Java packages has replaced wholesale use of JARs. This means modules and WABs
+can import packages without concerning themselves with JARs. @product@ exports
+many third party packages for plugins to use. Best practices for using packages
+that @product@ exports are found
+[here](/docs/customization/7-2/-/knowledge_base/c/configuring-dependencies). For
+more information on this specific scenario, see the
+[Using Packages Liferay Portal Exports](/docs/tutorials/7-1/-/knowledge_base/t/resolving-a-plugins-dependencies#using-packages-liferay-portal-exports)
+section.
 
 Once you've deployed your portlet, the server prints messages that indicate the
 following portlet status:

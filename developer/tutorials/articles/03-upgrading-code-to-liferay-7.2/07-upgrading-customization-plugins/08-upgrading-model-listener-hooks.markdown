@@ -11,7 +11,7 @@ header-id: upgrading-model-listener-hooks
 </div>
 
 Developers have been creating model listeners for several @product@
-versions. Upgrading Model Listener Hooks from previous portal versions has never
+versions. Upgrading model listener Hooks from previous portal versions has never
 been easier.
 
 1.  Adapt your code to @product-ver@'s API using the Code Upgrade Planner. When
@@ -24,3 +24,5 @@ been easier.
 
 @product@'s Plugin Compatibility Layer converts the plugin WAR to a Web
 Application Bundle (WAB) and installs it to Liferay's OSGi Runtime.
+
+Your model listener hook is now available in @product@.

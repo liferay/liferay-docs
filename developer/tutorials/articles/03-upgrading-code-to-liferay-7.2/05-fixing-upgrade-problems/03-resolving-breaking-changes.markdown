@@ -11,8 +11,8 @@ header-id: resolving-breaking-changes
 </div>
 
 Liferay goes to great lengths to maintain backwards compatibility. Sometimes,
-breaking changes are necessary to move @product@ forward. There may be cases
-where breaking changes affect your code upgrade process and must be resolved. A
+breaking changes are necessary to improve @product@. There may be cases where
+breaking changes affect your code upgrade process and must be resolved. A
 breaking change can include
 
 - Functionality that is removed or replaced

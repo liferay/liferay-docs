@@ -44,10 +44,10 @@ projects to one of the supported build tools:
 - Gradle
 - Maven
 
-When initiating this step for a Gradle-based workspace, your Ant-based
-Plugins SDK project is copied to the applicable workspace folder based on its
-project type (e.g., wars) and is converted to a Gradle project. There is also a
-Blade CLI command that completes this via the command line. Visit the
+When initiating this step for a Gradle-based workspace, your Ant-based Plugins
+SDK project is copied to the applicable workspace folder based on its project
+type (e.g., `wars`) and is converted to a Gradle project. There is also a Blade
+CLI command that completes this via the command line. Visit the
 [Converting Plugins SDK Projects with Blade CLI](/docs/reference/7-2/-/knowledge_base/r/converting-plugins-sdk-projects-with-blade-cli)
 article for more information.
 

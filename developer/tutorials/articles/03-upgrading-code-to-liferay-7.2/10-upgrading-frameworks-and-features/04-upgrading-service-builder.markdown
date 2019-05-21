@@ -112,9 +112,9 @@ For example, the example portlet's package path is
 `GuestbookName` is generated to
 `docroot/WEB-INF/service/com/liferay/docs/guestbook/exception`. Classes that use
 the exception must import
-`com.liferay.docs.guestbook.exception.GuestbookNameException`.
-
-Update references to your portlet's exception classes. 
+`com.liferay.docs.guestbook.exception.GuestbookNameException`. If this upgrade
+is required in your Service Builder project, you must update the references to
+your portlet's exception classes. 
 
 Once your Service Builder portlet is upgraded,
 [deploy it](/docs/reference/7-2/-/knowledge_base/r/deploying-a-project).
