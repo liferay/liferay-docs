@@ -94,11 +94,19 @@ workflow item's SLA status: on time or overdue.
 
 Any workflow task can be used as a start or end parameter for the SLA.
 
-When defining the tasks to act as the SLA's Start/Stop Events, you can choose
-between two events:
+When defining the tasks to act as the SLA's Start Events, you can choose
+between three events:
+
+- The start node.
+- Entry into the task.
+- Exit from the task.
+
+When defining the tasks to act as the SLA's Stop Events, you can choose
+between three events:
 
 - Entry into the task.
 - Exit from the task.
+- The end nodes.
 
 The SLA can be paused at any task that falls between the start node and the end
 node, and it's defined by setting the node(s) when the SLA should be paused.
