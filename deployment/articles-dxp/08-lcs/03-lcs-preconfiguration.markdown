@@ -256,9 +256,7 @@ app:
 
 1.  Shut down the application server. 
 
-2.  Now you must add some properties in a `portal-ext.properties` file. The 
-    properties you add depend on your Liferay DXP 7.1 Fix Pack version. If 
-    you're running Fix Pack 5+, add these properties: 
+2.  Add these properties in a `portal-ext.properties` file: 
 
         module.framework.properties.org.osgi.framework.bootdelegation=\
             __redirected,\
@@ -289,33 +287,6 @@ app:
             jdk.*,\
             weblogic.jndi,\
             weblogic.jndi.*\
-
-    For Fix Pack versions prior to Fix Pack 5, add these properties instead: 
-
-        module.framework.properties.org.osgi.framework.bootdelegation=\
-            __redirected,\
-            com.sun.ccpp,\
-            com.sun.ccpp.*,\
-            com.liferay.aspectj,\
-            com.liferay.aspectj.*,\
-            com.liferay.portal.servlet.delegate,\
-            com.liferay.portal.servlet.delegate*,\
-            com.sun.crypto.*,\
-            com.sun.image.*,\
-            com.sun.jmx.*,\
-            com.sun.jna,\
-            com.sun.jndi.*,\
-            com.sun.mail.*,\
-            com.sun.management.*,\
-            com.sun.media.*,\
-            com.sun.msv.*,\
-            com.sun.org.*,\
-            com.sun.syndication,\
-            com.sun.tools.*,\
-            com.sun.xml.*,\
-            com.yourkit.*,\
-            com.ibm.*,\
-            sun.*
 
 3.  In your @product@ installation, delete the `osgi/state` folder. 
 
