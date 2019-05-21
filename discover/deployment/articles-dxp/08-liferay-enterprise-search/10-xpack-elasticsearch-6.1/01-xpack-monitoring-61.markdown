@@ -1,4 +1,8 @@
-# Installing X-Pack Monitoring for Elasticsearch 6.5 [](id=installing-x-pack-monitoring-for-elasticsearch-6)
+# Installing X-Pack Monitoring for Elasticsearch 6.1 [](id=installing-x-pack-monitoring-for-elasticsearch-6-1)
+
+**Elasticsearch 6.1 is EOL as of [June 13,
+2019](https://www.elastic.co/support/eol). If possible, install Elastic stack
+6.5 products.**
 
 To monitor Elasticsearch, use X-Pack Monitoring. First 
 [install X-Pack onto Elasticsearch](/discover/deployment/-/knowledge_base/7-0/securing-elasticsearch-6-with-x-pack)
@@ -10,36 +14,25 @@ Enterprise Search Standard subscription (included with Premium) is necessary for
 this integration. Contact 
 [Liferay's Sales department for more information](https://www.liferay.com/contact-us#contact-sales).
 
-| **Compatibility:** To use X-Pack Security and/or Monitoring with Elasticsearch
-| 6.5 and @product@, you must use the proper connector to Elasticsearch.  
-| 
-| The [_Liferay Connector to Elasticsearch 6_, version
-| 1.1.0+](https://web.liferay.com/marketplace) is required to set up Elasticsearch
-| 6.5 with security and monitoring.
+1.  Download and install Kibana.
 
-1.  Tell Elasticsearch to enable data collection.
+2.  Install X-Pack onto Kibana and configure Kibana 
 
-2.  Download and install Kibana.
+    If using X-Pack's security, this includes proper security configuration.
 
-3.  Configure Kibana with the proper security settings.
+3.  Download and install the 
+[Liferay Connector to X-Pack Monitoring](https://www.liferay.com/marketplace)
+[Elastic Stack 6.x].
 
-4.  Download and install the 
-    [Liferay Connector to X-Pack Monitoring](https://www.liferay.com/marketplace) 
-    [Elastic Stack 6.x].
+4.  Configure the connector to communicate with Elasticsearch.
 
-5.  Configure the connector to communicate with Elasticsearch.
+The exact steps differ if you're enabling security *and* monitoring or just
+monitoring. Differences in the process are noted as appropriate.
 
-For the X-Pack security procedure, refer to the 
+For the X-Pack installation procedure, refer to the 
 [X-Pack security article](/discover/deployment/-/knowledge_base/7-0/securing-elasticsearch-6-with-x-pack).
 
-## Enable Data Collection [](id=enable-data-collection)
-
-Monitoring is enabled on Elasticsearch by default, but data collection isn't.
-Enable data collection by adding this line to `elasticsearch.yml`.
-
-    xpack.monitoring.collection.enabled: true
-
-Now install Kibana.
+This guide starts with the installation of Kibana.
 
 ## Install Kibana [](id=install-kibana)
 
@@ -47,29 +40,35 @@ Make sure to install the correct version of Kibana. Check the
 [Liferay Enterprise Search compatibility matrix](https://web.liferay.com/group/customer/dxp/support/compatibility-matrix/enterprise-search)
 for details.
 
-1.  [Download Kibana](https://www.elastic.co/downloads/kibana)
-    and extract it. The root folder is referred to as *Kibana Home*.
+1.  [Download Kibana](https://www.elastic.co/downloads/kibana) and extract it.
+    The root folder is referred to as *Kibana Home*.
 
-2.  Tell Kibana where to send monitoring data by setting Elasticsearch's URL in
+2.  Install X-Pack into Kibana:
+
+        ./bin/kibana-plugin install x-pack
+
+3.  Tell Kibana where to send monitoring data by setting Elasticsearch's URL in
     `kibana.yml`:
 
         elasticsearch.url: "http://localhost:9200"
 
-    If encryption is enabled on Elasticsearch, this is an `https` URL.
+    If SSL is enabled on Elasticsearch, this is an `https` URL.
 
-3.  If not using X-Pack security, start Kibana by opening a command prompt to 
-    Kibana Home and entering this command:
+4. If not using X-Pack security, start Kibana by entering
 
         ./bin/kibana
 
-If you're using X-Pack's security features on the Elasticsearch server, there's
-additional configuration required before starting Kibana.
+    from Kibana Home.
+
+If you're using X-Pack's security features, there's additional configuration
+required that you can find below and is related to 
+[Securing Elasticsearch 6 with X-Pack](/discover/deployment/-/knowledge_base/7-0/securing-elasticsearch-6-with-x-pack).
 
 ### Configure Kibana with Authentication [](id=configure-kibana-with-authentication)
 
 If X-Pack requires authentication to access the Elasticsearch cluster, follow
 these steps or refer to 
-[Elastic's documentation](https://www.elastic.co/guide/en/kibana/6.5/monitoring-xpack-kibana.html). 
+[Elastic's documentation](https://www.elastic.co/guide/en/kibana/6.1/monitoring-xpack-kibana.html). 
 
 1.  Set the password for the built-in `kibana` user in `Kibana
     Home/config/kibana.yml`:
@@ -86,8 +85,10 @@ these steps or refer to
 
         ./bin/kibana
 
-    and navigate to `localhost:5601`. Log in with a user who has the
-    `kibana_user` role.
+    and navigate to `localhost:5601`. Log in with a 
+    [user](https://www.elastic.co/guide/en/x-pack/6.1/native-realm.html#native-add)
+    who has the `kibana_user` 
+    [role](https://www.elastic.co/guide/en/x-pack/6.1/built-in-roles.html).
 
 ### Configuring Kibana with Encryption [](id=configuring-kibana-with-encryption)
 
@@ -111,7 +112,7 @@ Add these settings to `kibana.yml`:
 
 For more information about monitoring and security best practices in a clustered
 environment, refer to 
-[Elastic's documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/es-monitoring.html).
+[Elastic's documentation](https://www.elastic.co/guide/en/x-pack/6.1/secure-monitoring.html).
 
 After this step you can access Kibana at `https://localhost:5601` and sign in
 with a Kibana user. The last step is to hook Kibana up with @product@.
@@ -148,12 +149,10 @@ there is to it.
     settings are picked up by your running instance. There's no need to restart
     the server.
 
-4.  There are two more settings to add to Kibana itself. The first forbids 
-    Kibana from rewriting requests prefixed with `server.basePath`. The second
-    sets Kibana's base path for the Monitoring portlet to act as a proxy for
-    Kibana's monitoring UI. Add this to `kibana.yml`:
+4.  There's one more setting to add to Kibana itself. It sets Kibana's base path
+    to let the Monitoring Portlet act as a proxy for Kibana's monitoring UI. Add
+    this to `kibana.yml`:
 
-        server.rewriteBasePath: false
         server.basePath: "/o/portal-search-elasticsearch-xpack-monitoring/xpack-monitoring-proxy"
 
     Note that once you set the `server.basePath`, you cannot access the Kibana
@@ -170,21 +169,20 @@ there is to it.
     First, navigate to Elasticsearch Home and generate a PKSC#12 certificate
     from the CA you created when setting up X-Pack security:
 
-        ./bin/elasticsearch-certutil cert --ca-cert /path/to/ca.crt --ca-key /path/to/ca.key --ip 127.0.0.1 --dns localhost --name localhost --out /path/to/Elasticsearch_Home/config/localhost.p12
+        ./bin/x-pack/certutil cert --ca-cert /path/to/ca.crt --ca-key /path/to/ca.key --ip 127.0.0.1 --dns localhost --name localhost --out /path/to/Elasticsearch_Home/config/localhost.p12
 
     Next use the `keytool` command to generate a truststore:
 
         keytool -importkeystore -deststorepass liferay -destkeystore /path/to/truststore.jks -srckeystore /path/to/Elasticsearch_Home/config/localhost.p12 -srcstoretype PKCS12 -srcstorepass liferay
 
     Add the trustore path and password to your application server's startup JVM
-    parameters. Here are example truststore and path parameters for appending to
-    a Tomcat server's `CATALINA_OPTS`:
+    parameters. For a Tomcat server, append this to your existing `CATALINA_OPTS`:
 
         -Djavax.net.ssl.trustStore=/path/to/truststore.jks -Djavax.net.ssl.trustStorePassword=liferay
 
 Restart @product@ and Kibana.
 
-## Monitoring in @product@ [](id=monitoring-in-product)
+# Monitoring in @product@ [](id=monitoring-in-product)
 
 Once Kibana and X-Pack are successfully installed and configured and all the
 servers are up and running, add the X-Pack Monitoring portlet to a page:
@@ -195,7 +193,9 @@ servers are up and running, add the X-Pack Monitoring portlet to a page:
     the Search category onto the page.
 
 See the Elastic documentation for information on 
-[monitoring Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/es-monitoring.html).
+[monitoring Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/es-monitoring.html)
+and 
+[monitoring production systems](https://www.elastic.co/guide/en/x-pack/6.1/monitoring-production.html).
 
 
 

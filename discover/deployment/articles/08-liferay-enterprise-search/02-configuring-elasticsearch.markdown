@@ -8,8 +8,9 @@ By default, Elasticsearch runs as an embedded search engine, but it's only
 supported in production as a separate server or cluster. This guide walks you
 through the process of configuring Elasticsearch.
 
-If you'd rather use Solr, it's also supported. See [here](/discover/deployment/-/knowledge_base/7-0/using-solr) for information
-on installing and configuring Solr.
+If you'd rather use Solr, it's also supported. See
+[here](/discover/deployment/-/knowledge_base/7-0/using-solr) for information on
+installing and configuring Solr.
 
 To get up and running quickly with Elasticsearch as a remote server, refer to
 the [Installing Elasticsearch article](/discover/deployment/-/knowledge_base/7-0/installing-elasticsearch).
@@ -34,31 +35,10 @@ These terms will be useful to understand as you read this guide:
 
 +$$$
 
-**Upgrading to Elasticsearch 2.4.x:** When @product-ver@ was first released,
-Elasticsearch 2.2.x was supported. However, Elasticsearch 2.2.x's [end of
-life](https://www.elastic.co/support/eol) was August 2, 2017. Because of that,
-@product@ supports version 2.4.x starting with Liferay DE 7.0 Fix Pack 22.
-Elasticsearch 2.4.x is supported version for @product-ver@. 
-
-If you are currently running Elasticsearch 2.2.x with @product-ver@, follow the
-[Elasticsearch documentation on upgrading to 2.4](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/setup-upgrade.html).
-The good news is, you can do a [rolling upgrade](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/rolling-upgrades.html),
-meaning you'll be able to upgrade each node on its own, with no down time for end users.
-
-From the @product@ side, all you need to do is install Liferay DE 7.0 Fix Pack
-22 and *be sure to do a full reindex of your data*, just to be on the safe side.
-If you're running Liferay Portal CE 7.0, make sure you're on the latest GA
-release. Elasticsearch 2.4.x can be installed and run successfully with a
-Liferay Portal CE 7.0 GA3 bundle, with no code changes necessary to the portal's
-Elasticsearch adapter.
-
-$$$
-
-+$$$
-
-**Upgrading to Elasticsearch 6:** Elasticsearch 2.4.x reached end of life status
-in February 2018. If you have an existing Elasticsearch 2.4 cluster,
-to upgrade it to Elasticsearch 6 by following [the upgrade guide](/discover/deployment/-/knowledge_base/7-0/upgrading-to-elasticsearch-6). 
+**Upgrading to Elasticsearch 6.5:** If you have an existing 2.4 or 6.1
+Elasticsearch installation, follow [the upgrade
+guide](/discover/deployment/-/knowledge_base/7-0/upgrading-to-elasticsearch-6)
+to move onto Elasticsearch 6.5. 
 
 $$$
 
@@ -136,16 +116,16 @@ it find and integrate your Elasticsearch cluster.
 
 ## Configuring the Liferay Elasticsearch Adapter [](id=configuring-the-liferay-elasticsearch-adapter)
 
-The Elasticsearch 2 adapter is a module that ships with the Foundation Suite and
+The Elasticsearch connector is a module that ships with the Foundation Suite and
 deployed to the OSGi runtime, titled *Liferay Portal Search Elasticsearch*. This
-adapter provides integration between Elasticsearch and @product@. Before you
+connector provides integration between Elasticsearch and @product@. Before you
 configure the adapter, make sure Elasticsearch is running. 
 
 +$$$
 
-**Elasticsearch 6.1:** The Elasticsearch Adapter for Elasticsearch 6.1 is called
-*Liferay Connector to Elasticsearch 6*. Download the Elasticcsearch 6 connector
-from Liferay Marketplace and install it, following the [Marketplace
+**Elasticsearch 6.5:** The connector for Elasticsearch 6.5 is called *Liferay
+Connector to Elasticsearch 6*. Download the Elasticcsearch 6.5 connector from
+Liferay Marketplace and install it, following the [Marketplace
 documentation](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace)
 if necessary.
 
@@ -264,10 +244,10 @@ only run the start script once, you have a cluster with just one node.
 
 +$$$
 
-**Elasticsearch 6:** To start multiple local storage nodes in Elasticsearch 6,
-you must also configure `node.max_local_storage_nodes` to be something greater
-than `1`. See
-[here](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/modules-node.html#max-local-storage-nodes)
+**Elasticsearch 6.5:** To start multiple local storage nodes in Elasticsearch
+6.5, you must also configure `node.max_local_storage_nodes` to be something
+greater than `1`. See
+[here](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/modules-node.html#max-local-storage-nodes)
 for more information.
 
 $$$
@@ -301,9 +281,9 @@ $$$
 
 +$$$
 
-**Elasticsearch 6:** Elasticsearch 6 removed the setting that specifies the
+**Elasticsearch 6.5:** Elasticsearch 6 removed the setting that specifies the
 number of shards and replicas in the `elasticsearch.yml`file. Configure these
-index-level settings in the Elasticsearch 6 adapter, using the
+index-level settings in the Elasticsearch 6.5 connector, using the
 `indexNumberOfShards` and `indexNumberOfReplicas` properties to specify the
 number of primary shards and number of replica shards, respectively.
 
@@ -348,7 +328,7 @@ in remote mode. In production, only one additional configuration can be added he
 
 +$$$
 
-**Elasticsearch 6:** The Elasticsearch 6 adapter includes the
+**Elasticsearch 6.5:** The Elasticsearch 6.5 connector includes the
 `client.transport.ping_timeout` as a native setting. Configure it through its
 dedicated setting rather than with `additionalConfigurations`.
 
@@ -616,7 +596,7 @@ Adapter Setting/Operation Mode | EMBEDDED | REMOTE |
 `additionalTypeMappings` | x | x
 `overrideTypeMappings` | x | x
 
-\* **Note:** Available in the Connector to Elasticsearch 6 only.
+\* **Note:** Available in the Liferay Connector to Elasticsearch 6 only.
 
 ## Related Topics [](id=related-topics)
 
