@@ -61,7 +61,8 @@ Want to see what it's like to develop an app on @product@? Here's a quick tour.
 
 You don't need a database to work with Liferay, but if your app uses one, you
 can design it and your object model at the same time with Liferay's
-object-relational mapper, [Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder): 
+object-relational mapper, [Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder). 
+You define your object model in a single `xml` file: 
 
 ```xml
 <?xml version="1.0"?>
@@ -97,10 +98,10 @@ object-relational mapper, [Service Builder](/docs/7-2/appdev/-/knowledge_base/a/
 </service-builder>
 ```
 
-Create this, run Service Builder, and your object model and database are
-created automatically. That `remote-service=true` attribute generated JSON and
-SOAP web services automatically. Of course, these are mapped to the business
-logic of your services. If you want a REST interface, you can create one. 
+Service Builder, generates your object model, database SOAP, and JSON web
+services automatically. Java classes are ready for you to implement your
+business logic around generated CRUD operations. The web services are mapped to
+your business logic. If you want a REST interface, you can create one. 
 
 ### Create a REST Interface
 
