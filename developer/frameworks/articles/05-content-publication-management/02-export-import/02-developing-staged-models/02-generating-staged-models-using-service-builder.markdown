@@ -22,7 +22,7 @@ Service Builder project (Gradle-based).
 You'll track the Service Builder-generated changes applied to an entity model
 file to observe how staged models are assigned to your entity. Keep in mind the
 specific
-[staged attributes](/docs/7-2/reference/-/knowledge_base/r/important-attributes-in-staging)
+[staged attributes](/docs/7-2/frameworks/-/knowledge_base/f/developing-staged-models#staged-model-attributes)
 necessary for each staged model. Depending on the attributes defined in your
 `service.xml` file, Service Builder assigns your entity model to a specific
 staged model type.
