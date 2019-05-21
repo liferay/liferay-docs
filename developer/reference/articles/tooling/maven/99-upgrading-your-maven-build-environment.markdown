@@ -1,4 +1,10 @@
+---
+header-id: upgrading-your-maven-build-environment
+---
+
 # Upgrading Your Maven Build Environment
+
+[TOC levels=1-4]
 
 | **Note:** This upgrade article only applies to projects residing in a pre
 | Liferay Portal 7.0 Maven environment that are not upgrading to Liferay
