@@ -51,7 +51,7 @@ Here are the apps deprecated in @product-ver@.
 | --- | ------------- | ------ |
 | AlloyUI | TBD | Replaced by [Metal.js](https://metaljs.com/). | 
 | Google Login | Marketplace | Replaced by [OpenID Connect]((/docs/7-2/deployment/-/knowledge_base/d/authenticating-with-openid-connect). |
-| JCRStore | Removed | Migrate to another [Document Repository Store options](/docs/7-2/deployment/-/knowledge_base/d/document-repository-configuration) using [Data Migration in Server Administration](/docs/7-2/user/-/knowledge_base/u/server-administration) |
+| JCRStore | Removed | Migrate to another [Document Repository Store option](/docs/7-2/deployment/-/knowledge_base/d/document-repository-configuration). Before [upgrading to @product-ver@](/docs/7-2/deployment/-/knowledge_base/d/upgrading-to-product-ver), migrate your document store data using [Data Migration in Server Administration](/docs/7-2/user/-/knowledge_base/u/server-administration). |
 | OpenID | Marketplace | Replaced by [OpenID Connect]((/docs/7-2/deployment/-/knowledge_base/d/authenticating-with-openid-connect). |
 | Plugins SDK | Removed; 7.0 version on [GitHub](https://github.com/liferay/liferay-plugins) | Deprecated in 7.0. Replaced by [Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace).  |
 | Search Portlet | TBD | Will be removed in a future release. Replaced by the [Search widgets](/docs/7-1/user/-/knowledge_base/u/whats-new-with-search). |
