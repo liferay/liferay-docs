@@ -17,21 +17,21 @@ applications and grants access only to identified users with proper credentials.
 
 Below is background on how SAML works. To jump right to its configuration, see
 the articles on 
-[Setting Up SAML as an Identity Provider](/docs/7-2/deploy/-/knowledge_base/deploy/setting-up-liferay-as-a-saml-identity-provider)
+[Setting Up SAML as an Identity Provider](/docs/7-2/deploy/-/knowledge_base/d/setting-up-liferay-as-a-saml-identity-provider)
 or 
-[Setting Up SAML as a Service Provider](/docs/7-2/deploy/-/knowledge_base/deploy/setting-up-liferay-as-a-saml-service-provider) 
+[Setting Up SAML as a Service Provider](/docs/7-2/deploy/-/knowledge_base/d/setting-up-liferay-as-a-saml-service-provider) 
 for instructions on using the 
 [SAML adapter](https://web.liferay.com/marketplace/-/mp/application/15188711). Use
 the instructions to make the conceptual magic from this article come to life!
 
 | **Note:** If you're migrating from a Liferay SAML adapter prior to version
 | 3.1.0, your properties are automatically migrated to settings. Please see the
-| [Configuring SAML](/discover/deployment/-/knowledge_base/7-1/configuring-saml)
+| [Configuring SAML](/docs/7-2/deploy/-/knowledge_base/d/configuring-saml)
 | article for details on settings.
 
-## Important SAML URLs
+## Important SAML Paths
 
-For reference, here are a few important SAML URLs.
+For reference, here are a few important SAML paths.
 
 This URL is the default location of the metadata XML file:
 
@@ -41,7 +41,14 @@ Note that when configuring SAML, no importing of SAML certificates is required.
 @product@ reads certificates from the SAML metadata XML file. If you want a
 third-party application like Salesforce to read a Liferay SAML certificate, you
 can export the @product@ certificate from the keystore. The default keystore
-file is `[Liferay Home]/data/keystore.jks`. 
+file is 
+
+```bash
+[Liferay Home]/data/keystore.jks 
+```
+
+You can change this path in System Settings &rarr; SSO &rarr; SAML Configuration
+&rarr; Key Store Path.
 
 ## Single Sign On
 
@@ -90,7 +97,7 @@ with the appropriate login screen.
 Upon successful authentication, the IdP constructs a SAML Response. It includes
 attribute statements configured in the designated Service Provider Connection
 (SPC; see the
-[next article](/docs/7-2/deploy/-/knowledge_base/deploy/setting-up-liferay-as-a-saml-identity-provider)
+[next article](/docs/7-2/deploy/-/knowledge_base/d/setting-up-liferay-as-a-saml-identity-provider)
 on setting up the SPC in @product@'s SAML adapter).
 
 The IdP sends the response to the Assertion Consumer Service URL. The request
@@ -236,7 +243,7 @@ A SAML `LogoutRequest` is sent to the Single Log Out service URL of the IdP.
 
 -  If @product@ serves as the SP, the `LogoutRequest` is sent to the IdP
    configured by the IdP Connection tab of the SAML provider (see the [next
-   article](/docs/7-2/deploy/-/knowledge_base/deploy/setting-up-liferay-as-a-saml-identity-provider)
+   article](/docs/7-2/deploy/-/knowledge_base/d/setting-up-liferay-as-a-saml-identity-provider)
    to set up the IdP Connection) and the SLO service URL defined in the SAML
    metadata. 
 
@@ -266,6 +273,6 @@ initiating SP terminates its SAML session and logs the user out.
 
 ## Related Topics
 
-- [Setting Up SAML as an Identity Provider](/docs/7-2/deploy/-/knowledge_base/deploy/setting-up-liferay-as-a-saml-identity-provider)
-- [Setting Up SAML as a Service Provider](/docs/7-2/deploy/-/knowledge_base/deploy/setting-up-liferay-as-a-saml-service-provider) 
-- [Token-Based SSO Authentication](/docs/7-2/deploy/-/knowledge_base/deploy/token-based-single-sign-on-authentication)
+- [Setting Up SAML as an Identity Provider](/docs/7-2/deploy/-/knowledge_base/d/setting-up-liferay-as-a-saml-identity-provider)
+- [Setting Up SAML as a Service Provider](/docs/7-2/deploy/-/knowledge_base/d/setting-up-liferay-as-a-saml-service-provider) 
+- [Token-Based SSO Authentication](/docs/7-2/deploy/-/knowledge_base/d/token-based-single-sign-on-authentication)

@@ -8,12 +8,14 @@ An identity provider is a trusted provider that provides single sign-on for
 users to access other websites. A service provider is a website that hosts
 applications and grants access only to identified users with proper credentials.
 Liferay Portal 6.1 EE and later versions support SAML 2.0 integration via the 
-[Liferay SAML 2.0 Provider](https://web.liferay.com/marketplace/-/mp/application/15188711)
+[Liferay Connector to SAML 2.0](https://web.liferay.com/marketplace/-/mp/application/15188711)
 application. It is provided from Liferay Marketplace and allows @product@ to act
 as a SAML 2.0 identity provider or as a service provider.
-**Important:** You can set @product@ up as an Identity Provider or as a Service Provider. Each single @product@ instance can serve as an identity provider or as a
-service provider, but **not both**. Both configurations are covered in this
-article.
+
+| **Important:** You can set @product@ up as an Identity Provider or as a Service
+| Provider. Each single @product@ instance can serve as an identity provider or as
+| a service provider, but **not both**. Both configurations are covered in this
+| article.
 
 ## Storing Your Keystore
 
@@ -24,14 +26,16 @@ options:
 - In the Documents and Media library
  
 The file system keystore manager is used by default and the default location is
-the `[Liferay Home]/data` directory. To use Documents and Media library storage
-for your keystore instead of file system storage, go to *Control Panel* &rarr;
-*System Settings* &rarr; *Security* &rarr; *SSO* &rarr; *SAML KeyStoreManager
-Implementation Configuration*. Select from the two options: *Filesystem
-Keystore Manager* or *Document Library Keystore Manager*.
+the `[Liferay Home]/data` directory (you can change the location in System
+Settings &rarr; SSO &rarr; SAML Configuration &rarr; Key Store Path). To use
+Documents and Media library storage for your keystore instead of file system
+storage, go to *Control Panel* &rarr; *System Settings* &rarr; *Security* &rarr;
+*SSO* &rarr; *SAML KeyStoreManager Implementation Configuration*. Select from
+the two options: *Filesystem Keystore Manager* or *Document Library Keystore
+Manager*.
 
 If you use Document Library storage, you can use any number of 
-[back end file stores](/docs/7-2/deploy/-/knowledge_base/deploy/document-repository-configuration).
+[back-end file stores](/docs/7-2/deploy/-/knowledge_base/d/document-repository-configuration).
 These are protected not only by the system where the key is stored, but
 also by @product@'s permissions system.
 
@@ -68,8 +72,8 @@ also by @product@'s permissions system.
     When you create the certificate and private key, you also create a keystore
     if one doesn't already exist. As described above, this keystore has two
     storage options: file system storage (the default) and Documents and Media
-    storage. By default, the certificate uses the SHA256 algorithm for
-    encryption and is fingerprinted and self-signed via RSA and SHA256. 
+    storage. By default, the certificate uses the `SHA256` algorithm for
+    encryption and is fingerprinted and self-signed via RSA and `SHA256`. 
  
 4.  After you click *Save*, you can click *Replace Certificate* at any time to
     replace the current certificate with a new one if your old one has expired
