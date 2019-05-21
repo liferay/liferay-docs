@@ -31,10 +31,10 @@ workflow item's SLA status: on time or overdue.
 
 1.  Go to Control Panel &rarr; Workflow &rarr; Metrics.
 
-2.  Click the actions (![Actions](../../images/icon-actions.png)) menu and
-    select _Set Up SLAs_. If you click on the title of the Process, it will
-    bring you to the reports for that process. You must click the Actions menu
-    to go to the SLA screen.
+2.  Click on the title of the Process, it will  bring you to the reports for
+    that process. Click the actions (![Actions](../../images/icon-actions.png))
+    menu and select _SLAs Settings_. You must click the Actions menu to go to
+    the SLA screen.
 
     ![Figure 1: Add SLAs to a workflow definition from the Metrics application.](../../images/workflow-add-sla.png)
 
