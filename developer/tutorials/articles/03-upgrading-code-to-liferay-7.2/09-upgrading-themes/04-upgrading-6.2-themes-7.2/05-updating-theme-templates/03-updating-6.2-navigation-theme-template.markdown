@@ -4,10 +4,10 @@
     <p>Updating 6.2 Theme Templates<br>Step 2 of 4</p>
 </div>
 
-Follow these steps to update your modified `navigation.ftl` file:
+Follow these steps to update `navigation.ftl`:
 
 1.  Below the `<nav class="${nav_css_class}" id="navigation" role="navigation">` 
-    element, add the following hidden heading for accessibility screen readers:
+    element, add the heading below to improve accessibility for screen readers:
 
 ```html
 <h1 class="hide-accessible">
@@ -15,8 +15,10 @@ Follow these steps to update your modified `navigation.ftl` file:
 </h1>
 ```
 
-2.  To access the layout, add the following variable declaration below the 
-    `<#assign nav_item_css_class = "" />` variable declaration:
+2.  Remove the `nav_item_attr_selected` variable declaration at the top, and add 
+    the layout declaration shown below instead, to access the layout. Don't 
+    forget to remove all uses of the `nav_item_attr_selected` throughout the 
+    rest of the template:
 
 ```markup
 <#assign nav_item_layout = nav_item.getLayout() />
@@ -24,11 +26,14 @@ Follow these steps to update your modified `navigation.ftl` file:
 
 3.  Replace the `${nav_item.icon()}`variable in the 
     `<a aria-labelledby="layout_${nav_item.getLayoutId()}"...</a>` anchor with 
-    the following element: 
+    the element below: 
 
 ```markup
 <@liferay_theme["layout-icon"] layout=nav_item_layout />
 ```
+
+4.  Remove the `nav_child_attr_selected` variable from the bottom of the 
+    template, including all uses throughout the rest of the template.
 
 The navigation template is updated. You can update `portlet.ftl` next. 
 

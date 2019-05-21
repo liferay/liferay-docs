@@ -7,14 +7,13 @@ header-id: updating-the-6-2-responsiveness
 [TOC levels=1-4]
 
 <div class="learn-path-step">
-    <p>Updating 6.2 CSS Code<br>Step 3 of 3</p>
+    <p>Updating 6.2 CSS Code<br>Step 2 of 2</p>
 </div>
 
 Bootstrap 4 explicit media queries replaced the Bootstrap 2 `respond-to` mixins
-for CSS responsiveness. Follow these steps to update your theme's
-responsiveness:
+for CSS responsiveness. Follow these steps to update the theme's responsiveness:
 
-1.  Open your `_custom.scss` file.
+1.  Open `_custom.scss`.
 
 2.  Replace all `respond-to` mixins with corresponding media queries shown
     below. Note that some of the dimensions have slightly changed:
@@ -29,12 +28,11 @@ responsiveness:
     `@include respond-to(desktop, tablet)` (min-width: 768px) | `@include media-breakpoint-up(md)` (min-width: 768px)                                     |
     `@include respond-to(desktop)` (min-width: 980px)        | `@include media-breakpoint-up(lg)` (min-width: 992px)          |
 
-For example, here is a comparison between the Lunar Resort theme's original and
-updated syntax:
+The Lunar Resort theme's original and updated syntax is shown below:
 
 Original:
 
-```css
+```scss
 @include respond-to(phone, tablet) {
     html #wrapper #banner #navigation {
     ...
@@ -44,7 +42,7 @@ Original:
 
 Updated:
 
-```css
+```scss
 @include media-breakpoint-down(md) {
     html #wrapper #banner #navigation {
     ...
@@ -52,4 +50,4 @@ Updated:
 }
 ```
 
-Your CSS code is updated! Next you'll update your theme's templates. 
+The CSS code is updated! Next you'll update the theme's templates. 

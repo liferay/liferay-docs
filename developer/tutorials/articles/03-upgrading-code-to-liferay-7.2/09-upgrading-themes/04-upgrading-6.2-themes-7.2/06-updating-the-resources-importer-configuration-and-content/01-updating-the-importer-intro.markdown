@@ -9,7 +9,7 @@ header-id: updating-the-resources-importer
 The Resources Importer is now an OSGi module in Liferay's Web Experience
 application suite. Since the suite is bundled with @product@, you don't have to
 download the Resources Importer separately. The following components have been
-updated and are the focus of this tutorial:
+updated and are the focus of this section:
 
 - Plugin properties
 - Web content article files and folder structure
@@ -18,7 +18,7 @@ updated and are the focus of this tutorial:
 | **Note:** Due to the page and article import order, articles that link to pages
 | in the Site's layout cause a null pointer exception
 | [issue](https://issues.liferay.com/browse/LPS-64859).
-| These links have been removed from the example Lunar Resort theme's web content
+| These links have been removed from the Lunar Resort theme's web content
 | articles to avoid this issue.
 
-Start updating the plugin properties for the Resources Importer. 
+<a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-2/updating-6-2-liferay-plugin-package-properties">Let's Go<span class="icon-circle-arrow-right"></span></a>

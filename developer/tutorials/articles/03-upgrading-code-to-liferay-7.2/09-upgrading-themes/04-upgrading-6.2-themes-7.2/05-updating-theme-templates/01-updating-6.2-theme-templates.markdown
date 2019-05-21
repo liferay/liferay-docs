@@ -35,7 +35,7 @@ theme templates. Here are the main changes:
     -  *The User Personal Bar*: Display notifications and the user's avatar and 
         name. 
 
-    ![Figure 1: The Dockbar was removed in @product-ver@ and must be replaced with the new Control Menu.](../../../../images/upgrading-themes-dockbar.png) 
+    ![Figure 1: The Dockbar was removed and must be replaced with the new Control Menu.](../../../../images/upgrading-themes-dockbar.png) 
 
 Start by converting your Velocity theme templates to FreeMarker. You can refer
 to Apache's 
@@ -45,7 +45,7 @@ for help. Common @product@ FreeMarker variables and macros can be found in
 
 The [Gulp `upgrade` task](running-the-upgrade-task-for-6.2-themes) reports the 
 required theme template changes in the log. For example, here are the 6.2 to 7.0 
-upgrade log and 7.0 to 7.2 upgrade log for the Lunar Resort theme:
+upgrade log and 7.0 to 7.1 upgrade logs for the Lunar Resort theme:
 
 ```bash
 ----------------------------------------------------------------

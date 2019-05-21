@@ -6,9 +6,8 @@
 
 Follow these steps to update `portal_normal.ftl`:
 
-1.  Open your modified `portal_normal.ftl` file and replace the following 6.2 
-    directives with the updated syntax. This change is described in the 
-    [7.0 Breaking Changes](/docs/7-0/reference/-/knowledge_base/r/breaking-changes#taglibs-are-no-longer-accessible-via-the-theme-variable-in-freemarker) 
+1.  Open `portal_normal.ftl` and replace the following 6.2 directives with the 
+    updated syntax. This change is described in the [7.0 Breaking Changes](/docs/7-0/reference/-/knowledge_base/r/breaking-changes#taglibs-are-no-longer-accessible-via-the-theme-variable-in-freemarker) 
     reference document:
 
       6.2                                |  &nbsp;Updated                                                                                                                     |
@@ -22,7 +21,7 @@ Follow these steps to update `portal_normal.ftl`:
     `${theme_settings["my-theme-setting"]}`                | `${themeDisplay.getThemeSetting("my-theme-setting")}`                                                                      |
     `${theme.runtime("56", "articleId=" + my_article_id)}` | `<@liferay_portlet["runtime"] portletName=`<br/>`"com_liferay_journal_content_web_portlet_JournalContentPortlet"` <br/>`queryString="articleId=" + my_article_id />`|
 
-2.  Optionally remove the breadcrumbs and page title code:
+2.  Remove the breadcrumbs and page title code:
 
 ```html
 <nav id="breadcrumbs">		
@@ -57,8 +56,7 @@ Follow these steps to update `portal_normal.ftl`:
 <@liferay.control_menu />
 ```
 
-6.  Add the `<#if...></#if>` wrappers to the `navigation.ftl` theme template 
-    include:
+6.  Replace the ` || is_signed_in` condition for the `navigation.ftl` theme template include with `&& is_setup_complete`:
 
 ```markup    
 <#if has_navigation && is_setup_complete>
@@ -75,6 +73,6 @@ Follow these steps to update `portal_normal.ftl`:
 ```
 
 8.  Add the `<h1 class="hide-accessible">${the_title}</h1>` header element just 
-    inside the `content` `<section>` to support accessibility. 
+    inside the `content` `<section>` to support accessibility, and remove the breadcrumbs `<nav>` element from inside it.
 
 `portal_normal.ftl` is updated! Next you can update the navigation template. 
