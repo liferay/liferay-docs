@@ -361,14 +361,17 @@ method is executed.
 Inner parameters aren't counted as regular parameters for matching methods and 
 are ignored during matching. 
 
-Let's extend the JSON-RPC object paramater example from above with also populating its inner paramaters:
+You can extend the JSON-RPC object parameter example above by populating its
+inner parameters:
 
     "+foo" : "com.liferay.impl.FooBean",
     "foo.field1" : "test",
     "foo.field2" : "true",
     "foo.field3" : 123
 
-Here's the same with JavaScript (assuming we have a remote service under the `foo` context which accepts one argument with type `com.liferay.impl.FooBean` and it has the specified fields):
+Here's the same with JavaScript (assuming we have a remote service under the
+`foo` context which accepts one argument with type `com.liferay.impl.FooBean`
+and it has the specified fields):
 
 ```javascript
     Liferay.Service(
