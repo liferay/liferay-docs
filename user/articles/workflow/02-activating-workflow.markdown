@@ -21,7 +21,7 @@ Activate a workflow for these assets in Control Panel &rarr; Workflow
 - Blogs Entry
 - Calendar Event
 - Comment
-- Knowledge Base
+- Knowledge Base Article
 - Message Boards Message
 - Page Revision
 - User
@@ -34,7 +34,7 @@ Configuration &rarr; Workflow:
 - Blogs Entry
 - Calendar Event
 - Comment
-- Knowledge Base
+- Knowledge Base Article
 - Message Boards Message
 - Page Revision
 - Web Content Article
