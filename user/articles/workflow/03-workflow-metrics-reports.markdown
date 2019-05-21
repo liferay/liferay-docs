@@ -94,8 +94,8 @@ Filter items based on whether they're Overdue, On Time, or Untracked.
 **Untracked**
 : Untracked items are items in the workflow process that aren't currently under
 the purview of a SLA. The can be in a task identified as a _Pause_ in the SLA,
-or perhaps outside the scope of the SAL entirely, if the SLA isn't defined for
-the entire process (Process Begins to Process Ends in the SAL Definition
+or perhaps outside the scope of the SLA entirely, if the SLA isn't defined for
+the entire process (Process Begins to Process Ends in the SLA Definition
 screen).
 
 ### Filtering by Process Status and Completion Period
