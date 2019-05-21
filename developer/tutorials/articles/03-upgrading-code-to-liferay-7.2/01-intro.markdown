@@ -164,11 +164,17 @@ Here are the code upgrade steps:
 
     11. [Upgrade Struts Action Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-struts-action-hooks) {.title}
 
-7.  [Upgrade Themes]() {.title}
+7.  [Upgrade Themes](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-theme-to-7-2) {.title}
 
     Upgrade your themes so they're deployable to @product-ver@. {.summary}
 
-8.  [Upgrade Layout Templates]() {.title}
+    1.  [Upgrade 6.2 Themes to 7.0](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-6-2-themes-to-7-0) {.title}
+
+    2.  [Upgrade 7.0 Themes to 7.1](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-7-0-themes-to-7-1) {.title}
+
+    3.  [Upgrade 7.1 Themes to 7.2](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-7-1-themes-to-7-2) {.title}
+
+8.  [Upgrade Layout Templates](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-layout-templates) {.title}
 
     Upgrade your layout templates so they're deployable to @product-ver@. {.summary}
 
@@ -188,7 +194,7 @@ Here are the code upgrade steps:
 
         Adapt your app to account for Service Builder-specific changes. {.summary}
 
-    4.  [Migrate Off of Velocity Templates]() {.title}
+    4.  [Migrate Off of Velocity Templates](/docs/tutorials/7-2/-/knowledge_base/t/migrating-off-of-velocity-templates) {.title}
 
         Velocity template usage is deprecated for @product-ver@. You should
         convert your template to FreeMarker. {.summary}
