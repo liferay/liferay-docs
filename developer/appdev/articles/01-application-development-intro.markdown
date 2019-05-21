@@ -1,4 +1,10 @@
-# Application Development 
+---
+header-id: application-development
+---
+
+# Application Development
+
+[TOC levels=1-4]
 
 Writing applications on Liferay's standards-based platform makes your life
 easier. Whether you create headless services for clients to access, full-blown
