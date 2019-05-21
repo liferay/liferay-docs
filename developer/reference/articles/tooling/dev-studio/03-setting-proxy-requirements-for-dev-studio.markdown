@@ -27,7 +27,7 @@ to work with Liferay Dev Studio, follow the instructions below.
 
 If you're working with a Liferay Workspace in Dev Studio, you'll need to configure
 your proxy settings for that environment too. See the
-[Setting Proxy Requirements for Liferay Workspace](/developer/reference/-/knowledge_base/7-2/setting-proxy-requirements-for-liferay-workspace)
+[Setting Proxy Requirements for Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/setting-proxy-requirements-for-liferay-workspace)
 article for more details.
 
 Awesome! You've successfully configured Dev Studio's proxy settings!

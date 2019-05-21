@@ -36,7 +36,7 @@ below:
 The Layouts sub-generator provides the controls to create a layout template 
 that meets your needs. You can add and remove rows and columns on-the-fly as you 
 require. See 
-[Generating Layout Templates](/developer/reference/-/knowledge_base/7-2/creating-layout-templates-with-the-themes-generator) 
+[Generating Layout Templates](/docs/7-2/reference/-/knowledge_base/r/creating-layout-templates-with-the-themes-generator) 
 for more information. 
 
 ### Themelets Sub-generator
@@ -49,7 +49,7 @@ applicable for changes both small and large, from modifying the appearance of an
 individual piece of UI to adding new features. If there is something you have to 
 manually code for every theme you create, it's a good candidate for a themelet. 
 See 
-[Generating Themelets](/developer/reference/-/knowledge_base/7-2/creating-themelets-with-the-themes-generator) 
+[Generating Themelets](/docs/7-2/reference/-/knowledge_base/r/creating-themelets-with-the-themes-generator) 
 for more information. 
 
 While you can create themes using the tools you prefer, the Liferay Theme 

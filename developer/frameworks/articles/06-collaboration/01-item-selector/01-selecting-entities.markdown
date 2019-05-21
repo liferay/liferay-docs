@@ -8,7 +8,7 @@ header-id: selecting-entities-with-an-item-selector
 
 The steps here show you how to get and use an Item Selector to select entities 
 in your app. For an explanation of the Item Selector API and more information on 
-these steps, see the [Item Selector introduction](/developer/frameworks/-/knowledge_base/7-2/item-selector). 
+these steps, see the [Item Selector introduction](/docs/7-2/frameworks/-/knowledge_base/f/item-selector). 
 
 ## Get an Item Selector
 
@@ -18,11 +18,11 @@ First, you must get an Item Selector for your use case. Follow these steps:
     criterion corresponds to the selected entity type, and the return types 
     correspond to the data you expect to receive from those selections. For a 
     list of the criterion and return types that @product@ provides, see 
-    [Item Selector Criterion and Return Types](/developer/reference/-/knowledge_base/7-2/item-selector-criterion-and-return-types).
+    [Item Selector Criterion and Return Types](/docs/7-2/reference/-/knowledge_base/r/item-selector-criterion-and-return-types).
     For example, if you need an Item Selector that selects images and returns
     their URLs, use `ImageItemSelectorCriterion` and
     `URLItemSelectorReturnType`. You can
-    [create](/developer/frameworks/-/knowledge_base/7-2/creating-custom-criterion-and-return-types)
+    [create](/docs/7-2/frameworks/-/knowledge_base/f/creating-custom-criterion-and-return-types)
     criterion and/or return types if there aren't existing ones for your use
     case. 
 
@@ -255,8 +255,8 @@ Here's the complete example code for these steps:
 
 ## Related Topics
 
-[Item Selector](/developer/frameworks/-/knowledge_base/7-2/item-selector)
+[Item Selector](/docs/7-2/frameworks/-/knowledge_base/f/item-selector)
 
-[Creating Custom Criterion and Return Types](/developer/frameworks/-/knowledge_base/7-2/creating-custom-criterion-and-return-types)
+[Creating Custom Criterion and Return Types](/docs/7-2/frameworks/-/knowledge_base/f/creating-custom-criterion-and-return-types)
 
-[Creating Custom Item Selector Views](/developer/frameworks/-/knowledge_base/7-2/creating-custom-item-selector-views)
+[Creating Custom Item Selector Views](/docs/7-2/frameworks/-/knowledge_base/f/creating-custom-item-selector-views)

@@ -13,7 +13,7 @@ there are modules you need to revisit upgrading, you can upgrade them using
 Gogo Shell. 
 
 | **Note**: You must
-| [Configure the core upgrade](/docs/7-2/deploy/-/knowledge_base/deploy/configuring-the-data-upgrade)
+| [Configure the core upgrade](/docs/7-2/deploy/-/knowledge_base/d/configuring-the-data-upgrade)
 | before using Gogo shell commands to upgrade the core. 
 
 Below is a list of commands.
@@ -22,7 +22,7 @@ Below is a list of commands.
 
 If you ran the upgrade tool and it opened Gogo shell, you're already connected.
 Otherwise, you can execute commands using the
-[Gogo Shell portlet](/docs/7-2/reference/-/knowledge_base/reference/using-the-felix-gogo-shell).
+[Gogo Shell portlet](/docs/7-2/reference/-/knowledge_base/r/using-the-felix-gogo-shell).
 
 Here are the commands:
 
@@ -57,7 +57,7 @@ module's verify process
 `verify:list:` Lists all registered verifiers
 
 There are many useful
-[Liferay commands and standard commands available in Gogo shell](/docs/7-2/reference/-/knowledge_base/reference/using-the-felix-gogo-shell).
+[Liferay commands and standard commands available in Gogo shell](/docs/7-2/reference/-/knowledge_base/r/using-the-felix-gogo-shell).
 The following sections describe Liferay upgrade commands. 
 
 ## Listing module upgrade processes

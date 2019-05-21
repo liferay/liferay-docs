@@ -75,7 +75,7 @@ There are two `actions` in the review task, both `<notification>`s. Each
 notification may contain a name, template, notification-type, execution-type,
 and recipients. Besides notifications, You can also use the `<action>` tag.
 These have a name and a
-[script](/discover/portal/-/knowledge_base/7-1/leveraging-the-script-engine-in-workflow)
+[script](/docs/7-1/user/-/knowledge_base/user/leveraging-the-script-engine-in-workflow)
 and are more often used in state nodes than tasks.
 
 ## Assignments
@@ -182,7 +182,7 @@ entity. For example, a user might have permission to update Message Boards
 Messages. This is called an UPDATE resource action, because the user can update
 the resource. If you're uncertain about what resource actions are, refer to the
 developer tutorial on the
-[permission system](/develop/tutorials/-/knowledge_base/7-1/defining-application-permissions)
+[permission system](/docs/7-1/frameworks/-/knowledge_base/frameworks/defining-application-permissions)
 for a more detailed explanation.
 
 To find all the resource actions that have been created, you need access to the
@@ -191,7 +191,7 @@ permission for the VIEW action on the roles resource).
 
 - Navigate to Control Panel &rarr; Users &rarr; Roles.
 - Add a new Regular Role. See the
-  [article on managing roles](/discover/portal/-/knowledge_base/7-1/roles-and-permissions)
+  [article on managing roles](/docs/7-1/user/-/knowledge_base/user/roles-and-permissions)
   for more information.
 - Once the role is added, navigate to the Define Permissions interface for the
   role.

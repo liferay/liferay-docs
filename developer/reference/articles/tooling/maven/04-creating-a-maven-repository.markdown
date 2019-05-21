@@ -44,10 +44,10 @@ To create your own repository using Nexus, follow these steps:
 Voila! You've created a repository for your Liferay releases (i.e.,
 `liferay-releases`) and/or Liferay snapshots (i.e., `liferay-snapshots`). To
 learn how to deploy your Liferay Maven artifacts to a Nexus repository, see the
-[Deploying Liferay Maven Artifacts to a Repository](/developer/reference/-/knowledge_base/7-2/deploying-liferay-maven-artifacts-to-a-repository)
+[Deploying Liferay Maven Artifacts to a Repository](/docs/7-2/reference/-/knowledge_base/r/deploying-liferay-maven-artifacts-to-a-repository)
 tutorial.
 
 See the
-[Configuring Local Maven Settings to Access Repositories](/developer/reference/-/knowledge_base/7-2/configuring-local-maven-settings-to-access-repositories)
+[Configuring Local Maven Settings to Access Repositories](/docs/7-2/reference/-/knowledge_base/r/configuring-local-maven-settings-to-access-repositories)
 to configure your new repository servers in your Maven settings to install
 artifacts to them. 

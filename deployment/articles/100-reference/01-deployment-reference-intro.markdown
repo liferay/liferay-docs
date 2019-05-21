@@ -9,20 +9,20 @@ header-id: deployment-reference
 Here you'll find definitions, default settings, templates, and more. Here are
 some of the topics:
 
--   [Liferay Home](/deployment/reference/-/knowledge_base/7-2/liferay-home):
+-   [Liferay Home](/docs/7-2/deploy/-/knowledge_base/d/liferay-home):
     From this location, @product@ launches applications, applies configurations,
     loads JAR files, and generates logs. 
 
--   [Portal properties](/deployment/reference/-/knowledge_base/7-2/portal-properties): 
+-   [Portal properties](/docs/7-2/deploy/-/knowledge_base/d/portal-properties): 
     Use a `portal-ext.properties` file (or another qualified properties file) to
     configure @product@ and override features. 
 
--   [System properties](/deployment/reference/-/knowledge_base/7-2/system-properties):
+-   [System properties](/docs/7-2/deploy/-/knowledge_base/d/system-properties):
     Examine @product@ default system configuration. 
 
--   [Database templates](/deployment/reference/-/knowledge_base/7-2/database-templates):
+-   [Database templates](/docs/7-2/deploy/-/knowledge_base/d/database-templates):
     Use these portal properties templates to specify the @product@ database. 
 
--   [Elasticsearch settings](/deployment/reference/-/knowledge_base/7-2/elasticsearch-settings):
+-   [Elasticsearch settings](/docs/7-2/deploy/-/knowledge_base/d/elasticsearch-settings):
     Examine the configuration settings for Liferay's default Elasticsearch
     adapter. 

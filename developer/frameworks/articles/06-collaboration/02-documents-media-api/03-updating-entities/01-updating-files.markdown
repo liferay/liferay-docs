@@ -8,9 +8,9 @@ header-id: updating-files
 
 To update a file with the Documents and Media API, you must use one of the three 
 `updateFileEntry` methods discussed in 
-[Updating Entities](/developer/frameworks/-/knowledge_base/7-2/updating-entities). 
+[Updating Entities](/docs/7-2/frameworks/-/knowledge_base/f/updating-entities). 
 The steps here show you how. For general information on using the API, see 
-[Documents and Media API](/developer/frameworks/-/knowledge_base/7-2/documents-and-media-api). 
+[Documents and Media API](/docs/7-2/frameworks/-/knowledge_base/f/documents-and-media-api). 
 
 Note that the example in these steps uses the `updateFileEntry` method that 
 contains `InputStream`, but you can adapt the example to the other methods if 
@@ -47,7 +47,7 @@ you wish:
         }
 
     For more information on `ServiceContext`, see 
-    [Understanding ServiceContext](/developer/frameworks/-/knowledge_base/7-2/understanding-servicecontext). 
+    [Understanding ServiceContext](/docs/7-2/frameworks/-/knowledge_base/f/understanding-servicecontext). 
 
 3.  Call the service reference's `updateFileEntry` method with the data from the 
     previous step. Note that this example does so inside the previous step's 
@@ -77,8 +77,8 @@ needs of the Documents and Media app.
 
 ## Related Topics
 
-[Creating Files](/developer/frameworks/-/knowledge_base/7-2/creating-files)
+[Creating Files](/docs/7-2/frameworks/-/knowledge_base/f/creating-files)
 
-[Deleting Files](/developer/frameworks/-/knowledge_base/7-2/deleting-files)
+[Deleting Files](/docs/7-2/frameworks/-/knowledge_base/f/deleting-files)
 
-[Moving Folders and Files](/developer/frameworks/-/knowledge_base/7-2/moving-folders-and-files)
+[Moving Folders and Files](/docs/7-2/frameworks/-/knowledge_base/f/moving-folders-and-files)

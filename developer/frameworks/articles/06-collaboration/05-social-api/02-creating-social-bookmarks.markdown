@@ -74,7 +74,7 @@ Follow these steps to implement the `SocialBookmark` interface:
     is selected. Typically, this method renders a link to the share URL (e.g., a 
     share button), but you can use it for whatever you need. To keep a 
     consistent look and feel with the default social bookmarks, you can use a 
-    [Clay icon](/developer/frameworks/-/knowledge_base/7-2/clay-icons). 
+    [Clay icon](/docs/7-2/frameworks/-/knowledge_base/f/clay-icons). 
 
     This example gets a `RequestDispatcher` for the JSP that contains a Clay 
     icon (`page.jsp`), and then includes that JSP in the response: 
@@ -94,7 +94,7 @@ Follow these steps to implement the `SocialBookmark` interface:
 ## Creating Your JSP
 
 The `page.jsp` file referenced in the above `SocialBookmark` implementation uses 
-[a Clay link](/developer/frameworks/-/knowledge_base/7-2/clay-labels-and-links) 
+[a Clay link](/docs/7-2/frameworks/-/knowledge_base/f/clay-labels-and-links) 
 (`clay:link`) to specify and style the Twitter icon included with Clay. Follow 
 these steps to create a JSP for your own social bookmark: 
 
@@ -120,7 +120,7 @@ these steps to create a JSP for your own social bookmark:
         %>
 
     The title and URL are set via the `liferay-social-bookmarks` taglib when 
-    [applying the social bookmark](/developer/frameworks/-/knowledge_base/7-2/applying-social-bookmarks). 
+    [applying the social bookmark](/docs/7-2/frameworks/-/knowledge_base/f/applying-social-bookmarks). 
 
 4.  Add the Clay link. See the `clay:link` 
     [documentation](https://clayui.com/docs/components/link.html) 
@@ -137,7 +137,7 @@ these steps to create a JSP for your own social bookmark:
     This example sets the following `clay:link` attributes: 
 
     `buttonStyle`: This example renders the button's 
-    [type](/developer/frameworks/-/knowledge_base/7-2/clay-buttons#types) 
+    [type](/docs/7-2/frameworks/-/knowledge_base/f/clay-buttons#types) 
     as a secondary button. 
 
     `elementClasses`: The custom CSS to use for styling the button (optional). 
@@ -156,6 +156,6 @@ To see a complete, real-world example of a social bookmark implementation, see
 
 ## Related Topics
 
-[Applying Social Bookmarks](/developer/frameworks/-/knowledge_base/7-2/applying-social-bookmarks)
+[Applying Social Bookmarks](/docs/7-2/frameworks/-/knowledge_base/f/applying-social-bookmarks)
 
-[Using the Clay Taglib in Your Portlets](/developer/frameworks/-/knowledge_base/7-2/using-the-clay-taglib-in-your-portlets)
+[Using the Clay Taglib in Your Portlets](/docs/7-2/frameworks/-/knowledge_base/f/using-the-clay-taglib-in-your-portlets)

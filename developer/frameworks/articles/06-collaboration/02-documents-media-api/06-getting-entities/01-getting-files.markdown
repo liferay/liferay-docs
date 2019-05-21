@@ -8,7 +8,7 @@ header-id: getting-files
 
 To get files with the Documents and Media API, use a method from the 
 `getFileEntries` or `getGroupFileEntries` method families discussed in 
-[Getting Entities](/developer/frameworks/-/knowledge_base/7-2/getting-entities). 
+[Getting Entities](/docs/7-2/frameworks/-/knowledge_base/f/getting-entities). 
 The steps here show you how, using this 
 [`getFileEntries`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#getFileEntries-long-long-java.lang.String:A-int-int-com.liferay.portal.kernel.util.OrderByComparator-) 
 method as an example: 
@@ -23,7 +23,7 @@ method as an example:
     )
 
 For general information on using the Documents and Media API, see 
-[Documents and Media API](/developer/frameworks/-/knowledge_base/7-2/documents-and-media-api). 
+[Documents and Media API](/docs/7-2/frameworks/-/knowledge_base/f/documents-and-media-api). 
 
 Follow these steps to get a list of files. This example uses the above 
 `getFileEntries` method to get all the PNG images from the root folder of a 
@@ -52,7 +52,7 @@ Site's default repository, sorted by title:
         long groupId = themeDisplay.getScopeGroupId();
 
     For more information, see 
-    [Data Scopes](/developer/frameworks/-/knowledge_base/7-2/data-scopes). 
+    [Data Scopes](/docs/7-2/frameworks/-/knowledge_base/f/data-scopes). 
 
 3.  Use the data from the previous step to call the service reference method you
     want to use to get the files. This example calls the above `getFileEntries`
@@ -97,6 +97,6 @@ methods. To see all such methods, see the `DLAppService`
 
 ## Related Topics
 
-[Getting Folders](/developer/frameworks/-/knowledge_base/7-2/getting-folders)
+[Getting Folders](/docs/7-2/frameworks/-/knowledge_base/f/getting-folders)
 
-[Getting Multiple Entity Types](/developer/frameworks/-/knowledge_base/7-2/getting-multiple-entity-types)
+[Getting Multiple Entity Types](/docs/7-2/frameworks/-/knowledge_base/f/getting-multiple-entity-types)
