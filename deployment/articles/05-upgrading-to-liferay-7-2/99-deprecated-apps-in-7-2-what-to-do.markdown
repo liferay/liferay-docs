@@ -27,7 +27,7 @@ There are three types of deprecated apps:
     for download. (Availability: *Removed*) 
 
 | **Note:** For information on apps deprecated in @product@ 7.1, please see 
-| [Deprecated Apps in 7.1: What to Do](/docs/7-2/deployment/-/knowledge_base/d/deprecated-apps-in-7-1-what-to-do)
+| [Deprecated Apps in 7.1: What to Do](/docs/7-1/deploy/-/knowledge_base/d/deprecated-apps-in-7-1-what-to-do)
 
 Here are the apps deprecated in @product-ver@. 
 
@@ -50,9 +50,9 @@ Here are the apps deprecated in @product-ver@.
 | App |  Availability |  Notes |
 | --- | ------------- | ------ |
 | AlloyUI | TBD | Replaced by [Metal.js](https://metaljs.com/). | 
-| Google Login | Marketplace | Replaced by [OpenID Connect]((/docs/7-2/deployment/-/knowledge_base/d/authenticating-with-openid-connect). |
-| JCRStore | Removed | Migrate to another [Document Repository Store option](/docs/7-2/deployment/-/knowledge_base/d/document-repository-configuration). Before [upgrading to @product-ver@](/docs/7-2/deployment/-/knowledge_base/d/upgrading-to-product-ver), migrate your document store data using [Data Migration in Server Administration](/docs/7-2/user/-/knowledge_base/u/server-administration). |
-| OpenID | Marketplace | Replaced by [OpenID Connect]((/docs/7-2/deployment/-/knowledge_base/d/authenticating-with-openid-connect). |
+| Google Login | Marketplace | Replaced by [OpenID Connect]((/docs/7-2/deploy/-/knowledge_base/d/authenticating-with-openid-connect). |
+| JCRStore | Removed | Migrate to another [Document Repository Store option](/docs/7-2/deploy/-/knowledge_base/d/document-repository-configuration). Before [upgrading to @product-ver@](/docs/7-2/deploy/-/knowledge_base/d/upgrading-to-product-ver), migrate your document store data using [Data Migration in Server Administration](/docs/7-2/user/-/knowledge_base/u/server-administration). |
+| OpenID | Marketplace | Replaced by [OpenID Connect]((/docs/7-2/deploy/-/knowledge_base/d/authenticating-with-openid-connect). |
 | Plugins SDK | Removed; 7.0 version on [GitHub](https://github.com/liferay/liferay-plugins) | Deprecated in 7.0. Replaced by [Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace).  |
 | Search Portlet | TBD | Will be removed in a future release. Replaced by the [Search widgets](/docs/7-1/user/-/knowledge_base/u/whats-new-with-search). |
 | Template Engines | TBD | Replaced by Freemarker. |
@@ -78,4 +78,4 @@ Here are the apps deprecated in @product-ver@.
 | App |  Availability |  Notes |
 | --- | ------------------ | ----------- |
 | OAuth 1.0a | Marketplace | Replaced by OAuth 2.0, which is included in the bundle. |
-| OpenID | Marketplace | [OpenID Connect]((/docs/7-2/deployment/-/knowledge_base/d/authenticating-with-openid-connect). |
+| OpenID | Marketplace | [OpenID Connect]((/docs/7-2/deploy/-/knowledge_base/d/authenticating-with-openid-connect). |
