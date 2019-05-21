@@ -1,5 +1,9 @@
 # Upgrading Portal Property Hooks
 
+<div class="learn-path-step">
+    <p>Upgrading Customization Plugins<br>Step 10 of 11</p>
+</div>
+
 All portal properties in previous @product@ versions that are also used in
 @product-ver@ can be overridden.
 

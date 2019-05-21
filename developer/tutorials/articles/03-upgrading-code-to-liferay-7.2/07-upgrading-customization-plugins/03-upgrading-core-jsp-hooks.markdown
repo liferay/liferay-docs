@@ -1,5 +1,9 @@
 # Upgrading Core JSP Hooks
 
+<div class="learn-path-step">
+    <p>Upgrading Customization Plugins<br>Step 2 of 11</p>
+</div>
+
 Getting a core JSP hook running on @product-ver@ takes two steps:
 
 1.  Adapt your code to @product-ver@'s API using the Code Upgrade Planner. When

@@ -1,5 +1,9 @@
 # Upgrading Customization Modules
 
+<div class="learn-path-step">
+    <p>Upgrading Customization Plugins<br>Step 1 of 11</p>
+</div>
+
 Customization modules include any module extension or override used to
 customize another module. For examples of these types of modules, visit the
 [`extensions`](https://github.com/liferay/liferay-blade-samples/tree/master/liferay-workspace/extensions)

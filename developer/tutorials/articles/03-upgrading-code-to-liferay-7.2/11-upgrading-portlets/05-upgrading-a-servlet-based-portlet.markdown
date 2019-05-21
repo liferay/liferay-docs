@@ -1,5 +1,9 @@
 # Upgrading a Servlet-based Portlet
 
+<div class="learn-path-step">
+    <p>Upgrading Portlets<br>Step 4 of 6</p>
+</div>
+
 This tutorial shows you how to upgrade servlet-based portlets. It refers to
 code from before and after upgrading a sample servlet-based portlet called
 *Sample JSON* (project `sample-json-portlet`). The portlet shows a *Click me*

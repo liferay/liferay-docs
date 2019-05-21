@@ -1,5 +1,9 @@
 # Upgrading Model Listener Hooks
 
+<div class="learn-path-step">
+    <p>Upgrading Customization Plugins<br>Step 7 of 11</p>
+</div>
+
 Developers have been creating model listeners for several @product@
 versions. Upgrading Model Listener Hooks from previous portal versions has never
 been easier.

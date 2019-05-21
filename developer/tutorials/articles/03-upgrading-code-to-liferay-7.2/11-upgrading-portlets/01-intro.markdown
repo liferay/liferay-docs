@@ -23,3 +23,5 @@ portlets:
 -   [Struts Portlet](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-struts-portlet)
 
 Let's get your portlet running on @product-ver@!
+
+<a class="go-link btn btn-primary" href="/docs/7-2/tutorials/-/knowledge_base/t/upgrading-a-genericportlet">Let's Go!<span class="icon-circle-arrow-right"></span></a>

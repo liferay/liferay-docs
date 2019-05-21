@@ -14,7 +14,7 @@ outlined steps to aid those opting to upgrade their code manually.
 
 Here are the code upgrade steps:
 
-1.  [Upgrade Your Development Environment](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment) {.title}
+1.  {.root} [Upgrade Your Development Environment](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment) {.title}
 
     Legacy project environments should be upgraded to the latest version of
     Liferay Workspace to ensure you leverage all available features. {.summary}
@@ -156,15 +156,17 @@ Here are the code upgrade steps:
 
 7.  [Upgrade Themes]() {.title}
 
-    Upgrade your themes. {.summary}
+    Upgrade your themes so they're deployable to @product-ver@. {.summary}
 
 8.  [Upgrade Layout Templates]() {.title}
 
+    Upgrade your layout templates so they're deployable to @product-ver@. {.summary}
+
 9.  [Upgrade Frameworks & Features](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-frameworks-and-features) {.title}
 
-    1.  [Upgrade JNDI Data Source Usage](/docs/customization/7-2/-/knowledge_base/c/connecting-to-jndi-data-sources) {.title}
+    1.  [Upgrade JNDI Data Source Usage](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-jndi-data-source-usage) {.title}
 
-        Use @product@'s classloader to access the app server's JNDI API. {.summary}
+        Use @product@'s class loader to access the app server's JNDI API. {.summary}
 
     2.  [Upgrade Service Builder Service Invocation](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-service-builder-service-invocation) {.title}
 
@@ -178,6 +180,9 @@ Here are the code upgrade steps:
 
     4.  [Migrate Off of Velocity Templates]() {.title}
 
+        Velocity template usage is deprecated for @product-ver@. You should
+        convert your template to FreeMarker. {.summary}
+
 10. [Upgrade Portlets](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-portlets) {.title}
 
     Upgrade your portlets so they're deployable to @product-ver@. {.summary}
@@ -190,15 +195,21 @@ Here are the code upgrade steps:
 
     4.  [Upgrade Servlet-based Portlets](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-servlet-based-portlet) {.title}
 
-    5.  [Migrate from Spring Portlet MVC to PortletMVC4Spring]() {.title}
+    5.  [Migrate from Spring Portlet MVC to PortletMVC4Spring](/docs/tutorials/7-2/-/knowledge_base/t/migrating-from-spring-portlet-mvc-to-portletmvc4spring) {.title}
 
     6.  [Upgrade Struts 1 Portlets](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-struts-1-portlet) {.title}
 
-11.  [Upgrade Web Plugins]() {.title}
+11. [Upgrade Web Plugins](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-web-plugins) {.title}
 
-12.  [Upgrade Ext Plugins]() {.title}
+    Upgrade web plugins previously stored in the `webs` folder of your legacy
+    Plugins SDK. {.summary}
 
+12. [Upgrade Ext Plugins](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-ext-plugins) {.title}
 
+    Attempt to leverage an extension point instead of upgrading your Ext plugin.
+    If an Ext plugin is necessary, you must review all changes between the
+    previous Liferay Portal instance you were using and @product-ver@, and then
+    manually modify your Ext plugin to merge your changes with @product@'s. {.summary}
 
 Once you've finished the code upgrade steps, your custom apps will be compatible
 with @product-ver@!

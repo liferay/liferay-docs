@@ -1,5 +1,9 @@
 # Upgrading Event Action Hooks
 
+<div class="learn-path-step">
+    <p>Upgrading Customization Plugins<br>Step 8 of 11</p>
+</div>
+
 Event action hooks can be upgraded by completing these steps:
 
 1.  Adapt your code to @product-ver@'s API using the Code Upgrade Planner. When

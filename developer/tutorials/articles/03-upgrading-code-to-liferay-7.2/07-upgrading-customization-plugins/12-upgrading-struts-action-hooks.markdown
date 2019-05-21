@@ -1,5 +1,9 @@
 # Upgrading Struts Action Hooks
 
+<div class="learn-path-step">
+    <p>Upgrading Customization Plugins<br>Step 11 of 11</p>
+</div>
+
 In Liferay Portal 6.1 and 6.2, developers could customize the Portal and Portlet
 Struts Actions using a Hook and `StrutsAction` wrapper. For example, the
 `liferay-hook.xml` file for a hook that overrode the login portlet's login

@@ -1,5 +1,9 @@
 # Upgrading Portlet Language Key Hooks
 
+<div class="learn-path-step">
+    <p>Upgrading Customization Plugins<br>Step 6 of 11</p>
+</div>
+
 You can upgrade your portlet language key hooks to @product-ver@ by following
 these steps:
 

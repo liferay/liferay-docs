@@ -1,5 +1,9 @@
 # Upgrading Service Builder Service Invocation
 
+<div class="learn-path-step">
+    <p>Upgrading Frameworks and Features<br>Step 2 of 4</p>
+</div>
+
 When upgrading a portlet leveraging
 [Service Builder](/docs/appdev/7-2/-/knowledge_base/a/service-builder), you must
 first decide if you're building your Service Builder logic as a WAR or

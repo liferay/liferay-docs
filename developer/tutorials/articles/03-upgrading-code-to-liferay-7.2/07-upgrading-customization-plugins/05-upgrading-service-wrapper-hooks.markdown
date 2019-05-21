@@ -1,5 +1,9 @@
 # Upgrading Service Wrapper Hooks
 
+<div class="learn-path-step">
+    <p>Upgrading Customization Plugins<br>Step 4 of 11</p>
+</div>
+
 Upgrading traditional
 [service wrapper hook plugins](/docs/tutorials/6-2/-/knowledge_base/t/overriding-a-portal-service-using-a-hook)
 to @product-ver@ is quick and easy.

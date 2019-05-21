@@ -1,5 +1,9 @@
 # Upgrading Service Builder
 
+<div class="learn-path-step">
+    <p>Upgrading Frameworks and Features<br>Step 3 of 4</p>
+</div>
+
 @product-ver@ continues to use 
 [Service Builder](/docs/appdev/7-2/-/knowledge_base/a/service-builder), so
 you can focus on your application's business logic instead of its persistence

@@ -1,5 +1,9 @@
 # Upgrading Core Language Key Hooks
 
+<div class="learn-path-step">
+    <p>Upgrading Customization Plugins<br>Step 5 of 11</p>
+</div>
+
 Here are the steps for upgrading a core language key hook to @product-ver@. 
 
 1.  Create a new module based on the Blade sample `resource-bundle` project

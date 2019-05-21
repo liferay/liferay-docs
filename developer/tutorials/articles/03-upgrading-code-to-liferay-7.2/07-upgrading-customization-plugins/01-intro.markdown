@@ -18,3 +18,5 @@ tutorials show you how to upgrade each type of hook plugin.
 - [Struts Action Hooks](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-struts-action-hooks)
 
 Continue on to get started!
+
+<a class="go-link btn btn-primary" href="/docs/7-2/tutorials/-/knowledge_base/t/upgrading-customization-modules">Let's Go!<span class="icon-circle-arrow-right"></span></a>

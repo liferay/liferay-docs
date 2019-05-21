@@ -1,5 +1,9 @@
 # Upgrading a Struts 1 Portlet
 
+<div class="learn-path-step">
+    <p>Upgrading Portlets<br>Step 6 of 6</p>
+</div>
+
 Struts is a stable, widely adopted framework that implements the Model View
 Controller (MVC) design pattern. If you have a Struts portlet for previous
 versions of Liferay Portal, you can upgrade it to @product-ver@.

@@ -1,5 +1,9 @@
 # Upgrading Servlet Filter Hooks
 
+<div class="learn-path-step">
+    <p>Upgrading Customization Plugins<br>Step 9 of 11</p>
+</div>
+
 If you have Servlet Filter hooks ready to be upgraded, this tutorial's for you.
 The process is simple:
 

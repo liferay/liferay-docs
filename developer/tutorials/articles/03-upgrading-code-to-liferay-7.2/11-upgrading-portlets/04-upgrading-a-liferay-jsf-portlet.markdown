@@ -1,5 +1,9 @@
 # Upgrading a Liferay JSF Portlet
 
+<div class="learn-path-step">
+    <p>Upgrading Portlets<br>Step 3 of 6</p>
+</div>
+
 <!-- Dependency versions/screenshots waiting for Faces artifact release. -->
 
 Liferay JSF portlets are easy to upgrade and require few changes. They interface

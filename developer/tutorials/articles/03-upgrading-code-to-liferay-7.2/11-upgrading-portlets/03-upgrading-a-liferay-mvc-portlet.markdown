@@ -1,5 +1,9 @@
 # Upgrading a Liferay MVC Portlet
 
+<div class="learn-path-step">
+    <p>Upgrading Portlets<br>Step 2 of 6</p>
+</div>
+
 Liferay's MVC Portlet framework is used extensively in @product@'s portlets and
 is a popular choice for portlet developers. The
 [`MVCPortlet`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCPortlet.html)
