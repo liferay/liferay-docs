@@ -17,10 +17,10 @@ Overdue, how many are On Time, and how many are Pending in the workflow process.
 There's more to Metrics than the overview report though. Get more detailed
 reports by clicking on one of the workflow processes.
 
-## Understanding Reports 
+## Understanding Reports
 
 The Reports UI has two main views, represented as tabs: _Pending_ and
-_Completed_. 
+_Completed_.
 
 _Pending_ items are those currently in the workflow process, and include items
 untracked by the SLA. This might include items in the paused step of the
@@ -44,7 +44,7 @@ in Pending Items.
 ### Workload by Step
 
 Workload by Step shows a breakdown of the items that are in each step of the
-workflow process, by their SLA status (Overdue or On Time). 
+workflow process, by their SLA status (Overdue or On Time).
 
 ### Completed Items
 
@@ -81,7 +81,7 @@ to analyze.
 
 ### Filtering by SLA Status
 
-Filter items based on whether they're Overdue, On Time, or Untracked. 
+Filter items based on whether they're Overdue, On Time, or Untracked.
 
 ![Figure 3: Filter by SLA status: Overdue, On Time, or Untracked.](../../images/workflow-metrics-reports4.png)
 
@@ -97,7 +97,7 @@ the purview of a SLA. The can be in a task identified as a _Pause_ in the SLA,
 or perhaps outside the scope of the SAL entirely, if the SLA isn't defined for
 the entire process (Process Begins to Process Ends in the SAL Definition
 screen).
- 
+
 ### Filtering by Process Status and Completion Period
 
 Filter items based on whether they're Pending or Completed in the workflow
@@ -116,7 +116,7 @@ Last Year
 All Time
 
 ![Figure 4: Filter by Process Status and Completion Period.](../../images/workflow-reports-process-status-period.png)
- 
+
 ### Filtering by Process Step
 
 Filter items based on where they are in the workflow definition. For example, in
