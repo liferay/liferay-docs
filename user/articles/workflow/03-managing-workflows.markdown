@@ -10,12 +10,12 @@ Like other resources, workflow definitions can be added, edited, and deleted.
 But that's just the beginning of workflow management.
 
 - Because workflow definitions can be complex works in progress, they can be
-    versioned. 
+    versioned.
 
 - Unpublished drafts can be saved.
 
 - Because workflow definitions are XML files, they're portable. Thus, they can
-    also be uploaded. 
+    also be uploaded.
 
 Start by learning basic workflow management.
 
@@ -28,28 +28,28 @@ To add a workflow definition,
 2.  In the default view (Workflows), click the Add button
     (![Add](../../images/icon-add.png)).
 
-3.  From here you're either 
-    [writing an XML definition](/docs/7-2/reference/-/knowledge_base/r/crafting-xml-workflow-definitions), 
-    [designing a definition in in the visual designer (DXP only)](https://customer.liferay.com/documentation/7.2/admin/-/official_documentation/portal/kaleo-designer), 
+3.  From here you're either
+    [writing an XML definition](/docs/7-2/reference/-/knowledge_base/r/crafting-xml-workflow-definitions),
+    [designing a definition in in the visual designer (DXP only)](https://customer.liferay.com/documentation/7.2/admin/-/official_documentation/portal/kaleo-designer),
     or
     [uploading an existing definition](#uploading-workflow-definitions).
 
-To edit a definition, 
+To edit a definition,
 
 1.  Go to Control Panel &rarr; Workflow &rarr; Process Builder.
 
-2.  Click the *Actions* button (![Actions](../../images/icon-actions.png)) 
+2.  Click the *Actions* button (![Actions](../../images/icon-actions.png))
     for the workflow, and click *Edit*.
 
 To delete a definition,
 
 1.  Go to Control Panel &rarr; Workflow &rarr; Process Builder.
 
-2.  Click the *Actions* button (![Actions](../../images/icon-actions.png)) 
+2.  Click the *Actions* button (![Actions](../../images/icon-actions.png))
     for the workflow, and click *Unpublish*.
 
     A published workflow cannot be deleted, so you must unpublish its workflow
-    definition first. 
+    definition first.
 
     You can't unpublish a definition if it's activated for an asset. First
     dissociate the workflow definition from any assets that use it. See
@@ -67,13 +67,13 @@ upload it to @product@:
 
 2.  Click the *Add* button (![Add](../../images/icon-add.png)).
 
-3.  Name the workflow. 
+3.  Name the workflow.
 
 4.  In the *Source* tab, click the hyperlink *import a file* in the sentence
 
     `Write your definition or import a file`
 
-5.  Find the XML file and upload it. Once uploaded, the definition's XML 
+5.  Find the XML file and upload it. Once uploaded, the definition's XML
     appears in the workflow editor.
 
 6.  If it's ready to publish, click *Publish*. Otherwise, *Save* it and it stays
@@ -85,7 +85,7 @@ What's the difference between saving and publishing?
 
 The difference between a published and unpublished workflow is important:
 
-**Published:** Validation is complete, and the workflow can be assigned to 
+**Published:** Validation is complete, and the workflow can be assigned to
 assets.
 
 **Unpublished:** Validation is not performed on the unpublished workflow, and it
@@ -122,13 +122,13 @@ revert to the prior version and start editing it from scratch.
 
 4.  When you click *Restore* and see the success message, the prior version
     is the current version of the workflow. You can now edit the restored
-    version of the workflow. 
+    version of the workflow.
 
 5.  If edits are necessary, edit and click *Update*. This creates another
     version of the workflow.
 
 ![Figure 1: View and restore prior versions of a workflow.](../../images/workflow-revisions.png)
 
-Alternatively, you can refer to the 
+Alternatively, you can refer to the
 [embedded definitions](/docs/7-2/user/-/knowledge_base/u/workflow#embedded-workflows)
-to get workflow definition ideas. 
+to get workflow definition ideas.

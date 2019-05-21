@@ -28,9 +28,9 @@ For example, consider a User with two permissions:
 
 - The Portal Content Reviewer Role enables Users to review workflow
     submissions and grants edit and delete permissions on the content they're
-    reviewing. 
+    reviewing.
 - Users also have permission to view Web Content Articles in the Site's
-    _Content_ section. 
+    _Content_ section.
 
 Neither permission explicitly grants the User management permissions on Web
 Content Articles. Users cannot normally edit or delete a Web Content Article,
@@ -50,7 +50,7 @@ workflow process (for example, it's rejected or approved).
 
 ## Assigning the Task
 
-Workflow Tasks can be completed only by certain users, based on the 
+Workflow Tasks can be completed only by certain users, based on the
 [Assignment](/docs/7-2/reference/-/knowledge_base/r/workflow-task-nodes#assignments).
 
 All workflow tasks assigned directly to a user are listed in the My Workflow

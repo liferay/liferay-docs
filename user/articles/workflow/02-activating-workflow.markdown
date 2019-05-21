@@ -53,7 +53,7 @@ workflow configuration controls at the Site level.
 ## Activating Workflow in Applications
 
 Some assets that are workflow-enabled are activated in their respective
-application: 
+application:
 
 Activate workflow for Web Content Folders from the folder settings menu:
 
@@ -78,13 +78,13 @@ Most of the resources listed above behave just as you might expect with workflow
 activated: The Publish button for the resource's *Add* form is replaced by a
 *Submit for Publication* button, and instead of instant publication, the asset
 has its status set as *Pending* and must proceed through the workflow before
-publication. 
+publication.
 
 ![Figure 5: Instead of a Publish button, a Submit for Publication button appears
 for workflow-enabled resources.](../../images/submit-for-publication.png)
 
-Page revisions are slightly different. Page revisions only occur in 
-[staging environments](/docs/7-1/user/-/knowledge_base/u/staging-content-for-publication) 
+Page revisions are slightly different. Page revisions only occur in
+[staging environments](/docs/7-1/user/-/knowledge_base/u/staging-content-for-publication)
 that have Page Versioning enabled. When a Page Variation or Site Page Variation
 is created, its creator must click *Submit for Publication* at the top of the
 page, and the variation must be approved in the workflow before it can be
