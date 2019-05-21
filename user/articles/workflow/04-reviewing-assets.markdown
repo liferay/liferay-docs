@@ -6,22 +6,21 @@ header-id: reviewing-assets
 
 [TOC levels=1-4]
 
-User interaction is required at each workflow process Task Node. How do
-users complete tasks? In the *My Workflow Tasks* application of the *My Account*
-menu.
+User interaction is required at each workflow process Task Node. Where do users
+complete tasks? In the *My Workflow Tasks* application of the User menu.
 
 ![Figure 1: Users manage workflow tasks from their My Workflow Tasks widget.](../../images/workflow-myworkflow-tasks-menu.png)
 
 ## Asset Submission to Workflow
 
-If an Asset has a workflow activated, when a user clicks Submit for Publication,
-the workflow definition determines the next step. A user assigned a Role
-associated to the workflow task receives a Notification indicating that there is
-a workflow task to complete.
+If an Asset has a workflow activated, when a user clicks Submit for
+Publication, the workflow definition determines the next step. A user assigned
+a Role associated to the workflow task receives a Notification indicating that
+there is a workflow task to complete.
 
-**Workflow Assignees Have Implicit Asset Permissions:** Users with permission to
-execute a workflow task (e.g., Users with the Portal Content Reviewer Role) have
-full resource action permissions over the assets they can review. These
+**Workflow Assignees Have Implicit Asset Permissions:** Users with permission
+to execute a workflow task (e.g., Users with the Portal Content Reviewer Role)
+have full resource action permissions over the assets they can review. These
 permissions apply in the My Workflow Tasks widget in the User's personal page
 and anywhere else actions on the Asset can be performed.
 
@@ -52,7 +51,7 @@ workflow process (for example, it's rejected or approved).
 ## Assigning the Task
 
 Workflow Tasks can be completed only by certain users, based on the 
-[Assignment](/docs/7-1/tutorials/-/knowledge_base/t/workflow-task-nodes#assignments).
+[Assignment](/docs/7-2/reference/-/knowledge_base/r/workflow-task-nodes#assignments).
 
 All workflow tasks assigned directly to a user are listed in the My Workflow
 Task widget's *Assigned to Me* tab.
@@ -90,7 +89,7 @@ There's a fast way to send an asset along in the review process:
     (![Actions](../../images/icon-actions.png)) and select *Approve* or
     *Reject*.
 
-    Note that options names in this menu are identical to the the workflow 
+    Note that options names in this menu are identical to the workflow
     definition's
     [Transition](/docs/7-1/tutorials/-/knowledge_base/t/workflow-definition-nodes)
     names. Your menu might have different options than the *Approve* and

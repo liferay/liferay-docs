@@ -6,27 +6,27 @@ header-id: activating-workflow
 
 [TOC levels=1-4]
 
-Assets are integrated with the 
-[workflow framework](/docs/7-1/tutorials/-/knowledge_base/t/liferays-workflow-framework)
-if their content is meant to be sent through review processes. Since this is
-most often the case, there are many out of the box assets that integrate with
-workflow. In this article, you'll learn how to select a workflow for use with
-each of these workflow-enabled assets.
+Assets are integrated with the [workflow
+framework](/docs/7-2/frameworks/-/knowledge_base/f/the-workflow-framework) if
+their content is meant to be sent through review processes. Since this is most
+often the case, there are many out of the box assets that integrate with
+workflow. In this article, learn how to select a workflow for use with each of
+these workflow-enabled assets.
 
 ## Workflow Assets
 
-Activate a workflow for these assets in Control Panel &rarr; Configuration
-&rarr; Workflow, in the Schemes tab:
+Activate a workflow for these assets in Control Panel &rarr; Workflow
+&rarr; Process Builder, in the Configuration tab:
 
 - Blogs Entry
 - Calendar Event
 - Comment
+- Knowledge Base
 - Message Boards Message
 - Page Revision
 - User
 - Web Content Article
 - Wiki Page
-- Knowledge Base
 
 Activate workflow for these assets at the Site level in Site &rarr;
 Configuration &rarr; Workflow:
@@ -34,11 +34,11 @@ Configuration &rarr; Workflow:
 - Blogs Entry
 - Calendar Event
 - Comment
+- Knowledge Base
 - Message Boards Message
 - Page Revision
 - Web Content Article
 - Wiki Page
-- Knowledge Base
 
 What's the difference between the Site workflow configuration and the Control
 Panel Workflow configuration? As with most scoped configurations, the higher
@@ -49,6 +49,8 @@ User doesn't appear on the Site list because adding users is strictly a
 portal-wide administrator activity. Only assets that can be added and configured
 at the Site level (for example, those that are accessed from the Site menu) have
 workflow configuration controls at the Site level.
+
+## Activating Workflow in Applications
 
 Some assets that are workflow-enabled are activated in their respective
 application: 

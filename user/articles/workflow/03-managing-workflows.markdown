@@ -9,11 +9,13 @@ header-id: managing-workflows
 Like other resources, workflow definitions can be added, edited, and deleted.
 But that's just the beginning of workflow management.
 
-- Because workflow definitions can be complex works in progress, they can be versioned. 
+- Because workflow definitions can be complex works in progress, they can be
+    versioned. 
 
 - Unpublished drafts can be saved.
 
-- Because workflow definitions are XML files, they're portable. Thus, they can also be uploaded. 
+- Because workflow definitions are XML files, they're portable. Thus, they can
+    also be uploaded. 
 
 Start by learning basic workflow management.
 
@@ -21,27 +23,27 @@ Start by learning basic workflow management.
 
 To add a workflow definition,
 
-1.  Go to Control Panel &rarr; Configuration &rarr; Workflow.
+1.  Go to Control Panel &rarr; Workflow &rarr; Process Builder.
 
 2.  In the default view (Workflows), click the Add button
     (![Add](../../images/icon-add.png)).
 
 3.  From here you're either 
-    [writing an XML definition](/docs/7-1/tutorials/-/knowledge_base/t/crafting-xml-workflow-definitions), 
-    [designing a definition in Kaleo Designer (DXP only)](https://customer.liferay.com/documentation/7.1/admin/-/official_documentation/portal/kaleo-designer), 
+    [writing an XML definition](/docs/7-2/reference/-/knowledge_base/r/crafting-xml-workflow-definitions), 
+    [designing a definition in in the visual designer (DXP only)](https://customer.liferay.com/documentation/7.2/admin/-/official_documentation/portal/kaleo-designer), 
     or
     [uploading an existing definition](#uploading-workflow-definitions).
 
 To edit a definition, 
 
-1.  Go to Control Panel &rarr; Configuration &rarr; Workflow.
+1.  Go to Control Panel &rarr; Workflow &rarr; Process Builder.
 
 2.  Click the *Actions* button (![Actions](../../images/icon-actions.png)) 
     for the workflow, and click *Edit*.
 
 To delete a definition,
 
-1.  Go to Control Panel &rarr; Configuration &rarr; Workflow.
+1.  Go to Control Panel &rarr; Workflow &rarr; Process Builder.
 
 2.  Click the *Actions* button (![Actions](../../images/icon-actions.png)) 
     for the workflow, and click *Unpublish*.
@@ -51,51 +53,30 @@ To delete a definition,
 
     You can't unpublish a definition if it's activated for an asset. First
     dissociate the workflow definition from any assets that use it. See
-    [here](/docs/7-1/user/-/knowledge_base/u/activating-workflow) for more
+    [here](/docs/7-2/user/-/knowledge_base/u/activating-workflow) for more
     information.
 
 ## Uploading Workflow Definitions
 
 If you have a local XML definition file (perhaps you want to create a new
 workflow based on one of the
-[embedded workflows](/docs/7-1/user/-/knowledge_base/u/workflow#embedded-workflows)),
+[embedded workflows](/docs/7-2/user/-/knowledge_base/u/workflow#embedded-workflows)),
 upload it to @product@:
 
-1.  Navigate to Control Panel &rarr; Configuration &rarr; Workflow.
+1.  Navigate to Control Panel &rarr; Workflow &rarr; Process Builder.
 
 2.  Click the *Add* button (![Add](../../images/icon-add.png)).
 
-3.  Name the workflow; then click the link to *import a file*. 
+3.  Name the workflow. 
 
-4.  Find the XML file and upload it. Once uploaded, the definition's XML 
-    appears in the workflow editor.
-
-5.  If it's ready to publish, click *Publish*. Otherwise, *Save* it and it stays
-    Unpublished.
-
-Liferay DXP customers use the 
-[Kaleo Designer](https://customer.liferay.com/documentation/7.1/admin/-/official_documentation/portal/kaleo-designer)
-to create workflows by default. To upload existing XML files in Kaleo Designer,
-
-1.  Navigate to Control Panel &rarr; Configuration &rarr; Workflow.
-
-2.  Click the *Add* button (![Add](../../images/icon-add.png)).
-
-    The Kaleo Designer palette appears.
-
-3.  Click the *Source* tab.
-
-4.  Click the hyperlink *import a file* in the sentence
+4.  In the *Source* tab, click the hyperlink *import a file* in the sentence
 
     `Write your definition or import a file`
 
 5.  Find the XML file and upload it. Once uploaded, the definition's XML 
-    appears in the workflow editor. 
+    appears in the workflow editor.
 
-6.  To edit using the Kaleo Designer drag-and-drop interface, click the
-    *Diagram* tab.
-
-7.  If it's ready to publish, click *Publish*. Otherwise, *Save* it and it stays
+6.  If it's ready to publish, click *Publish*. Otherwise, *Save* it and it stays
     Unpublished.
 
 What's the difference between saving and publishing?
@@ -120,10 +101,11 @@ finish editing and publishing the workflow. Unfortunately, in all the excitement
 of your promotion, you forgot what you changed in the workflow. It's best to
 revert to the prior version and start editing it from scratch.
 
-1.  Open the workflow editor. Go to *Control Panel* &rarr; *Configuration*
-    &rarr; *Workflow*, and select the workflow from the list.
+1.  Open the workflow editor. Go to *Control Panel* &rarr; *Workflow* &rarr;
+    *Process Builder*, and select the workflow from the list (click its title to
+    open the editor).
 
-2.  Open the information panel. Click the *Information* button
+2.  Click the *Information* button
     (![Information](../../images/icon-information.png))
 
 3.  There are two information panel sections: Details and Revision
@@ -148,5 +130,5 @@ revert to the prior version and start editing it from scratch.
 ![Figure 1: View and restore prior versions of a workflow.](../../images/workflow-revisions.png)
 
 Alternatively, you can refer to the 
-[embedded definitions](/docs/7-1/user/-/knowledge_base/u/workflow#embedded-workflows)
+[embedded definitions](/docs/7-2/user/-/knowledge_base/u/workflow#embedded-workflows)
 to get workflow definition ideas. 
