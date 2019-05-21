@@ -26,10 +26,10 @@ There are three types of deprecated apps:
 3.  Deprecated apps that have been removed from @product@ and aren't available 
     for download. (Availability: *Removed*) 
 
-This article lists the apps deprecated in @product-ver@, along with their 
-availability. 
+| **Note:** For information on apps deprecated in @product@ 7.1, please see 
+| [Deprecated Apps in 7.1: What to Do](/docs/7-2/deployment/-/knowledge_base/d/deprecated-apps-in-7-1-what-to-do)
 
-| **Note:** For information on apps deprecated in previous versions, please see their TODO
+Here are the apps deprecated in @product-ver@. 
 
 ## Collaboration
 
@@ -50,9 +50,10 @@ availability.
 | App |  Availability |  Notes |
 | --- | ------------- | ------ |
 | AlloyUI | TBD | Replaced by [Metal.js](https://metaljs.com/). | 
-| Google Login | TBD | Replaced by OpenID Connect. |
-| OpenID | TBD | Replaced by OpenID Connect. |
-| Plugins SDK | Removed; 7.0 version on [GitHub](https://github.com/liferay/liferay-plugins) | Deprecated in 7.0. Replaced by [Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace).  |
+| Google Login | Marketplace | Replaced by [OpenID Connect]((/docs/7-2/deployment/-/knowledge_base/d/authenticating-with-openid-connect). |
+| JCRStore | Removed | Migrate to another [Document Repository Store options](/docs/7-2/deployment/-/knowledge_base/d/document-repository-configuration) using [Data Migration in Server Administration](/docs/7-2/user/-/knowledge_base/u/server-administration) |
+| OpenID | Marketplace | Replaced by [OpenID Connect]((/docs/7-2/deployment/-/knowledge_base/d/authenticating-with-openid-connect). |
+| Plugins SDK | Removed; 7.0 version on [GitHub](https://github.com/liferay/liferay-plugins) | Deprecated in 7.0. Replaced by [Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace).  |
 | Search Portlet | TBD | Will be removed in a future release. Replaced by the [Search widgets](/docs/7-1/user/-/knowledge_base/u/whats-new-with-search). |
 | Template Engines | TBD | Replaced by Freemarker. |
 | WYSIWYG | TBD [Nexus](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.wysiwyg.web/) &rarr; Will be removed. |  Final version released for 7.0. |
@@ -76,5 +77,5 @@ availability.
 
 | App |  Availability |  Notes |
 | --- | ------------------ | ----------- |
-| OAuth 1.0a | TBD | Replaced by OAuth 2.0, which is included in the bundle. |
-| OpenID | TBD | Low usage. Use OpenID Connect instead. |
+| OAuth 1.0a | Marketplace | Replaced by OAuth 2.0, which is included in the bundle. |
+| OpenID | Marketplace | [OpenID Connect]((/docs/7-2/deployment/-/knowledge_base/d/authenticating-with-openid-connect). |
