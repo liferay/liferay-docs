@@ -57,12 +57,11 @@ Provider to re-authenticate the user before verifying the user.
 **Metadata:** You can provide a URL to the Identity Provider metadata XML file
 or you can manually upload it. If you provide a URL, the XML file is
 automatically retrieved and periodically polled for updates. You can change the
-update interval in System Settings by modifying the
-`saml.metadata.refresh.interval` property which specifies a number of seconds.
-If fetching the metadata XML file by URL fails, you can't enable the Identity
-Provider connection. If the metadata is inaccessible via URL, you can upload the
-XML file manually. In this case, the metadata XML file is not updated
-automatically. 
+update interval in System Settings by modifying the Runtime Metadata Refresh
+Interval property which specifies a number of seconds. If fetching the metadata
+XML file by URL fails, you can't enable the Identity Provider connection. If the
+metadata is inaccessible via URL, you can upload the XML file manually. In this
+case, the metadata XML file is not updated automatically. 
 
 **Name Identifier Format:** Choose the Name Identifier Format used in the SAML
 Response. Set this according to what the Service Provider expects to receive.
@@ -92,19 +91,20 @@ service provider. There is no need to restart the server: the changes are
 applied immediately.
 
 Make the above configurations through the SAML Control Panel interface and not
-via properties. Some features of the Liferay SAML 2.0 Provider app are not
+via properties. Some features of the Liferay Connector to SAML 2.0 app are not
 available as properties.
 
 | **Limitation:** The Liferay SAML app can only be used with a single virtual
 | host. Technically, this means that in the SAML metadata for @product@, only one
 | binding can be added in this form:
 | 
-|     <md:EntityDescriptor>
-|     ...
-|     <md:SPSSODescriptor>
-|     ...
-|     <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://portal.domain.com/c/portal/saml/acs" index="1" isDefault="true" />
-|     ...
-|     </md:SPSSODescriptor>
-|     </md:EntityDescriptor>
+| ```xml
+| <md:EntityDescriptor>
+| ...
+| <md:SPSSODescriptor>
+| ...
+| <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://portal.domain.com/c/portal/saml/acs" index="1" isDefault="true" />
+| ...
+| </md:SPSSODescriptor>
+| </md:EntityDescriptor>
 
