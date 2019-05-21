@@ -28,12 +28,12 @@ assertions, abort the single sign-on.
 **Metadata:** Provide a URL to the Service Provider metadata XML file or
 manually upload the Service Provider metadata XML file. If you provide a URL,
 the XML file is retrieved and periodically polled for updates. The update
-interval can be configured in System Settings with the
-`saml.metadata.refresh.interval` property which specifies a number of seconds.
-If fetching the metadata XML file by URL fails, you can't enable the Service
-Provider connection. If the Identity Provider server cannot access the metadata
-via URL, you can upload the XML file manually. In this case, the metadata XML
-file is not updated automatically. 
+interval can be configured in System Settings with the Runtime Metadata Refresh
+Interval (`saml.metadata.refresh.interval` if using a `config` file) property
+which specifies a number of seconds. If fetching the metadata XML file by URL
+fails, you can't enable the Service Provider connection. If the Identity
+Provider server cannot access the metadata via URL, you can upload the XML file
+manually. In this case, the metadata XML file is not updated automatically. 
 
 **Name Identifier Format:** Choose the Name Identifier Format used in the SAML
 Response. This should be set according to what the Service Provider expects to
