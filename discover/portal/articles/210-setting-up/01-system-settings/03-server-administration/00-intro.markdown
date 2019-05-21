@@ -32,12 +32,16 @@ of these properties, see the
 
 **Data Migration:** Migrate documents from one repository to another. For 
 example, you can migrate your documents to a new repository on a different 
-disk or in a new format. Before running this operation, 
-[configure the repository hook](/discover/deployment/-/knowledge_base/7-1/document-repository-configuration)
-in a `portal-ext.properties` file. Then, in this tab, select the Document 
-Library hook that represents the desired destination and click *Execute*. 
-After the process completes, shut down @product@, make the new repository 
-the default in the `portal-ext.properties` file, and restart. 
+disk or in a [new format](/discover/deployment/-/knowledge_base/7-1/document-repository-configuration). Here are the steps:
+
+1.  Create a repository backup copy. 
+2.  Configure the new file store in *System Settings* &rarr; *Platform: File 
+    Storage*. 
+3.  In this tab (*Server Administration* &rarr; *Data Migration*), select the 
+    repository hook for the file store you configured and click *Execute*. 
+4.  After the process completes, [configure the new
+    repository](/discover/deployment/-/knowledge_base/7-1/document-repository-configuration)
+    as the default. 
 
 **Mail:** Instead of using a `portal-ext.properties` file to configure a 
 mail server, you can configure a mail server from this tab. If your 
@@ -63,4 +67,3 @@ a message to display. @product@ displays the message at the top of users' pages
 for the duration of time you specified. When the time expires, all pages
 display a message saying the portal has been shut down. The server must then be
 restarted to restore access. 
-
