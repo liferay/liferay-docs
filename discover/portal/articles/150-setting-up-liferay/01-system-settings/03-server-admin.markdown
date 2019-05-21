@@ -152,13 +152,16 @@ database. However, the database migration tool cannot be used in the current
 version of @product@ and will be removed in the next version of @product@.
 
 The second section, *Migrate documents from one repository to another*, helps
-you migrate your documents to a new repository on a different disk or in a new 
-format. Before running this operation,
-[configure the repository hook](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration)
-in a `portal-ext.properties` file. Then, in Server Administration, select the
-Document Library hook that represents the desired destination and click
-*Execute*. After the process completes, shut down @product@, make the new
-repository the default in the `portal-ext.properties` file, and restart.
+you migrate your documents to a new repository on a different disk or in a [new format](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration). Here are the steps:
+
+1.  Create a repository backup copy. 
+2.  Configure the new file store on that file store's page, listed under *System
+    Settings* &rarr; *Foundation*. 
+3.  In this tab (*Server Administration* &rarr; *Data Migration*), select the 
+    repository hook for the file store you configured and click *Execute*. 
+4.  After the process completes, [configure the new
+    repository](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration)
+    as the default. 
 
 ## File Uploads [](id=file-uploads)
 
