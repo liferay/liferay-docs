@@ -1,7 +1,6 @@
 # Upgrading 6.2 Layout Templates to 7.1 [](id=upgrading-6-2-layout-templates-to-7-1)
 
-Upgrading your @product@ 6.2 layout template to @product-ver@ requires just a 
-couple updates. Follow these steps:
+Upgrading your @product@ 6.2 layout template to @product-ver@ a few updates:
 
 1.  Open your layout template's `liferay-plugin-package.properties` file and 
     update the `liferay-versions` property to `7.1.0+`:
@@ -16,11 +15,15 @@ liferay-versions=7.1.0+
 
 3.  Save the changes.
 
-| **Note:** Velocity layout templates are supported, but deprecated as of 
-| @product-ver@. We recommend that you convert your Velocity layout templates to 
-| FreeMarker at your earliest convenience. See 
-| [Creating Layout Templates Manually](/develop/tutorials/-/knowledge_base/7-1/creating-layout-templates-manually#anatomy) 
-| for an example of the updated syntax.
++$$$
+
+**Note:** Velocity layout templates are supported, but deprecated as of 
+@product-ver@. We recommend that you convert your Velocity layout templates to 
+FreeMarker at your earliest convenience. See 
+[Creating Layout Templates Manually](/develop/tutorials/-/knowledge_base/7-1/creating-layout-templates-manually#anatomy) 
+for an example of the updated syntax.
+
+$$$
 
 ## Related Topics [](id=related-topics)
 
