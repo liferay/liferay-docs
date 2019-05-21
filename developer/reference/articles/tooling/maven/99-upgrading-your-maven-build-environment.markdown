@@ -167,4 +167,4 @@ access, you must update your company-shared or local repository with the latest
 article for instructions.
 
 With these updates, you can easily upgrade your Liferay Maven build so you can
-begin developing traditional plugin projects for @product-ver@.
+begin developing projects for @product-ver@.
