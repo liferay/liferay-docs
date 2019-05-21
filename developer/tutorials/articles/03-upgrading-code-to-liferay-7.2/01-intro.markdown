@@ -112,6 +112,10 @@ Here are the code upgrade steps:
 
         After fixing your upgrade problems, remove the problem markers. {.summary}
 
+    5.  [Resolving a Project's Dependencies](/docs/tutorials/7-2/-/knowledge_base/t/resolving-a-projects-dependencies)
+
+    6.  [Resolving Breaking Changes](/docs/tutorials/7-2/-/knowledge_base/t/resolving-breaking-changes)
+
 5.  [Upgrade Service Builder Services](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-service-builder-services) {.title}
 
     Upgrade your Liferay Service Builder services. {.summary}

@@ -1,9 +1,5 @@
 # Fixing Upgrade Problems
 
-<div class="learn-path-step">
-    <p>Fixing Upgrade Problems<br>Step 1 of 1</p>
-</div>
-
 Now that your development environment build configuration is settled, you can
 start upgrading your project(s). The two most common upgrade problems are
 
@@ -13,7 +9,7 @@ start upgrading your project(s). The two most common upgrade problems are
 Visit these upgrade problem tutorials for tips on how to fix them.
 
 This tutorial is heavily focused on the Code Upgrade Planner. If you're
-upgrading your code manually, follow the articles listed above to fix your
+upgrading your code manually, continue to the listed tutorials above to fix your
 code upgrade problems.
 
 You'll begin auto-correcting upgrade problems first.
@@ -78,5 +74,7 @@ accompanying marker information are out of date and must be removed before
 continuing. Initiate this step to remove all the problem markers.
 
 Great! You've fixed all the upgrade problems that could be automatically
-detected by the Code Upgrade Tool. Next, you'll begin upgrading your app's
-Service Builder services.
+detected by the Code Upgrade Tool. Next, you'll take a deeper look at resolving
+project dependency errors.
+
+<a class="go-link btn btn-primary" href="/docs/7-2/tutorials/-/knowledge_base/t/resolving-a-projects-dependencies">Let's Go!<span class="icon-circle-arrow-right"></span></a>
