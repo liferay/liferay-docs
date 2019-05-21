@@ -77,5 +77,6 @@ Here are the apps deprecated in @product-ver@.
 
 | App |  Availability |  Notes |
 | --- | ------------------ | ----------- |
+| NTLM | Source code at `modules/apps/portal-security-sso-ntlm`. Marketplace release planned. | Replaced by [Kerberos](/docs/7-2/deploy/-/knowledge_base/d/authenticating-with-kerberos). |
 | OAuth 1.0a | Marketplace | Replaced by OAuth 2.0, which is included in the bundle. |
 | OpenID | Marketplace | [OpenID Connect]((/docs/7-2/deploy/-/knowledge_base/d/authenticating-with-openid-connect). |
