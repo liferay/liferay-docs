@@ -71,9 +71,8 @@ archetype.
 2.  Select the `com.liferay.project.templates.mvc.portlet` archetype by
     choosing its corresponding number (e.g., `8`).
 
-    In some cases, an archetype provides multiple versions of itself for you to
-    select. Make sure to select the archetype version that corresponds with the
-    @product@ instance you're using (e.g., `1.0.0`, `1.0.1`, etc.).
+    In most cases, you should choose the latest archetype version. The archetype
+    versions provided are compatible with all 7.x versions of @product@.
 
 3.  Depending on the Maven archetype you selected, you're given a set of
     archetype options to fill out for your Maven project. For the MVC portlet
