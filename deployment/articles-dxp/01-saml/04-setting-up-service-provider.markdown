@@ -79,7 +79,7 @@ SAML Identify Provider *or* as a SAML Service Provider but not as both. If your
 	- Attribute Mapping: See settings. 
 	- Keep Alive URL: See settings. 
 
-    **Important**: The Liferay SAML 3.0 Provider app supports using *either*
+    **Important**: The Liferay Connector to SAML 2.0 app supports using *either*
     a URL to a SAML IdP metadata file *or* an actual (uploaded) SAML metadata
     XML file. The value entered in the *Metadata URL* field is persisted to the
     database only when there a metadata URL and there is no specified metadata
