@@ -1,4 +1,10 @@
+---
+header-id: upgrading-core-language-key-hooks
+---
+
 # Upgrading Core Language Key Hooks
+
+[TOC levels=1-4]
 
 <div class="learn-path-step">
     <p>Upgrading Customization Plugins<br>Step 5 of 11</p>

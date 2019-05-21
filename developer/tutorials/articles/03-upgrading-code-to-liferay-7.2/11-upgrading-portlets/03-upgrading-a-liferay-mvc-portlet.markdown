@@ -1,4 +1,10 @@
+---
+header-id: upgrading-a-liferay-mvc-portlet
+---
+
 # Upgrading a Liferay MVC Portlet
+
+[TOC levels=1-4]
 
 <div class="learn-path-step">
     <p>Upgrading Portlets<br>Step 2 of 6</p>

@@ -1,4 +1,10 @@
+---
+header-id: upgrading-your-development-environment
+---
+
 # Upgrading Your Development Environment
+
+[TOC levels=1-4]
 
 <div class="learn-path-step">
     <p>Upgrading Your Development Environment<br>Step 1 of 1</p>

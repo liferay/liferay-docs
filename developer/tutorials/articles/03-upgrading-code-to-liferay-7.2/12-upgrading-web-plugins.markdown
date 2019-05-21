@@ -1,4 +1,10 @@
+---
+header-id: upgrading-web-plugins
+---
+
 # Upgrading Web Plugins
+
+[TOC levels=1-4]
 
 <div class="learn-path-step">
     <p>Upgrading Web Plugins<br>Step 1 of 1</p>

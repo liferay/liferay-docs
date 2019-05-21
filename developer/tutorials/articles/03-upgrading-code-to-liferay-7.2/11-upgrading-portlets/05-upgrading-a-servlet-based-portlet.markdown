@@ -1,4 +1,10 @@
+---
+header-id: upgrading-a-servlet-based-portlet
+---
+
 # Upgrading a Servlet-based Portlet
+
+[TOC levels=1-4]
 
 <div class="learn-path-step">
     <p>Upgrading Portlets<br>Step 4 of 6</p>

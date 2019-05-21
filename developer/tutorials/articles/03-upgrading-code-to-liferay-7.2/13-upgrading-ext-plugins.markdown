@@ -1,4 +1,10 @@
+---
+header-id: upgrading-ext-plugins
+---
+
 # Upgrading Ext Plugins
+
+[TOC levels=1-4]
 
 <div class="learn-path-step">
     <p>Upgrading Ext Plugins<br>Step 1 of 1</p>

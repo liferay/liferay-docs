@@ -1,4 +1,10 @@
+---
+header-id: migrating-plugins-sdk-projects-to-liferay-workspace
+---
+
 # Migrating Plugins SDK Projects to Liferay Workspace
+
+[TOC levels=1-4]
 
 <div class="learn-path-step">
     <p>Migrating Plugins SDK Projects to Liferay Workspace<br>Step 1 of 1</p>

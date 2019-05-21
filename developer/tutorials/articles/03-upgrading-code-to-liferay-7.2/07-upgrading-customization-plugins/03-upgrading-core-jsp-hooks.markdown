@@ -1,4 +1,10 @@
+---
+header-id: upgrading-core-jsp-hooks
+---
+
 # Upgrading Core JSP Hooks
+
+[TOC levels=1-4]
 
 <div class="learn-path-step">
     <p>Upgrading Customization Plugins<br>Step 2 of 11</p>

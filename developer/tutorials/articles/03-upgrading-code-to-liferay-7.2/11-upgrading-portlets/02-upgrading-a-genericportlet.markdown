@@ -1,4 +1,10 @@
+---
+header-id: upgrading-a-genericportlet
+---
+
 # Upgrading a GenericPortlet
+
+[TOC levels=1-4]
 
 <div class="learn-path-step">
     <p>Upgrading Portlets<br>Step 1 of 6</p>

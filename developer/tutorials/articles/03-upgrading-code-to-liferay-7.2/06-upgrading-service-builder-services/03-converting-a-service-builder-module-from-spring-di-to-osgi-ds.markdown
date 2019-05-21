@@ -1,4 +1,10 @@
+---
+header-id: converting-a-service-builder-module-from-spring-di-to-osgi-ds
+---
+
 # Converting a Service Builder Module from Spring DI to OSGi DS
+
+[TOC levels=1-4]
 
 <div class="learn-path-step">
     <p>Upgrading Service Builder Services<br>Step 2 of 3</p>

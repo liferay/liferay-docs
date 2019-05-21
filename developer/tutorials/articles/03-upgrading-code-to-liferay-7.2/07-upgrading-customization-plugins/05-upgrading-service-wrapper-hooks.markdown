@@ -1,4 +1,10 @@
+---
+header-id: upgrading-service-wrapper-hooks
+---
+
 # Upgrading Service Wrapper Hooks
+
+[TOC levels=1-4]
 
 <div class="learn-path-step">
     <p>Upgrading Customization Plugins<br>Step 4 of 11</p>

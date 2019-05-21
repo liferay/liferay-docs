@@ -1,4 +1,10 @@
+---
+header-id: upgrading-service-builder-services
+---
+
 # Upgrading Service Builder Services
+
+[TOC levels=1-4]
 
 To properly upgrade app's leveraging service builder, you must complete the
 following steps:

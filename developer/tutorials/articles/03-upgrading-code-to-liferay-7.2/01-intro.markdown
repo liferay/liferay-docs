@@ -1,4 +1,10 @@
+---
+header-id: upgrading-code-to-product-ver
+---
+
 # Upgrading Code to @product-ver@
+
+[TOC levels=1-4]
 
 Upgrading to @product-ver@ involves migrating your installation and code (your
 custom apps) to the new version. You'll learn how to upgrade your code in this

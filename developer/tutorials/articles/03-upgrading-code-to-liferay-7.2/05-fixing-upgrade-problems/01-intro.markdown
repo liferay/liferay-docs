@@ -1,4 +1,10 @@
+---
+header-id: fixing-upgrade-problems
+---
+
 # Fixing Upgrade Problems
+
+[TOC levels=1-4]
 
 Now that your development environment build configuration is settled, you can
 start upgrading your project(s). The two most common upgrade problems are

@@ -1,4 +1,10 @@
+---
+header-id: upgrading-build-dependencies
+---
+
 # Upgrading Build Dependencies
+
+[TOC levels=1-4]
 
 <div class="learn-path-step">
     <p>Upgrading Build Dependencies<br>Step 1 of 1</p>

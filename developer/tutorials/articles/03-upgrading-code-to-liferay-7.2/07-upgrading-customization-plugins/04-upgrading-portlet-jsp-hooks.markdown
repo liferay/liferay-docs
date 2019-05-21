@@ -1,4 +1,10 @@
+---
+header-id: upgrading-portlet-jsp-hooks
+---
+
 # Upgrading Portlet JSP Hooks
+
+[TOC levels=1-4]
 
 <div class="learn-path-step">
     <p>Upgrading Customization Plugins<br>Step 3 of 11</p>

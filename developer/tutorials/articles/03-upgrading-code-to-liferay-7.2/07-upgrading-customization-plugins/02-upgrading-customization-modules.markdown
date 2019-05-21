@@ -1,4 +1,10 @@
+---
+header-id: upgrading-customization-modules
+---
+
 # Upgrading Customization Modules
+
+[TOC levels=1-4]
 
 <div class="learn-path-step">
     <p>Upgrading Customization Plugins<br>Step 1 of 11</p>

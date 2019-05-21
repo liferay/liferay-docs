@@ -1,4 +1,10 @@
+---
+header-id: upgrading-jndi-data-source-usage
+---
+
 # Upgrading JNDI Data Source Usage
+
+[TOC levels=1-4]
 
 <div class="learn-path-step">
     <p>Upgrading Frameworks and Features<br>Step 1 of 4</p>

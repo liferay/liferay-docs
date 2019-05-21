@@ -1,4 +1,10 @@
+---
+header-id: upgrading-service-builder-service-invocation
+---
+
 # Upgrading Service Builder Service Invocation
+
+[TOC levels=1-4]
 
 <div class="learn-path-step">
     <p>Upgrading Frameworks and Features<br>Step 2 of 4</p>

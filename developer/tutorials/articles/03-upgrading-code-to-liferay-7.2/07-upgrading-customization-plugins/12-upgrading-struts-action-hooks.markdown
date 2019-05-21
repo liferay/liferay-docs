@@ -1,4 +1,10 @@
+---
+header-id: upgrading-struts-action-hooks
+---
+
 # Upgrading Struts Action Hooks
+
+[TOC levels=1-4]
 
 <div class="learn-path-step">
     <p>Upgrading Customization Plugins<br>Step 11 of 11</p>

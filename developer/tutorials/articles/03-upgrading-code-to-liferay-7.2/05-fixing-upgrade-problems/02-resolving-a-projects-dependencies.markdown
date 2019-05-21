@@ -1,4 +1,10 @@
+---
+header-id: resolving-a-projects-dependencies
+---
+
 # Resolving a Project's Dependencies
+
+[TOC levels=1-4]
 
 <div class="learn-path-step">
     <p>Fixing Upgrade Problems<br>Step 1 of 2</p>

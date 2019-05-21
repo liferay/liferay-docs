@@ -1,4 +1,10 @@
+---
+header-id: upgrading-a-liferay-jsf-portlet
+---
+
 # Upgrading a Liferay JSF Portlet
+
+[TOC levels=1-4]
 
 <div class="learn-path-step">
     <p>Upgrading Portlets<br>Step 3 of 6</p>

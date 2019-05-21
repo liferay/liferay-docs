@@ -1,4 +1,10 @@
+---
+header-id: removing-legacy-files
+---
+
 # Removing Legacy Files
+
+[TOC levels=1-4]
 
 <div class="learn-path-step">
     <p>Upgrading Service Builder Services<br>Step 1 of 3</p>

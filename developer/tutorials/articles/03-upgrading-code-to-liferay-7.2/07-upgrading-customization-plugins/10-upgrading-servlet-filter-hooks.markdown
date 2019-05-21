@@ -1,4 +1,10 @@
+---
+header-id: upgrading-servlet-filter-hooks
+---
+
 # Upgrading Servlet Filter Hooks
+
+[TOC levels=1-4]
 
 <div class="learn-path-step">
     <p>Upgrading Customization Plugins<br>Step 9 of 11</p>

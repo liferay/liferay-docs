@@ -1,4 +1,10 @@
+---
+header-id: upgrading-portal-property-hooks
+---
+
 # Upgrading Portal Property Hooks
+
+[TOC levels=1-4]
 
 <div class="learn-path-step">
     <p>Upgrading Customization Plugins<br>Step 10 of 11</p>

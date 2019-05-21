@@ -1,4 +1,10 @@
+---
+header-id: upgrading-model-listener-hooks
+---
+
 # Upgrading Model Listener Hooks
+
+[TOC levels=1-4]
 
 <div class="learn-path-step">
     <p>Upgrading Customization Plugins<br>Step 7 of 11</p>

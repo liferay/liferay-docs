@@ -1,4 +1,10 @@
+---
+header-id: upgrading-a-struts-1-portlet
+---
+
 # Upgrading a Struts 1 Portlet
+
+[TOC levels=1-4]
 
 <div class="learn-path-step">
     <p>Upgrading Portlets<br>Step 6 of 6</p>

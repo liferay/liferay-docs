@@ -1,4 +1,10 @@
+---
+header-id: upgrading-portlet-language-key-hooks
+---
+
 # Upgrading Portlet Language Key Hooks
+
+[TOC levels=1-4]
 
 <div class="learn-path-step">
     <p>Upgrading Customization Plugins<br>Step 6 of 11</p>

@@ -1,4 +1,10 @@
+---
+header-id: upgrading-portlets
+---
+
 # Upgrading Portlets
+
+[TOC levels=1-4]
 
 All portlet types developed for Liferay Portal 6.x, 7.0, and 7.1 can be upgraded
 and deployed to @product-ver@.
