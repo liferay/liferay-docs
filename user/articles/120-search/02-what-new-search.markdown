@@ -36,27 +36,14 @@ Past versions of Search Insights showed you the full query string sent to the
 search engine, but now it also displays the response from the search engine, and
 an explanation of the score for each search hit.
 
-### Widget Configuration: Federated Search Key
-
-A new and continuously improving feature is _Federated Search_, the ability to
-use Liferay Search to search data sources other than the @product@ index. To
-this end, most of the search widgets now contain a new widget configuration
-option, _Federated Search Key_. This is the key (usually equal to the index
-name) where you would like the widget's search functions to apply.
-
 ## New Search Admin Functionality
 
 Control Panel &rarr; Configuration &rarr; Search
 
-### Synonyms
+### DXP Only: Synonyms
 
 Add a list of synonyms. At search time, the list is parsed to match results for
 synonymous search keywords.
-
-### Pinned Results
-
-Pin search results to ensure that, when matched during a search request, they're
-always placed at the top of the results list.
 
 ### Search Engine Info
 
@@ -65,8 +52,8 @@ well as the vendor and operation mode.
 
 ### Field Mappings
 
-Field Mappings for all indexes in the search engine. IS THIS IN CE TOO? I'M
-LOOKING AT MASTER-PRIVATE
+The Field Mappings tab shows the field mappings for all indexes in the search
+engine. 
 
 ### Indexing Progress
 
@@ -83,12 +70,22 @@ gives you some special ability to configure how search responds to matches on
 the Title field of a document.
 
 **Exact Match boost:** Give an additional boost when searched keywords exactly
-match the Title field of a document.
+match the `title` field of a document.
 
-**Maximum Expansions:** Limit the number of unique titles to return when the
-searched keywords match a title as a phrase prefix. WHAT DOES THIS MEAN?
+**Maximum Expansions:** Limit the number of documents to return when matching
+searched keywords to the `title` field as a phrase prefix. See Elasticsearch's
+[Match Phrase Query
+documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/query-dsl-match-query-phrase.html)
+for more information.
 
 ## New Infrastructure
+
+### Elasticsearch 6.5
+
+Elasticsearch 6.5 is now the supported search engine, and it's included as the
+embedded version to use for testing out-of-the-box search behavior.
+
+### Application-Specific Indexes
 
 You'll notice more search indexes in @product-ver@. That's because you can now
 configure application-specific indexes. At the time of this writing, the
@@ -101,11 +98,14 @@ frequently to discover new search
 infrastructure changes that expose more functionality for developers to use in
 your code.
 
-In addition to application-specific indexes, other enhancements to the search
-infrastructure include:
+### API Enhancements
+
+Enhancements to the [search
+framework](/docs/7-2/frameworks/-/knowledge_base/f/liferays-search-framework#liferays-search-framework)
+APIs include:
 
 - Low level indexing and queries
-- Operations directly on documents (no need for the Indexer framework)
+- Operations directly on indexed documents (no need for the Indexer framework)
 
 ## Multi-Language Search
 
@@ -114,7 +114,4 @@ improvements to Documents and Media and Web Content. More improvements are
 necessary in this area and will be prioritized in future releases. See the
 [Multi-Language Search article for more
 information](/docs/7-2/user/-/knowledge_base/u/searching-for-localized-content). 
-
-<!-- At time of writing 2 days before code freeze, not yet in master-private-->
-## Search
 
