@@ -50,7 +50,7 @@ ecosystem. The web implementation of Lexicon (CSS, JS, and HTML) is called
 [Clay](https://clayui.com/docs/get-started/introduction.html). 
 It is automatically available to application developers through a set of CSS 
 classes or our 
-[tag library](/docs/7-2/frameworks/-/knowledge_base/f/using-the-clay-taglib-in-your-portlets). 
+[tag library](/docs/7-2/reference/-/knowledge_base/r/using-the-clay-taglib-in-your-portlets). 
 
 ## Templates
 

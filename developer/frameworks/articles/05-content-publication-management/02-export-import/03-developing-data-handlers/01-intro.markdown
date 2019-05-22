@@ -48,13 +48,13 @@ or have the staging framework track.
 
 Before implementing data handlers, make sure your application is ready for the
 Export/Import and Staging frameworks by creating
-[staged models](/docs/7-2/frameworks/-/knowledge_base/f/staged-models).
+[staged models](/docs/7-2/frameworks/-/knowledge_base/f/developing-staged-models).
 
 ## Understanding the `PortletDataHandler` Interface
 
 A Portlet Data Handler imports/exports portlet specific data to a LAR file.
 These classes query and coordinate between
-[staged model data handlers](/docs/7-2/frameworks/-/knowledge_base/f/developing-staged-model-data-handlers).
+[staged model data handlers](/docs/7-2/frameworks/-/knowledge_base/f/creating-staged-model-data-handlers).
 
 To create a portlet data handler for your staged model, you must implement the
 [`PortletDataHandler`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/exportimport/kernel/lar/PortletDataHandler.html)
@@ -134,7 +134,7 @@ You must retrieve and manage the schema version. This is done with the
 `getSchemaVersion` and `validateSchemaVersion` methods. The schema version is
 used to perform component related validation before importing data. It's added
 to the
-[LAR file](/docs/7-2/reference/-/knowledge_base/r/liferay-archive-file) for
+[LAR file](/docs/7-2/reference/-/knowledge_base/r/liferay-archive-lar-file) for
 each application being processed. During import, the environment's schema
 version is compared to the LAR file's schema version. Validating the schema
 version avoids broken data when importing. See the

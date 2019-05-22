@@ -10,7 +10,7 @@ There are times when using
 [Service Builder to generate your staged models](/docs/7-2/frameworks/-/knowledge_base/f/generating-staged-models-using-service-builder)
 is not practical. In these cases, you should create your staged models manually.
 Make sure to read the
-[Adapting Your Business Logic to Build Staged Models](/docs/7-2/frameworks/-/knowledge_base/f/understanding-staged-models#adapting-your-business-logic-to-build-staged-models)
+[Adapting Your Business Logic to Build Staged Models](/docs/7-2/frameworks/-/knowledge_base/f/developing-staged-models#adapting-your-business-logic-to-build-staged-models)
 section to determine if creating staged models manually is beneficial for your
 use case.
 
@@ -25,7 +25,7 @@ framework, which lets you adapt your model classes to staged models.
 Follow the steps below to leverage the Model Adapter Builder in your app.
 
 1.  Create a new interface that extends one of the
-    [staged model interfaces](/docs/7-2/reference/-/knowledge_base/r/staged-model-interfaces)
+    [staged model interfaces](/docs/7-2/frameworks/-/knowledge_base/f/developing-staged-models#staged-model-interfaces)
     and your model specific interface. For example,
 
     ```java

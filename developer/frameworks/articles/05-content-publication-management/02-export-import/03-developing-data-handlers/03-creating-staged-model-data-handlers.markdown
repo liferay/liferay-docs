@@ -63,7 +63,7 @@ you've already created
     [`StagedModelRepository`](@app-ref@/web-experience/latest/javadocs/com/liferay/exportimport/staged/model/repository/StagedModelRepository.html)
     framework. This is a new framework, but is a viable option when setting up
     your staged model data handlers. For more information on this, see the
-    [Providing Entity-Specific Local Services for Staging](/docs/7-2/frameworks/-/knowledge_base/f/providing-entity-specific-local-services-for-staging)
+    [Providing Entity-Specific Local Services for Staging](/docs/7-2/frameworks/-/knowledge_base/f/providing-entity-specific-local-services-for-export-import)
     tutorial section. Since local services are more widely used in custom apps,
     this tutorial covers those instead.
 
