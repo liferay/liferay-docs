@@ -11,7 +11,7 @@ implements
 [`RatingsDataTransformer`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/ratings/kernel/transformer/RatingsDataTransformer.html). 
 The steps here show you how. For a detailed explanation of these steps and 
 rating value transformation, see 
-[Rating Value Transformation](/developer/frameworks/-/knowledge_base/7-2/social-api#rating-value-transformation). 
+[Rating Value Transformation](/docs/7-2/frameworks/-/knowledge_base/f/social-api#rating-value-transformation). 
 
 1.  Create an OSGi component class that implements `RatingsDataTransformer`: 
 
@@ -98,8 +98,8 @@ Here's the complete class for this example:
 
 ## Related Topics
 
-[Rating Value Transformation](/developer/frameworks/-/knowledge_base/7-2/social-api#rating-value-transformation)
+[Rating Value Transformation](/docs/7-2/frameworks/-/knowledge_base/f/social-api#rating-value-transformation)
 
-[Implementing Rating Type Selection](/developer/frameworks/-/knowledge_base/7-2/implementing-rating-type-selection)
+[Implementing Rating Type Selection](/docs/7-2/frameworks/-/knowledge_base/f/implementing-rating-type-selection)
 
-[Rating Assets](/developer/frameworks/-/knowledge_base/7-2/rating-assets)
+[Rating Assets](/docs/7-2/frameworks/-/knowledge_base/f/rating-assets)

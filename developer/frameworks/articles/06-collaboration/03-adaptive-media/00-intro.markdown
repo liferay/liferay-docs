@@ -7,7 +7,7 @@ header-id: adaptive-media
 [TOC levels=1-4]
 
 The 
-[Adaptive Media](/discover/portal/-/knowledge_base/7-2/adapting-your-media-across-multiple-devices) 
+[Adaptive Media](/docs/7-2/user/-/knowledge_base/u/adapting-your-media-across-multiple-devices) 
 app tailors the size and quality of images to the device displaying them. Here, 
 you'll learn about these things:
 
@@ -28,7 +28,7 @@ needed, such as `class`, `style`, `data-sample`, and so on. Any attributes you
 add are then added to the adapted images in the markup the taglib renders. 
 
 For step-by-step instructions on using this taglib, see 
-[Displaying Adapted Images in Your App](/developer/frameworks/-/knowledge_base/7-2/displaying-adapted-images-in-your-app). 
+[Displaying Adapted Images in Your App](/docs/7-2/frameworks/-/knowledge_base/f/displaying-adapted-images-in-your-app). 
 
 ## Adaptive Media's Finder API
 
@@ -88,7 +88,7 @@ For more information on creating `AMQuery` instances, see the
 [Javadoc](@app-ref@/adaptive-media/latest/javadocs/com/liferay/adaptive/media/image/finder/AMImageQueryBuilder.html). 
 
 For step-by-step instructions on calling Adaptive Media's API, see 
-[Finding Adapted Images](/developer/frameworks/-/knowledge_base/7-2/finding-adapted-images). 
+[Finding Adapted Images](/docs/7-2/frameworks/-/knowledge_base/f/finding-adapted-images). 
 
 ### Adaptive Media API Constants
 
@@ -121,7 +121,7 @@ method.
 ## Image Scaling in Adaptive Media
 
 As described in 
-[Adaptive Media's user guide](/discover/portal/-/knowledge_base/7-2/adapting-your-media-across-multiple-devices), 
+[Adaptive Media's user guide](/docs/7-2/user/-/knowledge_base/u/adapting-your-media-across-multiple-devices), 
 Adaptive Media scales images to match the image resolutions defined by the 
 @product@ administrator. The default scaling is usually suitable, but Adaptive 
 Media contains an extension point that lets you replace the way it scales 
@@ -170,4 +170,4 @@ has a higher `service.ranking`, it's more likely to be chosen than if it's
 registered for the special MIME type `*` or has a lower `service.ranking`. 
 
 For step-by-step instructions on creating your own image scaler, see 
-[Creating an Image Scaler](/developer/frameworks/-/knowledge_base/7-2/creating-an-image-scaler). 
+[Creating an Image Scaler](/docs/7-2/frameworks/-/knowledge_base/f/creating-an-image-scaler). 

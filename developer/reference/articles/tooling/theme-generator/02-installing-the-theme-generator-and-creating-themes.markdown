@@ -15,8 +15,10 @@ Your first step in generating a theme is installing
 [NodeJS](http://nodejs.org/) 
 (along with Node Package Manager(npm)) 
 if it's not already installed. We recommend installing the Long Term Support 
-(LTS) version. Once NodeJS is installed, you can follow these steps to install 
-the Liferay Theme Generator and generate a theme:
+(LTS) version. Once NodeJS is installed and you've 
+[set up your npm environment](/docs/7-2/reference/-/knowledge_base/r/setting-up-your-npm-environment), 
+you can follow these steps to install the Liferay Theme Generator and generate a 
+theme:
 
 1.  Use npm to install the 
     [Yeoman](http://yeoman.io/) 

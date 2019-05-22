@@ -37,7 +37,7 @@ folder:
     [Theme Builder Gradle Plugin](/docs/reference/7-2/-/knowledge_base/reference/theme-builder-gradle-plugin)
     is applied and used to build your theme. It works similarly in a Maven
     workspace. See the 
-    [Building Themes in a Maven Project](/develop/tutorials/-/knowledge_base/7-1/building-themes-in-a-maven-project)
+    [Building Themes in a Maven Project](/docs/7-1/frameworks/-/knowledge_base/frameworks/building-themes-in-a-maven-project)
     article for more information.
 
 Awesome! You know how WAR-style themes are built in workspace and where they

@@ -8,16 +8,16 @@ header-id: preparing-for-install
 
 @product@ doesn't require much to deploy. You need a Java Development Kit (JDK)
 and a database. Several configuration topics (e.g.,
-[search engine integration]((/deployment/-/knowledge_base/7-2/installing-a-search-engine),
-[document repository configuration](/deployment/-/knowledge_base/7-2/document-repository-configuration),
-[security management](/deployment/-/knowledge_base/7-2/securing-product),
-[clustering](/deployment/-/knowledge_base/7-2/product-clustering),
+[search engine integration]((/docs/7-2/deploy/-/knowledge_base/d/installing-a-search-engine),
+[document repository configuration](/docs/7-2/deploy/-/knowledge_base/d/document-repository-configuration),
+[security management](/docs/7-2/deploy/-/knowledge_base/d/securing-product),
+[clustering](/docs/7-2/deploy/-/knowledge_base/d/product-clustering),
 and more) can be addressed *after* deploying @product@. 
 
 | **Note:** If you are installing @product@ to multiple machines (e.g., in a 
-| [cluster](/deployment/-/knowledge_base/7-2/product-clustering))
+| [cluster](/docs/7-2/deploy/-/knowledge_base/d/product-clustering))
 | or prefer centralizing configuration in a file, using portal properties in a
-| [`[LIFERAY_HOME]/portal-ext.properties` file](/deployment/reference/-/knowledge_base/7-2/portal-properties)
+| [`[LIFERAY_HOME]/portal-ext.properties` file](/docs/7-2/deploy/-/knowledge_base/d/portal-properties)
 | is the recommended way to configure. The install preparation topics here and
 | the configuration topics throughout this guide demonstrate using applicable
 | portal properties. 
@@ -25,7 +25,7 @@ and more) can be addressed *after* deploying @product@.
 | **Note:** `LIFERAY_HOME` is the location from which @product@ launches 
 | applications, applies configurations, loads JAR files, and generates logs.
 | Liferay Home is customizable and can differ between application servers. The
-| [Liferay Home reference](/deployment/-/knowledge_base/7-2/liferay-home)
+| [Liferay Home reference](/docs/7-2/deploy/-/knowledge_base/d/liferay-home)
 | describes its folder structure. 
 
 Start preparing for @product@ install by installing a supported Java
@@ -70,7 +70,7 @@ The recommended way to set up your @product@ database is also the simplest.
     supported character sets.
 
     | **Note:** If you plan to migrate from one database vendor to another,
-    | [configure the database to use the default query result order you expect for entities @product@ lists](/developer/frameworks/-/knowledge_base/7-2/sort-order-changed-with-a-different-database). 
+    | [configure the database to use the default query result order you expect for entities @product@ lists](/docs/7-2/frameworks/-/knowledge_base/f/sort-order-changed-with-a-different-database). 
 
     | **Note:** If you use Sybase, configure the database to allow nulls by 
     | default. 
@@ -103,25 +103,25 @@ source (recommended) or using a data source you create on your app server.
 ### Using the Built-in Data Source
 
 You can configure the built-in data source from the
-[Basic Configuration page](/deployment/-/knowledge_base/7-2/installing-product#using-the-setup-wizard)
+[Basic Configuration page](/docs/7-2/deploy/-/knowledge_base/d/installing-product#using-the-setup-wizard)
 (available when @product@ starts up the first time) or by specifying it using 
 portal properties. 
 
 Here's how set it using portal properties:
 
 1.  Create a 
-    [`portal-ext.properties` file](/deployment/-/knowledge_base/7-2/portal-properties)
+    [`portal-ext.properties` file](/docs/7-2/deploy/-/knowledge_base/d/portal-properties)
     if you haven't created one already. 
 
 2.  Copy a set of `jdbc.*` properties from one of the
-    [JDBC templates](/deployment/-/knowledge_base/7-2/jdbc-templates)
+    [JDBC templates](/docs/7-2/deploy/-/knowledge_base/d/jdbc-templates)
     into your `portal-ext.properties` file.
 
 3.  Modify the `jdbc.*` property values to specify your database and database 
     user credentials. 
 
 4.  Put the `portal-ext.properties` file into your
-    [LIFERAY_HOME](/deployment/-/knowledge_base/7-2/liferay-home)
+    [LIFERAY_HOME](/docs/7-2/deploy/-/knowledge_base/d/liferay-home)
     once you've established it based on your installation. 
 
 @product@ connects to the data source on startup. 
@@ -138,7 +138,7 @@ Here's how to use your application server's data source:
     and your application server's documentation.
 
 2.  Create a
-    [`portal-ext.properties` file](/deployment/-/knowledge_base/7-2/portal-properties),
+    [`portal-ext.properties` file](/docs/7-2/deploy/-/knowledge_base/d/portal-properties),
     if you haven't created one already. 
 
 3.  Add the `jdbc.default.jndi.name` property set to the data source's JNDI 
@@ -149,7 +149,7 @@ Here's how to use your application server's data source:
     ```
 
 4.  Put the `portal-ext.properties` file into your
-    [LIFERAY_HOME](/deployment/reference/-/knowledge_base/7-2/liferay-home),
+    [LIFERAY_HOME](/docs/7-2/deploy/-/knowledge_base/d/liferay-home),
     once you've established your LIFERAY_HOME based on your installation. 
 
 @product@ connects to your data source on startup.
@@ -207,7 +207,7 @@ database before you attempt to install the plugins.
 
 @product@ has many more configurable features; but they
 can wait until *after* deployment. The
-[Configuring @product@](/deployment/deployment/-/knowledge_base/7-2/configuring-product)
+[Configuring @product@](/deployment/docs/7-2/deploy/-/knowledge_base/d/configuring-product)
 section explains them. 
 
 Now it's time to install @product@. 

@@ -9,7 +9,7 @@ header-id: creating-custom-criterion-and-return-types
 If an existing criterion or return type doesn't fit your use case, you can
 create them. The steps here show you how. For more detailed information on Item
 Selector criterion and return types, see the 
-[Item Selector introduction](/developer/frameworks/-/knowledge_base/7-2/item-selector). 
+[Item Selector introduction](/docs/7-2/frameworks/-/knowledge_base/f/item-selector). 
 
 1.  Create your criterion class by extending 
     [`BaseItemSelectorCriterion`](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/BaseItemSelectorCriterion.html). 
@@ -98,8 +98,8 @@ Selector criterion and return types, see the
 
 ## Related Topics
 
-[Item Selector](/developer/frameworks/-/knowledge_base/7-2/item-selector)
+[Item Selector](/docs/7-2/frameworks/-/knowledge_base/f/item-selector)
 
-[Creating Custom Item Selector Views](/developer/frameworks/-/knowledge_base/7-2/creating-custom-item-selector-views)
+[Creating Custom Item Selector Views](/docs/7-2/frameworks/-/knowledge_base/f/creating-custom-item-selector-views)
 
-[Selecting Entities with an Item Selector](/developer/frameworks/-/knowledge_base/7-2/selecting-entities-with-an-item-selector)
+[Selecting Entities with an Item Selector](/docs/7-2/frameworks/-/knowledge_base/f/selecting-entities-with-an-item-selector)

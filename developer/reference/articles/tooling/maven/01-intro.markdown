@@ -9,7 +9,7 @@ header-id: maven
 [Maven](https://maven.apache.org/) is a viable option for managing Liferay
 projects if you don't want to use Liferay's default Gradle management system.
 Liferay provides several
-[Maven plugins](/docs/7-2/reference/-/knowledge_base/reference/maven-plugins) for
+[Maven plugins](/docs/7-2/reference/-/knowledge_base/r/maven-plugins) for
 generating and managing your project. Liferay also provides easy to obtain Maven
 artifacts that are required for Liferay Maven module development. Here, you'll
 learn how to
@@ -37,7 +37,7 @@ Repository and Liferay Repository. The Central Repository is the default
 repository used to download artifacts if you don't have a remote repository
 configured. Using the Central Repository to install Liferay Maven artifacts only
 requires that you 
-[specify your module's dependencies](/docs/7-2/customization/-/knowledge_base/customization/configuring-dependencies) 
+[specify your module's dependencies](/docs/7-2/customization/-/knowledge_base/c/configuring-dependencies) 
 in its `pom.xml` file. 
 
 When packaging your module, the automatic Maven artifact installation process
@@ -75,9 +75,9 @@ but this section focuses on Nexus.
 
 You'll learn how to
 
-- [Create a repository](/docs/7-2/reference/-/knowledge_base/reference/creating-a-maven-repository)
-- [Configure a repository](/docs/7-2/reference/-/knowledge_base/reference/configuring-local-maven-settings-to-access-repositories)
-- [Deploy artifacts to a repository](/docs/7-2/reference/-/knowledge_base/reference/deploying-liferay-maven-artifacts-to-a-repository)
+- [Create a repository](/docs/7-2/reference/-/knowledge_base/r/creating-a-maven-repository)
+- [Configure a repository](/docs/7-2/reference/-/knowledge_base/r/configuring-local-maven-settings-to-access-repositories)
+- [Deploy artifacts to a repository](/docs/7-2/reference/-/knowledge_base/r/deploying-liferay-maven-artifacts-to-a-repository)
 
 Before using repository servers, you must specify them in your Maven environment
 settings. Your repository settings let Maven find the repository and retrieve
@@ -90,7 +90,7 @@ and install artifacts. You can configure your local Maven settings in the
 | and aren't interested in sharing artifacts, you don't need a repository server
 | specified in your Maven settings. You can find out more about installing
 | artifacts from the Central Repository or Liferay's own Nexus repository in the
-| [Installing Remote Liferay Maven Artifacts](/docs/7-2/reference/-/knowledge_base/reference/installing-remote-liferay-maven-artifacts)
+| [Installing Remote Liferay Maven Artifacts](/docs/7-2/reference/-/knowledge_base/r/installing-remote-liferay-maven-artifacts)
 | article.
 
 To deploy to a remote repository, your Liferay project should be packaged using
@@ -107,14 +107,14 @@ dependencies in their project POMs to reference it.
 
 There are several important Maven plugins that provide important functionality
 to Liferay Maven projects. The available Liferay Maven plugins are available in
-the [Maven Plugins](/docs/7-2/reference/-/knowledge_base/reference/maven-plugins)
+the [Maven Plugins](/docs/7-2/reference/-/knowledge_base/r/maven-plugins)
 section.
 
 The following tasks are covered in this section:
 
-- [Building an OSGi module JAR](/docs/7-2/reference/-/knowledge_base/reference/building-an-osgi-module-jar-with-maven)
-- [Building themes](/docs/7-2/reference/-/knowledge_base/reference/building-a-theme-with-maven)
-- [Compiling Sass files](/docs/7-2/reference/-/knowledge_base/reference/compiling-sass-files-in-a-maven-project)
-- [Using Service Builder](/docs/7-2/reference/-/knowledge_base/reference/using-service-builder-in-a-maven-project)
+- [Building an OSGi module JAR](/docs/7-2/reference/-/knowledge_base/r/building-an-osgi-module-jar-with-maven)
+- [Building themes](/docs/7-2/reference/-/knowledge_base/r/building-a-theme-with-maven)
+- [Compiling Sass files](/docs/7-2/reference/-/knowledge_base/r/compiling-sass-files-in-a-maven-project)
+- [Using Service Builder](/docs/7-2/reference/-/knowledge_base/r/using-service-builder-in-a-maven-project)
 
 Read on to learn more!

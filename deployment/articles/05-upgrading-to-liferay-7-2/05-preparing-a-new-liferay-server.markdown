@@ -25,9 +25,9 @@ data upgrade.
 
 ## Install @product-ver@ 
 
-[Install @product@ on your application server](/docs/7-2/deploy/-/knowledge_base/deploy/deploying-product)
+[Install @product@ on your application server](/docs/7-2/deploy/-/knowledge_base/d/deploying-product)
 or
-[use @product@ bundled with your application server of choice](/docs/7-2/deploy/-/knowledge_base/deploy/installing-product). 
+[use @product@ bundled with your application server of choice](/docs/7-2/deploy/-/knowledge_base/d/installing-product). 
 
 | **Important:** Do not start your application server. It's not ready to start 
 | until after the @product@ database upgrade. 
@@ -35,12 +35,12 @@ or
 ## Install the Latest Upgrade Patch or Fix Pack (Liferay DXP only)
 
 Install the upgrade patch (if you requested it from Liferay Support) or the 
-[latest Fix Pack](/docs/7-2/deploy/-/knowledge_base/deploy/patching-product). 
+[latest Fix Pack](/docs/7-2/deploy/-/knowledge_base/d/patching-product). 
 
 ## Migrate Your OSGi Configurations (@product@ 7.0+)
 
 Copy your
-[OSGi configuration files](/docs/7-2/user/-/knowledge_base/user/understanding-system-configuration-files)
+[OSGi configuration files](/docs/7-2/user/-/knowledge_base/u/understanding-system-configuration-files)
 (i.e., `.config` files) to your new server's `[Liferay Home]/osgi/configs`
 folder. 
 
@@ -66,7 +66,7 @@ property-related updates:
     [migrate the Image Gallery](/docs/6-2/deploy/-/knowledge_base/deploy/upgrading-liferay#migrate-your-image-gallery-images).
 
 -   If you have a sharded environment,
-    [configure your upgrade to generate a non-sharded environment](/docs/7-2/deploy/-/knowledge_base/deploy/upgrading-sharded-environment).
+    [configure your upgrade to generate a non-sharded environment](/docs/7-2/deploy/-/knowledge_base/d/upgrading-sharded-environment).
 
 When a new version of @product@ is released, there are often changes to default
 settings, and this release is no different. If you rely on the defaults from
@@ -111,11 +111,11 @@ configurations.
 
 Properties in modularized features have changed and must now be deployed
 separately in
-[OSGi configuration files](/docs/7-2/user/-/knowledge_base/user/system-settings#exporting-and-importing-configurations) 
+[OSGi configuration files](/docs/7-2/user/-/knowledge_base/u/system-settings#exporting-and-importing-configurations) 
 (OSGi Config Admin).
 
 Use the
-[`blade upgradeProps`](/docs/7-2/reference/-/knowledge_base/reference/blade-cli)
+[`blade upgradeProps`](/docs/7-2/reference/-/knowledge_base/r/blade-cli)
 command to scan your `portal-ext.properties` file to discover which properties
 are now set via OSGi Config Admin. You can also check the upgrade log from
 previous attempts for traces like these:
@@ -127,7 +127,7 @@ previous attempts for traces like these:
 
 | **Tip:** The Control Panel's *Configuration &rarr; System Settings* screens 
 | are the most accurate way to create `.config` files. Use them to
-| [export a screen's configuration](/docs/7-2/user/-/knowledge_base/user/system-settings#exporting-and-importing-configurations)
+| [export a screen's configuration](/docs/7-2/user/-/knowledge_base/u/system-settings#exporting-and-importing-configurations)
 | to a `.config` file. 
 
 ## Configure Your Documents and Media File Store 
@@ -149,7 +149,7 @@ changed for document storage:
     ```
 
 -   JCR Store was deprecated in @product@ 7.0. The
-    [Document Repository Configuration](/docs/7-2/deploy/-/knowledge_base/deploy/document-repository-configuration)
+    [Document Repository Configuration](/docs/7-2/deploy/-/knowledge_base/d/document-repository-configuration)
     documentation describes other store options.
 
 -   Since @product@ 7.0, document store type-specific configuration (e.g., 
@@ -179,7 +179,7 @@ location for a Simple File Store or Advanced File Store:
 3.  Copy the `.config` file to your `[Liferay Home]/osgi/configs` folder.
 
 The
-[Document Repository Configuration](/docs/7-2/deploy/-/knowledge_base/deploy/document-repository-configuration)
+[Document Repository Configuration](/docs/7-2/deploy/-/knowledge_base/d/document-repository-configuration)
 provides more document store configuration details. 
 
 ## Disable Indexing

@@ -19,13 +19,13 @@ and both implement the `StagedModel` interface. Once you've configured your
 staged models, you can create staged model data handlers, which supply
 information about a staged model (entity) and its referenced content to the
 Export/Import and Staging frameworks. See the
-[Developing Data Handlers](/docs/7-2/frameworks/-/knowledge_base/frameworks/developing-data-handlers)
+[Developing Data Handlers](/docs/7-2/frameworks/-/knowledge_base/f/developing-data-handlers)
 section for more information.
 
 There are two ways to create staged models for your application's entities:
 
-- [Using Service Builder to generate the required Staging implementations](/docs/7-2/frameworks/-/knowledge_base/frameworks/generating-staged-models-using-service-builder)
-- [Implementing the required Staging interfaces manually](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-staged-models-manually)
+- [Using Service Builder to generate the required Staging implementations](/docs/7-2/frameworks/-/knowledge_base/f/generating-staged-models-using-service-builder)
+- [Implementing the required Staging interfaces manually](/docs/7-2/frameworks/-/knowledge_base/f/creating-staged-models-manually)
 
 You can follow step-by-step procedures for creating staged models for your
 entities by visiting their respective articles.
@@ -86,7 +86,7 @@ UUID always remains the same, it's unique across multiple systems. Why is this
 so important?
 
 Suppose you're using
-[remote staging](/docs/7-2/user/-/knowledge_base/user/enabling-remote-live-staging)
+[remote staging](/docs/7-2/user/-/knowledge_base/u/enabling-remote-live-staging)
 and you create a new entity on your local staging site and publish it to your
 remote live site. When you go back to modify the entity on your
 local site and want to publish those changes, the UUID shows that the local and
@@ -148,4 +148,4 @@ To adapt your model classes to staged models, follow the steps outlined below:
 
 To step through the process for leveraging the Model Adapter Builder for an
 existing app, see 
-[Creating Staged Models Manually](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-staged-models-manually).
+[Creating Staged Models Manually](/docs/7-2/frameworks/-/knowledge_base/f/creating-staged-models-manually).

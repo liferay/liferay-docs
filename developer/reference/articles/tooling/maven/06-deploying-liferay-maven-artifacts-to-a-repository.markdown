@@ -10,10 +10,10 @@ Deploying artifacts to a remote repository is important if you intend to share
 your Maven projects with others. First, you must have a remote repository that
 can hold deployed Maven artifacts. If you do not currently have a remote
 repository,
-[create one](/developer/reference/-/knowledge_base/7-2/creating-a-maven-repository).
+[create one](/docs/7-2/reference/-/knowledge_base/r/creating-a-maven-repository).
 Also make sure your `[USER_HOME]/.m2/settings.xml` file specifies your remote
 repository's ID, user name, and password (configuration instructions
-[here](/developer/reference/-/knowledge_base/7-2/configuring-local-maven-settings-to-access-repositories)).
+[here](/docs/7-2/reference/-/knowledge_base/r/configuring-local-maven-settings-to-access-repositories)).
 
 To follow this article, you'll need a Liferay module built with Maven. For
 demonstration purposes, this tutorial uses the `portlet.ds` sample module
