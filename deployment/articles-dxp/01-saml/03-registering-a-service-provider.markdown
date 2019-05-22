@@ -88,7 +88,7 @@ The URL is `https://[SP host name]/c/portal/saml/keep_alive`.
 
 ## Checkpoint
 
-Verify your settings are correct when connecting the @product@-based IdP to its
+Verify your settings are correct by connecting the @product@-based IdP to its
 first SP. SPs connect to only one IdP, so if the first one doesn't work, the
 rest won't either. 
 
