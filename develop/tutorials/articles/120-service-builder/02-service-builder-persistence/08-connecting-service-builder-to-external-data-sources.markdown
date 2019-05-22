@@ -3,8 +3,19 @@
 Sometimes you want to use a data source other than @product@'s. To do this, the
 data source must be defined in `portal-ext.properties` or configured as a JNDI
 data source on @product@'s app server. This tutorial shows how to connect
-[Service Builder](/develop/tutorials/-/knowledge_base/7-0/service-builder) to
-a data source. Here's how: 
+[Service Builder](/develop/tutorials/-/knowledge_base/7-0/service-builder)
+to a data source.
+
++$$$
+
+**Note**: All entities defined in a Service Builder module's `service.xml` file 
+are bound to the same data source. Binding different entities to different data
+sources requires defining the entities in separate Service Builder modules and
+configuring each of the modules to use a different data source. 
+
+$$$
+
+Here are the steps: 
 
 1.  If @product@'s application server defines the data source using JNDI, skip
     this step. Otherwise, specify the data source in a `portal-ext.properties`
@@ -136,14 +147,6 @@ a data source. Here's how:
 Now your Service Builder services use the data source. You can
 [use the services in your business logic](/develop/tutorials/-/knowledge_base/7-0/business-logic-with-service-builder)
 as you always have regardless of the underlying data source. 
-
-+$$$
-
-**Note**: Only one data source can be used in a Service Builder module.  To use
-three different external data sources with Service Builder, for example, you
-must create three different Service Builder modules, one for each data source.
-
-$$$
 
 ## Related Topics [](id=related-topics)
 
