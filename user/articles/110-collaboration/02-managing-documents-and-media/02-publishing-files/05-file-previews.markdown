@@ -47,7 +47,7 @@ harness the full power of document previews. These tools include:
 After installing these tools, you can configure them via portal properties in 
 the Control Panel's Server Administration screen, or in a 
 `portal-ext.properties` file. To learn how to use these tools, see 
-[Configuring @product@](/discover/portal/-/knowledge_base/7-2/setting-up). 
+[Configuring @product@](/docs/7-2/user/-/knowledge_base/u/setting-up). 
 
 With these tools installed and configured, a customized viewer displays 
 Documents and Media content, depending on the content type. For example, you can 
@@ -67,7 +67,7 @@ about the file. For more information on this, see
 [The Info Panel](#the-info-panel). 
 
 **Share**: Share the file with other users. For more information, see 
-[Sharing Files](/discover/portal/-/knowledge_base/7-2/sharing-files). 
+[Sharing Files](/docs/7-2/user/-/knowledge_base/u/sharing-files). 
 
 **Download**: Download the file. 
 
@@ -78,13 +78,13 @@ Opens a menu that lets you perform these actions on the file:
 
 -   **Edit:** Modify the file's name, description, document type, 
     categorization, and 
-    [related assets](/discover/portal/-/knowledge_base/7-2/defining-content-relationships).
+    [related assets](/docs/7-2/user/-/knowledge_base/u/defining-content-relationships).
     You can even upload a new file to replace it. Note that modifying the file
     increments its version. 
 
 -   **Edit with Image Editor:** Edit the image in the Image Editor. The Image 
     Editor is explained in 
-    [Editing Images](/discover/portal/-/knowledge_base/7-2/editing-images). 
+    [Editing Images](/docs/7-2/user/-/knowledge_base/u/editing-images). 
 
 -   **Checkout/Checkin:** Checkout prevents others from editing the document 
     while you are working on it. Other users can still view the current version 
@@ -112,7 +112,7 @@ comments on the file.
 As mentioned above, clicking the *Info* icon 
 (![Info](../../../../images/icon-information-dm.png)) opens the info panel. The 
 top of the info panel displays the file's name, version, and 
-[workflow status](/discover/portal/-/knowledge_base/7-2/workflow). 
+[workflow status](/docs/7-2/user/-/knowledge_base/u/workflow). 
 There are two tabs in the info panel: Details, and Versions. Details is selected 
 by default and shows the following: 
 
@@ -149,4 +149,4 @@ To instead view the file's version history, select the *Versions* tab near the
 top of the info panel. The info panel then changes to list the different 
 versions of the file and lets you view, download, remove, and revert to specific 
 file versions. File version history actions are explained in 
-[Checking Out and Editing Files](/discover/portal/-/knowledge_base/7-2/checking-out-and-editing-files). 
+[Checking Out and Editing Files](/docs/7-2/user/-/knowledge_base/u/checking-out-and-editing-files). 

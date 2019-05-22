@@ -39,7 +39,7 @@ that match the values specified in the following portal properties:
 | image resolutions in Adaptive Media for the enabled properties. 
 
 To create the new Image Resolutions, follow the instructions found in the 
-[Adding Image Resolutions](/discover/portal/-/knowledge_base/7-2/adding-image-resolutions) 
+[Adding Image Resolutions](/docs/7-2/user/-/knowledge_base/u/adding-image-resolutions) 
 section of the Adaptive Media user guide. 
 
 Now you're ready to to create the Adaptive Media images. 
@@ -48,7 +48,7 @@ Now you're ready to to create the Adaptive Media images.
 
 Once the required image resolutions exist, you can convert the Documents and 
 Media thumbnails to Adaptive Media images. As mentioned in 
-[the Adaptive Media installation guide](/discover/portal/-/knowledge_base/7-2/installing-adaptive-media), 
+[the Adaptive Media installation guide](/docs/7-2/user/-/knowledge_base/u/installing-adaptive-media), 
 the module *Liferay Adaptive Media Document Library Thumbnails* (which is 
 included in the Adaptive Media app) enables this functionality. 
 
@@ -60,7 +60,7 @@ existing thumbnails to the values in the Adaptive Media image resolutions, which
 can take time depending on the number of images. We only recommend this approach 
 when there isn't a large number of thumbnails to process, or if you prefer to 
 generate your images from scratch. This approach is covered in more detail in 
-[Generating Missing Adapted Images](/discover/portal/-/knowledge_base/7-1/managing-image-resolutions#generating-missing-image-resolutions). 
+[Generating Missing Adapted Images](/docs/7-2/user/-/knowledge_base/u/managing-image-resolutions#generating-missing-image-resolutions). 
 
 **Execute a migrate process that reuses the existing thumbnails:** This copies 
 the existing thumbnails to Adaptive Media, which performs better because it 
@@ -71,7 +71,7 @@ describes the steps to run this process.
 
 The migration process is a set of Gogo console commands. You can learn more
 about using the Gogo console in 
-[the Felix Gogo Shell tutorial](/develop/reference/-/knowledge_base/7-2/using-the-felix-gogo-shell). 
+[the Felix Gogo Shell tutorial](/docs/7-2/reference/-/knowledge_base/r/using-the-felix-gogo-shell). 
 
 Follow these steps to migrate your thumbnails from the Gogo console:
 

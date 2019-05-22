@@ -14,9 +14,9 @@ the checkout. Checking in a file also increments its version, which lets you
 keep track of changes. 
 
 Unless you're using 
-[Liferay Sync](/discover/portal/-/knowledge_base/7-2/using-liferay-sync-on-your-desktop) 
+[Liferay Sync](/docs/7-2/user/-/knowledge_base/u/using-liferay-sync-on-your-desktop) 
 or a 
-[local drive mapped to the file's WebDAV URL](/discover/portal/-/knowledge_base/7-2/desktop-access-to-documents-and-media), 
+[local drive mapped to the file's WebDAV URL](/docs/7-2/user/-/knowledge_base/u/desktop-access-to-documents-and-media), 
 follow these steps to edit a Document Library file from your machine: 
 
 1.  Checkout the file by clicking its Actions icon 
