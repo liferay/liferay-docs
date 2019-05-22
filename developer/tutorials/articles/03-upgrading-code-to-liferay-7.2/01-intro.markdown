@@ -31,12 +31,12 @@ Here are the code upgrade steps:
         and manage your Liferay projects. Create/import a workspace to get
         started.{.summary}
 
-        1.  [Create New Liferay Workspace](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment#creating-new-liferay-workspace){.title, commandId=create_new_liferay_workspace}
+        1.  [Create New Liferay Workspace](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment#creating-new-liferay-workspace){.title commandId=create_new_liferay_workspace}
 
             If you don't have an existing 7.x Liferay Workspace, you must create
             one. Skip to the next step if you have an existing workspace.{.summary}
 
-        2.  [Import Existing Liferay Workspace](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment#importing-existing-liferay-workspace){.title, commandId=import_existing_liferay_workspace}
+        2.  [Import Existing Liferay Workspace](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment#importing-existing-liferay-workspace){.title commandId=import_existing_liferay_workspace}
 
             Import an existing Liferay Workspace. If you don't have one, revisit
             the previous step.{.summary}
@@ -46,12 +46,12 @@ Here are the code upgrade steps:
         Set the @product@ version in workspace's configuration you intend to
         upgrade to.{.summary}
 
-        1.  [Configure Bundle URL](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment#configuring-bundle-url){.title, commandId=configure_bundle_url}
+        1.  [Configure Bundle URL](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment#configuring-bundle-url){.title commandId=configure_bundle_url}
 
             Configure your bundle URL that the @product@ bundle is downloaded
             from.{.summary}
 
-        2.  [Configure Target Platform Version](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment#configuring-target-platform-version){.title, commandId=configure_target_platform_version}
+        2.  [Configure Target Platform Version](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-your-development-environment#configuring-target-platform-version){.title commandId=configure_target_platform_version}
 
             Configure your Target Platform version, which provides the specific
             artifacts associated with a @product@ release.{.summary}
@@ -65,11 +65,11 @@ Here are the code upgrade steps:
     Copy your Plugins SDK projects into workspace and convert them to
     Gradle/Maven projects.{.summary}
 
-    1.  [Import Existing Plugins SDK Projects](/docs/tutorials/7-2/-/knowledge_base/t/migrating-plugins-sdk-projects-to-liferay-workspace#importing-existing-plugins-sdk-projects){.title, commandId=import_existing_plugins_sdk}
+    1.  [Import Existing Plugins SDK Projects](/docs/tutorials/7-2/-/knowledge_base/t/migrating-plugins-sdk-projects-to-liferay-workspace#importing-existing-plugins-sdk-projects){.title commandId=import_existing_plugins_sdk}
 
         Import your existing Plugins SDK projects.{.summary}
 
-    2.  [Migrate Existing Plugins to Workspace](/docs/tutorials/7-2/-/knowledge_base/t/migrating-plugins-sdk-projects-to-liferay-workspace#migrating-existing-plugins-to-workspace){.title, commandId=migrate_existing_plugins_to_workspace}
+    2.  [Migrate Existing Plugins to Workspace](/docs/tutorials/7-2/-/knowledge_base/t/migrating-plugins-sdk-projects-to-liferay-workspace#migrating-existing-plugins-to-workspace){.title commandId=migrate_existing_plugins_to_workspace}
 
         Migrate your existing plugins to workspace. This involves moving the
         plugin to workspace and converting it to the workspace's build
@@ -80,17 +80,17 @@ Here are the code upgrade steps:
     Optimize your workspace's build environment for the most efficient code
     upgrade experience.{.summary}
 
-    1.  [Update Repository URL](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-build-dependencies#updating-the-repository-url){.title, commandId=update_repository_url}
+    1.  [Update Repository URL](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-build-dependencies#updating-the-repository-url){.title commandId=update_repository_url}
 
         Update your repository URL to Liferay's frequently updated CDN
         repository.{.summary}
 
-    2. [Update Workspace Plugin Version](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-build-dependencies#updating-the-workspace-plugin-version){.title, commandId=update_workspace_plguin_version}
+    2. [Update Workspace Plugin Version](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-build-dependencies#updating-the-workspace-plugin-version){.title commandId=update_workspace_plguin_version}
 
         Update your Workspace plugin version to leverage the latest features of
         Liferay Workspace.{.summary}
 
-    3.  [Remove Dependency Versions](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-build-dependencies#removing-the-projects-dependency-versions){.title, commandId=remove_dependency_version}
+    3.  [Remove Dependency Versions](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-build-dependencies#removing-the-projects-dependency-versions){.title commandId=remove_dependency_version}
 
         Remove the project's dependency versions since it's leveraging target
         platform.{.summary}
@@ -100,11 +100,11 @@ Here are the code upgrade steps:
     Fix common upgrade problems dealing with your project's dependencies and
     breaking changes.{.summary}
 
-    1.  [Auto-Correct Upgrade Problems](/docs/tutorials/7-2/-/knowledge_base/t/fixing-upgrade-problems#auto-correcting-upgrade-problems){.title, commandId=auto_correct_find_upgrade_problems}
+    1.  [Auto-Correct Upgrade Problems](/docs/tutorials/7-2/-/knowledge_base/t/fixing-upgrade-problems#auto-correcting-upgrade-problems){.title commandId=auto_correct_find_upgrade_problems}
 
         Auto-correct straightforward upgrade problems.{.summary}
 
-    2.  [Find Upgrade Problems](/docs/tutorials/7-2/-/knowledge_base/t/fixing-upgrade-problems#finding-upgrade-problems){.title, commandId=find_upgrade_problems}
+    2.  [Find Upgrade Problems](/docs/tutorials/7-2/-/knowledge_base/t/fixing-upgrade-problems#finding-upgrade-problems){.title commandId=find_upgrade_problems}
 
         Find upgrade problems. These are problems that cannot be auto-corrected;
         you can update them manually according to the breaking changes
@@ -114,7 +114,7 @@ Here are the code upgrade steps:
 
         Mark upgrade problems as resolved after addressing them.{.summary}
 
-    4.  [Remove Problem Markers](/docs/tutorials/7-2/-/knowledge_base/t/fixing-upgrade-problems#removing-problem-markers){.title, commandId=remove_upgrade_problems_markers}
+    4.  [Remove Problem Markers](/docs/tutorials/7-2/-/knowledge_base/t/fixing-upgrade-problems#removing-problem-markers){.title commandId=remove_upgrade_problems_markers}
 
         After fixing your upgrade problems, remove the problem markers.{.summary}
 
@@ -126,7 +126,7 @@ Here are the code upgrade steps:
 
     Upgrade your Liferay Service Builder services.{.summary}
 
-    1.  [Remove Legacy Files](/docs/tutorials/7-2/-/knowledge_base/t/removing-legacy-files){.title, commandId=remove_legacy_files}
+    1.  [Remove Legacy Files](/docs/tutorials/7-2/-/knowledge_base/t/removing-legacy-files){.title commandId=remove_legacy_files}
 
         Remove legacy files that are no longer leveraged by Service Builder.{.summary}
 
@@ -134,7 +134,7 @@ Here are the code upgrade steps:
 
         Leverage OSGi Declarative Services in your Service Builder project.{.summary}
 
-    3.  [Rebuild Services](/docs/tutorials/7-2/-/knowledge_base/t/rebuilding-services){.title, commandId=rebuild_services}
+    3.  [Rebuild Services](/docs/tutorials/7-2/-/knowledge_base/t/rebuilding-services){.title commandId=rebuild_services}
 
         Rebuild your project's services to persist your updates.{.summary}
 
