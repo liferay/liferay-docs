@@ -37,7 +37,7 @@ Installing Elasticsearch takes six steps:
 
 5. Configure @product@ to connect to your Elasticsearch cluster. 
 
-6. Restart @product@ and reindex your search indexes. 
+6. Restart @product@ and reindex your search and spell check indexes.
 
 Before continuing, make sure you have set the 
 [`JAVA_HOME` environment variable](https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/).
@@ -195,12 +195,13 @@ When finished, click *Save*. You're almost done.
 ### Step Six: Restart @product@ and Reindex 
 
 Stop and restart @product@. When it's back up, log in as an administrative user
-and click on *Control Panel* &rarr; *Configuration* &rarr; *Search* and
-click the *Execute* button for *Reindex all search indexes*. When you do that,
-you should see some messages scroll up in the Elasticsearch log. 
+and click on *Control Panel* &rarr; *Configuration* &rarr; *Search* and click
+the *Execute* button for *Reindex all search indexes* and then *Reindex all
+spell check indexes*. When you do that, you should see some messages scroll up
+in the Elasticsearch log. 
 
-When restarting, `update_mappings` messages will appear in the Elasticsearch
-logs:
+When restarting @product@, `update_mappings` messages will appear in the
+Elasticsearch logs:
 
     [2019-04-01T17:08:57,462][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-0/m27eNsekTAyP27zDOjGojw] update_mapping [LiferayDocumentType]
     [2019-04-01T17:08:57,474][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-0/m27eNsekTAyP27zDOjGojw] update_mapping [LiferayDocumentType]
@@ -224,6 +225,13 @@ Once you reindex, more log messages appear in Elasticsearch:
     [2019-04-01T17:11:21,275][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-20101/Meacn_uxR06g0tCJonS4eA] update_mapping [LiferayDocumentType]
     [2019-04-01T17:11:21,282][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-20101/Meacn_uxR06g0tCJonS4eA] update_mapping [LiferayDocumentType]
     [2019-04-01T17:11:21,373][INFO ][o.e.c.m.MetaDataMappingService] [HfkqdKv] [liferay-20101/Meacn_uxR06g0tCJonS4eA] update_mapping [LiferayDocumentType]
+
+Reindexing the spell check dictionaries produces log messages like these:
+
+    2019-04-29 14:02:22.034 INFO  [liferay/search_writer/SYSTEM_ENGINE-11][BaseSpellCheckIndexWriter:278] Start indexing dictionary for com/liferay/portal/search/dependencies/spellchecker/en_US.txt
+    2019-04-29 14:02:34.166 INFO  [liferay/search_writer/SYSTEM_ENGINE-11][BaseSpellCheckIndexWriter:299] Finished indexing dictionary for com/liferay/portal/search/dependencies/spellchecker/en_US.txt
+    2019-04-29 14:02:34.167 INFO  [liferay/search_writer/SYSTEM_ENGINE-11][BaseSpellCheckIndexWriter:278] Start indexing dictionary for com/liferay/portal/search/dependencies/spellchecker/es_ES.txt
+    2019-04-29 14:02:39.379 INFO  [liferay/search_writer/SYSTEM_ENGINE-11][BaseSpellCheckIndexWriter:299] Finished indexing dictionary for com/liferay/portal/search/dependencies/spellchecker/es_ES.txt
 
 For additional confirmation that @product@ recognizes the remote search engine,
 navigate to the Search Control Panel application and note the subtle change

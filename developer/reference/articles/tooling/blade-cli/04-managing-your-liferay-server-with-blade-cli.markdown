@@ -23,7 +23,7 @@ modifying a Liferay server:
 
     This downloads the @product@ bundle set in your workspace's
     `gradle.propeties` file. See the
-    [Adding a Liferay Bundle to Workspace](/docs/7-2/reference/-/knowledge_base/r/adding-a-liferay-bundle-to-workspace)
+    [Adding a Liferay Bundle to Workspace](/docs/7-2/reference/-/knowledge_base/r/adding-a-liferay-bundle-to-liferay-workspace)
     article for more information.
 
 3.  Start your Liferay server (Tomcat or Wildfly/JBoss) by running
