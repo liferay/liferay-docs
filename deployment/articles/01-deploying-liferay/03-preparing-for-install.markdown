@@ -50,7 +50,22 @@ JDK 8 best for developing on @product-ver@.
 @product@ requires that the application server JVM use the GMT time zone and
 UTF-8 file encoding. Include these JVM arguments to set the required values. 
 
-    -Dfile.encoding=UTF8 -Duser.timezone=GMT
+```bash
+-Dfile.encoding=UTF8 -Duser.timezone=GMT
+````
+
+On JDK 11, it's recommended to add this JVM argument to display four-digit years.
+
+```bash
+-Djava.locale.providers=JRE,COMPAT,CLDR
+```
+
+| **Note:** Since JDK 9, the Unicode Common Locale Data Repository (CLDR) is the
+| default locales provider. CLDR, however, is not providing years in a
+| four-digit format (see
+| [LPS-87191](https://issues.liferay.com/browse/LPS-87191)).
+| The setting `java.locale.providers=JRE,COMPAT,CLDR` works around this issue by
+| using JDK 8's default locales provider. 
 
 It's time to prepare your database. 
 
