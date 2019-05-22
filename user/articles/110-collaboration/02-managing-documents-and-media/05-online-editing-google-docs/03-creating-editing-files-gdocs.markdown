@@ -6,24 +6,23 @@ header-id: creating-and-editing-files-with-google-docs
 
 [TOC levels=1-4]
 
-The Documents and Media Library lets you use Google Docs&trade; to create and 
-edit text documents, spreadsheets, or presentations. When you finish your Google 
-Docs&trade; editing session, your changes are automatically saved in the 
-Documents and Media Library. This article contains instructions on using Google 
-Docs&trade; for the following: 
+You can use Google Docs&trade; to create and edit text documents, spreadsheets,
+or presentations for storage in the Docs and Media library. When you finish your
+Google Docs&trade; editing session, your changes are automatically saved in the
+Documents and Media Library. You can 
 
--   [Creating Files](#creating-files)
--   [Editing Files](#editing-files)
--   [Multiple Editing Sessions](#multiple-editing-sessions)
+-   [Create Files](#creating-files)
+-   [Edit Files](#editing-files)
+-   [Manage Multiple Editing Sessions](#multiple-editing-sessions)
 
 ## Authentication
 
-Note that the first time you create or edit a Documents and Media file via 
-Google Docs&trade;, you must authenticate with your Google account. This links 
-Google Drive&trade; to your portal account, so you only need to do this 
-authentication once. You can unlink your account at any time by navigating to 
-User Menu &rarr; *Account Settings* &rarr; *General* &rarr; *Apps*, and clicking 
-*Revoke* next to Google Drive&trade;. 
+The first time you create or edit a Documents and Media file via Google
+Docs&trade;, you must authenticate with your Google account. This links Google
+Drive&trade; to your portal account, so you only need to do this once. You can
+unlink your account at any time by navigating to User Menu &rarr; *Account
+Settings* &rarr; *General* &rarr; *Apps*, and clicking *Revoke* next to Google
+Drive&trade;. 
 
 ![Figure 1: You can unlink your Google account from the portal.](../../../../images/google-docs-unlink.png)
 
@@ -39,8 +38,7 @@ Docs&trade;:
 
 2.  Click the *Add* icon 
     (![Add](../../../../images/icon-add.png)) 
-    and select the type of Google document to add to the Document Library. You 
-    can select the following:
+    and select the type of Google document to add to the Document Library.
 
     -   Google Docs&trade;
     -   Google Slides&trade;
@@ -51,8 +49,8 @@ Docs&trade;:
     then redirects you to that Google file so you can create its content. 
 
     Note that some actions on the temporary Documents and Media file can affect 
-    its linked Google file. For more information, see the section below on 
-    [multiple editing sessions](#multiple-editing-sessions). 
+    its linked Google file. For more information, see [multiple editing
+    sessions](#multiple-editing-sessions). 
 
     ![Figure 2: Select the type of Google document you want to create.](../../../../images/google-docs-new.png)
 
