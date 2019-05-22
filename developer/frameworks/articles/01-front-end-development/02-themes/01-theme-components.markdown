@@ -81,7 +81,7 @@ in `portal_normal.ftl`. These utilities are included in the files listed below:
   macros appear in the 
   [FreeMarker Taglib Mappings reference guide](/docs/7-2/reference/-/knowledge_base/r/freemarker-taglib-macros). See
   the 
-  [Taglib tutorials](/docs/7-2/frameworks/-/knowledge_base/f/front-end-taglibs) for
+  [Taglib reference](/docs/7-2/reference/-/knowledge_base/r/front-end-taglibs) for
   more information on using each taglib in your theme templates.
 
 ## CSS Frameworks and Extensions
