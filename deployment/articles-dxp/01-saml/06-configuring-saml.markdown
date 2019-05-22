@@ -79,6 +79,12 @@ To blacklist `SHA1`, therefore, you'd have this configuration:
 blacklisted.algorithms=["http://www.w3.org/2000/09/xmldsig#sha1"]
 ```
 
+Place these in a config file with this name: 
+
+```bash
+com.liferay.saml.opensaml.integration.internal.bootstrap.SecurityConfigurationBootstrap.config
+```
+
 There's a lot more granularity in how connections are negotiated if you
 configure the metadata XML. 
 
