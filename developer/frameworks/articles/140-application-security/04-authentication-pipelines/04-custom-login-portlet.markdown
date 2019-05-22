@@ -4,6 +4,8 @@ header-id: writing-a-custom-login-portlet
 
 # Writing a Custom Login Portlet
 
+[TOC levels=1-4]
+
 If you need to customize your users' authentication experience completely, you
 can write your own Login Portlet. The mechanics of this on the macro level are
 no different from writing any other portlet, so if you need to familiarize
