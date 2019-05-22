@@ -8,13 +8,13 @@ header-id: localizing-your-widget
 
 Follow the steps below to learn how to localize your widget:
 
-1.  If you didn't choose to use localization when you generated the bundle, 
-    follow this step to enable it in your bundle now, otherwise you can skip 
-    this step. Create a `/features/localization` folder in your project and add 
-    a `Language.properties` file to it. Add a `create-jar.features.localization` 
-    key to your `.npmbuildrc` file that points to the `Language.properties` 
+1.  If you chose not to use localization when you generated the bundle, 
+    follow this step to enable it in your bundle. Create
+    a `/features/localization` folder in your project and add
+    a `Language.properties` file to it. Add a `create-jar.features.localization`
+    key to your `.npmbuildrc` file that points to the `Language.properties`
     file. An example configuration is shown below:
-    
+ 
 ```json
 {
 	"create-jar": {
