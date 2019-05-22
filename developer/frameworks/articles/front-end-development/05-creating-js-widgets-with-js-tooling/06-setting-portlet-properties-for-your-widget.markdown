@@ -26,7 +26,7 @@ Follow these steps to configure your widget's properties:
     	"javax.portlet.resource-bundle": "content.Language"
     },
     ```
-    
+ 
 3.  Deploy your bundle to apply the changes.
 
 Great! Now you know how to configure your JavaScript widget's properties. 
