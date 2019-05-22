@@ -11,10 +11,9 @@ Although you can
 and 
 [edit](/docs/7-2/user/-/knowledge_base/u/checking-out-and-editing-files) 
 Documents and Media files via upload and download, @product@ doesn't contain a 
-UI that lets you author or edit documents directly inside the portal. You can, 
-however, create and edit Documents and Media files online in Google Docs&trade;, 
-Google Sheets&trade;, and Google Slides&trade;. The articles in this section 
-explain how. 
+UI that lets you author or edit documents directly. You can, however, create and
+edit Documents and Media files online in Google Docs&trade;, Google
+Sheets&trade;, and Google Slides&trade;. 
 
 | **Note:** For simplicity and readability, this documentation refers only to 
 | Google Docs&trade;. The material, however, also applies to Google 
