@@ -9,14 +9,13 @@ header-id: configuring-google-docs-integration
 Before you can use Google Docs&trade; to create and edit Documents and Media 
 files, you must configure @product@ to connect with an application in the 
 [Google API Console](https://console.developers.google.com). 
-Here, you'll learn how. 
 
 | **Note:** You must be an administrator to complete these steps. 
 
 ## Configure Your Google Project
 
 First, you must configure your Google project to use the Google Drive&trade; 
-API, and set up OAuth 2 for use with that project. Follow these steps to do so: 
+API and set up OAuth 2 for use with that project. 
 
 1.  Go to the
     [Google API Console](https://console.developers.google.com). 
@@ -37,16 +36,15 @@ API, and set up OAuth 2 for use with that project. Follow these steps to do so:
 ## Configuring the Portal
 
 Now that you have a Google project set up for use with @product@, you must 
-configure the portal to connect with that project. You can do this at two 
-levels: 
+connect your installation to that project. You can do this at two scopes: 
 
 1.  Globally, for all instances in your @product@ installation.
-2.  At the instance level, for one or more instances in your @product@ 
+2.  At the instance scope, for one or more instances in your @product@ 
     installation. 
 
 You can override the global configuration for one or more instances by 
 configuring those instances separately. Similarly, you can configure only the 
-instances you want to connect to your Google project, and leave the global 
+instances you want to connect to your Google project and leave the global 
 configuration empty. 
 
 Follow these steps to configure your @product@ installation to connect to your 
