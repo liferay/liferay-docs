@@ -25,22 +25,22 @@ This is a portal instance scoped configuration which can be managed via OSGi
 Configuration Admin. The affected properties are those in the
 `SAMLProviderConfiguration` metatype:
 
-    - `saml.keystore.credential.password`
-    - `saml.sp.assertion.signature.required`
-    - `saml.idp.authn.request.signature.required`
-    - `saml.sp.clock.skew`
-    - `saml.default.assertion.lifetime`
-    - `saml.sp.default.idp.entity.id`
-	- `saml.enabled`
-	- `saml.entity.id`
-	- `saml.sp.ldap.import.enabled`
-	- `saml.role`
-	- `saml.idp.session.maximum.age`
-    - `saml.idp.session.timeout`
-    - `saml.sp.sign.authn.request`
-    - `saml.sign.metadata`
-    - `saml.ssl.required`
-    - `saml.idp.metadata.name.id.attribute`
+    - `keyStoreCredentialPassword()`
+    - `keyStoreEncryptionCredentialPassword()`
+    - `assertionSignatureRequired()`
+    - `authnRequestSignatureRequired()`
+    - `clockSkew()`
+    - `defaultAssertionLifetime()`
+    - `entityId()`
+	- `enabled()`
+	- `ldapImportEnabled`
+	- `role()`
+	- `sessionMaximumAge`
+    - `sessionTimeout()`
+    - `signAuthnRequest()`
+    - `signMetadata()`
+    - `sslRequired()`
+    - `allowShowingTheLoginPortlet()`
 
 The SAML Admin UI remains the place for creating the portal instance scoped
 configuration instances.
@@ -56,24 +56,24 @@ were removed:
     `saml.runtime.metadata.min.refresh.delay`
 
 The latter two properties were replaced with the single property
-`saml.runtime.metadata.refresh.interval`.
+`com.liferay.saml.runtime.configuration.SamlConfiguration.getMetadataRefreshInterval()`.
 
 Note also the introduction of the *SAML KeyStoreManager Implementation
 Configuration* in *Control Panel* &rarr; *System Settings* &rarr; Security
 &rarr; SSO. The options for this configuration are explained above in the
 Setting up @product@ as a SAML Identity Provider section.
 
-In the latest version of the plugin, the SHA256 algorithm is the default
+In the latest version of the plugin, the `SHA256` algorithm is the default
 encryption algorithm used in the configuration and to generate keys. The default
-configuration tries SHA256, then SHA384, then SHA512 before falling back to
-SHA1. Because SHA1 is potentially vulnerable, you can blacklist it using this
+configuration tries `SHA256`, then `SHA384`, then `SHA512` before falling back to
+`SHA1`. Because `SHA1` is potentially vulnerable, you can blacklist it using this
 property: 
 
 ```properties
 blacklisted.algorithms=["blacklisted_algorithm_url", "another_blacklisted_algorithm_url"]
 ```
 
-To blacklist SHA1, therefore, you'd have this configuration: 
+To blacklist `SHA1`, therefore, you'd have this configuration: 
 
 ```properties
 blacklisted.algorithms=["http://www.w3.org/2000/09/xmldsig#sha1"]
@@ -91,7 +91,7 @@ metadata URL and save a copy of the configuration in case you need it later:
     http://[hostname]/c/portal/saml/metadata
 
 For example, if you're stuck connecting to
-a legacy IdP that only supports SHA1, you can upload a configuration that
+a legacy IdP that only supports `SHA1`, you can upload a configuration that
 disables the other algorithms: 
 
 ```xml
@@ -117,12 +117,12 @@ disables the other algorithms:
 ```
 
 Notice that in the configuration above, the `<md:Extensions>` block has only one
-signing algorithm: SHA1. 
+signing algorithm: `SHA1`. 
 
-| **Note:** Since the default configuration falls back to SHA1, you shouldn't
+| **Note:** Since the default configuration falls back to `SHA1`, you shouldn't
 | need to do this unless your legacy system can't negotiate via the fallback
-| mechanism. Also note that if you blacklisted SHA1, this won't work. Due to
-| [vulnerabilities in SHA1](https://en.wikipedia.org/wiki/SHA-1), it's best to
+| mechanism. Also note that if you blacklisted `SHA1`, this won't work. Due to
+| [vulnerabilities in `SHA1`](https://en.wikipedia.org/wiki/SHA-1), it's best to
 | avoid using it altogether if possible. 
 
 If you've changed your metadata configuration, you can go back to the default
