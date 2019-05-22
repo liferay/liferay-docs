@@ -20,8 +20,9 @@ To enable the Change Lists feature, follow these steps:
 Initially, all changes are still published to your live production environment.
 You must create a new change list to begin tracking 
 [supported content types](/docs/7-2/user/-/knowledge_base/user/change-lists) and
-have the content hidden from your audience. You can learn more about creating
-change lists in
+have the content hidden from your audience. Supported content types cannot be
+enabled/disabled; they're all enabled when the Change Lists framework is
+activated. You can learn more about creating change lists in
 [this article](/docs/7-2/user/-/knowledge_base/user/creating-change-lists).
 
 | **Important:** Pages are not tracked by change lists in @product@ 7.2 GA1, but
@@ -39,4 +40,4 @@ wiki content, but it does track the wiki widget's configuration on a page.
 
 Add when pages are tracked by change lists. -Cody -->
 
-To learn about managing change lists, continue to the next article.
+To learn about creating change lists, continue to the next article.
