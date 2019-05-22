@@ -1,5 +1,7 @@
 # Installing Liferay Enterprise Search Monitoring
 
+[TOC levels=1-4]
+
 Monitor Elasticsearch with X-Pack Monitoring. First 
 [install X-Pack onto Elasticsearch](discover/deployment/-/knowledge_base-7-1/installing-x-pack)
 and configure security if you're using X-Pack's security features. Then come

@@ -4,6 +4,8 @@ header-id: setting-up-liferay-as-a-saml-identity-provider
 
 # Setting up @product@ as a SAML Identity Provider
 
+[TOC levels=1-4]
+
 An identity provider is a trusted provider that provides single sign-on for
 users to access other websites. A service provider is a website that hosts
 applications and grants access only to identified users with proper credentials.

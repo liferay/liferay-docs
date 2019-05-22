@@ -4,6 +4,8 @@ header-id: registering-a-saml-service-provider
 
 # Registering a SAML Service Provider
 
+[TOC levels=1-4]
+
 Setting up @product@ as a SAML Identity Provider is only useful if you
 can connect to one or more SAML Service Providers. Navigate to the Service
 Provider Connections tab of the SAML Admin Control Panel entry and click 

@@ -1,5 +1,7 @@
 # Installing Liferay Enterprise Search Security
 
+[TOC levels=1-4]
+
 Once X-Pack is installed, start securing Elasticsearch by configuring the
 built-in user passwords.
 

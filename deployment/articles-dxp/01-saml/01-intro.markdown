@@ -4,6 +4,8 @@ header-id: authenticating-using-saml
 
 # Authenticating Using SAML
 
+[TOC levels=1-4]
+
 The SAML (Security Assertion Markup Language) adapter provides Single Sign On
 (SSO) and Single Log Off (SLO) in your deployment. Each @product@ instance
 serves as either the Service Provider (SP) or the Identity Provider (IdP). An
@@ -69,7 +71,7 @@ Consider IdP initiated SSO first.
 Sometimes a user enters the SSO cycle by sending a request directly from the
 browser to the IdP.
 
-![Figure 1: Identity Provider Initiated SSO](../../../images-dxp/saml-idp-initiated-sso.png)
+![Figure 1: Identity Provider Initiated SSO](../../images-dxp/saml-idp-initiated-sso.png)
 
 #### The SSO Request to the IdP
 
@@ -128,7 +130,7 @@ it. Otherwise the home page of the SP is served.
 
 Most of the time, authentication requests come from the Service Provider.
 
-![Figure 2: Service Provider Initiated SSO](../../../images-dxp/saml-sp-initiated-sso.png)
+![Figure 2: Service Provider Initiated SSO](../../images-dxp/saml-sp-initiated-sso.png)
 
 #### The SSO Request to the SP
 
@@ -187,7 +189,7 @@ SLO.
 
 ### Identity Provider Initiated SLO
 
-![Figure 3: Identity Provider Initiated SLO](../../../images-dxp/saml-idp-initiated-slo.png)
+![Figure 3: Identity Provider Initiated SLO](../../images-dxp/saml-idp-initiated-slo.png)
 
 #### The SLO Request to the IdP
 
@@ -227,7 +229,7 @@ or has timed out.
 
 ### Service Provider Initiated SLO
 
-![Figure 4: Service Provider Initiated SLO](../../../images-dxp/saml-sp-initiated-slo.png)
+![Figure 4: Service Provider Initiated SLO](../../images-dxp/saml-sp-initiated-slo.png)
 
 #### The SLO Request to the SP
 

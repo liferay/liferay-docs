@@ -1,5 +1,7 @@
 # Changing the Settings for Service Provider and Identity Provider Connections
 
+[TOC levels=1-4]
+
 To change the SAML Service Provider Settings, navigate to the Service Provider
 tab. 
 

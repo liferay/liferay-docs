@@ -4,6 +4,8 @@ header-id: configuring-saml
 
 # Configuring SAML
 
+[TOC levels=1-4]
+
 There are some ways of configuring the SAML plugin outside the UI. This is done
 via OSGi configuration files and by uploading metadata XML to configure how
 connections are negotiated. 
