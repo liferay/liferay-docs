@@ -7,19 +7,19 @@ header-id: navigating-from-a-collection-to-its-elements
 [TOC levels=1-4]
 
 When you 
-[get a collection](/develop/tutorials/-/knowledge_base/7-2/getting-collections), 
+[get a collection](/docs/7-2/frameworks/-/knowledge_base/f/getting-collections), 
 you can use the response to get an element of that collection. Follow these 
 steps to do so: 
 
 1.  Get a collection. This example gets a list of users by sending 
-    [an authenticated request](/develop/tutorials/-/knowledge_base/7-2/making-authenticated-requests) 
+    [an authenticated request](/docs/7-2/frameworks/-/knowledge_base/f/making-authenticated-requests) 
     to the `user-accounts` collection: 
 
         curl "http://localhost:8080/o/headless-admin-user/v1.0/user-accounts" \
              -u 'test@liferay.com:test'
 
     Recall from 
-    [Getting Collections](/develop/tutorials/-/knowledge_base/7-2/getting-collections) 
+    [Getting Collections](/docs/7-2/frameworks/-/knowledge_base/f/getting-collections) 
     that the response's `items` attribute contains the collection elements. In
     this case, the collection contains two users: Test Test and Javier Gamarra: 
 
@@ -114,8 +114,8 @@ steps to do so:
 
 ## Related Topics
 
-[Getting Collections](/develop/tutorials/-/knowledge_base/7-2/getting-collections)
+[Getting Collections](/docs/7-2/frameworks/-/knowledge_base/f/getting-collections)
 
-[Pagination](/develop/tutorials/-/knowledge_base/7-2/pagination)
+[Pagination](/docs/7-2/frameworks/-/knowledge_base/f/pagination)
 
-[Making Authenticated Requests](/develop/tutorials/-/knowledge_base/7-2/making-authenticated-requests)
+[Making Authenticated Requests](/docs/7-2/frameworks/-/knowledge_base/f/making-authenticated-requests)

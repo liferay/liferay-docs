@@ -87,4 +87,4 @@ and industry-wide conventions.
 
 ## Related Topics
 
-[Get Started: Invoke a Service](/develop/tutorials/-/knowledge_base/7-2/get-started-invoke-a-service)
+[Get Started: Invoke a Service](/docs/7-2/frameworks/-/knowledge_base/f/get-started-invoke-a-service)

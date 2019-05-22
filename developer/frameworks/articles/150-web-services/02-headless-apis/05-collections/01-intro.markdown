@@ -44,4 +44,4 @@ requests for individual elements.
 information on a specific item. 
 
 For examples of working with collection pages, see 
-[Pagination](/develop/tutorials/-/knowledge_base/7-2/pagination). 
+[Pagination](/docs/7-2/frameworks/-/knowledge_base/f/pagination). 

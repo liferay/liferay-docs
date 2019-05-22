@@ -238,6 +238,6 @@ not create, in a PATCH request).
 
 ## Related Topics
 
-[Get Started: Discover the API](/develop/tutorials/-/knowledge_base/7-2/get-started-discover-the-api)
+[Get Started: Discover the API](/docs/7-2/frameworks/-/knowledge_base/f/get-started-discover-the-api)
 
-[Get Started: Invoke a Service](/develop/tutorials/-/knowledge_base/7-2/get-started-invoke-a-service)
+[Get Started: Invoke a Service](/docs/7-2/frameworks/-/knowledge_base/f/get-started-invoke-a-service)

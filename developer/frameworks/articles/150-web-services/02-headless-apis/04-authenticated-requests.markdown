@@ -16,7 +16,7 @@ HTTP/1.0).
 
 **OAuth 2.0:** In @product-ver@, you can use OAuth 2.0 for authentication. See 
 the 
-[OAuth 2.0 documentation](/discover/deployment/-/knowledge_base/7-2/oauth-2-0) 
+[OAuth 2.0 documentation](/docs/7-2/deploy/-/knowledge_base/d/oauth-2-0) 
 for more information. 
 
 First, you'll learn how send requests with basic authentication. 
@@ -56,7 +56,7 @@ request:
 
 The response contains data instead of the 403 error that an unauthenticated 
 request receives. For more information on the response's structure, see 
-[Working with Collections of Data](/develop/tutorials/-/knowledge_base/7-2/working-with-collections-of-data). 
+[Working with Collections of Data](/docs/7-2/frameworks/-/knowledge_base/f/working-with-collections-of-data). 
 
     {
       "items": [
@@ -111,7 +111,7 @@ request receives. For more information on the response's structure, see
 
 @product-ver@ supports authorization via OAuth 2.0, which is a token-based 
 authentication mechanism. For more details, see 
-[@product@'s OAuth 2.0 documentation](/discover/deployment/-/knowledge_base/7-2/oauth-2-0). 
+[@product@'s OAuth 2.0 documentation](/docs/7-2/deploy/-/knowledge_base/d/oauth-2-0). 
 The following sections show you how to use OAuth 2.0 to authenticate web API 
 requests. 
 
@@ -120,7 +120,7 @@ requests.
 Before using OAuth 2.0 to invoke a web API, you must register your application 
 (your web API's consumer) as an authorized OAuth client. To do this, follow the 
 instructions in the 
-[Creating an Application](/discover/deployment/-/knowledge_base/7-2/oauth-2-0#creating-an-application) 
+[Creating an Application](/docs/7-2/deploy/-/knowledge_base/d/oauth-2-0#creating-an-application) 
 section of the OAuth 2.0 documentation. When creating the application, fill in
 the form as follows: 
 
@@ -134,7 +134,7 @@ After clicking *Save* to finish creating the application, write down the Client
 ID and Client Secret values that appear at the top of the form. 
 
 Next, you must get an OAuth 2.0 access token. To do this, see the tutorial 
-[Authorization Account Access with OAuth 2](/discover/deployment/-/knowledge_base/7-2/authorizing-account-access-with-oauth2). 
+[Authorization Account Access with OAuth 2](/docs/7-2/deploy/-/knowledge_base/d/authorizing-account-access-with-oauth2). 
 
 ### Invoking the Service with an OAuth 2.0 Token
 
@@ -167,7 +167,7 @@ APIs. You can, however, enable them manually by following these steps:
     `false`. 
 
 2.  Deploy the config file to `[Liferay Home]/osgi/configs`. Note that 
-    [Liferay Home](/discover/deployment/-/knowledge_base/7-2/installing-liferay#liferay-home) 
+    [Liferay Home](/docs/7-2/deploy/-/knowledge_base/d/installing-liferay#liferay-home) 
     is typically the application server's parent folder. 
 
 3.  Test the APIs by making a request to an OpenAPI profile URL: 
@@ -178,6 +178,6 @@ You should get the OpenAPI profile for the API you sent the request to.
 
 ## Related Topics
 
-[Get Started: Invoke a Service](/develop/tutorials/-/knowledge_base/7-2/get-started-invoke-a-service)
+[Get Started: Invoke a Service](/docs/7-2/frameworks/-/knowledge_base/f/get-started-invoke-a-service)
 
-[Working with Collections of Data](/develop/tutorials/-/knowledge_base/7-2/working-with-collections-of-data)
+[Working with Collections of Data](/docs/7-2/frameworks/-/knowledge_base/f/working-with-collections-of-data)

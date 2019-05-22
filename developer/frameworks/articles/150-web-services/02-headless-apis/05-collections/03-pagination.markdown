@@ -7,13 +7,13 @@ header-id: pagination
 [TOC levels=1-4]
 
 Collection resources are returned in pages of information. 
-[Working with Collections of Data](/develop/tutorials/-/knowledge_base/7-2/working-with-collections-of-data) 
+[Working with Collections of Data](/docs/7-2/frameworks/-/knowledge_base/f/working-with-collections-of-data) 
 explains this in more detail. Here, you'll learn how to work with collection 
 pages. 
 
 For example, suppose that there are 123 users your portal and you want to get 
 information on them. To do this, send an 
-[authenticated request](/develop/tutorials/-/knowledge_base/7-2/making-authenticated-requests) 
+[authenticated request](/docs/7-2/frameworks/-/knowledge_base/f/making-authenticated-requests) 
 to the UserAccount URL: 
 
     curl "http://localhost:8080/o/headless-admin-user/v1.0/user-accounts" \
@@ -54,6 +54,6 @@ parameter `pageSize` (e.g., `?pageSize=20`).
 
 ## Related Topics
 
-[Working with Collections of Data](/develop/tutorials/-/knowledge_base/7-2/working-with-collections-of-data)
+[Working with Collections of Data](/docs/7-2/frameworks/-/knowledge_base/f/working-with-collections-of-data)
 
-[Making Authenticated Requests](/develop/tutorials/-/knowledge_base/7-2/making-authenticated-requests)
+[Making Authenticated Requests](/docs/7-2/frameworks/-/knowledge_base/f/making-authenticated-requests)
