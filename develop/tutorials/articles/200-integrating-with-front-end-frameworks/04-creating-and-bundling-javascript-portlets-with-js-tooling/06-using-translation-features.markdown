@@ -7,10 +7,14 @@ the supported locales you have defined in the `supportedLocales` key of your
 `.npmbuildrc` file and checks your `*language.properties` files to make sure 
 they match. 
 
-| **Note:** To use the translation features, you must have a Microsoft 
-| Translator key. Provide your credentials through either the 
-| `translatorTextKey` variable in your `.npmbuildrc` file, or provide them in 
-| the `TRANSLATOR_TEXT_KEY` environment variable. 
++$$$
+
+**Note:** To use the translation features, you must have a Microsoft 
+Translator key. Provide your credentials through either the 
+`translatorTextKey` variable in your `.npmbuildrc` file, or provide them in 
+the `TRANSLATOR_TEXT_KEY` environment variable.
+
+$$$
 
 Follow these steps to add a new supported locale and automatically create 
 a language properties file for it with translations:
@@ -19,9 +23,7 @@ a language properties file for it with translations:
 
 2.  Run the translate target with the command below:
 
-```bash
-npm run translate
-```
+        npm run translate
 
 3.  The translate target automatically creates a language properties file for 
     each new **supported** locale with translations for your language keys. It 

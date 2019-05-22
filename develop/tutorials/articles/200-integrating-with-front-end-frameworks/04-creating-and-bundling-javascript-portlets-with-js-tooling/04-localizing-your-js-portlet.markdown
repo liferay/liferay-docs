@@ -22,9 +22,13 @@ Follow the steps below to learn how to localize your portlet:
     	...
     }
 
-| **Note:** The default file path is shown above. You can update this value, 
-| if you want to place your `Language.properties` file in a different 
-| location.
+    +$$$
+
+    **Note:** The default file path is shown above. You can update this value, 
+    if you want to place your `Language.properties` file in a different 
+    location.
+
+    $$$
 
 2.  Configure the `Language.properties` file and provide the localized property 
     files (e.g. `Language_[locale].properties`) with the 

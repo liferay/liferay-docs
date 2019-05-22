@@ -8,3 +8,8 @@ development:
 - Understanding the liferay-npm-bundler
 - The CKEditor plugins available for use in your 
   [custom AlloyEditor configurations](/develop/tutorials/-/knowledge_base/7-1/adding-buttons-to-alloyeditor-toolbars).
+- AlloyEditor button reference guide
+- Fully qualified portlet IDs
+- FreeMarker taglib macros
+- Setting up your npm environment
+- Liferay Bundle Generator
