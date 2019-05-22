@@ -7,13 +7,13 @@ header-id: creating-aggregations-in-low-level-search-calls
 [TOC levels=1-4]
 
 Each aggregation has a different purpose and should be processed differently
-once returned from the search engine, but the way you'll add the aggregation
-information to the search request is quite similar between all aggregations.
+once returned from the search engine, but you add the aggregation
+information to the search request in a similar way between all aggregations.
 
 ## Instantiate and Construct the Aggregation
 
-1.  Use the `com.liferay.portal.search.aggregation.Aggregations` to instantiate the aggregation you'll
-construct. For example,
+1.  Use the `com.liferay.portal.search.aggregation.Aggregations` to instantiate
+    the aggregation you'll construct. For example,
 
     ```java
     PercentilesAggregation percentilesAggregation =
@@ -24,14 +24,13 @@ construct. For example,
     field` in the case of the above `PercentilesAggregation`),LINK TO
     AGGREGATIONS INTERFACE
 
-2.  Build out the aggregation to get the desired response. This will look
-    different for each aggregation type, but you can understand the
-    functionality by visiting Elasticsearch's documentation on the aggregation
-    type (for example, 
+2.  Build out the aggregation to get the desired response. This looks
+    different for each aggregation type, but Elasticsearch's documentation on the aggregation
+    type explains it well (such as 
     [Percentiles Aggregations](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/search-aggregations-metrics-percentile-aggregation.html))
-    and looking at the setters in Liferay's corresponding interface.
+    combined with the setters in Liferay's corresponding interface.
 
-    For example, use `setPercentilesMethod(PercentilesMethod.HDR)` to method to
+    For example, use the `setPercentilesMethod(PercentilesMethod.HDR)` method to
     use the 
     [High Dynamic Range Histogram](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/search-aggregations-metrics-percentile-aggregation.html#_hdr_histogram)
     for calculating the percentiles.
@@ -51,7 +50,7 @@ Once the aggregation itself is in good shape, feed it to the search query.
         searchRequestBuilderFactory.getSearchRequestBuilder();
     ```
 
-3.  Get a`com.liferay.portal.search.searcher.SearchRequest` instance from the
+3.  Get a `com.liferay.portal.search.searcher.SearchRequest` instance from the
     builder, then add the aggregation to it and run its `build` method:
 
     ```java
@@ -82,5 +81,5 @@ Once the aggregation itself is in good shape, feed it to the search query.
 ## Process the response
 
 What you'll do with the `SearchResponse` returned by the `searcher.search` call
-is dependent on the type of aggregation and your specific use case. A separate
+depends on the type of aggregation and your specific use case. A separate
 article will be written to demonstrate how to process the response.
