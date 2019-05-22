@@ -15,7 +15,7 @@ widgets as Facebook applications. This article shows you how.
 Like many websites you may visit, any site running on @product@ can use
 Facebook for sign in. This makes it easier for users to sign in to your 
 Site, since they don't need to remember another user name and password. See the
-[deployment documentation](/discover/deployment/-/knowledge_base/7-2/facebook-connect-single-sign-on-authentication) 
+[deployment documentation](/docs/7-2/deploy/-/knowledge_base/d/facebook-connect-single-sign-on-authentication) 
 for information on using Facebook to sign into @product@. 
 
 ## Using Your Widget as Facebook Applications

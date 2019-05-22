@@ -21,7 +21,7 @@ private Dashboard.
 To ensure that all users have a page on their private Dashboard that contains 
 the Contacts Center and Activities widgets, you can create a user group and then
 create a page via a Site Template. For instructions on this, see the 
-[user groups documentation](/discover/portal/-/knowledge_base/7-2/user-groups). 
+[user groups documentation](/docs/7-2/user/-/knowledge_base/u/user-groups). 
 The widgets are in *Add* (![Add](../../../images/icon-add.png)) &rarr; *Widgets*
 &rarr; *Social*. 
 
