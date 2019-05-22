@@ -187,7 +187,8 @@ provides more document store configuration details.
 If you're using NTLM to authenticate Microsoft Windows &trade; accounts with
 @product@, switch to using
 [Kerberos](/docs/7-2/deploy/-/knowledge_base/d/authenticating-with-kerberos).
-Security vulnerabilities persist with NTLM. 
+Security vulnerabilities persist with NTLM. NTLM has been deprecated and removed
+from the bundle, but you can still [build and deploy the module](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/portal-security-sso-ntlm).
 
 ## Disable Indexing
 
