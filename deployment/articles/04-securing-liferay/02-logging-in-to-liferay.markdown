@@ -30,11 +30,7 @@ others, and restart your server.
 ```properties
 company.security.auth.type=emailAddress
 #company.security.auth.type=screenName
-
-[TOC levels=1-4]
 #company.security.auth.type=userId
-
-[TOC levels=1-4]
 ```
 
 The default authentication type is by email address, but you can choose screen

@@ -36,32 +36,33 @@ set a dependency for it in your build file. Here's how:
 3.  Add a dependency entry for the artifact. Here's the artifact terminology for
     the Gradle and Maven build frameworks:
 
-    *Artifact Terminology*
-    | Framework | Group ID | Artifact ID | Version |
-    | :------------ | :----------- | :----------- | :-------- |
-    | Gradle | `group` | `name` | `version` 
-    | Maven | `groupId` | `artifactId` | `version` |
+*Artifact Terminology*
 
-    Here is an example dependency on Liferay's Journal API module for Gradle,
-    and Maven: 
+| Framework | Group ID  | Artifact ID  | Version   |
+| :-------- | :-------- | :----------- | :-------- |
+| Gradle    | `group`   | `name`       | `version` |
+| Maven     | `groupId` | `artifactId` | `version` |
 
-    *Gradle (`build.gradle` entry):*
-    
-        dependencies {
-            compileOnly group: "com.liferay", name: "com.liferay.journal.api", version: "1.0.1"
-            ...
-        }
-    
-    *Maven (`pom.xml` entry):*
-    
-    ```xml
-    <dependency>
-        <groupId>com.liferay</groupId>
-        <artifactId>com.liferay.journal.api</artifactId>
-        <version>1.0.1</version>
-        <scope>provided</scope>
-    </dependency>
-    ```
+Here is an example dependency on Liferay's Journal API module for Gradle,
+and Maven: 
+
+*Gradle (`build.gradle` entry):*
+
+    dependencies {
+        compileOnly group: "com.liferay", name: "com.liferay.journal.api", version: "1.0.1"
+        ...
+    }
+
+*Maven (`pom.xml` entry):*
+
+```xml
+<dependency>
+    <groupId>com.liferay</groupId>
+    <artifactId>com.liferay.journal.api</artifactId>
+    <version>1.0.1</version>
+    <scope>provided</scope>
+</dependency>
+```
 
 | **Note**: To configure third-party libraries in a module, see
 | [Adding Third Party Libraries to a Module](/docs/7-2/customization/-/knowledge_base/c/adding-third-party-libraries-to-a-module). 
