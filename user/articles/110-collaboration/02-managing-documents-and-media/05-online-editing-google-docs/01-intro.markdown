@@ -7,9 +7,9 @@ header-id: online-file-creation-and-editing-with-google-docs
 [TOC levels=1-4]
 
 Although you can 
-[add](/discover/portal/-/knowledge_base/7-2/adding-files-to-a-document-library#using-the-add-menu) 
+[add](/docs/7-2/user/-/knowledge_base/u/adding-files-to-a-document-library#using-the-add-menu) 
 and 
-[edit](/discover/portal/-/knowledge_base/7-2/checking-out-and-editing-files) 
+[edit](/docs/7-2/user/-/knowledge_base/u/checking-out-and-editing-files) 
 Documents and Media files via upload and download, @product@ doesn't contain a 
 UI that lets you author or edit documents directly inside the portal. You can, 
 however, create and edit Documents and Media files online in Google Docs&trade;, 

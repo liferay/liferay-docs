@@ -102,7 +102,7 @@ Follow these steps to edit a Documents and Media file in Google Docs&trade;:
 2.  Click the file's Actions icon 
     (![Actions](../../../../images/icon-actions.png)) 
     and select *Edit in Google Docs*. This automatically 
-    [checks out](/discover/portal/-/knowledge_base/7-2/checking-out-and-editing-files) 
+    [checks out](/docs/7-2/user/-/knowledge_base/u/checking-out-and-editing-files) 
     the file, transfers its content to a new Google Docs&trade; file, and 
     redirects you to that Google Docs&trade; file. 
 
