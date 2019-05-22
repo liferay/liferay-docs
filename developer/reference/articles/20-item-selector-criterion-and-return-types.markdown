@@ -4,27 +4,30 @@
 ([`ItemSelectorCriterion`](@app-ref@/item-selector/latest/javadocs/com/liferay/item/selector/ItemSelectorCriterion.html)) 
 and return type 
 ([`ItemSelectorReturnType`](@app-ref@/item-selector/latest/javadocs/com/liferay/item/selector/ItemSelectorReturnType.html)) 
-classes that developers can use in Item Selectors. The sections in this document 
-list these classes: 
+classes that developers can use in Item Selectors. The following sections in 
+this document list the available classes: 
 
--   [Item Selector Criterion Classes](#item-selector-criterion-classes)
--   [Item Selector Return Type Classes](#item-selector-return-type-classes)
+-   [Criterion Classes](#item-selector-criterion-classes)
+-   [Return Type Classes](#item-selector-return-type-classes)
 
 If there isn't a criterion or return type for your needs, you can create your 
 own by following the instructions in 
 [Creating Custom Criterion and Return Types](/docs/7-2/frameworks/-/knowledge_base/f/creating-custom-criterion-and-return-types). 
+For more information on Item Selectors in general, including definitions of 
+criterion and return types, see the 
+[Item Selector introduction](/docs/7-2/frameworks/-/knowledge_base/f/item-selector). 
 
 ## Item Selector Criterion Classes [](id=item-selector-criterion-classes)
 
 **Assets:**
 
 [AssetDisplayPageSelectorCriterion](@app-ref@/asset/latest/javadocs/com/liferay/asset/display/page/item/selector/criterion/AssetDisplayPageSelectorCriterion.html): 
-Asset display page entity type. 
+Asset display page. 
 
 **Blogs:**
 
 [BlogsItemSelectorCriterion](@app-ref@/blogs/latest/javadocs/com/liferay/blogs/item/selector/criterion/BlogsItemSelectorCriterion.html): 
-Blogs item entity type. 
+Blogs item. 
 
 **Fragments:**
 
