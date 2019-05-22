@@ -121,31 +121,7 @@ Configuration file: `com.liferay.portal.search.configuration.QueryPreProcessConf
 
 This entry contains only one property:
 
-`indexingBatchSizes`: Sets the number of documents indexed
-
-**Index Registry**
-: Disable or configure the buffering of indexing requests. To stop the buffering
-of index requests, set the Buffered property to *Disabled*. If buffering is
-enabled, set the Maximum Buffer Size so that additional indexing requests are
-executed immediately. Minimum Buffer Availability Percentage sets a different
-threshold: when the capacity of the buffer has only a certain percent of space
-left, the existing requests in the buffer are executed in one batch and removed
-from the buffer.
-
-**Index Query Preprocessor**
-: Fields with names matching the patterns set here are treated as non-analyzed
-keyword fields. Instead of scored full text queries, matching is performed by
-non-scored wildcard queries. This is a resource intensive operation that
-degrades search engine performance as indexes grow larger. For substring
-matching, relying on the
-[NGram Tokenizer](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/analysis-ngram-tokenizer.html) 
-usually performs better.
-
-**Reindex**
-: Use the Indexing Batch Sizes property to set the number of documents indexed
-per batch for model types that support batch indexing. Defaults to 10000. For
-models with large documents, decreasing this value may improve stability when
-executing a full re-index.
+`indexingBatchSizes`: Use this property to set the number of documents indexed per batch for model types that support batch indexing. Defaults to `com.liferay.journal.model.JournalArticle=10000`. For models with large documents, decreasing this value may improve stability when executing a full re-index.
 
 Configuration file: `com.liferay.portal.search.configuration.ReindexConfiguration.config`
 
