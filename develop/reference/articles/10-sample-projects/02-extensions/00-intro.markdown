@@ -8,14 +8,4 @@ build tool:
 - [Liferay Workspace sample extensions](https://github.com/liferay/liferay-blade-samples/tree/7.1/liferay-workspace/extensions)
 - [Maven sample extensions](https://github.com/liferay/liferay-blade-samples/tree/7.1/maven/extensions)
 
-The following samples are documented:
-
-- [Control Menu Entry](control-menu-entry)
-- [Document Action](document-action)
-- [Gogo Shell Command](gogo-shell-command)
-- [Indexer Post Processor](indexer-post-processor)
-- [Model Listener](model-listener)
-- [Screen Name Validator](screen-name-validator)
-- [Servlet](servlet)
-
 Visit a particular sample page to learn more!

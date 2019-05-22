@@ -53,19 +53,26 @@ Let's begin!
     $$$
 
 2.  You must allow the connection between the configured IPs of your app servers
-    and the Staging server. Open both of your app servers'
-    `portal-ext.properties` files and add the following properties:
+    and the Staging server. Open your remote Liferay server's
+    `portal-ext.properties` file and add the following properties:
 
-        tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP,STAGING_IP
+        tunnel.servlet.hosts.allowed=127.0.0.1,SERVER_IP,[STAGING_IP]
         tunnel.servlet.https.required=false
 
-    The *SERVER_IP* must be replaced by the current instance's IP you're setting
-    the property for and the *STAGING_IP* must be replaced by the staging
-    instance's IP.
+    The `[STAGING_IP]` variable must be replaced by the staging server's IP
+    addresses. The `SERVER_IP` constant can remain set for this property; it's
+    automatically replaced by the Liferay server's IP addresses.
 
-3.  Restart both app servers for the new properties to take effect.
+3. If you're validating IPv6 addresses, you must configure the app server's JVM
+    to not force the usage of IPv4 addresses. For example, if you're using
+    Tomcat, add the following attribute in the
+    `$TOMCAT_HOME\bin\setenv.[bat|sh]` file.
 
-4.  Configure the *TunnelAuthVerifier* property for your nodes' app servers.
+            `-Djava.net.preferIPv4Stack=false`
+
+4.  Restart both app servers for the new properties to take effect.
+
+5.  Configure the *TunnelAuthVerifier* property for your nodes' app servers.
     There are two ways to do this:
 
     - **Use a `.config` file (recommended):** In the `$LIFERAY_HOME/osgi/configs`
@@ -89,26 +96,26 @@ Let's begin!
       choose to configure the *TunnelAuthVerifier* this way, you **must** do
       this for all nodes (e.g., App Server 1 and App Server 2).
 
-5.  On your Staging instance, navigate to the Site Administration portion of the
+6.  On your Staging instance, navigate to the Site Administration portion of the
     Product Menu and select *Publishing* &rarr; *Staging*. Then select *Remote
     Live*.
 
     ![Figure 2: When selecting the Remote Staging radio button, you're given a list of options to configure.](../../../images/remote-staging-menu.png)
 
-6.  For the Remote Host/IP field, insert the balancer's IP of your web tier.
+7.  For the Remote Host/IP field, insert the balancer's IP of your web tier.
     Configuring the Staging instance with the balancer's IP ensures the
     availability of the environment at the time of publication from staging to
     live.
 
-7.  Enter the port on which the balancer is running into the Remote Port field.
+8.  Enter the port on which the balancer is running into the Remote Port field.
 
-8.  Insert the remote site ID of your app servers into the Remote Site ID field.
+9.  Insert the remote site ID of your app servers into the Remote Site ID field.
     The site ID of all your app servers are the same since they are configured
     for the same database and are shared between nodes.
 
     Navigate to the Site Administration portion of the Product Menu and select
     *Configuration* &rarr; *Site Settings* to find the site ID.
 
-9. Save the Remote Live settings.
+10. Save the Remote Live settings.
 
 That's it! You've configured remote staging in your clustered environment.

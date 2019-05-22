@@ -5,7 +5,7 @@ There are two ways to configure the Patching Tool:
 1.  Automatically by executing the `auto-discovery` command
 
 2.  Manually by editing the configuration file (see
-    [Patching Tool Advanced Configuration](https://customer.liferay.com/documentation/7.1/deploy/-/official_documentation/deployment/patching-tool-advanced-configuration))
+    [Patching Tool Advanced Configuration](/discover/deployment/-/knowledge_base/7-1/patching-tool-advanced-configuration))
 
 Automatic configuration generates the configuration files by looking for
 @product@ files in the local file system. By default the Patching Tool looks for
@@ -20,7 +20,7 @@ If @product@ is not installed in the parent folder, specify its location:
 
 If you specified the wrong location of @product@ or it is not in the parent
 folder, the Patching Tool can't find the
-[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay-portal#liferay-home)
+[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
 and reports an error like this: 
 
     The .liferay-home has not been detected in the given directory tree.

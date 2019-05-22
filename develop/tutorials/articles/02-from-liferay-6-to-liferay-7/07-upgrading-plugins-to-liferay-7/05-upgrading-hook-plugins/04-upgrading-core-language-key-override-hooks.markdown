@@ -17,7 +17,7 @@ Here are the steps for upgrading a core language key hook to @product-ver@.
 2.  Copy all your plugin's language properties files into the module
     folder `src/main/resources/content/`.
 
-3.  [Create a resource bundle loader](/develop/tutorials/-/knowledge_base/7-1/overriding-a-modules-language-keys#implementing-a-resource-bundle-loader). 
+3.  [Create a resource bundle loader](/develop/tutorials/-/knowledge_base/7-1/overriding-global-language-keys#create-a-resource-bundle-service-component). 
 
 4.  [Deploy your module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#building-and-deploying-a-module). 
 

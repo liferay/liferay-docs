@@ -1,7 +1,7 @@
 # Monitoring Garbage Collection and the JVM [](id=monitoring-garbage-collection-and-jvm)
 
 Although the 
-[tuning parameters](/discover/deployment/-/knowledge_base/7-1/liferay-digital-enterprise-configuration-and-tuning-guidelines)
+[tuning parameters](/discover/deployment/-/knowledge_base/7-1/tuning-guidelines)
 give you a good start to JVM tuning, you must monitor GC performance to ensure
 you have the best settings to meet your needs. There are several tools to help
 you monitor Oracle JVM performance. 

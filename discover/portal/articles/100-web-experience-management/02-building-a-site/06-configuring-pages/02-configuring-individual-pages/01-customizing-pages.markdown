@@ -111,7 +111,7 @@ learn more about this, see
 [Adding Templates](/discover/portal/-/knowledge_base/7-1/adding-templates).
 You can embed a widget on a page layout or theme programmatically. If you're
 interested in learning more about this, visit the
-[Embedding Portlets in Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-1/embedding-portlets-in-themes-and-layout-templates)
+[Embedding Portlets in Themes](develop/tutorials/-/knowledge_base/7-1/embedding-portlets-in-themes)
 tutorial.
 
 ### Customization Settings [](id=customization-settings)

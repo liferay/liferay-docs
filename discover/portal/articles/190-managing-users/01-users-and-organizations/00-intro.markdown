@@ -34,7 +34,7 @@ Roles, and Roles define the User's privileges.
 Understanding Users is pretty straightforward. Organizations are a bit trickier,
 but a smart administrator like you is undoubtedly up to the challenge. Read more
 about Organizations
-[here](/discover/deployment/-/knowledge_base/7-0/organizations).
+[here](/discover/portal/-/knowledge_base/7-1/organizations).
 
 The remaining articles in this section give you guidance on managing (creating,
 deleting, editing, and more) Users and Organizations.

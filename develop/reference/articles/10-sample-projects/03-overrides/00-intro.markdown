@@ -8,10 +8,4 @@ build tool:
 - [Liferay Workspace sample overrides](https://github.com/liferay/liferay-blade-samples/tree/7.1/liferay-workspace/overrides)
 - [Maven sample overrides](https://github.com/liferay/liferay-blade-samples/tree/7.1/maven/overrides)
 
-The following samples are documented:
-
-- [Core JSP Override](core-jsp-override)
-- [Module JSP Override](module-jsp-override)
-- [Resource Bundle Override](resource-bundle-override)
-
 Visit a particular sample page to learn more!

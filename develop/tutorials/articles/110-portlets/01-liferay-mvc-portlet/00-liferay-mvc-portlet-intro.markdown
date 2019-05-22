@@ -124,6 +124,13 @@ When using MVC commands, the `javax.portlet.name` property is important. This
 property is one of two that must be included in each MVC command component; it
 links a particular portlet URL/command combination to the correct portlet. 
 
++$$$
+
+**Important:** Make your portlet name unique, considering how 
+[@product@ uses the name to create the portlet's ID](/develop/reference/-/knowledge_base/7-1/portlet-descriptor-to-osgi-service-property-map#ten). 
+
+$$$
+
 There can be some confusion over exactly what kind of `Portlet.class`
 implementation you're publishing with this component. Liferay's service registry
 expects this to be the `javax.portlet.Portlet` interface. Import that, and not,

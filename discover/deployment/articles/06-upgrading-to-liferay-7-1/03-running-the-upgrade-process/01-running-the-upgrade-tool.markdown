@@ -48,13 +48,13 @@ after finishing the core upgrade.
  
 Here are the tool's default Java parameters:
     
-    -Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx2048m 
+    -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx2048m 
 
 The `-j` option lets you override the JVM parameters. For example, these options
 set the JVM memory to 10GB, which is a good starting point for this process
 type:
 
-    db_upgrade.sh -j "-Dfile.encoding=UTF8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx10240m"
+    db_upgrade.sh -j "-Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.timezone=GMT -Xmx10240m"
 
 The `-l` option lets you specify the tool's log file name: 
 
@@ -213,8 +213,15 @@ Specify the following information to configure the upgrade itself:
 
 **liferay.home:** the [Liferay home folder](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home) *(required)*
 
+**dl.store.impl:** the implementation for persisting documents to the document
+library store. This property's default value is
+`com.liferay.portal.store.file.system.FileSystemStore`.
+If you updated the property
+[in your `portal-ext.properties`](/discover/deployment/-/knowledge_base/7-1/preparing-an-upgrade-to-liferay-7#configuring-your-documents-and-media-file-store)
+to use a different implementation, specify the updated property here. 
+
 **hibernate.jdbc.batch_size:** the JDBC batch size used to improve performance;
-set to *250* by default *(optional)* 
+set to *250* by default *(optional)*
 
 ### Example Upgrade Configuration [](id=example-upgrade-configuration)
 
@@ -263,6 +270,7 @@ into `[Liferay Home]/tools/portal-tools-db-upgrade-client/`:
 
         liferay.home=/home/user/servers/liferay7
         module.framework.base.dir=/home/user/servers/liferay7/osgi
+        dl.store.impl=com.liferay.portal.store.file.system.FileSystemStore
 
 It's time to start the core upgrade. 
 

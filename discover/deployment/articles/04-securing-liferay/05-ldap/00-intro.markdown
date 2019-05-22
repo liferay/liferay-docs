@@ -114,6 +114,17 @@ If you must change any of these options, navigate to *Control Panel* &rarr;
 *Configuration* &rarr; *System Settings*. Go to the *Security* section and
 find the entries with LDAP in the title.
 
+**Note:** To use `config` files for LDAP server configuration, you must
+specify the Virtual Instance ID (in the source, the variable name is
+`companyId`) in the exported configuration file, because servers are defined
+at the instance scope, not the system scope. To do this, specify the virtual
+instance ID somewhere in the file like this: 
+
+```properties
+companyId=1234
+```
+You can find your Virtual Instance ID in Control Panel &rarr; Configuration
+&rarr; Virtual Instances.
 
 Use the *Connection* entry to manage error properties
 like *Error password age keywords* which lets you set a list of phrases from

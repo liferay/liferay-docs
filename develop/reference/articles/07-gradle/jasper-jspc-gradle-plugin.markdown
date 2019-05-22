@@ -7,7 +7,7 @@ can be useful to
 - check for errors in the JSP files.
 - pre-compile the JSP files for better performance.
 
-The plugin has been successfully tested with Gradle 3.5.1 up to 4.10.2.
+The plugin has been successfully tested with Gradle 4.10.2.
 
 ## Usage [](id=usage)
 

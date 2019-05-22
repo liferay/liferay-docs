@@ -6,5 +6,6 @@ faster, more secure, and easier to maintain. Upgrading plugins from @product@
 
 - [Upgrading Plugins](/develop/tutorials/-/knowledge_base/7-1/upgrading-plugins-from-liferay-7-0-to-7-1)
 - [Upgrading Themes](/develop/tutorials/-/knowledge_base/7-1/upgrading-7-0-themes-to-7-1)
+- [Upgrading Layout Templates](/develop/tutorials/-/knowledge_base/7-1/upgrading-7-0-layout-templates-to-7-1)
 
 Upgrading plugins (portlets, customizations, and extensions) is up first. 

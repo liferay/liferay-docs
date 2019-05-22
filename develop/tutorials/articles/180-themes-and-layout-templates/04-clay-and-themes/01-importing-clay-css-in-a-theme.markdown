@@ -76,7 +76,6 @@ Follow these steps to customize the Atlas theme:
         @import "mixins";
         @import "clay/atlas-variables";
 
-
 3.  Add a file named `font_awesome.scss` and add the font-awesome path and 
     import:
 
@@ -89,7 +88,7 @@ Follow these steps to customize the Atlas theme:
 4.  Add a file named `_clay_variables.scss`. All your Atlas, Bootstrap, and Clay 
     Base variable modifications must be placed in this file.
 
-4.  Add a file named `_custom.scss` with the code below and save:
+5.  Add a file named `_custom.scss` with the code below and save:
 
         /* Use these inject tags to dynamically create imports for 
         themelet styles. You can place them where ever you like in this file. */

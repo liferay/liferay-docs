@@ -9,7 +9,7 @@ How does Developer Mode let you see your changes more quickly? By default,
 @product@ is optimized for performance. Developer mode optimizes your
 configuration for development instead. Here is a list of Developer Mode's key
 behavior changes and the 
-[Portal Property](https://docs.liferay.com/portal/7.1/propertiesdoc/portal.properties.html)
+[Portal Property](https://docs.liferay.com/portal/7.1-latest/propertiesdoc/portal.properties.html)
 override settings that trigger them (if applicable):
 
 - CSS files are loaded individually rather than being combined and loaded as a
@@ -99,7 +99,7 @@ can improve JavaScript file loading for development.
 By default, JavaScript fast loading is enabled in Developer Mode 
 (`javascript.fast.load=true`). This loads the packed version of files listed in 
 the 
-[Portal Properties](https://docs.liferay.com/portal/7.1/propertiesdoc/portal.properties.html#JavaScript) 
+[Portal Properties](https://docs.liferay.com/portal/7.1-latest/propertiesdoc/portal.properties.html#JavaScript) 
 `javascript.barebone.files` or `javascript.everything.files`. You can, however, 
 disable JavaScript fast loading for easier debugging for development. Just set 
 `javascript.fast.load` to `false` in your `portal.properties`, or you can 

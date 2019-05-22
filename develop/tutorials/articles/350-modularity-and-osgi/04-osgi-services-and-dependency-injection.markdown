@@ -28,11 +28,13 @@ How do you use DS to register and bind services? Does it involve creating XML
 files? No, it's much easier than that. You use two annotations: `@Component` and
 `@Reference`.
 
--  `@Component`: Add this annotation to a class definition to make the class a
-    component--a service provider. 
+-   [`@Component`](https://osgi.org/javadoc/r6/residential/org/osgi/service/component/annotations/Component.html):
+    Add this annotation to a class definition to make the class a component--a
+    service provider. 
 
--  `@Reference`: Add this annotation to a field to inject it with a service that
-    matches the field's type. 
+-   [`@Reference`](ttps://osgi.org/javadoc/r6/residential/org/osgi/service/component/annotations/Reference.html):
+    Add this annotation to a field to inject it with a service that matches the
+    field's type. 
 
 The `@Component` annotation makes the class an OSGi component. Setting a
 `service` property to a particular service type in the annotation, allows other
@@ -59,6 +61,14 @@ to a field marks it to be injected with a service matching the field's type.
 
 On deploying this class's module, the SCR finds a component configuration of the
 class type `SomeApi` and binds the service to this referencing component class.
+
++$$$
+
+**Note:** The `@Reference` annotation can only be used in a class that is 
+annotated with `@Component`. That is, only a Declarative Services component can
+use `@Reference` to bind to an OSGi service. 
+
+$$$
 
 At build time in modules created from [Liferay project templates](/develop/reference/-/knowledge_base/7-1/project-templates),
 bnd creates a *component description* file for each module's components

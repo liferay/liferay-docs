@@ -19,9 +19,9 @@ that your Bootstrap 3 and Lexicon CSS components aren't broken while you update
 your theme to use 
 [Bootstrap 4](https://getbootstrap.com/docs/4.0/migration/) 
 and 
-[Clay CSS](https://ui-migration.liferay.com/docs/lexicon/add_menu.html). 
+[Clay CSS](https://ui-migration.liferay.com/docs/lexicon/add_menu.html).
 
-$$$ 
+$$$
  
 Follow these guidelines to update your markup:
 

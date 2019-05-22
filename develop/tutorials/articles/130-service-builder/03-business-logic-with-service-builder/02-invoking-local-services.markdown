@@ -20,7 +20,8 @@ component object.
 ## Step 1: Reference the Local Service Component [](id=step-1-reference-the-local-service-component)
 
 Your application's Service Builder-generated local services are DS components
-that you can inject into your application's other DS components
+that you can inject into your application's other DS components (classes
+annotated with `@Component`)
 [using the `@Reference` annotation](/develop/tutorials/-/knowledge_base/7-1/osgi-services-and-dependency-injection-with-declarative-services).
 The `basic-web` module's `JSPPortlet` class is a `Portlet` service component
 that references the `FooLocalService` local service as a DS component.

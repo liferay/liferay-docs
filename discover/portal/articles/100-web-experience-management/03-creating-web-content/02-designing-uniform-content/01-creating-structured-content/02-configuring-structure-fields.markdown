@@ -66,8 +66,13 @@ available for Radio and Select fields).
 
 ### Structure Default Values [](id=structure-default-values)
 
-Structure Default Values let you create one structure that uses common data from
-multiple articles.
+You can define Structure Default Values for repeatable values in content created
+from that structure. They can also set defaults for Liferay's standard asset
+fields (like tags, categories, and related assets) and the content of the
+structure fields, while also setting a default template for displaying the
+structure data.
+
+![Figure 1: You can edit default values via the *Actions* button of the Manage Structures interface.](../../../../../images/structure-actions.png)
 
 Returning to the newspaper scenario again, suppose you want all sports articles
 to have the same display page (sports page), the same categories, or the same
@@ -90,7 +95,8 @@ To edit a structure's default values:
     *Predefined Value* field setting (see above), but is much more convenient
     for setting or editing a large number of defaults at once.
 
-![Figure 1: You can edit default values via the *Actions* button of the Manage Structures interface.](../../../../../images/structure-actions.png)
+![Figure 2: You can define values for your structure fields and the standard asset metadata fields.](../../../../../images/structure-default-values.png)
+
 
 Every new web content you create with this structure is preloaded with the
 data you inserted. Next, you'll learn about assigning permissions.

@@ -102,7 +102,7 @@ treated as non-analyzed keyword fields. Instead of scored full text queries,
 matching is performed by non-scored wildcard queries. This is a resource
 intensive operation that degrades search engine performance as indexes grow
 larger. For substring matching, relying on the 
-[ngram tokenizer](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/analysis-ngram-tokenizer.html)
+[ngram tokenizer](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/analysis-ngram-tokenizer.html)
 usually performs better.
 
 ### Reindex [](id=reindex)
@@ -126,7 +126,7 @@ keyword fields. Instead of scored full text queries, matching is performed by
 non-scored wildcard queries. This is a resource intensive operation that
 degrades search engine performance as indexes grow larger. For substring
 matching, relying on the
-[NGram Tokenizer](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/analysis-ngram-tokenizer.html) 
+[NGram Tokenizer](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/analysis-ngram-tokenizer.html) 
 usually performs better.
 
 **Reindex**

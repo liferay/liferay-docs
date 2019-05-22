@@ -23,7 +23,7 @@ Tool manually.
     [Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/7-1).
 
 2.  Unzip the Patching Tool to your
-    [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay-portal#liferay-home)
+    [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
     folder (recommended) or to another folder. 
 
 After installing the Patching Tool, you must

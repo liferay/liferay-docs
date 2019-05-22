@@ -290,11 +290,11 @@ therefore use this event name in the markup:
     );
 
 For a complete, real-world example, see the 
-[`layouts.jsp` view markup](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/layout/layout-item-selector-web/src/main/resources/META-INF/resources/layouts.jsp)
-for the 
-[`com.liferay.layout.item.selector.web` module](https://github.com/liferay/liferay-portal/tree/7.0.x/modules/apps/layout/layout-item-selector-web). 
-Even though this example is for the previous version of @product@, it still 
-applies to @product-ver@. Here's a walkthrough of this `layouts.jsp` file:
+[`layouts.jsp`](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/web-experience/layout/layout-item-selector-web/src/main/resources/META-INF/resources/layouts.jsp) 
+view markup for the 
+[`com.liferay.layout.item.selector.web`](https://github.com/liferay/liferay-portal/tree/7.0.x/modules/apps/web-experience/layout/layout-item-selector-web) 
+module. Even though this example is for the previous version of @product@, it 
+still applies to @product-ver@. Here's a walkthrough of this `layouts.jsp` file: 
 
 1.  This `layouts.jsp` file first defines some variables. Note that 
     `LayoutItemSelectorViewDisplayContext` is an optional class that contains 

@@ -105,7 +105,7 @@ AND and OR to add and chain together all the criteria your Segment needs.
   the previous criteria. This broadens the selection of Individuals.
 
 Once you've completed defining your Segment, click on the *Create* button. Your
-[Segment profile](https://github.com/liferay/liferay-docs/blob/master/discover/analytics-cloud/articles/03-understanding-people/03-profiling-segments.markdown)
+[Segment profile](https://github.com/liferay/liferay-docs/blob/7.1.x/discover/analytics-cloud/articles/03-understanding-people/03-profiling-segments.markdown)
 appears. 
 
 ![Figure 2: As you define criteria and chain them together using AND and OR logic, a preview of Individuals that match the criteria appears on the right.](../../images/create-dynamic-segment.png)

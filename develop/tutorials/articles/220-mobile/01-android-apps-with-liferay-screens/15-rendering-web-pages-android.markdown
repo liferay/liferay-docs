@@ -189,7 +189,7 @@ activity in which the Web Screenlet instance is `screenlet`, and the
 
     WebScreenletConfiguration webScreenletConfiguration =
                 new WebScreenletConfiguration.Builder("/web/westeros-hybrid/companynews")
-                    .addRawCss(R.raw.portletcss, "portlet.css")
+                    .addRawCss(R.raw.portlet, "portlet.css")
                     .addLocalCss("gallery.css")
                     .addLocalJs("gallery.js")
                     .load();
@@ -197,13 +197,26 @@ activity in which the Web Screenlet instance is `screenlet`, and the
             screenlet.setWebScreenletConfiguration(webScreenletConfiguration);
             screenlet.load();
 
-The relative URL `/web/westeros-hybrid/companynews` supplied to the 
-`WebScreenletConfiguration.Builder` constructor, and the lack of a 
-`setWebType(WebScreenletConfiguration.WebType.OTHER)` call, indicates that this 
-Web Screenlet instance loads a @product@ page that requires authentication. The 
-`addRawCss` method adds the CSS file `portlet.css` from the `res/raw` folder. 
-The `addLocalCss` and `addLocalJs` methods add the local files `gallery.css` and 
-`gallery.js`, respectively. 
+There are a few things to note about this example: 
+
+-   The relative URL `/web/westeros-hybrid/companynews` supplied to the 
+    `WebScreenletConfiguration.Builder` constructor, and the lack of a 
+    `setWebType(WebScreenletConfiguration.WebType.OTHER)` call, indicates that 
+    this Web Screenlet instance loads a @product@ page that requires 
+    authentication. 
+
+-   The `addRawCss` method adds the CSS file `portlet.css` from the app's 
+    `res/raw` folder. Any files that you add via the methods `addRawCss` or 
+    `addRawJs` must be located in `res/raw` (create this folder if it doesn't 
+    exist). Also note that you must reference these files with 
+    `R.raw.yourfilename`. For instance, the `portlet.css` file in this is 
+    example is referenced with `R.raw.portlet`. 
+
+-   The `addLocalCss` and `addLocalJs` methods add the local files `gallery.css` 
+    and `gallery.js`, respectively. Any files that you add via these methods 
+    must be in the first level of your app's `assets` folder. This folder must 
+    exist at the same level as your app's `res` folder. Create the `assets` 
+    folder in that location if it doesn't exist. 
 
 Great! Now you know how to use Web Screenlet in your Android apps. 
 

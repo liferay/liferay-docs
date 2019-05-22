@@ -22,15 +22,16 @@ for the Blogs portlet:
     <aui:fieldset-group markupView="lexicon">
         ...
         <aui:fieldset collapsed="<%= true %>" collapsible="<%= true %>" label="categorization">
-            <aui:input name="categories" type="assetCategories" />
+            <liferay-asset:asset-categories-selector name="categories" type="assetCategories" />
 
-            <aui:input name="tags" type="assetTags" />
+            <liferay-asset:asset-tags-selector name="tags" type="assetTags" />
         </aui:fieldset>
         ...
     </aui:fieldset-group>
 
-These category and tag `aui:input` tags generate form controls that let users
-browse/select categories for the entity, browse/select tags, and/or create new
+The `liferay-asset:asset-categories-selector` and 
+`liferay-asset:asset-tags-selector` tags generate form controls that let users 
+browse/select categories for the entity, browse/select tags, and/or create new 
 tags to associate with the entity. 
 
 The `liferay-ui:asset-categories-error` and `liferay-ui:asset-tags-error` tags

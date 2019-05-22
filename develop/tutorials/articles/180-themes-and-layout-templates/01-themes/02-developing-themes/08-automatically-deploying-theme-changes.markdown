@@ -12,10 +12,18 @@ Follow these steps to deploy changes to your theme automatically:
     in your server. Without this enabled, the gulp watch task **will not work**.
 
 2.  Navigate to your theme's root folder and run `gulp watch`. This sets up a 
-    proxy for your app server and opens it in a new window in the browser. It 
-    also provides an IP address for you to view your app server across all 
-    devices connected to the local network. The browser is synced across all 
-    devices that use the given IP address. 
+    proxy for your app server (`http://localhost:9080`) and opens it in a new 
+    window in the browser. It also provides an IP address for you to view your 
+    app server across all devices connected to the local network. The browser is 
+    synced across all devices that use the given IP address.
+    
+    +$$$
+    
+    **Note:** Live changes are only viewable on port `9080` 
+    (`http://localhost:9080`). Live changes **are not viewable** on your app 
+    server (e.g. `http://localhost:8080`).
+    
+    $$$ 
 
     ![Figure 1: Run the `gulp watch` task to automatically deploy any changes to your theme.](../../../../images/theme-dev-watching-themes-gulp-watch-startup.png)
 

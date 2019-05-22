@@ -2,7 +2,7 @@
 
 The Segment profiles are your gateway into how people interact with your
 sites. They show who's matching your Segment criteria
-([Dynamic Segments](https://github.com/liferay/liferay-docs/blob/master/discover/analytics-cloud/articles/03-understanding-people/02-creating-segments.markdown)),
+([Dynamic Segments](https://github.com/liferay/liferay-docs/blob/7.1.x/discover/analytics-cloud/articles/03-understanding-people/02-creating-segments.markdown)),
 so you can deliver content that wows them. 
 
 Here's how to view Segment profiles:
@@ -40,7 +40,7 @@ with your site's topics. Knowing these topics helps you prepare for conversing
 with the Segment members and create content that interests them. 
 
 See
-[Customer Insights](https://github.com/liferay/liferay-docs/blob/master/discover/analytics-cloud/articles/03-understanding-people/04-customer-insights.markdown)
+[Customer Insights](https://github.com/liferay/liferay-docs/blob/7.1.x/discover/analytics-cloud/articles/03-understanding-people/04-customer-insights.markdown)
 for details on the Interests insight.
 
 ## Distribution [](id=distribution)

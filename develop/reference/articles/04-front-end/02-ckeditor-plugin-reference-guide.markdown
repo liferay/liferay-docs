@@ -2,7 +2,7 @@
 
 This reference guide provides a list of the default CKEditor plugins bundled 
 with @product@'s AlloyEditor. You can 
-[use these existing CKEditor plugins in your custom AlloyEditor configurations](). 
+[use these existing CKEditor plugins in your custom AlloyEditor configurations](/develop/tutorials/-/knowledge_base/7-1/adding-buttons-to-alloyeditor-toolbars). 
 Each plugin below links to its `plugin.js` file for reference, specifying the 
 plugin's name and buttons if applicable:
 

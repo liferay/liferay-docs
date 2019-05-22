@@ -42,7 +42,7 @@ steps to create and configure the OSGi module:
     [service ranking](/develop/tutorials/-/knowledge_base/7-1/fundamentals#services). 
     If you want to target a more specific configuration, you can find the 
     available properties in the 
-    [`EditorConfigContributor` interface's Javadoc](https://docs.liferay.com/ce/portal/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/editor/configuration/EditorConfigContributor.html).
+    [`EditorConfigContributor` interface's Javadoc](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/editor/configuration/EditorConfigContributor.html).
 
 5.  Extend `BaseEditorConfigContributor` instead of `GenericPortlet`.
 

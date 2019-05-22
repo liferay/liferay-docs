@@ -291,6 +291,13 @@ Make the following edits as applicable for your operating system:
 2.  Add the following statement to the bottom of the file:
 
         JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true  -Djboss.as.management.blocking.timeout=480 -Duser.timezone=GMT -Xmx2048m -XX:MaxMetaspaceSize=512m -XX:MetaspaceSize=200m"
+   
++$$$
+
+**Important:** For @product@ to work properly, the application server JVM must 
+use the `GMT` time zone and `UTF-8` file encoding. 
+
+$$$
 
 +$$$
 

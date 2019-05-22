@@ -5,7 +5,7 @@ image for an application that spans different subprojects, each one representing
 a different component of the same application. The Docker image can then be
 pushed to a registry.
 
-The plugin has been successfully tested with Gradle 3.5.1 up to 4.10.2.
+The plugin has been successfully tested with Gradle 4.10.2.
 
 ## Usage [](id=usage)
 

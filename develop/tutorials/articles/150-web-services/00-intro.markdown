@@ -1,25 +1,43 @@
 # Web Services [](id=web-services)
 
-Generating and invoking web services is a central part of the Liferay 
-development experience. After all, what good is it if you can't generate remote 
-services for an app you're developing, or call Liferay's built-in remote 
-services? It's no good at all! Liferay without web services would be like a 
-luxury car without wheels. Fortunately, Liferay comes with full set of JSON and 
-SOAP web services that you can invoke until your heart's content. Liferay also 
-provides Service Builder to generate local and remote services for your apps. 
+It's important for apps on different machines to communicate. To enable this, an
+app can expose APIs so remote components (other apps or devices) can access the
+app's features. For example, one service could have a client app presenting
+information to users, a server app processing data in B2B setting, and an IoT
+device requesting data to do its work. Exposing web APIs lets external
+applications or devices communicate with yours. 
 
-The tutorials that follow show you how to work with web services in Liferay:
+Because @product@ contains so many apps and features, it's prudent for Liferay
+to let developers access those apps and features from external apps and devices
+by exposing their APIs. Additionally, Liferay's development platform makes it
+easy to extend them and create new ones. 
 
-- [JAX-RS services that work with OAuth 2](/develop/tutorials/-/knowledge_base/7-1/jax-rs)
++$$$
 
-- [Service Builder JSONWS and SOAP Web Services](/develop/tutorials/-/knowledge_base/7-1/service-builder-web-services)
+**Note:** Hypermedia REST APIs are currently available in beta. To use them, you
+must be running Liferay CE Portal 7.1 GA3+, or Liferay DXP 7.1 Fix Pack 5+. You 
+must also 
+[enable the APIs](/develop/tutorials/-/knowledge_base/7-1/enabling-hypermedia-rest-apis) 
+prior to use.
 
-- [JAX-WS services](/develop/tutorials/-/knowledge_base/7-1/jax-ws)
+$$$
 
-- [Liferay's JSON Web Service Invoker](/develop/tutorials/-/knowledge_base/7-1/json-web-services-invoker)
+There are two different approaches for clients to connect to @product@'s web 
+APIs: 
 
-- [Configuring Access to JSON Web Services](/develop/tutorials/-/knowledge_base/7-1/configuring-json-web-services)
+-   **Hypermedia REST APIs (beta):** These services are designed and built in an 
+    opinionated way, and thus decoupled from the internal model. They follow 
+    well-known industry standards and allow evolution of the APIs without 
+    breaking clients. This is the modern, preferred way to work with web 
+    services in @product@. 
 
-- [Invoking SOAP Web Services](/develop/tutorials/-/knowledge_base/7-1/soap-web-services)
+-   **Plain Web/REST Services:** This is the old way to build and consume web 
+    services in @product@, but is still supported. For example, you can use 
+    [JAX-RS](/develop/tutorials/-/knowledge_base/7-1/jax-rs), 
+    [JAX-WS](/develop/tutorials/-/knowledge_base/7-1/jax-ws), 
+    or 
+    [Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder-web-services) 
+    to implement plain REST or SOAP web services. 
 
-Read on to learn all about web services on Liferay's development platform. 
+The tutorials that follow show you how to consume and create web services in 
+@product@, beginning with hypermedia REST APIs. 

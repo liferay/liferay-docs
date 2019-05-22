@@ -31,16 +31,14 @@ From *Site Pages* you can do several things:
 
 1.  Click the `+` button in the top right corner to add a new page.
 
-2.  Click *Filter and Order* to create pages in the Public or Private page sets
-    using the selector.
+2.  Click options icons manage page or page set settings.
 
 3.  Create child pages by clicking the `+` button next to an existing page.
 
 ![Figure 2: Understanding the options on Site Pages.](../../../../images/site-pages-breakdown.png)
 
 Adding a child page creates child pages in the hierarchy below the page you've 
-selected. You can nest pages as deep as you like and you can manage that 
-hierarchy through Navigation Menus. 
+selected. You can nest pages as deep as you like. 
 
 Once you've clicked the `+` icon to add a page, you're asked to select the type
 of page you are creating. There are two top options followed by other page 

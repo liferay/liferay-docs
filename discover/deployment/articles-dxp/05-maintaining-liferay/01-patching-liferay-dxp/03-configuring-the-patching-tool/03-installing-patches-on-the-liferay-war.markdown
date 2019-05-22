@@ -37,7 +37,7 @@ Download the necessary artifacts from the
         liferay.home=../../patching-home
 
     If you're using a different OSGi folder structure, you can specify it as
-    the [Patching Tool Advanced Configuration](/discover/deployment/7-1/knowledge_base/patching-tool-advanced-configuration)
+    the [Patching Tool Advanced Configuration](/discover/deployment/-/knowledge_base/7-1/patching-tool-advanced-configuration)
     documentation describes: 
 	
         module.framework.core.path=/osgi-home/osgi/core

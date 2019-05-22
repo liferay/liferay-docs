@@ -102,7 +102,7 @@ a `BookmarksFolder`.
 
 Validate the parameters as needed. You might need to make sure a parameter is
 not empty or `null`, or that a parameter value is within a valid range. Throw a
-[`PortalException`](@platform-ref@/javadocs/portal-kernel/com/liferay/portal/kernel/exception/PortalException.html)
+[`PortalException`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/exception/PortalException.html)
 or an extension of `PortalException` for any invalid parameters.
 
 For example, the `addEntry` method invokes the following `validate` method to
@@ -119,7 +119,7 @@ Next, generate a primary key for the entity instance you're creating.
 ## Step 3: Generate a primary key [](id=generate-a-primary-key)
 
 Every entity instance needs a unique primary key. Liferay's
-[`CounterLocalService`](@platform-ref@/javadocs/portal-kernel/com/liferay/counter/kernel/service/CounterLocalService.html)
+[`CounterLocalService`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/counter/kernel/service/CounterLocalService.html)
 generates them per entity. Every `*BaseLocalServiceImpl` has a
 `counterLocalService` field that references a `CounterLocalService` object for
 the entity. Invoke the counter service's `increment` method to generate a

@@ -61,11 +61,11 @@ submission. Otherwise, the asset is sent to the `Default Review` task.
             import com.liferay.portal.kernel.workflow.WorkflowConstants;
             import com.liferay.portal.kernel.workflow.WorkflowHandler;
             import com.liferay.portal.kernel.workflow.WorkflowHandlerRegistryUtil;
-            import com.liferay.portlet.asset.model.AssetCategory;
-            import com.liferay.portlet.asset.model.AssetEntry;
-            import com.liferay.portlet.asset.model.AssetRenderer;
-            import com.liferay.portlet.asset.model.AssetRendererFactory;
-            import com.liferay.portlet.asset.service.AssetEntryLocalServiceUtil;
+            import com.liferay.asset.kernel.model.AssetCategory;
+            import com.liferay.asset.kernel.model.AssetEntry;
+            import com.liferay.asset.kernel.model.AssetRenderer;
+            import com.liferay.asset.kernel.model.AssetRendererFactory;
+            import com.liferay.asset.kernel.service.AssetEntryLocalServiceUtil;
 
             import java.util.List;
 

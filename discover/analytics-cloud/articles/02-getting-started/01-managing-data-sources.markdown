@@ -31,8 +31,8 @@ The Data Sources page appears and lists all existing data sources.
 Unless a teammate has already added a data source, the list is empty. To add
 a new data source, see the following tutorials:
 
-- [Adding a Liferay DXP Data Source](https://github.com/liferay/liferay-docs/blob/master/discover/analytics-cloud/articles/02-getting-started/02-adding-a-liferay-dxp-data-source.markdown)
-- [Adding a CSV Data Source](https://github.com/liferay/liferay-docs/blob/master/discover/analytics-cloud/articles/02-getting-started/03-adding-a-csv-data-source.markdown)
+- [Adding a Liferay DXP Data Source](https://github.com/liferay/liferay-docs/blob/7.1.x/discover/analytics-cloud/articles/02-getting-started/02-adding-a-liferay-dxp-data-source.markdown)
+- [Adding a CSV Data Source](https://github.com/liferay/liferay-docs/blob/7.1.x/discover/analytics-cloud/articles/02-getting-started/03-adding-a-csv-data-source.markdown)
 
 Once you've created your data sources, you might need to modify them from time to time.
 

@@ -12,11 +12,12 @@ First, you must prepare your web content for the Resources Importer.
 You can leverage your HTML (basic web content), JSON (structures), or VM or FTL
 (templates) files with the Resource Importer. All web content articles require
 a structure and template. Note that some articles may share the same structure
-and perhaps even the same template--this is the case for all basic web content
+and perhaps even the same template---this is the case for all basic web content
 articles. Follow these steps to prepare your web content articles:
 
-1.  Open the web content article and click the *Download* button to download the 
-    XML file. Create a folder for the article under 
+1.  Select *Edit* from the article's options menu, click the *Options* icon 
+    at the top right of the page and select *View Source*. Copy the article's 
+    raw XML into an XML file locally. Create a folder for the article under 
     `resources-importer/journal/articles/` and rename it as desired. The web 
     content article's XML fills in the data required by the structure. An 
     example web content article's XML is shown below:

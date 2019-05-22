@@ -47,9 +47,16 @@ Team
 : Permissions are defined within a specific Site and are assigned within that
 specific Site.
 
-<!-- Read 
-/discover/portal/-/knowledge_base/7-1/creating-teams-for-advanced-site-membership-management) 
-for more information about Teams. -->
++$$$
+
+**Note:** Some permissions cannot be handled from the control panel.
+Asset-level permissions (for instance, permission to edit an individual blog
+post, or view a folder in the Documents and Media library) are managed from the
+individual asset. See 
+[Widget Permissions](/discover/portal/-/knowledge_base/7-1/widget-permissions) 
+for details.
+
+$$$
 
 ## Deleting Asset Containers [](id=deleting-asset-containers)
 

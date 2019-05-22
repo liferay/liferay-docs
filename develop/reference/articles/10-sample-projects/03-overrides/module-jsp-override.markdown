@@ -49,8 +49,9 @@ or
 
 This approach can be used to override any application JSP (i.e., JSPs residing
 in a module). You can also add new JSPs to an existing module with this
-technique. If you need to override a core JSP, see the `core-jsp-override`
-sample.
+technique. If you need to override a core JSP, see the
+[JSP Overrides Using Custom JSP Bag](/develop/tutorials/-/knowledge_base/7-1/jsp-overrides-using-custom-jsp-bag)
+tutorial.
 
 For more information on other ways to customize JSPs, see the
 [Customizing JSPs](/develop/tutorials/-/knowledge_base/7-1/customizing-jsps)

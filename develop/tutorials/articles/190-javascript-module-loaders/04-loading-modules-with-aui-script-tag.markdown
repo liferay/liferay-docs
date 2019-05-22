@@ -1,7 +1,7 @@
 # Loading Modules with AUI Script [](id=loading-modules-with-aui-script)
 
-The `aui:script` tag is a JSP tag that loads JavaScript in script tags on the
-page, while ensuring that certain resources are loaded before executing.
+The `aui:script` tag is a JSP tag that loads JavaScript in script tags on the 
+page, while ensuring that certain resources are loaded before executing. 
 
 +$$$
 
@@ -46,8 +46,8 @@ alternatively, you can specify a variable for your module by adding
     </aui:script>
 
 This resolves the dependencies of the registered `Clipboard.js` and loads them 
-in order until all of them are satisfied and the requested module can be safely
-executed.
+in order until all of them are satisfied and the requested module can be safely 
+executed. 
 
 In the browser, the `aui:script` translates to the full HTML shown below:
 
@@ -94,8 +94,29 @@ In the browser, the `aui:script` translates to the full HTML shown below:
             }
         );
     </script>
- 
-Now you know how to load modules with the `aui:script` tag!
+
+Next you can learn how to load AlloyUI modules together with ES2015 and Metal.js 
+modules. 
+
+## Loading AlloyUI Modules and ES2015 and Metal.js Modules Together [](id=loading-alloyui-modules-and-es2015-and-metal-js-modules-together)
+
+You may want to load an AUI module along with an ES2015 module or Metal.js 
+module in an `aui:script`. The `aui:script` tag doesn't support both the 
+`require` and `use` attributes in the same configuration. Not to worry though. 
+You can use the `aui:script`'s `require` attribute to load the ES2015 and 
+Metal.js modules, while loading the AUI module(s) with the `AUI().use()` 
+function within the script. Below is an example configuration:
+
+    <aui:script require="path-to/metal/module">
+     AUI().use(
+        'liferay-aui-module', 
+        function(A) {
+            let var = pathToMetalModule.default;
+        }
+    );
+    </aui:script>
+
+Now you know how to load modules with the `aui:script` tag! 
 
 ## Related Topics [](id=related-topics)
 

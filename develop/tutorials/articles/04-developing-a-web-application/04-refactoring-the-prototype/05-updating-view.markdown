@@ -19,7 +19,7 @@ existing JSPs.
         <%@ page import="java.util.List" %>
         <%@ page import="com.liferay.portal.kernel.util.ParamUtil" %>
         <%@ page import="com.liferay.portal.kernel.util.HtmlUtil" %>
-        <%@ page import="com.liferay.portal.kernel.util.StringPool" %>
+        <%@ page import="com.liferay.petra.string.StringPool" %>
         <%@ page import="com.liferay.portal.kernel.model.PersistedModel" %>
         <%@ page import="com.liferay.portal.kernel.dao.search.SearchEntry" %>
         <%@ page import="com.liferay.portal.kernel.dao.search.ResultRow" %>

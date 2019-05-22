@@ -184,7 +184,7 @@ instance.
 
     with this one
 
-        JVM_OPTS="-Xmx2048M -Xss512K -XX:MaxMetaspaceSize=512m"
+        JVM_OPTS="-Dfile.encoding=UTF-8 -Duser.timezone=GMT -Xmx2048M -Xss512K -XX:MaxMetaspaceSize=512m"
 
     In `setenv.bat` replace
 
@@ -192,8 +192,14 @@ instance.
 					
     with
 
-        set JVM_OPTS=-Xmx2048M -Xss512K -XX:MaxMetaspaceSize=512m
+        set JVM_OPTS=-Dfile.encoding=UTF-8 -Duser.timezone=GMT -Xmx2048M -Xss512K -XX:MaxMetaspaceSize=512m
 
+    +$$$
+
+    **Important:** For @product@ to work properly, the application server JVM 
+    must use the `GMT` time zone and `UTF-8` file encoding. 
+
+    $$$
 
 2.  Next, you should make sure that UTF-8 URI encoding is used consistently. 
     Open `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/conf/server.xml` and 
@@ -224,6 +230,15 @@ instance.
         wrapper.java.additional.9=-Xss512K
         wrapper.java.additional.10=-XX:MaxMetaspaceSize=256M
         wrapper.java.additional.11=-Dfile.encoding=UTF-8
+    +$$$
+
+    **Important:** For @product@ to work properly, the application server JVM 
+    must use the `GMT` time zone and `UTF-8` file encoding. If your Java wrapper
+    doesn't already specify the `GMT` time zone, add an entry for it:
+    
+        wrapper.java.additional.12=-Duser.timezone=GMT
+
+    $$$
 
 4.  Finally, open `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/conf/web.xml` and 
     add the following configuration after
@@ -293,7 +308,7 @@ Your data source is now configured. Next set up the mail session.
 As with database configuration, the easiest way to configure mail is to let
 @product@ handle your mail session. If you want to use @product@'s built-in mail
 session, skip this section and 
-[configure the mail session](/discover/deployment/-/knowledge_base/7-1/installing-product#configuring-mail)
+[configure the mail session](/discover/deployment/-/knowledge_base/7-1/installing-liferay#configuring-mail)
 in the Control Panel.
 
 If you want to manage your mail session with tc Server, follow these steps: 

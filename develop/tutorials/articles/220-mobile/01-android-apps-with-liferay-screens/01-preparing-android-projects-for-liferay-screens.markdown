@@ -66,7 +66,7 @@ screenshot highlights the app module's `build.gradle` file:
 In the app module's `build.gradle` file, add the following line of code inside 
 the `dependencies` element: 
 
-    compile 'com.liferay.mobile:liferay-screens:+'
+    implementation 'com.liferay.mobile:liferay-screens:+'
 
 Note that the `+` symbol tells Gradle to install the newest version of Screens.
 If your app relies on a specific version of Screens, you can replace the `+`
@@ -177,7 +177,7 @@ your Android project:
 
 4. Include the required dependencies in your `build.gradle` file: 
 
-        compile project(':liferay-screens')
+        implementation project(':liferay-screens')
 
 You can also configure the `.aar` binary files (in `Android/dist`) as local 
 `.aar` file dependencies. You can download all necessary files from

@@ -14,7 +14,7 @@ and the
 [Components listing](#using-the-components-listing).
 The App Manager manages apps in the OSGi framework. You can use the App Manager
 to install, activate, deactivate, and delete apps. You can manage apps at the
-app suite, app, and OSGi module levels. 
+app and module levels. 
 
 The Components listing views and manages apps at the OSGi component level. It
 differs from the App Manager by showing apps by type (portlet, theme, and layout
@@ -62,35 +62,33 @@ deployment".
 
 ## Using the App Manager [](id=using-the-app-manager)
 
-Access the App Manager by selecting *Control Panel* &rarr; *Apps* &rarr; *App 
-Manager*. The App Manager lists app suites and apps in separate tables. The bar
-above the first table configures the display of both by category, status, or
-title. Click the up or down arrows to perform an ascending or descending sort,
-respectively. To search for an app suite, app, or module, use the search bar at
-the top-right. This is often the quickest way to find something. 
+Access the App Manager by selecting *Control Panel* &rarr; *Apps* &rarr; *App
+Manager*. The App Manager lists your apps. The *Filter and Order* menu lets you
+filter and order by category, status, or title. Click the up or down arrows to
+perform an ascending or descending sort, respectively. To search for an app or
+module, use the search bar. This is often the quickest way to find something. 
 
-![Figure 1: The App Manager lets you manage the app suites and apps installed in your @product@ instance.](../../images/app-manager.png)
+![Figure 1: The App Manager lets you manage the apps installed in your @product@ instance.](../../images/app-manager.png)
 
-Each item listed in the tables contains a description (if available), version, 
-and status. The status refers to the item's OSGi status:
+Each item listed in the table contains a description (if available), version, 
+and status. Here are the statuses:
 
--   **Installed:** The item is installed in the OSGi framework. 
--   **Resolved:** The OSGi framework has resolved the item's dependencies. 
-    Resolved items can typically be activated. Some items, however, can't be 
-    activated and are intended to remain in the Resolved state (e.g., WSDD 
-    modules containing SOAP web services). 
--   **Active:** The item is running in the OSGi framework. 
+-   **Installed:** The item is installed to @product@. 
+-   **Resolved:** The item's dependencies are active. Resolved items can 
+    typically be activated. Some items, however, can't be  activated and are
+    intended to remain in the Resolved state (e.g., WSDD  modules containing
+    SOAP web services). 
+-   **Active:** The item is running in @product@. 
 
 Clicking each item's Actions button 
 (![Actions](../../images/icon-actions.png)) brings up a menu that lets you 
-activate, deactivate, or delete that item. 
+activate, deactivate, or uninstall that item. 
 
-To view an item's contents, click its name in the table. If you click an app 
-suite, the suite's apps are listed. If you click an app, the app's modules are
-listed. If you click a module, the module's components appear. The component
-level is as far down as you can go in OSGi without getting into the source code.
-At any level in the App Manager, a link trail appears that lets you navigate
-back in the hierarchy. 
+To view an item's contents, click its name in the table. If you click an app,
+the app's modules are listed. If you click a module, the module's components and
+portlets appear. The component level is as far down as you can go without
+getting into the source code. At any level in the App Manager, a link trail
+appears that lets you navigate back in the hierarchy. 
 
 For information on using the App Manager to install an app, see the article 
 [Installing Apps Manually](/discover/portal/-/knowledge_base/7-1/installing-apps-manually). 

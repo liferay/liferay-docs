@@ -6,17 +6,35 @@ the product) to your company's Analytics Cloud project. If you're not the owner
 but still need access to the project, ask an Analytics Cloud system
 administrator to invite you.
 
-Your invitation links you to the Analytics Cloud sign in page, which prompts you
-for your Liferay credentials. Once you've signed in, your company's project
-appears. 
+Your invitation links you to the Analytics Cloud
+[sign in page](https://analytics.liferay.com/),
+which prompts you for your Liferay credentials.
 
-![Figure 1: Your project's home page welcomes you to all Analytics Cloud offers.](../../images/home-page-intial.png)
+First time users see the Workspace creation page: 
 
-The welcome screen describes and links to each key component page:
+1.  Name your workspace, select a server location for hosting your data, and
+    review/agree to the terms and conditions. 
+    
+2.  Create the workspace. A message appears, stating that your Analytics Cloud
+    environment is being set up. Next your project home page appears. 
+
+Subsequent visits to
+[https://analytics.liferay.com/](https://analytics.liferay.com/)
+show the Workspace welcome page, where you can select your workspace or
+any other accessible workspaces for working on projects. 
+
+![Figure 1: Your project's home page welcomes you to all Analytics Cloud offers.](../../images/home-page-initial.png)
+
+The project home page describes and links to each key component page:
 
 **Segments:** Aggregate customers into Segments based on similar profiles and
 behavior data. Track Segment growth and discover patterns of interest. Discover
 your target audience.
+
+**Accounts:** Learn how individuals that belong to Salesforce accounts interact 
+with your sites. By combining Salesforce account data with data from other 
+sources, Analytics Cloud presents a holistic view of the account and those in 
+it. 
 
 **Individuals:** Learn how individual customers interact with your Sites. View
 holistic profiles that combine customer's profile data with their page and asset
@@ -36,7 +54,7 @@ multiple Liferay DXP sites and custom data sources.
 Additional shortcuts and overviews are displayed on the right:
 
 **Add Data Source:** Quick access to adding data sources for customer profiles
-and behavior data.
+and behavior data. 
 
 **Usage:** Compares the number of Individuals and Pages you're analyzing to your
 Liferay Analytics Cloud Plan. 
@@ -48,13 +66,13 @@ The *Liferay Analytics Cloud* icon
 of the navigation panel takes you to the home page from wherever you are in the
 application. Beneath it are several other links:
 
-**People**: Learn more about your customers by analyzing them individually as
-*Individuals* or aggregated as *Segments*. 
+**People**: Learn more about your customers by analyzing them individually as 
+*Individuals*, aggregated as *Segments*, or as part of Salesforce *Accounts*. 
 
-**Touchpoints**: Analyze *page* and *asset* performance and view paths users
+**Touchpoints**: Analyze *page* and *asset* performance and view paths users 
 take to your pages. 
 
-**User icon:** Switch projects or sign out.
+**User icon:** Switch projects or sign out. 
 
 **Settings**: Provides options for managing data sources, users, and updating
 your Analytics Cloud usage. 

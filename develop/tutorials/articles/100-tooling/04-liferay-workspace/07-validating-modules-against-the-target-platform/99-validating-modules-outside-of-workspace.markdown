@@ -24,6 +24,6 @@ Liferay DXP users must replace the artifact names and versions:
 - `release.portal.bom` &rarr; `release.dxp.bom`
 - `release.portal.bom.compile.only` &rarr; `release.dxp.bom.compile.only`
 - `release.portal.distro` &rarr; `release.dxp.distro`
-- `7.1.0` &rarr; `7.1.10.0`
+- `7.1.0` &rarr; `7.1.10`
 
 Now you can validate your modules against a target platform!

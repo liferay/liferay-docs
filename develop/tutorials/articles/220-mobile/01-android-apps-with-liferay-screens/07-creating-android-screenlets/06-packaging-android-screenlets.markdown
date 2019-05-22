@@ -42,13 +42,13 @@ Now that you have a module, you're ready to configure its dependencies.
 ## Configure Dependencies Between Each Module [](id=configure-dependencies-between-each-module)
 
 Next, you must configure your app to use the module. To do so, add a project
-compile statement to your `build.gradle` file's dependencies: 
+implementation statement to your `build.gradle` file's dependencies: 
 
     // Change YOUR_MODULE_NAME to match your module's name
 
     dependencies {
         ...
-        compile project (':YOUR_MODULE_NAME')
+        implementation project (':YOUR_MODULE_NAME')
         ...
     }
 
@@ -56,9 +56,9 @@ Your module must also specify dependencies for overriding existing Screenlets
 and creating new ones. This usually requires adding Liferay Screens and the View
 Sets your Screenlet currently uses to your `build.gradle` file's dependencies.
 To add Liferay Screens as a dependency, add to your `build.gradle` file's
-dependencies the following project compile statement: 
+dependencies the following project implementation statement: 
 
-    compile 'com.liferay.mobile:liferay-screens:+'
+    implementation 'com.liferay.mobile:liferay-screens:+'
 
 Awesome! Now you're ready to share your Screenlet with the world!
 

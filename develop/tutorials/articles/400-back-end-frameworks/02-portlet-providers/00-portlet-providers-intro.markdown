@@ -248,6 +248,6 @@ Now you can unleash an arsenal of `PortletProvider`s to use in your apps!
 
 [Portlets](/develop/tutorials/-/knowledge_base/7-1/portlets)
 
-[Embedding Portlets in Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-1/embedding-portlets-in-themes-and-layout-templates)
+[Embedding Portlets in Themes](/develop/tutorials/-/knowledge_base/7-1/embedding-portlets-in-themes)
 
 [Customizing Liferay Services](/develop/tutorials/-/knowledge_base/7-1/customizing-liferay-services-service-wrappers)
