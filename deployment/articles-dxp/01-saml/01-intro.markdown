@@ -242,7 +242,7 @@ For other SPs, consult the vendor's documentation on initiating SLO.
 A SAML `LogoutRequest` is sent to the Single Log Out service URL of the IdP.
 
 -  If @product@ serves as the SP, the `LogoutRequest` is sent to the IdP
-   configured by the IdP Connection tab of the SAML provider (see the [next
+   configured by the IdP Connections tab of the SAML provider (see the [next
    article](/docs/7-2/deploy/-/knowledge_base/d/setting-up-liferay-as-a-saml-identity-provider)
    to set up the IdP Connection) and the SLO service URL defined in the SAML
    metadata. 
