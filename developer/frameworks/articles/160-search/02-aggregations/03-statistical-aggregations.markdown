@@ -37,27 +37,27 @@ that are to be computed for each field.
 1. Get a reference to `com.liferay.portal.search.searcher.SearchRequestBuilderFactory`:
 
 ```java
-        @Reference
-        SearchRequestBuilderFactory searchRequestBuilderFactory;
+@Reference
+SearchRequestBuilderFactory searchRequestBuilderFactory;
 ```
 
 2. Get an instance of `com.liferay.portal.search.searcher.SearchRequestBuilder`:
 
 ```java
-        SearchRequestBuilder searchRequestBuilder = searchRequestBuilderFactory.getSearchRequestBuilder();
+SearchRequestBuilder searchRequestBuilder = searchRequestBuilderFactory.getSearchRequestBuilder();
 ```
 
-3. Get a`com.liferay.portal.search.searcher.SearchRequest` instance from the builder:
+3. Get a `com.liferay.portal.search.searcher.SearchRequest` instance from the builder:
 
 ```java
-        SearchRequest searchRequest = searchRequestBuilder.build();
+SearchRequest searchRequest = searchRequestBuilder.build();
 ```
 
 4. Get a reference to `com.liferay.portal.search.stats.StatsRequestBuilderFactory`:
 
 ```java
-        @Reference
-        StatsRequestBuilderFactory statsRequestBuilderFactory;
+@Reference
+StatsRequestBuilderFactory statsRequestBuilderFactory;
 ```
 
 5. Get a `com.liferay.portal.search.stats.StatsRequestBuilder` instance and
@@ -65,48 +65,39 @@ that are to be computed for each field.
    metrics:
 
 ```java
-        StatsRequestBuilder statsRequestBuilder = statsRequestBuilderFactory.getStatsRequestBuilder();
+StatsRequestBuilder statsRequestBuilder = statsRequestBuilderFactory.getStatsRequestBuilder();
 
-        StatsResponse expectedStatsResponse = statsResponseBuilder.cardinality(
-            31
-        ).count(
-            31
-        ).field(
-            field
-        ).max(
-            31
-        ).mean(
-            16
-        ).min(
-            1
-        ).sum(
-            496
-        ).sumOfSquares(
-            10416
-        ).build();
+StatsResponse expectedStatsResponse = statsResponseBuilder.cardinality(31)
+    .count(31)
+    .field(field).max(31)
+    .mean(16)
+    .min(1)
+    .sum(496)
+    .sumOfSquares(10416)
+    .build();
 ```
 
 6. Set `StatsRequest` on the `SearchRequest`:
 
 ```java
-        searchRequest.statsRequests(statsRequest);
+searchRequest.statsRequests(statsRequest);
 ```
 
 7. Get a reference to `com.liferay.portal.search.searcher.Searcher`:
 
 ```java
-        @Reference
-        protected Searcher searcher;
+@Reference
+protected Searcher searcher;
 ```
 
 8. Perform a search using `Searcher` and `SearchRequest` to get
    `com.liferay.portal.search.searcher.SearchResponse`:
 
 ```java
-        SearchResponse searcher.search(searchRequest);
+SearchResponse searcher.search(searchRequest);
 ```
 
-[**Click here to see an example from Liferay's codebase**]( https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-search/portal-search-test-util/src/main/java/com/liferay/portal/search/test/util/stats/BaseStatisticsTestCase.java#L128 )
+[**Click here to see an example from Liferay's codebase**](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-search/portal-search-test-util/src/main/java/com/liferay/portal/search/test/util/stats/BaseStatisticsTestCase.java#L128 )
 
 ### `StatsResponse`
 
@@ -116,13 +107,13 @@ engine for a given field.
 1. Get the map containing the metrics aggregations computed by the search engine:
 
 ```java
-        Map<String, StatsResponse> map = searchResponse.getStatsResponseMap();
+Map<String, StatsResponse> map = searchResponse.getStatsResponseMap();
 ```
 
 2. Get the `StatsResponse` for a given field:
 
 ```java
-        StatsResponse statsResponse = map.get(field);
+StatsResponse statsResponse = map.get(field);
 ```
 
 3. Get the desired metric, for example _cardinality_:
@@ -140,21 +131,21 @@ supported:
 
 1. Create a `Stats` instance with the desired metrics:
 ```java
-        Stats stats = new Stats() {
-            {
-                setCount(true);
-                setField(field);
-                setMax(true);
-                setMean(true);
-                setMin(true);
-                setSum(true);
-                setSumOfSquares(true);
-            }
-        };
+Stats stats = new Stats() {
+    {
+        setCount(true);
+        setField(field);
+        setMax(true);
+        setMean(true);
+        setMin(true);
+        setSum(true);
+        setSumOfSquares(true);
+    }
+};
 ```
 3. Set `Stats` on the `SearchContext`:
 ```java
-        searchRequestBuilder.withSearchContext(searchContext -> searchContext.addStats(stats));
+searchRequestBuilder.withSearchContext(searchContext -> searchContext.addStats(stats));
 ```
 
 [**Click here to see an example from Liferay's codebase**](https://github.com/liferay/liferay-portal/blob/7.2.x/modules/apps/portal-search/portal-search-test-util/src/main/java/com/liferay/portal/search/test/util/stats/BaseStatisticsTestCase.java#L42)
