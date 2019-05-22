@@ -8,7 +8,7 @@ header-id: using-translation-features-in-your-widget
 
 By default, the Liferay Bundle Generator creates an empty configuration for 
 translation. The translate script instructs the user how to add new supported 
-locales or configure the credentials when it is run. The translate target reads 
+locales or configure the credentials when it's run. The translate target reads 
 the supported locales you have defined in the `supportedLocales` key of your 
 `.npmbuildrc` file and checks your `*language.properties` files to make sure 
 they match. 
@@ -33,7 +33,7 @@ npm run translate
     each new **supported** locale with translations for your language keys. It 
     also warns about locales that are not supported, but have a 
     `*language.properties` file.
-    
+ 
 Great! Now you know how to use the Liferay Bundle Generator's translation 
 features in your app. 
 
