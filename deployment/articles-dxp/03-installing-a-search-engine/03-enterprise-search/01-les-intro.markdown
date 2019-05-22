@@ -1,3 +1,7 @@
+---
+header-id: installing-liferay-enterprise-search
+---
+
 # Installing Liferay Enterprise Search
 
 [TOC levels=1-4]

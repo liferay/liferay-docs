@@ -1,3 +1,7 @@
+---
+header-id: installing-liferay-enterprise-search-security
+---
+
 # Installing Liferay Enterprise Search Security
 
 [TOC levels=1-4]

@@ -1,3 +1,7 @@
+---
+header-id: installing-liferay-enterprise-search-monitoring
+---
+
 # Installing Liferay Enterprise Search Monitoring
 
 [TOC levels=1-4]

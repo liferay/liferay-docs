@@ -1,3 +1,7 @@
+---
+header-id: changing-the-settings-for-service-provider-and-identity-provider-connection
+---
+
 # Changing the Settings for Service Provider and Identity Provider Connections
 
 [TOC levels=1-4]
