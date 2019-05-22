@@ -1,4 +1,10 @@
+---
+header-id: propagation-of-changes
+---
+
 # Propagation of Changes
+
+[TOC levels=1-4]
 
 If you make an update to a Page Fragment or Content Page Templates it doesn't
 automatically propagate changes, but you can access the *Usages and Propagation*
@@ -16,7 +22,7 @@ and Display Page that uses the selected Page Fragment. You can then selectively
 propagate fragment changes to any or all of the pages listed. You can use the
 various filters and selection options to apply updates to pages quickly.
 
-![Figure 6: Viewing the Usages and Propagation page.](../../../images/fragment-usages-and-propagation.png)
+![Figure 1: Viewing the Usages and Propagation page.](../../../images/fragment-usages-and-propagation.png)
 
 To update a page or template,
 

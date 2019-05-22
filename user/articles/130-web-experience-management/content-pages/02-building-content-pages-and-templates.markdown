@@ -1,4 +1,10 @@
+---
+header-id: building-content-pages
+---
+
 # Building Content Pages
+
+[TOC levels=1-4]
 
 To demonstrate Content Page capabilities, create a "Landing Page" for a space 
 shuttle tour based on this design:
@@ -7,7 +13,9 @@ shuttle tour based on this design:
 
 ## Creating a Content Page
 
-To create the page: first add the Fragments you need to define the basic structure of the page, then edit the text for the current page, and finally edit the images, and publish the page.
+To create the page: first add the Fragments you need to define the basic 
+structure of the page, then edit the text for the current page, and finally 
+edit the images, and publish the page.
 
 1.  From Site Administration for your Site, go to *Site Builder* &rarr; *Pages*.
 
@@ -16,7 +24,8 @@ To create the page: first add the Fragments you need to define the basic structu
 
 3.  Set the *Name* as "Space Landing Page" and click *Save*.
 
-Now you're in Content Page creation. As you work, a draft of the page is automatically saved, but you must click *Publish* to make it available for use.
+Now you're in Content Page creation. As you work, a draft of the page is 
+automatically saved, but you must click *Publish* to make it available for use.
 
 4.  Open *Sections* &rarr; *Basic Sections* and drag a *Banner Center* Fragment 
     onto the page.
@@ -31,30 +40,36 @@ Now you're in Content Page creation. As you work, a draft of the page is automat
 8.  Add a *Card Basic* to the right side, and then an *Image* below that inside 
     the same column.
 
-![Figure 1: You have lots of flexibility when arranging Fragments on a page.](../../../images/content-page-creation-step-1.png)
+![Figure 2: You have lots of flexibility when arranging Fragments on a page.](../../../images/content-page-creation-step-1.png)
 
 Now that the structure is defined, start editing the text and images.
 
 1.  Click in each text box, and edit the text to be relevant to your goal of 
     directing potential customers to space shuttle tours.
     
-![Figure 2: Edit the text and formatting as you see fit.](../../../images/content-page-creation-step-2.png)
+![Figure 3: Edit the text and formatting as you see fit.](../../../images/content-page-creation-step-2.png)
 
-2.  Click on the main banner image, and then on the ![Edit](../../../images/icon-edit.png) icon.
+2.  Click on the main banner image, and then on the 
+    ![Edit](../../../images/icon-edit-pencil.png) icon.
 
 3.  Select one of the many space flight images that are surely filling up your
     Documents and Media library, upload a new one, or specify a URL.
     
-![Figure 3: Add some images, and the big picture comes together.](../../../images/content-page-creation-step-3.png)
+![Figure 4: Add some images, and the big picture comes together.](../../../images/content-page-creation-step-3.png)
 
-This is looking good so far, but the one difference between the design mockup and the final result is that the background was black for the original. To finish it up, change the background color for the section to black.
+This is looking good so far, but the one difference between the design mockup 
+and the final result is that the background was black for the original. To 
+finish it up, change the background color for the section to black.
 
 1.  Click on the bottom Section and some additional icons will appear.
 
-![Figure 4: You can change the background color, image, or edit spacing and padding for a section.](../../../images/content-page-section-editor.png)
+![Figure 5: You can change the background color, image, or edit spacing and padding for a section.](../../../images/content-page-section-editor.png)
 
 2.   Click on *Background Color* ![Background Color](../../../images/icon-color.png), and select Black.
 
 3.  Finally, publish your page.
 
-In just a few minutes, you used the power of Content Pages and Fragments to go from nothing to perfectly recreating a page design. To take it to the next level, head over the [Segmentation and Personalization guide](user-guide-link) and the [Content Page Personalization section](user-guide-link).
+In just a few minutes, you used the power of Content Pages and Fragments to go 
+from nothing to perfectly recreating a page design. To take it to the next 
+level, head over the [Segmentation and Personalization guide](user-guide-link) 
+and the [Content Page Personalization section](user-guide-link).
