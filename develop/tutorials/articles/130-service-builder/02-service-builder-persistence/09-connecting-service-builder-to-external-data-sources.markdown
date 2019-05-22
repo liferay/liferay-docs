@@ -3,8 +3,8 @@
 Sometimes you want to use a database other than @product@'s. To do this, its
 data source must be defined in `portal-ext.properties` or configured as a JNDI
 data source on the app server. This tutorial shows how to connect
-[Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder) to
-a data source. Here's how: 
+[Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder)
+to a data source. Here's how: 
 
 1. [Specify the data source.](#step-1-specify-the-data-source)
 
@@ -13,6 +13,15 @@ a data source. Here's how:
 3. [Set your entity's data source to the `liferayDataSource` alias.](#step-3-set-your-entitys-data-source-to-the-liferaydatasource-alias)
 
 4. [Run Service Builder.](#step-4-run-service-builder)
+
++$$$
+
+**Note**: All entities defined in a Service Builder module's `service.xml` file 
+are bound to the same data source. Binding different entities to different data
+sources requires defining the entities in separate Service Builder modules and
+configuring each of the modules to use a different data source. 
+
+$$$
 
 First, use portal properties to set your data source. 
 
@@ -173,15 +182,7 @@ the column name.
 [Run Service Builder](/develop/tutorials/-/knowledge_base/7-1/running-service-builder).
 Now your Service Builder services use the data source. You can
 [use the services in your business logic](/develop/tutorials/-/knowledge_base/7-1/business-logic-with-service-builder)
-as you always have regardless of the underlying data source. 
-
-+$$$
-
-**Note**: Only one data source can be used in a Service Builder module. To use
-three different external data sources with Service Builder, for example, you
-must create three different Service Builder modules, one for each data source.
-
-$$$
+as you always have regardless of the underlying data source.
 
 Congratulations! You've connected Service Builder to your external data source. 
 
