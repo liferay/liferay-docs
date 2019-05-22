@@ -148,9 +148,11 @@ changed for document storage:
     dl.store.impl=com.liferay.portal.store.s3.S3Store
     ```
 
--   JCR Store was deprecated in @product@ 7.0. The
-    [Document Repository Configuration](/docs/7-2/deploy/-/knowledge_base/d/document-repository-configuration)
-    documentation describes other store options.
+-   JCR Store was deprecated in @product@ 7.0. The [Document Repository 
+    Configuration](/docs/7-2/deploy/-/knowledge_base/d/document-repository-configuration)
+    documentation describes other store options. [Migrate your document
+    data](/docs/7-2/user/-/knowledge_base/u/server-administration) to one of the
+    other store options before upgrading from your current Liferay version. 
 
 -   Since @product@ 7.0, document store type-specific configuration (e.g., 
     specific to Simple File Store, Advanced File Store, S3, etc.) is done in the
