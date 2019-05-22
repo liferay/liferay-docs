@@ -175,6 +175,13 @@ doing to the console. The default value is `false`.
 
 *"\"*: plugins' configuration for dependency packages.
 
+*(asterisk)*: Defines the default plugin configuration for all npm packages. It 
+contains four values identified by a corresponding key. Keys `copy-plugins`, 
+`plugins` and `post-plugins` identify arrays of `liferay-npm-bundler` plugins to 
+apply in the copy, pre and post process steps. Key `.babelrc` identifies an 
+object specifying the configuration to use in the Babel step and has the same 
+structure of a standard `.babelrc` file.
+
 *exclude:* defines glob expressions of files to exclude from bundling from all
 or specific packages. Each list is an array identified by one of the following 
 keys: `*` (any package), `{package name}` (any version of the package), or 
@@ -202,11 +209,12 @@ packages must be available in the `node_modules` folder (i.e. installed
   manually, without saving them to `package.json`, or listed in the 
   `devDependencies` section).
 
+*max-parallel-files:* Defines the maximum number of files to process in parallel 
+to avoid EMFILE errors (especially on Windows). The default value is `128`.
+
 *packages:* defines plugin configuration for npm packages, per package.
 
-*process-serially:* Whether to process packages one by one, as opposed to 
-parallel. The default value is `false` (parallel). Setting this option to `true` 
-may prevent `EMFILE` errors (especially on Windows).
+*process-serially:* *removed* since v2.7.0. Replaced with `max-parallel-files`.
 
 ### OSGi Bundle Creation Options [](id=osgi-bundle-creation-options)
 
@@ -223,10 +231,38 @@ individually. Note that you can also pass this as a build flag:
 `$ liferay-npm-bundler --create-` or 
 `$ liferay-npm-bundler -j`. The default value is `false`.
 
-- **create-jar.auto-deploy-portlet**: **Note** that this option is 
-deprecated. Use the `js-extender` option instead. 
+    {
+      "create-jar": true
+    }
+
+- **create-jar.auto-deploy-portlet**: **Note** that this option is deprecated. 
+Use the `create-jar.features.js-extender` option instead. 
+
+- **create-jar.features.configuration**: specifies the file describing the 
+system (OSGi) and widget instance (portlet preferences, as defined in the 
+Portlet spec) configuration to use. (see 
+[Configuring System Settings and Instance Settings for Your JavaScript Portlets](/develop/tutorials/-/knowledge_base/7-1/configuring-system-settings-and-instance-settings-for-your-js-portlet) 
+for more information on the required settings configuration). The default value 
+is `features/configuration.json` if that file exists, otherwise the default is 
+`undefined`.
+
+    {
+      "create-jar": {
+        "features": {
+          "configuration": "features/configuration.json"
+        }
+      }
+    }
 
 - **create-jar.output-dir:** specifies where to place the final JAR
+
+    {
+      "create-jar": {
+        "features": {
+          "configuration": "features/configuration.json"
+        }
+      }
+    }
 
 - **create-jar.features.js-extender:** controls whether to process the OSGi 
 bundle with the JS Portlet Extender 
@@ -253,12 +289,28 @@ the Extender required for the features used in the bundle. the default value is
 publishing bundle's static resources. The default value is 
 `/{project name}-{project version}`.
 
+    {
+      "create-jar": {
+        "features": {
+          "web-context": "/my-project"
+        }
+      }
+    }
+
 - **create-jar.features.localization:** specifies the L10N file to be used by the 
 bundle (see the 
 [Creating JS Portlets with JS Tooling](Creating-OSGi-bundles#localization) 
 tutorial for more information on using localization in your portlet. The default 
 value is `features/localization/Language` if a properties file with that base 
 name exists, otherwise the default is `undefined`.
+
+    {
+      "create-jar": {
+        "features": {
+          "localization": "features/localization/Language"
+        }
+      }
+    }
 
 - **create-jar.features.settings:** specifies the JSON file describing the 
 configuration structure (see the 

@@ -11,7 +11,7 @@ The following templates are covered in this section:
 - Vue
 
 Alternatively, you can 
-[use @product@'s front-end toolset](/develop/tutorials/-/knowledge_base/7-1/creating-and-bundling-javascript-portlets-with-javascript-tooling) 
+[use @product@'s Liferay Bundle Generator](/develop/tutorials/-/knowledge_base/7-1/creating-and-bundling-javascript-portlets-with-javascript-tooling) 
 to build JavaScript-based portlets. The tutorials in this section show how to 
 use front-end frameworks in your portlets.
 
