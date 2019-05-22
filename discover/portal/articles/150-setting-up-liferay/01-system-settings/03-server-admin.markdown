@@ -154,7 +154,8 @@ version of @product@ and will be removed in the next version of @product@.
 The second section, *Migrate documents from one repository to another*, helps
 you migrate your documents to a new repository on a different disk or in a [new format](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration). Here are the steps:
 
-1.  Create a repository backup copy. 
+1.  Create a backup copy of the Document Library repository and
+    [@product@ database](/discover/deployment/-/knowledge_base/7-0/backing-up-a-liferay-installation). 
 2.  Configure the new file store on that file store's page, listed under *System
     Settings* &rarr; *Foundation*. 
 3.  In this tab (*Server Administration* &rarr; *Data Migration*), select the 
@@ -162,6 +163,8 @@ you migrate your documents to a new repository on a different disk or in a [new 
 4.  After the process completes, [configure the new
     repository](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration)
     as the default. 
+5.  If you used a `portal-ext.properties` file to configure the repository, 
+    restart the server. 
 
 ## File Uploads [](id=file-uploads)
 
