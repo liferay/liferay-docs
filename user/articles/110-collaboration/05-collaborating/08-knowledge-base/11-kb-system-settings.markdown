@@ -43,7 +43,7 @@ checkbox.
 
 To change the source URL button's label, specify a new value for the setting 
 *Source URL Edit Message Key*. Best practice is to specify the value as a 
-[language key](/develop/tutorials/-/knowledge_base/7-2/overriding-language-keys). 
+[language key](/docs/7-2/customization/-/knowledge_base/c/overriding-language-keys). 
 For example, if you create a language key `edit-on-bitbucket=Edit on Bitbucket`, 
 you can specify that language key as the button's new label: 
 
@@ -111,6 +111,6 @@ Follow these steps to make new sections available:
 ![Figure 1: Create the sections you want to use with the Knowledge Base Section widget.](../../../../images/kb-section-setting.png)
 
 Once your sections are added, you can follow the steps in the 
-[Knowledge Base Section documentation](/discover/portal/-/knowledge_base/7-2/other-knowledge-base-widgets#knowledge-base-section) 
+[Knowledge Base Section documentation](/docs/7-2/user/-/knowledge_base/u/other-knowledge-base-widgets#knowledge-base-section) 
 to learn how to use them.
 

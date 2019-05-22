@@ -47,7 +47,7 @@ also provides these common configuration options:
 
 For more information on these, see the section on configuring 
 widgets in 
-[Web Experience Management](/discover/portal/-/knowledge_base/7-2/web-experience-management). 
+[Web Experience Management](/docs/7-2/user/-/knowledge_base/u/web-experience-management). 
 
 The Knowledge Base Display's navigation menu and display options make it the 
 perfect candidate for a full page widget. If you display a folder of articles, 
@@ -85,7 +85,7 @@ widget that lets them perform the following actions:
 Below the article's content is the rating interface, showing thumbs up/down 
 icons. Users can also submit suggestions or comments below the article in the 
 text box labeled *Do you have any suggestions?*. Administrators can 
-[view the suggestions and mark progress on them](/discover/portal/-/knowledge_base/7-2/responding-to-knowledge-base-feedback). 
+[view the suggestions and mark progress on them](/docs/7-2/user/-/knowledge_base/u/responding-to-knowledge-base-feedback). 
 
 If the administrator enables the Knowledge Base app's source URL feature (more 
 on this in a moment) and an article has an assigned source URL, an 
@@ -95,7 +95,7 @@ appears to the right of the article's title. This button lets users access the
 article's source in GitHub. You can use this feature to encourage users to 
 contribute fixes or improvements to articles. If you're interested in this 
 feature, you can direct your administrator to follow the instructions in 
-[Knowledge Base System Settings](/discover/portal/-/knowledge_base/7-2/knowledge-base-system-settings). 
+[Knowledge Base System Settings](/docs/7-2/user/-/knowledge_base/u/knowledge-base-system-settings). 
 
 ## Displaying Different Article Sets
 

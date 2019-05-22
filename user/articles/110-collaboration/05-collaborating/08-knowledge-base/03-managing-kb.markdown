@@ -46,13 +46,13 @@ RSS (enabled by default), and configure the RSS feed's options.
 ## Managing Knowledge Base Articles
 
 Each article also has a *priority* value that determines its position in the 
-[Knowledge Base Display widget's navigation](/discover/portal/-/knowledge_base/7-2/knowledge-base-display). Each
+[Knowledge Base Display widget's navigation](/docs/7-2/user/-/knowledge_base/u/knowledge-base-display). Each
 article's priority value appears beneath the article's title. The Knowledge Base
 Display widget's navigation arranges articles in ascending priority. Priority
 1 is the highest priority. The higher an article's priority, the higher it
 appears in the navigation. Articles are assigned the next lowest priority by
 default. This behavior can be changed via 
-[Knowledge Base System Settings](/discover/portal/-/knowledge_base/7-2/knowledge-base-system-settings). 
+[Knowledge Base System Settings](/docs/7-2/user/-/knowledge_base/u/knowledge-base-system-settings). 
 
 To assign articles a new priority value, follow these steps: 
 

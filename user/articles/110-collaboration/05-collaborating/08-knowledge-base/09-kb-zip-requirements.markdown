@@ -21,7 +21,7 @@ attachments.
 | to add articles with a command from the Gogo shell. 
 | 
 | Open the
-| [Gogo shell](/develop/reference/-/knowledge_base/7-2/using-the-felix-gogo-shell).
+| [Gogo shell](/docs/7-2/reference/-/knowledge_base/r/using-the-felix-gogo-shell).
 | Type `knowledgeBase:addImportArticlePermissions` and hit enter. 
 
 The ZIP file's articles are imported in file order (alphanumerically). To 
@@ -125,7 +125,7 @@ ZIP files must meet the following requirements:
 -  Image files must be in a supported format and must use the appropriate file
    extensions. Supported extensions are `.bmp`,`.gif`,`.jpeg`,`.jpg`, and 
     `.png`. They're specified via an app system setting. For details, see 
-   [Knowledge Base System Settings](/discover/portal/-/knowledge_base/7-2/knowledge-base-system-settings).
+   [Knowledge Base System Settings](/docs/7-2/user/-/knowledge_base/u/knowledge-base-system-settings).
 
 Once you have your article ZIP file, it's time to import it.
 
@@ -170,4 +170,4 @@ properties file and uses the base source URL to construct the source URL for
 all of the ZIP file's resulting articles. 
 
 To use the source URL feature, your administrator must enable it via the 
-[Knowledge Base System Settings](/discover/portal/-/knowledge_base/7-2/knowledge-base-system-settings). 
+[Knowledge Base System Settings](/docs/7-2/user/-/knowledge_base/u/knowledge-base-system-settings). 

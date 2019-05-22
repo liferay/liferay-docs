@@ -72,13 +72,13 @@ Knowledge Base. The Knowledge Base can also prioritize articles by their
 filenames' numerical prefixes. For example, the Knowledge Base would list 
 `01-article.markdown` and `02-article.markdown` in ascending order by their 
 numerical prefix (`01`, `02`). For more information on article priority, see 
-[Managing Knowledge Base Articles](/discover/portal/-/knowledge_base/7-2/managing-the-knowledge-base#managing-knowledge-base-articles)
+[Managing Knowledge Base Articles](/docs/7-2/user/-/knowledge_base/u/managing-the-knowledge-base#managing-knowledge-base-articles)
 For detailed information on the Knowledge Base importer, see the following 
 topics: 
 
--   [Importing Knowledge Base Articles](/discover/portal/-/knowledge_base/7-2/importing-knowledge-base-articles)
--   [Knowledge Base ZIP File Requirements](/discover/portal/-/knowledge_base/7-2/knowledge-base-zip-file-requirements)
--   [Knowledge Base Importer FAQs](/discover/portal/-/knowledge_base/7-2/knowledge-base-importer-faqs)
+-   [Importing Knowledge Base Articles](/docs/7-2/user/-/knowledge_base/u/importing-knowledge-base-articles)
+-   [Knowledge Base ZIP File Requirements](/docs/7-2/user/-/knowledge_base/u/knowledge-base-zip-file-requirements)
+-   [Knowledge Base Importer FAQs](/docs/7-2/user/-/knowledge_base/u/knowledge-base-importer-faqs)
 
 | **Note:** To import articles, your Role must have the permission *Knowledge
 | Base* &rarr; *Resource Permissions: Import Articles*. 

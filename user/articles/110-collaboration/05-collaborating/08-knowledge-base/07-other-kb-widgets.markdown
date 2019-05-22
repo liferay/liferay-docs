@@ -7,7 +7,7 @@ header-id: other-knowledge-base-widgets
 [TOC levels=1-4]
 
 There are other Knowledge Base widgets you can add to Site pages besides 
-[Knowledge Base Display](/discover/portal/-/knowledge_base/7-2/knowledge-base-display): 
+[Knowledge Base Display](/docs/7-2/user/-/knowledge_base/u/knowledge-base-display): 
 
 **Knowledge Base Article:** Display a single article's content.
 
@@ -43,14 +43,14 @@ You can change your selection from the widget's *Options*
 
 Knowledge Base Article shares the same UI as the Knowledge Base Display to 
 display and manage its articles. Refer to the 
-[Knowledge Base Display documentation](/discover/portal/-/knowledge_base/7-2/knowledge-base-display) 
+[Knowledge Base Display documentation](/docs/7-2/user/-/knowledge_base/u/knowledge-base-display) 
 for a detailed description of the widget's UI. 
 
 ## Knowledge Base Section
 
 | **Note:** as of Knowledge Base 3.0.0, the Knowledge Base Sections widget is 
 | deprecated and replaced by 
-| [categories](/discover/portal/-/knowledge_base/7-2/organizing-content-with-tags-and-categories). 
+| [categories](/docs/7-2/user/-/knowledge_base/u/organizing-content-with-tags-and-categories). 
 
 The Knowledge Base Section widget lets you publish articles associated with a 
 specific topic (section). For example, a news Site might have the sections 
@@ -61,7 +61,7 @@ specific topic (section). For example, a news Site might have the sections
 To use sections, an administrator must first configure the feature in System 
 Settings, creating the section names for use in the Knowledge Base Section 
 widget. This process is covered in detail in 
-[Knowledge Base System Settings](/discover/portal/-/knowledge_base/7-2/knowledge-base-system-settings). 
+[Knowledge Base System Settings](/docs/7-2/user/-/knowledge_base/u/knowledge-base-system-settings). 
 When creating or editing a Knowledge Base article, authors can then select the 
 article's section in the *Configuration* &rarr; *Section* field. 
 
