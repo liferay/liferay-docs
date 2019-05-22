@@ -60,8 +60,7 @@ report and you'll see a more detailed table including the following columns:
 
 **ID**
 : This is the workflow item's numeric identifier to the system. Importantly, you
-can click this to enter the Item Detail view. If you're doing something
-programmatically, this represents the instance.
+can click this to enter the Item Detail view. 
 
 **Item Subject**
 : This shows a human readable summary of the item, to help administrators

@@ -29,19 +29,27 @@ workflow item's SLA status: on time or overdue.
 
 ## Adding SLAs
 
+To add a SLA,
+
 1.  Go to Control Panel &rarr; Workflow &rarr; Metrics.
 
-2.  Click on the title of the Process, it will  bring you to the reports for
-    that process. Click the actions (![Actions](../../images/icon-actions.png))
-    menu and select _SLAs Settings_. You must click the Actions menu to go to
-    the SLA screen.
+2.  Click on the title of the Process. 
+
+    The Reports UI for the process is displayed. 
+
+3.  If there's no SLA for the process, a warning message stating
+    as much is displayed. Click the _Add a new SLA_ link from the warning to
+    access the New SLA form directly.
+
+    Alternatively, click the Options (![Options](../../images/icon-options.png))
+    menu and select _SLA Settings_.
 
     ![Figure 1: Add SLAs to a workflow definition from the Metrics application.](../../images/workflow-add-sla.png)
 
 3.  On the SLAs screen, click the Add button
     (![Add](../../images/icon-add.png)).
 
-4.  Give the SLA a Name and Description.
+4.  In the New SLA form, Give the SLA a Name and Description.
 
 5.  Define the time frame for the SLA, specifying three things:
 
@@ -90,23 +98,23 @@ workflow item's SLA status: on time or overdue.
 
 ![Figure 2: Manage SLAs from the SLAs screen.](../../images/workflow-metrics-sla-list.png)
 
-#### Valid Workflow Events
+#### Valid Start and Stop Events
 
 Any workflow task can be used as a start or end parameter for the SLA.
 
-When defining the tasks to act as the SLA's Start Events, you can choose
-between three events:
+When defining the tasks to act as the SLA's Start Events, choose between three
+events:
 
-- The start node.
-- Entry into the task.
-- Exit from the task.
+- The start node
+- Entry into a task
+- Exit from a task
 
-When defining the tasks to act as the SLA's Stop Events, you can choose
-between three events:
+When defining the tasks to act as the SLA's Stop Events, choose between three
+events:
 
-- Entry into the task.
-- Exit from the task.
-- The end nodes.
+- Entry into a task
+- Exit from a task
+- The end node
 
 The SLA can be paused at any task that falls between the start node and the end
 node, and it's defined by setting the node(s) when the SLA should be paused.
