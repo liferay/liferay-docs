@@ -6,7 +6,7 @@ header-id: configuring-asset-auto-tagging
 
 [TOC levels=1-4]
 
-[Tagging assets](/discover/portal/-/knowledge_base/7-2/tagging-content) 
+[Tagging assets](/docs/7-2/user/-/knowledge_base/u/tagging-content) 
 is a great way to organize content. Typically, the content creator applies tags 
 while creating the content. It's also possible, however, to automatically tag 
 content. For example, @product@ can scan an image on upload and automatically 
@@ -20,10 +20,10 @@ Here, you'll learn how to configure asset auto-tagging in general. This is
 required prior to configuring auto-tagging for specific asset types, which is 
 documented separately: 
 
--   [Auto Tagging Images](/discover/portal/-/knowledge_base/7-2/auto-tagging-images)
--   [Auto Tagging Text](/discover/portal/-/knowledge_base/7-2/auto-tagging-text)
--   [Auto Tagging Documents](/discover/portal/-/knowledge_base/7-2/auto-tagging-documents)
--   [Auto Tagging Web Content](/discover/portal/-/knowledge_base/7-2/auto-tagging-web-content)
+-   [Auto Tagging Images](/docs/7-2/user/-/knowledge_base/u/auto-tagging-images)
+-   [Auto Tagging Text](/docs/7-2/user/-/knowledge_base/u/auto-tagging-text)
+-   [Auto Tagging Documents](/docs/7-2/user/-/knowledge_base/u/auto-tagging-documents)
+-   [Auto Tagging Web Content](/docs/7-2/user/-/knowledge_base/u/auto-tagging-web-content)
 
 ## Configuration Levels
 

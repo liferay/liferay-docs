@@ -7,7 +7,7 @@ header-id: auto-tagging-documents
 [TOC levels=1-4]
 
 Once you've 
-[configured text auto tagging](/discover/portal/-/knowledge_base/7-2/auto-tagging-text) 
+[configured text auto tagging](/docs/7-2/user/-/knowledge_base/u/auto-tagging-text) 
 for your provider of choice, you can enable it to auto tag text-based documents. 
 Recall that there are two text auto tagging providers available in the portal: 
 

@@ -7,9 +7,9 @@ header-id: auto-tagging-text
 [TOC levels=1-4]
 
 With 
-[asset auto tagging enabled](/discover/portal/-/knowledge_base/7-2/configuring-asset-auto-tagging), 
+[asset auto tagging enabled](/docs/7-2/user/-/knowledge_base/u/configuring-asset-auto-tagging), 
 you can also configure text auto tagging. Text auto tagging automatically 
-[tags](/discover/portal/-/knowledge_base/7-2/tagging-content) 
+[tags](/docs/7-2/user/-/knowledge_base/u/tagging-content) 
 text-based assets in the portal. This lets you use tags without requiring anyone 
 to manually apply them. 
 
@@ -19,7 +19,7 @@ to manually apply them.
 Text auto tagging is disabled by default. To use it, you must do the following: 
 
 1.  Ensure that 
-    [asset auto tagging](/discover/portal/-/knowledge_base/7-2/configuring-asset-auto-tagging) 
+    [asset auto tagging](/docs/7-2/user/-/knowledge_base/u/configuring-asset-auto-tagging) 
     is enabled. Although it's enabled by default, administrators can disable it. 
 
 2.  Ensure that a text auto tagging provider is configured in the portal. These 
@@ -31,8 +31,8 @@ Text auto tagging is disabled by default. To use it, you must do the following:
     two. This step is covered in separate articles on text auto tagging for 
     specific asset types: 
 
-    -   [Auto Tagging Documents](/discover/portal/-/knowledge_base/7-2/auto-tagging-documents)
-    -   [Auto Tagging Web Content](/discover/portal/-/knowledge_base/7-2/auto-tagging-web-content)
+    -   [Auto Tagging Documents](/docs/7-2/user/-/knowledge_base/u/auto-tagging-documents)
+    -   [Auto Tagging Web Content](/docs/7-2/user/-/knowledge_base/u/auto-tagging-web-content)
 
 There are two text auto-tagging providers in the portal: 
 

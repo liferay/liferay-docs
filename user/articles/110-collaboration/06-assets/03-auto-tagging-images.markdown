@@ -6,9 +6,9 @@ header-id: auto-tagging-images
 
 [TOC levels=1-4]
 
-[Tags](/discover/portal/-/knowledge_base/7-2/tagging-content) 
+[Tags](/docs/7-2/user/-/knowledge_base/u/tagging-content) 
 let you find and organize files, including images. With 
-[asset auto tagging enabled](/discover/portal/-/knowledge_base/7-2/configuring-asset-auto-tagging), 
+[asset auto tagging enabled](/docs/7-2/user/-/knowledge_base/u/configuring-asset-auto-tagging), 
 you can also enable image auto tagging. Image auto tagging automatically tags 
 images uploaded to the Documents and Media Library. This lets you use tags 
 without requiring anyone to manually apply them. 
@@ -18,7 +18,7 @@ without requiring anyone to manually apply them.
 Image auto tagging is disabled by default. To use it, you must do two things: 
 
 1.  Ensure that 
-    [asset auto tagging](/discover/portal/-/knowledge_base/7-2/configuring-asset-auto-tagging) 
+    [asset auto tagging](/docs/7-2/user/-/knowledge_base/u/configuring-asset-auto-tagging) 
     is enabled. Although it's enabled by default, administrators can disable it. 
 
 2.  Ensure that an image auto tagging provider is enabled in the portal. These 
