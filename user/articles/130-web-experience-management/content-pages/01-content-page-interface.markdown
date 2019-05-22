@@ -37,7 +37,7 @@ For an editable image element, you can replace the image with a URL or with an i
 
 ## The Content Page Editing Interface
 
-Unlike Widget Pages, Content Pages can only be edited through the *Site Builder* and cannot be edited "live" on the page. To create a Content Page,
+Unlike Widget Pages, Content Pages can only be edited through the *Site Builder* and cannot be edited "live" on the page. Any edits that you make to a page are saved as a draft until you *Publish* the page. Subsequent changes after the initial publication are again saved as a draft, without affecting the live page, until the page published again. is To create a Content Page,
 
 1.  Go to *Site Management* &rarr; *Site Builder* &rarr; *Pages*.
 
@@ -101,5 +101,6 @@ The title bar provides navigation back to the Main Menu, a link to page configur
 
 ![Figure 7: The title bar has several tools built into it.](../../../images/content-page-edit-title-bar.png)
 
+## Publishing a Page
 
-
+Content Pages are not edited 
