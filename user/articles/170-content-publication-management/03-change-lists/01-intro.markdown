@@ -20,7 +20,7 @@ Change lists support two major changes:
 The following content types are supported by change lists at this time:
 
 - Web Content
-- DDM Template
-- DDM Structure
+- Web Content Structure
+- Web Content Template
 
 Continue on to learn more about change lists!
