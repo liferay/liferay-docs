@@ -66,7 +66,7 @@ Each of these steps corresponds to a step in the wizard:
     useful for bringing additional servers online on a temporary basis for any 
     other purpose, such as business continuity planning. For more information, 
     see 
-    [the documentation on elastic subscriptions](/discover/deployment/-/knowledge_base/7-2/managing-liferay-dxp-subscriptions#elastic-subscriptions). 
+    [the documentation on elastic subscriptions](/docs/7-2/deploy/-/knowledge_base/d/managing-liferay-dxp-subscriptions#elastic-subscriptions). 
     Also note that you can't change this selection after creating the 
     environment. 
 
@@ -94,7 +94,7 @@ Each of these steps corresponds to a step in the wizard:
     **Portal Properties Analysis:** Enabling this lets LCS compare the current 
     portal property settings with their default values for any servers that 
     connect to the environment. Note that LCS doesn't access 
-    [security sensitive properties](/discover/deployment/-/knowledge_base/7-2/what-lcs-stores-about-your-liferay-dxp-servers). 
+    [security sensitive properties](/docs/7-2/deploy/-/knowledge_base/d/what-lcs-stores-about-your-liferay-dxp-servers). 
     Click *Blacklisted Properties* to view and change any additional properties     
     that are blacklisted from analysis. 
 
@@ -109,5 +109,5 @@ After creating your environment, the wizard shows a screen that lets you
 download the LCS client app, download the environment's token file, and go to
 your project's dashboard in LCS. Before registering a server in your new
 environment, however, you must complete the 
-[preconfiguration steps](/discover/deployment/-/knowledge_base/7-2/lcs-preconfiguration) 
+[preconfiguration steps](/docs/7-2/deploy/-/knowledge_base/d/lcs-preconfiguration) 
 for that server. 

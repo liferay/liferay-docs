@@ -17,7 +17,7 @@ interaction required.
 
 | **Note:** For instructions on using and managing your environment tokens, see 
 | the instructions on 
-| [registering your server with LCS](/discover/deployment/-/knowledge_base/7-2/activating-your-liferay-dxp-server-with-lcs). 
+| [registering your server with LCS](/docs/7-2/deploy/-/knowledge_base/d/activating-your-liferay-dxp-server-with-lcs). 
 
 There are a few things to keep in mind when using environment tokens: 
 
@@ -36,7 +36,7 @@ There are a few things to keep in mind when using environment tokens:
 
 -   Minimal information (server name, location, etc...) is used to register a 
     server with LCS. You can change this information from 
-    [the server view in LCS](/discover/deployment/-/knowledge_base/7-2/managing-lcs-servers) 
+    [the server view in LCS](/docs/7-2/deploy/-/knowledge_base/d/managing-lcs-servers) 
     at any time. 
 
 -   Environment tokens connect using OAuth. Using an environment token overrides 
