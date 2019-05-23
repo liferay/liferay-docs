@@ -45,6 +45,28 @@ JDK 11 is backwards compatible with JDK 8 applications. Applications and
 customizations developed on JDK 8 run on JDK 8 or JDK 11 runtimes. This makes
 JDK 8 best for developing on @product-ver@. 
 
+## JVM Requirements
+
+@product@ requires that the application server JVM use the GMT time zone and
+UTF-8 file encoding. Include these JVM arguments to set the required values. 
+
+```bash
+-Dfile.encoding=UTF8 -Duser.timezone=GMT
+````
+
+On JDK 11, it's recommended to add this JVM argument to display four-digit years.
+
+```bash
+-Djava.locale.providers=JRE,COMPAT,CLDR
+```
+
+| **Note:** Since JDK 9, the Unicode Common Locale Data Repository (CLDR) is the
+| default locales provider. CLDR, however, is not providing years in a
+| four-digit format (see
+| [LPS-87191](https://issues.liferay.com/browse/LPS-87191)).
+| The setting `java.locale.providers=JRE,COMPAT,CLDR` works around this issue by
+| using JDK 8's default locales provider. 
+
 If you're using JDK 11, you may see *Illegal Access* warnings like these:
 
 ```
@@ -88,28 +110,6 @@ To workaround this issue, add this property after your application server JMV op
 ```properties
  --add-opens=jdk.management/com.sun.management.internal=ALL-UNNAMED
 ``` 
-
-## JVM Requirements
-
-@product@ requires that the application server JVM use the GMT time zone and
-UTF-8 file encoding. Include these JVM arguments to set the required values. 
-
-```bash
--Dfile.encoding=UTF8 -Duser.timezone=GMT
-````
-
-On JDK 11, it's recommended to add this JVM argument to display four-digit years.
-
-```bash
--Djava.locale.providers=JRE,COMPAT,CLDR
-```
-
-| **Note:** Since JDK 9, the Unicode Common Locale Data Repository (CLDR) is the
-| default locales provider. CLDR, however, is not providing years in a
-| four-digit format (see
-| [LPS-87191](https://issues.liferay.com/browse/LPS-87191)).
-| The setting `java.locale.providers=JRE,COMPAT,CLDR` works around this issue by
-| using JDK 8's default locales provider. 
 
 It's time to prepare your database. 
 
