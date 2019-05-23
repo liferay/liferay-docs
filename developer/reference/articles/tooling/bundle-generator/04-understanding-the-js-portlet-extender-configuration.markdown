@@ -9,12 +9,11 @@ header-id: understanding-the-js-portlet-extender-configuration
 Bundles generated with the Liferay Bundle Generator require specific method 
 signatures, MANIFEST headers, and configuration within their `package.json` 
 file to use the JS Portlet Extender. This configuration is provided by default. 
-For reference, this configuration is covered in detail below.
 
 ## Manifest Header
 
-The OSGi bundle is identified with the MANIFEST header shown below, which 
-specifies to process it with the JS Portlet Extender:
+The OSGi bundle contains the MANIFEST header shown below, which 
+specifies a dependency on the JS Portlet Extender:
 
 ```properties
 Require-Capability: osgi.extender;filter:="(osgi.extender=liferay.npm.portlet)"
@@ -34,21 +33,22 @@ function({portletNamespace, contextPath, portletElementId, configuration}) {
 
 The entry point function receives one object parameter with four fields:
 
-- `portletNamespace`: the unique namespace of the portlet as defined in 
-the Portlet specification. 
-- `contextPath`: the URL path that can be used to retrieve bundle 
-resources from the browser (it doesn't contain the protocol, host, or port, 
-just the absolute path). 
-- `portletElementId`: the DOM identifier of the portlet's `<div>` node 
-that can be used to render HTML. 
-- `configuration` (optional): since JS Portlet Extender version 1.1.0, this 
-field contains the system (OSGi) and portlet instance (preferences as described 
-in the Portlet spec) configuration for the portlet. It has two subfields: 
+- `portletNamespace`: the unique namespace of the portlet as defined in the
+  Portlet specification. 
+- `contextPath`: the URL path that can be used to retrieve bundle resources from
+  the browser (it doesn't contain the protocol, host, or port, just the absolute
+  path). 
+- `portletElementId`: the DOM identifier of the portlet's `<div>` node that can
+  be used to render HTML. 
+- `configuration` (optional): since JS Portlet Extender version 1.1.0, this
+  field contains the system (OSGi) and portlet instance (preferences as
+  described in the Portlet spec) configuration for the portlet. It has two
+  subfields: 
 
-  - **system:** contains the system level configuration (defined in Control 
+  - `system:` contains the system level configuration (defined in Control 
     Panel &rarr; System Settings)
-    
-  - **portletInstance:** contains the per-portlet configuration (defined in the 
+ 
+  - `portletInstance:` contains the per-portlet configuration (defined in the 
     Configuration menu option of the portlet)
 
 Note that all values are received as strings, no matter what their type is in 
