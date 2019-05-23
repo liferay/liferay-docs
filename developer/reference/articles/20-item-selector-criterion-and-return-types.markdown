@@ -29,9 +29,10 @@ Asset display page.
 [BlogsItemSelectorCriterion](@app-ref@/blogs/latest/javadocs/com/liferay/blogs/item/selector/criterion/BlogsItemSelectorCriterion.html): 
 Blogs item. 
 
-**Fragments:**
+**Page Fragments:**
 
-[FragmentItemSelectorCriterion](@app-ref@/fragment/latest/javadocs/com/liferay/fragment/item/selector/criterion/FragmentItemSelectorCriterion.html)
+[FragmentItemSelectorCriterion](@app-ref@/fragment/latest/javadocs/com/liferay/fragment/item/selector/criterion/FragmentItemSelectorCriterion.html): 
+[Page fragment](/docs/7-2/frameworks/-/knowledge_base/f/developing-fragments). 
 
 **Item Selector:**
 
