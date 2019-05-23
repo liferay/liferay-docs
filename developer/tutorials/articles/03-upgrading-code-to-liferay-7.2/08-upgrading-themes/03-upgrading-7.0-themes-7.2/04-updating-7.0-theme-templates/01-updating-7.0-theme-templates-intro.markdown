@@ -29,17 +29,19 @@ convert your Velocity theme templates to FreeMarker now**.
 The `gulp upgrade` command reports the required theme template changes in the 
 log. For example, here is the `gulp upgrade` log for the Westeros Bank theme:
 
-    ----------------------------------------------------------------
-     Liferay Upgrade (7.0 to 7.1)
-    ----------------------------------------------------------------
+```bash
+----------------------------------------------------------------
+ Liferay Upgrade (7.0 to 7.1)
+----------------------------------------------------------------
 
-    Renamed aui.scss to clay.scss
-    File: footer.ftl
-        Warning: .container-fluid-1280 has been deprecated. Please use 
-        .container-fluid.container-fluid-max-xl instead.
-    File: portal_normal.ftl
-        Warning: .navbar-header has been removed. This container should be 
-        removed in most cases. Please, use your own container if necessary.
+Renamed aui.scss to clay.scss
+File: footer.ftl
+    Warning: .container-fluid-1280 has been deprecated. Please use 
+    .container-fluid.container-fluid-max-xl instead.
+File: portal_normal.ftl
+    Warning: .navbar-header has been removed. This container should be 
+    removed in most cases. Please, use your own container if necessary.
+```
 
 The log warns about removed and deprecated code and suggests replacements when
 applicable. For reference, the main changes between @product@ 7.0 themes and 

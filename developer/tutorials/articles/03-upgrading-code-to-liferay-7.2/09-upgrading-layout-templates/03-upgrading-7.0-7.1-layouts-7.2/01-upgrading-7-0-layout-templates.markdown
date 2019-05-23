@@ -31,7 +31,7 @@ liferay-versions=7.2.0+
 
 Below is an example configuration:
 
-Original (my_layout_template.tpl):
+Original (`my_layout_template.tpl`):
 
 ```html
 <div class="col-md-4 col-sm-6 portlet-column portlet-column-first" 
@@ -47,7 +47,7 @@ id="column-2">
 </div>
 ```
 
-Updated (my_layout_template.ftl):
+Updated (`my_layout_template.ftl`):
 
 ```html
 <div class="col-md-4 col-sm-6 portlet-column portlet-column-first" 

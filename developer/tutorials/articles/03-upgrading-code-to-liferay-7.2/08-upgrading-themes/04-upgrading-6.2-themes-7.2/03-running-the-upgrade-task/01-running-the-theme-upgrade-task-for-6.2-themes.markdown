@@ -11,7 +11,7 @@ header-id: running-the-upgrade-task-for-6-2-themes
 </div>
 
 You can upgrade a Liferay Portal 6.2 theme to @product-ver@, regardless of the
-development environment you use. This tutorial uses the the Liferay JS Theme 
+development environment you use. This tutorial uses the Liferay JS Theme 
 Toolkit's Gulp `upgrade` task to automate much of the steps. Because the theme 
 was built on @product@ 6.2, the Gulp `upgrade` task must be run three times to 
 bring it up to @product-ver@. 

@@ -7,7 +7,7 @@ header-id: upgrading-7-1-themes-to-7-2
 [TOC levels=1-4]
 
 You can upgrade a Liferay Portal 7.1 theme to @product-ver@, regardless of the
-development environment you use. This tutorial uses the the Liferay JS Theme 
+development environment you use. This tutorial uses the Liferay JS Theme 
 Toolkit's Gulp `upgrade` task to automate much of the steps. This requires 
 v9.x.x of the Liferay Theme Generator and liferay theme tasks. 
 

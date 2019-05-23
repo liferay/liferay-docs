@@ -11,7 +11,7 @@ header-id: running-the-upgrade-task-for-7-0-themes
 </div>
 
 You can upgrade a @product@ 7.0 theme to @product-ver@, regardless of the 
-development environment you use. This tutorial uses the the Liferay JS Theme 
+development environment you use. This tutorial uses the Liferay JS Theme 
 Toolkit's Gulp `upgrade` task to automate much of the steps. The Gulp `upgrade` 
 task must be run twice to bring a @product@ 7.0 theme up to @product-ver@. 
 

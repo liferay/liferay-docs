@@ -79,6 +79,7 @@ Follow these steps to update `portal_normal.ftl`:
 ```
 
 8.  Add the `<h1 class="hide-accessible">${the_title}</h1>` header element just 
-    inside the `content` `<section>` to support accessibility, and remove the breadcrumbs `<nav>` element from inside it.
+    inside the `content` `<section>` to support accessibility, and remove the
+    breadcrumbs `<nav>` element from inside it.
 
 `portal_normal.ftl` is updated! Next you can update the navigation template. 

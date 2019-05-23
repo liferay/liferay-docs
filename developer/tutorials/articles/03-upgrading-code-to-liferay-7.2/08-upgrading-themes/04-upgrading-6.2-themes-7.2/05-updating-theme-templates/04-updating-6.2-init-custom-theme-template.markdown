@@ -17,7 +17,7 @@ the theme setting syntax:
 1.  Replace the `getterUtil.getBoolean(theme_settings` method with 
     `getterUtil.getBoolean(themeDisplay.getThemeSetting`:
       
-Orginal:
+Original:
 
 ```markup
 <#assign show_breadcrumbs = 
@@ -41,7 +41,7 @@ getterUtil.getBoolean(themeDisplay.getThemeSetting("show-page-title"))/>
     replace the `getterUtil.getString(theme_settings` method with 
     `themeDisplay.getThemeSetting`:
 
-Orginal:
+Original:
 
 ```markup
 <#assign string_setting = 
@@ -57,6 +57,6 @@ themeDisplay.getThemeSetting("my-string-key")/>
 
 Awesome! The theme templates are updated. You can always compare theme templates 
 with the updated ones found in the 
-[`_unstyled` theme](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/frontend-theme/frontend-theme-unstyled/src/main/resources/META-INF/resources/_unstyled/templates), if you're unsure if 
-something has changed. Refer to the suggested changes that the Gulp `upgrade` 
-task reports for the theme. 
+[`_unstyled` theme](https://github.com/liferay/liferay-portal/tree/7.2.x/modules/apps/frontend-theme/frontend-theme-unstyled/src/main/resources/META-INF/resources/_unstyled/templates),
+if you're unsure if  something has changed. Refer to the suggested changes that
+the Gulp `upgrade`  task reports for the theme. 

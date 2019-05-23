@@ -42,4 +42,3 @@ Follow these steps to update `navigation.ftl`:
     template, including all uses throughout the rest of the template.
 
 The navigation template is updated. You can update `portlet.ftl` next. 
-

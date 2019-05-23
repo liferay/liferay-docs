@@ -20,7 +20,7 @@ portlet IDs. Follow these steps to update the sitemap:
     number in 6.2 and replace it with the updated ID in the quick reference 
     Guide.
     
-    | **NOTE:** you can also retrieve a portlet's ID from the UI. Open the 
+    | **Note:** you can also retrieve a portlet's ID from the UI. Open the 
     | portlet's *Options* menu, select *Look and Feel Configuration*. 
     | 
     | ![Figure 1: You can find the portlet ID in the *Look and Feel Configuration* menu.](../../../../../images/upgrading-themes-look-and-feel-menu.png)
