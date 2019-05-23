@@ -11,9 +11,9 @@ features to the table. You can install it into your existing Eclipse
 environment, or Liferay provides a bundled version included in its Project SDK.
 Here you'll learn the different methods available for installing Dev Studio:
 
-- [install the Dev Studio bundle from scratch](#install-the-liferay-ide-bundle)
-- [install Dev Studio into an existing Eclipse instance using an update URL](#install-liferay-ide-into-eclipse)
-- [install Dev Studio into an existing Eclipse instance using a ZIP file](#install-liferay-ide-into-eclipse-from-a-zip-file)
+- [install the Dev Studio bundle from scratch](#install-the-dev-studio-bundle)
+- [install Dev Studio into an existing Eclipse instance using an update URL](#install-dev-studio-into-eclipse)
+- [install Dev Studio into an existing Eclipse instance using a ZIP file](#install-dev-studio-into-eclipse-from-a-zip-file)
 
 **Important:** If you're installing Dev Studio into an existing Eclipse
 environment, you must be on Eclipse Photon or newer. For instructions on
@@ -37,15 +37,15 @@ update sites in the *Window* &rarr; *Preferences* &rarr; *Install/Update* &rarr;
     [Project SDK with Dev Studio](https://sourceforge.net/projects/lportal/files/Liferay%20IDE/)
     executable that correlates to your operating system. The Project SDK
     includes @ide@,
-    [Liferay Workspace](/developer/reference/-/knowledge_base/7-2/liferay-workspace),
-    and [Blade CLI](/developer/reference/-/knowledge_base/7-2/blade-cli).
+    [Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace),
+    and [Blade CLI](/docs/7-2/reference/-/knowledge_base/r/blade-cli).
 
 3.  Run the Project SDK executable and step through the installer to install
     everything to your machine. For help with setting up proxy settings (if
     necessary), see the
-    [Dev Studio Proxy Settings](/developer/reference/-/knowledge_base/7-2/setting-proxy-requirements-for-liferay-ide)
+    [Dev Studio Proxy Settings](/docs/7-2/reference/-/knowledge_base/r/setting-proxy-requirements-for-dev-studio)
     and
-    [Liferay Workspace Proxy Settings](/developer/reference/-/knowledge_base/7-2/setting-proxy-requirements-for-liferay-workspace)
+    [Liferay Workspace Proxy Settings](/docs/7-2/reference/-/knowledge_base/r/setting-proxy-requirements-for-liferay-workspace)
     articles for more information.
 
 Congratulations! You've installed Liferay Dev Studio! It's now available in the

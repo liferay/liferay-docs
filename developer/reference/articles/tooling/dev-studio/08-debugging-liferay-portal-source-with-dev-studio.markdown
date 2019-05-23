@@ -26,12 +26,12 @@ Let's explore these Liferay-specific debugging configurations.
 ## Configure Your Target Platform
 
 To configure your target platform, you must be developing in a
-[Liferay Workspace](/developer/reference/-/knowledge_base/7-2/liferay-workspace).
+[Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace).
 Liferay Workspace is able to provide debugging capabilities by targeting a
 specific @product@ version, which indexes the configured @product@ source code.
 Without specifying a target platform, @product@'s source code
 cannot be accessed by Dev Studio. See the
-[Managing the Target Platform in Liferay Workspace](/developer/reference/-/knowledge_base/7-2/managing-the-target-platform-for-liferay-workspace)
+[Managing the Target Platform in Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/managing-the-target-platform)
 tutorial for more information on how this works.
 
 **Important:** The target platform should match the Liferay server version you
@@ -48,7 +48,7 @@ reference. Now you must configure a Liferay server matching the target platform
 version so you can deploy the custom code you wish to debug.
 
 1.  Set up your @product@ server to run in Dev Studio. See the
-    [Installing a Server in  Dev Studio](/developer/reference/-/knowledge_base/7-2/installing-a-server-in-dev-studio)
+    [Installing a Server in  Dev Studio](/docs/7-2/reference/-/knowledge_base/r/installing-a-liferay-server-in-dev-studio) 
     for more details.
 
 2.  Start the server in debug mode. To do this, click the debug button in the 
