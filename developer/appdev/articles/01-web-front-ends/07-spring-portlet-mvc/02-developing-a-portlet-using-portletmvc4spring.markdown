@@ -291,7 +291,7 @@ Portlet project and deploy your PortletMVC4Spring Portlet to @product@.
     ```
 
     On deploying the WAR file, the
-    [WAB Generator](/docs/7-2/frameworks/-/knowledge_base/f/using-the-wab-generator)
+    [WAB Generator](/docs/7-2/customization/-/knowledge_base/c/deploying-wars-wab-generator)
     adds the specified OSGi metadata to the resulting web application bundle
     (WAB) that's deployed to Liferay's runtime framework.
 
