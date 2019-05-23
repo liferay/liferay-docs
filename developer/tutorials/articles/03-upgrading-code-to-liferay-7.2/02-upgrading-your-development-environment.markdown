@@ -10,7 +10,7 @@ header-id: upgrading-your-development-environment
     <p>Upgrading Your Development Environment<br>Step 1 of 1</p>
 </div>
 
-A [Liferay Workspace](/docs/reference/7-2/-/knowledge_base/r/liferay-workspace)
+A [Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace)
 is a generated environment that is built to hold and manage your Liferay
 projects. It is intended to aid in the management of Liferay projects by
 providing various build scripts and configured properties.
@@ -43,7 +43,7 @@ You now have a new Liferay Workspace available in the Code Upgrade Planner!
 
 For more information on creating a Liferay Workspace outside the planner, see
 the
-[Creating a Liferay Workspace](/docs/reference/7-2/-/knowledge_base/r/creating-a-liferay-workspace)
+[Creating a Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/creating-a-liferay-workspace)
 section.
 
 ### Importing Existing Liferay Workspace
@@ -54,7 +54,7 @@ Explorer/Manager to select your existing workspace. After selecting it, the
 workspace is imported into the Project Explorer.
 
 For more information importing a workspace into your IDE, see
-[this article](/docs/reference/7-2/-/knowledge_base/r/importing-projects-in-dev-studio).
+[this article](/docs/7-2/reference/-/knowledge_base/r/importing-projects-in-dev-studio).
 
 
 
@@ -77,7 +77,7 @@ When initiating this step, your workspace's Bundle URL property is updated to
 the latest release of @product-ver@.
 
 For more information on configuring a workspace's bundle URL, see the
-[Adding a Liferay Bundle to Liferay Workspace](/docs/reference/7-2/-/knowledge_base/r/adding-a-liferay-bundle-to-liferay-workspace)
+[Adding a Liferay Bundle to Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/adding-a-liferay-bundle-to-liferay-workspace)
 article.
 
 ### Configuring Target Platform Version
@@ -90,7 +90,7 @@ version. When initiating this step, your workspace's Target Platform property is
 updated to the latest release of @product-ver@.
 
 For more information on this, see the
-[Managing the Target Platform](/docs/reference/7-2/-/knowledge_base/r/managing-the-target-platform)
+[Managing the Target Platform](/docs/7-2/reference/-/knowledge_base/r/managing-the-target-platform)
 article.
 
 ## Initializing Server Bundle
@@ -104,7 +104,7 @@ bundle and initializes the new one.
 If you're upgrading your code manually and working in Dev Studio, you can do
 this by right-clicking the workspace project and selecting *Liferay* &rarr;
 *Initialize Server Bundle*. See the
-[Installing a Server in IntelliJ](/docs/reference/7-2/-/knowledge_base/r/installing-a-server-in-intellij)
+[Installing a Server in IntelliJ](/docs/7-2/reference/-/knowledge_base/r/installing-a-server-in-intellij)
 article if you use IntelliJ instead. Visit the
-[Managing Your Liferay Server with Blade CLI](/docs/reference/7-2/-/knowledge_base/r/managing-your-liferay-server-with-blade-cli)
+[Managing Your Liferay Server with Blade CLI](/docs/7-2/reference/-/knowledge_base/r/managing-your-liferay-server-with-blade-cli)
 article for information on how to do this via the command line.

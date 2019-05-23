@@ -103,9 +103,9 @@ Map to your `MVCCommand` URLs using portlet URL tags:
 Once you have this information, you can override the `MVCCommand` by following
 the instructions found in these `MVCCommand` articles:
 
--   [Adding Logic to MVCCommands](/docs/customization/7-2/-/knowledge_base/c/adding-logic-to-mvc-commands)
--   [Overriding MVCRenderCommands](/docs/customization/7-2/-/knowledge_base/c/overriding-mvcrendercommand)
--   [Overriding MVCActionCommands](/docs/customization/7-2/-/knowledge_base/c/overriding-mvcactioncommand)
--   [Overriding MVCResourceCommands](/docs/customization/7-2/-/knowledge_base/c/overriding-mvcresourcecommand)
+-   [Adding Logic to MVCCommands](/docs/7-2/customization/-/knowledge_base/c/adding-logic-to-mvc-commands)
+-   [Overriding MVCRenderCommands](/docs/7-2/customization/-/knowledge_base/c/overriding-mvcrendercommand)
+-   [Overriding MVCActionCommands](/docs/7-2/customization/-/knowledge_base/c/overriding-mvcactioncommand)
+-   [Overriding MVCResourceCommands](/docs/7-2/customization/-/knowledge_base/c/overriding-mvcresourcecommand)
 
 Now you know how to convert your `StrutsActionWrapper`s to `MVCCommand`s!

@@ -31,10 +31,10 @@ these steps:
     `src/main/resources/content/`.
 
 3.  In your `bnd.bnd` file,
-    [specify OSGi manifest headers](/docs/customization/7-2/-/knowledge_base/c/overriding-a-modules-language-keys)
+    [specify OSGi manifest headers](/docs/7-2/customization/-/knowledge_base/c/overriding-a-modules-language-keys)
     that target the portlet module's resource bundle, but prioritize yours. 
 
-4.  [Deploy your module](/docs/reference/7-2/-/knowledge_base/r/deploying-a-project). 
+4.  [Deploy your module](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project). 
 
 Your portlet language key customizations are deployed in your new module on
 @product-ver@. 

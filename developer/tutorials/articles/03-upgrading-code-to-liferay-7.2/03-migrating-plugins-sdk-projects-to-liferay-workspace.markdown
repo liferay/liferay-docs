@@ -13,7 +13,7 @@ header-id: migrating-plugins-sdk-projects-to-liferay-workspace
 The Plugins SDK was deprecated for @product@ 7.0 and removed for @product@ 7.1.
 Therefore, to upgrade your custom apps to @product-ver@, you must migrate them
 to a new environment. 
-[Liferay Workspace](/docs/reference/7-2/-/knowledge_base/r/liferay-workspace) is
+[Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace) is
 the recommended environment for your code migration and will be the assumed
 choice in this section.
 
@@ -48,14 +48,14 @@ When initiating this step for a Gradle-based workspace, your Ant-based Plugins
 SDK project is copied to the applicable workspace folder based on its project
 type (e.g., `wars`) and is converted to a Gradle project. There is also a Blade
 CLI command that completes this via the command line. Visit the
-[Converting Plugins SDK Projects with Blade CLI](/docs/reference/7-2/-/knowledge_base/r/converting-plugins-sdk-projects-with-blade-cli)
+[Converting Plugins SDK Projects with Blade CLI](/docs/7-2/reference/-/knowledge_base/r/converting-plugins-sdk-projects-with-blade-cli)
 article for more information.
 
 If you're migrating your Ant project to a Maven workspace, you must manually
 copy the project to the applicable folder based on the project type (e.g.,
 `wars`). The majority of Plugins SDK projects belong in the workspace's `wars`
 folder. You can consult the
-[Workspace Anatomy](/docs/reference/7-2/-/knowledge_base/r/liferay-workspace#workspace-anatomy)
+[Workspace Anatomy](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace#workspace-anatomy)
 section for a full overview of a workspace's folder structure and choose where
 your custom app should reside. Once you've made the decision, copy your custom
 app to the applicable workspace folder.

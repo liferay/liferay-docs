@@ -16,5 +16,5 @@ JNDI data source without using @product@'s class loader results in a
 `java.lang.ClassNotFoundException`.
 
 For more information on how to do this, see the
-[Connecting to JNDI Data Sources](/docs/customization/7-2/-/knowledge_base/c/connecting-to-jndi-data-sources)
+[Connecting to JNDI Data Sources](/docs/7-2/customization/-/knowledge_base/c/connecting-to-jndi-data-sources)
 article.

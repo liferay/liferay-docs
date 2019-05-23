@@ -33,7 +33,7 @@ you can easily adapt your code during the upgrade process.
 
 - [@product@ 7.0 Breaking Changes](/docs/reference/7-0/-/knowledge_base/t/breaking-changes)
 - [@product@ 7.1 Breaking Changes](/docs/reference/7-1/-/knowledge_base/t/breaking-changes)
-- [@product-ver@ Breaking Changes](/docs/reference/7-2/-/knowledge_base/t/breaking-changes)
+- [@product-ver@ Breaking Changes](/docs/7-2/reference/-/knowledge_base/t/breaking-changes)
 
 The easiest way to resolve breaking changes is by using the
 [Code Upgrade Planner]().

@@ -15,7 +15,7 @@ classes so your changes are persisted across your project. Initiate this step
 to rebuild your services and finalize your Service Builder upgrade.
 
 To run Service Builder outside the Code Upgrade Planner, see the
-[Running Service Builder](/docs/appdev/7-2/-/knowledge_base/a/running-service-builder)
+[Running Service Builder](/docs/7-2/appdev/-/knowledge_base/a/running-service-builder)
 article. This covers running Service Builder with Blade CLI, Gradle, Maven, and
 Dev Studio.
 

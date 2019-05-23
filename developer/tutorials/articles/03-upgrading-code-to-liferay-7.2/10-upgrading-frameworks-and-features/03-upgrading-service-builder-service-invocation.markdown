@@ -11,7 +11,7 @@ header-id: upgrading-service-builder-service-invocation
 </div>
 
 When upgrading a portlet leveraging
-[Service Builder](/docs/appdev/7-2/-/knowledge_base/a/service-builder), you must
+[Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder), you must
 first decide if you're building your Service Builder logic as a WAR or
 modularizing it.
 
@@ -22,10 +22,10 @@ modularizing it.
 
 If you prefer keeping your Service Builder logic as a WAR, you must implement a
 service tracker to call services. See the
-[Service Trackers](/docs/customization/7-2/-/knowledge_base/c/service-trackers)
+[Service Trackers](/docs/7-2/customization/-/knowledge_base/c/service-trackers)
 article for more information.
 
 If you're optimizing your Service Builder logic to invoke Liferay services from
 a module, see the
-[Invoking Local Services](/docs/appdev/7-2/-/knowledge_base/a/invoking-local-services)
+[Invoking Local Services](/docs/7-2/appdev/-/knowledge_base/a/invoking-local-services)
 article for more information.

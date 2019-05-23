@@ -24,9 +24,9 @@ Upgrading a Liferay MVC Portlet involves these steps:
     issues are autocorrected. For remaining issues, the planner identifies code
     affected by the new API and ways to adapt it.
 
-2.  [Resolve its dependencies](/docs/tutorials/7-2/-/knowledge_base/t/resolving-a-projects-dependencies)
+2.  [Resolve its dependencies](/docs/7-2/tutorials/-/knowledge_base/t/resolving-a-projects-dependencies)
 
-3.  [Deploy it](/docs/reference/7-2/-/knowledge_base/r/deploying-a-project)
+3.  [Deploy it](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project)
 
 After deploying the upgraded portlet, the server prints messages that indicate
 the following portlet status:

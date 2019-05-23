@@ -58,7 +58,7 @@ Upgrading a Struts 1 portlet involves these steps:
     issues are autocorrected. For remaining issues, the planner identifies code
     affected by the new API and ways to adapt it.
 
-2.  [Resolve its dependencies](/docs/tutorials/7-2/-/knowledge_base/t/resolving-a-projects-dependencies)
+2.  [Resolve its dependencies](/docs/7-2/tutorials/-/knowledge_base/t/resolving-a-projects-dependencies)
 
 You've resolved the Sample Struts portlet's dependencies. It's ready to deploy. 
 
@@ -77,7 +77,7 @@ You've resolved the Sample Struts portlet's dependencies. It's ready to deploy.
 | jsp.page.context.force.get.attribute=false
 | ```
 
-On [deploying](/docs/reference/7-2/-/knowledge_base/r/deploying-a-project) a
+On [deploying](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project) a
 Struts portlet Web Application aRchive (WAR), @product@'s Web Application Bundle
 (WAB) Generator creates an OSGi module (bundle) for the portlet and installs it
 to Liferay's OSGi framework. The server prints messages indicating the following

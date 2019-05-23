@@ -22,9 +22,9 @@ Follow these steps to upgrade a servlet-based portlet:
     issues are autocorrected. For remaining issues, the planner identifies code
     affected by the new API and ways to adapt it.
 
-2.  [Resolve its dependencies](/docs/tutorials/7-2/-/knowledge_base/t/resolving-a-projects-dependencies)
+2.  [Resolve its dependencies](/docs/7-2/tutorials/-/knowledge_base/t/resolving-a-projects-dependencies)
 
-3.  [Deploy it](/docs/reference/7-2/-/knowledge_base/r/deploying-a-project)
+3.  [Deploy it](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project)
 
 For an example upgrade scenario, consider this:
 
@@ -44,7 +44,7 @@ Java packages has replaced wholesale use of JARs. This means modules and WABs
 can import packages without concerning themselves with JARs. @product@ exports
 many third party packages for plugins to use. Best practices for using packages
 that @product@ exports are found
-[here](/docs/customization/7-2/-/knowledge_base/c/configuring-dependencies). For
+[here](/docs/7-2/customization/-/knowledge_base/c/configuring-dependencies). For
 more information on this specific scenario, see the
 [Using Packages Liferay Portal Exports](/docs/tutorials/7-1/-/knowledge_base/t/resolving-a-plugins-dependencies#using-packages-liferay-portal-exports)
 section.

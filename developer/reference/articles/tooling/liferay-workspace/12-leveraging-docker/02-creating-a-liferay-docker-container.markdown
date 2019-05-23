@@ -56,4 +56,4 @@ configurations are also applied to the container.
 | available to Docker.
 
 Once your container is created, you can
-[configure it](/docs/reference/7-2/-/knowledge_base/reference/configuring-a-docker-container).
+[configure it](/docs/7-2/reference/-/knowledge_base/reference/configuring-a-docker-container).

@@ -11,7 +11,7 @@ header-id: upgrading-service-builder
 </div>
 
 @product-ver@ continues to use 
-[Service Builder](/docs/appdev/7-2/-/knowledge_base/a/service-builder), so
+[Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder), so
 you can focus on your application's business logic instead of its persistence
 details. It still generates model classes, local and remote services, and
 persistence. 
@@ -64,13 +64,13 @@ Resolve these error types and others until your code is adapted to the new API.
 ## Step 2: Resolve Dependencies
 
 To adapt your app's dependencies, refer to the
-[Resolving a Project's Dependencies](/docs/tutorials/7-2/-/knowledge_base/t/resolving-a-projects-dependencies)
+[Resolving a Project's Dependencies](/docs/7-2/tutorials/-/knowledge_base/t/resolving-a-projects-dependencies)
 tutorial. Once your dependencies are upgraded, rebuild your services!
 
 ## Step 3: Build the Services
 
 To rebuild your portlet's services, see the
-[Running Service Builder](/docs/appdev/7-2/-/knowledge_base/a/running-service-builder)
+[Running Service Builder](/docs/7-2/appdev/-/knowledge_base/a/running-service-builder)
 article.
 
 An example change where upgrading legacy Service Builder code can produce
@@ -117,7 +117,7 @@ is required in your Service Builder project, you must update the references to
 your portlet's exception classes. 
 
 Once your Service Builder portlet is upgraded,
-[deploy it](/docs/reference/7-2/-/knowledge_base/r/deploying-a-project).
+[deploy it](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project).
 
 | **Note:** Service Builder portlets automatically migrated to Liferay Workspace
 | using the Code Upgrade Planner or Blade CLI's `convert` command automatically

@@ -54,10 +54,10 @@ Liferay Workspace version so all the latest features are available to you.
 Initiate this step to upgrade the appropriate plugin.
 
 See the
-[Updating Liferay Workspace](/docs/reference/7-2/-/knowledge_base/r/updating-liferay-workspace)
+[Updating Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/updating-liferay-workspace)
 article to do this for Gradle-based workspaces manually. For Maven-based
 workspaces, make sure you set the latest
-[Bundle Support plugin](/docs/reference/7-2/-/knowledge_base/r/bundle-support-plugin)
+[Bundle Support plugin](/docs/7-2/reference/-/knowledge_base/r/bundle-support-plugin)
 version in your root `pom.xml` file.
 
 ## Removing Your Project's Build Dependency Versions
@@ -89,7 +89,7 @@ dependencies {
 ```
 
 If you have not set the target platform feature in your workspace, see the
-[Managing the Target Platform](/docs/reference/7-2/-/knowledge_base/r/managing-the-target-platform)
+[Managing the Target Platform](/docs/7-2/reference/-/knowledge_base/r/managing-the-target-platform)
 article for more information.
 
 Great! You've successfully upgraded your build dependencies! You likely have

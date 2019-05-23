@@ -21,12 +21,12 @@ after you finish the above steps, you can deploy your portlet to @product@.
 The portlet upgrade tutorials show you how to upgrade the following common
 portlets: 
 
--   [GenericPortlet](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-genericportlet)
--   [Liferay MVC Portlet](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-liferay-mvc-portlet)
--   [Liferay JSF Portlet](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-liferay-jsf-portlet)
--   [Servlet-based portlet](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-servlet-based-portlet)
--   [Spring MVC Portlet](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-spring-mvc-portlet)
--   [Struts Portlet](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-struts-portlet)
+-   [GenericPortlet](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-a-genericportlet)
+-   [Liferay MVC Portlet](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-a-liferay-mvc-portlet)
+-   [Liferay JSF Portlet](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-a-liferay-jsf-portlet)
+-   [Servlet-based portlet](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-a-servlet-based-portlet)
+-   [Spring MVC Portlet](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-a-spring-mvc-portlet)
+-   [Struts Portlet](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-a-struts-portlet)
 
 Let's get your portlet running on @product-ver@!
 

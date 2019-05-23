@@ -22,7 +22,7 @@ Getting a customization module running on @product-ver@ takes two steps:
 1.  Adapt your code to @product-ver@'s API using the Code Upgrade Planner. When
     you ran the planner's *Fix Upgrade Problems* step, many of the existing
     issues were autocorrected or flagged. For any remaining errors, consult the
-    [Resolving a Project's Dependencies](/docs/tutorials/7-2/-/knowledge_base/t/resolving-a-projects-dependencies)
+    [Resolving a Project's Dependencies](/docs/7-2/tutorials/-/knowledge_base/t/resolving-a-projects-dependencies)
     article.
 
 2.  Deploy your module.
@@ -31,7 +31,7 @@ Getting a customization module running on @product-ver@ takes two steps:
 | @product@. Fragments are no longer recommended; you should upgrade a fragment
 | to a dynamic include or portlet filter. For more information on recommended
 | ways of customizing JSPs in @product-ver@, see the
-| [Customizing JSPs](/docs/customization/7-2/-/knowledge_base/c/customizing-jsps)
+| [Customizing JSPs](/docs/7-2/customization/-/knowledge_base/c/customizing-jsps)
 | section.
 
 Great! Your customization module is upgraded for @product-ver@!

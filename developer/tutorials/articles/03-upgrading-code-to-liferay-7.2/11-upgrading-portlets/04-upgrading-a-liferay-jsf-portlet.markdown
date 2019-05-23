@@ -11,7 +11,7 @@ header-id: upgrading-a-liferay-jsf-portlet
 </div>
 
 Liferay JSF portlets are easy to upgrade and require few changes. They interface
-with the [Liferay Faces](/docs/reference/7-2/-/knowledge_base/r/liferay-faces)
+with the [Liferay Faces](/docs/7-2/reference/-/knowledge_base/r/liferay-faces)
 project, which encapsulates @product@'s Java API and JavaScript code. Because
 of this, upgrading JSF portlets to @product-ver@ requires only updating
 dependencies.
@@ -22,7 +22,7 @@ There are two ways to find a JSF portlet's dependencies for @product-ver@:
   look up the dependencies (Gradle or Maven) by @product@ version, JSF version,
   and component suites. 
 - The
-  [Liferay Faces Version Scheme](/docs/reference/7-2/-/knowledge_base/r/liferay-faces-version-scheme)
+  [Liferay Faces Version Scheme](/docs/7-2/reference/-/knowledge_base/r/liferay-faces-version-scheme)
   article's tables list artifacts by @product@ version, JSF version, portlet
   version, and AlloyUI and Metal component suite version. 
 
@@ -85,7 +85,7 @@ to @product-ver@.
 
 Once your Liferay JSF portlet's dependencies are updated, it's deployable to
 @product-ver@! Follow the
-[Deploying a Project](/docs/reference/7-2/-/knowledge_base/r/deploying-a-project)
+[Deploying a Project](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project)
 article for deployment help.
 
 When the portlet WAR is deployed, @product@'s Plugin Compatibility Layer
