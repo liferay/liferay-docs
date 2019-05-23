@@ -42,8 +42,8 @@ Here are the steps for using the theme Gulp `upgrade` task:
 
 +$$$
 
-**Note**: An upgraded theme can be restored to its original state by 
-executing `gulp upgrade:revert`. 
+**Note**: The `gulp upgrade` task overwrites the theme's files. We recommend 
+that you backup your theme's files before running it. 
 
 $$$
 

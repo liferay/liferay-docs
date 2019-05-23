@@ -1,6 +1,6 @@
 # Using Translation Features in Your Portlet [](id=using-translation-features-in-your-portlet)
 
-By default, the Liferay Bundle Generator creates an empty configuration for 
+By default, the Liferay JS Generator creates an empty configuration for 
 translation. The translate script instructs the user how to add new supported 
 locales or configure the credentials when it is run. The translate target reads 
 the supported locales you have defined in the `supportedLocales` key of your 
@@ -30,7 +30,7 @@ a language properties file for it with translations:
     also warns about locales that are not supported, but have a 
     `*language.properties` file.
     
-Great! Now you know how to use the Liferay Bundle Generator's translation 
+Great! Now you know how to use the Liferay JS Generator's translation 
 features in your app. 
 
 ## Related Topics [](id=related-topics)

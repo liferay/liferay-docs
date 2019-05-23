@@ -12,4 +12,4 @@ development:
 - Fully qualified portlet IDs
 - FreeMarker taglib macros
 - Setting up your npm environment
-- Liferay Bundle Generator
+- Liferay JS Generator

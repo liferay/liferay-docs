@@ -8,6 +8,15 @@ extensions.
 
 ![Figure 1: Run the `gulp status` task to list your theme's current extensions.](../../../../images/theme-dev-listing-theme-extensions.png)
 
++$$$
+
+**Note:** Gulp is included as a local dependency in generated themes, so you 
+are not required to install it. It can be accessed by running 
+`node_modules\.bin\gulp` followed by the Gulp task from a generated theme's 
+root folder.
+
+$$$
+
 ## Related Topics [](id=related-topics)
 
 [Changing Your Base Theme](/develop/tutorials/-/knowledge_base/7-1/changing-your-base-theme)

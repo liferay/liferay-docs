@@ -1,12 +1,12 @@
-# Bundle Generator Commands [](id=bundle-generator-commands)
+# Liferay JS Generator Commands [](id=liferay-js-generator-commands)
 
-The npm commands shown below are available for the Liferay Bundle Generator:
+The npm commands shown below are available for the Liferay JS Generator:
 
 - `npm run build`: Places the output of liferay-npm-bundler in the designated 
   output folder. The standard output is a JAR file that can be deployed manually 
   to @product@. 
 
-- `npm run deploy`: 
+- `npm run deploy`: Deploys the bundle to the configured app server
 
 - `npm run start`: Tests the application in a local webpack installation instead 
   of a @product@ server. This speeds up development because you can see live 

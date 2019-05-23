@@ -7,6 +7,15 @@ task. Your theme uses this information to deploy to the proper server. If your
 app server or site changes during development, you can update their 
 configuration information by manually running the `gulp init` task.
 
++$$$
+
+**Note:** Gulp is included as a local dependency in generated themes, so you 
+are not required to install it. It can be accessed by running 
+`node_modules\.bin\gulp` followed by the Gulp task from a generated theme's 
+root folder.
+
+$$$
+
 Follow these steps:
 
 1.  Navigate to your theme's root folder and run `gulp init`.

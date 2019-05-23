@@ -63,6 +63,15 @@ Now that your themelet is developed, you can install it in your theme.
 After you've developed your themelet, follow the steps below to install it into
 your theme.
 
++$$$
+
+**Note:** Gulp is included as a local dependency in generated themes, so you 
+are not required to install it. It can be accessed by running 
+`node_modules\.bin\gulp` followed by the Gulp task from a generated theme's 
+root folder.
+
+$$$
+
 1.  Navigate to your theme's root folder and run the following command:
 
         gulp extend

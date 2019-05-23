@@ -1,7 +1,7 @@
 # Configuring System Settings for OSGi Bundles Created with the liferay-npm-bundler [](id=configuring-system-settings-for-osgi-bundles-created-with-the-bundler)
 
 If you're 
-[creating an OSGi bundle with the Liferay Bundle Generator](/develop/tutorials/-/knowledge_base/7-1/creating-and-bundling-javascript-portlets-with-javascript-tooling) 
+[creating an OSGi bundle with the Liferay JS Generator](/develop/tutorials/-/knowledge_base/7-1/creating-and-bundling-javascript-portlets-with-javascript-tooling) 
 and want to provide system settings for your portlet, you must provide a 
 `configuration.json` file. This reference guide lists the available configuration 
 options for `configuration.json` along with example code.

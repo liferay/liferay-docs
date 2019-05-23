@@ -1,12 +1,12 @@
 # Installing the Bundle Generator and Generating a Bundle [](id=installing-the-bundle-generator-and-generating-a-bundle)
 
 This tutorial shows how to install the 
-[Liferay Bundle Generator](https://www.npmjs.com/package/generator-liferay-bundle) 
+[Liferay JS Generator](https://www.npmjs.com/package/generator-liferay-js) 
 and how to use it to create JavaScript portlets. 
 
 +$$$
 
-**Important:** To use the Liferay Bundle Generator, you must have the Liferay JS 
+**Important:** To use the Liferay JS Generator, you must have the Liferay JS 
 Portlet Extender installed in your @product@ instance. The JS Portlet Extender 
 is a Labs application available from Liferay Marketplace for 
 [Liferay Digital Enterprise 7.1](https://web.liferay.com/marketplace/-/mp/application/115543020) 
@@ -31,16 +31,16 @@ Follow these steps to create your JavaScript portlet:
 
         npm install -g yeoman
 
-3.  Install the Liferay Bundle Generator:
+3.  Install the Liferay JS Generator:
 
-        npm install -g generator-liferay-bundle
+        npm install -g generator-liferay-js
 
 4.  Run the generator with the command below, select the JavaScript portlet you 
     want to create, and answer the prompts that follow.
 
-        yo liferay-bundle
+        yo liferay-js
 
-    ![Figure 1: The liferay-bundle generator prompts you for portlet options.](../../../images/liferay-bundle-generator-prompts.png)
+    ![Figure 1: The liferay-bundle generator prompts you for portlet options.](../../../images/liferay-js-generator-prompts.png)
 
 5.  If you specified your app server information when your portlet was 
     generated, you can deploy your portlet by running the command below. You can 
@@ -49,7 +49,7 @@ Follow these steps to create your JavaScript portlet:
 
         npm run deploy
 
-Great! Now you know how to install and run the Liferay Bundle Generator. 
+Great! Now you know how to install and run the Liferay JS Generator. 
 
 ## Related Topics [](id=related-topics)
 
