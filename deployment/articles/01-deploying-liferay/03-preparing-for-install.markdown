@@ -83,7 +83,7 @@ at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:198)
 at java.base/java.lang.reflect.Method.setAccessible(Method.java:192)
 ```
 
-To workaround this issue, add this property after your application server JMV options:
+To workaround this issue, add this property after your application server JVM options:
 
 ```properties
  --add-opens=jdk.management/com.sun.management.internal=ALL-UNNAMED
