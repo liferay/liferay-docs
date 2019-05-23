@@ -168,13 +168,13 @@ Here are the code upgrade steps:
 
     Upgrade your themes so they're deployable to @product-ver@.{.summary}
 
-    1.  [Upgrade 6.2 Themes to 7.0](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-6-2-themes-to-7-0){.title}
+    1.  [Upgrade 6.2 Themes to 7.2](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-6-2-themes-to-7-2){.title}
 
-    2.  [Upgrade 7.0 Themes to 7.1](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-7-0-themes-to-7-1){.title}
+    2.  [Upgrade 7.0 Themes to 7.2](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-7-0-themes-to-7-2){.title}
 
     3.  [Upgrade 7.1 Themes to 7.2](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-7-1-themes-to-7-2){.title}
 
-8.  [Upgrade Layout Templates](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-layout-templates){.title}
+8.  [Upgrade Layout Templates](/docs/tutorials/7-2/-/knowledge_base/t/upgrading-a-layout-template-to-7-2){.title}
 
     Upgrade your layout templates so they're deployable to @product-ver@.{.summary}
 
