@@ -6,9 +6,9 @@ header-id: installing-the-bundle-generator-and-generating-a-bundle
 
 [TOC levels=1-4]
 
-This article shows how to install the 
+Here you'll learn how to install the 
 [Liferay Bundle Generator](https://www.npmjs.com/package/generator-liferay-bundle) 
-and how to use it to create a new JavaScript portlets. See the 
+and use it to create a new JavaScript portlets. See the 
 [Angular widget](/docs/7-2/appdev/-/knowledge_base/a/angular-widget), 
 [React widget](/docs/7-2/appdev/-/knowledge_base/a/react-widget), 
 and 
@@ -25,7 +25,7 @@ Follow these steps to create your JavaScript portlet:
 
 1.  Install 
     [Node.js](http://nodejs.org/). 
-    Note that Node Package Manager (npm) is installed with this as well. You’ll 
+    Note that Node Package Manager (npm) is installed with this as well. You'll 
     use npm to install the remaining dependencies and generator, and 
     [configure your npm environment](/docs/7-2/reference/-/knowledge_base/r/setting-up-your-npm-environment).
 
