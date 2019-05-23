@@ -1,6 +1,13 @@
 # What's New in Search
 
+Lots of new and improved search capabilities are present in @product-ver@, from
+new widgets to new APIs and infrastructure. 
+
 ## New and Improved Widgets
+
+Add search widgets by clicking the Add
+(!Add](../../../../images/icon-add-widget.png)) icon on the page. Then expand
+the Widgets &rarr; Search section.
 
 ### Custom Filter
 
@@ -38,7 +45,8 @@ an explanation of the score for each search hit.
 
 ## New Search Admin Functionality
 
-Control Panel &rarr; Configuration &rarr; Search
+The Search Admin functionality is found in Control Panel &rarr; Configuration
+&rarr; Search.
 
 ### DXP Only: Synonyms
 
@@ -62,7 +70,7 @@ reindexing action has completed.
 
 ## New System Settings
 
-The Search System Settings are found at Control Panel &rarr; Configuration
+Access the Search System Settings are found at Control Panel &rarr; Configuration
 &rarr; System Settings &rarr; Search.
 
 There's a new entry in the search category: _Title Field Query Builder_. It
@@ -80,10 +88,12 @@ for more information.
 
 ## New Infrastructure
 
-### Elasticsearch 6.5
+There are some important search infrastructure changed to be aware of.
 
-Elasticsearch 6.5 is now the supported search engine, and it's included as the
-embedded version to use for testing out-of-the-box search behavior.
+### Elasticsearch 6.5.x Support
+
+@product-ver@ supports Elasticsearch 6.5.x, and it's included as the embedded
+version to use for testing out-of-the-box search behavior.
 
 ### Application-Specific Indexes
 
@@ -106,6 +116,7 @@ APIs include:
 
 - Low level indexing and queries
 - Operations directly on indexed documents (no need for the Indexer framework)
+- New Aggregation types
 
 ## Multi-Language Search
 
