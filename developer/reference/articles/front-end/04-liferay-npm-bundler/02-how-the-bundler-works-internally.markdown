@@ -1,10 +1,4 @@
----
-header-id: how-the-liferay-npm-bundler-works-internally
----
-
-# How the Liferay npm Bundler Works Internally
-
-[TOC levels=1-4]
+## How the Liferay npm Bundler Works Internally
 
 The liferay-npm-bundler takes a widget project and outputs its files 
 (including npm packages) to a build folder, so the standard widget build 
