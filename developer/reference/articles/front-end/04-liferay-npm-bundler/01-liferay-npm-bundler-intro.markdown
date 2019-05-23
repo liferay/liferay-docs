@@ -69,3 +69,6 @@ are run (before or after Babel is run, respectively). During this workflow,
 liferay-npm-bundler calls all the configured plugins so they can perform 
 transformations on the npm packages (for instance, modifying their `package.json` 
 files, or deleting or moving files). 
+
+In this reference section, you'll learn more about the liferay-npm-bundler's 
+configuration, default presets, format, and more. 

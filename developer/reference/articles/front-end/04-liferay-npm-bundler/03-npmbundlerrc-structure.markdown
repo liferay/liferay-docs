@@ -14,8 +14,8 @@ This article explains the `.npmbundlerrc` file's structure. See the
 [default preset reference](/docs/7-2/reference/-/knowledge_base/r/how-the-default-preset-configures-the-liferay-npm-bundler) 
 to learn how the default preset configures the liferay-npm-bundler. See 
 [Creating JavaScript Widgets with JavaScript Tooling](/docs/7-2/frameworks/-/knowledge_base/f/creating-javascript-widgets-with-javascript-tooling) 
-to learn how to use the liferay-npm-bundler along with the Liferay Bundle 
-Generator to create JavaScript widgets. 
+to learn how to use the liferay-npm-bundler along with the Liferay JS Generator 
+to create JavaScript widgets. 
 
 ## The Structure
 
@@ -65,7 +65,6 @@ Here's an example of a `.npmbundlerrc` configuration:
         "isobject", "isarray"
     ],
     "output": "build",
-    "process-serially": false,
     "verbose": false,
     "dump-report": true,
     "config": {
@@ -189,7 +188,11 @@ doing to the console. The default value is `false`.
 `"\"`: plugins' configuration for dependency packages.
 
 *(asterisk)*: Defines the default plugin configuration for all npm packages. It 
-contains four values identified by a corresponding key. Keys `copy-plugins`
+contains four values identified by a corresponding key. Keys `copy-plugins`, 
+`plugins` and `post-plugins` identify arrays of `liferay-npm-bundler` plugins to 
+apply in the copy, pre and post process steps. Key `.babelrc` identifies an 
+object specifying the configuration to use in the Babel step and has the same 
+structure of a standard `.babelrc` file.
 
 `exclude:` defines glob expressions of files to exclude from bundling from all
 or specific packages. Each list is an array identified by one of the following 

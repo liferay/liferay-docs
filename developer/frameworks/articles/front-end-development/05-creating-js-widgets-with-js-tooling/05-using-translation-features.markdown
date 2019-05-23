@@ -6,7 +6,7 @@ header-id: using-translation-features-in-your-widget
 
 [TOC levels=1-4]
 
-By default, the Liferay Bundle Generator creates an empty configuration for 
+By default, the Liferay JS Generator creates an empty configuration for 
 translation. The translate script instructs the user how to add new supported 
 locales or configure the credentials when it's run. The translate target reads 
 the supported locales you have defined in the `supportedLocales` key of your 
@@ -34,11 +34,11 @@ npm run translate
     also warns about locales that are not supported, but have a 
     `*language.properties` file.
  
-Great! Now you know how to use the Liferay Bundle Generator's translation 
-features in your app. 
+Great! Now you know how to use the Liferay JS Generator's translation features 
+in your app. 
 
 ## Related Topics
 
-- [Configuring System Settings and Instance Settings for Your JavaScript Widget](/docs/7-2/frameworks/-/knowledge_base/f/configuring-system-settings-and-instance-settings-for-your-javascript-widget)
+- [Configuring System Settings and Instance Settings for Your JavaScript Widget](/docs/7-2/frameworks/-/knowledge_base/f/configuring-system-settings-and-instance-settings-for-your-js-widget)
 - [Localizing Your Widget](/docs/7-2/frameworks/-/knowledge_base/f/localizing-your-widget)
 - [Setting Portlet Properties for Your JavaScript Widget](/docs/7-2/frameworks/-/knowledge_base/f/setting-portlet-properties-for-your-javascript-widget)

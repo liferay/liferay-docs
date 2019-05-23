@@ -6,7 +6,7 @@ header-id: understanding-the-js-portlet-extender-configuration
 
 [TOC levels=1-4]
 
-Bundles generated with the Liferay Bundle Generator require specific method 
+Bundles generated with the Liferay JS Generator require specific method 
 signatures, MANIFEST headers, and configuration within their `package.json` 
 file to use the JS Portlet Extender. This configuration is provided by default. 
 
@@ -22,7 +22,7 @@ Require-Capability: osgi.extender;filter:="(osgi.extender=liferay.npm.portlet)"
 ## Main Entry Point
 
 The main module of your JavaScript portlet must export a JavaScript function 
-with the signature below. Bundles created with the Liferay Bundle Generator have 
+with the signature below. Bundles created with the Liferay JS Generator have 
 this out-of-the-box:
 
 ```javascript

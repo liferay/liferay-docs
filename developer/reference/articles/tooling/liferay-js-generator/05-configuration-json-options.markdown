@@ -7,7 +7,7 @@ header-id: configuration-json-available-options
 [TOC levels=1-4]
 
 If you've 
-[created an OSGi bundle with the Liferay Bundle Generator](/docs/7-2/reference/-/knowledge_base/r/installing-the-bundle-generator-and-generating-a-bundle) 
+[created an OSGi bundle with the Liferay JS Generator](/docs/7-2/reference/-/knowledge_base/r/installing-the-js-generator-and-generating-a-bundle) 
 and want to provide system settings or instance settings for your widget, you 
 must provide a `configuration.json` file. This reference guide lists the 
 available configuration options for `configuration.json` along with example 

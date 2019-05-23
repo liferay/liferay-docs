@@ -1,5 +1,5 @@
 ---
-header-id: configuring-system-settings-and-instance-settings-for-your-javascript-widge
+header-id: configuring-system-settings-and-instance-settings-for-your-js-widget
 ---
 
 # Configuring System Settings and Instance Settings for Your JavaScript Widget
@@ -8,7 +8,7 @@ header-id: configuring-system-settings-and-instance-settings-for-your-javascript
 
 As of v1.1.0 of the JS Portlet Extender, you can define configuration options 
 for your widget. These options are passed to the widget's JavaScript entry point 
-as the `configuration` parameter. See the [main entry point's reference](understanding-the-js-portlet-extender configuration#main-entry-point) 
+as the `configuration` parameter. See the [main entry point's reference](/docs/7-2/reference/-/knowledge_base/r/understanding-the-js-portlet-extender-configuration#main-entry-point) 
 for more information on the entry point. Follow these steps to set system and/or 
 portlet instance settings for your widget:
 
