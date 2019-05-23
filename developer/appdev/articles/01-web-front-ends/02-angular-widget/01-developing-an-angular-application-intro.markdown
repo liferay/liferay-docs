@@ -7,7 +7,7 @@ header-id: developing-an-angular-application
 [TOC levels=1-4]
 
 Running an existing Angular app on @product@ makes the app available as a
-widget for using on site pages. You must use the Liferay Bundle Generator and
+widget for using on site pages. You must use the Liferay JS Generator and
 Liferay npm Bundler to merge your files into a portlet bundle,
 adapt your routes and CSS, and deploy your bundle. 
 
@@ -15,15 +15,15 @@ adapt your routes and CSS, and deploy your bundle.
 
 Follow these steps:
 
-1.  Using [npm](https://www.npmjs.com), install the Liferay Bundle Generator:
+1.  Using [npm](https://www.npmjs.com), install the Liferay JS Generator:
 
-        npm install -g yo generator-liferay-bundle
+        npm install -g yo generator-liferay-js
 
 2.  Generate an Angular-based portlet bundle project for deploying your app to 
     your 
     [@product@ installation](/deployment/docs/installing-product). 
 
-        yo liferay-bundle
+        yo liferay-js
 
     Select `Angular based portlet` and opt for generating sample code. Here's the bundle's structure: 
 
@@ -206,11 +206,8 @@ Follow these steps:
     | the dependency to version `"6.0.0"`. See
     | [LPS-92848](https://issues.liferay.com/browse/LPS-92848)
     | for details. 
-
-10. If you're building on Windows, set `"process-serially": true` in your 
-    bundle's `.npmbundlerrc` file. 
  
-11. Finally, deploy your bundle:
+10. Finally, deploy your bundle:
 
         npm run deploy
 

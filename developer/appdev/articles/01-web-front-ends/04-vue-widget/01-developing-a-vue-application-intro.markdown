@@ -7,7 +7,7 @@ header-id: developing-a-vue-application
 [TOC levels=1-4]
 
 Running an existing Vue app on @product@ makes the app available as a
-widget for using on site pages. You must use the Liferay Bundle Generator and
+widget for using on site pages. You must use the Liferay JS Generator and
 Liferay npm Bundler to merge your files into a
 portlet bundle, adapt your static resource paths, and deploy your 
 bundle. The steps below demonstrate how easy it is to prepare a Vue app that 
@@ -17,13 +17,13 @@ uses single file components (`.vue` files) with multiple views.
 
 Follow these steps:
 
-1.  Using [npm](https://www.npmjs.com/), install the Liferay Bundle Generator:
+1.  Using [npm](https://www.npmjs.com/), install the Liferay JS Generator:
 
-        npm install -g yo generator-liferay-bundle
+        npm install -g yo generator-liferay-js
 
 2.  Generate a Vue based portlet bundle project: 
 
-        yo liferay-bundle
+        yo liferay-js
 
     Select `Vue based portlet` and opt for generating sample code. Here's the 
     bundle's structure: 
@@ -188,11 +188,8 @@ Follow these steps:
     ```json
     "main": "index.common"
     ```
-
-11. If you're building on Windows, set `"process-serially": true` in your 
-    bundle's `.npmbundlerrc` file. 
  
-12. Finally, deploy your portlet bundle:
+11. Finally, deploy your portlet bundle:
 
         npm run deploy
 
