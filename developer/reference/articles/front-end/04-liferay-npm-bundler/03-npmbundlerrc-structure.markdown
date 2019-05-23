@@ -138,7 +138,7 @@ Here's an example of a `.npmbundlerrc` configuration:
 
 Below are the standard configuration options for the `.npmbundlerrc` file:
 
-*config*: Defines the global configuration that is made available to all 
+`config`: Defines the global configuration that is made available to all 
 liferay-npm-bundler and Babel plugins. Please refer to each plugin's 
 documentation to find the available options for each specific plugin. 
 
@@ -154,44 +154,44 @@ documentation to find the available options for each specific plugin.
 }
 ```
 
-*dump-report:* Sets whether to generate a debugging report. If `true`, a 
+`dump-report:` Sets whether to generate a debugging report. If `true`, a 
 `liferay-npm-bundler-report.html` file is generated in the project directory 
 that describes all actions and decisions taken when processing project and npm 
 modules. Note that you can also pass this as the build flag 
 `$ liferay-npm-bundler --dump-report` or `$ liferay-npm-bundler -r`. The default 
 value is `false`.
 
-*no-tracking:* whether to send usage analytics to our servers. Note that you can 
+`no-tracking:` whether to send usage analytics to our servers. Note that you can 
 also pass this as a build flag with the CLI argument 
 `$ liferay-npm-bundler --no-tracking`, or by 
 creating a marker file called `.liferay-npm-bundler-no-tracking` in the 
 project's root folder or any of its ancestors, or by setting the environment 
 variable `LIFERAY_NPM_BUNDLER_NO_TRACKING=''`. The default value is `false`.
 
-*output:* by default the bundler writes packages to the standard Gradle 
+`output:` by default the bundler writes packages to the standard Gradle 
 resources folder: `build/resources/main/META-INF/resources`. Set this value to 
 override the default output folder. Note that the dependency npm packages are 
 placed in a `node_modules` folder inside the build folder. Note if `create-jar` 
 is set, the default output folder is `build`.
 
-*preset:* specifies the `liferay-npm-bundler` preset to use as a base 
+`preset:` specifies the `liferay-npm-bundler` preset to use as a base 
 configuration. Note that if a `.npmbundlerrc` file is not provided, the default 
 `liferay-npm-bundler-preset-standard` preset is used. All settings provided by 
 the preset are inherited, but they can be overridden.
 
-*verbose:* Sets whether to output detailed information about what the tool is 
+`verbose:` Sets whether to output detailed information about what the tool is 
 doing to the console. The default value is `false`.
 
 ### Package Processing Options [](id=package-processing-options)
 
-*"/"*: plugins' configuration for the project's package.
+`"/"`: plugins' configuration for the project's package.
 
-*"\"*: plugins' configuration for dependency packages.
+`"\"`: plugins' configuration for dependency packages.
 
 *(asterisk)*: Defines the default plugin configuration for all npm packages. It 
 contains four values identified by a corresponding key. Keys `copy-plugins`
 
-*exclude:* defines glob expressions of files to exclude from bundling from all
+`exclude:` defines glob expressions of files to exclude from bundling from all
 or specific packages. Each list is an array identified by one of the following 
 keys: `*` (any package), `{package name}` (any version of the package), or 
 `{package name}@{version}` (a specific version of a package). Below is an 
@@ -207,7 +207,7 @@ example configuration:
 }
 ```
 
-*ignore:* skips processing the specified JavaScript files with Babel for the 
+`ignore:` skips processing the specified JavaScript files with Babel for the 
 project. An example configuration is shown below:
 
 ```json
@@ -216,18 +216,18 @@ project. An example configuration is shown below:
 }
 ```
 
-*include-dependencies:* defines packages to include in bundling, even if they 
+`include-dependencies:` defines packages to include in bundling, even if they 
 are not listed under the `dependencies` section of `package.json`. These 
 packages must be available in the `node_modules` folder (i.e. installed 
-  manually, without saving them to `package.json`, or listed in the 
-  `devDependencies` section).
+manually, without saving them to `package.json`, or listed in the
+`devDependencies` section).
 
-*packages:* defines plugin configuration for npm packages, per package.
+`packages:` defines plugin configuration for npm packages, per package.
 
-*max-parallel-files:* Defines the maximum number of files to process in parallel 
+`max-parallel-files:` Defines the maximum number of files to process in parallel 
 to avoid EMFILE errors (especially on Windows). The default value is `128`. 
 
-*process-serially:* **Note**: removed since v 2.7.0. Replaced with 
+`process-serially:` **Note**: removed since v 2.7.0. Replaced with 
 `max-parallel-files`. 
 
 ### OSGi Bundle Creation Options
