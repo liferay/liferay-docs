@@ -50,13 +50,13 @@ JDK 8 best for developing on @product-ver@.
 @product@ requires that the application server JVM use the GMT time zone and
 UTF-8 file encoding. Include these JVM arguments to set the required values. 
 
-```bash
+```properties
 -Dfile.encoding=UTF8 -Duser.timezone=GMT
-````
+```
 
 On JDK 11, it's recommended to add this JVM argument to display four-digit years.
 
-```bash
+```properties
 -Djava.locale.providers=JRE,COMPAT,CLDR
 ```
 
@@ -66,6 +66,13 @@ On JDK 11, it's recommended to add this JVM argument to display four-digit years
 | [LPS-87191](https://issues.liferay.com/browse/LPS-87191)).
 | The setting `java.locale.providers=JRE,COMPAT,CLDR` works around this issue by
 | using JDK 8's default locales provider. 
+
+The recommended maximum heap size is 2GB. Setting the minimum heap size to the
+maximum heap size value minimizes garbage collections. 
+
+```properties 
+-Xms2560m -Xmx2560m
+```
 
 If you're using JDK 11, you may see *Illegal Access* warnings like these:
 
