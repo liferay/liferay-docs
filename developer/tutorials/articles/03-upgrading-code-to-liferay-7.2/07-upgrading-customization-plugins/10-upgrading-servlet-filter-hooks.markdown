@@ -13,7 +13,7 @@ header-id: upgrading-servlet-filter-hooks
 If you have servlet filter hooks ready to be upgraded, this tutorial's for you.
 The process is simple:
 
-1.  Adapt your code to @product-ver@'s API using the Code Upgrade Planner. When
+1.  Adapt your code to @product-ver@'s API using the Liferay Upgrade Planner. When
     you ran the planner's *Fix Upgrade Problems* step, many of the existing
     issues were autocorrected/flagged. For any remaining errors, consult the
     [Resolving a Project's Dependencies](/docs/7-2/tutorials/-/knowledge_base/t/resolving-a-projects-dependencies)

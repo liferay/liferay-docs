@@ -11,7 +11,7 @@ custom apps) to the new version. You'll learn how to upgrade your code in this
 section.
 
 These tutorials assume you're using the
-[Code Upgrade Planner](/docs/7-2/reference/-/knowledge_base/r/code-upgrade-planner).
+[Liferay Upgrade Planner](/docs/7-2/reference/-/knowledge_base/r/liferay-upgrade-planner).
 To follow along with this section, install the planner and step through the
 upgrade instructions.
 

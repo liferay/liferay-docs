@@ -17,7 +17,7 @@ link. When users click the link, the Liferay logo appears.
 
 Follow these steps to upgrade a servlet-based portlet: 
 
-1.  Adapt the portlet to @product-ver@'s API using the Code Upgrade Planner.
+1.  Adapt the portlet to @product-ver@'s API using the Liferay Upgrade Planner.
     When running the planner's *Fix Upgrade Problems* step, many of the existing
     issues are autocorrected. For remaining issues, the planner identifies code
     affected by the new API and ways to adapt it.

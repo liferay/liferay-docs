@@ -14,7 +14,7 @@ Developers have been creating model listeners for several @product@
 versions. Upgrading model listener Hooks from previous portal versions has never
 been easier.
 
-1.  Adapt your code to @product-ver@'s API using the Code Upgrade Planner. When
+1.  Adapt your code to @product-ver@'s API using the Liferay Upgrade Planner. When
     you ran the planner's *Fix Upgrade Problems* step, many of the existing
     issues were autocorrected/flagged. For any remaining errors, consult the
     [Resolving a Project's Dependencies](/docs/7-2/tutorials/-/knowledge_base/t/resolving-a-projects-dependencies)

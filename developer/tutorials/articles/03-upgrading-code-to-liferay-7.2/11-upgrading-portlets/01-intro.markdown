@@ -14,7 +14,7 @@ Upgrading most portlets involves these steps:
 1.  Adapt the code to @product-ver@'s API
 2.  Resolve dependencies
 
-Liferay's Code Upgrade Planner helps you adapt your code to @product-ver@'s API.
+Liferay's Upgrade Planner helps you adapt your code to @product-ver@'s API.
 This makes resolving a portlet's dependencies straightforward. In most cases,
 after you finish the above steps, you can deploy your portlet to @product@.
 

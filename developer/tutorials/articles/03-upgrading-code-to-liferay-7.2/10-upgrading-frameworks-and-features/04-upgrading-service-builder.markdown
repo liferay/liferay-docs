@@ -26,7 +26,7 @@ Start by adapting the code.
 
 ## Step 1: Adapt the Code to @product-ver@'s API
 
-Adapt the portlet to @product-ver@'s API using the Code Upgrade Planner. When
+Adapt the portlet to @product-ver@'s API using the Upgrade Planner. When
 running the planner's *Fix Upgrade Problems* step, many of the existing issues
 are autocorrected. For remaining issues, the planner identifies code affected by
 the new API and ways to adapt it.
@@ -120,7 +120,7 @@ Once your Service Builder portlet is upgraded,
 [deploy it](/docs/7-2/reference/-/knowledge_base/r/deploying-a-project).
 
 | **Note:** Service Builder portlets automatically migrated to Liferay Workspace
-| using the Code Upgrade Planner or Blade CLI's `convert` command automatically
+| using the Upgrade Planner or Blade CLI's `convert` command automatically
 | has its Service Builder logic converted to API and implementation modules.
 | This is a best practice for @product-ver@.
 

@@ -26,7 +26,7 @@ You'll start by updating the repository URL.
 
 ## Updating the Repository URL
 
-Initiating this step in the Code Upgrade Planner updates the repository URL used
+Initiating this step in the Upgrade Planner updates the repository URL used
 to download artifacts for your workspace.
 
 If you're using a Gradle-based workspace, the repository URL is updated to point

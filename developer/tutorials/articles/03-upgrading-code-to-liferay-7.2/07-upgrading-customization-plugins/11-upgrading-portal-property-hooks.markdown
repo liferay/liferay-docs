@@ -14,7 +14,7 @@ All portal properties in previous @product@ versions that are also used in
 @product-ver@ can be overridden using portal property hooks. To upgrade portal
 property hooks, do this:
 
-1.  Adapt your code to @product-ver@'s API using the Code Upgrade Planner. When
+1.  Adapt your code to @product-ver@'s API using the Liferay Upgrade Planner. When
     you ran the planner's *Fix Upgrade Problems* step, many of the existing
     issues were autocorrected/flagged. For any remaining errors, consult the
     [Resolving a Project's Dependencies](/docs/7-2/tutorials/-/knowledge_base/t/resolving-a-projects-dependencies)

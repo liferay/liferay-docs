@@ -16,7 +16,7 @@ first decide if you're building your Service Builder logic as a WAR or
 modularizing it.
 
 | **Note:** Service Builder portlets automatically migrated to Liferay Workspace
-| using the Code Upgrade Planner or Blade CLI's `convert` command automatically
+| using the Upgrade Planner or Blade CLI's `convert` command automatically
 | have its Service Builder logic converted to API and implementation modules.
 | This is a best practice for @product-ver@.
 

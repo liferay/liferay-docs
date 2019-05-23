@@ -14,7 +14,7 @@ To properly upgrade Service Builder projects, you must rebuild all service
 classes so your changes are persisted across your project. Initiate this step
 to rebuild your services and finalize your Service Builder upgrade.
 
-To run Service Builder outside the Code Upgrade Planner, see the
+To run Service Builder outside the Liferay Upgrade Planner, see the
 [Running Service Builder](/docs/7-2/appdev/-/knowledge_base/a/running-service-builder)
 article. This covers running Service Builder with Blade CLI, Gradle, Maven, and
 Dev Studio.

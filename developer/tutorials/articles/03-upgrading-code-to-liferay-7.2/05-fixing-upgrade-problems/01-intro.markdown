@@ -14,7 +14,7 @@ start upgrading your project(s). The two most common upgrade problems are
 
 Visit these upgrade problem tutorials for tips on how to fix them.
 
-This tutorial is heavily focused on the Code Upgrade Planner. If you're
+This tutorial is heavily focused on the Liferay Upgrade Planner. If you're
 upgrading your code manually, continue to the listed tutorials above to fix your
 code upgrade problems.
 

@@ -19,7 +19,7 @@ choice in this section.
 
 There are two steps you must follow to migrate your custom code to workspace:
 
-1. Import the Plugins SDK project into the Code Upgrade Planner.
+1. Import the Plugins SDK project into the Upgrade Planner.
 
 2. Convert the Plugins SDK project to a supported workspace build type.
 
@@ -27,8 +27,8 @@ You'll step through importing a Plugins SDK project first.
 
 ## Importing Existing Plugins SDK Projects
 
-Initiating this step in the Code Upgrade Planner imports your Plugins SDK
-projects into the Code Upgrade Planner. These projects originate from the
+Initiating this step in the Upgrade Planner imports your Plugins SDK
+projects into the Upgrade Planner. These projects originate from the
 Plugins SDK you set when the Upgrade Planner process was started.
 
 If you're manually upgrading your code, you can skip this step.

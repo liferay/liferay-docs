@@ -8,7 +8,7 @@ header-id: upgrading-customization-plugins
 
 @product@ has more extension points than ever, and connecting existing hook
 plugins to them takes very few steps. In most cases, after you upgrade your hook
-using the Code Upgrade Planner, it's ready to run on @product@. The following
+using the Liferay Upgrade Planner, it's ready to run on @product@. The following
 tutorials show you how to upgrade each type of hook plugin.
 
 - [Override/Extension Modules](/docs/7-2/tutorials/-/knowledge_base/t/upgrading-overrideextension-modules)

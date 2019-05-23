@@ -34,10 +34,10 @@ Continue on to learn how to resolve each change.
 This change is common and easy to fix. Consider resolving these classes first.
 
 Since the module is already on your classpath, you need only update the class
-import. You can do this by using the Liferay Code Upgrade Planner or by
-organizing imports in Dev Studio/IntelliJ. The Code Upgrade Planner reports each
-moved class for you to address one by one. Organizing imports in Dev
-Studio/IntelliJ automatically resolves multiple classes at once.
+import. You can do this by using the Liferay Upgrade Planner or by organizing
+imports in Dev Studio/IntelliJ. The Upgrade Planner reports each moved class for
+you to address one by one. Organizing imports in Dev Studio/IntelliJ
+automatically resolves multiple classes at once.
 
 It's typically faster to resolve moved classes using the mentioned IDEs. You can
 follow similar instructions for both IDEs:
@@ -114,7 +114,7 @@ section.
 
 In cases where the class has been replaced by another class or removed from the
 product, some investigation is required. The easiest way to resolve this type of
-issue is to use the Code Upgrade Planner. It finds removed classes your project
+issue is to use the Upgrade Planner. It finds removed classes your project
 is referencing and explains what happened to the class, how to handle the
 change, and why the change was made. These are listed as breaking changes (among
 other types of changes). Move on to the next section to learn about Liferay's

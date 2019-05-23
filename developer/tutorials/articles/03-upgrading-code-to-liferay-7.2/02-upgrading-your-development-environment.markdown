@@ -25,11 +25,11 @@ Continue on to set up a workspace.
 You must set up your workspace development environment before you begin
 upgrading your custom apps. If you don't have an existing workspace, follow the
 step for creating one. If you have an existing workspace, follow the step on
-importing it into the Code Upgrade Planner.
+importing it into the Upgrade Planner.
 
 ### Creating New Liferay Workspace
 
-Initiating this step in the Code Upgrade Planner loads the Liferay Workspace
+Initiating this step in the Upgrade Planner loads the Liferay Workspace
 Project wizard.
 
 1.  Give your new workspace a name.
@@ -39,7 +39,7 @@ Project wizard.
 
 3.  Click Finish.
 
-You now have a new Liferay Workspace available in the Code Upgrade Planner!
+You now have a new Liferay Workspace available in the Upgrade Planner!
 
 For more information on creating a Liferay Workspace outside the planner, see
 the
