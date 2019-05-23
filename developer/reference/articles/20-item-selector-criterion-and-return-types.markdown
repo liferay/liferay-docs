@@ -1,4 +1,10 @@
-# Item Selector Criterion and Return Types [](id=item-selector-criterion-and-return-types)
+---
+header-id: item-selector-criterion-and-return-types
+---
+
+# Item Selector Criterion and Return Types
+
+[TOC levels=1-4]
 
 @product@ contains Item Selector criterion 
 ([`ItemSelectorCriterion`](@app-ref@/item-selector/latest/javadocs/com/liferay/item/selector/ItemSelectorCriterion.html)) 
@@ -17,7 +23,7 @@ For more information on Item Selectors in general, including definitions of
 criterion and return types, see the 
 [Item Selector introduction](/docs/7-2/frameworks/-/knowledge_base/f/item-selector). 
 
-## Item Selector Criterion Classes [](id=item-selector-criterion-classes)
+## Item Selector Criterion Classes
 
 **Assets:**
 
@@ -110,7 +116,7 @@ Wiki attachment.
 [WikiPageItemSelectorCriterion](@app-ref@/wiki/latest/javadocs/com/liferay/wiki/item/selector/criterion/WikiPageItemSelectorCriterion.html): 
 Wiki page.
 
-## Item Selector Return Type Classes [](id=item-selector-return-type-classes)
+## Item Selector Return Type Classes
 
 **Adaptive Media:**
 
