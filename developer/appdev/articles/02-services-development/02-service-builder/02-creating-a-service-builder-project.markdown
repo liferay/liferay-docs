@@ -6,20 +6,16 @@ header-id: creating-a-service-builder-project
 
 [TOC levels=1-4]
 
-Adding Service Builder services, and all that [Service
-Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder) offers, to your
-application requires generating an API and service project to your application
-parent project. 
+To use [Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder),
+you must generate the projects where you'll configure your object-relational
+map. There's an API project and an implementation project. 
 
--   `[project]/[project]-api/` &rarr; Service interfaces.  
+-   `[project]/[project]-api/` &rarr; Service interfaces.
 
 -   `[project]/[project]-service/` &rarr; Service implementations and 
     supporting files. 
 
-You do all the work in the `-service` module and then [run Service
-Builder](/docs/7-2/appdev/-/knowledge_base/a/running-service-builder) to
-generate (or re-generate) the service API based on your changes. Here's how to
-create a Service Builder project. 
+Here's how to create a Service Builder project. 
 
 1.  Decide on a project name. If the project is part of an application, name the
     project after the application. 
@@ -31,13 +27,13 @@ create a Service Builder project.
     Service Builder project called `bookmarks`. 
 
     Gradle: 
-    
+
     ```bash
     blade create -t service-builder -p com.liferay.docs.bookmarks bookmarks
     ```
-    
+
     Maven:
-    
+
     ```bash
     mvn archetype:generate \
     -DarchetypeGroupId=com.liferay \
