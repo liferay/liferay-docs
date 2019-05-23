@@ -31,10 +31,10 @@ data upgrade environment:
 
 -   Increase the interval to flush commits to disk. 
 
--   Minimize transaction logging.  
+-   Minimize transaction logging.
 
-| **Note:** These tuning worked well for us on specific versions of each 
-| database. Please consult your database vendor's documentation for further
+| **Note:** These options worked well for us on specific versions of each 
+| database. Please consult your database vendor's documentation for 
 | information on how to optimize executing updates on your specific database 
 | version. 
 
@@ -47,8 +47,8 @@ data upgrade environment:
 | **Warning:** Some database properties and configurations are global and affect
 | schemas in the same database. 
 
-The configurations you'll see here were optimal for upgrading data in a Liferay
-6.2 EE installation that had these characteristics: 
+These configurations were optimal for upgrading data in a Liferay 6.2 EE
+installation that had these characteristics: 
 
 -   3.2 GB database 
 
@@ -100,7 +100,7 @@ Here's how to optimize each database's transaction engine for the updates.
 
 ### IBM DB2 
 
-Please consult the IBM's official DB2 documentation. 
+Please consult IBM's official DB2 documentation. 
 
 ### MariaDB
 
