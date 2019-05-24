@@ -1,4 +1,8 @@
-# Using workflow with other applications [](id=using-workflow-with-other-applications)
+---
+header-id: using-workflow-with-other-applications
+---
+
+# Using workflow with other applications
 
 Above we saw an example of using workflow with Liferay web content. The process
 is the same for all resources that are workflow-enabled. However, while

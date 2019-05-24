@@ -1,4 +1,8 @@
-# MVC Portlets [](id=developing-jsp-portlets-using-liferay-mvc)
+---
+header-id: developing-jsp-portlets-using-liferay-mvc
+---
+
+# MVC Portlets
 
 Portlets are the most basic, most commonly used type of Liferay plugin you'll
 develop. Think of your Liferay portal as a pizza crust (sit down, you can go
@@ -16,6 +20,6 @@ portlets, including Struts, Spring MVC, JSF, and Vaadin. Here you'll use the
 Liferay MVC portlet framework, because it's simple, lightweight, and easy to
 understand. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[JSF Portlets with Liferay Faces](/develop/tutorials/-/knowledge_base/6-2/jsf-portlets-with-liferay-faces)
+[JSF Portlets with Liferay Faces](/docs/6-2/tutorials/-/knowledge_base/t/jsf-portlets-with-liferay-faces)

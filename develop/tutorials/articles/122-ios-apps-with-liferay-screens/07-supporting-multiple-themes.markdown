@@ -1,4 +1,8 @@
-# Supporting Multiple Themes in Your Screenlet [](id=supporting-multiple-themes-in-your-screenlet)
+---
+header-id: supporting-multiple-themes-in-your-screenlet
+---
+
+# Supporting Multiple Themes in Your Screenlet
 
 Themes let you present the same Screenlet with a different look and feel. For 
 example, if you have multiple apps that use the same Screenlet, you can use 
@@ -8,7 +12,7 @@ For your custom Screenlet to support different Themes, however, it must contain
 a *View Model* protocol. A View Model abstracts the Theme used to display the 
 Screenlet, thus letting developers use other Themes. For example, note that the 
 Screenlet class's `createInteractor` method in 
-[the Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets) 
+[the Screenlet creation tutorial](/docs/6-2/tutorials/-/knowledge_base/t/creating-ios-screenlets) 
 accesses the View class (`AddBookmarkView_default`) directly when getting a 
 reference to the View class:
 
@@ -22,11 +26,11 @@ Theme's View class via a View Model protocol.
 
 This tutorial shows you how to add a View Model to your Screenlet. The Add 
 Bookmark Screenlet created in 
-[the Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets) 
+[the Screenlet creation tutorial](/docs/6-2/tutorials/-/knowledge_base/t/creating-ios-screenlets) 
 is used as an example. Note that you can also follow these steps to add a View 
 Model while creating your Screenlet. 
 
-## Creating and Using a View Model [](id=creating-and-using-a-view-model)
+## Creating and Using a View Model
 
 Follow these steps to add and use a View Model in your Screenlet:
 
@@ -109,15 +113,15 @@ Follow these steps to add and use a View Model in your Screenlet:
 
 That's it! Now your Screenlet is ready to use other Themes that you create for 
 it. See the tutorial 
-[Creating iOS Themes](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes) 
+[Creating iOS Themes](/docs/6-2/tutorials/-/knowledge_base/t/creating-ios-themes) 
 for instructions on creating a Theme. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating iOS Themes](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes)
+[Creating iOS Themes](/docs/6-2/tutorials/-/knowledge_base/t/creating-ios-themes)
 
-[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets)
+[Creating iOS Screenlets](/docs/6-2/tutorials/-/knowledge_base/t/creating-ios-screenlets)
 
-[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)
+[Architecture of Liferay Screens for iOS](/docs/6-2/tutorials/-/knowledge_base/t/architecture-of-liferay-screens-for-ios)
 
-[Creating iOS List Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-list-screenlets)
+[Creating iOS List Screenlets](/docs/6-2/tutorials/-/knowledge_base/t/creating-ios-list-screenlets)

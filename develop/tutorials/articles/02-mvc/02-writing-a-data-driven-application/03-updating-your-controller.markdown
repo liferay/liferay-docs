@@ -1,4 +1,8 @@
-# Updating Your Controller to Use Services [](id=updating-your-controller-to-use-services)
+---
+header-id: updating-your-controller-to-use-services
+---
+
+# Updating Your Controller to Use Services
 
 Now that you've created your service and persistence layers, it's time to update
 your controller so that it uses them to store and retrieve guestbooks and their

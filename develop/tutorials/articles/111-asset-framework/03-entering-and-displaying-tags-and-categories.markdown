@@ -1,4 +1,8 @@
-# Implementing Asset Categorization and Tagging [](id=implementing-asset-categorization-and-tagging)
+---
+header-id: implementing-asset-categorization-and-tagging
+---
+
+# Implementing Asset Categorization and Tagging
 
 <!--
 Testing Notes:
@@ -13,9 +17,9 @@ Make sure to read their README files.
 -->
 
 At this point, you've 
-[asset-enabled](/develop/tutorials/-/knowledge_base/6-2/adding-updating-and-deleting-assets-for-custom-entities) 
+[asset-enabled](/docs/6-2/tutorials/-/knowledge_base/t/adding-updating-and-deleting-assets-for-custom-entities) 
 your entities. In addition to that, you should make sure to 
-[implement asset renderers](/develop/tutorials/-/knowledge_base/6-2/implementing-asset-renderers) 
+[implement asset renderers](/docs/6-2/tutorials/-/knowledge_base/t/implementing-asset-renderers) 
 for them. Content authors, however, still can't specify the tags and categories
 for these entities in the UI. Don't fret! Liferay provides a set of JSP tags for
 showing category and tag inputs in your UI. 
@@ -92,10 +96,10 @@ portlet's content authors.
 
 **Related Topics**
 
-[Asset Enabling Custom Entities](/develop/tutorials/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Asset Enabling Custom Entities](/docs/6-2/tutorials/-/knowledge_base/t/asset-enabling-custom-entities)
 
-[Implementing Asset Renderers](/develop/tutorials/-/knowledge_base/6-2/implementing-asset-renderers)
+[Implementing Asset Renderers](/docs/6-2/tutorials/-/knowledge_base/t/implementing-asset-renderers)
 
-[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+[Liferay UI Taglibs](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ui-taglibs)
 
-[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)
+[User Interfaces with AlloyUI](/docs/6-2/tutorials/-/knowledge_base/t/alloyui)

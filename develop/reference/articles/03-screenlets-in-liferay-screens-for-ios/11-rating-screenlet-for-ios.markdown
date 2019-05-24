@@ -1,6 +1,10 @@
-# Rating Screenlet for iOS [](id=rating-screenlet-for-ios)
+---
+header-id: rating-screenlet-for-ios
+---
 
-## Requirements [](id=requirements)
+# Rating Screenlet for iOS
+
+## Requirements
 
 - Xcode 9.0
 - iOS 11 SDK
@@ -10,23 +14,23 @@
   or 
   [Liferay Portal EE](http://www.liferay.com/marketplace/-/mp/application/54369726)). 
 
-## Compatibility [](id=compatibility)
+## Compatibility
 
 - iOS 9 and above
 
-## Xamarin Requirements [](id=xamarin-requirements)
+## Xamarin Requirements
 
 - Visual Studio 7.2
 - Mono .NET framework 5.4.1.6
 
-## Features [](id=features)
+## Features
 
 Gallery Screenlet shows a list of images from a Documents and Media folder in a 
 Liferay instance. You can also use Gallery Screenlet to upload images to and 
 delete images from the same folder. The Screenlet implements fluent pagination 
 with configurable page size, and supports i18n in asset values. 
 
-## JSON Services Used [](id=json-services-used)
+## JSON Services Used
 
 Screenlets in Liferay Screens call JSON web services in the portal. This 
 Screenlet calls the following services and methods.
@@ -38,11 +42,11 @@ Screenlet calls the following services and methods.
 | `ScreensratingsentryService` (Screens compatibility plugin) | `updateRatingsEntry` |  |
 | `ScreensratingsentryService` (Screens compatibility plugin) | `deleteRatingsEntry` |  |
 
-## Module [](id=module)
+## Module
 
 - None
 
-## Themes [](id=themes)
+## Themes
 
 The default Theme uses 
 [the `CosmosView` library](https://github.com/marketplacer/Cosmos) 
@@ -58,11 +62,11 @@ This screenlet has four different Themes:
 
 ![Figure 1: Rating Screenlet's different Themes.](../../images/screens-ios-ratings.png)
 
-## Offline [](id=offline)
+## Offline
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/6-2/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/docs/6-2/tutorials/-/knowledge_base/t/architecture-of-offline-mode-in-liferay-screens). 
 Here are the offline mode policies that you can use with this Screenlet: 
 
 | Policy | What happens | When to use |
@@ -72,7 +76,7 @@ Here are the offline mode policies that you can use with this Screenlet:
 | `remote-first` | The Screenlet loads the data from the Liferay instance. If this succeeds, the Screenlet shows the data to the user and stores it in the local cache for later use. If a connection issue occurs, the Screenlet retrieves the data from the local cache. If the data doesn't exist there, the Screenlet uses the delegate to notify the developer about the error. | Use this policy to show the most recent version of the data when connected, but show a possibly outdated version when there's no connection. |
 | `cache-first` | The Screenlet loads the data from the local cache. If the data isn't there, the Screenlet requests it from the Liferay instance and notifies the developer about any errors that occur (including connectivity errors). | Use this policy to save bandwidth and loading time in case you have local (but possibly outdated) data. |
 
-## Required Attributes [](id=required-attributes)
+## Required Attributes
 
 - `entryId`
 
@@ -81,7 +85,7 @@ If you don't use `entryId`, you must use these attributes:
 - `className`
 - `classPK`
 
-## Attributes [](id=attributes)
+## Attributes
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------|
@@ -92,15 +96,15 @@ If you don't use `entryId`, you must use these attributes:
 | `className` | `string` | The asset's fully qualified class name. For example, a blog entry's `className` is [`com.liferay.portlet.blogs.model.BlogsEntry`](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portlet/blogs/model/BlogsEntry.html). The `className` attribute is required when using it with `classPK` to instantiate the Screenlet. |
 | `classPK` | `number` | The asset's unique identifier. Only use this attribute when also using `className` to instantiate the Screenlet. |
 | `groupId` | `number` | The ID of the site (group) containing the asset. |
-| `offlinePolicy` | `string` | The offline mode setting. See the [Offline section](/develop/reference/-/knowledge_base/6-2/rating-screenlet-for-ios#offline) for details. |
+| `offlinePolicy` | `string` | The offline mode setting. See the [Offline section](/docs/6-2/reference/-/knowledge_base/r/rating-screenlet-for-ios#offline) for details. |
 
-## Methods [](id=methods)
+## Methods
 
 | Method | Return | Explanation |
 |-----------|-----------|-------------|
 | `loadRatings()` | `boolean` | Starts the request to load the asset's ratings. |
 
-## Delegate [](id=delegate)
+## Delegate
 
 Rating Screenlet delegates some events to an object that conforms to 
 the `RatingScreenletDelegate` protocol. This protocol lets you implement 

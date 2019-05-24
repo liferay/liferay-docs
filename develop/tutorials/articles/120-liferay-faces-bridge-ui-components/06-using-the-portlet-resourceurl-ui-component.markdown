@@ -1,4 +1,8 @@
-# Using the portlet:resourceURL UI Component [](id=using-the-portletresourceurl-ui-component)
+---
+header-id: using-the-portletresourceurl-ui-component
+---
+
+# Using the portlet:resourceURL UI Component
 
 The Liferay Faces Bridge component suite provides many Portlet 2.0 `UIComponent`
 tags that are useful for JSF development. In this tutorial, you'll learn about
@@ -28,8 +32,8 @@ resources. Otherwise, the URL is written to the response.
 Great! You've been introduced to a new Liferay Faces Bridge `UIComponent` tag,
 and have can now implement it into your JSF portlet! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Liferay Faces Alloy UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-alloy-ui-components)
+[Liferay Faces Alloy UI Components](/docs/6-2/tutorials/-/knowledge_base/t/liferay-faces-alloy-ui-components)
 
-[Understanding Liferay Faces Bridge](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-bridge)
+[Understanding Liferay Faces Bridge](/docs/6-2/tutorials/-/knowledge_base/t/understanding-liferay-faces-bridge)

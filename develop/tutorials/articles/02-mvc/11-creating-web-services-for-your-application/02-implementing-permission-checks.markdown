@@ -1,4 +1,8 @@
-# Implementing Permission Checks [](id=implementing-permission-checks)
+---
+header-id: implementing-permission-checks
+---
+
+# Implementing Permission Checks
 
 Now that your guestbook and guestbook entry web services are up and running,
 it's time to implement permission checks for them. Implementing permission
@@ -20,7 +24,7 @@ local services. This is to prevent attackers from trying to bypass the UI of
 your app by playing with URL parameters to access sensitive portions of your
 application. 
 
-## Implementing Permission Checks at the Service Layer [](id=implementing-permission-checks-at-the-service-layer)
+## Implementing Permission Checks at the Service Layer
 
 To implement permission checks for the guestbook-portlet project's remote
 services, use the following steps:
@@ -203,7 +207,7 @@ available as Spring beans in the `*ServiceImpl` classes. These beans are named
 `guestbookPersistence` and `entryPersistence` in `GuestbookServiceImpl` and
 `EntryServiceImpl`, respectively.
 
-## Securing Service Calls at the Portlet Layer [](id=securing-service-calls-at-the-portlet-layer)
+## Securing Service Calls at the Portlet Layer
 
 You've now secured your remote services but you still have some work to do. In a
 previous learning path, you implemented portlet action methods such as
@@ -224,22 +228,18 @@ layer, because that's the layer that has permission checking. Thus, to secure
 service calls at the portlet layer, all you have to do is replace the local
 service calls with remote service calls.
 
-+$$$
-
-**Note:** An alternative approach to securing service calls at the portlet layer
-is to manually check permissions at the portlet layer. To do so, you could
-obtain a `ThemeDisplay` from the `ActionRequest` (`ThemeDisplay themeDisplay =
-(ThemeDisplay) request.getAttribute(WebKeys.THEME_DISPLAY);`) and obtain a
-`PermissionChecker` from the `ThemeDisplay` (`PermissionChecker
-permissionChecker = themeDisplay.getPermissionChecker();`). If the user passes
-the permission check, then you could call the local service method. However,
-it's best to avoid rewriting permission checks whenever possible. For this
-reason, if you need to wrap a service call in a permission check, it's best to
-implement that service method as a remote service and to add the permission
-check to the remote service. This is the pattern that Liferay uses, and that you
-have followed in this Learning Path.
-
-$$$
+| **Note:** An alternative approach to securing service calls at the portlet layer
+| is to manually check permissions at the portlet layer. To do so, you could
+| obtain a `ThemeDisplay` from the `ActionRequest` (`ThemeDisplay themeDisplay =
+| (ThemeDisplay) request.getAttribute(WebKeys.THEME_DISPLAY);`) and obtain a
+| `PermissionChecker` from the `ThemeDisplay` (`PermissionChecker
+| permissionChecker = themeDisplay.getPermissionChecker();`). If the user passes
+| the permission check, then you could call the local service method. However,
+| it's best to avoid rewriting permission checks whenever possible. For this
+| reason, if you need to wrap a service call in a permission check, it's best to
+| implement that service method as a remote service and to add the permission
+| check to the remote service. This is the pattern that Liferay uses, and that you
+| have followed in this Learning Path.
 
 Use the following steps to secure the service calls in your portlet action
 methods:

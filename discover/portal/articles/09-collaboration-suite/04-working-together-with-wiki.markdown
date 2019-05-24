@@ -1,4 +1,8 @@
-# Working together with the Wiki [](id=working-together-with-the-wiki)
+---
+header-id: working-together-with-the-wiki
+---
+
+# Working together with the Wiki
 
 Liferay's Wiki portlet, like the Message Boards portlet, is a full-featured
 wiki application which has all of the features you would expect in a state of
@@ -28,7 +32,7 @@ be familiar to users of other wikis. The portlet provides a handy cheat sheet
 for the syntax on the page editing form, with a link to the full documentation
 if you wish to use some of WikiCreole's advanced features.
 
-## Getting Started with the Liferay Wiki [](id=getting-started-with-the-liferay-wiki)
+## Getting Started with the Liferay Wiki
 
 The Wiki portlet works just like the other portlets developed by Liferay. Add
 the portlet to a page using the *Add &rarr; Applications* menu and then click
@@ -68,7 +72,7 @@ parameter of the other portlet.
 
 Once you have set the options the way you want them, click *Save*.
 
-## Managing Wikis [](id=managing-wikis)
+## Managing Wikis
 
 The Wiki portlet can contain many wikis. By default, it contains only one,
 called *Main*. To manage Wikis, navigate to your site's *Site Administration
@@ -135,7 +139,7 @@ is sent when a page is added or updated.
 Finally, the Wiki portlet also supports RSS feeds as the other collaboration
 portlets do, and you can configure its options in the *RSS* tab.
 
-## Adding and Editing Wiki Pages [](id=adding-and-editing-wiki-pages)
+## Adding and Editing Wiki Pages
 
 By default, there is one page added to your wiki, called *FrontPage*. To get
 started adding data to your wiki, click the *Edit* link. You will be brought to
@@ -189,14 +193,14 @@ Site Administration page, in the *Content &rarr; Categories* section. Categories
 are hierarchical lists of headings under which you can create wiki pages. This
 allows you to organize your content in a more formal fashion.
 
-## Page Details [](id=page-details)
+## Page Details
 
 When viewing a page, you can view its details by clicking the *Details* link
 which appears in the top right of the page. This allows you to view many
 properties of the page. There are several tabs which organize all of the
 details into convenient categories.
 
-### Details [](id=details)
+### Details
 
 The Details tab shows various statistics about the page, and also allows you to
 perform some actions on the page.
@@ -228,27 +232,27 @@ wiki or just to this page.
 the page, make a copy of the page, move (rename) the page, or move the page to
 the recycle bin.
 
-### History [](id=history)
+### History
 
 This tab shows a list of all of the versions of the wiki page since it was
 created. You can revert a page back to a previous state and you can also
 compare the differences between versions by selecting the versions and then
 clicking the *Compare Versions* button.
 
-### Incoming/Outgoing Links [](id=incoming-outgoing-links)
+### Incoming/Outgoing Links
 
 The next two tabs are for incoming and outgoing links. These are wiki links to
 and from the page. You can use this tab to examine how this page links to other
 pages and how other pages link back to this page.
 
-### Attachments [](id=attachments)
+### Attachments
 
 The last tab is for attachments. You can attach any file to the wiki. This is
 mostly used to attach images to wiki articles which can then be referenced in
 the text. Referencing them using the proper WikiCreole syntax renders the image
 inline, which is a nice way to include illustrations in your wiki documents.
 
-## Navigating in the Wiki Portlet [](id=navigating-in-the-wiki-portlet)
+## Navigating in the Wiki Portlet
 
 At the top of the portlet is a list of links which allow you to navigate around
 the wiki. Simply click on the wiki's name to begin browsing that wiki. After

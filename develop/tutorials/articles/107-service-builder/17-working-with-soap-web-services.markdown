@@ -1,16 +1,16 @@
-# SOAP Web Services [](id=soap-web-services)
+---
+header-id: soap-web-services
+---
+
+# SOAP Web Services
 
 You can access Liferay's services via *Simple Object Access Protocol* (*SOAP*)
 over HTTP. The *packaging* protocol is SOAP and the *transport* protocol is
 HTTP. 
 
-+$$$
-
-**Note:** An authentication related token must accompany each Liferay web
-service invocation. For details, read the section on service security layers
-found earlier in this chapter. 
-
-$$$
+| **Note:** An authentication related token must accompany each Liferay web
+| service invocation. For details, read the section on service security layers
+| found earlier in this chapter.
 
 As an example, let's look at the SOAP web service classes for Liferay's
 `Company`, `User`, and `UserGroup` portal services to execute the following:
@@ -47,16 +47,12 @@ browser to the following URL:
 
   `http://[host]:[port]/api/axis`
 
-+$$$
-
-**Note:** Prior to Liferay 6.2, there were two different URLs for accessing
-remote Liferay services. `http://[host]:[port]/api/secure/axis` was for services
-requiring authentication and `http://[host]:[port]/api/axis` was for services
-that didn't require authentication. As of Liferay 6.2, all remote Liferay
-services require authentication and the `http://[host]:[port]/api/axis` URL is
-used to access them.
-
-$$$
+| **Note:** Prior to Liferay 6.2, there were two different URLs for accessing
+| remote Liferay services. `http://[host]:[port]/api/secure/axis` was for services
+| requiring authentication and `http://[host]:[port]/api/axis` was for services
+| that didn't require authentication. As of Liferay 6.2, all remote Liferay
+| services require authentication and the `http://[host]:[port]/api/axis` URL is
+| used to access them.
 
 Here's the list of *secure* web services for `UserGroup`: 
 
@@ -71,15 +67,11 @@ Here's the list of *secure* web services for `UserGroup`:
     - `unsetTeamUserGroups`
     - `updateUserGroup`
 
-+$$$
-
-**Note:** Liferay's developers use *Service Builder* to expose their services
-via JSON automatically. If you haven't used Service Builder before, please see
-the
-[Defining an Object-Relational Map with Service Builder](/develop/tutorials/-/knowledge_base/6-2/defining-an-object-relational-map-with-service-builder)
-tutorial.
-
-$$$
+| **Note:** Liferay's developers use *Service Builder* to expose their services
+| via JSON automatically. If you haven't used Service Builder before, please see
+| the
+| [Defining an Object-Relational Map with Service Builder](/docs/6-2/tutorials/-/knowledge_base/t/defining-an-object-relational-map-with-service-builder)
+| tutorial.
 
 Each web service is listed with its name, operations, and a link to its WSDL
 file. The WSDL file is written in XML and provides a model for describing and
@@ -101,7 +93,7 @@ next section.
 
 Next, let's invoke the web service! 
 
-## SOAP Java Client [](id=soap-java-client)
+## SOAP Java Client
 
 You can easily set up a Java web service client to access Liferay's remote
 services using Eclipse. Here's how: 
@@ -321,7 +313,7 @@ specified in the WSDL for each Liferay web service. It's all there for you!
 
 Next, let's implement a web service client in PHP. 
 
-## SOAP PHP Client [](id=soap-php-client)
+## SOAP PHP Client
 
 You can write your client in any language that supports web services invocation.
 Let's invoke the same operations we did when we created our Java client, this
@@ -365,11 +357,11 @@ time using PHP and a PHP SOAP Client:
 Remember, you can implement a web service client in any language that supports
 using SOAP web services. To learn how to implement OAuth so that
 you can access third-party services, please see the
-[Authorizing Access to Services with OAuth](/develop/tutorials/-/knowledge_base/6-2/authorizing-access-to-services-with-oauth) 
+[Authorizing Access to Services with OAuth](/docs/6-2/tutorials/-/knowledge_base/t/authorizing-access-to-services-with-oauth) 
 tutorial.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Finding and Invoking Liferay Services](/develop/tutorials/-/knowledge_base/6-2/finding-and-invoking-liferay-services)
+[Finding and Invoking Liferay Services](/docs/6-2/tutorials/-/knowledge_base/t/finding-and-invoking-liferay-services)
 
-[Invoking JSON Web Services](/develop/tutorials/-/knowledge_base/6-2/invoking-json-web-services)
+[Invoking JSON Web Services](/docs/6-2/tutorials/-/knowledge_base/t/invoking-json-web-services)

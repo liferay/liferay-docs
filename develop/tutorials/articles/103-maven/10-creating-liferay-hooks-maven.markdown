@@ -1,31 +1,31 @@
-# Developing Liferay Hook Plugins with Maven [](id=developing-liferay-hook-plugins-with-maven)
+---
+header-id: developing-liferay-hook-plugins-with-maven
+---
+
+# Developing Liferay Hook Plugins with Maven
 
 Hooks are the optimal plugin type for customizing Liferay's core features.
 Creating a hook plugin with Maven is very similar to creating a portlet plugin
 with Maven. This tutorial explains how to create a hook plugin and explains
 the Liferay Maven hook plugin project's anatomy. 
 
-## Creating a Hook Plugin [](id=creating-a-hook-plugin)
+## Creating a Hook Plugin
 
 To create a Liferay hook plugin project, follow the steps outlined in the
-[Creating Liferay Maven Plugins from Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-liferay-ide)
+[Creating Liferay Maven Plugins from Liferay IDE](/docs/6-2/tutorials/-/knowledge_base/t/creating-liferay-maven-plugins-from-liferay-ide)
 tutorial or the
-[Creating Liferay Maven Plugins from the Command Line](/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-the-command-lin)
+[Creating Liferay Maven Plugins from the Command Line](/docs/6-2/tutorials/-/knowledge_base/t/creating-liferay-maven-plugins-from-the-command-lin)
 tutorial, making sure to select *Hook* as the plugin type. 
 
-+$$$
-
-**Tip**: If you're using Maven's
-Archetype command line tool to generate your hook you can filter on group ID
-`liferay`, or even the group ID/artifact ID combination `liferay:hook`, to more
-easily find the Liferay portlet archetypes. 
-
-$$$
+| **Tip**: If you're using Maven's
+| Archetype command line tool to generate your hook you can filter on group ID
+| `liferay`, or even the group ID/artifact ID combination `liferay:hook`, to more
+| easily find the Liferay portlet archetypes.
 
 Since it's helpful to familiarize yourself with the Liferay hook plugin
 project's anatomy, that topic is covered next. 
 
-## Anatomy [](id=anatomy)
+## Anatomy
 
 A hook project created from the
 `com.liferay.maven.archetypes:liferay-hook-archetype` has the following
@@ -61,9 +61,9 @@ Web source  | `src/main/webapp` | `docroot`             |
 
 You now know how to create Liferay hook plugins to customize Liferay. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/deploying-liferay-plugins-with-maven)
+[Deploying Liferay Plugins with Maven](/docs/6-2/tutorials/-/knowledge_base/t/deploying-liferay-plugins-with-maven)
 
-[Customizing Liferay Portal](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+[Customizing Liferay Portal](/docs/6-2/tutorials/-/knowledge_base/t/customizing-liferay-portal)
 

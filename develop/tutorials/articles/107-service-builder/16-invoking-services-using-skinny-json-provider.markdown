@@ -1,4 +1,8 @@
-# Invoking Services Using Skinny JSON Provider [](id=invoking-services-using-skinny-json-provider)
+---
+header-id: invoking-services-using-skinny-json-provider
+---
+
+# Invoking Services Using Skinny JSON Provider
 
 **Important:** The Skinny JSON Provider is a "Labs" application. Any app
 designated as "Labs" includes experimental features and is not supported by
@@ -47,7 +51,7 @@ making them ideal to use in browsers and mobile applications.
 The Skinny JSON Provider app is available through the Liferay Marketplace.
 You'll find it categorized as a Utility app. To learn how to install it, you can
 read the section
-[Downloading and Installing Apps](/discover/portal/-/knowledge_base/6-2/downloading-and-installing-apps).
+[Downloading and Installing Apps](/docs/6-2/user/-/knowledge_base/u/downloading-and-installing-apps).
 
 The app adds two new web service APIs that you can configure like other Liferay
 web services. Here is the context and the class name that you must specify to
@@ -67,7 +71,7 @@ Before invoking the `get-skinny-journal-articles` and `get-skinny-ddl-records`
 services, you should understand how to use the Skinny JSON Provider anonymously 
 and how to use it in a Cross-Site Request Forgery (CSRF) protected environment. 
 
-## Accessing the Services Anonymously and in CSRF Protected Environments [](id=accessing-the-services-anonymously-and-in-csrf-protected-environments)
+## Accessing the Services Anonymously and in CSRF Protected Environments
 
 Retrieving data through an anonymous request to a web service is a typical use
 case for Skinny JSON Provider. You can configure Liferay to allow anonymous
@@ -133,7 +137,7 @@ on the topic.
 Now that you've configured appropriate access for your Skinny JSON Provider app,
 you can call its services!
 
-## Retrieving Skinny Entities [](id=retrieving-skinny-entities)
+## Retrieving Skinny Entities
 
 It's the moment you've been waiting for: getting skinny streamlined
 representations of web content articles and dynamic data lists. In the
@@ -144,7 +148,7 @@ might want to skip ahead to the section
 [Retrieving Skinny Dynamic Data Lists](#retrieving-skinny-dynamic-data-lists).
 The next section shows you how to access skinny web content articles. 
 
-### Retrieving Skinny Web Content Articles [](id=retrieving-skinny-web-content-articles)
+### Retrieving Skinny Web Content Articles
 
 The `get-skinny-journal-articles` service is designed to retrieve all web
 content articles that are based on a given web content structure, in a given
@@ -233,14 +237,10 @@ Provider web service as a DDM structure ID value.
 Now that you know your portal's company ID and your DDM structure's ID, you can
 invoke Skinny Provider's `get-skinny-journal-articles` service. 
 
-+$$$
-
-**Note:** there is a known issue
-[LRDCOM-11877](https://issues.liferay.com/browse/LRDCOM-11877) in which invoking
-services, such as Skinny Provider's services, via the JSON Web Services console
-erroneously returns empty result sets. 
-
-$$$
+| **Note:** there is a known issue
+| [LRDCOM-11877](https://issues.liferay.com/browse/LRDCOM-11877) in which invoking
+| services, such as Skinny Provider's services, via the JSON Web Services console
+| erroneously returns empty result sets.
 
 The `get-skinny-journal-articles` service returns a `JSONArray` object
 containing zero or more articles. The following example return value shows a
@@ -280,7 +280,7 @@ matching articles are found.
 If you think getting web content articles through Skinny Provider is easy,
 you'll find it a snap to get Dynamic Data List records. 
 
-### Retrieving Skinny Dynamic Data Lists [](id=retrieving-skinny-dynamic-data-lists)
+### Retrieving Skinny Dynamic Data Lists
 
 The `get-skinny-ddl-records` service retrieves all records found in a specified
 Dynamic Data List (DDL). Each DDL is globally recognized by its unique ID--no
@@ -373,18 +373,18 @@ As a recap, the Skinny JSON Provider app helps you retrieve lightweight
 "skinny" representations of dynamic data list records and web content articles.
 What a great way to access these core Liferay entities! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay)
+[Creating iOS Apps that Use Liferay](/docs/6-2/tutorials/-/knowledge_base/t/creating-ios-apps-that-use-liferay)
 
-[Creating Android Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-android-apps-that-use-liferay)
+[Creating Android Apps that Use Liferay](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-apps-that-use-liferay)
 
-[Writing a Data-Driven Application](/develop/tutorials/-/knowledge_base/6-2/writing-a-data-driven-application)
+[Writing a Data-Driven Application](/docs/6-2/tutorials/-/knowledge_base/t/writing-a-data-driven-application)
 
-## Related Topics [](id=related-topics-0)
+## Related Topics
 
-[Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay)
+[Creating iOS Apps that Use Liferay](/docs/6-2/tutorials/-/knowledge_base/t/creating-ios-apps-that-use-liferay)
 
-[Creating Android Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-android-apps-that-use-liferay)
+[Creating Android Apps that Use Liferay](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-apps-that-use-liferay)
 
-[Checking Permissions](/develop/tutorials/-/knowledge_base/6-2/checking-permissions)
+[Checking Permissions](/docs/6-2/tutorials/-/knowledge_base/t/checking-permissions)

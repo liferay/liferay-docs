@@ -1,4 +1,8 @@
-# Leveraging Portal Predefined Settings in Your Theme [](id=leveraging-portal-predefined-settings-in-your-theme)
+---
+header-id: leveraging-portal-predefined-settings-in-your-theme
+---
+
+# Leveraging Portal Predefined Settings in Your Theme
 
 The portal defines some settings that allow the theme to determine certain
 behaviors. As of this writing, predefined settings are only available for
@@ -9,7 +13,7 @@ added in the future. You can modify these settings from your theme's
 Time to get on with learning how to customize predefining settings using themes.
 The first thing to cover is settings for portlet borders.
 
-## Portlet Borders [](id=portlet-borders)
+## Portlet Borders
 
 By default, the theme turns on portlet borders. But you can turn them off by
 setting `portlet-setup-show-borders-default` to `false`, in your theme's
@@ -31,13 +35,13 @@ behavior of showing the borders:
 Now that you've learned how to configure portlet borders, you can learn how to 
 configure bullet styles used in your sites, next. 
 
-## Bullet Styles [](id=bullet-styles)
+## Bullet Styles
 
 Several of Liferay's core portlets use bullets, and you may have custom portlets
 in your portal that use bullets too. Any portlet can be configured to use any
 bullet styles inherited by your theme or implemented in your theme. For example,
 if your theme uses Liferay's Classic theme as its base parent (see
-[Setting a Base Theme](/develop/tutorials/-/knowledge_base/6-2/setting-a-base-theme)),
+[Setting a Base Theme](/docs/6-2/tutorials/-/knowledge_base/t/setting-a-base-theme)),
 you can leverage the Classic theme's *arrows* bullet style.
 
 The sample code below demonstrates the arrow bullet style class applied from the
@@ -80,7 +84,7 @@ Using CSS and maybe some unobtrusive JavaScript, you can create a navigation
 menu that looks just the way you want. Next, take a look at how to configure
 displaying your site's name. 
 
-## Site Names [](id=site-names)
+## Site Names
 
 The site name settings let site administrators decide whether to display a
 site's name. If you're using a logo that mentions your company or site on each
@@ -118,19 +122,15 @@ Here is how you might specify them in your `liferay-look-and-feel.xml` file:
 With these settings configurable, site administrators can control site name
 display from the each site's *Look and Feel* screen. 
 
-+$$$
-
-**Note:** To override default behavior
-for individual portlets, you can modify the portlet's `liferay-portlet.xml`
-file.
-
-$$$
+| **Note:** To override default behavior
+| for individual portlets, you can modify the portlet's `liferay-portlet.xml`
+| file.
 
 Now that you know how to use the predefined settings available to you in Liferay
 Portal, the sky's the limit!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Making Themes Configurable with Settings](/develop/tutorials/-/knowledge_base/6-2/making-themes-configurable-with-settings)
+[Making Themes Configurable with Settings](/docs/6-2/tutorials/-/knowledge_base/t/making-themes-configurable-with-settings)
 
-[Designing a Layout Template](/develop/tutorials/-/knowledge_base/6-2/designing-a-layout-template)
+[Designing a Layout Template](/docs/6-2/tutorials/-/knowledge_base/t/designing-a-layout-template)

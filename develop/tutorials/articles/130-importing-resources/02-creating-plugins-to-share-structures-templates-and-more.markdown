@@ -1,4 +1,8 @@
-# Creating Plugins to Share Structures, Templates, and More [](id=creating-plugins-to-share-structures-templates-and-more)
+---
+header-id: creating-plugins-to-share-structures-templates-and-more
+---
+
+# Creating Plugins to Share Structures, Templates, and More
 
 Have you ever wanted to share page templates with other users? Are colleagues
 and clients banging at your door to get hold of the structures and templates you
@@ -25,7 +29,7 @@ plugin, they're especially useful for Liferay themes. When developers
 upload themes to [Liferay Marketplace](https://www.liferay.com/marketplace),
 it's very convenient for them to be able to bundle sample content with the theme
 so that the theme can be viewed in an appropriate context. Please refer to the
-[Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/6-2/importing-resources-with-your-themes) tutorial for
+[Importing Resources with Your Themes](/docs/6-2/tutorials/-/knowledge_base/t/importing-resources-with-your-themes) tutorial for
 instructions on using the Resources Importer with theme plugins. Behind themes,
 portlet plugins are the most common type of plugin used for importing templates.
 Let's build a portlet plugin that imports some web content structures and
@@ -233,15 +237,11 @@ portlet to display other portlets: the Search and Currency Converter portlets.
 Lastly, you can also specify portlet preferences for each portlet using the
 `portletPreferences` field. 
 
-+$$$
-
-**Tip**: You can also import resources, such as web content articles, using the
-Resources Importer. For example, it's very useful to import web content articles
-along with a page template that references the articles, in a nested Web Content
-Display portlet. For more information on importing resources, see
-[Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/6-2/importing-resources-with-your-themes).
-
-$$$
+| **Tip**: You can also import resources, such as web content articles, using the
+| Resources Importer. For example, it's very useful to import web content articles
+| along with a page template that references the articles, in a nested Web Content
+| Display portlet. For more information on importing resources, see
+| [Importing Resources with Your Themes](/docs/6-2/tutorials/-/knowledge_base/t/importing-resources-with-your-themes).
 
 The figure below shows a page created using the Page 3 template.
 
@@ -299,7 +299,7 @@ makes it easy. Have fun distributing your structures and templates!
 
 **Related Topics**
 
-[Customizing Sites and Site Templates with Application Adapters](/develop/tutorials/-/knowledge_base/6-2/customizing-sites-and-site-templates-with-application-adapters)
+[Customizing Sites and Site Templates with Application Adapters](/docs/6-2/tutorials/-/knowledge_base/t/customizing-sites-and-site-templates-with-application-adapters)
 
-[Advanced Content with Structures and Templates](/discover/portal/-/knowledge_base/6-2/advanced-content-with-structures-and-templates)
+[Advanced Content with Structures and Templates](/docs/6-2/user/-/knowledge_base/u/advanced-content-with-structures-and-templates)
 

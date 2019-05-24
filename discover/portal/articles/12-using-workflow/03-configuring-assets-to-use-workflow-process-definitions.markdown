@@ -1,4 +1,8 @@
-# Configuring assets to use workflow process definitions [](id=configuring-assets-to-use-workflow-process-definitions)
+---
+header-id: configuring-assets-to-use-workflow-process-definitions
+---
+
+# Configuring assets to use workflow process definitions
 
 All your global workflow configuration can be done via the control panel.
 Everything you need to do in the portal can be done through simple GUI
@@ -43,7 +47,7 @@ which were previously approved.
 Let's learn more about configuring workflows for both the portal and individual
 sites next.
 
-## Configuring workflow [](id=configuring-workflow)
+## Configuring workflow
 
 After you have uploaded workflow definitions and set the default workflow
 behavior you can go up to *Default Configuration* and enable workflow for
@@ -60,7 +64,7 @@ clicking *Sites*, clicking on a site from the list, and opening the
 workflow behavior for the sleected site's resources that can be workflow
 enabled.
 
-## My Workflow Tasks [](id=my-workflow-tasks)
+## My Workflow Tasks
 
 My Workflow Tasks is a personalized version of the Workflow Tasks and it's found
 in the user's My Account section. Here you'll find specific tasks which were
@@ -76,7 +80,7 @@ For assets assigned to your roles, you can assign the listed assets to be
 reviewed by yourself or another user. Whether or not an asset is assigned to
 you or to your role, you can update the due date as well. 
 
-## My Submissions [](id=my-submissions)
+## My Submissions
 
 My Submissions is found in your user's My Account section of the portal. From
 this screen you can view any assets you have submitted for review. Those
@@ -88,7 +92,7 @@ been reviewed are listed under the *Completed* tab.
 Besides viewing your work, you can also withdraw a submission from the review
 process by clicking on *Withdraw Submission* from the *Pending* tab.
 
-## Using Kaleo Workflow Processes in Liferay Portal [](id=using-kaleo-workflow-processes-in-liferay-portal)
+## Using Kaleo Workflow Processes in Liferay Portal
 
 Before workflow can be used, you must define which types of assets on the portal
 are workflow-enabled. If you have created additional definitions, you must also

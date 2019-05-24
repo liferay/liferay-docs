@@ -1,4 +1,8 @@
-# Commenting on Assets [](id=commenting-on-assets)
+---
+header-id: commenting-on-assets
+---
+
+# Commenting on Assets
 
 <!--
 Testing Notes:
@@ -19,7 +23,7 @@ to spend time developing a commenting system from scratch.
 
 ![Figure 1: Your JSP lets users comment on content in your portlet.](../../images/asset-fw-comments.png)
 
-In order to implement the comments feature on your custom entity, it must be [asset enabled](/develop/tutorials/-/knowledge_base/6-2/adding-updating-and-deleting-assets-for-custom-entities). 
+In order to implement the comments feature on your custom entity, it must be [asset enabled](/docs/6-2/tutorials/-/knowledge_base/t/adding-updating-and-deleting-assets-for-custom-entities). 
 This tutorial shows you how to add the comment feature for your application's
 content. A custom Insults portlet is used as an example: a community discussion
 definitely helps to bring about insults of the highest quality! The
@@ -31,7 +35,7 @@ portlet!
 
 You can display the comments component in your portlet's view 
 or, if you've implemented 
-[asset rendering](/develop/tutorials/-/knowledge_base/6-2/implementing-asset-renderers),
+[asset rendering](/docs/6-2/tutorials/-/knowledge_base/t/implementing-asset-renderers),
 you can display it in the full content view in the Asset Publisher portlet. 
 
 As an example, the Insult portlet's view JSP file
@@ -86,7 +90,7 @@ Awesome! Now you have a JSP that lets your users comment on content in your
 portlet.
 
 If you haven't already connected your portlet's view to the JSP for your entity,
-you can refer [here](/develop/tutorials/-/knowledge_base/6-2/relating-assets#creating-a-url-to-your-new-jsp)
+you can refer [here](/docs/6-2/tutorials/-/knowledge_base/t/relating-assets#creating-a-url-to-your-new-jsp)
 to see how to connect your portlet's main view JSP to your entity's view JSP. 
 
 Now redeploy your portlet and refresh the page so that the your plugin's UI
@@ -113,14 +117,14 @@ could also perform more specific permissions checks as the Insults
 portlet does for the Add Insults and Permissions buttons in its 
 [`view.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/view.jsp).
 For more information, see the learning path 
-[Checking for Permissions in the UI](/develop/tutorials/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
+[Checking for Permissions in the UI](/docs/6-2/tutorials/-/knowledge_base/t/checking-for-permissions-in-the-ui).
 
 **Related Topics**
 
-[Asset Enabling Custom Entities](/develop/tutorials/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Asset Enabling Custom Entities](/docs/6-2/tutorials/-/knowledge_base/t/asset-enabling-custom-entities)
 
-[Implementing Asset Renderers](/develop/tutorials/-/knowledge_base/6-2/implementing-asset-renderers)
+[Implementing Asset Renderers](/docs/6-2/tutorials/-/knowledge_base/t/implementing-asset-renderers)
 
-[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+[Liferay UI Taglibs](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ui-taglibs)
 
-[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)
+[User Interfaces with AlloyUI](/docs/6-2/tutorials/-/knowledge_base/t/alloyui)

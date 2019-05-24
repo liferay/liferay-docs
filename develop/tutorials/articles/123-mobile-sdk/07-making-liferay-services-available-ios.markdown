@@ -1,4 +1,8 @@
-# Making Liferay and Custom Portlet Services Available in Your iOS App [](id=making-liferay-and-custom-portlet-services-available-in-your-ios-app)
+---
+header-id: making-liferay-and-custom-portlet-services-available-in-your-ios-app
+---
+
+# Making Liferay and Custom Portlet Services Available in Your iOS App
 
 Your iOS app is no doubt pretty great, or at least off to a great start. Now you 
 want it to access Liferay services. How do you accomplish this? Use Liferay's 
@@ -8,7 +12,7 @@ install Liferay's prebuilt Mobile SDK. This is required for any app that
 leverages Liferay. To call your custom portlet's services, you also need to 
 install the Mobile SDK that you built for it. For instructions on building a 
 Mobile SDK for your custom portlet, see the tutorial 
-[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/6-2/building-mobile-sdks). 
+[Building Mobile SDKs](/docs/6-2/tutorials/-/knowledge_base/t/building-mobile-sdks). 
 
 This tutorial shows you how to install Liferay's prebuilt Mobile SDK, and any 
 custom built Mobile SDKs. First, you'll learn how to use 
@@ -17,7 +21,7 @@ to install Liferay's prebuilt Mobile SDK. You'll then learn how to install a
 Mobile SDK manually, which is required for installing any custom built Mobile 
 SDKs. Now go forth and fear no remote service! 
 
-## Installing the SDK Using CocoaPods [](id=installing-the-sdk-using-cocoapods)
+## Installing the SDK Using CocoaPods
 
 Using CocoaPods is the simplest way to install Liferay's prebuilt Mobile SDK. 
 The steps for doing so are shown here:
@@ -50,7 +54,7 @@ For more information on how CocoaPods works, see their
 [documentation](http://guides.cocoapods.org/using/index.html). 
 Next, you'll learn how to install a Mobile SDK manually.
 
-## Installing an iOS SDK Manually [](id=installing-an-ios-sdk-manually)
+## Installing an iOS SDK Manually
 
 You can also install Mobile SDKs manually. This is required if you built one 
 for your custom portlet's services. You can also install install Liferay's 
@@ -60,7 +64,7 @@ prebuilt Mobile SDK manually if you don't want to use CocoaPods.
    [download](https://github.com/liferay/liferay-mobile-sdk/releases) 
    the latest version of the Liferay iOS Mobile SDK ZIP file. If you built your 
    own Mobile SDK, find its ZIP file on your machine. This is detailed in the 
-   [Building Mobile SDKs](/develop/tutorials/-/knowledge_base/6-2/building-mobile-sdks) 
+   [Building Mobile SDKs](/docs/6-2/tutorials/-/knowledge_base/t/building-mobile-sdks) 
    tutorial.
 
 2. Unzip the file into your Xcode project. 
@@ -77,7 +81,7 @@ prebuilt Mobile SDK manually if you don't want to use CocoaPods.
 
 Great! Now you know how to manually install a Mobile SDK in your iOS apps. 
 
-## Understanding Liferay and iOS Compatibility [](id=understanding-liferay-and-ios-compatibility)
+## Understanding Liferay and iOS Compatibility
 
 Each Liferay Mobile SDK is designed to work with a specific Liferay Portal 
 version. The Liferay Mobile SDK version number reflects this. The first two 
@@ -97,12 +101,12 @@ versions your app connects to, use the
 The Liferay iOS Mobile SDK is compatible with iOS versions 7.0 and up. Older iOS 
 versions may work, but compatibility is untested. 
 
-## Making Custom Portlet Services Available in Your iOS App [](id=making-custom-portlet-services-available-in-your-ios-app)
+## Making Custom Portlet Services Available in Your iOS App
 
 If you want to invoke remote web services for your custom portlet, then you need 
 to generate its client libraries by building an iOS Mobile SDK yourself. 
 Building an SDK is covered in the tutorial
-[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/6-2/building-mobile-sdks).
+[Building Mobile SDKs](/docs/6-2/tutorials/-/knowledge_base/t/building-mobile-sdks).
 Once you build an SDK to a ZIP file, you can install it using the manual 
 installation steps above (make sure to use the ZIP file you built instead of 
 Liferay's prebuilt ZIP file). Note that because your custom built SDKs contain 
@@ -110,10 +114,10 @@ Liferay's prebuilt ZIP file). Note that because your custom built SDKs contain
 install them alongside Liferay's prebuilt SDK. Liferay's prebuilt SDK contains 
 additional classes that are required to construct any remote service call. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/6-2/building-mobile-sdks)
+[Building Mobile SDKs](/docs/6-2/tutorials/-/knowledge_base/t/building-mobile-sdks)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
+[Service Builder and Services](/docs/6-2/tutorials/-/knowledge_base/t/service-builder)
 
-[Creating Android Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-android-apps-that-use-liferay)
+[Creating Android Apps that Use Liferay](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-apps-that-use-liferay)

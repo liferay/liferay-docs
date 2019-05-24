@@ -1,4 +1,8 @@
-# Using Portlet Namespacing [](id=using-portlet-namespacing)
+---
+header-id: using-portlet-namespacing
+---
+
+# Using Portlet Namespacing
 
 Namespacing ensures that a given portlet's name is uniquely associated with
 elements in request parameters it sends to the portal. This prevents name
@@ -37,7 +41,7 @@ We discussed a brief scenario using portlet namespacing for two different
 portlets. Lastly, we learned when and why to use unnamespaced parameters in your
 Liferay portlets.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Search and Indexing](/develop/tutorials/-/knowledge_base/6-2/search-and-indexing)
-[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)
+[Search and Indexing](/docs/6-2/tutorials/-/knowledge_base/t/search-and-indexing)
+[User Interfaces with AlloyUI](/docs/6-2/tutorials/-/knowledge_base/t/alloyui)

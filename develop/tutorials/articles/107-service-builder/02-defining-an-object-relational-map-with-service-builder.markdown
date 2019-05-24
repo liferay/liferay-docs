@@ -1,4 +1,8 @@
-# Defining an Object-Relational Map with Service Builder [](id=defining-an-object-relational-map-with-service-builder)
+---
+header-id: defining-an-object-relational-map-with-service-builder
+---
+
+# Defining an Object-Relational Map with Service Builder
 
 In this tutorial, you'll learn how to define an object relational map for your
 application so that it can persist data. The example code in this tutorial, as
@@ -19,22 +23,18 @@ If you want to display entity data in a Liferay application, you're free to
 create any kind of user interface that you can imagine. The following image
 shows a simple example. To learn how to create simple user interfaces for
 Liferay Service Builder applications, please see the
-[Implementing a UI with Liferay Taglibs](/develop/tutorials/-/knowledge_base/6-2/implementing-a-ui-with-liferay-taglibs)
+[Implementing a UI with Liferay Taglibs](/docs/6-2/tutorials/-/knowledge_base/t/implementing-a-ui-with-liferay-taglibs)
 learning path.
 
 ![Figure 1: The Event Listing and Location Listing portlets let you add and modify social events and locations. The portlets rely on the event and location entities and the service infrastructure that Liferay Service Builder builds around them.](../../images/service-builder-view-events.png)
 
-+$$$
-
-**Note:** If you're looking for a fully-functional portlet application that can
-manage events, please use Liferay's Calendar portlet instead. The example
-described in this section is only intended to demonstrate how to use Service
-Builder. The Calendar portlet provides many more features than the simple
-example application described here. For information about the Calendar portlet,
-please refer to the
-[Managing Events and Calendar Resources with Liferay's Calendar Portlet](/discover/portal/-/knowledge_base/6-2/managing-events-and-calendar-resources-with-liferays-c) section.
-
-$$$
+| **Note:** If you're looking for a fully-functional portlet application that can
+| manage events, please use Liferay's Calendar portlet instead. The example
+| described in this section is only intended to demonstrate how to use Service
+| Builder. The Calendar portlet provides many more features than the simple
+| example application described here. For information about the Calendar portlet,
+| please refer to the
+| [Managing Events and Calendar Resources with Liferay's Calendar Portlet](/docs/6-2/user/-/knowledge_base/u/managing-events-and-calendar-resources-with-liferays-c) section.
 
 As with any portlet project, the event-listing-portlet project's Java sources
 reside in the `docroot/WEB-INF/src` folder. Notice the
@@ -99,7 +99,7 @@ Liferay IDE makes it very easy to define entities in your application's
 Let's examine these steps in detail, starting with creating a `service.xml`
 file.
 
-## Creating the `service.xml` File [](id=creating-the-service-xml-file)
+## Creating the `service.xml` File
 
 To define a service for your portlet project, you must create a `service.xml`
 file. The DTD (Document Type Declaration) file
@@ -129,7 +129,7 @@ in the editor. You can switch between these modes as you wish.
 
 Next, you can start filling out the global information for your service. 
 
-## Defining Global Service Information [](id=defining-global-service-information)
+## Defining Global Service Information
 
 A service's global information applies to all of its entities, so it's a good
 place to start. In Liferay IDE, select the *Service Builder* node in the upper
@@ -153,7 +153,7 @@ complete file paths for the service and persistence classes are
 `docroot/WEB-INF/service/com/liferay/docs/eventlisting` and
 `docroot/WEB-INF/src/com/liferay/docs/eventlisting`, respectively. Please
 refer to the
-[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
+[Running Service Builder and Understanding the Generated Code](/docs/6-2/tutorials/-/knowledge_base/t/running-service-builder-and-understanding-the-generated-code)
 tutorial for a description of the contents of these packages. 
 
 Service Builder uses the service *namespace* in naming the database tables it
@@ -180,7 +180,7 @@ with the specified name to all of the generated Java classes and interfaces.
 Save your `service.xml` file to preserve the information you added. Next, you'll
 add entities for your service's events and locations. 
 
-## Defining Service Entities [](id=defining-service-entities)
+## Defining Service Entities
 
 Entities are the heart and soul of a service. Entities represent the map between
 the model objects in Java and the fields and tables in your database. Once your
@@ -232,22 +232,18 @@ and remote service to `false` for both of your entities. If, however, you want
 to enable remote access to your application's services, you should set both
 local service and remote service to `true`.
 
-+$$$
-
-**Tip:** Suppose you have an existing DAO service for an entity built using some
-other framework such as JPA. You can set local service to `false` and remote
-service to `true` so that the methods of your remote `-Impl` class can call the
-methods of your existing DAO. This enables your entity to integrate with
-Liferay's permission-checking system and provides access to the web service APIs
-generated by Service Builder. This is a very handy, quite powerful, and often
-used feature of Liferay. 
-
-$$$
+| **Tip:** Suppose you have an existing DAO service for an entity built using some
+| other framework such as JPA. You can set local service to `false` and remote
+| service to `true` so that the methods of your remote `-Impl` class can call the
+| methods of your existing DAO. This enables your entity to integrate with
+| Liferay's permission-checking system and provides access to the web service APIs
+| generated by Service Builder. This is a very handy, quite powerful, and often
+| used feature of Liferay.
 
 Now that you've seen how to create the Event and Location entities, you'll learn
 how to describe their attributes using entity *columns*. 
 
-## Defining the Columns (Attributes) for Each Service Entity [](id=defining-the-columns-attributes-for-each-service-entity)
+## Defining the Columns (Attributes) for Each Service Entity
 
 Each entity is described by its columns, which represent an entity's attributes.
 These attributes map on the one side to fields in a table and on the other side
@@ -347,7 +343,7 @@ Great! Your entities are set with the columns that not only represent their
 attributes, but also support multi-tenancy and entity auditing. Next, you'll
 specify the relationship between the Event entity and the Location entity. 
 
-## Defining Relationships Between Service Entities [](id=defining-relationships-between-service-entities)
+## Defining Relationships Between Service Entities
 
 Often you'll want to reference one type of entity in the context of another
 entity. That is, you'll want to *relate* the entities. The Event Listing project
@@ -378,7 +374,7 @@ Location entity instance reference:
 Now that your entity columns are in place, you can specify the default order in
 which the entity instances are retrieved from the database. 
 
-## Defining Ordering of Service Entity Instances [](id=defining-ordering-of-service-entity-instances)
+## Defining Ordering of Service Entity Instances
 
 Often, you want to retrieve multiple instances of a given entity and list them
 in a particular order. Liferay lets you specify the default order of the
@@ -401,7 +397,7 @@ entity instances, follow similar steps but specify *name* as the column and
 The last thing to do is to define the finder methods for retrieving entity
 instances from the database. 
 
-## Defining Service Entity Finder Methods [](id=defining-service-entity-finder-methods)
+## Defining Service Entity Finder Methods
 
 Finder methods retrieve entity objects from the database based on specified
 parameters. You'll probably want to create at least one finder method for each
@@ -541,11 +537,11 @@ you're ready to *build* the service by running Service Builder. To learn how to
 run Service Builder and to learn about the code that Service Builder generates,
 please refer to the
 =======
-[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
+[Running Service Builder and Understanding the Generated Code](/docs/6-2/tutorials/-/knowledge_base/t/running-service-builder-and-understanding-the-generated-code)
 tutorial. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[What is Service Builder?](/develop/tutorials/-/knowledge_base/6-2/what-is-service-builder)
+[What is Service Builder?](/docs/6-2/tutorials/-/knowledge_base/t/what-is-service-builder)
 
-[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
+[Running Service Builder and Understanding the Generated Code](/docs/6-2/tutorials/-/knowledge_base/t/running-service-builder-and-understanding-the-generated-code)

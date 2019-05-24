@@ -1,4 +1,8 @@
-# Enabling Search and Indexing [](id=enabling-search-and-indexing)
+---
+header-id: enabling-search-and-indexing
+---
+
+# Enabling Search and Indexing
 
 Now you have a working Guestbook portlet as well as a completed Guestbook Admin
 portlet. The Guestbook portlet allows users to create guestbooks and to add,

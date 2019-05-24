@@ -1,4 +1,8 @@
-# Creating Managed Beans to Use Services [](id=creating-managed-beans-to-use-services)
+---
+header-id: creating-managed-beans-to-use-services
+---
+
+# Creating Managed Beans to Use Services
 
 Now that your persistence and service layers are created, it's time to create
 your managed beans to store and retrieve guestbooks and guestbook entries for
@@ -30,7 +34,7 @@ Now that you have some background information on how JSF managed beans work and
 what managed beans you'll create for the Guestbook portlet, it's time to begin
 creating your guestbook's managed beans. 
 
-## Creating the Abstract Bean [](id=creating-the-abstract-bean)
+## Creating the Abstract Bean
 
 The first bean you'll create in your guestbook is the *Abstract* bean. As
 mentioned earlier, the abstract bean will hold properties and methods required
@@ -83,7 +87,7 @@ Now you're ready to create  the `AbstractBacking` class.
 Now that you've successfully created your `AbstractBacking` bean, it's time to
 move on to creating the guestbook and entry managed beans. 
 
-## Creating the Guestbook and Entry Managed Beans [](id=creating-the-guestbook-and-entry-managed-beans)
+## Creating the Guestbook and Entry Managed Beans
 
 Now that you've created the `AbstractBacking` bean, it's time to create the
 managed beans specific to each of your entities. You'll start with creating the
@@ -110,7 +114,7 @@ you'll need to do is ensure these beans can work together to create guestbooks
 and guestbook entries in your portlet. You'll do this next by learning about
 bean scoping and dependency injection. 
 
-### Setting Managed Bean Scoping and Dependency Injection [](id=setting-managed-bean-scoping-and-dependency-injection)
+### Setting Managed Bean Scoping and Dependency Injection
 
 Recall that you briefly learned about *view scoped* and *request scoped* managed
 beans at the beginning of this learning path. The guestbook bean's scope will be
@@ -195,7 +199,7 @@ using getter and setter methods to encapsulate data in the guestbook bean.
 You'll add these in soon, but first, you'll add in the methods necessary to
 perform actions in the Guestbook portlet. 
 
-### Creating Action Methods for Managed Beans [](id=creating-action-methods-for-managed-beans)
+### Creating Action Methods for Managed Beans
 
 Now that you've finished the set up portion of your managed beans, it's time to
 begin adding substance in your bean class bodies. The first thing you'll do is
@@ -285,7 +289,7 @@ methods to the guestbook bean.
     methods use
     [LiferayFacesContext](https://github.com/liferay/liferay-faces-portal/blob/3.0.0/portal/src/main/java/com/liferay/faces/portal/context/LiferayFacesContext.java)
     to set certain parameters. You can visit the
-    [Using the LiferayFacesContext with Liferay Faces Portal](/develop/tutorials/-/knowledge_base/6-2/leveraging-the-current-theme-with-liferay-faces-portal)
+    [Using the LiferayFacesContext with Liferay Faces Portal](/docs/6-2/tutorials/-/knowledge_base/t/leveraging-the-current-theme-with-liferay-faces-portal)
     tutorial for more information on how the `LiferayFacesContext` can be used.
     You'll also notice these methods have many error markings. This is because
     they're referencing setter methods used to encapsulate data. You'll create
@@ -407,7 +411,7 @@ portlet's views, it'll be easier to visualize what's going on.
 Next, you'll begin adding getter and setter methods in the guestbook bean to
 enable the encapsulation of properties. 
 
-### Creating Methods to Encapsulate Properties [](id=creating-methods-to-encapsulate-properties)
+### Creating Methods to Encapsulate Properties
 
 Now that you've created the action methods needed to create guestbooks and
 entries, you'll need a way to save your data. This is essential because the
@@ -568,7 +572,7 @@ You've successfully created methods to encapsulate all your Guestbook portlet's
 properties on the view scoped bean. The last thing you'll need to add are
 methods to facilitate portlet navigation with your view (XHTML) files. 
 
-### Creating Methods to Facilitate Portlet Navigation [](id=creating-methods-to-facilitate-portlet-navigation)
+### Creating Methods to Facilitate Portlet Navigation
 
 So far, you've created methods that perform actions with your entities, like
 adding a new guestbook or saving a guestbook entry. You've also added

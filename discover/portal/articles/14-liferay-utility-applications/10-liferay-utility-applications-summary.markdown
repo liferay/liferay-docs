@@ -1,4 +1,8 @@
-# Summary [](id=summary-10)
+---
+header-id: summary-10
+---
+
+# Summary
 
 In this chapter, we examined several Liferay utility applications: the Bookmarks
 portlet, the Shopping portlet, the Software Catalog, the Reports and

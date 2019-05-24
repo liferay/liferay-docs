@@ -1,31 +1,35 @@
-# Rendering Web Pages in Your Android App [](id=rendering-web-pages-in-your-android-app)
+---
+header-id: rendering-web-pages-in-your-android-app
+---
+
+# Rendering Web Pages in Your Android App
 
 The 
-[Rendering Web Content](/develop/tutorials/-/knowledge_base/6-2/rendering-web-content-in-your-android-app) 
+[Rendering Web Content](/docs/6-2/tutorials/-/knowledge_base/t/rendering-web-content-in-your-android-app) 
 tutorial shows you how to display 
-[web content](/discover/portal/-/knowledge_base/6-2/web-content-management) 
+[web content](/docs/6-2/user/-/knowledge_base/u/web-content-management) 
 from a Liferay Portal site in your Android app. Displaying content is great, but 
 what if you want to display an entire page? No problem! 
-[Web Screenlet](/develop/reference/-/knowledge_base/6-2/web-screenlet-for-android) 
+[Web Screenlet](/docs/6-2/reference/-/knowledge_base/r/web-screenlet-for-android) 
 lets you display any web page. You can even customize the page by injecting 
 local or remote JavaScript and CSS files. When combined with Liferay Portal's 
 server-side customization features (e.g., 
-[Application Display Templates](/discover/portal/-/knowledge_base/6-2/using-application-display-templates)), 
+[Application Display Templates](/docs/6-2/user/-/knowledge_base/u/using-application-display-templates)), 
 Web Screenlet gives you almost limitless possibilities for displaying web pages 
 in your Android apps. 
 
 In this tutorial, you'll learn how to use Web Screenlet to display web pages in 
 your Android app. 
 
-## Inserting Web Screenlet in Your App [](id=inserting-web-screenlet-in-your-app)
+## Inserting Web Screenlet in Your App
 
 Inserting Web Screenlet in your app is the same as 
-[inserting any Screenlet in your app](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps): 
+[inserting any Screenlet in your app](/docs/6-2/tutorials/-/knowledge_base/t/using-screenlets-in-android-apps): 
 
 1.  Insert the Screenlet's XML in the layout of the activity or fragment you 
     want to use the Screenlet in. Also be sure to set any attributes that you 
     need. For a list of Web Screenlet's available attributes, see 
-    [the Attributes section](/develop/reference/-/knowledge_base/6-2/web-screenlet-for-android#attributes) 
+    [the Attributes section](/docs/6-2/reference/-/knowledge_base/r/web-screenlet-for-android#attributes) 
     of the Web Screenlet reference doc. 
 
     For example, here's Web Screenlet's XML with the Screenlet's `layoutId` and 
@@ -54,7 +58,7 @@ Inserting Web Screenlet in your app is the same as
 
 Next, you'll implement Web Screenlet's listener. 
 
-## Implementing Web Screenlet's Listener [](id=implementing-web-screenlets-listener)
+## Implementing Web Screenlet's Listener
 
 To use any Screenlet in an activity or fragment, you must also implement the 
 Screenlet's listener in that activity or fragment's class. Web Screenlet's 
@@ -126,7 +130,7 @@ listener is `WebListener`. Follow these steps to implement `WebListener`:
 Next, you'll use the same `WebScreenlet` reference to set the Screenlet's 
 parameters. 
 
-## Setting Web Screenlet's Parameters [](id=setting-web-screenlets-parameters)
+## Setting Web Screenlet's Parameters
 
 Web Screenlet has `WebScreenletConfiguration` and 
 `WebScreenletConfiguration.Builder` objects that supply the parameters the 
@@ -134,14 +138,10 @@ Screenlet needs to work. These parameters include the URL of the page to load
 and the location of any JavaScript or CSS files that customize the page. You'll 
 set most of these parameters via `WebScreenletConfiguration.Builder`'s methods. 
 
-+$$$
-
-**Note:** For a full list of `WebScreenletConfiguration.Builder`'s methods, and 
-a description of each, see the table in 
-[the Configuration section](/develop/reference/-/knowledge_base/6-2/web-screenlet-for-android#configuration) 
-of Web Screenlet's reference doc. 
-
-$$$
+| **Note:** For a full list of `WebScreenletConfiguration.Builder`'s methods, and
+| a description of each, see the table in
+| [the Configuration section](/docs/6-2/reference/-/knowledge_base/r/web-screenlet-for-android#configuration)
+| of Web Screenlet's reference doc.
 
 To set Web Screenlet's parameters, follow these steps in the method that 
 initializes the activity or fragment containing the Screenlet (e.g., `onCreate` 
@@ -152,7 +152,7 @@ methods as needed.
     page's URL string, to create a `WebScreenletConfiguration.Builder` object. 
     If the page requires Liferay Portal authentication, then the user must be 
     logged in via 
-    [Login Screenlet](/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-android) 
+    [Login Screenlet](/docs/6-2/reference/-/knowledge_base/r/loginscreenlet-for-android) 
     or a `SessionContext` method, and you must provide a relative URL to the 
     `WebScreenletConfiguration.Builder` constructor. For example, if such a 
     page's full URL is `http://your.liferay.instance/web/guest/blog`, then the 
@@ -163,17 +163,13 @@ methods as needed.
 2.  Call the `WebScreenletConfiguration.Builder` methods to set the parameters 
     that you need. 
 
-    +$$$
-
-    **Note:** If the URL you supplied to the `WebScreenletConfiguration.Builder` 
-    constructor is to a page that doesn't require Liferay Portal authentication, 
-    then you must call the `WebScreenletConfiguration.Builder` method 
-    `setWebType(WebScreenletConfiguration.WebType.OTHER)`. The default `WebType` 
-    is `LIFERAY_AUTHENTICATED`, which is required to load portal pages that 
-    require authentication. If you need to set `LIFERAY_AUTHENTICATED` manually, 
-    call `setWebType(WebScreenletConfiguration.WebType.LIFERAY_AUTHENTICATED)`. 
-
-    $$$
+    | **Note:** If the URL you supplied to the `WebScreenletConfiguration.Builder`
+    | constructor is to a page that doesn't require Liferay Portal authentication,
+    | then you must call the `WebScreenletConfiguration.Builder` method
+    | `setWebType(WebScreenletConfiguration.WebType.OTHER)`. The default `WebType`
+    | is `LIFERAY_AUTHENTICATED`, which is required to load portal pages that
+    | require authentication. If you need to set `LIFERAY_AUTHENTICATED` manually,
+    | call `setWebType(WebScreenletConfiguration.WebType.LIFERAY_AUTHENTICATED)`.
 
 3.  Call the `WebScreenletConfiguration.Builder` instance's `load()` method, 
     which returns a `WebScreenletConfiguration` object. 
@@ -207,12 +203,12 @@ folder. The `addLocalCss` and `addLocalJs` methods add the local files
 
 Great! Now you know how to use Web Screenlet in your Android apps. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Web Screenlet for Android](/develop/reference/-/knowledge_base/6-2/web-screenlet-for-android)
+[Web Screenlet for Android](/docs/6-2/reference/-/knowledge_base/r/web-screenlet-for-android)
 
-[Using Web Screenlet with Cordova in Your Android App](/develop/tutorials/-/knowledge_base/6-2/using-web-screenlet-with-cordova-in-your-android-app)
+[Using Web Screenlet with Cordova in Your Android App](/docs/6-2/tutorials/-/knowledge_base/t/using-web-screenlet-with-cordova-in-your-android-app)
 
-[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps)
+[Using Screenlets in Android Apps](/docs/6-2/tutorials/-/knowledge_base/t/using-screenlets-in-android-apps)
 
-[Rendering Web Content in Your Android App](/develop/tutorials/-/knowledge_base/6-2/rendering-web-content-in-your-android-app)
+[Rendering Web Content in Your Android App](/docs/6-2/tutorials/-/knowledge_base/t/rendering-web-content-in-your-android-app)

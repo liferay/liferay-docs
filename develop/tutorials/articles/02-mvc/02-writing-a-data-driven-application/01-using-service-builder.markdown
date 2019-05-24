@@ -1,4 +1,8 @@
-# Using Service Builder to Generate a Persistence Framework [](id=using-service-builder-to-generate-a-persistence-fr)
+---
+header-id: using-service-builder-to-generate-a-persistence-fr
+---
+
+# Using Service Builder to Generate a Persistence Framework
 
 In the last learning path, you built an application using Liferay's
 Model-View-Controller portlet framework. MVC is a great design pattern for web
@@ -19,11 +23,11 @@ that by providing Service Builder, a framework for generating the model,
 service, and persistence layers of your application. 
 
 For more information about how Service Builder works, see the 
-[tutorial](/develop/tutorials/-/knowledge_base/6-2/what-is-service-builder) 
+[tutorial](/docs/6-2/tutorials/-/knowledge_base/t/what-is-service-builder) 
 on its design. For now, you'll jump right in and start 
 creating your application's service and persistence layers. 
 
-## Creating a service.xml file [](id=creating-a-service-xml-file)
+## Creating a service.xml file
 
 This learning path starts with the development environment and application you 
 created in the first learning path. If you haven't followed that path, you'll 
@@ -119,7 +123,7 @@ classes for your entities.
 Great! The next thing you have to do is define some queries for your app. For
 that, you'll need to understand some Liferay-specific concepts. 
 
-### Understanding Liferay Portal Concepts [](id=understanding-liferay-portal-concepts)
+### Understanding Liferay Portal Concepts
 
 When you write a Liferay application, you can make it fit into Liferay's overall
 framework by providing a context for it. All of Liferay's built in applications
@@ -151,7 +155,7 @@ user name, and some metadata, such as the create and modify dates.
 The next thing you have to do is make sure your application's queries filter by
 the Group ID. Generating queries, or *finders*, is what you'll do next. 
 
-### Finding Previously Stored Data [](id=finding-previously-stored-data)
+### Finding Previously Stored Data
 
 Assuming users add guestbook entries to your application, how should they be
 found? To determine that, you'll need to look at your data design. 
@@ -214,7 +218,7 @@ You've now defined the finders you'll need for your application. Note that you
 haven't written a single line of SQL, Java, or even XML code. Next, you'll
 generate all of that. 
 
-## Generating Model, Service, and Persistence Layers [](id=generating-model-service-and-persistence-layers)
+## Generating Model, Service, and Persistence Layers
 
 Once you've created your `service.xml` file, you're ready to generate everything
 else you need to access your database. Note, however, that at the bottom of the
@@ -263,7 +267,7 @@ code generator for code generator haters: it generates the stuff that's tedious
 to write, while giving you the freedom to customize anything you want. 
 
 For further information about Service Builder, what it's built on, and how it
-works, please read the [What is Service Builder?](/develop/tutorials/-/knowledge_base/6-2/what-is-service-builder)
+works, please read the [What is Service Builder?](/docs/6-2/tutorials/-/knowledge_base/t/what-is-service-builder)
 tutorial. 
 
 Congratulations! You've now used Service Builder to generate a service and

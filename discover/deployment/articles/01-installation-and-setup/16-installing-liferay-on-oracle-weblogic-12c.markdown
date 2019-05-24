@@ -1,4 +1,8 @@
-# Installing Liferay on Oracle WebLogic 12c (12.1.2 and higher) [](id=installing-liferay-on-oracle-weblogic-12c-12-1-2-and-h)
+---
+header-id: installing-liferay-on-oracle-weblogic-12c-12-1-2-and-h
+---
+
+# Installing Liferay on Oracle WebLogic 12c (12.1.2 and higher)
 
 In this section, you'll learn how to install Liferay on Oracle WebLogic 12c.
 Since you're using Oracle WebLogic, you may wonder if Liferay supports XA
@@ -27,7 +31,7 @@ installation, remove it before proceeding with the instructions in this section.
 
 Let's get started by installing the `.jar` files Liferay needs.
 
-## Dependency Jars [](id=dependency-jars)
+## Dependency Jars
 
 Liferay needs the driver `.jar` file applicable for the database you plan to use
 for Liferay. Liferay also needs the `.jar` files contained in the Liferay
@@ -45,7 +49,7 @@ place.
 
 Let's proceed with configuring WebLogic.
 
-## Configuring WebLogic [](id=configuring-weblogic)
+## Configuring WebLogic
 
 You need to make the following adjustments in your configuration to support
 Liferay:
@@ -121,7 +125,7 @@ you'd rather configure your database and/or mail session within WebLogic, you
 can start your WebLogic server and follow the instructions in the next
 section(s) that apply. 
 
-## Database Configuration [](id=database-configuration)
+## Database Configuration
 
 If you want WebLogic to manage your database for Liferay, use the following
 procedure. If you want to use Liferay's built-in data source (recommended), you
@@ -175,7 +179,7 @@ session. If you want to use Liferay to manage your portal's mail session
 WebLogic to manage your mail session, you can follow the instructions in the
 next section. 
 
-## Mail Configuration [](id=mail-configuration)
+## Mail Configuration
 
 If you want WebLogic to manage your mail session, use the following procedure.
 If you want to use Liferay's built-in mail session (recommended), you can skip
@@ -211,7 +215,7 @@ configure Java Security. This will enable your portal to use Liferay's plugin
 security manager with the Liferay apps that you download and install from
 Liferay Marketplace. 
 
-## Security Configuration [](id=security-configuration)
+## Security Configuration
 
 When you are ready to start using apps from Marketplace, you'll want to protect
 your portal and your WebLogic server from security threats. To do so, you must
@@ -248,7 +252,7 @@ resources.
 Next you'll learn how to configure your WebLogic application server for JSF
 applications. 
 
-## JSF Configuration [](id=jsf-configuration)
+## JSF Configuration
 
 If you'd like to deploy JSF applications on your WebLogic application server,
 you'll need to complete a few extra steps in your configuration process. If you
@@ -258,7 +262,7 @@ this section. This section assumes you're using JSF 2.1 portlets.
 Complete the first section to ensure JSF applications deploy successfully to
 your WebLogic application server. 
 
-### Configuration for Deploying JSF Portlets [](id=configuration-for-deploying-jsf-portlets)
+### Configuration for Deploying JSF Portlets
 
 1. To avoid a `ViewExpiredException` with Ajax, disable the Liferay Portal
 `ETagFilter` by adding the following property in the `portal-ext.properties`
@@ -313,7 +317,7 @@ file:
 
 Next, you'll need to upgrade Mojarra for your WebLogic application server. 
  
-### Upgrading Mojarra [](id=upgrading-mojarra)
+### Upgrading Mojarra
 
 Liferay Faces requires JSF 2.1.29-04. However, the version of Mojarra that comes
 with WebLogic 12c is version 2.1.20. Therefore, it is necessary to upgrade
@@ -344,12 +348,12 @@ dependencies.
 You've successfully upgraded your Mojarra version. If you're interested in
 configuring CDI for your JSF portlets running on WebLogic 12c, you'll need to
 configure a few more things. For more information on configuring CDI, visit the
-[Configuring JSF Portlets to Use CDI](/develop/tutorials/-/knowledge_base/6-2/contexts-and-dependency-injection-for-jsf-portlets#configuring-jsf-portlets-to-use-cdi)
+[Configuring JSF Portlets to Use CDI](/docs/6-2/tutorials/-/knowledge_base/t/contexts-and-dependency-injection-for-jsf-portlets#configuring-jsf-portlets-to-use-cdi)
 section. 
 
 Now it's the moment you've been waiting for: Liferay deployment! 
 
-## Deploy Liferay [](id=deploy-liferay)
+## Deploy Liferay
 
 Although you can deploy Liferay on a WebLogic Admin Server, we recommend
 deploying Liferay to a managed server. As a best practice, you should dedicate
@@ -376,7 +380,7 @@ server domain, here are steps for deploying Liferay:
     Liferay precompiles all the JSPs, and Liferay launches.
 
 If you're using Liferay to manage your database, you can use
-[Liferay's Setup Wizard](/discover/deployment/-/knowledge_base/6-2/using-liferays-setup-wizard)
+[Liferay's Setup Wizard](/docs/6-2/deploy/-/knowledge_base/d/using-liferays-setup-wizard)
 that Liferay Portal shows the first time that you go to the portal. 
 
 If you're using Liferay to manage your mail session (recommended), you

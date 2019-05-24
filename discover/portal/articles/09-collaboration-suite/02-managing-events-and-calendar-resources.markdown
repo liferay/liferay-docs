@@ -1,4 +1,8 @@
-# Managing Events and Calendar Resources with Liferay's Calendar Portlet [](id=managing-events-and-calendar-resources-with-liferays-c)
+---
+header-id: managing-events-and-calendar-resources-with-liferays-c
+---
+
+# Managing Events and Calendar Resources with Liferay's Calendar Portlet
 
 As of Liferay 6.2, Liferay no longer includes the core Calendar portlet that was
 included in Liferay 6.1 and previous versions. Instead, Liferay provides a new
@@ -16,7 +20,7 @@ user, the concept of calendar resources, and event invitations.
 that it's available from Marketplace. Briefly describe the differences between
 the CE and EE versions of the new Calendar portlet. -->
 
-## Configuring the Calendar Portlet [](id=configuring-the-calendar-portlet)
+## Configuring the Calendar Portlet
 
 Once you've added the new Calendar portlet to a page, open its configuration
 dialog box by clicking on the gear icon in the portlet's title bar and
@@ -47,7 +51,7 @@ Settings* &rarr; *Time Zone*.
 
 Next, let's look at how to use the new Calendar portlet.
 
-## Using the Calendar Portlet [](id=using-the-calendar-portlet)
+## Using the Calendar Portlet
 
 The first thing you'll notice about Liferay's new Calendar portlet is its
 revamped look and feel. There's a monthly mini-calendar which provides you with
@@ -59,7 +63,7 @@ divided into hours and half-hours. The month view displays a traditional
 calendar view with days represented as boxes. In the previous section, we saw
 how to configure the default display view of the calendar.
 
-### Adding New Calendars [](id=adding-new-calendars)
+### Adding New Calendars
 
 You can add new personal or site calendars from the default view of the new
 Calendar portlet and choose which calendar's events to display. To add a new
@@ -93,7 +97,7 @@ change the calendar's default calendar status and flag or unflag the *Enable
 Comments* and *Enable Ratings* checkboxes to enable or disable comments and
 ratings for a calendar's events.
 
-### Adding Events to a Calendar [](id=adding-events-to-a-calendar)
+### Adding Events to a Calendar
 
 It's very easy to add events to a calendar: just click on any day of the
 calendar and you'll see an event creation popup appear. If you've selected the
@@ -169,7 +173,7 @@ time zone, and the time zone is also displayed. Of course, Liferay can only
 calculate this properly if both the portal's and the user's time zones are set
 correctly. Users should set this for themselves when they create accounts. To
 set the portal's time zone, see the section
-[Configuring Additional Portal Settings](/discover/portal/-/knowledge_base/6-2/configuring-additional-portal-settings). 
+[Configuring Additional Portal Settings](/docs/6-2/user/-/knowledge_base/u/configuring-additional-portal-settings). 
 
 The Categorization and Related Assets collapsible sections let you tag the event
 and select related assets, respectively. By tagging your event, it will come up
@@ -215,7 +219,7 @@ notification emails contain links to their corresponding events. This allows
 users easy access to events in the Calendar portlet so they can respond to event
 invitations.
 
-### Adding and Using Calendar Resources [](id=adding-and-using-calendar-resources)
+### Adding and Using Calendar Resources
 
 You might be wondering, "It makes sense to invite users and organizations to an
 event, but what about other calendar resources? What are they used for? How can
@@ -250,7 +254,7 @@ and users can have multiple calendars, calendar events can include calendar
 resources and calendar resources have their own schedules of availability. We
 hope this flexible system meets the needs of your organization.
 
-### Exporting and Importing Calendar Data [](id=exporting-and-importing-calendar-data)
+### Exporting and Importing Calendar Data
 
 Liferay's Calendar portlet allows data to be exported or imported as LAR files.
 Both calendar events and resources can be exported or imported. As with all LAR
@@ -308,13 +312,13 @@ You must also specify an option for assigning ownership of the imported data:
 - *Use the Current User as Author* means that the current user will be assigned
   as the author of the imported content regardless of the original author.
 
-## Upgrading the Calendar Portlet [](id=upgrading-the-calendar-portlet)
+## Upgrading the Calendar Portlet
 
 In Liferay 6.1 and previous versions, an older version of the Calendar portlet
 was included as one of the core portlets. If you're upgrading from Liferay 6.1
 or a previous version to Liferay 6.2 or a later version, all the calendar events
 that existed prior to 6.2 will still be available after your upgrade. After
-following [these](/discover/deployment/-/knowledge_base/6-2/upgrading-liferay)
+following [these](/docs/6-2/deploy/-/knowledge_base/d/upgrading-liferay)
 steps for upgrading Liferay, all you need to do to access previously added
 events is deploy the new Calendar portlet. You can browse through the new
 Calendar to confirm that the upgrade succeeded: you should be able to view and

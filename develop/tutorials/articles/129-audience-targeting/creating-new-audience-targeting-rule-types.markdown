@@ -1,10 +1,14 @@
-# Creating New Audience Targeting Rule Types [](id=creating-new-audience-targeting-rule-types)
+---
+header-id: creating-new-audience-targeting-rule-types
+---
+
+# Creating New Audience Targeting Rule Types
 
 In the Audience Targeting application, a User Segment is defined as a group of
 users that match a set of rules. Out of the box, Liferay provides several types
 of rules that are based on characteristics such as age range, gender, location,
 etc. Visit the
-[Liferay Audience Targeting Rules](/discover/portal/-/knowledge_base/6-2/liferay-audience-targeting-rules)
+[Liferay Audience Targeting Rules](/docs/6-2/user/-/knowledge_base/u/liferay-audience-targeting-rules)
 article for information on each rule type, and their configuration options. To
 extend the set of available rule types, you can create a class that implements
 the
@@ -21,7 +25,7 @@ OSGi plugin. But before you begin creating a rule type, you must learn how to
 install and use the Audience Targeting project. This tutorial covers all of
 these things, plus it gives you helpful tips. 
 
-## Installing the Audience Targeting Project [](id=installing-the-audience-targeting-project)
+## Installing the Audience Targeting Project
 
 Before you can take advantage of the Audience Targeting project's scripts for
 creating rules, reports, and tracking actions, you must first install the
@@ -49,22 +53,18 @@ available. -Cody -->
 You'll want the Plugins SDK to point to your application server. To learn more
 about setting up and using the Plugins SDK included with the Audience
 Targeting SDK, you can visit the 
-[Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk) tutorials.
+[Plugins SDK](/docs/6-2/tutorials/-/knowledge_base/t/plugins-sdk) tutorials.
 
-+$$$
-
-**Tip:** You can specify the following [portal property](/discover/reference)
-setting so that the FreeMarker code is always retrieved from the template,
-instead of from the cache: 
-
-    freemarker.engine.resource.modification.check.interval=0
-
-$$$
+| **Tip:** You can specify the following [portal property](/discover/reference)
+| setting so that the FreeMarker code is always retrieved from the template,
+| instead of from the cache:
+| 
+|     freemarker.engine.resource.modification.check.interval=0
 
 Next, you'll learn how to create a custom rule type using the Audience Targeting
 SDK that you just installed.
 
-## Creating a Custom Rule Type [](id=creating-a-custom-rule-type)
+## Creating a Custom Rule Type
 
 Adding a new type of rule to the Audience Targeting application is easy. In this
 part of the tutorial, you'll learn how to create a rule and deploy it to your
@@ -96,14 +96,10 @@ Liferay server.
     when creating or editing a user segment in the Audience Targeting
     application. 
 
-    +$$$
-
-    **Tip:** If a plugin has been successfully deployed, but its changes aren't
-    visible, check that the generated `.jar` in the Plugins SDK's `/dist`
-    folder contains the latest modifications. if it doesn't contain them, delete
-    it and then redeploy the plugin. 
-
-    $$$
+    | **Tip:** If a plugin has been successfully deployed, but its changes aren't
+    | visible, check that the generated `.jar` in the Plugins SDK's `/dist`
+    | folder contains the latest modifications. if it doesn't contain them, delete
+    | it and then redeploy the plugin.
 
 4. To view your new rule, navigate to your portal's *Admin* &rarr; *Site
    Administration* &rarr; *Configuration* &rarr; *Audience Targeting* menu. To
@@ -131,16 +127,12 @@ UI and language keys can be configured in the `src/templates/ct_fields.ftl` and
 `src/content/Language.properties` files, respectively. You'll learn more about
 the latter two components later on.
 
-+$$$
-
-**Note:** If you're planning on developing a social rule type that classifies
-users based on their social network profile, it's important to remember that
-they will not work properly unless the specific social network's SSO (Single
-Sign On) is enabled and configured properly. Visit the
-[Social Rules](/discover/portal/-/knowledge_base/6-2/liferay-audience-targeting-rules#social-rules)
-section for more details.
-
-$$$
+| **Note:** If you're planning on developing a social rule type that classifies
+| users based on their social network profile, it's important to remember that
+| they will not work properly unless the specific social network's SSO (Single
+| Sign On) is enabled and configured properly. Visit the
+| [Social Rules](/docs/6-2/user/-/knowledge_base/u/liferay-audience-targeting-rules#social-rules)
+| section for more details.
 
 Now, you can begin creating your rule's functionality by specifying its behavior
 in the `-Rule` class (e.g., `WeatherRule.java`) that the SDK generated for
@@ -228,14 +220,10 @@ visit the Audience Targeting
 [project](https://github.com/liferay/liferay-apps-content-targeting/tree/samples2015)
 on GitHub.
 
-+$$$
-
-**Note:** Recall the last component of Audience Targeting rules: Language Keys.
-To learn more about language keys and how to create, use, and generate them,
-visit the
-[Localization](/develop/tutorials/-/knowledge_base/6-2/localization) tutorials.
-
-$$$
+| **Note:** Recall the last component of Audience Targeting rules: Language Keys.
+| To learn more about language keys and how to create, use, and generate them,
+| visit the
+| [Localization](/docs/6-2/tutorials/-/knowledge_base/t/localization) tutorials.
 
 Now you'll jump back into modifying your rule's behavior via the `-Rule` class.
 
@@ -342,7 +330,7 @@ result in slowing down your portal.
 - As an alternative to storing complex information in the `typeSettings` field
 which is managed by the framework in the Rule Instance table, you may want to
 consider persisting to a database by using 
-[Service Builder](/develop/tutorials/-/knowledge_base/6-2/service-builder),
+[Service Builder](/docs/6-2/tutorials/-/knowledge_base/t/service-builder),
 which is supported in the Rule plugins. 
 
 - You can override
@@ -368,10 +356,10 @@ deployable sample weather rule, you can download its
 
 <!-- ## Customize the Rules Engine -->
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Developing with the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
+[Developing with the Plugins SDK](/docs/6-2/tutorials/-/knowledge_base/t/plugins-sdk)
 
-[Localization](/develop/tutorials/-/knowledge_base/6-2/localization)
+[Localization](/docs/6-2/tutorials/-/knowledge_base/t/localization)
 
-[Using Service Builder to Generate a Persistence Framework](/develop/tutorials/-/knowledge_base/6-2/using-service-builder-to-generate-a-persistence-fr)
+[Using Service Builder to Generate a Persistence Framework](/docs/6-2/tutorials/-/knowledge_base/t/using-service-builder-to-generate-a-persistence-fr)

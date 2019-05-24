@@ -1,4 +1,8 @@
-# Apply Social Bookmarks [](id=apply-social-bookmarks)
+---
+header-id: apply-social-bookmarks
+---
+
+# Apply Social Bookmarks
 
 <!--
 Testing Notes:
@@ -22,7 +26,7 @@ portlet.
 ![Figure 1: Social bookmarks are enabled in the built-in Blogs portlet](../../images/asset-fw-social-bookmarks-icons.png)
 
 Since each piece of content in a portlet is an asset, your portlet needs to be 
-[asset enabled](/develop/tutorials/-/knowledge_base/6-2/adding-updating-and-deleting-assets-for-custom-entities)
+[asset enabled](/docs/6-2/tutorials/-/knowledge_base/t/adding-updating-and-deleting-assets-for-custom-entities)
 before you can add social bookmarks. 
 
 Users naturally want to share the greatest of insults with the world! To help
@@ -32,7 +36,7 @@ enabled on [Github](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/t
 
 You can show social bookmarks in your portlet's view of your custom entity or, if
 you've implemented 
-[asset rendering](/develop/tutorials/-/knowledge_base/6-2/implementing-asset-renderers),
+[asset rendering](/docs/6-2/tutorials/-/knowledge_base/t/implementing-asset-renderers),
 you can show social bookmarks in the full content view in an Asset Publisher
 portlet. 
 
@@ -77,7 +81,7 @@ URL for viewing the content is retrieved using `PortalUtil`.
 Now you have a JSP that lets your users share content in your portlet. 
 
 If you haven't already connected your portlet's view to the JSP for your entity,
-you can refer [here](/develop/tutorials/-/knowledge_base/6-2/relating-assets#creating-a-url-to-your-new-jsp)
+you can refer [here](/docs/6-2/tutorials/-/knowledge_base/t/relating-assets#creating-a-url-to-your-new-jsp)
 to see how to connect your portlet's main view JSP to your entity's view JSP. 
 
 Now redeploy your portlet and refresh the page so that the your plugin's UI
@@ -94,14 +98,14 @@ Permissions buttons of the Insults portlet are wrapped in a permissions check in
 the 
 [`view.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/view.jsp).
 For more information on this, see the Learning Path 
-[Checking for Permissions in the UI](/develop/tutorials/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
+[Checking for Permissions in the UI](/docs/6-2/tutorials/-/knowledge_base/t/checking-for-permissions-in-the-ui).
 
 **Related Topics**
 
-[Asset Enabling Custom Entities](/develop/tutorials/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Asset Enabling Custom Entities](/docs/6-2/tutorials/-/knowledge_base/t/asset-enabling-custom-entities)
 
-[Implementing Asset Renderers](/develop/tutorials/-/knowledge_base/6-2/implementing-asset-renderers)
+[Implementing Asset Renderers](/docs/6-2/tutorials/-/knowledge_base/t/implementing-asset-renderers)
 
-[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+[Liferay UI Taglibs](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ui-taglibs)
 
-[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)
+[User Interfaces with AlloyUI](/docs/6-2/tutorials/-/knowledge_base/t/alloyui)

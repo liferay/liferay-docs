@@ -1,4 +1,8 @@
-# Using Application Display Templates [](id=using-application-display-templates)
+---
+header-id: using-application-display-templates
+---
+
+# Using Application Display Templates
 
 The application display template (ADT) framework allows portal administrators to
 override the default display templates, removing limitations to the way your
@@ -78,14 +82,14 @@ Wiki ADT into your new one and build off of it. In other words, you can utilize
 ADTs as generic templates which allow for reusable code to be imported by
 Velocity or FreeMarker templates in the system. For more information on how to
 create a custom template, visit the
-[Implementing Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/implementing-application-display-templates)
+[Implementing Application Display Templates](/docs/6-2/tutorials/-/knowledge_base/t/implementing-application-display-templates)
 tutorial.
 
 Another cool feature is the *Export/Import* functionality. You can take
 advantage of this feature by clicking the gear icon at the top right of the
 screen and selecting *Export/Import*. For more information on using this
 feature, visit the
-[Export/Import](/discover/portal/-/knowledge_base/6-2/export-import)
+[Export/Import](/docs/6-2/user/-/knowledge_base/u/export-import)
 section of this guide.
 
 After you've completed the initial set up and saved your ADT, you can manage
@@ -102,18 +106,14 @@ access the XML source of your template. You can find these URLs by clicking the
 ADT from the menu and expanding the *Details* section. With the WebDAV URL, site
 administrators are capable of adding, browsing, editing, and deleting ADTs on a
 remote server. If you'd like to learn more about what the WebDAV URL can do,
-visit the *Document Management* chapter's [WebDAV access](/discover/portal/-/knowledge_base/6-2/automatic-previews-and-metadata#webdav-access)
+visit the *Document Management* chapter's [WebDAV access](/docs/6-2/user/-/knowledge_base/u/automatic-previews-and-metadata#webdav-access)
 section.
 
-+$$$
-
-**Note:** Embedding portlets into ADTs, although possible, is not recommended
-because this could cause conflicts with other portlets or unexpected behavior
-(e.g., embedding a portlet that aggregates data to the breadcrumb). If embedding
-a portlet into an ADT is your only option, make sure it does not interfere with
-other portlets.
-
-$$$
+| **Note:** Embedding portlets into ADTs, although possible, is not recommended
+| because this could cause conflicts with other portlets or unexpected behavior
+| (e.g., embedding a portlet that aggregates data to the breadcrumb). If embedding
+| a portlet into an ADT is your only option, make sure it does not interfere with
+| other portlets.
 
 To enable your ADT for a portlet, navigate to the portlet you want to modify and
 open its *Configuration* menu. In the *Display Settings* sub-tab located within

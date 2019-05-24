@@ -1,4 +1,8 @@
-# Specifying Color Schemes [](id=specifying-color-schemes)
+---
+header-id: specifying-color-schemes
+---
+
+# Specifying Color Schemes
 
 You can provide various "flavors" of your theme by creating color schemes for
 it. Color schemes let you keep the styles and overall design for your theme,
@@ -67,13 +71,13 @@ For the example above you could use the folders
 `_diffs/images/color_schemes/night`. In each of your color scheme's folders,
 place a `thumbnail.png` and `screenshot.png` file. Make sure your thumbnail
 images follow the specifications defined in the
-[Creating a Theme Thumbnail](/develop/tutorials/-/knowledge_base/6-2/creating-a-theme-thumbnail)
+[Creating a Theme Thumbnail](/docs/6-2/tutorials/-/knowledge_base/t/creating-a-theme-thumbnail)
 tutorial.
 
 There you have it. Now you can go color scheme crazy with your themes!
 
 **Related Topics**
 
-[Designing a Layout Template](/develop/tutorials/-/knowledge_base/6-2/designing-a-layout-template)
+[Designing a Layout Template](/docs/6-2/tutorials/-/knowledge_base/t/designing-a-layout-template)
 
-[Creating a Theme Thumbnail](/develop/tutorials/-/knowledge_base/6-2/creating-a-theme-thumbnail)
+[Creating a Theme Thumbnail](/docs/6-2/tutorials/-/knowledge_base/t/creating-a-theme-thumbnail)

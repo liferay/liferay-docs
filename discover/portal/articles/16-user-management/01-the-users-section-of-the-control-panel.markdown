@@ -1,4 +1,8 @@
-# The Users Section of the Control Panel [](id=the-users-section-of-the-control-panel)
+---
+header-id: the-users-section-of-the-control-panel
+---
+
+# The Users Section of the Control Panel
 
 The Users section of the Control Panel is used for most administrative tasks
 involving user management. There, you'll find an interface for the creation and
@@ -8,10 +12,10 @@ and roles.
 ![Figure 16.1: The Users section of the Control Panel allows portal administrators to manage users, organizations, user groups, and roles. It also allows administrators to monitor users' live portal sessions if monitoring has been enabled for the portal.](../../images/users-section-control-panel.png)
 
 Managing
-[sites](/discover/portal/-/knowledge_base/6-2/building-a-site-with-liferay-web-content),
-[teams](/discover/portal/-/knowledge_base/6-2/creating-teams-for-advanced-site-membership-management),
-[site templates](/discover/portal/-/knowledge_base/6-2/using-site-templates), and
-[page templates](/discover/portal/-/knowledge_base/6-2/using-page-templates) is
+[sites](/docs/6-2/user/-/knowledge_base/u/building-a-site-with-liferay-web-content),
+[teams](/docs/6-2/user/-/knowledge_base/u/creating-teams-for-advanced-site-membership-management),
+[site templates](/docs/6-2/user/-/knowledge_base/u/using-site-templates), and
+[page templates](/docs/6-2/user/-/knowledge_base/u/using-page-templates) is
 covered in detail elsewhere. Remember that it's possible and sometimes simpler
 to use sites, site memberships, and teams to organize users and manage
 permissions than it is to use organizations, user groups, and custom roles.
@@ -23,7 +27,7 @@ administrator role, which is a portal scoped role, have permission to view the
 Control Panel. You can, of course, grant permissions to view one or more
 sections, such as the Users section, to custom roles.
 
-## Adding and Editing Users [](id=adding-and-editing-users)
+## Adding and Editing Users
 
 Are you using Liferay's default administrative user, Test Test
 (*test\@liferay.com*)? If so, let's add a user account for yourself and configure
@@ -40,7 +44,7 @@ form appears that allows you to fill out a lot more information about the user.
 You don't have to fill anything else out right now. Just note that when the user
 account was created, a password was automatically generated. If Liferay was
 correctly installed and a mail server was set up (see
-[here](/discover/portal/-/knowledge_base/6-2/server-administration#mail), an
+[here](/docs/6-2/user/-/knowledge_base/u/server-administration#mail), an
 email message with the user's new password was sent to the user's email address.
 This, of course, requires that Liferay can properly communicate with your SMTP
 mail server.
@@ -79,7 +83,7 @@ You are now a portal administrator. Log out of the portal and then log back in
 with your own user account. Next, let's look at some other aspects of user
 management. 
 
-## User Management [](id=user-management)
+## User Management
 
 If you click on *Users and Organizations* in the Control Panel, you should now
 see your user account in the list of users. If you want to change something
@@ -105,7 +109,7 @@ above functions because you have administrative access.
 
 Next, let's look at how to manage organizations.
 
-## Organizations [](id=organizations)
+## Organizations
 
 Organizations are used to represent hierarchical structures of users such as
 those of companies, businesses, non-profit organizations, churches, schools, and
@@ -167,8 +171,8 @@ add existing users to an organization.
 
 Many simple portal designs don't use organizations at all; they only use sites
 (see the sections on 
-[Web content Management](/discover/portal/-/knowledge_base/6-2/web-content-management) and
-[Advanced Web Content Management](/discover/portal/-/knowledge_base/6-2/advanced-web-content-management) for more information on sites). Remember that the main purpose of 
+[Web content Management](/docs/6-2/user/-/knowledge_base/u/web-content-management) and
+[Advanced Web Content Management](/docs/6-2/user/-/knowledge_base/u/advanced-web-content-management) for more information on sites). Remember that the main purpose of 
 organizations is to allow for distributed user management. They allow portal
 administrators to delegate some of their user management responsibilities to
 organization administrators. If you don't anticipate needing to delegate user
@@ -238,21 +242,17 @@ location cannot have any suborganizations.
 parent of the organization you are creating. Click the *Remove* button to remove
 the currently configured parent.
 
-+$$$
-
-**Tip:** After creating an organization, you should assign the desired user to
-the Organization Owner Role. The Organization Owner can do everything that an
-Organization Administrator can. In addition to their full administrative rights
-within the organization, they can do these things:
-
-- Appoint other users to be Organization Administrators 
-- Appoint other users to be Organization Owners
-- Remove the memberships of other Organization Administrators or Owners
-
-Organization Administrators can't make these role assignments and can't manage
-the memberships of other Organization Administrators or Owners.
-
-$$$
+| **Tip:** After creating an organization, you should assign the desired user to
+| the Organization Owner Role. The Organization Owner can do everything that an
+| Organization Administrator can. In addition to their full administrative rights
+| within the organization, they can do these things:
+| 
+| - Appoint other users to be Organization Administrators
+| - Appoint other users to be Organization Owners
+| - Remove the memberships of other Organization Administrators or Owners
+| 
+| Organization Administrators can't make these role assignments and can't manage
+| the memberships of other Organization Administrators or Owners.
 
 Fill out the information for your organization and click *Save*. As when
 creating a new user, after you click *Save* to submit the form, a success

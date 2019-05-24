@@ -1,4 +1,8 @@
-# Reporting User Behavior with Audience Targeting [](id=reporting-user-behavior-with-audience-targeting)
+---
+header-id: reporting-user-behavior-with-audience-targeting
+---
+
+# Reporting User Behavior with Audience Targeting
 
 In the Audience Targeting application, a report is a tool that allows
 administrators to analyze the behavior of users in a campaign or belonging to
@@ -15,7 +19,7 @@ report OSGi plugin, it is consumed by the Audience Targeting application.
 To follow this tutorial, you must first have the Audience Targeting
 [project](https://github.com/liferay/liferay-apps-content-targeting) and
 Plugins SDK configured properly. Visit the
-[Installing the Audience Targeting Project](/develop/tutorials/-/knowledge_base/6-2/creating-new-audience-targeting-rule-types#installing-the-audience-targeting-project)
+[Installing the Audience Targeting Project](/docs/6-2/tutorials/-/knowledge_base/t/creating-new-audience-targeting-rule-types#installing-the-audience-targeting-project)
 section for information on how to do this.
 
 Adding a new report to the Audience Targeting application is easy. In this
@@ -78,7 +82,7 @@ page and study the folders with the `report-` prefix.
 
 **Related Topics**
 
-[User Management](/discover/portal/-/knowledge_base/6-2/user-management)
+[User Management](/docs/6-2/user/-/knowledge_base/u/user-management)
 
-[Customizing Liferay Portal with Hooks](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+[Customizing Liferay Portal with Hooks](/docs/6-2/tutorials/-/knowledge_base/t/customizing-liferay-portal)
 

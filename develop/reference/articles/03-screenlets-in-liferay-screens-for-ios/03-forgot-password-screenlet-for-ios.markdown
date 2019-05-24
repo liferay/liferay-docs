@@ -1,6 +1,10 @@
-# Forgot Password Screenlet for iOS [](id=forgotpasswordscreenlet-for-ios)
+---
+header-id: forgotpasswordscreenlet-for-ios
+---
 
-## Requirements [](id=requirements)
+# Forgot Password Screenlet for iOS
+
+## Requirements
 
 - Xcode 9.0
 - iOS 11 SDK
@@ -10,16 +14,16 @@
   or 
   [Liferay Portal EE](http://www.liferay.com/marketplace/-/mp/application/54369726)). 
 
-## Compatibility [](id=compatibility)
+## Compatibility
 
 - iOS 9 and above
 
-## Xamarin Requirements [](id=xamarin-requirements)
+## Xamarin Requirements
 
 - Visual Studio 7.2
 - Mono .NET framework 5.4.1.6
 
-## Features [](id=features)
+## Features
 
 The Forgot Password Screenlet sends emails to registered users with their 
 new passwords or password reset links, depending on the server configuration. 
@@ -29,7 +33,7 @@ The available authentication methods are:
 - Screen name
 - User id
 
-## JSON Services Used [](id=json-services-used)
+## JSON Services Used
 
 Screenlets in Liferay Screens call JSON web services in the portal. This 
 Screenlet calls the following services and methods.
@@ -40,30 +44,30 @@ Screenlet calls the following services and methods.
 | `UserService` | `sendPasswordByUserId` |  |
 | `UserService` | `sendPasswordByScreenName` |  |
 
-## Module [](id=module)
+## Module
 
 - Auth
 
-## Themes [](id=themes)
+## Themes
 
 - Default (`default`)
 - Flat7 (`flat7`)
 
 ![The Forgot Password Screenlet with the Default (left) and Flat7 (right) Themes.](../../images/screens-ios-forgotpwd.png)
 
-## Portal Configuration [](id=portal-configuration)
+## Portal Configuration
 
 To use the Forgot Password Screenlet, you must allow users to request new 
 passwords in the portal. The next sections show you how to do this.
 
-### Authentication Method [](id=authentication-method)
+### Authentication Method
 
 Note that the authentication method configured in the portal can be different 
 from the one used by this Screenlet. For example, it's *perfectly fine* to use 
 `screenName` for sign in authentication, but allow users to recover their 
 password using the `email` authentication method.
 
-### Password Reset [](id=password-reset)
+### Password Reset
 
 Password recovery depends on the authentication settings in the portal:
 
@@ -78,17 +82,17 @@ For more details on authentication in Liferay Portal, please refer to the
 [Configuring Portal Settings](/portal/-/knowledge_base/6-2/configuring-portal-settings) 
 section of the User Guide.
 
-### Anonymous Request [](id=anonymous-request)
+### Anonymous Request
 
 An anonymous request can be made without the user being logged in. However, 
 authentication is needed to call the API. To allow this operation, the portal
 administrator should create a specific user with minimal permissions.
 
-## Offline [](id=offline)
+## Offline
 
 This Screenlet doesn't support offline mode. It requires network connectivity.
 
-## Attributes [](id=attributes)
+## Attributes
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
@@ -97,7 +101,7 @@ This Screenlet doesn't support offline mode. It requires network connectivity.
 | `companyId` | `number` | When set, the authentication is done for a user within the specified company. If the value is `0`, the company specified in `LiferayServerContext` is used. |
 | `basicAuthMethod` | `string` | The authentication method that is presented to the user. This can be `email`, `screenName`, or `userId`. |
 
-## Delegate [](id=delegate)
+## Delegate
 
 The Forgot Password Screenlet delegates some events to an object that conforms 
 to the `ForgotPasswordScreenletDelegate` protocol. This protocol lets you 

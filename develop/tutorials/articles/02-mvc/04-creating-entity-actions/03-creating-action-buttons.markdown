@@ -1,4 +1,8 @@
-# Creating Action Buttons [](id=creating-action-buttons)
+---
+header-id: creating-action-buttons
+---
+
+# Creating Action Buttons
 
 Your final task is to create the user interface elements that give users access
 to the functions you just created in both your controller and your service
@@ -14,7 +18,7 @@ create the buttons themselves.
 
 Ready to get started? 
 
-## Using A Separate JSP for Actions [](id=using-a-separate-jsp-for-actions)
+## Using A Separate JSP for Actions
 
 The first thing you'll do is update `init.jsp` to contain the imports and
 declarations you'll need. During regular development, you'd have this file open
@@ -157,7 +161,7 @@ You might think you're finished, but you actually have one more JSP to modify:
 the `edit_entry.jsp` file. You need to retro-fit this JSP so it can handle
 editing entries as well as adding them. 
 
-## Using the Same JSP for Editing and Adding [](id=using-the-same-jsp-for-editing-and-adding)
+## Using the Same JSP for Editing and Adding
 
 Because Liferay's tag libraries are so robust, there are only a few changes you
 need to make to `edit_entry.jsp` to make it handle editing entries. 
@@ -225,6 +229,6 @@ pages. Or you might want to add tags, categories, or even comments to guestbook
 entries. To make any of these features work, you must asset-enable your
 application. The next learning path covers that. 
 
-## Next Steps [](id=next-steps)
+## Next Steps
 
-[Adding a Portlet to the Control Panel](/develop/tutorials/-/knowledge_base/6-2/adding-a-portlet-to-the-control-panel)
+[Adding a Portlet to the Control Panel](/docs/6-2/tutorials/-/knowledge_base/t/adding-a-portlet-to-the-control-panel)

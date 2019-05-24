@@ -1,4 +1,8 @@
-# Using Portal Roles in a Portlet [](id=using-portal-roles-in-a-portlet)
+---
+header-id: using-portal-roles-in-a-portlet
+---
+
+# Using Portal Roles in a Portlet
 
 "A role, a role, my portal for a role!" Don't worry, using portal roles in your
 portlets isn't too difficult. Roles in Liferay Portal are the primary means for
@@ -6,7 +10,7 @@ granting or restricting access to content. When a role is assigned to a user,
 the user is granted the permissions that have been defined for the role. Read
 on to learn how to use portal roles in your application!
 
-## JSR 286 Portlet Security [](id=jsr-286-portlet-security)
+## JSR 286 Portlet Security
 
 The JSR 286 portlet specification defines a means to specify roles used by
 portlets in their `docroot/WEB-INF/portlet.xml` descriptors. The role names
@@ -16,7 +20,7 @@ project:
 [Guestbook Project](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/01-mvc/learning-sdk/portlets/guestbook-portlet).
 The Guestbook project is the sample project that you create by
 following the steps of Liferay's
-[MVC Learning Path](/develop/tutorials/-/knowledge_base/6-2/writing-a-liferay-mvc-application).
+[MVC Learning Path](/docs/6-2/tutorials/-/knowledge_base/t/writing-a-liferay-mvc-application).
 The Guestbook project contains two portlets: The Guestbook portlet and the
 Guestbook Admin portlet. Notice that Guestbook project's `portlet.xml` file
 references the *administrator*, *guest*, *power-user*, and *user* roles: 
@@ -95,14 +99,10 @@ Your `portlet.xml` roles need to be mapped to specific roles in the portal.
 These mappings allow the portal to resolve conflicts between roles with the same
 name that are from different portlets (e.g. portlets from different developers). 
 
-+$$$
+| **Note:** Each role named in a portlet's `<security-role-ref>` element is given
+| permission to add the portlet to a page.
 
-**Note:** Each role named in a portlet's `<security-role-ref>` element is given
-permission to add the portlet to a page. 
-
-$$$
-
-## Mapping Portlet Roles to Portal Roles [](id=mapping-portlet-roles-to-portal-roles)
+## Mapping Portlet Roles to Portal Roles
 
 To map the roles to Liferay Portal, you'll have to use the
 `docroot/WEB-INF/liferay-portlet.xml` Liferay-specific configuration file. For
@@ -149,14 +149,14 @@ fine-grained security. If you don't intend on deploying your portlets to other
 portal servers, we recommend using Liferay's permission system, because it
 offers a much more robust way of tailoring your application's permissions. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Customizing Liferay Portal](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+[Customizing Liferay Portal](/docs/6-2/tutorials/-/knowledge_base/t/customizing-liferay-portal)
 
-[Plugin Security and PACL](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl)
+[Plugin Security and PACL](/docs/6-2/tutorials/-/knowledge_base/t/plugin-security-and-pacl)
 
-[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/liferay-ide)
+[Developing Plugins with Liferay IDE](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ide)
 
-[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)
+[User Interfaces with AlloyUI](/docs/6-2/tutorials/-/knowledge_base/t/alloyui)
 
-[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+[Liferay UI Taglibs](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ui-taglibs)

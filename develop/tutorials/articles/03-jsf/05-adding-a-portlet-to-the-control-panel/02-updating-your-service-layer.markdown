@@ -1,14 +1,18 @@
-# Updating Your JSF Application's Service Layer [](id=updating-your-jsf-applications-service-layer)
+---
+header-id: updating-your-jsf-applications-service-layer
+---
+
+# Updating Your JSF Application's Service Layer
 
 Just as you did in a previous JSF learning path on
-[Adding Permissions Resources to the Service Layer](/develop/tutorials/-/knowledge_base/6-2/adding-permissions-resources-to-the-service-layer),
+[Adding Permissions Resources to the Service Layer](/docs/6-2/tutorials/-/knowledge_base/t/adding-permissions-resources-to-the-service-layer),
 you'll need to add a service method in your `GuestbookLocalServiceImpl` class.
 The new service method you'll create needs to delete a guestbook and its
 resources from the database. By creating this method, you'll be able to create
 the Delete button, which will be used to delete guestbook entities from your
 Guestbook Admin portlet. 
 
-## Adding the Delete Service Method for Your Guestbook Entities [](id=adding-the-delete-service-method-for-your-guestbook-entities)
+## Adding the Delete Service Method for Your Guestbook Entities
 
 Remember from previous learning paths that when editing your `-LocalServiceImpl`
 classes, you must run Service Builder to update the affected interfaces and

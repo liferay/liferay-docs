@@ -1,4 +1,8 @@
-# Creating URL Routes [](id=creating-url-routes)
+---
+header-id: creating-url-routes
+---
+
+# Creating URL Routes
 
 If you have the Guestbook Portlet deployed and added to a page, click on the
 *Add Guestbook* button. Here's what the generated URL looks like:
@@ -18,7 +22,7 @@ any portlet URL, and you can do it in two easy steps:
 
 You'll learn how to do that next. 
 
-## Defining Friendly URL Routes [](id=defining-friendly-url-routes)
+## Defining Friendly URL Routes
 
 Your Friendly URL is ready to emerge from the beastly URL above. While
 you're here, you can clean up the URLs for some of the other links as well.
@@ -85,7 +89,7 @@ There are two tags from the XML to focus on:
 Liferay isn't yet aware of your intention to use friendly URLs. The next
 section shows you how to inform the portal.
 
-## Declaring Friendly URL Mapping to Liferay [](id=declaring-friendly-url-mapping-to-liferay)
+## Declaring Friendly URL Mapping to Liferay
 
 Modify the Liferay portlet descriptor,
 `docroot/WEB-INF/liferay-portlet.xml`, by adding these lines after the

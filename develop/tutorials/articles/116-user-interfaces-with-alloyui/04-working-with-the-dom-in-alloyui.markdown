@@ -1,4 +1,8 @@
-# Working With the DOM in AlloyUI [](id=working-with-the-dom-in-alloyui)
+---
+header-id: working-with-the-dom-in-alloyui
+---
+
+# Working With the DOM in AlloyUI
 
 In this tutorial, you'll learn how to manipulate HTML elements in the DOM
 (Document Object Model) using AlloyUI. You'll also learn how to handle events on
@@ -28,7 +32,7 @@ The exercises in this tutorial show you various ways to manipulate DOM nodes in
 JSPs, so feel free to write similar code in your JSPs. After this tutorial, 
 you'll master the DOM with AlloyUI in no time! 
 
-## Manipulating Nodes [](id=manipulating-nodes)
+## Manipulating Nodes
 
 AlloyUI provides the `html()` method to set and get the inner HTML value of a
 node object. To *get* a node object's value, invoke the `html()` method, passing
@@ -63,12 +67,8 @@ an attribute setting `title='section'`.
 `A.one('#container')` returns the first element with the ID attribute setting
 `id="container"`. 
 
-+$$$
-
-**Note:** [AlloyUI Rosetta Stone](http://alloyui.com/rosetta-stone/#selectors)
-lists all the selectors that AlloyUI supports. 
-
-$$$
+| **Note:** [AlloyUI Rosetta Stone](http://alloyui.com/rosetta-stone/#selectors)
+| lists all the selectors that AlloyUI supports.
 
 Here's example JSP code that demonstrates getting the value of a specific
 paragraph node and applying its value to part of another paragraph node's new
@@ -228,7 +228,7 @@ At this point, you know how to manipulate nodes that are on your page. It's time
 to dynamically work with user input. The next section shows you how to handle
 such input using node object events. 
  
-## Handling Node Object Events [](id=handling-node-object-events)
+## Handling Node Object Events
 
 Some HTML nodes can generate events. You can handle these events to process
 their information and to provide content based on interaction with the user.
@@ -261,11 +261,7 @@ the available events you can subscribe to on an `<aui:button>` are `blur`(when a
 node loses focus), `click`, `focus`(when a node gets focus), `mouseout`, and
 `mouseover`.
 
-+$$$
-
-**Note:** You can find descriptions of more AlloyUI event methods at the [AlloyUI Rosetta Stone](http://alloyui.com/rosetta-stone/#common).
-
-$$$
+| **Note:** You can find descriptions of more AlloyUI event methods at the [AlloyUI Rosetta Stone](http://alloyui.com/rosetta-stone/#common).
 
 The example below subscribes to the `click` event of a button that's a part of a
 simple form. The form has a single input field that has the attribute setting
@@ -334,7 +330,7 @@ features that you've learned in this tutorial. The portlet is called the
 *Silly Phrase Generator*. If you want to have fun trying it out and
 familiarizing yourself with its code, continue with the next section. 
 
-## Bonus: Silly Phrase Generator [](id=bonus-silly-phrase-generator)
+## Bonus: Silly Phrase Generator
 
 The Silly Phrase Generator portlet relies heavily on AlloyUI's DOM manipulation
 and event handling features. You can add the following code into a portlet JSP
@@ -472,8 +468,8 @@ phrase!
 Congratulations! Your silly phrase generator is complete, and you now have a
 basic understanding of how to manipulate the DOM using AlloyUI. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
- [Using AlloyUI Carousel](/develop/tutorials/-/knowledge_base/6-2/using-alloyui-carousel-in-your-portlet)
+ [Using AlloyUI Carousel](/docs/6-2/tutorials/-/knowledge_base/t/using-alloyui-carousel-in-your-portlet)
 
- [Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+ [Liferay UI Taglibs](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ui-taglibs)

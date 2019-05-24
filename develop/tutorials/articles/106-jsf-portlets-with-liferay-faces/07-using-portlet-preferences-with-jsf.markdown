@@ -1,4 +1,8 @@
-# Using Portlet Preferences with JSF [](id=using-portlet-preferences-with-jsf)
+---
+header-id: using-portlet-preferences-with-jsf
+---
+
+# Using Portlet Preferences with JSF
 
 JSF portlet developers often must enable the end-user to personalize portlets
 in some way. To meet this requirement, the Portlet 2.0 specification lets you
@@ -45,12 +49,12 @@ facelet file `/preferences.xhtml` as the view, by mapping it to the
 Terrific! You're now familiar with specifying and using portlet preferences in
 your JSF portlet. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Localizing JSF Portlets](/develop/tutorials/-/knowledge_base/6-2/localizing-jsf-portlets)
+[Localizing JSF Portlets](/docs/6-2/tutorials/-/knowledge_base/t/localizing-jsf-portlets)
 
-[Liferay Faces Alloy UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-alloy-ui-components)
+[Liferay Faces Alloy UI Components](/docs/6-2/tutorials/-/knowledge_base/t/liferay-faces-alloy-ui-components)
 
-[Liferay Faces Bridge UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-bridge-ui-components)
+[Liferay Faces Bridge UI Components](/docs/6-2/tutorials/-/knowledge_base/t/liferay-faces-bridge-ui-components)
 
-[Understanding Liferay Faces Bridge](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-bridge)
+[Understanding Liferay Faces Bridge](/docs/6-2/tutorials/-/knowledge_base/t/understanding-liferay-faces-bridge)

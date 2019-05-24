@@ -1,4 +1,8 @@
-# Managing RSS Feeds in Liferay [](id=managing-rss-feeds-in-liferay)
+---
+header-id: managing-rss-feeds-in-liferay
+---
+
+# Managing RSS Feeds in Liferay
 
 RSS is a family of web feed formats used to publish frequently updated works
 such as blog entries and news articles. RSS allows users to stay up-to-date with
@@ -12,7 +16,7 @@ site. Many RSS readers are available today, including web-based readers, ones
 for the Windows, Mac, and Linux platforms, and ones for mobile devices. Let's
 see how to create RSS feeds in Liferay.
 
-## Managing RSS Feeds from the Control Panel [](id=managing-rss-feeds-from-the-control-panel)
+## Managing RSS Feeds from the Control Panel
 
 To manage a Liferay site's RSS feeds, navigate to the Site Administration &rarr;
 Content page of your site and click *Web Content*. Site administrators can use
@@ -22,13 +26,9 @@ administrators can also use the Web Content administration portlet to manage
 their site's RSS feeds. Click *Manage* &rarr; *Feeds* if you'd like to add,
 edit, or delete RSS feeds.
 
-+$$$
-
-**Note:** The Web Content Feeds portlet is deprecated for Liferay 6.2 and will
-be removed in Liferay 7.0. The portlet will be migrated to the Asset Publisher
-portlet. 
-
-$$$
+| **Note:** The Web Content Feeds portlet is deprecated for Liferay 6.2 and will
+| be removed in Liferay 7.0. The portlet will be migrated to the Asset Publisher
+| portlet.
 
 ![Figure 3.7: Clicking *Manage* &rarr; *Feeds* from the Control Panel's Web Content administration portlet opens a popup window which displays your site's RSS feeds. You can add or edit RSS feeds, configure their permissions, or delete them.](../../images/web-content-manage-feeds.png)
 
@@ -109,7 +109,7 @@ set to `true`. If you keep the default, RSS enabled, you can make several other
 RSS property customizations. Please refer to the RSS section of your
 `portal.properties` file for details.
 
-## Using the RSS Portlet [](id=using-the-rss-portlet)
+## Using the RSS Portlet
 
 The RSS portlet allows you to display any number of RSS feeds and configure how
 they are displayed. If you're looking for a web-based RSS reader, look no

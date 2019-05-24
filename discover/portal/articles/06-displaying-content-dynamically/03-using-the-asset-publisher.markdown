@@ -1,4 +1,8 @@
-# Using the Asset Publisher [](id=using-the-asset-publisher)
+---
+header-id: using-the-asset-publisher
+---
+
+# Using the Asset Publisher
 
 As we create web content, it's important to keep in mind that to Liferay, the
 pieces of content are assets, just like message board entries and blog posts.
@@ -9,7 +13,7 @@ This helps in creating a more dynamic web site: you can place user-created wiki
 entries, blog posts, or message board messages in context with your content.
 Let's examine some of its features.
 
-## Querying for Content [](id=querying-for-content)
+## Querying for Content
 
 The Asset Publisher portlet is a highly configurable application that lets you
 query for mixed types of content on the fly. By giving you the ability to
@@ -50,7 +54,7 @@ start by learning how select content manually. You'll see that it's very similar
 to using the Web Content Display portlet except that you can select assets of
 any type, not just web content instances.
 
-### Selecting Assets Manually [](id=selecting-assets-manually)
+### Selecting Assets Manually
 
 By selecting *Manual* from the select box beneath *Asset Selection*, you tell
 the Asset Publisher that you want to select content manually. You can configure
@@ -93,7 +97,7 @@ different scopes, it can be time-consuming to periodically update the assets
 that should be displayed. It's often more convenient to use the Asset Publisher
 to select content dynamically.
 
-### Selecting Assets Dynamically [](id=selecting-assets-dynamically)
+### Selecting Assets Dynamically
 
 The Asset Publisher's default behavior is to select assets dynamically according
 a set of customizable rules. These rules can be stacked on top of each other so
@@ -190,7 +194,7 @@ settings which we'll examine next.
 
 Other changes in the rest of the options will come into effect after clicking *Save*.
 
-## Configuring Display Settings [](id=configuring-display-settings)
+## Configuring Display Settings
 
 Open the *Display Settings* subtab of the Setup tab of the Asset Publisher's
 Configuration window. Here, you can configure many more settings that control
@@ -238,17 +242,13 @@ Similarly, a generic web content instance would be displayed in the Asset
 Publisher of its configured display page. See the section below on display pages
 for more information.
 
-+$$$
-
-**Tip:** When the Asset Publisher displays web
- content instances that have an associated small image, the small image becomes a
- link to the full instance.  To use this feature, add or edit a web content
- instance that the Asset Publisher should display. Before clicking *Publish*,
- click on *Abstracts*, flag *Small Image*, and upload an image.  Then click
- *Publish*. Once your web content instance appears in the Asset Publisher's list,
- clicking the small image takes you to the full instance.
-
-$$$
+| **Tip:** When the Asset Publisher displays web
+|  content instances that have an associated small image, the small image becomes a
+|  link to the full instance.  To use this feature, add or edit a web content
+|  instance that the Asset Publisher should display. Before clicking *Publish*,
+|  click on *Abstracts*, flag *Small Image*, and upload an image.  Then click
+|  *Publish*. Once your web content instance appears in the Asset Publisher's list,
+|  clicking the small image takes you to the full instance.
 
 **Number of Items to Display**: Here, you can select the maximum number of
 assets that can be displayed by the Asset Publisher. However, if pagination is
@@ -290,7 +290,7 @@ content to one of several formats:
 - TXT
 
     Please refer to the section on
-    [Liferay Server Administration](/discover/portal/-/knowledge_base/6-2/server-administration)
+    [Liferay Server Administration](/docs/6-2/user/-/knowledge_base/u/server-administration)
     for information on setting up Liferay's OpenOffice/LibreOffice document
     conversion functionality.
 
@@ -312,15 +312,11 @@ enable/disable the following options for displayed assets:
     corresponding social features to the view full of the asset in the Asset
     Publisher.
 
-+$$$
-
-**Tip:** An alternate way to add comments
-     and ratings to a page is through the *Page Comments* and *Page Ratings*
-     portlets.  Just add the portlets in the appropriate location near the asset
-     you'd like to have feedback for. Note that starting in Liferay 6.2, these
-     portlets can no longer be exported.
-
-$$$
+| **Tip:** An alternate way to add comments
+|      and ratings to a page is through the *Page Comments* and *Page Ratings*
+|      portlets.  Just add the portlets in the appropriate location near the asset
+|      you'd like to have feedback for. Note that starting in Liferay 6.2, these
+|      portlets can no longer be exported.
 
 <!-- TODO
 **Display Style**:
@@ -343,7 +339,7 @@ adjust the ones that apply to your situation. You'll want to use the Asset
 Publisher to query for different kinds of assets in the portal that contain
 relevant information for your users.
 
-## Configuring Asset Publisher Subscriptions [](id=configuring-asset-publisher-subscriptions)
+## Configuring Asset Publisher Subscriptions
 
 The Asset Publisher portlet supports two kinds of subscriptions: RSS
 subscriptions and email subscriptions. To enable subscriptions, open the Asset
@@ -383,7 +379,7 @@ to your `portal-ext.properties` file and change the number:
 Next, we'll look at Display Pages, an addition to the asset framework introduced
 by Liferay 6.1.
 
-## Content Display Pages [](id=content-display-pages)
+## Content Display Pages
 
 If you've been using Liferay for a while, you might have noticed something about
 how Liferay handles web content--content is never tied directly to a page. While
@@ -408,16 +404,12 @@ its configuration window. Then check the *Set as the Default Asset Publisher for
 This Page* box. Also, for its display settings, set the Display Style to
 *Abstracts* and the Asset Link Behavior to *View in Context*.
 
-+$$$
-
-**Note:** Web content linked in the Asset
- Publisher can be viewed by clicking their asset links. With the *View in
-Context* behavior checked, the link displays the Web Content in its
-configured display page. If the web content does not have a configured display
-page, it is displayed in the web content display portlet to which the
-asset belongs.
-
-$$$
+| **Note:** Web content linked in the Asset
+|  Publisher can be viewed by clicking their asset links. With the *View in
+| Context* behavior checked, the link displays the Web Content in its
+| configured display page. If the web content does not have a configured display
+| page, it is displayed in the web content display portlet to which the
+| asset belongs.
 
 You may now be thinking, "Wait, you just told me that each Web Content item has
 its own URL, and that this is somehow related to pages where we display a whole

@@ -1,4 +1,8 @@
-# Creating Social Media Links for Your Theme [](id=creating-social-media-links-for-your-theme)
+---
+header-id: creating-social-media-links-for-your-theme
+---
+
+# Creating Social Media Links for Your Theme
 
 Follow the steps below to add the social media links to the Footer.
 

@@ -1,4 +1,8 @@
-# Implementing a UI with JSF Views [](id=implementing-a-ui-with-jsf-views)
+---
+header-id: implementing-a-ui-with-jsf-views
+---
+
+# Implementing a UI with JSF Views
 
 Your services and managed beans are all set for action, but how will your users
 interact with the portlet? You'll need to implement a user interface for your
@@ -21,7 +25,7 @@ your guestbook bean, and handles the navigation between views.
 Now that you have a fundamental understanding of the views and what they do,
 it's time to dive in and create them! 
 
-## Editing the Default View [](id=editing-the-default-view)
+## Editing the Default View
 
 Currently, your guestbook only has the default view, which has some filler text.
 The `view.xhtml` file located in your portlet's `docroot/views` directory is
@@ -30,15 +34,11 @@ button is clicked or a page is rendered, it will be processed through your
 `view.xhtml` file. Therefore, this view is very bare bones, and only points to
 the view that should be rendered. 
 
-+$$$
-
-**Note:** You can change your default view by editing your portlet's
-`docroot/WEB-INF/portlet.xml` file. Find the `<init-param>` element with the
-name `javax.portlet.faces.defaultViewId.view`, and change the `<value>` element
-to your new default view's path. For the guestbook portlet, you'll keep your
-default view set to the `view.xhtml` file. 
-
-$$$
+| **Note:** You can change your default view by editing your portlet's
+| `docroot/WEB-INF/portlet.xml` file. Find the `<init-param>` element with the
+| name `javax.portlet.faces.defaultViewId.view`, and change the `<value>` element
+| to your new default view's path. For the guestbook portlet, you'll keep your
+| default view set to the `view.xhtml` file.
 
 As was mentioned earlier, there are three additional views, so you'll use a
 choose-when conditional statement to select the appropriate view to be rendered.
@@ -70,14 +70,14 @@ renders the `master` view.
 Awesome! Your default navigation view is complete. It's almost time to create
 the views to navigate to, but first, you'll create your language keys. 
 
-## Specifying Your Language Keys [](id=specifying-your-language-keys)
+## Specifying Your Language Keys
 
 Before you begin creating your UI, it's wise to specify your language keys. By
 specifying language keys, you can reuse phrases in any of your views. You can
 also create multiple language properties files, or resource bundles, to offer
 translations. If you'd like to learn more information about language keys and
 localization, visit the
-[Localization](/develop/tutorials/-/knowledge_base/6-2/localization) module,
+[Localization](/docs/6-2/tutorials/-/knowledge_base/t/localization) module,
 which offers several useful tutorials on this subject. 
 
 For the JSF guestbook, you'll stick to providing language keys for English. 
@@ -128,7 +128,7 @@ file in JSF portlets.
 Your guestbook portlet is now equipped with all of its language keys. Now it's
 time to begin creating your portlet's views. 
 
-## Creating Your Guestbook's Master View [](id=creating-your-guestbooks-master-view)
+## Creating Your Guestbook's Master View
 
 Now that you have your navigation view and language keys configured, it's time
 to create the actual pages your portlet's users will see.
@@ -298,7 +298,7 @@ table, and gives you two buttons that navigate you to the `guestbook` and
 Next, you'll create the remaining views so you can create new guestbooks and
 entries. 
 
-## Creating Your Guestbook View [](id=creating-your-guestbook-view)
+## Creating Your Guestbook View
 
 The `guestbook` view will serve as the view that is displayed when a user clicks
 the *Add Guestbook* button. The final `guestbook` view will appear in your
@@ -385,7 +385,7 @@ Terrific! Your `guestbook` view is complete!
 Now it's time to create the `entry` view for when a user would like to add a
 guestbook entry. 
 
-## Creating Your Guestbook Entry View [](id=creating-your-guestbook-entry-view)
+## Creating Your Guestbook Entry View
 
 Now that you can add guestbooks, it's time to create the view that allows users
 to create guestbook entries. The `entry` view will display when clicking on the

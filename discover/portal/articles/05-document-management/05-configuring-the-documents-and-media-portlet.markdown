@@ -1,4 +1,8 @@
-# Configuring the Documents and Media portlet [](id=configuring-the-documents-and-media-portlet)
+---
+header-id: configuring-the-documents-and-media-portlet
+---
+
+# Configuring the Documents and Media portlet
 
 To configure the Documents and Media portlet, click on the gear icon at the top
 of the portlet window and select *Configuration*. The portlet-specific

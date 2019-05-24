@@ -1,4 +1,8 @@
-# Extending and customizing Liferay for your own needs [](id=extending-and-customizing-liferay-for-your-own-needs)
+---
+header-id: extending-and-customizing-liferay-for-your-own-needs
+---
+
+# Extending and customizing Liferay for your own needs
 
 Beyond using Liferay as a development platform for new applications, Liferay
 Portal has also been designed to be extended and modified. As an open source

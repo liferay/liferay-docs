@@ -1,4 +1,8 @@
-# Verifying Successful Project Import [](id=verifying-successful-project-import)
+---
+header-id: verifying-successful-project-import
+---
+
+# Verifying Successful Project Import
 
 Once you've imported a project, you can verify that Liferay IDE correctly 
 recognizes it as a Liferay project. 
@@ -38,7 +42,7 @@ Congratulations on verifying that your project imported properly!
 
 **Related Topics:**
 
-[Setting Up Liferay Maven Facets in Existing Liferay Maven Plugin Projects](/develop/tutorials/-/knowledge_base/6-2/setting-up-liferay-maven-facets-in-existing-liferay-maven-plugin-projects)
+[Setting Up Liferay Maven Facets in Existing Liferay Maven Plugin Projects](/docs/6-2/tutorials/-/knowledge_base/t/setting-up-liferay-maven-facets-in-existing-liferay-maven-plugin-projects)
 
-[Deploying Plugins](/develop/tutorials/-/knowledge_base/6-2/deploying-plugins)
+[Deploying Plugins](/docs/6-2/tutorials/-/knowledge_base/t/deploying-plugins)
 

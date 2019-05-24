@@ -1,4 +1,8 @@
-# Search and Indexing [](id=search-and-indexing)
+---
+header-id: search-and-indexing
+---
+
+# Search and Indexing
 
 Suppose you're developing a data-driven application. You anticipate that your
 application will have to store a huge number of database records. You could

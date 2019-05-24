@@ -1,4 +1,8 @@
-# Common Plugin Security Pitfalls [](id=common-plugin-security-pitfalls)
+---
+header-id: common-plugin-security-pitfalls
+---
+
+# Common Plugin Security Pitfalls
 
 As you develop your plugin, you need to anticipate your plugin's actions in 
 light of Liferay's secured environment. Liferay's Plugin Security Manager 
@@ -21,7 +25,7 @@ them if you're not being careful enough. This tutorial considers scenarios that
 illustrate both of these mistakes and then explains how to avoid making them in 
 your plugin. Security exceptions are presented first. 
 
-## Handling Security Exceptions [](id=handling-security-exceptions)
+## Handling Security Exceptions
 
 When you're running on Liferay Portal with the security manager enabled for your
 plugin, you must only access authorized resources. If you invoke a method 
@@ -48,9 +52,9 @@ security exceptions. The Java SE Security documentation explains how to deal
 with them. In many cases, you can declare your plugin's permissions to avoid
 running into these exceptions. Configuring your plugin's permissions and
 security policies is covered in the tutorial 
-[Building and Testing Your Plugin's PACL](/develop/tutorials/-/knowledge_base/6-2/building-and-testing-your-plugins-pacl). 
+[Building and Testing Your Plugin's PACL](/docs/6-2/tutorials/-/knowledge_base/t/building-and-testing-your-plugins-pacl). 
 
-## Accessing Classloaders [](id=accessing-classloaders)
+## Accessing Classloaders
 
 The second common mistake you should avoid is allowing your plugin to bring up
 classloaders unintentionally, via other frameworks or libraries. Consider the
@@ -142,17 +146,17 @@ and Liferay's Plugin Security Management, the easier it is for you to write
 security-aware plugins. Keeping this in mind, you can now confidently proceed
 to create plugins! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Setting Permissions](/develop/tutorials/-/knowledge_base/6-2/setting-permissions)
+[Setting Permissions](/docs/6-2/tutorials/-/knowledge_base/t/setting-permissions)
 
-[Developing with the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
+[Developing with the Plugins SDK](/docs/6-2/tutorials/-/knowledge_base/t/plugins-sdk)
 
-[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/liferay-ide)
+[Developing Plugins with Liferay IDE](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ide)
 
-[Developing with Maven](/develop/tutorials/-/knowledge_base/6-2/maven)
+[Developing with Maven](/docs/6-2/tutorials/-/knowledge_base/t/maven)
 
-[MVC Portlets](/develop/tutorials/-/knowledge_base/6-2/developing-jsp-portlets-using-liferay-mvc)
+[MVC Portlets](/docs/6-2/tutorials/-/knowledge_base/t/developing-jsp-portlets-using-liferay-mvc)
 
-[Liferay Faces](/develop/tutorials/-/knowledge_base/6-2/writing-a-jsf-application-using-liferay-faces)
+[Liferay Faces](/docs/6-2/tutorials/-/knowledge_base/t/writing-a-jsf-application-using-liferay-faces)
 

@@ -1,4 +1,8 @@
-# Updating Your User Interface For Search [](id=updating-your-user-interface-for-search)
+---
+header-id: updating-your-user-interface-for-search
+---
+
+# Updating Your User Interface For Search
 
 Updating the Guestbook portlet's user interface for search involves two steps:
 
@@ -10,7 +14,7 @@ Updating the Guestbook portlet's user interface for search involves two steps:
 
 You'll start by updating the Guestbook portlet's default view JSP.
 
-## Adding a Search Bar to the Guestbook Portlet [](id=adding-a-search-bar-to-the-guestbook-portlet)
+## Adding a Search Bar to the Guestbook Portlet
 
 Open the guestbook-portlet project's `docroot/html/guestbook/view.jsp` file and
 add the following code near the top of the file, just after the scriptlet that
@@ -65,7 +69,7 @@ URL along with the `keywords` parameter containing the search query. Now it's
 time to create the `view_search.jsp` form so that the search results can be
 displayed.
 
-## Creating a Search Results JSP for the Guestbook Portlet [](id=creating-a-search-results-jsp-for-the-guestbook-portlet)
+## Creating a Search Results JSP for the Guestbook Portlet
 
 Your search results JSP should display the guestbook entries that match the
 search query in a search container. The Actions button should be available for

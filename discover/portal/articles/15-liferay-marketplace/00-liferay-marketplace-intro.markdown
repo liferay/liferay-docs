@@ -1,4 +1,8 @@
-# Leveraging the Liferay Marketplace [](id=leveraging-the-liferay-marketplace)
+---
+header-id: leveraging-the-liferay-marketplace
+---
+
+# Leveraging the Liferay Marketplace
 
 Liferay Marketplace is an exciting hub for sharing, browsing and downloading
 Liferay-compatible applications. As enterprises look for ways to build and

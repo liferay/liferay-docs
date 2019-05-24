@@ -1,4 +1,8 @@
-# Understanding Liferay Faces Bridge [](id=understanding-liferay-faces-bridge)
+---
+header-id: understanding-liferay-faces-bridge
+---
+
+# Understanding Liferay Faces Bridge
 
 The Liferay Faces Bridge enables you to deploy JSF web apps as portlets without
 writing portlet-specific code. It also contains innovative features that make it
@@ -76,11 +80,11 @@ namespace.
 
 With the main aspects of JSF portlet bridges described, you can learn how
 a JSF application uses the bridge in the
-[Creating a JSF Portlet](/develop/tutorials/-/knowledge_base/6-2/creating-a-jsf-portlet)
+[Creating a JSF Portlet](/docs/6-2/tutorials/-/knowledge_base/t/creating-a-jsf-portlet)
 learning path. Next, you'll learn how to configure Liferay Faces Bridge,
 starting with configuring its scope behavior. 
 
-## Configuring Bridge Request Scope Behavior [](id=configuring-bridge-request-scope-behavior)
+## Configuring Bridge Request Scope Behavior
 
 For this part of the tutorial, you'll step through requirements, drawbacks,
 assumptions, and behaviors for configuring the Bridge Request Scope. 
@@ -176,7 +180,7 @@ Now you know the two options for Bridge Request Scope behavior. By considering
 the outlined assumptions and drawbacks, you should be able to make an educated
 decision about how you'd like to implement the Bridge Request Scope behavior. 
 
-## Configuring the Portlet Container Abilities [](id=configuring-the-portlet-container-abilities)
+## Configuring the Portlet Container Abilities
 
 Liferay Faces Bridge can be run in a variety of portlet containers (Liferay,
 Pluto, etc.) and is aware of some of the abilities (or limitations) of these
@@ -202,7 +206,7 @@ handler attempts to set the status code of downloaded resources to values like
 By configuring portlet container capabilities, you can take advantage of your
 portlet container's specific strengths while using Liferay Faces Bridge. 
 
-## Configuring XML Entity Validation [](id=configuring-xml-entity-validation)
+## Configuring XML Entity Validation
 
 <!-- Explain why this is helpful. - Jim -->
 
@@ -221,7 +225,7 @@ portlet project's `WEB-INF/web.xml` descriptor:
 Excellent! You now know how to toggle XML entity validation using Liferay Faces
 Bridge. 
 
-## Configuring Resource Buffer Size [](id=configuring-resource-buffer-size)
+## Configuring Resource Buffer Size
 
 Liferay Faces Bridge lets you set the size of the buffer used to load resources
 into memory, as file contents are copied to the response. This part of the
@@ -241,7 +245,7 @@ Alternatively, you can specify the `com.liferay.faces.bridge.resourceBufferSize`
 value on a portlet-by-portlet basis in the portlet project's
 `WEB-INF/portlet.xml` descriptor. 
 
-## Configuring Distinct Request Scoped Managed Beans [](id=configuring-distinct-request-scoped-managed-beans)
+## Configuring Distinct Request Scoped Managed Beans
 
 Liferay Portal gives you the ability to specify whether or not request
 attributes are shared among portlets. You can specify this using the
@@ -287,7 +291,7 @@ value to `true`.
 Great! You can now configure distinct request scoped managed beans with Liferay
 Faces Bridge. 
 
-## Configuring View Parameters [](id=configuring-view-parameters)
+## Configuring View Parameters
 
 In the case of a portlet `RenderRequest`, Section 5.2.6 of the JSR 329/378 Spec
 requires that the bridge only executes the `RESTORE_VIEW` and `RENDER_RESPONSE`
@@ -313,14 +317,14 @@ the param value to `false`.
 Great! You've learned another JSF portlet bridge standard and how to configure
 several key options in Liferay Faces Bridge. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Understanding Liferay Faces Alloy](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-alloy)
+[Understanding Liferay Faces Alloy](/docs/6-2/tutorials/-/knowledge_base/t/understanding-liferay-faces-alloy)
 
-[Understanding Liferay Faces Portal](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-portal)
+[Understanding Liferay Faces Portal](/docs/6-2/tutorials/-/knowledge_base/t/understanding-liferay-faces-portal)
 
-[Creating and Deploying JSF Portlets](/develop/tutorials/-/knowledge_base/6-2/creating-and-deploying-jsf-portlets)
+[Creating and Deploying JSF Portlets](/docs/6-2/tutorials/-/knowledge_base/t/creating-and-deploying-jsf-portlets)
 
-[Developing Liferay Faces Portlets with Maven](/develop/tutorials/-/knowledge_base/6-2/developing-liferay-faces-portlets-with-maven)
+[Developing Liferay Faces Portlets with Maven](/docs/6-2/tutorials/-/knowledge_base/t/developing-liferay-faces-portlets-with-maven)
 
-[Specifying and Using Portlet Preferences with JSF](/develop/tutorials/-/knowledge_base/6-2/using-portlet-preferences-with-jsf)
+[Specifying and Using Portlet Preferences with JSF](/docs/6-2/tutorials/-/knowledge_base/t/using-portlet-preferences-with-jsf)

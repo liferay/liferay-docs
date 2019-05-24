@@ -1,4 +1,8 @@
-# Installing Liferay on Tomcat 7 [](id=installing-liferay-on-tomcat-7)
+---
+header-id: installing-liferay-on-tomcat-7
+---
+
+# Installing Liferay on Tomcat 7
 
 *Liferay Home* is one folder above Tomcat's install location.
 
@@ -18,7 +22,7 @@ the dependencies file should be called
 
 Next, let's get started by addressing Liferay's library dependencies.
 
-## Dependency Jars [](id=dependency-jars)
+## Dependency Jars
 
 Liferay Portal depends on several `JAR` files found in the Liferay
 Dependencies Archive. In addition to these, you need the proper driver for your
@@ -80,7 +84,7 @@ Extract the JAR file and copy it to `$TOMCAT_HOME/lib/ext`.
 Now that you have the necessary libraries in place, we'll move on to
 configuring your domain.
 
-## Tomcat Configuration [](id=tomcat-configuration)
+## Tomcat Configuration
 
 There are several configuration steps you need to complete before Tomcat can
 run Liferay. Let's get started.
@@ -170,7 +174,7 @@ your database and mail session (and we recommend you do), you can skip the next
 sections and move to the section titled *Enabling PACL*. Next we'll look at
 configuring your database with Tomcat.
 
-## Database Configuration [](id=database-configuration)
+## Database Configuration
 
 If you want Tomcat to manage your data source, use the following procedure. If
 you want to use Liferay's built-in data source, you can skip this section.
@@ -197,18 +201,14 @@ Liferay.
             />
         </Context>
 
-+$$$
-
-**Note:** The above resource definition assumes your database name is *lportal*
-and your MySQL username and password are both *root*. You'll have to update
-these values with your own database name and credentials.
-
-$$$
+| **Note:** The above resource definition assumes your database name is *lportal*
+| and your MySQL username and password are both *root*. You'll have to update
+| these values with your own database name and credentials.
 
 Your Tomcat managed data source is now configured. Next is your mail
 session.
 
-## Mail Configuration [](id=mail-configuration)
+## Mail Configuration
 
 If you want to manage your mail session with Tomcat, use the following
 instructions. If you want to use the built-in Liferay mail session, you can
@@ -242,7 +242,7 @@ replace the example mail session values with your own.
 Your mail session is configured. Next, you'll make sure Liferay can 
 access your mail session and database.
 
-## Configuring your database and mail session [](id=configuring-your-database-and-mail-session)
+## Configuring your database and mail session
 
 In this section you'll specify appropriate properties for connecting to your
 database and mail session.
@@ -271,7 +271,7 @@ database and mail session.
 It's just that easy! Before you deploy Liferay Portal, you should configure
 Portal Access Control Language (PACL) with Liferay on Tomcat. 
 
-## Enabling PACL [](id=enabling-pacl)
+## Enabling PACL
 
 To enable PACL, you need to enable the security manager and add some required
 permissions to the server policy configuration file. This entails editing
@@ -299,7 +299,7 @@ Tomcat reports the message `Using Security Manager` to your terminal.
 
 Now you have PACL enabled and configured for your portal. 
 
-## Adding Mojarra [](id=adding-mojarra)
+## Adding Mojarra
 
 If you'd like to use JSF applications in your Tomcat application server, you'll
 need to add Mojarra. If you do not plan on using JSF applications in your
@@ -430,12 +430,12 @@ You've officially added Mojarra to your application server.
 If you're interested in configuring CDI for your JSF portlets running on Tomcat,
 you'll also need to configure Weld. For more information on configuring Weld for
 Tomcat, visit the
-[Configuring JSF Portlets to Use CDI](/develop/tutorials/-/knowledge_base/6-2/contexts-and-dependency-injection-for-jsf-portlets#configuring-jsf-portlets-to-use-cdi)
+[Configuring JSF Portlets to Use CDI](/docs/6-2/tutorials/-/knowledge_base/t/contexts-and-dependency-injection-for-jsf-portlets#configuring-jsf-portlets-to-use-cdi)
 section. 
 
 You're now all set to deploy Liferay. 
 
-## Deploy Liferay [](id=deploy-liferay)
+## Deploy Liferay
 
 It's time to deploy Liferay as an exploded web archive within your
 `$TOMCAT_HOME/webapps` folder. 

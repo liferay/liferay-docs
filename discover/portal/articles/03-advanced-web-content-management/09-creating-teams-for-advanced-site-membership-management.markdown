@@ -1,4 +1,8 @@
-# Creating Teams for Advanced Site Membership Management [](id=creating-teams-for-advanced-site-membership-management)
+---
+header-id: creating-teams-for-advanced-site-membership-management
+---
+
+# Creating Teams for Advanced Site Membership Management
 
 If you have an ad hoc group of users who perform the same set of tasks in a
 site, you can organize them into Site Teams. Site administrators can assign
@@ -20,22 +24,18 @@ The permissions assigned to a Site Team only apply to that site. Knowing that
 a team's permissions don't impact other sites, site administrators can
 concentrate on defining and applying permissions to their sites' teams. 
 
-+$$$
-
-To create and apply permissions for a group of users to use across multiple
-sites or organizations in your portal, consider aggregating the users into a
-[User Group](/discover/portal/-/knowledge_base/6-2/user-groups) and assigning
-the User Group permissions via
-[Roles](/discover/portal/-/knowledge_base/6-2/roles-and-permissions). 
-
-$$$
+| To create and apply permissions for a group of users to use across multiple
+| sites or organizations in your portal, consider aggregating the users into a
+| [User Group](/docs/6-2/user/-/knowledge_base/u/user-groups) and assigning
+| the User Group permissions via
+| [Roles](/docs/6-2/user/-/knowledge_base/u/roles-and-permissions).
 
 To create a team within a site, first navigate to the Site Administration page
 of your site and select *Users* &rarr; *Site Teams*. It's important to note that
 configuring other site membership groupings, such as *Users*, *Organizations*,
 and *User Groups* can be done in the *Site Memberships* portlet, which is also
 located in the Users tab. You can visit the 
-[User Management](/discover/portal/-/knowledge_base/6-2/user-management)
+[User Management](/docs/6-2/user/-/knowledge_base/u/user-management)
 chapter for more information on how these site memberships work. Finally, click the
 *Add Team* button. 
 

@@ -1,4 +1,8 @@
-# Setting a Base Theme [](id=setting-a-base-theme)
+---
+header-id: setting-a-base-theme
+---
+
+# Setting a Base Theme
 
 Liferay's themes are built on top of two base themes, named *_unstyled* and
 *_styled*. If you have another theme that you're rather base yours on, you can
@@ -46,6 +50,6 @@ As you can see, setting a base theme is a piece of cake!
 
 **Related Topics**
 
-[Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/6-2/importing-resources-with-your-themes)
+[Importing Resources with Your Themes](/docs/6-2/tutorials/-/knowledge_base/t/importing-resources-with-your-themes)
 
-[Developing Liferay Theme Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/developing-liferay-theme-plugins-with-maven)
+[Developing Liferay Theme Plugins with Maven](/docs/6-2/tutorials/-/knowledge_base/t/developing-liferay-theme-plugins-with-maven)

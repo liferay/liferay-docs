@@ -1,4 +1,8 @@
-# Preparing iOS Projects for Liferay Screens [](id=preparing-ios-projects-for-liferay-screens)
+---
+header-id: preparing-ios-projects-for-liferay-screens
+---
+
+# Preparing iOS Projects for Liferay Screens
 
 To develop iOS apps with Liferay Screens, you must first install and configure 
 Screens in your iOS project. Screens is released as a standard 
@@ -10,7 +14,7 @@ and running in no time!
 
 First, you'll review the requirements for Liferay Screens. 
 
-## Requirements [](id=requirements)
+## Requirements
 
 Liferay Screens for iOS includes the Component Library (the Screenlets) and 
 some sample projects written in Swift. Screens is developed using Swift and 
@@ -31,18 +35,18 @@ Liferay Screens for iOS requires the following software:
   depending on your portal edition). This app is preinstalled in Liferay 7.0 CE 
   and Liferay DXP instances. 
 
-## Securing JSON Web Services [](id=securing-json-web-services)
+## Securing JSON Web Services
 
 Each Screenlet in Liferay Screens calls one or more of Liferay Portal's JSON web 
 services, which are enabled by default. The Screenlet 
-[reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios) 
+[reference documentation](/docs/6-2/reference/-/knowledge_base/r/screenlets-in-liferay-screens-for-ios) 
 lists the web services that each Screenlet calls. To use a Screenlet, its web 
 services must be enabled in the portal. It's possible, however, to disable the 
 web services needed by Screenlets you're not using. For instructions on this, 
 see the tutorial 
-[Portal Configuration of JSON Web Services](/develop/tutorials/-/knowledge_base/6-2/portal-configuration-of-json-web-services). 
+[Portal Configuration of JSON Web Services](/docs/6-2/tutorials/-/knowledge_base/t/portal-configuration-of-json-web-services). 
 
-## Configuring Your Project with CocoaPods [](id=configuring-your-project-with-cocoapods)
+## Configuring Your Project with CocoaPods
 
 To use CocoaPods to prepare your iOS 9.0 (or above) project for Liferay Screens, 
 follow these steps:
@@ -122,7 +126,7 @@ follow these steps:
 Great! To configure your project's communication with Liferay Portal, you can 
 skip the next section and follow the instructions in the final section. 
 
-## Configuring Communication with Liferay [](id=configuring-communication-with-liferay)
+## Configuring Communication with Liferay
 
 Configuring communication between Screenlets and Liferay Portal is easy. Liferay
 Screens uses a property list (`.plist`) file to access your portal instance. It 
@@ -150,10 +154,10 @@ The values you need to specify in your `liferay-server-context.plist` are:
 
 Great! Your iOS project is ready for Liferay Screens. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-ios-apps)
+[Using Screenlets in iOS Apps](/docs/6-2/tutorials/-/knowledge_base/t/using-screenlets-in-ios-apps)
 
-[Using Themes in iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets)
+[Using Themes in iOS Screenlets](/docs/6-2/tutorials/-/knowledge_base/t/using-themes-in-ios-screenlets)
 
-[Preparing Android Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/preparing-android-projects-for-liferay-screens)
+[Preparing Android Projects for Liferay Screens](/docs/6-2/tutorials/-/knowledge_base/t/preparing-android-projects-for-liferay-screens)

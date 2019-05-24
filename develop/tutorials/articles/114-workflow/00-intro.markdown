@@ -1,4 +1,8 @@
-# Workflow [](id=workflow)
+---
+header-id: workflow
+---
+
+# Workflow
 
 Applications accepting user created content usually need to support an approval
 process so that low quality, objectionable, or otherwise undesirable data is
@@ -24,7 +28,7 @@ access to the Kaleo Designer directly from Liferay Portal (*Control Panel* &rarr
 *Configuration* &rarr; *Kaleo Designer*).
 
 Kaleo Designer for Java is a workflow development tool that can be accessed in
-[Liferay Developer Studio](/develop/tutorials/-/knowledge_base/6-2/developing-applications-with-liferay-developer-stu),
+[Liferay Developer Studio](/docs/6-2/tutorials/-/knowledge_base/t/developing-applications-with-liferay-developer-stu),
 providing workflow developers with a robust set of functionality:
 
 - A graphical workflow editor to visualize the workflow as it's developed, and
@@ -46,12 +50,12 @@ definitions must follow the schema
 
 We'll cover the following workflow topics:
 
-- [Enabling your application's entities for workflow](/develop/tutorials/-/knowledge_base/6-2/workflow-enabling-entities)
-- [Installing Kaleo Designer for Java](/develop/tutorials/-/knowledge_base/6-2/installing-kaleo-designer-for-java-liferay-portal-6-2-dev-guide-07-en)
+- [Enabling your application's entities for workflow](/docs/6-2/tutorials/-/knowledge_base/t/workflow-enabling-entities)
+- [Installing Kaleo Designer for Java](/docs/6-2/tutorials/-/knowledge_base/t/installing-kaleo-designer-for-java-liferay-portal-6-2-dev-guide-07-en)
 - [Creating workflow projects in Kaleo Designer for Java](creating-a-workflow-project-with-kaleo)
-- [Designing and creating a workflow](/develop/tutorials/-/knowledge_base/6-2/designing-a-kaleo-workflow-definition)
-- [Using workflow scripts](/develop/tutorials/-/knowledge_base/6-2/using-workflow-scripts)
-- [Leveraging template editors for notifications](/develop/tutorials/-/knowledge_base/6-2/leveraging-template-editors-for-notifications)
-- [Publishing and configuring workflows in the portal, including the use of Dynamic Data Lists and Kaleo Forms](/develop/tutorials/-/knowledge_base/6-2/publishing-and-configuring-workflows)
+- [Designing and creating a workflow](/docs/6-2/tutorials/-/knowledge_base/t/designing-a-kaleo-workflow-definition)
+- [Using workflow scripts](/docs/6-2/tutorials/-/knowledge_base/t/using-workflow-scripts)
+- [Leveraging template editors for notifications](/docs/6-2/tutorials/-/knowledge_base/t/leveraging-template-editors-for-notifications)
+- [Publishing and configuring workflows in the portal, including the use of Dynamic Data Lists and Kaleo Forms](/docs/6-2/tutorials/-/knowledge_base/t/publishing-and-configuring-workflows)
 
 

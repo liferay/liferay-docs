@@ -1,7 +1,11 @@
-# Adding Properties to a Maven Project in Liferay IDE [](id=adding-properties-to-a-maven-project-in-liferay-ide)
+---
+header-id: adding-properties-to-a-maven-project-in-liferay-ide
+---
+
+# Adding Properties to a Maven Project in Liferay IDE
 
 When working with Maven projects in Liferay IDE, you may encounter situations
-where your project is missing [required Maven properties](/develop/tutorials/-/knowledge_base/6-2/using-liferay-maven-parent-plugin-projects).
+where your project is missing [required Maven properties](/docs/6-2/tutorials/-/knowledge_base/t/using-liferay-maven-parent-plugin-projects).
 Maven properties go missing when a Maven profile ID isn't associated with the
 project. A project's creator may accidentally delete the profile ID from the
 project or neglect to add one. Either way, Liferay IDE reports the missing
@@ -16,7 +20,7 @@ project, so that your project can access the Maven properties it needs. This
 tutorial shows you how to address missing Maven properties using the Quick Fix
 tool. Read on to find out how! 
 
-## Launching the Quick Fix Tool [](id=launching-the-quick-fix-tool)
+## Launching the Quick Fix Tool
 
 The first thing you need to do is launch the Quick Fix tool. To do this, open
 the *Maven Configuration Problem* section of the *Markers* view in Liferay IDE.
@@ -40,7 +44,7 @@ available in your environment. The remainder of this tutorial explains how to
 use these options. The next section walks you through creating a new Maven
 profile using the Quick Fix tool. 
 
-## Creating a New Maven Profile with the Quick Fix Tool [](id=creating-a-new-maven-profile-with-the-quick-fix-tool)
+## Creating a New Maven Profile with the Quick Fix Tool
 
 If you want to select an existing Maven profile for your project, you can skip
 this section. Otherwise, read on! To create a new Maven profile, select that
@@ -60,7 +64,7 @@ project's `pom.xml` is selected. Alternatively, you can select your local
 `settings.xml` file. That's it! Now just click *OK*, and the missing properties
 error is gone! 
 
-## Selecting an Existing Maven Profile with the Quick Fix Tool [](id=selecting-an-existing-maven-profile-with-the-quick-fix-tool)
+## Selecting an Existing Maven Profile with the Quick Fix Tool
 
 To resolve missing Maven properties, the Quick Fix tool also lets you select
 existing Maven profiles to use with your project. To do this, select that option
@@ -80,14 +84,14 @@ there is to it! Once you've selected the profiles you want to use, just click
 As you can see, the Quick Fix tool is aptly named. With just a few steps, it
 helps you create or find properties for your Maven project. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/liferay-ide)
+[Developing Plugins with Liferay IDE](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ide)
 
-[Developing with the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
+[Developing with the Plugins SDK](/docs/6-2/tutorials/-/knowledge_base/t/plugins-sdk)
 
-[MVC Portlets](/develop/tutorials/-/knowledge_base/6-2/developing-jsp-portlets-using-liferay-mvc)
+[MVC Portlets](/docs/6-2/tutorials/-/knowledge_base/t/developing-jsp-portlets-using-liferay-mvc)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
+[Service Builder and Services](/docs/6-2/tutorials/-/knowledge_base/t/service-builder)
 
-[Deploying Plugins](/develop/tutorials/-/knowledge_base/6-2/deploying-plugins)
+[Deploying Plugins](/docs/6-2/tutorials/-/knowledge_base/t/deploying-plugins)

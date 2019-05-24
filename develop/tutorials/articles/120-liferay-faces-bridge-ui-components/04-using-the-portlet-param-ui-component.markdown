@@ -1,4 +1,8 @@
-# Using the portlet:param UI Component [](id=using-the-portletparam-ui-component)
+---
+header-id: using-the-portletparam-ui-component
+---
+
+# Using the portlet:param UI Component
 
 The Liferay Faces Bridge component suite provides many Portlet 2.0 `UIComponent`
 tags that are useful for JSF development. In this tutorial, you'll learn about
@@ -29,4 +33,4 @@ code snippet for context.
 
 **Related Topics**
 
-[Liferay Faces Alloy UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-alloy-ui-components)
+[Liferay Faces Alloy UI Components](/docs/6-2/tutorials/-/knowledge_base/t/liferay-faces-alloy-ui-components)

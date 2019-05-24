@@ -1,10 +1,14 @@
-# Liferay Screens for Android Troubleshooting and FAQs [](id=liferay-screens-for-android-troubleshooting-and-faqs)
+---
+header-id: liferay-screens-for-android-troubleshooting-and-faqs
+---
+
+# Liferay Screens for Android Troubleshooting and FAQs
 
 Even though Liferay developed Screens for Android with great care, you may still
 run into some common issues. Here are solutions and tips for solving these
 issues. You'll also find answers to common questions about Screens for Android. 
 
-## General Troubleshooting [](id=general-troubleshooting)
+## General Troubleshooting
 
 Before delving into specific issues, you should first make sure that you have 
 the latest tools installed and know where to get additional help if you need it. 
@@ -21,7 +25,7 @@ Screenlets and Views:
 
 When updating an app or Screenlet to a new version of Liferay Screens, make sure 
 to see the 
-[Android breaking changes reference article](/develop/reference/-/knowledge_base/6-2/android-breaking-changes). 
+[Android breaking changes reference article](/docs/6-2/reference/-/knowledge_base/r/android-breaking-changes). 
 This article lists changes to Screens that break functionality in prior 
 versions. In most cases, updating your code is relatively straightforward. 
 
@@ -34,7 +38,7 @@ Note that you must
 [log in](https://issues.liferay.com/login.jsp?os_destination=%2Fbrowse%2F) 
 first to be able to see the project.
 
-## Common Issues [](id=troubleshooting)
+## Common Issues
 
 This section contains information on common issues that can occur when using 
 Liferay Screens. 
@@ -94,7 +98,7 @@ Liferay Screens.
     SDK can't connect to the Liferay Portal instance. If you get this error, 
     you should first check the IP address of the server to make sure it's 
     available. If you've 
-    [overridden the default IP address in `server_context.xml`](/develop/tutorials/-/knowledge_base/6-2/preparing-android-projects-for-liferay-screens#configuring-communication-with-liferay), 
+    [overridden the default IP address in `server_context.xml`](/docs/6-2/tutorials/-/knowledge_base/t/preparing-android-projects-for-liferay-screens#configuring-communication-with-liferay), 
     you should check to make sure that you've set it to the correct IP. Also, if 
     you're using the Genymotion emulator, you must use `192.168.56.1` instead of 
     localhost for your app to communicate with a local Liferay instance. 
@@ -120,7 +124,7 @@ Liferay Screens.
     [Liferay Screens Compatibility Plugin](https://github.com/liferay/liferay-screens/tree/master/portal). 
     This plugin adds new API calls to Liferay Portal.
 
-## FAQs [](id=faqs)
+## FAQs
 
 1.  Do I have to use Android Studio?
 
@@ -150,26 +154,26 @@ Liferay Screens.
 4.  How do I create a new Screenlet?
 
     Screenlet creation is explained in detail 
-    [here](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets).
+    [here](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-screenlets).
 
 5.  How can I customize a Screenlet?
 
     You can customize Screenlets by creating new Views. Fortunately, there's a 
-    [tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-android-views) 
+    [tutorial](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-views) 
     for this! 
 
 6.  Does Screens have offline support?
 
     Yes, since Liferay Screens 1.3! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Preparing Android Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/preparing-android-projects-for-liferay-screens)
+[Preparing Android Projects for Liferay Screens](/docs/6-2/tutorials/-/knowledge_base/t/preparing-android-projects-for-liferay-screens)
 
-[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets)
+[Creating Android Screenlets](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-screenlets)
 
-[Creating Android Views](/develop/tutorials/-/knowledge_base/6-2/creating-android-views)
+[Creating Android Views](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-views)
 
-[Mobile SDK](/develop/tutorials/-/knowledge_base/6-2/mobile)
+[Mobile SDK](/docs/6-2/tutorials/-/knowledge_base/t/mobile)
 
-[Android Breaking Changes](/develop/reference/-/knowledge_base/6-2/android-breaking-changes)
+[Android Breaking Changes](/docs/6-2/reference/-/knowledge_base/r/android-breaking-changes)

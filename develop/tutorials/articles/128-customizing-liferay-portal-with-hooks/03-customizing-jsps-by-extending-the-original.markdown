@@ -1,4 +1,8 @@
-# Customizing JSPs by Extending the Original [](id=customizing-jsps-by-extending-the-original)
+---
+header-id: customizing-jsps-by-extending-the-original
+---
+
+# Customizing JSPs by Extending the Original
 
 <!-- 
 Testing Notes:
@@ -15,7 +19,7 @@ the original JSP in the new JSP.
 In this tutorial, you'll learn how to extend an original Liferay JSP using a
 hook. 
 
-## Extending a Liferay JSP [](id=extending-a-liferay-jsp)
+## Extending a Liferay JSP
 
 In this demonstration, you'll customize a hook project to extend a Liferay JSP,
 while leaving the original JSP untouched. Let's get started! 
@@ -66,16 +70,12 @@ while leaving the original JSP untouched. Let's get started!
     in the Liferay Hook Configuration's Custom JSPs section in the
     `liferay-hook.xml` editor. 
 
-    +$$$
-
-    **Important:** Add `.portal` to the JSP file's name, before the `.jsp`
-    suffix. For example, if the original JSP's name is `search.jsp`, specify
-    `search.portal.jsp`. When Liferay deploys your hook, the original JSP is
-    renamed to `[file name].portal.jsp`, and your JSP takes its place. If,
-    therefore, you want to reference the original, you have to reference its new
-    name.
-
-    $$$
+    | **Important:** Add `.portal` to the JSP file's name, before the `.jsp`
+    | suffix. For example, if the original JSP's name is `search.jsp`, specify
+    | `search.portal.jsp`. When Liferay deploys your hook, the original JSP is
+    | renamed to `[file name].portal.jsp`, and your JSP takes its place. If,
+    | therefore, you want to reference the original, you have to reference its new
+    | name.
 
     Add more content before and/or after the original JSP's content via the
     buffer variable. For example, you can import Liferay's
@@ -117,6 +117,6 @@ your Liferay Portal. In Liferay Portal, The hook you created extends the
 original JSP's content with the version of the content you created. You now know
 how to extend an original Liferay JSP using a hook! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)
+[Application Display Templates](/docs/6-2/tutorials/-/knowledge_base/t/application-display-templates)

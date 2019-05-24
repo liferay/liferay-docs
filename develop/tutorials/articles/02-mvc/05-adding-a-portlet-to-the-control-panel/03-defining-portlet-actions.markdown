@@ -1,4 +1,8 @@
-# Defining Portlet Actions [](id=defining-portlet-actions)
+---
+header-id: defining-portlet-actions
+---
+
+# Defining Portlet Actions
 
 You need to add action methods to the Guestbook Admin portlet for adding,
 updating, and deleting guestbooks. The portlet action methods call the
@@ -15,7 +19,7 @@ not communicate directly with the database or the persistence layer. Instead,
 they should call services. Services can call the persistence layer to
 invoke database transactions.
 
-## Adding Three Basic Portlet Actions [](id=adding-three-basic-portlet-actions)
+## Adding Three Basic Portlet Actions
 
 Your requirements for the Guestbook Admin portlet specify that the portlet must
 allow administrators to add guestbooks, update guestbooks, and delete

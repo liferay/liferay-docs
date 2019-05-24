@@ -1,4 +1,8 @@
-# Liferay Faces Portal UI Components [](id=liferay-faces-portal-ui-components)
+---
+header-id: liferay-faces-portal-ui-components
+---
+
+# Liferay Faces Portal UI Components
 
 <!-- Eventually, this section (and module) needs to be expanded. First, the
 reader needs some insight as to what Portal components are and why they'd want to use them.
@@ -19,7 +23,7 @@ The Liferay Faces Portal project home page can be found at
 <http://www.liferay.com/community/liferay-projects/liferay-faces/portal>. 
 
 Because Liferay Faces has several active 
-[versions](/develop/tutorials/-/knowledge_base/6-2/understanding-the-liferay-faces-version-scheme)
+[versions](/docs/6-2/tutorials/-/knowledge_base/t/understanding-the-liferay-faces-version-scheme)
 (targeting different versions of JSF, Liferay Portal, etc.), there are several
 versions of the project's View Declaration Language (VDL) documentation for
 these tags: 
@@ -34,7 +38,7 @@ these tags:
 
 **Liferay Faces 3.0-legacy:** <http://docs.liferay.com/faces/3.0-legacy/vdldoc/> 
 
-## Deprecated/Removed Tags [](id=deprecated-removed-tags)
+## Deprecated/Removed Tags
 
 The following tags have been deprecated in the Liferay Faces Portal 3.2.5-ga6
 release and removed in the Liferay Faces Portal 4.2.5-ga6 release: 
@@ -59,10 +63,10 @@ release and removed in the Liferay Faces Portal 4.2.5-ga6 release:
 | [`liferay-util:validateCaptcha`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/liferay-util/validateCaptcha.html) | Validation is automatically built-in to [`portal:captcha`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/portal/captcha.html) |
 | [`liferay-util:validateRichTextLength`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/liferay-util/validateRichTextLength.html) | Validation is automatically built-in to [`portal:inputRichText`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/portal/inputRichText.html) |
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Liferay Faces Alloy UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-alloy-ui-components)
+[Liferay Faces Alloy UI Components](/docs/6-2/tutorials/-/knowledge_base/t/liferay-faces-alloy-ui-components)
 
-[Liferay Faces Bridge UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-bridge-ui-components)
+[Liferay Faces Bridge UI Components](/docs/6-2/tutorials/-/knowledge_base/t/liferay-faces-bridge-ui-components)
 
-[Understanding Liferay Faces Portal](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-portal)
+[Understanding Liferay Faces Portal](/docs/6-2/tutorials/-/knowledge_base/t/understanding-liferay-faces-portal)

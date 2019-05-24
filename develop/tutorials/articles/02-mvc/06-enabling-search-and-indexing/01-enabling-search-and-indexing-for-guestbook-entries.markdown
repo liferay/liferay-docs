@@ -1,4 +1,8 @@
-# Enabling Search and Indexing for Guestbook Entries [](id=enabling-search-and-indexing-for-guestbook-entries)
+---
+header-id: enabling-search-and-indexing-for-guestbook-entries
+---
+
+# Enabling Search and Indexing for Guestbook Entries
 
 To enable search in the Guestbook portlet for guestbook entries, you need to
 follow these four steps:
@@ -21,7 +25,7 @@ registering an indexer, and updating the service layer to invoke the indexer.
 You'll follow the last step, updating the Guestbook portlet's user interface, in
 the next section.
 
-## Understanding Search and Indexing with Lucene [](id=understanding-search-and-indexing-with-lucene)
+## Understanding Search and Indexing with Lucene
 
 Under the hood, Liferay uses Lucene, a Java search library, to implement its
 search and indexing functionality. Lucene works by converting searchable
@@ -36,7 +40,7 @@ that contains pointers to the documents that match the search query. Searching
 for guestbook entries via an index is faster than searching for entities
 in the database.
 
-## Creating an Entry Indexer [](id=creating-an-entry-indexer)
+## Creating an Entry Indexer
 
 Create a new package in your guestbook-project's `docroot/WEB-INF/src` folder
 called `com.liferay.docs.guestbook.search`. In this package, create a new class
@@ -258,14 +262,10 @@ to use the appropriate method for adding fields to be indexed. E.g., use
 `document.addDate` to add a date field to the document, use `document.addText`
 to add a text field to the document, etc.
 
-+$$$
-
-**Note:** By default, only three document fields are searched by Liferay's
-`LuceneIndexSearcher`: `content`, `description`, and `title`. If you want other
-fields to be searched, you can add a custom facet to your `SearchContext`.
-Please see the [Faceted Search in Liferay]() tutorial for more details.
-
-$$$
+| **Note:** By default, only three document fields are searched by Liferay's
+| `LuceneIndexSearcher`: `content`, `description`, and `title`. If you want other
+| fields to be searched, you can add a custom facet to your `SearchContext`.
+| Please see the [Faceted Search in Liferay]() tutorial for more details.
 
 `doGetSummary` must also be implemented. It's easy to implement since you can
 call the `createSummary` method of `BaseIndexer`. You also limit the maximum
@@ -302,7 +302,7 @@ The last method you have to implement is the `getPortletId` method that takes a
 `SearchContext` parameter. The portlet ID is always `guestbook-portlet`, so you
 just return `PORTLET_ID`.
 
-## Registering an Entry Indexer [](id=registering-an-entry-indexer)
+## Registering an Entry Indexer
 
 Now that you've created an entry indexer, you need to register it with the
 Guestbook portlet in `liferay-portlet.xml`. Add the following line to your
@@ -317,7 +317,7 @@ Liferay reads `liferay-portlet.xml` at deploy time. When it finds the
 Great! Now that you've registered your indexer, it's time to update the
 Guestbook Entry service layer to use the indexer.
 
-## Handling Indexing in the Entry Service Layer [](id=handling-indexing-in-the-entry-service-layer)
+## Handling Indexing in the Entry Service Layer
 
 Whenever a guestbook entry is added, updated, or deleted, the guestbook entry
 index should also be updated. To accomplish this, you'll update each of the

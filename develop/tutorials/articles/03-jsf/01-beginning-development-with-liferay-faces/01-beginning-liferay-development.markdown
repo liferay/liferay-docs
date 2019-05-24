@@ -1,4 +1,8 @@
-# Beginning Liferay JSF Development [](id=beginning-liferay-jsf-development)
+---
+header-id: beginning-liferay-jsf-development
+---
+
+# Beginning Liferay JSF Development
 
 Before you begin developing a JSF application, you'll need to install a Liferay
 development environment. Although it's possible to use anything from a text
@@ -10,22 +14,18 @@ Liferay IDE is Liferay's free development environment that is based on Eclipse,
 a widely used open source IDE. In fact, Liferay IDE is a plugin for Eclipse that
 brings many Liferay-specific features to the table. If you'd like to use IDE and
 need installation instructions, visit the
-[Developing Applications with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/developing-apps-with-liferay-ide)
+[Developing Applications with Liferay IDE](/docs/6-2/tutorials/-/knowledge_base/t/developing-apps-with-liferay-ide)
 learning path. 
 
 Furthermore, Liferay Developer Studio is available for Liferay Enterprise
 Edition subscribers, or those interested in Liferay's premier development
 environment. For installation instruction for Liferay Developer Studio, visit
 the 
-[Developing Applications with Liferay Developer Studio](/develop/tutorials/-/knowledge_base/6-2/developing-applications-with-liferay-developer-stu)
+[Developing Applications with Liferay Developer Studio](/docs/6-2/tutorials/-/knowledge_base/t/developing-applications-with-liferay-developer-stu)
 learning path. 
 
-+$$$
-
-**Note:** To follow the JSF learning path, you must have a Liferay Portal 6.2
-instance and Java 7 JDK installed. 
-
-$$$
+| **Note:** To follow the JSF learning path, you must have a Liferay Portal 6.2
+| instance and Java 7 JDK installed.
 
 Now that your development environment is installed, you can begin creating a
 basic JSF application. 

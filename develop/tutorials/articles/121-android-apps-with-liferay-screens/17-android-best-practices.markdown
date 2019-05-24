@@ -1,25 +1,29 @@
-# Android Best Practices [](id=android-best-practices)
+---
+header-id: android-best-practices
+---
+
+# Android Best Practices
 
 When developing Android projects with Liferay Screens, there are a few best 
 practices that you should follow to ensure your code is as clean and bug-free as 
 possible. This tutorial lists these. 
 
-## Update Your Tools [](id=update-your-tools)
+## Update Your Tools
 
 You should first make sure that you have the latest tools installed. 
 You should use the latest Android API level with the latest version of Android 
 Studio. Although Screens *may* work with Eclipse ADT or manual Gradle builds, 
 Android Studio is the preferred IDE. 
 
-## See the Breaking Changes Document [](id=see-the-breaking-changes-document)
+## See the Breaking Changes Document
 
 When updating an app or Screenlet to a new version of Liferay Screens, make sure 
 to see the 
-[Android breaking changes reference article](/develop/reference/-/knowledge_base/6-2/android-breaking-changes). 
+[Android breaking changes reference article](/docs/6-2/reference/-/knowledge_base/r/android-breaking-changes). 
 This article lists changes to Screens that break functionality in prior 
 versions. In most cases, updating your code is relatively straightforward. 
 
-## Naming Conventions [](id=naming-conventions)
+## Naming Conventions
 
 Using the naming conventions described here leads to consistency and a better 
 understanding of the Screens library. This makes working with your Screenlets 
@@ -30,7 +34,7 @@ Also note that Liferay Screens follows
 for Android, with tabs as separator. The configuration for IDEA, findbugs, PMD, 
 and checkstyle is available in the project's source code. 
 
-### Screenlet Folder [](id=screenlet-folder)
+### Screenlet Folder
 
 Your Screenlet folder's name should indicate your Screenlet's functionality. For 
 example, 
@@ -38,23 +42,23 @@ example,
 
 If you have multiple Screenlets that operate on the same entity, you can place 
 them inside a folder named for that entity. For example, 
-[Asset Display Screenlet](/develop/reference/-/knowledge_base/6-2/asset-display-screenlet-for-android) 
+[Asset Display Screenlet](/docs/6-2/reference/-/knowledge_base/r/asset-display-screenlet-for-android) 
 and 
-[Asset List Screenlet](/develop/reference/-/knowledge_base/6-2/assetlistscreenlet-for-android) 
+[Asset List Screenlet](/docs/6-2/reference/-/knowledge_base/r/assetlistscreenlet-for-android) 
 both work with Liferay assets. They're therefore in the Screens library's 
 [`asset` folder](https://github.com/liferay/liferay-screens/tree/master/android/library/src/main/java/com/liferay/mobile/screens/asset). 
 
-### Screenlets [](id=screenlets)
+### Screenlets
 
 Naming Screenlets properly is very important; they're the main focus of Liferay 
 Screens. You should name your Screenlet with its principal action first, 
 followed by *Screenlet*. Its Screenlet class should also follow this pattern. 
 For example, 
-[Login Screenlet's](/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-android) 
+[Login Screenlet's](/docs/6-2/reference/-/knowledge_base/r/loginscreenlet-for-android) 
 principal action is to log users into a @product@ installation. This Screenlet's 
 Screenlet class is therefore `LoginScreenlet`. 
 
-### View Models [](id=view-models)
+### View Models
 
 Name your View models the same way you name Screenlets, but substitute 
 `ViewModel` for `Screenlet`. Also, place your View Models in a `view` folder in 
@@ -62,13 +66,13 @@ your Screenlet's root folder. For example, Login Screenlet's View Model is named
 `LoginViewModel` and is in the 
 [`login/view` folder](https://github.com/liferay/liferay-screens/tree/master/android/library/src/main/java/com/liferay/mobile/screens/auth/login/view). 
 
-### Interactors [](id=interactors)
+### Interactors
 
 Place your Screenlet's Interactors in a folder named `interactor` in your 
 Screenlet's root folder. Name each Interactor first with the object it operates 
 on, followed by its action and the suffix *Interactor*. If you wish, you can 
 also put each Interactor in its own folder named after its action. For example, 
-[Rating Screenlet](/develop/reference/-/knowledge_base/6-2/rating-screenlet-for-android) 
+[Rating Screenlet](/docs/6-2/reference/-/knowledge_base/r/rating-screenlet-for-android) 
 has three Interactors. Each is in its own folder inside 
 [the `interactor` folder](https://github.com/liferay/liferay-screens/tree/master/android/library/src/main/java/com/liferay/mobile/screens/rating/interactor): 
 
@@ -76,7 +80,7 @@ has three Interactors. Each is in its own folder inside
 - `load/RatingLoadInteractor`: Loads an asset's ratings
 - `update/RatingUpdateInteractor`: Updates an asset's ratings
 
-### Views [](id=views)
+### Views
 
 Place Views in a `view` folder in the Screenlet's root folder. If you're 
 creating a View Set, however, you can place its Views in a separate `viewsets`
@@ -86,7 +90,7 @@ does for
 The `material` and `westeros` folders contain those View Sets, respectively. 
 Also note that in each View, each Screenlet's View class is in its own folder. 
 For example, the View class for 
-[Forgot Password Screenlet's](/develop/reference/-/knowledge_base/6-2/forgotpasswordscreenlet-for-android) 
+[Forgot Password Screenlet's](/docs/6-2/reference/-/knowledge_base/r/forgotpasswordscreenlet-for-android) 
 Material View is in 
 [the folder `viewsets/material/src/main/java/com/liferay/mobile/screens/viewsets/material/auth/forgotpassword`](https://github.com/liferay/liferay-screens/tree/master/android/viewsets/material/src/main/java/com/liferay/mobile/screens/viewsets/material/auth/forgotpassword). 
 Note that the `auth` folder in this path is the Screenlet's module. Creating 
@@ -100,7 +104,7 @@ suffixed with `_yourViewName`. For example, the XIB file and View class for
 Forgot Password Screenlet's Material View are `forgotpassword_material.xml` and 
 `ForgotPasswordView.java`, respectively. 
 
-## Avoid Hard Coded Elements [](id=avoid-hard-coded-elements)
+## Avoid Hard Coded Elements
 
 Using constants instead of hard-coded elements is a simple way to avoid bugs. 
 Constants reduce the likelihood that you'll make a typo when referring to common 
@@ -114,7 +118,7 @@ defines the following constants for the user action names:
     public static final String UPDATE_RECORD_ACTION = "updateRecord";
     public static final String UPLOAD_DOCUMENT_ACTION = "uploadDocument";
 
-## Avoid State in Interactors [](id=avoid-state-in-interactors)
+## Avoid State in Interactors
 
 Liferay Screens uses 
 [EventBus](http://greenrobot.org/eventbus/) 
@@ -125,7 +129,7 @@ Interactor's request is stateless.
 If an Interactor needs some piece of information, you should pass it to the 
 Interactor via the `start` call and then attach it to the event. You can see an 
 example of this in the sample Add Bookmark Screenlet from 
-[the Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets). 
+[the Screenlet creation tutorial](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-screenlets). 
 The `onUserAction` method in the Screenlet class (`AddBookmarkScreenlet`) passes 
 a Bookmark's URL and title from the View Model to the Interactor via the 
 Interactor's `start` method: 
@@ -157,24 +161,24 @@ thread. The `execute` method in Add Bookmark Screenlet's Interactor
         return new BasicEvent(jsonObject);
     }
 
-## Stay in Your Layer [](id=stay-in-your-layer)
+## Stay in Your Layer
 
 When accessing variables that belong to other Screenlet components, you should 
 avoid those outside your current Screenlet layer. This achieves better 
 decoupling between the layers, which tends to reduce bugs and simplify 
 maintenance. For an explanation of the layers in Liferay Screens, see 
-[the architecture tutorial](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android). 
+[the architecture tutorial](/docs/6-2/tutorials/-/knowledge_base/t/architecture-of-liferay-screens-for-android). 
 For example, don't directly access View variables from an Interactor. Instead, 
 pass data from a View Model to the Interactor via the Interactor's `start` 
 method. The example `onUserAction` method in the previous section illustrates 
 this. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Liferay Screens for Android Troubleshooting and FAQs](/develop/tutorials/-/knowledge_base/6-2/liferay-screens-for-android-troubleshooting-and-faqs)
+[Liferay Screens for Android Troubleshooting and FAQs](/docs/6-2/tutorials/-/knowledge_base/t/liferay-screens-for-android-troubleshooting-and-faqs)
 
-[Architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android)
+[Architecture of Liferay Screens for Android](/docs/6-2/tutorials/-/knowledge_base/t/architecture-of-liferay-screens-for-android)
 
-[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets)
+[Creating Android Screenlets](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-screenlets)
 
-[Android Breaking Changes](/develop/reference/-/knowledge_base/6-2/android-breaking-changes)
+[Android Breaking Changes](/docs/6-2/reference/-/knowledge_base/r/android-breaking-changes)

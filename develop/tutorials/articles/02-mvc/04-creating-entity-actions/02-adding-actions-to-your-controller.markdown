@@ -1,4 +1,8 @@
-# Adding Actions to Your Controller [](id=adding-actions-to-your-controller)
+---
+header-id: adding-actions-to-your-controller
+---
+
+# Adding Actions to Your Controller
 
 Remember that the controller layer of your application is like a traffic
 director. The user tells your application what he or she wants to do, and the
@@ -8,7 +12,7 @@ controller. Sometimes it's more convenient to have one action method that can
 perform two functions. In this step of the learning path, you'll implement just
 that. 
 
-## One Action to Rule Them All [](id=one-action-to-rule-them-all)
+## One Action to Rule Them All
 
 When you created your form in the view layer, did you wonder why you named the
 file `edit_entry.jsp`? You named it that way because we knew where we were going

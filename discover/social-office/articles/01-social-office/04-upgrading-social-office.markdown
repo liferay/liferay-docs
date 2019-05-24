@@ -1,28 +1,28 @@
-# Upgrading Social Office [](id=upgrading-social-office)
+---
+header-id: upgrading-social-office
+---
+
+# Upgrading Social Office
 
 There are a few steps and procedures that you need to follow if you're upgrading 
 to a newer version of Social Office. The sections below describe how to upgrade 
 from Social Office 2.x to 3.x, and from Social Office 3.0.0 to 3.0.1.
 
-## Upgrading From Social Office 2.x to 3.x [](id=upgrading-from-social-office-2-x-to-3-x)
+## Upgrading From Social Office 2.x to 3.x
 
 Social Office 3.x only runs on Liferay Portal 6.2.x. If you'd like to upgrade
 from Social Office 2.x to 3.x, you first need to upgrade your portal from
 Liferay 6.1 to Liferay 6.2. For information on upgrading Liferay, please refer
-to [Upgrading Liferay](/discover/deployment/-/knowledge_base/6-2/upgrading-liferay).
+to [Upgrading Liferay](/docs/6-2/deploy/-/knowledge_base/d/upgrading-liferay).
 Remember to undeploy your Social Office 2.x plugins before upgrading your portal
 to 6.2. If you have a Liferay Portal EE subscription, make sure to apply any
 available fix packs before deploying your Social Office 3.x plugins.
 
-+$$$
-
-**Note:** There are a few known issues with the Social Office plugins that you 
-might experience if you're running on JBoss. If the Go To menu is not initially 
-visible after deploying the Social Office plugins or if you can't confirm a 
-connection or site invitation after logging in as the default administrator 
-user, clear the `/temp` folder and then restart the server to resolve the issue.
-
-$$$
+| **Note:** There are a few known issues with the Social Office plugins that you
+| might experience if you're running on JBoss. If the Go To menu is not initially
+| visible after deploying the Social Office plugins or if you can't confirm a
+| connection or site invitation after logging in as the default administrator
+| user, clear the `/temp` folder and then restart the server to resolve the issue.
 
 Once your 6.2 portal is ready, deploy your Social Office 3.x plugins. When you
 first log in to your portal as an administrator after installing Social Office
@@ -31,7 +31,7 @@ to grant the Social Office User role to users. The Social Office User provides
 access to the Dashboard home page, the public Profile page, and all of their
 applications. You're now ready to use Social Office!
 
-## Upgrading from Social Office 3.0.0 to 3.0.1 [](id=upgrading-from-social-office-3-0-0-to-3-0-1)
+## Upgrading from Social Office 3.0.0 to 3.0.1
 
 Before upgrading from Social Office 3.0.0 to 3.0.1, make sure to set
 `hot.undeploy.on.redeploy=true` in your `portal-ext.properties` file. This

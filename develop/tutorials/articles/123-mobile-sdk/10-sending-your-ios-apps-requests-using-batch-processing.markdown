@@ -1,4 +1,8 @@
-# Sending Your iOS App's Requests Using Batch Processing [](id=sending-your-ios-apps-requests-using-batch-processing)
+---
+header-id: sending-your-ios-apps-requests-using-batch-processing
+---
+
+# Sending Your iOS App's Requests Using Batch Processing
 
 The Mobile SDK also allows sending requests in batch. This can be much more 
 efficient than sending separate requests. For example, suppose you want to 
@@ -9,11 +13,11 @@ them all together.
 This tutorial shows you how to implement batch processing for your iOS app. It's 
 assumed that you already know how to invoke Liferay services from your iOS app. 
 If you don't, see the tutorial 
-[Invoking Liferay Services in Your iOS App](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-ios-app). 
+[Invoking Liferay Services in Your iOS App](/docs/6-2/tutorials/-/knowledge_base/t/invoking-liferay-services-in-your-ios-app). 
 Objective-C is used in the code snippets that follow. Now it's time to whip up a 
 fresh batch of requests! 
 
-## Implementing Batch Processing [](id=implementing-batch-processing)
+## Implementing Batch Processing
 
 Making service calls in batch only requires two extra steps over making them one 
 at a time: 
@@ -59,10 +63,10 @@ as usual.
 Great! Now you know how to utilize batch processing to speed up your app's 
 requests. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Invoking Liferay Services in Your iOS App](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-ios-app)
+[Invoking Liferay Services in Your iOS App](/docs/6-2/tutorials/-/knowledge_base/t/invoking-liferay-services-in-your-ios-app)
 
-[Creating Android Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-android-apps-that-use-liferay)
+[Creating Android Apps that Use Liferay](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-apps-that-use-liferay)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
+[Service Builder and Services](/docs/6-2/tutorials/-/knowledge_base/t/service-builder)

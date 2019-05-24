@@ -1,4 +1,8 @@
-# Creating a User Interface [](id=creating-a-user-interface)
+---
+header-id: creating-a-user-interface
+---
+
+# Creating a User Interface
 
 It's time to create the Guestbook Admin portlet's user interface. The default
 view of the portlet should have a button for adding new guestbooks. It should
@@ -11,7 +15,7 @@ Each guestbook's name should displayed along with an Actions button. The Actions
 button should display options for editing the guestbook, configuring its
 permissions, or deleting it.
 
-## Creating JSPs for the Guestbook Admin Portlet's User Interface [](id=creating-jsps-for-the-guestbook-admin-portlets-user-interface)
+## Creating JSPs for the Guestbook Admin Portlet's User Interface
 
 You'll use three JSPs to construct the Guestbook Admin portlet's user interface:
 one for the default view, one for the Actions button, and one for the form for
@@ -301,6 +305,6 @@ Excellent! You've now finished creating the Guestbook Admin portlet. Test it
 out! Try adding new guestbooks, editing guestbooks, configuring guestbook
 permissions, and deleting guestbooks.
 
-## Next Steps [](id=next-steps)
+## Next Steps
 
-[Enabling Search and Indexing](/develop/tutorials/-/knowledge_base/6-2/enabling-search-and-indexing)
+[Enabling Search and Indexing](/docs/6-2/tutorials/-/knowledge_base/t/enabling-search-and-indexing)

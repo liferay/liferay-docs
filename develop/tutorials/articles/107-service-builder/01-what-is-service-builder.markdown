@@ -1,4 +1,8 @@
-# What is Service Builder? [](id=what-is-service-builder)
+---
+header-id: what-is-service-builder
+---
+
+# What is Service Builder?
 
 Service Builder is a model-driven code generation tool built by Liferay that
 allows developers to define custom object models called entities. Service
@@ -34,14 +38,10 @@ Although the number of files Service Builder generates can seem intimidating at
 first, developers only need to work with a few files in order to make
 customizations to their applications and add business logic.
 
-+$$$
-
-**Note:** You don't have to use Service Builder for plugin or portlet
-development. It's entirely possible to develop Liferay plugins by writing custom
-code for database persistence using your persistence framework of choice. If you
-so choose, you can work directly with JPA or Hibernate.
-
-$$$
+| **Note:** You don't have to use Service Builder for plugin or portlet
+| development. It's entirely possible to develop Liferay plugins by writing custom
+| code for database persistence using your persistence framework of choice. If you
+| so choose, you can work directly with JPA or Hibernate.
 
 One of the main ways Service Builder saves development time is by completely
 eliminating the need to write and maintain database access code. To generate a
@@ -105,7 +105,7 @@ this is configurable via portal properties. All you have to do to enable entity
 and finder caching for an entity in your project is to set the
 `cache-enabled=true` attribute of your entity's `<entity>` element in your
 `service.xml` configuration file. Please refer to the
-[Distributed Caching](/discover/deployment/-/knowledge_base/6-2/liferay-clustering#distributed-caching)
+[Distributed Caching](/docs/6-2/deploy/-/knowledge_base/d/liferay-clustering#distributed-caching)
 documentation for more details about Liferay caching.
 
 Service Builder is a flexible tool. It automates many of the common tasks
@@ -130,9 +130,9 @@ and time that would have to be spent maintaining, extending, or customizing a
 project. Finally, Service Builder is not a restrictive tool: it allows custom
 SQL queries and finder methods to be added and it also supports dynamic query.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Developing with the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
+[Developing with the Plugins SDK](/docs/6-2/tutorials/-/knowledge_base/t/plugins-sdk)
 
-[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
+[Running Service Builder and Understanding the Generated Code](/docs/6-2/tutorials/-/knowledge_base/t/running-service-builder-and-understanding-the-generated-code)
 

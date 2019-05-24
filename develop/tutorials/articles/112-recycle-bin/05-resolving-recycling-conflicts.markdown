@@ -1,4 +1,8 @@
-# Resolving Recycling Conflicts [](id=resolving-recycling-conflicts)
+---
+header-id: resolving-recycling-conflicts
+---
+
+# Resolving Recycling Conflicts
 
 The Conflict Resolution framework helps Liferay users identify and solve
 conflicts in the Recycle Bin. The most common conflict for the Recycle Bin is
@@ -19,7 +23,7 @@ Follow these steps and you'll be resolving conflicts in no time!
 2. Restore the Entity's Original Name When Restoring From Recycle Bin
 3. Implement Conflict Resolution Trash Handler Methods
 
-## Step 1: Rename Entities Sent to the Recycle Bin [](id=step-1-rename-entities-sent-to-the-recycle-bin)
+## Step 1: Rename Entities Sent to the Recycle Bin
 
 Entities are never actually created in the Recycle Bin. Instead, the
 entity is kept in its original location and a trash entry that points to it is
@@ -66,7 +70,7 @@ the names of the original entities when restoring those entities.
 Next, you'll see how to restore a trashed entity's original name in your restore
 process. 
 
-## Step 2: Restore the Entity's Original Name When Restoring From Recycle Bin [](id=step-2-restore-the-entitys-original-name-when-restoring-from-recycle-bin)
+## Step 2: Restore the Entity's Original Name When Restoring From Recycle Bin
 
 Since recycled entities are renamed, you need to retrieve the original name when
 restoring them. The code snippet below, from the Jukebox portlet's `restoreSongFromTrash(long
@@ -107,7 +111,7 @@ return the song's original name.
 Next, you need to finish satisfying the interface contract, and completely
 implement the Conflicts Resolution functionality.
 
-## Step 3: Implement Conflict Resolution Trash Handler Methods [](id=step-3-implement-conflict-resolution-trash-handler-methods)
+## Step 3: Implement Conflict Resolution Trash Handler Methods
 
 Your app can now rename entries when they're removed and reinstate their original
 names when they're restored. What happens when the original entry is restored to its
@@ -182,14 +186,14 @@ Fantastic! By leveraging the Conflicts Resolution framework in your app, you're
 able to provide a smarter Recycle Bin that handles potential conflicts with
 ease. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Recycling Assets with the Recycle Bin](/discover/portal/-/knowledge_base/6-2/recycling-assets-with-the-recycle-bin)
+[Recycling Assets with the Recycle Bin](/docs/6-2/user/-/knowledge_base/u/recycling-assets-with-the-recycle-bin)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
+[Service Builder and Services](/docs/6-2/tutorials/-/knowledge_base/t/service-builder)
 
-[Enabling Search and Indexing](/develop/tutorials/-/knowledge_base/6-2/enabling-search-and-indexing)
+[Enabling Search and Indexing](/docs/6-2/tutorials/-/knowledge_base/t/enabling-search-and-indexing)
 
-[Asset Framework](/develop/tutorials/-/knowledge_base/6-2/asset-framework)
+[Asset Framework](/docs/6-2/tutorials/-/knowledge_base/t/asset-framework)
 
-[Asset Enabling Custom Entities](/develop/tutorials/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Asset Enabling Custom Entities](/docs/6-2/tutorials/-/knowledge_base/t/asset-enabling-custom-entities)

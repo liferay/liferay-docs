@@ -1,4 +1,8 @@
-# Creating Tooltips with the Liferay UI Icon Help Tag [](id=creating-tooltips-with-the-liferay-ui-icon-help-tag)
+---
+header-id: creating-tooltips-with-the-liferay-ui-icon-help-tag
+---
+
+# Creating Tooltips with the Liferay UI Icon Help Tag
 
 An unfamiliar UI can be tricky to navigate. Your users can feel as though they 
 are lost in a jungle, wandering around aimlessly, desperately trying to get 
@@ -13,7 +17,7 @@ Now that you have a better understanding of the `liferay-ui:icon-help` tag and
 all its informational powers, you can learn how to configure it to pack your 
 user's heads full of information!
 
-## Using the Liferay UI Icon Help Tag [](id=using-the-liferay-ui-icon-help-tag)
+## Using the Liferay UI Icon Help Tag
 
 The example here shows how to add and use the `liferay-ui:icon-help` tag in the 
 `view.jsp` of a portlet. First, you need to reference the `liferay-ui` taglib. 
@@ -25,16 +29,12 @@ The following steps show you how to do this:
 
         <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
 
-+$$$
-
-**Note:** If you have installed a custom theme you may also need to add the
-following imports to your `view.jsp` for the `liferay-ui:icon-help` tag to work
-properly:
-
-    <%@ taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme"%>
-    <liferay-theme:defineObjects />
-
-$$$
+| **Note:** If you have installed a custom theme you may also need to add the
+| following imports to your `view.jsp` for the `liferay-ui:icon-help` tag to work
+| properly:
+| 
+|     <%@ taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme"%>
+|     <liferay-theme:defineObjects />
 
 You can now use the `liferay-ui` tags in your portlet! Follow these steps to add
 and configure the `liferay-ui:icon-help` tag:
@@ -56,7 +56,7 @@ and configure the `liferay-ui:icon-help` tag:
 The message is supplied as a string at the moment. As this is not best practice, 
 you should supply the message via a language key. You'll take care of this next.
 
-## Creating a Language Key Hook for the Help Message [](id=creating-a-language-key-hook-for-the-help-message)
+## Creating a Language Key Hook for the Help Message
 
 In order to supply the language key for the help message you will need to create 
 a hook.
@@ -121,10 +121,10 @@ Control Panel items:
 There you go! You can now arm your users with the information they need to 
 better interact with your UI.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Liferay Faces Bridge UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-bridge-ui-components)
+[Liferay Faces Bridge UI Components](/docs/6-2/tutorials/-/knowledge_base/t/liferay-faces-bridge-ui-components)
 
-[Using the AlloyUI Form Validator in A Portlet](/develop/tutorials/-/knowledge_base/6-2/using-the-alloyui-form-validator-in-a-portlet)
+[Using the AlloyUI Form Validator in A Portlet](/docs/6-2/tutorials/-/knowledge_base/t/using-the-alloyui-form-validator-in-a-portlet)
  
-[Using Liferay UI Tabs and Sections](/develop/tutorials/-/knowledge_base/6-2/using-liferay-ui-tabs-and-sections)
+[Using Liferay UI Tabs and Sections](/docs/6-2/tutorials/-/knowledge_base/t/using-liferay-ui-tabs-and-sections)

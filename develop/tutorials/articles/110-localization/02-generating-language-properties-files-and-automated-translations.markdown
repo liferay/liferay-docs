@@ -1,4 +1,8 @@
-# Generating Language Properties File and Automated Translations [](id=generating-language-properties-file-and-automated-t)
+---
+header-id: generating-language-properties-file-and-automated-t
+---
+
+# Generating Language Properties File and Automated Translations
 
 <!-- The beginning and ending test portlets can be found at the following:
 Begin: https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/liferay-mvc/prefs/begin/event-listing-portlet
@@ -17,7 +21,7 @@ get translations for your default resource bundle.
 It's time to get started by doing the initial setup for the Microsoft Translator
 service for translating the language properties. 
 
-## Translating Languages Using the Microsoft Translator [](id=translating-languages-using-the-bing-translator)
+## Translating Languages Using the Microsoft Translator
 
 The Plugins SDK uses the Microsoft Translator service
 [http://www.microsoft.com/translator/](http://www.microsoft.com/translator/) to
@@ -59,7 +63,7 @@ Microsoft Translator service, you'll need to do the following:
 Next, you'll make the necessary changes to your portlet so that it can leverage 
 the Microsoft Translator service.
  
-## Implementing Translations in Your Portlet [](id=implementing-translations-in-your-portlet)
+## Implementing Translations in Your Portlet
 
 Now that you've done the initial setup for the Microsoft Translator, you're ready to 
 add support for translations to your portlet.
@@ -117,14 +121,10 @@ re-add that property and its new value to `Language.properties`, and build the
 languages again. At this point, Microsoft Translator generates translations
 based on your property's new value. 
 
-+$$$
-
-**Note:** If you're Mavenizing your
-portlet, you must manually copy the translations to your deployed application.
-Copy your `content` folder into your portlet's
-`src/main/webapp/WEB-INF/classes` folder. 
-
-$$$
+| **Note:** If you're Mavenizing your
+| portlet, you must manually copy the translations to your deployed application.
+| Copy your `content` folder into your portlet's
+| `src/main/webapp/WEB-INF/classes` folder.
 
 By using the Plugins SDK's language building capability, you can keep all
 created translations synchronized with your default `Language.properties`. You
@@ -138,7 +138,7 @@ translations before the translations are deployed to a production environment.
 In this tutorial you learned to leverage the Plugins SDK to generate 
 translations for your portlets using the Microsoft Translator.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Overriding Language Properties Using a Hook](/develop/tutorials/-/knowledge_base/6-2/overriding-language-properties-using-a-hook)
+[Overriding Language Properties Using a Hook](/docs/6-2/tutorials/-/knowledge_base/t/overriding-language-properties-using-a-hook)
 

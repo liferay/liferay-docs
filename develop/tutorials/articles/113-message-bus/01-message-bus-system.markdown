@@ -1,4 +1,8 @@
-# Liferay's Message Bus System [](id=liferays-message-bus-system)
+---
+header-id: liferays-message-bus-system
+---
+
+# Liferay's Message Bus System
 
 Liferay's Message Bus system is a great way to handle communication both
 between and within your applications. However, before you get started with
@@ -7,7 +11,7 @@ presents information on the components of the Message Bus system, as well as the
 different types of messages that can be sent. Read on to inspect the Message
 Bus! 
 
-## Message Bus System Components [](id=message-bus-system-components)
+## Message Bus System Components
 
 The Message Bus system contains the following components: 
 
@@ -32,7 +36,7 @@ service Jane." These names are easier to follow than numbered names. -Rich -->
 
 ![Figure 1: Example, Message Bus system](../../images/msg-bus-system.png)
 
-## Message Types [](id=message-types)
+## Message Types
 
 The Message Bus supports *synchronous* and *asynchronous* messaging: 
 
@@ -55,13 +59,9 @@ The Message Bus can be configured via the following files:
   You need to add `messaging-spring.xml` to your list of Spring configurations
   in this file. 
 
-+$$$
-
-**Note:** The internal file `META-INF/messaging-core-spring.xml` of 
-`portal-impl.jar` specifies the default Message Bus class, default asynchronous 
-message sender class, and default synchronous message sender class for Liferay. 
-
-$$$
+| **Note:** The internal file `META-INF/messaging-core-spring.xml` of
+| `portal-impl.jar` specifies the default Message Bus class, default asynchronous
+| message sender class, and default synchronous message sender class for Liferay.
 
 You can control your *Message Types* using either the
 `com.liferay.portal.kernel.messaging.Message` class or the
@@ -71,7 +71,7 @@ serialized and deserialized in JSON. Both types of message classes are used in
 the following tutorials to show you how to implement both synchronous and
 asynchronous messaging. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Service Builder and Services](/tutorials/-/knowledge_base/6-2/service-builder)
 

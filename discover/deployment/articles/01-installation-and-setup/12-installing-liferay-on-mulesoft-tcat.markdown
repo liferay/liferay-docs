@@ -1,4 +1,8 @@
-# Installing Liferay on Mulesoft Tcat [](id=installing-liferay-on-mulesoft-tcat)
+---
+header-id: installing-liferay-on-mulesoft-tcat
+---
+
+# Installing Liferay on Mulesoft Tcat
 
 For this section, we will refer to your Tcat server's installation location as
 `[TCAT_HOME]`. If you don't already have an existing Tcat server, we
@@ -16,7 +20,7 @@ the dependencies file should be called
 
 Next, let's get started by addressing Liferay's library dependencies.
 
-## Dependency Jars [](id=dependency-jars)
+## Dependency Jars
 
 To run Liferay Portal on your Tcat server, you first need to make some JAR files
 available on Tcat's global classpath. These include the Liferay Dependency JARs,
@@ -74,7 +78,7 @@ requires.
 Now that you have the necessary libraries in place, we'll move on to configuring
 your domain.
 
-## Tcat Configuration [](id=tcat-configuration)
+## Tcat Configuration
 
 If you're installing Liferay Portal onto an existing Tcat server, you should be
 familiar with the Tcat Administration Console. The following instructions assume
@@ -171,7 +175,7 @@ link, and replace the line:
 
 Excellent work! Now it's time to configure your database.
 
-## Database Configuration [](id=database-configuration)
+## Database Configuration
 
 If you want Tcat to manage your data source, use the following procedure. If
 you want to use Liferay's built-in data source, you can skip this section.
@@ -205,7 +209,7 @@ these values with your own database name and credentials.
 Your Tcat managed data source is now configured. Let's move on to your mail
 session.
 
-## Mail Configuration [](id=mail-configuration)
+## Mail Configuration
 
 If you want to manage your mail session within Tomcat, use the following
 instructions. If you want to use the built-in Liferay mail session, you can skip
@@ -239,7 +243,7 @@ mail session. Be sure to replace the mail session values with your own.
 Super! Your mail session is configured. Next, you need to connect Liferay to the
 mail session and database connections you just created. 
 
-## Configuring your Database and Mail Session [](id=configuring-your-database-and-mail-session)
+## Configuring your Database and Mail Session
 
 In this section you'll specify appropriate properties for Liferay to use in
 connecting to your database and mail session.
@@ -268,7 +272,7 @@ connecting to your database and mail session.
 Before you deploy Liferay Portal, let's look at configuring Portal Access
 Control Lists (PACL) with Liferay on Tomcat. 
 
-## Enabling PACL [](id=enabling-pacl)
+## Enabling PACL
 
 To enable PACL, you need to enable the security manager and add some required
 permissions to the server policy configuration file. This entails editing
@@ -292,7 +296,7 @@ Edit `$TCAT_HOME/conf/catalina.policy` and add the required permissions:
 
 Now you have PACL enabled and configured for your portal. Let's deploy Liferay!
 
-## Deploying Liferay [](id=deploying-liferay)
+## Deploying Liferay
 
 It's time to deploy Liferay as an exploded web archive in your
 `$TCAT_HOME/webapps` folder. The first step is to make sure your Tcat server is

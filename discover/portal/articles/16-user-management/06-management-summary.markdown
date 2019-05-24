@@ -1,4 +1,8 @@
-# Summary [](id=summary-13)
+---
+header-id: summary-13
+---
+
+# Summary
 
 In this chapter, we learned how to manage users, organizations, user groups, and
 roles via Liferay's Control Panel. Site memberships and teams aren't the only

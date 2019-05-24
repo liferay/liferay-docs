@@ -1,4 +1,8 @@
-# Leveraging Hibernate's Criteria API [](id=leveraging-hibernates-criteria-api)
+---
+header-id: leveraging-hibernates-criteria-api
+---
+
+# Leveraging Hibernate's Criteria API
 
 Liferay allows you to use custom SQL queries to retrieve data from the database.
 Sometimes, however, it's more convenient to build queries dynamically at
@@ -20,7 +24,7 @@ To use Liferay's Dynamic Query API, you need to create a finder implementation
 for your model entity. You can define model entities in `service.xml` and run
 Service Builder to generate model, persistence, and service layers for your
 application.  See the
-[Writing a Data-Driven Application](/develop/tutorials/-/knowledge_base/6-2/writing-a-data-driven-application)
+[Writing a Data-Driven Application](/docs/6-2/tutorials/-/knowledge_base/t/writing-a-data-driven-application)
 learning path for more information on using Service Builder. Once you've used
 Service Builder to generate model, persistence, and service layers for your
 application, you can create custom finders using Liferay's Dynamic Query API by
@@ -40,7 +44,7 @@ Once you've taken these steps, you can access your custom finder as a service
 method. Note: You can create multiple or overloaded `findBy-` finder methods in
 your `-FinderImpl` class. Next, let's examine these steps in more detail.
 
-### Step 1: Defining a Custom Finder Method [](id=step-1-defining-a-custom-finder-method)
+### Step 1: Defining a Custom Finder Method
 
 To define any custom query, either by specifying custom SQL or by defining a
 dynamic query, you need a finder class. Create a `[Entity]FinderImpl` class in
@@ -50,7 +54,7 @@ this class. Make sure to add any required arguments to your finder method's
 method signature.
 
 For example, consider the Guestbook application that we discussed in the
-[Writing a Data-Driven Application](/develop/tutorials/-/knowledge_base/6-2/writing-a-data-driven-application).
+[Writing a Data-Driven Application](/docs/6-2/tutorials/-/knowledge_base/t/writing-a-data-driven-application).
 learning path. In that application, there are
 two entities: guestbooks and entries. Each entry belongs to a guestbook so the
 entry entity has a guestbookId field as a foreign key. Suppose you need to
@@ -81,7 +85,7 @@ this:
 Your next step is to actually define your query in your custom finder method
 using the Dynamic Query API.
 
-### Step 2: Implementing Your Custom Finder Method Using Dynamic Query [](id=step-2-implementing-your-custom-finder-method-using-dynamic-query)
+### Step 2: Implementing Your Custom Finder Method Using Dynamic Query
 
 Your first step in implementing your custom finder method in your `-FinderImpl`
 class is to open a new Hibernate session. Since your `-FinderImpl` class extends
@@ -312,7 +316,7 @@ just choose the appropriate methods for running the dynamic queries:
 Great! You've now created a custom finder method using Liferay's Dynamic Query
 API. Your last step is to add a service method that calls your finder.
 
-### Step 3: Accessing Your Custom Finder Method from the Service Layer [](id=step-3-accessing-your-custom-finder-method-from-the-service-layer)
+### Step 3: Accessing Your Custom Finder Method from the Service Layer
 
 So far, you've created a `-FinderImpl` class and generated a `-FinderUtil`
 utility class. Your portlet class, however, should not use the finder utility
@@ -346,8 +350,8 @@ JSP by calling `EntryLocalServiceUtil.findByEntryNameGuestbookName(...)`!
 Congratulations on following the three step process of developing a dynamic
 query in a custom finder and exposing it as a service for your portlet! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
+[Running Service Builder and Understanding the Generated Code](/docs/6-2/tutorials/-/knowledge_base/t/running-service-builder-and-understanding-the-generated-code)
 
-[Using Service Builder to Generate a Persistence Framework](/develop/tutorials/-/knowledge_base/6-2/using-service-builder-to-generate-a-persistence-fr)
+[Using Service Builder to Generate a Persistence Framework](/docs/6-2/tutorials/-/knowledge_base/t/using-service-builder-to-generate-a-persistence-fr)

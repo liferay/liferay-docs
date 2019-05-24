@@ -1,4 +1,8 @@
-# Simulating User Segments and Campaigns [](id=simulating-user-segments-and-campaigns)
+---
+header-id: simulating-user-segments-and-campaigns
+---
+
+# Simulating User Segments and Campaigns
 
 The Audience Targeting app includes a simulator feature. The Audience Targeting
 Simulator allows administrators to preview the way portal pages appear to
@@ -11,16 +15,12 @@ and *Campaigns*. By default, the Audience Targeting Simulator is only visible to
 site administrators and users with the View permission for the Audience Targeting
 Simulator.
 
-+$$$
-
-**Note:** Permissions pertaining to the Audience Targeting Simulator and other
-features of the Audience Targeting app can be granted via the *Actions* &rarr;
-*Define Permissions* menu of the Roles section in the Control Panel. When
-defining permissions for a role, go to *Site Administration* &rarr;
-*Configuration* to find the *Audience Targeting*, *Audience Targeting
-Resources*, and *Audience Targeting Simulator* sections.
-
-$$$
+| **Note:** Permissions pertaining to the Audience Targeting Simulator and other
+| features of the Audience Targeting app can be granted via the *Actions* &rarr;
+| *Define Permissions* menu of the Roles section in the Control Panel. When
+| defining permissions for a role, go to *Site Administration* &rarr;
+| *Configuration* to find the *Audience Targeting*, *Audience Targeting
+| Resources*, and *Audience Targeting Simulator* sections.
 
 The User Segments tab of the Audience Targeting simulator displays a list of all
 the user segments matched by the current user as well as all the user segments

@@ -1,4 +1,8 @@
-# Summary [](id=summary-16)
+---
+header-id: summary-16
+---
+
+# Summary
 
 In this chapter, we saw how Liferay's script engine opens up many exciting
 possibilities for working with Liferay. You can write and execute scripts from

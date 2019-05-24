@@ -1,4 +1,8 @@
-# Finding and Invoking Liferay Services [](id=finding-and-invoking-liferay-services)
+---
+header-id: finding-and-invoking-liferay-services
+---
+
+# Finding and Invoking Liferay Services
 
 You can find Liferay's services by searching for them in the Javadocs:
 [http://docs.liferay.com/portal/6.2/javadocs/](http://docs.liferay.com/portal/6.2/javadocs/).
@@ -6,7 +10,7 @@ Below, we'll show you how to search for portal services and portlet services.
 
 Let's start by finding a portal service. 
 
-## Finding Liferay Portal Services [](id=finding-liferay-portal-services)
+## Finding Liferay Portal Services
 
 Liferay's Javadocs are easy to browse and well-organized. Here's how to find the
 *Organization* services: 
@@ -24,7 +28,7 @@ Liferay's Javadocs are easy to browse and well-organized. Here's how to find the
 
 That was easy! What if you want to find portlet services? 
 
-## Finding Liferay Plugin Services [](id=finding-liferay-plugin-services)
+## Finding Liferay Plugin Services
 
 Searching for one of Liferay's built-in plugin services is also easy. Instead of
 clicking the link for the service package of the *portal*, click the link for
@@ -48,10 +52,10 @@ Here's how you find services for a user's blogs statistics:
 Now you're ready to invoke Liferay services. To invoke Liferay services
 remotely, your Liferay instance must be configured to allow remote web service
 access. Please see the
-[Service Security Layers](/develop/tutorials/-/knowledge_base/6-2/service-security-layers) 
+[Service Security Layers](/docs/6-2/tutorials/-/knowledge_base/t/service-security-layers) 
 tutorial for details.
 
-## Invoking Liferay Services Locally [](id=invoking-liferay-services-locally)
+## Invoking Liferay Services Locally
 
 Every Liferay service provides a local interface to clients running in the same
 JVM as Liferay Portal. Many local services (`*LocalServiceUtil` classes) are
@@ -95,7 +99,7 @@ services:
 - `RoleService`: for accessing, adding, unassigning, checking, deleting, and
   updating roles. 
 
-## Invoking Liferay Services Remotely [](id=invoking-liferay-services-remotely)
+## Invoking Liferay Services Remotely
 
 Many default Liferay services are available as web services. Liferay exposes its
 web services via SOAP and JSON web services. If you're running Liferay locally
@@ -126,12 +130,12 @@ applications. Liferay's web services APIs can be accessed by many different
 kinds of clients, including non-portlet and even non-Java clients. For
 information on how to develop client applications that can access Liferay's JSON
 web services, please see the
-[Working With JSON Web Services](/develop/tutorials/-/knowledge_base/6-2/invoking-json-web-services)
+[Working With JSON Web Services](/docs/6-2/tutorials/-/knowledge_base/t/invoking-json-web-services)
 tutorial. For information on how to develop
-client applications that access Liferay's SOAP web services, please see the [Working With SOAP Web Services](/develop/tutorials/-/knowledge_base/6-2/soap-web-services)
+client applications that access Liferay's SOAP web services, please see the [Working With SOAP Web Services](/docs/6-2/tutorials/-/knowledge_base/t/soap-web-services)
 tutorial. To learn how to create remote web services for your own application,
 please refer to the
-[Creating Remote Services](/develop/tutorials/-/knowledge_base/6-2/creating-remote-services)
+[Creating Remote Services](/docs/6-2/tutorials/-/knowledge_base/t/creating-remote-services)
 tutorial. 
 
 For more information on Liferay services, see the Liferay Portal CE Javadocs at
@@ -140,15 +144,15 @@ or the Liferay Portal EE Javadocs included in the Liferay Portal EE
 Documentation `.zip` file that you can download from the Customer Portal on
 [http://www.liferay.com](http://www.liferay.com). 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Invoking Local Services](/develop/tutorials/-/knowledge_base/6-2/invoking-local-services)
+[Invoking Local Services](/docs/6-2/tutorials/-/knowledge_base/t/invoking-local-services)
 
-[Invoking Remote Services](/develop/tutorials/-/knowledge_base/6-2/invoking-remote-services)
+[Invoking Remote Services](/docs/6-2/tutorials/-/knowledge_base/t/invoking-remote-services)
 
-[Invoking Services Using Skinny JSON Provider](/develop/tutorials/-/knowledge_base/6-2/invoking-services-using-skinny-json-provider)
+[Invoking Services Using Skinny JSON Provider](/docs/6-2/tutorials/-/knowledge_base/t/invoking-services-using-skinny-json-provider)
 
-[Invoking Liferay Services in Your Android App](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-android-app)
+[Invoking Liferay Services in Your Android App](/docs/6-2/tutorials/-/knowledge_base/t/invoking-liferay-services-in-your-android-app)
 
-[Invoking Liferay Services in Your iOS App](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-ios-app)
+[Invoking Liferay Services in Your iOS App](/docs/6-2/tutorials/-/knowledge_base/t/invoking-liferay-services-in-your-ios-app)
 

@@ -1,4 +1,8 @@
-# Adding, Updating, and Deleting Assets for Custom Entities [](id=adding-updating-and-deleting-assets-for-custom-entities)
+---
+header-id: adding-updating-and-deleting-assets-for-custom-entities
+---
+
+# Adding, Updating, and Deleting Assets for Custom Entities
 
 <!--
 Testing Notes:
@@ -20,18 +24,18 @@ associates an `AssetEntry` with the entity so Liferay can keep track of
 the entity as an asset. When it's time to update the entity, you update the
 asset at the same time. To see how to asset-enable entities in a working example
 portlet, visit the learning path 
-[Asset Enabling Custom Entities](/develop/tutorials/-/knowledge_base/6-2/asset-enabling-custom-entities).
+[Asset Enabling Custom Entities](/docs/6-2/tutorials/-/knowledge_base/t/asset-enabling-custom-entities).
 
 To leverage assets, you must also implement indexers for your portlet's
 entities. Liferay's asset framework uses indexers to manage assets. For
 instructions on
 creating an indexer in a working example portlet, see the learning path 
-[Enabling Search and Indexing](/develop/tutorials/-/knowledge_base/6-2/enabling-search-and-indexing).
+[Enabling Search and Indexing](/docs/6-2/tutorials/-/knowledge_base/t/enabling-search-and-indexing).
 
 This tutorial shows you how to enable assets for your custom entities and
 implement indexes for them. It's time to get started! 
 
-## Preparing Your Project for the Asset Framework [](id=preparing-your-project-for-the-asset-framework)
+## Preparing Your Project for the Asset Framework
 
 In your project's `service.xml` file, add an asset entry entity reference for
 your custom entity. Add the following `reference` tag before your custom
@@ -39,12 +43,12 @@ entity's closing `</entity>` tag.
 
     <reference package-path="com.liferay.portlet.asset" entity="AssetEntry" />
 
-Then [run](/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
+Then [run](/docs/6-2/tutorials/-/knowledge_base/t/running-service-builder-and-understanding-the-generated-code)
 Service Builder.
 
 Now you're ready to implement adding and updating assets!
 
-## Adding and Updating Assets [](id=adding-and-updating-assets)
+## Adding and Updating Assets
 
 Your `-LocalServiceImpl` Java class inherits from its parent base class an
 `AssetEntryLocalService` instance; it's assigned to the variable 
@@ -149,21 +153,17 @@ respective asset and index the entity instance. The above example code calls
 the indexer to index (or re-index, if updating) the entity. It's that easy to
 update assets and indexes.
 
-+$$$
-
-**Tip:** The current user's ID and the scope group ID are commonly made
-available in service context parameters. If the service context you use contains
-them, then you can access them in calls like these:
-
-	long userId = serviceContext.getUserId();
-	long groupId = serviceContext.getScopeGroupId();
-
-$$$
+| **Tip:** The current user's ID and the scope group ID are commonly made
+| available in service context parameters. If the service context you use contains
+| them, then you can access them in calls like these:
+| 
+|  long userId = serviceContext.getUserId();
+|  long groupId = serviceContext.getScopeGroupId();
 
 Next, you'll learn what's needed to properly delete an entity that's associated
 with an asset. 
 
-## Deleting Assets [](id=deleting-assets)
+## Deleting Assets
 
 When deleting your entities, you should delete the associated assets and indexes
 at the same time. This cleans up stored asset and index information, which keeps
@@ -190,7 +190,7 @@ instance.
 **Important:** In order for Liferay's Asset Publisher portlet to show your
 entity, the entity must have an Asset Renderer. To learn how to implement
 an Asset Renderer for your custom entity, refer to learning path 
-[Implementing Asset Renderers](/develop/tutorials/-/knowledge_base/6-2/implementing-asset-renderers).
+[Implementing Asset Renderers](/docs/6-2/tutorials/-/knowledge_base/t/implementing-asset-renderers).
 Note also that an Asset Renderer is how you show a user the components of your
 entity in the Asset Publisher. On deploying your portlet with asset, indexer,
 and asset rendering implementations in place, an Asset Publisher can show your
@@ -200,12 +200,12 @@ custom entities!
 
 Great! Now you know how to add, update, and delete assets in your portlets!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Asset Enabling Custom Entities](/develop/tutorials/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Asset Enabling Custom Entities](/docs/6-2/tutorials/-/knowledge_base/t/asset-enabling-custom-entities)
 
-[Implementing Asset Renderers](/develop/tutorials/-/knowledge_base/6-2/implementing-asset-renderers)
+[Implementing Asset Renderers](/docs/6-2/tutorials/-/knowledge_base/t/implementing-asset-renderers)
 
-[Relating Assets](/develop/tutorials/-/knowledge_base/6-2/relating-assets)
+[Relating Assets](/docs/6-2/tutorials/-/knowledge_base/t/relating-assets)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
+[Service Builder and Services](/docs/6-2/tutorials/-/knowledge_base/t/service-builder)

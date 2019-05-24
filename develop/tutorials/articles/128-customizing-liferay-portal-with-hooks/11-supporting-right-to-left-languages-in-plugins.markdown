@@ -1,4 +1,8 @@
-# Supporting Right-to-Left Languages in Plugins [](id=supporting-right-to-left-languages-in-plugins)
+---
+header-id: supporting-right-to-left-languages-in-plugins
+---
+
+# Supporting Right-to-Left Languages in Plugins
 
 Middle Eastern languages such as Hebrew and Arabic are written right-to-left
 (RTL). Many sites that use RTL languages are multilingual, requiring both RTL
@@ -16,7 +20,7 @@ Liferay Portal styles for RTL languages. When you deploy it, it mirrors
 your site's content for RTL languages. The app is available on the Liferay
 [Marketplace](http://www.liferay.com/marketplace). You can purchase, install,
 and deploy the app as described in the
-[Leveraging the Liferay Marketplace](/discover/portal/-/knowledge_base/6-2/leveraging-the-liferay-marketplace)
+[Leveraging the Liferay Marketplace](/docs/6-2/user/-/knowledge_base/u/leveraging-the-liferay-marketplace)
 chapter of [Using Liferay Portal](/discover/portal). 
 
 As a before-and-after example, the figure below shows a page displayed in
@@ -41,7 +45,7 @@ Now that you've seen Liferay Portal and its apps rendered using RTL Support,
 have you wondered how you might leverage RTL Support in your custom plugins?
 You'll learn how to use RTL Support with your plugins next.
 
-## Applying the RTL Support to Custom Plugins [](id=applying-the-rtl-support-to-custom-plugins)
+## Applying the RTL Support to Custom Plugins
 
 You can use RTL Support with any plugin type, though theme plugins are the most
 common. The following steps focus on using RTL Support in a custom theme, but
@@ -138,14 +142,10 @@ You now know how to use the Right to Left Language Support app in your custom
 plugins. Now it's time to learn how you can extend the Right to Left Language
 Support app's style with your own custom CSS for RTL languages. 
 
-+$$$ 
+| **Note:** You may need to run `ant deploy` from the command line for the
+| `css/.sass-cache` folder and `*_rtl.css` files to be generated.
 
-**Note:** You may need to run `ant deploy` from the command line for the
-`css/.sass-cache` folder and `*_rtl.css` files to be generated. 
-
-$$$
-
-## Defining Custom CSS for RTL Languages [](id=defining-custom-css-for-rtl-languages)
+## Defining Custom CSS for RTL Languages
 
 As you learned in the previous section, the Right to Left Language Support (RTL
 Support) app automatically generates RTL versions of your CSS files by applying
@@ -176,16 +176,16 @@ languages, and how to define custom styles for RTL languages. Whether you want
 to adapt the portal and/or your custom plugins to RTL languages, the RTL Support
 app makes it easy to offer your users the ideal viewing experience. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 As you can see, hooks are a useful way of modifying your portal. Here are some
 other tutorials about hooks:
 
-[Themes and Layout Templates](/develop/tutorials/-/knowledge_base/6-2/themes-and-layout-templates)
+[Themes and Layout Templates](/docs/6-2/tutorials/-/knowledge_base/t/themes-and-layout-templates)
 
-[Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)
+[Application Display Templates](/docs/6-2/tutorials/-/knowledge_base/t/application-display-templates)
 
-[Overriding Web Resources](/develop/tutorials/-/knowledge_base/6-2/overriding-web-resources)
+[Overriding Web Resources](/docs/6-2/tutorials/-/knowledge_base/t/overriding-web-resources)
 
-[Customizing JSPs by Extending the Original](/develop/tutorials/-/knowledge_base/6-2/customizing-jsps-by-extending-the-original)
+[Customizing JSPs by Extending the Original](/docs/6-2/tutorials/-/knowledge_base/t/customizing-jsps-by-extending-the-original)
 

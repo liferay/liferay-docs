@@ -1,4 +1,8 @@
-# Developing Custom SQL Queries [](id=developing-custom-sql-queries)
+---
+header-id: developing-custom-sql-queries
+---
+
+# Developing Custom SQL Queries
 
 Service Builder's finder methods facilitate searching for entities by their
 attributes--their column values. Add the column as a parameter for the finder in
@@ -35,7 +39,7 @@ these steps:
 Next, using the Event Listing portlet as an example, you'll learn how to
 accomplish these steps. 
 
-## Step 1: Specify Your Custom SQL [](id=step-1-specify-your-custom-sql)
+## Step 1: Specify Your Custom SQL
 
 After you've tested your SQL, you must specify it in a particular file for
 Liferay to access it. Liferay's `CustomSQLUtil` class looks up custom SQL from a
@@ -95,7 +99,7 @@ Now that you've specified some custom SQL, the next step is to implement a
 finder method to invoke it. The method name for the finder should match the ID
 you just specified for the `sql` element. 
 
-## Step 2: Implement Your Finder Method [](id=step-2-implement-your-finder-method)
+## Step 2: Implement Your Finder Method
 
 After specifying your custom SQL query, you need to implement the finder method
 to invoke it. This should be done in the service's persistence layer. Service
@@ -186,7 +190,7 @@ the name of the finder method (`findByEventNameEventDescriptionLocationName`).
 Awesome! Your custom SQL is in place and your finder method is implemented.
 Next, you'll call the finder method from your service. 
 
-## Step 3: Access Your Finder Method from Your Service [](id=step-3-access-your-finder-method-from-your-service)
+## Step 3: Access Your Finder Method from Your Service
 
 So far, you created a `*FinderImpl` class and generated a `*FinderUtil` utility
 class. However, your portlet class should not use the finder utility class
@@ -225,8 +229,8 @@ want to include this in the solution. - Jim -->
 Congratulations on developing a custom SQL query and custom finder for your
 portlet! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Writing a Data Driven Application](/develop/tutorials/-/knowledge_base/6-2/writing-a-data-driven-application)
+[Writing a Data Driven Application](/docs/6-2/tutorials/-/knowledge_base/t/writing-a-data-driven-application)
 
-[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
+[Running Service Builder and Understanding the Generated Code](/docs/6-2/tutorials/-/knowledge_base/t/running-service-builder-and-understanding-the-generated-code)

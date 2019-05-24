@@ -1,4 +1,8 @@
-# Writing a JSF Application Using Liferay Faces [](id=writing-a-jsf-application-using-liferay-faces)
+---
+header-id: writing-a-jsf-application-using-liferay-faces
+---
+
+# Writing a JSF Application Using Liferay Faces
 
 If you're just getting started with Liferay Faces development, you've come to
 the right place. This learning path starts with creating a JSF portlet and
@@ -8,7 +12,7 @@ from scratch, deploying it, and developing it into a Guestbook portlet.
 
 Before beginning, make sure you have a Liferay development environment
 installed. You can learn how to install Liferay IDE or Liferay Developer Studio
-in the [Beginning Liferay Development](/develop/tutorials/-/knowledge_base/6-2/beginning-liferay-jsf-development)
+in the [Beginning Liferay Development](/docs/6-2/tutorials/-/knowledge_base/t/beginning-liferay-jsf-development)
 learning path. Though you can use the command line or any Java IDE that's
 available, Liferay provides these development tools, which make it much easier
 to write code on Liferay's platform. You'll use it throughout the development

@@ -1,4 +1,8 @@
-# Permissions [](id=permissions)
+---
+header-id: permissions
+---
+
+# Permissions
 
 All of Liferay's portlets support Liferay's robust, fine-grained permissions
 system. Some higher level permissions can be configured in the permissions tab

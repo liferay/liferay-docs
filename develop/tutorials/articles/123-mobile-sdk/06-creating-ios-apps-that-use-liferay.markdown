@@ -1,4 +1,8 @@
-# Creating iOS Apps that Use Liferay [](id=creating-ios-apps-that-use-liferay)
+---
+header-id: creating-ios-apps-that-use-liferay
+---
+
+# Creating iOS Apps that Use Liferay
 
 The Liferay Mobile SDK provides a way to streamline consuming Liferay core web 
 services, Liferay utilities, and custom portlet web services. It wraps Liferay
@@ -30,12 +34,12 @@ The iOS app development tutorials include the following topics:
 You can get started by making Liferay services available to your app. This is 
 accomplished by installing the iOS SDK.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Invoking Liferay Services in Your iOS App](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-ios-app)
+[Invoking Liferay Services in Your iOS App](/docs/6-2/tutorials/-/knowledge_base/t/invoking-liferay-services-in-your-ios-app)
 
-[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/6-2/building-mobile-sdks)
+[Building Mobile SDKs](/docs/6-2/tutorials/-/knowledge_base/t/building-mobile-sdks)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
+[Service Builder and Services](/docs/6-2/tutorials/-/knowledge_base/t/service-builder)
 
-[Creating Android Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-android-apps-that-use-liferay)
+[Creating Android Apps that Use Liferay](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-apps-that-use-liferay)

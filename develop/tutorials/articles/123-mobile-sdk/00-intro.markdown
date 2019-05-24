@@ -1,4 +1,8 @@
-# Mobile SDK [](id=mobile)
+---
+header-id: mobile
+---
+
+# Mobile SDK
 
 Want to harness all the power that Liferay Portal offers from your mobile apps?
 Thanks to Liferay's Mobile SDK, you can do just that. The Liferay Mobile SDK
@@ -43,22 +47,22 @@ This section's tutorials cover using the Mobile SDK in Android and iOS app
 development. The following tutorials introduce these topics and are followed by 
 in-depth tutorials on each: 
 
-- [Creating Android Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-android-apps-that-use-liferay)
-- [Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay)
+- [Creating Android Apps that Use Liferay](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-apps-that-use-liferay)
+- [Creating iOS Apps that Use Liferay](/docs/6-2/tutorials/-/knowledge_base/t/creating-ios-apps-that-use-liferay)
 
 In addition, the following tutorial covers building Mobile SDKs to support your 
 custom portlet services: 
 
-- [Building Mobile SDKs](/develop/tutorials/-/knowledge_base/6-2/building-mobile-sdks)
+- [Building Mobile SDKs](/docs/6-2/tutorials/-/knowledge_base/t/building-mobile-sdks)
 
 Fasten your seatbelt--it's time to go mobile with Liferay's Mobile SDK! 
 
 **Related Topics:**
 
-[Creating Android Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-android-apps-that-use-liferay)
+[Creating Android Apps that Use Liferay](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-apps-that-use-liferay)
 
-[Creating iOS Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay)
+[Creating iOS Apps that Use Liferay](/docs/6-2/tutorials/-/knowledge_base/t/creating-ios-apps-that-use-liferay)
 
-[Displaying Site Pages to Mobile Devices](/discover/portal/-/knowledge_base/6-2/displaying-site-pages-to-mobile-devices)
+[Displaying Site Pages to Mobile Devices](/docs/6-2/user/-/knowledge_base/u/displaying-site-pages-to-mobile-devices)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
+[Service Builder and Services](/docs/6-2/tutorials/-/knowledge_base/t/service-builder)

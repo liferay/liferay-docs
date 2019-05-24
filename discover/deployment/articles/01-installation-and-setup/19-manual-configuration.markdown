@@ -1,4 +1,8 @@
-# Manual Configuration [](id=manual-configuration)
+---
+header-id: manual-configuration
+---
+
+# Manual Configuration
 
 You don't have to use the setup wizard to configure Liferay. The setup wizard
 behind the scenes creates a configuration file that you can create manually.

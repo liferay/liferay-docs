@@ -1,4 +1,8 @@
-# Using the Gadget Editor [](id=using-the-gadget-editor)
+---
+header-id: using-the-gadget-editor
+---
+
+# Using the Gadget Editor
 
 As part of Liferay's OpenSocial integration, the *OpenSocial Gadget Editor* is
 included with Liferay Portal. The gadget editor is a complete development
@@ -61,12 +65,12 @@ editor.
 
 **Related Topics**
 
-[Using the Mobile SDK](/develop/tutorials/-/knowledge_base/6-2/mobile)
+[Using the Mobile SDK](/docs/6-2/tutorials/-/knowledge_base/t/mobile)
 
-[Using the Device Recognition API](/develop/tutorials/-/knowledge_base/6-2/using-the-device-recognition-api)
+[Using the Device Recognition API](/docs/6-2/tutorials/-/knowledge_base/t/using-the-device-recognition-api)
 
-[Customizing Liferay Portal with Hooks](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+[Customizing Liferay Portal with Hooks](/docs/6-2/tutorials/-/knowledge_base/t/customizing-liferay-portal)
 
-[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)
+[User Interfaces with AlloyUI](/docs/6-2/tutorials/-/knowledge_base/t/alloyui)
 
-[Localization](/develop/tutorials/-/knowledge_base/6-2/localization)
+[Localization](/docs/6-2/tutorials/-/knowledge_base/t/localization)

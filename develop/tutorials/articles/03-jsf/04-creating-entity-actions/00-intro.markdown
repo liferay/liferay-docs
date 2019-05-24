@@ -1,4 +1,8 @@
-# Creating Your JSF Application's Entity Actions [](id=creating-your-jsf-applications-entity-actions)
+---
+header-id: creating-your-jsf-applications-entity-actions
+---
+
+# Creating Your JSF Application's Entity Actions
 
 To this point, you've created a JSF guestbook application that uses a database
 to store its entries. Also, the application is integrated with Liferay's
@@ -16,7 +20,7 @@ managed bean and adding buttons that trigger those methods using a JSF view.
 In this learning path, you'll only create entity actions for your guestbook
 entries. The same will be done for your guestbooks, but will be completed later
 in the
-[Adding a JSF Portlet to the Control Panel](/develop/tutorials/-/knowledge_base/6-2/adding-a-jsf-portlet-to-the-control-panel)
+[Adding a JSF Portlet to the Control Panel](/docs/6-2/tutorials/-/knowledge_base/t/adding-a-jsf-portlet-to-the-control-panel)
 learning path.
 
 By providing entity actions, your users possess complete control over the

@@ -1,4 +1,8 @@
-# Using Icons with the liferay-ui Taglib [](id=using-icons-with-the-liferay-ui-taglib)
+---
+header-id: using-icons-with-the-liferay-ui-taglib
+---
+
+# Using Icons with the liferay-ui Taglib
 
 By using meaningful graphics as icons, you can draw your users' attention 
 toward important parts of your portlet. Using icons also enhances your portlet's
@@ -11,7 +15,7 @@ the figure below for an example of icons being used in a portlet.
 Now it's time to go icon crazy! Get started by learning how to use Liferay's 
 icons in your portlets. 
 
-## Using Liferay's Icons in Your Portlet [](id=using-liferays-icons-in-your-portlet)
+## Using Liferay's Icons in Your Portlet
 
 Liferay has a wide variety of icons that you can use in your portlets. They are 
 located in your `/webapps/ROOT/html/themes/classic/images/common/` directory. 
@@ -75,7 +79,7 @@ user to click the icon.
 Now that you have an understanding of how to use Liferay's icons in your
 portlet, it's time to use some of your own!
 
-## Using Your Own Icons in a Portlet [](id=using-your-own-icons-in-a-portlet)
+## Using Your Own Icons in a Portlet
 
 The process for adding your own icons in a portlet is similar to the process of
 using Liferay's icons. There are just a few minor but important differences.
@@ -107,8 +111,8 @@ portlet:
 Deploy your portlet and your new icon appears inside it. Congrats! You have
 learned how to use your own icons in a portlet!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using Liferay UI Tabs and Sections](/develop/tutorials/-/knowledge_base/6-2/using-liferay-ui-tabs-and-sections)
+[Using Liferay UI Tabs and Sections](/docs/6-2/tutorials/-/knowledge_base/t/using-liferay-ui-tabs-and-sections)
 
-[Using Liferay-UI:Success and Liferay-UI:Error Messages](/develop/tutorials/-/knowledge_base/6-2/using-liferay-uisuccess-and-liferay-uierror-message)
+[Using Liferay-UI:Success and Liferay-UI:Error Messages](/docs/6-2/tutorials/-/knowledge_base/t/using-liferay-uisuccess-and-liferay-uierror-message)

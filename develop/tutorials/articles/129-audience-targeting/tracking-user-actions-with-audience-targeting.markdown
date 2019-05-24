@@ -1,4 +1,8 @@
-# Tracking User Actions with Audience Targeting [](id=tracking-user-actions-with-audience-targeting)
+---
+header-id: tracking-user-actions-with-audience-targeting
+---
+
+# Tracking User Actions with Audience Targeting
 
 In the Audience Targeting application, a campaign defines a set of content
 targeted to specific user segments in a time period. Tracking actions allow
@@ -16,18 +20,18 @@ application.
 
 To learn more about how tracking actions are used in the Audience Targeting
 application, visit the
-[Defining Tracking Actions](/discover/portal/-/knowledge_base/6-2/managing-campaigns#defining-tracking-actions)
+[Defining Tracking Actions](/docs/6-2/user/-/knowledge_base/u/managing-campaigns#defining-tracking-actions)
 section.
 
 To follow this tutorial, you must first have the Audience Targeting SDK
 installed. Visit the
-[Installing the Audience Targeting Project](/develop/tutorials/-/knowledge_base/6-2/creating-new-audience-targeting-rule-types#installing-the-audience-targeting-project)
+[Installing the Audience Targeting Project](/docs/6-2/tutorials/-/knowledge_base/t/creating-new-audience-targeting-rule-types#installing-the-audience-targeting-project)
 section for information on how to do this.
 
 Next, you'll begin learning how to create a custom tracking action using the
 Audience Targeting SDK.
 
-## Creating a Tracking Action [](id=creating-a-tracking-action)
+## Creating a Tracking Action
 
 Adding a new tracking action to the Audience Targeting application is easy.
 In this tutorial, you'll learn how to create a tracking action and deploy it to
@@ -58,15 +62,11 @@ your Liferay server.
    tracking action listed when creating or editing a campaign in the Audience
    Targeting application.
 
-    +$$$
-
-    **Tip:** When a plugin has been successfully deployed and you don't see its
-    changes, check that the generated `.jar` in the Plugins SDK's `/dist` folder
-    contains the latest modifications. If it doesn't contain them, delete it and
-    redeploy the plugin. Alternatively, you can run the `ant clean deploy`
-    command.
-
-    $$$
+    | **Tip:** When a plugin has been successfully deployed and you don't see its
+    | changes, check that the generated `.jar` in the Plugins SDK's `/dist` folder
+    | contains the latest modifications. If it doesn't contain them, delete it and
+    | redeploy the plugin. Alternatively, you can run the `ant clean deploy`
+    | command.
 
 4. To view your new tracking action, navigate to your portal's *Admin* &rarr;
 *Site Administration* &rarr; *Configuration* &rarr; *Audience Targeting* menu.
@@ -96,7 +96,7 @@ and `src/content/Language.properties` files, respectively.
 
 You can learn more about language keys and how to create, use, and generate them
 by visiting the
-[Localization](/develop/tutorials/-/knowledge_base/6-2/localization) tutorials.
+[Localization](/docs/6-2/tutorials/-/knowledge_base/t/localization) tutorials.
 You'll learn about configuring a tracking mechanism and UI later in this
 tutorial. You'll begin with customizing your tracking action's behavior.
 
@@ -337,9 +337,9 @@ study the folders with the `tracking-action-` prefix. To view the final solution
 of a deployable sample newsletter tracking action, you can download its
 [ZIP file](/documents/10184/598548/tracking-action-newsletter.zip).
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating Model Listeners](/develop/tutorials/-/knowledge_base/6-2/creating-model-listeners)
+[Creating Model Listeners](/docs/6-2/tutorials/-/knowledge_base/t/creating-model-listeners)
 
-[Web Content Management](/discover/portal/-/knowledge_base/6-2/web-content-management)
+[Web Content Management](/docs/6-2/user/-/knowledge_base/u/web-content-management)
 

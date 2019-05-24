@@ -1,4 +1,8 @@
-# Accessing the Portlet API with ExternalContext for JSF Portlets [](id=accessing-the-portlet-api-with-externalcontext)
+---
+header-id: accessing-the-portlet-api-with-externalcontext
+---
+
+# Accessing the Portlet API with ExternalContext for JSF Portlets
 
 Just as JSF *web app* developers rely on `ExternalContext` to access the Servlet
 API, JSF *portlet* developers rely on it to access the Portlet API. 
@@ -42,12 +46,12 @@ Notice that you're able to retrieve the `ExternalContext` from the current
 In this tutorial, you've explored requesting objects from the portlet API using
 `ExternalContext`. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Communicating Between JSF Portlets Using IPC](/develop/tutorials/-/knowledge_base/6-2/communicating-between-jsf-portlets-using-ipc)
+[Communicating Between JSF Portlets Using IPC](/docs/6-2/tutorials/-/knowledge_base/t/communicating-between-jsf-portlets-using-ipc)
 
-[Understanding Liferay Faces Bridge](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-bridge)
+[Understanding Liferay Faces Bridge](/docs/6-2/tutorials/-/knowledge_base/t/understanding-liferay-faces-bridge)
 
-[Understanding Liferay Faces Portal](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-portal)
+[Understanding Liferay Faces Portal](/docs/6-2/tutorials/-/knowledge_base/t/understanding-liferay-faces-portal)
 
-[Understanding Liferay Faces Alloy](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-alloy)
+[Understanding Liferay Faces Alloy](/docs/6-2/tutorials/-/knowledge_base/t/understanding-liferay-faces-alloy)

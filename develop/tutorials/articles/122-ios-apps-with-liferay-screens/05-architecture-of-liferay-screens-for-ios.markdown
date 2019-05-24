@@ -1,4 +1,8 @@
-# Architecture of Liferay Screens for iOS [](id=architecture-of-liferay-screens-for-ios)
+---
+header-id: architecture-of-liferay-screens-for-ios
+---
+
+# Architecture of Liferay Screens for iOS
 
 Liferay Screens separates its presentation and business-logic code using ideas 
 from
@@ -16,13 +20,13 @@ includes the Core, Screenlets, and Themes. These components are then described
 in detail in the sections that follow. After you get done examining Screens's 
 building blocks, you'll be ready to create some amazing Screenlets and Themes!
 
-## High Level Architecture of Liferay Screens for iOS [](id=high-level-architecture-of-liferay-screens-for-ios)
+## High Level Architecture of Liferay Screens for iOS
 
 Liferay Screens for iOS is composed of a Core, a Screenlet layer, a View layer,
 and Server Connectors. Server Connectors are technically part of the Core, but
 are worth describing separately. They facilitate interaction with local and
 remote data sources and communication between the Screenlet layer and the
-[Liferay Mobile SDK](/develop/tutorials/-/knowledge_base/6-2/mobile). 
+[Liferay Mobile SDK](/docs/6-2/tutorials/-/knowledge_base/t/mobile). 
 
 ![Figure 1: The high level components of Liferay Screens for iOS.](../../images/screens-ios-architecture-01.png)
 
@@ -36,7 +40,7 @@ and Server Connector classes.
 selected Theme in the runtime and in Interface Builder. They also react to UI 
 events to start server requests (via Server Connectors), and define a set of
 `@IBInspectable` properties that can be configured from Interface Builder. The
-Screenlets bundled with Liferay Screens are known as the [Screenlet library](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios). 
+Screenlets bundled with Liferay Screens are known as the [Screenlet library](/docs/6-2/reference/-/knowledge_base/r/screenlets-in-liferay-screens-for-ios). 
 
 **Interactors:** implement specific use cases for communicating with servers or 
 any other data store. Interactors can use local and remote data sources by using 
@@ -48,7 +52,7 @@ or use case, an Interactor must be created for each.
 **Connectors** (or Server Connectors): a collection of classes that can interact 
 with local and remote data sources and Liferay instances. Liferay's own set of 
 Connectors, Liferay Connector, use the
-[Liferay Mobile SDK](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-ios-app).
+[Liferay Mobile SDK](/docs/6-2/tutorials/-/knowledge_base/t/invoking-liferay-services-in-your-ios-app).
 All Server Connectors can be run concurrently since they use the 
 [`NSOperation` framework](https://developer.apple.com/library/mac/documentation/General/Conceptual/ConcurrencyProgrammingGuide/OperationObjects/OperationObjects.html#//apple_ref/doc/uid/TP40008091-CH101-SW1). 
 It's very easy to define priorities and dependencies between Connectors, so you
@@ -62,7 +66,7 @@ Screenlets to the user.
 
 The next section describes the Core in detail.
 
-## Core [](id=core)
+## Core
 
 The Core is the micro-framework that lets developers write Screenlets in a
 structured and isolated way. All Screenlets share a common structure based on
@@ -109,8 +113,8 @@ classes instantiate and start these Connector classes.
 an object (typically a singleton) that holds the logged in user's session. Apps 
 can use an implicit login, invisible to the user, or a login that relies on 
 explicit user input to create the session. User logins can be implemented with 
-[Login Screenlet](/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-ios). 
-This is explained in detail [here](/develop/tutorials/-/knowledge_base/6-2/accessing-the-liferay-session-in-ios). 
+[Login Screenlet](/docs/6-2/reference/-/knowledge_base/r/loginscreenlet-for-ios). 
+This is explained in detail [here](/docs/6-2/tutorials/-/knowledge_base/t/accessing-the-liferay-session-in-ios). 
 
 [**LiferayServerContext**](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Context/LiferayServerContext.swift):
 a singleton object that holds server configuration parameters. It's loaded from
@@ -120,7 +124,7 @@ default values.
 Now that you know what the Core contains, you're ready to learn the Screenlet
 layer's details. 
 
-## Screenlet Layer [](id=screenlet-layer)
+## Screenlet Layer
 
 The Screenlet layer contains the available Screenlets in Liferay Screens for
 iOS. The following diagram shows the Screenlet layer in relation to the Core,
@@ -172,7 +176,7 @@ You can therefore take advantage of [Inversion of Control](https://en.wikipedia.
 This way, you can implement your own factory class to use to create your own 
 Connector objects. To tell Screens to use your factory class, specify it in the 
 `liferay-server-context.plist` file as described 
-[in the tutorial on preparing your iOS project for Screens](/develop/tutorials/-/knowledge_base/6-2/preparing-ios-projects-for-liferay-screens#configuring-communication-with-liferay). 
+[in the tutorial on preparing your iOS project for Screens](/docs/6-2/tutorials/-/knowledge_base/t/preparing-ios-projects-for-liferay-screens#configuring-communication-with-liferay). 
 
 **MyScreenletView_themeX:** A class that belongs to one specific Theme. In the
 diagram, this Theme is *ThemeX*. The class renders the Screenlet's UI by using
@@ -189,10 +193,10 @@ view class named *FooScreenletView* and a Theme named *BarTheme* must have an
 XIB file named `FooScreenletView_barTheme.xib`.
 
 For more details, refer to the tutorial
-[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets). 
+[Creating iOS Screenlets](/docs/6-2/tutorials/-/knowledge_base/t/creating-ios-screenlets). 
 Next, the Theme Layer of Screens for iOS is described. 
 
-## Theme Layer [](id=theme-layer)
+## Theme Layer
 
 The Theme Layer lets developers set a Screenlet's look and feel. The Screenlet 
 property `themeName` determines the Theme to load. This can be set by the 
@@ -259,17 +263,17 @@ several Screenlets. Liferay's available Theme sets are listed here:
   sample app.
 
 For more details on Theme creation, see the tutorial
-[Creating iOS Themes](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes). 
+[Creating iOS Themes](/docs/6-2/tutorials/-/knowledge_base/t/creating-ios-themes). 
 
 Awesome! Now you know the nitty gritty details of Liferay Screens for iOS. This 
 information is invaluable when using Screens to develop your apps. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-ios-apps)
+[Using Screenlets in iOS Apps](/docs/6-2/tutorials/-/knowledge_base/t/using-screenlets-in-ios-apps)
 
-[Using Themes in iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets)
+[Using Themes in iOS Screenlets](/docs/6-2/tutorials/-/knowledge_base/t/using-themes-in-ios-screenlets)
 
-[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets)
+[Creating iOS Screenlets](/docs/6-2/tutorials/-/knowledge_base/t/creating-ios-screenlets)
 
-[Creating iOS Themes](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes)
+[Creating iOS Themes](/docs/6-2/tutorials/-/knowledge_base/t/creating-ios-themes)

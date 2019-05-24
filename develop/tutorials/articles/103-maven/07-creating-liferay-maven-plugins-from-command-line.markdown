@@ -1,12 +1,16 @@
-# Creating Liferay Maven Plugins from the Command Line [](id=creating-liferay-maven-plugins-from-the-command-lin)
+---
+header-id: creating-liferay-maven-plugins-from-the-command-lin
+---
+
+# Creating Liferay Maven Plugins from the Command Line
 
 To learn how to use Liferay IDE to create Liferay Maven plugins, please refer to
 the 
-[Creating Liferay Maven Plugins from Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-liferay-ide)
+[Creating Liferay Maven Plugins from Liferay IDE](/docs/6-2/tutorials/-/knowledge_base/t/creating-liferay-maven-plugins-from-liferay-ide)
 tutorial. This tutorial explains how to use Maven archetypes to generate
 Liferay plugin projects using the command line.
 
-## Using the Maven Archetype Tool to Create a Liferay Plugin [](id=using-the-maven-archetype-tool-to-create-a-liferay-plugin)
+## Using the Maven Archetype Tool to Create a Liferay Plugin
 
 Follow these steps to create a Liferay plugin from the command line:
 
@@ -14,14 +18,10 @@ Follow these steps to create a Liferay plugin from the command line:
    which you want to create the plugin project. Create a sub-directory
    for each plugin project you create.
 
-    +$$$
-
-    **Note:** If you haven't already created a parent project, you may want to
-    consider creating one to share common project information. See the
-    [Using Liferay Maven Parent Plugin Projects](/develop/tutorials/-/knowledge_base/6-2/using-liferay-maven-parent-plugin-projects)
-    tutorial for details.
-
-    $$$
+    | **Note:** If you haven't already created a parent project, you may want to
+    | consider creating one to share common project information. See the
+    | [Using Liferay Maven Parent Plugin Projects](/docs/6-2/tutorials/-/knowledge_base/t/using-liferay-maven-parent-plugin-projects)
+    | tutorial for details.
 
 2. Execute the following command: 
 
@@ -46,24 +46,20 @@ Follow these steps to create a Liferay plugin from the command line:
         Choose a number or apply filter (format: [groupId:]artifactId,
         case sensitive contains):
 
-    +$$$
-    
-    **Important:** Sometimes, after a new Liferay release, Liferay's most
-    up-to-date Maven artifacts may not be available from the default *Maven
-    Central* repository. In this case, you must use the artifacts stored at
-    [repository.liferay.com](https://repository.liferay.com). To do this, use
-    the `-DarchetypeCatalog` option to point to the Liferay Repository when
-    generating Maven archetypes. For example:
-
-        mvn archetype:generate -DarchetypeCatalog=https://repository.liferay.com/nexus/content/repositories/liferay-public-releases
-
-    You'll also need to configure a couple other files to ensure the generation
-    command completes successfully. You can refer to the
-    [Installing Artifacts from the Liferay Repository](/develop/tutorials/-/knowledge_base/6-2/managing-liferay-maven-artifacts#installing-artifacts-from-the-liferay-repository)
-    section of the *Managing Liferay Maven Artifacts* tutorial to configure
-    Maven to access the Liferay Repository for Liferay Maven artifacts.
-
-    $$$
+    | **Important:** Sometimes, after a new Liferay release, Liferay's most
+    | up-to-date Maven artifacts may not be available from the default *Maven
+    | Central* repository. In this case, you must use the artifacts stored at
+    | [repository.liferay.com](https://repository.liferay.com). To do this, use
+    | the `-DarchetypeCatalog` option to point to the Liferay Repository when
+    | generating Maven archetypes. For example:
+    | 
+    |     mvn archetype:generate -DarchetypeCatalog=https://repository.liferay.com/nexus/content/repositories/liferay-public-releases
+    | 
+    | You'll also need to configure a couple other files to ensure the generation
+    | command completes successfully. You can refer to the
+    | [Installing Artifacts from the Liferay Repository](/docs/6-2/tutorials/-/knowledge_base/t/managing-liferay-maven-artifacts#installing-artifacts-from-the-liferay-repository)
+    | section of the *Managing Liferay Maven Artifacts* tutorial to configure
+    | Maven to access the Liferay Repository for Liferay Maven artifacts.
 
 3. To find the right Liferay archetype for your project, you can either scroll
    up to find it or apply filters to narrow the set of results. Filtering on
@@ -147,15 +143,11 @@ Follow these steps to create a Liferay plugin from the command line:
     Maven's Archetype tool creates a Liferay plugin project directory with a new
     `pom.xml` file and source code. 
 
-+$$$
-
-**Note:** The archetype file is
-downloaded and installed automatically to your local repository (e.g.,
-`.m2/repository/com/liferay/maven/archetypes/[archetype]`). If you
-configured a mirror pointing to your public repository on Nexus, the
-plugin is installed there. 
-
-$$$
+| **Note:** The archetype file is
+| downloaded and installed automatically to your local repository (e.g.,
+| `.m2/repository/com/liferay/maven/archetypes/[archetype]`). If you
+| configured a mirror pointing to your public repository on Nexus, the
+| plugin is installed there.
 
 Following these steps, you can use Archetype to generate all your Liferay plugin
 projects! 
@@ -168,13 +160,13 @@ When your plugin is created, you can package and deploy your project to a
 specified Liferay instance. You can even install and deploy the individual
 plugin to a remote repository. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/deploying-liferay-plugins-with-maven)
+[Deploying Liferay Plugins with Maven](/docs/6-2/tutorials/-/knowledge_base/t/deploying-liferay-plugins-with-maven)
 
-[Developing Liferay Theme Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/developing-liferay-theme-plugins-with-maven)
+[Developing Liferay Theme Plugins with Maven](/docs/6-2/tutorials/-/knowledge_base/t/developing-liferay-theme-plugins-with-maven)
 
-[Developing Liferay Layout Template Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/developing-liferay-layout-template-plugins-with-mav)
+[Developing Liferay Layout Template Plugins with Maven](/docs/6-2/tutorials/-/knowledge_base/t/developing-liferay-layout-template-plugins-with-mav)
 
-[Developing Liferay Plugins with Additional Maven Archetypes](/develop/tutorials/-/knowledge_base/6-2/developing-liferay-plugins-with-additional-maven-ar)
+[Developing Liferay Plugins with Additional Maven Archetypes](/docs/6-2/tutorials/-/knowledge_base/t/developing-liferay-plugins-with-additional-maven-ar)
 

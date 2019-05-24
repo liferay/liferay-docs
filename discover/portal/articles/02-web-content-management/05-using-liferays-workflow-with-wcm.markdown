@@ -1,4 +1,8 @@
-# Using Liferay's Workflow with WCM [](id=using-liferays-workflow-with-wcm)
+---
+header-id: using-liferays-workflow-with-wcm
+---
+
+# Using Liferay's Workflow with WCM
 
 Workflow is essentially a predetermined sequence of connected steps. In Liferay
 WCM, workflow is designed to manage the creation, modification and publication
@@ -9,7 +13,7 @@ to the site only after it has been reviewed and approved.
 Liferay's workflow engine is called Kaleo workflow and it ships with Liferay CE.
 If you have uninstalled it or are using EE, it needs to be installed and
 configured separately. This is covered in the
-[Using Workflow](/discover/portal/-/knowledge_base/6-2/using-workflow) chapter.
+[Using Workflow](/docs/6-2/user/-/knowledge_base/u/using-workflow) chapter.
 Since we have somewhat of a "What came first--the chicken or the egg?" problem,
 for now, we'll assume it's installed and look at how you can take advantage of
 workflow in getting your content through any approval steps between creation and
@@ -36,18 +40,18 @@ to Liferay.
 ![Figure 2.24: You can select the pre-made *Single Approver* workflow to experiment with workflow management.](../../images/04-web-content-workflow-config.png)
 
 As you'll discover in the
-[Using Workflow](/discover/portal/-/knowledge_base/6-2/using-workflow) chapter,
+[Using Workflow](/docs/6-2/user/-/knowledge_base/u/using-workflow) chapter,
 you can design workflows to suit your organization's approval process. For the
 Lunar Resort's implementation we'll use the *Single Approver* workflow which
 ships with the product.
 
-## Defining Workflows for Web Content [](id=defining-workflows-for-web-content)
+## Defining Workflows for Web Content
 
 Let's set up Liferay's Workflow for the Lunar Resort web site. You must have the
 Kaleo workflow plugin installed in order for the workflow categories to appear
 in the Control Panel. Liferay's Kaleo workflow engine ships with CE versions of
 Liferay. For installation instructions for Liferay EE, please see the
-[Enabling Workflow](/discover/portal/-/knowledge_base/6-2/enabling-workflow)
+[Enabling Workflow](/docs/6-2/user/-/knowledge_base/u/enabling-workflow)
 section.
 
 1. Go to the Site Administration page and select *Workflow Configuration* from
@@ -92,5 +96,5 @@ was of a very straightforward workflow, as it has only a single approver. Kaleo
 workflow allows you to design workflows that go through as many steps as you
 need to conform to your business processes. We look at Kaleo workflow in more
 detail in the
-[Kaleo Forms: Defining Business Processes](/discover/portal/-/knowledge_base/6-2/kaleo-forms-defining-business-processes)
+[Kaleo Forms: Defining Business Processes](/docs/6-2/user/-/knowledge_base/u/kaleo-forms-defining-business-processes)
 section.

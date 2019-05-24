@@ -1,10 +1,14 @@
-# Adding Custom Interactors to iOS Screenlets [](id=adding-custom-interactors-to-ios-screenlets)
+---
+header-id: adding-custom-interactors-to-ios-screenlets
+---
+
+# Adding Custom Interactors to iOS Screenlets
 
 Interactors are Screenlet components that implement server communication for a 
 specific use case. For example, the Login Screenlet's interactor calls the 
 Liferay Mobile SDK service that authenticates a user to the portal. Similarly, 
 the interactor for 
-[the Add Bookmark Screenlet](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets) 
+[the Add Bookmark Screenlet](/docs/6-2/tutorials/-/knowledge_base/t/creating-ios-screenlets) 
 calls the Liferay Mobile SDK service that adds a bookmark to the Bookmarks 
 portlet. 
 
@@ -19,7 +23,7 @@ app's code.
 In this tutorial, you'll see an example interactor that overrides the Login 
 Screenlet to always log in the same user, without a password.
 
-## Implementing a Custom Interactor [](id=implementing-a-custom-interactor)
+## Implementing a Custom Interactor
 
 1. Implement your custom interactor. You must inherit 
    `ServerConnectorInteractor`, as shown here:
@@ -47,8 +51,8 @@ Screenlet to always log in the same user, without a password.
 
 Great! Now you know how to implement custom interactors for iOS Screenlets.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)
+[Architecture of Liferay Screens for iOS](/docs/6-2/tutorials/-/knowledge_base/t/architecture-of-liferay-screens-for-ios)
 
-[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets)
+[Creating iOS Screenlets](/docs/6-2/tutorials/-/knowledge_base/t/creating-ios-screenlets)

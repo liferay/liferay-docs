@@ -1,4 +1,8 @@
-# Making Themes Configurable with Settings [](id=making-themes-configurable-with-settings)
+---
+header-id: making-themes-configurable-with-settings
+---
+
+# Making Themes Configurable with Settings
 
 You can define settings to make your theme configurable for site administrators.
 You can add a simple text field input setting, which is the default setting
@@ -9,7 +13,7 @@ learn how to do all these things.
 
 First, it's best to learn how to add configurable settings to a theme. 
 
-## Adding Configurable Settings to a Theme [](id=adding-configurable-settings-to-a-theme)
+## Adding Configurable Settings to a Theme
 
 Settings must be defined in the theme plugin's `liferay-look-and-feel.xml` file found in the
 `docroot/WEB-INF` folder. The
@@ -89,20 +93,16 @@ once the site administrator selects the theme and clicks *Save*.
 
 ![Figure 1: Here are examples of configurable settings for the site admin to enter a slogan and display the theme's footer. Themes and their settings are available in the *Look and Feel* of a site's page settings.](../../images/themes-custom-configurable-setting.png)
 
-+$$$
-
-**Note:** Use a language properties
-hook to properly display configurable theme settings, like the slogan text area
-and footer checkbox from the previous example. For details, see the 
- [Overriding a *Language.properties* File](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/override-a-language-properties-hook-liferay-portal-6-2-dev-guide-en)
-section in the *Hooks* chapter of the DevGuide.
-
-$$$
+| **Note:** Use a language properties
+| hook to properly display configurable theme settings, like the slogan text area
+| and footer checkbox from the previous example. For details, see the
+|  [Overriding a *Language.properties* File](https://www.liferay.com/documentation/liferay-portal/6.2/development/-/ai/override-a-language-properties-hook-liferay-portal-6-2-dev-guide-en)
+| section in the *Hooks* chapter of the DevGuide.
 
 Now that you know how to add settings, you can move on to learning how to add
 logic to enable different templates for a theme. 
 
-## Enabling Different Templates for a Theme [](id=enabling-different-templates-for-a-theme)
+## Enabling Different Templates for a Theme
 
 Say you want to be able to choose from two different page headers (perhaps
 one includes more details, while the other is smaller). Instead of creating two
@@ -167,8 +167,8 @@ Congrats! Now you know how to create configurable settings for your theme and
 use multiple page templates from the same `portal_normal.[vm|ftl]` template
 script! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using Configurable Portlet Preferences](/develop/tutorials/-/knowledge_base/6-2/using-configurable-portlet-preferences)
+[Using Configurable Portlet Preferences](/docs/6-2/tutorials/-/knowledge_base/t/using-configurable-portlet-preferences)
 
-[Leveraging Portal Predefined Settings in Your Theme](/develop/tutorials/-/knowledge_base/6-2/leveraging-portal-predefined-settings-in-your-theme)
+[Leveraging Portal Predefined Settings in Your Theme](/docs/6-2/tutorials/-/knowledge_base/t/leveraging-portal-predefined-settings-in-your-theme)

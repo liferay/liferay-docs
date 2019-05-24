@@ -1,20 +1,20 @@
-# Server Administration [](id=server-administration)
+---
+header-id: server-administration
+---
+
+# Server Administration
 
 The Server Administration page of the Control Panel lets you perform various
 tasks related to the portal server itself that aren't directly related to the
 resources in the portal. Clicking the link makes this clear: you're immediately
 presented with a graph showing the resources available in the JVM.
 
-+$$$
+| **Note:** You can use Liferay Connected Services (LCS) to obtain additional
+| performance metrics for your portal servers. See the
+| [LCS documentation](/docs/6-2/deploy/-/knowledge_base/d/managing-liferay-with-liferay-connected-services)
+| for more information.
 
-**Note:** You can use Liferay Connected Services (LCS) to obtain additional 
-performance metrics for your portal servers. See the 
-[LCS documentation](/discover/deployment/-/knowledge_base/6-2/managing-liferay-with-liferay-connected-services) 
-for more information.
-
-$$$
-
-## Resources [](id=resources)
+## Resources
 
 The first tab is called *Resources*. This tab contains the aforementioned graph
 plus several server wide actions that an administrator can execute. These
@@ -85,7 +85,7 @@ from the Guest and User roles for all portlets. Likewise, the same permission is
 reduced in scope for Power Users from portal wide to scoped to "User Personal
 Site."
 
-## Log Levels [](id=log-levels)
+## Log Levels
 
 The Log Levels tab of the Server Administration page allows you to dynamically
 modify the log levels for any class hierarchy in the portal. If you have custom
@@ -96,7 +96,7 @@ log levels changed. If you are testing something specific, it is much better to
 be as specific as you can when you change log levels. Modifying them too high in
 the hierarchy generates a lot more log messages than you need.
 
-## Properties [](id=properties)
+## Properties
 
 Liferay and the JVM contain many settings which are defined as properties. There
 are two subtabs of the properties tab of the Server Administration page: one
@@ -115,7 +115,7 @@ If you need to check the current value of a particular property, it can be
 viewed from this screen without having to shut down the portal or open any
 properties files.
 
-## CAPTCHA [](id=captcha)
+## CAPTCHA
 
 By default, Liferay ships with its own simple CAPTCHA service which is designed
 to thwart bots from registering for accounts on sites powered by Liferay. If you
@@ -126,7 +126,7 @@ Simply check the *Enable ReCAPTCHA* box and enter your public and private keys
 into the provided fields, then click *Save*. Liferay Portal will then use
 reCAPTCHA instead of simple CAPTCHA.
 
-## Data Migration [](id=data-migration)
+## Data Migration
 
 If you are upgrading from a previous release of Liferay Portal or if you need to
 migrate your data from one system to another, the Data Migration tab helps you
@@ -155,7 +155,7 @@ You can migrate images from the Image Gallery in the same manner. (In Liferay
 repositories. In Liferay 6.1 and later versions, these have been combined into a
 single Documents and Media repository.)
 
-## File Uploads [](id=file-uploads)
+## File Uploads
 
 Since Liferay allows users to upload files in various places, you may want to
 lock down the type of files and the size of files users are allowed to upload.
@@ -165,12 +165,12 @@ Liferay. You can limit the allowed file extensions generally or by application.
 You have a lot of flexibility as to how you want files to be managed within your
 portal.
 
-## Mail [](id=mail)
+## Mail
 
 Instead of using your Liferay server's `portal-ext.properties` file to configure
 a mail server, you can configure a mail server from the Mail tab of the Server
 Configuration section of the Control Panel. If your portal is to receive mail
-(see, for example, our coverage of the [Message Boards portlet](/discover/portal/-/knowledge_base/6-2/discuss-ask-and-answer-using-the-message-boards)
+(see, for example, our coverage of the [Message Boards portlet](/docs/6-2/user/-/knowledge_base/u/discuss-ask-and-answer-using-the-message-boards)
 ), you can connect a POP mail server. If your portal is to send mail, which is
 useful for sending notifications to users, you can connect to an SMTP server.
 We highly recommend setting up mail servers for your portal.
@@ -179,7 +179,7 @@ Note that if you configure mail server settings here in the Control Panel, these
 settings will override any mail server settings in your `portal-ext.properties`
 file.
 
-## External Services [](id=external-services)
+## External Services
 
 Liferay Portal enables users to upload and share content via the Documents and
 Media library, a customizable and permissionable online repository. Users can
@@ -191,7 +191,7 @@ LibreOffice, ImageMagick and Xuggler. With Liferay configured to use these
 tools, you can generate automatic previews for many types of files including text
 files, office suite files, PDFs, images, audio files and videos. Users will also
 be able to use the conversion functionality to download documents in a variety
-of formats. Please see the [Automatic Previews and Metadata](/discover/portal/-/knowledge_base/6-2/automatic-previews-and-metadata)
+of formats. Please see the [Automatic Previews and Metadata](/docs/6-2/user/-/knowledge_base/u/automatic-previews-and-metadata)
 section for more information.
 
 LibreOffice is available here: [LibreOffice](http://www.libreoffice.org),
@@ -203,18 +203,14 @@ ImageMagick 6.7.7, and Xuggler 5.4 work with Liferay 6.2. You need to install
 LibreOffice and ImageMagick manually but you can install Xuggler from Liferay's
 Server Administration Control Panel interface.
 
-+$$$
-
-**Tip:** If you're running Liferay on a Linux server and experience a problem
-enabling Xuggler, check your server's glibc version. You might have to update
-glibc to version 2.6 or later in order for Xuggler to work.
-
-$$$
+| **Tip:** If you're running Liferay on a Linux server and experience a problem
+| enabling Xuggler, check your server's glibc version. You might have to update
+| glibc to version 2.6 or later in order for Xuggler to work.
 
 Once you've installed these tools, you can use the External Services tab of the
 Control Panel to configure Liferay to use them.
 
-### OpenOffice/LibreOffice configuration [](id=openoffice-libreoffice-configuration)
+### OpenOffice/LibreOffice configuration
 
 OpenOffice and LibreOffice are open source office suites which are usually run
 in graphical mode to create documents but they can also be run in "server" mode.
@@ -265,7 +261,7 @@ both in the command to start OpenOffice/LibreOffice in server mode and on the
 Control Panel's External Services configuration page. When you are finished,
 click *Save*. Now Liferay can perform many types of document conversions.
 
-### ImageMagick configuration [](id=imagemagick-configuration)
+### ImageMagick configuration
 
 To configure ImageMagick to generate image and PDF previews, you must install it
 and its dependency, Ghostscript. This differs by operating system: on Linux,
@@ -302,7 +298,7 @@ Q16 or later). To check for the latest ImageMagick versions, visit
 See [LPS-30291](http://issues.liferay.com/browse/LPS-30291) for information on
 efforts to identify incompatible application versions with Liferay.
 
-### Xuggler configuration [](id=xuggler-configuration)
+### Xuggler configuration
 
 Since Liferay 6.1.1+, you can install Xuggler completely from the Control Panel.
 Navigate to the *Server Administration* &rarr; *External Services* page. From
@@ -325,7 +321,7 @@ on *Save*.
 That's it! You've successfully configured Documents and Media to use Xuggler for
 audio and video files. 
 
-## Script [](id=script)
+## Script
 
 Liferay includes a scripting console which lets administrators execute migration
 or management code instantly. Several scripting languages are supported,
@@ -337,7 +333,7 @@ For further information about Liferay's APIs, please refer to LDN's
 guide, [*Liferay in Action*](http://manning.com/sezov), or Liferay's
 [Javadocs](http://docs.liferay.com/portal/6.2/javadocs).
 
-## Shutdown [](id=shutdown)
+## Shutdown
 
 If you ever need to shut down your Liferay Portal server while users are logged
 in, you can use the Shutdown tab to inform your logged-in users of the impending

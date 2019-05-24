@@ -1,4 +1,8 @@
-# Capturing Web Sites with the Bookmarks Portlet [](id=capturing-web-sites-with-the-bookmarks-portlet)
+---
+header-id: capturing-web-sites-with-the-bookmarks-portlet
+---
+
+# Capturing Web Sites with the Bookmarks Portlet
 
 Many of us enjoy collecting things we value. They may be stamps, comic books,
 sea shells, or fabulous shoes. The list goes on and on. But have you considered
@@ -11,7 +15,7 @@ links to access regularly visited web sites. Administrators can publish links
 tailored to specific groups of users. Both internal pages as well as external
 sites can be bookmarked.
 
-## Adding and Using Bookmarks [](id=adding-and-using-bookmarks)
+## Adding and Using Bookmarks
 
 Navigate to your portal and add the Bookmarks application to your page by
 selecting *Add* &rarr; *Applications*. The portlet looks like this by default:
@@ -50,14 +54,14 @@ into the list of general bookmarks that aren't associated with a folder. These
 are listed in the bookmarks section, below the folders, in the portlet.
 
 Below the Permissions there are additional options for Categorization and
-Related Assets, just like in other Liferay applications. Please see the [Displaying Content Dynamically](/discover/portal/-/knowledge_base/6-2/displaying-content-dynamically)
+Related Assets, just like in other Liferay applications. Please see the [Displaying Content Dynamically](/docs/6-2/user/-/knowledge_base/u/displaying-content-dynamically)
 chapter for further information about this.
 
 Once you have added a new bookmark, it appears in the portlet. From here, you
 can manage your bookmark using familiar Liferay editing features. Collecting and
 organizing your links is a snap when you use Liferay's Bookmarks application.
 
-## Organizing Bookmarks by Folder [](id=organizing-bookmarks-by-folder)
+## Organizing Bookmarks by Folder
 
 You can store all your important links in one place and you can manage this data
 easily using folders. You can create, edit, and delete bookmark folders. You get
@@ -82,7 +86,7 @@ As your collection of links grows, you may need to add more subfolders to keep
 things in order. Should you decide a link needs to move from one folder to
 another, you can manage this using the Edit option for that link. 
 
-### Moving a Link [](id=moving-a-link)
+### Moving a Link
 
 Just for fun, let's move a link from the main bookmarks folder into a subfolder
 one level down. We'll move the Liferay link into the Trivia subfolder in the

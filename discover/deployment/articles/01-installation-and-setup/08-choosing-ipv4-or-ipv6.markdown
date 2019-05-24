@@ -1,4 +1,8 @@
-# Choosing IPv4 or IPv6 [](id=choosing-ipv4-or-ipv6)
+---
+header-id: choosing-ipv4-or-ipv6
+---
+
+# Choosing IPv4 or IPv6
 
 Liferay Portal supports both the IPv4 and IPv6 address formats, though by
 default, Liferay uses IPv4 addresses. If you're on an IPv6 network, you'll

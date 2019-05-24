@@ -1,4 +1,8 @@
-# Installing Social Office [](id=installing-social-office)
+---
+header-id: installing-social-office
+---
+
+# Installing Social Office
 
 Social Office 3.1 is available as an application that can be installed on 
 Liferay Portal CE 6.2 GA1+ or EE 6.2 GA1+. Prior to version 2.0, Social Office 
@@ -18,7 +22,7 @@ present additional details for specific configurations and use cases.
 - Validating Your Installation
 - Uninstalling Social Office
 
-## Social Office Quick Install [](id=social-office-quick-install)
+## Social Office Quick Install
 
 There are two ways to install Social Office: you can download and
 install Social Office directly from your Liferay instance's Control Panel
@@ -38,7 +42,7 @@ To install Social Office manually, you need to download the Social Office
 Once you have it, you just need to deploy the Social Office `.lpkg` file to your
 Liferay instance's deploy folder.
 
-## Pre-installation Configuration [](id=pre-installation-configuration)
+## Pre-installation Configuration
 
 Out of the box, Social Office works with Liferay's default portal properties.
 However, if certain properties have been modified by a portal administrator
@@ -72,7 +76,7 @@ these blank if you intend to use Social Office:
     default.user.private.layouts.lar
     default.user.public.layouts.lar
 
-## Post-installation Configuration [](id=post-installation-configuration)
+## Post-installation Configuration
 
 After deploying Social Office, check your server's console log. There should not
 be any console errors during installation. If you encounter any console errors,
@@ -88,31 +92,27 @@ avoid restarting, you should at least re-index Liferay's search indexes and
 database cache. These options are available from the Server Administration
 section of Liferay's Control Panel.
 
-+$$$
+| **Warning:** When you start Liferay for the first time, you're presented with a
+| setup wizard. The configuration you make in the setup wizard is saved in a
+| `portal-setup-wizard.properties` file in your Liferay Home directory. However,
+| if you specify a different Liferay Home directory than the default in the setup
+| wizard, the `portal-setup-wizard.properties` file that's saved there will not be
+| read upon restarting your server. To have Liferay read your
+| `portal-setup-wizard.properties` file, create a `portal-ext.properties` file in
+| your new Liferay Home directory and add the following line to it, where
+| `${liferay.home}` is the new Liferay Home directory that you chose:
+| 
+|     include-and-override=${liferay.home}/portal-setup-wizard.properties
+| 
+| Without this workaround, Liferay will not read the
+| `portal-setup-wizard.properties` file with your saved configuration when you
+| restart your server and you'll see the setup wizard again. Furthermore, Social
+| Office will not be redeployed and won't be functional. This means that the
+| Dashboard button on the Dockbar won't show up. If you manually navigate to the
+| dashboard URL, you see the pages but they'll be unthemed and the portlets will
+| be greyed out with a message stating that they've been undeployed.
 
-**Warning:** When you start Liferay for the first time, you're presented with a 
-setup wizard. The configuration you make in the setup wizard is saved in a 
-`portal-setup-wizard.properties` file in your Liferay Home directory. However, 
-if you specify a different Liferay Home directory than the default in the setup 
-wizard, the `portal-setup-wizard.properties` file that's saved there will not be 
-read upon restarting your server. To have Liferay read your
-`portal-setup-wizard.properties` file, create a `portal-ext.properties` file in
-your new Liferay Home directory and add the following line to it, where
-`${liferay.home}` is the new Liferay Home directory that you chose:
-
-    include-and-override=${liferay.home}/portal-setup-wizard.properties
-
-Without this workaround, Liferay will not read the
-`portal-setup-wizard.properties` file with your saved configuration when you
-restart your server and you'll see the setup wizard again. Furthermore, Social
-Office will not be redeployed and won't be functional. This means that the
-Dashboard button on the Dockbar won't show up. If you manually navigate to the
-dashboard URL, you see the pages but they'll be unthemed and the portlets will
-be greyed out with a message stating that they've been undeployed. 
-
-$$$
-
-### Installation Peculiarities of Specific App Servers [](id=installation-peculiarities-of-specific-app-servers)
+### Installation Peculiarities of Specific App Servers
 
 After installing Social Office on Glassfish, you need to restart the server
 before Social Office will be fully deployed. If you don't restart, Glassfish
@@ -127,7 +127,7 @@ Public/My Private Pages* menu. To fix this issue, simply restart your server.
 Next, let's discuss how to validate that Social Office has been successfully
 installed or uninstalled.
 
-## Validating a Social Office Installation [](id=validating-a-social-office-installation)
+## Validating a Social Office Installation
 
 The Social Office 3.1 `.lpkg` file is hot-deployable and includes the following
 Liferay plugins. After installing (or uninstalling) Social Office, you should
@@ -196,7 +196,7 @@ grant the Social Office User role to one or more users. Please refer to the
 *Using Social Office* section for more details about the Social Office User role 
 and the features provided by Social Office.
 
-### What to do if Your Installation is Unsuccessful [](id=what-to-do-if-your-installation-is-unsuccessful)
+### What to do if Your Installation is Unsuccessful
 
 If your Social Office Installation was unsuccessful, please make sure that you
 haven't made one of the following installation mistakes:
@@ -223,7 +223,7 @@ haven't made one of the following installation mistakes:
 If the tips above do not solve your installation problem, you can seek further
 assistance through the [Social Office Forum](http://www.liferay.com/community/forums/-/message_boards/category/1670998) or from [Liferay Support](http://www.liferay.com/group/customer/home).
 
-## Uninstalling Social Office [](id=uninstalling-social-office)
+## Uninstalling Social Office
 
 If you'd like to completely uninstall Social Office, you can navigate to the
 *Marketplace* &rarr; *Purchased* page of the Control Panel and click on

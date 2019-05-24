@@ -1,4 +1,8 @@
-# Asset Framework [](id=asset-framework)
+---
+header-id: asset-framework
+---
+
+# Asset Framework
 
 Liferay's asset framework is a system that allows you to add core Liferay 
 features to your application. For example, if you've built an event management
@@ -19,12 +23,12 @@ to generate your persistence layer, that you've implemented permissions on the
 entities that you're persisting, and that you've enabled them for search and
 indexing. If you've yet to do any of those things, you can see how each is done
 in respective Learning Paths
-[Writing a Data-Driven Application](/develop/tutorials/-/knowledge_base/6-2/writing-a-data-driven-application),
-[Setting Permissions](/develop/tutorials/-/knowledge_base/6-2/setting-permissions),
+[Writing a Data-Driven Application](/docs/6-2/tutorials/-/knowledge_base/t/writing-a-data-driven-application),
+[Setting Permissions](/docs/6-2/tutorials/-/knowledge_base/t/setting-permissions),
 and
-[Enabling Search and Indexing](/develop/tutorials/-/knowledge_base/6-2/enabling-search-and-indexing). 
+[Enabling Search and Indexing](/docs/6-2/tutorials/-/knowledge_base/t/enabling-search-and-indexing). 
 Lastly, the Learning Path
-[Asset Enabling Custom Entities](/develop/tutorials/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Asset Enabling Custom Entities](/docs/6-2/tutorials/-/knowledge_base/t/asset-enabling-custom-entities)
 takes you through the fundamentals of enabling an example application's custom
 entities to use the asset framework. If you haven't traveled through that
 Learning Path, we recommend you do so before continuing with the tutorials in
@@ -65,14 +69,14 @@ It's time to start your asset framework training!
 
 **Related Topics**
 
-[Writing a Data-Driven Application](/develop/tutorials/-/knowledge_base/6-2/writing-a-data-driven-application)
+[Writing a Data-Driven Application](/docs/6-2/tutorials/-/knowledge_base/t/writing-a-data-driven-application)
 
-[Setting Permissions](/develop/tutorials/-/knowledge_base/6-2/setting-permissions)
+[Setting Permissions](/docs/6-2/tutorials/-/knowledge_base/t/setting-permissions)
 
-[Enabling Search and Indexing](/develop/tutorials/-/knowledge_base/6-2/enabling-search-and-indexing)
+[Enabling Search and Indexing](/docs/6-2/tutorials/-/knowledge_base/t/enabling-search-and-indexing)
 
-[Asset Enabling Custom Entities](/develop/tutorials/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Asset Enabling Custom Entities](/docs/6-2/tutorials/-/knowledge_base/t/asset-enabling-custom-entities)
 
-[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+[Liferay UI Taglibs](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ui-taglibs)
 
-[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)
+[User Interfaces with AlloyUI](/docs/6-2/tutorials/-/knowledge_base/t/alloyui)

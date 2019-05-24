@@ -1,23 +1,23 @@
-# Setting Up the Plugins SDK [](id=setting-up-the-plugins-sdk)
+---
+header-id: setting-up-the-plugins-sdk
+---
+
+# Setting Up the Plugins SDK
 
 This tutorial explains how to install and configure the Liferay Plugins SDK and
 its dependencies. 
 
 The Plugins SDK requires Liferay Portal. If you haven't already installed a
 Liferay bundle, follow the instructions in the
-[Installation and Setup](/discover/deployment/-/knowledge_base/6-2/installation-and-setup)
+[Installation and Setup](/docs/6-2/deploy/-/knowledge_base/d/installation-and-setup)
 chapter of the *Deployment* guide. Many people use the Tomcat bundle for
 development, as it's small, fast, and takes up fewer resources than most other
 servlet containers. Although you can use any application server supported by
 Liferay Portal for development, our examples use the Tomcat bundle. 
 
-+$$$
-
-**Note:** Liferay Developer Studio bundles and configures Liferay Portal
-Enterprise Edition (EE) and the Plugins SDK out-of-the-box, so both are ready to
-use.
-
-$$$
+| **Note:** Liferay Developer Studio bundles and configures Liferay Portal
+| Enterprise Edition (EE) and the Plugins SDK out-of-the-box, so both are ready to
+| use.
 
 To install the Plugins SDK, follow these steps:
 
@@ -37,17 +37,13 @@ To install the Plugins SDK, follow these steps:
     your `C:\` drive in order for Service Builder to be able to run
     successfully. 
 
-+$$$
-
-**Tip**: By default, Liferay Portal Community Edition comes bundled with many
-plugins. It's common to remove them to optimize the server's startup time. Just
-navigate to the `liferay-portal-[version]/tomcat-[tomcat-version]/webapps`
-directory and remove any plugins that you don't need. Don't delete `ROOT` since
-`ROOT` is the Liferay application itself. Also, don't delete
-`marketplace-portlet` since you can use the Marketplace portlet to download any
-plugins that you decide to use in the future. 
-
-$$$
+| **Tip**: By default, Liferay Portal Community Edition comes bundled with many
+| plugins. It's common to remove them to optimize the server's startup time. Just
+| navigate to the `liferay-portal-[version]/tomcat-[tomcat-version]/webapps`
+| directory and remove any plugins that you don't need. Don't delete `ROOT` since
+| `ROOT` is the Liferay application itself. Also, don't delete
+| `marketplace-portlet` since you can use the Marketplace portlet to download any
+| plugins that you decide to use in the future.
 
 Building projects in the Plugins SDK requires that you install Ant (version 1.7
 or higher) on your machine. Download the latest version of Ant from
@@ -129,22 +125,18 @@ is specified as the app server type and the `app.server.tomcat.dir` property is
 specified. See the Plugins SDK's `build.properties` for the name of the app
 server property that matches your app server. 
 
-+$$$
-
-**Note:** Liferay's Plugins SDK 6.2 was designed to compile classes using Java
-(JDK) 7. If you prefer to use Java 8, you must set the following property in
-your `build.[username].properties`:
-
-    javac.compiler=modern
-
-Once this is added, you can successfully use Java 8 to build Liferay Portal 6.2
-plugins.
-
-$$$
+| **Note:** Liferay's Plugins SDK 6.2 was designed to compile classes using Java
+| (JDK) 7. If you prefer to use Java 8, you must set the following property in
+| your `build.[username].properties`:
+| 
+|     javac.compiler=modern
+| 
+| Once this is added, you can successfully use Java 8 to build Liferay Portal 6.2
+| plugins.
 
 You're set to start using your Liferay Plugins SDK! 
 
 **Related Topics**
 
-[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/liferay-ide)
-[Developing Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/maven)
+[Developing Plugins with Liferay IDE](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ide)
+[Developing Plugins with Maven](/docs/6-2/tutorials/-/knowledge_base/t/maven)

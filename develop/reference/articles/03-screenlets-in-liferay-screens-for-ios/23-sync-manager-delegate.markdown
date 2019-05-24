@@ -1,11 +1,15 @@
-# SyncManagerDelegate [](id=syncmanagerdelegate)
+---
+header-id: syncmanagerdelegate
+---
+
+# SyncManagerDelegate
 
 The `SyncManagerDelegate` class is required to 
-[use Screenlets with offline mode](/develop/tutorials/-/knowledge_base/6-2/using-offline-mode-in-ios).
+[use Screenlets with offline mode](/docs/6-2/tutorials/-/knowledge_base/t/using-offline-mode-in-ios).
 This class receives the events produced in the synchronization process. This 
 document describes the class's methods. 
 
-## Methods [](id=methods)
+## Methods
 
 The following method is invoked when the synchronization process is started. The 
 number of items to be synced are passed.

@@ -1,4 +1,8 @@
-# Creating Entry List Screenlet [](id=creating-entry-list-screenlet)
+---
+header-id: creating-entry-list-screenlet
+---
+
+# Creating Entry List Screenlet
 
 In the previous section, you created Guestbook List Screenlet to retrieve and
 display guestbooks from the Guestbook portlet. You still need a way to retrieve

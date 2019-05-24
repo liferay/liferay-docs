@@ -1,4 +1,8 @@
-# Leveraging the Portal User's Locale with Liferay Faces Portal [](id=leveraging-the-portal-users-locale-with-liferay-faces-portal)
+---
+header-id: leveraging-the-portal-users-locale-with-liferay-faces-portal
+---
+
+# Leveraging the Portal User's Locale with Liferay Faces Portal
 
 By default, the
 [`Locale`](http://docs.oracle.com/javase/7/docs/api/java/util/Locale.html) that
@@ -15,14 +19,14 @@ method.
 Now you're familiar with another key utility that you can access through Liferay
 Faces Portal. Awesome! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Localizing JSF Portlets](/develop/tutorials/-/knowledge_base/6-2/localizing-jsf-portlets)
+[Localizing JSF Portlets](/docs/6-2/tutorials/-/knowledge_base/t/localizing-jsf-portlets)
 
-[Understanding Liferay Faces Portal](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-portal)
+[Understanding Liferay Faces Portal](/docs/6-2/tutorials/-/knowledge_base/t/understanding-liferay-faces-portal)
 
-[Liferay Faces Alloy UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-alloy-ui-components)
+[Liferay Faces Alloy UI Components](/docs/6-2/tutorials/-/knowledge_base/t/liferay-faces-alloy-ui-components)
 
-[Understanding Liferay Faces Alloy](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-alloy)
+[Understanding Liferay Faces Alloy](/docs/6-2/tutorials/-/knowledge_base/t/understanding-liferay-faces-alloy)
 
-[Liferay Faces Bridge UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-bridge-ui-components)
+[Liferay Faces Bridge UI Components](/docs/6-2/tutorials/-/knowledge_base/t/liferay-faces-bridge-ui-components)

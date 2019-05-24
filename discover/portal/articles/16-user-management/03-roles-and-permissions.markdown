@@ -1,4 +1,8 @@
-# Roles and Permissions [](id=roles-and-permissions)
+---
+header-id: roles-and-permissions
+---
+
+# Roles and Permissions
 
 Roles are used to collect permissions that define a particular function within
 the portal, according to a particular scope. Roles can be granted permissions to
@@ -40,19 +44,15 @@ described as follows:
   that *specific site*.
 
 Read
-[here](/discover/portal/-/knowledge_base/6-2/creating-teams-for-advanced-site-membership-management)For
+[here](/docs/6-2/user/-/knowledge_base/u/creating-teams-for-advanced-site-membership-management)For
 more information about teams.
 
-+$$$
-
-**Note:** Some permissions cannot be handled from the control panel.
-Asset-level permissions (for instance, permission to edit an individual blog
-post, or view a folder in the Documents and Media library) are managed from the
-individual asset. See 
-[Permissions](/discover/portal/-/knowledge_base/6-2/permissions) 
-for details.
-
-$$$
+| **Note:** Some permissions cannot be handled from the control panel.
+| Asset-level permissions (for instance, permission to edit an individual blog
+| post, or view a folder in the Documents and Media library) are managed from the
+| individual asset. See
+| [Permissions](/docs/6-2/user/-/knowledge_base/u/permissions)
+| for details.
 
 ![Figure 16.9: To examine all the roles defined for your portal, navigate to the Control Panel and click on *Roles*.](../../images/01-roles-and-role-actions.png)
 
@@ -79,7 +79,7 @@ role.
 Next, let's learn about the difference between the (portal/site/organization)
 administrator and owner roles that Liferay provides out-of-the-box.
 
-## Out-of-the-box Liferay Roles [](id=out-of-the-box-liferay-roles)
+## Out-of-the-box Liferay Roles
 
 If you navigate to the Control Panel and click on *Roles*, you'll see a list of
 all the roles that have been created in your portal. This list includes roles
@@ -125,23 +125,19 @@ some of Liferay's out-of-the-box roles:
   portal, including global portal settings and individual sites, organizations,
   and users.
 
-+$$$
-
-**Tip:** It's easy to overlook the differences between
- site and organization owners and site and organization administrators. Remember
- that site and organization administrators *cannot* delete the membership of or
- remove the administrator or owner role from any other administrator or owner.
- They also *cannot* appoint other users as site or organization administrators
- or owners. Site and organization owners *can* delete the membership of or
- remove the administrator or owner roles from other site or organization
- administrators. They *can* appoint other users as site or organization
- administrators or owners.
-
-$$$
+| **Tip:** It's easy to overlook the differences between
+|  site and organization owners and site and organization administrators. Remember
+|  that site and organization administrators *cannot* delete the membership of or
+|  remove the administrator or owner role from any other administrator or owner.
+|  They also *cannot* appoint other users as site or organization administrators
+|  or owners. Site and organization owners *can* delete the membership of or
+|  remove the administrator or owner roles from other site or organization
+|  administrators. They *can* appoint other users as site or organization
+|  administrators or owners.
 
 Next, let's examine how to configure the permissions granted by different roles.
 
-## Defining Permissions on a Role [](id=defining-permissions-on-a-role)
+## Defining Permissions on a Role
 
 Roles serve as repositories of permissions. When a roles is assigned to a user,
 the user receives all the permissions defined by the role. So, to use a role,
@@ -316,7 +312,7 @@ Roles are very powerful and allow portal administrators to define various
 permissions in whatever combinations they like. This gives you as much
 flexibility as possible to build the site you have designed.
 
-## Permission for Delegating Social Activities Configuration [](id=permission-for-delegating-social-activities-configuration)
+## Permission for Delegating Social Activities Configuration
 
 As of Liferay 6.2, there's a permission that allows site administrators to
 delegate responsibility for configuring social activities to other users. To
@@ -335,7 +331,7 @@ of the permissions and then click *Save*:
 Once these permissions have been assigned to the chosen role, any users assigned
 to the role will be able to manage your site's Social Activities configuration.
 
-## Note About Permissions for Deleting Containers [](id=note-about-permissions-for-deleting-containers)
+## Note About Permissions for Deleting Containers
 
 Liferay Portal contains many types of portal resources upon which permissions
 can be defined. These include both assets and asset containers. The term *asset*
@@ -355,7 +351,7 @@ of the contained assets is *not* a common use case. Nevertheless, it's important
 to note that assets in a container can be indirectly deleted if their asset
 container is deleted.
 
-## Note About the Power Users Role [](id=note-about-the-power-users-role)
+## Note About the Power Users Role
 
 Prior to Liferay 6.0, the default configurations of many Liferay portlets
 allowed power users, but not regular users, to access them. Liferay 6.0 and
@@ -364,24 +360,20 @@ regular users. This way, portal administrators are not forced to use the power
 users role. However, Liferay encourages those who do to create their own custom
 permissions for the role. 
 
-+$$$
-
-**Note:** Prior to Liferay version 6.0, Power Users and Users did *not* have the
-same default permissions. So if are using Liferay 5.2 or a previous version,
-it's dangerous to remove the Power Users role from the default user
-associations: this could remove certain permissions you expect to apply to all
-users. If you decide to remove the Power Users role from the default user
-associations anyway, you will probably want to modify the permissions on certain
-portlets to make them accessible to all users. To do this, see the section on
-Plugins Configuration below.
-
-$$$
+| **Note:** Prior to Liferay version 6.0, Power Users and Users did *not* have the
+| same default permissions. So if are using Liferay 5.2 or a previous version,
+| it's dangerous to remove the Power Users role from the default user
+| associations: this could remove certain permissions you expect to apply to all
+| users. If you decide to remove the Power Users role from the default user
+| associations anyway, you will probably want to modify the permissions on certain
+| portlets to make them accessible to all users. To do this, see the section on
+| Plugins Configuration below.
 
 Now that we've seen how to use organizations and user groups to manage users and
 how to use roles to define permissions, let's learn how to configure portal
 password policies.
 
-## Password Policies [](id=password-policies)
+## Password Policies
 
 Password policies can enhance the security of your portal. You can set
 requirements on password strength, frequency of password expiration, user

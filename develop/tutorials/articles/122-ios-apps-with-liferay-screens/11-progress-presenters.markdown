@@ -1,4 +1,8 @@
-# Using and Creating Progress Presenters [](id=using-and-creating-progress-presenters)
+---
+header-id: using-and-creating-progress-presenters
+---
+
+# Using and Creating Progress Presenters
 
 Many apps display a progress indicator while performing an operation. For 
 example, you've likely seen the spinners in iOS apps that let you know the app 
@@ -22,7 +26,7 @@ from the
 [advanced version of the sample Add Bookmark Screenlet](https://github.com/liferay/liferay-screens/tree/master/ios/Samples/Bookmark/AddBookmarkScreenlet/Advanced) 
 as an example. First, you'll learn how to use progress presenters. 
 
-## Using Progress Presenters [](id=using-progress-presenters)
+## Using Progress Presenters
 
 [The `BaseScreenletView` class](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/BaseScreenletView.swift) 
 contains the default progress presenter functionality. To show a presenter other 
@@ -90,7 +94,7 @@ this:
 Great! Now you know how to use progress presenters. Next, you'll learn how to 
 create your own. 
 
-## Creating Progress Presenters [](id=creating-progress-presenters)
+## Creating Progress Presenters
 
 Creating your own progress presenter isn't as complicated as you might think. 
 Recall that a presenter in Liferay Screens is a class that conforms the 
@@ -178,10 +182,10 @@ existing presenter class. Use the following steps to do this:
 Great, that's it! Now you can use your presenter the same way you would any 
 other. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets)
+[Creating iOS Screenlets](/docs/6-2/tutorials/-/knowledge_base/t/creating-ios-screenlets)
 
-[Creating iOS List Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-list-screenlets)
+[Creating iOS List Screenlets](/docs/6-2/tutorials/-/knowledge_base/t/creating-ios-list-screenlets)
 
-[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)
+[Architecture of Liferay Screens for iOS](/docs/6-2/tutorials/-/knowledge_base/t/architecture-of-liferay-screens-for-ios)

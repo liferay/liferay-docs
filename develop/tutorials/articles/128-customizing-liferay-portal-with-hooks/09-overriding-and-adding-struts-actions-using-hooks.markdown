@@ -1,4 +1,8 @@
-# Overriding and Adding Struts Actions [](id=overriding-and-adding-struts-actions)
+---
+header-id: overriding-and-adding-struts-actions
+---
+
+# Overriding and Adding Struts Actions
 
 <!--
 Testing Notes:
@@ -38,10 +42,10 @@ or to create a new Struts action and path; you'll do both in this tutorial.
 You'll override a Struts action to use your own class. Then you'll create a new
 Struts action path and navigate to it. It's time to begin! 
 
-## Overriding Struts Actions [](id=overriding-struts-actions)
+## Overriding Struts Actions
 
 For the first part of this tutorial, you'll override a portlet's existing Struts
-action using a [hook plugin project](/develop/tutorials/-/knowledge_base/6-2/creating-a-hook-project-in-the-plugins-sdk). 
+action using a [hook plugin project](/docs/6-2/tutorials/-/knowledge_base/t/creating-a-hook-project-in-the-plugins-sdk). 
 
 
 You can view the current actions in your portal's [`struts-config.xml`](https://github.com/liferay/liferay-portal/blob/6.2.2-ga3/portal-web/docroot/WEB-INF/struts-config.xml)
@@ -166,7 +170,7 @@ methods that you override.
 That's it for overriding Struts actions! The next section of this tutorial
 demonstrates how to add a new Struts action. 
 
-## Adding Struts Actions [](id=adding-struts-actions)
+## Adding Struts Actions
 
 Now that you know how to override a Struts action, you might also be interested
 in adding a new Struts action. Here's how you do it:
@@ -269,8 +273,8 @@ Great! Now you know about the interfaces used for Struts actions. You also
 learned how to override an existing action and create a new action using a 
 hook. You're ready to strut your stuff! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)
+[Application Display Templates](/docs/6-2/tutorials/-/knowledge_base/t/application-display-templates)
 
-[Customizing Liferay Portal with Hooks](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+[Customizing Liferay Portal with Hooks](/docs/6-2/tutorials/-/knowledge_base/t/customizing-liferay-portal)

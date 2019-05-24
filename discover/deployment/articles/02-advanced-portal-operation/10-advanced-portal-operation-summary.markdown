@@ -1,4 +1,8 @@
-# Summary [](id=summary-15)
+---
+header-id: summary-15
+---
+
+# Summary
 
 Liferay Portal is an easy environment to maintain. Backup procedures are simple
 and straightforward. Administrators have all the options they need to view and

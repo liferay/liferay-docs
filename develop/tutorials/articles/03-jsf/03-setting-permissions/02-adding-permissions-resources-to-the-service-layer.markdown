@@ -1,4 +1,8 @@
-# Adding Permissions Resources to the Service Layer [](id=adding-permissions-resources-to-the-service-layer)
+---
+header-id: adding-permissions-resources-to-the-service-layer
+---
+
+# Adding Permissions Resources to the Service Layer
 
 Up to this point, you've successfully configured permissions checking for your
 Guestbook portlet. However, you're portlet is not currently able to store
@@ -46,18 +50,14 @@ is use it.
 
 You'll notice in both of these updated methods, you call the `addResources(...)`
 method from the `resourceLocalService` class. Visit the
-[Adding Permissions Resources to Your Service Layer](/develop/tutorials/-/knowledge_base/6-2/writing-permissions-java-code#adding-permissions-resources-to-your-service-layer)
+[Adding Permissions Resources to Your Service Layer](/docs/6-2/tutorials/-/knowledge_base/t/writing-permissions-java-code#adding-permissions-resources-to-your-service-layer)
 section of the MVC portlet-based learning path for more information on this new
 method call, and adding resources to your service layer. 
 
-+$$$
-
-**Note:** Your `-LocalServiceImpl` classes now have errors showing. To take care
-of these errors, and propagate these changes to your service layer, re-build
-your services by right-clicking your project and selecting *Liferay* &rarr;
-*Build Services*. 
-
-$$$
+| **Note:** Your `-LocalServiceImpl` classes now have errors showing. To take care
+| of these errors, and propagate these changes to your service layer, re-build
+| your services by right-clicking your project and selecting *Liferay* &rarr;
+| *Build Services*.
 
 Now you'll need to edit your managed beans where these two updated methods are
 referenced, since a new `userId` parameter was added to the method signatures
@@ -84,7 +84,7 @@ Next, you'll learn how to extend your permissions scheme to wrapper classes.
 
 
 
-## Updating the Portlet's UI with Extended Permissions Scheme [](id=updating-the-portlets-ui-with-extended-permissions-scheme)
+## Updating the Portlet's UI with Extended Permissions Scheme
 
 Now that you have your permissions scheme configured to handle individual
 entities, it's time to add a permissions method that can be called from your

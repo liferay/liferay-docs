@@ -1,4 +1,8 @@
-# Styling the Banner [](id=styling-the-banner)
+---
+header-id: styling-the-banner
+---
+
+# Styling the Banner
 
 The Banner holds all the elements in the theme's header. This section is
 is the first thing users see when they visit your site.

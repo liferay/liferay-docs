@@ -1,4 +1,8 @@
-# Sorting Your List Screenlet [](id=sorting-your-list-screenlet)
+---
+header-id: sorting-your-list-screenlet
+---
+
+# Sorting Your List Screenlet
 
 To sort your list Screenlet, you must point it to a *comparator class* in your 
 portal. A comparator class implements the logic that sorts your entities. You 
@@ -7,21 +11,17 @@ portal. Once your list is sorted, you can split it into sections. This tutorial
 shows you how to sort your list Screenlet with a comparator and create sections
 for your sorted list. 
 
-+$$$
-
-**Note:** To create a new comparator, you must create a class that extends the 
-portal's 
-[`OrderByComparator` class](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/util/OrderByComparator.html) 
-with your entity as a type argument. Then you must override the methods that 
-implement the sort. For example, the portal's 
-[`EntryURLComparator` class](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/collaboration/bookmarks/bookmarks-api/src/main/java/com/liferay/bookmarks/util/comparator/EntryURLComparator.java) 
-sorts bookmarks in Liferay's Bookmarks portlet by URL. 
-
-$$$
+| **Note:** To create a new comparator, you must create a class that extends the
+| portal's
+| [`OrderByComparator` class](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/util/OrderByComparator.html)
+| with your entity as a type argument. Then you must override the methods that
+| implement the sort. For example, the portal's
+| [`EntryURLComparator` class](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/collaboration/bookmarks/bookmarks-api/src/main/java/com/liferay/bookmarks/util/comparator/EntryURLComparator.java)
+| sorts bookmarks in Liferay's Bookmarks portlet by URL.
 
 First, you'll learn how to use a comparator to sort your list Screenlet. 
 
-## Using a Comparator [](id=using-a-comparator)
+## Using a Comparator
 
 To use a comparator, you must set the list Screenlet's `obcClassName` property 
 to the comparator's fully qualified class name. Do this in Interface Builder 
@@ -36,13 +36,13 @@ That's it! Note that although all list Screenlets inherit the `obcClassName`
 property from 
 [the `BaseListScreenlet` class](https://github.com/liferay/liferay-screens/blob/develop/ios/Framework/Core/Base/BaseListScreenlet/BaseListScreenlet.swift), 
 the list Screenlet must also make its service call with this property. See the 
-[Screenlet reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios) 
+[Screenlet reference documentation](/docs/6-2/reference/-/knowledge_base/r/screenlets-in-liferay-screens-for-ios) 
 to see which list Screenlets included with Liferay Screens support the 
 `obcClassName` property. Also, @product@'s comparator classes can change between 
 versions. If you're using one of these comparators, make sure you specify the 
 one that matches your @product@ version. 
 
-## Create Sections for Your List [](id=create-sections-for-your-list)
+## Create Sections for Your List
 
 Dividing lists into sections that contain like elements is common in iOS apps. 
 To do this in list Screenlets, first use a comparator to sort the list by the 
@@ -70,12 +70,12 @@ sorted by `EntryURLComparator` as detailed in the preceding section.
 And that's all there is to it! Now you know how to sort and section your list 
 Screenlet's list. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating iOS List Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-list-screenlets)
+[Creating iOS List Screenlets](/docs/6-2/tutorials/-/knowledge_base/t/creating-ios-list-screenlets)
 
-[Using Custom Cells with List Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-custom-cells-with-list-screenlets)
+[Using Custom Cells with List Screenlets](/docs/6-2/tutorials/-/knowledge_base/t/using-custom-cells-with-list-screenlets)
 
-[Creating Complex Lists in Your List Screenlet](/develop/tutorials/-/knowledge_base/6-2/creating-complex-lists-in-your-list-screenlet)
+[Creating Complex Lists in Your List Screenlet](/docs/6-2/tutorials/-/knowledge_base/t/creating-complex-lists-in-your-list-screenlet)
 
-[iOS Best Practices](/develop/tutorials/-/knowledge_base/6-2/ios-best-practices)
+[iOS Best Practices](/docs/6-2/tutorials/-/knowledge_base/t/ios-best-practices)

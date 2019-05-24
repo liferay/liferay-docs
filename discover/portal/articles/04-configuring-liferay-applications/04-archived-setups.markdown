@@ -1,4 +1,8 @@
-# Archived Setups [](id=archived-setups)
+---
+header-id: archived-setups
+---
+
+# Archived Setups
 
 Once you've configured a portlet, Archived Setups enables you to save those
 settings in an "archive". If someone goes in and changes the settings of a

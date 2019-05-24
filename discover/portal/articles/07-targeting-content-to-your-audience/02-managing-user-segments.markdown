@@ -1,4 +1,8 @@
-# Managing User Segments [](id=managing-user-segments)
+---
+header-id: managing-user-segments
+---
+
+# Managing User Segments
 
 The *Audience Targeting* section of the Configuration section of the Site
 Administration area of the Control Panel allows you to manage user segments and
@@ -33,10 +37,10 @@ Therefore, user segments and campaigns defined in the Global scope will be
 available to any site. User segments and campaigns created in a site will be
 available to all of its child sites.
 
-## User Segment Rules [](id=user-segment-rules)
+## User Segment Rules
 
 Custom rules can be created by developers and deployed as OSGi plugins. See the
-[Creating New Audience Targeting Rule Types](/develop/tutorials/-/knowledge_base/6-2/creating-new-audience-targeting-rule-types)
+[Creating New Audience Targeting Rule Types](/docs/6-2/tutorials/-/knowledge_base/t/creating-new-audience-targeting-rule-types)
 tutorial for details.
  
 These are some of the rules that are included with the app by default:
@@ -79,17 +83,13 @@ Once the user belongs to a user segment, you can use that information to direct
 more relevant information to the user in your website using the User Segment
 Content Display application.
 
-## Categorizing Pages and Content for User Segments [](id=categorizing-pages-and-content-for-user-segments)
+## Categorizing Pages and Content for User Segments
 
 Each new user segment that's created can be used to categorize pages or content.
 
-+$$$
-
-**Note:** Page categorization is a feature added by the Audience Targeting app.
-In a regular Liferay Portal 6.2 instance without the Audience Targeting app
-installed, pages cannot be categorized.
-
-$$$
+| **Note:** Page categorization is a feature added by the Audience Targeting app.
+| In a regular Liferay Portal 6.2 instance without the Audience Targeting app
+| installed, pages cannot be categorized.
 
 The Audience Targeting app adds two select buttons to the Categorization section
 of pages and assets: *User Segment* and *User Segment (Global)*. These buttons
@@ -106,7 +106,7 @@ segments are distinct from regular vocabularies. The Categorization section of
 pages and assets contains distinct select buttons for user segments and regular
 vocabularies.
 
-## Managing User Segment Reports [](id=managing-user-segment-reports)
+## Managing User Segment Reports
 
 When managing user segments, you can click *Actions* &rarr; *Reports* next to a
 user segment to see the list of reports available for each user segment. Click
@@ -118,7 +118,7 @@ shows the asset that's been most viewed by users that belong to the user segment
 ![Figure 7.4: the Content Views report shows the asset that's been most viewed by users that belong to a user segment.](../../images/07-audience-targeting-user-segment-report.png)
 
 Additional reports can be created by developers and deployed as OSGI plugins.
-See the [Reporting User Behavior with Audience Targeting](/develop/tutorials/-/knowledge_base/6-2/reporting-user-behavior-with-audience-targeting)
+See the [Reporting User Behavior with Audience Targeting](/docs/6-2/tutorials/-/knowledge_base/t/reporting-user-behavior-with-audience-targeting)
 tutorial for details. Reports are generated daily by default. However, you can
 generate a report at any time. To generate a new report when currently viewing a
 report, click on the *Update Report* button in the top right corner.

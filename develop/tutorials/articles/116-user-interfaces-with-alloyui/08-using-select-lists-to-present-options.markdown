@@ -1,4 +1,8 @@
-# Using Select Lists to Present Options [](id=using-select-lists-to-present-options)
+---
+header-id: using-select-lists-to-present-options
+---
+
+# Using Select Lists to Present Options
 
 Select lists are UI components that present collapsible groups of options. A
 select list initially shows a single default option. When clicked, all the
@@ -10,7 +14,7 @@ This tutorial shows you how to implement select lists using the AlloyUI taglib
 tags `aui:select` and `aui:option`. You'll learn how to add a select list to
 your UI and how to retrieve the option a user selects. 
 
-## Adding a Select List [](id=adding-a-select-list)
+## Adding a Select List
 
 Here's how to implement select lists in a portlet's View using `aui:select` and
 `aui:option` tags in a JSP file. 
@@ -56,7 +60,7 @@ Adding the select list to your UI is first part of creating a fully functional
 select list. Next, you'll learn how to implement retrieval of the selected
 options. 
 
-## Getting the Selected Option [](id=getting-the-selected-option)
+## Getting the Selected Option
 
 There are a couple of ways to retrieve a select list's selected option.
 Both are viable and achieve the same goal. One way does so within an
@@ -90,7 +94,7 @@ form JSP code:
 Next, you'll see how to retrieve a select list's selected option by leveraging
 the AlloyUI modules in an `aui:script` tag inside a JSP. 
 
-### Getting the Selected Option Using an AlloyUI Script [](id=getting-the-selected-option-using-an-alloyui-script)
+### Getting the Selected Option Using an AlloyUI Script
 
 This example retrieves the select list's selected option and displays the
 option's value to the user in an alert: 
@@ -125,7 +129,7 @@ option's value to the user in an alert:
     required qualifier for retrieving the select list. Namespacing is discussed
     in greater detail later in this tutorial. You can also read more about it in
     the tutorial
-    [Using Portlet Namespacing](/develop/tutorials/-/knowledge_base/6-2/using-portlet-namespacing).
+    [Using Portlet Namespacing](/docs/6-2/tutorials/-/knowledge_base/t/using-portlet-namespacing).
 
 4.  Below the variables you just declared, attach a function to the node for
     retrieving the selected option. The example here attaches a click event to the
@@ -182,7 +186,7 @@ There you go! As you can see, it takes little effort to implement an AlloyUI
 script to retrieve a select list's selected option. Next, you'll learn how to
 achieve the same results using JavaScript in your portlet's `main.js` file. 
 
-### Getting the Selected Option Using a JavaScript File [](id=getting-the-selected-option-using-a-javascript-file)
+### Getting the Selected Option Using a JavaScript File
 
 You can also use JavaScript in your `main.js` file to retrieve a select
 list's selected option. Because the `main.js` file is loaded after the JSP, you
@@ -278,22 +282,22 @@ portlet's select lists. This tutorial's example demonstrates only getting the
 option and alerting the user of that option. You can, however, build off of
 these principles to use the select list's input in your app's business logic. To
 learn how to do this, check out the article
-[Writing Your First Liferay Application](/develop/tutorials/-/knowledge_base/6-2/writing-your-first-liferay-application)
+[Writing Your First Liferay Application](/docs/6-2/tutorials/-/knowledge_base/t/writing-your-first-liferay-application)
 in the Learning Path
-[Beginning Liferay Development](/develop/tutorials/-/knowledge_base/6-2/beginning-liferay-development)
+[Beginning Liferay Development](/docs/6-2/tutorials/-/knowledge_base/t/beginning-liferay-development)
 or dive in to the Learning Path
-[Writing a Data-Driven Application](/develop/tutorials/-/knowledge_base/6-2/writing-a-data-driven-application).
+[Writing a Data-Driven Application](/docs/6-2/tutorials/-/knowledge_base/t/writing-a-data-driven-application).
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Beginning Liferay Development](/develop/tutorials/-/knowledge_base/6-2/beginning-liferay-development)
+[Beginning Liferay Development](/docs/6-2/tutorials/-/knowledge_base/t/beginning-liferay-development)
 
-[Writing a Data-Driven Application](/develop/tutorials/-/knowledge_base/6-2/writing-a-data-driven-application)
+[Writing a Data-Driven Application](/docs/6-2/tutorials/-/knowledge_base/t/writing-a-data-driven-application)
 
-[User Interfaces with the Liferay UI Taglib](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+[User Interfaces with the Liferay UI Taglib](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ui-taglibs)
 
-[Themes and Layout Templates](/develop/tutorials/-/knowledge_base/6-2/themes-and-layout-templates)
+[Themes and Layout Templates](/docs/6-2/tutorials/-/knowledge_base/t/themes-and-layout-templates)
 
-[Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)
+[Application Display Templates](/docs/6-2/tutorials/-/knowledge_base/t/application-display-templates)
 
-[Customizing Liferay Portal with Hooks](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+[Customizing Liferay Portal with Hooks](/docs/6-2/tutorials/-/knowledge_base/t/customizing-liferay-portal)

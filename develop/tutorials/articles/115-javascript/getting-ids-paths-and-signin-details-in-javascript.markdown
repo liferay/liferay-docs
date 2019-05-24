@@ -1,4 +1,8 @@
-# Getting IDs, Paths, and Sign-in Details in JavaScript [](id=getting-ids-paths-and-sign-in-details-in-javascript)
+---
+header-id: getting-ids-paths-and-sign-in-details-in-javascript
+---
+
+# Getting IDs, Paths, and Sign-in Details in JavaScript
 
 In Java, developers are used to being able to find lots of context information
 at runtime. You can learn about what user is browsing your application, what
@@ -18,7 +22,7 @@ You can quickly assess your portal surroundings with `ThemeDisplay`.
 This tutorial describes some of the most commonly used `ThemeDisplay` methods
 for getting IDs, paths, and user sign-in details. 
 
-## Retrieving IDs [](id=retrieving-ids)
+## Retrieving IDs
 
 Using the `ThemeDisplay` methods below, you can grab IDs of various portal
 elements: 
@@ -39,7 +43,7 @@ elements:
 Now that you know how to retrieve IDs of some of Liferay's key elements, you
 can learn how to get paths to various deployed entities in the portal. 
 
-## Retrieving File Paths [](id=retrieving-file-paths)
+## Retrieving File Paths
 
 The `ThemeDisplay` object has methods for retrieving commonly used file paths.
 Below are a few of the methods: 
@@ -59,13 +63,13 @@ directory.
 Now that you know how to retrieve paths to Liferay's deployed entities, you can
 next learn how to get information about the current user. 
 
-## Retrieving Login Information [](id=retrieving-login-information)
+## Retrieving Login Information
 
 Here are a couple methods related to the current user. 
 
 **isImpersonated:** Returns `true` if the current user is being impersonated.
 Authorized administrative users can
-[impersonate](/discover/portal/-/knowledge_base/6-2/the-users-section-of-the-control-panel#user-management)
+[impersonate](/docs/6-2/user/-/knowledge_base/u/the-users-section-of-the-control-panel#user-management)
 act as another user to test that user's account. 
 
 **isSignedIn:** Returns `true` if the user is logged in to the portal. 
@@ -85,10 +89,10 @@ Otherwise, it defaults to a guest greeting. Although this is a basic example, it
 shows how you can easily define unique user experiences with the `ThemeDisplay`
 object. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Getting Browser and Platform Details in JavaScript](/develop/tutorials/-/knowledge_base/6-2/getting-browser-and-platform-details-in-javascript)
+[Getting Browser and Platform Details in JavaScript](/docs/6-2/tutorials/-/knowledge_base/t/getting-browser-and-platform-details-in-javascript)
 
-[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)
+[User Interfaces with AlloyUI](/docs/6-2/tutorials/-/knowledge_base/t/alloyui)
 
-[User Interfaces with the Liferay UI Taglib](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+[User Interfaces with the Liferay UI Taglib](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ui-taglibs)

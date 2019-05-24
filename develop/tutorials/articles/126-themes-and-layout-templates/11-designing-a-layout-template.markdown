@@ -1,4 +1,8 @@
-# Designing a Layout Template [](id=designing-a-layout-template)
+---
+header-id: designing-a-layout-template
+---
+
+# Designing a Layout Template
 
 Initially, the layout template's generated TPL files are empty, a fresh canvas
 on which you can design a page layout template. If this seems overwhelming,
@@ -140,15 +144,11 @@ add two column `<div>`s, and so on.
 
     You're getting the hang of specifying columns, right?
 
-    +$$$
-    
-    **Note:** Liferay 6.2 themes use a fork of Twitter Bootstrap v2.3.2 called 
-    [Alloy Bootstrap](https://github.com/liferay/alloy-bootstrap). Alloy
-    Bootstrap affects Liferay's layout templates as well as its themes. Liferay
-    6.2 layout templates use Bootstrap's 12 column grid system: 
-    <http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem>.
-
-    $$$
+    | **Note:** Liferay 6.2 themes use a fork of Twitter Bootstrap v2.3.2 called
+    | [Alloy Bootstrap](https://github.com/liferay/alloy-bootstrap). Alloy
+    | Bootstrap affects Liferay's layout templates as well as its themes. Liferay
+    | 6.2 layout templates use Bootstrap's 12 column grid system:
+    | <http://getbootstrap.com/2.3.2/scaffolding.html#gridSystem>.
 
 5.  Finally, with each column `<div>...</div>`, you must include a Velocity
 template directive to render each column's portlets. As a user adds a portlet to
@@ -171,7 +171,7 @@ the portlet.
 6.  Save the `.tpl` file. 
 
 Believe it or not, you've just created a layout template! You can
-[deploy](/develop/tutorials/-/knowledge_base/6-2/deploying-plugins)
+[deploy](/docs/6-2/tutorials/-/knowledge_base/t/deploying-plugins)
 it to your portal and apply it to your portal's pages. 
 
 If you want to see more examples of layout templates, check out the Page Layouts
@@ -193,6 +193,6 @@ generate some positive Feng Shui with your eye-pleasing layout templates!
 
 **Related Topics**
 
-[Embedding Portlets in a Layout Template](/develop/tutorials/-/knowledge_base/6-2/embedding-portlets-in-a-layout-template)
+[Embedding Portlets in a Layout Template](/docs/6-2/tutorials/-/knowledge_base/t/embedding-portlets-in-a-layout-template)
 
-[Developing Liferay Layout Template Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/developing-liferay-layout-template-plugins-with-mav)
+[Developing Liferay Layout Template Plugins with Maven](/docs/6-2/tutorials/-/knowledge_base/t/developing-liferay-layout-template-plugins-with-mav)

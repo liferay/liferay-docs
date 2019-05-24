@@ -1,4 +1,8 @@
-# Generating Reports in Liferay [](id=generating-reports-in-liferay)
+---
+header-id: generating-reports-in-liferay
+---
+
+# Generating Reports in Liferay
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
@@ -17,7 +21,7 @@ your Liferay instance's Control Panel interface or you can navigate to
 browser, purchase and download the apps, and copy the `.lpkg` files to your
 Liferay instance's `/deploy` folder.
 
-## Using the Reports Portlet [](id=using-the-reports-portlet)
+## Using the Reports Portlet
 
 Once you've installed the Reports and Jasper Reports EE applications, log in to
 your portal as an administrator and navigate to *Site Administration*. If your
@@ -151,7 +155,7 @@ file. You can also deliver the report by clicking *Actions* &rarr; *Deliver
 Report*, choosing an email recipient, and clicking *Deliver*. To delete the
 report file, click *Actions* &rarr; *Delete*.
 
-## Configuring the Reports Admin Portlet [](id=configuring-the-reports-admin-portlet)
+## Configuring the Reports Admin Portlet
 
 To configure the Reports Admin portlet, navigate to the Reports Admin portlet in
 the Control Panel, click on the *wrench* icon at the top right corner of the
@@ -172,7 +176,7 @@ message that's sent when a report notification is sent to a portal user. In this
 case, the report is not included as an attachment; the email message just
 provides a link to the report's location in the portal.
 
-## Using the Reports Display Portlet [](id=using-the-reports-display-portlet)
+## Using the Reports Display Portlet
 
 Installing the Reports EE and JasperReports EE apps not only adds the Reports
 Admin portlet to the Control Panel but also makes the Reports Display portlet
@@ -192,7 +196,7 @@ site-scoped reports will not be visible; only reports for which the View
 permission has been added to the Guest role will appear in the Reports Display
 portlet.
 
-## Creating a Sample Jasper Report in Liferay [](id=creating-a-sample-jasper-report-in-liferay)
+## Creating a Sample Jasper Report in Liferay
 
 To create a sample Jasper report in Liferay, follow this section's instructions.
 We'll use your portal's database as our report definition's data source and

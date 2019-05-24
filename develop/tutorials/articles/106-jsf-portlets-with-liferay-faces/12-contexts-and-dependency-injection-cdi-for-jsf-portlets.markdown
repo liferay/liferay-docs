@@ -1,4 +1,8 @@
-# Contexts and Dependency Injection for JSF Portlets [](id=contexts-and-dependency-injection-for-jsf-portlets)
+---
+header-id: contexts-and-dependency-injection-for-jsf-portlets
+---
+
+# Contexts and Dependency Injection for JSF Portlets
 
 In December 2009, [JSR 299](http://jcp.org/en/jsr/detail?id=299) introduced the
 Contexts and Dependency Injection (CDI) 1.0 standard into the Java EE 6
@@ -23,7 +27,7 @@ This tutorial covers the following topics:
 First, you'll configure your portlets to use a CDI implementation, such as JBoss
 Weld or [CanDI](http://www.caucho.com/candi-java-dependency-injection/). 
 
-## Configuring JSF Portlets to Use CDI [](id=configuring-jsf-portlets-to-use-cdi)
+## Configuring JSF Portlets to Use CDI
 
 Several app-server/portal/CDI-implementation combinations support using CDI with
 JSF on Liferay Portal.
@@ -31,17 +35,17 @@ JSF on Liferay Portal.
 For Liferay Portal 6.2, you can use one of these combinations:
 
 - GlassFish 3 with Weld
-- [JBoss AS with Weld](/discover/deployment/-/knowledge_base/6-2/installing-liferay-on-jboss-7-1#jsf-configuration)
+- [JBoss AS with Weld](/docs/6-2/deploy/-/knowledge_base/d/installing-liferay-on-jboss-7-1#jsf-configuration)
 - Resin with [CanDI](http://www.caucho.com/candi-java-dependency-injection/)
-- [Tomcat with Weld](/discover/deployment/-/knowledge_base/6-2/installing-liferay-on-tomcat-7)
-- [WebLogic 12c with Weld](/discover/deployment/-/knowledge_base/6-2/installing-liferay-on-oracle-weblogic-12c-12-1-2-and-h)
+- [Tomcat with Weld](/docs/6-2/deploy/-/knowledge_base/d/installing-liferay-on-tomcat-7)
+- [WebLogic 12c with Weld](/docs/6-2/deploy/-/knowledge_base/d/installing-liferay-on-oracle-weblogic-12c-12-1-2-and-h)
 
 For Liferay Portal 6.1, you can use one of these combinations:
 
-- [GlassFish 3 with Weld](/discover/portal/-/knowledge_base/6-1/errata-for-using-liferay-portal-6-1#upgrading-weld-in-glassfish-3)
-- [JBoss AS with Weld](/discover/portal/-/knowledge_base/6-1/errata-for-using-liferay-portal-6-1#upgrading-weld-in-jboss-7)
-- [Resin with CanDI](/discover/portal/-/knowledge_base/6-1/errata-for-using-liferay-portal-6-1#page-504)
-- [Tomcat with Weld](/discover/portal/-/knowledge_base/6-1/errata-for-using-liferay-portal-6-1#adding-mojarra-to-tomcat-7)
+- [GlassFish 3 with Weld](/docs/6-1/user/-/knowledge_base/u/errata-for-using-liferay-portal-6-1#upgrading-weld-in-glassfish-3)
+- [JBoss AS with Weld](/docs/6-1/user/-/knowledge_base/u/errata-for-using-liferay-portal-6-1#upgrading-weld-in-jboss-7)
+- [Resin with CanDI](/docs/6-1/user/-/knowledge_base/u/errata-for-using-liferay-portal-6-1#page-504)
+- [Tomcat with Weld](/docs/6-1/user/-/knowledge_base/u/errata-for-using-liferay-portal-6-1#adding-mojarra-to-tomcat-7)
 
 When developing portlets with CDI 1.0, you must include a `WEB-INF/beans.xml`
 descriptor in your JSF portlet plugin's `.war` deployment, so that when the CDI
@@ -123,7 +127,7 @@ If you're on Tomcat you must also add a Weld servlet listener in your portlet's
 
 Next, you'll learn how to configure the Liferay CDI Portlet Bridge
 
-## Configuring the Liferay CDI Portlet Bridge [](id=configuring-the-liferay-cdi-portlet-bridge)
+## Configuring the Liferay CDI Portlet Bridge
 
 The Liferay CDI Portlet Bridge makes it possible to use CDI with your JSF
 portlets on Liferay. Your JSF portlet projects must include the Liferay CDI
@@ -173,21 +177,17 @@ following declarations:
         <listener-class>com.liferay.cdi.portlet.bridge.CDIContextListener</listener-class>
     </listener>
 
-+$$$
-
-**Tip:** The Liferay Faces Project features the
-[jsf2-cdi-portlet](http://www.liferay.com/community/liferay-projects/liferay-faces/demos#jsf2-cdi-portlet)
-demo (which is a variant of the
-[jsf2-portlet](http://www.liferay.com/community/liferay-projects/liferay-faces/demos#jsf2-portlet)
-demo). It's a good idea to download and deploy the jsf2-cdi-portlet demo in your
-development environment in order to verify that CDI functions properly. 
-
-$$$
+| **Tip:** The Liferay Faces Project features the
+| [jsf2-cdi-portlet](http://www.liferay.com/community/liferay-projects/liferay-faces/demos#jsf2-cdi-portlet)
+| demo (which is a variant of the
+| [jsf2-portlet](http://www.liferay.com/community/liferay-projects/liferay-faces/demos#jsf2-portlet)
+| demo). It's a good idea to download and deploy the jsf2-cdi-portlet demo in your
+| development environment in order to verify that CDI functions properly.
 
 You've completed configuring the Liferay CDI Portlet Bridge for you JSF portlet.
 Now that everything is configured, you are ready to begin development with CDI.
 
-## Understanding CDI in JSF Annotations [](id=cdi-jsf-annotations-liferay-portal-6-2-dev-guide-en)
+## Understanding CDI in JSF Annotations
 
 When developing portlets with CDI, you can annotate Java classes as CDI managed
 beans using
@@ -217,12 +217,12 @@ This should help with your understanding of CDI and JSF annotations. And as
 you've also seen in this tutorial, configuring CDI for your JSF portlets and
 configuring the Liferay CDI Portlet Bridge is a snap!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Understanding Liferay Faces Bridge](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-bridge)
+[Understanding Liferay Faces Bridge](/docs/6-2/tutorials/-/knowledge_base/t/understanding-liferay-faces-bridge)
 
-[Communicating Between JSF Portlets Using IPC](/develop/tutorials/-/knowledge_base/6-2/communicating-between-jsf-portlets-using-ipc)
+[Communicating Between JSF Portlets Using IPC](/docs/6-2/tutorials/-/knowledge_base/t/communicating-between-jsf-portlets-using-ipc)
 
-[Understanding Liferay Faces Portal](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-portal)
+[Understanding Liferay Faces Portal](/docs/6-2/tutorials/-/knowledge_base/t/understanding-liferay-faces-portal)
 
-[Understanding Liferay Faces Alloy](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-alloy)
+[Understanding Liferay Faces Alloy](/docs/6-2/tutorials/-/knowledge_base/t/understanding-liferay-faces-alloy)

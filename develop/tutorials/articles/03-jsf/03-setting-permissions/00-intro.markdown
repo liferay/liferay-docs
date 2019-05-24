@@ -1,4 +1,8 @@
-# Setting Permissions Using JSF [](id=setting-permissions-using-jsf)
+---
+header-id: setting-permissions-using-jsf
+---
+
+# Setting Permissions Using JSF
 
 To this point, your guestbook application is able to create guestbooks and
 guestbook entries and store them as data to the database. However, everyone that

@@ -1,4 +1,8 @@
-# Workflow Enabling Entities [](id=workflow-enabling-entities)
+---
+header-id: workflow-enabling-entities
+---
+
+# Workflow Enabling Entities
 
 Enabling your app's entities to support workflow is so easy, you could do it in
 your sleep (but don't try). Workflow enabled (Workflown? Workflowed?
@@ -11,7 +15,7 @@ to the database, it needs to send the entity through Liferay's workflow, and it
 needs to handle the workflow status of the entity when it's returned by the
 workflow. 
 
-## Creating a Workflow Handler [](id=creating-a-workflow-handler)
+## Creating a Workflow Handler
 
 Workflow handlers are your application's way of interacting with the workflow
 back end. They must implement the `WorkflowHandler` interface.  Liferay's
@@ -98,7 +102,7 @@ after it.
 
 To fully implement workflow, the service layer also needs updating.
 
-## Updating the Service Layer for Workflow [](id=updating-the-service-layer-for-workflow)
+## Updating the Service Layer for Workflow
 
 There are four database fields your entity should include for workflow
 purposes. Add them to each entity’s `service.xml` file:
@@ -192,7 +196,7 @@ After following these steps, an entity is fully workflow enabled. Your view
 layer, however, likely requires some work to make sure that only approved
 entities are presented to the app's users.
 
-## Updating the View Layer [](id=updating-the-view-layer)
+## Updating the View Layer
 
 Make sure that you account for the workflow status in your app's UI. This
 involves creating a new *finder* method that accounts for workflow status,
@@ -206,7 +210,7 @@ approved entities.
 				WorkflowConstants.STATUS_APPROVED);
 	}
 
-For an example of using service Builder to create a finder that takes workflow status into account, check out the appropriate section of the [Learning Path on workflow](/develop/tutorials/-/knowledge_base/6-2/displaying-approved-workflow-items).
+For an example of using service Builder to create a finder that takes workflow status into account, check out the appropriate section of the [Learning Path on workflow](/docs/6-2/tutorials/-/knowledge_base/t/displaying-approved-workflow-items).
 
 If your app includes an *admin* portlet in Liferay's Site Administration
 console, consider displaying all entities, regardless of workflow status. Many
@@ -229,11 +233,11 @@ Now you know how to workflow enable any entities you create. Keep exploring
 Liferay's workflow capabilities in this tutorial, by learning to develop
 your own workflow definitions, and use scripting to make them more robust.
 
-##  Related Topics [](id=related-topics)
+##  Related Topics
 
-[Approving Content with Workflow](/develop/tutorials/-/knowledge_base/6-2/displaying-approved-workflow-items)
+[Approving Content with Workflow](/docs/6-2/tutorials/-/knowledge_base/t/displaying-approved-workflow-items)
 
-[Asset Framework](/develop/tutorials/-/knowledge_base/6-2/asset-framework)
+[Asset Framework](/docs/6-2/tutorials/-/knowledge_base/t/asset-framework)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
+[Service Builder and Services](/docs/6-2/tutorials/-/knowledge_base/t/service-builder)
 

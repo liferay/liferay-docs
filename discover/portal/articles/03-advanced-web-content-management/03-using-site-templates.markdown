@@ -1,4 +1,8 @@
-# Using Site Templates [](id=using-site-templates)
+---
+header-id: using-site-templates
+---
+
+# Using Site Templates
 
 Site Templates can be administered from the Control Panel. They allow portal
 administrators to create multiple sites with the same default set of pages and
@@ -37,15 +41,11 @@ a site using a site template, the configuration of pages and portlets is copied
 from the template to the site. By default, all changes made to the site template
 are automatically copied to sites based on that template.
 
-+$$$
-
-**Tip:** If you want to publish a piece of web
-content to many sites and ensure modifications are applied to all, don't use
-site template content for that purpose. Instead, place the content in the global
-scope and then reference it from a *Web Content Display* application in each
-site.
-
-$$$
+| **Tip:** If you want to publish a piece of web
+| content to many sites and ensure modifications are applied to all, don't use
+| site template content for that purpose. Instead, place the content in the global
+| scope and then reference it from a *Web Content Display* application in each
+| site.
 
 The Content section offers separate repositories for content related portlets
 based on your site template. For instance, by clicking *Polls* from the Content
@@ -82,7 +82,7 @@ By default, the following site templates are provided:
 Now that you know the basics for creating and managing your site templates,
 let's put your knowledge to the test by completing an example.
 
-## Site Templates Example [](id=site-templates-example)
+## Site Templates Example
 
 Suppose we need to create the following three sites for the Lunar Resort's
 internal use: Engineering, Marketing, and Legal. These should be private sites
@@ -144,7 +144,7 @@ users add and share content within the sites. Also, site administrators can add
 new pages, portlets, and content to their sites, further differentiating each
 department's site from the others.
 
-## Propagating Changes from Site Templates to Sites [](id=propagating-changes-from-site-templates-to-sites)
+## Propagating Changes from Site Templates to Sites
 
 It's possible for site template administrators to add, update, or delete site
 template pages. Changes made to a site template can be propagated to sites whose

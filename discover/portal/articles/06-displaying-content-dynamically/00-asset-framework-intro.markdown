@@ -1,4 +1,8 @@
-# Displaying Content Dynamically [](id=displaying-content-dynamically)
+---
+header-id: displaying-content-dynamically
+---
+
+# Displaying Content Dynamically
 
 Any type of content in Liferay is considered an asset. In chapters 2 and 3, we
 examined Liferay's most common type of asset: web content. Other types of assets

@@ -1,4 +1,8 @@
-# Creating a Navigation Menu With the Liferay UI Icon Menu Tag [](id=organizing-icons-with-the-liferay-ui-icon-menu-tag)
+---
+header-id: organizing-icons-with-the-liferay-ui-icon-menu-tag
+---
+
+# Creating a Navigation Menu With the Liferay UI Icon Menu Tag
 
 Liferay contains some standard navigation elements that are used throughout its
 interface. You can use the same elements, because they are encapsulated into
@@ -10,7 +14,7 @@ This tutorial covers how to configure and use the `liferay-ui:icon-menu` tag.
 Now that you know what the icon menu can do for you, it's time to see how to use
 it. 
 
-## Setting Up the Liferay UI Icon Menu Tag [](id=setting-up-the-liferay-ui-icon-menu-tag)
+## Setting Up the Liferay UI Icon Menu Tag
 
 The `liferay-ui:icon-menu` tag takes a list of child components and renders them
 in a menu. The example below shows how to add and use the `liferay-ui:icon-menu` 
@@ -22,7 +26,7 @@ tag in the `view.jsp` of a portlet:
  	
 Go through each of these steps to create menus in your application.
 
-### Step 1: Reference the liferay-ui Taglib [](id=step-1-reference-the-liferay-ui-taglib)
+### Step 1: Reference the liferay-ui Taglib
 
 1.  Open the `view.jsp` of your portlet. Create one if it does not already 
 exist.
@@ -33,7 +37,7 @@ exist.
 
 You can now use the liferay-ui tags in your portlet! Onward to step 2.
 
-### Step 2: Configure the icon-menu Tags in the View JSP [](id=step-2-configure-the-icon-menu-tags-in-the-view-jsp)
+### Step 2: Configure the icon-menu Tags in the View JSP
 
 Inside your portlet's `view.jsp`, add the `liferay-ui:icon-menu` tags at the
 bottom:
@@ -45,7 +49,7 @@ bottom:
 You'll place all your icons for your menu inside the tags you just added.
 Onward to step 3!
 
-### Step 3: Insert and Configure the liferay-ui:icon Tags inside of the icon-menu Tags [](id=step-3-insert-and-configure-the-liferay-uiicon-tags-inside-of-the-icon-menu)
+### Step 3: Insert and Configure the liferay-ui:icon Tags inside of the icon-menu Tags
 
 In this step you'll add the icons that you wish to display in your icon menu.
 
@@ -89,10 +93,10 @@ With the settings above, your icon menu should look like the figure below:
 
 As you can see, the `liferay-ui:icon-menu` tag is easy to use.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
- [Using Liferay UI Tabs and Sections](/develop/tutorials/-/knowledge_base/6-2/using-liferay-ui-tabs-and-sections)
+ [Using Liferay UI Tabs and Sections](/docs/6-2/tutorials/-/knowledge_base/t/using-liferay-ui-tabs-and-sections)
  
- [Creating a Navigation Menu with the Liferay UI Icon List Tag](/develop/tutorials/-/knowledge_base/6-2/creating-a-navigation-menu-with-the-liferay-uiicon-list-tag)
+ [Creating a Navigation Menu with the Liferay UI Icon List Tag](/docs/6-2/tutorials/-/knowledge_base/t/creating-a-navigation-menu-with-the-liferay-uiicon-list-tag)
  
- [Using Liferay-UI:Success and Liferay-UI:Error Messages](/develop/tutorials/-/knowledge_base/6-2/using-liferay-uisuccess-and-liferay-uierror-message)
+ [Using Liferay-UI:Success and Liferay-UI:Error Messages](/docs/6-2/tutorials/-/knowledge_base/t/using-liferay-uisuccess-and-liferay-uierror-message)

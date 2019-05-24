@@ -1,4 +1,8 @@
-# Summary [](id=summary-2)
+---
+header-id: summary-2
+---
+
+# Summary
 
 In this chapter, we explored the configuration options available for Liferay
 applications. We showed how to customize your applications, export/import

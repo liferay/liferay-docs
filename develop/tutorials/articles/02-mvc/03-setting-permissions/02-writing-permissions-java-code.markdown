@@ -1,4 +1,8 @@
-# Writing Permissions Java Code [](id=writing-permissions-java-code)
+---
+header-id: writing-permissions-java-code
+---
+
+# Writing Permissions Java Code
 
 As you've seen, permissions in Liferay Portal are defined using a configuration
 file. The permissions themselves, however, must be stored in the database in
@@ -13,7 +17,7 @@ the amount of code in your JSPs.
 
 Your next task is to modify your service layer to account for permissions. 
 
-## Adding Permissions Resources to your Service Layer [](id=adding-permissions-resources-to-your-service-layer)
+## Adding Permissions Resources to your Service Layer
 
 In the back end, permissions are called *resources*. Liferay already provides a
 complete API for managing resources, and it's very easy to use. If you're using
@@ -63,7 +67,7 @@ permissions-enabled.
 Your next task is to create permissions helper classes to make it easier to
 check permissions.
 
-## Creating Permissions Helper Classes [](id=creating-permissions-helper-classes)
+## Creating Permissions Helper Classes
 
 Permission checking in Liferay is a straightforward process. You have a
 permission, such as `ADD_ENTRY`, and a resource, such as a `Guestbook`.

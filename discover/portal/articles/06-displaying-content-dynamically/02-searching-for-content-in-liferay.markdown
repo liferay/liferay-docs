@@ -1,4 +1,8 @@
-# Searching for Content in Liferay [](id=searching-for-content-in-liferay)
+---
+header-id: searching-for-content-in-liferay
+---
+
+# Searching for Content in Liferay
 
 To stay organized, I (RS) used to use a paper-based planner. It had different
 sections for various areas of my life. Its initial incarnation came from a
@@ -24,7 +28,7 @@ content, tags, and categories to refine your search. Let's look at the search
 features Liferay provides for specific kinds of content and then examine how to
 use Liferay's faceted search.
 
-## Searching for Specific Types of Content [](id=searching-for-specific-types-of-content)
+## Searching for Specific Types of Content
 
 Liferay provides several applications that allow users and administrators to
 search for content. First, there's the Search portlet. The Search portlet can be
@@ -41,13 +45,9 @@ for the Web Content portlet, be placed on portal pages for end-users to use. The
 Web Content portlet is not designed for end users; it's intended for
 administrative use only.
 
-+$$$
-
-**Note:** The Web Content Search portlet is deprecated in Liferay 6.2 and will
-be removed in Liferay 7.0. The Web Content Search portlet will be migrated to
-the Search portlet, which will be configured to only search for web content. 
-
-$$$
+| **Note:** The Web Content Search portlet is deprecated in Liferay 6.2 and will
+| be removed in Liferay 7.0. The Web Content Search portlet will be migrated to
+| the Search portlet, which will be configured to only search for web content.
 
 In order for content to be searchable, it must first be indexed. Liferay uses
 Lucene for indexing and searching for content. Please refer to the Lucene
@@ -77,7 +77,7 @@ tool that allows users to include or not include specific types of assets in a
 search. However, the Search portlet does not return comments or attachments as
 search results.
 
-## Searching for Localized Web Content [](id=searching-for-localized-web-content)
+## Searching for Localized Web Content
 
 Liferay Portal supports localizing web content as well as searching for
 localized web content. Recall that to add a translation of a web content
@@ -100,7 +100,7 @@ that is searched. To change the current approved version of a web content
 article, edit the article, click on the *View History* button, click on the
 *Actions* button next to a version of the article, then click on *Expire*.
 
-## Searching for Portal Content Using Facets [](id=searching-for-portal-content-using-facets)
+## Searching for Portal Content Using Facets
 
 To get started using faceted search, drop the Search portlet on a page and
 search for something. You'll see a page with results on the right and a
@@ -164,7 +164,7 @@ hits on the right. In this way, you can interactively tweak the search results
 to narrow them down, making it easier to find that proverbial needle within the
 haystack. 
 
-### Asset Types [](id=asset-types)
+### Asset Types
 
 Searching can only be done on assets. As has already been described in this
 chapter, just about any entity in the portal is an asset and can be indexed and
@@ -203,7 +203,7 @@ created as non-visible assets. Instead of displaying users in the Asset
 Publisher, Liferay uses the `displayURL` of each user as the link from a list of
 search results.
 
-### Asset Tags [](id=asset-tags)
+### Asset Tags
 
 If tags have been applied to any asset that appears in the result set, it may
 be displayed in the Asset Tag facet. Tags are handled in a similar way to how
@@ -212,7 +212,7 @@ the 10 tags listed, but the default configuration for this facet is to show the
 top 10 most frequent terms. As with asset types, this can be modified by
 setting the `max terms` property.
 
-### Asset Categories [](id=asset-categories)
+### Asset Categories
 
 If categories have been applied to any asset that appears in the result set,
 they may be displayed in the Asset Categories facet. Asset categories work just
@@ -221,7 +221,7 @@ listed in the search by setting the `max terms` property.
 
 Let's move on to advanced searching. 
 
-## Advanced Searching [](id=advanced-searching)
+## Advanced Searching
 
 The Search portlet's search box is deceptively simple. Though you have only a
 single field for search, there's a search syntax inherited from
@@ -284,7 +284,7 @@ above.
 
 Next, we'll look at how the Search portlet can be configured. 
 
-## Setting Search Options [](id=setting-search-options)
+## Setting Search Options
 
 As with Liferay's other portlets, you can configure the Search portlet via the
 configuration screen, which looks like the below illustration. 
@@ -474,14 +474,10 @@ which the facet operates.
 For example, `"fieldName": "entryClassName"` indicates that the specified facet
 implementation operates on the `entryClassName` indexed field.
 
-+$$$
-
-**Note:** You can identify available indexed fields by enabling the Search
-portlet's *Display Results in Document Form* configuration setting and then
-expanding individual results by clicking the *+* symbol to the left of their
-titles. 
-
-$$$
+| **Note:** You can identify available indexed fields by enabling the Search
+| portlet's *Display Results in Document Form* configuration setting and then
+| expanding individual results by clicking the *+* symbol to the left of their
+| titles.
 
 **"label":** This field takes a string value and represents the language key that
 is used for localizing the title of the facet when it's rendered.
@@ -546,7 +542,7 @@ versions).
 Configuring search using a JSON object is a bit unusual, but as you can see,
 it's not as hard as it looks initially.
 
-## Summary [](id=summary)
+## Summary
 
 Search is a powerful component of Liferay Portal's asset framework. The
 proclivity of assets means that there is an extensible, robust, and configurable

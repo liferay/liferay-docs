@@ -1,7 +1,11 @@
-# Creating Android Screenlets [](id=creating-android-screenlets)
+---
+header-id: creating-android-screenlets
+---
+
+# Creating Android Screenlets
 
 The
-[Screenlets](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android)
+[Screenlets](/docs/6-2/reference/-/knowledge_base/r/screenlets-in-liferay-screens-for-android)
 that come with Liferay Screens cover common use cases for mobile apps that use
 Liferay. They authenticate users, interact with Dynamic Data Lists, view assets,
 and more. However, what if there's no Screenlet for *your* specific use case? No
@@ -15,37 +19,37 @@ that saves bookmarks to Liferay's Bookmarks portlet.
 
 In general, you use the following steps to create Screenlets: 
 
-1. [Determine your Screenlet's location](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets#determining-your-screenlets-location). 
+1. [Determine your Screenlet's location](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-screenlets#determining-your-screenlets-location). 
    Where you create your Screenlet depends on how you'll use it. 
 
-2. [Create the Screenlet's UI (its View)](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets#creating-the-screenlets-ui). 
+2. [Create the Screenlet's UI (its View)](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-screenlets#creating-the-screenlets-ui). 
    Although this tutorial presents all the information you need to create a View 
    for your Screenlet, you may first want to learn how to 
-   [create a View](/develop/tutorials/-/knowledge_base/6-2/creating-android-views). 
+   [create a View](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-views). 
    For more information on Views in general, see 
-   [the tutorial on using Views with Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets). 
+   [the tutorial on using Views with Screenlets](/docs/6-2/tutorials/-/knowledge_base/t/using-views-in-android-screenlets). 
 
-3. [Create the Screenlet's Interactor](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets#creating-the-screenlets-Interactor-class). 
+3. [Create the Screenlet's Interactor](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-screenlets#creating-the-screenlets-Interactor-class). 
    Interactors are Screenlet components that make server calls. 
 
-4. [Define the Screenlet's attributes](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets#defining-screenlet-attributes-in-your-app). 
+4. [Define the Screenlet's attributes](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-screenlets#defining-screenlet-attributes-in-your-app). 
    These are the XML attributes the app developer can set when inserting the 
    Screenlet's XML. These attributes control aspects of the Screenlet's 
    behavior. You'll add functionality to these attributes in the Screenlet 
    class. 
 
-5. [Create the Screenlet class](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets#creating-the-screenlet-class). 
+5. [Create the Screenlet class](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-screenlets#creating-the-screenlet-class). 
    The Screenlet class is the Screenlet's central component. It controls the 
    Screenlet's behavior and is the component the app developer interacts with 
    when inserting a Screenlet. 
 
 To understand the components that make up a Screenlet, you should first 
 learn the
-[architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android). 
+[architecture of Liferay Screens for Android](/docs/6-2/tutorials/-/knowledge_base/t/architecture-of-liferay-screens-for-android). 
 
 Without further ado, let the Screenlet creation begin! 
 
-## Determining Your Screenlet's Location [](id=determining-your-screenlets-location)
+## Determining Your Screenlet's Location
 
 Where you should create your Screenlet depends on how you plan to use it. If you
 don't plan to reuse your Screenlet in another app or don't want to redistribute
@@ -55,11 +59,11 @@ you may have imported.
 
 If you want to reuse your Screenlet in another app, create it in a new Android 
 application module. The tutorial 
-[Packaging Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/packaging-your-android-screenlets) 
+[Packaging Android Screenlets](/docs/6-2/tutorials/-/knowledge_base/t/packaging-your-android-screenlets) 
 explains how to do this. When your Screenlet's project is in place, you can 
 start by creating the Screenlet's UI. 
 
-## Creating the Screenlet's UI [](id=creating-the-screenlets-ui)
+## Creating the Screenlet's UI
 
 In Liferay Screens for Android, Screenlet UIs are called Views. Every Screenlet 
 must have at least one View. A View consists of the following components: 
@@ -141,7 +145,7 @@ and layout. The following steps explain how:
 
 Next, you'll create your Screenlet's View class. 
 
-### Creating the Screenlet's View Class [](id=creating-the-screenlets-view-class)
+### Creating the Screenlet's View Class
 
 Your Screenlet needs a View class to support the layout you just created. This 
 class must extend an Android layout class (e.g. `LinearLayout`, `ListView`), 
@@ -282,7 +286,7 @@ to see the complete example `AddBookmarkView` class.
 Great! Your View class is finished. Now you're ready to create your Screenlet's 
 Interactor class. 
 
-## Creating the Screenlet's Interactor [](id=creating-the-screenlets-Interactor-class)
+## Creating the Screenlet's Interactor
 
 A Screenlet's Interactor makes the service call to retrieve the data you need 
 from a Liferay instance. An Interactor is made up of several components: 
@@ -304,7 +308,7 @@ from a Liferay instance. An Interactor is made up of several components:
 
 2. The listener interface. This defines the methods the app developer needs to 
    respond to the Screenlet's behavior. For example, 
-   [Login Screenlet's listener](/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-android#listener) 
+   [Login Screenlet's listener](/docs/6-2/reference/-/knowledge_base/r/loginscreenlet-for-android#listener) 
    defines the `onLoginSuccess` and `onLoginFailure` methods. Screens calls 
    these methods when login succeeds or fails, respectively. By implementing 
    these methods in the activity or fragment class that contains the Screenlet, 
@@ -326,7 +330,7 @@ from a Liferay instance. An Interactor is made up of several components:
    Interactor class send the server call's results to any classes that implement 
    the listener. In the implementation of the method that makes the server call, 
    the `execute` method, you must 
-   [use the Mobile SDK to make an asynchronous service call](/develop/tutorials/-/knowledge_base/6-2/invoking-services-asynchronously-from-your-android-app). 
+   [use the Mobile SDK to make an asynchronous service call](/docs/6-2/tutorials/-/knowledge_base/t/invoking-services-asynchronously-from-your-android-app). 
    This means you must get a session and then make the server call. You make the 
    server call by creating an instance of the Mobile SDK service (e.g., 
    `BookmarksEntryService`) that can call the Liferay service you need and then 
@@ -402,12 +406,12 @@ from a Liferay instance. An Interactor is made up of several components:
 Sweetness! Your Screenlet's Interactor is done. Next, you'll create the 
 Screenlet class. 
 
-## Defining Screenlet Attributes in Your App [](id=defining-screenlet-attributes-in-your-app)
+## Defining Screenlet Attributes in Your App
 
 Before creating the Screenlet class, you should define its attributes. These are 
 the attributes the app developer can set when inserting the Screenlet's XML in 
 an activity or fragment layout. For example, to use 
-[Login Screenlet](/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-android), 
+[Login Screenlet](/docs/6-2/reference/-/knowledge_base/r/loginscreenlet-for-android), 
 the app developer could insert the following Login Screenlet XML in an activity 
 or fragment layout: 
 
@@ -445,7 +449,7 @@ Here's a brief description of what each does:
 
 - `layoutId`: Sets the View that displays the Screenlet. This functions the same 
 as the `layoutId` attribute in 
-[Liferay's existing Screenlets](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android). 
+[Liferay's existing Screenlets](/docs/6-2/reference/-/knowledge_base/r/screenlets-in-liferay-screens-for-android). 
 
 - `folderId`: Sets the folder ID in the Bookmarks portlet where the Screenlet 
 adds bookmarks. 
@@ -455,7 +459,7 @@ adds bookmarks.
 Now that you've defined your Screenlet's attributes, you're ready to create the 
 Screenlet class.
 
-## Creating the Screenlet Class [](id=creating-the-screenlet-class)
+## Creating the Screenlet Class
 
 The Screenlet class is the central hub of a Screenlet. It contains attributes 
 for configuring the Screenlet's behavior, a reference to the Screenlet's View, 
@@ -627,9 +631,9 @@ Next, you must implement `BaseScreenlet`'s abstract methods:
         }
 
 Nice! Your Screenlet is finished! You can now use it 
-[the same way you would any other](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps). 
+[the same way you would any other](/docs/6-2/tutorials/-/knowledge_base/t/using-screenlets-in-android-apps). 
 If you created your Screenlet in its own project, you can also 
-[package and distribute](/develop/tutorials/-/knowledge_base/6-2/packaging-your-android-screenlets)
+[package and distribute](/docs/6-2/tutorials/-/knowledge_base/t/packaging-your-android-screenlets)
 it via the Screens project, JCenter, or Maven Central. 
 
 To finish the Add Bookmark Screenlet example, the following section shows you 
@@ -638,10 +642,10 @@ values in an app's `server_context.xml` file. Although you may not need to do
 this when using your Screenlets, it might come in handy on your way to becoming 
 a master of Screenlets. 
 
-## Using Your Screenlet [](id=using-your-screenlet)
+## Using Your Screenlet
 
 To use any Screenlet, you must follow these 
-[general steps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps): 
+[general steps](/docs/6-2/tutorials/-/knowledge_base/t/using-screenlets-in-android-apps): 
 
 1. Insert the Screenlet's XML in the activity or fragment layout you want the 
    Screenlet to appear in. You can fine-tune the Screenlet's behavior by setting 
@@ -685,12 +689,12 @@ XML to set the `app:folderId` attribute to `20622`.
 Great! Now you know how to use the Screenlets you create. You also know a 
 convenient way to specify default values for a Screenlet's attributes. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps)
+[Using Screenlets in Android Apps](/docs/6-2/tutorials/-/knowledge_base/t/using-screenlets-in-android-apps)
 
-[Architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android)
+[Architecture of Liferay Screens for Android](/docs/6-2/tutorials/-/knowledge_base/t/architecture-of-liferay-screens-for-android)
 
-[Creating Android Views](/develop/tutorials/-/knowledge_base/6-2/creating-android-views)
+[Creating Android Views](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-views)
 
-[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets)
+[Creating iOS Screenlets](/docs/6-2/tutorials/-/knowledge_base/t/creating-ios-screenlets)

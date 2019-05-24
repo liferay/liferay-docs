@@ -1,4 +1,8 @@
-# Summary [](id=summary-14)
+---
+header-id: summary-14
+---
+
+# Summary
 
 In this chapter, we examined how to configure Liferay's portal settings. We
 looked at the different authentication options provided by Liferay. You can

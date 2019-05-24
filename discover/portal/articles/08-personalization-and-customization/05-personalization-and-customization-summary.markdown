@@ -1,4 +1,8 @@
-# Summary [](id=summary-5)
+---
+header-id: summary-5
+---
+
+# Summary
 
 In this chapter, we discussed personal sites for portal users. We showed how to
 enable or disable them, how to set whether or not pages should be automatically

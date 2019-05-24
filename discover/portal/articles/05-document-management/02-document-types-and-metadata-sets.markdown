@@ -1,4 +1,8 @@
-# Document Types and Metadata Sets [](id=document-types-and-metadata-sets)
+---
+header-id: document-types-and-metadata-sets
+---
+
+# Document Types and Metadata Sets
 
 When a user assigns a document type to a document, the user is required to fill
 out the fields defined by the metadata set of the document type. This encourages

@@ -1,9 +1,13 @@
-# Leveraging Template Editors for Notifications [](id=leveraging-template-editors-for-notifications)
+---
+header-id: leveraging-template-editors-for-notifications
+---
+
+# Leveraging Template Editors for Notifications
 
 Designer lets you leverage the FreeMarker editor to customize templates for your 
 workflow notifications. A FreeMarker editor comes bundled with Developer Studio.
 
-## Creating Notifications [](id=creating-notifications)
+## Creating Notifications
 
 To access the template editor, click on the node of your choice and select the
 *Notifications* sub-tab in the *Properties* view. Create a new notification by
@@ -32,13 +36,9 @@ insertion, the editor gives you all the available variables that are a part of
 the Kaleo workflow. You can visit the documentation pages for [FreeMarker](http://freemarker.org/docs/) 
 for more information on the variables and functions available.
 
-+$$$
-
-**Note:** Similar to the bundled script editors, Developer Studio lets you use
-the FreeMarker template editor to customize notifications in your workflow
-definition.
-
-$$$
+| **Note:** Similar to the bundled script editors, Developer Studio lets you use
+| the FreeMarker template editor to customize notifications in your workflow
+| definition.
 
 Let's continue editing our ticket process workflow. After completion of the QA
 task assignments, our Project Management team should be notified. To set up a
@@ -168,7 +168,7 @@ for the Project Management task we created:
 In the next section you'll see a list of workflow and service context content
 you can use when creating a customized script or template. 
 
-## Workflow Context and Service Context Variables [](id=workflow-context-and-service-context-variables)
+## Workflow Context and Service Context Variables
 
 A context variable provides a uniform variable to insert into your templates and
 scripts. When executed, a context variable is automatically deleted and replaced
@@ -403,6 +403,6 @@ ___
 
 Now that the Ticket Process Definition is complete, learn how to publish it and
 configure it inside the portal
-[next](/develop/tutorials/-/knowledge_base/6-2/publishing-and-configuring-workflows).
+[next](/docs/6-2/tutorials/-/knowledge_base/t/publishing-and-configuring-workflows).
 
 <!-- ## Recent Articles -->

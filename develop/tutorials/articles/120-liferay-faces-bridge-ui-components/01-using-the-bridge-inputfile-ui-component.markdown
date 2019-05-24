@@ -1,4 +1,8 @@
-# Using the bridge:inputFile UI Component [](id=using-the-bridgeinputfile-ui-component)
+---
+header-id: using-the-bridgeinputfile-ui-component
+---
+
+# Using the bridge:inputFile UI Component
 
 Liferay Faces Bridge provides bridge-specific `UIComponent` tags as part of its
 component suite. In this tutorial, you'll explore the `bridge:inputFile` tag and
@@ -41,19 +45,15 @@ implements handling the file upload:
         }
     }
 
-+$$$
-
- **Note:**The `bridge:inputFile` tag depends on Apache's `commons-fileupload`
- and `commons-io` modules. See the
- [Demo JSF Applicant Portlet](http://www.liferay.com/community/liferay-projects/liferay-faces/demos#jsf-applicant-portlet)
- for more details.
-
-$$$
+|  **Note:**The `bridge:inputFile` tag depends on Apache's `commons-fileupload`
+|  and `commons-io` modules. See the
+|  [Demo JSF Applicant Portlet](http://www.liferay.com/community/liferay-projects/liferay-faces/demos#jsf-applicant-portlet)
+|  for more details.
 
 Fantastic! You can add another UIComponent to your repertoire! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Liferay Faces Alloy UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-alloy-ui-components)
+[Liferay Faces Alloy UI Components](/docs/6-2/tutorials/-/knowledge_base/t/liferay-faces-alloy-ui-components)
 
-[Understanding Liferay Faces Bridge](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-bridge)
+[Understanding Liferay Faces Bridge](/docs/6-2/tutorials/-/knowledge_base/t/understanding-liferay-faces-bridge)

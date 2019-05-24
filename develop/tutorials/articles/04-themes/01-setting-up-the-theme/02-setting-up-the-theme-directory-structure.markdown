@@ -1,10 +1,10 @@
-# Setting Up the Theme's Directory Structure [](id=setting-up-the-themes-directory-structure)
+---
+header-id: setting-up-the-themes-directory-structure
+---
 
-+$$$
-Note: This step assumes you've [downloaded and unzipped the resources](/documents/10184/532726/themes-learning-path-6.2.zip)
-needed to set up the theme. This was mentioned in the introduction to this step.
+# Setting Up the Theme's Directory Structure
 
-$$$
+| needed to set up the theme. This was mentioned in the introduction to this step.
 
 Your theme's directory structure should reflect the one below when it is 
 complete:
@@ -98,7 +98,7 @@ housekeeping items to take care of before you move on to the next section.
     folder into the `_diffs/images` directory of the theme.
  
 3.  Finally, install the `guestbook-portlet.war` file developed in the
-    [MVC Learning Path](/develop/tutorials/-/knowledge_base/6-2/writing-a-liferay-mvc-application) 
+    [MVC Learning Path](/docs/6-2/tutorials/-/knowledge_base/t/writing-a-liferay-mvc-application) 
     by copying it into your Liferay bundle's `/deploy` directory. You can 
     download this WAR file 
     [from this directory in GitHub](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/04-mobile). 

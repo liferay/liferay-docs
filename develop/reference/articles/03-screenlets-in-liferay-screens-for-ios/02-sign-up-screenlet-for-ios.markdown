@@ -1,21 +1,25 @@
-# Sign Up Screenlet for iOS [](id=signupscreenlet-for-ios)
+---
+header-id: signupscreenlet-for-ios
+---
 
-## Requirements [](id=requirements)
+# Sign Up Screenlet for iOS
+
+## Requirements
 
 - Xcode 9.0
 - iOS 11 SDK
 - Liferay Portal 6.2 (CE or EE), Liferay 7.0 CE, Liferay DXP
 
-## Compatibility [](id=compatibility)
+## Compatibility
 
 - iOS 9 and above
 
-## Xamarin Requirements [](id=xamarin-requirements)
+## Xamarin Requirements
 
 - Visual Studio 7.2
 - Mono .NET framework 5.4.1.6
 
-## Features [](id=features)
+## Features
 
 The Sign Up Screenlet creates a new user in your Liferay instance: a new user of
 your app can become a new user in your portal. You can also use this Screenlet
@@ -23,7 +27,7 @@ to save the credentials of the new user in their keychain. This enables auto
 login for future sessions. The Screenlet also supports navigation of form fields
 from the keyboard of the user's device. 
 
-## JSON Services Used [](id=json-services-used)
+## JSON Services Used
 
 Screenlets in Liferay Screens call JSON web services in the portal. This 
 Screenlet calls the following services and methods.
@@ -32,18 +36,18 @@ Screenlet calls the following services and methods.
 | ------- | ------ | ----- |
 | `UserService` | `addUser` |  |
 
-## Module [](id=module)
+## Module
 
 - Auth
 
-## Themes [](id=themes)
+## Themes
 
 - Default (`default`)
 - Flat7 (`flat7`)
 
 ![The Sign Up Screenlet with the Default (left) and Flat7 (right) Themes.](../../images/screens-ios-signup.png)
 
-## Portal Configuration [](id=portal-configuration)
+## Portal Configuration
 
 The configuration related to the Sign Up Screenlet can be set in the Control 
 Panel by clicking *Portal Settings* and then *Authentication*. 
@@ -53,17 +57,17 @@ Panel by clicking *Portal Settings* and then *Authentication*.
 For more details, please refer to the [Configuring Portal Settings](/portal/-/knowledge_base/6-2/configuring-portal-settings) 
 section of the User Guide.
 
-## Anonymous Request [](id=anonymous-request)
+## Anonymous Request
 
 Anonymous requests are unauthenticated requests. Authentication is needed,
 however, to call the API. To allow this operation, the portal administrator
 should create a specific user with minimal permissions.
 
-## Offline [](id=offline)
+## Offline
 
 This Screenlet doesn't support offline mode. It requires network connectivity.
 
-## Attributes [](id=attributes)
+## Attributes
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
@@ -73,7 +77,7 @@ This Screenlet doesn't support offline mode. It requires network connectivity.
 | `autoLogin` | `boolean` | Whether the user is logged in automatically after a successful sign up. |
 | `saveCredentials` | `boolean` | Sets whether or not the user's credentials and attributes are stored in the keychain after a successful log in. This attribute is ignored if `autologin` is disabled. |
 
-## Delegate [](id=delegate)
+## Delegate
 
 The Sign Up Screenlet delegates some events to an object that conforms to the 
 `SignUpScreenletDelegate` protocol. If the `autologin` attribute is enabled, 

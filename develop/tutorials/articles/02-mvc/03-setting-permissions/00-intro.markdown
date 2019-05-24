@@ -1,4 +1,8 @@
-# Setting Permissions [](id=setting-permissions)
+---
+header-id: setting-permissions
+---
+
+# Setting Permissions
 
 Storing your data in a database is really only the first step in creating a
 full-blown, data-driven application. Once the data is there, most of the time

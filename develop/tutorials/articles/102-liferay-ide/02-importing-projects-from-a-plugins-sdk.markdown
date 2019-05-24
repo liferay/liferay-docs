@@ -1,4 +1,8 @@
-# Importing Projects from a Plugins SDK [](id=importing-projects-from-plugins-sdk)
+---
+header-id: importing-projects-from-plugins-sdk
+---
+
+# Importing Projects from a Plugins SDK
 
 Do you want to import one or more Liferay projects into your Liferay IDE
 workspace from a Liferay Plugins SDK? Liferay IDE makes it easy. Don't worry if
@@ -8,17 +12,13 @@ in this tutorial assures they get imported into your workspace.
 First, consider the steps for importing a single Liferay project from a
 Plugins SDK project into your workspace.
 
-+$$$
+| **Note:** This section assumes that you've created projects with the Plugins SDK
+| and are familiar with the directory structure used by the Plugins SDK. If you
+| need to, check out the
+| [Plugins SDK](/docs/6-2/tutorials/-/knowledge_base/t/plugins-sdk) tutorials for
+| further information.
 
-**Note:** This section assumes that you've created projects with the Plugins SDK
-and are familiar with the directory structure used by the Plugins SDK. If you
-need to, check out the
-[Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk) tutorials for
-further information. 
-
-$$$
-
-## Importing a Single Project [](id=importing-a-single-project)
+## Importing a Single Project
 
 For these steps, it's assumed that you haven't yet configured your Plugins SDK
 in Liferay IDE: 
@@ -59,7 +59,7 @@ in the tutorial *Verifying Successful Project Import*.
 
 <!-- To do: Add link to Verifying Successful Project Import tutorial -->
 
-## Importing Multiple Projects [](id=importing-multiple-projects)
+## Importing Multiple Projects
 
 Next, you'll learn how to import multiple projects from a Liferay Plugins SDK
 you've already set up in Liferay IDE. Follow these steps: 
@@ -72,15 +72,11 @@ you've already set up in Liferay IDE. Follow these steps:
 2. In the *Import Liferay Projects* window, use the dropdown list to select the
    *Liferay Plugins SDK* from which you're importing plugins. 
 
-    +$$$
-
-    **Note:** If your Plugins SDK isn't configured in Liferay IDE (i.e., it's
-    not in the dropdown list of the *Import Projects* window), use the
-    *Configure* link to add one. To configure a Plugins SDK from the Installed
-    SDKs window, just click *Add* and then browse to the Plugins SDK's root
-    directory.
-
-    $$$
+    | **Note:** If your Plugins SDK isn't configured in Liferay IDE (i.e., it's
+    | not in the dropdown list of the *Import Projects* window), use the
+    | *Configure* link to add one. To configure a Plugins SDK from the Installed
+    | SDKs window, just click *Add* and then browse to the Plugins SDK's root
+    | directory.
 
     Liferay IDE automatically fills in the *Liferay Plugin SDK Location* and
     *Liferay Plugin SDK Version* fields, as long as they're valid; invalid
@@ -97,11 +93,11 @@ you've already set up in Liferay IDE. Follow these steps:
 
 Congratulations on importing *multiple* Liferay projects into your workspace! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Verifying Successful Project Import](/develop/tutorials/-/knowledge_base/6-2/verifying-successful-project-import)
+[Verifying Successful Project Import](/docs/6-2/tutorials/-/knowledge_base/t/verifying-successful-project-import)
 
-[Setting Up Liferay Maven Facets in Existing Liferay Maven Plugin Projects](/develop/tutorials/-/knowledge_base/6-2/setting-up-liferay-maven-facets-in-existing-liferay-maven-plugin-projects)
+[Setting Up Liferay Maven Facets in Existing Liferay Maven Plugin Projects](/docs/6-2/tutorials/-/knowledge_base/t/setting-up-liferay-maven-facets-in-existing-liferay-maven-plugin-projects)
 
-[Deploying Plugins](/develop/tutorials/-/knowledge_base/6-2/deploying-plugins)
+[Deploying Plugins](/docs/6-2/tutorials/-/knowledge_base/t/deploying-plugins)
 

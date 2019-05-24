@@ -1,38 +1,38 @@
-# LCS Preconfiguration [](id=lcs-preconfiguration)
+---
+header-id: lcs-preconfiguration
+---
+
+# LCS Preconfiguration
 
 To take full advantage of Liferay Connected Services (LCS), you must first 
 register your server with LCS. Before doing so, however, there are a few things 
 you must take care of. The sections in this guide walk you through these steps: 
 
-1. [Downloading the LCS Client App](/discover/deployment/-/knowledge_base/6-2/lcs-preconfiguration#downloading-the-lcs-client-app)
-2. [Preconfiguring LCS to Connect Through a Proxy](/discover/deployment/-/knowledge_base/6-2/lcs-preconfiguration#preconfiguring-the-lcs-client-to-connect-through-a-proxy)
-3. [Ensuring Access to LCS](/discover/deployment/-/knowledge_base/6-2/lcs-preconfiguration#ensuring-access-to-lcs)
-4. [NTP Server Synchronization](/discover/deployment/-/knowledge_base/6-2/lcs-preconfiguration#ntp-server-synchronization)
-5. [Configuring the Patching Tool](/discover/deployment/-/knowledge_base/6-2/lcs-preconfiguration#configuring-the-patching-tool)
-6. [Installing the LCS Client App](/discover/deployment/-/knowledge_base/6-2/lcs-preconfiguration#installing-the-lcs-client-app)
+1. [Downloading the LCS Client App](/docs/6-2/deploy/-/knowledge_base/d/lcs-preconfiguration#downloading-the-lcs-client-app)
+2. [Preconfiguring LCS to Connect Through a Proxy](/docs/6-2/deploy/-/knowledge_base/d/lcs-preconfiguration#preconfiguring-the-lcs-client-to-connect-through-a-proxy)
+3. [Ensuring Access to LCS](/docs/6-2/deploy/-/knowledge_base/d/lcs-preconfiguration#ensuring-access-to-lcs)
+4. [NTP Server Synchronization](/docs/6-2/deploy/-/knowledge_base/d/lcs-preconfiguration#ntp-server-synchronization)
+5. [Configuring the Patching Tool](/docs/6-2/deploy/-/knowledge_base/d/lcs-preconfiguration#configuring-the-patching-tool)
+6. [Installing the LCS Client App](/docs/6-2/deploy/-/knowledge_base/d/lcs-preconfiguration#installing-the-lcs-client-app)
 
 Also, 
-[the last section](/discover/deployment/-/knowledge_base/6-2/lcs-preconfiguration#upgrading-the-lcs-client-app) 
+[the last section](/docs/6-2/deploy/-/knowledge_base/d/lcs-preconfiguration#upgrading-the-lcs-client-app) 
 in this guide shows you how to upgrade the LCS client app once your server is 
 connected to LCS. We highly recommend that you upgrade the app whenever Liferay 
 releases a new version of it. 
 
 First, you'll download the LCS client app. 
 
-## Downloading the LCS Client App [](id=downloading-the-lcs-client-app)
+## Downloading the LCS Client App
 
 To connect to LCS, you must first purchase and download the latest version of 
 the LCS client app for Liferay Portal 6.2 EE. You can do this via Liferay 
 Marketplace. 
 
-+$$$
-
-**Note:** Even though Liferay Marketplace and this guide use the term 
-*purchase*, the LCS client app is free of charge. The purchase process for a 
-free app in Liferay Marketplace adds the app to your Liferay project, much like 
-downloading a free app in a mobile app store adds the app to your account. 
-
-$$$
+| **Note:** Even though Liferay Marketplace and this guide use the term
+| *purchase*, the LCS client app is free of charge. The purchase process for a
+| free app in Liferay Marketplace adds the app to your Liferay project, much like
+| downloading a free app in a mobile app store adds the app to your account.
 
 Use these steps to purchase and download the app (if you've already purchased 
 the app, you can skip to step 3 to download it): 
@@ -53,16 +53,12 @@ the app, you can skip to step 3 to download it):
     can download the LCS client app. To download the app, click the *App* button 
     next to the version of the app you want to download. 
 
-    +$$$
-
-    **Note:** If you need to download the LCS client app later, such as when 
-    [upgrading it](/discover/deployment/-/knowledge_base/6-2/lcs-preconfiguration#upgrading-the-lcs-client-app), 
-    select *Purchased Apps* from the User menu at the top-right of Liferay 
-    Marketplace. On the Purchased Apps screen, select the project you associated 
-    with the LCS client app and then select the app. This takes you to the same 
-    downloads page shown in the screenshot. 
-
-    $$$
+    | **Note:** If you need to download the LCS client app later, such as when
+    | [upgrading it](/docs/6-2/deploy/-/knowledge_base/d/lcs-preconfiguration#upgrading-the-lcs-client-app),
+    | select *Purchased Apps* from the User menu at the top-right of Liferay
+    | Marketplace. On the Purchased Apps screen, select the project you associated
+    | with the LCS client app and then select the app. This takes you to the same
+    | downloads page shown in the screenshot.
 
     ![Figure 4.3: Click the *App* button next to the version of the app you want to download.](../../images/lcs-client-download-page.png)
 
@@ -71,16 +67,12 @@ however, there are a few additional preconfiguration steps you should complete.
 The following sections of this guide walk you through these, and then show you 
 how to install the app. 
 
-+$$$
+| **Note:** If your server connects to the Internet through a proxy, you must
+| configure either your server or the LCS client app **before** deploying the app.
+| The following section contains instructions on this. If your server doesn't
+| connect through a proxy, you can skip this section.
 
-**Note:** If your server connects to the Internet through a proxy, you must 
-configure either your server or the LCS client app **before** deploying the app. 
-The following section contains instructions on this. If your server doesn't 
-connect through a proxy, you can skip this section. 
-
-$$$
-
-## Preconfiguring LCS to Connect Through a Proxy [](id=preconfiguring-the-lcs-client-to-connect-through-a-proxy)
+## Preconfiguring LCS to Connect Through a Proxy
 
 If your server connects to the Internet through a proxy, you must set some 
 properties in either your server or the LCS client app **before** deploying the 
@@ -100,13 +92,9 @@ you set them in your server or the LCS client app:
     Note that the user, password, and https properties are only needed if your 
     proxy requires authentication. 
 
-    +$$$
-
-    **Note:** If you use JVM app server arguments as instructed in this step, 
-    then you don't need to preconfigure the LCS client app to connect through 
-    the same proxy. 
-
-    $$$
+    | **Note:** If you use JVM app server arguments as instructed in this step,
+    | then you don't need to preconfigure the LCS client app to connect through
+    | the same proxy.
 
 2.  To set the properties inside the LCS client app's WAR file, you must first 
     extract it from the app's LPKG file (the app downloads from Liferay 
@@ -150,7 +138,7 @@ you set them in your server or the LCS client app:
 
 Next, you'll learn how to ensure that the LCS client can access LCS. 
 
-## Ensuring Access to LCS [](id=ensuring-access-to-lcs)
+## Ensuring Access to LCS
 
 For the LCS client app to work, it must be able to access the following DNS 
 names. If your server is behind a proxy and/or a firewall, then you must open 
@@ -163,7 +151,7 @@ As an added security measure, you can also restrict traffic to HTTPS.
 
 The next section discusses NTP server synchronization. 
 
-## NTP Server Synchronization [](id=ntp-server-synchronization)
+## NTP Server Synchronization
 
 For LCS to work properly, the application server running Liferay Portal should 
 be synchronized with a time server. If it's not, you may get log errors similar 
@@ -183,14 +171,14 @@ server, see your application server's documentation.
 
 Next, you'll learn how to configure Liferay Portal's patching tool. 
 
-## Configuring the Patching Tool [](id=configuring-the-patching-tool)
+## Configuring the Patching Tool
 
 LCS uses Liferay Portal's patching tool to apply updates. In Liferay Portal 6.2 
 EE bundles, the patching tool is pre-installed. If you're not running a bundle, 
 you must 
 [download](https://web.liferay.com/group/customer/products/patching-tool) 
 and 
-[install](/discover/deployment/-/knowledge_base/6-2/patching-liferay#installing-the-patching-tool) 
+[install](/docs/6-2/deploy/-/knowledge_base/d/patching-liferay#installing-the-patching-tool) 
 the patching tool separately. 
 
 Once installed, there are a few steps you must complete before LCS can use the 
@@ -199,7 +187,7 @@ you're running Windows, drop the `.sh` from each command that has it.
 
 1.  Navigate to the `patching-tool` directory on the command line. It's 
     typically located in the 
-    [Liferay Home](/discover/deployment/-/knowledge_base/6-2/liferay-home) 
+    [Liferay Home](/docs/6-2/deploy/-/knowledge_base/d/liferay-home) 
     folder. Liferay Home is usually the parent folder of the application 
     server's folder. 
 
@@ -253,7 +241,7 @@ You can specify these as follows:
 
     -Dpatching.tool.agent.properties=debug,nohalt
 
-## Installing the LCS Client App [](id=installing-the-lcs-client-app)
+## Installing the LCS Client App
 
 Once you've addressed the above preconfiguration steps, you're ready to install 
 the LCS client app. Follow these steps to install the app: 
@@ -262,18 +250,18 @@ the LCS client app. Follow these steps to install the app:
 
 2. Place the LCS client app in the `[Liferay_Home]/deploy` folder (create this 
    `deploy` folder if it doesn't exist). Note that 
-   [the Liferay Home folder](/discover/deployment/-/knowledge_base/6-2/liferay-home) 
+   [the Liferay Home folder](/docs/6-2/deploy/-/knowledge_base/d/liferay-home) 
    is usually the parent folder of the application server's folder. 
 
 Great! Now you're all set to connect your Liferay Portal instance with LCS. For 
 instructions on this, 
-[click here](/discover/deployment/-/knowledge_base/6-2/connecting-to-lcs) 
+[click here](/docs/6-2/deploy/-/knowledge_base/d/connecting-to-lcs) 
 to proceed to the next article. 
 
 The next section shows you how to upgrade the LCS client app. We highly 
 recommend that you do this whenever Liferay releases a new version of the app. 
 
-## Upgrading the LCS Client App [](id=upgrading-the-lcs-client-app)
+## Upgrading the LCS Client App
 
 Your server should always be running the latest version of the LCS client app. 
 There are two ways to upgrade the app, depending on the exact LCS 
@@ -283,14 +271,10 @@ preconfiguration steps you followed:
     this method if you don't need to configure the LCS client app (e.g., to 
     connect through a proxy) before it deploys. 
 
-    +$$$
-
-    **Note:** If you choose this method and have a clustered environment, you 
-    must perform the upgrade separately on each node in your cluster. Therefore, 
-    you may prefer to upgrade manually as detailed in step 2 to ensure that all 
-    your nodes are running the exact same version of the LCS client app. 
-
-    $$$
+    | **Note:** If you choose this method and have a clustered environment, you
+    | must perform the upgrade separately on each node in your cluster. Therefore,
+    | you may prefer to upgrade manually as detailed in step 2 to ensure that all
+    | your nodes are running the exact same version of the LCS client app.
 
     To perform the upgrade, first navigate to *Admin* &rarr; *Control Panel* 
     &rarr; *Apps* &rarr; *Purchased*. Apps needing an update are listed first. 
@@ -301,13 +285,9 @@ preconfiguration steps you followed:
     Use this method if you need to preconfigure the LCS client app to connect 
     through a proxy. 
 
-    +$$$
-
-    **Note:** If you used JVM app server arguments to configure your server to 
-    connect through a proxy, then you don't need to preconfigure the LCS client 
-    app to connect through the same proxy. 
-
-    $$$
+    | **Note:** If you used JVM app server arguments to configure your server to
+    | connect through a proxy, then you don't need to preconfigure the LCS client
+    | app to connect through the same proxy.
 
     To update the LCS client app manually, follow the previous sections in this 
     guide for downloading and preconfiguring the app. Then deploy it to 

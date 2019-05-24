@@ -1,4 +1,8 @@
-# Creating the sitemap.json File [](id=creating-the-sitemap-json-file)
+---
+header-id: creating-the-sitemap-json-file
+---
+
+# Creating the sitemap.json File
 
 The `sitemap.json` file defines the layout for the web content, pages, and
 portlets in your site. As the file extension suggests, `sitemap.json` uses JSON

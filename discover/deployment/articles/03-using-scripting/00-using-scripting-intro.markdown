@@ -1,4 +1,8 @@
-# Using Scripting for Advanced Flexibility [](id=using-scripting-for-advanced-flexibility)
+---
+header-id: using-scripting-for-advanced-flexibility
+---
+
+# Using Scripting for Advanced Flexibility
 
 Liferay provides a robust script engine that can be used to interpret scripts in
 Beanshell, Javascript, Groovy, Python, and Ruby. The script engine came out of

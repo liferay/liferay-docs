@@ -1,4 +1,8 @@
-# Creating and Uploading Apps [](id=creating-and-uploading-apps)
+---
+header-id: creating-and-uploading-apps
+---
+
+# Creating and Uploading Apps
  
 Creating apps for the Liferay Marketplace is very easy and intuitive. To find
 out more information about creating your own Liferay apps, visit the 

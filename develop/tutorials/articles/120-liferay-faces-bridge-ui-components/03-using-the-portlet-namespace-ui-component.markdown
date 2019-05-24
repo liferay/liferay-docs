@@ -1,4 +1,8 @@
-# Using the portlet:namespace UI Component [](id=using-the-portletnamespace-ui-component)
+---
+header-id: using-the-portletnamespace-ui-component
+---
+
+# Using the portlet:namespace UI Component
 
 Liferay Faces Bridge provides many useful Portlet 2.0 `UIComponent` tags as part
 of its component suite. In this tutorial, you'll learn about the
@@ -25,8 +29,8 @@ namespace is written to the response.
 
 Great! Another UIComponent tag to use for JSF development is in the books. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Liferay Faces Alloy UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-alloy-ui-components)
+[Liferay Faces Alloy UI Components](/docs/6-2/tutorials/-/knowledge_base/t/liferay-faces-alloy-ui-components)
 
-[Understanding Liferay Faces Bridge](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-bridge)
+[Understanding Liferay Faces Bridge](/docs/6-2/tutorials/-/knowledge_base/t/understanding-liferay-faces-bridge)

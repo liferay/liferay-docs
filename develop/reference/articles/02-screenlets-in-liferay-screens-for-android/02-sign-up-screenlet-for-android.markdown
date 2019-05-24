@@ -1,20 +1,24 @@
-# Sign Up Screenlet for Android [](id=signupscreenlet-for-android)
+---
+header-id: signupscreenlet-for-android
+---
 
-## Requirements [](id=requirements)
+# Sign Up Screenlet for Android
+
+## Requirements
 
 - Android SDK 4.0 (API Level 15) or above
 - Liferay Portal 6.2 (CE or EE), Liferay 7.0 CE, Liferay DXP 
 
-## Compatibility [](id=compatibility)
+## Compatibility
 
 - Android SDK 4.0 (API Level 15) and above
 
-## Xamarin Requirements [](id=xamarin-requirements)
+## Xamarin Requirements
 
 - Visual Studio 7.2
 - Mono .NET framework 5.4.1.6
 
-## Features [](id=features)
+## Features
 
 The Sign Up Screenlet creates a new user in your Liferay instance: a new user of
 your app can become a new user in your portal. You can also use this Screenlet
@@ -22,7 +26,7 @@ to save new users' credentials on their devices. This enables auto login for
 future sessions. The Screenlet also supports navigation of form fields from the
 device's keyboard. 
 
-## JSON Services Used [](id=json-services-used)
+## JSON Services Used
 
 Screenlets in Liferay Screens call JSON web services in the portal. This 
 Screenlet calls the following services and methods.
@@ -31,18 +35,18 @@ Screenlet calls the following services and methods.
 | ------- | ------ | ----- |
 | `UserService` | `addUser` |  |
 
-## Module [](id=module)
+## Module
 
 - Auth
 
-## Views [](id=views)
+## Views
 
 - Default
 - Material
 
 ![The Sign Up Screenlet with the Default (left) and Material (right) Viewsets.](../../images/screens-android-signup.png)
 
-## Portal Configuration [](id=portal-configuration)
+## Portal Configuration
 
 Sign Up Screenlet's corresponding configuration in the Liferay instance can be 
 set in the Control Panel by clicking *Portal Settings* and then 
@@ -53,7 +57,7 @@ set in the Control Panel by clicking *Portal Settings* and then
 For more details, refer to the [Configuring Portal Settings](/portal/-/knowledge_base/6-2/configuring-portal-settings) 
 section of the User Guide.
 
-## Anonymous Requests [](id=anonymous-requests)
+## Anonymous Requests
 
 Anonymous requests are unauthenticated requests. Authentication is
 still required, however, to call the API. To allow this operation, the portal
@@ -61,16 +65,16 @@ administrator should create a user with minimal permissions. To use
 Sign Up Screenlet, you need to use that user in your layout. You should add that
 user's credentials to `server_context.xml`. 
 
-## Offline [](id=offline)
+## Offline
 
 This Screenlet doesn't support offline mode. It requires network connectivity. 
 
-## Required Attributes [](id=required-attributes)
+## Required Attributes
 
 - `anonymousApiUserName`
 - `anonymousApiPassword`
 
-## Attributes [](id=attributes)
+## Attributes
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
@@ -82,7 +86,7 @@ This Screenlet doesn't support offline mode. It requires network connectivity.
 | `credentialsStorage` | `enum` | Sets the mode for storing user credentials. The possible values are `none`, `auto`, and `shared_preferences`. If set to `shared_preferences`, the user credentials and attributes are stored using Android's `SharedPreferences` class. If set to `none`, user credentials and attributes aren't saved at all. If set to `auto`, the best of the available storage modes is used. Currently, this is equivalent to `shared_preferences`. The default value is `none`. |
 |`basicAuthMethod`|`enum`| Specifies the authentication method to use after a successful sign up. This must match the authentication method configured on the server. You can set this attribute to `email`, `screenName` or `userId`. The default value is `email`. |
 
-## Listener [](id=listener)
+## Listener
 
 The Sign Up Screenlet delegates some events to an object that implements the 
 `SignUpListener` interface. This interface lets you implement the following 

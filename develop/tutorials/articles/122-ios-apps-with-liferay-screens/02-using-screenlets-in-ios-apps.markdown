@@ -1,16 +1,20 @@
-# Using Screenlets in iOS Apps [](id=using-screenlets-in-ios-apps)
+---
+header-id: using-screenlets-in-ios-apps
+---
+
+# Using Screenlets in iOS Apps
 
 Once you've
-[prepared](/develop/tutorials/-/knowledge_base/6-2/preparing-ios-projects-for-liferay-screens)
+[prepared](/docs/6-2/tutorials/-/knowledge_base/t/preparing-ios-projects-for-liferay-screens)
 your iOS project to use Liferay Screens, you can use Screenlets in your app.
 There are plenty of Liferay Screenlets available, and they're described in the 
 Screenlet
-[reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios).
+[reference documentation](/docs/6-2/reference/-/knowledge_base/r/screenlets-in-liferay-screens-for-ios).
 This tutorial shows you how to insert and configure Screenlets in iOS apps
 written in Swift and Objective-C. It also explains how to localize them. You'll
 be a Screenlet master in no time! 
 
-## Inserting and Configuring Screenlets in iOS Apps [](id=inserting-and-configuring-screenlets-in-ios-apps)
+## Inserting and Configuring Screenlets in iOS Apps
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/1eUzxIKgzWY" frameborder="0" allowfullscreen></iframe>
 
@@ -90,7 +94,7 @@ Controller.
 Awesome! Now you know how to use Screenlets in your apps. If you need to use
 Screenlets from Objective-C code, follow the instructions in the next section. 
 
-## Using Screenlets from Objective-C [](id=using-screenlets-from-objective-c)
+## Using Screenlets from Objective-C
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YuniaiFzRbQ" frameborder="0" allowfullscreen></iframe>
 
@@ -127,7 +131,7 @@ as a template.
 
 Super! Now you know how to use Screenlets from Objective-C code in your apps. 
 
-## Localizing Screenlets [](id=localizing-screenlets)
+## Localizing Screenlets
 
 Follow Apple's
 [standard mechanism](https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/Introduction/Introduction.html) 
@@ -141,12 +145,12 @@ localization in your project's settings.
 
 Way to go! You now know how to use Screenlets in your iOS apps. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Preparing iOS Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/preparing-ios-projects-for-liferay-screens)
+[Preparing iOS Projects for Liferay Screens](/docs/6-2/tutorials/-/knowledge_base/t/preparing-ios-projects-for-liferay-screens)
 
-[Using Themes in iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets)
+[Using Themes in iOS Screenlets](/docs/6-2/tutorials/-/knowledge_base/t/using-themes-in-ios-screenlets)
 
-[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets)
+[Creating iOS Screenlets](/docs/6-2/tutorials/-/knowledge_base/t/creating-ios-screenlets)
 
-[Using Screenlets in Android apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps)
+[Using Screenlets in Android apps](/docs/6-2/tutorials/-/knowledge_base/t/using-screenlets-in-android-apps)

@@ -1,11 +1,15 @@
-# Getting Started with Entry List Screenlet [](id=getting-started-with-entry-list-screenlet)
+---
+header-id: getting-started-with-entry-list-screenlet
+---
+
+# Getting Started with Entry List Screenlet
 
 Like Guestbook List Screenlet, you'll create Entry List Screenlet in a new 
 package inside your app's project. Get started by creating the package 
 `com.liferay.docs.entrylistscreenlet`. Once you have this package, you're ready 
 to start writing the Screenlet. 
 
-## Creating the Model Class for Entries [](id=creating-the-model-class-for-entries)
+## Creating the Model Class for Entries
 
 Recall that you need a model class to represent entities retrieved from 
 Liferay Portal. The model class you'll create for guestbook entries, 
@@ -159,6 +163,6 @@ the `com.liferay.docs.model` package:
 
 Besides working with entries instead of guestbooks, this class works the same as 
 `GuestbookModel`. For an explanation of the code, see 
-[the article on getting started with Guestbook List Screenlet](/develop/tutorials/-/knowledge_base/6-2/getting-started-with-guestbook-list-screenlet). 
+[the article on getting started with Guestbook List Screenlet](/docs/6-2/tutorials/-/knowledge_base/t/getting-started-with-guestbook-list-screenlet). 
 
 Next, you'll create the Screenlet's UI. 

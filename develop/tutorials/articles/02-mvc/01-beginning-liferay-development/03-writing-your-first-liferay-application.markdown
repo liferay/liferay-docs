@@ -1,4 +1,8 @@
-# Writing Your First Liferay Application [](id=writing-your-first-liferay-application)
+---
+header-id: writing-your-first-liferay-application
+---
+
+# Writing Your First Liferay Application
 
 Getting started with your first Liferay application takes only minutes. We'll
 guide you through the step-by-step process of creating your project and
@@ -16,7 +20,7 @@ can use to enter and save a message.
 
 Ready to write your first Liferay application? 
 
-## Creating Your First Liferay Application [](id=creating-your-first-liferay-application)
+## Creating Your First Liferay Application
 
 Now that everything's configured, let's jump right in and create your first
 project. Applications in Liferay Portal are called *portlets*, so you'll create a
@@ -36,15 +40,11 @@ appears.
 
 5. When done, click *Finish*. 
 
-+$$$
-
-**Note:** The first time you create a project,
-make sure you're online. In the background, Liferay's Plugins SDK downloads
-several JAR files that it needs in order to operate. This keeps the initial
-Plugins SDK download small but means that it may take several minutes to create
-your first project. Subsequent projects are created almost instantly.
-
-$$$
+| **Note:** The first time you create a project,
+| make sure you're online. In the background, Liferay's Plugins SDK downloads
+| several JAR files that it needs in order to operate. This keeps the initial
+| Plugins SDK download small but means that it may take several minutes to create
+| your first project. Subsequent projects are created almost instantly.
 
 Your project now appears in the Package Explorer on the left. What you've just
 done is create a blank Liferay project. Projects can have any number of
@@ -67,7 +67,7 @@ files. It then opens your portlet class in an editor.
 
 You are now ready to work. 
 
-## What is a portlet? [](id=what-is-a-portlet)
+## What is a portlet?
 
 When you access a web site, you interact with an application. That application
 may be simple: it may only show you information, such as an article. The
@@ -91,7 +91,7 @@ certain things, like platform-generated URLs, are necessary.
 With all of that said, the next thing to do is to jump in and create your
 Guestbook portlet. 
 
-## Adding Guestbook Entries [](id=adding-guestbook-entries)
+## Adding Guestbook Entries
 
 A guestbook application is pretty simple, right? People come to your site, type
 their names and a brief message, and then post it for you. Users can read the
@@ -134,7 +134,7 @@ You're almost ready to add the button inside the button row, but as hinted above
 we should talk about system generated URLs, because you need a URL to map to
 your button. 
 
-### Generating URLs for Portlets [](id=generating-urls-for-portlets)
+### Generating URLs for Portlets
 
 Since portlets are designed to be placed on pages by the end user, and end users
 can place multiple portlets on a page, and you as the developer have no idea
@@ -183,7 +183,7 @@ parameter `mvcPath` to indicate a link to that page. You just created a
 a button your users can click (or any other HTML construct that accepts a link)
 with that URL. That's the next step. 
 
-### Creating a Button [](id=creating-a-button)
+### Creating a Button
 
 Creating a button is as easy as creating the URL was. You'll drag the proper
 snippet for the button to the proper location in your page, just like you did
@@ -237,7 +237,7 @@ psychology says that you've clicked it already. Don't worry; you didn't break
 anything. Next, you'll create the page that URL points to so the app doesn't
 break when you click that button. 
 
-### Making a Page with a Form Users Can Fill Out [](id=making-a-page-with-a-form-users-can-fill-out)
+### Making a Page with a Form Users Can Fill Out
 
 In the same folder your `view.jsp` is in, create the `edit_entry.jsp`: 
 
@@ -265,7 +265,7 @@ category inside the `<portlet:renderURL` tag. Make the `name` attribute
 Next, you need to create a new URL for submitting the form. Before you do, some
 explanation is in order. 
 
-### Using Portlet Actions [](id=using-portlet-actions)
+### Using Portlet Actions
 
 As has been stated already, portlets are designed to run in a portion of a page
 next to other portlets. Because of this, they have two *phases* of operation.
@@ -290,7 +290,7 @@ for the `var` attribute. Click *Insert*.
 
 You now have the two URLs you need for your form. 
 
-### Creating a Form [](id=creating-a-form)
+### Creating a Form
 
 Your guestbook form is pretty simple. All you need are two fields: one for the
 name of the person submitting the entry and one for the entry itself. 
@@ -364,7 +364,7 @@ click the *Cancel* button, it works! Don't click the *Save* button yet, though:
 you haven't created the action that saves a guestbook entry, so it'll
 display an error. Implementing the action is your next task. 
 
-### Implementing Portlet Actions [](id=implementing-portlet-actions)
+### Implementing Portlet Actions
 
 When users submit the form, your application needs to store the form data so it
 can be displayed in the guestbook. To keep this first application simple, you'll
@@ -409,14 +409,10 @@ name ends and the guestbook entry begins. The caret symbol (^) makes a good
 delimiter because users are highly unlikely to use that symbol in a guestbook
 entry. 
 
-+$$$
-
-**Note:** Clearly, portlet preferences and string
-delimiters are not the best way to implement this. To learn about a proper
-implementation for saving data, follow the *Writing a Data-Driven Application*
-learning path. 
-
-$$$
+| **Note:** Clearly, portlet preferences and string
+| delimiters are not the best way to implement this. To learn about a proper
+| implementation for saving data, follow the *Writing a Data-Driven Application*
+| learning path.
 
 The following method implements adding a guestbook entry to a portlet preference
 called `guestbook-entries`: 
@@ -492,7 +488,7 @@ than use `System.out.println`. These are things that can be corrected later.
 
 The next and final feature to implement is a way to view guestbook entries. 
 
-## Viewing Guestbook Entries [](id=viewing-guestbook-entries)
+## Viewing Guestbook Entries
 
 To view guestbook entries, you have to do the reverse of what you did to store
 them: retrieve them from portlet preferences, loop through them, and present
@@ -500,7 +496,7 @@ them on the page. The best way to do this with the MVC Portlet is to use the
 Model-View-Controller paradigm. You already have the view (your JSP files) and
 your controller (your portlet class): now you need your model. 
 
-### Creating Your Model [](id=creating-your-model)
+### Creating Your Model
 
 1. Create a new package in your app called `com.liferay.docs.guestbook.model`.
 You can do this by right-clicking on the source folder and selecting *New*
@@ -576,7 +572,7 @@ the view layer. Your next step is to enhance the controller (your portlet class)
 so that guestbook entries are processed and ready to display when users see the
 guestbook application. 
 
-### Customizing the Rendering of Your Application [](id=customizing-the-rendering-of-your-application)
+### Customizing the Rendering of Your Application
 
 As stated before, portlet applications at their most basic have two phases:
 render and action. To make the guestbook show the saved guestbook entries when
@@ -633,7 +629,7 @@ parts based on the caret (^) character.
 Now that you have your controller preparing your data for display, your next
 step is to implement the view, so users can see guestbook entries. 
 
-### Displaying Guestbook Entries [](id=displaying-guestbook-entries)
+### Displaying Guestbook Entries
 
 Liferay's development framework makes it easy to loop through data and display
 it nicely to the end user. You'll use a component called the *Search Container*
@@ -721,16 +717,16 @@ You're done! Your `view.jsp` should look like this:
 Save your work, deploy your application, and try adding some
 guestbook entries. 
 
-## Next Steps [](id=next-steps)
+## Next Steps
 
 At this point, the next learning path on writing a data-driven application may
 interest you. 
 
 Here are more tutorials that you may find interesting:
 
-[Developing Plugins with the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
+[Developing Plugins with the Plugins SDK](/docs/6-2/tutorials/-/knowledge_base/t/plugins-sdk)
 
-[Developing Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/maven)
+[Developing Plugins with Maven](/docs/6-2/tutorials/-/knowledge_base/t/maven)
 
 <!--
 [Create web forms with Alloy UI tag libs](http://www.liferay.com)

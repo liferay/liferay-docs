@@ -1,32 +1,36 @@
-# Web Content List Screenlet for Android [](id=web-content-list-screenlet-for-android)
+---
+header-id: web-content-list-screenlet-for-android
+---
 
-## Requirements [](id=requirements)
+# Web Content List Screenlet for Android
+
+## Requirements
 
 - Android SDK 4.0 (API Level 15) or above
 - Liferay Portal 6.2 (CE or EE), Liferay 7.0 CE, Liferay DXP
 
-## Compatibility [](id=compatibility)
+## Compatibility
 
 - Android SDK 4.0 (API Level 15) and above
 
-## Xamarin Requirements [](id=xamarin-requirements)
+## Xamarin Requirements
 
 - Visual Studio 7.2
 - Mono .NET framework 5.4.1.6
 
-## Features [](id=features)
+## Features
 
 Web Content List Screenlet has the following features:
 
 - Shows a scrollable collection of 
-  [web content](/discover/portal/-/knowledge_base/6-2/web-content-management) 
+  [web content](/docs/6-2/user/-/knowledge_base/u/web-content-management) 
   articles. 
 - Implements 
   [fluent pagination](http://www.iosnomad.com/blog/2014/4/21/fluent-pagination) 
   with configurable page size. 
 - Supports i18n in web content values. 
 
-## JSON Services Used [](id=json-services-used)
+## JSON Services Used
 
 Screenlets in Liferay Screens call JSON web services in the portal. This 
 Screenlet calls the following services and methods.
@@ -36,11 +40,11 @@ Screenlet calls the following services and methods.
 | `JournalArticleService` | `getJournalArticles` |  |
 | `JournalArticleService` | `getJournalArticlesCount` |  |
 
-## Module [](id=module)
+## Module
 
 - None
 
-## Views [](id=views)
+## Views
 
 - Default
 
@@ -50,11 +54,11 @@ show the items.
 
 ![Figure 1: The Web Content List Screenlet using the Default View Set.](../../images/screens-android-webcontentlist.png)
 
-## Offline [](id=offline)
+## Offline
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/6-2/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/docs/6-2/tutorials/-/knowledge_base/t/architecture-of-offline-mode-in-liferay-screens). 
 Here are the offline mode policies that you can use with this Screenlet: 
 
 | Policy | What happens | When to use |
@@ -64,12 +68,12 @@ Here are the offline mode policies that you can use with this Screenlet:
 | `REMOTE_FIRST` | The Screenlet loads the list from the Liferay instance. If this succeeds, the Screenlet shows the list to the user and stores it in the local cache for later use. If a connection issue occurs, the Screenlet retrieves the list from the local cache. If the list doesn't exist there, the Screenlet uses the listener to notify the developer about the error. | Use this policy to show the most recent version of the data when connected, but show a possibly outdated version when there's no connection. |
 | `CACHE_FIRST` | The Screenlet loads the list from the local cache. If the list isn't there, the Screenlet requests it from the Liferay instance and notifies the developer about any errors that occur (including connectivity errors). | Use this policy to save bandwidth and loading time in case you have local (but possibly outdated) data. |
 
-## Required Attributes [](id=required-attributes)
+## Required Attributes
 
 - `folderId`
 - `labelFields`
 
-## Attributes [](id=attributes)
+## Attributes
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
@@ -77,19 +81,19 @@ Here are the offline mode policies that you can use with this Screenlet:
 | `autoLoad` | `boolean` | Whether the list loads automatically when the Screenlet appears in the app's UI. The default value is `true`. |
 | `folderId` | `number` | The ID of the web content folder to retrieve content from. |
 | `groupId` | `number` | The ID of the site (group) where the web content is stored. If set to `0`, the `groupId` specified in `LiferayServerContext` is used. The default value is `0`. |
-| `cachePolicy` | `string` | The offline mode setting. See the [Offline section](/develop/reference/-/knowledge_base/6-2/web-content-list-screenlet-for-android#offline) for details. |
+| `cachePolicy` | `string` | The offline mode setting. See the [Offline section](/docs/6-2/reference/-/knowledge_base/r/web-content-list-screenlet-for-android#offline) for details. |
 | `firstPageSize` | `number` | The number of items to retrieve from the server for display on the first page. The default value is `50`. |
 | `pageSize` | `number` | The number of items to retrieve from the server for display on the second and subsequent pages. The default value is `25`. |
-| `labelFields` | `string` | The comma-separated names of the DDM fields to show. Refer to the list's data definition to find the field names. For more information on this, see [the article on structured web content](/discover/portal/-/knowledge_base/6-2/advanced-content-with-structures-and-templates). Note that the appearance of data from a structure's fields depends on the `layoutId`. |
+| `labelFields` | `string` | The comma-separated names of the DDM fields to show. Refer to the list's data definition to find the field names. For more information on this, see [the article on structured web content](/docs/6-2/user/-/knowledge_base/u/advanced-content-with-structures-and-templates). Note that the appearance of data from a structure's fields depends on the `layoutId`. |
 | `obcClassName` | `string` | The name of the [`OrderByComparator` class](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/util/OrderByComparator.html) to use to sort the results. Omit this property if you don't want to sort the results. You can only use comparator classes that extend `OrderByComparator<JournalArticle>`. You can also create your own comparator classes that extend `OrderByComparator<JournalArticle>`. |
 
-## Methods [](id=methods)
+## Methods
 
 | Method | Return | Explanation |
 |--------|--------|-------------| 
 | `loadPage(pageNumber)` | `void` | Starts the request to load the specified page of records. The page is shown when the response is received. |
 
-## Listener [](id=listener)
+## Listener
 
 Web Content List Screenlet delegates some events to an object or a class that 
 implements 

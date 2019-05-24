@@ -1,4 +1,8 @@
-# Adding Actions to Your Managed Beans [](id=adding-actions-to-your-managed-beans)
+---
+header-id: adding-actions-to-your-managed-beans
+---
+
+# Adding Actions to Your Managed Beans
 
 Just as you added action methods in the
 [Creating Managed Beans to Use Services](/learning-paths/jsf/-/knowledge_base/6-2/creating-managed-beans-to-use-services)

@@ -1,4 +1,8 @@
-# Administering Liferay Sync [](id=administering-liferay-sync)
+---
+header-id: administering-liferay-sync
+---
+
+# Administering Liferay Sync
 
 Liferay Sync is an add-on product for Liferay 6.2 CE and EE that synchronizes
 files between your Liferay server and users' desktop and mobile environments.
@@ -19,12 +23,12 @@ addition to basic portal configuration, important topics such as portal security
 and accidental data loss are covered. Note, you must be an administrator to set
 up your portal for Sync. If you're not a portal or site administrator, you can
 skip this guide and move on to
-[installing and using the Sync desktop client](/discover/portal/-/knowledge_base/6-2/using-liferay-sync-on-your-desktop). 
+[installing and using the Sync desktop client](/docs/6-2/user/-/knowledge_base/u/using-liferay-sync-on-your-desktop). 
 
 To prepare your portal for Sync, you must first install the *Sync Connector* 
 plugin. 
 
-## Installing the Sync Connector Plugin [](id=installing-the-sync-connector-plugin)
+## Installing the Sync Connector Plugin
 
 Prior to Liferay 6.2, Liferay Portal's Documents and Media services contained
 all the logic Liferay Sync used. As of Liferay 6.2, the Sync Connector plugin
@@ -54,7 +58,7 @@ configure the Sync desktop and mobile clients, however, **Make sure to read**
 this guide's sections on preventing accidental file deletion and ensuring Sync 
 security, and **warn your users** about the potential for accidental data loss. 
 
-## Configuring Sync to Use SSO [](id=configuring-sync-to-use-sso)
+## Configuring Sync to Use SSO
 
 If your portal uses a SSO (single sign-on) server, there are some steps you must 
 take to ensure that Sync can work properly. First, you must be running Liferay 
@@ -87,7 +91,7 @@ portal.
 
 Next, you'll learn how to use Sync Admin to configure Sync. 
 
-## Using Sync Admin to Configure Liferay Sync [](id=using-sync-admin-to-configure-liferay-sync)
+## Using Sync Admin to Configure Liferay Sync
 
 Sync Admin's UI lets you enable or disable Sync across the portal or for
 specific sites. You can also configure default file permissions on a per-site
@@ -135,16 +139,12 @@ caution** when disabling Sync for a site, as doing so **deletes** files for that
 site from the Sync clients. Disabling Sync for a site, however, doesn't affect
 the site's files in the portal. 
 
-+$$$
-
-**Warning:** Disabling Sync for specific sites from Sync Admin can result in
-data loss across clients. If Sync is disabled for a site users are currently
-syncing, any files in the clients' sync folders for that site are automatically
-deleted from their clients. If a user is offline when Sync is disabled for a
-site, any offline changes or additions they make are deleted upon client
-reconnection. 
-
-$$$
+| **Warning:** Disabling Sync for specific sites from Sync Admin can result in
+| data loss across clients. If Sync is disabled for a site users are currently
+| syncing, any files in the clients' sync folders for that site are automatically
+| deleted from their clients. If a user is offline when Sync is disabled for a
+| site, any offline changes or additions they make are deleted upon client
+| reconnection.
 
 You can enable Sync for a site by selecting *Enable Sync Site* from its dropdown
 arrow. To enable Sync for multiple sites, select their checkboxes and click the
@@ -171,7 +171,7 @@ table, and select the permissions you want to use.
 Now that you know how to set default file permissions, you should learn more 
 about what exactly they do. 
 
-## Understanding Default File Permissions [](id=understanding-default-file-permissions)
+## Understanding Default File Permissions
 
 The default file permissions might behave differently than you'd expect. They
 control *only* the permissions for new files uploaded through the Sync clients;
@@ -185,7 +185,7 @@ Awesome! Now that you know how to configure Sync in your portal, it's time to
 look closer at a use case that warrants special attention for administrators: 
 accidental file deletion. 
 
-## Protecting Against Accidental File Deletion [](id=protecting-against-accidental-file-deletion)
+## Protecting Against Accidental File Deletion
 
 Liferay Sync's power rests in its ability to propagate between the portal and
 connected Sync clients. When a user deletes a file from a connected client, Sync
@@ -197,19 +197,15 @@ to happen!" Don't fret! Liferay's Recycle Bin is enabled by default and lets you
 recover deleted files. You can access the Recycle Bin from each site's *Site
 Administration* menu. 
 
-+$$$
-
-**Warning:** Liferay Sync automatically propagates file and folder deletion
-through the portal and in all connected clients. If a portal or site
-administrator disables the Recycle Bin, deleted files can't be recovered.
-
-$$$
+| **Warning:** Liferay Sync automatically propagates file and folder deletion
+| through the portal and in all connected clients. If a portal or site
+| administrator disables the Recycle Bin, deleted files can't be recovered.
 
 Portal and site administrators can, of course, disable the Recycle Bin.
 Disabling the Recycle Bin in a site, however, leaves the site vulnerable to
 accidental file deletions that propagate through Sync. 
 
-## Ensuring Sync Security [](id=ensuring-sync-security)
+## Ensuring Sync Security
 
 As an administrator, you're undoubtedly concerned about the security of all
 connections to and from your portal. As long as your server is configured to use
@@ -219,7 +215,7 @@ access. To support Security Mode in the Sync mobile client and securely transmit
 files, your Liferay server must also use SSL. The next section demonstrates how
 Sync's permissions work with portal's permissions. 
 
-## Liferay Sync Permissions Demonstration [](id=liferay-sync-permissions-demonstration)
+## Liferay Sync Permissions Demonstration
 
 Sync uses Liferay's default permissions to determine files and folders to sync
 with the user's devices. It can only sync files a user can access in the portal.

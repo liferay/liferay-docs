@@ -1,4 +1,8 @@
-# Obtaining Liferay Portal [](id=obtaining-liferay-portal)
+---
+header-id: obtaining-liferay-portal
+---
+
+# Obtaining Liferay Portal
 
 The Liferay community can download Liferay Portal from our web site at
 [http://www.liferay.com](http://www.liferay.com). Click the *Downloads* link at

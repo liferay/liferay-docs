@@ -1,4 +1,8 @@
-# Creating and Deploying JSF Portlets [](id=creating-and-deploying-jsf-portlets)
+---
+header-id: creating-and-deploying-jsf-portlets
+---
+
+# Creating and Deploying JSF Portlets
 
 <!-- The JSF calendar portlet using PrimeFaces can be found at the following:
 https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/liferay-faces/creating-jsf-port/calendar/my-jsf-portlet
@@ -21,12 +25,12 @@ course, you can use any development environment you like for building JSF
 portlets, but Liferay IDE is hard to beat. Next, you'll use Liferay IDE to
 create your JSF portlet project.
 
-## Creating a JSF Portlet Project [](id=creating-a-jsf-portlet-project)
+## Creating a JSF Portlet Project
 
 In this tutorial, you'll create a JSF portlet project using Liferay
 IDE/Developer Studio, so you can see just how easy it is. If you don't have it
 installed yet, see the
-[Developing Apps with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/developing-apps-with-liferay-ide)
+[Developing Apps with Liferay IDE](/docs/6-2/tutorials/-/knowledge_base/t/developing-apps-with-liferay-ide)
 learning path for full details. If you do have it installed, launch it. 
 
 1.  Go to *File* &rarr; *New* &rarr; *Liferay Plugin Project*. 
@@ -46,7 +50,7 @@ learning path for full details. If you do have it installed, launch it.
 
     2.3. Select the *Ant (liferay-plugins-sdk)* option for your build type. If
     you'd like to use *Maven* for your build type, navigate to the
-    [Using Maven From Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/using-maven-from-liferay-ide)
+    [Using Maven From Liferay IDE](/docs/6-2/tutorials/-/knowledge_base/t/using-maven-from-liferay-ide)
     tutorial for details. 
 
     2.4. Your configured SDK and Liferay Runtime should already be selected.
@@ -87,7 +91,7 @@ See how easy that was? Now that you've created a generic or modified JSF
 portlet, it's time to deploy your JSF portlet to the portal and see what it
 looks like. 
 
-## Deploying JSF Portlets [](id=deploying-jsf-portlets)
+## Deploying JSF Portlets
 
 Liferay provides a mechanism called auto-deploy that makes deploying JSF
 portlets (and any other plugin types) a breeze. All you need to do is drop the
@@ -96,17 +100,13 @@ necessary changes specific to Liferay and then deploys the plugin to the
 application server. This is a common method of deployment used throughout the
 Liferay community. 
 
-+$$$
-
-**Note:** Liferay supports a wide variety of
-application servers. Many, such as Tomcat and JBoss, provide a simple way to
-deploy web applications by just copying a file into a folder and Liferay's
-auto-deploy mechanism takes advantage of that ability. You should be aware
-though, that some application servers, such as WebSphere or Weblogic, require
-the use of specific tools to deploy web applications; Liferay's auto-deploy
-process won't work for them. 
-
-$$$
+| **Note:** Liferay supports a wide variety of
+| application servers. Many, such as Tomcat and JBoss, provide a simple way to
+| deploy web applications by just copying a file into a folder and Liferay's
+| auto-deploy mechanism takes advantage of that ability. You should be aware
+| though, that some application servers, such as WebSphere or Weblogic, require
+| the use of specific tools to deploy web applications; Liferay's auto-deploy
+| process won't work for them.
 
 For this part of the tutorial, you'll learn how to deploy a JSF portlet using
 IDE/Developer Studio and the terminal.
@@ -145,14 +145,14 @@ portal renders your JSF portlet.
 
 It's just that easy to create and deploy JSF portlet plugins! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Developing Liferay Faces Portlets with Maven](/develop/tutorials/-/knowledge_base/6-2/creating-liferay-portlets-with-maven)
+[Developing Liferay Faces Portlets with Maven](/docs/6-2/tutorials/-/knowledge_base/t/creating-liferay-portlets-with-maven)
 
-[Using Portlet Preferences with JSF](/develop/tutorials/-/knowledge_base/6-2/using-portlet-preferences-with-jsf)
+[Using Portlet Preferences with JSF](/docs/6-2/tutorials/-/knowledge_base/t/using-portlet-preferences-with-jsf)
 
-[Liferay Faces Alloy UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-alloy-ui-components)
+[Liferay Faces Alloy UI Components](/docs/6-2/tutorials/-/knowledge_base/t/liferay-faces-alloy-ui-components)
 
-[Liferay Faces Bridge UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-bridge-ui-components)
+[Liferay Faces Bridge UI Components](/docs/6-2/tutorials/-/knowledge_base/t/liferay-faces-bridge-ui-components)
 
-[Understanding Liferay Faces Bridge](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-bridge)
+[Understanding Liferay Faces Bridge](/docs/6-2/tutorials/-/knowledge_base/t/understanding-liferay-faces-bridge)

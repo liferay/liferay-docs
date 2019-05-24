@@ -1,4 +1,8 @@
-# Extending the Permissions Scheme with Wrapper Classes [](id=extending-the-permissions-scheme-with-wrapper-classes)
+---
+header-id: extending-the-permissions-scheme-with-wrapper-classes
+---
+
+# Extending the Permissions Scheme with Wrapper Classes
 
 When extending a portlet's permissions scheme, it's best practice to create
 wrapper classes that extend your model entity wrappers. This gives your

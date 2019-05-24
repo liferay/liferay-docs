@@ -1,4 +1,8 @@
-# Configuring Your Permissions Scheme [](id=configuring-your-permissions-scheme)
+---
+header-id: configuring-your-permissions-scheme
+---
+
+# Configuring Your Permissions Scheme
 
 Liferay's permissions system is composed of several components. The main
 component is a configuration file that really could have any name, but by
@@ -27,7 +31,7 @@ checks to them, as the UI is no longer a factor. But we'll get to that later.
 
 The next step is to define your permissions. 
 
-## Defining Permissions for Your Application [](id=defining-permissions-for-your-application)
+## Defining Permissions for Your Application
 
 The first thing you need to do to begin defining your permissions is point your
 application at the configuration file you'll use to define those permissions. 

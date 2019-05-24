@@ -1,4 +1,8 @@
-# Developing Applications with Liferay Developer Studio [](id=developing-applications-with-liferay-developer-stu)
+---
+header-id: developing-applications-with-liferay-developer-stu
+---
+
+# Developing Applications with Liferay Developer Studio
 
 To develop an application, you need a developer environment. Liferay provides a
 great environment with Liferay Developer Studio. 
@@ -44,5 +48,5 @@ environment, ready to begin work!
 If you don't have a Liferay enterprise edition activation key or if you want to
 use an existing installation of Eclipse, continue with the next tutorial on
 developing apps with Liferay IDE. You can otherwise start
-[Writing Your First Liferay Application](/develop/tutorials/-/knowledge_base/6-2/writing-your-first-liferay-application).
+[Writing Your First Liferay Application](/docs/6-2/tutorials/-/knowledge_base/t/writing-your-first-liferay-application).
 

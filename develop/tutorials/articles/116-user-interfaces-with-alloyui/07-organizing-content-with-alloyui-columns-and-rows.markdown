@@ -1,4 +1,8 @@
-# Organizing Content with AlloyUI Rows and Columns [](id=organizing-content-with-alloyui-rows-and-columns)
+---
+header-id: organizing-content-with-alloyui-rows-and-columns
+---
+
+# Organizing Content with AlloyUI Rows and Columns
 
 Say goodbye to sleepless nights tossing, turning, and worrying about the
 potentially daunting task of arranging content in your portlets! It doesn't have
@@ -34,16 +38,12 @@ Here's how to add rows and columns of content to your portlet:
 	which the containing row is divided. For example, `<aui:col span="4">`
 	specifies a column to use `4/12`, or `1/3`, of the row's width. 
 
-    +$$$
-
-    Note: before a column is rendered, every `width` attribute is automatically
-    converted to a `span`. The `width` attribute's value is divided by `100`,
-    multiplied by `12`, and rounded to the nearest whole number. For example,
-    the `width` value in column `<aui:col width="33">` is divided by `100` and
-    multiplied by `12` resulting in `3.96`, which is then rounded up to a `span`
-    value of `4`-- the column is rendered across `4/12` the row's width. 
-
-    $$$
+    | Note: before a column is rendered, every `width` attribute is automatically
+    | converted to a `span`. The `width` attribute's value is divided by `100`,
+    | multiplied by `12`, and rounded to the nearest whole number. For example,
+    | the `width` value in column `<aui:col width="33">` is divided by `100` and
+    | multiplied by `12` resulting in `3.96`, which is then rounded up to a `span`
+    | value of `4`-- the column is rendered across `4/12` the row's width.
 
 Rows and columns are easy to use. As an example, here are a couple rows of
 columns that demonstrate setting column widths using `width` and `span`

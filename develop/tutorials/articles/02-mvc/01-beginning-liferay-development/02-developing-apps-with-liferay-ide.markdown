@@ -1,4 +1,8 @@
-# Developing Applications with Liferay IDE [](id=developing-apps-with-liferay-ide)
+---
+header-id: developing-apps-with-liferay-ide
+---
+
+# Developing Applications with Liferay IDE
 
 To develop an application, you need a development environment. Liferay provides
 a great environment with Liferay IDE. 
@@ -7,7 +11,7 @@ Liferay IDE is a plugin for Eclipse that brings many Liferay-specific features
 to the table. You can install it into your existing Eclipse environment, or
 Liferay provides a bundled version. 
 
-## Option 1: Install the Liferay IDE Bundle [](id=option-1-install-the-liferay-ide-bundle)
+## Option 1: Install the Liferay IDE Bundle
 
 1. Download and install [Java](http://java.oracle.com). Liferay runs on Java, so
    you'll need it to run everything else. Because you'll be developing apps for
@@ -23,7 +27,7 @@ Liferay provides a bundled version.
 
 Congratulations! You've installed Liferay IDE! 
 
-## Option 2: Install Liferay IDE into Eclipse [](id=option-2-install-liferay-ide-into-eclipse)
+## Option 2: Install Liferay IDE into Eclipse
 
 If you already have an Eclipse environment that you're using for other
 things, it's easy to add Liferay IDE to your existing Eclipse installation. 
@@ -49,7 +53,7 @@ things, it's easy to add Liferay IDE to your existing Eclipse installation.
    installed. Like other Eclipse plugins you'll have to restart Eclipse to
    enable it. 
 
-## Option 3: Install Liferay IDE into Eclipse from a ZIP File [](id=option-3-install-liferay-ide-into-eclipse-from-a-zip-file)
+## Option 3: Install Liferay IDE into Eclipse from a ZIP File
 
 To install Liferay IDE into Eclipse from a `.zip` file, follow these steps: 
 
@@ -70,7 +74,7 @@ To install Liferay IDE into Eclipse from a `.zip` file, follow these steps:
    installed. Like other Eclipse plugins you'll have to restart Eclipse to
    enable it. 
 
-## Setting up Liferay's Developer Tools [](id=setting-up-liferays-developer-tools)
+## Setting up Liferay's Developer Tools
 
 Liferay IDE needs a Liferay Portal runtime on which to run and debug code.
 Under the hood, it also works with Liferay's Plugins SDK, a barebones,
