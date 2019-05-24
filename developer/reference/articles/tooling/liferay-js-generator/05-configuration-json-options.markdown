@@ -124,7 +124,7 @@ An example configuration is shown below:
     }
   },
   "portletInstance": {
-    "name": "Portlet configuration",
+    "name": "Widget configuration",
     "fields": {
       "a-float": {
         "type": "float",

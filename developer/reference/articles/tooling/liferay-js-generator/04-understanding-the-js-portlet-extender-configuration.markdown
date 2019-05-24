@@ -21,7 +21,7 @@ Require-Capability: osgi.extender;filter:="(osgi.extender=liferay.npm.portlet)"
 
 ## Main Entry Point
 
-The main module of your JavaScript portlet must export a JavaScript function 
+The main module of your JavaScript widget must export a JavaScript function 
 with the signature below. Bundles created with the Liferay JS Generator have 
 this out-of-the-box:
 
@@ -33,28 +33,28 @@ function({portletNamespace, contextPath, portletElementId, configuration}) {
 
 The entry point function receives one object parameter with four fields:
 
-- `portletNamespace`: the unique namespace of the portlet as defined in the
+- `portletNamespace`: the unique namespace of the widget as defined in the
   Portlet specification. 
 - `contextPath`: the URL path that can be used to retrieve bundle resources from
   the browser (it doesn't contain the protocol, host, or port, just the absolute
   path). 
-- `portletElementId`: the DOM identifier of the portlet's `<div>` node that can
+- `portletElementId`: the DOM identifier of the widget's `<div>` node that can
   be used to render HTML. 
 - `configuration` (optional): since JS Portlet Extender version 1.1.0, this
   field contains the system (OSGi) and portlet instance (preferences as
-  described in the Portlet spec) configuration for the portlet. It has two
+  described in the Portlet spec) configuration for the widget. It has two
   subfields: 
 
   - `system:` contains the system level configuration (defined in Control 
     Panel &rarr; System Settings)
  
-  - `portletInstance:` contains the per-portlet configuration (defined in the 
-    Configuration menu option of the portlet)
+  - `portletInstance:` contains the per-widget configuration (defined in the 
+    Configuration menu option of the widget)
 
 Note that all values are received as strings, no matter what their type is in 
 OSGi configuration store. 
 
-The JavaScript-based portlet's main `index.js` file configuration is shown 
+The JavaScript-based widget's main `index.js` file configuration is shown 
 below for reference. Note that system settings and localization are enabled in 
 the example below:
 
@@ -91,7 +91,7 @@ export default function main({portletNamespace, contextPath, portletElementId, c
 
 The JavaScript file containing the main entry point function is specified in the 
 `main` entry of the `package.json` file. Below is the `main` entry for the 
-*JavaScript based portlet*:
+*JavaScript based widget*:
 
 ```json    
 "main": "index.js"

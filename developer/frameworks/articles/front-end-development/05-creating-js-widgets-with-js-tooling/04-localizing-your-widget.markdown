@@ -39,11 +39,11 @@ Follow the steps below to learn how to localize your widget:
     [language keys](/docs/7-2/frameworks/-/knowledge_base/f/localizing-your-application#what-are-language-keys) 
     for each 
     [available translation](/docs/7-2/frameworks/-/knowledge_base/f/localizing-your-application#what-locales-are-available-by-default). 
-    The *JavaScript based portlet* configuration is shown below:
+    The *JavaScript based widget* configuration is shown below:
 
 ```properties
-javax.portlet.title.my_js_portlet_project=My JS Portlet Project
-porlet-namespace=Porlet Namespace
+javax.portlet.title.my_js_portlet_project=My JS Widget Project
+portlet-namespace=Portlet Namespace
 context-path=Context Path
 portlet-element-id=Portlet Element Id
 configuration=Configuration
