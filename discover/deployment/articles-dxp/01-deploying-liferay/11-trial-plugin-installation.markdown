@@ -1,10 +1,14 @@
-# Trial Plugin Installation [](id=trial-plugin-installation)
+---
+header-id: trial-plugin-installation
+---
+
+# Trial Plugin Installation
 
 For Liferay customers who are evaluating @product@ on a trial basis, **the
 plugins can be accessed from within the *Apps* &rarr; *Store* (i.e.,
 Marketplace) section of the Control Panel in your product installation**. 
 
-## Installation Process [](id=installation-process)
+## Installation Process
 
 Follow the steps below to install a trial plugin:
 
@@ -33,15 +37,11 @@ Follow the steps below to install a trial plugin:
     *Install* button located to the far right of the respective plugin.
     Similarly, click the *Update* button to update a plugin.
 
-+$$$
+| **Note:** At a later date, the Marketplace website on `liferay.com` will be
+| accessible to @product@ trial customers. For now, please access subscription
+| apps through the portal installation itself.
 
-**Note:** At a later date, the Marketplace website on `liferay.com` will be
-accessible to @product@ trial customers. For now, please access subscription
-apps through the portal installation itself. 
-
-$$$
-
-## FAQ [](id=faq)
+## FAQ
 
 **Q:** Where are the *@product@ Trial Plugins*?
 

@@ -1,11 +1,15 @@
-# Understanding How Liferay AMD Loader Configuration is Exported [](id=how-liferay-amd-loader-configuration-is-exported)
+---
+header-id: how-liferay-amd-loader-configuration-is-exported
+---
+
+# Understanding How Liferay AMD Loader Configuration is Exported
 
 **NOTE:** This article is for users who know how Liferay AMD Loader works under 
 the hood. You can learn more about Liferay AMD Loader in the 
-[Liferay AMD Module Loader](/develop/tutorials/-/knowledge_base/7-1/loading-amd-modules-in-liferay) 
+[Liferay AMD Module Loader](/docs/7-1/tutorials/-/knowledge_base/t/loading-amd-modules-in-liferay) 
 tutorial.
 
-With [de-duplication](/develop/reference/-/knowledge_base/7-1/how-liferay-portal-publishes-npm-packages#package-deduplication) 
+With [de-duplication](/docs/7-1/reference/-/knowledge_base/r/how-liferay-portal-publishes-npm-packages#package-deduplication) 
 in place, JavaScript modules are made available to Liferay AMD Loader through 
 the configuration returned by the `/o/js_loaded_modules` URL.
 
@@ -50,7 +54,7 @@ The OSGi bundle shown below is used for reference in this article:
                     - ...
 
 For example, for the specified structure (shown above), as explained in 
-[The Structure of OSGi Bundles Containing npm Packages](/develop/reference/-/knowledge_base/7-1/the-structure-of-osgi-bundles-containing-npm-packages) 
+[The Structure of OSGi Bundles Containing npm Packages](/docs/7-1/reference/-/knowledge_base/r/the-structure-of-osgi-bundles-containing-npm-packages) 
 reference, the following configuration is published for Liferay AMD loader to 
 consume:
 

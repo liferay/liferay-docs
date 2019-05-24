@@ -1,4 +1,8 @@
-# liferay-npm-bundler [](id=liferay-npm-bundler)
+---
+header-id: liferay-npm-bundler
+---
+
+# liferay-npm-bundler
 
 The liferay-npm-bundler is a bundler (like 
 [Webpack](https://webpack.github.io/) 
@@ -16,10 +20,6 @@ its own copy. The liferay-npm-bundler handles this for you.
 This section of reference docs covers how Portal supports npm-based portlet 
 projects with the liferay-npm-bundler.
 
-+$$$
-
-**Note:** You can also find information for the liferay-npm-bundler in the 
-project's 
-[Wiki](https://github.com/liferay/liferay-npm-build-tools/wiki).
-
-$$$
+| **Note:** You can also find information for the liferay-npm-bundler in the
+| project's
+| [Wiki](https://github.com/liferay/liferay-npm-build-tools/wiki).

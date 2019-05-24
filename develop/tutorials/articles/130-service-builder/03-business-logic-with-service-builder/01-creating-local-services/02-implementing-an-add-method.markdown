@@ -1,4 +1,8 @@
-# Implementing an Add Method [](id=implementing-an-add-method)
+---
+header-id: implementing-an-add-method
+---
+
+# Implementing an Add Method
 
 Your `*LocalServiceImpl` operates on the entities your `service.xml` defines.
 The first method to implement, therefore, is one that creates entities.
@@ -70,7 +74,7 @@ parameters, creates an entry with a generated entry ID (primary key), populates
 the entry, persists the entry, and returns it. You can refer to this method as
 you create your own `add*` method. 
 
-## Step 1: Declare an add method with parameters for creating the entity [](id=declare-an-add-method-with-parameters-for-creating-the-entity)
+## Step 1: Declare an add method with parameters for creating the entity
 
 Create a public method for *adding* (creating) your application's entity. Make
 it a public method that returns the entity it creates. 
@@ -98,7 +102,7 @@ other related entities. For example, the `addEntry` method above includes
 a parameter `long folderId` to associate the new `BookmarksEntry` to
 a `BookmarksFolder`. 
 
-## Step 2:  Validate the parameters [](id=validate-the-parameters)
+## Step 2:  Validate the parameters
 
 Validate the parameters as needed. You might need to make sure a parameter is
 not empty or `null`, or that a parameter value is within a valid range. Throw a
@@ -116,7 +120,7 @@ check if the URL parameter is `null`.
 
 Next, generate a primary key for the entity instance you're creating. 
 
-## Step 3: Generate a primary key [](id=generate-a-primary-key)
+## Step 3: Generate a primary key
 
 Every entity instance needs a unique primary key. Liferay's
 [`CounterLocalService`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/counter/kernel/service/CounterLocalService.html)
@@ -129,7 +133,7 @@ primary key for your entity instance.
 
 Now you have a unique ID for your entity instance. 
 
-## Step 4: Create an entity instance [](id=create-an-entity-instance)
+## Step 4: Create an entity instance
 
 The `*Peristence` instance associated with your entity has a `create(long id)`
 method that constructs an entity instance with the given ID. Every
@@ -157,7 +161,7 @@ entity primary key you generated in the previous step.
 
 It's time to populate the new entity instance. 
 
-## Step 5: Populate the entity attributes [](id=populate-the-entity-attributes)
+## Step 5: Populate the entity attributes
 
 Use the `add*` method parameter values and the entity's setter methods to
 populate your entity's attributes. For example, here are the `BookmarksEntry`
@@ -177,7 +181,7 @@ attribute assignments:
 Note that the `ServiceContext` is commonly used to carry an entity's UUID and
 the `User` is associated to a company. 
 
-## Step 6: Persist the entity [](id=persist-the-entity)
+## Step 6: Persist the entity
 
 It's time to store the entity. Invoke the `*Persistence` field's `update`
 method, passing in the entity object. For example, here's how the new
@@ -187,11 +191,11 @@ method, passing in the entity object. For example, here's how the new
 
 Your entity is persisted for the application. 
 
-## Step 7: Return the entity [](id=return-the-entity)
+## Step 7: Return the entity
 
 Finally, return the entity you just created so the caller can use it. 
 
-[Run Service Builder](/develop/tutorials/-/knowledge_base/7-1/running-service-builder)
+[Run Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/running-service-builder)
 to propagate your new service method to the `*LocalService` interface. 
 
 You've implemented your local service's `add*` method to create and persist your

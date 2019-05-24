@@ -1,4 +1,8 @@
-# API Vocabulary [](id=api-vocabulary)
+---
+header-id: api-vocabulary
+---
+
+# API Vocabulary
 
 When defining an API, the developer must decide how to expose the representation
 of its resources. This determines its ease of use and how it can evolve.
@@ -7,7 +11,7 @@ Traditionally, there are two approaches:
 -   **Contract Last:** The code is written first and features are exposed as web 
     or REST services. This approach is typically easier for developers, as they
     must only implement and expose the business logic. 
-    [Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder-web-services)
+    [Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/service-builder-web-services)
     is an example of this. This approach, however, tightly couples the service
     contract to the business logic and internal model. Changes to the internal
     model, even attribute renaming, can break the exposed contract and could
@@ -33,8 +37,8 @@ schema with examples.
 
 -->
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Service Builder Web Services](/develop/tutorials/-/knowledge_base/7-1/service-builder-web-services)
+[Service Builder Web Services](/docs/7-1/tutorials/-/knowledge_base/t/service-builder-web-services)
 
-[Hypermedia Formats and Content Negotiation](/develop/tutorials/-/knowledge_base/7-1/hypermedia-formats-and-content-negotiation)
+[Hypermedia Formats and Content Negotiation](/docs/7-1/tutorials/-/knowledge_base/t/hypermedia-formats-and-content-negotiation)

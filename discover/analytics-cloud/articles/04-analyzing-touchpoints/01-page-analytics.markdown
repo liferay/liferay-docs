@@ -1,4 +1,8 @@
-# Understanding Page Analytics [](id=understanding-page-analytics)
+---
+header-id: understanding-page-analytics
+---
+
+# Understanding Page Analytics
 
 How are your Site Pages performing? Are visitors abandoning your site when they
 hit a certain Page? Is one Page constantly getting views, engaging users, and
@@ -14,7 +18,7 @@ Liferay Analytics Cloud answers these questions.
 Continue reading for details on how to interpret Analytics Cloud data to better
 understand your pages' performance.
 
-## Data Time Periods [](id=data-time-periods)
+## Data Time Periods
 
 All Pages data in Analytics Cloud appears for a specified time period. The time
 period selector recalculates the metrics based on the time period selected. You
@@ -42,7 +46,7 @@ a Saturday approaching midnight).
 
 Note that the first Sunday of the 90 day time period is not included.
 
-## Visitor Behavior [](id=visitor-behavior)
+## Visitor Behavior
 
 The Overview tab of a Page's metrics has several data presentations.  The first
 chart, called Visitor Behavior, contains four important metrics:
@@ -66,7 +70,7 @@ puts the current data in context. -->
 
 So what are these metrics in the Visitor Behavior chart?
 
-### Metric: Engagement [](id=metric-engagement)
+### Metric: Engagement
 
 Engagement, or average Page Engagement is an aggregation of metrics into one
 overall score. It incorporates these factors:
@@ -100,7 +104,7 @@ Page Engagement is useful to combine with time period filtering and comparative
 time period features. Comparing the engagement score from different periods is
 the best way to determine how your Page's performance changes over time.
 
-### Metric: Page Visitors [](id=metric-page-visitors)
+### Metric: Page Visitors
 
 Useful with the time period filter, Page Visitors is the number of
 visitors that accessed a Page in a given period of time.
@@ -110,7 +114,7 @@ visitors are calculated--> in Analytics cloud. Therefore, if the same human
 being hits the Page from a different device, it's logged as two unique visitors
 to the Page.
 
-### Metric: Page Views [](id=metric-page-views)
+### Metric: Page Views
 
 Useful with the time period filter, Page View is the number of views for a Page
 Page in a given period of time. It's not the same as the number of visitors,
@@ -122,14 +126,14 @@ a single user unless at least 30 minutes of inactivity <!-- need info on whether
 30 minutes is accurate and that this is how views are calculated--> on the Page
 passes before the user interacts with the Page again.
 
-### Metric: Page Bounce Rate [](id=metric-page-bounce-rate)
+### Metric: Page Bounce Rate
 
 Bounce Rate is the percentage of visitors to the Page that navigated away from
 the site without any page interaction (including scrolling on the page) after
 the initial page load. It's calculated as a daily rate (percentage per day), and
 the daily rate trend line is displayed over the selected time period. 
 
-### Metric: Average Time on Page [](id=metric-average-time-on-page)
+### Metric: Average Time on Page
 
 Time on Page calculates the average time spent on a Page for all the Views each
 day. It's displayed for the selected time period.
@@ -141,7 +145,7 @@ This metric is calculated like this for each 24 hour period:
 That concludes the Visitors Behavior chart, but see below for more Page
 data.
 
-## Views by Segment [](id=views-by-segment)
+## Views by Segment
 
 Segments are created by the Analytics Cloud administrator in the People &rarr;
 Segments section. Segments are groups of Individuals with common
@@ -154,7 +158,7 @@ are aggregated in the seventh bar on the graph, labeled _X More Segments_).
 
 ![Figure 2: See which Segments are most commonly viewing the Page.](../../images/pages-views-segments.png)
 
-## Views by Location [](id=views-by-location)
+## Views by Location
 
 View a bubble chart to compare the views by country over the selected period. Up
 to the top five countries are displayed, and the sixth bubble is an aggregation
@@ -162,7 +166,7 @@ of the remaining countries.
 
 ![Figure 3: See where the Page is most popular.](../../images/pages-views-location.png)
 
-## Views by Technology [](id=views-by-technology)
+## Views by Technology
 
 View a stacked bar graph of the Page's views by operating system (grouped by
 device type) in the default tab. Hover over each bar to see the detailed
@@ -176,7 +180,7 @@ are aggregated in the ninth donut segment.
 
 ![Figure 5: Which browser should your page be optimized for?](../../images/pages-views-browser.png)
 
-## Assets [](id=assets)
+## Assets
 
 View a list of the Assets on the Page by their number of Interactions
 over the selected time period.

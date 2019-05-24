@@ -1,4 +1,8 @@
-# Adding Image Resolutions [](id=adding-image-resolutions)
+---
+header-id: adding-image-resolutions
+---
+
+# Adding Image Resolutions
 
 To use Adaptive Media, you must first define the resolutions for the images 
 delivered to users' devices. Adaptive Media then generates new images scaled to
@@ -8,20 +12,16 @@ To access Adaptive Media settings, open the Control Panel and go to
 *Configuration* &rarr; *Adaptive Media*. Here you can create and manage 
 resolutions. 
 
-+$$$
-
-**Note:** Adaptive Media configurations apply only to the current @product@ 
-instance. 
-
-$$$
+| **Note:** Adaptive Media configurations apply only to the current @product@
+| instance.
 
 Once you create a resolution, Adaptive Media automatically generates copies of 
 newly uploaded images in that resolution. Images uploaded before you create the 
 resolution aren't affected and must be adapted separately (see the 
-[Generating Missing Image Resolutions](/discover/portal/-/knowledge_base/7-1/managing-image-resolutions#generating-missing-image-resolutions) 
+[Generating Missing Image Resolutions](/docs/7-1/user/-/knowledge_base/u/managing-image-resolutions#generating-missing-image-resolutions) 
 section for details). 
 
-## Adding a New Image Resolution [](id=adding-a-new-image-resolution)
+## Adding a New Image Resolution
 
 The number of image resolutions required and the values for each depend on the 
 use case. More resolutions may optimize image delivery, but generating 
@@ -60,12 +60,8 @@ configuration page and provide the following information:
     the *Custom* option and entering a new *ID*. Third party applications can 
     use this ID to obtain images for the resolution via Adaptive Media's APIs. 
 
-+$$$
-
-**Note:** Image resolutions and their identifiers can't be updated if the 
-resolution has been used to adapt images. This prevents inconsistencies in 
-generated images. 
-
-$$$
+| **Note:** Image resolutions and their identifiers can't be updated if the
+| resolution has been used to adapt images. This prevents inconsistencies in
+| generated images.
 
 ![Figure 1: The form for adding a new Adaptive Media resolution.](../../../images/adaptive-media-new-img-resolution.png)

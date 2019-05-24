@@ -1,4 +1,8 @@
-# Modularizing an Existing Portlet [](id=modularizing-an-existing-portlet)
+---
+header-id: modularizing-an-existing-portlet
+---
+
+# Modularizing an Existing Portlet
 
 An application with properly modularized plugins offers several benefits. You
 can release individually its plugins without releasing the entire application.
@@ -17,9 +21,9 @@ Liferay's module structure.
 
 Here's what's involved:
 
-- [Converting portlet classes and the UI](/develop/tutorials/-/knowledge_base/7-1/converting-your-applications-portlet-classes-and-ui)
-- [Converting Service Builder interfaces and implementations](/develop/tutorials/-/knowledge_base/7-1/converting-your-applications-service-builder-api-and-implementation)
-- [Building and deploying modules](/develop/tutorials/-/knowledge_base/7-1/building-your-module-jars-for-deployment)
+- [Converting portlet classes and the UI](/docs/7-1/tutorials/-/knowledge_base/t/converting-your-applications-portlet-classes-and-ui)
+- [Converting Service Builder interfaces and implementations](/docs/7-1/tutorials/-/knowledge_base/t/converting-your-applications-service-builder-api-and-implementation)
+- [Building and deploying modules](/docs/7-1/tutorials/-/knowledge_base/t/building-your-module-jars-for-deployment)
 
 The instructions apply to portlets for both Liferay DXP Digital Enterprise and
 Liferay Portal CE.

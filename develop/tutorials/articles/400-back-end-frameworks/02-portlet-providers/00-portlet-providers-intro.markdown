@@ -1,4 +1,8 @@
-# Portlet Providers [](id=portlet-providers)
+---
+header-id: portlet-providers
+---
+
+# Portlet Providers
 
 Some apps perform the same operations on different entity types. For example,
 the Asset Publisher lets users browse, add, preview, and view various entities
@@ -13,7 +17,7 @@ operations. This tutorial shows you how to
 
 -   [Retrieve portlets from the Portlet Providers](#retrieving-portlets-for-desired-behaviors)
 
-## Creating PortletProviders [](id=creating-portletproviders)
+## Creating PortletProviders
 
 [`PortletProvider`s](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/PortletProvider.html)
 are Component classes associated with an entity type. They
@@ -51,13 +55,9 @@ class:
 `getPortletName` method, which returns the portlet's name
 `WikiPortletKeys.WIKI`.
 
-+$$$
-
-**Note:** If you're creating a `PortletProvider` for one of Liferay's portlets,
-make your `getPortletName` method returns the portlet name from that portlet's
-`*PortletKeys` class if it has such a class. 
-
-$$$
+| **Note:** If you're creating a `PortletProvider` for one of Liferay's portlets,
+| make your `getPortletName` method returns the portlet name from that portlet's
+| `*PortletKeys` class if it has such a class.
 
 `WikiPortletProvider`'s `@Component` annotation specifies these elements and
 properties:
@@ -73,7 +73,7 @@ properties:
 
 Here's how to create your own `PortletProvider`:
 
-1.  [Create an OSGi module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#creating-a-module).
+1.  [Create an OSGi module](/docs/7-1/tutorials/-/knowledge_base/t/starting-module-development#creating-a-module).
 
 2.  Create a `PortletProvider` class in your module. Use the recommended class 
     naming convention:
@@ -132,13 +132,13 @@ Here's how to create your own `PortletProvider`:
     [`BasePortletProvider`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/BasePortletProvider.html),
     implement `PortletProvider`'s `getPortletURL` methods too. 
 
-6.  [Deploy your module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#building-and-deploying-a-module). 
+6.  [Deploy your module](/docs/7-1/tutorials/-/knowledge_base/t/starting-module-development#building-and-deploying-a-module). 
 
 Now your `PortletProvider` is available to return the ID and URL of the portlet
 that provides the desired behaviors. Using `PortletProviderUtil` to fetch the
 portlet IDs and URLs is next.
 
-## Retrieving Portlets for Desired Behaviors [](id=retrieving-portlets-for-desired-behaviors)
+## Retrieving Portlets for Desired Behaviors
 
 The
 [`PortletProviderUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/PortletProviderUtil.html)
@@ -158,7 +158,7 @@ Enums define these action types:
 
 The action type and entity type are key parameters in fetching a portlet's ID or URL. 
 
-### Fetching a Portlet ID [](id=fetching-a-portlet-id)
+### Fetching a Portlet ID
 
 The Portlet Provider framework's
 [`PortletProviderUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/PortletProviderUtil.html)
@@ -212,7 +212,7 @@ the page.
 
 Fetching a portlet URL is just as easy. 
 
-### Fetching a Portlet URL [](id=fetching-a-portlet-url)
+### Fetching a Portlet URL
 
 `PortletProviderUtil`'s
 [`getPortletURL` methods](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/PortletProviderUtil.html)
@@ -244,10 +244,10 @@ below) to generate a corresponding Asset Browser URL.
 
 Now you can unleash an arsenal of `PortletProvider`s to use in your apps!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Portlets](/develop/tutorials/-/knowledge_base/7-1/portlets)
+[Portlets](/docs/7-1/tutorials/-/knowledge_base/t/portlets)
 
-[Embedding Portlets in Themes](/develop/tutorials/-/knowledge_base/7-1/embedding-portlets-in-themes)
+[Embedding Portlets in Themes](/docs/7-1/tutorials/-/knowledge_base/t/embedding-portlets-in-themes)
 
-[Customizing Liferay Services](/develop/tutorials/-/knowledge_base/7-1/customizing-liferay-services-service-wrappers)
+[Customizing Liferay Services](/docs/7-1/tutorials/-/knowledge_base/t/customizing-liferay-services-service-wrappers)

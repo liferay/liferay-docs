@@ -1,4 +1,8 @@
-# Configuring Search Pages [](id=configuring-search-pages)
+---
+header-id: configuring-search-pages
+---
+
+# Configuring Search Pages
 
 There are multiple ways to skin the search cat (disclaimer: no actual cats have
 been harmed during the writing of this article). 
@@ -15,14 +19,14 @@ If you're in need of a fully customized experience,
 
 After choosing your approach and reading here to get it up and running, find
 the articles on the [Search
-Bar](/discover/portal/-/knowledge_base/7-1/searching-for-assets#search-bar),
-[Search Facets](/discover/portal/-/knowledge_base/7-1/facets), and [Search Results](/discover/portal/-/knowledge_base/7-1/search-results) to understand the full suite of
+Bar](/docs/7-1/user/-/knowledge_base/u/searching-for-assets#search-bar),
+[Search Facets](/docs/7-1/user/-/knowledge_base/u/facets), and [Search Results](/discover/portal/-/knowledge_base/7-1/search-results) to understand the full suite of
 configuration options. 
 
 Search display pages are where users go to enter search terms and browse search
 results. 
 
-## Default Search Pages [](id=default-search-pages)
+## Default Search Pages
 
 Using the default site and the default theme with the default search settings,
 the out-of-the-box search experience has two components for end users:
@@ -53,7 +57,7 @@ adding, configuring, and removing widgets on the page. On the other hand, if you
 want a clean break from the default search page, starting from scratch is also
 an option.
 
-## Manual Search Page Configuration [](id=manual-search-page-configuration)
+## Manual Search Page Configuration
 
 It's reasonable to create the search experience from the ground up. If you're
 working from a newly created site, it's a necessity. These steps show you how to
@@ -97,7 +101,7 @@ a new site:
 
 Now your search page is up and running.
 
-## Legacy Search Experience [](id=legacy-search-experience)
+## Legacy Search Experience
 
 In prior versions, the search experience was encapsulated in one application,
 *Search*. It was embedded in the default theme, just like the search bar is now.

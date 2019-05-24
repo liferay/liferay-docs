@@ -1,4 +1,8 @@
-# Configuring Asset Publisher Subscriptions [](id=configuring-asset-publisher-subscriptions)
+---
+header-id: configuring-asset-publisher-subscriptions
+---
+
+# Configuring Asset Publisher Subscriptions
 
 The Asset Publisher application supports two kinds of subscriptions: RSS
 subscriptions and email subscriptions. To enable subscriptions, click the Asset

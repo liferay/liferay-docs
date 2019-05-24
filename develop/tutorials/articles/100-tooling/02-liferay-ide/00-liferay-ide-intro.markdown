@@ -1,4 +1,8 @@
-# Liferay Dev Studio [](id=liferay-ide)
+---
+header-id: liferay-ide
+---
+
+# Liferay Dev Studio
 
 Liferay Dev Studio is an extension for the Eclipse platform for developing
 @product@ plugins. It works with build tools such as Gradle and Maven and

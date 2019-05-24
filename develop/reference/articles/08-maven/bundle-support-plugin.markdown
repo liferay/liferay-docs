@@ -1,13 +1,17 @@
-# Bundle Support Plugin [](id=bundle-support-plugin)
+---
+header-id: bundle-support-plugin
+---
+
+# Bundle Support Plugin
 
 The Bundle Support plugin lets you use
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace)
+[Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace)
 as a Maven project. For more information on how a Maven Workspace works and the
 features it provides, see the
-[Maven Workspace](/develop/tutorials/-/knowledge_base/7-1/maven-workspace)
+[Maven Workspace](/docs/7-1/tutorials/-/knowledge_base/t/maven-workspace)
 tutorial.
 
-## Usage [](id=usage)
+## Usage
 
 To use the plugin, include it in your project's root `pom.xml` file:
 
@@ -43,7 +47,7 @@ To use the plugin, include it in your project's root `pom.xml` file:
         </plugins>
     </build>
 
-## Goals [](id=goals)
+## Goals
 
 The plugin adds five Maven goals to your project:
 
@@ -55,7 +59,7 @@ Name | Description
 [bundle-support:dist](#dist-goals-available-parameters) | Creates a distributable @product@ bundle archive file (e.g., ZIP).
 [bundle-support:init](#init-goals-available-parameters) | Downloads and installs the specified @product@ version.
 
-## clean Goal's Available Parameters [](id=clean-goals-available-parameters)
+## clean Goal's Available Parameters
 
 You can set the following parameters in the `clean` execution's
 `<configuration>` section of the POM:
@@ -65,7 +69,7 @@ Parameter Name | Type | Default Value | Description
 `liferayHome` | `String` | `bundles` |  The directory where your @product@ instance resides. This can be specified from the command line as `-DliferayHome=`.
 `fileName` | `String` | `${project.artifactId}.${project.packaging}` | The name of the file to delete from your bundle.
 
-## create-token Goal's Available Parameters [](id=create-token-goals-available-parameters)
+## create-token Goal's Available Parameters
 
 You can change the default parameter values of the `create-token` goal by
 creating an `<execution>` section containing `<configuration>` tags. For
@@ -97,7 +101,7 @@ and password, both of which are used to generate your token. It's recommended to
 configure your email and password from the command line rather than specifying
 them in your POM file.
 
-## deploy Goal's Available Parameters [](id=deploy-goals-available-parameters)
+## deploy Goal's Available Parameters
 
 You can set the following parameters in the `deploy` execution's
 `<configuration>` section of the POM:
@@ -108,7 +112,7 @@ Parameter Name | Type | Default Value | Description
 `deployFile` | `File` | `${project.build.directory}/${project.build.finalName}.${project.packaging}` | The packaged file (e.g., JAR) to deploy to the Liferay bundle.
 `outputFileName` | `String` | `${project.artifactId}.${project.packaging}` | The name of the output file.
 
-## dist Goal's Available Parameters [](id=dist-goals-available-parameters)
+## dist Goal's Available Parameters
 
 You can change the default parameter values of the `dist` goal by creating an
 `<execution>` section containing `<configuration>` tags. For example,
@@ -143,7 +147,7 @@ Parameter Name | Type | Default Value | Description
 `url` | `URL` | `${liferay.workspace.bundle.url}` | The URL of the Liferay bundle to expand.
 `userName` | `String` | `null` | The user name if your Liferay bundle's URL requires authentication.
 
-## init Goal's Available Parameters [](id=init-goals-available-parameters)
+## init Goal's Available Parameters
 
 You can change the default parameter values of the `init` goal by creating an
 `<execution>` section containing `<configuration>` tags. For example,

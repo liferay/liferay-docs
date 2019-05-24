@@ -1,4 +1,8 @@
-# Defining Categories for Content [](id=defining-categories-for-content)
+---
+header-id: defining-categories-for-content
+---
+
+# Defining Categories for Content
 
 Categories are similar in concept to tags, but are designed for use by
 administrators, not regular users. Hierarchies of categories can be created, and

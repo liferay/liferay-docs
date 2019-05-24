@@ -1,4 +1,8 @@
-# Installing Solr: Basic Installation [](id=installing-solr-basic-installation)
+---
+header-id: installing-solr-basic-installation
+---
+
+# Installing Solr: Basic Installation
 
 There are two ways to install the Liferay Connector to Solr 7:
 
@@ -34,7 +38,7 @@ There are two installation steps:
 
 Before configuring @product@ for Solr, install and set up Solr.
 
-## Installing and Configuring Solr 7 [](id=installing-and-configuring-solr-7)
+## Installing and Configuring Solr 7
 
 To install and properly configure Solr for @product@:
 
@@ -105,7 +109,7 @@ To install and properly configure Solr for @product@:
 
 Solr is now installed. Next install and configure the Solr connector.
 
-## Installing and Configuring the Liferay Solr Adapter [](id=installing-and-configuring-the-liferay-solr-adapter)
+## Installing and Configuring the Liferay Solr Adapter
 
 Since Elasticsearch is the default search engine, the Elasticsearch connector is
 already installed and running. You must stop it before configuring the Solr
@@ -146,25 +150,21 @@ Stop the API bundle by entering
 
 In the example above, the `[bundle ID]` is `476`. 
 
-+$$$
-
-**Liferay DXP:** DXP customers should 
-[blacklist](/discover/portal/-/knowledge_base/7-1/blacklisting-osgi-modules-and-components) 
-the Elasticsearch, Shield, and Marvel plugins. 
-
-1.  Create a 
-
-        com.liferay.portal.bundle.blacklist.internal.BundleBlacklistConfiguration.config
-
-    file with these contents:
-
-        blacklistBundleSymbolicNames=["com.liferay.portal.search.elasticsearch6.api","com.liferay.portal.search.elasticsearch6.impl","Liferay Connector to X-Pack Monitoring [Elastic Stack 6.x]","Liferay Connector to X-Pack Security [Elastic Stack 6.x]"]
-
-    If the X-Pack LPKG files are installed, you must blacklist these too.
-
-2.  Place the file in `Liferay Home/osgi/configs`.
-
-$$$
+| **Liferay DXP:** DXP customers should
+| [blacklist](/docs/7-1/user/-/knowledge_base/u/blacklisting-osgi-modules-and-components)
+| the Elasticsearch, Shield, and Marvel plugins.
+| 
+| 1.  Create a
+| 
+|         com.liferay.portal.bundle.blacklist.internal.BundleBlacklistConfiguration.config
+| 
+|     file with these contents:
+| 
+|         blacklistBundleSymbolicNames=["com.liferay.portal.search.elasticsearch6.api","com.liferay.portal.search.elasticsearch6.impl","Liferay Connector to X-Pack Monitoring [Elastic Stack 6.x]","Liferay Connector to X-Pack Security [Elastic Stack 6.x]"]
+| 
+|     If the X-Pack LPKG files are installed, you must blacklist these too.
+| 
+| 2.  Place the file in `Liferay Home/osgi/configs`.
 
 Install and configure the Solr connector:
 

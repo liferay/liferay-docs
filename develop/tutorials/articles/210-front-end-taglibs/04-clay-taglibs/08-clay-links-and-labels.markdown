@@ -1,16 +1,20 @@
-# Clay Labels and Links [](id=clay-labels-and-links)
+---
+header-id: clay-labels-and-links
+---
+
+# Clay Labels and Links
 
 Liferay Clay taglibs provide tags for creating labels and links in your app. 
 This tutorial shows how to add both of these UI elements to your apps. 
 
-## Labels [](id=labels)
+## Labels
 
 The Liferay Clay taglibs provide a few different labels for your app. Use the 
 `clay:label` tag to add a label to your app. You can create color-coded labels, 
 removable labels, and labels that contain links. The sections below demonstrate 
 all of these options. 
 
-### Color-coded Labels [](id=color-coded-labels)
+### Color-coded Labels
 
 The Liferay Clay labels come in four different colors: dark-blue for info, 
 light-gray for status, orange for pending, red for rejected, and green for 
@@ -59,7 +63,7 @@ labels:
     
     <clay:label label="Approved" size="lg" style="success" />
 
-### Removable Labels [](id=removable-labels)
+### Removable Labels
 
 If you want to let a user close a label (e.g. a temporary notification), you can 
 make the label removable by setting the `closeable` attribute to `true`.
@@ -68,7 +72,7 @@ make the label removable by setting the `closeable` attribute to `true`.
 
 ![Figure 6: Labels can be removable.](../../../images/clay-taglib-label-removable.png)
 
-### Labels with Links [](id=labels-with-links)
+### Labels with Links
 
 You can make a label a link by adding the `href` attribute to it just as you 
 would an anchor tag:
@@ -77,7 +81,7 @@ would an anchor tag:
     
 ![Figure 7: Labels can also be links.](../../../images/clay-taglib-label-link.png)
 
-## Links [](id=links)
+## Links
 
 You can add traditional hyperlinks to your app with the `<clay:link>` tag:
 
@@ -87,10 +91,10 @@ You can add traditional hyperlinks to your app with the `<clay:link>` tag:
 
 Now you know how to add links and labels to your apps!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Clay Badges](/develop/tutorials/-/knowledge_base/7-1/clay-badges)
+[Clay Badges](/docs/7-1/tutorials/-/knowledge_base/t/clay-badges)
 
-[Clay Cards](/develop/tutorials/-/knowledge_base/7-1/clay-cards)
+[Clay Cards](/docs/7-1/tutorials/-/knowledge_base/t/clay-cards)
 
-[Clay Form Elements](/develop/tutorials/-/knowledge_base/7-1/clay-form-elements)
+[Clay Form Elements](/docs/7-1/tutorials/-/knowledge_base/t/clay-form-elements)

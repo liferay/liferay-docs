@@ -1,4 +1,8 @@
-# Control Menu Entry Template [](id=control-menu-entry-template)
+---
+header-id: control-menu-entry-template
+---
+
+# Control Menu Entry Template
 
 In this article, you'll learn how to create a Liferay Control Menu entry as a
 Liferay module. To create a Liferay Control Menu entry via the command line
@@ -66,8 +70,8 @@ Gradle-specific files, but otherwise, appears exactly the same.
 The generated module is functional and is deployable to a @product@ instance. To
 build upon the generated app, modify the project by adding logic and additional
 files to the folders outlined above. You can visit the
-[control-menu-entry](/develop/reference/-/knowledge_base/7-0/control-menu-entry)
+[control-menu-entry](/docs/7-0/reference/-/knowledge_base/r/control-menu-entry)
 sample project for a more expanded sample of a Control Menu entry. Likewise, see
 the
-[Customizing the Control Menu](/develop/tutorials/-/knowledge_base/7-0/customizing-the-control-menu)
+[Customizing the Control Menu](/docs/7-0/tutorials/-/knowledge_base/t/customizing-the-control-menu)
 tutorial for instructions on customizing a Control Menu entry project.

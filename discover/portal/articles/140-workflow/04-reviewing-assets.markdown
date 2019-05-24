@@ -1,4 +1,8 @@
-# Reviewing Assets [](id=reviewing-assets)
+---
+header-id: reviewing-assets
+---
+
+# Reviewing Assets
 
 User interaction is required at each workflow process Task Node. How do
 users complete tasks? In the *My Workflow Tasks* application of the *My Account*
@@ -6,7 +10,7 @@ menu.
 
 ![Figure 1: Users manage workflow tasks from their My Workflow Tasks widget.](../../images/workflow-myworkflow-tasks-menu.png)
 
-## Asset Submission to Workflow [](id=asset-submission-to-workflow)
+## Asset Submission to Workflow
 
 If an Asset has a workflow activated, when a user clicks Submit for Publication,
 the workflow definition determines the next step. A user assigned a Role
@@ -43,10 +47,10 @@ workflow process (for example, it's rejected or approved).
 
 ![Figure 3: A User with access to Web Content in the Workflow can manage Pending Articles.](../../images/workflow-pending-permissions.png)
 
-## Assigning the Task [](id=assigning-the-task)
+## Assigning the Task
 
 Workflow Tasks can be completed only by certain users, based on the 
-[Assignment](/develop/tutorials/-/knowledge_base/7-1/workflow-task-nodes#assignments).
+[Assignment](/docs/7-1/tutorials/-/knowledge_base/t/workflow-task-nodes#assignments).
 
 All workflow tasks assigned directly to a user are listed in the My Workflow
 Task widget's *Assigned to Me* tab.
@@ -74,7 +78,7 @@ Alternatively, assign the task to another user.
 
 3.  Add a comment in the pop-up box if necessary, and click *Done*.
 
-## Completing the Task [](id=completing-the-task)
+## Completing the Task
 
 Once a task is assigned, it's ready to be completed.
 
@@ -86,7 +90,7 @@ There's a fast way to send an asset along in the review process:
 
     Note that options names in this menu are identical to the the workflow 
     definition's
-    [Transition](/develop/tutorials/-/knowledge_base/7-1/workflow-definition-nodes)
+    [Transition](/docs/7-1/tutorials/-/knowledge_base/t/workflow-definition-nodes)
     names. Your menu might have different options than the *Approve* and
     *Reject* options in the figure below.
 

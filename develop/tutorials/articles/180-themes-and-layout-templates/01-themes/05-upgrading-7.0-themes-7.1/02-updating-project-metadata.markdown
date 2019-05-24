@@ -1,9 +1,13 @@
-# Updating Project Metadata [](id=updating-project-metadata)
+---
+header-id: updating-project-metadata
+---
+
+# Updating Project Metadata
 
 If your theme uses the 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-themes), 
+[Liferay Theme Generator](/docs/7-1/tutorials/-/knowledge_base/t/creating-themes), 
 the 
-[gulp upgrade task](/develop/tutorials/-/knowledge_base/7-1/upgrading-themes-created-with-the-theme-generator) 
+[gulp upgrade task](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-themes-created-with-the-theme-generator) 
 automatically updates your theme's metadata as part of the upgrade process. If 
 you're developing your theme in an environment other than the themes generator, 
 follow the steps below to update your theme's metadata manually:
@@ -48,8 +52,8 @@ follow the steps below to update your theme's metadata manually:
 
 Your theme's Liferay version references are updated for @product-ver@.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Updating CSS Code](/develop/tutorials/-/knowledge_base/7-1/updating-css-code)
+[Updating CSS Code](/docs/7-1/tutorials/-/knowledge_base/t/updating-css-code)
 
-[Developing Themes](/develop/tutorials/-/knowledge_base/7-1/developing-themes)
+[Developing Themes](/docs/7-1/tutorials/-/knowledge_base/t/developing-themes)

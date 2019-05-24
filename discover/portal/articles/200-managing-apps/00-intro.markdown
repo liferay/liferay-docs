@@ -1,4 +1,8 @@
-# Managing Apps [](id=managing-apps)
+---
+header-id: managing-apps
+---
+
+# Managing Apps
 
 Apps run on the platform @product@ provides. The web experience management,
 collaboration, and business productivity features all consist of apps. Even the

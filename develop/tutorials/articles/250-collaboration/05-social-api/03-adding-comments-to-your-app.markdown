@@ -1,4 +1,8 @@
-# Adding Comments to Your App [](id=adding-comments-to-your-app)
+---
+header-id: adding-comments-to-your-app
+---
+
+# Adding Comments to Your App
 
 Letting users comment on content makes your app come alive. Taglibs provide the
 markup you need to add this feature. This tutorial shows you how to use these
@@ -7,11 +11,11 @@ taglibs to enable comments.
 These steps use a sample Guestbook app as an example: 
 
 1.  Make sure your entity is 
-    [asset enabled](/develop/tutorials/-/knowledge_base/7-1/asset-framework). 
+    [asset enabled](/docs/7-1/tutorials/-/knowledge_base/t/asset-framework). 
 
 2.  Choose a read-only view of the entity you want to enable comments on. You 
     can display the comments component in your app's view, or if you've 
-    [implemented asset rendering](/develop/tutorials/-/knowledge_base/7-1/rendering-an-asset) 
+    [implemented asset rendering](/docs/7-1/tutorials/-/knowledge_base/t/rendering-an-asset) 
     you can display it in the full content view in the Asset Publisher app. 
 
 3.  Include the `liferay-ui`, `liferay-comment`, and `portlet` taglib 
@@ -61,13 +65,13 @@ These steps use a sample Guestbook app as an example:
         </liferay-ui:panel-container>
 
 If you haven't already connected your portlet's view to the JSP for your entity,
-[see the tutorial on Configuring JSP Templates](/develop/tutorials/-/knowledge_base/7-1/configuring-jsp-templates-for-an-asset-renderer).
+[see the tutorial on Configuring JSP Templates](/docs/7-1/tutorials/-/knowledge_base/t/configuring-jsp-templates-for-an-asset-renderer).
 
 Great! Now you know how to let users comment on content in your asset enabled
 portlets.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Asset Framework](/develop/tutorials/-/knowledge_base/7-1/asset-framework)
+[Asset Framework](/docs/7-1/tutorials/-/knowledge_base/t/asset-framework)
 
-[Rating Assets](/develop/tutorials/-/knowledge_base/7-1/rating-assets)
+[Rating Assets](/docs/7-1/tutorials/-/knowledge_base/t/rating-assets)

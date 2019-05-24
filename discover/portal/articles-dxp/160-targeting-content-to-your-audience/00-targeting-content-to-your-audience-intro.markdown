@@ -1,4 +1,8 @@
-# Targeting Content To Your Audience [](id=targeting-content-to-your-audience)
+---
+header-id: targeting-content-to-your-audience
+---
+
+# Targeting Content To Your Audience
 
 Audience Targeting provides tools to customize user experience based on 
 demographics, browsing data, or other criteria. You can divide your audience 
@@ -23,7 +27,7 @@ your marketing goals. Or you can display news articles to users based on all
 the user segments to which they belong. 
 
 Audience Targeting meets all of the requirements for anonymization, erasure,
-and export for compliance with [GDPR](/discover/portal/-/knowledge_base/7-1/managing-user-data).
+and export for compliance with [GDPR](/docs/7-1/user/-/knowledge_base/u/managing-user-data).
  
 The Audience Targeting App appears in the Configuration section of Site
 Administration. It also adds a User Segments Simulator in the Simulation

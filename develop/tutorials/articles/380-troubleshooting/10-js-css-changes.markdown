@@ -1,4 +1,8 @@
-# Why Aren't my Module's JavaScript and CSS Changes Showing? [](id=why-arent-my-modules-javascript-and-css-changes-showing)
+---
+header-id: why-arent-my-modules-javascript-and-css-changes-showing
+---
+
+# Why Aren't my Module's JavaScript and CSS Changes Showing?
 
 To determine why JavaScript and CSS updates to your module aren't having an 
 effect in your browser, perform these checks: 
@@ -73,9 +77,9 @@ effect in your browser, perform these checks:
     -   Clear your browser's cache.
     -   During development, enable developer mode to turn off @product@'s 
         resource caching. 
-        [Click here](/develop/tutorials/-/knowledge_base/7-1/using-developer-mode-with-themes) 
+        [Click here](/docs/7-1/tutorials/-/knowledge_base/t/using-developer-mode-with-themes) 
         to learn how to enable @product@'s developer mode. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using Developer Mode with Themes](/develop/tutorials/-/knowledge_base/7-1/using-developer-mode-with-themes)
+[Using Developer Mode with Themes](/docs/7-1/tutorials/-/knowledge_base/t/using-developer-mode-with-themes)

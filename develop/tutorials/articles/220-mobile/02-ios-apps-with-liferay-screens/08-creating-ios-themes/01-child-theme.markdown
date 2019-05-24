@@ -1,4 +1,8 @@
-# Creating an iOS Child Theme [](id=creating-an-ios-child-theme)
+---
+header-id: creating-an-ios-child-theme
+---
+
+# Creating an iOS Child Theme
 
 In a Child Theme, you leverage a parent Theme's behavior and UI components, but
 you can modify the appearance and position of the UI components. Note that you
@@ -23,19 +27,15 @@ You can follow these steps to create a Child Theme:
     You mustn't change, however, the XIB file's custom class, outlet connection,
     or `restorationIdentifier`--these must match those of the parent's XIB file.
 
-    +$$$
-
-    **Note:** The XIB file name serves as the Theme's Xcode name. For example, 
-    the Theme in Figure 1 inherits from the Login Screenlet's Default Theme, 
-    which uses the View class `LoginView_default`. The new child Theme is named 
-    *Large* because it's purpose is to enlarge the Screenlet's UI components. In 
-    Xcode, it's assigned the Theme Name *large*. The XIB file is named 
-    `LoginView_large.xib`, after the Login Screenlet's View class and the 
-    Theme's Xcode name. 
-
-    $$$
+    | **Note:** The XIB file name serves as the Theme's Xcode name. For example,
+    | the Theme in Figure 1 inherits from the Login Screenlet's Default Theme,
+    | which uses the View class `LoginView_default`. The new child Theme is named
+    | *Large* because it's purpose is to enlarge the Screenlet's UI components. In
+    | Xcode, it's assigned the Theme Name *large*. The XIB file is named
+    | `LoginView_large.xib`, after the Login Screenlet's View class and the
+    | Theme's Xcode name.
 
 You can optionally 
-[package](/develop/tutorials/-/knowledge_base/7-1/packaging-ios-themes) 
+[package](/docs/7-1/tutorials/-/knowledge_base/t/packaging-ios-themes) 
 your Theme and/or start 
-[using it](/develop/tutorials/-/knowledge_base/7-1/using-themes-in-ios-screenlets). 
+[using it](/docs/7-1/tutorials/-/knowledge_base/t/using-themes-in-ios-screenlets). 

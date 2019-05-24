@@ -1,4 +1,8 @@
-# Widget Permissions [](id=widget-permissions)
+---
+header-id: widget-permissions
+---
+
+# Widget Permissions
 
 All of Liferay's widgets support @product@'s robust, fine-grained permissions
 system. Some higher level permissions can be configured in the permissions tab

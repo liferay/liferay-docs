@@ -1,4 +1,8 @@
-# Registering Entries with the Search Framework [](id=registering-entries-with-the-search-framework)
+---
+header-id: registering-entries-with-the-search-framework
+---
+
+# Registering Entries with the Search Framework
 
 <div class="learn-path-step">
     <p>Enabling Search and Indexing for Entries<br>Step 1 of 5</p>

@@ -1,4 +1,8 @@
-# Liferay Front-end Info Bar [](id=liferay-frontend-info-bar)
+---
+header-id: liferay-frontend-info-bar
+---
+
+# Liferay Front-end Info Bar
 
 An info bar provides a button that toggles the visibility of additional sidebar 
 information. This is perfect for providing more detailed metadata for a search 
@@ -21,7 +25,7 @@ Info bar:
     </liferay-frontend:info-bar>
 
 The `<liferay-frontend:info-bar-sidenav-toggler-button>` tag uses 
-[Clay Icons](/develop/tutorials/-/knowledge_base/7-1/clay-icons) 
+[Clay Icons](/docs/7-1/tutorials/-/knowledge_base/t/clay-icons) 
 for the `icon` attribute. 
 
 Sidebar panel:
@@ -50,11 +54,11 @@ and
 [sidebar panel](@app-ref@/foundation/latest/taglibdocs/liferay-frontend/sidebar-panel.html) 
 taglibdocs for the full list of available attributes for the tags. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Liferay Front-end Add Menu](/develop/tutorials/-/knowledge_base/7-1/liferay-frontend-add-menu)
+[Liferay Front-end Add Menu](/docs/7-1/tutorials/-/knowledge_base/t/liferay-frontend-add-menu)
 
-[Liferay Front-end Cards](/develop/tutorials/-/knowledge_base/7-1/liferay-frontend-cards)
+[Liferay Front-end Cards](/docs/7-1/tutorials/-/knowledge_base/t/liferay-frontend-cards)
 
-[Liferay Front-end Management Bar](/develop/tutorials/-/knowledge_base/7-1/liferay-frontend-management-bar)
+[Liferay Front-end Management Bar](/docs/7-1/tutorials/-/knowledge_base/t/liferay-frontend-management-bar)
 

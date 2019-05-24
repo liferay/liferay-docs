@@ -1,4 +1,8 @@
-# Overriding Inline Content Using JSPs [](id=overriding-inline-content-using-jsps)
+---
+header-id: overriding-inline-content-using-jsps
+---
+
+# Overriding Inline Content Using JSPs
 
 Some @product@ core content, such as tag library tags, can only be overridden
 using JSPs ending in `.readme`. The suffix `.readme` facilitates finding them.
@@ -8,36 +12,24 @@ suffix. If you add code to a JSP `.readme` file and remove the `.readme` suffix,
 @product@ uses that JSP instead of the core inline content. This tutorial shows
 you how to make these customizations. 
 
-+$$$
+| **Important:** This type of customization is a last resort. Your override may
+| break due to the nature of this implementation, and core functionality can go
+| down with it. Liferay cannot guarantee that content overridden using JSP
+| `.readme` files can be upgraded.
 
-**Important:** This type of customization is a last resort. Your override may 
-break due to the nature of this implementation, and core functionality can go
-down with it. Liferay cannot guarantee that content overridden using JSP
-`.readme` files can be upgraded. 
-
-$$$
-
-+$$$
-
-**Warning:** Modifying a @product@ tag library tag affects all uses of that tag
-in your @product@ installation. 
-
-$$$
+| **Warning:** Modifying a @product@ tag library tag affects all uses of that tag
+| in your @product@ installation.
 
 Here's how to override inline content using JSPs:
 
 1.  Create a
-    [Custom JSP Bag](/develop/tutorials/-/knowledge_base/7-1/jsp-overrides-using-custom-jsp-bag)
+    [Custom JSP Bag](/docs/7-1/tutorials/-/knowledge_base/t/jsp-overrides-using-custom-jsp-bag)
     for deploying your JSP. Note the module folder you're storing the
     JSPs in: the default folder is `[your
     module]/src/main/resources/META-INF/jsps/`
 
-    +$$$
-
-    **Note:** you can develop your JSP anywhere, but a Custom JSP Bag module 
-    provides a straightforward way to build and deploy it.
-
-    $$$
+    | **Note:** you can develop your JSP anywhere, but a Custom JSP Bag module
+    | provides a straightforward way to build and deploy it.
 
 2.  Download the @product@ source code or browse the source code on
     [GitHub (Liferay Portal CE)](https://github.com/liferay/liferay-portal/tree/7.1.x). 
@@ -45,15 +37,11 @@ Here's how to override inline content using JSPs:
 3.  Search the source code for a `.jsp.readme` file that overrides the tag
     you're customizing. 
 
-    +$$$
-
-    **Note:** Files ending in `-ext.jsp.readme` let you prepend or 
-    append new content to existing content. Examples include the
-    `bottom-test.jsp.readme`, `bottom-ext.jsp.readme`,
-    `body_top-ext.jsp.readme`, and `body_bottom-ext.jsp.readme` files in
-    the @product@ application's `portal-web/docroot/html/common/themes` folder. 
-
-    $$$
+    | **Note:** Files ending in `-ext.jsp.readme` let you prepend or
+    | append new content to existing content. Examples include the
+    | `bottom-test.jsp.readme`, `bottom-ext.jsp.readme`,
+    | `body_top-ext.jsp.readme`, and `body_bottom-ext.jsp.readme` files in
+    | the @product@ application's `portal-web/docroot/html/common/themes` folder.
 
 4.  Copy the `.jsp.readme` file into your project and drop the `.readme` suffix.
     Use the same relative file path @product@ uses for the `.jsp.readme` file.
@@ -80,7 +68,7 @@ to walk through an example override, continue with this tutorial. Otherwise,
 congratulations on a modified `.jsp.readme` file to override core inline
 content! 
 
-## Example: Overriding the fieldset Taglib Tag [](id=example-overriding-the-fieldset-taglib-tag)
+## Example: Overriding the fieldset Taglib Tag
 
 This example demonstrates changing the `liferay:aui` tag library's  `fieldset`
 tag. Browsing the @product@ web application or the source code at
@@ -201,15 +189,11 @@ JSP code for `start.jsp` (renamed from `start.jsp.readme`) would look like this:
 
     	<div class="<%= column ? "row" : StringPool.BLANK %>">
 
-+$$$
-
-**Tip:** A `*Tag.java` file's history might reveal original JSP code that was 
-inlined. For example, the logic from `fieldset` tag's 
-[`start.jsp`](https://github.com/liferay/liferay-portal/blob/df22ba66eff49b76404cfda908d3cd024efbebd9/portal-web/docroot/html/taglib/aui/fieldset/start.jsp)
-was inlined in
-[this commit](https://github.com/liferay/liferay-portal/commit/7fba0775bcc1d1a0bc4d107cabfb41a90f15937c#diff-2ad802b4c0d8f7a2da45b895e89d6e46).
-
-$$$
+| **Tip:** A `*Tag.java` file's history might reveal original JSP code that was
+| inlined. For example, the logic from `fieldset` tag's
+| [`start.jsp`](https://github.com/liferay/liferay-portal/blob/df22ba66eff49b76404cfda908d3cd024efbebd9/portal-web/docroot/html/taglib/aui/fieldset/start.jsp)
+| was inlined in
+| [this commit](https://github.com/liferay/liferay-portal/commit/7fba0775bcc1d1a0bc4d107cabfb41a90f15937c#diff-2ad802b4c0d8f7a2da45b895e89d6e46).
 
 On deploying the `start.jsp`, the `fieldset` tags render the same as they did
 before. This is expected because it uses the same logic as `FieldsetTag`'s
@@ -232,8 +216,8 @@ Redeploy the JSP and refresh the page to see the text printed above the
 You know how to override specific @product@ core inline content using Liferay's
 `.jsp.readme` files. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Customizing JSPs with Dynamic Includes](/develop/tutorials/-/knowledge_base/7-1/customizing-jsps-with-dynamic-includes)
+[Customizing JSPs with Dynamic Includes](/docs/7-1/tutorials/-/knowledge_base/t/customizing-jsps-with-dynamic-includes)
 
-[JSP Overrides Using Portlet Filters](/develop/tutorials/-/knowledge_base/7-1/jsp-overrides-using-portlet-filters)
+[JSP Overrides Using Portlet Filters](/docs/7-1/tutorials/-/knowledge_base/t/jsp-overrides-using-portlet-filters)

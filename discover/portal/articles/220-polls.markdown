@@ -1,4 +1,8 @@
-# Polls [](id=polls)
+---
+header-id: polls
+---
+
+# Polls
 
 How can The Lunar Resort stay connected with its earthbound clientèle from
 239,000 miles away? Make them feel really involved and enthusiastic about the
@@ -11,7 +15,7 @@ with your site's content.
 Two applications make and display a poll: the *Polls* application in the Site
 Menu and the *Polls Display* widget you add to a page.
 
-## Creating a Poll [](id=creating-a-poll)
+## Creating a Poll
 
 From the Site Menu, go to *Content* &rarr; *Polls*. 
 
@@ -49,7 +53,7 @@ only view it.
 Creating a poll is fairly straightforward. Next, complete the two-step
 process and put your poll on a page.
 
-## Adding a Poll to a Page [](id=adding-a-poll-to-a-page)
+## Adding a Poll to a Page
 
 Now that you have created your poll question, you can present it to your users:
 
@@ -75,7 +79,7 @@ choose different polls from the drop-down menu.
 
 **Add:** Allows you to create a new poll. 
 
-## Viewing Poll Results [](id=viewing-the-poll-results)
+## Viewing Poll Results
 
 All the polls you create appear in the Polls portlet in the Site Menu &rarr;
 *Content* &rarr; *Polls*. When users vote in the poll, the data is collected

@@ -1,16 +1,16 @@
-# Building Your Theme's Files [](id=building-your-themes-files)
+---
+header-id: building-your-themes-files
+---
+
+# Building Your Theme's Files
 
 The `gulp build` task generates the base theme files, compiles Sass into CSS, 
 and zips all theme files into a WAR file that you can deploy to your server. 
 
-+$$$
-
-**Note:** Gulp is included as a local dependency in generated themes, so you 
-are not required to install it. It can be accessed by running 
-`node_modules\.bin\gulp` followed by the Gulp task from a generated theme's 
-root folder.
-
-$$$
+| **Note:** Gulp is included as a local dependency in generated themes, so you
+| are not required to install it. It can be accessed by running
+| `node_modules\.bin\gulp` followed by the Gulp task from a generated theme's
+| root folder.
 
 Follow these steps to build your theme's files:
 
@@ -28,10 +28,10 @@ Follow these steps to build your theme's files:
     
 ![Figure 3: The dist folder contains your theme's WAR file.](../../../../images/theme-dev-building-themes-dist-folder.png)
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Automatically Deploying Theme Changes](/develop/tutorials/-/knowledge_base/7-1/automatically-deploying-theme-changes)
+[Automatically Deploying Theme Changes](/docs/7-1/tutorials/-/knowledge_base/t/automatically-deploying-theme-changes)
 
-[Copying an Existing Theme's Files](/develop/tutorials/-/knowledge_base/7-1/copying-an-existing-themes-files)
+[Copying an Existing Theme's Files](/docs/7-1/tutorials/-/knowledge_base/t/copying-an-existing-themes-files)
 
-[Deploying Themes](/develop/tutorials/-/knowledge_base/7-1/deploying-your-theme)
+[Deploying Themes](/docs/7-1/tutorials/-/knowledge_base/t/deploying-your-theme)

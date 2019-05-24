@@ -1,4 +1,8 @@
-# Sanitizing User Data [](id=sanitizing-user-data)
+---
+header-id: sanitizing-user-data
+---
+
+# Sanitizing User Data
 
 One of the technically challenging requirements of the General Data Protection
 Regulation (GDPR) is _the right to be forgotten_. The purpose of this article is
@@ -30,16 +34,12 @@ user-identifying data is inadequate for satisfying some of the GDPR requirements
 and is the primary reason why the data erasure functionality was added in
 @product-ver@.
 
-+$$$
-
-**Note:** Personal data erasure can help companies in their attempts to satisfy
-the requirements of GDPR. Using the data erasure tool described here provides no
-guarantee of compliance with the legal requirements of GDPR. Each company or
-individual whose website processes user personal data and is under the
-jurisdiction of GDPR must carefully determine the precise steps necessary to
-ensure they are fully compliant with GDPR.
-
-$$$
+| **Note:** Personal data erasure can help companies in their attempts to satisfy
+| the requirements of GDPR. Using the data erasure tool described here provides no
+| guarantee of compliance with the legal requirements of GDPR. Each company or
+| individual whose website processes user personal data and is under the
+| jurisdiction of GDPR must carefully determine the precise steps necessary to
+| ensure they are fully compliant with GDPR.
 
 To begin sanitizing a user's data,
 
@@ -55,14 +55,14 @@ To begin sanitizing a user's data,
 
 ![Figure 1: Sequentially complete five steps to complete the data erasure process.](../../../images/users-data-erasure.png)
 
-## Step 1: Deactivation [](id=step-1-deactivation)
+## Step 1: Deactivation
 
 Deactivating the User first ensures she doesn't create more content as you're
 sanitizing her from the system. Click *Deactivate User*.
 
 ![Figure 2: Deactivating the User kicks off the data erasure process.](../../../images/users-data-erasure3.png)
 
-## Step 2: Delete the User's Personal Site [](id=step-2-delete-the-users-personal-site)
+## Step 2: Delete the User's Personal Site
 
 The User's public (profile) and private (dashboard) pages are deleted when the
 User is deleted. Separating this step out allows the administrator to make sure
@@ -73,7 +73,7 @@ Personal Site*.
 
 ![Figure 3: The second step in personal data erasure is deleting the User personal Site.](../../../images/users-data-erasure1.png)
 
-## Step 3: Review Application Data [](id=step-3-review-application-data)
+## Step 3: Review Application Data
 
 There's no automated process for anonymizing application data (Blogs Entries,
 Wiki Pages, etc.). The administrator must review the User Associated Data (UAD:
@@ -121,7 +121,7 @@ needed to review. Click the *Complete Step* button once finished.
 
 ![Figure 7: Click *Complete Step* once all of the User's application data is reviewed and dealt with.](../../../images/users-data-review-complete.png)
 
-## Step 4: Anonymize Remaining Data [](id=step-4-anonymize-remaining-data)
+## Step 4: Anonymize Remaining Data
 
 In step 4, you must click *Anonymize Data*. This completes the anonymization
 process for remaining database references to the User's Name and ID. Some
@@ -130,7 +130,7 @@ they don't make sense once the User is deleted.
 
 ![Figure 8: Anonymize any remaining use of the User's identifier's remaining in the database.](../../../images/users-data-erasure4.png)
 
-## Step 5: Delete User [](id=step-5-delete-user)
+## Step 5: Delete User
 
 Once all data is reviewed, deleted, edited, and/or anonymized as appropriate,
 delete the User. This step is simple: Click *Delete User*.

@@ -1,4 +1,8 @@
-# Invoking Liferay Services in Your Android App [](id=invoking-liferay-services-in-your-android-app)
+---
+header-id: invoking-liferay-services-in-your-android-app
+---
+
+# Invoking Liferay Services in Your Android App
 
 Once the appropriate Mobile SDKs are set up in your Android project, you can 
 access and invoke @product@ services in your app. This tutorial takes you 
@@ -12,18 +16,18 @@ Since some service calls require special treatment, this tutorial also shows you
 how to handle them. But first, you'll learn about securing @product@'s JSON web 
 services in the portal. 
 
-## Securing JSON Web Services [](id=securing-json-web-services)
+## Securing JSON Web Services
 
 The Liferay Mobile SDK calls @product@'s JSON web services, which are enabled by 
 default. The web services you call via the Mobile SDK must remain enabled for 
 those calls to work. It's possible, however, to disable the web services that 
 you don't need to call. For instructions on this, see the tutorial 
-[Configuring JSON Web Services](/develop/tutorials/-/knowledge_base/7-1/configuring-json-web-services). 
+[Configuring JSON Web Services](/docs/7-1/tutorials/-/knowledge_base/t/configuring-json-web-services). 
 You can also use 
-[Service Access Policies](/develop/tutorials/-/knowledge_base/7-1/service-access-policies) 
+[Service Access Policies](/docs/7-1/tutorials/-/knowledge_base/t/service-access-policies) 
 for more fine-grained control over accessible services. 
 
-## Step 1: Create a Session [](id=step-1-create-a-session)
+## Step 1: Create a Session
 
 A session is a conversion state between the client and server, that consists of 
 multiple requests and responses between the two. You need a session to pass 
@@ -44,14 +48,10 @@ running your app on Android Studio's emulator, `http://10.0.2.2:8080` is
 equivalent to `http://localhost:8080`. Be sure to replace this with the correct 
 address for your server.
 
-+$$$
-
-**Warning:** Be careful when using administrator credentials on a production 
-Liferay instance, as you'll have permission to call any service. Make sure not 
-to modify data by accident. Of course, the default administrator credentials 
-should be disabled on a production Liferay instance. 
-
-$$$
+| **Warning:** Be careful when using administrator credentials on a production
+| Liferay instance, as you'll have permission to call any service. Make sure not
+| to modify data by accident. Of course, the default administrator credentials
+| should be disabled on a production Liferay instance.
 
 The second parameter creates a new `BasicAuthentication` object containing the 
 user's credentials. Depending on the authentication method used by your Liferay 
@@ -92,7 +92,7 @@ after a successful sign-in.
 Next, you're shown how to create an unauthenticated session in the limited cases 
 where this is possible. 
 
-### Creating an Unauthenticated Session [](id=creating-an-unauthenticated-session)
+### Creating an Unauthenticated Session
 
 In some cases, it's possible to create a `Session` instance without user 
 credentials. However, most Liferay remote methods don't accept unauthenticated 
@@ -119,7 +119,7 @@ URL only:
 Fantastic! Now that you have a session, you can use it to call Liferay's 
 services.
 
-## Step 2: Import the Liferay Services You Need [](id=step-2-import-the-liferay-services-you-need)
+## Step 2: Import the Liferay Services You Need
 
 First, you should determine the Liferay services you need to call. You can find 
 the available services at 
@@ -140,7 +140,7 @@ SDK is compatible with Liferay 6.2. Mobile SDK classes compatible with Liferay
 7.0 use the `v7` package. This namespacing lets your app support multiple 
 Liferay versions. 
 
-## Step 3: Create a Service Object and Call its Service Methods [](id=step-3-create-a-service-object-and-call-its-service-methods)
+## Step 3: Create a Service Object and Call its Service Methods
 
 Once you have a session and the required imports, you're ready to make the 
 service call. This is done by creating a service object for the service you want 
@@ -166,14 +166,14 @@ the method only returns after the request finishes. However, Android doesn't
 allow network communication from an app's main UI thread. Service calls issued 
 from the main UI thread need need to be asynchronous. For instructions on doing 
 this, see the tutorial 
-[Invoking Services Asynchronously from Your Android App](/develop/tutorials/-/knowledge_base/7-1/invoking-services-asynchronously-from-your-android-app).
+[Invoking Services Asynchronously from Your Android App](/docs/7-1/tutorials/-/knowledge_base/t/invoking-services-asynchronously-from-your-android-app).
 
 Great! Now you're familiar with the basics of accessing Liferay services through 
 the Mobile SDK. However, there are some special cases you may run into when 
 making service calls from your app. These are discussed in the following 
 sections. 
 
-## Non-Primitive Arguments [](id=non-primitive-arguments)
+## Non-Primitive Arguments
 
 There are some special cases in which a service method's arguments aren't 
 primitives. In these cases, you should use `JSONObjectWrapper`. For example: 
@@ -195,7 +195,7 @@ The server looks for the class name in its classpath and instantiates the object
 for you. It then calls setters, as in the previous example. The abstract class 
 `OrderByComparator` is a good example of this. This is discussed next. 
 
-### OrderByComparator [](id=orderbycomparator)
+### OrderByComparator
 
 On the server side, `OrderByComparator` is an abstract class. You must therefore 
 pass the name of a class that implements it. For example: 
@@ -224,7 +224,7 @@ the following code:
 For more examples, see the test case 
 [`OrderByComparatorTest.java`](https://github.com/liferay/liferay-mobile-sdk/blob/master/android/src/test/java/com/liferay/mobile/android/OrderByComparatorTest.java).
 
-### ServiceContext [](id=servicecontext)
+### ServiceContext
 
 Another non-primitive argument is `ServiceContext`. It requires special 
 attention because most Liferay service methods require it. However, you aren't 
@@ -243,7 +243,7 @@ to a new `JSONObject` and then passing it as the `ServiceContext` argument:
 For more examples, see the test case 
 [`ServiceContextTest.java`](https://github.com/liferay/liferay-mobile-sdk/blob/master/android/src/test/java/com/liferay/mobile/android/ServiceContextTest.java).
 
-### Binaries [](id=binaries)
+### Binaries
 
 Some Liferay services require argument types such as byte arrays (`byte[]`) and
 Files (`java.io.File`).
@@ -301,10 +301,10 @@ For more examples on this subject, see the `addFileEntry*` methods in
 As you can see, the Mobile SDK does a great deal of work for you even when 
 special service method arguments are required.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Invoking Services Asynchronously from Your Android App](/develop/tutorials/-/knowledge_base/7-1/invoking-services-asynchronously-from-your-android-app)
+[Invoking Services Asynchronously from Your Android App](/docs/7-1/tutorials/-/knowledge_base/t/invoking-services-asynchronously-from-your-android-app)
 
-[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/7-1/building-mobile-sdks)
+[Building Mobile SDKs](/docs/7-1/tutorials/-/knowledge_base/t/building-mobile-sdks)
 
-[Creating iOS Apps that Use the Mobile SDK](/develop/tutorials/-/knowledge_base/7-1/creating-ios-apps-that-use-the-mobile-sdk)
+[Creating iOS Apps that Use the Mobile SDK](/docs/7-1/tutorials/-/knowledge_base/t/creating-ios-apps-that-use-the-mobile-sdk)

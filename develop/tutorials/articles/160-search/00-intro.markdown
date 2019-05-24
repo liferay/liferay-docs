@@ -1,4 +1,8 @@
-# Search [](id=introduction-to-liferay-search)
+---
+header-id: introduction-to-liferay-search
+---
+
+# Search
 
 Liferay stores its information in a database, so why not search the database
 directly? Why add the complexity of a search engine? First, because database
@@ -18,7 +22,7 @@ enabling your custom entities to be indexed and searched in @product@, and
 configuring the developer-friendly embedded Elasticsearch server to suit your
 needs. First, some basic search concepts.
 
-## Basic Search Concepts [](id=basic-search-concepts)
+## Basic Search Concepts
 
 **Indexing**: During indexing, a document is sent to the search engine. This
 document contains a collection of fields of various types (string, etc.). The
@@ -42,7 +46,7 @@ queries and filters. During this process, the engine may perform special
 analysis prior to executing the query (search time analysis). Search time
 analysis can be configured for each field (see Mapping Definitions).
 
-## Mapping Definitions [](id=mapping-definitions)
+## Mapping Definitions
 
 Search engines are semi-intelligent, automatically deciphering how to
 process documents passed to them. However, there are instances where it's
@@ -73,7 +77,7 @@ These are default mapping files that are shipped with the product. You can
 further customize these mappings to fit your needs. For example, you might want
 to use a special analyzer for a custom inventory number field.
 
-## Liferay Search Infrastructure [](id=liferay-search-infrastructure)
+## Liferay Search Infrastructure
 
 Search engines already provide native APIs. Why does Liferay provide search
 infrastructure to wrap the search engine? Liferay's search infrastructure does

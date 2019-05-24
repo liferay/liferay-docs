@@ -1,4 +1,8 @@
-# Accessing the Liferay Session in Android [](id=accessing-the-liferay-session-in-android)
+---
+header-id: accessing-the-liferay-session-in-android
+---
+
+# Accessing the Liferay Session in Android
 
 A session is a conversation state between the client and server. It typically 
 consists of multiple requests and responses between the two. To facilitate this 
@@ -18,7 +22,7 @@ showing a Login Screenlet.
 This tutorial explains some common `SessionContext` use cases, and and also 
 describes the class's most important methods. 
 
-## Creating a Session from an Existing Session [](id=creating-a-session-from-an-existing-session)
+## Creating a Session from an Existing Session
 
 When working with Liferay Screens, you may wish to call the remote JSON web 
 services provided by the Liferay Mobile SDK. Every operation with the Liferay 
@@ -42,7 +46,7 @@ you're not using the Login Screenlet? There won't be an existing session to
 retrieve. No sweat! You can still use `SessionContext` to create one manually. 
 The next section shows you how to do this. 
 
-## Creating a Session Manually [](id=creating-a-session-manually)
+## Creating a Session Manually
 
 If you don't use the Login Screenlet, then `SessionContext` doesn't have a 
 session for you to retrieve. In this case, you must create one manually. You can 
@@ -69,7 +73,7 @@ Note that you can achieve the same thing by calling the interactor directly:
 Super! Now you know how to create a session manually. The next section shows you 
 how to implement auto-login, and save or restore a session. 
 
-## Implementing Auto-login and Saving or Restoring a Session [](id=implementing-auto-login-and-saving-or-restoring-a-session)
+## Implementing Auto-login and Saving or Restoring a Session
 
 Although the Login Screenlet is awesome, your users may not want to enter their 
 credentials every time they open your app. It's very common for apps to only 
@@ -98,7 +102,7 @@ For more information on available `SessionContext` methods, see the
 at the end of this tutorial. Next, you'll learn how to implement relogin for 
 cases where a user's credentials change on the server while they're logged in. 
 
-## Implementing Relogin [](id=implementing-relogin)
+## Implementing Relogin
 
 A session, whether created via Login Screenlet or auto-login, contains basic 
 user data that verifies the user in the Liferay instance. If that data changes 
@@ -140,7 +144,7 @@ handy `SessionContext` can be. It can do even more! The next section lists some
 additional `SessionContext` methods, and some more detail on the ones used in 
 this tutorial. 
 
-## Methods [](id=methods)
+## Methods
 
 | Method | Return Type | Explanation |
 |--------|-------------|-------------| 
@@ -157,8 +161,8 @@ this tutorial.
 For more information, see the 
 [`SessionContext` source code in GitHub](https://github.com/liferay/liferay-screens/blob/master/android/library/core/src/main/java/com/liferay/mobile/screens/context/SessionContext.java).
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Login Screenlet for Android](/develop/reference/-/knowledge_base/7-1/loginscreenlet-for-android)
+[Login Screenlet for Android](/docs/7-1/reference/-/knowledge_base/r/loginscreenlet-for-android)
 
-[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/7-1/using-screenlets-in-android-apps)
+[Using Screenlets in Android Apps](/docs/7-1/tutorials/-/knowledge_base/t/using-screenlets-in-android-apps)

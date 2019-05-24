@@ -1,4 +1,8 @@
-# Search Results [](id=search-results)
+---
+header-id: search-results
+---
+
+# Search Results
 
 The ideal search experience involves a User entering a search term, waiting an
 infinitesimal amount of time, and having the perfectly matching asset delivered
@@ -17,7 +21,7 @@ queries are constructed to look up the assets in @product@.
 The Search Results behavior configurable through the UI is covered in this
 section:
 
-- [Search Results Display Settings](/discover/portal/-/knowledge_base/7-1/display-settings)
+- [Search Results Display Settings](/docs/7-1/user/-/knowledge_base/u/display-settings)
 
-- [Search Results Behavior](/discover/portal/-/knowledge_base/7-1/search-results-behavior)
+- [Search Results Behavior](/docs/7-1/user/-/knowledge_base/u/search-results-behavior)
 

@@ -1,4 +1,8 @@
-# User Groups and Site Membership [](id=user-groups-and-site-membership)
+---
+header-id: user-groups-and-site-membership
+---
+
+# User Groups and Site Membership
 
 User groups are used to manage Site membership. When you assign a user group 
 to a Site, the group's users become members of that Site. This is one of the 

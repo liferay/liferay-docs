@@ -1,4 +1,8 @@
-# Portlet Descriptor to OSGi Service Property Map [](id=portlet-descriptor-to-osgi-service-property-map)
+---
+header-id: portlet-descriptor-to-osgi-service-property-map
+---
+
+# Portlet Descriptor to OSGi Service Property Map
 
 This article maps portlet XML descriptor values to OSGi service properties for
 publishing OSGi Portlets. 
@@ -30,7 +34,7 @@ This article covers these descriptor mappings:
 
 The standard portlet descriptor mappings are first. 
 
-## Portlet Descriptor Mappings [](id=jsr-168-jsr-286-descriptor-mappings)
+## Portlet Descriptor Mappings
 
 **Note:** XPath notation derived from the **Portlet XSD** [4](#four) is used in
 this document for simplicity.
@@ -78,15 +82,15 @@ this document for simplicity.
 |`/portlet-app/portlet/supports/portlet-mode`|`javax.portlet.portlet-mode=<mime-type>;<portlet-mode>[,<portlet-mode>]*`|
 |`/portlet-app/portlet/supports/window-state`|`javax.portlet.window-state=<mime-type>;<window-state>[,<window-state>]*`|
 
-## Liferay Descriptor Mappings [](id=liferay-descriptor-mappings)
+## Liferay Descriptor Mappings
 
-### Liferay Display [](id=liferay-display)
+### Liferay Display
 
 |liferay-display.xml XPath | OSGi Portlet Service Property|
 |----|----|
 |`/display/category[@name]`|`com.liferay.portlet.display-category=<value>`|
 
-### Liferay Portlet [](id=liferay-portlet)
+### Liferay Portlet
 
 **Note:** XPath notation derived from **Liferay Portlet** [5](#five) is used in
 this document for simplicity.

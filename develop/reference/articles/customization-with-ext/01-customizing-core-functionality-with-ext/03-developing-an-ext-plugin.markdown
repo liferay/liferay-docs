@@ -1,4 +1,8 @@
-# Developing an Ext Plugin [](id=developing-an-ext-plugin)
+---
+header-id: developing-an-ext-plugin
+---
+
+# Developing an Ext Plugin
 
 An Ext plugin changes @product@ itself when the plugin is deployed; it's not a
 separate component that you can easily remove at any time. For this reason, the
@@ -26,10 +30,10 @@ type to accomplish your goals whenever possible.
 
 Now it's time to set up the build environment. 
 
-## Set Up the Build Environment [](id=set-up-the-build-environment)
+## Set Up the Build Environment
 
 If you're leveraging
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace),
+[Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace),
 you should create/develop your Ext module project in the `/ext` folder
 (default); you can specify a different Ext folder name in workspace's
 `gradle.properties` by adding
@@ -44,7 +48,7 @@ with Liferay Workspace), you must declare the Ext Gradle plugin in your
 
 Next you'll explore an Ext plugin's advanced configuration files.
 
-## Using Advanced Configuration Files [](id=using-advanced-configuration-files)
+## Using Advanced Configuration Files
 
 @product@ uses several internal configuration files for its own architecture; in
 addition, there are configuration files for the libraries and frameworks
@@ -76,7 +80,7 @@ to the original file in @product@:
       to configure appenders for log file location, naming, and rotation. See
       the
       [Log4j XML Configuration Primer](https://wiki.apache.org/logging-log4j/Log4jXmlFormat). 
-      [Increasing or decreasing the log level of a class or class hierarchy](/develop/tutorials/-/knowledge_base/7-1/adjusting-module-logging)
+      [Increasing or decreasing the log level of a class or class hierarchy](/docs/7-1/tutorials/-/knowledge_base/t/adjusting-module-logging)
       is best done outside of an Ext plugin, in @product@'s' UI or a Log4j XML
       file in a module or the `osgi/log4j` folder. 
     - **Original file in Liferay:** `portal-impl/src/META-INF/portal-log4j.xml`

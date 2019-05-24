@@ -1,4 +1,8 @@
-# Understanding ServiceContext [](id=understanding-servicecontext)
+---
+header-id: understanding-servicecontext
+---
+
+# Understanding ServiceContext
 
 The `ServiceContext` class holds contextual information for a service. It
 aggregates information necessary for features used throughout Liferay's
@@ -12,7 +16,7 @@ covers the following `ServiceContext` class topics:
 
 The `ServiceContext` fields are first.
 
-## Service Context Fields [](id=service-context-fields)
+## Service Context Fields
 
 The `ServiceContext` class has many fields. The
 [`ServiceContext` class Javadoc](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/service/ServiceContext.html)
@@ -75,7 +79,7 @@ Here's a categorical listing of some commonly used Service Context fields:
 Are you wondering how the `ServiceContext` fields get populated? Good! You'll
 learn about that next. 
 
-## Creating and Populating a Service Context [](id=creating-and-populating-a-service-context)
+## Creating and Populating a Service Context
 
 Although all the `ServiceContext` class fields are optional, services that store
 data with scope must at least specify the scope group ID. Here's an example of
@@ -114,7 +118,7 @@ portletRequest)`, you can assure that your Expando bridge attributes are set on
 the `ServiceContext`. Expandos are the back-end implementation of custom fields
 for entities in Liferay.
 
-## Creating and Populating a Service Context in JavaScript [](id=creating-and-populating-a-service-context-in-javascript)
+## Creating and Populating a Service Context in JavaScript
 
 Liferay's API can be invoked in languages other than Java. Some methods require
 or allow a `ServiceContext` parameter. If you're invoking such a method via
@@ -162,12 +166,12 @@ curl, or click on *URL example* to see how to invoke the web service via a URL.
 ![Figure 1: When you invoke a service from Liferay's JSON web services page, you can view the result of your service invocation as well as example code for invoking the service via JavaScript, curl, or URL.](../../../images/jsonws-simple-example.png) 
 
 To learn more about Liferay's JSON web services, see the
-[JSON Web Services](/develop/tutorials/-/knowledge_base/7-1/registering-json-web-services)
+[JSON Web Services](/docs/7-1/tutorials/-/knowledge_base/t/registering-json-web-services)
 tutorial.
 
 Next, you'll learn how to access information from a `ServiceContext` object. 
 
-## Accessing Service Context Data [](id=accessing-service-context-data)
+## Accessing Service Context Data
 
 In this section, you'll find code snippets from
 `BlogsEntryLocalServiceImpl.addEntry(..., ServiceContext)`. This code
@@ -274,8 +278,8 @@ information for your services. Understanding how `ServiceContext` is used in
 Liferay helps you determine when and how to use `ServiceContext` in your own
 Liferay application development.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating Local Services](/develop/tutorials/-/knowledge_base/7-1/creating-local-services)
+[Creating Local Services](/docs/7-1/tutorials/-/knowledge_base/t/creating-local-services)
 
-[Invoking Local Services](/develop/tutorials/-/knowledge_base/7-1/invoking-local-services)
+[Invoking Local Services](/docs/7-1/tutorials/-/knowledge_base/t/invoking-local-services)

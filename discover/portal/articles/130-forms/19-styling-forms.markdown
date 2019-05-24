@@ -1,7 +1,11 @@
-# Styling Form Pages [](id=styling-form-pages)
+---
+header-id: styling-form-pages
+---
+
+# Styling Form Pages
 
 Let's face it: nobody likes an ugly, confusing form. Styling your 
-[form pages](/discover/portal/-/knowledge_base/7-1/form-pages) 
+[form pages](/docs/7-1/user/-/knowledge_base/u/form-pages) 
 lets you make your forms user friendly. There are two features for styling your
 forms: 
 

@@ -1,4 +1,8 @@
-# Setting up Your npm Environment [](id=setting-up-your-npm-environment)
+---
+header-id: setting-up-your-npm-environment
+---
+
+# Setting up Your npm Environment
 
 If you're using npm for development in @product@, you should set up your npm 
 environment to avoid potential permissions issues. Follow these steps to 

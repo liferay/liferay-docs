@@ -1,4 +1,8 @@
-# Autocompleting Text Fields [](id=autocompleting-text-fields)
+---
+header-id: autocompleting-text-fields
+---
+
+# Autocompleting Text Fields
 
 It's been scientifically proven that Internet users are lazy (not you, of 
 course---other Internet users). For example, some users may not fill out your 
@@ -18,12 +22,12 @@ appears. Autocomplete combines a text field (accepting any response that meets
 your validation criteria) and common choices to select from. It's a win-win
 situation. 
 
-## Configuring Autocomplete [](id=configuring-autocomplete)
+## Configuring Autocomplete
 
 Before configuring autocomplete for your text fields, 
-[create a form and add a text field](/discover/portal/-/knowledge_base/7-1/creating-and-managing-forms). 
+[create a form and add a text field](/docs/7-1/user/-/knowledge_base/u/creating-and-managing-forms). 
 If you want the autocomplete options to be populated by a REST data provider,
-[configure one](/discover/portal/-/knowledge_base/7-1/data-providers) 
+[configure one](/docs/7-1/user/-/knowledge_base/u/data-providers) 
 before creating your form. Now you're ready to configure autocomplete for the
 field: 
 
@@ -33,7 +37,7 @@ field:
 
 3.  Select a data provider or create one manually. You can set up a data 
     provider from a 
-    [REST service](/discover/portal/-/knowledge_base/7-1/data-providers), 
+    [REST service](/docs/7-1/user/-/knowledge_base/u/data-providers), 
     or manually enter the options users should see when they start typing in the 
     text field. 
 

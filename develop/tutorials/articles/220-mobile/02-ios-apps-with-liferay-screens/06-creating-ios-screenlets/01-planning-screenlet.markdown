@@ -1,4 +1,8 @@
-# Planning Your iOS Screenlet [](id=planning-your-ios-screenlet)
+---
+header-id: planning-your-ios-screenlet
+---
+
+# Planning Your iOS Screenlet
 
 Before creating your Screenlet, you must determine what it needs to do and how 
 you want developers to use it. This determines where you'll create your 
@@ -8,7 +12,7 @@ Where you should create your Screenlet depends on how you plan to use it. If you
 want to reuse or redistribute it, you should create it in an empty Cocoa Touch
 Framework project in Xcode. You can then use CocoaPods to publish it. The 
 tutorial 
-[Packaging iOS Themes](/develop/tutorials/-/knowledge_base/7-1/packaging-ios-themes)
+[Packaging iOS Themes](/docs/7-1/tutorials/-/knowledge_base/t/packaging-ios-themes)
 explains how to publish an iOS Screenlet. Even though that tutorial refers to
 Themes, the steps for preparing Screenlets for publication are the same. If you
 don't plan to reuse or redistribute your Screenlet, create it in your app's
@@ -38,7 +42,7 @@ parameters:
 -   `description`: The new bookmark's description. 
 
 -   `serviceContext`: A Liferay 
-    [`ServiceContext`](/develop/tutorials/-/knowledge_base/7-1/understanding-servicecontext) 
+    [`ServiceContext`](/docs/7-1/tutorials/-/knowledge_base/t/understanding-servicecontext) 
     object. 
 
 Add Bookmark Screenlet must therefore account for each of these parameters. When 

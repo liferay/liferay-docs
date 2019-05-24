@@ -1,4 +1,8 @@
-# Using Liferay Sync on Your Desktop [](id=using-liferay-sync-on-your-desktop)
+---
+header-id: using-liferay-sync-on-your-desktop
+---
+
+# Using Liferay Sync on Your Desktop
 
 Liferay Sync synchronizes files between your @product@ Sites and desktop 
 devices. It lets you work with your files without using a browser. The Sync 

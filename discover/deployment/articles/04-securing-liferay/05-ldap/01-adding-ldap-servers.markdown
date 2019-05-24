@@ -1,4 +1,8 @@
-# Adding LDAP Servers [](id=adding-ldap-servers)
+---
+header-id: adding-ldap-servers
+---
+
+# Adding LDAP Servers
 
 Click on the *Add* button beneath the LDAP Servers heading to add an LDAP
 server connection. If you have more than one LDAP server, you can arrange the
@@ -38,7 +42,7 @@ enough data to synchronize back to the @product@ database when a user attempts
 to log in. To test the connection to your LDAP server, click the *Test LDAP
 Connection* button.
 
-## Checkpoint [](id=checkpoint)
+## Checkpoint
 
 Before proceeding to fine tune @product@'s LDAP connections, ensure the
 following steps have been taken:
@@ -55,7 +59,7 @@ following steps have been taken:
     *Connection* values are correct. It is always a good idea to click the *Test
     LDAP Connection* before saving.
 
-## Security [](id=security)
+## Security
 
 If you run your LDAP directory in SSL mode to prevent credential information
 from passing through the network unencrypted, you must perform extra steps to
@@ -83,12 +87,12 @@ LDAP URL in the Base DN field to the secure version by changing the protocol to
 
 Save the changes. Communication to LDAP is now encrypted. 
 
-## Configuring LDAP Import/Export [](id=configuring-ldap-import-export)
+## Configuring LDAP Import/Export
 
 The other settings configure mappings between LDAP and @product@ so users and
 groups can be imported. 
 
-### Users [](id=users)
+### Users
 
 This section contains settings for finding users in your LDAP directory.
 
@@ -149,7 +153,7 @@ match them with their mappings as a preview.
 
 ![Figure 1: Testing LDAP Users](../../../images/server-configuration-testing-ldap-users.png)
 
-### Groups [](id=groups)
+### Groups
 
 This section contains settings for mapping LDAP groups to @product@ user groups.
 
@@ -171,7 +175,7 @@ required, the *Description* is optional.
 **Test LDAP Groups:** Click the *Test LDAP Groups* button to display a list of
 the groups returned by your search filter.
 
-### Export [](id=export)
+### Export
 
 This section contains settings for exporting user data from LDAP.
 
@@ -193,19 +197,15 @@ a group and view the Object Class attributes stored in LDAP for that group.
 
 Once you set all your options and tested your connection, click *Save*. 
 
-+$$$
-
-**Note:** If a user changes a value like a password in @product@, that change is
-passed to the LDAP server, provided @product@ has enough schema access to make
-the change. 
-
-$$$
+| **Note:** If a user changes a value like a password in @product@, that change is
+| passed to the LDAP server, provided @product@ has enough schema access to make
+| the change.
 
 Now you know how to connect an LDAP server to @product@ and how to
 configure user import behavior, export behavior, and other LDAP settings.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[@product@ Security Overview](/discover/deployment/-/knowledge_base/7-0/liferay-portal-security-overview)
-[Logging into @product@](/discover/deployment/-/knowledge_base/7-0/logging-in-to-liferay)
+[@product@ Security Overview](/docs/7-0/deploy/-/knowledge_base/d/liferay-portal-security-overview)
+[Logging into @product@](/docs/7-0/deploy/-/knowledge_base/d/logging-in-to-liferay)
 

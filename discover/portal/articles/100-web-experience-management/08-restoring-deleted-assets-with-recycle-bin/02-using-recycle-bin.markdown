@@ -1,4 +1,8 @@
-# Using the Recycle Bin [](id=using-the-recycle-bin)
+---
+header-id: using-the-recycle-bin
+---
+
+# Using the Recycle Bin
 
 The Recycle Bin is temporary storage where assets go when you delete 
 them. You can recycle several different types of assets:
@@ -12,13 +16,9 @@ them. You can recycle several different types of assets:
 
 ![Figure 1: The Recycle Bin provides a seamless administrative experience for deleting and removing content.](../../../images/recycle-bin-overview.png)
 
-+$$$
-
-**Note:** Attachments added to Wiki and Message Board entries do not go to the
-Recycle Bin when they are deleted. They can be restored in a similar fashion 
-from the *Removed Attachments* menu within the application.
-
-$$$
+| **Note:** Attachments added to Wiki and Message Board entries do not go to the
+| Recycle Bin when they are deleted. They can be restored in a similar fashion
+| from the *Removed Attachments* menu within the application.
 
 To demonstrate using the Recycle Bin let's delete a web content article and 
 then restore it. You'll run through two different methods of restoring the file.
@@ -71,7 +71,7 @@ an *Empty the Recycle Bin* option accessible from the
 (![Options](../../../images/icon-options.png)) button at the top of the Recycle
 Bin screen. This permanently deletes all the files from the Recycle Bin.
 
-## Drag and Drop [](id=drag-and-drop)
+## Drag and Drop
 
 You can also drag and drop items into the Recycle Bin. While you're in the 
 Control Panel, select an asset and drag it to the Recycle Bin portlet on the 

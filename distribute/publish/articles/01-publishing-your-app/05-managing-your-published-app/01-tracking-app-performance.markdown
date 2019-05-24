@@ -1,4 +1,8 @@
-# Tracking App Performance [](id=tracking-app-performance)
+---
+header-id: tracking-app-performance
+---
+
+# Tracking App Performance
 
 One of the main reasons for developing and publishing apps on Marketplace is to
 drive app downloads and adoption. Marketplace gives you detailed reports on
@@ -14,7 +18,7 @@ data within the date range. Finally, the graphed data is also shown in tabular
 format, in case you want to know the exact values making up the graph. The
 different types of data available to view are described below.
 
-## Views [](id=views)
+## Views
 
 When someone searches or browses the Marketplace, they click on apps to see
 their details. When this occurs for an app, Marketplace records a *View* for
@@ -22,13 +26,13 @@ it. When you select *Views* in the App Metrics screen, the app view count over
 time appears. The App Metrics screen shows *Views* by default. The number of
 possible views per day per user is unlimited.
 
-## Downloads [](id=downloads)
+## Downloads
 
 Marketplace records a *Download* for your app when someone downloads any package
 of any version of your app. The number of possible downloads per day per user is
 unlimited.
 
-## Purchases [](id=purchases)
+## Purchases
 
 The Marketplace counts app purchases too. 
 

@@ -1,4 +1,8 @@
-# Archiving Site Resources [](id=archiving-your-sites-resources)
+---
+header-id: archiving-your-sites-resources
+---
+
+# Archiving Site Resources
 
 Although a `sitemap.json` is the recommended approach for including resources 
 with a theme, you can also export your site's data in a LAR (Liferay Archive) 
@@ -15,4 +19,4 @@ Then place the `archive.lar` file in your theme's
 require a `sitemap.json` file or any other files in your 
 `[theme-name]/src/WEB-INF/src/resources-importer` folder. 
 
-## Related Topics [](id=related-topics)
+## Related Topics

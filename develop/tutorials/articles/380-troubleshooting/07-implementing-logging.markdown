@@ -1,4 +1,8 @@
-# Implementing Logging [](id=implementing-logging)
+---
+header-id: implementing-logging
+---
+
+# Implementing Logging
 
 @product-ver@ uses the Log4j logging framework, but it may be replaced in the
 future. It's a best practice to use [Simple Logging Facade for Java
@@ -42,6 +46,6 @@ verbose, such as `info` and `debug`.
 
 You're all set to add logging to your modules and traditional plugins. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Adjusting Module Logging](/develop/tutorials/-/knowledge_base/7-1/adjusting-module-logging)
+[Adjusting Module Logging](/docs/7-1/tutorials/-/knowledge_base/t/adjusting-module-logging)

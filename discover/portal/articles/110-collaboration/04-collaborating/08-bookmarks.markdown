@@ -1,4 +1,8 @@
-# Bookmarking Sites [](id=bookmarking-sites)
+---
+header-id: bookmarking-sites
+---
+
+# Bookmarking Sites
 
 The Bookmarks widget provides a list of bookmarks that benefit your Site. For
 example, a Site that focuses on auto repair could use this widget to provide
@@ -6,7 +10,7 @@ bookmarks to technical manuals, part specifications, maintenance tips, and more.
 Administrators can create bookmarks in the widget, and users can access them.
 Both internal pages as well as external sites can be bookmarked. 
 
-## Creating Bookmarks and Folders [](id=creating-bookmarks-and-folders)
+## Creating Bookmarks and Folders
 
 To get started with the Bookmarks widget, first install it from Liferay 
 Marketplace. It's available for Liferay CE Portal and Liferay DXP via these 
@@ -17,7 +21,7 @@ links:
 -   [Liferay Bookmarks - DXP](https://web.liferay.com/marketplace/-/mp/application/106221974)
 
 See the 
-[Marketplace article](/discover/portal/-/knowledge_base/7-1/using-the-liferay-marketplace) 
+[Marketplace article](/docs/7-1/user/-/knowledge_base/u/using-the-liferay-marketplace) 
 if you need help using Marketplace to install apps. 
 
 After installing the Bookmarks widget, add it to a page. To do this, select 
@@ -46,7 +50,7 @@ Follow these steps to add a bookmark:
 3.  If you want to associate a tag with the bookmark, open the *Categorization* 
     section and use the *Select* button to select an existing tag. You can also 
     create a new tag by entering it in the *Tags* field and clicking *Add*. See 
-    [the documentation on tags](/discover/portal/-/knowledge_base/7-1/organizing-content-with-tags-and-categories) 
+    [the documentation on tags](/docs/7-1/user/-/knowledge_base/u/organizing-content-with-tags-and-categories) 
     for more information. 
 
 4.  If you want to select an existing portal asset (e.g., a media file, blog
@@ -74,7 +78,7 @@ You can also create folders for your bookmarks. Follow these steps:
 
 ![Figure 2: The Add Bookmark form lets you create a bookmark.](../../../images/bookmarks-add-bookmark.png)
 
-### Importing and Exporting Bookmarks [](id=importing-and-exporting-bookmarks)
+### Importing and Exporting Bookmarks
 
 Follow these steps to import or export bookmarks: 
 
@@ -84,9 +88,9 @@ Follow these steps to import or export bookmarks:
 
 2.  In the window that appears, start a new export or import process. For 
     details, 
-    [see the article on importing and exporting pages and content](/discover/portal/-/knowledge_base/7-1/importing-exporting-pages-and-content). 
+    [see the article on importing and exporting pages and content](/docs/7-1/user/-/knowledge_base/u/importing-exporting-pages-and-content). 
 
-## Managing Bookmarks and Folders [](id=managing-bookmarks-and-folders)
+## Managing Bookmarks and Folders
 
 The Bookmarks widget provides several ways to manage your bookmarks and folders. 
 One is the Management Bar. Selecting the checkbox on the left-hand side of the 

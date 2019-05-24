@@ -1,4 +1,8 @@
-# Using the Calendar Widget [](id=using-the-calendar-widget)
+---
+header-id: using-the-calendar-widget
+---
+
+# Using the Calendar Widget
 
 The calendar widget displays a small monthly calendar showing an overview of
 upcoming events. A larger area shows the Scheduler, a more detailed calendar
@@ -13,7 +17,7 @@ Site. These are displayed in the widget's lower left. Next to each calendar is
 a colored box: click it to show/hide that calendar's events in the main viewing
 area.
 
-## Adding New Calendars [](id=adding-new-calendars)
+## Adding New Calendars
 
 To create a new personal calendar,
 
@@ -35,7 +39,7 @@ Site's name.
 
 ![Figure 2: Personal and Site calendars are shown in the lower left. This image shows calendars belonging to User *Test Test* and Site *Liferay DXP*.](../../images/new-calendar-manage-calendars.png)
 
-## Adding Events to a Calendar [](id=adding-events-to-a-calendar)
+## Adding Events to a Calendar
 
 To add events to a calendar, 
 
@@ -56,13 +60,13 @@ To add events to a calendar,
 
     ![Figure 5: The *Repeat* box allows you to specify whether an events repeats daily, weekly, monthly, or yearly, how often it repeats, and when (or if) it ends.](../../images/new-calendar-event-repeat.png)
 
-### Additional Event Functions [](id=additional-event-functions)
+### Additional Event Functions
 
 At the bottom of the *Edit Event* form, there are several collapsed sections:
 *Details*, *Invitations*, *Reminders*, *Categorization*, and *Related
 Assets*.
 
-#### Details [](id=details)
+#### Details
 
 In the Details section, you can move the event to another calendar, enter
 a location, and configure the event's permissions.
@@ -71,7 +75,7 @@ Giving a user permission to add, delete, or update discussion allows them to
 make, edit and remove comments on the event. The *Permissions* permission
 allows a Role to update permissions for the event.
 
-#### Invitations [](id=invitations)
+#### Invitations
 
 In the invitations section, invite Users, Sites, or Calendar Resources (see the
 next tutorial for more on resources: in brief, a resource is anything you might
@@ -90,26 +94,26 @@ widget to respond. See below to customize the content of the invitation.
 When invitees respond to the invitation, their names move to the *Accepted*,
 *Declined*, or *Maybe* columns.
 
-#### Reminders [](id=reminders)
+#### Reminders
 
 Schedule up to two email reminders to send to attendees. Reminders translate
 the time of the event into the recipients own time zone.
 
 See below to customize the content of the reminder email.
 
-#### Categorization [](id=categorization)
+#### Categorization
 
 Tag your event or assign it to a category so it appears in appropriate search
 results and is published by any asset publisher set to publish content assigned
 to the same category.
 
-#### Related Assets [](id=related-assets)
+#### Related Assets
 
 List an asset---such as an agenda or supplementary material for a meeting---as
 related to your event. Links to related assets are displayed in the *Event
 Details* window.
 
-## Customizing Email Notifications [](id=customizing-email-notifications)
+## Customizing Email Notifications
 
 To customize email notifications for event invitations and reminders,
 

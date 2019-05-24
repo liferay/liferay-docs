@@ -1,4 +1,8 @@
-# Sharing Site Templates [](id=sharing-site-templates)
+---
+header-id: sharing-site-templates
+---
+
+# Sharing Site Templates
 
 If you want to export a Site that uses Site or Page Templates to a different
 environment (through a LAR file or remote publication), the templates must be
@@ -28,4 +32,4 @@ To export a Site using a Site Template, use the following process:
     file containing your Site template's content.
 
 Now the template can be used normally in the new environment. For more 
-information on exporting/importing content, visit the [Importing/Exporting Pages and Content](/discover/portal/-/knowledge_base/7-1/importing-exporting-pages-and-content) article.
+information on exporting/importing content, visit the [Importing/Exporting Pages and Content](/docs/7-1/user/-/knowledge_base/u/importing-exporting-pages-and-content) article.

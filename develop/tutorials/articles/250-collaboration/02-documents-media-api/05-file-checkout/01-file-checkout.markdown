@@ -1,4 +1,8 @@
-# File Check-out [](id=file-checkout)
+---
+header-id: file-checkout
+---
+
+# File Check-out
 
 Here's what happens when you check out a file: 
 
@@ -28,7 +32,7 @@ Follow these steps to use this method to check out a file:
         private DLAppService _dlAppService;
 
     For more information on this, see the section on 
-    [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
+    [getting a service reference](/docs/7-1/tutorials/-/knowledge_base/t/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
     in the getting started tutorial. 
 
 2.  Get the data needed to populate the `checkOutFileEntry` method's arguments. 
@@ -43,7 +47,7 @@ Follow these steps to use this method to check out a file:
         ServiceContext serviceContext = ServiceContextFactory.getInstance(actionRequest);
 
     For more information on `ServiceContext`, see the tutorial 
-    [Understanding ServiceContext](/develop/tutorials/-/knowledge_base/7-1/understanding-servicecontext). 
+    [Understanding ServiceContext](/docs/7-1/tutorials/-/knowledge_base/t/understanding-servicecontext). 
 
 3.  Call the service reference's `checkOutFileEntry` method with the data from 
     the previous step: 
@@ -59,7 +63,7 @@ this `checkOutFileEntries` method, as well as the rest of
 `EditFileEntryMVCActionCommand`, contains additional logic to suit the specific 
 needs of the Documents and Media app. 
 
-## Fine-tuning Checkout [](id=fine-tuning-checkout)
+## Fine-tuning Checkout
 
 You can control how the checkout is performed by setting the following 
 attributes in the `ServiceContext` parameter: 
@@ -75,7 +79,7 @@ attributes in the `ServiceContext` parameter:
     time, omit this attribute or set it to `0`. 
 
 -   `fileVersionUuid`: This is used by 
-    [staging](/discover/portal/-/knowledge_base/7-1/staging-content-for-publication), 
+    [staging](/docs/7-1/user/-/knowledge_base/u/staging-content-for-publication), 
     but can be ignored for normal use. Setting this attribute causes the system 
     to create the new private working copy version with the given UUID. 
 
@@ -85,10 +89,10 @@ Here's an example of setting the `manualCheckInRequired` attribute to `true`:
 
     serviceContext.setAttribute("manualCheckInRequired", Boolean.TRUE)
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[File Check-in](/develop/tutorials/-/knowledge_base/7-1/file-checkin)
+[File Check-in](/docs/7-1/tutorials/-/knowledge_base/t/file-checkin)
 
-[Cancelling a Check-out](/develop/tutorials/-/knowledge_base/7-1/cancelling-a-checkout)
+[Cancelling a Check-out](/docs/7-1/tutorials/-/knowledge_base/t/cancelling-a-checkout)
 
-[Updating Files](/develop/tutorials/-/knowledge_base/7-1/updating-files)
+[Updating Files](/docs/7-1/tutorials/-/knowledge_base/t/updating-files)

@@ -1,4 +1,8 @@
-# Injecting Additional Context Variables and Functionality into Your Templates [](id=injecting-additional-context-variables-into-your-templates)
+---
+header-id: injecting-additional-context-variables-into-your-templates
+---
+
+# Injecting Additional Context Variables and Functionality into Your Templates
 
 JSP templates are the predominant templating framework in @product@. Themes,
 application display templates (ADTs), DDM templates, and more make use of JSPs
@@ -40,7 +44,7 @@ First, you'll learn how to create your own context contributor, and then you'll
 examine one example of how @product@ uses context contributors.
 
 1.  Create a generic OSGi module using your favorite third party tool, or use
-    [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli).
+    [Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/blade-cli).
 
 2.  Create a unique package name in the module's `src` directory and create a
     new Java class in that package. To follow naming conventions, begin the
@@ -164,9 +168,9 @@ do the same with your custom context contributor. With the power to inject
 additional variables to any context in @product@, you're free to fully harness the
 power of your chosen templating language.
 
-## Related Topics [](id=related-topics)
-[Customizing the Product Menu](/develop/tutorials/-/knowledge_base/7-1/customizing-the-product-menu)
+## Related Topics
+[Customizing the Product Menu](/docs/7-1/tutorials/-/knowledge_base/t/customizing-the-product-menu)
 
-[Creating Themes](/develop/tutorials/-/knowledge_base/7-1/creating-themes)
+[Creating Themes](/docs/7-1/tutorials/-/knowledge_base/t/creating-themes)
 
-[Theme Contributors](/develop/tutorials/-/knowledge_base/7-1/packaging-independent-ui-resources-for-your-site)
+[Theme Contributors](/docs/7-1/tutorials/-/knowledge_base/t/packaging-independent-ui-resources-for-your-site)

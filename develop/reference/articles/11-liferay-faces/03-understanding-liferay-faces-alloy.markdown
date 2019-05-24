@@ -1,4 +1,8 @@
-# Understanding Liferay Faces Alloy [](id=understanding-liferay-faces-alloy)
+---
+header-id: understanding-liferay-faces-alloy
+---
+
+# Understanding Liferay Faces Alloy
 
 Liferay Faces Alloy is distributed in a `.jar` file. You can add Liferay Faces
 Alloy as a dependency to your portlet projects, in order to use AlloyUI in a
@@ -31,10 +35,10 @@ the `alloy:` tags.
 As you can see, it's extremely easy to configure your JSF application to use
 Liferay's AlloyUI tags. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating a JSF Project Manually](/develop/tutorials/-/knowledge_base/7-1/creating-a-jsf-project-manually)
+[Creating a JSF Project Manually](/docs/7-1/tutorials/-/knowledge_base/t/creating-a-jsf-project-manually)
 
-[Understanding Liferay Faces Bridge](/develop/reference/-/knowledge_base/7-1/understanding-liferay-faces-bridge)
+[Understanding Liferay Faces Bridge](/docs/7-1/reference/-/knowledge_base/r/understanding-liferay-faces-bridge)
 
-[Understanding Liferay Faces Portal](/develop/reference/-/knowledge_base/7-1/understanding-liferay-faces-portal)
+[Understanding Liferay Faces Portal](/docs/7-1/reference/-/knowledge_base/r/understanding-liferay-faces-portal)

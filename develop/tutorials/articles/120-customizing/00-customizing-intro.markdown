@@ -1,8 +1,12 @@
-# Customizing [](id=customizing)
+---
+header-id: customizing
+---
 
-[Portlets](/develop/tutorials/-/knowledge_base/7-1/portlets) are the main
+# Customizing
+
+[Portlets](/docs/7-1/tutorials/-/knowledge_base/t/portlets) are the main
 application platform, and
-[themes](/develop/tutorials/-/knowledge_base/7-1/themes-and-layout-templates)
+[themes](/docs/7-1/tutorials/-/knowledge_base/t/themes-and-layout-templates)
 let you style your sites. You can also modify existing behavior, globally and in
 the installed applications, as well as specify your own look and feel. 
 

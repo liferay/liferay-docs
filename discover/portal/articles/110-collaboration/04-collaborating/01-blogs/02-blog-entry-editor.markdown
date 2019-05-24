@@ -1,7 +1,11 @@
-# Using the Blog Entry Editor [](id=using-the-blog-entry-editor)
+---
+header-id: using-the-blog-entry-editor
+---
+
+# Using the Blog Entry Editor
 
 When you 
-[create a new blog entry](/discover/portal/-/knowledge_base/7-1/adding-blog-entries), 
+[create a new blog entry](/docs/7-1/user/-/knowledge_base/u/adding-blog-entries), 
 you create its content with the blog entry editor. This editor is simple yet 
 powerful. Its editing tools are context-aware, only appearing when you need 
 them. They aren't visible while you're writing, which lets you focus on the task 
@@ -17,7 +21,7 @@ This guide shows you how to use this editor to create and edit blog entries.
 
 ![Figure 1: This screenshot shows some of the blog entry editor's controls.](../../../../images/blogs-edit-entry.png)
 
-## Using the Editor's Text View [](id=using-the-editors-text-view)
+## Using the Editor's Text View
 
 When you create or edit a blog entry, the editor is in text view by default. 
 Text view is a WYSIWYG editor that lets you enter and edit text and other types 
@@ -52,7 +56,7 @@ instructions to insert each:
 -   **Image:** Click the mountain icon, then select or upload an image in the 
     image file selector screen that appears. Alternatively, you can 
     drag-and-drop image files into the content area. You can also use the 
-    [built-in Image Editor](/discover/portal/-/knowledge_base/7-1/editing-images) 
+    [built-in Image Editor](/docs/7-1/user/-/knowledge_base/u/editing-images) 
     to apply simple edits to an image. Any edits you make are automatically 
     applied to a copy of the image. After you add an image to the blog entry, 
     clicking the image brings up controls for justifying it to the right or left 
@@ -72,7 +76,7 @@ instructions to insert each:
     appears in your content. Such lines are good for separating sections of 
     content in a large blog entry. 
 
-## Using the Editor's Code View [](id=using-the-editors-code-view)
+## Using the Editor's Code View
 
 To switch to code view, click the the *Source* icon (`</>`) that appears when 
 you place your cursor in the Content area. The following buttons exist at the 

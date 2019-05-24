@@ -1,4 +1,8 @@
-# Example: Building an OSGi Module [](id=example-building-an-osgi-module)
+---
+header-id: example-building-an-osgi-module
+---
+
+# Example: Building an OSGi Module
 
 The previous sections explained some of the most important concepts for Liferay
 Portal 6 developers to understand about OSGi and modularity. Now it's time to
@@ -6,7 +10,7 @@ put this knowledge to practice by creating and deploying a module.
 
 The module includes a Java class that implements an OSGi service using
 Declarative Services. The project uses Gradle and bnd, and can be built and
-deployed from within a [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace).
+deployed from within a [Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace).
 
 Here's the module project's anatomy:
 
@@ -87,7 +91,7 @@ simple because Liferay Workspace module projects leverage the Workspace's Gradle
 build infrastructure.
 
 Although this module project was created for development in a
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/installing-liferay-workspace),
+[Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/installing-liferay-workspace),
 it can easily be modified to use in other build environments. 
 
 Place the project files in a subfolder of your Liferay Workspace's `modules`
@@ -98,13 +102,9 @@ task:
 
     ../../gradlew deploy
 
-+$$$
-
-**Note**: If Blade is installed (recommended), Gradle can be executed by
-entering `blade gw` followed by a task name (e.g., `blade gw deploy`). For
-details on Blade commands, see [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli).
-
-$$$
+| **Note**: If Blade is installed (recommended), Gradle can be executed by
+| entering `blade gw` followed by a task name (e.g., `blade gw deploy`). For
+| details on Blade commands, see [Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/blade-cli).
 
 On deploying the module, the following message is printed to the server console:
 

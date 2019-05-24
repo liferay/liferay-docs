@@ -1,11 +1,15 @@
-# Upgrading Model Listener Hooks [](id=upgrading-model-listener-hooks)
+---
+header-id: upgrading-model-listener-hooks
+---
+
+# Upgrading Model Listener Hooks
 
 Developers have been creating model listeners for several Liferay Portal
 versions. Upgrading Model Listener Hooks from previous portal versions has never
 been easier. 
 
 1.  Adapt your plugin to @product-ver@'s API using
-    [Liferay @ide@'s Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-1/adapting-to-liferay-7s-api-with-the-code-upgrade-tool).
+    [Liferay @ide@'s Code Upgrade Tool](/docs/7-1/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool).
 
 2.  Deploy the plugin.
 
@@ -14,12 +18,12 @@ Application Bundle (WAB) and installs it to Liferay's OSGi Runtime.
 
 Your model listener hook is "all ears" and ready to act. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating Model Listeners](/develop/tutorials/-/knowledge_base/7-1/model-listeners)
+[Creating Model Listeners](/docs/7-1/tutorials/-/knowledge_base/t/model-listeners)
 
-[Resolving a Plugin's Dependencies](/develop/tutorials/-/knowledge_base/7-1/resolving-a-plugins-dependencies)
+[Resolving a Plugin's Dependencies](/docs/7-1/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies)
 
-[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies)
+[Configuring Dependencies](/docs/7-1/tutorials/-/knowledge_base/t/configuring-dependencies)
 
-[Upgrading the Liferay Maven Build](/develop/tutorials/-/knowledge_base/7-1/upgrading-the-liferay-maven-build)
+[Upgrading the Liferay Maven Build](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-the-liferay-maven-build)

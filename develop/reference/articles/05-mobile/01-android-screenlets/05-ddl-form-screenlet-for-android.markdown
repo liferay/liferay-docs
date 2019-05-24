@@ -1,8 +1,12 @@
-# DDL Form Screenlet for Android [](id=ddlformscreenlet-for-android)
+---
+header-id: ddlformscreenlet-for-android
+---
+
+# DDL Form Screenlet for Android
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rHsreHmStLo" frameborder="0" allowfullscreen></iframe>
 
-## Requirements [](id=requirements)
+## Requirements
 
 - Android SDK 4.1 (API Level 16) or above
 - Liferay Portal 6.2 CE/EE, Liferay CE Portal 7.0/7.1, Liferay DXP
@@ -11,16 +15,16 @@
   [EE/DXP](http://www.liferay.com/marketplace/-/mp/application/54369726)). 
   This app is preinstalled in Liferay CE Portal 7.0/7.1 and Liferay DXP. 
 
-## Compatibility [](id=compatibility)
+## Compatibility
 
 - Android SDK 4.1 (API Level 16) or above
 
-## Xamarin Requirements [](id=xamarin-requirements)
+## Xamarin Requirements
 
 - Visual Studio 7.2
 - Mono .NET framework 5.4.1.6
 
-## Features [](id=features)
+## Features
 
 DDL Form Screenlet shows a set of fields that can be filled in by the user. 
 Initial or existing values can be shown in the fields. Fields of the following 
@@ -53,7 +57,7 @@ Screenlet. They are listed here:
 - Selection of multiple items in the Radio and Select data types isn't 
   supported. 
 
-## JSON Services Used [](id=json-services-used)
+## JSON Services Used
 
 Screenlets in Liferay Screens call JSON web services in the portal. This 
 Screenlet calls the following services and methods.
@@ -66,11 +70,11 @@ Screenlet calls the following services and methods.
 | `DDLRecordService` | `addRecord` | Submit form |
 | `DDLRecordService` | `updateRecord` | Update form |
 
-## Module [](id=module)
+## Module
 
 - DDL
 
-## Views [](id=views)
+## Views
 
 - Default
 - Material
@@ -82,7 +86,7 @@ others, to show the fields. You can find a sample of this implementation in the
 
 ![Figure 1: DDL Form Screenlet's Default (left) and Material (right) Views.](../../../images/screens-android-ddlform.png)
 
-### Editor Types [](id=editor-types)
+### Editor Types
 
 Each field defines an editor type. You must define each editor type's layout by 
 using the following attributes:
@@ -103,7 +107,7 @@ the default layout `ddlfield_xxx_default` is used, where `xxx` is the name of
 the editor type. It's important to note that you can change the layout used with 
 any editor type at any point. 
 
-### Custom Editors [](id=custom-editors)
+### Custom Editors
 
 If you want to have a unique appearance for one specific field, you can
 customize your field's editor View by calling the Screenlet's
@@ -112,7 +116,7 @@ is the name of the field to customize and the second parameter is the layout to
 use. You can also create custom editor Views. For examples of this, see the
 files `ddlfield_custom_rating_number.xml` and `CustomRatingNumberView.java`.
 
-## Activity Configuration [](id=activity-configuration)
+## Activity Configuration
 
 DDL Form Screenlet needs the following user permissions:
 
@@ -131,19 +135,19 @@ picture/video information. Here's an example implementation:
         screenlet.startUploadByPosition(requestCode);
     }
 
-## Portal Configuration [](id=portal-configuration)
+## Portal Configuration
 
 Before using DDL Form Screenlet, you should make sure that Dynamic Data Lists 
 and Data Types are configured properly in the portal. Refer to the 
-[Creating Data Definitions](/discover/portal/-/knowledge_base/7-1/creating-data-definitions) 
+[Creating Data Definitions](/docs/7-1/user/-/knowledge_base/u/creating-data-definitions) 
 and 
-[Creating Data Lists](/discover/portal/-/knowledge_base/7-1/creating-data-lists) 
+[Creating Data Lists](/docs/7-1/user/-/knowledge_base/u/creating-data-lists) 
 sections of the User Guide for more details. If Workflow is required, it must 
 also be configured. See the 
-[Using Workflow](/discover/portal/-/knowledge_base/7-1/workflow) 
+[Using Workflow](/docs/7-1/user/-/knowledge_base/u/workflow) 
 section of the User Guide for details. 
 
-### Permissions [](id=permissions)
+### Permissions
 
 To use DDL Form Screenlet to add new records, you must grant the Add Record 
 permission in the Dynamic Data List in the portal. If you want to use DDL Form 
@@ -160,16 +164,16 @@ grant permissions in the target repository and folder. For more details, see the
 ![Figure 3: The permission for adding a document to a Documents and Media folder.](../../../images/screens-portal-permission-folder-add.png)
 
 For more details, see the User Guide sections 
-[Creating Data Definitions](/discover/portal/-/knowledge_base/7-1/creating-data-definitions), 
-[Creating Data Lists](/discover/portal/-/knowledge_base/7-1/creating-data-lists), 
+[Creating Data Definitions](/docs/7-1/user/-/knowledge_base/u/creating-data-definitions), 
+[Creating Data Lists](/docs/7-1/user/-/knowledge_base/u/creating-data-lists), 
 and 
-[Using Workflow](/discover/portal/-/knowledge_base/7-1/workflow). 
+[Using Workflow](/docs/7-1/user/-/knowledge_base/u/workflow). 
 
-## Offline [](id=offline)
+## Offline
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-1/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/docs/7-1/tutorials/-/knowledge_base/t/architecture-of-offline-mode-in-liferay-screens). 
 
 When loading the form or record, the Screenlet supports the following offline 
 mode policies:
@@ -191,12 +195,12 @@ policies:
 | `REMOTE_FIRST` | The Screenlet sends the record to the portal. If this succeeds, it also stores the record in the local cache for later usage. If a connection issue occurs, then Screenlet stores the record in the local cache with the *dirty flag* enabled. This causes the synchronization process to send the record to the portal when it runs. | Use this policy when you need to make sure the Screenlet sends the record to the portal as soon as the connection is restored. |
 | `CACHE_FIRST` | The Screenlet stores the record in the local cache and then sends it to the remote portal. If a connection issue occurs, then Screenlet stores the record in the local cache with the *dirty flag* enabled. This causes the the synchronization process to send the record to the portal when it runs. | Use this policy when you need to make sure the Screenlet sends the record to the portal as soon as the connection is restored. Compared to `REMOTE_FIRST`, this policy always stores the record in the cache. The `REMOTE_FIRST` policy only stores the record in the event of a network error. |
 
-## Required Attributes [](id=required-attributes)
+## Required Attributes
 
 - `structureId`
 - `recordSetId`
 
-## Attributes [](id=attributes)
+## Attributes
 
 | Attribute | Data Type | Explanation |
 |-----------|-----------|-------------| 
@@ -219,9 +223,9 @@ policies:
 | `autoLoad` | `boolean` | Sets whether the form loads when the Screenlet is shown. If `recordId` is set, the record value is loaded together with the form definition. The default value is `false`. |
 | `autoScrollOnValidation` | `boolean` | Sets whether the form automatically scrolls to the first failed field when validation is used. The default value is `true`. |
 | `showSubmitButton` | `boolean` | Sets whether the form shows a submit button at the bottom. If this is set to `false`, you should call the `submitForm()` method. The default value is `true`. |
-| `cachePolicy` | `string` | The offline mode setting. See the [Offline section](/develop/reference/-/knowledge_base/7-1/ddlformscreenlet-for-android#offline) for details. |
+| `cachePolicy` | `string` | The offline mode setting. See the [Offline section](/docs/7-1/reference/-/knowledge_base/r/ddlformscreenlet-for-android#offline) for details. |
 
-## Methods [](id=methods)
+## Methods
 
 | Method | Return Type | Explanation |
 |-----------|-----------|-------------| 
@@ -230,7 +234,7 @@ policies:
 | `load()` | `void` | Starts the request to load the record if `recordId` is specified. Otherwise, the form definition is loaded. |
 | `submitForm()` | `void` | Starts the request to submit form values to the dynamic data list specified by `recordSetId`. If the record is new, a new record is added. If `loadRecord` is used to retrieve the record, or the record already exists, its values are updated. Fields are validated prior to the request. If validation fails, the validation errors are shown and the request is terminated. |
 
-## Listener [](id=listener)
+## Listener
 
 DDL Form Screenlet delegates some events to an object that implements to the 
 `DDLFormListener` interface. This interface lets you implement the 

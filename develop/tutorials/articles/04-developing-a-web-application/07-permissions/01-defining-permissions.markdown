@@ -1,4 +1,8 @@
-# Defining Permissions [](id=defining-permissions)
+---
+header-id: defining-permissions
+---
+
+# Defining Permissions
 
 <div class="learn-path-step">
     <p>Implementing Permissions<br>Step 1 of 4</p>

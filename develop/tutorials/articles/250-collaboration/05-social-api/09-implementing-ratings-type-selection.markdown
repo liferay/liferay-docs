@@ -1,4 +1,8 @@
-# Implementing Ratings Type Selection and Value Transformation [](id=implementing-ratings-type-selection-and-value-transformation)
+---
+header-id: implementing-ratings-type-selection-and-value-transformation
+---
+
+# Implementing Ratings Type Selection and Value Transformation
 
 @product@ has three different mechanisms for rating content: 
 
@@ -17,7 +21,7 @@ Administration:
 All Liferay apps leverage this feature. Your apps can too: this tutorial shows
 you how. 
 
-## Specifying an Entity's Rating Type [](id=specifying-an-entitys-ratings-type)
+## Specifying an Entity's Rating Type
 
 A custom app that uses ratings must define its rating type in an OSGi component 
 that implements the `PortletRatingsDefinition` interface. This class declares 
@@ -66,7 +70,7 @@ rating type:
 
 Next, you'll learn how to transform values between rating types. 
 
-## Transforming Ratings Values Between Rating Types [](id=transforming-ratings-values-between-ratings-types)
+## Transforming Ratings Values Between Rating Types
 
 The rating values are stored in the database as normalized values. This permits 
 switching among different rating types without modifying the underlying data. 
@@ -97,14 +101,10 @@ modifies the stored rating values. To define such transformations, create an
 OSGi component that implements the 
 [`RatingsDataTransformer` interface](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/ratings/kernel/transformer/RatingsDataTransformer.html). 
 
-+$$$
-
-**Note:** The portal doesn't provide a default `RatingsDataTransformer` 
-implementation. Unless you provide such an implementation, the stored rating 
-values always remain the same while the portal interprets existing values for 
-the selected rating type. 
-
-$$$
+| **Note:** The portal doesn't provide a default `RatingsDataTransformer`
+| implementation. Unless you provide such an implementation, the stored rating
+| values always remain the same while the portal interprets existing values for
+| the selected rating type.
 
 When implementing `RatingsDataTransformer`, implement the `transformRatingsData` 
 method to transform the data. This method's arguments include the `RatingsType` 
@@ -209,8 +209,8 @@ the *Social* tab.
 Nice work! Now you know how to set an entity's rating type. You also know how to 
 implement a rating data transformer. We salute you with a thumbs up! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Asset Framework](/develop/tutorials/-/knowledge_base/7-1/asset-framework)
+[Asset Framework](/docs/7-1/tutorials/-/knowledge_base/t/asset-framework)
 
-[Rating Assets](/develop/tutorials/-/knowledge_base/7-1/rating-assets)
+[Rating Assets](/docs/7-1/tutorials/-/knowledge_base/t/rating-assets)

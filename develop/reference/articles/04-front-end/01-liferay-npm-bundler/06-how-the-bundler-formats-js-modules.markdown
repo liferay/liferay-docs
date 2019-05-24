@@ -1,4 +1,8 @@
-# Understanding How liferay-npm-bundler Formats JavaScript Modules for AMD [](id=understanding-how-liferay-npm-bundler-formats-javascript-modules-for-amd)
+---
+header-id: understanding-how-liferay-npm-bundler-formats-javascript-modules-for-amd
+---
+
+# Understanding How liferay-npm-bundler Formats JavaScript Modules for AMD
 
 Liferay AMD Loader is based on the 
 [AMD specification](https://github.com/amdjs/amdjs-api/wiki/AMD). 
@@ -7,7 +11,7 @@ All modules inside an npm OSGi bundle must be in AMD format. This is done for
 a `define` call. The liferay-npm-bundler helps automate this process by wrapping 
 the module for you. This article references the OSGi structure below as an 
 example. You can learn more about this structure in 
-[The Structure of OSGi Bundles Containing NPM Packages](/develop/reference/-/knowledge_base/7-1/the-structure-of-osgi-bundles-containing-npm-packages) 
+[The Structure of OSGi Bundles Containing NPM Packages](/docs/7-1/reference/-/knowledge_base/r/the-structure-of-osgi-bundles-containing-npm-packages) 
 reference.
 
 - `my-bundle/`
@@ -78,13 +82,9 @@ The updated module code configured for AMD format is shown below:
         }
     );
 
-+$$$
-
-**Note:** The module's name must be based on its package, version, and file path 
-(for example `my-bundle-package$isobject@2.1.0/index`), otherwise Liferay AMD 
-Loader can't find it. 
-
-$$$
+| **Note:** The module's name must be based on its package, version, and file path
+| (for example `my-bundle-package$isobject@2.1.0/index`), otherwise Liferay AMD
+| Loader can't find it.
 
 Note the module's dependencies: 
 `['module', 'require', 'my-bundle-package$isarray']`.

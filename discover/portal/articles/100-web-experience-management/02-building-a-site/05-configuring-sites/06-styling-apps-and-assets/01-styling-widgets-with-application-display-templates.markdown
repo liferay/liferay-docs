@@ -1,4 +1,8 @@
-# Styling Widgets with Application Display Templates [](id=styling-widgets-with-application-display-templates)
+---
+header-id: styling-widgets-with-application-display-templates
+---
+
+# Styling Widgets with Application Display Templates
 
 Suppose you're customizing the Lunar Resort Site and want to allow users to use 
 Facebook or Twitter to communicate with other interested travelers. You can add
@@ -7,7 +11,7 @@ create a custom template, and configure your app to host that template. ADTs
 let you re-skin your application and give you ultimate control over its
 appearance and functionality.
 
-## Creating an ADT [](id=creating-an-adt)
+## Creating an ADT
 
 Here's the process of creating an ADT:
 
@@ -50,7 +54,7 @@ template, you must create a custom template for that Site's apps.
 
 7.  Click *Save* when done.
 
-### The Template Editor [](id=the-template-editor)
+### The Template Editor
 
 On the left side of the template editor is a palette of common variables used
 for making templates. This is a great reference when creating your template. To
@@ -76,10 +80,10 @@ into your new one and build off of it. In other words, you can utilize ADTs as
 generic templates which allow for reusable code to be imported by Velocity or
 FreeMarker templates in the system. For more information on how to create
 a custom template, visit the 
-[Styling Widgets with Application Display Templates](/discover/portal/-/knowledge_base/7-1/styling-widgets-with-application-display-templates)
+[Styling Widgets with Application Display Templates](/docs/7-1/user/-/knowledge_base/u/styling-widgets-with-application-display-templates)
 tutorial.
 
-## Configuring ADTs [](id=configuring-adts)
+## Configuring ADTs
 
 After you've saved your ADT, you can manage it through its *Actions*
 (![Actions](../../../../../images/icon-actions.png)) button. This provides
@@ -96,17 +100,13 @@ access the XML source of your template. You can find these URLs by clicking the
 ADT from the menu and expanding the *Details* section. With the WebDAV URL, Site
 administrators can add, browse, edit, and delete ADTs on a remote server. If you
 want to learn more about what the WebDAV URL can do, visit the tutorial on
-[WebDAV access](/discover/portal/-/knowledge_base/7-1/desktop-access-to-documents-and-media). 
+[WebDAV access](/docs/7-1/user/-/knowledge_base/u/desktop-access-to-documents-and-media). 
 
-+$$$
-
-**Note:** Embedding widgets into ADTs, although possible, is not recommended
-because this could cause conflicts with other widgets or unexpected behavior 
-(e.g., embedding a widget that aggregates data to the breadcrumb). If embedding 
-a widget into an ADT is your only option, make sure it does not interfere with 
-other widgets.
-
-$$$
+| **Note:** Embedding widgets into ADTs, although possible, is not recommended
+| because this could cause conflicts with other widgets or unexpected behavior
+| (e.g., embedding a widget that aggregates data to the breadcrumb). If embedding
+| a widget into an ADT is your only option, make sure it does not interfere with
+| other widgets.
 
 Next you must configure the widget to use the new ADT:
 

@@ -1,4 +1,8 @@
-# Testing [](id=testing)
+---
+header-id: testing
+---
+
+# Testing
 
 Assuring top quality is paramount in producing awesome software. Test driven
 development plays a key role in this process. Liferay's tooling and integration
@@ -13,6 +17,6 @@ framework's documentation for details.
 
 Here are the ways Liferay facilitates testing:
 
-- [Injecting Service Components into Tests](/develop/tutorials/-/knowledge_base/7-1/injecting-service-components-into-tests): 
+- [Injecting Service Components into Tests](/docs/7-1/tutorials/-/knowledge_base/t/injecting-service-components-into-tests): 
     Liferay's `@Inject` annotation allows you to inject service instances into
     tests. 

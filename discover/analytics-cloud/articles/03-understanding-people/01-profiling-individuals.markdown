@@ -1,4 +1,8 @@
-# Profiling Individuals [](id=profiling-individuals)
+---
+header-id: profiling-individuals
+---
+
+# Profiling Individuals
 
 Many individuals visit your sites. Learning who they are and their activities
 and interests helps you improve business with them. Individual profiles help
@@ -29,7 +33,7 @@ Each Individual profile has these tabs:
 
 Let's explore them to learn more about people you do business with. 
 
-## Overview [](id=overview)
+## Overview
 
 The Overview tab shows the person's recent activities using a histogram of the
 customer's activities and frequency in the past 90 days. The activities include
@@ -45,12 +49,12 @@ for the Details, Interests, or Segments summary opens its respective tab.
 
 Click on the *Details* tab to explore an Individual's details. 
 
-## Details [](id=details)
+## Details
 
 The Details tab shows all of the person's attributes, the data sources they came
 from, and when they were last modified. 
 
-## Interests [](id=interests)
+## Interests
 
 Click on the *Interests* tab. 
 
@@ -63,7 +67,7 @@ See
 [Customer Insights](https://github.com/liferay/liferay-docs/blob/7.1.x/discover/analytics-cloud/articles/03-understanding-people/04-customer-insights.markdown)
 for details on the Interests insight.
 
-## Segments [](id=segments)
+## Segments
 
 The Segments tab lists all the Segments the customer belongs to. Analyzing
 Segments helps you learn about the Individual and similar Individuals.

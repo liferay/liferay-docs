@@ -1,4 +1,8 @@
-# Creating Your Licensing and Pricing Model [](id=creating-your-licensing-and-pricing-model)
+---
+header-id: creating-your-licensing-and-pricing-model
+---
+
+# Creating Your Licensing and Pricing Model
 
 Carefully consider which licensing structure best meets your needs. Once your
 app has been approved, these options, except for price updates, cannot be

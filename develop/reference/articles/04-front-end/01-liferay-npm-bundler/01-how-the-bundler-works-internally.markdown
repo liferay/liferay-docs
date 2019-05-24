@@ -1,10 +1,14 @@
-# How the Liferay npm Bundler Works Internally [](id=how-the-liferay-npm-bundler-works-internally)
+---
+header-id: how-the-liferay-npm-bundler-works-internally
+---
+
+# How the Liferay npm Bundler Works Internally
 
 The liferay-npm-bundler takes a portlet project and outputs its files 
 (including npm packages) to a build folder, so the standard portlet build 
 (Gradle) can produce an OSGi bundle. You can learn more about the build folder's 
 structure in 
-[The Structure of OSGi Bundles Containing NPM Packages](/develop/reference/-/knowledge_base/7-1/the-structure-of-osgi-bundles-containing-npm-packages) 
+[The Structure of OSGi Bundles Containing NPM Packages](/docs/7-1/reference/-/knowledge_base/r/the-structure-of-osgi-bundles-containing-npm-packages) 
 reference. 
 
 The liferay-npm-bundler uses the process below to create the OSGi bundle:

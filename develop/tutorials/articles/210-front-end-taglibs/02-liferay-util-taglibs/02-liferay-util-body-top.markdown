@@ -1,4 +1,8 @@
-# Using Liferay Util Body Top [](id=using-liferay-util-body-top)
+---
+header-id: using-liferay-util-body-top
+---
+
+# Using Liferay Util Body Top
 
 The body top tag is not a self-closing tag. The content placed between the 
 opening and closing of this tag is moved to the top of the `body` tag. When 
@@ -22,10 +26,10 @@ include JavaScript provided by the portlet's bundle:
 Now you know how to use the `<liferay-util:body-top>` tag to include additional 
 resources in the top of the page's body. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using the Liferay Util HTML Body Bottom Tag](/develop/tutorials/-/knowledge_base/7-1/using-liferay-util-body-bottom)
+[Using the Liferay Util HTML Body Bottom Tag](/docs/7-1/tutorials/-/knowledge_base/t/using-liferay-util-body-bottom)
 
-[Using the Liferay Util HTML Bottom Tag](/develop/tutorials/-/knowledge_base/7-1/using-liferay-util-html-bottom)
+[Using the Liferay Util HTML Bottom Tag](/docs/7-1/tutorials/-/knowledge_base/t/using-liferay-util-html-bottom)
 
-[Using the Clay Taglib](/develop/tutorials/-/knowledge_base/7-1/using-the-clay-taglib-in-your-portlets)
+[Using the Clay Taglib](/docs/7-1/tutorials/-/knowledge_base/t/using-the-clay-taglib-in-your-portlets)

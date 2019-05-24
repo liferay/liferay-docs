@@ -1,4 +1,8 @@
-# Form Element Sets [](id=form-element-sets)
+---
+header-id: form-element-sets
+---
+
+# Form Element Sets
 
 If you're here looking for information on reusable field sets, you're in the
 right place. We call them Element Sets in the Liferay Forms application because
@@ -12,7 +16,7 @@ Sometimes you might be able to create an entire form by composing existing
 Element Sets. Your colleagues might call you lazy, but we'd call you
 industrious.
 
-## Creating Element Sets [](id=creating-element-sets)
+## Creating Element Sets
 
 To create Element Sets, go to Site Menu &rarr; Content &rarr; Forms. The Forms
 view is displayed by default. Click the *Element Sets* tab, and any existing
@@ -20,7 +24,7 @@ Element Sets appear, just like existing Forms are displayed in the Forms view.
 Click the *Add* button (![Add](../../images/icon-add.png)).
 
 Here's the thing. If you know how to 
-[create a Form](/discover/portal/-/knowledge_base/7-1/creating-and-managing-forms), 
+[create a Form](/docs/7-1/user/-/knowledge_base/u/creating-and-managing-forms), 
 you already know how to create an Element Set. The process is identical. Drag
 and drop elements onto the form builder palette, configuring fields as you go.
 
@@ -32,7 +36,7 @@ no button for that.
 Once an Element Set is saved, it's instantly available for use, even in the same
 Element Set. That's right, you can use Element Sets to create Element Sets.
 
-## Using Element Sets [](id=using-element-sets)
+## Using Element Sets
 
 To use an Element Set in a Form:
 

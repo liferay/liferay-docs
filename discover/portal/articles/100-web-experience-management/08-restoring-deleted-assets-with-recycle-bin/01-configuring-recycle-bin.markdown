@@ -1,4 +1,8 @@
-# Configuring the Recycle Bin [](id=configuring-the-recycle-bin)
+---
+header-id: configuring-the-recycle-bin
+---
+
+# Configuring the Recycle Bin
 
 The Recycle Bin supports instance-wide scope or site-specific scope. The
 instance-wide scope of the Recycle Bin is set by adding the `trash.enabled`
@@ -28,13 +32,9 @@ First, you'll configure the Recycle Bin for site-specific scoping.
 
 4.  When you've finished configuring your Recycle Bin settings, click *Save*.
 
-+$$$
-
-**Note:** If you disable the Recycle Bin while it's still holding recycled
-items, the recycled items remain stored and reappear in the Recycle Bin if it is
-re-enabled.
-
-$$$
+| **Note:** If you disable the Recycle Bin while it's still holding recycled
+| items, the recycled items remain stored and reappear in the Recycle Bin if it is
+| re-enabled.
 
 You can also configure the Recycle Bin via properties in the `portal.properties`
 file. Remember that it's a best practice not to edit the `portal.properties`

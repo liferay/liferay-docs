@@ -1,4 +1,8 @@
-# Advanced Monitoring: APM Tools; Dynatrace [](id=advanced-monitoring-apm-tools-dynatrace-id)
+---
+header-id: advanced-monitoring-apm-tools-dynatrace-id
+---
+
+# Advanced Monitoring: APM Tools; Dynatrace
 
 Advanced performance monitoring tools like
 [Dynatrace's](https://www.dynatrace.com)
@@ -8,17 +12,13 @@ on memory usage, garbage collection, CPU levels, and heap dumps. Each dashboard
 is its own detailed report. You can view live information on @product@ server
 performance metrics down to the individual user.
 
-+$$$
-
-**Note:** Dynatrace now offers
-[*Dynatrace SaaS*](https://www.dynatrace.com/support/dynatrace/).
-Its default configuration detects lots of interesting data. Although the
-Dynatrace SaaS offering doesn't offer dashboards as deep as those in the
-[Liferay FastPack](#liferay-digital-enterprise-fastpack),
-its UI is very intuitive. Dynatrace SaaS's big advantage over the installed
-Dynatrace app is that it requires no installation, maintenance, or upgrade. 
-
-$$$
+| **Note:** Dynatrace now offers
+| [*Dynatrace SaaS*](https://www.dynatrace.com/support/dynatrace/).
+| Its default configuration detects lots of interesting data. Although the
+| Dynatrace SaaS offering doesn't offer dashboards as deep as those in the
+| [Liferay FastPack](#liferay-digital-enterprise-fastpack),
+| its UI is very intuitive. Dynatrace SaaS's big advantage over the installed
+| Dynatrace app is that it requires no installation, maintenance, or upgrade.
  
 Using Dynatrace's dashboards with @product@ requires these things:
 
@@ -29,7 +29,7 @@ Using Dynatrace's dashboards with @product@ requires these things:
 
 Finally, sign up for a Dynatrace account to get Dynatrace support.
 
-## Dashboards [](id=dashboards)
+## Dashboards
 
 Dynatrace contains displays ongoing transactions and processes. Because the
 entire @product@ stack can be analyzed, there are dashboards for each component:
@@ -91,7 +91,7 @@ You can import custom dashboards you've created (e.g., in XML format):
 
 But there's more: a custom dashboard created for @product@. 
 
-## Liferay DXP FastPack [](id=liferay-digital-enterprise-fastpack)
+## Liferay DXP FastPack
 
 The Dynatrace FastPack for Liferay provides a pre-configured Dynatrace profile
 custom-tailored for @product@ environments. It contains sensors, a template
@@ -120,7 +120,7 @@ these steps:
 7.  Disable any other profile so that the Liferay profile is the only active
     profile.
 
-## Dynatrace Client Configuration [](id=dynatrace-client-configuration)
+## Dynatrace Client Configuration
 
 Java JDK 1.8 (or its equivalent) is a prerequisite to running both Dynatrace
 Client and @product@. Make sure to allocate enough CPU cores in the JVM as well
@@ -190,7 +190,7 @@ Client.
 
 Congratulations! You installed the Dynatrace Server and Collector! 
 
-### JVM Agent Configuration [](id=dynatrace-agent-configuration)
+### JVM Agent Configuration
 
 Deploy a JVM agent on each @product@ server. The agent sits on top of
 existing infrastructure (in this example, Apache Tomcat). 
@@ -241,7 +241,7 @@ existing infrastructure (in this example, Apache Tomcat).
 
 Your Liferay agent starts sending data into the newly imported profile.
 
-## Performance Testing [](id=performance-testing)
+## Performance Testing
 
 Systems administrators must often perform load testing as part of an overall
 tuning process. The Dynatrace Client is a great tool to monitor and then analyze
@@ -272,7 +272,7 @@ All these dashboards come out-of-the-box, and even more dashboards are available
 after deploying the Dynatrace FastPack developed for @product@. Dynatrace
 provides many useful performance monitoring features. 
 
-## Resources [](id=resources)
+## Resources
 
 [Dynatrace Community](https://community.compuwareapm.com) 
 

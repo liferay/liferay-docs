@@ -1,24 +1,28 @@
-# Using Vue in Your Portlets [](id=using-vue-in-your-portlets)
+---
+header-id: using-vue-in-your-portlets
+---
+
+# Using Vue in Your Portlets
 
 You can create a Vue project manually or use the [npm Vue portlet
-template](/develop/reference/-/knowledge_base/7-1/npm-vue-js-portlet-template)
+template](/docs/7-1/reference/-/knowledge_base/r/npm-vue-js-portlet-template)
 to automate much of the required configuration for you. For convenience, all
 manual steps are listed below. This tutorial shows how to use Vue JS in your
 portlets, whether you're migrating an existing Vue project or building a fresh
 one. See the [npm Vue portlet
-template](/develop/reference/-/knowledge_base/7-1/npm-vue-js-portlet-template)
+template](/docs/7-1/reference/-/knowledge_base/r/npm-vue-js-portlet-template)
 reference docs for more information on the portlet's anatomy or the [npm Vue
-portlet sample](/develop/reference/-/knowledge_base/7-1/vue-js-npm-portlet) for
+portlet sample](/docs/7-1/reference/-/knowledge_base/r/vue-js-npm-portlet) for
 a Vue portlet example that you can test and deploy right now. Get started by
 creating your OSGi module and configuring its metadata. 
 
-## Configuring Metadata [](id=configuring-metadata)
+## Configuring Metadata
 
 Follow these steps to create the module and configure its metadata for Vue:
 
-1.  [Create an OSGi module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#creating-a-module). 
+1.  [Create an OSGi module](/docs/7-1/tutorials/-/knowledge_base/t/starting-module-development#creating-a-module). 
     For example, use the 
-    [npm Vue portlet template](/develop/reference/-/knowledge_base/7-1/npm-vue-js-portlet-template). 
+    [npm Vue portlet template](/docs/7-1/reference/-/knowledge_base/r/npm-vue-js-portlet-template). 
 
 2.  Specify the `Web-ContextPath` BND Header in your project's `bnd.bnd` file. 
     Below is the default configuration for the npm Vue portlet template:
@@ -26,7 +30,7 @@ Follow these steps to create the module and configure its metadata for Vue:
         Web-ContextPath: /my-npm-vue-portlet
 
 3.  Create a 
-    [`.babelrc` file](/develop/reference/-/knowledge_base/7-1/configuring-liferay-npm-bundler) 
+    [`.babelrc` file](/docs/7-1/reference/-/knowledge_base/r/configuring-liferay-npm-bundler) 
     and add the following presets to it:
 
         {
@@ -34,7 +38,7 @@ Follow these steps to create the module and configure its metadata for Vue:
         }
 
 4.  Optionally add a 
-    [`.npmbundlerrc` file](/develop/reference/-/knowledge_base/7-1/configuring-liferay-npm-bundler) 
+    [`.npmbundlerrc` file](/docs/7-1/reference/-/knowledge_base/r/configuring-liferay-npm-bundler) 
     to your project's root folder. This file is not required. You can, however, 
     configure this file to customize the liferay-npm-bundler to suit your 
     needs, such as to ignore files. 
@@ -76,7 +80,7 @@ Babel, included in your build script, takes care of this for you.
 
 Next You can configure the portlet.
 
-## Configuring the Portlet [](id=configuring-the-portlet)
+## Configuring the Portlet
  
 Follow these steps to configure your portlet:
 
@@ -113,7 +117,7 @@ Follow these steps to configure your portlet:
         "com.liferay.portlet.header-portlet-css=/css/app.css"
 
 3.  To improve code maintenance, 
-    [use the NPMResolver APIs to alias your module's package name](/develop/tutorials/-/knowledge_base/7-1/referencing-an-npm-modules-package). 
+    [use the NPMResolver APIs to alias your module's package name](/docs/7-1/tutorials/-/knowledge_base/t/referencing-an-npm-modules-package). 
     The example below exposes the module's name as `bootstrapRequire`:
 
         @Override
@@ -144,7 +148,7 @@ Follow these steps to configure your portlet:
 
 Next you can learn how to render your app's component. 
 
-## Rendering Your Component [](id=rendering-your-component)
+## Rendering Your Component
 
 Follow these steps to render your app component:
  
@@ -189,10 +193,10 @@ Follow these steps to render your app component:
 
 Now you know how to use Vue in your projects! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using Angular JS in Your Portlets](/develop/tutorials/-/knowledge_base/7-1/using-angular-js-in-your-portlets)
+[Using Angular JS in Your Portlets](/docs/7-1/tutorials/-/knowledge_base/t/using-angular-js-in-your-portlets)
 
-[Using React in Your Portlets](/develop/tutorials/-/knowledge_base/7-1/using-react-in-your-portlets)
+[Using React in Your Portlets](/docs/7-1/tutorials/-/knowledge_base/t/using-react-in-your-portlets)
 
-[Using npm in Your Portlets](/develop/tutorials/-/knowledge_base/7-1/using-npm-in-your-portlets)
+[Using npm in Your Portlets](/docs/7-1/tutorials/-/knowledge_base/t/using-npm-in-your-portlets)

@@ -1,12 +1,16 @@
-# Creating Layout Templates Manually [](id=creating-layout-templates-manually)
+---
+header-id: creating-layout-templates-manually
+---
+
+# Creating Layout Templates Manually
 
 Although you can 
-[generate layout templates with the Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-layout-templates-with-the-themes-generator),  
+[generate layout templates with the Liferay Theme Generator](/docs/7-1/tutorials/-/knowledge_base/t/creating-layout-templates-with-the-themes-generator),  
 you may prefer to create or modify them manually using your own tools. In this 
 tutorial you'll learn the anatomy of @product@'s layout templates so you can 
 create layout templates manually or modify existing ones.
 
-## Understanding the Anatomy [](id=anatomy)
+## Understanding the Anatomy
 
 Layout templates are made of rows and columns. The design you create specifies 
 where users can place portlets on the page. An example row's HTML markup is 
@@ -48,21 +52,17 @@ taking two arguments: the column's `id`, and the classes
 `portlet-column-content` and `portlet-column-content-[case]` (if applicable), 
 where `[case]` refers to the `first`, `last`, or `only` column in the row. 
 
-+$$$
-
-**Note:** Velocity layout templates are supported, but deprecated as of 
-@product-ver@. We recommend that you convert your Velocity layout templates to 
-FreeMarker at your earliest convenience.
-
-$$$
+| **Note:** Velocity layout templates are supported, but deprecated as of
+| @product-ver@. We recommend that you convert your Velocity layout templates to
+| FreeMarker at your earliest convenience.
 
 Now that you understand a layout template's anatomy, you can write your own 
 @product@ layout templates!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Layout Templates with the Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-layout-templates-with-the-themes-generator)
+[Layout Templates with the Liferay Theme Generator](/docs/7-1/tutorials/-/knowledge_base/t/creating-layout-templates-with-the-themes-generator)
 
-[Creating Themes](/develop/tutorials/-/knowledge_base/7-1/creating-themes)
+[Creating Themes](/docs/7-1/tutorials/-/knowledge_base/t/creating-themes)
 
-[Creating Custom Layout Template Thumbnail Previews](/develop/tutorials/-/knowledge_base/7-1/creating-custom-layout-template-thumbnail-previews)
+[Creating Custom Layout Template Thumbnail Previews](/docs/7-1/tutorials/-/knowledge_base/t/creating-custom-layout-template-thumbnail-previews)

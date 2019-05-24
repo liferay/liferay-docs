@@ -1,26 +1,30 @@
-# User Portrait Screenlet for iOS [](id=userportraitscreenlet-for-ios)
+---
+header-id: userportraitscreenlet-for-ios
+---
 
-## Requirements [](id=requirements)
+# User Portrait Screenlet for iOS
+
+## Requirements
 
 - Xcode 9.3 or above
 - iOS 11 SDK
 - Liferay Portal 6.2 CE/EE, Liferay CE Portal 7.0/7.1, Liferay DXP
 
-## Compatibility [](id=compatibility)
+## Compatibility
 
 - iOS 9 and above
 
-## Xamarin Requirements [](id=xamarin-requirements)
+## Xamarin Requirements
 
 - Visual Studio 7.2
 - Mono .NET framework 5.4.1.6
 
-## Features [](id=features)
+## Features
 
 The User Portrait Screenlet shows the user's portrait from Liferay Portal. If 
 the user doesn't have a portrait configured, a placeholder image is shown.
 
-## JSON Services Used [](id=json-services-used)
+## JSON Services Used
 
 Screenlets in Liferay Screens call JSON web services in the portal. This 
 Screenlet calls the following services and methods.
@@ -31,26 +35,26 @@ Screenlet calls the following services and methods.
 | `UserService` | `getUserByEmailAddress` |  |
 | `UserService` | `getUserByScreenName` |  |
 
-## Module [](id=module)
+## Module
 
 - None
 
-## Themes [](id=themes)
+## Themes
 
 - Default (`default`)
 - Flat7 (`flat7`)
 
 ![The User Portrait Screenlet using the Default and Flat7 Themes.](../../../images/screens-ios-portrait.png)
 
-## Portal Configuration [](id=portal-configuration)
+## Portal Configuration
 
 None
 
-## Offline [](id=offline)
+## Offline
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-1/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/docs/7-1/tutorials/-/knowledge_base/t/architecture-of-offline-mode-in-liferay-screens). 
 
 When loading the portrait, the Screenlet supports the following offline mode 
 policies:
@@ -72,7 +76,7 @@ policies:
 | `remote-first` | The Screenlet sends the user portrait to the portal. If this succeeds, the Screenlet also stores the portrait in the local cache for later usage. If a connection issue occurs, the Screenlet stores the portrait in the local cache with the *dirty flag* enabled. This causes the portrait to be sent to the portal when the synchronization process runs. | Use this policy when you need to make sure the Screenlet sends the new portrait to the portal as soon as the connection is restored. |
 | `cache-first` | The Screenlet stores the user portrait in the local cache and then sends it to the portal. If a connection issue occurs, the Screenlet stores the portrait in the local cache with the *dirty flag* enabled. This causes the portrait to be sent to the portal when the synchronization process runs. | Use this policy when you need to make sure the Screenlet sends the new portrait to the portal as soon as the connection is restored. Compared to `remote-first`, this policy always stores the portrait in the cache. The `remote-first` policy only stores the new image in the event of a network error. |
 
-## Attributes [](id=attributes)
+## Attributes
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
@@ -81,7 +85,7 @@ policies:
 | `editable` | `boolean` | Lets the user change the portrait image by taking a photo or selecting a gallery picture. The default value is `false`. Portraits loaded with the `load(portraitId, uuid, male)` method aren't editable. |
 | `offlinePolicy` | `string` | Configure the loading and saving behavior in case of connectivity issues. For more details, read the "Offline" section below. |
 
-## Methods [](id=methods)
+## Methods
 
 | Method | Return | Explanation |
 |-----------|-----------|-------------| 
@@ -91,7 +95,7 @@ policies:
 |  `load(companyId, emailAddress)` | `boolean` | Starts the request to load the portrait image using the user's email address. |
 |  `load(companyId, screenName)` | `boolean` | Starts the request to load the portrait image using the user's screen name. |
 
-## Delegate [](id=delegate)
+## Delegate
 
 The User Portrait Screenlet delegates some events to an object that conforms to 
 the `UserPortraitScreenletDelegate ` protocol. This protocol lets you implement 

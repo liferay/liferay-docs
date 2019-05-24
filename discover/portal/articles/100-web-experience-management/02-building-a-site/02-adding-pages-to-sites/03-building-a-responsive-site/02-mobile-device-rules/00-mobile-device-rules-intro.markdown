@@ -1,4 +1,8 @@
-# Mobile Device Rules [](id=mobile-device-rules)
+---
+header-id: mobile-device-rules
+---
+
+# Mobile Device Rules
 
 With mobile device rules, you can alter what gets displayed based on the device
 being used to access @product@. For instance, you can configure the look and

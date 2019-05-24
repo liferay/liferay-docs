@@ -1,11 +1,15 @@
-# Publishing Staged Content Efficiently [](id=publishing-staged-content-efficiently)
+---
+header-id: publishing-staged-content-efficiently
+---
+
+# Publishing Staged Content Efficiently
 
 Now that you understand how staging works, you'll dive deeper into the
 publication process and some prerequisites you should follow before publishing.
 By understanding how the process works, you can make smart and informed
 decisions about how you want to publish your site's content.
 
-## Understanding the Publication Process [](id=understanding-the-publication-process)
+## Understanding the Publication Process
 
 In simple terms, a publication is the process where all content, referenced
 content, apps and their preferences, pages, etc. are transferred from the
@@ -49,7 +53,7 @@ system are being maintained.
 Next, you'll learn about staging best practices and prerequisites to follow for
 a seamless staging experience.
 
-## Planning Ahead for Staging [](id=planning-ahead-for-staging)
+## Planning Ahead for Staging
 
 Staging is a complex subsystem that's flexible and scalable. Before advanced
 users and administrators begin using it for their site, it's important to plan
@@ -60,7 +64,7 @@ to evaluate.
   site, you can turn on staging for only the necessary content types, leaving
   others turned off to avoid unnecessary work. Publication can also be
   configured to publish only certain types of content. See the 
-  [Managing Content Types](/discover/portal/-/knowledge_base/7-1/managing-content-types-in-staging)
+  [Managing Content Types](/docs/7-1/user/-/knowledge_base/u/managing-content-types-in-staging)
   article for more information.
 
 - **Hardware Environment:** You should plan your environment according to your
@@ -73,7 +77,7 @@ to evaluate.
 - **Customizations and Custom Logic for Your Staging Environment:** Your
   organization's business logic is most likely implemented in an app, and if you
   want to support staging for that app, you must 
-  [write some code](/develop/tutorials/-/knowledge_base/7-1/export-import-and-staging) 
+  [write some code](/docs/7-1/tutorials/-/knowledge_base/t/export-import-and-staging) 
   to accomplish this. You can also consider changing default UI settings by
   writing new JSP code if you want your staging environment's look and feel to
   change.

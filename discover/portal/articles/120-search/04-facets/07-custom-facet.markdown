@@ -1,4 +1,8 @@
-# Custom Facet [](id=custom-facet)
+---
+header-id: custom-facet
+---
+
+# Custom Facet
 
 All Facets are configurable, allowing you to narrow down search results based on
 a shared characteristic (all Blog Entries, for example). The Custom Facet lets
@@ -40,7 +44,7 @@ matching results doesn't appear in the term result list.
 **Display Frequencies**
 : Choose whether to display the term frequencies.
 
-## Finding Indexed Fields [](id=finding-indexed-fields)
+## Finding Indexed Fields
 
 To use the Custom Facet, you must know which non-analyzed keyword field to
 specify. In most cases, if you know you require the Custom Facet, you know what

@@ -1,4 +1,8 @@
-# Tagging Content [](id=tagging-content)
+---
+header-id: tagging-content
+---
+
+# Tagging Content
 
 Tags are an important tool that can help organize information and make it easier
 for users to find the content they want. Tags are all-lowercase words or phrases

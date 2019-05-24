@@ -1,4 +1,8 @@
-# Designing Web Content with Templates [](id=designing-web-content-with-templates)
+---
+header-id: designing-web-content-with-templates
+---
+
+# Designing Web Content with Templates
 
 Developers create templates to display the elements of the structure in the
 markup they want. In essence, templates are scripts that tell @product@ how to 

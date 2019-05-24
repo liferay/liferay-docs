@@ -1,4 +1,8 @@
-# Creating the iOS List Screenlet's Connector [](id=creating-the-ios-list-screenlets-connector)
+---
+header-id: creating-the-ios-list-screenlets-connector
+---
+
+# Creating the iOS List Screenlet's Connector
 
 Recall that Connectors make a server call. To support pagination, a List 
 Screenlet's Connector class must extend the 
@@ -42,7 +46,7 @@ arguments:
 
 Next, if you want to validate any of your Screenlet's properties, override the 
 `validateData` method as described in 
-[the tutorial on creating Connectors](/develop/tutorials/-/knowledge_base/7-1/create-and-use-a-connector-with-your-screenlet). 
+[the tutorial on creating Connectors](/docs/7-1/tutorials/-/knowledge_base/t/create-and-use-a-connector-with-your-screenlet). 
 Note that Bookmark List Screenlet only needs to validate the `folderId`: 
 
     override public func validateData() -> ValidationError? {

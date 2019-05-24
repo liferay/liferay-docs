@@ -1,13 +1,17 @@
-# Activating Workflow [](id=activating-workflow)
+---
+header-id: activating-workflow
+---
+
+# Activating Workflow
 
 Assets are integrated with the 
-[workflow framework](/develop/tutorials/-/knowledge_base/7-1/liferays-workflow-framework)
+[workflow framework](/docs/7-1/tutorials/-/knowledge_base/t/liferays-workflow-framework)
 if their content is meant to be sent through review processes. Since this is
 most often the case, there are many out of the box assets that integrate with
 workflow. In this article, you'll learn how to select a workflow for use with
 each of these workflow-enabled assets.
 
-## Workflow Assets [](id=workflow-assets)
+## Workflow Assets
 
 Activate a workflow for these assets in Control Panel &rarr; Configuration
 &rarr; Workflow, in the Schemes tab:
@@ -64,7 +68,7 @@ Activate workflow for each individual form's entries from the Form Settings scre
 
 ![Figure 4: Activate workflow on each form's entries from the Form Settings window.](../../images/workflow-form.png)
 
-## Workflow Behavior [](id=workflow-behavior)
+## Workflow Behavior
 
 Most of the resources listed above behave just as you might expect with workflow
 activated: The Publish button for the resource's *Add* form is replaced by a
@@ -76,7 +80,7 @@ publication.
 for workflow-enabled resources.](../../images/submit-for-publication.png)
 
 Page revisions are slightly different. Page revisions only occur in 
-[staging environments](/discover/portal/-/knowledge_base/7-1/staging-content-for-publication) 
+[staging environments](/docs/7-1/user/-/knowledge_base/u/staging-content-for-publication) 
 that have Page Versioning enabled. When a Page Variation or Site Page Variation
 is created, its creator must click *Submit for Publication* at the top of the
 page, and the variation must be approved in the workflow before it can be

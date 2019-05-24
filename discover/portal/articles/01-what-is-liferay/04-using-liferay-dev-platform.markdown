@@ -1,4 +1,8 @@
-# Using Liferay as a Development Platform [](id=using-liferay-as-a-dev-platform)
+---
+header-id: using-liferay-as-a-dev-platform
+---
+
+# Using Liferay as a Development Platform
 
 Building your site on Liferay's development platform can give you a head start.
 It provides everything you need to support your applications, so you can
@@ -17,9 +21,9 @@ to all users?
 You get all this and much more. It's a very powerful platform, and certainly
 worth your investigation. If you're a developer, it behooves you to check out
 our 
-[developer documentation](/develop/tutorials/-/knowledge_base/7-1/introduction-to-liferay-development).
+[developer documentation](/docs/7-1/tutorials/-/knowledge_base/t/introduction-to-liferay-development).
 
-## A Great Integration Platform [](id=a-great-integration-platform)
+## A Great Integration Platform
 
 If you're building an enterprise system, portals were designed in the first
 place to be a single point of entry to your users' applications and content.

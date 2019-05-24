@@ -1,7 +1,11 @@
-# Installing @product@ [](id=installing-liferay)
+---
+header-id: installing-liferay
+---
+
+# Installing @product@
 
 Now that you've performed the steps needed to [prepare for your
-installation](/discover/deployment/-/knowledge_base/7-1/preparing-for-install),
+installation](/docs/7-1/deploy/-/knowledge_base/d/preparing-for-install),
 you're ready to install @product@! Since bundles are the easiest way to complete
 an installation, all the installation steps below assume you're installing a
 @product@ bundle. If you plan to install @product@ manually, please refer to the
@@ -12,7 +16,7 @@ Now you're ready. You've created a blank database for @product@ and have
 gathered the credentials you need for your mail server. The next step is to
 install @product@. 
 
-## Liferay Home [](id=liferay-home)
+## Liferay Home
 
 @product@ bundles contain the same folder structure regardless of application
 server. The top-level folder is named for the @product@ release. This folder is
@@ -46,7 +50,7 @@ Liferay Home has folders for various purposes:
         especially when trying to diagnose a problem. `portal-impl.jar`'s
         `portal-impl/src/META-INF/portal-log4j.xml` file sets the location for
         the log files. To override the log file location, you must
-        [use an `ext-impl/src/META-INF/portal-log4j-ext.xml` file in an Ext plugin](/develop/tutorials/-/knowledge_base/7-0/advanced-customization-with-ext-plugins#using-advanced-configuration-files).
+        [use an `ext-impl/src/META-INF/portal-log4j-ext.xml` file in an Ext plugin](/docs/7-0/tutorials/-/knowledge_base/t/advanced-customization-with-ext-plugins#using-advanced-configuration-files).
     -   `osgi`: All the JAR files and a few configuration files for @product@'s 
         OSGi runtime belong in this folder.
         [Portal property `module.framework.base.dir`](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Module%20Framework)
@@ -74,7 +78,7 @@ is running @product@. In this case, the `liferay` folder becomes Liferay Home.
 For example, if the operating system user's name is jbloggs, the Liferay Home
 folder is `/home/jbloggs/liferay` or `C:\Users\jbloggs\liferay`.
 
-## Extracting a @product@ Bundle [](id=extracting-a-liferay-bundle)
+## Extracting a @product@ Bundle
 
 Getting a @product@ bundle up and running involves uncompressing the archive,
 possibly copying a JDBC driver, and then starting the application server. Let's
@@ -93,13 +97,13 @@ finished with the installation (and before you've started @product@ for the
 first time), come back to this spot, because you must hook it up to your
 database. 
 
-## Connecting @product@ to Your Database [](id=connecting-product-to-your-database)
+## Connecting @product@ to Your Database
 
 You can connect to your database with JNDI on your app server or the data source
 shipped with @product@ (recommended). Refer to the article on your app server
 for instructions on using JNDI. For the internal data source, you can configure
 it by specifying the configuration in a `portal-ext.properties` file or the
-[Setup Wizard](/discover/deployment/-/knowledge_base/7-1/installing-liferay#using-liferays-setup-wizard):
+[Setup Wizard](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#using-liferays-setup-wizard):
 
 1.  Create a `portal-ext.properties` file in your Liferay Home folder.
 
@@ -115,7 +119,7 @@ it by specifying the configuration in a `portal-ext.properties` file or the
 
 You're ready to start @product@. 
 
-## Running @product@ for the First Time [](id=running-product-for-the-first-time)
+## Running @product@ for the First Time
 
 Next, start your app server, or start the @product@ app in your app server. 
 @product@ writes log files to folder `[Liferay Home]/logs`. 
@@ -126,7 +130,7 @@ the Basic Configuration page. If for some reason your browser doesn't load the
 Basic Configuration page, launch it and navigate to your app server's address
 and port (for example, http://localhost:8080). 
 
-## Using @product@'s Setup Wizard [](id=using-liferays-setup-wizard)
+## Using @product@'s Setup Wizard
 
 The Setup Wizard runs when you start @product@ for the first time. The title of
 the setup wizard page is Basic Configuration. This page provides a convenient
@@ -163,23 +167,19 @@ use the `portal-ext.properties` file you created earlier. All the
 possible properties that can be placed in this file are documented in 
 [our reference documentation](http://docs.liferay.com/portal/7.0/propertiesdoc).
 
-+$$$
-
-**Tip:** The wizard is an extremely helpful tool, especially if you're setting
-up @product@ for the first time. If you're a veteran and you already have
-your various properties set up, you can disable the setup wizard. If you disable
-the setup wizard, you must configure everything manually from the 
-`portal-ext.properties` file. To disable the setup wizard, enter
-`setup.wizard.enabled=false` in your `portal-ext.properties` file. Note that
-property values in `portal-setup-wizard.properties` (the file created in Liferay
-Home by the setup wizard) override property values in `portal-ext.properties`.
-
-$$$
+| **Tip:** The wizard is an extremely helpful tool, especially if you're setting
+| up @product@ for the first time. If you're a veteran and you already have
+| your various properties set up, you can disable the setup wizard. If you disable
+| the setup wizard, you must configure everything manually from the
+| `portal-ext.properties` file. To disable the setup wizard, enter
+| `setup.wizard.enabled=false` in your `portal-ext.properties` file. Note that
+| property values in `portal-setup-wizard.properties` (the file created in Liferay
+| Home by the setup wizard) override property values in `portal-ext.properties`.
 
 After you've entered the information requested by the Basic Configuration page,
 the home page appears. You should set up your mail configuration next. 
 
-## Configuring Mail [](id=configuring-mail)
+## Configuring Mail
 
 Log in as the administrative user you created in the setup wizard. Click the
 menu icon and then go to Control Panel &rarr; Server Administration &rarr; Mail,

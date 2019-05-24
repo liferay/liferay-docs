@@ -1,4 +1,8 @@
-# Front-End [](id=front-end)
+---
+header-id: front-end
+---
+
+# Front-End
 
 Front-end development involves multiple frameworks and tools. Keeping track of 
 all the moving pieces in your project can be a daunting task. This section of 
@@ -7,7 +11,7 @@ development:
 
 - Understanding the liferay-npm-bundler
 - The CKEditor plugins available for use in your 
-  [custom AlloyEditor configurations](/develop/tutorials/-/knowledge_base/7-1/adding-buttons-to-alloyeditor-toolbars).
+  [custom AlloyEditor configurations](/docs/7-1/tutorials/-/knowledge_base/t/adding-buttons-to-alloyeditor-toolbars).
 - AlloyEditor button reference guide
 - Fully qualified portlet IDs
 - FreeMarker taglib macros

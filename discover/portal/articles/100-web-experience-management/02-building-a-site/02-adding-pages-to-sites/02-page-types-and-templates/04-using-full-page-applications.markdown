@@ -1,9 +1,13 @@
-# Using Full Page Applications [](id=using-full-page-applications)
+---
+header-id: using-full-page-applications
+---
+
+# Using Full Page Applications
 
 Full Page Applications are the ideal way to display a Message Board, Wiki, or
 other application that demands a full page.
 
-## Configuring the Page [](id=configuring-the-page)
+## Configuring the Page
 
 Creating a Full Page Application starts just like creating any other type of 
 page.

@@ -1,4 +1,8 @@
-# Backing Up Elasticsearch [](id=backing-up-elasticsearch)
+---
+header-id: backing-up-elasticsearch
+---
+
+# Backing Up Elasticsearch
 
 [Elasticsearch replicas](https://www.elastic.co/guide/en/elasticsearch/guide/master/replica-shards.html)
 protect against a node going down, but they won't help you with a catastrophic
@@ -17,7 +21,7 @@ For more detailed information, refer to the
 and in particular to the documentation on the 
 [Snapshot/Restore module](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/modules-snapshots.html).
 
-## Creating a Repository [](id=creating-a-repository)
+## Creating a Repository
 
 First [create a repository](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/modules-snapshots.html#_repositories)
 to store your snapshots. Several repository types are supported:
@@ -54,7 +58,7 @@ If the repository is set up successfully, you should see this message:
 
 Once the repository exists, you can start creating snapshots.
 
-## Taking Snapshots of the Cluster [](id=snapshotting-the-cluster)
+## Taking Snapshots of the Cluster
 
 The easiest snapshot approach is to create a 
 [snapshot of all the indexes in your cluster](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/modules-snapshots.html#_snapshot). 
@@ -72,20 +76,16 @@ include in the snapshot:
     curl -XPUT localhost:9200/_snapshot/test_backup/snapshot_2
     { "indices": "liferay-0,liferay-20116" }
 
-+$$$
-
-**Note:** For a list of all the Elasticsearch indexes, use this command:
-
-    curl -X GET "localhost:9200/_cat/indices?v"
-
-This shows the index metrics:
-
-    health status index         uuid                   pri rep docs.count docs.deleted store.size pri.store.size
-    green  open   liferay-20099 obqiNE1_SDqfuz7rincrGQ   1   0        195            0    303.1kb        303.1kb
-    green  open   liferay-47206 3YEjtye1S9OVT0i0EZcXcw   1   0          7            0     69.7kb         69.7kb
-    green  open   liferay-0     shBWwpkXRxuAmGEaE475ug   1   0        147            1    390.9kb        390.9kb
-
-$$$
+| **Note:** For a list of all the Elasticsearch indexes, use this command:
+| 
+|     curl -X GET "localhost:9200/_cat/indices?v"
+| 
+| This shows the index metrics:
+| 
+|     health status index         uuid                   pri rep docs.count docs.deleted store.size pri.store.size
+|     green  open   liferay-20099 obqiNE1_SDqfuz7rincrGQ   1   0        195            0    303.1kb        303.1kb
+|     green  open   liferay-47206 3YEjtye1S9OVT0i0EZcXcw   1   0          7            0     69.7kb         69.7kb
+|     green  open   liferay-0     shBWwpkXRxuAmGEaE475ug   1   0        147            1    390.9kb        390.9kb
 
 It's important to note that Elasticsearch uses a *smart snapshots* approach. To
 understand what that means, consider a single index. The first snapshot includes
@@ -136,7 +136,7 @@ a lot of data, this can cost time and resources. To cancel the ongoing creation
 of a snapshot, use the same `DELETE` command.  The snapshot process is
 terminated and the partial snapshot is deleted from the repository.
 
-## Restoring from a Snapshot [](id=restoring-from-a-snapshot)
+## Restoring from a Snapshot
 
 What good is a snapshot if you can't use it to 
 [restore your search indexes](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/modules-snapshots.html#_restore) 

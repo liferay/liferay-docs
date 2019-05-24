@@ -1,8 +1,12 @@
-# Navigating to a Related Resource [](id=navigating-to-a-related-resource)
+---
+header-id: navigating-to-a-related-resource
+---
+
+# Navigating to a Related Resource
 
 When you get a resource, you can use the response to get related resources. For
 example, the GET request to the *Livingstone Hotels & Resorts* Site in the 
-[previous tutorial](/develop/tutorials/-/knowledge_base/7-1/navigating-from-a-collection-to-its-elements)
+[previous tutorial](/docs/7-1/tutorials/-/knowledge_base/t/navigating-from-a-collection-to-its-elements)
 produces a response containing information about that Site, including its
 related resources: 
 
@@ -52,16 +56,16 @@ separate related resource URLs from other URLs.
 Alternatively, you can identify related resources by consulting the schema 
 definition. The schema sets the attributes' semantics and type. For more 
 information about schemas and the model used in the API, see the 
-[API Vocabulary tutorial](/develop/tutorials/-/knowledge_base/7-1/api-vocabulary). 
+[API Vocabulary tutorial](/docs/7-1/tutorials/-/knowledge_base/t/api-vocabulary). 
 
 Note that it's typically easier to identify related resources via the response, 
 because it's easier to automate. Relying on the API vocabulary or schema 
 requires understanding and parsing the schema. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Navigating from a Collection to its Elements](/develop/tutorials/-/knowledge_base/7-1/navigating-from-a-collection-to-its-elements)
+[Navigating from a Collection to its Elements](/docs/7-1/tutorials/-/knowledge_base/t/navigating-from-a-collection-to-its-elements)
 
-[API Vocabulary](/develop/tutorials/-/knowledge_base/7-1/api-vocabulary)
+[API Vocabulary](/docs/7-1/tutorials/-/knowledge_base/t/api-vocabulary)
 
-[Hypermedia Formats and Content Negotiation](/develop/tutorials/-/knowledge_base/7-1/hypermedia-formats-and-content-negotiation)
+[Hypermedia Formats and Content Negotiation](/docs/7-1/tutorials/-/knowledge_base/t/hypermedia-formats-and-content-negotiation)

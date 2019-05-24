@@ -1,13 +1,17 @@
-# Changing Adaptive Media's Image Scaling [](id=changing-adaptive-medias-image-scaling)
+---
+header-id: changing-adaptive-medias-image-scaling
+---
+
+# Changing Adaptive Media's Image Scaling
 
 As described in 
-[the Adaptive Media user guide](/discover/portal/-/knowledge_base/7-1/adapting-your-media-across-multiple-devices), 
+[the Adaptive Media user guide](/docs/7-1/user/-/knowledge_base/u/adapting-your-media-across-multiple-devices), 
 Adaptive Media scales images to match the image resolutions defined by the 
 @product@ administrator. The default scaling is usually suitable, but you can 
 also customize it to your needs. Before doing so, however, you should understand 
 how this scaling works. 
 
-## Understanding Image Scaling in Adaptive Media [](id=understanding-image-scaling-in-adaptive-media)
+## Understanding Image Scaling in Adaptive Media
 
 Adaptive Media contains an extension point that lets you replace the way it 
 scales images. 
@@ -57,7 +61,7 @@ specific MIME types and has a higher `service.ranking`, it's more likely to be
 chosen than if it's registered for the special MIME type `*` or has a lower 
 `service.ranking`. 
 
-## Creating an Image Scaler [](id=creating-an-image-scaler)
+## Creating an Image Scaler
 
 Now that you know how Adaptive Media scales images, you'll learn how to 
 customize this scaling. As an example, you'll see a sample image scaler that 
@@ -74,15 +78,11 @@ Follow these steps to create a custom image scaler:
     service ranking property must be higher than that of the other scalers. If 
     `service.ranking` isn't set, it defaults to `0`. 
 
-    +$$$
-
-    **Note:** The `service.ranking` property isn't set for the image scalers 
-    included with Adaptive Media (`AMDefaultImageScaler` and 
-    `AMGIFImageScaler`). Their service ranking therefore defaults to `0`. To 
-    replace either scaler, you must set your scaler to the same MIME type and 
-    give it a service ranking higher than `0`. 
-
-    $$$
+    | **Note:** The `service.ranking` property isn't set for the image scalers
+    | included with Adaptive Media (`AMDefaultImageScaler` and
+    | `AMGIFImageScaler`). Their service ranking therefore defaults to `0`. To
+    | replace either scaler, you must set your scaler to the same MIME type and
+    | give it a service ranking higher than `0`.
 
     For example, this sample image scaler scales PNG and x-PNG images, and has a 
     service ranking of `100`: 
@@ -203,10 +203,10 @@ Follow these steps to create a custom image scaler:
 
 Great! Now you know how to write your own image scalers. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Displaying Adapted Images in Your App](/develop/tutorials/-/knowledge_base/7-1/displaying-adapted-images-in-your-app)
+[Displaying Adapted Images in Your App](/docs/7-1/tutorials/-/knowledge_base/t/displaying-adapted-images-in-your-app)
 
-[Finding Adapted Images](/develop/tutorials/-/knowledge_base/7-1/finding-adapted-images)
+[Finding Adapted Images](/docs/7-1/tutorials/-/knowledge_base/t/finding-adapted-images)
 
-[Adapting Your Media Across Multiple Devices](/discover/portal/-/knowledge_base/7-1/adapting-your-media-across-multiple-devices)
+[Adapting Your Media Across Multiple Devices](/docs/7-1/user/-/knowledge_base/u/adapting-your-media-across-multiple-devices)

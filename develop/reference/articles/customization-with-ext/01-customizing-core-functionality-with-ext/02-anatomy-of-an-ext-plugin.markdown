@@ -1,7 +1,11 @@
-# Anatomy of an Ext Plugin [](id=anatomy-of-an-ext-plugin)
+---
+header-id: anatomy-of-an-ext-plugin
+---
+
+# Anatomy of an Ext Plugin
 
 There are two ways you can structure your Ext plugin. The
-[`war-core-ext`](/develop/reference/-/knowledge_base/7-1/war-core-ext-template)
+[`war-core-ext`](/docs/7-1/reference/-/knowledge_base/r/war-core-ext-template)
 project template/archetype creates the default layout:
 
 - `[project name]-ext/`
@@ -98,14 +102,10 @@ significant files:
     - `web.xml`: Used to overwrite web application configurations and servlet
      information for @product-ver@.
 
-+$$$
-
-**Note:** After creating an Ext plugin, remove the files from
-`docroot/WEB-INF/ext-web/docroot/WEB-INF` that you don't need to customize.
-Removing files you're not customizing prevents incompatibilities that could
-manifest from @product@ updates. 
-
-$$$
+| **Note:** After creating an Ext plugin, remove the files from
+| `docroot/WEB-INF/ext-web/docroot/WEB-INF` that you don't need to customize.
+| Removing files you're not customizing prevents incompatibilities that could
+| manifest from @product@ updates.
 
 Great! Now you're familiar with an Ext plugin's folder structure and its most
 significant files.

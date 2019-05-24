@@ -1,4 +1,8 @@
-# Creating Form Templates [](id=creating-form-templates)
+---
+header-id: creating-form-templates
+---
+
+# Creating Form Templates
 
 Form templates control how the data entry form appears for a data definition.
 Follow these steps to create a form template for a definition: 
@@ -22,7 +26,7 @@ Follow these steps to create a form template for a definition:
     (![Add](../../../images/icon-add.png)) 
     and select *Add Form Template*. This presents the same kind of graphical, 
     drag-and-drop interface used to 
-    [create definitions](/discover/portal/-/knowledge_base/7-1/creating-data-definitions). 
+    [create definitions](/docs/7-1/user/-/knowledge_base/u/creating-data-definitions). 
 
 5.  Give your template a name, then expand the *Details* section and give it a 
     description. You can also use the *Mode* selector to select which mode the 
@@ -38,7 +42,7 @@ Alternatively, you can create form templates from the Dynamic Data Lists Display
 widget: 
 
 1.  Follow the instructions in the 
-    [Creating Data Lists article](/discover/portal/-/knowledge_base/7-1/creating-data-lists) for
+    [Creating Data Lists article](/docs/7-1/user/-/knowledge_base/u/creating-data-lists) for
     adding and configuring the widget in a Site page. Make sure to configure the
     widget to show the list you're creating a template for. 
 

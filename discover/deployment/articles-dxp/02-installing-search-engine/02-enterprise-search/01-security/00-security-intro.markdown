@@ -1,9 +1,13 @@
-# Installing Liferay Enterprise Search Security [](id=installing-liferay-enterprise-search-security)
+---
+header-id: installing-liferay-enterprise-search-security
+---
+
+# Installing Liferay Enterprise Search Security
 
 Once X-Pack is installed, start securing Elasticsearch by configuring the
 built-in user passwords.
 
-## Enabling X-Pack Security [](id=enabling-x-pack-security)
+## Enabling X-Pack Security
 
 The first thing to do is enable X-Pack security. Add this setting in
 `elasticsearch.yml`:
@@ -12,7 +16,7 @@ The first thing to do is enable X-Pack security. Add this setting in
 
 Now you can set up X-Pack users.
 
-## Setting Up X-Pack Users [](id=setting-up-x-pack-users)
+## Setting Up X-Pack Users
 
 In a system using X-Pack Security and X-Pack Monitoring, these built-in
 X-Pack users are important:
@@ -41,20 +45,16 @@ Since you're securing Elasticsearch, remember the `elastic` user's password.
 
 Enable transport layer security on each node.
 
-## Enabling Transport Layer Security [](id=enabling-transport-layer-security)
+## Enabling Transport Layer Security
 
 The following instructions for enabling TLS use `liferay` as the password
 whenever one is needed. Use your own passwords for your installation. 
 
-+$$$
+| **Important:** Elasticsearch and @product@ must share the keys and certificates
+| used to configure SSL. Copy them between servers and point to the local copy in
+| the corresponding configuration files.
 
-**Important:** Elasticsearch and @product@ must share the keys and certificates
-used to configure SSL. Copy them between servers and point to the local copy in
-the corresponding configuration files.
-
-$$$
-
-### Generate Node Certificates [](id=generate-node-certificates)
+### Generate Node Certificates
 
 [Generate a node certificate](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/configuring-tls.html#node-certificates)
 for each node. You can, of course, use a Certificate Authority to obtain node 
@@ -75,16 +75,12 @@ certificates.
     This generates another ZIP file. Extract the contents somewhere in the
     `[Elasticsearch Home]/config` folder.
 
-+$$$
+| **Note:** The `certutil` command defaults to using the *PKSC#12* format for
+| certificate generation. Since Kibana does not work with PKSC#12 certificates,
+| the `--pem` option (generates the certificate in PEM format) is important if
+| you're using X-Pack monitoring.
 
-**Note:** The `certutil` command defaults to using the *PKSC#12* format for
-certificate generation. Since Kibana does not work with PKSC#12 certificates,
-the `--pem` option (generates the certificate in PEM format) is important if
-you're using X-Pack monitoring.
-
-$$$
-
-### Enable TLS [](id=enable-tls)
+### Enable TLS
 
 [Enable TLS](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/configuring-tls.html#enable-ssl) 
 on each node via its `elasticsearch.yml`.
@@ -111,7 +107,7 @@ on each node via its `elasticsearch.yml`.
 After X-Pack is installed and TLS is enabled, configure the X-Pack Security
 adapter in @product@.
 
-## Install and Configure the Liferay Connector to X-Pack Security [](id=install-and-configure-the-liferay-connector-to-x-pack-security)
+## Install and Configure the Liferay Connector to X-Pack Security
 
 If you have a Liferay Enterprise Search Premium subscription, 
 [download](https://web.liferay.com/group/customer/dxp/downloads/enterprise-search) 
@@ -122,7 +118,7 @@ To configure the X-Pack adapter, navigate to *Control Panel* &rarr;
 *Configuration* &rarr; *System Settings*. Find the *Search* category and click
 on the *X-Pack Security* entry. You can enter the property values here, but it's
 more common to use a 
-[configuration file](/discover/portal/-/knowledge_base/7-1/understanding-system-configuration-files)
+[configuration file](/docs/7-1/user/-/knowledge_base/u/understanding-system-configuration-files)
 deployed to `[Liferay Home]/osgi/configs`. For the X-Pack adapter, create a file
 called
 

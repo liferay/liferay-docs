@@ -1,4 +1,8 @@
-# Deleting Files [](id=deleting-files)
+---
+header-id: deleting-files
+---
+
+# Deleting Files
 
 There are two methods you can use to delete files: 
 
@@ -19,7 +23,7 @@ Follow these steps to delete a file:
         private DLAppService _dlAppService;
 
     For more information on this, see the section on 
-    [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
+    [getting a service reference](/docs/7-1/tutorials/-/knowledge_base/t/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
     in the getting started tutorial. 
 
 2.  Get the data needed to populate the arguments of the `deleteFileEntry*` 
@@ -35,7 +39,7 @@ Follow these steps to delete a file:
     If you want to use `deleteFileEntryByTitle` instead, you can also get the 
     repository ID, folder ID, and title from the request. For more information 
     on getting repository and folder IDs, see the 
-    [getting started tutorial's](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api) 
+    [getting started tutorial's](/docs/7-1/tutorials/-/knowledge_base/t/getting-started-with-the-documents-and-media-api) 
     sections on specifying repositories and folders. 
 
 3.  Call the service reference's `deleteFileEntry*` method you wish to use with 
@@ -53,12 +57,12 @@ this `deleteFileEntry` method, as well as the rest of
 `EditFileEntryMVCActionCommand`, contains additional logic to suit the specific 
 needs of the Documents and Media app. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Moving Entities to the Recycle Bin](/develop/tutorials/-/knowledge_base/7-1/moving-entities-to-the-recycle-bin)
+[Moving Entities to the Recycle Bin](/docs/7-1/tutorials/-/knowledge_base/t/moving-entities-to-the-recycle-bin)
 
-[Creating Files](/develop/tutorials/-/knowledge_base/7-1/creating-files)
+[Creating Files](/docs/7-1/tutorials/-/knowledge_base/t/creating-files)
 
-[Updating Files](/develop/tutorials/-/knowledge_base/7-1/updating-files)
+[Updating Files](/docs/7-1/tutorials/-/knowledge_base/t/updating-files)
 
-[Moving Folders and Files](/develop/tutorials/-/knowledge_base/7-1/moving-folders-and-files)
+[Moving Folders and Files](/docs/7-1/tutorials/-/knowledge_base/t/moving-folders-and-files)

@@ -1,4 +1,8 @@
-# Apps [](id=apps)
+---
+header-id: apps
+---
+
+# Apps
 
 This section focuses on Liferay sample applications. You can view these sample
 apps by visiting the `apps` folder corresponding to your preferred build tool:

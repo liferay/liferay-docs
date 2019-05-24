@@ -1,4 +1,8 @@
-# Using the Calendar [](id=using-the-calendar)
+---
+header-id: using-the-calendar
+---
+
+# Using the Calendar
 
 The Calendar widget is an updated, digitized, 3D-printed sundial. Okay, it's
 really a tool for storing and sharing scheduled events. It's a personal planner
@@ -7,14 +11,10 @@ time. It can be used to create multiple calendars for a single Site or User, to
 overlay the events stored in multiple calendars for simultaneous view, to send
 email reminders to users, and more.
 
-+$$$
-
-**Note:** The calendar supports social activities. Whenever a calendar event
-is added or updated, a corresponding social activity notification is created. If
-the event was added or updated in a calendar that the current user has
-permission to view, the social activity is viewable in the Activities widget.
-
-$$$
+| **Note:** The calendar supports social activities. Whenever a calendar event
+| is added or updated, a corresponding social activity notification is created. If
+| the event was added or updated in a calendar that the current user has
+| permission to view, the social activity is viewable in the Activities widget.
 
 ## Configuring the Calendar[](id=configuring-the-calendar-portlet)
 

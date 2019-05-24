@@ -1,4 +1,8 @@
-# Meaningful Schema Versioning [](id=meaningful-schema-versioning)
+---
+header-id: meaningful-schema-versioning
+---
+
+# Meaningful Schema Versioning
 
 Data schema versions can be as arbitrary as you like; but they are most helpful
 when they provide meaning. Liferay's data schema version convention communicates
@@ -9,7 +13,7 @@ expects, the schema breaks compatibility. But if a new schema's changes are
 non-breaking (e.g., adds a new field), the schema is compatible and can be used
 with existing software. Since @product@ 7.1, Liferay uses a meaningful schema
 version convention (similar to [Semantic Versioning](http://semver.org)) to
-define new [upgrade steps](/develop/tutorials/-/knowledge_base/7-1/creating-an-upgrade-process-for-your-app)
+define new [upgrade steps](/docs/7-1/tutorials/-/knowledge_base/t/creating-an-upgrade-process-for-your-app)
 and support rollback of schema micro versions. The convention is optional but
 tracks data schema backwards compatibility. 
 
@@ -33,7 +37,7 @@ version of existing code.
 
 Next are some concrete examples of micro, minor, and major changes. 
 
-## Micro change examples [](id=micro-change-examples)
+## Micro change examples
 
 Here are common micro changes:
 
@@ -45,14 +49,14 @@ Here are common micro changes:
 -   Converting a field from a String to a CLOB, as long as the field has few 
     records and isn't used in `DISTINCT` or `GROUP BY` SQL clauses. 
 
-## Minor change examples [](id=minor-change-examples)
+## Minor change examples
 
 Here are common minor changes:
 
 -   Adding a new DB field.
 -   Creating a new DB table. 
 
-## Major change examples [](id=major-change-examples)
+## Major change examples
 
 Here are common major changes:
 

@@ -1,4 +1,8 @@
-# Styling Apps and Assets [](id=styling-apps-and-assets)
+---
+header-id: styling-apps-and-assets
+---
+
+# Styling Apps and Assets
 
 Application Display Template (ADTs) define custom display templates used to
 render widgets. For example, you may want to show blog entries horizontally

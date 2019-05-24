@@ -1,4 +1,8 @@
-# OAuth 2.0 [](id=oauth-2-0)
+---
+header-id: oauth-2-0
+---
+
+# OAuth 2.0
 
 OAuth 2.0 is an industry-standard authorization protocol. Users can seamlessly
 share select credentials from another website to log into yours. You've probably
@@ -11,7 +15,7 @@ something else from your account) and other permissioned resources.
 OAuth 2.0's design encrypts all authorization transport through HTTPS, which
 prevents data passed between the systems from being intercepted. 
 
-## Flow of OAuth 2.0 [](id=flow-of-oauth-2-0)
+## Flow of OAuth 2.0
 
 OAuth 2.0 takes advantage of web standards wherever possible: transport is
 encrypted with HTTPS; tokens are implemented as HTTP headers; data is passed via
@@ -49,7 +53,7 @@ Here's how OAuth 2.0 works:
 
 That description throws around a lot of terms. Definitions provided below. 
 
-## OAuth 2.0 Terminology [](id=oauth-2-0-terminology)
+## OAuth 2.0 Terminology
 
 **Authentication:** Providing credentials so a system can verify who you are by
 matching those credentials with what it has stored. OAuth is not an
@@ -87,7 +91,7 @@ or deny access to their resources.
 complete, the authorization server (i.e., Liferay) sends the client to this
 location. 
 
-## Creating an Application [](id=creating-an-application)
+## Creating an Application
 
 When you have an application that can use OAuth 2.0 for authorization, you must
 register that application so @product@ can recognize it. Do this by accessing

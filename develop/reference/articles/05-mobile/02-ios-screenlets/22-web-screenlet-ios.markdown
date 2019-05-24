@@ -1,6 +1,10 @@
-# Web Screenlet for iOS [](id=web-screenlet-for-ios)
+---
+header-id: web-screenlet-for-ios
+---
 
-## Requirements [](id=requirements)
+# Web Screenlet for iOS
+
+## Requirements
 
 -   Xcode 9.3 or above
 -   iOS 11 SDK
@@ -10,28 +14,28 @@
     [EE/DXP](http://www.liferay.com/marketplace/-/mp/application/54369726)). 
     This app is preinstalled in Liferay CE Portal 7.0/7.1 and Liferay DXP. 
 
-## Compatibility [](id=compatibility)
+## Compatibility
 
 - iOS 9 and above
 
-## Xamarin Requirements [](id=xamarin-requirements)
+## Xamarin Requirements
 
 - Visual Studio 7.2
 - Mono .NET framework 5.4.1.6
 
-## Features [](id=features)
+## Features
 
 Web Screenlet lets you display any web page. It also lets you customize the web 
 page through injection of local and remote JavaScript and CSS files. If you're 
 using @product@ as backend, you can use 
-[Application Display Templates](/discover/portal/-/knowledge_base/7-1/styling-apps-and-assets) 
+[Application Display Templates](/docs/7-1/user/-/knowledge_base/u/styling-apps-and-assets) 
 in your page to customize its content from the server side. 
 
-## Module [](id=module)
+## Module
 
 - None
 
-## Themes [](id=themes)
+## Themes
 
 - Default
 
@@ -39,10 +43,10 @@ The Default Theme uses an iOS `WKWebView` for displaying the web page.
 
 ![Figure 1: Web Screenlet using the Default Theme.](../../../images/screens-ios-webscreenlet.png)
 
-## Configuration [](id=configuration)
+## Configuration
 
 To learn how to use Web Screenlet, follow the steps in the tutorial 
-[Rendering Web Pages in Your iOS App](/develop/tutorials/-/knowledge_base/7-1/rendering-web-pages-in-your-ios-app). 
+[Rendering Web Pages in Your iOS App](/docs/7-1/tutorials/-/knowledge_base/t/rendering-web-pages-in-your-ios-app). 
 That tutorial gives detailed instructions for using the configuration items 
 described here. 
 
@@ -58,17 +62,13 @@ supply the described configuration parameters:
 | `addCss(localFile: String)` | `WebScreenletConfigurationBuilder` | Adds a local CSS file with the supplied filename. |
 | `addJs(url: String)` | `WebScreenletConfigurationBuilder` | Adds a JavaScript file from the supplied URL. |
 | `addCss(url: String)` | `WebScreenletConfigurationBuilder` | Adds a CSS file from the supplied URL. |
-| `set(webType: WebType)` | `WebScreenletConfigurationBuilder` | Sets the [`WebType`](/develop/reference/-/knowledge_base/7-1/web-screenlet-for-ios#webtype). |
+| `set(webType: WebType)` | `WebScreenletConfigurationBuilder` | Sets the [`WebType`](/docs/7-1/reference/-/knowledge_base/r/web-screenlet-for-ios#webtype). |
 | `enableCordova()` | `WebScreenletConfigurationBuilder` | Enables Cordova inside the Web Screenlet. |
 | `load()` | `WebScreenletConfiguration` | Returns the `WebScreenletConfiguration` object that you can set to the Screenlet instance. |
 
-+$$$
+| **Note:** If you want to add comments in the scripts, use the `/**/` notation.
 
-**Note:** If you want to add comments in the scripts, use the `/**/` notation. 
-
-$$$
-
-### WebType [](id=webtype)
+### WebType
 
 -   **WebType.liferayAuthenticated** (default): Displays a @product@ page that 
     requires authentication. The user must therefore be logged in with Screens 
@@ -84,7 +84,7 @@ $$$
     `http://screens.liferay.org.es/web/guest/blog`, then you must supply that 
     URL to the constructor. 
 
-## Attributes [](id=attributes)
+## Attributes
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------|
@@ -92,7 +92,7 @@ $$$
 | `loggingEnabled` | `boolean` | Whether logging is enabled. |
 | `isScrollEnabled` | `boolean` | Whether to enable scrolling on the page inside the Screenlet. |
 
-## Delegate [](id=delegate)
+## Delegate
 
 Web Screenlet delegates some events to an object that conforms to the 
 `WebScreenletDelegate` protocol. This protocol lets you implement the following 

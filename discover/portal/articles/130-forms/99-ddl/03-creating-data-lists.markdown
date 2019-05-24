@@ -1,4 +1,8 @@
-# Creating Data Lists [](id=creating-data-lists)
+---
+header-id: creating-data-lists
+---
+
+# Creating Data Lists
 
 There are two places to create dynamic data lists: 
 
@@ -37,7 +41,7 @@ Either option leads to the New List form:
 
     ![Figure 1: The New List form.](../../../images/ddl-add-list.png)
 
-## Creating List Records [](id=creating-list-records)
+## Creating List Records
 
 By default, only administrators have permission to create list records. Follow 
 these steps to give other users this permission: 
@@ -83,7 +87,7 @@ See the section below for more information on configuring the widget.
 
 ![Figure 2: Dynamic Data Lists Display widget.](../../../images/ddl-widget.png)
 
-## Configuring the Dynamic Data Lists Display Widget [](id=configuring-the-dynamic-data-lists-display-widget)
+## Configuring the Dynamic Data Lists Display Widget
 
 The widget's default display template isn't exciting, but it shows the list's
 contents, and with permission, add and/or edit list items. To configure the

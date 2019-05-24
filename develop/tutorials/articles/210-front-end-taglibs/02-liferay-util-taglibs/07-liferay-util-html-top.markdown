@@ -1,4 +1,8 @@
-# Using Liferay Util HTML Top [](id=using-liferay-util-html-top)
+---
+header-id: using-liferay-util-html-top
+---
+
+# Using Liferay Util HTML Top
 
 The HTML top tag is not a self-closing tag. The content placed between the 
 opening and closing of this tag is moved to the `<head>` tag. When something is 
@@ -22,10 +26,10 @@ include additional CSS styles provided by the portlet's bundle:
 Now you know how to use the `<liferay-util:html-top>` tag to include additional 
 resources in the top of the page's HTML tag. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using the Liferay Util HTML Bottom Tag](/develop/tutorials/-/knowledge_base/7-1/using-liferay-util-html-bottom)
+[Using the Liferay Util HTML Bottom Tag](/docs/7-1/tutorials/-/knowledge_base/t/using-liferay-util-html-bottom)
 
-[Using the Liferay Util Body Top Tag](/develop/tutorials/-/knowledge_base/7-1/using-liferay-util-body-top)
+[Using the Liferay Util Body Top Tag](/docs/7-1/tutorials/-/knowledge_base/t/using-liferay-util-body-top)
 
-[Using the Clay Taglib](/develop/tutorials/-/knowledge_base/7-1/using-the-clay-taglib-in-your-portlets)
+[Using the Clay Taglib](/docs/7-1/tutorials/-/knowledge_base/t/using-the-clay-taglib-in-your-portlets)

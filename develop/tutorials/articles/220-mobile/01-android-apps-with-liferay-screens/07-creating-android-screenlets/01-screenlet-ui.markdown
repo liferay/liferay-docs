@@ -1,4 +1,8 @@
-# Creating the UI [](id=creating-the-ui)
+---
+header-id: creating-the-ui
+---
+
+# Creating the UI
 
 In Liferay Screens for Android, Screenlet UIs are called Views. Every Screenlet 
 must have at least one View. A View consists of the following components: 
@@ -17,7 +21,7 @@ must have at least one View. A View consists of the following components:
     class depends on all the other Screenlet components. You therefore won't 
     create the Screenlet class until the end of this tutorial. 
 
-## Creating the Screenlet's View Model and Layout [](id=creating-the-screenlets-view-model-and-layout)
+## Creating the Screenlet's View Model and Layout
 
 The first items to create for a Screenlet's View are its View Model interface 
 and layout. The following steps explain how: 
@@ -86,7 +90,7 @@ and layout. The following steps explain how:
 
 Next, you'll create your Screenlet's View class. 
 
-## Creating the Screenlet's View Class [](id=creating-the-screenlets-view-class)
+## Creating the Screenlet's View Class
 
 Your Screenlet needs a View class to support the layout you just created. This 
 class must extend an Android layout class (e.g. `LinearLayout`, `ListView`), 
@@ -227,12 +231,12 @@ to see the complete example `AddBookmarkView` class.
 Great! Your View class is finished. Now you're ready to create your Screenlet's 
 Interactor class. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating the Interactor](/develop/tutorials/-/knowledge_base/7-1/creating-the-interactor)
+[Creating the Interactor](/docs/7-1/tutorials/-/knowledge_base/t/creating-the-interactor)
 
-[Defining the Attributes](/develop/tutorials/-/knowledge_base/7-1/defining-the-attributes)
+[Defining the Attributes](/docs/7-1/tutorials/-/knowledge_base/t/defining-the-attributes)
 
-[Creating the Screenlet Class](/develop/tutorials/-/knowledge_base/7-1/creating-the-screenlet-class)
+[Creating the Screenlet Class](/docs/7-1/tutorials/-/knowledge_base/t/creating-the-screenlet-class)
 
-[Packaging Your Screenlets](/develop/tutorials/-/knowledge_base/7-1/packaging-your-screenlets)
+[Packaging Your Screenlets](/docs/7-1/tutorials/-/knowledge_base/t/packaging-your-screenlets)

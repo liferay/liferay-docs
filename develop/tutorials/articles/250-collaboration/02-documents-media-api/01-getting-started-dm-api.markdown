@@ -1,4 +1,8 @@
-# Getting Started with the Documents and Media API [](id=getting-started-with-the-documents-and-media-api)
+---
+header-id: getting-started-with-the-documents-and-media-api
+---
+
+# Getting Started with the Documents and Media API
 
 Before you start using the Documents and Media API, you must learn these things: 
 
@@ -11,7 +15,7 @@ Before you start using the Documents and Media API, you must learn these things:
 -   [**Specifying Folders:**](#specifying-folders) How to specify which folder
     you want. 
 
-## Key Interfaces [](id=key-interfaces)
+## Key Interfaces
 
 The Documents and Media API contains several key interfaces: 
 
@@ -25,10 +29,10 @@ The Documents and Media API contains several key interfaces:
         methods in permission checks. 
 
     Note that Liferay used 
-    [Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder) 
+    [Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/service-builder) 
     to create these services. Because the remote service contains permission 
     checks, it's a 
-    [best practice](/develop/tutorials/-/knowledge_base/7-1/creating-remote-services#using-service-builder-to-generate-remote-services) 
+    [best practice](/docs/7-1/tutorials/-/knowledge_base/t/creating-remote-services#using-service-builder-to-generate-remote-services) 
     to call it instead of the local service. See the section below for 
     instructions on getting a service reference. 
 
@@ -39,12 +43,12 @@ The Documents and Media API contains several key interfaces:
     -   `Folder`: Represents a folder. 
     -   `FileShortcut`: Represents a shortcut to a file.
 
-## Getting a Service Reference [](id=getting-a-service-reference)
+## Getting a Service Reference
 
 Before you can do anything with the Documents and Media API, you must get
 a service reference. If you're using OSGi modules, use the `@Reference`
 annotation to 
-[get a service reference in an OSGi component via Declarative Services](/develop/tutorials/-/knowledge_base/7-1/osgi-services-and-dependency-injection-with-declarative-services).
+[get a service reference in an OSGi component via Declarative Services](/docs/7-1/tutorials/-/knowledge_base/t/osgi-services-and-dependency-injection-with-declarative-services).
 For example, this code gets a reference to `DLAppService`: 
 
     @Reference
@@ -55,7 +59,7 @@ If you're using a standard web module (WAR file), use a
 to get a reference to the service instead. 
 
 Getting the reference this way ensures that you leverage OSGi's 
-[dependency management](/develop/tutorials/-/knowledge_base/7-1/leveraging-dependencies)
+[dependency management](/docs/7-1/tutorials/-/knowledge_base/t/leveraging-dependencies)
 features. If you must use the Documents and Media services outside of an OSGi
 component (e.g., in a JSP), then you can use the services' static `*Util`
 classes: 
@@ -63,7 +67,7 @@ classes:
 -   [`DLAppServiceUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppServiceUtil.html)
 -   [`DLAppLocalServiceUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppLocalServiceUtil.html)
 
-## Specifying Repositories [](id=specifying-repositories)
+## Specifying Repositories
 
 Many methods in the Documents and Media API contain a `repositoryId` parameter
 that identifies the Documents and Media repository where the operation is
@@ -104,7 +108,7 @@ Note that there are ways to create repositories programmatically, including
 repositories private to specific apps. For simplicity, however, the tutorials 
 here access the default site repository. 
 
-## Specifying Folders [](id=specifying-folders)
+## Specifying Folders
 
 Many API methods require the ID of a folder that they perform operations in or 
 on. For example, such methods may contain parameters like `folderId` or 
@@ -112,12 +116,12 @@ on. For example, such methods may contain parameters like `folderId` or
 `DLFolderConstants.DEFAULT_PARENT_FOLDER_ID` to specify the root folder of your
 current repository. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder)
+[Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/service-builder)
 
-[OSGi Services and Dependency Injection with Declarative Services](/develop/tutorials/-/knowledge_base/7-1/osgi-services-and-dependency-injection-with-declarative-services)
+[OSGi Services and Dependency Injection with Declarative Services](/docs/7-1/tutorials/-/knowledge_base/t/osgi-services-and-dependency-injection-with-declarative-services)
 
-[Leveraging Dependencies](/develop/tutorials/-/knowledge_base/7-1/leveraging-dependencies)
+[Leveraging Dependencies](/docs/7-1/tutorials/-/knowledge_base/t/leveraging-dependencies)
 
-[Service Trackers](/develop/tutorials/-/knowledge_base/7-1/service-trackers)
+[Service Trackers](/docs/7-1/tutorials/-/knowledge_base/t/service-trackers)

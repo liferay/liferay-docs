@@ -1,4 +1,8 @@
-# Layout Templates [](id=layout-templates-intro)
+---
+header-id: layout-templates-intro
+---
+
+# Layout Templates
 
 Layout templates define how content can be placed on a page. @product@ includes 
 several default layout templates out-of-the-box that you can use to organize 

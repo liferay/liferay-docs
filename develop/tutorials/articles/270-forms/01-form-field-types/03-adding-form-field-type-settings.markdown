@@ -1,21 +1,21 @@
-# Adding Settings to Form Field Types [](id=adding-settings-to-form-field-types)
+---
+header-id: adding-settings-to-form-field-types
+---
+
+# Adding Settings to Form Field Types
 
 Once you develop a 
-[Form Field Type](/develop/tutorials/-/knowledge_base/7-1/creating-form-field-types), you
+[Form Field Type](/docs/7-1/tutorials/-/knowledge_base/t/creating-form-field-types), you
 might need to add settings to it. For example, a Time field might accept
 different time formats. Here you'll learn how to add settings to form field
 types by adding a *mask* and a *placeholder* to the Time field type created in
 the previous tutorial. 
 
-+$$$
-
-**Note:** To learn more about using masks with the AUI Timepicker, go
-[here](http://alloyui.com/tutorials/timepicker/). 
-The mask just sets the format used to display the time choices. Use the 
-[strftime format](http://pubs.opengroup.org/onlinepubs/007908799/xsh/strftime.html) 
-to pick the mask you want.
-
-$$$
+| **Note:** To learn more about using masks with the AUI Timepicker, go
+| [here](http://alloyui.com/tutorials/timepicker/).
+| The mask just sets the format used to display the time choices. Use the
+| [strftime format](http://pubs.opengroup.org/onlinepubs/007908799/xsh/strftime.html)
+| to pick the mask you want.
 
 To add settings to form field types, take these steps:
 
@@ -35,7 +35,7 @@ To add settings to form field types, take these steps:
 
 First craft the interface that controls your field's settings.
 
-## Extending the Default Type Settings [](id=extending-the-default-type-settings)
+## Extending the Default Type Settings
 
 To add type settings, you need a `*TypeSettings` class that extends
 `DefaultDDMFormFieldTypeSettings`. Since this example works with a Time field
@@ -123,57 +123,53 @@ The interface extends `DefaultDDMFormFieldTypeSettings`. That's why the default
 settings can be used in the class annotation without setting them up in the
 class, as was necessary for the mask and placeholder.
 
-+$$$
-
-**DDM Annotations:** The `@DDMForm` annotation on this class allows the form engine to
-convert the interface definition into a dynamic form. This makes it really
-intuitive to lay out your settings form. 
-
-For now, here are brief explanations for the annotations used in the above
-example:
-
-`@DDMForm`
-: Instantiates a new `DDMForm`. Creates a dynamic form from the annotation.
-
-`@DDMFormLayout`
-: Takes two variables: `paginationMode` and `value`. The pagination mode is a
-String that controls how the layout pages are displayed. The `paginationMode`
-can be `TABBED_MODE`, `SINGLE_PAGE_MODE`, `SETTINGS_MODE`, or `WIZARD_MODE`.
-Under `value`, specify any `@DDMFormLayoutPage`s that you want to use.
-
-`@DDMFormLayoutPage` 
-: The sections of the type settings form. It takes two
-variables: `title` and `value`, where title is a String value that names the
-section of the form and value is one or more `@DDMFormLayoutRow`s.
-
-The layout page titles `%basic` and `%properties` are common to all of
-@product@'s field types, but you can use whatever titles you want. To change the
-title of a layout page, specify the title in the annotation properties (`title
-= "%advanced"`, for example), and then create a new key in the language
-resources files. For example, use `advanced=Advanced` in the
-`Language.properties`.
-
-`@DDMFormLayoutRow`
-: Lay out the number of columns you want in the row. Most settings
-forms have just one row and one column.
-
-`@DDMFormLayoutColumn`
-: Lay out the columns your settings form needs. Most settings forms
-have one row and one column. Each column accepts two argument, `size` and
-`value`.
-
-`@DDMFormField`
-: Add new fields to the settings form. In this example, the `mask` and
-`placeholder` settings are configured with this annotation. Don't forget to add
-the settings language keys (`mask` and `placeholder-text`) to the language
-resources files.
-
-$$$
+| **DDM Annotations:** The `@DDMForm` annotation on this class allows the form engine to
+| convert the interface definition into a dynamic form. This makes it really
+| intuitive to lay out your settings form.
+| 
+| For now, here are brief explanations for the annotations used in the above
+| example:
+| 
+| `@DDMForm`
+| : Instantiates a new `DDMForm`. Creates a dynamic form from the annotation.
+| 
+| `@DDMFormLayout`
+| : Takes two variables: `paginationMode` and `value`. The pagination mode is a
+| String that controls how the layout pages are displayed. The `paginationMode`
+| can be `TABBED_MODE`, `SINGLE_PAGE_MODE`, `SETTINGS_MODE`, or `WIZARD_MODE`.
+| Under `value`, specify any `@DDMFormLayoutPage`s that you want to use.
+| 
+| `@DDMFormLayoutPage`
+| : The sections of the type settings form. It takes two
+| variables: `title` and `value`, where title is a String value that names the
+| section of the form and value is one or more `@DDMFormLayoutRow`s.
+| 
+| The layout page titles `%basic` and `%properties` are common to all of
+| @product@'s field types, but you can use whatever titles you want. To change the
+| title of a layout page, specify the title in the annotation properties (`title
+| = "%advanced"`, for example), and then create a new key in the language
+| resources files. For example, use `advanced=Advanced` in the
+| `Language.properties`.
+| 
+| `@DDMFormLayoutRow`
+| : Lay out the number of columns you want in the row. Most settings
+| forms have just one row and one column.
+| 
+| `@DDMFormLayoutColumn`
+| : Lay out the columns your settings form needs. Most settings forms
+| have one row and one column. Each column accepts two argument, `size` and
+| `value`.
+| 
+| `@DDMFormField`
+| : Add new fields to the settings form. In this example, the `mask` and
+| `placeholder` settings are configured with this annotation. Don't forget to add
+| the settings language keys (`mask` and `placeholder-text`) to the language
+| resources files.
 
 Once your `*TypeSettings` class is finished, update the `*Type` class for your
 form field type.
 
-## Updating the Type Class [](id=updating-the-type-class)
+## Updating the Type Class
 
 The class `TimeDDMFormFieldType` currently has one method, `getName`, returning
 the name of the current form field. Add a new method to reference

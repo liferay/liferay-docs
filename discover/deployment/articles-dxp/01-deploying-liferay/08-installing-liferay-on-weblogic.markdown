@@ -1,4 +1,8 @@
-# Installing @product@ on WebLogic 12c R2 [](id=installing-liferay-dxp-on-weblogic-12c-r2)
+---
+header-id: installing-liferay-dxp-on-weblogic-12c-r2
+---
+
+# Installing @product@ on WebLogic 12c R2
 
 Although you can install @product@ in a WebLogic Admin Server, this isn't
 recommended. It's a best practice to install web apps, including @product@, in
@@ -14,9 +18,9 @@ for instructions on setting up and configuring Admin and Managed Servers.
 You should also read the following articles to familiarize yourself with
 @product@'s general installation steps: 
 
-- [Installing @product@](/discover/deployment/-/knowledge_base/7-1/installing-liferay)
-- [Preparing for Install](/discover/deployment/-/knowledge_base/7-1/preparing-for-install)
-- [Installing @product@ Manually](/discover/deployment/-/knowledge_base/7-1/installing-liferay-manually)
+- [Installing @product@](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay)
+- [Preparing for Install](/docs/7-1/deploy/-/knowledge_base/d/preparing-for-install)
+- [Installing @product@ Manually](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay-manually)
 
 Finally, download @product@'s WAR file and dependencies from the 
 [Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/7-1).
@@ -64,7 +68,7 @@ The following folders should be present within the `/liferay/osgi` folder:
 
 Without any further ado, get ready to install @product@ in WebLogic! 
 
-## Configuring WebLogic's Node Manager [](id=configuring-weblogics-node-manager)
+## Configuring WebLogic's Node Manager
 
 WebLogic requires a Node Manager to start and stop managed servers. Before 
 installing @product@, you must configure the Node Manager included with your 
@@ -94,7 +98,7 @@ If you're running WebLogic on Mac or Linux, you may also need to set the
 This tells the Node Manager to start in non-native mode. This is required for 
 the platforms where WebLogic doesn't provide native Node Manager libraries. 
 
-## Configuring WebLogic [](id=configuring-weblogic)
+## Configuring WebLogic
 
 Next, you must set some variables in two WebLogic startup scripts. These 
 variables and scripts are as follows. Be sure to use `set` instead of `export` 
@@ -113,12 +117,8 @@ if you're on Windows.
         export MW_HOME="/your/weblogic/directory"
         export USER_MEM_ARGS="-Xmx2048m"
 
-    +$$$
-
-    **Important:** For @product@ to work properly, the application server JVM 
-    must use the `GMT` time zone and `UTF-8` file encoding.
-
-    $$$
+    | **Important:** For @product@ to work properly, the application server JVM
+    | must use the `GMT` time zone and `UTF-8` file encoding.
     
     The `DERBY_FLAG` setting disables the Derby server built in to WebLogic, as 
     @product@ doesn't require this server. The remaining settings support @product@'s 
@@ -160,10 +160,10 @@ if you're on Windows.
 
 Next, you'll set some @product@-specific properties for your @product@ installation. 
 
-## Setting @product@ Properties [](id=setting-liferay-properties)
+## Setting @product@ Properties
 
 Before installing @product@, you must set the 
-[*Liferay Home*](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
+[*Liferay Home*](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home)
 folder's location via the `liferay.home` property in a `portal-ext.properties` 
 file. You can also use this file to override 
 [other @product@ properties](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html) 
@@ -193,7 +193,7 @@ deployment.
 
 Next, you'll install @product@'s dependencies. 
 
-## Installing @product@ Dependencies [](id=installing-liferay-dependencies)
+## Installing @product@ Dependencies
 
 You must now install @product@'s dependencies. Recall that earlier you 
 downloaded two ZIP files containing these dependencies. Install their contents 
@@ -249,7 +249,7 @@ Your `[Liferay Home]/osgi` folder has these subfolders:
 
 Next, you'll configure your database. 
 
-## Database Configuration [](id=database-configuration)
+## Database Configuration
 
 Use the following procedure if you want WebLogic to manage your database for 
 @product@. You can skip this section if you want to use @product@'s built-in 
@@ -291,7 +291,7 @@ appropriate for your database's configuration (if using MySQL):
 
 Next, you'll configure your mail session. 
 
-## Mail Configuration [](id=mail-configuration)
+## Mail Configuration
 
 If you want WebLogic to manage your mail session, use the following procedure. 
 If you want to use Liferay's built-in mail session (recommended), skip this
@@ -326,7 +326,7 @@ section.
 
 Your changes take effect upon restarting your Managed and Admin servers. 
 
-## Deploying @product@ [](id=deploying-liferay-dxp)
+## Deploying @product@
 
 As mentioned earlier, although you can deploy @product@ to a WebLogic Admin 
 Server, you should instead deploy it to a WebLogic Managed Server. Dedicating 
@@ -360,19 +360,15 @@ Follow these steps to deploy @product@ to a Managed Server:
 
 Nice work! Now you're running @product@ on WebLogic. 
 
-+$$$
-
-After deploying @product@, you may see excessive warnings and log messages, such
-as the ones below, involving `PhaseOptimizer`. These are benign and can be
-ignored. Make sure to adjust your app server's logging level or log filters to
-avoid excessive benign log messages. 
-
-    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
-    WARNING: Skipping pass gatherExternProperties
-    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
-    WARNING: Skipping pass checkControlFlow
-    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
-    INFO: pass supports: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, modules, exponent operator (**), async function, trailing comma in param list]
-    current AST contains: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, exponent operator (**), async function, trailing comma in param list, object literals with spread, object pattern rest]
-
-$$$
+| After deploying @product@, you may see excessive warnings and log messages, such
+| as the ones below, involving `PhaseOptimizer`. These are benign and can be
+| ignored. Make sure to adjust your app server's logging level or log filters to
+| avoid excessive benign log messages.
+| 
+|     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+|     WARNING: Skipping pass gatherExternProperties
+|     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+|     WARNING: Skipping pass checkControlFlow
+|     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+|     INFO: pass supports: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, modules, exponent operator (**), async function, trailing comma in param list]
+|     current AST contains: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, exponent operator (**), async function, trailing comma in param list, object literals with spread, object pattern rest]

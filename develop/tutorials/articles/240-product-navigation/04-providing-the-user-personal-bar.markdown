@@ -1,4 +1,8 @@
-# Providing the User Personal Bar [](id=providing-the-user-personal-bar)
+---
+header-id: providing-the-user-personal-bar
+---
+
+# Providing the User Personal Bar
 
 The User Personal Bar displays options unique to the current user. By default,
 this menu appears as an avatar button that expands the User Settings sub-menu in
@@ -23,20 +27,16 @@ The User Personal Bar can be seen as a placeholder in every Liferay theme. By
 default, Liferay provides one sample *User Personal Bar* portlet that fills that
 placeholder, but the portlet Liferay provides can be replaced by other portlets.
 
-+$$$
-
-**Note:** You can add the User Personal Bar to your theme by adding the
-following snippet into your `portal_normal.ftl`:
-
-    <@liferay.user_personal_bar />
-
-$$$
+| **Note:** You can add the User Personal Bar to your theme by adding the
+| following snippet into your `portal_normal.ftl`:
+| 
+|     <@liferay.user_personal_bar />
 
 In this tutorial, you'll learn how to customize the User Personal Bar. You'll
 create a single Java class where you'll specify a portlet to replace the
 existing default portlet.
 
-1.  [Create an OSGi module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development).
+1.  [Create an OSGi module](/docs/7-1/tutorials/-/knowledge_base/t/starting-module-development).
 
 2.  Create a unique package name in the module's `src` directory and create a
     new Java class in that package.

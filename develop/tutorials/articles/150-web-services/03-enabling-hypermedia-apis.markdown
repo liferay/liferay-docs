@@ -1,19 +1,19 @@
-# Enabling Hypermedia REST APIs [](id=enabling-hypermedia-rest-apis)
+---
+header-id: enabling-hypermedia-rest-apis
+---
+
+# Enabling Hypermedia REST APIs
 
 Liferay's Hypermedia REST APIs are an implementation of 
 [Apio Architect](https://github.com/liferay/com-liferay-apio-architect), 
 which is pre-installed @product@. Apio Architect is a server-side library 
 that facilitates the creation of Apio REST APIs. 
 
-+$$$
-
-**Note:** To use Liferay's Hypermedia REST APIs, you must be running Liferay CE 
-Portal 7.1 GA3+, or Liferay DXP 7.1 Fix Pack 5+. Alternatively, you can run a 
-Docker image that contains the APIs. See the 
-[Docker Instructions](#docker-instructions) 
-section below for more information. 
-
-$$$
+| **Note:** To use Liferay's Hypermedia REST APIs, you must be running Liferay CE
+| Portal 7.1 GA3+, or Liferay DXP 7.1 Fix Pack 5+. Alternatively, you can run a
+| Docker image that contains the APIs. See the
+| [Docker Instructions](#docker-instructions)
+| section below for more information.
 
 Liferay's Hypermedia REST APIs are disabled by default. Follow these steps to 
 enable them: 
@@ -32,7 +32,7 @@ enable them:
     `false`. 
 
 2.  Deploy the config file to `[Liferay Home]/osgi/configs`. Note that 
-    [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home) 
+    [Liferay Home](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home) 
     is typically the application server's parent folder. 
 
 3.  Test the APIs by making a request to their root URL: 
@@ -87,7 +87,7 @@ enable them:
 
 That's it! The Liferay Hypermedia REST APIs are now ready for use. 
 
-## Docker Instructions [](id=docker-instructions)
+## Docker Instructions
 
 1.  Install Docker if you don't already have it installed. 
 
@@ -102,6 +102,6 @@ That's it! The Liferay Hypermedia REST APIs are now ready for use.
 
 5.  Test the APIs as instructed in the third step above. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Consuming Web Services](/develop/tutorials/-/knowledge_base/7-1/consuming-web-services)
+[Consuming Web Services](/docs/7-1/tutorials/-/knowledge_base/t/consuming-web-services)

@@ -1,4 +1,8 @@
-# Building a site with Liferay Web Experience [](id=building-a-site-with-liferay-web-experience)
+---
+header-id: building-a-site-with-liferay-web-experience
+---
+
+# Building a site with Liferay Web Experience
 
 When you log into @product@ and look at its default screen, one thing to notice is
 that it's built for all clients that access the web, not just desktop browsers. 
@@ -62,7 +66,7 @@ related assets, stage multiple variations of your site, and more.
 This is just the web content portion of the content management system.
 @product@ is also great at managing file-based content. 
 
-## Keeping Track of Documents, Images, Video, and More [](id=keeping-track-of-documents-images-video-and-more)
+## Keeping Track of Documents, Images, Video, and More
 
 Liferay's file-based content management system is in an application called
 *Documents and Media Library*. This application, as shown below, looks like the
@@ -84,9 +88,9 @@ a file manager is, because it's a full content management system. You can define
 ways of classifying files that may be of different types, but are meant for the
 same, overarching purpose. 
 
-For example, [*metadata sets*](/discover/portal/-/knowledge_base/7-1/metadata-sets)
+For example, [*metadata sets*](/docs/7-1/user/-/knowledge_base/u/metadata-sets)
 are groups of fields describing attributes of a file. These can be combined to
-define [*document types*](/discover/portal/-/knowledge_base/7-1/document-types). 
+define [*document types*](/docs/7-1/user/-/knowledge_base/u/document-types). 
 For example, you might create a document type called
 Meeting Minutes. The file format doesn't matter: whether it's a Microsoft Word
 document, an HTML file, or a text file, the document contains meeting minutes. 

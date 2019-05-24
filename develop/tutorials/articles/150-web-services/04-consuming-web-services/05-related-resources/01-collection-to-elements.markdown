@@ -1,18 +1,22 @@
-# Navigating from a Collection to its Elements [](id=navigating-from-a-collection-to-its-elements)
+---
+header-id: navigating-from-a-collection-to-its-elements
+---
+
+# Navigating from a Collection to its Elements
 
 When you 
-[get a collection](/develop/tutorials/-/knowledge_base/7-1/getting-collections), 
+[get a collection](/docs/7-1/tutorials/-/knowledge_base/t/getting-collections), 
 you can use the response to get an element of that collection. Follow these 
 steps to do so: 
 
 1.  Get a collection. This example gets a list of Sites by sending 
-    [an authenticated request](/develop/tutorials/-/knowledge_base/7-1/making-authenticated-requests) 
+    [an authenticated request](/docs/7-1/tutorials/-/knowledge_base/t/making-authenticated-requests) 
     to the `web-site` collection: 
 
         curl -H "Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTpMaWZlcmF5C" http://localhost:8080/o/api/p/web-site
 
     Recall from the 
-    [Getting Collections tutorial](/develop/tutorials/-/knowledge_base/7-1/getting-collections) 
+    [Getting Collections tutorial](/docs/7-1/tutorials/-/knowledge_base/t/getting-collections) 
     that the response's `member` attribute contains the collection elements. In
     this case, there are two Sites: *Global* and *Livingstone Hotels & Resorts*: 
 
@@ -82,10 +86,10 @@ steps to do so:
 
         curl -H "Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTpMaWZlcmF5C" http://localhost:8080/o/api/p/web-site/20126
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Working with Collections of Data](/develop/tutorials/-/knowledge_base/7-1/working-with-collections-of-data)
+[Working with Collections of Data](/docs/7-1/tutorials/-/knowledge_base/t/working-with-collections-of-data)
 
-[Pagination](/develop/tutorials/-/knowledge_base/7-1/pagination)
+[Pagination](/docs/7-1/tutorials/-/knowledge_base/t/pagination)
 
-[Making Authenticated Requests](/develop/tutorials/-/knowledge_base/7-1/making-authenticated-requests)
+[Making Authenticated Requests](/docs/7-1/tutorials/-/knowledge_base/t/making-authenticated-requests)

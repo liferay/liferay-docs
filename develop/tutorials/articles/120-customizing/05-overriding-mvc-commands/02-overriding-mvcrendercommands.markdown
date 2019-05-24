@@ -1,4 +1,8 @@
-# Overriding MVCRenderCommands [](id=overriding-mvcrendercommand)
+---
+header-id: overriding-mvcrendercommand
+---
+
+# Overriding MVCRenderCommands
 
 You can override [`MVCRenderCommand`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCRenderCommand.html)
 for any portlet that uses Liferay's MVC framework and publishes an
@@ -59,10 +63,10 @@ After that, it's up to you to do whatever you'd like. MVC render commands can be
 
 Start by exploring how to add logic to an existing MVC render command. 
 
-## Adding Logic to an Existing MVC Render Command [](id=adding-logic-to-an-existing-mvc-render-command)
+## Adding Logic to an Existing MVC Render Command
 
 You can add logic to an MVC render command following the
-[general steps for MVC commands](/develop/tutorials/-/knowledge_base/7-1/adding-logic-to-mvc-commands).
+[general steps for MVC commands](/docs/7-1/tutorials/-/knowledge_base/t/adding-logic-to-mvc-commands).
 Specifically for MVC render commands, you must directly implement the [`MVCRenderCommand` interface](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCRenderCommand.html)
 and override its `render` method. 
 
@@ -93,7 +97,7 @@ new logic and then invoke the original implementation's logic by calling its
 Sometimes, you might need to redirect the request to an entirely new JSP. You
 can do that from a custom MVC render command module too.
 
-## Redirecting to a New JSP [](id=redirecting-to-a-new-jsp)
+## Redirecting to a New JSP
 
 `MVCRenderCommand`'s `render` method returns a JSP path as a String. By default,
 the JSP must live in the original module, so you cannot simply specify a path to
@@ -185,13 +189,13 @@ Implement your `render` method this way:
         return MVCRenderConstants.MVC_PATH_VALUE_SKIP_DISPATCH;
 
 After deploying your module, the [portlets targeted by your custom
-`MVCRenderCommand` component](/develop/tutorials/-/knowledge_base/7-1/adding-logic-to-mvc-commands#publish-as-a-component)
+`MVCRenderCommand` component](/docs/7-1/tutorials/-/knowledge_base/t/adding-logic-to-mvc-commands#publish-as-a-component)
 render your new JSP. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[MVC Render Command](/develop/tutorials/-/knowledge_base/7-1/mvc-render-command)
+[MVC Render Command](/docs/7-1/tutorials/-/knowledge_base/t/mvc-render-command)
 
-[Adding Logic to MVC Commands](/develop/tutorials/-/knowledge_base/7-1/adding-logic-to-mvc-commands)
+[Adding Logic to MVC Commands](/docs/7-1/tutorials/-/knowledge_base/t/adding-logic-to-mvc-commands)
 
-[Converting StrutsActionWrappers to MVCCommands](/develop/tutorials/-/knowledge_base/7-1/converting-strutsactionwrappers-to-mvccommands)
+[Converting StrutsActionWrappers to MVCCommands](/docs/7-1/tutorials/-/knowledge_base/t/converting-strutsactionwrappers-to-mvccommands)

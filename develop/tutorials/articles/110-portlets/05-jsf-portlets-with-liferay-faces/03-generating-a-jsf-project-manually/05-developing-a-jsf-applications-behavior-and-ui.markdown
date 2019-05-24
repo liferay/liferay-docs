@@ -1,4 +1,8 @@
-# Developing a JSF Application's Behavior and UI [](id=developing-a-jsf-applications-behavior-and-ui)
+---
+header-id: developing-a-jsf-applications-behavior-and-ui
+---
+
+# Developing a JSF Application's Behavior and UI
 
 Your current JSF application satisfies the requirements for portlet descriptors
 and WAR-style structure, but it doesn't do anything yet. You'll learn how to
@@ -97,7 +101,7 @@ process.
 Awesome! Your Hello User JSF application is complete! Deploy your WAR to
 @product@. Remember, when your WAR-style portlet is deployed, it's converted to
 a WAB via the WAB Generator. Visit the 
-[Using the WAB Generator](/develop/tutorials/-/knowledge_base/7-1/using-the-wab-generator)
+[Using the WAB Generator](/docs/7-1/tutorials/-/knowledge_base/t/using-the-wab-generator)
 tutorial for more information on this process and your portlet's resulting
 folder structure.
 

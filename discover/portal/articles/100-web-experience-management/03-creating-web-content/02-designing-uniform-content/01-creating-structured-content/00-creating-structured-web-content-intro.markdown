@@ -1,4 +1,8 @@
-# Creating Structured Web Content [](id=creating-structured-web-content)
+---
+header-id: creating-structured-web-content
+---
+
+# Creating Structured Web Content
 
 Structures are the foundation for web content. They determine which fields are
 available to users as they create new items for display. Structures not only

@@ -1,4 +1,8 @@
-# Form Field Types [](id=form-field-types)
+---
+header-id: form-field-types
+---
+
+# Form Field Types
 
 The Forms application contains many highly configurable field types
 out-of-the-box. Most use cases are met with one of the existing field types. 
@@ -24,18 +28,14 @@ These tutorials show you how to
 
 - add custom configuration options to your field types
 
-+$$$
-
-**Example project:** The source code for the example *time* project developed in
-these tutorials can be downloaded for your convenience. Click
-[here](https://dev.liferay.com/documents/10184/1608802/dynamic-data-mapping-type-time/f518f6b8-4498-a387-46d5-4715e36cc714?download=true) to begin downloading the source code zip file.
-
-$$$
+| **Example project:** The source code for the example *time* project developed in
+| these tutorials can be downloaded for your convenience. Click
+| [here](https://dev.liferay.com/documents/10184/1608802/dynamic-data-mapping-type-time/f518f6b8-4498-a387-46d5-4715e36cc714?download=true) to begin downloading the source code zip file.
 
 
 Before getting started, learn the structure of a form field type. 
 
-## Anatomy of a Field Type Module [](id=anatomy-of-a-field-type-module)
+## Anatomy of a Field Type Module
 
 All form field type modules have a similar structure. Here's the directory
 structure of the `dynamic-data-mapping-type-time` module developed in these
@@ -72,7 +72,7 @@ tutorials:
                     └── time.soy
 
 You don't need `*TemplateContextContributor.java` or `*TypeSettings.java` in the
-initial module (see [Rendering Form Field Settings](/develop/tutorials/-/knowledge_base/7-1/rendering-form-field-settings) 
+initial module (see [Rendering Form Field Settings](/docs/7-1/tutorials/-/knowledge_base/t/rendering-form-field-settings) 
 to learn more about these classes). The initial module consists of these Java
 classes and resources:
 
@@ -100,7 +100,7 @@ rendering (the `[name-of-field-type].soy` rendering).
 `[name-of-field-type].soy`: The template that defines the appearance of the field. 
 
 `Language_xx_XX.properties`: Define any terms that must be 
-[translated into different languages](/develop/tutorials/-/knowledge_base/7-1/localizing-your-application).
+[translated into different languages](/docs/7-1/tutorials/-/knowledge_base/t/localizing-your-application).
 
 In addition to the Java classes, Soy templates, and JavaScript files, a form
 field type contains the following files:

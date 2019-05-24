@@ -1,4 +1,8 @@
-# Developing an Ext Module [](id=developing-an-ext-module)
+---
+header-id: developing-an-ext-module
+---
+
+# Developing an Ext Module
 
 You can create your own Ext module project by
 
@@ -13,7 +17,7 @@ and the original module's exact version. For example, overriding the
     originalModule group: "com.liferay", name: "com.liferay.login.web", version: "3.0.4"
 
 If you're leveraging
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace),
+[Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace),
 you should put your Ext module project in the `/ext` folder (default); you can
 specify a different Ext folder name in workspace's `gradle.properties` by adding
 

@@ -1,4 +1,8 @@
-# Adding a Search Bar to the Guestbook Portlet [](id=adding-a-search-bar-to-the-guestbook-portlet)
+---
+header-id: adding-a-search-bar-to-the-guestbook-portlet
+---
+
+# Adding a Search Bar to the Guestbook Portlet
 
 <div class="learn-path-step">
     <p>Updating Your UI for Search<br>Step 1 of 2</p>

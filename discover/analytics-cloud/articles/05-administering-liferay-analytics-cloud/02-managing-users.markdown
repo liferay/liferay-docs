@@ -1,4 +1,8 @@
-# Managing Users [](id=managing-users)
+---
+header-id: managing-users
+---
+
+# Managing Users
 
 If you're the project *Owner* (Liferay invited you by email) or have been
 assigned the *Admin* permission, you can invite and manage users. Here's how to
@@ -15,7 +19,7 @@ their permissions, and delete them.
 
 If your project is new, you'll want to invite your teammates to the project. 
 
-## Inviting Users [](id=inviting-users)
+## Inviting Users
 
 It's exciting to give and receive invitations. Carry that excitement with you
 as you invite your team's analysts, data integrators, and marketers to your
@@ -33,7 +37,7 @@ Analytics Cloud project.
 
 You can set the user's permissions when their invitation acceptance is pending. 
 
-## Managing Permissions [](id=managing-permissions)
+## Managing Permissions
 
 Analytics Cloud projects have these permission Roles:
 

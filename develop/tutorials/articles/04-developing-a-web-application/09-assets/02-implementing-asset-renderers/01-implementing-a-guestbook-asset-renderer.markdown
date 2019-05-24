@@ -1,4 +1,8 @@
-# Implementing a Guestbook Asset Renderer [](id=implementing-a-guestbook-asset-renderer)
+---
+header-id: implementing-a-guestbook-asset-renderer
+---
+
+# Implementing a Guestbook Asset Renderer
 
 <div class="learn-path-step">
     <p>Implementing Asset Renderers<br>Step 1 of 2</p>
@@ -10,7 +14,7 @@ private guestbook object. Here, you'll create both classes.
 
 You'll create the Asset Renderer class first. 
 
-## Creating the AssetRenderer Class [](id=creating-the-assetrenderer-class)
+## Creating the AssetRenderer Class
 
 Follow these steps to create the `GuestbookAssetRenderer` class: 
 
@@ -227,7 +231,7 @@ Follow these steps to create the `GuestbookAssetRenderer` class:
 
 Next you can create the `AssetRendererFactory` class. 
 
-## Creating the GuestbookAssetRendererFactory Class [](id=creating-the-guestbookassetrendererfactory-class)
+## Creating the GuestbookAssetRendererFactory Class
 
 Follow these steps to create the `GuestbookAssetRendererFactory`:
 

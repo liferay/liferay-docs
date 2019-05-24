@@ -1,4 +1,8 @@
-# Connecting Users [](id=connecting-users)
+---
+header-id: connecting-users
+---
+
+# Connecting Users
 
 By adding the Contacts Center and Activities widgets to users' private 
 Dashboards, administrators can let users form social connections. The Contacts 
@@ -14,7 +18,7 @@ Center widget lets users form these connection types:
 To ensure that all users have a page on their private Dashboard that contains 
 the Contacts Center and Activities widgets, you can create a user group and then
 create a page via a Site Template. For instructions on this, see the 
-[user groups documentation](/discover/portal/-/knowledge_base/7-1/user-groups).
+[user groups documentation](/docs/7-1/user/-/knowledge_base/u/user-groups).
 The widgets are in *Add* (![Add](../../../images/icon-add.png)) &rarr; *Widgets*
 &rarr; *Social*. 
 

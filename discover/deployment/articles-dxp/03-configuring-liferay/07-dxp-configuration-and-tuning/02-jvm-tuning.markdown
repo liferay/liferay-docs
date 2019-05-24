@@ -1,4 +1,8 @@
-# Java Virtual Machine Tuning [](id=java-virtual-machine-tuning)
+---
+header-id: java-virtual-machine-tuning
+---
+
+# Java Virtual Machine Tuning
 
 Java Virtual Machine (JVM) tuning primarily focuses on adjusting the garbage
 collector and the Java memory heap. We used Oracle's 1.8 JVM for the reference
@@ -16,7 +20,7 @@ Here are the JVM tuning topics:
 
 Garbage collection is first. 
 
-## Garbage Collector [](id=garbage-collector)
+## Garbage Collector
 
 Choosing the appropriate garbage collector (GC) helps improve the responsiveness
 of your @product@ deployment. Use the concurrent low pause collectors:
@@ -39,7 +43,7 @@ Engineering's tests for G1 indicated that it does not improve performance. Since
 your application performance may vary, you should add G1 to your testing and
 tuning plans. 
 
-## Code Cache [](id=code-cache)
+## Code Cache
 
 Java's just-in-time (JIT) compiler generates native code to improve performance.
 The default size is `48m`. This may not be sufficient for larger applications.
@@ -54,7 +58,7 @@ parameters:
 
     -XX:+PrintCodeCache -XX:+PrintCodeCacheOnCompilation
 
-## Java Heap [](id=java-heap)
+## Java Heap
 
 When most people think about tuning the Java memory heap, they think of setting
 the maximum and minimum memory of the heap. Unfortunately, most deployments
@@ -80,14 +84,10 @@ profile.
 operating system to activate them. In Linux, run `cat /proc/meminfo` and look at
 "huge page" items. 
 
-+$$$
+| **Caution:** Avoid allocating more than 32GB to your JVM heap. Your heap size
+| should be commensurate with the speed and quantity of available CPU resources.
 
-**Caution:** Avoid allocating more than 32GB to your JVM heap. Your heap size
-should be commensurate with the speed and quantity of available CPU resources.
-
-$$$
-
-## JVM Advanced Options [](id=jvm-advanced-options)
+## JVM Advanced Options
 
 The following advanced JVM options were also applied in the Liferay benchmark
 environment:
@@ -114,13 +114,9 @@ Combining the above recommendations together, makes this configuration:
     -XX:+BindGCTaskThreadsToCPUs -XX:+UseFastAccessorMethods
     -XX:InitialCodeCacheSize=32m -XX:ReservedCodeCacheSize=96m
  
-+$$$
-
-**Caution:** The above JVM settings should formulate a starting point for your
-performance tuning. Every system's final parameters vary due to many factors,
-including number of current users and transaction speed.
-
-$$$
+| **Caution:** The above JVM settings should formulate a starting point for your
+| performance tuning. Every system's final parameters vary due to many factors,
+| including number of current users and transaction speed.
 
 Monitor the garbage collector statistics to ensure your environment has
 sufficient allocations for metaspace and also for the survivor spaces. Using the

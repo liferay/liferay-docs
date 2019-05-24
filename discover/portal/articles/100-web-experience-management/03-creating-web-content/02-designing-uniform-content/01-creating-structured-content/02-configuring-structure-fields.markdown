@@ -1,4 +1,8 @@
-# Configuring Structure Fields [](id=configuring-structure-fields)
+---
+header-id: configuring-structure-fields
+---
+
+# Configuring Structure Fields
 
 There are many options available for configuring each structure field. Some of
 them relate to how the fields are displayed or how users interact with them, but
@@ -64,7 +68,7 @@ available for Radio and Select fields).
 
 **Style:** Changes the line separator's style (only available for Separator).
 
-### Structure Default Values [](id=structure-default-values)
+### Structure Default Values
 
 You can define Structure Default Values for repeatable values in content created
 from that structure. They can also set defaults for Liferay's standard asset

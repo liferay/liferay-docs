@@ -1,4 +1,8 @@
-# Creating the iOS Screenlet's Interactor [](id=creating-the-ios-screenlets-interactor)
+---
+header-id: creating-the-ios-screenlets-interactor
+---
+
+# Creating the iOS Screenlet's Interactor
 
 Create an Interactor class for each of your Screenlet's actions. In the 
 [`Interactor` class](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/Interactor.swift), 
@@ -6,22 +10,18 @@ Screens provides the default functionality required by all Interactor classes.
 Your Interactor class must therefore extend `Interactor` to provide the 
 functionality unique to your Screenlet. 
 
-+$$$
-
-**Note:** You may wish to make your server call in a Connector instead of an 
-Interactor. Doing so provides an additional abstraction layer for your server 
-call, leaving your Interactor to instantiate your Connector and receive its 
-results. For instructions on this, see the tutorial 
-[Create and Use a Connector with Your Screenlet](/develop/tutorials/-/knowledge_base/7-1/create-and-use-a-connector-with-your-screenlet). 
-
-$$$
+| **Note:** You may wish to make your server call in a Connector instead of an
+| Interactor. Doing so provides an additional abstraction layer for your server
+| call, leaving your Interactor to instantiate your Connector and receive its
+| results. For instructions on this, see the tutorial
+| [Create and Use a Connector with Your Screenlet](/docs/7-1/tutorials/-/knowledge_base/t/create-and-use-a-connector-with-your-screenlet).
 
 Interactors work synchronously, but you can use callbacks (delegates) or 
 Connectors to run their operations in the background. For example, the Liferay 
 Mobile SDK provides the 
 [`LRCallback` protocol](https://github.com/liferay/liferay-mobile-sdk/blob/master/ios/Source/Core/LRCallback.h) 
 for this purpose. This is described in 
-[the Mobile SDK tutorial on invoking Liferay services asynchronously](/develop/tutorials/-/knowledge_base/7-1/invoking-services-asynchronously-from-your-ios-app). 
+[the Mobile SDK tutorial on invoking Liferay services asynchronously](/docs/7-1/tutorials/-/knowledge_base/t/invoking-services-asynchronously-from-your-ios-app). 
 Screens bridges this protocol to make it available in Swift. Your Interactor 
 class can conform this protocol to make its server calls asynchronously. To 
 implement an Interactor class:

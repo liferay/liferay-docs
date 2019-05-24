@@ -1,4 +1,8 @@
-# Triggering Portlet Actions [](id=triggering-portlet-actions)
+---
+header-id: triggering-portlet-actions
+---
+
+# Triggering Portlet Actions
 
 <div class="learn-path-step">
     <p>Developing Your First Portlet<br>Step 5 of 8</p>

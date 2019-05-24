@@ -1,4 +1,8 @@
-# Creating an iOS Extended Theme [](id=creating-an-ios-extended-theme)
+---
+header-id: creating-an-ios-extended-theme
+---
+
+# Creating an iOS Extended Theme
 
 An Extended Theme inherits another Theme's UI components and behavior, but lets
 you add to or alter it by extending the parent Theme's View class and
@@ -25,6 +29,6 @@ These steps explain how to create an Extended Theme:
     If you added `@IBOutlet` or `@IBAction` actions, bind them to your class. 
 
 Well done! You can optionally 
-[package](/develop/tutorials/-/knowledge_base/7-1/packaging-ios-themes) 
+[package](/docs/7-1/tutorials/-/knowledge_base/t/packaging-ios-themes) 
 your Theme and/or start 
-[using it](/develop/tutorials/-/knowledge_base/7-1/using-themes-in-ios-screenlets). 
+[using it](/docs/7-1/tutorials/-/knowledge_base/t/using-themes-in-ios-screenlets). 

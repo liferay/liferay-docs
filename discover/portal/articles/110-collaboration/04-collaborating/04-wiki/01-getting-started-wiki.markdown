@@ -1,4 +1,8 @@
-# Getting Started with Wikis [](id=getting-started-with-wikis)
+---
+header-id: getting-started-with-wikis
+---
+
+# Getting Started with Wikis
 
 The Menu (![Menu](../../../../images/icon-menu.png)) 
 is the best place to start working with your wikis. Click the *Menu* 
@@ -13,7 +17,7 @@ contain many wiki nodes. By default, it contains one node: *Main*.
 
 ![Figure 1: The Wiki app instance has a wiki node named *Main* with a single front page. You can build on the Main node or click the Add icon to create a new node.](../../../../images/wiki-admin-empty.png)
 
-## Configuring Wikis [](id=configuring-wikis)
+## Configuring Wikis
 
 Before adding to your wiki instance, you should configure it. The instance's 
 interfaces for permissions, export and import, configuration, and application 
@@ -24,7 +28,7 @@ templates are accessible from the Options menu. Click the
 The following options are available in this menu: 
 
 **Wikis Permissions**: Specify which
-[Roles](/discover/portal/-/knowledge_base/7-1/roles-and-permissions) can create
+[Roles](/docs/7-1/user/-/knowledge_base/u/roles-and-permissions) can create
 wiki nodes and access the Wikis Permissions screen. For example, if you've
 created a specific Role for creating wiki nodes and want to enable that Role to
 create new wiki nodes in this wiki application instance, select the Role's
@@ -32,7 +36,7 @@ check box in the *Add Node* column and then click *Save*.
 
 **Export / Import**: Import existing wiki content into your wiki app instance,
 or export wiki content to a file. For details, refer to 
-[Importing/Exporting Pages and Content](/discover/portal/-/knowledge_base/7-1/importing-exporting-pages-and-content).
+[Importing/Exporting Pages and Content](/docs/7-1/user/-/knowledge_base/u/importing-exporting-pages-and-content).
 
 **Configuration**: Configure email notifications and RSS feeds. The *Email
 From*, *Page Added Email*, and *Page Updated Email* tabs are similar to other
@@ -44,7 +48,7 @@ The *RSS* tab lets you configure RSS feeds.
 menu, access the menu's Configuration and Permissions options, and access any
 custom preference options added to the wiki app. 
 
-## Adding Wikis [](id=adding-wikis)
+## Adding Wikis
 
 Follow these steps to create a new wiki node: 
 
@@ -69,7 +73,7 @@ Follow these steps to create a new wiki node:
 
 ![Figure 2: The New Wiki Node form lets you describe your new node, set view permissions, and set permissions for the Guest and Site Member roles.](../../../../images/wiki-new-wiki-node.png)
 
-## Wiki Node Options [](id=wiki-node-options)
+## Wiki Node Options
 
 Next to each listed wiki node is an *Actions* menu 
 (![Actions](../../../../images/icon-actions.png)). Here are the actions available 
@@ -98,7 +102,7 @@ updated, the portal sends you an email notification.
 the wiki node. 
 
 **Move to Recycle Bin**: Moves the wiki node to the 
-[Recycle Bin](/discover/portal/-/knowledge_base/7-1/restoring-deleted-assets). 
+[Recycle Bin](/docs/7-1/user/-/knowledge_base/u/restoring-deleted-assets). 
 
 ![Figure 3: Each wiki node's Actions menu lists actions you can perform.](../../../../images/wiki-options.png)
 
@@ -108,4 +112,4 @@ requires an administrator's approval to publish a wiki page modification (add,
 update, or delete). You can access your site's default *Wiki Page* workflow from
 within the Site Administration Menu, by navigating to *Configuration* &rarr; 
 *Workflow* for your site. To learn how to use workflow, see the
-[Workflow](/discover/portal/-/knowledge_base/7-1/workflow) section. 
+[Workflow](/docs/7-1/user/-/knowledge_base/u/workflow) section. 

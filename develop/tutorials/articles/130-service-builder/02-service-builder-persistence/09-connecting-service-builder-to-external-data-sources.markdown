@@ -1,9 +1,13 @@
-# Connecting Service Builder to External Databases [](id=connecting-service-builder-to-external-databases)
+---
+header-id: connecting-service-builder-to-external-databases
+---
+
+# Connecting Service Builder to External Databases
 
 Sometimes you want to use a database other than @product@'s. To do this, its
 data source must be defined in `portal-ext.properties` or configured as a JNDI
 data source on the app server. This tutorial shows how to connect
-[Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder)
+[Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/service-builder)
 to a data source. Here's how: 
 
 1. [Specify the data source.](#step-1-specify-the-data-source)
@@ -14,18 +18,14 @@ to a data source. Here's how:
 
 4. [Run Service Builder.](#step-4-run-service-builder)
 
-+$$$
-
-**Note**: All entities defined in a Service Builder module's `service.xml` file 
-are bound to the same data source. Binding different entities to different data
-sources requires defining the entities in separate Service Builder modules and
-configuring each of the modules to use a different data source. 
-
-$$$
+| **Note**: All entities defined in a Service Builder module's `service.xml` file
+| are bound to the same data source. Binding different entities to different data
+| sources requires defining the entities in separate Service Builder modules and
+| configuring each of the modules to use a different data source.
 
 First, use portal properties to set your data source. 
 
-## Step 1: Specify the Data Source [](id=step-1-specify-the-data-source)
+## Step 1: Specify the Data Source
 
 If the application server defines the data source using JNDI, skip this  step.
 Otherwise, specify the data source in a `portal-ext.properties` file.
@@ -37,29 +37,25 @@ than `jdbc.default.`. This example uses prefix `jdbc.ext.`:
     jdbc.ext.url=jdbc:mariadb://localhost/external?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
     jdbc.ext.username=yourusername
 
-## Step 2: Create a Spring Bean that Points to the Data Source [](id=step-2-create-a-spring-bean-that-points-to-the-data-source)
+## Step 2: Create a Spring Bean that Points to the Data Source
 
 To do this, create a parent context extension (e.g.,`ext-spring.xml`) in your
 Service Builder module's `src/main/resources/META-INF/spring/parent` folder or
 in your traditional portlet's `WEB-INF/src/META-INF/parent` folder. Create this
 folder if it doesn't exist already. 
 
-+$$$
-
-**Note:** Since Liferay DXP 7.1 Fix Pack 3 (included in Service Pack 1) and 
-Liferay Portal 7.1 CE GA2, the Spring extender uses two application contexts for
-Service Builder `*-service` modules. This lets @product@ register extender
-services earlier and separately from the Service Builder services and allows
-disabling features in the parent application context that may no longer be
-needed in the future. For details, see 
-[LPS-85683](https://issues.liferay.com/browse/LPS-85683).
-
-If you're using a prior version of @product@ 7.1, put your parent context
-extension (e.g.,`ext-spring.xml`) in your Service Builder module's
-`src/main/resources/META-INF/spring` folder or in your traditional portlet's
-`WEB-INF/src/META-INF` folder. 
-
-$$$
+| **Note:** Since Liferay DXP 7.1 Fix Pack 3 (included in Service Pack 1) and
+| Liferay Portal 7.1 CE GA2, the Spring extender uses two application contexts for
+| Service Builder `*-service` modules. This lets @product@ register extender
+| services earlier and separately from the Service Builder services and allows
+| disabling features in the parent application context that may no longer be
+| needed in the future. For details, see
+| [LPS-85683](https://issues.liferay.com/browse/LPS-85683).
+| 
+| If you're using a prior version of @product@ 7.1, put your parent context
+| extension (e.g.,`ext-spring.xml`) in your Service Builder module's
+| `src/main/resources/META-INF/spring` folder or in your traditional portlet's
+| `WEB-INF/src/META-INF` folder.
 
 Define the following elements: 
 
@@ -136,19 +132,15 @@ source property prefix.
 
 The data source bean `liferayDataSource` is overridden with one that refers to
 the `liferayDataSourceFactory` bean. The override affects this bundle (module or
-[Web Application Bundle](/develop/tutorials/-/knowledge_base/7-1/using-the-wab-generator)) 
+[Web Application Bundle](/docs/7-1/tutorials/-/knowledge_base/t/using-the-wab-generator)) 
 only. 
 
 The alias `extDataSource` refers to the `liferayDataSource` data source bean. 
 
-+$$$
+| **Note**: To use an external data source in multiple Service Builder
+| bundles, you must override the `liferayDataSource` bean in each bundle.
 
-**Note**: To use an external data source in multiple Service Builder
-bundles, you must override the `liferayDataSource` bean in each bundle. 
-
-$$$
-
-## Step 3: Set Your Entity's Data Source to the `liferayDataSource` Alias [](id=step-3-set-your-entitys-data-source-to-the-liferaydatasource-alias)
+## Step 3: Set Your Entity's Data Source to the `liferayDataSource` Alias
 
 In your `service.xml` file, set your entity's data source to the
 `liferayDataSource` alias you specified in your `ext-spring.xml` file. Here's
@@ -177,21 +169,21 @@ Note the example's `<entity>` tag attributes:
 Also note that your entity's `<column>`s must have a `db-name` attribute set to 
 the column name.
 
-## Step 4: Run Service Builder [](id=step-4-run-service-builder)
+## Step 4: Run Service Builder
 
-[Run Service Builder](/develop/tutorials/-/knowledge_base/7-1/running-service-builder).
+[Run Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/running-service-builder).
 Now your Service Builder services use the data source. You can
-[use the services in your business logic](/develop/tutorials/-/knowledge_base/7-1/business-logic-with-service-builder)
+[use the services in your business logic](/docs/7-1/tutorials/-/knowledge_base/t/business-logic-with-service-builder)
 as you always have regardless of the underlying data source.
 
 Congratulations! You've connected Service Builder to your external data source. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Connecting to JNDI Data Sources](/develop/tutorials/-/knowledge_base/7-1/connecting-to-data-sources-using-jndi)
+[Connecting to JNDI Data Sources](/docs/7-1/tutorials/-/knowledge_base/t/connecting-to-data-sources-using-jndi)
 
-[Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder)
+[Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/service-builder)
 
-[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/7-1/running-service-builder)
+[Running Service Builder and Understanding the Generated Code](/docs/7-1/tutorials/-/knowledge_base/t/running-service-builder)
 
-[Business Logic with Service Builder](/develop/tutorials/-/knowledge_base/7-1/business-logic-with-service-builder)
+[Business Logic with Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/business-logic-with-service-builder)

@@ -1,4 +1,8 @@
-# WYSIWYG Editors [](id=wysiwyg-editors)
+---
+header-id: wysiwyg-editors
+---
+
+# WYSIWYG Editors
 
 WYSIWYG editors are an important part of content creation. Liferay's platform
 supports several different editors, including CKEditor, TinyMCE, and our

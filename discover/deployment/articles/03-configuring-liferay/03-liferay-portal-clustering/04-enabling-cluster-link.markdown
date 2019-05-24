@@ -1,4 +1,8 @@
-# Enabling Cluster Link [](id=enabling-cluster-link)
+---
+header-id: enabling-cluster-link
+---
+
+# Enabling Cluster Link
 
 Enabling Cluster Link automatically activates distributed caching.  The cache is
 distributed across multiple @product@ nodes running concurrently. Cluster Link
@@ -41,7 +45,7 @@ Cluster Link contains an enhanced algorithm that provides one-to-many type
 communication between the nodes. This is implemented by default with JGroups's
 UDP multicast, but unicast and TCP are also available. 
 
-## Multicast Over UDP [](id=multicast-over-udp)
+## Multicast Over UDP
 
 When you enable Cluster Link, @product@'s default clustering configuration is
 enabled. This configuration defines IP multicast over UDP. @product@ uses two
@@ -86,7 +90,7 @@ Your network configuration may preclude the use of multicast over TCP, so below
 are some other ways you can get your cluster communicating. Note that these
 methods are all provided by JGroups. 
 
-### Checkpoint: [](id=checkpoint)
+### Checkpoint:
 
 1.  If you are binding the IP address instead of using `localhost`, make sure
     the right IP addresses are declared using these properties: 
@@ -96,7 +100,7 @@ methods are all provided by JGroups.
 
 3.  Test your load and then optimize your settings if necessary.
 
-## Unicast over TCP [](id=unicast-over-tcp)
+## Unicast over TCP
 
 If your network configuration or the sheer distance between nodes prevents you
 from using UDP Multicast clustering, you can configure TCP Unicast. You must use
@@ -164,7 +168,7 @@ different geographical locations.
 You're now set up for Unicast over TCP clustering! Repeat this process for each
 node you want to add to the cluster. 
 
-### JDBC Ping [](id=jdbc-ping)
+### JDBC Ping
 
 Rather than use TCP Ping to discover cluster members, you can use a central
 database accessible by all the nodes to help them find each other. Cluster
@@ -181,7 +185,7 @@ corresponding `JDBCPING` tag:
 The above example uses MySQL as the database. For further information about
 JDBC Ping, please see the [JGroups Documentation](http://www.jgroups.org/manual-3.x/html/protlist.html#DiscoveryProtocols). 
 
-### S3 Ping [](id=s3-ping)
+### S3 Ping
 
 Amazon S3 Ping can be used for servers running on Amazon's EC2 cloud service.
 Each node uploads a small file to an S3 bucket, and all the other nodes read the
@@ -199,14 +203,14 @@ tag:
 Supply your Amazon keys as values for the parameters above. For further
 information about S3 Ping, please see the [JGroups Documentation](http://www.jgroups.org/manual-3.x/html/protlist.html#DiscoveryProtocols). 
 
-### Other Pings [](id=other-pings)
+### Other Pings
 
 JGroups supplies other means for cluster members to discover each other,
 including Rackspace Ping, BPing, File Ping, and others. Please see the 
 [JGroups Documentation](http://www.jgroups.org/manual-3.x/html/protlist.html#DiscoveryProtocols)
 for information about these discovery methods. 
 
-## Modifying the Cache Configuration with a Module [](id=modifying-the-cache-configuration-with-a-module)
+## Modifying the Cache Configuration with a Module
 
 It's recommended to test your system under a load that best simulates the kind
 of traffic your system must handle. If you serve a lot of message
@@ -221,7 +225,7 @@ without taking down the cluster.
 We've made this as easy as possible by
 [creating the project](https://dev.liferay.com/documents/10184/741415/portal-cache-override-config.zip) 
 for you. Download the project and unzip it into a 
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace),
+[Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace),
 in the workspace's `modules` folder. To override your cache settings, you must
 only modify one Ehcache configuration file, which you'll find in this folder
 structure: 

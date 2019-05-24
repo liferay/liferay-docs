@@ -1,4 +1,8 @@
-# Why Hypermedia REST APIs? [](id=why-hypermedia-rest-apis)
+---
+header-id: why-hypermedia-rest-apis
+---
+
+# Why Hypermedia REST APIs?
 
 [Hypermedia](https://en.wikipedia.org/wiki/Hypermedia) 
 is hypertext (the H in HTML) extended to other media, like images, audio, video, 
@@ -16,7 +20,7 @@ a new concept.
 specifies that an API uses hypermedia to provide the information that clients 
 need to use the API. 
 
-## Use Cases for Hypermedia REST APIs [](id=use-cases-for-hypermedia-rest-apis)
+## Use Cases for Hypermedia REST APIs
 
 Hypermedia REST APIs are being built to cover all of @product@'s APIs. This
 enables headless use of @product@: developers can create clients with their
@@ -32,19 +36,19 @@ There are two kinds of @product@ hypermedia REST APIs:
     -   Retrieve portal content (e.g., blog posts, web content, media files, 
         etc.) and present it according to the client app's needs. 
     -   Access 
-        [Documents and Media](/discover/portal/-/knowledge_base/7-1/managing-documents-and-media) 
+        [Documents and Media](/docs/7-1/user/-/knowledge_base/u/managing-documents-and-media) 
         assets from a remote client, using the portal as a content repository. 
     -   Retrieve content metadata, such as asset 
-        [tags and categories](/discover/portal/-/knowledge_base/7-1/organizing-content-with-tags-and-categories). 
+        [tags and categories](/docs/7-1/user/-/knowledge_base/u/organizing-content-with-tags-and-categories). 
     -   Access forms created with 
-        [Liferay Forms](/discover/portal/-/knowledge_base/7-1/forms). 
+        [Liferay Forms](/docs/7-1/user/-/knowledge_base/u/forms). 
     -   And much more! API consumers can discover API features by navigating 
         hypermedia links in the responses. You'll see examples of this in the 
-        [Consuming Web Services tutorials](/develop/tutorials/-/knowledge_base/7-1/consuming-web-services). 
+        [Consuming Web Services tutorials](/docs/7-1/tutorials/-/knowledge_base/t/consuming-web-services). 
         
  2. **Management API:** Clients can perform administrative functions in the 
     portal. This is not the typical use case: normally, you'd use the native UI. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Consuming Web Services](/develop/tutorials/-/knowledge_base/7-1/consuming-web-services)
+[Consuming Web Services](/docs/7-1/tutorials/-/knowledge_base/t/consuming-web-services)

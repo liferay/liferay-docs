@@ -1,4 +1,8 @@
-# Setting Up a Virtual Instance [](id=setting-up-a-virtual-instance)
+---
+header-id: setting-up-a-virtual-instance
+---
+
+# Setting Up a Virtual Instance
 
 Once @product@ is installed, the configuration begins. Recall that
 configuration happens at different scopes. Here we're covering configuration at

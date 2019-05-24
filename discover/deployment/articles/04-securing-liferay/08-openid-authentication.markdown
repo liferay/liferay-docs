@@ -1,4 +1,8 @@
-# OpenID Single Sign On Authentication [](id=openid-single-sign-on-authentication)
+---
+header-id: openid-single-sign-on-authentication
+---
+
+# OpenID Single Sign On Authentication
 
 OpenID is a single sign-on standard implemented by multiple vendors.  Users can
 register for an ID with the vendor they trust. The credential issued by that
@@ -6,12 +10,8 @@ vendor can be used by all the web sites that support OpenID. Some high profile
 OpenID vendors are Google, Paypal, Amazon, and Microsoft. Please see the [OpenID
 site](http://www.openid.net/) for a more complete list.
 
-+$$$
-
-**Note:** OpenID is deprecated in @product-ver@ and may be removed in future
-versions. 
-
-$$$
+| **Note:** OpenID is deprecated in @product-ver@ and may be removed in future
+| versions.
 
 With OpenID, users don't have to register for a new account on every site which
 requires an account. Users register on *one* site (the OpenID provider's site)
@@ -26,7 +26,7 @@ manage this information and keep it up to date.
 register and sign in with their OpenID accounts. Internally, the product uses
 [OpenID4Java](https://github.com/jbufu/openid4java) to implement the feature.
 
-## OpenID at the System Scope [](id=openid-at-the-system-scope)
+## OpenID at the System Scope
 
 OpenID is enabled by default in @product@ but can be disabled or enabled at either
 the system scope or portal instance scope. To configure the OpenID SSO module at
@@ -35,7 +35,7 @@ the system level, navigate to the Control Panel and click on *Configuration*
 configuration setting. Check the *Enabled* box to enable OpenID at the system
 scope (for all portal instances), uncheck it to disable it at the system scope.
 
-## OpenID at the Instance Scope [](id=openid-at-the-instance-scope)
+## OpenID at the Instance Scope
 
 To configure the OpenID SSO module at the portal instance scope, navigate to the
 Control Panel and click on *Configuration* &rarr; *Instance Settings*, then on

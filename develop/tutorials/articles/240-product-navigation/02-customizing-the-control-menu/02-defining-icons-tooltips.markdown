@@ -1,10 +1,14 @@
-# Defining Icons and Tooltips [](id=defining-icons-and-tooltips)
+---
+header-id: defining-icons-and-tooltips
+---
+
+# Defining Icons and Tooltips
 
 When creating a Control Menu entry, you can use an icon in addition to or in
 place of text. You can also use tooltips to provide a more in depth
 explanation.
 
-## Control Menu Entry Icons [](id=control-menu-entry-icons)
+## Control Menu Entry Icons
 
 You can provide a Lexicon or CSS icon in your `*ControlMenuEntry`. To use a 
 Lexicon icon, you should override the methods in 
@@ -42,7 +46,7 @@ the [icons-lexicon](https://liferay.github.io/clay/content/icons-lexicon/)
 and [icons-font-awesome](https://liferay.github.io/clay/content/icons-font-awesome/)
 components, respectively.
 
-### Control Menu Entry Tooltips [](id=control-menu-entry-tooltips)
+### Control Menu Entry Tooltips
 
 To provide a tooltip for the Control Menu entry, create a `getLabel` method like
 this:
@@ -58,5 +62,5 @@ this:
 
 You need to create a `Language.properties` to store your labels. You can learn 
 more about resource bundles in the 
-[Internationalization](/develop/tutorials/-/knowledge_base/7-1/internationalization)
+[Internationalization](/docs/7-1/tutorials/-/knowledge_base/t/internationalization)
 tutorials.

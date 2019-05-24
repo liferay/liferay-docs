@@ -1,4 +1,8 @@
-# Creating Data Definitions [](id=creating-data-definitions)
+---
+header-id: creating-data-definitions
+---
+
+# Creating Data Definitions
 
 Follow these steps to create a data definition: 
 

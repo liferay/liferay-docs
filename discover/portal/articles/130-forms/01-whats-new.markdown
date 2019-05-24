@@ -1,4 +1,8 @@
-# What's New with Liferay Forms [](id=whats-new-with-liferay-forms)
+---
+header-id: whats-new-with-liferay-forms
+---
+
+# What's New with Liferay Forms
 
 Liferay Forms is evolving. This article compiles the prominent changes and
 additions to Forms. More details on these features are found in the other

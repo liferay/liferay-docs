@@ -1,4 +1,8 @@
-# Line Charts [](id=line-charts)
+---
+header-id: line-charts
+---
+
+# Line Charts
 
 Line charts contain multiple sets of data. A Line chart displays the data 
 linearly. Each data series (created with the `addColumns()` method) is defined 
@@ -36,10 +40,10 @@ Follow these steps:
 
 ![Figure 1: A Line chart displays the data linearly.](../../../images/chart-taglib-line.png)
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Bar Charts](/develop/tutorials/-/knowledge_base/7-1/bar-charts)
+[Bar Charts](/docs/7-1/tutorials/-/knowledge_base/t/bar-charts)
 
-[Scatter Charts](/develop/tutorials/-/knowledge_base/7-1/scatter-charts)
+[Scatter Charts](/docs/7-1/tutorials/-/knowledge_base/t/scatter-charts)
 
-[Step Charts](/develop/tutorials/-/knowledge_base/7-1/step-charts)
+[Step Charts](/docs/7-1/tutorials/-/knowledge_base/t/step-charts)

@@ -1,4 +1,8 @@
-# Creating Themes [](id=creating-themes)
+---
+header-id: creating-themes
+---
+
+# Creating Themes
 
 The Liferay Theme Generator lets you create themes, themelets, layout templates 
 and more. It is just one of Liferay JS Theme Toolkit's 
@@ -12,7 +16,7 @@ Follow these steps to install the Liferay Theme Generator and generate a theme:
     Support (LTS) version. Note that Node Package Manager (npm) is installed 
     with this as well. You'll use npm to install the remaining dependencies and 
     generator. Make sure to 
-    [set up your npm environment](/develop/reference/-/knowledge_base/7-1/setting-up-your-npm-environment) 
+    [set up your npm environment](/docs/7-1/reference/-/knowledge_base/r/setting-up-your-npm-environment) 
     before moving to the next step. Failing to do this can lead to permissions 
     issues later on. 
 
@@ -23,14 +27,10 @@ Follow these steps to install the Liferay Theme Generator and generate a theme:
 
         npm install -g yo
 
-    +$$$
-
-    **Note:** Gulp is included as a local dependency in generated themes, so you 
-    are not required to install it. It can be accessed by running 
-    `node_modules\.bin\gulp` followed by the Gulp task from a generated theme's 
-    root folder.
-            
-    $$$
+    | **Note:** Gulp is included as a local dependency in generated themes, so you
+    | are not required to install it. It can be accessed by running
+    | `node_modules\.bin\gulp` followed by the Gulp task from a generated theme's
+    | root folder.
 
 3.  Install the Liferay Theme Generator. A few versions of the Liferay Theme 
     Generator are available. The version you must install depends on the version 

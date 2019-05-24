@@ -1,4 +1,8 @@
-# Liferay Front-end Management Bar [](id=liferay-frontend-management-bar)
+---
+header-id: liferay-frontend-management-bar
+---
+
+# Liferay Front-end Management Bar
 
 The Management Bar gives administrators control over search container results.
 It lets you filter, sort, and choose a display style for search results, so you
@@ -8,14 +12,10 @@ implement all the controls, or just the ones your app requires.
 
 ![Figure 1: The Management Bar lets the user customize how the app displays content.](../../../../images/liferay-frontend-taglib-management-bar-message-boards.png)
 
-+$$$
-
-**Note:** The Liferay Front-end Management Bar is deprecated as of @product-ver@. 
-We recommend that you use the 
-[Clay Management Toolbar](/develop/tutorials/-/knowledge_base/7-1/clay-management-toolbar) 
-instead.
-
-$$$
+| **Note:** The Liferay Front-end Management Bar is deprecated as of @product-ver@.
+| We recommend that you use the
+| [Clay Management Toolbar](/docs/7-1/tutorials/-/knowledge_base/t/clay-management-toolbar)
+| instead.
 
 The Management Bar has a few key sections. Each section is grouped and
 configured using different taglibs:

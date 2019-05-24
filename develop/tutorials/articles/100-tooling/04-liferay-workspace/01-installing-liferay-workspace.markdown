@@ -1,11 +1,15 @@
-# Installing Liferay Workspace [](id=installing-liferay-workspace)
+---
+header-id: installing-liferay-workspace
+---
+
+# Installing Liferay Workspace
 
 You can install Liferay Workspace using the Liferay Project SDK installer. This
 installs JPM and
-[Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli) into your user
+[Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/blade-cli) into your user
 home folder and optionally initializes a Liferay Workspace folder. This is the
 same installer used to install Blade CLI, which is covered in the
-[Installing Blade CLI](/develop/tutorials/-/knowledge_base/7-1/installing-blade-cli)
+[Installing Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/installing-blade-cli)
 tutorial.
 
 Follow the steps below to download and install Liferay Workspace:
@@ -33,20 +37,16 @@ Follow the steps below to download and install Liferay Workspace:
 
     ![Figure 2: Select the product version you'll use with your Liferay Workspace.](../../../images/installer-workspace-type.png)
 
-    +$$$
-
-    **Note:** You'll be prompted for your liferay.com username and password
-    before downloading the Liferay DXP bundle. Your credentials are not saved
-    locally; they're saved as a token in the `~/.liferay` folder. The token is
-    used by your workspace if you ever decide to redownload a DXP bundle.
-    Furthermore, the bundle that is downloaded in your workspace is also copied
-    to your `~/.liferay/bundles` folder, so if you decide to initialize another
-    @product@ instance of the same version, the bundle is not re-downloaded. See
-    the
-    [Adding a Liferay Bundle to a Workspace](/develop/tutorials/-/knowledge_base/7-1/configuring-a-liferay-workspace#adding-a-liferay-bundle-to-a-workspace)
-    for more information on this topic.
-
-    $$$
+    | **Note:** You'll be prompted for your liferay.com username and password
+    | before downloading the Liferay DXP bundle. Your credentials are not saved
+    | locally; they're saved as a token in the `~/.liferay` folder. The token is
+    | used by your workspace if you ever decide to redownload a DXP bundle.
+    | Furthermore, the bundle that is downloaded in your workspace is also copied
+    | to your `~/.liferay/bundles` folder, so if you decide to initialize another
+    | @product@ instance of the same version, the bundle is not re-downloaded. See
+    | the
+    | [Adding a Liferay Bundle to a Workspace](/docs/7-1/tutorials/-/knowledge_base/t/configuring-a-liferay-workspace#adding-a-liferay-bundle-to-a-workspace)
+    | for more information on this topic.
 
 5.  Click *Next* to begin installing Liferay Workspace on your machine.
 

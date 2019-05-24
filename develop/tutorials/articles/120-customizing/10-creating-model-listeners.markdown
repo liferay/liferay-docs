@@ -1,4 +1,8 @@
-# Creating Model Listeners [](id=model-listeners)
+---
+header-id: model-listeners
+---
+
+# Creating Model Listeners
 
 Model Listeners implement the
 [`ModelListener` interface](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/ModelListener.html).
@@ -24,7 +28,7 @@ unpredictably and give you headaches:
 -  Setting a model's attributes in an `onBeforeUpdate` call. If some other
    database table has already been updated with the values before your model
 listener is invoked, your database gets out of sync. To change how an entity's
-attributes are set, consider using a [service wrapper](/develop/tutorials/-/knowledge_base/7-1/customizing-liferay-services-service-wrappers)
+attributes are set, consider using a [service wrapper](/docs/7-1/tutorials/-/knowledge_base/t/customizing-liferay-services-service-wrappers)
 instead.
 -  Wrapping a model. Model listeners are not called when fetching records from
    the database.
@@ -42,7 +46,7 @@ You can create a model listener in a module by doing two simple things:
 -  Implement `ModelListener`
 -  Register the service in Liferay's OSGi runtime
 
-## Creating a Model Listener Class [](id=creating-a-modellistener-class)
+## Creating a Model Listener Class
 
 Create a `-ModelListener` class that extends the
 [`BaseModelListener` class](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/BaseModelListener.html). 
@@ -65,7 +69,7 @@ In your model listener class, the parameterized type (for example,
 `CustomEntity` in the snippet above) tells the listener's
 `ServiceTrackerCustomizer` which model class to register the listener against.
 
-## Register the Model Listener Service [](id=register-the-model-listener-service)
+## Register the Model Listener Service
 
 Register the service with Liferay's OSGi runtime for immediate activation. If
 using Declarative Services, set `service= ModelListener.class` and
@@ -79,7 +83,7 @@ using Declarative Services, set `service= ModelListener.class` and
 That's all there is to preparing a model listener. Now learn what model events
 you can respond to.
 
-## Listening For Persistence Events [](id=listening-for-persistence-events)
+## Listening For Persistence Events
 
 The `ModelListener` interface provides lots of opportunity to listen for model
 events:
@@ -121,10 +125,10 @@ useful as standalone projects or inside of your application. If your application
 needs to do something (like add a custom entity) every time a User is added in
 Liferay, you can include the model listener inside your application.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Upgrading Model Listener Hooks](/develop/tutorials/-/knowledge_base/7-1/upgrading-model-listener-hooks)
+[Upgrading Model Listener Hooks](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-model-listener-hooks)
 
-[Service Builder](/develop/tutorials/-/knowledge_base/7-0/service-builder)
+[Service Builder](/docs/7-0/tutorials/-/knowledge_base/t/service-builder)
 
-[Service Builder Persistence](/develop/tutorials/-/knowledge_base/7-1/service-builder-persistence)
+[Service Builder Persistence](/docs/7-1/tutorials/-/knowledge_base/t/service-builder-persistence)

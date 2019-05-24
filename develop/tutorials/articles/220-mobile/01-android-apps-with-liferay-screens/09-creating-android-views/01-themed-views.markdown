@@ -1,4 +1,8 @@
-# Themed Views [](id=themed-views)
+---
+header-id: themed-views
+---
+
+# Themed Views
 
 Screens provides several existing View Sets that you can reuse and customize in 
 your app to create a Themed View. If you use or override the Android color 
@@ -67,12 +71,12 @@ the styles and colors defined earlier in `AppTheme.NoActionBar`:
         ...
     >
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Child Views](/develop/tutorials/-/knowledge_base/7-1/child-views)
+[Child Views](/docs/7-1/tutorials/-/knowledge_base/t/child-views)
 
-[Extended Views](/develop/tutorials/-/knowledge_base/7-1/extended-views)
+[Extended Views](/docs/7-1/tutorials/-/knowledge_base/t/extended-views)
 
-[Full Views](/develop/tutorials/-/knowledge_base/7-1/full-views)
+[Full Views](/docs/7-1/tutorials/-/knowledge_base/t/full-views)
 
-[Packaging Your Views](/develop/tutorials/-/knowledge_base/7-1/packaging-your-views)
+[Packaging Your Views](/docs/7-1/tutorials/-/knowledge_base/t/packaging-your-views)

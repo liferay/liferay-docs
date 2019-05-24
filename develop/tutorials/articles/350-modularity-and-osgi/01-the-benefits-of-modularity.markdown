@@ -1,4 +1,8 @@
-# The Benefits of Modularity [](id=the-benefits-of-modularity)
+---
+header-id: the-benefits-of-modularity
+---
+
+# The Benefits of Modularity
 
 Dictionary.com defines 
 [modularity](http://www.dictionary.com/browse/modularity)
@@ -58,7 +62,7 @@ Can modularity benefit software too? Yes! The following sections show you how:
 - [Modularity benefits for software](#modularity-benefits-for-software)
 - [Example: How to design a modular application](#example-designing-a-modular-application)
 
-## Modularity Benefits for Software [](id=modularity-benefits-for-software)
+## Modularity Benefits for Software
 
 Java applications have predominantly been monolithic: they're developed in large
 code bases. In a monolith, it's difficult to avoid tight coupling of classes.
@@ -67,7 +71,7 @@ code easier to maintain. It's much easier and more fun to develop small amounts
 of cohesive code in modules. Here are some key benefits of developing modular
 software. 
 
-### Distinct Functionality [](id=distinct-functionality)
+### Distinct Functionality
 
 It's natural to focus on developing one piece of software at a time. In a
 module, you work on a small set of classes to define and implement the module's
@@ -76,7 +80,7 @@ The more cohesive the code, the easier it is to test, debug, and maintain.
 Modules can be combined to provide a new function, distinguishable from each
 module's function. 
 
-### Encapsulation [](id=encapsulation)
+### Encapsulation
 
 A module encapsulates a function (capability). Module implementations are hidden
 from consumers, so you can create and modify them as you like. Throughout a
@@ -85,7 +89,7 @@ entirely new one. You make the changes behind the scenes, transparent to
 consumers. A module's contract defines its capability and interface, making the
 module easy to understand and use.
 
-### Dependencies [](id=dependencies)
+### Dependencies
 
 Modules have requirements and capabilities. The interaction between modules is a
 function of the capability of one satisfying the requirement of another and so
@@ -93,7 +97,7 @@ on. Modules are published to artifact repositories, such as Maven Central.
 Module versioning schemes let you specify dependencies on particular module
 versions or version ranges. 
 
-### Reusability [](id=reusability)
+### Reusability
 
 Modules that do their job well are hot commodities. They're reusable across
 projects, for different purposes. As you discover helpful reliable modules,
@@ -101,12 +105,12 @@ you'll use them again and again.
 
 It's time to design a modular application. 
 
-## Example: Designing a Modular Application [](id=example-designing-a-modular-application)
+## Example: Designing a Modular Application
 
 Application design often starts out simple but gets more complex as you
 determine capabilities the application requires. If a third party library
 already provides the capability, you can
-[deploy it with your app](/develop/tutorials/-/knowledge_base/7-1/adding-third-party-libraries-to-a-module).
+[deploy it with your app](/docs/7-1/tutorials/-/knowledge_base/t/adding-third-party-libraries-to-a-module).
 You can otherwise implement the capability yourself. 
 
 As you design various aspects of your app to support its function, you must

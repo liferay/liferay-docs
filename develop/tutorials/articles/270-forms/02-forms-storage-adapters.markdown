@@ -1,4 +1,8 @@
-# Forms Storage Adapters [](id=forms-storage-adapters)
+---
+header-id: forms-storage-adapters
+---
+
+# Forms Storage Adapters
 
 When a User adds a form record, the Forms API routes the processing of the
 request through the storage adapter API. The same is true for the other *CRUD*
@@ -14,19 +18,15 @@ form entries, a developer can even choose to store form data outside the Liferay
 database. 
 
 Define your own format to save form entries by 
-[writing an OSGi component](/develop/tutorials/-/knowledge_base/7-1/creating-projects-with-blade-cli)
+[writing an OSGi component](/docs/7-1/tutorials/-/knowledge_base/t/creating-projects-with-blade-cli)
 that implements the `StorageAdapter` interface. The interface follows the *CRUD*
 approach, so implementing it requires that you write methods to create, read,
 update and delete form values.
 
-+$$$
-
-**Note:** When you add a new storage adapter, it can only be used with new
-Forms. All existing Forms continue to use the adapter selected (JSON by default)
-at the time of their creation, and a different storage adapter cannot be
-selected.
-
-$$$
+| **Note:** When you add a new storage adapter, it can only be used with new
+| Forms. All existing Forms continue to use the adapter selected (JSON by default)
+| at the time of their creation, and a different storage adapter cannot be
+| selected.
 
 The example storage adapter in this tutorial serializes form data to be stored
 in a simple file, stored on the file system.
@@ -37,7 +37,7 @@ Note that these code snippets include the references to the services they're
 calling directly beneath the first method that uses the service. It's a Liferay
 code convention to place these at the very end of the class.
 
-## Implementing a Storage Adapter [](id=implementing-a-storage-adapter)
+## Implementing a Storage Adapter
 
 First declare the class a `Component` that provides a `StorageAdapter`
 implementation. To implement a storage adapter, extend the abstract
@@ -47,7 +47,7 @@ implementation. To implement a storage adapter, extend the abstract
     public class FileSystemStorageAdapter extends BaseStorageAdapter {
 
 
-### Step 1: Name the Storage Type [](id=step-1-name-the-storage-type)
+### Step 1: Name the Storage Type
 
 The only method without a base implementation in the abstract class is
 `getStorageType`. For the file system storage example, just make it return
@@ -63,7 +63,7 @@ the UI when the form creator is selecting a storage type for their form. The
 String value you return here is added to the `StorageAdapterRegistry`'s Map of
 storage adapters. 
 
-### Step 2: Override the CRUD Methods [](id=step-2-override-the-crud-methods)
+### Step 2: Override the CRUD Methods
 
 Next override the `doCreateMethod` to return a `long` that
 identifies each form record with a unique file ID: 
@@ -215,7 +215,7 @@ example calls the `saveFile`  utility method provided earlier:
 
 Once the CRUD logic is defined, deploy and test the storage adapter.
 
-## Step 3: Validating Form Entries [](id=step-3-validating-form-entries)
+## Step 3: Validating Form Entries
 
 The `doCreate` and `doUpdate` methods above both include this line:
 
@@ -256,7 +256,7 @@ Make sure to do three things:
 
 Once the necessary logic is in place, deploy and test the Storage Adapter.
 
-## Enabling the Storage Adapter [](id=enabling-the-storage-adapter)
+## Enabling the Storage Adapter
 
 The storage adapter is enabled at the individual form level. Create a new form,
 and select the Storage Adapter _before saving or publishing the form_. If you

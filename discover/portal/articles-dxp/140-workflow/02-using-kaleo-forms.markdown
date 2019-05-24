@@ -1,4 +1,8 @@
-# Kaleo Forms [](id=kaleo-forms)
+---
+header-id: kaleo-forms
+---
+
+# Kaleo Forms
 
 Business processes are often form-based and workflow-driven. They start with 
 entered data and progress by sending that data to other people or groups. Then
@@ -9,14 +13,14 @@ is laborious. It's much better to have a tool for quickly defining a process to
 suit each use case. The process architect must define both the data that gets
 collected and the process the data moves through to reach its final state. To
 accomplish this, @product@ already includes the
-[Dynamic Data Lists app](/discover/portal/-/knowledge_base/7-1/creating-data-definitions)
+[Dynamic Data Lists app](/docs/7-1/user/-/knowledge_base/u/creating-data-definitions)
 for defining forms, and the 
-[Kaleo Designer app](/discover/portal/-/knowledge_base/7-1/kaleo-designer) 
+[Kaleo Designer app](/docs/7-1/user/-/knowledge_base/u/kaleo-designer) 
 for designing workflows. The Kaleo Forms solution combines the features of these
 apps, letting you use a single UI to design an integrated process for sending 
 forms through a workflow. 
 
-## Creating Kaleo Forms Process [](id=creating-kaleo-forms-process)
+## Creating Kaleo Forms Process
 
 To start creating a Kaleo Forms Process you need to get to Kaleo Forms Admin: 
 
@@ -43,7 +47,7 @@ To start creating a Kaleo Forms Process you need to get to Kaleo Forms Admin:
     -   Create a new field set/data definition. Click the 
         *Add Field Set* button. If you need help with this, see the 
         documentation on
-        [creating data definitions](/discover/portal/-/knowledge_base/7-1/creating-data-definitions). 
+        [creating data definitions](/docs/7-1/user/-/knowledge_base/u/creating-data-definitions). 
         After creating the field set, select it as you would an existing field 
         set. 
 
@@ -66,7 +70,7 @@ To start creating a Kaleo Forms Process you need to get to Kaleo Forms Admin:
 
     In either case, you use the same UI to edit/create the workflow. This UI is 
     called 
-    [Kaleo Designer](/discover/portal/-/knowledge_base/7-1/kaleo-designer). It 
+    [Kaleo Designer](/docs/7-1/user/-/knowledge_base/u/kaleo-designer). It 
     lets you create your workflow graphically instead of via code. 
 
     Once you select a workflow to use with your forms, click *Next*. 
@@ -86,7 +90,7 @@ To start creating a Kaleo Forms Process you need to get to Kaleo Forms Admin:
 
     ![Figure 4: Assign a form to each task in the workflow, and for the initial state.](../../images-dxp/kaleo-forms-task-forms.png)
 
-## Adding Records to a Process [](id=adding-records-to-a-process)
+## Adding Records to a Process
 
 To add records to a process, click it in Kaleo Forms Admin and then click the 
 *Add* button 

@@ -1,4 +1,8 @@
-# Profiling Segments [](id=profiling-segments)
+---
+header-id: profiling-segments
+---
+
+# Profiling Segments
 
 The Segment profiles are your gateway into how people interact with your
 sites. They show who's matching your Segment criteria
@@ -19,7 +23,7 @@ Here's how to view Segment profiles:
 
 The Segment's profile appears, showing its *Overview* panel. 
 
-## Overview [](id=overview)
+## Overview
 
 The *Overview* tab's main area shows membership growth. As a marketer, you might
 want to generate more customer prospects in a specific industry. If you create a
@@ -32,7 +36,7 @@ The Overview tab also gives you a glimpse of the Segment's criteria, interests,
 and demographics. Each one links to more details, or you can click on their
 respective tabs. 
 
-## Interests [](id=interests)
+## Interests
 
 As a Segment's members interact with your site pages and assets, Analytics
 Cloud's interests algorithm determines the level of interest the Segment has
@@ -43,7 +47,7 @@ See
 [Customer Insights](https://github.com/liferay/liferay-docs/blob/7.1.x/discover/analytics-cloud/articles/03-understanding-people/04-customer-insights.markdown)
 for details on the Interests insight.
 
-## Distribution [](id=distribution)
+## Distribution
 
 The *Distribution* tab breaks down the Segment by a demographic property. 
 

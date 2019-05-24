@@ -1,4 +1,8 @@
-# Displaying Blogs [](id=displaying-blogs)
+---
+header-id: displaying-blogs
+---
+
+# Displaying Blogs
 
 The Blogs app in Site Administration lets you 
 [add](https://www.liferay.com/), 
@@ -49,7 +53,7 @@ select *Configuration*. The display settings are in the *Setup* tab:
     between those columns. Similarly, use the up/down arrows beneath the 
     *Current* column to reorder the sites as they appear on each blog entry. For 
     more information, see 
-    [the social bookmarks documentation](/discover/portal/-/knowledge_base/7-1/using-social-bookmarks).
+    [the social bookmarks documentation](/docs/7-1/user/-/knowledge_base/u/using-social-bookmarks).
 
 -   **Display Style:** The display style for social bookmarks. *Inline* is the 
     default and displays the social bookmark icons in a row. *Menu* hides them 
@@ -73,7 +77,7 @@ select *Configuration*. The display settings are in the *Setup* tab:
 
     To select a different application display template (ADT) or create your own, 
     click *Manage Templates*. For more information, see the documentation on 
-    [application display templates](/discover/portal/-/knowledge_base/7-1/using-page-fragments). 
+    [application display templates](/docs/7-1/user/-/knowledge_base/u/using-page-fragments). 
 
 -   **Enable Report Inappropriate Content:** Whether to let users flag content 
     as inappropriate, which sends an email to administrators. 

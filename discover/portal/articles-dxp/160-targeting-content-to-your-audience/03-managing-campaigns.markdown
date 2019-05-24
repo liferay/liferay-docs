@@ -1,4 +1,8 @@
-# Managing Campaigns [](id=managing-campaigns)
+---
+header-id: managing-campaigns
+---
+
+# Managing Campaigns
 
 A campaign is an effort to expose certain user segments to a set of
 assets within a specific period of time. To manage campaigns for a Site,
@@ -55,7 +59,7 @@ visit the Roles section of the Control Panel. Then click on the *Actions* &rarr;
 *Define Permissions* button corresponding to the Role you want to configure
 permissions for, and search for *Audience Targeting*.
 
-## Managing Campaign Priorities [](id=managing-campaign-priorities)
+## Managing Campaign Priorities
 
 The priority of your campaigns becomes important when multiple campaigns are
 running at the same time on your website. The Campaign Content Display

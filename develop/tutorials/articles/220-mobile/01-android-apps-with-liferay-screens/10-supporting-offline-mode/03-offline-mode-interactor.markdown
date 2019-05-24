@@ -1,4 +1,8 @@
-# Update the Interactor Class [](id=update-the-interactor-class)
+---
+header-id: update-the-interactor-class
+---
+
+# Update the Interactor Class
 
 Recall from the basic Screenlet creation tutorial that Interactor classes extend 
 `BaseRemoteInteractor` with the listener and event as type arguments. To support 
@@ -84,12 +88,12 @@ trying to add a bookmark to the server:
         getListener().error(event.getException(), "ADD_BOOKMARK"); 
     }
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Create or Update the Event Class](/develop/tutorials/-/knowledge_base/7-1/create-or-update-the-event-class)
+[Create or Update the Event Class](/docs/7-1/tutorials/-/knowledge_base/t/create-or-update-the-event-class)
 
-[Update the Listener](/develop/tutorials/-/knowledge_base/7-1/update-the-listener)
+[Update the Listener](/docs/7-1/tutorials/-/knowledge_base/t/update-the-listener)
 
-[Update the Screenlet Class](/develop/tutorials/-/knowledge_base/7-1/update-the-screenlet-class)
+[Update the Screenlet Class](/docs/7-1/tutorials/-/knowledge_base/t/update-the-screenlet-class)
 
-[Sync the Cache with the Server](/develop/tutorials/-/knowledge_base/7-1/sync-the-cache-with-the-server)
+[Sync the Cache with the Server](/docs/7-1/tutorials/-/knowledge_base/t/sync-the-cache-with-the-server)

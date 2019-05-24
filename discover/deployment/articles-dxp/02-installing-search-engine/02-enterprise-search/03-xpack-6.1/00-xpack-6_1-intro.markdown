@@ -1,4 +1,8 @@
-# Installing X-Pack (6.1) [](id=installing-x-pack-6-1)
+---
+header-id: installing-x-pack-6-1
+---
+
+# Installing X-Pack (6.1)
 
 X-Pack is an 
 [Elasticsearch extension](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/setup-xpack.html)
@@ -34,10 +38,6 @@ Here's an overview of using X-Pack to secure the data indexed in Elasticsearch:
 On completing these steps, your Elasticsearch installation communicates freely
 with @product@. 
 
-+$$$
-
-[Elastic's documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/configuring-security.html)
-describes the X-Pack architecture and additional configuration options and
-features.
-
-$$$ 
+| [Elastic's documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/configuring-security.html)
+| describes the X-Pack architecture and additional configuration options and
+| features.

@@ -1,8 +1,12 @@
-# Creating and Managing Navigation Menus [](id=creating-and-managing-navigation-menus)
+---
+header-id: creating-and-managing-navigation-menus
+---
+
+# Creating and Managing Navigation Menus
 
 To better understand Navigation Menus, it's time to create a new menu.
 
-## Creating a Navigation Menu [](id=creating-a-navigation-menu)
+## Creating a Navigation Menu
 
 1.  Go to *Site Administration* &rarr; *Build* &rarr; *Navigation Menus*.
 
@@ -23,13 +27,9 @@ just like any other option in your menu.
 Click on *Page* and you see a view of all the current pages on the current Site.
 Select a page and click *Add* to add that page to the menu.
 
-+$$$
-
-**Note:** When you click on a page, you select that page. Multiple pages can be
-selected by clicking on each page one at a time. To deselect a page, click on
-the page again.
-
-$$$
+| **Note:** When you click on a page, you select that page. Multiple pages can be
+| selected by clicking on each page one at a time. To deselect a page, click on
+| the page again.
 
 Now you see the menu management screen. From here, you can drag and drop menu
 elements to rearrange or nest them. You can also manage options for this menu by
@@ -59,7 +59,7 @@ the submenu.
 
 Now that you can see how menus work, you can learn the details.
 
-## Managing Menus [](id=managing-menus)
+## Managing Menus
 
 After you create a menu, more configuration options appear on the main
 Navigation Menus page. 
@@ -82,7 +82,7 @@ a page. **Secondary Navigation** is a second level of navigation, possibly
 a sidebar or a separate menu within a page. **Social Navigation** is for menus
 that contain links for sharing content on social media or similar tasks.
 
-### Modifying Menus [](id=modifying-menus)
+### Modifying Menus
 
 Next click on the options menu at the far left of your new navigation menu: 
 

@@ -1,8 +1,12 @@
-# Getting Collections [](id=getting-collections)
+---
+header-id: getting-collections
+---
+
+# Getting Collections
 
 Requests for collection resources are the same as those for non-collection 
 resources. For example, an 
-[authenticated request](/develop/tutorials/-/knowledge_base/7-1/making-authenticated-requests)
+[authenticated request](/docs/7-1/tutorials/-/knowledge_base/t/making-authenticated-requests)
 to the `person` endpoint returns a collection containing the portal's users.
 When sending this request, use the credentials of an administrative user who has
 permission to view other portal users: 
@@ -22,7 +26,7 @@ This response is in the
 [JSON-LD hypermedia format](https://json-ld.org/spec/latest/json-ld/), 
 which is the default response format for web APIs in @product@. For information 
 on specifying other response formats, see the 
-[content negotiation tutorial](/develop/tutorials/-/knowledge_base/7-1/hypermedia-formats-and-content-negotiation). 
+[content negotiation tutorial](/docs/7-1/tutorials/-/knowledge_base/t/hypermedia-formats-and-content-negotiation). 
 
     {
         "totalItems": 2,
@@ -83,10 +87,10 @@ on specifying other response formats, see the
         "@type": ["Collection"],
     }
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Pagination](/develop/tutorials/-/knowledge_base/7-1/pagination)
+[Pagination](/docs/7-1/tutorials/-/knowledge_base/t/pagination)
 
-[Making Authenticated Requests](/develop/tutorials/-/knowledge_base/7-1/making-authenticated-requests)
+[Making Authenticated Requests](/docs/7-1/tutorials/-/knowledge_base/t/making-authenticated-requests)
 
-[Hypermedia Formats and Content Negotiation](/develop/tutorials/-/knowledge_base/7-1/hypermedia-formats-and-content-negotiation)
+[Hypermedia Formats and Content Negotiation](/docs/7-1/tutorials/-/knowledge_base/t/hypermedia-formats-and-content-negotiation)

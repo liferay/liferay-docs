@@ -1,20 +1,20 @@
-# Configuring the View Layer [](id=configuring-the-view-layer)
+---
+header-id: configuring-the-view-layer
+---
+
+# Configuring the View Layer
 
 This section briefly covers how to get your view layer working, from organizing
 your imports in one JSP file, to creating URLs that direct processing to
 methods in your portlet class. 
 
-+$$$
-
-Note: As you create JSPs, you can 
-[apply Clay styles to your app to match Liferay's apps](/develop/tutorials/-/knowledge_base/7-1/applying-clay-styles-to-your-app).
-
-$$$
+| Note: As you create JSPs, you can
+| [apply Clay styles to your app to match Liferay's apps](/docs/7-1/tutorials/-/knowledge_base/t/applying-clay-styles-to-your-app).
 
 Liferay's best practice puts all Java imports, tag library declarations, and
 variable initializations into a JSP called `init.jsp`. If you use 
-[Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli) or 
-[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/liferay-ide)
+[Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/blade-cli) or 
+[Liferay @ide@](/docs/7-1/tutorials/-/knowledge_base/t/liferay-ide)
 to create a module based on the `mvc-portlet` project template, these taglib
 declarations and initializations are added automatically to your `init.jsp`:
 

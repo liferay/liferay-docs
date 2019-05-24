@@ -1,4 +1,8 @@
-# Bottom JSP Dynamic Includes [](id=bottom-jsp-dynamic-includes)
+---
+header-id: bottom-jsp-dynamic-includes
+---
+
+# Bottom JSP Dynamic Includes
 
 The `bottom.jsp` dynamic includes load additional HTML or scripts in the bottom
 of the theme's body. The following keys are available:
@@ -67,10 +71,10 @@ When the Simulation panel is open, the script adds the
 
 Now you know how to use the `bottom.jsp` dynamic includes.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Top Head JSP Dynamic Includes](/develop/tutorials/-/knowledge_base/7-1/top-head-jsp-dynamic-includes)
+[Top Head JSP Dynamic Includes](/docs/7-1/tutorials/-/knowledge_base/t/top-head-jsp-dynamic-includes)
 
-[Top JS Dynamic Include](/develop/tutorials/-/knowledge_base/7-1/top-js-dynamic-include)
+[Top JS Dynamic Include](/docs/7-1/tutorials/-/knowledge_base/t/top-js-dynamic-include)
 
-[WYSIWYG Editor Dynamic Includes](/develop/tutorials/-/knowledge_base/7-1/wysiwyg-editor-dynamic-includes)
+[WYSIWYG Editor Dynamic Includes](/docs/7-1/tutorials/-/knowledge_base/t/wysiwyg-editor-dynamic-includes)

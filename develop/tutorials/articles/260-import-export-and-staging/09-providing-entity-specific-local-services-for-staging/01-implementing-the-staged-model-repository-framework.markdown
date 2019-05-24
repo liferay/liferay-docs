@@ -1,4 +1,8 @@
-# Implementing the Staged Model Repository Framework [](id=implementing-the-staged-model-repository-framework)
+---
+header-id: implementing-the-staged-model-repository-framework
+---
+
+# Implementing the Staged Model Repository Framework
 
 Providing specialized local services for your app's staging functionality lets
 you abstract the additional staging-specific information away from your data
@@ -13,7 +17,7 @@ references Liferay's Bookmarks app and Bookmarks Entry entities.
     Model Repository classes (e.g.,
     `com.liferay.bookmarks.exportimport.staged.model.repository`). If you do not
     have a `-service` bundle, visit the
-    [Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder)
+    [Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/service-builder)
     tutorials for info on generating an app's services. You must have them to
     leverage most Staging features.
 
@@ -126,5 +130,5 @@ references Liferay's Bookmarks app and Bookmarks Entry entities.
 Awesome! You've implemented the Staged Model Repository framework for your app!
 If you're interested in leveraging this framework after the implementation
 process, see the
-[Using the Staged Model Repository Framework](/develop/tutorials/-/knowledge_base/7-1/using-the-staged-model-repository-framework)
+[Using the Staged Model Repository Framework](/docs/7-1/tutorials/-/knowledge_base/t/using-the-staged-model-repository-framework)
 tutorial.

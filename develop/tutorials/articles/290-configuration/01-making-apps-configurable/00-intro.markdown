@@ -1,4 +1,8 @@
-# Making Applications Configurable [](id=making-applications-configurable)
+---
+header-id: making-applications-configurable
+---
+
+# Making Applications Configurable
 
 A configurable application allows a user with appropriate permissions to change
 certain aspects of the application, within bounds set by the developer.
@@ -20,22 +24,18 @@ the System Settings application in the Control Panel and categorizing the
 configuration. Subsequent tutorials show you how to 
 
 1.  Set the *scope* of the configuration. Read more about configuration scope
-    [here](/discover/portal/-/knowledge_base/7-1/system-settings#configuration-scope).
+    [here](/docs/7-1/user/-/knowledge_base/u/system-settings#configuration-scope).
 
 2.  Read configuration values from various contexts. 
 
-+$$$
-
-**Note:** To see a working application configuration, deploy the
-`configuration-action` 
-[Blade sample](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/configuration-action)
-and navigate to System Settings (*Control Panel* &rarr; *Configuration* &rarr;
-*System Settings*). In the Other category, click the *Message display
-configuration* entry.
-
-Add the *Blade Message Portlet* to a page to test your configuration choices.
-
-$$$
+| **Note:** To see a working application configuration, deploy the
+| `configuration-action`
+| [Blade sample](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/configuration-action)
+| and navigate to System Settings (*Control Panel* &rarr; *Configuration* &rarr;
+| *System Settings*). In the Other category, click the *Message display
+| configuration* entry.
+| 
+| Add the *Blade Message Portlet* to a page to test your configuration choices.
 
 You don't need much prior knowledge to use the configuration API, but
 understanding a few key concepts is useful before diving into the code.
@@ -52,7 +52,7 @@ a given application or one of its components.
 
 **Modularity** 
 : Modern applications are *modular* and built as a collection of lightweight
-[components](/develop/tutorials/-/knowledge_base/7-1/fundamentals#components).
+[components](/docs/7-1/tutorials/-/knowledge_base/t/fundamentals#components).
 
 **Configuration Scope** 
 : If your application must support different configurations at different scopes,
@@ -74,9 +74,9 @@ application's configuration. Here are the most common configuration scopes:
 Enough with the conceptual stuff. You're ready to get started with some code. If
 you already had a portlet or service that was configurable using the traditional
 mechanisms of Liferay Portal 6.2 and before, refer to the
-[Transitioning from Portlet Preferences to the Configuration API](/develop/tutorials/-/knowledge_base/7-0/transitioning-from-portlet-preferences-to-the-configuration-api) tutorial.
+[Transitioning from Portlet Preferences to the Configuration API](/docs/7-0/tutorials/-/knowledge_base/t/transitioning-from-portlet-preferences-to-the-configuration-api) tutorial.
 
-## Creating A Configuration Interface [](id=creating-a-configuration-interface)
+## Creating A Configuration Interface
 
 First, you'll learn how to create a configuration at the system scope.
 
@@ -130,7 +130,7 @@ First, you'll learn how to create a configuration at the system scope.
     also have an auto-generated UI! 
 
 2.  To use the `Meta.OCD` and `Meta.AD` annotations in your modules, you must
-    [specify a dependency](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
+    [specify a dependency](/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies)
     on the bnd library. We recommend using bnd version 3. Here's an example of
     how to include this dependency in a Gradle project: 
 
@@ -138,18 +138,14 @@ First, you'll learn how to create a configuration at the system scope.
             compile group: "biz.aQute.bnd", name: "biz.aQute.bndlib", version: "3.1.0"
         }
 
-    +$$$
-
-    **Note:** The annotations `@Meta.OCD` and `@Meta.AD` are part of the bnd
-    library, but as of OSGi standard version R6, they're included in the OSGi core
-    under the names `@ObjectClassDefinition` and `@AttributeDefinition`. The OSGi
-    annotations can be used for simple cases like the one described in this
-    tutorial. However, a key difference between the two libraries is that the bnd
-    annotations are available at runtime, while the OSGi annotations are not.
-    Because runtime availability is necessary for some of the Liferay-specific features
-    described below, we recommend defaulting to the bnd annotations.
-
-    $$$
+    | **Note:** The annotations `@Meta.OCD` and `@Meta.AD` are part of the bnd
+    | library, but as of OSGi standard version R6, they're included in the OSGi core
+    | under the names `@ObjectClassDefinition` and `@AttributeDefinition`. The OSGi
+    | annotations can be used for simple cases like the one described in this
+    | tutorial. However, a key difference between the two libraries is that the bnd
+    | annotations are available at runtime, while the OSGi annotations are not.
+    | Because runtime availability is necessary for some of the Liferay-specific features
+    | described below, we recommend defaulting to the bnd annotations.
 
 3.  Add the following line to your project's `bnd.bnd` file:
 
@@ -158,7 +154,7 @@ First, you'll learn how to create a configuration at the system scope.
     This line lets bnd use your configuration interface to generate an XML
     configuration file. This provides a lot of information about your application's
     configuration options. Enough, in fact, to generate a 
-    [System Settings](/discover/portal/-/knowledge_base/7-1/system-settings) user 
+    [System Settings](/docs/7-1/user/-/knowledge_base/u/system-settings) user 
     interface automatically.
 
 <!--[Figure 1: Navigate to the Control Panel and then click on *Configuration* &rarr; *System Settings*. Then click on *Platform* &rarr; *Third Party*, find the *Example configuration* link, and click on it.](../../images/example-configuration-system-settings.png)-->

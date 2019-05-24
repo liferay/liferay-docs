@@ -1,4 +1,8 @@
-# Collaboration [](id=collaboration)
+---
+header-id: collaboration
+---
+
+# Collaboration
 
 @product@ contains an expansive collaboration suite that empowers users to 
 create content and communities that they couldn't create alone. A robust 

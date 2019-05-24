@@ -1,4 +1,8 @@
-# Making Changes to Published Apps [](id=making-changes-to-published-apps)
+---
+header-id: making-changes-to-published-apps
+---
+
+# Making Changes to Published Apps
 
 You can make these kinds of changes during the life of your published app:
 
@@ -15,7 +19,7 @@ and while Liferay reviews and tests your app changes.
 
 The rest of this article describes each kind of change. 
 
-## Editing Your App's Metadata [](id=editing-your-app-details)
+## Editing Your App's Metadata
 
 App metadata includes the name, description, icon, screenshots, and other
 information you supplied during the app creation process. Here's how to edit
@@ -45,7 +49,7 @@ phase of the review process.
 
 Once approved, the changes you request appear for your app on the Marketplace.
 
-## Editing App Prices [](id=editing-app-prices)
+## Editing App Prices
 
 You can change your app's prices, add or remove bundles, and modify regional
 availability for a variety of reasons, whether it's to run a promotional offer,
@@ -75,7 +79,7 @@ You cannot however, modify the following attributes of an approved app:
 
 Next, you can consider adding support for new versions of Liferay. 
 
-## Adding Support for New Versions of Liferay [](id=adding-support-for-new-versions-of-liferay-portal)
+## Adding Support for New Versions of Liferay
 
 If you must add files to support another Liferay release, the process is similar
 to editing an app.
@@ -114,7 +118,7 @@ to editing an app.
 Liferay reviews the files, and once approved, the new package becomes available
 for download in the Marketplace.
 
-## Releasing a New Version of your App [](id=releasing-a-new-version-of-your-app)
+## Releasing a New Version of your App
 
 As time passes, you may wish to add new functionality to your app or fix a batch
 of bugs. This can be accomplished by releasing a new version of your app. New
@@ -162,7 +166,7 @@ New versions of your apps are created in a similar fashion to creating new apps.
 The Liferay Marketplace staff starts to review your app's new version and test
 it. 
 
-## Deactivating Your App [](id=deactivating-your-app)
+## Deactivating Your App
 
 When the time comes to retire your app, you can *Deactivate* it. Deactivating an
 app makes it unavailable to new customers, and it doesn't appear in any public

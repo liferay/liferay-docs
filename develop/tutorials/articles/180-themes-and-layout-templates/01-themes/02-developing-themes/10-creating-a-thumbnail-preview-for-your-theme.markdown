@@ -1,4 +1,8 @@
-# Creating a Thumbnail Preview for Your Theme [](id=creating-a-thumbnail-preview-for-your-theme)
+---
+header-id: creating-a-thumbnail-preview-for-your-theme
+---
+
+# Creating a Thumbnail Preview for Your Theme
 
 When you apply a theme to your site pages, you have to choose from the list of 
 available themes in the site selector. The only identification for each theme is 
@@ -24,26 +28,22 @@ Follow these steps to create a thumbnail preview for your theme:
     redeployment, the `thumbnail.png` file automatically becomes the theme's
     thumbnail.
 
-+$$$
-
-**Note:** The 
-[Theme Builder Gradle plugin](/develop/reference/-/knowledge_base/7-1/theme-builder-gradle-plugin) 
-doesn't recognize a `thumbnail.png` file. If you're using this plugin to build 
-your theme instead, you must create a `screenshot.png` file in your theme's 
-`images` folder that is 1080 pixels high by 864 pixels wide. The thumbnail is 
-automatically generated from the screenshot for you when the theme is built.
-
-$$$
+| **Note:** The
+| [Theme Builder Gradle plugin](/docs/7-1/reference/-/knowledge_base/r/theme-builder-gradle-plugin)
+| doesn't recognize a `thumbnail.png` file. If you're using this plugin to build
+| your theme instead, you must create a `screenshot.png` file in your theme's
+| `images` folder that is 1080 pixels high by 864 pixels wide. The thumbnail is
+| automatically generated from the screenshot for you when the theme is built.
 
 Now, when you apply the theme, its thumbnail displays along with the other
 themes that are available to your site.
 
 ![Figure 2: Your theme thumbnail is displayed with the rest of the available themes.](../../../../images/theme-dev-theme-thumbnail-custom.png)
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating Themes](/develop/tutorials/-/knowledge_base/7-1/creating-themes)
+[Creating Themes](/docs/7-1/tutorials/-/knowledge_base/t/creating-themes)
 
-[Creating Reusable Pieces of Code for Your Themes](/develop/tutorials/-/knowledge_base/7-1/creating-reusable-pieces-of-code-for-your-themes)
+[Creating Reusable Pieces of Code for Your Themes](/docs/7-1/tutorials/-/knowledge_base/t/creating-reusable-pieces-of-code-for-your-themes)
 
-[Creating Color Schemes for Your Theme](/develop/tutorials/-/knowledge_base/7-1/creating-color-schemes-for-your-theme)
+[Creating Color Schemes for Your Theme](/docs/7-1/tutorials/-/knowledge_base/t/creating-color-schemes-for-your-theme)

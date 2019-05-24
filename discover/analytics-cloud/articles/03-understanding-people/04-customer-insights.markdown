@@ -1,10 +1,14 @@
-# Customer Insights [](id=customer-insights)
+---
+header-id: customer-insights
+---
+
+# Customer Insights
 
 Finding out topics people are interested in helps you relate your products and
 services to them. Analytics Cloud's Interests insight empowers you with rich,
 easy-to-understand visuals that provide this information. 
 
-## Interests [](id=interests)
+## Interests
 
 As an Individual interacts with the pages and assets, Analytics Cloud notes the
 topics they contain. The more an Individual visits pages and assets that contain

@@ -1,4 +1,8 @@
-# Affecting the Processing of Workflow Definitions [](id=affecting-the-processing-of-workflow-definitions)
+---
+header-id: affecting-the-processing-of-workflow-definitions
+---
+
+# Affecting the Processing of Workflow Definitions
 
 Workflow definitions all contain nodes: a Start Node, and End node, and at least
 one Task node. You might know that for the workflow to progress from one node to
@@ -13,7 +17,7 @@ also learn about some other features that affect the processing of the workflow.
 
 Start by learning about the ever important Transition.
 
-## Transitions [](id=transitions)
+## Transitions
 
 What are transitions? Workflow transitions connect one node to another. On
 exiting the first node, processing continues to the node pointed to by the
@@ -41,7 +45,7 @@ in the workflow.
 To rename transitions, click on the arrow representing the transition
 and use the Properties tab to set the name just like you do for a node.
 
-## Forks and Joins [](id=forks-and-joins)
+## Forks and Joins
 
 Sometimes you don't need to wait for one task to be completed before moving on
 to another one. Instead, you want to do two or more things at the same time. To
@@ -60,7 +64,7 @@ Keep in mind that you must balance your fork and join nodes. In other words, for
 every fork, there must be a join that brings the parallel workflow threads back
 together.
 
-## Conditions [](id=conditions)
+## Conditions
 
 Sometimes you must inspect an asset or its execution context, and depending on
 the result, send it to the appropriate transition. You need a node for a script
@@ -116,7 +120,7 @@ transition to the *Legal Review* task or the *Content Review* task.
 You may be wondering what that `returnValue` variable is. It's the variable that
 points from the condition to a transition, and its value must match a valid
 transition in the workflow definition. This script looks up the asset in
-question, retrieves its [asset category](/discover/portal/-/knowledge_base/7-1/defining-categories-for-content),
+question, retrieves its [asset category](/docs/7-1/user/-/knowledge_base/u/defining-categories-for-content),
 and sets an initial `returnValue`. Then it checks to see if the asset has been
 marked with the *legal* category. If not it goes through *Content Review* (the
 content-review task in the workflow), and if it does it goes through *Legal
@@ -132,6 +136,6 @@ in your sites.
 
 [Using Workflow](discover/portal/-/knowledge_base/7-1/enabling-workflow)
 
-[Liferay's Workflow Framework](/develop/tutorials/-/knowledge_base/7-1/liferays-workflow-framework)
+[Liferay's Workflow Framework](/docs/7-1/tutorials/-/knowledge_base/t/liferays-workflow-framework)
 
 [Creating Simple Applications](discover/portal/-/knowledge_base/7-1/creating-simple-applications) -->

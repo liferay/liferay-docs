@@ -1,4 +1,8 @@
-# Adding Pages to Sites [](id=creating-and-managing-pages)
+---
+header-id: creating-and-managing-pages
+---
+
+# Adding Pages to Sites
 
 In the previous section, you learned how to create sites. You may have gathered 
 from that section that sites aren't particularly useful without pages. In

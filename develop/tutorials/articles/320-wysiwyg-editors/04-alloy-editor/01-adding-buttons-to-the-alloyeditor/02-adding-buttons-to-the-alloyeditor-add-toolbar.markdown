@@ -1,4 +1,8 @@
-# Adding a Button to the Add Toolbar [](id=adding-a-button-to-the-add-toolbar)
+---
+header-id: adding-a-button-to-the-add-toolbar
+---
+
+# Adding a Button to the Add Toolbar
 
 The Add Toolbar appears in the AlloyEditor when your cursor is in the editor and
 you click the Add button: 
@@ -42,7 +46,7 @@ Follow these steps to add a button to the AlloyEditor's Add Toolbar:
 
         jsonObject.put("toolbars", toolbarsJSONObject);
 
-5.  [Deploy your module](/develop/tutorials/-/knowledge_base/7-1/deploying-projects-with-blade-cli) 
+5.  [Deploy your module](/docs/7-1/tutorials/-/knowledge_base/t/deploying-projects-with-blade-cli) 
     and create new content that uses the AlloyEditor---like a blog entry or
     web content article---to see your new configuration in action!
 
@@ -51,8 +55,8 @@ figure below:
 
 ![Figure 2: The Updated Add toolbar lets you add pictures from a camera directly to the editor.](../../../../images/alloyeditor-updated-add-toolbar.png)
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Adding New Behavior to an Editor](/develop/tutorials/-/knowledge_base/7-1/adding-new-behavior-to-an-editor)
+[Adding New Behavior to an Editor](/docs/7-1/tutorials/-/knowledge_base/t/adding-new-behavior-to-an-editor)
 
-[Adding a Button to a Styles Toolbar](/develop/tutorials/-/knowledge_base/7-1/adding-a-button-to-a-styles-toolbar)
+[Adding a Button to a Styles Toolbar](/docs/7-1/tutorials/-/knowledge_base/t/adding-a-button-to-a-styles-toolbar)

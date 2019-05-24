@@ -1,16 +1,20 @@
-# Generating Staged Models Using Service Builder [](id=generating-staged-models-using-service-builder)
+---
+header-id: generating-staged-models-using-service-builder
+---
+
+# Generating Staged Models Using Service Builder
 
 A Staged model is an essential building block to implementing the Staging and
 Export/Import frameworks in your application. Instead of having to create staged
 models for your app manually, you can leverage
-[Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder) to
+[Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/service-builder) to
 generate the necessary staged model logic for you. Before diving into this
 tutorial, make sure you've read the
-[Understanding Staged Models](/develop/tutorials/-/knowledge_base/7-1/understanding-staged-models)
+[Understanding Staged Models](/docs/7-1/tutorials/-/knowledge_base/t/understanding-staged-models)
 tutorial for information on how staged models work. Also, if your app doesn't 
 use Liferay's Service Builder, you must configure it in your project. If you
 need help doing this, follow the
-[Defining an Object-Relational Map with Service Builder](/develop/tutorials/-/knowledge_base/7-1/defining-an-object-relational-map-with-service-builder)
+[Defining an Object-Relational Map with Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/defining-an-object-relational-map-with-service-builder)
 tutorial.
 
 This tutorial assumes you have a Service Builder project with `*api` and
@@ -48,7 +52,7 @@ tutorial assumes your project is built with Gradle. The example project's
 For simplicity, you'll track the Service Builder-generated changes applied to an
 entity model file to observe how staged models are assigned to your entity. Keep
 in mind the specific
-[staged attributes](/develop/tutorials/-/knowledge_base/7-1/understanding-staged-models#important-attributes-in-staging)
+[staged attributes](/docs/7-1/tutorials/-/knowledge_base/t/understanding-staged-models#important-attributes-in-staging)
 necessary for each staged model. Depending on the attributes defined in your
 `service.xml` file, Service Builder assigns your entity model to a specific
 staged model type.

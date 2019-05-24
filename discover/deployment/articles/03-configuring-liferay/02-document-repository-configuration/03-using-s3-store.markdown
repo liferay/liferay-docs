@@ -1,4 +1,8 @@
-# Using Amazon Simple Storage Service [](id=using-amazon-simple-storage-service)
+---
+header-id: using-amazon-simple-storage-service
+---
+
+# Using Amazon Simple Storage Service
 
 Amazon's simple storage service (S3) is a cloud-based storage solution that you
 can use with Documents and Media. All you need is an account, and you can store
@@ -21,7 +25,7 @@ storage:
     @product@ installation's class path  (e.g., `/WEB-INF/classes/`).
 
 3.  Set the following property in a `portal-ext.properties` file in your
-    [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
+    [Liferay Home](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home)
     folder: 
 
         dl.store.impl=com.liferay.portal.store.s3.S3Store
@@ -38,13 +42,13 @@ Your @product@ instance is using the Amazon S3 store.
 To use the S3 store in a cluster, follow these steps: 
 
 1.  Export the configuration from the *S3 Store Configuration* screen to a 
-    [`.config` file](/discover/portal/-/knowledge_base/7-1/understanding-system-configuration-files).
+    [`.config` file](/docs/7-1/user/-/knowledge_base/u/understanding-system-configuration-files).
 
 2.  Copy the `.config` file to each node's `[Liferay Home]/osgi/configs` 
     folder. 
 
 3.  Copy the `portal-ext.properties` to each node's
-    [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
+    [Liferay Home](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home)
     folder. 
 
 4.  Copy the `system-ext.properties` (if you're using one) to a folder in the 
@@ -54,23 +58,15 @@ To use the S3 store in a cluster, follow these steps:
 
 @product@ is using the Amazon S3 store throughout your cluster.
 
-+$$$
+| **Warning:** If a database transaction rollback occurs in a Document Library
+| that uses a file system based store, file system changes that have occurred
+| since the start of the transaction aren't reversed. Inconsistencies between
+| Document Library files and those in the file system store can occur and may
+| require manual synchronization. All stores except DBStore are vulnerable to this
+| limitation.
 
-**Warning:** If a database transaction rollback occurs in a Document Library
-that uses a file system based store, file system changes that have occurred
-since the start of the transaction aren't reversed. Inconsistencies between
-Document Library files and those in the file system store can occur and may
-require manual synchronization. All stores except DBStore are vulnerable to this
-limitation.
-
-$$$
-
-+$$$
-
-**Note:** No action is required to support AWS Signature Version 4 request 
-authorization. 
-
-$$$
+| **Note:** No action is required to support AWS Signature Version 4 request
+| authorization.
 
 Consult the Amazon Simple Storage documentation for additional details on using
 Amazon's service.

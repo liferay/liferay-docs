@@ -1,4 +1,8 @@
-# System Settings [](id=system-settings)
+---
+header-id: system-settings
+---
+
+# System Settings
 
 @product@ is modular, meaning it's composed of many applications divided into
 even smaller "chunks" of functionality. The applications, and sometimes even
@@ -11,7 +15,7 @@ located in Control Panel &rarr; Configuration &rarr; System Settings.
 
 ![Figure 1: System Settings are accessed through the Control Panel.](../../../images/system-settings-categories.png)
 
-## Editing System Configurations [](id=editing-system-configurations)
+## Editing System Configurations
 
 System Settings is organized into sections (for example, Content) and categories
 (for example, Workflow) based on the functionality being configured.  There's
@@ -32,15 +36,11 @@ Changing a configuration isn't difficult:
 3.  Make any changes you'd like, then click *Save*. Your configuration changes
     are saved and applied throughout the system. 
 
-+$$$
-
-**Important:** Content generated using templates (e.g., FreeMarker templates and
-Application Display Templates) is cached. Cached content might not reflect
-configuration changes until the cache is invalidated (cleared). The 
-[Server Administration &rarr; Resources tab](/discover/portal/-/knowledge_base/7-1/server-administration-resources)
-provides cache clearing options.
-
-$$$
+| **Important:** Content generated using templates (e.g., FreeMarker templates and
+| Application Display Templates) is cached. Cached content might not reflect
+| configuration changes until the cache is invalidated (cleared). The
+| [Server Administration &rarr; Resources tab](/docs/7-1/user/-/knowledge_base/u/server-administration-resources)
+| provides cache clearing options.
 
 ![Figure 3: After saving changes to a configuration, the actions *Reset Default Values* and *Export* are available for it.](../../../images/system-settings-actions.png)
 
@@ -49,7 +49,7 @@ what you did, start over by clicking the actions button
 (![Actions](../../../images/icon-actions.png)), then clicking *Reset Default
 Values*. 
 
-## Configuration Scope [](id=configuration-scope)
+## Configuration Scope
 
 While browsing the categories of System Settings, you'll notice that clicking
 into a topic (for example, Blogs) reveals entries at different scopes. All the
@@ -110,7 +110,7 @@ Values button for an Instance Settings entry, once you use Instance Settings to
 configure the application, you can't later decide to use System Settings. Only
 changes to Instance Settings are recognized. 
 
-## Exporting and Importing Configurations [](id=exporting-and-importing-configurations)
+## Exporting and Importing Configurations
 
 What if you change many default configurations in System Settings, and then need
 to make the same changes in another installation? Don't worry, you

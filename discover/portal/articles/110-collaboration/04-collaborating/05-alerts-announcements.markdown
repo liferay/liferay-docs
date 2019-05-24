@@ -1,4 +1,8 @@
-# Sending Alerts and Announcements [](id=sending-alerts-and-announcements)
+---
+header-id: sending-alerts-and-announcements
+---
+
+# Sending Alerts and Announcements
 
 You can use the Alerts and Announcements widgets on Site pages to broadcast 
 important information to users. The Alerts widget is designed for displaying 
@@ -21,7 +25,7 @@ These widgets have two tabs:
 Click an alert/announcement's *Actions* button 
 (![Actions](../../../images/icon-actions.png)) to edit or delete it. 
 
-## Creating Alerts and Announcements [](id=creating-alerts-and-announcements)
+## Creating Alerts and Announcements
 
 There are two places where you can create alerts and announcements: 
 
@@ -46,7 +50,7 @@ it is the same. Follow these steps to complete the form:
 1.  Use the *Title* field to give the alert or announcement a title. Then create 
     your content in the field *Write your content here...*. For a detailed 
     explanation of the editor, see the 
-    [Blogs documentation](/discover/portal/-/knowledge_base/7-1/using-the-blog-entry-editor). 
+    [Blogs documentation](/docs/7-1/user/-/knowledge_base/u/using-the-blog-entry-editor). 
 
     ![Figure 2: Enter your alert or announcement's title and content.](../../../images/alerts-new-alert.png)
 
@@ -91,7 +95,7 @@ it is the same. Follow these steps to complete the form:
 3.  Click *Save* when you're done. Your alert/announcement then appears in the 
     widget. 
 
-## User Configuration [](id=user-configuration)
+## User Configuration
 
 Users can configure how they'd like to receive announcements. 
 
@@ -113,7 +117,7 @@ Users can configure how they'd like to receive announcements.
 
     ![Figure 4: Each user can choose how they receive alerts and announcements.](../../../images/alerts-delivery.png)
 
-## Alert and Announcement Roles [](id=alert-and-announcement-roles)
+## Alert and Announcement Roles
 
 You can also create roles for users to make general announcements. For instance, 
 if you want someone specific to have strict control over announcements, give

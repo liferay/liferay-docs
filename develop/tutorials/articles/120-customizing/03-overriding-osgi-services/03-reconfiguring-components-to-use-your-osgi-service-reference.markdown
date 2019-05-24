@@ -1,12 +1,16 @@
-# Reconfiguring Components to Use Your OSGi Service [](id=reconfiguring-components-to-use-your-service)
+---
+header-id: reconfiguring-components-to-use-your-service
+---
+
+# Reconfiguring Components to Use Your OSGi Service
 
 In many cases, assigning your
-[custom service (service)](/develop/tutorials/-/knowledge_base/7-1/creating-a-custom-osgi-service)
+[custom service (service)](/docs/7-1/tutorials/-/knowledge_base/t/creating-a-custom-osgi-service)
 a higher ranking convinces components to unbind from their current service and
 bind to yours. In other cases, components keep using their current service. Why
 is that? And how do you make components adopt your service?
 The component's
-[service reference policy option](/develop/tutorials/-/knowledge_base/7-1/examining-an-osgi-service-to-override#step-3-gather-reference-configuration-details-if-reconfiguration-is-needed)
+[service reference policy option](/docs/7-1/tutorials/-/knowledge_base/t/examining-an-osgi-service-to-override#step-3-gather-reference-configuration-details-if-reconfiguration-is-needed)
 is the key to determining the service. 
 
 Here are the policy options:
@@ -53,15 +57,15 @@ example module root generates the module JAR to the `build/libs` folder.
 You're ready to reconfigure a component's service reference to target your
 custom service.
 
-## Reconfiguring the Service Reference [](id=reconfiguring-the-service-reference)
+## Reconfiguring the Service Reference
 
 @product@'s Configuration Admin lets you use configuration files to
 swap in service references on the fly. 
 
-1.  [Create a system configuration file](/discover/portal/-/knowledge_base/7-1/understanding-system-configuration-files)
+1.  [Create a system configuration file](/docs/7-1/user/-/knowledge_base/u/understanding-system-configuration-files)
     named after the referencing component. Follow the name convention 
     `[component].config`, replacing `[component]` with the
-    [component name](/develop/tutorials/-/knowledge_base/7-1/examining-an-osgi-service-to-override#step-3-gather-reference-configuration-details-if-reconfiguration-is-needed). 
+    [component name](/docs/7-1/tutorials/-/knowledge_base/t/examining-an-osgi-service-to-override#step-3-gather-reference-configuration-details-if-reconfiguration-is-needed). 
     The configuration file name for the example component `override.my.service.reference.portlet.OverrideMyServiceReferencePortlet`
     is: 
 
@@ -142,10 +146,10 @@ work to it.
 @product@ processed the configuration file and injected the service reference,
 which in turn bound the custom service to the referencing component! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[OSGi Services and Dependency Injection with Declarative Services](/develop/tutorials/-/knowledge_base/7-1/osgi-services-and-dependency-injection-with-declarative-services)
+[OSGi Services and Dependency Injection with Declarative Services](/docs/7-1/tutorials/-/knowledge_base/t/osgi-services-and-dependency-injection-with-declarative-services)
 
-[Finding Extension Points](/develop/tutorials/-/knowledge_base/7-1/finding-extension-points)
+[Finding Extension Points](/docs/7-1/tutorials/-/knowledge_base/t/finding-extension-points)
 
-[Using Felix Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell)
+[Using Felix Gogo Shell](/docs/7-1/reference/-/knowledge_base/r/using-the-felix-gogo-shell)

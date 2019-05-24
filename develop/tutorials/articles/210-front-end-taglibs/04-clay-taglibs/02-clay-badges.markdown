@@ -1,11 +1,15 @@
-# Clay Badges [](id=clay-badges)
+---
+header-id: clay-badges
+---
+
+# Clay Badges
 
 Badges help highlight important information such as notifications or new and 
 unread messages. Badges have circular borders and are only used to specify a 
 number. This tutorial covers the different types of Clay badges you can add to 
 your app. 
 
-## Badge Types [](id=badge-types)
+## Badge Types
 
 The following badge styles are available:
 
@@ -71,10 +75,10 @@ Warning badge:
 
 Now you know how to use badges to keep track of values in your app.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Clay Labels and Links](/develop/tutorials/-/knowledge_base/7-1/clay-labels-and-links)
+[Clay Labels and Links](/docs/7-1/tutorials/-/knowledge_base/t/clay-labels-and-links)
 
-[Clay Cards](/develop/tutorials/-/knowledge_base/7-1/clay-cards)
+[Clay Cards](/docs/7-1/tutorials/-/knowledge_base/t/clay-cards)
 
-[Clay Stickers](/develop/tutorials/-/knowledge_base/7-1/clay-stickers)
+[Clay Stickers](/docs/7-1/tutorials/-/knowledge_base/t/clay-stickers)

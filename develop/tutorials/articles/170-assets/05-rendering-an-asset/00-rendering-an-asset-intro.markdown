@@ -1,8 +1,12 @@
-# Rendering an Asset [](id=rendering-an-asset)
+---
+header-id: rendering-an-asset
+---
+
+# Rendering an Asset
 
 Before you create a way to render your asset, make sure it's added to the asset
 framework by following the
-[[Adding, Updating, and Deleting Assets](/develop/tutorials/-/knowledge_base/7-1/adding-updating-and-deleting-assets)
+[[Adding, Updating, and Deleting Assets](/docs/7-1/tutorials/-/knowledge_base/t/adding-updating-and-deleting-assets)
 tutorial. Once you add your asset to the framework, you can render the asset
 using the Asset Publisher application. The default render, however, only
 displays the asset's title and description text. Anything else requires
@@ -39,7 +43,7 @@ asset renderer can be customized to fit your needs.
 If you want to create an asset and make it do more than display its title and
 description, read on!
 
-## Prerequisites for Asset Enabling and Application [](id=prerequisites-for-asset-enabling-and-application)
+## Prerequisites for Asset Enabling and Application
 To asset-enable your application, you need two things: 
 
 1.  The application must store asset data. Applications that store a data model

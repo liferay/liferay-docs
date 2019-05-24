@@ -1,4 +1,8 @@
-# Model Listener [](id=model-listener)
+---
+header-id: model-listener
+---
+
+# Model Listener
 
 The Model Listener sample demonstrates adding a custom model listener to a
 Liferay Portal out-of-the-box entity. When deploying this sample with no
@@ -17,13 +21,13 @@ HTML Title field looks like this:
 
 ![Figure 2: The page's HTML title updated by the model listener sample.](../../../images/model-listener-2.png)
 
-## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
+## What API(s) and/or code components does this sample highlight?
 
 This sample leverages the
 [ModelListener](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/ModelListener.html)
 API.
 
-## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
+## How does this sample leverage the API(s) and/or code component?
 
 Model Listeners are used to listen for persistence events on models and take
 actions as a result of those events. Actions can be executed on an entity's
@@ -65,10 +69,10 @@ accomplished by the following annotation (if using Declarative Services):
     @Component(immediate = true, service = ModelListener.class)
 
 For more information on model listeners, see the
-[Creating Model Listeners](/develop/tutorials/-/knowledge_base/7-1/model-listeners)
+[Creating Model Listeners](/docs/7-1/tutorials/-/knowledge_base/t/model-listeners)
 tutorial.
 
-## Where Is This Sample? [](id=where-is-this-sample)
+## Where Is This Sample?
 
 There are three different versions of this sample, each built with a different
 build tool:

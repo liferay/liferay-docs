@@ -1,4 +1,8 @@
-# Checking Out and Editing Files [](id=checking-out-and-editing-files)
+---
+header-id: checking-out-and-editing-files
+---
+
+# Checking Out and Editing Files
 
 When you check out a document in the Document Library, only you can make changes 
 to it until you check it back in. This prevents conflicting edits on the same 
@@ -8,9 +12,9 @@ the checkout. Checking in a file also increments its version, which lets you
 keep track of changes. 
 
 Unless you're using
-[Liferay Sync](/discover/portal/-/knowledge_base/7-1/using-liferay-sync-on-your-desktop)
+[Liferay Sync](/docs/7-1/user/-/knowledge_base/u/using-liferay-sync-on-your-desktop)
 or a 
-[local drive mapped to the file's WebDAV URL](/discover/portal/-/knowledge_base/7-1/desktop-access-to-documents-and-media), 
+[local drive mapped to the file's WebDAV URL](/docs/7-1/user/-/knowledge_base/u/desktop-access-to-documents-and-media), 
 follow these steps to edit a Document Library file from your machine: 
 
 1.  Checkout the file by clicking its Actions icon 
@@ -32,14 +36,10 @@ follow these steps to edit a Document Library file from your machine:
     change is a major or minor version, add any version notes that you need, and 
     click *Save*. 
 
-+$$$
-
-**Note**: If you edit a file without checking it out, the file's edit screen 
-displays a toggle for *Customize the Version Number Increment and Describe My 
-Changes*. Setting this to *YES* lets you specify the version increment's type 
-and description.
-
-$$$
+| **Note**: If you edit a file without checking it out, the file's edit screen
+| displays a toggle for *Customize the Version Number Increment and Describe My
+| Changes*. Setting this to *YES* lets you specify the version increment's type
+| and description.
 
 Follow these steps to access a file's version history:
 

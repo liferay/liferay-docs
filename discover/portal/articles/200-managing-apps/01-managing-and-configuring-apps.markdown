@@ -1,4 +1,8 @@
-# Managing and Configuring Apps [](id=managing-and-configuring-apps)
+---
+header-id: managing-and-configuring-apps
+---
+
+# Managing and Configuring Apps
 
 @product@ is a platform for deploying apps that comprise modules and components.
 It has conveniences for managing apps and app management best practices for
@@ -24,7 +28,7 @@ activate and deactivate apps, but it can't install or delete apps.
 Start with learning app management best practices in production, or wherever you
 want to maximize stability. 
 
-## Managing Apps in Production [](id=managing-apps-in-production)
+## Managing Apps in Production
 
 Not all apps are designed to be "hot deployed"---deployed while the server is
 running. Deploying that way can cause instabilities, such as class loading leaks
@@ -39,20 +43,16 @@ and stopping the server is feasible, follow these steps:
 2.  Copy your app (`.lpkg`, module `.jar`, or plugin `.war`) to your `[Liferay 
 Home]/deploy` folder, or copy your component configuration (`.config` file) to
 the `[Liferay Home]/osgi/configs` folder. The
-[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
+[Liferay Home](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home)
 folder is typically the app server's parent folder. 
 
 3.  Start your server. 
 
 If you're running in cluster, follow the instructions for
-[updating a cluster](/discover/deployment/-/knowledge_base/7-1/updating-a-cluster).
+[updating a cluster](/docs/7-1/deploy/-/knowledge_base/d/updating-a-cluster).
 
-+$$$
-
-**Warning:** Avoid repeatedly "hot deploying" new versions of apps that aren't 
-designed for "hot deployment". 
-
-$$$
+| **Warning:** Avoid repeatedly "hot deploying" new versions of apps that aren't
+| designed for "hot deployment".
 
 If it's not feasible to stop your server or you're app *is* designed for "hot
 deployment", @product@ provides several "hot deployment" conveniences. Except
@@ -60,7 +60,7 @@ where stopping/starting the server is explicitly mentioned, the practices
 described in the rest of this article and in the following articles involve "hot
 deployment". 
 
-## Using the App Manager [](id=using-the-app-manager)
+## Using the App Manager
 
 Access the App Manager by selecting *Control Panel* &rarr; *Apps* &rarr; *App
 Manager*. The App Manager lists your apps. The *Filter and Order* menu lets you
@@ -91,11 +91,11 @@ getting into the source code. At any level in the App Manager, a link trail
 appears that lets you navigate back in the hierarchy. 
 
 For information on using the App Manager to install an app, see the article 
-[Installing Apps Manually](/discover/portal/-/knowledge_base/7-1/installing-apps-manually). 
+[Installing Apps Manually](/docs/7-1/user/-/knowledge_base/u/installing-apps-manually). 
 
 Next, you'll learn how to use the Components listing. 
 
-## Using the Components Listing [](id=using-the-components-listing)
+## Using the Components Listing
 
 Access the Components listing by selecting *Control Panel* &rarr; 
 *Configuration* &rarr; *Components*. The Components listing first shows a table

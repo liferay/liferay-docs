@@ -1,11 +1,15 @@
-# REST Builder Gradle Plugin [](id=rest-builder-gradle-plugin)
+---
+header-id: rest-builder-gradle-plugin
+---
+
+# REST Builder Gradle Plugin
 
 The REST Builder Gradle plugin lets you generate a REST layer defined in the
 REST Builder `rest-config.yaml` and `rest-openapi.yaml` files.
 
 The plugin has been successfully tested with Gradle 4.10.2.
 
-## Usage [](id=usage)
+## Usage
 
 To use the plugin, include it in your build script:
 
@@ -41,7 +45,7 @@ repositories {
 }
 ```
 
-## Tasks [](id=tasks)
+## Tasks
 
 The plugin adds one task to your project:
 
@@ -49,7 +53,7 @@ Name | Depends On | Type | Description
 ---- | ---------- | ---- | -----------
 `buildREST` | \- | [`BuildRESTTask`](#buildresttask) | Runs the Liferay REST Builder.
 
-### BuildRESTTask [](id=buildresttask)
+### BuildRESTTask
 
 Tasks of type `BuildRESTTask` extend [`JavaExec`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html),
 so all its properties and methods, such as [`args`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:args\(java.lang.Iterable\))
@@ -63,7 +67,7 @@ Property Name | Default Value
 [`main`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:main) | `"com.liferay.portal.tools.rest.builder.RESTBuilder"`
 [`systemProperties`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:systemProperties) | `[]`
 
-#### Task Properties [](id=task-properties)
+#### Task Properties
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -79,11 +83,11 @@ The properties of type `File` supports any type that can be resolved by
 Moreover, it is possible to use Closures and Callables as values for the
 `String` properties, to defer evaluation until task execution.
 
-## Additional Configuration [](id=additional-configuration)
+## Additional Configuration
 
 There are additional configurations added to use REST Builder.
 
-### Liferay REST Builder Dependency [](id=liferay-rest-builder-dependency)
+### Liferay REST Builder Dependency
 
 By default, the plugin creates a configuration called `restBuilder` and adds
 a dependency to the latest released version of Liferay REST Builder.

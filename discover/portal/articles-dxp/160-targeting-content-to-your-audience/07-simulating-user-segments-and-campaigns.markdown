@@ -1,4 +1,8 @@
-# Simulating User Segments and Campaigns [](id=simulating-user-segments-and-campaigns)
+---
+header-id: simulating-user-segments-and-campaigns
+---
+
+# Simulating User Segments and Campaigns
 
 Once you create all those segments, you'll likely want to test them. The
 Audience Targeting Simulator can preview the way pages appear to different
@@ -12,14 +16,10 @@ user segments. It appears under the *Simulation* icon
 The Audience Targeting Simulator is only visible to users with the View
 permission for the Audience Targeting Simulator.
 
-+$$$
-
-**Note:** You can grant Audience Targeting permissions by clicking *Actions* &rarr;
-*Define Permissions* menu for the appropriate Roles in the Control Panel. When
-defining permissions for a Role, go to *Site Administration* &rarr;
-*Configuration* to find the *Audience Targeting* section.
-
-$$$
+| **Note:** You can grant Audience Targeting permissions by clicking *Actions* &rarr;
+| *Define Permissions* menu for the appropriate Roles in the Control Panel. When
+| defining permissions for a Role, go to *Site Administration* &rarr;
+| *Configuration* to find the *Audience Targeting* section.
 
 Go to the User Segments tab of the Audience Targeting simulator to see a list
 of all the user segments available for the Site. Selecting segments lets you

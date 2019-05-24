@@ -1,4 +1,8 @@
-# Installing Apps Manually [](id=installing-apps-manually)
+---
+header-id: installing-apps-manually
+---
+
+# Installing Apps Manually
 
 By default, apps you download from the Control Panel via Liferay Marketplace
 install automatically. But what if the app you want to install isn't on
@@ -6,30 +10,22 @@ Marketplace? What if all you have is the app's file? In this case, you must
 install the app manually. This article shows you how to do this. You can use the
 procedures here to install any app. 
 
-+$$$
+| **Warning:** Not all apps are designed to be "hot deployed"---deployed while the
+| server is running. Deploying that way can cause instabilities, such as class
+| loading leaks and memory leaks. On production systems, avoid "hot deploying"
+| apps whenever possible. See the
+| [best practices for managing apps in production](/docs/7-1/user/-/knowledge_base/u/managing-and-configuring-apps#managing-apps-in-production).
 
-**Warning:** Not all apps are designed to be "hot deployed"---deployed while the
-server is running. Deploying that way can cause instabilities, such as class
-loading leaks and memory leaks. On production systems, avoid "hot deploying"
-apps whenever possible. See the
-[best practices for managing apps in production](/discover/portal/-/knowledge_base/7-1/managing-and-configuring-apps#managing-apps-in-production).
+| **Important**: When uninstalling an app or module, make sure to use the same
+| agent you used to install the app. For example, if you installed it with
+| Marketplace, uninstall it with
+| [Marketplace](/docs/7-1/user/-/knowledge_base/u/using-the-liferay-marketplace).
+| If you installed it with the file system, use the file system to uninstall it.
+| If you installed it with the App Manager, however, use
+| [Blacklisting](/docs/7-1/user/-/knowledge_base/u/blacklisting-osgi-modules-and-components)
+| to uninstall it.
 
-$$$
-
-+$$$
-
-**Important**: When uninstalling an app or module, make sure to use the same 
-agent you used to install the app. For example, if you installed it with 
-Marketplace, uninstall it with
-[Marketplace](/discover/portal/-/knowledge_base/7-1/using-the-liferay-marketplace).
-If you installed it with the file system, use the file system to uninstall it.
-If you installed it with the App Manager, however, use 
-[Blacklisting](/discover/portal/-/knowledge_base/7-1/blacklisting-osgi-modules-and-components)
-to uninstall it. 
-
-$$$
-
-## Using the Control Panel to Install Apps [](id=using-the-control-panel-to-install-apps)
+## Using the Control Panel to Install Apps
 
 To install an app manually from the Control Panel, navigate to *Control Panel*
 &rarr; *Apps* &rarr; *App Manager*, and select *Upload* from the options button
@@ -39,7 +35,7 @@ the dialog and you're ready to roll!
 
 ![Figure 1: Installing an app via the Upload dialog in the App Manager is very simple.](../../images/app-manager-plugin-upload.png)
 
-## Using Your File System to Install Apps [](id=using-your-file-system-to-install-apps)
+## Using Your File System to Install Apps
 
 To install an app manually on the @product@ server, put the app in the `[Liferay
 Home]/deploy` folder (the Liferay Home folder is typically the app server's
@@ -73,13 +69,13 @@ file are as follows:
         ${module.framework.base.dir}/war
 
 Note that the `configs` subfolder isn't for apps: it's for configuration files 
-[imported from other @product@ instances](/discover/portal/-/knowledge_base/7-1/system-settings#exporting-and-importing-configurations). 
+[imported from other @product@ instances](/docs/7-1/user/-/knowledge_base/u/system-settings#exporting-and-importing-configurations). 
 
 But what happens if your app server doesn't support auto deploy? No problem!
 @product@'s module framework (OSGi) enables auto deploy. Any app server running
 @product@ therefore also supports this auto deploy mechanism. 
 
-## Manually Deploying an LPKG App [](id=manually-deploying-an-lpkg-app)
+## Manually Deploying an LPKG App
 
 When manually installing an LPKG app, the installation may hang with a server 
 log message like this: 

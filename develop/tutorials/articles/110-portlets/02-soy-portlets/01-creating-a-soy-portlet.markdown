@@ -1,4 +1,8 @@
-# Creating a Soy Portlet [](id=creating-a-soy-portlet)
+---
+header-id: creating-a-soy-portlet
+---
+
+# Creating a Soy Portlet
 
 To create a Soy portlet, you'll need these key components:
 
@@ -6,7 +10,7 @@ To create a Soy portlet, you'll need these key components:
 -  Controller code to handle the request and response
 -  Soy templates to implement your view layer
 
-## Configuring the Web Module [](id=configuring-a-web-module)
+## Configuring the Web Module
 
 First, familiarize yourself with a Soy portlet's anatomy. You may recognize it, 
 since a Soy portlet extends an MVC portlet:
@@ -28,11 +32,11 @@ since a Soy portlet extends an MVC portlet:
 
 Now that you know the basic structure of a Soy portlet module, you can configure 
 it. You can use the 
-[soy portlet Blade template](/develop/reference/-/knowledge_base/7-1/soy-portlet-template) 
+[soy portlet Blade template](/docs/7-1/reference/-/knowledge_base/r/soy-portlet-template) 
 to build your initial project if you wish. Otherwise, you can follow the 
 instructions in this section to manually configure the module. 
 
-### Specifying OSGi Metadata [](id=specifying-osgi-metadata)
+### Specifying OSGi Metadata
 
 Add the OSGi metadata to your module's `bnd.bnd` file. A sample BND 
 configuration is shown below:
@@ -50,7 +54,7 @@ the bundle requires modules that provide the capability `soy` with a `type` of
 `metal` to work. Also note the `Include-Resource` property. **You must include** 
 your `package.json` file to load the Soy Portlet's JavaScript files. 
 
-### Specifying JavaScript Dependencies [](id=specifying-javascript-dependencies)
+### Specifying JavaScript Dependencies
 
 Specify the JavaScript module dependencies in your `package.json`. At a minimum, 
 you should have the following dependencies and configuration parameters. Always 
@@ -76,7 +80,7 @@ your `bnd.bnd` file.
 
 Next you can specify your module's build dependencies.
 
-### Specifying Build Dependencies [](id=specifying-build-dependencies)
+### Specifying Build Dependencies
 
 Add the dependencies shown below to your `build.gradle` file:
 
@@ -89,19 +93,15 @@ Add the dependencies shown below to your `build.gradle` file:
     	compileOnly group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
     }
 
-+$$$
-
-**Note:** These are current at the time of this writing, but may change. Please 
-check the 
-[Nexus Repository](https://repository.liferay.com) 
-for the proper versions for your @product@ instance.
-
-$$$
+| **Note:** These are current at the time of this writing, but may change. Please
+| check the
+| [Nexus Repository](https://repository.liferay.com)
+| for the proper versions for your @product@ instance.
 
 Now that your module build is configured, you can learn how to create the Soy 
 portlet component.
 
-## Creating a Soy Portlet Component [](id=creating-a-soy-portlet-component)
+## Creating a Soy Portlet Component
 
 Create a Soy Portlet component that extends the `SoyPortlet` class. This    
 requires an implementation of the `javax.portlet.portlet` service to run. 
@@ -169,7 +169,7 @@ Liferay's DTD files can be found
 Now that you've set your Soy portlet component's foundation, you can write the 
 controller code.
 
-## Writing Controller Code [](id=writing-controller-code)
+## Writing Controller Code
 
 Soy portlets extend MVC portlets, so they use the same Model-View-Controller 
 framework to operate. Your controller receives requests from the front-end and 
@@ -180,7 +180,7 @@ back-end service. For this reason, it needs a way to process requests from the
 front-end and respond to them appropriately, and it needs a way to determine the 
 appropriate front-end view to pass data back to the user.
 
-### Render Logic [](id=render-logic)
+### Render Logic
 
 The render logic is where all the magic happens. After all, what's the use of a 
 portlet if you can't see it? Note the `init-param` properties you set in your 
@@ -213,7 +213,7 @@ example below uses a portlet URL called `navigationURL` to render the view
 
 Each view, excluding the default template view, **must have** an implementation 
 of the 
-[`MVCRenderCommand` class](/develop/tutorials/-/knowledge_base/7-1/mvc-render-command). 
+[`MVCRenderCommand` class](/docs/7-1/tutorials/-/knowledge_base/t/mvc-render-command). 
 The `*MVCRenderCommand` implementation must declare itself as a component with 
 the `MVCRenderCommand` service, and it must specify the portlet's name and MVC 
 command name using the `javax.portlet.name` and `mvc.command.name` properties 
@@ -304,7 +304,7 @@ method concludes by calling `super.render`.
 Now that you understand the render logic, you can learn how the view layer 
 works.
 
-## Configuring the View Layer [](id=configuring-the-view-layer)
+## Configuring the View Layer
 
 Your portlet also requires a view layer, and for that you'll use Soy templates, 
 which is the whole point of developing a Soy portlet, isn't it? This section 
@@ -324,11 +324,7 @@ template should include all its parameters as well:
 
     {call View.render data="all"}{/call}
 
-+$$$
-
-**Note:** Template namespaces must be unique.  
-
-$$$
+| **Note:** Template namespaces must be unique.
 
 Below is an example `View` Soy template that includes `Header` and `Footer` Soy 
 templates:
@@ -373,7 +369,7 @@ template:
 Now that you understand how to configure a Soy template view, you can learn how 
 to use portlet parameters in your Soy templates next.
 
-### Using Portlet Template Parameters in the Soy Template [](id=using-portlet-template-parameters-in-the-soy-template)
+### Using Portlet Template Parameters in the Soy Template
 
 As mentioned above, the `template.put()` method exposes portlet parameters to 
 the Soy templates. Once a parameter is exposed, you can access it in the Soy 
@@ -441,6 +437,6 @@ demonstrates the features covered in this section:
 
 Now you know how to create a Soy Portlet!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Liferay MVC Portlet](/develop/tutorials/-/knowledge_base/7-1/liferay-mvc-portlet)
+[Liferay MVC Portlet](/docs/7-1/tutorials/-/knowledge_base/t/liferay-mvc-portlet)

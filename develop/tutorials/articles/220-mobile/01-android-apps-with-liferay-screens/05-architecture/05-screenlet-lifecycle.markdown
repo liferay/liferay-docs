@@ -1,4 +1,8 @@
-# Screenlet Lifecycle [](id=screenlet-lifecycle)
+---
+header-id: screenlet-lifecycle
+---
+
+# Screenlet Lifecycle
 
 Liferay Screens automatically saves and restores Screenlets' states using the
 Android SDK methods `onSaveInstanceState` and `onRestoreInstanceState`. Each
@@ -12,12 +16,12 @@ It's a best practice to execute Screenlet methods inside the activity's
 `onResume` method; this helps assure that actions and tasks find their
 destinations. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[High-Level Architecture](/develop/tutorials/-/knowledge_base/7-1/high-level-architecture)
+[High-Level Architecture](/docs/7-1/tutorials/-/knowledge_base/t/high-level-architecture)
 
-[Core Layer](/develop/tutorials/-/knowledge_base/7-1/core-layer)
+[Core Layer](/docs/7-1/tutorials/-/knowledge_base/t/core-layer)
 
-[Screenlet Layer](/develop/tutorials/-/knowledge_base/7-1/screenlet-layer)
+[Screenlet Layer](/docs/7-1/tutorials/-/knowledge_base/t/screenlet-layer)
 
-[View Layer](/develop/tutorials/-/knowledge_base/7-1/view-layer)
+[View Layer](/docs/7-1/tutorials/-/knowledge_base/t/view-layer)

@@ -1,4 +1,8 @@
-# Creating Color Schemes for Your Theme [](id=creating-color-schemes-for-your-theme)
+---
+header-id: creating-color-schemes-for-your-theme
+---
+
+# Creating Color Schemes for Your Theme
 
 Color schemes give your theme additional color palettes. They only require
 a small amount of changes to your theme's CSS. This is an easy way to subtly
@@ -20,12 +24,8 @@ Follow these steps to create color schemes for your theme:
         body.day { background-color: #DDF; }
         .day a { color: #66A; }
 
-    +$$$
- 
-    **Note:** The default color scheme uses the theme's `_custom.scss` for
-    styling, so you don't need to specify its name in its styles.
- 
-    $$$
+    | **Note:** The default color scheme uses the theme's `_custom.scss` for
+    | styling, so you don't need to specify its name in its styles.
 
 3.  Import the color scheme `.scss` files into the theme's `_custom.scss` file. 
     The example below imports `_day.scss` and `_night.scss` files:
@@ -35,7 +35,7 @@ Follow these steps to create color schemes for your theme:
 
 4.  Create a folder for each color scheme in your theme's `images` folder, and 
     add 
-    [a thumbnail preview](/develop/tutorials/-/knowledge_base/7-1/creating-a-thumbnail-preview-for-your-theme) 
+    [a thumbnail preview](/docs/7-1/tutorials/-/knowledge_base/t/creating-a-thumbnail-preview-for-your-theme) 
     for each color scheme. The folder name *must match* the color scheme's CSS 
     class name you specified in step 2.
 
@@ -62,15 +62,11 @@ Follow these steps to create color schemes for your theme:
            ...
         </theme>
  
-    +$$$
- 
-    **Note:** Color schemes are sorted alphabetically by `name` rather than `id`. 
-    For example, a color scheme named `Clouds` and `id` `02` would be selected 
-    by default over a color scheme named `Day` with `id` `01`. The 
-    `<default-cs>` element overrides the alphabetical sorting and sets the color 
-    scheme that is selected by default when the theme is chosen. 
- 
-    $$$ 
+    | **Note:** Color schemes are sorted alphabetically by `name` rather than `id`.
+    | For example, a color scheme named `Clouds` and `id` `02` would be selected
+    | by default over a color scheme named `Day` with `id` `01`. The
+    | `<default-cs>` element overrides the alphabetical sorting and sets the color
+    | scheme that is selected by default when the theme is chosen.
  
 6.  Add the remaining color schemes below the default color scheme, using the 
     pattern below:
@@ -107,8 +103,8 @@ An example `liferay-look-and-feel.xml` file is shown below:
 
 There you have it. Now you can go color scheme crazy with your themes!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating Layout Templates](/develop/tutorials/-/knowledge_base/7-1/creating-layout-templates-with-the-themes-generator)
+[Creating Layout Templates](/docs/7-1/tutorials/-/knowledge_base/t/creating-layout-templates-with-the-themes-generator)
 
-[Creating a Thumbnail Preview for Your Theme](/develop/tutorials/-/knowledge_base/7-1/creating-a-thumbnail-preview-for-your-theme)
+[Creating a Thumbnail Preview for Your Theme](/docs/7-1/tutorials/-/knowledge_base/t/creating-a-thumbnail-preview-for-your-theme)

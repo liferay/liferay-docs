@@ -1,4 +1,8 @@
-# Patching @product@ [](id=patching-liferay)
+---
+header-id: patching-liferay
+---
+
+# Patching @product@
 
 While we strive for perfection with every @product@ release, the reality of the
 human condition dictates that releases may not be as perfect as originally
@@ -6,28 +10,20 @@ intended. But we've planned for that. Included with every @product@ bundle is a
 Patching Tool that handles installing two types of patches: fix packs and
 hotfixes. 
 
-+$$$
+| **Important:** Make sure to
+| [back up your @product@ installation and database](/docs/7-1/deploy/-/knowledge_base/d/backing-up-a-liferay-installation)
+| regularly, especially before patching. The patching tool installs code changes
+| and some of these make data changes (if necessary) automatically on startup.
+| 
+| Certain fix packs (service packs) can include data/schema
+| [micro changes](/docs/7-1/tutorials/-/knowledge_base/t/meaningful-schema-versioning#micro-change-examples)---they're
+| optional and revertible. Module upgrades and any micro changes they include
+| are applied at server startup by default, or can be applied manually by
+| [disabling the `autoUpgrade` property](/docs/7-1/deploy/-/knowledge_base/d/running-the-upgrade#configuring-module-upgrades).
+| Server startup skips all Core micro changes. Instead, you
+| can apply them using the [upgrade
+| tool](/docs/7-1/deploy/-/knowledge_base/d/upgrading-to-liferay-71)
+| before server startup.
 
-**Important:** Make sure to
-[back up your @product@ installation and database](/discover/deployment/-/knowledge_base/7-1/backing-up-a-liferay-installation)
-regularly, especially before patching. The patching tool installs code changes
-and some of these make data changes (if necessary) automatically on startup. 
-
-Certain fix packs (service packs) can include data/schema
-[micro changes](/develop/tutorials/-/knowledge_base/7-1/meaningful-schema-versioning#micro-change-examples)---they're
-optional and revertible. Module upgrades and any micro changes they include
-are applied at server startup by default, or can be applied manually by 
-[disabling the `autoUpgrade` property](/discover/deployment/-/knowledge_base/7-1/running-the-upgrade#configuring-module-upgrades).
-Server startup skips all Core micro changes. Instead, you
-can apply them using the [upgrade
-tool](/discover/deployment/-/knowledge_base/7-1/upgrading-to-liferay-71) 
-before server startup. 
-
-$$$
-
-+$$$
-
-**Note:** [Patching a cluster](/discover/deployment/-/knowledge_base/7-1/updating-a-cluster)
-requires additional considerations. 
-
-$$$
+| **Note:** [Patching a cluster](/docs/7-1/deploy/-/knowledge_base/d/updating-a-cluster)
+| requires additional considerations.

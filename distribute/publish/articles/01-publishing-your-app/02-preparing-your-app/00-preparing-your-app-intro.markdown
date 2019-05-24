@@ -1,9 +1,13 @@
-# Preparing Your App [](id=preparing-your-app)
+---
+header-id: preparing-your-app
+---
+
+# Preparing Your App
 
 As a Liferay developer, you're undoubtedly already familiar with the concept of
 plugins (portlets, themes, etc.). If you're not familiar with Liferay
 plugins, see 
-[Introduction to Liferay Development](/develop/tutorials/-/knowledge_base/7-1/introduction-to-liferay-development).
+[Introduction to Liferay Development](/docs/7-1/tutorials/-/knowledge_base/t/introduction-to-liferay-development).
 A *Liferay App* (sometimes just called an *app*) is a collection of one or more
 of these plugins, packaged together to represent the full functionality of an
 application on the Liferay platform. In addition to the plugins contained within

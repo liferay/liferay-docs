@@ -1,9 +1,13 @@
-# Campaign Reports [](id=campaign-reports)
+---
+header-id: campaign-reports
+---
+
+# Campaign Reports
 
 Campaigns are useless without reports showing what happened. Select the
 campaign name and click the *Reports* tab to see the list of reports available.
 More reports can be created by developers and deployed as OSGi plugins. See the
-[Reporting User Behavior with Audience Targeting](/develop/tutorials/-/knowledge_base/7-1/reporting-user-behavior-with-audience-targeting)
+[Reporting User Behavior with Audience Targeting](/docs/7-1/tutorials/-/knowledge_base/t/reporting-user-behavior-with-audience-targeting)
 tutorial for details. To create a report,
 
 1.  Click on a *Campaign* name.
@@ -24,7 +28,7 @@ You can track many other user actions by creating a custom report. You can drag
 and drop different kinds of metrics to track for your campaign, and the report
 shows how many times each metric was triggered by users. For a complete
 reference of all report metrics available, see the 
-[Audience Targeting Metrics](/develop/tutorials/-/knowledge_base/7-1/audience-targeting-metrics)
+[Audience Targeting Metrics](/docs/7-1/tutorials/-/knowledge_base/t/audience-targeting-metrics)
 tutorial.
 
 Consider the metrics example we introduced earlier: you've created a campaign

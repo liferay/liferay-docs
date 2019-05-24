@@ -1,4 +1,8 @@
-# Configuration Reference [](id=configuration-reference)
+---
+header-id: configuration-reference
+---
+
+# Configuration Reference
 
 Here are shortcuts to @product@ configuration reference documentation. From
 here, you can easily check Liferay definitions and configuration defaults as you

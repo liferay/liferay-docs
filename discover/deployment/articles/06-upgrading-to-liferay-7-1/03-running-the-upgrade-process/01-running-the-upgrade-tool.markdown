@@ -1,4 +1,8 @@
-# Running the Upgrade Tool [](id=running-the-upgrade)
+---
+header-id: running-the-upgrade
+---
+
+# Running the Upgrade Tool
 
 The upgrade tool provides the easiest way to upgrade the core and installed
 modules. You can configure the upgrade from files or inside the tool's command
@@ -25,7 +29,7 @@ core upgrade and non-core module upgrades.
 
 Start with the tool's usage. 
 
-## Upgrade Tool Usage [](id=upgrade-tool-usage)
+## Upgrade Tool Usage
 
 The `db_upgrade.sh` script (`db_upgrade.bat` on Windows) invokes the upgrade
 tool. It resides in the  `[Liferay Home]/tools/portal-tools-db-upgrade-client`
@@ -43,7 +47,7 @@ to the `[Liferay Home]/osgi/configs` folder with the following content:
 
 This configuration prevents automatic module upgrade, but causes the upgrade
 tool to open a Gogo shell for
-[upgrading modules](/discover/deployment/-/knowledge_base/7-1/gogo-shell-commands-for-module-upgrades)
+[upgrading modules](/docs/7-1/deploy/-/knowledge_base/d/gogo-shell-commands-for-module-upgrades)
 after finishing the core upgrade. 
  
 Here are the tool's default Java parameters:
@@ -72,48 +76,40 @@ default name is `upgrade.log`.
 **--shell** or **-s**: Automatically connects you to the Gogo shell after
 finishing the upgrade process.
 
-+$$$
+| **Note:** Only execute the upgrade process on a server with ideal memory, CPU,
+| and database connection configuration. If executing an upgrade remotely using
+| `ssh`, make sure to guard against interruptions:
+| 
+| - If you're executing the upgrade using `ssh`, ignore hangups (connection loss)
+| by using `nohup` or something similar.
+| - On the machine you're connecting from, disable settings that shutdown or sleep
+| that machine.
+| 
+| Since DB Upgrade Tool 2.0.1 (included in Liferay Portal CE 7.1 GA2 and
+| downloadable from help center for EE subscribers), the upgrade process continues
+| on the server even if you lose connection to it. If you lose connection,
+| reconnect and monitor upgrade status via the log (default log file is
+| `upgrade.log`). If you're using an earlier version of @product-ver@ and upgrade
+| execution is interrupted, check your log file for where execution stopped.
+| 
+| - If execution stopped during an upgrade process for Core 7.1 or higher, or any
+|   module upgrade process, restart the upgrade tool to continue the upgrade from
+|   that point. You can also use Gogo shell to
+|   [check module upgrade status](/docs/7-1/deploy/-/knowledge_base/d/gogo-shell-commands-for-module-upgrades#checking-the-upgrade-status)
+|   and continue upgrading modules.
+| - If execution stopped during an upgrade process for Core 7.0 or lower, you must
+|   [restore the data from a backup](/docs/7-1/deploy/-/knowledge_base/d/backing-up-a-liferay-installation)
+|   and start the upgrade again.
 
-**Note:** Only execute the upgrade process on a server with ideal memory, CPU,
-and database connection configuration. If executing an upgrade remotely using
-`ssh`, make sure to guard against interruptions: 
-
-- If you're executing the upgrade using `ssh`, ignore hangups (connection loss) 
-by using `nohup` or something similar. 
-- On the machine you're connecting from, disable settings that shutdown or sleep
-that machine. 
-
-Since DB Upgrade Tool 2.0.1 (included in Liferay Portal CE 7.1 GA2 and
-downloadable from help center for EE subscribers), the upgrade process continues
-on the server even if you lose connection to it. If you lose connection,
-reconnect and monitor upgrade status via the log (default log file is
-`upgrade.log`). If you're using an earlier version of @product-ver@ and upgrade
-execution is interrupted, check your log file for where execution stopped. 
-
-- If execution stopped during an upgrade process for Core 7.1 or higher, or any
-  module upgrade process, restart the upgrade tool to continue the upgrade from
-  that point. You can also use Gogo shell to
-  [check module upgrade status](/discover/deployment/-/knowledge_base/7-1/gogo-shell-commands-for-module-upgrades#checking-the-upgrade-status)
-  and continue upgrading modules. 
-- If execution stopped during an upgrade process for Core 7.0 or lower, you must
-  [restore the data from a backup](/discover/deployment/-/knowledge_base/7-1/backing-up-a-liferay-installation)
-  and start the upgrade again. 
-
-$$$
-
-+$$$
-
-**Warning:** To prevent the tool's expanded command from growing too large for
-Windows, execute the upgrade tool script from the `[Liferay
-Home]/tools/portal-tools-db-upgrade-client` folder.
-
-$$$
+| **Warning:** To prevent the tool's expanded command from growing too large for
+| Windows, execute the upgrade tool script from the `[Liferay
+| Home]/tools/portal-tools-db-upgrade-client` folder.
 
 Before
 [starting the upgrade](#running-and-managing-the-core-upgrade),
 decide how to execute non-core module upgrades. 
 
-## Configuring Non-Core Module Upgrades [](id=configuring-module-upgrades)
+## Configuring Non-Core Module Upgrades
 
 You can configure the upgrade tool to upgrade all installed modules
 automatically or to open a Gogo shell (after core upgrade completes) for you to
@@ -126,12 +122,12 @@ If you set `autoUpgrade="false"` in a file called
 `com.liferay.portal.upgrade.internal.configuration.ReleaseManagerConfiguration.config`
 and copy the file into the `[Liferay Home]/osgi/configs` folder, the upgrade
 tool opens Gogo shell after the core upgrade. In the Gogo shell, you can 
-[administer module upgrades](/discover/deployment/-/knowledge_base/7-1/gogo-shell-commands-for-module-upgrades). 
+[administer module upgrades](/docs/7-1/deploy/-/knowledge_base/d/gogo-shell-commands-for-module-upgrades). 
 
 Now that you've decided how to do non-core module upgrades, examine the core
 upgrade configuration options. 
 
-## Configuring the Core Upgrade [](id=configuring-the-core-upgrade)
+## Configuring the Core Upgrade
 
 The core upgrade requires configuration. You can configure it at runtime via the
 command line interface or pre-configure it in these files in `[Liferay
@@ -143,11 +139,11 @@ Home]/tools/portal-tools-db-upgrade-client/`:
     the upgrade requires. You might want to copy your current portal properties
     (except your database properties) into this file. Before copying your
     current properties, make sure you've
-    [updated the portal properties for @product-ver@](/discover/deployment/-/knowledge_base/7-1/preparing-an-upgrade-to-liferay-7#step-4-update-your-portal-properties). 
+    [updated the portal properties for @product-ver@](/docs/7-1/deploy/-/knowledge_base/d/preparing-an-upgrade-to-liferay-7#step-4-update-your-portal-properties). 
 
 Each file's properties are described next. 
 
-### Configuring app-server.properties [](id=configuring-app-server-properties)
+### Configuring app-server.properties
 
 Specify the following information to configure the app server on which 
 @product-ver@ is installed: 
@@ -192,7 +188,7 @@ These properties, for example, are for Unix and use all absolute paths:
     portal.dir=/home/user/liferay/liferay-portal-master/tomcat-9.0.10/webapps/ROOT
     server.detector.server.id=tomcat
 
-### Configuring portal-upgrade-database.properties [](id=configuring-portal-upgrade-database-properties)
+### Configuring portal-upgrade-database.properties
 
 Specify the following information to configure the database you're upgrading.
 Note that these properties correspond exactly to the
@@ -207,23 +203,23 @@ you'd use in a `portal-ext.properties` file.
 
 **jdbc.default.password** *(required)*
 
-### Configuring portal-upgrade-ext.properties [](id=configuring-portal-upgrade-ext-properties)
+### Configuring portal-upgrade-ext.properties
 
 Specify the following information to configure the upgrade itself: 
 
-**liferay.home:** the [Liferay home folder](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home) *(required)*
+**liferay.home:** the [Liferay home folder](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home) *(required)*
 
 **dl.store.impl:** the implementation for persisting documents to the document
 library store. This property's default value is
 `com.liferay.portal.store.file.system.FileSystemStore`.
 If you updated the property
-[in your `portal-ext.properties`](/discover/deployment/-/knowledge_base/7-1/preparing-an-upgrade-to-liferay-7#configuring-your-documents-and-media-file-store)
+[in your `portal-ext.properties`](/docs/7-1/deploy/-/knowledge_base/d/preparing-an-upgrade-to-liferay-7#configuring-your-documents-and-media-file-store)
 to use a different implementation, specify the updated property here. 
 
 **hibernate.jdbc.batch_size:** the JDBC batch size used to improve performance;
 set to *250* by default *(optional)*
 
-### Example Upgrade Configuration [](id=example-upgrade-configuration)
+### Example Upgrade Configuration
 
 Here's an example interaction with the upgrade tool's command line interface:
 
@@ -274,7 +270,7 @@ into `[Liferay Home]/tools/portal-tools-db-upgrade-client/`:
 
 It's time to start the core upgrade. 
 
-## Running and Managing the Core Upgrade [](id=running-and-managing-the-core-upgrade)
+## Running and Managing the Core Upgrade
 
 Start the upgrade tool, as explained in the 
 [upgrade tool usage](#upgrade-tool-usage). 

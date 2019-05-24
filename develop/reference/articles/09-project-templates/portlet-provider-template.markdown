@@ -1,4 +1,8 @@
-# Portlet Provider Template [](id=portlet-provider-template)
+---
+header-id: portlet-provider-template
+---
+
+# Portlet Provider Template
 
 In this article, you'll learn how to create a Liferay portlet provider as a
 Liferay module. To create a Liferay portlet provider via the command line using
@@ -72,5 +76,5 @@ Gradle-specific files, but otherwise, appears exactly the same.
 The generated module is functional and is deployable to a @product@ instance. To
 build upon the generated app, modify the project by adding logic and additional
 files to the folders outlined above. You can visit the
-[Providing Portlets to Manage Requests](/develop/tutorials/-/knowledge_base/7-0/providing-portlets-to-manage-requests)
+[Providing Portlets to Manage Requests](/docs/7-0/tutorials/-/knowledge_base/t/providing-portlets-to-manage-requests)
 tutorial for instructions on customizing a portlet provider project.

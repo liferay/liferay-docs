@@ -1,4 +1,8 @@
-# Changing Page Permissions [](id=changing-page-permissions)
+---
+header-id: changing-page-permissions
+---
+
+# Changing Page Permissions
 
 Public pages are just that: public. They can be viewed by anybody, logged in or
 not. And private pages are only private from non-members of the Site. If someone

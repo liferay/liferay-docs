@@ -1,4 +1,8 @@
-# Creating the Screenlet Class [](id=creating-the-screenlet-class)
+---
+header-id: creating-the-screenlet-class
+---
+
+# Creating the Screenlet Class
 
 The Screenlet class is the central hub of a Screenlet. It contains attributes 
 for configuring the Screenlet's behavior, a reference to the Screenlet's View, 
@@ -169,9 +173,9 @@ Next, you must implement `BaseScreenlet`'s abstract methods:
         }
 
 Nice! Your Screenlet is finished! You can now use it 
-[the same way you would any other](/develop/tutorials/-/knowledge_base/7-1/using-screenlets-in-android-apps). 
+[the same way you would any other](/docs/7-1/tutorials/-/knowledge_base/t/using-screenlets-in-android-apps). 
 If you created your Screenlet in its own project, you can also 
-[package and distribute](/develop/tutorials/-/knowledge_base/7-1/packaging-your-screenlets)
+[package and distribute](/docs/7-1/tutorials/-/knowledge_base/t/packaging-your-screenlets)
 it via the Screens project, JCenter, or Maven Central. 
 
 To finish the Add Bookmark Screenlet example, the following section shows you 
@@ -180,12 +184,12 @@ values in an app's `server_context.xml` file. Although you may not need to do
 this when using your Screenlets, it might come in handy on your way to becoming 
 a master of Screenlets. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating the UI](/develop/tutorials/-/knowledge_base/7-1/creating-the-ui)
+[Creating the UI](/docs/7-1/tutorials/-/knowledge_base/t/creating-the-ui)
 
-[Creating the Interactor](/develop/tutorials/-/knowledge_base/7-1/creating-the-interactor)
+[Creating the Interactor](/docs/7-1/tutorials/-/knowledge_base/t/creating-the-interactor)
 
-[Defining the Attributes](/develop/tutorials/-/knowledge_base/7-1/defining-the-attributes)
+[Defining the Attributes](/docs/7-1/tutorials/-/knowledge_base/t/defining-the-attributes)
 
-[Packaging Your Screenlets](/develop/tutorials/-/knowledge_base/7-1/packaging-your-screenlets)
+[Packaging Your Screenlets](/docs/7-1/tutorials/-/knowledge_base/t/packaging-your-screenlets)

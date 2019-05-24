@@ -1,4 +1,8 @@
-# Gauge Charts [](id=gauge-charts)
+---
+header-id: gauge-charts
+---
+
+# Gauge Charts
 
 Gauge charts are percentage-based. A gauge chart shows where percentage-based 
 data falls over a given range. Each data set must be defined as a new instance 
@@ -35,10 +39,10 @@ Follow these steps:
     
 ![Figure 1: A gauge chart shows where percentage-based data falls over a given range.](../../../images/chart-taglib-gauge.png)
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Gauge Charts](/develop/tutorials/-/knowledge_base/7-1/gauge-charts)
+[Gauge Charts](/docs/7-1/tutorials/-/knowledge_base/t/gauge-charts)
 
-[Geomap Charts](/develop/tutorials/-/knowledge_base/7-1/geomap-charts)
+[Geomap Charts](/docs/7-1/tutorials/-/knowledge_base/t/geomap-charts)
 
-[Pie Charts](/develop/tutorials/-/knowledge_base/7-1/pie-charts)
+[Pie Charts](/docs/7-1/tutorials/-/knowledge_base/t/pie-charts)

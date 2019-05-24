@@ -1,4 +1,8 @@
-# Preparing and Organizing Web Content for the Resources Importer [](id=preparing-and-organizing-web-content-for-the-resources-importer)
+---
+header-id: preparing-and-organizing-web-content-for-the-resources-importer
+---
+
+# Preparing and Organizing Web Content for the Resources Importer
 
 You must create the resources to import with your theme. You can create 
 resources from scratch and/or bring in resources that you've already created. 
@@ -7,7 +11,7 @@ Resources Importer.
 
 First, you must prepare your web content for the Resources Importer. 
 
-## Preparing Your Web Content [](id=preparing-your-web-content)
+## Preparing Your Web Content
 
 You can leverage your HTML (basic web content), JSON (structures), or VM or FTL
 (templates) files with the Resource Importer. All web content articles require
@@ -113,7 +117,7 @@ one copy of the structure and template is required for all web content articles
 that use them. Once your web content articles are saved, you can place them in 
 their proper folder structure.
 
-## Organizing Your Resources [](id=organizing-your-resources)
+## Organizing Your Resources
 
 Add your resources under the `[theme-name]/src/WEB-INF/src/resources-importer` 
 folder and its subfolders. Place your resources in the folders outlined below:
@@ -138,10 +142,10 @@ folder and its subfolders. Place your resources in the folders outlined below:
           structure. For example, create folder `Structure 1/` to hold a
           template for structure file `Structure 1.json`. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating a Sitemap for the Resources Importer](/develop/tutorials/-/knowledge_base/7-1/creating-a-sitemap-for-the-resources-importer)
+[Creating a Sitemap for the Resources Importer](/docs/7-1/tutorials/-/knowledge_base/t/creating-a-sitemap-for-the-resources-importer)
 
-[Defining Assets for the Resources Importer](/develop/tutorials/-/knowledge_base/7-1/defining-assets-for-the-resources-importer)
+[Defining Assets for the Resources Importer](/docs/7-1/tutorials/-/knowledge_base/t/defining-assets-for-the-resources-importer)
 
-[Specifying Where to Import Your Theme's Resources](/develop/tutorials/-/knowledge_base/7-1/specifying-where-to-import-your-themes-resources)
+[Specifying Where to Import Your Theme's Resources](/docs/7-1/tutorials/-/knowledge_base/t/specifying-where-to-import-your-themes-resources)

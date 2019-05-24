@@ -1,4 +1,8 @@
-# Social API [](id=social-api)
+---
+header-id: social-api
+---
+
+# Social API
 
 The social API lets users interact with content throughout the portal, including
 content in your applications. For example, users can provide feedback on

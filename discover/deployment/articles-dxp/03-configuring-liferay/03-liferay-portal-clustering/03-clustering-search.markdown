@@ -1,10 +1,14 @@
-# Clustering Search [](id=clustering-search)
+---
+header-id: clustering-search
+---
+
+# Clustering Search
 
 Search should always run on a separate environment from your @product@ server.
 @product@ supports 
-[Elasticsearch](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch), 
+[Elasticsearch](/docs/7-1/deploy/-/knowledge_base/d/installing-elasticsearch), 
 and 
-[Solr](/discover/deployment/-/knowledge_base/7-1/installing-solr). 
+[Solr](/docs/7-1/deploy/-/knowledge_base/d/installing-solr). 
 Both can also be clustered. 
 
 For more information on how to cluster Elasticsearch, see 

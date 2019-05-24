@@ -1,4 +1,8 @@
-# Categorizing Pages and Content for User Segments [](id=categorizing-pages-and-content-for-user-segments)
+---
+header-id: categorizing-pages-and-content-for-user-segments
+---
+
+# Categorizing Pages and Content for User Segments
 
 Each new user segment that's created can be used to categorize pages or content.
 The Audience Targeting app adds a new *User Segment* select button to the SEO
@@ -33,7 +37,7 @@ only display relevant content to the user. To enable *User Segments Filter*,
 
 Next, you'll learn about managing user segment reports.
 
-## Managing User Segment Reports [](id=managing-user-segment-reports)
+## Managing User Segment Reports
 
 When managing user segments, you can select the user segment name and then
 select the *Reports* tab to see the list of reports available for each user
@@ -52,7 +56,7 @@ selecting the *Options* (![Options](../../images-dxp/icon-options.png)) &rarr;
 *Export* button. This downloads a CSV file with the list of users.
 
 Additional reports can be created by developers and deployed as OSGi plugins.
-See the [Reporting User Behavior with Audience Targeting](/develop/tutorials/-/knowledge_base/7-1/reporting-user-behavior-with-audience-targeting)
+See the [Reporting User Behavior with Audience Targeting](/docs/7-1/tutorials/-/knowledge_base/t/reporting-user-behavior-with-audience-targeting)
 tutorial for details. Reports are generated daily by default, but you can
 generate a report at any time. To generate a new report when currently viewing
 a report, click the *Update* button from the *Options* icon

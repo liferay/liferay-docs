@@ -1,4 +1,8 @@
-# Adding Custom Panel Categories [](id=adding-custom-panel-categories)
+---
+header-id: adding-custom-panel-categories
+---
+
+# Adding Custom Panel Categories
 
 As you navigate the Product Menu, you can see that Panel Apps like *Web
 Content* and *Site Settings* are organized into Panel Categories such as
@@ -13,14 +17,14 @@ There are three steps to creating a new category:
 
 3.  Define the Control Menu Category.
 
-## Creating the OSGi Module [](id=creating-the-osgi-module)
+## Creating the OSGi Module
 
 First you must create the project.
 
 1.  Create an OSGi module using your favorite third party tool, or use
-    [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli). Blade CLI
+    [Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/blade-cli). Blade CLI
     offers a 
-    [Panel App](/develop/reference/-/knowledge_base/7-1/panel-app-template) template,
+    [Panel App](/docs/7-1/reference/-/knowledge_base/r/panel-app-template) template,
     which is for creating a panel category and panel app.
 
 2.  Create a unique package name in the module's `src` directory and create
@@ -28,7 +32,7 @@ First you must create the project.
     class a unique name followed by `PanelCategory` (e.g.,
     `ControlPanelCategory`).
 
-## Implementing Liferay's Frameworks [](id=implementing-liferays-frameworks)
+## Implementing Liferay's Frameworks
 
 Next, you must connect your OSGi module to Liferay's frameworks and use those to
 define information about your entry. This takes only two steps: 
@@ -39,7 +43,7 @@ define information about your entry. This takes only two steps:
 
 Both of these steps are described below. 
 
-### Insert the @Component Annotation [](id=insert-the-component-annotation)
+### Insert the @Component Annotation
 
 Directly above the class's declaration, insert the following annotation:
 
@@ -78,22 +82,18 @@ the `UserPanelCategory` class below.
             service = PanelCategory.class
         )
 
-+$$$
+| **Note:** To insert a panel category between existing categories in the
+| default menu, you must know the `panel.category.order:Integer` property
+| for the existing categories. Default categories with a given
+| panel.category.key are numbered in increments of 100, starting with 100.
+| 
+| For example, the Product Menu's three main sections---Control Panel, User
+| Menu, and Site Administration---have `panel.category.order:Integer`
+| properties of 100, 200, and 300, respectively. A new panel inserted between
+| Control Panel and User Menu would need a `panel.category.key` of ROOT and
+| a `panel.category.order:Integer` of 150.
 
-**Note:** To insert a panel category between existing categories in the
-default menu, you must know the `panel.category.order:Integer` property
-for the existing categories. Default categories with a given
-panel.category.key are numbered in increments of 100, starting with 100.
-
-For example, the Product Menu's three main sections---Control Panel, User
-Menu, and Site Administration---have `panel.category.order:Integer`
-properties of 100, 200, and 300, respectively. A new panel inserted between
-Control Panel and User Menu would need a `panel.category.key` of ROOT and
-a `panel.category.order:Integer` of 150.
-
-$$$
-
-### Implement the PanelCategory Interface [](id=implement-the-panelcategory-interface)
+### Implement the PanelCategory Interface
 
 The `PanelCategory` interface requires you to implement the following methods:
 
@@ -122,23 +122,19 @@ If you plan to use JSPs as the front-end technology, extend a base class called
 `BaseJSPPanelCategory` that already implements the methods `include()` and
 `includeHeader()` for you. This is covered in more detail below.
  
-+$$$
+| **Note:** In this tutorial, example JSPs describe how to provide functionality
+| to panel categories and apps. JSPs, however, are not the only way to provide
+| front-end functionality to your categories/apps. You can create your own class
+| implementing `PanelCategory` to use other technologies such as FreeMarker.
 
-**Note:** In this tutorial, example JSPs describe how to provide functionality
-to panel categories and apps. JSPs, however, are not the only way to provide
-front-end functionality to your categories/apps. You can create your own class
-implementing `PanelCategory` to use other technologies such as FreeMarker.
-
-$$$
-
-## Defining the Control Menu Category [](id=defining-the-control-menu-category)
+## Defining the Control Menu Category
 
 After establishing the framework you're using to create the category, you  must 
 add any other methods that are necessary to create your custom panel category. 
 As you learned earlier, you can extend the `BasePanelCategory` and
 `BaseJSPPanelCategory` abstract classes to implement `PanelCategory`.
 
-### BasePanelCategory [](id=basepanelcategory)
+### BasePanelCategory
 
 If you need something simple for your panel category like a name, extending
 `BasePanelCategory` is probably sufficient. For example, the
@@ -151,7 +147,7 @@ the panel category name.
             return LanguageUtil.get(locale, "control-panel");
         }
 
-### BaseJSPPanelCategory [](id=basejsppanelcategory)
+### BaseJSPPanelCategory
 
 If you need more complex functionality, extend `BaseJSPPanelCategory` and use
 JSPs to render the panel category. For example, the

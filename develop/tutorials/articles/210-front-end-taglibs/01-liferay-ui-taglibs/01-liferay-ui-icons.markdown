@@ -1,4 +1,8 @@
-# Liferay UI Icons [](id=liferay-ui-icons)
+---
+header-id: liferay-ui-icons
+---
+
+# Liferay UI Icons
 
 The Liferay UI taglibs provide several icons you can include in your apps. To 
 add an icon to your app, use the `liferay-ui:icon` tag and specify the icon with 
@@ -37,7 +41,7 @@ You can achieve the same result in FreeMarker with the following code that uses
 the available 
 [`init.ftl` variables](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/frontend-theme/frontend-theme-unstyled/src/main/resources/META-INF/resources/_unstyled/templates/init.ftl) 
 and 
-[@product@ macros](/develop/tutorials/-/knowledge_base/7-1/using-liferays-macros-in-your-theme):
+[@product@ macros](/docs/7-1/tutorials/-/knowledge_base/t/using-liferays-macros-in-your-theme):
 
     <#assign flag_message>
         <@liferay.language_format 
@@ -82,10 +86,10 @@ The examples above use some of the icon's available attributes. See the
 [Icon taglibdocs](@platform-ref@/7.1-latest/taglibs/util-taglib/liferay-ui/icon.html) 
 for the full list. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Clay Icons](/develop/tutorials/-/knowledge_base/7-1/clay-icons)
+[Clay Icons](/docs/7-1/tutorials/-/knowledge_base/t/clay-icons)
 
-[Liferay UI Icon Lists](/develop/tutorials/-/knowledge_base/7-1/liferay-ui-icon-lists)
+[Liferay UI Icon Lists](/docs/7-1/tutorials/-/knowledge_base/t/liferay-ui-icon-lists)
 
-[Liferay UI Icon Menus](/develop/tutorials/-/knowledge_base/7-1/liferay-ui-icon-menus)
+[Liferay UI Icon Menus](/docs/7-1/tutorials/-/knowledge_base/t/liferay-ui-icon-menus)

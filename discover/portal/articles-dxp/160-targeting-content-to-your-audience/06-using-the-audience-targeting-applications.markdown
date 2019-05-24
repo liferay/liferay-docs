@@ -1,4 +1,8 @@
-# Using the Audience Targeting Widgets [](id=using-the-audience-targeting-applications)
+---
+header-id: using-the-audience-targeting-applications
+---
+
+# Using the Audience Targeting Widgets
 
 Audience Targeting includes widgets that can be added to any portal page:
 
@@ -10,7 +14,7 @@ All of these widgets support Application Display Templates (ADTs), and any of
 @product@'s out-of-the-box Asset Publisher ADTs can be re-used for these
 Audience Targeting widgets.
 
-## User Segment Content Display [](id=user-segment-content-display)
+## User Segment Content Display
 
 User Segment Content Display displays content to users based on their user
 segment membership. Administrators can specify multiple rules according to the
@@ -48,7 +52,7 @@ who don't belong to any of the configured user segments.
 Administrators can preview the various assets that have been configured for 
 different user segments.
 
-## Campaign Content Display [](id=campaign-content-display)
+## Campaign Content Display
 
 Campaign Content Display is similar to the User Segment Content Display except
 that instead of displaying assets based on user segment membership, it displays
@@ -86,19 +90,15 @@ either see the default image. Of course, once a campaign has ended, no users
 match that campaign. Once all campaigns have ended, all users see the default
 image.
 
-+$$$
-
-**Note:** When Audience Targeting is enabled with a large number of rules,
-tracking actions, and reports, you may need to adjust some JVM parameters of
-your server for optimal performance.
-
-$$$
+| **Note:** When Audience Targeting is enabled with a large number of rules,
+| tracking actions, and reports, you may need to adjust some JVM parameters of
+| your server for optimal performance.
 
 The Campaign Content Display widget, like the User Segment Content Display
 widget, allows Site administrators to preview the different assets that are
 displayed for different campaigns.
 
-## Asset Publisher [](id=asset-publisher)
+## Asset Publisher
 
 For @product-ver@ the Asset Publisher replaces the functionality of the User 
 Segment Content List. When Audience Targeting is installed, the Asset Publisher 

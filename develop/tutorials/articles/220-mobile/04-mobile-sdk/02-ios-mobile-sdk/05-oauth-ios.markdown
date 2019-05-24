@@ -1,4 +1,8 @@
-# Using OAuth 2 in the iOS Mobile SDK [](id=using-oauth-2-in-the-ios-mobile-sdk)
+---
+header-id: using-oauth-2-in-the-ios-mobile-sdk
+---
+
+# Using OAuth 2 in the iOS Mobile SDK
 
 You can use [OAuth 2](https://oauth.net/2/) 
 to authenticate using the following 
@@ -24,10 +28,10 @@ to authenticate using the following
 
 This tutorial shows you how to use these grant types with the Mobile SDK. Note 
 that before getting started, you may want to see 
-[@product@'s OAuth 2.0 documentation](/discover/deployment/-/knowledge_base/7-1/oauth-2-0) 
+[@product@'s OAuth 2.0 documentation](/docs/7-1/deploy/-/knowledge_base/d/oauth-2-0) 
 for instructions on registering an OAuth 2.0 application in the portal. 
 
-## Authorization Code (PKCE) [](id=authorization-code-pkce)
+## Authorization Code (PKCE)
 
 To authenticate via the Authorization Code grant type, you must call the 
 following `LROAuth2SignIn` method: 
@@ -64,7 +68,7 @@ Here's an example of this workflow:
 1.  Configure the redirect URI in the portal via the OAuth2 Administration 
     portlet. In the portal, navigate to *Control Panel* &rarr; *Configuration* 
     &rarr; *OAuth2 Administration* and select or 
-    [create](/discover/deployment/-/knowledge_base/7-1/oauth-2-0#creating-an-application) 
+    [create](/docs/7-1/deploy/-/knowledge_base/d/oauth-2-0#creating-an-application) 
     the OAuth 2 application you want to use. Then enter the redirect URI in the 
     *Callback URIs* field. The redirect URI in this example is 
     `my-app://my-app`: 
@@ -140,7 +144,7 @@ Here's an example of this workflow:
 
         }
 
-## Resource Owner Password [](id=resource-owner-password)
+## Resource Owner Password
 
 Authenticating via the Resource Owner Password grant type is similar to
 authenticating via the PKCE grant type, except you don't need a redirect URL.
@@ -173,14 +177,10 @@ Here are descriptions of this method's parameters:
     authentication succeeds, you receive a non-null session containing the 
     authentication; otherwise you receive an error. 
 
-+$$$
-
-**Note:** You can call the `LROAuth2SignIn.signIn` method without a callback by 
-passing `nil` as the `callback` argument. This causes the request to execute 
-synchronously. If you provide a callback, the request is executed asynchronously 
-in another thread and the callback receives the response. 
-
-$$$
+| **Note:** You can call the `LROAuth2SignIn.signIn` method without a callback by
+| passing `nil` as the `callback` argument. This causes the request to execute
+| synchronously. If you provide a callback, the request is executed asynchronously
+| in another thread and the callback receives the response.
 
 Follow these steps to call the `LROAuth2SignIn.signIn` method for the Resource 
 Owner Password grant type: 
@@ -219,20 +219,16 @@ Owner Password grant type:
                         callback: oauth2Callback)
         }
 
-## Client Credentials [](id=client-credentials)
+## Client Credentials
 
 The OAuth 2 Client Credentials grant type authenticates without requiring user 
 interaction. This is useful when the app needs to access its own resources, not 
 those of a specific user. 
 
-+$$$
-
-**Warning:** The Client Credentials grant type poses a security risk to the 
-portal. To authenticate without user credentials, the mobile app must contain 
-the OAuth 2 application's client ID and client secret. Anyone who can access 
-those values via the mobile app can also authenticate without user credentials. 
-
-$$$
+| **Warning:** The Client Credentials grant type poses a security risk to the
+| portal. To authenticate without user credentials, the mobile app must contain
+| the OAuth 2 application's client ID and client secret. Anyone who can access
+| those values via the mobile app can also authenticate without user credentials.
 
 To authenticate with the Client Credentials grant type, you must call the 
 `LROAuth2SignIn.signIn` method that lacks arguments for user credentials or 
@@ -258,14 +254,10 @@ Here are descriptions of this method's parameters:
     authentication succeeds, you receive a non-null session containing the 
     authentication; otherwise you receive an error. 
 
-+$$$
-
-**Note:** You can call the `LROAuth2SignIn.signIn` method without a callback by 
-passing `nil` as the `callback` argument. This causes the request to execute 
-synchronously. If you provide a callback, the request is executed asynchronously 
-in another thread and the callback receives the response. 
-
-$$$
+| **Note:** You can call the `LROAuth2SignIn.signIn` method without a callback by
+| passing `nil` as the `callback` argument. This causes the request to execute
+| synchronously. If you provide a callback, the request is executed asynchronously
+| in another thread and the callback receives the response.
 
 Follow these steps to call the `LROAuth2SignIn.signIn` method for the Client 
 Credentials grant type: 
@@ -300,8 +292,8 @@ Credentials grant type:
                         clientSecret: clientSecret, scopes: [], callback: oauth2Callback)
         }
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using OAuth 2 in Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/7-1/using-oauth-2-in-liferay-screens-for-ios)
+[Using OAuth 2 in Liferay Screens for iOS](/docs/7-1/tutorials/-/knowledge_base/t/using-oauth-2-in-liferay-screens-for-ios)
 
-[OAuth 2.0](/discover/deployment/-/knowledge_base/7-1/oauth-2-0)
+[OAuth 2.0](/docs/7-1/deploy/-/knowledge_base/d/oauth-2-0)

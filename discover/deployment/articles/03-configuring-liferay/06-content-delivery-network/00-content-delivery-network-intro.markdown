@@ -1,4 +1,8 @@
-# Content Delivery Network [](id=content-delivery-network)
+---
+header-id: content-delivery-network
+---
+
+# Content Delivery Network
 
 A Content Delivery Network (CDN) is an network of servers deployed in multiple
 data centers that contain your static content. When users hit your site, that
@@ -9,7 +13,7 @@ Here, you'll first discover the perks of using a CDN and learn about general
 guidelines for using a CDN with @product@. Then, you'll configure a CDN. It's
 time to distribute your content around the world!
 
-## Using CDN for Performance Enhancements [](id=using-cdn-for-performance-enhancements)
+## Using CDN for Performance Enhancements
 
 A CDN serves static web resources to users. These resources (images, CSS files,
 JavaScript files, etc.) are stored on multiple servers around the world. When
@@ -30,7 +34,7 @@ Because of the reduced wait time for requests and reduced load on your
 application server, a CDN is a great option to improve performance. Using a CDN
 with @product@, however, has some restrictions.
 
-## Liferay CDN Requirements [](id=liferay-cdn-requirements)
+## Liferay CDN Requirements
 
 @product@ only works with CDNs that can dynamically retrieve requested
 resources. Dynamic resources change over time or via interaction with end users
@@ -57,7 +61,7 @@ access.
 There are several portal properties for configuring your CDN to suit your
 needs. You'll learn how to do this next.
 
-## Configuring @product@ to Use a CDN [](id=configuring-liferay-to-use-a-cdn)
+## Configuring @product@ to Use a CDN
 
 Now that you understand what a CDN accomplishes and how it's used, it's time to
 set one up for yourself. You can set your CDN and its properties using two
@@ -69,7 +73,7 @@ different methods:
 
 To configure your CDN via a properties file, create a
 `portal-ext.properties` file in your
-[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
+[Liferay Home](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home)
 folder and set the appropriate
 [Content Delivery Network properties](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Content%20Delivery%20Network).
 

@@ -1,4 +1,8 @@
-# Handling Assets at the Guestbook Service Layer [](id=handling-assets-at-the-guestbook-service-layer)
+---
+header-id: handling-assets-at-the-guestbook-service-layer
+---
+
+# Handling Assets at the Guestbook Service Layer
 
 <div class="learn-path-step">
     <p>Enabling Assets at the Service Layer<br>Step 2 of 3</p>

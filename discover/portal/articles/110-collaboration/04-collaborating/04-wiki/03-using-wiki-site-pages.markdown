@@ -1,4 +1,8 @@
-# Using the Wiki on Site Pages [](id=using-the-wiki-on-site-pages)
+---
+header-id: using-the-wiki-on-site-pages
+---
+
+# Using the Wiki on Site Pages
 
 You can use the Wiki on Site pages via the Wiki widget. Follow these steps to 
 add the Wiki widget to a page:
@@ -23,7 +27,7 @@ Comments*, *Enable Ratings for Comments*, and *Enable Highlighting* check boxes
 enable or disable those features for the Wiki. You can set how you want users
 to interact with wiki documents. The *Display Template* selector menu lets you
 choose the Wiki's 
-[Application Display Template](/discover/portal/-/knowledge_base/7-1/styling-widgets-with-application-display-templates).
+[Application Display Template](/docs/7-1/user/-/knowledge_base/u/styling-widgets-with-application-display-templates).
 Below this, you can set which wiki nodes are visible. For example, you might
 host two wikis on a given site, exposing one to the public and keeping the
 other private for site members.
@@ -70,14 +74,14 @@ Once you set the wiki's configuration options the way you want them, click
 The Wiki's Options menu also contains the usual widget options: 
 
 **Look and Feel Configuration:** Set the widget's [look and
-feel](/discover/portal/-/knowledge_base/7-1/look-and-feel-configuration).
+feel](/docs/7-1/user/-/knowledge_base/u/look-and-feel-configuration).
 
-**Export/Import:** [Export or import widget data](/discover/portal/-/knowledge_base/7-1/exporting-importing-widget-data).
+**Export/Import:** [Export or import widget data](/docs/7-1/user/-/knowledge_base/u/exporting-importing-widget-data).
 
 **Permissions:** Set the widget's permissions.
 
 **Configuration Templates:** Use 
-[configuration templates](/discover/portal/-/knowledge_base/7-1/configuration-templates) to
+[configuration templates](/docs/7-1/user/-/knowledge_base/u/configuration-templates) to
 store the widget's current setup or apply an existing archived setup.
 
 **Remove:** Remove the widget from the page. 
@@ -112,7 +116,7 @@ are enabled and your permissions:
 -   **Edit:** Edit the wiki page (if you have sufficient permissions). 
 -   **Details:** View the wiki page's details (if you have sufficient 
     permissions). This is explained further in 
-    [the documentation on page details](/discover/portal/-/knowledge_base/7-1/wiki-page-details). 
+    [the documentation on page details](/docs/7-1/user/-/knowledge_base/u/wiki-page-details). 
 -   **Print:** Print the wiki page.
 
 Additional features appear below the wiki page's content. A view counter 

@@ -1,9 +1,13 @@
-# Enabling Staging [](id=enabling-staging)
+---
+header-id: enabling-staging
+---
+
+# Enabling Staging
 
 You have two different ways to set up staging:
-[Local Live](/discover/portal/-/knowledge_base/7-1/enabling-local-live-staging)
+[Local Live](/docs/7-1/user/-/knowledge_base/u/enabling-local-live-staging)
 and
-[Remote Live](/discover/portal/-/knowledge_base/7-1/enabling-remote-live-staging).
+[Remote Live](/docs/7-1/user/-/knowledge_base/u/enabling-remote-live-staging).
 Whether you enable Local Live or Remote Live staging, the interface for managing
 and publishing staged pages is the same.
 

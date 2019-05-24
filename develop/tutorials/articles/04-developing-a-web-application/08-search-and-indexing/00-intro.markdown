@@ -1,4 +1,8 @@
-# Search and Indexing [](id=search-and-indexing)
+---
+header-id: search-and-indexing
+---
+
+# Search and Indexing
 
 The Guestbook and Guestbook Admin portlets are up and running. The Guestbook
 portlet lets users add, edit, delete, and configure permissions for Guestbook
@@ -10,21 +14,17 @@ that mentioned the delicious low-gravity ham that was served (melts in your
 mouth). Searching for the word *ham* should display these Entries. In short,
 Guestbook Entries must be searchable via a search bar in the Guestbook portlet. 
 
-+$$$
-
-**Note:** In previous versions of @product@, search was only _permissions
-aware_ (indexed with the entity's permissions and searched with those
-permissions intact) if the application developer specified this line in the
-`Indexer` class's constructor:
-
-    setPermissionAware(true);
-
-Now, search is permissions aware by default _if the new permissions approach_,
-as described in the previous step of this Learning Path and in 
-[these tutorials](/develop/tutorials/-/knowledge_base/7-1/defining-application-permissions), 
-is implemented for an application.
-
-$$$
+| **Note:** In previous versions of @product@, search was only _permissions
+| aware_ (indexed with the entity's permissions and searched with those
+| permissions intact) if the application developer specified this line in the
+| `Indexer` class's constructor:
+| 
+|     setPermissionAware(true);
+| 
+| Now, search is permissions aware by default _if the new permissions approach_,
+| as described in the previous step of this Learning Path and in
+| [these tutorials](/docs/7-1/tutorials/-/knowledge_base/t/defining-application-permissions),
+| is implemented for an application.
 
 To enable search, you must index Guestbooks and their Entries. Although you
 probably won't have enough Guestbooks in a Site to warrant searching the

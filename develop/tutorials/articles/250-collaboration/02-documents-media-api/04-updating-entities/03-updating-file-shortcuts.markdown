@@ -1,4 +1,8 @@
-# Updating File Shortcuts [](id=updating-file-shortcuts)
+---
+header-id: updating-file-shortcuts
+---
+
+# Updating File Shortcuts
 
 The Documents and Media API lets you update file shortcuts (`FileShortcut` 
 entities). You can update a shortcut to change the file it points to or the 
@@ -21,7 +25,7 @@ Follow these steps to use this method to update a file shortcut:
         private DLAppService _dlAppService;
 
     For more information on this, see the section on 
-    [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
+    [getting a service reference](/docs/7-1/tutorials/-/knowledge_base/t/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
     in the getting started tutorial. 
 
 2.  Get the data needed to populate the `updateFileShortcut` method's arguments. 
@@ -39,10 +43,10 @@ Follow these steps to use this method to update a file shortcut:
                     DLFileShortcutConstants.getClassName(), actionRequest);
 
     For more information on getting folder IDs, see the 
-    [getting started tutorial's](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api) 
+    [getting started tutorial's](/docs/7-1/tutorials/-/knowledge_base/t/getting-started-with-the-documents-and-media-api) 
     section on specifying folders. For more information on `ServiceContext`, see 
     the tutorial 
-    [Understanding ServiceContext](/develop/tutorials/-/knowledge_base/7-1/understanding-servicecontext). 
+    [Understanding ServiceContext](/docs/7-1/tutorials/-/knowledge_base/t/understanding-servicecontext). 
 
 3.  Call the service reference's `updateFileShortcut` method with the data from 
     the previous step: 
@@ -59,8 +63,8 @@ this `updateFileShortcut` method, as well as the rest of
 `EditFileShortcutMVCActionCommand`, contains additional logic to suit the 
 specific needs of the Documents and Media app. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating File Shortcuts](/develop/tutorials/-/knowledge_base/7-1/creating-file-shortcuts)
+[Creating File Shortcuts](/docs/7-1/tutorials/-/knowledge_base/t/creating-file-shortcuts)
 
-[Deleting File Shortcuts](/develop/tutorials/-/knowledge_base/7-1/deleting-file-shortcuts)
+[Deleting File Shortcuts](/docs/7-1/tutorials/-/knowledge_base/t/deleting-file-shortcuts)

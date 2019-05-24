@@ -1,8 +1,12 @@
-# FreeMarker Taglib Macros [](id=freemarker-taglib-macros)
+---
+header-id: freemarker-taglib-macros
+---
+
+# FreeMarker Taglib Macros
 
 @product@'s taglibs are mapped to FreeMarker macros, so you can use them in your 
 FreeMarker templates. See the 
-[Taglib tutorials](/develop/tutorials/-/knowledge_base/7-1/front-end-taglibs) 
+[Taglib tutorials](/docs/7-1/tutorials/-/knowledge_base/t/front-end-taglibs) 
 for more information on using each taglib in your theme templates. The taglib 
 macros are defined in `taglib-mappings.properties` 
 files. For convenience, these macros are listed in the table below:

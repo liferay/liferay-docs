@@ -1,4 +1,8 @@
-# Item Selector [](id=item-selector)
+---
+header-id: item-selector
+---
+
+# Item Selector
 
 An *Item Selector* is a UI component for selecting entities in a user-friendly
 manner. Many Liferay apps use Item Selectors to let users select items such as

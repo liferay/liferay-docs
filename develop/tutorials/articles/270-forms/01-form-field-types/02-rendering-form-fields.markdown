@@ -1,9 +1,13 @@
-# Rendering Field Types [](id=rendering-field-types)
+---
+header-id: rendering-field-types
+---
+
+# Rendering Field Types
 
 Before you get to the front-end coding necessary to render your field type,
 there's another Component to define and a Java class to code.
 
-## Implementing a `DDMFormFieldRenderer` [](id=implementing-a-ddmformfieldrenderer)
+## Implementing a `DDMFormFieldRenderer`
 
 The Component only has one property, `ddm.form.field.type.name`, and then you
 declare that you're adding a `DDMFormFieldRenderer` implementation to the OSGi
@@ -51,22 +55,18 @@ Set the templating language (Soy closure templates), the template namespace
 (`DDMTime`) and name (`render`), and point to the location of the templates
 within your module (`/META-INF/resources/time.soy`).
 
-## Writing the Soy Template [](id=writing-the-soy-template)
+## Writing the Soy Template
 
 Now it's time to write the template you referenced in the renderer class:
 `time.soy` in the case of the time field type.
 
-+$$$
-
-**Note:** [Closure templates](https://developers.google.com/closure/templates/)
-are a templating system for building UI elements. @product@ developers chose to
-build the Forms UI with closure templates because they enable a smooth,
-responsive repainting of the UI as a user enters data. With closure templates
-there's no need to reload the entire page from the server when the UI is updated
-by the user: only the relevant portion of the page is updated from the server.
-This makes for a smooth user experience.
-
-$$$
+| **Note:** [Closure templates](https://developers.google.com/closure/templates/)
+| are a templating system for building UI elements. @product@ developers chose to
+| build the Forms UI with closure templates because they enable a smooth,
+| responsive repainting of the UI as a user enters data. With closure templates
+| there's no need to reload the entire page from the server when the UI is updated
+| by the user: only the relevant portion of the page is updated from the server.
+| This makes for a smooth user experience.
 
 Create
 
@@ -187,7 +187,7 @@ There are four important things to do in the template:
 
 Once the template is defined, write the JavaScript file modeling your field.
 
-## Writing the JavaScript Files [](id=writing-the-javascript-files)
+## Writing the JavaScript Files
 
 Create a `time_field.js` file and give it these contents:
 
@@ -277,7 +277,7 @@ JavaScript file that defines the dependencies of the declared JavaScript
 components (`requires...`), and where the files are located (`path...`). The
 Alloy loader uses `config.js` when it satisfies dependencies for each JavaScript
 component. For more information about the Alloy loader see its 
-[tutorial](/develop/tutorials/-/knowledge_base/7-1/loading-amd-modules-in-liferay).
+[tutorial](/docs/7-1/tutorials/-/knowledge_base/t/loading-amd-modules-in-liferay).
 
 ![Figure 1: Add your own form field types to the Forms application.](../../../images/forms-time-field-type.png)
 
@@ -285,7 +285,7 @@ If you build and deploy your new field type module, you get exactly what you
 described in the `time.soy` file: a single text input field. Of course, that's
 not what you want! You need a time picker.
 
-## Adding Behavior to the Field [](id=adding-behavior-to-the-field)
+## Adding Behavior to the Field
 
 To do more than provide a text input field, define additional behavior in
 the `time_field.js` file. 

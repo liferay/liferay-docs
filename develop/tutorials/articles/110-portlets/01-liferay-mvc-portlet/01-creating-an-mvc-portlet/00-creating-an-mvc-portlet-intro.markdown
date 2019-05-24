@@ -1,4 +1,8 @@
-# Creating an MVC Portlet [](id=creating-an-mvc-portlet)
+---
+header-id: creating-an-mvc-portlet
+---
+
+# Creating an MVC Portlet
 
 MVC Portlet applications are web modules containing at least one portlet class
 that's registered in Liferay's runtime environment as a component. Web modules
@@ -16,7 +20,7 @@ module:
 
 Start by creating a web module for your portlet. 
 
-## Step 1: Configuring a Web Module [](id=configuring-a-web-module)
+## Step 1: Configuring a Web Module
 
 The folder structure for a web module generally follows this pattern: 
 
@@ -32,14 +36,14 @@ The folder structure for a web module generally follows this pattern:
     -   build.gradle
     -   bnd.bnd
 
-The [MVC portlet template](/develop/reference/-/knowledge_base/7-1/using-the-mvc-portlet-template),
-available for both Maven and Gradle in [Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/liferay-ide)
-and [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli),
+The [MVC portlet template](/docs/7-1/reference/-/knowledge_base/r/using-the-mvc-portlet-template),
+available for both Maven and Gradle in [Liferay @ide@](/docs/7-1/tutorials/-/knowledge_base/t/liferay-ide)
+and [Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/blade-cli),
 makes creating such Web modules a snap. Of course you're not tied to using
 Gradle or bnd to build your project. However, you must build your module as
 a JAR and define your module with proper OSGi headers. 
 
-## Step 2: Specifying OSGi Metadata [](id=specifying-osgi-metadata)
+## Step 2: Specifying OSGi Metadata
 
 OSGi metadata describes your module to the OSGi runtime environment. At
 a minimum, you should specify the bundle symbolic name and the bundle version.
@@ -53,7 +57,7 @@ If you don't specify a `Bundle-SymbolicName`, one is generated from the
 project's folder path, which is suitable for many cases. Liferay's convention is
 to specify the root package name as your bundle symbolic name.
 
-## Step 3: Creating a Portlet Component [](id=creating-a-portlet-component)
+## Step 3: Creating a Portlet Component
 
 The OSGi Declarative Services component model makes it easy to publish service
 implementations to the OSGi runtime. For example, publishing your portlet class
@@ -92,14 +96,14 @@ implementation. That's good in itself, but the Component must be configured:
     public class LiferayMVCPortlet extends MVCPortlet {
     }
 
-Liferay's [MVC portlet template](/develop/reference/-/knowledge_base/7-1/using-the-mvc-portlet-template)
+Liferay's [MVC portlet template](/docs/7-1/reference/-/knowledge_base/r/using-the-mvc-portlet-template)
 includes these component properties in the portlet class it generates. 
 
 Some of the properties might look familiar to you if you've developed Liferay
 MVC portlets for Liferay Portal 6.2. That's because they're the same as the XML
 attributes you used to specify in `liferay-portlet.xml`, `liferay-display.xml`,
 and `portlet.xml`. The 
-[mapping of portlet descriptors to OSGi properties](/develop/reference/-/knowledge_base/7-1/portlet-descriptor-to-osgi-service-property-map)
+[mapping of portlet descriptors to OSGi properties](/docs/7-1/reference/-/knowledge_base/r/portlet-descriptor-to-osgi-service-property-map)
 can you help find OSGi properties for descriptors you already know. 
 
 To keep compatibility with the JSR-168 and JSR-286 portlet specs, these DTDs

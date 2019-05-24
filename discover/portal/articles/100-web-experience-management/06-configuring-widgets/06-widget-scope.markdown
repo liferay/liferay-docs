@@ -1,4 +1,8 @@
-# Widget Scope [](id=widget-scope)
+---
+header-id: widget-scope
+---
+
+# Widget Scope
 
 As you learned earlier, Roles can be scoped by the instance, by Site, or by an
 Organization. A Role only takes effect within its scope. For example, a Message

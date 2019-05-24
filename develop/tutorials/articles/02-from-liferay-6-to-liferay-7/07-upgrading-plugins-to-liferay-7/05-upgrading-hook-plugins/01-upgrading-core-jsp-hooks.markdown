@@ -1,9 +1,13 @@
-# Upgrading Core JSP Hooks [](id=upgrading-core-jsp-hooks)
+---
+header-id: upgrading-core-jsp-hooks
+---
+
+# Upgrading Core JSP Hooks
 
 Getting a core JSP hook running on @product-ver@ takes two steps:
 
 1.  Adapt your code to @product-ver@'s API using
-    [Liferay @ide@'s Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-1/adapting-to-liferay-7s-api-with-the-code-upgrade-tool). 
+    [Liferay @ide@'s Code Upgrade Tool](/docs/7-1/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool). 
 
 2.  Deploy your hook plugin. 
 
@@ -12,12 +16,12 @@ Application Bundle (WAB) and installs it to Liferay's OSGi Runtime.
 
 It's just that easy!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Customizing JSPs](/develop/tutorials/-/knowledge_base/7-1/customizing-jsps)
+[Customizing JSPs](/docs/7-1/tutorials/-/knowledge_base/t/customizing-jsps)
 
-[Upgrading App JSP Hooks](/develop/tutorials/-/knowledge_base/7-1/upgrading-app-jsp-hook-plugins)
+[Upgrading App JSP Hooks](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-app-jsp-hook-plugins)
 
-[Resolving a Plugin's Dependencies](/develop/tutorials/-/knowledge_base/7-1/resolving-a-plugins-dependencies)
+[Resolving a Plugin's Dependencies](/docs/7-1/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies)
 
-[Upgrading the Liferay Maven Build](/develop/tutorials/-/knowledge_base/7-1/upgrading-the-liferay-maven-build)
+[Upgrading the Liferay Maven Build](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-the-liferay-maven-build)

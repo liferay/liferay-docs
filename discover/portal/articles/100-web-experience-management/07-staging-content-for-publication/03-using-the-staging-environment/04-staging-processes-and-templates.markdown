@@ -1,4 +1,8 @@
-# Staging Processes and Templates [](id=staging-processes-and-templates)
+---
+header-id: staging-processes-and-templates
+---
+
+# Staging Processes and Templates
 
 When you make a staging publication, it's captured as a staging process and
 stored for future reference. You can manage these processes by navigating to the
@@ -41,17 +45,13 @@ Follow the steps below to create and use a publish template.
     All you have to do is give the publication process a name. Once you confirm
     the configuration settings, your staging settings are published.
 
-+$$$
-
-**Note:** When staging is enabled, the options available from the *Publishing*
-tab are modified. When in the Live environment, you can only access the *Export*
-feature. When in the Staging environment, you can only access the *Import* and
-*Staging* features. The disabled features for each environment don't make sense
-in that context. For example, you shouldn't be able to import content when in
-the live environment; it must be imported into the staged environment and then
-published before it is available in the live site.
-
-$$$
+| **Note:** When staging is enabled, the options available from the *Publishing*
+| tab are modified. When in the Live environment, you can only access the *Export*
+| feature. When in the Staging environment, you can only access the *Import* and
+| *Staging* features. The disabled features for each environment don't make sense
+| in that context. For example, you shouldn't be able to import content when in
+| the live environment; it must be imported into the staged environment and then
+| published before it is available in the live site.
 
 Now you know how to reference stored/scheduled staging processes and create
 publish templates to streamline publication. 

@@ -1,4 +1,8 @@
-# Form Rules [](id=form-rules)
+---
+header-id: form-rules
+---
+
+# Form Rules
 
 What's the difference between a chicken and a dog? Among other things, you can't
 train a chicken, while dogs are quite trainable. If you're skeptical, try
@@ -26,7 +30,7 @@ Jump to Page
 page. 
 
 Autofill with Data Provider 
-: Use a [data provider](/discover/portal/-/knowledge_base/7-1/data-providers)
+: Use a [data provider](/docs/7-1/user/-/knowledge_base/u/data-providers)
 to populate fields when a condition is met in another field.
 
 Calculate
@@ -37,11 +41,11 @@ Form rules are for changing fields and form elements by acting on conditions.
 *If [condition] do [action].*
 
 If you're not already familiar with the Forms application, start
-[here](/discover/portal/-/knowledge_base/7-1/forms). Once you know how to create
+[here](/docs/7-1/user/-/knowledge_base/u/forms). Once you know how to create
 forms, add and configure fields, and then publish forms, come back here and
 learn about form rules.
 
-## The Anatomy of a Form Rule [](id=the-anatomy-of-a-form-rule)
+## The Anatomy of a Form Rule
 
 Each rule consists of one or more conditions and actions. 
 
@@ -51,7 +55,7 @@ Each rule consists of one or more conditions and actions.
 
 Rules are stored in the database in JSON format by default.
 
-## Creating Form Rules: Rule Builder [](id=creating-form-rules-rule-builder)
+## Creating Form Rules: Rule Builder
 
 Once you create a form and lay out its fields, you're ready to set up rules in
 your form: 
@@ -83,7 +87,7 @@ AND
 This box becomes usable once you click the Add button
 (![Add](../../../images/icon-add.png)) to add an extra condition.
 
-## Conditions [](id=conditions)
+## Conditions
 
 Conditions are the gatekeepers of form rules. If the condition's *if statement*
 evaluates to *true*, the action is triggered. If it evaluates to *false*, no

@@ -1,4 +1,8 @@
-# Overwriting and Extending Liferay Theme Tasks [](id=overwriting-and-extending-liferay-theme-tasks)
+---
+header-id: overwriting-and-extending-liferay-theme-tasks
+---
+
+# Overwriting and Extending Liferay Theme Tasks
 
 Themes created with the Liferay Theme Generator have access to several default 
 gulp theme tasks that provide the standard features required to develop and 
@@ -113,19 +117,15 @@ You should see something similar to the output shown below:
     [15:58:07] Starting 'plugin:version'...
     [15:58:07] Finished 'plugin:version' after 2.52 ms
 
-+$$$
-
-**Note:** The `hook` callback function must invoke the `done` argument or return 
-a stream.
-
-$$$
+| **Note:** The `hook` callback function must invoke the `done` argument or return
+| a stream.
 
 Now you know how to hook into and overwrite the default Liferay theme tasks! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating Themes](/develop/tutorials/-/knowledge_base/7-1/creating-themes)
+[Creating Themes](/docs/7-1/tutorials/-/knowledge_base/t/creating-themes)
 
-[Creating Reusable Pieces of Code for Your Themes](/develop/tutorials/-/knowledge_base/7-1/creating-reusable-pieces-of-code-for-your-themes)
+[Creating Reusable Pieces of Code for Your Themes](/docs/7-1/tutorials/-/knowledge_base/t/creating-reusable-pieces-of-code-for-your-themes)
 
-[Using Developer Mode with Themes](/develop/tutorials/-/knowledge_base/7-1/using-developer-mode-with-themes)
+[Using Developer Mode with Themes](/docs/7-1/tutorials/-/knowledge_base/t/using-developer-mode-with-themes)

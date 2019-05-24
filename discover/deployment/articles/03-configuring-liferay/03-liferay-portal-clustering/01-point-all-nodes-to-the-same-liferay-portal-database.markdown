@@ -1,4 +1,8 @@
-# Point all Nodes to the Same @product@ Database [](id=point-all-nodes-to-the-same-database)
+---
+header-id: point-all-nodes-to-the-same-database
+---
+
+# Point all Nodes to the Same @product@ Database
 
 Each node should have a data source that points to one @product@ database
 (or a database cluster) that all the nodes share. This means, of course,
@@ -6,7 +10,7 @@ Each node should have a data source that points to one @product@ database
 shipped with the bundles (but you already knew that, right?). And, of course,
 the database server should be on a separate system from the @product@ server.
 
-## Read-Writer Database Configuration [](id=read-writer-database-configuration)
+## Read-Writer Database Configuration
 
 For even better performance, you can also use a read-writer database
 configuration. This strategy uses two different data sources for reading and

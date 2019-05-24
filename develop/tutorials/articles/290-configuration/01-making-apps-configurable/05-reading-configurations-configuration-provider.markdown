@@ -1,14 +1,18 @@
-# Reading Configuration Values from a Configuration Provider [](id=reading-configuration-values-from-a-configuration-provider)
+---
+header-id: reading-configuration-values-from-a-configuration-provider
+---
+
+# Reading Configuration Values from a Configuration Provider
 
 When an application is deployed, it's common to need different configurations
-[depending on the scope](/develop/tutorials/-/knowledge_base/7-1/scoping-configurations).
+[depending on the scope](/docs/7-1/tutorials/-/knowledge_base/t/scoping-configurations).
 That means having different
 configurations for a given application per virtual instance (a.k.a. Company),
 site (a.k.a. Group), or portlet instance. Achieve this with little effort using
 the Configuration Provider API that is based on the standard OSGi Configuration
 Admin API.
 
-## Using the Configuration Provider [](id=using-the-configuration-provider)
+## Using the Configuration Provider
 
 When using the Configuration Provider, instead of receiving the configuration
 directly, the class that wants to access it must 
@@ -39,14 +43,14 @@ obtain a reference to it:
 
 3.  For Spring beans, it is possible to use the same mechanism as for Service
     Builder services (`@ServiceReference`). Check the documentation on 
-    [how to integrate Spring beans with OSGi services](/develop/tutorials/-/knowledge_base/7-1/invoking-services-from-service-builder-code#referencing-an-osgi-service)
+    [how to integrate Spring beans with OSGi services](/docs/7-1/tutorials/-/knowledge_base/t/invoking-services-from-service-builder-code#referencing-an-osgi-service)
     for more details.
 
 4.  For anything else, call the same methods from the utility class,
     `ConfigurationProviderUtil`. Be sure you call the utility methods in
     contexts where the portal is guaranteed to be initialized prior to the
     method call. This class is useful in the 
-    [scripting console](/discover/portal/-/knowledge_base/7-0/running-scripts-from-the-script-console),
+    [scripting console](/docs/7-0/user/-/knowledge_base/u/running-scripts-from-the-script-console),
     for example. Here's an example method that uses the utility class. It comes
     from the export-import service, which is only called during the import and
     export of content from a running portal:
@@ -98,7 +102,7 @@ Here are a couple real world examples from Liferay's source code:
 Next, you'll learn a nifty way to to access a portlet instance configuration
 from a JSP.
 
-## Accessing the Portlet Instance Configuration Through the PortletDisplay [](id=accessing-the-portlet-instance-configuration-through-the-portletdisplay)
+## Accessing the Portlet Instance Configuration Through the PortletDisplay
 
 Often you must access portlet instance settings from a JSP or from a Java class
 that isn't an OSGi component. To read the settings in these cases, a

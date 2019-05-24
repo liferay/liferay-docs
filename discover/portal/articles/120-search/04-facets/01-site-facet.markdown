@@ -1,4 +1,8 @@
-# Site Facet [](id=site-facet)
+---
+header-id: site-facet
+---
+
+# Site Facet
 
 The Site Facet narrows search results down to those existing in a certain site.
 Each Site with content matching the searched keyword appears as a facet term.
@@ -7,34 +11,30 @@ Each Site with content matching the searched keyword appears as a facet term.
 
 For the Site Facet to display multiple sites, the Search Bar must be configured
 to search *Everything*. See more about search scope
-[here](/discover/portal/-/knowledge_base/7-1/searching-for-assets#configuring-the-search-bar).
+[here](/docs/7-1/user/-/knowledge_base/u/searching-for-assets#configuring-the-search-bar).
 If not searching for Everything, only the current site is searched, and the Site
 Facet has nothing to display. When this occurs, the Site Facet is hidden on the
 page.
 
-+$$$
-
-**Note:** Configuring the globally embedded page-top Search Bar to search for
-Everything not only configures the embedded Search Bar on all pages. It also
-ensures that the Search Page's Search Bar searches Everything, because the
-page-top Search Bar's configuration overrides the Search Page's Search Bar
-configuration. The same does not apply to other Search Bar widgets in the site.
-Each of these must be configured as desired.
-
-If the global Search Bar is disabled, configure the Search Page's Search Bar
-widget to search for Everything.
-
-To configure the search scope,
-
-1.  Open the Search Bar's Options menu
-    (![Options](../../../images/icon-options.png))
-    and click *Configuration*.
-
-2.  Set the Scope option to *Everything*.
-
-3.  Click *Save* and close the pop-up.
-
-$$$
+| **Note:** Configuring the globally embedded page-top Search Bar to search for
+| Everything not only configures the embedded Search Bar on all pages. It also
+| ensures that the Search Page's Search Bar searches Everything, because the
+| page-top Search Bar's configuration overrides the Search Page's Search Bar
+| configuration. The same does not apply to other Search Bar widgets in the site.
+| Each of these must be configured as desired.
+| 
+| If the global Search Bar is disabled, configure the Search Page's Search Bar
+| widget to search for Everything.
+| 
+| To configure the search scope,
+| 
+| 1.  Open the Search Bar's Options menu
+|     (![Options](../../../images/icon-options.png))
+|     and click *Configuration*.
+| 
+| 2.  Set the Scope option to *Everything*.
+| 
+| 3.  Click *Save* and close the pop-up.
 
 The Site Facet contains several configuration options:
 

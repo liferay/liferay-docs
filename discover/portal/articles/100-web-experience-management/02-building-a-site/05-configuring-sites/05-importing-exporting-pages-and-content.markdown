@@ -1,13 +1,17 @@
-# Importing/Exporting Sites and Content [](id=importing-exporting-pages-and-content)
+---
+header-id: importing-exporting-pages-and-content
+---
+
+# Importing/Exporting Sites and Content
 
 Export/Import lets you backup and restore your Site and app data as a LAR
 (Liferay Archive). There are two primary places Export/Import is used: Sites
 and apps. You can learn more about exporting/importing app data in the
-[Exporting/Importing Widget Content](/discover/portal/-/knowledge_base/7-1/exporting-importing-widget-data)
+[Exporting/Importing Widget Content](/docs/7-1/user/-/knowledge_base/u/exporting-importing-widget-data)
 section. In this section, you'll learn how to export and import content for
 Sites.
 
-## Backing Up and Restoring Pages and Their Content [](id=backing-up-and-restoring-pages-and-their-content)
+## Backing Up and Restoring Pages and Their Content
 
 In *Site Administration* &rarr; *Publishing*, you can find the *Export* and 
 *Import* option for pages. If you click on *Export*, you see an interface for
@@ -35,7 +39,7 @@ and move it all to a Site on another server with LARs. You can use LARs to
 import data onto production servers, but you should not make this a regular
 occurrence. If you want to regularly move pages from one server to another, you
 should use @product@'s staging environment. See 
-[Staging Content for Publication](/discover/portal/-/knowledge_base/7-1/staging-content-for-publication).
+[Staging Content for Publication](/docs/7-1/user/-/knowledge_base/u/staging-content-for-publication).
 
 You can export LARs to use them as a backup. If you ever have to restore your
 Site, you must only import the latest LAR file. However, please be careful! If
@@ -52,18 +56,14 @@ the friendly URL and incrementing until there's no collision. Similarly, if
 importing a LAR into a Site causes a category name collision, the imported
 categories are automatically renamed.
 
-+$$$
+| **Note:** LAR files are version dependent. You can't import a LAR file that was
+| exported from one version of Liferay into a Liferay server that's running a
+| different version of Liferay. Also, note that periodically exporting LARs is
+| *not* a complete backup solution; please refer to the
+| [Backing up a Liferay Installation](/docs/7-1/deploy/-/knowledge_base/d/backing-up-a-liferay-installation)
+| section for information on backing up Liferay.
 
-**Note:** LAR files are version dependent. You can't import a LAR file that was
-exported from one version of Liferay into a Liferay server that's running a
-different version of Liferay. Also, note that periodically exporting LARs is
-*not* a complete backup solution; please refer to the
-[Backing up a Liferay Installation](/discover/deployment/-/knowledge_base/7-1/backing-up-a-liferay-installation)
-section for information on backing up Liferay.
-
-$$$
-
-## Page Export Example [](id=page-export-example)
+## Page Export Example
 
 Here's how the export process works: 
 
@@ -104,7 +104,7 @@ Site, you can import this file by clicking the *Import* button from the
 Publishing menu, browsing to it, and selecting it. You can also drag a LAR file
 inside the dotted area, which also executes the import process.
 
-## Export Templates [](id=export-templates)
+## Export Templates
 
 Instead of manually customizing an export process every time you export
 pages/content, you can use an Export Template. This provides you the

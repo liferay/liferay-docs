@@ -1,4 +1,8 @@
-# Look and Feel Configuration [](id=look-and-feel-configuration)
+---
+header-id: look-and-feel-configuration
+---
+
+# Look and Feel Configuration
 
 To access the look and feel configuration menu of any widget,
 
@@ -20,7 +24,7 @@ After making customizations, click *Save* and refresh your page to apply your
 changes. If you don't like the effect of your changes, some tabs have a *Reset*
 button to discard changes.
 
-## General Settings [](id=general-settings)
+## General Settings
 
 On the General tab are the following options:
 
@@ -34,15 +38,11 @@ the default. Be careful about turning widget borders off; some themes assume
 widget borders are turned on and may not display correctly with them turned
 off.
 
-+$$$
-
-**Note:** The *Link Portlet URLs to Page* option has been deprecated in @product-ver@. It can be enabled through system settings in *Control Panel* &rarr; *Configuration* &rarr; *System Settings* &rarr; *Widget Tools* &rarr; Look and Feel Configuration*.
-
-$$$
+| **Note:** The *Link Portlet URLs to Page* option has been deprecated in @product-ver@. It can be enabled through system settings in *Control Panel* &rarr; *Configuration* &rarr; *System Settings* &rarr; *Widget Tools* &rarr; Look and Feel Configuration*.
 
 ![Figure 1: The General tab of the Look and Feel Configuration menu allows you to define a custom widget title, link widget URLs to a specific page, and select the widget contrast option using decorators.](../../../images/look-and-feel-portlet-configuration-menu.png)
 
-## Text Styles [](id=text-styles)
+## Text Styles
 
 *Text Styles* configures the format of the text that appears in the widget. The
 options include
@@ -71,7 +71,7 @@ default.
 **Letter Spacing:** Set from -10 px to 50 px, with 1 px increments. 0 px is the
 default.
 
-## Background Styles [](id=background-styles)
+## Background Styles
 
 The Background Styles tab specifies the widget's background color. When you
 select the text space, you're given a color palette to choose your background
@@ -79,7 +79,7 @@ color or you can manually enter any six digit hex color code.
 
 ![Figure 3: The Background Styles tab lets you specify the widget's background color.](../../../images/look-and-feel-background-styles.png)
 
-## Border Styles [](id=border-styles)
+## Border Styles
 
 The Border Styles tab, configures your widget's border width, style, and color.
 For each of these attributes, leave the *Same for All* selector enabled to apply
@@ -93,7 +93,7 @@ Outset, Ridge, or Solid. For border color, you can enter any six digit hex
 color code, just like for the text color and background color. You can also use
 the color palette.
 
-## Margin and Padding [](id=margin-and-padding)
+## Margin and Padding
 
 The Margin and Padding tab specifies margin and padding lengths for the edges of
 your widget. Just like for border styles, leave the *Same for All* selector
@@ -105,7 +105,7 @@ of the widget.
 For both padding and margin, you can specify any % value, em value, or px
 value.
 
-## Advanced Styling [](id=advanced-styling)
+## Advanced Styling
 
 The Advanced Styling tab displays current information about your widget, 
 including your widget's Liferay ID and CSS classes.

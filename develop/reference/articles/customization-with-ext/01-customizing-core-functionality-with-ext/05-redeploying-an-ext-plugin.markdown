@@ -1,4 +1,8 @@
-# Redeploying an Ext Plugin [](id=redeploying-an-ext-plugin)
+---
+header-id: redeploying-an-ext-plugin
+---
+
+# Redeploying an Ext Plugin
 
 After editing an Ext plugin, you must follow a slightly different process to
 redeploy your Ext plugin. This section assumes you're redeploying an Ext plugin

@@ -1,7 +1,11 @@
-# Disabling Cache for Table Mapper Tables [](id=disabling-cache-for-table-mapper-tables)
+---
+header-id: disabling-cache-for-table-mapper-tables
+---
+
+# Disabling Cache for Table Mapper Tables
 
 Service Builder creates 
-[relational mappings between entities](/develop/tutorials/-/knowledge_base/7-1/defining-relationships-between-service-entities).
+[relational mappings between entities](/docs/7-1/tutorials/-/knowledge_base/t/defining-relationships-between-service-entities).
 It uses mapping tables to associate the entities. In your `service.xml` file,
 both entities have a `mapping-table` column attribute of the format
 `mapping-table="table1_table2"`. For example, a `service.xml` that maps
@@ -22,7 +26,7 @@ By default, a table mapper cache is associated with each mapping table. The
 cache optimizes object retrieval. In some cases, however, it's best to disable a
 table mapper cache. 
 
-## Why would I want to disable cache on a table mapper? [](id=why-would-i-want-to-disable-cache-on-a-table-mapper)
+## Why would I want to disable cache on a table mapper?
 
 Super-large entity tables can result in a memory-hogging table mapper cache. For
 this reason, consider disabling cache on a table mapper. 
@@ -62,13 +66,13 @@ associated table mapper caches. If they're published at the same time getter
 methods are retrieving objects from the `AssetEntries_AssetCategories` mapping
 table, transaction rollbacks occur. 
 
-## Disabling a Table Mapper Cache [](id=disabling-a-table-mapper-cache)
+## Disabling a Table Mapper Cache
 
 Adding a mapping table name to the `table.mapper.cacheless.mapping.table.names`
 Portal property disables the associated table mapper cache.
 
 1.  In your
-    [`[Liferay_Home]/portal-ext.properties` file](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home), 
+    [`[Liferay_Home]/portal-ext.properties` file](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home), 
     add the current `table.mapper.cacheless.mapping.table.names` property
     setting. The setting is in your @product@ installation's
     `portal-impl.jar/portal.properties` file.

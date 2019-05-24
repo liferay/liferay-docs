@@ -1,4 +1,8 @@
-# Upgrade Processes for Former Service Builder Plugins [](id=upgrade-processes-for-former-service-builder-plugins)
+---
+header-id: upgrade-processes-for-former-service-builder-plugins
+---
+
+# Upgrade Processes for Former Service Builder Plugins
 
 If you modularized a traditional Liferay plugin application that implements
 Service Builder services, your new modular application must register itself in
@@ -182,8 +186,8 @@ The Bundle Activator uses one of the following values to initialize the
 
 You've set your service module's data upgrade process.  
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating Data Upgrade Processes for Modules](/develop/tutorials/-/knowledge_base/7-1/creating-an-upgrade-process-for-your-app)
+[Creating Data Upgrade Processes for Modules](/docs/7-1/tutorials/-/knowledge_base/t/creating-an-upgrade-process-for-your-app)
 
-[Upgrading Plugins to Liferay 7](/develop/tutorials/-/knowledge_base/7-1/upgrading-plugins-to-liferay-7)
+[Upgrading Plugins to Liferay 7](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-plugins-to-liferay-7)

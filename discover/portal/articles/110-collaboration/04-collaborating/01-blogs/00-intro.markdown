@@ -1,4 +1,8 @@
-# Publishing Blogs [](id=publishing-blogs)
+---
+header-id: publishing-blogs
+---
+
+# Publishing Blogs
 
 The Blogs app's editor has a complete set of WYSIWYG controls that appear when 
 and where you need them. You can also switch to source mode to edit your 

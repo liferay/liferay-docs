@@ -1,15 +1,15 @@
-# Using the Clay Taglib in Your portlets [](id=using-the-clay-taglib-in-your-portlets)
+---
+header-id: using-the-clay-taglib-in-your-portlets
+---
+
+# Using the Clay Taglib in Your portlets
 
 The Liferay Clay tag library provides a set of tags for creating 
 [Clay](https://claycss.com/docs/clay/) 
 UI components in your app. 
 
-+$$$
-
-**Note:** AUI taglibs are deprecated as of @product-ver@. We recommend that you 
-use Clay taglibs to avoid future compatibility issues. 
-
-$$$
+| **Note:** AUI taglibs are deprecated as of @product-ver@. We recommend that you
+| use Clay taglibs to avoid future compatibility issues.
 
 To use the Clay taglib in your apps, add the following declaration to your JSP:
 
@@ -22,18 +22,18 @@ templates and web content templates. Follow this syntax:
 
 Clay taglibs provide the following UI components for your apps:
 
-- [Alerts](/develop/tutorials/-/knowledge_base/7-1/clay-alerts)
-- [Badges](/develop/tutorials/-/knowledge_base/7-1/clay-badges)
-- [Buttons](/develop/tutorials/-/knowledge_base/7-1/clay-buttons)
-- [Cards](/develop/tutorials/-/knowledge_base/7-1/clay-cards)
-- [Dropdown Menus and Action Menus](/develop/tutorials/-/knowledge_base/7-1/clay-dropdown-menus-and-action-menus)
-- [Form Elements](/develop/tutorials/-/knowledge_base/7-1/clay-form-elements)
-- [Icons](/develop/tutorials/-/knowledge_base/7-1/clay-icons)
-- [Labels and links](/develop/tutorials/-/knowledge_base/7-1/clay-labels-and-links)
-- [Management Toolbar](/develop/tutorials/-/knowledge_base/7-1/clay-management-toolbar)
-- [Navigation Bars](/develop/tutorials/-/knowledge_base/7-1/clay-navigation-bars)
-- [Progress Bars](/develop/tutorials/-/knowledge_base/7-1/clay-progress-bars)
-- [Stickers](/develop/tutorials/-/knowledge_base/7-1/clay-stickers)
+- [Alerts](/docs/7-1/tutorials/-/knowledge_base/t/clay-alerts)
+- [Badges](/docs/7-1/tutorials/-/knowledge_base/t/clay-badges)
+- [Buttons](/docs/7-1/tutorials/-/knowledge_base/t/clay-buttons)
+- [Cards](/docs/7-1/tutorials/-/knowledge_base/t/clay-cards)
+- [Dropdown Menus and Action Menus](/docs/7-1/tutorials/-/knowledge_base/t/clay-dropdown-menus-and-action-menus)
+- [Form Elements](/docs/7-1/tutorials/-/knowledge_base/t/clay-form-elements)
+- [Icons](/docs/7-1/tutorials/-/knowledge_base/t/clay-icons)
+- [Labels and links](/docs/7-1/tutorials/-/knowledge_base/t/clay-labels-and-links)
+- [Management Toolbar](/docs/7-1/tutorials/-/knowledge_base/t/clay-management-toolbar)
+- [Navigation Bars](/docs/7-1/tutorials/-/knowledge_base/t/clay-navigation-bars)
+- [Progress Bars](/docs/7-1/tutorials/-/knowledge_base/t/clay-progress-bars)
+- [Stickers](/docs/7-1/tutorials/-/knowledge_base/t/clay-stickers)
 
 The tutorials in this section cover how to create these components with the Clay 
 taglibs. Each tutorial contains a set of clay component examples along with a 

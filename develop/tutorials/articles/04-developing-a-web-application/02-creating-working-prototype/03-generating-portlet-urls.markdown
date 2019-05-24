@@ -1,4 +1,8 @@
-# Generating Portlet URLs [](id=generating-portlet-urls)
+---
+header-id: generating-portlet-urls
+---
+
+# Generating Portlet URLs
 
 <div class="learn-path-step">
     <p>Developing Your First Portlet<br>Step 3 of 8</p>
@@ -55,7 +59,7 @@ URL parameter to append to the URL. In this example, a URL parameter named
 Note that your `GuestbookPortlet` class (located in your `guestbook-web` 
 module's `com.liferay.docs.guestbook.portlet` package) extends Liferay's 
 `MVCPortlet` class. In a 
-[Liferay MVC portlet](/develop/tutorials/-/knowledge_base/7-1/liferay-mvc-portlet), 
+[Liferay MVC portlet](/docs/7-1/tutorials/-/knowledge_base/t/liferay-mvc-portlet), 
 the `mvcPath` URL parameter indicates a page within your portlet. To navigate to 
 another page in your portlet, use a portal URL with the parameter `mvcPath` to 
 link to the specific page. 

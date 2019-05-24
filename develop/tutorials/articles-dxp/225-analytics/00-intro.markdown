@@ -1,4 +1,8 @@
-# Tracking Custom Assets [](id=tracking-custom-assets)
+---
+header-id: tracking-custom-assets
+---
+
+# Tracking Custom Assets
 
 [Liferay Analytics Cloud](https://help.liferay.com/hc/en-us/categories/360000608871-Liferay-Analytics-Cloud-Admin-Guide) 
 can detect and analyze built-in Liferay DXP assets like Forms, Blogs, Documents 
@@ -6,7 +10,7 @@ and Media, and Web Content. To analyze assets in your custom app, however, you
 must tag your app's HTML so the Analytics Cloud JavaScript plugin can detect and 
 track user interaction with your assets. 
 
-## Asset Events [](id=asset-events)
+## Asset Events
 
 The Analytics Cloud JavaScript plugin contains the following events that you can 
 track: 
@@ -25,7 +29,7 @@ user scrolled).
 `AssetSubmitted`: Form submission in the asset area. This requires an input 
 type of `submit` to be placed under an HTML `form` element. 
 
-## Required Metadata [](id=required-metadata)
+## Required Metadata
 
 You must have the following information to enable tracking for a custom entity. 
 You must specify this information in HTML via the attributes listed: 
@@ -45,7 +49,7 @@ name (e.g., "polls"). Note that within a category, all asset IDs must be unique.
 **Asset Title (String, Optional):** The asset's title. The HTML attribute for 
 this is `data-analytics-asset-title`. 
 
-## Tracking Asset Events [](id=tracking-asset-events)
+## Tracking Asset Events
 
 For example, if you want to track a poll in a custom Polls app, you might use
 HTML like this: 
@@ -81,7 +85,7 @@ Note that you must add these attributes to each individual asset that you want
 Analytics Cloud to track. However, you can populate the attributes' values via a 
 script, therefore automating this process for each asset. 
 
-### Tracking Downloads [](id=tracking-downloads)
+### Tracking Downloads
 
 To track downloads, you must tag the element that triggers the action with this 
 attribute:
@@ -102,8 +106,8 @@ contains the poll's instructions:
     ...
     </div>
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Asset Framework](/develop/tutorials/-/knowledge_base/7-1/asset-framework)
+[Asset Framework](/docs/7-1/tutorials/-/knowledge_base/t/asset-framework)
 
 [Liferay Analytics Cloud Admin Guide](https://help.liferay.com/hc/en-us/categories/360000608871-Liferay-Analytics-Cloud-Admin-Guide)

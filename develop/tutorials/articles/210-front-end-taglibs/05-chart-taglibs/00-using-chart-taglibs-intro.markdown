@@ -1,4 +1,8 @@
-# Using the Chart Taglib in Your Portlets [](id=using-the-chart-taglib-in-your-portlets)
+---
+header-id: using-the-chart-taglib-in-your-portlets
+---
+
+# Using the Chart Taglib in Your Portlets
 
 Lines, splines, bars, pies and more, the Chart tag Library provides everything 
 you need to model data. Each taglib gives you access to the corresponding 

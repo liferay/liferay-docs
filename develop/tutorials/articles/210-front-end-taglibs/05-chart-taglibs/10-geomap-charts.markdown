@@ -1,4 +1,8 @@
-# Geomap Charts [](id=geomap-charts)
+---
+header-id: geomap-charts
+---
+
+# Geomap Charts
 
 A Geomap Chart lets you visualize data based on geography, given a specified 
 color range---a lighter color representing a lower rank and a darker a higher 
@@ -94,10 +98,10 @@ these steps:
 
 ![Figure 2: Geomap charts can be customized to fit the look and feel you desire.](../../../images/chart-taglib-geomap-custom.png)
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Bar Charts](/develop/tutorials/-/knowledge_base/7-1/bar-charts)
+[Bar Charts](/docs/7-1/tutorials/-/knowledge_base/t/bar-charts)
 
-[Gauge Charts](/develop/tutorials/-/knowledge_base/7-1/gauge-charts)
+[Gauge Charts](/docs/7-1/tutorials/-/knowledge_base/t/gauge-charts)
 
-[Geomap Charts](/develop/tutorials/-/knowledge_base/7-1/geomap-charts)
+[Geomap Charts](/docs/7-1/tutorials/-/knowledge_base/t/geomap-charts)

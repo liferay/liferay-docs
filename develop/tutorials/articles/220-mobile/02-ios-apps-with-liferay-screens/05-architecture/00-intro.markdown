@@ -1,4 +1,8 @@
-# Architecture of Liferay Screens for iOS [](id=architecture-of-liferay-screens-for-ios)
+---
+header-id: architecture-of-liferay-screens-for-ios
+---
+
+# Architecture of Liferay Screens for iOS
 
 Liferay Screens separates its presentation and business-logic code using ideas 
 from

@@ -1,10 +1,14 @@
-# Packaging Independent UI Resources for Your Site [](id=packaging-independent-ui-resources-for-your-site)
+---
+header-id: packaging-independent-ui-resources-for-your-site
+---
+
+# Packaging Independent UI Resources for Your Site
 
 If you want to package UI resources independent of a specific theme and
 include them on a @product@ page, Theme Contributors are your best option. If,
 instead, you'd like to include separate UI resources on a @product@ page that
 are attached to a theme, you should look into
-[themelets](/develop/tutorials/-/knowledge_base/7-1/creating-reusable-pieces-of-code-for-your-themes).
+[themelets](/docs/7-1/tutorials/-/knowledge_base/t/creating-reusable-pieces-of-code-for-your-themes).
 
 A Theme Contributor is a
 [module](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Module)
@@ -20,7 +24,7 @@ This tutorial demonstrates how to
 
 Next, you'll learn how to create a Theme Contributor.
 
-## Creating Theme Contributors [](id=creating-theme-contributors)
+## Creating Theme Contributors
 
 The standard UI for User menus and navigation are packaged as Theme Contributors.
 For example, the Control Menu, Product Menu, and Simulation Panel are packaged
@@ -36,9 +40,9 @@ new UI components to @product@ by creating a Theme Contributor.
 To create a Theme Contributor module, follow these steps:
 
 1.  Create a generic OSGi module using your favorite third party tool, or use
-    [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli). You can also
+    [Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/blade-cli). You can also
     use the 
-    [Blade Template](/develop/reference/-/knowledge_base/7-1/theme-contributor-template)
+    [Blade Template](/docs/7-1/reference/-/knowledge_base/r/theme-contributor-template)
     to create your module, in which case you can skip step 2.
 
 2.  To identify your module as a Theme Contributor, add the
@@ -79,12 +83,12 @@ That's all you need to do to create a Theme Contributor for your site. Remember,
 with great power comes great responsibility, so use Theme Contributors wisely.
 The UI contributions affect every page and aren't affected by theme deployments.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating Themes](/develop/tutorials/-/knowledge_base/7-1/creating-themes)
+[Creating Themes](/docs/7-1/tutorials/-/knowledge_base/t/creating-themes)
 
-[Themelets](/develop/tutorials/-/knowledge_base/7-1/creating-reusable-pieces-of-code-for-your-themes)
+[Themelets](/docs/7-1/tutorials/-/knowledge_base/t/creating-reusable-pieces-of-code-for-your-themes)
 
-[Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/7-1/importing-resources-with-a-theme)
+[Importing Resources with Your Themes](/docs/7-1/tutorials/-/knowledge_base/t/importing-resources-with-a-theme)
 
-[Theme Contributor Template](/develop/reference/-/knowledge_base/7-1/theme-contributor-template)
+[Theme Contributor Template](/docs/7-1/reference/-/knowledge_base/r/theme-contributor-template)

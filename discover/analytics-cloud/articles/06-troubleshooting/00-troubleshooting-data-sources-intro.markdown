@@ -1,10 +1,14 @@
-# Troubleshooting Liferay DXP Data Sources [](id=troubleshooting-liferay-dxp-data-sources)
+---
+header-id: troubleshooting-liferay-dxp-data-sources
+---
+
+# Troubleshooting Liferay DXP Data Sources
 
 Misconfigured environments or data sources can prevent or disrupt access to
 Liferay DXP (DXP) data sources. Here's how to troubleshoot DXP data source
 issues.
 
-## Retry Authorization [](id=retry-authorization)
+## Retry Authorization
 
 **Error Message:** `Unknown error. Please retry authorization.`
 
@@ -20,7 +24,7 @@ and that your Analytics Cloud instance be registered with the DXP instance as an
 
 2.  [Register Analytics Cloud with your DXP instance](https://github.com/liferay/liferay-docs/blob/7.1.x/discover/analytics-cloud/articles/02-getting-started/02-adding-a-liferay-dxp-data-source.markdown#step-2-register-analytics-cloud-with-your-liferay-dxp-instance).
 
-## Unsupported Version [](id=unsupported-version)
+## Unsupported Version
 
 **Error Message:** `Unsupported version. This method of connection does not 
 support the data source Liferay version. Make sure you are connecting to Liferay
@@ -40,7 +44,7 @@ support the data source Liferay version. Make sure you are connecting to Liferay
     `portal-ext.properties` file), delete the setting or set the property value
     to `true`. 
 
-### Invalid Credentials; the Authorization Expired [](id=invalid-credentials-the-authorization-expired)
+### Invalid Credentials; the Authorization Expired
 
 **Error Message:** `Invalid Credentials. The authorization for this data source 
 has expired. Please reauthorize the token in the OAuth tab.`

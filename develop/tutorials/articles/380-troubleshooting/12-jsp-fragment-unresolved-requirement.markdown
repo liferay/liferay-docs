@@ -1,4 +1,8 @@
-# Why doesn't the package I use from the fragment host resolve? [](id=why-is-a-package-i-use-from-the-fragment-host-unresolved)
+---
+header-id: why-is-a-package-i-use-from-the-fragment-host-unresolved
+---
+
+# Why doesn't the package I use from the fragment host resolve?
 
 An OSGi fragment can access all of the fragment host's packages---it 
 doesn't need to import them from another bundle. bnd adds external packages the

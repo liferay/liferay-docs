@@ -1,4 +1,8 @@
-# Targeted Vocabularies [](id=targeted-vocabularies)
+---
+header-id: targeted-vocabularies
+---
+
+# Targeted Vocabularies
 
 You can decide which vocabularies can be applied to an asset type and which
 vocabularies are required for an asset type with Targeted Vocabularies. To
@@ -14,7 +18,7 @@ of the vocabulary to specific assets. In the screenshot above, notice that the
 vocabulary is configured to be available for Web Content articles and Blog
 entries, but it is not required. It is mandatory, however, for Bookmark entries.
 
-## Single and Multi-valued Vocabularies [](id=single-and-multi-valued-vocabularies)
+## Single and Multi-valued Vocabularies
 
 You can also decide if users can choose one or more categories from the same
 vocabulary to apply to an asset. If a vocabulary is single-valued you can only
@@ -28,7 +32,7 @@ through the Categories application. Edit a vocabulary and deselect the *Allow
 Multiple Categories* selector to create a single-valued vocabulary. Use the
 default option to create a multi-valued vocabulary.
 
-## Separated Entries [](id=separated-widgets)
+## Separated Entries
 
 A third feature of vocabularies and categories is that every vocabulary has its
 own separated entry. These entries appear in the Categorization section of the

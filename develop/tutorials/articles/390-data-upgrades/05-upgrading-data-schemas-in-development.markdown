@@ -1,24 +1,24 @@
-# Upgrading Data Schemas in Development [](id=upgrading-data-schemas-in-development)
+---
+header-id: upgrading-data-schemas-in-development
+---
+
+# Upgrading Data Schemas in Development
 
 As you develop modules, you might need to iterate through several database 
 schema changes. Before you release new module versions with your finalized
 schema changes, you must create a formal 
-[data upgrade process](/develop/tutorials/-/knowledge_base/7-1/creating-an-upgrade-process-for-your-app). 
+[data upgrade process](/docs/7-1/tutorials/-/knowledge_base/t/creating-an-upgrade-process-for-your-app). 
 Until then, you can use the Build Auto Upgrade feature to test schema changes on 
 the fly. 
 
-+$$$
-
-**Note**: In Liferay Portal 6.x Service Builder portlets, the 
-`build.auto.upgrade` property in `service.properties` applies Liferay Service 
-schema changes upon rebuilding services and redeploying the portlets. As of 
-@product-ver@, this property is deprecated. 
-
-The Build Auto Upgrade feature is now in a global property
-`schema.module.build.auto.upgrade` in the file
-`[Liferay_Home]/portal-developer.properties`. 
-
-$$$
+| **Note**: In Liferay Portal 6.x Service Builder portlets, the
+| `build.auto.upgrade` property in `service.properties` applies Liferay Service
+| schema changes upon rebuilding services and redeploying the portlets. As of
+| @product-ver@, this property is deprecated.
+| 
+| The Build Auto Upgrade feature is now in a global property
+| `schema.module.build.auto.upgrade` in the file
+| `[Liferay_Home]/portal-developer.properties`.
 
 Setting the global property `schema.module.build.auto.upgrade` to `true` applies 
 module schema changes for redeployed modules whose service build numbers have 
@@ -30,19 +30,15 @@ deleted and renamed tables.
 
 Although Build Auto Upgrade updates databases quickly and automatically, it
 doesn't guarantee a proper data upgrade--you implement that via 
-[data upgrade processes](/develop/tutorials/-/knowledge_base/7-1/creating-an-upgrade-process-for-your-app).
+[data upgrade processes](/docs/7-1/tutorials/-/knowledge_base/t/creating-an-upgrade-process-for-your-app).
 Build Auto Upgrade is for development purposes only. 
 
-+$$$
-
-**WARNING**: DO NOT USE the Build Auto Upgrade feature in production. @product@ 
-DOES NOT support Build Auto Upgrade in production. Build Auto Upgrade is for 
-development purposes only. Enabling it in production can result in data loss and 
-improper data upgrade. In production environments, leave the property 
-`schema.module.build.auto.upgrade` in `portal-developer.properties` set to 
-`false`. 
-
-$$$
+| **WARNING**: DO NOT USE the Build Auto Upgrade feature in production. @product@
+| DOES NOT support Build Auto Upgrade in production. Build Auto Upgrade is for
+| development purposes only. Enabling it in production can result in data loss and
+| improper data upgrade. In production environments, leave the property
+| `schema.module.build.auto.upgrade` in `portal-developer.properties` set to
+| `false`.
 
 By default, `schema.module.build.auto.upgrade` is set to `false`. On any 
 module's first deployment, the module's tables are generated regardless of the 
@@ -59,6 +55,6 @@ Create or rename a table in @product@'s built-in data source. | Orphan the exist
 
 Great! Now you know how to use the Build Auto Upgrade developer feature. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating Data Upgrade Process for Modules](/develop/tutorials/-/knowledge_base/7-1/creating-an-upgrade-process-for-your-app)
+[Creating Data Upgrade Process for Modules](/docs/7-1/tutorials/-/knowledge_base/t/creating-an-upgrade-process-for-your-app)

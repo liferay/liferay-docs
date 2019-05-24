@@ -1,29 +1,25 @@
-# Deploying Your Theme [](id=deploying-your-theme)
+---
+header-id: deploying-your-theme
+---
+
+# Deploying Your Theme
 
 To deploy your theme to your app server, run the `gulp deploy` task. The `gulp 
 deploy` task 
-[builds your theme's files](/develop/tutorials/-/knowledge_base/7-1/building-your-themes-files), 
+[builds your theme's files](/docs/7-1/tutorials/-/knowledge_base/t/building-your-themes-files), 
 and deploys the generated WAR file to the 
-[app server you configured](/develop/tutorials/-/knowledge_base/7-1/configuring-your-themes-app-server) 
+[app server you configured](/docs/7-1/tutorials/-/knowledge_base/t/configuring-your-themes-app-server) 
 when you 
-[created the theme](/develop/tutorials/-/knowledge_base/7-1/creating-themes).
+[created the theme](/docs/7-1/tutorials/-/knowledge_base/t/creating-themes).
 
-+$$$
+| **Note:** If you're running the
+| [Felix Gogo shell](/docs/7-0/reference/-/knowledge_base/r/using-the-felix-gogo-shell),
+| you can also deploy your theme using the `gulp deploy:gogo` command.
 
-**Note:** If you're running the 
-[Felix Gogo shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell), 
-you can also deploy your theme using the `gulp deploy:gogo` command.
-
-$$$
-
-+$$$
-
-**Note:** Gulp is included as a local dependency in generated themes, so you 
-are not required to install it. It can be accessed by running 
-`node_modules\.bin\gulp` followed by the Gulp task from a generated theme's 
-root folder.
-
-$$$
+| **Note:** Gulp is included as a local dependency in generated themes, so you
+| are not required to install it. It can be accessed by running
+| `node_modules\.bin\gulp` followed by the Gulp task from a generated theme's
+| root folder.
 
 Follow these steps to deploy your theme:
 
@@ -41,10 +37,10 @@ Follow these steps to deploy your theme:
 
     ![Figure 3: Run the `gulp deploy` task to build your theme's files and deploy it to your app server.](../../../../images/theme-dev-deploying-themes-install-theme.png)
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Automatically Deploying Theme Changes](/develop/tutorials/-/knowledge_base/7-1/automatically-deploying-theme-changes)
+[Automatically Deploying Theme Changes](/docs/7-1/tutorials/-/knowledge_base/t/automatically-deploying-theme-changes)
 
-[Copying an Existing Theme's Files](/develop/tutorials/-/knowledge_base/7-1/copying-an-existing-themes-files)
+[Copying an Existing Theme's Files](/docs/7-1/tutorials/-/knowledge_base/t/copying-an-existing-themes-files)
 
-[Creating Reusable Pieces of Code for Your Themes](/develop/tutorials/-/knowledge_base/7-1/creating-reusable-pieces-of-code-for-your-themes)
+[Creating Reusable Pieces of Code for Your Themes](/docs/7-1/tutorials/-/knowledge_base/t/creating-reusable-pieces-of-code-for-your-themes)

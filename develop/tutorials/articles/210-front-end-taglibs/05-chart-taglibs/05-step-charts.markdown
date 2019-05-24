@@ -1,4 +1,8 @@
-# Step Charts [](id=step-charts)
+---
+header-id: step-charts
+---
+
+# Step Charts
 
 Step charts contain multiple sets of data. A step chart steps between the points 
 of data, resembling steps. Each data series 
@@ -45,10 +49,10 @@ the area covered by a step graph.
     
 ![Figure 2: An area step chart highlights the area covered by a step graph.](../../../images/chart-taglib-area-step.png)
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Line Charts](/develop/tutorials/-/knowledge_base/7-1/line-charts)
+[Line Charts](/docs/7-1/tutorials/-/knowledge_base/t/line-charts)
 
-[Scatter Charts](/develop/tutorials/-/knowledge_base/7-1/scatter-charts)
+[Scatter Charts](/docs/7-1/tutorials/-/knowledge_base/t/scatter-charts)
 
-[Spline Charts](/develop/tutorials/-/knowledge_base/7-1/spline-charts)
+[Spline Charts](/docs/7-1/tutorials/-/knowledge_base/t/spline-charts)

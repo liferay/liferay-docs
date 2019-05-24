@@ -1,4 +1,8 @@
-# Creating the Interactor [](id=creating-the-interactor)
+---
+header-id: creating-the-interactor
+---
+
+# Creating the Interactor
 
 A Screenlet's Interactor makes the service call to retrieve the data you need 
 from a Liferay instance. An Interactor is made up of several components: 
@@ -20,7 +24,7 @@ from a Liferay instance. An Interactor is made up of several components:
 
 2. The listener interface. This defines the methods the app developer needs to 
    respond to the Screenlet's behavior. For example, 
-   [Login Screenlet's listener](/develop/reference/-/knowledge_base/7-1/loginscreenlet-for-android#listener) 
+   [Login Screenlet's listener](/docs/7-1/reference/-/knowledge_base/r/loginscreenlet-for-android#listener) 
    defines the `onLoginSuccess` and `onLoginFailure` methods. Screens calls 
    these methods when login succeeds or fails, respectively. By implementing 
    these methods in the activity or fragment class that contains the Screenlet, 
@@ -42,7 +46,7 @@ from a Liferay instance. An Interactor is made up of several components:
    Interactor class send the server call's results to any classes that implement 
    the listener. In the implementation of the method that makes the server call, 
    the `execute` method, you must 
-   [use the Mobile SDK to make an asynchronous service call](/develop/tutorials/-/knowledge_base/7-1/invoking-services-asynchronously-from-your-android-app). 
+   [use the Mobile SDK to make an asynchronous service call](/docs/7-1/tutorials/-/knowledge_base/t/invoking-services-asynchronously-from-your-android-app). 
    This means you must get a session and then make the server call. You make the 
    server call by creating an instance of the Mobile SDK service (e.g., 
    `BookmarksEntryService`) that can call the Liferay service you need and then 
@@ -118,12 +122,12 @@ from a Liferay instance. An Interactor is made up of several components:
 Sweetness! Your Screenlet's Interactor is done. Next, you'll create the 
 Screenlet class. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating the UI](/develop/tutorials/-/knowledge_base/7-1/creating-the-ui)
+[Creating the UI](/docs/7-1/tutorials/-/knowledge_base/t/creating-the-ui)
 
-[Defining the Attributes](/develop/tutorials/-/knowledge_base/7-1/defining-the-attributes)
+[Defining the Attributes](/docs/7-1/tutorials/-/knowledge_base/t/defining-the-attributes)
 
-[Creating the Screenlet Class](/develop/tutorials/-/knowledge_base/7-1/creating-the-screenlet-class)
+[Creating the Screenlet Class](/docs/7-1/tutorials/-/knowledge_base/t/creating-the-screenlet-class)
 
-[Packaging Your Screenlets](/develop/tutorials/-/knowledge_base/7-1/packaging-your-screenlets)
+[Packaging Your Screenlets](/docs/7-1/tutorials/-/knowledge_base/t/packaging-your-screenlets)

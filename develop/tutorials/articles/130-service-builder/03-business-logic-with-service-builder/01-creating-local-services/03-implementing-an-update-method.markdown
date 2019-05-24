@@ -1,7 +1,11 @@
-# Implementing update and delete Methods [](id=implementing-update-and-delete-methods)
+---
+header-id: implementing-update-and-delete-methods
+---
+
+# Implementing update and delete Methods
 
 After you've implementing an
-[`add*` method](/develop/tutorials/-/knowledge_base/7-1/implementing-an-add-method) for 
+[`add*` method](/docs/7-1/tutorials/-/knowledge_base/t/implementing-an-add-method) for 
 creating service entities, you'll want to create
 [`update*`](#implementing-an-update-method)
 and
@@ -10,10 +14,10 @@ methods for updating and deleting them. They're easy to implement. The main
 difference between them and the `add*` method is they must know which entity
 they're updating or deleting. 
 
-## Implementing an update method [](id=implementing-an-update-method)
+## Implementing an update method
 
 An `update*` method for a local service resembles an
-[`add*` method](/develop/tutorials/-/knowledge_base/7-1/implementing-an-add-method)
+[`add*` method](/docs/7-1/tutorials/-/knowledge_base/t/implementing-an-add-method)
 most because it has parameters for setting entity attribute values. Create an
 `update*` method this way:
 
@@ -75,7 +79,7 @@ This method has all the makings of a good `update*` method:
 Refer to the example method above as you follow the steps to create your own
 `update*` method. 
 
-### Step 1: Declare an update method with parameters for updating the entity [](id=declare-an-update-method-with-parameters-for-updating-the-entity)
+### Step 1: Declare an update method with parameters for updating the entity
 
 Create a public method for updating your application's entity. 
 
@@ -101,16 +105,16 @@ entity instance. Also it has parameters `folderId`, `name`, `url`, and
 Note, user ID, group ID, and service context parameters are useful for
 integrating with Liferay's services. More on that later. 
 
-### Step 2: Validate the parameters [](id=validate-the-parameters)
+### Step 2: Validate the parameters
 
 Similar to validating the
-[`add*` method](/develop/tutorials/-/knowledge_base/7-1/implementing-an-add-method)
+[`add*` method](/docs/7-1/tutorials/-/knowledge_base/t/implementing-an-add-method)
 parameters, validate your `update*` parameters. Your `add*` and `update*`
 methods might be able to use the same validation code. Throw a 
 [`PortalException`](@platform-ref@/javadocs/portal-kernel/com/liferay/portal/kernel/exception/PortalException.html)
 or an extension of `PortalException` for any invalid parameters. 
 
-### Step 3: Retrieve the entity instance [](id=retrieve-the-entity-instance)
+### Step 3: Retrieve the entity instance
 
 If you're passing in an entity instance, you can update it directly. Otherwise,
 pass in the entity ID (the primary key).  The `*Persistence` class Service
@@ -128,11 +132,11 @@ retrieve the entity instance that matches your primary key parameter.
 
 It's time to update the entity attributes. 
 
-### Step 4: Update the entity attributes [](id=update-the-entity-attributes)
+### Step 4: Update the entity attributes
 
 Invoke the entity's setter methods to replace its attribute values. 
 
-### Step 5: Persist and return the updated entity instance [](id=persist-and-return-the-updated-entity)
+### Step 5: Persist and return the updated entity instance
 
 Persist the updated entity to the database and return the instance to the
 caller. 
@@ -143,7 +147,7 @@ caller.
 
     return entity;
 
-### Step 6: Run Service Builder [](id=run-service-builder)
+### Step 6: Run Service Builder
 
 Finally, run Service Builder to propagate your new service method to the
 `*LocalService` interface. 
@@ -151,7 +155,7 @@ Finally, run Service Builder to propagate your new service method to the
 You've created a service method to update your entity. If you thought that was
 easy, implementing a `delete*` method is even easier. 
 
-## Implementing a delete method [](id=implementing-a-delete-method)
+## Implementing a delete method
 
 The `remove` method of an entity's `*Persistence` class deletes an entity
 instance from the database. Use it in your local service's `delete*` method.
@@ -185,9 +189,9 @@ For example, here's paraphrased code from
 After implementing your `delete*` method, run Service Builder to propagate your
 new service method to the `*LocalService` interface. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Implementing an add method](/develop/tutorials/-/knowledge_base/7-1/implementing-an-add-method)
+[Implementing an add method](/docs/7-1/tutorials/-/knowledge_base/t/implementing-an-add-method)
 
 Implementing getter and counter methods 
 

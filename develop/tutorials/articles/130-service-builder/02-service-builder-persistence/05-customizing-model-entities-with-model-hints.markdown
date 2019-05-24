@@ -1,4 +1,8 @@
-# Customizing Model Entities With Model Hints [](id=customizing-model-entities-with-model-hints)
+---
+header-id: customizing-model-entities-with-model-hints
+---
+
+# Customizing Model Entities With Model Hints
 
 Once you've used Service Builder to define model entities, you may want to
 further refine how users enter that data. For example, model hints can define a
@@ -7,7 +11,7 @@ a single place to specify entity data restrictions and other formatting.
 
 You define model hints in a file called `portlet-model-hints.xml`. If your
 project has an API module and a service module like the 
-[Service Builder project template](/develop/reference/-/knowledge_base/7-1/using-the-service-builder-template),
+[Service Builder project template](/docs/7-1/reference/-/knowledge_base/r/using-the-service-builder-template),
 `portlet-model-hints.xml` goes in the service module's
 `src/main/resources/META-INF` folder. For example, in Liferay's Bookmarks
 application, the `portlet-model-hints.xml` file is in the
@@ -22,16 +26,12 @@ Model hints define two things:
 As Liferay renders your form fields, it customizes the form's input fields based
 your configuration. 
 
-+$$$
-
-**Note:** Service Builder generates a number of XML configuration files in your
-service module's `src/main/resources/META-INF` folder. Service Builder uses
-most of these files to manage Spring and Hibernate configurations. Don't modify
-the Spring or Hibernate configuration files; changes to them are overwritten
-when Service Builder runs. You can, however, safely edit the
-`portlet-model-hints.xml` file.
-
-$$$
+| **Note:** Service Builder generates a number of XML configuration files in your
+| service module's `src/main/resources/META-INF` folder. Service Builder uses
+| most of these files to manage Spring and Hibernate configurations. Don't modify
+| the Spring or Hibernate configuration files; changes to them are overwritten
+| when Service Builder runs. You can, however, safely edit the
+| `portlet-model-hints.xml` file.
 
 As an example, consider the
 [Bookmarks app service module's](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.bookmarks.service/)
@@ -95,9 +95,9 @@ pixels, you could nest a `hint` element named `display-width` and give it
 a value of `50`. 
 
 To see the effect of a hint on a field,
-[run Service Builder](/develop/tutorials/-/knowledge_base/7-1/running-service-builder)
+[run Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/running-service-builder)
 again and
-[redeploy your module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#building-and-deploying-a-module).
+[redeploy your module](/docs/7-1/tutorials/-/knowledge_base/t/starting-module-development#building-and-deploying-a-module).
 Note that changing `display-width` doesn't limit the number of characters a
 user can enter into the `name` field; it only controls the field's width in the
 AlloyUI input form. 
@@ -116,7 +116,7 @@ to that field:
 Remember to run Service Builder and redeploy your project after updating the 
 `portlet-model-hints.xml` file. 
 
-## Model Hint Types [](id=model-hint-types)
+## Model Hint Types
 
 So far, you've seen a few different hints. The following table describes the
 portlet model hints available for use.
@@ -153,25 +153,17 @@ I'm not sure what the `check-tab` hint does. Would be worth asking the UI team.
 
 - Jim -->
 
-+$$$
+| **Note**: The aui taglib is fully supported and not related to AlloyUI (the
+| JavaScript library) that's deprecated.
 
-**Note**: The aui taglib is fully supported and not related to AlloyUI (the 
-JavaScript library) that's deprecated. 
-
-$$$
-
-+$$$
-
-**Note**: You can use a mix of Clay and aui tags in a form. Model hints,
-however, affect aui tags only. 
-
-$$$
+| **Note**: You can use a mix of Clay and aui tags in a form. Model hints,
+| however, affect aui tags only.
 
 Note that Liferay has its own model hints file--`portal-model-hints.xml`. It's
 in `portal-impl.jar`'s `META-INF` folder. This file contains many hint examples,
 so you can reference it when creating `portlet-model-hints.xml` files. 
 
-## Default Hints [](id=default-hints)
+## Default Hints
 
 You can use the `default-hints` element to define a list of hints to apply to 
 every field of a model. For example, adding the following element inside a
@@ -181,7 +173,7 @@ model element applies a `display-width` of 300 pixels to each field:
         <hint name="display-width">300</hint>
     </default-hints>
 
-## Hint Collections [](id=hint-collections)
+## Hint Collections
 
 You can define `hint-collection` elements inside the `model-hints` root-level
 element to define a list of hints to apply together. A hint collection must have

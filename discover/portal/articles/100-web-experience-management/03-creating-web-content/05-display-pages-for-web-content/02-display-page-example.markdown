@@ -1,4 +1,8 @@
-# Display Page Example [](id=display-page-example)
+---
+header-id: display-page-example
+---
+
+# Display Page Example
 
 Create a new Display Page:
 
@@ -47,17 +51,13 @@ page, you can map them like this:
 You now have a Display Page with static graphics and a text area that's 
 replaced with whatever content you add to it.
 
-+$$$
+| **Note:** You can map any data or metadata from a Web Content Article or
+| Structure to a Display Page. For the Basic Web Content type, this includes
+| structure-defined fields like Summary, Title, and Content, as well as metadata
+| fields like Publish Date, Categories, and Tags. In a user-defined structure, all
+| user selected fields display here as well.
 
-**Note:** You can map any data or metadata from a Web Content Article or 
-Structure to a Display Page. For the Basic Web Content type, this includes 
-structure-defined fields like Summary, Title, and Content, as well as metadata 
-fields like Publish Date, Categories, and Tags. In a user-defined structure, all
-user selected fields display here as well.
-
-$$$
-
-## Publishing with Display Pages [](id=publishing-with-display-pages)
+## Publishing with Display Pages
 
 Now create a short article to display with this display page:
 

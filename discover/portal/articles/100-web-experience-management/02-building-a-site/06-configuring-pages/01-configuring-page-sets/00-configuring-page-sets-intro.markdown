@@ -1,4 +1,8 @@
-# Configuring Page Sets [](id=configuring-page-sets)
+---
+header-id: configuring-page-sets
+---
+
+# Configuring Page Sets
 
 To configure options for the entire Page Set, select the *Configure* icon next
 to the Page Set in *Pages*. Options configured for the Page Set apply to all its

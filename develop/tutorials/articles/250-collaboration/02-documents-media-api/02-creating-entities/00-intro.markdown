@@ -1,4 +1,8 @@
-# Creating Files, Folders, and Shortcuts [](id=creating-files-folders-and-shortcuts)
+---
+header-id: creating-files-folders-and-shortcuts
+---
+
+# Creating Files, Folders, and Shortcuts
 
 The primary use case for the API is to create files, folders, and file shortcuts
 in the Documents and Media library. 
@@ -8,7 +12,7 @@ conventions. In general, methods that do similar things tend to have similar
 names. When you must create an entity (whatever it is), look for methods that
 follow the pattern `add[ModelName]`, where `[ModelName]` is the name of the
 entity's data model object. As the 
-[getting started tutorial](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api)
+[getting started tutorial](/docs/7-1/tutorials/-/knowledge_base/t/getting-started-with-the-documents-and-media-api)
 explains, you'll use
 [`DLAppService`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html)
 to access the API. This service object contains the following methods for adding

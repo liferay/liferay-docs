@@ -1,11 +1,15 @@
-# Adding Custom Panel Apps [](id=adding-custom-panel-apps)
+---
+header-id: adding-custom-panel-apps
+---
+
+# Adding Custom Panel Apps
 
 After you have created a Category, create a Panel app to go in it:
 
 1.  Create an OSGi module using your favorite third party tool, or use
-    [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli). Blade CLI
+    [Blade CLI](/docs/7-0/tutorials/-/knowledge_base/t/blade-cli). Blade CLI
     offers a
-    [Panel App](/develop/reference/-/knowledge_base/7-0/panel-app-template)
+    [Panel App](/docs/7-0/reference/-/knowledge_base/r/panel-app-template)
     template to help generate a basic panel category and panel app.
 
 2.  Create a unique package name in the module's `src` directory, and create a
@@ -25,7 +29,7 @@ After you have created a Category, create a Panel app to go in it:
 
     These properties and attributes are similar to those discussed  in
     the previous
-    [tutorial](/develop/tutorials/-/knowledge_base/7-1/adding-custom-panel-categories).
+    [tutorial](/docs/7-1/tutorials/-/knowledge_base/t/adding-custom-panel-categories).
     The `panel.category.key` assigns your panel app to a panel category. The
     `panel.app.order:Integer` property specifies the order your panel app
     appears among other panel apps in the same category. For example, if you
@@ -53,7 +57,7 @@ After you have created a Category, create a Panel app to go in it:
 4.  Implement the `PanelApp` interface by extending the
     [BasePanelApp](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/BasePanelApp.html)
     abstract class. As you learned in the previous
-    [tutorial](/develop/tutorials/-/knowledge_base/7-1/adding-custom-panel-categories)
+    [tutorial](/docs/7-1/tutorials/-/knowledge_base/t/adding-custom-panel-categories)
     on panel categories, if you must create a more complex UI to render in
     the panel, you can.
 

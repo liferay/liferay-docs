@@ -1,4 +1,8 @@
-# OSGi and Modularity [](id=osgi-and-modularity)
+---
+header-id: osgi-and-modularity
+---
+
+# OSGi and Modularity
 
 Modularity makes writing software, especially as a team, fun! Here are some
 benefits to modular development on DXP: 
@@ -27,18 +31,18 @@ There are many benefits to modular software development with OSGi, and we can
 only scratch the surface here. Once you start developing modules, you might find
 it hard to go back to developing any other way. 
 
-## Modules [](id=modules)
+## Modules
 
 It's time to see what module projects look like and see @product@'s modular
 development features in action. To keep things simple, only project code and
 structure are shown: you can 
-[create modules](/develop/tutorials/-/knowledge_base/7-1/starting-module-development)
+[create modules](/docs/7-1/tutorials/-/knowledge_base/t/starting-module-development)
 like these anytime. 
 
 These modules collectively provide a command that takes a String and uses it in
 a greeting. Consider it "Hello World" for modules. 
 
-### API [](id=api)
+### API
 
 The API module is first. It defines the contract that a provider implements and
 a consumer uses. Here is its structure: 
@@ -86,7 +90,7 @@ asks for a `String` and doesn't return anything.
 That's it! As you can see, creating modules is not very different from creating
 other Java projects. 
 
-### Provider [](id=provider)
+### Provider
 
 An interface only defines an API; to do something, it must be implemented. This
 is what the provider module is for. Here's what a provider module for the
@@ -162,18 +166,18 @@ component is a POJO that the runtime creates automatically when the module start
 To compile this module, the API it's implementing must be on the classpath. If
 you're using Gradle, you'd add the `greetings-api` project to your `dependencies { ... }`
 block. In a
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace) 
+[Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace) 
 module, the dependency looks like this: 
 
     compileOnly project (':modules:greeting-api')
 
 That's all there is to a provider module. 
 
-### Consumer [](id=consumer)
+### Consumer
 
 The consumer or client uses the API that the API module defines and the provider
 module implements. DXP has many different kinds of consumer modules.
-[Portlets](/develop/tutorials/-/knowledge_base/7-1/portlets) 
+[Portlets](/docs/7-1/tutorials/-/knowledge_base/t/portlets) 
 are the most common consumer module type, but since they are a topic all by
 themselves, this example stays simple by creating an command for the Apache
 Felix Gogo shell. Note that consumers can, of course, consume many different
@@ -263,7 +267,7 @@ appropriately, the container knows about these dependencies, and provides them
 automatically. 
 
 If you were to
-[deploy these modules to a DXP instance](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#building-and-deploying-a-module),
+[deploy these modules to a DXP instance](/docs/7-1/tutorials/-/knowledge_base/t/starting-module-development#building-and-deploying-a-module),
 you'd be able to attach to the
 [Gogo Shell](develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell)
 and execute a command like this:
@@ -278,7 +282,7 @@ This most basic of examples should make it clear that module-based development
 is easy and straightforward. The API-Provider-Consumer contract fosters loose
 coupling, making your software easy to manage, enhance, and support. 
 
-## A Typical Liferay Application [](id=a-typical-liferay-application)
+## A Typical Liferay Application
 
 If you look at a typical application from Liferay's source, you'll generally
 find at least four modules: 
@@ -306,14 +310,14 @@ write a module for it and extend Liferay's wiki.
 Are you excited yet? Are you ready to start developing? Here are some resources
 for you to learn more. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Liferay IDE](/develop/tutorials/-/knowledge_base/7-1/liferay-ide)
+[Liferay IDE](/docs/7-1/tutorials/-/knowledge_base/t/liferay-ide)
 
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace)
+[Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace)
 
-[Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli)
+[Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/blade-cli)
 
-[Maven](/develop/tutorials/-/knowledge_base/7-1/maven)
+[Maven](/docs/7-1/tutorials/-/knowledge_base/t/maven)
 
-[Planning a Plugin Upgrade to Liferay 7](/develop/tutorials/-/knowledge_base/7-1/migrating-existing-code-to-liferay-7)
+[Planning a Plugin Upgrade to Liferay 7](/docs/7-1/tutorials/-/knowledge_base/t/migrating-existing-code-to-liferay-7)

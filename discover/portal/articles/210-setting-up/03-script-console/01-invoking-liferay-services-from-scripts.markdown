@@ -1,10 +1,14 @@
-# Invoking Liferay Services From Scripts [](id=invoking-liferay-services-from-scripts)
+---
+header-id: invoking-liferay-services-from-scripts
+---
+
+# Invoking Liferay Services From Scripts
 
 Many scripting scenarios require invoking Liferay services.
 [Liferay `*ServiceUtil` classes](https://docs.liferay.com/ce/portal/7.1-latest/javadocs/portal-kernel/)
 are the fastest and most convenient way to invoke Liferay
 services in the
-[script console](/discover/portal/-/knowledge_base/7-1/running-scripts-from-the-script-console).
+[script console](/docs/7-1/user/-/knowledge_base/u/running-scripts-from-the-script-console).
 You can use Groovy to invoke Liferay services the same way you would use Java.
 Groovy's syntax facilitates writing concise elegant scripts. 
 
@@ -29,7 +33,7 @@ code like this:
     ...
 
 Or you could use Groovy---based on Java---and do the whole thing right from the
-[script console](/discover/portal/-/knowledge_base/7-1/running-scripts-from-the-script-console)
+[script console](/docs/7-1/user/-/knowledge_base/u/running-scripts-from-the-script-console)
 with the same code:
 
     import com.liferay.portal.kernel.model.User;
@@ -58,10 +62,10 @@ script console.
 
 How to run scripts is next. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Running Scripts From the Script Console](/discover/portal/-/knowledge_base/7-1/running-scripts-from-the-script-console)
+[Running Scripts From the Script Console](/docs/7-1/user/-/knowledge_base/u/running-scripts-from-the-script-console)
 
-[Leveraging the Script Engine in Workflow](/discover/portal/-/knowledge_base/7-1/leveraging-the-script-engine-in-workflow)
+[Leveraging the Script Engine in Workflow](/docs/7-1/user/-/knowledge_base/u/leveraging-the-script-engine-in-workflow)
 
-[Script Examples](/discover/portal/-/knowledge_base/7-1/script-examples)
+[Script Examples](/docs/7-1/user/-/knowledge_base/u/script-examples)

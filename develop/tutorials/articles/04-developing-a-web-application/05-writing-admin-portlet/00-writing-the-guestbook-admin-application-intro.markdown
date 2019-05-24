@@ -1,4 +1,8 @@
-# Writing an Administrative Portlet [](id=writing-an-administrative-portlet)
+---
+header-id: writing-an-administrative-portlet
+---
+
+# Writing an Administrative Portlet
 
 Like the prototype, the real application lets users add and view guestbook 
 entries. The application's back-end, however, is much more powerful. It can 

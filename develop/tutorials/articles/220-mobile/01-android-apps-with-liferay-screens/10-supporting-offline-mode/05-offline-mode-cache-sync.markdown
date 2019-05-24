@@ -1,4 +1,8 @@
-# Sync the Cache with the Server [](id=sync-the-cache-with-the-server)
+---
+header-id: sync-the-cache-with-the-server
+---
+
+# Sync the Cache with the Server
 
 When using a write Screenlet that supports offline mode, new data written to the 
 cache must also be synced with the server. The write Screenlets included with 
@@ -6,12 +10,8 @@ Liferay Screens do this for you. However, you must do this manually when using a
 custom write Screenlet. You should do this in the activity or fragment that uses 
 the Screenlet--exactly where in this activity or fragment is up to you though. 
 
-+$$$
-
-**Note:** You don't have to do this when adding offline mode support to read 
-Screenlets. 
-
-$$$
+| **Note:** You don't have to do this when adding offline mode support to read
+| Screenlets.
 
 To sync a write Screenlet's data with the server manually, follow these steps:
 
@@ -50,12 +50,12 @@ from shared preferences:
     SharedPreferences sharedPreferences = getSharedPreferences("MY_PREFERENCES", Context.MODE_PRIVATE); 
     HashSet<String> keysToSync = sharedPreferences.getStringSet("keysToSync", new HashSet<>());
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Create or Update the Event Class](/develop/tutorials/-/knowledge_base/7-1/create-or-update-the-event-class)
+[Create or Update the Event Class](/docs/7-1/tutorials/-/knowledge_base/t/create-or-update-the-event-class)
 
-[Update the Listener](/develop/tutorials/-/knowledge_base/7-1/update-the-listener)
+[Update the Listener](/docs/7-1/tutorials/-/knowledge_base/t/update-the-listener)
 
-[Update the Interactor Class](/develop/tutorials/-/knowledge_base/7-1/update-the-interactor-class)
+[Update the Interactor Class](/docs/7-1/tutorials/-/knowledge_base/t/update-the-interactor-class)
 
-[Update the Screenlet Class](/develop/tutorials/-/knowledge_base/7-1/update-the-screenlet-class)
+[Update the Screenlet Class](/docs/7-1/tutorials/-/knowledge_base/t/update-the-screenlet-class)

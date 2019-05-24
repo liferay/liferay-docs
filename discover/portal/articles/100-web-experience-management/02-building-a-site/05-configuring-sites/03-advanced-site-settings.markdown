@@ -1,16 +1,20 @@
-# Advanced Site Settings [](id=advanced-site-settings)
+---
+header-id: advanced-site-settings
+---
+
+# Advanced Site Settings
 
 Advanced Settings relate to security (like User Roles) or require external
 configuration (like creating a Google Analytics account) to use.
 
-### Default User Associations [](id=default-user-associations)
+### Default User Associations
 
 *Default User Associations* configures Site roles and teams that newly assigned Site 
 members have by default. If you'd like to learn more about creating roles 
-and/or teams, visit the [Roles and Permissions](/discover/portal/-/knowledge_base/7-1/roles-and-permissions)
-and [Creating Teams for Advanced Site Membership Management](/discover/portal/-/knowledge_base/7-1/creating-teams-for-advanced-site-membership-management).
+and/or teams, visit the [Roles and Permissions](/docs/7-1/user/-/knowledge_base/u/roles-and-permissions)
+and [Creating Teams for Advanced Site Membership Management](/docs/7-1/user/-/knowledge_base/u/creating-teams-for-advanced-site-membership-management).
 
-## Analytics [](id=analytics)
+## Analytics
 
 @product@ includes built-in support for Google Analytics for analyzing 
 traffic on your Site. Google Analytics provides a snippet of code which you add
@@ -58,21 +62,21 @@ To enable a different analytics service:
 Now all pages on the selected Site contain the tracking script and send
 analytics data to your analytics platform. 
 
-## Maps [](id=maps)
+## Maps
 
 The *Maps* option configures the maps API provider used by your Liferay
 instance when displaying geolocalized assets. Geolocalized assets can be
 displayed for documents, web content articles, DDL records, etc. Maps is
-available under the Advanced tab. You can read more about Geolocation in [Geolocating Assets](/discover/portal/-/knowledge_base/7-1/geolocating-assets).
+available under the Advanced tab. You can read more about Geolocation in [Geolocating Assets](/docs/7-1/user/-/knowledge_base/u/geolocating-assets).
 
-### Recycle Bin [](id=recycle-bin)
+### Recycle Bin
 
 The *Recycle Bin* option enables or disables the Recycle Bin for your Site. You
 can also regulate the age (in minutes) for which content is able to be stored
 in the Recycle Bin until it is permanently deleted. For a full explanation of
-the Recycle Bin, see [Restoring Deleted Assets](/discover/portal/-/knowledge_base/7-1/restoring-deleted-assets).
+the Recycle Bin, see [Restoring Deleted Assets](/docs/7-1/user/-/knowledge_base/u/restoring-deleted-assets).
 
-### Content Sharing [](id=content-sharing)
+### Content Sharing
 
 If you select the *Content Sharing* tab from the Advanced tab, you can
 configure whether sub-Sites can display content from this Site. Administrators

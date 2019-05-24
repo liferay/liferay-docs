@@ -1,7 +1,11 @@
-# Moving Entities to the Recycle Bin [](id=moving-entities-to-the-recycle-bin)
+---
+header-id: moving-entities-to-the-recycle-bin
+---
+
+# Moving Entities to the Recycle Bin
 
 Instead of deleting entities, you can move them to the 
-[Recycle Bin](/discover/portal/-/knowledge_base/7-1/restoring-deleted-assets). 
+[Recycle Bin](/docs/7-1/user/-/knowledge_base/u/restoring-deleted-assets). 
 Note that the Recycle Bin isn't part of the Documents and Media API. Although 
 you can use the Recycle Bin API directly, in the case of Documents and Media 
 it's better to use the Capabilities API. This is because some third-party 
@@ -14,7 +18,7 @@ Follow these steps to use the Capabilities API to move an entity to the Recycle
 Bin: 
 
 1.  Verify that the repository supports the Recycle Bin. Do this by calling the 
-    [repository object's](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#specifying-repositories) 
+    [repository object's](/docs/7-1/tutorials/-/knowledge_base/t/getting-started-with-the-documents-and-media-api#specifying-repositories) 
     `isCapabilityProvided` method with `TrashCapability.class` as its argument. 
     This example does so in `if` statement's condition: 
 
@@ -41,12 +45,12 @@ Bin:
     for information on the methods you can use to move other types of entities 
     to the Recycle Bin. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Deleting Files](/develop/tutorials/-/knowledge_base/7-1/deleting-files)
+[Deleting Files](/docs/7-1/tutorials/-/knowledge_base/t/deleting-files)
 
-[Deleting Folders](/develop/tutorials/-/knowledge_base/7-1/deleting-folders)
+[Deleting Folders](/docs/7-1/tutorials/-/knowledge_base/t/deleting-folders)
 
-[Deleting File Shortcuts](/develop/tutorials/-/knowledge_base/7-1/deleting-file-shortcuts)
+[Deleting File Shortcuts](/docs/7-1/tutorials/-/knowledge_base/t/deleting-file-shortcuts)
 
-[Moving Folders and Files](/develop/tutorials/-/knowledge_base/7-1/moving-folders-and-files)
+[Moving Folders and Files](/docs/7-1/tutorials/-/knowledge_base/t/moving-folders-and-files)

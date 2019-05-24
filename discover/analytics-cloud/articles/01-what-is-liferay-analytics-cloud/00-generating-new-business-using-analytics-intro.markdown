@@ -1,4 +1,8 @@
-# Generating New Business Using Analytics [](id=generating-new-business-using-analytics)
+---
+header-id: generating-new-business-using-analytics
+---
+
+# Generating New Business Using Analytics
 
 Your company interacts with lots of people, including existing and prospective
 customers. On your websites they browse products and services, ask questions,
@@ -17,7 +21,7 @@ drive business and make people happier.
 
 ![Figure 1: As you learn about topics that interest your audience, you can speak intelligently about the topics, through online content and in person.](../../images/segment-interests.png)
 
-## Benefits [](id=benefits)
+## Benefits
 
 Here are key things Analytics Cloud helps you do: 
 
@@ -57,7 +61,7 @@ and the paths (or channels) that draw them to your sites in these ways:
 
 Start with understanding people. 
 
-## Understanding People [](id=understanding-people)
+## Understanding People
 
 Existing and prospective customers interact with your company in person, on your
 websites, and via email and messaging. On Liferay DXP sites, people are
@@ -80,7 +84,7 @@ interaction with your website pages and assets is a bigger part. This type of
 analytics (called Touchpoint Analytics) helps you determine how effective your
 content is in achieving your business goals.
 
-## Touchpoint Analytics [](id=touchpoint-analytics)
+## Touchpoint Analytics
 
 Touchpoints are the locations (pages) where people interact with content. Here
 are some of the Touchpoint Analytics:
@@ -137,7 +141,7 @@ Negative:
 
 Learning how people get to pages and Assets is also useful. That's Path Analytics. 
 
-## Path Analytics [](id=path-analytics)
+## Path Analytics
 
 People get to content through different channels (paths):
 

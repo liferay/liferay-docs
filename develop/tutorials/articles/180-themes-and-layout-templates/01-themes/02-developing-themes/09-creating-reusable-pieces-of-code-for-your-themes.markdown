@@ -1,4 +1,8 @@
-# Creating Reusable Pieces of Code for Your Themes [](id=creating-reusable-pieces-of-code-for-your-themes)
+---
+header-id: creating-reusable-pieces-of-code-for-your-themes
+---
+
+# Creating Reusable Pieces of Code for Your Themes
 
 Themelets are small, extendable, and reusable pieces of code. Whereas themes
 require multiple components, a themelet only requires the files you wish to
@@ -29,10 +33,10 @@ This tutorial demonstrates how to:
 
 To create a themelet, you need a theme to extend and the Liferay Theme Generator 
 and dependencies installed, as explained in the 
-[Creating Themes](/develop/tutorials/-/knowledge_base/7-1/creating-themes) 
+[Creating Themes](/docs/7-1/tutorials/-/knowledge_base/t/creating-themes) 
 tutorial. 
 
-## Creating a Themelet [](id=creating-a-themelet)
+## Creating a Themelet
 
 Follow these steps to create a themelet:
 
@@ -58,19 +62,15 @@ Follow these steps to create a themelet:
 
 Now that your themelet is developed, you can install it in your theme. 
 
-## Installing a Themelet [](id=installing-a-themelet)
+## Installing a Themelet
 
 After you've developed your themelet, follow the steps below to install it into
 your theme.
 
-+$$$
-
-**Note:** Gulp is included as a local dependency in generated themes, so you 
-are not required to install it. It can be accessed by running 
-`node_modules\.bin\gulp` followed by the Gulp task from a generated theme's 
-root folder.
-
-$$$
+| **Note:** Gulp is included as a local dependency in generated themes, so you
+| are not required to install it. It can be accessed by running
+| `node_modules\.bin\gulp` followed by the Gulp task from a generated theme's
+| root folder.
 
 1.  Navigate to your theme's root folder and run the following command:
 
@@ -91,8 +91,8 @@ $$$
 Your themelet is installed! As you can see, themelets are a handy tool to add to
 your theme development bag o' tricks. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/7-1/importing-resources-with-a-theme)
+[Importing Resources with Your Themes](/docs/7-1/tutorials/-/knowledge_base/t/importing-resources-with-a-theme)
 
-[Creating Themes](/develop/tutorials/-/knowledge_base/7-1/creating-themes)
+[Creating Themes](/docs/7-1/tutorials/-/knowledge_base/t/creating-themes)

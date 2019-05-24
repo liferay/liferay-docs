@@ -1,4 +1,8 @@
-# @product@ Startup Phases [](id=liferay-startup-phases)
+---
+header-id: liferay-startup-phases
+---
+
+# @product@ Startup Phases
 
 Knowing Liferay's startup phases helps you troubleshoot startup failures. By
 learning the phase triggered events, you can listen for phases and act on them.
@@ -17,7 +21,7 @@ Startup consists of these main phases:
 The Portal Context Initialization Phase sets the stage for the Main Servlet
 Initialization Phase. 
 
-### Portal Context Initialization Phase [](id=portal-context-initialization-phase)
+### Portal Context Initialization Phase
 
 The Portal Context Initialization phase runs first with these tasks: 
 
@@ -34,7 +38,7 @@ The Portal Context Initialization phase runs first with these tasks:
     are loaded. 
 
 4.  INFRASTRUCTURE beans are published as
-    [OSGi services](/develop/tutorials/-/knowledge_base/7-1/osgi-services-and-dependency-injection-with-declarative-services). 
+    [OSGi services](/docs/7-1/tutorials/-/knowledge_base/t/osgi-services-and-dependency-injection-with-declarative-services). 
 
 5.  OSGi framework starts. 
 
@@ -56,9 +60,9 @@ The Portal Context Initialization phase runs first with these tasks:
         registers. 
 
 8.  MAIN Spring beans are published as 
-    [OSGi services](/develop/tutorials/-/knowledge_base/7-1/osgi-services-and-dependency-injection-with-declarative-services). 
+    [OSGi services](/docs/7-1/tutorials/-/knowledge_base/t/osgi-services-and-dependency-injection-with-declarative-services). 
 
-### Main Servlet Initialization Phase [](id=main-servlet-initialization-phase)
+### Main Servlet Initialization Phase
 
 Here's the phase's activity sequence:
 
@@ -85,16 +89,16 @@ Here's the phase's activity sequence:
 Now that you're acquainted with the startup phases, you can concentrate on the
 events they fire. 
 
-## Acting on Events [](id=acting-on-events)
+## Acting on Events
 
 The ways to act on events depends on the event type. These subsections describe
 the event types. 
 
-### ModuleServiceLifecycle Events [](id=moduleservicelifecycle-events)
+### ModuleServiceLifecycle Events
 
-[You can wait for and act on `ModuleServiceLifecycle` event services.](/develop/tutorials/-/knowledge_base/7-1/waiting-on-lifecycle-events) 
+[You can wait for and act on `ModuleServiceLifecycle` event services.](/docs/7-1/tutorials/-/knowledge_base/t/waiting-on-lifecycle-events) 
 
-### Portal Startup Events [](id=portal-startup-events)
+### Portal Startup Events
 
 In your `liferay-portal-ext.properties` file, you can override the following
 properties and add your own
@@ -110,8 +114,8 @@ initializes. The
 [`application.startup.events` property](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Startup%20Events)
 defines the event's default actions. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Waiting on Lifecycle Events](/develop/tutorials/-/knowledge_base/7-1/waiting-on-lifecycle-events)
+[Waiting on Lifecycle Events](/docs/7-1/tutorials/-/knowledge_base/t/waiting-on-lifecycle-events)
 
-[OSGi Services and Dependency Injection with Declarative Services](/develop/tutorials/-/knowledge_base/7-1/osgi-services-and-dependency-injection-with-declarative-services)
+[OSGi Services and Dependency Injection with Declarative Services](/docs/7-1/tutorials/-/knowledge_base/t/osgi-services-and-dependency-injection-with-declarative-services)

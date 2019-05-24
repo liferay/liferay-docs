@@ -1,8 +1,12 @@
-# Creating the AlloyEditor Button's OSGi Bundle [](id=creating-the-alloyeditor-buttons-osgi-bundle)
+---
+header-id: creating-the-alloyeditor-buttons-osgi-bundle
+---
+
+# Creating the AlloyEditor Button's OSGi Bundle
 
 Follow these steps to create your OSGi bundle for your new button:
 
-1.  [Create an OSGi module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#creating-a-module) 
+1.  [Create an OSGi module](/docs/7-1/tutorials/-/knowledge_base/t/starting-module-development#creating-a-module) 
 
 2.  Add a `resources\META-INF\resources\js` folder to your module's `src\main` 
     folder.
@@ -62,10 +66,10 @@ Follow these steps to create your OSGi bundle for your new button:
           ]
         }
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Adding New Behavior to an Editor](/develop/tutorials/-/knowledge_base/7-1/adding-new-behavior-to-an-editor)
+[Adding New Behavior to an Editor](/docs/7-1/tutorials/-/knowledge_base/t/adding-new-behavior-to-an-editor)
 
-[Creating the Button's JSX File](/develop/tutorials/-/knowledge_base/7-1/creating-the-alloyeditor-buttons-jsx-file)
+[Creating the Button's JSX File](/docs/7-1/tutorials/-/knowledge_base/t/creating-the-alloyeditor-buttons-jsx-file)
 
-[Contributing the Button to AlloyEditor](/develop/tutorials/-/knowledge_base/7-1/contributing-the-button-to-alloyeditor)
+[Contributing the Button to AlloyEditor](/docs/7-1/tutorials/-/knowledge_base/t/contributing-the-button-to-alloyeditor)

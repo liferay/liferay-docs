@@ -1,4 +1,8 @@
-# Data Providers [](id=data-providers)
+---
+header-id: data-providers
+---
+
+# Data Providers
 
 Select from List fields can hold a lot of options. There are around 200
 countries on Earth, for example. If you have unoccupied unpaid interns you could
@@ -10,7 +14,7 @@ someone else (hopefully a trustworthy expert) to keep the data updated.
 When setting up a data provider, you're accessing a 
 [REST web service](https://en.wikipedia.org/wiki/Representational_state_transfer). 
 Use the 
-[JSON web services registered in Liferay](/develop/tutorials/-/knowledge_base/7-1/registering-json-web-services),
+[JSON web services registered in Liferay](/docs/7-1/tutorials/-/knowledge_base/t/registering-json-web-services),
 or any other REST web service you can access. To find a list of the ready-to-use
 registered JSON web services in @product@, navigate to
 [http://localhost:8080/api/jsonws](http://localhost:8080/api/jsonws) (assuming
@@ -42,7 +46,7 @@ Note the field you want Users to select. With this service, it's most likely
 `nameCurrentValue`, because it contains the full, properly capitalized name of
 the country.
 
-## Adding a Basic Data Provider [](id=adding-a-basic-data-provider)
+## Adding a Basic Data Provider
 
 To add a *Countries of the World* Data Provider for use in your Forms,
 
@@ -87,7 +91,7 @@ JsonPath
 [here](https://github.com/json-path/JsonPath/blob/master/README.md) and
 [here](http://goessner.net/articles/JsonPath/).
 
-## Using a Data Provider in a Select Field [](id=using-a-data-provider-in-a-select-field)
+## Using a Data Provider in a Select Field
 
 Once the Data Provider is configured, use it to populate a Select from List field:
 
@@ -111,7 +115,7 @@ Your Data Provider is now being used to populate a select field. However, this
 form should be submitted by Guest users, who don't currently have permission to
 see the list of results from the data provider. Arrgh! Now what? 
 
-## Granting Data Provider Permissions [](id=granting-data-provider-permissions)
+## Granting Data Provider Permissions
 
 To configure the data provider's permissions, go to the Forms application (*Site
 Administration* &rarr; *Content* &rarr; *Forms*). Open the Options menu
@@ -123,7 +127,7 @@ Configure the permissions you need. If Guests are to fill out the form, they
 need the *View* permission, or else they won't be able to see the options
 provided by the data provider. Once you grant permissions, click *Save*.
 
-## Data Provider Configuration [](id=data-provider-configuration)
+## Data Provider Configuration
 
 The above instructions cover adding a basic Data Provider. Knowing more about
 each field in the Data Provider setup form opens up more possibilities.
@@ -170,7 +174,7 @@ request, if a response is not returned.
 service's response. Specify the Label, Parameter, and Type (Text or Number), and
 choose whether the input is required to use the Data Provider. You can add
 multiple Inputs. To provide a way for users to specify the input value, use an
-[_Autofill_ Form Rule](/discover/portal/-/knowledge_base/7-1/action-autofill).
+[_Autofill_ Form Rule](/docs/7-1/user/-/knowledge_base/u/action-autofill).
 A User enters input into one field, and their input is sent to the REST service.
 The REST service's response data is filtered by the input parameter.
 

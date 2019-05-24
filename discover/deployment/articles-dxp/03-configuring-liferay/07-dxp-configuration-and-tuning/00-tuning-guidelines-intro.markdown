@@ -1,4 +1,8 @@
-# Tuning Guidelines [](id=tuning-guidelines)
+---
+header-id: tuning-guidelines
+---
+
+# Tuning Guidelines
 
 Although setting names may differ, these concepts apply to most application
 servers. To keep things simple, Tomcat is used as the example. For other
@@ -10,7 +14,7 @@ Here are the tuning topics:
 - [Deactivating Development Settings in the JSP Engine](#deactivate-development-settings-in-the-jsp-engine)
 - [Thread Pool](#thread-pool)
 
-## Database Connection Pool [](id=database-connection-pool)
+## Database Connection Pool
 
 The database connection pool should be roughly 30-40% of the thread pool size.
 It provides a connection whenever @product@ needs to retrieve data from the
@@ -43,7 +47,7 @@ There are a variety of database connection pool providers, including DBCP, C3P0,
 HikariCP, and Tomcat. You may also configure the Liferay JDBC settings in your
 [`portal-ext.properties` file](https://docs.liferay.com/ce/portal/7.1-latest/propertiesdoc/portal.properties.html). 
 
-## Deactivating Development Settings in the JSP Engine [](id=deactivate-development-settings-in-the-jsp-engine)
+## Deactivating Development Settings in the JSP Engine
 
 Many application servers' JSP Engines are in development mode by default.
 Deactivate these settings prior to entering production:
@@ -74,7 +78,7 @@ To disable these in Tomcat, for example, update the
 
 Development mode and mapped files are disabled. 
 
-## Thread Pool [](id=thread-pool)
+## Thread Pool
 
 Each request to the application server consumes a worker thread for the duration
 of the request. When no threads are available to process requests, the request

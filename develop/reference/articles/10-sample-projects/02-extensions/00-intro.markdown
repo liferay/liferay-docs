@@ -1,4 +1,8 @@
-# Extensions [](id=extensions)
+---
+header-id: extensions
+---
+
+# Extensions
 
 This section focuses on Liferay sample extensions. You can view these sample
 extensions by visiting the `extensions` folder corresponding to your preferred

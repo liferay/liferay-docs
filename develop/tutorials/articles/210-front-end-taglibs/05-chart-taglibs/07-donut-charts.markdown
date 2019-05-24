@@ -1,4 +1,8 @@
-# Donut Charts [](id=donut-charts)
+---
+header-id: donut-charts
+---
+
+# Donut Charts
 
 Donut charts are percentage-based. A donut chart is similar to a pie chart, but 
 it has a hole in the center. Each data set must be defined as a new instance of 
@@ -36,10 +40,10 @@ Follow these steps:
     
 ![Figure 1: A donut chart is similar to a pie chart, but it has a hole in the center.](../../../images/chart-taglib-donut.png)
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Donut Charts](/develop/tutorials/-/knowledge_base/7-1/donut-charts)
+[Donut Charts](/docs/7-1/tutorials/-/knowledge_base/t/donut-charts)
 
-[Gauge Charts](/develop/tutorials/-/knowledge_base/7-1/line-charts)
+[Gauge Charts](/docs/7-1/tutorials/-/knowledge_base/t/line-charts)
 
-[Pie Charts](/develop/tutorials/-/knowledge_base/7-1/scatter-charts)
+[Pie Charts](/docs/7-1/tutorials/-/knowledge_base/t/scatter-charts)

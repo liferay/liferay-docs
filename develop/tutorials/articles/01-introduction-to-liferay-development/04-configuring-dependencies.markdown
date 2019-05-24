@@ -1,4 +1,8 @@
-# Configuring Dependencies [](id=configuring-dependencies)
+---
+header-id: configuring-dependencies
+---
+
+# Configuring Dependencies
 
 Using external artifacts in your project requires configuring their
 dependencies. To do this, look up the artifact's attributes and plug them into
@@ -15,13 +19,9 @@ attributes. Artifacts have these attributes:
 -   *Artifact ID*: Name/identifier 
 -   *Version*: Release number 
 
-+$$$
-
-**Note:** The
-[App Manager](/discover/portal/-/knowledge_base/7-1/managing-and-configuring-apps)
-shows each module's version number. 
-
-$$$
+| **Note:** The
+| [App Manager](/docs/7-1/user/-/knowledge_base/u/managing-and-configuring-apps)
+| shows each module's version number.
 
 This tutorial shows you how to make sure your projects have the right
 dependencies: 
@@ -30,7 +30,7 @@ dependencies:
 -   [Find @product@ app and independent artifacts](#finding-liferay-portal-app-and-independent-artifacts)
 -   [Configure dependencies](#configuring-dependencies)
 
-## Finding Core @product@ Artifacts [](id=finding-core-liferay-portal-artifacts)
+## Finding Core @product@ Artifacts
 
 Each Liferay artifact is a JAR file whose `META-INF/MANIFEST.MF` file contains
 the artifact's OSGi metadata. The manifest also specifies the artifact's
@@ -40,14 +40,10 @@ version:
     Bundle-SymbolicName:  [artifact ID]
     Bundle-Version: [version]
 
-+$$$
-
-**Important:** Artifacts in @product@ fix packs override @product@ 
-installation artifacts. Subfolders of a fix pack ZIP file's `binaries` folder
-hold the artifacts. If an installed fix pack provides an artifact you depend on,
-specify the version of that fix pack artifact in your dependency. 
-
-$$$
+| **Important:** Artifacts in @product@ fix packs override @product@
+| installation artifacts. Subfolders of a fix pack ZIP file's `binaries` folder
+| hold the artifacts. If an installed fix pack provides an artifact you depend on,
+| specify the version of that fix pack artifact in your dependency.
 
 This table lists the group ID, artifact ID, version, and origin for each core
 @product@ artifact: 
@@ -69,7 +65,7 @@ This table lists the group ID, artifact ID, version, and origin for each core
 Next, you'll learn how to find artifacts for @product@ apps and independent 
 modules. 
 
-## Finding @product@ App and Independent Artifacts [](id=finding-liferay-portal-app-and-independent-artifacts)
+## Finding @product@ App and Independent Artifacts
 
 Independent modules and modules that make up @product@'s apps aren't part of the 
 @product@ core. You must still, however, find their artifact attributes if you 
@@ -82,19 +78,15 @@ artifact details for @product@'s apps and independent modules:
 [Reference Docs](#reference-docs) | @product@ modules (per release) |
 [Maven Central](#maven-central) | All artifact types: @product@ and third party, module and non-module |
 
-+$$$
-
-**Important**: `com.liferay` is the group ID for all of Liferay's apps and 
-independent modules. 
-
-$$$
+| **Important**: `com.liferay` is the group ID for all of Liferay's apps and
+| independent modules.
 
 The App Manager is the best source for information on deployed modules. You'll 
 learn about it next. 
 
-### @product@'s App Manager [](id=liferay-portals-app-manager)
+### @product@'s App Manager
 
-[The App Manager](/discover/portal/-/knowledge_base/7-1/managing-and-configuring-apps#using-the-app-manager) 
+[The App Manager](/docs/7-1/user/-/knowledge_base/u/managing-and-configuring-apps#using-the-app-manager) 
 knows what's deployed on your Liferay instance. You can use it to find whatever
 modules you're looking for. 
 
@@ -113,7 +105,7 @@ Follow these steps to get a deployed module's information:
 ![Figure 2: The App Manager aggregates Liferay and independent modules.](../../images/intro-configuring-dependencies-indep-modules-in-app-manager.png)
 
 If you don't know a deployed module's group, use the 
-[Felix Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell) 
+[Felix Gogo Shell](/docs/7-1/reference/-/knowledge_base/r/using-the-felix-gogo-shell) 
 to find it: 
 
 1.  Navigate to the Gogo Shell portlet in the Control Panel &rarr;
@@ -160,19 +152,15 @@ to find it:
 Next, you'll learn how to use @product@'s reference documentation to find a 
 @product@ app module's attributes. 
 
-### Reference Docs [](id=reference-docs)
+### Reference Docs
 
 @product@'s app Javadoc lists each app module's artifact ID, version number, and
 display name. This is the best place to look up @product@ app modules that
 aren't yet deployed to your @product@ instance. 
 
-+$$$
-
-**Note:** To find artifact information on a Core @product@ artifact, refer to 
-the previous section
-[Finding Core @product@ artifacts](#finding-core-liferay-portal-artifacts).  
-
-$$$
+| **Note:** To find artifact information on a Core @product@ artifact, refer to
+| the previous section
+| [Finding Core @product@ artifacts](#finding-core-liferay-portal-artifacts).
 
 Follow these steps to find a @product@ app module's attributes in the Javadoc: 
 
@@ -192,16 +180,12 @@ number, and display name. Remember, the group ID for all app modules is
 
 ![Figure 3: @product@ app Javadoc overviews list each app module's display name, followed by its group ID, artifact ID, and version number in a colon-separated string.  It's a Gradle artifact syntax.](../../images/intro-configuring-dependencies-module-info-in-javadoc-overview.png)
 
-+$$$
-
-**Note**: Module version numbers aren't currently included in any tag library
-reference docs. 
-
-$$$
+| **Note**: Module version numbers aren't currently included in any tag library
+| reference docs.
 
 Next, you'll learn how to look up artifacts on MVNRepository and Maven  Central. 
 
-### Maven Central [](id=maven-central)
+### Maven Central
 
 Most artifacts, regardless of type or origin, are on 
 [MVNRepository](https://mvnrepository.com/)
@@ -213,28 +197,20 @@ example, if you depend on the class
 `org.osgi.service.component.annotations.Component`, search for the package name
 `org.osgi.service.component.annotations` on one of the Maven sites. 
 
-+$$$
-
-**Note:** Make sure to follow the instructions listed earlier to determine the 
-version of Liferay artifacts you need. 
-
-$$$
+| **Note:** Make sure to follow the instructions listed earlier to determine the
+| version of Liferay artifacts you need.
 
 Now that you have your artifact's attribute values, you're ready to configure a 
 dependency on it. 
 
-## Configuring Dependencies [](id=configuring-dependencies)
+## Configuring Dependencies
 
 Specifying dependencies to build systems is straightforward. Edit your project's
 build file, specifying a dependency entry that includes the group ID, artifact
 ID, and version number. 
 
-+$$$
-
-**Note**: To configure third-party libraries in a module, see the tutorial 
-[Adding Third Party Libraries to a Module](/develop/tutorials/-/knowledge_base/7-1/adding-third-party-libraries-to-a-module). 
-
-$$$
+| **Note**: To configure third-party libraries in a module, see the tutorial
+| [Adding Third Party Libraries to a Module](/docs/7-1/tutorials/-/knowledge_base/t/adding-third-party-libraries-to-a-module).
 
 Note that different build systems use different artifact attribute names, as
 shown below: 
@@ -250,7 +226,7 @@ Ivy | `org` | `name` | `rev` |
 The following examples demonstrate configuring a dependency on Liferay's Journal
 API module for Gradle, Maven, and Ivy. 
 
-### Gradle [](id=gradle)
+### Gradle
 
 Here's the dependency configured in a `build.gradle` file: 
 
@@ -259,7 +235,7 @@ Here's the dependency configured in a `build.gradle` file:
         ...
     }
 
-### Maven [](id=maven)
+### Maven
 
 Here's the dependency configured in a `pom.xml` file: 
 
@@ -269,7 +245,7 @@ Here's the dependency configured in a `pom.xml` file:
         <version>1.0.1</version>
     </dependency>
 
-### Ivy [](id=ivy)
+### Ivy
 
 Here's the dependency configured in an `ivy.xml` file: 
 
@@ -278,14 +254,14 @@ Here's the dependency configured in an `ivy.xml` file:
 Nice! Now you know how to find artifacts and configure them as dependencies. Now 
 that's a skill you can depend on! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using the App Manager](/discover/portal/-/knowledge_base/7-1/managing-and-configuring-apps)
+[Using the App Manager](/docs/7-1/user/-/knowledge_base/u/managing-and-configuring-apps)
 
-[Reference](/develop/reference/-/knowledge_base/7-1/development-reference)
+[Reference](/docs/7-1/reference/-/knowledge_base/r/development-reference)
 
-[Resolving Third Party Library Package Dependencies](/develop/tutorials/-/knowledge_base/7-1/adding-third-party-libraries-to-a-module)
+[Resolving Third Party Library Package Dependencies](/docs/7-1/tutorials/-/knowledge_base/t/adding-third-party-libraries-to-a-module)
 
-[Tooling](/develop/tutorials/-/knowledge_base/7-1/tooling)
+[Tooling](/docs/7-1/tutorials/-/knowledge_base/t/tooling)
 
-[Portlets](/develop/tutorials/-/knowledge_base/7-1/portlets)
+[Portlets](/docs/7-1/tutorials/-/knowledge_base/t/portlets)

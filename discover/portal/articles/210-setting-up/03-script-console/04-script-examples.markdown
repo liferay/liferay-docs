@@ -1,4 +1,8 @@
-# Script Examples [](id=script-examples)
+---
+header-id: script-examples
+---
+
+# Script Examples
 
 Here are some examples to help you use Liferay's script console. Note: Most of
 these originated from a [Liferay blog post](https://www.liferay.com/web/sebastien.lemarchand/blog/-/blogs/5-tips-to-improve-usage-of-the-liferay-script-console).
@@ -16,12 +20,12 @@ languages.
 
 - [Example 5: Plan a File Output for Long-Running Scripts](#example-5-plan-a-file-output-for-long-running-scripts)
 
-## Example 1: Presenting New Terms of Use to Users [](id=example-1-presenting-new-terms-of-use-to-users)
+## Example 1: Presenting New Terms of Use to Users
 
 This example retrieves user information from the database, makes changes, and
 then saves the changes in the database. Suppose that your company has
 updated the 
-[terms of use](/discover/portal/-/knowledge_base/7-1/terms-of-use)
+[terms of use](/docs/7-1/user/-/knowledge_base/u/terms-of-use)
 and wants present users with the updated terms of use whenever they sign in
 next. When they agree to the terms of use, a boolean attribute called
 `agreedToTermsOfUse` is set in their user records. As long as the value of this
@@ -73,7 +77,7 @@ agree to the terms of use again before they can sign in.
 
 You've enabled the new terms of use agreement for all users to accept. 
 
-## Example 2: Embedding HTML Markup in Script Outputs [](id=example-2-embed-html-markup-in-script-outputs)
+## Example 2: Embedding HTML Markup in Script Outputs
 
 The output of the script console is rendered as HTML content. Thus, you can
 embed HTML markup in your output to change its look and feel. Here's an
@@ -91,7 +95,7 @@ example:
 
 ![Figure 1: Here's an example of invoking a Groovy script that embeds HTML markup in the output of the script.](../../../images/groovy-script-embed-html-markup.png)
 
-## Example 3: Show Exceptions in the Script Console [](id=example-3-show-exceptions-in-the-script-console)
+## Example 3: Show Exceptions in the Script Console
 
 When any exception occurs during script execution, the error message is always
 the same:
@@ -116,7 +120,7 @@ technique does not catch script syntax errors. Here's an example:
 
 ![Figure 2: Here's an example of a Groovy script that catches exceptions and prints exception information to the script console.](../../../images/groovy-script-show-exception.png)
 
-## Example 4: Implement a Preview Mode [](id=example-4-implement-a-preview-mode)
+## Example 4: Implement a Preview Mode
 
 Since Liferay's script console does not provide an undo feature, it can be
 convenient to set up a kind of preview mode. The purpose of a preview mode is
@@ -167,14 +171,10 @@ want to test this with preview mode before running it:
                     + 'again this script to make changes to the database') 
     }
 
-## Example 5: Plan a File Output for Long-Running Scripts [](id=example-5-plan-a-file-output-for-long-running-scripts)
+## Example 5: Plan a File Output for Long-Running Scripts
 
-+$$$
-
-**Important:** The script console is for system operations and maintenance and 
-not for end users. Limit script console access to portal administrators.
-
-$$$
+| **Important:** The script console is for system operations and maintenance and
+| not for end users. Limit script console access to portal administrators.
 
 When a script has been running for a long time, the console could return an
 error even though the script can continue running and potentially conclude
@@ -207,7 +207,7 @@ consider this script:
     } 
 
 The script above creates a subfolder of
-[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
+[Liferay Home](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home)
 called `scripting` and saves the script output to a file in this folder. After
 running the script above, you can read the generated file without direct access
 to the file system. Here's a second script that demonstrates this:
@@ -221,10 +221,10 @@ is that it's easier to get the script output data back. Getting the script
 output data would be more difficult to obtain from the portal log, for example,
 because of all the other information there.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Running Scripts From the Script Console](/discover/portal/-/knowledge_base/7-1/running-scripts-from-the-script-console)
+[Running Scripts From the Script Console](/docs/7-1/user/-/knowledge_base/u/running-scripts-from-the-script-console)
 
-[Leveraging the Script Engine in Workflow](/discover/portal/-/knowledge_base/7-1/leveraging-the-script-engine-in-workflow)
+[Leveraging the Script Engine in Workflow](/docs/7-1/user/-/knowledge_base/u/leveraging-the-script-engine-in-workflow)
 
-[Using Liferay's Script Engine](/discover/portal/-/knowledge_base/7-1/using-liferays-script-engine)
+[Using Liferay's Script Engine](/docs/7-1/user/-/knowledge_base/u/using-liferays-script-engine)

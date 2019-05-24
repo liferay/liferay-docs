@@ -1,4 +1,8 @@
-# Spline Charts [](id=spline-charts)
+---
+header-id: spline-charts
+---
+
+# Spline Charts
 
 Spline charts contain multiple sets of data. A spline chart connects points of 
 data with a smooth curve. Each data series 
@@ -45,10 +49,10 @@ highlights the area under the spline curve.
 
 ![Figure 2: An area spline chart highlights the area under the spline curve.](../../../images/chart-taglib-area-spline.png)
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Bar Charts](/develop/tutorials/-/knowledge_base/7-1/bar-charts)
+[Bar Charts](/docs/7-1/tutorials/-/knowledge_base/t/bar-charts)
 
-[Scatter Charts](/develop/tutorials/-/knowledge_base/7-1/scatter-charts)
+[Scatter Charts](/docs/7-1/tutorials/-/knowledge_base/t/scatter-charts)
 
-[Step Charts](/develop/tutorials/-/knowledge_base/7-1/step-charts)
+[Step Charts](/docs/7-1/tutorials/-/knowledge_base/t/step-charts)

@@ -1,7 +1,11 @@
-# Migrating a liferay-npm-bundler Project from 1.x to 2.x [](id=migrating-a-liferay-npm-bundler-project-from-1-x-to-2-x)
+---
+header-id: migrating-a-liferay-npm-bundler-project-from-1-x-to-2-x
+---
+
+# Migrating a liferay-npm-bundler Project from 1.x to 2.x
 
 You should use the latest 2.x version of the liferay-npm-bundler. It 
-[offers more stability and includes more features out-of-the-box](/develop/reference/-/knowledge_base/7-1/changes-between-liferay-npm-bundler-1x-and-2x). 
+[offers more stability and includes more features out-of-the-box](/docs/7-1/reference/-/knowledge_base/r/changes-between-liferay-npm-bundler-1x-and-2x). 
 If you already created a project using the 1.x version, don't worry. Follow
 these steps to migrate your project to 2.x:
 
@@ -28,7 +32,7 @@ These are the standard requirements that all projects have in common. The
 remaining steps depend on your project's framework. Follow the instructions in 
 the corresponding section to finish migrating your project. 
 
-## Migrating a Plain JavaScript, Billboard JS, JQuery, Metal JS, React, or Vue JS Project [](id=migrating-a-plain-js-billboard-js-jquery-metal-js-react-or-vue-js-project)
+## Migrating a Plain JavaScript, Billboard JS, JQuery, Metal JS, React, or Vue JS Project
 
 After following the steps covered in the beginning, follow these remaining steps 
 to migrate the framework projects shown below to 2.x:
@@ -62,7 +66,7 @@ imposed. liferay-npm-bundler 2.x handles these transformations by default:
 
 If you're migrating an Angular project, follow the steps in the next section. 
 
-## Migrating an Angular Project [](id=migrating-an-angular-project)
+## Migrating an Angular Project
 
 After following the steps covered in the beginning, follow these remaining steps 
 to migrate your Angular project to 2.x. While liferay-npm-bundler 1.x relied on 
@@ -99,10 +103,10 @@ your project:
         "babel-cli": "6.26.0",
         "babel-preset-liferay-amd": "1.2.2"
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Formatting Your npm Modules for AMD](/develop/tutorials/-/knowledge_base/7-1/formatting-your-npm-modules-for-amd)
+[Formatting Your npm Modules for AMD](/docs/7-1/tutorials/-/knowledge_base/t/formatting-your-npm-modules-for-amd)
 
-[Using the NPMResolver API in Your Portlets](/develop/tutorials/-/knowledge_base/7-1/using-the-npmresolver-api-in-your-portlets)
+[Using the NPMResolver API in Your Portlets](/docs/7-1/tutorials/-/knowledge_base/t/using-the-npmresolver-api-in-your-portlets)
 
-[What Changed between liferay-npm-bundler 1.x and 2.x](/develop/reference/-/knowledge_base/7-1/changes-between-liferay-npm-bundler-1x-and-2x)
+[What Changed between liferay-npm-bundler 1.x and 2.x](/docs/7-1/reference/-/knowledge_base/r/changes-between-liferay-npm-bundler-1x-and-2x)

@@ -1,4 +1,8 @@
-# Product Navigation [](id=product-navigation)
+---
+header-id: product-navigation
+---
+
+# Product Navigation
 
 Liferay's product navigation consists of the main menus you use to customize,
 configure, and navigate the system. When you edit a page, switch to a different

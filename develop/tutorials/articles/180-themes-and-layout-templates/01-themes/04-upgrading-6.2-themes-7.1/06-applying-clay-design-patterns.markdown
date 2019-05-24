@@ -1,4 +1,8 @@
-# Applying Clay Design Patterns [](id=applying-clay-design-patterns-to-6-2-themes)
+---
+header-id: applying-clay-design-patterns-to-6-2-themes
+---
+
+# Applying Clay Design Patterns
 
 @product-ver@ uses 
 [Clay](https://liferay.github.io/clay/), 
@@ -7,7 +11,7 @@ a web implementation of Liferay's
 The Lexicon Experience Language provides styling guidelines and best practices 
 for application UIs. Clay's CSS, HTML, and JavaScript components enable 
 developers to build fully-realized UIs quickly and effectively. @product@'s 
-[compatibility layer](/develop/tutorials/-/knowledge_base/7-1/using-the-bootstrap-3-lexicon-css-compatibility-layer) 
+[compatibility layer](/docs/7-1/tutorials/-/knowledge_base/t/using-the-bootstrap-3-lexicon-css-compatibility-layer) 
 let's you use 
 [Lexicon CSS](https://lexiconcss.wedeploy.io/) 
 markup alongside 
@@ -102,8 +106,8 @@ You've updated your theme to @product-ver@! You can deploy it from your theme
 project. Now your users can continue enjoying the visual styles you've created 
 in your upgraded themes. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-themes)
+[Liferay Theme Generator](/docs/7-1/tutorials/-/knowledge_base/t/creating-themes)
 
 [Upgrading to @product-ver@] (/discover/deployment/-/knowledge_base/7-1/upgrading-to-liferay-71)

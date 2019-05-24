@@ -1,4 +1,8 @@
-# Writing Your First @product@ Application [](id=writing-your-first-liferay-application)
+---
+header-id: writing-your-first-liferay-application
+---
+
+# Writing Your First @product@ Application
 
 <div class="learn-path-step">
     <p>Developing Your First Portlet<br>Step 1 of 8</p>
@@ -19,7 +23,7 @@ saving a message.
 
 Ready to write your first @product@ application?
 
-## Creating Your First @product@ Application [](id=creating-your-first-liferay-application)
+## Creating Your First @product@ Application
 
 Your first step is to create a *Liferay Module Project*. Modules are the core 
 building blocks of @product@ applications. Every application is made from one or
@@ -67,7 +71,7 @@ the files you need to get started:
 Your new module project is a *portlet* application. Next, you'll learn exactly 
 what a portlet is. 
 
-## What is a Portlet? [](id=what-is-a-portlet)
+## What is a Portlet?
 
 Web applications can be simple: they might show you one piece of information,
 such as an article. A complex application might track your taxes as you enter
@@ -87,7 +91,7 @@ into account at every step. For example, features like platform-generated URLs
 exist to support Liferay's ability to serve multiple applications on the same
 page. 
 
-## What is a Component? [](id=what-is-a-component)
+## What is a Component?
 
 Portlets created in Liferay Module Projects are generated as *Components*. If
 a module (sometimes also called a *bundle*) encapsulates pieces of your
@@ -103,7 +107,7 @@ Declarative Services, you declare that an object is a component, and you define
 data about the component so the container knows how to manage it. A default 
 configuration was created for you; you'll examine it later. 
 
-## Deploying the Application [](id=deploying-the-application)
+## Deploying the Application
 
 Even though all you've done is generate it, the `guestbook-web` project is ready
 to be built and deployed.

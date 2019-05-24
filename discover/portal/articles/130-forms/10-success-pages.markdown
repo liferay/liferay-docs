@@ -1,4 +1,8 @@
-# Form Success Pages [](id=form-success-pages)
+---
+header-id: form-success-pages
+---
+
+# Form Success Pages
 
 After users submit one of your whiz-bang forms, what's next? How will they know
 they're done and can close the browser window or tab? What if they think their
@@ -14,7 +18,7 @@ browser window or tab.
 
 A Success Page is simple. It has a title in bold text and a description beneath 
 the title. A common alternative to using a Success Page is to 
-[redirect users to a different page in your Site](/discover/portal/-/knowledge_base/7-1/redirecting-users). 
+[redirect users to a different page in your Site](/docs/7-1/user/-/knowledge_base/u/redirecting-users). 
 What should you put in a Success Page? Whatever you want. If you can't think
 of anything important or creative to say, use the default message: 
 
@@ -35,15 +39,11 @@ Once the Success Page is added to your form, fill in the *Title* and
 *Content* fields however you please. When the form is saved and published, 
 the Success Page is live for your form users. 
 
-+$$$
-
-**Note:** You can't preview the Success Page. Success Pages can only be viewed 
-once a form is submitted, and the *Submit* button isn't available in the form 
-preview. The *Preview Form* link in the form builder only lets you preview the 
-form's regular pages (use the *Next* button to navigate through the form). 
-
-To see what your Success Page looks like, submit a test entry of the form and 
-then delete it if needed. For more information, see 
-[the documentation on viewing and managing form entries](/discover/portal/-/knowledge_base/7-1/managing-form-entries#viewing-form-entries). 
-
-$$$
+| **Note:** You can't preview the Success Page. Success Pages can only be viewed
+| once a form is submitted, and the *Submit* button isn't available in the form
+| preview. The *Preview Form* link in the form builder only lets you preview the
+| form's regular pages (use the *Next* button to navigate through the form).
+| 
+| To see what your Success Page looks like, submit a test entry of the form and
+| then delete it if needed. For more information, see
+| [the documentation on viewing and managing form entries](/docs/7-1/user/-/knowledge_base/u/managing-form-entries#viewing-form-entries).

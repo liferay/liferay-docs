@@ -1,8 +1,12 @@
-# Auto Deploy to All Nodes [](id=auto-deploy-to-all-nodes)
+---
+header-id: auto-deploy-to-all-nodes
+---
+
+# Auto Deploy to All Nodes
 
 All modules and WAR files you deploy onto the cluster must be deployed to all
 cluster nodes. Because @product@ 
-[installs applications as OSGi bundles](/develop/tutorials/-/knowledge_base/7-1/using-the-wab-generator), 
+[installs applications as OSGi bundles](/docs/7-1/tutorials/-/knowledge_base/t/using-the-wab-generator), 
 you cannot rely on your application server's means of installing WAR files (even
 if you only intend to install WAR files) to deploy an application to the entire
 cluster. Instead, place the application in each node's auto deploy folder (e.g.,

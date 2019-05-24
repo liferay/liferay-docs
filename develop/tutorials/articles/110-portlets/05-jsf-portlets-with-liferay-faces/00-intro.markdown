@@ -1,4 +1,8 @@
-# JSF Portlets with Liferay Faces [](id=jsf-portlets-with-liferay-faces)
+---
+header-id: jsf-portlets-with-liferay-faces
+---
+
+# JSF Portlets with Liferay Faces
 
 ![ ](../../../images/liferay-faces-logo.png)
 
@@ -13,15 +17,15 @@ Liferay Faces is an umbrella project that provides support for the
 JavaServer&#8482; Faces (JSF) standard in @product@. It encompasses the
 following projects:
 
-- [Liferay Faces Bridge](/develop/reference/-/knowledge_base/7-1/understanding-liferay-faces-bridge)
+- [Liferay Faces Bridge](/docs/7-1/reference/-/knowledge_base/r/understanding-liferay-faces-bridge)
   lets you deploy JSF web apps as portlets without writing portlet-specific Java
   code. It also contains innovative features that make it possible to leverage
   the power of JSF 2.x inside a portlet application. Liferay Faces Bridge
   implements the JSR 329/378 Portlet Bridge Standard.
-- [Liferay Faces Alloy](/develop/reference/-/knowledge_base/7-1/understanding-liferay-faces-alloy)
+- [Liferay Faces Alloy](/docs/7-1/reference/-/knowledge_base/r/understanding-liferay-faces-alloy)
   lets you use AlloyUI components in a way that is consistent with JSF
   development.
-- [Liferay Faces Portal](/develop/reference/-/knowledge_base/7-1/understanding-liferay-faces-portal)
+- [Liferay Faces Portal](/docs/7-1/reference/-/knowledge_base/r/understanding-liferay-faces-portal)
   lets you leverage Liferay-specific utilities and UI components in JSF
   portlets.
 

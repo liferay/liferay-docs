@@ -1,12 +1,16 @@
-# Installing patches on the @product-ver@ WAR [](id=installing-patches-on-the-liferay-de-war)
+---
+header-id: installing-patches-on-the-liferay-de-war
+---
+
+# Installing patches on the @product-ver@ WAR
 
 If you
-[installed @product@ manually](/discover/deployment/-/knowledge_base/7-1/installing-liferay-manually)
+[installed @product@ manually](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay-manually)
 as a WAR file on a supported application server, you must apply patches to the
 WAR file and supporting files and re-deploy them. This tutorial shows you how to
 do that.
 
-## Prerequisites [](id=prerequisites)
+## Prerequisites
 
 Download the necessary artifacts from the 
 [Customer Portal:](https://web.liferay.com/group/customer/dxp/downloads/7-1)
@@ -16,7 +20,7 @@ Download the necessary artifacts from the
 - OSGi JARs ZIP file (`liferay-dxp-osgi-[version].zip`) 
 - [Latest Patching Tool](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise/patching-tool)
 
-## Install the patch on the @product@ WAR and artifacts [](id=how-to-install-a-fix-pack-on-the-liferay-war)
+## Install the patch on the @product@ WAR and artifacts
 
 1.  Create an arbitrary folder. Unzip the dependency artifacts and the 
     Patching Tool into it. The folder contents should look like this:
@@ -37,7 +41,7 @@ Download the necessary artifacts from the
         liferay.home=../../patching-home
 
     If you're using a different OSGi folder structure, you can specify it as
-    the [Patching Tool Advanced Configuration](/discover/deployment/-/knowledge_base/7-1/patching-tool-advanced-configuration)
+    the [Patching Tool Advanced Configuration](/docs/7-1/deploy/-/knowledge_base/d/patching-tool-advanced-configuration)
     documentation describes: 
 	
         module.framework.core.path=/osgi-home/osgi/core
@@ -83,8 +87,8 @@ Download the necessary artifacts from the
 Great! You have successfully patched the artifacts, and they are ready to be
 deployed on any supported Application Server.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Patching Tool Advanced Configuration](/discover/deployment/-/knowledge_base/7-1/patching-tool-advanced-configuration)
+[Patching Tool Advanced Configuration](/docs/7-1/deploy/-/knowledge_base/d/patching-tool-advanced-configuration)
 
-[Deploying @product@](/discover/deployment/-/knowledge_base/7-1/deploying-product)
+[Deploying @product@](/docs/7-1/deploy/-/knowledge_base/d/deploying-product)

@@ -1,4 +1,8 @@
-# Authentication Pipelines [](id=authentication-pipelines)
+---
+header-id: authentication-pipelines
+---
+
+# Authentication Pipelines
 
 The authentication process is a pipeline through which users can be validated by
 one or several systems. As a developer, you can authenticate users to anything

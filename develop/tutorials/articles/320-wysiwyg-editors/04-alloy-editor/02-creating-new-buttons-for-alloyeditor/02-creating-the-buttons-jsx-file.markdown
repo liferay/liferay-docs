@@ -1,4 +1,8 @@
-# Creating the Button's JSX File [](id=creating-the-alloyeditor-buttons-jsx-file)
+---
+header-id: creating-the-alloyeditor-buttons-jsx-file
+---
+
+# Creating the Button's JSX File
 
 Follow these steps to create your button for AlloyEditor:
 
@@ -22,7 +26,7 @@ Follow these steps to create your button for AlloyEditor:
         );
 
 4.  Inside the `React.createClass()` method's configuration object, specify the 
-    [mixins](/develop/reference/-/knowledge_base/7-1/alloyeditor-button-reference-guide#mixins) 
+    [mixins](/docs/7-1/reference/-/knowledge_base/r/alloyeditor-button-reference-guide#mixins) 
     your button requires. These provide additional functionality, making it easy 
     to add features to your button, such as binding a shortcut key to your 
     button. The example below uses the `ButtonStateClasses` and 
@@ -66,7 +70,7 @@ Follow these steps to create your button for AlloyEditor:
 
 6.  Define the static properties for your button. You must at least provide the 
     `key`. The `key` defines the button's name to specify in the 
-    [AlloyEditor's configuration](/develop/tutorials/-/knowledge_base/7-1/adding-buttons-to-alloyeditor-toolbars). 
+    [AlloyEditor's configuration](/docs/7-1/tutorials/-/knowledge_base/t/adding-buttons-to-alloyeditor-toolbars). 
     The `my-log-text-button` module's static properties are shown below:
     
         statics: {
@@ -147,10 +151,10 @@ Follow these steps to create your button for AlloyEditor:
 
 Now you know how to create a button for AlloyEditor! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Adding New Behavior to an Editor](/develop/tutorials/-/knowledge_base/7-1/adding-new-behavior-to-an-editor)
+[Adding New Behavior to an Editor](/docs/7-1/tutorials/-/knowledge_base/t/adding-new-behavior-to-an-editor)
 
-[Creating the AlloyEditor Button's OSGi Bundle](/develop/tutorials/-/knowledge_base/7-1/creating-the-alloyeditor-buttons-osgi-bundle)
+[Creating the AlloyEditor Button's OSGi Bundle](/docs/7-1/tutorials/-/knowledge_base/t/creating-the-alloyeditor-buttons-osgi-bundle)
 
-[Contributing the Button to AlloyEditor](/develop/tutorials/-/knowledge_base/7-1/contributing-the-button-to-alloyeditor)
+[Contributing the Button to AlloyEditor](/docs/7-1/tutorials/-/knowledge_base/t/contributing-the-button-to-alloyeditor)

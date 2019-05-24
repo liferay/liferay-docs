@@ -1,4 +1,8 @@
-# Planning Your App's Distribution [](id=planning-your-apps-distribution)
+---
+header-id: planning-your-apps-distribution
+---
+
+# Planning Your App's Distribution
 
 When you start the formal process of submitting your app to the Marketplace, in
 addition to uploading your app's files you must answer a host of important

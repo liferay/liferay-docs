@@ -1,4 +1,8 @@
-# Using AUI Taglibs [](id=using-aui-taglibs-in-your-portlets)
+---
+header-id: using-aui-taglibs-in-your-portlets
+---
+
+# Using AUI Taglibs
 
 The AUI tag library provides tags that implement commonly used UI components. 
 These tags make your markup consistent, responsive, and accessible. 

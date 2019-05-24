@@ -1,9 +1,13 @@
-# MVC Render Command [](id=mvc-render-command)
+---
+header-id: mvc-render-command
+---
 
-If you're here, that means you know that `MVCRenderCommand`s are used to [respond to portlet render URLs](/develop/tutorials/-/knowledge_base/7-1/creating-an-mvc-portlet#render-logic),
+# MVC Render Command
+
+If you're here, that means you know that `MVCRenderCommand`s are used to [respond to portlet render URLs](/docs/7-1/tutorials/-/knowledge_base/t/creating-an-mvc-portlet#render-logic),
 and you want to know how to create and use MVC render commands. If you just want
 to learn about Liferay's MVC Portlet framework in general, that information is
-in a [separate article](/develop/tutorials/-/knowledge_base/7-1/liferay-mvc-portlet).
+in a [separate article](/docs/7-1/tutorials/-/knowledge_base/t/liferay-mvc-portlet).
 
 First, [configure your view layer](configuring-the-view-layer#configuring-the-view-layer)
 and use the [`<portlet:renderURL>`](@platform-ref@/7.1-latest/taglibs/util-taglib/portlet/renderURL.html)
@@ -130,12 +134,12 @@ this:
 As you can see, MVC render commands are easy to implement and can respond to
 multiple command names for multiple portlets. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating an MVC Portlet](/develop/tutorials/-/knowledge_base/7-1/creating-an-mvc-portlet)
+[Creating an MVC Portlet](/docs/7-1/tutorials/-/knowledge_base/t/creating-an-mvc-portlet)
 
-[MVC Resource Command](/develop/tutorials/-/knowledge_base/7-1/mvc-resource-command)
+[MVC Resource Command](/docs/7-1/tutorials/-/knowledge_base/t/mvc-resource-command)
 
-[MVC Action Command](/develop/tutorials/-/knowledge_base/7-1/mvc-action-command)
+[MVC Action Command](/docs/7-1/tutorials/-/knowledge_base/t/mvc-action-command)
 
-[MVC Command Overrides](/develop/tutorials/-/knowledge_base/7-1/overriding-mvc-commands)
+[MVC Command Overrides](/docs/7-1/tutorials/-/knowledge_base/t/overriding-mvc-commands)

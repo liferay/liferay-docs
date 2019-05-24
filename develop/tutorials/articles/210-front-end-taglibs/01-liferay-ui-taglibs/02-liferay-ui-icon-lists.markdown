@@ -1,15 +1,19 @@
-# Liferay UI Icon Lists [](id=liferay-ui-icon-lists)
+---
+header-id: liferay-ui-icon-lists
+---
+
+# Liferay UI Icon Lists
 
 An icon list displays icons in a horizontal list, instead of in a pop-up
 navigation menu like an 
-[icon menu](/develop/tutorials/-/knowledge_base/7-1/liferay-ui-icon-menus). You
+[icon menu](/docs/7-1/tutorials/-/knowledge_base/t/liferay-ui-icon-menus). You
 can see an example of an icon list menu in a message board thread. The thread's
 actions are visible at all times for administrators:
 
 ![Figure 1: Icon lists display an app's actions at all times.](../../../images/liferay-ui-taglib-icon-list.png)
 
 Create the list menu with the `liferay-ui:icon-list` tag and nest 
-[icons](/develop/tutorials/-/knowledge_base/7-1/liferay-ui-icons) 
+[icons](/docs/7-1/tutorials/-/knowledge_base/t/liferay-ui-icons) 
 for each list item, as shown below:
 
     <div class="thread-actions">
@@ -60,10 +64,10 @@ See the
 [Icon List taglibdocs](@platform-ref@/7.1-latest/taglibs/util-taglib/liferay-ui/icon-list.html) 
 for the full list of available attributes.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Clay Icons](/develop/tutorials/-/knowledge_base/7-1/clay-icons)
+[Clay Icons](/docs/7-1/tutorials/-/knowledge_base/t/clay-icons)
 
-[Liferay UI Icon Menus](/develop/tutorials/-/knowledge_base/7-1/liferay-ui-icon-menus)
+[Liferay UI Icon Menus](/docs/7-1/tutorials/-/knowledge_base/t/liferay-ui-icon-menus)
 
-[Liferay UI Icons](/develop/tutorials/-/knowledge_base/7-1/liferay-ui-icons)
+[Liferay UI Icons](/docs/7-1/tutorials/-/knowledge_base/t/liferay-ui-icons)

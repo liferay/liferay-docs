@@ -1,15 +1,19 @@
-# Creating a Liferay Workspace with IntelliJ IDEA [](id=creating-a-liferay-workspace-with-intellij-idea)
+---
+header-id: creating-a-liferay-workspace-with-intellij-idea
+---
+
+# Creating a Liferay Workspace with IntelliJ IDEA
 
 In this tutorial, you'll learn how to generate a Liferay Workspace using
 IntelliJ IDEA, which runs on
-[Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli) behind the
+[Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/blade-cli) behind the
 scenes. IntelliJ gives you a graphical interface instead of the command prompt,
 which can streamline your workflow. You'll also learn how to import an existing
 Liferay Workspace into IntelliJ. To learn more about Liferay Workspaces, visit
 its dedicated
-[tutorial section](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace).
+[tutorial section](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace).
 
-## Creating a Liferay Workspace [](id=creating-a-liferay-workspace)
+## Creating a Liferay Workspace
 
 Follow the steps below to create a Liferay Workspace:
 
@@ -25,7 +29,7 @@ Follow the steps below to create a Liferay Workspace:
     ![Figure 1: Choose *Liferay Gradle Workspace* or *Liferay Maven Workspace*, depending on the build you prefer.](../../../images/intellij-workspace-build.png)
 
 4.  Specify your workspace's name, location, intended @product@ version,
-    [target platform](/develop/tutorials/-/knowledge_base/7-1/managing-the-target-platform-for-liferay-workspace),
+    [target platform](/docs/7-1/tutorials/-/knowledge_base/t/managing-the-target-platform-for-liferay-workspace),
     and SDK (i.e., Java JDK). Then click *Finish*.
 
     ![Figure 2: Specify your workspace's configurations.](../../../images/intellij-workspace-project.png)
@@ -35,7 +39,7 @@ Follow the steps below to create a Liferay Workspace:
 
 Awesome! You've successfully created a Liferay Workspace in IntelliJ IDEA!
 
-## Importing a Liferay Workspace [](id=importing-a-liferay-workspace)
+## Importing a Liferay Workspace
 
 To import an existing workspace into IntelliJ, follow the steps below:
 

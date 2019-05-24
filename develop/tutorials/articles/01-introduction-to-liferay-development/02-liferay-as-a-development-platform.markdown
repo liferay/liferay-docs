@@ -1,4 +1,8 @@
-# Liferay as a Development Platform [](id=liferay-as-a-development-platform)
+---
+header-id: liferay-as-a-development-platform
+---
+
+# Liferay as a Development Platform
 
 If you've been reading everything up to this point, you've heard all about
 @product@'s architecture, modularity, and technologies. What's left is to tell
@@ -9,14 +13,14 @@ make this easy and pleasant, and to integrate with the tools you use every day.
 But you're likely not interested in a bunch of prolegomena about it. Read on to
 learn the details. 
 
-## Web Applications and Portlets [](id=web-applications-and-portlets)
+## Web Applications and Portlets
 
 Liferay as a development platform has always provided flexibility for both
 administrators and developers by making it easy to have more than one
 application on a single page. Applications written this way are called
 *portlets*, and are a mainstay of Liferay's platform. You can use
-[Liferay's MVC Portlet framework](/develop/tutorials/-/knowledge_base/7-1/liferay-mvc-portlet)
-or common frameworks such as [Spring MVC](/develop/tutorials/-/knowledge_base/7-1/spring-mvc)
+[Liferay's MVC Portlet framework](/docs/7-1/tutorials/-/knowledge_base/t/liferay-mvc-portlet)
+or common frameworks such as [Spring MVC](/docs/7-1/tutorials/-/knowledge_base/t/spring-mvc)
 or [JSF](develop/tutorials/-/knowledge_base/7-1/jsf-portlets-with-liferay-faces)
 to write portlets. If you plan to have a web-based interface to your
 application, and want its administrator to have a lot of flexibility configuring
@@ -29,12 +33,12 @@ business logic from its UI (which is provided in separate modules), you have
 freedom to implement the UI in any other technology.
 
 Because of this, you can use Liferay as a headless platform, because it's easy
-to create [web services](/develop/tutorials/-/knowledge_base/7-1/web-services)
-based on [Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder-web-services),
+to create [web services](/docs/7-1/tutorials/-/knowledge_base/t/web-services)
+based on [Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/service-builder-web-services),
 JAX-RS, and JAX-WS. Then you can build standalone web applications using any
 front-end technology or mobile technology you like. 
 
-## Extensibility [](id=extensibility)
+## Extensibility
 
 As you might imagine, the system described above contains all the tools
 necessary to make a well designed system that lets you not only create
@@ -59,7 +63,7 @@ recompile the software.
 With Liferay, your custom code is kept in your own modules, which the container
 takes care of applying based on metadata you supply.
 
-## Developer Tools [](id=developer-tools)
+## Developer Tools
 
 As you learned above, Liferay's OSGi container gives you these benefits: 
 
@@ -79,13 +83,13 @@ tools like Gradle or Maven, any text editor or common Java IDEs like Eclipse,
 intelliJ, or NetBeans, or any testing framework like Spock or JUnit, you can use
 them with Liferay to develop components. 
 
-[Liferay's tools](/develop/tutorials/-/knowledge_base/7-1/tooling)
+[Liferay's tools](/docs/7-1/tutorials/-/knowledge_base/t/tooling)
 add some important enhancements: 
 
--   [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli)
+-   [Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/blade-cli)
     speeds you up by creating Gradle-based Liferay projects from
-    [templates](/develop/reference/-/knowledge_base/7-1/project-templates). 
--   [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace)
+    [templates](/docs/7-1/reference/-/knowledge_base/r/project-templates). 
+-   [Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace)
     is an opinionated SDK based on Gradle that uses Blade CLI to integrate your
     projects and your runtime into one convenient, distributable  and sharable
     place. 
@@ -95,7 +99,7 @@ add some important enhancements:
     whistles you'd expect. 
 -   Liferay Developer Studio provides all that Liferay IDE
     provides, plus additional tools that enterprise developers need.
--   [Liferay Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder)
+-   [Liferay Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/service-builder)
     helps you create your back-end faster by generating all your database
     tables, local services, and web services from a single XML file. 
 
@@ -116,7 +120,7 @@ to what Liferay provides; again, you can use third-party frameworks if that's
 what you like to use. 
 
 To develop portlets, Liferay provides a convenient and easy-to-use framework
-called [MVCPortlet](/develop/tutorials/-/knowledge_base/7-1/liferay-mvc-portlet)
+called [MVCPortlet](/docs/7-1/tutorials/-/knowledge_base/t/liferay-mvc-portlet)
 to make writing portlets easy, but developers are free to use any other
 framework, such as Spring MVC, to create portlets. MVCPortlet uses components to
 handle requests, benefiting from all the characteristics described above
@@ -124,7 +128,7 @@ handle requests, benefiting from all the characteristics described above
 strong opinion on which framework to use, we recommend that you try it out.
 
 Liferay also includes a utility called
-[Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder)
+[Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/service-builder)
 that makes it easy to create back-end database tables, an object-relational map
 in Java for accessing them, and a place to put your business logic. It can also
 generate JSON or SOAP web services, giving developers a full stack for storing
@@ -133,19 +137,19 @@ from using Java Persistence (JPA) and generating JAX-WS web services.
 
 In addition to the tooling, Liferay also provides many reusable frameworks. 
 
-## Frameworks and APIs [](id=frameworks-and-apis)
+## Frameworks and APIs
 
 Liferay's development platform provides a great framework for application
 development and also offers APIs. Lots of them. You can create applications by
 leveraging Liferay's many frameworks that encapsulate features that today's
 applications commonly need. For example, a commenting system lets you attach
 comments to any asset that you define, whether they be assets you develop or
-assets that ship with the system. [Assets](/develop/tutorials/-/knowledge_base/7-1/asset-framework)
+assets that ship with the system. [Assets](/docs/7-1/tutorials/-/knowledge_base/t/asset-framework)
 are shared by the system and are represent many common elements, such as Users,
 Organizations, Sites, User Groups, blog entries, and even folders and files.
 
 Liferay also includes many frameworks for operating on assets. A
-[workflow system](/develop/tutorials/-/knowledge_base/7-1/liferays-workflow-framework)
+[workflow system](/docs/7-1/tutorials/-/knowledge_base/t/liferays-workflow-framework)
 makes it easy to create applications that require an approval process for users
 to follow. The recycle bin stores deleted assets for a specified period of time,
 making it easy for users to restore data without the intervention of an
@@ -154,10 +158,10 @@ storing and sharing files trivial. Search is built into the system as well, and
 it is designed for you to integrate it with your applications. Many of the
 frameworks you might need when developing complex applications are already in
 Liferay; you just need to take advantage of them: a Social Networking API,
-user-generated forms with data lists, a [message bus](/develop/tutorials/-/knowledge_base/7-1/message-bus),
+user-generated forms with data lists, a [message bus](/docs/7-1/tutorials/-/knowledge_base/t/message-bus),
 an audit system, and much more.
 
-## Example Liferay Projects [](id=example-liferay-projects)
+## Example Liferay Projects
 
 Enough theory. It's time for practice. A good way to get the flavor of
 developing on Liferay's platform across is to show you some projects. First,
@@ -167,8 +171,8 @@ of these examples show you how easy it is to build functionality following a
 modular paradigm. 
 
 It would be nice to show you the standard Hello World project, Liferay style,
-but that would be too easy: the default template that [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli)
-or [Liferay IDE](/develop/tutorials/-/knowledge_base/7-0/liferay-ide)
+but that would be too easy: the default template that [Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/blade-cli)
+or [Liferay IDE](/docs/7-0/tutorials/-/knowledge_base/t/liferay-ide)
 creates already does that by default. Instead, you'll see the Hello *You*
 portlet.  This does the same thing as Hello World, except it adds the first name
 of the user to the message. If your name therefore is John, it returns Hello,
@@ -181,7 +185,7 @@ Here's what the project layout looks like:
 No new files were created after this project was generated by Liferay's Blade
 CLI tool, so this is as simple as it gets. You have your portlet class, which is
 in the `.java` file. You also have two different kinds of resources:
-[language properties](/develop/tutorials/-/knowledge_base/7-1/internationalization)
+[language properties](/docs/7-1/tutorials/-/knowledge_base/t/internationalization)
 and JSP files. Finally, the `bnd.bnd` file describes the application's metadata
 for the OSGi container, and the `build.gradle` file builds the project.
 
@@ -267,7 +271,7 @@ Now we're talking; here's the real stuff. At the top is the `@Component`
 annotation, which tells the OSGi container how it should treat this module. By
 specifying `immediate=true`, you're saying that when this module is deployed and
 all of its dependencies are satisfied, it should be started immediately instead
-of being lazy-loaded. Next are several [properties specific to portlets](/develop/reference/-/knowledge_base/7-0/portlet-descriptor-to-osgi-service-property-map):
+of being lazy-loaded. Next are several [properties specific to portlets](/docs/7-0/reference/-/knowledge_base/r/portlet-descriptor-to-osgi-service-property-map):
 the category in which it should appear in Liferay's UI, its display name, its
 default view, and more. Finally, the service--which is just a Java
 Interface--that it implements is defined, which is the portlet class. 
@@ -365,7 +369,7 @@ The Java class defines only four methods:
 
     }
 
-As before, this project was generated using a [template](/develop/reference/-/knowledge_base/7-1/project-templates)
+As before, this project was generated using a [template](/docs/7-1/reference/-/knowledge_base/r/project-templates)
 from Blade CLI. The source code is part of the template; the only thing you'll
 need to do is provide the link. 
 
@@ -379,7 +383,7 @@ the link. This text is the value of the only property in the
 The next method returns the URL that's the destination for this link, and the
 final method returns a boolean for showing or hiding the link. 
 
-When you [deploy this module](/develop/reference/-/knowledge_base/7-1/project-templates)
+When you [deploy this module](/docs/7-1/reference/-/knowledge_base/r/project-templates)
 and the module starts, the link appears in the menu. You don't have to mess
 around looking in Liferay's JSP or JavaScript files to customize the menu: it's
 an extension point, and it is designed to be customized. 

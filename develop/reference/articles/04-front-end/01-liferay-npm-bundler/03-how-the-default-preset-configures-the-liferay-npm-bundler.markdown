@@ -1,4 +1,8 @@
-# How the Default Preset Configures the liferay-npm-bundler [](id=how-the-default-preset-configures-the-liferay-npm-bundler)
+---
+header-id: how-the-default-preset-configures-the-liferay-npm-bundler
+---
+
+# How the Default Preset Configures the liferay-npm-bundler
 
 The liferay-npm-bundler comes with a default configuration preset: 
 [`liferay-npm-bundler-preset-standard`](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/liferay-npm-bundler-preset-standard)
@@ -36,14 +40,10 @@ The configuration above states that for all npm packages (`*`) the pre-process
 phase (`plugins`) must run the `replace-browser-modules` plugin. Setting this to 
 `post-plugins` would run it during the post phase instead. 
 
-+$$$
-
-**Note:** You can override configuration preset values by adding your own 
-configuration to your project's `.npmbundlerrc` file. For instance, using the 
-configuration preset example above, you can define your own `.babelrc` value in 
-`.npmbundlerrc` file to override the defined "liferay-standard" babelrc preset.
-
-$$$
+| **Note:** You can override configuration preset values by adding your own
+| configuration to your project's `.npmbundlerrc` file. For instance, using the
+| configuration preset example above, you can define your own `.babelrc` value in
+| `.npmbundlerrc` file to override the defined "liferay-standard" babelrc preset.
 
 The 
 [`liferay-standard` preset](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/babel-preset-liferay-standard) 

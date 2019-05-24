@@ -1,4 +1,8 @@
-# Updating 6.2 CSS Rules and Imports [](id=updating-6-2-css-rules-and-imports)
+---
+header-id: updating-6-2-css-rules-and-imports
+---
+
+# Updating 6.2 CSS Rules and Imports
 
 @product-ver@ uses Bootstrap 4's CSS rule syntax. Font Awesome icons have also 
 been moved, requiring changes to your imports. If your theme uses the Liferay JS 
@@ -26,7 +30,7 @@ the task reports a file name and line number range:
         Line 212: You would change height from "62px" to "82px"
         ...
 
-## Manually Updating CSS Rules [](id=manually-updating-css-rules)
+## Manually Updating CSS Rules
 
 Follow these steps to update your theme's CSS rules manually:
 
@@ -64,12 +68,8 @@ Follow these steps to update your theme's CSS rules manually:
         	...
         }
 
-    +$$$
-
-    **Note:** For individual elements, you can overwrite the 
-    `box-sizing:border-box` rule with `box-sizing:content-box`. 
-
-    $$$
+    | **Note:** For individual elements, you can overwrite the
+    | `box-sizing:border-box` rule with `box-sizing:content-box`.
 
 2.  The following variables are removed in Bootstrap 4. Remove any of these if 
     they are used in your theme:
@@ -113,7 +113,7 @@ for CSS rules that changed in Bootstrap 3. Likewise, you can refer to the
 [Migrating to v4 guide](https://getbootstrap.com/docs/4.0/migration/) 
 for updating CSS rules to Bootstrap 4. 
 
-## Updating Font Awesome Imports [](id=updating-font-awesome-imports)
+## Updating Font Awesome Imports
 
 Font Awesome icons were moved to their own file (`font-awesome.scss`) to avoid 
 the IE9 CSS selector limitation. If you include these imports in your 
@@ -122,8 +122,8 @@ the IE9 CSS selector limitation. If you include these imports in your
     @import "aui/alloy-font-awesome/scss/mixins-alloy";
     @import "aui/alloy-font-awesome/scss/variables";
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Updating 6.2 CSS Responsiveness](/develop/tutorials/-/knowledge_base/7-1/updating-the-6-2-responsiveness)
+[Updating 6.2 CSS Responsiveness](/docs/7-1/tutorials/-/knowledge_base/t/updating-the-6-2-responsiveness)
 
-[Copying an Existing Theme's Files](/develop/tutorials/-/knowledge_base/7-1/copying-an-existing-themes-files)
+[Copying an Existing Theme's Files](/docs/7-1/tutorials/-/knowledge_base/t/copying-an-existing-themes-files)

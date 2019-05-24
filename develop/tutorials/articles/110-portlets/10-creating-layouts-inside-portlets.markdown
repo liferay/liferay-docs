@@ -1,4 +1,8 @@
-# Creating Layouts inside Custom Portlets [](id=creating-layouts-inside-custom-portlets)
+---
+header-id: creating-layouts-inside-custom-portlets
+---
+
+# Creating Layouts inside Custom Portlets
 
 Layout templates specify how your portlets and content are organized on your 
 site pages. What if, instead, you want to organize your portlet's content? 
@@ -87,12 +91,12 @@ width and `column-2` is 66.66% width, but on small sized view ports both
 
 ![Figure 2: You can take advantage of Bootstrap's grid classes to create responsive layouts within your custom portlets.](../../images/portlets-layout-responsive.png)
 
-## AUI Layout Tag Attributes [](id=aui-layout-tag-attributes)
+## AUI Layout Tag Attributes
 
 This section contains a list of the available attributes for each tag along with 
 a brief description of its purpose.
 
-### AUI Container [](id=aui-container)
+### AUI Container
 
 The `<aui:container>` tag creates a container `<div>` tag to wrap `<aui:row>` 
 components and offer additional styling.
@@ -106,7 +110,7 @@ It supports the following attributes:
 | fluid | boolean | Whether to enable the container to span the entire width of the viewport. The default value is true |
 | id | String | An ID for the component instance |
 
-### AUI Row [](id=aui-row)
+### AUI Row
 
 The `<aui:row>` tag creates a row to hold `<aui:col>` components.
 
@@ -117,7 +121,7 @@ It supports the following attributes:
 | cssClass | String | A CSS class for styling the component |
 | id | String | An ID for the component instance |
 
-### AUI Col [](id=aui-col)
+### AUI Col
 
 The `<aui:col>` tag creates a column to display content in an `<aui:row>` 
 component.
@@ -137,6 +141,6 @@ It supports the following attributes:
  
 Now you know how to create layouts inside your portlets!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Layout Templates with the Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-layout-templates-with-the-themes-generator)
+[Layout Templates with the Liferay Theme Generator](/docs/7-1/tutorials/-/knowledge_base/t/creating-layout-templates-with-the-themes-generator)

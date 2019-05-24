@@ -1,4 +1,8 @@
-# Publishing Web Content [](id=publishing-web-content)
+---
+header-id: publishing-web-content
+---
+
+# Publishing Web Content
 
 In the previous sections, you created and edited an article. Now it's time to 
 publish it. 
@@ -86,7 +90,7 @@ they're all implemented as simple selector buttons to be enabled or disabled at
 need. Once you've selected the features you want to include in your Web Content
 Display widget, click *Save* and close the configuration window.
 
-## Editing Published Content [](id=editing-published-content)
+## Editing Published Content
 
 If you must edit published content, you can do it directly from the Web 
 Content Display app or from Site Administration. To edit it from
@@ -125,5 +129,5 @@ tool compares these versions and highlights the differences between them.
 Whenever you publish updates to a web content article that's already being
 displayed, the content is immediately updated unless you have a workflow
 enabled (See 
-[Workflow](/discover/portal/-/knowledge_base/7-1/workflow)
+[Workflow](/docs/7-1/user/-/knowledge_base/u/workflow)
 for details).

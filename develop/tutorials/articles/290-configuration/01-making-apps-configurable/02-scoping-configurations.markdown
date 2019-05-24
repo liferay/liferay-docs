@@ -1,4 +1,8 @@
-# Scoping Configurations [](id=scoping-configurations)
+---
+header-id: scoping-configurations
+---
+
+# Scoping Configurations
 
 Applications can have different configurations depending on the scope: per
 virtual instance (a.k.a. `Company`), site (a.k.a. `Group`), or portlet instance.
@@ -16,7 +20,7 @@ this means there could be multiple configuration values for the application, all
 scoped to the site level, because the values set in one site don't matter if the
 context in which you need the value is a different site. This is covered in more
 detail
-[here](/discover/portal/-/knowledge_base/7-1/system-settings#configuration-scope).
+[here](/docs/7-1/user/-/knowledge_base/u/system-settings#configuration-scope).
 
 Here's how to scope a configuration: 
 
@@ -28,16 +32,16 @@ Here's how to scope a configuration:
 3.  Retrieve scoped configurations with a configuration provider.
 
 The third step is covered in the
-[configuration provider](/develop/tutorials/-/knowledge_base/7-1/reading-configuration-values-from-a-configuration-provider)
+[configuration provider](/docs/7-1/tutorials/-/knowledge_base/t/reading-configuration-values-from-a-configuration-provider)
 tutorial. This article covers the first two steps. Start by setting the scope in
 the configuration interface.
 
-## Step 1: Setting the Configuration Scope [](id=step-1-setting-the-configuration-scope)
+## Step 1: Setting the Configuration Scope
 
 Use the `@ExtendedObjectClassDefinition` annotation to specify the
 configuration's scope. The scope you choose must match how the configuration
 object is retrieved through the 
-[configuration provider](/develop/tutorials/-/knowledge_base/7-1/reading-configuration-values-from-a-configuration-provider)
+[configuration provider](/docs/7-1/tutorials/-/knowledge_base/t/reading-configuration-values-from-a-configuration-provider)
 configuration provider. Pass one of these valid scope options to
 `@ExtendedObjectClassDefinition`:
 
@@ -64,11 +68,11 @@ Here is an example:
 The scope property makes it appear in System Settings so an administrator
 can change its value. In future releases it may serve additional purposes.
 
-## Step 2: Enabling the Configuration for Scoped Retrieval [](id=enabling-the-configuration-for-scoped-retrieval)
+## Step 2: Enabling the Configuration for Scoped Retrieval
 
 If you set the configuration scope, you must retrieve the configuration values
 from the same scope. To retrieve a scoped configuration, use a 
-[Configuration Provider](/develop/tutorials/-/knowledge_base/7-1/reading-configuration-values-from-a-configuration-provider):
+[Configuration Provider](/docs/7-1/tutorials/-/knowledge_base/t/reading-configuration-values-from-a-configuration-provider):
 
     JournalGroupServiceConfiguration configuration =
         configurationProvider.getGroupConfiguration(
@@ -79,14 +83,10 @@ from the configuration provider. To enable scoped retrieval of a configuration,
 the application's configuration must be registered with a
 `ConfigurationBeanDeclaration`.
 
-+$$$
-
-**Note:** `ConfigurationProvider` is part of Liferay's kernel API so you don't
-need a new dependency to use it. However, its implementation is distributed as a
-module called `portal-configuration-module-configuration`, so make sure it is
-installed.
-
-$$$
+| **Note:** `ConfigurationProvider` is part of Liferay's kernel API so you don't
+| need a new dependency to use it. However, its implementation is distributed as a
+| module called `portal-configuration-module-configuration`, so make sure it is
+| installed.
 
 To create a configuration bean declaration:
 
@@ -106,11 +106,11 @@ To create a configuration bean declaration:
             return JournalGroupServiceConfiguration.class;
         }
 
-## Step 3: Retrieving Scoped Configurations [](id=step-3-retrieving-scoped-configurations)
+## Step 3: Retrieving Scoped Configurations
 
 If you set the configuration scope, then you must retrieve the configuration
 values from the same scope. To retrieve a scoped configuration, use a 
-[Configuration Provider](/develop/tutorials/-/knowledge_base/7-1/reading-configuration-values-from-a-configuration-provider):
+[Configuration Provider](/docs/7-1/tutorials/-/knowledge_base/t/reading-configuration-values-from-a-configuration-provider):
 
     JournalGroupServiceConfiguration configuration =
         configurationProvider.getGroupConfiguration(

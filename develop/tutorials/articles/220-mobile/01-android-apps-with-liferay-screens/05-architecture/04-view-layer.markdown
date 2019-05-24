@@ -1,4 +1,8 @@
-# View Layer [](id=view-layer)
+---
+header-id: view-layer
+---
+
+# View Layer
 
 The View layer lets developers set a Screenlet's look and feel. Each Screenlet's
 `liferay:layoutId` attribute specifies its View. A View consists of a Screenlet
@@ -74,18 +78,18 @@ several Screenlets. Liferay's available View sets are listed here:
   sample app.
 
 For information on creating or customizing Views, see the tutorial 
-[Creating Android Views](/develop/tutorials/-/knowledge_base/7-1/creating-android-views). 
+[Creating Android Views](/docs/7-1/tutorials/-/knowledge_base/t/creating-android-views). 
 
 Great! Now you know how Liferay Screens for Android is composed. However, 
 there's something you should know before moving on: how Screenlets interact with 
 the Android life cycle. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[High-Level Architecture](/develop/tutorials/-/knowledge_base/7-1/high-level-architecture)
+[High-Level Architecture](/docs/7-1/tutorials/-/knowledge_base/t/high-level-architecture)
 
-[Core Layer](/develop/tutorials/-/knowledge_base/7-1/core-layer)
+[Core Layer](/docs/7-1/tutorials/-/knowledge_base/t/core-layer)
 
-[Screenlet Layer](/develop/tutorials/-/knowledge_base/7-1/screenlet-layer)
+[Screenlet Layer](/docs/7-1/tutorials/-/knowledge_base/t/screenlet-layer)
 
-[Screenlet Lifecycle](/develop/tutorials/-/knowledge_base/7-1/screenlet-lifecycle)
+[Screenlet Lifecycle](/docs/7-1/tutorials/-/knowledge_base/t/screenlet-lifecycle)

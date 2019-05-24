@@ -1,4 +1,8 @@
-# Predictive Charts [](id=predictive-charts)
+---
+header-id: predictive-charts
+---
+
+# Predictive Charts
 
 Predictive charts let you visualize current data along with predicted/forecasted 
 data within a given value range. 
@@ -96,10 +100,10 @@ predicted/forecasted values are shown:
 
 ![Figure 2: A predictive chart lets you visualize estimated future data alongside existing data.](../../../images/chart-taglib-predictive.png)
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Combination Charts](/develop/tutorials/-/knowledge_base/7-1/combination-charts)
+[Combination Charts](/docs/7-1/tutorials/-/knowledge_base/t/combination-charts)
 
-[Geomap Charts](/develop/tutorials/-/knowledge_base/7-1/geomap-charts)
+[Geomap Charts](/docs/7-1/tutorials/-/knowledge_base/t/geomap-charts)
 
-[Scatter Charts](/develop/tutorials/-/knowledge_base/7-1/scatter-charts)
+[Scatter Charts](/docs/7-1/tutorials/-/knowledge_base/t/scatter-charts)

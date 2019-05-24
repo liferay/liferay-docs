@@ -1,4 +1,8 @@
-# Embedding Content in the AlloyEditor [](id=embedding-content-in-the-alloy-editor)
+---
+header-id: embedding-content-in-the-alloy-editor
+---
+
+# Embedding Content in the AlloyEditor
 
 Whether it's a video from a popular streaming service, or an entertaining 
 podcast, embedded content is commonplace on the web. Sharing content from a 
@@ -22,7 +26,7 @@ URL into the embed code.
 
 Follow these steps to create an `*EmbedProvider`:
 
-1.  [Create a module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#creating-a-module) 
+1.  [Create a module](/docs/7-1/tutorials/-/knowledge_base/t/starting-module-development#creating-a-module) 
     for the Embed Provider.
 
 2.  Add the following dependencies to the `build.gradle` file:
@@ -43,7 +47,7 @@ Follow these steps to create an `*EmbedProvider`:
 4.  Optionally set the `type` property to the content's type. If creating a 
     provider for a content type other than video, you can create a new type 
     constant and 
-    [add a new button](/develop/tutorials/-/knowledge_base/7-1/creating-new-buttons-for-alloyeditor) 
+    [add a new button](/docs/7-1/tutorials/-/knowledge_base/t/creating-new-buttons-for-alloyeditor) 
     for the content type. If you do create your own button, we recommend that 
     you use the existing 
     [embed video button's JSX files](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/frontend-editor/frontend-editor-alloyeditor-web/src/main/resources/META-INF/resources/js/extras/buttons/embed) 
@@ -121,8 +125,8 @@ Now you know how to embed content in the AlloyEditor. Create a new content
 entry, such as a blog post, and click the embed video button---or the one you 
 created---and paste the content's URL. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Adding Buttons to AlloyEditor's Toolbars](/develop/tutorials/-/knowledge_base/7-1/adding-buttons-to-alloyeditor-toolbars)
+[Adding Buttons to AlloyEditor's Toolbars](/docs/7-1/tutorials/-/knowledge_base/t/adding-buttons-to-alloyeditor-toolbars)
 
-[Adding New Behavior to an Editor](/develop/tutorials/-/knowledge_base/7-1/adding-new-behavior-to-an-editor)
+[Adding New Behavior to an Editor](/docs/7-1/tutorials/-/knowledge_base/t/adding-new-behavior-to-an-editor)

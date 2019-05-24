@@ -1,4 +1,8 @@
-# Leveraging Docker [](id=leveraging-docker)
+---
+header-id: leveraging-docker
+---
+
+# Leveraging Docker
 
 Docker has become increasingly popular in today's development lifecycle, by
 providing an automated way to package software and its dependencies into
@@ -17,12 +21,8 @@ yourself. Liferay Workspace, however, provides an easy way to integrate Docker
 development into your existing development workflow with preconfigured Gradle
 tasks.
 
-+$$$
-
-**Note:** Leveraging Docker in Liferay Workspace is only available for Gradle
-projects at this time.
-
-$$$
+| **Note:** Leveraging Docker in Liferay Workspace is only available for Gradle
+| projects at this time.
 
 In this tutorial, you'll learn how to do the following tasks within a workspace:
 
@@ -31,7 +31,7 @@ In this tutorial, you'll learn how to do the following tasks within a workspace:
 - [Interacting with the container](#interacting-with-the-container)
 - [Building a custom @product@ image](#building-a-custom-product-image)
 
-## Creating a @product@ Docker Container [](id=creating-a-product-docker-container)
+## Creating a @product@ Docker Container
 
 1.  Choose the Docker image you need. This is configured in your workspace's
     `gradle.properties` file by customizing this property: 
@@ -61,7 +61,7 @@ the container is started, all your projects are deployed to the container. All
 configurations are also applied to the container. You'll learn more about
 configuring your container next.
 
-## Configuring the Container [](id=configuring-the-container)
+## Configuring the Container
 
 Before starting your container, you may want to add additional portal
 configurations. This could include things like
@@ -83,25 +83,21 @@ following configuration:
     module.framework.properties.osgi.console=0.0.0.0:11311
 
 This lets you access your container using
-[Gogo shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell)
+[Gogo shell](/docs/7-1/reference/-/knowledge_base/r/using-the-felix-gogo-shell)
 via telnet session.
 
 Once the container is started, the configurations stored in `configs/docker` are
 transferred to the `build/docker/files` folder, which applies all configurations
 to the container's file system.
 
-+$$$
-
-**Note:** You can call the `deployDocker` Gradle task from your workspace's
-root folder to initiate the Docker configuration transfer to the
-`build/docker/files` folder manually. It's executed automatically when creating
-or starting the container.
-
-$$$
+| **Note:** You can call the `deployDocker` Gradle task from your workspace's
+| root folder to initiate the Docker configuration transfer to the
+| `build/docker/files` folder manually. It's executed automatically when creating
+| or starting the container.
 
 Next, you'll explore the commands for interacting with the container.
 
-##  Interacting with the Container [](id=interacting-with-the-container)
+##  Interacting with the Container
 
 `startDockerContainer`: starts the container.
 
@@ -119,23 +115,19 @@ folder) to the container.
 
 `removeDockerContainer`: removes the container from Docker's system.
 
-+$$$
-
-**Note:** During your container's startup, you may run into the following error:
-
-    /etc/liferay/entrypoint.sh: line 3:    11 Killed
-    ${LIFERAY_HOME}/tomcat/bin/catalina.sh run
-
-This usually means you have not allocated enough memory to your Docker engine to
-successfully run your container. See Docker's
-[documentation](https://docs.docker.com) to learn how to increase resources
-available to Docker.
-
-$$$
+| **Note:** During your container's startup, you may run into the following error:
+| 
+|     /etc/liferay/entrypoint.sh: line 3:    11 Killed
+|     ${LIFERAY_HOME}/tomcat/bin/catalina.sh run
+| 
+| This usually means you have not allocated enough memory to your Docker engine to
+| successfully run your container. See Docker's
+| [documentation](https://docs.docker.com) to learn how to increase resources
+| available to Docker.
 
 Next, you'll learn how to build a custom image.
 
-## Building a Custom @product@ Image [](id=building-a-custom-product-image)
+## Building a Custom @product@ Image
 
 You can preserve your container's configuration by building it as an image. To
 build your custom @product@ image, run

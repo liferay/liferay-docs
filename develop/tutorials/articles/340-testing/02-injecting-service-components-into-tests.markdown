@@ -1,20 +1,20 @@
-# Injecting Service Components into Integration Tests [](id=injecting-service-components-into-tests)
+---
+header-id: injecting-service-components-into-tests
+---
+
+# Injecting Service Components into Integration Tests
 
 You can use @product@'s `@Inject` annotation to inject service components into
 an integration test, like you use the
-[`@Reference` annotation to inject service components](/develop/tutorials/-/knowledge_base/7-1/osgi-services-and-dependency-injection-with-declarative-services)
+[`@Reference` annotation to inject service components](/docs/7-1/tutorials/-/knowledge_base/t/osgi-services-and-dependency-injection-with-declarative-services)
 into an OSGi component. 
 
-+$$$
-
-**Note:** 
-[Arquillian](http://arquillian.org/)
-plus
-[JUnit](https://junit.org)
-annotations is one way to develop integration tests. Liferay lets you use
-whatever testing framework you want. 
-
-$$$
+| **Note:**
+| [Arquillian](http://arquillian.org/)
+| plus
+| [JUnit](https://junit.org)
+| annotations is one way to develop integration tests. Liferay lets you use
+| whatever testing framework you want.
 
 `@Inject` uses reflection to inject a field with a service component object
 matching the field's interface.
@@ -76,18 +76,14 @@ At runtime, the `@Inject` annotation blocks the test until a matching service
 component is available. The block has a timeout and messages are logged
 regarding the test's unavailable dependencies.
 
-+$$$
-
-**Important**: If you're publishing the service component you are injecting, the
-test might never run. If you must publish the service component from the test
-class, use
-[Service Trackers](/develop/tutorials/-/knowledge_base/7-1/service-trackers)
-to access service components.
-
-$$$
+| **Important**: If you're publishing the service component you are injecting, the
+| test might never run. If you must publish the service component from the test
+| class, use
+| [Service Trackers](/docs/7-1/tutorials/-/knowledge_base/t/service-trackers)
+| to access service components.
 
 Great! Now you can inject service components into your tests.
 
-## Related Articles [](id=related-articles)
+## Related Articles
 
-[Service Trackers](/develop/tutorials/-/knowledge_base/7-1/service-trackers)
+[Service Trackers](/docs/7-1/tutorials/-/knowledge_base/t/service-trackers)

@@ -1,4 +1,8 @@
-# Accessing ThemeDisplay Information [](id=liferay-themedisplay)
+---
+header-id: liferay-themedisplay
+---
+
+# Accessing ThemeDisplay Information
 
 The `Liferay` global JavaScript Object exposes useful methods, objects, and
 properties, each containing a wealth of information, one of which is
@@ -18,7 +22,7 @@ This tutorial describes some of the most commonly used `ThemeDisplay` methods
 for retrieving IDs, file paths, and login information. An exhaustive list of all 
 of the available methods is displayed in the table at the end of this tutorial. 
 
-## Retrieving IDs [](id=retrieving-ids)
+## Retrieving IDs
 
 The methods below retrieve various Portal elements related to the current user:
 
@@ -37,7 +41,7 @@ The methods below retrieve various Portal elements related to the current user:
 
 Next you can learn how to access file paths for various deployed entities.
 
-## Retrieving File Paths [](id=retrieving-file-paths)
+## Retrieving File Paths
 
 The methods below retrieve file paths for various theme resources:
 
@@ -55,14 +59,14 @@ directory.
 
 Next you can learn how to retrieve information for the current user. 
 
-## Retrieving Login Information [](id=retrieving-login-information)
+## Retrieving Login Information
 
 The methods below return a boolean value indicating whether the current user is 
 signed in or being impersonated:
 
 **isImpersonated:** Returns `true` if the current user is being impersonated. 
 Authorized administrative users can
-[impersonate](/discover/portal/-/knowledge_base/6-2/the-users-section-of-the-control-panel#user-management) 
+[impersonate](/docs/6-2/user/-/knowledge_base/u/the-users-section-of-the-control-panel#user-management) 
 act as another user to test that user's account. 
 
 **isSignedIn:** Returns `true` if the user is logged in to the portal. 
@@ -79,7 +83,7 @@ experiences for each user with the `ThemeDisplay` APIs:
         alert('Hello Guest.')
     }
 
-## Liferay ThemeDisplay Methods [](id=liferay-themedisplay-methods)
+## Liferay ThemeDisplay Methods
 
 A complete list of the available `Liferay.ThemeDisplay` methods is shown in the 
 table below:
@@ -123,12 +127,12 @@ directory |
 | getUserName | string | Returns the user's name |
 | isAddSessionIdToURL | boolean | |
 | isFreeformLayout | boolean | |
-| isImpersonated | boolean | Returns `true` if the current user is being impersonated. Authorized administrative users can [impersonate](/discover/portal/-/knowledge_base/7-1/adding-editing-and-deleting-users#editing-users) act as another user to test that user's account |
+| isImpersonated | boolean | Returns `true` if the current user is being impersonated. Authorized administrative users can [impersonate](/docs/7-1/user/-/knowledge_base/u/adding-editing-and-deleting-users#editing-users) act as another user to test that user's account |
 | isSignedIn | boolean | Returns `true` if the user is logged in to the portal |
 | isStateExclusive | boolean | |
 | isStateMaximized | boolean | |
 | isStatePopUp | boolean | |
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[@product@ JavaScript Utilities](/develop/tutorials/-/knowledge_base/7-1/javascript-utilities)
+[@product@ JavaScript Utilities](/docs/7-1/tutorials/-/knowledge_base/t/javascript-utilities)

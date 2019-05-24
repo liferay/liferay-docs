@@ -1,9 +1,13 @@
-# Updating 6.2 Project Metadata [](id=updating-6-2-project-metadata)
+---
+header-id: updating-6-2-project-metadata
+---
+
+# Updating 6.2 Project Metadata
 
 If your theme uses the 
 [Liferay JS Theme Toolkit](https://github.com/liferay/liferay-themes-sdk/tree/master/packages), 
 the 
-[Gulp `upgrade` task](/develop/tutorials/-/knowledge_base/7-1/running-the-upgrade-task-for-6-2-themes) 
+[Gulp `upgrade` task](/docs/7-1/tutorials/-/knowledge_base/t/running-the-upgrade-task-for-6-2-themes) 
 automatically updates some of your theme's metadata as part of the upgrade 
 process. Follow the steps below to update your theme's metadata manually:
 
@@ -25,10 +29,10 @@ process. Follow the steps below to update your theme's metadata manually:
         </look-and-feel>
  
 3.  While you're updating `liferay-look-and-feel.xml`, enable your theme to use 
-    [Portlet Decorators](/develop/tutorials/-/knowledge_base/7-1/adding-portlet-decorators-to-a-theme).
+    [Portlet Decorators](/docs/7-1/tutorials/-/knowledge_base/t/adding-portlet-decorators-to-a-theme).
 
 4.  If your theme uses the Liferay JS Theme Toolkit, the 
-    [Gulp `upgrade` task](/develop/tutorials/-/knowledge_base/7-1/running-the-upgrade-task-for-6-2-themes) 
+    [Gulp `upgrade` task](/docs/7-1/tutorials/-/knowledge_base/t/running-the-upgrade-task-for-6-2-themes) 
     updates the `package.json` file's Liferay version references to `7.1`, and 
     it updates the `liferayTheme`'s `templateLanguage` to `ftl` 
     (since Velocity theme templates are no longer supported):
@@ -41,8 +45,8 @@ process. Follow the steps below to update your theme's metadata manually:
 
 Your theme's Liferay version references are updated for @product-ver@. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Updating 6.2 CSS Code](/develop/tutorials/-/knowledge_base/7-1/updating-6-2-css-code)
+[Updating 6.2 CSS Code](/docs/7-1/tutorials/-/knowledge_base/t/updating-6-2-css-code)
 
-[Developing Themes](/develop/tutorials/-/knowledge_base/7-1/developing-themes)
+[Developing Themes](/docs/7-1/tutorials/-/knowledge_base/t/developing-themes)

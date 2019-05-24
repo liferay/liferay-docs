@@ -1,4 +1,8 @@
-# Modules as an Improvement over Traditional Plugins [](id=modules-as-an-improvement-over-traditional-plugins)
+---
+header-id: modules-as-an-improvement-over-traditional-plugins
+---
+
+# Modules as an Improvement over Traditional Plugins
 
 In @product-ver@, you can develop applications using OSGi modules or using
 traditional Liferay plugins (WAR-style portlets, hooks, EXT, and web
@@ -9,14 +13,14 @@ from all @product@ and OSGi offer, however, you should use OSGi modules.
 Modules offer these benefits:
 
 - **Better Encapsulation** - The only classes a module exposes publicly are
-those in [packages it exports](/develop/tutorials/-/knowledge_base/7-1/exporting-packages)
+those in [packages it exports](/docs/7-1/tutorials/-/knowledge_base/t/exporting-packages)
 explicitly. This lets you define internal public classes transparent to
 external clients.
 
 - **Dependencies by Package** - Dependencies are specified by Java package, not
 by JAR file. In traditional plugins, you had to add *all* of a JAR file's
 classes to the classpath to use *any* of its classes. With OSGi, you need only
-[import packages](/develop/tutorials/-/knowledge_base/7-1/importing-packages)
+[import packages](/docs/7-1/tutorials/-/knowledge_base/t/importing-packages)
 containing the classes you need. Only the classes in those packages are added to
 the module's classpath.
 
@@ -36,7 +40,7 @@ versioned, you can specify precisely the modules you want to use.
 - **In-Context Descriptors** - Where plugins use descriptor files (e.g.,
 `web.xml`, `portlet.xml`, etc.) to describe classes, module classes use OSGi
 annotations to describe themselves. For example, a module portlet class can use
-[OSGi Service annotation properties](/develop/reference/-/knowledge_base/7-1/portlet-descriptor-to-osgi-service-property-map)
+[OSGi Service annotation properties](/docs/7-1/reference/-/knowledge_base/r/portlet-descriptor-to-osgi-service-property-map)
 to specify its name, display name, resource bundle, public render parameters,
 and much more. Instead of specifying that information in descriptor files
 separate from the code, you specify them in context in the code.
@@ -58,7 +62,7 @@ Here are some fundamental characteristics modules share with plugins:
 Now that you've compared and contrasted modules with plugins, it's time to tour
 the module anatomy. 
 
-## Module Structure: A JAR File with a Manifest [](id=module-structure-a-jar-file-with-a-manifest)
+## Module Structure: A JAR File with a Manifest
 
 A module's structure is extremely simple. It has one mandatory file:
 `META-INF/MANIFEST.MF`. You add code and resources to the module and organize
@@ -118,21 +122,21 @@ abbreviated (`[..]`) and some have been removed.
 You can organize and build a module's Java code and resources however you like.
 You're free to use any folder structure conventions, such as those used in Maven
 or by your development team. And you can use any build tool, such as Gradle or
-Maven, to  [manage dependencies](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies). 
+Maven, to  [manage dependencies](/docs/7-1/tutorials/-/knowledge_base/t/configuring-dependencies). 
 
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace)
+[Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace)
 is an environment for managing module projects (and theme projects). A default
 Workspace provides Gradle build scripts and a Workspace created from the Liferay
 Project Templates Workspace archetype provides Maven build scripts for
-developing on Liferay. Workspace can be used [from the command line](/develop/tutorials/-/knowledge_base/7-1/blade-cli)
-or from within [Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/liferay-ide).
+developing on Liferay. Workspace can be used [from the command line](/docs/7-1/tutorials/-/knowledge_base/t/blade-cli)
+or from within [Liferay @ide@](/docs/7-1/tutorials/-/knowledge_base/t/liferay-ide).
 Note also that Liferay @ide@ provides plugins for Gradle, Maven, and BndTools.
 Tooling details are covered later in this series.
 
 Now that you're familiar with the module structure and manifest, it's time to
 explore how to build modules.
 
-## Building Modules with bnd [](id=building-modules-with-bnd)
+## Building Modules with bnd
 
 The most common way to build modules is with a little tool called [bnd](http://bnd.bndtools.org/).
 It's an engine that, among other things, simplifies generating manifest

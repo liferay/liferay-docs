@@ -1,16 +1,20 @@
-# Invoking Liferay Services [](id=invoking-liferay-services)
+---
+header-id: invoking-liferay-services
+---
+
+# Invoking Liferay Services
 
 @product@ provides many web services out-of-the-box. To see a comprehensive list 
 of the available web services, navigate to `http://localhost:8080/api/jsonws` 
 (assuming your localhost is running on port 8080). If you've deployed your own 
 Service Builder-generated JSON web services, 
-[follow these guidelines](/develop/tutorials/-/knowledge_base/7-1/registering-json-web-services#mapping-and-naming-conventions)
+[follow these guidelines](/docs/7-1/tutorials/-/knowledge_base/t/registering-json-web-services#mapping-and-naming-conventions)
 for invoking them. These services are useful for creating single page 
 applications and can even be used to create custom front-ends in @product@. 
 
 This tutorial explains how to invoke these web services using JavaScript. 
 
-## Invoking Web Services via JavaScript [](id=invoking-web-services-via-javascript)
+## Invoking Web Services via JavaScript
 
 @product-ver@ contains a global JavaScript object called `Liferay` that has many
 useful utilities. One method is `Liferay.Service`, which invokes JSON web
@@ -95,7 +99,7 @@ and `emailAddress`. The response data resembles the following JSON object:
 Now that you know how to send an individual request, you're ready to run batch 
 requests. 
 
-## Batching Requests [](id=batching-requests)
+## Batching Requests
 
 Another way to invoke the `Liferay.Service` method is by passing an object with
 the keys of the service to call and the value of the service configuration
@@ -143,7 +147,7 @@ service objects. Here's an example:
  
 Next you can learn how to nest your requests. 
 
-## Nesting Requests [](id=nesting-requests)
+## Nesting Requests
 
 Nested service calls bind information from related objects together in a JSON
 object. You can call other services in the same HTTP request and conveniently
@@ -156,12 +160,8 @@ The example in this section retrieves user data with `/user/get-user-by-id` and
 uses the `contactId` returned from that service to then invoke 
 `/contact/get-contact` in the same request. 
 
-+$$$
-
-**Note:** You must flag parameters that take values from existing variables. To 
-flag a parameter, insert the `@` prefix before the parameter name.
-
-$$$
+| **Note:** You must flag parameters that take values from existing variables. To
+| flag a parameter, insert the `@` prefix before the parameter name.
 
 Below is an example configuration that demonstrates these concepts:
 
@@ -229,7 +229,7 @@ Here is what the response data would look like for the request above:
 Now that you know how to process requests, you can learn how to filter the 
 results. 
 
-## Filtering Results [](id=filtering-results)
+## Filtering Results
 
 If you don't want all the properties returned by a service, you can define a 
 whitelist of properties. This returns only the specific properties you request 
@@ -261,7 +261,7 @@ Below is the filtered response:
 
 Next you can learn how to populate the inner parameters of the request. 
  
-## Inner Parameters [](id=inner-parameters)
+## Inner Parameters
 
 When you pass in an object parameter, you'll often need to populate its inner 
 parameters (i.e., fields). 
@@ -284,8 +284,8 @@ fields such as `scopeGroupId`, as shown below:
  
 Now you know how to invoke Liferay services! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[@product@ JavaScript Utilities](/develop/tutorials/-/knowledge_base/7-1/javascript-utilities)
+[@product@ JavaScript Utilities](/docs/7-1/tutorials/-/knowledge_base/t/javascript-utilities)
 
-[Accessing ThemeDisplay Information](/develop/tutorials/-/knowledge_base/7-1/liferay-themedisplay)
+[Accessing ThemeDisplay Information](/docs/7-1/tutorials/-/knowledge_base/t/liferay-themedisplay)

@@ -1,4 +1,8 @@
-# Accessing Your Custom Finder Method from the Service Layer [](id=accessing-your-custom-finder-method-from-the-service-layer)
+---
+header-id: accessing-your-custom-finder-method-from-the-service-layer
+---
+
+# Accessing Your Custom Finder Method from the Service Layer
 
 So far, you've created a `*FinderImpl` class, defined a `findBy*` finder method
 in that class, and implemented the finder method using Dynamic Query. Now how do
@@ -12,13 +16,9 @@ application's web module invoke the business logic of the services published
 from your application's service module. The services, in turn, access the data
 model using the persistence layer's finder classes.
 
-+$$$
-
-**Note:** In previous versions of Liferay Portal, your finder methods were
-accessible via `*FinderUtil` utility classes. Finder methods are now injected
-into your app's local services, removing the need to call finder utilities.
-
-$$$
+| **Note:** In previous versions of Liferay Portal, your finder methods were
+| accessible via `*FinderUtil` utility classes. Finder methods are now injected
+| into your app's local services, removing the need to call finder utilities.
 
 You'll add a method in the `*LocalServiceImpl` class that invokes the finder
 method implementation via the `*Finder` class. Then you'll rebuild your
@@ -45,10 +45,10 @@ JSP by calling `_entryLocalService.findByEntryNameGuestbookName(...)`!
 Congratulations on following the three step process of developing a dynamic
 query in a custom finder and exposing it as a service for your portlet!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Service Builder Web Services](/develop/tutorials/-/knowledge_base/7-1/service-builder-web-services)
+[Service Builder Web Services](/docs/7-1/tutorials/-/knowledge_base/t/service-builder-web-services)
 
-[Creating Local Service](/develop/tutorials/-/knowledge_base/7-1/creating-local-services)
+[Creating Local Service](/docs/7-1/tutorials/-/knowledge_base/t/creating-local-services)
 
-[Invoking Local Services](/develop/tutorials/-/knowledge_base/7-1/invoking-local-services)
+[Invoking Local Services](/docs/7-1/tutorials/-/knowledge_base/t/invoking-local-services)

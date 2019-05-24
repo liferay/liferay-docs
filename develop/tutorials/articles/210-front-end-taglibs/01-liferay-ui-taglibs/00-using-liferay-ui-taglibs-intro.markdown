@@ -1,4 +1,8 @@
-# Using the Liferay UI Taglib [](id=using-the-liferay-ui-taglib-in-your-portlets)
+---
+header-id: using-the-liferay-ui-taglib-in-your-portlets
+---
+
+# Using the Liferay UI Taglib
 
 The Liferay UI tag library provides tags that implement commonly used UI 
 components. These tags make your markup consistent, responsive, and accessible. 

@@ -1,4 +1,8 @@
-# Updating CSS Code [](id=updating-css-code)
+---
+header-id: updating-css-code
+---
+
+# Updating CSS Code
 
 @product-ver@'s UI improvements required these CSS-related changes:
 
@@ -10,12 +14,12 @@ The theme upgrade process involves conforming to these changes. Now you'll
 update your theme's CSS files to reflect these changes. Start with updating CSS
 file names. 
 
-## Updating CSS File Names for Clay [](id=updating-css-file-names-for-clay)
+## Updating CSS File Names for Clay
 
 Some of the CSS filenames have changed to reflect the introduction of Clay 
 (previously Lexicon CSS). The filename changes for the unstyled theme are listed 
 below. Refer to the 
-[Theme Reference Guide](/develop/reference/-/knowledge_base/7-1/theme-reference-guide) 
+[Theme Reference Guide](/docs/7-1/reference/-/knowledge_base/r/theme-reference-guide) 
 for a complete list of expected theme CSS files. 
 
 The old 7.0 aui filenames are shown below:
@@ -36,7 +40,7 @@ Rename the aui files to match the updated 7.1 clay filenames shown below:
 Next, you can note the removed and deprecated variables and mixins for Bootstrap 
 4 and Lexicon.
 
-## Class Variable Changes [](id=class-variable-changes)
+## Class Variable Changes
 
 @product-ver@ uses Bootstrap 4's CSS rule syntax. The new syntax lets developers
 leverage Bootstrap 4 features and improvements. If your theme does not use the 
@@ -272,7 +276,7 @@ include this file manually, here are its contents for reference:
 After updating your theme's CSS variables and mixins, you should update the Font 
 Awesome Icon imports. 
 
-## Updating Font Awesome Icon Imports [](id=updating-font-awesome-icons)
+## Updating Font Awesome Icon Imports
 
 Originally in Liferay Portal CE 7.0 and Liferay DXP, Font Awesome icons were 
 imported in `_aui_variables.scss` (now renamed `_clay_variables.scss`). Font 
@@ -288,7 +292,7 @@ imports shown below:
 
 Next you can update the core imports. 
 
-## Updating Core Imports [](id=updating-core-imports)
+## Updating Core Imports
 
 Update the old aui lexicon paths to use the clay paths instead, as shown in the 
 table below:
@@ -301,8 +305,8 @@ table below:
 |`@import "aui/lexicon/atlas-variables";`|`@import "clay/atlas-variables";`|
 |`@import "aui/lexicon/atlas";`|`@import "clay/atlas";`|
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Updating Theme Templates](/develop/tutorials/-/knowledge_base/7-1/updating-theme-templates)
+[Updating Theme Templates](/docs/7-1/tutorials/-/knowledge_base/t/updating-theme-templates)
 
-[Copying an Existing Theme's Files](/develop/tutorials/-/knowledge_base/7-1/copying-an-existing-themes-files)
+[Copying an Existing Theme's Files](/docs/7-1/tutorials/-/knowledge_base/t/copying-an-existing-themes-files)

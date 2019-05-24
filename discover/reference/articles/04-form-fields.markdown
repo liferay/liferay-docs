@@ -1,9 +1,13 @@
-# Form Field Types [](id=form-field-types)
+---
+header-id: form-field-types
+---
+
+# Form Field Types
 
 A form without fields is no form at all. To meet your form-building needs,
 Liferay Forms provides useful and highly configurable field types. To see
 examples of the form fields described here, visit the 
-[Forms](/discover/portal/-/knowledge_base/7-1/forms)
+[Forms](/docs/7-1/user/-/knowledge_base/u/forms)
 section of the User Guide.
 
 ![Figure 1: There are many useful out-of-the-box form field types.](../images/forms-field-types.png)
@@ -18,10 +22,10 @@ the form. This is useful for longer instructions.
 field is a text field. By default, a text field keeps all input on a single line 
 of text. To accommodate longer responses, choose the multi-line setting when 
 configuring the text field 
-[as in this example](/discover/portal/-/knowledge_base/7-1/creating-and-managing-forms#building-a-form). 
+[as in this example](/docs/7-1/user/-/knowledge_base/u/creating-and-managing-forms#building-a-form). 
 You can put limits on the text users can enter (e.g., numbers from 1-10, email 
 addresses, etc.) by using the text field's 
-[validation options](/discover/portal/-/knowledge_base/7-1/validating-text-and-numeric-fields). 
+[validation options](/docs/7-1/user/-/knowledge_base/u/validating-text-and-numeric-fields). 
 
 ![Figure 3: Text fields can be single line or multi-line.](../images/forms-multiline.png)
 

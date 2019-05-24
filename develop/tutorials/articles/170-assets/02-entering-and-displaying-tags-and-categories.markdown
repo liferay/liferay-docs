@@ -1,15 +1,19 @@
-# Implementing Asset Categorization and Tagging [](id=implementing-asset-categorization-and-tagging)
+---
+header-id: implementing-asset-categorization-and-tagging
+---
+
+# Implementing Asset Categorization and Tagging
 
 In this tutorial, you'll enable tags and categories entities in the UI through
 a set of JSP tags. Before beginning, your entities should be
-[asset-enabled](/develop/tutorials/-/knowledge_base/7-1/adding-updating-and-deleting-assets)
+[asset-enabled](/docs/7-1/tutorials/-/knowledge_base/t/adding-updating-and-deleting-assets)
 and you should have asset renderers enabled for them.
 
 ![Figure 1: Adding category and tag input options lets authors aggregate and label custom entities.](../../images/asset-fw-categories-and-tags-options.png)
 
 Now it's time to get started! 
 
-## Adding Tags and Categories [](id=adding-tags-and-categories)
+## Adding Tags and Categories
 
 You can use the following tags in the JSPs you provide for adding/editing custom
 entities. Here's what the tags look like in the
@@ -42,7 +46,7 @@ or show the category and tag input options.
 For styling purposes, the `aui:fieldset-group` tag is given the `lexicon`
 markup view.
 
-## Displaying Tags and Categories [](id=displaying-tags-and-categories)
+## Displaying Tags and Categories
 
 Tags and categories should be displayed with the content of the asset. Here's
 how to display the tags and categories: 
@@ -82,10 +86,10 @@ categorization and tag input options in a panel that the user can hide/show.
 Great! Now you know how to make category and tag input options available to your
 app's content authors. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Relating Assets](/develop/tutorials/-/knowledge_base/7-1/relating-assets)
+[Relating Assets](/docs/7-1/tutorials/-/knowledge_base/t/relating-assets)
 
-[Adding, Updating, and Deleting Assets](/develop/tutorials/-/knowledge_base/7-1/adding-updating-and-deleting-assets)
+[Adding, Updating, and Deleting Assets](/docs/7-1/tutorials/-/knowledge_base/t/adding-updating-and-deleting-assets)
 
-[What is Service Builder?](/develop/tutorials/-/knowledge_base/7-1/what-is-service-builder)
+[What is Service Builder?](/docs/7-1/tutorials/-/knowledge_base/t/what-is-service-builder)

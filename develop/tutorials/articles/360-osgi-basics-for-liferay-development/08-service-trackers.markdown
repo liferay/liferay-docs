@@ -1,4 +1,8 @@
-# Service Trackers [](id=service-trackers)
+---
+header-id: service-trackers
+---
+
+# Service Trackers
 
 In an OSGi runtime ecosystem, you must consider how your modules can rely on
 services in other modules for functionality. It's possible for service
@@ -6,19 +10,15 @@ implementations to be swapped out or removed entirely, and your module must not
 just survive but thrive in this environment. 
 
 If you 
-[call services](/develop/tutorials/-/knowledge_base/7-1/invoking-local-services)
+[call services](/docs/7-1/tutorials/-/knowledge_base/t/invoking-local-services)
 from `@Component` classes, it's easy: you just use another 
 [Declarative Services (DS)](https://osgi.org/specification/osgi.cmpn/7.0.0/service.component.html)
 annotation, `@Reference`, to get a service reference. The component activates
 when the referenced service is available. 
 
-+$$$
-
-**Note:** The `@Reference` annotation can only be used in a class that is 
-annotated with `@Component`. That is, only a Declarative Services component can
-use `@Reference` to bind to an OSGi service. 
-
-$$$
+| **Note:** The `@Reference` annotation can only be used in a class that is
+| annotated with `@Component`. That is, only a Declarative Services component can
+| use `@Reference` to bind to an OSGi service.
 
 If you can use DS and leverage the `@Component` and `@Reference` annotations,
 you should. DS handles much of the complexity of handling service dynamism for
@@ -29,27 +29,23 @@ implement a Service Tracker to look up services in the service registry.
 
 ![Figure 1: Service implementations that are registered in the OSGi service registry can be accessed using Service Trackers.](../../images/service-registry.png)
 
-+$$$
-
-**Note:** When using Service Trackers in your WAR-style project, you must
-configure the required `org.osgi.core` dependency carefully in your build file
-(e.g., `build.gradle`, `pom.xml`, etc.) to avoid errors. Since it's included in
-@product@ by default, it must be configured as `provided`. See the
-[Third Party Packages Portal Exports](/develop/reference/-/knowledge_base/7-1/third-party-packages-portal-exports)
-tutorial for more information.
-
-$$$
+| **Note:** When using Service Trackers in your WAR-style project, you must
+| configure the required `org.osgi.core` dependency carefully in your build file
+| (e.g., `build.gradle`, `pom.xml`, etc.) to avoid errors. Since it's included in
+| @product@ by default, it must be configured as `provided`. See the
+| [Third Party Packages Portal Exports](/docs/7-1/reference/-/knowledge_base/r/third-party-packages-portal-exports)
+| tutorial for more information.
 
 What scenarios might require using a service tracker? Keep in mind we're
 focusing on scenarios where DS *can't* be used. This typically involves a
 non-native (to OSGi) Dependency Injection framework.
 
 -   Calling OSGi services from a
-    [Spring MVC portlet](/develop/tutorials/-/knowledge_base/7-1/spring-mvc)
+    [Spring MVC portlet](/docs/7-1/tutorials/-/knowledge_base/t/spring-mvc)
 -   Calling OSGi services from a
-    [WAR-packaged portlet](/develop/tutorials/-/knowledge_base/7-1/upgrading-plugins-to-liferay-7)
+    [WAR-packaged portlet](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-plugins-to-liferay-7)
     that's been upgraded to run on @product-ver@, but not
-    [fully modularized](/develop/tutorials/-/knowledge_base/7-1/modularizing-an-existing-portlet)
+    [fully modularized](/docs/7-1/tutorials/-/knowledge_base/t/modularizing-an-existing-portlet)
     and made into an OSGi module
 
 <!-- TODO: readd JSF part, when available. -Cody
@@ -58,25 +54,21 @@ non-native (to OSGi) Dependency Injection framework.
     [JSF portlet](develop/tutorials/-/knowledge_base/7-1/jsf-portlets-with-liferay-faces)
 -->
 
-+$$$
-
-**Note:**  The static utility classes (e.g., `UserLocalServiceUtil`) that were 
-useful in Liferay Portal 6.2 (and earlier) exist for compatibility but should
-not be called, if possible.  Static utility classes cannot account for the OSGi
-runtime's dynamic environment. If you use a static class, you might attempt
-calling a stopped service or one that hasn't been deployed or started. This
-could cause unrecoverable runtime errors. Service Trackers, however, help you
-make OSGi-friendly service calls.
-
-$$$
+| **Note:**  The static utility classes (e.g., `UserLocalServiceUtil`) that were
+| useful in Liferay Portal 6.2 (and earlier) exist for compatibility but should
+| not be called, if possible.  Static utility classes cannot account for the OSGi
+| runtime's dynamic environment. If you use a static class, you might attempt
+| calling a stopped service or one that hasn't been deployed or started. This
+| could cause unrecoverable runtime errors. Service Trackers, however, help you
+| make OSGi-friendly service calls.
 
 Your non-OSGi application can access any service registered in the OSGi runtime
 using a Service Tracker, including your own 
-[Service Builder services](/develop/tutorials/-/knowledge_base/7-1/what-is-service-builder) 
+[Service Builder services](/docs/7-1/tutorials/-/knowledge_base/t/what-is-service-builder) 
 and the services published by Liferay's modules (like the popular
 `UserLocalService`).
 
-## Implementing a Service Tracker [](id=implementing-a-service-tracker)
+## Implementing a Service Tracker
 
 Service Trackers don't give you the luxury of managing your service dependencies
 with DS, but you can call services from the service registry.
@@ -149,7 +141,7 @@ A better way is to create a class that extends
 Service Trackers make it possible to call OSGi services from outside the OSGi
 runtime. 
 
-## Implementing a Callback Handler for Services [](id=implementing-a-callback-handler-for-services)
+## Implementing a Callback Handler for Services
 
 If there's a strong possibility the service might not be available or if you
 need to track multiple services, the Service Tracker API provides a callback

@@ -1,42 +1,42 @@
-# Searching for Assets [](id=searching-for-assets)
+---
+header-id: searching-for-assets
+---
+
+# Searching for Assets
 
 As explained in the 
-[Search introduction](/discover/portal/-/knowledge_base/7-1/search), 
+[Search introduction](/docs/7-1/user/-/knowledge_base/u/search), 
 all indexed assets can be returned as search results. Developers can create
 their own assets, so your installation might have additional asset types beyond
 the ones included by default. 
 
-+$$$
+| **Searching for Users:** When you click an asset in the search results, it's
+| displayed in an Asset Publisher (unless the *View in Context* option is
+| selected in the Search Results portlet). Users are different, though. Think of
+| them as invisible assets, not intended for display in the Asset Publisher
+| application.  While Users appear as search results with other indexed assets,
+| when you click one you're taken to the User's profile page. If public personal
+| pages are disabled, clicking on a User from the list of search results shows
+| you a blank page.
 
-**Searching for Users:** When you click an asset in the search results, it's
-displayed in an Asset Publisher (unless the *View in Context* option is
-selected in the Search Results portlet). Users are different, though. Think of
-them as invisible assets, not intended for display in the Asset Publisher
-application.  While Users appear as search results with other indexed assets,
-when you click one you're taken to the User's profile page. If public personal
-pages are disabled, clicking on a User from the list of search results shows
-you a blank page.
-
-$$$
-
-## Search Bar [](id=search-bar)
+## Search Bar
 
 Users enter the search context in the search bar. Users enter search terms, hit
 their *Enter* button (or click the magnifying glass icon), and they're taken to
-a [search page](/discover/portal/-/knowledge_base/7-1/configuring-search-pages)
+a [search page](/docs/7-1/user/-/knowledge_base/u/configuring-search-pages)
 with various search widgets deployed. 
 
 If using the Search Bar in the legacy 
-[search portlet](/discover/portal/-/knowledge_base/7-1/configuring-search-pages#legacy-search-experience),
+[search portlet](/docs/7-1/user/-/knowledge_base/u/configuring-search-pages#legacy-search-experience),
 users see a maximized view of the search portlet displaying any results and
 facets that apply. See the article on 
-[configuring search pages](/discover/portal/-/knowledge_base/7-1/configuring-search-pages#legacy-search-experience)
+[configuring search pages](/docs/7-1/user/-/knowledge_base/u/configuring-search-pages#legacy-search-experience)
 to learn more about these options.
 
 ![Figure 1: The default search configuration displays a search bar in its default view,
 beckoning users to enter the search context.](../../images/search-bar.png)
 
-### Entering Search Terms [](id=entering-search-terms)
+### Entering Search Terms
 
 Liferay's search infrastructure supports full text search as implemented by its
 supported search engines 
@@ -60,7 +60,7 @@ documentation for the details.
 
 ![Figure 2: Search for text in a specific field using Elasticsearch's Query String syntax.](../../images/search-advanced-syntax.png)
 
-### Matching Exact Phrases: Quoted Search [](id=matching-exact-phrases-quoted-search)
+### Matching Exact Phrases: Quoted Search
 
 What if users want their search terms (for example, _space vacation_) to produce
 only results with the exact phrase, as typed? In a regular full text search,
@@ -71,7 +71,7 @@ with the exact phrase are returned, enclose it in quotes: _"space vacation"_.
 
 ![Figure 3: Search for exact phrase matches by enclosing search terms in quotes. If a user searched for _"space vacation"_, this result would not be returned.](../../images/search-quoted.png)
 
-### Prefix Searching [](id=prefix-searching)
+### Prefix Searching
 
 If you're searching in a site for classical musicians, you might search for the
 term *instrument*. This search returns documents with the full word in them, but
@@ -80,34 +80,26 @@ with *instruments*, *instrumental*, and *instrumentation* are also returned.
 
 ![Figure 4: Searching for *data* also returns *database*.](../../images/search-prefix.png)
 
-+$$$
-
-**Note:** Prefix searching is available for many fields out of the box, but as
-with most things related to search behavior, it's more complicated under the
-hood. The details of the field mapping, including the analyzer used on the field
-and any transformations performed, determine the final behavior.
-
-$$$
+| **Note:** Prefix searching is available for many fields out of the box, but as
+| with most things related to search behavior, it's more complicated under the
+| hood. The details of the field mapping, including the analyzer used on the field
+| and any transformations performed, determine the final behavior.
 
 Another way to ensure users see results is through 
 [search suggestions](#search-suggestions).
 
-### Configuring the Search Bar [](id=configuring-the-search-bar)
+### Configuring the Search Bar
 
 Configure the Search Bar's behavior via its portlet configuration screen.
 
 ![Figure 5: Configure the search bar behavior in its configuration screen.](../../images/search-bar-configuration.png)
 
-+$$$
-
-**Note:** When you configure the globally embedded Search Bar widget at the top
-of one page, it configures the page-top Search Bar widget on all pages in the
-site. It also overrides the destination 
-[Search Page's](/discover/portal/-/knowledge_base/7-1/configuring-search-pages) 
-Search Bar portlet, if they're configured differently. However, it does not
-override Search Bar widgets manually placed on other pages.
-
-$$$
+| **Note:** When you configure the globally embedded Search Bar widget at the top
+| of one page, it configures the page-top Search Bar widget on all pages in the
+| site. It also overrides the destination
+| [Search Page's](/docs/7-1/user/-/knowledge_base/u/configuring-search-pages)
+| Search Bar portlet, if they're configured differently. However, it does not
+| override Search Bar widgets manually placed on other pages.
 
 There are several options:
 
@@ -144,7 +136,7 @@ Changing _scope_ to _target_ would produce this URL:
 
 **Destination Page**
 : Provide a friendly URL to the 
-[search page](/discover/portal/-/knowledge_base/7-1/configuring-search-pages).
+[search page](/docs/7-1/user/-/knowledge_base/u/configuring-search-pages).
 If not configured or if it points to a page that doesn't exist, a message
 appears for administrators that the search bar must be configured for it to
 appear to users.
@@ -155,7 +147,7 @@ appear to users.
 into the Search Bar. If using Solr, consult its documentation for the 
 [proper syntax](https://lucene.apache.org/solr/guide/6_6/query-syntax-and-parsing.html).
 
-## Search Suggestions [](id=search-suggestions)
+## Search Suggestions
 
 Suggest search terms to users when their initial queries are suboptimal. Spell
 check settings allow administrators to configure the Search application so that

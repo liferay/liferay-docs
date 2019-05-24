@@ -1,4 +1,8 @@
-# Using the Patching Tool [](id=patching-tool)
+---
+header-id: patching-tool
+---
+
+# Using the Patching Tool
 
 The Patching Tool installs, removes, compares, and prepares @product@ patches.
 It is pre-installed in @product@ bundles, easy to install into @product@ manual
@@ -10,7 +14,7 @@ Here are the essentials to get started using the Patching Tool:
 - [Installing the Patching Tool](#installing-the-patching-tool) (for manual installations only)
 - [Executables](#executables)
 
-## Installing the Patching Tool [](id=installing-the-patching-tool)
+## Installing the Patching Tool
 
 @product@ bundles come with the Patching Tool pre-installed (in `[Liferay
 Home]/patching-tool`) and pre-configured with the default settings. Skip this
@@ -23,15 +27,15 @@ Tool manually.
     [Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/7-1).
 
 2.  Unzip the Patching Tool to your
-    [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
+    [Liferay Home](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home)
     folder (recommended) or to another folder. 
 
 After installing the Patching Tool, you must
-[configure it to use your @product@ installation](/discover/deployment/-/knowledge_base/7-1/configuring-the-patching-tool).
+[configure it to use your @product@ installation](/docs/7-1/deploy/-/knowledge_base/d/configuring-the-patching-tool).
 The `patching-tool` folder you extracted from the Patching Tool ZIP file
 contains the Patching Tool, including its executable scripts. 
 
-## Executables [](id=executables)
+## Executables
 
 The Unix shell and Windows batch scripts distributed with the Patching Tool make
 it easier to use. On Unix systems, run

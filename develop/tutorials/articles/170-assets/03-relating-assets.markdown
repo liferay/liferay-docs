@@ -1,4 +1,8 @@
-# Relating Assets [](id=relating-assets)
+---
+header-id: relating-assets
+---
+
+# Relating Assets
 
 Relating assets connects individual pieces of content across your site or
 portal. This helps users discover related content, particularly when there's an
@@ -9,18 +13,18 @@ content article appear alongside that entry in the Asset Publisher application.
 
 Now you'll learn how to provide a way for authors to relate content.
 This tutorial assumes that you've
-[Adding, Updating, and Deleting Assets](/develop/tutorials/-/knowledge_base/7-1/adding-updating-and-deleting-assets)
+[Adding, Updating, and Deleting Assets](/docs/7-1/tutorials/-/knowledge_base/t/adding-updating-and-deleting-assets)
 your application. If you've already done this, go ahead and begin relating your
 assets!
 
-## Relating Assets in the Service Layer [](id=relating-assets-in-the-service-layer)
+## Relating Assets in the Service Layer
 
 First, you must make some modifications to your portlet's service layer. You
 must implement persisting your entity's asset relationships. 
 
 1.  In your portlet's `service.xml`, put the following line of code below any
     finder method elements and then
-    [run](/develop/tutorials/-/knowledge_base/7-1/running-service-builder)
+    [run](/docs/7-1/tutorials/-/knowledge_base/t/running-service-builder)
     Service Builder:
 
         <reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
@@ -64,7 +68,7 @@ Super! Now your portlet's service layer can handle related assets. Even so,
 there's still nothing in your portlet's UI that lets your users relate assets.
 You'll take care of that in the next step.
 
-## Relating Assets in the UI [](id=relating-assets-in-the-ui)
+## Relating Assets in the UI
 
 The UI for linking assets should be in the JSP where users create and edit your
 entity. This way only content creators can relate other assets to the entity.
@@ -92,7 +96,7 @@ placed inside the `aui:fieldset` tags of the JSP.
     and the name you want for the value. Put the language key in file
     `docroot/WEB-INF/src/content/Language.properties` in your portlet. You can
     refer to the 
-    [Overriding Language Keys](/develop/tutorials/-/knowledge_base/7-1/overriding-language-keys)
+    [Overriding Language Keys](/docs/7-1/tutorials/-/knowledge_base/t/overriding-language-keys)
     tutorial for more documentation on using language properties.
 
     Upon redeploying your portlet, the value you assigned to the fully qualified
@@ -103,7 +107,7 @@ application. The next thing you need to do is reveal any such related assets to
 the rest of your application's users. After all, you don't want to give everyone
 edit access just so they can view related assets!
 
-## Showing Related Assets [](id=showing-related-assets)
+## Showing Related Assets
 
 You can show related assets in your application's view of that entity or, if
 you've implemented asset rendering for your custom entity, you can show related
@@ -135,10 +139,10 @@ page.
 
 Excellent! Now you know how to implement related assets in your apps.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Adding, Updating, and Deleting Assets](/develop/tutorials/-/knowledge_base/7-1/adding-updating-and-deleting-assets)
+[Adding, Updating, and Deleting Assets](/docs/7-1/tutorials/-/knowledge_base/t/adding-updating-and-deleting-assets)
 
-[What is Service Builder?](/develop/tutorials/-/knowledge_base/7-1/what-is-service-builder)
+[What is Service Builder?](/docs/7-1/tutorials/-/knowledge_base/t/what-is-service-builder)
 
-[Defining Content Relationships](/discover/portal/-/knowledge_base/7-1/defining-content-relationships)
+[Defining Content Relationships](/docs/7-1/user/-/knowledge_base/u/defining-content-relationships)

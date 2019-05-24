@@ -1,6 +1,10 @@
-# Creating iOS Screenlets [](id=creating-ios-screenlets)
+---
+header-id: creating-ios-screenlets
+---
 
-[The built-in Screenlets](/develop/reference/-/knowledge_base/7-1/screenlets-in-liferay-screens-for-ios) 
+# Creating iOS Screenlets
+
+[The built-in Screenlets](/docs/7-1/reference/-/knowledge_base/r/screenlets-in-liferay-screens-for-ios) 
 cover common use cases for mobile apps that use Liferay. They authenticate 
 users, interact with Dynamic Data Lists, display assets, and more. What if, 
 however, there's no Screenlet for *your* use case? No problem! You can create 
@@ -19,9 +23,9 @@ In general, you use the following steps to create Screenlets:
 2.  **Create Your Screenlet's UI (its Theme):** Although these tutorials present 
     all the information you need to create a Theme for your Screenlet, you may 
     first want to learn the steps for 
-    [creating a Theme](/develop/tutorials/-/knowledge_base/7-1/creating-ios-themes). 
+    [creating a Theme](/docs/7-1/tutorials/-/knowledge_base/t/creating-ios-themes). 
     For more information on Themes in general, see 
-    [the tutorial on using Themes](/develop/tutorials/-/knowledge_base/7-1/using-themes-in-ios-screenlets). 
+    [the tutorial on using Themes](/docs/7-1/tutorials/-/knowledge_base/t/using-themes-in-ios-screenlets). 
 
 3.  **Create the Screenlet's Interactor:** Interactors are Screenlet components 
     that make server calls. 
@@ -32,4 +36,4 @@ In general, you use the following steps to create Screenlets:
 
 The tutorials that follow walk you through these steps. Before getting started, 
 make sure that you're familiar with the 
-[architecture of Liferay Screens](/develop/tutorials/-/knowledge_base/7-1/architecture-of-liferay-screens-for-ios). 
+[architecture of Liferay Screens](/docs/7-1/tutorials/-/knowledge_base/t/architecture-of-liferay-screens-for-ios). 

@@ -1,4 +1,8 @@
-# Contributing the Button to AlloyEditor [](id=contributing-the-button-to-alloyeditor)
+---
+header-id: contributing-the-button-to-alloyeditor
+---
+
+# Contributing the Button to AlloyEditor
 
 Once you've created your button, you can add it to the list of available 
 buttons. This can be achieved thanks to some smartly placed 
@@ -17,7 +21,7 @@ Below is an example configuration that extends this class:
     file. You can use the `StringBundler` to concatenate the script. Note the 
     `sb.append("/js/buttons.js")` line below. This is the `bundleFileName` you 
     defined in your 
-    [bundle's `build.gradle` `transpileJS` task](/develop/tutorials/-/knowledge_base/7-1/creating-the-alloyeditor-buttons-osgi-bundle):
+    [bundle's `build.gradle` `transpileJS` task](/docs/7-1/tutorials/-/knowledge_base/t/creating-the-alloyeditor-buttons-osgi-bundle):
 
         @Override
         public void include(
@@ -61,13 +65,13 @@ Below is an example configuration that extends this class:
     }
 
 Now that your button is included, you can follow the steps covered in 
-[Adding Buttons to the AlloyEditor's Toolbars](/develop/tutorials/-/knowledge_base/7-1/adding-buttons-to-alloyeditor-toolbars) 
+[Adding Buttons to the AlloyEditor's Toolbars](/docs/7-1/tutorials/-/knowledge_base/t/adding-buttons-to-alloyeditor-toolbars) 
 tutorials to add the button to the editor's toolbars. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Adding New Behavior to an Editor](/develop/tutorials/-/knowledge_base/7-1/adding-new-behavior-to-an-editor)
+[Adding New Behavior to an Editor](/docs/7-1/tutorials/-/knowledge_base/t/adding-new-behavior-to-an-editor)
 
-[Creating the Button's JSX File](/develop/tutorials/-/knowledge_base/7-1/creating-the-alloyeditor-buttons-jsx-file)
+[Creating the Button's JSX File](/docs/7-1/tutorials/-/knowledge_base/t/creating-the-alloyeditor-buttons-jsx-file)
 
-[WYSIWYG Editor Dynamic Includes](/develop/tutorials/-/knowledge_base/7-1/wysiwyg-editor-dynamic-includes)
+[WYSIWYG Editor Dynamic Includes](/docs/7-1/tutorials/-/knowledge_base/t/wysiwyg-editor-dynamic-includes)

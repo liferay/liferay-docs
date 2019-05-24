@@ -1,11 +1,15 @@
-# Adjusting Module Logging [](id=adjusting-module-logging)
+---
+header-id: adjusting-module-logging
+---
+
+# Adjusting Module Logging
 
 @product@ uses [Log4j](http://logging.apache.org/log4j/1.2/) logging
 services. Here are the ways to configure logging for module classes and class
 hierarchies.
 
 -   *Log Levels* in
-    [@product@'s UI](/discover/portal/-/knowledge_base/7-1/server-administration)
+    [@product@'s UI](/docs/7-1/user/-/knowledge_base/u/server-administration)
 -   Configure Log4j for multiple modules in a
     `[anyModule]/src/main/resources/META-INF/module-log4j.xml` file.
 -   Configure Log4j for a specific module in a
@@ -50,20 +54,16 @@ example, the [action-command-portlet](https://github.com/liferay/liferay-blade-s
 [service-builder/jdbc](https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/service-builder/jdbc)
 samples (among others) leverage module logging.
 
-+$$$
-
-Note: If the log level configuration isn't appearing (e.g., you set the log
-level to `ERROR` but you're still getting `WARN` messages), make sure the log
-configuration file name prefix matches the module's symbolic name. If you have
-bnd installed, output from command `bnd print [path-to-bundle]` includes the
-module's symbolic name ([Here](https://github.com/bndtools/bnd/wiki/Install-bnd-on-the-command-line)
-are instructions for installing bnd for the command line).
-
-$$$
+| Note: If the log level configuration isn't appearing (e.g., you set the log
+| level to `ERROR` but you're still getting `WARN` messages), make sure the log
+| configuration file name prefix matches the module's symbolic name. If you have
+| bnd installed, output from command `bnd print [path-to-bundle]` includes the
+| module's symbolic name ([Here](https://github.com/bndtools/bnd/wiki/Install-bnd-on-the-command-line)
+| are instructions for installing bnd for the command line).
 
 That's it for module log configuration. You're all set to print the information
 you want.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Implementing Logging](/develop/tutorials/-/knowledge_base/7-1/implementing-logging)
+[Implementing Logging](/docs/7-1/tutorials/-/knowledge_base/t/implementing-logging)

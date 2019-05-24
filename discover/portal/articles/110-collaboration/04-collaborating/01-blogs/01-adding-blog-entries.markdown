@@ -1,4 +1,8 @@
-# Adding Blog Entries [](id=adding-blog-entries)
+---
+header-id: adding-blog-entries
+---
+
+# Adding Blog Entries
 
 Each site contains a built-in blog instance, so you can add blog entries to it 
 right away. The easiest way to do this is in the Site Administration menu. 
@@ -19,7 +23,7 @@ Follow these steps to add a blog entry in Site Administration:
 
 3.  The first input field, *Drag \& Drop to Upload*, is for optionally adding
     a cover image for your entry. By default, an 
-    [Asset Publisher](/discover/portal/-/knowledge_base/7-1/publishing-assets)
+    [Asset Publisher](/docs/7-1/user/-/knowledge_base/u/publishing-assets)
     shows this cover image as part of the blog entry's abstract. You can insert 
     any image you like in this field, either via drag and drop or the *Select 
     File* button. The latter lets you choose an existing image in the blog, an
@@ -28,7 +32,7 @@ Follow these steps to add a blog entry in Site Administration:
 
     If you select an image from Documents and Media, you can make changes to it
     with the 
-    [Image Editor](/discover/portal/-/knowledge_base/7-1/editing-images). 
+    [Image Editor](/docs/7-1/user/-/knowledge_base/u/editing-images). 
     Edits you make are applied automatically to a copy of the image, which you
     can then use as your cover photo.
 
@@ -47,11 +51,11 @@ Follow these steps to add a blog entry in Site Administration:
     editing controls appears. This keeps your canvas uncluttered so you can
     focus on writing. You can also add images, videos, and tables in your blog
     entry's content. See 
-    [Using the Blog Entry Editor](/discover/portal/-/knowledge_base/7-1/using-the-blog-entry-editor)
+    [Using the Blog Entry Editor](/docs/7-1/user/-/knowledge_base/u/using-the-blog-entry-editor)
     for instructions on creating your blog entry's content. 
 
 6.  Expand the *Categorization* panel and associate your blog entry with 
-    [tags and/or categories](/discover/portal/-/knowledge_base/7-1/organizing-content-with-tags-and-categories). 
+    [tags and/or categories](/docs/7-1/user/-/knowledge_base/u/organizing-content-with-tags-and-categories). 
     Although this is optional, it improves search results for blog entries and 
     gives your users more navigation options. For example, you can add the Tags
     Navigation app to another column on your blogs page, which lets users browse 
@@ -63,7 +67,7 @@ Follow these steps to add a blog entry in Site Administration:
     might want to write a blog entry about a discussion that happened on the 
     forums. To link those two assets together, select the forum thread under 
     Related Assets. For more information, see the 
-    [related assets documentation](/discover/portal/-/knowledge_base/7-1/defining-content-relationships).
+    [related assets documentation](/docs/7-1/user/-/knowledge_base/u/defining-content-relationships).
 
 8.  Expand the *Configuration* panel if you want to customize your blog entry's 
     URL, abstract, or display date. You can also set whether to allow pingbacks 
@@ -83,7 +87,7 @@ Follow these steps to add a blog entry in Site Administration:
     Updated* toggle appears. Setting this to *YES* sends an email to any
     subscribers when the blog entry is updated. You can customize this email
     when 
-    [configuring the Blogs app](/discover/portal/-/knowledge_base/7-1/configuring-the-blogs-app). 
+    [configuring the Blogs app](/docs/7-1/user/-/knowledge_base/u/configuring-the-blogs-app). 
 
     Finally, you can allow *pingbacks* for the blog entry. Pingbacks are XML-RPC
     requests that are sent automatically when you link to another site. If you
@@ -107,7 +111,7 @@ Follow these steps to add a blog entry in Site Administration:
     -   **Update**: Edit and modify the blog entry.
     -   **Permissions**: View and modify the blog entry's permissions.
     -   **Delete**: Move the blog entry to the 
-        [Recycle Bin](/discover/portal/-/knowledge_base/7-1/using-the-recycle-bin).
+        [Recycle Bin](/docs/7-1/user/-/knowledge_base/u/using-the-recycle-bin).
     -   **View**: View the blog entry.
     -   **Update Discussion**: Edit another user's comment on the blog entry.
     -   **Delete Discussion**: Delete any comments on the blog entry.

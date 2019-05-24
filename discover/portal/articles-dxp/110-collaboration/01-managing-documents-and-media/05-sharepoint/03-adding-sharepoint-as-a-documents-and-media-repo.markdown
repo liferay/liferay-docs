@@ -1,4 +1,8 @@
-# Adding a SharePoint Documents and Media Repository [](id=adding-a-sharepoint-documents-and-media-repository)
+---
+header-id: adding-a-sharepoint-documents-and-media-repository
+---
+
+# Adding a SharePoint Documents and Media Repository
 
 Follow these steps to add your SharePoint Library to Documents and Media in 
 @product@:
@@ -29,13 +33,9 @@ Follow these steps to add your SharePoint Library to Documents and Media in
 
 @product@'s Documents and Media Library now lists your SharePoint repository. 
 
-+$$$
-
-**Note:** The first time you access a mounted SharePoint repository, you must 
-provide login credentials and also grant permission for @product@ to access the 
-remote SharePoint repository. 
-
-$$$
+| **Note:** The first time you access a mounted SharePoint repository, you must
+| provide login credentials and also grant permission for @product@ to access the
+| remote SharePoint repository.
 
 Sweet! Now that you've added a SharePoint Repository to @product@'s Documents 
 and Media, you can access and modify SharePoint Library files in your @product@ 

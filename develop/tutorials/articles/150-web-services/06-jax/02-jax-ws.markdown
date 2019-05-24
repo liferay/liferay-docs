@@ -1,4 +1,8 @@
-# JAX-WS [](id=jax-ws)
+---
+header-id: jax-ws
+---
+
+# JAX-WS
 
 Liferay supports 
 [JAX-WS](https://en.wikipedia.org/wiki/Java_API_for_XML_Web_Services) 
@@ -28,13 +32,13 @@ CXF endpoints and extenders can be created programmatically or with Liferay's
 Control Panel. This tutorial shows you how to do both, and then shows you how to
 publish JAX-WS web services. The following topics are covered:
 
-- [Configuring Endpoints and Extenders with the Control Panel](/develop/tutorials/-/knowledge_base/7-1/jax-ws#configuring-endpoints-and-extenders-with-the-control-panel)
+- [Configuring Endpoints and Extenders with the Control Panel](/docs/7-1/tutorials/-/knowledge_base/t/jax-ws#configuring-endpoints-and-extenders-with-the-control-panel)
 
-- [Configuring Endpoints and Extenders Programmatically](/develop/tutorials/-/knowledge_base/7-1/jax-ws#configuring-endpoints-and-extenders-programmatically)
+- [Configuring Endpoints and Extenders Programmatically](/docs/7-1/tutorials/-/knowledge_base/t/jax-ws#configuring-endpoints-and-extenders-programmatically)
 
-- [Publishing JAX-WS Web Services](/develop/tutorials/-/knowledge_base/7-1/jax-ws#publishing-jax-ws-web-services)
+- [Publishing JAX-WS Web Services](/docs/7-1/tutorials/-/knowledge_base/t/jax-ws#publishing-jax-ws-web-services)
 
-## Configuring Endpoints and Extenders with the Control Panel [](id=configuring-endpoints-and-extenders-with-the-control-panel)
+## Configuring Endpoints and Extenders with the Control Panel
 
 Liferay's Control Panel lets administrators configure endpoints and extenders
 for JAX-WS web services. Note that you must be an administrator in your Liferay
@@ -54,7 +58,7 @@ services deployed there are available at
 
 **`AuthVerifier` properties:** Any properties defined here are passed as-is to 
 the `AuthVerifier` filter. See the 
-[`AuthVerifier` documentation](/discover/deployment/-/knowledge_base/7-1/authentication-verifiers) 
+[`AuthVerifier` documentation](/docs/7-1/deploy/-/knowledge_base/d/authentication-verifiers) 
 for more details. 
 
 **Required Extensions:** CXF normally loads its default extension classes, but 
@@ -100,7 +104,7 @@ service, you can provide an OSGi filter here that selects an implementation of
 
 Next, you'll learn how to create endpoints and extenders programmatically. 
 
-## Configuring Endpoints and Extenders Programmatically [](id=configuring-endpoints-and-extenders-programmatically)
+## Configuring Endpoints and Extenders Programmatically
 
 To configure endpoints or extenders programmatically, you must use Liferay's 
 configurator extender. The configurator extender provides a way for OSGi modules 
@@ -177,7 +181,7 @@ configuration fields `contextPaths`, `jaxWsHandlerFilterStrings`, and
 
 Next, you'll learn how to publish JAX-WS web services. 
 
-## Publishing JAX-WS Web Services [](id=publishing-jax-ws-web-services)
+## Publishing JAX-WS Web Services
 
 To publish JAX-WS web services via SOAP in a module, annotate the class and its
 methods with standard JAX-WS annotations, and then register it as a service in

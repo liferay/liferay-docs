@@ -1,4 +1,8 @@
-# Flagging Inappropriate Asset Content [](id=flagging-inappropriate-asset-content)
+---
+header-id: flagging-inappropriate-asset-content
+---
+
+# Flagging Inappropriate Asset Content
 
 In a perfect world, people would post nice, kind, and decent content. They would 
 reply to comments with constructive feedback and never lash out at each other. 
@@ -14,11 +18,11 @@ This tutorial shows you how to enable content flagging in a portlet.
 Follow these steps to enable content flagging in your app: 
 
 1.  Make sure your entity is 
-    [asset enabled](/develop/tutorials/-/knowledge_base/7-0/asset-framework). 
+    [asset enabled](/docs/7-0/tutorials/-/knowledge_base/t/asset-framework). 
 
 2.  Choose a read-only view of the entity you want to enable flags on. You can 
     display flags in one of your app's views, or if you've 
-    [implemented asset rendering](/develop/tutorials/-/knowledge_base/7-1/rendering-an-asset) 
+    [implemented asset rendering](/docs/7-1/tutorials/-/knowledge_base/t/rendering-an-asset) 
     you can display it in the full content view in the Asset Publisher app. 
 
 3.  In your JSP, include the `liferay-flags` taglib declaration:
@@ -49,8 +53,8 @@ Follow these steps to enable content flagging in your app:
 
 Great! Now you know how to let users flag content in your asset-enabled apps. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Asset Framework](/develop/tutorials/-/knowledge_base/7-1/asset-framework)
+[Asset Framework](/docs/7-1/tutorials/-/knowledge_base/t/asset-framework)
 
-[Rating Assets](/develop/tutorials/-/knowledge_base/7-1/rating-assets)
+[Rating Assets](/docs/7-1/tutorials/-/knowledge_base/t/rating-assets)

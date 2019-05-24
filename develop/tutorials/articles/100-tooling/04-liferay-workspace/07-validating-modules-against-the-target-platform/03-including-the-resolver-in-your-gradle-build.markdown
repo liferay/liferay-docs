@@ -1,8 +1,12 @@
-# Including the Resolver in Your Gradle Build [](id=including-the-resolver-in-your-gradle-build)
+---
+header-id: including-the-resolver-in-your-gradle-build
+---
+
+# Including the Resolver in Your Gradle Build
 
 By default, Liferay Workspace provides the `resolve` task as an independent
 executable. It's provided by the
-[Target Platform](/develop/reference/-/knowledge_base/7-1/target-platform-gradle-plugin)
+[Target Platform](/docs/7-1/reference/-/knowledge_base/r/target-platform-gradle-plugin)
 Gradle plugin and is not integrated in any other Gradle processes. This gives
 you control over your Gradle build without imposing strategies you may not want
 included in your default build process.

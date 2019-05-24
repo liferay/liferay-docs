@@ -1,4 +1,8 @@
-# Creating an Add Entry Button [](id=creating-an-add-guestbook-button)
+---
+header-id: creating-an-add-guestbook-button
+---
+
+# Creating an Add Entry Button
 
 <div class="learn-path-step">
     <p>Developing Your First Portlet<br>Step 2 of 8</p>

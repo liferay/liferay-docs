@@ -1,4 +1,8 @@
-# Finding Analytics Data [](id=finding-analytics-data)
+---
+header-id: finding-analytics-data
+---
+
+# Finding Analytics Data
 
 Combining traditional Page Analytics with Path and Asset Analytics sets Liferay
 Analytics Cloud apart from other analytics tools.
@@ -15,7 +19,7 @@ page level to determine how you can improve the performance of your site.
 This tutorial shows where to find the analytics for Pages and Assets. The
 remaining tutorials explain their metrics.
 
-## Viewing Page Data [](id=viewing-page-data)
+## Viewing Page Data
 
 1.  Find the Touchpoints section of the menu.
 
@@ -67,7 +71,7 @@ To view detailed metrics for a single page, click a page in the list.
 See [Page Analytics](https://github.com/liferay/liferay-docs/blob/7.1.x/discover/analytics-cloud/articles/04-analyzing-touchpoints/01-page-analytics.markdown) 
 for more information.
 
-## Finding Asset Data [](id=finding-asset-data)
+## Finding Asset Data
 
 1.  Find the Touchpoints section of the menu.
 

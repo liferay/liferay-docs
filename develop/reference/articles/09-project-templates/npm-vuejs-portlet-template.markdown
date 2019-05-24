@@ -1,4 +1,8 @@
-# npm Vue.js Portlet Template [](id=npm-vue-js-portlet-template)
+---
+header-id: npm-vue-js-portlet-template
+---
+
+# npm Vue.js Portlet Template
 
 In this article, you'll learn how to create an npm Vue.js portlet as a
 Liferay module. To create an npm Vue.js portlet via the command line using

@@ -1,7 +1,11 @@
-# Using Your Screenlet [](id=using-your-screenlet)
+---
+header-id: using-your-screenlet
+---
+
+# Using Your Screenlet
 
 To use any Screenlet, you must follow these 
-[general steps](/develop/tutorials/-/knowledge_base/7-1/using-screenlets-in-android-apps): 
+[general steps](/docs/7-1/tutorials/-/knowledge_base/t/using-screenlets-in-android-apps): 
 
 1. Insert the Screenlet's XML in the activity or fragment layout you want the 
    Screenlet to appear in. You can fine-tune the Screenlet's behavior by setting 
@@ -42,6 +46,6 @@ directly, the Test App specifies the value in its
 This `name` attribute's value, `bookmark_folder` is then used in the Screenlet 
 XML to set the `app:folderId` attribute to `20622`. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/7-1/using-screenlets-in-android-apps)
+[Using Screenlets in Android Apps](/docs/7-1/tutorials/-/knowledge_base/t/using-screenlets-in-android-apps)

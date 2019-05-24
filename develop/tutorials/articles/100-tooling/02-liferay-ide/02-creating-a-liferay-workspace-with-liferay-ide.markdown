@@ -1,12 +1,16 @@
-# Creating a Liferay Workspace with Dev Studio [](id=creating-a-liferay-workspace-with-liferay-ide)
+---
+header-id: creating-a-liferay-workspace-with-liferay-ide
+---
+
+# Creating a Liferay Workspace with Dev Studio
 
 In this tutorial, you'll learn how to generate a Liferay Workspace using Liferay
 Dev Studio, which runs on the
-[Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli) behind the
+[Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/blade-cli) behind the
 scenes. Dev Studio gives you a graphical interface instead of the command
 prompt, which can streamline your workflow. To learn more about Liferay
 Workspaces, visit its dedicated
-[tutorial section](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace).
+[tutorial section](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace).
 
 <div class="video-link">
 <img src="../../../images/vid-ide-thumbnail.png" alt="video-thumbnail"/>
@@ -44,7 +48,7 @@ options. Follow the instructions below to create your workspace.
 5.  Select the specific target platform version corresponding to the GA release
     you're developing for (e.g., 7.1.0 &rarr; 7.1 GA1). For more information on
     target platform benefits, see the 
-    [Managing the Target Platform for Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/managing-the-target-platform-for-liferay-workspace)
+    [Managing the Target Platform for Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/managing-the-target-platform-for-liferay-workspace)
     articles.
 
 6. Check the *Download Liferay bundle* checkbox if you'd like to auto-generate a
@@ -52,14 +56,10 @@ options. Follow the instructions below to create your workspace.
    provide the server's download URL, if selected. This Liferay bundle is
    generated the same way as described in the previous section.
 
-    +$$$
-
-    **Note:** If you'd like to configure a pre-existing Liferay bundle to your
-    workspace, you can create a directory for the bundle in your workspace and
-    configure it in the workspace's `gradle.properties` file by setting the
-    `liferay.workspace.home.dir` property.
-
-    $$$
+    | **Note:** If you'd like to configure a pre-existing Liferay bundle to your
+    | workspace, you can create a directory for the bundle in your workspace and
+    | configure it in the workspace's `gradle.properties` file by setting the
+    | `liferay.workspace.home.dir` property.
 
 7.  Check the *Add project to working set* checkbox if you want the workspace
     to be a part of a larger working set you've already created in Dev Studio.
@@ -73,16 +73,12 @@ options. Follow the instructions below to create your workspace.
 A dialog appears prompting you to open the Liferay Workspace perspective.
 Click *Yes*, and your perspective will switch to Liferay Workspace.
 
-+$$$
-
-**Note:** You can also create a Liferay Workspace during the initial start-up of
-a Liferay Developer Studio instance. 
-
-$$$
+| **Note:** You can also create a Liferay Workspace during the initial start-up of
+| a Liferay Developer Studio instance.
 
 Awesome! You've successfully created a Liferay Workspace in Dev Studio!
 
-## Liferay Workspace Settings in Dev Studio [](id=liferay-workspace-settings-in-ide)
+## Liferay Workspace Settings in Dev Studio
 
 The Liferay Workspace perspective is intended for Gradle or Maven projects for
 @product@. Since Liferay Workspaces are used for Gradle/Maven based development

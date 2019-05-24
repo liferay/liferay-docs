@@ -1,4 +1,8 @@
-# Form Notifications [](id=form-notifications)
+---
+header-id: form-notifications
+---
+
+# Form Notifications
 
 You can configure the Forms app to send a notification email each time a form 
 entry is submitted.
@@ -24,7 +28,7 @@ entry is submitted.
     submitted in The Lunar Resort*. 
 
 Note that if you 
-[enabled workflow for the form](/discover/portal/-/knowledge_base/7-1/sending-form-entries-through-a-workflow) 
+[enabled workflow for the form](/docs/7-1/user/-/knowledge_base/u/sending-form-entries-through-a-workflow) 
 and it already sends a notification, you might not need to configure the Forms 
 app to generate a notification. 
 

@@ -1,4 +1,8 @@
-# Disabling All or Portions of the Management Bar [](id=disabling-all-or-portions-of-the-management-bar)
+---
+header-id: disabling-all-or-portions-of-the-management-bar
+---
+
+# Disabling All or Portions of the Management Bar
 
 When there are no search results to display, you should disable all the 
 Management Bar's buttons, except the sidenav toggler button. 
@@ -26,8 +30,8 @@ effect when there aren't any results to view:
 
 ![Figure 1: You can disable all or portions of the Management Bar.](../../../../images/liferay-frontend-taglib-management-bar-disabled.png)
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Including Actions in the Management Bar](/develop/tutorials/-/knowledge_base/7-1/including-actions-in-the-management-bar)
+[Including Actions in the Management Bar](/docs/7-1/tutorials/-/knowledge_base/t/including-actions-in-the-management-bar)
 
-[Clay Management Toolbar](/develop/tutorials/-/knowledge_base/7-1/clay-management-toolbar)
+[Clay Management Toolbar](/docs/7-1/tutorials/-/knowledge_base/t/clay-management-toolbar)

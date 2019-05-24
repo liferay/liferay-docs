@@ -1,4 +1,8 @@
-# Installing and Configuring the Desktop Liferay Sync Client [](id=installing-and-configuring-the-desktop-liferay-sync-client)
+---
+header-id: installing-and-configuring-the-desktop-liferay-sync-client
+---
+
+# Installing and Configuring the Desktop Liferay Sync Client
 
 You can download the desktop client from the
 [Liferay Sync downloads page](https://www.liferay.com/downloads/liferay-sync). 
@@ -6,7 +10,7 @@ Note that you'll need a Liferay account for this. Once you've downloaded the
 appropriate desktop client for your operating system, installing Liferay Sync on 
 Windows or Mac OS is straightforward. 
 
-## Installing the Liferay Sync Desktop Client [](id=installing-the-liferay-sync-desktop-client)
+## Installing the Liferay Sync Desktop Client
 
 To install the Liferay Sync client on Windows, you must have administrator
 privileges. Upon launching the Windows application installer, you're prompted
@@ -15,15 +19,11 @@ to choose an install location. Select an appropriate location and click
 time Sync runs, you must configure it to connect and sync with @product@. The
 configuration steps are shown below. 
 
-+$$$
-
-**Note:** You can upgrade previous versions of the desktop Liferay Sync client
-to version 3.0. When doing so, however, you must set up your account again in
-the new version of the client. Prior to upgrading, it's typically best to shut
-down Liferay Sync, backup files from your local Sync folder, and delete that
-folder. 
-
-$$$
+| **Note:** You can upgrade previous versions of the desktop Liferay Sync client
+| to version 3.0. When doing so, however, you must set up your account again in
+| the new version of the client. Prior to upgrading, it's typically best to shut
+| down Liferay Sync, backup files from your local Sync folder, and delete that
+| folder.
 
 The Liferay Sync client for Mac is packaged in a DMG file. Double-clicking on
 the DMG file mounts it as a disk image and opens a window showing the image's
@@ -37,7 +37,7 @@ appears when installing or upgrading the tool.
 
 Next, you'll configure the Sync client. 
 
-## Configuring the Liferay Sync Desktop Client [](id=configuring-the-liferay-sync-desktop-client)
+## Configuring the Liferay Sync Desktop Client
 
 Now that you've installed Sync, you're ready to configure it! The configuration 
 steps for Sync on Windows and Mac are identical. 
@@ -85,12 +85,8 @@ steps for Sync on Windows and Mac are identical.
     the user's documents folder. You can, of course, specify any unique name and
     location for the Sync folder. Click *Start Syncing* to begin syncing files. 
 
-    +$$$
-
-    **Note:** Syncing to network drives is not supported because Liferay Sync
-    can't reliably detect local file changes on such drives. 
-
-    $$$
+    | **Note:** Syncing to network drives is not supported because Liferay Sync
+    | can't reliably detect local file changes on such drives.
 
     ![Figure 6: Specify your local Sync folder's name and location.](../../../../images/sync-setup-03.png)
 

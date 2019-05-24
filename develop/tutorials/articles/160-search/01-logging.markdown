@@ -1,4 +1,8 @@
-# Elasticsearch Logging [](id=elasticsearch-logging)
+---
+header-id: elasticsearch-logging
+---
+
+# Elasticsearch Logging
 
 When you first start @product@, an embedded Elasticsearch server starts so that
 search works out of the box. The embedded search engine is not suitable for
@@ -9,20 +13,16 @@ level Elasticsearch logs for the embedded Elasticsearch. WARN and ERROR logs are
 still displayed. If you miss hearing from Elasticsearch during startup, you can
 enable the INFO log level for the embedded Elasticsearch server.
 
-+$$$
-
-**Note:** These instructions show you how to adjust the embedded Elasticsearch
-server's logs. Logging for @product@'s search functionality is configurable via
-the 
-[Log Levels](/discover/portal/-/knowledge_base/7-1/server-administration) 
-screen at Control Panel &rarr; Configuration &rarr; Server Administration &rarr;
-Log Levels tool. Narrow down the list to include only the search classes and
-packages by searching for _com.liferay.portal.search_.
-
-To adjust logging for a remote Elasticsearch server, see 
-[Elastic's documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/logging.html).
-
-$$$
+| **Note:** These instructions show you how to adjust the embedded Elasticsearch
+| server's logs. Logging for @product@'s search functionality is configurable via
+| the
+| [Log Levels](/docs/7-1/user/-/knowledge_base/u/server-administration)
+| screen at Control Panel &rarr; Configuration &rarr; Server Administration &rarr;
+| Log Levels tool. Narrow down the list to include only the search classes and
+| packages by searching for _com.liferay.portal.search_.
+| 
+| To adjust logging for a remote Elasticsearch server, see
+| [Elastic's documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/logging.html).
 
 Here's an example log message that _is_ displayed by default:
 
@@ -80,7 +80,7 @@ Elasticsearch logs at the INFO level and above.
 Two common Elasticsearch logs can be configured further: the Slow Log and the
 JVM's Garbage Collection log.
 
-## Configuring Slow Log [](id=configuring-slow-log)
+## Configuring Slow Log
 
 Read about Elasticsearch's Slow Log
 [here](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/index-modules-slowlog.html). 
@@ -106,7 +106,7 @@ Index Configurations property:
 
 These are example values. Adjust as needed.
 
-## Configuring JVM Garbage Collection Logging [](id=configuring-jvm-garbage-collection-logging)
+## Configuring JVM Garbage Collection Logging
 
 As with the Slow Log configuration, Elasticsearch's JVM Garbage Collection
 logging is adjustable in the Elasticsearch 6 entry in System Settings. Add these

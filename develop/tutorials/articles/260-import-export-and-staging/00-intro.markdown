@@ -1,4 +1,8 @@
-# Export/Import and Staging [](id=export-import-and-staging)
+---
+header-id: export-import-and-staging
+---
+
+# Export/Import and Staging
 
 The Export/Import and Staging features give users the power to plan page
 publication and manage content. The Export/Import feature lets users export
@@ -23,7 +27,7 @@ the LAR and view the student records.
 The Export/Import feature adds another dimension to your application by
 letting you produce reusable content and import content from other places. To
 learn more about using the Export/Import feature, visit the
-[Exporting/Importing App Data](/discover/portal/-/knowledge_base/7-1/exporting-importing-widget-data)
+[Exporting/Importing App Data](/docs/7-1/user/-/knowledge_base/u/exporting-importing-widget-data)
 User Guide section.
 
 Staging lets you change your Site behind the scenes without affecting the live
@@ -38,7 +42,7 @@ during a specific holiday, supporting the Staging environment lets users save
 your application's assets specific for that holiday. They'll reside
 in the Staging environment until they're ready for publishing. To learn more
 about Staging, visit the
-[Staging Content for Publication](/discover/portal/-/knowledge_base/7-1/staging-content-for-publication)
+[Staging Content for Publication](/docs/7-1/user/-/knowledge_base/u/staging-content-for-publication)
 section.
 
 Besides configuring these features for your application, you can also access

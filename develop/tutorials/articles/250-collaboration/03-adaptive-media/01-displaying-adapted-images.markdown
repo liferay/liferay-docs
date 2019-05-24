@@ -1,7 +1,11 @@
-# Displaying Adapted Images in Your App [](id=displaying-adapted-images-in-your-app)
+---
+header-id: displaying-adapted-images-in-your-app
+---
+
+# Displaying Adapted Images in Your App
 
 To display 
-[adapted images](/discover/portal/-/knowledge_base/7-1/adapting-your-media-across-multiple-devices) 
+[adapted images](/docs/7-1/user/-/knowledge_base/u/adapting-your-media-across-multiple-devices) 
 in your apps, Adaptive Media offers a convenient tag library in 
 [the module `com.liferay.adaptive.media.image.taglib`](https://github.com/liferay/com-liferay-adaptive-media/tree/master/adaptive-media-image-taglib). 
 This taglib only has one mandatory attribute: `fileVersion`. This attribute 
@@ -15,7 +19,7 @@ This tutorial uses
 to show you how to use this taglib. When added to a page, this app displays all 
 the adapted images from the current site's Documents and Media app, provided 
 that 
-[Adaptive Media image resolutions](/discover/portal/-/knowledge_base/7-1/adding-image-resolutions) 
+[Adaptive Media image resolutions](/docs/7-1/user/-/knowledge_base/u/adding-image-resolutions) 
 and Documents and Media images exist. 
 
 Follow these steps to use the taglib: 
@@ -46,19 +50,19 @@ Follow these steps to use the taglib:
     For example, 
     [the Adaptive Media Samples app's `view.jsp`](https://github.com/sergiogonzalez/adaptive-media-samples/blob/master/adaptive-media-sample-web/src/main/resources/META-INF/resources/view.jsp) 
     uses the taglib to display the adapted images in a grid with the `col-md-6` 
-    [column container class](/develop/tutorials/-/knowledge_base/7-1/creating-layout-templates-manually). 
+    [column container class](/docs/7-1/tutorials/-/knowledge_base/t/creating-layout-templates-manually). 
     Looking at the markup the app generates, you can see that it uses the 
     `<picture>` tag as described in the article 
-    [Creating Content with Adapted Images](/discover/portal/-/knowledge_base/7-1/creating-content-with-adapted-images). 
+    [Creating Content with Adapted Images](/docs/7-1/user/-/knowledge_base/u/creating-content-with-adapted-images). 
 
     ![Figure 1: The Adaptive Media Samples app shows all the site's adapted images.](../../../images/adaptive-media-sample.png)
 
 Well done! Now you know how to display adapted images in your app. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Finding Adapted Images](/develop/tutorials/-/knowledge_base/7-1/finding-adapted-images)
+[Finding Adapted Images](/docs/7-1/tutorials/-/knowledge_base/t/finding-adapted-images)
 
-[Changing Adaptive Media's Image Scaling](/develop/tutorials/-/knowledge_base/7-1/changing-adaptive-medias-image-scaling)
+[Changing Adaptive Media's Image Scaling](/docs/7-1/tutorials/-/knowledge_base/t/changing-adaptive-medias-image-scaling)
 
-[Adapting Your Media Across Multiple Devices](/discover/portal/-/knowledge_base/7-1/adapting-your-media-across-multiple-devices)
+[Adapting Your Media Across Multiple Devices](/docs/7-1/user/-/knowledge_base/u/adapting-your-media-across-multiple-devices)

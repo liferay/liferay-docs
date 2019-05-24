@@ -1,23 +1,23 @@
-# Automatically Deploying Theme Changes [](id=automatically-deploying-theme-changes)
+---
+header-id: automatically-deploying-theme-changes
+---
+
+# Automatically Deploying Theme Changes
 
 You may have noticed that you have to deploy your theme manually each time you 
 make a change. This can become tedious during the development process. The 
 `gulp watch` task lets you see the changes you make to your theme without 
 requiring a full redeploy.
 
-+$$$
-
-**Note:** Gulp is included as a local dependency in generated themes, so you 
-are not required to install it. It can be accessed by running 
-`node_modules\.bin\gulp` followed by the Gulp task from a generated theme's 
-root folder.
-
-$$$
+| **Note:** Gulp is included as a local dependency in generated themes, so you
+| are not required to install it. It can be accessed by running
+| `node_modules\.bin\gulp` followed by the Gulp task from a generated theme's
+| root folder.
 
 Follow these steps to deploy changes to your theme automatically: 
 
 1.  Enable
-    [Developer Mode](/develop/tutorials/-/knowledge_base/7-1/using-developer-mode-with-themes)
+    [Developer Mode](/docs/7-1/tutorials/-/knowledge_base/t/using-developer-mode-with-themes)
     in your server. Without this enabled, the gulp watch task **will not work**.
 
 2.  Navigate to your theme's root folder and run `gulp watch`. This sets up a 
@@ -26,13 +26,9 @@ Follow these steps to deploy changes to your theme automatically:
     app server across all devices connected to the local network. The browser is 
     synced across all devices that use the given IP address.
     
-    +$$$
-    
-    **Note:** Live changes are only viewable on port `9080` 
-    (`http://localhost:9080`). Live changes **are not viewable** on your app 
-    server (e.g. `http://localhost:8080`).
-    
-    $$$ 
+    | **Note:** Live changes are only viewable on port `9080`
+    | (`http://localhost:9080`). Live changes **are not viewable** on your app
+    | server (e.g. `http://localhost:8080`).
 
     ![Figure 1: Run the `gulp watch` task to automatically deploy any changes to your theme.](../../../../images/theme-dev-watching-themes-gulp-watch-startup.png)
 
@@ -59,10 +55,10 @@ Follow these steps to deploy changes to your theme automatically:
 
     ![Figure 2: The watch task notifies you that the changes are deployed.](../../../../images/theme-dev-watching-themes-gulp-watch-auto-deploy.png)
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Configuring Your Theme's App Server](/develop/tutorials/-/knowledge_base/7-1/configuring-your-themes-app-server)
+[Configuring Your Theme's App Server](/docs/7-1/tutorials/-/knowledge_base/t/configuring-your-themes-app-server)
 
-[Copying an Existing Theme's Files](/develop/tutorials/-/knowledge_base/7-1/copying-an-existing-themes-files)
+[Copying an Existing Theme's Files](/docs/7-1/tutorials/-/knowledge_base/t/copying-an-existing-themes-files)
 
-[Deploying Themes](/develop/tutorials/-/knowledge_base/7-1/deploying-your-theme)
+[Deploying Themes](/docs/7-1/tutorials/-/knowledge_base/t/deploying-your-theme)

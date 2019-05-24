@@ -1,4 +1,8 @@
-# Service Builder Application Using External Database via JNDI [](id=service-builder-application-using-external-database-via-jndi)
+---
+header-id: service-builder-application-using-external-database-via-jndi
+---
+
+# Service Builder Application Using External Database via JNDI
 
 This sample demonstrates how to connect a Liferay Service Builder application to
 an external database via a JNDI connection. Here, an external database means any
@@ -89,7 +93,7 @@ After these modules have been deployed, add the `jndi-web` portlet to a
 A sample table is printed in the portlet's view, representing the info inputted
 into the database.
 
-## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
+## What API(s) and/or code components does this sample highlight?
 
 This sample demonstrates two ways to access data from an external database
 defined by a JNDI connection:
@@ -99,7 +103,7 @@ defined by a JNDI connection:
 - read data using the helper methods that Service Builder generates in your
   application's persistence layer.
 
-## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
+## How does this sample leverage the API(s) and/or code component?
 
 Once you've added the `jndi-web` portlet to a page, the
 `RegionLocalServiceUtil.useJNDI` method is invoked. This method accesses the

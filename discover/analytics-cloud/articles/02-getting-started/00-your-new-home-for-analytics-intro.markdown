@@ -1,4 +1,8 @@
-# Your New Home for Analytics [](id=your-new-home-for-analytics)
+---
+header-id: your-new-home-for-analytics
+---
+
+# Your New Home for Analytics
 
 To get started using Liferay Analytics Cloud, the first thing you need is an
 invitation. Liferay invites the Analytics Cloud owner (the person who purchased

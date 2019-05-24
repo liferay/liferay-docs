@@ -1,4 +1,8 @@
-# File Check-in [](id=file-checkin)
+---
+header-id: file-checkin
+---
+
+# File Check-in
 
 After checking out and editing a file, you must check it back in for other users 
 to see the new version. Once you do so, you can't access the private working 
@@ -16,7 +20,7 @@ For a full description of the method and its parameters, see its
 [Javadoc](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#checkInFileEntry-long-boolean-java.lang.String-com.liferay.portal.kernel.service.ServiceContext-). 
 This method uses the private working copy to create a new version of the file. 
 As the 
-[Updating Files tutorial](/develop/tutorials/-/knowledge_base/7-1/updating-files) 
+[Updating Files tutorial](/docs/7-1/tutorials/-/knowledge_base/t/updating-files) 
 explains, the `majorVersion` parameter's setting determines how the file's 
 version number is incremented. 
 
@@ -28,7 +32,7 @@ Follow these steps to use `checkInFileEntry` to check in a file:
         private DLAppService _dlAppService;
 
     For more information on this, see the section on 
-    [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
+    [getting a service reference](/docs/7-1/tutorials/-/knowledge_base/t/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
     in the getting started tutorial. 
 
 2.  Get the data needed to populate the `checkInFileEntry` method's arguments. 
@@ -45,7 +49,7 @@ Follow these steps to use `checkInFileEntry` to check in a file:
         ServiceContext serviceContext = ServiceContextFactory.getInstance(actionRequest);
 
     For more information on `ServiceContext`, see the tutorial 
-    [Understanding ServiceContext](/develop/tutorials/-/knowledge_base/7-1/understanding-servicecontext). 
+    [Understanding ServiceContext](/docs/7-1/tutorials/-/knowledge_base/t/understanding-servicecontext). 
 
 3.  Call the service reference's `checkInFileEntry` method with the data from 
     the previous step: 
@@ -62,10 +66,10 @@ this `checkInFileEntries` method, as well as the rest of
 `EditFileEntryMVCActionCommand`, contains additional logic to suit the specific 
 needs of the Documents and Media app. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[File Check-out](/develop/tutorials/-/knowledge_base/7-1/file-checkout)
+[File Check-out](/docs/7-1/tutorials/-/knowledge_base/t/file-checkout)
 
-[Cancelling a Check-out](/develop/tutorials/-/knowledge_base/7-1/cancelling-a-checkout)
+[Cancelling a Check-out](/docs/7-1/tutorials/-/knowledge_base/t/cancelling-a-checkout)
 
-[Updating Files](/develop/tutorials/-/knowledge_base/7-1/updating-files)
+[Updating Files](/docs/7-1/tutorials/-/knowledge_base/t/updating-files)

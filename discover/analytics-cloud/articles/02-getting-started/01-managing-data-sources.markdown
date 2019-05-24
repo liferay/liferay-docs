@@ -1,4 +1,8 @@
-# Managing Data Sources [](id=managing-data-sources)
+---
+header-id: managing-data-sources
+---
+
+# Managing Data Sources
 
 Liferay Analytics Cloud requires two kinds of data. First, you need web
 analytics data on user interactions with Liferay DXP Pages and Assets. Second,
@@ -36,7 +40,7 @@ a new data source, see the following tutorials:
 
 Once you've created your data sources, you might need to modify them from time to time.
 
-## Modifying a Data Source [](id=editing-a-data-source)
+## Modifying a Data Source
 
 The Data Sources lets you page through the data source listing or use *Search*
 to find one that matches a keyword. Once you've found the data source, click on

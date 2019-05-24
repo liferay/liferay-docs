@@ -1,4 +1,8 @@
-# Creating Layout Templates [](id=creating-layout-templates-with-the-themes-generator)
+---
+header-id: creating-layout-templates-with-the-themes-generator
+---
+
+# Creating Layout Templates
 
 Layout Templates specify how content is arranged on your site pages, as shown in 
 the *1-2-1 Columns* layout below:
@@ -6,7 +10,7 @@ the *1-2-1 Columns* layout below:
 ![Figure 1: The *1-2-1 Columns* page layout creates a nice flow for your content.](../../../images/layout-template-1-2-1-columns.png)
 
 The 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-themes) 
+[Liferay Theme Generator](/docs/7-1/tutorials/-/knowledge_base/t/creating-themes) 
 provides a Layouts sub-generator that helps automate layout template creation. 
 This tutorial covers how to use this tool to create layout templates. Install 
 the Liferay Theme Generator if it's not already installed, then follow these 
@@ -21,13 +25,9 @@ steps to create a layout template:
 
     ![Figure 2: The Layouts sub-generator automates the layout creation process.](../../../images/layout-prompt.png)
     
-    +$$$
-    
-    **Note:** Run the Layouts sub-generator from the theme's root folder to 
-    bundle it with the theme. This adds the layout template to the theme's 
-    `src/layouttpl/custom` folder. This **only works** for generated themes.
-    
-    $$$
+    | **Note:** Run the Layouts sub-generator from the theme's root folder to
+    | bundle it with the theme. This adds the layout template to the theme's
+    | `src/layouttpl/custom` folder. This **only works** for generated themes.
     
     Every row consists of 12 sections, so columns can range in size from 1 to 12. 
     Once you've entered a value, the generator asks the size you want your row 
@@ -61,8 +61,8 @@ steps to create a layout template:
     specified. If the layout is bundled with your theme, deploy the theme to 
     deploy the layout template.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/7-1/importing-resources-with-a-theme)
+[Importing Resources with Your Themes](/docs/7-1/tutorials/-/knowledge_base/t/importing-resources-with-a-theme)
 
-[Creating Themes](/develop/tutorials/-/knowledge_base/7-1/creating-themes)
+[Creating Themes](/docs/7-1/tutorials/-/knowledge_base/t/creating-themes)

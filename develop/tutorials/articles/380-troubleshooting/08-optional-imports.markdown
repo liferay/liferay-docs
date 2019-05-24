@@ -1,18 +1,18 @@
-# Declaring Optional Import Package Requirements [](id=declaring-optional-import-package-requirements)
+---
+header-id: declaring-optional-import-package-requirements
+---
+
+# Declaring Optional Import Package Requirements
 
 When developing modules, you can declare *optional* dependencies. An optional
 dependency is one your module can use if available, but can still function
 without it. 
 
-+$$$
-
-**Important:** Try to avoid optional dependencies. The best module designs
-rely on normal dependencies. If an optional dependency seems desirable, your
-module may be trying to provide more than one distinct type of functionality.
-In such a situation, it's best to split it into multiple modules that provide
-smaller, more focused functionality. 
-
-$$$
+| **Important:** Try to avoid optional dependencies. The best module designs
+| rely on normal dependencies. If an optional dependency seems desirable, your
+| module may be trying to provide more than one distinct type of functionality.
+| In such a situation, it's best to split it into multiple modules that provide
+| smaller, more focused functionality.
 
 If you decide that your module requires an optional dependency, follow these 
 steps to add it:
@@ -69,11 +69,11 @@ that trigger your controller's `activate` method and the check for the optional
 dependency. Since the dependency exists, your client component uses it. 
 
 Note that you can refresh a bundle from
-[Gogo shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell)
+[Gogo shell](/docs/7-1/reference/-/knowledge_base/r/using-the-felix-gogo-shell)
 with this command: 
 
     equinox:refresh [bundle ID] 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies)
+[Configuring Dependencies](/docs/7-1/tutorials/-/knowledge_base/t/configuring-dependencies)

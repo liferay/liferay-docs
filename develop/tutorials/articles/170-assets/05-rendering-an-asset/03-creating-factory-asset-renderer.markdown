@@ -1,4 +1,8 @@
-# Creating a Factory for the Asset Renderer [](id=creating-a-factory-for-the-asset-renderer)
+---
+header-id: creating-a-factory-for-the-asset-renderer
+---
+
+# Creating a Factory for the Asset Renderer
 
 You've successfully created an asset renderer, but you must create a factory
 class to generate asset renderers for each asset instance. For example, the
@@ -42,14 +46,10 @@ renderer factory.
     - The `service` element should point to the `AssetRendererFactory.class`
       interface.
 
-    +$$$
-
-    **Note:** In previous versions of @product@, you had to register the asset
-    renderer factory in a portlet's `liferay-portlet.xml` file. The registration
-    process is now completed automatically by OSGi using the `@Component`
-    annotation.
-
-    $$$
+    | **Note:** In previous versions of @product@, you had to register the asset
+    | renderer factory in a portlet's `liferay-portlet.xml` file. The registration
+    | process is now completed automatically by OSGi using the `@Component`
+    | annotation.
 
 3.  Create a constructor for the factory class that presets private attributes
     of the factory.
@@ -115,7 +115,7 @@ renderer factory.
         private BlogsEntryLocalService _blogsEntryLocalService;
 
     The setter method is annotated with the `@Reference` tag. Visit the
-    [Invoking Local Services](/develop/tutorials/-/knowledge_base/7-0/invoking-local-services)
+    [Invoking Local Services](/docs/7-0/tutorials/-/knowledge_base/t/invoking-local-services)
     tutorial for more information.
 
     b. You must specify the resource bundle loader since it was specified in

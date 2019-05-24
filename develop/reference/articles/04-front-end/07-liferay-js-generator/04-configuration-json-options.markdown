@@ -1,12 +1,16 @@
-# Configuring System Settings for OSGi Bundles Created with the liferay-npm-bundler [](id=configuring-system-settings-for-osgi-bundles-created-with-the-bundler)
+---
+header-id: configuring-system-settings-for-osgi-bundles-created-with-the-bundler
+---
+
+# Configuring System Settings for OSGi Bundles Created with the liferay-npm-bundler
 
 If you're 
-[creating an OSGi bundle with the Liferay JS Generator](/develop/tutorials/-/knowledge_base/7-1/creating-and-bundling-javascript-portlets-with-javascript-tooling) 
+[creating an OSGi bundle with the Liferay JS Generator](/docs/7-1/tutorials/-/knowledge_base/t/creating-and-bundling-javascript-portlets-with-javascript-tooling) 
 and want to provide system settings for your widget, you must provide a 
 `configuration.json` file. This reference guide lists the available configuration 
 options for `configuration.json` along with example code.
 
-## JSON Format [](id=json-format)
+## JSON Format
 
 The `configuration.json` must follow the basic pattern shown below:
 

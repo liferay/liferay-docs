@@ -1,11 +1,15 @@
-# Page Set Look and Feel [](id=page-set-look-and-feel)
+---
+header-id: page-set-look-and-feel
+---
+
+# Page Set Look and Feel
 
 Page Set configuration starts with the *Look and Feel* tab. Here you have an 
 interface for choosing a theme for the current Site.
 
 ![Figure 1: The Look and Feel page set tab.](../../../../../images/page-set-look-and-feel.png)
 
-## Themes [](id=themes)
+## Themes
 
 Themes can transform the entire look of your Site. They are created by 
 developers and are easily installed using Liferay Marketplace.
@@ -16,7 +20,7 @@ You can apply themes to the entire Site or to individual pages. For the Site,
 go to *Pages* &rarr; the Site (public or private), and click the Gear icon. For
 individual pages, click *Configure* &rarr; *Define a specific look and feel for
 this page* option under the page's *Look and Feel* category. See the 
-[Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-1/themes-and-layout-templates) 
+[Themes and Layout Templates](/docs/7-1/tutorials/-/knowledge_base/t/themes-and-layout-templates) 
 tutorials section for information on creating and developing your own custom 
 themes.
 
@@ -32,7 +36,7 @@ or not to show maximize/minimize application links by default. The *CSS*
 section lets you enter custom CSS for tweaking your theme. 
 
 
-## Using a Custom Logo for a Site [](id=using-a-custom-logo-for-a-site)
+## Using a Custom Logo for a Site
 
 By default, the Liferay logo is used for your Site pages' logo. If you want to
 use your own logo for a specific Site, select the *Logo* tab from the

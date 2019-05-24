@@ -1,15 +1,19 @@
-# General Settings [](id=configuring-site-settings)
+---
+header-id: configuring-site-settings
+---
+
+# General Settings
 
 General settings range from core configuration, like your Site's Membership
 Type, to finer details like Documents and Media indexing options.
 
-## Details [](id=details)
+## Details
 
 *Details* provides the same menu you filled out when first creating your Site.
 This allows an administrator to change the description and membership type of
 a Site.
 
-### Membership Options [](id=membership-options)
+### Membership Options
 
 The membership type can be set as open, restricted, or private based on the
 privacy needs of the Site. Users can join and leave an open Site at will. To
@@ -18,14 +22,14 @@ can request membership through the Sites section of the Control Panel.
 A private Site works like a restricted Site but is hidden from users who aren't
 members.
 
-### Site Hierarchies [](id=site-hierarchies)
+### Site Hierarchies
 
 Sites can be organized into hierarchies. At the bottom of the Details
 sub-section is the Parent Site section. When you select the parent Site for the
 Site you're currently on, a checkbox appears for limiting membership to members
 of the parent Site.
 
-## Pages [](id=pages)
+## Pages
 
 Under Pages you can view your Site's Public or Private Pates, if any exist. If
 they don't exist, a *Site Templates* selector appears for creating pages with
@@ -33,14 +37,14 @@ a Site Template.
 
 ![Figure 1: Selecting a Site Template.](../../../../images/selecting-site-template.png)
 
-## Categorization [](id=categorization)
+## Categorization
 
 *Categorization* helps administrators organize the Site and allows for users to 
 easily find your Site and its content through search and navigation. For more 
 information on using tags and categories, visit the
-[Organizing Content with Tags and Categories](/discover/portal/-/knowledge_base/7-1/organizing-content-with-tags-and-categories) section.
+[Organizing Content with Tags and Categories](/docs/7-1/user/-/knowledge_base/u/organizing-content-with-tags-and-categories) section.
 
-## Site URL [](id=site-url)
+## Site URL
 
 The *Friendly URL* option lets you set your Site's URL paths. Friendly URLs are
 used for both public and private pages. The public Site base URL is
@@ -84,7 +88,7 @@ domain name and pointed it to the Liferay server.
 This helps users quickly access their Site without having to recall an extended 
 URL. The *Site URL* option is listed under the General tab.
 
-## Documents and Media [](id=documents-and-media)
+## Documents and Media
 
 The last option is *Documents and Media*, which lets you enable/disable
 Directory Indexing. If on, Site administrators can browse your Site's
@@ -92,18 +96,18 @@ Documents and Media files and folders. For example, a Site administrator of
 a Site called *Lunar Resort* can browse documents at
 `http://localhost:8080/documents/lunar-resort` if this option is enabled.
 
-## Site Template [](id=site-template)
+## Site Template
 
 If you created your Site using a Site Template, this section appears and
 displays information about the link between the Site Template and the Site.
 Specifically, you can see which Site Template was used and whether or not it
 allows modifications to the pages inherited from it by Site administrators. To
 learn more about Site Templates and how to create your own, see 
-[Building Sites from Templates](/discover/portal/-/knowledge_base/7-1/building-sites-from-templates).
+[Building Sites from Templates](/docs/7-1/user/-/knowledge_base/u/building-sites-from-templates).
 
-## Custom Fields [](id=custom-fields)
+## Custom Fields
 
 *Custom Fields* only appears if you've created them in Control Panel &rarr;
 *Configuration* &rarr; *Custom Fields*. For more information on Custom Fields,
 see 
-[Custom Fields](/discover/portal/-/knowledge_base/7-1/setting-up).
+[Custom Fields](/docs/7-1/user/-/knowledge_base/u/setting-up).

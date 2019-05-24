@@ -1,4 +1,8 @@
-# Managing Workflows [](id=managing-workflows)
+---
+header-id: managing-workflows
+---
+
+# Managing Workflows
 
 Like other resources, workflow definitions can be added, edited, and deleted.
 But that's just the beginning of workflow management.
@@ -11,7 +15,7 @@ But that's just the beginning of workflow management.
 
 Start by learning basic workflow management.
 
-## Adding, Editing, and Deleting [](id=adding-editing-and-deleting)
+## Adding, Editing, and Deleting
 
 To add a workflow definition,
 
@@ -21,7 +25,7 @@ To add a workflow definition,
     (![Add](../../images/icon-add.png)).
 
 3.  From here you're either 
-    [writing an XML definition](/develop/tutorials/-/knowledge_base/7-1/crafting-xml-workflow-definitions), 
+    [writing an XML definition](/docs/7-1/tutorials/-/knowledge_base/t/crafting-xml-workflow-definitions), 
     [designing a definition in Kaleo Designer (DXP only)](https://customer.liferay.com/documentation/7.1/admin/-/official_documentation/portal/kaleo-designer), 
     or
     [uploading an existing definition](#uploading-workflow-definitions).
@@ -45,14 +49,14 @@ To delete a definition,
 
     You can't unpublish a definition if it's activated for an asset. First
     dissociate the workflow definition from any assets that use it. See
-    [here](/discover/portal/-/knowledge_base/7-1/activating-workflow) for more
+    [here](/docs/7-1/user/-/knowledge_base/u/activating-workflow) for more
     information.
 
-## Uploading Workflow Definitions [](id=uploading-workflow-definitions)
+## Uploading Workflow Definitions
 
 If you have a local XML definition file (perhaps you want to create a new
 workflow based on one of the
-[embedded workflows](/discover/portal/-/knowledge_base/7-1/workflow#embedded-workflows)),
+[embedded workflows](/docs/7-1/user/-/knowledge_base/u/workflow#embedded-workflows)),
 upload it to @product@:
 
 1.  Navigate to Control Panel &rarr; Configuration &rarr; Workflow.
@@ -94,7 +98,7 @@ to create workflows by default. To upload existing XML files in Kaleo Designer,
 
 What's the difference between saving and publishing?
 
-## Published Versus Unpublished [](id=published-versus-unpublished)
+## Published Versus Unpublished
 
 The difference between a published and unpublished workflow is important:
 
@@ -104,7 +108,7 @@ assets.
 **Unpublished:** Validation is not performed on the unpublished workflow, and it
 cannot be assigned to assets until it's published.
 
-## Workflow Versions [](id=workflow-versions)
+## Workflow Versions
 
 You're making a simple edit to a workflow, when suddenly you remember you have a
 meeting with your boss. Quickly you save the workflow and hurry off to your
@@ -142,5 +146,5 @@ revert to the prior version and start editing it from scratch.
 ![Figure 1: View and restore prior versions of a workflow.](../../images/workflow-revisions.png)
 
 Alternatively, you can refer to the 
-[embedded definitions](/discover/portal/-/knowledge_base/7-1/workflow#embedded-workflows)
+[embedded definitions](/docs/7-1/user/-/knowledge_base/u/workflow#embedded-workflows)
 to get workflow definition ideas. 

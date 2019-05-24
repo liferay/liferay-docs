@@ -1,4 +1,8 @@
-# Using the Liferay Sync Desktop Client [](id=using-the-liferay-sync-desktop-client)
+---
+header-id: using-the-liferay-sync-desktop-client
+---
+
+# Using the Liferay Sync Desktop Client
 
 When Liferay Sync is running, its icon appears in your task bar (Windows) or menu 
 bar (Mac). Clicking this icon opens a menu that lets you work with and manage 
@@ -38,7 +42,7 @@ the following three options:
 Next, you'll learn how to use Sync's preferences to control how Sync functions 
 on your machine. 
 
-## Using Sync Preferences [](id=using-sync-preferences)
+## Using Sync Preferences
 
 You can use Sync's preferences to add/remove @product@ instances to sync with, 
 edit connection settings, and control Sync's basic behavior. Open Sync's 
@@ -57,7 +61,7 @@ to add, delete, or edit an account, respectively. You should use caution when
 deleting an account from your Sync client, as doing so also deletes any local
 files and folders for that account. Adding an account takes you through the
 same set of steps you used to set up the Sync client. [Click
-here](/discover/portal/-/knowledge_base/7-1/installing-and-configuring-the-desktop-liferay-sync-client#configuring-the-liferay-sync-desktop-client) 
+here](/docs/7-1/user/-/knowledge_base/u/installing-and-configuring-the-desktop-liferay-sync-client#configuring-the-liferay-sync-desktop-client) 
 for instructions on this. 
 
 **Syncing Sites:** The Sites you have permission to sync with for the selected 
@@ -66,7 +70,7 @@ Other Sites available for syncing are shown under *Unselected Sites*. To
 change the Sites you sync with, click the *Manage Sites* button. The window 
 that appears lets you select and/or unselect Sites to sync with. This window 
 is identical to the one that appeared when you first configured the client. 
-[Click here](/discover/portal/-/knowledge_base/7-1/installing-and-configuring-the-desktop-liferay-sync-client#configuring-the-liferay-sync-desktop-client) 
+[Click here](/docs/7-1/user/-/knowledge_base/u/installing-and-configuring-the-desktop-liferay-sync-client#configuring-the-liferay-sync-desktop-client) 
 and see step two for instructions on using it. Use caution when de-selecting
 Sites. De-selecting a Site deletes its folder on your machine. 
 

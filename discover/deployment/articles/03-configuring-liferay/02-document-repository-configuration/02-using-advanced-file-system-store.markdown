@@ -1,4 +1,8 @@
-# Using the Advanced File System Store [](id=using-the-advanced-file-system-store)
+---
+header-id: using-the-advanced-file-system-store
+---
+
+# Using the Advanced File System Store
 
 The advanced file system store is similar to the simple file system
 store (the default store). Like that store, it saves files to the local file
@@ -39,10 +43,10 @@ To use advanced file system store in a multi-node environment, follow these
 steps:
 
 1.  Copy the `portal-ext.properties` to each node's
-    [`[Liferay Home]` folder](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home). 
+    [`[Liferay Home]` folder](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home). 
 
 2.  Export the configuration from the *Advanced File System Store* screen to a 
-    [`.config` file](/discover/portal/-/knowledge_base/7-1/understanding-system-configuration-files). 
+    [`.config` file](/docs/7-1/user/-/knowledge_base/u/understanding-system-configuration-files). 
 
 3.  Copy the `.config` file to each node's `[Liferay Home]/osgi/configs` folder. 
 
@@ -50,14 +54,10 @@ steps:
  
 @product@ is using the advanced file system store. 
 
-+$$$
-
-**Warning:** If a database transaction rollback occurs in the Document Library,
-file system changes that have occurred since the start of the transaction
-aren't reversed. Inconsistencies between Document Library files and those in
-the file system store can occur and may require manual synchronization. 
-
-$$$
+| **Warning:** If a database transaction rollback occurs in the Document Library,
+| file system changes that have occurred since the start of the transaction
+| aren't reversed. Inconsistencies between Document Library files and those in
+| the file system store can occur and may require manual synchronization.
 
 You may decide the advanced file system store for whatever reason doesn't serve
 your needs. If this is the case, you can of course mount other file systems into

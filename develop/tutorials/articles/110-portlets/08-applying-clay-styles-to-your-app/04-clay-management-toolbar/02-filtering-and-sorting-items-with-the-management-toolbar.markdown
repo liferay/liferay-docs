@@ -1,4 +1,8 @@
-# Filtering and Sorting Items with the Management Toolbar [](id=filtering-and-sorting-items-with-the-management-toolbar)
+---
+header-id: filtering-and-sorting-items-with-the-management-toolbar
+---
+
+# Filtering and Sorting Items with the Management Toolbar
 
 The Management Toolbar lets you filter and sort your search container results. 
 While you can configure the toolbar's filters in the JSP, this can quickly crowd 
@@ -82,8 +86,8 @@ filters.
 Now you know how to configure the Management Toolbar's filters via a Display 
 Context. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Configuring Filtering and Sorting Management Toolbar Attributes](/develop/tutorials/-/knowledge_base/7-1/clay-management-toolbar#filtering-and-sorting-search-results)
+[Configuring Filtering and Sorting Management Toolbar Attributes](/docs/7-1/tutorials/-/knowledge_base/t/clay-management-toolbar#filtering-and-sorting-search-results)
 
-[Implementing the View Types](/develop/tutorials/-/knowledge_base/7-1/implementing-the-view-types)
+[Implementing the View Types](/docs/7-1/tutorials/-/knowledge_base/t/implementing-the-view-types)

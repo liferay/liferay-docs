@@ -1,4 +1,8 @@
-# Uploading Your App [](id=uploading-your-app)
+---
+header-id: uploading-your-app
+---
+
+# Uploading Your App
 
 On this screen, you must specify your app's version and upload your app's files. 
 Note that the article 

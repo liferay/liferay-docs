@@ -1,7 +1,11 @@
-# Referencing an npm Module's Package to Improve Code Maintenance [](id=referencing-an-npm-modules-package)
+---
+header-id: referencing-an-npm-modules-package
+---
+
+# Referencing an npm Module's Package to Improve Code Maintenance
 
 Once you've 
-[exposed your modules](/develop/tutorials/-/knowledge_base/7-1/preparing-your-javascript-files-for-esplus), 
+[exposed your modules](/docs/7-1/tutorials/-/knowledge_base/t/preparing-your-javascript-files-for-esplus), 
 you can use them in your portlet via the `aui:script` tag's `require` attribute. 
 By default, @product@ automatically composes an npm module's JavaScript variable 
 based on its name. For example, the module `my-package@1.0.0` translates to the 
@@ -93,10 +97,10 @@ And here is the corresponding example `view.jsp`:
 
 Now you know how to reference an npm module's package!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Obtaining an OSGi bundle's Dependency npm Package Descriptors](/develop/tutorials/-/knowledge_base/7-1/obtaining-dependency-npm-package-descriptors)
+[Obtaining an OSGi bundle's Dependency npm Package Descriptors](/docs/7-1/tutorials/-/knowledge_base/t/obtaining-dependency-npm-package-descriptors)
 
-[liferay-npm-bundler](/develop/reference/-/knowledge_base/7-1/liferay-npm-bundler)
+[liferay-npm-bundler](/docs/7-1/reference/-/knowledge_base/r/liferay-npm-bundler)
 
-[How @product@ Publishes npm Packages](/develop/reference/-/knowledge_base/7-1/how-liferay-portal-publishes-npm-packages)
+[How @product@ Publishes npm Packages](/docs/7-1/reference/-/knowledge_base/r/how-liferay-portal-publishes-npm-packages)

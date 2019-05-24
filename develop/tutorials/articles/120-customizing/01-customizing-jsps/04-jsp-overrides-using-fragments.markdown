@@ -1,4 +1,8 @@
-# JSP Overrides Using OSGi Fragments [](id=jsp-overrides-using-osgi-fragments)
+---
+header-id: jsp-overrides-using-osgi-fragments
+---
+
+# JSP Overrides Using OSGi Fragments
 
 You can completely override JSPs using OSGi fragments. This approach is powerful
 but can make things unstable when the host module is upgraded: 
@@ -14,9 +18,9 @@ but can make things unstable when the host module is upgraded:
 Using OSGi fragments to override JSPs is a bad practice, equivalent to using Ext
 plugins to customize @product@. They should only be used as a last resort.
 Liferay's API based approaches to overriding JSPs (i.e.,
-[Dynamic Includes](/develop/tutorials/-/knowledge_base/7-1/customizing-jsps-with-dynamic-includes)
+[Dynamic Includes](/docs/7-1/tutorials/-/knowledge_base/t/customizing-jsps-with-dynamic-includes)
 and
-[Portlet Filters](/develop/tutorials/-/knowledge_base/7-1/jsp-overrides-using-portlet-filters)),
+[Portlet Filters](/docs/7-1/tutorials/-/knowledge_base/t/jsp-overrides-using-portlet-filters)),
 on the other hand, provide more stability as they customize specific parts of
 JSPs that are safe to override. Also, the API based approaches don't limit your
 override to a specific host module version. If you are maintaining existing JSP
@@ -34,7 +38,7 @@ For more information about fragment modules, you can refer to section 3.14 of
 the 
 [OSGi Alliance's core specification document](https://osgi.org/specification/osgi.core/7.0.0/framework.module.html).
 
-## Declaring a Fragment Host [](id=declaring-a-fragment-host)
+## Declaring a Fragment Host
 
 There are two players in this game: the fragment and the host. The fragment is
 a parasitic module that attaches itself to a host. That sounds harsh, so let's
@@ -65,7 +69,7 @@ break the functionality of the host. It's better to detach your fragment
 and leave it lonely in the OSGi runtime than it is to break the functionality of
 an entire application.
 
-## Provide the Overridden JSP [](id=provide-the-overridden-jsp)
+## Provide the Overridden JSP
 
 There are two possible naming conventions for targeting the host original JSP: 
 `portal` or `original`. For example, if the original JSP is in the folder
@@ -121,25 +125,21 @@ If you must post-process the output, you can update the pattern to include
  
     <%=html %>
 
-+$$$
-
-**Note:** An OSGi fragment can access all of the fragment host's packages---it 
-doesn't need to import them from another bundle. bnd adds external packages the
-fragment uses (even ones in the fragment host) to the fragment's
-`Import-Package: [package],...` OSGi manifest header. That's fine for packages
-exported to the OSGi runtime. The problem is, however, when bnd tries to import
-a host's internal package (a package the host doesn't export). The OSGi runtime
-can't activate the fragment because the internal package remains an `Unresolved
-requirement`---a fragment shouldn't import a fragment host's packages. 
-
-If your fragment uses an internal package from the fragment host, continue using
-it but explicitly exclude the package from your bundle's `Import-Package` OSGi
-manifest header. This `Import-Package` header, for example, excludes packages
-that match `com.liferay.portal.search.web.internal.*`. 
-
-    Import-Package: !com.liferay.portal.search.web.internal.*,*
-
-$$$
+| **Note:** An OSGi fragment can access all of the fragment host's packages---it
+| doesn't need to import them from another bundle. bnd adds external packages the
+| fragment uses (even ones in the fragment host) to the fragment's
+| `Import-Package: [package],...` OSGi manifest header. That's fine for packages
+| exported to the OSGi runtime. The problem is, however, when bnd tries to import
+| a host's internal package (a package the host doesn't export). The OSGi runtime
+| can't activate the fragment because the internal package remains an `Unresolved
+| requirement`---a fragment shouldn't import a fragment host's packages.
+| 
+| If your fragment uses an internal package from the fragment host, continue using
+| it but explicitly exclude the package from your bundle's `Import-Package` OSGi
+| manifest header. This `Import-Package` header, for example, excludes packages
+| that match `com.liferay.portal.search.web.internal.*`.
+| 
+|     Import-Package: !com.liferay.portal.search.web.internal.*,*
 
 Now you can easily modify the JSPs of any application in Liferay.
 
@@ -147,8 +147,8 @@ Now you can easily modify the JSPs of any application in Liferay.
 <!--https://commons.wikimedia.org/wiki/File:Carcharhinus_perezi_bahamas_feeding.jpg-->
 
 To see a sample JSP-modifying fragment in action, look at the
-[Module JSP Override sample project](/develop/reference/-/knowledge_base/7-1/module-jsp-override).
+[Module JSP Override sample project](/docs/7-1/reference/-/knowledge_base/r/module-jsp-override).
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Upgrading App JSP Hooks](/develop/tutorials/-/knowledge_base/7-1/upgrading-app-jsp-hook-plugins)
+[Upgrading App JSP Hooks](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-app-jsp-hook-plugins)

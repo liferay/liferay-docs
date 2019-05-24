@@ -1,4 +1,8 @@
-# Calendar Resources and Porting [](id=calendar-resources-and-porting)
+---
+header-id: calendar-resources-and-porting
+---
+
+# Calendar Resources and Porting
 
 With calendar resources, you can invite entities other than people to your
 events. This is beneficial for finding the availability of important resources
@@ -8,7 +12,7 @@ the Sasquatch Space Suit used to scare guests out on Lunar hikes.
 Another important topic is porting your calendar's data from one installation of
 @product@ to another.
 
-## Calendar Resources [](id=calendar-resources)
+## Calendar Resources
 
 Follow these steps to add a new calendar resource:
 
@@ -35,11 +39,11 @@ a new calendar to the resource:
 Once a resource is created, invite it to your events just as you would an
 attendee.
 
-## Exporting and Importing Calendar Data [](id=exporting-and-importing-calendar-data)
+## Exporting and Importing Calendar Data
 
 Like other Liferay Applications, the calendar allows data to be exported or
 imported as 
-[LAR files](/discover/portal/-/knowledge_base/7-1/exporting-importing-widget-data)
+[LAR files](/docs/7-1/user/-/knowledge_base/u/exporting-importing-widget-data)
 LAR files. As with all LAR files, data can only be ported between installations
 of the same version.
 

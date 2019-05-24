@@ -1,4 +1,8 @@
-# Installing @product@ on tc Server [](id=installing-liferay-on-tc-server)
+---
+header-id: installing-liferay-on-tc-server
+---
+
+# Installing @product@ on tc Server
 
 Installing @product@ on tc server requires the following files: 
 
@@ -16,17 +20,13 @@ Here are the basic steps for installing @product@ on tc Server:
 
 - Deploying the @product@ WAR file to your application server
 
-+$$$
+| **Note:** You'll see the term
+| [*Liferay Home*](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home)
+| used in this installation guide. *Liferay Home* refers to the folder containing
+| your tc Server instance and some @product@-specific folders:. `data`, `deploy`,
+| `licenses`, and `osgi` folders.
 
-**Note:** You'll see the term
-[*Liferay Home*](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
-used in this installation guide. *Liferay Home* refers to the folder containing
-your tc Server instance and some @product@-specific folders:. `data`, `deploy`,
-`licenses`, and `osgi` folders. 
-
-$$$
-
-## Creating a tc Server [](id=creating-a-tc-server)
+## Creating a tc Server
 
 1.  Download and unzip a tc Server, available 
     [here](https://network.pivotal.io/products/pivotal-tcserver). 
@@ -67,22 +67,18 @@ Checkpoint:
 
 Next you can install the required dependencies.
 
-## Installing @product@ Dependencies [](id=installing-liferay-dependencies)
+## Installing @product@ Dependencies
 
 @product@ depends on additional JARs that aren't included with tc Server by
 default. There are even more JARs that you'd find in a @product@ bundle that are
 not required but can be useful. If you don't have a @product@ bundle, you can 
 download the required JARs from third parties, as described below.
 
-+$$$
-
-**Note:** Many required and useful JARs are pre-installed when you build 
-@product@ from the source code or 
-[download a @product@ bundle](https://web.liferay.com/group/customer/dxp/downloads/7-1). 
-If you want to acquire all of the JARs that ship with a @product@ bundle 
-quickly, using one of these sources might save you time.
-
-$$$
+| **Note:** Many required and useful JARs are pre-installed when you build
+| @product@ from the source code or
+| [download a @product@ bundle](https://web.liferay.com/group/customer/dxp/downloads/7-1).
+| If you want to acquire all of the JARs that ship with a @product@ bundle
+| quickly, using one of these sources might save you time.
 
 1.  Extract the JARs from the dependencies ZIP to the 
     `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/lib` folder. The JARs are 
@@ -170,7 +166,7 @@ $$$
     - `test`
     - `war`
 
-## Configuring tc Server [](id=configuring-tc-server)
+## Configuring tc Server
 
 There are a few configuration edits to make so @product@ runs well on tc Server.
 All of these configuration changes should be made in your tc Server runtime
@@ -194,12 +190,8 @@ instance.
 
         set JVM_OPTS=-Dfile.encoding=UTF-8 -Duser.timezone=GMT -Xmx2048M -Xss512K -XX:MaxMetaspaceSize=512m
 
-    +$$$
-
-    **Important:** For @product@ to work properly, the application server JVM 
-    must use the `GMT` time zone and `UTF-8` file encoding. 
-
-    $$$
+    | **Important:** For @product@ to work properly, the application server JVM
+    | must use the `GMT` time zone and `UTF-8` file encoding.
 
 2.  Next, you should make sure that UTF-8 URI encoding is used consistently. 
     Open `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/conf/server.xml` and 
@@ -230,15 +222,11 @@ instance.
         wrapper.java.additional.9=-Xss512K
         wrapper.java.additional.10=-XX:MaxMetaspaceSize=256M
         wrapper.java.additional.11=-Dfile.encoding=UTF-8
-    +$$$
-
-    **Important:** For @product@ to work properly, the application server JVM 
-    must use the `GMT` time zone and `UTF-8` file encoding. If your Java wrapper
-    doesn't already specify the `GMT` time zone, add an entry for it:
-    
-        wrapper.java.additional.12=-Duser.timezone=GMT
-
-    $$$
+    | **Important:** For @product@ to work properly, the application server JVM
+    | must use the `GMT` time zone and `UTF-8` file encoding. If your Java wrapper
+    | doesn't already specify the `GMT` time zone, add an entry for it:
+    | 
+    |     wrapper.java.additional.12=-Duser.timezone=GMT
 
 4.  Finally, open `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/conf/web.xml` and 
     add the following configuration after
@@ -253,7 +241,7 @@ instance.
             <param-value>1.8</param-value>
         </init-param> 
 
-### Database Configuration [](id=database-configuration)
+### Database Configuration
 
 The easiest way to handle your database configuration is to let @product@ manage 
 your data source. If you want to use @product@'s built-in data source, you can 
@@ -303,12 +291,12 @@ If you want tc Server to manage your data source, follow these steps:
 
 Your data source is now configured. Next set up the mail session.
 
-### Mail Configuration [](id=mail-configuration)
+### Mail Configuration
 
 As with database configuration, the easiest way to configure mail is to let
 @product@ handle your mail session. If you want to use @product@'s built-in mail
 session, skip this section and 
-[configure the mail session](/discover/deployment/-/knowledge_base/7-1/installing-liferay#configuring-mail)
+[configure the mail session](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#configuring-mail)
 in the Control Panel.
 
 If you want to manage your mail session with tc Server, follow these steps: 
@@ -355,7 +343,7 @@ If you want to manage your mail session with tc Server, follow these steps:
 You created a mail session for tc Server to manage and configured @product@ to
 use it. 
 
-## Deploying @product@ [](id=deploying-liferay)
+## Deploying @product@
 
 Now you're ready to deploy @product@ using your @product@ WAR file.
 
@@ -377,19 +365,15 @@ Now you're ready to deploy @product@ using your @product@ WAR file.
 
 Congratulations on successfully installing and deploying @product@ on tc Server!
 
-+$$$
-
-After deploying @product@, you may see excessive warnings and log messages, such
-as the ones below, involving `PhaseOptimizer`. These are benign and can be
-ignored. Make sure to adjust your app server's logging level or log filters to
-avoid excessive benign log messages. 
-
-    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
-    WARNING: Skipping pass gatherExternProperties
-    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
-    WARNING: Skipping pass checkControlFlow
-    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
-    INFO: pass supports: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, modules, exponent operator (**), async function, trailing comma in param list]
-    current AST contains: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, exponent operator (**), async function, trailing comma in param list, object literals with spread, object pattern rest]
-
-$$$
+| After deploying @product@, you may see excessive warnings and log messages, such
+| as the ones below, involving `PhaseOptimizer`. These are benign and can be
+| ignored. Make sure to adjust your app server's logging level or log filters to
+| avoid excessive benign log messages.
+| 
+|     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+|     WARNING: Skipping pass gatherExternProperties
+|     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+|     WARNING: Skipping pass checkControlFlow
+|     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+|     INFO: pass supports: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, modules, exponent operator (**), async function, trailing comma in param list]
+|     current AST contains: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, exponent operator (**), async function, trailing comma in param list, object literals with spread, object pattern rest]

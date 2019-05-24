@@ -1,4 +1,8 @@
-# Token-based Single Sign On Authentication [](id=token-based-single-sign-on-authentication)
+---
+header-id: token-based-single-sign-on-authentication
+---
+
+# Token-based Single Sign On Authentication
 
 Token-based SSO authentication was introduced in @product@ 7.0 to standardize
 support for Shibboleth, SiteMinder, and any other SSO product which works on the
@@ -62,7 +66,7 @@ from the specified location. (Example: SM_USER)
 
 Remember to click *Save* to activate Token Based SSO.
 
-## Required SiteMinder Configuration [](id=required-siteminder-configuration)
+## Required SiteMinder Configuration
 
 If you use SiteMinder, note that @product@ sometimes uses the tilde character in
 its URLs. By default, SiteMinder treats the tilde character (and others) as bad
@@ -77,7 +81,7 @@ from the bad URL character list. Restart SiteMinder to make your configuration
 update take effect. For more information, please refer to SiteMinder's
 [documentation](https://support.ca.com/cadocs/0/CA%20SiteMinder%20r6%200%20SP6-ENU/Bookshelf_Files/HTML/index.htm?toc.htm?258201.html)
 
-## Summary [](id=summary)
+## Summary
 
 @product@'s token-based SSO authentication mechanism is highly flexible
 and compatible with any SSO solution which can provide it with a valid @product@

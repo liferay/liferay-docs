@@ -1,4 +1,8 @@
-# Enabling Code Assist Features in Your Project [](id=enabling-code-assist-features-in-your-project)
+---
+header-id: enabling-code-assist-features-in-your-project
+---
+
+# Enabling Code Assist Features in Your Project
 
 Liferay Dev Studio's integration of [Tern](http://ternjs.net/) provides many
 valuable front-end and back-end development tools for code inference and
@@ -25,7 +29,7 @@ need to install it by following the instructions below.
 Now that the necessary features are installed, follow the steps below to learn
 how to enable Tern's code assist features in your project. 
 
-## Setting Up Tern Features [](id=setting-up-tern-features)
+## Setting Up Tern Features
 
 Tern features are enabled on a project-by-project basis. By default, Tern is
 already enabled for Liferay WAR-style portlets generated using the Plugins SDK.
@@ -53,10 +57,10 @@ follow the steps below:
 
 Your project is now set up to use Dev Studio's Tern features. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using Front-End Code Assist Features in Dev Studio](/develop/tutorials/-/knowledge_base/7-1/using-front-end-code-assist-features-in-ide)
+[Using Front-End Code Assist Features in Dev Studio](/docs/7-1/tutorials/-/knowledge_base/t/using-front-end-code-assist-features-in-ide)
 
-[Creating Modules with Liferay Dev Studio](/develop/tutorials/-/knowledge_base/7-1/creating-modules-with-liferay-ide)
+[Creating Modules with Liferay Dev Studio](/docs/7-1/tutorials/-/knowledge_base/t/creating-modules-with-liferay-ide)
 
-[Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli)
+[Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/blade-cli)

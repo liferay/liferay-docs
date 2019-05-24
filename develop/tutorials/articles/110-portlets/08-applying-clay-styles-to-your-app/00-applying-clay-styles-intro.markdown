@@ -1,4 +1,8 @@
-# Applying Clay Styles to your App [](id=applying-clay-styles-to-your-app)
+---
+header-id: applying-clay-styles-to-your-app
+---
+
+# Applying Clay Styles to your App
 
 It's important to have a consistent user experience across your apps. 
 Portal's built-in apps achieve this through Liferay's 

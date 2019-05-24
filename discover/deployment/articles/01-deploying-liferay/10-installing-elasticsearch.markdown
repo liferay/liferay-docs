@@ -1,4 +1,8 @@
-# Installing Elasticsearch [](id=installing-elasticsearch)
+---
+header-id: installing-elasticsearch
+---
+
+# Installing Elasticsearch
 
 @product@ uses Elasticsearch to index its content. By default, it's installed as
 an embedded service. It works, but it's not a supported configuration for
@@ -12,7 +16,7 @@ can still increase performance by running Elasticsearch in a separate,
 individually tunable JVM on the same box. 
 
 Before installing Elasticsearch, refer to 
-[Preparing to Install Elasticsearch](/discover/deployment/-/knowledge_base/7-1/preparing-to-install-elasticsearch) 
+[Preparing to Install Elasticsearch](/docs/7-1/deploy/-/knowledge_base/d/preparing-to-install-elasticsearch) 
 for guidance on configuring the servers to support an Elasticsearch
 deployment properly. 
 
@@ -33,24 +37,20 @@ Installing Elasticsearch is pretty easy and takes only six steps:
 
 6. Restart @product@ and reindex your search indexes. 
 
-+$$$
-
-**Note:** Before continuing, make sure you have set the 
-[`JAVA_HOME` environment variable](https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/).
-
-If you have multiple JDKs installed, make sure Elasticsearch and @product@ are
-using the same version and distribution (e.g., Oracle Open JDK 1.8.0_201). You can
-specify this in `[Elasticsearch Home]/bin/elasticsearch.in.sh`:
-
-        JAVA_HOME=/path/to/java
-
-Consult the 
-[Elasticsearch compatibility matrix](https://www.elastic.co/support/matrix#matrix_jvm) 
-and the 
-[@product@ compatibility matrix](https://web.liferay.com/documents/14/21598941/Liferay+DXP+7.1+Compatibility+Matrix/9f9c917a-c620-427b-865d-5c4b4a00be85) 
-to learn more about supported JDK distributions and versions.
-
-$$$
+| **Note:** Before continuing, make sure you have set the
+| [`JAVA_HOME` environment variable](https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/).
+| 
+| If you have multiple JDKs installed, make sure Elasticsearch and @product@ are
+| using the same version and distribution (e.g., Oracle Open JDK 1.8.0_201). You can
+| specify this in `[Elasticsearch Home]/bin/elasticsearch.in.sh`:
+| 
+|         JAVA_HOME=/path/to/java
+| 
+| Consult the
+| [Elasticsearch compatibility matrix](https://www.elastic.co/support/matrix#matrix_jvm)
+| and the
+| [@product@ compatibility matrix](https://web.liferay.com/documents/14/21598941/Liferay+DXP+7.1+Compatibility+Matrix/9f9c917a-c620-427b-865d-5c4b4a00be85)
+| to learn more about supported JDK distributions and versions.
 
 Now you'll perform these steps, and when you're done, you'll have
 a production-ready instance of @product@ up and running.
@@ -61,7 +61,7 @@ article for more details on configuring @product@ for Elasticsearch. For more
 information on installing a search engine, see
 [here](discover/deployment/-/knowledge_base/7-1/installing-a-search-engine).
 
-### Step One: Find the Right Version of Elasticsearch [](id=step-one-find-the-right-version-of-elasticsearch)
+### Step One: Find the Right Version of Elasticsearch
 
 If @product@ isn't running, start it. 
 
@@ -101,7 +101,7 @@ Elasticsearch server.
 Now that you know the version of Elasticsearch you need, go to
 [Elastic's](https://www.elastic.co) website and download that version. 
 
-### Step Two: Install Elasticsearch [](id=step-two-install-elasticsearch)
+### Step Two: Install Elasticsearch
 
 Most of this step entails deciding where you want to run Elasticsearch. Do you
 want to run it on the same machine as @product@, or do you want to run it on its
@@ -113,7 +113,7 @@ infrastructure.
 Once you have a copy of the right version of Elasticsearch, extract it to
 a folder on the machine where you want it running. That's it! 
 
-### Step Three: Install Elasticsearch Plugins [](id=step-three-install-elasticsearch-plugins)
+### Step Three: Install Elasticsearch Plugins
 
 Install the following required Elasticsearch plugins:
 
@@ -128,7 +128,7 @@ To install these plugins, navigate to Elasticsearch Home and enter
 
 Replace *[plugin-name]* with the Elasticsearch plugin's name.
 
-### Step Four: Name Your Elasticsearch Cluster [](id=step-three-name-your-elastic-cluster)
+### Step Four: Name Your Elasticsearch Cluster
 
 A *cluster* in Elasticsearch is a collection of nodes (servers) identified as a
 cluster by a shared cluster name. The nodes work together to share data and
@@ -163,7 +163,7 @@ Elasticsearch starts, and one of its status messages includes a transport addres
 Take note of this address; you'll need to give it to your @product@ server so it
 can find Elasticsearch on the network. 
 
-### Step Five: Configure @product@ to Connect to your Elasticsearch Cluster [](id=step-four-configure-liferay-to-connect-to-your-elastic-cluster)
+### Step Five: Configure @product@ to Connect to your Elasticsearch Cluster
 
 Now that you're ready to configure @product@, start it if you haven't already,
 log in, and then click on *Control Panel* &rarr; *Configuration* &rarr; *System
@@ -184,7 +184,7 @@ will work.
 
 When finished, click *Save*. You're almost done. 
 
-### Step Six: Restart @product@ and Reindex [](id=step-five-restart-liferay-and-reindex)
+### Step Six: Restart @product@ and Reindex
 
 Stop and restart @product@. When it's back up, log in as an administrative user
 and click on *Control Panel* &rarr; *Configuration* &rarr; *Search* and

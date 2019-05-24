@@ -1,7 +1,11 @@
-# Auto Login [](id=auto-login)
+---
+header-id: auto-login
+---
+
+# Auto Login
 
 While @product@ supports a wide variety of 
-[authentication mechanisms](/discover/deployment/-/knowledge_base/7-0/liferay-portal-security), 
+[authentication mechanisms](/docs/7-0/deploy/-/knowledge_base/d/liferay-portal-security), 
 you may use a home-grown system or some other product to authenticate users. To 
 do so, you can write an Auto Login component to support your authentication 
 system. 
@@ -10,10 +14,10 @@ Auto Login components can check if the request contains something (a cookie, an
 attribute) that can be associated with a user in any way. If the component can
 make that association, it can authenticate that user. 
 
-## Creating an Auto Login Component [](id=creating-an-auto-login-component)
+## Creating an Auto Login Component
 
 Create a 
-[Declarative Services component](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-liferay-ide#creating-component-classes). 
+[Declarative Services component](/docs/7-0/tutorials/-/knowledge_base/t/creating-modules-with-liferay-ide#creating-component-classes). 
 The component should implement the 
 `com.liferay.portal.kernel.security.auto.login.AutoLogin` interface. Here's an 
 example template: 
@@ -85,8 +89,8 @@ Auto Login components are useful ways of providing an authentication mechanism
 to a system that @product@ doesn't yet support. You can write them fairly 
 quickly to provide the integration you need. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Password-Based Authentication Pipelines](/develop/tutorials/-/knowledge_base/7-0/password-based-authentication-pipelines)
+[Password-Based Authentication Pipelines](/docs/7-0/tutorials/-/knowledge_base/t/password-based-authentication-pipelines)
 
-[Writing a Custom Login Portlet](/develop/tutorials/-/knowledge_base/7-0/writing-a-custom-login-portlet)
+[Writing a Custom Login Portlet](/docs/7-0/tutorials/-/knowledge_base/t/writing-a-custom-login-portlet)

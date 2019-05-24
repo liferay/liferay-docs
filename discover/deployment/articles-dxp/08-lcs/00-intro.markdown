@@ -1,4 +1,8 @@
-# Managing Liferay DXP with Liferay Connected Services [](id=managing-liferay-dxp-with-liferay-connected-services)
+---
+header-id: managing-liferay-dxp-with-liferay-connected-services
+---
+
+# Managing Liferay DXP with Liferay Connected Services
 
 Liferay Connected Services (LCS) is a set of tools and services for managing and
 monitoring your @product@ instances. LCS can help you install fix packs, monitor
@@ -10,13 +14,9 @@ like having a single butler that can serve several mansions at once! You can
 find more information about LCS on its 
 [official product page](http://www.liferay.com/products/liferay-connected-services). 
 
-+$$$
-
-**Note:** You must use LCS for activation of Elastic subscriptions. Otherwise, 
-you don't have to use LCS for activation. You can instead request an XML 
-activation key from Liferay Support. 
-
-$$$
+| **Note:** You must use LCS for activation of Elastic subscriptions. Otherwise,
+| you don't have to use LCS for activation. You can instead request an XML
+| activation key from Liferay Support.
 
 Before going any further, you should take note of a few key terms used 
 throughout this guide: 
@@ -33,11 +33,11 @@ server or a cluster node.
 
 As you go through this guide, you'll cover the following topics: 
 
--   [Getting Started](/discover/deployment/-/knowledge_base/7-1/getting-started-with-lcs)
--   [LCS Preconfiguration](/discover/deployment/-/knowledge_base/7-1/lcs-preconfiguration)
--   [Registering Your @product@ Server with LCS](/discover/deployment/-/knowledge_base/7-1/activating-your-liferay-dxp-server-with-lcs)
--   [Using LCS](/discover/deployment/-/knowledge_base/7-1/using-lcs)
--   [Troubleshooting Your LCS Connection](/discover/deployment/-/knowledge_base/7-1/troubleshooting-your-lcs-connection)
+-   [Getting Started](/docs/7-1/deploy/-/knowledge_base/d/getting-started-with-lcs)
+-   [LCS Preconfiguration](/docs/7-1/deploy/-/knowledge_base/d/lcs-preconfiguration)
+-   [Registering Your @product@ Server with LCS](/docs/7-1/deploy/-/knowledge_base/d/activating-your-liferay-dxp-server-with-lcs)
+-   [Using LCS](/docs/7-1/deploy/-/knowledge_base/d/using-lcs)
+-   [Troubleshooting Your LCS Connection](/docs/7-1/deploy/-/knowledge_base/d/troubleshooting-your-lcs-connection)
 
 You'll get started with the configuration steps required to use LCS with 
 @product@. 

@@ -1,4 +1,8 @@
-# Liferay Sample Projects [](id=liferay-sample-projects)
+---
+header-id: liferay-sample-projects
+---
+
+# Liferay Sample Projects
 
 Liferay provides working examples of sample projects that target different
 integration points in @product@. These working examples can be copy/pasted into
@@ -8,7 +12,7 @@ files. Liferay's sample projects can be found in the
 [liferay-blade-samples](https://github.com/liferay/liferay-blade-samples)
 repository on GitHub. You can find documentation for Liferay's sample projects
 in the
-[Sample Projects](/develop/reference/-/knowledge_base/7-1/sample-projects)
+[Sample Projects](/docs/7-1/reference/-/knowledge_base/r/sample-projects)
 reference section.
 
 If you'd like to browse the repository locally or copy sample projects into your
@@ -16,7 +20,7 @@ own project, [fork](https://help.github.com/articles/fork-a-repo/) and
 [clone](https://help.github.com/articles/cloning-a-repository/) the
 `liferay-blade-samples` repository.
 
-You can also use [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli)
+You can also use [Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/blade-cli)
 to create samples by running this command:
 
     blade samples [SAMPLE_NAME]
@@ -53,11 +57,11 @@ Some samples also come configured with logging to help you fully understand
 what the sample is accomplishing behind the scenes. For example, OSGi module
 logging is implemented for several samples (e.g.,
 [action-command-portlet](https://github.com/liferay/liferay-blade-samples/tree/7.1/gradle/apps/action-command-portlet),
-[document-action](/develop/reference/-/knowledge_base/7-1/document-action),
-[service-builder/jdbc](/develop/reference/-/knowledge_base/7-1/service-builder-application-using-external-database-via-jdbc),
+[document-action](/docs/7-1/reference/-/knowledge_base/r/document-action),
+[service-builder/jdbc](/docs/7-1/reference/-/knowledge_base/r/service-builder-application-using-external-database-via-jdbc),
 etc.), which lets OSGi modules supply their own logging configuration defaults
 without external configuration. See the
-[Adjusting Module Logging](/develop/tutorials/-/knowledge_base/7-1/adjusting-module-logging)
+[Adjusting Module Logging](/docs/7-1/tutorials/-/knowledge_base/t/adjusting-module-logging)
 tutorial for more information.
 
 For a list of sample template projects available, visit the

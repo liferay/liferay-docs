@@ -1,24 +1,24 @@
-# Installing Blade CLI [](id=installing-blade-cli)
+---
+header-id: installing-blade-cli
+---
+
+# Installing Blade CLI
 
 You can install Blade CLI using the Liferay Project SDK installer. This installs
 JPM and Blade CLI into your user home folder and optionally initializes a
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace)
+[Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace)
 folder.
 
-+$$$
-
-**Note:** In the past, if you've installed Blade CLI globally (e.g., using
-`sudo`), you should not run the installer to *update* your Blade CLI version.
-Since the installer only installs Blade CLI to your user home folder, your
-previous global installation would always override the installer's installation.
-Therefore, always follow the
-[Updating Blade CLI](/develop/tutorials/-/knowledge_base/7-1/updating-blade-cli)
-tutorial to update your Blade CLI instance.
-
-$$$
+| **Note:** In the past, if you've installed Blade CLI globally (e.g., using
+| `sudo`), you should not run the installer to *update* your Blade CLI version.
+| Since the installer only installs Blade CLI to your user home folder, your
+| previous global installation would always override the installer's installation.
+| Therefore, always follow the
+| [Updating Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/updating-blade-cli)
+| tutorial to update your Blade CLI instance.
 
 If you need to configure proxy settings for Blade CLI, follow the
-[Installing Blade CLI with Proxy Requirements](/develop/tutorials/-/knowledge_base/7-1/setting-blade-cli-proxy-requirments)
+[Installing Blade CLI with Proxy Requirements](/docs/7-1/tutorials/-/knowledge_base/t/setting-blade-cli-proxy-requirments)
 
 Follow the steps below to download and install Blade CLI:
 
@@ -54,26 +54,22 @@ Follow the steps below to download and install Blade CLI:
 That's it! Blade CLI is installed on your machine! If you specified a location
 to initialize a Liferay Workspace folder, that is also available.
 
-+$$$
-
-**Note:** The Liferay Project SDK installer attempts to add JPM to your path.
-For Windows, it uses the Windows registry. For Mac/Linux, it updates `.bashrc`
-or `.zshrc`. 
-
-At a minimum, Mac/Linux users must open a new shell after the installer finishes
-for the new features to be available. If, however, you're using a different
-shell (i.e., Korn, csh, etc.) or you've customized your CLI via `.profile` or
-some other configuration file, you must add JPM to your path manually. 
-
-$$$
+| **Note:** The Liferay Project SDK installer attempts to add JPM to your path.
+| For Windows, it uses the Windows registry. For Mac/Linux, it updates `.bashrc`
+| or `.zshrc`.
+| 
+| At a minimum, Mac/Linux users must open a new shell after the installer finishes
+| for the new features to be available. If, however, you're using a different
+| shell (i.e., Korn, csh, etc.) or you've customized your CLI via `.profile` or
+| some other configuration file, you must add JPM to your path manually.
 
 Blade CLI offers many
-[templates](/develop/reference/-/knowledge_base/7-1/project-templates)
+[templates](/docs/7-1/reference/-/knowledge_base/r/project-templates)
 to help build @product-ver@ applications. It also offers various ways to deploy
 those apps and interact with your Liferay server. Be sure to explore more Blade
 CLI tutorials to learn how.
 
-## Installer Issues on macOS/Linux [](id=installer-issues-on-macos)
+## Installer Issues on macOS/Linux
 
 If you're using macOS or Linux, you could experience an issue where the `blade`
 command is not available via command line. This is caused by the installer being

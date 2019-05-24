@@ -1,7 +1,11 @@
-# Updating Folders [](id=updating-folders)
+---
+header-id: updating-folders
+---
+
+# Updating Folders
 
 The Documents and Media API lets you 
-[copy or move](/develop/tutorials/-/knowledge_base/7-1/copying-and-moving-entities) 
+[copy or move](/docs/7-1/tutorials/-/knowledge_base/t/copying-and-moving-entities) 
 folders to a different location. Options for in-place folder updates, however, 
 are limited. You can only update a folder's name and description. You can do 
 this with the 
@@ -22,7 +26,7 @@ Follow these steps to use this method to update a folder:
         private DLAppService _dlAppService;
 
     For more information on this, see the section on 
-    [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
+    [getting a service reference](/docs/7-1/tutorials/-/knowledge_base/t/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
     in the getting started tutorial. 
 
 2.  Get the data needed to populate the `updateFolder` method's arguments. Since 
@@ -40,10 +44,10 @@ Follow these steps to use this method to update a folder:
                     DLFolder.class.getName(), actionRequest);
 
     For more information on getting folder IDs, see the 
-    [getting started tutorial's](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api) 
+    [getting started tutorial's](/docs/7-1/tutorials/-/knowledge_base/t/getting-started-with-the-documents-and-media-api) 
     section on specifying folders. For more information on `ServiceContext`, see 
     the tutorial 
-    [Understanding ServiceContext](/develop/tutorials/-/knowledge_base/7-1/understanding-servicecontext). 
+    [Understanding ServiceContext](/docs/7-1/tutorials/-/knowledge_base/t/understanding-servicecontext). 
 
 3.  Call the service reference's `updateFolder` method with the data from the 
     previous step: 
@@ -59,12 +63,12 @@ this `updateFolder` method, as well as the rest of `EditFolderMVCActionCommand`,
 contains additional logic to suit the specific needs of the Documents and Media 
 app. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating Folders](/develop/tutorials/-/knowledge_base/7-1/creating-folders)
+[Creating Folders](/docs/7-1/tutorials/-/knowledge_base/t/creating-folders)
 
-[Deleting Folders](/develop/tutorials/-/knowledge_base/7-1/deleting-folders)
+[Deleting Folders](/docs/7-1/tutorials/-/knowledge_base/t/deleting-folders)
 
-[Copying Folders](/develop/tutorials/-/knowledge_base/7-1/copying-folders)
+[Copying Folders](/docs/7-1/tutorials/-/knowledge_base/t/copying-folders)
 
-[Moving Folders and Files](/develop/tutorials/-/knowledge_base/7-1/moving-folders-and-files)
+[Moving Folders and Files](/docs/7-1/tutorials/-/knowledge_base/t/moving-folders-and-files)

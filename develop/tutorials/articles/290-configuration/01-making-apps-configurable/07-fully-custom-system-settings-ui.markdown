@@ -1,4 +1,8 @@
-# Configuration Form Renderer [](id=configuration-form-renderer)
+---
+header-id: configuration-form-renderer
+---
+
+# Configuration Form Renderer
 
 There are various approaches to customizing the auto-generated System Settings
 UI for your configurable application. To replace an application's auto-generated
@@ -11,7 +15,7 @@ configuration screen with a form built from scratch, you follow these steps:
     and the previously created `DisplayContext` class.
 
 A generalized discussion on System Settings UI customization is found in a
-[separate tutorial](/develop/tutorials/-/knowledge_base/7-1/customizing-the-system-settings-user-interface).
+[separate tutorial](/docs/7-1/tutorials/-/knowledge_base/t/customizing-the-system-settings-user-interface).
 
 This tutorial demonstrates replacing the configuration UI for the _Language
 Template_ System Settings entry, found in  Control Panel &rarr; Configuration
@@ -24,7 +28,7 @@ Specifically, the text input field labeled *DDM Template Key* in the
 auto-generated UI is replaced with a select list field type called *Language
 Selection Style*, populated with all possible DDM Template Keys.
 
-## Creating a `DisplayContext` [](id=creating-a-displaycontext)
+## Creating a `DisplayContext`
 
 A `DisplayContext` class is a POJO that simplifies and minimizes the use of Java
 logic in JSPs. Display context usage isn't required, but it's a nice convention
@@ -73,7 +77,7 @@ with these contents:
 
 Next implement the `ConfigurationFormRenderer`.
 
-## Implementing a `ConfigurationFormRenderer` [](id=implementing-a-configurationformrenderer)
+## Implementing a `ConfigurationFormRenderer`
 
 First create the component and class declarations. Set the `service` property
 to `ConfigurationFormRenderer.class`:
@@ -89,7 +93,7 @@ Next, write an `activate` method (decorated with `@Activate` and `@Modified`)
 to to convert a map of the configuration's properties to a typed class. The
 configuration is stored in a volatile field. Don't forget to make it volatile
 to prevent thread safety problems. See the article on
-[reading configuration values from a component class](/develop/tutorials/-/knowledge_base/7-1/reading-configuration-values-from-a-component)
+[reading configuration values from a component class](/docs/7-1/tutorials/-/knowledge_base/t/reading-configuration-values-from-a-component)
 for more information.
 
 	@Activate
@@ -215,7 +219,7 @@ of the reference target:
 Once the configuration form renderer is implemented, you can write the JSP
 markup for the form.
 
-## Writing the JSP Markup [](id=writing-the-jsp-markup)
+## Writing the JSP Markup
 
 Now write the JSP:
 

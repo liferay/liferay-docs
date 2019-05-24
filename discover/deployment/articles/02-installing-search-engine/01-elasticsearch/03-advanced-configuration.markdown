@@ -1,4 +1,8 @@
-# Advanced Configuration of the Liferay Elasticsearch Connector [](id=advanced-configuration-of-the-liferay-elasticsearch-adapter)
+---
+header-id: advanced-configuration-of-the-liferay-elasticsearch-adapter
+---
+
+# Advanced Configuration of the Liferay Elasticsearch Connector
 
 The default configurations for Liferay's Elasticsearch adapter module are set
 in a Java class called `ElasticsearchConfiguration`.
@@ -9,7 +13,7 @@ by default. In this case, add the configuration options you need. If something
 is configurable for Elasticsearch, it's configurable using the Elasticsearch
 adapter.
 
-## Adding Settings and Mappings to the Liferay Elasticsearch Adapter [](id=adding-settings-and-mappings-to-the-liferay-elasticsearch-adapter)
+## Adding Settings and Mappings to the Liferay Elasticsearch Adapter
 
 Think of the available configuration options as being divided into two groups:
 the most common ones that are easily configured, and more complex configurations
@@ -21,7 +25,7 @@ You'll just need to use one or more of the `additionalConfigurations`,
 
 ![Figure 1: You can add Elasticsearch configurations to the ones currently available in System Settings.](../../../images/cfg-elasticsearch-additional-configs.png)
 
-### Additional Configurations [](id=additional-configurations)
+### Additional Configurations
 
 The `additionalConfigurations` configuration defines extra settings (in YAML)
 for the embedded Elasticsearch. This is only useful for testing environments
@@ -30,7 +34,7 @@ using the embedded Elasticsearch server. Any node settings normally set in
 [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/index.html) 
 for a description of all possible node settings.
 
-### Adding Index Configurations [](id=adding-index-configurations)
+### Adding Index Configurations
 
 The `additionalIndexConfigurations` configuration defines extra settings (in
 JSON or YAML) that are applied to the @product@ index when it's created. For
@@ -64,7 +68,7 @@ template).
         }
     }
 
-### Adding Type Mappings [](id=adding-type-mappings)
+### Adding Type Mappings
 
 `additionalTypeMappings` defines extra mappings for the `LiferayDocumentType`
 type definition. These are applied when the index is created. Add the mappings
@@ -118,7 +122,7 @@ Here's what it would look like for an Elasticsearch instance running on
 In the above URL, `liferay-20116`is the index name. Including it indicates that
 you want to see the mappings that were used to create the index with that name.
 
-### Overriding Type Mappings [](id=overriding-type-mappings)
+### Overriding Type Mappings
 
 Use `overrideTypeMappings` to override @product@'s default type mappings. This
 is an advanced feature that should be used only if strictly necessary. If you
@@ -176,7 +180,7 @@ one:
         }
     }
 
-## Multi-line YAML Configurations [](id=multi-line-yaml-configurations)
+## Multi-line YAML Configurations
 
 If you configure the settings from the last section using an OSGi configuration
 file, you might find yourself needing to write YAML snippets that span multiple

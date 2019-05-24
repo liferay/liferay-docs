@@ -1,4 +1,8 @@
-# AlloyEditor [](id=alloyeditor)
+---
+header-id: alloyeditor
+---
+
+# AlloyEditor
 
 AlloyEditor is a modern WYSIWYG editor built on top of CKEDITOR, designed to
 create modern and gorgeous web content. AlloyEditor is the default WYSIWYG 

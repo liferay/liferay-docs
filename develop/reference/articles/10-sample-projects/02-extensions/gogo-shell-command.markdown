@@ -1,4 +1,8 @@
-# Gogo Shell Command [](id=gogo-shell-command)
+---
+header-id: gogo-shell-command
+---
+
+# Gogo Shell Command
 
 The Gogo Shell Command sample demonstrates adding a custom command to
 @product@'s Gogo shell environment. All @product@ installations have a Gogo
@@ -23,12 +27,12 @@ To test this sample, follow the instructions below:
 
     ![Figure 2: The outcome of executing the `usercount` command.](../../../images/gogo-shell-2.png)
 
-## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
+## What API(s) and/or code components does this sample highlight?
 
 This sample demonstrates creating a new Gogo shell command by leveraging
 `osgi.command.*` properties in a Java class.
 
-## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
+## How does this sample leverage the API(s) and/or code component?
 
 To add this new Gogo shell command, you must implement the logic in a Java
 class with the following two properties:
@@ -57,10 +61,10 @@ This method uses *Declarative Services* to get a reference for the
 number of users currently in the system.
 
 For more information on using the Gogo shell, see the
-[Using the Felix Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell)
+[Using the Felix Gogo Shell](/docs/7-1/reference/-/knowledge_base/r/using-the-felix-gogo-shell)
 tutorial.
 
-## Where Is This Sample? [](id=where-is-this-sample)
+## Where Is This Sample?
 
 There are three different versions of this sample, each built with a different
 build tool:

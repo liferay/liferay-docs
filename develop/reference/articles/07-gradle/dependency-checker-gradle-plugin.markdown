@@ -1,4 +1,8 @@
-# Dependency Checker Gradle Plugin [](id=dependency-checker-gradle-plugin)
+---
+header-id: dependency-checker-gradle-plugin
+---
+
+# Dependency Checker Gradle Plugin
 
 The Dependency Checker Gradle plugin lets you warn users if a specific
 configuration dependency is not the latest one available from the Maven central
@@ -8,7 +12,7 @@ is above a predetermined threshold.
 
 The plugin has been successfully tested with Gradle 4.10.2.
 
-## Usage [](id=usage)
+## Usage
 
 To use the plugin, include it in your build script:
 
@@ -28,7 +32,7 @@ buildscript {
 apply plugin: "com.liferay.dependency.checker"
 ```
 
-## Project Extension [](id=project-extension)
+## Project Extension
 
 The Dependency Checker Gradle plugin exposes the following properties through
 the extension named `dependencyChecker`:
@@ -43,11 +47,11 @@ Method | Description
 ------ | -----------
 `void maxAge(Map<?, ?> args)` | Declares the max age allowed for a dependency. The `args` map must contain the following entries: <ul><li>`configuration`: the configuration name</li><li>`group`: the dependency group</li><li>`name`: the dependency name</li><li>`maxAge`: an instance of [`groovy.time.Duration`](http://docs.groovy-lang.org/latest/html/api/groovy/time/Duration.html) that represents the maximum age allowed for the dependency</li><li>`throwError`: a `boolean` value representing whether to throw an error if the dependency is out-of-date</li></ul>
 
-## Additional Configuration [](id=additional-configuration)
+## Additional Configuration
 
 There are additional configurations that can help you use the Deployment Helper.
 
-### Project Properties [](id=project-properties)
+### Project Properties
 
 It is possible to set the default values of the [`ignoreFailures`](#ignorefailures)
 property via the project property `dependencyCheckerIgnoreFailures`:

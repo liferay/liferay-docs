@@ -1,4 +1,8 @@
-# Form Permissions [](id=form-permissions)
+---
+header-id: form-permissions
+---
+
+# Form Permissions
 
 To access a form's permissions, first navigate to the Forms app in 
 *Site Administration* (your site's menu) &rarr; *Content* &rarr; *Forms*. Then 
@@ -23,16 +27,12 @@ By default, you can grant these permissions for a form:
 Note that guest users can view and fill out forms by default. The *Guest* Role 
 has *View* and *Add Form Instance Record* permissions. 
 
-+$$$
-
-**Note:** By default, all users inherit the Guest Role's permissions. The Guest
-Role represents unauthenticated visitors of your Site. If you want to let
-Guest users submit forms (the default setting), it makes sense that
-authenticated users can also.  To disable automatic inheritance of the Guest
-Role's permissions, set 
-[this property](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Permissions)
-in your `portal-ext.properties` file:
-
-    permissions.check.guest.enabled=false
-
-$$$
+| **Note:** By default, all users inherit the Guest Role's permissions. The Guest
+| Role represents unauthenticated visitors of your Site. If you want to let
+| Guest users submit forms (the default setting), it makes sense that
+| authenticated users can also.  To disable automatic inheritance of the Guest
+| Role's permissions, set
+| [this property](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Permissions)
+| in your `portal-ext.properties` file:
+| 
+|     permissions.check.guest.enabled=false

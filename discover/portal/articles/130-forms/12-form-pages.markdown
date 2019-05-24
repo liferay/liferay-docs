@@ -1,4 +1,8 @@
-# Form Pages [](id=form-pages)
+---
+header-id: form-pages
+---
+
+# Form Pages
 
 Are users more likely to abandon long forms with lots of scrolling? Are they 
 more likely to see a multi-page form and abandon it without a second look, 
@@ -22,5 +26,5 @@ To add a form page,
 ![Figure 3: You can add new pages or reset the current page from the Page Actions menu.](../../images/forms-page-actions.png)
 
 You can also delete form pages, add 
-[success pages](/discover/portal/-/knowledge_base/7-1/form-success-pages), 
+[success pages](/docs/7-1/user/-/knowledge_base/u/form-success-pages), 
 and switch pagination modes. 

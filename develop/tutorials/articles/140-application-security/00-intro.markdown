@@ -1,4 +1,8 @@
-# Application Security [](id=application-security)
+---
+header-id: application-security
+---
+
+# Application Security
 
 Liferay's development framework provides an application security platform that's
 got years of experience behind it. You don't need to roll your own security for

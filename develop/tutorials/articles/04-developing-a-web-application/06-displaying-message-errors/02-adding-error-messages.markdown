@@ -1,4 +1,8 @@
-# Adding Failure and Success Messages [](id=adding-failure-and-success-messages)
+---
+header-id: adding-failure-and-success-messages
+---
+
+# Adding Failure and Success Messages
 
 <div class="learn-path-step">
     <p>Displaying Messages and Errors<br>Step 2 of 3</p>

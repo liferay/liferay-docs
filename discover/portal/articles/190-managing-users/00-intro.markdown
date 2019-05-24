@@ -1,4 +1,8 @@
-# Managing Users [](id=managing-users)
+---
+header-id: managing-users
+---
+
+# Managing Users
 
 Ever heard a retailer advertise as a "one stop shop" for anything you want? The
 idea is they have so much stuff that whatever you want is probably there.
@@ -19,15 +23,15 @@ users.
 <!--That's what this section of articles describes: User Management. Use these links
 to navigate quickly to the content you want:
 
-- [Users](/discover/portal/-/knowledge_base/7-1/users-and-organizations)
-    - [Adding, Editing, and Deleting Users](/discover/portal/-/knowledge_base/7-1/adding-editing-and-deleting-users)
-    - [Important Additional User Management Topics](/discover/portal/-/knowledge_base/7-1/user-management-additional-topics)
-- [Organizations](/discover/portal/-/knowledge_base/7-1/organizations)
-    - [Managing Organizations](/discover/portal/-/knowledge_base/7-1/managing-organizations)
-- [Roles and Permissions](/discover/portal/-/knowledge_base/7-1/roles-and-permissions)
-    - [Managing Roles](/discover/portal/-/knowledge_base/7-1/managing-roles)
-    - [Defining Role Permissions](/discover/portal/-/knowledge_base/7-1/defining-role-permissions)
-- [User Groups](/discover/portal/-/knowledge_base/7-1/user-groups)
+- [Users](/docs/7-1/user/-/knowledge_base/u/users-and-organizations)
+    - [Adding, Editing, and Deleting Users](/docs/7-1/user/-/knowledge_base/u/adding-editing-and-deleting-users)
+    - [Important Additional User Management Topics](/docs/7-1/user/-/knowledge_base/u/user-management-additional-topics)
+- [Organizations](/docs/7-1/user/-/knowledge_base/u/organizations)
+    - [Managing Organizations](/docs/7-1/user/-/knowledge_base/u/managing-organizations)
+- [Roles and Permissions](/docs/7-1/user/-/knowledge_base/u/roles-and-permissions)
+    - [Managing Roles](/docs/7-1/user/-/knowledge_base/u/managing-roles)
+    - [Defining Role Permissions](/docs/7-1/user/-/knowledge_base/u/defining-role-permissions)
+- [User Groups](/docs/7-1/user/-/knowledge_base/u/user-groups)
 
 These articles are planned but not yet written:
 
@@ -36,20 +40,16 @@ These articles are planned but not yet written:
 - Auditing Users(/discover/portal/-/knowledge_base/7-1/auditing-users)
 -->
 
-+$$$
-
-**Anonymous User:** *Anonymous Anonymous* is used for the new 
-[Managing User Data](/discover/portal/-/knowledge_base/7-1/managing-user-data)
-functionality. Created the first time an administrator clicks *Delete Personal
-Data* for a User, *Anonymous Anonymous* is a deactivated User assigned 
-[anonymized assets](/discover/portal/-/knowledge_base/7-1/managing-user-data#anonymizing-data). 
-The Anonymous User is configurable, so the name and configuration details might
-be different in your virtual instance.
-
-$$$
+| **Anonymous User:** *Anonymous Anonymous* is used for the new
+| [Managing User Data](/docs/7-1/user/-/knowledge_base/u/managing-user-data)
+| functionality. Created the first time an administrator clicks *Delete Personal
+| Data* for a User, *Anonymous Anonymous* is a deactivated User assigned
+| [anonymized assets](/docs/7-1/user/-/knowledge_base/u/managing-user-data#anonymizing-data).
+| The Anonymous User is configurable, so the name and configuration details might
+| be different in your virtual instance.
 
 
-## What's New with User Management? [](id=whats-new-with-user-management)
+## What's New with User Management?
 
 In @product@ version 7.0, the user management functionality and behavior didn't
 change much from previous versions. Improvements to existing behavior were
@@ -58,16 +58,16 @@ enhancements could be made. In @product-ver@, we're excited to announce some new
 features for user administrators:
 
 1.  Numeric screen names can be used without issue out of the box. Read
-    [here](/discover/portal/-/knowledge_base/7-1/user-management-additional-topics#numeric-screen-names) 
+    [here](/docs/7-1/user/-/knowledge_base/u/user-management-additional-topics#numeric-screen-names) 
     for the details.
 
 2.  Add organization types from System Settings. There's no need for portal
     properties anymore, or the requisite system restart. Read
-    [here](/discover/portal/-/knowledge_base/7-1/managing-organizations#organization-types) 
+    [here](/docs/7-1/user/-/knowledge_base/u/managing-organizations#organization-types) 
     for the details.
 
 3.  Configure default user profile pictures from System Settings. Read
-    [here](/discover/portal/-/knowledge_base/7-1/user-management-additional-topics#user-profile-pictures) 
+    [here](/docs/7-1/user/-/knowledge_base/u/user-management-additional-topics#user-profile-pictures) 
     for the details.
 
 Begin exploring Liferay's User Management functionality by reading about

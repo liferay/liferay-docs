@@ -1,8 +1,12 @@
-# Creating a Sitemap for the Resources Importer [](id=creating-a-sitemap-for-the-resources-importer)
+---
+header-id: creating-a-sitemap-for-the-resources-importer
+---
+
+# Creating a Sitemap for the Resources Importer
 
 You have two options for specifying resources to be imported with your theme: a 
 sitemap or an 
-[archive LAR file](/develop/tutorials/-/knowledge_base/7-1/archiving-your-sites-resources). 
+[archive LAR file](/docs/7-1/tutorials/-/knowledge_base/t/archiving-your-sites-resources). 
 Using a `sitemap.json` file is the most flexible approach, so we recommend it; 
 unlike LAR files, a `sitemap.json` can be created in one version of @product@
 and used in another. LAR files are version-specific, and can only be imported in
@@ -203,6 +207,6 @@ example `sitemap.json` file is shown below:
 
 If you don't understand the sitemap at this point, don't worry. This section of 
 tutorials covers how to create a sitemap for your theme, from 
-[defining pages](/develop/tutorials/-/knowledge_base/7-1/defining-pages-in-a-sitemap) 
+[defining pages](/docs/7-1/tutorials/-/knowledge_base/t/defining-pages-in-a-sitemap) 
 to 
-[defining portlets](/develop/tutorials/-/knowledge_base/7-1/defining-portlets-in-a-sitemap). 
+[defining portlets](/docs/7-1/tutorials/-/knowledge_base/t/defining-portlets-in-a-sitemap). 

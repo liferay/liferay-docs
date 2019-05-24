@@ -1,4 +1,8 @@
-# Creating Custom Item Selector Views [](id=creating-custom-item-selector-views)
+---
+header-id: creating-custom-item-selector-views
+---
+
+# Creating Custom Item Selector Views
 
 Item Selector's default selection views may provide everything you need for your 
 app. Custom selection views are required, however, for certain situations. For 
@@ -33,7 +37,7 @@ You'll create a custom selection view by following these steps:
 2.  Implement the selection view's class. 
 3.  Write your selection view's markup. 
 
-## Configuring Your Selection View's OSGi Module [](id=configuring-the-module)
+## Configuring Your Selection View's OSGi Module
 
 Follow these steps to configure your selection view's module: 
 
@@ -70,7 +74,7 @@ Follow these steps to configure your selection view's module:
 
 Now that your module is configured, you can create the selection view's class. 
 
-## Implementing Your Selection View's Class [](id=implementing-the-view)
+## Implementing Your Selection View's Class
 
 To create a new selection view, you must first know what kind of entities you 
 want it to present (images, videos, users, etc.). This determines the specific 
@@ -83,7 +87,7 @@ its URL, you would use `URLItemSelectorReturnType` for the return type.
 
 For a full list of the criterion and returns types available in @product@'s 
 apps, see the reference document 
-[Item Selector Criterion and Return Types](/develop/reference/-/knowledge_base/7-1/item-selector-criterion-and-return-types). 
+[Item Selector Criterion and Return Types](/docs/7-1/reference/-/knowledge_base/r/item-selector-criterion-and-return-types). 
 
 Once you've determined these things, follow these steps to create your selection 
 view's class: 
@@ -146,16 +150,12 @@ view's class:
     - [`isShowSearch()`](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorView.html#isShowSearch--): 
     returns whether the Item Selector view should show the search field. 
     
-    +$$$
-    
-    **Note:** To implement search, return `true` for this method. The 
-    `renderHTML` method, covered in the next section, indicates whether a user 
-    performed a search based on the value of the `search` parameter. Then the 
-    keywords the user searched can be obtained as follows:
-
-        String keywords = ParamUtil.getString(request, "keywords");
-
-    $$$
+    | **Note:** To implement search, return `true` for this method. The
+    | `renderHTML` method, covered in the next section, indicates whether a user
+    | performed a search based on the value of the `search` parameter. Then the
+    | keywords the user searched can be obtained as follows:
+    | 
+    |     String keywords = ParamUtil.getString(request, "keywords");
 
     - [`isVisible()`](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorView.html#isVisible-com.liferay.portal.kernel.theme.ThemeDisplay-):
     returns whether the Item Selector view is visible. In most cases, you'll 
@@ -262,7 +262,7 @@ view's class:
 For a real-world example of a view class, see the 
 [`SiteNavigationMenuItemItemSelectorView` class](https://github.com/liferay/liferay-portal/blob/7.1.x/modules/apps/site-navigation/site-navigation-item-selector-web/src/main/java/com/liferay/site/navigation/item/selector/web/internal/SiteNavigationMenuItemItemSelectorView.java). 
 
-## Writing Your View Markup [](id=writing-your-view-markup)
+## Writing Your View Markup
 
 Now that you've implemented your selection view's class, you must write the 
 markup that renders the view. The exact markup you write depends on your app's 
@@ -323,7 +323,7 @@ still applies to @product-ver@. Here's a walkthrough of this `layouts.jsp` file:
         </liferay-util:html-top>
     
     You can learn more about using the `liferay-util` taglibs in the tutorial 
-    [Using the Liferay Util Taglib](/develop/tutorials/-/knowledge_base/7-0/using-the-liferay-util-taglib). 
+    [Using the Liferay Util Taglib](/docs/7-0/tutorials/-/knowledge_base/t/using-the-liferay-util-taglib). 
 
 3.  This snippet creates the UI to display the layout entities. It uses the 
     [`liferay-layout:layouts-tree` taglib](@platform-ref@/7.0-latest/taglibs/modules/apps/web-experience/layout/com.liferay.layout.taglib/liferay-layout/layouts-tree.html) 
@@ -466,10 +466,10 @@ anything in those portlets.
 
 Great! Now you know how to create custom views for the Item Selector. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Understanding the Item Selector API's Components](/develop/tutorials/-/knowledge_base/7-1/understanding-the-item-selector-apis-components)
+[Understanding the Item Selector API's Components](/docs/7-1/tutorials/-/knowledge_base/t/understanding-the-item-selector-apis-components)
 
-[Selecting Entities Using the Item Selector](/develop/tutorials/-/knowledge_base/7-1/selecting-entities-using-the-item-selector)
+[Selecting Entities Using the Item Selector](/docs/7-1/tutorials/-/knowledge_base/t/selecting-entities-using-the-item-selector)
 
-[Creating Custom Item Selector Entities](/develop/tutorials/-/knowledge_base/7-1/creating-custom-item-selector-entities)
+[Creating Custom Item Selector Entities](/docs/7-1/tutorials/-/knowledge_base/t/creating-custom-item-selector-entities)

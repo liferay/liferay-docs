@@ -1,4 +1,8 @@
-# Managing User Segments [](id=managing-user-segments)
+---
+header-id: managing-user-segments
+---
+
+# Managing User Segments
 
 Go to *Site Administration* &rarr; *Configuration* &rarr; *Audience Targeting*
 to manage user segments and campaigns.
@@ -59,10 +63,10 @@ Therefore, user segments and campaigns defined in the Global scope are available
 to any Site. User segments and campaigns created in a site are available to all
 of its child Sites.
 
-## User Segment Rules [](id=user-segment-rules)
+## User Segment Rules
 
 Custom rules can be created by developers and deployed as OSGi plugins. See the
-[Creating New Audience Targeting Rule Types](/develop/tutorials/-/knowledge_base/7-1/creating-new-audience-targeting-rule-types)
+[Creating New Audience Targeting Rule Types](/docs/7-1/tutorials/-/knowledge_base/t/creating-new-audience-targeting-rule-types)
 tutorial for details.
  
 These are some of the rules that are included with the app by default:
@@ -85,7 +89,7 @@ These are some of the rules that are included with the app by default:
     - Score Points rule.
 
 For a complete reference of all rules available, see the
-[Liferay Audience Targeting Rules](/develop/tutorials/-/knowledge_base/7-1/liferay-audience-targeting-rules)
+[Liferay Audience Targeting Rules](/docs/7-1/tutorials/-/knowledge_base/t/liferay-audience-targeting-rules)
 tutorial.
 
 The Score Points rule assigns one point to a user each time the user views

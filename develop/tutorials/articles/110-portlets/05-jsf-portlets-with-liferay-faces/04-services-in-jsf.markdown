@@ -1,11 +1,15 @@
-# Services in JSF [](id=services-in-jsf)
+---
+header-id: services-in-jsf
+---
+
+# Services in JSF
 
 Creating services works the same in a JSF portlet as it would in any other
 standard WAR-style MVC portlet; generate custom services as separate API and
 Impl JARs and deploy them as individual modules to @product@. You can generate
 custom services for your JSF portlet using Service Builder. To learn more about
 how Service Builder works in @product@, visit the
-[Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder)
+[Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/service-builder)
 tutorials.
 
 The JSF WAR can then rely on the API module as a *provided* dependency. The main
@@ -68,13 +72,13 @@ annotation:
 
 For more information on service trackers and how to use them in WAR-style
 portlets, see the
-[Service Trackers](/develop/tutorials/-/knowledge_base/7-1/service-trackers)
+[Service Trackers](/docs/7-1/tutorials/-/knowledge_base/t/service-trackers)
 tutorial.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Fundamentals](/develop/tutorials/-/knowledge_base/7-1/fundamentals)
+[Fundamentals](/docs/7-1/tutorials/-/knowledge_base/t/fundamentals)
 
-[Internationalization](/develop/tutorials/-/knowledge_base/7-1/internationalization)
+[Internationalization](/docs/7-1/tutorials/-/knowledge_base/t/internationalization)
 
-[Configurable Applications](/develop/tutorials/-/knowledge_base/7-1/configurable-applications)
+[Configurable Applications](/docs/7-1/tutorials/-/knowledge_base/t/configurable-applications)

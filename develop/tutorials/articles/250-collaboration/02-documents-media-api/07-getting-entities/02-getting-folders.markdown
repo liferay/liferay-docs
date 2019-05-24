@@ -1,4 +1,8 @@
-# Getting Folders [](id=getting-folders)
+---
+header-id: getting-folders
+---
+
+# Getting Folders
 
 The Documents and Media API can get folders in a similar way to getting files.
 The main difference is that folder retrieval methods may have an additional
@@ -27,7 +31,7 @@ repository's root folder:
         private DLAppService _dlAppService;
 
     For more information on this, see the section on 
-    [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
+    [getting a service reference](/docs/7-1/tutorials/-/knowledge_base/t/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
     in the getting started tutorial. 
 
 2.  Get the data needed to populate the method's arguments any way you wish.
@@ -44,7 +48,7 @@ repository's root folder:
     [`ThemeDisplay`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/theme/ThemeDisplay.html). 
     Calling the `ThemeDisplay` method `getScopeGroupId()` gets the ID of your 
     app's current site (group). For more information, see the 
-    [Data Scopes tutorial](/develop/tutorials/-/knowledge_base/7-1/data-scopes). 
+    [Data Scopes tutorial](/docs/7-1/tutorials/-/knowledge_base/t/data-scopes). 
 
         ThemeDisplay themeDisplay = (ThemeDisplay) request.getAttribute(WebKeys.THEME_DISPLAY);
         long groupId = themeDisplay.getScopeGroupId();
@@ -54,7 +58,7 @@ repository's root folder:
     boolean value can be provided directly---it doesn't need to be retrieved 
     from somewhere. For more information on getting repository and folder IDs, 
     see the 
-    [getting started tutorial's](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api) 
+    [getting started tutorial's](/docs/7-1/tutorials/-/knowledge_base/t/getting-started-with-the-documents-and-media-api) 
     sections on specifying repositories and folders. 
 
 3.  Call the service reference's `getFolders` method with the data from the 
@@ -69,10 +73,10 @@ Note that this is one of many methods you can use to get folders. The rest are
 listed in the 
 [`DLAppService` Javadoc](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html). 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Getting Started with the Documents and Media API](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api)
+[Getting Started with the Documents and Media API](/docs/7-1/tutorials/-/knowledge_base/t/getting-started-with-the-documents-and-media-api)
 
-[Getting Files](/develop/tutorials/-/knowledge_base/7-1/getting-files)
+[Getting Files](/docs/7-1/tutorials/-/knowledge_base/t/getting-files)
 
-[Getting Multiple Entity Types](/develop/tutorials/-/knowledge_base/7-1/getting-multiple-entity-types)
+[Getting Multiple Entity Types](/docs/7-1/tutorials/-/knowledge_base/t/getting-multiple-entity-types)

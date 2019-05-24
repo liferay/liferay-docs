@@ -1,6 +1,10 @@
-# File Display Screenlet for iOS [](id=file-display-screenlet-for-ios)
+---
+header-id: file-display-screenlet-for-ios
+---
 
-## Requirements [](id=requirements)
+# File Display Screenlet for iOS
+
+## Requirements
 
 - Xcode 9.3 or above
 - iOS 11 SDK
@@ -10,22 +14,22 @@
   [EE/DXP](http://www.liferay.com/marketplace/-/mp/application/54369726)). 
   This app is preinstalled in Liferay CE Portal 7.0/7.1 and Liferay DXP. 
 
-## Compatibility [](id=compatibility)
+## Compatibility
 
 - iOS 9 and above
 
-## Xamarin Requirements [](id=xamarin-requirements)
+## Xamarin Requirements
 
 - Visual Studio 7.2
 - Mono .NET framework 5.4.1.6
 
-## Features [](id=features)
+## Features
 
 File Display Screenlet shows a single file from a @product@ instance's Documents 
 and Media Library. Use this Screenlet to display file types not covered by the 
 other display Screenlets (e.g., DOC, PPT, XLS). 
 
-## JSON Services Used [](id=json-services-used)
+## JSON Services Used
 
 Screenlets in Liferay Screens call JSON web services in the portal. This 
 Screenlet calls the following services and methods.
@@ -37,11 +41,11 @@ Screenlet calls the following services and methods.
 | `ScreensassetentryService` (Screens compatibility plugin) | `getAssetEntries` | With `entryQuery` |
 | `ScreensassetentryService` (Screens compatibility plugin) | `getAssetEntries` | With `companyId`, `groupId`, and `portletItemName` |
 
-## Module [](id=module)
+## Module
 
 - None
 
-## Themes [](id=themes)
+## Themes
 
 - Default
 
@@ -49,11 +53,11 @@ The Default View uses an iOS `UIWebView` for displaying the file.
 
 ![Figure 1: File Display Screenlet using the Default View.](../../../images/screens-ios-filedisplay.png)
 
-## Offline [](id=offline)
+## Offline
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-1/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/docs/7-1/tutorials/-/knowledge_base/t/architecture-of-offline-mode-in-liferay-screens). 
 Here are the offline mode policies that you can use with this Screenlet: 
 
 | Policy | What happens | When to use |
@@ -63,7 +67,7 @@ Here are the offline mode policies that you can use with this Screenlet:
 | `remote-first` | The Screenlet loads the data from the Liferay instance. If this succeeds, the Screenlet shows the data to the user and stores it in the local cache for later use. If a connection issue occurs, the Screenlet retrieves the data from the local cache. If the data doesn't exist there, the Screenlet uses the listener to notify the developer about the error. | Use this policy to show the most recent version of the data when connected, but show an outdated version when there's no connection. |
 | `cache-first` | The Screenlet loads the data from the local cache. If the data isn't there, the Screenlet requests it from the Liferay instance and notifies the developer about any errors that occur (including connectivity errors). | Use this policy to save bandwidth and loading time in case you have local (but probably outdated) data. |
 
-## Attributes [](id=attributes)
+## Attributes
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------|
@@ -71,9 +75,9 @@ Here are the offline mode policies that you can use with this Screenlet:
 | `className` | `string` | The file's fully qualified class name. Since files in a Documents and Media Library are `DLFileEntry` objects, their `className` is [`com.liferay.document.library.kernel.model.DLFileEntry`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/model/DLFileEntry.html). The `className` and `classPK` attributes are required to instantiate the Screenlet. |
 | `classPK` | `number` | The file's unique identifier. The `className` and `classPK` attributes are required to instantiate the Screenlet. |
 | `autoLoad` | `boolean` | Whether the file automatically loads when the Screenlet appears in the app's UI. The default value is `true`. |
-| `offlinePolicy` | `string` | The offline mode setting. See [the Offline section](/develop/reference/-/knowledge_base/7-1/file-display-screenlet-for-ios#offline) for details. |
+| `offlinePolicy` | `string` | The offline mode setting. See [the Offline section](/docs/7-1/reference/-/knowledge_base/r/file-display-screenlet-for-ios#offline) for details. |
 
-## Delegate [](id=delegate)
+## Delegate
 
 File Display Screenlet delegates some events to an object that conforms to the  `FileDisplayScreenletDelegate` protocol. This protocol lets you implement the 
 following methods: 

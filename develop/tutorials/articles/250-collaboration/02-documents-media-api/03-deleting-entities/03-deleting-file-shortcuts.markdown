@@ -1,4 +1,8 @@
-# Deleting File Shortcuts [](id=deleting-file-shortcuts)
+---
+header-id: deleting-file-shortcuts
+---
+
+# Deleting File Shortcuts
 
 The Documents and Media API also lets you delete file shortcuts. To do so, use 
 the 
@@ -17,7 +21,7 @@ Follow these steps to use this method to delete a file shortcut:
         private DLAppService _dlAppService;
 
     For more information on this, see the section on 
-    [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
+    [getting a service reference](/docs/7-1/tutorials/-/knowledge_base/t/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
     in the getting started tutorial. 
 
 2.  Get the file shortcut's ID. Since it's common to delete a file shortcut 
@@ -42,10 +46,10 @@ this `deleteFileShortcut` method, as well as the rest of
 `EditFileShortcutMVCActionCommand`, contains additional logic to suit the 
 specific needs of the Documents and Media app. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Moving Entities to the Recycle Bin](/develop/tutorials/-/knowledge_base/7-1/moving-entities-to-the-recycle-bin)
+[Moving Entities to the Recycle Bin](/docs/7-1/tutorials/-/knowledge_base/t/moving-entities-to-the-recycle-bin)
 
-[Creating File Shortcuts](/develop/tutorials/-/knowledge_base/7-1/creating-file-shortcuts)
+[Creating File Shortcuts](/docs/7-1/tutorials/-/knowledge_base/t/creating-file-shortcuts)
 
-[Updating File Shortcuts](/develop/tutorials/-/knowledge_base/7-1/updating-file-shortcuts)
+[Updating File Shortcuts](/docs/7-1/tutorials/-/knowledge_base/t/updating-file-shortcuts)

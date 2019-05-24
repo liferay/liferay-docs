@@ -1,4 +1,8 @@
-# Indexing Framework [](id=indexing-framework)
+---
+header-id: indexing-framework
+---
+
+# Indexing Framework
 
 Unless you're searching for model entities using database queries (not
 recommended in most cases), each asset in @product@ must be indexed in the
@@ -14,7 +18,7 @@ a new pattern that relies on
 If you want to use the old approach, feel free to extend `BaseIndexer`. It's
 still supported. 
 
-## Search and Indexing Overview [](id=search-and-indexing-overview)
+## Search and Indexing Overview
 
 Liferay's original Search API was built around the Lucene search and indexing
 library. To this day, familiarity with Lucene will jump-start your understanding
@@ -40,7 +44,7 @@ To understand how search and indexing code makes your custom models seamlessly
 searchable, you must know how to influence each portion of the search and
 indexing cycle.
 
-### Indexing [](id=indexing)
+### Indexing
 
 Model entities store data fields in the database. For example, Guestbooks store
 a _name_ field. During the cycle's Indexing step, you prepare the model entity
@@ -68,7 +72,7 @@ regardless of what base entity is being indexed. For example, the
 contributes the `GROUP_ID` and `SCOPE_GROUP_ID` fields for all documents with a
 backing entity that's also a `GroupedModel`.
 
-### Searching [](id=searching)
+### Searching
 
 Searches start with a user entering keywords into a search bar. The entered
 keywords are processed by the back-end search infrastructure, transformed into a
@@ -108,7 +112,7 @@ once under the root filter during a search, while `ModelPreFilterContributor` is
 constructed once per model entity, and added under each specific entity's
 subfilter.
 
-### Returning Results [](id=returning-results)
+### Returning Results
 
 When a model entity's indexed search document is obtained during a search
 request, it's converted into a summary of the model entity.
@@ -128,7 +132,7 @@ search context.
 One important step must occur to make sure the above classes are discovered by
 the search framework. 
 
-### Search Service Registration [](id=search-service-registration)
+### Search Service Registration
 
 **To register model entities with Liferay's search framework,**
 
@@ -141,7 +145,7 @@ and which optional search services are registered for your entity. Registration
 occurs as soon as the Component is activated (during portal startup or
 deployment of the bundle).
 
-## Mapping the Composite Search and Indexing Framework to `Indexer`/`BaseIndexer` Code [](id=mapping-the-composite-search-and-indexing-framework-to-indexer-baseindexer-)
+## Mapping the Composite Search and Indexing Framework to `Indexer`/`BaseIndexer` Code
 
 If you're used to the old way of indexing custom entities (extending
 `BaseIndexer`, the abstract implementation of `Indexer`), the table below
@@ -150,19 +154,19 @@ decomposed into several new classes and methods.
 
  Indexer/BaseIndexer method | Composite Indexer Equivalent | Example |
 :-------------------------- | :-------------------------- | :--------------- |
- Class Constructor | `SearchRegistrar` | [`GuestbookSearchRegistrar`](/develop/tutorials/-/knowledge_base/7-1/registering-guestbooks-with-the-search-framework) |
- `setDefaultSelectedFieldNames` | `SearchRegistrar.activate` | [`GuestbookSearchRegistrar`](/develop/tutorials/-/knowledge_base/7-1/registering-guestbooks-with-the-search-framework) |
- `setDefaultSelectedLocalizedFieldNames` | `SearchRegistrar.activate` | [`GuestbookSearchRegistrar`](/develop/tutorials/-/knowledge_base/7-1/registering-guestbooks-with-the-search-framework) |
- `setPermissionAware`  | `ModelResourcePermissionRegistrar` | [`GuestbookModelResourcePermissionRegistrar`](/develop/tutorials/-/knowledge_base/7-1/registering-your-defined-permissions#registering-your-entities-with-the-permissions-service) |
-  `setFilterSearch` | `ModelResourcePermissionRegistrar` | [`GuestbookModelResourcePermissionRegistrar`](/develop/tutorials/-/knowledge_base/7-1/registering-your-defined-permissions#registering-your-entities-with-the-permissions-service) |
- `getDocument`/`doGetDocument` | `ModelDocumentContributor` | [`GuestbookModelDocumentContributor`](/develop/tutorials/-/knowledge_base/7-1/indexing-guestbooks#implementing-modeldocumentcontributor)
- `reindex`/`doReindex` | `ModelIndexerWriterContributor` | [`GuestbookModelIndexerWriterContributor`](/develop/tutorials/-/knowledge_base/7-1/indexing-guestbooks#implementing-modelindexerwritercontributor)
+ Class Constructor | `SearchRegistrar` | [`GuestbookSearchRegistrar`](/docs/7-1/tutorials/-/knowledge_base/t/registering-guestbooks-with-the-search-framework) |
+ `setDefaultSelectedFieldNames` | `SearchRegistrar.activate` | [`GuestbookSearchRegistrar`](/docs/7-1/tutorials/-/knowledge_base/t/registering-guestbooks-with-the-search-framework) |
+ `setDefaultSelectedLocalizedFieldNames` | `SearchRegistrar.activate` | [`GuestbookSearchRegistrar`](/docs/7-1/tutorials/-/knowledge_base/t/registering-guestbooks-with-the-search-framework) |
+ `setPermissionAware`  | `ModelResourcePermissionRegistrar` | [`GuestbookModelResourcePermissionRegistrar`](/docs/7-1/tutorials/-/knowledge_base/t/registering-your-defined-permissions#registering-your-entities-with-the-permissions-service) |
+  `setFilterSearch` | `ModelResourcePermissionRegistrar` | [`GuestbookModelResourcePermissionRegistrar`](/docs/7-1/tutorials/-/knowledge_base/t/registering-your-defined-permissions#registering-your-entities-with-the-permissions-service) |
+ `getDocument`/`doGetDocument` | `ModelDocumentContributor` | [`GuestbookModelDocumentContributor`](/docs/7-1/tutorials/-/knowledge_base/t/indexing-guestbooks#implementing-modeldocumentcontributor)
+ `reindex`/`doReindex` | `ModelIndexerWriterContributor` | [`GuestbookModelIndexerWriterContributor`](/docs/7-1/tutorials/-/knowledge_base/t/indexing-guestbooks#implementing-modelindexerwritercontributor)
  `addRelatedEntryFields` | `RelatedEntryIndexer` | [`DLFileEntryRelatedEntryIndexer`](https://github.com/liferay/liferay-portal/blob/7.1.1-ga2/modules/apps/document-library/document-library-service/src/main/java/com/liferay/document/library/internal/search/DLFileEntryRelatedEntryIndexer.java)
  `postProcessContextBooleanFilter`/`PostProcessContextQuery` | `ModelPreFilterContributor` | [`DLFileEntryModelPreFilterContributor`](https://github.com/liferay/liferay-portal/blob/7.1.1-ga2/modules/apps/document-library/document-library-service/src/main/java/com/liferay/document/library/internal/search/DLFileEntryModelPreFilterContributor.java) |
-  `postProcessSearchQuery` | `KeywordQueryContributor` | [`GuestbookKeywordQueryContributor`](/develop/tutorials/-/knowledge_base/7-1/querying-for-guestbook-documents#implementing-keywordquerycontributor) |
+  `postProcessSearchQuery` | `KeywordQueryContributor` | [`GuestbookKeywordQueryContributor`](/docs/7-1/tutorials/-/knowledge_base/t/querying-for-guestbook-documents#implementing-keywordquerycontributor) |
  `getFullQuery` | `SearchContextContributor` | [`DLFileEntryModelSearchContextContributor`](https://github.com/liferay/liferay-portal/blob/7.1.1-ga2/modules/apps/document-library/document-library-service/src/main/java/com/liferay/document/library/internal/search/DLFileEntryModelSearchContextContributor.java) |
  `isVisible`/`isVisibleRelatedEntry` | `ModelVisibilityContributor` | [`DLFileEntryModelVisibilityContributor`](https://github.com/liferay/liferay-portal/blob/7.1.1-ga2/modules/apps/document-library/document-library-service/src/main/java/com/liferay/document/library/internal/search/DLFileEntryModelVisibilityContributor.java) |
- `getSummary`/`createSummary`/`doGetSummary` | `ModelSummaryContributor` | [`GuestbookModelSummaryContributor`](/develop/tutorials/-/knowledge_base/7-1/generating-results-summaries) |
+ `getSummary`/`createSummary`/`doGetSummary` | `ModelSummaryContributor` | [`GuestbookModelSummaryContributor`](/docs/7-1/tutorials/-/knowledge_base/t/generating-results-summaries) |
  `Indexer.search`/`searchCount` | No change | [Guestbook `view_search.jsp`](https://dev.liferay.com/en/develop/tutorials/-/knowledge_base/7-0/creating-a-search-results-jsp-for-the-guestbook-portlet) |	
  `Indexer.delete`/`doDelete` | No change | [`MBMessageLocalServiceImpl.deleteDiscussionMessages`](https://github.com/liferay/liferay-portal/blob/7.1.1-ga2/modules/apps/message-boards/message-boards-service/src/main/java/com/liferay/message/boards/service/impl/MBMessageLocalServiceImpl.java#L687) |
 
@@ -172,7 +176,7 @@ accomplished in `BaseIndexer`'s `getBaseModelDocument`. Now you implement an
 [`DLFileEntryExpandoBridgeRetriever`](https://github.com/liferay/liferay-portal/blob/7.1.1-ga2/modules/apps/document-library/document-library-service/src/main/java/com/liferay/document/library/internal/search/DLFileEntryExpandoBridgeRetriever.java)
 for an example implementation.
 
-## Permissions Aware Searching and Indexing [](id=permissions-aware-searching-and-indexing)
+## Permissions Aware Searching and Indexing
 
 In previous versions of @product@, search was only _permissions
 aware_ (indexed with the entity's permissions and searched with those
@@ -183,10 +187,10 @@ permissions intact) if the application developer specified this line in the
 
 Now, search is permissions aware by default _if the new permissions approach_,
 as described in
-[these tutorials](/develop/tutorials/-/knowledge_base/7-1/defining-application-permissions), 
+[these tutorials](/docs/7-1/tutorials/-/knowledge_base/t/defining-application-permissions), 
 is implemented for an application.
 
-## Annotating Service Methods to Trigger Indexing [](id=annotating-service-methods-to-trigger-indexing)
+## Annotating Service Methods to Trigger Indexing
 
 Having entities translated into database entities _and_ search engine documents
 means that there's a possibility for a state mismatch between the database and
@@ -227,4 +231,4 @@ methods:
     blogsEntryLocalService.deleteEntry(entry);
 
 For step-by-step instructions on indexing model entities, visit the 
-[Search and Indexing section of the Developing a Web Application tutorials](/develop/tutorials/-/knowledge_base/7-1/search-and-indexing).
+[Search and Indexing section of the Developing a Web Application tutorials](/docs/7-1/tutorials/-/knowledge_base/t/search-and-indexing).

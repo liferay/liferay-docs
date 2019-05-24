@@ -1,4 +1,8 @@
-# Using Gradle in Liferay Dev Studio [](id=using-gradle-in-liferay-ide)
+---
+header-id: using-gradle-in-liferay-ide
+---
+
+# Using Gradle in Liferay Dev Studio
 
 [Gradle](http://gradle.org/) is a popular open source build automation system.
 You can take full advantage of Gradle in Liferay Dev Studio by utilizing
@@ -12,7 +16,7 @@ with Liferay Dev Studio. Buildship is bundled with Liferay Dev Studio versions
 The first thing you'll learn about in this tutorial is creating Gradle projects
 in Dev Studio.
 
-## Creating and Importing Gradle Projects [](id=creating-and-importing-gradle-projects)
+## Creating and Importing Gradle Projects
 
 You can create a Gradle project by using the Gradle Project wizard.
 
@@ -47,7 +51,7 @@ You can also import existing Gradle projects in Liferay Dev Studio.
 Next you'll learn about Gradle tasks and executions, and learn how to run and
 display them in Liferay Dev Studio.
 
-## Gradle Tasks and Executions [](id=gradle-tasks-and-executions)
+## Gradle Tasks and Executions
 
 Dev Studio provides two views to enhance your developing experience using
 Gradle: Gradle Tasks and Gradle Executions. You can open these views by

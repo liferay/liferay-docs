@@ -1,13 +1,17 @@
-# Using OSGi Services from EXT Plugins [](id=using-osgi-services-from-ext-plugins)
+---
+header-id: using-osgi-services-from-ext-plugins
+---
 
-[`ServiceTrackers`](/develop/tutorials/-/knowledge_base/7-1/service-trackers)
+# Using OSGi Services from EXT Plugins
+
+[`ServiceTrackers`](/docs/7-1/tutorials/-/knowledge_base/t/service-trackers)
 are the best way for Ext plugins to access OSGi services. They account for the
 possibility of OSGi services coming and going. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Detecting Unresolved OSGi Components](/develop/tutorials/-/knowledge_base/7-1/detecting-unresolved-osgi-components)
+[Detecting Unresolved OSGi Components](/docs/7-1/tutorials/-/knowledge_base/t/detecting-unresolved-osgi-components)
 
-[Felix Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell)
+[Felix Gogo Shell](/docs/7-1/reference/-/knowledge_base/r/using-the-felix-gogo-shell)
 
-[OSGi Basics For Liferay Development](/develop/tutorials/-/knowledge_base/7-1/osgi-basics-for-liferay-development)
+[OSGi Basics For Liferay Development](/docs/7-1/tutorials/-/knowledge_base/t/osgi-basics-for-liferay-development)

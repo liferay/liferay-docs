@@ -1,4 +1,8 @@
-# Update the Listener [](id=update-the-listener)
+---
+header-id: update-the-listener
+---
+
+# Update the Listener
 
 Recall from the basic Screenlet creation tutorial that the listener interface 
 defines a success method and a failure method. This lets implementing classes 
@@ -28,12 +32,12 @@ activity or fragment that implements the listener), and replace any failure
 method calls with `error` method calls. You'll do the latter next when updating 
 the Interactor class. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Create or Update the Event Class](/develop/tutorials/-/knowledge_base/7-1/create-or-update-the-event-class)
+[Create or Update the Event Class](/docs/7-1/tutorials/-/knowledge_base/t/create-or-update-the-event-class)
 
-[Update the Interactor Class](/develop/tutorials/-/knowledge_base/7-1/update-the-interactor-class)
+[Update the Interactor Class](/docs/7-1/tutorials/-/knowledge_base/t/update-the-interactor-class)
 
-[Update the Screenlet Class](/develop/tutorials/-/knowledge_base/7-1/update-the-screenlet-class)
+[Update the Screenlet Class](/docs/7-1/tutorials/-/knowledge_base/t/update-the-screenlet-class)
 
-[Sync the Cache with the Server](/develop/tutorials/-/knowledge_base/7-1/sync-the-cache-with-the-server)
+[Sync the Cache with the Server](/docs/7-1/tutorials/-/knowledge_base/t/sync-the-cache-with-the-server)

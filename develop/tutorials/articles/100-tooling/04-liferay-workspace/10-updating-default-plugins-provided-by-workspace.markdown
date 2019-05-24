@@ -1,4 +1,8 @@
-# Updating Default Plugins Provided by Liferay Workspace [](id=updating-default-plugins-provided-by-liferay-workspace)
+---
+header-id: updating-default-plugins-provided-by-liferay-workspace
+---
+
+# Updating Default Plugins Provided by Liferay Workspace
 
 Liferay Workspace comes with a slew of plugins like these: 
 

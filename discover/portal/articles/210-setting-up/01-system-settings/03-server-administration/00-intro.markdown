@@ -1,4 +1,8 @@
-# Server Administration [](id=server-administration)
+---
+header-id: server-administration
+---
+
+# Server Administration
 
 Server Administration lets you manage and monitor your @product@ server. Access
 the application by clicking *Control Panel* &rarr; *Configuration* &rarr;
@@ -11,7 +15,7 @@ Server Administration's functionality is segmented into these tabs:
 **Resources:** View memory usage and perform management tasks like running 
 the garbage collector, clearing the database cache, and more. For more 
 information, see 
-[Resources](/discover/portal/-/knowledge_base/7-1/server-administration-resources).
+[Resources](/docs/7-1/user/-/knowledge_base/u/server-administration-resources).
 
 **Log Levels:** View and set logging levels. You can make dynamic 
 modifications of log levels for any class hierarchy in @product@. Custom 
@@ -32,24 +36,24 @@ of these properties, see the
 
 **Data Migration:** Migrate documents from one repository to another. For 
 example, you can migrate your documents to a new repository on a different 
-disk or in a [new format](/discover/deployment/-/knowledge_base/7-1/document-repository-configuration). Here are the steps:
+disk or in a [new format](/docs/7-1/deploy/-/knowledge_base/d/document-repository-configuration). Here are the steps:
 
 1.  Create a backup copy of the Document Library repository and
-    [@product@ database](/discover/deployment/-/knowledge_base/7-1/backing-up-a-liferay-installation). 
+    [@product@ database](/docs/7-1/deploy/-/knowledge_base/d/backing-up-a-liferay-installation). 
 2.  Configure the new file store in *System Settings* &rarr; *Platform: File 
     Storage*. 
 3.  In this tab (*Server Administration* &rarr; *Data Migration*), select the 
     repository hook for the file store you configured and click *Execute*. 
 4.  Make sure the data migrated correctly. 
 5.  [Configure the new
-    repository](/discover/deployment/-/knowledge_base/7-1/document-repository-configuration)
+    repository](/docs/7-1/deploy/-/knowledge_base/d/document-repository-configuration)
     as the default. 
 6.  If you used a `portal-ext.properties` file to configure the repository, 
     restart the server. 
 
 **Mail:** Instead of using a `portal-ext.properties` file to configure a 
 mail server, you can configure a mail server from this tab. If your 
-[message boards receive mail](/discover/portal/-/knowledge_base/7-1/user-subscriptions-and-mailing-lists), 
+[message boards receive mail](/docs/7-1/user/-/knowledge_base/u/user-subscriptions-and-mailing-lists), 
 you can connect a POP mail server. If @product@ sends mail (useful for 
 sending notifications to users), you can connect to an SMTP server. Note 
 that if you configure mail server settings here in System Settings, these 
@@ -58,7 +62,7 @@ file.
 
 **External Services:** Configure external services for generating file 
 previews. For more information, see 
-[the article on External Services](/discover/portal/-/knowledge_base/7-1/server-administration-external-services).
+[the article on External Services](/docs/7-1/user/-/knowledge_base/u/server-administration-external-services).
 
 **Script:** A scripting console for executing migration or management code. 
 The Groovy scripting language is supported out of the box. <!-- See the 

@@ -1,4 +1,8 @@
-# Pagination [](id=pagination)
+---
+header-id: pagination
+---
+
+# Pagination
 
 A small collection can be transmitted in a single response without difficulty. 
 Transmitting a large collection all at once, however, can consume too much 
@@ -22,7 +26,7 @@ navigate between those pages:
 
 For example, suppose that there are 123 users your portal and you want to get 
 information on them. To do this, send an 
-[authenticated request](/develop/tutorials/-/knowledge_base/7-1/making-authenticated-requests) 
+[authenticated request](/docs/7-1/tutorials/-/knowledge_base/t/making-authenticated-requests) 
 to the person URL: 
 
     curl -H "Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTpMaWZlcmF5C" http://localhost:8080/o/api/p/person
@@ -119,6 +123,6 @@ UI:
 
 ![Figure 3: The last page lists the number of items it displays, and no longer includes a *Next* button.](../../../../images/apio-pagination-03.png)
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Making Authenticated Requests](/develop/tutorials/-/knowledge_base/7-1/making-authenticated-requests)
+[Making Authenticated Requests](/docs/7-1/tutorials/-/knowledge_base/t/making-authenticated-requests)

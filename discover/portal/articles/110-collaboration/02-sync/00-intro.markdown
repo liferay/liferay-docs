@@ -1,4 +1,8 @@
-# Liferay Sync [](id=liferay-sync)
+---
+header-id: liferay-sync
+---
+
+# Liferay Sync
 
 Liferay Sync synchronizes files between your @product@ server and users' desktop 
 and mobile environments. With Liferay Sync, users can publish and access shared 

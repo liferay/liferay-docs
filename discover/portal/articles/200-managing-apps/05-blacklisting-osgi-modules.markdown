@@ -1,4 +1,8 @@
-# Blacklisting OSGi Modules and Components [](id=blacklisting-osgi-modules-and-components)
+---
+header-id: blacklisting-osgi-modules-and-components
+---
+
+# Blacklisting OSGi Modules and Components
 
 Blacklists are used for good and evil. An evil blacklist penalizes unfairly; a
 good blacklist protects. @product@'s OSGi module and component blacklists are 
@@ -6,7 +10,7 @@ files that prevent particular modules from installing and particular components
 from enabling. This saves you the trouble of uninstalling and disabling them 
 individually with the Application Manager, Components list, or Gogo shell. 
 
-## Blacklisting Modules [](id=blacklisting-steps)
+## Blacklisting Modules
 
 @product@ removes any installed modules on the blacklist. Blacklisted modules 
 therefore can't be installed. The log reports each module uninstallation. 
@@ -40,11 +44,7 @@ Follow these steps to blacklist modules:
     `[Liferay_Home]/osgi/configs`. The Liferay Home folder is typically the app 
     server's parent folder. 
 
-+$$$
-
-**Note**: Blacklisting an LPKG uninstalls all of its internal modules. 
-
-$$$
+| **Note**: Blacklisting an LPKG uninstalls all of its internal modules.
 
 **Blacklist Bundle Symbolic Names**
 
@@ -54,7 +54,7 @@ Type |  &nbsp;Bundle Symbolic Name |
  LPKG | LPKG file name without the `.lpkg` extension |
  WAR | Servlet context name in `liferay-plugin-package.properties` file or the WAR file name (minus `.war`), if there is no servlet context name property | 
 
-## Reinstalling Blacklisted Modules [](id=reinstalling-blacklisted-modules)
+## Reinstalling Blacklisted Modules
 
 To reinstall and permit installation of blacklisted modules, follow these steps:
 
@@ -68,23 +68,19 @@ To reinstall *all* the blacklisted modules execute one of these options:
 
 -   Remove the configuration file.
 -   Uninstall the module `com.liferay.portal.bundle.blacklist` using the
-    [Application Manager](/discover/portal/-/knowledge_base/7-1/managing-and-configuring-apps#using-the-app-manager)
+    [Application Manager](/docs/7-1/user/-/knowledge_base/u/managing-and-configuring-apps#using-the-app-manager)
     or
-    [Felix Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell).
+    [Felix Gogo Shell](/docs/7-1/reference/-/knowledge_base/r/using-the-felix-gogo-shell).
 
-+$$$
-
-**Note**: To temporarily reinstall a module that's been blacklisted, you can 
-remove its symbolic name from the Bundle Blacklist module in System Settings and
-click the *Update* button. If you want the module to install on subsequent 
-server startup, make sure to remove the module's symbolic name from any existing 
-module blacklist configuration file in the `[Liferay_Home]/osgi/configs` folder. 
-
-$$$
+| **Note**: To temporarily reinstall a module that's been blacklisted, you can
+| remove its symbolic name from the Bundle Blacklist module in System Settings and
+| click the *Update* button. If you want the module to install on subsequent
+| server startup, make sure to remove the module's symbolic name from any existing
+| module blacklist configuration file in the `[Liferay_Home]/osgi/configs` folder.
 
 The log reports each module installation. 
 
-## Blacklisting Components [](id=blacklisting-components)
+## Blacklisting Components
 
 Follow these steps to blacklist components:
 
@@ -115,7 +111,7 @@ Follow these steps to blacklist components:
     `[Liferay_Home]/osgi/configs`. The Liferay Home folder is typically the app 
     server's parent folder. 
 
-## Re-enabling Blacklisted Components [](id=re-enabling-blacklisted-components)
+## Re-enabling Blacklisted Components
 
 To re-enable and permit enabling of blacklisted components, follow these steps:
 
@@ -127,12 +123,8 @@ To re-enable and permit enabling of blacklisted components, follow these steps:
 
 To enable *all* the blacklisted components, remove the configuration file.
 
-+$$$
-
-**Note**: To temporarily reactivate a blacklisted component, remove its name 
-from the Component Blacklist Configuration module in System Settings and click 
-*Update*. If you want the component to activate on subsequent server startup, 
-make sure to remove the component's name from any existing component blacklist 
-configuration file in the `[Liferay_Home]/osgi/configs` folder.
-
-$$$
+| **Note**: To temporarily reactivate a blacklisted component, remove its name
+| from the Component Blacklist Configuration module in System Settings and click
+| *Update*. If you want the component to activate on subsequent server startup,
+| make sure to remove the component's name from any existing component blacklist
+| configuration file in the `[Liferay_Home]/osgi/configs` folder.

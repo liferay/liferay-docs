@@ -1,4 +1,8 @@
-# Managing Notifications and Requests [](id=managing-notifications-and-requests)
+---
+header-id: managing-notifications-and-requests
+---
+
+# Managing Notifications and Requests
 
 If you subscribed to a blog or message board, or if someone sent you a
 private message, invitation, event reminder, or mentioned you in a post, you
@@ -19,7 +23,7 @@ your requests.
 
 ![Figure 2: The *Notifications List* section displays all your notifications in a paginated list.](../../../images/notifications-list.png)
 
-## Managing Notifications [](id=managing-notifications)
+## Managing Notifications
 
 Notifications can pile up after some time, especially if you were away for a few
 days. The Management Bar gives you several ways to filter and sort your 
@@ -43,7 +47,7 @@ Each notification's *Actions* menu
 (![Menu](../../../images/icon-actions.png)) lets you mark the notification as 
 read/unread, or delete the notification. 
 
-### Managing Multiple Notifications [](id=managing-multiple-notifications)
+### Managing Multiple Notifications
 
 You can also manage multiple notifications at once. Select the checkbox next to
 notifications you want to manage and choose an option from the Management Bar.
@@ -63,7 +67,7 @@ You can also select *Mark all notifications as read* in the Options menu
 available if at least one notification is unread. Clicking it marks all 
 notifications as read, selected or not. 
 
-## Managing Requests [](id=managing-requests)
+## Managing Requests
 
 When you get a request, it appears in the *Requests List* tab. In each request's 
 *Actions* menu 

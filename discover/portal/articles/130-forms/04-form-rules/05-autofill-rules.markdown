@@ -1,12 +1,16 @@
-# Action: Autofill [](id=action-autofill)
+---
+header-id: action-autofill
+---
+
+# Action: Autofill
 
 Autofill rules let you change the selection options of another field based on
 the value entered into a related field. A 
-[data provider's](/discover/portal/-/knowledge_base/7-1/data-providers) 
+[data provider's](/docs/7-1/user/-/knowledge_base/u/data-providers) 
 output is used to populate a field, as long as the condition is met.
 
 Before configuring an autofill rule, 
-[set up a data provider](/discover/portal/-/knowledge_base/7-1/data-providers). 
+[set up a data provider](/docs/7-1/user/-/knowledge_base/u/data-providers). 
 That's how autofilled fields are populated. Pay careful attention to the
 input and output parameters you choose when setting up the rule.
 
@@ -19,7 +23,7 @@ To follow this example:
 
     Make sure the output parameter is set to `$..nameCurentValue`. If you're unsure
     how to do this, first read the article on 
-    [Data Providers](/discover/portal/-/knowledge_base/7-1/data-providers).
+    [Data Providers](/docs/7-1/user/-/knowledge_base/u/data-providers).
 
 2.  On the last form page, add two fields:
 
@@ -29,33 +33,29 @@ To follow this example:
     - A Select from List field called *Choose a Destination Country*. Under
       *Create List*, choose *From Autofill*.
 
-+$$$
+| **Example:** Before submitting the race registration, let users decide whether
+| they want a cash prize or an all-expenses-paid vacation. If they choose the
+| vacation, populate the Choose a Destination Country with output from the data
+| provider.
+| 
+| To configure an Autofill rule,
+| 
+| 1. Open the Rules tab of the Edit Form page and click the Add
+|    (![Add](../../../images/icon-add.png)) button.
+| 
+| 2. Define the rule:
+|     - If field *If I win I'd like my award to be* is equal to
+|         *All Expenses Paid Vacation*, Autofill the *Choose a Destination
+|         Country* field from the *countries* data provider (note that you might
+|         have named this differently when setting it up).
+| 
+|     ![Figure 1: Build form rules quickly by defining your conditions and actions.](../../../images/forms-autofill.png)
+| 
+|     - Save the rule.
+| 
+|     ![Figure 2: Once a rule is saved, it is displayed so that you can easily understand what it does.](../../../images/forms-autofill2.png)
 
-**Example:** Before submitting the race registration, let users decide whether
-they want a cash prize or an all-expenses-paid vacation. If they choose the
-vacation, populate the Choose a Destination Country with output from the data
-provider.
-
-To configure an Autofill rule, 
-
-1. Open the Rules tab of the Edit Form page and click the Add
-   (![Add](../../../images/icon-add.png)) button.
-
-2. Define the rule:
-    - If field *If I win I'd like my award to be* is equal to
-        *All Expenses Paid Vacation*, Autofill the *Choose a Destination
-        Country* field from the *countries* data provider (note that you might
-        have named this differently when setting it up).
-
-    ![Figure 1: Build form rules quickly by defining your conditions and actions.](../../../images/forms-autofill.png)
-
-    - Save the rule.
-
-    ![Figure 2: Once a rule is saved, it is displayed so that you can easily understand what it does.](../../../images/forms-autofill2.png)
-
-$$$
-
-## Using Inputs with Autofill [](id=using-inputs-with-autofill)
+## Using Inputs with Autofill
 
 The above example is simple, using only an Output to autofill a Select from List
 field if another field has a certain value. Many times, the response from the
@@ -77,7 +77,7 @@ autofill rule to display the countries of the world filtered by a Region field
     (*List*).
 
     To understand more about these values, read the 
-    [Data Provider documentation](/discover/portal/-/knowledge_base/7-1/data-providers).
+    [Data Provider documentation](/docs/7-1/user/-/knowledge_base/u/data-providers).
 
     ![Figure 3: Create a data provider for the autofill rule.](../../../images/forms-autofill-data-provider.png)
 

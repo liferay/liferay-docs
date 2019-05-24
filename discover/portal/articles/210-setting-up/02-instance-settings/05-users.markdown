@@ -1,4 +1,8 @@
-# Users [](id=users)
+---
+header-id: users
+---
+
+# Users
 
 Configure user settings at Control Panel &rarr; Configuration &rarr; Instance
 Settings. In the Configuration tab, scroll down to the Users section and expand

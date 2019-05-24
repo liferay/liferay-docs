@@ -1,9 +1,13 @@
-# Page Hierarchy [](id=page-hierarchy)
+---
+header-id: page-hierarchy
+---
+
+# Page Hierarchy
 
 Using the Page Hierarchy, you create public and private pages and organize
 those pages in whatever order or structure that you see fit.
 
-## Creating a Page [](id=creating-a-page)
+## Creating a Page
 
 New pages are created on the *Build* &rarr; *Pages* page in Site 
 Administration. Pages can be created as *Public Pages* which anyone can view, 
@@ -32,7 +36,7 @@ page,
 Now that the page is created, it appears in the hierarchy, and you can move or
 organize its position there.
 
-## Organizing Pages [](id=organizing-pages)
+## Organizing Pages
 
 Drag and drop pages to reorder their position in the page hierarchy (and
 subsequently the default navigation that users see), and to nest them as
@@ -61,7 +65,7 @@ automatically when visiting your Site.
 As you've just demonstrated, organizing pages in the default menu is simple, 
 but very powerful.
 
-### Public and Private Pages [](id=public-and-private-pages)
+### Public and Private Pages
 
 As noted above, Private Pages work just like Public Pages, except they can be
 viewed only by registered members of a Site. In the default configuration,
@@ -69,7 +73,7 @@ Public Pages are at the URL `[web-address]/`**web**`/[site-name]` while Private
 Pages are at `[web-address]/`**group**`/[site-name]`. Other than the membership
 distinctions, Public and Private Pages share the same behavior.
 
-## Page Options [](id=page-options)
+## Page Options
 
 While managing the default menu, you can also access page options. Clicking on
 the *Options* icon [Option](../../../../images/icon-options.png) 

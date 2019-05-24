@@ -1,4 +1,8 @@
-# OSGi Services and Dependency Injection with Declarative Services [](id=osgi-services-and-dependency-injection-with-declarative-services)
+---
+header-id: osgi-services-and-dependency-injection-with-declarative-services
+---
+
+# OSGi Services and Dependency Injection with Declarative Services
 
 In @product@, the OSGi framework registers objects as *services*. Each service
 offers functionality and can leverage functionality other services provide. The
@@ -62,15 +66,11 @@ to a field marks it to be injected with a service matching the field's type.
 On deploying this class's module, the SCR finds a component configuration of the
 class type `SomeApi` and binds the service to this referencing component class.
 
-+$$$
+| **Note:** The `@Reference` annotation can only be used in a class that is
+| annotated with `@Component`. That is, only a Declarative Services component can
+| use `@Reference` to bind to an OSGi service.
 
-**Note:** The `@Reference` annotation can only be used in a class that is 
-annotated with `@Component`. That is, only a Declarative Services component can
-use `@Reference` to bind to an OSGi service. 
-
-$$$
-
-At build time in modules created from [Liferay project templates](/develop/reference/-/knowledge_base/7-1/project-templates),
+At build time in modules created from [Liferay project templates](/docs/7-1/reference/-/knowledge_base/r/project-templates),
 bnd creates a *component description* file for each module's components
 automatically. The file specifies the component's services, dependencies, and
 activation characteristics. On module deployment, the OSGi framework reads the
@@ -86,10 +86,6 @@ service components for other classes to use. You can update the components and
 even publish alternative component implementations for a service. This kind of
 dynamism is a powerful part of @product@.
 
-+$$$
-
-If you visited this tutorial as a part of the Learning Path
-[From Liferay Portal 6 to 7.1](/develop/tutorials/-/knowledge_base/7-1/from-liferay-6-to-liferay-7),
-you can with the next topic: [dynamic deployment in OSGi](/develop/tutorials/-/knowledge_base/7-1/dynamic-deployment). 
-
-$$$
+| If you visited this tutorial as a part of the Learning Path
+| [From Liferay Portal 6 to 7.1](/docs/7-1/tutorials/-/knowledge_base/t/from-liferay-6-to-liferay-7),
+| you can with the next topic: [dynamic deployment in OSGi](/docs/7-1/tutorials/-/knowledge_base/t/dynamic-deployment).

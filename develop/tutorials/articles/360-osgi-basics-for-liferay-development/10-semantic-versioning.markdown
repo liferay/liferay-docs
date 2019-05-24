@@ -1,4 +1,8 @@
-# Semantic Versioning [](id=semantic-versioning)
+---
+header-id: semantic-versioning
+---
+
+# Semantic Versioning
 
 [Semantic Versioning](https://semver.org) is a three tiered versioning system
 that increments version numbers based on the type of API change introduced to
@@ -36,7 +40,7 @@ ensure compatibility for those who leverage it. With Semantic Versioning's
 straightforward system and the help of Liferay tooling, managing your project's
 versions is easy.
 
-## Baselining Your Project [](id=baselining-your-project)
+## Baselining Your Project
 
 Following Semantic Versioning manually seems deceptively easy. There's a sad
 history of good-intentioned developers updating their projects' semantic
@@ -58,9 +62,9 @@ Add it to your Gradle build configuration and execute the following command:
     ./gradlew baseline
 
 See the
-[Baseline Gradle Plugin](/develop/reference/-/knowledge_base/7-1/baseline-gradle-plugin)
+[Baseline Gradle Plugin](/docs/7-1/reference/-/knowledge_base/r/baseline-gradle-plugin)
 article for configuration details. This plugin is not provided in
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace)
+[Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace)
 by default.
 
 When you run the `baseline` command, the plugin baselines your new module
@@ -73,7 +77,7 @@ thrown.
 With baselining, your project's Semantic Versioning is as accurate as its API
 expresses.
 
-## Managing Artifact and Dependency Versions [](id=managing-artifact-and-dependency-versions)
+## Managing Artifact and Dependency Versions
 
 There are two ways to track your project's artifact and dependency versions with
 Semantic Versioning:
@@ -126,21 +130,17 @@ might limit you to a specific version of @product@. You would also be locked in
 to APIs that only exist for that specific version. This means your module is
 much easier to test and has less chance for unexpected failures.
 
-+$$$
-
-**Note:** When specifying package versions in your `bnd.bnd` file, exact
-versions are typically specified like this: `version="1.1.2"`. However, this
-syntax is technically a range; it is interpreted as [1.1.2, &#8734;). Therefore,
-if a higher version of the package is available, it's used instead of the
-version you specified. For these cases, it may be better to specify a version
-range for compatible versions that have been tested. If you want to specify
-a true exact match, the syntax is like this: `[1.1.2]`. See the 
-[Version Range](https://osgi.org/specification/osgi.core/7.0.0/framework.module.html#i3189032)
-section in the OSGi specifications for more info.
-
-Gradle and Maven use exact versions when only one version is specified.
-
-$$$
+| **Note:** When specifying package versions in your `bnd.bnd` file, exact
+| versions are typically specified like this: `version="1.1.2"`. However, this
+| syntax is technically a range; it is interpreted as [1.1.2, &#8734;). Therefore,
+| if a higher version of the package is available, it's used instead of the
+| version you specified. For these cases, it may be better to specify a version
+| range for compatible versions that have been tested. If you want to specify
+| a true exact match, the syntax is like this: `[1.1.2]`. See the
+| [Version Range](https://osgi.org/specification/osgi.core/7.0.0/framework.module.html#i3189032)
+| section in the OSGi specifications for more info.
+| 
+| Gradle and Maven use exact versions when only one version is specified.
 
 You now know the pros and cons for tracking dependencies as a range and as an
 exact match.

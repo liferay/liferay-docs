@@ -1,4 +1,8 @@
-# Customizing Personal Sites [](id=customizing-personal-sites)
+---
+header-id: customizing-personal-sites
+---
+
+# Customizing Personal Sites
 
 By default, newly created users are granted a personal Site.
 
@@ -18,12 +22,8 @@ You can disable personal Sites by adding the following properties to your
     layout.user.public.layouts.enabled=false
     layout.user.private.layouts.enabled=false
 
-+$$$
-
-**Note:** The public and private page sets of personal Sites are handled
-separately. You can leave one page set enabled while disabling the other.
-
-$$$
+| **Note:** The public and private page sets of personal Sites are handled
+| separately. You can leave one page set enabled while disabling the other.
 
 If you initially had user personal Sites enabled for your instance but then
 disabled them, existing personal Sites remain on your Liferay instance until the
@@ -51,13 +51,9 @@ and
 [Default User Private Layouts](https://docs.liferay.com/portal/7.1-latest/propertiesdoc/portal.properties.html#Default%20User%20Private%20Layouts)
 sections of the `portal.properties` file for details.
 
-+$$$
-
-**Note:** By default, users can modify the pages and applications on their
-personal Sites. Administrators, however, can customize the modifiable portions
-of personal Sites through @product@'s permissions system by removing permissions
-from Roles. To disallow all Liferay users from modifying something, remove the
-relevant permission from the User Role.
-
-$$$
+| **Note:** By default, users can modify the pages and applications on their
+| personal Sites. Administrators, however, can customize the modifiable portions
+| of personal Sites through @product@'s permissions system by removing permissions
+| from Roles. To disallow all Liferay users from modifying something, remove the
+| relevant permission from the User Role.
 

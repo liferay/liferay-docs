@@ -1,4 +1,8 @@
-# Defining Resources and Permissions [](id=defining-resources-and-permissions)
+---
+header-id: defining-resources-and-permissions
+---
+
+# Defining Resources and Permissions
 
 Your first step in implementing permissions is to define the resources and the
 permissions that protect them. There are two different kinds of resources:
@@ -15,15 +19,11 @@ implementations are first defined for the *portlet* resource and then for the
 Model resources represent models, such as blog entries. Resources are named
 using the fully qualified class names of the entities they represent. 
 
-+$$$
-
-**Note:** For each resource, there are four scopes to which the permissions can
-be applied: company, group, group-template, or individual. Because these are
-called *portlet resources* here and in the code, this can be confusing. The
-other scopes are mostly used internally for various Liferay constructs (such as
-Sites or Categories). 
-
-$$$
+| **Note:** For each resource, there are four scopes to which the permissions can
+| be applied: company, group, group-template, or individual. Because these are
+| called *portlet resources* here and in the code, this can be confusing. The
+| other scopes are mostly used internally for various Liferay constructs (such as
+| Sites or Categories).
 
 You define resources and their permissions using an XML file. By convention,
 this file is called `default.xml` and exists in a module's
@@ -33,7 +33,7 @@ Because of the two different types of resources, you'll have two of these files:
 one in your portlet module to define the portlet resources and one in your
 service module to define the model resources. 
 
-## Defining Portlet Resource Permissions [](id=defining-portlet-resource-permissions)
+## Defining Portlet Resource Permissions
 
 Define the portlet resources first; here's an example using Liferay's Blogs
 application. 
@@ -111,7 +111,7 @@ other words, the user must be logged in and identifiable).
 That's all there is to it! Your next task is to define permissions for your
 model resources. 
 
-## Defining Model Resource Permissions [](id=defining-model-resource-permissions)
+## Defining Model Resource Permissions
 
 Defining permissions for models is a similar process. Create a `default.xml`
 file in your service module's `src/main/resources/resource-actions` folder. In
@@ -223,7 +223,7 @@ Now you're ready to define both your root model and model permissions.
     Note the lack of a `<root>` tag, the fully qualified class name for the
     model, and the permissions that operate on an entity with a primary key. 
 
-## Enabling Your Permissions Configuration [](id=enabling-your-permissions-configuration)
+## Enabling Your Permissions Configuration
 
 Your last step is to enable your permission definitions. Each module that
 contains a `default.xml` permissions definition file must also have

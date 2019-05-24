@@ -1,4 +1,8 @@
-# Page Fragments [](id=page-fragments)
+---
+header-id: page-fragments
+---
+
+# Page Fragments
 
 Page Fragments are templates made up of CSS, HTML, and JavaScript used to build
 Content Pages. The HTML, CSS, and JavaScript are all completely standard, just 

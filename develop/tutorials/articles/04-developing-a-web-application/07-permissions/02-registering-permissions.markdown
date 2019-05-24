@@ -1,4 +1,8 @@
-# Registering Your Defined Permissions [](id=registering-your-defined-permissions)
+---
+header-id: registering-your-defined-permissions
+---
+
+# Registering Your Defined Permissions
 
 <div class="learn-path-step">
     <p>Implementing Permissions<br>Step 2 of 4</p>
@@ -15,7 +19,7 @@ To use these resources, @product@ must know about them. To do that you
 *register* the resources with the system, both in the database and with the
 running permissions system in the OSGi container. 
 
-## Registering Permissions in the Database [](id=registering-permissions-in-the-database)
+## Registering Permissions in the Database
 
 @product@ provides a complete API for managing resources that's integrated with 
 Service Builder. This API is injected into your implementation classes
@@ -94,7 +98,7 @@ portal don't have resources and thus can't be protected by permissions. You'll
 fix this at the end of this section. Now you must register permissions with the
 permissions system, so it knows how to check for them. 
 
-## Registering Your Entities with the Permissions Service [](id=registering-your-entities-with-the-permissions-service)
+## Registering Your Entities with the Permissions Service
 
 A running service checks permissions, but since the Guestbook portlet,
 Guestbooks, and Guestbook Entries are new to the system, it must be taught about

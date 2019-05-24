@@ -1,11 +1,15 @@
-# Targeting Liferay Editions and Versions and Versioning your App [](id=targeting-liferay-editions-and-versions)
+---
+header-id: targeting-liferay-editions-and-versions
+---
+
+# Targeting Liferay Editions and Versions and Versioning your App
 
 There are multiple versions of Liferay and multiple editions (e.g., community
 and enterprise) for each version. You must decide the versions and editions to
 build your app on. And lastly, you must decide how to version your app. This
 tutorial covers these topics. 
 
-## Determining Editions and Versions of Liferay to Target [](id=determining-versions-of-liferay-to-target)
+## Determining Editions and Versions of Liferay to Target
 
 Of course, targeting the widest possible range of Liferay editions and versions
 in an app typically draws larger audiences to the app. And there may be certain
@@ -35,7 +39,7 @@ the dependencies your app needs.
 Lastly, you should determine a versioning scheme for your app. How will you
 refer to the first version of your app, the second version, and so on. 
 
-## Decide on a Versioning Scheme [](id=decide-on-a-versioning-scheme)
+## Decide on a Versioning Scheme
 
 A version of an app represents the functionality of the app at a given point in
 time. When you first create an app, you give it an initial version (e.g.,
@@ -55,7 +59,7 @@ versions relate to one another.
 
 Keep in mind that the releases of Liferay with which your app works must be
 specified using Liferay's versioning scheme, as explained in
-[Understanding Liferay's Releases](/discover/deployment/-/knowledge_base/6-2/understanding-liferays-releases).
+[Understanding Liferay's Releases](/docs/6-2/deploy/-/knowledge_base/d/understanding-liferays-releases).
 See the later section *Specify App Packaging Directives* for details on
 specifying the releases of Liferay for which your app is designed. 
 

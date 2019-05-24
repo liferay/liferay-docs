@@ -1,4 +1,8 @@
-# Deleting File Versions [](id=deleting-file-versions)
+---
+header-id: deleting-file-versions
+---
+
+# Deleting File Versions
 
 When a file is modified, Documents and Media creates a new file version and 
 leaves the previous version intact. Over time, old file versions can accumulate 
@@ -24,7 +28,7 @@ Follow these steps to use `deleteFileVersion` to delete a file version:
         private DLAppService _dlAppService;
 
     For more information on this, see the section on 
-    [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
+    [getting a service reference](/docs/7-1/tutorials/-/knowledge_base/t/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
     in the getting started tutorial. 
 
 2.  Get the file entry ID and version for the file you want to delete. Since 
@@ -51,7 +55,7 @@ this `deleteFileEntry` method, as well as the rest of
 `EditFileEntryMVCActionCommand`, contains additional logic to suit the specific 
 needs of the Documents and Media app. 
 
-## Identifying File Versions [](id=identifying-file-versions)
+## Identifying File Versions
 
 Since there may be many versions of a file, it's useful to 
 identify programmatically old versions for deletion. You can do this with 
@@ -59,7 +63,7 @@ identify programmatically old versions for deletion. You can do this with
 
 The following example creates such a comparator and uses its `compare` method to 
 identify old versions of a file. The code does so by iterating through each 
-[approved](/discover/portal/-/knowledge_base/7-1/workflow) 
+[approved](/docs/7-1/user/-/knowledge_base/u/workflow) 
 version of the file (`fileVersion`). Each iteration uses the `compare` method to 
 test that file version (`fileVersion.getVersion()`) against the same file's 
 current version (`fileEntry.getVersion()`). If this comparison is greater than 
@@ -76,12 +80,12 @@ current version (`fileEntry.getVersion()`). If this comparison is greater than
         }
     }
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Deleting Files](/develop/tutorials/-/knowledge_base/7-1/deleting-files)
+[Deleting Files](/docs/7-1/tutorials/-/knowledge_base/t/deleting-files)
 
-[Deleting File Shortcuts](/develop/tutorials/-/knowledge_base/7-1/deleting-file-shortcuts)
+[Deleting File Shortcuts](/docs/7-1/tutorials/-/knowledge_base/t/deleting-file-shortcuts)
 
-[Deleting Folders](/develop/tutorials/-/knowledge_base/7-1/deleting-folders)
+[Deleting Folders](/docs/7-1/tutorials/-/knowledge_base/t/deleting-folders)
 
-[Moving Entities to the Recycle Bin](/develop/tutorials/-/knowledge_base/7-1/moving-entities-to-the-recycle-bin)
+[Moving Entities to the Recycle Bin](/docs/7-1/tutorials/-/knowledge_base/t/moving-entities-to-the-recycle-bin)

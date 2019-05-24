@@ -1,4 +1,8 @@
-# Email and Content [](id=email-and-content)
+---
+header-id: email-and-content
+---
+
+# Email and Content
 
 There are a few sections of the Configuration tab dedicated to configuring
 email and content sharing:
@@ -11,13 +15,13 @@ Configure these settings at Control Panel &rarr; Configuration &rarr; Instance
 Settings. In the Configuration tab, scroll down to the bottom. These three
 entries are last in the tab.
 
-## Mail Host Names [](id=mail-host-names)
+## Mail Host Names
 
 Enter one mail host name per line, besides the one you configured on the General
 tab. This tells the virtual instance which mail host names are owned by your
 organization.
 
-## Email Notifications [](id=email-notifications)
+## Email Notifications
 
 The Sender tab sets the virtual instance's administrative name and email
 address.  By default, these are `Test Test` and `test@liferay.com`. This name
@@ -37,7 +41,7 @@ A list of tokens, entitled "Definition of Terms," is provided for insertion of
 certain variables (such as the portal URL or the User ID) into custom email
 messages.
 
-## Content Sharing [](id=content-sharing)
+## Content Sharing
 
 Choose if Site administrators can display content in Sites from other Sites they
 administer. For example, suppose that a certain User is a Site administrator of

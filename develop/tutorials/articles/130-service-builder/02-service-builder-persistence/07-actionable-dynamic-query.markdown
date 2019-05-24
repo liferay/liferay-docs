@@ -1,4 +1,8 @@
-# Actionable Dynamic Queries [](id=actionable-dynamic-queries)
+---
+header-id: actionable-dynamic-queries
+---
+
+# Actionable Dynamic Queries
 
 Suppose you have over a million users, and you want to perform some kind of mass
 update to some of them. One approach might be to use a dynamic query to retrieve
@@ -76,16 +80,12 @@ entities that match certain criteria.
 
         ActionableDynamicQuery adq = _barLocalService.getActionableDynamicQuery();
 
-    +$$$
- 
-    **Note:** Service Builder generates method `getActionableDynamicQuery()` in 
-    each entity's `*LocalService` interface and implements it in each entity's
-    `*BaseLocalServiceImpl` class. 
-
-        @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
-        public ActionableDynamicQuery getActionableDynamicQuery();
-
-    $$$
+    | **Note:** Service Builder generates method `getActionableDynamicQuery()` in
+    | each entity's `*LocalService` interface and implements it in each entity's
+    | `*BaseLocalServiceImpl` class.
+    | 
+    |     @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+    |     public ActionableDynamicQuery getActionableDynamicQuery();
 
 2.  Set query criteria to match `field3` values less than `100`.
 
@@ -125,10 +125,10 @@ entities that match certain criteria.
 Actionable dynamic queries let you act on large numbers of entities in smaller
 groups. It's an efficient and high performing way to update entities. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Service Builder Web Services](/develop/tutorials/-/knowledge_base/7-1/service-builder-web-services)
+[Service Builder Web Services](/docs/7-1/tutorials/-/knowledge_base/t/service-builder-web-services)
 
-[Creating Local Service](/develop/tutorials/-/knowledge_base/7-1/creating-local-services)
+[Creating Local Service](/docs/7-1/tutorials/-/knowledge_base/t/creating-local-services)
 
-[Invoking Local Services](/develop/tutorials/-/knowledge_base/7-1/invoking-local-services)
+[Invoking Local Services](/docs/7-1/tutorials/-/knowledge_base/t/invoking-local-services)

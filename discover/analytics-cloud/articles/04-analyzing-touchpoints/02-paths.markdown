@@ -1,4 +1,8 @@
-# Path Analytics [](id=path-analytics)
+---
+header-id: path-analytics
+---
+
+# Path Analytics
 
 A weary sojourner winds his way through the twisted paths of the Internet,
 seeking answers to life's most important questions. Nearly ready to give up his
@@ -20,7 +24,7 @@ By knowing the Paths your page Visitors use to come to your Page, you'll make
 better decisions about whether to continue, discontinue, or modify your
 advertising.
 
-## Viewing Page Path Analytics [](id=viewing-page-path-analytics)
+## Viewing Page Path Analytics
 
 A Page's Path Analytics are reported in the Path tab of a Page's screen. The 
 diagram reports the most common pages from which visitors accessed this Page.
@@ -34,7 +38,7 @@ If a Page in one of your Liferay DXP sites is also a Path to the current Page,
 clicking the path URL brings you to its Overview screen. If it's not a
 page that's loaded from the data source, nothing happens.
 
-## Location and Device Type [](id=location-and-device-type)
+## Location and Device Type
 
 Path Analytics can be filtered by Location and Device Type. Knowing the Location
 and Device Type visitors most commonly use to access your site's Pages helps you
@@ -57,7 +61,7 @@ User came to the Page from `wwww.google.com.de`.](../../images/paths-filters.png
 
 To remove a filter, click the *x* next to the filter name.
 
-## Assets [](id=assets)
+## Assets
 
 Pages have Assets on them. If a Page containing the Analytics Cloud client is
 reported in the Path diagram, a *Show Top 5 Assets* link is displayed. Clicking

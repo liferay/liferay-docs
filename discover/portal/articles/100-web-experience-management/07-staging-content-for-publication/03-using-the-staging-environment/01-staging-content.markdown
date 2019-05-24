@@ -1,4 +1,8 @@
-# Staging Content [](id=staging-content)
+---
+header-id: staging-content
+---
+
+# Staging Content
 
 When you're on the staged site, you have several options in the Staging Bar to
 help start your staging conquest.
@@ -7,14 +11,14 @@ help start your staging conquest.
 staged site page. You can choose the site page variation from the dropdown menu
 or manage them from the *Options* icon
 (![Options](../../../../images/icon-options.png)) in the Staging Bar. See the
-[Using Site Pages Variations](/discover/portal/-/knowledge_base/7-1/using-site-pages-variations)
+[Using Site Pages Variations](/docs/7-1/user/-/knowledge_base/u/using-site-pages-variations)
 article for more information.
 
 **Page Variations:** lets you work in parallel on multiple versions of a staged
 page. You can choose the page variation from the dropdown menu or manage them
 from the *Options* icon (![Options](../../../../images/icon-options.png)) in the
 Staging Bar. See the
-[Using Site Pages Variations](/discover/portal/-/knowledge_base/7-1/using-site-pages-variations)
+[Using Site Pages Variations](/docs/7-1/user/-/knowledge_base/u/using-site-pages-variations)
 article for more information.
 
 **Undo/Redo:** steps back/forward through recent changes to a page, which can
@@ -71,17 +75,13 @@ publish content.
 Awesome! You've created content on the staged site and published it to your live
 site. It's now available for all your site users to see!
 
-+$$$
-
-**Note:** Although publishing content is the more well-known function,
-publishing a portlet is also a viable option. You can publish portlets residing
-in the Control Panel and on pages. For example, you can modify a portlet's title
-and publish the change to live. This is possible because portlet configurations
-are always staged.
-
-To publish a portlet that is on a page, you must publish the page first.
-
-$$$
+| **Note:** Although publishing content is the more well-known function,
+| publishing a portlet is also a viable option. You can publish portlets residing
+| in the Control Panel and on pages. For example, you can modify a portlet's title
+| and publish the change to live. This is possible because portlet configurations
+| are always staged.
+| 
+| To publish a portlet that is on a page, you must publish the page first.
 
 This example explored the Simple Publication menu. If your publication requires
 more advanced configuration like specifying specific content, dates, pages,

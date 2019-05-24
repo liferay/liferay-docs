@@ -1,10 +1,14 @@
-# Clay Dropdown Menus and Action Menus [](id=clay-dropdown-menus-and-action-menus)
+---
+header-id: clay-dropdown-menus-and-action-menus
+---
+
+# Clay Dropdown Menus and Action Menus
 
 You can add dropdown menus to your app via the `clay:dropdown-menu` and 
 `clay:actions-menu` taglibs. The Clay taglibs provide several menu variations 
 for you to choose. Both taglibs with several examples are shown below.
 
-## Dropdown Menus [](id=dropdown-menus)
+## Dropdown Menus
 
 Basic dropdown menu:
 
@@ -102,7 +106,7 @@ Corresponding taglib:
 
 ![Figure 4: Icons can be included in dropdown menus.](../../../images/clay-taglib-dropdown-icons.png)
 
-## Actions Menus [](id=actions-menus)
+## Actions Menus
 
 Basic actions menu:
 
@@ -126,10 +130,10 @@ An actions menu can also display help text to the user:
 
 Clay taglibs make it easy to add dropdown menus and action menus to your apps.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Clay Form Elements](/develop/tutorials/-/knowledge_base/7-1/clay-form-elements)
+[Clay Form Elements](/docs/7-1/tutorials/-/knowledge_base/t/clay-form-elements)
 
-[Clay Navigation Bars](/develop/tutorials/-/knowledge_base/7-1/clay-navigation-bars)
+[Clay Navigation Bars](/docs/7-1/tutorials/-/knowledge_base/t/clay-navigation-bars)
 
-[Clay Progress Bars](/develop/tutorials/-/knowledge_base/7-1/clay-progress-bars)
+[Clay Progress Bars](/docs/7-1/tutorials/-/knowledge_base/t/clay-progress-bars)

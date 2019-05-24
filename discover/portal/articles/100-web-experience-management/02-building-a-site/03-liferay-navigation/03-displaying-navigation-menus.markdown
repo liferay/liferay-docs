@@ -1,10 +1,14 @@
-# Displaying Navigation Menus [](id=displaying-navigation-menus)
+---
+header-id: displaying-navigation-menus
+---
+
+# Displaying Navigation Menus
 
 You can display Navigation Menus in different ways on your Site. You may want
 to configure different display styles for a main menu, sidebar, and footer menu
 all on one page.
 
-## The Navigation Menu Widget [](id=the-navigation-menu-widget)
+## The Navigation Menu Widget
 
 The Navigation Menu widget lets you add navigation wherever you need it. You
 can place the widget on a page and then select a menu and style for the menu
@@ -25,7 +29,7 @@ From here you can configure three main categories:
 
 ![Figure 1: Configuring the Navigation Menu Widget.](../../../../images/nav-widget-configuration.png)
 
-### Choosing a Navigation Menu [](id=choosing-a-navigation-menu)
+### Choosing a Navigation Menu
 
 The Navigation Menu Widget has two ways to select a menu. You can choose to 
 *Select Navigation* or *Choose Menu*.
@@ -37,10 +41,10 @@ Navigation*, *Secondary Navigation*, and *Social Navigation*.
 
 Once you select a menu, you must choose how to display it.
 
-### Display Template [](id=display-template)
+### Display Template
 
 The *Display Template* option lets you select an 
-[Application Display Template](/discover/portal/-/knowledge_base/7-0/application-display-templates)
+[Application Display Template](/docs/7-0/user/-/knowledge_base/u/application-display-templates)
 for Navigation Menus. There ten included by default:
 
 **List Menu:** Displays all the items in a vertical list.
@@ -69,9 +73,9 @@ padding.
 for multiple navigation levels.
 
 You can also add your own 
-[custom templates](/develop/tutorials/-/knowledge_base/7-0/application-display-templates).
+[custom templates](/docs/7-0/tutorials/-/knowledge_base/t/application-display-templates).
 
-### Menu Items to Show [](id=menu-items-to-show)
+### Menu Items to Show
 
 *Menu Items to Show* configures which pages at what level from the menu are
 displayed in the widget. You can choose the starting level, how many levels deep

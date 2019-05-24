@@ -1,24 +1,24 @@
-# Defining Pages in a Sitemap [](id=defining-pages-in-a-sitemap)
+---
+header-id: defining-pages-in-a-sitemap
+---
+
+# Defining Pages in a Sitemap
 
 A sitemap defines the layouts---pages---that your site or site template uses.
 This tutorial covers the configuration options that are available for pages in
 a sitemap. 
 
-+$$$
-
-**Note:** Pages are imported into a site template by default. Site templates 
-only support the importing of either public page sets or private page sets, not 
-both. 
-
-If you want to import both public and private page sets, as shown in the example 
-`sitemap.json` below, you must 
-[import your resources into a site](/develop/tutorials/-/knowledge_base/7-1/specifying-where-to-import-your-themes-resources#importing-resources-into-existing-site-templates-and-sites). 
-
-$$$
+| **Note:** Pages are imported into a site template by default. Site templates
+| only support the importing of either public page sets or private page sets, not
+| both.
+| 
+| If you want to import both public and private page sets, as shown in the example
+| `sitemap.json` below, you must
+| [import your resources into a site](/docs/7-1/tutorials/-/knowledge_base/t/specifying-where-to-import-your-themes-resources#importing-resources-into-existing-site-templates-and-sites).
 
 You can specify a name for a page, title, friendly URL, whether it is hidden, 
 and much more. The example below defines a 
-[default layout template](/develop/tutorials/-/knowledge_base/7-1/defining-layout-templates-in-a-sitemap) 
+[default layout template](/docs/7-1/tutorials/-/knowledge_base/t/defining-layout-templates-in-a-sitemap) 
 and both public and private page sets to import into a site:
 
     {
@@ -123,10 +123,10 @@ Possible values are `copy` (copy of a page of this site), `embedded`,
 **typeSettings:** Specifies settings (using key/value pairs) for the page 
 `type`.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Preparing and Organizing Web Content for the Resources Importer](/develop/tutorials/-/knowledge_base/7-1/preparing-and-organizing-web-content-for-the-resources-importer)
+[Preparing and Organizing Web Content for the Resources Importer](/docs/7-1/tutorials/-/knowledge_base/t/preparing-and-organizing-web-content-for-the-resources-importer)
 
-[Defining Layout Templates in a Sitemap](/develop/tutorials/-/knowledge_base/7-1/defining-layout-templates-in-a-sitemap)
+[Defining Layout Templates in a Sitemap](/docs/7-1/tutorials/-/knowledge_base/t/defining-layout-templates-in-a-sitemap)
 
-[Specifying Where to Import Your Theme's Resources](/develop/tutorials/-/knowledge_base/7-1/specifying-where-to-import-your-themes-resources)
+[Specifying Where to Import Your Theme's Resources](/docs/7-1/tutorials/-/knowledge_base/t/specifying-where-to-import-your-themes-resources)

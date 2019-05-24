@@ -1,9 +1,13 @@
-# Clay Alerts [](id=clay-alerts)
+---
+header-id: clay-alerts
+---
+
+# Clay Alerts
 
 Clay alerts come in two types: embedded and stripe. This tutorial covers both 
 types and provides several examples of each.
 
-## Embedded Alerts [](id=embedded-alerts)
+## Embedded Alerts
 
 Embedded alerts are usually used inside forms. The element that contains it
 determines an embedded alert's width. The close action is not required for
@@ -49,7 +53,7 @@ Warning alert (embedded):
 
 ![Figure 4: The warning alert displays a warning message to the user.](../../../images/clay-taglib-alert-warning.png)
 
-## Stripe Alerts [](id=stripe-alerts)
+## Stripe Alerts
 
 Stripe alerts are placed below the last navigation element (either the header or 
 the navigation bar), and they usually appear on *Save* action, communicating 
@@ -99,10 +103,10 @@ Warning alert (stripe):
 
 Now you know how to alert users!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Clay Buttons](/develop/tutorials/-/knowledge_base/7-1/clay-buttons)
+[Clay Buttons](/docs/7-1/tutorials/-/knowledge_base/t/clay-buttons)
 
-[Clay Form Elements](/develop/tutorials/-/knowledge_base/7-1/clay-form-elements)
+[Clay Form Elements](/docs/7-1/tutorials/-/knowledge_base/t/clay-form-elements)
 
-[Clay Labels and Links](/develop/tutorials/-/knowledge_base/7-1/clay-labels-and-links)
+[Clay Labels and Links](/docs/7-1/tutorials/-/knowledge_base/t/clay-labels-and-links)

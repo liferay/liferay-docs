@@ -1,4 +1,8 @@
-# Get Started: Discover the API [](id=get-started-discover-the-api)
+---
+header-id: get-started-discover-the-api
+---
+
+# Get Started: Discover the API
 
 To begin consuming web services, you must first know where they are (e.g.,
 a service catalog), what operations you can invoke, and how to invoke them.
@@ -58,8 +62,8 @@ The home URL shows the API's root resources and includes URLs to access them.
 You don't need to remember specific URLs other than the home URL. This dynamic
 discovery is a key advantage of hypermedia REST APIs. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Get Started: Invoke a Service](/develop/tutorials/-/knowledge_base/7-1/get-started-invoke-a-service)
+[Get Started: Invoke a Service](/docs/7-1/tutorials/-/knowledge_base/t/get-started-invoke-a-service)
 
-[Navigating Between Related Resources](/develop/tutorials/-/knowledge_base/7-1/navigating-between-related-resources)
+[Navigating Between Related Resources](/docs/7-1/tutorials/-/knowledge_base/t/navigating-between-related-resources)

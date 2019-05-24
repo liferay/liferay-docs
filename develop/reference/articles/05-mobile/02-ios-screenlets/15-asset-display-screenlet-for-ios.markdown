@@ -1,6 +1,10 @@
-# Asset Display Screenlet for iOS [](id=asset-display-screenlet-for-ios)
+---
+header-id: asset-display-screenlet-for-ios
+---
 
-## Requirements [](id=requirements)
+# Asset Display Screenlet for iOS
+
+## Requirements
 
 - Xcode 9.3 or above
 - iOS 11 SDK
@@ -10,16 +14,16 @@
   [EE/DXP](http://www.liferay.com/marketplace/-/mp/application/54369726)). 
   This app is preinstalled in Liferay CE Portal 7.0/7.1 and Liferay DXP. 
 
-## Compatibility [](id=compatibility)
+## Compatibility
 
 - iOS 9 and above
 
-## Xamarin Requirements [](id=xamarin-requirements)
+## Xamarin Requirements
 
 - Visual Studio 7.2
 - Mono .NET framework 5.4.1.6
 
-## Features [](id=features)
+## Features
 
 Asset Display Screenlet can display an asset from a Liferay instance. The 
 Screenlet can currently display Documents and Media files (`DLFileEntry` images, 
@@ -27,10 +31,10 @@ videos, audio files, and PDFs), blogs entries (`BlogsEntry`) and web content
 articles (`WebContent`). 
 
 Asset Display Screenlet can also display your custom asset types. See 
-[the delegate section of this document](/develop/reference/-/knowledge_base/7-1/asset-display-screenlet-for-ios#delegate) 
+[the delegate section of this document](/docs/7-1/reference/-/knowledge_base/r/asset-display-screenlet-for-ios#delegate) 
 for details. 
 
-## JSON Services Used [](id=json-services-used)
+## JSON Services Used
 
 Screenlets in Liferay Screens call JSON web services in the portal. This 
 Screenlet calls the following services and methods.
@@ -42,11 +46,11 @@ Screenlet calls the following services and methods.
 | `ScreensassetentryService` (Screens compatibility plugin) | `getAssetEntries` | With `entryQuery` |
 | `ScreensassetentryService` (Screens compatibility plugin) | `getAssetEntries` | With `companyId`, `groupId`, and `portletItemName` |
 
-## Module [](id=module)
+## Module
 
 - None
 
-## Themes [](id=themes)
+## Themes
 
 - Default
 
@@ -66,11 +70,11 @@ These Screenlets can also be used alone without Asset Display Screenlet.
 
 ![Figure 1: Asset Display Screenlet using the Default Theme.](../../../images/screens-ios-assetdisplay.png)
 
-## Offline [](id=offline)
+## Offline
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-1/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/docs/7-1/tutorials/-/knowledge_base/t/architecture-of-offline-mode-in-liferay-screens). 
 Here are the offline mode policies that you can use with this Screenlet: 
 
 | Policy | What happens | When to use |
@@ -80,7 +84,7 @@ Here are the offline mode policies that you can use with this Screenlet:
 | `remote-first` | The Screenlet loads the data from the Liferay instance. If this succeeds, the Screenlet shows the data to the user and stores it in the local cache for later use. If a connection issue occurs, the Screenlet retrieves the data from the local cache. If the data doesn't exist there, the Screenlet uses the listener to notify the developer about the error. | Use this policy to show the most recent version of the data when connected, but show an outdated version when there's no connection. |
 | `cache-first` | The Screenlet loads the data from the local cache. If the data isn't there, the Screenlet requests it from the Liferay instance and notifies the developer about any errors that occur (including connectivity errors). | Use this policy to save bandwidth and loading time in case you have local (but probably outdated) data. |
 
-## Required Attributes [](id=required-attributes)
+## Required Attributes
 
 - `assetEntryId`
 
@@ -93,19 +97,19 @@ If you don't use the above attributes, you must use this attribute:
 
 - `portletItemName`
 
-## Attributes [](id=attributes)
+## Attributes
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------|
 | `assetEntryId` | `number` | The primary key of the asset. | 
 | `className` | `string` | The asset's fully qualified class name. For example, a blog entry's `className` is `com.liferay.blogs.model.BlogsEntry`. The `className` and `classPK` attributes are required to instantiate the Screenlet. | 
 | `classPK` | `number` | The asset's unique identifier. The `className` and `classPK` attributes are required to instantiate the Screenlet. |
-| `portletItemName` | `string` | The name of the [configuration template](/discover/portal/-/knowledge_base/7-1/configuration-templates) you used in the Asset Publisher. To use this feature, add an Asset Publisher to one of your site's pages (it may be a hidden page), configure the Asset Publisher's filter (in *Configuration* &rarr; *Setup* &rarr; *Asset Selection*), and then use the Asset Publisher's *Configuration Templates* option to save this configuration with a name. Use this name as this attribute's value. If there is more than one asset in the configuration, the Screenlet displays only the first one. | 
+| `portletItemName` | `string` | The name of the [configuration template](/docs/7-1/user/-/knowledge_base/u/configuration-templates) you used in the Asset Publisher. To use this feature, add an Asset Publisher to one of your site's pages (it may be a hidden page), configure the Asset Publisher's filter (in *Configuration* &rarr; *Setup* &rarr; *Asset Selection*), and then use the Asset Publisher's *Configuration Templates* option to save this configuration with a name. Use this name as this attribute's value. If there is more than one asset in the configuration, the Screenlet displays only the first one. | 
 | `assetEntry` | `Asset` | The `Asset` object to display, selected from a list of assets. Note that if you use this attribute, the Screenlet doesn't need to call the server. |
 | `autoLoad` | `boolean` | Whether the asset automatically loads when the Screenlet appears in the app's UI. The default value is `true`. |
-| `offlinePolicy` | `string` | The offline mode setting. The default value is `remote-first`. See [the Offline section](/develop/reference/-/knowledge_base/7-1/asset-display-screenlet-for-ios#offline) for details. |
+| `offlinePolicy` | `string` | The offline mode setting. The default value is `remote-first`. See [the Offline section](/docs/7-1/reference/-/knowledge_base/r/asset-display-screenlet-for-ios#offline) for details. |
 
-## Delegate [](id=delegate)
+## Delegate
 
 Asset Display Screenlet delegates some events to an object that conforms to 
 the `AssetDisplayScreenletDelegate` protocol. This protocol lets you implement 

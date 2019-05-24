@@ -1,7 +1,11 @@
-# Reading Configuration Values from a Component [](id=reading-configuration-values-from-a-component)
+---
+header-id: reading-configuration-values-from-a-component
+---
+
+# Reading Configuration Values from a Component
 
 Once you have the 
-[application configured](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable)
+[application configured](/docs/7-1/tutorials/-/knowledge_base/t/making-applications-configurable)
 so that administrators can configure it in System Settings, you might be
 wondering how to read the configuration from your application's Java code.
 
@@ -19,7 +23,7 @@ context from which the configuration must be read:
 This tutorial shows the first usage, reading the configuration from a Component
 class.
 
-## Reading Configurations from a Component Class [](id=reading-configurations-from-a-component-class)
+## Reading Configurations from a Component Class
 
 1.  First set the `configurationPid` Component property as the fully qualified
     class name of the configuration class:
@@ -57,17 +61,13 @@ class.
     method call, presumably so that whatever model car is ordered will be
     ordered in the configured favorite color.
 
-+$$$
-
-**Note:** The bnd library also provides a class called
-`aQute.bnd.annotation.metatype.Configurable` with a `createConfigurable()`
-method. You can use that instead of Liferay's
-`com.liferay.portal.configuration.metatype.bnd.util.ConfigurableUtil` without
-any problems. Liferay's developers created the `ConfigurableUtil` class to
-improve the performance of bnd's implementation, and it's used in internal code.
-Feel free to use whichever method you prefer. 
-
-$$$
+| **Note:** The bnd library also provides a class called
+| `aQute.bnd.annotation.metatype.Configurable` with a `createConfigurable()`
+| method. You can use that instead of Liferay's
+| `com.liferay.portal.configuration.metatype.bnd.util.ConfigurableUtil` without
+| any problems. Liferay's developers created the `ConfigurableUtil` class to
+| improve the performance of bnd's implementation, and it's used in internal code.
+| Feel free to use whichever method you prefer.
 
 With very few lines of code, you have a configurable application that
 dynamically changes its configuration, has an auto-generated UI, and uses a

@@ -1,4 +1,8 @@
-# Building Sites from Templates [](id=building-sites-from-templates)
+---
+header-id: building-sites-from-templates
+---
+
+# Building Sites from Templates
 
 Site Templates create a single Site structure that can be used for any new Site.
 They are created and administered from the Control Panel. In addition to

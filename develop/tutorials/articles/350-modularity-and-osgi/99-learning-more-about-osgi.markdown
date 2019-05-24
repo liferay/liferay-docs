@@ -1,4 +1,8 @@
-# Learning More about OSGi [](id=learning-more-about-osgi)
+---
+header-id: learning-more-about-osgi
+---
+
+# Learning More about OSGi
 
 There is much more to learn about developing apps using OSGi. Several resources
 are listed below and many more abound. To make the best of your time, however,
@@ -7,7 +11,7 @@ complicated than Declarative Services.
 
 Developers new to OSGi should check out these resources:
 
--   [Introduction to Liferay Development](/develop/tutorials/-/knowledge_base/7-1/introduction-to-liferay-development): 
+-   [Introduction to Liferay Development](/docs/7-1/tutorials/-/knowledge_base/t/introduction-to-liferay-development): 
     For using OSGi to develop on @product@.
 
 -   [OSGi enRoute](http://enroute.osgi.org/) is a site the OSGi Alliance

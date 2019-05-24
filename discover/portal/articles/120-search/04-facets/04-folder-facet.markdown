@@ -1,4 +1,8 @@
-# Folder Facet [](id=folder-facet)
+---
+header-id: folder-facet
+---
+
+# Folder Facet
 
 The Folder Facet narrows search results down to those contained in a certain
 Asset Folder. If you search for *space*, a Folder titled *Space Images* doesn't

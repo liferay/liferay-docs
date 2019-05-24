@@ -1,10 +1,14 @@
-# Using the Framework for Your Application [](id=using-the-framework-for-your-application)
+---
+header-id: using-the-framework-for-your-application
+---
+
+# Using the Framework for Your Application
 
 The Screen Navigation Framework comprises two parts: Java classes for your
 screens and a tag library for your front-end. First you'll create the necessary
 Java classes and then add the front-end support through JSPs.
 
-## Adding Screens to Your Application's Back-end [](id=adding-screens-to-your-applications-back-end)
+## Adding Screens to Your Application's Back-end
 
 You must create at least one Navigation Category. To add screens to your
 application, first you must add at least one Navigation Category for the top
@@ -50,7 +54,7 @@ You can implement your render method any way that you want as long as it
 provides a way to render HTML. Liferay developers typically use JSPs, shown
 below. 
 
-## Adding Screens to Your Application's Front-end [](id=adding-screens-to-your-applications-front-end)
+## Adding Screens to Your Application's Front-end
 
 To use JSPs to render your screens, you must invoke the `JSPRenderer` component
 in your `render` method and create the JSP that renders the HTML.

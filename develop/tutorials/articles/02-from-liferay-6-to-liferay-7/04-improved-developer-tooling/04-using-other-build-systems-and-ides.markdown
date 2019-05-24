@@ -1,4 +1,8 @@
-# Using Other Build Systems and IDEs [](id=using-other-build-systems-and-ides)
+---
+header-id: using-other-build-systems-and-ides
+---
+
+# Using Other Build Systems and IDEs
 
 @product@ is tool agnostic--you can use whatever tools you like to develop on
 it. You can use any IDE and even use Gradle, Bnd, or BndTools if you don't want
@@ -11,17 +15,17 @@ Workspace.
 Here are some new Gradle features Liferay provides that are independent of
 Workspace: 
 
-- Liferay's [Gradle plugins](/develop/reference/-/knowledge_base/7-1/gradle)
+- Liferay's [Gradle plugins](/docs/7-1/reference/-/knowledge_base/r/gradle)
 - Buildship plugins in Liferay @ide@
 - Liferay @ide@'s
-  [new Gradle views](/develop/tutorials/-/knowledge_base/7-1/using-gradle-in-liferay-ide)
+  [new Gradle views](/docs/7-1/tutorials/-/knowledge_base/t/using-gradle-in-liferay-ide)
   for developing modules and working with Gradle tasks
 
 Liferay has worked hard to make @product@ IDE-agnostic. There are Liferay module
 developers who use IntelliJ and some enjoy using NetBeans.
 
 Finally, you can copy and modify 
-[Liferay sample projects](/develop/tutorials/-/knowledge_base/7-1/liferay-sample-projects) 
+[Liferay sample projects](/docs/7-1/tutorials/-/knowledge_base/t/liferay-sample-projects) 
 to serve as templates in place of the Blade templates. They're available for
 these build systems:
 

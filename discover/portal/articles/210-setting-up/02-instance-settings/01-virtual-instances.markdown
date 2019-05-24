@@ -1,11 +1,15 @@
-# Virtual Instances [](id=virtual-instances)
+---
+header-id: virtual-instances
+---
+
+# Virtual Instances
 
 Here's a quick scenario: you already have a server hosting a @product@ 
 installation and a database. It has many 
-[Users](/discover/portal/-/knowledge_base/7-1/users-and-organizations), 
-[Sites](/discover/portal/-/knowledge_base/7-1/building-a-site), 
+[Users](/docs/7-1/user/-/knowledge_base/u/users-and-organizations), 
+[Sites](/docs/7-1/user/-/knowledge_base/u/building-a-site), 
 and specific 
-[instance settings](/discover/portal/-/knowledge_base/7-1/general-settings). 
+[instance settings](/docs/7-1/user/-/knowledge_base/u/general-settings). 
 If you need another such installation, then adding a *Virtual Instance* might be 
 right for you. 
 
@@ -16,7 +20,7 @@ Instances share an application server and OSGi container, they also share these
 customizations: 
 
 -   Custom code deployed by developers and administrators.
--   [System-scoped configurations](/discover/portal/-/knowledge_base/7-1/system-settings) 
+-   [System-scoped configurations](/docs/7-1/user/-/knowledge_base/u/system-settings) 
     (e.g., `.config` files, changes made in *Control Panel* &rarr; 
     *Configuration* &rarr; *System Settings*). 
 -   Application server configuration.

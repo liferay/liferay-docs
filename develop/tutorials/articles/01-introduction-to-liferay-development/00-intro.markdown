@@ -1,4 +1,8 @@
-# Introduction to Liferay Development [](id=introduction-to-liferay-development)
+---
+header-id: introduction-to-liferay-development
+---
+
+# Introduction to Liferay Development
 
 How many times have you had to start over from scratch? Probably almost as many
 times as you've started a new project, because each time you have to write not
@@ -16,7 +20,7 @@ it's called @product@.
 
 ![With @product@, you never have to start from scratch.](../../images/dont-start-from-scratch.png)
 
-## Leveraging a Suite of Products, Frameworks and Libraries [](id=leveraging-a-suite-of-products-frameworks-and-libraries)
+## Leveraging a Suite of Products, Frameworks and Libraries
 
 @product@ offers you a complete platform for building web apps, mobile apps, and
 web services quickly, using features and frameworks designed for rapid
@@ -37,7 +41,7 @@ In short, Liferay was written by developers for developers, to help you get your
 work done faster and more easily, to take the drudgery out of web and mobile app
 development, so that writing code becomes enjoyable again.
 
-## Build Websites, Intranets, Collaborative Environments, Mobile Apps, and More [](id=build-websites-intranets-collaborative-environments-mobile-apps-and-more)
+## Build Websites, Intranets, Collaborative Environments, Mobile Apps, and More
 
 One of the most often cited best characteristics of Liferay is how versatile
 it is. It can be used to build websites of all sorts, from very large websites
@@ -50,7 +54,7 @@ mixed environments like collaboration platforms.
 Developers often choose Liferay for one of these cases and quickly find that
 it is a great fit for completely different projects.
 
-## Creating Your Own Applications and Extending the Existing Ones [](id=creating-your-own-applications-and-extending-the-existing-ones)
+## Creating Your Own Applications and Extending the Existing Ones
 
 @product@ is based on the Java platform and can be extended by adding new
 applications, customizing existing applications, modifying its behavior, or
@@ -67,25 +71,25 @@ expanding or customizing @product@'s features:
 
 1.  Developing a new full-blown web application. The most common way to develop
     web applications for @product@ is with
-    [portlets](/develop/tutorials/-/knowledge_base/7-1/portlets),
+    [portlets](/docs/7-1/tutorials/-/knowledge_base/t/portlets),
     because they integrate well
     with other existing applications. You are not, however, limited to portlets
     if you don't need to integrate your apps with others.
-2.  [Customizing an existing web application or feature](/develop/tutorials/-/knowledge_base/7-1/customizing).
+2.  [Customizing an existing web application or feature](/docs/7-1/tutorials/-/knowledge_base/t/customizing).
     @product@ is designed to
     be extended. Many extension points can be leveraged to modify existing
     behavior, and most of these can be developed through a single Java class
     with some annotations (more details later).
 3.  Creating a new
-    [web service](/develop/tutorials/-/knowledge_base/7-1/web-services)
+    [web service](/docs/7-1/tutorials/-/knowledge_base/t/web-services)
     for an external system, a mobile app, an IoT
     device, or anything else.
-4.  Developing a [mobile app](/develop/tutorials/-/knowledge_base/7-0/mobile)
+4.  Developing a [mobile app](/docs/7-0/tutorials/-/knowledge_base/t/mobile)
     that leverages Liferay as its back-end, which you can write in a fraction of
     the normal time thanks to Liferay Screens and
-    [Liferay Mobile SDK](/develop/tutorials/-/knowledge_base/7-0/mobile-sdk).
+    [Liferay Mobile SDK](/docs/7-0/tutorials/-/knowledge_base/t/mobile-sdk).
 5.  Developing a custom 
-    [theme](/develop/tutorials/-/knowledge_base/7-1/introduction-to-themes)
+    [theme](/docs/7-1/tutorials/-/knowledge_base/t/introduction-to-themes)
     that adapts the look and feel of the platform to
     the visual needs of your project.
 

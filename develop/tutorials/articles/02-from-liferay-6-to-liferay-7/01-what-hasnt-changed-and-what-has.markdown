@@ -1,4 +1,8 @@
-# What Hasn't Changed and What Has [](id=whats-changed-and-what-hasnt)
+---
+header-id: whats-changed-and-what-hasnt
+---
+
+# What Hasn't Changed and What Has
 
 Liferay 7.0 was a new major version of the Liferay platform and as such it
 included many improvements over previous versions. Having said that, most of the
@@ -23,15 +27,15 @@ different presentation, if desired.
 many of their classes have moved to new packages, as part of the modularization
 effort.
 
-4. [Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/liferay-ide)
+4. [Liferay @ide@](/docs/7-1/tutorials/-/knowledge_base/t/liferay-ide)
 is still the preferred tool to develop for Liferay, even though you are still
 free to use tools that best fit your needs.
 
-5. [Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder)
+5. [Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/service-builder)
 and other developer tools and libraries continue to work as they have in 6.2.
 
 6. Traditional plugins for portlets and hooks still work (once they're
-adapted to @product-ver@'s API) through a [compatibility layer](/develop/tutorials/-/knowledge_base/7-1/using-the-wab-generator).
+adapted to @product-ver@'s API) through a [compatibility layer](/docs/7-1/tutorials/-/knowledge_base/t/using-the-wab-generator).
 
 Here are some key changes of interest to existing Liferay developers:
 
@@ -42,7 +46,7 @@ features, and associated APIs have been extracted as OSGi modules. You can
 choose which ones to deploy and use.
 
 2. Adoption of modern OSGi standards:
-[OSGi is a set of standards for building modular systems](/develop/tutorials/-/knowledge_base/7-1/modularity-and-osgi).
+[OSGi is a set of standards for building modular systems](/docs/7-1/tutorials/-/knowledge_base/t/modularity-and-osgi).
 It's very powerful. Although it was previously difficult to learn and use, its
 modernized standards, such as Declarative Services, have made learning and using
 it much easier.
@@ -57,7 +61,7 @@ them.
 consistent; it's based on the standard `@Component` annotation instead of
 declarations in `portal.properties` or `portlet.xml`. Note, previous
 registration mechanisms have been preserved where possible. See the
-[Breaking Changes](/develop/reference/-/knowledge_base/7-1/breaking-changes)
+[Breaking Changes](/docs/7-1/reference/-/knowledge_base/r/breaking-changes)
 article to examine where extensions and configurations that have not kept
 backwards compatibility.
 
@@ -67,28 +71,28 @@ done as Ext Plugins) did not have. Modules don't have these limitations and are
 much more powerful than plugins ever were.
 
 7. Complete integration of Liferay specific tools (such as Service
-Builder) within [Maven](/develop/tutorials/-/knowledge_base/7-1/maven)
-and [Gradle](/develop/reference/-/knowledge_base/7-1/gradle).
+Builder) within [Maven](/docs/7-1/tutorials/-/knowledge_base/t/maven)
+and [Gradle](/docs/7-1/reference/-/knowledge_base/r/gradle).
 Additionally we've adopted some new tools such as bnd.
 
 8. The Plugins SDK is no longer available. Visit the
-[Deprecated Apps in 7.1: What To Do](/discover/deployment/-/knowledge_base/7-1/deprecated-apps-in-7-1-what-to-do#foundation)
+[Deprecated Apps in 7.1: What To Do](/docs/7-1/deploy/-/knowledge_base/d/deprecated-apps-in-7-1-what-to-do#foundation)
 article for more information on the Plugins SDK removal.
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace),
+[Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace),
 is now Liferay's opinionated development environment.
 
 Since the modularization of the Liferay web application is the change most
 relevant to you as a developer, let's dig deeper into that change and how it
 affects Liferay's architecture.
 
-## Embracing a Modular Architecture [](id=embracing-a-modular-architecture)
+## Embracing a Modular Architecture
 
 The largest improvement in Liferay's architecture is the adoption of a modular
 development paradigm. Within each Liferay module (or group of modules that form
 an app), as well as within what remains as Liferay's core, the existing great
 characteristics of previous versions of Liferay prevail.
 
-### Tiered Architecture [](id=tiered-architecture)
+### Tiered Architecture
 
 Liferay Portal 6's architecture diagrams often focused on the tiers for the
 frontend, services layer (for the business logic), and persistence layer (mostly
@@ -100,26 +104,26 @@ embraced throughout the modularization effort.
 The most significant change (and improvement) over this architecture is that the
 portal is no longer a single large Java EE Web Application. Liferay Portal has
 been broken down into many modules to benefit from the
-[Modular Development Paradigm](/develop/tutorials/-/knowledge_base/7-1/the-benefits-of-modularity).
+[Modular Development Paradigm](/docs/7-1/tutorials/-/knowledge_base/t/the-benefits-of-modularity).
 Those benefits are described in the next section. The modules are often grouped
 into apps (such as Wiki or Message Boards) and the main apps are grouped into
 suites (such as Web Experience, Collaboration, and Forms & Workflow).
 
-### Modular Architecture [](id=modular-architecture)
+### Modular Architecture
 
 The figure below represents @product-ver@'s architecture from a structural
 perspective.
 
 ![Figure 2: @product-ver@ is composed of the Liferay Core, independent application modules, and App Suites, each with their own set of application and framework modules.](../../images/from-liferay-6-core-suites-and-apps.png)
 
-#### Liferay Core [](id=liferay-core)
+#### Liferay Core
 
 As its name implies, it's @product-ver@'s central and most important part. The
 Liferay Core is a Java EE application in charge of bootstrapping the system and
 receiving and delegating all requests. It also contains Liferay's OSGi Engine on
 top of which all applications run.
 
-#### Foundation [](id=foundation)
+#### Foundation
 
 The Foundation suite sits on top of the core, providing administrative
 interfaces and familiar development building blocks. It includes modules for
@@ -132,25 +136,25 @@ Most of the apps, frameworks, and APIs you've come to know and love have been
 aggregated in App Suites. The suites are available in Liferay bundles and are
 also available on the Marketplace. Here are the different App Suites:
 
-#### Liferay Web Experience [](id=liferay-web-experience)
+#### Liferay Web Experience
 
 Contains apps such as Web Content and Site management, Web Content Display,
 Asset Publisher, and Breadcrumbs and features and frameworks such as Application
 Display Templates, Tags, and Recycle Bin.
 
-#### Liferay Collaboration [](id=liferay-collaboration)
+#### Liferay Collaboration
 
 Comprises Liferay's social apps and collaboration apps, such as Message Boards,
 Wiki, and Blogs. It also contains Liferay's Documents & Media Library.
 
-#### Liferay Forms and Workflow [](id=liferay-forms-and-workflow)
+#### Liferay Forms and Workflow
 
 Provides apps such as Forms (New!), Dynamic Data Lists, Kaleo Workflow, and
 Calendar. It also contains the Dynamic Data Mapping framework used by Web
 Content and Documents & Media to provide custom form and templating
 capabilities.
 
-#### Independent Apps [](id=independent-apps)
+#### Independent Apps
 
 Last but not least, Liferay's independent apps and modules also play a part.
 They provide unique functionality and stand on their own; it would be unnatural
@@ -163,12 +167,12 @@ modules that depend on and communicate with each other. And you as a third-party
 developer can create and deploy your own modules into the mix.
 
 You can continue developing traditional WAR-style apps for Liferay too.
-The [Portlet Compatibility Layer](/develop/tutorials/-/knowledge_base/7-1/using-the-wab-generator)
+The [Portlet Compatibility Layer](/docs/7-1/tutorials/-/knowledge_base/t/using-the-wab-generator)
 converts each plugin WAR to a Web Application Bundle (WAB), which is a module. 
 
 Let's consider the structure of a @product@ modular app.
 
-### The Structure of a Modular App [](id=the-structure-of-an-app)
+### The Structure of a Modular App
 
 As mentioned, each app can be formed by one or more modules. This section
 explains the most common way to structure an app.

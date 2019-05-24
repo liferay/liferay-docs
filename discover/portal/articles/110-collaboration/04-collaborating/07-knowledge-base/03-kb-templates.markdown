@@ -1,4 +1,8 @@
-# Knowledge Base Templates [](id=knowledge-base-templates)
+---
+header-id: knowledge-base-templates
+---
+
+# Knowledge Base Templates
 
 Templates give users a starting point. For example, you can create templates
 that contain default headers or other content for articles. Templates help
@@ -8,18 +12,14 @@ To navigate to this app, open the Menu
 (![Menu](../../../../images/icon-menu.png)) and go to Site Administration
 (the menu for your Site) &rarr; *Content* &rarr; *Knowledge Base*. 
 
-+$$$
-
-**Note:** To access Knowledge Base in Site Administration, a Role must have the 
-permission *Knowledge Base* &rarr; *Access in Site Administration*. To add or 
-act on articles, folders, or suggestions, the Site administrator must grant the 
-appropriate permissions using the Permissions window in Knowledge Base. 
-
-$$$
+| **Note:** To access Knowledge Base in Site Administration, a Role must have the
+| permission *Knowledge Base* &rarr; *Access in Site Administration*. To add or
+| act on articles, folders, or suggestions, the Site administrator must grant the
+| appropriate permissions using the Permissions window in Knowledge Base.
 
 ![Figure 1: The Knowledge Base app's Templates tab.](../../../../images/kb-admin-templates.png)
 
-## Creating Templates [](id=creating-templates)
+## Creating Templates
 
 To create a new template, follow these steps:
 
@@ -40,7 +40,7 @@ To create a new template, follow these steps:
 
 ![Figure 2: The New Template form.](../../../../images/kb-admin-new-template.png)
 
-## Managing Templates [](id=managing-templates)
+## Managing Templates
 
 Each template appears in a list in the Templates tab. You can take the following 
 actions on each template via its Actions button 

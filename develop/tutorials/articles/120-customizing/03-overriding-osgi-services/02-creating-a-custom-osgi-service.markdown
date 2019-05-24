@@ -1,7 +1,11 @@
-# Creating a Custom OSGi Service [](id=creating-a-custom-osgi-service)
+---
+header-id: creating-a-custom-osgi-service
+---
+
+# Creating a Custom OSGi Service
 
 It's time to implement your OSGi service. Make sure to
-[examine the service and service reference details](/develop/tutorials/-/knowledge_base/7-1/examining-an-osgi-service-to-override),
+[examine the service and service reference details](/docs/7-1/tutorials/-/knowledge_base/t/examining-an-osgi-service-to-override),
 if you haven't done so already. Here you'll create a custom service that
 implements the service interface, declares it an OSGi service of that type, and
 makes it the best match for binding with other components. 
@@ -40,10 +44,10 @@ service.
 
 Here are the steps to create a custom OSGi service:
 
-1.  [Create a module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development). 
+1.  [Create a module](/docs/7-1/tutorials/-/knowledge_base/t/starting-module-development). 
 
 2.  Create your custom service class so that it `implements` the
-    [service interface](/develop/tutorials/-/knowledge_base/7-1/examining-an-osgi-service-to-override#step-1-copy-the-service-interface-name)
+    [service interface](/docs/7-1/tutorials/-/knowledge_base/t/examining-an-osgi-service-to-override#step-1-copy-the-service-interface-name)
     you want. In the example above, `CustomServiceImpl implements SomeService`.
     Step 5 (later) demonstrates implementing the interface methods. 
 
@@ -63,7 +67,7 @@ Here are the steps to create a custom OSGi service:
 4.  If you want to invoke the existing service implementation, 
     declare a field that uses a Declarative Services reference to the existing
     service. Use the
-    [`component.name` you copied when you examined the service](/develop/tutorials/-/knowledge_base/7-1/examining-an-osgi-service-to-override#step-2-copy-the-existing-service-name)
+    [`component.name` you copied when you examined the service](/docs/7-1/tutorials/-/knowledge_base/t/examining-an-osgi-service-to-override#step-2-copy-the-existing-service-name)
     to target the existing service. The example above refers to an existing
     service like this:
 
@@ -81,13 +85,13 @@ Here are the steps to create a custom OSGi service:
     original service implementation.
 
 6.  Register your custom service with the OSGi runtime framework by
-    [deploying your module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#building-and-deploying-a-module).
+    [deploying your module](/docs/7-1/tutorials/-/knowledge_base/t/starting-module-development#building-and-deploying-a-module).
 
 Components that reference the service type you implemented and whose reference
 policy option is `greedy` bind to your custom service immediately. Components
 bound to an existing service and whose reference policy option is `reluctant`
 can be dynamically reconfigured to use your service. That's demonstrated next. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[OSGi Services and Dependency Injection with Declarative Services](/develop/tutorials/-/knowledge_base/7-1/osgi-services-and-dependency-injection-with-declarative-services)
+[OSGi Services and Dependency Injection with Declarative Services](/docs/7-1/tutorials/-/knowledge_base/t/osgi-services-and-dependency-injection-with-declarative-services)

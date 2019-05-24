@@ -1,4 +1,8 @@
-# Defining Ordering of Service Entity Instances [](id=defining-ordering-of-service-entity-instances)
+---
+header-id: defining-ordering-of-service-entity-instances
+---
+
+# Defining Ordering of Service Entity Instances
 
 Often, you want to retrieve multiple instances of a given entity and list them
 in a particular order. The `service.xml` file lets you specify the default order

@@ -1,4 +1,8 @@
-# Assets: Integrating with Liferay's Framework [](id=assets-integrating-with-liferays-framework)
+---
+header-id: assets-integrating-with-liferays-framework
+---
+
+# Assets: Integrating with Liferay's Framework
 
 The asset framework transforms entities into a common format that can be
 published anywhere in your Site. Web content articles, blog posts, wiki

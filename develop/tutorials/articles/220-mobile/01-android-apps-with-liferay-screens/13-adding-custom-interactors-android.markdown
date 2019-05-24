@@ -1,10 +1,14 @@
-# Adding Custom Interactors to Android Screenlets [](id=adding-custom-interactors-to-android-screenlets)
+---
+header-id: adding-custom-interactors-to-android-screenlets
+---
+
+# Adding Custom Interactors to Android Screenlets
 
 Interactors are Screenlet components that implement server communication for a 
 specific use case. For example, the Login Screenlet's interactor calls the 
 Liferay Mobile SDK service that authenticates a user to the portal. Similarly, 
 the Interactor for 
-[the Add Bookmark Screenlet](/develop/tutorials/-/knowledge_base/7-1/creating-android-screenlets) 
+[the Add Bookmark Screenlet](/docs/7-1/tutorials/-/knowledge_base/t/creating-android-screenlets) 
 calls the Liferay Mobile SDK service that adds a bookmark to the Bookmarks 
 portlet. 
 
@@ -23,7 +27,7 @@ complete code in the
 Note that this example implements the custom interactor in an inner class of an 
 activity. 
 
-## Implementing a Custom Interactor [](id=implementing-a-custom-interactor)
+## Implementing a Custom Interactor
 
 1. Implement your custom interactor. You must inherit the original interactor's 
    interface, as shown here: 
@@ -66,11 +70,11 @@ Great! Now you know how to implement custom interactors for Android Screenlets.
 The next example builds on this by showing you how to access non-Liferay 
 backends with a custom interactor.
 
-## Using Custom Interactors to Access Other Backends [](id=using-custom-interactors-to-access-other-backends)
+## Using Custom Interactors to Access Other Backends
 
 Custom interactors are also capable of communicating with non-Liferay backends. 
 The following example illustrates this by creating a custom interactor for the 
-[Add Bookmark Screenlet](/develop/tutorials/-/knowledge_base/7-1/creating-android-screenlets) 
+[Add Bookmark Screenlet](/docs/7-1/tutorials/-/knowledge_base/t/creating-android-screenlets) 
 that can store bookmarks at 
 [Delicious](https://delicious.com). 
 You can find this example's complete code 
@@ -160,8 +164,8 @@ You can find this example's complete code
 Awesome! Now you know how to create a custom interactor that can communicate 
 with a non-Liferay backend. This opens up even more possibilities for your apps. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/7-1/architecture-of-liferay-screens-for-android)
+[Architecture of Liferay Screens for Android](/docs/7-1/tutorials/-/knowledge_base/t/architecture-of-liferay-screens-for-android)
 
-[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/7-1/creating-android-screenlets)
+[Creating Android Screenlets](/docs/7-1/tutorials/-/knowledge_base/t/creating-android-screenlets)

@@ -1,10 +1,14 @@
-# Upgrading Service Wrappers [](id=upgrading-service-wrappers)
+---
+header-id: upgrading-service-wrappers
+---
+
+# Upgrading Service Wrappers
 
 Upgrading traditional 
-[service wrapper hook plugins](/develop/tutorials/-/knowledge_base/6-2/overriding-a-portal-service-using-a-hook) 
+[service wrapper hook plugins](/docs/6-2/tutorials/-/knowledge_base/t/overriding-a-portal-service-using-a-hook) 
 to @product-ver@ is quick and easy. 
 
-1.  Use [Liferay @ide@'s Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-1/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+1.  Use [Liferay @ide@'s Code Upgrade Tool](/docs/7-1/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
     to adapt the plugin's code to @product-ver@'s API. 
 
 2.  Deploy the plugin. 
@@ -12,10 +16,10 @@ to @product-ver@ is quick and easy.
 @product@'s Plugin Compatibility Layer converts the plugin WAR to a Web
 Application Bundle (WAB) and installs it to Liferay's OSGi Runtime. 
 
-## Related Articles [](id=related-articles)
+## Related Articles
 
-[Overriding Liferay Services \(Service Wrappers\)](/develop/tutorials/-/knowledge_base/7-1/customizing-liferay-services-service-wrappers)
+[Overriding Liferay Services \(Service Wrappers\)](/docs/7-1/tutorials/-/knowledge_base/t/customizing-liferay-services-service-wrappers)
 
-[Resolving a Plugin's Dependencies](/develop/tutorials/-/knowledge_base/7-1/resolving-a-plugins-dependencies)
+[Resolving a Plugin's Dependencies](/docs/7-1/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies)
 
-[Upgrading the Liferay Maven Build](/develop/tutorials/-/knowledge_base/7-1/upgrading-the-liferay-maven-build)
+[Upgrading the Liferay Maven Build](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-the-liferay-maven-build)

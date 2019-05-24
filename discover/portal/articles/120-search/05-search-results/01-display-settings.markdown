@@ -1,4 +1,8 @@
-# Display Settings [](id=display-settings)
+---
+header-id: display-settings
+---
+
+# Display Settings
 
 The Search Results widget's default display is a paginated list. Each list item
 is a summarized hit to a search query. Click on a specific result to look at it
@@ -58,5 +62,5 @@ with this URL:
         http://localhost:8080/web/guest/search?q=test&delta=10
 
 For further reading, check out how to 
-[return suggestions for better search terms](/discover/portal/-/knowledge_base/7-1/searching-for-assets#search-suggestions)
+[return suggestions for better search terms](/docs/7-1/user/-/knowledge_base/u/searching-for-assets#search-suggestions)
 (for example, "Did you mean...") when not enough results are returned initially.

@@ -1,4 +1,8 @@
-# Action: Jump to Page [](id=action-jump-to-page)
+---
+header-id: action-jump-to-page
+---
+
+# Action: Jump to Page
 
 Use a Jump to Page rule to navigate automatically to a specific page in the form
 based on one or more conditions. This is useful if some pages don't apply to all
@@ -20,30 +24,26 @@ To follow the example here,
 
 4.  Create a third form page called *Final Confirmation*.
 
-+$$$
-
-**Example:** There's a question on the *Team Information* page of the dog sled
-race registration form that asks *Are you a returning racer with the same team?*
-If you select *Yes*, when you click the form's *Next* button, you skip to
-the final page of the form, since there's no need to fill out your animal's name
-again. Their monogrammed T-shirts will be ready at the start of the race.
-
-To configure the Jump to Page rule, 
-
-1. Open the Rules tab of the Edit Form page and click the Add
-   (![Add](../../../images/icon-add.png)) button.
-
-2. Define the rule:
-    - If field *Are you a returning racer with the same team?* is equal to
-        *Yes*, Jump to Page *Final Confirmation*.
-
-    ![Figure 1: Build form rules quickly by defining your conditions and actions.](../../../images/forms-jump-to-page.png)
-
-    - Save the rule.
-
-    ![Figure 2: Once a rule is saved, it is displayed so that you can easily understand what it does.](../../../images/forms-jump-to-page2.png)
-
-$$$
+| **Example:** There's a question on the *Team Information* page of the dog sled
+| race registration form that asks *Are you a returning racer with the same team?*
+| If you select *Yes*, when you click the form's *Next* button, you skip to
+| the final page of the form, since there's no need to fill out your animal's name
+| again. Their monogrammed T-shirts will be ready at the start of the race.
+| 
+| To configure the Jump to Page rule,
+| 
+| 1. Open the Rules tab of the Edit Form page and click the Add
+|    (![Add](../../../images/icon-add.png)) button.
+| 
+| 2. Define the rule:
+|     - If field *Are you a returning racer with the same team?* is equal to
+|         *Yes*, Jump to Page *Final Confirmation*.
+| 
+|     ![Figure 1: Build form rules quickly by defining your conditions and actions.](../../../images/forms-jump-to-page.png)
+| 
+|     - Save the rule.
+| 
+|     ![Figure 2: Once a rule is saved, it is displayed so that you can easily understand what it does.](../../../images/forms-jump-to-page2.png)
 
 If you use an *is not equal to* condition for form fields on two different
 pages, the condition is checked after leaving the page of the first form field,

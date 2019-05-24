@@ -1,4 +1,8 @@
-# Installing @product@ on JBoss EAP [](id=installing-product-on-jboss-eap)
+---
+header-id: installing-product-on-jboss-eap
+---
+
+# Installing @product@ on JBoss EAP
 
 Installing @product@ on JBoss EAP 7.1 takes three steps:
 
@@ -13,13 +17,13 @@ Before proceeding, download these files from the
 - Dependencies ZIP file
 - OSGi JARs ZIP file
 
-[*Liferay Home*](/discover/deployment/-/knowledge_base/7-0/installing-liferay#liferay-home)
+[*Liferay Home*](/docs/7-0/deploy/-/knowledge_base/d/installing-liferay#liferay-home)
 is the folder containing your JBoss server folder. After installing and
 deploying @product@, the Liferay Home folder contains the JBoss server folder as
 well as `data`, `deploy`, `logs`, and `osgi` folders. `$JBOSS_HOME` refers to
 your JBoss server folder. This folder is usually named `jboss-eap-[version]`.
 
-## Installing Dependencies [](id=installing-dependencies)
+## Installing Dependencies
 
 @product@ depends on several Liferay-specific and third-party JARs. 
 Download and install the required JARs as described below.
@@ -124,7 +128,7 @@ Download and install the required JARs as described below.
 
 Great! You have your `.jar` files ready.
 
-## Running @product@ on JBoss EAP in Standalone Mode vs. Domain Mode [](id=running-product-on-jboss-eap-in-standalone-mode-vs-domain-mode)
+## Running @product@ on JBoss EAP in Standalone Mode vs. Domain Mode
 
 JBoss EAP can be launched in either *standalone* mode or *domain* mode. Domain
 mode allows multiple application server instances to be managed from a single
@@ -144,18 +148,14 @@ may not be using them.
 
 The command line interface is recommended for domain mode deployments.
 
-+$$$
+| **Note:** This does not prevent @product@ from running in a clustered
+| environment on multiple JBoss servers. You can set up a cluster of @product@
+| instances running on JBoss EAP servers running in standalone mode. Please refer
+| to the
+| [@product@ Clustering](/docs/7-1/deploy/-/knowledge_base/d/liferay-clustering)
+| section for information on setting up a @product@ cluster.
 
-**Note:** This does not prevent @product@ from running in a clustered
-environment on multiple JBoss servers. You can set up a cluster of @product@
-instances running on JBoss EAP servers running in standalone mode. Please refer
-to the
-[@product@ Clustering](/discover/deployment/-/knowledge_base/7-1/liferay-clustering)
-section for information on setting up a @product@ cluster.
-
-$$$
-
-## Configuring JBoss [](id=configuring-jboss)
+## Configuring JBoss
 
 Configuring JBoss to run @product@ includes these things:
 
@@ -247,12 +247,8 @@ standalone domain's configuration script file `standalone.conf`
 - Set the preferred protocol stack
 - Increase the default amount of memory available.
 
-+$$$
-
-**Important:** For @product@ to work properly, the application server JVM must 
-use the `GMT` time zone and `UTF-8` file encoding. 
-
-$$$
+| **Important:** For @product@ to work properly, the application server JVM must
+| use the `GMT` time zone and `UTF-8` file encoding.
 
 Make the following edits as applicable to your operating system:
 
@@ -283,29 +279,25 @@ Make the following edits as applicable to your operating system:
 
         JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Djboss.as.management.blocking.timeout=480 -Duser.timezone=GMT -Xmx2048m -XX:MaxMetaspaceSize=512m"
 
-+$$$
-
-**Note:** If you plan on using the IBM JDK with your JBoss server, you must
-complete some additional steps. First, navigate to the
-`$JBOSS_HOME/modules/com/liferay/portal/main/module.xml` file and insert the
-following dependency within the `<dependencies>` element:
-
-    <module name="ibm.jdk" />
-
-Then navigate to the
-`$JBOSS_HOME/modules/system/layers/base/sun/jdk/main/module.xml` file and
-insert the following path names inside the `<paths>...</paths>` element:
-
-    <path name="com/sun/crypto" />
-    <path name="com/sun/crypto/provider" />
-    <path name="com/sun/image/codec/jpeg" />
-    <path name="com/sun/org/apache/xml/internal/resolver" />
-    <path name="com/sun/org/apache/xml/internal/resolver/tools" />
-
-The added paths resolve issues with portal deployment exceptions and image
-uploading problems. 
-
-$$$
+| **Note:** If you plan on using the IBM JDK with your JBoss server, you must
+| complete some additional steps. First, navigate to the
+| `$JBOSS_HOME/modules/com/liferay/portal/main/module.xml` file and insert the
+| following dependency within the `<dependencies>` element:
+| 
+|     <module name="ibm.jdk" />
+| 
+| Then navigate to the
+| `$JBOSS_HOME/modules/system/layers/base/sun/jdk/main/module.xml` file and
+| insert the following path names inside the `<paths>...</paths>` element:
+| 
+|     <path name="com/sun/crypto" />
+|     <path name="com/sun/crypto/provider" />
+|     <path name="com/sun/image/codec/jpeg" />
+|     <path name="com/sun/org/apache/xml/internal/resolver" />
+|     <path name="com/sun/org/apache/xml/internal/resolver/tools" />
+| 
+| The added paths resolve issues with portal deployment exceptions and image
+| uploading problems.
 
 **Checkpoint:**
 
@@ -320,11 +312,11 @@ settings.
 The prescribed script modifications are now complete for your @product@
 installation on JBoss. Next you'll configure the database and mail. 
 
-## Database Configuration [](id=database-configuration)
+## Database Configuration
 
 The easiest way to handle your database configuration is to let @product@ manage
 your data source. The 
-[Basic Configuration](/discover/deployment/-/knowledge_base/7-1/installing-liferay#using-liferays-setup-wizard)
+[Basic Configuration](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#using-liferays-setup-wizard)
 page lets you configure @product@'s built-in data source. If you want to use the
 built-in data source, skip this section.
 
@@ -347,13 +339,9 @@ If you want JBoss to manage your data source, follow these steps:
     Be sure to replace the database name (i.e., `lportal`), user name, and
     password with the appropriate values. 
 
-    +$$$
-
-    **Note:** If you must change your datasource `jndi-name` to something
-    different, you must also edit the `datasource` element in the
-    `<default-bindings>` tag.
-
-    $$$
+    | **Note:** If you must change your datasource `jndi-name` to something
+    | different, you must also edit the `datasource` element in the
+    | `<default-bindings>` tag.
 
 2.  Add your driver to the `standalone.xml` file's `<drivers>` element also
     found within the `<datasources>` element.
@@ -389,12 +377,12 @@ If you want JBoss to manage your data source, follow these steps:
 
 Now that you've configured your data source, the mail session is next. 
 
-## Mail Configuration [](id=mail-configuration)
+## Mail Configuration
 
 As with database configuration, the easiest way to configure mail is to let
 @product@ handle your mail session. If you want to use @product@'s built-in mail
 session, skip this section and
-[configure the mail session](/discover/deployment/-/knowledge_base/7-1/installing-liferay#configuring-mail)
+[configure the mail session](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#configuring-mail)
 in the Control Panel.
 
 If you want to manage your mail session with JBoss, follow these steps:
@@ -424,7 +412,7 @@ If you want to manage your mail session with JBoss, follow these steps:
  
 You've got mail! Next, you'll deploy @product@ to your JBoss app server.
 
-## Deploying @product@ [](id=deploying-product)
+## Deploying @product@
 
 1.  If the folder `$JBOSS_HOME/standalone/deployments/ROOT.war` already exists
     in your JBoss installation, delete all of its subfolders and files.
@@ -443,19 +431,15 @@ You've got mail! Next, you'll deploy @product@ to your JBoss app server.
 
 Congratulations; you've now deployed @product@ on JBoss!
 
-+$$$
-
-After deploying @product@, you may see excessive warnings and log messages, such
-as the ones below, involving `PhaseOptimizer`. These are benign and can be
-ignored. Make sure to adjust your app server's logging level or log filters to
-avoid excessive benign log messages. 
-
-    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
-    WARNING: Skipping pass gatherExternProperties
-    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
-    WARNING: Skipping pass checkControlFlow
-    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
-    INFO: pass supports: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, modules, exponent operator (**), async function, trailing comma in param list]
-    current AST contains: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, exponent operator (**), async function, trailing comma in param list, object literals with spread, object pattern rest]
-
-$$$
+| After deploying @product@, you may see excessive warnings and log messages, such
+| as the ones below, involving `PhaseOptimizer`. These are benign and can be
+| ignored. Make sure to adjust your app server's logging level or log filters to
+| avoid excessive benign log messages.
+| 
+|     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+|     WARNING: Skipping pass gatherExternProperties
+|     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+|     WARNING: Skipping pass checkControlFlow
+|     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+|     INFO: pass supports: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, modules, exponent operator (**), async function, trailing comma in param list]
+|     current AST contains: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, exponent operator (**), async function, trailing comma in param list, object literals with spread, object pattern rest]

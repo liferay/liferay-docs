@@ -1,4 +1,8 @@
-# npm Samples [](id=npm-samples)
+---
+header-id: npm-samples
+---
+
+# npm Samples
 
 This section focuses on Liferay npm sample portlets built with Gradle. You can
 view these samples by visiting the `apps/npm` folder corresponding to your
@@ -12,14 +16,10 @@ preferred build tool:
 - [Maven sample apps](https://github.com/liferay/liferay-blade-samples/tree/7.1/maven/apps/npm)
 -->
 
-+$$$
-
-**Note:** When building the npm samples, an error can occur caused by the limit
-of open files allowed by your operating system. Consult your operating system
-vendor's documentation to learn how to configure the maximum number of open
-files for your OS.
-
-$$$
+| **Note:** When building the npm samples, an error can occur caused by the limit
+| of open files allowed by your operating system. Consult your operating system
+| vendor's documentation to learn how to configure the maximum number of open
+| files for your OS.
 
 The following npm samples are documented:
 

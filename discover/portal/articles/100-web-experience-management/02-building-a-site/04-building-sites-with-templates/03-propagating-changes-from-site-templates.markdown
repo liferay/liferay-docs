@@ -1,4 +1,8 @@
-# Propagating Changes from Site Templates to Sites [](id=propagating-changes-from-site-templates-to-sites)
+---
+header-id: propagating-changes-from-site-templates-to-sites
+---
+
+# Propagating Changes from Site Templates to Sites
 
 Site Template administrators can add, update, or delete Site Template pages.
 Changes made to a Site Template can be propagated to Sites whose page sets are
@@ -16,7 +20,7 @@ In this section, you'll learn about the propagation of changes from Site
 templates to Sites and discuss the options available to Site administrators and 
 Site template administrators.
 
-## Site Template Page Behavior [](id=site-template-page-behavior)
+## Site Template Page Behavior
 
 If a Site's page set has been created from a Site template and the propagation
 of changes from the Site template is enabled, Site administrators can add new
@@ -39,7 +43,7 @@ in the Control Menu with the following message:
 
 ![Figure 1: You can click the Information icon to view important information about your Site template.](../../../../images/site-template-update-message.png)
 
-## Merging and Reseting Changes [](id=merging-and-reseting-changes)
+## Merging and Reseting Changes
 
 If the Site administrator clicks the *Reset Changes* button, changes are
 propagated from the Site template page to the corresponding Site page that was
@@ -86,16 +90,12 @@ that has a Wiki app with lots of wiki articles, the wiki articles are copied
 from the Site template's scope to the Site's scope and the Site's Wiki app is
 updated with the IDs of the copied wiki articles.
 
-+$$$
-
-**Important:** App data, related resources, and permissions on resources are
-only copied from a Site template to a Site when that Site is *first* created
-based on the template. No changes made in a a template's portlet data, related
-resources, or permissions are propagated to the Site after the Site is created.
-Neither are such changes propagated to a Site by the *Reset* or *Reset and
-Propagate* features.
-
-$$$
+| **Important:** App data, related resources, and permissions on resources are
+| only copied from a Site template to a Site when that Site is *first* created
+| based on the template. No changes made in a a template's portlet data, related
+| resources, or permissions are propagated to the Site after the Site is created.
+| Neither are such changes propagated to a Site by the *Reset* or *Reset and
+| Propagate* features.
 
 For example, consider a Site template administrator who includes a Message
 Boards app as part of a Site template. They even create Message Board

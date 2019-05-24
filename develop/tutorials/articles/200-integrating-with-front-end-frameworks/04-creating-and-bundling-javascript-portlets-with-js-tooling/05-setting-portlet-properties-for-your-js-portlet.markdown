@@ -1,4 +1,8 @@
-# Configuring Portlet Properties for Your JS Widget [](id=configuring-portlet-properties-for-your-js-portlet)
+---
+header-id: configuring-portlet-properties-for-your-js-portlet
+---
+
+# Configuring Portlet Properties for Your JS Widget
 
 Follow these steps to configure your portlet's properties:
 
@@ -23,7 +27,7 @@ Follow these steps to configure your portlet's properties:
 
 Great! Now you know how to configure your JavaScript portlet's properties. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 - [Configuring System Settings and Instance Settings for Your JavaScript Widget](/docs/7-2/frameworks/-/knowledge_base/f/configuring-system-settings-and-instance-settings-for-your-js-portlet)
 - [Localizing Your Widget](/docs/7-2/frameworks/-/knowledge_base/f/localizing-your-portlet)

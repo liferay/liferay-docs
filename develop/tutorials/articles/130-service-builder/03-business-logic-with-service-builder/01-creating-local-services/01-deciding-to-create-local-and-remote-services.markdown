@@ -1,6 +1,10 @@
-# Deciding to Create Local and Remote Services [](id=deciding-to-create-local-and-remote-services)
+---
+header-id: deciding-to-create-local-and-remote-services
+---
 
-[Defining your object model](/develop/tutorials/-/knowledge_base/7-1/defining-an-object-relational-map-with-service-builder)
+# Deciding to Create Local and Remote Services
+
+[Defining your object model](/docs/7-1/tutorials/-/knowledge_base/t/defining-an-object-relational-map-with-service-builder)
 involves choosing whether to generate local and or remote service interfaces.
 Local services can only be invoked from the Liferay server on which they're
 deployed. Remote services are accessible to clients outside of the Liferay
@@ -11,7 +15,7 @@ practices described here:
 
 2.  Implement your business logic in `*LocalServiceImpl`. 
 
-3.  [Create corresponding remote services methods](/develop/tutorials/-/knowledge_base/7-1/creating-remote-services)
+3.  [Create corresponding remote services methods](/docs/7-1/tutorials/-/knowledge_base/t/creating-remote-services)
     in your `*ServiceImpl`.
 
 4.  Use the remote service methods to call the local service, wrapping the calls
@@ -23,5 +27,5 @@ practices described here:
 
 If you are turning on local or remote services in your `service.xml` file just
 now, make sure to
-[run Service Builder](/develop/tutorials/-/knowledge_base/7-1/running-service-builder)
+[run Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/running-service-builder)
 again to generate the service interfaces. 

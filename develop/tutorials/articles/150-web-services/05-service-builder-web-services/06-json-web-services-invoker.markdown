@@ -1,4 +1,8 @@
-# JSON Web Services Invoker [](id=json-web-services-invoker)
+---
+header-id: json-web-services-invoker
+---
+
+# JSON Web Services Invoker
 
 With JSON web services, you send a request to a service method with parameters,
 and you receive the result as a JSON object. As straightforward as this seems,
@@ -16,7 +20,7 @@ Invoker does just that!
 
 Liferay's JSON Web Service Invoker helps optimize your JSON Web Services use. 
 
-## Simple Invoker Calls [](id=simple-invoker-calls)
+## Simple Invoker Calls
 
 The Invoker is accessible from the following fixed address:
 
@@ -169,7 +173,7 @@ user's contact ID using the syntax `$user.contactId`.
 Next, see how you can use nested service calls to join information from two
 related objects. 
 
-## Nesting Service Calls [](id=nesting-service-calls)
+## Nesting Service Calls
 
 With nested service calls, you can bind information from related objects 
 together in a JSON object. You can call other services within the same HTTP 
@@ -204,17 +208,13 @@ request to make the preceding nested service call:
 - Lastly, the Invoker injects the contact object referenced by `$contact` into
   the user object's property named `contact`. 
 
-+$$$
-
-**Note:** You must flag parameters that take values from existing variables. To 
-flag a parameter, insert the `@` prefix before the parameter name. 
-
-$$$
+| **Note:** You must flag parameters that take values from existing variables. To
+| flag a parameter, insert the `@` prefix before the parameter name.
 
 Next, you'll learn about filtering object properties so that only the properties
 you need are returned when you invoke a service. 
 
-## Filtering Results [](id=filtering-results)
+## Filtering Results
 
 Many of Liferay's model objects are rich with properties. If you only need a 
 handful of an object's properties for your business logic, making a web service 
@@ -239,7 +239,7 @@ whitelist properties, place the properties in square brackets (e.g.,
 
 Next, you'll learn about making calls in batch. 
 
-## Making Batch Calls [](id=making-batch-calls)
+## Making Batch Calls
 
 When nesting service calls, you invoke multiple services with a single HTTP
 request. This is helpful for gathering related information from the service call
@@ -258,8 +258,8 @@ commands are collectively invoked in a single HTTP request, one after another.
 Great! Now you know how to use Liferay's JSON Web Service Invoker to simplify 
 your JSON calls to Liferay. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Invoking Remote Services](/develop/tutorials/-/knowledge_base/7-1/invoking-remote-services)
+[Invoking Remote Services](/docs/7-1/tutorials/-/knowledge_base/t/invoking-remote-services)
 
-[Invoking JSON Web Services](/develop/tutorials/-/knowledge_base/7-1/invoking-json-web-services)
+[Invoking JSON Web Services](/docs/7-1/tutorials/-/knowledge_base/t/invoking-json-web-services)

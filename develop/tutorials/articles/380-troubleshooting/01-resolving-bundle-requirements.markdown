@@ -1,4 +1,8 @@
-# Resolving Bundle Requirements [](id=resolving-bundle-requirements)
+---
+header-id: resolving-bundle-requirements
+---
+
+# Resolving Bundle Requirements
 
 If one of your bundles needs a package that is not exported by any other bundle
 in the Liferay OSGi runtime, you get a bundle exception. Here's an example
@@ -55,7 +59,7 @@ The `com.liferay.petra.io` module's `build.gradle` file lists its dependencies:
     }
 
 Then use
-[Felix Gogo Shell's `lb command`](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell)
+[Felix Gogo Shell's `lb command`](/docs/7-1/reference/-/knowledge_base/r/using-the-felix-gogo-shell)
 to verify the dependencies are in Liferay's OSGi Runtime:
 
     lb
@@ -91,20 +95,16 @@ requirement and allows the module to resolve and install.
 
 You can resolve your bundle exceptions by following steps similar to these. 
 
-+$$$
+| Note: Bndtools's *Resolve* button can resolve bundle dependencies automatically.
+| You specify the bundles your application requires and Bndtools adds transitive
+| dependencies from your configured artifact repository.
 
-Note: Bndtools's *Resolve* button can resolve bundle dependencies automatically.
-You specify the bundles your application requires and Bndtools adds transitive
-dependencies from your configured artifact repository.
+## Related Topics
 
-$$$
+[Configuring Dependencies](/docs/7-1/tutorials/-/knowledge_base/t/configuring-dependencies)
 
-## Related Topics [](id=related-topics)
+[Adding Third Party Libraries to a Module](/docs/7-1/tutorials/-/knowledge_base/t/adding-third-party-libraries-to-a-module)
 
-[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies)
+[Felix Gogo Shell](/docs/7-1/reference/-/knowledge_base/r/using-the-felix-gogo-shell)
 
-[Adding Third Party Libraries to a Module](/develop/tutorials/-/knowledge_base/7-1/adding-third-party-libraries-to-a-module)
-
-[Felix Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell)
-
-[Resolving a Plugins's Dependencies](/develop/tutorials/-/knowledge_base/7-1/resolving-a-plugins-dependencies)
+[Resolving a Plugins's Dependencies](/docs/7-1/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies)

@@ -1,4 +1,8 @@
-# Benefits of 7.1 for Liferay Portal 6 Developers [](id=benefits-of-liferay-7-for-liferay-6-developers)
+---
+header-id: benefits-of-liferay-7-for-liferay-6-developers
+---
+
+# Benefits of 7.1 for Liferay Portal 6 Developers
 
 More than in any other Liferay release, @product-ver@ centers on you, the
 developer. Liferay's platform was rebuilt in Liferay 7.0, making it easier to
@@ -21,7 +25,7 @@ Here are some key benefits of this release for developers:
 
 Let's consider how they make development easier for you.
 
-## Simpler and Leaner [](id=simpler-and-leaner)
+## Simpler and Leaner
 
 Liferay has always been simple and lean, compared to the proprietary
 alternatives; Liferay 7 widens the gap even more.
@@ -37,7 +41,7 @@ administrators to remove parts they don't need or don't want; this facilitates
 deployment, reduces startup times and memory footprints, and results in more
 efficiencies and performance improvements.
 
-## Modular Development Paradigm [](id=modular-development-paradigm)
+## Modular Development Paradigm
 
 If you have been using Liferay, you've already experienced some of the benefits
 of modular development, thanks to plugins. @product-ver@ takes these benefits to a
@@ -45,7 +49,7 @@ whole new level.
 
 In addition to building plugins as you have previously, you can take advantage
 of a
-[complete module development and runtime system based on OSGi standards](/develop/tutorials/-/knowledge_base/7-1/modularity-and-osgi).
+[complete module development and runtime system based on OSGi standards](/docs/7-1/tutorials/-/knowledge_base/t/modularity-and-osgi).
 @product-ver@ facilitates creating applications of all types by composing and
 reusing modules.
 
@@ -56,7 +60,7 @@ as many modules as you want. The cool thing is that modules can cooperate,
 allowing you to build applications by combining smaller pieces that are easier
 to develop, deploy, maintain, and reuse.
 
-## Enhanced Reusability [](id=enhanced-reusability)
+## Enhanced Reusability
 
 If you have worked on large developments on top of Liferay you have probably
 experienced situations in which you wanted to share a subset of classes from
@@ -71,7 +75,7 @@ specify any or all classes from one module to use from within another module.
 
 @product-ver@ enables greater reusability, both in code and runtime memory,
 several folds. For any desired reusable functionality you just
-[create a module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#creating-a-module)
+[create a module](/docs/7-1/tutorials/-/knowledge_base/t/starting-module-development#creating-a-module)
 (remember, it's just a JAR file with some metadata) with the classes you want
 and deploy it. Other modules need only declare that they use the classes in that
 module (by specifying their packages) and @product-ver@ automatically wires them
@@ -83,7 +87,7 @@ intricate class loaders. The runtime environment uses separate class spaces per
 module; it even accommodates using multiple versions of libraries in the same
 application (as long as they can coexist).
 
-## More Extensible, Easier to Maintain [](id=more-extensible-easier-to-maintain)
+## More Extensible, Easier to Maintain
 
 Whenever we ask Liferay developers what is their favorite characteristic of
 Liferay, "Great extensibility" is one of the top three most popular responses.
@@ -111,49 +115,49 @@ become extensible. You can create simple extension points by just creating an
 interface and annotating a setter method with an annotation (`@Reference`).
 Implementing extensibility has never been easier.
 
-## Optimized for Your Tooling of Choice [](id=optimized-for-your-tooling-of-choice)
+## Optimized for Your Tooling of Choice
 
 @product-ver@ empowers you to use the tools you like.
 
 If you don't have strong preferences and are open to our suggestions, we offer
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace).
+[Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace).
 It provides an opinionated folder structure and build system based on Gradle and
 bnd. Liferay Workspace can be used standalone through the command line or with
-[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/liferay-ide),
+[Liferay @ide@](/docs/7-1/tutorials/-/knowledge_base/t/liferay-ide),
 which runs on Eclipse.
 
 If you have an investment in a specific build tool, such as 
-[Maven](/develop/tutorials/-/knowledge_base/7-1/maven),
+[Maven](/docs/7-1/tutorials/-/knowledge_base/t/maven),
 developing on Liferay will be easier than ever before. We have built
-[Maven plugins](/develop/reference/-/knowledge_base/7-1/maven)
+[Maven plugins](/docs/7-1/reference/-/knowledge_base/r/maven)
 for typical Liferay-specific development tasks (such as using Service Builder)
 and provide a collection of new archetypes.
 
 The Plugins SDK is no longer available for @product-ver@.
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace),
+[Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace),
 is now Liferay's opinionated development environment. You
 can transition from a Plugins SDK by adding it to your workspace and migrating
 projects at your own pace. See the
-[Using a Plugins SDK from Your Workspace](/develop/tutorials/-/knowledge_base/7-0/configuring-a-liferay-workspace#using-a-plugins-sdk-from-your-workspace)
+[Using a Plugins SDK from Your Workspace](/docs/7-0/tutorials/-/knowledge_base/t/configuring-a-liferay-workspace#using-a-plugins-sdk-from-your-workspace)
 article for more information.
 
 Finally, we have also developed a lightweight tool called
-[Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli),
+[Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/blade-cli),
 which facilitates
-[starting new projects from templates](/develop/tutorials/-/knowledge_base/7-1/creating-projects-with-blade-cli) -- it's
+[starting new projects from templates](/docs/7-1/tutorials/-/knowledge_base/t/creating-projects-with-blade-cli) -- it's
 especially useful for Gradle which doesn't have Maven's concept of archetypes.
 Blade CLI also offers 
-[commands](/develop/tutorials/-/knowledge_base/7-1/blade-cli)
+[commands](/docs/7-1/tutorials/-/knowledge_base/t/blade-cli)
 to start/stop the server and deploy and administer modules.
 
-## Powerful Configurability [](id=powerful-configurability)
+## Powerful Configurability
 
 Creating
-[configurable code](/develop/tutorials/-/knowledge_base/7-1/configurable-applications)
+[configurable code](/docs/7-1/tutorials/-/knowledge_base/t/configurable-applications)
 is a breeze with @product-ver@. And applications that use Liferay's new
 Configuration API allow administrators to change the configuration on the fly,
 through an auto-generated user interface called
-[System Settings](/discover/portal/-/knowledge_base/7-1/system-wide-settings).
+[System Settings](/docs/7-1/user/-/knowledge_base/u/system-wide-settings).
 
 Now you understand how @product-ver@ enriches your experience as a developer and
 makes developing apps and customizations fun.

@@ -1,9 +1,13 @@
-# Adding, Editing, and Deleting Users [](id=adding-editing-and-deleting-users)
+---
+header-id: adding-editing-and-deleting-users
+---
+
+# Adding, Editing, and Deleting Users
 
 At the root of managing Users is adding, editing, and deleting them. As long as
 you're the Administrative user, you can do all these things and more. 
 
-## Adding Users [](id=adding-users)
+## Adding Users
 
 Adding Users is straightforward:
 
@@ -17,13 +21,9 @@ and Organizations*.
 3.  Fill out the Add User form and click *Save*. At a minimum, provide a Screen
     Name, First Name, Last Name, and Email Address for the User.
 
-    +$$$
-
-    Note: Screen names and email addresses are not interchangeable. A screen
-    name cannot contain an `@` symbol because it is used in the URL to a user's
-    private page.
-    
-    $$$
+    | Note: Screen names and email addresses are not interchangeable. A screen
+    | name cannot contain an `@` symbol because it is used in the URL to a user's
+    | private page.
 
     The Add User functionality is split over several independent forms. Saving
     the first form creates the user, and then you'll see a success message
@@ -43,7 +43,7 @@ click through the tabs at the top. Peruse the sections for the three tabs
 You don't have to fill anything else out right now. Just note that when the user
 account was created, a password was automatically generated. If Liferay was
 correctly installed and a 
-[mail server was set up](/discover/portal/-/knowledge_base/7-1/server-administration), 
+[mail server was set up](/docs/7-1/user/-/knowledge_base/u/server-administration), 
 an email message with the User's new password was sent to the User's email
 address.
 
@@ -53,7 +53,7 @@ twice.
 
 ![Figure 3: Enter the password twice to manually set the password for a user. If the Password Policy you're using is configured to allow it, select whether to require the user to reset their password the first time they sign in to the portal.](../../../images/usrmgmt-require-password-reset.png)
 
-## Editing Users [](id=editing-users)
+## Editing Users
 
 If you click on *Users and Organizations* in the Control Panel, you'll see your
 own user's account in the list of Users, along with any others. To change
@@ -92,7 +92,7 @@ Most Users can't perform any of the above actions. In fact, most Users won't
 have access to the Control Panel at all. You can perform all of the above
 functions because you have administrative access.
 
-## Deleting Users [](id=deleting-users)
+## Deleting Users
 
 You must be careful when deleting Users. To guard against accidental deletion
 of Users, a two-step process must be followed: deactivate first, then delete.
@@ -114,19 +114,15 @@ of Users, a two-step process must be followed: deactivate first, then delete.
     delete the User. Confirm that you want to delete the User, and now the User
     is gone. This time, it's for real.
 
-+$$$
-
-**Deactivated Users:** Deactivating a user means the user can't log in to the
-portal. He/she has no more permissions in the sites and pages of the portal than
-a guest, although the account still exists in the system. 
-
-Users are reactivated by a portal administrator finding them in the Users table
-(be sure you're filtering the table results by Deactivated users), clicking the
-Actions menu, and selecting Activate. There's no confirmation window for
-activation: they're automatically restored to their former status once Activate
-is clicked.
-
-$$$
+| **Deactivated Users:** Deactivating a user means the user can't log in to the
+| portal. He/she has no more permissions in the sites and pages of the portal than
+| a guest, although the account still exists in the system.
+| 
+| Users are reactivated by a portal administrator finding them in the Users table
+| (be sure you're filtering the table results by Deactivated users), clicking the
+| Actions menu, and selecting Activate. There's no confirmation window for
+| activation: they're automatically restored to their former status once Activate
+| is clicked.
 
 Now you understand the basic principles of user administration. There are
 important additional topics in the next article that you should consider

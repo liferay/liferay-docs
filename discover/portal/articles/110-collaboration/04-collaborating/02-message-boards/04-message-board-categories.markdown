@@ -1,4 +1,8 @@
-# Message Board Categories [](id=message-board-categories)
+---
+header-id: message-board-categories
+---
+
+# Message Board Categories
 
 Message Board categories organize threads by topic. This makes it easier to find
 the right topic for discussion, and can also help discussions stay on topic. For
@@ -7,13 +11,13 @@ freshwater and saltwater topics.
 
 This article shows you how to create and manage message board categories.
 
-## Adding Categories [](id=adding-categories)
+## Adding Categories
 
 Follow these steps to create a message board category:
 
 1.  Open the Message Boards app in your scope's Site Administration menu, as 
     described in 
-    [the article on creating message boards](/discover/portal/-/knowledge_base/7-1/creating-message-boards).
+    [the article on creating message boards](/docs/7-1/user/-/knowledge_base/u/creating-message-boards).
 
 2.  Click the *Add* icon
     (![Add](../../../../images/icon-add.png)) and select *Category*. This opens 
@@ -40,7 +44,7 @@ Follow these steps to create a message board category:
     to *YES*. To enable anonymous emails in the list, set the *Allow Anonymous 
     Emails* toggle to *YES*. The default for both toggles is *NO*. For an 
     explanation of these features, see 
-    [the documentation on mailing lists for Message Boards](/discover/portal/-/knowledge_base/7-1/user-subscriptions-and-mailing-lists#mailing-lists). 
+    [the documentation on mailing lists for Message Boards](/docs/7-1/user/-/knowledge_base/u/user-subscriptions-and-mailing-lists#mailing-lists). 
 
 6.  Open the *Permissions* section and set the category's permissions. The
     *Viewable by* selector lets you pick who can view the category: 
@@ -88,7 +92,7 @@ subcategories, threads, and posts in each one.
 
 ![Figure 2: Categories help you organize threads so users can find topical threads that interest them.](../../../../images/message-boards-home.png)
 
-## Adding Subcategories [](id=adding-subcategories)
+## Adding Subcategories
 
 Categories can contain as many subcategories as you like. If, however, you nest
 categories too deep, users can have trouble finding them. 
@@ -106,7 +110,7 @@ Follow these steps to add a subcategory to a category:
 3.  Click *Save* when you're finished. Your subcategory now appears in the 
     table. 
 
-## Moving and Merging Categories [](id=moving-and-merging-categories)
+## Moving and Merging Categories
 
 Each category can have any number of threads, and you can add as many categories
 and subcategories as you wish. You can also move and merge categories. 

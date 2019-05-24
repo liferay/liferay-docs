@@ -1,9 +1,13 @@
-# Rendering Form Field Settings [](id=rendering-form-field-settings)
+---
+header-id: rendering-form-field-settings
+---
+
+# Rendering Form Field Settings
 
 Once the settings are added to the class backing the field's settings, make sure
 the `*Renderer` can get the settings and update the front-end code.
 
-## Passing Settings to the Renderer Class [](id=passing-settings-to-the-renderer-class)
+## Passing Settings to the Renderer Class
 
 Send the new configuration settings to the Soy template so they can be displayed
 to the end user. Create a new Java class implementing the interface
@@ -85,22 +89,18 @@ them, whether passing them to the template context (similar to the `*Renderer`,
 only this time for client-side rendering), or using them to configure the
 behavior of the JavaScript component itself.
 
-+$$$
-
-**Note:** Remember that the Soy template is used for server side and client
-side rendering. By defining the settings you're adding in both the Java Renderer
-and the JavaScript Renderer, you're allowing for the best possible user
-experience. For example, if a form builder is in the form builder configuring
-a form field type, the configuration entered can be directly passed to the
-template and become visible in the UI almost instantly. However, when the user
-clicks into a form field initially to begin editing, the rendering occurs from
-the server side.
-
-$$$
+| **Note:** Remember that the Soy template is used for server side and client
+| side rendering. By defining the settings you're adding in both the Java Renderer
+| and the JavaScript Renderer, you're allowing for the best possible user
+| experience. For example, if a form builder is in the form builder configuring
+| a form field type, the configuration entered can be directly passed to the
+| template and become visible in the UI almost instantly. However, when the user
+| clicks into a form field initially to begin editing, the rendering occurs from
+| the server side.
 
 Next configure the JavaScript component to include the new settings.
 
-## Adding Settings to the JavaScript Component [](id=adding-settings-to-the-javascript-component)
+## Adding Settings to the JavaScript Component
 
 The JavaScript component must know about the new settings. First configure them
 as attributes of the component:
@@ -164,7 +164,7 @@ Now the field type JavaScript component is configured to include the settings.
 All you have left to do is to update the Soy template so the placeholder can be
 rendered in the form with the time field.
 
-## Updating the Soy Template [](id=updating-the-soy-template)
+## Updating the Soy Template
 
 Add the placeholder setting to your Soy template's logic.
 

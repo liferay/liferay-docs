@@ -1,4 +1,8 @@
-# Creating and Managing Forms [](id=creating-and-managing-forms)
+---
+header-id: creating-and-managing-forms
+---
+
+# Creating and Managing Forms
 
 The Forms widget can do a lot of things really well, but if you just need
 a simple form, how do you wade through all the features you don't need? Is your
@@ -16,7 +20,7 @@ field.
 
 ![Figure 1: Get feedback from guests of The Lunar Resort.](../../images/forms-guest-survey.png)
 
-## Viewing Forms [](id=viewing-forms)
+## Viewing Forms
 
 Whether creating a form or managing existing forms, it all starts in the same
 place: the Forms Application in your site's Content section. Access this in the
@@ -35,7 +39,7 @@ Forms (in the Content section). Click the *Forms* entry and find the Default
 Display View property. Click *Update* and your changes are propagated to all
 sites.
 
-## Building a Form [](id=building-a-form)
+## Building a Form
 
 To add a new form, 
 
@@ -64,7 +68,7 @@ To add a new form,
 
     Leave the manual option checked for creating the list of selections. To
     learn about populating the field with a data provider, read
-    [here](/discover/portal/-/knowledge_base/7-1/data-providers).
+    [here](/docs/7-1/user/-/knowledge_base/u/data-providers).
 
     Add these options:
     
@@ -108,7 +112,7 @@ To add a new form,
 Now your form can be added to a page, and Lunar Resort guests can be emailed and
 provided with a link to the page where the form is displayed.
 
-## Accessing Forms [](id=accessing-forms)
+## Accessing Forms
 
 Once the form is developed and published, there are two options for getting the
 published form to targeted users:

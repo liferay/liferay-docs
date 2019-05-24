@@ -1,4 +1,8 @@
-# Customization with Ext [](id=customization-with-ext)
+---
+header-id: customization-with-ext
+---
+
+# Customization with Ext
 
 **Customization with Ext projects is deprecated and should only be used if
 absolutely necessary.**
@@ -9,7 +13,7 @@ There are two types of Ext projects deployable to @product@:
   overwriting a class in a core artifact like `com.liferay.portal.kernel`.
 - *Ext modules*: used to customize OSGi modules. For example, overwriting a JSP
   in the `com.liferay.login.web` module (see the
-  [Login Web Ext sample](/develop/reference/-/knowledge_base/7-1/login-web-ext)).
+  [Login Web Ext sample](/docs/7-1/reference/-/knowledge_base/r/login-web-ext)).
 
 Ext projects are powerful tools used to extend @product@'s default core and/or
 module projects. They, however, increase the complexity of your @product@
@@ -19,7 +23,7 @@ recommended unless there is absolutely no other way to accomplish your task.
 @product-ver@ provides many extension points that let you
 customize almost every detail of @product@. If there's a way to customize what
 you want with an extension point, do it that way instead. See the
-[More Extensible, Easier to Maintain](/develop/tutorials/-/knowledge_base/7-1/benefits-of-liferay-7-for-liferay-6-developers#more-extensible-easier-to-maintain)
+[More Extensible, Easier to Maintain](/docs/7-1/tutorials/-/knowledge_base/t/benefits-of-liferay-7-for-liferay-6-developers#more-extensible-easier-to-maintain)
 section for more details on the advantages of using @product@'s extension
 points.
 
@@ -34,14 +38,14 @@ with @product@'s.
 Before diving into Ext projects, first consider if an Ext project is even
 necessary at all.
 
-## Making the Decision to Use Ext Projects [](id=making-the-decision-to-use-ext-projects)
+## Making the Decision to Use Ext Projects
 
 There are many parts of @product@ that now provide an extension point via OSGi
 bundle. You should follow this three step process to decide whether an Ext
 project is necessary:
 
 1.  Find the OSGi extension point that you need. You can follow the
-    [Finding Extension Points](/develop/tutorials/-/knowledge_base/7-1/finding-extension-points)
+    [Finding Extension Points](/docs/7-1/tutorials/-/knowledge_base/t/finding-extension-points)
     tutorial as a guide.
 
 2.  If an OSGi extension point does not exist, use an Ext project.
@@ -57,20 +61,20 @@ extension points stored in the
 [Liferay Blade Samples](https://github.com/liferay/liferay-blade-samples)
 repository. For
 more information on these sample projects, see the
-[Liferay Sample Projects](/develop/tutorials/-/knowledge_base/7-1/liferay-sample-projects)
+[Liferay Sample Projects](/docs/7-1/tutorials/-/knowledge_base/t/liferay-sample-projects)
 tutorial. Usable extension points are also documented throughout Liferay's
 Developer Network categorized by the @product@ section involved. For example,
-[Overriding MVC Commands](/develop/tutorials/-/knowledge_base/7-1/overriding-mvc-commands)
+[Overriding MVC Commands](/docs/7-1/tutorials/-/knowledge_base/t/overriding-mvc-commands)
 and
-[Customizing the Product Menu](/develop/tutorials/-/knowledge_base/7-1/customizing-the-product-menu)
+[Customizing the Product Menu](/docs/7-1/tutorials/-/knowledge_base/t/customizing-the-product-menu)
 are articles describing how to extend a @product@ extension point. Want to
 learn how to
-[customize JSPs](/develop/tutorials/-/knowledge_base/7-1/customizing-jsps)?
+[customize JSPs](/docs/7-1/tutorials/-/knowledge_base/t/customizing-jsps)?
 Those processes are documented too!
 
 You're now equipped to make an informed decision on using Ext projects.
 
-## Licensing and Contributing [](id=licensing-and-contributing)
+## Licensing and Contributing
 
 @product@ is Open Source software licensed under the 
 [LGPL 2.1 license](http://www.gnu.org/licenses/lgpl-2.1.html).
@@ -93,7 +97,7 @@ In summary, an Ext project is a powerful way to extend @product@. There are no
 limits to what you can customize, so use it carefully. Before using
 an Ext project, see if you can implement all or part of the desired functionality
 through
-[Application Display Templates](/discover/portal/-/knowledge_base/7-1/styling-apps-and-assets)
+[Application Display Templates](/docs/7-1/user/-/knowledge_base/u/styling-apps-and-assets)
 or extension points, without introducing the complexity that's inherent with Ext
 projects. If you need to use an Ext project, make your customization as small as
 possible and follow the instructions in this section carefully to avoid issues.

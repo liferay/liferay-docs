@@ -1,4 +1,8 @@
-# Building Forms with AUI Tags [](id=building-forms-with-aui-tags)
+---
+header-id: building-forms-with-aui-tags
+---
+
+# Building Forms with AUI Tags
 
 The 
 [AUI tag library](https://docs.liferay.com/portal/7.1-latest/taglibs/util-taglib/aui/tld-summary.html) 
@@ -111,10 +115,10 @@ build a form:
 
 Now you know how to build user-friendly forms for your applications. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using the Chart Taglib in Your Portlets](/develop/tutorials/-/knowledge_base/7-1/using-the-chart-taglib-in-your-portlets)
+[Using the Chart Taglib in Your Portlets](/docs/7-1/tutorials/-/knowledge_base/t/using-the-chart-taglib-in-your-portlets)
 
-[Using Liferay Front-end Taglibs in Your Portlet](/develop/tutorials/-/knowledge_base/7-1/using-liferay-frontend-taglibs-in-your-portlet)
+[Using Liferay Front-end Taglibs in Your Portlet](/docs/7-1/tutorials/-/knowledge_base/t/using-liferay-frontend-taglibs-in-your-portlet)
 
-[Using the Clay Taglib in Your portlets](/develop/tutorials/-/knowledge_base/7-1/using-the-clay-taglib-in-your-portlets)
+[Using the Clay Taglib in Your portlets](/docs/7-1/tutorials/-/knowledge_base/t/using-the-clay-taglib-in-your-portlets)

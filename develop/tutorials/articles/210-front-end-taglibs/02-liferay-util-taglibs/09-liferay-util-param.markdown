@@ -1,7 +1,11 @@
-# Using Liferay Util Param [](id=using-liferay-util-param)
+---
+header-id: using-liferay-util-param
+---
+
+# Using Liferay Util Param
 
 The param tag lets you set a parameter for an 
-[included JSP page](/develop/tutorials/-/knowledge_base/7-1/using-liferay-util-include). 
+[included JSP page](/docs/7-1/tutorials/-/knowledge_base/t/using-liferay-util-include). 
 This configuration requires two JSPs. JSP A, the main view of the app, includes 
 JSP B and sets its parameter value. This lets you dynamically set content when 
 you include the JSP. 
@@ -38,10 +42,10 @@ Now you know how to use the `<liferay-util:param>` tag to set parameters for
 included JSPs. You can use this approach to include common reusable pieces of 
 code in your apps. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using the Liferay Util Include Tag](/develop/tutorials/-/knowledge_base/7-1/using-liferay-util-include)
+[Using the Liferay Util Include Tag](/docs/7-1/tutorials/-/knowledge_base/t/using-liferay-util-include)
 
-[Using the Liferay Util Body Top Tag](/develop/tutorials/-/knowledge_base/7-1/using-liferay-util-body-top)
+[Using the Liferay Util Body Top Tag](/docs/7-1/tutorials/-/knowledge_base/t/using-liferay-util-body-top)
 
-[Using the Chart Taglib](/develop/tutorials/-/knowledge_base/7-1/using-the-chart-taglib-in-your-portlets)
+[Using the Chart Taglib](/docs/7-1/tutorials/-/knowledge_base/t/using-the-chart-taglib-in-your-portlets)

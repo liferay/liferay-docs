@@ -1,4 +1,8 @@
-# Installing @product@ on Tomcat [](id=installing-product-on-tomcat)
+---
+header-id: installing-product-on-tomcat
+---
+
+# Installing @product@ on Tomcat
 
 @product-ver@ bundled with Tomcat 9 is available on the
 [Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/7-1)
@@ -24,13 +28,13 @@ Here are the basic steps for installing @product@ on Tomcat:
 - [Configuring your application server for @product@](#tomcat-configuration)
 - [Deploying the @product@ WAR file to your application server](#deploying-liferay)
 
-[*Liferay Home*](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
+[*Liferay Home*](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home)
 is the folder containing your Tomcat server folder. After installing and
 deploying @product@, Liferay Home contains `data`, `deploy`, `license`, and
 `osgi` folders. `$TOMCAT_HOME` refers to your Tomcat server folder. It is
 usually named `tomcat-[version]` or `apache-tomcat-[version]`.
 
-## Installing Dependencies [](id=installing-liferay-dependencies)
+## Installing Dependencies
 
 @product@ depends on many JARs included by @product@ Tomcat bundle. Some of the
 bundle's JARs are not strictly required but can still be useful. If you don't
@@ -119,7 +123,7 @@ Checkpoint:
     - `test`
     - `war`
 
-## Configuring Tomcat [](id=tomcat-configuration)
+## Configuring Tomcat
 
 Configuring Tomcat to run @product@ includes these things:
 
@@ -163,12 +167,8 @@ Start with configuring Tomcat to run @product@.
     around them causes problems with the logging system), sets the time zone to
     GMT, gives the JVM 2GB of RAM, and limits Metaspace to 500MB. 
 
-    +$$$
-
-    **Important:** For @product@ to work properly, the application server JVM 
-    must use the `GMT` time zone and `UTF-8` file encoding.
-
-    $$$
+    | **Important:** For @product@ to work properly, the application server JVM
+    | must use the `GMT` time zone and `UTF-8` file encoding.
 
     After installation, tune your system (including these JVM options) for
     performance. 
@@ -273,11 +273,11 @@ Your application server is configured to run @product@.
 
 6.  The scripts in Tomcat's `bin` folders are executable.
 
-### Database Configuration [](id=database-configuration)
+### Database Configuration
 
 The easiest way to handle your database configuration is to let @product@ manage
 your data source. @product@'s
-[Basic Configuration](/discover/deployment/-/knowledge_base/7-1/installing-liferay#using-liferays-setup-wizard)
+[Basic Configuration](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#using-liferays-setup-wizard)
 page lets you configure @product@'s built-in data source. If you want to use the
 built-in data source, skip this section.
 
@@ -318,12 +318,12 @@ If you want Tomcat to manage your data source, follow these steps:
 You created a data source for Tomcat to manage and configured @product@ to use
 it. Mail session configuration is next.
 
-### Mail Configuration [](id=mail-configuration)
+### Mail Configuration
 
 As with database configuration, the easiest way to configure mail is to let
 @product@ handle your mail session. If you want to use @product@'s built-in mail
 session, skip this section and
-[configure the mail session](/discover/deployment/-/knowledge_base/7-1/installing-liferay#configuring-mail)
+[configure the mail session](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#configuring-mail)
 in the Control Panel.
 
 If you want to manage your mail session with Tomcat, follow these steps:
@@ -362,7 +362,7 @@ If you want to manage your mail session with Tomcat, follow these steps:
 You've created a mail session for Tomcat to manage and configured @product@ to
 use it. 
 
-## Deploying @product@ [](id=deploying-liferay)
+## Deploying @product@
 
 Now you're ready to deploy @product@ using the @product@ WAR file.
 
@@ -381,19 +381,15 @@ Now you're ready to deploy @product@ using the @product@ WAR file.
 
 Congratulations on successfully installing and deploying @product@ on Tomcat!
 
-+$$$
-
-After deploying @product@, you may see excessive warnings and log messages, such
-as the ones below, involving `PhaseOptimizer`. These are benign and can be
-ignored. Make sure to adjust your app server's logging level or log filters to
-avoid excessive benign log messages. 
-
-    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
-    WARNING: Skipping pass gatherExternProperties
-    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
-    WARNING: Skipping pass checkControlFlow
-    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
-    INFO: pass supports: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, modules, exponent operator (**), async function, trailing comma in param list]
-    current AST contains: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, exponent operator (**), async function, trailing comma in param list, object literals with spread, object pattern rest]
-
-$$$
+| After deploying @product@, you may see excessive warnings and log messages, such
+| as the ones below, involving `PhaseOptimizer`. These are benign and can be
+| ignored. Make sure to adjust your app server's logging level or log filters to
+| avoid excessive benign log messages.
+| 
+|     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+|     WARNING: Skipping pass gatherExternProperties
+|     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+|     WARNING: Skipping pass checkControlFlow
+|     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+|     INFO: pass supports: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, modules, exponent operator (**), async function, trailing comma in param list]
+|     current AST contains: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, exponent operator (**), async function, trailing comma in param list, object literals with spread, object pattern rest]

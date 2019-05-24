@@ -1,7 +1,11 @@
-# Authenticating with OpenID Connect [](id=authenticating-with-openid-connect)
+---
+header-id: authenticating-with-openid-connect
+---
+
+# Authenticating with OpenID Connect
 
 OpenID Connect is a lightweight authentication layer built on top of the 
-[OAuth 2.0](/discover/deployment/-/knowledge_base/7-1/oauth-2-0) 
+[OAuth 2.0](/docs/7-1/deploy/-/knowledge_base/d/oauth-2-0) 
 authorization protocol. It compliments having local accounts by enabling users
 to authenticate using accounts they have on other systems. Users who avoid
 signing up for new accounts can then use an account they already have to sign
@@ -9,12 +13,8 @@ into your website. By using OpenID Connect, you *delegate* user authentication
 to other providers, making it easy for users with existing accounts to
 authenticate to your system. 
 
-+$$$
-
-**Note:** You can add multiple providers to your installation, but @product@
-can't yet be an OpenID Connect provider. 
-
-$$$
+| **Note:** You can add multiple providers to your installation, but @product@
+| can't yet be an OpenID Connect provider.
 
 Because OpenID Connect is built on OAuth 2.0, its token flow is similar. OAuth
 2.0 is only an authorization protocol, so it sends an *access token* that grants
@@ -22,7 +22,7 @@ access to particular APIs. OpenID Connect adds to this an *identity token* that
 passes user information like name and email, provided the user has authenticated
 and granted permission. 
 
-## Creating a Client in OpenID Connect Provider [](id=creating-a-client-in-openid-connect-provider)
+## Creating a Client in OpenID Connect Provider
 
 To use OpenID Connect, you must first register it as a client in your provider.
 This is an OAuth 2.0 client. The process varies by provider: 
@@ -42,7 +42,7 @@ This is an OAuth 2.0 client. The process varies by provider:
 Collect the information from the provider. You'll need it create the provider
 next. 
 
-## Configuring an OpenID Connect Provider Connection [](id=configuring-an-openid-connect-provider-connection)
+## Configuring an OpenID Connect Provider Connection
 
 Go to *Control Panel* &rarr; *Configuration* &rarr; *System Settings* &rarr;
 *Security* &rarr; *SSO* and select ***OpenID Connect Provider*** under the *System Scope* and follow these steps: 
@@ -88,17 +88,13 @@ information can be obtained.
 Once you've filled out the form, click *Save*, and you're ready to enable OpenID
 Connect authentication. 
 
-+$$$
+| System Settings configuration file:
+| 
+|     com.liferay.portal.security.sso.openid.connect.internal.configuration.OpenIdConnectProviderConfiguration-[name].config
+| 
+| where `[name]` is a descriptive, but unique name for example `provider1`.
 
-System Settings configuration file: 
-
-    com.liferay.portal.security.sso.openid.connect.internal.configuration.OpenIdConnectProviderConfiguration-[name].config
-
-where `[name]` is a descriptive, but unique name for example `provider1`.
-
-$$$
-
-## Enabling OpenID Connect Authentication [](id=enabling-openid-connect-authentication)
+## Enabling OpenID Connect Authentication
 
 1. Go to *Control Panel* &rarr; *Configuration* &rarr; *System Settings*
    &rarr; *Security* &rarr; *SSO* and select ***OpenID Connect*** under *Virtual Instance Scope*. 
@@ -109,17 +105,13 @@ $$$
 virtual instance through the *Control Panel* &rarr; *Configuration* &rarr;
 *Instance Settings* &rarr; *OpenID Connect* tab.
 
-+$$$
-
-System Settings configuration file:
-
-    com.liferay.portal.security.sso.openid.connect.configuration.OpenIdConnectConfiguration.config
-
-$$$
+| System Settings configuration file:
+| 
+|     com.liferay.portal.security.sso.openid.connect.configuration.OpenIdConnectConfiguration.config
     
 Now users can sign in with OpenID Connect. 
 
-## Signing In With OpenID Connect [](id=signing-in-with-openid-connect)
+## Signing In With OpenID Connect
 
 There's a new link in the Sign-In Portlet for signing in with OpenID Connect: 
 

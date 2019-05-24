@@ -1,7 +1,11 @@
-# Finding Extension Points [](id=finding-extension-points)
+---
+header-id: finding-extension-points
+---
+
+# Finding Extension Points
 
 @product@ provides many features that help users accomplish their tasks.
-Sometimes, however, you may find it necessary to [customize a built-in feature](/develop/tutorials/-/knowledge_base/7-1/customizing).
+Sometimes, however, you may find it necessary to [customize a built-in feature](/docs/7-1/tutorials/-/knowledge_base/t/customizing).
 It's easy to **find** an area you want to customize, but it may seem like a
 daunting task to figure out **how** to customize it. @product@ was developed for
 easy customization, meaning it has many extension points you can use to add
@@ -17,11 +21,11 @@ There's a process you can follow that makes finding an extension point a breeze.
 This tutorial demonstrates finding an extension point. It steps
 through a simple example that locates an extension point for importing LDAP
 users. The example includes using @product@'s
-[Application Manager](/discover/portal/-/knowledge_base/7-1/managing-and-configuring-apps#using-the-app-manager)
+[Application Manager](/docs/7-1/user/-/knowledge_base/u/managing-and-configuring-apps#using-the-app-manager)
 and
-[Felix Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell).
+[Felix Gogo Shell](/docs/7-1/reference/-/knowledge_base/r/using-the-felix-gogo-shell).
 
-## Locate the Related Module and Component [](id=locate-the-related-module-and-component)
+## Locate the Related Module and Component
 
 First think of words that describe the application behavior you want to change.
 The right keywords can help you easily track down the desired module and its
@@ -59,23 +63,19 @@ component.
 
     ![Figure 3: The component name can be found using the App Manager.](../../images/usermodellistener-component.png)
 
-    +$$$
-
-    **Note:** When using the Gogo shell later, understand that it can take
-    several tries to find the component you're looking for; Liferay's naming
-    conventions facilitate finding extension points in a manageable time frame.
-
-    $$$
+    | **Note:** When using the Gogo shell later, understand that it can take
+    | several tries to find the component you're looking for; Liferay's naming
+    | conventions facilitate finding extension points in a manageable time frame.
 
 Next, you'll use the Gogo shell to inspect the component for extension points.
 
-## Finding Extension Points in a Component [](id=finding-extension-points-in-a-component)
+## Finding Extension Points in a Component
 
 Once you have the component that relates to the functionality you want to
 extend, you can use the Gogo shell's Service Component Runtime (SCR) commands to
 inspect it. You can execute SCR commands using
-[Liferay Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli) or in
-[Gogo shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell).
+[Liferay Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/blade-cli) or in
+[Gogo shell](/docs/7-1/reference/-/knowledge_base/r/using-the-felix-gogo-shell).
 This tutorial assumes you're using the Gogo shell.
 
 Execute the following command:
@@ -112,7 +112,7 @@ information on the other policies and policy options, visit the
 [OSGi specification](https://osgi.org/download/r6/osgi.enterprise-6.0.0.pdf), in
 particular, sections 112.3.5 and 112.3.6. If you want to learn how to
 override a component's service reference, visit the tutorial
-[here](/develop/tutorials/-/knowledge_base/7-1/overriding-service-references).
+[here](/docs/7-1/tutorials/-/knowledge_base/t/overriding-service-references).
 
 **Important** Not all Liferay extension points are available as referenced
 services. Service references are common in Declarative Services (DS) components,

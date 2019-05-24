@@ -1,4 +1,8 @@
-# Communication Between Portlet Widgets [](id=communication-between-portlet-widgets)
+---
+header-id: communication-between-portlet-widgets
+---
+
+# Communication Between Portlet Widgets
 
 Portlet widgets can communicate with each other using public render parameters and
 events. Public render parameters are easy to use and can be quite powerful.
@@ -10,11 +14,7 @@ Then click on the *Communication* tab.
 
 ![Figure 1: You can configure portlets to communicate with each other using public render parameters.](../../../images/app-communication-tab.png)
 
-+$$$
-
-**Note:** If your widget isn't a portlet, this feature isn't available.
-
-$$$
+| **Note:** If your widget isn't a portlet, this feature isn't available.
 
 The screenshot above is for the Wiki, which has six public render
 parameters: `categoryId`, `nodeId`, `nodeName`, `resetCur`, `tag`, and `title`.

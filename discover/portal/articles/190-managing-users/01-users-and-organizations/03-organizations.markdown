@@ -1,12 +1,16 @@
-# Organizations [](id=organizations)
+---
+header-id: organizations
+---
+
+# Organizations
 
 An *Organization* groups
-[*Users*](/discover/portal/-/knowledge_base/7-1/users) 
+[*Users*](/docs/7-1/user/-/knowledge_base/u/users) 
 hierarchically. For example, you can model a company's departments (i.e., Human
 Resources and Customer Support) with organizations. Organizations often have
 their own sites. The *how-to* portion of managing Organizations is in the next
 article, 
-[Managing Organizations](/discover/portal/-/knowledge_base/7-1/managing-organizations).
+[Managing Organizations](/docs/7-1/user/-/knowledge_base/u/managing-organizations).
 This article contains important conceptual information on what Organizations are
 and when they're needed.
 
@@ -17,23 +21,19 @@ Organization administrators. If you don't anticipate needing to delegate User
 management responsibilities, your portal design probably doesn't need to include
 Organizations. 
 
-+$$$
+| **User Groups and Organizations:** It's easy to confuse User Groups (covered in
+| a separate article) with Organizations since they both group Users. User Groups
+| are an ad hoc collection of Users, organized for a specific function. In the
+| Lunar Resort, if you wanted a group of bloggers, for example, it wouldn't make
+| sense to assign the Sales Department the role of blogging (see the article on
+| Roles if you're not sure what they are). The Sales Department users could blog
+| whenever a new T-shirt design became available in the Lunar Resort store, but
+| they probably wouldn't be as diligent about announcing the new Rover Racing
+| schedule. Instead, creating a User Group containing one individual from each
+| department who is responsible for blogging would make more sense. Read the
+| article on User Groups to learn more about how to use them in your portal.
 
-**User Groups and Organizations:** It's easy to confuse User Groups (covered in
-a separate article) with Organizations since they both group Users. User Groups
-are an ad hoc collection of Users, organized for a specific function. In the
-Lunar Resort, if you wanted a group of bloggers, for example, it wouldn't make
-sense to assign the Sales Department the role of blogging (see the article on
-Roles if you're not sure what they are). The Sales Department users could blog
-whenever a new T-shirt design became available in the Lunar Resort store, but
-they probably wouldn't be as diligent about announcing the new Rover Racing
-schedule. Instead, creating a User Group containing one individual from each
-department who is responsible for blogging would make more sense. Read the
-article on User Groups to learn more about how to use them in your portal.
-
-$$$
-
-### When to Use Organizations [](id=when-to-use-organizations)
+### When to Use Organizations
 
 To decide whether your portal design should include Organizations, think about
 its function. A photo-sharing web site could be powered by Sites only. On the
@@ -75,7 +75,7 @@ Resort, its departments, and divisions within each department.
 Each department is a sub-Organization of the resort, and each division is a
 sub-Organization of the department.
 
-### What can Organization Administrators Do? [](id=what-can-organization-administrators-do)
+### What can Organization Administrators Do?
 
 Whenever you have a collection of Users that fits into a hierarchical structure,
 you can use Organizations to model those Users. Organization administrators can
@@ -121,7 +121,7 @@ the *My Organizations* link to gain access to any Organizations they manage.
 
 ![Figure 1: The My Organizations application lets Organization Administrators manage their organizations in their personal site.](../../../images/orgs-my-organizations.png)
 
-### Organization Roles and Permissions [](id=organization-roles-and-permissions)
+### Organization Roles and Permissions
 
 A huge time-saving benefit of including Organizations into your portal design is
 that Organization administrators can assign Organization-scoped Roles to members
@@ -144,10 +144,10 @@ requirements for permissions within an Organization, you can create custom
 Organization-scoped Roles to assemble the permissions you wish to grant to
 particular Users. Alternatively, attach a Site to your Organization and use Site
 Teams to assemble the sets of permissions (see below). See the 
-[Roles and Permissions article](/discover/portal/-/knowledge_base/7-1/roles-and-permissions)
+[Roles and Permissions article](/docs/7-1/user/-/knowledge_base/u/roles-and-permissions)
 for more detail.
 
-### Organization Sites [](id=organization-sites)
+### Organization Sites
 
 Does your Organization need to have its own Site? If an organization has an
 attached Site, the Organization's administrators are treated as the Site

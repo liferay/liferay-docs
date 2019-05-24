@@ -1,4 +1,8 @@
-# Message Bus [](id=message-bus)
+---
+header-id: message-bus
+---
+
+# Message Bus
 
 If you ever need to do some data processing outside the scope of the web's
 request/response, look no further than the Message Bus. It's conceptually
@@ -29,9 +33,9 @@ Bus activities.
 
 The Message Bus topics are covered in these tutorials:
 
-- [Messaging Destinations](/develop/tutorials/-/knowledge_base/7-1/messaging-destinations) 
-- [Message Listeners](/develop/tutorials/-/knowledge_base/7-1/message-listeners) 
-- [Sending Messages](/develop/tutorials/-/knowledge_base/7-1/sending-messages) 
+- [Messaging Destinations](/docs/7-1/tutorials/-/knowledge_base/t/messaging-destinations) 
+- [Message Listeners](/docs/7-1/tutorials/-/knowledge_base/t/message-listeners) 
+- [Sending Messages](/docs/7-1/tutorials/-/knowledge_base/t/sending-messages) 
 
 Since all messages are sent to and received at destinations, messaging
 destinations is worth exploring first. 

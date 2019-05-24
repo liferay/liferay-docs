@@ -1,4 +1,8 @@
-# OSGi and Modularity for Liferay Portal 6 Developers [](id=osgi-and-modularity-for-liferay-6-developers)
+---
+header-id: osgi-and-modularity-for-liferay-6-developers
+---
+
+# OSGi and Modularity for Liferay Portal 6 Developers
 
 To create a powerful, reliable platform for developing modular applications,
 Liferay sought best-of-breed standards-based frameworks and technologies.

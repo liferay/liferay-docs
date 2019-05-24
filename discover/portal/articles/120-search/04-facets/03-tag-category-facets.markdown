@@ -1,4 +1,8 @@
-# Tag and Category Facets [](id=tag-and-category-facets)
+---
+header-id: tag-and-category-facets
+---
+
+# Tag and Category Facets
 
 If tags or categories were applied to an asset appearing in the result set,
 they're displayed in the Tag or Category facet, respectively. Like other facets

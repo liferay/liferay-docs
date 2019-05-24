@@ -1,8 +1,12 @@
-# Overriding MVCResourceCommands [](id=overriding-mvcresourcecommand)
+---
+header-id: overriding-mvcresourcecommand
+---
+
+# Overriding MVCResourceCommands
 
 If you need to add functionality to a Liferay MVC resource command, you can. The
 Liferay MVC command framework supports customizing MVC resource commands. It
-follows the process for [adding logic to MVC commands](/develop/tutorials/-/knowledge_base/7-1/adding-logic-to-mvc-commands)
+follows the process for [adding logic to MVC commands](/docs/7-1/tutorials/-/knowledge_base/t/adding-logic-to-mvc-commands)
 and it is similar to the ones described for `MVCRenderCommand` and
 `MVCActionCommand`. There's a couple things to keep in mind:
 
@@ -48,14 +52,14 @@ the account creation screen.
     }
 
 And that, as they say, is that. Even if you don't own the source code of an
-application, you can [override its MVC commands](/develop/tutorials/-/knowledge_base/7-1/overriding-mvc-commands)
+application, you can [override its MVC commands](/docs/7-1/tutorials/-/knowledge_base/t/overriding-mvc-commands)
 just by knowing the component
 class name.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[MVC Resource Command](/develop/tutorials/-/knowledge_base/7-1/mvc-resource-command)
+[MVC Resource Command](/docs/7-1/tutorials/-/knowledge_base/t/mvc-resource-command)
 
-[Adding Logic to MVC Commands](/develop/tutorials/-/knowledge_base/7-1/adding-logic-to-mvc-commands)
+[Adding Logic to MVC Commands](/docs/7-1/tutorials/-/knowledge_base/t/adding-logic-to-mvc-commands)
 
-[Overriding MVCRenderCommands](/develop/tutorials/-/knowledge_base/7-1/overriding-mvcrendercommand)
+[Overriding MVCRenderCommands](/docs/7-1/tutorials/-/knowledge_base/t/overriding-mvcrendercommand)

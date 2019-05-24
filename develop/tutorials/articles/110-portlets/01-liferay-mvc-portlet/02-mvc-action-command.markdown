@@ -1,6 +1,10 @@
-# MVC Action Command [](id=mvc-action-command)
+---
+header-id: mvc-action-command
+---
 
-Liferay's MVC framework lets you split your portlet's [action methods](/develop/tutorials/-/knowledge_base/7-1/creating-an-mvc-portlet#action-methods)
+# MVC Action Command
+
+Liferay's MVC framework lets you split your portlet's [action methods](/docs/7-1/tutorials/-/knowledge_base/t/creating-an-mvc-portlet#action-methods)
 into separate classes. This can be very helpful in portlets that have many
 actions. Each action URL in your portlet's JSPs then calls the appropriate
 action class when necessary. 
@@ -161,23 +165,19 @@ actions is performed:
 processing and prepares to redirect the portlet to an appropriate view. This
 shows you can do as much as you need for processing your portlet's actions. 
 
-+$$$
-
-**Note**: [Liferay Blade Sample `action-command-portlet`]( https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/action-command-portlet)
-demonstrates implementing `MVCActionCommand` directly.
-
-$$$ 
+| **Note**: [Liferay Blade Sample `action-command-portlet`]( https://github.com/liferay/liferay-blade-samples/tree/master/gradle/apps/action-command-portlet)
+| demonstrates implementing `MVCActionCommand` directly.
 
 Now you can create your own action URLs and `*MVCActionCommand` classes in your
 applications that use Liferay's MVC framework. Your `*MVCActionCommand`s can do
 whatever you need them to do. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating an MVC Portlet](/develop/tutorials/-/knowledge_base/7-1/creating-an-mvc-portlet)
+[Creating an MVC Portlet](/docs/7-1/tutorials/-/knowledge_base/t/creating-an-mvc-portlet)
 
-[MVC Render Command](/develop/tutorials/-/knowledge_base/7-1/mvc-render-command)
+[MVC Render Command](/docs/7-1/tutorials/-/knowledge_base/t/mvc-render-command)
 
-[MVC Resource Command](/develop/tutorials/-/knowledge_base/7-1/mvc-resource-command)
+[MVC Resource Command](/docs/7-1/tutorials/-/knowledge_base/t/mvc-resource-command)
 
-[MVC Command Overrides](/develop/tutorials/-/knowledge_base/7-1/overriding-mvc-commands)
+[MVC Command Overrides](/docs/7-1/tutorials/-/knowledge_base/t/overriding-mvc-commands)

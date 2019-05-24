@@ -1,4 +1,8 @@
-# What LCS Stores About Your Liferay DXP Servers [](id=what-lcs-stores-about-your-liferay-dxp-servers)
+---
+header-id: what-lcs-stores-about-your-liferay-dxp-servers
+---
+
+# What LCS Stores About Your Liferay DXP Servers
 
 To protect your users' privacy, LCS only stores system-specific data. LCS
 doesn't gather or store data on your users. 
@@ -21,7 +25,7 @@ By default, LCS stores the following information about your server:
 
 The other data LCS stores depends on the services you enable in your environment 
 token. For more information on this, see 
-[Registering Servers with LCS](/discover/deployment/-/knowledge_base/7-1/activating-your-liferay-dxp-server-with-lcs).
+[Registering Servers with LCS](/docs/7-1/deploy/-/knowledge_base/d/activating-your-liferay-dxp-server-with-lcs).
 When you enable the following services, LCS gathers and stores the data listed
 for each: 
 
@@ -64,4 +68,4 @@ non-sensitive properties:
 
 LCS also lets you prevent it from analyzing specific properties of your 
 choosing. For more information on this, see 
-[Registering Your Liferay DXP Server with LCS](/discover/deployment/-/knowledge_base/7-1/activating-your-liferay-dxp-server-with-lcs). 
+[Registering Your Liferay DXP Server with LCS](/docs/7-1/deploy/-/knowledge_base/d/activating-your-liferay-dxp-server-with-lcs). 

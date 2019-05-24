@@ -1,4 +1,8 @@
-# Login Web Ext [](id=login-web-ext)
+---
+header-id: login-web-ext
+---
+
+# Login Web Ext
 
 The Login Ext Module sample demonstrates how to customize a default Liferay
 module's source code. This example replaces the default `login.jsp` file in the
@@ -18,7 +22,7 @@ bundle source plus your modified source files. Follow the instructions below to
 do this:
 
 1.  Connect to your portal instance using
-    [Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell).
+    [Gogo Shell](/docs/7-1/reference/-/knowledge_base/r/using-the-felix-gogo-shell).
 
 2.  Search for the bundle ID of the original bundle to override. To find the
     `com.liferay.login.web` bundle, execute this command:
@@ -40,15 +44,15 @@ leverage Blade or Gradle's `deploy` command to do this. The `deploy` command
 deploys the module to the `osgi\marketplace\override` folder by default, which
 does not configure Ext modules properly for usage. You should build and copy the
 Ext module's JAR to the `deploy` folder manually, or leverage Liferay Dev
-Studio's [drag-and-drop deployment](/develop/tutorials/-/knowledge_base/7-1/deploying-projects-with-liferay-ide)
+Studio's [drag-and-drop deployment](/docs/7-1/tutorials/-/knowledge_base/t/deploying-projects-with-liferay-ide)
 feature.
 
-## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
+## What API(s) and/or code components does this sample highlight?
 
 This sample demonstrates how to create an Ext module and configure it to replace
 a default module bundle.
 
-## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
+## How does this sample leverage the API(s) and/or code component?
 
 You can create your own Ext module project by
 
@@ -63,7 +67,7 @@ like this:
     originalModule group: "com.liferay", name: "com.liferay.login.web", version: "3.0.4"
 
 If you're leveraging
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace),
+[Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace),
 you should put your Ext module project in the `/ext` folder (default); you can
 specify a different Ext folder name in workspace's `gradle.properties` by adding
 
@@ -94,7 +98,7 @@ helps compile your code into the JAR. For example, `.scss` files are compiled
 into `.css` files, which are included in your module's JAR file artifact. This
 is done by the `buildCSS` task.
 
-## Where Is This Sample? [](id=where-is-this-sample)
+## Where Is This Sample?
 
 There are two different versions of this sample, each built with a different
 build tool:

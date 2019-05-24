@@ -1,4 +1,8 @@
-# Defining Layout Templates in a Sitemap [](id=defining-layout-templates-in-a-sitemap)
+---
+header-id: defining-layout-templates-in-a-sitemap
+---
+
+# Defining Layout Templates in a Sitemap
 
 The first thing you should declare in your `sitemap.json` file is a default 
 layout template ID so the target site or site template can reference the layout 
@@ -46,10 +50,10 @@ Custom Layout Page overrides the default layout template and uses the
     }
  
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Preparing and Organizing Web Content for the Resources Importer](/develop/tutorials/-/knowledge_base/7-1/preparing-and-organizing-web-content-for-the-resources-importer)
+[Preparing and Organizing Web Content for the Resources Importer](/docs/7-1/tutorials/-/knowledge_base/t/preparing-and-organizing-web-content-for-the-resources-importer)
 
-[Defining Portlets in a Sitemap](/develop/tutorials/-/knowledge_base/7-1/defining-portlets-in-a-sitemap)
+[Defining Portlets in a Sitemap](/docs/7-1/tutorials/-/knowledge_base/t/defining-portlets-in-a-sitemap)
 
-[Specifying Where to Import Your Theme's Resources](/develop/tutorials/-/knowledge_base/7-1/specifying-where-to-import-your-themes-resources)
+[Specifying Where to Import Your Theme's Resources](/docs/7-1/tutorials/-/knowledge_base/t/specifying-where-to-import-your-themes-resources)

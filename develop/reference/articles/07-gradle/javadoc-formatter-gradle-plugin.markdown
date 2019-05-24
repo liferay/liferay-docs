@@ -1,4 +1,8 @@
-# Javadoc Formatter Gradle Plugin [](id=javadoc-formatter-gradle-plugin)
+---
+header-id: javadoc-formatter-gradle-plugin
+---
+
+# Javadoc Formatter Gradle Plugin
 
 The Javadoc Formatter Gradle plugin lets you format project Javadoc comments
 using the [Liferay Javadoc Formatter tool](https://github.com/liferay/liferay-portal/tree/master/modules/util/javadoc-formatter).
@@ -14,7 +18,7 @@ The tool lets you generate:
 
 The plugin has been successfully tested with Gradle 4.10.2.
 
-## Usage [](id=usage)
+## Usage
 
 To use the plugin, include it in your build script:
 
@@ -46,7 +50,7 @@ repositories {
 }
 ```
 
-## Tasks [](id=tasks)
+## Tasks
 
 The plugin adds one task to your project:
 
@@ -54,7 +58,7 @@ Name | Depends On | Type | Description
 ---- | ---------- | ---- | -----------
 `formatJavadoc` | \- | [`FormatJavadocTask`](#formatjavadoctask) | Runs the Liferay Javadoc Formatter to format files.
 
-### FormatJavadocTask [](id=formatjavadoctask)
+### FormatJavadocTask
 
 Tasks of type `FormatJavadocTask` extend [`JavaExec`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html),
 so all its properties and methods, like [`args`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:args\(java.lang.Iterable\))
@@ -67,7 +71,7 @@ Property Name | Default Value
 [`classpath`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:classpath) | [`project.configurations.javadocFormatter`](#liferay-javadoc-formatter-dependency)
 [`main`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:main) | `"com.liferay.javadoc.formatter.JavadocFormatter"`
 
-#### Task Properties [](id=task-properties)
+#### Task Properties
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -82,18 +86,18 @@ Property Name | Type | Default Value | Description
 It is possible to use Closures and Callables as values for the `String`
 properties, to defer evaluation until task execution.
 
-#### Task Methods [](id=task-methods)
+#### Task Methods
 
 Method | Description
 ------ | -----------
 `FormatJavadocTask dirNames(Iterable<Object> limits)` | Adds Java file name patterns, relative to `workingDir`, to include when formatting Javadoc comments.
 `FormatJavadocTask dirNames(Object... limits)` | Adds Java file name patterns, relative to `workingDir`, to include when formatting Javadoc comments.
 
-## Additional Configuration [](id=additional-configuration)
+## Additional Configuration
 
 There are additional configurations that can help you use the Javadoc Formatter.
 
-### Liferay Javadoc Formatter Dependency [](id=liferay-javadoc-formatter-dependency)
+### Liferay Javadoc Formatter Dependency
 
 By default, the plugin creates a configuration called `javadocFormatter` and adds
 a dependency to the latest released version of the Liferay Javadoc Formatter. It
@@ -111,7 +115,7 @@ plugin is applied, the `javadocFormatter` configuration automatically extends
 from the [`compile`](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java_plugin_and_dependency_management)
 configuration.
 
-### System Properties [](id=system-properties)
+### System Properties
 
 It is possible to set the default values of the `generateXML`,
 `initializeMissingJavadocs`, `limits`, and `updateJavadocs` properties for a

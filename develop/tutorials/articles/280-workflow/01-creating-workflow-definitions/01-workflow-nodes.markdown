@@ -1,4 +1,8 @@
-# Workflow Definition Nodes [](id=workflow-definition-nodes)
+---
+header-id: workflow-definition-nodes
+---
+
+# Workflow Definition Nodes
 
 After your definition's schema and metadata are in place, begin defining the
 process. *Node* elements, with their sub-elements, are fundamental building
@@ -110,7 +114,7 @@ transition to the *Legal Review* task or the *Content Review* task.
 The `returnValue` variable points from the condition to a transition, and its
 value must match a valid transition name. This script looks up the asset in
 question, retrieves its 
-[asset category](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories#defining-categories-for-content),
+[asset category](/docs/7-0/user/-/knowledge_base/u/organizing-content-with-tags-and-categories#defining-categories-for-content),
 and sets an initial `returnValue`. Then it checks to see if the asset has been
 marked with the *legal* category. If not it goes through *Content Review* (to
 the content-review task in the workflow), and if it does it goes through *Legal
@@ -166,7 +170,7 @@ must complete just one of the forks before processing continues.
             </transitions>
         </join-xor>
 
-[**Task nodes**](/develop/tutorials/-/knowledge_base/7-1/workflow-task-nodes) 
+[**Task nodes**](/docs/7-1/tutorials/-/knowledge_base/t/workflow-task-nodes) 
 are at the core of the workflow definition. They're the part where a user
 interacts with the asset in some way. Tasks can also have sub-elements,
 including notifications, assignments, and task timers.

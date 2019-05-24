@@ -1,7 +1,11 @@
-# Creating Custom Layout Template Thumbnail Previews [](id=creating-custom-layout-template-thumbnail-previews)
+---
+header-id: creating-custom-layout-template-thumbnail-previews
+---
+
+# Creating Custom Layout Template Thumbnail Previews
 
 If you 
-[created a layout template with the Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-layout-templates-with-the-themes-generator), 
+[created a layout template with the Theme Generator](/docs/7-1/tutorials/-/knowledge_base/t/creating-layout-templates-with-the-themes-generator), 
 it generated a default thumbnail preview for your layout template. Follow these 
 steps to create a custom preview thumbnail for a layout template:
 
@@ -30,15 +34,15 @@ steps to create a custom preview thumbnail for a layout template:
 
 Deploy your layout template to your app server to use it. If your layout 
 template is 
-[bundled with a theme](/develop/tutorials/-/knowledge_base/7-1/including-layout-templates-with-a-theme), 
+[bundled with a theme](/docs/7-1/tutorials/-/knowledge_base/t/including-layout-templates-with-a-theme), 
 it deploys when the theme is deployed. Now you know how to create a custom 
 thumbnail preview for your @product@ layout templates!
 
-## Related topics [](id=related-topics)
+## Related topics
 
-[Layout Templates with the Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-layout-templates-with-the-themes-generator)
+[Layout Templates with the Liferay Theme Generator](/docs/7-1/tutorials/-/knowledge_base/t/creating-layout-templates-with-the-themes-generator)
 
-[Creating Layout Templates Manually](/develop/tutorials/-/knowledge_base/7-1/creating-layout-templates-manually)
+[Creating Layout Templates Manually](/docs/7-1/tutorials/-/knowledge_base/t/creating-layout-templates-manually)
 
-[Creating Themes](/develop/tutorials/-/knowledge_base/7-1/creating-themes)
+[Creating Themes](/docs/7-1/tutorials/-/knowledge_base/t/creating-themes)
 

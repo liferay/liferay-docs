@@ -1,10 +1,14 @@
-# Overriding a Module's Language Keys [](id=overriding-a-modules-language-keys)
+---
+header-id: overriding-a-modules-language-keys
+---
+
+# Overriding a Module's Language Keys
 
 What do you do if the language keys you want to modify are in one of Liferay's
 applications or another module whose source code you don't control? Since module
 language keys are in the respective module, the process for overriding a
 module's language keys is different from
-[the process of overriding Liferay's language keys](/develop/tutorials/-/knowledge_base/7-1/overriding-language-keys). 
+[the process of overriding Liferay's language keys](/docs/7-1/tutorials/-/knowledge_base/t/overriding-language-keys). 
 
 Here is the process:
 
@@ -12,10 +16,10 @@ Here is the process:
 2.  [Write your custom language key values](#providing-language-keys) 
 3.  [Prioritize your module's resource bundle](#prioritize-your-modules-resource-bundle)
 
-## Find the module and its metadata and language keys [](id=find-the-module-and-its-metadata-and-language-keys)
+## Find the module and its metadata and language keys
 
 In
-[Gogo shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell),
+[Gogo shell](/docs/7-1/reference/-/knowledge_base/r/using-the-felix-gogo-shell),
 list the bundles and grep for keyword(s) that match the portlet's display name.
 Language keys are in the portlet's web module (bundle). When you
 find the bundle, note its ID number.
@@ -91,20 +95,20 @@ module's language keys:
 
 Next you'll write new values for the language keys. 
 
-## Write custom language key values [](id=providing-language-keys)
+## Write custom language key values
 
 Create a new module to hold a resource bundle loader and your custom language
 keys. 
 
 In your module's `src/main/resources/content` folder, create
-[language properties files](/develop/tutorials/-/knowledge_base/7-1/localizing-your-application#what-are-language-keys)
+[language properties files](/docs/7-1/tutorials/-/knowledge_base/t/localizing-your-application#what-are-language-keys)
 for each locale whose keys you want to override. In each language properties
 file, specify your language key overrides. 
 
 Next you'll prioritize your module's language keys as a resource bundle for the
 target module. 
 
-## Prioritize Your Module's Resource Bundle [](id=prioritize-your-modules-resource-bundle)
+## Prioritize Your Module's Resource Bundle
 
 Now that your language keys are in place, use OSGi manifest headers to specify
 the language keys are for the target module. To compliment the target module's
@@ -145,35 +149,31 @@ The example `Provide-Capability` header has two parts:
     -   `servlet.context.name=blogs-web`: The target resource bundle is in 
         servlet context `blogs-web`. 
 
-[Deploy your module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#building-and-deploying-a-module)
+[Deploy your module](/docs/7-1/tutorials/-/knowledge_base/t/starting-module-development#building-and-deploying-a-module)
 to see the language keys you've overridden. 
 
-+$$$
-
-**Tip:** If your override isn't showing, use
-[Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell)
-to check for competing resource bundle services. It may be that another service
-outranks yours. To check for competing resource bundle services whose aggregates
-include `com.liferay.blogs.web`'s resource bundle, for example, execute this
-Gogo Shell command:
-
-    services "(bundle.symbolic.name=com.liferay.login.web)"
-
-Search the results for resource bundle aggregate services whose ranking is
-higher. 
-
-$$$
+| **Tip:** If your override isn't showing, use
+| [Gogo Shell](/docs/7-1/reference/-/knowledge_base/r/using-the-felix-gogo-shell)
+| to check for competing resource bundle services. It may be that another service
+| outranks yours. To check for competing resource bundle services whose aggregates
+| include `com.liferay.blogs.web`'s resource bundle, for example, execute this
+| Gogo Shell command:
+| 
+|     services "(bundle.symbolic.name=com.liferay.login.web)"
+| 
+| Search the results for resource bundle aggregate services whose ranking is
+| higher.
 
 Now you can modify the language keys of modules in Liferay's OSGi runtime.
 Remember, language keys you want to override might actually be in Liferay's
 core. You can
-[override Liferay's language keys](/develop/tutorials/-/knowledge_base/7-1/overriding-language-keys)
+[override Liferay's language keys](/docs/7-1/tutorials/-/knowledge_base/t/overriding-language-keys)
 too.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Resource Bundle Override Sample Project](/develop/reference/-/knowledge_base/7-1/resource-bundle-override)
+[Resource Bundle Override Sample Project](/docs/7-1/reference/-/knowledge_base/r/resource-bundle-override)
 
-[Upgrading Core Language Key Hooks](/develop/tutorials/-/knowledge_base/7-1/upgrading-core-language-key-hooks)
+[Upgrading Core Language Key Hooks](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-core-language-key-hooks)
 
-[Internationalization](/develop/tutorials/-/knowledge_base/7-1/internationalization)
+[Internationalization](/docs/7-1/tutorials/-/knowledge_base/t/internationalization)

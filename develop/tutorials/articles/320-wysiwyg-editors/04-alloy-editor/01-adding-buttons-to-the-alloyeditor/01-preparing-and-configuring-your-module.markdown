@@ -1,12 +1,16 @@
-# Creating the OSGi Module and Configuring the EditorConfigContributor Class [](id=creating-the-osgi-module-and-configuring-the-editorconfigcontributor)
+---
+header-id: creating-the-osgi-module-and-configuring-the-editorconfigcontributor
+---
+
+# Creating the OSGi Module and Configuring the EditorConfigContributor Class
 
 To add a button to the AlloyEditor's toolbars, you must first create an OSGi 
 component class of service type `EditorConfigContributor.class`. Follow these 
 steps to create and configure the OSGi module:
 
-1.  [Create an OSGi module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#creating-a-module), 
+1.  [Create an OSGi module](/docs/7-1/tutorials/-/knowledge_base/t/starting-module-development#creating-a-module), 
     using 
-    [Blade's portlet template](/develop/reference/-/knowledge_base/7-1/using-the-portlet-template):
+    [Blade's portlet template](/docs/7-1/reference/-/knowledge_base/r/using-the-portlet-template):
 
         blade create -t portlet -p com.liferay.docs.my.button -c 
         MyEditorConfigContributor my-new-button
@@ -39,7 +43,7 @@ steps to create and configure the OSGi module:
 
     This targets AlloyEditor for the configuration and overrides the default 
     service by providing a higher 
-    [service ranking](/develop/tutorials/-/knowledge_base/7-1/fundamentals#services). 
+    [service ranking](/docs/7-1/tutorials/-/knowledge_base/t/fundamentals#services). 
     If you want to target a more specific configuration, you can find the 
     available properties in the 
     [`EditorConfigContributor` interface's Javadoc](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/editor/configuration/EditorConfigContributor.html).
@@ -67,7 +71,7 @@ steps to create and configure the OSGi module:
         }
  
 8.  If you're adding a button for one of the 
-    [CKEditor plugins bundled with the AlloyEditor](/develop/reference/-/knowledge_base/7-1/ckeditor-plugin-reference-guide), 
+    [CKEditor plugins bundled with the AlloyEditor](/docs/7-1/reference/-/knowledge_base/r/ckeditor-plugin-reference-guide), 
     add the code below to retrieve the extra plugins and add the plugin to the 
     AlloyEditor's configuration. The example below adds the `clipboard` CKEditor 
     plugin:
@@ -93,12 +97,12 @@ steps to create and configure the OSGi module:
 
 The `*EditorConfigContributor` class is prepared. Now you must choose which 
 toolbar you want to add the button(s) to: the 
-[Add Toolbar](/develop/tutorials/-/knowledge_base/7-1/adding-a-button-to-the-add-toolbar) 
+[Add Toolbar](/docs/7-1/tutorials/-/knowledge_base/t/adding-a-button-to-the-add-toolbar) 
 or one of the 
-[Styles Toolbars](/develop/tutorials/-/knowledge_base/7-1/adding-a-button-to-a-styles-toolbar). 
+[Styles Toolbars](/docs/7-1/tutorials/-/knowledge_base/t/adding-a-button-to-a-styles-toolbar). 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Adding New Behavior to an Editor](/develop/tutorials/-/knowledge_base/7-1/adding-new-behavior-to-an-editor)
+[Adding New Behavior to an Editor](/docs/7-1/tutorials/-/knowledge_base/t/adding-new-behavior-to-an-editor)
 
-[CKEditor Plugin Reference Guide](/develop/reference/-/knowledge_base/7-1/ckeditor-plugin-reference-guide)
+[CKEditor Plugin Reference Guide](/docs/7-1/reference/-/knowledge_base/r/ckeditor-plugin-reference-guide)

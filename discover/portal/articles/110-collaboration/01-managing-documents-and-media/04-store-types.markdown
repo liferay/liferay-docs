@@ -1,9 +1,13 @@
-# Store Types [](id=store-types)
+---
+header-id: store-types
+---
+
+# Store Types
 
 You can change the file system (the *store*) that the Documents and Media 
 library uses to store files. This is configured in the `portal-ext.properties` 
 file by setting the `dl.store.impl=`property. Configuring stores is covered in 
-[the Document Repository Configuration guide](/discover/deployment/-/knowledge_base/7-1/document-repository-configuration). 
+[the Document Repository Configuration guide](/docs/7-1/deploy/-/knowledge_base/d/document-repository-configuration). 
 Here, you'll consider the ramifications of different stores: 
 
 -   **Simple File System Store:** Uses the file system (local or a mounted 
@@ -23,7 +27,7 @@ If you must move your files from one store to another, use the migration utility
 in *Control Panel* &rarr; *Configuration* &rarr; *Server Administration* &rarr;
 *Data Migration*. 
 
-## Simple File System Store [](id=using-the-file-system-store)
+## Simple File System Store
 
 The Simple File System Store is the default store. It stores Documents and Media
 files on the server's file system (local or mounted). This store is heavily
@@ -31,7 +35,7 @@ bound to @product@'s database. The store's default root folder is
 `[Liferay Home]/data/document_library`. You can change this via the
 `dl.store.file.system.root.dir=` property in a `portal-ext.properties` file, or
 in the Control Panel. For instructions on this, see the 
-[Document Repository Configuration guide](/discover/deployment/-/knowledge_base/7-1/document-repository-configuration).
+[Document Repository Configuration guide](/docs/7-1/deploy/-/knowledge_base/d/document-repository-configuration).
 
 The Simple File System Store uses a local folder to store files. You can use the
 file system for your clustered configuration, but you must make sure the folder
@@ -54,18 +58,14 @@ structure like this:
 
 ![Figure 1: The Simple File System Store creates a folder structure based on primary keys in @product@'s database.](../../../images/enterprise-file-system-store.png)
 
-+$$$
+| **Note:** Be careful not to confuse a document's numeric file entry name from
+| its document ID. Each has an independent counter. The numeric file entry name is
+| used in the folder path for storing the document, but the document ID is not.
+| The numeric file entry name can be found in the `name` column of the
+| `DLFileEntry` table in @product@'s database; the document ID can be found in the
+| `fileEntryId` column of the same table.
 
-**Note:** Be careful not to confuse a document's numeric file entry name from 
-its document ID. Each has an independent counter. The numeric file entry name is 
-used in the folder path for storing the document, but the document ID is not. 
-The numeric file entry name can be found in the `name` column of the 
-`DLFileEntry` table in @product@'s database; the document ID can be found in the 
-`fileEntryId` column of the same table. 
-
-$$$
-
-## Using the Advanced File System Store [](id=using-the-advanced-file-system-store)
+## Using the Advanced File System Store
 
 The Advanced File System Store, like the Simple File System Store, saves files 
 to the local file system. It uses a slightly different folder structure, 
@@ -84,10 +84,10 @@ corruption issues if two users attempt to write to the same file at the same
 time from two different nodes. 
 
 See the 
-[Document Repository Configuration guide](/discover/deployment/-/knowledge_base/7-1/using-the-advanced-file-system-store) 
+[Document Repository Configuration guide](/docs/7-1/deploy/-/knowledge_base/d/using-the-advanced-file-system-store) 
 for instructions on using the Advanced File System Store. 
 
-## Using Amazon Simple Storage Service [](id=using-amazon-simple-storage-service)
+## Using Amazon Simple Storage Service
 
 Amazon's Simple Storage Service (S3) is a cloud-based storage solution that you
 can use with @product@. It lets you store your documents to the cloud seamlessly 
@@ -96,7 +96,7 @@ from all nodes.
 When you sign up for the service, Amazon assigns you unique keys that link you 
 to your account. In Amazon's interface, you can create *buckets* of data 
 optimized by region. Once you create these to your specifications, follow 
-[these instructions](/discover/deployment/-/knowledge_base/7-1/using-amazon-simple-storage-service) 
+[these instructions](/docs/7-1/deploy/-/knowledge_base/d/using-amazon-simple-storage-service) 
 to connect your repository to @product@. 
 
 Consult Amazon's S3 documentation for more information. 

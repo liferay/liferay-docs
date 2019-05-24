@@ -1,4 +1,8 @@
-# Defining Application Permissions [](id=defining-application-permissions)
+---
+header-id: defining-application-permissions
+---
+
+# Defining Application Permissions
 
 When you're writing an application, there are almost always parts of the
 application or its data that should be protected by permissions. Some users

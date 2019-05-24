@@ -1,4 +1,8 @@
-# Resource Bundle Override [](id=resource-bundle-override)
+---
+header-id: resource-bundle-override
+---
+
+# Resource Bundle Override
 
 This example overrides the default
 `javax.portlet.title.com_liferay_login_web_portlet_LoginPortlet` language key
@@ -12,13 +16,13 @@ For reference, the Login portlet's language keys are stored in the
 [liferay-portal](https://github.com/liferay/liferay-portal) Github repo's
 `modules/apps/login/login-web/src/main/resources/content` folder.
 
-## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
+## What API(s) and/or code components does this sample highlight?
 
 This sample leverages the
 [`Provide-Capability`](https://bnd.bndtools.org/chapters/220-contracts.html)
 OSGi manifest header.
 
-## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
+## How does this sample leverage the API(s) and/or code component?
 
 This sample conveys the recommended approach to override a portlet's
 language keys file for any module that is deployed to @product@'s OSGi runtime
@@ -54,21 +58,21 @@ header:
             servlet.context.name=login-web
 
 For more information on the `Provide-Capability` header and its parts, see the
-[Prioritze Your Module's Resource Bundle](/develop/tutorials/-/knowledge_base/7-1/overriding-a-modules-language-keys#prioritize-your-modules-resource-bundle)
+[Prioritze Your Module's Resource Bundle](/docs/7-1/tutorials/-/knowledge_base/t/overriding-a-modules-language-keys#prioritize-your-modules-resource-bundle)
 section.
 
 This approach can be used to override any portlet's language keys (i.e.,
 `language.properties` files that are inside a module deployed to @product@'s
 OSGi runtime). If you need to override @product@'s core language keys, see the
-[Overriding Global Language Keys](/develop/tutorials/-/knowledge_base/7-1/overriding-global-language-keys)
+[Overriding Global Language Keys](/docs/7-1/tutorials/-/knowledge_base/t/overriding-global-language-keys)
 tutorial.
 
 For more information on using a resource bundle to override a module's
 language keys, see the
-[Overriding a Module's Language Keys](/develop/tutorials/-/knowledge_base/7-1/overriding-a-modules-language-keys)
+[Overriding a Module's Language Keys](/docs/7-1/tutorials/-/knowledge_base/t/overriding-a-modules-language-keys)
 tutorial.
 
-## Where Is This Sample? [](id=where-is-this-sample)
+## Where Is This Sample?
 
 There are three different versions of this sample, each built with a different
 build tool:

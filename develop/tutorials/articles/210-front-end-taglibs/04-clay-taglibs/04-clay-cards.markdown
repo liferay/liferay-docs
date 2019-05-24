@@ -1,4 +1,8 @@
-# Clay Cards [](id=clay-cards)
+---
+header-id: clay-cards
+---
+
+# Clay Cards
 
 Cards visually represent data. Use them for images, document libraries, user
 profiles and more. There are four main types of Cards:
@@ -10,7 +14,7 @@ profiles and more. There are four main types of Cards:
 
 Each of these types is covered in this tutorial. 
 
-## Image Cards [](id=image-cards)
+## Image Cards
 
 Image Cards are used for image/document galleries. 
 
@@ -98,7 +102,7 @@ Include the `selectable` attribute to make cards selectable (include a checkbox)
 
 ![Figure 6: Cards can be selectable.](../../../images/clay-taglib-image-card-icon-selectable.png)
 
-## File Cards [](id=file-cards)
+## File Cards
 
 File Cards display an icon of the file's type. They represent file types other
 than image files (i.e. PDF, MP3, DOC, etc.).
@@ -134,14 +138,10 @@ The example below specifies a list `icon` instead of the default file icon:
     	title="<%= DOC_FILE_TITLE %>"
     />
 
-+$$$
+| **Note:** The full list of available Liferay icons can be found on the
+| [Clay CSS website](https://claycss.com/docs/components/icons-lexicon.html#clay-lexicon-icons).
 
-**Note:** The full list of available Liferay icons can be found on the 
-[Clay CSS website](https://claycss.com/docs/components/icons-lexicon.html#clay-lexicon-icons).
-
-$$$
-
-## User Cards [](id=user-cards)
+## User Cards
 
 User Cards display user profile images or the initials of the user's name or 
 name+surname.
@@ -173,7 +173,7 @@ User Card with profile image:
 
 ![Figure 9: A User Card can also display a profile image.](../../../images/clay-taglib-user-card-profile-image.png)
 
-## Horizontal Cards [](id=horizontal-cards)
+## Horizontal Cards
 
 Horizontal Cards represent folders and can have the same amount of information
 as other Cards. The key difference is that horizontal Cards let you remove the
@@ -190,10 +190,10 @@ image portion of the Card, since only the folder icon is required.
 
 Now you know how to use Cards in your UI to display information in your apps.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Clay Badges](/develop/tutorials/-/knowledge_base/7-1/clay-badges)
+[Clay Badges](/docs/7-1/tutorials/-/knowledge_base/t/clay-badges)
 
-[Clay Labels and Links](/develop/tutorials/-/knowledge_base/7-1/clay-labels-and-links)
+[Clay Labels and Links](/docs/7-1/tutorials/-/knowledge_base/t/clay-labels-and-links)
 
-[Clay Stickers](/develop/tutorials/-/knowledge_base/7-1/clay-stickers)
+[Clay Stickers](/docs/7-1/tutorials/-/knowledge_base/t/clay-stickers)

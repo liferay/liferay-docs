@@ -1,4 +1,8 @@
-# Preparing for Install [](id=preparing-for-install)
+---
+header-id: preparing-for-install
+---
+
+# Preparing for Install
 
 Installing @product@ is easy. But before you begin, you should answer a few
 questions.
@@ -14,7 +18,7 @@ questions.
 Next, you'll answer these questions and learn the basic steps for installing
 @product@.
 
-## Obtaining @product@ [](id=obtaining-product)
+## Obtaining @product@
 
 Anyone can download @product@ from [liferay.com](https://www.liferay.com).
 Click Product &rarr; *Downloads*, and you'll be able to download either the
@@ -54,7 +58,7 @@ configure search. You can install @product@ either by using a bundle or by
 installing it manually on your existing application server. Next, we'll go over
 the steps it takes to install @product@.
 
-## @product@ Installation Steps [](id=liferay-installation-steps)
+## @product@ Installation Steps
 
 Before you begin installing @product@, you should review these basic
 installation steps:
@@ -103,7 +107,7 @@ installation steps:
 We'll go through the steps in order, so first we'll look at the @product@
 database.
 
-## Step 1: Choose a Database Server and Create a New Database [](id=step-1-choose-a-database-server-and-create-a-new-database)
+## Step 1: Choose a Database Server and Create a New Database
 
 The recommended way of setting up your @product@ database is also the simplest.
 @product@ takes care of just about everything. You only need to take two simple
@@ -113,19 +117,11 @@ steps:
     multilingual application and needs UTF-8 encoding to display all of its
     supported character sets.
 
-    +$$$
+    | **Note:** If you plan to migrate from one database vendor to another,
+    | [configure the database to use the default query result order you expect for entities @product@ lists](/docs/7-0/tutorials/-/knowledge_base/t/sort-order-changed-with-a-different-database).
 
-    **Note:** If you plan to migrate from one database vendor to another,
-    [configure the database to use the default query result order you expect for entities @product@ lists](/develop/tutorials/-/knowledge_base/7-0/sort-order-changed-with-a-different-database). 
-
-    $$$
-
-    +$$$
-
-    **Note:** If you use Sybase, configure the database to allow null values by 
-    default. 
-
-    $$$
+    | **Note:** If you use Sybase, configure the database to allow null values by
+    | default.
 
 2.  Create a database user for accessing this database. Grant this database user
     all rights, including the rights to create and drop tables, to the blank
@@ -141,28 +137,20 @@ maintain its database automatically during upgrades or when various @product@
 plugins that create database tables of their own are installed. This method is
 by far the best way to set up your @product@ database.
 
-+$$$
-
-**Warning:** If you're using an Oracle database, use the `ojdbc8.jar` driver 
-library with at least Oracle 12.2.0.1.0 JDBC 4.2 versioning because
-[data truncation issues](https://issues.liferay.com/browse/LPS-79229)
-have been detected reading data from CLOB columns.
-
-$$$
+| **Warning:** If you're using an Oracle database, use the `ojdbc8.jar` driver
+| library with at least Oracle 12.2.0.1.0 JDBC 4.2 versioning because
+| [data truncation issues](https://issues.liferay.com/browse/LPS-79229)
+| have been detected reading data from CLOB columns.
 
 If you choose to set up @product@'s database with the recommended permissions
 described in this section, you can skip to the next section.
 
-+$$$
-
-**Warning:** The instructions below are not ideal for @product@
-installations. This procedure is documented here so that enterprises with more
-restrictive standards can install @product@ with stricter (but sub-optimal)
-database settings. If it's at all possible, we recommend that you use the
-method described in the previous section instead of the procedure outlined
-below.
-
-$$$
+| **Warning:** The instructions below are not ideal for @product@
+| installations. This procedure is documented here so that enterprises with more
+| restrictive standards can install @product@ with stricter (but sub-optimal)
+| database settings. If it's at all possible, we recommend that you use the
+| method described in the previous section instead of the procedure outlined
+| below.
 
 Even though @product@ can create its database automatically, some enterprises
 prefer *not* to allow the database user configured in an application server to
@@ -209,7 +197,7 @@ enterprise-level document repositories. All of the repositories are connected to
 Once you have your database and document repository ready, you can install
 @product@ on your server.
 
-## Step 2: Gather Your Mail Credentials [](id=step-2-gather-your-mail-credentials)
+## Step 2: Gather Your Mail Credentials
 
 @product@ uses a mail server to send email notifications. As part of the
 install, therefore, you will need to have credentials that @product@ can use to
@@ -226,34 +214,34 @@ information:
 
 Once you've gathered this information, you're ready to move on to the next step. 
 
-## Step 3: Install [](id=step-3-install)
+## Step 3: Install
 
 The next step is to install @product@. You can do this in one of two ways: by
-[installing @product@ bundled with an application server](/discover/deployment/-/knowledge_base/7-1/installing-liferay),
+[installing @product@ bundled with an application server](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay),
 or by
-[installing @product@ manually on an existing application server](/discover/deployment/-/knowledge_base/7-1/installing-liferay-manually).
+[installing @product@ manually on an existing application server](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay-manually).
 Each @product@ installation's 
-[Liferay Home contains several folders](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home).
+[Liferay Home contains several folders](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home).
 
 By far the easiest way to get @product@ installed is to use a bundle. Though
 bundles are pre-packaged for demo purposes, it is very easy to turn them into
 full, production-ready @product@ instances.  
 
-## Step 4: Network Configuration [](id=step-4-network)
+## Step 4: Network Configuration
 
 @product@ supports both IPv4 and IPv6 address formats. You must
-[choose between IPv4 or IPv6](/discover/deployment/-/knowledge_base/7-0/choosing-ipv4-or-ipv6).
+[choose between IPv4 or IPv6](/docs/7-0/deploy/-/knowledge_base/d/choosing-ipv4-or-ipv6).
 By default, @product@ uses IPv4 addresses. If you are using IPv6, you will have to configure @product@. There are two simple steps. 
 
 1.  In the application server's environment settings, set
     `-Djava.net.preferIPv4Stack=false`. 
 
 2.  Create a `portal-ext.properties` file in your portal's
-    [Liferay Home folder](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
+    [Liferay Home folder](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home)
     (if one does not already exist) and set the `tunnel.servlet.hosts.allowed`
     property to the target hosts you want to allow (e.g., _0:0:0:0:0:0:0:1_). 
 
-## Step 5: Configure Elasticsearch [](id=step-5-configure-elastic-search)
+## Step 5: Configure Elasticsearch
 
 @product@ by default ships with an embedded version of Elasticsearch. While this
 configuration works well for demo purposes, it is not supported in a production
@@ -262,9 +250,9 @@ connect to a standalone Elasticsearch server or cluster. Depending on the size
 of your installation, this standalone instance of Elasticsearch can reside
 either on the same machine you have @product@ on or a different machine. For
 performance purposes, it is better to
-[install Elasticsearch on a separate machine](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch).
+[install Elasticsearch on a separate machine](/docs/7-1/deploy/-/knowledge_base/d/installing-elasticsearch).
 
-## Step 6: Liferay Marketplace and Portal Security [](id=step-6-liferay-marketplace-and-portal-security)
+## Step 6: Liferay Marketplace and Portal Security
 
 The Liferay Marketplace is an integral part of the @product@ experience. The
 Marketplace plugin is required to be installed on @product@. The Marketplace
@@ -286,7 +274,7 @@ decided to install @product@ using a bundle, continue with the next section. If
 you're installing @product@ manually, skip to the section for your application
 server of choice. Once you have @product@ installed manually or via a bundle,
 you can move on to 
-[using @product@'s Setup Wizard](/discover/deployment/-/knowledge_base/7-1/installing-liferay##using-liferays-setup-wizard),
-[configuring mail](/discover/deployment/-/knowledge_base/7-1/installing-liferay#configuring-mail),
+[using @product@'s Setup Wizard](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay##using-liferays-setup-wizard),
+[configuring mail](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#configuring-mail),
 and 
-[installing Elasticsearch](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch). 
+[installing Elasticsearch](/docs/7-1/deploy/-/knowledge_base/d/installing-elasticsearch). 

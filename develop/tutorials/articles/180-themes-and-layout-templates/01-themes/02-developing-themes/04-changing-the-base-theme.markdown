@@ -1,17 +1,17 @@
-# Changing Your Base Theme [](id=changing-your-base-theme)
+---
+header-id: changing-your-base-theme
+---
+
+# Changing Your Base Theme
 
 Once your theme is 
-[built](/develop/tutorials/-/knowledge_base/7-1/building-your-themes-files), 
+[built](/docs/7-1/tutorials/-/knowledge_base/t/building-your-themes-files), 
 you can use the `gulp extend` task to change your theme's base theme. 
 
-+$$$
-
-**Note:** Gulp is included as a local dependency in generated themes, so you 
-are not required to install it. It can be accessed by running 
-`node_modules\.bin\gulp` followed by the Gulp task from a generated theme's 
-root folder.
-
-$$$
+| **Note:** Gulp is included as a local dependency in generated themes, so you
+| are not required to install it. It can be accessed by running
+| `node_modules\.bin\gulp` followed by the Gulp task from a generated theme's
+| root folder.
 
 Follow these steps to change your base theme:
 
@@ -30,13 +30,9 @@ Follow these steps to change your base theme:
 
     ![Figure 2: You can extend the styled or unstyled base theme, a globally installed theme, or a theme published to the npm registry.](../../../../images/theme-dev-changing-base-themes-gulp-extend-base-theme-choice.png)
 
-    +$$$
-
-    **Note:** The Classic theme is an implementation of an existing base theme 
-    and is therefore not meant to be extended. Extending Liferay's Classic theme 
-    is strongly discouraged.
-
-    $$$
+    | **Note:** The Classic theme is an implementation of an existing base theme
+    | and is therefore not meant to be extended. Extending Liferay's Classic theme
+    | is strongly discouraged.
 
 3.  Your theme's `package.json` contains the updated base theme configuration :
 
@@ -53,15 +49,15 @@ Follow these steps to change your base theme:
         }
         
 When you 
-[build your theme's files](/develop/tutorials/-/knowledge_base/7-1/building-your-themes-files) 
+[build your theme's files](/docs/7-1/tutorials/-/knowledge_base/t/building-your-themes-files) 
 or 
-[deploy it](/develop/tutorials/-/knowledge_base/7-1/deploying-your-theme), 
+[deploy it](/docs/7-1/tutorials/-/knowledge_base/t/deploying-your-theme), 
 your theme will inherit the updated base theme's files.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Configuring Your Theme's App Server](/develop/tutorials/-/knowledge_base/7-1/configuring-your-themes-app-server)
+[Configuring Your Theme's App Server](/docs/7-1/tutorials/-/knowledge_base/t/configuring-your-themes-app-server)
 
-[Deploying Themes](/develop/tutorials/-/knowledge_base/7-1/deploying-your-theme)
+[Deploying Themes](/docs/7-1/tutorials/-/knowledge_base/t/deploying-your-theme)
 
-[Listing Your Theme's Extensions](/develop/tutorials/-/knowledge_base/7-1/listing-your-themes-extensions)
+[Listing Your Theme's Extensions](/docs/7-1/tutorials/-/knowledge_base/t/listing-your-themes-extensions)

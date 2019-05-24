@@ -1,4 +1,8 @@
-# Invoking Services from Service Builder Code [](id=invoking-services-from-service-builder-code)
+---
+header-id: invoking-services-from-service-builder-code
+---
+
+# Invoking Services from Service Builder Code
 
 All the services created within a Service Builder application are wired using an
 internal Spring Application Context. This uses AOP proxies to adapt the services
@@ -7,7 +11,7 @@ Spring Application Context file, Service Builder defines each entity's
 `*LocalServiceImpl`, `*ServiceImpl`, and `*PersistenceImpl` classes as Spring
 Beans. For example, Service Builder defines Spring Beans for the `Foo` entity in
 the
-[Liferay Blade Service Builder `basic-service` sample module's](/develop/reference/-/knowledge_base/7-1/service-builder-samples)
+[Liferay Blade Service Builder `basic-service` sample module's](/docs/7-1/reference/-/knowledge_base/r/service-builder-samples)
 `src/main/resources/META-INF/spring/module-spring.xml` file:
 
     <?xml version="1.0"?>
@@ -40,19 +44,15 @@ recommended Liferay annotations a Service Builder Spring Bean can use.
 - [Use `@BeanReference` to reference a Spring Bean that is in the Application Context.](#referencing-a-spring-bean-that-is-in-the-application-context)
 - [Use `@ServiceReference` to reference an OSGi service.](#referencing-an-osgi-service)
 
-+$$$
-
-**Important:** When invoking service entity updates (e.g., 
-`fooService.update(object)`) for services that have MVCC enabled, make sure to
-do so in transactions. Propagate rejected transactions to the UI for the user to
-handle. For details, see
-[Multiversion concurrency control (MVCC)](/develop/tutorials/-/knowledge_base/7-1/defining-global-service-information#multiversion-concurrency-control-mvcc).
-
-$$$
+| **Important:** When invoking service entity updates (e.g.,
+| `fooService.update(object)`) for services that have MVCC enabled, make sure to
+| do so in transactions. Propagate rejected transactions to the UI for the user to
+| handle. For details, see
+| [Multiversion concurrency control (MVCC)](/docs/7-1/tutorials/-/knowledge_base/t/defining-global-service-information#multiversion-concurrency-control-mvcc).
 
 The `@BeanReference` annotation is explained first. 
 
-## Referencing a Spring Bean that is in the Application Context [](id=referencing-a-spring-bean-that-is-in-the-application-context)
+## Referencing a Spring Bean that is in the Application Context
 
 A Service Builder Spring Bean class, such as a `*LocalServiceImpl` class, should
 use Liferay's `@BeanReference` annotation to access other Spring Beans the
@@ -85,7 +85,7 @@ OSGi Registry. This means the following services are available:
 These are all OSGi services. The next section demonstrates a Service Builder
 Spring Bean referencing OSGi services.
 
-## Referencing OSGi Services [](id=referencing-an-osgi-service)
+## Referencing OSGi Services
 
 In many cases, your Service Builder code (Spring Beans) must use external
 services. Liferay's `@ServiceReference` annotation lets Liferay Spring Beans
@@ -110,7 +110,7 @@ more robust and versatile.
 
 Fortunately, Service Builder generates this kind of code for every entity your
 `service.xml` file references. For example, the
-[Liferay Blade Service Builder sample project](/develop/reference/-/knowledge_base/7-1/service-builder-samples)
+[Liferay Blade Service Builder sample project](/docs/7-1/reference/-/knowledge_base/r/service-builder-samples)
 `basic-service` module's `service.xml` file defines a `Foo` entity that
 references an `AssetEntry` entity:
 
@@ -128,12 +128,12 @@ Great! You now know how to add a reference to any OSGi service to a Service
 Builder Spring Bean. You also know how to add a reference to any other Spring
 Bean in the Application Context of your Service Builder Spring Bean.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Invoking Local Services](/develop/tutorials/-/knowledge_base/7-1/invoking-local-services)
+[Invoking Local Services](/docs/7-1/tutorials/-/knowledge_base/t/invoking-local-services)
 
-[Invoking Remote Services](/develop/tutorials/-/knowledge_base/7-1/invoking-remote-services)
+[Invoking Remote Services](/docs/7-1/tutorials/-/knowledge_base/t/invoking-remote-services)
 
-[JSON Web Services Invoker](/develop/tutorials/-/knowledge_base/7-1/json-web-services-invoker)
+[JSON Web Services Invoker](/docs/7-1/tutorials/-/knowledge_base/t/json-web-services-invoker)
 
-[Service Trackers](/develop/tutorials/-/knowledge_base/7-1/service-trackers)
+[Service Trackers](/docs/7-1/tutorials/-/knowledge_base/t/service-trackers)

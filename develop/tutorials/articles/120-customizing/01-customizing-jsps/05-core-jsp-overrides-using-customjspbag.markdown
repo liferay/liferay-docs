@@ -1,9 +1,13 @@
-# JSP Overrides Using Custom JSP Bag [](id=jsp-overrides-using-custom-jsp-bag)
+---
+header-id: jsp-overrides-using-custom-jsp-bag
+---
+
+# JSP Overrides Using Custom JSP Bag
 
 Liferay's API based approaches to overriding JSPs (i.e.,
-[Dynamic Includes](/develop/tutorials/-/knowledge_base/7-1/customizing-jsps-with-dynamic-includes)
+[Dynamic Includes](/docs/7-1/tutorials/-/knowledge_base/t/customizing-jsps-with-dynamic-includes)
 and
-[Portlet Filters](/develop/tutorials/-/knowledge_base/7-1/jsp-overrides-using-portlet-filters))
+[Portlet Filters](/docs/7-1/tutorials/-/knowledge_base/t/jsp-overrides-using-portlet-filters))
 are the best way to override JSPs in apps and in the core. You can also use
 Custom JSP Bags to override core JSPs. But the approach is not as stable as the
 API based approaches. If your Custom JSP Bag's JSP is buggy (because of your
@@ -13,12 +17,8 @@ Custom JSP Bags to override JSPs is a bad practice, equivalent to using Ext
 plugins to customize @product@. If you're maintaining existing Custom JSP Bags,
 however, this tutorial explains how they work.
 
-+$$$
-
-**Important:** Liferay cannot guarantee that JSPs overridden using Custom JSP
-Bag can be upgraded.
-
-$$$
+| **Important:** Liferay cannot guarantee that JSPs overridden using Custom JSP
+| Bag can be upgraded.
 
 A Custom JSP Bag module must satisfy these criteria: 
 
@@ -30,10 +30,10 @@ A Custom JSP Bag module must satisfy these criteria:
 
 The module provides transportation for this code into Liferay's OSGi runtime.
 After you
-[create your new module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#creating-a-module),
+[create your new module](/docs/7-1/tutorials/-/knowledge_base/t/starting-module-development#creating-a-module),
 continue with providing your custom JSP. 
 
-## Providing a Custom JSP [](id=providing-a-custom-jsp)
+## Providing a Custom JSP
 
 Create your JSPs to override @product@ core JSPs. If you're using the Maven
 [Standard Directory Layout](https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html),
@@ -46,26 +46,22 @@ place your custom JSP at
 
     [your module]/src/main/resources/META-INF/jsps/html/common/themes/bottom-ext.jsp
 
-+$$$
+| **Note:** If you place custom JSPs somewhere other than
+| `src/main/resources/META-INF/jsps` in your module, assign that location to a
+| `-includeresource: META-INF/jsps=` directive in your module's `bnd.bnd` file.
+| For example, if you place custom JSPs in a folder `src/META-INF/custom_jsps` in
+| your module, specify this in your `bnd.bnd`:
+| 
+|     -includeresource: META-INF/jsps=src/META-INF/custom_jsps
 
-**Note:** If you place custom JSPs somewhere other than 
-`src/main/resources/META-INF/jsps` in your module, assign that location to a
-`-includeresource: META-INF/jsps=` directive in your module's `bnd.bnd` file.
-For example, if you place custom JSPs in a folder `src/META-INF/custom_jsps` in
-your module, specify this in your `bnd.bnd`:
-
-    -includeresource: META-INF/jsps=src/META-INF/custom_jsps
-
-$$$
-
-## Implement a Custom JSP Bag [](id=implement-a-custom-jsp-bag)
+## Implement a Custom JSP Bag
 
 @product@ (specifically the
 [`CustomJspBagRegistryUtil` class](@platform-ref@/7.1-latest/javadocs/portal-impl/com/liferay/portal/deploy/hot/CustomJspBagRegistryUtil.html))
 loads JSPs from
 [`CustomJspBag`](@platform-ref@/7.1-latest/javadocs/portal-impl/com/liferay/portal/deploy/hot/CustomJspBag.html)
 services. The
-[Core Override JSP sample project](/develop/reference/-/knowledge_base/7-1/core-jsp-hook)
+[Core Override JSP sample project](/docs/7-1/reference/-/knowledge_base/r/core-jsp-hook)
 provides a working custom JSP bag implementation. The following steps for
 implementing a custom JSP bag refer to that sample class code. 
 
@@ -176,9 +172,9 @@ implementing a custom JSP bag refer to that sample class code.
 Now your module provides custom JSPs and a custom JSP bag implementation. When
 you deploy it, @product@ uses its custom JSPs in place of the core JSPs they
 override. For a working example, examine the
-[Core Override JSP sample project](/develop/reference/-/knowledge_base/7-1/core-jsp-hook).
+[Core Override JSP sample project](/docs/7-1/reference/-/knowledge_base/r/core-jsp-hook).
 
-## Extend a JSP [](id=extend-a-jsp)
+## Extend a JSP
 
 If you want to add something to a core JSP, see if it has an empty `-ext.jsp`
 and override that instead of the whole JSP. It keeps things simpler and more
@@ -207,28 +203,28 @@ Remember, this type of customization is a last resort. Your override may break
 due to the nature of this implementation, and core functionality in Liferay can
 go down with it. If the JSP you want to override is in another module, refer to
 the section on 
-[API based approaches to overriding JSPs](/develop/tutorials/-/knowledge_base/7-1/jsp-overrides-using-custom-jsp-bag#using-portals-api-to-override-a-jsp).
+[API based approaches to overriding JSPs](/docs/7-1/tutorials/-/knowledge_base/t/jsp-overrides-using-custom-jsp-bag#using-portals-api-to-override-a-jsp).
 
-## Site Scoped JSP Customization [](id=site-scoped-jsp-customization)
+## Site Scoped JSP Customization
 
 In Liferay Portal 6.2, you could use
-[Application Adapters](/develop/tutorials/-/knowledge_base/6-2/customizing-sites-and-site-templates-with-application-adapters)
+[Application Adapters](/docs/6-2/tutorials/-/knowledge_base/t/customizing-sites-and-site-templates-with-application-adapters)
 to scope your core JSP customizations to a specific Site. Since the majority of
 JSPs were moved into modules for @product@ 7.0, the use case for this has shrunk
 considerably. If you must scope a core JSP customization to a Site, prepare an
 application adapter 
-[as you would have for Liferay Portal 6.2](/develop/tutorials/-/knowledge_base/6-2/customizing-sites-and-site-templates-with-application-adapters),
+[as you would have for Liferay Portal 6.2](/docs/6-2/tutorials/-/knowledge_base/t/customizing-sites-and-site-templates-with-application-adapters),
 and deploy it to @product-ver@. It will still work. However, note that this
 approach is deprecated in @product-ver@ and won't be supported at all in Liferay
 8.0.
 
 <!-- Uncomment once we cover scoping to a site
 If you're interested in scoping a module's JSP customization to a site, that's
-another story. See the documentation on [using Dynamic Include](/develop/tutorials/-/knowledge_base/7-1/customizing-jsps-with-dynamic-includes).
+another story. See the documentation on [using Dynamic Include](/docs/7-1/tutorials/-/knowledge_base/t/customizing-jsps-with-dynamic-includes).
 -->
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Core Override JSP sample project](/develop/reference/-/knowledge_base/7-1/core-jsp-hook)
+[Core Override JSP sample project](/docs/7-1/reference/-/knowledge_base/r/core-jsp-hook)
 
-[Upgrading Core JSP Hooks](/develop/tutorials/-/knowledge_base/7-1/upgrading-core-jsp-hooks)
+[Upgrading Core JSP Hooks](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-core-jsp-hooks)

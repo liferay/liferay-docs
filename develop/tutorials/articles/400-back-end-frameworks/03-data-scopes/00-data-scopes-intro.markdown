@@ -1,4 +1,8 @@
-# Data Scopes [](id=data-scopes)
+---
+header-id: data-scopes
+---
+
+# Data Scopes
 
 Apps can restrict their data to specific scopes. Scopes provide a context for
 the application's data.
@@ -11,23 +15,23 @@ the application's data.
 
 For example, a Site-scoped app can display its data across a single Site. For a
 detailed explanation of scopes, see the user guide article 
-[Widget Scope](/discover/portal/-/knowledge_base/7-1/widget-scope). 
+[Widget Scope](/docs/7-1/user/-/knowledge_base/u/widget-scope). 
 To give your applications scope, you must manually add support for it. This
 tutorial shows you how. 
 
-## Scoping Your Entities [](id=scoping-your-entities)
+## Scoping Your Entities
 
 In your service layer, your entities must have a `companyId` attribute of type 
 `long` to enable scoping by portal instance and a `groupId` attribute of type 
 `long` to enable scoping by Site. Using 
-[Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder) 
+[Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/service-builder) 
 is the simplest way to do this. The 
-[Service Builder Persistence](/develop/tutorials/-/knowledge_base/7-1/service-builder-persistence) 
+[Service Builder Persistence](/docs/7-1/tutorials/-/knowledge_base/t/service-builder-persistence) 
 and 
-[Business Logic with Service Builder](/develop/tutorials/-/knowledge_base/7-1/business-logic-with-service-builder)
+[Business Logic with Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/business-logic-with-service-builder)
 tutorials show you how. 
 
-## Enabling Scoping [](id=enabling-scoping)
+## Enabling Scoping
 
 To enable scoping in your app, set the property 
 `"com.liferay.portlet.scopeable=true"` in your portlet class's `@Component` 
@@ -48,7 +52,7 @@ sets this component property:
 
 That's it! Next, you'll access your app's scope in your code. 
 
-## Accessing Your App's Scope [](id=accessing-your-apps-scope)
+## Accessing Your App's Scope
 
 Users can typically set an app's scope to a page, a Site, or the entire portal. 
 To handle your app's data, you must access it in its current scope. Your app's
@@ -94,7 +98,7 @@ scope is available in these ways:
 
 3.  By calling the `getScopeGroupId()` method on a `ServiceContext` object. The
     tutorial
-    [Understanding `ServiceContext`](/develop/tutorials/-/knowledge_base/7-1/understanding-servicecontext)
+    [Understanding `ServiceContext`](/docs/7-1/tutorials/-/knowledge_base/t/understanding-servicecontext)
     provides an example and details. 
     If you know your app always needs the portal instance ID, use the 
     `ServiceContext` object's `getCompanyId()` method. 
@@ -103,12 +107,12 @@ Awesome! Now you know how to get your app's scope. Next, you'll learn about
 a special use case: getting the Site scope for entities that belong to
 a different app. 
 
-## Accessing the Site Scope Across Apps [](id=accessing-the-site-scope-across-apps)
+## Accessing the Site Scope Across Apps
 
 There may be times when you must access a different app's Site-scoped data from
 your app that is scoped to a page or the portal. For example, web content
 articles can be created in the page, Site, or portal scope. 
-[Structures and Templates](/discover/portal/-/knowledge_base/7-1/designing-uniform-content) for
+[Structures and Templates](/docs/7-1/user/-/knowledge_base/u/designing-uniform-content) for
 such articles, however, exist only in the Site scope. The above techniques
 return the app's scope, which might not be the Site scope. What a pickle! Never
 fear, the `ThemeDisplay` method `getSiteGroupId()` is here! This method always
@@ -126,12 +130,12 @@ uses this method to get the Site ID needed to retrieve Structures:
 Great! Now you know how to scope your apps, access their scope, and even get the
 Site scope of entities that belong to other apps. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Widget Scope](/discover/portal/-/knowledge_base/7-1/widget-scope)
+[Widget Scope](/docs/7-1/user/-/knowledge_base/u/widget-scope)
 
-[Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder)
+[Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/service-builder)
 
-[Service Builder Persistence](/develop/tutorials/-/knowledge_base/7-1/service-builder-persistence)
+[Service Builder Persistence](/docs/7-1/tutorials/-/knowledge_base/t/service-builder-persistence)
 
-[Business Logic with Service Builder](/develop/tutorials/-/knowledge_base/7-1/business-logic-with-service-builder)
+[Business Logic with Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/business-logic-with-service-builder)

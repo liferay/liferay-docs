@@ -1,4 +1,8 @@
-# What's New in @product-ver@ [](id=whats-new-in-71)
+---
+header-id: whats-new-in-71
+---
+
+# What's New in @product-ver@
 
 @product-ver@ launches new features for efficient, beautiful page design, along
 with an extensive upgrade to forms. The user experience has also been
@@ -11,7 +15,7 @@ for mobile and web.
 Evolve your digital presence with new features to create stunning, personalized
 experiences for every audience.
 
-## Page Creation [](id=page-creation)
+## Page Creation
 
 @product-ver@ introduces a powerful new way to design websites. From carefully
 designed page fragments to full control over page menus, @product@ frees web
@@ -20,7 +24,7 @@ This is an enhancement of the content management system that you can adopt as
 you see fit. To differentiate the two, the new pages are called Content Pages,
 while the existing system uses Widget Pages. 
 
-### Content Pages [](id=content-pages)
+### Content Pages
 
 Users can now easily create and add unstructured content directly to pages. This
 is useful for site pages that don't need to leverage structured web content,
@@ -32,7 +36,7 @@ and configuring applications.
 
 ![Figure 1: Users can now choose to create Content Pages.](../../images/01-creating-pages.jpg)
 
-### Fragments [](id=fragments)
+### Fragments
 
 Fragments are a new way of creating and implementing content page designs. Web
 developers can now save page sections as Fragments and reuse them across a Site.
@@ -43,7 +47,7 @@ thumbnail previews, search, and permissions.
 
 ![Figure 2: Non-technical users can use Fragments as building blocks for pages.](../../images/01-page-fragments.jpg)
 
-### Fragment Editor [](id=fragment-editor)
+### Fragment Editor
 
 Web developers can use the Fragment Editor in the browser to create or edit
 their Fragments. Alternatively, developers can create Fragments with their
@@ -51,7 +55,7 @@ preferred tools and import the fragments into Liferay.
 
 ![Figure 3: The Fragment editor has a three-pane view for HTML, CSS, and JavaScript, with a preview pane rendering the final result.](../../images/01-fragment-editor.png)
 
-### Page Editor [](id=page-editor)
+### Page Editor
 
 The introduction of Fragments opens up new ways to create pages and templates
 through a visual page editor. 
@@ -65,7 +69,7 @@ the page editor.
 
 ![Figure 4: The Page Editor makes it easy to build pages out of Fragments.](../../images/01-page-editor.jpg)
 
-### Display Pages [](id=display-pages)
+### Display Pages
 
 Display Pages have been improved to make it easier to create standard templates
 for web content that must have a consistent look and feel, such as press
@@ -74,7 +78,7 @@ without touching code. When web content is published with a display page
 template, it automatically gets its own page with a unique URL, replacing the
 default content in the template with the newly added web content.
 
-### Menus [](id=menus)
+### Menus
 
 Menus are now decoupled from page navigation. Now you have the freedom to create
 custom menus for sections of the site or remove marketing landing pages from
@@ -84,7 +88,7 @@ a new drag-and-drop interface.
 ![Figure 5: Menus are now decoupled from page navigation, and can be edited
 independently.](../../images/01-menus.jpg)
 
-### Forms [](id=forms)
+### Forms
 
 Forms have extensive new functionality, including a set of conditional rules
 that make forms dynamic: if something happens in a field, an action elsewhere on
@@ -92,18 +96,18 @@ the form can be triggered. This lets you create calculations, offer follow-up
 questions based on responses, and much more. Forms are now localized: they can
 be translated into any language. There are new fields and properties, form
 fragments, auto-saving of forms, and so much more it had to be 
-[described separately](/discover/portal/-/knowledge_base/7-1/whats-new-with-liferay-forms).
+[described separately](/docs/7-1/user/-/knowledge_base/u/whats-new-with-liferay-forms).
 
 ![Figure 6: Forms have many improvements.](../../images/01-forms.jpg)
 
-### User Experience [](id=user-experience)
+### User Experience
 
 @product-ver@ rolls out several user experience refinements for externally
 facing content such as blogs, as well as omni-channel support for how media is
 displayed and delivered on different devices. These integrated improvements help
 you deliver a better experience to your users out of the box.
 
-### Adaptive Media [](id=adaptive-media)
+### Adaptive Media
 
 Adaptive Media dynamically adjusts images to best fit the screen size of the
 device being used. It also offers deep control over how images are loaded and
@@ -114,7 +118,7 @@ image resolutions and define devices that trigger various resolutions. This
 level of control enables consistent experiences that avoid poor page layouts and
 slow load times.
 
-### Blogs and Message Boards [](id=blogs-and-message-boards)
+### Blogs and Message Boards
 
 Blog refinements make it easier to deliver experiences that are tailored to your
 blog audience. These include support for creating friendly URLs, displaying
@@ -125,13 +129,13 @@ thread grouping, notification management, and a new design for comments.
 
 ![Figure 7: The new cards design for blogs displays entries in a visual grid.](../../images/01-blogs.jpg)
 
-## Administration Improvements [](id=administration-improvements)
+## Administration Improvements
 
 In addition to its new features, @product-ver@ is easier to administer.
 Streamlined administration tools mean less time managing sites, while still
 offering granular control. 
 
-### OAuth 2.0 [](id=oauth-2-0)
+### OAuth 2.0
 
 OAuth 2.0 has become a de-facto standard that allows users to authorize access
 to parts of their accounts without giving up authentication credentials. With
@@ -139,7 +143,7 @@ to parts of their accounts without giving up authentication credentials. With
 mobile and web applications secure, token-based access to user profile
 information they have complete control over and can revoke at any time. 
 
-### Data Protection [](id=data-protection)
+### Data Protection
 
 @product-ver@ introduces new data protection tools to help companies address
 GDPR regulations and maintain control over how their platform manages user data.
@@ -151,7 +155,7 @@ as needed through a simple interface. Both tools include APIs for third-party
 apps to implement this feature or override the default behavior for
 out-of-the-box apps.
 
-### Search [](id=search)
+### Search
 
 @product-ver@ improves search administration and uses Elasticsearch 6 as the
 default search engine, giving users more options for implementing and managing
@@ -163,7 +167,7 @@ monitor re-indexes, and much more.
 
 ![Figure 8: Search administration is now separated from server administration.](../../images/01-search.jpg)
 
-### Page Management [](id=page-management)
+### Page Management
 
 A new interface for visualizing and managing complex page hierarchies makes page
 management easier. Page templates and display pages are now integrated nicely,
@@ -171,33 +175,33 @@ bringing page management into one central location.
 
 ![Figure 9: The new page management interface puts all page functions in one place.](../../images/01-new-page-management.jpg)
 
-### Workflow Management [](id=workflow-management)
+### Workflow Management
 
 Workflow management 
-[has received](/discover/portal/-/knowledge_base/7-1/workflow#whats-new-with-workflow) 
+[has received](/docs/7-1/user/-/knowledge_base/u/workflow#whats-new-with-workflow) 
 a complete UI overhaul, with all configuration consolidated under one area in
 the Control Panel. Existing workflows can now be duplicated, definitions are
 versioned, and you can save drafts and restore previous versions.
 
-## Developer Improvements [](id=developer-improvements)
+## Developer Improvements
 
 @product-ver@ includes an updated collection of tools to facilitate the support
 and development of Liferay projects.
 
-### Targeting a Liferay Platform [](id=targeting-a-liferay-platform)
+### Targeting a Liferay Platform
 
 Liferay Workspace helps target a specific release of @product@, so dependencies
 get resolved properly. This makes upgrading your applications easy: specify your
 target platform, and Workspace points to the new version. All your dependencies
 are updated to the latest ones provided in the targeted release. 
 
-### Resolving Modules Before Deployment [](id=resolving-modules-before-deployment)
+### Resolving Modules Before Deployment
 
 Avoid the painful process of deploying modules only to be met with console
 errors or mysterious problems by resolving modules before deployment. This can
 be done by calling the new *resolve* Gradle task provided by Liferay Workspace. 
 
-### 7.1 Code Upgrade Tool [](id=7-1-code-upgrade-tool)
+### 7.1 Code Upgrade Tool
 
 The Code Upgrade Tool in Liferay Developer Studio helps you upgrade your legacy
 application code to @product@: 
@@ -207,7 +211,7 @@ application code to @product@:
 - Suggests how to adapt the code
 - Provides options, in some cases, to adapt code automatically. 
 
-### IntelliJ Support [](id=intellij-support)
+### IntelliJ Support
 
 Liferay development is now officially supported on IntelliJ IDEA which offers
 wizards to 
@@ -216,11 +220,11 @@ wizards to
 - Create projects leveraging Liferay's project templates
 - Create a Liferay server runtime for project deployment and debugging
 
-### Maven Support for Blade CLI [](id=maven-support-for-blade-cli)
+### Maven Support for Blade CLI
 
 Create Maven projects and Maven Liferay Workspaces using Blade CLI. 
 
-### Hybrid Mobile App Development [](id=hybrid-mobile-app-development)
+### Hybrid Mobile App Development
 
 Liferay Screens 3.0 enables software developers to use Apache Cordova or
 Xamarin to build cross-platform applications from one codebase designed
@@ -229,14 +233,14 @@ applications designed for PC can be rendered in screenlets with no additional
 code. The resulting apps allow native mobile capabilities and navigation to be
 mixed with HTML content seamlessly.
 
-### Modern JavaScript Frameworks Compatibility [](id=modern-javascript-frameworks-compatibility)
+### Modern JavaScript Frameworks Compatibility
 
 @product@ leverages its own npm bundler so developers can manage dependencies
 between applications. @product-ver@ provides support for popular JavaScript
 frameworks such as Angular, Vue.js, React and modern JavaScript workflows, so
 that npm modules can be deployed inside of @product@.
 
-### Modularity Update [](id=modularity-update)
+### Modularity Update
 
 New search applications such as Search Results, Search Bar and Category
 Facets allow for greater flexibility in page construction. These

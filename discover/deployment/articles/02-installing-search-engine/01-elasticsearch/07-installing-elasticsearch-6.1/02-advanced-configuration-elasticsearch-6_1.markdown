@@ -1,4 +1,8 @@
-# Advanced Configuration of the Liferay Elasticsearch Connector (6.1) [](id=advanced-configuration-of-the-liferay-elasticsearch-connector-6-1)
+---
+header-id: advanced-configuration-of-the-liferay-elasticsearch-connector-6-1
+---
+
+# Advanced Configuration of the Liferay Elasticsearch Connector (6.1)
 
 The default configurations for Liferay's Elasticsearch adapter module are set
 in a Java class called `ElasticsearchConfiguration`.
@@ -9,7 +13,7 @@ by default. In this case, add the configuration options you need. If something
 is configurable for Elasticsearch, its configurable using the Elasticsearch
 adapter.
 
-## Adding Settings and Mappings to the Liferay Elasticsearch Adapter [](id=adding-settings-and-mappings-to-the-liferay-elasticsearch-adapter)
+## Adding Settings and Mappings to the Liferay Elasticsearch Adapter
 
 The available configuration options
 <!--available configuration
@@ -120,15 +124,11 @@ See
 [here](https://www.elastic.co/guide/en/elasticsearch/reference/6.1/mapping-types.html)
 for more details on Elasticsearch's field datatypes.
 
-$$$
-
 The above example shows how a `fooName` field might be added to @product@'s type
 mapping. Because `fooName` is not an existing property in the mapping, it 
 works fine. If you try to override an existing property mapping, index
 creation fails. Instead use the `overrideTypeMappings` setting to override
 `properties` in the mapping.
-
-+$$$
 
 **Note:** To see that your additional mappings have been added to the
 `LiferayDocumentType`, use `curl` to access this URL after saving your additions
@@ -175,7 +175,7 @@ the changes and trigger a re-index from Server Administration. If you need to ad
 new custom mappings without overriding any defaults, use
 `additionalTypeMappings` instead.
 
-## Multi-line YAML Configurations [](id=multi-line-yaml-configurations)
+## Multi-line YAML Configurations
 
 If you configure the settings from the last section using an OSGi configuration
 file, you might find yourself needing to write YAML snippets that span multiple

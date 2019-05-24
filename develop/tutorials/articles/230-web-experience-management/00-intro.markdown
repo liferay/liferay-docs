@@ -1,4 +1,8 @@
-# Web Experience Management [](id=web-experience-management)
+---
+header-id: web-experience-management
+---
+
+# Web Experience Management
 
 Web Experience Management encompasses Liferay's features and tools for building
 Sites and creating content. Many of these, like Web Content Management and Page

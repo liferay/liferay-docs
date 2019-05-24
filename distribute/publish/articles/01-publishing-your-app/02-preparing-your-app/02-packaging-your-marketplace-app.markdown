@@ -1,9 +1,13 @@
-# Packaging Your Marketplace App [](id=packaging-your-marketplace-app)
+---
+header-id: packaging-your-marketplace-app
+---
+
+# Packaging Your Marketplace App
 
 Liferay apps are "normal" Liferay plugins with additional information about
 them. Therefore, most of the requirements are the same as those that exist for
 other Liferay plugins, as explained in the tutorials on creating
-[Liferay MVC Portlets](/develop/tutorials/-/knowledge_base/7-1/liferay-mvc-portlet).
+[Liferay MVC Portlets](/docs/7-1/tutorials/-/knowledge_base/t/liferay-mvc-portlet).
 
 In addition to those requirements, there are some Marketplace-specific ones to
 keep in mind:
@@ -16,7 +20,7 @@ keep in mind:
   is compatible with the latest certified Java JDK version.
 
   If you use any Gradle-based build environment like 
-  [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace), make
+  [Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace), make
   sure your `targetCompatibility` is set to the latest certified Java JDK
   version. 
 
@@ -28,7 +32,7 @@ keep in mind:
 	</properties>
 
   If you use the 
-  [Liferay Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
+  [Liferay Plugins SDK](/docs/6-2/tutorials/-/knowledge_base/t/plugins-sdk)
   to develop your app for Liferay Portal 6.2 or 6.1, you can set the Java
   version by overriding  the `ant.build.javac.target` property in the Plugins
   SDK's `build.properties` file. 
@@ -65,7 +69,7 @@ keep in mind:
       property to `true` enables Liferay's Plugin Security Manager. If you're
       enabling the security manager, you must also define your Portal Access
       Control List (PACL) in this file. Read
-      [Plugins Security and PACL](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl)
+      [Plugins Security and PACL](/docs/6-2/tutorials/-/knowledge_base/t/plugin-security-and-pacl)
       for information on developing secure apps.
 - **Deployment contexts**:
     - Liferay reserves the right to deny an application if any of its plugin
@@ -83,7 +87,7 @@ Portal CE 7.x apps:
         - `Bundle-Version`: the module's version
         - `Web-ContextPath`: the servlet context path
     - For more information, see 
-      [OSGi and Modularity - Modules](/develop/tutorials/-/knowledge_base/7-1/osgi-and-modularity). 
+      [OSGi and Modularity - Modules](/docs/7-1/tutorials/-/knowledge_base/t/osgi-and-modularity). 
 
 - **Apps containing multiple file types:**
     - Liferay DXP 7.x and Liferay Portal CE 7.x apps can contain a mix of 
@@ -91,23 +95,19 @@ Portal CE 7.x apps:
       each plugin must be able to run on Liferay DXP 7.x and Liferay Portal CE
       7.x. 
 
-+$$$
-
-**Important:** If you're developing a paid app or want your free app to satisfy
-Plugin Security Manager on Liferay 6.2 or 6.1 GA3, make sure to specify PACLs
-for your traditional WAR-style plugins. See the article
-[Plugin Security and PACL](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl) 
-for details. Give yourself adequate time to develop your app's permission
-descriptors and time to test your app thoroughly with the security manager
-enabled. 
-
-$$$
+| **Important:** If you're developing a paid app or want your free app to satisfy
+| Plugin Security Manager on Liferay 6.2 or 6.1 GA3, make sure to specify PACLs
+| for your traditional WAR-style plugins. See the article
+| [Plugin Security and PACL](/docs/6-2/tutorials/-/knowledge_base/t/plugin-security-and-pacl)
+| for details. Give yourself adequate time to develop your app's permission
+| descriptors and time to test your app thoroughly with the security manager
+| enabled.
 
 Apps usually consist of multiple plugins (e.g., multiple WAR or JAR files) and 
 plugin types. In addition, you may want to consider how to package your app for 
 running on different Liferay versions. 
 
-## Considering Package Variations to Target Different Versions of Liferay [](id=considering-package-variations-to-target-different-versions-of-liferay)
+## Considering Package Variations to Target Different Versions of Liferay
 
 Apps can be written to work across many different versions of Liferay. For
 example, suppose you want to publish version 1.0 of your app, which you're

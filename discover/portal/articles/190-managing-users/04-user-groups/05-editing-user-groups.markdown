@@ -1,4 +1,8 @@
-# Editing User Groups [](id=editing-user-groups)
+---
+header-id: editing-user-groups
+---
+
+# Editing User Groups
 
 Editing an existing user group is a straightforward process. You can access your 
 portal's user groups from *Control Panel* &rarr; *Users* &rarr; *User Groups*, 
@@ -31,7 +35,7 @@ Other options are available in each user group's Actions button
 
 **Edit:** Modify the user group's name or description, or choose Site 
 templates to use for the 
-[user group's Sites](/discover/portal/-/knowledge_base/7-1/user-group-sites).
+[user group's Sites](/docs/7-1/user/-/knowledge_base/u/user-group-sites).
 
 **Permissions:** Assign permissions for viewing and managing the user group. 
 
@@ -39,7 +43,7 @@ templates to use for the
 group's Site pages. 
 
 **Manage Pages:** Manually manage the user group's Site pages. See the 
-[documentation on user group Sites](/discover/portal/-/knowledge_base/7-1/user-group-sites#creating-user-group-sites-manually)
+[documentation on user group Sites](/docs/7-1/user/-/knowledge_base/u/user-group-sites#creating-user-group-sites-manually)
 for details. 
 
 **Assign Members:** Add/remove users to/from the user group. This is 
@@ -52,7 +56,7 @@ If your user group has public and private Site pages, the options
 *Go to Profile Pages* and *Go to Dashboard Pages* also appear in your user 
 group's Actions menu. Clicking one of these links opens that Site in a new 
 browser window. See the 
-[documentation on user group Sites](/discover/portal/-/knowledge_base/7-1/user-group-sites) 
+[documentation on user group Sites](/docs/7-1/user/-/knowledge_base/u/user-group-sites) 
 for details. 
 
 ![Figure 3: The Actions menu for a user group.](../../../images/user-groups-actions.png) 

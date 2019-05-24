@@ -1,4 +1,8 @@
-# Querying for Content [](id=querying-for-content)
+---
+header-id: querying-for-content
+---
+
+# Querying for Content
 
 The Asset Publisher works by querying for mixed types of content on the fly.
 Since you can control what and how content is displayed from one location, the

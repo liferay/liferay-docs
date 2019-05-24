@@ -1,14 +1,18 @@
-# Configuring a Spring MVC Portlet [](id=configuring-a-spring-mvc-portlet)
+---
+header-id: configuring-a-spring-mvc-portlet
+---
+
+# Configuring a Spring MVC Portlet
 
 This isn't a comprehensive guide to configuring a Spring MVC portlet. It covers
 the high points, assuming you already have familiarity with Spring MVC. If you
 don't, you should consider using
-[Liferay's MVC framework](/develop/tutorials/-/knowledge_base/7-1/liferay-mvc-portlet). 
+[Liferay's MVC framework](/docs/7-1/tutorials/-/knowledge_base/t/liferay-mvc-portlet). 
 
 What does a Liferay Spring MVC portlet look like? Almost identical to any other
 Spring MVC portlet. 
 
-## Portlet Configuration [](id=portlet-configuration)
+## Portlet Configuration
 
 In the `portlet.xml` file's `portlet-class` element you must declare Spring's
 `DispatcherPortlet`:
@@ -28,15 +32,15 @@ Provide an application context file (`portlet-context.xml` in the example
 above), specified as you normally would for your Spring MVC portlet. Next
 configure your web application. 
 
-## Web Application Configuration [](id=web-application-configuration)
+## Web Application Configuration
 
 If you're
-[letting Liferay generate the WAB for you](/develop/tutorials/-/knowledge_base/7-1/using-the-wab-generator)
+[letting Liferay generate the WAB for you](/docs/7-1/tutorials/-/knowledge_base/t/using-the-wab-generator)
 (this is the recommended approach), the elements are added automatically during
 auto-deployment.
 
 If you're configuring an
-[OSGi Web Application Bundle (WAB)](/develop/tutorials/-/knowledge_base/7-1/using-the-wab-generator)
+[OSGi Web Application Bundle (WAB)](/docs/7-1/tutorials/-/knowledge_base/t/using-the-wab-generator)
 yourself, the `web.xml` file in your Spring MVC
 project must be fully ready for deployment. In addition to your Spring MVC
 configuration, your `web.xml` must include these elements:
@@ -77,7 +81,7 @@ Your application must be able to convert `javax.portlet.PortletRequest`s to
 That's all the configuration that's necessary for `web.xml`. Now you're ready to
 configure the views. 
 
-## Views [](id=views)
+## Views
 
 To configure the Spring view resolver, add a bean to your application context
 file (`portlet-context.xml` in the previous example):
@@ -91,7 +95,7 @@ Now the front controller, `org.springframework.web.portlet.DispatcherPortlet`,
 can get a request from the view layer, so now it's time to configure controller
 classes to handle the requests. 
 
-## Controllers [](id=controllers)
+## Controllers
 
 With Spring MVC, your controller is conveniently separated into classes that
 handle the portlet modes (View, Edit, Help).
@@ -99,7 +103,7 @@ handle the portlet modes (View, Edit, Help).
 You'll use Spring's annotations to configure the controller and tell
 `DispatcherPortlet` which mode the controller supports. 
 
-### View Mode Controller [](id=view-mode-controller)
+### View Mode Controller
 
 A simple controller class supporting View mode might look like this:
 
@@ -123,7 +127,7 @@ view for the application.
 
 With Spring MVC, you can only support one portlet phase in each controller. 
 
-### Edit Mode Controller [](id=edit-mode-controller)
+### Edit Mode Controller
 
 An edit mode controller might contain render methods and action methods.
 
@@ -155,7 +159,7 @@ adding a `bean` element for each one:
 Develop your controllers and your views as you normally would in a Spring MVC
 portlet. You must also provide some necessary descriptors for Liferay.
 
-## Liferay Descriptors [](id=liferay-descriptors)
+## Liferay Descriptors
 
 Liferay portlet plugins that are packaged as WAR files should include some
 Liferay specific descriptors.
@@ -208,12 +212,8 @@ A complete list of the attributes you can set can be found
 
     
     
-+$$$
-
-**Important:** Make your portlet name unique, considering how 
-[@product@ uses the name to create the portlet's ID](/develop/reference/-/knowledge_base/7-1/portlet-descriptor-to-osgi-service-property-map#ten). 
-
-$$$
+| **Important:** Make your portlet name unique, considering how
+| [@product@ uses the name to create the portlet's ID](/docs/7-1/reference/-/knowledge_base/r/portlet-descriptor-to-osgi-service-property-map#ten).
 
 You'll also notice the `role-mapper` elements included above. They define the
 Liferay roles used in the portlet. 
@@ -236,12 +236,12 @@ is
 
 In the `liferay-plugin-package.properties` file, you can also add OSGi metadata
 which the
-[Liferay WAB Generator](/develop/tutorials/-/knowledge_base/7-1/using-the-wab-generator)
+[Liferay WAB Generator](/docs/7-1/tutorials/-/knowledge_base/t/using-the-wab-generator)
 adds to the `MANIFEST.MF` file when you deploy your WAR file. 
 
 All of Liferay's DTDs are [here](@platform-ref@/7.1-latest/definitions/).
 
-## Calling Services from Spring MVC [](id=calling-services-from-spring-mvc)
+## Calling Services from Spring MVC
 
 To call OSGi-based Service Builder services from your Spring MVC portlet, you
 need a mechanism that gives you access to the OSGi service registry.
@@ -249,7 +249,7 @@ need a mechanism that gives you access to the OSGi service registry.
 Since you're in the context of a Spring MVC portlet, you can't look up a
 reference to the services (including Service Builder services) published to the
 OSGi runtime using Declarative Services. You have to use
-[Service Trackers](/develop/tutorials/-/knowledge_base/7-1/service-trackers).
+[Service Trackers](/docs/7-1/tutorials/-/knowledge_base/t/service-trackers).
 There's some boilerplate code involved, but the ability to look up services in
 the OSGi runtime is worth it. 
 

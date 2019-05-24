@@ -1,4 +1,8 @@
-# Roles and Permissions [](id=roles-and-permissions)
+---
+header-id: roles-and-permissions
+---
+
+# Roles and Permissions
 
 If a *Role* were to win a Grammy or an Oscar or some other ego-feeding
 popularity contest, it better remember to thank all its *permissions* groupies
@@ -8,16 +12,12 @@ role is just the pretty face, so to speak.
 Roles collect permissions that define a particular function, according to
 a particular scope. Roles collect permissions, and Users are assigned to Roles.
 
-+$$$
-
-**Note:** Roles are assigned to Users, but it's tedious to assign each User to
-role intended for lots of Users. Recall that Users are grouped in Sites,
-Organizations, and User Groups. Implicitly assign regular scoped permissions to
-Users by assigning a role directly to one of these user groupings.
-
-![Figure 1: Assign Users to a role, directly or by their association with a Site, Organization, or User Group.](../../../images/roles-assignees.png)
-
-$$$
+| **Note:** Roles are assigned to Users, but it's tedious to assign each User to
+| role intended for lots of Users. Recall that Users are grouped in Sites,
+| Organizations, and User Groups. Implicitly assign regular scoped permissions to
+| Users by assigning a role directly to one of these user groupings.
+| 
+| ![Figure 1: Assign Users to a role, directly or by their association with a Site, Organization, or User Group.](../../../images/roles-assignees.png)
 
 Take a Message Board Administrator Role, for example. A Role with that name
 should have permissions relevant to the specific Message Board portlets
@@ -47,18 +47,14 @@ Team
 : Permissions are defined within a specific Site and are assigned within that
 specific Site.
 
-+$$$
+| **Note:** Some permissions cannot be handled from the control panel.
+| Asset-level permissions (for instance, permission to edit an individual blog
+| post, or view a folder in the Documents and Media library) are managed from the
+| individual asset. See
+| [Widget Permissions](/docs/7-1/user/-/knowledge_base/u/widget-permissions)
+| for details.
 
-**Note:** Some permissions cannot be handled from the control panel.
-Asset-level permissions (for instance, permission to edit an individual blog
-post, or view a folder in the Documents and Media library) are managed from the
-individual asset. See 
-[Widget Permissions](/discover/portal/-/knowledge_base/7-1/widget-permissions) 
-for details.
-
-$$$
-
-## Deleting Asset Containers [](id=deleting-asset-containers)
+## Deleting Asset Containers
 
 A Web Content Folder contains Web Content articles. The Web Content Folder is
 an asset container, and the Web Content Article is an asset. It's possible to
@@ -73,7 +69,7 @@ Folders, Message Boards Categories, Wiki Nodes, and Documents and Media Folders.
 You might not need to create a Role for a certain functionality. Liferay
 provides many pre-configured Roles for your convenience.
 
-## Default Liferay Roles [](id=default-liferay-roles)
+## Default Liferay Roles
 
 In the Roles Application appears a list of all the Roles in Liferay, by
 scope. 
@@ -125,17 +121,13 @@ These are some of the pre-configured organization roles:
   Organization Owners. They *can* assign other Users as Organization
   Administrators or Organization Owners.
 
-+$$$
-
-**Tip:** It's easy to overlook the differences between owner type roles and
-administrator type roles for Sites and Organizations. Site and Organization
-administrators *cannot* remove the administrator or owner Role from any other
-administrator or owner, and they *cannot* appoint other Users as site or
-organization administrators or owners. 
-
-In contrast, site and organization owners *can* do those things.
-
-$$$
+| **Tip:** It's easy to overlook the differences between owner type roles and
+| administrator type roles for Sites and Organizations. Site and Organization
+| administrators *cannot* remove the administrator or owner Role from any other
+| administrator or owner, and they *cannot* appoint other Users as site or
+| organization administrators or owners.
+| 
+| In contrast, site and organization owners *can* do those things.
 
 Roles, and the permissions granted with their assignment, are foundational
 components in Liferay. Understanding their uses and configuration enhances

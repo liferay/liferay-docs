@@ -1,4 +1,8 @@
-# Using Content Pages [](id=using-page-fragments)
+---
+header-id: using-page-fragments
+---
+
+# Using Content Pages
 
 Content Pages are new in @product-ver@. They provide a way to create pages with
 inline content. Traditionally in Liferay, all content has lived outside the

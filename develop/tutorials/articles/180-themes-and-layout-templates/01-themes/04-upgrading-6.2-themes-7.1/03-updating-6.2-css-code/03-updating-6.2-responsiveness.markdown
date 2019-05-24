@@ -1,4 +1,8 @@
-# Updating the Responsiveness [](id=updating-the-6-2-responsiveness)
+---
+header-id: updating-the-6-2-responsiveness
+---
+
+# Updating the Responsiveness
 
 Bootstrap 4 explicit media queries replaced the Bootstrap 2 `respond-to` mixins
 for CSS responsiveness. Follow these steps to update your theme's
@@ -40,8 +44,8 @@ Updated:
         ...
     }
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Updating 6.2 Theme Templates](/develop/tutorials/-/knowledge_base/7-1/updating-6-2-theme-templates)
+[Updating 6.2 Theme Templates](/docs/7-1/tutorials/-/knowledge_base/t/updating-6-2-theme-templates)
 
-[Updating CSS File Names for Clay and Sass](/develop/tutorials/-/knowledge_base/7-1/updating-css-file-names-for-clay-and-sass)
+[Updating CSS File Names for Clay and Sass](/docs/7-1/tutorials/-/knowledge_base/t/updating-css-file-names-for-clay-and-sass)

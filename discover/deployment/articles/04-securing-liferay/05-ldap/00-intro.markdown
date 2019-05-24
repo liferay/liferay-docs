@@ -1,4 +1,8 @@
-# LDAP [](id=ldap)
+---
+header-id: ldap
+---
+
+# LDAP
 
 @product@ fully supports LDAP as a user store. Use the LDAP tab in Instance
 Settings's Authentication page to connect to an LDAP directory. Users can be
@@ -8,7 +12,7 @@ to import Users. In this article, you'll learn how to connect to an LDAP server
 and how to configure import settings, export settings, and related LDAP
 configuration settings. 
 
-## Configuring LDAP Settings [](id=configuring-ldap-settings)
+## Configuring LDAP Settings
 
 To access LDAP configuration settings, navigate to *Control Panel &rarr;
 Configuration* &rarr; *Instance Settings*, then scroll down and expand the
@@ -105,7 +109,7 @@ must customize the messages in *System Settings* &rarr; *Security* &rarr; *LDAP*
 
 Once you've finished configuring LDAP, click the *Save* button. 
 
-### LDAP Options Available in System Settings [](id=ldap-options-available-in-system-settings)
+### LDAP Options Available in System Settings
 
 Although most LDAP configuration can be done from Instance Settings, there are
 several configuration parameters that are only available in System Settings. 
@@ -139,18 +143,14 @@ not work with your LDAP server. If they don't, you can replace the values of
 these properties with phrases from your server's error messages. This enables
 @product@ to recognize them.
 
-+$$$
-
-**Note**: When you make a change in System Settings, it takes effect for the
-virtual instance you're in. If after changing a setting you create a new
-virtual instance, that virtual instance inherits the settings of the one it was
-created from as defaults. For example, say you have virtual instances named A,
-B, and C. From A, you modify *Error password history keywords*. This change
-appears only in A, not in B or C. Then from A, you create virtual instance D.
-The change to *Error password history keywords* appears in D (not B or C),
-since D defaults to A's settings because you created it from A. 
-
-$$$
+| **Note**: When you make a change in System Settings, it takes effect for the
+| virtual instance you're in. If after changing a setting you create a new
+| virtual instance, that virtual instance inherits the settings of the one it was
+| created from as defaults. For example, say you have virtual instances named A,
+| B, and C. From A, you modify *Error password history keywords*. This change
+| appears only in A, not in B or C. Then from A, you create virtual instance D.
+| The change to *Error password history keywords* appears in D (not B or C),
+| since D defaults to A's settings because you created it from A.
 
 In summary, if there's a configuration option you need with LDAP, and you don't
 find it in Instance Settings, look in the LDAP System Settings entries.

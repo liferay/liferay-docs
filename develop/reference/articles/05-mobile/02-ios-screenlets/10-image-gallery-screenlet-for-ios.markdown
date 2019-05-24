@@ -1,6 +1,10 @@
-# Image Gallery Screenlet for iOS [](id=image-gallery-screenlet-for-ios)
+---
+header-id: image-gallery-screenlet-for-ios
+---
 
-## Requirements [](id=requirements)
+# Image Gallery Screenlet for iOS
+
+## Requirements
 
 - Xcode 9.3 or above
 - iOS 11 SDK
@@ -10,16 +14,16 @@
   [EE/DXP](http://www.liferay.com/marketplace/-/mp/application/54369726)). 
   This app is preinstalled in Liferay CE Portal 7.0/7.1 and Liferay DXP. 
 
-## Compatibility [](id=compatibility)
+## Compatibility
 
 - iOS 9 and above
 
-## Xamarin Requirements [](id=xamarin-requirements)
+## Xamarin Requirements
 
 - Visual Studio 7.2
 - Mono .NET framework 5.4.1.6
 
-## Features [](id=features)
+## Features
 
 Image Gallery Screenlet shows a list of images from a Documents and Media folder 
 in a Liferay instance. You can also use Image Gallery Screenlet to upload images 
@@ -27,7 +31,7 @@ to and delete images from the same folder. The Screenlet implements
 [fluent pagination](http://www.iosnomad.com/blog/2014/4/21/fluent-pagination) 
 with configurable page size, and supports i18n in asset values. 
 
-## JSON Services Used [](id=json-services-used)
+## JSON Services Used
 
 Screenlets in Liferay Screens call JSON web services in the portal. This 
 Screenlet calls the following services and methods.
@@ -39,11 +43,11 @@ Screenlet calls the following services and methods.
 | `DLAppService` | `addFileEntry` | Upload |
 | `DLAppService` | `deleteFileEntry` | Delete |
 
-## Module [](id=module)
+## Module
 
 - None
 
-## Themes [](id=themes)
+## Themes
 
 The default Theme uses a standard iOS `UICollectionView` to show the scrollable 
 list as a grid. Other Themes may use a different component, such as 
@@ -57,12 +61,12 @@ This screenlet has three different Themes:
 
 ![Figure 1: Image Gallery Screenlet using the Grid, Slideshow, and List Themes.](../../../images/screens-ios-imagegallery.png)
 
-## Offline [](id=offline)
+## Offline
 
 This Screenlet supports offline mode so it can function without a network 
 connection when loading or uploading images (deleting images while offline is 
 unsupported). For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-1/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/docs/7-1/tutorials/-/knowledge_base/t/architecture-of-offline-mode-in-liferay-screens). 
 This Screenlet supports the `remote-only`, `cache-only`, `remote-first`, and 
 `cache-first` offline mode policies. 
 
@@ -86,12 +90,12 @@ instance:
 | `remote-first` | The Screenlet sends the image to the Liferay instance. If this succeeds, it also stores the image in the local cache for later use. If a connection issue occurs, the Screenlet stores the image in the local cache and sends it to the Liferay instance when the connection is re-established. | Use this policy when you need to make sure the Screenlet sends the image to the Liferay instance as soon as the connection is restored. |
 | `cache-first` | The Screenlet stores the image in the local cache and then attempts to send it to the Liferay instance. If a connection issue occurs, the Screenlet sends the image to the Liferay instance when the connection is re-established. | Use this policy when you need to make sure the Screenlet sends the image to the Liferay instance as soon as the connection is restored. Compared to `remote-first`, this policy always stores the image in the cache. The `remote-first` policy only stores the image in the event of a network error. |
 
-## Required Attributes [](id=required-attributes)
+## Required Attributes
 
 - `repositoryId`
 - `folderId`
 
-## Attributes [](id=attributes)
+## Attributes
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------|
@@ -99,20 +103,20 @@ instance:
 | `folderId` | `number` | The ID of the Documents and Media repository folder that contains the image gallery. When accessing the folder in your browser, the `folderId` is at the end of the URL. |
 | `mimeTypes` | `string` | The comma-separated list of MIME types for the Screenlet to support. |
 | `filePrefix` | `string` | The prefix to use on uploaded image file names. |
-| `offlinePolicy` | `string` | The offline mode setting. The default value is `remote-first`. See the [Offline section](/develop/reference/-/knowledge_base/7-1/image-gallery-screenlet-for-ios#offline) for details. |
+| `offlinePolicy` | `string` | The offline mode setting. The default value is `remote-first`. See the [Offline section](/docs/7-1/reference/-/knowledge_base/r/image-gallery-screenlet-for-ios#offline) for details. |
 | `autoLoad` | `boolean` | Whether the list automatically loads when the Screenlet appears in the app's UI. The default value is `true`. |
 | `refreshControl` | `boolean` | Whether a standard [iOS `UIRefreshControl`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRefreshControl_class/) appears when the user does the pull to refresh gesture. The default value is `true`. |
 | `firstPageSize` | `number` | The number of items to display on the first page. The default value is `50`. |
 | `pageSize` | `number` | The number of items to display on the second and subsequent pages. The default value is `25`. |
 | `obcClassName` | `string` | The name of the `OrderByComparator` class to use to sort the results. Omit this property if you don't want to sort the results. Note that you can only use comparator classes that extend `OrderByComparator<DLFileEntry>`. Liferay contains no such comparator classes. You must therefore create your own by extending `OrderByComparator<DLFileEntry>`. To see examples of some comparator classes that extend other Document Library classes, [click here](https://github.com/liferay/liferay-portal/tree/master/portal-impl/src/com/liferay/portlet/documentlibrary/util/comparator). |
 
-## Methods [](id=methods)
+## Methods
 
 | Method | Return | Explanation |
 |-----------|-----------|-------------| 
 | `loadList()` | `boolean` | Starts the request to load the list of images. This list is shown when the response is received. Returns `true` if the request is sent successfully. |
 
-## Delegate [](id=delegate)
+## Delegate
 
 Image Gallery Screenlet delegates some events to an object that conforms to 
 the `ImageGalleryScreenletDelegate` protocol. This protocol lets you implement 

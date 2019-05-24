@@ -1,4 +1,8 @@
-# Updating 6.2 Theme Templates [](id=updating-6-2-theme-templates)
+---
+header-id: updating-6-2-theme-templates
+---
+
+# Updating 6.2 Theme Templates
 
 @product-ver@ theme templates are essentially the same as Liferay Portal 6.2 
 theme templates. Here are the main changes:
@@ -71,14 +75,14 @@ applicable.
 Next, you'll learn how to update various theme templates to @product-ver@. If 
 you didn't modify any theme templates, you can skip these sections. 
 
-## Updating Portal Normal FTL [](id=updating-portal-normal-ftl)
+## Updating Portal Normal FTL
 
 If you didn't customize `portal_normal.ftl`, you can skip this section. Follow 
 these steps to update `portal_normal.ftl`:
 
 1.  Open your modified `portal_normal.ftl` file and replace the following 6.2 
     directives with the updated syntax. This change is described in the 
-    [7.0 Breaking Changes](/develop/reference/-/knowledge_base/7-0/breaking-changes#taglibs-are-no-longer-accessible-via-the-theme-variable-in-freemarker) 
+    [7.0 Breaking Changes](/docs/7-0/reference/-/knowledge_base/r/breaking-changes#taglibs-are-no-longer-accessible-via-the-theme-variable-in-freemarker) 
     reference document:
 
       6.2                                |  &nbsp;Updated                                                                                                                     |
@@ -139,7 +143,7 @@ these steps to update `portal_normal.ftl`:
 If you modified the navigation template for your theme, follow the steps in the 
 next section. 
 
-## Updating Navigation FTL [](id=updating-navigation-ftl)
+## Updating Navigation FTL
 
 Follow these steps to update your modified `navigation.ftl` file:
 
@@ -163,7 +167,7 @@ Follow these steps to update your modified `navigation.ftl` file:
 
 The navigation template is updated. You can update `portlet.ftl` next. 
 
-## Updating Portlet FTL [](id=updating-portlet-ftl)
+## Updating Portlet FTL
 
 Follow these steps to update your modified `portlet.ftl` file:
 
@@ -185,10 +189,10 @@ Follow these steps to update your modified `portlet.ftl` file:
 
 The portlet template is updated. You can update `init_custom.ftl` next.
 
-## Updating Init Custom FTL [](id=updating-init-custom-ftl)
+## Updating Init Custom FTL
 
 If your theme uses 
-[configurable theme settings](/develop/tutorials/-/knowledge_base/7-1/making-configurable-theme-settings), 
+[configurable theme settings](/docs/7-1/tutorials/-/knowledge_base/t/making-configurable-theme-settings), 
 update them to use the new syntax, following the patterns below.
 
 Original syntax:
@@ -221,8 +225,8 @@ other FreeMarker theme templates, compare them with templates in the
 If your theme uses the Liferay JS Theme Toolkit, refer to the suggested changes 
 that the Gulp `upgrade` task reports. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Updating CSS Code](/develop/tutorials/-/knowledge_base/7-1/updating-6-2-css-code)
+[Updating CSS Code](/docs/7-1/tutorials/-/knowledge_base/t/updating-6-2-css-code)
 
-[Making Configurable Theme Settings](/develop/tutorials/-/knowledge_base/7-1/making-configurable-theme-settings)
+[Making Configurable Theme Settings](/docs/7-1/tutorials/-/knowledge_base/t/making-configurable-theme-settings)

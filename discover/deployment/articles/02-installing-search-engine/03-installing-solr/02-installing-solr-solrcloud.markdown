@@ -1,4 +1,8 @@
-# Installing Solr: High Availability with SolrCloud [](id=high-availability-with-solrcloud)
+---
+header-id: high-availability-with-solrcloud
+---
+
+# Installing Solr: High Availability with SolrCloud
 
 Use SolrCloud if you need a cluster of Solr servers. Note that to use SolrCloud
 in production, you should set up an 
@@ -92,7 +96,7 @@ To stop Solr while running in SolrCloud mode, use the *stop* command, like this:
 
     bin/solr stop -all
 
-## Configure the Solr Adapter for SolrCloud [](id=configure-the-solr-adapter-for-solrcloud)
+## Configure the Solr Adapter for SolrCloud
 
 There's only one thing left to do: specify the client type as *CLOUD* in
 Liferay's Solr connector.
@@ -106,13 +110,9 @@ Liferay's Solr connector.
 
 ![Figure 1: From the Solr 7 System Settings entry, set the _Client Type_ to _Cloud_.](../../../images/solr-client-type.png)
 
-<!-- +$$$
-UNCOMMENT WHEN WRITTEN
-**Note:** For a complete list of settings available in the Solr connector, see the
-Solr Settings reference
-article(/discover/reference/-/knowledge_base/7-1/solr-settings).
-
-$$$ -->
+<!-- | **Note:** For a complete list of settings available in the Solr connector, see the
+<!-- | Solr Settings reference
+<!-- | article(/discover/reference/-/knowledge_base/7-1/solr-settings).
 
 Now you can configure @product@ for Solr and Solr for @product@. Remember that
 Elasticsearch is the default search engine, so if you're not constrained to use

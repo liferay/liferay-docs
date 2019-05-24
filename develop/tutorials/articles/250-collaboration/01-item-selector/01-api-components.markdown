@@ -1,4 +1,8 @@
-# Understanding the Item Selector API's Components [](id=understanding-the-item-selector-apis-components)
+---
+header-id: understanding-the-item-selector-apis-components
+---
+
+# Understanding the Item Selector API's Components
 
 Before working with the Item Selector API, you should learn about its 
 components. You'll work with these components as you leverage the API in your 
@@ -44,10 +48,10 @@ This diagram shows how these components interact to form a working API.
 
 ![Figure 1: Item Selector views (selection views) are determined by the return type and criterion, and rendered by the markup.](../../../images/item-selector-architecture.png)
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Selecting Entities Using an Item Selector](/develop/tutorials/-/knowledge_base/7-1/selecting-entities-using-the-item-selector)
+[Selecting Entities Using an Item Selector](/docs/7-1/tutorials/-/knowledge_base/t/selecting-entities-using-the-item-selector)
 
-[Creating Custom Item Selector Entities](/develop/tutorials/-/knowledge_base/7-1/creating-custom-item-selector-entities)
+[Creating Custom Item Selector Entities](/docs/7-1/tutorials/-/knowledge_base/t/creating-custom-item-selector-entities)
 
-[Creating Custom Item Selector Views](/develop/tutorials/-/knowledge_base/7-1/creating-custom-item-selector-views)
+[Creating Custom Item Selector Views](/docs/7-1/tutorials/-/knowledge_base/t/creating-custom-item-selector-views)

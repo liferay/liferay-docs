@@ -1,4 +1,8 @@
-# Core Layer [](id=core-layer)
+---
+header-id: core-layer
+---
+
+# Core Layer
 
 The core layer is the micro-framework that lets developers write Screenlets in a
 structured and isolated way. All Screenlets share a common structure based on
@@ -49,8 +53,8 @@ calls a Liferay instance's remote services in a type-safe and transparent way.
 a singleton class that holds the logged in user's session. Apps can use an
 implicit login, invisible to the user, or a login that relies on explicit user
 input to create the session. User logins can be implemented with the
-[Login Screenlet](/develop/reference/-/knowledge_base/7-1/loginscreenlet-for-android). 
-This is explained in detail [here](/develop/tutorials/-/knowledge_base/7-1/accessing-the-liferay-session-in-android).
+[Login Screenlet](/docs/7-1/reference/-/knowledge_base/r/loginscreenlet-for-android). 
+This is explained in detail [here](/docs/7-1/tutorials/-/knowledge_base/t/accessing-the-liferay-session-in-android).
 
 [**LiferayServerContext:**](https://github.com/liferay/liferay-screens/blob/master/android/library/core/src/main/java/com/liferay/mobile/screens/context/LiferayServerContext.java)
 a singleton object that holds server configuration parameters. It's loaded from
@@ -78,12 +82,12 @@ version. The `ServiceVersionFactory` is an implementation of an
 Now that you know what makes up the core layer, you're ready to learn the 
 Screenlet layer's details. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[High-Level Architecture](/develop/tutorials/-/knowledge_base/7-1/high-level-architecture)
+[High-Level Architecture](/docs/7-1/tutorials/-/knowledge_base/t/high-level-architecture)
 
-[Screenlet Layer](/develop/tutorials/-/knowledge_base/7-1/screenlet-layer)
+[Screenlet Layer](/docs/7-1/tutorials/-/knowledge_base/t/screenlet-layer)
 
-[View Layer](/develop/tutorials/-/knowledge_base/7-1/view-layer)
+[View Layer](/docs/7-1/tutorials/-/knowledge_base/t/view-layer)
 
-[Screenlet Lifecycle](/develop/tutorials/-/knowledge_base/7-1/screenlet-lifecycle)
+[Screenlet Lifecycle](/docs/7-1/tutorials/-/knowledge_base/t/screenlet-lifecycle)

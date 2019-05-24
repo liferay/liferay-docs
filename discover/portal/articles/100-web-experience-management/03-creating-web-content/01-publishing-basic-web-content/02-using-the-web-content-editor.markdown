@@ -1,9 +1,13 @@
-#  Using the Web Content Editor [](id=using-the-wysiwyg-editor)
+---
+header-id: using-the-wysiwyg-editor
+---
+
+#  Using the Web Content Editor
 
 In the previous tutorial you created a simple web content article, but the Web
 Content editor can do much more than make plain text articles.
 
-## Basic Editor Functions [](id=basic-editor-functions)
+## Basic Editor Functions
 
 To explore these options, go back to the article you just created and make it 
 better:
@@ -33,7 +37,7 @@ on it, controls for inserting an image, video, table, or horizontal line
     Select an image from your computer or from the Site's Documents and Media
     repository. If you select one from your Documents and Media  repository, you
     can access the 
-    [image editor](/discover/portal/-/knowledge_base/7-1/editing-images) to make
+    [image editor](/docs/7-1/user/-/knowledge_base/u/editing-images) to make
     changes specifically for your article.
 
 ![Figure 1: You can access the image editor through the item selector window.](../../../../images/image-editor-preview-window.png)
@@ -50,7 +54,7 @@ columns, and cells.
 In addition to images and tables, you can insert a horizontal line as
 a separator between between sections. You can also add video by providing a URL.
 
-## Editing the Article Source [](id=editing-the-article-source)
+## Editing the Article Source
 
 If you need to work directly with the HTML, you can switch to source view. 
 
@@ -83,7 +87,7 @@ the screen.
 The content can be localized in whatever language you want. You'll learn more 
 about localizing your content later.
 
-## Web Content Options [](id=web-content-options)
+## Web Content Options
 
 The bottom menu of the New Web Content form provides options for customizing
 your web content.
@@ -92,14 +96,14 @@ your web content.
 
 **Structure and Template:** Customize the web content article's structure and
 template. To learn more about web content structures and templates, see
-[Designing Uniform Content](/discover/portal/-/knowledge_base/7-1/designing-uniform-content).
+[Designing Uniform Content](/docs/7-1/user/-/knowledge_base/u/designing-uniform-content).
 
 **Small Image:** Set the image that is used for the web content article's
 previews.
 
 **Metadata:** Organize web content articles by selecting tags, categories, and
 priority. To learn more about tags and categories, see 
-[Organizing Content with Tags and Categories](/discover/portal/-/knowledge_base/7-1/organizing-content-with-tags-and-categories).
+[Organizing Content with Tags and Categories](/docs/7-1/user/-/knowledge_base/u/organizing-content-with-tags-and-categories).
 
 **Display Page:** Select a Display Page to enhance the styling and formatting of
 your web content.
@@ -110,7 +114,7 @@ unique banners, formatting, embedded widgets, or other features. By selecting
 a display page, you would ensure that content appears on the page with the
 appropriate features. You'll work through an example of creating a display page
 in the
-[Display Pages for Web Content](/discover/portal/-/knowledge_base/7-1/display-pages-for-web-content)
+[Display Pages for Web Content](/docs/7-1/user/-/knowledge_base/u/display-pages-for-web-content)
 tutorial.
 
 **Friendly URL:** Set the friendly URL where the article can be viewed alone. If
@@ -118,14 +122,14 @@ a specific display page is set, the URL links to it.
 
 **Schedule:** Customize the date and time your content publishes and/or expires.
 To learn more about scheduling content, see 
-[Scheduling Web Content Publication](/discover/portal/-/knowledge_base/7-1/scheduling-web-content-publication).
+[Scheduling Web Content Publication](/docs/7-1/user/-/knowledge_base/u/scheduling-web-content-publication).
 
 **Related Assets:** Determine relationships between the web content article and
 other assets, even if they don't share any tags and aren't in the same category.
 You can connect your content to any asset that implements the Related Assets
 feature. To learn more about defining content relationships and publishing links
 to those related assets, see 
-[Defining Content Relationships](/discover/portal/-/knowledge_base/7-1/defining-content-relationships).
+[Defining Content Relationships](/docs/7-1/user/-/knowledge_base/u/defining-content-relationships).
 
 ![Figure 4: This blog entry has links to two Related Assets: an article and a message board thread.](../../../../images/related-assets-link.png)
 

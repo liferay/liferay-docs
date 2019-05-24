@@ -1,11 +1,15 @@
-# User Groups [](id=user-groups)
+---
+header-id: user-groups
+---
+
+# User Groups
 
 A user group is a list of users created for a specific purpose. User groups can
 be created across the hierarchical boundaries of
-[organizations](/discover/portal/-/knowledge_base/7-1/organizations). 
+[organizations](/docs/7-1/user/-/knowledge_base/u/organizations). 
 For example, an administrator could create a Teachers user group for adding all
 members to multiple Sites, assign them all to a
-[Regular Role](/discover/portal/-/knowledge_base/7-1/roles-and-permissions), 
+[Regular Role](/docs/7-1/user/-/knowledge_base/u/roles-and-permissions), 
 and create a common set of profiles pages for all teachers in the User group.
 User groups are integrated with Roles, Sites, Site Templates, and permissions.
 This flexibility means that there are many different use cases for user groups.

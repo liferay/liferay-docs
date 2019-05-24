@@ -1,4 +1,8 @@
-# Installing Liferay Enterprise Search [](id=installing-x-pack)
+---
+header-id: installing-x-pack
+---
+
+# Installing Liferay Enterprise Search
 
 X-Pack is an 
 [Elasticsearch extension](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/setup-xpack.html)

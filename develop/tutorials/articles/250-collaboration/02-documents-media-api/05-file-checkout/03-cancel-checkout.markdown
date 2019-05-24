@@ -1,4 +1,8 @@
-# Canceling a Check-out [](id=cancelling-a-checkout)
+---
+header-id: cancelling-a-checkout
+---
+
+# Canceling a Check-out
 
 The Documents and Media API also lets you cancel a check-out. Use caution with 
 this operation---it discards any edits made since check-out. If you're sure you 
@@ -22,7 +26,7 @@ Follow these steps to cancel a check-out:
         private DLAppService _dlAppService;
 
     For more information on this, see the section on 
-    [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
+    [getting a service reference](/docs/7-1/tutorials/-/knowledge_base/t/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
     in the getting started tutorial. 
 
 2.  Get the ID of the file whose check-out you want to cancel. Since it's common 
@@ -47,10 +51,10 @@ this `cancelFileEntriesCheckOut` method, as well as the rest of
 `EditFileEntryMVCActionCommand`, contains additional logic to suit the specific 
 needs of the Documents and Media app. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[File Check-out](/develop/tutorials/-/knowledge_base/7-1/file-checkout)
+[File Check-out](/docs/7-1/tutorials/-/knowledge_base/t/file-checkout)
 
-[File Check-in](/develop/tutorials/-/knowledge_base/7-1/file-checkin) 
+[File Check-in](/docs/7-1/tutorials/-/knowledge_base/t/file-checkin) 
 
-[Updating Files](/develop/tutorials/-/knowledge_base/7-1/updating-files)
+[Updating Files](/docs/7-1/tutorials/-/knowledge_base/t/updating-files)

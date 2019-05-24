@@ -1,10 +1,14 @@
-# Clay Buttons [](id=clay-buttons)
+---
+header-id: clay-buttons
+---
+
+# Clay Buttons
 
 Buttons come in several types and variations. This tutorial covers the 
 different styles and variations of buttons you can create with the Clay 
 taglibs. 
 
-## Types [](id=types)
+## Types
 
 **Primary button:** Used for the most important actions. Two primary buttons 
 should not be together or near each other. 
@@ -68,7 +72,7 @@ You can disable a button by adding the `disabled` attribute:
 
 ![Figure 6: Buttons can be disabled if you don't want the user to interact with them.](../../../images/clay-taglib-button-primary-disabled.png)
 
-## Variations [](id=variations)
+## Variations
 
 Button with icon and text:
 
@@ -100,10 +104,10 @@ Action button:
  
 ![Figure 11: An action button is used to display actions menus.](../../../images/clay-taglib-button-action.png)
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Clay Alerts](/develop/tutorials/-/knowledge_base/7-1/clay-alerts)
+[Clay Alerts](/docs/7-1/tutorials/-/knowledge_base/t/clay-alerts)
 
-[Clay Buttons](/develop/tutorials/-/knowledge_base/7-1/clay-buttons)
+[Clay Buttons](/docs/7-1/tutorials/-/knowledge_base/t/clay-buttons)
 
-[Clay Labels and Links](/develop/tutorials/-/knowledge_base/7-1/clay-labels-and-links)
+[Clay Labels and Links](/docs/7-1/tutorials/-/knowledge_base/t/clay-labels-and-links)

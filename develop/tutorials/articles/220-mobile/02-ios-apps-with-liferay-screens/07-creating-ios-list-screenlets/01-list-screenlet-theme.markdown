@@ -1,4 +1,8 @@
-# Creating the iOS List Screenlet's Theme [](id=creating-the-ios-list-screenlets-theme)
+---
+header-id: creating-the-ios-list-screenlets-theme
+---
+
+# Creating the iOS List Screenlet's Theme
 
 Recall that each Screenlet needs a Theme to serve as its UI. A Theme needs an 
 XIB file to define the UI's components and layout. Since a list Screenlet 
@@ -6,7 +10,7 @@ displays a list of entities, its XIB file must contain a Table View. Use these
 steps to create your Theme's XIB file: 
 
 1.  In Xcode, create a new XIB file and name it according to 
-    [these naming conventions](/develop/tutorials/-/knowledge_base/7-1/ios-best-practices#naming-conventions). 
+    [these naming conventions](/docs/7-1/tutorials/-/knowledge_base/t/ios-best-practices#naming-conventions). 
     For example, the XIB for Bookmark List Screenlet's Default Theme is 
     `BookmarkListView_default.xib`. 
 
@@ -36,7 +40,7 @@ Follow these steps to create your Screenlet's View class and configure the XIB
 file to use it: 
 
 1.  Create your Theme's View class, and name it according to 
-    [these naming conventions](/develop/tutorials/-/knowledge_base/7-1/ios-best-practices#naming-conventions). 
+    [these naming conventions](/docs/7-1/tutorials/-/knowledge_base/t/ios-best-practices#naming-conventions). 
     Since the XIB uses `UITableView`, your View class must extend 
     `BaseListTableView`. For example, this is Bookmark List Screenlet's View 
     class declaration: 

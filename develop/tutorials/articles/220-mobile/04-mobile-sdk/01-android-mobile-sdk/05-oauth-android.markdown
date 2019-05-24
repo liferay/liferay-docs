@@ -1,4 +1,8 @@
-# Using OAuth 2 in the Android Mobile SDK [](id=using-oauth-2-in-the-android-mobile-sdk)
+---
+header-id: using-oauth-2-in-the-android-mobile-sdk
+---
+
+# Using OAuth 2 in the Android Mobile SDK
 
 You can use 
 [OAuth 2](https://oauth.net/2/) 
@@ -25,10 +29,10 @@ to authenticate with the following
 
 This tutorial shows you how to use these grant types with the Mobile SDK. Note 
 that before getting started, you may want to see 
-[@product@'s OAuth 2.0 documentation](/discover/deployment/-/knowledge_base/7-1/oauth-2-0) 
+[@product@'s OAuth 2.0 documentation](/docs/7-1/deploy/-/knowledge_base/d/oauth-2-0) 
 for instructions on registering an OAuth 2.0 application in the portal. 
 
-## Authorization Code (PKCE) [](id=authorization-code-pkce)
+## Authorization Code (PKCE)
 
 To authenticate via the Authorization Code grant type, you must call this 
 `OAuth2SignIn` method: 
@@ -62,7 +66,7 @@ Here's an example of this workflow:
 1.  Configure the redirect URI in the portal via the OAuth2 Administration 
     portlet. In the portal, navigate to *Control Panel* &rarr; *Configuration* 
     &rarr; *OAuth2 Administration* and select or 
-    [create](/discover/deployment/-/knowledge_base/7-1/oauth-2-0#creating-an-application) 
+    [create](/docs/7-1/deploy/-/knowledge_base/d/oauth-2-0#creating-an-application) 
     the OAuth 2 application you want to use. Then enter the redirect URI in the 
     *Callback URIs* field. The redirect URI in this example is 
     `my-app://my-app`: 
@@ -136,7 +140,7 @@ Here's an example of this workflow:
             }
         }
 
-## Resource Owner Password [](id=resource-owner-password)
+## Resource Owner Password
 
 Authenticating via the Resource Owner Password grant type is similar to
 authenticating via the PKCE grant type, except you don't need to configure
@@ -169,15 +173,11 @@ Here are descriptions of this method's parameters:
     result. If authentication succeeds, you receive a non-null session 
     containing the authentication; otherwise you receive an error. 
 
-+$$$
-
-**Note:** You can call the `OAuth2SignIn.signInWithUsernameAndPassword` method 
-without a callback by passing `null` in place of the callback. This causes the 
-request to execute synchronously. If you provide a callback, the request is 
-executed asynchronously in another thread and the callback receives the 
-response. 
-
-$$$
+| **Note:** You can call the `OAuth2SignIn.signInWithUsernameAndPassword` method
+| without a callback by passing `null` in place of the callback. This causes the
+| request to execute synchronously. If you provide a callback, the request is
+| executed asynchronously in another thread and the callback receives the
+| response.
 
 Here's an example of calling the `OAuth2SignIn.signInWithUsernameAndPassword` 
 method for the Resource Owner Password grant type. After creating the session, 
@@ -200,20 +200,16 @@ class:
         }
     });
 
-## Client Credentials [](id=client-credentials)
+## Client Credentials
 
 The OAuth 2 Client Credentials grant type authenticates without requiring user 
 interaction. This is useful when the app needs to access its own resources, not 
 those of a specific user. 
 
-+$$$
-
-**Warning:** The Client Credentials grant type poses a security risk to the 
-portal. To authenticate without user credentials, the mobile app must contain 
-the OAuth 2 application's client ID and client secret. Anyone who can access 
-those values via the mobile app can also authenticate without user credentials. 
-
-$$$
+| **Warning:** The Client Credentials grant type poses a security risk to the
+| portal. To authenticate without user credentials, the mobile app must contain
+| the OAuth 2 application's client ID and client secret. Anyone who can access
+| those values via the mobile app can also authenticate without user credentials.
 
 To authenticate with the Client Credentials grant type, you must call the 
 `OAuth2SignIn.clientCredentialsSignIn` method. Note that this method lacks 
@@ -238,14 +234,10 @@ Here are descriptions of this method's parameters:
     result. If authentication succeeds, you receive a non-null session 
     containing the authentication; otherwise you receive an error. 
 
-+$$$
-
-**Note:** You can call the `OAuth2SignIn.clientCredentialsSignIn` method without 
-a callback by passing `null` in place of the callback. This causes the request 
-to execute synchronously. If you provide a callback, the request is executed 
-asynchronously in another thread and the callback receives the response. 
-
-$$$
+| **Note:** You can call the `OAuth2SignIn.clientCredentialsSignIn` method without
+| a callback by passing `null` in place of the callback. This causes the request
+| to execute synchronously. If you provide a callback, the request is executed
+| asynchronously in another thread and the callback receives the response.
 
 Here's an example of calling the `OAuth2SignIn.clientCredentialsSignIn` method 
 for the Resource Owner Password grant type. After creating the session, the 
@@ -267,8 +259,8 @@ method is called with a `SessionCallback` created as an anonymous inner class:
         }
     });
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using OAuth 2 in Liferay Screens for Android](/develop/tutorials/-/knowledge_base/7-1/using-oauth-2-in-liferay-screens-for-android)
+[Using OAuth 2 in Liferay Screens for Android](/docs/7-1/tutorials/-/knowledge_base/t/using-oauth-2-in-liferay-screens-for-android)
 
-[OAuth 2.0](/discover/deployment/-/knowledge_base/7-1/oauth-2-0)
+[OAuth 2.0](/docs/7-1/deploy/-/knowledge_base/d/oauth-2-0)

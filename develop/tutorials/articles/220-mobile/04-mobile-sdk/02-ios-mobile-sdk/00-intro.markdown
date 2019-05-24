@@ -1,4 +1,8 @@
-# Creating iOS Apps that Use the Mobile SDK [](id=creating-ios-apps-that-use-the-mobile-sdk)
+---
+header-id: creating-ios-apps-that-use-the-mobile-sdk
+---
+
+# Creating iOS Apps that Use the Mobile SDK
 
 The Liferay Mobile SDK provides a way to streamline the consumption of 
 @product@'s core web services and utilities, as well as those of custom apps. It 
@@ -25,10 +29,10 @@ The iOS Mobile SDK app development tutorials cover these topics:
 A great way to start is by setting up the Mobile SDK your iOS project. This 
 makes @product@'s services available in your app. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Invoking Liferay Services in Your iOS App](/develop/tutorials/-/knowledge_base/7-1/invoking-liferay-services-in-your-ios-app)
+[Invoking Liferay Services in Your iOS App](/docs/7-1/tutorials/-/knowledge_base/t/invoking-liferay-services-in-your-ios-app)
 
-[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/7-1/building-mobile-sdks)
+[Building Mobile SDKs](/docs/7-1/tutorials/-/knowledge_base/t/building-mobile-sdks)
 
-[Creating Android Apps that Use the Mobile SDK](/develop/tutorials/-/knowledge_base/7-1/creating-android-apps-that-use-the-mobile-sdk)
+[Creating Android Apps that Use the Mobile SDK](/docs/7-1/tutorials/-/knowledge_base/t/creating-android-apps-that-use-the-mobile-sdk)

@@ -1,4 +1,8 @@
-# Deploying a Project Built with Maven to @product@ [](id=deploying-a-project-built-with-maven-to-product)
+---
+header-id: deploying-a-project-built-with-maven-to-product
+---
+
+# Deploying a Project Built with Maven to @product@
 
 There are two ways to deploy a Maven-built Liferay project:
 
@@ -12,19 +16,15 @@ is an inefficient way to deploy your projects. With a small configuration in
 your Maven POMs, you can deploy a project to @product@ with one command
 execution.
 
-+$$$
-
-**Note:** In previous versions of Liferay Portal, you were able to execute the
-`liferay:deploy` command to deploy your configured Maven project to a Liferay
-server. This is no longer possible since the `liferay-maven-plugin` is not
-applied to Maven projects built from Liferay archetypes.
-
-$$$
+| **Note:** In previous versions of Liferay Portal, you were able to execute the
+| `liferay:deploy` command to deploy your configured Maven project to a Liferay
+| server. This is no longer possible since the `liferay-maven-plugin` is not
+| applied to Maven projects built from Liferay archetypes.
 
 If you're deploying a module JAR, a prerequisite for this tutorial is to have
 your project configured to generate an OSGi module JAR; if you haven't done
 this, visit the
-[Creating a Module JAR Using Maven](/develop/tutorials/-/knowledge_base/7-1/creating-a-module-jar-using-maven)
+[Creating a Module JAR Using Maven](/docs/7-1/tutorials/-/knowledge_base/t/creating-a-module-jar-using-maven)
 tutorial for more information.
 
 1.  Add the following plugin configuration to your Liferay Maven project's
@@ -50,10 +50,10 @@ tutorial for more information.
         </build>
 
     This POM configuration applies Liferay's
-    [Bundle Support plugin](/develop/reference/-/knowledge_base/7-1/bundle-support-plugin)
+    [Bundle Support plugin](/docs/7-1/reference/-/knowledge_base/r/bundle-support-plugin)
     by defining its `groupId`, `artifactId`, and `version`. You can learn more
     about this plugin in the
-    [Maven Workspace](/develop/tutorials/-/knowledge_base/7-1/maven-workspace)
+    [Maven Workspace](/docs/7-1/tutorials/-/knowledge_base/t/maven-workspace)
     tutorial. The logic also defines the
     [executions](https://maven.apache.org/guides/mini/guide-configuring-plugins.html#Using_the_executions_Tag)
     tag, which configures the Bundle Support plugin to run during the
@@ -78,14 +78,10 @@ tutorial for more information.
             <liferayHome>C:/liferay/liferay-ce-portal-7.1-ga1</liferayHome>
         </configuration>
 
-    +$$$
-
-    **Note:** Maven applications built for previous Liferay Portal versions
-    required the `<liferay.maven.plugin.version>` tag to do various tasks (e.g.,
-    deploying to a Liferay server). This tag is not needed since the old
-    `liferay-maven-plugin` is no longer used.
-
-    $$$
+    | **Note:** Maven applications built for previous Liferay Portal versions
+    | required the `<liferay.maven.plugin.version>` tag to do various tasks (e.g.,
+    | deploying to a Liferay server). This tag is not needed since the old
+    | `liferay-maven-plugin` is no longer used.
 
 3.  Run this command to deploy your project:
 

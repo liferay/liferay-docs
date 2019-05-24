@@ -1,4 +1,8 @@
-# Upgrading Themes Created With the Liferay Theme Generator [](id=upgrading-themes-created-with-the-theme-generator)
+---
+header-id: upgrading-themes-created-with-the-theme-generator
+---
+
+# Upgrading Themes Created With the Liferay Theme Generator
 
 A Liferay Portal 7.0 theme can be upgraded to @product-ver@, regardless of its 
 project environment (Liferay Theme Generator, Plugins SDK, Maven, etc.). But a 
@@ -40,17 +44,13 @@ Here are the steps for using the theme Gulp `upgrade` task:
     - Updates Lexicon version references
     - Updates Liferay version references
 
-+$$$
-
-**Note**: The `gulp upgrade` task overwrites the theme's files. We recommend 
-that you backup your theme's files before running it. 
-
-$$$
+| **Note**: The `gulp upgrade` task overwrites the theme's files. We recommend
+| that you backup your theme's files before running it.
 
 The Gulp task list any deprecated or removed variables. For other areas of the 
 code it suspects might need updates, it logs suggestions. The task also reports 
 changes that may affect 
-[theme templates](/develop/tutorials/-/knowledge_base/7-1/updating-theme-templates). 
+[theme templates](/docs/7-1/tutorials/-/knowledge_base/t/updating-theme-templates). 
 
 The Gulp `upgrade` task jump-starts the upgrade process, but it doesn't complete 
 it. Manual updates are required. 
@@ -61,8 +61,8 @@ task performs are noted in context. Even if you've already executed the upgrade
 task, it's best to learn all the steps and make sure they're applied to your 
 theme. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating Themes](/develop/tutorials/-/knowledge_base/7-1/creating-themes)
+[Creating Themes](/docs/7-1/tutorials/-/knowledge_base/t/creating-themes)
 
-[Updating Project Metadata](/develop/tutorials/-/knowledge_base/7-1/updating-project-metadata)
+[Updating Project Metadata](/docs/7-1/tutorials/-/knowledge_base/t/updating-project-metadata)

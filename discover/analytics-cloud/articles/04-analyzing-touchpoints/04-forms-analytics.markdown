@@ -1,6 +1,10 @@
-# Form Analytics [](id=form-analytics)
+---
+header-id: form-analytics
+---
 
-[Forms](/discover/portal/-/knowledge_base/7-1/forms) 
+# Form Analytics
+
+[Forms](/docs/7-1/user/-/knowledge_base/u/forms) 
 are important direct data gathering tools for enterprises. Are your web forms
 providing you invaluable information or turning users away? Analytics Cloud
 gives you important insights.
@@ -14,7 +18,7 @@ indicated by the tab title. Click *Forms*.
 View the summary metrics for an Asset directly in the list, and click on an
 Asset to view its detail page.
 
-## Visitor Behavior [](id=visitor-behavior)
+## Visitor Behavior
 
 As with all Asset types, the Visitors Behavior chart is at the top of its page
 and provides a line graph with several trend lines. Choose from four
@@ -27,7 +31,7 @@ important metrics:
 
 ![Figure 2: The Visitors Behavior chart contains important trend lines.](../../images/assets-forms-vb.png)
 
-### Submissions [](id=submissions)
+### Submissions
 
 Submissions counts the number of times the Submit button was clicked on a Form.
 It's the gold standard metric for a form, because that's why the form was
@@ -38,7 +42,7 @@ The Submissions trend line shows the number of times the Submit button was
 clicked each day (or hour, if *Yesterday* or *Last 24 Hours* are selected) over
 the selected time period. 
 
-### Views [](id=views)
+### Views
 
 Views is a common metric among all Assets (and Pages).
 
@@ -52,13 +56,13 @@ user unless at least 30 minutes of inactivity <!-- need info on whether 30
 minutes is accurate and that this is how views are calculated--> on the Page
 passes before the user interacts with the Page again.
 
-### Abandonment [](id=abandonment)
+### Abandonment
 
 Abandonment is the daily (or hourly if *Yesterday* or *Last 24 Hours* is
 selected) percentage of users that interacted with the form but stopped short of
 submitting an entry over the selected time period.
 
-### Completion Time [](id=completion-time)
+### Completion Time
 
 Completion time is a daily average (or hourly if *Yesterday* or *Last 24 Hours*
 is selected) of the time it took for form users to go from their first
@@ -68,7 +72,7 @@ The time series metrics displayed in the Visitors Behavior chart are paramount
 to understanding Asset performance over time. But there's more to Asset
 Analytics.
 
-## Views by Segment [](id=views-by-segment)
+## Views by Segment
 
 Scroll down from the Visitor Behavior chart to see the Views by Segment bar
 graph, which is present for all Asset types and Pages.
@@ -81,7 +85,7 @@ Segments_.
 
 ![Figure 3: Which Segments are looking at the Asset most frequently?](../../images/assets-vbs.png)
 
-## Submissions by Location [](id=submissions-by-location)
+## Submissions by Location
 
 View a bubble chart comparing submissions by country over the selected period.
 Up to the top five countries are displayed, and the sixth bubble is an
@@ -89,7 +93,7 @@ aggregation of the remaining countries.
 
 ![Figure 4: Which location interacts with the Asset most frequently?](../../images/assets-interaction-location.png)
 
-## Submissions by Technology [](id=submissions-by-technology)
+## Submissions by Technology
 
 View a stacked bar graph of the Page's submissions by operating system (grouped
 by device type) in the default tab.
@@ -100,7 +104,7 @@ Click *Web Browser* to see a donut chart displaying up to the top eight web
 browsers over the selected time period. If applicable, remaining web browsers
 are aggregated in the ninth donut segment.
 
-## Field Analysis [](id=field-analysis)
+## Field Analysis
 
 The Field Analysis chart is unique to Forms. 
 
@@ -134,7 +138,7 @@ required, you'll get less abandonment on that field, and if you remove that
 field from the form entirely, you'll eliminate all abandonment from offended
 parents. 
 
-## Asset Appears On [](id=asset-appears-on)
+## Asset Appears On
 
 The Asset Appears On table includes a Page Name and URL. Like any Page data in
 Analytics Cloud, only Pages that were interacted with in some way by site

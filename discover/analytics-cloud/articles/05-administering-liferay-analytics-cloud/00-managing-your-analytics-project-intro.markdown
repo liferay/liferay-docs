@@ -1,4 +1,8 @@
-# Managing Your Analytics Project [](id=managing-your-analytics-project)
+---
+header-id: managing-your-analytics-project
+---
+
+# Managing Your Analytics Project
 
 Project administrators connect data sources to the project, manage project
 users, and track project usage against the current plan limits. 

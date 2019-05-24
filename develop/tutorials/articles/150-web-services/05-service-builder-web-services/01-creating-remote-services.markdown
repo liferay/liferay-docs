@@ -1,4 +1,8 @@
-# Creating Remote Services [](id=creating-remote-services)
+---
+header-id: creating-remote-services
+---
+
+# Creating Remote Services
 
 Many default @product@ services are published as JSON and SOAP web services. If
 you run the portal locally on port 8080, visit this URL to browse the default
@@ -21,25 +25,21 @@ are exposed remotely. In this tutorial, you'll learn how to generate remote
 services for your application. When you're done, your application's remote
 service methods can be called remotely via JSON and SOAP web services. 
 
-## Using Service Builder to Generate Remote Services [](id=using-service-builder-to-generate-remote-services)
+## Using Service Builder to Generate Remote Services
 
 Remember that you should implement your application's local service methods in 
 `*LocalServiceImpl`. You should implement your application's remote service 
 methods in `*ServiceImpl`. 
 
-+$$$
-
-**Best Practice:** If your application needs both local and remote services,
-determine the service methods that your application needs for working with your
-entity model. Add these service methods to `*LocalServiceImpl`. Then create
-corresponding remote services methods in `*ServiceImpl`. Add permission checks
-to the remote service methods and make the remote service methods invoke the
-local service methods. The remote service methods can have the same names as the
-local service methods they call. Within your application, only call the remote
-services. This ensures that your service methods are secured and that you don't
-have to duplicate permissions code.
-
-$$$
+| **Best Practice:** If your application needs both local and remote services,
+| determine the service methods that your application needs for working with your
+| entity model. Add these service methods to `*LocalServiceImpl`. Then create
+| corresponding remote services methods in `*ServiceImpl`. Add permission checks
+| to the remote service methods and make the remote service methods invoke the
+| local service methods. The remote service methods can have the same names as the
+| local service methods they call. Within your application, only call the remote
+| services. This ensures that your service methods are secured and that you don't
+| have to duplicate permissions code.
 
 For example, consider Web Content articles. Web Content articles are represented
 by the `JournalArticle` entity. This entity is declared in the `journal-service`
@@ -88,9 +88,9 @@ remote services. To make these services available via SOAP, however, you must
 build and deploy your app's Web Service Deployment Descriptor (WSDD). The next 
 section shows you how to do this. If you don't need to generate SOAP web 
 services, you can move on to the tutorial
-[Invoking Remote Services](/develop/tutorials/-/knowledge_base/7-1/invoking-remote-services). 
+[Invoking Remote Services](/docs/7-1/tutorials/-/knowledge_base/t/invoking-remote-services). 
 
-## Generating Your App's WSDD [](id=generating-your-apps-wsdd)
+## Generating Your App's WSDD
 
 @product@ uses Apache Axis to make SOAP web services available. Since Axis 
 requires a WSDD to make an app's remote services available via SOAP, you must 
@@ -108,7 +108,7 @@ The next section shows you how to install the WSDD builder in a multi-module
 project. If you have a standalone module project, skip ahead to the section 
 *Installing the WSDD Builder Plugin in a Standalone Module Project*. 
 
-### Installing the WSDD Builder Plugin in a Multi-module Project [](id=installing-the-wsdd-builder-plugin-in-a-multi-module-project)
+### Installing the WSDD Builder Plugin in a Multi-module Project
 
 To install the WSDD Builder plugin in a multi-module project like a Service
 Builder project in a Liferay Workspace, modify the workspace's `settings.gradle`
@@ -179,7 +179,7 @@ Now that you've installed the WSDD Builder plugin, you're ready to build and
 deploy the WSDD. For instructions on this, proceed to the section *Building and 
 Deploying the WSDD*. 
 
-### Installing the WSDD Builder Plugin in a Standalone Module Project [](id=installing-the-wsdd-builder-plugin-in-a-standalone-module-project)
+### Installing the WSDD Builder Plugin in a Standalone Module Project
 
 To install the WSDD Builder plugin in a standalone `*-service` module that uses
 Service Builder, modify the module's `build.gradle` file: 
@@ -211,7 +211,7 @@ the project:
 Now you're ready to build and deploy the WSDD. The next section shows you how to 
 do this. 
 
-## Building and Deploying the WSDD [](id=building-and-deploying-the-wsdd)
+## Building and Deploying the WSDD
 
 To build the WSDD, you must run the `buildWSDD` Gradle task in your `*-service` 
 module. Exactly how you do this depends on your development tools: 
@@ -234,7 +234,7 @@ are often required for portlet development:
 	compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
 	compileOnly group: "com.liferay", name: "com.liferay.registry.api", version: "2.0.0"
 
-[Click here](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies) 
+[Click here](/docs/7-1/tutorials/-/knowledge_base/t/configuring-dependencies) 
 for more information on finding and configuring dependencies for your apps. 
 
 In your `*-service` project's `build/libs` folder, the `buildWSDD` task 
@@ -262,9 +262,9 @@ which can't be activated. They still work as intended, though.
 Next, you'll learn how to build the WSDD module for built-in apps that don't
 include a WSDD by default. If you don't need to do this, you can move 
 on to the tutorial 
-[Invoking Remote Services](/develop/tutorials/-/knowledge_base/7-1/invoking-remote-services). 
+[Invoking Remote Services](/docs/7-1/tutorials/-/knowledge_base/t/invoking-remote-services). 
 
-## Building the WSDD for Built-in Apps [](id=building-the-wsdd-for-built-in-apps)
+## Building the WSDD for Built-in Apps
 
 @product@ doesn't provide WSDD modules for built-in apps that exist outside 
 of the portal context. This means that by default you can't access SOAP web 
@@ -295,14 +295,14 @@ to view the Bookmarks app's SOAP services at
 
 Fantastic! Once you've created remote web services, you'll want to know how to 
 invoke them. To learn how, see the tutorial 
-[Invoking Remote Services](/develop/tutorials/-/knowledge_base/7-1/invoking-remote-services). 
+[Invoking Remote Services](/docs/7-1/tutorials/-/knowledge_base/t/invoking-remote-services). 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Invoking Remote Services](/develop/tutorials/-/knowledge_base/7-1/invoking-remote-services)
+[Invoking Remote Services](/docs/7-1/tutorials/-/knowledge_base/t/invoking-remote-services)
 
-[Invoking JSON Web Services](/develop/tutorials/-/knowledge_base/7-1/invoking-json-web-services)
+[Invoking JSON Web Services](/docs/7-1/tutorials/-/knowledge_base/t/invoking-json-web-services)
 
-[JSON Web Services Invoker](/develop/tutorials/-/knowledge_base/7-1/json-web-services-invoker)
+[JSON Web Services Invoker](/docs/7-1/tutorials/-/knowledge_base/t/json-web-services-invoker)
 
-[What is Service Builder?](/develop/tutorials/-/knowledge_base/7-1/what-is-service-builder)
+[What is Service Builder?](/docs/7-1/tutorials/-/knowledge_base/t/what-is-service-builder)

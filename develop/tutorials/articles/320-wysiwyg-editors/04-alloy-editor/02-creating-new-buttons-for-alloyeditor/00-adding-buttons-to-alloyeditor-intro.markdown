@@ -1,4 +1,8 @@
-# Creating New Buttons for AlloyEditor [](id=creating-new-buttons-for-alloyeditor)
+---
+header-id: creating-new-buttons-for-alloyeditor
+---
+
+# Creating New Buttons for AlloyEditor
 
 AlloyEditor is built on `React.js` and uses `jsx` to render each button in the 
 editor. To add a new button to the AlloyEditor, you must create an OSGi bundle 
@@ -42,7 +46,7 @@ The tutorials in this section cover the following topics:
 - How to contribute your button to the list of available buttons 
 
 You can learn how to add your button to the editor's toolbars in the 
-[Adding Buttons to AlloyEditor's Toolbars tutorials](/develop/tutorials/-/knowledge_base/7-1/adding-buttons-to-alloyeditor-toolbars). 
+[Adding Buttons to AlloyEditor's Toolbars tutorials](/docs/7-1/tutorials/-/knowledge_base/t/adding-buttons-to-alloyeditor-toolbars). 
 
 The 
 [`my-log-text-button` bundle](https://github.com/liferay/liferay-docs/tree/master/develop/tutorials/code/osgi/modules/my-log-text-button) 

@@ -1,8 +1,12 @@
-# Converting Your Application's Service Builder API and Implementation [](id=converting-your-applications-service-builder-api-and-implementation)
+---
+header-id: converting-your-applications-service-builder-api-and-implementation
+---
+
+# Converting Your Application's Service Builder API and Implementation
 
 In this tutorial, you'll learn about converting a Liferay Portal 6 Service Builder
 application to a @product-ver@ style application. In the
-[previous tutorial](/develop/tutorials/-/knowledge_base/7-1/converting-your-applications-portlet-classes-and-ui),
+[previous tutorial](/docs/7-1/tutorials/-/knowledge_base/t/converting-your-applications-portlet-classes-and-ui),
 you learned how to generate your implementation and API modules. If you haven't
 yet run the `service-builder` Blade CLI command outlined in step 2 of the
 previous tutorial, run it now. The API module holds your application's Service
@@ -67,7 +71,7 @@ code.
     `build.gradle` file. In this file, Service Builder is already configured to
     generate code both in this module and in your service API module. When you
     run Service Builder,
-    [Java classes, interfaces, and related files are generated](/develop/tutorials/-/knowledge_base/7-1/running-service-builder)
+    [Java classes, interfaces, and related files are generated](/docs/7-1/tutorials/-/knowledge_base/t/running-service-builder)
     in your `*api` and `*service` modules. Open your service implementation
     module's `build.gradle` file to view the default configuration.
 
@@ -91,7 +95,7 @@ code.
     Your service API, implementation classes, and configuration (SQL,
     Hibernate, Spring, etc.) are generated from your `service.xml` file in
     their respective modules. The
-    [Service Builder Gradle Plugin](/develop/reference/-/knowledge_base/7-1/service-builder-gradle-plugin)
+    [Service Builder Gradle Plugin](/docs/7-1/reference/-/knowledge_base/r/service-builder-gradle-plugin)
     has multiple options.
 
 6.  Now that you've run Service Builder, copy your business logic classes into

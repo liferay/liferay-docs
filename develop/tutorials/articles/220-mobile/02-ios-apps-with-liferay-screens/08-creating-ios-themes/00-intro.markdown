@@ -1,4 +1,8 @@
-# Creating iOS Themes [](id=creating-ios-themes)
+---
+header-id: creating-ios-themes
+---
+
+# Creating iOS Themes
 
 By creating your own Themes, you can customize your mobile app's design and
 functionality. You can create them from scratch or use an existing Theme as a
@@ -19,17 +23,17 @@ Theme type offers:
 
 The tutorials in this section explain how to create all three Theme types. To 
 understand Theme concepts and components, you might want to examine the
-[architecture](/develop/tutorials/-/knowledge_base/7-1/architecture-of-liferay-screens-for-ios) 
+[architecture](/docs/7-1/tutorials/-/knowledge_base/t/architecture-of-liferay-screens-for-ios) 
 of Liferay Screens for iOS. The tutorials on 
-[creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-1/creating-ios-screenlets) 
+[creating iOS Screenlets](/docs/7-1/tutorials/-/knowledge_base/t/creating-ios-screenlets) 
 can help you create any Screenlet classes your Theme requires. 
 
-## Determining Your Theme's Location [](id=determining-your-themes-location)
+## Determining Your Theme's Location
 
 After determining the type of Theme to create, you need to decide where to
 create it. If you want to reuse or redistribute it, you should create it in an
 empty Cocoa Touch Framework project in Xcode. The 
-[packaging](/develop/tutorials/-/knowledge_base/7-1/packaging-ios-themes) 
+[packaging](/docs/7-1/tutorials/-/knowledge_base/t/packaging-ios-themes) 
 tutorial explains how to package and publish with CocoaPods. If you're
 not planning to reuse or redistribute your Theme, you can create it directly
 inside your app project. 

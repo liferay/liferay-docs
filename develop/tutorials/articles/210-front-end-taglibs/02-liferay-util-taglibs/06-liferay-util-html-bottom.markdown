@@ -1,4 +1,8 @@
-# Using Liferay Util HTML Bottom [](id=using-liferay-util-html-bottom)
+---
+header-id: using-liferay-util-html-bottom
+---
+
+# Using Liferay Util HTML Bottom
 
 The HTML bottom tag is not a self-closing tag. Content placed between the 
 opening and closing of this tag is moved to the bottom of the `<html>` tag. When 
@@ -23,10 +27,10 @@ include JavaScript (a common use case) provided by the portlet's bundle:
 Now you know how to use the `<liferay-util:html-bottom>` tag to include 
 additional resources in the bottom of the page's HTML tag. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using the Liferay Util HTML Body Bottom Tag](/develop/tutorials/-/knowledge_base/7-1/using-liferay-util-body-bottom)
+[Using the Liferay Util HTML Body Bottom Tag](/docs/7-1/tutorials/-/knowledge_base/t/using-liferay-util-body-bottom)
 
-[Using the Liferay Util HTML Top Tag](/develop/tutorials/-/knowledge_base/7-1/using-liferay-util-html-top)
+[Using the Liferay Util HTML Top Tag](/docs/7-1/tutorials/-/knowledge_base/t/using-liferay-util-html-top)
 
-[Using the Liferay UI Taglib](/develop/tutorials/-/knowledge_base/7-1/using-the-liferay-ui-taglib-in-your-portlets)
+[Using the Liferay UI Taglib](/docs/7-1/tutorials/-/knowledge_base/t/using-the-liferay-ui-taglib-in-your-portlets)

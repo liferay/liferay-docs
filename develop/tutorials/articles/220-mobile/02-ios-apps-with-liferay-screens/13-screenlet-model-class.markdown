@@ -1,4 +1,8 @@
-# Creating and Using Your Screenlet's Model Class [](id=creating-and-using-your-screenlets-model-class)
+---
+header-id: creating-and-using-your-screenlets-model-class
+---
+
+# Creating and Using Your Screenlet's Model Class
 
 Liferay Screens typically receives entities from a Liferay instance as 
 `[String:AnyObject]`, where `String` is the entity's attribute and `AnyObject` 
@@ -20,7 +24,7 @@ Using the
 as an example, this tutorial shows you how to create and use a model class in 
 your Screenlet. First, you'll create your model class. 
 
-## Creating Your Model Class [](id=creating-your-model-class)
+## Creating Your Model Class
 
 Your model class must contain all the code necessary to transform each 
 `[String:AnyObject]` that comes back from the server into a model object that 
@@ -61,7 +65,7 @@ properties that return the attribute values for each bookmark's name and URL:
 
 Next, you'll put your model class to work. 
 
-## Using Your Model Class [](id=using-your-model-class)
+## Using Your Model Class
 
 Now that your model class exists, you can use model objects anywhere your 
 Screenlet handles results. Exactly where depends on what Screenlet components 
@@ -194,12 +198,12 @@ where applicable.
 
 Awesome! Now you know how to create and use a model class in your Screenlet. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-1/creating-ios-screenlets)
+[Creating iOS Screenlets](/docs/7-1/tutorials/-/knowledge_base/t/creating-ios-screenlets)
 
-[Adding Screenlet Actions](/develop/tutorials/-/knowledge_base/7-1/adding-screenlet-actions)
+[Adding Screenlet Actions](/docs/7-1/tutorials/-/knowledge_base/t/adding-screenlet-actions)
 
-[Creating iOS List Screenlets](/develop/tutorials/-/knowledge_base/7-1/creating-ios-list-screenlets)
+[Creating iOS List Screenlets](/docs/7-1/tutorials/-/knowledge_base/t/creating-ios-list-screenlets)
 
-[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/7-1/architecture-of-liferay-screens-for-ios)
+[Architecture of Liferay Screens for iOS](/docs/7-1/tutorials/-/knowledge_base/t/architecture-of-liferay-screens-for-ios)

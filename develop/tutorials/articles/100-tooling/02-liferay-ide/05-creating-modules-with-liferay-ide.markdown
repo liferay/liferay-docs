@@ -1,4 +1,8 @@
-# Creating Modules with Liferay Dev Studio [](id=creating-modules-with-liferay-ide)
+---
+header-id: creating-modules-with-liferay-ide
+---
+
+# Creating Modules with Liferay Dev Studio
 
 Dev Studio provides a Module Project Wizard for users to create a variety of
 different module projects. You can create a new Liferay module project by
@@ -9,7 +13,7 @@ navigating to *File* &rarr; *New* &rarr; *Liferay Module Project*.
 You're given options for project name, location, build type, and template type.
 You can build your project using Gradle or Maven. If you're unsure for which
 template type to choose, see the
-[Project Templates](/develop/reference/-/knowledge_base/7-1/project-templates)
+[Project Templates](/docs/7-1/reference/-/knowledge_base/r/project-templates)
 reference section. Click *Next* and you're given additional configuration
 options based on the project template you selected. For example, if you selected
 a template that requires a component class, you must configure it in the wizard.
@@ -38,7 +42,7 @@ the Flat view displays the modules separately from their project.
 You now have the knowledge to create a Liferay module project from Liferay
 Dev Studio.
 
-## Creating Component Classes [](id=creating-component-classes)
+## Creating Component Classes
 
 You can also create a new component class for a pre-existing module project.
 Navigate to *File* &rarr; *New* &rarr; *Liferay Component Class*. This is a
@@ -66,7 +70,7 @@ Template` list:
 
 Next you'll learn how to import existing projects into Dev Studio.
 
-## Importing Existing Module Projects [](id=importing-existing-module-projects)
+## Importing Existing Module Projects
 
 Dev Studio also provides a method to import existing module projects. You can import a
 module project by navigating to *File* &rarr; *Import* &rarr; *Liferay* &rarr;

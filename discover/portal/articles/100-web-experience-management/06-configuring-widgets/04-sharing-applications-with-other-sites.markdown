@@ -1,4 +1,8 @@
-# Sharing Widgets with Other Sites [](id=sharing-widgets-with-other-sites)
+---
+header-id: sharing-widgets-with-other-sites
+---
+
+# Sharing Widgets with Other Sites
 
 You can share widgets with other Sites by embedding an instance of a widget
 running on your Site into another website, such as Facebook. This opens up
@@ -12,14 +16,14 @@ the widget's *Options* icon (![Options](../../../images/icon-options.png)) and
 select the *Sharing* tab. There are five sub-tabs under sharing: Any Website,
 Facebook, OpenSocial Gadget, and Netvibes.
 
-## Any Web Site [](id=any-web-site)
+## Any Web Site
 
 Copy and paste the provided snippet of JavaScript code into the web site where
 you want to add the widget. That's all you need to do. When a user loads the
 page on the other website, the code pulls the relevant widget from your 
 Site and displays it.
 
-## Facebook [](id=facebook)
+## Facebook
 
 You can add any widget as a Facebook app. To do this, you must first get a 
 developer key. A link for doing this is provided to you in the Facebook tab. 
@@ -32,7 +36,7 @@ used to render the application. You can also enable the *Allow users to add
 [application-name] to Facebook*. Then you can navigate to your app's Options
 menu and select *Add to Facebook*.
 
-## OpenSocial Gadget [](id=opensocial-gadget)
+## OpenSocial Gadget
 
 OpenSocial comprises a container and a set of APIs for social networking and
 other web applications. @product@ can serve up applications to be used as 
@@ -51,7 +55,7 @@ and revisit the *Options* button of your widget. A new button appears named
 *Add to an OpenSocial Platform*. When selecting this new button, the URL is
 provided for sharing the widget to an OpenSocial platform. 
 
-## Netvibes [](id=netvibes)
+## Netvibes
 
 Netvibes offers a similar environment where users can log in, create their own
 personal dashboard, and add customizable widgets to it. To set up Netvibes

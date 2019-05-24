@@ -1,4 +1,8 @@
-# Liferay Front-end Cards [](id=liferay-frontend-cards)
+---
+header-id: liferay-frontend-cards
+---
+
+# Liferay Front-end Cards
 
 If you have data you want to compare that's heavy on image usage, cards are the
 component for the job. Cards visually represent data in a minimal and compact
@@ -12,7 +16,7 @@ are four main types of Cards covered in this tutorial:
 
 Examples of each card are shown below.
 
-## Horizontal Card [](id=horizontal-card)
+## Horizontal Card
 
 Horizontal cards are used primarily to display documents, such as files and 
 folders. An example configuration is shown below:
@@ -31,10 +35,10 @@ folders. An example configuration is shown below:
 ![Figure 1: Horizontal cards are perfect to display files and documents.](../../../images/liferay-frontend-taglib-cards-horizontal.png)
 
 The `<liferay-frontend:horizontal-card-icon>` tag uses 
-[Clay Icons](/develop/tutorials/-/knowledge_base/7-1/clay-icons) for its `icon` 
+[Clay Icons](/docs/7-1/tutorials/-/knowledge_base/t/clay-icons) for its `icon` 
 attribute. 
 
-## Icon Vertical Card [](id=icon-vertical-card)
+## Icon Vertical Card
 
 Icon vertical cards, as the name suggests, are cards that display information in
 a vertical format that emphasizes an icon. These cards show content that doesn't
@@ -66,7 +70,7 @@ article:
 
 ![Figure 2: Vertical icon cards are perfect to display an entity selection, such as a web content article.](../../../images/liferay-frontend-taglib-cards-icon-vertical.png)
 
-## Vertical Card [](id=vertical-card)
+## Vertical Card
 
 Vertical cards display information in a vertical card format, as opposed to
 a horizontal format. If the content has an associated image (like a blog header
@@ -99,7 +103,7 @@ a web content article when an image preview is available:
 
 ![Figure 3: Vertical cards are perfect to display files and documents.](../../../images/liferay-frontend-taglib-cards-vertical.png)
 
-## HTML Vertical Card [](id=html-vertical-card)
+## HTML Vertical Card
 
 The HTML Vertical card lets you display custom HTML in the header of the 
 vertical card. The example below embeds a video:
@@ -126,7 +130,7 @@ vertical card. The example below embeds a video:
 
 ![Figure 4: Html vertical cards let you display custom HTML in the card's header.](../../../images/liferay-frontend-taglib-cards-html-vertical.png)
 
-## User Vertical Card [](id=user-vertical-card)
+## User Vertical Card
 
 The User Vertical card displays user profile selections in the icon view of the
 Management Bar. Below is an example snippet from the User Admin portlet:
@@ -153,10 +157,10 @@ Management Bar. Below is an example snippet from the User Admin portlet:
 
 ![Figure 5: User vertical cards are perfect to display files and documents.](../../../images/liferay-frontend-taglib-cards-user-vertical.png)
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Liferay Front-end Add Menu](/develop/tutorials/-/knowledge_base/7-1/liferay-frontend-add-menu)
+[Liferay Front-end Add Menu](/docs/7-1/tutorials/-/knowledge_base/t/liferay-frontend-add-menu)
 
-[Liferay Front-end Info Bar](/develop/tutorials/-/knowledge_base/7-1/liferay-frontend-info-bar)
+[Liferay Front-end Info Bar](/docs/7-1/tutorials/-/knowledge_base/t/liferay-frontend-info-bar)
 
-[Liferay Front-end Management Bar](/develop/tutorials/-/knowledge_base/7-1/liferay-frontend-management-bar)
+[Liferay Front-end Management Bar](/docs/7-1/tutorials/-/knowledge_base/t/liferay-frontend-management-bar)

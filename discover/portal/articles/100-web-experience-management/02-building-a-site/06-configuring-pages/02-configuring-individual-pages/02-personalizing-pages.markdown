@@ -1,4 +1,8 @@
-# Personalizing Pages [](id=personalizing-pages)
+---
+header-id: personalizing-pages
+---
+
+# Personalizing Pages
 
 Administrators can designate pages or sections of Widget Pages as customizable.
 When a user visits such a page, a notification appears stating that the user can
@@ -8,7 +12,7 @@ of a page layout. Page customizations are only visible to the user who made the
 customizations. By default, Site members can make page customizations but
 non-Site members and guests can't.
 
-## Enabling Page Customizations [](id=enabling-page-customizations)
+## Enabling Page Customizations
 
 To enable page customizations as an administrator,
 
@@ -36,7 +40,7 @@ to help distinguish customizable vs. non-customizable sections of the page.
 
 ![Figure 2: Customizable regions are colored green and non-customizable regions are colored red.](../../../../../images/color-coded-customizable-regions.png)
 
-## Customization Permissions [](id=customization-permissions)
+## Customization Permissions
 
 Administrators must grant users permission to customize pages under the Site
 section. This can be achieved by assigning permission to a Role, then assigning
@@ -49,7 +53,7 @@ permission is assigned to the Role *Site Member*.
 The *Customize* permission also lets users customize the look and feel of
 apps and import or export app settings.
 
-## Customizing Pages [](id=customizing-pages)
+## Customizing Pages
 
 With customization active, Site members can access the Add menu from the top
 right side of the screen when viewing their customizable page, which lets them
@@ -71,7 +75,7 @@ start anew.
 Users can't change a non-instanceable app's configuration inside a customizable
 region since those apps are tied to the Site where they've been added. 
 
-## Viewing Customized Pages [](id=viewing-customized-pages)
+## Viewing Customized Pages
 
 Site members can also choose between viewing their customized page and viewing
 the default page by selecting the *Options* button
@@ -86,7 +90,7 @@ administrators to non-customizable sections in the default view are immediately
 applied for all users. Changes made by administrators to customizable sections,
 however, do *not* overwrite users' customizations.
 
-## Customization Example [](id=customization-example)
+## Customization Example
 
 As an administrator,
 

@@ -1,4 +1,8 @@
-# Running Scripts From the Script Console [](id=running-scripts-from-the-script-console)
+---
+header-id: running-scripts-from-the-script-console
+---
+
+# Running Scripts From the Script Console
 
 The script console provides a single view for executing Groovy scripts and
 printing their output. It has predefined variables that facilitate printing
@@ -10,16 +14,12 @@ output and working with portlets and users. Here you'll learn these things:
 
 - [Tips for running scripts in the script console](#tips)
 
-+$$$
-
-**Important:** The script console is for system operations and maintenance and 
-not for end users. Limit script console access to portal administrators.
-
-$$$
+| **Important:** The script console is for system operations and maintenance and
+| not for end users. Limit script console access to portal administrators.
 
 Start with running the script console's sample script. 
 
-## Running the Sample Script [](id=running-the-sample-script)
+## Running the Sample Script
 
 Here's how to run the sample script in the script console:
 
@@ -47,7 +47,7 @@ count to the script console. Note that if you use `System.out.println` instead
 of `out.println`, your output is printed to Liferay's log file rather than to
 the script console.
 
-## Predefined Variables [](id=predefined-variables)
+## Predefined Variables
 
 Here are the predefined variables available to scripts executed in the script
 console:
@@ -75,7 +75,7 @@ instance's `Company`:
 
 ![Figure 2: Here's an example of invoking a Groovy script that uses the predefined `out`, `actionRequest`, and `userInfo` variables to print information about the company and current user.](../../../images/groovy-script-current-user-info.png)
 
-## Tips [](id=tips)
+## Tips
 
 Keep these things in mind when using the script console: 
 

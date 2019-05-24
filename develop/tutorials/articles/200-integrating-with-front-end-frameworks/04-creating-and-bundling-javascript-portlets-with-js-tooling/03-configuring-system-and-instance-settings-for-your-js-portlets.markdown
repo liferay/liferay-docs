@@ -1,27 +1,27 @@
-# Configuring System Settings and Instance Settings for Your JavaScript Widget [](id=configuring-system-settings-and-instance-settings-for-your-js-portlet)
+---
+header-id: configuring-system-settings-and-instance-settings-for-your-js-portlet
+---
+
+# Configuring System Settings and Instance Settings for Your JavaScript Widget
 
 As of v1.1.0 of the JS Portlet Extender, you can define configuration options 
 for your widget. These options are passed to the widget's JavaScript entry point 
 as the `configuration` parameter. See the 
-[main entry point's reference](/develop/reference/-/knowledge_base/7-1/understanding-the-js-portlet-extender-configuration#main-entry-point) 
+[main entry point's reference](/docs/7-1/reference/-/knowledge_base/r/understanding-the-js-portlet-extender-configuration#main-entry-point) 
 for more information on the entry point. Follow these steps to set system and/or 
 portlet instance settings for your widget:
 
 1.  Add a `/features` folder in your project's root folder if it doesn't already 
     exist. 
 
-    +$$$
-
-    **Note:** This location can be overridden with the 
-    `create-jar.features.configuration` option in your project's `.npmbundlerrc` 
-    file. See 
-    [OSGi bundle configuration options](/develop/reference/-/knowledge_base/7-1/configuring-liferay-npm-bundler#osgi-bundle-configuration-options) 
-    for all the available options for the bundle.
-
-    $$$
+    | **Note:** This location can be overridden with the
+    | `create-jar.features.configuration` option in your project's `.npmbundlerrc`
+    | file. See
+    | [OSGi bundle configuration options](/docs/7-1/reference/-/knowledge_base/r/configuring-liferay-npm-bundler#osgi-bundle-configuration-options)
+    | for all the available options for the bundle.
 
 2.  Create a `configuration.json` file in the `/features` folder and follow the 
-    pattern below. See the [Configuration JSON](/develop/reference/-/knowledge_base/7-1/configuration-json-available-options) 
+    pattern below. See the [Configuration JSON](/docs/7-1/reference/-/knowledge_base/r/configuration-json-available-options) 
     reference for an explanation of each of the available options:
     
     {
@@ -78,8 +78,8 @@ portlet instance settings for your widget:
 Awesome! Now you know how to configure system settings and portlet instance 
 settings for your widget. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-- [Localizing Your Widget](/develop/tutorials/-/knowledge_base/7-1/localizing-your-portlet)
-- [Using Translation Features in Your JavaScript Widget](/develop/tutorials/-/knowledge_base/7-1/using-translation-features-in-your-javascript-portlet)
-- [Configuring Portlet Properties for Your JavaScript Widget](/develop/tutorials/-/knowledge_base/7-1/configuring-portlet-properties-for-your-js-portlet)
+- [Localizing Your Widget](/docs/7-1/tutorials/-/knowledge_base/t/localizing-your-portlet)
+- [Using Translation Features in Your JavaScript Widget](/docs/7-1/tutorials/-/knowledge_base/t/using-translation-features-in-your-javascript-portlet)
+- [Configuring Portlet Properties for Your JavaScript Widget](/docs/7-1/tutorials/-/knowledge_base/t/configuring-portlet-properties-for-your-js-portlet)

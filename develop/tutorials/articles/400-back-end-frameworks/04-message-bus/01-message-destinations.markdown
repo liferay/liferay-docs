@@ -1,4 +1,8 @@
-# Messaging Destinations [](id=messaging-destinations)
+---
+header-id: messaging-destinations
+---
+
+# Messaging Destinations
 
 In Message Bus, you send messages to *destinations*. A destination is a named
 logical (not physical) location. Sender classes send messages to destinations,
@@ -12,7 +16,7 @@ coupled. Here are the messaging destination topics this tutorial covers:
 
 It's time to configure a destination.
 
-## Destination Configuration [](id=destination-configuration)
+## Destination Configuration
 
 Each destination has a name and type and can have several other attributes. The
 destination type determines whether there's a message queue, the kinds of
@@ -82,7 +86,7 @@ the various types of configurations.
 You can also use the [`DestinationConfiguration` constructor](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/DestinationConfiguration.html#DestinationConfiguration-java.lang.String-java.lang.String-)
 to create a configuration for any destination type, even your own.
 
-## Creating a Destination [](id=creating-a-destination)
+## Creating a Destination
 
 Message Bus destinations are based on destination configurations and
 registered as OSGi services. Message Bus detects the destination services and
@@ -232,12 +236,12 @@ As an added bonus to creating destinations, you can create classes that listen
 for new destinations and new message listeners. You might want to create such
 listeners to log the deployment of new message bus endpoints.
 
-## Messaging Event Listeners [](id=messaging-event-listeners)
+## Messaging Event Listeners
 
 There are Message Bus framework interfaces that let you listen for new
 destinations and message listeners. 
 
-### Listening for new Destinations [](id=listening-for-new-destinations)
+### Listening for new Destinations
 
 The Message Bus notifies Message Bus Event Listeners when destinations are
 added and removed. To register these listeners, publish a
@@ -261,7 +265,7 @@ to the OSGi service registry (e.g., via an `@Component` annotation).
 
 Listening for new message listeners is easy too. 
 
-### Listening for new Message Listeners [](id=listening-for-new-message-listeners)
+### Listening for new Message Listeners
 
 The Message Bus notifies 
 [`DestinationEventListener` instances](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/DestinationEventListener.html)
@@ -295,8 +299,8 @@ Now you understand the different destination types, how to create and register
 destinations, and how to manage destination resources. Once you deploy your
 destination, registered message listeners receive messages sent to it. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Message Listeners](/develop/tutorials/-/knowledge_base/7-1/message-listeners) 
+[Message Listeners](/docs/7-1/tutorials/-/knowledge_base/t/message-listeners) 
 
-[Sending Messages](/develop/tutorials/-/knowledge_base/7-1/sending-messages)
+[Sending Messages](/docs/7-1/tutorials/-/knowledge_base/t/sending-messages)

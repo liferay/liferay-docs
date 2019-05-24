@@ -1,4 +1,8 @@
-# Enabling Search and Indexing for Entries [](id=enabling-search-and-indexing-for-entries)
+---
+header-id: enabling-search-and-indexing-for-entries
+---
+
+# Enabling Search and Indexing for Entries
 
 In this section, you'll create the classes that control these aspects of the
 search functionality:
@@ -38,15 +42,11 @@ index when an Entry is persisted:
 - Update `EntryLocalServiceImpl`'s `addEntry`, `updateEntry`, and
   `deleteEntry` methods to update the index so it matches the databse.
 
-+$$$
-
-**Note:** In prior versions of @product@, search and indexing was accomplished
-with one `*Indexer` class that extended `BaseIndexer`. This Learning Path
-demonstrates a new pattern that relies on [composition instead of
-inheritance](https://stackoverflow.com/questions/2399544/difference-between-inheritance-and-composition).
-If you desire to use the old approach, feel free to extend `BaseIndexer`. It's
-still supported. 
-
-$$$
+| **Note:** In prior versions of @product@, search and indexing was accomplished
+| with one `*Indexer` class that extended `BaseIndexer`. This Learning Path
+| demonstrates a new pattern that relies on [composition instead of
+| inheritance](https://stackoverflow.com/questions/2399544/difference-between-inheritance-and-composition).
+| If you desire to use the old approach, feel free to extend `BaseIndexer`. It's
+| still supported.
 
 <a class="go-link btn btn-primary" href="/develop/tutorials/-/knowledge_base/7-1/registering-entries-with-the-search-framework">Let's Go!<span class="icon-circle-arrow-right"></span></a>

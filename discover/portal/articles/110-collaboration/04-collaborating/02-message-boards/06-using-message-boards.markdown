@@ -1,4 +1,8 @@
-# Using the Message Boards [](id=using-the-message-boards)
+---
+header-id: using-the-message-boards
+---
+
+# Using the Message Boards
 
 You can add a Message Boards widget to a page from the *Add* 
 (![Add](../../../../images/icon-control-menu-add.png)) menu's *Collaboration*
@@ -22,7 +26,7 @@ You can also use the search bar at the top of the widget to search for threads
 and posts. Although search works on threads and posts within categories, it 
 doesn't work on categories themselves. 
 
-## Posting New Threads [](id=posting-new-threads)
+## Posting New Threads
 
 Follow these steps to post a new thread: 
 
@@ -39,9 +43,9 @@ Follow these steps to post a new thread:
 3.  Create your thread's content in the *Body* field. This field uses the same 
     editor as the Blogs app, except that it uses BBCode instead of HTML. For 
     further instructions, see the documentation on 
-    [using the editor](/discover/portal/-/knowledge_base/7-1/using-the-blog-entry-editor). 
+    [using the editor](/docs/7-1/user/-/knowledge_base/u/using-the-blog-entry-editor). 
     Also note that you can 
-    [mention](/discover/portal/-/knowledge_base/7-1/mentioning-users) 
+    [mention](/docs/7-1/user/-/knowledge_base/u/mentioning-users) 
     other users by entering the `@` character and their user name. 
 
 4.  If you want to add attachments, open the *Attachments* section and add them 
@@ -50,7 +54,7 @@ Follow these steps to post a new thread:
 5.  If you want to associate a tag with the message, open the *Categorization* 
     section and use the *Select* button to select an existing tag. You can also 
     create a new tag by entering it in the *Tags* field and clicking *Add*. See 
-    [the documentation on tags](/discover/portal/-/knowledge_base/7-1/tagging-content) 
+    [the documentation on tags](/docs/7-1/user/-/knowledge_base/u/tagging-content) 
     for more information. 
 
 6.  If you want to select an existing asset in the portal (e.g., a media file, 
@@ -67,7 +71,7 @@ Follow these steps to post a new thread:
     -   **Priority:** The thread's priority in the Message Board. By default, 
         you can choose *Urgent*, *Sticky*, or *Announcement*. Additional 
         priorities can also be 
-        [configured](/discover/portal/-/knowledge_base/7-1/configuring-message-boards) 
+        [configured](/docs/7-1/user/-/knowledge_base/u/configuring-message-boards) 
         in the Message Boards app in Site Administration. 
     -   **Allow Pingbacks:** Whether 
         [pingbacks](https://en.wikipedia.org/wiki/Pingback) 
@@ -95,7 +99,7 @@ Follow these steps to post a new thread:
 9.  Click *Publish* to publish the thread. Once it's published, it appears 
     along with the other threads in the category. 
 
-## Participating in Message Board Threads [](id=participating-in-message-board-threads)
+## Participating in Message Board Threads
 
 To find message board threads that interest you, browse a message board's
 Categories or Recent Posts tabs. In the Categories tab, you can view a 

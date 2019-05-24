@@ -1,4 +1,8 @@
-# App Types [](id=app-types)
+---
+header-id: app-types
+---
+
+# App Types
 
 There are several different kinds of apps. Some apps can even contain other
 apps. The types of apps you can install include: 
@@ -11,7 +15,7 @@ apps. The types of apps you can install include:
 
 Read on to learn about these app types. 
 
-## OSGi Modules [](id=osgi-modules)
+## OSGi Modules
 
 Since @product@ runs on OSGi, apps can be implemented as OSGi modules. An OSGi 
 module is a JAR file adapted to run on OSGi. Although it's possible for a single 
@@ -30,7 +34,7 @@ Finding Liferay API Modules(/develop/reference/-/knowledge_base/7-1/finding-life
 OSGi modules can also contain apps that have a UI: portlets. The next section 
 discusses these. 
 
-## Portlets [](id=portlets)
+## Portlets
 
 Portlets are small web applications that run in a portion of a web page. For 
 example, the built-in Blogs app is a portlet. Portlet applications, like servlet 
@@ -49,14 +53,14 @@ files. For information on developing OSGi modules for Liferay, including
 portlets, see 
 [Liferay's developer tutorials](/develop/tutorials). 
 
-## Web Plugins [](id=web-plugins)
+## Web Plugins
 
 Web plugins are regular Java EE web modules designed to work with @product@. You
 can integrate with various Enterprise Service Bus (ESB) implementations, as well
 as Single Sign-On implementations, workflow engines, and so on. These are
 implemented as web modules used by @product@ portlets to provide functionality. 
 
-## Templates and Themes [](id=templates-and-themes)
+## Templates and Themes
 
 Templates and themes are plugins that change @product@'s appearance. Templates 
 (layout templates) control how you can arrange portlets on a page. They make up 
@@ -73,9 +77,9 @@ more are being added every day. This makes it easy for theme developers, as they
 can customize existing themes instead of writing a new one from scratch. 
 
 For information on developing themes and templates, see 
-[this section of tutorials](/develop/tutorials/-/knowledge_base/7-1/themes-and-layout-templates). 
+[this section of tutorials](/docs/7-1/tutorials/-/knowledge_base/t/themes-and-layout-templates). 
 
-## Liferay Marketplace App Packages [](id=liferay-marketplace-app-packages)
+## Liferay Marketplace App Packages
 
 Regardless of app type, each 
 [Liferay Marketplace](https://web.liferay.com/marketplace) 

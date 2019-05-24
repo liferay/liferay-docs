@@ -1,4 +1,8 @@
-# Categorizing the Configuration [](id=categorizing-the-configuration)
+---
+header-id: categorizing-the-configuration
+---
+
+# Categorizing the Configuration
 
 Because it's easy to make any application or service configurable, there are
 already lots of configuration options in @product@ by default. If you've
@@ -29,13 +33,9 @@ available categories are nested beneath these sections:
 
 6.  Other
 
-+$$$
-
-**Note:** Sections appear if they contain at least one configuration category.
-Categories appear if they contain at least one configuration. The visible
-sections and categories depend on the deployed modules.
-
-$$$
+| **Note:** Sections appear if they contain at least one configuration category.
+| Categories appear if they contain at least one configuration. The visible
+| sections and categories depend on the deployed modules.
 
 If you don't specify a category, your application's configuration resides in
 Platform &rarr; Third Party. Usually, you'll want to place your configurations
@@ -43,7 +43,7 @@ in an existing category or create your own.
 
 <!-- Add Figure of Platform Third Party section when UI stabilizes -->.
 
-## Specifying a Configuration Category [](id=specifying-a-configuration-category)
+## Specifying a Configuration Category
 
 If you looked in the source code at the Liferay Forms configuration interface
 (it's in the Forms & Workflow suite's Liferay Dynamic Data Mapping Form Web
@@ -60,7 +60,7 @@ This annotation does two things:
 1.  Specifies the `dynamic-data-mapping` category.
 
 2.  Sets the 
-    [scope](/discover/portal/-/knowledge_base/7-1/system-settings#configuration-scope) 
+    [scope](/docs/7-1/user/-/knowledge_base/u/system-settings#configuration-scope) 
     of the configuration.
 
 The fully qualified class name of the `@ExtendedObjectClassDefinition` class is
@@ -73,9 +73,9 @@ match, it can't provide any information through
 
 The `@ExtendedObjectClassDefinition` annotation is distributed through the
 `com.liferay.portal.configuration.metatype` module, which you can 
-[configure as a dependency](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies). 
+[configure as a dependency](/docs/7-1/tutorials/-/knowledge_base/t/configuring-dependencies). 
 
-## Creating New Sections and Categories [](id=creating-new-sections-and-categories)
+## Creating New Sections and Categories
 
 Configurations should be in the most intuitive location (section and category)
 so administrators find them. If your configurations don't fit into the existing

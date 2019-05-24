@@ -1,4 +1,8 @@
-# Defining JSF Portlet Descriptors [](id=defining-jsf-portlet-descriptors)
+---
+header-id: defining-jsf-portlet-descriptors
+---
+
+# Defining JSF Portlet Descriptors
 
 Since JSF portlets must follow a WAR-style folder structure, they must also have
 WAR-style portlet descriptors.
@@ -119,7 +123,7 @@ WAR-style portlet descriptors.
     The `javax.faces.WEBAPP_RESOURCES_DIRECTORY` parameter sets the resources
     folder inside the `WEB-INF` folder. This setting makes the resources in that
     folder (e.g., CSS, JavaScript, XHTML) secure from non-JSF calls. You'll
-    [create resources](/develop/tutorials/-/knowledge_base/7-1/defining-resources-for-a-jsf-application)
+    [create resources](/docs/7-1/tutorials/-/knowledge_base/t/defining-resources-for-a-jsf-application)
     for your app later.
 
     The Faces Servlet configuration is required to initialize JSF and should be
@@ -160,7 +164,7 @@ WAR-style portlet descriptors.
 Great! You now have a good idea of how to specify and define general descriptor
 files for your JSF portlet. JSF portlets also use Liferay descriptors, which you
 can learn more about in the
-[Liferay Descriptors](/develop/tutorials/-/knowledge_base/7-1/spring-mvc#liferay-descriptors)
+[Liferay Descriptors](/docs/7-1/tutorials/-/knowledge_base/t/spring-mvc#liferay-descriptors)
 sub-section.
 
 Now that your portlet descriptors are defined, you'll begin working on your JSF

@@ -1,4 +1,8 @@
-# Configuring User Group Permissions [](id=configuring-user-group-permissions)
+---
+header-id: configuring-user-group-permissions
+---
+
+# Configuring User Group Permissions
 
 Administrators commonly create user groups so the group's users can take some
 specific action in a Site. This is done by assigning the permissions for that
@@ -7,9 +11,9 @@ the Role's permissions to the user group's users.
 
 Follow these steps to grant permissions to users in a user group: 
 
-1.  [Create the user group](/discover/portal/-/knowledge_base/7-1/creating-a-user-group).
-2.  [Assign the user group to a Site](/discover/portal/-/knowledge_base/7-1/user-groups-and-site-membership). 
-3.  [Create the Site Role and define its permissions](/discover/portal/-/knowledge_base/7-1/roles-and-permissions). 
+1.  [Create the user group](/docs/7-1/user/-/knowledge_base/u/creating-a-user-group).
+2.  [Assign the user group to a Site](/docs/7-1/user/-/knowledge_base/u/user-groups-and-site-membership). 
+3.  [Create the Site Role and define its permissions](/docs/7-1/user/-/knowledge_base/u/roles-and-permissions). 
 4.  Assign the Role to the user group. 
 
 For instructions on the first three steps, click those links above. This article

@@ -1,4 +1,8 @@
-# Patching Tool Advanced Configuration [](id=patching-tool-advanced-configuration)
+---
+header-id: patching-tool-advanced-configuration
+---
+
+# Patching Tool Advanced Configuration
 
 By default, the Patching Tool's configuration file called `default.properties`
 is in the tool's folder.
@@ -12,7 +16,7 @@ A Patching Tool configuration file typically looks like this:
 
 The properties above (described fully [below](#using-profiles-with-the-patching-tool)) 
 define the location of
-[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home),
+[Liferay Home](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home),
 the patching mode (binary or source), the path to where WAR files are deployed
 in the app server, and the global library path. The tool's auto-discovery bases
 the OSGi module framework paths on the Liferay Home. If, however, you changed
@@ -33,7 +37,7 @@ per day, and the Patching Tool has been designed for this as well. So if you're
 running a small, medium, or large cluster of @product@ machines, you can use the
 Patching Tool profiles to manage patching for all of them. 
 
-## Using Profiles with the Patching Tool [](id=using-profiles-with-the-patching-tool)
+## Using Profiles with the Patching Tool
 
 You can create profiles for multiple runtimes by running auto-discovery or
 creating them manually. To auto-discover other runtimes, run the Patching Tool
@@ -48,7 +52,7 @@ Alternatively, you can manually create profile property files in your
 
 The Patching Tool configuration properties (profile properties) are next. 
 
-## Configuration Properties [](id=configuration-properties)
+## Configuration Properties
 
 Here are the Patching Tool configuration properties: 
 
@@ -74,12 +78,8 @@ the global classpath. This property is only valid if your `patching.mode` is
 **source.path:** Specify the location of your @product@ source tree. This 
 property is only valid if your `patching.mode` is `source`. 
 
-+$$$
-
-**Note:** To patch the @product-ver@ source code, please upgrade to
-the latest 2.0 version of the Patching Tool.
-
-$$$ 
+| **Note:** To patch the @product-ver@ source code, please upgrade to
+| the latest 2.0 version of the Patching Tool.
 
 Service Pack detection is available behind a proxy server. To configure your
 proxy, use the following settings, making sure to replace `[PROXY_IP_ADDRESS]`

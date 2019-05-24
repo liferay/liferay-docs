@@ -1,4 +1,8 @@
-# Third Party Packages Portal Exports [](id=third-party-packages-portal-exports)
+---
+header-id: third-party-packages-portal-exports
+---
+
+# Third Party Packages Portal Exports
 
 The `com.liferay.portal.bootstrap` module exports many third party Java packages
 that can cause problems if used improperly. If your WAR's Gradle file, for
@@ -22,8 +26,8 @@ Gradle: `providedCompile`
 
 Now you can safely leverage third party packages @product@ provides! 
 
-## Related topics [](id=related-topics)
+## Related topics
 
-[Resolving a Plugin's Dependencies](/develop/tutorials/-/knowledge_base/7-1/resolving-a-plugins-dependencies)
+[Resolving a Plugin's Dependencies](/docs/7-1/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies)
 
-[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies)
+[Configuring Dependencies](/docs/7-1/tutorials/-/knowledge_base/t/configuring-dependencies)

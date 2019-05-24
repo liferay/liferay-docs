@@ -1,4 +1,8 @@
-# Using Developer Mode with Themes [](id=using-developer-mode-with-themes)
+---
+header-id: using-developer-mode-with-themes
+---
+
+# Using Developer Mode with Themes
 
 Do you want to develop themes without having to redeploy to see your 
 modifications? Use Developer Mode! In Developer Mode, all caches are removed, so 
@@ -31,7 +35,7 @@ properties as needed. These configurations are covered in this tutorial.
 
 First, you can explore how it's done in @ide@. 
 
-## Setting Developer Mode for Your Server in @ide@ [](id=setting-developer-mode-for-your-server-in-liferay-ide)
+## Setting Developer Mode for Your Server in @ide@
 
 To enable Developer Mode for your server in @ide@, follow these steps: 
  
@@ -44,12 +48,8 @@ To enable Developer Mode for your server in @ide@, follow these steps:
 
 ![Figure 1: The *Use developer mode* option lets you enable Developer Mode for your server in @ide@.](../../../../images/developer-mode-ide.png)
 
-+$$$
-
-**Warning:** Only change the Server settings from the runtime environment's 
-Liferay Launch section.
-
-$$$
+| **Warning:** Only change the Server settings from the runtime environment's
+| Liferay Launch section.
 
 When starting your server for the first time, it creates a 
 `portal-ext.properties` file in your server's directory. This properties file 
@@ -57,13 +57,13 @@ contains the property setting `include-and-override=portal-developer.properties`
 which enables Developer Mode. Most of the configuration is provided by the 
 `portal-developer.properties` file, but you still have to configure the 
 FreeMarker template setting. Follow the steps in the 
-[Configuring FreeMarker System Settings](/develop/tutorials/-/knowledge_base/7-1/using-developer-mode-with-themes#configuring-freemarker-system-settings) 
+[Configuring FreeMarker System Settings](/docs/7-1/tutorials/-/knowledge_base/t/using-developer-mode-with-themes#configuring-freemarker-system-settings) 
 section to configure the FreeMarker template cache. 
 
 If you're not using @ide@, manual configuration for Developer Mode is covered 
 next.
 
-## Setting Developer Mode for Your Server Using portal-developer.properties [](id=setting-developer-mode-for-your-server-using-portal-developer-properties)
+## Setting Developer Mode for Your Server Using portal-developer.properties
 
 To set Developer Mode manually, you must point to `portal-developer.properties` 
 as shown in the last section. Add the `portal-ext.properties` file to the root 
@@ -76,7 +76,7 @@ Developer Mode is enabled upon starting your app server.
 for smooth development. To disable the cache for FreeMarker templates, you must 
 update the System Setting covered in the next section. 
 
-## Configuring FreeMarker System Settings [](id=configuring-freemarker-system-settings)
+## Configuring FreeMarker System Settings
 
 FreeMarker Templates for themes and web content are cached by default. 
 Therefore, any changes you make to your FreeMarker theme templates aren't 
@@ -94,7 +94,7 @@ Follow these steps:
 Your FreeMarker templates are ready for development. Next you can learn how you 
 can improve JavaScript file loading for development. 
 
-## JavaScript Fast Loading [](id=javascript-fast-loading)
+## JavaScript Fast Loading
 
 By default, JavaScript fast loading is enabled in Developer Mode 
 (`javascript.fast.load=true`). This loads the packed version of files listed in 
@@ -105,25 +105,21 @@ disable JavaScript fast loading for easier debugging for development. Just set
 `javascript.fast.load` to `false` in your `portal.properties`, or you can 
 disable fast loading by setting the URL parameter `js_fast_load` to `0`.
 
-+$$$
-
-**Note:** JavaScript fast loading is retrieved from one of three places: the 
-request (determined by the current URL: 
-`http://localhost:8080/web/guest/home?js_fast_load=1`(on) or 
-`...?js_fast_load=0`(off)), the Session, or the Portal Property 
-(`javascript.fast.load=true`). Preference is given in the order of request, 
-session, and then Portal Properties. This lets you change `js_fast_load`'s value 
-from the default in `portal.properties` without having to manually re-enter 
-`js_fast_load` into the URL upon every new page load.
-
-$$$
+| **Note:** JavaScript fast loading is retrieved from one of three places: the
+| request (determined by the current URL:
+| `http://localhost:8080/web/guest/home?js_fast_load=1`(on) or
+| `...?js_fast_load=0`(off)), the Session, or the Portal Property
+| (`javascript.fast.load=true`). Preference is given in the order of request,
+| session, and then Portal Properties. This lets you change `js_fast_load`'s value
+| from the default in `portal.properties` without having to manually re-enter
+| `js_fast_load` into the URL upon every new page load.
 
 Great! You've set up your server for Developer Mode. Now, when you modify your 
 theme's file directly in your bundle, you can see your changes applied 
 immediately on redeploying your theme!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating Layout Templates Manually](/develop/tutorials/-/knowledge_base/7-1/creating-layout-templates-manually)
+[Creating Layout Templates Manually](/docs/7-1/tutorials/-/knowledge_base/t/creating-layout-templates-manually)
 
-[Creating Themes with @ide@](/develop/tutorials/-/knowledge_base/7-1/creating-themes-with-liferay-ide)
+[Creating Themes with @ide@](/docs/7-1/tutorials/-/knowledge_base/t/creating-themes-with-liferay-ide)

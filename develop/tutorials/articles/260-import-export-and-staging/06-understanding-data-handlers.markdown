@@ -1,4 +1,8 @@
-# Understanding Data Handlers [](id=understanding-data-handlers)
+---
+header-id: understanding-data-handlers
+---
+
+# Understanding Data Handlers
 
 A common requirement for many data driven applications is to import and export
 data. This *could* be accomplished by accessing your database directly and
@@ -12,7 +16,7 @@ running SQL queries to export/import data; however, this has several drawbacks:
 Liferay provides a more convenient and reliable way to export/import your data
 without accessing the database.
 
-## Liferay Archive (LAR) File [](id=liferay-archive-lar-file)
+## Liferay Archive (LAR) File
 
 An easier way to export/import your application's data is to use a Liferay
 ARchive (LAR) file. Liferay provides the LAR feature to address the need to
@@ -39,7 +43,7 @@ Knowing how a LAR file is constructed, however, is beneficial to understand the
 overall purpose of your application's data handlers. Next, you'll explore a LAR
 file's anatomy.
 
-### LAR File Anatomy [](id=lar-file-anatomy)
+### LAR File Anatomy
 
 What is a LAR file? You know the general concept for *why* it's used, but you
 may want to know what lives inside to make your export/import processes work.
@@ -151,7 +155,7 @@ generated and how it's structured.
 Next, you'll learn about data handler fundamentals and the prerequisites
 required to implement them.
 
-## Data Handler Fundamentals [](id=data-handler-fundamentals)
+## Data Handler Fundamentals
 
 To leverage the Export/Import framework's ability to export/import a LAR file,
 you can implement Data Handlers in your application. There are two types of data
@@ -168,7 +172,7 @@ models by implementing the
 [StagedModel](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/StagedModel.html)
 interface. Staged models are the parent interface of an entity in the Staging
 framework. For more information on staged models, see the
-[Understanding Staged Models](/develop/tutorials/-/knowledge_base/7-1/understanding-staged-models)
+[Understanding Staged Models](/docs/7-1/tutorials/-/knowledge_base/t/understanding-staged-models)
 tutorial.
 
 A Staged Model Data Handler supplies information about a staged model (entity)
@@ -201,11 +205,11 @@ declared:
 
 You can learn how to create a `service.xml` file for your application by
 visiting the
-[Defining an Object-Relational Map with Service Builder](/develop/tutorials/-/knowledge_base/7-1/defining-an-object-relational-map-with-service-builder)
+[Defining an Object-Relational Map with Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/defining-an-object-relational-map-with-service-builder)
 tutorial.
 
 To learn how to develop data handlers for your app, visit the
-[Developing Portlet Data Handlers](/develop/tutorials/-/knowledge_base/7-1/developing-portlet-data-handlers)
+[Developing Portlet Data Handlers](/docs/7-1/tutorials/-/knowledge_base/t/developing-portlet-data-handlers)
 and
-[Developing Staged Model Data Handlers](/develop/tutorials/-/knowledge_base/7-1/developing-staged-model-data-handlers)
+[Developing Staged Model Data Handlers](/docs/7-1/tutorials/-/knowledge_base/t/developing-staged-model-data-handlers)
 tutorials.

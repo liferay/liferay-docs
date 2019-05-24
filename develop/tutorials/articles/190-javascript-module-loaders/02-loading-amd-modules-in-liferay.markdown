@@ -1,4 +1,8 @@
-# Loading AMD Modules in Liferay [](id=loading-amd-modules-in-liferay)
+---
+header-id: loading-amd-modules-in-liferay
+---
+
+# Loading AMD Modules in Liferay
 
 Modularized JavaScript code is a specification for the JavaScript language
 called Asynchronous Module Definition, or AMD. The 
@@ -6,16 +10,12 @@ called Asynchronous Module Definition, or AMD. The
 is the native loader that you can use to load your AMD modules. This tutorial
 covers how to use the Liferay AMD Module Loader. 
 
-+$$$
+| **Note:** While you can manually configure the AMD Loader, we recommend that you
+| use the
+| [liferay-npm-bundler](/docs/7-1/tutorials/-/knowledge_base/t/using-npm-in-your-portlets)
+| instead.
 
-**Note:** While you can manually configure the AMD Loader, we recommend that you 
-use the 
-[liferay-npm-bundler](/develop/tutorials/-/knowledge_base/7-1/using-npm-in-your-portlets) 
-instead.
-
-$$$
-
-## Configuring Your AMD Module for the Loader [](id=using-liferay-amd-module-loader-in-liferay)
+## Configuring Your AMD Module for the Loader
 
 Follow these steps to prepare your module:
 
@@ -82,19 +82,15 @@ Follow these steps to prepare your module:
             console.error(error);
         });
         
-+$$$
+| **Note:** By default, the AMD Loader times out in seven seconds. Since Liferay
+| DXP Fix Pack 3 and Liferay Portal 7.1 CE GA 2, you can configure this value
+| through System Settings. Open the Control Panel and navigate to *Configuration*
+| &rarr; *System Settings* &rarr; *PLATFORM* &rarr; *Infrastructure*, and select
+| *JavaScript Loader*. Set the *Module Definition Timeout* configuration to the
+| time you want and click *Save*.
 
-**Note:** By default, the AMD Loader times out in seven seconds. Since Liferay 
-DXP Fix Pack 3 and Liferay Portal 7.1 CE GA 2, you can configure this value 
-through System Settings. Open the Control Panel and navigate to *Configuration* 
-&rarr; *System Settings* &rarr; *PLATFORM* &rarr; *Infrastructure*, and select 
-*JavaScript Loader*. Set the *Module Definition Timeout* configuration to the 
-time you want and click *Save*.
+## Related Topics
 
-$$$
+[Loading Modules with AUI Script](/docs/7-1/tutorials/-/knowledge_base/t/loading-modules-with-aui-script)
 
-## Related Topics [](id=related-topics)
-
-[Loading Modules with AUI Script](/develop/tutorials/-/knowledge_base/7-1/loading-modules-with-aui-script)
-
-[Using npm in Your Portlets](/develop/tutorials/-/knowledge_base/7-1/using-npm-in-your-portlets)
+[Using npm in Your Portlets](/docs/7-1/tutorials/-/knowledge_base/t/using-npm-in-your-portlets)

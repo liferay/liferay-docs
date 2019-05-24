@@ -1,4 +1,8 @@
-# Using Translation Features in Your Widget [](id=using-translation-features-in-your-portlet)
+---
+header-id: using-translation-features-in-your-portlet
+---
+
+# Using Translation Features in Your Widget
 
 By default, the Liferay JS Generator creates an empty configuration for 
 translation. The translate script instructs the user how to add new supported 
@@ -7,14 +11,10 @@ the supported locales you have defined in the `supportedLocales` key of your
 `.npmbuildrc` file and checks your `*language.properties` files to make sure 
 they match. 
 
-+$$$
-
-**Note:** To use the translation features, you must have a Microsoft 
-Translator key. Provide your credentials through either the 
-`translatorTextKey` variable in your `.npmbuildrc` file, or provide them in 
-the `TRANSLATOR_TEXT_KEY` environment variable.
-
-$$$
+| **Note:** To use the translation features, you must have a Microsoft
+| Translator key. Provide your credentials through either the
+| `translatorTextKey` variable in your `.npmbuildrc` file, or provide them in
+| the `TRANSLATOR_TEXT_KEY` environment variable.
 
 Follow these steps to add a new supported locale and automatically create 
 a language properties file for it with translations:
@@ -33,8 +33,8 @@ a language properties file for it with translations:
 Great! Now you know how to use the Liferay JS Generator's translation 
 features in your app. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-- [Configuring System Settings and Instance Settings for Your JavaScript Widget](/develop/tutorials/-/knowledge_base/7-1/configuring-system-settings-and-instance-settings-for-your-js-portlet)
-- [Localizing Your Widget](/develop/tutorials/-/knowledge_base/7-1/localizing-your-portlet)
-- [Configuring Portlet Properties for Your JavaScript Widget](/develop/tutorials/-/knowledge_base/7-1/configuring-portlet-properties-for-your-js-portlet)
+- [Configuring System Settings and Instance Settings for Your JavaScript Widget](/docs/7-1/tutorials/-/knowledge_base/t/configuring-system-settings-and-instance-settings-for-your-js-portlet)
+- [Localizing Your Widget](/docs/7-1/tutorials/-/knowledge_base/t/localizing-your-portlet)
+- [Configuring Portlet Properties for Your JavaScript Widget](/docs/7-1/tutorials/-/knowledge_base/t/configuring-portlet-properties-for-your-js-portlet)

@@ -1,4 +1,8 @@
-# Using Liferay Util Get URL [](id=using-liferay-util-get-url)
+---
+header-id: using-liferay-util-get-url
+---
+
+# Using Liferay Util Get URL
 
 The get URL tag scrapes the URL provided by the `url` attribute. If a value is 
 provided for the `var` attribute, the content from the screen scrape is scoped 
@@ -25,10 +29,10 @@ Here is an example that uses the `var` attribute:
 
 Now you know how to use the `<liferay-util:get-url>` tag to scrape URLs. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using the Liferay Util Param Tag](/develop/tutorials/-/knowledge_base/7-1/using-liferay-util-param)
+[Using the Liferay Util Param Tag](/docs/7-1/tutorials/-/knowledge_base/t/using-liferay-util-param)
 
-[Using the Liferay Util Include Tag](/develop/tutorials/-/knowledge_base/7-1/using-liferay-util-include)
+[Using the Liferay Util Include Tag](/docs/7-1/tutorials/-/knowledge_base/t/using-liferay-util-include)
 
-[Using the AUI Taglib](/develop/tutorials/-/knowledge_base/7-1/using-aui-taglibs-in-your-portlets)
+[Using the AUI Taglib](/docs/7-1/tutorials/-/knowledge_base/t/using-aui-taglibs-in-your-portlets)

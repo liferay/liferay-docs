@@ -1,4 +1,8 @@
-# Updating CSS File Names for Clay and Sass [](id=updating-css-file-names-for-clay-and-sass)
+---
+header-id: updating-css-file-names-for-clay-and-sass
+---
+
+# Updating CSS File Names for Clay and Sass
 
 Although Sass was available in Liferay Portal 6.2, only Sass partial files 
 followed the Sass naming convention (using file suffix `.scss`). In 
@@ -7,13 +11,9 @@ prefixes have been replaced with `clay` to reflect the introduction of
 [Clay](https://clayui.com/docs/getting-started/clay.html) 
 (previously Lexicon CSS).
 
-+$$$
-
-**Note**: The 
-[Gulp `upgrade` task](/develop/tutorials/-/knowledge_base/7-1/running-the-upgrade-task-for-6-2-themes) 
-renames CSS files automatically.
-
-$$$
+| **Note**: The
+| [Gulp `upgrade` task](/docs/7-1/tutorials/-/knowledge_base/t/running-the-upgrade-task-for-6-2-themes)
+| renames CSS files automatically.
 
 Follow these steps to update your CSS file names manually: 
 
@@ -54,8 +54,8 @@ you didn't modify the file, no action is required:
 `portlet.css` | `_portlet.scss`|
 `taglib.css` | `_taglib.scss`|
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Running the Gulp Upgrade Task for 6.2 Themes](/develop/tutorials/-/knowledge_base/7-1/running-the-upgrade-task-for-6-2-themes)
+[Running the Gulp Upgrade Task for 6.2 Themes](/docs/7-1/tutorials/-/knowledge_base/t/running-the-upgrade-task-for-6-2-themes)
 
-[Updating 6.2 CSS Rules](/develop/tutorials/-/knowledge_base/7-1/updating-6-2-css-rules-and-imports)
+[Updating 6.2 CSS Rules](/docs/7-1/tutorials/-/knowledge_base/t/updating-6-2-css-rules-and-imports)

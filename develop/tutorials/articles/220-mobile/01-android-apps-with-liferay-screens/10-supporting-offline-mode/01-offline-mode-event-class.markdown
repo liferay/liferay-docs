@@ -1,4 +1,8 @@
-# Create or Update the Event Class [](id=create-or-update-the-event-class)
+---
+header-id: create-or-update-the-event-class
+---
+
+# Create or Update the Event Class
 
 Recall from the basic Screenlet creation tutorial that an event class is 
 required to handle communication between Screenlet components. Also recall that 
@@ -52,12 +56,12 @@ event class, `BookmarkEvent`:
 
 Next, you'll update the listener. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Update the Listener](/develop/tutorials/-/knowledge_base/7-1/update-the-listener)
+[Update the Listener](/docs/7-1/tutorials/-/knowledge_base/t/update-the-listener)
 
-[Update the Interactor Class](/develop/tutorials/-/knowledge_base/7-1/update-the-interactor-class)
+[Update the Interactor Class](/docs/7-1/tutorials/-/knowledge_base/t/update-the-interactor-class)
 
-[Update the Screenlet Class](/develop/tutorials/-/knowledge_base/7-1/update-the-screenlet-class)
+[Update the Screenlet Class](/docs/7-1/tutorials/-/knowledge_base/t/update-the-screenlet-class)
 
-[Sync the Cache with the Server](/develop/tutorials/-/knowledge_base/7-1/sync-the-cache-with-the-server)
+[Sync the Cache with the Server](/docs/7-1/tutorials/-/knowledge_base/t/sync-the-cache-with-the-server)

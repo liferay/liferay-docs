@@ -1,4 +1,8 @@
-# Screen Name Validator [](id=screen-name-validator)
+---
+header-id: screen-name-validator
+---
+
+# Screen Name Validator
 
 The Screen Name Validator sample provides a way to validate a user's inputted
 screen name. During validation, the screen name is tested client-side and
@@ -22,13 +26,13 @@ You can test this sample by following the following steps:
 
 ![Figure 2: The error message displays when inputting a reserved word for the screen name.](../../../images/screenname-validator-test.png)
 
-## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
+## What API(s) and/or code components does this sample highlight?
 
 This sample leverages the
 [ScreenNameValidator](@product-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/security/auth/ScreenNameValidator.html)
 API.
 
-## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
+## How does this sample leverage the API(s) and/or code component?
 
 To customize this sample, modify its
 `com.liferay.blade.samples.screenname.validator.internal.CustomScreenNameValidator`
@@ -42,7 +46,7 @@ class.
 For more information on customizing the Validation sample to fit your needs, see
 the Javadoc provided in this sample's Java classes.
 
-## Where Is This Sample? [](id=where-is-this-sample)
+## Where Is This Sample?
 
 There are three different versions of this sample, each built with a different
 build tool:

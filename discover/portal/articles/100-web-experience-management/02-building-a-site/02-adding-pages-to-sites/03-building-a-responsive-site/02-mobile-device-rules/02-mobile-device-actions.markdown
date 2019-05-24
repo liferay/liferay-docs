@@ -1,4 +1,8 @@
-# Mobile Device Actions [](id=mobile-device-actions)
+---
+header-id: mobile-device-actions
+---
+
+# Mobile Device Actions
 
 After you've created families and applied rules to define those families, you 
 can associate specific actions that occur when a user visits that Site on
@@ -35,15 +39,11 @@ mobile users to a mobile app download or a mobile version of the page.
 **Site Redirect:** Sends mobile users to a different Site on your portal. In
 some cases, mobile content could be created on a mirror of your Site.
 
-+$$$
-
-**Tip:** @product-ver@ was designed from the ground up to be responsive and 
-adapt to any device that might be accessing it. Before creating new themes or 
-forcing a layout template change, you should test how the Site behaves using 
-@product@ out of the box. Certain features, like URL Redirects, can be 
-disruptive and frustrating for users if used improperly.
-
-$$$
+| **Tip:** @product-ver@ was designed from the ground up to be responsive and
+| adapt to any device that might be accessing it. Before creating new themes or
+| forcing a layout template change, you should test how the Site behaves using
+| @product@ out of the box. Certain features, like URL Redirects, can be
+| disruptive and frustrating for users if used improperly.
 
 Like mobile device rules, mobile device actions are extensible. Your developers
 can define custom actions in addition to the four actions provided by default.
@@ -63,7 +63,7 @@ mobile device requests are received, take the following steps:
 4.  Define one or more actions for your family that describe how requests should
     be handled.
 
-## Mobile Device Rules Example [](id=mobile-device-rules-example)
+## Mobile Device Rules Example
 
 Now you'll look at an example of using mobile device rules. Suppose you want to
 create a rule so that when a Site is accessed by an Android or iOS tablet,

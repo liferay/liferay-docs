@@ -1,4 +1,8 @@
-# Defining Assets for the Resources Importer [](id=defining-assets-for-the-resources-importer)
+---
+header-id: defining-assets-for-the-resources-importer
+---
+
+# Defining Assets for the Resources Importer
 
 The `sitemap.json` file defines the pages of the site or site template to
 import---along with the layout templates, portlets, and portlet preferences of
@@ -38,10 +42,10 @@ for the `Child Web Content 1.json` article structure:
 
 Now you know how to configure assets for your web content!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Preparing and Organizing Web Content for the Resources Importer](/develop/tutorials/-/knowledge_base/7-1/preparing-and-organizing-web-content-for-the-resources-importer)
+[Preparing and Organizing Web Content for the Resources Importer](/docs/7-1/tutorials/-/knowledge_base/t/preparing-and-organizing-web-content-for-the-resources-importer)
 
-[Creating a Sitemap for the Resources Importer](/develop/tutorials/-/knowledge_base/7-1/creating-a-sitemap-for-the-resources-importer)
+[Creating a Sitemap for the Resources Importer](/docs/7-1/tutorials/-/knowledge_base/t/creating-a-sitemap-for-the-resources-importer)
 
-[Specifying Where to Import Your Theme's Resources](/develop/tutorials/-/knowledge_base/7-1/specifying-where-to-import-your-themes-resources) 
+[Specifying Where to Import Your Theme's Resources](/docs/7-1/tutorials/-/knowledge_base/t/specifying-where-to-import-your-themes-resources) 

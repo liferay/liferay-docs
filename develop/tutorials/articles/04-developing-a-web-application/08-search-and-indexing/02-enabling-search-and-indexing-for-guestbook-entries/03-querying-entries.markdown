@@ -1,4 +1,8 @@
-# Querying for Entry Documents [](id=querying-for-entry-documents)
+---
+header-id: querying-for-entry-documents
+---
+
+# Querying for Entry Documents
 
 <div class="learn-path-step">
     <p>Enabling Search and Indexing for Entries<br>Step 3 of 5</p>
@@ -15,7 +19,7 @@ Implement two classes:
 2.  `EntryModelPreFilterContributor` controls how search results are filtered
     before they're returned from the search engine.
 
-## Implementing `KeywordQueryContributor` [](id=implementing-keywordquerycontributor)
+## Implementing `KeywordQueryContributor`
 
 Create `EntryKeywordQueryContributor` and populate it with this:
 

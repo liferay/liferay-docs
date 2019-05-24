@@ -1,4 +1,8 @@
-# Installing @product@ on Wildfly [](id=installing-product-on-wildfly)
+---
+header-id: installing-product-on-wildfly
+---
+
+# Installing @product@ on Wildfly
 
 @product-ver@ bundled with Wildfly 11 is available on the
 [Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/7-1)
@@ -20,13 +24,13 @@ Installing @product@ manually takes three steps:
 - [Configuring your application server for @product@](#configuring-wildfly)
 - [Deploying the @product@ WAR file to your application server](#deploying-product)
 
-[*Liferay Home*](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
+[*Liferay Home*](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home)
 is the folder containing your Wildfly server folder. After installing and
 deploying @product@, the Liferay Home folder contains the Wildfly server folder
 as well as `data`, `deploy`, `logs`, and `osgi` folders. `$WILDFLY_HOME` refers
 to your Wildfly server folder. It is usually named `wildfly-[version]`.
 
-## Installing Dependencies [](id=installing-dependencies)
+## Installing Dependencies
 
 @product@ depends on many JARs that are included in the @product@ Wildfly
 bundle. Some of the bundle's JARs are not strictly required but can still be
@@ -135,7 +139,7 @@ from third-parties as described below.
 
 Great! You have your `.jar` files ready. 
 
-## Running @product@ on Wildfly in Standalone Mode vs. Domain Mode [](id=running-product-on-wildfly-in-standalone-mode-vs-domain-mode)
+## Running @product@ on Wildfly in Standalone Mode vs. Domain Mode
 
 Wildfly can be launched in either *standalone* mode or *domain* mode. Domain
 mode allows multiple application server instances to be managed from a single
@@ -156,18 +160,14 @@ may not be using them.
 
 The command line interface is recommended for domain mode deployments.
 
-+$$$
+| **Note:** This does not prevent @product@ from running in a clustered
+| environment on multiple Wildfly servers. You can set up a cluster of @product@
+| instances running on Wildfly servers running in standalone mode. Please refer to
+| the chapter of this guide on
+| [@product@ Clustering](/docs/7-1/deploy/-/knowledge_base/d/liferay-clustering)
+| for information on setting up a @product@ cluster.
 
-**Note:** This does not prevent @product@ from running in a clustered
-environment on multiple Wildfly servers. You can set up a cluster of @product@
-instances running on Wildfly servers running in standalone mode. Please refer to
-the chapter of this guide on
-[@product@ Clustering](/discover/deployment/-/knowledge_base/7-1/liferay-clustering)
-for information on setting up a @product@ cluster.
-
-$$$
-
-## Configuring Wildfly [](id=configuring-wildfly)
+## Configuring Wildfly
 
 Configuring Wildfly to run @product@ includes these things:
 
@@ -292,35 +292,27 @@ Make the following edits as applicable for your operating system:
 
         JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true  -Djboss.as.management.blocking.timeout=480 -Duser.timezone=GMT -Xmx2048m -XX:MaxMetaspaceSize=512m -XX:MetaspaceSize=200m"
    
-+$$$
+| **Important:** For @product@ to work properly, the application server JVM must
+| use the `GMT` time zone and `UTF-8` file encoding.
 
-**Important:** For @product@ to work properly, the application server JVM must 
-use the `GMT` time zone and `UTF-8` file encoding. 
-
-$$$
-
-+$$$
-
-**Note:** If you plan on using the IBM JDK with your Wildfly server, you must
-complete some additional steps. First, navigate to the
-`$WILDFLY_HOME/modules/com/liferay/portal/main/module.xml` file and insert the
-following dependency within the `<dependencies>` element:
-
-    <module name="ibm.jdk" />
-
-Then navigate to the
-`$WILDFLY_HOME/modules/system/layers/base/sun/jdk/main/module.xml` file and
-insert the following path names inside the `<paths>...</paths>` element:
-
-    <path name="com/sun/crypto" />
-    <path name="com/sun/crypto/provider" />
-    <path name="com/sun/org/apache/xml/internal/resolver" />
-    <path name="com/sun/org/apache/xml/internal/resolver/tools" />
-
-The added paths resolve issues with deployment exceptions and image uploading
-problems. 
-
-$$$
+| **Note:** If you plan on using the IBM JDK with your Wildfly server, you must
+| complete some additional steps. First, navigate to the
+| `$WILDFLY_HOME/modules/com/liferay/portal/main/module.xml` file and insert the
+| following dependency within the `<dependencies>` element:
+| 
+|     <module name="ibm.jdk" />
+| 
+| Then navigate to the
+| `$WILDFLY_HOME/modules/system/layers/base/sun/jdk/main/module.xml` file and
+| insert the following path names inside the `<paths>...</paths>` element:
+| 
+|     <path name="com/sun/crypto" />
+|     <path name="com/sun/crypto/provider" />
+|     <path name="com/sun/org/apache/xml/internal/resolver" />
+|     <path name="com/sun/org/apache/xml/internal/resolver/tools" />
+| 
+| The added paths resolve issues with deployment exceptions and image uploading
+| problems.
 
 **Checkpoint:**
 
@@ -335,11 +327,11 @@ settings.
 The prescribed script modifications are now complete for your @product@
 installation on Wildfly. Next you'll configure your database. 
 
-### Database Configuration [](id=database-configuration)
+### Database Configuration
 
 The easiest way to handle database configuration is to let @product@ manage your
 data source. The 
-[Basic Configuration](/discover/deployment/-/knowledge_base/7-1/installing-liferay#using-liferays-setup-wizard)
+[Basic Configuration](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#using-liferays-setup-wizard)
 page lets you configure @product@'s built-in data source. If you want to use the
 built-in data source, skip this section.
 
@@ -364,13 +356,9 @@ If you want Wildfly to manage your data source, follow these steps:
     Be sure to replace the database name (i.e., `lportal`), user name, and
     password with the appropriate values. 
 
-    +$$$
-
-    **Note:** If you must change your datasource `jndi-name` to something
-    different, you must also edit the `datasource` element in the
-    `<default-bindings>` tag.
-
-    $$$
+    | **Note:** If you must change your datasource `jndi-name` to something
+    | different, you must also edit the `datasource` element in the
+    | `<default-bindings>` tag.
 
 2.  Add your driver to the `standalone.xml` file's `<drivers>` element also
     found within the `<datasources>` element:
@@ -408,12 +396,12 @@ If you want Wildfly to manage your data source, follow these steps:
 
 Now that you've configured your data source, the mail session is next. 
 
-### Mail Configuration [](id=mail-configuration)
+### Mail Configuration
 
 As with database configuration, the easiest way to configure mail is to let
 @product@ handle your mail session. If you want to use @product@'s built-in mail
 session, skip this section and
-[configure the mail session](/discover/deployment/-/knowledge_base/7-1/installing-liferay#configuring-mail)
+[configure the mail session](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#configuring-mail)
 in the Control Panel.
 
 If you want to manage your mail session with Wildfly, follow these steps:
@@ -441,7 +429,7 @@ If you want to manage your mail session with Wildfly, follow these steps:
  
 You've got mail! Next, you'll deploy @product@ to your Wildfly app server.
 
-## Deploying @product@ [](id=deploying-product)
+## Deploying @product@
 
 Now you're ready to deploy @product@ using the @product@ WAR file.
 
@@ -462,19 +450,15 @@ Now you're ready to deploy @product@ using the @product@ WAR file.
 
 Congratulations; you've deployed @product@ on Wildfly!
 
-+$$$
-
-After deploying @product@, you may see excessive warnings and log messages, such
-as the ones below, involving `PhaseOptimizer`. These are benign and can be
-ignored. Make sure to adjust your app server's logging level or log filters to
-avoid excessive benign log messages. 
-
-    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
-    WARNING: Skipping pass gatherExternProperties
-    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
-    WARNING: Skipping pass checkControlFlow
-    May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
-    INFO: pass supports: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, modules, exponent operator (**), async function, trailing comma in param list]
-    current AST contains: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, exponent operator (**), async function, trailing comma in param list, object literals with spread, object pattern rest]
-
-$$$
+| After deploying @product@, you may see excessive warnings and log messages, such
+| as the ones below, involving `PhaseOptimizer`. These are benign and can be
+| ignored. Make sure to adjust your app server's logging level or log filters to
+| avoid excessive benign log messages.
+| 
+|     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+|     WARNING: Skipping pass gatherExternProperties
+|     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+|     WARNING: Skipping pass checkControlFlow
+|     May 02, 2018 9:12:27 PM com.google.javascript.jscomp.PhaseOptimizer$NamedPass process
+|     INFO: pass supports: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, modules, exponent operator (**), async function, trailing comma in param list]
+|     current AST contains: [ES3 keywords as identifiers, getters, reserved words as properties, setters, string continuation, trailing comma, array pattern rest, arrow function, binary literal, block-scoped function declaration, class, computed property, const declaration, default parameter, destructuring, extended object literal, for-of loop, generator, let declaration, member declaration, new.target, octal literal, RegExp flag 'u', RegExp flag 'y', rest parameter, spread expression, super, template literal, exponent operator (**), async function, trailing comma in param list, object literals with spread, object pattern rest]

@@ -1,4 +1,8 @@
-# Elasticsearch [](id=configuring-elasticsearch-for-liferay-0)
+---
+header-id: configuring-elasticsearch-for-liferay-0
+---
+
+# Elasticsearch
 
 Elasticsearch is an open source, highly scalable, full-text search and
 analytics engine.
@@ -13,7 +17,7 @@ if you're interested.
 
 To get up and running quickly with Elasticsearch as a remote server, refer to
 the 
-[Installing Elasticsearch article](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch).
+[Installing Elasticsearch article](/docs/7-1/deploy/-/knowledge_base/d/installing-elasticsearch).
 Those are basic instructions for installing and configuring Elasticsearch in a
 single server environment. This article includes more details and information
 on clustering and tuning Elasticsearch. Here, you'll learn to configure your
@@ -28,11 +32,11 @@ These terms are useful to understand as you read this guide:
 -  *Elasticsearch Home* refers to the root folder of your unzipped Elasticsearch
    installation (for example, `elasticsearch-6.5.1`). 
 
--  [*Liferay Home*](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
+-  [*Liferay Home*](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home)
    refers to the root folder of your @product@ installation. It contains the
    `osgi`, `deploy`, `data`, and `license` folders, among others.
 
-## Embedded vs. Remote Operation Mode [](id=embedded-vs-remote-operation-mode)
+## Embedded vs. Remote Operation Mode
 
 When you start @product@, this message is displayed in the log: 
 
@@ -45,21 +49,17 @@ minimal configuration. Running both servers in the same process has drawbacks:
 -  Elasticsearch must use the same JVM options as @product@.
 -  @product@ and Elasticsearch compete for resources. 
 
-+$$$
-
-**Note:** While it's not a supported production configuration, installing
-Kibana to monitor the embedded Elasticsearch server is useful during
-development and testing. Just be aware that you must install the 
-[OSS only Kibana build](https://www.elastic.co/downloads/kibana-oss).
-
-$$$
+| **Note:** While it's not a supported production configuration, installing
+| Kibana to monitor the embedded Elasticsearch server is useful during
+| development and testing. Just be aware that you must install the
+| [OSS only Kibana build](https://www.elastic.co/downloads/kibana-oss).
 
 You wouldn't run an embedded database like HSQL in production, and you shouldn't
 run Elasticsearch in embedded mode in production either. Instead, run
 Elasticsearch in *remote operation mode*, as a standalone server or cluster of
 server nodes.
 
-## Troubleshooting Elasticsearch [](id=troubleshooting-elasticsearch)
+## Troubleshooting Elasticsearch
 
 Sometimes things don't go as planned. If you've set up @product@ with
 Elasticsearch in remote mode, but @product@ can't connect to Elasticsearch, check

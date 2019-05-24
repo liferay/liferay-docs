@@ -1,7 +1,11 @@
-# Defining a JSF Application's Structure and Dependencies [](id=defining-a-jsf-applications-structure-and-dependencies)
+---
+header-id: defining-a-jsf-applications-structure-and-dependencies
+---
+
+# Defining a JSF Application's Structure and Dependencies
 
 JSF portlets are supported on Liferay Portal by using
-[Liferay Faces Bridge](/develop/reference/-/knowledge_base/7-1/understanding-liferay-faces-bridge).
+[Liferay Faces Bridge](/docs/7-1/reference/-/knowledge_base/r/understanding-liferay-faces-bridge).
 Liferay Faces Bridge makes developing JSF portlets as similar as possible to JSF
 web app development. 
 
@@ -117,13 +121,13 @@ Bridge.
 
     There are several UI component suites that a JSF application can use,
     which include
-    [*Liferay Faces Alloy*](/develop/reference/-/knowledge_base/7-1/understanding-liferay-faces-alloy),
+    [*Liferay Faces Alloy*](/docs/7-1/reference/-/knowledge_base/r/understanding-liferay-faces-alloy),
     [*PrimeFaces*](http://primefaces.org/),
     [*ICEfaces*](http://www.icesoft.org/java/projects/ICEfaces/overview.jsf),
     and
     [*RichFaces*](http://richfaces.jboss.org/). Furthermore, you can take
     advantage of
-    [*Liferay Faces Portal*](/develop/reference/-/knowledge_base/7-1/understanding-liferay-faces-portal)
+    [*Liferay Faces Portal*](/docs/7-1/reference/-/knowledge_base/r/understanding-liferay-faces-portal)
     in order to use Liferay-specific utilities and UI components. These
     components can be used by specifying them as dependencies in your build
     file, as well.

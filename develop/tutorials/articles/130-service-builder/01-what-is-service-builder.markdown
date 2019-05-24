@@ -1,4 +1,8 @@
-# What is Service Builder? [](id=what-is-service-builder)
+---
+header-id: what-is-service-builder
+---
+
+# What is Service Builder?
 
 Liferay Service Builder is a model-driven code generation tool that lets you
 define custom object models called entities. Service Builder generates a service
@@ -32,14 +36,10 @@ time. Although the number of files Service Builder generates can seem
 intimidating at first, you only need to work with a few files to customize to
 your applications and add business logic.
 
-+$$$
-
-**Note:** You don't have to use Service Builder to develop applications on
-@product@. It's entirely possible to develop them by writing custom code for
-database persistence using your persistence framework of choice. If you so
-choose, you can work directly with JPA or Hibernate.
-
-$$$
+| **Note:** You don't have to use Service Builder to develop applications on
+| @product@. It's entirely possible to develop them by writing custom code for
+| database persistence using your persistence framework of choice. If you so
+| choose, you can work directly with JPA or Hibernate.
 
 One of the main ways Service Builder saves development time is by completely
 eliminating the need to write and maintain database access code. To generate a
@@ -102,7 +102,7 @@ this is configurable via portal properties. All you have to do to enable entity
 and finder caching for an entity in your project is to set the
 `cache-enabled=true` attribute of your entity's `<entity>` element in your
 `service.xml` configuration file. Please refer to the
-[Liferay Clustering](/discover/deployment/-/knowledge_base/7-1/enabling-cluster-link)
+[Liferay Clustering](/docs/7-1/deploy/-/knowledge_base/d/enabling-cluster-link)
 documentation for more details about Liferay caching.
 
 Service Builder is a flexible tool. It automates many of the common tasks
@@ -114,19 +114,15 @@ of information from multiple tables via an SQL join. Service Builder also
 supports retrieving database information via dynamic query. Liferay's dynamic
 query API leverages Hibernate's criteria API.
 
-+$$$
-
-**Note**: Liferay includes a
-[Service Builder library](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.portal.tools.service.builder/)
-and build tool-specific plugins such as the
-[Gradle Service Builder plugin](/develop/reference/-/knowledge_base/7-1/service-builder-gradle-plugin), 
-which includes Liferay's Service Builder library as a dependency. Service
-Builder supports Liferay 7's modular application development style of keeping
-API and implementation code in separate modules. The 
-[Service Builder sample apps](/develop/reference/-/knowledge_base/7-0/service-builder-samples)
-demonstrate this.
-
-$$$
+| **Note**: Liferay includes a
+| [Service Builder library](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.portal.tools.service.builder/)
+| and build tool-specific plugins such as the
+| [Gradle Service Builder plugin](/docs/7-1/reference/-/knowledge_base/r/service-builder-gradle-plugin),
+| which includes Liferay's Service Builder library as a dependency. Service
+| Builder supports Liferay 7's modular application development style of keeping
+| API and implementation code in separate modules. The
+| [Service Builder sample apps](/docs/7-0/reference/-/knowledge_base/r/service-builder-samples)
+| demonstrate this.
 
 In summary, we encourage you to use Service Builder for application development
 because it's a proven solution used throughout @product@ and @product@

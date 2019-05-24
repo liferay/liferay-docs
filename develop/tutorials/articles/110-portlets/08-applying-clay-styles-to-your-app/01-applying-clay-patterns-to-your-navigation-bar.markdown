@@ -1,4 +1,8 @@
-# Applying Clay Patterns to Navigation [](id=applying-clay-patterns-to-navigation)
+---
+header-id: applying-clay-patterns-to-navigation
+---
+
+# Applying Clay Patterns to Navigation
 
 This tutorial covers how to leverage Clay patterns in your app's navigation 
 to make it more user-friendly. Updating your app's navigation bar to use Clay is 
@@ -91,6 +95,6 @@ Admin app navigation bar:
 
 Sweet! Now you know how to style a navigation bar with Clay.
 
-## Related topics [](id=related-topics)
+## Related topics
 
-[Implementing the Management Toolbar](/develop/tutorials/-/knowledge_base/7-1/implementing-the-management-toolbar)
+[Implementing the Management Toolbar](/docs/7-1/tutorials/-/knowledge_base/t/implementing-the-management-toolbar)

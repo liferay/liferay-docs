@@ -1,7 +1,11 @@
-# Finding Adapted Images [](id=finding-adapted-images)
+---
+header-id: finding-adapted-images
+---
+
+# Finding Adapted Images
 
 In most cases, you can rely on the Adaptive Media taglib to 
-[display adapted images in your app](/develop/tutorials/-/knowledge_base/7-1/displaying-adapted-images-in-your-app). 
+[display adapted images in your app](/docs/7-1/tutorials/-/knowledge_base/t/displaying-adapted-images-in-your-app). 
 This taglib uses the file version you give it to query Adaptive Media's finder 
 API and display the adapted image appropriate for the device making the request. 
 If you need more control, however, you can write your own query with the API 
@@ -19,7 +23,7 @@ values (*fuzzy* attributes).
 This tutorial shows you how to call Adaptive Media's API to get adapted images 
 in your app. First, you'll learn how to construct such API calls. 
 
-## Calling Adaptive Media's API [](id=calling-adaptive-medias-api)
+## Calling Adaptive Media's API
 
 The entry point to Adaptive Media's API is 
 [the `AMImageFinder` interface](https://github.com/liferay/com-liferay-adaptive-media/blob/master/adaptive-media-image-api/src/main/java/com/liferay/adaptive/media/image/finder/AMImageFinder.java). 
@@ -57,7 +61,7 @@ For more information on creating `AMQuery` instances, see
 Next, you'll see specific examples of constructing calls that get adapted 
 images. 
 
-## Getting Adapted Images for a Specific File Version [](id=getting-the-adapted-images-for-a-specific-file-version)
+## Getting Adapted Images for a Specific File Version
 
 To get adapted images for a specific file version, you must call the 
 `AMImageQueryBuilder` method `forFileVersion` with a 
@@ -77,7 +81,7 @@ To get the adapted images for the latest approved file version, use the
             amImageQueryBuilder -> amImageQueryBuilder.forFileEntry(fileEntry).done());
 
 Note that these calls only return the adapted images for 
-[enabled image resolutions](/discover/portal/-/knowledge_base/7-0/managing-image-resolutions). 
+[enabled image resolutions](/docs/7-0/user/-/knowledge_base/u/managing-image-resolutions). 
 Adapted images for disabled resolutions aren't included in the stream. To 
 retrieve all adapted images regardless of any image resolution's status, you 
 must also call the `withConfigurationStatus` method with the constant 
@@ -99,11 +103,11 @@ disabled, make the same call but instead use the constant
 
 Next, you'll learn how to get adapted images for a specific image resolution. 
 
-## Getting the Adapted Images for a Specific Image Resolution [](id=getting-the-adapted-images-for-a-specific-image-resolution)
+## Getting the Adapted Images for a Specific Image Resolution
 
 By providing an image resolution's UUID to `AMImageFinder`, you can get that 
 resolution's adapted images. This UUID is defined when 
-[adding the resolution](/discover/portal/-/knowledge_base/7-0/adding-image-resolutions) 
+[adding the resolution](/docs/7-0/user/-/knowledge_base/u/adding-image-resolutions) 
 in the Adaptive Media app. To get a resolution's adapted images, you must pass 
 that resolution's UUID to the `forConfiguration` method. 
 
@@ -118,7 +122,7 @@ adapted images regardless of whether the resolution is enabled or disabled:
 
 Next, you'll learn how to return adapted images in a specific order. 
 
-## Getting Adapted Images in a Specific Order [](id=getting-adapted-images-in-a-specific-order)
+## Getting Adapted Images in a Specific Order
 
 It's also possible to define the order in which `getAdaptiveMediaStream` returns 
 adapted images. To do this, call the `orderBy` method with your sort criteria 
@@ -147,7 +151,7 @@ respectively. You can alternatively use
 Next, you'll learn how to specify approximate attribute values when getting 
 adapted images. 
 
-## Getting Adapted Images with Fuzzy Attributes [](id=getting-adapted-images-with-fuzzy-attributes)
+## Getting Adapted Images with Fuzzy Attributes
 
 Adaptive Media also lets you get adapted images that match *fuzzy attributes* 
 (approximate attribute values). For example, fuzzy attributes let you ask for 
@@ -179,7 +183,7 @@ To search for image width instead, use
 `AMImageAttribute.AM_IMAGE_ATTRIBUTE_WIDTH` as the first argument to the `width` 
 method. 
 
-## Using the Adaptive Media Stream [](id=using-the-adaptive-media-stream)
+## Using the Adaptive Media Stream
 
 Once you have the `AdaptiveMedia` stream, you can get the information you need 
 from it. For example, this code prints the URI for each adapted image: 
@@ -204,10 +208,10 @@ Here are a few examples:
 
 Awesome! Now you know how to find and use adapted images. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Displaying Adapted Images in Your App](/develop/tutorials/-/knowledge_base/7-1/displaying-adapted-images-in-your-app)
+[Displaying Adapted Images in Your App](/docs/7-1/tutorials/-/knowledge_base/t/displaying-adapted-images-in-your-app)
 
-[Changing Adaptive Media's Image Scaling](/develop/tutorials/-/knowledge_base/7-1/changing-adaptive-medias-image-scaling)
+[Changing Adaptive Media's Image Scaling](/docs/7-1/tutorials/-/knowledge_base/t/changing-adaptive-medias-image-scaling)
 
-[Adapting Your Media Across Multiple Devices](/discover/portal/-/knowledge_base/7-1/adapting-your-media-across-multiple-devices)
+[Adapting Your Media Across Multiple Devices](/docs/7-1/user/-/knowledge_base/u/adapting-your-media-across-multiple-devices)

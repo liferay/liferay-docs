@@ -1,4 +1,8 @@
-# Organizing Content with Tags and Categories [](id=organizing-content-with-tags-and-categories)
+---
+header-id: organizing-content-with-tags-and-categories
+---
+
+# Organizing Content with Tags and Categories
 
 Tags and categories are two important tools you can use to help organize
 information in @product@. These tools help users to easily find the content
@@ -11,16 +15,12 @@ if no categories have been created), the *Select* option doesn't appear.
 
 ![Figure 1: Here is the Web Content application's metadata section.](../../../images/web-content-categorization.png)
 
-+$$$
-
-**Note:** You'll notice in Figure 1 above that there is also a *Priority* field
-for web content. This field is not related to categories and tags, but rather,
-specifies the order in which the web content article is listed when displayed in
-the Asset Publisher. To learn more about the Asset Publisher, see the
-[Publishing Assets](/discover/portal/-/knowledge_base/7-1/publishing-assets)
-section.
-
-$$$
+| **Note:** You'll notice in Figure 1 above that there is also a *Priority* field
+| for web content. This field is not related to categories and tags, but rather,
+| specifies the order in which the web content article is listed when displayed in
+| the Asset Publisher. To learn more about the Asset Publisher, see the
+| [Publishing Assets](/docs/7-1/user/-/knowledge_base/u/publishing-assets)
+| section.
 
 The Menu (![Menu](../../../images/icon-menu.png)) contains interfaces for
 managing tags and categories for each site in @product@. Navigate to the Site

@@ -1,4 +1,8 @@
-# Specifying Your App's Initial Details [](id=specify-your-apps-initial-details)
+---
+header-id: specify-your-apps-initial-details
+---
+
+# Specifying Your App's Initial Details
 
 From this screen you enter your app's basic details. Previous articles
 [Planning Your App's Distribution](/distribute/how-to-publish/-/knowledge_base/how-to-publish/planning-your-apps-distribution)

@@ -1,4 +1,8 @@
-# Clay Navigation Bars [](id=clay-navigation-bars)
+---
+header-id: clay-navigation-bars
+---
+
+# Clay Navigation Bars
 
 Similar to dropdown menus, navigation bars display a list of navigation items. 
 The key difference is navigation bars are displayed in a horizontal bar with all 
@@ -24,10 +28,10 @@ Inverted navigation bar (set `inverted` attribute to `true`):
 
 ![Figure 2: Navigation bars can be inverted if you prefer.](../../../images/clay-taglib-nav-bars-inverted.png)
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Clay Dropdown Menus and Action Menus](/develop/tutorials/-/knowledge_base/7-1/clay-dropdown-menus-and-action-menus)
+[Clay Dropdown Menus and Action Menus](/docs/7-1/tutorials/-/knowledge_base/t/clay-dropdown-menus-and-action-menus)
 
-[Clay Form Elements](/develop/tutorials/-/knowledge_base/7-1/clay-form-elements)
+[Clay Form Elements](/docs/7-1/tutorials/-/knowledge_base/t/clay-form-elements)
 
-[Clay Progress Bars](/develop/tutorials/-/knowledge_base/7-1/clay-progress-bars)
+[Clay Progress Bars](/docs/7-1/tutorials/-/knowledge_base/t/clay-progress-bars)

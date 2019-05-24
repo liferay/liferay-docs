@@ -1,4 +1,8 @@
-# Shared Language Keys [](id=shared-language-keys)
+---
+header-id: shared-language-keys
+---
+
+# Shared Language Keys
 
 The Shared Language Keys sample provides a JSP portlet that displays language
 keys.
@@ -7,7 +11,7 @@ keys.
 
 The language keys displayed in the portlet come from two different modules.
 
-## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
+## What API(s) and/or code components does this sample highlight?
 
 This sample is broken into two modules:
 
@@ -20,7 +24,7 @@ language keys. Its sole purpose is to share language keys with the JSP portlet
 provided in `language-web`. This sample conveys Liferay's recommended approach
 to sharing language keys through OSGi services.
 
-## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
+## How does this sample leverage the API(s) and/or code component?
 
 You must deploy both `language-web` and `language` modules to simulate this
 sample's targeted demonstration.
@@ -70,7 +74,7 @@ republishing an aggregate `ResourceBundleLoader`. This can be done two ways:
 
     You can get a reference to the registered service in your components as
     detailed in the
-		[Overriding a Module's Language Keys](/develop/tutorials/-/knowledge_base/7-1/overriding-a-modules-language-keys)
+		[Overriding a Module's Language Keys](/docs/7-1/tutorials/-/knowledge_base/t/overriding-a-modules-language-keys)
 		tutorial. The main disadvantage of this approach is that it forces you to
 		provide a specific implementation of the `ResourceBundleLoader`, making it
 		harder to modularize in the future.
@@ -88,10 +92,10 @@ republishing an aggregate `ResourceBundleLoader`. This can be done two ways:
     the modules referencing them to recognize their updates.
 
 For more information on sharing language keys, visit the
-[Internationalization](/develop/tutorials/-/knowledge_base/7-1/internationalization)
+[Internationalization](/docs/7-1/tutorials/-/knowledge_base/t/internationalization)
 tutorials.
 
-## Where Is This Sample? [](id=where-is-this-sample)
+## Where Is This Sample?
 
 There are three different versions of this sample, each built with a different
 build tool:

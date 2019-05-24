@@ -1,23 +1,27 @@
-# DDM Form Screenlet for Android [](id=ddm-form-screenlet-for-android)
+---
+header-id: ddm-form-screenlet-for-android
+---
 
-## Requirements [](id=requirements)
+# DDM Form Screenlet for Android
+
+## Requirements
 
 -   Android SDK 4.1 (API Level 16) or above
 -   Liferay CE Portal 7.1 GA3+, Liferay DXP 7.1 FP5+
 -   Liferay Hypermedia REST APIs. These APIs are installed but disabled by 
     default. To enable them, follow the instructions in the tutorial 
-    [Enabling Hypermedia REST APIs](/develop/tutorials/-/knowledge_base/7-1/enabling-hypermedia-rest-apis). 
+    [Enabling Hypermedia REST APIs](/docs/7-1/tutorials/-/knowledge_base/t/enabling-hypermedia-rest-apis). 
 
-## Compatibility [](id=compatibility)
+## Compatibility
 
 -   Android SDK 4.1 (API Level 16) or above
 
-## Xamarin Requirements [](id=xamarin-requirements)
+## Xamarin Requirements
 
 -   Visual Studio 7.2
 -   Mono .NET framework 5.4.1.6
 
-## Features [](id=features)
+## Features
 
 DDM Form Screenlet shows a set of fields that can be filled in by the user. The 
 fields can contain initial or existing values. The following fields are 
@@ -62,11 +66,11 @@ hide fields depending on the input of other fields.
 
 **Internationalization:** Support i18n in record values and labels.
 
-## Module [](id=module)
+## Module
 
 -   DDM
 
-## Views [](id=views)
+## Views
 
 -   Default
 -   Lexicon
@@ -74,7 +78,7 @@ hide fields depending on the input of other fields.
 
 ![Figure 1: The DDM Form Screenlet with the Lexicon View Set.](../../../images/screens-android-ddm-form-screenlet-lexicon-view.png)
 
-### Custom Layouts [](id=custom-layouts)
+### Custom Layouts
 
 To create custom layouts for a field, create the new layout following the naming 
 pattern `<field_editor_id>_<view_name>`. The Screenlet automatically loads such 
@@ -166,7 +170,7 @@ fields inherit from DDL, they are referenced as DDL.
 </tbody>
 </table>
 
-## Application Configuration [](id=activity-configuration)
+## Application Configuration
 
 DDM Form Screenlet needs the following user permissions:
 
@@ -176,28 +180,28 @@ DDM Form Screenlet needs the following user permissions:
 The Documents and Media fields use both to take a picture/video and store it 
 locally before uploading it to the portal. 
 
-## Portal Configuration [](id=portal-configuration)
+## Portal Configuration
 
 Before using DDM Form Screenlet, ensure that the following exist in the portal: 
 
 -   A form for the Screenlet to display. For instructions on this, see the 
     article 
-    [Creating and Managing Forms](/discover/portal/-/knowledge_base/7-1/creating-and-managing-forms). 
+    [Creating and Managing Forms](/docs/7-1/user/-/knowledge_base/u/creating-and-managing-forms). 
 
 -   Liferay Hypermedia REST APIs must be enabled. To do this, follow the 
     instructions in the tutorial 
-    [Enabling Hypermedia REST APIs](/develop/tutorials/-/knowledge_base/7-1/enabling-hypermedia-rest-apis). 
+    [Enabling Hypermedia REST APIs](/docs/7-1/tutorials/-/knowledge_base/t/enabling-hypermedia-rest-apis). 
 
 -   If your form uses it, workflow must be configured. See the 
-    [Workflow](/discover/portal/-/knowledge_base/7-1/workflow) 
+    [Workflow](/docs/7-1/user/-/knowledge_base/u/workflow) 
     section of the user guide for instructions on configuring and using 
     workflow. 
 
-## Required Attributes [](id=required-attributes)
+## Required Attributes
 
 -   `formInstanceId`
 
-## Attributes [](id=attributes)
+## Attributes
 
 <table class="table table-striped table-bordered">
 <thead>
@@ -218,13 +222,13 @@ Before using DDM Form Screenlet, ensure that the following exist in the portal:
 
 ![Figure 2: The red box in this image highlights a form's ID.](../../../images/screens-portal-ddm-form-id.png)
 
-## Permissions [](id=permissions)
+## Permissions
 
 If your form includes at least one Documents and Media field, you must grant 
 permissions in the target repository and folder. For more information, see 
-[Granting File Permissions and Roles](/discover/portal/-/knowledge_base/7-1/adding-files-to-a-document-library#granting-file-permissions-and-roles), 
+[Granting File Permissions and Roles](/docs/7-1/user/-/knowledge_base/u/adding-files-to-a-document-library#granting-file-permissions-and-roles), 
 and 
-[Setting Folder Permissions](/discover/portal/-/knowledge_base/7-1/creating-folders#setting-folder-permissions).
+[Setting Folder Permissions](/docs/7-1/user/-/knowledge_base/u/creating-folders#setting-folder-permissions).
 To set permissions for Documents and Media's Home folder, navigate to Documents 
 and Media and select 
 *Options* 
@@ -233,7 +237,7 @@ and Media and select
 
 ![Figure 3: Select which roles can add a document to a Documents and Media folder.](../../../images/screens-portal-permission-folder-add.png)
 
-## Methods [](id=methods)
+## Methods
 
 <table class="table table-striped table-bordered">
 <thead>
@@ -252,7 +256,7 @@ and Media and select
 </tbody>
 </table>
 
-## Listener [](id=listener)
+## Listener
 
 DDM Form Screenlet delegates some events to an object that implements to the 
 `DDMFormListener` interface. This interface lets you implement the following 

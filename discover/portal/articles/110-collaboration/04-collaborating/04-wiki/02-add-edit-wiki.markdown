@@ -1,4 +1,8 @@
-# Adding and Editing Wiki Pages [](id=adding-and-editing-wiki-pages)
+---
+header-id: adding-and-editing-wiki-pages
+---
+
+# Adding and Editing Wiki Pages
 
 Wiki nodes initially have no pages. When you navigate into a node for the first 
 time, a default page called *FrontPage* is created automatically. To view the 
@@ -7,13 +11,9 @@ appears and shows a message that explains the page is empty and needs you to add
 content. That message is a link; click it to start editing the page. The wiki 
 page editing form then appears. 
 
-+$$$
-
-**Note:** See the 
-[getting started article](/discover/portal/-/knowledge_base/7-1/getting-started-with-wikis) 
-for instructions on accessing your wiki nodes.
-
-$$$
+| **Note:** See the
+| [getting started article](/docs/7-1/user/-/knowledge_base/u/getting-started-with-wikis)
+| for instructions on accessing your wiki nodes.
 
 ![Figure 1: Each empty wiki page presents a default message link you can click to edit the page.](../../../../images/wiki-empty-frontpage.png)
 
@@ -28,7 +28,7 @@ Follow these steps to use the wiki page editing form:
     Help* if you need help with Creole syntax (e.g., syntax for text styling,
     header formatting, link creation, etc.). For a detailed explanation of the
     rest of the editor, see the 
-    [Blogs documentation](/discover/portal/-/knowledge_base/7-1/using-the-blog-entry-editor). 
+    [Blogs documentation](/docs/7-1/user/-/knowledge_base/u/using-the-blog-entry-editor). 
 
 2.  If you want to attach files to the page, open the *Attachments* section of 
     the form and add them via drag and drop or the *Select Files* button. 
@@ -36,7 +36,7 @@ Follow these steps to use the wiki page editing form:
 3.  If you want to associate a tag with the page, open the *Categorization* 
     section and use the *Select* button to select an existing tag. You can also 
     create a new tag by entering it in the *Tags* field and clicking *Add*. See 
-    [the documentation on tags](/discover/portal/-/knowledge_base/7-1/tagging-content) 
+    [the documentation on tags](/docs/7-1/user/-/knowledge_base/u/tagging-content) 
     for more information. 
 
 4.  If you want to select an existing asset in the portal (e.g., a media file, 
@@ -55,15 +55,11 @@ As is common with wikis in general, if you link to a page that doesn't exist,
 clicking that link opens the new page form with a note stating that the page 
 doesn't exist and that you are creating it. 
 
-+$$$
-
-**Note**: When you create a page by clicking a link to a page that doesn't 
-exist, the new page is **not** a child of the current page. The page is created 
-at the wiki node's root. From Wiki in Site Administration, you can use the 
-page's Move action to assign it a new parent page. Clicking the Move action 
-brings up a window that lets you select a new parent for the wiki page. 
-
-$$$
+| **Note**: When you create a page by clicking a link to a page that doesn't
+| exist, the new page is **not** a child of the current page. The page is created
+| at the wiki node's root. From Wiki in Site Administration, you can use the
+| page's Move action to assign it a new parent page. Clicking the Move action
+| brings up a window that lets you select a new parent for the wiki page.
 
 Return to the wiki node view to see a list of the node's top-level pages. If you 
 navigate to a page that has child pages, its child pages are listed. In these 
@@ -110,7 +106,7 @@ type:
 **List** (![List](../../../../images/icon-view-type-list.png)): Shows the pages
 in a list with an icon representing each page. Each page's entry contains the
 name of its author, when it was last modified, and its
-[workflow](/discover/portal/-/knowledge_base/7-1/workflow) status (e.g.,
+[workflow](/docs/7-1/user/-/knowledge_base/u/workflow) status (e.g.,
 Approved, Draft, etc.). 
 
 **Table** (![Table](../../../../images/icon-view-type-table.png)): Shows the

@@ -1,4 +1,8 @@
-# Developing Page Fragments [](id=developing-fragments)
+---
+header-id: developing-fragments
+---
+
+# Developing Page Fragments
 
 The goal of Page Fragments is to take a mock-up design and realize it on a web 
 page as accurately as possible. To do this, developers are given a space where 

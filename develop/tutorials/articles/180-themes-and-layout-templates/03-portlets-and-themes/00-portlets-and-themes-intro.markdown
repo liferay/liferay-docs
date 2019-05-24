@@ -1,4 +1,8 @@
-# Portlets and Themes [](id=portlets-and-themes-intro)
+---
+header-id: portlets-and-themes-intro
+---
+
+# Portlets and Themes
 
 The default theme sets the basic look and feel for all your portlets, and,
 through Portlet Decorators, gives you a way to fine-tune the look of individual

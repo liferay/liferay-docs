@@ -1,4 +1,8 @@
-# Linking to Google Drive™ [](id=linking-to-google-drive)
+---
+header-id: linking-to-google-drive
+---
+
+# Linking to Google Drive™
 
 You can create Document Library files that link to files in Google Drive&trade; 
 and Google Photos&trade;. This lets you access your Google files from the 
@@ -19,17 +23,13 @@ enable it, you must complete these steps:
 This article shows you how to complete these steps and finishes with an example 
 of linking to a Google file from the Document Library. 
 
-+$$$
+| **Important:** The Liferay Plugin for Google Drive&trade; is a Labs application
+| available for Liferay CE Portal and Liferay DXP. Labs apps are experimental and
+| not supported by Liferay. They're released to accelerate the availability of
+| useful and cutting-edge features. This status may change without notice. Use
+| Labs apps at your own discretion.
 
-**Important:** The Liferay Plugin for Google Drive&trade; is a Labs application 
-available for Liferay CE Portal and Liferay DXP. Labs apps are experimental and 
-not supported by Liferay. They're released to accelerate the availability of 
-useful and cutting-edge features. This status may change without notice. Use 
-Labs apps at your own discretion. 
-
-$$$
-
-## Install the App [](id=install-the-app)
+## Install the App
 
 First, you must install the the Liferay Plugin for Google Drive&trade; from 
 Liferay Marketplace. This app is available via the following links for Liferay 
@@ -39,9 +39,9 @@ CE Portal and Liferay DXP:
 -   [Liferay Plugin for Google Drive - DXP](https://web.liferay.com/marketplace/-/mp/application/98011653)
 
 If you need help installing apps from Marketplace, see the documentation on 
-[using Marketplace](/discover/portal/-/knowledge_base/7-1/using-the-liferay-marketplace). 
+[using Marketplace](/docs/7-1/user/-/knowledge_base/u/using-the-liferay-marketplace). 
 
-## Configure Your Google Project [](id=configure-your-google-project)
+## Configure Your Google Project
 
 Follow these steps to create and/or configure your Google project so it can 
 communicate with your @product@ instance: 
@@ -76,7 +76,7 @@ Your new OAuth client ID and public API access key now appear on your Google
 project's Credentials screen. Keep this screen open to reference these values as 
 you specify them in @product@. 
 
-## Configure @product@'s Google Apps Settings [](id=configure-products-google-apps-settings)
+## Configure @product@'s Google Apps Settings
 
 Configure your @product@ instance with the client ID and API key that you 
 created in the previous step: 
@@ -94,7 +94,7 @@ created in the previous step:
 
 5.  *Save* your changes. 
 
-## Creating Linked Files [](id=creating-linked-files)
+## Creating Linked Files
 
 With the preceding configuration steps complete, you can create files in your 
 Document Library that link to files in Google Drive&trade; or images in Google 

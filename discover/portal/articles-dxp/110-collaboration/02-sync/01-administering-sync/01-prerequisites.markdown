@@ -1,4 +1,8 @@
-# Installing Liferay Sync's Prerequisites [](id=installing-liferay-syncs-prerequisites)
+---
+header-id: installing-liferay-syncs-prerequisites
+---
+
+# Installing Liferay Sync's Prerequisites
 
 Liferay Sync requires that you install the following apps from Liferay 
 Marketplace. Be sure to install them in this order: 
@@ -17,24 +21,16 @@ Marketplace. Be sure to install them in this order:
     *Liferay Connector to OAuth 1.0a* app. Otherwise, your portal will not be 
     able to start. 
 
-+$$$
-
-**Warning:** If you install *Liferay Sync Connector* before installing 
-*Liferay Connector to OAuth 1.0a*, your portal will not be able to start. 
-
-$$$
+| **Warning:** If you install *Liferay Sync Connector* before installing
+| *Liferay Connector to OAuth 1.0a*, your portal will not be able to start.
 
 For instructions on installing Marketplace apps, see 
-[the Liferay Marketplace documentation](/discover/portal/-/knowledge_base/7-1/using-the-liferay-marketplace). 
+[the Liferay Marketplace documentation](/docs/7-1/user/-/knowledge_base/u/using-the-liferay-marketplace). 
 
-+$$$
-
-**Note:** The Liferay Sync Security module that Sync requires is included and 
-enabled by default. You can verify this by ensuring that the `SYNC_DEFAULT` and
-`SYNC_TOKEN` entries are enabled in *Control Panel* &rarr; *Configuration*
-&rarr; *Service Access Policy*. 
-
-$$$
+| **Note:** The Liferay Sync Security module that Sync requires is included and
+| enabled by default. You can verify this by ensuring that the `SYNC_DEFAULT` and
+| `SYNC_TOKEN` entries are enabled in *Control Panel* &rarr; *Configuration*
+| &rarr; *Service Access Policy*.
 
 If you want to use Sync Connector's default settings and are fine with enabling
 Sync for all your Sites, you can skip the articles that follow on configuring
@@ -43,7 +39,7 @@ desktop and mobile clients, **make sure to read** this guide's articles on
 preventing accidental file deletion and ensuring Sync security. You should also
 **warn your users** about the potential for accidental data loss. 
 
-## Configuring Sync to Use SSO [](id=configuring-sync-to-use-sso)
+## Configuring Sync to Use SSO
 
 If you use an SSO (single sign-on) solution, you must ensure that Sync can
 access the following URLs without being redirected to your SSO server. Sync

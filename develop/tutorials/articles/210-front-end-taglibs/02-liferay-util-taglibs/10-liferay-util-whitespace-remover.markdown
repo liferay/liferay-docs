@@ -1,4 +1,8 @@
-# Using Liferay Util Whitespace Remover [](id=using-liferay-util-whitespace-remover)
+---
+header-id: using-liferay-util-whitespace-remover
+---
+
+# Using Liferay Util Whitespace Remover
 
 The whitespace remover tag removes line breaks and tabs from code blocks 
 included between the opening and closing of the tag. Below is an example 
@@ -17,10 +21,10 @@ result:
 Now you know how to use the `<liferay-util:whitespace-remover>` tag to ensure 
 that your code formatting is consistent. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using the Liferay Util Param Tag](/develop/tutorials/-/knowledge_base/7-1/using-liferay-util-param)
+[Using the Liferay Util Param Tag](/docs/7-1/tutorials/-/knowledge_base/t/using-liferay-util-param)
 
-[Using the Liferay Util Buffer Tag](/develop/tutorials/-/knowledge_base/7-1/using-liferay-util-buffer)
+[Using the Liferay Util Buffer Tag](/docs/7-1/tutorials/-/knowledge_base/t/using-liferay-util-buffer)
 
-[Using the AUI Taglib](/develop/tutorials/-/knowledge_base/7-1/using-aui-taglibs-in-your-portlets)
+[Using the AUI Taglib](/docs/7-1/tutorials/-/knowledge_base/t/using-aui-taglibs-in-your-portlets)

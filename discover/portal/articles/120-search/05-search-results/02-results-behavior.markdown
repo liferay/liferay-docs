@@ -1,4 +1,8 @@
-# Search Results Behavior [](id=search-results-behavior)
+---
+header-id: search-results-behavior
+---
+
+# Search Results Behavior
 
 The previous article covered ways to display search results. This article
 covers these additional Search Results concepts and configurations: 
@@ -10,7 +14,7 @@ covers these additional Search Results concepts and configurations:
 - [Search results summaries](#result-summaries)
 - [Search results term highlighting](#highlighting)
 
-## Filtering Results with Facets [](id=filtering-results-with-facets)
+## Filtering Results with Facets
 
 Results are filtered using *facets*. Most users have encountered similar
 filtering capabilities in other applications, particularly during commerce
@@ -19,10 +23,10 @@ search facets, which you can think of as buckets that group results together if
 they share a common characteristic.
 
 Administrators can configure facets. Read about 
-[configuring facets](/discover/portal/-/knowledge_base/7-1/facets) 
+[configuring facets](/docs/7-1/user/-/knowledge_base/u/facets) 
 to learn more.
 
-## Search Results Relevance [](id=search-results-relevance)
+## Search Results Relevance
 
 The search engine decides which results appear at the top of the list using the
 concept of *relevance*. Relevance is a score calculated by the search engine.
@@ -31,10 +35,10 @@ document, and all of the implementation details of how relevance scoring works
 are algorithms provided by the 
 [search engine](https://www.elastic.co/guide/en/elasticsearch/guide/current/relevance-intro.html#relevance-intro).
 
-## Permissions and Search Results [](id=permissions-and-search-results)
+## Permissions and Search Results
 
 Users lacking
-[VIEW permission](/discover/portal/-/knowledge_base/7-1/roles-and-permissions)
+[VIEW permission](/docs/7-1/user/-/knowledge_base/u/roles-and-permissions)
 on an asset don't see it in the search results. A logged in User with the Site
 Administrator role likely sees more search results than a guest User to the
 site. 
@@ -47,7 +51,7 @@ engine's index has correct, up-to-date permissions information, a second,
 last-second permissions check, _post-filtering_, is performed on the results
 prior to their display.
 
-### Initial Permissions Checking [](id=initial-permissions-checking)
+### Initial Permissions Checking
 
 The first round of search results permissions filtering adds filter clauses to
 the search query. This ensures that results return from the search engine
@@ -72,7 +76,7 @@ administrative access to lots of sites and organizations generate many
 permissions terms added to the query. Too many terms in a query can make the
 search engine time out.
 
-### Final Permissions Checking [](id=final-permissions-checking)
+### Final Permissions Checking
 
 A final round of permission checking happens prior to presenting results in the
 UI. For example, the User searches for *liferay*, and the search engine returns
@@ -104,10 +108,10 @@ Search Result Permission Filter*. It includes two settings:
     result in performance issues. Set the maximum batch size for each permission
     checking request. 
 
-## Search and Staging [](id=search-and-staging)
+## Search and Staging
 
 With
-[staging](/discover/portal/-/knowledge_base/7-1/staging-content-for-publication),
+[staging](/docs/7-1/user/-/knowledge_base/u/staging-content-for-publication),
 content is placed first in a preview and testing environment before being
 published for consumption by end Users (on the live site). Content added to the
 search index is marked so that the search API can decipher whether an item is
@@ -116,7 +120,7 @@ live site is searchable.
 
 In the staged version of the site, all content---live or staged---is searchable.
 
-## Result Summaries [](id=result-summaries)
+## Result Summaries
 
 A result summary includes the information from a document that the asset's
 developer felt is most useful to end Users searching for the asset. Each asset
@@ -153,7 +157,7 @@ field's text. If the keyword searched for is present in the summary field, that
 portion of the field is used in the summary. In addition, the matching keyword
 is highlighted in the summary.
 
-## Highlighting [](id=highlighting)
+## Highlighting
 
 By now you've probably noticed that search terms appearing in the summary are
 <mark>highlighted</mark> by default. If this is undesirable, disable it in the

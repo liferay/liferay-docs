@@ -1,4 +1,8 @@
-# Configuring Search [](id=configuring-search)
+---
+header-id: configuring-search
+---
+
+# Configuring Search
 
 _Configuring Search_ could mean lots of different things: 
 
@@ -13,10 +17,10 @@ In fact, _Configuring Search_ means all those things. This is a high level
 overview of what search behavior is configurable out of the box, and
 importantly, _where_ to find search configuration options.
 
-## System Scoped Search Configuration [](id=system-scoped-search-configuration)
+## System Scoped Search Configuration
 
 System scoped search configurations are primarily found in 
-[System Settings](/discover/portal/-/knowledge_base/7-1/system-settings).
+[System Settings](/docs/7-1/user/-/knowledge_base/u/system-settings).
 
 1.  Go to *Control Panel* &rarr; *Configuration* &rarr; *System Settings*.
 
@@ -28,7 +32,7 @@ System scoped search configurations are primarily found in
 
 These system scoped configurations are available in System Settings:
 
-### Default Keyword Query [](id=default-keyword-query)
+### Default Keyword Query
 
 The Default Keyword Query entry contains one setting:
 
@@ -39,12 +43,12 @@ keyword search query. Specify the entry class names
 
 Configuration file: `com.liferay.portal.search.configuration.DefaultKeywordQueryConfiguration.config`
 
-### Default Search Result Permission Filter [](id=default-search-result-permission-filter)
+### Default Search Result Permission Filter
 
 The Default Search Result Permission Filter entry allows configuration of
 *post-filtering permission checking* (database permission checking that occurs
 after the results are returned from the search index). Read
-[here](/discover/portal/-/knowledge_base/7-1/search-results-behavior#final-permissions-checking)
+[here](/docs/7-1/user/-/knowledge_base/u/search-results-behavior#final-permissions-checking)
 for more information on these settings:
 
 - `permissionFilteredSearchResultAccurateCountThreshold` 
@@ -53,7 +57,7 @@ for more information on these settings:
 
 Configuration file: `com.liferay.portal.search.configuration.DefaultSearchResultPermissionFilterConfiguration.config`
 
-### Index Status Manager [](id=index-status-manager)
+### Index Status Manager
 
 The Index Status Manager entry has one setting:
 
@@ -64,7 +68,7 @@ re-index executed once the import is finished.
 
 Configuration file: `com.liferay.portal.search.configuration.IndexStatusManagerConfiguration.config`
 
-### Indexer Writer Helper [](id=indexer-writer-helper)
+### Indexer Writer Helper
 
 The Index Writer Helper entry contains only one valid entry. The second,
 `indexReadOnly`, is deprecated and unused, so setting it has no effect. Use
@@ -85,7 +89,7 @@ for more information.
 
 Configuration file: `com.liferay.portal.search.configuration.IndexWriterHelperConfiguration.config`
 
-### Index Registry [](id=index-registry)
+### Index Registry
 
 Configure the buffering of index requests:
 
@@ -102,10 +106,10 @@ buffer are executed in one batch and removed from the buffer.
 
 Configuration file: `com.liferay.portal.search.configuration.IndexerRegistryConfiguration.config`
 
-### Index Query Preprocessor [](id=index-query-preprocessor)
+### Index Query Preprocessor
 
 This entry has one repeatable property (use array syntax if you're defining via 
-[OSGi configuration file](/discover/portal/-/knowledge_base/7-1/creating-configuration-files)):
+[OSGi configuration file](/docs/7-1/user/-/knowledge_base/u/creating-configuration-files)):
 
 `fieldNamePatterns`: Fields with names matching the patterns set here are
 treated as non-analyzed keyword fields. Instead of scored full text queries,
@@ -117,7 +121,7 @@ usually performs better.
 
 Configuration file: `com.liferay.portal.search.configuration.QueryPreProcessConfiguration.config`
 
-### Reindex [](id=reindex)
+### Reindex
 
 This entry contains only one property:
 
@@ -129,10 +133,10 @@ re-index.
 
 Configuration file: `com.liferay.portal.search.configuration.ReindexConfiguration.config`
 
-### Engine Helper [](id=engine-helper)
+### Engine Helper
 
 This entry has one repeatable property (use array syntax if you're defining via 
-[OSGi configuration file](/discover/portal/-/knowledge_base/7-1/creating-configuration-files)):
+[OSGi configuration file](/docs/7-1/user/-/knowledge_base/u/creating-configuration-files)):
 
 `excludedEntryClassNames`: Exclude an asset type from being
 searched in the catchall query constructed for the Search application. For
@@ -143,11 +147,11 @@ the Search application. Thus, Organizations are added to
 
 Configuration file: `com.liferay.portal.search.configuration.SearchEngineHelperConfiguration.config`
 
-### Permission Checker [](id=permission-checker)
+### Permission Checker
 
 Configure *pre-filtering permission checking* (permission checking on the
 search index) behavior. See 
-[here](/discover/portal/-/knowledge_base/7-1/search-results-behavior#initial-permissions-checking) 
+[here](/docs/7-1/user/-/knowledge_base/u/search-results-behavior#initial-permissions-checking) 
 for more information on these properties:
 
 - `includeInheritedPermission`
@@ -156,10 +160,10 @@ for more information on these properties:
 
 Configuration file: `com.liferay.portal.search.configuration.SearchPermissionCheckerConfiguration.config`
 
-### Elasticsearch 6 [](id=elasticsearch-6)
+### Elasticsearch 6
 
 Configure the connection between @product@ and Elasticsearch 6. See
-[here](/discover/deployment/-/knowledge_base/7-1/configuring-the-liferay-elasticsearch-connector) 
+[here](/docs/7-1/deploy/-/knowledge_base/d/configuring-the-liferay-elasticsearch-connector) 
 for more information on these properties:
 
 - `clusterName`
@@ -191,18 +195,18 @@ for more information on these properties:
 
 Configuration file: `com.liferay.portal.search.elasticsearch6.configuration.ElasticsearchConfiguration.config`
 
-### Search Web [](id=search-web)
+### Search Web
 
 This entry contains one property:
 `classicSearchPortletInFrontPage`: Revert the default search experience from
 using the new Search Widgets to the classic Search Portlet that was standard
 in past releases. See
-[here](/discover/portal/-/knowledge_base/7-1/configuring-search-pages#legacy-search-experience)
+[here](/docs/7-1/user/-/knowledge_base/u/configuring-search-pages#legacy-search-experience)
 for more information.
 
 Configuration file: `com.liferay.portal.search.web.internal.configuration.SearchWebConfiguration.config`
 
-### Reindexing from Search Administration [](id=reindexing-from-search-administration)
+### Reindexing from Search Administration
 
 In addition to the System Settings for Search, the action of recreating the
 search indexes is a system scoped action. 
@@ -220,12 +224,12 @@ Portal properties are system scoped configurations as well. The
 portal properties configure low level search behavior. Review the properties and
 their descriptions and determine if they apply to your search requirements.
 
-## Site Scoped Search Configuration [](id=site-scoped-search-configuration)
+## Site Scoped Search Configuration
 
 Search isn't configurable at the Site Scope by the strict definition of 
-[Site Scoped Configuration](/discover/portal/-/knowledge_base/7-1/setting-up#configuration-scope).
+[Site Scoped Configuration](/docs/7-1/user/-/knowledge_base/u/setting-up#configuration-scope).
 However, 
-[Search Pages](/discover/portal/-/knowledge_base/7-1/configuring-search-pages)
+[Search Pages](/docs/7-1/user/-/knowledge_base/u/configuring-search-pages)
 influence site-specific search behavior. Commonly, Search Pages contain search
 widgets configured to search for all content within a particular Site.
 
@@ -242,7 +246,7 @@ nuances to be aware of when using the new Search widgets:
   always requires a _destination page_ to be set, where Users are redirected
   to complete their search activity, interacting with the other Search widgets
   (Results, Facets, Suggestions etc.). 
-  [Search destination pages](/discover/portal/-/knowledge_base/7-1/configuring-search-pages)
+  [Search destination pages](/docs/7-1/user/-/knowledge_base/u/configuring-search-pages)
   are ordinary pages holding the Search widgets. You can have as many pages with
   Search widgets across the Site as you want.
 
@@ -258,39 +262,35 @@ nuances to be aware of when using the new Search widgets:
   their configurations, even if they differ from the Header Search
   configuration. 
 
-+$$$
-
-**Note:** On Liferay Portal 7.1 CE GA1 and Liferay DXP 7.1, you must
-configure both the Search Page's Search Bar and the Header Search with
-matching configurations to achieve consistent search behavior (otherwise
-either one may take precedence.) This has been fixed in
-[LPS-83193](https://issues.liferay.com/browse/LPS-83193) and will be
-available on the next Fix Pack or GA release.
-
-$$$
+| **Note:** On Liferay Portal 7.1 CE GA1 and Liferay DXP 7.1, you must
+| configure both the Search Page's Search Bar and the Header Search with
+| matching configurations to achieve consistent search behavior (otherwise
+| either one may take precedence.) This has been fixed in
+| [LPS-83193](https://issues.liferay.com/browse/LPS-83193) and will be
+| available on the next Fix Pack or GA release.
 
 See the documentation on 
-[configuring of a Search Bar](/discover/portal/-/knowledge_base/7-1/searching-for-assets#configuring-the-search-bar) 
+[configuring of a Search Bar](/docs/7-1/user/-/knowledge_base/u/searching-for-assets#configuring-the-search-bar) 
 for more information.
 
-## Widget Scoped Search Configuration [](id=widget-scoped-search-configuration)
+## Widget Scoped Search Configuration
 
 Several search widgets are available, and each one has its own configuration
 options:
 
 **Search Results**
 :  Configure how search results are displayed. Read 
-[here](/discover/portal/-/knowledge_base/7-1/search-results) for more
+[here](/docs/7-1/user/-/knowledge_base/u/search-results) for more
 information.
 
 **Search Bar**
 : Configure the behavior of how search keywords are processed. See
-[here](/discover/portal/-/knowledge_base/7-1/searching-for-assets#configuring-the-search-bar) 
+[here](/docs/7-1/user/-/knowledge_base/u/searching-for-assets#configuring-the-search-bar) 
 for more information.
 
 **Search Facets**
 : Configure each facet's behavior and URL parameters. See
-[here](/discover/portal/-/knowledge_base/7-1/facets) for more information.
+[here](/docs/7-1/user/-/knowledge_base/u/facets) for more information.
 
 **Search Options**
 : This is a special case, where configuring this widget defines page scoped
@@ -306,7 +306,7 @@ the Search Page:
 
 **Search Suggestions**
 : Suggest better queries and spell check queries. See
-[here](/discover/portal/-/knowledge_base/7-1/searching-for-assets#search-suggestions) 
+[here](/docs/7-1/user/-/knowledge_base/u/searching-for-assets#search-suggestions) 
 for more information.
 
 **Search Insights**

@@ -1,4 +1,8 @@
-# Terms of Use [](id=terms-of-use)
+---
+header-id: terms-of-use
+---
+
+# Terms of Use
 
 Terms of Use are important when you need them, but not all Sites do. They're not
 first in the Instance Settings interface, but they're one of the first things

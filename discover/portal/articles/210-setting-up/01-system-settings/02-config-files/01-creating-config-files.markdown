@@ -1,7 +1,11 @@
-# Creating Configuration Files [](id=creating-configuration-files)
+---
+header-id: creating-configuration-files
+---
+
+# Creating Configuration Files
 
 System Settings provides an
-[*Export*](/discover/portal/-/knowledge_base/7-1/system-settings#exporting-and-importing-configurations)
+[*Export*](/docs/7-1/user/-/knowledge_base/u/system-settings#exporting-and-importing-configurations)
 option that becomes available once you modify a configuration entry. Exporting
 is the recommended way to create `.config` files: you download a `.config` file
 containing the entry's settings in a `key=value` format. @product@ exports an
@@ -17,7 +21,7 @@ functionality, has this file name:
 
 ![Figure 1: The Web Content System Settings entry has the back-end ID `com.liferay.journal.configuration.JournalServiceConfiguration`.](../../../../images/config-web-content-entry.png)
 
-## Key/Value Syntax [](id=key-value-syntax)
+## Key/Value Syntax
 
 The syntax for all keys and values in a `.config` file is the same: 
 
@@ -27,7 +31,7 @@ For single value configurations without special characters, that's all there is
 to know. Settings with multiple values and certain characters require slight
 modifications. 
 
-## Multi-Value Settings [](id=multi-value-settings)
+## Multi-Value Settings
 
 Configuration entries can have properties that accept multiple values. For 
 example, a configuration property for specifying supported file extensions needs 
@@ -50,7 +54,7 @@ comma-separated values:
 
     charactersblacklist=["&","'","@","\\","]","}",":","\=",">","/","<","[","{","%","+","#","`","?","\"",";","*","~"]
 
-## Escaping Characters [](id=escaping-characters)
+## Escaping Characters
 
 Double quotes (`"`) and equals signs (`=`) must be *escaped* in `.config` files. 
 Escaping is using another character to denote that a character shouldn't be used 
@@ -74,7 +78,7 @@ properly:
 If you don't escape spaces yourself, the framework adds the backslash for you 
 after deployment. 
 
-## Typed Values [](id=typed-values)
+## Typed Values
 
 The `.config` file format supports specifying the type of a configuration value
 by inserting a special type marker character. Because @product@ already knows
@@ -89,17 +93,17 @@ example included above functions identically without the type marker:
 
     addDefaultStructures="true"
 
-## Deploying a Configuration File [](id=deploying-a-configuration-file)
+## Deploying a Configuration File
 
 Once you have a configuration file, deploy it. It's registered and 
 the targeted configuration values are updated automatically. 
 
 To deploy the `.config` file, place it in your 
-[Liferay Home's](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home) 
+[Liferay Home's](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home) 
 `osgi/configs` folder. To change the configuration further, you can edit the 
 `.config` file directly or use System Settings. 
 
-## Configuration Files and Clustering [](id=configuration-files-and-clustering)
+## Configuration Files and Clustering
 
 In a clustered environment, each node needs the same configuration values for
 each entry. For example, all nodes should use the same *Blogs* configuration

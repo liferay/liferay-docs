@@ -1,4 +1,8 @@
-# Scatter Charts [](id=scatter-charts)
+---
+header-id: scatter-charts
+---
+
+# Scatter Charts
 
 Scatter charts contain multiple sets of data. A scatter chart models the data as 
 individual points. Each data series (created with the `addColumns()` method) is 
@@ -36,10 +40,10 @@ Follow these steps:
 
 ![Figure 1: A scatter chart models the data as individual points.](../../../images/chart-taglib-scatter.png)
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Step Charts](/develop/tutorials/-/knowledge_base/7-1/step-charts)
+[Step Charts](/docs/7-1/tutorials/-/knowledge_base/t/step-charts)
 
-[Line Charts](/develop/tutorials/-/knowledge_base/7-1/line-charts)
+[Line Charts](/docs/7-1/tutorials/-/knowledge_base/t/line-charts)
 
-[Spline Charts](/develop/tutorials/-/knowledge_base/7-1/spline-charts)
+[Spline Charts](/docs/7-1/tutorials/-/knowledge_base/t/spline-charts)

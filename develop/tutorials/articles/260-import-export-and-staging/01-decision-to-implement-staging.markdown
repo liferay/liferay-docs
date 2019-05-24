@@ -1,4 +1,8 @@
-# Decision to Implement Staging [](id=decision-to-implement-staging)
+---
+header-id: decision-to-implement-staging
+---
+
+# Decision to Implement Staging
 
 Staging is an advanced publication tool that lets you create or modify your site
 before releasing it to the public. Most of @product@'s included applications

@@ -1,17 +1,17 @@
-# Why Aren't JSP overrides I Made Using Fragments Showing? [](id=why-arent-jsp-overrides-i-made-using-fragments-showing)
+---
+header-id: why-arent-jsp-overrides-i-made-using-fragments-showing
+---
 
-+$$$
+# Why Aren't JSP overrides I Made Using Fragments Showing?
 
-**Important:** It's strongly recommended to
-[customize JSPs using @product@'s API](/develop/tutorials/-/knowledge_base/7-1/customizing-jsps).
-Since overriding a JSP using an OSGi fragment is not based on APIs there's no
-way to guarantee that it will fail gracefully. Instead, if your customization is
-buggy (because of your code or because of a change in Liferay), you are most
-likely to find out at runtime, where functionality breaks and nasty log errors
-greet you. Overriding a JSP using a fragment should only be used as a last
-resort. 
-
-$$$
+| **Important:** It's strongly recommended to
+| [customize JSPs using @product@'s API](/docs/7-1/tutorials/-/knowledge_base/t/customizing-jsps).
+| Since overriding a JSP using an OSGi fragment is not based on APIs there's no
+| way to guarantee that it will fail gracefully. Instead, if your customization is
+| buggy (because of your code or because of a change in Liferay), you are most
+| likely to find out at runtime, where functionality breaks and nasty log errors
+| greet you. Overriding a JSP using a fragment should only be used as a last
+| resort.
 
 The fragment module must specify the exact version of the host module. A 
 @product@ upgrade might have changed some JSPs in the host module, prompting a 
@@ -27,13 +27,13 @@ specify the host module and host module version:
     Bundle-Version: 1.0.0
     Fragment-Host: com.liferay.login.web;bundle-version="1.1.18"
 
-[Finding versions of deployed modules](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies#finding-liferay-portal-app-and-independent-artifacts)
+[Finding versions of deployed modules](/docs/7-1/tutorials/-/knowledge_base/t/configuring-dependencies#finding-liferay-portal-app-and-independent-artifacts)
 is straightforward.  
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[JSP Overrides using Portlet Filters](/develop/tutorials/-/knowledge_base/7-1/jsp-overrides-using-portlet-filters)
+[JSP Overrides using Portlet Filters](/docs/7-1/tutorials/-/knowledge_base/t/jsp-overrides-using-portlet-filters)
 
-[Customizing JSPs](/develop/tutorials/-/knowledge_base/7-1/customizing-jsps)
+[Customizing JSPs](/docs/7-1/tutorials/-/knowledge_base/t/customizing-jsps)
 
-[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies)
+[Configuring Dependencies](/docs/7-1/tutorials/-/knowledge_base/t/configuring-dependencies)

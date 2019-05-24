@@ -1,4 +1,8 @@
-# Service Builder Template [](id=using-the-service-builder-template)
+---
+header-id: using-the-service-builder-template
+---
+
+# Service Builder Template
 
 In this article, you'll learn how to create a Liferay portlet application that
 uses Service Builder as Liferay modules. To create a Liferay Service Builder
@@ -86,10 +90,10 @@ The generated module is functional and is
 deployable to a @product@ instance. To build upon the generated app, modify the
 project by adding logic and additional files to the folders outlined above.
 
-## Related Topics  [](id=related-topics)
+## Related Topics 
 
-[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code)
+[Running Service Builder and Understanding the Generated Code](/docs/7-0/tutorials/-/knowledge_base/t/running-service-builder-and-understanding-the-generated-code)
 
-[Using Service Builder in a Maven Project](/develop/tutorials/-/knowledge_base/7-0/using-service-builder-in-a-maven-project)
+[Using Service Builder in a Maven Project](/docs/7-0/tutorials/-/knowledge_base/t/using-service-builder-in-a-maven-project)
 
-[Service Builder with Maven](/develop/reference/-/knowledge_base/7-0/service-builder-with-maven)
+[Service Builder with Maven](/docs/7-0/reference/-/knowledge_base/r/service-builder-with-maven)

@@ -1,4 +1,8 @@
-# Creating Complex Lists in Your List Screenlet [](id=creating-complex-lists-in-your-list-screenlet)
+---
+header-id: creating-complex-lists-in-your-list-screenlet
+---
+
+# Creating Complex Lists in Your List Screenlet
 
 Most list Screenlets' Themes use 
 [iOS's `UITableView`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableView_Class/) 
@@ -12,10 +16,10 @@ This tutorial shows you how to create such a Theme, using
 [the sample Bookmark List Screenlet's Collection Theme](https://github.com/liferay/liferay-screens/tree/master/ios/Samples/Bookmark/BookmarkListScreenlet/Themes/CollectionView) 
 as an example. First, you'll create the list's cell. 
 
-## Creating the Cell [](id=creating-the-cell)
+## Creating the Cell
 
 You'll create your list's cell with 
-[the same sequence of steps](/develop/tutorials/-/knowledge_base/7-1/using-custom-cells-with-list-screenlets) 
+[the same sequence of steps](/docs/7-1/tutorials/-/knowledge_base/t/using-custom-cells-with-list-screenlets) 
 used to create any list Screenlet's cell. Note, however, that how you perform 
 these steps is a bit different: 
 
@@ -72,10 +76,10 @@ these steps is a bit different:
 
 Now that your cell exists, you can create the rest of your Theme. 
 
-## Creating the Theme's XIB and View Class [](id=creating-the-themes-xib-and-view-class)
+## Creating the Theme's XIB and View Class
 
 You'll create the rest of your Theme with 
-[the same sequence of steps](/develop/tutorials/-/knowledge_base/7-1/creating-the-ios-list-screenlets-theme) 
+[the same sequence of steps](/docs/7-1/tutorials/-/knowledge_base/t/creating-the-ios-list-screenlets-theme) 
 used to create any list Screenlet's Theme. Like creating the cell, how you 
 perform these steps is a bit different because your Theme uses 
 `UICollectionView` instead of `UITableView`. 
@@ -145,7 +149,7 @@ casts the `object` argument to `Bookmark` and then sets it to the cell's
 
 Next, you'll create the layout. 
 
-## Creating the Layout [](id=creating-the-layout)
+## Creating the Layout
 
 The layout object is a key part of `UICollectionView`. This object controls the 
 position of the UI elements, their size, and more. To customize the layout 
@@ -166,20 +170,20 @@ more:
     }
 
 Great! You're done! You can now use your new Theme 
-[the same way you would any other](/develop/tutorials/-/knowledge_base/7-1/using-themes-in-ios-screenlets). 
+[the same way you would any other](/docs/7-1/tutorials/-/knowledge_base/t/using-themes-in-ios-screenlets). 
 
 If you want to package your Theme to contribute it to the Liferay Screens 
 project or distribute it with CocoaPods, see 
-[the tutorial on packaging Themes](/develop/tutorials/-/knowledge_base/7-1/packaging-ios-themes). 
+[the tutorial on packaging Themes](/docs/7-1/tutorials/-/knowledge_base/t/packaging-ios-themes). 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating iOS List Screenlets](/develop/tutorials/-/knowledge_base/7-1/creating-ios-list-screenlets)
+[Creating iOS List Screenlets](/docs/7-1/tutorials/-/knowledge_base/t/creating-ios-list-screenlets)
 
-[Creating iOS Themes](/develop/tutorials/-/knowledge_base/7-1/creating-ios-themes)
+[Creating iOS Themes](/docs/7-1/tutorials/-/knowledge_base/t/creating-ios-themes)
 
-[Sorting Your List Screenlet](/develop/tutorials/-/knowledge_base/7-1/sorting-your-list-screenlet)
+[Sorting Your List Screenlet](/docs/7-1/tutorials/-/knowledge_base/t/sorting-your-list-screenlet)
 
-[Using Custom Cells with List Screenlets](/develop/tutorials/-/knowledge_base/7-1/using-custom-cells-with-list-screenlets)
+[Using Custom Cells with List Screenlets](/docs/7-1/tutorials/-/knowledge_base/t/using-custom-cells-with-list-screenlets)
 
-[iOS Best Practices](/develop/tutorials/-/knowledge_base/7-1/ios-best-practices)
+[iOS Best Practices](/docs/7-1/tutorials/-/knowledge_base/t/ios-best-practices)

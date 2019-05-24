@@ -1,4 +1,8 @@
-# Clay Icons [](id=clay-icons)
+---
+header-id: clay-icons
+---
+
+# Clay Icons
 
 The Liferay Clay taglibs provide several icons that you can use in your apps. 
 Use the `clay:icon` tag and specify the icon with the `symbol` attribute:
@@ -16,8 +20,8 @@ use in your app. The full list of language flags is shown below:
 
 ![Figure 3: You can include language flags in your apps.](../../../images/clay-taglib-icon-language-flags.png)
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Clay Badges](/develop/tutorials/-/knowledge_base/7-1/clay-badges)
+[Clay Badges](/docs/7-1/tutorials/-/knowledge_base/t/clay-badges)
 
-[Clay Stickers](/develop/tutorials/-/knowledge_base/7-1/clay-stickers)
+[Clay Stickers](/docs/7-1/tutorials/-/knowledge_base/t/clay-stickers)

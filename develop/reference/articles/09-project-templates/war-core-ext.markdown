@@ -1,4 +1,8 @@
-# WAR Core Ext [](id=war-core-ext)
+---
+header-id: war-core-ext
+---
+
+# WAR Core Ext
 
 In this article, you'll learn how to create a Liferay WAR core Ext project. To
 create a WAR core Ext project via the command line using Blade CLI or Maven, use
@@ -82,19 +86,15 @@ like this:
 The Maven-generated project includes a `pom.xml` file and does not include the
 Gradle-specific files, but otherwise, appears exactly the same.
 
-+$$$
-
-**Note:** If you generate a WAR Ext project using Gradle outside of Liferay
-Workspace, you must set the `app.server.parent.dir` property in the project's
-`gradle.properties`. The app server location is required for this project to
-compile.
-
-$$$
+| **Note:** If you generate a WAR Ext project using Gradle outside of Liferay
+| Workspace, you must set the `app.server.parent.dir` property in the project's
+| `gradle.properties`. The app server location is required for this project to
+| compile.
 
 The generated WAR Ext project is functional and is deployable to a @product@ instance.
 To build upon the generated project, modify the project by adding logic and
 additional files to the folders outlined above. Deploying WAR Ext projects is
 only supported for limited use cases; it is recommended to leverage provided
 extension points offered in @product@. You can visit the
-[Customizing Core Functionality with Ext](/develop/reference/-/knowledge_base/7-1/customizing-core-functionality-with-ext)
+[Customizing Core Functionality with Ext](/docs/7-1/reference/-/knowledge_base/r/customizing-core-functionality-with-ext)
 section for info on how to do this.

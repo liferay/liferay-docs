@@ -1,4 +1,8 @@
-# WYSIWYG Editor Dynamic Includes [](id=wysiwyg-editor-dynamic-includes)
+---
+header-id: wysiwyg-editor-dynamic-includes
+---
+
+# WYSIWYG Editor Dynamic Includes
 
 All WYSIWYG editors share the same dynamic include extension points for these
 things:
@@ -78,12 +82,12 @@ Example JavaScript:
 
 Now you know how to use the WYSIWYG editor dynamic includes.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Adding New Behavior to an Editor](/develop/tutorials/-/knowledge_base/7-1/adding-new-behavior-to-an-editor)
+[Adding New Behavior to an Editor](/docs/7-1/tutorials/-/knowledge_base/t/adding-new-behavior-to-an-editor)
 
-[Bottom JSP Dynamic Includes](/develop/tutorials/-/knowledge_base/7-1/bottom-jsp-dynamic-includes)
+[Bottom JSP Dynamic Includes](/docs/7-1/tutorials/-/knowledge_base/t/bottom-jsp-dynamic-includes)
 
-[Top Head JSP Dynamic Includes](/develop/tutorials/-/knowledge_base/7-1/top-head-jsp-dynamic-includes)
+[Top Head JSP Dynamic Includes](/docs/7-1/tutorials/-/knowledge_base/t/top-head-jsp-dynamic-includes)
 
-[Top JS Dynamic Include](/develop/tutorials/-/knowledge_base/7-1/top-js-dynamic-include)
+[Top JS Dynamic Include](/docs/7-1/tutorials/-/knowledge_base/t/top-js-dynamic-include)

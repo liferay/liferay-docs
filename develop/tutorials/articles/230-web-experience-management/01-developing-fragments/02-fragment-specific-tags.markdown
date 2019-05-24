@@ -1,4 +1,8 @@
-# Fragment Specific Tags [](id=fragment-specific-tags)
+---
+header-id: fragment-specific-tags
+---
+
+# Fragment Specific Tags
 
 While HTML, CSS, and JavaScript are universal tools for building websites, 
 @product@ includes some additional tools to make fragments more powerful. One
@@ -6,7 +10,7 @@ tag can make text editable not just in the HTML editor, but also at the time of
 publishing. The other enables you to embed Liferay portlets into your fragment
 in the form of "Widgets."
 
-## Making Text Editable [](id=making-text-editable)
+## Making Text Editable
 
 Making text editable allows the marketer or web admin to modify the text before
 publishing it. This way, you can reuse a single fragment with different headings
@@ -32,13 +36,9 @@ image before publishing---including those from Documents and Media.
 `rich-text`: Provides rich text formatting, such as bold, italics, underline,
 links, and predefined styles.
 
-+$$$
-
-**Note:** If you want to make text inside an HTML element editable, you must use
-the `rich-text` type. The `text` type strips HTML formatting out of the text
-before rendering.
-
-$$$
+| **Note:** If you want to make text inside an HTML element editable, you must use
+| the `rich-text` type. The `text` type strips HTML formatting out of the text
+| before rendering.
 
 Now add editable text to a Fragment, add the Fragment to a Content Page, 
 and then edit the text before publishing:
@@ -78,7 +78,7 @@ features in the editor.
 The template saves automatically, and when it is turned into a page, the new
 text is displayed.
 
-## Making Images Editable [](id=making-images-editable)
+## Making Images Editable
 
 Like text, you can set images images as editable. An editable image can be
 selected from the user's local files or from the Documents and Media Library.
@@ -97,7 +97,7 @@ After you add the `lfr-editable` tag with the type `image` to a Fragment, when
 you add that Fragment to a page, you can then click on the editable image and 
 select a replacement.
 
-## Including Widgets Within A Fragment [](id=including-widgets-within-a-fragment)
+## Including Widgets Within A Fragment
 
 You can add more dynamic behavior to a Fragment by including a widget. 
 Currently, you can only embed a portlet as a widget, but other types of widgets
@@ -156,9 +156,9 @@ Now you need to add it to a Content Page to display it.
 
 10. Now go back to your site, and select your new page.
 
-For the full list of widgets that can be imbedded, see the [Embedding Widgets in Page Fragments](/develop/reference/-/knowledge_base/7-1/embedding-widgets-in-page-fragments) reference article.
+For the full list of widgets that can be imbedded, see the [Embedding Widgets in Page Fragments](/docs/7-1/reference/-/knowledge_base/r/embedding-widgets-in-page-fragments) reference article.
 
-## Embedding Your Widget in a Fragment [](id=embedding-your-widget-in-a-fragment)
+## Embedding Your Widget in a Fragment
 
 If you have a custom widget that you want to embed in a fragment, you can 
 configure that widget to be embeddable. In order to embed your widget, it must
@@ -174,14 +174,10 @@ property must be appended to the `lfr-widget` tag like this:
     </lfr-widget-app-name>
 
 
-+$$$
-
-**NOTE:** According to the W3C HTML standards, custom elements cannot be self 
-closing. Therefore, even though you cannot add anything between the opening and
-closing `<lfr-widget...>` tags, you cannot use the self closing notation for 
-the tag.
-
-$$$
+| **NOTE:** According to the W3C HTML standards, custom elements cannot be self
+| closing. Therefore, even though you cannot add anything between the opening and
+| closing `<lfr-widget...>` tags, you cannot use the self closing notation for
+| the tag.
 
 Embedding widgets in Fragments opens a world of options. Now that you've
 explored some of the power of Fragments, next you'll learn about best practices

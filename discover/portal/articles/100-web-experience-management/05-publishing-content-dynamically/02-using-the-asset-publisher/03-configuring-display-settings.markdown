@@ -1,4 +1,8 @@
-# Configuring Display Settings [](id=configuring-display-settings)
+---
+header-id: configuring-display-settings
+---
+
+# Configuring Display Settings
 
 From the Asset Publisher's configuration page, open the Setup tab's *Display
 Settings* sub-tab. This section gives you precise control over the display of
@@ -27,7 +31,7 @@ are in every site by default:
 There's also the *Rich Summary* and *Map* display templates that belong to
 the global scope. The Rich Summary template provides a summary view of each
 asset along with a *Read More* link to the article's full content. The Map
-template displays [geo-localized assets](/discover/portal/-/knowledge_base/7-1/geolocating-assets)
+template displays [geo-localized assets](/docs/7-1/user/-/knowledge_base/u/geolocating-assets)
 in either a Google Map or an Open Street Map provider. The map provider can
 be configured in Instance Settings, and Site Settings in the Advanced
 section.
@@ -41,17 +45,13 @@ causes that asset to be displayed in the application where the asset belongs.
 For example, a blog entry is displayed in Blogs where it was created. See the
 section below on display pages for more information.
 
-+$$$
-
-**Tip:** When the Asset Publisher displays web content articles with an
-associated small image, the small image becomes a link to the full article. To
-use this feature, add or edit a web content article that the Asset Publisher
-should display. Before clicking *Publish*, click on *Abstracts*, flag *Small
-Image*, and upload an image. Then click *Publish*. Once your web content article
-appears in the Asset Publisher's list, clicking the small image takes you to the
-full article.
-
-$$$
+| **Tip:** When the Asset Publisher displays web content articles with an
+| associated small image, the small image becomes a link to the full article. To
+| use this feature, add or edit a web content article that the Asset Publisher
+| should display. Before clicking *Publish*, click on *Abstracts*, flag *Small
+| Image*, and upload an image. Then click *Publish*. Once your web content article
+| appears in the Asset Publisher's list, clicking the small image takes you to the
+| full article.
 
 **Number of Items to Display**: Select the maximum number of assets that can be
 displayed by the Asset Publisher. If pagination is enabled, this number
@@ -93,14 +93,10 @@ view of the asset. Enabling flags, related assets, ratings, comments, comment
 ratings, or social bookmarks add links to the corresponding social features to
 the view full of the asset in the Asset Publisher.
 
-+$$$
-
-**Tip:** An alternate way to add flags, comments, and ratings to a page is
-through the *Page Flags*, *Page Comments*, and *Page Ratings* applications. Just
-add the applications in the appropriate location near the asset that should have
-feedback.
-
-$$$
+| **Tip:** An alternate way to add flags, comments, and ratings to a page is
+| through the *Page Flags*, *Page Comments*, and *Page Ratings* applications. Just
+| add the applications in the appropriate location near the asset that should have
+| feedback.
 
 **Metadata:** Select various metadata types to be displayed (see below). For
 example, you can select tags and categories for display. Upon saving your

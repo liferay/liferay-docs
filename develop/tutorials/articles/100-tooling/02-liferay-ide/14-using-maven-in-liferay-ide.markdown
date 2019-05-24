@@ -1,4 +1,8 @@
-# Using Maven in Liferay Dev Studio [](id=using-maven-in-liferay-ide)
+---
+header-id: using-maven-in-liferay-ide
+---
+
+# Using Maven in Liferay Dev Studio
 
 You can take full advantage of Maven in Liferay Dev Studio with its built-in
 Maven support. In this tutorial, you'll learn about the following topics:
@@ -10,7 +14,7 @@ Maven support. In this tutorial, you'll learn about the following topics:
 
 First you'll install the necessary Maven plugins for Dev Studio.
 
-## Installing Maven Plugins for Liferay Dev Studio [](id=installing-maven-plugins-for-liferay-ide)
+## Installing Maven Plugins for Liferay Dev Studio
 
 In order to support Maven projects in Dev Studio properly, you first need a
 mechanism to recognize Maven projects as Dev Studio projects. Dev Studio
@@ -70,7 +74,7 @@ Awesome! Your Dev Studio is ready to develop Maven projects for @product@!
 
 You'll learn about creating Maven projects in Dev Studio next.
 
-## Creating Maven Projects [](id=creating-maven-projects)
+## Creating Maven Projects
 
 You can create a Maven project based on Liferay's provided Maven archetypes.
 
@@ -92,7 +96,7 @@ If you created your Maven project outside of Dev Studio with another tool, you
 can still manage that project in Dev Studio, but you must first import it.
 You'll learn how to do this next.
 
-## Importing Maven Projects [](id=importing-maven-projects)
+## Importing Maven Projects
 
 To import a pre-existing Maven project into Dev Studio, follow the steps
 outlined below:
@@ -113,7 +117,7 @@ outlined below:
 Now your Maven project is available from the Package Explorer. Next you'll learn
 about Dev Studio's POM graphical editor.
 
-### Using the POM Graphic Editor [](id=using-the-pom-graphic-editor)
+### Using the POM Graphic Editor
 
 You're provided a nifty POM graphic editor when opening your Maven project's
 `pom.xml` in Dev Studio. This gives you several different ways to leverage

@@ -1,4 +1,8 @@
-# Building a Responsive Site [](id=building-a-responsive-site)
+---
+header-id: building-a-responsive-site
+---
+
+# Building a Responsive Site
 
 Now more than half of all page views in the world come from mobile devices 
 like phones and tablets. That means that if your pages don't look good on 

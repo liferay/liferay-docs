@@ -1,4 +1,8 @@
-# Using Your Local Liferay Sync Folder [](id=using-your-local-liferay-sync-folder)
+---
+header-id: using-your-local-liferay-sync-folder
+---
+
+# Using Your Local Liferay Sync Folder
 
 Once you configure and run Sync, Sync automatically uploads to @product@ any
 files you add or modify in your Sync folder. Sync also downloads to your Sync
@@ -10,15 +14,11 @@ recovered from the instance's Recycle Bin, which is enabled by default. Note, if
 the administrator has disabled the Recycle Bin, recovering deleted files is
 impossible. 
 
-+$$$
-
-**Warning:** Deleting a file in your Sync folder also deletes it in the 
-@product@ instance and in other clients. If you accidentally delete a file, it 
-can be recovered from the instance's Recycle Bin. The Recycle Bin is enabled by 
-default. File recovery is, however, impossible if the instance or Site 
-administrator has disabled the Recycle Bin. 
-
-$$$
+| **Warning:** Deleting a file in your Sync folder also deletes it in the
+| @product@ instance and in other clients. If you accidentally delete a file, it
+| can be recovered from the instance's Recycle Bin. The Recycle Bin is enabled by
+| default. File recovery is, however, impossible if the instance or Site
+| administrator has disabled the Recycle Bin.
 
 You can run through the following exercise to familiarize yourself with how to
 create, edit, download, and upload files with Sync. First, open the Sync folder

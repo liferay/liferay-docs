@@ -1,4 +1,8 @@
-# Social Bookmark Template [](id=social-bookmark-template)
+---
+header-id: social-bookmark-template
+---
+
+# Social Bookmark Template
 
 In this article, you'll learn how to create a Liferay social bookmark as a
 Liferay module. To create a social bookmark as a module via the command line
@@ -77,7 +81,7 @@ bookmark named *Test* that searches the current URL using Google Search.
 To build upon the generated app, modify the project by adding logic and
 additional files to the folders outlined above. For more information on
 developing social bookmarks, see the
-[Social API](/develop/tutorials/-/knowledge_base/7-1/social-api) section of
+[Social API](/docs/7-1/tutorials/-/knowledge_base/t/social-api) section of
 tutorials. For information on configuring social bookmarks for the Blogs widget,
-see the [Displaying Blogs](/discover/portal/-/knowledge_base/7-1/displaying-blogs)
+see the [Displaying Blogs](/docs/7-1/user/-/knowledge_base/u/displaying-blogs)
 article.

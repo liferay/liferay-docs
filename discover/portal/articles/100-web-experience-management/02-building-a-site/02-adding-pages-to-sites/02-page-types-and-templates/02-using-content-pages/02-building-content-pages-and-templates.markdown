@@ -1,10 +1,14 @@
-# Building Content Pages from Fragments [](id=building-content-pages-from-fragments)
+---
+header-id: building-content-pages-from-fragments
+---
+
+# Building Content Pages from Fragments
 
 After Page Fragment collections are published, you are ready to create Page
 Templates.  A Page Template is composed of some number of Fragments---one or
 fifty; it doesn't matter.
 
-## Creating a Page Template [](id=creating-a-page-template)
+## Creating a Page Template
 
 You create Page Templates in the *Pages* page in Site Administration.
 
@@ -46,20 +50,16 @@ Media.
 
 ![Figure 3: When you mouse over an editable image, a blue outline appears. You can replace it by clicking on it.](../../../../../../images/edit-image-inline.png)
 
-+$$$
-
-Note: While creating Page Templates, you can change editable Fragments. While
-creating the final Content Page, you can make changes to the Page Template.
-Changes you make to the Fragment for a Page Template are only reflected in that
-Page Template, and don't affect the Fragment itself. Likewise, when you apply
-edits to the text or images of a Content Page, those changes only exist on the
-current page and not on the Page Template itself.
-
-$$$
+| Note: While creating Page Templates, you can change editable Fragments. While
+| creating the final Content Page, you can make changes to the Page Template.
+| Changes you make to the Fragment for a Page Template are only reflected in that
+| Page Template, and don't affect the Fragment itself. Likewise, when you apply
+| edits to the text or images of a Content Page, those changes only exist on the
+| current page and not on the Page Template itself.
 
 Click on the back arrow at the top to stop editing the template.
 
-## Creating a Content Page [](id=creating-a-content-page)
+## Creating a Content Page
 
 When you're finished creating a Page Template, you can use that template to
 create a Content Page. A Content Page is a page created from Fragments. Any
@@ -101,7 +101,7 @@ creation screen,
 By default, your new page is added to the Navigation Menu and users can access
 the page you created.
 
-## Propagation of Page Fragment Changes [](id=propagation-of-page-fragment-changes)
+## Propagation of Page Fragment Changes
 
 If you make an update to a Page Fragment or Content Page Templates it doesn't
 automatically propagate changes, but you can access the *Usages and Propagation*

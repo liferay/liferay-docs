@@ -1,4 +1,8 @@
-# Installing X-Pack [](id=installing-x-pack-0)
+---
+header-id: installing-x-pack-0
+---
+
+# Installing X-Pack
 
 Here are the X-Pack installation steps:
 

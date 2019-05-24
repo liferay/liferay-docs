@@ -1,4 +1,8 @@
-# Ensuring Liferay Sync Security [](id=ensuring-liferay-sync-security)
+---
+header-id: ensuring-liferay-sync-security
+---
+
+# Ensuring Liferay Sync Security
 
 As an administrator, you have a stake in the security of all connections to and
 from your servers. As long as @product@ is configured to use HTTPS, Sync clients
@@ -8,7 +12,7 @@ Sync mobile client and securely transmit files, your @product@ server must also
 use SSL. The next section demonstrates how Sync's permissions work with your
 @product@ instance's permissions. 
 
-## Liferay Sync Permissions Demonstration [](id=liferay-sync-permissions-demonstration)
+## Liferay Sync Permissions Demonstration
 
 Sync uses @product@'s default permissions to determine files and folders to sync
 with the user's devices. It can only sync files a user can access. After

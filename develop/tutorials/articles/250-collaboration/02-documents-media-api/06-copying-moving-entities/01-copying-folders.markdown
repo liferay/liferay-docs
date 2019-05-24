@@ -1,4 +1,8 @@
-# Copying Folders [](id=copying-folders)
+---
+header-id: copying-folders
+---
+
+# Copying Folders
 
 The Documents and Media API lets you copy folders within a repository. You 
 can't, however, copy a folder between different repositories. Also note that 
@@ -22,7 +26,7 @@ Follow these steps to use this method to copy a folder:
         private DLAppService _dlAppService;
 
     For more information on this, see the section on 
-    [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
+    [getting a service reference](/docs/7-1/tutorials/-/knowledge_base/t/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
     in the getting started tutorial. 
 
 2.  Get the data needed to populate the `copyFolder` method's arguments. How you 
@@ -54,10 +58,10 @@ Follow these steps to use this method to copy a folder:
                     DLFolder.class.getName(), actionRequest);
 
     For more information on getting repository and folder IDs, see the 
-    [getting started tutorial's](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api) 
+    [getting started tutorial's](/docs/7-1/tutorials/-/knowledge_base/t/getting-started-with-the-documents-and-media-api) 
     sections on specifying repositories and folders. For more information on 
     `ServiceContext`, see the tutorial 
-    [Understanding ServiceContext](/develop/tutorials/-/knowledge_base/7-1/understanding-servicecontext). 
+    [Understanding ServiceContext](/docs/7-1/tutorials/-/knowledge_base/t/understanding-servicecontext). 
 
 3.  Call the service reference's `copyFolder` method with the data from the 
     previous step. Note that this example uses the 
@@ -75,16 +79,16 @@ default Site repository, you would specify that repository's ID in place of the
 group ID. You could also specify a different destination folder, and/or change 
 the new folder's name and/or description. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Getting Started with the Documents and Media API](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api)
+[Getting Started with the Documents and Media API](/docs/7-1/tutorials/-/knowledge_base/t/getting-started-with-the-documents-and-media-api)
 
-[Understanding Service Context](/develop/tutorials/-/knowledge_base/7-1/understanding-servicecontext)
+[Understanding Service Context](/docs/7-1/tutorials/-/knowledge_base/t/understanding-servicecontext)
 
-[Creating Folders](/develop/tutorials/-/knowledge_base/7-1/creating-folders)
+[Creating Folders](/docs/7-1/tutorials/-/knowledge_base/t/creating-folders)
 
-[Updating Folders](/develop/tutorials/-/knowledge_base/7-1/updating-folders)
+[Updating Folders](/docs/7-1/tutorials/-/knowledge_base/t/updating-folders)
 
-[Deleting Folders](/develop/tutorials/-/knowledge_base/7-1/deleting-folders)
+[Deleting Folders](/docs/7-1/tutorials/-/knowledge_base/t/deleting-folders)
 
-[Moving Folders and Files](/develop/tutorials/-/knowledge_base/7-1/moving-folders-and-files)
+[Moving Folders and Files](/docs/7-1/tutorials/-/knowledge_base/t/moving-folders-and-files)

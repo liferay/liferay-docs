@@ -1,4 +1,8 @@
-# Facets [](id=facets)
+---
+header-id: facets
+---
+
+# Facets
 
 Enter a keyword in the Search Bar and click the Search button
 (![Search](../../../images/icon-search.png)). The default search experience
@@ -21,7 +25,7 @@ results that are Blogs Entries). So what facets are included by default?
 - **User Facet** for filtering results by the content creator.
 - **Modified Facet** for filtering results by the Last Modified Date.
 - **Custom Facet** for filtering results by some other indexed field. See
-    [here](/discover/portal/-/knowledge_base/7-1/custom-facet) 
+    [here](/docs/7-1/user/-/knowledge_base/u/custom-facet) 
     for more information.
 
 Each item in a facet (selected using the checkbox) is called a *Facet Term*
@@ -31,7 +35,7 @@ In this tutorial, you'll explore how facets and their terms are used and how to
 find a facet's configuration. The remaining articles show the configurations
 available for each facet.
 
-## Using Facets [](id=using-facets)
+## Using Facets
 
 If you're not actually an accomplished oboe player, pretend for a moment. You're
 visiting a site for classical musicians. You remember reading a great technical
@@ -53,7 +57,7 @@ facets.
 
 ![Figure 3: After clicking the *Web Content Article* type in the Asset Types facet, it's the only asset type listed.](../../../images/search-facet-wc.png).
 
-## Multiple Facet Selection [](id=multiple-facet-selection)
+## Multiple Facet Selection
 
 Facet term selections within one facet are additive. Clicking more terms in the
 same facet expands the search results, because it's processed as if you want to
@@ -84,14 +88,10 @@ or Web Content Articles created by other Users are obviously not searched.
 
 ![Figure 6: Both intra-facet and inter-facet selection is possible.](../../../images/search-facet-selections.png)
 
-+$$$
+| **Note:** The new Search Facet widgets support the multiple selection of facet
+| terms. Multiple facet selection is not supported in the classic Search portlet.
 
-**Note:** The new Search Facet widgets support the multiple selection of facet
-terms. Multiple facet selection is not supported in the classic Search portlet.
-
-$$$
-
-## Facets and Friendly URLs [](id=facets-and-friendly-urls)
+## Facets and Friendly URLs
 
 In the classic, monolithic Search portlet, URLs like this were not uncommon:
 

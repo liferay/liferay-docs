@@ -1,4 +1,8 @@
-# Publishing Files [](id=publishing-files-site)
+---
+header-id: publishing-files-site
+---
+
+# Publishing Files
 
 Once your Document Library contains files, you may want to publish them in your
 site. Here are some ways to publish files:
@@ -10,7 +14,7 @@ site. Here are some ways to publish files:
 
 Here, you'll learn to use the Media Gallery. 
 
-## Using the Media Gallery [](id=using-the-media-gallery)
+## Using the Media Gallery
 
 The Media Gallery publishes your media files in a simple gallery-like style. It
 shows a large thumbnail of each media file, lets the user download files, and
@@ -20,7 +24,7 @@ way, your media takes center stage.
 
 Follow these steps to create a page that contains a Media Gallery widget: 
 
-1.  [Create a page](/discover/portal/-/knowledge_base/7-1/creating-and-managing-pages) 
+1.  [Create a page](/docs/7-1/user/-/knowledge_base/u/creating-and-managing-pages) 
     and navigate to it in your site. 
 
 2.  At the top-right of the screen, click the *Add* icon
@@ -48,14 +52,10 @@ Follow these steps to create a page that contains a Media Gallery widget:
     that subfolder as the Media Gallery's root folder, the Media Gallery can 
     no longer access the parent folder. 
 
-    +$$$
-
-    **Note**: To access the Carousel display template in Media Gallery, your 
-    role must have View access for that template. Since the Carousel template is 
-    in the Global scope, a Global-scope administrator must grant the role 
-    permission to view the template. 
-
-    $$$
+    | **Note**: To access the Carousel display template in Media Gallery, your
+    | role must have View access for that template. Since the Carousel template is
+    | in the Global scope, a Global-scope administrator must grant the role
+    | permission to view the template.
 
     ![Figure 1: You can configure the Media Gallery to use any Documents and Media folder as its root folder.](../../../../images/dm-select-root-folder.png)
 

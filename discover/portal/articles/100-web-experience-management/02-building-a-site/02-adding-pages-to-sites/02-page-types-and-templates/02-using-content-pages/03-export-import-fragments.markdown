@@ -1,11 +1,15 @@
-# Exporting and Importing Fragments [](id=exporting-and-importing-fragments)
+---
+header-id: exporting-and-importing-fragments
+---
+
+# Exporting and Importing Fragments
 
 Often you'll want to reuse Fragments or re-purpose some of the code from
 Fragments in another Site or somewhere else altogether. Since all the content is
 plain text, copy/pasting your code would always be an option, but there's
 provides a much more elegant solution: exporting your Fragment Collections.
 
-## Exporting Fragments [](id=exporting-fragments)
+## Exporting Fragments
 
 There are two ways to export Fragments:
 
@@ -48,7 +52,7 @@ you must have an existing Collection to import them into.
 
 Now that you've done all this exporting, it's time to import it all back it.
 
-## Importing [](id=importing)
+## Importing
 
 There are a few options for importing fragments, depending on how you exported
 them. You can import a Collection that was created in @product@, a Collection
@@ -59,10 +63,10 @@ is to ensure that there are no errors in any imported fragments before they are
 added to a page.
 
 See 
-[Developing a Fragment Using Desktop Tools](/develop/tutorials/-/knowledge_base/7-1/recommendations-and-best-practices#developing-a-fragment-using-desktop-tools) for more information on 
+[Developing a Fragment Using Desktop Tools](/docs/7-1/tutorials/-/knowledge_base/t/recommendations-and-best-practices#developing-a-fragment-using-desktop-tools) for more information on 
 creating and importing Fragments using other tools.
 
-### Importing Collections [](id=importing-collections)
+### Importing Collections
 
 You can import collections that were exported from @product@ or that were
 created using other tools. To import a collection, follow these steps:
@@ -81,7 +85,7 @@ created using other tools. To import a collection, follow these steps:
  
 5.  Click *Import* and the collection is uploaded.
 
-### Importing Individual Page Fragments [](id=importing-individual-page-fragments)
+### Importing Individual Page Fragments
 
 You can also import a single Page Fragment or a set that was exported outside of
 a collection.

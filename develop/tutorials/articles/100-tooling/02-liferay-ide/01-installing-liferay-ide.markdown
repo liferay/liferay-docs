@@ -1,4 +1,8 @@
-# Installing Liferay @ide@ [](id=installing-liferay-ide)
+---
+header-id: installing-liferay-ide
+---
+
+# Installing Liferay @ide@
 
 Liferay @ide@ is a plugin for Eclipse that brings many Liferay-specific features
 to the table. You can install it into your existing Eclipse environment, or
@@ -18,7 +22,7 @@ With this particular upgrade, you should also deactivate the current available
 update sites in the *Window* &rarr; *Preferences* &rarr; *Install/Update* &rarr;
 *Available Software Sites* menu to ensure a successful upgrade (e.g., Oxygen).
 
-## Install the Dev Studio Bundle [](id=install-the-liferay-ide-bundle)
+## Install the Dev Studio Bundle
 
 1.  Download and install [Java](http://java.oracle.com). Liferay runs on Java,
     so you'll need it to run everything else. Because you'll be developing apps
@@ -33,15 +37,15 @@ update sites in the *Window* &rarr; *Preferences* &rarr; *Install/Update* &rarr;
     [Project SDK with @ide@](https://sourceforge.net/projects/lportal/files/Liferay%20IDE/)
     executable that correlates to your operating system. The Project SDK
     includes @ide@,
-    [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace),
-    and [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli).
+    [Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace),
+    and [Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/blade-cli).
 
 3.  Run the Project SDK executable and step through the installer to install
     everything to your machine. For help with setting up proxy settings (if
     necessary), see the
-    [Liferay IDE Proxy Settings](/develop/tutorials/-/knowledge_base/7-1/setting-proxy-requirements-for-liferay-ide)
+    [Liferay IDE Proxy Settings](/docs/7-1/tutorials/-/knowledge_base/t/setting-proxy-requirements-for-liferay-ide)
     and
-    [Liferay Workspace Proxy Settings](/develop/tutorials/-/knowledge_base/7-1/setting-proxy-requirements-for-liferay-workspace)
+    [Liferay Workspace Proxy Settings](/docs/7-1/tutorials/-/knowledge_base/t/setting-proxy-requirements-for-liferay-workspace)
     tutorials for more information.
 
 Congratulations! You've installed Liferay @ide@! It's now available in the
@@ -51,7 +55,7 @@ that same folder.
 
 Congratulations! You've installed Liferay Dev Studio! 
 
-## Install Dev Studio into Eclipse [](id=install-liferay-ide-into-eclipse)
+## Install Dev Studio into Eclipse
 
 If you already have an Eclipse environment that you're using for other
 things, it's easy to add Dev Studio to your existing Eclipse installation. 
@@ -71,7 +75,7 @@ things, it's easy to add Dev Studio to your existing Eclipse installation.
     installed. Like other Eclipse plugins you'll have to restart Eclipse to
     enable it. 
 
-## Install Dev Studio into Eclipse from a ZIP File [](id=install-liferay-ide-into-eclipse-from-a-zip-file)
+## Install Dev Studio into Eclipse from a ZIP File
 
 To install Liferay Dev Studio into Eclipse from a Zip file, follow these steps: 
 

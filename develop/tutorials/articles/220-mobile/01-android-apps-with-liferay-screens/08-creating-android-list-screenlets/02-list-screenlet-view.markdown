@@ -1,7 +1,11 @@
-# Creating the View [](id=creating-the-view)
+---
+header-id: creating-the-view
+---
+
+# Creating the View
 
 Recall from 
-[the basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-1/creating-the-ui) 
+[the basic Screenlet creation tutorial](/docs/7-1/tutorials/-/knowledge_base/t/creating-the-ui) 
 that a View defines a Screenlet's UI. To accommodate its list, a list 
 Screenlet's View is constructed a bit differently than that of a non-list 
 Screenlet. To create a List Screenlet's View, you'll create the following 
@@ -18,7 +22,7 @@ components:
 
 First, you'll create the row layout. 
 
-## Creating the Row Layout [](id=creating-the-row-layout)
+## Creating the Row Layout
 
 Before constructing the rest of the View, you should first define the layout to 
 use for each row in the list. For example, Bookmark List Screenlet needs to 
@@ -44,7 +48,7 @@ simple or complex as you need them to be to display your content.
 
 Next, you'll create the adapter class. 
 
-## Creating the Adapter Class [](id=creating-the-adapter-class)
+## Creating the Adapter Class
 
 [Android adapters](https://developer.android.com/guide/topics/ui/declaring-layout.html#AdapterViews) 
 fill a layout with content. In the example Bookmark List Screenlet, the layout 
@@ -111,11 +115,11 @@ method calls the view holder's `bind` method to set the bookmark's URL as the
 
 Great! Your adapter class is finished. Next, you'll create the View class. 
 
-## Creating the View Class [](id=creating-the-view-class)
+## Creating the View Class
 
 Now that your adapter exists, you can create your list Screenlet's View class. 
 Recall from 
-[the basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-1/creating-the-ui) 
+[the basic Screenlet creation tutorial](/docs/7-1/tutorials/-/knowledge_base/t/creating-the-ui) 
 that the View class is the central hub of any Screenlet's UI. It renders the UI, 
 handles user interactions, and communicates with the Screenlet class. The list 
 Screenlet framework provides most of this functionality for you via 
@@ -173,7 +177,7 @@ returning the row layout `bookmark_row`:
 
 Next, you'll create your View's main layout. 
 
-## Creating the View's Main Layout [](id=creating-the-views-main-layout)
+## Creating the View's Main Layout
 
 Although you already created a layout for your list rows, you must still create 
 a layout to define the list as a whole. This layout must contain: 
@@ -210,21 +214,17 @@ list Screenlets. For example, here's Bookmark List Screenlet's layout
             android:visibility="gone"/>
     </com.liferay.mobile.screens.listbookmark.BookmarkListView>
 
-+$$$
-
-**Warning:** The `android:id` values in your View's layout XML must **exactly** 
-match the ones shown here. These values are hardcoded into the Screens framework 
-and changing them will cause your app to crash. 
-
-$$$
+| **Warning:** The `android:id` values in your View's layout XML must **exactly**
+| match the ones shown here. These values are hardcoded into the Screens framework
+| and changing them will cause your app to crash.
 
 Great job! Your View is finished. Next, you'll create your Screenlet's 
 Interactor. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating the Model Class](/develop/tutorials/-/knowledge_base/7-1/creating-the-model-class)
+[Creating the Model Class](/docs/7-1/tutorials/-/knowledge_base/t/creating-the-model-class)
 
-[Creating the Interactor](/develop/tutorials/-/knowledge_base/7-1/creating-the-interactor-0)
+[Creating the Interactor](/docs/7-1/tutorials/-/knowledge_base/t/creating-the-interactor-0)
 
-[Creating the Screenlet Class](/develop/tutorials/-/knowledge_base/7-1/creating-the-screenlet-class-0)
+[Creating the Screenlet Class](/docs/7-1/tutorials/-/knowledge_base/t/creating-the-screenlet-class-0)

@@ -1,4 +1,8 @@
-# Adding a Button to a Styles Toolbar [](id=adding-a-button-to-a-styles-toolbar)
+---
+header-id: adding-a-button-to-a-styles-toolbar
+---
+
+# Adding a Button to a Styles Toolbar
 
 A Styles Toolbar appears when content is selected or highlighted in AlloyEditor. 
 There are five Styles toolbars to choose from:
@@ -44,7 +48,7 @@ Follow these steps to add a button to one of the Styles toolbars:
     `clipboard` plugin's `Copy`, `Cut`, and `Paste` buttons to the `text` 
     selection toolbar. Note that buttons are case sensitive and may be aliased 
     or not match the name of the plugin. Search the plugin's 
-    [`plugin.js` file](/develop/reference/-/knowledge_base/7-1/ckeditor-plugin-reference-guide) 
+    [`plugin.js` file](/docs/7-1/reference/-/knowledge_base/r/ckeditor-plugin-reference-guide) 
     for `editor.ui.addButton` to find the button's name:
 
         for (int i = 0; i < selectionsJSONArray.length(); i++) {
@@ -60,7 +64,7 @@ Follow these steps to add a button to one of the Styles toolbars:
         }
 
     The example above adds one of the 
-    [CKEditor plugins bundled with @product@'s AlloyEditor](/develop/reference/-/knowledge_base/7-1/ckeditor-plugin-reference-guide). 
+    [CKEditor plugins bundled with @product@'s AlloyEditor](/docs/7-1/reference/-/knowledge_base/r/ckeditor-plugin-reference-guide). 
     There are also several buttons available by default with the AlloyEditor,
     but they are not all enabled. The full list of existing buttons you can add
     to the Styles toolbars is shown in the table below, ordered by Toolbar:
@@ -102,7 +106,7 @@ Follow these steps to add a button to one of the Styles toolbars:
 
         jsonObject.put("toolbars", toolbarsJSONObject);
 
-5.  [Deploy your module](/develop/tutorials/-/knowledge_base/7-1/deploying-projects-with-blade-cli) 
+5.  [Deploy your module](/docs/7-1/tutorials/-/knowledge_base/t/deploying-projects-with-blade-cli) 
     and create a new piece of content that uses the AlloyEditor---such as a blog 
     entry or web content article---to see your new configuration in action!
 
@@ -111,8 +115,8 @@ in the figure below:
 
 ![Figure 6: The Updated text styles toolbar lets you copy, cut, and paste text in the editor.](../../../../images/alloyeditor-updated-styles-toolbar.png)
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Adding a Button to the Add Toolbar](/develop/tutorials/-/knowledge_base/7-1/adding-a-button-to-the-add-toolbar)
+[Adding a Button to the Add Toolbar](/docs/7-1/tutorials/-/knowledge_base/t/adding-a-button-to-the-add-toolbar)
 
-[CKEditor Plugin Reference Guide](/develop/reference/-/knowledge_base/7-1/ckeditor-plugin-reference-guide)
+[CKEditor Plugin Reference Guide](/docs/7-1/reference/-/knowledge_base/r/ckeditor-plugin-reference-guide)

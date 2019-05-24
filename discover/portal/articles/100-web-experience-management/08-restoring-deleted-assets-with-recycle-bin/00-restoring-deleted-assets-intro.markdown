@@ -1,4 +1,8 @@
-# Restoring Deleted Assets [](id=restoring-deleted-assets)
+---
+header-id: restoring-deleted-assets
+---
+
+# Restoring Deleted Assets
 
 Have you ever had that life-altering experience where you deleted an important
 file and immediately regretted deleting it? The deed is usually followed by a

@@ -1,4 +1,8 @@
-# Asset Framework [](id=asset-framework)
+---
+header-id: asset-framework
+---
+
+# Asset Framework
 
 The asset framework powers the core Liferay features so you can add them to your
 application. For example, if you build an event management application that
@@ -14,7 +18,7 @@ to generate your persistence layer, that you've implemented permissions on the
 entities that you're persisting, and that you've enabled them for search and
 indexing. You can learn more about Liferay's Service Builder and how to use it
 in the
-[Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder)
+[Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/service-builder)
 tutorial section.
 
 The tutorials that follow in this section explore how to leverage the asset
@@ -36,10 +40,10 @@ deleted. The next tutorial covers that. From that point onward, each tutorial
 shows you how to leverage a particular asset framework feature in your UI.
 It's time to start your asset framework training!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[What is Service Builder](/develop/tutorials/-/knowledge_base/7-1/what-is-service-builder)
+[What is Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/what-is-service-builder)
 
-[Service Builder Persistence](/develop/tutorials/-/knowledge_base/7-1/service-builder-persistence)
+[Service Builder Persistence](/docs/7-1/tutorials/-/knowledge_base/t/service-builder-persistence)
 
-[Configurable Applications](/develop/tutorials/-/knowledge_base/7-1/configurable-applications)
+[Configurable Applications](/docs/7-1/tutorials/-/knowledge_base/t/configurable-applications)

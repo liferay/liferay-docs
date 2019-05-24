@@ -1,7 +1,11 @@
-# Using ES2015 Modules in your Portlet [](id=using-esplus-modules-in-your-portlet)
+---
+header-id: using-esplus-modules-in-your-portlet
+---
+
+# Using ES2015 Modules in your Portlet
 
 Once you've 
-[exposed your modules](/develop/tutorials/-/knowledge_base/7-1/preparing-your-javascript-files-for-esplus) 
+[exposed your modules](/docs/7-1/tutorials/-/knowledge_base/t/preparing-your-javascript-files-for-esplus) 
 via your `package.json` file, you can use them in your portlets. The 
 `aui:script` tag's `require` attribute makes it easy.
 
@@ -42,8 +46,8 @@ the steps below to use your exposed modules in your portlets.
 Thanks to the `aui:script` tag and its `require` attribute, using your modules
 in your portlet is a piece of cake!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Customizing JSPs](/develop/tutorials/-/knowledge_base/7-1/customizing-jsps)
+[Customizing JSPs](/docs/7-1/tutorials/-/knowledge_base/t/customizing-jsps)
 
-[Web Services](/develop/tutorials/-/knowledge_base/7-1/web-services)
+[Web Services](/docs/7-1/tutorials/-/knowledge_base/t/web-services)

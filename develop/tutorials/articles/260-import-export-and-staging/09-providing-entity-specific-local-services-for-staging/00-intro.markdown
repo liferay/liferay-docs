@@ -1,4 +1,8 @@
-# Providing Entity-Specific Local Services for Staging [](id=providing-entity-specific-local-services-for-staging)
+---
+header-id: providing-entity-specific-local-services-for-staging
+---
+
+# Providing Entity-Specific Local Services for Staging
 
 When creating your data handlers, you must leverage your app's local services to
 perform Staging-related tasks for its entities. When the Staging framework
@@ -26,7 +30,7 @@ only provides an additional layer that provides Staging-specific functionality.
 So how does this work? A brief Staging process is outlined below:
 
 - `*StagedModelDataHandler` de-serializes the provided
-  [LAR file's](/develop/tutorials/-/knowledge_base/7-1/understanding-data-handlers#liferay-archive-lar-file)
+  [LAR file's](/docs/7-1/tutorials/-/knowledge_base/t/understanding-data-handlers#liferay-archive-lar-file)
   XML into a model.
 - `*StagedModelRepository` updates the model based on the environment and
   business logic, providing entity-specific CRUD operations for Staging purposes

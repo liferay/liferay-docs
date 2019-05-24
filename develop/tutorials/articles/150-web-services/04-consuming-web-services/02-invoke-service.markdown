@@ -1,7 +1,11 @@
-# Get Started: Invoke a Service [](id=get-started-invoke-a-service)
+---
+header-id: get-started-invoke-a-service
+---
+
+# Get Started: Invoke a Service
 
 Once you identify the resource you want via the 
-[API's root entry point](/develop/tutorials/-/knowledge_base/7-1/get-started-discover-the-api), 
+[API's root entry point](/docs/7-1/tutorials/-/knowledge_base/t/get-started-discover-the-api), 
 you can access that resource's URL. Suppose you want to manage organizations. If
 you first send a request to the API's home URL, it returns these resources: 
 
@@ -71,7 +75,7 @@ The attributes in this response contain information about the resource:
     large data sets, returning a subset of items is typically more efficient. In
     this example, the number is `0` because the collection is empty. 
 -   `view`: The 
-    [pagination](/develop/tutorials/-/knowledge_base/7-1/pagination) 
+    [pagination](/docs/7-1/tutorials/-/knowledge_base/t/pagination) 
     info. Collections are paginated. The `totalItems` are paginated into 
     `numberOfItems`. The `view` attribute contains the following URLs for the 
     pages: 
@@ -103,7 +107,7 @@ The `Content-Type` header's value is the JSON-LD MIME type's
     Transfer-Encoding: chunked
 
 The API's consumer can select other hypermedia formats to use. The 
-[content negotiation tutorial](/develop/tutorials/-/knowledge_base/7-1/hypermedia-formats-and-content-negotiation) 
+[content negotiation tutorial](/docs/7-1/tutorials/-/knowledge_base/t/hypermedia-formats-and-content-negotiation) 
 discusses this further. 
 
 Note that all the web APIs in @product@ are secured. When you make
@@ -113,8 +117,8 @@ view. Unauthenticated requests access the API as a generic guest user, and
 therefore retrieve only public items. Next, you'll learn how to make
 authenticated requests. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Get Started: Discover the API](/develop/tutorials/-/knowledge_base/7-1/get-started-discover-the-api)
+[Get Started: Discover the API](/docs/7-1/tutorials/-/knowledge_base/t/get-started-discover-the-api)
 
-[Navigating Between Related Resources](/develop/tutorials/-/knowledge_base/7-1/navigating-between-related-resources)
+[Navigating Between Related Resources](/docs/7-1/tutorials/-/knowledge_base/t/navigating-between-related-resources)

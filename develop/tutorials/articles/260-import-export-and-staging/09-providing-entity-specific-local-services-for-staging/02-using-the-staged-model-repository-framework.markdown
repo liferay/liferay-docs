@@ -1,7 +1,11 @@
-# Using the Staged Model Repository Framework [](id=using-the-staged-model-repository-framework)
+---
+header-id: using-the-staged-model-repository-framework
+---
+
+# Using the Staged Model Repository Framework
 
 Leveraging the Staged Model Repository framework in your app is easy once you've
-[created staged model repository implementation classes](/develop/tutorials/-/knowledge_base/7-1/implementing-the-staged-model-repository-framework).
+[created staged model repository implementation classes](/docs/7-1/tutorials/-/knowledge_base/t/implementing-the-staged-model-repository-framework).
 
 You'll step through a quick example to demonstrate leveraging the
 `StagedModelRepository` interface in a staged model data handler. The code
@@ -32,7 +36,7 @@ snippets originate from Liferay's Bookmarks app and Bookmarks Entries.
     setter method's `@Reference` annotation. This injects the component service
     of the `BookmarksEntryStagedModelRepository` into the
     `_stagedModelRepository` object. The component service was created in the
-    [Implementing the Staged Model Repository Framework](/develop/tutorials/-/knowledge_base/7-1/implementing-the-staged-model-repository-framework)
+    [Implementing the Staged Model Repository Framework](/docs/7-1/tutorials/-/knowledge_base/t/implementing-the-staged-model-repository-framework)
     tutorial when setting the `@Component` annotation for the staged model
     repository.
 

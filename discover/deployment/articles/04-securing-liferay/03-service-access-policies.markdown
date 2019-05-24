@@ -1,4 +1,8 @@
-# Service Access Policies [](id=service-access-policies)
+---
+header-id: service-access-policies
+---
+
+# Service Access Policies
 
 *Service access policies* are an additional layer of web service security that
 define which services or service methods can be invoked remotely. As such, they
@@ -42,7 +46,7 @@ mobile devices or Liferay Sync instances must access web services.
 Administrators can use service access policies to ensure that these devices can
 only invoke remote services from approved lists that can be modified at runtime.
 
-## Managing Service Access Policies [](id=managing-service-access-policies)
+## Managing Service Access Policies
 
 Navigate to the Control Panel and click on *Service Access Policy* under the
 Configuration heading. Here, you can see the default service access policies and
@@ -149,7 +153,7 @@ servlet and use the property `service.access.policy.name` for the
 `TunnelingServletAuthVerifier` to specify that your policy should be used
 instead.
 
-## Service Access Policy Module [](id=service-access-policy-module)
+## Service Access Policy Module
 
 Liferay's service access policy functionality is provided by the Service Access
 Policy module. This module includes the following important classes:
@@ -185,14 +189,14 @@ service access policy module is disabled, however, the
 `AuthenticatedAccessControlPolicy` provides a fallback that still requires
 authenticated access for web services.
 
-## Summary [](id=summary)
+## Summary
 
 Great! Now you know service access policies can restrict access to @product@'s web
 services. Custom service access policies can be created by portal
 administrators. They are applied by the portal's token authenticator, e.g., by
 OAuth.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating Service Access Policies](/develop/tutorials/-/knowledge_base/7-0/service-access-policies) 
+[Creating Service Access Policies](/docs/7-0/tutorials/-/knowledge_base/t/service-access-policies) 
 

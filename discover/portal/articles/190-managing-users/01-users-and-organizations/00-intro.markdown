@@ -1,4 +1,8 @@
-# Users and Organizations [](id=users-and-organizations)
+---
+header-id: users-and-organizations
+---
+
+# Users and Organizations
 
 *Users* and *Organizations* are fundamental entities. If your portal requires
 people (even just a set of site administrators) to have accounts to do anything,
@@ -24,7 +28,7 @@ Consider the Lunar Resort portal. Consider what you'd do if
 The user tasks listed above are all resolved in the Users and Organizations
 section of the Control Panel.
 
-## What are Users? [](id=what-are-users)
+## What are Users?
 
 In case there's any confusion over the term, a User is an entity that can sign
 into the portal and do something. Generally a User has more privileges, called
@@ -34,7 +38,7 @@ Roles, and Roles define the User's privileges.
 Understanding Users is pretty straightforward. Organizations are a bit trickier,
 but a smart administrator like you is undoubtedly up to the challenge. Read more
 about Organizations
-[here](/discover/portal/-/knowledge_base/7-1/organizations).
+[here](/docs/7-1/user/-/knowledge_base/u/organizations).
 
 The remaining articles in this section give you guidance on managing (creating,
 deleting, editing, and more) Users and Organizations.

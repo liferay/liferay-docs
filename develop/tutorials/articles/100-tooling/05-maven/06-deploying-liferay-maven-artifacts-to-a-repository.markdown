@@ -1,10 +1,14 @@
-# Deploying Liferay Maven Artifacts to a Repository [](id=deploying-liferay-maven-artifacts-to-a-repository)
+---
+header-id: deploying-liferay-maven-artifacts-to-a-repository
+---
+
+# Deploying Liferay Maven Artifacts to a Repository
 
 Deploying artifacts to a remote repository is important if you intend to share
 your Maven projects with others. First, you must have a remote repository that
 can hold deployed Maven artifacts. If you do not currently have a remote
 repository, see the
-[Creating a Maven Repository](/develop/tutorials/-/knowledge_base/7-1/creating-a-maven-repository)
+[Creating a Maven Repository](/docs/7-1/tutorials/-/knowledge_base/t/creating-a-maven-repository)
 tutorial to learn how you can set up a Nexus repository. Also make sure your
 `[USER_HOME]/.m2/settings.xml` file specifies your remote repository's ID,
 user name, and password.
@@ -68,7 +72,7 @@ Zip.
     all module projects residing in the parent folder. You should include the
     repository's ID and URL. The above `distributionManagement` declaration is
     configured for the Liferay Nexus repository created in the
-    [Creating a Maven Repository](/develop/tutorials/-/knowledge_base/7-1/creating-a-maven-repository)
+    [Creating a Maven Repository](/docs/7-1/tutorials/-/knowledge_base/t/creating-a-maven-repository)
     tutorial. That tutorial also created the `[USER_HOME]/.m2/settings.xml`,
     which specified the remote repository's ID, user name, and password. Both
     the parent POM and `settings.xml` file's repository declarations are

@@ -1,4 +1,8 @@
-# Building Your Application's Module JARs for Deployment [](id=building-your-module-jars-for-deployment)
+---
+header-id: building-your-module-jars-for-deployment
+---
+
+# Building Your Application's Module JARs for Deployment
 
 Now it's time to build and deploy your modules. To build your project, run
 `gradlew build` from your application project's root folder.
@@ -7,16 +11,12 @@ Now check all of your modules' `/build/libs` folders. There should be a newly
 generated JAR file in each, which is the file to deploy. You can deploy each JAR
 by running `blade deploy` from each module's root folder.
 
-+$$$
-
-**Note:** If you deploy your modules out of order, you might receive error
-messages. For instance, if you try deploying your web client module first,
-errors occur if it relies on the service implementation and service
-API modules. Once each module's dependencies are met, they deploy in Liferay. 
-[Felix Gogo Shell commands](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell)
-let you check module dependencies.
-
-$$$
+| **Note:** If you deploy your modules out of order, you might receive error
+| messages. For instance, if you try deploying your web client module first,
+| errors occur if it relies on the service implementation and service
+| API modules. Once each module's dependencies are met, they deploy in Liferay.
+| [Felix Gogo Shell commands](/docs/7-1/reference/-/knowledge_base/r/using-the-felix-gogo-shell)
+| let you check module dependencies.
 
 Once you've successfully deployed your modules, you can list them from the Gogo
 shell as shown below.
@@ -40,6 +40,6 @@ Great job!
 
 **Related Topics**
 
-[Portlets](/develop/tutorials/-/knowledge_base/7-1/portlets)
+[Portlets](/docs/7-1/tutorials/-/knowledge_base/t/portlets)
 
-[Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder)
+[Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/service-builder)

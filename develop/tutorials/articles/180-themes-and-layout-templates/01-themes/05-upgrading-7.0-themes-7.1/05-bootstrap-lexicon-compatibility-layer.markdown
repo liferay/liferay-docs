@@ -1,4 +1,8 @@
-# Using the Bootstrap 3 Lexicon CSS Compatibility Layer [](id=using-the-bootstrap-3-lexicon-css-compatibility-layer)
+---
+header-id: using-the-bootstrap-3-lexicon-css-compatibility-layer
+---
+
+# Using the Bootstrap 3 Lexicon CSS Compatibility Layer
 
 By default, @product@ includes Bootstrap 4 out-of-the-box. Bootstrap 4 has been 
 completely rewritten and therefore includes some 
@@ -12,16 +16,12 @@ alongside the new Bootstrap 4 and Clay CSS. If your theme extends the
 [Styled base theme](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/frontend-theme/frontend-theme-styled), 
 this compatibility layer is included by default. 
 
-+$$$
-
-**Note:** This compatibility layer is meant as a short-term solution to ensure 
-that your Bootstrap 3 and Lexicon CSS components aren't broken while you update 
-your theme to use 
-[Bootstrap 4](https://getbootstrap.com/docs/4.0/migration/) 
-and 
-[Clay CSS](https://ui-migration.liferay.com/docs/lexicon/add_menu.html).
-
-$$$
+| **Note:** This compatibility layer is meant as a short-term solution to ensure
+| that your Bootstrap 3 and Lexicon CSS components aren't broken while you update
+| your theme to use
+| [Bootstrap 4](https://getbootstrap.com/docs/4.0/migration/)
+| and
+| [Clay CSS](https://ui-migration.liferay.com/docs/lexicon/add_menu.html).
  
 Follow these guidelines to update your markup:
 
@@ -79,14 +79,10 @@ Follow these guidelines to update your markup:
         $compat-alerts: false !default;
         $compat-cards: false !default;
 
-    +$$$
-
-    **Note:** Some @product@ components haven't been migrated to Bootstrap 4. 
-    Disabling certain components might cause portions of the UI to break. 
-    Therefore, after upgrading your markup, we recommend that you re-enable any 
-    components you disable. Proceed with caution. 
-
-    $$$
+    | **Note:** Some @product@ components haven't been migrated to Bootstrap 4.
+    | Disabling certain components might cause portions of the UI to break.
+    | Therefore, after upgrading your markup, we recommend that you re-enable any
+    | components you disable. Proceed with caution.
 
 3.  Update your markup to Bootstrap 4 and Clay CSS until you're satisfied with 
     the result.
@@ -98,8 +94,8 @@ Follow these guidelines to update your markup:
 Now you know how to use the Bootstrap 3 and Lexicon CSS compatibility layer to 
 provide a smooth transition during your theme upgrade. 
     
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Updating CSS Code](/develop/tutorials/-/knowledge_base/7-1/updating-css-code)
+[Updating CSS Code](/docs/7-1/tutorials/-/knowledge_base/t/updating-css-code)
 
-[Updating Project Metadata](/develop/tutorials/-/knowledge_base/7-1/updating-project-metadata)
+[Updating Project Metadata](/docs/7-1/tutorials/-/knowledge_base/t/updating-project-metadata)

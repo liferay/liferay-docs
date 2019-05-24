@@ -1,7 +1,11 @@
-# Deleting Folders [](id=deleting-folders)
+---
+header-id: deleting-folders
+---
+
+# Deleting Folders
 
 Deleting folders is similar to 
-[deleting files](/develop/tutorials/-/knowledge_base/7-1/deleting-files). 
+[deleting files](/docs/7-1/tutorials/-/knowledge_base/t/deleting-files). 
 There are two methods you can use to delete a folder. Click each method to see 
 its Javadoc: 
 
@@ -18,7 +22,7 @@ steps to use one of these methods to delete a folder:
         private DLAppService _dlAppService;
 
     For more information on this, see the section on 
-    [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
+    [getting a service reference](/docs/7-1/tutorials/-/knowledge_base/t/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
     in the getting started tutorial. 
 
 2.  Get the data needed to populate the arguments of the `deleteFolder*` method 
@@ -35,7 +39,7 @@ steps to use one of these methods to delete a folder:
     If you want to use the other `deleteFolder` method, you can also get the 
     repository ID, parent folder ID, and folder name from the request. For more 
     information on getting repository and folder IDs, see the 
-    [getting started tutorial's](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api) 
+    [getting started tutorial's](/docs/7-1/tutorials/-/knowledge_base/t/getting-started-with-the-documents-and-media-api) 
     sections on specifying repositories and folders. 
 
 3.  Call the service reference's `deleteFolder*` method you wish to use with the 
@@ -53,16 +57,16 @@ class. This class uses the Documents and Media API to implement almost all the
 contains additional logic to suit the specific needs of the Documents and Media 
 app. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Moving Entities to the Recycle Bin](/develop/tutorials/-/knowledge_base/7-1/moving-entities-to-the-recycle-bin)
+[Moving Entities to the Recycle Bin](/docs/7-1/tutorials/-/knowledge_base/t/moving-entities-to-the-recycle-bin)
 
-[Creating Folders](/develop/tutorials/-/knowledge_base/7-1/creating-folders)
+[Creating Folders](/docs/7-1/tutorials/-/knowledge_base/t/creating-folders)
 
-[Updating Folders](/develop/tutorials/-/knowledge_base/7-1/updating-folders)
+[Updating Folders](/docs/7-1/tutorials/-/knowledge_base/t/updating-folders)
 
-[Copying Folders](/develop/tutorials/-/knowledge_base/7-1/copying-folders)
+[Copying Folders](/docs/7-1/tutorials/-/knowledge_base/t/copying-folders)
 
-[Moving Folders and Files](/develop/tutorials/-/knowledge_base/7-1/moving-folders-and-files)
+[Moving Folders and Files](/docs/7-1/tutorials/-/knowledge_base/t/moving-folders-and-files)
 
-[Deleting Files](/develop/tutorials/-/knowledge_base/7-1/deleting-files)
+[Deleting Files](/docs/7-1/tutorials/-/knowledge_base/t/deleting-files)

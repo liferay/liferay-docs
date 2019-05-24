@@ -1,10 +1,14 @@
-# Registering Permissions [](id=registering-permissions)
+---
+header-id: registering-permissions
+---
+
+# Registering Permissions
 
 Defining permissions was your first step; now you're ready to register the
 permissions you've defined. You must register your entities both in the database
 and in the permissions service running in the OSGi container. 
 
-## Registering Permissions Resources in the Database [](id=registering-permissions-resources-in-the-database)
+## Registering Permissions Resources in the Database
 
 All this takes is a call to Liferay's resource service in your service layer. If
 you're using Service Builder, this is very easy to do. 
@@ -35,7 +39,7 @@ Builder-generated service.
 If you're not using Service Builder, but you are using OSGi modules for your
 application, you should be able to inject the resource service with an
 `@Reference` annotation. If you're building a WAR-style plugin, you need
-a [service tracker](/develop/tutorials/-/knowledge_base/7-1/service-trackers) to
+a [service tracker](/docs/7-1/tutorials/-/knowledge_base/t/service-trackers) to
 gain access to the service. Note that your model classes must also implement
 Liferay's `ClassedModel` interface. 
 
@@ -56,7 +60,7 @@ deleting them.
 
 Now you're ready to register your entities with the permissions service. 
 
-## Registering Entities to the Permissions Service [](id=registering-entities-to-the-permissions-service)
+## Registering Entities to the Permissions Service
 
 The permissions service that's running must know about your entities and how to
 check permissions for them. This requires creating a permissions registrar

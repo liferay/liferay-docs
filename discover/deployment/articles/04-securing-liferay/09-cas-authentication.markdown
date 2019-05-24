@@ -1,15 +1,15 @@
-# CAS (Central Authentication Service) Single Sign On Authentication [](id=cas-central-authentication-service-single-sign-on-authentication)
+---
+header-id: cas-central-authentication-service-single-sign-on-authentication
+---
+
+# CAS (Central Authentication Service) Single Sign On Authentication
 
 CAS is an authentication system originally created at Yale University. It is a
 widely used open source single sign-on solution and was the first SSO product to
 be supported by @product@. @product@'s CAS module includes the CAS client, so
 there's no need to install it separately.
 
-+$$$
-
-**Note:** @product@ supports CAS 3.3.x. 
-
-$$$
+| **Note:** @product@ supports CAS 3.3.x.
 
 The CAS Server application requires your server to have a properly configured
 Secure Socket Layer (SSL) certificate. To generate one yourself, use the

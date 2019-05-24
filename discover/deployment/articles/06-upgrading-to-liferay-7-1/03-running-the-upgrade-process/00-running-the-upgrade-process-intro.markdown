@@ -1,4 +1,8 @@
-# Running the Upgrade Process [](id=running-the-upgrade-process)
+---
+header-id: running-the-upgrade-process
+---
+
+# Running the Upgrade Process
 
 Now you're ready to run the upgrade process. It updates the database schema for
 the core and your installed modules. Verification processes test the upgrade.
@@ -8,12 +12,12 @@ manually too.
 Here are the ways to run upgrade processes:
 
 -   **Upgrade everything in one shot**:
-    [Use the upgrade tool](/discover/deployment/-/knowledge_base/7-1/running-the-upgrade) to upgrade the core and all the
+    [Use the upgrade tool](/docs/7-1/deploy/-/knowledge_base/d/running-the-upgrade) to upgrade the core and all the
     modules. 
 
 -   **Upgrade the core and the modules separately**:
-    [Use the upgrade tool](/discover/deployment/-/knowledge_base/7-1/running-the-upgrade) (recommended) or
-    [Gogo shell](/discover/deployment/-/knowledge_base/7-1/gogo-shell-commands-for-module-upgrades) to upgrade the core. Then use Gogo shell to upgrade each module. 
+    [Use the upgrade tool](/docs/7-1/deploy/-/knowledge_base/d/running-the-upgrade) (recommended) or
+    [Gogo shell](/docs/7-1/deploy/-/knowledge_base/d/gogo-shell-commands-for-module-upgrades) to upgrade the core. Then use Gogo shell to upgrade each module. 
 
 If you are upgrading from Liferay Portal 6.2 or earlier, it's recommended to use
 the upgrade tool to upgrade everything. It's the easiest, most comprehensive
@@ -30,4 +34,4 @@ the database schema micro version changes---you can execute micro version
 changes when you want, even outside of a major or minor version upgrade. Before
 using the upgrade tool to execute a fix pack's micro upgrade process, however,
 you must shut down the server, install the fix pack, and 
-[back up the @product@ database, installation, and Document Library store](/discover/deployment/-/knowledge_base/7-1/backing-up-a-liferay-installation). 
+[back up the @product@ database, installation, and Document Library store](/docs/7-1/deploy/-/knowledge_base/d/backing-up-a-liferay-installation). 

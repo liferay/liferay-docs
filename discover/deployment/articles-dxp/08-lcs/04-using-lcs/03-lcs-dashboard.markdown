@@ -1,4 +1,8 @@
-# Using the Dashboard [](id=using-the-dashboard)
+---
+header-id: using-the-dashboard
+---
+
+# Using the Dashboard
 
 The LCS Dashboard shows a project's environments and servers. If you're not
 already at the Dashboard, click it near the upper left-hand corner of your LCS
@@ -7,7 +11,7 @@ get to the environment view and the server view. Each of these views gives you
 a different look into certain aspects of your LCS project. You'll start with the
 project view. 
 
-## Using the Project View [](id=using-the-project-view)
+## Using the Project View
 
 You can get to the project view at any time by clicking the *Dashboard* tab near
 the upper left-hand corner of your LCS site. The project appears to the right of

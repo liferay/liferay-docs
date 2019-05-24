@@ -1,4 +1,8 @@
-# Liferay JS Generator [](id=js-generator)
+---
+header-id: js-generator
+---
+
+# Liferay JS Generator
 
 This reference section covers these topics for the 
 [Liferay JS Generator](installing-the-bundle-generator-and-generating-a-bundle):

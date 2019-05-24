@@ -1,4 +1,8 @@
-# Using the Export/Import Lifecycle Listener Framework [](id=using-the-export-import-lifecycle-listener-framework)
+---
+header-id: using-the-export-import-lifecycle-listener-framework
+---
+
+# Using the Export/Import Lifecycle Listener Framework
 
 The `ExportImportLifecycleListener` framework lets developers write code that
 listens for certain staging or export/import events during the publication
@@ -40,12 +44,12 @@ In this tutorial, you'll learn how to use the `ExportImportLifecycleListener`
 framework to listen for processes/events during the staging and export/import
 lifecycles.
 
-## Listening to Lifecycle Events [](id=listening-to-lifecycle-events)
+## Listening to Lifecycle Events
 
 To begin creating your lifecycle listener, you must create a module. Follow the
 steps below:
 
-1.  [Create an OSGi module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#creating-a-module). 
+1.  [Create an OSGi module](/docs/7-1/tutorials/-/knowledge_base/t/starting-module-development#creating-a-module). 
 
 2.  Create a unique package name in the module's `src` directory and create a
     new Java class in that package. To follow naming conventions, begin the

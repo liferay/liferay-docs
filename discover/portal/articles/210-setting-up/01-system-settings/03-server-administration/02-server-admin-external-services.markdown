@@ -1,8 +1,12 @@
-# Server Administration: External Services [](id=server-administration-external-services)
+---
+header-id: server-administration-external-services
+---
+
+# Server Administration: External Services
 
 Users can upload and share any type of file via the Documents and Media library, 
 a customizable and permissions-enabled online repository for files (see 
-[publishing files ](/discover/portal/-/knowledge_base/7-1/publishing-files) 
+[publishing files ](/docs/7-1/user/-/knowledge_base/u/publishing-files) 
 for more information). 
 [PDFBox](https://pdfbox.apache.org/) 
 is included with @product@ and generates automatic previews for certain file
@@ -22,15 +26,11 @@ you install the latest stable versions, as older versions may not run properly
 with @product@. ImageMagick must be installed manually, but you can install 
 Xuggler from the Control Panel. 
 
-+$$$
+| **Tip:** If you're running @product@ on a Linux server and experience a problem
+| enabling Xuggler, check your server's glibc version. For Xuggler to work, you
+| may need to update glibc to version 2.6 or later.
 
-**Tip:** If you're running @product@ on a Linux server and experience a problem
-enabling Xuggler, check your server's glibc version. For Xuggler to work, you 
-may need to update glibc to version 2.6 or later. 
-
-$$$
-
-## ImageMagick Configuration [](id=imagemagick-configuration)
+## ImageMagick Configuration
 
 Before configuring ImageMagick to generate image and PDF previews, install it
 and its dependency, Ghostscript. This differs by operating system: on Linux,
@@ -68,7 +68,7 @@ app's External Services tab:
 
 ![Figure 1: Enable ImageMagick and Ghostscript, and verify that the paths are correct.](../../../../images/imagemagick-ghostscript.png)
 
-## Xuggler Configuration [](id=xuggler-configuration)
+## Xuggler Configuration
 
 Follow these steps to install and configure Xuggler: 
 

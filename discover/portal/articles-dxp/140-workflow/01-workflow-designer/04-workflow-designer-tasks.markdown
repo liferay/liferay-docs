@@ -1,4 +1,8 @@
-# Creating Tasks in Kaleo Designer [](id=creating-tasks-in-workflow-designer)
+---
+header-id: creating-tasks-in-workflow-designer
+---
+
+# Creating Tasks in Kaleo Designer
 
 Task nodes have several parts and are the most complex parts of a workflow
 definition. Unlike other workflow nodes, task nodes have Assignments, because a
@@ -8,7 +12,7 @@ User is.
 
 Commonly, task nodes contain Notifications, Assignments, and Actions (defined in
 scripts). See more about Notifications and Actions in the article on 
-[workflow nodes](/discover/portal/-/knowledge_base/7-1/workflow-definition-nodes). 
+[workflow nodes](/docs/7-1/user/-/knowledge_base/u/workflow-definition-nodes). 
 Task nodes and their assignments are more complex and deserve their own article
 (this one).
 
@@ -25,7 +29,7 @@ Next learn about creating Assignments for your task nodes.
 section. Please describe an example here so users can understand what a task
 node is for and how they are used. Include a script. -Rich --> 
 
-## Assignments [](id=assignments)
+## Assignments
 
 Workflow tasks must be completed by a User. You can choose how you want to
 configure your assignments. 
@@ -44,14 +48,14 @@ UPDATE action in an assignment, anyone who has permission to update the type of
 asset being processed in the workflow is assigned to the task. You can configure
 multiple assignments for a task.
 
-### Resource Action Assignments [](id=resource-action-assignments)
+### Resource Action Assignments
 
 *Resource actions* are operations performed by Users on an application or
 entity. For example, a User might have permission to update Message Boards
 Messages. This is called an UPDATE resource action, because the User can update
 the resource. If you're still uncertain about what resource actions are, refer
 to the developer tutorial on the 
-[permission system](/develop/tutorials/-/knowledge_base/7-1/defining-application-permissions)
+[permission system](/docs/7-1/tutorials/-/knowledge_base/t/defining-application-permissions)
 for a more detailed explanation.
 
 To find all the resource actions that have been configured, you need access to
@@ -60,7 +64,7 @@ permission for the VIEW action on the Roles resource).
 
 - Navigate to Control Panel &rarr; Users &rarr; Roles.
 - Add a new Regular Role. See the 
-  [article on managing roles](/discover/portal/-/knowledge_base/7-1/roles-and-permissions)
+  [article on managing roles](/docs/7-1/user/-/knowledge_base/u/roles-and-permissions)
   for more information.
 - Once the Role is added, navigate to the Define Permissions interface for the
   Role.
@@ -108,7 +112,7 @@ for that resource. For example, in Message Boards, one of the permissions
 displayed on that screen is *Add Discussion*. Convert that to all uppercase and
 replace the space with an underscore, and you have the action name. 
 
-### Scripted Assignments [](id=scripted-assignments)
+### Scripted Assignments
 
 You can also use a script to manage the assignment. Here's the script for the
 Review task assignment in the Scripted Single Approver workflow definition
@@ -162,6 +166,6 @@ to the assignment.
 
 [Using Workflow](discover/portal/-/knowledge_base/7-1/enabling-workflow)
 
-[Liferay's Workflow Framework](/develop/tutorials/-/knowledge_base/7-1/liferays-workflow-framework)
+[Liferay's Workflow Framework](/docs/7-1/tutorials/-/knowledge_base/t/liferays-workflow-framework)
 
 [Creating Simple Applications](discover/portal/-/knowledge_base/7-1/creating-simple-applications) -->

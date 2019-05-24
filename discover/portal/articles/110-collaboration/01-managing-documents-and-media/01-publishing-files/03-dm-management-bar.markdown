@@ -1,4 +1,8 @@
-# Using the Documents and Media Management Bar [](id=using-the-documents-and-media-management-bar)
+---
+header-id: using-the-documents-and-media-management-bar
+---
+
+# Using the Documents and Media Management Bar
 
 The Documents and Media *Management Bar* is where people that manage documents 
 go to unwind after a long day at work. Just kidding. The Management Bar, as its 
@@ -12,16 +16,12 @@ familiar with the Management Bar's *Add* button
 (![Add](../../../../images/icon-add.png)). The sections that follow describe the 
 rest of the Management Bar. 
 
-+$$$
+| **Note:** If a Document Library contains more items than it can display at once,
+| you can use the navigation tool that appears at the bottom of the window to
+| switch your view to another page or configure the page to display more items
+| per page.
 
-**Note:** If a Document Library contains more items than it can display at once, 
-you can use the navigation tool that appears at the bottom of the window to 
-switch your view to another page or configure the page to display more items
-per page. 
-
-$$$
-
-## View Types [](id=view-types)
+## View Types
 
 The *View Types* button is to the left of the Add button. It lets you choose how 
 to display the Document Library's items. The View Types button's icon depends on 
@@ -31,7 +31,7 @@ the selected view type:
     card-like rendering of the item. If the item isn't an image, a generic image 
     for the item's type is displayed. For files, each card also contains the 
     file's suffix (e.g., JPG, PNG, etc.), timestamp, name, and 
-    [workflow](/discover/portal/-/knowledge_base/7-1/workflow) 
+    [workflow](/docs/7-1/user/-/knowledge_base/u/workflow) 
     status (e.g., Approved, Draft, etc.). 
 
 -   **List** (![List](../../../../images/icon-view-type-list.png)): 
@@ -48,7 +48,7 @@ available in when viewing each item separately.
 
 ![Figure 2: The Cards View type shows items in large card-like renderings.](../../../../images/dm-images-in-admin.png)
 
-## The Info Panel [](id=the-info-panel)
+## The Info Panel
 
 To display an info panel with the current folder's details, click the 
 *Information* icon
@@ -61,7 +61,7 @@ of items. It also has these buttons:
 -   **Actions** (![Actions](../../../../images/icon-actions.png)): Lists actions 
     you can perform on the current folder. 
 
-## Finding and Arranging Items [](id=finding-and-arranging-items)
+## Finding and Arranging Items
 
 The Management Bar also contains tools that help you locate and arrange items in 
 the Document Library. The most prominent of these tools is the *Search* bar, where 
@@ -90,7 +90,7 @@ You can also select from the following criteria for ordering items:
 -   Create Date
 -   Title
 
-## Selecting Items [](id=selecting-items)
+## Selecting Items
 
 The checkbox on the left-most side of the Management Bar selects all currently 
 displayed items. Selecting multiple items lets you act on all of them at once. 
@@ -109,4 +109,4 @@ Here are the actions you can take on the selected items:
 -   Move to Recycle Bin (![Delete](../../../../images/icon-trash.png))
 
 File checkout and checkin is explained in 
-[Checking out and Editing Files](/discover/portal/-/knowledge_base/7-1/checking-out-and-editing-files). 
+[Checking out and Editing Files](/docs/7-1/user/-/knowledge_base/u/checking-out-and-editing-files). 

@@ -1,22 +1,22 @@
-# Managing the Knowledge Base [](id=managing-the-knowledge-base)
+---
+header-id: managing-the-knowledge-base
+---
+
+# Managing the Knowledge Base
 
 The Knowledge Base app in Site Administration manages the Knowledge Base. To
 navigate to this app, open the Menu (![Menu](../../../../images/icon-menu.png))
 then go to Site Administration (the menu for your site) &rarr; *Content* &rarr;
 *Knowledge Base*. 
 
-+$$$
-
-**Note:** To access Knowledge Base in Site Administration, a Role must have the 
-permission *Knowledge Base* &rarr; *Access in Site Administration*. To add or 
-act on articles, folders, or suggestions, the site administrator must grant the 
-appropriate permissions using the Permissions window in Knowledge Base. 
-
-$$$
+| **Note:** To access Knowledge Base in Site Administration, a Role must have the
+| permission *Knowledge Base* &rarr; *Access in Site Administration*. To add or
+| act on articles, folders, or suggestions, the site administrator must grant the
+| appropriate permissions using the Permissions window in Knowledge Base.
 
 ![Figure 1: You can manage Knowledge Base articles, folders, and suggestions.](../../../../images/kb-admin-articles.png)
 
-## Setting the Knowledge Base's Options [](id=setting-the-knowledge-bases-options)
+## Setting the Knowledge Base's Options
 
 At the top-right of the Knowledge Base app, the Options menu 
 (![Options](../../../../images/icon-options.png)) 
@@ -41,16 +41,16 @@ RSS (enabled by default), and configure the RSS feed's options.
 
 ![Figure 2: The Knowledge Base App's options.](../../../../images/kb-admin-options.png)
 
-## Managing Knowledge Base Articles [](id=managing-knowledge-base-articles)
+## Managing Knowledge Base Articles
 
 Each article also has a *priority* value that determines its position in the 
-[Knowledge Base Display widget's navigation](/discover/portal/-/knowledge_base/7-1/knowledge-base-display). Each
+[Knowledge Base Display widget's navigation](/docs/7-1/user/-/knowledge_base/u/knowledge-base-display). Each
 article's priority value appears beneath the article's title. The Knowledge Base
 Display widget's navigation arranges articles in ascending priority. Priority
 1 is the highest priority. The higher an article's priority, the higher it
 appears in the navigation. Articles are assigned the next lowest priority by
 default. This behavior can be changed via 
-[Knowledge Base System Settings](/discover/portal/-/knowledge_base/7-1/knowledge-base-system-settings). 
+[Knowledge Base System Settings](/docs/7-1/user/-/knowledge_base/u/knowledge-base-system-settings). 
 
 To assign articles a new priority value, follow these steps: 
 

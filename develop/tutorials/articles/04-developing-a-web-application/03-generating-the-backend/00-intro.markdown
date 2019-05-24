@@ -1,4 +1,8 @@
-# Generating the Back-end [](id=generating-the-back-end)
+---
+header-id: generating-the-back-end
+---
+
+# Generating the Back-end
 
 So far, you have a prototype application that uses Liferay's 
 Model-View-Controller (MVC) portlet framework. MVC is a great design pattern for 

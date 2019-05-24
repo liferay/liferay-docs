@@ -1,4 +1,8 @@
-# Liferay UI Tabs [](id=liferay-ui-tabs)
+---
+header-id: liferay-ui-tabs
+---
+
+# Liferay UI Tabs
 
 Tabs create dividers that organize content into individual sections. Content can
 be embedded or included from another JSP. 
@@ -42,10 +46,10 @@ The example above uses some of the tab's available attributes. See the
 [Tabs taglibdocs](@platform-ref@/7.1-latest/taglibs/util-taglib/liferay-ui/tabs.html) 
 for the full list of attributes. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Clay Navigation Bars](/develop/tutorials/-/knowledge_base/7-1/clay-navigation-bars)
+[Clay Navigation Bars](/docs/7-1/tutorials/-/knowledge_base/t/clay-navigation-bars)
 
-[Clay Dropdown Menus and Action Menus](/develop/tutorials/-/knowledge_base/7-1/clay-dropdown-menus-and-action-menus)
+[Clay Dropdown Menus and Action Menus](/docs/7-1/tutorials/-/knowledge_base/t/clay-dropdown-menus-and-action-menus)
 
-[Liferay UI Icon Help](/develop/tutorials/-/knowledge_base/7-1/liferay-ui-icon-help)
+[Liferay UI Icon Help](/docs/7-1/tutorials/-/knowledge_base/t/liferay-ui-icon-help)

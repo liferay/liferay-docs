@@ -1,4 +1,8 @@
-# Clay Management Toolbar [](id=clay-management-toolbar)
+---
+header-id: clay-management-toolbar
+---
+
+# Clay Management Toolbar
 
 The Management Toolbar gives administrators control over search container 
 results in their apps. It lets you filter, sort, and choose a view type for 
@@ -13,7 +17,7 @@ To create a management toolbar, use the `clay:management-toolbar` taglib. The
 toolbar contains a few key sections. Each section is grouped and configured
 using different attributes. These attributes are described in more detail below. 
 
-## Using a Display Context to Configure the Management Toolbar [](id=using-a-display-context-to-configure-the-management-toolbar)
+## Using a Display Context to Configure the Management Toolbar
 
 If you're using a Display Context---a separate class to configure your display 
 options for your management toolbar---to define all or some of the configuration 
@@ -25,12 +29,12 @@ options for the toolbar, you can specify the Display Context with the
     />
 
 You can see an example use case of a Display Context in the 
-[Filtering and Sorting Items with the Management Toolbar  tutorial](/develop/tutorials/-/knowledge_base/7-1/filtering-and-sorting-items-with-the-management-toolbar). 
+[Filtering and Sorting Items with the Management Toolbar  tutorial](/docs/7-1/tutorials/-/knowledge_base/t/filtering-and-sorting-items-with-the-management-toolbar). 
 A Display Context is not required for a management toolbar's configuration. You 
 can provide as much or as little of the configuration options for your 
 management toolbar through the Display Context as you like.  
 
-## Checkbox and Actions [](id=checkbox-and-actions)
+## Checkbox and Actions
 
 The `actionItems`, `searchContainerId`, `selectable`, and `totalItems` 
 attributes let you include a checkbox in the toolbar to select all search 
@@ -91,7 +95,7 @@ the example above, the icon is displayed next to the action menu as well.
 
 ![Figure 3: The Management Toolbar keeps track of the results selected and displays the actions to execute on them.](../../../images/clay-taglib-management-toolbar-selectable.png)
 
-## Filtering and Sorting Search Results [](id=filtering-and-sorting-search-results)
+## Filtering and Sorting Search Results
 
 The `filterItems`, `sortingOrder`, and `sortingURL` attributes let you filter 
 and sort search container results. Filtering and sorting are grouped together in 
@@ -159,7 +163,7 @@ The example below adds two filter options and two sorting options:
 
 ![Figure 4: You can also sort and filter search container results.](../../../images/clay-taglib-management-toolbar-filter-and-sort.png)
 
-## Search Form [](id=search-form)
+## Search Form
 
 The `clearResultsURL`, `searchActionURL`, `searchFormName`, `searchInputName`, 
 and `searchValue` attributes let you configure the search form. The main portion 
@@ -191,7 +195,7 @@ An example configuration is shown below:
 
 ![Figure 5: The search form comprises most of the Management Toolbar, letting users search through the search container results.](../../../images/clay-taglib-management-toolbar-search-form.png)
 
-## Info Panel [](id=info-panel)
+## Info Panel
 
 The `infoPanelId` and `showInfoButton` attributes let you add a retractable 
 sidebar panel that displays additional information related to a search container 
@@ -214,7 +218,7 @@ in the Display Context---specified with the `displayContext` attribute---and the
 
 ![Figure 6: The info panel keeps your UI clutter-free.](../../../images/clay-taglib-management-toolbar-info-panel.png)
 
-## View Types [](id=view-types)
+## View Types
 
 The `viewTypes` attribute specifies the display options for the search container 
 results. There are three display options to choose from:
@@ -259,11 +263,11 @@ An example configuration is shown below:
 
 While the example above shows how to configure the view types in the JSP, you 
 must also 
-[specify when to use each view type](/develop/tutorials/-/knowledge_base/7-1/implementing-the-view-types).
+[specify when to use each view type](/docs/7-1/tutorials/-/knowledge_base/t/implementing-the-view-types).
 
 ![Figure 10: The Management Toolbar offers three view type options.](../../../images/clay-taglib-management-toolbar-view-types.png)
 
-## Creation Menu [](id=creation-menu)
+## Creation Menu
 
 The `creationMenu` attribute creates an add menu button for one or multiple 
 items. It's used for creating new entities (e.g. a new blog entry).
@@ -307,10 +311,10 @@ secondary creation menu items:
 
 ![Figure 11: The Management Toolbar lets you optionally add a Creation Menu for creating new entities.](../../../images/clay-taglib-management-toolbar-creation-menu.png)
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Clay Dropdown Menus and Action Menus](/develop/tutorials/-/knowledge_base/7-1/clay-dropdown-menus-and-action-menus)
+[Clay Dropdown Menus and Action Menus](/docs/7-1/tutorials/-/knowledge_base/t/clay-dropdown-menus-and-action-menus)
 
-[Clay Icons](/develop/tutorials/-/knowledge_base/7-1/clay-icons)
+[Clay Icons](/docs/7-1/tutorials/-/knowledge_base/t/clay-icons)
 
-[Clay Navigation Bars](/develop/tutorials/-/knowledge_base/7-1/clay-navigation-bars)
+[Clay Navigation Bars](/docs/7-1/tutorials/-/knowledge_base/t/clay-navigation-bars)

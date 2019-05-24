@@ -1,7 +1,11 @@
-# Implementing a Custom Finder Method Using Dynamic Query [](id=implementing-a-custom-finder-method-using-dynamic-query)
+---
+header-id: implementing-a-custom-finder-method-using-dynamic-query
+---
+
+# Implementing a Custom Finder Method Using Dynamic Query
 
 Once you've
-[defined your custom finder method](/develop/tutorials/-/knowledge_base/7-1/defining-a-custom-finder-method),
+[defined your custom finder method](/docs/7-1/tutorials/-/knowledge_base/t/defining-a-custom-finder-method),
 you can use the Dynamic Query API to implement your query in it. Here's what you
 must do in your finder method:
 
@@ -21,7 +25,7 @@ to examine an example. The following example method uses multiple dynamic
 queries and all the Hibernate features. Instructions for implementing your own
 finder method follow the example. 
 
-## Example Finder Method: findByGuestbookNameEntryName [](id=example-finder-method-findbyguestbooknameentryname)
+## Example Finder Method: findByGuestbookNameEntryName
 
 This finder method for the Guestbook application retrieves a list of Guestbook
 entries that have a specific name and that also belong to a Guestbook of a
@@ -144,7 +148,7 @@ returns a list of `Entry` objects which are then returned by the finder method.
 It's time to implement your finder method to use Dynamic Query. Start with
 opening and managing a Hibernate session. 
 
-## Using a Hibernate Session [](id=using-a-hibernate-session)
+## Using a Hibernate Session
 
 Your first step in implementing your custom finder method in your `*FinderImpl`
 class is to open a new Hibernate session. Since your `*FinderImpl` class extends
@@ -184,7 +188,7 @@ method should look like this:
 
 Next, in the try block, create your dynamic query objects. 
 
-## Creating Dynamic Queries [](id=creating-dynamic-queries)
+## Creating Dynamic Queries
 
 In Liferay, you don't create criteria objects directly from the
 Hibernate session. Instead, you create dynamic query objects using Liferay's
@@ -203,7 +207,7 @@ Most features of Hibernate's Criteria API, including restrictions, projections,
 and orders, can be used on Liferay dynamic query objects. Each criteria can be
 applied to your query. The restriction criteria type is described first. 
 
-### Restriction Criteria [](id=restriction-criteria)
+### Restriction Criteria
 
 Restrictions in Hibernate's Criteria API roughly correspond to the `where`
 clause of an SQL query: they offer a variety of ways to limit the results
@@ -234,7 +238,7 @@ restrictions you need to get the results you want.
 Projections are the next criteria type. They let you transform the query results
 to return the field type you desire.  
 
-### Projection Criteria [](id=projection-criteria)
+### Projection Criteria
 
 Projections in Hibernate's Criteria API let you modify the kind of results
 returned by a query. For example, if you don't want your query to return a list
@@ -261,7 +265,7 @@ field type from your entities, add a projection for it.
 
 The last criteria type lets you organize results your way. 
 
-### Order Criteria [](id=order-criteria)
+### Order Criteria
 
 Orders in Hibernate's Criteria API let you control the order of the elements in
 the list a query returns. You can choose the property or properties to which an
@@ -288,10 +292,10 @@ a projection to a dynamic query object declaration:
 
 It's time to execute your dynamic query.
 
-## Executing the Dynamic Query [](id=executing-the-dynamic-query)
+## Executing the Dynamic Query
 
 In the previous tutorial, you ran Service Builder after
-[defining your custom finder](/develop/tutorials/-/knowledge_base/7-1/defining-a-custom-finder-method).
+[defining your custom finder](/docs/7-1/tutorials/-/knowledge_base/t/defining-a-custom-finder-method).
 Service Builder
 generated a `dynamicQuery(DynamicQuery dynamicQuery)` method in your
 `*LocalServiceBaseImpl` class. Using a `*LocalService` instance, invoke
@@ -305,23 +309,19 @@ query execution.
 The dynamic query execution returns a list of entities and the finder method
 returns that list. 
 
-+$$$
-
-**Note:** Service Builder not only generates a `public List
-dynamicQuery(DynamicQuery dynamicQuery)` method in `*LocalServiceBaseImpl` but
-it also generates `public List dynamicQuery(DynamicQuery dynamicQuery, int
-start, int end)` and `public List dynamicQuery(DynamicQuery dynamicQuery, int
-start, int end, OrderByComparator orderByComparator)` methods. You can go back
-to
-[defining custom finder methods](/develop/tutorials/-/knowledge_base/7-1/defining-a-custom-finder-method)
-and either modify your finder method or create overloaded versions of it to take
-advantage of these extra methods and their parameters. The `int start` and `int
-end` parameters are useful when paginating a result list. `start` is the lower
-bound of the range of model entity instances and `end` is the upper bound. The
-`OrderByComparator orderByComparator` is the comparator by which to order the
-results.
-
-$$$
+| **Note:** Service Builder not only generates a `public List
+| dynamicQuery(DynamicQuery dynamicQuery)` method in `*LocalServiceBaseImpl` but
+| it also generates `public List dynamicQuery(DynamicQuery dynamicQuery, int
+| start, int end)` and `public List dynamicQuery(DynamicQuery dynamicQuery, int
+| start, int end, OrderByComparator orderByComparator)` methods. You can go back
+| to
+| [defining custom finder methods](/docs/7-1/tutorials/-/knowledge_base/t/defining-a-custom-finder-method)
+| and either modify your finder method or create overloaded versions of it to take
+| advantage of these extra methods and their parameters. The `int start` and `int
+| end` parameters are useful when paginating a result list. `start` is the lower
+| bound of the range of model entity instances and `end` is the upper bound. The
+| `OrderByComparator orderByComparator` is the comparator by which to order the
+| results.
 
 To use the overloaded `dynamicQuery` methods of your `*LocalServiceBaseImpl`
 class in the (optionally overloaded) custom finders of your `*FinderImpl` class,

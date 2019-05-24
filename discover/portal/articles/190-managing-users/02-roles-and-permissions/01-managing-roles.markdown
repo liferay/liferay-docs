@@ -1,4 +1,8 @@
-# Managing Roles [](id=managing-roles)
+---
+header-id: managing-roles
+---
+
+# Managing Roles
 
 You manage Roles and Permissions in the Control Panel (*Control Panel* &rarr;
 *Users* &rarr; *Roles*). There you'll find an application for creating Roles,
@@ -6,12 +10,12 @@ granting them permissions, and assigning Users to them. Roles can be scoped by
 portal, Site, or Organization.
 
 Defining a Role's permissions is a topic deserving its own article. Read
-[here](/discover/portal/-/knowledge_base/7-1/defining-role-permissions) about
+[here](/docs/7-1/user/-/knowledge_base/u/defining-role-permissions) about
 defining a role's permissions.
 
 ![Figure 1: The Roles application lets you add and manage roles for the global (Regular), Site, or Organization scope.](../../../images/roles-app.png)
 
-## Creating Roles [](id=creating-roles)
+## Creating Roles
 
 Determine the scope of the Role you must create. Roles can be scoped globally
 (Regular Roles), to a specific Site (Site Roles), or to an Organization
@@ -33,7 +37,7 @@ To create a Role:
 
 Now the Role is present in the database and ready for further configuration.
 
-## Assigning Users to a Role [](id=assigning-users-to-a-role)
+## Assigning Users to a Role
 
 Assign users to a Role in the Assignees tab of the Add/Edit Role
 form. Roles are assigned to Users, Sites, Organizations, or User Groups.

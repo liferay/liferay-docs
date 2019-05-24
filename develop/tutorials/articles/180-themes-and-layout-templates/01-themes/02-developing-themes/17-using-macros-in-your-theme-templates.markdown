@@ -1,4 +1,8 @@
-# Using @product@'s Macros in Your Theme [](id=using-liferays-macros-in-your-theme)
+---
+header-id: using-liferays-macros-in-your-theme
+---
+
+# Using @product@'s Macros in Your Theme
 
 [Macros](https://freemarker.apache.org/docs/ref_directive_macro.html) 
 can assign theme template fragments to a variable. This keeps your theme 
@@ -8,7 +12,7 @@ defines several macros in
 that you can use in your FreeMarker theme templates to include theme resources, 
 standard portlets, and more. @product@ also exposes its taglibs as FreeMarker 
 macros. See the corresponding 
-[taglib tutorial](/develop/tutorials/-/knowledge_base/7-1/front-end-taglibs) 
+[taglib tutorial](/docs/7-1/tutorials/-/knowledge_base/t/front-end-taglibs) 
 for more information on using the taglib in your FreeMarker templates. This 
 tutorial shows how to use macros in your FreeMarker theme templates. 
 
@@ -38,7 +42,7 @@ Follow these steps:
         <@liferay.search_bar>
         
 3.  Include any required or optional arguments, such as 
-    [portlet preferences](/develop/tutorials/-/knowledge_base/7-1/embedding-portlets-in-themes#setting-default-preferences-for-an-embedded-portlet), 
+    [portlet preferences](/docs/7-1/tutorials/-/knowledge_base/t/embedding-portlets-in-themes#setting-default-preferences-for-an-embedded-portlet), 
     in the macro call. For example, @product@'s `language` macro directive 
     includes a language key parameter:
 
@@ -53,7 +57,7 @@ Follow these steps:
         <@liferay.language key="powered-by" />
 
     The example below sets the Search portlet's 
-    [Portlet Decorator](/develop/tutorials/-/knowledge_base/7-1/creating-configurable-styles-for-portlet-wrappers) 
+    [Portlet Decorator](/docs/7-1/tutorials/-/knowledge_base/t/creating-configurable-styles-for-portlet-wrappers) 
     to barebone:
 
         <@liferay.search default_preferences=
@@ -81,27 +85,23 @@ Follow these steps:
           instance_id="main_navigation_menu"
         />
 
-+$$$
-
-**Note:** Portlet preferences are unique to each portlet, so first you must 
-determine which preferences you want to configure. There are two ways to 
-determine the proper key/value pair for a portlet preference. The first is to 
-set the portlet preference manually, and then check the values in the 
-`portletPreferences.preferences` column of the database as a hint for what to 
-configure. 
-
-Another approach is to search each app in your bundle for the keyword 
-`preferences--`. This returns app JSPs that have the portlet preferences
-defined for the portlet. 
-
-$$$
+| **Note:** Portlet preferences are unique to each portlet, so first you must
+| determine which preferences you want to configure. There are two ways to
+| determine the proper key/value pair for a portlet preference. The first is to
+| set the portlet preference manually, and then check the values in the
+| `portletPreferences.preferences` column of the database as a hint for what to
+| configure.
+| 
+| Another approach is to search each app in your bundle for the keyword
+| `preferences--`. This returns app JSPs that have the portlet preferences
+| defined for the portlet.
 
 Now you know how to use @product@'s macros in your theme templates!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating Themes](/develop/tutorials/-/knowledge_base/7-1/creating-themes)
+[Creating Themes](/docs/7-1/tutorials/-/knowledge_base/t/creating-themes)
 
-[Creating Reusable Pieces of Code for Your Themes](/develop/tutorials/-/knowledge_base/7-1/creating-reusable-pieces-of-code-for-your-themes)
+[Creating Reusable Pieces of Code for Your Themes](/docs/7-1/tutorials/-/knowledge_base/t/creating-reusable-pieces-of-code-for-your-themes)
 
-[Theme Reference Guide](/develop/reference/-/knowledge_base/7-1/theme-reference-guide)
+[Theme Reference Guide](/docs/7-1/reference/-/knowledge_base/r/theme-reference-guide)

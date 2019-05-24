@@ -1,10 +1,14 @@
-# Managing Themes in Liferay Workspace [](id=managing-themes-in-liferay-workspace)
+---
+header-id: managing-themes-in-liferay-workspace
+---
+
+# Managing Themes in Liferay Workspace
 
 Creating a @product@ theme can be accomplished using two different tools:
 
-- [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-themes)
+- [Liferay Theme Generator](/docs/7-1/tutorials/-/knowledge_base/t/creating-themes)
   (Node.js-based themes that use the Liferay JS Theme Toolkit)
-- [Project template/archetype](/develop/reference/-/knowledge_base/7-1/theme-template)
+- [Project template/archetype](/docs/7-1/reference/-/knowledge_base/r/theme-template)
   (Gradle/Maven-based)
 
 Liferay Workspace offers an environment where developers can use the Liferay
@@ -20,12 +24,12 @@ their CI environment.
 Below you'll learn how to manage both Node.js-based themes and
 Gradle/Maven-based themes in Workspace. 
 
-## Node.js Themes in Workspace [](id=node-js-themes-in-workspace)
+## Node.js Themes in Workspace
 
 Liferay Workspace reserves the `themes` folder only for themes that are created 
 with the Themes Generator. There are no Blade CLI-provided commands or Maven 
 archetypes to generate a theme. You must leverage the 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-themes) 
+[Liferay Theme Generator](/docs/7-1/tutorials/-/knowledge_base/t/creating-themes) 
 from within the `themes` folder to create them; you can also copy a generated
 theme into the folder.
 
@@ -40,7 +44,7 @@ Generator's required tooling is installed.
 
 2.  Navigate into your new theme and run `../gradlew build`. Liferay Workspace
     builds the front-end theme using Gradle. Under the hood, Liferay's 
-    [Node Gradle Plugin](/develop/reference/-/knowledge_base/7-1/node-gradle-plugin)
+    [Node Gradle Plugin](/docs/7-1/reference/-/knowledge_base/r/node-gradle-plugin)
     is applied and used to build your theme.
 
 3.  Workspace is smart enough to differentiate between theme types. For
@@ -68,11 +72,11 @@ Excellent! You learned how generated themes are recognized in workspace and
 where they should reside. Next you'll learn how workspace manages WAR-style 
 themes.
 
-## Gradle/Maven Themes in Workspace [](id=gradle-maven-themes-in-workspace)
+## Gradle/Maven Themes in Workspace
 
 Liferay Workspace provides the `wars` folder for any WAR-style project. Themes
-created with [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli) or
-Maven using the [`theme`](/develop/reference/-/knowledge_base/7-1/theme-template)
+created with [Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/blade-cli) or
+Maven using the [`theme`](/docs/7-1/reference/-/knowledge_base/r/theme-template)
 project template or archetype are automatically generated here when creating the
 project within Workspace.
 
@@ -85,10 +89,10 @@ To build an existing WAR-style theme in Workspace, run the `../gradlew build`
 command. Liferay Workspace builds the theme using Gradle. Under the hood,
 Liferay's
 [Theme Builder Gradle
-Plugin](/develop/reference/-/knowledge_base/7-1/theme-builder-gradle-plugin) is
+Plugin](/docs/7-1/reference/-/knowledge_base/r/theme-builder-gradle-plugin) is
 applied and used to build your theme. It works similarly in a Maven workspace.
 See the 
-[Building Themes in a Maven Project](/develop/tutorials/-/knowledge_base/7-1/building-themes-in-a-maven-project)
+[Building Themes in a Maven Project](/docs/7-1/tutorials/-/knowledge_base/t/building-themes-in-a-maven-project)
 tutorial for more information.
 
 Awesome! You know how WAR-style themes are built in workspace and where they

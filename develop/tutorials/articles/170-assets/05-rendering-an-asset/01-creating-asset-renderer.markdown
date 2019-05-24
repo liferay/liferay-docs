@@ -1,4 +1,8 @@
-# Creating an Asset Renderer [](id=creating-an-asset-renderer)
+---
+header-id: creating-an-asset-renderer
+---
+
+# Creating an Asset Renderer
 
 In this tutorial, you'll learn how to create an `Asset Renderer` and associate your JSP templates with it, along with configuring several other options.
 
@@ -41,7 +45,7 @@ class, which configures the asset renderer framework for the Blogs application.
     The `BlogsEntryAssetRenderer` also sets the resource bundle loader, which
     loads the language keys for a module. You can learn more about the resource
     bundle loader in the
-    [Overriding Language Keys](/develop/tutorials/-/knowledge_base/7-0/overriding-language-keys)
+    [Overriding Language Keys](/docs/7-0/tutorials/-/knowledge_base/t/overriding-language-keys)
     tutorial.
 
     Also, make sure to define the `_entry` and `_resourceBundleLoader` fields in

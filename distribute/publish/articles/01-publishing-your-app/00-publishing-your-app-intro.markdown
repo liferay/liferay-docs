@@ -1,4 +1,8 @@
-# Publishing Your App [](id=publishing-your-app)
+---
+header-id: publishing-your-app
+---
+
+# Publishing Your App
 
 As you develop apps, you may want to sell them to or share them with consumers.
 You can distribute your apps on the

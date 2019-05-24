@@ -1,4 +1,8 @@
-# Managing Your Published App [](id=managing-your-published-app)
+---
+header-id: managing-your-published-app
+---
+
+# Managing Your Published App
 
 You've launched your new app on the Marketplace. Congratulations! As you settle
 down from your launch celebration, you might wonder how your app is performing

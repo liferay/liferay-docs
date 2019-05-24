@@ -1,4 +1,8 @@
-# Servlets [](id=servlets)
+---
+header-id: servlets
+---
+
+# Servlets
 
 [Java Servlets](https://en.wikipedia.org/wiki/Java_servlet) are foundational to
 Java EE. You can use servlets and servlet filters to provide applications in

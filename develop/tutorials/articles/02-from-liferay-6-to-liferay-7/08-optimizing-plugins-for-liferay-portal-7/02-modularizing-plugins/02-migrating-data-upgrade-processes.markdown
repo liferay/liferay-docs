@@ -1,4 +1,8 @@
-# Migrating Data Upgrade Processes to the New Framework for Modules [](id=optimizing-app-upgrade-processes)
+---
+header-id: optimizing-app-upgrade-processes
+---
+
+# Migrating Data Upgrade Processes to the New Framework for Modules
 
 When you make database changes to your application, you must use a *data
 upgrade process* to migrate users' existing data to the new database schema.
@@ -9,10 +13,10 @@ use depends on your development framework. This tutorial shows you how to
 migrate to the new framework. 
 
 -   If your
-    [upgraded plugin](/develop/tutorials/-/knowledge_base/7-1/upgrading-plugins-to-liferay-7)
+    [upgraded plugin](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-plugins-to-liferay-7)
     is a traditional WAR, you don't need to do anything special; existing
     upgrade processes
-    [adapted to @product-ver@'s API](/develop/tutorials/-/knowledge_base/7-1/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+    [adapted to @product-ver@'s API](/docs/7-1/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
     work as is. The new data upgrade framework is for modules only. 
 
 -   If you converted your upgraded plugin to a module or you have an upgraded
@@ -25,20 +29,16 @@ recent ones) to the new framework. For example, if your module has versions 1.0,
 upgrade, you might migrate upgrade processes for versions 1.2 and 1.3 only. 
 
 Before beginning, make sure 
-[you know how](/develop/tutorials/-/knowledge_base/7-1/creating-an-upgrade-process-for-your-app) 
+[you know how](/docs/7-1/tutorials/-/knowledge_base/t/creating-an-upgrade-process-for-your-app) 
 to create an upgrade process that uses the new framework. 
 
-+$$$
-
-**Note:** Liferay Portal 6 plugins may also include verify processes. Although 
-you can migrate the verify processes to @product-ver@ without any changes, it's
-a best practice to perform verification in your upgrade processes instead. 
-
-$$$
+| **Note:** Liferay Portal 6 plugins may also include verify processes. Although
+| you can migrate the verify processes to @product-ver@ without any changes, it's
+| a best practice to perform verification in your upgrade processes instead.
 
 First, you'll review how Liferay Portal 6 upgrade processes work. 
 
-## Understanding Liferay Portal 6 Upgrade Processes [](id=understanding-liferay-portal-6-upgrade-processes)
+## Understanding Liferay Portal 6 Upgrade Processes
 
 Before getting started, it's important to understand how Liferay Portal 6 
 upgrade processes are structured. As an example, you'll use 
@@ -93,7 +93,7 @@ runs the upgrade steps `UpgradeRatingsEntry` and `UpgradeRatingsStats` via the
 Now that you know how Liferay Portal 6 upgrade processes are defined, you'll 
 learn how to convert them to the new upgrade process framework in @product-ver@. 
 
-## Converting your Liferay Portal 6 Upgrade Process to @product-ver@ [](id=converting-your-liferay-portal-6-upgrade-process-to-product-ver)
+## Converting your Liferay Portal 6 Upgrade Process to @product-ver@
 
 So how do Liferay Portal 6 upgrade processes compare to those that use the new
 upgrade process framework? First, the upgrade step classes are the same, so you
@@ -105,12 +105,12 @@ processes:
 
 Start your conversion by creating a registrator class. 
 
-### Create a Registrator Class [](id=create-a-registrator-class)
+### Create a Registrator Class
 
 The new data upgrade framework requires using registrator class instead of
 upgrade process classes. You must combine your upgrade process classes'
 functionality into a single registrator class. Recall from 
-[the data upgrade process tutorial](/develop/tutorials/-/knowledge_base/7-1/creating-an-upgrade-process-for-your-app#writing-the-upgrade-step-registrator) 
+[the data upgrade process tutorial](/docs/7-1/tutorials/-/knowledge_base/t/creating-an-upgrade-process-for-your-app#writing-the-upgrade-step-registrator) 
 that registrators define an upgrade process that the upgrade process framework 
 executes. Each `registry.register` call in the registrator registers the 
 appropriate upgrade steps for each schema version. You must therefore transfer 
@@ -144,21 +144,21 @@ Both call the same upgrade steps.
 
 Next, create a Bundle Activator if your modularized plugin uses Service Builder. 
 
-### Create a Bundle Activator [](id=create-a-bundle-activator)
+### Create a Bundle Activator
 
 If your module implements Service Builder services, it needs a Bundle Activator
 to initialize a record in the release table.
-[Creating a Bundle Activator](/develop/tutorials/-/knowledge_base/7-1/upgrade-processes-for-former-service-builder-plugins)
+[Creating a Bundle Activator](/docs/7-1/tutorials/-/knowledge_base/t/upgrade-processes-for-former-service-builder-plugins)
 is straightforward. 
 
 That's it! For instructions on creating new upgrade processes for @product-ver@, 
 including complete steps on creating a registrator, 
-[click here](/develop/tutorials/-/knowledge_base/7-1/creating-an-upgrade-process-for-your-app). 
+[click here](/docs/7-1/tutorials/-/knowledge_base/t/creating-an-upgrade-process-for-your-app). 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating Data Upgrade Processes for Modules](/develop/tutorials/-/knowledge_base/7-1/creating-an-upgrade-process-for-your-app)
+[Creating Data Upgrade Processes for Modules](/docs/7-1/tutorials/-/knowledge_base/t/creating-an-upgrade-process-for-your-app)
 
-[Upgrading Plugins to @product-ver@](/develop/tutorials/-/knowledge_base/7-1/upgrading-plugins-to-liferay-7)
+[Upgrading Plugins to @product-ver@](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-plugins-to-liferay-7)
 
-[From Liferay Portal 6 to 7](/develop/tutorials/-/knowledge_base/7-1/from-liferay-6-to-liferay-7)
+[From Liferay Portal 6 to 7](/docs/7-1/tutorials/-/knowledge_base/t/from-liferay-6-to-liferay-7)

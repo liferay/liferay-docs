@@ -1,4 +1,8 @@
-# Configuring Widgets [](id=configuring-applications)
+---
+header-id: configuring-applications
+---
+
+# Configuring Widgets
 
 Just like siblings have common features inherited from their parents,
 widgets that ship with @product@ also share common features. These include

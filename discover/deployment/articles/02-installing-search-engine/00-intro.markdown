@@ -1,4 +1,8 @@
-# Installing a Search Engine [](id=installing-a-search-engine)
+---
+header-id: installing-a-search-engine
+---
+
+# Installing a Search Engine
 
 A search engine is a critical component of your @product@ installation. If
 you're here, you probably know the basics already and want to configure a search
@@ -8,11 +12,11 @@ engine for your @product@ deployment.
 Elasticsearch is well-supported and almost certainly meets any search and
 indexing need you have. For deployment settings, learn to configure
 a standalone or remote Elasticsearch server or cluster
-[here](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch).
+[here](/docs/7-1/deploy/-/knowledge_base/d/installing-elasticsearch).
 
 [Solr](http://lucene.apache.org/solr) is also supported in @product@. 
 
-## Choosing a Search Engine [](id=choosing-a-search-engine)
+## Choosing a Search Engine
 
 Elasticsearch and Solr are both supported, but there are some differences in how
 they work with @product@. In certain cases, you must choose Elasticsearch. 

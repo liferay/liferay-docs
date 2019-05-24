@@ -1,4 +1,8 @@
-# Angular npm Deduplication Sample [](id=angular-npm-deduplication-sample)
+---
+header-id: angular-npm-deduplication-sample
+---
+
+# Angular npm Deduplication Sample
 
 The Angular npm Deduplication sample provides a portlet that uses the
 [Angular](https://angular.io/) framework to render its output.
@@ -8,7 +12,7 @@ The Angular npm Deduplication sample provides a portlet that uses the
 This is done by providing a deduplicated instance of the Angular framework as an
 OSGi bundle and then leveraging it from a sample portlet.
 
-## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
+## What API(s) and/or code components does this sample highlight?
 
 This sample is broken into two modules:
 
@@ -23,9 +27,9 @@ uses the deduplicated instance of the Angular framework.
 **Note:** Both modules must be deployed to the server for this sample to run.
 
 This sample leverages the
-[npm development workflow support](/develop/tutorials/-/knowledge_base/7-1/using-npm-in-your-portlets).
+[npm development workflow support](/docs/7-1/tutorials/-/knowledge_base/t/using-npm-in-your-portlets).
 
-## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
+## How does this sample leverage the API(s) and/or code component?
 
 This sample uses the [npm registry](https://www.npmjs.com/) to download project
 dependencies and uses the
@@ -39,7 +43,7 @@ script inside its `package.json` file:
         "build": "tsc && liferay-npm-bundler"
     },
 
-## Where Is This Sample? [](id=where-is-this-sample)
+## Where Is This Sample?
 
 This sample is built with the following build tool:
 

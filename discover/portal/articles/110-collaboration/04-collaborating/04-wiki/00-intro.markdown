@@ -1,4 +1,8 @@
-# Working Together with the Wiki [](id=working-together-with-the-wiki)
+---
+header-id: working-together-with-the-wiki
+---
+
+# Working Together with the Wiki
 
 Wikis are for collaboratively building a collection of information. The most
 famous wiki on the planet is Wikipedia. It's a full encyclopedia developed
@@ -15,7 +19,7 @@ does these things:
 
 As you can see, @product@'s wiki is flexible and can be configured to fit 
 nearly any use case. What's more, it's completely integrated with the portal's 
-[user management](/discover/portal/-/knowledge_base/7-1/managing-users), 
-[tagging](/discover/portal/-/knowledge_base/7-1/tagging-content), and
-[security](/discover/deployment/-/knowledge_base/7-1/securing-product) 
+[user management](/docs/7-1/user/-/knowledge_base/u/managing-users), 
+[tagging](/docs/7-1/user/-/knowledge_base/u/tagging-content), and
+[security](/docs/7-1/deploy/-/knowledge_base/d/securing-product) 
 features. 

@@ -1,4 +1,8 @@
-# Upgrading a Servlet-based Portlet [](id=upgrading-a-servlet-based-portlet)
+---
+header-id: upgrading-a-servlet-based-portlet
+---
+
+# Upgrading a Servlet-based Portlet
 
 This tutorial shows you how to upgrade servlet-based portlets. It refers to
 code from before and after upgrading a sample servlet-based portlet called
@@ -24,12 +28,12 @@ Here are the sample portlet's characteristics:
 
 Follow these steps to upgrade a servlet-based portlet: 
 
-1.  [Adapt the code to @product-ver@'s API](/develop/tutorials/-/knowledge_base/7-1/adapting-to-liferay-7s-api-with-the-code-upgrade-tool).
+1.  [Adapt the code to @product-ver@'s API](/docs/7-1/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool).
 
-2.  [Resolve dependencies](/develop/tutorials/-/knowledge_base/7-1/resolving-a-plugins-dependencies).
+2.  [Resolve dependencies](/docs/7-1/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies).
 
 The 
-[Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-1/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+[Code Upgrade Tool](/docs/7-1/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
 makes adapting a portlet's code straightforward, and it automates much of the
 process. 
 
@@ -43,7 +47,7 @@ files.  Here's the `portal-dependency-jars` property from the portlet's
         json-java.jar
 
 Instructions for using packages that @product@ exports are found
-[here](/develop/tutorials/-/knowledge_base/7-1/resolving-a-plugins-dependencies#using-packages-liferay-portal-exports).
+[here](/docs/7-1/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies#using-packages-liferay-portal-exports).
 @product-ver@'s core system exports the package this portlet needs from each of
 the above dependency JARs. 
 
@@ -61,23 +65,19 @@ The server prints messages that indicate the following portlet status:
 -   WAB startup
 -   Availability to users
 
-+$$$
-
-Note: On deploying the sample upgraded portlet, the
-[WAB processor](/develop/tutorials/-/knowledge_base/7-1/using-the-wab-generator)
-warns that the `portal-dependency-jars` property is deprecated.<br><br>
-
-    21:40:25,347 WARN  [fileinstall-...][WabProcessor:564] The property "portal-dependency-jars" is deprecated. Specified JARs may not be included in the class path.
-
-For running on @product-ver@, it's fine to specify the`portal-dependency-jars`
-property per the
-[instructions](resolving-a-plugins-dependencies#using-packages-liferay-portal-exports)
-for using packages that @product@ exports. After upgrading, consider 
-[using a dependency management tool](/develop/tutorials/-/knowledge_base/7-1/resolving-a-plugins-dependencies#managing-dependencies-with-ivy)
-in your project. This helps prepare it for future @product@ versions and
-facilitates managing dependencies.
-
-$$$
+| Note: On deploying the sample upgraded portlet, the
+| [WAB processor](/docs/7-1/tutorials/-/knowledge_base/t/using-the-wab-generator)
+| warns that the `portal-dependency-jars` property is deprecated.<br><br>
+| 
+|     21:40:25,347 WARN  [fileinstall-...][WabProcessor:564] The property "portal-dependency-jars" is deprecated. Specified JARs may not be included in the class path.
+| 
+| For running on @product-ver@, it's fine to specify the`portal-dependency-jars`
+| property per the
+| [instructions](resolving-a-plugins-dependencies#using-packages-liferay-portal-exports)
+| for using packages that @product@ exports. After upgrading, consider
+| [using a dependency management tool](/docs/7-1/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies#managing-dependencies-with-ivy)
+| in your project. This helps prepare it for future @product@ versions and
+| facilitates managing dependencies.
 
 The portlet is installed to Liferay's OSGi runtime and is available to users.
 
@@ -88,10 +88,10 @@ Congratulations! You've upgraded and deployed your servlet-based portlet to
 
 **Related Topics**
 
-[Migrating Plugins SDK Projects to Workspace and Gradle](/develop/tutorials/-/knowledge_base/7-1/migrating-traditional-plugins-to-workspace-web-applications)
+[Migrating Plugins SDK Projects to Workspace and Gradle](/docs/7-1/tutorials/-/knowledge_base/t/migrating-traditional-plugins-to-workspace-web-applications)
 
-[Using Dependency Management Tools](/develop/tutorials/-/knowledge_base/7-1/resolving-a-plugins-dependencies#managing-dependencies-with-ivy)
+[Using Dependency Management Tools](/docs/7-1/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies#managing-dependencies-with-ivy)
 
-[Using the WAB Generator](/develop/tutorials/-/knowledge_base/7-1/using-the-wab-generator)
+[Using the WAB Generator](/docs/7-1/tutorials/-/knowledge_base/t/using-the-wab-generator)
 
-[Migrating Data Upgrade Processes](/develop/tutorials/-/knowledge_base/7-1/optimizing-app-upgrade-processes)
+[Migrating Data Upgrade Processes](/docs/7-1/tutorials/-/knowledge_base/t/optimizing-app-upgrade-processes)

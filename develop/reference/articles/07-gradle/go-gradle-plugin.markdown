@@ -1,11 +1,15 @@
-# Go Gradle Plugin [](id=go-gradle-plugin)
+---
+header-id: go-gradle-plugin
+---
+
+# Go Gradle Plugin
 
 The Go Gradle plugin lets you run [Go](https://golang.org/) as part of your
 build.
 
 The plugin has been successfully tested with Gradle 3.5.1 up to 4.10.2.
 
-## Usage [](id=usage)
+## Usage
 
 To use the plugin, include it in your build script:
 
@@ -25,7 +29,7 @@ buildscript {
 apply plugin: "com.liferay.go"
 ```
 
-## Project Extension [](id=project-extension)
+## Project Extension
 
 The Go Gradle plugin exposes the following properties through the extension
 named `go`:
@@ -37,7 +41,7 @@ Property Name | Type | Default Value | Description
 `goVersion` | `String` | `"1.11.4"` | The Go distribution's version to use.
 <a name="workingdir"></a>`workingDir` | `File` | `"${project.projectDir}"` | The directory that contains the project's Go source code.
 
-## Tasks [](id=tasks)
+## Tasks
 
 The plugin adds a series of tasks to your project:
 
@@ -49,11 +53,11 @@ Name | Depends On | Type | Description
 [`goRun${programName}`](#gocommandprogramname-task) | `downloadGo` | [`ExecuteGoTask`](#executegotask) | Compiles and runs the Go program.
 [`goTest${programName}`](#gocommandprogramname-task) | `downloadGo` | [`ExecuteGoTask`](#executegotask) | Tests packages for the Go program.
 
-### DownloadGoTask [](id=downloadgotask)
+### DownloadGoTask
 
 The purpose of this task is to download and unpack a Go distribution.
 
-#### Task Properties [](id=task-properties)
+#### Task Properties
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -65,12 +69,12 @@ The `File` type support any type that can be resolved by
 Moreover, it is possible to use Closures and Callables as values for the
 `String` properties, to defer evaluation until task execution.
 
-### ExecuteGoTask [](id=executegotask)
+### ExecuteGoTask
 
 This is the base task to run Go in a Gradle build. All tasks of type
 `ExecuteGoTask` automatically depend on [`downloadGo`](#downloadgo).
 
-#### Task Properties [](id=task-properties-0)
+#### Task Properties
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -87,7 +91,7 @@ The type `File` properties support any type that can be resolved by
 Moreover, it is possible to use Closures and Callables as values for the
 `String` properties to defer evaluation until task execution.
 
-#### Task Methods [](id=task-methods)
+#### Task Methods
 
 Method | Description
 ------ | -----------
@@ -96,7 +100,7 @@ Method | Description
 `ExecuteGoTask environment(Map<?, ?> environment)` | Adds environment variables for the Go invocation.
 `ExecuteGoTask environment(Object key, Object value)` | Adds an environment variable for the Go invocation.
 
-### go${command}${programName} Task [](id=gocommandprogramname-task)
+### go${command}${programName} Task
 
 For each Go program in [`workingDir`](#workingdirproperty), four tasks of type
 [`ExecuteGoTask`](#executegotask) are added. Each of these tasks are

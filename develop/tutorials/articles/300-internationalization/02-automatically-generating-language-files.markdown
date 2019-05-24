@@ -1,7 +1,11 @@
-# Automatically Generating Language Files [](id=automatically-generating-language-files)
+---
+header-id: automatically-generating-language-files
+---
+
+# Automatically Generating Language Files
 
 If you already have a `Language.properties` file that holds
-[language keys for your user interface messages](/develop/tutorials/-/knowledge_base/7-1/localizing-your-application),
+[language keys for your user interface messages](/docs/7-1/tutorials/-/knowledge_base/t/localizing-your-application),
 or even a language module that holds these keys, you're in the right place. In
 this tutorial, you'll explore the following capabilities:
 
@@ -13,7 +17,7 @@ this tutorial, you'll explore the following capabilities:
 -  Generating automatic translations using Microsoft's Translator Text API. This
    prevents you from translating each message manually.
 
-## Generating Language Files for Supported Locales [](id=generating-language-files-for-supported-locales)
+## Generating Language Files for Supported Locales
 
 If you want to generate files automatically for all 
 [supported locales](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Languages%20and%20Time%20Zones),
@@ -22,7 +26,7 @@ you must make a small modification to your application's build file.
 1.  Make sure your module's build includes the
     [`com.liferay.lang.builder`](https://github.com/liferay/liferay-portal/tree/master/modules/sdk/gradle-plugins-lang-builder)
     plugin by putting it in your build script's classpath. If you're using
-    [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace),
+    [Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace),
     the Lang Builder is already available to your modules.
     
     Here's what a configuration of the `com.liferay.lang.builder` plugin looks
@@ -69,7 +73,7 @@ Now you can begin translating your application's messages. If you want to
 configure your app to generate automatic translations using the Microsoft
 Translator Text API, keep reading.
 
-## Translating Language Keys Automatically [](id=translating-language-keys-automatically)
+## Translating Language Keys Automatically
 
 If you've configured the `com.liferay.lang.builder` plugin in your app, you're
 almost there. Now you have to configure
@@ -79,15 +83,11 @@ however, use Liferay's Lang Builder to automatically translate language keys
 containing HTML (e.g., `<em>`, `<b>`, `<code>`, etc.). Language keys containing
 HTML are automatically *copied* to all supported language files.
 
-+$$$
-
-**Note:** These translations are best used as a starting point. A machine
-translation can't match the accuracy of a real person who is fluent in the
-language. Then again, if you only speak English and you need a Hungarian
-translation, this is better and faster than your attempts at a manual
-translation.
-
-$$$
+| **Note:** These translations are best used as a starting point. A machine
+| translation can't match the accuracy of a real person who is fluent in the
+| language. Then again, if you only speak English and you need a Hungarian
+| translation, this is better and faster than your attempts at a manual
+| translation.
 
 1.  Generate a translation subscription key for the Microsoft Translator Text
     API. Follow the instructions

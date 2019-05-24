@@ -1,4 +1,8 @@
-# Document Types [](id=document-types)
+---
+header-id: document-types
+---
+
+# Document Types
 
 Document types are made of metadata fields and help users define the purpose of
 Document Library files. For example, the built-in *Contract* document type
@@ -11,7 +15,7 @@ also apply workflows to specific document types. And you can more cleanly
 organize document libraries by designating folders to hold particular document
 types exclusively. 
 
-## Managing Document Types [](id=managing-document-types)
+## Managing Document Types
 
 To see the available document types, open the *Menu* 
 (![Product Menu](../../../images/icon-menu.png)), 
@@ -28,7 +32,7 @@ Actions button
 
 ![Figure 1: The Document Types management window lets you view existing document types and create new ones.](../../../images/dm-doc-types-list.png)
 
-## Creating Document Types [](id=creating-document-types)
+## Creating Document Types
 
 Follow these steps to create a document type: 
 
@@ -51,7 +55,7 @@ Follow these steps to create a document type:
         They can be created only via the form and can't be used with other 
         document types. You create and edit these metadata fields in the form 
         the same way that you do when creating 
-        [metadata sets](/discover/portal/-/knowledge_base/7-1/metadata-sets). 
+        [metadata sets](/docs/7-1/user/-/knowledge_base/u/metadata-sets). 
     -   **Additional Metadata Fields:** Select a metadata set to associate with 
         the document type. Each document type must be associated with one or
         more metadata set. To differentiate document types that use the same

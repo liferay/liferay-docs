@@ -1,4 +1,8 @@
-# Understanding the Page Layout [](id=understanding-the-page-layout)
+---
+header-id: understanding-the-page-layout
+---
+
+# Understanding the Page Layout
 
 Knowing the layout's structure is crucial to targeting the correct markup for
 styling, organizing your content, and creating your site. Your page layout is
@@ -13,7 +17,7 @@ default page layout is organized into three key sections:
 
 ![Figure 1: The page layout is broken into three key sections.](../../images/portal-layout-sections.png)
 
-## Portlets or Fragments [](id=portlets-or-fragments)
+## Portlets or Fragments
 
 The `#content` `Section` makes up the majority of the page. Portlets or 
 fragments are contained inside the `#main-content` `div`. @product@ ships with
@@ -23,11 +27,11 @@ and Wikis, documents and media, blogs, and more. For more information on using
 [User & Admin documentation](/discover/portal). 
 You can also create custom portlets for your site. Portlets can be added via the
 Add Menu (referred to as widget), included in a sitemap through the 
-[Resources Importer](/develop/tutorials/-/knowledge_base/7-1/importing-resources-with-a-theme),
+[Resources Importer](/docs/7-1/tutorials/-/knowledge_base/t/importing-resources-with-a-theme),
 or they can be 
-[embedded in the page's theme](/develop/tutorials/-/knowledge_base/7-1/embedding-portlets-in-themes).
+[embedded in the page's theme](/docs/7-1/tutorials/-/knowledge_base/t/embedding-portlets-in-themes).
 See the 
-[portlet tutorials section](/develop/tutorials/-/knowledge_base/7-1/portlets) for more information
+[portlet tutorials section](/docs/7-1/tutorials/-/knowledge_base/t/portlets) for more information
 on creating and developing portlets. 
 
 You can target the elements and IDs shown in the table below to style the page:
@@ -42,7 +46,7 @@ You can target the elements and IDs shown in the table below to style the page:
 ![Figure 2: Each section of the page has elements and IDs that you can target for styling.](../../images/portal-layout-elements.png)
 
 As shown in the diagram above, you can also add 
-[fragments](/discover/portal/-/knowledge_base/7-1/creating-fragments) 
+[fragments](/docs/7-1/user/-/knowledge_base/u/creating-fragments) 
 to a page. You can have a page that contains portlets or a content page that
 contains fragments, not both. Fragments are components---composed of CSS,
 JavaScript, and HTML---that provide key pieces of functionality for the page
@@ -50,25 +54,25 @@ JavaScript, and HTML---that provide key pieces of functionality for the page
 collections of fragments that you can then add to the page. These fragments can
 be edited on the page to suit your vision. 
 
-## Layout Templates, Page Templates, and Site Templates [](id=layout-templates-page-templates-and-site-templates)
+## Layout Templates, Page Templates, and Site Templates
 
 The page layout within the `#content` Section is determined by the 
-[Layout Template](/develop/tutorials/-/knowledge_base/7-1/layout-templates-intro). 
+[Layout Template](/docs/7-1/tutorials/-/knowledge_base/t/layout-templates-intro). 
 Several layout templates are included out-of-the-box. You can also 
-[create custom layout templates manually](/develop/tutorials/-/knowledge_base/7-1/creating-layout-templates-manually) 
+[create custom layout templates manually](/docs/7-1/tutorials/-/knowledge_base/t/creating-layout-templates-manually) 
 or with the 
-[Liferay Theme Generator's layout sub-generator](/develop/tutorials/-/knowledge_base/7-1/creating-layout-templates-with-the-themes-generator).
+[Liferay Theme Generator's layout sub-generator](/docs/7-1/tutorials/-/knowledge_base/t/creating-layout-templates-with-the-themes-generator).
 
 Layout templates can be pre-configured depending on the 
-[page type](/discover/portal/-/knowledge_base/7-1/page-types-and-templates) 
+[page type](/docs/7-1/user/-/knowledge_base/u/page-types-and-templates) 
 you choose when the page is created. Along with setting the types of portlets to 
 include on the page, the page template may also define the default layout 
 template for the page. Climbing further up the scope chain, you can create 
-[site templates](/discover/portal/-/knowledge_base/7-1/building-sites-from-templates), 
+[site templates](/docs/7-1/user/-/knowledge_base/u/building-sites-from-templates), 
 which can define the pages, page templates, layout templates, and theme(s) to 
 use for site pages.
 
-## Product Navigation Sidebars and Panels [](id=product-navigation-sidebars-and-panels)
+## Product Navigation Sidebars and Panels
 
 The main page layout also contains a few notable sidebars an administrative user
 can trigger through the Control Menu. These are listed below:
@@ -93,5 +97,5 @@ When styling the page, you must keep the navigation menus in mind, especially
 for absolutely positioned elements, such as a fixed navbar. If the user is
 logged in and can view the Control Menu, the fixed navbar must have a top margin
 equal to the Control Menu's height. See the 
-[Product Navigation tutorials section](/develop/tutorials/-/knowledge_base/7-1/product-navigation) 
+[Product Navigation tutorials section](/docs/7-1/tutorials/-/knowledge_base/t/product-navigation) 
 for more information on customizing these menus.

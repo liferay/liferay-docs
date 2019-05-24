@@ -1,20 +1,20 @@
-# Configuring Your Theme's App Server [](id=configuring-your-themes-app-server)
+---
+header-id: configuring-your-themes-app-server
+---
+
+# Configuring Your Theme's App Server
 
 When your theme was first created with the 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-themes), 
+[Liferay Theme Generator](/docs/7-1/tutorials/-/knowledge_base/t/creating-themes), 
 you had to specify the app server's location. This was done with the `gulp init` 
 task. Your theme uses this information to deploy to the proper server. If your 
 app server or site changes during development, you can update their 
 configuration information by manually running the `gulp init` task.
 
-+$$$
-
-**Note:** Gulp is included as a local dependency in generated themes, so you 
-are not required to install it. It can be accessed by running 
-`node_modules\.bin\gulp` followed by the Gulp task from a generated theme's 
-root folder.
-
-$$$
+| **Note:** Gulp is included as a local dependency in generated themes, so you
+| are not required to install it. It can be accessed by running
+| `node_modules\.bin\gulp` followed by the Gulp task from a generated theme's
+| root folder.
 
 Follow these steps:
 
@@ -40,10 +40,10 @@ Follow these steps:
           }
         }
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Automatically Deploying Theme Changes](/develop/tutorials/-/knowledge_base/7-1/automatically-deploying-theme-changes)
+[Automatically Deploying Theme Changes](/docs/7-1/tutorials/-/knowledge_base/t/automatically-deploying-theme-changes)
 
-[Changing Your Base Theme](/develop/tutorials/-/knowledge_base/7-1/changing-your-base-theme)
+[Changing Your Base Theme](/docs/7-1/tutorials/-/knowledge_base/t/changing-your-base-theme)
 
-[Listing Your Theme's Extensions](/develop/tutorials/-/knowledge_base/7-1/listing-your-themes-extensions)
+[Listing Your Theme's Extensions](/docs/7-1/tutorials/-/knowledge_base/t/listing-your-themes-extensions)

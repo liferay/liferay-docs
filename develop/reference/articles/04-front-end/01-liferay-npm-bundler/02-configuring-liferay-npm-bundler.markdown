@@ -1,17 +1,21 @@
-# Configuring liferay-npm-bundler [](id=configuring-liferay-npm-bundler)
+---
+header-id: configuring-liferay-npm-bundler
+---
+
+# Configuring liferay-npm-bundler
 
 The liferay-npm-bundler is configured via a `.npmbundlerrc` file placed in 
 the portlet project's root folder. You can create a complete configuration 
 manually or extend a configuration preset (via Babel). 
 
 This article explains the `.npmbundlerrc` file's structure. See the 
-[default preset reference](/develop/reference/-/knowledge_base/7-1/how-the-default-preset-configures-the-liferay-npm-bundler) 
+[default preset reference](/docs/7-1/reference/-/knowledge_base/r/how-the-default-preset-configures-the-liferay-npm-bundler) 
 to learn how the default preset configures the liferay-npm-bundler. See the 
-[Creating JavaScript Portlets with JavaScript Tooling](/develop/reference/-/knowledge_base/7-1/how-the-default-preset-configures-the-liferay-npm-bundler) 
+[Creating JavaScript Portlets with JavaScript Tooling](/docs/7-1/reference/-/knowledge_base/r/how-the-default-preset-configures-the-liferay-npm-bundler) 
 tutorial to learn how to use the liferay-npm-bundler to create JavaScript 
 portlets. 
 
-## Understanding the .npmbundlerrc File's Structure [](id=understanding-the-npmbundlerrc-file-structure)
+## Understanding the .npmbundlerrc File's Structure
 
 The `.npmbundlerrc` file has four possible phase definitions: *copy-process*, 
 *pre-process*, *post-process*, and *babel*. These phase definitions are 
@@ -27,15 +31,11 @@ before the Babel phase is run.
 **Babel:** Defined with the `.babelrc` definition. Specifies the `.babelrc` file 
 to use when running Babel through the package's `.js` files. 
 
-+$$$
-
-**Note:** During this phase, Babel transforms package files (for example, to 
-convert them to AMD format, if necessary), but doesn't transpile them. In 
-theory, you could also transpile them by configuring the proper plugins. We 
-recommend transpiling before running the bundler, to avoid mixing both unrelated 
-processes.
-
-$$$
+| **Note:** During this phase, Babel transforms package files (for example, to
+| convert them to AMD format, if necessary), but doesn't transpile them. In
+| theory, you could also transpile them by configuring the proper plugins. We
+| recommend transpiling before running the bundler, to avoid mixing both unrelated
+| processes.
 
 **Post-Process:** Defined with the `post-plugins` property. An alternative to 
 using the *pre-process* phase, this specifies plugins to run after the Babel 
@@ -123,18 +123,14 @@ Here's an example of a `.npmbundlerrc` configuration:
         }
     }
 
-+$$$
+| **Note:** Not all definition formats (`*`, `some-package-name`, and
+| `some-package-name@version`) shown above are required. In most cases, the
+| wildcard definition (`*`) is enough. The non-wildcard formats
+| (`some-package-name` and `some-package-name@version`) are rare exceptions for
+| packages that require a more specific configuration than the wildcard definition
+| provides.
 
-**Note:** Not all definition formats (`*`, `some-package-name`, and 
-`some-package-name@version`) shown above are required. In most cases, the 
-wildcard definition (`*`) is enough. The non-wildcard formats 
-(`some-package-name` and `some-package-name@version`) are rare exceptions for 
-packages that require a more specific configuration than the wildcard definition 
-provides.
-
-$$$
-
-### Standard Configuration Options [](id=standard-configuration-options)
+### Standard Configuration Options
 
 Below are the standard configuration options for the `.npmbundlerrc` file:
 
@@ -169,7 +165,7 @@ configuration. Note that if a `.npmbundlerrc` file is not provided, the default
 *verbose:* Sets whether to output detailed information about what the tool is 
 doing to the console. The default value is `false`.
 
-### Package Processing Options [](id=package-processing-options)
+### Package Processing Options
 
 *"/"*: plugins' configuration for the project's package.
 
@@ -216,11 +212,11 @@ to avoid EMFILE errors (especially on Windows). The default value is `128`.
 
 *process-serially:* *removed* since v2.7.0. Replaced with `max-parallel-files`.
 
-### OSGi Bundle Creation Options [](id=osgi-bundle-creation-options)
+### OSGi Bundle Creation Options
 
 Since version 2.2.0, the liferay-npm-bundler can create portlet OSGi bundles for 
 you. See the 
-[Creating and Bundling JavaScript Portlets with JavaScript Tooling](/develop/tutorials/-/knowledge_base/7-1/creating-and-bundling-javascript-portlets-with-javascript-tooling) 
+[Creating and Bundling JavaScript Portlets with JavaScript Tooling](/docs/7-1/tutorials/-/knowledge_base/t/creating-and-bundling-javascript-portlets-with-javascript-tooling) 
 tutorial for complete instructions. The configuration options for OSGi bundle 
 creation are shown below:
 
@@ -241,7 +237,7 @@ Use the `create-jar.features.js-extender` option instead.
 - **create-jar.features.configuration**: specifies the file describing the 
 system (OSGi) and widget instance (portlet preferences, as defined in the 
 Portlet spec) configuration to use. (see 
-[Configuring System Settings and Instance Settings for Your JavaScript Portlets](/develop/tutorials/-/knowledge_base/7-1/configuring-system-settings-and-instance-settings-for-your-js-portlet) 
+[Configuring System Settings and Instance Settings for Your JavaScript Portlets](/docs/7-1/tutorials/-/knowledge_base/t/configuring-system-settings-and-instance-settings-for-your-js-portlet) 
 for more information on the required settings configuration). The default value 
 is `features/configuration.json` if that file exists, otherwise the default is 
 `undefined`.
@@ -319,26 +315,18 @@ tutorial for more information on the required settings configuration). The
 default value is `features/settings.json` if that file exists, otherwise the 
 default is `undefined`.
 
-+$$$
+| **Note:** Plugins' configuration specifies the options for configuring plugins
+| in all the possible phases, as well as the `.babelrc` file to use when running
+| Babel (see [Babel's documentation](https://babeljs.io/docs/usage/babelrc/) for
+| more information on that file format).
 
-**Note:** Plugins' configuration specifies the options for configuring plugins 
-in all the possible phases, as well as the `.babelrc` file to use when running 
-Babel (see [Babel's documentation](https://babeljs.io/docs/usage/babelrc/) for 
-more information on that file format). 
-
-$$$
-
-+$$$
-
-**Note:** Prior to version 1.4.0 of the liferay-npm-bundler, package 
-configurations were placed next to the tools options 
-(`*`, `output`, `exclude`, etc.) To prevent package name collisions, package 
-configurations are now namespaced and placed under the `packages` section. To 
-maintain backwards compatibility, the liferay-npm-bundler falls back to the root 
-section outside `packages` for package configuration, if no package 
-configurations (`package-name@version`, `package-name`, or `*`) are found in the 
-`packages` section.
-
-$$$
+| **Note:** Prior to version 1.4.0 of the liferay-npm-bundler, package
+| configurations were placed next to the tools options
+| (`*`, `output`, `exclude`, etc.) To prevent package name collisions, package
+| configurations are now namespaced and placed under the `packages` section. To
+| maintain backwards compatibility, the liferay-npm-bundler falls back to the root
+| section outside `packages` for package configuration, if no package
+| configurations (`package-name@version`, `package-name`, or `*`) are found in the
+| `packages` section.
 
 Now you know the structure of the `.npmbundlerrc` file!

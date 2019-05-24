@@ -1,7 +1,11 @@
-# Creating Control Menu Entries [](id=creating-control-menu-entries)
+---
+header-id: creating-control-menu-entries
+---
+
+# Creating Control Menu Entries
 
 Now you'll create entries to customize the Control Menu. Make sure to read
-[Adding Custom Panel Categories](/develop/tutorials/-/knowledge_base/7-1/adding-custom-panel-categories)
+[Adding Custom Panel Categories](/docs/7-1/tutorials/-/knowledge_base/t/adding-custom-panel-categories)
 before beginning this tutorial. This tutorial assumes you know how to create a 
 panel category. Creating a Control Menu Entry follows the same pattern as
 creating a category:
@@ -12,7 +16,7 @@ creating a category:
 
 3.  Define the Control Menu Entry. 
 
-## Creating the OSGi Module [](id=creating-the-osgi-module)
+## Creating the OSGi Module
 
 First you must create the project.
 
@@ -25,7 +29,7 @@ First you must create the project.
     *ProductNavigationControlMenuEntry* 
     (e.g.,`StagingProductNavigationControlMenuEntry`).
 
-## Implementing Liferay's Frameworks [](id=implementing-liferays-frameworks)
+## Implementing Liferay's Frameworks
 
 Next, you need to connect your OSGi module to Liferay's frameworks and use those
 to define information about your entry.
@@ -73,12 +77,12 @@ to define information about your entry.
     extend `BaseJSPProductNavigationControlMenuEntry` to save time. This
     is covered in more detail below.
 
-## Defining the Control Menu Entry [](id=defining-the-control-menu-entry)
+## Defining the Control Menu Entry
 
 Now you must define your Control Menu Entry. Here are some examples for defining
 your entry.
 
-### Control Menu Examples [](id=control-menu-examples)
+### Control Menu Examples
 
 The
 [`IndexingProductNavigationControlMenuEntry`](https://github.com/liferay/liferay-portal/blob/7.0.3-ga4/modules/apps/foundation/portal-search/portal-search-web/src/main/java/com/liferay/portal/search/web/internal/product/navigation/control/menu/IndexingProductNavigationControlMenuEntry.java)
@@ -143,7 +147,7 @@ module:
             super.setServletContext(servletContext);
         }
 
-### Displaying Your Control Menu Entry [](id=displaying-your-control-menu-entry)
+### Displaying Your Control Menu Entry
 
 Part of creating the entry is defining when it appears. The Control Menu
 shows different entries depending on the displayed page. You can specify when
@@ -191,7 +195,7 @@ appear. The staging entry never appears if the page is an administration page
             return true;
         }
 
-### Defining Dependencies [](id=defining-dependencies)
+### Defining Dependencies
 
 Define dependencies for your Control Menu Entry in your build file (e.g., 
 `build.grade` or `pom.xml`). For example, some popular dependencies (in Gradle

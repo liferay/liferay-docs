@@ -1,4 +1,8 @@
-# Publishing as an Individual or on Behalf of a Company [](id=publishing-as-an-individual-or-on-behalf-of-a-company)
+---
+header-id: publishing-as-an-individual-or-on-behalf-of-a-company
+---
+
+# Publishing as an Individual or on Behalf of a Company
 
 You can publish an app as yourself (an individual) or on behalf of a *company*.
 This determines who is shown as the app's author and owner. Your selection also

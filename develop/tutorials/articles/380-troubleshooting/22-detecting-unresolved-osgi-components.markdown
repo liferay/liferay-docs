@@ -1,7 +1,11 @@
-# Detecting Unresolved OSGi Components [](id=detecting-unresolved-osgi-components)
+---
+header-id: detecting-unresolved-osgi-components
+---
+
+# Detecting Unresolved OSGi Components
 
 @product@ includes 
-[Gogo shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell) 
+[Gogo shell](/docs/7-1/reference/-/knowledge_base/r/using-the-felix-gogo-shell) 
 commands that come in handy when trying to diagnose a problem due to an 
 unresolved OSGi component. The specific tools to use depend on the component 
 framework of the unresolved component. Most @product@ components are developed 
@@ -24,7 +28,7 @@ sections:
     -   [dm na Command](#dm-na-command)
     -   [`ServiceProxyFactory`](#serviceproxyfactory)
 
-## Declarative Services Components [](id=declarative-services-components)
+## Declarative Services Components
 
 Start with DS, since most @product@ components, apart from Service Builder
 components, are DS components. Suppose one of your bundle's components has an
@@ -38,7 +42,7 @@ unsatisfied service reference. How can you detect this? Two ways:
     [Gogo shell command `ds:unsatisfied`](#ds-unsatisfied-command)
     to check for them manually.
 
-### Declarative Services Unsatisfied Component Scanner [](id=declarative-services-unsatisfied-component-scanner)
+### Declarative Services Unsatisfied Component Scanner
 
 Here's how to enable the unsatisfied component scanner:
 
@@ -68,7 +72,7 @@ The message above warns that the `com.liferay.blogs.web` bundle's DS component
 unsatisfied reference to a component of type `ItemSelectorHelper`. The
 referencing component's ID (SCR ID) is `3333` and its bundle ID is `631`. 
 
-### ds:unsatisfied Command [](id=ds-unsatisfied-command)
+### ds:unsatisfied Command
 
 Another way to detect unsatisfied component references is to invoke the Gogo
 shell command `ds:unsatisfied`. 
@@ -122,7 +126,7 @@ missing a `Foo` service. Now you can focus on why `Foo` is unavailable. The
 solution may be as simple as starting or deploying a bundle that provides the
 `Foo` service. 
 
-## Service Builder Components [](id=service-builder-components)
+## Service Builder Components
 
 Service Builder modules are implemented using Spring. @product@ uses
 [the Apache Felix Dependency Manager](http://felix.apache.org/documentation/subprojects/apache-felix-dependency-manager.html) 
@@ -135,7 +139,7 @@ an unresolved Spring-related OSGi component. This can occur if you update your
 application's database schema but forget to trigger an upgrade (for information
 on creating database upgrade processes for your @product@ applications, see the
 tutorial 
-[Creating an Upgrade Process for Your App](/develop/tutorials/-/knowledge_base/7-1/creating-an-upgrade-process-for-your-app)). 
+[Creating an Upgrade Process for Your App](/docs/7-1/tutorials/-/knowledge_base/t/creating-an-upgrade-process-for-your-app)). 
 
 These features detect unresolved Service Builder related components. 
 
@@ -143,7 +147,7 @@ These features detect unresolved Service Builder related components.
 -   [dm na Command](#dm-na-command)
 -   [ServiceProxyFactory](#serviceproxyfactory)
 
-### Unavailable Component Scanner [](id=unavailable-component-scanner)
+### Unavailable Component Scanner
 
 The
 [OSGi Debug Spring Extender](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.portal.osgi.debug.spring.extender/)
@@ -175,7 +179,7 @@ components and Service Builder components are published and used in the same
 module. Use separate modules to publish DS components and Service Builder
 components. 
 
-### dm na Command [](id=dm-na-command)
+### dm na Command
 
 Dependency Manager's
 [Gogo shell command `dm`](http://felix.apache.org/documentation/subprojects/apache-felix-dependency-manager/tutorials/leveraging-the-shell.html)
@@ -188,7 +192,7 @@ To list unresolved components only execute this Gogo shell command:
 
 The `na` option stands for "not available." 
 
-### ServiceProxyFactory [](id=serviceproxyfactory)
+### ServiceProxyFactory
 
 @product@'s logs report unresolved Service Builder components too. For example,
 @product@ logs an error when a Service Proxy Factory can't create a new instance
@@ -213,6 +217,6 @@ Now you can detect unresolved components, DS and DM components, automatically
 using scanners, manually using Gogo shell commands, and programmatically using a
 `ServiceProxyFactory`. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[System Check](/develop/tutorials/-/knowledge_base/7-1/system-check)
+[System Check](/docs/7-1/tutorials/-/knowledge_base/t/system-check)

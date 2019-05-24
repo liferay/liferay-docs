@@ -1,4 +1,8 @@
-# Navigating Between Related Resources [](id=navigating-between-related-resources)
+---
+header-id: navigating-between-related-resources
+---
+
+# Navigating Between Related Resources
 
 A key benefit of Liferay's hypermedia REST APIs is discovering and navigating 
 all the services from a single starting point, the API's home URL. This is 
@@ -8,7 +12,7 @@ endpoints.
 You can therefore navigate from 
 
 -   The home URL to any of the root resources. The 
-    [getting started tutorial on discovering the API](/develop/tutorials/-/knowledge_base/7-1/get-started-discover-the-api) 
+    [getting started tutorial on discovering the API](/docs/7-1/tutorials/-/knowledge_base/t/get-started-discover-the-api) 
     contains an example of this. 
 -   A collection to any of its elements. 
 -   A resource to a related resource. 

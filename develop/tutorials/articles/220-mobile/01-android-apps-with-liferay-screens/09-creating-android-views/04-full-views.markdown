@@ -1,4 +1,8 @@
-# Full Views [](id=full-views)
+---
+header-id: full-views
+---
+
+# Full Views
 
 A Full View has a unique Screenlet class, a View class, and layout XML file.
 It's standalone and doesn't inherit from any View. You should create a Full View
@@ -53,7 +57,7 @@ You can follow these steps to create a Full View:
 
 2.  Create a new custom View class named after the layout's root element. The 
     tutorial on creating Android Screenlets explains how to 
-    [create a View class](/develop/tutorials/-/knowledge_base/7-1/creating-the-ui#creating-the-screenlets-view-class).
+    [create a View class](/docs/7-1/tutorials/-/knowledge_base/t/creating-the-ui#creating-the-screenlets-view-class).
     Note that you don't have to extend a View class to implement a View Model
     interface, but you might want to for convenience. The custom View class
     [`LoginFullView`](https://github.com/liferay/liferay-screens/blob/master/android/samples/test-app/src/main/java/com/liferay/mobile/screens/testapp/fullview/LoginFullView.java),
@@ -87,12 +91,12 @@ to add a
 The custom Screenlet class also adds a new user action that calls the base 
 Interactor `SignUpInteractor`. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Themed Views](/develop/tutorials/-/knowledge_base/7-1/themed-views)
+[Themed Views](/docs/7-1/tutorials/-/knowledge_base/t/themed-views)
 
-[Child Views](/develop/tutorials/-/knowledge_base/7-1/child-views)
+[Child Views](/docs/7-1/tutorials/-/knowledge_base/t/child-views)
 
-[Extended Views](/develop/tutorials/-/knowledge_base/7-1/extended-views)
+[Extended Views](/docs/7-1/tutorials/-/knowledge_base/t/extended-views)
 
-[Packaging Your Views](/develop/tutorials/-/knowledge_base/7-1/packaging-your-views)
+[Packaging Your Views](/docs/7-1/tutorials/-/knowledge_base/t/packaging-your-views)

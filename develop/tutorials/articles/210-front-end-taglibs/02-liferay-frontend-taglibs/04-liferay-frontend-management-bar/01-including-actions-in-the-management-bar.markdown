@@ -1,4 +1,8 @@
-# Including Actions in the Management Bar [](id=including-actions-in-the-management-bar)
+---
+header-id: including-actions-in-the-management-bar
+---
+
+# Including Actions in the Management Bar
 
 While an actions menu is typically included with each search container result, 
 you can also include these actions in the management bar. This keeps everything 
@@ -46,8 +50,8 @@ Follow these steps to include actions in your management bar:
 
 ![Figure 2: You can have as many actions as your app requires.](../../../../images/liferay-frontend-taglib-management-bar-actions.png)
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Disabling All or Portions of the Management Bar](/develop/tutorials/-/knowledge_base/7-1/disabling-all-or-portions-of-the-management-bar)
+[Disabling All or Portions of the Management Bar](/docs/7-1/tutorials/-/knowledge_base/t/disabling-all-or-portions-of-the-management-bar)
 
-[Clay Management Toolbar](/develop/tutorials/-/knowledge_base/7-1/clay-management-toolbar)
+[Clay Management Toolbar](/docs/7-1/tutorials/-/knowledge_base/t/clay-management-toolbar)

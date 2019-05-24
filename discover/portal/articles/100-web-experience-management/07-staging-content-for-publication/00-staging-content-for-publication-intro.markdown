@@ -1,4 +1,8 @@
-# Staging Content for Publication [](id=staging-content-for-publication)
+---
+header-id: staging-content-for-publication
+---
+
+# Staging Content for Publication
 
 Today's enterprises generate an enormous amount of content. You can use advanced
 publishing tools to make the content available for users.

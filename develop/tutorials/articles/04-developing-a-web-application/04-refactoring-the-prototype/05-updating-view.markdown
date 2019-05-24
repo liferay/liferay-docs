@@ -1,4 +1,8 @@
-# Updating the View [](id=updating-the-view)
+---
+header-id: updating-the-view
+---
+
+# Updating the View
 
 <div class="learn-path-step">
     <p>Refactoring the Prototype<br>Step 5 of 6</p>

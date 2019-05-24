@@ -1,4 +1,8 @@
-# Creating Teams to Empower Site Members [](id=creating-teams-for-advanced-site-membership-management)
+---
+header-id: creating-teams-for-advanced-site-membership-management
+---
+
+# Creating Teams to Empower Site Members
 
 If you have an *ad hoc* group of Users who perform the same set of tasks in
 a Site, you can organize them into Site Teams, and then assign the team
@@ -22,15 +26,11 @@ features of Teams are that they are limited to their Sites and that they empower
 Site Administrators to manage permissions for their Sites since Site
 Administrators cannot create new Roles.
 
-+$$$
-
-**Note:** To create and apply permissions for a group of users to use across
-multiple Sites or Organizations in your Liferay instance, consider aggregating
-the Users into a [User Group](/discover/portal/-/knowledge_base/7-1/user-groups)
-and assigning the User Group permissions via
-[Roles](/discover/portal/-/knowledge_base/7-1/roles-and-permissions).
-
-$$$
+| **Note:** To create and apply permissions for a group of users to use across
+| multiple Sites or Organizations in your Liferay instance, consider aggregating
+| the Users into a [User Group](/docs/7-1/user/-/knowledge_base/u/user-groups)
+| and assigning the User Group permissions via
+| [Roles](/docs/7-1/user/-/knowledge_base/u/roles-and-permissions).
 
 To create a team within a Site,
 
@@ -41,7 +41,7 @@ To create a team within a Site,
     It's important to note that configuring other Site membership groupings, 
     such as *Users*, *Organizations*, and *User Groups* can be done in the 
     *Site Memberships* app, which is also in the Members tab. You can 
-    visit [User Management](/discover/portal/-/knowledge_base/7-1/managing-users)
+    visit [User Management](/docs/7-1/user/-/knowledge_base/u/managing-users)
     for more information on how Site memberships work.
 
 3.  Finally, click the *Add Team* icon (![Add Team](../../../../images/icon-add.png)).

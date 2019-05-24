@@ -1,4 +1,8 @@
-# jQuery npm Portlet [](id=jquery-npm-portlet)
+---
+header-id: jquery-npm-portlet
+---
+
+# jQuery npm Portlet
 
 The jQuery npm Portlet sample provides a portlet that uses the
 [jQuery](https://jquery.com/) framework to render its output.
@@ -7,12 +11,12 @@ The jQuery npm Portlet sample provides a portlet that uses the
 
 This portlet showcases the fast HTML document traversal jQuery offers.
 
-## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
+## What API(s) and/or code components does this sample highlight?
 
 This sample leverages the
-[npm development workflow support](/develop/tutorials/-/knowledge_base/7-1/using-npm-in-your-portlets).
+[npm development workflow support](/docs/7-1/tutorials/-/knowledge_base/t/using-npm-in-your-portlets).
 
-## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
+## How does this sample leverage the API(s) and/or code component?
 
 This sample uses the [npm registry](https://www.npmjs.com/) to download project
 dependencies and uses the
@@ -26,7 +30,7 @@ script inside its `package.json` file:
         "build": "babel --source-maps -d build/resources/main/META-INF/resources src/main/resources/META-INF/resources && liferay-npm-bundler"
     },
 
-## Where Is This Sample? [](id=where-is-this-sample)
+## Where Is This Sample?
 
 There are two different versions of this sample, each built with a different
 build tool:

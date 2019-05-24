@@ -1,4 +1,8 @@
-# Managing Files and Folders in Liferay Sync Mobile [](id=managing-files-and-folders-in-liferay-sync-mobile)
+---
+header-id: managing-files-and-folders-in-liferay-sync-mobile
+---
+
+# Managing Files and Folders in Liferay Sync Mobile
 
 Whether you're working in My Documents or My Sites, you manage files and folders
 the same way. Pressing a Site or folder shows you a list of its files and
@@ -42,15 +46,11 @@ app's Settings menu. Doing so removes all downloaded files from your device, but
 preserves them in the instance. If you're on Android, it may be possible to use
 a system file browser app to remove downloaded files manually. 
 
-+$$$
-
-**Warning:** Deleting a file in the mobile Sync app deletes it in @product@ and
-across any synced clients. If you accidentally delete a file, the instance or
-Site administrator can restore it from the instance's Recycle Bin. The Recycle
-Bin is enabled by default. If the instance or Site administrator disables the
-Recycle Bin, however, recovering deleted files is impossible. 
-
-$$$
+| **Warning:** Deleting a file in the mobile Sync app deletes it in @product@ and
+| across any synced clients. If you accidentally delete a file, the instance or
+| Site administrator can restore it from the instance's Recycle Bin. The Recycle
+| Bin is enabled by default. If the instance or Site administrator disables the
+| Recycle Bin, however, recovering deleted files is impossible.
 
 The context menu also provides additional options for files. A small badge on
 the file icon's top-right corner indicates the file's version in the @product@ 

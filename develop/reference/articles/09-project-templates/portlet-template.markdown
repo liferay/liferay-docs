@@ -1,4 +1,8 @@
-# Portlet Template [](id=using-the-portlet-template)
+---
+header-id: using-the-portlet-template
+---
+
+# Portlet Template
 
 In this article, you'll learn how to create a Liferay portlet application
 as a Liferay module. To create a Liferay portlet application via the command

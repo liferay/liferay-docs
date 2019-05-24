@@ -1,4 +1,8 @@
-# Setting Up Marketplace [](id=setting-up-marketplace-and-portal-security)
+---
+header-id: setting-up-marketplace-and-portal-security
+---
+
+# Setting Up Marketplace
 
 [Liferay Marketplace](https://www.liferay.com/marketplace)
 is more than just a store for Liferay applications. Under the hood, it provides
@@ -12,7 +16,7 @@ Here are some scenarios to work around to ensure Marketplace works successfully:
 
 The firewall scenario is discussed first. 
 
-## Server is Firewalled without Access to the Internet [](id=server-is-firewalled-without-access-to-the-internet)
+## Server is Firewalled without Access to the Internet
 
 Your server might be behind a firewall that prevents access to the Internet. Or
 your security policy might not allow direct download and installation from the
@@ -22,14 +26,14 @@ Internet. In these cases, you have two options:
     [Marketplace plugin](https://www.liferay.com/marketplace/download).
     Then allow @product@ to auto deploy it by dropping the downloaded `.lpkg`
     file into the `deploy` folder in
-    [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home).
+    [Liferay Home](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home).
 
 2.  Alternately, once you have the downloaded `.lpkg` file, deploy it using the
-    [App Manager](/discover/portal/-/knowledge_base/7-1/managing-and-configuring-apps).
+    [App Manager](/docs/7-1/user/-/knowledge_base/u/managing-and-configuring-apps).
 
 Next you'll learn how to work around database access restrictions. 
 
-## Limited Database Access [](id=limited-database-access)
+## Limited Database Access
 
 Some production environments do not have the necessary database permissions for
 @product@, apps, modules, and plugins to maintain their tables. In these cases:
@@ -42,7 +46,7 @@ Some production environments do not have the necessary database permissions for
     dropping tables from the @product@ database user.
 
 See the
-[database server and new database instructions](/discover/deployment/-/knowledge_base/7-1/preparing-for-install#step-1-choose-a-database-server-and-create-a-new-database)
+[database server and new database instructions](/docs/7-1/deploy/-/knowledge_base/d/preparing-for-install#step-1-choose-a-database-server-and-create-a-new-database)
 for more information. Note that many sophisticated
 @product@ apps---not just the Marketplace app---require new tables when
 deployed. If your environment restricts database access, you may need to repeat

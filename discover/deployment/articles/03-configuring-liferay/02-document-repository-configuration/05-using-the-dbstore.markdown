@@ -1,4 +1,8 @@
-# Using the DBStore [](id=using-the-dbstore)
+---
+header-id: using-the-dbstore
+---
+
+# Using the DBStore
 
 You can store Documents and Media files in your @product@ database using
 DBStore. DBStore's maximum file (stored as a blob) size is 1 gigabyte. To store
@@ -8,7 +12,7 @@ Store.
 Here are the DBStore configuration steps:
 
 1.  Set the following property in a `portal-ext.properties` file in your
-    [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
+    [Liferay Home](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home)
     folder: 
 
         dl.store.impl=com.liferay.portal.store.db.DBStore

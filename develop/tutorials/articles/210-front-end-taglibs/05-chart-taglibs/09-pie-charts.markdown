@@ -1,4 +1,8 @@
-# Pie Charts [](id=pie-charts)
+---
+header-id: pie-charts
+---
+
+# Pie Charts
 
 Pie charts are percentage-based. A pie chart models percentage-based data as 
 individual slices of pie. Each data set must be defined as a new instance of the 
@@ -34,10 +38,10 @@ Follow these steps:
 
 ![Figure 1: A pie chart models percentage-based data as individual slices of pie.](../../../images/chart-taglib-pie.png)
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Donut Charts](/develop/tutorials/-/knowledge_base/7-1/donut-charts)
+[Donut Charts](/docs/7-1/tutorials/-/knowledge_base/t/donut-charts)
 
-[Pie Charts](/develop/tutorials/-/knowledge_base/7-1/pie-charts)
+[Pie Charts](/docs/7-1/tutorials/-/knowledge_base/t/pie-charts)
 
-[Using Clay Taglibs in Your Portlet](/develop/tutorials/-/knowledge_base/7-1/using-the-clay-taglib-in-your-portlets)
+[Using Clay Taglibs in Your Portlet](/docs/7-1/tutorials/-/knowledge_base/t/using-the-clay-taglib-in-your-portlets)

@@ -1,4 +1,8 @@
-# The RSS Publisher Widget [](id=the-rss-publisher-widget)
+---
+header-id: the-rss-publisher-widget
+---
+
+# The RSS Publisher Widget
 
 The RSS Publisher widget displays RSS feeds. If you're looking for a web-based
 RSS reader, look no further: just add the RSS Publisher widget to one your
@@ -11,14 +15,10 @@ widget and select feeds to be displayed.
 
 ![Figure 1: The RSS Publisher widget lets you display RSS feeds of your choosing.](../../../../images/rss-widget-default-view.png)
 
-+$$$
-
-**Note:** If you run your server behind a proxy, you must set the appropriate
-Java proxy settings (such as `http.proxyHost=` and `http.proxyPort=`) in your
-`setenv` script or in your `system-ext.properties`. Without these properties,
-the RSS Publisher widget can't access any RSS feeds.
-
-$$$
+| **Note:** If you run your server behind a proxy, you must set the appropriate
+| Java proxy settings (such as `http.proxyHost=` and `http.proxyPort=`) in your
+| `setenv` script or in your `system-ext.properties`. Without these properties,
+| the RSS Publisher widget can't access any RSS feeds.
 
 Note that the RSS Publisher widget is deprecated. In Liferay CE Portal 7.1 GA2+, 
 and Liferay DXP 7.1 FP4+, the widget is available from the *Add* 
@@ -28,7 +28,7 @@ releases of Liferay CE Portal 7.1 and Liferay DXP 7.1. In these releases, you
 must therefore make the widget visible via a configuration file. The next 
 section shows you how to do this. 
 
-## Ensuring that the RSS Publisher Widget is Visible [](id=ensuring-that-the-rss-publisher-widget-is-visible)
+## Ensuring that the RSS Publisher Widget is Visible
 
 The RSS Publisher widget is hidden in Liferay CE Portal 7.1 GA1 and versions of 
 Liferay DXP 7.1 prior to Fix Pack 4. If you're running one of these versions, 
@@ -39,7 +39,7 @@ follow these steps to ensure that the widget is visible:
 2.  In `[Liferay Home]/osgi/configs`, create the file 
     `com.liferay.rss.web.internal.configuration.RSSWebCacheConfiguration.config`. 
     Note that the 
-    [Liferay Home folder](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home) 
+    [Liferay Home folder](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home) 
     is usually the application server's parent folder. 
 
 3.  Add the following configuration to the file you created in the first step: 
@@ -52,7 +52,7 @@ The RSS Publisher widget is now available in the *Add*
 (![Add](../../../../images/icon-add-app.png)) 
 &rarr; *Widgets* &rarr; *News* menu. 
 
-## Using the RSS Publisher Widget [](id=using-the-rss-publisher-widget)
+## Using the RSS Publisher Widget
 
 You can add the RSS Publisher widget to a page from the *Add* 
 (![Add](../../../../images/icon-add-app.png)) 

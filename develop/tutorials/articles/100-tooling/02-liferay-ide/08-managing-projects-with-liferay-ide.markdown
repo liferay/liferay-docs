@@ -1,11 +1,15 @@
-# Managing Projects with Liferay Dev Studio [](id=managing-projects-with-liferay-ide)
+---
+header-id: managing-projects-with-liferay-ide
+---
+
+# Managing Projects with Liferay Dev Studio
 
 Liferay Dev Studio provides the ability to manage Liferay projects from a GUI.
 Before you begin learning about managing your projects from Liferay Dev Studio,
 you should make sure a Liferay server is configured in your Eclipse workspace so
 you can deploy and run your projects. You can learn how to create a Liferay
 bundle and link it to your Liferay workspace in the
-[Creating a Liferay Workspace with Liferay Dev Studio](/develop/tutorials/-/knowledge_base/7-1/creating-a-liferay-workspace-with-liferay-ide)
+[Creating a Liferay Workspace with Liferay Dev Studio](/docs/7-1/tutorials/-/knowledge_base/t/creating-a-liferay-workspace-with-liferay-ide)
 tutorial.
 
 Once you've created projects, you can deploy them using Dev Studio. First, make
@@ -19,7 +23,7 @@ a project to your running Liferay instance!
 
 For the deployed project, you can check if it has been deployed successfully by
 using the
-[Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell).
+[Gogo Shell](/docs/7-1/reference/-/knowledge_base/r/using-the-felix-gogo-shell).
 Right-click the started portal in your Server view and select *Open Gogo Shell*.
 
 ![Figure 1: Select *Open Gogo Shell* to open a terminal window in Dev Studio using Gogo shell.](../../../images/open-gogo-shell.png)
@@ -32,9 +36,9 @@ deployed successfully.
 ![Figure 2: You can check to see if your project deployed successfully to Liferay using the Gogo shell.](../../../images/gogo-deploy-successful.png)
 
 Dev Studio's Gogo shell usage requires
-[Developer Mode](/develop/tutorials/-/knowledge_base/7-1/using-developer-mode-with-themes#setting-developer-mode-for-your-server-in-liferay-ide)
+[Developer Mode](/docs/7-1/tutorials/-/knowledge_base/t/using-developer-mode-with-themes#setting-developer-mode-for-your-server-in-liferay-ide)
 to be enabled. Developer Mode is enabled in
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace)
+[Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace)
 by default.
 
 Since the Liferay Workspace perspective in Dev Studio is Gradle-based, you have
@@ -51,7 +55,7 @@ build command you want to execute.
 ![Figure 4: You can execute build operations by right-clicking the Gradle project in the Project Explorer.](../../../images/gradle-build-operations.png)
 
 To learn more about Gradle development in Liferay Dev Studio, see the
-[Using Gradle in Liferay Dev Studio](/develop/tutorials/-/knowledge_base/7-1/using-gradle-in-liferay-ide)
+[Using Gradle in Liferay Dev Studio](/docs/7-1/tutorials/-/knowledge_base/t/using-gradle-in-liferay-ide)
 tutorial.
 
 Excellent! You've learned how to manage your Gradle-based Liferay Workspace

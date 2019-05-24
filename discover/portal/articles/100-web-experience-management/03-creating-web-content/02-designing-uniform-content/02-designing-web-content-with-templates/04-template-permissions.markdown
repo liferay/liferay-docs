@@ -1,4 +1,8 @@
-# Assigning Template Permissions [](id=assigning-template-permissions)
+---
+header-id: assigning-template-permissions
+---
+
+# Assigning Template Permissions
 
 Structures and Templates provide direct access to Liferay's APIs which makes
 them powerful, but it also means that they can be dangerous in the wrong hands.
@@ -14,10 +18,10 @@ create two Roles with access to structures and templates:
 When creating the Roles, define them to have global permission for all
 structures and templates across the entire instance or only for specific
 Sites. For more information on creating Roles, see the 
-[Roles and Permissions](/discover/portal/-/knowledge_base/7-1/roles-and-permissions) 
+[Roles and Permissions](/docs/7-1/user/-/knowledge_base/u/roles-and-permissions) 
 article.
 
-## Assigning Permissions for Individual Templates [](id=assigning-permissions-for-individual-templates)
+## Assigning Permissions for Individual Templates
 
 You can also control access to specific templates separately. To determine who 
 can view and interact with a template,

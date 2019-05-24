@@ -1,4 +1,8 @@
-# Recycle Bin Intelligence and Support [](id=recycle-bin-intelligence-and-support)
+---
+header-id: recycle-bin-intelligence-and-support
+---
+
+# Recycle Bin Intelligence and Support
 
 Have you ever wondered what happens to file shortcuts if their linked assets 
 are recycled? What if you restore a file that has the same name as another file 
@@ -27,7 +31,7 @@ Although the Recycle Bin prohibits the restoration of files that match
 pre-existing file names in your site/instance, it stores files with matching
 names.
 
-## The Staging Recycle Bin [](id=the-staging-recycle-bin)
+## The Staging Recycle Bin
 
 Although you there is only one master Recycle Bin for all asset types, when 
 staging is enabled a *Staging* Recycle Bin is created. The original Recycle 
@@ -44,13 +48,9 @@ Bin is necessary and only used during the staging process. When you publish your
 staged material, the Staging Recycle Bin content is transferred to the Live
 Recycle Bin.
 
-+$$$
-
-**Note:** The Staging Recycle Bin saves its contents until the staged material
-has been published to the live site. This means that you can turn the staging
-mode on and off without losing your recycled material.
-
-$$$
+| **Note:** The Staging Recycle Bin saves its contents until the staged material
+| has been published to the live site. This means that you can turn the staging
+| mode on and off without losing your recycled material.
 
 The Recycle Bin saves you time by letting you restore content that's been
 recycled. Instead of recreating or re-uploading content, you'll be tailoring

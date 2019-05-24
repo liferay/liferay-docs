@@ -1,4 +1,8 @@
-# Creating Android Views [](id=creating-android-views)
+---
+header-id: creating-android-views
+---
+
+# Creating Android Views
 
 By creating your own Views, you can customize your mobile app's layout, style,
 and functionality. You can create them from scratch or use an existing View as a
@@ -29,13 +33,13 @@ from a Screenlet's current theme.
 
 This tutorial explains how to create all four types of Views. To understand
 View concepts and components, you might want to examine the
-[architecture](/develop/tutorials/-/knowledge_base/7-1/architecture-of-liferay-screens-for-android)
+[architecture](/docs/7-1/tutorials/-/knowledge_base/t/architecture-of-liferay-screens-for-android)
 of Liferay Screens for Android. And the tutorial
-[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/7-1/creating-android-screenlets)
+[Creating Android Screenlets](/docs/7-1/tutorials/-/knowledge_base/t/creating-android-screenlets)
 can help you create or extend any Screenlet classes your View requires. Now get
 ready to create some great Views! 
 
-## Determining Your View's Location [](id=determining-your-views-location)
+## Determining Your View's Location
 
 First, decide whether you'll reuse your view or if it's just for your current
 app. If you don't plan to reuse it in another app or don't want to redistribute
@@ -43,7 +47,7 @@ it, create it in your app project.
 
 If you want to reuse your View in another app, create it in a new Android
 application module; the tutorial
-[Packaging Android Screenlets](/develop/tutorials/-/knowledge_base/7-1/packaging-your-screenlets) 
+[Packaging Android Screenlets](/docs/7-1/tutorials/-/knowledge_base/t/packaging-your-screenlets) 
 explains how. When your View's project is in place, you can start creating it. 
 
 First, you'll learn how to create a Themed View. 

@@ -1,4 +1,8 @@
-# Backing up a @product@ Installation [](id=backing-up-a-liferay-installation)
+---
+header-id: backing-up-a-liferay-installation
+---
+
+# Backing up a @product@ Installation
 
 Once you have an installation of @product@ running, you should implement a
 comprehensive backup plan. In case some kind of catastrophic hardware failure
@@ -13,7 +17,7 @@ The recommended backup plan includes backing up these things:
 -   @product@'s file System
 -   @product@'s database
 
-## Backing up Source Code [](id=backing-up-source-code)
+## Backing up Source Code
 
 If you have extended @product@ or have written any plugins, they should be
 stored in a source code repository such as Git, Subversion, or CVS, unless
@@ -25,10 +29,10 @@ include source code in your @product@ backup plan.
 
 Next, let's examine the @product@ installation items you should back up.
 
-## Backing up @product@'s File System [](id=backing-up-liferays-file-system)
+## Backing up @product@'s File System
 
 The
-[Liferay Home folder](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
+[Liferay Home folder](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home)
 stores @product@'s properties configuration files, such as `portal-setup-
 wizard.properties` and `portal-ext.properties`. You should absolutely back them
 up. In fact, it's best to back up your entire application server and  Liferay
@@ -57,7 +61,7 @@ location other than the default location, you should also back up that location.
 That covers the @product@ file system locations you should back up. Next, let's
 discuss how to back up @product@'s database.
 
-## Backing up @product@'s Database [](id=backing-up-liferays-database)
+## Backing up @product@'s Database
 
 @product@'s database is the central repository for all of the portal's
 information. It's the most important component to back up. You can back up the
@@ -71,7 +75,7 @@ state to that of the time you exported the database.
 If you're storing @product@'s Documents and Media Library files to a Jackrabbit
 JSR-170 repository database, you should back it up. If you've placed your search
 index into a database (not recommended; see the
-[@product@ Clustering](/discover/deployment/-/knowledge_base/7-1/liferay-clustering) 
+[@product@ Clustering](/docs/7-1/deploy/-/knowledge_base/d/liferay-clustering) 
 article for information on using Cluster Link or Solr), you should back up that
 database too. 
 

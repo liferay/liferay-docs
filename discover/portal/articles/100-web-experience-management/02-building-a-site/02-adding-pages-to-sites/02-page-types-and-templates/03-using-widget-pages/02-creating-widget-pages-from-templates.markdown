@@ -1,10 +1,14 @@
-# Creating Widget Pages from Templates [](id=creating-widget-pages-from-templates)
+---
+header-id: creating-widget-pages-from-templates
+---
+
+# Creating Widget Pages from Templates
 
 Page templates provide pre-configured pages to reuse. There are two types of
 page templates in @product-ver@: Widget Page templates consist of a portlet
 layout and configuration. Content Page templates are constructed from
 Fragments. You can read about 
-[Content Page Templates in this article](/discover/portal/-/knowledge_base/7-1/building-content-pages-from-fragments).
+[Content Page Templates in this article](/docs/7-1/user/-/knowledge_base/u/building-content-pages-from-fragments).
 
 Three sample layout page templates are installed by default:
 
@@ -78,7 +82,7 @@ those pages. Site administrators can disable this behavior by disabling the
 *Inherit Changes* selector. Occasionally, propagation for page templates fails
 due to unintended errors. To learn how to manage a failed page template
 propagation, visit the
-[Propagating Changes from Site Templates to Sites](/discover/portal/-/knowledge_base/7-1/propagating-changes-from-site-templates-to-sites)
+[Propagating Changes from Site Templates to Sites](/docs/7-1/user/-/knowledge_base/u/propagating-changes-from-site-templates-to-sites)
 tutorial.
 
 If staging has been enabled, changes to the page template are automatically
@@ -88,9 +92,9 @@ page template changes to the staged page cannot be turned off and the *Inherit
 Changes* selector does not appear.
 
 You can read more about staging in the
-[Staging Content for Publication tutorial](/discover/portal/-/knowledge_base/7-1/staging-content-for-publication).
+[Staging Content for Publication tutorial](/docs/7-1/user/-/knowledge_base/u/staging-content-for-publication).
 
-## Sharing Widget Page Templates [](id=sharing-widget-page-templates)
+## Sharing Widget Page Templates
 
 When importing pages to a new site or environment, you must also import
 templates associated with those pages. Generally templates are
@@ -126,6 +130,6 @@ to the new environment. To export page templates,
 
 Once the template has been imported, the page can be imported normally to your
 new environment. For more information on exporting/importing content, visit the
-[Importing/Exporting Sites and Content](/discover/portal/-/knowledge_base/7-1/importing-exporting-pages-and-content)
+[Importing/Exporting Sites and Content](/docs/7-1/user/-/knowledge_base/u/importing-exporting-pages-and-content)
 article. 
 

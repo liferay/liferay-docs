@@ -1,6 +1,10 @@
-# PDF Display Screenlet for Android [](id=pdf-display-screenlet-for-android)
+---
+header-id: pdf-display-screenlet-for-android
+---
 
-## Requirements [](id=requirements)
+# PDF Display Screenlet for Android
+
+## Requirements
 
 - Android SDK 4.1 (API Level 16) or above
 - Liferay Portal 6.2 CE/EE, Liferay CE Portal 7.0/7.1, Liferay DXP
@@ -9,21 +13,21 @@
   [EE/DXP](http://www.liferay.com/marketplace/-/mp/application/54369726)). 
   This app is preinstalled in Liferay CE Portal 7.0/7.1 and Liferay DXP. 
 
-## Compatibility [](id=compatibility)
+## Compatibility
 
 - Android SDK 4.1 (API Level 16) or above
 
-## Xamarin Requirements [](id=xamarin-requirements)
+## Xamarin Requirements
 
 - Visual Studio 7.2
 - Mono .NET framework 5.4.1.6
 
-## Features [](id=features)
+## Features
 
 PDF Display Screenlet displays a PDF file from a Liferay Instance's Documents 
 and Media Library. 
 
-## JSON Services Used [](id=json-services-used)
+## JSON Services Used
 
 Screenlets in Liferay Screens call JSON web services in the portal. This 
 Screenlet calls the following services and methods.
@@ -35,11 +39,11 @@ Screenlet calls the following services and methods.
 | `ScreensassetentryService` (Screens compatibility plugin) | `getAssetEntries` | With `entryQuery` |
 | `ScreensassetentryService` (Screens compatibility plugin) | `getAssetEntries` | With `companyId`, `groupId`, and `portletItemName` |
 
-## Module [](id=module)
+## Module
 
 - None
 
-## Views [](id=views)
+## Views
 
 - Default
 
@@ -48,11 +52,11 @@ The Default View uses Android's `PdfRenderer` to display the PDF. Note that
 
 ![Figure 1: PDF Display Screenlet using the Default View.](../../../images/screens-android-pdfdisplay.png)
 
-## Offline [](id=offline)
+## Offline
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-1/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/docs/7-1/tutorials/-/knowledge_base/t/architecture-of-offline-mode-in-liferay-screens). 
 Here are the offline mode policies that you can use with this Screenlet: 
 
 | Policy | What happens | When to use |
@@ -62,11 +66,11 @@ Here are the offline mode policies that you can use with this Screenlet:
 | `REMOTE_FIRST` | The Screenlet loads the data from the Liferay instance. If this succeeds, the Screenlet shows the data to the user and stores it in the local cache for later use. If a connection issue occurs, the Screenlet retrieves the data from the local cache. If the data doesn't exist there, the Screenlet uses the listener to notify the developer about the error. | Use this policy to show the most recent version of the data when connected, but show an outdated version when there's no connection. |
 | `CACHE_FIRST` | The Screenlet loads the data from the local cache. If the data isn't there, the Screenlet requests it from the Liferay instance and notifies the developer about any errors that occur (including connectivity errors). | Use this policy to save bandwidth and loading time in case you have local (but probably outdated) data. |
 
-## Required Attributes [](id=required-attributes)
+## Required Attributes
 
 - `entryId` or `classPK`
 
-## Attributes [](id=attributes)
+## Attributes
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------|
@@ -74,9 +78,9 @@ Here are the offline mode policies that you can use with this Screenlet:
 | `autoLoad` | `boolean` | Whether the PDF automatically loads when the Screenlet appears in the app's UI. The default value is `true`. |
 | `entryId` | `number` | The primary key of the PDF file. | 
 | `classPK` | `number` | The PDF file's unique identifier. |
-| `cachePolicy` | `string` | The offline mode setting. See [the Offline section](/develop/reference/-/knowledge_base/7-1/pdf-display-screenlet-for-android#offline) for details. |
+| `cachePolicy` | `string` | The offline mode setting. See [the Offline section](/docs/7-1/reference/-/knowledge_base/r/pdf-display-screenlet-for-android#offline) for details. |
 
-## Listener [](id=listener)
+## Listener
 
 Because PDF files are assets, PDF Display Screenlet delegates its events to a 
 class that implements `AssetDisplayListener`. This interface lets you implement 

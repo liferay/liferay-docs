@@ -1,14 +1,18 @@
-# Managing LCS Environments [](id=managing-lcs-environments)
+---
+header-id: managing-lcs-environments
+---
+
+# Managing LCS Environments
 
 Environments are the key components of your LCS project. When you register a 
 server in LCS, you do so in an environment. An environment is therefore the 
 gateway to managing and monitoring your servers in LCS. 
 
-## Creating Environments [](id=creating-environments)
+## Creating Environments
 
 The first time you log in to LCS, a wizard walks you through each step required 
 to create your project's first environment. The 
-[getting started article](/discover/deployment/-/knowledge_base/7-1/getting-started-with-lcs) 
+[getting started article](/docs/7-1/deploy/-/knowledge_base/d/getting-started-with-lcs) 
 explains this in detail. You can create additional environments via the same 
 wizard or a simple form. 
 
@@ -16,20 +20,16 @@ To create an environment, click the *Add Environment* button from the Dashboard.
 This opens the New Environment form. Each section in this form corresponds to a 
 step in the wizard. If you want to use the wizard instead, click the 
 *Open Wizard* link at the top of the form. See the 
-[getting started article](/discover/deployment/-/knowledge_base/7-1/getting-started-with-lcs) 
+[getting started article](/docs/7-1/deploy/-/knowledge_base/d/getting-started-with-lcs) 
 for a description of each setting in the form and wizard. 
 
-+$$$
-
-**Note:** When creating an environment, make your selections carefully for the 
-*Subscription Type*, *Cluster*, and *Elastic* fields. You can't change them 
-after creating the environment. 
-
-$$$
+| **Note:** When creating an environment, make your selections carefully for the
+| *Subscription Type*, *Cluster*, and *Elastic* fields. You can't change them
+| after creating the environment.
 
 ![Figure 1: The New Environment form lets you create environments.](../../../images-dxp/lcs-new-environment.png)
 
-## Working with Environments [](id=working-with-environments)
+## Working with Environments
 
 Clicking an environment on the left-hand side of the Dashboard takes you to the
 environment view, which lets you manage an environment in your LCS project. 
@@ -57,7 +57,7 @@ The UI is segmented into three tabs:
     handle each separately. 
 
 2.  **Registration:** Generate and download 
-    [*environment tokens*](/discover/deployment/-/knowledge_base/7-1/understanding-environment-tokens) 
+    [*environment tokens*](/docs/7-1/deploy/-/knowledge_base/d/understanding-environment-tokens) 
     that connect your servers to LCS. 
 
 3.  **Environment Settings:** Change the environment's name, location, and

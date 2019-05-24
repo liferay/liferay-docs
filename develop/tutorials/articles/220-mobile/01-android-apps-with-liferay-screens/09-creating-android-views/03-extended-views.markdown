@@ -1,4 +1,8 @@
-# Extended Views [](id=extended-views)
+---
+header-id: extended-views
+---
+
+# Extended Views
 
 An Extended View inherits the parent View's behavior and appearance, but lets
 you change and add to both. You can do so by writing a custom View class and a
@@ -76,12 +80,12 @@ picture and it uses the custom layout file
 and the custom View class
 [`UserPortraitView`](https://github.com/liferay/liferay-screens/blob/master/android/viewsets/westeros/src/main/java/com/liferay/mobile/screens/viewsets/westeros/userportrait/UserPortraitView.java). 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Themed Views](/develop/tutorials/-/knowledge_base/7-1/themed-views)
+[Themed Views](/docs/7-1/tutorials/-/knowledge_base/t/themed-views)
 
-[Child Views](/develop/tutorials/-/knowledge_base/7-1/child-views)
+[Child Views](/docs/7-1/tutorials/-/knowledge_base/t/child-views)
 
-[Full Views](/develop/tutorials/-/knowledge_base/7-1/full-views)
+[Full Views](/docs/7-1/tutorials/-/knowledge_base/t/full-views)
 
-[Packaging Your Views](/develop/tutorials/-/knowledge_base/7-1/packaging-your-views)
+[Packaging Your Views](/docs/7-1/tutorials/-/knowledge_base/t/packaging-your-views)

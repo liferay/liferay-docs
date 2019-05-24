@@ -1,4 +1,8 @@
-# Exporting User Data [](id=exporting-user-data)
+---
+header-id: exporting-user-data
+---
+
+# Exporting User Data
 
 User Management practices must account for the EU's General Data Protection
 Regulation. One of its tenets is that Users have a right to _data portability_.
@@ -6,22 +10,18 @@ Regulation. One of its tenets is that Users have a right to _data portability_.
 Data portability means that a User has the right to receive their personal data
 in a machine-readable format.
 
-+$$$
-
-**Note:** Personal data export can help companies in their attempts to satisfy
-the requirements of GDPR. Using the export tool described here provides no
-guarantee of compliance with any GDPR requirement. Each company or individual
-whose website processes user personal data and is under the jurisdiction of GDPR
-must carefully determine the precise steps necessary to ensure they are fully
-compliant with GDPR.
-
-$$$
+| **Note:** Personal data export can help companies in their attempts to satisfy
+| the requirements of GDPR. Using the export tool described here provides no
+| guarantee of compliance with any GDPR requirement. Each company or individual
+| whose website processes user personal data and is under the jurisdiction of GDPR
+| must carefully determine the precise steps necessary to ensure they are fully
+| compliant with GDPR.
 
 The Control Panel's User Management system now natively supports the export of
 a User's personal data to a ZIP file for download. The data format for the files
 containing the data is XML.
 
-## Exporting and Downloading [](id=exporting-and-downloading)
+## Exporting and Downloading
 
 To export user data,
 
@@ -51,7 +51,7 @@ To export user data,
     (![Actions](../../../images/icon-actions.png)) for the process and select
     *Download*.
 
-## Examining Exported Data [](id=examining-exported-data)
+## Examining Exported Data
 
 So what does the exported data look like?
 

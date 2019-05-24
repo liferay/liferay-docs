@@ -1,8 +1,12 @@
-# XML Formatter Plugin [](id=xml-formatter-plugin)
+---
+header-id: xml-formatter-plugin
+---
+
+# XML Formatter Plugin
 
 The XML Formatter plugin lets you format a project's XML files.
 
-## Usage [](id=usage)
+## Usage
 
 To use the plugin, include it in your project's root `pom.xml` file:
 
@@ -23,7 +27,7 @@ To use the plugin, include it in your project's root `pom.xml` file:
 You can view an example POM containing the XML Formatter configuration
 [here](https://github.com/liferay/liferay-portal/blob/master/modules/util/xml-formatter/samples/pom.xml).
 
-## Goals [](id=goals)
+## Goals
 
 The plugin adds one Maven goal to your project:
 
@@ -31,7 +35,7 @@ Name | Description
 ---- | -----------
 `xml-formatter:format` | Runs the Liferay XML Formatter to format the project files.
 
-## Available Parameters [](id=available-parameters)
+## Available Parameters
 
 You can set the following parameters in the `<configuration>` section of the
 POM:

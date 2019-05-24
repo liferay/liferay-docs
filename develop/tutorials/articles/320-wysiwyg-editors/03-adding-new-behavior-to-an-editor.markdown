@@ -1,4 +1,8 @@
-# Adding New Behavior to an Editor [](id=adding-new-behavior-to-an-editor)
+---
+header-id: adding-new-behavior-to-an-editor
+---
+
+# Adding New Behavior to an Editor
 
 You can select from several different WYSIWYG editors for your users, and each
 is configurable and has its strengths and weaknesses. Configuration alone,
@@ -8,24 +12,20 @@ want, using the `liferay-util:dynamic-include` JavaScript extension point. It
 injects JavaScript code right after the editor instantiation to configure/change
 the editor.
 
-+$$$
-
-**Note:** By default, the CKEditor strips empty `<i>` tags, such as those used 
-for Font Awesome icons, from published content, when switching between the Code 
-View and the Source View of the editor. You can disable this behavior by using 
-the `ckeditor#additionalResources` or `alloyeditor#additionalResources` 
-[extension points](/develop/tutorials/-/knowledge_base/7-1/wysiwyg-editor-dynamic-includes) 
-to 
-[add the following code](/develop/tutorials/-/knowledge_base/7-1/adding-new-behavior-to-an-editor) 
-to the editor:
-
-    CKEDITOR.dtd.$removeEmpty.i = 0
-
-$$$
+| **Note:** By default, the CKEditor strips empty `<i>` tags, such as those used
+| for Font Awesome icons, from published content, when switching between the Code
+| View and the Source View of the editor. You can disable this behavior by using
+| the `ckeditor#additionalResources` or `alloyeditor#additionalResources`
+| [extension points](/docs/7-1/tutorials/-/knowledge_base/t/wysiwyg-editor-dynamic-includes)
+| to
+| [add the following code](/docs/7-1/tutorials/-/knowledge_base/t/adding-new-behavior-to-an-editor)
+| to the editor:
+| 
+|     CKEDITOR.dtd.$removeEmpty.i = 0
 
 In this tutorial, you'll learn how to use this JavaScript extension point.
 
-## Injecting JavaScript into a WYSIWYG Editor [](id=injecting-javascript-into-a-wysiwyg-editor)
+## Injecting JavaScript into a WYSIWYG Editor
 
 The `liferay-util:dynamic-include` extension point is in configurable editors'
 JSP files: it's the gateway for injecting JavaScript into your editor instance:
@@ -47,7 +47,7 @@ JSP files: it's the gateway for injecting JavaScript into your editor instance:
     removed from the options displayed to the user when running in Creole
     mode.
 
-2.  [Create a module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#creating-a-module) 
+2.  [Create a module](/docs/7-1/tutorials/-/knowledge_base/t/starting-module-development#creating-a-module) 
     that can register your new JS file and inject it into your editor instance.
 
 3.  Create a unique package name in the module's `src` directory, and create a
@@ -133,10 +133,10 @@ That's it! The JS code that you created is now injected into the editor instance
 you've specified. You're now able to use JavaScript to add new behavior to your
 @product@ supported WYSIWYG editor!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Adding New Behavior to an Editor](/develop/tutorials/-/knowledge_base/7-1/adding-new-behavior-to-an-editor)
+[Adding New Behavior to an Editor](/docs/7-1/tutorials/-/knowledge_base/t/adding-new-behavior-to-an-editor)
 
-[Embedding Portlets in Themes](/develop/tutorials/-/knowledge_base/7-1/embedding-portlets-in-themes)
+[Embedding Portlets in Themes](/docs/7-1/tutorials/-/knowledge_base/t/embedding-portlets-in-themes)
 
-[Portlets](/develop/tutorials/-/knowledge_base/7-1/portlets)
+[Portlets](/docs/7-1/tutorials/-/knowledge_base/t/portlets)

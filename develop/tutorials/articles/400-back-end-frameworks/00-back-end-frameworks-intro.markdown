@@ -1,4 +1,8 @@
-# Back-end Frameworks [](id=back-end-frameworks)
+---
+header-id: back-end-frameworks
+---
+
+# Back-end Frameworks
 
 Back-end frameworks are analogous to supporting actors and actresses in show
 business. They fill out the stories in films we know and love. As actors bring
@@ -7,9 +11,9 @@ essential services and deliver terrific performances of their own. Here are some
 of the frameworks:
 
 - Device Recognition
-- [Portlet Providers](/develop/tutorials/-/knowledge_base/7-1/portlet-providers)
-- [Data Scopes](/develop/tutorials/-/knowledge_base/7-1/data-scopes)
-- [Message Bus](/develop/tutorials/-/knowledge_base/7-1/message-bus)
+- [Portlet Providers](/docs/7-1/tutorials/-/knowledge_base/t/portlet-providers)
+- [Data Scopes](/docs/7-1/tutorials/-/knowledge_base/t/data-scopes)
+- [Message Bus](/docs/7-1/tutorials/-/knowledge_base/t/message-bus)
 
 These frameworks and more deliver smashing performances and are stars in their
 own right. 

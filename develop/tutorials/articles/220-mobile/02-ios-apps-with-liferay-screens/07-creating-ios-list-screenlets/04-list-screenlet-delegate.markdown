@@ -1,8 +1,12 @@
-# Creating the iOS List Screenlet's Delegate [](id=creating-the-ios-list-screenlets-delegate)
+---
+header-id: creating-the-ios-list-screenlets-delegate
+---
+
+# Creating the iOS List Screenlet's Delegate
 
 Recall that a delegate is required if you want other classes to respond to your 
 Screenlet's actions. Create your delegate by following the first step in 
-[the tutorial on adding a Screenlet delegate](/develop/tutorials/-/knowledge_base/7-1/add-a-screenlet-delegate). 
+[the tutorial on adding a Screenlet delegate](/docs/7-1/tutorials/-/knowledge_base/t/add-a-screenlet-delegate). 
 A list Screenlet's delegate must also define a method for responding to a list 
 item selection. For example, Bookmark List Screenlet's delegate needs the 
 following methods: 

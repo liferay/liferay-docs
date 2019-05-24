@@ -1,4 +1,8 @@
-# Dynamic Deployment [](id=dynamic-deployment)
+---
+header-id: dynamic-deployment
+---
+
+# Dynamic Deployment
 
 In OSGi, all components, Java classes, resources, and descriptors are deployed
 via modules. The `MANIFEST.MF` file describes the module's physical
@@ -31,12 +35,12 @@ The figure below illustrates the module lifecycle.
 
 ![Figure 1: This state diagram illustrates the module lifecycle.](../../images/module-state-diagram.png) 
 
-The [Apache Felix Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell)
+The [Apache Felix Gogo Shell](/docs/7-1/reference/-/knowledge_base/r/using-the-felix-gogo-shell)
 lets you manage the module lifecycle. You can install/uninstall modules
 and start/stop them. You can update a module and notify dependent modules
-to use the update. Liferay's tools, including [Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/liferay-ide),
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace),
-and [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli)
+to use the update. Liferay's tools, including [Liferay @ide@](/docs/7-1/tutorials/-/knowledge_base/t/liferay-ide),
+[Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace),
+and [Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/blade-cli)
 offer similar shell commands that use the OSGi Admin API. 
 
 On activating a module, its components are enabled. But only *activated*
@@ -87,17 +91,13 @@ policy is greedy) and binds the new service in its place automatically. Here's a
 Declarative Services annotations let you specify component activation and
 service policies. Gogo Shell commands let you control modules and components.
 
-+$$$
+| If you visited this tutorial as a part of the Learning Path
+| [From Liferay Portal 6 to 7.1](/docs/7-1/tutorials/-/knowledge_base/t/from-liferay-6-to-liferay-7),
+| you can go [here](/docs/7-1/tutorials/-/knowledge_base/t/more-ways-osgi-improves-development-on-liferay)
+| to continue it.
 
-If you visited this tutorial as a part of the Learning Path
-[From Liferay Portal 6 to 7.1](/develop/tutorials/-/knowledge_base/7-1/from-liferay-6-to-liferay-7),
-you can go [here](/develop/tutorials/-/knowledge_base/7-1/more-ways-osgi-improves-development-on-liferay)
-to continue it. 
+## Related Topics
 
-$$$
-
-## Related Topics [](id=related-topics)
-
-[Starting Module Development](/develop/tutorials/-/knowledge_base/7-1/starting-module-development)
+[Starting Module Development](/docs/7-1/tutorials/-/knowledge_base/t/starting-module-development)
 
 [Planning Plugin Upgrades](migrating-existing-code-to-liferay-7/migrating-existing-code-to-liferay-7)

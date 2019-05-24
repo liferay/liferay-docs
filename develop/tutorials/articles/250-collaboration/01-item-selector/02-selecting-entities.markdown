@@ -1,4 +1,8 @@
-# Selecting Entities Using an Item Selector [](id=selecting-entities-using-the-item-selector)
+---
+header-id: selecting-entities-using-the-item-selector
+---
+
+# Selecting Entities Using an Item Selector
 
 An Item Selector lets users select entities such as images, videos, documents, 
 and sites. You can use an Item Selector in your app to let users select such 
@@ -15,7 +19,7 @@ entities. This tutorial shows you how to do this via these steps:
 
 ![Figure 1: An Item Selector makes selecting entities a breeze.](../../../images/item-selector-dialog-01.png)
 
-## Determining Item Criteria [](id=determining-item-selector-criteria)
+## Determining Item Criteria
 
 The first step is determining entity types to select from the Item Selector and
 the data you expect from them. What kind of entity do you want to select? Do you
@@ -25,7 +29,7 @@ Once you know the entities you want, you need *criterion* classes to represent
 them in the Item Selector. Criterion classes must implement the 
 [`ItemSelectorCriterion` interface](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorCriterion.html). 
 The 
-[Item Selector Criterion and Return Types](/develop/reference/-/knowledge_base/7-1/item-selector-criterion-and-return-types)
+[Item Selector Criterion and Return Types](/docs/7-1/reference/-/knowledge_base/r/item-selector-criterion-and-return-types)
 reference lists criterion classes Liferay's apps and app suites provide. 
 
 If there's no criterion class for your entity, you can create your own 
@@ -37,7 +41,7 @@ Identifier (UUID)? A primary key? Each return type must be represented by
 an implementation of the 
 [`ItemSelectorReturnType` class](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorReturnType.html).
 The 
-[Item Selector Criterion and Return Types](/develop/reference/-/knowledge_base/7-1/item-selector-criterion-and-return-types)
+[Item Selector Criterion and Return Types](/docs/7-1/reference/-/knowledge_base/r/item-selector-criterion-and-return-types)
 reference also lists return type classes @product@'s apps and app suites 
 provide. 
 
@@ -45,12 +49,8 @@ If there's no return type class that meets your needs, you can implement your
 own 
 [`ItemSelectorReturnType` class](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorReturnType.html). 
 
-+$$$
-
-**Note**: Each criterion must have at least one `ItemSelectorReturnType` (return
-type) associated with it.
-
-$$$
+| **Note**: Each criterion must have at least one `ItemSelectorReturnType` (return
+| type) associated with it.
 
 For example, if you want to allow users to select an image and want the image's
 URL returned, you could use the `ImageItemSelectorCriterion` criterion class and
@@ -62,7 +62,7 @@ Selector's *criteria*. The Item Selector uses it to decide which selection views
 
 Once you've defined your criteria, you can get an Item Selector to use with it.
 
-## Getting an Item Selector for the Criteria [](id=getting-an-item-selector-for-the-criteria)
+## Getting an Item Selector for the Criteria
 
 To use an Item Selector with your criteria, you must get that Item Selector's 
 URL. The URL is needed to open the Item Selector dialog in your UI. To get this 
@@ -143,7 +143,7 @@ There are a few things to keep in mind when getting an Item Selector's URL:
 Now that you've got a URL to an Item Selector, you can start using that Item 
 Selector in your UI. 
 
-## Using the Item Selector Dialog [](id=using-the-item-selector-dialog)
+## Using the Item Selector Dialog
 
 To open the Item Selector in your UI, you must use the JavaScript component 
 `LiferayItemSelectorDialog` from 
@@ -297,12 +297,12 @@ set.
 Great! Now you know how to select entities using an Item Selector. Using the 
 Item Selector API, you can give your app's users the power of choice!
 
-## Related Articles [](id=related-articles)
+## Related Articles
 
-[Understanding the Item Selector API's Components](/develop/tutorials/-/knowledge_base/7-1/understanding-the-item-selector-apis-components)
+[Understanding the Item Selector API's Components](/docs/7-1/tutorials/-/knowledge_base/t/understanding-the-item-selector-apis-components)
 
-[Creating Custom Item Selector Views](/develop/tutorials/-/knowledge_base/7-1/creating-custom-item-selector-views)
+[Creating Custom Item Selector Views](/docs/7-1/tutorials/-/knowledge_base/t/creating-custom-item-selector-views)
 
-[Creating Custom Item Selector Entities](/develop/tutorials/-/knowledge_base/7-1/creating-custom-item-selector-entities)
+[Creating Custom Item Selector Entities](/docs/7-1/tutorials/-/knowledge_base/t/creating-custom-item-selector-entities)
 
-[Front-End Taglibs](/develop/tutorials/-/knowledge_base/7-1/front-end-taglibs)
+[Front-End Taglibs](/docs/7-1/tutorials/-/knowledge_base/t/front-end-taglibs)

@@ -1,4 +1,8 @@
-# Using Liferay Util Include [](id=using-liferay-util-include)
+---
+header-id: using-liferay-util-include
+---
+
+# Using Liferay Util Include
 
 The include tag lets you include other JSP files in your portlet's JSP, theme, 
 or web content. This can increase readability as well as provide separation of 
@@ -20,10 +24,10 @@ Below is an example configuration for the `<liferay-util:include>` tag:
 Now you know how to use the `<liferay-util:include>` tag to include other JSPs 
 in your portlets, themes, and web content. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using the Liferay Util Param Tag](/develop/tutorials/-/knowledge_base/7-1/using-liferay-util-param)
+[Using the Liferay Util Param Tag](/docs/7-1/tutorials/-/knowledge_base/t/using-liferay-util-param)
 
-[Using the Liferay Util Dynamic Include Tag](/develop/tutorials/-/knowledge_base/7-1/using-liferay-util-dynamic-include)
+[Using the Liferay Util Dynamic Include Tag](/docs/7-1/tutorials/-/knowledge_base/t/using-liferay-util-dynamic-include)
 
-[Using the Liferay Front-End Taglibs](/develop/tutorials/-/knowledge_base/7-1/using-liferay-frontend-taglibs-in-your-portlet)
+[Using the Liferay Front-End Taglibs](/docs/7-1/tutorials/-/knowledge_base/t/using-liferay-frontend-taglibs-in-your-portlet)

@@ -1,4 +1,8 @@
-# Troubleshooting Front-End Development Issues [](id=troubleshooting-front-end-development-issues)
+---
+header-id: troubleshooting-front-end-development-issues
+---
+
+# Troubleshooting Front-End Development Issues
 
 Front-end development involves many moving parts. Sometimes it's hard to tell 
 what may be causing the issues you run into along the way. This can be 
@@ -15,7 +19,7 @@ Here are the troubleshooting sections:
 
 Click a question to view the answer.
 
-## CSS [](id=css)
+## CSS
 
 - [Why are my CSS templates not applied in my Angular app?](#broken-css-angular-app)
 - [Why is Liferay Portal's CSS broken in Internet Explorer?](#portal-css-broken-ie)
@@ -37,7 +41,7 @@ Click a question to view the answer.
   </div>
 </div>
 
-## Modules [](id=modules)
+## Modules
 
 - [Why does my JQuery module throw an anonymous module error when I try to load it?](#jquery-anonymous-module-error)
 - [Why are my source maps not showing for my Angular or Typescript module?](#source-maps-not-showing)
@@ -76,7 +80,7 @@ Click a question to view the answer.
   </div>
 </div>
 
-## Portlets [](id=portlets)
+## Portlets
 
 - [I want to use a custom router in my Angular/React/Vue portlet. How can I disable the default Senna JS SPA engine in my portlet?](#angular-react-vue-portlet-disable-spa)
 
@@ -88,7 +92,7 @@ Click a question to view the answer.
   </div>
 </div>
 
-## Templates [](id=templates)
+## Templates
 
 - [Why does my web content break when I refresh the page?](#cacheable-web-content-taglibs)
 
@@ -101,7 +105,7 @@ Click a question to view the answer.
   </div>
 </div>
 
-## Themes [](id=themes)
+## Themes
 
 - [How can I use the Classic theme as my base theme?](#classic-base-theme)
 - [How can I include OSGi headers in my theme?](#osgi-headers-in-themes)

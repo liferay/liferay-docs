@@ -1,4 +1,8 @@
-# Ext [](id=ext)
+---
+header-id: ext
+---
+
+# Ext
 
 This section focuses on Liferay Ext modules. You can view these sample
 apps by visiting the `ext` folder corresponding to your preferred build tool:

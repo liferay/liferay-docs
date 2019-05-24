@@ -1,4 +1,8 @@
-# Assets: Analyzing Content [](id=assets-analyzing-content)
+---
+header-id: assets-analyzing-content
+---
+
+# Assets: Analyzing Content
 
 Assets are individual pieces of content that exist on Site Pages in your Liferay
 Analytics Cloud data sources. In summary, Assets are
@@ -11,10 +15,10 @@ Analytics Cloud data sources. In summary, Assets are
 
 Metrics for these Assets are currently reported in Analytics Cloud:
 
-- [Forms](/discover/portal/-/knowledge_base/7-1/forms)
-- [Blogs](/discover/portal/-/knowledge_base/7-1/publishing-blogs)
-- [Documents and Media](/discover/portal/-/knowledge_base/7-1/managing-documents-and-media)
-- [Web Content](/discover/portal/-/knowledge_base/7-1/authoring-content-structured-and-inline-content)
+- [Forms](/docs/7-1/user/-/knowledge_base/u/forms)
+- [Blogs](/docs/7-1/user/-/knowledge_base/u/publishing-blogs)
+- [Documents and Media](/docs/7-1/user/-/knowledge_base/u/managing-documents-and-media)
+- [Web Content](/docs/7-1/user/-/knowledge_base/u/authoring-content-structured-and-inline-content)
 
 Continue reading for details on how to interpret Analytics Cloud data to better
 understand your assets' performance.

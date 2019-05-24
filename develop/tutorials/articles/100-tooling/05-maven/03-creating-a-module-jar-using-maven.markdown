@@ -1,4 +1,8 @@
-# Creating a Module JAR Using Maven [](id=creating-a-module-jar-using-maven)
+---
+header-id: creating-a-module-jar-using-maven
+---
+
+# Creating a Module JAR Using Maven
 
 If you have an existing Liferay module built with Maven that you created from
 scratch, or you're upgrading your Maven project from a previous version of
@@ -6,13 +10,9 @@ scratch, or you're upgrading your Maven project from a previous version of
 fret! You can do this by making a few minor configurations in your module's
 POMs.
 
-+$$$
-
-**Note:** If you used Liferay's Maven archetypes to generate your module
-project, the project already has the Maven plugins required to generate an OSGi
-JAR.
-
-$$$
+| **Note:** If you used Liferay's Maven archetypes to generate your module
+| project, the project already has the Maven plugins required to generate an OSGi
+| JAR.
 
 Continue on to see how this is done.
 
@@ -50,15 +50,11 @@ Continue on to see how this is done.
     `[Maven Project]/target/classes` folder. This plugin prepares your module to
     be packaged as an OSGi JAR deployable to @product@.
 
-    +$$$
-
-    **Note:** Although WABs can be generated using the `bnd-maven-plugin`, this
-    is not supported by Liferay. WABs should be created as a standard WAR
-    project and deployed to the
-    [Liferay WAB Generator](/develop/tutorials/-/knowledge_base/7-1/using-the-wab-generator),
-    which generates a WAB for you.
-
-    $$$
+    | **Note:** Although WABs can be generated using the `bnd-maven-plugin`, this
+    | is not supported by Liferay. WABs should be created as a standard WAR
+    | project and deployed to the
+    | [Liferay WAB Generator](/docs/7-1/tutorials/-/knowledge_base/t/using-the-wab-generator),
+    | which generates a WAB for you.
 
 2.  In your project's `pom.xml` file, add the
     [Maven JAR Plugin](http://maven.apache.org/plugins/maven-jar-plugin/)
@@ -98,7 +94,7 @@ Continue on to see how this is done.
     Your Maven JAR is generated in your project's `/target` folder. You can
     deploy it manually into @product@'s `/deploy` folder, or you can configure
     your project to deploy automatically to @product@ by following the
-    [Deploying a Project Built with Maven to @product@](/develop/tutorials/-/knowledge_base/7-1/deploying-a-project-built-with-maven-to-product)
+    [Deploying a Project Built with Maven to @product@](/docs/7-1/tutorials/-/knowledge_base/t/deploying-a-project-built-with-maven-to-product)
     tutorial.
 
 Fantastic! You've configured your Liferay Maven project to package itself into a

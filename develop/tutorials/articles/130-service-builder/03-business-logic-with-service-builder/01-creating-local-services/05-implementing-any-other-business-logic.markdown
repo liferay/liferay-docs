@@ -1,4 +1,8 @@
-# Implementing Any Other Business Logic [](id=implementing-any-other-business-logic)
+---
+header-id: implementing-any-other-business-logic
+---
+
+# Implementing Any Other Business Logic
 
 This section's earlier local service tutorials focus on CRUD methods: methods
 that **c**reate (add), **r**ead (get), **u**pdate, and **d**elete entities. But
@@ -70,7 +74,7 @@ changes, and returns the entity. Convenience methods like this one facilitate
 updating a subset of the entity's attributes. 
 
 After implementing your custom business methods, 
-[run Service Builder](/develop/tutorials/-/knowledge_base/7-1/running-service-builder)
+[run Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/running-service-builder)
 to propagate them to the interface.
 
 In your local services, you can implement business logic methods that suit your
@@ -78,8 +82,8 @@ application.
 
 **Related Topics**
 
-[Creating Local Services](/develop/tutorials/-/knowledge_base/7-1/creating-local-services)
+[Creating Local Services](/docs/7-1/tutorials/-/knowledge_base/t/creating-local-services)
 
-[Invoking Local Services](/develop/tutorials/-/knowledge_base/7-1/invoking-local-services)
+[Invoking Local Services](/docs/7-1/tutorials/-/knowledge_base/t/invoking-local-services)
 
-[Invoking Services from Service Builder Code](/develop/tutorials/-/knowledge_base/7-1/invoking-services-from-service-builder-code)
+[Invoking Services from Service Builder Code](/docs/7-1/tutorials/-/knowledge_base/t/invoking-services-from-service-builder-code)

@@ -1,4 +1,8 @@
-# Editing Structures [](id=editing-structures)
+---
+header-id: editing-structures
+---
+
+# Editing Structures
 
 To start, go to the *Structures* page.
 
@@ -13,24 +17,20 @@ structures.
 
 ![Figure 1: Structures are not pre-installed. You have to make your own.](../../../../../images/manage-structures.png)
 
-+$$$
-
-Note: When you copy a structure, @product@ generates a unique ID for the copied
-structure, but every other attribute of the copied structure, including the
-name, is the same as that of the original. When you copy web content structure,
-enter a new name for it to avoid confusing it with the original. During the
-copy process, you're prompted to choose whether to copy any detail templates or
-list templates associated with the structure. For information on detail
-templates and list templates, please refer to 
-[Dynamic Data Lists](/discover/portal/-/knowledge_base/7-1/dynamic-data-lists).
-
-$$$
+| Note: When you copy a structure, @product@ generates a unique ID for the copied
+| structure, but every other attribute of the copied structure, including the
+| name, is the same as that of the original. When you copy web content structure,
+| enter a new name for it to avoid confusing it with the original. During the
+| copy process, you're prompted to choose whether to copy any detail templates or
+| list templates associated with the structure. For information on detail
+| templates and list templates, please refer to
+| [Dynamic Data Lists](/docs/7-1/user/-/knowledge_base/u/dynamic-data-lists).
 
 *Basic Web Content* which you used in previous exercises lives at the *Global* 
 scope so that it is available to all Sites. This structure and template are 
 used automatically if a custom structure and template are not added.
 
-## Structure Fields [](id=structure-fields)
+## Structure Fields
 
 Now, create a new Structure:
 
@@ -59,14 +59,10 @@ have *Sports Article* and you want to create *In-depth Sports Article*, set
 *Sports Article* as the parent and the *In-dept Sports Article* inherits
 all its fields, letting you add new ones for more in-depth information.
 
-+$$$
-
-**Note:** Due to import/export operations it's possible to have both a global
-and a Site-scoped structure with the same `structureKey`. If this happens, the 
-Site-scoped structure takes precedence, and you can't access the global
-structure from that Site.
-
-$$$
+| **Note:** Due to import/export operations it's possible to have both a global
+| and a Site-scoped structure with the same `structureKey`. If this happens, the
+| Site-scoped structure takes precedence, and you can't access the global
+| structure from that Site.
 
 You can also manually customize a structure's XML in *Source* mode. By default 
 the *View* mode is selected, but you can click the *Source* tab to switch. This 

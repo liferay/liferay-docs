@@ -1,4 +1,8 @@
-# Scheduling Web Content Publication [](id=scheduling-web-content-publication)
+---
+header-id: scheduling-web-content-publication
+---
+
+# Scheduling Web Content Publication
 
 Liferay's WEM lets you define when your content goes live. You can determine
 when the content is displayed, expired, and/or reviewed. This is an excellent
@@ -43,16 +47,12 @@ same until the new version is scheduled to display. However, the expiration
 date affects all versions of the article. Once an article has expired, no 
 version of that article appears.
 
-+$$$
-
-**Tip:** If you want only the latest version of articles to expire, and not
-every past version, go to *Control Panel* &rarr; *Configuration* &rarr; *System
-Settings* &rarr; *Web Content* &rarr; *Virtual Instance Scope* &rarr; *Web
-Content* and uncheck *Expire All Article Versions Enabled*. This makes the
-previously approved version of an article appear if the latest version
-expires.
-
-$$$
+| **Tip:** If you want only the latest version of articles to expire, and not
+| every past version, go to *Control Panel* &rarr; *Configuration* &rarr; *System
+| Settings* &rarr; *Web Content* &rarr; *Virtual Instance Scope* &rarr; *Web
+| Content* and uncheck *Expire All Article Versions Enabled*. This makes the
+| previously approved version of an article appear if the latest version
+| expires.
 
 The scheduling feature gives you great control in managing when, and for how
 long, your web content is displayed on your Site. Additionally, you can

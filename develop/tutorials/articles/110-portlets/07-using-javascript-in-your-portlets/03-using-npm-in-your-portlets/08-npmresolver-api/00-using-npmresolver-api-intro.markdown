@@ -1,4 +1,8 @@
-# Using the NPMResolver API in Your Portlets [](id=using-the-npmresolver-api-in-your-portlets)
+---
+header-id: using-the-npmresolver-api-in-your-portlets
+---
+
+# Using the NPMResolver API in Your Portlets
 
 If you're developing an npm-based portlet, your OSGi bundle's `package.json` is 
 a treasure-trove of information. It contains everything that's stored in the 
@@ -8,9 +12,9 @@ package names, versions, and more. The
 expose this information so you can access it in your portlet. If it's defined 
 in the OSGi bundle's `package.json`, you can retrieve the information in your 
 portlet with the `NPMResolver` API. For instance, you can use this API to 
-[reference an npm package's static resources](/develop/tutorials/-/knowledge_base/7-1/obtaining-dependency-npm-package-descriptors) 
+[reference an npm package's static resources](/docs/7-1/tutorials/-/knowledge_base/t/obtaining-dependency-npm-package-descriptors) 
 (such as CSS files) and even to
-[make your code more maintainable](/develop/tutorials/-/knowledge_base/7-1/referencing-an-npm-modules-package). 
+[make your code more maintainable](/docs/7-1/tutorials/-/knowledge_base/t/referencing-an-npm-modules-package). 
 
 To enable the `NPMResolver` in your portlet, use the `@Reference` annotation to 
 inject the `NPMResolver` OSGi component into your portlet's Component class, as 
@@ -25,14 +29,10 @@ shown below:
       
     }
 
-+$$$
-
-**Note:** Because the `NPMResolver` reference is tied directly to the OSGi 
-bundle's `package.json` file, it can only be used to retrieve npm module and 
-package information from that file. You can't use the `NPMResolver` to retrieve 
-npm package information for other OSGi bundles.
-
-$$$
+| **Note:** Because the `NPMResolver` reference is tied directly to the OSGi
+| bundle's `package.json` file, it can only be used to retrieve npm module and
+| package information from that file. You can't use the `NPMResolver` to retrieve
+| npm package information for other OSGi bundles.
  
 Now that the `NPMResolver` is added to your portlet, the tutorials in this 
 section describe retrieving your OSGi bundle's npm package and module 

@@ -1,4 +1,8 @@
-# Refreshing Charts to Reflect Real Time Data [](id=refreshing-charts-to-reflect-real-time-data)
+---
+header-id: refreshing-charts-to-reflect-real-time-data
+---
+
+# Refreshing Charts to Reflect Real Time Data
 
 The polling interval property is an optional property for all charts. It 
 specifies the time in milliseconds for the chart's data to refresh. You can 
@@ -26,10 +30,10 @@ specify the refresh rate. An example `view.jsp` configuration is shown below:
 
 ![Figure 1: The polling interval property lets you refresh charts at a given interval to reflect real time data.](../../../images/chart-polling-interval.gif)
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Combination Charts](/develop/tutorials/-/knowledge_base/7-1/combination-charts)
+[Combination Charts](/docs/7-1/tutorials/-/knowledge_base/t/combination-charts)
 
-[Geomap Charts](/develop/tutorials/-/knowledge_base/7-1/geomap-charts)
+[Geomap Charts](/docs/7-1/tutorials/-/knowledge_base/t/geomap-charts)
 
-[Scatter Charts](/develop/tutorials/-/knowledge_base/7-1/scatter-charts)
+[Scatter Charts](/docs/7-1/tutorials/-/knowledge_base/t/scatter-charts)

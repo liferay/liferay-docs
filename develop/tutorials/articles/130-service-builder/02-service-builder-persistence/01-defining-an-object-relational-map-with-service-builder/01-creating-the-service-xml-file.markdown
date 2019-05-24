@@ -1,4 +1,8 @@
-# Creating the service.xml File [](id=creating-the-service-xml-file)
+---
+header-id: creating-the-service-xml-file
+---
+
+# Creating the service.xml File
 
 To define a service for your portlet project, you must create a `service.xml`
 file. The DTD (Document Type Declaration) file

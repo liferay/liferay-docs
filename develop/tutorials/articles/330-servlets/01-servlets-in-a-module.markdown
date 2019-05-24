@@ -1,6 +1,10 @@
-# Servlets in a Module [](id=servlets-in-a-module)
+---
+header-id: servlets-in-a-module
+---
 
-You can use servlets or [JAX-RS](/develop/tutorials/-/knowledge_base/7-1/jax-rs)
+# Servlets in a Module
+
+You can use servlets or [JAX-RS](/docs/7-1/tutorials/-/knowledge_base/t/jax-rs)
 to provide a lightweight web integration or a web endpoint to a browser client.
 Servlets, rather than REST endpoints or portlets, let you control an
 application's entire UI experience. @product@ supports servlet based
@@ -13,10 +17,10 @@ Here you'll examine a
 and
 [create your own servlet based application](#creating-a-servlet). 
 
-## Servlet Sample [](id=servlet-sample)
+## Servlet Sample
 
 The
-[servlet sample](/develop/reference/-/knowledge_base/7-1/servlet)
+[servlet sample](/docs/7-1/reference/-/knowledge_base/r/servlet)
 uses 
 [HTTP Whiteboard](https://osgi.org/specification/osgi.cmpn/7.0.0/service.http.whiteboard.html)
 to respond to requests at URLs that match the pattern
@@ -135,15 +139,15 @@ property `"osgi.http.whiteboard.servlet.pattern=/blade/servlet/*"`, the servlet
 sample matches URL pattern `/o/blade/servlet/*`. 
 
 To develop your own servlet, you can copy and modify all (or part) of the
-[Servlet sample module project](/develop/reference/-/knowledge_base/7-1/servlet#where-is-this-sample)
+[Servlet sample module project](/docs/7-1/reference/-/knowledge_base/r/servlet#where-is-this-sample)
 or create a servlet in your own module. 
 
-## Creating a Servlet [](id=creating-a-servlet)
+## Creating a Servlet
 
 Here's how to create your own servlet:
 
 1.  Create a
-    [module project](/develop/tutorials/-/knowledge_base/7-1/starting-module-development). 
+    [module project](/docs/7-1/tutorials/-/knowledge_base/t/starting-module-development). 
 
 2.  Add the necessary dependencies. Here they are for Gradle:
 
@@ -181,12 +185,12 @@ Here's how to create your own servlet:
 Your servlet is up and running. You're well on your way to delivering custom
 user experiences using servlets. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Servlet Sample](/develop/reference/-/knowledge_base/7-1/servlet) 
+[Servlet Sample](/docs/7-1/reference/-/knowledge_base/r/servlet) 
 
-[Servlet Filters](/develop/tutorials/-/knowledge_base/7-1/servlet-filters) 
+[Servlet Filters](/docs/7-1/tutorials/-/knowledge_base/t/servlet-filters) 
 
-[JAX-RS](/develop/tutorials/-/knowledge_base/7-1/jax-rs) 
+[JAX-RS](/docs/7-1/tutorials/-/knowledge_base/t/jax-rs) 
 
-[Portlets](/develop/tutorials/-/knowledge_base/7-1/portlets) 
+[Portlets](/docs/7-1/tutorials/-/knowledge_base/t/portlets) 

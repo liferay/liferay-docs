@@ -1,10 +1,14 @@
-# Selecting Assets [](id=selecting-assets)
+---
+header-id: selecting-assets
+---
+
+# Selecting Assets
 
 You can configure Asset Publisher to select assets manually or dynamically 
 through various criteria. Within those options there is flexibility in what
 assets are displayed and how they are displayed.
 
-## Selecting Assets Manually [](id=selecting-assets-manually)
+## Selecting Assets Manually
 
 To enable manual asset selection,
 
@@ -74,7 +78,7 @@ scopes, but it can be time-consuming to update the assets that should be
 displayed. It's often more convenient to use the Asset Publisher to select
 content dynamically.
 
-## Selecting Assets Dynamically [](id=selecting-assets-dynamically)
+## Selecting Assets Dynamically
 
 The Asset Publisher's default behavior is to select assets dynamically according
 a set of customizable rules. These rules can combined so that they compliment
@@ -118,7 +122,7 @@ With this organizational setup, adding an Asset Publisher and specifying
 content that had been categorized as *Moon*. Pretty cool, right?
 
 See 
-[Defining Categories for Content](/discover/portal/-/knowledge_base/7.1/defining-categories-for-content)
+[Defining Categories for Content](/docs/7.1/user/-/knowledge_base/u/defining-categories-for-content)
 for further information. 
 
 In addition, you can use these advanced filters:

@@ -1,4 +1,8 @@
-# Adding a CSV Data Source [](id=adding-a-csv-data-source)
+---
+header-id: adding-a-csv-data-source
+---
+
+# Adding a CSV Data Source
 
 You can import contact profile data from CSV files to enrich customer profiles
 with additional data related to a user's industry, job title, annual income, or

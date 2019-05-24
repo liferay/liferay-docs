@@ -1,4 +1,8 @@
-# Gogo Shell Commands for Module Upgrades [](id=gogo-shell-commands-for-module-upgrades)
+---
+header-id: gogo-shell-commands-for-module-upgrades
+---
+
+# Gogo Shell Commands for Module Upgrades
 
 Liferay's Gogo shell commands let you upgrade and verify individual modules.
 It's a fine grained approach to upgrading the core and non-core modules. Here's
@@ -10,20 +14,16 @@ what you can do with the commands:
 - [Check upgrade status](#checking-the-upgrade-status) 
 - [Verify upgrades](#executing-verify-processes) 
 
-+$$$
-
-**Note**: [Configuring the core upgrade](/discover/deployment/-/knowledge_base/7-1/running-the-upgrade#configuring-the-core-upgrade)
-is required before using Gogo shell commands to upgrade the core. 
-
-$$$
+| **Note**: [Configuring the core upgrade](/docs/7-1/deploy/-/knowledge_base/d/running-the-upgrade#configuring-the-core-upgrade)
+| is required before using Gogo shell commands to upgrade the core.
 
 First explore the command usage. 
 
-## Command Usage [](id=command-usage)
+## Command Usage
 
 If you ran the upgrade tool and it opened Gogo shell, you're already connected.
 Otherwise, you can execute commands using the
-[Gogo Shell portlet](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell).
+[Gogo Shell portlet](/docs/7-1/reference/-/knowledge_base/r/using-the-felix-gogo-shell).
 
 Here are the commands available in the `upgrade` namespace:
 
@@ -58,10 +58,10 @@ module's verify process
 **verify:list:** lists all registered verifiers
 
 There are many useful
-[Liferay commands and standard commands available in Gogo shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell).
+[Liferay commands and standard commands available in Gogo shell](/docs/7-1/reference/-/knowledge_base/r/using-the-felix-gogo-shell).
 The following sections describe Liferay upgrade commands. 
 
-## Listing module upgrade processes [](id=listing-module-upgrade-processes)
+## Listing module upgrade processes
 
 Before upgrading modules, you should find which have unresolved dependencies,
 which are resolved and available to upgrade, and examine the module upgrade
@@ -113,7 +113,7 @@ version's lowest step (`step-1`) and finishes on the target version (`1.0.0`).
 Once you understand the module's upgrade process, you can execute it with
 confidence. 
 
-## Executing module upgrades [](id=executing-module-upgrades)
+## Executing module upgrades
 
 Executing `upgrade:execute [module_name]` upgrades the module. You might run
 into upgrade errors that you must resolve. Executing the command again starts
@@ -142,7 +142,7 @@ version is `1.0.0`:
 For module upgrades that don't complete, you can check their status and resolve
 their issues. 
 
-## Checking upgrade status [](id=checking-the-upgrade-status)
+## Checking upgrade status
 
 It's good to know things still need upgrading and why. You might have forgotten
 to upgrade a module or its upgrade failed. In any case, it's important to know
@@ -187,7 +187,7 @@ Each module has one `Release_` table record, and the value for its
 for @product-ver@ modules, except for those that were previously traditional
 plugins intended for Liferay Portal version 6.2 or earlier). 
 
-## Executing verify processes [](id=executing-verify-processes)
+## Executing verify processes
 
 Verify processes make sure the upgrade executed successfully. Verify processes
 in the core are automatically executed after upgrading @product@. You can also

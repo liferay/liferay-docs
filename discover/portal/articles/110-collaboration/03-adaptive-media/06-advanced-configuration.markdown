@@ -1,4 +1,8 @@
-# Advanced Configuration Options [](id=advanced-configuration-options)
+---
+header-id: advanced-configuration-options
+---
+
+# Advanced Configuration Options
 
 Adaptive Media's advanced configuration options are available in System
 Settings. Open the Control Panel and go to *Configuration* &rarr; *System
@@ -17,17 +21,13 @@ configuration options are available:
     adapted media. The default value is `2`. This setting can't exceed the *Max 
     processes* setting. 
 
-+$$$
-
-**Warning:** Larger values for Max Processes and Core Processes may cause out of 
-memory errors, as processing more images at once can consume large amounts of 
-memory. Out of memory errors can also occur if the source images Adaptive Media 
-uses to generate adapted images are large. You can restrict the maximum size of 
-such images via the *Max Image Size* setting in the *Adaptive Media Image* 
-configuration, which is described next. You should run performance tests to 
-optimize these settings for the amount of memory available on your system. 
-
-$$$
+| **Warning:** Larger values for Max Processes and Core Processes may cause out of
+| memory errors, as processing more images at once can consume large amounts of
+| memory. Out of memory errors can also occur if the source images Adaptive Media
+| uses to generate adapted images are large. You can restrict the maximum size of
+| such images via the *Max Image Size* setting in the *Adaptive Media Image*
+| configuration, which is described next. You should run performance tests to
+| optimize these settings for the amount of memory available on your system.
 
 The *Adaptive Media Image* configuration can be different for each virtual 
 instance. The following configuration options are available: 

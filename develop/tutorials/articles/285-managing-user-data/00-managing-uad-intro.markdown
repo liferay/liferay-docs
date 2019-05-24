@@ -1,7 +1,11 @@
-# Managing User-Associated Data Stored by Custom Applications [](id=managing-user-associated-data-stored-by-custom-applications)
+---
+header-id: managing-user-associated-data-stored-by-custom-applications
+---
+
+# Managing User-Associated Data Stored by Custom Applications
 
 @product-ver@ makes it possible for administrators to [delete or
-anonymize](/discover/portal/-/knowledge_base/7-1/managing-user-data)
+anonymize](/docs/7-1/user/-/knowledge_base/u/managing-user-data)
 User Associated Data (UAD), providing a useful tool for compliance with the EU's
 General Data Protection Regulation (GDPR). Out of the box, this tool only
 supports Liferay applications (blogs, web content, etc.), but you can also
@@ -26,7 +30,7 @@ Follow these steps:
 Anonymization of apps not created using Service Builder will be covered
 separately.
 
-## Include Dependencies [](id=include-dependencies)
+## Include Dependencies
 
 To compile the code that Service Builder generates, you need
 dependencies on Petra and 3.23.0 or later of Liferay `kernel` in your service
@@ -38,7 +42,7 @@ module's `build.gradle`:
         ...
     }
 
-## Choose Fields to Anonymize [](id=choose-fields-to-anonymize)
+## Choose Fields to Anonymize
 
 Next you must identify fields to anonymize by attaching anonymization attributes to
 elements in the `-service` module's `service.xml` file. There are two ways to do
@@ -65,7 +69,7 @@ The content of a blog post, in contrast, cannot be anonymized automatically:
 The `uad-nonanonymizable` value of `true` indicates that the `content` field
 must be reviewed by an administrator to remove a blog author's UAD.
 
-## Run Service Builder! [](id=run-service-builder)
+## Run Service Builder!
 
 At this point, you're ready to run Service Builder. This generates a new `-uad`
 module based on the values you added to `service.xml`. The new module is
@@ -87,18 +91,14 @@ At this point you can compile your application. Before you deploy it, however,
 you should to make sure the UAD application recognizes it in a way that makes
 sense to administrators.
 
-+$$$
+| **Note:** Depending on how you created your project---for instance, if you used
+| Blade's Service Builder template rather than Liferay Dev Studio's---you may have
+| to include the new `-uad` module in your `settings.gradle` file before you can
+| compile:
+| 
+|     include "myapp-api", "myapp-service", "myapp-uad"
 
-**Note:** Depending on how you created your project---for instance, if you used
-Blade's Service Builder template rather than Liferay Dev Studio's---you may have
-to include the new `-uad` module in your `settings.gradle` file before you can
-compile:
-
-    include "myapp-api", "myapp-service", "myapp-uad"
-
-$$$
-
-## Provide Your App's Name to the UI [](id=provide-your-apps-name-to-the-ui)
+## Provide Your App's Name to the UI
 
 The simplest way to provide your app's name to the anonymization UI is to
 include a language key in your `Language.properties` file:

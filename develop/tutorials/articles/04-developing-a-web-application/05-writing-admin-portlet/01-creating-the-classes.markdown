@@ -1,4 +1,8 @@
-# Creating the Classes [](id=creating-the-classes)
+---
+header-id: creating-the-classes
+---
+
+# Creating the Classes
 
 <div class="learn-path-step">
     <p>Writing the Guestbook Admin App<br>Step 1 of 5</p>
@@ -24,10 +28,10 @@ the process manually to learn how it all works:
 You now have your Guestbook Admin application's portlet class. For an 
 administrative application, however, you need at least one more component. 
 
-## Panels and Categories [](id=panels-and-categories)
+## Panels and Categories
 
 As described in the 
-[product menu tutorial](/develop/tutorials/-/knowledge_base/7-1/customizing-the-product-menu), 
+[product menu tutorial](/docs/7-1/tutorials/-/knowledge_base/t/customizing-the-product-menu), 
 there are three sections of the product menu as illustrated below. 
 
 ![Figure 1: The product menu is split into three sections: the Control Panel, the User menu, and the Sites menu.](../../../images/product-menu-parts.png)
@@ -42,9 +46,9 @@ the spot where Site administrators expect it to be. This also means you don't
 have to create a new category for it: you can just create the panel entry, which 
 is what you'll do next. If you'd like to learn more about panel categories and 
 apps after this, see the 
-[product menu tutorial](/develop/tutorials/-/knowledge_base/7-1/customizing-the-product-menu)
+[product menu tutorial](/docs/7-1/tutorials/-/knowledge_base/t/customizing-the-product-menu)
 and the 
-[control menu tutorial](/develop/tutorials/-/knowledge_base/7-1/customizing-the-control-menu).
+[control menu tutorial](/docs/7-1/tutorials/-/knowledge_base/t/customizing-the-control-menu).
 
 Follow these steps to create the panel entry for the Guestbook Admin portlet: 
 

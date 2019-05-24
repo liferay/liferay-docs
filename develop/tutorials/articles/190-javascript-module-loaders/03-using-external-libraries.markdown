@@ -1,4 +1,8 @@
-# Using External JavaScript Libraries [](id=using-external-javascript-libraries)
+---
+header-id: using-external-javascript-libraries
+---
+
+# Using External JavaScript Libraries
 
 You can use external JavaScript libraries in your portlets (i.e., anything but 
 Metal.js, jQuery, or Lodash, which are included by default). There are a few 
@@ -8,7 +12,7 @@ them.
 
 This tutorial covers how to adapt external libraries for the JavaScript Loaders.
 
-## Configuring Libraries to Support UMD [](id=configuring-libraries-to-support-umd)
+## Configuring Libraries to Support UMD
 
 If you're the owner of the library, you should make sure that it supports 
 [UMD](https://github.com/umdjs/umd)
@@ -37,7 +41,7 @@ the template shown below:
 
 Next you can learn how to use libraries that you host. 
 
-## Using Libraries That You Host [](id=using-libraries-that-you-host)
+## Using Libraries That You Host
 
 If you're hosting the library (and not loading it from a CDN), you must hide the 
 Liferay AMD Loader to use your Library. Follow these steps:
@@ -49,20 +53,16 @@ Liferay AMD Loader to use your Library. Follow these steps:
 
 3.  Uncheck the `expose global` option. 
 
-+$$$
-
-**Note:**  Once this option is unchecked, you can no longer use the 
-`Liferay.Loader.define` or `Liferay.Loader.require` functions in your app. Also, 
-if you're using third party libraries that are AMD compatible, they could stop 
-working after unchecking this option because they usually use global functions 
-like `require()` or `define()`.
-
-$$$
+| **Note:**  Once this option is unchecked, you can no longer use the
+| `Liferay.Loader.define` or `Liferay.Loader.require` functions in your app. Also,
+| if you're using third party libraries that are AMD compatible, they could stop
+| working after unchecking this option because they usually use global functions
+| like `require()` or `define()`.
 
 Now you know how to adapt external libraries for Liferay's JavaScript Loaders.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Liferay AMD Module Loader](/develop/tutorials/-/knowledge_base/7-1/loading-amd-modules-in-liferay)
+[Liferay AMD Module Loader](/docs/7-1/tutorials/-/knowledge_base/t/loading-amd-modules-in-liferay)
 
-[Using ES2015+ Modules in Your Portlet](/develop/tutorials/-/knowledge_base/7-1/preparing-your-javascript-files-for-esplus)
+[Using ES2015+ Modules in Your Portlet](/docs/7-1/tutorials/-/knowledge_base/t/preparing-your-javascript-files-for-esplus)

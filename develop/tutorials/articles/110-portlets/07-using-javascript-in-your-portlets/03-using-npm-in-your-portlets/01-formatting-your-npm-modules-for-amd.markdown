@@ -1,4 +1,8 @@
-# Formatting Your npm Modules for AMD [](id=formatting-your-npm-modules-for-amd)
+---
+header-id: formatting-your-npm-modules-for-amd
+---
+
+# Formatting Your npm Modules for AMD
 
 For @product@ to recognize your npm modules, they must be formatted for the 
 Liferay AMD Loader. Luckily, the liferay-npm-bundler handles this for you, you 
@@ -68,9 +72,9 @@ Follow these steps to configure your project to use the liferay-npm-bundler:
 
     If you don't have a portlet already, create an empty MVC portlet project. 
     For convenience, you can use 
-    [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/installing-blade-cli)
+    [Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/installing-blade-cli)
     to create an empty portlet with the 
-    [mvc portlet blade template](/develop/reference/-/knowledge_base/7-1/using-the-mvc-portlet-template).
+    [mvc portlet blade template](/docs/7-1/reference/-/knowledge_base/r/using-the-mvc-portlet-template).
 
     If you don't have a `package.json` file, you can run `npm init -y` to create 
     an empty one based on the project directory's name. 
@@ -79,12 +83,8 @@ Follow these steps to configure your project to use the liferay-npm-bundler:
 
         npm install --save-dev liferay-npm-bundler
 
-    +$$$
-
-    **Note:** Use npm from within your portlet project's root folder (where the 
-    `package.json` file lives), as you normally do on a typical web project.
-
-    $$$
+    | **Note:** Use npm from within your portlet project's root folder (where the
+    | `package.json` file lives), as you normally do on a typical web project.
 
 4.  Add the `liferay-npm-bundler` to your `package.json`'s build script to pack 
     the needed npm packages and transform them to AMD:
@@ -100,27 +100,23 @@ Follow these steps to configure your project to use the liferay-npm-bundler:
     
         "build": "tsc && liferay-npm-bundler" 
 
-    +$$$
-            
-    **Note:** You can use any languages you like as long as they can be 
-    transpiled to ECMAscript 5 or higher. The only requirements are:
-
-    - That Babel can convert them to an AST to be able to process it
-    - That your browser can execute it.
-    - That modules are loaded using `require()` calls (this requirement can be 
-      relaxed by using customized plugins, but is mandatory for the default 
-      out-of-the-box configuration).
-
-      When you deploy your portlet using Gradle, the build script is called as 
-      part of the process.
-
-    $$$
+    | **Note:** You can use any languages you like as long as they can be
+    | transpiled to ECMAscript 5 or higher. The only requirements are:
+    | 
+    | - That Babel can convert them to an AST to be able to process it
+    | - That your browser can execute it.
+    | - That modules are loaded using `require()` calls (this requirement can be
+    |   relaxed by using customized plugins, but is mandatory for the default
+    |   out-of-the-box configuration).
+    | 
+    |   When you deploy your portlet using Gradle, the build script is called as
+    |   part of the process.
     
 5.  Configure your project for the bundler, using the `.npmbundlerrc` file 
     (create this file in your project's root folder if it doesn't exist). You 
     can specify packages to exclude from the output JAR, imports for shared 
     dependencies, and more. See the 
-    [Configuring liferay-npm-bundler reference](/develop/reference/-/knowledge_base/7-1/configuring-liferay-npm-bundler) 
+    [Configuring liferay-npm-bundler reference](/docs/7-1/reference/-/knowledge_base/r/configuring-liferay-npm-bundler) 
     for more information on the available options. 
     
     The example excludes every dependency (using the wildcard (`*`) symbol) of 
@@ -165,7 +161,7 @@ wraps them inside a `Liferay.Loader.define()` call so that the Liferay AMD
 Loader knows how to handle them. It also namespaces the module names in 
 `require()` calls and inside the `Liferay.Loader.define()` call with the 
 project's name prefix (`npm-angular5-provider$` in the example) to achieve 
-[dependency isolation](/develop/reference/-/knowledge_base/7-1/how-liferay-portal-publishes-npm-packages#isolated-package-dependencies). 
+[dependency isolation](/docs/7-1/reference/-/knowledge_base/r/how-liferay-portal-publishes-npm-packages#isolated-package-dependencies). 
 the bundler injects the dependencies in the `package.json` pertaining to 
 `npm-angular5-provider` to make them available at runtime. The resulting build 
 for the example widget is shown below:
@@ -209,20 +205,16 @@ for the example widget is shown below:
             - require('core-js/es7/reflect');
             - require('zone-js/dist/zone');
 
-+$$$
-
-**Note:** By default, the AMD Loader times out in seven seconds. Since Liferay 
-DXP Fix Pack 3 and Liferay Portal 7.1 CE GA 2, you can configure this value 
-through System Settings. Open the Control Panel and navigate to *Configuration* 
-&rarr; *System Settings* &rarr; *PLATFORM* &rarr; *Infrastructure*, and select 
-*JavaScript Loader*. Set the *Module Definition Timeout* configuration to the 
-time you want and click *Save*.
-
-$$$
+| **Note:** By default, the AMD Loader times out in seven seconds. Since Liferay
+| DXP Fix Pack 3 and Liferay Portal 7.1 CE GA 2, you can configure this value
+| through System Settings. Open the Control Panel and navigate to *Configuration*
+| &rarr; *System Settings* &rarr; *PLATFORM* &rarr; *Infrastructure*, and select
+| *JavaScript Loader*. Set the *Module Definition Timeout* configuration to the
+| time you want and click *Save*.
 
 Now you know how to use the liferay-npm-bundler to bundle your npm-based 
 portlets for the Liferay AMD Loader!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Preparing Your JavaScript Files for ES2015+](/develop/tutorials/-/knowledge_base/7-1/preparing-your-javascript-files-for-esplus)
+[Preparing Your JavaScript Files for ES2015+](/docs/7-1/tutorials/-/knowledge_base/t/preparing-your-javascript-files-for-esplus)

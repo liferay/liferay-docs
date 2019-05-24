@@ -1,4 +1,8 @@
-# Viewing Audit Events [](id=using-audit-events)
+---
+header-id: using-audit-events
+---
+
+# Viewing Audit Events
 
 The Audit app shows activities in your @product@ installation. Access it by
 navigating to *Control Panel* &rarr; *Configuration* &rarr; *Audit*. The app
@@ -17,21 +21,17 @@ populated very quickly. That's why page view events aren't displayed by default.
 They'll clutter up your audit report, since they'll definitely be the most 
 frequent event. 
 
-+$$$
-
-**Note:** You can add page view events to your audit report, but keep in mind
-that doing so adds LOTS of events. If you're a glutton for this kind of
-punishment, add this property to your `portal-ext.properties` file:
-
-    audit.message.com.liferay.portal.kernel.model.Layout.VIEW=true
-
-@product@'s code refers to pages as *layouts*. Setting this property to `true` 
-therefore records audit events for page views. It's turned off by default
-because this is too fine-grained for most installations. 
-
-Once you've added the property, restart your server. 
-
-$$$
+| **Note:** You can add page view events to your audit report, but keep in mind
+| that doing so adds LOTS of events. If you're a glutton for this kind of
+| punishment, add this property to your `portal-ext.properties` file:
+| 
+|     audit.message.com.liferay.portal.kernel.model.Layout.VIEW=true
+| 
+| @product@'s code refers to pages as *layouts*. Setting this property to `true`
+| therefore records audit events for page views. It's turned off by default
+| because this is too fine-grained for most installations.
+| 
+| Once you've added the property, restart your server.
 
 ## Finding Audit Events[](id=finding-audit-events)
 

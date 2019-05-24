@@ -1,9 +1,13 @@
-# Other Content Options [](id=other-content-options)
+---
+header-id: other-content-options
+---
+
+# Other Content Options
 
 Here are some options and tools that you can use to enhance your content and
 user experience.
 
-## Localizing Content [](id=localizing-content)
+## Localizing Content
 
 When you create a new web content article, you can choose a default language.
 First, you must change the system configuration to enable the option to change
@@ -39,15 +43,11 @@ followed by your preferred languages in your `portal-ext.properties` file. For
 example, `locales.enabled=ar_SA,nl_NL,hi_IN` offers *Arabic (Saudi Arabia)*,
 *Dutch (Netherlands)*, and *Hindi (India)*.
 
-+$$$
-
-**Warning:** If you switch your Site's default language (e.g., via friendly
-URL), but do not have the necessary translations for localizable fields, your
-Site's language values are used from the old default language. Therefore, you
-should change the default language of your Site *only* when you have translated
-values for all localizable entities. 
-
-$$$
+| **Warning:** If you switch your Site's default language (e.g., via friendly
+| URL), but do not have the necessary translations for localizable fields, your
+| Site's language values are used from the old default language. Therefore, you
+| should change the default language of your Site *only* when you have translated
+| values for all localizable entities.
 
 When you create a new web content structure, each field you create has a
 *Localizable* checkbox displayed next to it. This enables you to control what
@@ -57,7 +57,7 @@ can make sure those fields aren't llocalizable. When you follow the steps above
 to localize content, only fields within the structure that had the *Localizable*
 box checked appear within the translation window.
 
-## Xuggler for Embedding Video [](id=xuggler-for-embedding-video)
+## Xuggler for Embedding Video
 
 Xuggler is a tool which generates video previews and makes it possible to embed
 videos from your Documents and Media library in web content and elsewhere on the
@@ -79,10 +79,10 @@ file in a web content article the same way you added images previously.
 
 ![Figure 2: If you've installed and enabled Xuggler from the *Server Administration* &rarr; *External Tools* section of the Control Panel, you can add audio and video to your web content!](../../../../images/web-content-audio-video.png)
 
-## XML Format Downloads [](id=xml-format-downloads)
+## XML Format Downloads
 
 Tools like the 
-[Resource Importer](/develop/tutorials/-/knowledge_base/7-1/importing-resources-with-a-theme)
+[Resource Importer](/docs/7-1/tutorials/-/knowledge_base/t/importing-resources-with-a-theme)
 and Site Initiators can be deployed to build a site almost instantly. Before you
 can use them to import Web Content, however, you first need to have the content
 exported individually in XML format. To export the content,
@@ -99,7 +99,7 @@ save into an XML file locally.
 
 ![Figure 3: The *View Source* button is available from the *Options* button.](../../../../images/web-content-download.png)
 
-## Subscribing to Content [](id=subscribing-to-content)
+## Subscribing to Content
 
 An administrator or web content writer can subscribe to an article or folder to
 follow changes being made to it. 
@@ -120,7 +120,7 @@ been created this way. But if you want to take advantage of the full power of
 @product@'s WCM, you'll want to use structures and templates or Fragments.
 You'll cover these topics next.
 
-## Organizing Structure Names [](id=organizing-structure-names)
+## Organizing Structure Names
 
 By default, when you select a structure to add a new Web Content article, the
 structures are ordered by their IDs, not their names. This can be confusing,

@@ -1,4 +1,8 @@
-# Knowledge Base System Settings [](id=knowledge-base-system-settings)
+---
+header-id: knowledge-base-system-settings
+---
+
+# Knowledge Base System Settings
 
 Administrators can use the System Settings UI to set the Knowledge Base's global 
 configuration (across sites). You can access this UI in *Control Panel* &rarr; 
@@ -16,18 +20,14 @@ Knowledge Base widgets, and to the Knowledge Base app in Site Administration.
 The other sections apply to specific Knowledge Base widgets and override the 
 *Knowledge Base Service* defaults. 
 
-+$$$
-
-**Important:** Advanced configuration of the Knowledge Base application's system
-settings should only be performed by an @product@ administrator. 
-
-$$$
+| **Important:** Advanced configuration of the Knowledge Base application's system
+| settings should only be performed by an @product@ administrator.
 
 The Knowledge Base has several optional features that are disabled by default,
 but can be enabled and configured from System Settings. These include source
 URL, import file conventions, new article priority increment, and sections. 
 
-## Source URL Settings [](id=source-url-settings)
+## Source URL Settings
 
 The source URL settings define the source location of Markdown files for import.
 This should point to a source repository where the files are stored. GitHub is
@@ -41,7 +41,7 @@ of the Knowledge Base's System Settings. To enable the source URL, check the
 
 To change the source URL button's label, specify a new value for the setting 
 *Source URL Edit Message Key*. Best practice is to specify the value as a 
-[language key](/develop/tutorials/-/knowledge_base/7-1/overriding-language-keys). 
+[language key](/docs/7-1/tutorials/-/knowledge_base/t/overriding-language-keys). 
 For example, if you create a language key `edit-on-bitbucket=Edit on Bitbucket`, 
 you can specify that language key as the button's new label: 
 
@@ -51,7 +51,7 @@ Alternatively, you can specify the label explicitly:
 
     Edit on Bitbucket
 
-## Importer File Convention Settings [](id=importer-file-convention-settings)
+## Importer File Convention Settings
 
 These settings define the supported file extensions, the suffix for parent
 files, and the image folder's path within the imported ZIP files. These settings 
@@ -91,7 +91,7 @@ Alternatively, you can enable or disable the article increment priority
 feature for each widget in the corresponding widget's configuration menu in 
 System Settings. 
 
-## Section Names Setting [](id=section-names-setting)
+## Section Names Setting
 
 The section names setting lets you specify names of arbitrary topics to 
 attribute to articles. Using the Knowledge Base Section widget, you can display 
@@ -110,6 +110,6 @@ Follow these steps to make new sections available:
 ![Figure 1: Create the sections you want to use with the Knowledge Base Section widget.](../../../../images/kb-section-setting.png)
 
 Once your sections are added, you can follow the steps in the 
-[Knowledge Base Section documentation](/discover/portal/-/knowledge_base/7-1/other-knowledge-base-widgets#knowledge-base-section) 
+[Knowledge Base Section documentation](/docs/7-1/user/-/knowledge_base/u/other-knowledge-base-widgets#knowledge-base-section) 
 to learn how to use them.
 

@@ -1,9 +1,13 @@
-# Deploying Projects with IntelliJ IDEA [](id=deploying-projects-with-intellij-idea)
+---
+header-id: deploying-projects-with-intellij-idea
+---
+
+# Deploying Projects with IntelliJ IDEA
 
 Once you've
-[created a project](/develop/tutorials/-/knowledge_base/7-1/creating-projects-with-intellij-idea)
+[created a project](/docs/7-1/tutorials/-/knowledge_base/t/creating-projects-with-intellij-idea)
 and
-[installed your Liferay server](/develop/tutorials/-/knowledge_base/7-1/installing-a-server-in-intellij-idea)
+[installed your Liferay server](/docs/7-1/tutorials/-/knowledge_base/t/installing-a-server-in-intellij-idea)
 in IntelliJ, you'll want to deploy your project. Follow the steps below to do
 this:
 
@@ -25,7 +29,7 @@ The `watch` Blade CLI task deploys your project. This watches your local project
 and propagates saved changes to the deployed project. With this, project updates
 are viewable almost instantaneously from your Liferay server. For more info on
 the `watch` task, see the 
-[Deploying Projects with Blade CLI](/develop/tutorials/-/knowledge_base/7-1/deploying-projects-with-blade-cli)
+[Deploying Projects with Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/deploying-projects-with-blade-cli)
 article.
 
 That's it! You've successfully deployed your project to @product@!

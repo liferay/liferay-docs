@@ -1,4 +1,8 @@
-# Integrating Third Party Themes with Clay [](id=integrating-third-party-themes-with-clay)
+---
+header-id: integrating-third-party-themes-with-clay
+---
+
+# Integrating Third Party Themes with Clay
 
 [Clay Base](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/frontend-theme/frontend-theme-styled/src/main/resources/META-INF/resources/_styled/css/clay) 
 provides all the features and components your theme needs and inherits 
@@ -10,14 +14,10 @@ The
 uses Clay Base to provide its styles and components. Therefore, as a best 
 practice, you should use the Styled base theme to integrate third party themes. 
 
-+$$$
-
-**Note:** You can purchase third party themes from the 
-[Liferay Marketplace](https://web.liferay.com/marketplace). Third party themes 
-must be built with Sass to be compatible. **Make sure** Sass files are included 
-before making any theme purchase.
-
-$$$
+| **Note:** You can purchase third party themes from the
+| [Liferay Marketplace](https://web.liferay.com/marketplace). Third party themes
+| must be built with Sass to be compatible. **Make sure** Sass files are included
+| before making any theme purchase.
 
 Follow these steps to integrate a third party theme with Clay Base:
 
@@ -47,11 +47,7 @@ Follow these steps to integrate a third party theme with Clay Base:
 6.  In `_clay_variables.scss`, import the file containing the theme variables. 
     For example, `@import "awesome-theme/variables.scss";`
  
-    +$$$ 
-
-    **Note:** You may omit the leading underscore when importing Sass files.
-
-    $$$
+    | **Note:** You may omit the leading underscore when importing Sass files.
 
 7.  In `_custom.scss`, import the file containing the CSS. For example, 
     `@import "awesome-theme/main.scss";`
@@ -61,8 +57,8 @@ Follow these steps to integrate a third party theme with Clay Base:
 
 Now you know how to integrate third party themes with Clay Base!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Applying Clay Styles to Your App](/develop/tutorials/-/knowledge_base/7-1/applying-clay-styles-to-your-app)
+[Applying Clay Styles to Your App](/docs/7-1/tutorials/-/knowledge_base/t/applying-clay-styles-to-your-app)
 
-[Importing Clay CSS into a Theme](/develop/tutorials/-/knowledge_base/7-1/importing-clay-css-into-a-theme)
+[Importing Clay CSS into a Theme](/docs/7-1/tutorials/-/knowledge_base/t/importing-clay-css-into-a-theme)

@@ -1,6 +1,10 @@
-# Embedding Related Resources [](id=embedding-related-resources)
+---
+header-id: embedding-related-resources
+---
 
-[The tutorial on related resources](/develop/tutorials/-/knowledge_base/7-1/navigating-to-a-related-resource) 
+# Embedding Related Resources
+
+[The tutorial on related resources](/docs/7-1/tutorials/-/knowledge_base/t/navigating-to-a-related-resource) 
 shows you how to request a resource and identify related resources in the 
 response. Getting a related resource, however, requires that you send another
 request to that resource. Instead, you can get a related resource by embedding
@@ -113,6 +117,6 @@ response includes detailed `contentSpace` information for every Site:
 
     curl -H "Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTpMaWZlcmF5C" http://localhost:8080/o/api/p/web-site/?embedded=contentSpace
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Navigating to a Related Resource](/develop/tutorials/-/knowledge_base/7-1/navigating-to-a-related-resource)
+[Navigating to a Related Resource](/docs/7-1/tutorials/-/knowledge_base/t/navigating-to-a-related-resource)

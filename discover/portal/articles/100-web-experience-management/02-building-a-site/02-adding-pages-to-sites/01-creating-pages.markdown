@@ -1,4 +1,8 @@
-# Creating Pages [](id=creating-pages)
+---
+header-id: creating-pages
+---
+
+# Creating Pages
 
 After you create a Site, you can add new pages and maintain them. You can do
 everything you need with pages from Site Administration.
@@ -15,17 +19,13 @@ everything you need with pages from Site Administration.
 
 From here, you'll create pages and page templates.
 
-+$$$
-
-Note: Pages are always part of page sets, and page sets are always associated
-with Sites. Even users' personal pages are part of their personal Sites. All
-pages belong to one of two types of page sets: public pages and private pages.
-By default, anyone can access public pages, even non-logged in users (guests).
-Only users who are members of the Site that owns the pages can access private
-pages. This means the private pages of an organization's Site are viewable only
-by Site members and members of the organization. 
-
-$$$
+| Note: Pages are always part of page sets, and page sets are always associated
+| with Sites. Even users' personal pages are part of their personal Sites. All
+| pages belong to one of two types of page sets: public pages and private pages.
+| By default, anyone can access public pages, even non-logged in users (guests).
+| Only users who are members of the Site that owns the pages can access private
+| pages. This means the private pages of an organization's Site are viewable only
+| by Site members and members of the organization.
 
 From *Site Pages* you can do several things:
 
@@ -94,7 +94,7 @@ If you must ever modify the page you've created for your Site, select
 *Configure* from the Options menu for the page from *Site Pages*. When
 configuring a specific page, you have more options than when you were creating
 a new page. You can also read 
-[Configuring Sites](/discover/portal/-/knowledge_base/7-1/configuring-sites).
+[Configuring Sites](/docs/7-1/user/-/knowledge_base/u/configuring-sites).
 
 There are also configuration options that are only available for individual
 pages or page groups only. You'll learn about options available for both

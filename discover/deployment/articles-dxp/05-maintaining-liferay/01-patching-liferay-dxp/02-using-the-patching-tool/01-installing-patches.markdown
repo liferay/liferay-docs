@@ -1,4 +1,8 @@
-# Installing Patches [](id=installing-patches)
+---
+header-id: installing-patches
+---
+
+# Installing Patches
 
 Before installing any patches, you must shut down your server. On Windows
 operating systems, files in use are locked by the OS, and can't be patched. On
@@ -25,27 +29,19 @@ issue the following command:
 
 To make sure the all changed OSGi bundles replace the existing ones, delete the
 `osgi/state` folder from the 
-[Liferay Home folder](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home). 
+[Liferay Home folder](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home). 
 
-+$$$
+| **Note**: The `osgi/state` folder contains OSGi bundle state information. If an
+| OSGi bundle's changes in a hot fix or fix pack are internal only, they are
+| invisible to the OSGi framework, that OSGi bundle stays installed, and its state
+| information stays unchanged. Hot fixes, for example, may contain in-place
+| changes that do not use the API. The framework cannot detect such changes.
+| A fix pack's changes may also be transparent to the framework. For these
+| reasons, deleting the `osgi/state` folder after applying fix packs and hot fixes
+| is recommended.
 
-**Note**: The `osgi/state` folder contains OSGi bundle state information. If an
-OSGi bundle's changes in a hot fix or fix pack are internal only, they are
-invisible to the OSGi framework, that OSGi bundle stays installed, and its state
-information stays unchanged. Hot fixes, for example, may contain in-place
-changes that do not use the API. The framework cannot detect such changes.
-A fix pack's changes may also be transparent to the framework. For these
-reasons, deleting the `osgi/state` folder after applying fix packs and hot fixes
-is recommended. 
-
-$$$
-
-+$$$
-
-**Important**: The `osgi/state` folder should ONLY be deleted when working in a 
-development environment or when applying a fix pack or hot fix. 
-
-$$$
+| **Important**: The `osgi/state` folder should ONLY be deleted when working in a
+| development environment or when applying a fix pack or hot fix.
 
 If there are new database indexes created by the patch, the Patching Tool tells
 you to update them. To get the list, run this command:
@@ -65,33 +61,25 @@ Otherwise, you must create the indexes manually. Check the
 After installing patches, you can execute the `patching-tool info` command to
 verify them. 
 
-+$$$
-
-**Note:** If there are any issues with the installed patches, verify that there 
-aren't any remaining files from the previous patch installation of a fix pack or
-hotfix within the application server cache.
-
-$$$
+| **Note:** If there are any issues with the installed patches, verify that there
+| aren't any remaining files from the previous patch installation of a fix pack or
+| hotfix within the application server cache.
 
 During the installation, `patching-backup-deps.zip` and `patching-backup.zip`
 files are created and stored in the web application's `WEB-INF` folder. These
 files are required to restore the @product@'s original state; removing them
 disables patching. 
 
-+$$$
-
-**Note:** When installing patches, @product@'s `web.xml` is always overwritten
-by the one contained in the patch. If you've customized `web.xml`, you must
-re-implement your customizations after installing a patch. 
-
-$$$
+| **Note:** When installing patches, @product@'s `web.xml` is always overwritten
+| by the one contained in the patch. If you've customized `web.xml`, you must
+| re-implement your customizations after installing a patch.
 
 The `patching-backup.zip` file is necessary for installing future patches,
 because the Patching Tool reverts the installed fix pack before installing a new
 one. To revert the installed fix pack, it examines the contents of the
 `patching-backup.zip` to determine the changes that it needs to revert. 
 
-## Handling Hotfixes and Patches [](id=handling-hot-fixes-and-patches)
+## Handling Hotfixes and Patches
 
 As stated previously, hotfixes are short term fixes provided as quickly as
 possible, and fix packs are larger bundles of hotfixes provided to all customers
@@ -106,7 +94,7 @@ version of a fix pack is released, install it with the Patching Tool. The
 Patching Tool uninstalls the old fix pack and installs the new version in its
 place. 
 
-## Fix Pack Dependencies [](id=fix-pack-dependencies)
+## Fix Pack Dependencies
 
 Some hotfixes depend on fix packs. If you attempt to install a hotfix that
 depends on a fix pack, the Patching Tool notifies you. Go to the 
@@ -114,7 +102,7 @@ depends on a fix pack, the Patching Tool notifies you. Go to the
 and obtain the hotfix dependency. Once all the necessary patches are available
 in the `patches` folder, the Patching Tool installs them. 
 
-## Updating the Patching Tool [](id=updating-the-patching-tool)
+## Updating the Patching Tool
 
 When a patch you're trying to install requires a Patching Tool update, the
 Patching Tool tells you. To update the Patching Tool, download the latest one
@@ -123,10 +111,10 @@ from the
 Overwrite the existing Patching Tool by unzipping the new one to the
 `patching-tool` folder's parent folder. 
 
-## Cleaning Up [](id=cleaning-up)
+## Cleaning Up
 
 After you've performed your patching procedure (whether you've installed or
-[removed patches](/discover/deployment/-/knowledge_base/7-1/working-with-patches#uninstalling-patches)),
+[removed patches](/docs/7-1/deploy/-/knowledge_base/d/working-with-patches#uninstalling-patches)),
 it's important to clean up @product@'s cache of deployed code. This ensures that
 you're using the revision you've just installed the patches for when you start
 the server. This is really easy to do. 

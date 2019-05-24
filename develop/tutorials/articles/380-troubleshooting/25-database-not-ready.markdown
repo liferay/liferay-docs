@@ -1,4 +1,8 @@
-# @product@ Failed to Initialize Because the Database Wasn't Ready [](id=portal-failed-to-initialize-because-the-database-wasnt-ready)
+---
+header-id: portal-failed-to-initialize-because-the-database-wasnt-ready
+---
+
+# @product@ Failed to Initialize Because the Database Wasn't Ready
 
 If you start your database server and application server at the same time,
 @product@ might try connecting to the data source before the database is ready.
@@ -6,7 +10,7 @@ By default, @product@ doesn't retry connecting to the database; it just fails.
 But there is a way to avoid this situation: database connection retries.
 
 1.  Create a `portal-ext.properties` file in your
-    [Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
+    [Liferay Home](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home)
     folder.
 
 2.  Set the property `retry.jdbc.on.startup.max.retries` equal to the number of
@@ -18,6 +22,6 @@ But there is a way to avoid this situation: database connection retries.
 If at first the connection doesn't succeed, @product@ uses the retry settings to
 try again. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Connecting to JNDI Data Sources](/develop/tutorials/-/knowledge_base/7-1/connecting-to-data-sources-using-jndi)
+[Connecting to JNDI Data Sources](/docs/7-1/tutorials/-/knowledge_base/t/connecting-to-data-sources-using-jndi)

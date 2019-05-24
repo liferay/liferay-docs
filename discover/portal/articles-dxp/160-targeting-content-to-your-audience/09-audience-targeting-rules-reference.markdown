@@ -1,4 +1,8 @@
-# Liferay Audience Targeting Rules [](id=liferay-audience-targeting-rules)
+---
+header-id: liferay-audience-targeting-rules
+---
+
+# Liferay Audience Targeting Rules
 
 Rules enable Audience Targeting administrators to define how users are
 classified into the user segments they create.
@@ -8,7 +12,7 @@ conditions. Rules can be configured and combined differently for each user
 segment to create a specific classification algorithm. A user must match all
 rules in a user segment to be classified into it.
 
-## Behavior Rules [](id=behavior-rules)
+## Behavior Rules
 
 These rules classify users based on their navigation behavior.
 
@@ -27,15 +31,15 @@ For portal level configuration,
 
 2. Select *Instance Settings* and the *Audience Targeting Analytics*.
 
-### Content Visited [](id=content-visited)
+### Content Visited
 
 Evaluates if the user has visited the selected content.
 
-### Page Visited [](id=page-visited)
+### Page Visited
 
 Evaluates if the user has visited the selected page.
 
-### Previously Visited Site [](id=previously-visited-site)
+### Previously Visited Site
 
 Evaluates if the user has visited a specific Site before visiting the current
 Site. The Site's URL can be evaluated based on whether it contains or starts
@@ -44,12 +48,12 @@ with defined text.
 For example, if you want to segment users based on whether they navigated to
 your Site from Twitter, you could define a Twitter URL for this rule.
 
-### Score Points [](id=score-points)
+### Score Points
 
 Evaluates if the user has visited any page or content categorized under this
 user segment a number of times equals or higher than the configured threshold.
 
-## Social Rules [](id=social-rules)
+## Social Rules
 
 Social rules classify users based on their profiles in social networks (e.g.,
 Facebook).
@@ -57,37 +61,37 @@ Facebook).
 These rules do not work properly if login through the specific social network
 (Single Sign On) is not enabled and properly configured. You can learn more
 about using Single Sign On in the
-[Facebook Connect SSO](/discover/deployment/-/knowledge_base/7-1/facebook-connect-single-sign-on-authentication).
+[Facebook Connect SSO](/docs/7-1/deploy/-/knowledge_base/d/facebook-connect-single-sign-on-authentication).
 
-### Facebook Age [](id=facebook-age)
+### Facebook Age
 
 Evaluates if the age in the user's Facebook profile is in the configured range.
 
-### Facebook City [](id=facebook-city)
+### Facebook City
 
 Evaluates if the city in the user's Facebook profile matches the configured
 value.
 
-### Facebook Education [](id=facebook-education)
+### Facebook Education
 
 Evaluates if the education in the user's Facebook profile matches the configured
 values.
 
-### Facebook Friends [](id=facebook-friends)
+### Facebook Friends
 
 Evaluates if the user has more or less friends in Facebook than the selected
 value.
 
-### Facebook Gender [](id=facebook-gender)
+### Facebook Gender
 
 Evaluates if the gender in the user's Facebook profile matches the selected
 value.
 
-### Facebook Page Like [](id=facebook-page-like)
+### Facebook Page Like
 
 Evaluates if the user likes the configured Facebook page.
 
-## User Attributes Rules [](id=user-attributes-rules)
+## User Attributes Rules
 
 These rules classify users based on the attributes.
 
@@ -95,49 +99,49 @@ These rules do not work properly if the corresponding attributes from the user
 profile are not available. Follow the given instructions for each rule in such
 cases.
 
-### Age [](id=age)
+### Age
 
 Evaluates if the age in the user's profile is in the configured range.
 
-### Custom Field [](id=custom-field)
+### Custom Field
 
 Evaluates if the value set for the selected custom field matches the value from
 the user's profile.
 
-### Gender [](id=gender)
+### Gender
 
 Evaluates if the gender in the user's profile matches the selected value.
 
-### Organization Member [](id=organization-member)
+### Organization Member
 
 Evaluates if the user is member of the selected Organization.
 
-### Organization Role [](id=organization-role)
+### Organization Role
 
 Evaluates if the user has the selected Role assigned in the selected
 organization.
 
-### Regular Role [](id=regular-role)
+### Regular Role
 
 Evaluates if the user has the selected regular Role assigned.
 
-### Site Member [](id=site-member)
+### Site Member
 
 Evaluates if the user is a member of the selected Site.
 
-### Site Role [](id=site-role)
+### Site Role
 
 Evaluates if the user has the selected Role assigned in the selected Site.
 
-### User Group Member [](id=user-group-member)
+### User Group Member
 
 Evaluates if the user is member of the selected User Group.
 
-### User Signed In [](id=user-signed-in)
+### User Signed In
 
 Evaluates if the user is signed in.
 
-## Session Attributes Rules [](id=session-attributes-rules)
+## Session Attributes Rules
 
 These rules classify users based on their session attributes. Session attributes
 come from Java
@@ -148,16 +152,16 @@ These rules do not work properly if the corresponding session attributes are
 retrieved through any tools that are not currently available or properly
 configured. Follow the given instructions for such rules in such cases.
 
-### Access Time [](id=access-time)
+### Access Time
 
 Evaluates if the user visited at a time that is within the configured
 range. Notice that the reference time is that of the server.
 
-### Browser [](id=browser)
+### Browser
 
 Evaluates if the user visited with the selected browser.
 
-### Device [](id=device)
+### Device
 
 Evaluates if the user visited with the selected device.
 
@@ -165,29 +169,29 @@ This rule is based on the existing Device Families. To manage Device Families,
 go to *Site Administration* &rarr; *Configuration* &rarr; *Mobile Device
 Families*.
 
-### IP Range [](id=ip-range)
+### IP Range
 
 Evaluates if the user visited with an IP with the configured range.
 
-### Language [](id=language)
+### Language
 
 Evaluates if the user visited with the selected language.
 
-### Last Login Date [](id=last-login-date)
+### Last Login Date
 
 Evaluates if the last login date of the current user was after, before, or
 between the selected dates.
 
-### Location [](id=location)
+### Location
 
 Evaluates if the user visited from a country and region that match the
 configured values.
 
-### Operating System [](id=operating-system)
+### Operating System
 
 Evaluates if the user visited with the selected Operating System.
 
-### Sign Up Date [](id=sign-up-date)
+### Sign Up Date
 
 Evaluates if the Sign Up date of the current user was after, before, or between
 the selected dates.

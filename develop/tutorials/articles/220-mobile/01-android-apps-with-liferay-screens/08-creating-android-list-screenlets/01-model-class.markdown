@@ -1,4 +1,8 @@
-# Creating the Model Class [](id=creating-the-model-class)
+---
+header-id: creating-the-model-class
+---
+
+# Creating the Model Class
 
 Entities come back from Liferay in JSON. To work with these results efficiently 
 in your app, you must convert them to model objects that represent the entity in 
@@ -77,10 +81,10 @@ Besides the getters and setter, the rest of this class implements
 
 Now that you have your model class, you can create your Screenlet's View. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating the View](/develop/tutorials/-/knowledge_base/7-1/creating-the-view)
+[Creating the View](/docs/7-1/tutorials/-/knowledge_base/t/creating-the-view)
 
-[Creating the Interactor](/develop/tutorials/-/knowledge_base/7-1/creating-the-interactor-0)
+[Creating the Interactor](/docs/7-1/tutorials/-/knowledge_base/t/creating-the-interactor-0)
 
-[Creating the Screenlet Class](/develop/tutorials/-/knowledge_base/7-1/creating-the-screenlet-class-0)
+[Creating the Screenlet Class](/docs/7-1/tutorials/-/knowledge_base/t/creating-the-screenlet-class-0)

@@ -1,4 +1,8 @@
-# Updating the Resources Importer [](id=updating-the-resources-importer)
+---
+header-id: updating-the-resources-importer
+---
+
+# Updating the Resources Importer
 
 The Resources Importer is now an OSGi module in Liferay's Web Experience
 application suite. Since the suite is bundled with @product@, you don't have to
@@ -9,19 +13,15 @@ updated and are the focus of this tutorial:
 - Web content article files and folder structure
 - Sitemap
 
-+$$$
-
-**Note:** Due to the page and article import order, articles that link to pages 
-in the Site's layout cause a null pointer exception 
-[issue](https://issues.liferay.com/browse/LPS-64859). 
-These links have been removed from the example Lunar Resort theme's web content 
-articles to avoid this issue. 
-
-$$$
+| **Note:** Due to the page and article import order, articles that link to pages
+| in the Site's layout cause a null pointer exception
+| [issue](https://issues.liferay.com/browse/LPS-64859).
+| These links have been removed from the example Lunar Resort theme's web content
+| articles to avoid this issue.
 
 Start updating the plugin properties for the Resources Importer.
 
-## Updating liferay-plugin-package.properties [](id=updating-liferay-plugin-package-properties)
+## Updating liferay-plugin-package.properties
 
 Follow the steps in this section to upgrade Plugins SDK themes. Skip to the next 
 section for all other themes. 
@@ -39,18 +39,14 @@ section for all other themes.
 Now that your `liferay-plugin-package.properties` is updated, you can update 
 your theme's web content.
 
-## Updating Web Content [](id=updating-web-content)
+## Updating Web Content
 
 All web content articles must be written in XML and have a structure for article 
 creation and a template for rendering. 
 
-+$$$
-
-**Note:** The example Lunar Resort theme's updated XML articles are in the ZIP 
-file's `/resources-importer/journal/articles/Basic Web Content/` folder for 
-reference.
-
-$$$
+| **Note:** The example Lunar Resort theme's updated XML articles are in the ZIP
+| file's `/resources-importer/journal/articles/Basic Web Content/` folder for
+| reference.
 
 Follow these steps to update your web content:
 
@@ -187,14 +183,14 @@ Follow these steps to update your web content:
 
 Next, you must update your theme's sitemap file. 
 
-## Updating the Sitemap [](id=updating-the-sitemap)
+## Updating the Sitemap
 
 In Liferay Portal 6.2, portlet IDs were incremental numbers. In @product-ver@, 
 they're explicit class names. Update your `sitemap.json` file with the new 
 portlet IDs. 
 
 Some common portlet IDs are specified in the `sitemap.json` example in the 
-[Creating a Sitemap for the Resources Importer](/develop/tutorials/-/knowledge_base/7-1/creating-a-sitemap-for-the-resources-importer) 
+[Creating a Sitemap for the Resources Importer](/docs/7-1/tutorials/-/knowledge_base/t/creating-a-sitemap-for-the-resources-importer) 
 tutorial.
 
 You can also retrieve a portlet's ID from the UI:
@@ -209,20 +205,16 @@ You can also retrieve a portlet's ID from the UI:
 
 ![Figure 2: The portlet ID appears within the blue box in the *Advanced Styling* tab.](../../../../images/upgrading-themes-portlet-id.png)
 
-The [Portlet ID Quick Reference Guide](/develop/reference/-/knowledge_base/7-1/fully-qualified-portlet-ids)
+The [Portlet ID Quick Reference Guide](/docs/7-1/reference/-/knowledge_base/r/fully-qualified-portlet-ids)
 shows all the default portlet IDs. Check `liferay-portlet.xml` for the portlet
 ID number in 6.2 and replace it with the updated ID in the quick reference
 Guide. 
 
-+$$$
+| **Remember** to use the updated `.xml` extension for your web content articles
+| in your sitemap.
 
-**Remember** to use the updated `.xml` extension for your web content articles 
-in your sitemap.
+## Related Topics
 
-$$$
+[Updating 6.2 CSS Code](/docs/7-1/tutorials/-/knowledge_base/t/updating-6-2-css-code)
 
-## Related Topics [](id=related-topics)
-
-[Updating 6.2 CSS Code](/develop/tutorials/-/knowledge_base/7-1/updating-6-2-css-code)
-
-[Applying Clay Design Patterns to 6.2 Themes](/develop/tutorials/-/knowledge_base/7-1/applying-clay-design-patterns-to-6-2-themes)
+[Applying Clay Design Patterns to 6.2 Themes](/docs/7-1/tutorials/-/knowledge_base/t/applying-clay-design-patterns-to-6-2-themes)

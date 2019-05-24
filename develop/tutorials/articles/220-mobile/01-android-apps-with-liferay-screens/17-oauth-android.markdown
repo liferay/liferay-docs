@@ -1,9 +1,13 @@
-# Using OAuth 2 in Liferay Screens for Android [](id=using-oauth-2-in-liferay-screens-for-android)
+---
+header-id: using-oauth-2-in-liferay-screens-for-android
+---
+
+# Using OAuth 2 in Liferay Screens for Android
 
 You can use 
 [OAuth 2](https://oauth.net/2/) 
 to authenticate using 
-[Login Screenlet](/develop/reference/-/knowledge_base/7-1/loginscreenlet-for-android)
+[Login Screenlet](/docs/7-1/reference/-/knowledge_base/r/loginscreenlet-for-android)
 with the following 
 [OAuth 2 grant types](https://oauth.net/2/grant-types/): 
 
@@ -26,17 +30,17 @@ with the following
 
 This tutorial shows you how to use these grant types with Login Screenlet. Note 
 that before getting started, you may want to see 
-[@product@'s OAuth 2.0 documentation](/discover/deployment/-/knowledge_base/7-1/oauth-2-0) 
+[@product@'s OAuth 2.0 documentation](/docs/7-1/deploy/-/knowledge_base/d/oauth-2-0) 
 for instructions on registering an OAuth 2.0 application in the portal. 
 
-## Authorization Code (PKCE) [](id=authorization-code-pkce)
+## Authorization Code (PKCE)
 
 Follow these steps to use the Authorization Code grant type with Login 
 Screenlet: 
 
 1.  Configure the URL where the mobile browser redirects after the user 
     authenticates. To do this, follow the first two steps in the 
-    [Mobile SDK's Authorization Code instructions](/develop/tutorials/-/knowledge_base/7-1/using-oauth-2-in-the-android-mobile-sdk#authorization-code-pkce). 
+    [Mobile SDK's Authorization Code instructions](/docs/7-1/tutorials/-/knowledge_base/t/using-oauth-2-in-the-android-mobile-sdk#authorization-code-pkce). 
     Note that you must configure this URL in both the portal and your Android 
     app. 
 
@@ -88,7 +92,7 @@ Screenlet:
             }
         }
 
-## Resource Owner Password [](id=resource-owner-password)
+## Resource Owner Password
 
 Follow these steps to use the Resource Owner Password grant type with Login 
 Screenlet: 
@@ -127,25 +131,21 @@ Screenlet:
             app:credentialsStorage="shared_preferences"
         />
 
-## Client Credentials [](id=client-credentials)
+## Client Credentials
 
 The OAuth 2 Client Credentials grant type authenticates without requiring user 
 interaction. This is useful when the app needs to access its own resources, not 
 those of a specific user. 
 
-+$$$
-
-**Warning:** The Client Credentials grant type poses a security risk to the 
-portal. To authenticate without user credentials, the mobile app must contain 
-the OAuth 2 application's client ID and client secret. Anyone who can access 
-those values via the mobile app can also authenticate without user credentials. 
-
-$$$
+| **Warning:** The Client Credentials grant type poses a security risk to the
+| portal. To authenticate without user credentials, the mobile app must contain
+| the OAuth 2 application's client ID and client secret. Anyone who can access
+| those values via the mobile app can also authenticate without user credentials.
 
 Follow these steps to use the Client Credentials grant type in your Android app: 
 
 1.  Follow the 
-    [Android Mobile SDK instructions](/develop/tutorials/-/knowledge_base/7-1/using-oauth-2-in-the-android-mobile-sdk#client-credentials) 
+    [Android Mobile SDK instructions](/docs/7-1/tutorials/-/knowledge_base/t/using-oauth-2-in-the-android-mobile-sdk#client-credentials) 
     for using the Client Credentials grant type. 
 
 2.  The session object contains a valid authentication object. Pass the session 
@@ -156,10 +156,10 @@ Follow these steps to use the Client Credentials grant type in your Android app:
     This initializes the Screens `SessionContext` object, authenticating any 
     Screenlets that you use in the Android app. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using OAuth 2 in the Android Mobile SDK](/develop/tutorials/-/knowledge_base/7-1/using-oauth-2-in-the-android-mobile-sdk)
+[Using OAuth 2 in the Android Mobile SDK](/docs/7-1/tutorials/-/knowledge_base/t/using-oauth-2-in-the-android-mobile-sdk)
 
-[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/7-1/using-screenlets-in-android-apps)
+[Using Screenlets in Android Apps](/docs/7-1/tutorials/-/knowledge_base/t/using-screenlets-in-android-apps)
 
-[OAuth 2.0](/discover/deployment/-/knowledge_base/7-1/oauth-2-0)
+[OAuth 2.0](/docs/7-1/deploy/-/knowledge_base/d/oauth-2-0)

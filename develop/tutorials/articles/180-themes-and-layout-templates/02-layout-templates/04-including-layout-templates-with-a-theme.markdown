@@ -1,4 +1,8 @@
-# Including Layout Templates with a Theme [](id=including-layout-templates-with-a-theme)
+---
+header-id: including-layout-templates-with-a-theme
+---
+
+# Including Layout Templates with a Theme
 
 Although you can deploy a layout template by itself, you can also bundle it with 
 a theme. To include a layout template with a theme, follow these steps:
@@ -33,7 +37,7 @@ a theme. To include a layout template with a theme, follow these steps:
         </template-path>
     
 4.  Specify the 
-    [layout template thumbnail's](/develop/tutorials/-/knowledge_base/7-1/creating-custom-layout-template-thumbnail-previews) 
+    [layout template thumbnail's](/docs/7-1/tutorials/-/knowledge_base/t/creating-custom-layout-template-thumbnail-previews) 
     path with a `<thumbnail-path>` tag, as shown below:
 
         <thumbnail-path>
@@ -63,10 +67,10 @@ a theme. To include a layout template with a theme, follow these steps:
 
 Now you know how to include layout templates with your @product@ themes!
 
-## Related topics [](id=related-topics)
+## Related topics
 
-[Creating Custom Layout Template Thumbnail Previews](/develop/tutorials/-/knowledge_base/7-1/creating-custom-layout-template-thumbnail-previews)
+[Creating Custom Layout Template Thumbnail Previews](/docs/7-1/tutorials/-/knowledge_base/t/creating-custom-layout-template-thumbnail-previews)
 
-[Layout Templates with the Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-1/creating-layout-templates-with-the-themes-generator)
+[Layout Templates with the Liferay Theme Generator](/docs/7-1/tutorials/-/knowledge_base/t/creating-layout-templates-with-the-themes-generator)
 
-[Creating Layout Templates Manually](/develop/tutorials/-/knowledge_base/7-1/creating-layout-templates-manually)
+[Creating Layout Templates Manually](/docs/7-1/tutorials/-/knowledge_base/t/creating-layout-templates-manually)

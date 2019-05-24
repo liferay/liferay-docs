@@ -1,4 +1,8 @@
-# Using Liferay's Script Engine [](id=using-liferays-script-engine)
+---
+header-id: using-liferays-script-engine
+---
+
+# Using Liferay's Script Engine
 
 @product@ provides a robust script engine for executing
 [Groovy](http://groovy-lang.org/)
@@ -8,13 +12,13 @@ even system level operations in the scripting console.
 
 These tutorials cover the following scripting topics: 
 
-- [Invoking Liferay services](/discover/portal/-/knowledge_base/7-1/invoking-liferay-services-from-scripts)
+- [Invoking Liferay services](/docs/7-1/user/-/knowledge_base/u/invoking-liferay-services-from-scripts)
 
-- [Running scripts from the script console](/discover/portal/-/knowledge_base/7-1/running-scripts-from-the-script-console)
+- [Running scripts from the script console](/docs/7-1/user/-/knowledge_base/u/running-scripts-from-the-script-console)
 
-- [Using the script engine with workflow](/discover/portal/-/knowledge_base/7-1/leveraging-the-script-engine-in-workflow)
+- [Using the script engine with workflow](/docs/7-1/user/-/knowledge_base/u/leveraging-the-script-engine-in-workflow)
 
-- [Script examples](/discover/portal/-/knowledge_base/7-1/script-examples)
+- [Script examples](/docs/7-1/user/-/knowledge_base/u/script-examples)
 
 The most common use of the scripting console is to invoke Liferay's services,
 so that's covered first. Familiarity with Liferay's API makes the scripting

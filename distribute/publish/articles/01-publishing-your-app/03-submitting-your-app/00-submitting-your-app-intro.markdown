@@ -1,4 +1,8 @@
-# Submitting Your App [](id=submitting-your-app)
+---
+header-id: submitting-your-app
+---
+
+# Submitting Your App
 
 Now that you have everything in order for publishing your app, you can start the
 Marketplace app submission process. 

@@ -1,7 +1,11 @@
-# Publishing Content Dynamically [](id=publishing-content-dynamically)
+---
+header-id: publishing-content-dynamically
+---
+
+# Publishing Content Dynamically
 
 Most content types are Assets. In the 
-[Creating Web Content](/discover/portal/-/knowledge_base/7-1/creating-web-content) 
+[Creating Web Content](/docs/7-1/user/-/knowledge_base/u/creating-web-content) 
 tutorial, you examined the most common type of asset: web content. Other types
 of assets include blog posts, wiki articles, message board posts, bookmarks, and
 documents. Developers can define custom asset types that use the asset

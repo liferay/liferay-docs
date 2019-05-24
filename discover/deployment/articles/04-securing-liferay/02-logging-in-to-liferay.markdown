@@ -1,4 +1,8 @@
-# Logging into @product@ [](id=logging-into-liferay)
+---
+header-id: logging-into-liferay
+---
+
+# Logging into @product@
 
 One of the primary functions of a security system is to make pages, content, and
 web applications are accessible to only the appropriate users. A student
@@ -8,10 +12,10 @@ to access a doctor's resources. Some content (at least a login page) should be
 available to everybody, including unauthenticated users (called *guest* users).
 To learn more about how @product@ restricts access to portal resources to
 different users, please see the 
-[Roles and Permissions](/discover/portal/-/knowledge_base/7-1/roles-and-permissions) 
+[Roles and Permissions](/docs/7-1/user/-/knowledge_base/u/roles-and-permissions) 
 documentation. 
 
-## Authentication Types [](id=authentication-types)
+## Authentication Types
 
 There are three authentication types: by email address, screen
 name, or user ID. To choose an authentication type, navigate to the Control
@@ -33,10 +37,10 @@ must always enter a password. For information on
 adding restrictions on the kinds of passwords that are allowed or required
 (e.g., to require a minimum password length or require special characters),
 please see the 
-[Password Policies](/discover/portal/-/knowledge_base/7-1/password-policies) 
+[Password Policies](/docs/7-1/user/-/knowledge_base/u/password-policies) 
 documentation. 
 
-## The Sign In Portlet [](id=the-sign-in-portlet)
+## The Sign In Portlet
 
 The Sign In portlet is how users log in. By default, the Sign In portlet can
 create new accounts or request a password reset. The default home page contains
@@ -77,5 +81,5 @@ authentication, which allows remote web applications to authenticate. Please
 refer to the other articles in this section for more information. Finally,
 remember that  user authentication and remote application authentication
 mechanisms are
-[extensible](/develop/tutorials/-/knowledge_base/7-1/authentication-pipelines). 
+[extensible](/docs/7-1/tutorials/-/knowledge_base/t/authentication-pipelines). 
 

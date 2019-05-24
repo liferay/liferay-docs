@@ -1,4 +1,8 @@
-# Defining Portlets in a Sitemap [](id=defining-portlets-in-a-sitemap)
+---
+header-id: defining-portlets-in-a-sitemap
+---
+
+# Defining Portlets in a Sitemap
 
 You can embed portlets in a sitemap for the pages you define. You can embed them 
 with the default settings or provide portlet preferences for a more custom look 
@@ -9,7 +13,7 @@ Follow these steps:
 1.  Note the portlet's ID. This is the `javax.portlet.name` attribute of the 
     portlet spec. For convenience, The IDs for portlets available out-of-the-box 
     are listed in the 
-    [Fully Qualified Portlet IDs](/develop/reference/-/knowledge_base/7-1/fully-qualified-portlet-ids) 
+    [Fully Qualified Portlet IDs](/docs/7-1/reference/-/knowledge_base/r/fully-qualified-portlet-ids) 
     reference guide. For custom portlets, this property is listed in the portlet 
     class as the `javax.portlet.name=` service property.
     
@@ -67,23 +71,19 @@ Follow these steps:
 
     **portletSetupPortletDecoratorId:** Specifies the portlet decorator to use 
     for the portlet (`borderless` || `barebone` || `decorate`). See the 
-    [Applying Portlet Decorators to Embedded Portlets](/develop/tutorials/-/knowledge_base/7-1/applying-portlet-decorators-to-embedded-portlets) 
+    [Applying Portlet Decorators to Embedded Portlets](/docs/7-1/tutorials/-/knowledge_base/t/applying-portlet-decorators-to-embedded-portlets) 
     tutorial for more info. 
 
-+$$$
-
-**Tip:** You can specify an 
-[application display template](/discover/portal/-/knowledge_base/7-1/styling-apps-and-assets) 
-(ADT) for a portlet in the `sitemap.json` file by setting the `displayStyle` and 
-`displayStyleGroupId` portlet preferences, as shown in the example below:
-
-    "portletId": "com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet",
-        "portletPreferences": {
-            "displayStyleGroupId": "10197",
-            "displayStyle": "ddmTemplate_6fe4851b-53bc-4ca7-868a-c836982836f4"
-    }
-
-$$$
+| **Tip:** You can specify an
+| [application display template](/docs/7-1/user/-/knowledge_base/u/styling-apps-and-assets)
+| (ADT) for a portlet in the `sitemap.json` file by setting the `displayStyle` and
+| `displayStyleGroupId` portlet preferences, as shown in the example below:
+| 
+|     "portletId": "com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet",
+|         "portletPreferences": {
+|             "displayStyleGroupId": "10197",
+|             "displayStyle": "ddmTemplate_6fe4851b-53bc-4ca7-868a-c836982836f4"
+|     }
 
 Portlet preferences are unique to each portlet, so first you must determine
 which preferences you want to configure. There are two ways to determine the
@@ -101,19 +101,15 @@ Another approach is to search each app in your bundle for the keyword
 `preferences--`. This returns some of the app's JSPs that have the portlet 
 preferences defined for the portlet.
 
-+$$$
+| **Note:** Portlet preferences that require an existing configuration, such as a
+| tag or category, may require you to create the configuration on the Global site
+| first, so that the Resources Importer finds a match when deployed with the
+| theme.
 
-**Note:** Portlet preferences that require an existing configuration, such as a 
-tag or category, may require you to create the configuration on the Global site 
-first, so that the Resources Importer finds a match when deployed with the 
-theme. 
+## Related Topics
 
-$$$
+[Preparing and Organizing Web Content for the Resources Importer](/docs/7-1/tutorials/-/knowledge_base/t/preparing-and-organizing-web-content-for-the-resources-importer)
 
-## Related Topics [](id=related-topics)
+[Defining Pages in a Sitemap](/docs/7-1/tutorials/-/knowledge_base/t/defining-pages-in-a-sitemap)
 
-[Preparing and Organizing Web Content for the Resources Importer](/develop/tutorials/-/knowledge_base/7-1/preparing-and-organizing-web-content-for-the-resources-importer)
-
-[Defining Pages in a Sitemap](/develop/tutorials/-/knowledge_base/7-1/defining-pages-in-a-sitemap)
-
-[Specifying Where to Import Your Theme's Resources](/develop/tutorials/-/knowledge_base/7-1/specifying-where-to-import-your-themes-resources)
+[Specifying Where to Import Your Theme's Resources](/docs/7-1/tutorials/-/knowledge_base/t/specifying-where-to-import-your-themes-resources)

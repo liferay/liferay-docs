@@ -1,4 +1,8 @@
-# Localizing Your Application [](id=localizing-your-application)
+---
+header-id: localizing-your-application
+---
+
+# Localizing Your Application
 
 If you're writing a Liferay Application, you're probably a genius who is also
 really cool, which means your application will be used throughout the entire
@@ -6,15 +10,11 @@ world. At least, if its messages can be translated into their language, it will.
 Thankfully, Liferay makes it easy to support translation of your application's
 language keys.
 
-+$$$
-
-**Note:** Even if you don't plan to translate your application into multiple
-languages, use the localization pattern presented here for any messages
-displayed in your user interface. It's much easier to change the messages by
-updating a language properties file than by finding every instance of a message
-and replacing it in your JSPs and Java classes.
-
-$$$
+| **Note:** Even if you don't plan to translate your application into multiple
+| languages, use the localization pattern presented here for any messages
+| displayed in your user interface. It's much easier to change the messages by
+| updating a language properties file than by finding every instance of a message
+| and replacing it in your JSPs and Java classes.
 
 You just need to create a default language properties file
 (`Language.properties`) and one for each translation you'd like to support (for
@@ -34,7 +34,7 @@ Application localization topics:
 -   [Using a Language Module](#using-a-language-module)
 -   [Using @product@'s Language Properties](#using-liferays-language-properties)
 
-## What are Language Keys? [](id=what-are-language-keys)
+## What are Language Keys?
 
 Each language property file holds key/value pairs. The key is the same in all
 the language property files, while the value is translated in each file. You
@@ -78,7 +78,7 @@ a `Language_es.properties` file must be present to provide the proper values. If
 it isn't, the default language properties (from the `Language.properties` file)
 are used.
 
-## What Locales are Available By Default? [](id=what-locales-are-available-by-default)
+## What Locales are Available By Default?
 
 There are a bunch of locales available by default in Liferay. Look in the
 `portal.properties`
@@ -95,7 +95,7 @@ To provide a translation for one of these locales, specify the locale in the
 file name containing the translated keys (for example, `Langauge_es.properties`
 holds the Spanish translation).
 
-## Where do I Put Language Files? [](id=where-do-i-put-language-files)
+## Where do I Put Language Files?
 
 In an application with only one module that holds all your application's views
 (for example, all its JSPs) and portlet components, create
@@ -118,7 +118,7 @@ Moreover, there might be a fair number of duplicated language keys between the
 modules. Thankfully you don't need to maintain language properties files in each
 module.
 
-## Creating a Language Module [](id=creating-a-language-module)
+## Creating a Language Module
 
 If you're crazy about modularity (and you should be), you might have an
 application with multiple modules that provide the view layer. These modules are
@@ -139,7 +139,7 @@ create a new module, which we'll call a language module.
 
 In the root project folder (the one that holds your service, API, and web
 modules),
-[create a new module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development#creating-a-module)
+[create a new module](/docs/7-1/tutorials/-/knowledge_base/t/starting-module-development#creating-a-module)
 to hold your app's language keys. For example, here's the folder structure of a
 language module called `my-application-lang`.
 
@@ -180,7 +180,7 @@ service for the resource bundle capability.
 Next, you'll configure a web module to use the language module resource
 bundle. 
 
-## Using a Language Module [](id=using-a-language-module)
+## Using a Language Module
 
 A module or traditional Liferay plugin can use a resource bundle from another
 module and optionally include its own resource bundle. OSGi manifest headers
@@ -196,7 +196,7 @@ If you're using bnd with Maven or Gradle, you need only specify Liferay's
 bnd plugin converts the instruction to `Require-Capability` and
 `Provide-Capability` parameters automatically. Both approaches are demonstrated. 
 
-### Using a Language Module from a Module [](id=using-a-language-module-from-a-module)
+### Using a Language Module from a Module
 
 Modules generated from Liferay project templates have a Liferay bnd build time
 instruction called `-liferay-aggregate-resource-bundles`. It lets you use other
@@ -224,27 +224,19 @@ would set this in its `bnd.bnd` file:
 The current module's resource bundle is prioritized over those of the listed
 modules. 
 
-+$$$
-
-The
-[Shared Language Key sample project](/develop/reference/-/knowledge_base/7-1/shared-language-keys)
-is a working example that demonstrates aggregating resource bundles. You can
-deploy it in Gradle, Maven, and Liferay Workspace build environments. 
-
-$$$
+| The
+| [Shared Language Key sample project](/docs/7-1/reference/-/knowledge_base/r/shared-language-keys)
+| is a working example that demonstrates aggregating resource bundles. You can
+| deploy it in Gradle, Maven, and Liferay Workspace build environments.
 
 At build time, Liferay's bnd plugin converts the bnd instruction to
 `Require-Capability` and `Provide-Capability` parameters automatically. In
 traditional Liferay plugins, you must specify the parameters manually. 
 
-+$$$
+| **Note:** You can always specify the `Require-Capability` and `Provide-
+| Capability` OSGi manifest headers manually, as the next section demonstrates.
 
-**Note:** You can always specify the `Require-Capability` and `Provide-
-Capability` OSGi manifest headers manually, as the next section demonstrates.  
-
-$$$
-
-### Using a Language Module from a Traditional Plugin [](id=using-a-language-module-from-a-traditional-plugin)
+### Using a Language Module from a Traditional Plugin
 
 To use a language module, from a traditional Liferay plugin you must specify the
 language module using `Require-Capability` and `Provide-Capability` OSGi
@@ -321,7 +313,7 @@ plugin's language keys.
 Did you know that @product@'s core language keys are also available to your
 module? They're up next. 
 
-## Using @product@'s Language Properties [](id=using-liferays-language-properties)
+## Using @product@'s Language Properties
 
 If you have @product@'s source code, you can check out @product@'s core language
 properties by looking in the `portal-impl/src/main/content` folder. Otherwise,
@@ -339,4 +331,4 @@ time and ensures that your application follows Liferay's UI conventions.
 If you want to generate language files for each supported locale automatically,
 or to configure your application to generate translations automatically using
 the Microsoft Translator API, check out the tutorial
-[Automatically Generating Language Files](/develop/tutorials/-/knowledge_base/7-1/automatically-generating-language-files).
+[Automatically Generating Language Files](/docs/7-1/tutorials/-/knowledge_base/t/automatically-generating-language-files).

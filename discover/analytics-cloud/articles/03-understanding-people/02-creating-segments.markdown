@@ -1,4 +1,8 @@
-# Creating Segments [](id=creating-segments)
+---
+header-id: creating-segments
+---
+
+# Creating Segments
 
 Individuals share common properties and behavior. Aggregating them into Segments
 helps you understand groups of similar people. Segment analytics gives you
@@ -12,7 +16,7 @@ Individuals' properties and behavior. You can use an *industry* property, for
 example, as criteria. Analytics on industry Segments shows industries engaging
 with you most and identifies your content that interests them.
 
-## Dynamic Segments [](id=dynamic-segments)
+## Dynamic Segments
 
 Dynamic Segments aggregate Individuals based on their properties and interaction
 with your @product@ site pages and assets. As Individuals match the criteria,
@@ -44,7 +48,7 @@ You can create these types of criteria:
 
 Start with defining property criteria for matching Individuals. 
 
-### Property Criteria [](id=property-criteria)
+### Property Criteria
 
 Here's how to add criteria for an Individual property. 
 
@@ -73,7 +77,7 @@ Here's how to add criteria for an Individual property.
 You've set a criteria based on an Individual property. Adding behavior criteria
 is next.
 
-### Behavior Criteria [](id=behavior-criteria)
+### Behavior Criteria
 
 This type of criteria matches Individuals based on their interaction (behavior)
 with your Liferay DXP pages and assets. Here's how you set behavior criteria:
@@ -112,7 +116,7 @@ appears.
 
 Static Segments provide analytics for hand-selected Individuals. 
 
-## Static Segments [](id=static-segments)
+## Static Segments
 
 To analyze specific Individuals together, add them to a Static Segment.
 

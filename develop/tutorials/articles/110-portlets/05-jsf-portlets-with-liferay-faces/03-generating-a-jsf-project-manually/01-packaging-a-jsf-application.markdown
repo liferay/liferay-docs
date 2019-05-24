@@ -1,4 +1,8 @@
-# Packaging a JSF Application [](id=packaging-a-jsf-application)
+---
+header-id: packaging-a-jsf-application
+---
+
+# Packaging a JSF Application
 
 Developers creating portlets for @product-ver@ can package their portlets as
 Java EE style Web Application ARchive (WAR) artifacts or as Java ARchive (JAR)
@@ -11,7 +15,7 @@ Liferay provides a way for these WAR-styled portlets to be deployed and treated
 like OSGi modules by Liferay's OSGi runtime. The WAB Generator does this
 automatically by converting your WAR artifact to a WAB at deployment time. You
 can learn more about WABs and the WAB Generator in the
-[Using the WAB Generator](/develop/tutorials/-/knowledge_base/7-1/using-the-wab-generator)
+[Using the WAB Generator](/docs/7-1/tutorials/-/knowledge_base/t/using-the-wab-generator)
 tutorial.
 
 This is how a JSF WAR artifact is structured: 

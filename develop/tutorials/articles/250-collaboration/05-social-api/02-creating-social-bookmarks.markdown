@@ -1,13 +1,17 @@
-# Creating Social Bookmarks [](id=creating-social-bookmarks)
+---
+header-id: creating-social-bookmarks
+---
 
-[Applying social bookmarks](/develop/tutorials/-/knowledge_base/7-1/applying-social-bookmarks) 
+# Creating Social Bookmarks
+
+[Applying social bookmarks](/docs/7-1/tutorials/-/knowledge_base/t/applying-social-bookmarks) 
 lets you link your app's content to the social networks of your choice. By 
 default, @product@ supports social bookmarks for Twitter, Facebook, LinkedIn, 
 and Google Plus. You can also create your own social bookmark by registering a
 component that implements the `SocialBookmark` interface from the module
 `com.liferay.social.bookmarks.api`. This tutorial shows you how to do this.
 
-## Implementing the SocialBookmark Interface [](id=implementing-the-socialbookmark-interface)
+## Implementing the SocialBookmark Interface
 
 Follow these steps to implement the `SocialBookmark` interface: 
 
@@ -68,7 +72,7 @@ Follow these steps to implement the `SocialBookmark` interface:
     display style is selected. Typically, this method renders a link to the
     share URL (e.g., a share button), but you can use it for whatever you need.
     To keep a consistent look and feel with the default social bookmarks, you
-    can use a [Clay icon](/develop/tutorials/-/knowledge_base/7-1/clay-icons). 
+    can use a [Clay icon](/docs/7-1/tutorials/-/knowledge_base/t/clay-icons). 
 
     This example gets a `RequestDispatcher` for the JSP that contains a Clay 
     icon (`page.jsp`), and then includes that JSP in the response: 
@@ -87,10 +91,10 @@ Follow these steps to implement the `SocialBookmark` interface:
 
 Next, you'll see an example of how to create a `page.jsp` file.
 
-## Creating Your JSP [](id=creating-your-jsp)
+## Creating Your JSP
 
 The `page.jsp` file referenced in the above `SocialBookmark` implementation uses 
-[a Clay link](/develop/tutorials/-/knowledge_base/7-1/clay-labels-and-links) 
+[a Clay link](/docs/7-1/tutorials/-/knowledge_base/t/clay-labels-and-links) 
 (`clay:link`) to specify and style the Twitter icon included with Clay. Follow 
 these steps to create a JSP for your own social bookmark:
 
@@ -118,12 +122,12 @@ these steps to create a JSP for your own social bookmark:
 
     The title and URL are set via the `liferay-social-bookmarks` 
     tag library when 
-    [applying the social bookmark](/develop/tutorials/-/knowledge_base/7-1/applying-social-bookmarks).
+    [applying the social bookmark](/docs/7-1/tutorials/-/knowledge_base/t/applying-social-bookmarks).
 
 4.  Add the Clay link. This example sets the following `clay:link` attributes: 
 
     -   `buttonStyle`: This example renders 
-        [The button's type](/develop/tutorials/-/knowledge_base/7-1/clay-buttons#types)
+        [The button's type](/docs/7-1/tutorials/-/knowledge_base/t/clay-buttons#types)
         as a secondary button.
     -   `elementClasses`: The custom CSS to use for styling the button (optional).
     -   `href`: The button's URL. You should specify this by calling your 
@@ -144,8 +148,8 @@ these steps to create a JSP for your own social bookmark:
 To see a complete, real-world example of a social bookmark implementation, see 
 [Liferay's Twitter social bookmark code](https://github.com/liferay/liferay-portal/tree/7.1.x/modules/apps/social/social-bookmark-twitter). 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Applying Social Bookmarks](/develop/tutorials/-/knowledge_base/7-1/applying-social-bookmarks)
+[Applying Social Bookmarks](/docs/7-1/tutorials/-/knowledge_base/t/applying-social-bookmarks)
 
-[Using the Clay Taglib in Your Portlets](/develop/tutorials/-/knowledge_base/7-1/using-the-clay-taglib-in-your-portlets)
+[Using the Clay Taglib in Your Portlets](/docs/7-1/tutorials/-/knowledge_base/t/using-the-clay-taglib-in-your-portlets)

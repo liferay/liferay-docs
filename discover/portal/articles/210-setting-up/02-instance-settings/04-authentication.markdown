@@ -1,4 +1,8 @@
-# Authentication [](id=authentication)
+---
+header-id: authentication
+---
+
+# Authentication
 
 Configure authentication at Control Panel &rarr; Configuration &rarr; Instance
 Settings. In the Configuration tab, scroll down to the Authentication section
@@ -54,4 +58,4 @@ email address is an important default for the following reasons:
 
 Learn to configure a third party authentication service or set up Single Sign On
 (SSO) in the
-[security documentation](/discover/deployment/-/knowledge_base/7-1/securing-product).
+[security documentation](/docs/7-1/deploy/-/knowledge_base/d/securing-product).

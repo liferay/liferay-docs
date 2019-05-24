@@ -1,13 +1,17 @@
-# AlloyEditor Button Reference Guide [](id=alloyeditor-button-reference-guide)
+---
+header-id: alloyeditor-button-reference-guide
+---
+
+# AlloyEditor Button Reference Guide
 
 This reference guide provides additional information that you may find helpful 
 while 
-[creating new buttons for AlloyEditor](/develop/tutorials/-/knowledge_base/7-1/creating-new-buttons-for-alloyeditor). 
+[creating new buttons for AlloyEditor](/docs/7-1/tutorials/-/knowledge_base/t/creating-new-buttons-for-alloyeditor). 
 In this guide provides useful information on the following topics:
 
 - Mixins
 
-## Mixins [](id=mixins)
+## Mixins
 
 When creating a new button for the Alloy Editor, several mixins are available 
 that make it easy to provide additional functionality. The available mixins, 

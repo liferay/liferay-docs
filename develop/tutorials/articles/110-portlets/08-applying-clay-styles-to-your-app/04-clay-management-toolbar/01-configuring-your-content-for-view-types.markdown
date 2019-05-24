@@ -1,11 +1,15 @@
-# Implementing the View Types [](id=implementing-the-view-types)
+---
+header-id: implementing-the-view-types
+---
+
+# Implementing the View Types
 
 The Management Toolbar has three predefined view types for your app's search 
 container results. Each style offers a slightly different look and feel. To 
 provide these view types in your app, you must make some updates to your search 
 result columns. Start by defining the view types you want to provide. 
 
-## Defining the View Types [](id=defining-the-view-types)
+## Defining the View Types
 
 The Management Toolbar has three view types: 
 
@@ -88,7 +92,7 @@ Follow these steps to define the view types for your management toolbar:
 
 Now that the view types are defined, you can configure them.
 
-## Implementing the Card View [](id=implementing-the-card-view)
+## Implementing the Card View
 
 The card view displays the entry's information in a vertical or horizontal card 
 with an image, user profile, or an icon representing the content's type, along 
@@ -96,7 +100,7 @@ with details about the content, such as its name, workflow status, and a
 condensed description.
 
 See the 
-[Liferay Frontend Cards](/develop/tutorials/-/knowledge_base/7-1/liferay-frontend-cards) 
+[Liferay Frontend Cards](/docs/7-1/tutorials/-/knowledge_base/t/liferay-frontend-cards) 
 tutorial for examples and use cases of each card. 
 
 ![Figure 1: The Management Toolbar's card view gives a quick summary of the content's description and status.](../../../../images/clay-taglib-management-toolbar-view-type-card.png)
@@ -141,7 +145,7 @@ Follow the steps below to create your card view:
           fileEntry.getTitle() : StringPool.BLANK %>"
         />
 
-## Implementing the List View [](id=implementing-the-list-view)
+## Implementing the List View
 
 The list view displays the entry's complete description, along with a small icon 
 for the content type, and its name. 
@@ -166,7 +170,7 @@ Column | Content Options | Example
 2 | description | <liferay-ui:search-container-column-text <br/>&nbsp;&nbsp;colspan="<%=2%>" <br/>><br/>&nbsp;&nbsp;&lt;h5&gt;<%= userGroup.getName() %>&lt;/h5&gt; <br/>&nbsp;&nbsp;&lt;h6 class="text-default"&gt; <br/>&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;<%= userGroup.getDescription() %>&lt;/span&gt; <br/>&nbsp;&nbsp;&lt;/h6&gt; <br/>&nbsp;&nbsp;&lt;h6 class="text-default"&gt; <br/>&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt; <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<liferay-ui:message arguments="<%= usersCount%>" key="x-users"/> <br/>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/span&gt; <br/>&nbsp;&nbsp;&lt;/h6&gt; <br/></liferay-ui:search-container-column-text> 
 3 | actions | <liferay-ui:search-container-column-jsp<br/> &nbsp;&nbsp;path="/edit_team_assignments_user_groups_action.jsp"<br/>/>
 
-## Implementing the Table View [](id=implementing-the-table-view)
+## Implementing the Table View
 
 The table view list the search container columns from left to right. 
 
@@ -189,7 +193,7 @@ Column | Content Options | Example
 3 | create date | <liferay-ui:search-container-column-date <br/>&nbsp;&nbsp;cssClass="create-date-column text-column" <br/>&nbsp;&nbsp;name="create-date" <br/>&nbsp;&nbsp;property="createDate" <br/>/>
 4 | actions | <liferay-ui:search-container-column-jsp <br/>&nbsp;&nbsp; cssClass="entry-action-column" <br/>&nbsp;&nbsp;path="/rule_actions.jsp" <br/>/>
 
-## Updating the Search Iterator [](id=updating-the-search-iterator)
+## Updating the Search Iterator
 
 Once the view type's display styles are defined, you must update the search 
 iterator to show the selected view type. If your management toolbar only has one 
@@ -203,10 +207,10 @@ otherwise follow the pattern below:
     />
 
 The `displayStyle`'s value is set to the 
-[current view type](/develop/tutorials/-/knowledge_base/7-1/implementing-the-view-types#defining-the-view-types).
+[current view type](/docs/7-1/tutorials/-/knowledge_base/t/implementing-the-view-types#defining-the-view-types).
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Configuring the Clay Management Toolbar Taglib](/develop/tutorials/-/knowledge_base/7-1/clay-management-toolbar)
+[Configuring the Clay Management Toolbar Taglib](/docs/7-1/tutorials/-/knowledge_base/t/clay-management-toolbar)
 
-[Filtering and Sorting Items with the Management Toolbar](/develop/tutorials/-/knowledge_base/7-1/filtering-and-sorting-items-with-the-management-toolbar)
+[Filtering and Sorting Items with the Management Toolbar](/docs/7-1/tutorials/-/knowledge_base/t/filtering-and-sorting-items-with-the-management-toolbar)

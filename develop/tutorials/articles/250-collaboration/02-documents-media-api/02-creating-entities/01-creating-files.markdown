@@ -1,4 +1,8 @@
-# Creating Files [](id=creating-files)
+---
+header-id: creating-files
+---
+
+# Creating Files
 
 To create files (`FileEntry` entities) in the Documents and Media library, you 
 must use the 
@@ -35,7 +39,7 @@ Follow these steps to create a file via the `DLAppService` method
         private DLAppService _dlAppService;
 
     For more information on this, see the section on 
-    [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
+    [getting a service reference](/docs/7-1/tutorials/-/knowledge_base/t/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
     in the getting started tutorial. 
 
 2.  Get the data needed to populate the `addFileEntry` method's arguments. Since 
@@ -64,10 +68,10 @@ Follow these steps to create a file via the `DLAppService` method
         }
 
     For more information on getting repository and folder IDs, see the
-    [getting started tutorial's](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api) 
+    [getting started tutorial's](/docs/7-1/tutorials/-/knowledge_base/t/getting-started-with-the-documents-and-media-api) 
     sections on specifying repositories and folders. For more information on 
     `ServiceContext`, see the tutorial 
-    [Understanding ServiceContext](/develop/tutorials/-/knowledge_base/7-1/understanding-servicecontext). 
+    [Understanding ServiceContext](/docs/7-1/tutorials/-/knowledge_base/t/understanding-servicecontext). 
 
 3.  Call the service reference's `addFileEntry` method with the data from the 
     previous step. Note that this example does so inside the previous step's 
@@ -94,14 +98,14 @@ this `updateFileEntry` method, as well as the rest of
 `EditFileEntryMVCActionCommand`, contains additional logic to suit the specific 
 needs of the Documents and Media app. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Updating Files](/develop/tutorials/-/knowledge_base/7-1/updating-files)
+[Updating Files](/docs/7-1/tutorials/-/knowledge_base/t/updating-files)
 
-[Deleting Files](/develop/tutorials/-/knowledge_base/7-1/deleting-files)
+[Deleting Files](/docs/7-1/tutorials/-/knowledge_base/t/deleting-files)
 
-[Moving Folders and Files](/develop/tutorials/-/knowledge_base/7-1/moving-folders-and-files)
+[Moving Folders and Files](/docs/7-1/tutorials/-/knowledge_base/t/moving-folders-and-files)
 
-[Creating Folders](/develop/tutorials/-/knowledge_base/7-1/creating-folders)
+[Creating Folders](/docs/7-1/tutorials/-/knowledge_base/t/creating-folders)
 
-[Creating File Shortcuts](/develop/tutorials/-/knowledge_base/7-1/creating-file-shortcuts)
+[Creating File Shortcuts](/docs/7-1/tutorials/-/knowledge_base/t/creating-file-shortcuts)

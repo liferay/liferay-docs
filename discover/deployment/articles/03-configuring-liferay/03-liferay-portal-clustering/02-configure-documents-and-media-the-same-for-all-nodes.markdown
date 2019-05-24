@@ -1,7 +1,11 @@
-# Configure Documents and Media the Same for all Nodes [](id=configure-documents-and-media-the-same-for-all-nodes)
+---
+header-id: configure-documents-and-media-the-same-for-all-nodes
+---
+
+# Configure Documents and Media the Same for all Nodes
 
 In a cluster, Documents and Media must use the same
-[document repository configuration](/discover/deployment/-/knowledge_base/7-1/document-repository-configuration)
+[document repository configuration](/docs/7-1/deploy/-/knowledge_base/d/document-repository-configuration)
 on all nodes. 
 
 Note if you are using the `File System` or `Advanced File System` stores, the

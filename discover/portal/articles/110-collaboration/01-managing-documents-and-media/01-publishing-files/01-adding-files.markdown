@@ -1,4 +1,8 @@
-# Adding Files to a Document Library [](id=adding-files-to-a-document-library)
+---
+header-id: adding-files-to-a-document-library
+---
+
+# Adding Files to a Document Library
 
 This article covers the following topics to help you get started adding files to
 your Document Library: 
@@ -10,13 +14,13 @@ your Document Library:
 2.  **Adding Files:** Add specific types of files and their associated 
     metadata to your Document Library. 
 
-## Granting File Permissions and Roles [](id=granting-file-permissions-and-roles)
+## Granting File Permissions and Roles
 
 You should carefully manage who can add, view, and update files. You can store
 files of all kinds for various purposes. For example, you may have one set of
 files intended for only specific site members and another intended for everyone,
 including guests. You can use 
-[Roles and Permissions](/discover/portal/-/knowledge_base/7-1/roles-and-permissions) 
+[Roles and Permissions](/docs/7-1/user/-/knowledge_base/u/roles-and-permissions) 
 to control access to Document Library files. The Document Library's folder
 permissions also help you organize files. 
 
@@ -41,9 +45,9 @@ and Media:
 
 5.  Assign this Role to the Users that should manage media. For more 
     information on this and other topics related to Roles, see 
-    [the documentation on Roles and permissions](/discover/portal/-/knowledge_base/7-1/roles-and-permissions).
+    [the documentation on Roles and permissions](/docs/7-1/user/-/knowledge_base/u/roles-and-permissions).
 
-## Using the Add Menu [](id=using-the-add-menu)
+## Using the Add Menu
 
 Follow these steps to add files to your site's Document Library:
 
@@ -71,12 +75,12 @@ can set permissions on the shortcut to specify who can access the
 original document via the shortcut.
 
 **Repository**: Add access to an external repository. See the 
-[store types documentation](/discover/portal/-/knowledge_base/7-0/liferay-store-types)
+[store types documentation](/docs/7-0/user/-/knowledge_base/u/liferay-store-types)
 for more information. 
 
 **Multiple Documents**: Upload several files at once. You can apply a 
 single description and document type to all the files. You can also 
-[categorize and tag](/discover/portal/-/knowledge_base/7-1/organizing-content-with-tags-and-categories) 
+[categorize and tag](/docs/7-1/user/-/knowledge_base/u/organizing-content-with-tags-and-categories) 
 the files, and assign them default permissions. 
 
 **Basic Document**: Upload a single file. By default, basic documents 

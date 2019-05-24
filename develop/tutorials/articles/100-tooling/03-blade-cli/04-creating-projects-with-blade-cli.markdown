@@ -1,4 +1,8 @@
-# Creating Projects with Blade CLI [](id=creating-projects-with-blade-cli)
+---
+header-id: creating-projects-with-blade-cli
+---
+
+# Creating Projects with Blade CLI
 
 When you use Blade CLI to create a project, your project's folder structure,
 build script (e.g., `build.gradle`), Java classes, and other resources (such as
@@ -8,7 +12,7 @@ samples.
 
 Using Blade CLI gives you the flexibility to choose how you want to create your
 application. You can do so in your own standalone environment, or within a
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace). 
+[Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace). 
 You can also create a project using either the Gradle or Maven build tool.
 Creating Liferay modules in a workspace using Blade CLI is very similar to
 creating them in a standalone environment.
@@ -25,25 +29,21 @@ in the workspace's `gradle.properties` file:
 Change this property if you'd like to store your modules in a different
 directory.
 
-+$$$
-
-**Note:** Your projects should define a repository where external dependencies
-can be downloaded. Unlike Maven, Gradle does not define any repositories by
-default. For convenience, Gradle projects created with Blade CLI define
-Liferay's public Nexus repository as its default repository. This is defined,
-however, in different files depending on where the project was created.
-
-If you used Blade CLI to create a Gradle project outside of a workspace, your
-repository is defined in the module's `build.gradle` file. Likewise, if you
-created your module inside a workspace, your repository is defined in the
-`settings.gradle` file located in the workspace's ROOT folder. This ensures that
-all modules residing in the workspace share the same repository URL.
-
-$$$
+| **Note:** Your projects should define a repository where external dependencies
+| can be downloaded. Unlike Maven, Gradle does not define any repositories by
+| default. For convenience, Gradle projects created with Blade CLI define
+| Liferay's public Nexus repository as its default repository. This is defined,
+| however, in different files depending on where the project was created.
+| 
+| If you used Blade CLI to create a Gradle project outside of a workspace, your
+| repository is defined in the module's `build.gradle` file. Likewise, if you
+| created your module inside a workspace, your repository is defined in the
+| `settings.gradle` file located in the workspace's ROOT folder. This ensures that
+| all modules residing in the workspace share the same repository URL.
 
 First, you'll learn how to create a module using a template.
 
-## Project Templates [](id=project-templates)
+## Project Templates
 
 To create a new Liferay project, you can run the Blade `create` command, which
 offers many available templates. There are, however, many other options you can
@@ -117,33 +117,33 @@ Blade CLI can also create the same project with Maven by specifying the `-b
 maven` parameter. Using Blade CLI's Maven option isn't the only way to leverage
 Liferay's Maven project templates; you can also generate them using Maven
 archetypes. See Liferay's
-[Project Templates](/develop/reference/-/knowledge_base/7-1/project-templates)
+[Project Templates](/docs/7-1/reference/-/knowledge_base/r/project-templates)
 articles to see how.
 
 When using Blade CLI, you must manually edit your project's component class.
 Blade CLI gives you the ability to specify the class's name, but all other
 contents of the class can only be edited after the class is created. See the
 [Creating Modules with Liferay
-@ide@](/develop/tutorials/-/knowledge_base/7-1/creating-modules-with-liferay-ide)
+@ide@](/docs/7-1/tutorials/-/knowledge_base/t/creating-modules-with-liferay-ide)
 tutorial for further details and important dependency information on component
 classes.
 
 Now that you know the basics on creating Liferay projects using `blade create`,
 you can visit the
-[Project Templates](/develop/reference/-/knowledge_base/7-1/project-templates)
+[Project Templates](/docs/7-1/reference/-/knowledge_base/r/project-templates)
 reference section to view specific `create` templates and how they work.
 
 Next, you'll explore Liferay's provided project samples and how to generate them
 using Blade CLI.
 
-## Project Samples [](id=project-samples)
+## Project Samples
 
 Liferay provides many sample projects that are useful for those interested in
 learning best practices on structuring their projects to accomplish specific
 tasks. These samples can be found in the
 [liferay-blade-samples](https://github.com/liferay/liferay-blade-samples) Github
 repository. You can also learn more about these samples by visiting the
-[Liferay Sample Projects](/develop/tutorials/-/knowledge_base/7-1/liferay-sample-projects)
+[Liferay Sample Projects](/docs/7-1/tutorials/-/knowledge_base/t/liferay-sample-projects)
 article.
 
 You can generate these samples using Blade CLI for convenience, instead of
@@ -158,14 +158,10 @@ sample, you could execute
 
     blade samples ds-portlet
 
-+$$$
-
-**Note:** Interested in generating legacy versions of Blade samples? Pass in the
-`-v` param followed by the @product@ version to target. For example,
-
-    blade samples -v 7.0 ds-portlet
-
-$$$
+| **Note:** Interested in generating legacy versions of Blade samples? Pass in the
+| `-v` param followed by the @product@ version to target. For example,
+| 
+|     blade samples -v 7.0 ds-portlet
 
 For a full listing of all the available Blade samples, run
 

@@ -1,4 +1,8 @@
-# Configuring Audits [](id=configuring-audits)
+---
+header-id: configuring-audits
+---
+
+# Configuring Audits
 
 Audits are enabled by default. The Audit app reports audit events, but you can 
 also report them in @product@'s logs or console, enable them for scheduled jobs, 
@@ -14,7 +18,7 @@ There are two main ways to configure @product@:
 
 These methods apply to each of the audit configuration options explained below.
 
-## Reporting Audit Events in Liferay's Logs and Console [](id=reporting-audit-events-in-liferays-logs-and-console)
+## Reporting Audit Events in Liferay's Logs and Console
 
 Follow these steps to use the Control Panel to configure the reporting of log 
 events in @product@'s log and console: 
@@ -51,7 +55,7 @@ file:
     you see fit. 
 
 3.  Deploy the file to the `[LIFERAY_HOME]/osgi/modules` folder. Note that the 
-    [Liferay Home folder](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home) 
+    [Liferay Home folder](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home) 
     is typically the application server's parent folder. 
 
 Regardless of your configuration approach, you must also extend @product@'s 
@@ -88,7 +92,7 @@ This configures Log4j to record INFO level messages from the class
 to a file called `audit.yyyy-MM-dd.log` in the `[LIFERAY_HOME]/logs` folder. 
 Adjust the audit file properties or log level to your liking. 
 
-## Configuring Audit Events for Scheduled Liferay Jobs [](id=configuring-audit-events-for-scheduled-liferay-jobs)
+## Configuring Audit Events for Scheduled Liferay Jobs
 
 By default, scheduled jobs don't trigger audit events. Follow these steps to 
 enable them via the Control Panel: 
@@ -112,14 +116,14 @@ file:
         auditSchedulerJobEnabled=true
 
 3.  Deploy the file to the `[LIFERAY_HOME]/osgi/modules` folder. Note that the 
-    [Liferay Home folder](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home) 
+    [Liferay Home folder](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home) 
     is typically the application server's parent folder. 
 
 Auditing scheduled jobs is a smart choice if there's a chance someone with a 
 dubious competence level would try to schedule jobs, as you'll find out below in
 the conclusion of our story. 
 
-## Enabling or Disabling Audit Events Entirely [](id=enabling-or-disabling-audit-events-entirely)
+## Enabling or Disabling Audit Events Entirely
 
 Audit events are enabled by default. Follow these steps to disable them via the 
 Control Panel: 
@@ -142,10 +146,10 @@ file:
         auditMessageMaxQueueSize="200"
 
 3.  Deploy the file to the `[LIFERAY_HOME]/osgi/modules` folder. Note that the 
-    [Liferay Home folder](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home) 
+    [Liferay Home folder](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home) 
     is typically the application server's parent folder. 
 
-## The End of the Story [](id=the-end-of-the-story)
+## The End of the Story
 
 "Okay," says Harry, "let's fire up the audit system and see if we can figure out 
 what happened." 

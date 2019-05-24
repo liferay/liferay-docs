@@ -1,10 +1,14 @@
-# Documents and Media API [](id=documents-and-media-api)
+---
+header-id: documents-and-media-api
+---
+
+# Documents and Media API
 
 @product@'s Documents and Media library stores uploaded files so users can use,
 manage, and share them. For example, users can embed files in content, organize
 them in folders, edit and collaborate on them with other users, and more. See
 the 
-[user guide](/discover/portal/-/knowledge_base/7-1/managing-documents-and-media) 
+[user guide](/docs/7-1/user/-/knowledge_base/u/managing-documents-and-media) 
 for more information on the Documents and Media library's features. 
 
 A powerful API underlies the Documents and Media library's functionality. You

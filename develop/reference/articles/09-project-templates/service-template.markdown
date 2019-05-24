@@ -1,4 +1,8 @@
-# Service Template [](id=using-the-service-template)
+---
+header-id: using-the-service-template
+---
+
+# Service Template
 
 In this article, you'll learn how to create a Liferay service as a Liferay
 module. To create a Liferay service via the command line using Blade CLI or

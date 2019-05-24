@@ -1,4 +1,8 @@
-# Preventing Accidental File Deletion in Liferay Sync [](id=preventing-accidental-file-deletion-in-liferay-sync)
+---
+header-id: preventing-accidental-file-deletion-in-liferay-sync
+---
+
+# Preventing Accidental File Deletion in Liferay Sync
 
 Liferay Sync's power rests in its ability to propagate between @product@ 
 and connected Sync clients. When a user deletes a file from a connected 
@@ -9,13 +13,9 @@ a file, Sync deletes it *everywhere*. But don't worry: @product@'s Recycle Bin
 is enabled by default and lets you recover deleted files. You can access the
 Recycle Bin from each Site's *Site Administration* menu. 
 
-+$$$
-
-**Warning:** Liferay Sync automatically propagates file and folder deletion
-through the @product@ server and in all connected clients. If an instance or
-Site administrator disables the Recycle Bin, deleted files can't be recovered.
-
-$$$
+| **Warning:** Liferay Sync automatically propagates file and folder deletion
+| through the @product@ server and in all connected clients. If an instance or
+| Site administrator disables the Recycle Bin, deleted files can't be recovered.
 
 @product@ instance and Site administrators can, of course, disable the Recycle 
 Bin. Disabling the Recycle Bin in a Site, however, leaves the Site vulnerable to

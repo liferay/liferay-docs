@@ -1,4 +1,8 @@
-# Working with Patches [](id=working-with-patches)
+---
+header-id: working-with-patches
+---
+
+# Working with Patches
 
 Here are some things you might need to do with patches:
 
@@ -10,7 +14,7 @@ Here are some things you might need to do with patches:
 
 Start with reporting patch levels to Liferay Support.
 
-## Including support-info in Support Tickets [](id=including-support-info-in-support-tickets)
+## Including support-info in Support Tickets
 
 Providing your environment's information (e.g., hardware architecture) and patch
 level to Liferay Support is critical for reproducing your issues. Write your
@@ -23,7 +27,7 @@ The support information is written to file
 `patching-tool-support-info-actual-timestamp.txt` in your `patching-tool`
 folder. Please upload this file to the LESA ticket.
 
-## Uninstalling Patches [](id=uninstalling-patches)
+## Uninstalling Patches
 
 Have you noticed that the Patching Tool only seems to have an `install` command?
 This is because patches are managed not by the command, but by what appears in
@@ -42,7 +46,7 @@ To revert ALL patches, run this command:
 
 Now you know how to remove and revert patches. 
 
-## Comparing Patch Levels [](id=comparing-patch-levels)
+## Comparing Patch Levels
 
 If you're a developer, the Patching Tool can show you what changed between
 different @product@ patches and versions. These commands show you information
@@ -76,7 +80,7 @@ options:
 
 For detailed usage information, run `patching-tool help store`.
 
-## Showing collisions between patches and deployed plugins [](id=list-collisions)
+## Showing collisions between patches and deployed plugins
 
 Some patches update files you might have customized via a plugin. The
 `patching-tool list-collisions` command lists differences (collisions) between
@@ -91,14 +95,10 @@ It is an alias for the following diff command:
 `_base` is the literal patch level name. Collisions are only listed for
 installed patches that contain source code files. 
 
-+$$$
+| **Note:** As of Patching Tool 2.0.9, `patching-tool list-collisions` lists only
+| JSP file collisions in fragment bundles.
 
-**Note:** As of Patching Tool 2.0.9, `patching-tool list-collisions` lists only 
-JSP file collisions in fragment bundles.
-
-$$$
-
-## Separating Patches from the Installation [](id=separating-patches-from-the-installation)
+## Separating Patches from the Installation
 
 The Patching Tool's `separate` command helps reduce the patched @product@
 installation size. If the installation has been patched, you can make it smaller
@@ -139,7 +139,7 @@ Any other command returns this:
  
 This is how you restore the patch files to your system. Details below. 
 
-## Restoring the Separated Patch Files [](id=restoring-the-separated-patch-files)
+## Restoring the Separated Patch Files
  
 When you need to patch @product@ again, you must restore the separated patch
 artifact. To do this, copy the `liferay-patching-files-[separation-name].zip`

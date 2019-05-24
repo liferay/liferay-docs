@@ -1,4 +1,8 @@
-# Core Layer of Liferay Screens for iOS [](id=core-layer-of-liferay-screens-for-ios)
+---
+header-id: core-layer-of-liferay-screens-for-ios
+---
+
+# Core Layer of Liferay Screens for iOS
 
 The Core is the micro-framework that lets developers write Screenlets in a
 structured and isolated way. All Screenlets share a common structure based on
@@ -46,9 +50,9 @@ From right to left, these are the main components:
     Apps can use an implicit login, invisible to the user, or a login that 
     relies on explicit user input to create the session. User logins can be 
     implemented with 
-    [Login Screenlet](/develop/reference/-/knowledge_base/7-1/loginscreenlet-for-ios). 
+    [Login Screenlet](/docs/7-1/reference/-/knowledge_base/r/loginscreenlet-for-ios). 
     For more information, see the 
-    [tutorial on accessing the session in iOS](/develop/tutorials/-/knowledge_base/7-1/accessing-the-liferay-session-in-ios). 
+    [tutorial on accessing the session in iOS](/docs/7-1/tutorials/-/knowledge_base/t/accessing-the-liferay-session-in-ios). 
 
 -   [**LiferayServerContext**](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Context/LiferayServerContext.swift):
     A singleton object that holds server configuration parameters. It's loaded 

@@ -1,4 +1,8 @@
-# Marketplace App Metadata Guidelines [](id=marketplace-app-metadata-guidelines)
+---
+header-id: marketplace-app-metadata-guidelines
+---
+
+# Marketplace App Metadata Guidelines
 
 The following app metadata guidelines ensure that apps are submitted with
 important and necessary supporting information. The metadata that you submit
@@ -219,7 +223,7 @@ During the publication process, you upload your app's individual plugin WAR
 files and module JAR files along with the app's metadata (name, description,
 version, icon, etc.).
 
-## Additional Requirements for Themes/Site Templates [](id=additional-requirements-for-themes-site-templates)
+## Additional Requirements for Themes/Site Templates
 
 Themes and Site Templates must include sample content and optionally link to a
 demo website that provides context. This ensures a uniform experience for
@@ -227,16 +231,12 @@ Marketplace users: they download  a Theme or Site Template from Marketplace,
 install it, go to Sites or Site Templates in the Control Panel, and immediately
 see the Theme or Site Template in action. 
 
-+$$$
-
-**Important:** Demo sites must be valid. Demo website, Theme, and Site Template sample content must not plagiarize or infringe on copyrights. 
-
-$$$
+| **Important:** Demo sites must be valid. Demo website, Theme, and Site Template sample content must not plagiarize or infringe on copyrights.
 
 The
-[Resources Importer](/develop/tutorials/-/knowledge_base/7-1/importing-resources-with-a-theme)
+[Resources Importer](/docs/7-1/tutorials/-/knowledge_base/t/importing-resources-with-a-theme)
 includes files and web content that imports automatically into Liferay on Theme
 and Site Template deployment. Use the Resources Importer to include files/web
 content to provide a sample context for your Theme or Site Template.  The 
-[Themes tutorials](/develop/tutorials/-/knowledge_base/7-1/introduction-to-themes)
+[Themes tutorials](/docs/7-1/tutorials/-/knowledge_base/t/introduction-to-themes)
 provide details. 

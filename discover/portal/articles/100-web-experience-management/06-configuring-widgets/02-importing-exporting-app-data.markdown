@@ -1,4 +1,8 @@
-# Exporting/Importing Widget Data [](id=exporting-importing-widget-data)
+---
+header-id: exporting-importing-widget-data
+---
+
+# Exporting/Importing Widget Data
 
 You may need to export data from a specific widget instance, without regard to
 content on the rest of the Site. There are many widgets that let you export or
@@ -18,7 +22,7 @@ Exporting widget data produces a `.lar` file that you can save and import into
 another widget of the same type. To import widget data, you must select a `.lar`
 file. Be careful not to confuse widget-specific `.lar` files with Site-specific
 `.lar` files. See the
-[Importing/Exporting Pages and Content](/discover/portal/-/knowledge_base/7-1/importing-exporting-pages-and-content)
+[Importing/Exporting Pages and Content](/docs/7-1/user/-/knowledge_base/u/importing-exporting-pages-and-content)
 article for information on importing/exporting Site page data.
 
 There are two ways to export/import widget content. You can navigate to the
@@ -61,7 +65,7 @@ To export or import data from a widget, follow the steps below:
 Now that you know how to navigate to the *Export/Import* menus, you can explore
 the export process.
 
-## Exporting Widget Data [](id=exporting-widget-data)
+## Exporting Widget Data
 
 To export widget data, create a new export process by selecting the *New Export
 Process* tab (default). You have several export options to configure.
@@ -98,7 +102,7 @@ selection of content types. Two familiar content types in your Liferay instance
 are *Comments* and *Ratings*. If you want to include these entities in your
 `.lar` file, select *Change* and select them from the checklist. For more
 information on managing content types, see the 
-[Managing Content Types in Staging](/discover/portal/-/knowledge_base/7-1/managing-content-types-in-staging)
+[Managing Content Types in Staging](/docs/7-1/user/-/knowledge_base/u/managing-content-types-in-staging)
 article.
 
 Next, you can choose to export individual deletions. This lets delete operations
@@ -112,7 +116,7 @@ After you've exported your widget's data, switch to the *Current and Previous*
 tab to view ongoing export processes and the history of past exports. You can
 also download the exported `.lar` file from this tab.
 
-## Importing Widget Data [](id=importing-widget-data)
+## Importing Widget Data
 
 To import widget data, you can select the LAR using your file explorer or by
 dragging and dropping the file between the dotted lines.
@@ -124,7 +128,7 @@ Your LAR file is uploaded and displayed to you for review. Click *Continue*.
 Now that you've uploaded and confirmed your LAR file, you're given a similar
 screen to what you'd be offered during export. Several of these options are
 covered in great detail in the
-[Importing/Exporting Pages and Content](/discover/portal/-/knowledge_base/7-1/importing-exporting-pages-and-content)
+[Importing/Exporting Pages and Content](/docs/7-1/user/-/knowledge_base/u/importing-exporting-pages-and-content)
 tutorial. There are some additional options available: *Update Data* and
 *Authorship of the Content*. Here's options and descriptions for each section:
 

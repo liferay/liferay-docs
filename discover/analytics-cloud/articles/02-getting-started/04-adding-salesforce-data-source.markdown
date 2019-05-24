@@ -1,4 +1,8 @@
-# Adding a Salesforce Data Source [](id=adding-a-salesforce-data-source)
+---
+header-id: adding-a-salesforce-data-source
+---
+
+# Adding a Salesforce Data Source
 
 Analytics Cloud can integrate Salesforce data with data from Liferay DXP and 
 other sources, automatically blending the data to build a comprehensive customer 
@@ -6,7 +10,7 @@ profile. This lets you create more accurate segmentation and enhance your site's
 personalization strategy. To do this, you must first add a Salesforce instance 
 as a data source. 
 
-## Adding the Data Source [](id=adding-the-data-source)
+## Adding the Data Source
 
 1.  Select *Settings* &rarr; *Data Sources* &rarr; *Add Data Source*. This opens 
     the Add Data Source screen. 

@@ -1,4 +1,8 @@
-# Clay Stickers [](id=clay-stickers)
+---
+header-id: clay-stickers
+---
+
+# Clay Stickers
 
 Whereas badges display numbers and labels display short information, stickers
 are small visual indicators of the content (usually the content type). They
@@ -38,10 +42,10 @@ the `position` attribute: `top-left`, `bottom-left`, `top-right`, or
 
 Now you know how to use Clay stickers in your app!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Clay Badges](/develop/tutorials/-/knowledge_base/7-1/clay-badges)
+[Clay Badges](/docs/7-1/tutorials/-/knowledge_base/t/clay-badges)
 
-[Clay Cards](/develop/tutorials/-/knowledge_base/7-1/clay-cards)
+[Clay Cards](/docs/7-1/tutorials/-/knowledge_base/t/clay-cards)
 
-[Clay Icons](/develop/tutorials/-/knowledge_base/7-1/clay-icons)
+[Clay Icons](/docs/7-1/tutorials/-/knowledge_base/t/clay-icons)

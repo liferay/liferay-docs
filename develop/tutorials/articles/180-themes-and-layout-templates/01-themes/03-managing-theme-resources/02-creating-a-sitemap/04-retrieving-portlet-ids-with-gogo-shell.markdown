@@ -1,10 +1,14 @@
-# Retrieving Portlet IDs with the Gogo Shell [](id=retrieving-portlet-ids-with-the-gogo-shell)
+---
+header-id: retrieving-portlet-ids-with-the-gogo-shell
+---
+
+# Retrieving Portlet IDs with the Gogo Shell
 
 To 
 [include a portlet in
-a sitemap](/develop/tutorials/-/knowledge_base/7-1/defining-portlets-in-a-sitemap),
+a sitemap](/docs/7-1/tutorials/-/knowledge_base/t/defining-portlets-in-a-sitemap),
 you must have its ID. For convenience, IDs for out-of-the-box portlets appear in
-the [Fully Qualified Portlet IDs](/develop/reference/-/knowledge_base/7-1/fully-qualified-portlet-ids)
+the [Fully Qualified Portlet IDs](/docs/7-1/reference/-/knowledge_base/r/fully-qualified-portlet-ids)
 reference guide. If you've installed purchased or developed portlets, you can
 retrieve their IDs using the Gogo Shell, as this tutorial instructs. 
 
@@ -37,10 +41,10 @@ Follow these steps to use the Gogo Shell to retrieve a portlet ID:
 
 ![Figure 1: Portlet IDs can be found via the Gogo Shell.](../../../../../images/resources-importer-gogo-shell.png)
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Defining Pages in a Sitemap](/develop/tutorials/-/knowledge_base/7-1/defining-pages-in-a-sitemap)
+[Defining Pages in a Sitemap](/docs/7-1/tutorials/-/knowledge_base/t/defining-pages-in-a-sitemap)
 
-[Defining Portlets in a Sitemap](/develop/tutorials/-/knowledge_base/7-1/defining-portlets-in-a-sitemap)
+[Defining Portlets in a Sitemap](/docs/7-1/tutorials/-/knowledge_base/t/defining-portlets-in-a-sitemap)
 
-[Preparing and Organizing Web Content for the Resources Importer](/develop/tutorials/-/knowledge_base/7-1/preparing-and-organizing-web-content-for-the-resources-importer)
+[Preparing and Organizing Web Content for the Resources Importer](/docs/7-1/tutorials/-/knowledge_base/t/preparing-and-organizing-web-content-for-the-resources-importer)

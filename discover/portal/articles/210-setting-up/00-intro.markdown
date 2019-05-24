@@ -1,4 +1,8 @@
-# Setting Up [](id=setting-up)
+---
+header-id: setting-up
+---
+
+# Setting Up
 
 If @product@ is anything, it's configurable. As the core is shrinking
 due to its increased modularity, it's important that all the applications in
@@ -12,9 +16,9 @@ Breaking it down, three types of applications must be configurable:
 
 To this end, Liferay's engineers have made the platform and its applications
 configurable, and created a mechanism for developers to make their
-[applications configurable](/develop/tutorials/-/knowledge_base/7-1/configurable-applications).
+[applications configurable](/docs/7-1/tutorials/-/knowledge_base/t/configurable-applications).
 
-## Where Configuration Happens [](id=where-configuration-happens)
+## Where Configuration Happens
 
 Liferay's configuration takes place in the following places: 
 
@@ -30,7 +34,7 @@ configurable this way, visit
 The UI location where these configuration options appear depends on the scope
 you want to affect with the settings you choose.
 
-## Configuration Scope [](id=configuration-scope)
+## Configuration Scope
 
 Depending on the configuration scope of a setting you change, you'll impact the
 platform and its applications with more or less granularity. At one end of the

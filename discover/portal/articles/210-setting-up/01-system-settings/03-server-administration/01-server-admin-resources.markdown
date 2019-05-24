@@ -1,4 +1,8 @@
-# Server Administration: Resources [](id=server-administration-resources)
+---
+header-id: server-administration-resources
+---
+
+# Server Administration: Resources
 
 The Server Administration app's Resources tab contains several server wide 
 actions that an administrator can execute. These include the following items: 

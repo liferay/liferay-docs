@@ -1,4 +1,8 @@
-# Troubleshooting FAQ [](id=troubleshooting-faq)
+---
+header-id: troubleshooting-faq
+---
+
+# Troubleshooting FAQ
 
 When coding on any platform, you can sometimes run into issues that have no
 clear resolution. This can be particularly frustrating. If you have issues
@@ -10,11 +14,11 @@ Here are the troubleshooting sections:
 
 -   [Modules](#troubleshooting-modules)
 -   [Services and Components](#troubleshooting-services-and-components)
--   [Front-end](/develop/tutorials/-/knowledge_base/7-1/troubleshooting-front-end-development-issues)
+-   [Front-end](/docs/7-1/tutorials/-/knowledge_base/t/troubleshooting-front-end-development-issues)
 
 Click a question to view the answer.
 
-## Modules [](id=troubleshooting-modules)
+## Modules
 
 <div class="ldn-faq-question">
   <span class="ldn-faq-toggle-button" data-show="false" style="font-weight: normal;">How can I configure dependencies on Liferay artifacts?&nbsp;<span class="icon-caret-right" style="pointer-events:none;"></span></span>
@@ -126,7 +130,7 @@ Click a question to view the answer.
 </div>
 </div>
 
-## Services and Components [](id=troubleshooting-services-and-components)
+## Services and Components
 
 <br/>
 <div class="ldn-faq-question">

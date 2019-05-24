@@ -1,8 +1,12 @@
-# Overriding Language Keys [](id=overriding-language-keys)
+---
+header-id: overriding-language-keys
+---
+
+# Overriding Language Keys
 
 Core and portlet module `Language*.properties` files implement site
 internationalization. They're fully customizable, too. These tutorials
 demonstrate this in the following topics:
 
--   [Overriding Liferay's Language Keys](/develop/tutorials/-/knowledge_base/7-1/overriding-language-keys) 
--   [Overriding a Module's Language Keys](/develop/tutorials/-/knowledge_base/7-1/overriding-a-modules-language-keys)
+-   [Overriding Liferay's Language Keys](/docs/7-1/tutorials/-/knowledge_base/t/overriding-language-keys) 
+-   [Overriding a Module's Language Keys](/docs/7-1/tutorials/-/knowledge_base/t/overriding-a-modules-language-keys)

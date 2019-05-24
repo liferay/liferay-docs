@@ -1,8 +1,12 @@
-# Fully Qualified Portlet IDs [](id=fully-qualified-portlet-ids)
+---
+header-id: fully-qualified-portlet-ids
+---
+
+# Fully Qualified Portlet IDs
 
 Below is a listing of the portlet IDs for the default portlets in @product@. You 
 can use these IDs to embed portlets in your theme's 
-[sitemap](/develop/tutorials/-/knowledge_base/7-1/defining-portlets-in-a-sitemap). 
+[sitemap](/docs/7-1/tutorials/-/knowledge_base/t/defining-portlets-in-a-sitemap). 
 
 **Collaboration**
 

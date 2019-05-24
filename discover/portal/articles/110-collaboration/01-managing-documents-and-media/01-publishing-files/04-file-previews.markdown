@@ -1,4 +1,8 @@
-# Viewing File Previews [](id=viewing-file-previews)
+---
+header-id: viewing-file-previews
+---
+
+# Viewing File Previews
 
 File previews help users browse and find media efficiently. To view a preview of 
 a file, click the file's name in the Document Library. If the file is an image,
@@ -9,7 +13,7 @@ for the file, a generic image based on the file type appears.
 
 ![Figure 1: File previews let you view and manage a file.](../../../../images/dm-file-entry-details.png)
 
-## File Preview Apps [](id=file-preview-apps)
+## File Preview Apps
 
 Whenever possible, @product@ generates previews of documents added to the
 Document Library. Out of the box, Java-based APIs generate previews. The only
@@ -41,7 +45,7 @@ harness the full power of document previews. These tools include:
 After installing these tools, you can configure them via portal properties in 
 the Control Panel's Server Administration screen, or in a 
 `portal-ext.properties` file. To learn how to use these tools, refer to 
-[Configuring @product@](/discover/portal/-/knowledge_base/7-1/setting-up). 
+[Configuring @product@](/docs/7-1/user/-/knowledge_base/u/setting-up). 
 
 With these tools installed and configured, a customized viewer displays 
 Documents and Media content, depending on the content type. For example, you can 
@@ -50,7 +54,7 @@ document's pages. You can also view and play multimedia documents (audio or
 video). If the browser supports HTML5, the viewer uses the browser's native 
 player. Otherwise it falls back to a Flash player. 
 
-## Managing Files [](id=managing-files)
+## Managing Files
 
 You can also manage a file from its preview. The file's icon, name, author, 
 upload timestamp, and rating appear above the preview area. The comments area 
@@ -65,13 +69,13 @@ screen. Here are the file options:
 
 **Edit**: Modify the file's name, description, document type, 
 categorization, and 
-[related assets](/discover/portal/-/knowledge_base/7-1/defining-content-relationships).
+[related assets](/docs/7-1/user/-/knowledge_base/u/defining-content-relationships).
 You can even upload a new file to replace it. Note that modifying the file
 increments its version. 
 
 **Edit With Image Editor**: Edit the image in the Image Editor. The Image 
 Editor is explained in 
-[Editing Images](/discover/portal/-/knowledge_base/7-1/editing-images). 
+[Editing Images](/docs/7-1/user/-/knowledge_base/u/editing-images). 
 
 **Move**: Relocate the file to a different parent folder. 
 
@@ -118,4 +122,4 @@ To instead view the file's version history, select *Versions* from the selector
 menu. The info panel then changes to list the different versions of the file and 
 lets you view, download, remove, and revert to specific file versions. File 
 version history actions are explained in the guide 
-[Collaborating on Files](/discover/portal/-/knowledge_base/7-0/collaborating-on-files). 
+[Collaborating on Files](/docs/7-0/user/-/knowledge_base/u/collaborating-on-files). 

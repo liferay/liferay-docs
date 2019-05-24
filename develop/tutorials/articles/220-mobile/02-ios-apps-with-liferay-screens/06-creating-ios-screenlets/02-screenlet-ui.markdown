@@ -1,4 +1,8 @@
-# Creating the iOS Screenlet's UI [](id=creating-the-ios-screenlets-ui)
+---
+header-id: creating-the-ios-screenlets-ui
+---
+
+# Creating the iOS Screenlet's UI
 
 In Liferay Screens for iOS, a Screenlet's UI is called a Theme. Every Screenlet 
 must have at least one Theme. A Theme has the following components: 
@@ -29,15 +33,11 @@ defines this UI. Because the button triggers the Screenlet's action, it contains
 
 ![Figure 1: Here's the sample Add Bookmark Screenlet's XIB file rendered in Interface Builder.](../../../../images/screens-ios-xcode-add-bookmark.png)
 
-+$$$
-
-**Note:** The Screenlet in this tutorial doesn't support multiple Themes. If you 
-want your Screenlet to support multiple Themes, your View class must also 
-conform a *View Model* protocol that you create. For instructions on this, see 
-the tutorial 
-[Supporting Multiple Themes in Your Screenlet](/develop/tutorials/-/knowledge_base/7-1/supporting-multiple-themes-in-your-ios-screenlet). 
-
-$$$
+| **Note:** The Screenlet in this tutorial doesn't support multiple Themes. If you
+| want your Screenlet to support multiple Themes, your View class must also
+| conform a *View Model* protocol that you create. For instructions on this, see
+| the tutorial
+| [Supporting Multiple Themes in Your Screenlet](/docs/7-1/tutorials/-/knowledge_base/t/supporting-multiple-themes-in-your-ios-screenlet).
 
 Now you must create your Screenlet's View class. This class controls the UI you 
 just defined. In the 

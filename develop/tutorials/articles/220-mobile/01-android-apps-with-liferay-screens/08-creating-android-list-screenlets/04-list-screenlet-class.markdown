@@ -1,7 +1,11 @@
-# Creating the Screenlet Class [](id=creating-the-screenlet-class-0)
+---
+header-id: creating-the-screenlet-class-0
+---
+
+# Creating the Screenlet Class
 
 Recall from 
-[the basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-1/creating-the-screenlet-class) 
+[the basic Screenlet creation tutorial](/docs/7-1/tutorials/-/knowledge_base/t/creating-the-screenlet-class) 
 that the Screenlet class serves as your Screenlet's focal point. It governs the 
 Screenlet's behavior and is the primary component the app developer interacts 
 with. As with non-list Screenlets, you should first define any XML attributes 
@@ -82,7 +86,7 @@ the `Exception` and `userAction`:
 
 Next, override the `createScreenletView` method to read the values of the XML 
 attributes you defined earlier and create the Screenlet's View. Recall from 
-[the basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-1/creating-the-screenlet-class) 
+[the basic Screenlet creation tutorial](/docs/7-1/tutorials/-/knowledge_base/t/creating-the-screenlet-class) 
 that this method assigns the attribute values to their corresponding instance 
 variables. For example, the `createScreenletView` method in 
 `BookmarkListScreenlet` assigns the `folderId` and `comparator` attribute values 
@@ -139,14 +143,14 @@ return the new instance. For example, `BookmarkListScreenlet`'s
 
 You're done! Your Screenlet is a ready-to-use component that you can use in your 
 app. You can even 
-[package your Screenlet](/develop/tutorials/-/knowledge_base/7-1/packaging-your-screenlets)
+[package your Screenlet](/docs/7-1/tutorials/-/knowledge_base/t/packaging-your-screenlets)
 and contribute it to the Screens project, or distribute it in Maven Central or 
 jCenter. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating the Model Class](/develop/tutorials/-/knowledge_base/7-1/creating-the-model-class)
+[Creating the Model Class](/docs/7-1/tutorials/-/knowledge_base/t/creating-the-model-class)
 
-[Creating the View](/develop/tutorials/-/knowledge_base/7-1/creating-the-view)
+[Creating the View](/docs/7-1/tutorials/-/knowledge_base/t/creating-the-view)
 
-[Creating the Interactor](/develop/tutorials/-/knowledge_base/7-1/creating-the-interactor-0)
+[Creating the Interactor](/docs/7-1/tutorials/-/knowledge_base/t/creating-the-interactor-0)

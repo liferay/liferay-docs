@@ -1,4 +1,8 @@
-# Upgrading Portlet Plugins [](id=upgrading-portlet-plugins)
+---
+header-id: upgrading-portlet-plugins
+---
+
+# Upgrading Portlet Plugins
 
 All portlet plugin types developed for Liferay Portal 6 can be upgraded and
 deployed to @product-ver@.
@@ -15,13 +19,13 @@ you finish the above steps, you can deploy your portlet to @product@.
 The portlet upgrade tutorials show you how to upgrade the following common
 portlets: 
 
--   [GenericPortlet](/develop/tutorials/-/knowledge_base/7-1/upgrading-a-genericportlet)
--   [Liferay MVC Portlet](/develop/tutorials/-/knowledge_base/7-1/upgrading-a-liferay-mvc-portlet)
--   [Portlet that uses Service Builder](/develop/tutorials/-/knowledge_base/7-1/upgrading-portlets-that-use-service-builder)
+-   [GenericPortlet](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-a-genericportlet)
+-   [Liferay MVC Portlet](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-a-liferay-mvc-portlet)
+-   [Portlet that uses Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-portlets-that-use-service-builder)
 -   [Liferay JSF Portlet](develop/tutorials/-/knowledge_base/7-1/upgrading-a-liferay-jsf-portlet)
--   [Servlet-based portlet](/develop/tutorials/-/knowledge_base/7-1/upgrading-a-servlet-based-portlet)
--   [Struts Portlet](/develop/tutorials/-/knowledge_base/7-0/upgrading-a-struts-portlet)
--   [Spring MVC Portlet](/develop/tutorials/-/knowledge_base/7-1/upgrading-a-spring-mvc-portlet)
+-   [Servlet-based portlet](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-a-servlet-based-portlet)
+-   [Struts Portlet](/docs/7-0/tutorials/-/knowledge_base/t/upgrading-a-struts-portlet)
+-   [Spring MVC Portlet](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-a-spring-mvc-portlet)
 
 The tutorials provide example portlet source code from before and after
 upgrading the example portlet. Each tutorial's steps were applied to the example

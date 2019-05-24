@@ -1,4 +1,8 @@
-# Creating Display Templates [](id=creating-display-templates)
+---
+header-id: creating-display-templates
+---
+
+# Creating Display Templates
 
 For every data definition, you can create as many displays as you need. If
 you've created a form template that doesn't show all the fields of a particular
@@ -6,24 +10,20 @@ data definition in the data list's form view, you probably don't want to display
 those fields in the list view, either. Modify the list view using Display
 Templates. 
 
-+$$$
-
-**Note:** If you're familiar with 
-[web content templates](/discover/portal/-/knowledge_base/7-1/designing-web-content-with-templates), 
-display templates customize the display of a list in the same way. Display 
-templates are written in FreeMarker or Velocity, pulling data from the data 
-definition in the same way that web content templates pull data from their 
-structures. Also similar to web content templates, display templates can be
-embedded in other display templates. This allows for reusable code, JavaScript
-library imports, or macros imported by Velocity or FreeMarker templates in the
-system. Embedding display templates provides a more efficient process when you
-have a multitude of similar data definitions. Just import an embedded display
-template and work off of it for your new display template. 
-
-$$$
+| **Note:** If you're familiar with
+| [web content templates](/docs/7-1/user/-/knowledge_base/u/designing-web-content-with-templates),
+| display templates customize the display of a list in the same way. Display
+| templates are written in FreeMarker or Velocity, pulling data from the data
+| definition in the same way that web content templates pull data from their
+| structures. Also similar to web content templates, display templates can be
+| embedded in other display templates. This allows for reusable code, JavaScript
+| library imports, or macros imported by Velocity or FreeMarker templates in the
+| system. Embedding display templates provides a more efficient process when you
+| have a multitude of similar data definitions. Just import an embedded display
+| template and work off of it for your new display template.
 
 As with 
-[form templates](/discover/portal/-/knowledge_base/7-1/creating-form-templates), 
+[form templates](/docs/7-1/user/-/knowledge_base/u/creating-form-templates), 
 you can create display templates from the Dynamic Data Lists app in Site 
 Administration or the Dynamic Data Lists Display widget. 
 
@@ -71,14 +71,14 @@ Alternatively, you can use the Dynamic Data Lists Display widget to create
 display templates: 
 
 1.  Follow the instructions in the 
-    [Creating Data Lists article](/discover/portal/-/knowledge_base/7-1/creating-data-lists) 
+    [Creating Data Lists article](/docs/7-1/user/-/knowledge_base/u/creating-data-lists) 
     for adding and configuring the widget in a site page. Make sure to configure
     the widget to show the list's definition you're making into a template. 
 
 2.  Click the widget's *Add Display Template* button. This opens the same form 
     as above for creating a display template for the list's definition. 
 
-## Display Template Editor [](id=display-template-editor)
+## Display Template Editor
 
 Helper variables are available in the template editor. These provide access to
 most of the data that you'll use in creating Display Templates. The variables

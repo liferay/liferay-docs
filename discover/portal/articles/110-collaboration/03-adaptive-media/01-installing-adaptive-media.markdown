@@ -1,19 +1,19 @@
-# Installing Adaptive Media [](id=installing-adaptive-media)
+---
+header-id: installing-adaptive-media
+---
+
+# Installing Adaptive Media
 
 The Adaptive Media app is installed in @product@ by default. The following 
 sections describe the Adaptive Media app's modules, and how to prepare Adaptive 
 Media to handle animated GIFs. 
 
-+$$$
+| **Note:** Since the Adaptive Media app is installed by default, it's updated via
+| Liferay DXP Fix Packs and Liferay Portal CE GA releases. Using
+| [Liferay Marketplace](https://web.liferay.com/marketplace)
+| to update the app on Liferay DXP 7.1 causes an error.
 
-**Note:** Since the Adaptive Media app is installed by default, it's updated via 
-Liferay DXP Fix Packs and Liferay Portal CE GA releases. Using 
-[Liferay Marketplace](https://web.liferay.com/marketplace) 
-to update the app on Liferay DXP 7.1 causes an error. 
-
-$$$
-
-## Adaptive Media's Modules [](id=adaptive-medias-modules)
+## Adaptive Media's Modules
 
 Some modules in the Adaptive Media app are mandatory and must be enabled for 
 Adaptive Media to function, while others can be disabled. The Adaptive Media API 
@@ -70,7 +70,7 @@ There are two more optional modules included in Adaptive Media:
 
 -   **Liferay Adaptive Media Document Library Thumbnails:** Lets thumbnails in 
     Documents and Media use adapted images. For this to work, you must first 
-    [migrate the original thumbnails to adapted images](/discover/portal/-/knowledge_base/7-1/migrating-documents-and-media-thumbnails-to-adaptive-media). 
+    [migrate the original thumbnails to adapted images](/docs/7-1/user/-/knowledge_base/u/migrating-documents-and-media-thumbnails-to-adaptive-media). 
     We highly recommend that you enable this module, but it's not mandatory. 
 
 Great! Now you know the mandatory and optional modules that come with Adaptive 
@@ -78,14 +78,14 @@ Media. The next section discusses the installation requirements for using
 animated GIFs with Adaptive Media. If you don't need to use GIFs, you can skip 
 ahead to the article on adding image resolutions to Adaptive Media. 
 
-## Processing Animated GIFs [](id=processing-animated-gifs)
+## Processing Animated GIFs
 
 To process animated GIFs, Adaptive Media uses an external tool called 
 [Gifsicle](https://www.lcdf.org/gifsicle). 
 This tool ensures that the animation works when the GIF is scaled to different 
 resolutions. You must manually install Gifsicle on the server and ensure that
 it's on the `PATH`. Once it's installed, you must enable it in Adaptive Media's
-[advanced configuration options](/discover/portal/-/knowledge_base/7-1/advanced-configuration-options). 
+[advanced configuration options](/docs/7-1/user/-/knowledge_base/u/advanced-configuration-options). 
 
 If Gifsicle isn't installed and `image/gif` is included as a supported MIME type
 in the advanced configuration options, Adaptive Media scales only a GIF's single

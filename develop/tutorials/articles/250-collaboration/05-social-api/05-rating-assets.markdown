@@ -1,6 +1,10 @@
-# Rating Assets [](id=rating-assets)
+---
+header-id: rating-assets
+---
 
-[The asset framework](/develop/tutorials/-/knowledge_base/7-1/asset-framework) 
+# Rating Assets
+
+[The asset framework](/docs/7-1/tutorials/-/knowledge_base/t/asset-framework) 
 supports a system that lets users rate content in apps. This feature appears in 
 many of @product@'s built-in apps. For example, users can rate articles 
 published in the Blogs app. Using taglibs, you can enable ratings for your app's 
@@ -13,11 +17,11 @@ Guestbook app as an example. As its name implies, this app lets users leave
 simple messages in a guestbook. 
 
 1.  Make sure your entity is 
-    [asset enabled](/develop/tutorials/-/knowledge_base/7-1/asset-framework). 
+    [asset enabled](/docs/7-1/tutorials/-/knowledge_base/t/asset-framework). 
 
 2.  Choose a read-only view of the entity for which you want to enable ratings. 
     You can display ratings in one of your portlet's views, or if you've 
-    [implemented asset rendering](/develop/tutorials/-/knowledge_base/7-1/rendering-an-asset) 
+    [implemented asset rendering](/docs/7-1/tutorials/-/knowledge_base/t/rendering-an-asset) 
     you can display them in the full content view in the Asset Publisher app. 
 
 3.  In the JSP, include the `liferay-ui` taglib declaration:
@@ -47,12 +51,12 @@ simple messages in a guestbook.
 
     You can also make the rating type configurable by administrators. To do 
     this, see the tutorial 
-    [Implementing Ratings Type Selection and Value Type Transformation](/develop/tutorials/-/knowledge_base/7-1/implementing-ratings-type-selection-and-value-transformation). 
+    [Implementing Ratings Type Selection and Value Type Transformation](/docs/7-1/tutorials/-/knowledge_base/t/implementing-ratings-type-selection-and-value-transformation). 
 
 Great! Now you know how to let users rate content in your asset-enabled apps. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Asset Framework](/develop/tutorials/-/knowledge_base/7-1/asset-framework)
+[Asset Framework](/docs/7-1/tutorials/-/knowledge_base/t/asset-framework)
 
-[Implementing Ratings Type Selection and Value Transformation](/develop/tutorials/-/knowledge_base/7-1/implementing-ratings-type-selection-and-value-transformation)
+[Implementing Ratings Type Selection and Value Transformation](/docs/7-1/tutorials/-/knowledge_base/t/implementing-ratings-type-selection-and-value-transformation)

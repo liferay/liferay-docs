@@ -1,4 +1,8 @@
-# Publishing Single Assets From a Staged Site [](id=publishing-single-assets-from-a-staged-site)
+---
+header-id: publishing-single-assets-from-a-staged-site
+---
+
+# Publishing Single Assets From a Staged Site
 
 Sometimes, stepping through the entire publication process is not necessary and
 can be overkill. For example,
@@ -31,18 +35,14 @@ respective app menus:
 **Important:** Single asset publication is not supported for page-scoped
 content.
 
-+$$$
-
-**Note:** When publishing a Web Content or Bookmarks folder, their respective
-entries and subfolders are included. Publishing a Documents and Media folder
-works the same way, but also includes shortcuts.
-
-$$$
+| **Note:** When publishing a Web Content or Bookmarks folder, their respective
+| entries and subfolders are included. Publishing a Documents and Media folder
+| works the same way, but also includes shortcuts.
 
 You'll step through an example to see how this is done.
 
 1.  Make sure the Staging framework is
-    [enabled](/discover/portal/-/knowledge_base/7-1/enabling-staging) and you're
+    [enabled](/docs/7-1/user/-/knowledge_base/u/enabling-staging) and you're
     on the staged site.
 
 2.  Create a Web Content Article in the Product Menu's *Content* &rarr; *Web
@@ -58,15 +58,11 @@ You'll step through an example to see how this is done.
     your single asset publication request. Ensure the Web Content Article is
     published successfully.
 
-    +$$$
-
-    **Note:** Sometimes the publication process doesn't start immediately (e.g.,
-    if there's another publication running). You can check a specific asset's
-    publication progress by navigating to the *Options*
-    (![Options](../../../../images/icon-options.png)) &rarr; *Staging* &rarr;
-     *Current and Previous* tab in its Site Admin app.
-
-    $$$
+    | **Note:** Sometimes the publication process doesn't start immediately (e.g.,
+    | if there's another publication running). You can check a specific asset's
+    | publication progress by navigating to the *Options*
+    | (![Options](../../../../images/icon-options.png)) &rarr; *Staging* &rarr;
+    |  *Current and Previous* tab in its Site Admin app.
 
 There you have it! If you navigate to your live site's Web Content section, the
 new article is available.
@@ -94,7 +90,7 @@ assets. Follow the steps below to modify these permissions for a Role:
 
 Granting a Role the *Publish Staging* permission lets users assigned the Role
 publish single assets. 
-[Managing Permissions](/discover/portal/-/knowledge_base/7-1/managing-permissions)
+[Managing Permissions](/docs/7-1/user/-/knowledge_base/u/managing-permissions)
 article for more information.
 
 Great! Now you know how to publish single assets and manage the permissions for

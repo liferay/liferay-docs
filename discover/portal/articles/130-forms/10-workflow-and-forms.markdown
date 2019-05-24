@@ -1,6 +1,10 @@
-# Workflow and Forms [](id=sending-form-entries-through-a-workflow)
+---
+header-id: sending-form-entries-through-a-workflow
+---
 
-[Kaleo](/discover/portal/-/knowledge_base/7-1/workflow)
+# Workflow and Forms
+
+[Kaleo](/docs/7-1/user/-/knowledge_base/u/workflow)
 is a workflow engine for sending a submitted asset through a workflow process
 before it's published. Most assets are configured to use workflow at the
 instance or Site level.
@@ -12,7 +16,7 @@ There are so many use cases for forms, and there could be so many per site, that
 a site- or instance-scoped workflow configuration won't serve your needs 
 well. Instead, configure workflow for *each form* separately.
 
-## Enabling Workflow in a Form [](id=enabling-workflow-in-a-form)
+## Enabling Workflow in a Form
 
 To enable workflow in a form, 
 
@@ -29,7 +33,7 @@ To enable workflow in a form,
 
     ![Figure 3: Enable workflow for each form in its Settings window.](../../images/form-settings.png)
 
-## Testing the Workflow [](id=testing-the-workflow)
+## Testing the Workflow
 
 Test the workflow process:
 
@@ -70,7 +74,7 @@ Now approve the form record:
 
 ![Figure 4: Each entry's status is visible in the Forms application's Form Entries screen.](../../images/forms-view-entries-status.png)
 
-## Example Use Case: Win a Free, All-Inclusive Trip to the Lunar Resort [](id=example-win-a-free-all-inclusive-trip-to-the-lunar-resort)
+## Example Use Case: Win a Free, All-Inclusive Trip to the Lunar Resort
 
 The Lunar Resort is giving away a free, all-inclusive trip to several lucky
 families. All a user must do is click the *I Want a Free Trip* link from the

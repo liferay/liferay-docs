@@ -1,4 +1,8 @@
-# Creating A Social Network [](id=creating-a-social-network)
+---
+header-id: creating-a-social-network
+---
+
+# Creating A Social Network
 
 @product@ contains several features and widgets for leveraging its social
 framework. The Activities widget lets you broadcast user activities on a Site.

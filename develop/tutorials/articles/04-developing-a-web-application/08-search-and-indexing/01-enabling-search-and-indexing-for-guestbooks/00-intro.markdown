@@ -1,4 +1,8 @@
-# Enabling Search and Indexing for Guestbooks [](id=enabling-search-and-indexing-for-guestbooks)
+---
+header-id: enabling-search-and-indexing-for-guestbooks
+---
+
+# Enabling Search and Indexing for Guestbooks
 
 In this section, you'll create the classes that control these aspects of the
 search functionality:

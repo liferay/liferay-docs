@@ -1,4 +1,8 @@
-# Authenticating with Kerberos [](id=authenticating-with-kerberos)
+---
+header-id: authenticating-with-kerberos
+---
+
+# Authenticating with Kerberos
 
 You can use Kerberos to authenticate Microsoft Windows &trade; accounts with
 @product@. This is done completely through configuration by using a combination
@@ -6,7 +10,7 @@ of @product@'s LDAP support and a web server that supports the Kerberos
 protocol. 
 
 Note that this configuration is preferred above 
-[NTLM](/discover/deployment/-/knowledge_base/7-1/ntlm-single-sign-on-authentication)
+[NTLM](/docs/7-1/deploy/-/knowledge_base/d/ntlm-single-sign-on-authentication)
 because security vulnerabilities persist. 
 
 While it's beyond the scope of this article to explain how to set up Kerberos
@@ -32,7 +36,7 @@ prerequisites for setting up Liferay authentication:
 When you have all of these prerequisites in place, you're ready to configure
 Kerberos authentication. 
 
-## How Kerberos Authentication Works [](id=how-kerberos-authentication-works)
+## How Kerberos Authentication Works
 
 From the prerequisites, you may be able to guess that there are several moving
 parts to how SSO works with Kerberos. 
@@ -53,13 +57,13 @@ obtain the user data and authenticate the user.
 
 Next, you'll learn how to get all of this working. 
 
-## Configuring Kerberos Authentication [](id=configuring-kerberos-authentication)
+## Configuring Kerberos Authentication
 
 There are four components to configure: a user keytab from Active
 Directory, a web server in front of your application server, @product@, and your
 Windows&trade; clients. 
 
-### Creating the User Keytab [](id=creating-the-user-keytab)
+### Creating the User Keytab
 
 1.  Create a user so @product@ can bind to Active Directory. 
 
@@ -74,7 +78,7 @@ Windows&trade; clients.
 3.  Ensure that the AD domain controller and the web server can see each other
     on the network via DNS configuration or `hosts` file. 
 
-### Configuring Your Web Server [](id=configuring-your-web-server)
+### Configuring Your Web Server
 
 1.  Configure Kerberos authentication. On Linux, this involves installing `krb5`
     and configuring it to match your realm that's already configured for Active
@@ -146,7 +150,7 @@ Windows&trade; clients.
         </VirtualHost>
         Listen 10080
 
-### Connecting @product@ to Active Directory over LDAP [](id=connecting-product-to-active-directory-over-ldap)
+### Connecting @product@ to Active Directory over LDAP
 
 1.  Finally, configure @product@ to access Active Directory via the LDAP
     protocol. Change authentication to be by Screen Name by selecting it in
@@ -186,7 +190,7 @@ Windows&trade; clients.
 Excellent! You've configured your servers. All that's left is to configure your
 clients. 
 
-### Configuring your Clients [](id=configuring-your-clients)
+### Configuring your Clients
 
 You must do two things: make your computer log into the domain and configure
 your @product@ server as a trusted Internet site. 

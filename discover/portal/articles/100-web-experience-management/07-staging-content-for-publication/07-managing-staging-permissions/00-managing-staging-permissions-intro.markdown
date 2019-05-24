@@ -1,4 +1,8 @@
-# Managing Permissions [](id=managing-permissions)
+---
+header-id: managing-permissions
+---
+
+# Managing Permissions
 
 The staging environment has many different options for building and managing
 a Site and its pages. Sometimes administrators want to limit access to staging's
@@ -65,5 +69,5 @@ app.
 Notice that some of the permissions above are related to the export/import
 functionality. Since these permissions are directly affected by the Publish
 Staging permission, they are important to note. Visit the
-[Importing/Exporting Pages and Content](/discover/portal/-/knowledge_base/7-1/importing-exporting-pages-and-content)
+[Importing/Exporting Pages and Content](/docs/7-1/user/-/knowledge_base/u/importing-exporting-pages-and-content)
 section for more details on importing/exporting Site and page content.

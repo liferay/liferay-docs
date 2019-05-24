@@ -1,4 +1,8 @@
-# Creating the iOS List Screenlet's Interactor [](id=creating-the-ios-list-screenlets-interactor)
+---
+header-id: creating-the-ios-list-screenlets-interactor
+---
+
+# Creating the iOS List Screenlet's Interactor
 
 Recall that Interactors implement your Screenlet's actions. In list Screenlets, 
 loading entities is usually the only action a user can take. The Interactor 
@@ -70,7 +74,7 @@ retrieved from the server. For example, `BookmarkListPageLoadInteractor`'s
     }
 
 You may also want to support 
-[offline mode](/develop/tutorials/-/knowledge_base/7-1/architecture-of-offline-mode-in-liferay-screens) 
+[offline mode](/docs/7-1/tutorials/-/knowledge_base/t/architecture-of-offline-mode-in-liferay-screens) 
 in your Interactor. To do so, the Interactor must override the `cacheKey` method 
 to return a cache key unique to your Screenlet. For example, 
 `BookmarkListPageLoadInteractor`'s `cacheKey` method returns a cache key that 

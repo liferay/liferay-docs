@@ -1,4 +1,8 @@
-# Metadata Sets [](id=metadata-sets)
+---
+header-id: metadata-sets
+---
+
+# Metadata Sets
 
 You can define metadata fields that users fill out when they create or edit
 Document Library files. You do this by creating *metadata sets* and then
@@ -7,7 +11,7 @@ apply your metadata fields to the files. Although you apply metadata sets via
 document types, metadata sets exist independently and you can apply them to any
 number of document types. 
 
-## Managing Metadata Sets [](id=managing-metadata-sets)
+## Managing Metadata Sets
 
 To see the available metadata sets, open the *Menu* 
 (![Product Menu](../../../images/icon-menu.png)), expand your site's menu, and
@@ -38,7 +42,7 @@ actions on that set:
 
 ![Figure 1: The Metadata Sets management window lets you view existing sets and create new ones for applying to document types.](../../../images/dm-metadata-sets-list.png)
 
-## Creating Metadata Sets [](id=creating-metadata-sets)
+## Creating Metadata Sets
 
 Follow these steps to create a metadata set: 
 

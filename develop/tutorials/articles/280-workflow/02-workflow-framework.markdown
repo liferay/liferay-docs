@@ -1,4 +1,8 @@
-# Liferay's Workflow Framework [](id=liferays-workflow-framework)
+---
+header-id: liferays-workflow-framework
+---
+
+# Liferay's Workflow Framework
 
 Enabling your application's entities to support workflow is so easy, you could do it in
 your sleep (but don't try). Workflow-enabled entities require two things:
@@ -17,7 +21,7 @@ You have, therefore, two tasks to enable workflow:
 
 Time to get started. 
 
-## Creating a Workflow Handler [](id=creating-a-workflow-handler)
+## Creating a Workflow Handler
 
 The workflow handler should go in the module containing service
 implementations. It's nice to keep your back-end code separate from your view
@@ -97,10 +101,10 @@ Now your entity can be handled by Liferay's workflow framework. Next, update the
 service methods to account for workflow status and add a new method to update
 the status of an entity in the database.
 
-## Updating the Service Layer [](id=updating-the-service-layer)
+## Updating the Service Layer
 
 In most Liferay applications, 
-[Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder) 
+[Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/service-builder) 
 is used to create database fields. First, you must update the service layer: 
 
 - The service layer must populate the new fields when entities are added to the
@@ -215,7 +219,7 @@ Save your work and run Service Builder. Once you've accounted for workflow
 status in your service layer, there's only one thing left to do: update the user
 interface.
 
-## Workflow Status and the View Layer [](id=workflow-status-and-the-view-layer)
+## Workflow Status and the View Layer
 
 If you have an application with database entities, you're likely displaying
 them. Once you enable workflow, you should only display approved entities to

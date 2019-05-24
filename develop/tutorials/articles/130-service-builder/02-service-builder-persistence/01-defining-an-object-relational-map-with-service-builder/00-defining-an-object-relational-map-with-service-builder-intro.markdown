@@ -1,4 +1,8 @@
-# Defining an Object-Relational Map with Service Builder [](id=defining-an-object-relational-map-with-service-builder)
+---
+header-id: defining-an-object-relational-map-with-service-builder
+---
+
+# Defining an Object-Relational Map with Service Builder
 
 In this tutorial, you'll learn how to define an object relational map so your
 application can persist data. As an example, you'll examine the existing
@@ -29,10 +33,10 @@ This tutorial assumes your application has these types of modules :
 - `*-web`: Portlet and controller
 
 The parent folder of these modules is the *application folder*. The
-[Service Builder project template](/develop/reference/-/knowledge_base/7-1/using-the-service-builder-template)
+[Service Builder project template](/docs/7-1/reference/-/knowledge_base/r/using-the-service-builder-template)
 is available for creating the `*-api` and `*-service` modules. Client UI project
 templates such as the
-[MVCPortlet template](/develop/reference/-/knowledge_base/7-1/using-the-mvc-portlet-template)
+[MVCPortlet template](/docs/7-1/reference/-/knowledge_base/r/using-the-mvc-portlet-template)
 are available for creating the `*-web` module. You can create projects from
 both templates using either @ide@ or Blade. 
 
@@ -47,22 +51,22 @@ requirements for each are defined in the `bookmarks-service` module's
 listed in the `<column />` elements. 
 
 Once Service Builder reads the `service.xml` file, you can define your entities.
-[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-1/liferay-ide)
+[Liferay @ide@](/docs/7-1/tutorials/-/knowledge_base/t/liferay-ide)
 makes it easy to define entities in your application's `service.xml` file.
 Follow these steps:
 
-1. [Create the `service.xml` file.](/develop/tutorials/-/knowledge_base/7-1/creating-the-service-xml-file)
+1. [Create the `service.xml` file.](/docs/7-1/tutorials/-/knowledge_base/t/creating-the-service-xml-file)
 
-2. [Define global information for the service.](/develop/tutorials/-/knowledge_base/7-1/defining-global-service-information)
+2. [Define global information for the service.](/docs/7-1/tutorials/-/knowledge_base/t/defining-global-service-information)
 
-3. [Define service entities.](/develop/tutorials/-/knowledge_base/7-1/defining-service-entities) 
+3. [Define service entities.](/docs/7-1/tutorials/-/knowledge_base/t/defining-service-entities) 
 
-4. [Define the columns (attributes) for each service entity.](/develop/tutorials/-/knowledge_base/7-1/defining-the-columns-attributes-for-each-service-entity)
+4. [Define the columns (attributes) for each service entity.](/docs/7-1/tutorials/-/knowledge_base/t/defining-the-columns-attributes-for-each-service-entity)
 
-5. [Define relationships between entities.](/develop/tutorials/-/knowledge_base/7-1/defining-relationships-between-service-entities)
+5. [Define relationships between entities.](/docs/7-1/tutorials/-/knowledge_base/t/defining-relationships-between-service-entities)
 
-6. [Define a default order for the entity instances to be retrieved from the database.](/develop/tutorials/-/knowledge_base/7-1/defining-ordering-of-service-entity-instances) 
+6. [Define a default order for the entity instances to be retrieved from the database.](/docs/7-1/tutorials/-/knowledge_base/t/defining-ordering-of-service-entity-instances) 
 
-7. [Define finder methods that retrieve objects from the database based on specified parameters.](/develop/tutorials/-/knowledge_base/7-1/defining-service-entity-finder-methods)
+7. [Define finder methods that retrieve objects from the database based on specified parameters.](/docs/7-1/tutorials/-/knowledge_base/t/defining-service-entity-finder-methods)
 
 Each step is explained in detail. Start with creating a `service.xml` file.

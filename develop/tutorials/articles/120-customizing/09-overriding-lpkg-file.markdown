@@ -1,11 +1,15 @@
-# Overriding lpkg files [](id=overriding-lpkg-files)
+---
+header-id: overriding-lpkg-files
+---
+
+# Overriding lpkg files
 
 Applications are delivered through Liferay Marketplace as *lpkg* files. This is
 a simple compressed file format that contains .jar files for deploying to
 @product@. If you want to examine an application from Marketplace, all you have
 to do is unzip its .lpkg file to reveal its .jar files. 
 
-After examining an application, you may want to [customize](/develop/tutorials/-/knowledge_base/7-1/customizing)
+After examining an application, you may want to [customize](/docs/7-1/tutorials/-/knowledge_base/t/customizing)
 one of its .jars. Make your customization in a copy of the .jar, but don't
 deploy it the way you'd normally deploy an application. By overriding the .lpkg
 file, you can update application modules without modifying the original .lpgk
@@ -14,7 +18,7 @@ file. Here are the steps:
 1.  Shut down @product@. 
 
 2.  Create a folder called `override` in the
-    `[Liferay Home]/osgi/marketplace` folder](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home). 
+    `[Liferay Home]/osgi/marketplace` folder](/docs/7-0/deploy/-/knowledge_base/d/installing-product#liferay-home). 
 
 3.  Name your updated .jar the same as the .jar in the original .lpkg, minus the
     version information. For example, if you're overriding the

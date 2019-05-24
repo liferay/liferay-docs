@@ -1,4 +1,8 @@
-# Bar Charts [](id=bar-charts)
+---
+header-id: bar-charts
+---
+
+# Bar Charts
 
 Bar charts contain multiple sets of data. A bar chart models the data in bars. 
 Each data series (created with the `addColumns()` method) is defined with a new 
@@ -37,10 +41,10 @@ Follow these steps:
 
 ![Figure 1: A bar chart models the data in bars.](../../../images/chart-taglib-bar.png)
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Line Charts](/develop/tutorials/-/knowledge_base/7-1/line-charts)
+[Line Charts](/docs/7-1/tutorials/-/knowledge_base/t/line-charts)
 
-[Scatter Charts](/develop/tutorials/-/knowledge_base/7-1/scatter-charts)
+[Scatter Charts](/docs/7-1/tutorials/-/knowledge_base/t/scatter-charts)
 
-[Spline Charts](/develop/tutorials/-/knowledge_base/7-1/spline-charts)
+[Spline Charts](/docs/7-1/tutorials/-/knowledge_base/t/spline-charts)

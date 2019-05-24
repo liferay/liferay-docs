@@ -1,4 +1,8 @@
-# Password-Based Authentication Pipelines [](id=password-based-authentication-pipelines)
+---
+header-id: password-based-authentication-pipelines
+---
+
+# Password-Based Authentication Pipelines
 
 By default, once a user submits credentials, those credentials are checked
 against @product@'s database, though you can also delegate authentication to an
@@ -9,8 +13,8 @@ addition to checking credentials against the database, you can write an
 Because the `Authenticator` is checked by the Login Portlet, you can't use this
 approach if the user must be redirected to the external system or needs a token
 to authenticate. In those cases, you should use an 
-[Auto Login](/develop/tutorials/-/knowledge_base/7-0/auto-login) or an 
-[Auth Verifier](/discover/deployment/-/knowledge_base/7-0/authentication-verifiers). 
+[Auto Login](/docs/7-0/tutorials/-/knowledge_base/t/auto-login) or an 
+[Auth Verifier](/docs/7-0/deploy/-/knowledge_base/d/authentication-verifiers). 
 
 `Authenticator`s let you do these things: 
 
@@ -21,7 +25,7 @@ to authenticate. In those cases, you should use an
 
 Read on to learn how to create an `Authenticator`. 
 
-## Anatomy of an Authenticator [](id=anatomy-of-an-authenticator)
+## Anatomy of an Authenticator
 
 `Authenticator`s are implemented for various steps in the authentication 
 pipeline. Here are the steps: 
@@ -91,7 +95,7 @@ success in all cases. If you deploy its module, it has no effect. Naturally,
 you'll want to provide more functionality. Next is an example that shows you how
 to do that. 
 
-## Creating an Authenticator [](id=creating-an-authenticator)
+## Creating an Authenticator
 
 This example is an `Authenticator` that only allows users whose email addresses 
 end with *@liferay.com* or *@example.com*. You can implement this using one 
@@ -102,7 +106,7 @@ example shows the two module approach.
 
 To create an `Authenticator`, create a module for your implementation. The most 
 appropriate Blade template for this is the 
-[service template](/develop/reference/-/knowledge_base/7-0/using-the-service-template). 
+[service template](/docs/7-0/reference/-/knowledge_base/r/using-the-service-template). 
 Once you have the module, creating the `Activator` is straightforward: 
 
 1.  Add the `@Component` annotation to bind your `Activator` to the appropriate
@@ -112,7 +116,7 @@ Once you have the module, creating the `Activator` is straightforward:
     need. 
 
 3.  Deploy your module. If you're using 
-    [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli), do this via 
+    [Blade CLI](/docs/7-0/tutorials/-/knowledge_base/t/blade-cli), do this via 
     `blade deploy`. 
 
 For this example, you'll do this twice: once for the email address validator
@@ -329,9 +333,9 @@ enforcing logins for the two domains specified in the validator.
 If you want to examine these projects further, you can download them 
 [in this ZIP file](https://dev.liferay.com/documents/10184/656312/auth-pipelines-authenticator.zip). 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Auto Login](/develop/tutorials/-/knowledge_base/7-0/auto-login)
+[Auto Login](/docs/7-0/tutorials/-/knowledge_base/t/auto-login)
 
-[Writing a Custom Login Portlet](/develop/tutorials/-/knowledge_base/7-0/writing-a-custom-login-portlet)
+[Writing a Custom Login Portlet](/docs/7-0/tutorials/-/knowledge_base/t/writing-a-custom-login-portlet)
 

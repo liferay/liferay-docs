@@ -1,24 +1,24 @@
-# Developing Portlet Data Handlers [](id=developing-portlet-data-handlers)
+---
+header-id: developing-portlet-data-handlers
+---
+
+# Developing Portlet Data Handlers
 
 There are two types of data handlers you can implement: *Portlet Data Handlers*
 and *Staged Model Data Handlers*. For more information on the fundamentals
 behind Liferay's data handlers and how a LAR file is constructed, see the
-[Understanding Data Handlers](/develop/tutorials/-/knowledge_base/7-1/understanding-data-handlers)
+[Understanding Data Handlers](/docs/7-1/tutorials/-/knowledge_base/t/understanding-data-handlers)
 tutorial. In this tutorial, you'll create a Portlet Data Handler for a Bookmarks
 application.
 
-+$$$
-
-**Note:** You must ensure your application is properly configured to use data
-handlers. For more information on how to do this, see the
-[Data Handler Fundamentals](/develop/tutorials/-/knowledge_base/7-1/understanding-data-handlers#data-handler-fundamentals)
-section.
-
-$$$
+| **Note:** You must ensure your application is properly configured to use data
+| handlers. For more information on how to do this, see the
+| [Data Handler Fundamentals](/docs/7-1/tutorials/-/knowledge_base/t/understanding-data-handlers#data-handler-fundamentals)
+| section.
 
 A Portlet Data Handler imports/exports portlet specific data to a LAR file.
 These classes only have the role of querying and coordinating between
-[staged model data handlers](/develop/tutorials/-/knowledge_base/developing-staged-model-data-handlers).
+[staged model data handlers](/docs/dev/tutorials/-/knowledge_base/t/lop/tutorials/-/knowledge_base/developing-staged-model-data-handlers).
 For example, the Bookmarks application's portlet data handler tracks system
 events dealing with Bookmarks entities. It also configures the Export/Import UI
 options for the Bookmarks application.
@@ -65,14 +65,10 @@ Bookmarks application.
     - The `service` element should point to the `PortletDataHandler.class`
       interface.
 
-    +$$$
-
-    **Note:** In previous versions of @product@, you had to register the portlet
-    data handler in a portlet's `liferay-portlet.xml` file. The registration
-    process is now completed automatically by OSGi using the `@Component`
-    annotation.
-
-    $$$
+    | **Note:** In previous versions of @product@, you had to register the portlet
+    | data handler in a portlet's `liferay-portlet.xml` file. The registration
+    | process is now completed automatically by OSGi using the `@Component`
+    | annotation.
 
 4.  Set what the portlet data handler controls and the portlet's Export/Import
     UI by adding an `activate` method:
@@ -139,7 +135,7 @@ Bookmarks application.
     The `set` methods must be annotated with the
     [@Reference](https://osgi.org/javadoc/r6/residential/org/osgi/service/component/annotations/Reference.html)
     annotation. Visit the
-    [Invoking Local Services](/develop/tutorials/-/knowledge_base/7-1/invoking-local-services)
+    [Invoking Local Services](/docs/7-1/tutorials/-/knowledge_base/t/invoking-local-services)
     tutorial for more information on using the `@Reference` annotation in
     @product@.
 
@@ -148,7 +144,7 @@ Bookmarks application.
     [StagedModelRepository](@app-ref@/web-experience/latest/javadocs/com/liferay/exportimport/staged/model/repository/StagedModelRepository.html)
     framework. This is a new framework, but is a viable option when setting up
     your portlet data handlers. For more information on this, see the
-    [Providing Entity-Specific Local Services for Staging](/develop/tutorials/-/knowledge_base/7-1/providing-entity-specific-local-services-for-staging)
+    [Providing Entity-Specific Local Services for Staging](/docs/7-1/tutorials/-/knowledge_base/t/providing-entity-specific-local-services-for-staging)
     tutorial section. Since local services are more widely used in custom apps,
     this tutorial covers those instead.
 
@@ -287,16 +283,12 @@ Bookmarks application.
     This method can also return a modified version of the portlet preferences if
     it contains references to data that no longer exists.
 
-    +$$$
-
-    **Note:** This is a legacy feature that was useful when deletions were not
-    propagated between Sites. This cleaned the portlet's data, allowing you to
-    see everything associated with the portlet during every publication. It's
-    unnecessary now that Staging can recognize deletions across all Sites. It's,
-    however, still offered as a feature of Staging and is implemented in
-    Liferay's Bookmarks app, so it's included here.
-
-    $$$
+    | **Note:** This is a legacy feature that was useful when deletions were not
+    | propagated between Sites. This cleaned the portlet's data, allowing you to
+    | see everything associated with the portlet during every publication. It's
+    | unnecessary now that Staging can recognize deletions across all Sites. It's,
+    | however, still offered as a feature of Staging and is implemented in
+    | Liferay's Bookmarks app, so it's included here.
 
 9.  Add a method that counts the number of affected entities based on the
     current export or staging process:
@@ -344,7 +336,7 @@ Bookmarks application.
 
     The schema version is used to perform component related validation before
     importing data. It's added to the
-    [LAR file](/develop/tutorials/-/knowledge_base/7-1/understanding-data-handlers#liferay-archive-lar-file)
+    [LAR file](/docs/7-1/tutorials/-/knowledge_base/t/understanding-data-handlers#liferay-archive-lar-file)
     for each application being processed. During import, the environment's
     schema version is compared to the LAR file's schema version. Validating the
     schema version avoids broken data when importing. See the
@@ -354,5 +346,5 @@ Bookmarks application.
 Awesome! You've set up your portlet data handler and your application can now
 support the Export/Import framework and display a UI for it. Be sure to also
 implement staged model data handlers for your staged models. See the
-[Developing Staged Model Data Handlers](/develop/tutorials/-/knowledge_base/7-1/developing-staged-model-data-handlers)
+[Developing Staged Model Data Handlers](/docs/7-1/tutorials/-/knowledge_base/t/developing-staged-model-data-handlers)
 to do this for the Bookmarks app.

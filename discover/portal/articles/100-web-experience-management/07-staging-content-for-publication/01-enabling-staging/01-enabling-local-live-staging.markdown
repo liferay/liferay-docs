@@ -1,4 +1,8 @@
-# Enabling Local Live Staging [](id=enabling-local-live-staging)
+---
+header-id: enabling-local-live-staging
+---
+
+# Enabling Local Live Staging
 
 Local Live staging places both your staging environment and your live
 environment on the same server. When it's enabled, a clone of the site is
@@ -19,7 +23,7 @@ environment for your site.
 
 2.  Select *Local Live*. You can also enable page versioning and select staged
     content. For more information on these options, see the
-    [Enabling Page Versioning and Staged Content](/discover/portal/-/knowledge_base/7-1/enabling-page-versioning-and-staged-content)
+    [Enabling Page Versioning and Staged Content](/docs/7-1/user/-/knowledge_base/u/enabling-page-versioning-and-staged-content)
     article.
 
 3.  Click *Save*.
@@ -38,7 +42,7 @@ versioning requires staging (either Local Live or Remote Live) to be enabled.
 
 If you ever need to turn off the staging environment, return back to *Staging*
 from the Publishing dropdown. For more information on this, see the
-[Disabling Staging](/discover/portal/-/knowledge_base/7-1/disabling-staging)
+[Disabling Staging](/docs/7-1/user/-/knowledge_base/u/disabling-staging)
 article.
 
 Great! Now you're ready to use Local Live Staging.

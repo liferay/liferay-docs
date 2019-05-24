@@ -1,11 +1,15 @@
-# Defining Content Relationships [](id=defining-content-relationships)
+---
+header-id: defining-content-relationships
+---
+
+# Defining Content Relationships
 
 Related Assets are assets connected to other assets, even if they don't share
 any tags and aren't in the same category. Here you'll focus on how to define
 relationships between assets so when you begin publishing assets, the Related
 Assets widget can display those relationships. 
 
-## The Related Assets Widget [](id=the-related-assets-widget)
+## The Related Assets Widget
 
 By default, the Related Assets widget displays any related asset of the asset
 selected in the Asset Publisher. If you don't want to show every related asset,

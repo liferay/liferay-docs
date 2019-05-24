@@ -1,4 +1,8 @@
-# Configuration Templates [](id=configuration-templates)
+---
+header-id: configuration-templates
+---
+
+# Configuration Templates
 
 Once you've configured a widget, Configuration Templates can save those
 settings in a reusable template. If someone goes in and changes the settings of
@@ -26,7 +30,7 @@ Unless otherwise noted, all widgets in @product@ support this feature. This is
 particularly useful for widgets that have a lot of configuration options, such
 as the Message Boards application. 
 
-## Summary [](id=summary)
+## Summary
 
 You've now explored the configuration options available for Liferay widgets.
 You learned how to customize your widgets, export/import data, communicate

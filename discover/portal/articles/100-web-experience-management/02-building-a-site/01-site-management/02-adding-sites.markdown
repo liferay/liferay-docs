@@ -1,4 +1,8 @@
-# Adding Sites [](id=adding-sites)
+---
+header-id: adding-sites
+---
+
+# Adding Sites
 
 Sites can be created through the Control Panel by a Liferay administrator. The
 Control Panel provides an administrative interface for managing your Liferay
@@ -6,22 +10,18 @@ instance. There are four main sections of the Liferay Control Panel: Users,
 Sites, Apps, and Configuration. In this section, you'll learn how to use the
 Control Panel to manage Sites.  For information about the Apps, Users, and
 Configuration sections of the Control Panel, see the 
-[Using the Liferay Marketplace](/discover/portal/-/knowledge_base/7-1/using-the-liferay-marketplace),
-[Managing Users](/discover/portal/-/knowledge_base/7-1/managing-users), and
-[System Wide Settings](/discover/portal/-/knowledge_base/7-1/system-wide-settings) sections,
+[Using the Liferay Marketplace](/docs/7-1/user/-/knowledge_base/u/using-the-liferay-marketplace),
+[Managing Users](/docs/7-1/user/-/knowledge_base/u/managing-users), and
+[System Wide Settings](/docs/7-1/user/-/knowledge_base/u/system-wide-settings) sections,
 respectively.
 
-+$$$
-
-**Tip:** If you're signed in as an administrator, you can access all Sites by
-navigating to the Site Administration menu from the Control Panel. To manage a
-single Site, navigate to the Site by going to the Menu and clicking the *Site
-Selector* button (![Compass](../../../../images/icon-compass.png)) from the Sites
-dropdown menu and selecting the appropriate Site name. Once finished, the Site
-administration options (i.e., Navigation, Content, Members, etc.) for that Site
-are available.
-
-$$$
+| **Tip:** If you're signed in as an administrator, you can access all Sites by
+| navigating to the Site Administration menu from the Control Panel. To manage a
+| single Site, navigate to the Site by going to the Menu and clicking the *Site
+| Selector* button (![Compass](../../../../images/icon-compass.png)) from the Sites
+| dropdown menu and selecting the appropriate Site name. Once finished, the Site
+| administration options (i.e., Navigation, Content, Members, etc.) for that Site
+| are available.
 
 Now, you'll add a Site for the Lunar Resort.
 
@@ -81,19 +81,15 @@ To activate the *Users* functionality for your organization Site, you'll need to
 check *Allow Manual Membership Management* after creating the organization Site
 by navigating to its *Site Settings* menu.
 
-+$$$
-
-**Note:** It's possible for Site memberships to be handled automatically by a
-membership policy. The membership policy can check various pieces of information
-from each user, such as their first names, last names, birthdays, job titles,
-organizations, and user groups. Using this information, the Site membership
-policy can automatically assign members to the Site. If your Site will implement
-a membership policy, your Site administrators can disallow manual membership
-management for their Site. When the Allow Manual Membership Management option is
-disabled, the *Members* section of Site Administration (Site Memberships and
-Site Teams) is hidden, even from administrators.
-
-$$$
+| **Note:** It's possible for Site memberships to be handled automatically by a
+| membership policy. The membership policy can check various pieces of information
+| from each user, such as their first names, last names, birthdays, job titles,
+| organizations, and user groups. Using this information, the Site membership
+| policy can automatically assign members to the Site. If your Site will implement
+| a membership policy, your Site administrators can disallow manual membership
+| management for their Site. When the Allow Manual Membership Management option is
+| disabled, the *Members* section of Site Administration (Site Memberships and
+| Site Teams) is hidden, even from administrators.
 
 **Parent Site:** lets you select a parent Site for the Site that's being
 created. Sites can be organized hierarchically. Using hierarchical Sites
@@ -116,13 +112,13 @@ To add a page for your temporarily invisible Site, navigate to the *Navigation*
 option from Site Administration. Then add a public page. After adding your
 Site's first page, it renders and your Site is viewable. For more information
 about adding pages, see the
-[Creating and Managing Pages](/discover/portal/-/knowledge_base/7-1/creating-and-managing-pages)
+[Creating and Managing Pages](/docs/7-1/user/-/knowledge_base/u/creating-and-managing-pages)
 section.
 
 You can also categorize your Site template using tags and categories by
 selecting the *Categorization* menu from the bottom of the page. To learn more
 about using tags and categories in Liferay, see the 
-[Organizing Content with Tags and Categories](/discover/portal/-/knowledge_base/7-1/organizing-content-with-tags-and-categories)
+[Organizing Content with Tags and Categories](/docs/7-1/user/-/knowledge_base/u/organizing-content-with-tags-and-categories)
 section. Lastly, at the top of the page is an additional tab named *Social*.
 This tab manages whether users of your Site can mention other users. You'll
 learn about mentioning users later in the Social Collaboration sections.
@@ -134,6 +130,6 @@ to any Site based on it. A checkbox appears for unlinking the Site template if
 the User has permission to do so.
 
 Once the Site has been created, you should configure its settings to fit your
-needs. You can learn more about Site Settings in [Configuring Sites](/discover/portal/-/knowledge_base/7-1/configuring-sites).
+needs. You can learn more about Site Settings in [Configuring Sites](/docs/7-1/user/-/knowledge_base/u/configuring-sites).
 
 Next, you'll learn about creating pages.

@@ -1,4 +1,8 @@
-# Elasticsearch Connector Settings: Reference [](id=elasticsearch-connector-settings-reference)
+---
+header-id: elasticsearch-connector-settings-reference
+---
+
+# Elasticsearch Connector Settings: Reference
 
 Elasticsearch is the default search engine for @product-ver@. The *Liferay
 Foundation* suite includes an adapter for Elasticsearch called *Liferay Connector to
@@ -163,7 +167,7 @@ search thread pool.
 
 The following settings are only available in the Elasticsearch 6 adapter:
 
-## Configurations only Affecting the Embedded Elasticsearch Server [](id=configurations-only-affecting-the-embedded-elasticsearch-server)
+## Configurations only Affecting the Embedded Elasticsearch Server
 
 These settings (defined above) are only meant to use while configuring the
 embedded Elasticsearch server. Configuring these will elicit no effect on

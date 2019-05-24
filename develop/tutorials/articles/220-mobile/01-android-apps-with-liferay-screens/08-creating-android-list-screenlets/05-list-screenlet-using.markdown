@@ -1,7 +1,11 @@
-# Using the List Screenlet [](id=using-the-list-screenlet)
+---
+header-id: using-the-list-screenlet
+---
+
+# Using the List Screenlet
 
 You can now use your new list Screenlet 
-[the same way you use any other Screenlet](/develop/tutorials/-/knowledge_base/7-1/using-screenlets-in-android-apps): 
+[the same way you use any other Screenlet](/docs/7-1/tutorials/-/knowledge_base/t/using-screenlets-in-android-apps): 
 
 1. Insert the Screenlet's XML in the layout of the activity or fragment you want 
    to use the Screenlet in. For example, here's Bookmark List Screenlet's XML: 
@@ -44,6 +48,6 @@ You can now use your new list Screenlet
 
 Well done! Now you know how to create list Screenlets. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/7-1/using-screenlets-in-android-apps)
+[Using Screenlets in Android Apps](/docs/7-1/tutorials/-/knowledge_base/t/using-screenlets-in-android-apps)

@@ -1,4 +1,8 @@
-# Defining Role Permissions [](id=defining-role-permissions)
+---
+header-id: defining-role-permissions
+---
+
+# Defining Role Permissions
 
 Roles collect permissions, so when Users are given a Role, they receive all the
 permissions defined by the Role. 
@@ -48,18 +52,14 @@ see an empty list if they try to add Users to a Role.
 
 ![Figure 2: Users assigned to the User Group Manager role can't find any users to add unless they have view permissions on the User resource.](../../../images/roles-no-users-found.png)
 
-+$$$
-
-**Note:** The Roles application in the Control Panel is not the only place where
-permissions are configured. You can configure a Role's permissions on a resource
-at a more granular level. For example, from a particular application instance,
-click its *Options* (![Options](../../../images/icon-options.png)) menu and
-select *Permissions*. There you can configure permissions for the resource that
-overlap with those configured in the Control Panel's Roles application. However,
-permissions granted or removed in the Control Panel override those made at the
-more granular level.
-
-$$$
+| **Note:** The Roles application in the Control Panel is not the only place where
+| permissions are configured. You can configure a Role's permissions on a resource
+| at a more granular level. For example, from a particular application instance,
+| click its *Options* (![Options](../../../images/icon-options.png)) menu and
+| select *Permissions*. There you can configure permissions for the resource that
+| overlap with those configured in the Control Panel's Roles application. However,
+| permissions granted or removed in the Control Panel override those made at the
+| more granular level.
 
 There are three categories of permissions: *Control Panel*, *Site
 Administration*, and *User*. By default, Users can manage their User accounts
@@ -96,7 +96,7 @@ Application default view by clicking on the *Back*
 Sometimes you might find that a certain permission grants more or less access
 than what you expected---always test your permissions configurations! 
 
-## Delegating Social Activities Configuration [](id=delegating-social-activities-configuration)
+## Delegating Social Activities Configuration
 
 There's a permission that allows Site administrators to delegate responsibility
 for configuring social activities to other Users. To add this permission to a

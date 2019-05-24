@@ -1,4 +1,8 @@
-# Patching Basics [](id=patching-basics)
+---
+header-id: patching-basics
+---
+
+# Patching Basics
 
 Liferay ships @product-ver@ fixes through three different channels: 
 
@@ -6,7 +10,7 @@ Liferay ships @product-ver@ fixes through three different channels:
 - Hotfixes 
 - Service Packs 
 
-## Fix Packs [](id=fix-packs)
+## Fix Packs
 
 The latest fixes that patch the core are bundled together weekly into fix packs
 that are provided to all of Liferay's customers. Fix packs include fixes for
@@ -18,7 +22,7 @@ service pack.
 Fixes that don't fit these requirements are considered for service packs or hot
 fixes. 
 
-## Hotfixes [](id=hotfixes)
+## Hotfixes
 
 A hotfix is provided to customers when they contact Liferay about an emergency
 situation, and Liferay's support team---working with the customer---determines
@@ -26,7 +30,7 @@ that the problem is a product issue that must be fixed very quickly. Support
 fixes the bug and provides a hotfix to the customer immediately. This is
 a short-term fix. Hotfixes can patch the core, the applications, and modules. 
 
-## Service Packs [](id=service-packs)
+## Service Packs
 
 Every tenth fix pack is a service pack, so their frequency varies. Their version
 numbers always end in a zero (e.g., `10`, `20`, etc.). Service packs are built
@@ -54,7 +58,7 @@ Rather than updating existing @product@ systems with service packs, you should
 This method updates the installation to the service pack levels, while allowing
 scheduled deployments and avoiding full environment rebuilds. 
 
-## How Patches are Tested [](id=how-patches-are-tested)
+## How Patches are Tested
 
 Liferay extensively tests service packs, fix packs, and hotfixes to ensure high
 quality. Fixes in fix packs go through both automated regression testing and

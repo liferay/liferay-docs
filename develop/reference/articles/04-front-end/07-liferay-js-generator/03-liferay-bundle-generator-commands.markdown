@@ -1,4 +1,8 @@
-# Liferay JS Generator Commands [](id=liferay-js-generator-commands)
+---
+header-id: liferay-js-generator-commands
+---
+
+# Liferay JS Generator Commands
 
 The npm commands shown below are available for the Liferay JS Generator:
 
@@ -13,18 +17,14 @@ The npm commands shown below are available for the Liferay JS Generator:
   changes without any need to deploy. Note, however, that because this is 
   separate from a Liferay instance, you don't have access to Liferay's APIs. 
 
-+$$$
-
-**Note:** By default, the webpack server uses port 8080. You can point the 
-webpack server to a different port by setting the `port` key in `.npmbuildrc`:
- 
-    "webpack": {
-      "port": 2070
-    }
-
-$$$
+| **Note:** By default, the webpack server uses port 8080. You can point the
+| webpack server to a different port by setting the `port` key in `.npmbuildrc`:
+| 
+|     "webpack": {
+|       "port": 2070
+|     }
 
 - `npm run translate`: Runs the translation features for your bundle. Note that 
   this feature requires Microsoft Translator credentials. See 
-  [Using Translation Features in Your widget](/develop/tutorials/-/knowledge_base/7-1/using-translation-features-in-your-portlet) 
+  [Using Translation Features in Your widget](/docs/7-1/tutorials/-/knowledge_base/t/using-translation-features-in-your-portlet) 
   for more information.

@@ -1,4 +1,8 @@
-# Generating Model, Service, and Persistence Layers [](id=generating-model-service-and-persistence-layers)
+---
+header-id: generating-model-service-and-persistence-layers
+---
+
+# Generating Model, Service, and Persistence Layers
 
 <div class="learn-path-step">
     <p>Generating the Back-end<br>Step 2 of 3</p>
@@ -62,7 +66,7 @@ It's time to get started. You'll create the `Guestbook` entity first:
 
     The Audit section defines @product@ metadata. The `companyId` is the primary
     key of a 
-    [portal instance](/discover/portal/-/knowledge_base/7-1/setting-up).
+    [portal instance](/docs/7-1/user/-/knowledge_base/u/setting-up).
     The `userId` is the primary key of a user. The `createDate` and
     `modifiedDate` store the respective dates on which the entity instance is
     created and modified. The Status section is used later to implement
@@ -82,7 +86,7 @@ It's time to get started. You'll create the `Guestbook` entity first:
     A finder generates a `get` method you'll use to retrieve Guestbook entities.
     The fields used by the finder define the scope of the data retrieved. This
     finder gets all Guestbooks by their `groupId`, which corresponds to the
-    [Site](/discover/portal/-/knowledge_base/7-1/building-a-site) the
+    [Site](/docs/7-1/user/-/knowledge_base/u/building-a-site) the
     application is on. This lets administrators put Guestbooks on multiple 
     Sites, and each `Guestbook` has its own data scoped to its Site. 
 
@@ -142,7 +146,7 @@ entity:
 
     Here, you define a finder that gets guestbook entries by `groupId` and 
     `guestbookId`. As before, the `groupId` corresponds to the
-    [Site](/discover/portal/-/knowledge_base/7-1/building-a-site) the
+    [Site](/docs/7-1/user/-/knowledge_base/u/building-a-site) the
     application is on. The `guestbookId` defines the guestbook the entries come 
     from. This finder returns a `Collection` of entries. 
 

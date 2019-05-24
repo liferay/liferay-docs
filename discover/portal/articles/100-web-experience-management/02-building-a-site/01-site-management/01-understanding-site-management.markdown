@@ -1,4 +1,8 @@
-# Understanding Site Management [](id=understanding-Site-management)
+---
+header-id: understanding-Site-management
+---
+
+# Understanding Site Management
 
 Whether you're building a large corporate webSite or a small Site for
 facilitating collaboration among team members, supporting different kinds of
@@ -24,7 +28,7 @@ Site's *Options* button
 
 (![Options](../../../../images/icon-actions.png)) and clicking *Join*.
 
-## Site Scope [](id=site-scope)
+## Site Scope
 
 Members of a Site can be given additional privileges in the Site by using
 permissions. It is also possible to assign different roles within the
@@ -39,7 +43,7 @@ Content, Categorization, Recycle Bin, Members, Configuration, and Publishing.
 
 ![Figure 1: Your Site's content resides in the Site Administration menu.](../../../../images/web-content-site-content.png)
 
-## Site Hierarchies [](id=site-hierarchies)
+## Site Hierarchies
 
 Sites can also be organized hierarchically, just like Organizations. The
 difference between Sites and Organizations, of course, is that Sites organize
@@ -88,7 +92,7 @@ determines how many levels of nested pages to display.
 
 ![Figure 2: The Site Map application lets users navigate among pages of a Site organized hierarchically.](../../../../images/site-directory-site-map.png)
 
-## Site Members [](id=site-members)
+## Site Members
 
 Another useful administrative application is the Site Members application. This
 enables administrators to survey all the users, organizations, and user groups
@@ -96,7 +100,7 @@ that reside in the Site. Similarly, Liferay provides the Portal Directory
 application, which functions the same as the Site Members app, but globally
 scoped for all Sites in the instance.
 
-## Page Sets [](id=page-sets)
+## Page Sets
 
 Sites have two categories of pages called page sets. There are two kinds of page
 sets: public pages and private pages. A Site can have only public pages, only

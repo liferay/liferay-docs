@@ -1,4 +1,8 @@
-# Screenlet Layer [](id=screenlet-layer)
+---
+header-id: screenlet-layer
+---
+
+# Screenlet Layer
 
 The Screenlet layer contains the Screenlets available in Liferay Screens for
 Android. The following diagram uses Screenlet classes prefixed with
@@ -73,15 +77,15 @@ Screenlet's View. Here's a skeleton of a Screenlet's layout XML file:
     </com.your.package.MyScreenletView>
 
 Refer to the tutorial
-[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/7-1/creating-android-screenlets)
+[Creating Android Screenlets](/docs/7-1/tutorials/-/knowledge_base/t/creating-android-screenlets)
 for more Screenlet details. Next, the View layer's details are described. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[High-Level Architecture](/develop/tutorials/-/knowledge_base/7-1/high-level-architecture)
+[High-Level Architecture](/docs/7-1/tutorials/-/knowledge_base/t/high-level-architecture)
 
-[Core Layer](/develop/tutorials/-/knowledge_base/7-1/core-layer)
+[Core Layer](/docs/7-1/tutorials/-/knowledge_base/t/core-layer)
 
-[View Layer](/develop/tutorials/-/knowledge_base/7-1/view-layer)
+[View Layer](/docs/7-1/tutorials/-/knowledge_base/t/view-layer)
 
-[Screenlet Lifecycle](/develop/tutorials/-/knowledge_base/7-1/screenlet-lifecycle)
+[Screenlet Lifecycle](/docs/7-1/tutorials/-/knowledge_base/t/screenlet-lifecycle)

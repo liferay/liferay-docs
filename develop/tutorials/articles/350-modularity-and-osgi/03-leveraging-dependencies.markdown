@@ -1,4 +1,8 @@
-# Leveraging Dependencies [](id=leveraging-dependencies)
+---
+header-id: leveraging-dependencies
+---
+
+# Leveraging Dependencies
 
 Using an OSGi manifest, a module declares the Java packages it consumes and
 shares. The manifest's `Import-Package` and `Export-Package` settings expose
@@ -14,7 +18,7 @@ This part of the tutorial explains:
 
 Let's start by learning how dependencies operate in @product-ver@.
 
-## How Dependencies Work [](id=how-dependencies-work)
+## How Dependencies Work
 
 Each module's manifest lists the packages the module depends on. Using a build
 environment such as Gradle, Maven, or Ant/Ivy, you can set dependencies on each
@@ -24,19 +28,15 @@ happens at runtime: the OSGi runtime knows exactly which modules depend on which
 other modules (failing fast if any dependency is unmet). Dependency management
 is explicit and enforced automatically upfront.
 
-+$$$
-
-**Note**: Since Liferay 7.0, all of what was in Liferay Portal 6 and its apps
-has been refactored into OSGi modules. The `portal-service` API (the main API in
-Liferay Portal 6) has been replaced by the `portal-kernel` module
-(@product-ver@'s kernel API) and many small, highly-cohesive modules that
-provide frameworks, utilities, apps, and more. Not only do @product@ modules
-depend on third-party modules but they also depend on each other. You can
-likewise leverage dependencies in your projects. Whether you're developing new
-OSGi modules or continuing to develop traditional apps, you need only set
-dependencies on modules whose packages you need.
-
-$$$
+| **Note**: Since Liferay 7.0, all of what was in Liferay Portal 6 and its apps
+| has been refactored into OSGi modules. The `portal-service` API (the main API in
+| Liferay Portal 6) has been replaced by the `portal-kernel` module
+| (@product-ver@'s kernel API) and many small, highly-cohesive modules that
+| provide frameworks, utilities, apps, and more. Not only do @product@ modules
+| depend on third-party modules but they also depend on each other. You can
+| likewise leverage dependencies in your projects. Whether you're developing new
+| OSGi modules or continuing to develop traditional apps, you need only set
+| dependencies on modules whose packages you need.
 
 Versioning is independent for each module and its exported packages. You can use
 a specific package version by depending on the version of the module that
@@ -50,7 +50,7 @@ It's a standard that enables API authors to communicate programmatic
 compatibility of a package or module automatically as it relates to dependent
 consumers and API implementations. If a package is programmatically (i.e.,
 semantically) incompatible with a project, bnd (used in Liferay Workspace and
-projects created from [Liferay project templates](/develop/reference/-/knowledge_base/7-1/project-templates)) fails
+projects created from [Liferay project templates](/docs/7-1/reference/-/knowledge_base/r/project-templates)) fails
 that project's build immediately. Developers not using bnd can check package
 versions manually in each dependency module's manifest.
 
@@ -68,7 +68,7 @@ don't want.
 Next you want to consider when to modularize existing apps and when to combine
 modules to create apps.
 
-## Dependencies Facilitate Modular Development [](id=dependencies-facilitate-modular-development)
+## Dependencies Facilitate Modular Development
 
 @product@'s support of dependencies and semantic versioning facilitates modular
 development. The dependency frameworks enable you to use modules and link them
@@ -82,11 +82,11 @@ Here are some general steps to consider when modularizing an existing app:
 1. **Start by putting the entire app in a single module**: This is a minimal
 first step that acquaints you with Liferay's module framework. You'll gain
 confidence as you build, deploy, and test your app in an environment of your
-choice, such as a [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace),
-Gradle, or Maven [project](/develop/reference/-/knowledge_base/7-1/project-templates).
+choice, such as a [Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace),
+Gradle, or Maven [project](/docs/7-1/reference/-/knowledge_base/r/project-templates).
 
 2. **Split the front-end from the back-end**: Modularizing front-end portlets
-and servlets and back-end implementations (e.g., [Service Builder](/develop/tutorials/-/knowledge_base/7-1/service-builder)
+and servlets and back-end implementations (e.g., [Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/service-builder)
 or OSGi component) is a logical next step. This enables each code area to evolve
 separately and allows for varying implementations.
 
@@ -147,19 +147,15 @@ considered guidelines for modularizing existing apps and creating new modular
 apps. Now, to add to the momentum around OSGi and modularity, explore
 [OSGi Services and dependency injection using OSGi Declarative Services](osgi-services-and-dependency-injection-with-declarative-services).
 
-+$$$
+| If you visited this tutorial as a part of the Learning Path
+| [From Liferay Portal 6 to 7.1](/docs/7-1/tutorials/-/knowledge_base/t/from-liferay-6-to-liferay-7),
+| you can continue with the next topic:
+| [OSGi Services and dependency injection using OSGi Declarative Services](/docs/7-1/tutorials/-/knowledge_base/t/osgi-services-and-dependency-injection-with-declarative-services).
 
-If you visited this tutorial as a part of the Learning Path
-[From Liferay Portal 6 to 7.1](/develop/tutorials/-/knowledge_base/7-1/from-liferay-6-to-liferay-7),
-you can continue with the next topic:
-[OSGi Services and dependency injection using OSGi Declarative Services](/develop/tutorials/-/knowledge_base/7-1/osgi-services-and-dependency-injection-with-declarative-services).
+## Related Topics
 
-$$$
+[Configuring Dependencies](/docs/7-1/tutorials/-/knowledge_base/t/configuring-dependencies)
 
-## Related Topics [](id=related-topics)
+[Importing Packages](/docs/7-1/tutorials/-/knowledge_base/t/importing-packages)
 
-[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies)
-
-[Importing Packages](/develop/tutorials/-/knowledge_base/7-1/importing-packages)
-
-[Exporting Packages](/develop/tutorials/-/knowledge_base/7-1/exporting-packages)
+[Exporting Packages](/docs/7-1/tutorials/-/knowledge_base/t/exporting-packages)

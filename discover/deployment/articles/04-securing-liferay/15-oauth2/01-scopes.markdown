@@ -1,4 +1,8 @@
-# OAuth2 Scopes [](id=oauth2-scopes)
+---
+header-id: oauth2-scopes
+---
+
+# OAuth2 Scopes
 
 In OAuth 2.0, applications are granted access to limited subsets of user data.
 These are called *scopes* (not to be confused with Liferay scopes). They are
@@ -10,10 +14,10 @@ created in two ways:
     generated based on the HTTP verbs supported by the JAX-RS endpoint.
     A special annotation override this behavior and register specific scopes. 
 
-## Creating a Scope for a JSONWS Service [](id=creating-a-scope-for-a-jsonws-service)
+## Creating a Scope for a JSONWS Service
 
 The most common way to create a scope is to create a 
-[Service Access Policy](/discover/deployment/-/knowledge_base/7-1/service-access-policies)
+[Service Access Policy](/docs/7-1/deploy/-/knowledge_base/d/service-access-policies)
 prefixed with the name `OAUTH2_`. This naming convention causes the policy to appear
 in the OAuth application configuration screen as a scope. 
 
@@ -38,7 +42,7 @@ the *Scopes* tab in OAuth2 Administration.
 
 Now you can select it and save your application. 
 
-## Creating a Scope for a JAX-RS Service [](id=creating-a-scope-for-a-jax-rs-service)
+## Creating a Scope for a JAX-RS Service
 
 Without any special Liferay OAuth2 annotations or properties, a standard OSGi
 JAX-RS application is inspected by the Liferay OAuth2 runtime and scopes are
@@ -54,7 +58,7 @@ whole classes like this:
 
 Once deployed, this becomes a scope in the OAuth 2.0 configuration. 
 
-## Creating the Authorization Page [](id=creating-the-authorization-page)
+## Creating the Authorization Page
 
 This step is optional. Users need an interface to authorize access to their
 accounts, and one is provided automatically. If, however, you want to customize

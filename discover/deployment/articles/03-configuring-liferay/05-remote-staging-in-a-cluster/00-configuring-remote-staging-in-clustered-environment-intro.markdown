@@ -1,7 +1,11 @@
-# Configuring Remote Staging in a Clustered Environment [](id=configuring-remote-staging-in-a-clustered-environment)
+---
+header-id: configuring-remote-staging-in-a-clustered-environment
+---
+
+# Configuring Remote Staging in a Clustered Environment
 
 If you're running @product@ as a
-[clustered environment](/discover/deployment/-/knowledge_base/7-1/liferay-clustering)
+[clustered environment](/docs/7-1/deploy/-/knowledge_base/d/liferay-clustering)
 and you want to use remote staging, you must configure it properly for a
 seamless experience. In this tutorial, you'll learn how to set up remote staging
 in an example clustered environment scenario. The example environment assumes
@@ -34,23 +38,19 @@ Let's begin!
 
         tunneling.servlet.shared.secret.hex=true
 
-    +$$$
-
-    **Note:** The following key lengths are supported by the available
-    encryption algorithms:
-
-    - *AES:* 128, 192, and 256-bit keys
-    - *Blowfish:* 32-448 bit keys
-    - *DESede (Triple DES):* 56, 112, or 168 bit keys (Liferay places an
-      artificial limit on the minimum key length and does not support the 56-bit
-      key length)
-
-    For example, you can use [OpenSSL](https://www.openssl.org/) to generate a
-    128-bit AES key:
-
-        openssl enc -aes-128-cbc -k abc123 -P -md sha1
-
-    $$$
+    | **Note:** The following key lengths are supported by the available
+    | encryption algorithms:
+    | 
+    | - *AES:* 128, 192, and 256-bit keys
+    | - *Blowfish:* 32-448 bit keys
+    | - *DESede (Triple DES):* 56, 112, or 168 bit keys (Liferay places an
+    |   artificial limit on the minimum key length and does not support the 56-bit
+    |   key length)
+    | 
+    | For example, you can use [OpenSSL](https://www.openssl.org/) to generate a
+    | 128-bit AES key:
+    | 
+    |     openssl enc -aes-128-cbc -k abc123 -P -md sha1
 
 2.  You must allow the connection between the configured IPs of your app servers
     and the Staging server. Open your remote Liferay server's
@@ -81,7 +81,7 @@ Let's begin!
       file and insert the properties listed below. Creating one `.config` file
       configures all cluster nodes the same way. For more information on
       `.config` files, see the
-      [Understanding System Configuration Files](/discover/portal/-/knowledge_base/7-1/understanding-system-configuration-files)
+      [Understanding System Configuration Files](/docs/7-1/user/-/knowledge_base/u/understanding-system-configuration-files)
       article.
 
             enabled=true

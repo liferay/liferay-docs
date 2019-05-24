@@ -1,4 +1,8 @@
-# JAX-RS [](id=jax-rs)
+---
+header-id: jax-rs
+---
+
+# JAX-RS
 
 JAX-RS web services work in Liferay modules the same way they work outside of
 Liferay. The only difference is that you must register the class in the OSGi
@@ -15,43 +19,39 @@ In Liferay Developer Studio, create a new module using the *rest* template:
 4.  Click *Finish*. 
 
 Alternatively, use 
-[Blade CLI](/develop/tutorials/-/knowledge_base/7-1/creating-projects-with-blade-cli)
+[Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/creating-projects-with-blade-cli)
 to create the project. 
 
-+$$$
-
-**Note:** The initial release of @product-ver@'s development tools created
-a project with an invalid configuration. If your class contains an
-`@ApplicationPath` annotation, you must update the following files: 
-
-**Your Java Class:** 
-
-1.  Add the following import: 
-
-        import org.osgi.service.jaxrs.whiteboard.JaxrsWhiteboardConstants;
-
-2.  Remove the `@ApplicationPath` annotation. 
-
-3.  Modify the `@Component` annotation so it looks like this: 
-
-        @Component( 
-		property = { 
-			JaxrsWhiteboardConstants.JAX_RS_APPLICATION_BASE + "=/greetings", 
-			JaxrsWhiteboardConstants.JAX_RS_NAME + "=Greetings.Rest"
-		}, 
-		service = Application.class)
-
-**build.gradle:**
-
-Add the following dependency: 
-
-	compileOnly group: "org.osgi", name: "org.osgi.service.jaxrs", version: "1.0.0"
-
-**Files to delete:**
-
-Delete everything under `src/main/resources/configuration`. 
-
-$$$
+| **Note:** The initial release of @product-ver@'s development tools created
+| a project with an invalid configuration. If your class contains an
+| `@ApplicationPath` annotation, you must update the following files:
+| 
+| **Your Java Class:**
+| 
+| 1.  Add the following import:
+| 
+|         import org.osgi.service.jaxrs.whiteboard.JaxrsWhiteboardConstants;
+| 
+| 2.  Remove the `@ApplicationPath` annotation.
+| 
+| 3.  Modify the `@Component` annotation so it looks like this:
+| 
+|         @Component(
+|   property = {
+|    JaxrsWhiteboardConstants.JAX_RS_APPLICATION_BASE + "=/greetings",
+|    JaxrsWhiteboardConstants.JAX_RS_NAME + "=Greetings.Rest"
+|   },
+|   service = Application.class)
+| 
+| **build.gradle:**
+| 
+| Add the following dependency:
+| 
+|  compileOnly group: "org.osgi", name: "org.osgi.service.jaxrs", version: "1.0.0"
+| 
+| **Files to delete:**
+| 
+| Delete everything under `src/main/resources/configuration`.
 
 The class that's generated contains a working JAX-RS web service. You can deploy
 it and use it immediately. 
@@ -85,11 +85,11 @@ If you're testing this locally on Tomcat, the URL is
 As you might guess, you don't have access to the service by just calling the URL
 above. You must authenticate first, which you'll learn how to do next. 
 
-## Using OAuth 2.0 to Invoke a JAX-RS Web Service [](id=using-oauth-2-0-to-invoke-a-jax-rs-web-service)
+## Using OAuth 2.0 to Invoke a JAX-RS Web Service
 
 Your JAX-RS web service requires authorization by default. To enable this, you
 must create an 
-[OAuth 2.0 application](/discover/deployment/-/knowledge_base/7-1/oauth-2-0#creating-an-application)
+[OAuth 2.0 application](/docs/7-1/deploy/-/knowledge_base/d/oauth-2-0#creating-an-application)
 to provide a way to grant access to your service: 
 
 1.  Go to the *Control Panel* &rarr; *Configuration* &rarr; *OAuth2
@@ -141,7 +141,7 @@ With authorization, your web service can be called and responds to the request:
 Of course, this is only one of the authorization flows for OAuth 2.0. If you're
 creating a web-based client whose back-end is a JAX-RS web service hosted on
 @product@, you'd want one of the other flows. See the 
-[OAuth 2.0 documentation](/discover/deployment/-/knowledge_base/7-1/oauth-2-0)
+[OAuth 2.0 documentation](/docs/7-1/deploy/-/knowledge_base/d/oauth-2-0)
 for further information. Additionally, OAuth 2.0 assumes the use of HTTPS for
 its security: the above URLs are only for local testing purposes. You certainly
 would not want to pass OAuth tokens between clients and servers in the clear.
@@ -150,6 +150,6 @@ Make sure that in production your server uses HTTPS.
 Great! Now you know how to create, deploy, and invoke JAX-RS web services on
 @product@'s platform! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Service Builder Web Services](/develop/tutorials/-/knowledge_base/7-1/service-builder-web-services)
+[Service Builder Web Services](/docs/7-1/tutorials/-/knowledge_base/t/service-builder-web-services)

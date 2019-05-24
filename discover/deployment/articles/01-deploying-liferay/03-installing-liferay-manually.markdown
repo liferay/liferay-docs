@@ -1,7 +1,11 @@
-# Installing @product@ Manually [](id=installing-liferay-manually)
+---
+header-id: installing-liferay-manually
+---
+
+# Installing @product@ Manually
 
 The easiest way to install @product@ is to
-[use a bundle](/discover/deployment/-/knowledge_base/7-1/installing-liferay).
+[use a bundle](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay).
 However, this is not always possible. Some organizations have an existing
 infrastructure into which @product@ must be installed. Other organizations have
 standardized on a particular application server. @product@ works well with many
@@ -15,7 +19,7 @@ topics are covered:
 
 Start with data sources. 
 
-## Using Data Sources [](id=using-data-sources)
+## Using Data Sources
 
 @product@ provides two ways to configure your data source:
 
@@ -25,11 +29,11 @@ Start with data sources.
 We recommend the built-in data source. @product@'s data source is configured
 by properties set in a properties file. By default, you can enter database
 connection information on the 
-[Basic Configuration page](/discover/deployment/-/knowledge_base/7-1/installing-liferay#using-liferays-setup-wizard)
+[Basic Configuration page](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#using-liferays-setup-wizard)
 that appears when @product@ starts for the first time. The Setup Wizard stores
 the information you entered in a configuration file called
 `portal-setup-wizard.properties` in your 
-[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
+[Liferay Home](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home)
 folder. The built-in data source uses this information to connect to the
 database.
 
@@ -46,7 +50,7 @@ a JNDI data source.
 
 Since mail sessions are configured similarly to data sources, they're next.
 
-## Using Mail Sessions [](id=using-mail-sessions)
+## Using Mail Sessions
 
 @product@ uses SMTP to send mail. As with databases, you have two ways to
 configure your mail server:
@@ -77,7 +81,7 @@ The installation articles for each application server also include instructions
 for configuring your application server to manage the database connection and
 mail server.
 
-## Manual Configuration [](id=manual-configuration)
+## Manual Configuration
 
 To have your application server manage your database connection or mail server
 (or both), you must manually create this configuration. Create a text file
@@ -123,7 +127,7 @@ in the `portal-ext.properties` file:
 
 When you're finished, save the file.
 
-## Logging [](id=logging)
+## Logging
 
 After deploying @product@, you may see excessive warnings and log messages, such
 as the ones below, involving `PhaseOptimizer`. These are benign and can be

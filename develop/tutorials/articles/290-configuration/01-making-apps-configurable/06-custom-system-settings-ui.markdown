@@ -1,4 +1,8 @@
-# Customizing the System Settings User Interface [](id=customizing-the-system-settings-user-interface)
+---
+header-id: customizing-the-system-settings-user-interface
+---
+
+# Customizing the System Settings User Interface
 
 @product@ applications use the Apache Felix Configuration Admin Service to
 provide application configuration. By specifying a single Configuration
@@ -7,7 +11,7 @@ gains an auto-generated configuration user interface, available in Control Panel
 &rarr; Configuration &rarr; System Settings once the configuration is
 registered. If this is new information for you, consider first reading the set
 of tutorials on 
-[Making Applications Configurable](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable).
+[Making Applications Configurable](/docs/7-1/tutorials/-/knowledge_base/t/making-applications-configurable).
 
 This tutorial describes how to customize the System Settings entry's user
 interface in the following ways:
@@ -24,10 +28,10 @@ interface in the following ways:
   meant to be accessible to administrative Users (perhaps because it's too low
   level), you might want to exclude it from the System Settings UI.
 
-## Providing Custom Configuration Forms [](id=providing-custom-configuration-forms)
+## Providing Custom Configuration Forms
 
 This method relies on an existing Config Admin configuration class, as described
-[here](/develop/tutorials/-/knowledge_base/7-1/making-applications-configurable). 
+[here](/docs/7-1/tutorials/-/knowledge_base/t/making-applications-configurable). 
 Here's an example configuration class, from Liferay's own Currency Converter
 application:
 
@@ -105,9 +109,9 @@ The above example generates a custom rendering (HTML) for the form in the
 
 To see a complete demonstration, including JSP markup, read the dedicated
 tutorial on creating a 
-[configuration form renderer](/develop/tutorials/-/knowledge_base/7-1/configuration-form-renderer).
+[configuration form renderer](/docs/7-1/tutorials/-/knowledge_base/t/configuration-form-renderer).
 
-## Creating a Completely Custom Configuration UI [](id=creating-a-completely-custom-configuration-ui)
+## Creating a Completely Custom Configuration UI
 
 In some cases, you want a completely custom UI for your configuration. For
 example: 
@@ -171,7 +175,7 @@ The String that appears in System Settings is _Sample Configuration Screen_.
     }
 
 Third, set the 
-[configuration scope](/develop/tutorials/-/knowledge_base/7-1/scoping-configurations).
+[configuration scope](/docs/7-1/tutorials/-/knowledge_base/t/scoping-configurations).
 
     @Override 
     public void render(HttpServletRequest request, HttpServletResponse response) 
@@ -196,7 +200,7 @@ It's beyond the scope of this tutorial to write the JSP markup. A separate
 tutorial will provide a complete demonstration of the `ConfigurationScreen` and
 implementation and the JSP markup to demonstrate its usage.
 
-## Excluding a Configuration UI from System Settings [](id=excluding-a-configuration-ui-from-system-settings)
+## Excluding a Configuration UI from System Settings
 
 Providing a custom UI in System Settings is well and good, but what if you
 instead must exclude your configuration from the System Settings UI? For
@@ -223,5 +227,5 @@ suppress the auto-generated UI. Here is an example:
 
 Now the configuration is available to be managed programmatically or via
 [.config
-file](/discover/portal/-/knowledge_base/7-1/understanding-system-configuration-files),
+file](/docs/7-1/user/-/knowledge_base/u/understanding-system-configuration-files),
 but not via the System Settings UI.

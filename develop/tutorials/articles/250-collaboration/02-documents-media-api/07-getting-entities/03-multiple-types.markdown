@@ -1,4 +1,8 @@
-# Getting Multiple Entity Types [](id=getting-multiple-entity-types)
+---
+header-id: getting-multiple-entity-types
+---
+
+# Getting Multiple Entity Types
 
 There are also methods in the Documents and Media API that retrieve lists 
 containing several entity types. These methods use many of the same parameters 
@@ -6,7 +10,7 @@ as those already described for retrieving files and folders. For example,
 [this method](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#getFileEntriesAndFileShortcuts-long-long-int-int-int-) 
 gets files and shortcuts from a given repository and folder. The `status` 
 parameter specifies a 
-[workflow](/discover/portal/-/knowledge_base/7-1/workflow) 
+[workflow](/docs/7-1/user/-/knowledge_base/u/workflow) 
 status. As before, the `start` and `end` parameters control pagination of the 
 entities: 
 
@@ -25,7 +29,7 @@ default Site repository's root folder:
         private DLAppService _dlAppService;
 
     For more information on this, see the section on 
-    [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
+    [getting a service reference](/docs/7-1/tutorials/-/knowledge_base/t/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
     in the getting started tutorial. 
 
 2.  Get the data needed to populate the method's arguments any way you wish. To
@@ -70,10 +74,10 @@ default Site repository's root folder:
         constant `ALL_POS` for the start and end positions in the results. This 
         specifies all results, bypassing pagination. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Getting Started with the Documents and Media API](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api)
+[Getting Started with the Documents and Media API](/docs/7-1/tutorials/-/knowledge_base/t/getting-started-with-the-documents-and-media-api)
 
-[Getting Files](/develop/tutorials/-/knowledge_base/7-1/getting-files)
+[Getting Files](/docs/7-1/tutorials/-/knowledge_base/t/getting-files)
 
-[Getting Folders](/develop/tutorials/-/knowledge_base/7-1/getting-folders)
+[Getting Folders](/docs/7-1/tutorials/-/knowledge_base/t/getting-folders)

@@ -1,4 +1,8 @@
-# Selling Your App or Making it Free [](id=selling-your-app-or-making-it-free)
+---
+header-id: selling-your-app-or-making-it-free
+---
+
+# Selling Your App or Making it Free
 
 Do you want to sell your app on the Marketplace? Or do you want to share
 it freely with anyone on the Marketplace? It's up to you. Most of the content that

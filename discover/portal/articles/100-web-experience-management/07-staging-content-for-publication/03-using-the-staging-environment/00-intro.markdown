@@ -1,6 +1,10 @@
-# Using the Staging Environment [](id=using-the-staging-environment)
+---
+header-id: using-the-staging-environment
+---
 
-After [enabling staging](/discover/portal/-/knowledge_base/7-1/enabling-staging)
+# Using the Staging Environment
+
+After [enabling staging](/docs/7-1/user/-/knowledge_base/u/enabling-staging)
 (either Local Live or Remote Live) for a site, you'll notice additional options
 provided on the top Control Menu (Staging Bar) and also in the menu to the left.
 These new menus help you manage staged pages. Most of your page management

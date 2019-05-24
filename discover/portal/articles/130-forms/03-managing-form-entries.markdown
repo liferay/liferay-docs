@@ -1,4 +1,8 @@
-# Managing Form Entries [](id=managing-form-entries)
+---
+header-id: managing-form-entries
+---
+
+# Managing Form Entries
 
 Once users begin submitting form entries, you'll want to do these things with
 them:
@@ -9,7 +13,7 @@ them:
 
 Start by learning how to access and view the entries.
 
-## Viewing Form Entries [](id=viewing-form-entries)
+## Viewing Form Entries
 
 When users fill out forms, they're generating data. You'll want to see that data
 at some point. 
@@ -32,7 +36,7 @@ at some point.
 Viewing entries is great, but this is serious data we're talking about. You
 might need to get all the entries into a spreadsheet so you can work with them. 
 
-## Exporting Form Entries [](id=exporting-form-entries)
+## Exporting Form Entries
 
 So you need to put your form entries in a spreadsheet to do spreadsheet things
 with them? No problem.
@@ -51,17 +55,13 @@ with them? No problem.
 
 ![Figure 3: You can export entries as CSV, XLS, or XML.](../../images/forms-export-csv.png)
 
-+$$$
-
-**Note:** The Forms application itself has an *Import/Export* window accessible 
-from the application's Configuration menu
-(![Configuration](../../images/icon-options.png)). This is how you import and
-export the application configuration and its data (forms and form entries). The
-file format for this type of import and export is a LAR file. For more
-information, see the article on
-[importing and exporting application content](/discover/portal/-/knowledge_base/7-1/importing-exporting-pages-and-content).
-
-$$$
+| **Note:** The Forms application itself has an *Import/Export* window accessible
+| from the application's Configuration menu
+| (![Configuration](../../images/icon-options.png)). This is how you import and
+| export the application configuration and its data (forms and form entries). The
+| file format for this type of import and export is a LAR file. For more
+| information, see the article on
+| [importing and exporting application content](/docs/7-1/user/-/knowledge_base/u/importing-exporting-pages-and-content).
 
 There's a system level setting to determine whether administrators can export
 entries in CSV format:
@@ -83,7 +83,7 @@ entries in CSV format:
 Once you export a batch of form entries, it can make sense to delete them from
 the database.
 
-## Deleting Form Entries [](id=deleting-form-entries)
+## Deleting Form Entries
 
 What if you export a form's entries and now you want to remove them from the
 Liferay database? It's easy to delete all of a form's entries at once.

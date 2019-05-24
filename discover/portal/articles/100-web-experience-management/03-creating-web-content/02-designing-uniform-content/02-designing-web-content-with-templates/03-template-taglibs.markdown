@@ -1,4 +1,8 @@
-# Using Taglibs in Templates [](id=using-taglibs-in-templates)
+---
+header-id: using-taglibs-in-templates
+---
+
+# Using Taglibs in Templates
 
 Liferay's taglibs are also accessible to web content administrators developing
 in FreeMarker. There is no need to instantiate these taglibs within your
@@ -27,20 +31,16 @@ invoked by typing *${* which opens a drop-down menu of available variables. By
 clicking one of the variables, the editor inserts the variable into the template
 editor.
 
-+$$$
-
-**Note:** The `utilLocator`, `objectUtil`, and `staticUtil` variables for
-FreeMarker and the `utilLocator` variable for Velocity are disabled by default.
-These variables are vulnerable to remote code execution and privilege
-escalation, and should be used with caution, if enabled.
-
-$$$
+| **Note:** The `utilLocator`, `objectUtil`, and `staticUtil` variables for
+| FreeMarker and the `utilLocator` variable for Velocity are disabled by default.
+| These variables are vulnerable to remote code execution and privilege
+| escalation, and should be used with caution, if enabled.
 
 After you've saved your template, @product@ provides a WebDAV URL and static 
 URL. These values access the XML source of your structure. You can find these 
 URLs by returning to your template after it's been saved and expanding the 
 *Details* section. For more information on WebDAV and the uses of the WebDAV 
-URL, reference the [WebDAV Access](/discover/portal/-/knowledge_base/7-0/publishing-files#desktop-access-to-documents-and-media)
+URL, reference the [WebDAV Access](/docs/7-0/user/-/knowledge_base/u/publishing-files#desktop-access-to-documents-and-media)
 section.
 
 Now that you've created a handsome template and know how to use the template

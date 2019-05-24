@@ -1,4 +1,8 @@
-# Child Views [](id=child-views)
+---
+header-id: child-views
+---
+
+# Child Views
 
 A Child View presents the same behavior and UI components as its parent, but can
 change the UI components' appearance and position. It can't add or remove any UI
@@ -76,12 +80,12 @@ It presents the same UI components and functionality as the Sign Up Screenlet's
 Default View, but using
 [Android's Material design](http://www.google.com/design/spec/material-design/introduction.html). 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Themed Views](/develop/tutorials/-/knowledge_base/7-1/themed-views)
+[Themed Views](/docs/7-1/tutorials/-/knowledge_base/t/themed-views)
 
-[Extended Views](/develop/tutorials/-/knowledge_base/7-1/extended-views)
+[Extended Views](/docs/7-1/tutorials/-/knowledge_base/t/extended-views)
 
-[Full Views](/develop/tutorials/-/knowledge_base/7-1/full-views)
+[Full Views](/docs/7-1/tutorials/-/knowledge_base/t/full-views)
 
-[Packaging Your Views](/develop/tutorials/-/knowledge_base/7-1/packaging-your-views)
+[Packaging Your Views](/docs/7-1/tutorials/-/knowledge_base/t/packaging-your-views)

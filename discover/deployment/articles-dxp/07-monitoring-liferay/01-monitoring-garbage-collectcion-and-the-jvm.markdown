@@ -1,38 +1,34 @@
-# Monitoring Garbage Collection and the JVM [](id=monitoring-garbage-collection-and-jvm)
+---
+header-id: monitoring-garbage-collection-and-jvm
+---
+
+# Monitoring Garbage Collection and the JVM
 
 Although the 
-[tuning parameters](/discover/deployment/-/knowledge_base/7-1/tuning-guidelines)
+[tuning parameters](/docs/7-1/deploy/-/knowledge_base/d/tuning-guidelines)
 give you a good start to JVM tuning, you must monitor GC performance to ensure
 you have the best settings to meet your needs. There are several tools to help
 you monitor Oracle JVM performance. 
 
-## VisualVM [](id=visual-vm)
+## VisualVM
 
 VisualVM provides a centralized console for viewing Oracle JVM performance
 information and its Visual GC plugin shows garbage collector activities.
 
 ![Figure 1: VisualVM's Visual GC plugin shows the garbage collector in real-time.](../../images-dxp/visual-vm-gc.png)
 
-+$$$
+| **Note:** Oracle's JDK has VisualVM bundled (`$JAVA_HOME/bin/jvisualvm`).
+| However, always download and use the latest version from VisualVM's
+| [official website](https://visualvm.github.io/).
 
-**Note:** Oracle's JDK has VisualVM bundled (`$JAVA_HOME/bin/jvisualvm`). 
-However, always download and use the latest version from VisualVM's
-[official website](https://visualvm.github.io/).
-
-$$$
-
-## JMX Console [](id=jmx-console)
+## JMX Console
 
 This tool helps display various statistics like @product@'s distributed cache
 performance, application server thread performance, JDBC connection pool usage,
 and more. 
 
-+$$$
-
-**Note:** The JMX Console is the preferred tool for monitoring Tomcat
-performance.
-
-$$$
+| **Note:** The JMX Console is the preferred tool for monitoring Tomcat
+| performance.
 
 To enable JMX connections, add these JVM arguments:
 
@@ -43,7 +39,7 @@ To enable JMX connections, add these JVM arguments:
 
 ![Figure 2: VisualVM monitors the JVM using Java Management Extensions.](../../images-dxp/visual-vm-jmx.png)
 
-## Garbage Collector Verbose Logging [](id=garbage-collector-verbose-logging)
+## Garbage Collector Verbose Logging
 
 Add these JVM arguments to activate verbose logging for the JVM garbage
 collector.

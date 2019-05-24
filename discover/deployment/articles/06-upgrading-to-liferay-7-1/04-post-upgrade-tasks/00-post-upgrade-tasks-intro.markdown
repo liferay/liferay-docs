@@ -1,4 +1,8 @@
-# Post-Upgrade Tasks [](id=post-upgrade-tasks)
+---
+header-id: post-upgrade-tasks
+---
+
+# Post-Upgrade Tasks
 
 After upgrading and running verify processes, there are post-upgrade tasks:
 
@@ -7,7 +11,7 @@ After upgrading and running verify processes, there are post-upgrade tasks:
 
 Start with search indexes. 
 
-## Re-enabling Search Indexing and Reindexing Search Indexes [](id=re-enabling-search-indexing-and-reindexing-search-indexes)
+## Re-enabling Search Indexing and Reindexing Search Indexes
 
 Make sure to re-enable search indexing by either removing the
 `com.liferay.portal.search.configuration.IndexStatusManagerConfiguration.config`
@@ -20,9 +24,9 @@ Then you should reindex @product@'s search indexes. Don't just do this blindly,
 however. By default, @product@ ships with an embedded configuration for
 Elasticsearch. This configuration works great for demo purposes, but is not
 supported in production. Make sure to
-[install and configure a standalone Elasticsearch instance to run in production](/discover/deployment/-/knowledge_base/7-1/installing-elasticsearch).
+[install and configure a standalone Elasticsearch instance to run in production](/docs/7-1/deploy/-/knowledge_base/d/installing-elasticsearch).
 
-## Enabling Web Content View Permissions [](id=enabling-web-content-view-permissions)
+## Enabling Web Content View Permissions
 
 Prior to @product@ 7.1, all users could view web content articles by default. Now view permissions are checked by default. Here are options for opening view permissions:
 

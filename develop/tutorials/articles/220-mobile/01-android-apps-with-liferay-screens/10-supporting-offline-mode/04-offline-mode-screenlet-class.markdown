@@ -1,4 +1,8 @@
-# Update the Screenlet Class [](id=update-the-screenlet-class)
+---
+header-id: update-the-screenlet-class
+---
+
+# Update the Screenlet Class
 
 Updating the Screenlet class for offline mode is straightforward. In the 
 Screenlet class's `onUserAction` method, you'll change the call to the 
@@ -27,12 +31,12 @@ That's it! Your write Screenlet now supports offline mode. There's one more
 detail to keep in mind, however, when using the Screenlet: syncing the cache 
 with the server. You'll learn about this next. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Create or Update the Event Class](/develop/tutorials/-/knowledge_base/7-1/create-or-update-the-event-class)
+[Create or Update the Event Class](/docs/7-1/tutorials/-/knowledge_base/t/create-or-update-the-event-class)
 
-[Update the Listener](/develop/tutorials/-/knowledge_base/7-1/update-the-listener)
+[Update the Listener](/docs/7-1/tutorials/-/knowledge_base/t/update-the-listener)
 
-[Update the Interactor Class](/develop/tutorials/-/knowledge_base/7-1/update-the-interactor-class)
+[Update the Interactor Class](/docs/7-1/tutorials/-/knowledge_base/t/update-the-interactor-class)
 
-[Sync the Cache with the Server](/develop/tutorials/-/knowledge_base/7-1/sync-the-cache-with-the-server)
+[Sync the Cache with the Server](/docs/7-1/tutorials/-/knowledge_base/t/sync-the-cache-with-the-server)

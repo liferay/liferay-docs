@@ -1,4 +1,8 @@
-# Refactoring the Prototype [](id=refactoring-the-prototype)
+---
+header-id: refactoring-the-prototype
+---
+
+# Refactoring the Prototype
 
 Earlier, you created a Guestbook portlet prototype. Then you wrote
 a `service.xml` file to define your application's data model, and used Service

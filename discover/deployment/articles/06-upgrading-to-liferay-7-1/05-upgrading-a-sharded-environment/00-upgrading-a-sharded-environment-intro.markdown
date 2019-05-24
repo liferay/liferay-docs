@@ -1,4 +1,8 @@
-# Upgrading a Sharded Environment [](id=upgrading-sharded-environment)
+---
+header-id: upgrading-sharded-environment
+---
+
+# Upgrading a Sharded Environment
 
 Since @product@ 7.0, Liferay removed its own physical partitioning
 implementation (also known as sharding) in favor of the capabilities provided
@@ -8,32 +12,24 @@ as you have shards. These steps guide you through configuring the new @product@
 servers to use your formerly sharded data and upgrading the data to
 @product-ver@. 
 
-+$$$
+| **Note:** Liferay continues to support its logical partitioning capabilities
+| (also known as
+| [virtual instances](/docs/7-1/user/-/knowledge_base/u/setting-up-a-virtual-instance))
+| for the foreseeable future.
 
-**Note:** Liferay continues to support its logical partitioning capabilities 
-(also known as
-[virtual instances](/discover/portal/-/knowledge_base/7-1/setting-up-a-virtual-instance))
-for the foreseeable future. 
-
-$$$
-
-+$$$
-
-For any further assistance with sharding contact your Liferay account manager or
-Liferay Support. 
-
-$$$
+| For any further assistance with sharding contact your Liferay account manager or
+| Liferay Support.
 
 Here are the upgrade steps:
 
 1.  If you're on Liferay Portal 6.1 or lower,
-    [upgrade to Liferay Portal 6.2](/discover/deployment/-/knowledge_base/6-2/upgrading-liferay). 
+    [upgrade to Liferay Portal 6.2](/docs/6-2/deploy/-/knowledge_base/d/upgrading-liferay). 
 
-2.  [Remove unneeded objects from your portal](/discover/deployment/-/knowledge_base/7-1/pre-upgrade-speed-up-the-process). 
+2.  [Remove unneeded objects from your portal](/docs/7-1/deploy/-/knowledge_base/d/pre-upgrade-speed-up-the-process). 
 
-3.  [Prepare for upgrading to @product-ver@](/discover/deployment/-/knowledge_base/7-1/preparing-an-upgrade-to-liferay-7). 
+3.  [Prepare for upgrading to @product-ver@](/docs/7-1/deploy/-/knowledge_base/d/preparing-an-upgrade-to-liferay-7). 
 
-4.  [Run the upgrade process](/discover/deployment/-/knowledge_base/7-1/running-the-upgrade-process)
+4.  [Run the upgrade process](/docs/7-1/deploy/-/knowledge_base/d/running-the-upgrade-process)
     for the default shard. As part of the configuration, copy all of the shard
     JDBC connection properties from  your `portal-ext.properties` to your
     `portal-upgrade-database.properties`. For example, JDBC connections for a
@@ -54,10 +50,10 @@ Here are the upgrade steps:
         jdbc.two.username=
         jdbc.two.password=
 
-5.  [Prepare a @product-ver@ server](/discover/deployment/-/knowledge_base/7-1/deploying-product)
+5.  [Prepare a @product-ver@ server](/docs/7-1/deploy/-/knowledge_base/d/deploying-product)
     for each non-default shard.
 
-6.  [Run the upgrade process](/discover/deployment/-/knowledge_base/7-1/running-the-upgrade-process)
+6.  [Run the upgrade process](/docs/7-1/deploy/-/knowledge_base/d/running-the-upgrade-process)
     for each non-default shard. The JDBC *default* connection properties in each
     server's `portal-upgrade-database.properties` must specify the associated
     shard. Here's how: 

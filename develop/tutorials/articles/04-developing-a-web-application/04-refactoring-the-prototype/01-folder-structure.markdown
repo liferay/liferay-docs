@@ -1,4 +1,8 @@
-# Organizing Folders for Larger Applications [](id=organizing-folders-for-larger-applications)
+---
+header-id: organizing-folders-for-larger-applications
+---
+
+# Organizing Folders for Larger Applications
 
 <div class="learn-path-step">
     <p>Refactoring the Prototype<br>Step 1 of 6</p>
@@ -14,7 +18,7 @@ organized. You'll make two changes to help better organize your project:
 2.  Since you'll now have two portlets, reorganize your JSPs to group them by
     portlet.
 
-## Moving guestbook-web [](id=moving-guestbook-web)
+## Moving guestbook-web
 
 The best way to move modules around is to use @ide@'s *Refactor* function. The
 refactor function scans for and updates project dependencies and links.
@@ -33,7 +37,7 @@ Your `guestbook-web` folder now appears in the structure with the other modules.
 
 ![Figure 1: After you move it using the Refactor function, all of your modules are in the same folder..](../../../images/guestbook-refactor.png)
 
-## Reorganizing JSPs [](id=reorganizing-jsps)
+## Reorganizing JSPs
 
 Currently, all your JSPs sit in your web module's 
 `src/main/resources/META-INF/resources` folder, which serves as the context root 

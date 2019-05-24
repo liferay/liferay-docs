@@ -1,4 +1,8 @@
-# Defining Relationships Between Service Entities [](id=defining-relationships-between-service-entities)
+---
+header-id: defining-relationships-between-service-entities
+---
+
+# Defining Relationships Between Service Entities
 
 Referencing one type of entity in the context of another entity is a common
 requirement. This is also known as *relating* entities. Liferay's Bookmarks

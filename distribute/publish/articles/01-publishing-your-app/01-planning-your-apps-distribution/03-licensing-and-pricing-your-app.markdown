@@ -1,4 +1,8 @@
-# Licensing and Pricing Your App [](id=licensing-and-pricing-your-app)
+---
+header-id: licensing-and-pricing-your-app
+---
+
+# Licensing and Pricing Your App
 
 You have significant control over how to price your app. You choose the license
 term (perpetual vs. annual), choose the license type (standard vs. developer),
@@ -7,7 +11,7 @@ unit), and specify regional availability. Even after your app is on the
 Marketplace, you can tweak general pricing or modify regional pricing. Here
 you'll learn how to do all these things. 
 
-## Determining a License Term [](id=determining-a-license-term)
+## Determining a License Term
 
 Here are the license term options:
 
@@ -20,17 +24,13 @@ Releasing an approved app under a different license term requires submitting
 another app under a new name (title). So make sure to think through the license
 term that makes the most sense for your app. 
 
-+$$$
+| **Note:** If you are a foreign developer based outside of the United States,
+| non-perpetual license sales (considered to be royalty income) to US customers
+| are subject to a 30% withholding tax. This tax does not apply to perpetual
+| licenses. For more information on licensing terms and fees, please refer to the
+| [FAQ](/distribute/faq).
 
-**Note:** If you are a foreign developer based outside of the United States,
-non-perpetual license sales (considered to be royalty income) to US customers
-are subject to a 30% withholding tax. This tax does not apply to perpetual
-licenses. For more information on licensing terms and fees, please refer to the
-[FAQ](/distribute/faq). 
-
-$$$
-
-## Determining License Type and License Unit Pricing [](id=determining-license-type-and-license-unit-pricing)
+## Determining License Type and License Unit Pricing
 
 Licenses are set to run on a permitted number of Instance Units (defined as a
 single installation of the Liferay, which corresponds to one (1) Liferay `.war`
@@ -81,7 +81,7 @@ If you choose not to offer subscription services, customers are entitled to only
 app updates if and when updates become available. They can receive updates as
 long as they continue to have valid non-perpetual licenses. 
 
-## Setting Prices for License Options by Region [](id=setting-prices-for-license-options-by-region)
+## Setting Prices for License Options by Region
 
 You can specify countries your app will be available in and the app's price in
 in each of those countries. You can make it as simple (single price offered
@@ -104,7 +104,7 @@ Although Liferay Marketplace supports major currencies and a broad list of
 countries, not all currencies and countries are currently available. Additional
 currencies and countries may become available at a later time. 
 
-## Considering the Liferay Marketplace Fee [](id=considering-the-liferay-marketplace-fee)
+## Considering the Liferay Marketplace Fee
 
 By selling your paid apps on the Liferay Marketplace, you're agreeing to share
 app sales revenue with Liferay. For each app sale, you receive 80% of the sales

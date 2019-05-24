@@ -1,4 +1,8 @@
-# Liferay Soy Portlet [](id=liferay-soy-portlet)
+---
+header-id: liferay-soy-portlet
+---
+
+# Liferay Soy Portlet
 
 A Soy portlet is an extension of Liferay's MVC portlet framework. This gives you
 access to all the MVC Portlet functionality you are familiar with, plus the
@@ -8,7 +12,7 @@ all these benefits and more, Soy portlets can be a good front-end tool to have
 in your utility belt.
 
 You can learn about Liferay MVC portlets in the 
-[Creating an MVC Portlet](/develop/tutorials/-/knowledge_base/7-1/creating-an-mvc-portlet)
+[Creating an MVC Portlet](/docs/7-1/tutorials/-/knowledge_base/t/creating-an-mvc-portlet)
 tutorial.
 
 This section covers how to implement a Soy portlet.

@@ -1,4 +1,8 @@
-# Page Types and Templates [](id=page-types-and-templates)
+---
+header-id: page-types-and-templates
+---
+
+# Page Types and Templates
 
 Each page type has unique features that fit together to create compelling sites.
 Here you'll look at each type in more detail, with a focus on the three most

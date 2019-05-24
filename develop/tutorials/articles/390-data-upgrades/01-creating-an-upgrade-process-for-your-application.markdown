@@ -1,4 +1,8 @@
-# Creating Data Upgrade Processes for Modules [](id=creating-an-upgrade-process-for-your-app)
+---
+header-id: creating-an-upgrade-process-for-your-app
+---
+
+# Creating Data Upgrade Processes for Modules
 
 Some changes you make to a module involve modifying the database. These changes
 bring with them the need for an upgrade process to move your module's database
@@ -7,12 +11,8 @@ make this easier to do. It's a feature-rich framework that makes upgrades safe:
 the system records the current state of the schema so that if the upgrade fails,
 the process can revert the module back to its previous version.
 
-+$$$
-
-**Note**: Upgrade processes for traditional Liferay plugins (WAR files) work 
-[the same way they did for Liferay Portal 6.x](/develop/tutorials/-/knowledge_base/7-1/optimizing-app-upgrade-processes#understanding-liferay-portal-6-upgrade-processes). 
-
-$$$
+| **Note**: Upgrade processes for traditional Liferay plugins (WAR files) work
+| [the same way they did for Liferay Portal 6.x](/docs/7-1/tutorials/-/knowledge_base/t/optimizing-app-upgrade-processes#understanding-liferay-portal-6-upgrade-processes).
 
 @product@'s upgrade framework executes your module's upgrades automatically when
 the new version starts for the first time. You implement concrete data schema
@@ -34,7 +34,7 @@ Here's what's involved:
 
 It's time to get started. 
 
-## Specifying the Schema Version [](id=specifying-the-schema-version)
+## Specifying the Schema Version
 
 In your module's `bnd.bnd` file, specify a `Liferay-Require-SchemaVersion`
 header with the new schema version value. Here's an example schema version
@@ -47,21 +47,17 @@ your module flexibility to use any micro schema version. This lets you disregard
 new micro schema versions or upgrade to them when you want. You can also revert
 micro schema versions. 
 
-+$$$
-
-**Important**: If no `Liferay-Require-SchemaVersion` header is specified,
-@product@ considers the `Bundle-Version` header value to be the database schema
-version.
-
-$$$
+| **Important**: If no `Liferay-Require-SchemaVersion` header is specified,
+| @product@ considers the `Bundle-Version` header value to be the database schema
+| version.
 
 Next, you'll specify your upgrade's dependencies. 
 
-## Declaring Dependencies [](id=declaring-dependencies)
+## Declaring Dependencies
 
 In your module's dependency management file (e.g., Maven POM, Gradle build file,
 or Ivy `ivy.xml` file), 
-[add a dependency](/develop/tutorials/-/knowledge_base/7-1/configuring-dependencies) 
+[add a dependency](/docs/7-1/tutorials/-/knowledge_base/t/configuring-dependencies) 
 on the 
 [`com.liferay.portal.upgrade` module](https://repository.liferay.com/nexus/content/repositories/liferay-public-releases/com/liferay/com.liferay.portal.upgrade/). 
 
@@ -76,7 +72,7 @@ You've configured your module project for the upgrade. It's time to create
 upgrade steps to update the database from the current schema version to the new
 one. 
 
-## Writing Upgrade Steps [](id=writing-upgrade-steps)
+## Writing Upgrade Steps
 
 An upgrade step is a class that adapts module data to the module's target
 database schema. It can execute SQL commands and DDL files to upgrade the data.
@@ -200,10 +196,10 @@ modularized from a former traditional Liferay plugin application (application
 WAR) and it uses Service Builder, it requires a Bundle Activator to register
 itself in @product@'s `Release_` table. If this is the case for your
 application,
-[create and register a Bundle Activator](/develop/tutorials/-/knowledge_base/7-1/upgrade-processes-for-former-service-builder-plugins)
+[create and register a Bundle Activator](/docs/7-1/tutorials/-/knowledge_base/t/upgrade-processes-for-former-service-builder-plugins)
 and then return here to write your upgrade step registrator. 
 
-## Writing the Upgrade Step Registrator [](id=writing-the-upgrade-step-registrator)
+## Writing the Upgrade Step Registrator
 
 A module's upgrade step registrator notifies Liferay's upgrade framework of all
 the upgrade steps to update the module data for each schema version. It
@@ -375,14 +371,14 @@ the registrator class has no method for unbinding the service.
 Next, you must make sure the module's upgrade is executed before making its
 services available.
 
-## Waiting for Upgrade Completion [](id=waiting-for-upgrade-completion)
+## Waiting for Upgrade Completion
 
 Before module services that access the database are used, the database should be
 upgraded to the latest database schema.
 
 As a convenience, configuring the Bnd header `Liferay-Require-SchemaVersion` to
 the latest schema version is all that's required to assure the database is
-upgraded for [Service Builder](/develop/tutorials/-/knowledge_base/7-1/what-is-service-builder)
+upgraded for [Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/what-is-service-builder)
 services.
 
 For all other services, the developer can assure database upgrade by specifying
@@ -409,13 +405,9 @@ which upgrade reference annotations are needed. For example, there's no need to
 add an upgrade reference in a dependent service, if the dependency already
 refers to the upgrade. 
 
-+$$$
-
-**Note**: Data verifications using the class `VerifyProcess` are deprecated.
-Verifications should be tied schema versions. Upgrade processes are associated
-with schema versions but `VerifyProcess` instances are not.   
-
-$$$
+| **Note**: Data verifications using the class `VerifyProcess` are deprecated.
+| Verifications should be tied schema versions. Upgrade processes are associated
+| with schema versions but `VerifyProcess` instances are not.
  
 Now you know how to create data upgrades for all your modules. You specify the
 new data schema version in the `bnd.bnd` file, add a reference to your module
@@ -425,12 +417,12 @@ module. For the second part of the process, you create upgrade step classes to
 update the database schema and register the upgrade steps in a registrator
 class. That's all there is to it!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Upgrade Processes for Former Service Builder Plugins](/develop/tutorials/-/knowledge_base/7-1/upgrade-processes-for-former-service-builder-plugins)
+[Upgrade Processes for Former Service Builder Plugins](/docs/7-1/tutorials/-/knowledge_base/t/upgrade-processes-for-former-service-builder-plugins)
 
-[Upgrading Plugins to Liferay 7](/develop/tutorials/-/knowledge_base/7-1/upgrading-plugins-to-liferay-7)
+[Upgrading Plugins to Liferay 7](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-plugins-to-liferay-7)
 
-[Configurable Applications](/develop/tutorials/-/knowledge_base/7-1/configurable-applications)
+[Configurable Applications](/docs/7-1/tutorials/-/knowledge_base/t/configurable-applications)
 
-[Migrating Data Upgrade Processes to the New Framework for Modules](/develop/tutorials/-/knowledge_base/7-1/optimizing-app-upgrade-processes)
+[Migrating Data Upgrade Processes to the New Framework for Modules](/docs/7-1/tutorials/-/knowledge_base/t/optimizing-app-upgrade-processes)

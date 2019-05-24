@@ -1,4 +1,8 @@
-# Hypermedia Formats and Content Negotiation [](id=hypermedia-formats-and-content-negotiation)
+---
+header-id: hypermedia-formats-and-content-negotiation
+---
+
+# Hypermedia Formats and Content Negotiation
 
 The responses in the preceding examples use the 
 [JSON-LD hypermedia format](https://json-ld.org/), 
@@ -8,13 +12,9 @@ include HAL, Siren, Collection+JSON, and Atom. Formats typically differ in the
 structure or semantics of resource metadata. There's no best hypermedia 
 format; use the one that best fits your use case. 
 
-+$$$
-
-**Note:** Currently, Liferay's hypermedia REST APIs only support the JSON-LD and 
-HAL hypermedia formats. Support for more hypermedia formats may be added in the
-future. 
-
-$$$
+| **Note:** Currently, Liferay's hypermedia REST APIs only support the JSON-LD and
+| HAL hypermedia formats. Support for more hypermedia formats may be added in the
+| future.
 
 You use *content negotiation* to specify different hypermedia formats for use.
 Content negotiation is how the client and server establish the format they use
@@ -96,8 +96,8 @@ Requesting the headers, you can see that the response is in the HAL format:
     Content-Type: application/hal+json
     Transfer-Encoding: chunked
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[API Vocabulary](/develop/tutorials/-/knowledge_base/7-1/api-vocabulary)
+[API Vocabulary](/docs/7-1/tutorials/-/knowledge_base/t/api-vocabulary)
 
-[Navigating Between Related Resources](/develop/tutorials/-/knowledge_base/7-1/navigating-between-related-resources)
+[Navigating Between Related Resources](/docs/7-1/tutorials/-/knowledge_base/t/navigating-between-related-resources)

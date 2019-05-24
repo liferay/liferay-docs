@@ -1,4 +1,8 @@
-# Creating Folders [](id=creating-folders)
+---
+header-id: creating-folders
+---
+
+# Creating Folders
 
 To create folders (`Folder` entities) in the Documents and Media library, you 
 must use the 
@@ -25,7 +29,7 @@ Follow these steps to create a folder with the `DLAppService` method
         private DLAppService _dlAppService;
 
     For more information on this, see the section on 
-    [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
+    [getting a service reference](/docs/7-1/tutorials/-/knowledge_base/t/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
     in the getting started tutorial. 
 
 2.  Get the data needed to populate the `addFolder` method's arguments. Since 
@@ -43,10 +47,10 @@ Follow these steps to create a folder with the `DLAppService` method
                     DLFolder.class.getName(), actionRequest);
 
     For more information on getting repository and folder IDs, see the 
-    [getting started tutorial's](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api) 
+    [getting started tutorial's](/docs/7-1/tutorials/-/knowledge_base/t/getting-started-with-the-documents-and-media-api) 
     sections on specifying repositories and folders. For more information on 
     `ServiceContext`, see the tutorial 
-    [Understanding ServiceContext](/develop/tutorials/-/knowledge_base/7-1/understanding-servicecontext). 
+    [Understanding ServiceContext](/docs/7-1/tutorials/-/knowledge_base/t/understanding-servicecontext). 
 
 3.  Call the service reference's `addFolder` method with the data from the 
     previous step: 
@@ -67,14 +71,14 @@ this `updateFolder` method, as well as the rest of `EditFolderMVCActionCommand`,
 contains additional logic to suit the specific needs of the Documents and Media 
 app. 
 
-## Folders and External Repositories [](id=folders-and-external-repositories)
+## Folders and External Repositories
 
 By creating a folder that acts as a proxy for an external repository (e.g., 
 SharePoint), you can effectively mount that repository inside a Site's default 
 repository. When users enter this special folder, they see the external 
 repository. These folders are called *mount points*. You can create one via the
 API by setting the 
-[Service Context's](/develop/tutorials/-/knowledge_base/7-1/understanding-servicecontext) 
+[Service Context's](/docs/7-1/tutorials/-/knowledge_base/t/understanding-servicecontext) 
 `mountPoint` attribute to `true`, and then using that Service Context in the 
 `addFolder` method: 
 
@@ -84,12 +88,12 @@ Note that the `repositoryId` of such a folder indicates the external repository
 the folder points to---not the repository the folder exists. Also, mount 
 point folders can only exist in the default Site repository. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Updating Folders](/develop/tutorials/-/knowledge_base/7-1/updating-folders)
+[Updating Folders](/docs/7-1/tutorials/-/knowledge_base/t/updating-folders)
 
-[Deleting Folders](/develop/tutorials/-/knowledge_base/7-1/deleting-folders)
+[Deleting Folders](/docs/7-1/tutorials/-/knowledge_base/t/deleting-folders)
 
-[Copying Folders](/develop/tutorials/-/knowledge_base/7-1/copying-folders)
+[Copying Folders](/docs/7-1/tutorials/-/knowledge_base/t/copying-folders)
 
-[Moving Folders and Files](/develop/tutorials/-/knowledge_base/7-1/moving-folders-and-files)
+[Moving Folders and Files](/docs/7-1/tutorials/-/knowledge_base/t/moving-folders-and-files)

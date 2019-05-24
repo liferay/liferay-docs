@@ -1,7 +1,11 @@
-# Managing Liferay DXP Subscriptions [](id=managing-liferay-dxp-subscriptions)
+---
+header-id: managing-liferay-dxp-subscriptions
+---
+
+# Managing Liferay DXP Subscriptions
 
 LCS lets you use and view your @product@ subscriptions. Recall that when you 
-[create an environment](/discover/deployment/-/knowledge_base/7-1/managing-lcs-environments#creating-environments), 
+[create an environment](/docs/7-1/deploy/-/knowledge_base/d/managing-lcs-environments#creating-environments), 
 you assign its subscription type and choose whether LCS activates servers that 
 connect to that environment. If you use LCS for activation, registering a server 
 in that environment consumes an activation key from the environment's 
@@ -54,27 +58,19 @@ There are four tables in the *Details* tab:
 If any of the information in these tables is missing or incorrect, contact 
 Liferay Support. 
 
-+$$$
+| **Note:** If you don't use LCS for activating your servers, then you can
+| register as many servers as you want in LCS.
 
-**Note:** If you don't use LCS for activating your servers, then you can 
-register as many servers as you want in LCS. 
+| **Note:** If you try to activate a server that exceeds the number of processor
+| cores that your subscription allows per server, the activation fails and the
+| server is locked down. A console error also indicates the server's core count.
+| You can compare this with your subscription's processor cores allowed in LCS's
+| Subscriptions table. To activate the server, you can either reduce the number of
+| cores it uses (e.g., by deploying to different server hardware, or reducing the
+| number of virtual processors in a VM or container), or contact Liferay Sales to
+| increase the number of processor cores that your subscription allows per server.
 
-$$$
-
-+$$$
-
-**Note:** If you try to activate a server that exceeds the number of processor 
-cores that your subscription allows per server, the activation fails and the 
-server is locked down. A console error also indicates the server's core count. 
-You can compare this with your subscription's processor cores allowed in LCS's 
-Subscriptions table. To activate the server, you can either reduce the number of 
-cores it uses (e.g., by deploying to different server hardware, or reducing the 
-number of virtual processors in a VM or container), or contact Liferay Sales to 
-increase the number of processor cores that your subscription allows per server. 
-
-$$$
-
-## Decommissioning Servers [](id=decommissioning-servers)
+## Decommissioning Servers
 
 To decommission a server and free its activation key for reuse, select the 
 server's environment on the left and then select the server. In the server's 
@@ -83,20 +79,16 @@ server normally, its activation key is immediately freed for reuse. If the
 server crashes or its shutdown is forced (e.g., kill), its activation key is 
 freed for reuse within six minutes. 
 
-## Elastic Subscriptions [](id=elastic-subscriptions)
+## Elastic Subscriptions
 
 Elastic subscriptions let you register an unlimited number of servers. This is 
 crucial for auto-scaling environments where servers are created and destroyed 
 automatically. You can view data on your elastic servers from the 
 *Subscriptions* tab's *Elastic Subscriptions* tab. 
 
-+$$$
-
-**Note:** To register elastic servers in an environment, that environment must 
-be set as elastic when it's created. For more information, see the 
-[documentation on creating environments](/discover/deployment/-/knowledge_base/7-1/managing-lcs-environments#creating-environments).
-
-$$$
+| **Note:** To register elastic servers in an environment, that environment must
+| be set as elastic when it's created. For more information, see the
+| [documentation on creating environments](/docs/7-1/deploy/-/knowledge_base/d/managing-lcs-environments#creating-environments).
 
 ![Figure 2: The *Elastic Subscriptions* tab shows details about your project's elastic servers.](../../../images-dxp/lcs-elastic-subscriptions.png)
 

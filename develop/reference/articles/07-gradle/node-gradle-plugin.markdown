@@ -1,11 +1,15 @@
-# Node Gradle Plugin [](id=node-gradle-plugin)
+---
+header-id: node-gradle-plugin
+---
+
+# Node Gradle Plugin
 
 The Node Gradle plugin lets you run [Node.js](https://nodejs.org/) and
 [NPM](https://www.npmjs.com/) as part of your build.
 
 The plugin has been successfully tested with Gradle 4.10.2.
 
-## Usage [](id=usage)
+## Usage
 
 To use the plugin, include it in your build script:
 
@@ -25,7 +29,7 @@ buildscript {
 apply plugin: "com.liferay.node"
 ```
 
-## Project Extension [](id=project-extension)
+## Project Extension
 
 The Node Gradle plugin exposes the following properties through the extension
 named `node`:
@@ -74,7 +78,7 @@ allprojects {
 }
 ```
 
-## Tasks [](id=tasks)
+## Tasks
 
 The plugin adds a series of tasks to your project:
 
@@ -87,11 +91,11 @@ Name | Depends On | Type | Description
 `npmPackageLock` | `cleanNPM`, `npmInstall` | [`DefaultTask`](https://docs.gradle.org/current/javadoc/org/gradle/api/DefaultTask.html) | Deletes the NPM files and runs `npm install` to install the dependencies declared in the project's `package.json` file, if present.
 `npmShrinkwrap` | `cleanNPM`, `npmInstall` | [`NpmShrinkwrapTask`](#npmshrinkwraptask) | Locks down the versions of a package's dependencies in order to control which dependency versions are used.
 
-### DownloadNodeTask [](id=downloadnodetask)
+### DownloadNodeTask
 
 The purpose of this task is to download and unpack a Node.js distribution.
 
-#### Task Properties [](id=task-properties)
+#### Task Properties
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -104,12 +108,12 @@ The properties of type `File` support any type that can be resolved by [`project
 Moreover, it is possible to use Closures and Callables as values for the
 `String` properties, to defer evaluation until task execution.
 
-### ExecuteNodeTask [](id=executenodetask)
+### ExecuteNodeTask
 
 This is the base task to run Node.js in a Gradle build. All tasks of type
 `ExecuteNodeTask` automatically depend on [`downloadNode`](#downloadnode).
 
-#### Task Properties [](id=task-properties-0)
+#### Task Properties
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -126,7 +130,7 @@ The properties of type `File` support any type that can be resolved by
 Moreover, it is possible to use Closures and Callables as values for the
 `String` properties to defer evaluation until task execution.
 
-#### Task Methods [](id=task-methods)
+#### Task Methods
 
 Method | Description
 ------ | -----------
@@ -135,12 +139,12 @@ Method | Description
 `ExecuteNodeTask environment(Map<?, ?> environment)` | Adds environment variables for the Node.js invocation.
 `ExecuteNodeTask environment(Object key, Object value)` | Adds an environment variable for the Node.js invocation.
 
-### ExecuteNodeScriptTask [](id=executenodescripttask)
+### ExecuteNodeScriptTask
 
 The purpose of this task is to execute a Node.js script. Tasks of type
 `ExecuteNodeScriptTask` extend [`ExecuteNodeTask`](#executenodetask).
 
-#### Task Properties [](id=task-properties-1)
+#### Task Properties
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -149,7 +153,7 @@ Property Name | Type | Default Value | Description
 The properties of type `File` support any type that can be resolved by
 [`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file\(java.css.Object\)).
 
-### ExecuteNpmTask [](id=executenpmtask)
+### ExecuteNpmTask
 
 The purpose of this task is to execute an NPM command. Tasks of type
 `ExecuteNpmTask` extend [`ExecuteNodeScriptTask`](#executenodescripttask) with
@@ -160,7 +164,7 @@ Property Name | Default Value
 `command` | <p>**If `nodeDir` is `null`:** `"npm"`</p><p>**Otherwise:** `"node"`</p>
 `scriptFile` | <p>**If `nodeDir` is `null`:** `null`</p><p>**Otherwise:** `"${nodeDir}/lib/node_modules/npm/bin/npm-cli.js"` or `"${nodeDir}/node_modules/npm/bin/npm-cli.js"` on Windows.</p>
 
-#### Task Properties [](id=task-properties-2)
+#### Task Properties
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -175,7 +179,7 @@ The properties of type `File` support any type that can be resolved by [`project
 Moreover, it is possible to use Closures and Callables as values for the
 `String` properties, to defer evaluation until task execution.
 
-### DownloadNodeModuleTask [](id=downloadnodemoduletask)
+### DownloadNodeModuleTask
 
 The purpose of this task is to download a Node.js package. The packages are
 downloaded in the `${workingDir}/node_modules` directory, which is equal, by
@@ -187,7 +191,7 @@ execute the command [`npm install ${moduleName}@${moduleVersion}`](https://docs.
 `package.json` file already lists a module with the same name in its
 `dependencies` or `devDependencies` object.
 
-#### Task Properties [](id=task-properties-3)
+#### Task Properties
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -197,7 +201,7 @@ Property Name | Type | Default Value | Description
 It is possible to use Closures and Callables as values for the `String`
 properties, to defer evaluation until task execution.
 
-### NpmInstallTask [](id=npminstalltask)
+### NpmInstallTask
 
 Purpose of these tasks is to install the dependencies declared in a
 `package.json` file. Tasks of type `NpmInstallTask` extend
@@ -206,7 +210,7 @@ Purpose of these tasks is to install the dependencies declared in a
 `NpmInstallTask` instances are automatically disabled if the `package.json` file
 does not declare any dependency in the `dependency` or `devDependencies` object.
 
-#### Task Properties [](id=task-properties-4)
+#### Task Properties
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -218,7 +222,7 @@ Property Name | Type | Default Value | Description
 
 The properties of type `File` support any type that can be resolved by [`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file\(java.css.Object\)).
 
-### NpmShrinkwrapTask [](id=npmshrinkwraptask)
+### NpmShrinkwrapTask
 
 The purpose of this task is to lock down the versions of a package's
 dependencies so that you can control exactly which dependency versions are used
@@ -232,7 +236,7 @@ so it's easier to see the changes with the previous version.
 `NpmShrinkwrapTask` instances are automatically disabled if the `package.json`
 file does not exist.
 
-#### Task Properties [](id=task-properties-5a)
+#### Task Properties
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -242,14 +246,14 @@ Property Name | Type | Default Value | Description
 It is possible to use Closures and Callables as values for the `String`
 properties to defer evaluation until task execution.
 
-#### Task Methods [](id=task-methods-0)
+#### Task Methods
 
 Method | Description
 ------ | -----------
 `NpmShrinkwrapTask excludeDependencies(Iterable<?> excludedDependencies)` | Adds package names to exclude from the generated `npm-shrinkwrap.json` file.
 `NpmShrinkwrapTask excludeDependencies(Object... excludedDependencies)` | Adds package names to exclude from the generated `npm-shrinkwrap.json` file.
 
-### PublishNodeModuleTask [](id=publishnodemoduletask)
+### PublishNodeModuleTask
 
 The purpose of this task is to publish a package to the
 [NPM registry](https://www.npmjs.com/). Tasks of type `PublishNodeModuleTask`
@@ -268,7 +272,7 @@ override one or more fields of the `package.json` file with the values provided
 by the task properties by adding one or more keys (e.g., `"version"`) to the
 `overriddenPackageJsonKeys` property.
 
-#### Task Properties [](id=task-properties-5)
+#### Task Properties
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -286,14 +290,14 @@ Property Name | Type | Default Value | Description
 `npmUserName` | `String` | `null` | The name of the npmjs.com user that publishes the package.
 `overriddenPackageJsonKeys` | `Set<String>` | `[]` | The field values to override in the generated `package.json` file.
  
-#### Task Methods [](id=task-methods-1)
+#### Task Methods
  
  Method | Description
  ------ | -----------
  `PublishNodeModuleTask overriddenPackageJsonKeys(Iterable<String> overriddenPackageJsonKeys)` | Adds field values to override in the generated `package.json` file.
  `PublishNodeModuleTask overriddenPackageJsonKeys(String... overriddenPackageJsonKeys)` | Adds field values to override in the generated `package.json` file.
 
-### npmRun${script} Task [](id=npmrunscript-task)
+### npmRun${script} Task
 
 For each [script](https://docs.npmjs.com/misc/scripts) declared in the
 `package.json` file of the project, one task `npmRun${script}` of type

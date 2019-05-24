@@ -1,4 +1,8 @@
-# Clay Progress Bars [](id=clay-progress-bars)
+---
+header-id: clay-progress-bars
+---
+
+# Clay Progress Bars
 
 You can add progress bars to your app with the `clay:progressbar` tag. These 
 indicate the completion percentage of a task and come in three status styles: 
@@ -36,10 +40,10 @@ Complete progress bar:
 
 Clay taglibs make it easy to track progress in your apps.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Clay Dropdown Menus and Action Menus](/develop/tutorials/-/knowledge_base/7-1/clay-dropdown-menus-and-action-menus)
+[Clay Dropdown Menus and Action Menus](/docs/7-1/tutorials/-/knowledge_base/t/clay-dropdown-menus-and-action-menus)
 
-[Clay Icons](/develop/tutorials/-/knowledge_base/7-1/clay-icons)
+[Clay Icons](/docs/7-1/tutorials/-/knowledge_base/t/clay-icons)
 
-[Clay Navigation Bars](/develop/tutorials/-/knowledge_base/7-1/clay-navigation-bars)
+[Clay Navigation Bars](/docs/7-1/tutorials/-/knowledge_base/t/clay-navigation-bars)

@@ -1,4 +1,8 @@
-# Writing Controller Code [](id=writing-controller-code)
+---
+header-id: writing-controller-code
+---
+
+# Writing Controller Code
 
 In MVC, your controller receives requests from the front-end, and it pulls data
 from the back-end. It's a traffic director: it provides data to the right
@@ -11,9 +15,9 @@ If you have a small application that's not heavy on controller logic (maybe just
 a couple of action methods), you can put all your controller code in the
 `-Portlet` class. If you have more complex needs (lots of actions, complex
 render logic to implement, or maybe even some resource serving code), consider
-breaking the controller into [MVC Render Command classes](/develop/tutorials/-/knowledge_base/7-1/mvc-render-command),
-[MVC Action Command classes](/develop/tutorials/-/knowledge_base/7-1/mvc-action-command),
-and [MVC Resource Command classes](/develop/tutorials/-/knowledge_base/7-1/mvc-resource-command).
+breaking the controller into [MVC Render Command classes](/docs/7-1/tutorials/-/knowledge_base/t/mvc-render-command),
+[MVC Action Command classes](/docs/7-1/tutorials/-/knowledge_base/t/mvc-action-command),
+and [MVC Resource Command classes](/docs/7-1/tutorials/-/knowledge_base/t/mvc-resource-command).
 This tutorial demonstrates implementing controller logic for small applications.
 
 In this tutorial you'll learn to implement a Liferay MVC portlet with all the
@@ -25,7 +29,7 @@ controller code in the `-Portlet` class. It involves these things:
 
 Start with creating action methods. 
 
-## Action Methods [](id=action-methods)
+## Action Methods
 
 If you have a small application, you can implement all your controller logic in
 the portlet class you created in the last step. It can act as your controller by
@@ -68,7 +72,7 @@ next view to render to the user.
 While action methods respond to user actions, render logic determines the view
 to display to the user. Render logic is next. 
 
-## Render Logic [](id=render-logic)
+## Render Logic
 
 Here's how MVC Portlet determines which view to render. Note the `init-param`
 properties you set in your component:
@@ -147,29 +151,25 @@ Otherwise, it creates a guestbook and sets it to display. Lastly the method
 passes the render request and render response objects to the base class via its
 `render` method. 
 
-+$$$
-
-**Note:** Are you wondering how to call Service Builder services in 
-@product-ver@?
-[Invoking Services from Service Builder Code](/develop/tutorials/-/knowledge_base/7-1/invoking-services-from-service-builder-code)
-can help. In short, obtain a reference to the service by annotating one of your
-fields of that service type with the `@Reference` Declarative Services
-annotation.
-
-    @Reference
-    private GuestbookService _guestbookService;
-
-Once done, you can call the service's methods.
-
-    _guestbookService.addGuestbook(serviceContext.getUserId(), "Main",
-            serviceContext);
-
-$$$
+| **Note:** Are you wondering how to call Service Builder services in
+| @product-ver@?
+| [Invoking Services from Service Builder Code](/docs/7-1/tutorials/-/knowledge_base/t/invoking-services-from-service-builder-code)
+| can help. In short, obtain a reference to the service by annotating one of your
+| fields of that service type with the `@Reference` Declarative Services
+| annotation.
+| 
+|     @Reference
+|     private GuestbookService _guestbookService;
+| 
+| Once done, you can call the service's methods.
+| 
+|     _guestbookService.addGuestbook(serviceContext.getUserId(), "Main",
+|             serviceContext);
 
 Before venturing into the view layer, the next section demonstrates ways to pass
 information between the controller and view layers. 
 
-## Setting and Retrieving Request and Response Parameters and Attributes [](id=setting-and-retrieving-request-parameters-and-attributes)
+## Setting and Retrieving Request and Response Parameters and Attributes
 
 You can use a handy utility class called
 [`ParamUtil`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ParamUtil.html)

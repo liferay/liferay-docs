@@ -1,4 +1,8 @@
-# Installing a Server in Liferay Dev Studio [](id=installing-a-server-in-liferay-ide)
+---
+header-id: installing-a-server-in-liferay-ide
+---
+
+# Installing a Server in Liferay Dev Studio
 
 Installing a server in Liferay Dev Studio is easy. In just a few steps you'll
 have your server up and running. Follow these steps to install your server:
@@ -52,7 +56,7 @@ instance:
   server.
 - *Debug* (![Debug Server](../../../images/icon-debug-server.png)): Starts the
   server in debug mode. For more information on debugging in Dev Studio, see the
-  [Debugging @product@ source in Liferay Dev Studio](/develop/tutorials/-/knowledge_base/7-1/debugging-product-source-in-liferay-ide)
+  [Debugging @product@ source in Liferay Dev Studio](/docs/7-1/tutorials/-/knowledge_base/t/debugging-product-source-in-liferay-ide)
   article.
 
 Now you're ready to use your server in Liferay Dev Studio!

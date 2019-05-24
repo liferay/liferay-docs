@@ -1,4 +1,8 @@
-# Examining an OSGi Service to Override [](id=examining-an-osgi-service-to-override)
+---
+header-id: examining-an-osgi-service-to-override
+---
+
+# Examining an OSGi Service to Override
 
 Creating and injecting a custom service in place of an existing service requires
 three things: 
@@ -14,18 +18,18 @@ Getting components to adopt your custom service immediately can require
 reconfiguring their references to the service. Here you'll flesh out service
 details to make these decisions. 
 
-## Gathering Information on a Service [](id=gathering-information-on-a-service)
+## Gathering Information on a Service
 
 1.  Since component service references are extension points, start with
     following the tutorial 
-    [Finding Extension Points](/develop/tutorials/-/knowledge_base/7-1/finding-extension-points) 
+    [Finding Extension Points](/docs/7-1/tutorials/-/knowledge_base/t/finding-extension-points) 
     to determine the service you want to override and components that use that
     service. 
 
 2.  Once you know the service and components that use it, use Gogo Shell's
     Service Component Runtime (SCR) to inspect the components and get the
     service and reference details. The 
-    [Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell)
+    [Gogo Shell](/docs/7-1/reference/-/knowledge_base/r/using-the-felix-gogo-shell)
     command `scr:info [componentName]` lists the component's attributes and
     service references.
 
@@ -75,7 +79,7 @@ injecting a custom service. Here's what you'll do with the information:
 
 Start with the service interface. 
 
-## Step 1: Copy the Service Interface Name [](id=step-1-copy-the-service-interface-name)
+## Step 1: Copy the Service Interface Name
 
 The reference's *Interface Name* is the service interface's fully qualified
 name.
@@ -88,20 +92,16 @@ name.
 **Copy and save the interface name**, because it's the type your custom service
 must implement.
 
-+$$$
+| Javadocs for @product@ service interfaces are at these locations:
+| 
+| - [@product@ core Javadocs](@platform-ref@/7.1-latest/javadocs/)
+| - [@product@ app Javadocs](@app-ref@)
+| - [MVNRepository](https://mvnrepository.com/)
+|   and
+|   [Maven Central](https://search.maven.org/)
+|   (for Liferay and non-Liferay artifact Javadocs).
 
-Javadocs for @product@ service interfaces are at these locations:
-
-- [@product@ core Javadocs](@platform-ref@/7.1-latest/javadocs/)
-- [@product@ app Javadocs](@app-ref@)
-- [MVNRepository](https://mvnrepository.com/)
-  and
-  [Maven Central](https://search.maven.org/)
-  (for Liferay and non-Liferay artifact Javadocs). 
-
-$$$
-
-## Step 2: Copy the Existing Service Name [](id=step-2-copy-the-existing-service-name)
+## Step 2: Copy the Existing Service Name
 
 If you want to invoke the existing service along with your custom service, get
 the existing service name. 
@@ -122,7 +122,7 @@ bound to a service component whose fully qualified name is
             component.name = override.my.service.reference.service.impl.SomeServiceImpl
 
 **Copy the `component.name`** so you can reference the service in your 
-[custom service](/develop/tutorials/-/knowledge_base/7-1/creating-a-custom-osgi-service).
+[custom service](/docs/7-1/tutorials/-/knowledge_base/t/creating-a-custom-osgi-service).
 
 Here's an example of referencing the service above. 
 
@@ -131,7 +131,7 @@ Here's an example of referencing the service above.
     )
     private SomeService _defaultService;
 
-## Step 3: Gather Reference Configuration Details (if reconfiguration is needed) [](id=step-3-gather-reference-configuration-details-if-reconfiguration-is-needed)
+## Step 3: Gather Reference Configuration Details (if reconfiguration is needed)
 
 The service reference's policy and policy option determine a component's
 conditions for adopting a particular service.
@@ -150,7 +150,7 @@ conditions for adopting a particular service.
    3. The component's reference is modified so that it does not match the
       existing service but matches your service
 
-[Reconfiguring the reference](/develop/tutorials/-/knowledge_base/7-1/reconfiguring-components-to-use-your-service)
+[Reconfiguring the reference](/docs/7-1/tutorials/-/knowledge_base/t/reconfiguring-components-to-use-your-service)
 can be the quickest way for the component to adopt a new service. 
 
 **Gather these details:** 
@@ -165,36 +165,32 @@ can be the quickest way for the component to adopt a new service.
 
 - *Cardinality:* Number of service instances the reference can bind to. 
 
-+$$$
-
-**Note**: Declarative Services makes all components configurable through OSGi 
-Configuration Admin. Each `@Reference` annotation in the source code has a name
-property, either *explicitly* set in the annotation or *implicitly* derived from
-the name of the member on which the annotation is used.
-
--   If no reference name property is used and the `@Reference` is on a field,
-    then the reference name is the field name. If `@Reference` is on a field
-    called `_someService`, for example, then the reference name is
-    `_someService`.
--   If the `@Reference` is on a method, then heuristics derive the reference
-    name. Method name suffix is used and prefixes such as `set`, `add`, and
-    `put` are ignored. If `@Reference` is on a method called
-    `setSearchEngine(SearchEngine se)`, for example, then the reference name is
-    `SearchEngine`. 
-
-$$$
+| **Note**: Declarative Services makes all components configurable through OSGi
+| Configuration Admin. Each `@Reference` annotation in the source code has a name
+| property, either *explicitly* set in the annotation or *implicitly* derived from
+| the name of the member on which the annotation is used.
+| 
+| -   If no reference name property is used and the `@Reference` is on a field,
+|     then the reference name is the field name. If `@Reference` is on a field
+|     called `_someService`, for example, then the reference name is
+|     `_someService`.
+| -   If the `@Reference` is on a method, then heuristics derive the reference
+|     name. Method name suffix is used and prefixes such as `set`, `add`, and
+|     `put` are ignored. If `@Reference` is on a method called
+|     `setSearchEngine(SearchEngine se)`, for example, then the reference name is
+|     `SearchEngine`.
 
 After
-[creating your custom service](/develop/tutorials/-/knowledge_base/7-1/creating-a-custom-osgi-service)
+[creating your custom service](/docs/7-1/tutorials/-/knowledge_base/t/creating-a-custom-osgi-service)
 (next), you'll use the details you collected here to 
-[configure the component to use your custom service](/develop/tutorials/-/knowledge_base/7-1/reconfiguring-components-to-use-your-service).
+[configure the component to use your custom service](/docs/7-1/tutorials/-/knowledge_base/t/reconfiguring-components-to-use-your-service).
 
 Congratulations on getting the details required for overriding the OSGi service! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[OSGi Services and Dependency Injection with Declarative Services](/develop/tutorials/-/knowledge_base/7-1/osgi-services-and-dependency-injection-with-declarative-services)
+[OSGi Services and Dependency Injection with Declarative Services](/docs/7-1/tutorials/-/knowledge_base/t/osgi-services-and-dependency-injection-with-declarative-services)
 
-[Finding Extension Points](/develop/tutorials/-/knowledge_base/7-1/finding-extension-points)
+[Finding Extension Points](/docs/7-1/tutorials/-/knowledge_base/t/finding-extension-points)
 
-[Gogo Shell](/develop/reference/-/knowledge_base/7-1/using-the-felix-gogo-shell)
+[Gogo Shell](/docs/7-1/reference/-/knowledge_base/r/using-the-felix-gogo-shell)

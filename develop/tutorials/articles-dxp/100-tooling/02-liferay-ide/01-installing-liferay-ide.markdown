@@ -1,4 +1,8 @@
-# Installing Liferay @ide@ [](id=installing-liferay-ide)
+---
+header-id: installing-liferay-ide
+---
+
+# Installing Liferay @ide@
 
 Liferay @ide@ is a plugin for Eclipse that provides many Liferay-specific
 features and additional enterprise only features. You can install it into your
@@ -22,7 +26,7 @@ With this particular upgrade, you should also deactivate the current available
 update sites in the *Window* &rarr; *Preferences* &rarr; *Install/Update* &rarr;
 *Available Software Sites* menu to ensure a successful upgrade (e.g., Neon).
 
-## Install the Liferay Dev Studio Bundle [](id=install-the-liferay-developer-studio-bundle)
+## Install the Liferay Dev Studio Bundle
 
 1.  Download and install [Java](http://java.oracle.com). @product@ runs on Java,
     so you'll need it to run everything else. Because you'll be developing apps
@@ -36,8 +40,8 @@ update sites in the *Window* &rarr; *Preferences* &rarr; *Install/Update* &rarr;
     [Project SDK with @ide@](https://sourceforge.net/projects/lportal/files/Liferay%20IDE/)
     executable that correlates to your operating system. The Project SDK
     includes @ide@,
-    [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace),
-    and [Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli).
+    [Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace),
+    and [Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/blade-cli).
 
     You may be prompted for your liferay.com username and password before
     downloading the @ide@ installer. Since @ide@ includes access to @product@,
@@ -45,13 +49,13 @@ update sites in the *Window* &rarr; *Preferences* &rarr; *Install/Update* &rarr;
 
     Your credentials are not saved locally; they're saved as a token in the
     `~/.liferay` folder. The token is used by your Dev Studio's
-    [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace)
+    [Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace)
     if you ever decide to redownload a @product@ bundle. Furthermore, the
     @product@ bundle that was downloaded in your workspace is also copied to
     your `~/.liferay/bundles` folder, so if you decide to initialize another
     @product@ instance of the same version, the bundle is not re-downloaded. See
     the
-    [Adding a Liferay Bundle to a Workspace](/develop/tutorials/-/knowledge_base/7-1/configuring-a-liferay-workspace#adding-a-liferay-bundle-to-a-workspace)
+    [Adding a Liferay Bundle to a Workspace](/docs/7-1/tutorials/-/knowledge_base/t/configuring-a-liferay-workspace#adding-a-liferay-bundle-to-a-workspace)
     for more information on this topic.
 
     **Important:** The token generator sometimes has issues generating a token
@@ -74,17 +78,17 @@ update sites in the *Window* &rarr; *Preferences* &rarr; *Install/Update* &rarr;
     with @ide@. Then click *Next*.
 
     Dev Studio installs
-    [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/liferay-workspace)
+    [Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace)
     by default, which is a developer environment used to build and manage
     @product@ projects. The installer automatically installs Liferay Workspace
     and its dedicated command line tool
-    ([Blade CLI](/develop/tutorials/-/knowledge_base/7-1/blade-cli)).
+    ([Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/blade-cli)).
 
 7.  Configure proxy settings for your Project SDK. If you must use Dev Studio
     behind a firewall, you may want to configure the proxy settings. See the
-    [Liferay IDE Proxy Settings](/develop/tutorials/-/knowledge_base/7-1/setting-proxy-requirements-for-liferay-ide)
+    [Liferay IDE Proxy Settings](/docs/7-1/tutorials/-/knowledge_base/t/setting-proxy-requirements-for-liferay-ide)
     and
-    [Liferay Workspace Proxy Settings](/develop/tutorials/-/knowledge_base/7-1/setting-proxy-requirements-for-liferay-workspace)
+    [Liferay Workspace Proxy Settings](/docs/7-1/tutorials/-/knowledge_base/t/setting-proxy-requirements-for-liferay-workspace)
     tutorials for more information. Skip this step if you don't need this.
 
     ![Figure 2: Configure your Project SDK's proxy settings, if necessary.](../../../images-dxp/dev-studio-proxy-settings.png)
@@ -95,7 +99,7 @@ Congratulations! You've installed Liferay @ide@! It's now available in the
 folder you specified. To run Dev Studio, execute the `DeveloperStudio`
 executable. A Liferay Workspace has also been initialized in that same folder.
 
-## Install Liferay Dev Studio into Eclipse Environment [](id=install-liferay-developer-studio-into-eclipse-environment)
+## Install Liferay Dev Studio into Eclipse Environment
 
 To install Dev Studio using an update URL, follow these steps:
 
@@ -112,7 +116,7 @@ To install Dev Studio using an update URL, follow these steps:
 
 Liferay Dev Studio is now installed in your existing Eclipse environment.
 
-## Install Liferay Dev Studio into Eclipse from a ZIP File [](id=install-liferay-ide-into-eclipse-from-a-zip-file)
+## Install Liferay Dev Studio into Eclipse from a ZIP File
 
 To install Dev Studio using a Zip file, follow these steps:
 
@@ -137,7 +141,7 @@ To install Dev Studio using a Zip file, follow these steps:
 
 Awesome! You've installed Liferay Dev Studio in your existing Eclipse environment.
 
-## Generating a Workspace Token Manually [](id=generating-a-workspace-token-manually)
+## Generating a Workspace Token Manually
 
 If you run into any issues with generating your token automatically, you can
 follow the steps below to manually create one.
@@ -170,5 +174,5 @@ You've successfully generated your token manually and it's now available for
 your installer to access. If you haven't run the installer, you can do so now.
 If you've already run the installer, you can set the DXP bundle to download
 in the `gradle.properties` file of your workspace. See the
-[Adding a Liferay Bundle to a Workspace](/develop/tutorials/-/knowledge_base/7-1/configuring-a-liferay-workspace#adding-a-liferay-bundle-to-a-workspace)
+[Adding a Liferay Bundle to a Workspace](/docs/7-1/tutorials/-/knowledge_base/t/configuring-a-liferay-workspace#adding-a-liferay-bundle-to-a-workspace)
 tutorial for details.

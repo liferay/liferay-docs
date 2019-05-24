@@ -1,9 +1,13 @@
-# Redirecting Users [](id=redirecting-users)
+---
+header-id: redirecting-users
+---
+
+# Redirecting Users
 
 When users submit a form, you can present them with another page indicating 
 success or some other information related to their submission. Sometimes all you 
 need is a 
-[success page](/discover/portal/-/knowledge_base/7-1/form-success-pages), 
+[success page](/docs/7-1/user/-/knowledge_base/u/form-success-pages), 
 but other times you might want to send users to a specific URL. 
 
 Whatever your use case is, follow these steps to set up a redirect URL: 

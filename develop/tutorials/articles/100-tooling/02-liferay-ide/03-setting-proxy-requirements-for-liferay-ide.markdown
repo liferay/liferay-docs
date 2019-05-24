@@ -1,4 +1,8 @@
-# Setting Proxy Requirements for Liferay Dev Studio [](id=setting-proxy-requirements-for-liferay-ide)
+---
+header-id: setting-proxy-requirements-for-liferay-ide
+---
+
+# Setting Proxy Requirements for Liferay Dev Studio
 
 If you have proxy server requirements and want to configure your http(s) proxy		
 to work with Liferay Dev Studio, follow the instructions below.
@@ -23,12 +27,12 @@ to work with Liferay Dev Studio, follow the instructions below.
 
 If you're working with a Liferay Workspace in Dev Studio, you'll need to configure
 your proxy settings for that environment too. See the
-[Setting Proxy Requirements for Liferay Workspace](/develop/tutorials/-/knowledge_base/7-1/setting-proxy-requirements-for-liferay-workspace)
+[Setting Proxy Requirements for Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/setting-proxy-requirements-for-liferay-workspace)
 for more details.
 
 Awesome! You've successfully configured Dev Studio's proxy settings!
 
-## Additional Proxy Settings [](id=additional-proxy-settings)
+## Additional Proxy Settings
 
 Some Eclipse plugins do not properly check the `core.net` proxy infrastructure
 when setting proxy settings via *Window* &rarr; *Preferences* &rarr; *General*

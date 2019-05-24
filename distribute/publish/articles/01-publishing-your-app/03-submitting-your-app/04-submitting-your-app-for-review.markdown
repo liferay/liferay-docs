@@ -1,4 +1,8 @@
-# Submitting Your App For Review [](id=submitting-your-app-for-review)
+---
+header-id: submitting-your-app-for-review
+---
+
+# Submitting Your App For Review
 
 The *App Preview* screen lets you preview your app as it will appear on the
 Marketplace. If you want to change things before finally submitting your app,

@@ -1,11 +1,15 @@
-# Locales and Encoding Configuration [](id=locales-and-encoding-configuration)
+---
+header-id: locales-and-encoding-configuration
+---
+
+# Locales and Encoding Configuration
 
 You can display content based on language, time zone, "right to left" (that is,
 languages such as Hebrew, Arabic, and Persian), and you can localize user names
 and titles. Administrators can localize specific core UI messages so that the
 messages display in certain languages.
 
-## Time Zones [](id=time-zones)
+## Time Zones
 
 You can set time zones in the Control Panel and theoretically in the JVM (but
 this must be set to GMT: see below). 
@@ -24,7 +28,7 @@ Control Panel, at the Instance level.
 The central left and right arrows let you add or remove available languages and
 locales. You can also set these as properties in your `portal-ext.properties`
 file in your
-[Liferay Home](/discover/deployment/-/knowledge_base/7-1/installing-liferay#liferay-home)
+[Liferay Home](/docs/7-1/deploy/-/knowledge_base/d/installing-liferay#liferay-home)
 folder. The `portal.properties` reference document's 
 [Company](@platform-ref@/7.1-latest/propertiesdoc/portal.properties.html#Company) 
 section defines the default locale. The 
@@ -35,7 +39,7 @@ section defines the available and current locales.
 
 As an example, the above property changes the locale to English, Great Britain. 
  
-## Set the JVM Time Zone to GMT [](id=set-the-jvm-time-zone-to-gmt)
+## Set the JVM Time Zone to GMT
 
 If you set the time zone in the JVM, it causes issues such as Calendar Events
 and Web Content articles displaying the wrong dates. This happens because the
@@ -47,7 +51,7 @@ the display date is calculated correctly, the time zone must be configured to
 GMT at the JVM level. Otherwise, an incorrect time zone offset at the JVM level
 causes the display date to be wrongly calculated and displayed. 
 
-## Friendly URLs and Locales [](id=friendly-urls-and-locales)
+## Friendly URLs and Locales
 
 In addition to configuring instance settings, you can also define unique URLs
 for specific languages using the `I18nServlet` by editing Portal's `web.xml`
@@ -70,14 +74,14 @@ The defaults should be sufficient for nearly all circumstances. Because
 on your app server), test the defaults and make sure you really need to modify
 these settings. If you're clustered, you must make these changes on all nodes.
 
-## Modifying Language Keys [](id=modifying-language-keys)
+## Modifying Language Keys
 
 Developers can add or modify certain core UI messages (e.g. *Your request
 completed successfully.*) by 
-[modifying the language keys](/develop/tutorials/-/knowledge_base/7-1/overriding-language-keys) 
+[modifying the language keys](/docs/7-1/tutorials/-/knowledge_base/t/overriding-language-keys) 
 that ship by default. 
 
-### Right to Left [](id=right-to-left)
+### Right to Left
 
 For languages that are displayed right to left, use the following language
 properties settings:
@@ -87,9 +91,9 @@ properties settings:
 	lang.line.end=left
 
 To display right to left by default,
-[override these properties globally](/develop/tutorials/-/knowledge_base/7-1/overriding-global-language-keys). 
+[override these properties globally](/docs/7-1/tutorials/-/knowledge_base/t/overriding-global-language-keys). 
 
-### Localizing User Names [](id=localizing-user-names)
+### Localizing User Names
 
 Users can change the prefix and suffix values for a locale. For example, for
 Spanish, the `language_es.properties` file contains these values: 
@@ -99,12 +103,12 @@ Spanish, the `language_es.properties` file contains these values:
 	lang.user.name.required.field.names=last-name
 
 For more information, see 
-[Using Liferay Language Settings](/develop/tutorials/-/knowledge_base/7-1/using-liferays-language-settings).
+[Using Liferay Language Settings](/docs/7-1/tutorials/-/knowledge_base/t/using-liferays-language-settings).
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using Liferay Language Settings](/develop/tutorials/-/knowledge_base/7-1/using-liferays-language-settings)
+[Using Liferay Language Settings](/docs/7-1/tutorials/-/knowledge_base/t/using-liferays-language-settings)
 
-[Overriding Global Language Keys](/develop/tutorials/-/knowledge_base/7-1/overriding-global-language-keys)
+[Overriding Global Language Keys](/docs/7-1/tutorials/-/knowledge_base/t/overriding-global-language-keys)
 
-[Overriding a Module's Language Keys](/develop/tutorials/-/knowledge_base/7-1/overriding-a-modules-language-keys)
+[Overriding a Module's Language Keys](/docs/7-1/tutorials/-/knowledge_base/t/overriding-a-modules-language-keys)

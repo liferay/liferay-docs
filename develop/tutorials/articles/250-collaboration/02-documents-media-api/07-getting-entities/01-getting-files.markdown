@@ -1,4 +1,8 @@
-# Getting Files [](id=getting-files)
+---
+header-id: getting-files
+---
+
+# Getting Files
 
 Getting files is one of the most common tasks you'll perform with the Documents 
 and Media API. There are two main method families for getting files: 
@@ -63,7 +67,7 @@ default repository, sorted by title:
         private DLAppService _dlAppService;
 
     For more information on this, see the section on 
-    [getting a service reference](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
+    [getting a service reference](/docs/7-1/tutorials/-/knowledge_base/t/getting-started-with-the-documents-and-media-api#getting-a-service-reference) 
     in the getting started tutorial. 
 
 2.  Get the data needed to populate the method's arguments. You can do this any 
@@ -84,7 +88,7 @@ default repository, sorted by title:
         long groupId = themeDisplay.getScopeGroupId();
 
     For more information, see the 
-    [Data Scopes tutorial](/develop/tutorials/-/knowledge_base/7-1/data-scopes). 
+    [Data Scopes tutorial](/docs/7-1/tutorials/-/knowledge_base/t/data-scopes). 
 
 3.  Use the data from the previous step to call the service reference method you
     want to use to get the files. This example calls the above `getFileEntries`
@@ -124,10 +128,10 @@ Remember, this is just one of many `getFileEntries` and `getGroupFileEntries`
 methods. To see all such methods, see the 
 [`DLAppService` Javadoc](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html). 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Getting Started with the Documents and Media API](/develop/tutorials/-/knowledge_base/7-1/getting-started-with-the-documents-and-media-api)
+[Getting Started with the Documents and Media API](/docs/7-1/tutorials/-/knowledge_base/t/getting-started-with-the-documents-and-media-api)
 
-[Getting Folders](/develop/tutorials/-/knowledge_base/7-1/getting-folders)
+[Getting Folders](/docs/7-1/tutorials/-/knowledge_base/t/getting-folders)
 
-[Getting Multiple Entity Types](/develop/tutorials/-/knowledge_base/7-1/getting-multiple-entity-types)
+[Getting Multiple Entity Types](/docs/7-1/tutorials/-/knowledge_base/t/getting-multiple-entity-types)

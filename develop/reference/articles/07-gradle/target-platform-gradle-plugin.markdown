@@ -1,4 +1,8 @@
-# Target Platform Gradle Plugin [](id=target-platform-gradle-plugin)
+---
+header-id: target-platform-gradle-plugin
+---
+
+# Target Platform Gradle Plugin
 
 The Target Platform Gradle plugin helps with building multiple projects
 against a declared API target platform. Java dependencies can be managed with
@@ -6,7 +10,7 @@ Maven BOMs and OSGi modules can be resolved against an OSGi distribution.
 
 The plugin has been successfully tested with Gradle 4.10.2.
 
-## Usage [](id=usage)
+## Usage
 
 To use the plugin, include it in your build script:
 
@@ -55,7 +59,7 @@ repositories {
 }
 ```
 
-## Target Platform Plugin [](id=target-platform-plugin)
+## Target Platform Plugin
 
 The plugin applies the [Spring Dependency Management Plugin](https://github.com/spring-gradle-plugins/dependency-management-plugin)
 and then adds several specific configurations to configure the BOMs that are
@@ -82,7 +86,7 @@ the artifact that provides all the OSGi capabilities of the target platform. All
 of these parameters are used to create a `bndrun` file that can be used as input
 into the Bndrun resolve operation.
 
-## Target Platform IDE Plugin [](id=target-platform-ide-plugin)
+## Target Platform IDE Plugin
 
 The plugin applies the [Target Platform](#target-platform-plugin) and the
 [`eclipse`](https://docs.gradle.org/current/userguide/eclipse_plugin.html)
@@ -92,7 +96,7 @@ plugin model in Gradle to add all target platform artifacts to the classpath so
 they are visible to both Eclipse and IntelliJ's Java Model Search (for looking
 up sources to classes).
 
-## Project Extension [](id=project-extension)
+## Project Extension
 
 The Target Platform plugin exposes the following properties through the
 extension named `targetPlatform`:
@@ -115,9 +119,9 @@ Method | Description
 `TargetPlatformExtension subprojects(Iterable<Project> subprojects)` | Includes additional projects to be configured with Target Platform support.
 `TargetPlatformExtension subprojects(Project... subprojects)` | Includes additional projects to be configured with Target Platform support.
 
-## Tasks [](id=tasks)
+## Tasks
 
-### ResolveTask [](id=resolvetask)
+### ResolveTask
 
 The purpose of this task is to resolve an OSGi module (or all OSGi modules of
 subprojects) against the available `targetPlatformBundles` and
@@ -133,7 +137,7 @@ successfully (the resolution is valid). If a set of run bundles can't be found,
 the resolution has failed and the failed requirements are listed as output of
 the task.
 
-#### Task Properties [](id=task-properties)
+#### Task Properties
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -144,12 +148,12 @@ Property Name | Type | Default Value | Description
 `offline` | `boolean` | `null` | Whether to run the bndrun resolve operation in offline mode.
 `requirementsFileCollection` | `FileCollection` | <p>**For the root project:** All the output JAR files of the subprojects.</p><p>**For subprojects:** The output JAR file of the subproject.</p> | For each resolve operation, the requirements must be specified in the `bndrun` file; each of the JARs in this collection generate an `osgi.identify` requirement in the `bndrun` file.
 
-## Additional Configuration [](id=additional-configuration)
+## Additional Configuration
 
 There are additional configurations that you can use to configure the target
 platform.
 
-### Target Platform BOMs Dependency [](id=target-platform-boms-dependency)
+### Target Platform BOMs Dependency
 
 The plugin creates a configuration called `targetPlatformBOMs` with no defaults.
 You can use this dependency to set which BOMs to import to configure your target
@@ -162,7 +166,7 @@ dependencies {
 }
 ```
 
-### Target Platform Bundles Dependency [](id=target-platform-bundles-dependency)
+### Target Platform Bundles Dependency
 
 The plugin creates a configuration called `targetPlatformBundles`. It is
 configured with default dependencies to all resolvable bundles in a
@@ -177,7 +181,7 @@ dependencies {
 }
 ```
 
-### Target Platform Distro Dependency [](id=target-platform-distro-dependency)
+### Target Platform Distro Dependency
 
 The plugin creates a configuration called `targetPlatformDistro`. It is has no
 default so you must specify which artifact you want to use as the distribution
@@ -198,7 +202,7 @@ dependencies {
 }
 ```
 
-### Target Platform Requirements Dependency [](id=target-platform-requirements-dependency)
+### Target Platform Requirements Dependency
 
 The plugin creates a configuration called `targetPlatformRequirements`. It is
 configured with default dependencies to all resolvable bundles in a

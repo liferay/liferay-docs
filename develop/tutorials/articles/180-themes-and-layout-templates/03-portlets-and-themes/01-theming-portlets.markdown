@@ -1,14 +1,18 @@
-# Theming Portlets [](id=theming-portlets)
+---
+header-id: theming-portlets
+---
+
+# Theming Portlets
 
 Themes can provide additional styles for your apps. You can change the markup 
 for portlet containers by modifying the theme's `portlet.ftl` file.
 
 This tutorial demonstrates how to style portlets with your themes.
 
-## Portlet FTL [](id=portlet-ftl)
+## Portlet FTL
 
 Although you can individually style a portlet via the theme's CSS or the
-portlet's [Look and Feel Configuration](/discover/portal/-/knowledge_base/7-1/look-and-feel-configuration)
+portlet's [Look and Feel Configuration](/docs/7-1/user/-/knowledge_base/u/look-and-feel-configuration)
 menu, you may want to modify the default look and feel for all portlets in your
 site. A portlet's template--its container, CSS classes, and overall HTML
 Markup--is defined via the theme's `portlet.ftl` file. To provide a custom style
@@ -76,7 +80,7 @@ Now that you are more familiar with your theme's `portlet.ftl` file, you can
 learn the role Portlet Decorators play in the overall look and feel of your 
 portlets.
 
-## Portlet Decorators [](id=portlet-decorators)
+## Portlet Decorators
 
 With Portlet Decorators, you can customize the style of 
 the application wrapper. Themes come bundled with three default portlet 
@@ -93,13 +97,13 @@ decorators in their `liferay-look-and-feel.xml`:
 
 Now you know how to make your portlets stylish! But if default decorators are
 not stylish enough for you, [EDITOR: Our defaults are always stylish!] go to
-[Portlet Decorators](/develop/tutorials/-/knowledge_base/7-1/creating-configurable-styles-for-portlet-wrappers) to
+[Portlet Decorators](/docs/7-1/tutorials/-/knowledge_base/t/creating-configurable-styles-for-portlet-wrappers) to
 learn how make and apply your own.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Look and Feel Configuration](/discover/portal/-/knowledge_base/7-1/look-and-feel-configuration)
+[Look and Feel Configuration](/docs/7-1/user/-/knowledge_base/u/look-and-feel-configuration)
 
-[Creating Configurable Styles For Portlet Wrappers](/develop/tutorials/-/knowledge_base/7-1/creating-configurable-styles-for-portlet-wrappers)
+[Creating Configurable Styles For Portlet Wrappers](/docs/7-1/tutorials/-/knowledge_base/t/creating-configurable-styles-for-portlet-wrappers)
 
-[Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-1/themes-and-layout-templates)
+[Themes and Layout Templates](/docs/7-1/tutorials/-/knowledge_base/t/themes-and-layout-templates)

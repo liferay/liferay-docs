@@ -1,19 +1,19 @@
-# Using the Knowledge Base [](id=using-the-knowledge-base)
+---
+header-id: using-the-knowledge-base
+---
+
+# Using the Knowledge Base
 
 The Knowledge Base app can be used to display professional product documentation
 or form complete books or guides. It even lets you import article source files
 written in Markdown. It's 
-[workflow-enabled](/discover/portal/-/knowledge_base/7-1/workflow), so you
+[workflow-enabled](/docs/7-1/user/-/knowledge_base/u/workflow), so you
 can require articles to be approved before publication. Additionally, you can
 create article templates that help users follow a common outline. 
 
-+$$$
-
-**Note:** To use the Knowledge Base, you must download and install the Knowledge 
-Base app from 
-[Liferay Marketplace](https://web.liferay.com/marketplace). 
-
-$$$
+| **Note:** To use the Knowledge Base, you must download and install the Knowledge
+| Base app from
+| [Liferay Marketplace](https://web.liferay.com/marketplace).
 
 Here are the Knowledge Base's key features: 
 

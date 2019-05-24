@@ -1,4 +1,8 @@
-# Managing Data Definitions [](id=managing-data-definitions)
+---
+header-id: managing-data-definitions
+---
+
+# Managing Data Definitions
 
 There are several ways to manage your data definitions. Of course, you can edit
 a data definition, but you can also configure its permissions, manage its
@@ -25,13 +29,13 @@ for each definition:
 
 **Edit:** Edit the data definition. The edit screen uses the same form 
 for 
-[creating data definitions](/discover/portal/-/knowledge_base/7-1/creating-data-definitions). 
+[creating data definitions](/docs/7-1/user/-/knowledge_base/u/creating-data-definitions). 
 Note that if you edit a data definition referenced elsewhere (e.g., by
 a dynamic data list or display template), then you must update that reference. 
 
 **Manage Templates:** The *Manage Templates* screen creates and manages
 templates for the data definition. For details, see 
-[Using Templates to Display Forms and Lists](/discover/portal/-/knowledge_base/7-1/using-templates-to-display-forms-and-lists). 
+[Using Templates to Display Forms and Lists](/docs/7-1/user/-/knowledge_base/u/using-templates-to-display-forms-and-lists). 
 
 **Permissions:** Configure the data definition's permissions. Note that 
 these permissions are for an individual definition accessed through the

@@ -1,4 +1,8 @@
-# Combination Charts [](id=combination-charts)
+---
+header-id: combination-charts
+---
+
+# Combination Charts
 
 Combination charts have minor differences from other charts. In a combination
 chart, you must define the representation type of each data set: `AREA`,
@@ -52,10 +56,10 @@ Follow these steps:
     
 ![Figure 1: A combination chart displays a variety of data set types.](../../../images/chart-taglib-combination.png)
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Bar Charts](/develop/tutorials/-/knowledge_base/7-1/bar-charts)
+[Bar Charts](/docs/7-1/tutorials/-/knowledge_base/t/bar-charts)
 
-[Donut Charts](/develop/tutorials/-/knowledge_base/7-1/donut-charts)
+[Donut Charts](/docs/7-1/tutorials/-/knowledge_base/t/donut-charts)
 
-[Pie Charts](/develop/tutorials/-/knowledge_base/7-1/pie-charts)
+[Pie Charts](/docs/7-1/tutorials/-/knowledge_base/t/pie-charts)

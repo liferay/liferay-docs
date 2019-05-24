@@ -1,11 +1,15 @@
-# Configuring RSS Feeds [](id=configuring-rss-feeds)
+---
+header-id: configuring-rss-feeds
+---
+
+# Configuring RSS Feeds
 
 To manage a Liferay site's RSS feeds, navigate to your Site's Site
 Administration &rarr; *Content* page and click *Web Content*. Site
 administrators can use this Web Content menu option to manage their site's web
 content, including web content structures and templates, which you learned in
 the 
-[Creating Web Content](/discover/portal/-/knowledge_base/7-1/creating-web-content) 
+[Creating Web Content](/docs/7-1/user/-/knowledge_base/u/creating-web-content) 
 section. Site administrators can also use this option to manage their site's RSS
 feeds. To add a new feed:
 

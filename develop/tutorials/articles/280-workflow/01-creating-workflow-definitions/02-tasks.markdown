@@ -1,4 +1,8 @@
-# Workflow Task Nodes [](id=workflow-task-nodes)
+---
+header-id: workflow-task-nodes
+---
+
+# Workflow Task Nodes
 
 Task nodes are fundamental parts of a workflow definition. When you define your
 organization's business processes and design corresponding workflows, you likely
@@ -67,10 +71,10 @@ There are two `actions` in the review task, both `<notification>`s. Each
 notification may contain a name, template, notification-type, execution-type,
 and recipients. Besides notifications, You can also use the `<action>` tag.
 These have a name and a 
-[script](/discover/portal/-/knowledge_base/7-1/leveraging-the-script-engine-in-workflow) 
+[script](/docs/7-1/user/-/knowledge_base/u/leveraging-the-script-engine-in-workflow) 
 and are more often used in state nodes than tasks.
 
-## Assignments [](id=assignments)
+## Assignments
 
 Workflow tasks are completed by a user. Assignments make sure the right users
 can access the tasks. You can choose how you want to configure your assignments. 
@@ -161,14 +165,14 @@ UPDATE action in an assignment, then anyone who has permission to update the
 type of asset being processed in the workflow is assigned to the task. You can
 configure multiple assignments for a task.
 
-## Resource Action Assignments [](id=resource-action-assignments)
+## Resource Action Assignments
 
 *Resource actions* are operations performed by users on an application or
 entity. For example, a user might have permission to update Message Boards
 Messages. This is called an UPDATE resource action, because the user can update
 the resource. If you're uncertain about what resource actions are, refer to the
 developer tutorial on the 
-[permission system](/develop/tutorials/-/knowledge_base/7-1/defining-application-permissions)
+[permission system](/docs/7-1/tutorials/-/knowledge_base/t/defining-application-permissions)
 for a more detailed explanation.
 
 To find all the resource actions that have been created, you need access to the
@@ -177,7 +181,7 @@ permission for the VIEW action on the roles resource).
 
 - Navigate to Control Panel &rarr; Users &rarr; Roles.
 - Add a new Regular Role. See the 
-  [article on managing roles](/discover/portal/-/knowledge_base/7-1/roles-and-permissions)
+  [article on managing roles](/docs/7-1/user/-/knowledge_base/u/roles-and-permissions)
   for more information.
 - Once the role is added, navigate to the Define Permissions interface for the
   role.
@@ -213,7 +217,7 @@ resource. For example, in Message Boards, one of the permissions displayed on
 that screen is *Add Discussion*. Convert that to all uppercase and replace the
 space with an underscore, and you have the action name. 
 
-## Task Timers [](id=task-timers)
+## Task Timers
 
 Task timers trigger an action after a specified time period passes. Timers are
 useful for ensuring a task does not go unattended for a long time. Available
@@ -283,20 +287,16 @@ Like `<action>` elements, `<timer-action>` elements can contain scripts.
 
 The above example isn't functional but it demonstrates setting up a `<script>`
 in your task timer. 
-[Read the Scripting in Workflow article](/discover/portal/-/knowledge_base/7-1/leveraging-the-script-engine-in-workflow) 
+[Read the Scripting in Workflow article](/docs/7-1/user/-/knowledge_base/u/leveraging-the-script-engine-in-workflow) 
 for more information.
 
-+$$$
-
-**Note:** A `timer-action` can contain all the same tags as an `action`, with
-one exception: `execution-type`. Timer actions are always triggered once the
-time is up, so specifying and execution type of `onEntry`, for example, isn't
-meaningful inside a timer. 
-
-$$$
+| **Note:** A `timer-action` can contain all the same tags as an `action`, with
+| one exception: `execution-type`. Timer actions are always triggered once the
+| time is up, so specifying and execution type of `onEntry`, for example, isn't
+| meaningful inside a timer.
 
 Tasks are at the core of the workflow definition. Once you understand how to
 create tasks and the other
 [workflow
-nodes](/develop/tutorials/-/knowledge_base/7-1/workflow-definition-nodes) and add
+nodes](/docs/7-1/tutorials/-/knowledge_base/t/workflow-definition-nodes) and add
 transitions between the nodes, you're on the cusp of workflow wizard-hood.

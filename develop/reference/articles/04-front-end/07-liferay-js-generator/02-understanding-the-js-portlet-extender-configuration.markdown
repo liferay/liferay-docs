@@ -1,18 +1,22 @@
-# Understanding the JS Portlet Extender Configuration [](id=understanding-the-js-portlet-extender-configuration)
+---
+header-id: understanding-the-js-portlet-extender-configuration
+---
+
+# Understanding the JS Portlet Extender Configuration
 
 Bundles generated with the Liferay JS Generator require specific method 
 signatures, MANIFEST headers, and configuration within their `package.json` 
 file to use the JS Portlet Extender. This configuration is provided by default. 
 For reference, this configuration is covered in detail below.
 
-## Manifest Header [](id=manifest-header)
+## Manifest Header
 
 The OSGi bundle is identified with the MANIFEST header shown below, which 
 specifies to process it with the JS Portlet Extender:
 
     Require-Capability: osgi.extender;filter:="(osgi.extender=liferay.npm.portlet)"
 
-## Main Entry Point [](id=main-entry-point)
+## Main Entry Point
 
 The main module of your JavaScript widget must export a JavaScript function 
 with the signature below. Bundles created with the Liferay JS Generator have 

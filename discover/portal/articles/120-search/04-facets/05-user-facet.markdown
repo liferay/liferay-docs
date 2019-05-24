@@ -1,4 +1,8 @@
-# User Facet [](id=user-facet)
+---
+header-id: user-facet
+---
+
+# User Facet
 
 The User Facet narrows search results down to those created by a certain User.
 
