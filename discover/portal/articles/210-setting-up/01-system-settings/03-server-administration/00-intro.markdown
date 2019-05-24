@@ -34,14 +34,18 @@ of these properties, see the
 example, you can migrate your documents to a new repository on a different 
 disk or in a [new format](/discover/deployment/-/knowledge_base/7-1/document-repository-configuration). Here are the steps:
 
-1.  Create a repository backup copy. 
+1.  Create a backup copy of the Document Library repository and
+    [@product@ database](/discover/deployment/-/knowledge_base/7-1/backing-up-a-liferay-installation). 
 2.  Configure the new file store in *System Settings* &rarr; *Platform: File 
     Storage*. 
 3.  In this tab (*Server Administration* &rarr; *Data Migration*), select the 
     repository hook for the file store you configured and click *Execute*. 
-4.  After the process completes, [configure the new
+4.  Make sure the data migrated correctly. 
+5.  [Configure the new
     repository](/discover/deployment/-/knowledge_base/7-1/document-repository-configuration)
     as the default. 
+6.  If you used a `portal-ext.properties` file to configure the repository, 
+    restart the server. 
 
 **Mail:** Instead of using a `portal-ext.properties` file to configure a 
 mail server, you can configure a mail server from this tab. If your 
