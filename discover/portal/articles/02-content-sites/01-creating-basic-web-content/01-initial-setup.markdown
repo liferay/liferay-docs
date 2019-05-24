@@ -1,4 +1,8 @@
-# Initial Setup [](id=initial-setup)
+---
+header-id: initial-setup
+---
+
+# Initial Setup
 
 <div class="learn-path-step">
     <p>Creating Basic Web Content<br>Step 1 of 3</p>
@@ -10,7 +14,7 @@ page. The default name for the Site is "Liferay," but you can change that by
 changing the name globally. You can set the name through the Setup Wizard or 
 through the Control Panel.
 
-## Changing the Site Name [](id=changing-the-site-name)
+## Changing the Site Name
 
 Since you're working on the Lunar Resort website, and not Liferay's website, 
 you should head over to the Control Panel to set your site name properly.

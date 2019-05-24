@@ -1,4 +1,8 @@
-# Compiling Sass Files in a Maven Project [](id=compiling-sass-files-in-a-maven-project)
+---
+header-id: compiling-sass-files-in-a-maven-project
+---
+
+# Compiling Sass Files in a Maven Project
 
 If your Liferay Maven project uses Sass files to style its UI, you must
 configure the project to convert its Sass files into CSS files so they are
@@ -55,7 +59,7 @@ Here's how to apply Liferay's CSS builder to your Maven project.
 
 2.  If you're using 
     [Bourbon](http://bourbon.io/) in your Sass files, you'll need to 
-    [add an additional plugin dependency](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies) 
+    [add an additional plugin dependency](/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies) 
     to your project's POM. If you're not using Bourbon, skip this step. Add the 
     following plugin dependency: 
 
@@ -90,20 +94,16 @@ Here's how to apply Liferay's CSS builder to your Maven project.
 
         mvn compile
 
-+$$$
-
-**Note:** Liferay's CSS Builder is supported for Oracle's JDK and uses a native
-compiler for increased speed. If you're using an IBM JDK, you may experience
-issues when building your SASS files (e.g., when building a theme). It's
-recommended to switch to using the Oracle JDK, but if you prefer using the IBM
-JDK, you must use the fallback Ruby compiler. To do this, add the following
-tag to your CSS Builder configuration in your POM:
-
-    <sassCompilerClassName>ruby</sasscompilerClassName>
-
-Be aware that the Ruby-based compiler doesn't perform as well as the native
-compiler, so expect longer compile times.
-
-$$$
+| **Note:** Liferay's CSS Builder is supported for Oracle's JDK and uses a native
+| compiler for increased speed. If you're using an IBM JDK, you may experience
+| issues when building your SASS files (e.g., when building a theme). It's
+| recommended to switch to using the Oracle JDK, but if you prefer using the IBM
+| JDK, you must use the fallback Ruby compiler. To do this, add the following
+| tag to your CSS Builder configuration in your POM:
+| 
+|     <sassCompilerClassName>ruby</sasscompilerClassName>
+| 
+| Be aware that the Ruby-based compiler doesn't perform as well as the native
+| compiler, so expect longer compile times.
 
 Awesome! You can now compile Sass files in your Liferay Maven project.

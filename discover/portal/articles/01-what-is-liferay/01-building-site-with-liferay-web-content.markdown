@@ -1,4 +1,8 @@
-# Building a site with Liferay Web Experience [](id=building-a-site-with-liferay-web-experience)
+---
+header-id: building-a-site-with-liferay-web-experience
+---
+
+# Building a site with Liferay Web Experience
 
 When you log into @product@ and look at its default screen, one thing to notice is
 that it's built for all clients that access the web, not just desktop browsers. 
@@ -101,7 +105,7 @@ related assets, and more.
 This is just the web content portion of Liferay's content management system.
 @product@ is also great at managing file-based content. 
 
-## Keeping track of documents, images, video, and more [](id=keeping-track-of-documents-images-video-and-more)
+## Keeping track of documents, images, video, and more
 
 It's rare to find a full-featured content management system in an open source
 project. Most of the time, you'll find web content management systems and

@@ -1,4 +1,8 @@
-# Installing Elasticsearch [](id=installing-elasticsearch)
+---
+header-id: installing-elasticsearch
+---
+
+# Installing Elasticsearch
 
 @product@ uses Elasticsearch to index its content. By default, @product@ uses
 Elasticsearch as an embedded service. It works, but this is not a supported
@@ -28,26 +32,22 @@ Installing Elasticsearch for @product@ is pretty easy and takes only six steps:
 
 6. Restart @product@ and reindex your search and spell check indexes. 
 
-+$$$
-
-**Note:** Before continuing, make sure you have set the [`JAVA_HOME` environment variable](https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/)
-
-If you have multiple JDKs installed, make sure Elasticsearch and @product@ are
-using the same version. You can specify this in `[Elasticsearch
-Home]/bin/elasticsearch.in.sh`:
-
-        JAVA_HOME=/path/to/java
-
-$$$
+| **Note:** Before continuing, make sure you have set the [`JAVA_HOME` environment variable](https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/)
+| 
+| If you have multiple JDKs installed, make sure Elasticsearch and @product@ are
+| using the same version. You can specify this in `[Elasticsearch
+| Home]/bin/elasticsearch.in.sh`:
+| 
+|         JAVA_HOME=/path/to/java
 
 Now you'll actually perform these steps, and when you're done, you'll have a
 production-ready instance of @product@ up and running. After you're done
-following the installation guide, refer to the [Configuring Elasticsearch](/discover/deployment/-/knowledge_base/7-0/configuring-elasticsearch-for-liferay-0)
+following the installation guide, refer to the [Configuring Elasticsearch](/docs/7-0/deploy/-/knowledge_base/d/configuring-elasticsearch-for-liferay-0)
 article for more details on configuring @product@ for Elasticsearch. For more
 information on installing a search engine, see
-[here](/discover/deployment/-/knowledge_base/7-0/installing-a-search-engine).
+[here](/docs/7-0/deploy/-/knowledge_base/d/installing-a-search-engine).
 
-### Step One: Find the Right Version of Elasticsearch [](id=step-one-find-the-right-version-of-elasticsearch)
+### Step One: Find the Right Version of Elasticsearch
 
 If @product@ isn't running, start it. 
 
@@ -74,33 +74,29 @@ this:
 The version of Elasticsearch that's running is the value of the `"number"` field.
 In this example, it's `2.4.0`. 
 
-+$$$
-
-**Elasticsearch 6.5:** Elasticsearch 6.5.x is supported for Liferay Digital
-Enterprise systems running Fix Pack 79 or later. The latest Liferay Portal, GA
-7 at the time of this writing, does not support Elasticsearc 6.5. Instead use
-Elasticsearch 6.1. In @product-ver@, Elasticsearch version 2.x remains the
-default, embedded version. To install Elasticsearch 6.5.x, 
-
-1.  Make sure you're running at least Digital Enterprise FP-79.
-
-2.  Install Elasticsearch 6.5.x (follow steps 2-4 in this article for guidance).
-
-3.  Install the 
-    [_Liferay Connector to Elasticsearch 6_, verison 1.1.0+, from Marketplace](https://web.liferay.com/marketplace)
-    and stop the default Elasticsearch adapter.
-
-4.  Configure the Elasticsearch 6 connector (see step 5 below for guidance).
-
-To learn more about upgrading an existing system to Elasticsearch 6.5, read the
-[upgrade article](/discover/deployment/-/knowledge_base/7-0/upgrading-to-elasticsearch-6).
-
-$$$
+| **Elasticsearch 6.5:** Elasticsearch 6.5.x is supported for Liferay Digital
+| Enterprise systems running Fix Pack 79 or later. The latest Liferay Portal, GA
+| 7 at the time of this writing, does not support Elasticsearc 6.5. Instead use
+| Elasticsearch 6.1. In @product-ver@, Elasticsearch version 2.x remains the
+| default, embedded version. To install Elasticsearch 6.5.x,
+| 
+| 1.  Make sure you're running at least Digital Enterprise FP-79.
+| 
+| 2.  Install Elasticsearch 6.5.x (follow steps 2-4 in this article for guidance).
+| 
+| 3.  Install the
+|     [_Liferay Connector to Elasticsearch 6_, verison 1.1.0+, from Marketplace](https://web.liferay.com/marketplace)
+|     and stop the default Elasticsearch adapter.
+| 
+| 4.  Configure the Elasticsearch 6 connector (see step 5 below for guidance).
+| 
+| To learn more about upgrading an existing system to Elasticsearch 6.5, read the
+| [upgrade article](/docs/7-0/deploy/-/knowledge_base/d/upgrading-to-elasticsearch-6).
 
 Now that you know the version of Elasticsearch you need, go to
 [Elastic's](https://www.elastic.co) website and download that version. 
 
-### Step Two: Install Elasticsearch [](id=step-two-install-elasticsearch)
+### Step Two: Install Elasticsearch
 
 Most of this step entails deciding where you want to run Elasticsearch. Do you
 want to run it on the same machine as @product@, or do you want to run it on its
@@ -113,7 +109,7 @@ Once you have a copy of the right version of Elasticsearch, extract it to a
 folder on the machine where you want it running. That's all there is to this
 step. 
 
-### Step Three: Install Elasticsearch Plugins [](id=step-three-install-elasticsearch-plugins)
+### Step Three: Install Elasticsearch Plugins
 
 Install the following required Elasticsearch plugins:
 
@@ -128,17 +124,13 @@ To install these plugins, navigate to Elasticsearch Home and enter
 
 Replace *[plugin-name]* with the Elasticsearch plugin's name.
 
-+$$$
+| **Elasticsearch 6.5:** The `plugin` executable was renamed in Elasticsearch 6,
+| to `elasticsearch-plugin`. The general command syntax for installing plugins to
+| 6.5 is
+| 
+|     ./bin/elasticsearch-plugin install [plugin-name]
 
-**Elasticsearch 6.5:** The `plugin` executable was renamed in Elasticsearch 6,
-to `elasticsearch-plugin`. The general command syntax for installing plugins to
-6.5 is 
-
-    ./bin/elasticsearch-plugin install [plugin-name]
-
-$$$
-
-### Step Four: Name Your Elasticsearch Cluster [](id=step-three-name-your-elastic-cluster)
+### Step Four: Name Your Elasticsearch Cluster
 
 A *cluster* in Elasticsearch is a collection of nodes (servers) identified as a
 cluster by a shared cluster name. The nodes work together to share data and
@@ -173,47 +165,43 @@ Elasticsearch starts, and one of its status messages includes a transport addres
 Take note of this address; you'll need to give it to your @product@ server so it
 can find Elasticsearch on the network. 
 
-### Step Five: Configure @product@ to Connect to your Elasticsearch Cluster [](id=step-four-configure-liferay-to-connect-to-your-elastic-cluster)
+### Step Five: Configure @product@ to Connect to your Elasticsearch Cluster
 
-+$$$
-
-**Elasticsearch 6.5:** Before continuing, install the 
-[Liferay Connector to Elasticsearch 6 application](https://web.liferay.com/marketplace) 
-from Liferay Marketplace and stop the default Elasticsearch 2.x adapter, which
-connects to Elasticsearch 2.x.
-
-1.  Create a file called
-
-        com.liferay.portal.bundle.blacklist.internal.BundleBlacklistConfiguration.config
-
-    If you already have one of these files in `Liferay Home/osgi/configs`, just
-    open it.
-
-2. Place the Bundle Symbolic Name of the Elasticsearch connector in the
-   `blacklistBundleSymbolicNames` property:
-
-        blacklistBundleSymbolicNames=["com.liferay.portal.search.elasticsearch"]
-
-3. Place the file in `Liferay Home/osgi/configs`.
-
-Alternatively, deactivate the Elasticsearch connector using the App Manager in
-*Control Panel* &rarr; *Apps* &rarr; *App Manager*. If you're a Digital
-Enterprise customer, use the blacklist feature as described above. The App
-Manager relies on the `osgi/state` folder to "remember" the state of the bundle.
-If you delete this folder (recommended during patching) the Elasticsearch
-connector will be reinstalled and started automatically.
-
-1.  Search for *elasticsearch* in the App Manager. Find the Liferay Portal
-    Search Elasticsearch module and click the edit
-    ((![Edit](../../images/icon-edit.png))) button.  Choose the Deactivate
-    option. This leaves the bundle installed, but stops it in the OSGi runtime.
-
-2.  Once you've downloaded the LPKG file with the Elasticsearch 6 adapter,
-    place it in Liferay Home's `deploy` folder. Find more detailed
-    information on deploying Marketplace applications 
-    [here](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace).
-
-$$$
+| **Elasticsearch 6.5:** Before continuing, install the
+| [Liferay Connector to Elasticsearch 6 application](https://web.liferay.com/marketplace)
+| from Liferay Marketplace and stop the default Elasticsearch 2.x adapter, which
+| connects to Elasticsearch 2.x.
+| 
+| 1.  Create a file called
+| 
+|         com.liferay.portal.bundle.blacklist.internal.BundleBlacklistConfiguration.config
+| 
+|     If you already have one of these files in `Liferay Home/osgi/configs`, just
+|     open it.
+| 
+| 2. Place the Bundle Symbolic Name of the Elasticsearch connector in the
+|    `blacklistBundleSymbolicNames` property:
+| 
+|         blacklistBundleSymbolicNames=["com.liferay.portal.search.elasticsearch"]
+| 
+| 3. Place the file in `Liferay Home/osgi/configs`.
+| 
+| Alternatively, deactivate the Elasticsearch connector using the App Manager in
+| *Control Panel* &rarr; *Apps* &rarr; *App Manager*. If you're a Digital
+| Enterprise customer, use the blacklist feature as described above. The App
+| Manager relies on the `osgi/state` folder to "remember" the state of the bundle.
+| If you delete this folder (recommended during patching) the Elasticsearch
+| connector will be reinstalled and started automatically.
+| 
+| 1.  Search for *elasticsearch* in the App Manager. Find the Liferay Portal
+|     Search Elasticsearch module and click the edit
+|     ((![Edit](../../images/icon-edit.png))) button.  Choose the Deactivate
+|     option. This leaves the bundle installed, but stops it in the OSGi runtime.
+| 
+| 2.  Once you've downloaded the LPKG file with the Elasticsearch 6 adapter,
+|     place it in Liferay Home's `deploy` folder. Find more detailed
+|     information on deploying Marketplace applications
+|     [here](/docs/7-0/user/-/knowledge_base/u/using-the-liferay-marketplace).
 
 Now you're ready to configure @product@. Start @product@ if you haven't already,
 log in, and then click on *Control Panel* &rarr; *Configuration* &rarr; *System
@@ -234,7 +222,7 @@ will work.
 
 When finished, click *Save*. You're almost done. 
 
-### Step Six: Restart @product@ and Reindex [](id=step-five-restart-liferay-and-reindex)
+### Step Six: Restart @product@ and Reindex
 
 Stop and restart @product@. When it's back up, log in as an administrative user
 and

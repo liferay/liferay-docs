@@ -1,4 +1,8 @@
-# Creating Tasks in Kaleo Designer [](id=creating-tasks-in-kaleo-designer)
+---
+header-id: creating-tasks-in-kaleo-designer
+---
+
+# Creating Tasks in Kaleo Designer
 
 Task nodes have several parts and are the most complex parts of a workflow
 definition. Unlike other workflow nodes, task nodes have Assignments, because a
@@ -7,7 +11,7 @@ when a workflow process enters the task node: the assignment specifies who that
 user is. 
 
 Commonly, task nodes contain Notifications, Assignments, and Actions (defined in
-scripts). See more about Notifications and Actions in the article on [workflow nodes](/discover/portal/-/knowledge_base/7-0/workflow-definition-nodes). Task
+scripts). See more about Notifications and Actions in the article on [workflow nodes](/docs/7-0/user/-/knowledge_base/u/workflow-definition-nodes). Task
 nodes and their assignments are more complex and deserve their own article (this
 one).
 
@@ -24,7 +28,7 @@ Next learn about creating Assignments for your task nodes.
 section. Please describe an example here so users can understand what a task
 node is for and how they are used. Include a script. -Rich --> 
 
-## Assignments [](id=assignments)
+## Assignments
 
 Workflow tasks need to be completed by a @product@ user. You can choose how you
 want to configure your assignments. 
@@ -43,14 +47,14 @@ UPDATE action in an assignment, then anyone who has permission to update the
 type of asset being processed in the workflow is assigned to the task. You can
 configure multiple assignments for a task.
 
-### Resource Action Assignments [](id=resource-action-assignments)
+### Resource Action Assignments
 
 *Resource actions* are operations performed by users on an application or entity
 in @product@. For example, a user might have permission to update Message Boards
 Messages. This is called an UPDATE resource action, because the user can update
 the resource. If you're still uncertain about what resource actions are, refer to
 the developer tutorial on @product@'s 
-[permission system](/develop/tutorials/-/knowledge_base/7-0/adding-permissions-to-resources)
+[permission system](/docs/7-0/tutorials/-/knowledge_base/t/adding-permissions-to-resources)
 for a more detailed explanation.
 
 To find all the resource actions that have been configured in @product@, you
@@ -59,7 +63,7 @@ you need permission for the VIEW action on the roles resource).
 
 - Navigate to Control Panel &rarr; Users &rarr; Roles.
 - Add a new Regular Role. See the 
-  [article on managing roles](/discover/portal/-/knowledge_base/7-0/roles-and-permissions)
+  [article on managing roles](/docs/7-0/user/-/knowledge_base/u/roles-and-permissions)
   for more information.
 - Once the role is added, navigate to the Define Permissions interface for the
   role.
@@ -108,7 +112,7 @@ for that resource. For example, in Message Boards, one of the permissions
 displayed on that screen is *Add Discussion*. Convert that to all uppercase and
 replace the space with an underscore, and you have the action name. 
 
-### Scripted Assignments [](id=scripted-assignments)
+### Scripted Assignments
 
 You can also use a script to manage the assignment. Here's the
 script for the Review task assignment in the Scripted Single Approver workflow
@@ -156,12 +160,12 @@ the `roles` variable is where you specify any roles the task is assigned to. For
 example, when `roles.add(adminRole);` is called, the Administrator role is added
 to the assignment.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Workflow Forms](/discover/portal/-/knowledge_base/7-0/workflow-forms)
+[Workflow Forms](/docs/7-0/user/-/knowledge_base/u/workflow-forms)
 
-[Using Workflow](/discover/portal/-/knowledge_base/7-0/enabling-workflow)
+[Using Workflow](/docs/7-0/user/-/knowledge_base/u/enabling-workflow)
 
-[Liferay's Workflow Framework](/develop/tutorials/-/knowledge_base/7-0/liferays-workflow-framework)
+[Liferay's Workflow Framework](/docs/7-0/tutorials/-/knowledge_base/t/liferays-workflow-framework)
 
-[Creating Simple Applications](/discover/portal/-/knowledge_base/7-0/creating-simple-applications)
+[Creating Simple Applications](/docs/7-0/user/-/knowledge_base/u/creating-simple-applications)

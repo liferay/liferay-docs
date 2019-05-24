@@ -1,4 +1,8 @@
-# Search [](id=introduction-to-liferay-search)
+---
+header-id: introduction-to-liferay-search
+---
+
+# Search
 
 Liferay stores its information in a database. If you need to search for data,
 why not search the database directly? Why add the complexity of a search
@@ -10,7 +14,7 @@ and scoring. Database searches do not support features like fuzzy searching or
 any type of relevancy. Moreover, when searching with a search engine, you can
 apply algorithms such as "More Like This" to obtain similar content. Search engines also support geolocation, faceting of search results, and multi-lingual searching.
 
-## Basic Search Concepts [](id=basic-search-concepts)
+## Basic Search Concepts
 
 **Indexing**: During indexing, a document is sent to the search engine. This
 document contains a collection of fields of various types (string, etc). The
@@ -34,7 +38,7 @@ queries and filters. During this process, the engine may perform special
 analysis prior to executing the query (search time analysis). Search time
 analysis can be configured for each field (see Mapping Definitions).
 
-### Mapping Definitions [](id=mapping-definitions)
+### Mapping Definitions
 
 Most search engines can be semi-intelligent in automatically deciphering how to
 process documents passed to them. However, there are many instances where it's
@@ -58,7 +62,7 @@ These are default mapping files that are shipped with the product. You can
 further customize these mappings to fit your needs. For example, you might want
 to use a special analyzer for a custom inventory number field.
 
-### Liferay Search Infrastructure [](id=liferay-search-infrastructure)
+### Liferay Search Infrastructure
 
 Search engines already provide native APIs. Why does Liferay provide search
 infrastructure to wrap search engines? Liferay's search infrastructure ensures
@@ -71,12 +75,12 @@ added to search queries to scope results. Liferay's search infrastructure also
 provides capabilities like permission checking and creating hit summaries for
 display.
 
-## Liferay Search API [](id=liferay-search-api)
+## Liferay Search API
 
 Liferay Portal's Search API allows users to build a search query, execute it,
 and obtain search hits that match the query.
 
-### Queries and Filters [](id=queries-and-filters)
+### Queries and Filters
 
 Elasticsearch and Solr do not make API level distinctions between queries and
 filters. However, Liferay's API explicitly provides two sets of APIs, one for
@@ -149,7 +153,7 @@ Other filters:
 - QueryFilter: Turns any query into a filter. E.g., can a BooleanQuery into a BooleanFilter
 - MatchAllFilter: Matches all documents
 
-### Aggregations [](id=aggregations)
+### Aggregations
 
 Aggregations help summarize search results. Individual aggregations can be used
 to create more complex aggregations. Facets are a type of aggregation. In
@@ -191,7 +195,7 @@ Other attributes you can specify:
 - The maximum number of results in each group
 - Special sorting for the grouped results
 
-### Indexers [](id=indexers)
+### Indexers
 
 There is an Indexer for each asset in the portal (e.g., DLFileEntryIndexer).
 This allows each asset to control what fields are indexed and what filters are
@@ -204,7 +208,7 @@ For more information, consult the Javadocs for
 `com.liferay.portal.kernel.search.Indexer<T>` and
 `com.liferay.portal.kernel.search.BaseIndexer<T>`: [@platform-ref@/7.0-latest/javadocs](@platform-ref@/7.0-latest/javadocs)
 
-### IndexerPostProcessor [](id=indexerpostprocessor)
+### IndexerPostProcessor
 
 The IndexerPostProcessor allows developers to customize
 
@@ -250,7 +254,7 @@ query which includes
     - searchable Expando fields
     - localized fields for assetCategoryTitles
 
-### HitsProcessor [](id=hitsprocessor)
+### HitsProcessor
 
 `com.liferay.portal.kernel.search.HitsProcessor` allows developers to
 preprocess the results from the search engine before they are returned to the
@@ -286,7 +290,7 @@ By default, the HitsProcessor order is:
       then suggest other potential queries that previous searches have yielded
       more results (`index.search.query.suggest.max` in `portal.properties`).
 
-### Suggestions [](id=suggestions)
+### Suggestions
 
 Suggestions are a powerful feature where the search engine can suggest
 "similar" results for a given query. For instance, suppose you have a blog
@@ -303,7 +307,7 @@ The QuerySuggester provides facilities for
 - Related search queries
 - General Suggester requests
 
-#### Spell Checking [](id=spell-checking)
+#### Spell Checking
 
 For Elasticsearch, spell checking heavily relies on the suggester API:
     - Dictionary words are analyzed by their language specific analyzer and indexed.
@@ -318,7 +322,7 @@ Note that using the search engine's spell checking functionality doesn't
 guarantee returned results. Instead, spell checking seeks to ensure that the
 query is correct. 
 
-#### Similar Search Queries [](id=similar-search-queries)
+#### Similar Search Queries
 
 Like spell checking, similar search queries has a more robust implementation in
 Elasticsearch. The Elasticsearch implementation uses phrase suggesters on
@@ -327,11 +331,11 @@ indexed keyword search queries.
 Solr's similar search queries implementation is again based on tokenized
 NGrams.
 
-#### Other Suggesters [](id=other-suggesters)
+#### Other Suggesters
 
 You can also send custom Suggester requests and get SuggesterResults back from the search engine by calling `QuerySuggester.suggest(SearchContext, Suggester)`.
 
-## Search Adapter API [](id=search-adapter-api)
+## Search Adapter API
 
 Search adapters convert Liferay Portal's API to the underlying search engine's
 API. This pluggable architecture allows customers to more easily integrate with
@@ -344,7 +348,7 @@ The search adapter API has 2 primary interfaces:
 - `IndexWriter`: used when adding, updating, or deleting documents from the
   search engine.
 
-## Transactional Search [](id=transactional-search)
+## Transactional Search
 
 Search engines do not operate within a traditional JTA/JTS transaction. In
 place of "real" transactions, Liferay buffers indexing operations (delete,

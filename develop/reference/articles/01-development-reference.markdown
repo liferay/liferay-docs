@@ -1,4 +1,8 @@
-# Development Reference [](id=development-reference)
+---
+header-id: development-reference
+---
+
+# Development Reference
 
 Here you'll find reference documentation for @product@, Liferay Screens, Liferay
 Faces, and technologies related to you as a third-party developer.
@@ -18,11 +22,11 @@ XML DTDs
 
 Liferay's reference docs are at your fingertips.
 
-## Java APIs [](id=java-apis)
+## Java APIs
 
 Here you'll find Javadoc for @product-ver@ and @product@ apps.
 
-### @product-ver@ Java APIs [](id=liferay-portal-core-java-apis)
+### @product-ver@ Java APIs
 
 <style>
 table, th, td {
@@ -96,7 +100,7 @@ caption {
 
 </table>
 
-### @product@ App Java APIs [](id=liferay-portal-app-java-apis)
+### @product@ App Java APIs
 
 <style>
 table, th, td {
@@ -440,17 +444,17 @@ caption {
 </table>
 
 For help finding API modules for specific common classes, see [@product-ver@ API
-Modules](/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules).
+Modules](/docs/7-0/reference/-/knowledge_base/r/finding-liferay-api-modules).
 
 For help finding module attributes and configuring dependencies, see 
-[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies). 
+[Configuring Dependencies](/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies). 
 
-## Taglibs [](id=taglibs)
+## Taglibs
 
 Here you'll find tag library documentation for the @product-ver@, @product@
 apps, and Liferay Faces. 
 
-### @product-ver@ Taglibs [](id=liferay-portal-core-taglibs)
+### @product-ver@ Taglibs
 
 <style>
 table, th, td {
@@ -513,7 +517,7 @@ caption {
   </tr>
 </table>
 
-### @product@ App Taglibs [](id=liferay-portal-app-taglibs)
+### @product@ App Taglibs
 
 <style>
 table, th, td {
@@ -641,16 +645,16 @@ caption {
 </table>
 
 For help finding module attributes and configuring dependencies, see 
-[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies). 
+[Configuring Dependencies](/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies). 
 
-### Faces Taglibs [](id=faces-taglibs)
+### Faces Taglibs
 
 [**Faces 3.2 Taglibs**](https://docs.liferay.com/faces/3.2/vdldoc/): the latest
 version of Liferay Faces JSF tag docs in View Declaration Language (VDL) format.
 VDL docs for all versions of Liferay Faces are available
 [here](http://docs.liferay.com/faces/).
 
-## JavaScript and CSS [](id=javascript-and-css)
+## JavaScript and CSS
 
 [**Lexicon**](https://liferay.github.io/clay/): The web implementation of 
 Liferay's [Lexicon Experience Language](https://lexicondesign.io/). Lexicon is 
@@ -664,7 +668,7 @@ and JavaScript features are available within portlets, templates, and themes.
 [**AlloyUI**](http://alloyui.com): Liferay includes AlloyUI and all of its
 JavaScript APIs are available within portlets, templates and themes.
 
-## Descriptor Definitions [](id=descriptor-definitions)
+## Descriptor Definitions
 
 [**DTDs**](@platform-ref@/7.0-latest/definitions/): Describes the XML
 files used in configuring @product@ apps, @product@ plugins, and @product-ver@.

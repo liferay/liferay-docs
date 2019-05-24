@@ -1,4 +1,8 @@
-# System Wide Settings [](id=system-wide-settings)
+---
+header-id: system-wide-settings
+---
+
+# System Wide Settings
 
 Liferay is so configurable it can be hard to keep track of where all the
 configuration interfaces reside. Fortunately, the Control Panel is most often
@@ -10,7 +14,7 @@ course. That might sound self explanatory, and it is, for the most part. It just
 means that configuration at this level affects the entire system, which means
 all the *Virtual Instances* of Liferay in the system. If you're not sure what a
 Virtual Instance is, read the section on
-[Setting Up a Liferay Instance](/discover/portal/-/knowledge_base/7-0/instance-settings).
+[Setting Up a Liferay Instance](/docs/7-0/user/-/knowledge_base/u/instance-settings).
 
 There are several configuration sections that take effect at the system scope:
 

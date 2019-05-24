@@ -1,10 +1,14 @@
-# Gradle [](id=gradle)
+---
+header-id: gradle
+---
+
+# Gradle
 
 Liferay provides plugins that you can apply to your Gradle project. This
 reference documentation describes how to apply and use Liferay's Gradle plugins.
 
 **Important:** If you're using
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
+[Liferay Workspace](/docs/7-0/tutorials/-/knowledge_base/t/liferay-workspace)
 to create Liferay apps, many Liferay Gradle plugins are already applied by
 default. The `com.liferay.workspace` plugin provides the following plugins to
 all your apps in a Liferay Workspace:

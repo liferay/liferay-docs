@@ -1,4 +1,8 @@
-# Form Field Types [](id=form-field-types)
+---
+header-id: form-field-types
+---
+
+# Form Field Types
 
 The Forms application contains many highly configurable field types
 out-of-the-box. Most use cases will be met with one of the existing field types. 
@@ -22,17 +26,13 @@ In these tutorials, learn to
 - create a module that adds a *Time* form field type with a timepicker
 - add custom configuration options to your field types
 
-+$$$
-
-**Example project:** The source code for the example *time* project developed in
-these tutorials can be downloaded for your convenience. Click
-[here](https://dev.liferay.com/documents/10184/656312/Field+Type+Module+Source/de6203af-1bae-4c59-9f90-0ab5e58c5894) to begin downloading the source code zip file.
-
-$$$
+| **Example project:** The source code for the example *time* project developed in
+| these tutorials can be downloaded for your convenience. Click
+| [here](https://dev.liferay.com/documents/10184/656312/Field+Type+Module+Source/de6203af-1bae-4c59-9f90-0ab5e58c5894) to begin downloading the source code zip file.
 
 Before getting started, learn what @product@'s field types consist of. 
 
-## Anatomy of a Field Type Module [](id=anatomy-of-a-field-type-module)
+## Anatomy of a Field Type Module
 
 The `dynamic-data-mapping-type-*` modules in @product@'s source code (inside
 the *Forms and Workflow* application suite) are good templates to follow when
@@ -102,21 +102,17 @@ applications contain a `bnd.bnd` file to manage the module's metadata, and a
 example follows those patterns.
 
 <!-- UPDATE WHEN TEMPLATE PROJECT IS PUBLISHED ON repository.liferay.com
-+$$$
-
-**Blade Template:** There's a [Blade
-CLI](/developer/tutorials/-/knowledge_base/7-0/blade-cli) template you can use
-to generate the project skeleton, some basic configuration, and give you a head
-start on dependency management. To generate your form field type project with
-Blade CLI, enter
-
-    blade create -t form-field-type -p com.liferay.docs.formfieldtype -c Time ddm-type-time
-
-This gives you a `ddm-type-time` module with a similar structure to the one
-outlined above. The Java classes will be in the package
-`com.liferay.docs.formfield` under `src/main/java/` and the frontend resources
-(JavaScript and Soy files) are in `sr/main/resources/META-INF/resources`.
-
-$$$
+| **Blade Template:** There's a [Blade
+| CLI](/developer/tutorials/-/knowledge_base/7-0/blade-cli) template you can use
+| to generate the project skeleton, some basic configuration, and give you a head
+| start on dependency management. To generate your form field type project with
+| Blade CLI, enter
+| 
+|     blade create -t form-field-type -p com.liferay.docs.formfieldtype -c Time ddm-type-time
+| 
+| This gives you a `ddm-type-time` module with a similar structure to the one
+| outlined above. The Java classes will be in the package
+| `com.liferay.docs.formfield` under `src/main/java/` and the frontend resources
+| (JavaScript and Soy files) are in `sr/main/resources/META-INF/resources`.
 -->
 

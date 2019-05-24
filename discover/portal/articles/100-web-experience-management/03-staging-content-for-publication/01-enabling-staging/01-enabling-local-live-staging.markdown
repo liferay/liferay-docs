@@ -1,4 +1,8 @@
-# Enabling Local Live Staging [](id=enabling-local-live-staging)
+---
+header-id: enabling-local-live-staging
+---
+
+# Enabling Local Live Staging
 
 Staging allows changes to be made in a staging environment so that work can be
 reviewed, possibly using a workflow, before it's published to a live site. With
@@ -27,7 +31,7 @@ staging environment for your site.
     pages and maintains a history of all page modifications. You can also choose
     content for the staging environment to manage on the Staging Configuration page.
     You can learn more about these options in the
-    [Enabling Page Versioning and Staged Content](/discover/portal/-/knowledge_base/7-0/enabling-page-versioning-and-staged-content)
+    [Enabling Page Versioning and Staged Content](/docs/7-0/user/-/knowledge_base/u/enabling-page-versioning-and-staged-content)
     article.
 
 3.  Click *Save*.

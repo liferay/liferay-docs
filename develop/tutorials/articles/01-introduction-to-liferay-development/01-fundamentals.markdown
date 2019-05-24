@@ -1,4 +1,8 @@
-# Fundamentals [](id=fundamentals)
+---
+header-id: fundamentals
+---
+
+# Fundamentals
 
 What are the fundamentals that every Liferay developer should know?
 
@@ -17,7 +21,7 @@ What are the fundamentals that every Liferay developer should know?
 
 Interested? More details below. 
 
-## Open Source and based on Standards [](id=open-source-and-based-on-standards)
+## Open Source and based on Standards
 
 @product@ is both open source and built in the open, following a collaborative
 development model. That means that you can follow new development as it's
@@ -99,7 +103,7 @@ Here are some key standards supported by @product@:
         an auto-generated UI to change the configuration of any component
         that leverages this standard.
 
-## Technologies [](id=technologies)
+## Technologies
 
 Like any open source application, Liferay is built on the shoulders of giants.
 When we choose the technology on which to build our platform, it must have the
@@ -194,7 +198,7 @@ everything we can to provide you with the most flexible technology platform
 possible, so that you have the freedom to go and build great things on
 it--things we never could have expected or imagined. 
 
-## Architecture [](id=architecture)
+## Architecture
 
 Liferay's design goals have from the beginning been to give you all the tools to
 create exactly the web presence you have in mind. To achieve this, the product
@@ -225,7 +229,7 @@ their definitions, implementations, dependencies, and priorities.
 
 Anything a developer wants to do is implemented as one or more modules. If it's 
 a new application, that application can depend on existing modules and 
-[define a dependency](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies) 
+[define a dependency](/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies) 
 on them. This enables you to use functionality that's already there without 
 rewriting it yourself for your app. If it's a customization, in many cases it's 
 just a simple matter of defining your customization with a higher priority than 
@@ -233,7 +237,7 @@ the existing functionality.
 
 This is the power of a modular architecture. 
 
-### Modules [](id=modules)
+### Modules
 
 All new applications, extensions, and customizations built on Liferay are built 
 in a modular way. A module is the single unit of distribution and deployment in 
@@ -246,7 +250,7 @@ format for modules: OSGi bundles. An OSGi module is just a typical JAR file,
 familiar to Java developers as a ZIP file containing compiled code, templates, 
 resources, and some meta information.
 
-### Services [](id=services)
+### Services
 
 One aspect of modern software architecture is the notion of services. These are
 independently running pieces of code that provide specific functionality when
@@ -285,7 +289,7 @@ The container then instantiates your implementation when the service is called
 by existing code. This simple, clean method is how most customizations are made
 to Liferay 7. 
 
-### Components [](id=components)
+### Components
 
 In OSGi, possibly the best and certainly the easiest way to create services is
 through Declarative Services. In Declarative Services (aka DS), you create
@@ -305,7 +309,7 @@ larger application, and that application is itself made up of many small
 components. This makes it easier to develop an application because you only have
 to deal with small, well-defined, bite-sized chunks of code at a time.
 
-### Real Life Benefits of Modular Development [](id=real-life-benefits-of-modular-development)
+### Real Life Benefits of Modular Development
 
 The next question then becomes, so what? Why is this a big deal?  Why should I
 have components, and what do I need them for?

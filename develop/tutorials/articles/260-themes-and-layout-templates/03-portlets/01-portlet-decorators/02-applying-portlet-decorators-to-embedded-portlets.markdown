@@ -1,4 +1,8 @@
-# Applying Portlet Decorators to Embedded Portlets [](id=applying-portlet-decorators-to-embedded-portlets)
+---
+header-id: applying-portlet-decorators-to-embedded-portlets
+---
+
+# Applying Portlet Decorators to Embedded Portlets
 
 Once you have installed a theme that contains Portlet Decorators, site
 administrators can apply them to a portlet instance by selecting the
@@ -10,7 +14,7 @@ Application Decorator other than the default one by setting its preferences.
 This tutorial demonstrates how to apply Portlet Decorators to Embedded Portlets
 in your theme.
 
-## Setting Application Decorator Preferences [](id=setting-portlet-decorator-preferences)
+## Setting Application Decorator Preferences
 
 To define a default Application Decorator for your theme's embedded portlets,
 you must set a default decorator in the portlet preferences.
@@ -60,8 +64,8 @@ To set the default decorator for your embedded portlets, follow these steps:
 
 Your embedded portlets now have a custom default Application Decorator!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Embedding Portlets in Themes](/develop/tutorials/-/knowledge_base/7-0/embedding-portlets-in-themes)
+[Embedding Portlets in Themes](/docs/7-0/tutorials/-/knowledge_base/t/embedding-portlets-in-themes)
 
-[Providing Portlets to Manage Requests](/develop/tutorials/-/knowledge_base/7-0/providing-portlets-to-manage-requests)
+[Providing Portlets to Manage Requests](/docs/7-0/tutorials/-/knowledge_base/t/providing-portlets-to-manage-requests)

@@ -1,7 +1,11 @@
-# Upgrading a Liferay JSF Portlet [](id=upgrading-a-liferay-jsf-portlet)
+---
+header-id: upgrading-a-liferay-jsf-portlet
+---
+
+# Upgrading a Liferay JSF Portlet
 
 Liferay JSF portlets are easy to upgrade and require few changes. They interface
-with the [Liferay Faces](/develop/reference/-/knowledge_base/7-0/liferay-faces)
+with the [Liferay Faces](/docs/7-0/reference/-/knowledge_base/r/liferay-faces)
 project, which encapsulates @product@'s Java API and JavaScript code. Because
 of this, upgrading JSF portlets to @product-ver@ requires only updating
 dependencies.
@@ -11,7 +15,7 @@ There are two ways to find a JSF portlet's dependencies for @product-ver@:
 -   The [http://liferayfaces.org/](http://liferayfaces.org/) home page lets you
     look up the dependencies (Gradle or Maven) by @product@ version, JSF
     version, and component suites. 
--   The [Liferay Faces Version Scheme](/develop/reference/-/knowledge_base/7-0/liferay-faces-version-scheme)
+-   The [Liferay Faces Version Scheme](/docs/7-0/reference/-/knowledge_base/r/liferay-faces-version-scheme)
     article's tables list artifacts by @product@ version, JSF version, portlet
     version, and AlloyUI and Metal component suite version. 
 

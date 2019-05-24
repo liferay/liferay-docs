@@ -1,25 +1,25 @@
-# Adapting to @product-ver@'s API with the Code Upgrade Tool [](id=adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+---
+header-id: adapting-to-liferay-7s-api-with-the-code-upgrade-tool
+---
 
-+$$$
+# Adapting to @product-ver@'s API with the Code Upgrade Tool
 
-**Note:** This tutorial assumes you're using Liferay @ide@ 3.1.x or 3.2.x. You
-can use later versions of the Code Upgrade Tool to upgrade your 6.2 plugins to
-@product-ver@, but the option to upgrade a Liferay Plugins SDK 6.2 to 7.0 is no
-longer offered. For information on the latest Code Upgrade Tool, see
-[this tutorial](/develop/tutorials/-/knowledge_base/7-1/adapting-to-liferay-7s-api-with-the-code-upgrade-tool).
-
-$$$
+| **Note:** This tutorial assumes you're using Liferay @ide@ 3.1.x or 3.2.x. You
+| can use later versions of the Code Upgrade Tool to upgrade your 6.2 plugins to
+| @product-ver@, but the option to upgrade a Liferay Plugins SDK 6.2 to 7.0 is no
+| longer offered. For information on the latest Code Upgrade Tool, see
+| [this tutorial](/docs/7-1/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool).
 
 The first and easiest plugin upgrade step is adapting to 
 @product-ver@'s API. @product-ver@ is a major release whose new modular 
 architecture 
-[benefits Liferay Portal 6 developers](/develop/tutorials/-/knowledge_base/7-0/benefits-of-liferay-7-for-liferay-6-developers). 
+[benefits Liferay Portal 6 developers](/docs/7-0/tutorials/-/knowledge_base/t/benefits-of-liferay-7-for-liferay-6-developers). 
 Modularizing the product, however, required renaming many packages. Of course, 
-[we documented each API change](/develop/reference/-/knowledge_base/7-0/breaking-changes) 
+[we documented each API change](/docs/7-0/reference/-/knowledge_base/r/breaking-changes) 
 to explain what changed, why it changed, and how to adapt to it. 
 
 Going above and beyond documentation, Liferay provides the Code Upgrade Tool in 
-[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/installing-liferay-ide) 
+[Liferay @ide@](/docs/7-0/tutorials/-/knowledge_base/t/installing-liferay-ide) 
 (versions 3.1+). Here's what the Code Upgrade Tool does: 
 
 - Identifies code affected by the API changes.
@@ -52,7 +52,7 @@ steps in any order.
 
 Launch the Code Upgrade Tool now. 
 
-## Launching the Code Upgrade Tool [](id=launching-the-code-upgrade-tool)
+## Launching the Code Upgrade Tool
 
 Launch the Code Upgrade Tool to start new upgrades or continue previously 
 started upgrades:
@@ -61,12 +61,8 @@ started upgrades:
     empty Eclipse workspace. Bring up the Workspace Launcher by selecting *File
     &rarr; Launch Workspace &rarr; New...*. Then create a workspace. 
 
-    +$$$
-
-    **Note**: The current tool requires using a new empty Eclipse workspace.
-    Future tool versions will relax this requirement. 
-
-    $$$
+    | **Note**: The current tool requires using a new empty Eclipse workspace.
+    | Future tool versions will relax this requirement.
 
     <!-- Greg told me the empty workspace requirement may be relaxed in Liferay
     IDE 3.2, but it'll stay a requirement for version 3.1. -Cody -->
@@ -78,7 +74,7 @@ started upgrades:
 
 The Welcome screen appears. 
 
-## Step 1: Welcome to the Liferay Code Upgrade Tool [](id=step-1-welcome-to-the-liferay-code-upgrade-tool)
+## Step 1: Welcome to the Liferay Code Upgrade Tool
 
 This screen describes the tool's navigation and key functions. 
 
@@ -97,56 +93,44 @@ This screen describes the tool's navigation and key functions.
 Liferay @ide@ tracks each plugin's state. You can close the Code Upgrade Tool 
 view at any step and re-launch it later to resume upgrading plugins. 
 
-+$$$
-
-**Note**: To restart upgrades from scratch, click on the Restart Code Upgrade 
-icon (![restart icon](../../../images/icon-restart-code-upgrade.png)) in the 
-view's toolbar. 
-
-$$$
+| **Note**: To restart upgrades from scratch, click on the Restart Code Upgrade
+| icon (![restart icon](../../../images/icon-restart-code-upgrade.png)) in the
+| view's toolbar.
 
 
 ![Figure 3: The Code Upgrade Tool marks steps complete (![check mark icon](../../../images/icon-code-upgrade-mark-done.png)) or incomplete (![x icon](../../../images/icon-code-upgrade-mark-not-done.png)). It also saves its state so you can resume upgrades later.](../../../images/code-upgrade-gears-done-and-not-done.png)
 
-+$$$
-
-**Tip**: The Code Upgrade Tool view is easiest to work with when it's resizable.
-To enable resizing, minimize the view and then click its icon (![view icon](../../../images/icon-code-upgrade-tool.png)). 
-
-$$$
+| **Tip**: The Code Upgrade Tool view is easiest to work with when it's resizable.
+| To enable resizing, minimize the view and then click its icon (![view icon](../../../images/icon-code-upgrade-tool.png)).
 
 Now you're ready to configure your project. 
 
-## Step 2: Configure the Project [](id=step-2-configure-the-project)
+## Step 2: Configure the Project
 
 The Code Upgrade Tool can upgrade Liferay 6.2 plugins built with Maven or the
 Plugins SDK. Browse to the Plugins SDK or Maven project root location to proceed
 with importing your plugin into the workspace.
 
-### Plugins SDK Plugin [](id=plugins-sdk-plugin)
+### Plugins SDK Plugin
 
 If you're upgrading a Plugins SDK plugin, you must integrate its Plugins SDK
 with a @product-ver@ server before beginning the upgrade. You can work with
 plugins in your current Plugins SDK, or in a copy of the Plugins SDK in a new 
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace). 
+[Liferay Workspace](/docs/7-0/tutorials/-/knowledge_base/t/liferay-workspace). 
 Liferay Workspace offers the best of both worlds: it lets you continue to work 
 with plugins in an SDK while facilitating plugin migration to modules or 
 Workspace WAR projects. 
 
-+$$$
-
-**Note:** If the *Upgrading to Liferay Plugins SDK 7* options is unavailable to
-select, this means that your Plugins SDK has already been upgraded to version 7.
-To check this, navigate to your Plugins SDK's `build.properties` file; if the
-`lp.version` property is set to `7.0.0`, your Plugins SDK is already upgraded.
-In some cases, the version can be auto-generated if your Plugins SDK was
-mistakenly linked to a @product-ver@ installation.
-
-$$$
+| **Note:** If the *Upgrading to Liferay Plugins SDK 7* options is unavailable to
+| select, this means that your Plugins SDK has already been upgraded to version 7.
+| To check this, navigate to your Plugins SDK's `build.properties` file; if the
+| `lp.version` property is set to `7.0.0`, your Plugins SDK is already upgraded.
+| In some cases, the version can be auto-generated if your Plugins SDK was
+| mistakenly linked to a @product-ver@ installation.
 
 Configure the upgrade project using the option you prefer. 
 
-#### Option 1: Upgrading to Liferay Workspace [](id=option-1-upgrading-to-liferay-workspace)
+#### Option 1: Upgrading to Liferay Workspace
 
 Upgrading to Liferay Workspace does these things:
 
@@ -174,7 +158,7 @@ The Liferay Workspace and the Plugins SDK projects are imported to Liferay @ide@
 
 To mark the step complete, click the check mark icon (![check mark icon](../../../images/icon-code-upgrade-mark-done.png)). 
 
-#### Option 2: Upgrading to Liferay Plugins SDK 7 [](id=option-2-upgrading-to-liferay-plugins-sdk-7)
+#### Option 2: Upgrading to Liferay Plugins SDK 7
 
 Upgrading to Liferay Plugins SDK 7 does these things:
 
@@ -197,19 +181,15 @@ Use these steps to do this:
 
 The Plugins SDK projects are imported to Liferay @ide@. 
 
-+$$$
-
-**Note**: If the Plugins SDK is the same version as the Liferay Portal bundle, 
-the developer need only set the SDK's `app.server.parent.dir` property to the 
-bundle path. Otherwise, the developer must also set the `app.server.type` and 
-`app.server.[server-type].dir` properties. 
-
-$$$
+| **Note**: If the Plugins SDK is the same version as the Liferay Portal bundle,
+| the developer need only set the SDK's `app.server.parent.dir` property to the
+| bundle path. Otherwise, the developer must also set the `app.server.type` and
+| `app.server.[server-type].dir` properties.
 
 To mark the step complete, click the check mark icon
 (![check mark icon](../../../images/icon-code-upgrade-mark-done.png)). 
 
-### Maven Plugin [](id=maven-plugin)
+### Maven Plugin
 
 To configure your Maven plugin project(s) in the Code Upgrade Tool, browse to
 the parent project in which they reside. Then select *Import Projects* to import
@@ -218,7 +198,7 @@ the Maven plugins into the Eclipse workspace.
 When upgrading a Maven plugin, there is one extra step compared to importing a
 Plugins SDK project: upgrading your POM files. You'll see how this works next.
 
-#### Upgrade POM Files [](id=upgrade-pom-files)
+#### Upgrade POM Files
 
 The Code Upgrade Tool scans through all of the POM files in your Maven project.
 An outline of the types of changes it suggests is below:
@@ -233,7 +213,7 @@ An outline of the types of changes it suggests is below:
   to `com.liferay.portal.kernel`.
 
 For more information on the upgrade process for your Maven build, see the
-[Upgrading the Liferay Maven Build](/develop/tutorials/-/knowledge_base/7-0/upgrading-the-liferay-maven-build).
+[Upgrading the Liferay Maven Build](/docs/7-0/tutorials/-/knowledge_base/t/upgrading-the-liferay-maven-build).
 
 If the tool finds any necessary updates, it lists them in the view.
 
@@ -248,7 +228,7 @@ Select the `pom.xml` files you'd like to upgrade and click *Upgrade Selected*.
 
 Next, you'll begin updating your project's descriptor files.
 
-## Step 3: Upgrade Descriptor Files [](id=step-3-upgrade-descriptor-files)
+## Step 3: Upgrade Descriptor Files
 
 The Upgrade Descriptor Files screen lists plugin descriptor files to upgrade. It 
 proposes updates for them and lets you compare proposed updates with the current 
@@ -263,7 +243,7 @@ upgrading, click *Find...*.
 
 In the next step, you'll find breaking changes. 
 
-## Step 4: Find Breaking Changes [](id=step-4-find-breaking-changes)
+## Step 4: Find Breaking Changes
 
 *Breaking changes* are API changes that affect (and might *break*) existing API 
 consumers and implementations. The Code Upgrade Tool finds affected plugin code 
@@ -291,7 +271,7 @@ You can use one or both of the following options to resolve problems.
 
 The following sections explain each option. 
 
-### Option 1: Correct Problems Automatically First [](id=option-1-correct-problems-automatically-first)
+### Option 1: Correct Problems Automatically First
 
 Use this option (![bandage icon](../../../images/icon-bandage.png)) to 
 fix easy problems right away automatically (you can fix tougher problems later).
@@ -306,7 +286,7 @@ Follow these steps to use this option:
 
 3.  Address any remaining problems individually (as described next). 
 
-### Option 2: Address Problems Individually [](id=option-2-address-problems-individually)
+### Option 2: Address Problems Individually
 
 This option (![project selection icon](../../../images/icon-code-upgrade-tool-select-project.png)) 
 finds and describes all the problems, leaving you to address them on a 
@@ -347,17 +327,13 @@ automatically* option. Follow these steps to address problems individually:
 7.  Continue addressing problems individually or try *Correcting Problems
     Automatically* (as explained previously). 
 
-+$$$
-
-**Tip**: To use the entire Code Upgrade Tool view to show breaking change
-documentation, click the Hide Tree icon (![hide tree icon](../../../images/icon-hide-breaking-change-tree.png)). 
-
-$$$
+| **Tip**: To use the entire Code Upgrade Tool view to show breaking change
+| documentation, click the Hide Tree icon (![hide tree icon](../../../images/icon-hide-breaking-change-tree.png)).
 
 Congratulations on addressing breaking change problems! Next, you'll build your 
 project's services. 
 
-## Step 5: Build Services [](id=step-5-build-services)
+## Step 5: Build Services
 
 The Build Service step re-runs Service Builder on the projects and deletes 
 legacy Service Builder files. To do this, click *Build Service*. 
@@ -366,7 +342,7 @@ legacy Service Builder files. To do this, click *Build Service*.
 
 Next, you'll upgrade any layout templates. 
 
-## Step 6: Upgrade Layout Templates [](id=step-6-upgrade-layout-templates)
+## Step 6: Upgrade Layout Templates
 
 The Upgrade Layout Templates step proposes updates for Layout Templates. It
 lists Layout Templates for you to view and compare proposed updates with
@@ -387,7 +363,7 @@ Follow these steps to upgrade your Layout Templates:
 
 Next, you'll convert any custom JSP hooks. 
 
-## Step 7: Convert Custom JSP Hooks [](id=step-7-convert-custom-jsp-hooks)
+## Step 7: Convert Custom JSP Hooks
 
 This step converts custom JSP hooks to modules or module fragments. It lets you 
 compare your custom JSPs with original Liferay Portal 6.2 JSPs, and newly 
@@ -467,7 +443,7 @@ to do so:
 The Convert Custom JSP Hooks view lets you upgrade JSP hooks at your leisure. 
 Now you're ready to rebuild your projects. 
 
-## Step 8: Build [](id=step-8-build)
+## Step 8: Build
 
 You must now rebuild any Plugins SDK projects. To do so, click the *Build...* 
 button. 
@@ -476,7 +452,7 @@ button.
 
 Great, you're almost done! 
 
-## Step 9: Summary [](id=step-9-summary)
+## Step 9: Summary
 
 The last screen in the Code Upgrade Tool lists each step's status. A check mark 
 indicates the step is done, an X indicates it's not done, and a question mark 
@@ -491,14 +467,14 @@ Awesome! You now know how to leverage Liferay's Code Upgrade Tool to adapt
 plugins to @product-ver@. As you continue upgrading your plugins, you can 
 re-open the Code Upgrade Tool to facilitate upgrades. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Development Reference](/develop/reference/-/knowledge_base/7-0/development-reference)
+[Development Reference](/docs/7-0/reference/-/knowledge_base/r/development-reference)
 
-[Modularizing an Existing Portlet](/develop/tutorials/-/knowledge_base/7-0/modularizing-an-existing-portlet)
+[Modularizing an Existing Portlet](/docs/7-0/tutorials/-/knowledge_base/t/modularizing-an-existing-portlet)
 
-[Invoking Local Services](/develop/tutorials/-/knowledge_base/7-0/invoking-local-services)
+[Invoking Local Services](/docs/7-0/tutorials/-/knowledge_base/t/invoking-local-services)
 
-[Finding and Invoking Liferay Services](/develop/tutorials/-/knowledge_base/7-0/finding-and-invoking-liferay-services)
+[Finding and Invoking Liferay Services](/docs/7-0/tutorials/-/knowledge_base/t/finding-and-invoking-liferay-services)
 
-[Tooling](/develop/tutorials/-/knowledge_base/7-0/tooling)
+[Tooling](/docs/7-0/tutorials/-/knowledge_base/t/tooling)

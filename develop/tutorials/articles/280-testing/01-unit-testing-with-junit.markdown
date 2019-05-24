@@ -1,4 +1,8 @@
-# Unit Testing with JUnit [](id=unit-testing-with-junit)
+---
+header-id: unit-testing-with-junit
+---
+
+# Unit Testing with JUnit
 
 Test driven development is a best practice for any developer. Unit tests verify
 and validate functionality of classes and methods in isolation by "mocking" 
@@ -9,7 +13,7 @@ applications.
 
 JUnit integrates with build environments such as Maven and Gradle. JUnit plugins
 are available in IDEs such as Eclipse, IntelliJ, and NetBeans. And of course,
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace) 
+[Liferay Workspace](/docs/7-0/tutorials/-/knowledge_base/t/liferay-workspace) 
 supports running JUnit tests. 
 
 This tutorial covers the following topics:
@@ -24,7 +28,7 @@ This tutorial covers the following topics:
 
 You'll start by learning best practices for writing unit tests.
 
-## Writing Good Tests [](id=writing-good-tests)
+## Writing Good Tests
 
 To write good tests, developers must understand assertions and follow best
 practices. 
@@ -47,7 +51,7 @@ tracks requirements.
 
 Next, you'll learn JUnit's annotations for test methods. 
 
-## Understanding JUnit Annotations [](id=understanding-junit-annotations)
+## Understanding JUnit Annotations
 
 The following table describes the JUnit method annotations.
 
@@ -67,7 +71,7 @@ JUnit follows the algorithm below to execute the test class's methods.
 
 Let's create a JUnit test class.
 
-## Creating a JUnit Test Class [](id=creating-a-junit-test-class)
+## Creating a JUnit Test Class
 
 Here you'll create a JUnit test class and fill it with methods that both 
 set up/clean up the test environment and assert the software's expected behavior.
@@ -125,13 +129,13 @@ Your new test class is ready for test methods.
 
 Now create methods in the order of test flow execution. 
 
-### @BeforeClass [](id=beforeclass)
+### @BeforeClass
 
 Identify resources or computationally expensive tasks that must be completed
 prior to running all the tests. Create a method that initializes these resources
 and invokes these tasks. Apply the `@BeforeClass` annotation to the method.
 
-### @Before [](id=before)
+### @Before
 
 Consider what needs to be done before running each individual test. Create a
 method that makes small preparations before each test case. Add the `@Before`
@@ -165,7 +169,7 @@ anew before each `@Test` method.
 Now that you've instantiated objects each test needs, you can add `@Test`
 methods to assert expected output from the object's methods.
 
-### @Test [](id=test)
+### @Test
 
 JUnit's [`Assert` utility class](http://junit.org/junit4/javadoc/latest/org/junit/Assert.html)
 contains static methods for comparing actual test results with expected results.
@@ -218,13 +222,13 @@ any assertions in the test method.
 guarantee test order, you can't rely on a test being run before or after other
 tests.
 
-### @After [](id=after)
+### @After
 
 On finishing each individual test, you should clean up anything that was created
 or modified. Implement the cleanup instructions in a method and add the `@After`
 annotation to it. 
 
-### @AfterClass [](id=afterclass)
+### @AfterClass
 
 On finishing the entire set of tests, you should clean up any remaining test
 environment resources. Implement the final cleanup instructions in a method and
@@ -232,7 +236,7 @@ add the `@AfterClass` annotation to it.
 
 It's time to compile and run your JUnit tests.
 
-## Running JUnit Tests [](id=running-junit-tests)
+## Running JUnit Tests
 
 Unit testing involves these things:
 
@@ -248,7 +252,7 @@ Add JUnit as a dependency. Here's a dependency on JUnit in Gradle:
 
 If your tests require accessing classes outside the module, declare them as
 `testCompile`
-[dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
+[dependencies](/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies)
 in the module's `build.gradle` file. Here's an example `testCompile` dependency. 
 
     testCompile group: "com.sample", name: "com.sample.external", version: "1.0.0"
@@ -308,10 +312,10 @@ resolve the issue.
 
 Congratulations on creating and executing unit tests with JUnit! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Integration Testing with the Arquillian Extension](/develop/tutorials/-/knowledge_base/7-0/arquillian-extension-for-liferay-example)
+[Integration Testing with the Arquillian Extension](/docs/7-0/tutorials/-/knowledge_base/t/arquillian-extension-for-liferay-example)
 
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
+[Liferay Workspace](/docs/7-0/tutorials/-/knowledge_base/t/liferay-workspace)
 
-[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/liferay-ide)
+[Liferay @ide@](/docs/7-0/tutorials/-/knowledge_base/t/liferay-ide)

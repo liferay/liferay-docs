@@ -1,4 +1,8 @@
-# Organizing Folders for Larger Applications [](id=organizing-folders-for-larger-applications)
+---
+header-id: organizing-folders-for-larger-applications
+---
+
+# Organizing Folders for Larger Applications
 
 <div class="learn-path-step">
     <p>Refactoring the Prototype<br>Step 1 of 6</p>

@@ -1,4 +1,8 @@
-# Installing @product@ on WebLogic 12c R2 [](id=installing-liferay-dxp-on-weblogic-12c-r2)
+---
+header-id: installing-liferay-dxp-on-weblogic-12c-r2
+---
+
+# Installing @product@ on WebLogic 12c R2
 
 Although it's possible to install @product@ in a WebLogic Admin
 Server, this isn't recommended. It's best practice to install web apps,
@@ -15,9 +19,9 @@ for instructions on setting up and configuring Admin and Managed Servers.
 You should also read the following articles to familiarize yourself with
 @product@'s general installation steps: 
 
-- [@product@ Installation Overview](/discover/deployment/-/knowledge_base/7-0/liferay-installation-overview)
-- [Installing @product@](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal)
-- [Installing @product@ Manually](/discover/deployment/-/knowledge_base/7-0/installing-liferay-manually)
+- [@product@ Installation Overview](/docs/7-0/deploy/-/knowledge_base/d/liferay-installation-overview)
+- [Installing @product@](/docs/7-0/deploy/-/knowledge_base/d/installing-liferay-portal)
+- [Installing @product@ Manually](/docs/7-0/deploy/-/knowledge_base/d/installing-liferay-manually)
 
 And lastly, download @product@'s WAR file and dependencies from the [Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise). 
 You'll need the following files:
@@ -32,7 +36,7 @@ You'll need the following files:
 
 Without any further ado, get ready to install @product@ in WebLogic! 
 
-## Configuring WebLogic's Node Manager [](id=configuring-weblogics-node-manager)
+## Configuring WebLogic's Node Manager
 
 WebLogic requires a Node Manager to start and stop managed servers. Before 
 installing @product@, you must configure the Node Manager included with your 
@@ -68,7 +72,7 @@ in setWLSEnv.sh? Or is this something an WLS administrator will already know or
 have done? 
 -->
 
-## Configuring WebLogic [](id=configuring-weblogic)
+## Configuring WebLogic
 
 Next, you must set some variables in two WebLogic startup scripts. These 
 variables and scripts are as follows. Be sure to use `set` instead of `export` 
@@ -87,12 +91,8 @@ Add the following variables to both `startWebLogic.[cmd|sh]` scripts:
     export MW_HOME="/your/weblogic/directory"
     export USER_MEM_ARGS="-Xmx1024m -XX:MetaspaceSize=512m"
 
-+$$$
-
-**Important:** For @product@ to work properly, the application server JVM must 
-use the `GMT` time zone and `UTF-8` file encoding. 
-
-$$$
+| **Important:** For @product@ to work properly, the application server JVM must
+| use the `GMT` time zone and `UTF-8` file encoding.
 
 The `DERBY_FLAG` setting disables the Derby server built in to WebLogic, as 
 @product@ doesn't require this server. The remaining settings support @product@'s 
@@ -119,10 +119,10 @@ Java properties. In your `setDomainEnv.[sh|cmd]` script, append
 
 Next, you'll set some @product@-specific properties for your @product@ installation. 
 
-## Setting @product@ Properties [](id=setting-liferay-properties)
+## Setting @product@ Properties
 
 Before installing @product@, you must set the 
-[*Liferay Home*](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home)
+[*Liferay Home*](/docs/7-0/deploy/-/knowledge_base/d/installing-liferay-portal#liferay-home)
 folder's location via the `liferay.home` property in a `portal-ext.properties` 
 file. You can also use this file to override 
 [other @product@ properties](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html) 
@@ -152,7 +152,7 @@ deployment.
 
 Next, you'll install @product@'s dependencies. 
 
-## Installing @product@ Dependencies [](id=installing-liferay-dependencies)
+## Installing @product@ Dependencies
 
 You must now install @product@'s dependencies. Recall that earlier you 
 downloaded two ZIP files containing these dependencies. Install their contents 
@@ -172,7 +172,7 @@ production @product@ instances.
 
 Next, you'll configure your database. 
 
-## Database Configuration [](id=database-configuration)
+## Database Configuration
 
 Use the following procedure if you want WebLogic to manage your database for 
 @product@. You can skip this section if you want to use @product@'s built-in 
@@ -215,7 +215,7 @@ appropriate for your database's configuration:
 
 Next, you'll configure your mail session. 
 
-## Mail Configuration [](id=mail-configuration)
+## Mail Configuration
 
 If you want WebLogic to manage your mail session, use the following procedure. 
 If you want to use Liferay's built-in mail session (recommended), you can skip 
@@ -253,7 +253,7 @@ Your changes will take effect upon restarting your Managed and Admin servers.
 Next, you'll configure the security settings in your WebLogic server to work 
 with @product@. 
 
-## Security Configuration [](id=security-configuration)
+## Security Configuration
 
 When you're ready to start using 
 [Liferay Marketplace](https://web.liferay.com/marketplace) 
@@ -289,7 +289,7 @@ Also, see the section
 in the Developer's Guide to learn how to configure @product@ plugin access to
 resources. 
 
-## Deploying @product@ [](id=deploying-liferay-dxp)
+## Deploying @product@
 
 As mentioned earlier, although you can deploy @product@ to a WebLogic Admin 
 Server, you should instead deploy it to a WebLogic Managed Server. Dedicating 

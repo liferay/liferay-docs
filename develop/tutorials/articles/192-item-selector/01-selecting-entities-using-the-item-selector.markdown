@@ -1,4 +1,8 @@
-# Selecting Entities Using the Item Selector [](id=selecting-entities-using-the-item-selector)
+---
+header-id: selecting-entities-using-the-item-selector
+---
+
+# Selecting Entities Using the Item Selector
 
 The Item Selector allows users to select entities, such as images, videos,
 documents, and sites. 
@@ -13,7 +17,7 @@ Here's what's required to use an Item Selector:
 
 3.  **Use an Item Selector Dialog**
 
-## Determining Item Selector Criteria [](id=determining-item-selector-criteria)
+## Determining Item Selector Criteria
 
 The first step is determining entity types to select from the Item Selector and
 the data you expect from them. What kind of entity do you want to select? Do you
@@ -21,7 +25,7 @@ want to select a user, an image, a video, or something else?
 
 Once you know the entities you want, you need *criterion* classes to represent
 them in the Item Selector. Criterion classes must implement the [`ItemSelectorCriterion` interface](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorCriterion.html). 
-The [Item Selector Criterion and Return Types](/develop/reference/-/knowledge_base/7-0/item-selector-criterion-and-return-types)
+The [Item Selector Criterion and Return Types](/docs/7-0/reference/-/knowledge_base/r/item-selector-criterion-and-return-types)
 reference lists criterion classes Liferay's apps and app suites provide. 
 
 If there's no criterion class for your entity, you can create your
@@ -32,19 +36,15 @@ Then determine the type of information (return type) you expect from the
 entities when users select them. Do you expect a URL? A Universally Unique
 Identifier (UUID)? A primary key? Each return type must be represented by
 an implementation of the [`ItemSelectorReturnType` class](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorReturnType.html).
-The [Item Selector Criterion and Return Types](/develop/reference/-/knowledge_base/7-0/item-selector-criterion-and-return-types)
+The [Item Selector Criterion and Return Types](/docs/7-0/reference/-/knowledge_base/r/item-selector-criterion-and-return-types)
 reference also lists return type classes Liferay's apps and app suites provide. 
 
 If there's no return type class that meets your needs, you can implement your
 own [`ItemSelectorReturnType` class](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorReturnType.html)
 (tutorial coming soon). 
 
-+$$$
-
-**Note**: Each criterion must have at least one `ItemSelectorReturnType` (return
-type) associated with it.
-
-$$$
+| **Note**: Each criterion must have at least one `ItemSelectorReturnType` (return
+| type) associated with it.
 
 For example, if you want to allow users to select an image and want the image's
 URL returned, you could use the `ImageItemSelectorCriterion` criterion class and
@@ -56,7 +56,7 @@ Selector's *criteria*. The Item Selector uses it to decide which selection views
 
 Once you've defined your criteria, you can get an Item Selector to use with it.
 
-## Getting an Item Selector for the Criteria [](id=getting-an-item-selector-for-the-criteria)
+## Getting an Item Selector for the Criteria
 
 In order to use an Item Selector with your criteria, you must get an Item
 Selector URL based on the criteria. The URL is needed to open the Item Selector
@@ -115,11 +115,7 @@ Lastly the method `getItemSelectorURL` is called to return a URL based on the
 criteria. The method requires a URL factory, an arbitrary event name, and a
 series of criterion (one, in this case).
 
-+$$$
-
-**Note**: You can invoke the URL object's `toString` method to get its value.
-
-$$$
+| **Note**: You can invoke the URL object's `toString` method to get its value.
 
 An Item Selector can be configured to use any number of criterion. The criterion
 can use any number of return types.
@@ -137,7 +133,7 @@ supports from each criterion's return type list.
 Now that you've got a URL to the Item Selector you've configured, you can start
 using the Item Selector in your UI. 
 
-## Using the Item Selector Dialog [](id=using-the-item-selector-dialog)
+## Using the Item Selector Dialog
 
 To open the Item Selector in your UI, you must use the
 `LiferayItemSelectorDialog` JavaScript component from [AlloyUI's](http://alloyui.com/)
@@ -264,10 +260,10 @@ involves specifying criteria for the selectable items, applying them to an Item
 Selector, and configuring an Item Selector dialog to operate on the selected
 item. Using Item Selector API, you can give app users the power of choice!
 
-## Related Articles [](id=related-articles)
+## Related Articles
 
-[Creating Custom Item Selector Views](/develop/tutorials/-/knowledge_base/7-0/creating-custom-item-selector-views)
+[Creating Custom Item Selector Views](/docs/7-0/tutorials/-/knowledge_base/t/creating-custom-item-selector-views)
 
-[Creating Custom Item Selector Entities](/develop/tutorials/-/knowledge_base/7-0/creating-custom-item-selector-entities)
+[Creating Custom Item Selector Entities](/docs/7-0/tutorials/-/knowledge_base/t/creating-custom-item-selector-entities)
 
-[Front-End Taglibs](/develop/tutorials/-/knowledge_base/7-0/front-end-taglibs)
+[Front-End Taglibs](/docs/7-0/tutorials/-/knowledge_base/t/front-end-taglibs)

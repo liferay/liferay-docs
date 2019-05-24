@@ -1,4 +1,8 @@
-# Mobile [](id=mobile)
+---
+header-id: mobile
+---
+
+# Mobile
 
 Liferay provides two ways to create native Android and iOS apps that work with 
 your Liferay instances: Liferay Screens and the Liferay Mobile SDK. Liferay 
@@ -25,12 +29,12 @@ Regardless of your specific needs, Liferay has you covered with Liferay Screens
 and the Liferay Mobile SDK. This section of tutorials contains the following 
 sections that show you how to use both:
 
-- [Android Apps with Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/android-apps-with-liferay-screens)
+- [Android Apps with Liferay Screens](/docs/7-0/tutorials/-/knowledge_base/t/android-apps-with-liferay-screens)
 
-- [iOS Apps with Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/ios-apps-with-liferay-screens)
+- [iOS Apps with Liferay Screens](/docs/7-0/tutorials/-/knowledge_base/t/ios-apps-with-liferay-screens)
 
-- [Using Xamarin with Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/using-xamarin-with-liferay-screens)
+- [Using Xamarin with Liferay Screens](/docs/7-0/tutorials/-/knowledge_base/t/using-xamarin-with-liferay-screens)
 
-- [Liferay Mobile SDK](/develop/tutorials/-/knowledge_base/7-0/mobile-sdk)
+- [Liferay Mobile SDK](/docs/7-0/tutorials/-/knowledge_base/t/mobile-sdk)
 
 Venture forth to become a mobile guru!

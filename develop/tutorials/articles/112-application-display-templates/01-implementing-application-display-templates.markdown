@@ -1,6 +1,10 @@
-# Implementing Application Display Templates [](id=implementing-application-display-templates)
+---
+header-id: implementing-application-display-templates
+---
 
-[Application Display Templates](/discover/portal/-/knowledge_base/7-0/styling-apps-with-application-display-templates)
+# Implementing Application Display Templates
+
+[Application Display Templates](/docs/7-0/user/-/knowledge_base/u/styling-apps-with-application-display-templates)
 (ADTs) provide--the ability to add custom display templates to your portlets
 from the portal. The figure below shows what the Display Template option looks
 like in a portlet Configuration menu.
@@ -10,7 +14,7 @@ like in a portlet Configuration menu.
 In this tutorial, you'll learn how to use the Application Display Templates API
 to add an ADT to a portlet.
 
-## Using the Application Display Templates API [](id=using-the-application-display-templates-api)
+## Using the Application Display Templates API
 
 To leverage the ADT API, there are several steps you need to follow. These
 steps involve registering your portlet to use ADTs, defining permissions, and
@@ -195,7 +199,7 @@ the display of your portlet. You can experiment by adding your own custom ADT.
 Once your script is uploaded into the portal and saved, users with the specified
 roles can select the template when they're configuring the display settings of
 your portlet on a page. You can visit the
-[Styling Apps with Application Display Templates](/discover/portal/-/knowledge_base/7-0/styling-apps-with-application-display-templates)
+[Styling Apps with Application Display Templates](/docs/7-0/user/-/knowledge_base/u/styling-apps-with-application-display-templates)
 section for more details on using ADTs.
 
 <!-- We can add similar text to what we have above from "learning-paths" instead
@@ -204,7 +208,7 @@ of "Using Liferay Portal", once we have a section on ADTs that we can point to.
 
 Next, we'll provide some recommendations for using ADTs in Liferay Portal.
 
-## Recommendations for Using ADTs [](id=recommendations-for-using-adts)
+## Recommendations for Using ADTs
 
 You've harnessed a lot of power by learning to leverage the ADT API. Be
 careful, for with great power, comes great responsibility! To that end, you'll
@@ -237,7 +241,7 @@ customized for the portlet you chose. These variable references can be found on
 the left-side panel of the template editor. You can use them by simply placing
 your cursor where you'd like the variable placed, and clicking the desired
 variable to place it there. You can learn more about the template editor in the
-[Styling Apps with Application Display Templates](/discover/portal/-/knowledge_base/7-0/styling-apps-with-application-display-templates)
+[Styling Apps with Application Display Templates](/docs/7-0/user/-/knowledge_base/u/styling-apps-with-application-display-templates)
 section.
 
 <!-- We can add similar text to what we have above from "learning-paths" instead
@@ -254,10 +258,10 @@ your portal users. You stepped through how to configure ADTs for a custom
 portlet, tried out a sample template, and ran through important recommendations
 for using ADTs, which included security and performance.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Styling Apps with Application Display Templates](/discover/portal/-/knowledge_base/7-0/styling-apps-with-application-display-templates)
+[Styling Apps with Application Display Templates](/docs/7-0/user/-/knowledge_base/u/styling-apps-with-application-display-templates)
 
-[Liferay JavaScript APIs](/develop/tutorials/-/knowledge_base/7-0/liferay-javascript-apis)
+[Liferay JavaScript APIs](/docs/7-0/tutorials/-/knowledge_base/t/liferay-javascript-apis)
 
-[Internationalization](/develop/tutorials/-/knowledge_base/7-0/internationalization)
+[Internationalization](/docs/7-0/tutorials/-/knowledge_base/t/internationalization)

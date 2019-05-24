@@ -1,4 +1,8 @@
-# Application Security [](id=application-security)
+---
+header-id: application-security
+---
+
+# Application Security
 
 Nothing has received more attention on the web in recent years than security.
 Liferay has a robust security model for you to use in your applications, and it

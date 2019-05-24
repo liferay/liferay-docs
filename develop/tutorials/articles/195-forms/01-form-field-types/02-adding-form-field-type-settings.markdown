@@ -1,4 +1,8 @@
-# Adding Settings to Form Field Types [](id=adding-settings-to-form-field-types)
+---
+header-id: adding-settings-to-form-field-types
+---
+
+# Adding Settings to Form Field Types
 
 Once you develop a 
 [Form Field Type](/developer/tutorials/-/knowledge_base/7-0/creating-form-field-types), 
@@ -7,16 +11,12 @@ be configured to accept different time formats. Here you'll learn how to add
 settings to form field types by adding a *mask* and a *placeholder* to the Time
 field type created in the previous tutorial. 
 
-+$$$
-
-**Note:** 
-To learn more about using masks with the AUI Timepicker, go
-[here](http://alloyui.com/tutorials/timepicker/). The mask just sets the format
-the timepicker uses to display the time choices. Use the [strftime
-format](http://pubs.opengroup.org/onlinepubs/007908799/xsh/strftime.html) to
-pick the mask you want.
-
-$$$
+| **Note:**
+| To learn more about using masks with the AUI Timepicker, go
+| [here](http://alloyui.com/tutorials/timepicker/). The mask just sets the format
+| the timepicker uses to display the time choices. Use the [strftime
+| format](http://pubs.opengroup.org/onlinepubs/007908799/xsh/strftime.html) to
+| pick the mask you want.
 
 To add settings to form field types, you'll use these steps:
 
@@ -32,7 +32,7 @@ To add settings to form field types, you'll use these steps:
 Get started by crafting the interface that controls what settings your field
 has.
 
-## Extending the Default Type Settings [](id=extending-the-default-type-settings)
+## Extending the Default Type Settings
 
 To add type settings, you need a `*TypeSettings` class that extends
 `DefaultDDMFormFieldTypeSettings`. Since this example works with a Time field
@@ -115,57 +115,53 @@ Your interface is extending the `DefaultDDMFormfieldTypeSettings` class. That's
 why the default settings are available to use in the class annotation, without
 setting them up in the class, as was necessary for the mask and placeholder.
 
-+$$$
-
-**DDM Annotations:** The `@DDMForm` annotation on this class allows the form engine to
-convert the interface definition into a dynamic form. This makes it really
-intuitive to lay out your settings form. 
-
-For now, here are brief explanations for the annotations used in the above
-example:
-
-`@DDMForm`
-: Instantiates a new `DDMForm`. Creates a dynamic form from the annotation.
-
-`@DDMFormLayout`
-: Takes two variables: `paginationMode` and `value`. The pagination mode is a
-String that controls how the layout pages are displayed. The `pagionationMode`
-can be `TABBED_MODE`, `SINGLE_PAGE_MODE`, `SETTINGS_MODE`, or `WIZARD_MODE`.
-Under `value`, specify any `@DDMFormLayoutPage`s that you want to use.
-
-`@DDMFormLayoutPage`
-: The sections of the type settings form. Takes two variables: `title` and
-`value`, where title is a String value that names the section of the form and
-value is one or more `@DDMFormLayoutRow`s.
-
-**Note:** The title of the layout pages are `basic` and `properties` for all of
-@product@'s field types: in future versions of the Forms application, the
-localized value of the key you specify here will be the heading for the form
-section (the layout page is a section of the form). In the current version of
-@product@ (at the time of this writing, DE DXP SP1 and CE 7.0 GA3), these
-are not displayed. To remain consistent with the Forms application's
-default fields, it's best to follow the standard approach and use `basic` and
-`properties`. 
-
-`@DDMFormLayoutRow`
-: Use this to lay out the number of columns you want in the row. Most settings
-forms have just one row and one column.
-
-`@DDMFormLayoutColumn`
-: Use this to lay out the columns your settings form needs. Most
-settings forms have one row and one column. Each column accepts two argument,
-`size` and `value`.
-
-`@DDMFormField`
-: Use this annotation to add new fields to the settings form. In this example,
-the `mask` and `placeholder` settings are configured with this annotation.
-
-$$$
+| **DDM Annotations:** The `@DDMForm` annotation on this class allows the form engine to
+| convert the interface definition into a dynamic form. This makes it really
+| intuitive to lay out your settings form.
+| 
+| For now, here are brief explanations for the annotations used in the above
+| example:
+| 
+| `@DDMForm`
+| : Instantiates a new `DDMForm`. Creates a dynamic form from the annotation.
+| 
+| `@DDMFormLayout`
+| : Takes two variables: `paginationMode` and `value`. The pagination mode is a
+| String that controls how the layout pages are displayed. The `pagionationMode`
+| can be `TABBED_MODE`, `SINGLE_PAGE_MODE`, `SETTINGS_MODE`, or `WIZARD_MODE`.
+| Under `value`, specify any `@DDMFormLayoutPage`s that you want to use.
+| 
+| `@DDMFormLayoutPage`
+| : The sections of the type settings form. Takes two variables: `title` and
+| `value`, where title is a String value that names the section of the form and
+| value is one or more `@DDMFormLayoutRow`s.
+| 
+| **Note:** The title of the layout pages are `basic` and `properties` for all of
+| @product@'s field types: in future versions of the Forms application, the
+| localized value of the key you specify here will be the heading for the form
+| section (the layout page is a section of the form). In the current version of
+| @product@ (at the time of this writing, DE DXP SP1 and CE 7.0 GA3), these
+| are not displayed. To remain consistent with the Forms application's
+| default fields, it's best to follow the standard approach and use `basic` and
+| `properties`.
+| 
+| `@DDMFormLayoutRow`
+| : Use this to lay out the number of columns you want in the row. Most settings
+| forms have just one row and one column.
+| 
+| `@DDMFormLayoutColumn`
+| : Use this to lay out the columns your settings form needs. Most
+| settings forms have one row and one column. Each column accepts two argument,
+| `size` and `value`.
+| 
+| `@DDMFormField`
+| : Use this annotation to add new fields to the settings form. In this example,
+| the `mask` and `placeholder` settings are configured with this annotation.
 
 Once your `*TypeSettings` class is finished, move on to update the `*Renderer`
 class for your form field type.
 
-## Updating the Renderer Class [](id=updating-the-renderer-class)
+## Updating the Renderer Class
 
 To send the new configuration settings to the Soy template so they can be
 displayed to the end user, you need to modify the `*DDMFormFieldRenderer`.
@@ -206,22 +202,18 @@ use them, whether passing them to the template context (similar to the `*Rendere
 only this time for client-side rendering), or using them to configure the
 behavior of the JavaScript component itself.
 
-+$$$
-
-**Note:** Remember that the Soy template can be used for server side or client
-side rendering. By defining the settings you're adding in both the Java Renderer
-and the JavaScript Renderer, you're allowing for the best possible user
-experience. For example, if a form builder is in the form builder, configuring a
-form field type, the configuration they enter can be directly passed to the
-template, and become visible in the UI, almost instantly. However, when the user
-clicks into a form field initially to begin editing, the rendering occurs from
-the server side.
-
-$$$
+| **Note:** Remember that the Soy template can be used for server side or client
+| side rendering. By defining the settings you're adding in both the Java Renderer
+| and the JavaScript Renderer, you're allowing for the best possible user
+| experience. For example, if a form builder is in the form builder, configuring a
+| form field type, the configuration they enter can be directly passed to the
+| template, and become visible in the UI, almost instantly. However, when the user
+| clicks into a form field initially to begin editing, the rendering occurs from
+| the server side.
 
 Next configure the JavaScript component to include the new settings.
 
-## Adding Settings to the JavaScript Component [](id=adding-settings-to-the-javascript-component)
+## Adding Settings to the JavaScript Component
 
 The JavaScript component needs to know about the new settings. First configure
 them as attributes of the component:
@@ -282,7 +274,7 @@ Now the field type JavaScript component is configured to include the settings.
 All you have left to do is to update the Soy template so the placeholder can be
 rendered in the form with the time field.
 
-## Updating the Soy Template [](id=updating-the-soy-template)
+## Updating the Soy Template
 
 After all that, adding the placeholder setting to your Soy template's logic is
 simple.

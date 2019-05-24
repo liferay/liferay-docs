@@ -1,4 +1,8 @@
-# Applying Social Bookmarks [](id=applying-social-bookmarks)
+---
+header-id: applying-social-bookmarks
+---
+
+# Applying Social Bookmarks
 
 When you enable social bookmarks, icons for sharing on Twitter, Facebook, and 
 Google Plus appear below your app's content. @product@'s taglibs provide the 
@@ -9,11 +13,11 @@ markup you need to add this feature to your app.
 Follow these steps to add social bookmarks to your app:
 
 1.  Make sure your entity is 
-    [asset enabled](/develop/tutorials/-/knowledge_base/7-0/adding-updating-and-deleting-assets-for-custom-entities).
+    [asset enabled](/docs/7-0/tutorials/-/knowledge_base/t/adding-updating-and-deleting-assets-for-custom-entities).
 
 2.  Choose a view in which to show the social bookmarks. For example, you can 
     display them in one of your portlet's views, or if you've implemented 
-    [asset rendering](/develop/tutorials/-/knowledge_base/7-0/rendering-an-asset) 
+    [asset rendering](/docs/7-0/tutorials/-/knowledge_base/t/rendering-an-asset) 
     you can display them in the full content view in the Asset Publisher 
     portlet. 
 
@@ -70,25 +74,21 @@ The social bookmarks UI component now shows in your entity's view.
 
 ![Figure 5: The new JSP lets users share app content to social networks.](../../images/social-guestbook-social-bookmarks.png) 
 
-+$$$
-
-**Note:** You can install the Social Bookmarks app from the Marketplace 
-(available for [CE](https://web.liferay.com/marketplace/-/mp/application/15194315) 
-and [DXP](https://web.liferay.com/marketplace/-/mp/application/15188453)) to let 
-your users share your app's content across more social networks. For more 
-information, see the article 
-[Integrating with Facebook, Twitter, and More](/discover/portal/-/knowledge_base/7-0/integrating-with-facebook-twitter-and-more#using-social-bookmarks).  
-
-$$$
+| **Note:** You can install the Social Bookmarks app from the Marketplace
+| (available for [CE](https://web.liferay.com/marketplace/-/mp/application/15194315)
+| and [DXP](https://web.liferay.com/marketplace/-/mp/application/15188453)) to let
+| your users share your app's content across more social networks. For more
+| information, see the article
+| [Integrating with Facebook, Twitter, and More](/docs/7-0/user/-/knowledge_base/u/integrating-with-facebook-twitter-and-more#using-social-bookmarks).
 
 Great! Now you know how to let users share content in your asset enabled apps. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Adding, Updating, and Deleting Assets for Custom Entities](/develop/tutorials/-/knowledge_base/7-0/adding-updating-and-deleting-assets-for-custom-entities)
+[Adding, Updating, and Deleting Assets for Custom Entities](/docs/7-0/tutorials/-/knowledge_base/t/adding-updating-and-deleting-assets-for-custom-entities)
 
-[Adding Permissions to Resources](/develop/tutorials/-/knowledge_base/7-0/adding-permissions-to-resources)
+[Adding Permissions to Resources](/docs/7-0/tutorials/-/knowledge_base/t/adding-permissions-to-resources)
 
-[Rendering an Asset](/develop/tutorials/-/knowledge_base/7-0/rendering-an-asset)
+[Rendering an Asset](/docs/7-0/tutorials/-/knowledge_base/t/rendering-an-asset)
 
-[Using the Liferay UI Taglib](/develop/tutorials/-/knowledge_base/7-0/using-the-liferay-ui-taglib)
+[Using the Liferay UI Taglib](/docs/7-0/tutorials/-/knowledge_base/t/using-the-liferay-ui-taglib)

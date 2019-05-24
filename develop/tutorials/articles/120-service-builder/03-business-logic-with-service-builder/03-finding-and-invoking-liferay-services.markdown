@@ -1,4 +1,8 @@
-# Finding and Invoking Liferay Services [](id=finding-and-invoking-liferay-services)
+---
+header-id: finding-and-invoking-liferay-services
+---
+
+# Finding and Invoking Liferay Services
 
 In this tutorial, you'll learn how to search for portal services and portlet
 services. You can find Liferay's services by searching for them in the Javadocs:
@@ -6,7 +10,7 @@ services. You can find Liferay's services by searching for them in the Javadocs:
 
 First, you'll learn how to find a portal service using Liferay's Javadocs. 
 
-## Finding Liferay Portal Services [](id=finding-liferay-portal-services)
+## Finding Liferay Portal Services
 
 Searching for Liferay Portal services is easy and intuitive. The first two
 options, `portal-impl` and `portal-kernel`, are the most popular options when
@@ -33,13 +37,13 @@ Liferay's Javadocs are easy to browse and well-organized. Here's how to find the
 
 That was easy! What if you want to find module services? 
 
-## Finding Liferay Module Services [](id=finding-liferay-module-services)
+## Finding Liferay Module Services
 
 Searching for Liferay module services is also easy. The Javadocs for modules are
 hosted on Liferay's Nexus repository, and can be viewed by downloading and
 extracting the module's `*javadoc.jar` file. You can learn move about how a
 module's Java API is organized by reading the
-[Java APIs](/develop/reference/-/knowledge_base/7-0/development-reference#java-apis)
+[Java APIs](/docs/7-0/reference/-/knowledge_base/r/development-reference#java-apis)
 section.
 
 Here's an example of how to find services for a bookmarks entry:
@@ -90,14 +94,14 @@ Here's how you find services for a user's blogs statistics:
 Now you're ready to invoke Liferay services. To invoke Liferay services
 remotely, your Liferay instance must be configured to allow remote web service
 access. Please see the
-[Service Security Layers](/develop/tutorials/-/knowledge_base/7-0/service-security-layers) 
+[Service Security Layers](/docs/7-0/tutorials/-/knowledge_base/t/service-security-layers) 
 tutorial for details.
 -->
 <!-- The above text does not yet apply, since module Javadoc is only hosted in a
 JAR on Nexus. Update this when module Javadoc is hosted on docs.liferay.com.
 -Cody -->
 
-## Invoking Liferay Services Locally [](id=invoking-liferay-services-locally)
+## Invoking Liferay Services Locally
 
 Every Liferay service provides a local interface to clients running in the same
 JVM as Liferay Portal. Many local services (e.g., `*LocalService` classes) are
@@ -137,11 +141,11 @@ following services are available:
 
 Some types of portlets don't have access to the OSGi Registry using Declarative
 Services (e.g., Spring MVC and JSF). You can call OSGi services in these
-portlets by using [Service Trackers](/develop/tutorials/-/knowledge_base/7-0/service-trackers).
+portlets by using [Service Trackers](/docs/7-0/tutorials/-/knowledge_base/t/service-trackers).
 
 You'll learn more about referencing OSGi services next.
 
-## Referencing OSGi Services [](id=referencing-osgi-services)
+## Referencing OSGi Services
 
 All the services created within your Service Builder application are wired using
 an internal Spring Application Context. This uses AOP proxies to give your
@@ -187,12 +191,12 @@ The generated code for this entity would look like the following:
 Great! You know how to find Liferay's core and module services, and can invoke
 them from your application. You also learned about referencing OSGi services.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Invoking Local Services](/develop/tutorials/-/knowledge_base/7-0/invoking-local-services)
+[Invoking Local Services](/docs/7-0/tutorials/-/knowledge_base/t/invoking-local-services)
 
-[Invoking Remote Services](/develop/tutorials/-/knowledge_base/7-0/invoking-remote-services)
+[Invoking Remote Services](/docs/7-0/tutorials/-/knowledge_base/t/invoking-remote-services)
 
-[JSON Web Services Invoker](/develop/tutorials/-/knowledge_base/7-0/json-web-services-invoker)
+[JSON Web Services Invoker](/docs/7-0/tutorials/-/knowledge_base/t/json-web-services-invoker)
 
-[Service Trackers](/develop/tutorials/-/knowledge_base/7-0/service-trackers)
+[Service Trackers](/docs/7-0/tutorials/-/knowledge_base/t/service-trackers)

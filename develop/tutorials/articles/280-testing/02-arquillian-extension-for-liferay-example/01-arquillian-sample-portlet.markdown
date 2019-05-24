@@ -1,4 +1,8 @@
-# Arquillian Example Sample Portlet [](id=arquillian-example-sample-portlet)
+---
+header-id: arquillian-example-sample-portlet
+---
+
+# Arquillian Example Sample Portlet
 
 The sample portlet calculates the sum of two numbers. 
 

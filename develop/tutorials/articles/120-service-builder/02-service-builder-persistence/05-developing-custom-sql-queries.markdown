@@ -1,11 +1,15 @@
-# Custom SQL [](id=custom-sql)
+---
+header-id: custom-sql
+---
+
+# Custom SQL
 
 Service Builder creates finder methods that retrieve entities by their
 attributes: their column values. When you add a column as a parameter for the
 finder in your `service.xml` file and run Service Builder, it generates the
 finder method in your persistence layer and adds methods to your service layer
 that invoke the finder. If your queries are simple enough, consider using
-[Dynamic Query](/develop/tutorials/-/knowledge_base/7-0/dynamic-query) to access
+[Dynamic Query](/docs/7-0/tutorials/-/knowledge_base/t/dynamic-query) to access
 Liferay's database. If you want to do something more complicated like JOINs, you
 can write your own custom SQL queries. You'll learn how in this tutorial.
 
@@ -33,7 +37,7 @@ to your finder method. It's easy to do by following these steps:
 Next, using the Guestbook application as an example, you'll learn how to
 accomplish these steps.
 
-## Step 1: Specify Your Custom SQL [](id=step-1-specify-your-custom-sql)
+## Step 1: Specify Your Custom SQL
 
 After you've tested your SQL, you must specify it in a particular file for
 Liferay to access it. `CustomSQLUtil` class (from module
@@ -87,7 +91,7 @@ Now that you've specified some custom SQL, the next step is to implement a
 finder method to invoke it. The method name for the finder should match the ID
 you just specified for the `sql` element.
 
-## Step 2: Implement Your Finder Method [](id=step-2-implement-your-finder-method)
+## Step 2: Implement Your Finder Method
 
 Next, implement the finder method in your persistence layer to invoke your
 custom SQL query. Service Builder generates the interface for the finder in your
@@ -98,7 +102,7 @@ package. For the Guestbook application, you could create a `EntryFinderImpl`
 class in the `com.liferay.docs.guestbook.service.persistence.impl` package. Your
 class should extend `BasePersistenceImpl<Entry>`.
 
-[Run Service Builder](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code)
+[Run Service Builder](/docs/7-0/tutorials/-/knowledge_base/t/running-service-builder-and-understanding-the-generated-code)
 to generate the `*Finder` interface based on the `*FinderImpl` class. Modify
 your `*FinderImpl` class to have it implement the `*Finder` interface you just
 generated:
@@ -166,7 +170,7 @@ based on the fully-qualified class name of the `*Finder` interface
 Awesome! Your custom SQL is in place and your finder method is implemented.
 Next, you'll call the finder method from your service.
 
-## Step 3: Access Your Finder Method from Your Service [](id=step-3-access-your-finder-method-from-your-service)
+## Step 3: Access Your Finder Method from Your Service
 
 So far, you've created a `*FinderImpl` class, generated the `*Finder` interface,
 and created a custom finder method that gets your custom SQL. Your last step is
@@ -209,8 +213,8 @@ application, just call
 Congratulations on developing a custom SQL query and custom finder for your
 application!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Customizing Liferay Services](/develop/tutorials/-/knowledge_base/7-0/customizing-liferay-services-service-wrappers)
+[Customizing Liferay Services](/docs/7-0/tutorials/-/knowledge_base/t/customizing-liferay-services-service-wrappers)
 
-[Service Builder Web Services](/develop/tutorials/-/knowledge_base/7-0/service-builder-web-services)
+[Service Builder Web Services](/docs/7-0/tutorials/-/knowledge_base/t/service-builder-web-services)

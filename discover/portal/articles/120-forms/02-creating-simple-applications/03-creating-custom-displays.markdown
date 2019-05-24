@@ -1,11 +1,15 @@
-# Using Templates to Display Forms and Lists [](id=using-templates-to-display-forms-and-lists)
+---
+header-id: using-templates-to-display-forms-and-lists
+---
+
+# Using Templates to Display Forms and Lists
 
 After creating data definitions and lists, you can control how the form appears
 to your users, and how the resulting list of records is displayed. You do this
 by creating templates for each view (form view and record display view) and
 selecting them in the DDL Display portlet. You might realize you need to create
 a sign-up sheet with a subset of the fields provided by the Activity Entry
-data definition created in the [article on data definitions](/discover/portal/-/knowledge_base/7-0/creating-data-definitions) last two articles. Instead of creating a new
+data definition created in the [article on data definitions](/docs/7-0/user/-/knowledge_base/u/creating-data-definitions) last two articles. Instead of creating a new
 definition and list, just customize the data definition's templates.
 Another use case would be a situation where one of the preexisting data
 definitions that Liferay offers suits your list needs, but you need it laid out
@@ -35,7 +39,7 @@ interested in:
 
 -->
 
-## Managing Display Templates and Form Templates [](id=managing-display-templates-and-form-templates)
+## Managing Display Templates and Form Templates
 
 <!-- Add more detail on embedding templates within templates, copying existing
 templates, deleting templates? -->
@@ -67,7 +71,7 @@ If no templates have been created for a definition, you can create new ones. See
 the next sections on Creating Form Templates and Creating Display Templates for
 more details.
 
-## Creating Form Templates [](id=creating-form-templates)
+## Creating Form Templates
 
 The default data entry form is the entire data model from a data definition,
 including all required and optional fields. List creators who create new lists
@@ -76,7 +80,7 @@ form. But what if you just want a quick sign-up form to find out who's coming to
 the Lunar Luau dinner tonight? Using a form template for an existing data
 definition, you can customize the display of the Activity Entry definition's
 form. If you don't know what the Activity Entry data definition is, refer to
-the [article on data definitions](/discover/portal/-/knowledge_base/7-0/creating-data-definitions), where it was created.
+the [article on data definitions](/docs/7-0/user/-/knowledge_base/u/creating-data-definitions), where it was created.
 
 You can access and create new form templates from the Product Menu:
 
@@ -116,7 +120,7 @@ information you might need, then quickly produce form templates that make it
 look like you have several data definitions and lists. How will you display all
 the records, though? However you want, of course.
 
-## Creating Display Templates [](id=creating-display-templates)
+## Creating Display Templates
 
 <!-- Too much text before getting to the steps. Move some to the intro of the
 article? -->
@@ -187,29 +191,25 @@ editor inserts the variable into your display template code.
 ![Figure 8: Upload an existing template, or create one using the template editor.](../../../images/ddl-display-template-script.png)
 
 
-+$$$
+| **Note:** If you're familiar with Web Content Templates, Display templates
+| customize the display of a list in the same way. Display templates can be
+| written in FreeMarker or Velocity, pulling data from the data definition in the
+| same way that web content templates pull data from their structures. Also
+| similar to web content templates, display templates can be embedded in other
+| display templates. This allows for reusable code, JS library imports, or macros
+| which will be imported by Velocity or FreeMarker templates in the system.
+| Embedding display templates provides a more efficient process when you have a
+| multitude of similar data definitions. Just import an embedded display template
+| and work off of it for your new display template.  We'll look at a simple
+| example, but for more information on using template scripts to pull data from a
+| backing structure, see the article on web content templates. <!--LINK-->
 
-**Note:** If you're familiar with Web Content Templates, Display templates
-customize the display of a list in the same way. Display templates can be
-written in FreeMarker or Velocity, pulling data from the data definition in the
-same way that web content templates pull data from their structures. Also
-similar to web content templates, display templates can be embedded in other
-display templates. This allows for reusable code, JS library imports, or macros
-which will be imported by Velocity or FreeMarker templates in the system.
-Embedding display templates provides a more efficient process when you have a
-multitude of similar data definitions. Just import an embedded display template
-and work off of it for your new display template.  We'll look at a simple
-example, but for more information on using template scripts to pull data from a
-backing structure, see the article on web content templates. <!--LINK-->
-
-$$$
-
-### Creating a Simple Display Template [](id=creating-a-simple-display-template)
+### Creating a Simple Display Template
 
 There's a lot you can do with your templates. Maybe there's a Lunar Luau dinner
 scheduled at the Lunar Resort, and the kitchen staff wants a count of the
 guests. You could create a list based on the Activity Entry data definition you
-[created earlier](/discover/portal/-/knowledge_base/7-0/creating-data-definitions), make a
+[created earlier](/docs/7-0/user/-/knowledge_base/u/creating-data-definitions), make a
 form template that just shows the *Full Name* field and the *Tell us something
 interesting about yourself.* field. Then write a FreeMarker template that gives
 a summary of who is attending, displaying just the fields form the form

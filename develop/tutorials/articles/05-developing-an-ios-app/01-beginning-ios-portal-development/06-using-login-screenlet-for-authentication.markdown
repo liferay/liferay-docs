@@ -1,4 +1,8 @@
-# Using Login Screenlet for Authentication [](id=using-login-screenlet-for-authentication-ios)
+---
+header-id: using-login-screenlet-for-authentication-ios
+---
+
+# Using Login Screenlet for Authentication
 
 For the app to retrieve data from the Guestbook portlet, the user must first
 authenticate to the @product@ instance. You can implement authentication
@@ -6,7 +10,7 @@ using the Liferay Mobile SDK, but it takes time to write. Using Liferay Screens
 to authenticate takes about ten minutes. In this article, you'll use Login
 Screenlet to implement authentication in your app. 
 
-## Adding Login Screenlet to the App [](id=adding-login-screenlet-to-the-app)
+## Adding Login Screenlet to the App
 
 To use any Screenlet, you must follow two steps: 
 
@@ -22,7 +26,7 @@ only) scene. After adding the Screenlet to this scene, you'll conform
 `ViewController` (the scene's view controller class) to the 
 `LoginScreenletDelegate` protocol. 
 
-## Adding Login Screenlet to the Scene [](id=adding-login-screenlet-to-the-scene)
+## Adding Login Screenlet to the Scene
 
 Follow these steps to add Login Screenlet to the scene:
 
@@ -69,7 +73,7 @@ Nicely done! The scene now contains Login Screenlet. Next, you'll conform
 `ViewController` (the scene's view controller class) to the 
 `LoginScreenletDelegate` protocol. 
 
-## Conforming to the Screenlet's Delegate Protocol [](id=conforming-to-the-screenlets-delegate-protocol)
+## Conforming to the Screenlet's Delegate Protocol
 
 A view controller can respond to a Screenlet's events by conforming to the 
 Screenlet's delegate protocol. This lets the app developer choose how their app 

@@ -1,4 +1,8 @@
-# Adding Asset Features to Your User Interface [](id=adding-asset-features-to-your-user-interface)
+---
+header-id: adding-asset-features-to-your-user-interface
+---
+
+# Adding Asset Features to Your User Interface
 
 <div class="learn-path-step">
     <p>Adding Asset Features to Your UI<br>Step 1 of 5</p>

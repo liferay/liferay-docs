@@ -1,4 +1,8 @@
-# Best Practices for Rules [](id=best-practices-for-rules)
+---
+header-id: best-practices-for-rules
+---
+
+# Best Practices for Rules
 
 In this tutorial, you'll learn about best practices to keep in mind when
 creating Audience Targeting Rules. Before going through some best practices, you
@@ -9,17 +13,17 @@ should understand the three components you can specify for a rule:
 - *Language Keys (optional)*
 
 You discuss rule behavior and its UI configuration in great detail in the
-[Creating New Audience Targeting Rule Types](/develop/tutorials/-/knowledge_base/7-0/creating-new-audience-targeting-rule-types)
+[Creating New Audience Targeting Rule Types](/docs/7-0/tutorials/-/knowledge_base/t/creating-new-audience-targeting-rule-types)
 tutorial. To learn more about language keys and how to create, use, and generate
 them, visit the
-[Internationalization](/develop/tutorials/-/knowledge_base/7-0/internationalization)
+[Internationalization](/docs/7-0/tutorials/-/knowledge_base/t/internationalization)
 tutorials.
 
 Audience Targeting gives you the option to choose whatever frontend technology
 you like. In the next section, you'll learn how to use your preferred technology
 for displaying content in Audience Targeting rules.
 
-## Selecting a UI Technology [](id=selecting-a-ui-technology)
+## Selecting a UI Technology
 
 Since @product-ver@, JSP is the preferred technology for Audience Targeting
 extension views. FreeMarker views, however, are still supported through their
@@ -54,7 +58,7 @@ choose, and to return it as a string that is viewable from your rule's form.
 If you plan, therefore, on using an alternative to JSP or FreeMarker, you
 must override this method by creating and modifying it in your `-Rule` class.
 
-## Other Best Practices [](id=other-best-practices)
+## Other Best Practices
 
 Here are some things to consider as you implement and deploy Audience Targeting
 rules:
@@ -62,7 +66,7 @@ rules:
 - As an alternative to storing complex information in the `typeSettings` field,
 which is managed by the framework in the Rule Instance table, you may want to
 consider persisting to a database by using 
-[Service Builder](/develop/tutorials/-/knowledge_base/7-0/business-logic-and-data-access),
+[Service Builder](/docs/7-0/tutorials/-/knowledge_base/t/business-logic-and-data-access),
 which is supported for Rule plugins. 
 
 - If you deploy your rule into a production environment, you may want to
@@ -86,10 +90,10 @@ reference to a page or web content article), you may need to override the
 `BaseRule.exportData` and `BaseRule.importData` methods, to manage the content
 properly.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating New Audience Targeting Rule Types](/develop/tutorials/-/knowledge_base/7-0/creating-new-audience-targeting-rule-types)
+[Creating New Audience Targeting Rule Types](/docs/7-0/tutorials/-/knowledge_base/t/creating-new-audience-targeting-rule-types)
 
-[Internationalization](/develop/tutorials/-/knowledge_base/7-0/internationalization)
+[Internationalization](/docs/7-0/tutorials/-/knowledge_base/t/internationalization)
 
-[Service Builder Persistence](/develop/tutorials/-/knowledge_base/7-0/service-builder-persistence)
+[Service Builder Persistence](/docs/7-0/tutorials/-/knowledge_base/t/service-builder-persistence)

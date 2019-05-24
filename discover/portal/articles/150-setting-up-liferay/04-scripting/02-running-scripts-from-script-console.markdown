@@ -1,4 +1,8 @@
-# Running Scripts From the Script Console [](id=running-scripts-from-the-script-console)
+---
+header-id: running-scripts-from-the-script-console
+---
+
+# Running Scripts From the Script Console
 
 To see a very simple example of the script console in action, log into the
 portal as an administrator and navigate to the *Control Panel* &rarr; *Server
@@ -81,7 +85,7 @@ post:
 The following scripts are Groovy scripts but they can be adapted to other
 languages.
 
-## Tip 1: Use the Predefined Variables [](id=tip-1-use-the-predefined-variables)
+## Tip 1: Use the Predefined Variables
 
 The following predefined variables are available to scripts executed from
 Liferay's script console:
@@ -114,7 +118,7 @@ demonstrates:
 
 ![Figure 1: Here's an example of invoking a Groovy script that uses the predefined `out`, `actionRequest`, and `userInfo` variables to print information about the current user.](../../../images/groovy-script-current-user-info.png)
 
-## Tip 2: Embed HTML Markup in Script Outputs [](id=tip-2-embed-html-markup-in-script-outputs)
+## Tip 2: Embed HTML Markup in Script Outputs
 
 The output of the script console is rendered as HTML content. Thus, you can
 embed HTML markup in your outputs to change their look and feel. Here's an
@@ -132,7 +136,7 @@ example:
 
 ![Figure 2: Here's an example of invoking a Groovy script that embeds HTML markup in the output of the script.](../../../images/groovy-script-embed-html-markup.png)
 
-## Tip 3: Show Exceptions in the Script Console [](id=tip-3-show-exceptions-in-the-script-console)
+## Tip 3: Show Exceptions in the Script Console
 
 When any exception occurs during script execution, the error message is always
 the same:
@@ -157,7 +161,7 @@ does not catch script syntax errors. Here's an example:
 
 ![Figure 3: Here's an example of a Groovy script that catches exceptions and prints exception information to the script console.](../../../images/groovy-script-show-exception.png)
 
-## Tip 4: Implement a Preview Mode [](id=tip-4-implement-a-preview-mode)
+## Tip 4: Implement a Preview Mode
 
 Since Liferay's script console does not provide an undo feature, it can be very
 convenient to set up a kind of preview mode. The purpose of a preview mode is to
@@ -208,7 +212,7 @@ Here's an example Groovy script that show the preview mode concept in action:
                     + 'again this script to make changes to the database') 
     }
 
-## Tip 5: Plan a File Output for Long-Running Scripts [](id=tip-5-plan-a-file-output-for-long-running-scripts)
+## Tip 5: Plan a File Output for Long-Running Scripts
 
 When a script has been running for a long time, it's possible for the script
 console to return an error even though the script can continue running and
@@ -241,7 +245,7 @@ consider this script:
     } 
 
 The script above creates a subfolder of
-[Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home)
+[Liferay Home](/docs/7-0/deploy/-/knowledge_base/d/installing-product#liferay-home)
 called `scripting` and saves the script output to a file in this folder. After
 running the script above, it's possible to read the generated file without
 direct access to the file system. Here's a second script that demonstrates this:
@@ -258,10 +262,10 @@ because of all the other information there.
 Of course, Liferay's script engine has uses beyond the script console. Next,
 you'll learn how to leverage Liferay's script engine for designing workflows.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Invoking Liferay Services From Scripts](/discover/portal/-/knowledge_base/7-0/invoking-liferay-services-from-scripts)
+[Invoking Liferay Services From Scripts](/docs/7-0/user/-/knowledge_base/u/invoking-liferay-services-from-scripts)
 
-[Leveraging the Script Engine in Workflow](/discover/portal/-/knowledge_base/7-0/leveraging-the-script-engine-in-workflow)
+[Leveraging the Script Engine in Workflow](/docs/7-0/user/-/knowledge_base/u/leveraging-the-script-engine-in-workflow)
 
-[Using Liferay's Script Engine](/discover/portal/-/knowledge_base/7-0/using-liferays-script-engine)
+[Using Liferay's Script Engine](/docs/7-0/user/-/knowledge_base/u/using-liferays-script-engine)

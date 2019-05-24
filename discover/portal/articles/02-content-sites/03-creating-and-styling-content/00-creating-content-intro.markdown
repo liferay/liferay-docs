@@ -1,4 +1,8 @@
-# Creating Content [](id=creating-content)
+---
+header-id: creating-content
+---
+
+# Creating Content
 
 So far you've created the Lunar Resort site's outline. By creating pages and
 using templates, the site now has a structure and the pages have layouts. Now

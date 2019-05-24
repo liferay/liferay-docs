@@ -1,4 +1,8 @@
-# Configuring liferay-npm-bundler [](id=configuring-liferay-npm-bundler)
+---
+header-id: configuring-liferay-npm-bundler
+---
+
+# Configuring liferay-npm-bundler
 
 The liferay-npm-bundler is configured via a `.npmbundlerrc` file placed in the 
 portlet project's root folder. You can create a complete configuration manually 
@@ -7,7 +11,7 @@ or extend a configuration preset (via Babel).
 This tutorial explains the `.npmbundlerrc` file's structure and shows how the 
 default preset configures the liferay-npm-bundler.
 
-## Understanding the .npmbundlerrc File's Structure [](id=understanding-the-npmbundlerrc-file-structure)
+## Understanding the .npmbundlerrc File's Structure
 
 The `.npmbundlerrc` file has four possible phase definitions: *copy-process*, 
 *pre-process*, *post-process*, and *babel*. These phase definitions are 
@@ -23,15 +27,11 @@ before the Babel phase is run.
 **Babel:** Defined with the `.babelrc` definition. Specifies the `.babelrc` file 
 to use when running Babel through the package's `.js` files. 
 
-+$$$
-
-**Note:** During this phase, Babel transforms package files (for example, to 
-convert them to AMD format, if necessary), but doesn't transpile them. In 
-theory, you could also transpile them by configuring the proper plugins. We 
-recommend transpiling before running the bundler, to avoid mixing both unrelated 
-processes.
-
-$$$
+| **Note:** During this phase, Babel transforms package files (for example, to
+| convert them to AMD format, if necessary), but doesn't transpile them. In
+| theory, you could also transpile them by configuring the proper plugins. We
+| recommend transpiling before running the bundler, to avoid mixing both unrelated
+| processes.
 
 **Post-Process:** Defined with the `post-plugins` property. An alternative to 
 using the *pre-process* phase, this specifies plugins to run after the Babel 
@@ -118,16 +118,12 @@ Here's an example of a `.npmbundlerrc` configuration:
             ]
         }
 
-+$$$
-
-**Note:** Not all definition formats (`*`, `some-package-name`, and 
-`some-package-name@version`) shown above are required. In most cases, the 
-wildcard definition (`*`) is enough. The non-wildcard formats 
-(`some-package-name` and `some-package-name@version`) are rare exceptions for 
-packages that require a more specific configuration than the wildcard definition 
-provides.
-
-$$$
+| **Note:** Not all definition formats (`*`, `some-package-name`, and
+| `some-package-name@version`) shown above are required. In most cases, the
+| wildcard definition (`*`) is enough. The non-wildcard formats
+| (`some-package-name` and `some-package-name@version`) are rare exceptions for
+| packages that require a more specific configuration than the wildcard definition
+| provides.
 
 Below are the configuration options for the `.npmbundlerrc` file:
 
@@ -163,32 +159,24 @@ each specific plugin.
 
 *"\"*: plugins' configuration for dependency packages.
 
-+$$$
+| **Note:** Plugins' configuration specifies the options for configuring plugins
+| in all the possible phases, as well as the `.babelrc` file to use when running
+| Babel (see [Babel's documentation](https://babeljs.io/docs/usage/babelrc/) for
+| more information on that file format).
 
-**Note:** Plugins' configuration specifies the options for configuring plugins 
-in all the possible phases, as well as the `.babelrc` file to use when running 
-Babel (see [Babel's documentation](https://babeljs.io/docs/usage/babelrc/) for 
-more information on that file format). 
-
-$$$
-
-+$$$
-
-**Note:** Prior to version 1.4.0 of the liferay-npm-bundler, package 
-configurations were placed next to the tools options 
-(`*`, `output`, `exclude`, etc.) To prevent package name collisions, package 
-configurations are now namespaced and placed under the `packages` section. To 
-maintain backwards compatibility, the liferay-npm-bundler falls back to the root 
-section outside `packages` for package configuration, if no package 
-configurations (`package-name@version`, `package-name`, or `*`) are found in the 
-`packages` section.
-
-$$$
+| **Note:** Prior to version 1.4.0 of the liferay-npm-bundler, package
+| configurations were placed next to the tools options
+| (`*`, `output`, `exclude`, etc.) To prevent package name collisions, package
+| configurations are now namespaced and placed under the `packages` section. To
+| maintain backwards compatibility, the liferay-npm-bundler falls back to the root
+| section outside `packages` for package configuration, if no package
+| configurations (`package-name@version`, `package-name`, or `*`) are found in the
+| `packages` section.
 
 Now that you know the structure of the `.npmbundlerrc` file, you can learn about 
 the default configuration preset.
 
-## How the Default Preset Configures the liferay-npm-bundler [](id=how-the-default-preset-configures-the-liferay-npm-bundler)
+## How the Default Preset Configures the liferay-npm-bundler
 
 The liferay-npm-bundler comes with a default configuration preset: 
 [`liferay-npm-bundler-preset-standard`](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/liferay-npm-bundler-preset-standard)
@@ -222,14 +210,10 @@ from `liferay-npm-bundler-preset-standard`:
     	}
     }
 
-+$$$
-
-**Note:** You can override configuration preset values by adding your own 
-configuration to your project's `.npmbundlerrc` file. For instance, using the 
-configuration preset example above, you can define your own `.babelrc` value in 
-`.npmbundlerrc` file to override the defined "liferay-standard" babelrc preset.
-
-$$$
+| **Note:** You can override configuration preset values by adding your own
+| configuration to your project's `.npmbundlerrc` file. For instance, using the
+| configuration preset example above, you can define your own `.babelrc` value in
+| `.npmbundlerrc` file to override the defined "liferay-standard" babelrc preset.
 
 The 
 [`liferay-standard` preset](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/babel-preset-liferay-standard) 
@@ -290,8 +274,8 @@ preset, that invokes the following plugins:
 
 Now you know how to configure the liferay-npm-bundler!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Adding liferay-npm-bundler to Your Portlet](/develop/tutorials/-/knowledge_base/7-0/adding-liferay-npm-bundler-to-your-portlet)
+[Adding liferay-npm-bundler to Your Portlet](/docs/7-0/tutorials/-/knowledge_base/t/adding-liferay-npm-bundler-to-your-portlet)
 
-[The Structure of OSGi Bundles Containing NPM Packages](/develop/tutorials/-/knowledge_base/7-0/the-structure-of-osgi-bundles-containing-npm-packages)
+[The Structure of OSGi Bundles Containing NPM Packages](/docs/7-0/tutorials/-/knowledge_base/t/the-structure-of-osgi-bundles-containing-npm-packages)

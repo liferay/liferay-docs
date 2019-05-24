@@ -1,9 +1,13 @@
-# Preparing Your App [](id=preparing-your-app)
+---
+header-id: preparing-your-app
+---
+
+# Preparing Your App
 
 As a Liferay developer, you're undoubtedly already familiar with the concept of
 plugins (portlets, themes, etc). If you're not familiar with Liferay
 plugins, see the 
-[introductory section of Liferay developer tutorials](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-development).
+[introductory section of Liferay developer tutorials](/docs/7-0/tutorials/-/knowledge_base/t/introduction-to-liferay-development).
 A *Liferay App* (sometimes just called an *app*) is a collection of one or more
 of these plugins, packaged together to represent the full functionality of an
 application on the Liferay platform. In addition to the plugins contained within
@@ -24,14 +28,14 @@ The publication process is described in detail later.
 At this point in preparing to publish your app, you've developed your app. And
 if you're preparing a paid app, you've specified a permission descriptor (a
 portal access control list
-[\(PACL\)](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl) for
+[\(PACL\)](/docs/6-2/tutorials/-/knowledge_base/t/plugin-security-and-pacl) for
 traditional plugins or a `OSGI-INF/permissions.perm` file for OSGi modules), so
 that your app can be deployed on Liferay instances that have their
-[Plugin Security Manager](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl#enabling-the-security-manager) 
+[Plugin Security Manager](/docs/6-2/tutorials/-/knowledge_base/t/plugin-security-and-pacl#enabling-the-security-manager) 
 running. But before you start the formal publishing process, you must prepare 
 your app's files and app metadata. 
 
-## Marketplace App Metadata Guidelines [](id=marketplace-app-metadata-guidelines)
+## Marketplace App Metadata Guidelines
 
 The following app metadata guidelines are intended to ensure that apps are
 submitted with important and necessary supporting information. The metadata that
@@ -262,16 +266,16 @@ their theme. This ensures a uniform experience for Marketplace users: a user can
 download a theme from Marketplace, install it on their portal, go to Sites or
 Site Templates in the Control Panel and immediately see their new theme in
 action. You can read more about themes in the 
-[Themes and Layout Templates tutorials](/develop/tutorials/-/knowledge_base/7-0/themes-and-layout-templates). 
+[Themes and Layout Templates tutorials](/docs/7-0/tutorials/-/knowledge_base/t/themes-and-layout-templates). 
 
-## Deployment Requirements [](id=deployment-requirements)
+## Deployment Requirements
 
 Liferay apps are "normal" Liferay plugins with additional information about
 them. Therefore, most of the requirements are the same as those that exist for
 other Liferay plugins, as explained in the tutorials on creating
-[MVC Portlets](/develop/tutorials/-/knowledge_base/7-0/liferay-mvc-portlet)
+[MVC Portlets](/docs/7-0/tutorials/-/knowledge_base/t/liferay-mvc-portlet)
 and 
-[JSF Portlets](/develop/tutorials/-/knowledge_base/7-0/jsf-portlets-with-liferay-faces).
+[JSF Portlets](/docs/7-0/tutorials/-/knowledge_base/t/jsf-portlets-with-liferay-faces).
 
 In addition to those requirements, there are some Marketplace-specific ones to
 keep in mind:
@@ -316,7 +320,7 @@ keep in mind:
       for free apps. Setting this property to `true` enables Liferay's Plugin
       Security Manager. If you're enabling the security manager, you'll also
       need to define your Portal Access Control List (PACL) in this file. Read
-      [Plugins Security and PACL](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl)
+      [Plugins Security and PACL](/docs/6-2/tutorials/-/knowledge_base/t/plugin-security-and-pacl)
       for information on developing secure apps.
 - **Deployment contexts**:
     - Liferay reserves the right to deny an application if any of its plugin
@@ -329,7 +333,7 @@ There are some additional requirements for uploading Liferay Digital Enterprise 
 
 - **OSGi modules in JAR (`.jar`) files**:
     - For more information, see 
-      [OSGi and Modularity - Modules](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity#modules). 
+      [OSGi and Modularity - Modules](/docs/7-0/tutorials/-/knowledge_base/t/osgi-and-modularity#modules). 
     - The manifest file must at minimum contain the following manifest headers:
         - `Bundle-SymbolicName`: a unique name for the module
         - `Bundle-Version`: the module's version
@@ -337,7 +341,7 @@ There are some additional requirements for uploading Liferay Digital Enterprise 
 
 - **WAR (`.war`) files**:
     - WAR-based plugins must be adapted to run on Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0. See 
-      [this tutorial](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool) 
+      [this tutorial](/docs/7-0/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool) 
       for information on adapting WAR plugins that run on Liferay Portal 6.2 and 
       earlier to run on Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0. 
 
@@ -346,23 +350,19 @@ There are some additional requirements for uploading Liferay Digital Enterprise 
       plugins. Regardless of file type, each plugin must be able to run on 
       Liferay Digital Enterprise 7.0 and Liferay Portal CE 7.0. 
 
-+$$$
-
-**Important:** If you're developing a paid app or want your free app to satisfy
-Liferay's Plugin Security Manager, make sure to specify PACLs for your
-traditional plugins and a `OSGI-INF/permissions.perm` file for each of your
-modules. See the article [Plugin Security Manager](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Portal+Security+Manager) 
-for details. Give yourself adequate time to develop your app's permission
-descriptors and time to test your app thoroughly with the security manager
-enabled. 
-
-$$$
+| **Important:** If you're developing a paid app or want your free app to satisfy
+| Liferay's Plugin Security Manager, make sure to specify PACLs for your
+| traditional plugins and a `OSGI-INF/permissions.perm` file for each of your
+| modules. See the article [Plugin Security Manager](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Portal+Security+Manager)
+| for details. Give yourself adequate time to develop your app's permission
+| descriptors and time to test your app thoroughly with the security manager
+| enabled.
 
 Apps usually consist of multiple plugins (e.g., multiple WAR or JAR files) and 
 plugin types. In addition, you may want to consider how to package your app for 
 running on different Liferay versions. 
 
-## Considering Package Variations to Target Different Versions of Liferay [](id=considering-package-variations-to-target-different-versions-of-liferay)
+## Considering Package Variations to Target Different Versions of Liferay
 
 Apps can be written to work across many different versions of Liferay. For
 example, suppose you want to publish version 1.0 of your app, which you're

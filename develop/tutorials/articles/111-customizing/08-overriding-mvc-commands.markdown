@@ -1,4 +1,8 @@
-# Overriding MVC Commands [](id=overriding-mvc-commands)
+---
+header-id: overriding-mvc-commands
+---
+
+# Overriding MVC Commands
 
 MVC Commands are used to break up the controller layer of a Liferay MVC
 application into smaller, more digestible code chunks.
@@ -24,44 +28,36 @@ the tutorials on Liferay MVC Portlets<!--Add Link when these are completed-->.
 Here we're going to focus on overriding the logic contained in existing MVC
 commands.
 
-+$$$
+| **Note:** While it's possible to copy the logic from an existing MVC command
+| into your override class, then customize it to your liking, it's strongly
+| recommended to decouple the original logic from your override logic. Keeping the
+| override logic separate form the original logic will keep the code clean,
+| maintainable, and easy to understand.
+| 
+| To do this, use the `@Reference` method to fetch a reference to the original MVC
+| command component. If there are no additional customizations on the same
+| command, this reference will be the original MVC command.
+| 
+|     @Reference(
+|         target = "(component.name=com.liferay.blogs.web.internal.portlet.action.EditEntryMVCRenderCommand)")
+|     protected MVCRenderCommand mvcRenderCommand;
+| 
+| Set the `component.name` target to the MVC command class name. If you use this
+| approach, your extension will continue to work with new versions of the original
+| portlet, because no coupling exists between the original portlet logic and your
+| customization. The command implementation class can change. Make sure to keep your reference updated to the name of the current implementation class.
 
-**Note:** While it's possible to copy the logic from an existing MVC command
-into your override class, then customize it to your liking, it's strongly
-recommended to decouple the original logic from your override logic. Keeping the
-override logic separate form the original logic will keep the code clean,
-maintainable, and easy to understand.
-
-To do this, use the `@Reference` method to fetch a reference to the original MVC
-command component. If there are no additional customizations on the same
-command, this reference will be the original MVC command.
-
-    @Reference(
-        target = "(component.name=com.liferay.blogs.web.internal.portlet.action.EditEntryMVCRenderCommand)")
-    protected MVCRenderCommand mvcRenderCommand;
-
-Set the `component.name` target to the MVC command class name. If you use this
-approach, your extension will continue to work with new versions of the original
-portlet, because no coupling exists between the original portlet logic and your
-customization. The command implementation class can change. Make sure to keep your reference updated to the name of the current implementation class. 
-
-$$$
-
-+$$$
-
-**Note:** In @product-ver@ GA1, there's a bug that occurs when modules with
-override MVC commands are removed from the OSGi runtime. Instead of looking for
-an MVC command with a lower service ranking (the original MVC command in most
-cases) to replace the removed one, the reference to the command is removed
-entirely. This bug is documented and fixed
-[here](https://issues.liferay.com/browse/LPS-65434)
-
-$$$
+| **Note:** In @product-ver@ GA1, there's a bug that occurs when modules with
+| override MVC commands are removed from the OSGi runtime. Instead of looking for
+| an MVC command with a lower service ranking (the original MVC command in most
+| cases) to replace the removed one, the reference to the command is removed
+| entirely. This bug is documented and fixed
+| [here](https://issues.liferay.com/browse/LPS-65434)
 
 Start by learning to override `MVCRenderCommand`. The process will be similar for
 the other MVC commands.
 
-## Overriding MVCRenderCommand [](id=overriding-mvcrendercommand)
+## Overriding MVCRenderCommand
 
 You can override `MVCRenderCommand` for any portlet that uses Liferay's MVC
 framework and publishes an `MVCRenderCommand` component.
@@ -119,7 +115,7 @@ for this property is `0`.
 After that, it's up to you to do whatever you'd like. You can add logic to
 the existing `render` method or redirect to an entirely new JSP.
 
-### Adding Logic to an Existing MVC Render Command [](id=adding-logic-to-an-existing-mvc-render-command)
+### Adding Logic to an Existing MVC Render Command
 
 Don't copy the existing logic from the MVC render command into your override
 command class. This unnecessary duplication of code that makes
@@ -144,7 +140,7 @@ reference to the original command and call its `render` method like this:
 Sometimes, you might need to redirect the request to an entirely new JSP that
 you'll place in your command override module.
 
-### Redirecting to a New JSP [](id=redirecting-to-a-new-jsp)
+### Redirecting to a New JSP
 
 If you want to render an entirely new JSP, the process is different.
 
@@ -203,7 +199,7 @@ for other modules by including the following line in your `bnd.bnd` file:
 Once we have the servlet context we just need to dispatch to the specific JSP in
 our own module. 
 
-## Overriding MVCActionCommand [](id=overriding-mvcactioncommand)
+## Overriding MVCActionCommand
 
 You can override MVC action commands using a similar process to the one presented
 above for MVC render commands. Again, you'll register a new OSGi component with
@@ -256,7 +252,7 @@ It's straightforward to override MVC action commands while keeping your code
 decoupled from the original action methods. You can also override MVC resource
 commands. 
 
-## Overriding MVCResourceCommand [](id=overriding-mvcresourcecommand)
+## Overriding MVCResourceCommand
 
 There are fewer uses for overriding MVC resource commands, but it can also be
 done. 

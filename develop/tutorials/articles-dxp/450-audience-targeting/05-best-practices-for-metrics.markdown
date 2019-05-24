@@ -1,4 +1,8 @@
-# Best Practices for Metrics [](id=best-practices-for-metrics)
+---
+header-id: best-practices-for-metrics
+---
+
+# Best Practices for Metrics
 
 In this tutorial, you'll learn about best practices to keep in mind when
 creating Audience Targeting Metrics. Before going through some best practices,
@@ -10,17 +14,17 @@ you should understand the four components you can specify for a metric:
 - *Language Keys (optional)*
 
 You discuss metric behavior and its UI configuration in great detail in the
-[Tracking User Actions with Audience Targeting](/develop/tutorials/-/knowledge_base/7-0/tracking-user-actions-with-audience-targeting)
+[Tracking User Actions with Audience Targeting](/docs/7-0/tutorials/-/knowledge_base/t/tracking-user-actions-with-audience-targeting)
 tutorial. To learn more about language keys and how to create, use, and generate
 them, visit the
-[Internationalization](/develop/tutorials/-/knowledge_base/7-0/internationalization)
+[Internationalization](/docs/7-0/tutorials/-/knowledge_base/t/internationalization)
 tutorials.
 
 Audience Targeting gives you the option to choose whatever frontend technology
 you like. In the next section, you'll learn how to use your preferred technology
 for displaying content in Audience Targeting metrics.
 
-## Selecting a UI Technology [](id=selecting-a-ui-technology)
+## Selecting a UI Technology
 
 Since @product-ver@, JSP is the preferred technology for Audience Targeting
 extension views. FreeMarker views, however, are still supported through their
@@ -58,10 +62,10 @@ If you plan, therefore, on using an alternative to JSP or FreeMarker, you
 must override this method by creating and modifying it in your `-TrackingAction`
 class.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Tracking User Actions with Audience Targeting](/develop/tutorials/-/knowledge_base/7-0/tracking-user-actions-with-audience-targeting)
+[Tracking User Actions with Audience Targeting](/docs/7-0/tutorials/-/knowledge_base/t/tracking-user-actions-with-audience-targeting)
 
-[Internationalization](/develop/tutorials/-/knowledge_base/7-0/internationalization)
+[Internationalization](/docs/7-0/tutorials/-/knowledge_base/t/internationalization)
 
-[Service Builder Persistence](/develop/tutorials/-/knowledge_base/7-0/service-builder-persistence)
+[Service Builder Persistence](/docs/7-0/tutorials/-/knowledge_base/t/service-builder-persistence)

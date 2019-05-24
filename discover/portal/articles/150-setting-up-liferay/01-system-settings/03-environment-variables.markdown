@@ -1,26 +1,22 @@
-# Environment Variables [](id=environment-variables)
+---
+header-id: environment-variables
+---
+
+# Environment Variables
 
 You can use environment variables to configure @product@, which is especially
 useful in cloud-based environments. 
 
-+$$$
+| **Important**: This capability is for Linux and Unix operating systems only:
+| it's not available on Windows.
 
-**Important**: This capability is for Linux and Unix operating systems only:
-it's not available on Windows. 
+| **Note**: Environment variables can only override portal properties ([defined in
+| `portal.properties`](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html));
+| they cannot override
+| [system properties](@platform-ref@/7.0-latest/propertiesdoc/system.properties.html)
+| or configurations from `.config` files.
 
-$$$
-
-+$$$
-
-**Note**: Environment variables can only override portal properties ([defined in
-`portal.properties`](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html));
-they cannot override 
-[system properties](@platform-ref@/7.0-latest/propertiesdoc/system.properties.html) 
-or configurations from `.config` files. 
-
-$$$
-
-## Overriding Portal Properties [](id=overriding-portal-properties)
+## Overriding Portal Properties
 
 To override portal properties, follow these operating system (OS) and Liferay
 environment variable name guidelines:
@@ -37,7 +33,7 @@ Liferay  environment variable names:
     -   [`CharPool` constants](#encoding-with-charpool-constants)
     -   [Unicode code points](#encoding-with-unicode-code-points)
 
-### Encoding with CharPool Constants [](id=encoding-with-charpool-constants)
+### Encoding with CharPool Constants
 
 Follow these rules to encode with
 [`CharPool` constants](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/CharPool.html):
@@ -48,7 +44,7 @@ Follow these rules to encode with
 
 Here are some encoding examples.
 
-#### CharPool Constant Example 1 [](id=constant-example-1)
+#### CharPool Constant Example 1
 
 This example involves encoding the period `.` character. 
  
@@ -73,7 +69,7 @@ Environment variable:
 
     LIFERAY_SETUP_PERIOD_WIZARD_PERIOD_ENABLED=false
 
-#### CharPool Constant Example 2 [](id=constant-example-2)
+#### CharPool Constant Example 2
 
 This example uses `CharPool` constants to encode an environment variable name
 for a property that includes periods, brackets, and uppercase characters.
@@ -111,7 +107,7 @@ Environment variable:
 
     LIFERAY_SETUP_PERIOD_DATABASE_PERIOD_DRIVER_UPPERCASEC_LASS_UPPERCASEN_AME_OPENBRACKET_MYSQL_CLOSEBRACKET_=com.mysql.jdbc.Driver
 
-### Encoding with Unicode Code Points [](id=encoding-with-unicode-code-points)
+### Encoding with Unicode Code Points
 
 Unicode offers more character encodings than `CharPool` and produces shorter
 variable names. But Unicode code points are cryptic. 
@@ -125,7 +121,7 @@ Follow these rules to encode with Unicode:
 
 Here's an encoding example that uses Unicode. 
 
-#### Unicode Example [](id=unicode-example)
+#### Unicode Example
 
 This example uses code points to encode an environment variable name for a
 portal property that contains periods, brackets, and uppercase characters.
@@ -160,8 +156,8 @@ Congratulations! You know how to use environment variables to configure
 @product@. It's easier than ever to configure and deploy @product@ images in
 virtual machines and cloud containers. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Configuring @product@](/discover/deployment/-/knowledge_base/7-0/configuring-liferay)
+[Configuring @product@](/docs/7-0/deploy/-/knowledge_base/d/configuring-liferay)
 
-[System Wide Settings](/discover/portal/-/knowledge_base/7-0/system-wide-settings)
+[System Wide Settings](/docs/7-0/user/-/knowledge_base/u/system-wide-settings)

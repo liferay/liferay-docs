@@ -1,4 +1,8 @@
-# Creating Language Keys [](id=creating-language-keys)
+---
+header-id: creating-language-keys
+---
+
+# Creating Language Keys
 
 <div class="learn-path-step">
     <p>Displaying Messages and Errors<br>Step 1 of 3</p>
@@ -9,7 +13,7 @@ language keys file that can be duplicated and then translated into multiple
 languages. Here, you'll learn how to provide a *default* set of English language 
 keys for your application. For more information on language keys and providing 
 automatically translated language keys, 
-[see this tutorial](/develop/tutorials/-/knowledge_base/7-0/automatically-generating-language-files).
+[see this tutorial](/docs/7-0/tutorials/-/knowledge_base/t/automatically-generating-language-files).
 
 Language keys are stored in the `Language.properties` file included in your 
 `guestbook-web` module. `Language.properties` is the default, but you can create 

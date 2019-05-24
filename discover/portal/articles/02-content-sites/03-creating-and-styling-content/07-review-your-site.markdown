@@ -1,4 +1,8 @@
-# Review Your Site [](id=review-your-site)
+---
+header-id: review-your-site
+---
+
+# Review Your Site
 
 <div class="learn-path-step">
     <p>Creating Content<br>Step 7 of 7</p>

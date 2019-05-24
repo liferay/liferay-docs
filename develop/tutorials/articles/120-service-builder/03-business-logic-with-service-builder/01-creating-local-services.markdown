@@ -1,4 +1,8 @@
-# Creating Local Services [](id=creating-local-services)
+---
+header-id: creating-local-services
+---
+
+# Creating Local Services
 
 The heart of your service is its `*LocalServiceImpl` class. This class is your
 entity's local service extension point. Local services can be invoked within
@@ -108,7 +112,7 @@ class, you must run Service Builder again. Running Service Builder again adds
 the method signatures of your custom service methods to your `*LocalService`
 interface and updates your `*LocalServiceUtil` class. For more information on
 running Service Builder see the
-[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code)
+[Running Service Builder and Understanding the Generated Code](/docs/7-0/tutorials/-/knowledge_base/t/running-service-builder-and-understanding-the-generated-code)
 tutorial.
 
 Service Builder looks through your `*LocalServiceImpl` class and automatically
@@ -124,15 +128,15 @@ sure that your service was working as intended:
 In addition to all of the Java classes and interfaces, Service Builder also
 generates a `service.properties` file. To learn about the `service.properties`
 file and how to configure it, please refer to the
-[Configuring service.properties](/develop/tutorials/-/knowledge_base/7-0/configuring-service-properties)
+[Configuring service.properties](/docs/7-0/tutorials/-/knowledge_base/t/configuring-service-properties)
 tutorial. To learn how to invoke local services, please refer to the
-[Invoking Local Services](/develop/tutorials/-/knowledge_base/7-0/invoking-local-services)
+[Invoking Local Services](/docs/7-0/tutorials/-/knowledge_base/t/invoking-local-services)
 tutorial. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code)
+[Running Service Builder and Understanding the Generated Code](/docs/7-0/tutorials/-/knowledge_base/t/running-service-builder-and-understanding-the-generated-code)
 
-[Invoking Local Services](/develop/tutorials/-/knowledge_base/7-0/invoking-local-services)
+[Invoking Local Services](/docs/7-0/tutorials/-/knowledge_base/t/invoking-local-services)
 
-[Creating Remote Services](/develop/tutorials/-/knowledge_base/7-0/creating-remote-services)
+[Creating Remote Services](/docs/7-0/tutorials/-/knowledge_base/t/creating-remote-services)

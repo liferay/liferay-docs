@@ -1,4 +1,8 @@
-# liferay-npm-bundler [](id=liferay-npm-bundler)
+---
+header-id: liferay-npm-bundler
+---
+
+# liferay-npm-bundler
 
 The liferay-npm-bundler is a bundler (like [Webpack](https://webpack.github.io/) 
 or [Browserify](http://browserify.org/)) that targets @product@ as a platform 
@@ -13,12 +17,8 @@ the following tools:
 - [frontend-js-loader-modules-extender](https://github.com/liferay/liferay-portal/tree/7.0.x/modules/apps/foundation/frontend-js/frontend-js-loader-modules-extender)
 - [Javascript AMD loader](https://github.com/liferay/liferay-amd-loader)
 
-+$$$
-
-**Note:** The Liferay JS Bundle Toolkit is supported for Liferay DXP 7.0 Fix 
-Pack 39 and up.
-
-$$$
+| **Note:** The Liferay JS Bundle Toolkit is supported for Liferay DXP 7.0 Fix
+| Pack 39 and up.
 
 The workflow for running npm packages inside portlets is slightly different from
 standard bundlers. Instead of bundling the JavaScript in a single file, you must
@@ -27,13 +27,13 @@ This lets portlets share common versions of modules instead of each one loading
 its own copy. The liferay-npm-bundler handles this for you. You can learn how it
 works next.
 
-## How it Works Internally [](id=how-it-works-internally)
+## How it Works Internally
 
 The liferay-npm-bundler takes a @product@ portlet project and outputs its files 
 (including npm packages) to a build folder, so the standard portlet 
 build (Gradle) can produce an OSGi bundle. You can learn more about the build
 folder's structure in 
-[The Structure of OSGi Bundles Containing NPM Packages](/develop/tutorials/-/knowledge_base/7-0/the-structure-of-osgi-bundles-containing-npm-packages) 
+[The Structure of OSGi Bundles Containing NPM Packages](/docs/7-0/tutorials/-/knowledge_base/t/the-structure-of-osgi-bundles-containing-npm-packages) 
 tutorial.
 
 Here's what happens to produce the OSGi bundle:
@@ -75,10 +75,10 @@ files, or deleting or moving files).
 
 Now you understand how the liferay-npm-bundler works!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[The Structure of OSGi Bundles Containing NPM Packages](/develop/tutorials/-/knowledge_base/7-0/the-structure-of-osgi-bundles-containing-npm-packages)
+[The Structure of OSGi Bundles Containing NPM Packages](/docs/7-0/tutorials/-/knowledge_base/t/the-structure-of-osgi-bundles-containing-npm-packages)
 
-[How @product@ Publishes NPM Packages](/develop/tutorials/-/knowledge_base/7-0/how-liferay-portal-publishes-npm-packages)
+[How @product@ Publishes NPM Packages](/docs/7-0/tutorials/-/knowledge_base/t/how-liferay-portal-publishes-npm-packages)
 
-[Liferay JavaScript APIs](/develop/tutorials/-/knowledge_base/7-0/liferay-javascript-apis)
+[Liferay JavaScript APIs](/docs/7-0/tutorials/-/knowledge_base/t/liferay-javascript-apis)

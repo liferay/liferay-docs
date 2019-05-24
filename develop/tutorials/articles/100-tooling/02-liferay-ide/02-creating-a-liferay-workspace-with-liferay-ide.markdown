@@ -1,12 +1,16 @@
-# Creating a Liferay Workspace with Liferay @ide@ [](id=creating-a-liferay-workspace-with-liferay-ide)
+---
+header-id: creating-a-liferay-workspace-with-liferay-ide
+---
+
+# Creating a Liferay Workspace with Liferay @ide@
 
 In this tutorial, you'll learn how to generate a Liferay Workspace using Liferay
 @ide@, which runs on the
-[Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli) behind the
+[Blade CLI](/docs/7-0/tutorials/-/knowledge_base/t/blade-cli) behind the
 scenes. Liferay @ide@ gives you a graphical interface instead of the command
 prompt, which can streamline your workflow. To learn more about Liferay
 Workspaces, visit its dedicated
-[tutorial section](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace).
+[tutorial section](/docs/7-0/tutorials/-/knowledge_base/t/liferay-workspace).
 
 <div class="video-link">
 <img src="../../../images/vid-ide-thumbnail.png" alt="video-thumbnail"/>
@@ -24,16 +28,12 @@ Ant-based development tools such as the Plugins SDK.
 To create a Liferay Workspace in @ide@, select *File* &rarr; *New* &rarr;
 *Liferay Workspace Project*.
 
-+$$$
-
-**Note:** Creating or importing a Liferay Workspace in IDE leverages Gradle
-scripts provided by the
-[Buildship](https://projects.eclipse.org/projects/tools.buildship) plugin. When
-using @ide@ 3.1.x, you should be using Buildship 2.1.x. If you leverage higher
-versions of Buildship (e.g., 2.2.x), @ide@ cannot successfully create or import
-a workspace.
-
-$$$
+| **Note:** Creating or importing a Liferay Workspace in IDE leverages Gradle
+| scripts provided by the
+| [Buildship](https://projects.eclipse.org/projects/tools.buildship) plugin. When
+| using @ide@ 3.1.x, you should be using Buildship 2.1.x. If you leverage higher
+| versions of Buildship (e.g., 2.2.x), @ide@ cannot successfully create or import
+| a workspace.
 
 ![Figure 1: By selecting *Liferay Workspace*, you begin the process of creating a new workspace for your Liferay projects.](../../../images/selecting-liferay-workspace.png)
 
@@ -51,14 +51,10 @@ options. Follow the instructions below to create your workspace.
    selected. This Liferay bundle is generated the same way as described in the
    previous section.
 
-    +$$$
-
-    **Note:** If you'd like to configure a pre-existing Liferay bundle to your
-    workspace, you can create a directory for the bundle in your workspace and
-    configure it in the workspace's `gradle.properties` file by setting the
-    `liferay.workspace.home.dir` property.
-
-    $$$
+    | **Note:** If you'd like to configure a pre-existing Liferay bundle to your
+    | workspace, you can create a directory for the bundle in your workspace and
+    | configure it in the workspace's `gradle.properties` file by setting the
+    | `liferay.workspace.home.dir` property.
 
 4. Check the *Add project to working set* checkbox if you'd like the workspace
 to be a part of a larger working set you've already created in @ide@. For more
@@ -72,18 +68,14 @@ information on working sets, visit
 A dialog appears prompting you to open the Liferay Workspace perspective.
 Click *Yes*, and your perspective will switch to Liferay Workspace.
 
-+$$$
-
-**Note:** You can also create a Liferay Workspace during the initial start-up of
-a Liferay Developer Studio instance. 
-
-$$$
+| **Note:** You can also create a Liferay Workspace during the initial start-up of
+| a Liferay Developer Studio instance.
 
 Awesome! You've successfully created a Liferay Workspace in Liferay @ide@! If
 you're using Liferay Developer Studio, you can also create a workspace during
 initial start-up.
 
-## Liferay Workspace Settings in @ide@ [](id=liferay-workspace-settings-in-ide)
+## Liferay Workspace Settings in @ide@
 
 The Liferay Workspace perspective is intended for Gradle development for
 @product-ver@ modules. Since Liferay Workspaces are used for Gradle based

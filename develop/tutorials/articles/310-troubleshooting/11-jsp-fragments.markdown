@@ -1,4 +1,8 @@
-# Why Aren't JSP overrides I Made Using Fragments Showing? [](id=why-arent-jsp-overrides-i-made-using-fragments-showing)
+---
+header-id: why-arent-jsp-overrides-i-made-using-fragments-showing
+---
+
+# Why Aren't JSP overrides I Made Using Fragments Showing?
 
 The fragment module must specify the exact version of the host module. A 
 @product@ upgrade might have changed some JSPs in the host module, prompting a 
@@ -15,13 +19,13 @@ specify the host module and host module version:
     Fragment-Host: com.liferay.login.web;bundle-version="1.1.18"
 
 For information on finding the versions of your deployed modules, 
-[click here](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies#finding-liferay-portal-app-and-independent-artifacts). 
+[click here](/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies#finding-liferay-portal-app-and-independent-artifacts). 
 
 For more information on overriding JSPs, 
-[click here](/develop/tutorials/-/knowledge_base/7-0/overriding-jsps). 
+[click here](/docs/7-0/tutorials/-/knowledge_base/t/overriding-jsps). 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Overriding JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-jsps)
+[Overriding JSPs](/docs/7-0/tutorials/-/knowledge_base/t/overriding-jsps)
 
-[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
+[Configuring Dependencies](/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies)

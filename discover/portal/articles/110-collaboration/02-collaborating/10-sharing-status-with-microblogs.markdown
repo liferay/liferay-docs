@@ -1,4 +1,8 @@
-# Sharing Status with Microblogs [](id=sharing-status-with-microblogs)
+---
+header-id: sharing-status-with-microblogs
+---
+
+# Sharing Status with Microblogs
 
 Liferay's Microblogs Status Update and Microblogs apps let you post, receive, 
 and share short, 150 character status updates from your personal pages in 
@@ -16,7 +20,7 @@ app, in addition to this functionality, also lets you:
 Before delving into these details, you should first understand where in your 
 Liferay instance you'll use these apps. 
 
-## Understanding Where to Use the Apps [](id=understanding-where-to-use-the-apps)
+## Understanding Where to Use the Apps
 
 Because Microblogs Status Update and Microblogs broadcast your personal status, 
 you must use them from your Liferay personal site's pages. By default, these 
@@ -38,7 +42,7 @@ interesting when you add the apps to a private page that only you can access,
 like My Dashboard. In this case, you unleash the apps' full power. Next, you'll 
 learn how to wield this power. 
 
-## Using Microblogs Status Update and Microblogs [](id=using-microblogs-status-update-and-microblogs)
+## Using Microblogs Status Update and Microblogs
 
 As mentioned, Microblogs Status Update is a very simple app that lets you post 
 your status, and displays only your most recent post. That's it. You can even 
@@ -51,7 +55,7 @@ Status* field and click the *Post* button that appears. You can also select who
 can view your post from the *Viewable By* menu next to the Post button. You can 
 select *Everyone*, *Connections*, or *Followers*. For more information on 
 connections and followers, see the section 
-[Creating a Social Network](/discover/portal/-/knowledge_base/7-0/creating-a-social-network). 
+[Creating a Social Network](/docs/7-0/user/-/knowledge_base/u/creating-a-social-network). 
 
 ![Figure 1: The Microblogs Status Update app lets you post your status, and displays your most recent post.](../../../images/microblogs-status-update.png)
 

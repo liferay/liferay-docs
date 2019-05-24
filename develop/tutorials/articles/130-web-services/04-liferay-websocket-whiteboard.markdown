@@ -1,4 +1,8 @@
-# Liferay WebSocket Whiteboard [](id=liferay-websocket-whiteboard)
+---
+header-id: liferay-websocket-whiteboard
+---
+
+# Liferay WebSocket Whiteboard
 
 Modern web apps exchange large amounts of data with clients. The WebSockets 
 specification lets this exchange occur over a full-duplex connection that 
@@ -13,7 +17,7 @@ you need a way to register new WebSocket endpoints in @product@. The *Liferay
 WebSocket Whiteboard* lets you define new WebSocket endpoints as regular OSGi 
 services. This tutorial shows you how to do this. Onward! 
 
-## Configuring a Non-Liferay OSGi Container [](id=configuring-a-non-liferay-osgi-container)
+## Configuring a Non-Liferay OSGi Container
 
 There may be instances where you want to use a Liferay OSGi module in a 
 non-Liferay OSGi container, and need to define a WebSocket endpoint. To do this, 
@@ -42,7 +46,7 @@ Here's an example of a manifest for such a module:
 Next, you'll learn how to define a new WebSocket server endpoint in a Liferay 
 OSGi container. 
 
-## Configuring a Liferay OSGi Container [](id=configuring-a-liferay-osgi-container)
+## Configuring a Liferay OSGi Container
 
 Defining a new WebSocket server endpoint in @product@ is straightforward. Follow 
 these steps: 
@@ -281,8 +285,8 @@ Use these steps to define a WebSocket endpoint:
 
 That's it! Now you know how to create WebSocket endpoints in @product@. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[JAX-WS and JAX-RS](/develop/tutorials/-/knowledge_base/7-0/jax-ws-and-jax-rs)
+[JAX-WS and JAX-RS](/docs/7-0/tutorials/-/knowledge_base/t/jax-ws-and-jax-rs)
 
-[Service Builder Web Services](/develop/tutorials/-/knowledge_base/7-0/service-builder-web-services)
+[Service Builder Web Services](/docs/7-0/tutorials/-/knowledge_base/t/service-builder-web-services)

@@ -1,4 +1,8 @@
-# Creating and Contributing new Buttons to AlloyEditor [](id=creating-and-contributing-new-buttons-to-alloyeditor)
+---
+header-id: creating-and-contributing-new-buttons-to-alloyeditor
+---
+
+# Creating and Contributing new Buttons to AlloyEditor
 
 It is possible to add additional AlloyEditor functionality through OSGi bundles. 
 This tutorial demonstrates how to add a button to the editor.
@@ -12,7 +16,7 @@ In this tutorial, you will learn how to
 
 Go ahead and get started by creating the OSGi bundle next.
 
-## Creating the OSGi Bundle [](id=creating-the-osgi-bundle)
+## Creating the OSGi Bundle
 
 AlloyEditor is built on `React.js` and uses `jsx` to render each button in the 
 editor. Below is the folder structure for a module that adds a new button:
@@ -82,7 +86,7 @@ The contents of some of the files have been added as well, since the
 Now that your OSGi bundle is configured, you can learn how to create buttons for
 the AlloyEditor next.
 
-## Creating the Button [](id=creating-the-button)
+## Creating the Button
 
 Below is an example configuration for a JSX file that creates a new button:
 
@@ -150,7 +154,7 @@ can create your own JavaScript functions to interact with your button.
 Now that you've seen how you can use a JSX file to create a new button, you can
 learn how to use your button in the editor next.
 
-## Contributing the Button [](id=contributing-the-button)
+## Contributing the Button
 
 The next step is to add your button to the list of already available buttons.
 This can be achieved thanks to some smartly placed
@@ -221,9 +225,9 @@ Below is an example configuration that extends this class:
 Now that your button is included, you can learn how to make the button available
 in the editor's toolbar next.
  
-## Using the Button in a Toolbar [](id=using-the-button-in-a-toolbar)
+## Using the Button in a Toolbar
 
-As explained in the [Modifying an Editor's Configuration](/develop/tutorials/-/knowledge_base/7-0/modifying-an-editors-configuration) 
+As explained in the [Modifying an Editor's Configuration](/docs/7-0/tutorials/-/knowledge_base/t/modifying-an-editors-configuration) 
 tutorial, you can configure which buttons show in the AlloyEditor toolbars by
 adding your own `EditorConfigContributor`. This file allows you to specify where 
 in the toolbar your button should appear. The example configuration below
@@ -295,8 +299,8 @@ AlloyEditor.
 There you have it. Now you know how to create and use custom buttons in the
 AlloyEditor!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Adding a WYSIWYG Editor to a Portlet](/develop/tutorials/-/knowledge_base/7-0/adding-a-wysiwyg-editor-to-a-portlet)
+[Adding a WYSIWYG Editor to a Portlet](/docs/7-0/tutorials/-/knowledge_base/t/adding-a-wysiwyg-editor-to-a-portlet)
 
-[Modifying an Editor's Configuration](/develop/tutorials/-/knowledge_base/7-0/modifying-an-editors-configuration)
+[Modifying an Editor's Configuration](/docs/7-0/tutorials/-/knowledge_base/t/modifying-an-editors-configuration)

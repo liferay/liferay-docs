@@ -1,4 +1,8 @@
-# Creating the Entry Staged Model Data Handler [](id=creating-the-entry-staged-model-data-handler)
+---
+header-id: creating-the-entry-staged-model-data-handler
+---
+
+# Creating the Entry Staged Model Data Handler
 
 <div class="learn-path-step">
     <p>Enabling Staging and Export/Import<br>Step 2 of 7</p>
@@ -156,7 +160,7 @@ First, you'll create a staged model data handler for guestbook entries.
     The `doExportStagedModel` method retrieves the entry's data element from the
     `PortletDataContext` and then adds the class model characterized by that
     data element to the `PortletDataContext`. The `PortletDataContext` populates
-    the [LAR file](/develop/tutorials/-/knowledge_base/7-0/understanding-data-handlers#liferay-archive-lar-file)
+    the [LAR file](/docs/7-0/tutorials/-/knowledge_base/t/understanding-data-handlers#liferay-archive-lar-file)
     with your application's data during the export process. Note that once an
     entity has been exported, subsequent calls to the export method don't
     repeat the export process multiple times, ensuring optimal performance.

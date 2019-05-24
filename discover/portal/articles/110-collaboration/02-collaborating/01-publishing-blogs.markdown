@@ -1,4 +1,8 @@
-# Publishing Blogs [](id=publishing-blogs)
+---
+header-id: publishing-blogs
+---
+
+# Publishing Blogs
 
 Since blogs are a mainstay on the web, bloggers and blog administrators expect
 feature-rich environments for publishing blogs. They want both a powerful
@@ -25,7 +29,7 @@ image!
 By now you're probably chomping at the bit to start blogging, right? Let's get
 started. 
 
-## Adding Blog Entries [](id=adding-blog-entries)
+## Adding Blog Entries
 
 Each site comes with a built-in blog instance, so let's explore adding an entry
 to your site's blog. In Site Administration, the Blogs app provides the best
@@ -51,7 +55,7 @@ appear (In Figure 1, notice the controls above the highlighted word *hiking*).
 These controls let you style the text or convert it to a link or a tweet to
 share your blog post on Twitter. You can also use keyboard shortcuts Ctrl+b for
 bold, Ctrl+i for italics, and Ctrl+u for underline. You can even
-[mention](/discover/portal/-/knowledge_base/7-0/mentioning-users)
+[mention](/docs/7-0/user/-/knowledge_base/u/mentioning-users)
 other users by entering the "@" character followed by the user's name.
 
 Whenever you park your cursor in the content area, the *Add* icon (`+`) appears.
@@ -60,7 +64,7 @@ horizontal line (![Controls](../../../images/icon-content-insert-controls.png)).
 To insert an image, click the icon that depicts the mountain silhouette. The
 image file selector screen appears. It lets you choose an existing image or
 upload a new one. You can also drag-and-drop image files into the content area.
-If you like an image, but want to modify it a bit, use the [Image Editor](/discover/portal/-/knowledge_base/7-0/editing-images).
+If you like an image, but want to modify it a bit, use the [Image Editor](/docs/7-0/user/-/knowledge_base/u/editing-images).
 Select an existing image from the Documents and Media 
 repository and click the pencil icon (![Pencil](../../../images/icon-edit-pencil.png)) 
 in the bottom right corner of the preview window, to open the Image Editor. Any 
@@ -107,14 +111,14 @@ how to specify your blog entry's other characteristics.
 
 The edit screen's first input field--*Drag \& Drop to Upload*--lets you add a
 cover image (optional) for your entry. This might be an image that represents
-your entry's purpose and is designed to attract readers. An [Asset Publisher](/discover/portal/-/knowledge_base/7-0/publishing-assets)
+your entry's purpose and is designed to attract readers. An [Asset Publisher](/docs/7-0/user/-/knowledge_base/u/publishing-assets)
 shows a blog entry's cover image, by default, as part of the blog entry's
 abstract. You can drag and drop onto this field any image you like. As an
 alternative to dragging and dropping an image, you can click the *Select File*
 button to use the image selector to choose an existing image attached to the
 blog, an image file from Documents and Media, or an image outside the
 @product@ instance. You can browse to an image file and upload it. If you select 
-an image from Documents and Media, you have the option to use the [Image Editor](/discover/portal/-/knowledge_base/7-0/editing-images) 
+an image from Documents and Media, you have the option to use the [Image Editor](/docs/7-0/user/-/knowledge_base/u/editing-images) 
 to customize and edit the image for your cover. Once you've selected the image 
 from Documents and Media, you can access the Image Editor by clicking the pencil 
 icon (![Pencil](../../../images/icon-edit-pencil.png)) in the bottom right 
@@ -131,13 +135,13 @@ clicking the trash can icon removes the image from the blog entry.
 Below the Content area are several panels for configuring your blog entry. 
 
 The Categorization panel's options allow you to associate [tags and/or
-categories](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories)
+categories](/docs/7-0/user/-/knowledge_base/u/organizing-content-with-tags-and-categories)
 to your blog entry. Doing this improves search results for blog entries, and you
 get more navigation options for your users. For example, you can add the Tags
 Navigation application to another column on your blogs page, which lets users
 browse blog entries by tag. 
 
-Below this is the [Related Assets](/discover/portal/-/knowledge_base/7-0/defining-content-relationships)
+Below this is the [Related Assets](/docs/7-0/user/-/knowledge_base/u/defining-content-relationships)
 panel. If there's some other content in the @product@ instance that's
 related to your entry, you can choose it here. For example, you might want to
 write a blog entry talking about a discussion that happened on the forums. To
@@ -176,7 +180,7 @@ The blog entry permissions enable a role to perform the following actions:
 
 **Permissions**: View and modify the blog entry's permissions.
 
-**Delete**: Move the blog entry to the [Recycle Bin](/discover/portal/-/knowledge_base/7-0/restoring-deleted-assets#using-the-recycle-bin).
+**Delete**: Move the blog entry to the [Recycle Bin](/docs/7-0/user/-/knowledge_base/u/restoring-deleted-assets#using-the-recycle-bin).
 
 **View**: View the blog entry.
 
@@ -194,7 +198,7 @@ with the site's other blog entries.
 Congratulations on creating your blog entry! Before displaying it on your site's
 pages, you may want to learn how to manage blog entries. 
 
-## Managing Blog Entries [](id=managing-blog-entries)
+## Managing Blog Entries
 
 The Blogs application in Site Adminstration helps bloggers and blog
 administrators manage blog entries. *Search* finds entries that match the
@@ -211,7 +215,7 @@ never been easier!
 
 You can manage entries individually or in a batch. Each entry has an *Actions*
 icon (![Actions](../../../images/icon-actions.png)) to edit the entry, configure
-its permissions, or move it to the [Recycle Bin](/discover/portal/-/knowledge_base/7-0/restoring-deleted-assets#using-the-recycle-bin).
+its permissions, or move it to the [Recycle Bin](/docs/7-0/user/-/knowledge_base/u/restoring-deleted-assets#using-the-recycle-bin).
 You can select the *All* checkbox to select all entries or select an entry's
 individual check box, and click the trash icon to move them into the Recycle
 Bin. Under the *Images* tab you can view individual images and delete them
@@ -254,7 +258,7 @@ user's personal pages, but doesn't work so well for a shared multi-author blog.
 But don't worry: it's easy to grant blogging permissions to users. 
 
 First, create a
-[role](/discover/portal/-/knowledge_base/7-0/roles-and-permissions) for your
+[role](/docs/7-0/user/-/knowledge_base/u/roles-and-permissions) for your
 bloggers and add them to the role. Next, in Blogs, click *Options* &rarr;
 *Entries Permissions*. A list of both instance and site roles is displayed, and
 currently only the owner is checked for the *Add Entry* permission. Mark any
@@ -270,7 +274,7 @@ You've now created a blog entry and learned how to manage blog entries and
 permissions. Next, you'll learn how to use the Blogs and Blogs Aggregator
 applications to display blog entries the way you want them. 
 
-## Displaying Blogs [](id=displaying-blogs)
+## Displaying Blogs
 
 You can add the Blogs application a page from the *Add* menu.
 Since Blogs supports scopes, you can use it to create a multi-author blog to
@@ -372,7 +376,7 @@ multiple places. The Blogs Aggregator application lets you "bubble up" blog
 entries from multiple users and highlight them on your site. Let's look next at
 how that works. 
 
-## Aggregating Blogs [](id=aggregating-blogs)
+## Aggregating Blogs
 
 You can set up a whole web site devoted just to blogging if you wish. The Blogs
 Aggregator lets you publish entries from multiple bloggers on one page, giving
@@ -449,7 +453,7 @@ application, except that it shows entries from multiple blogs.
 
 Last up is showing your @product@ instance's recent bloggers.
 
-## Highlighting Recent Bloggers [](id=highlighting-recent-bloggers)
+## Highlighting Recent Bloggers
 
 A great way to applaud bloggers is to display their names using the Recent
 Bloggers app. It lists the names of users who've most recently posted blog
@@ -493,7 +497,7 @@ box.
 Add the Recent Bloggers app to a page on your site to draw attention to the
 users who are contributing helpful blogs on your site. 
 
-## Summary [](id=summary)
+## Summary
 
 Throughout this section, you've learned how to create blog posts in a powerful
 no-nonsense editor, manage blog instances and blog entries, and display blogs

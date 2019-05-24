@@ -1,4 +1,8 @@
-# Submitting Your App [](id=submitting-your-app)
+---
+header-id: submitting-your-app
+---
+
+# Submitting Your App
 
 Now that you have everything in order for publishing your app, you can start the
 Marketplace app submission process. 
@@ -19,7 +23,7 @@ app!
 To begin the process of publishing your app, click *Add New App*. The app wizard
 appears, so that you can fill in your app's details.
 
-## Specify Your App's Initial Details [](id=specify-your-apps-initial-details)
+## Specify Your App's Initial Details
 
 From this screen you enter your app's basic details. Previous articles
 [Planning Your App's Distribution](/distribute/how-to-publish/-/knowledge_base/how-to-publish/planning-your-apps-distribution)
@@ -117,7 +121,7 @@ for information to help you decide how best to fill in many of these fields.
 Once you've entered all your app's details, click *Next* to get to the screen
 for uploading your app's files. 
 
-## Upload Your App's Plugin Files [](id=upload-your-apps-plugin-files)
+## Upload Your App's Plugin Files
 
 On this screen, you must specify your app's version and upload your app's files. 
 Note that the article 
@@ -139,7 +143,7 @@ If you selected *Free* for your app pricing, click *Next* to advance to the
 final screen. If you selected *Paid*, you'll be presented with additional 
 options for licensing and pricing your app. 
 
-## Creating Your Licensing and Pricing Model [](id=creating-your-licensing-and-pricing-model)
+## Creating Your Licensing and Pricing Model
 
 Carefully consider which licensing structure best meets your needs. Once your
 app has been approved, these options, except for price updates, cannot be
@@ -201,7 +205,7 @@ each license option and for any support option you offered.
 When you have completed your app's pricing and availability, click *Next* to
 advance to the app preview screen. 
 
-## Preview and Submit Your App [](id=preview-and-submit-your-app)
+## Preview and Submit Your App
 
 The *App Preview* screen lets you preview your app as it will appear on the
 Marketplace. If you want to change things before finally submitting your app,

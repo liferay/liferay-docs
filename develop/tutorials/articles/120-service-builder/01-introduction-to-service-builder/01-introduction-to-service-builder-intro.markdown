@@ -1,4 +1,8 @@
-# What is Service Builder? [](id=what-is-service-builder)
+---
+header-id: what-is-service-builder
+---
+
+# What is Service Builder?
 
 Service Builder is a model-driven code generation tool built by Liferay that
 allows developers to define custom object models called entities. Service
@@ -34,14 +38,10 @@ of files Service Builder generates can seem intimidating at first, developers
 only need to work with a few files in order to make customizations to their
 applications and add business logic.
 
-+$$$
-
-**Note:** You don't have to use Service Builder for Liferay application
-development. It's entirely possible to develop Liferay plugins by writing
-custom code for database persistence using your persistence framework of
-choice. If you so choose, you can work directly with JPA or Hibernate.
-
-$$$
+| **Note:** You don't have to use Service Builder for Liferay application
+| development. It's entirely possible to develop Liferay plugins by writing
+| custom code for database persistence using your persistence framework of
+| choice. If you so choose, you can work directly with JPA or Hibernate.
 
 One of the main ways Service Builder saves development time is by completely
 eliminating the need to write and maintain database access code. To generate a
@@ -105,7 +105,7 @@ this is configurable via portal properties. All you have to do to enable entity
 and finder caching for an entity in your project is to set the
 `cache-enabled=true` attribute of your entity's `<entity>` element in your
 `service.xml` configuration file. Please refer to the
-[Distributed Caching](/discover/deployment/-/knowledge_base/6-2/liferay-clustering#distributed-caching)
+[Distributed Caching](/docs/6-2/deploy/-/knowledge_base/d/liferay-clustering#distributed-caching)
 documentation for more details about Liferay caching.
 
 Service Builder is a flexible tool. It automates many of the common tasks

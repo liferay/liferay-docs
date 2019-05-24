@@ -1,4 +1,8 @@
-# Configuring Form Navigator Forms [](id=configuring-form-navigator-forms)
+---
+header-id: configuring-form-navigator-forms
+---
+
+# Configuring Form Navigator Forms
 
 @product@'s forms can be built to gather large amounts of data. These larger
 forms are organized into easily navigable sections and categories. This is
@@ -14,19 +18,15 @@ system setting.
 This tutorial covers how to use the *Form Navigator Configuration* system 
 setting to control which form categories and sections are visible.
 
-+$$$
-
-**Note:** Individual fields within form sections cannot be hidden using this
-method. Your developers can use a 
-[Core JSP Hook](/develop/reference/-/knowledge_base/7-0/core-jsp-hook) 
-to override a form's JSP if you need to customize the individual fields within a
-form section. 
-
-$$$
+| **Note:** Individual fields within form sections cannot be hidden using this
+| method. Your developers can use a
+| [Core JSP Hook](/docs/7-0/reference/-/knowledge_base/r/core-jsp-hook)
+| to override a form's JSP if you need to customize the individual fields within a
+| form section.
  
 Get started by retrieving the available entry keys and categories next. 
 
-## Running the Form Navigator Gogo Shell Command [](id=running-the-form-navigator-gogo-shell-command)
+## Running the Form Navigator Gogo Shell Command
 
 Form Navigator configurations contain the following information:
 
@@ -36,7 +36,7 @@ Form Navigator configurations contain the following information:
 - Section entry keys
 
 You can retrieve this information easily, thanks to the following 
-[Gogo shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell) 
+[Gogo shell](/docs/7-0/reference/-/knowledge_base/r/using-the-felix-gogo-shell) 
 command: 
 
     formNavigator:getPossibleConfigurations [optional form ID]
@@ -53,13 +53,13 @@ shown in the figure below:
 ![Figure 1: You can use the formNavigator GoGo shell command to retrieve the available categories and entries for forms.](../../images/form-navigator-gogo-shell.png)
 
 You can read more about using the GoGo shell in the 
-[Felix GoGo Shell Reference Guide](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell).
+[Felix GoGo Shell Reference Guide](/docs/7-0/reference/-/knowledge_base/r/using-the-felix-gogo-shell).
 
 Now that you have the form ID(s) and available categories and entry keys, you 
 can create a Form Navigator configuration. As mentioned above, Form Navigator 
 configurations can contain an optional context. Form contexts are covered next. 
 
-## Form Navigator Contexts [](id=form-navigator-contexts)
+## Form Navigator Contexts
 
 A Form Navigator context refers to the context in which a form is being viewed.
 Form contexts allow you to control dynamically which form sections are displayed. 
@@ -74,14 +74,14 @@ For example, you could use the `update` context to specify which form sections
 are visible when someone edits a web content article.
 
 You can create additional contexts by following the steps covered 
-in the [Creating Form Navigator Contexts](/develop/tutorials/-/knowledge_base/7-0/creating-form-navigator-contexts) 
+in the [Creating Form Navigator Contexts](/docs/7-0/tutorials/-/knowledge_base/t/creating-form-navigator-contexts) 
 tutorial.
 
 Now that you have the form ID(s), available categories and entry keys, and 
 you understand Form Navigator contexts, you can configure the Form Navigator
 system settings next. 
 
-## Configuring Form Navigator System Settings [](id=configuring-form-navigator-system-settings)
+## Configuring Form Navigator System Settings
 
 Open the *Control Panel* and go to *Configuration* &rarr; *System Settings*.
 Select *Foundation* &rarr; *Form Navigator Configuration*.
@@ -124,25 +124,21 @@ Follow these steps to create a new configuration entry:
     by adding the entry key to the category in which you want the section to 
     appear. 
   
-    +$$$
- 
-    **Note:** If you want to hide a category, enter the category followed by an 
-    equal sign with no entry keys. For example, `general=` would hide the 
-    General category for the Sites form.
-    
-    $$$
+    | **Note:** If you want to hide a category, enter the category followed by an
+    | equal sign with no entry keys. For example, `general=` would hide the
+    | General category for the Sites form.
 
 4.  Save your changes.
 
 Now you know how to control the visibility of your Form Navigator form 
 categories and sections!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Custom Fields](/discover/portal/-/knowledge_base/7-0/custom-fields)
+[Custom Fields](/docs/7-0/user/-/knowledge_base/u/custom-fields)
 
-[Form Navigator Extensions](/develop/tutorials/-/knowledge_base/7-0/form-navigator)
+[Form Navigator Extensions](/docs/7-0/tutorials/-/knowledge_base/t/form-navigator)
 
-[Forms and Validation](/develop/tutorials/-/knowledge_base/7-0/forms-and-validation)
+[Forms and Validation](/docs/7-0/tutorials/-/knowledge_base/t/forms-and-validation)
 
-[Core JSP Hook](/develop/reference/-/knowledge_base/7-0/core-jsp-hook)
+[Core JSP Hook](/docs/7-0/reference/-/knowledge_base/r/core-jsp-hook)

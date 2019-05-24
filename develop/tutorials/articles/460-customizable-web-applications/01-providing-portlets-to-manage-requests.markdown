@@ -1,10 +1,14 @@
-# Providing Portlets to Manage Requests [](id=providing-portlets-to-manage-requests)
+---
+header-id: providing-portlets-to-manage-requests
+---
+
+# Providing Portlets to Manage Requests
 
 In this tutorial, you'll learn how to declare an entity type and action for a
 desired function, and you'll create a module that finds the correct application
 (portlet) to use based on those given parameters.
 
-## Specifying a Desired Portlet Behavior [](id=specifying-a-desired-portlet-behavior)
+## Specifying a Desired Portlet Behavior
 
 To find the portlet you need for your particular request, you'll use the
 *Portlet Providers* framework. The first thing you'll need to do is call the
@@ -25,20 +29,16 @@ framework: `ADD`, `BROWSE`, `EDIT`, `PREVIEW`, and `VIEW`. Find the portlet ID
 or portlet URL (depending on your needs), and specify the entity type and action
 you want the portlet to handle.
 
-+$$$
-
-**Note:** The `getPortletURL` methods require an additional `HttpServletRequest`
-or `PortletRequest` parameter, depending on which you use. Make sure to account
-for this additional parameter when using the `getPortletURL` method.
-
-$$$
+| **Note:** The `getPortletURL` methods require an additional `HttpServletRequest`
+| or `PortletRequest` parameter, depending on which you use. Make sure to account
+| for this additional parameter when using the `getPortletURL` method.
 
 You've successfully requested the portlet ID/portlet URL of a portlet that
 matches your entity and action type. The portal, however, is not yet configured
 to handle this request. You'll need to create a module that can find the correct 
 portlet to handle the request.
 
-1. [Create an OSGi module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#creating-a-module).
+1. [Create an OSGi module](/docs/7-0/tutorials/-/knowledge_base/t/starting-module-development#creating-a-module).
 
 2. Create a unique package name in the module's `src` directory and create a
    new Java class in that package. To follow naming conventions, name the class
@@ -92,10 +92,10 @@ Now a portlet that can handle the entity and action type you specified is used
 when requesting a portlet ID/URL. You can now specify portlet usage without
 hardcoding a specific portlet!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Portlets](/develop/tutorials/-/knowledge_base/7-0/portlets)
+[Portlets](/docs/7-0/tutorials/-/knowledge_base/t/portlets)
 
-[Embedding Portlets in Themes](/develop/tutorials/-/knowledge_base/7-0/embedding-portlets-in-themes)
+[Embedding Portlets in Themes](/docs/7-0/tutorials/-/knowledge_base/t/embedding-portlets-in-themes)
 
-[Customizing Liferay Services](/develop/tutorials/-/knowledge_base/7-0/customizing-liferay-services-service-wrappers)
+[Customizing Liferay Services](/docs/7-0/tutorials/-/knowledge_base/t/customizing-liferay-services-service-wrappers)

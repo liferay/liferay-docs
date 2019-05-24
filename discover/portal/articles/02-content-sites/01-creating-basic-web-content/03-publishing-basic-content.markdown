@@ -1,4 +1,8 @@
-# Publishing Basic Content [](id=publishing-basic-content)
+---
+header-id: publishing-basic-content
+---
+
+# Publishing Basic Content
 
 <div class="learn-path-step">
     <p>Creating Basic Web Content<br>Step 3 of 3</p>
@@ -42,7 +46,7 @@ it for you!
 
 ![Figure 2: Your content on a page.](../../../images/001-basic-content-on-page.png)
 
-## Cleanup [](id=cleanup)
+## Cleanup
 
 You probably noticed a couple of sub-optimal things about your page: your 
 content's title looks a bit odd, and the Hello World portlet is unnecessary now 

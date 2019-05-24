@@ -1,4 +1,8 @@
-# Resolving ClassNotFoundException and NoClassDefFoundError in OSGi Bundles [](id=resolving-classnotfoundexception-and-noclassdeffounderror-in-osgi-bundles)
+---
+header-id: resolving-classnotfoundexception-and-noclassdeffounderror-in-osgi-bundles
+---
+
+# Resolving ClassNotFoundException and NoClassDefFoundError in OSGi Bundles
 
 Understanding a `ClassNotFoundException` or `NoClassDefFoundError` in non-OSGi
 environments is straightforward. 
@@ -21,7 +25,7 @@ In OSGi environments, however, there are additional cases where a
 
 This tutorial explains how to handle each case.
 
-## Case 1: The Missing Class Belongs to an OSGi Module [](id=case-1-the-missing-class-belongs-to-an-osgi-module)
+## Case 1: The Missing Class Belongs to an OSGi Module
 
 In this case, there are two possible causes: 
 
@@ -64,7 +68,7 @@ In this case, there are two possible causes:
 
     -   Revert to the module version you used previously. Deployed module 
         versions reside in `[Liferay_Home]/osgi/`. For details, see
-        [Backing up Liferay Installations](/discover/deployment/-/knowledge_base/7-0/backing-up-a-liferay-installation#backing-up-liferays-file-system). 
+        [Backing up Liferay Installations](/docs/7-0/deploy/-/knowledge_base/d/backing-up-a-liferay-installation#backing-up-liferays-file-system). 
 
     Do what you think is best to get your module working properly. 
 
@@ -73,7 +77,7 @@ or `NoClassDefFoundError`. For additional information on `NoClassDefFoundError`,
 see OSGi Enroute's article 
 [What is NoClassDefFoundError?](http://enroute.osgi.org/faq/class-not-found-exception.html). 
 
-## Case 2: The Missing Class Doesn't Belong to an OSGi Module [](id=case-2-the-missing-class-doesnt-belong-to-an-osgi-module)
+## Case 2: The Missing Class Doesn't Belong to an OSGi Module
 
 In this case, you have two options: 
 
@@ -85,9 +89,9 @@ In this case, you have two options:
 2.  Embed the dependency in your module by embedding the dependency `JAR` file's
     packages as private packages in your module. If you want to embed a non-OSGi
     `JAR` file in your application, see the tutorial 
-    [Adding Third Party Libraries to a Module](/develop/tutorials/-/knowledge_base/7-0/adding-third-party-libraries-to-a-module). 
+    [Adding Third Party Libraries to a Module](/docs/7-0/tutorials/-/knowledge_base/t/adding-third-party-libraries-to-a-module). 
 
-## Case 3: The Missing Class Belongs to a Global Library [](id=case-3-the-missing-class-belongs-to-a-global-library)
+## Case 3: The Missing Class Belongs to a Global Library
 
 In this case, you can configure @product@ so the OSGi system module exports 
 the missing class's package. Then your module can import it. You should **NOT**, 
@@ -111,7 +115,7 @@ from a global library), you can add the package to that module's `bnd.bnd`
 exports. You should **NOT**, however, undertake this lightly. The package would
 already be be exported if Liferay intended for it to be available. 
 
-## Case 4: The Missing Class Belongs to a Java Runtime Package [](id=case-4-the-missing-class-belongs-to-a-java-runtime-package)
+## Case 4: The Missing Class Belongs to a Java Runtime Package
 
 In this case, the class belongs to Java's `rt.jar` but the package isn't
 specified in the OSGi Framework's boot delegation list. `rt.jar`'s `java.*`
@@ -125,10 +129,10 @@ Here's how to add packages to the boot delegation list:
     Preserve the property's current list. 
 2.  Add the missing package to the list. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Backing up Liferay Installations](/discover/deployment/-/knowledge_base/7-0/backing-up-a-liferay-installation)
+[Backing up Liferay Installations](/docs/7-0/deploy/-/knowledge_base/d/backing-up-a-liferay-installation)
 
-[Adding Third Party Libraries to a Module](/develop/tutorials/-/knowledge_base/7-0/adding-third-party-libraries-to-a-module)
+[Adding Third Party Libraries to a Module](/docs/7-0/tutorials/-/knowledge_base/t/adding-third-party-libraries-to-a-module)
 
-[Bundle Classloading Flow](/develop/tutorials/-/knowledge_base/7-0/bundle-classloading-flow)
+[Bundle Classloading Flow](/docs/7-0/tutorials/-/knowledge_base/t/bundle-classloading-flow)

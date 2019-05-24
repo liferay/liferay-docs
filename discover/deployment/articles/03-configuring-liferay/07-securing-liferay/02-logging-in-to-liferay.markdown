@@ -1,4 +1,8 @@
-# Logging in to @product@ [](id=logging-in-to-liferay)
+---
+header-id: logging-in-to-liferay
+---
+
+# Logging in to @product@
 
 One of the primary functions of a web portal is to restrict access to different
 pages, content, and web applications. These kinds of portal resources should

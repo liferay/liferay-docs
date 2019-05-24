@@ -1,17 +1,17 @@
-# Creating the iOS Project [](id=creating-the-ios-project)
+---
+header-id: creating-the-ios-project
+---
+
+# Creating the iOS Project
 
 Now that you've built the Guestbook Mobile SDK, you're ready to create the 
 Guestbook iOS app. This article walks you through the steps required to 
 create the app's project in Xcode. After this, you'll be ready to install the 
 Guestbook Mobile SDK and Liferay Screens. 
 
-+$$$
-
-**Note:** This learning path presumes that you've installed and know how to use 
-Xcode. If you need assistance with Xcode, see 
-[Apple's developer site](https://developer.apple.com/xcode/). 
-
-$$$
+| **Note:** This learning path presumes that you've installed and know how to use
+| Xcode. If you need assistance with Xcode, see
+| [Apple's developer site](https://developer.apple.com/xcode/).
 
 Follow these steps to create the Liferay Guestbook iOS project: 
 

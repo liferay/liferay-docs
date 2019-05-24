@@ -1,4 +1,8 @@
-# Creating Structures [](id=creating-structures)
+---
+header-id: creating-structures
+---
+
+# Creating Structures
 
 <div class="learn-path-step">
     <p>Creating Content<br>Step 3A of 3D</p>
@@ -8,7 +12,7 @@ Now you'll create your first structure. This structure defines Lunar Guides page
 content: a picture of the guide along with the guide's name and a link to his
 personal page. 
 
-## Creating Your First Structure [](id=creating-your-first-structure)
+## Creating Your First Structure
 
 1.  Open the *Menu* 
     (![Product Menu](../../../../images/icon-menu.png)) and select *The Lunar 
@@ -70,14 +74,10 @@ personal page.
     right. This duplicates the entire field group. Click this button two more
     times until you have a total of four identical field groups. 
 
-    +$$$
-
-    **Note:** Instead of duplicating fields, you could have used each field's 
-    *Repeatable* option. This lets users decide how many fields or field groups 
-    to use when they create content. This is a more advanced option that you'll 
-    learn about later. 
-
-    $$$
+    | **Note:** Instead of duplicating fields, you could have used each field's
+    | *Repeatable* option. This lets users decide how many fields or field groups
+    | to use when they create content. This is a more advanced option that you'll
+    | learn about later.
 
 11. Now you'll change the duplicate fields' names. Repeat steps 7 through 9 
     above for each duplicate field group, matching the digit in each field name 

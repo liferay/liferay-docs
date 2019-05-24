@@ -1,4 +1,8 @@
-# Blade CLI [](id=blade-cli)
+---
+header-id: blade-cli
+---
+
+# Blade CLI
 
 The [Blade CLI](https://github.com/liferay/liferay-blade-cli/) is the
 easiest way for Liferay developers to create new Liferay modules. Although the

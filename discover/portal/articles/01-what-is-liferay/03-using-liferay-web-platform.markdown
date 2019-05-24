@@ -1,4 +1,8 @@
-# Using Liferay as a web platform [](id=using-liferay-as-a-web-platform)
+---
+header-id: using-liferay-as-a-web-platform
+---
+
+# Using Liferay as a web platform
 
 We can't even begin to imagine what you're thinking of building, but whatever it
 is, you're going to put your heart and soul into it. Building it on Liferay's
@@ -25,7 +29,7 @@ other systems running on different platforms.
 You get all this and much more. It's a very powerful platform, and certainly
 worth your investigation. Read the developer section of this site to learn more.
 
-## A great integration platform [](id=a-great-integration-platform)
+## A great integration platform
 
 If you're building an enterprise system, portals were designed in the first
 place to be a single point of entry to your users' applications and content.
@@ -41,7 +45,7 @@ provided by other systems to integrate their data into an application window in
 Liferay. And applications you create with Liferay's Service Builder framework
 are web service-enabled from the start. 
 
-## Hosting multiple sites on @product@ [](id=hosting-multiple-sites-on-liferay-portal)
+## Hosting multiple sites on @product@
 
 @product@ excels as a multi-site hosting platform. You can use it to host
 multiple sites under the same overall architecture, or you could host several

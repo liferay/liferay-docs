@@ -1,7 +1,11 @@
-# Automatically Generating Language Files [](id=automatically-generating-language-files)
+---
+header-id: automatically-generating-language-files
+---
+
+# Automatically Generating Language Files
 
 If you already have a `Language.properties` file that holds
-[language keys for your user interface messages](/develop/tutorials/-/knowledge_base/7-0/localizing-your-application),
+[language keys for your user interface messages](/docs/7-0/tutorials/-/knowledge_base/t/localizing-your-application),
 or even a language module that holds these keys, you're in the right place.
 
 -  Instead of manually creating a language properties file for each locale
@@ -12,7 +16,7 @@ or even a language module that holds these keys, you're in the right place.
 -  You can also generate automatic translations using Microsoft's Translator
    Text API.
 
-## Generating Language Files for Supported Locales [](id=generating-language-files-for-supported-locales)
+## Generating Language Files for Supported Locales
 
 If you want to generate files automatically for all 
 [locales supported by Liferay](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Languages%20and%20Time%20Zones),
@@ -66,7 +70,7 @@ Now you can start translating your application's messages. If you want to
 configure your app to generate automatic translations using the Microsoft
 Translator Text API, keep reading.
 
-## Translating Language Keys Automatically [](id=translating-language-keys-automatically)
+## Translating Language Keys Automatically
 
 If you've configured the `com.liferay.lang.builder` plugin in your app, you're
 almost there. Now you have to configure
@@ -76,15 +80,11 @@ however, use Liferay's Lang Builder to automatically translate language keys
 containing HTML (e.g., `<em>`, `<b>`, `<code>`, etc.). Language keys containing
 HTML are automatically *copied* to all supported language files.
 
-+$$$
-
-**Note:** These translations are best used as a starting point. A machine
-translation can't match the accuracy of a real person who is fluent in the
-language. Then again, if you only speak English and you need a Hungarian
-translation, this is better and faster than your attempts at a manual
-translation.
-
-$$$
+| **Note:** These translations are best used as a starting point. A machine
+| translation can't match the accuracy of a real person who is fluent in the
+| language. Then again, if you only speak English and you need a Hungarian
+| translation, this is better and faster than your attempts at a manual
+| translation.
 
 1.  Generate a translation subscription key for the Microsoft Translator Text
     API. Follow the instructions

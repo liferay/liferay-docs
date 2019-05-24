@@ -1,4 +1,8 @@
-# Activator Template [](id=using-the-activator-template)
+---
+header-id: using-the-activator-template
+---
+
+# Activator Template
 
 In this article, you'll learn how to create a Liferay activator as a Liferay
 module. To create a Liferay activator via the command line using Blade CLI or

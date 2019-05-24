@@ -1,4 +1,8 @@
-# OpenID Single Sign On Authentication [](id=openid-single-sign-on-authentication)
+---
+header-id: openid-single-sign-on-authentication
+---
+
+# OpenID Single Sign On Authentication
 
 OpenID is a single sign-on standard implemented by multiple vendors.  Users can
 register for an ID with the vendor they trust. The credential issued by that
@@ -19,7 +23,7 @@ manage this information and keep it up to date.
 register and sign in with their OpenID accounts. Internally, the product uses
 [OpenID4Java](https://github.com/jbufu/openid4java) to implement the feature.
 
-## OpenID at the System Scope [](id=openid-at-the-system-scope)
+## OpenID at the System Scope
 
 OpenID is enabled by default in @product@ but can be disabled or enabled at either
 the system scope or portal instance scope. To configure the OpenID SSO module at
@@ -29,7 +33,7 @@ the system level, navigate to the Control Panel and click on *Configuration*
 *Enabled* box to enable OpenID at the system scope (for all portal instances),
 uncheck it to disable it at the system scope.
 
-## OpenID at the Instance Scope [](id=openid-at-the-instance-scope)
+## OpenID at the Instance Scope
 
 To configure the OpenID SSO module at the portal instance scope, navigate to the
 Control Panel and click on *Configuration* &rarr; *Instance Settings*, then on
@@ -44,10 +48,10 @@ OpenID icon is displayed at the lower left.
 ![Figure 1: The OpenID icon is at the bottom of the Sign In Portlet](../../../images/openid.png)
 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[@product@ Security Overview](/discover/deployment/-/knowledge_base/7-0/liferay-portal-security-overview)
-[Token-based Single Sign On Authentication](/discover/deployment/-/knowledge_base/7-0/token-based-single-sign-on-authentication)
-[CAS Single Sign On Authentication](/discover/deployment/-/knowledge_base/7-0/cas-central-authentication-service-single-sign-on-authentication)
-[OpenAM Single Sign On Authentication](/discover/deployment/-/knowledge_base/7-0/opensso-single-sign-on-authentication)
+[@product@ Security Overview](/docs/7-0/deploy/-/knowledge_base/d/liferay-portal-security-overview)
+[Token-based Single Sign On Authentication](/docs/7-0/deploy/-/knowledge_base/d/token-based-single-sign-on-authentication)
+[CAS Single Sign On Authentication](/docs/7-0/deploy/-/knowledge_base/d/cas-central-authentication-service-single-sign-on-authentication)
+[OpenAM Single Sign On Authentication](/docs/7-0/deploy/-/knowledge_base/d/opensso-single-sign-on-authentication)
 

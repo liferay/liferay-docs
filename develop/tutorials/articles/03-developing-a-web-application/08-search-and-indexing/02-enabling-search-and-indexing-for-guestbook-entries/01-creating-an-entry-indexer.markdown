@@ -1,4 +1,8 @@
-# Creating an Entry Indexer [](id=creating-an-entry-indexer)
+---
+header-id: creating-an-entry-indexer
+---
+
+# Creating an Entry Indexer
 
 <div class="learn-path-step">
     <p>Enabling Search and Indexing for Guestbook Entries<br>Step 1 of 2</p>

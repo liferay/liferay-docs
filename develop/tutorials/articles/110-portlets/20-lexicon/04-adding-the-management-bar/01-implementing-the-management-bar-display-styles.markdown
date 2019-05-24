@@ -1,4 +1,8 @@
-# Implementing the Management Bar Display Styles [](id=implementing-the-management-bar-display-styles)
+---
+header-id: implementing-the-management-bar-display-styles
+---
+
+# Implementing the Management Bar Display Styles
 
 The Management Bar offers a few display styles for your app's search container 
 contents: descriptive, icon, and list. These views are standard in @product@'s 
@@ -18,7 +22,7 @@ Views that are disabled in your app will render as greyed out buttons.
 
 Start by configuring the Management Bar Display Buttons tag next.
 
-## Configuring the Management Bar Display Buttons Tag [](id=configuring-the-management-bar-display-buttons-tag)
+## Configuring the Management Bar Display Buttons Tag
 
 Follow these steps to configure the management bar display button tags:
 
@@ -50,7 +54,7 @@ Follow these steps to configure the management bar display button tags:
 Your taglibs are configured for your display styles, but at the moment they 
 don't do anything. You'll configure the views next.
 
-## Configuring the Display Views [](id=configuring-the-display-views)
+## Configuring the Display Views
 
 Note that your management bar may not contain all three views. You only need to 
 implement the views that you defined in your 
@@ -85,7 +89,7 @@ information. Use a vertical card to display assets like files or web content.
 Use horizontal cards to display folders or directories. You can add the display 
 style configurations for each view next. 
 
-### Implementing the Icon View [](id=implementing-the-icon-view)
+### Implementing the Icon View
 
 The icon view prominently displays an icon for the content, along with its name, 
 status, and a condensed description.
@@ -150,7 +154,7 @@ Follow the steps below to create your icon view:
 Now that your icon view is configured, you can move onto your descriptive view 
 next.
 
-### Implementing the Descriptive View [](id=implementing-the-descriptive-view)
+### Implementing the Descriptive View
 
 The descriptive view displays the complete description, along with a small icon 
 for the content, and its name. 
@@ -205,7 +209,7 @@ Your descriptive view should have three columns.
 Now that your descriptive view is configured you can implement your list view 
 next.
 
-### Implementing the List View [](id=implementing-the-list-view)
+### Implementing the List View
 
 The list view is the default view that is shown for most applications. This view 
 lists the content's information in individual columns. 
@@ -262,8 +266,8 @@ the management bar display style buttons.
 
 Your display views are configured!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Implementing a Management Bar Sort Filter](/develop/tutorials/-/knowledge_base/7-0/implementing-a-management-bar-sort-filter)
+[Implementing a Management Bar Sort Filter](/docs/7-0/tutorials/-/knowledge_base/t/implementing-a-management-bar-sort-filter)
 
-[Implementing a Management Bar Navigation Filter](/develop/tutorials/-/knowledge_base/7-0/implementing-a-management-bar-navigation-filter)
+[Implementing a Management Bar Navigation Filter](/docs/7-0/tutorials/-/knowledge_base/t/implementing-a-management-bar-navigation-filter)

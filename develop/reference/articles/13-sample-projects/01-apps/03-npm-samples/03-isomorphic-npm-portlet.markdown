@@ -1,4 +1,8 @@
-# Isomorphic npm Portlet [](id=isomorphic-npm-portlet)
+---
+header-id: isomorphic-npm-portlet
+---
+
+# Isomorphic npm Portlet
 
 The Isomorphic npm Portlet sample provides a portlet that uses
 [isomorphic](https://en.wikipedia.org/wiki/Isomorphic_JavaScript) code (i.e.,
@@ -10,24 +14,20 @@ This portlet showcases running code designed to execute in the server
 in the browser. Note that this portlet does **not** run JavaScript code in the
 server; it's executing isomorphic JavaScript code in the browser.
 
-+$$$
-
-**Note:** The minifier fails on Liferay DXP 7.0 when JSDoc is present in a 
-portlet. To resolve this, use 
-[Grunt](https://gruntjs.com/getting-started) 
-[uglify](https://www.npmjs.com/package/grunt-contrib-uglify) 
-to remove the JSDoc comments. This process may take a long time, depending on 
-the number of files that require an update. 
-
-$$$
+| **Note:** The minifier fails on Liferay DXP 7.0 when JSDoc is present in a
+| portlet. To resolve this, use
+| [Grunt](https://gruntjs.com/getting-started)
+| [uglify](https://www.npmjs.com/package/grunt-contrib-uglify)
+| to remove the JSDoc comments. This process may take a long time, depending on
+| the number of files that require an update.
 
 **Important:** This sample works for Liferay DXP Fix Pack 44+ and Liferay Portal
 CE GA7+.
 
-## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
+## What API(s) and/or code components does this sample highlight?
 
 This sample leverages the
-[npm development workflow support](/develop/tutorials/-/knowledge_base/7-0/using-npm-in-your-portlets).
+[npm development workflow support](/docs/7-0/tutorials/-/knowledge_base/t/using-npm-in-your-portlets).
 
 You can do many things with isomorphic code. You can run it in
 
@@ -40,7 +40,7 @@ cannot execute JavaScript that way. This sample portlet shows how Liferay's npm
 bundler can transform server-side code to make it work in the client (e.g.,
 emulates some of Node.js' APIs in the client).
 
-## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
+## How does this sample leverage the API(s) and/or code component?
 
 This sample uses the [npm registry](https://www.npmjs.com/) to download project
 dependencies and uses the
@@ -54,7 +54,7 @@ script inside its `package.json` file:
         "build": "babel --source-maps -d build/resources/main/META-INF/resources src/main/resources/META-INF/resources && liferay-npm-bundler"
     },
 
-## Where Is This Sample? [](id=where-is-this-sample)
+## Where Is This Sample?
 
 This sample is built with the following build tool:
 

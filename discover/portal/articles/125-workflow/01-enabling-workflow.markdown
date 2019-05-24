@@ -1,4 +1,8 @@
-# Enabling Workflow [](id=enabling-workflow)
+---
+header-id: enabling-workflow
+---
+
+# Enabling Workflow
 
 The workflow functionality bundled with the Liferay Forms and Workflow suite comes
 with one pre-installed workflow definition called the Single Approver Workflow. This
@@ -25,7 +29,7 @@ would be a simple task with the Kaleo Designer. -->
 
 <!--Picture of Workflow Designer-->
 
-## Workflow Assets [](id=workflow-assets)
+## Workflow Assets
 
 Many of the assets in @product@ are enabled for workflow. Configure workflow or
 these assets in Control Panel &rarr; Configuration &rarr; Workflow Configuration:
@@ -72,7 +76,7 @@ Enable workflow for each individual form's entries from the Form Settings screen
 
 ![Figure 4: Enable workflow on each form's entries in the Form Settings window.](../../images/forms-workflow2.png)
 
-## Workflow Behavior [](id=workflow-behavior)
+## Workflow Behavior
 
 Most of the resources listed above behave just as you might expect with workflow
 enabled: The Publish button for the resource's *Add* form is replaced by a
@@ -84,7 +88,7 @@ before publication.
 for workflow-enabled resources.](../../images/submit-for-publication.png)
 
 Page revisions are slightly different. Page revisions only occur in 
-[staging environments](/discover/portal/-/knowledge_base/7-0/staging-content-for-publication) 
+[staging environments](/docs/7-0/user/-/knowledge_base/u/staging-content-for-publication) 
 that have Page Versioning enabled. When a Page Variation or Site Page Variation
 is created, its creator must click *Submit for Publication* at the top of the
 page, and the variation must be approved in the workflow, before it can be

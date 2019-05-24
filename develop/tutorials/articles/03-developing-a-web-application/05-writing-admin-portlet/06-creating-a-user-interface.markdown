@@ -1,4 +1,8 @@
-# Creating a User Interface [](id=creating-a-user-interface)
+---
+header-id: creating-a-user-interface
+---
+
+# Creating a User Interface
 
 <div class="learn-path-step">
     <p>Writing the Guestbook Admin App<br>Step 5 of 5</p>
@@ -12,7 +16,7 @@ Each guestbook's name is displayed along with an Actions button. The Actions
 button reveals options for editing the guestbook, configuring its permissions,
 or deleting it. 
 
-## Creating JSPs for the Guestbook Admin Portlet's User Interface [](id=creating-jsps-for-the-guestbook-admin-portlets-user-interface)
+## Creating JSPs for the Guestbook Admin Portlet's User Interface
 
 The Guestbook Admin portlet's user interface is made up of three JSPs: the
 default view, the Actions button, and the form for adding or editing a

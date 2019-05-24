@@ -1,4 +1,8 @@
-# Exporting/Importing App Data [](id=exporting-importing-app-data)
+---
+header-id: exporting-importing-app-data
+---
+
+# Exporting/Importing App Data
 
 There are times when you want to export/import specific content created from an
 application, and not deal with site data at all. Many Liferay apps allow you to
@@ -10,7 +14,7 @@ export or import app data, click on the *Options* icon
 and import into another application of the same type. To import app
 data, you must select a `.lar` file. Be careful not to confuse app-specific
 `.lar` files with site-specific `.lar` files. See the
-[Importing/Exporting Pages and Content](/discover/portal/-/knowledge_base/7-0/importing-exporting-pages-and-content)
+[Importing/Exporting Pages and Content](/docs/7-0/user/-/knowledge_base/u/importing-exporting-pages-and-content)
 section for a discussion of importing and exporting site page data.
 
 You can export/import app content two ways. You can navigate to the
@@ -64,7 +68,7 @@ uploaded and displayed to you for review. Click *Continue*.
 Now that you've uploaded and confirmed your LAR file, you're given a similar
 screen to what you'd be offered during export. Several of these options are
 covered in great detail in the
-[Importing/Exporting Pages and Content](/discover/portal/-/knowledge_base/7-0/importing-exporting-pages-and-content)
+[Importing/Exporting Pages and Content](/docs/7-0/user/-/knowledge_base/u/importing-exporting-pages-and-content)
 section. There are a couple of additional options, however, available -- *Update
 Data* and *Authorship of the Content*. Here's options and descriptions for each
 section:

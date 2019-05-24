@@ -1,4 +1,8 @@
-# Patching Basics [](id=patching-basics)
+---
+header-id: patching-basics
+---
+
+# Patching Basics
 
 Liferay ships @product-ver@ fixes through three different channels: 
 
@@ -6,7 +10,7 @@ Liferay ships @product-ver@ fixes through three different channels:
 - Hotfixes 
 - Service Packs 
 
-## Fix Packs [](id=fix-packs)
+## Fix Packs
 
 On a regular schedule, the latest fixes that patch the core are bundled together
 into fix packs that are provided to all of Liferay's customers. Fix packs
@@ -14,7 +18,7 @@ include fixes for both the core and the application suites that ship with the
 product. Each fix pack contains all previous fix packs since the last
 service pack. 
 
-## Hotfixes [](id=hotfixes)
+## Hotfixes
 
 A hotfix is provided to customers when they contact Liferay about an emergency
 situation, and Liferay's support team--working with the customer-- determines
@@ -23,7 +27,7 @@ quickly. Support fixes the bug and provides a hotfix to the customer
 immediately. This is a short-term fix Hotfixes can patch both the core and the
 application suites.
 
-## Service Packs [](id=service-packs)
+## Service Packs
 
 Service packs for the @product@ are released about every two months. The
 schedule depends on the need and security fix releases. They include the latest
@@ -48,7 +52,7 @@ customers should
 This method updates the installation to the service pack levels, while allowing
 scheduled deployments and preventing full environment rebuilds. 
 
-## How Patches are Tested [](id=how-patches-are-tested)
+## How Patches are Tested
 
 Liferay extensively tests all three types of fix packs to ensure high quality.
 For each issue fixed, fix packs go through both automated regression

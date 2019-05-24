@@ -1,4 +1,8 @@
-# Resolving Third Party Library Package Dependencies [](id=adding-third-party-libraries-to-a-module)
+---
+header-id: adding-third-party-libraries-to-a-module
+---
+
+# Resolving Third Party Library Package Dependencies
 
 The OSGi framework lets you build applications composed of multiple modules. The
 modules must resolve their Java package dependencies for the framework to
@@ -19,7 +23,7 @@ are available at these locations:
 
 Deploying the module to Liferay's OSGi framework lets you share it on the
 system. If you find a module for the library you need,
-[deploy](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#building-and-deploying-a-module)
+[deploy](/docs/7-0/tutorials/-/knowledge_base/t/starting-module-development#building-and-deploying-a-module)
 it. Then add a `compileOnly` dependency for it in your module. When you deploy
 your module, the OSGi framework wires the dependency module to your module. If
 you don't find an OSGi module based on the Java library, go to Step 2. 
@@ -28,42 +32,38 @@ you don't find an OSGi module based on the Java library, go to Step 2.
 required library packages into your OSGi module or embed them wholesale, if you
 must. The rest of the tutorial shows you how to do this. 
 
-+$$$
-
-**Note**: Liferay's Gradle plugin `com.liferay.plugin` automates several third
-party library configuration steps. The plugin is applied to
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
-Gradle module projects created in
-[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/liferay-ide)
-or using
-[Liferay Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli)
-automatically.
-
-To leverage the `com.liferay.plugin` plugin outside of Liferay Workspace, add
-code like the listing below to your Gradle project:
-
-    buildscript {
-        dependencies {
-            classpath group: "com.liferay", name: "com.liferay.gradle.plugins", version: "3.2.29"
-        }
-
-        repositories {
-            maven {
-                url "https://repository-cdn.liferay.com/nexus/content/groups/public"
-            }
-        }
-    }
-
-    apply plugin: "com.liferay.plugin"
-
-If you use Gradle without the `com.liferay.plugin` plugin, you'll have to
-[embed the third party libraries wholesale](#embedding-libraries-using-gradle).
-
-$$$
+| **Note**: Liferay's Gradle plugin `com.liferay.plugin` automates several third
+| party library configuration steps. The plugin is applied to
+| [Liferay Workspace](/docs/7-0/tutorials/-/knowledge_base/t/liferay-workspace)
+| Gradle module projects created in
+| [Liferay @ide@](/docs/7-0/tutorials/-/knowledge_base/t/liferay-ide)
+| or using
+| [Liferay Blade CLI](/docs/7-0/tutorials/-/knowledge_base/t/blade-cli)
+| automatically.
+| 
+| To leverage the `com.liferay.plugin` plugin outside of Liferay Workspace, add
+| code like the listing below to your Gradle project:
+| 
+|     buildscript {
+|         dependencies {
+|             classpath group: "com.liferay", name: "com.liferay.gradle.plugins", version: "3.2.29"
+|         }
+| 
+|         repositories {
+|             maven {
+|                 url "https://repository-cdn.liferay.com/nexus/content/groups/public"
+|             }
+|         }
+|     }
+| 
+|     apply plugin: "com.liferay.plugin"
+| 
+| If you use Gradle without the `com.liferay.plugin` plugin, you'll have to
+| [embed the third party libraries wholesale](#embedding-libraries-using-gradle).
 
 The recommended package resolution workflow is next. 
 
-## Library Package Resolution Workflow [](id=library-package-resolution-workflow)
+## Library Package Resolution Workflow
 
 When you depend on a library JAR, much of the time you only need parts of it.
 Explicitly specifying only the Java packages you need makes your bundle more
@@ -104,13 +104,13 @@ imports:
 
 Next you'll learn how to embed libraries in your module. 
 
-## Embedding Libraries in a Module [](id=embedding-libraries-in-a-module)
+## Embedding Libraries in a Module
 
 You can use Gradle, Maven, or Ivy to embed libraries in your module. Below are
 examples for adding [Apache Shiro](https://shiro.apache.org) using all three
 build utilities. 
 
-### Embedding a Library Using Gradle [](id=embedding-libraries-using-gradle)
+### Embedding a Library Using Gradle
 
 Open your module's `build.gradle` file and add the library as a dependency in
 the `compileInclude` configuration:
@@ -128,16 +128,12 @@ module's `Bundle-ClassPath` manifest header.
 [optional dependencies](https://maven.apache.org/guides/introduction/introduction-to-optional-and-excludes-dependencies.html).
 If your module requires such artifacts, add them as you would another third party library.
 
-+$$$
+| **Note:** If the library you've added as a dependency in your `build.gradle`
+| file has transitive dependencies, you can reference them in an
+| `-includeresource:` instruction by name without having to add them explicitly to
+| the list of dependencies. See how it's used in the Maven section next.
 
-**Note:** If the library you've added as a dependency in your `build.gradle`
-file has transitive dependencies, you can reference them in an
-`-includeresource:` instruction by name without having to add them explicitly to
-the list of dependencies. See how it's used in the Maven section next. 
-
-$$$
-
-### Embedding a Library Using Maven or Ivy [](id=embedding-libraries-using-maven-or-ivy)
+### Embedding a Library Using Maven or Ivy
 
 Follow these steps:
 
@@ -178,10 +174,10 @@ deploy to Liferay, you may need to blacklist some imports:
 Congratulations! Resolving all of your module's package dependencies, especially
 those from traditional Java libraries, is a quite an accomplishment. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Importing Packages](/develop/tutorials/-/knowledge_base/7-0/importing-packages)
+[Importing Packages](/docs/7-0/tutorials/-/knowledge_base/t/importing-packages)
 
-[Exporting Packages](/develop/tutorials/-/knowledge_base/7-0/exporting-packages)
+[Exporting Packages](/docs/7-0/tutorials/-/knowledge_base/t/exporting-packages)
 
-[Creating Modules with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-blade-cli)
+[Creating Modules with Blade CLI](/docs/7-0/tutorials/-/knowledge_base/t/creating-modules-with-blade-cli)

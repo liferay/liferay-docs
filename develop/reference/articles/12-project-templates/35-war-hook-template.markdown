@@ -1,4 +1,8 @@
-# WAR Hook Template [](id=war-hook-template)
+---
+header-id: war-hook-template
+---
+
+# WAR Hook Template
 
 In this article, you'll learn how to create a Liferay WAR hook project. To
 create a Liferay WAR hook via the command line using Blade CLI or Maven, use one
@@ -67,7 +71,7 @@ To build upon the generated project, modify the project by adding logic and
 additional files to the folders outlined above. Deploying WAR hooks is
 supported for @product-ver@, however, it is recommended to optimize your WAR
 hooks to fragments or other applicable module projects. You can visit the
-[Customizing](/develop/tutorials/-/knowledge_base/7-0/customizing) section for
+[Customizing](/docs/7-0/tutorials/-/knowledge_base/t/customizing) section for
 info on how to do this for many project types. See the
-[Customizing Liferay Portal](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+[Customizing Liferay Portal](/docs/6-2/tutorials/-/knowledge_base/t/customizing-liferay-portal)
 section for more information on WAR hooks.

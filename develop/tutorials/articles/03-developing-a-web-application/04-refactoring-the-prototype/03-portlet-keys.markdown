@@ -1,4 +1,8 @@
-# Creating Portlet Keys [](id=creating-portlet-keys)
+---
+header-id: creating-portlet-keys
+---
+
+# Creating Portlet Keys
 
 <div class="learn-path-step">
     <p>Refactoring the Prototype<br>Step 3 of 6</p>

@@ -1,4 +1,8 @@
-# Inviting Members to Your Site [](id=inviting-members-to-your-site)
+---
+header-id: inviting-members-to-your-site
+---
+
+# Inviting Members to Your Site
 
 You've built a new site and now you need to get the word out about it. What 
 better way to get the word out about your site then to invite users to join it. 
@@ -26,17 +30,13 @@ invitation.
 
 ![Figure 2: You can confirm or ignore the invitation.](../../../images/invite-members-confirm.png)
 
-+$$$
-
-**Note:** The Invitation app is also available as a deprecated app on the 
-[Liferay Marketplace](http://liferay.com/marketplace). This app, unlike the
-Invite Members app, lets you send an email invitation to a list of specified
-email addresses. You can customize the email message for the invitation through
-the portlet's Configuration menu.
-
-This app is deprecated as of version 1.0.0.
-
-$$$
+| **Note:** The Invitation app is also available as a deprecated app on the
+| [Liferay Marketplace](http://liferay.com/marketplace). This app, unlike the
+| Invite Members app, lets you send an email invitation to a list of specified
+| email addresses. You can customize the email message for the invitation through
+| the portlet's Configuration menu.
+| 
+| This app is deprecated as of version 1.0.0.
 
 When the invitation is confirmed, the user is made a member of the site and
 assigned the roles you defined. 

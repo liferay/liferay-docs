@@ -1,52 +1,52 @@
-# Customization with Ext Plugins [](id=advanced-customization-with-ext-plugins)
+---
+header-id: advanced-customization-with-ext-plugins
+---
 
-+$$$
+# Customization with Ext Plugins
 
-**Ext plugins are deprecated for @product-ver@ and should only be used if
-absolutely necessary. They are deployable to Liferay Digital Enterprise 7.0
-Service Pack (SP) 4+.**
-
-**For those upgrading via fix packs, Ext plugins are deployable to Liferay
-Digital Enterprise 7.0 Fix Pack 16+. If you haven't upgraded to SP4+ and are
-using a Tomcat app server, visit the		
-[App Server Configuration](#app-server-configuration) section for details on		
-modifications required to allow Ext plugins to function properly in that		
-environment.**
-
-The following app servers are supported for Ext plugin development in
-@product@:
-
-- Tomcat 8.0
-
-<!--
-- JBoss EAP 7.0
-- Wildfly 10.0
-- WebLogic 12.2
-- WebSphere 8.5.5
--->
-
-In most cases, Ext plugins are no longer necessary. There are, however, certain
-cases that require the use of an Ext plugin. Liferay only supports the following
-Ext plugin use cases:
-
-- Providing custom implementations for any beans declared in @product@'s
-  Spring files (when possible, use
-  [service wrappers](/develop/tutorials/-/knowledge_base/7-0/customizing-liferay-services-service-wrappers)
-  instead of an Ext plugin). @product-ver@ removed many beans, so make sure your
-  overridden beans are still relevant if converting your legacy Ext plugin
-  ([tutorial](https://customer.liferay.com/documentation/knowledge-base/-/kb/1255605)).
-- Overwriting a class in a @product-ver@ core JAR. For a list of core JARs, see
-  the [Finding Core @product@ Artifacts](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies#finding-core-liferay-portal-artifacts)
-  section
-  ([tutorial](https://customer.liferay.com/documentation/knowledge-base/-/kb/1255575)).
-- Modifying @product@'s `web.xml` file
-  ([tutorial](https://customer.liferay.com/documentation/knowledge-base/-/kb/1255591)).
-- Adding to @product@'s `web.xml` file
-  ([tutorial](https://customer.liferay.com/documentation/knowledge-base/-/kb/1255563)).
-
-Refer to each use case's linked tutorial for further information on that topic.
-
-$$$
+| **Ext plugins are deprecated for @product-ver@ and should only be used if
+| absolutely necessary. They are deployable to Liferay Digital Enterprise 7.0
+| Service Pack (SP) 4+.**
+| 
+| **For those upgrading via fix packs, Ext plugins are deployable to Liferay
+| Digital Enterprise 7.0 Fix Pack 16+. If you haven't upgraded to SP4+ and are
+| using a Tomcat app server, visit the
+| [App Server Configuration](#app-server-configuration) section for details on
+| modifications required to allow Ext plugins to function properly in that
+| environment.**
+| 
+| The following app servers are supported for Ext plugin development in
+| @product@:
+| 
+| - Tomcat 8.0
+| 
+| <!--
+| - JBoss EAP 7.0
+| - Wildfly 10.0
+| - WebLogic 12.2
+| - WebSphere 8.5.5
+| -->
+| 
+| In most cases, Ext plugins are no longer necessary. There are, however, certain
+| cases that require the use of an Ext plugin. Liferay only supports the following
+| Ext plugin use cases:
+| 
+| - Providing custom implementations for any beans declared in @product@'s
+|   Spring files (when possible, use
+|   [service wrappers](/docs/7-0/tutorials/-/knowledge_base/t/customizing-liferay-services-service-wrappers)
+|   instead of an Ext plugin). @product-ver@ removed many beans, so make sure your
+|   overridden beans are still relevant if converting your legacy Ext plugin
+|   ([tutorial](https://customer.liferay.com/documentation/knowledge-base/-/kb/1255605)).
+| - Overwriting a class in a @product-ver@ core JAR. For a list of core JARs, see
+|   the [Finding Core @product@ Artifacts](/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies#finding-core-liferay-portal-artifacts)
+|   section
+|   ([tutorial](https://customer.liferay.com/documentation/knowledge-base/-/kb/1255575)).
+| - Modifying @product@'s `web.xml` file
+|   ([tutorial](https://customer.liferay.com/documentation/knowledge-base/-/kb/1255591)).
+| - Adding to @product@'s `web.xml` file
+|   ([tutorial](https://customer.liferay.com/documentation/knowledge-base/-/kb/1255563)).
+| 
+| Refer to each use case's linked tutorial for further information on that topic.
 
 Ext plugins are powerful tools used to extend @product@. They, however, increase
 the complexity of your @product@ instance and are not recommended unless there
@@ -54,7 +54,7 @@ is absolutely no other way to accomplish your task. @product-ver@ provides many
 extension points that let you customize almost every detail of @product@. If
 there's a way to customize what you want with an extension
 point, do it that way instead. See the
-[More Extensible, Easier to Maintain](/develop/tutorials/-/knowledge_base/7-0/benefits-of-liferay-7-for-liferay-6-developers#more-extensible-easier-to-maintain)
+[More Extensible, Easier to Maintain](/docs/7-0/tutorials/-/knowledge_base/t/benefits-of-liferay-7-for-liferay-6-developers#more-extensible-easier-to-maintain)
 section for more details on the advantages of using @product@'s extension
 points.
 
@@ -77,14 +77,14 @@ In this tutorial, you'll learn how to
 Before diving into creating an Ext plugin, however, first consider if an Ext
 plugin is necessary.
 
-## Making the Decision to Use Ext Plugins [](id=making-the-decision-to-use-ext-plugins)
+## Making the Decision to Use Ext Plugins
 
 There are many parts of @product@ that now provide extension points via OSGi
 bundle. You should follow this three step process to decide whether an Ext
 plugin is necessary:
 
 1.  Find the OSGi extension point that you need. You can follow the
-    [Finding Extension Points](/develop/tutorials/-/knowledge_base/7-0/finding-extension-points)
+    [Finding Extension Points](/docs/7-0/tutorials/-/knowledge_base/t/finding-extension-points)
     tutorial as a guide.
 2.  If an OSGi extension point does not exist, use an Ext plugin.
 3.  Research new extension points after every release of @product@. When a new
@@ -98,48 +98,44 @@ Your first step is to examine the custom module projects that extend popular
 [Liferay Blade Samples](https://github.com/liferay/liferay-blade-samples)
 repository. For
 more information on these sample projects, see the
-[Liferay Sample Projects](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
+[Liferay Sample Projects](/docs/7-0/tutorials/-/knowledge_base/t/liferay-sample-modules)
 tutorial. Usable extension points are also documented throughout Liferay's
 Customer Portal categorized by the @product@ section involved. For example,
-[Overriding MVC Commands](/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands)
+[Overriding MVC Commands](/docs/7-0/tutorials/-/knowledge_base/t/overriding-mvc-commands)
 and
-[Customizing the Product Menu](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu)
+[Customizing the Product Menu](/docs/7-0/tutorials/-/knowledge_base/t/customizing-the-product-menu)
 are articles describing how to extend a @product@ extension point. Want to
 learn how to
-[override module JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-a-modules-jsps)
-or [@product@ core JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-core-jsps)?
+[override module JSPs](/docs/7-0/tutorials/-/knowledge_base/t/overriding-a-modules-jsps)
+or [@product@ core JSPs](/docs/7-0/tutorials/-/knowledge_base/t/overriding-core-jsps)?
 Those processes are documented too!
 
 There are a few corner cases where you may need an Ext plugin to customize a
 part of @product@ that does not provide an extension point. Refer to the top of
 this tutorial for Ext plugin use cases supported by Liferay.
 
-+$$$
-
-**Note:** In previous versions of Liferay Portal, you needed an Ext plugin to
-specify classes as portal property values (e.g.,
-`global.starup.events.my.custom.MyStartupAction`), since the custom class had to
-be added to the portal class loader. This is no longer the case in @product-ver@
-since all lifecycle events can use OSGi services with no need to edit these
-legacy properties.
-
-$$$
+| **Note:** In previous versions of Liferay Portal, you needed an Ext plugin to
+| specify classes as portal property values (e.g.,
+| `global.starup.events.my.custom.MyStartupAction`), since the custom class had to
+| be added to the portal class loader. This is no longer the case in @product-ver@
+| since all lifecycle events can use OSGi services with no need to edit these
+| legacy properties.
 
 Now that you know how to make an informed decision on using Ext plugins, if you
 still need to use them, you'll learn how to create one next.
 
-## Creating an Ext Plugin [](id=creating-an-ext-plugin)
+## Creating an Ext Plugin
 
 An Ext plugin is a powerful tool for extending @product@. Because it increases
 the complexity of your @product@ installation, you should only use an Ext plugin
 if you're sure you can't accomplish your goal in a different way. You can only
 create Ext plugins from a Plugins SDK. If you're using a
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
+[Liferay Workspace](/docs/7-0/tutorials/-/knowledge_base/t/liferay-workspace)
 to create your @project@ projects, you can
-[merge a Plugins SDK instance](/develop/tutorials/-/knowledge_base/7-0/configuring-a-liferay-workspace#using-a-plugins-sdk-from-your-workspace)
+[merge a Plugins SDK instance](/docs/7-0/tutorials/-/knowledge_base/t/configuring-a-liferay-workspace#using-a-plugins-sdk-from-your-workspace)
 into the workspace.
 
-### Creating an Ext Plugin Using Liferay @ide@ [](id=creating-an-ext-plugin-using-liferay-ide)
+### Creating an Ext Plugin Using Liferay @ide@
 
 Follow the steps below, replacing the project name with your own, to create a
 custom Ext plugin:
@@ -165,7 +161,7 @@ creates your Ext plugin's project folder. Your Ext plugin project is added to
 your configured Plugins SDK instance and is also available via @ide@'s Package
 Explorer for further development.
 
-### Creating an Ext Plugin Using the Command Line [](id=creating-an-ext-plugin-using-the-command-line)
+### Creating an Ext Plugin Using the Command Line
 
 To create a new Ext plugin from the command line, navigate to the `ext` folder
 in your Liferay Plugins SDK and enter the command below appropriate for your
@@ -186,7 +182,7 @@ A `BUILD SUCCESSFUL` message from Ant tells you there's a new folder (e.g.,
 folder `example-ext` for a project named *example*) inside your Plugins SDK's
 `ext` folder. The Plugins SDK automatically appends `-ext` to the project name. 
 
-### Anatomy of an Ext Plugin [](id=anatomy-of-an-ext-plugin)
+### Anatomy of an Ext Plugin
 
 There are a few things to note about an Ext plugin's folder structure. Below
 is a listing of an Ext folder structure:
@@ -269,20 +265,16 @@ version, author, and license type.
    - `web.xml`: Used to overwrite web application configurations and servlet
      information for @product-ver@.
 
-+$$$
-
-**Note:** After creating an Ext plugin, remove the files from
-`docroot/WEB-INF/ext-web/docroot/WEB-INF` that you don't need to customize.
-Removing files you're not customizing prevents incompatibilities that could
-manifest from @product@ updates. 
-
-$$$
+| **Note:** After creating an Ext plugin, remove the files from
+| `docroot/WEB-INF/ext-web/docroot/WEB-INF` that you don't need to customize.
+| Removing files you're not customizing prevents incompatibilities that could
+| manifest from @product@ updates.
 
 Great! You've now created an Ext plugin and are familiar with its folder
 structure and its most significant files. Next, you'll use your Ext plugin to
 customize @product@. 
 
-## Developing an Ext Plugin [](id=developing-an-ext-plugin)
+## Developing an Ext Plugin
 
 An Ext plugin changes @product@ itself when the plugin is deployed; it's not a
 separate component that you can easily remove at any time. For this reason, the
@@ -319,7 +311,7 @@ development processes described below:
 
 It's time to learn each step of the development process. 
 
-### Set Up the Build Environment [](id=set-up-the-build-environment)
+### Set Up the Build Environment
 
 Before deploying an Ext plugin, you must edit the `build.[username].properties`
 file in the root folder of your Plugins SDK. If the file doesn't yet exist,
@@ -352,17 +344,17 @@ path* to the application server *within* the @product@ bundle `.zip` file is
 
 Next you'll modify the Ext plugin you created and deploy it. 
 
-### Initial Deployment [](id=initial-deployment)
+### Initial Deployment
 
 Your environment is set up and you're ready to start customizing. Once you're
 finished, you can deploy the plugin. 
 
-#### Deploy the Plugin [](id=deploy-the-plugin)
+#### Deploy the Plugin
 
 Now you'll learn how to deploy your plugin using Liferay @ide@ or the command
 line. 
 
-##### Deploying in Liferay @ide@ [](id=deploying-in-liferay-ide)
+##### Deploying in Liferay @ide@
 
 Drag your Ext plugin project from your Package Explorer onto your server to
 deploy your plugin. Liferay @ide@ automatically restarts the server for the
@@ -373,7 +365,7 @@ plugin may not have successfully deployed. To confirm whether the Ext plugin
 deploys successfully, try deploying from the command line; the Ant deployment
 targets report success or failure. 
 
-##### Deploying via the Command Line [](id=deploying-via-the-command-line)
+##### Deploying via the Command Line
 
 1.  Open a command line window in your Ext plugin project folder and enter one
     of these commands: 
@@ -417,7 +409,7 @@ plugin. You can make unlimited customizations to an Ext plugin that has already
 been deployed, but the redeployment process is different from other project
 types. You'll learn more on redeploying your Ext plugin next.
 
-### Redeployment [](id=redeployment)
+### Redeployment
 
 So far, Ext plugin development has been similar to the development of other
 plugin types. You've now reached the point of divergence. When the plugin is
@@ -427,7 +419,7 @@ depending on the modifications you made to your plugin following the initial
 deployment. You'll learn about each redeployment method and when to use each
 one.
 
-#### Clean Redeployment [](id=clean-redeployment)
+#### Clean Redeployment
 
 If you removed part(s) of your plugin, if there are changes to your plugin that
 can affect plugin deployment, or if you want to start with a clean @product@
@@ -437,7 +429,7 @@ redeploying your Ext plugin. By cleaning the application server, the existing
 environment is unzipped in its place. See the instructions below to learn more
 about this process.
 
-##### Using Liferay @ide@ [](id=using-liferay-ide)
+##### Using Liferay @ide@
 
 1.  Remove the plugin from the server. While selecting the Ext plugin in the
     *Servers* view, select the plugin's *Remove* option. 
@@ -458,7 +450,7 @@ about this process.
 5.  While selecting the Liferay server in the *Servers* view, click the
     *Publish* option. 
 
-##### Using the Command Line [](id=using-the-command-line)
+##### Using the Command Line
 
 1.  Stop the @product@ server. 
 
@@ -470,17 +462,17 @@ about this process.
 
 3.  Start the @product@ server. 
 
-#### Redeployment [](id=redeployment-0)
+#### Redeployment
 
 If you only added to your plugin or made modifications that don't affect the
 plugin deployment process, you can redeploy the Ext plugin. Follow the steps
 based on the tool you're using.
 
-##### Using Liferay @ide@ [](id=using-liferay-ide-0)
+##### Using Liferay @ide@
 
 Right-click your plugin located underneath your server and select *Redeploy*. 
 
-##### Using the Command Line [](id=using-the-command-line-0)
+##### Using the Command Line
 
 Using the same procedure as for initial deployment. Open a command line window
 in your Ext plugin project's directory and execute either `ant deploy` or `ant
@@ -491,17 +483,17 @@ available.
 
 Next you'll learn how to package an Ext plugin for distribution and production. 
 
-### Distribution [](id=distribution)
+### Distribution
 
 Once you're finished developing an Ext plugin, you can package it in a `.war`
 file for distribution and production deployment. 
 
-#### Using Liferay @ide@ [](id=using-liferay-ide-1)
+#### Using Liferay @ide@
 
 With your Ext plugin project selected in the *Package Explorer* view, select the
 project's *Liferay* &rarr; *SDK* &rarr; *war* option. 
 
-#### Using the Command Line [](id=using-the-command-line-1)
+#### Using the Command Line
 
 From your Ext plugin's directory execute
 
@@ -512,7 +504,7 @@ The `.war` file is written to your `[liferay-plugins]/dist` directory.
 Now that you've learned the basics of Ext plugin development, you'll look at
 some advanced customizations. 
 
-### Using Advanced Configuration Files [](id=using-advanced-configuration-files)
+### Using Advanced Configuration Files
 
 @product@ uses several internal configuration files for its own architecture; in
 addition, there are configuration files for the libraries and frameworks
@@ -558,7 +550,7 @@ to the original file in @product@:
 
 You'll learn how to deploy your Ext plugin in production next.
 
-## Deploying in Production [](id=deploying-in-production)
+## Deploying in Production
 
 Often, you can't use Ant to deploy web applications in production or
 pre-production environments. Additionally, some application servers such as
@@ -566,7 +558,7 @@ WebSphere or WebLogic have their own deployment tools and don't work with
 @product@'s auto-deployment process. Here are two methods to consider for
 deploying and redeploying an Ext plugin in production. 
 
-### Method 1: Redeploying Liferay's Web Application [](id=method-1-redeploying-liferays-web-application)
+### Method 1: Redeploying Liferay's Web Application
 
 You can use this method in any application server that supports auto-deployment;
 What's the benefit? The only artifact that needs to be transferred to the
@@ -591,7 +583,7 @@ steps on the server:
 3.  Once the Ext plugin is detected and deployed by @product@, restart your
     @product@ server. 
 
-### Method 2: Generate an Aggregated WAR File [](id=method-2-generate-an-aggregated-war-file)
+### Method 2: Generate an Aggregated WAR File
 
 Some application servers don't support auto-deploy; WebSphere and WebLogic are
 two examples. With an aggregated `.war` file, the Ext plugin is merged before
@@ -621,7 +613,7 @@ Now, perform these actions on your server:
 
 Next, you'll learn about Liferay's licensing and contributing standards.
 
-## App Server Configuration [](id=app-server-configuration)
+## App Server Configuration
 
 If you're using the Tomcat app server and have not upgraded to Liferay DE SP4+,
 you must modify your app server's `conf/Catalina/localhost/ROOT.xml` file. Add
@@ -637,12 +629,12 @@ the following code to that file:
 
 Be sure to place this code within the existing `<Context>` tags.
 
-## Summary [](id=summary)
+## Summary
 
 An Ext plugin is a powerful way to extend @product@. There are no limits to what
 you can customize, so use it carefully. Before using an Ext plugin, see if you
 can implement all or part of the desired functionality through
-[Application Display Templates](/develop/tutorials/-/knowledge_base/7-0/application-display-templates)
+[Application Display Templates](/docs/7-0/tutorials/-/knowledge_base/t/application-display-templates)
 or a different plugin type. OSGi modules offer you a lot of extension
 capabilities themselves, without introducing the complexity that's inherent with
 Ext plugins. If you need to use an Ext plugin, make your customization as small

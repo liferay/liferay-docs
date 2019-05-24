@@ -1,12 +1,16 @@
-# Working Together with the Wiki [](id=working-together-with-the-wiki)
+---
+header-id: working-together-with-the-wiki
+---
+
+# Working Together with the Wiki
 
 @product@'s Wiki is a full-featured [wiki](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Wiki)
 application which has all the features you would expect in a state of the art
 wiki. Again, though, it has the benefit of being able to take advantage of all
 the features of @product@. As such, it is completely integrated
-with @product@'s [user management](/discover/portal/-/knowledge_base/7-0/user-management),
-[tagging](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories),
-and [security features](/discover/deployment/-/knowledge_base/7-0/liferay-portal-security).
+with @product@'s [user management](/docs/7-0/user/-/knowledge_base/u/user-management),
+[tagging](/docs/7-0/user/-/knowledge_base/u/organizing-content-with-tags-and-categories),
+and [security features](/docs/7-0/deploy/-/knowledge_base/d/liferay-portal-security).
 
 So what is a wiki? A wiki is an application that allows users to
 collaboratively build a repository of information. There are, of course, many
@@ -32,7 +36,7 @@ An instance of the Wiki application can be created for each scope: the entire
 @product@ virtual instance (global scope), a site, or a page. It's time to see how
 to use your site's Wiki application instance. 
 
-## Getting Started with Wikis [](id=getting-started-with-wikis)
+## Getting Started with Wikis
 
 The menu provides the best place to start working with your wikis. To start
 working with wikis for your site, click on the *Menu* icon
@@ -55,12 +59,12 @@ application templates are accessible from the Options menu. Click the
 
 Here are the wiki application instance options screens:
 
-**Wikis Permissions**: allows you to specify which roles [roles](/discover/portal/-/knowledge_base/7-0/roles-and-permissions)
+**Wikis Permissions**: allows you to specify which roles [roles](/docs/7-0/user/-/knowledge_base/u/roles-and-permissions)
 can create wiki nodes and which roles can access the Wikis Permissions screen.
 
 **Export / Import**: enables you to import existing wiki content into your wiki
 application instance or export wiki content to a file. Refer to
-[Importing/Exporting Pages and Content](/discover/portal/-/knowledge_base/7-0/importing-exporting-pages-and-content)
+[Importing/Exporting Pages and Content](/docs/7-0/user/-/knowledge_base/u/importing-exporting-pages-and-content)
 for details.
 
 **Configuration**: has tabs for configuring email notifications and a tab for
@@ -123,7 +127,7 @@ what happened.
 **View Removed Attachments**: displays attachments that have been removed from
 the wiki node.
 
-**Move to the Recycle Bin**: moves the wiki node to the [Recycle Bin](/discover/portal/-/knowledge_base/7-0/restoring-deleted-assets).
+**Move to the Recycle Bin**: moves the wiki node to the [Recycle Bin](/docs/7-0/user/-/knowledge_base/u/restoring-deleted-assets).
 
 The figure below shows the wiki node options menu.
 
@@ -134,11 +138,11 @@ associate a workflow with them. For example, you could create a workflow that
 requires an administrator's approval to publish a wiki page modification (add,
 update, or delete). You can access your site's default *Wiki Page* workflow from
 within the Product Menu, by navigating to *Configuration &rarr; Workflow
-Configuration* for your site. To learn how to use workflow, refer to [Using Workflow](/discover/portal/-/knowledge_base/7-0/using-workflow).
+Configuration* for your site. To learn how to use workflow, refer to [Using Workflow](/docs/7-0/user/-/knowledge_base/u/using-workflow).
 
 Next, let's create our wiki node's front page. 
 
-## Adding and Editing Wiki Pages [](id=adding-and-editing-wiki-pages)
+## Adding and Editing Wiki Pages
 
 When you create a wiki node, it has no pages. It's not until you navigate into
 that node that a default page called *FrontPage* is created automatically. To
@@ -148,7 +152,7 @@ The message is a link; cick on it to start editing the page.
 
 ![Figure 4: Each empty wiki page presents a default message link you can click to edit the page.](../../../images/wiki-empty-frontpage.png)
 
-Wiki uses a WYSIWYG editor, similar to the one used in [Blogs](/discover/portal/-/knowledge_base/7-0/publishing-blogs).
+Wiki uses a WYSIWYG editor, similar to the one used in [Blogs](/docs/7-0/user/-/knowledge_base/u/publishing-blogs).
 The content section's default message *Write your content here...* entices you
 to write. Click there and start entering text. 
 
@@ -163,7 +167,7 @@ menu (![Insert](../../../images/icon-content-insert-controls.png)).
 
 ![Figure 5: When you highlight text in the wiki page editor, a formatting toolbar appears. You can apply common markups to the text, make it a list item or a link, or remove existing markup.](../../../images/wiki-page-highlight-content-text.png)
 
-If you need to modify an image for your wiki, use the [Image Editor](/discover/portal/-/knowledge_base/7-0/editing-images).
+If you need to modify an image for your wiki, use the [Image Editor](/docs/7-0/user/-/knowledge_base/u/editing-images).
 Click the `+` icon and select the mountain silhouette to add an image. Select an
 existing image from the Documents and Media repository, and click the pencil
 icon (![Pencil](../../../images/icon-edit-pencil.png)) in the bottom right
@@ -219,17 +223,13 @@ In the edit screen's *Configuration* section, you can set the page to use
 Creole wiki format, HTML, or plain text. We recommend that you stick with the 
 Creole format, as it allows for a much cleaner separation of content and code.
 
-+$$$
-
-**Note:** The MediaWiki and JSPWiki engines and formats are also available in
-respective deprecated apps on the Marketplace.
-
-To install the JSPWiki engine, you must first remove the Creole engine by 
-uninstalling the `com.liferay.wiki.engine.creole` bundle from your Liferay 
-instance. The JSPWiki format will display in the format selector as *Creole*
-since it is an extension of the Creole engine. 
-
-$$$
+| **Note:** The MediaWiki and JSPWiki engines and formats are also available in
+| respective deprecated apps on the Marketplace.
+| 
+| To install the JSPWiki engine, you must first remove the Creole engine by
+| uninstalling the `com.liferay.wiki.engine.creole` bundle from your Liferay
+| instance. The JSPWiki format will display in the format selector as *Creole*
+| since it is an extension of the Creole engine.
 
 Similar to other @product@ applications, in the *Related Assets* section of
 the editor, you can select other assets to associate with the wiki page. And
@@ -255,15 +255,11 @@ page stating that the page does not exist yet, and that you are creating it
 right now. As you can see, it is very easy to create wiki pages. All you have to
 do is create a link, click on the link, and create the wiki page.
 
-+$$$
-
-**Note**: when you create a page by clicking on a link to a page that does not
-yet exist, the new page is **not** a child of the current page. The page is
-created at the wiki node's root. From Wiki in Site Administration, you can use
-the page's Move action to assign it a new parent page. Clicking on the *Move*
-action brings up a window that lets you select a new parent for the wiki page. 
-
-$$$
+| **Note**: when you create a page by clicking on a link to a page that does not
+| yet exist, the new page is **not** a child of the current page. The page is
+| created at the wiki node's root. From Wiki in Site Administration, you can use
+| the page's Move action to assign it a new parent page. Clicking on the *Move*
+| action brings up a window that lets you select a new parent for the wiki page.
 
 On exiting the wiki page editor, you're brought back to the wiki node's view. It shows
 all of the node's top-level wiki pages. In our case, *FrontPage* is our only
@@ -320,7 +316,7 @@ as we use the Wiki application on site pages. Let's go to your site by clicking
 (![Menu](../../../images/icon-menu.png)). We're ready to add Wiki applications
 to the site's pages. 
 
-## Using the Wiki Applications on Site Pages [](id=using-the-wiki-applications-on-site-pages)
+## Using the Wiki Applications on Site Pages
 
 The Wiki application works just like the other Liferay applications. Open the
 Add menu by clicking the *Add* icon
@@ -342,7 +338,7 @@ displaying them. The *Enable Related Assets*, *Enable Page Ratings*, *Enable
 Comments*, and *Enable Comment Ratings* check boxes let you enable or disable
 those features for the Wiki app. They give you the ability to set how you want
 users to interact with wiki documents: a little, a lot, or not at all. The
-*Display Template* drop-down option lets you choose the [Application Display Template](/discover/portal/-/knowledge_base/7-0/styling-apps-with-application-display-templates)
+*Display Template* drop-down option lets you choose the [Application Display Template](/docs/7-0/user/-/knowledge_base/u/styling-apps-with-application-display-templates)
 for the app. Below this, you can set which wikis (wiki nodes) are
 visible in the Wiki and which are hidden. You might host two wikis on a given
 site, exposing one to the public and keeping the other private for site members.
@@ -394,9 +390,9 @@ click *Save*.
 
 Along with the Configuration option, the Wiki application's options menu lists
 all of the standard application options. The options enable you to specify the
-app's [look and feel](/discover/portal/-/knowledge_base/7-0/look-and-feel-configuration),
-[export or import app data](/discover/portal/-/knowledge_base/7-0/exporting-importing-app-data),
-minimize or maximize the app in the browser, use [Configuration Templates](/discover/portal/-/knowledge_base/7-0/configuration-templates)
+app's [look and feel](/docs/7-0/user/-/knowledge_base/u/look-and-feel-configuration),
+[export or import app data](/docs/7-0/user/-/knowledge_base/u/exporting-importing-app-data),
+minimize or maximize the app in the browser, use [Configuration Templates](/docs/7-0/user/-/knowledge_base/u/configuration-templates)
 to store your current application setup or apply an existing archived setup to
 this application instance, or remove the app from the page.
 
@@ -439,13 +435,13 @@ Edit icon brings up the edit screen. Clicking the Print icon brings up the
 browser's page printing window. Between these two options is the *Details* option,
 which we'll explore next. 
 
-## Page Details [](id=page-details)
+## Page Details
 
 When viewing a page, you can view its details by clicking the *Details* icon
 above the page content. Several tabs appear, to give you access to several
 categories of information about the page.
 
-### Details [](id=details)
+### Details
 
 The Details tab shows various statistics about the page, and also allows you to
 perform some actions on the page.
@@ -476,7 +472,7 @@ node.
 the page, make a copy of the page, move (rename) the page, or move the page to
 the recycle bin.
 
-### History [](id=history)
+### History
 
 The History tab lets you access the page's activities and versions. Its
 *Activities* tab lists actions performed on the page. Each activity has an
@@ -493,13 +489,13 @@ icon (![Revert](../../../images/icon-revert.png)). You can also compare the
 differences between versions by selecting two versions and then clicking the
 *Compare Versions* button.
 
-### Incoming/Outgoing Links [](id=incoming-outgoing-links)
+### Incoming/Outgoing Links
 
 The next two tabs are list incoming and outgoing links. These are wiki links to
 and from the page. You can use this tab to examine how this page links to other
 pages and how other pages link back to this page.
 
-### Attachments [](id=attachments)
+### Attachments
 
 The *Attachments* tab lists the name and size of each file attached to the page.
 You can attach any file to the wiki. Image files are the most common type of
@@ -512,7 +508,7 @@ you create, maintain, and consume wiki pages. In addition to the Wiki
 application there are several other applications that supplement it. You'll
 learn about them next.
 
-## Supplemental Wiki Applications [](id=supplemental-wiki-applications)
+## Supplemental Wiki Applications
 
 The applications that accompany the Wiki application help you display particular
 wiki nodes and navigate them. To use them on a page, click the *Add* icon
@@ -522,7 +518,7 @@ onto the page.
 
 Let's first explore the Wiki Display.
 
-### Wiki Display [](id=wiki-display)
+### Wiki Display
 
 The Wiki Display application enables you to focus user attention on one wiki
 node. Click on the app's Options icon
@@ -539,7 +535,7 @@ identical to that of the Wiki application.
 To help users navigate the wikis in a site page's Wiki Display or Wiki
 applications, you can use the Tree Menu app. 
 
-### Tree Menu [](id=tree-menu)
+### Tree Menu
 
 The Tree Menu application displays a wiki's page hierarchy as a tree. It lets
 you navigate all of a wiki's pages. Much like Wiki Display setup, you configure
@@ -557,7 +553,7 @@ on the site page displays the respective wiki page.
 
 There's even a Page Menu application that presents a wiki page's outgoing links. 
 
-### Page Menu [](id=page-menu)
+### Page Menu
 
 The Page Menu app lets you display a wiki page's outgoing links. It answers the
 question, "What wiki pages can I access from this page?" As with the Tree Menu
@@ -569,7 +565,7 @@ the Page Menu application operates.
 When you click on a Page Menu link, the site page's Wiki or Wiki Display application
 displays the wiki page associated with the link. 
 
-## Summary [](id=summary)
+## Summary
 
 @product@'s Wiki application is another full-featured Liferay application
 with all of the features and sub-applications you expect from a state of the art

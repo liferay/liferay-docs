@@ -1,4 +1,8 @@
-# Liferay @ide@ [](id=liferay-ide)
+---
+header-id: liferay-ide
+---
+
+# Liferay @ide@
 
 Liferay @ide@ is an extension for the Eclipse platform that supports development
 of @product@ plugins. The Liferay @ide@ environment is fully integrated with

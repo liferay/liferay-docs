@@ -1,7 +1,11 @@
-# Supporting Workflow at the Service Layer [](id=supporting-workflow-at-the-service-layer)
+---
+header-id: supporting-workflow-at-the-service-layer
+---
+
+# Supporting Workflow at the Service Layer
 
 When you 
-[asset enabled the Guestbook Application](/develop/tutorials/-/knowledge_base/7-0/assets-integrating-with-liferays-framework),
+[asset enabled the Guestbook Application](/docs/7-0/tutorials/-/knowledge_base/t/assets-integrating-with-liferays-framework),
 you added four database columns in the Guestbook entities (e.g., `GB_Entry`)
 that keep track of workflow status (they're already added; celebrate!). The
 necessary fields are `status`, `statusByUserName`, `statusByUserId`, and

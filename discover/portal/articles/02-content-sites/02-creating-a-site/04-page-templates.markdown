@@ -1,4 +1,8 @@
-# Page Templates [](id=page-templates)
+---
+header-id: page-templates
+---
+
+# Page Templates
 
 <div class="learn-path-step">
     <p>Creating A Site<br>Step 4 of 6</p>
@@ -14,7 +18,7 @@ template, then you'll use it to create several pages. Later, you'll make changes
 to the template and see @product@ propagate those changes to the pages you
 created from the template. 
 
-## Creating a Page Template [](id=creating-a-page-template)
+## Creating a Page Template
 
 Use these steps to create a page template:
 
@@ -37,7 +41,7 @@ Use these steps to create a page template:
 5.  Click *Save*. This takes you back to the list of page templates, where you 
     can see the new template in the list. 
 
-## Editing a Page Template [](id=editing-a-page-template)
+## Editing a Page Template
 
 Editing a page template is similar to editing any page. You drag and drop
 applications onto the page and reposition or remove them as desired. The only
@@ -65,7 +69,7 @@ edit the page template you just created:
 
 Next, you'll create a page with this template. 
 
-## Creating a Page with a Page Template [](id=creating-a-page-with-a-page-template)
+## Creating a Page with a Page Template
 
 Follow these steps to use the template to create a page: 
 

@@ -1,4 +1,8 @@
-# Administering Liferay Sync [](id=administering-liferay-sync)
+---
+header-id: administering-liferay-sync
+---
+
+# Administering Liferay Sync
 
 Liferay Sync is an add-on product for @product@ that synchronizes files between
 your @product@ server and users' desktop and mobile environments. With Liferay
@@ -19,12 +23,12 @@ sites. In addition to basic configuration, important topics such as security and
 accidental data loss are covered. Note, you must be an administrator to set up 
 your @product@ instance for Sync. If you're not an instance or site 
 administrator, you can skip this guide and move on to 
-[installing and using the Sync desktop client](/discover/portal/-/knowledge_base/7-0/using-liferay-sync-on-your-desktop). 
+[installing and using the Sync desktop client](/docs/7-0/user/-/knowledge_base/u/using-liferay-sync-on-your-desktop). 
 
 To prepare your @product@ instance for Sync, you must first install Sync's 
 prerequisite apps. 
 
-## Installing Sync's Prerequisites [](id=installing-the-sync-connector-plugin)
+## Installing Sync's Prerequisites
 
 Liferay Sync requires that your @product@ instance contains the most recent 
 versions of the following Liferay Marketplace apps: 
@@ -45,18 +49,14 @@ these apps are installed in your @product@ instance, navigate to *Control Panel*
 You can also search for them in the *Search* field at the upper right. If your 
 @product@ instance doesn't contain these apps, install them from Liferay 
 Marketplace. 
-[Click here for instructions on installing apps from Liferay Marketplace](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace). 
+[Click here for instructions on installing apps from Liferay Marketplace](/docs/7-0/user/-/knowledge_base/u/using-the-liferay-marketplace). 
 
 Note that older Sync 1.x clients can't connect to the latest Sync Connector app. 
 
-+$$$
-
-**Note:** The Liferay Sync Security module that Sync requires is included and 
-enabled by default in @product@. You can verify this by ensuring that the 
-`SYNC_DEFAULT` and `SYNC_TOKEN` entries are enabled in *Control Panel* &rarr; 
-*Configuration* &rarr; *Service Access Policy*. 
-
-$$$
+| **Note:** The Liferay Sync Security module that Sync requires is included and
+| enabled by default in @product@. You can verify this by ensuring that the
+| `SYNC_DEFAULT` and `SYNC_TOKEN` entries are enabled in *Control Panel* &rarr;
+| *Configuration* &rarr; *Service Access Policy*.
 
 If you want to use Sync Connector's default settings and are fine with Sync 
 being enabled for all your @product@ instance's sites, you can skip the next 
@@ -65,7 +65,7 @@ and mobile clients, however, **Make sure to read** this guide's sections on
 preventing accidental file deletion and ensuring Sync security. You should also 
 **warn your users** about the potential for accidental data loss. 
 
-## Configuring Liferay Sync [](id=using-sync-admin-to-configure-liferay-sync)
+## Configuring Liferay Sync
 
 Sync Connector lets you manage how, or if, clients connect to your @product@ 
 instance. You can also configure default file permissions on a per-site basis, 
@@ -133,16 +133,12 @@ Sync Connector Admin has three tabs:
     so **deletes** files for that site from the Sync clients. Disabling Sync for 
     a site, however, doesn't affect the site's files in the @product@ instance. 
 
-    +$$$
-
-    **Warning:** Disabling Sync for specific sites from Sync Connector Admin can 
-    result in data loss across clients. If Sync is disabled for a site users are 
-    currently syncing, any files in the clients' sync folders for that site are 
-    automatically deleted from their clients. If a user is offline when Sync is 
-    disabled for a site, any offline changes or additions they make are deleted 
-    upon client reconnection. 
-
-    $$$
+    | **Warning:** Disabling Sync for specific sites from Sync Connector Admin can
+    | result in data loss across clients. If Sync is disabled for a site users are
+    | currently syncing, any files in the clients' sync folders for that site are
+    | automatically deleted from their clients. If a user is offline when Sync is
+    | disabled for a site, any offline changes or additions they make are deleted
+    | upon client reconnection.
 
     You can enable Sync for a site by selecting *Enable Sync Site* from its 
     Actions button. To enable Sync for multiple sites, select their checkboxes 
@@ -197,7 +193,7 @@ Awesome! Now that you know how to configure Sync in your @product@ instance,
 it's time to look closer at a use case that warrants special attention for 
 administrators: accidental file deletion. 
 
-## Protecting Against Accidental File Deletion [](id=protecting-against-accidental-file-deletion)
+## Protecting Against Accidental File Deletion
 
 Liferay Sync's power rests in its ability to propagate between the @product@ 
 instance and connected Sync clients. When a user deletes a file from a connected 
@@ -209,19 +205,15 @@ disaster waiting to happen!" Don't fret! @product@'s Recycle Bin is enabled by
 default and lets you recover deleted files. You can access the Recycle Bin from 
 each site's *Site Administration* menu. 
 
-+$$$
-
-**Warning:** Liferay Sync automatically propagates file and folder deletion
-through the @product@ instance and in all connected clients. If an instance or 
-site administrator disables the Recycle Bin, deleted files can't be recovered.
-
-$$$
+| **Warning:** Liferay Sync automatically propagates file and folder deletion
+| through the @product@ instance and in all connected clients. If an instance or
+| site administrator disables the Recycle Bin, deleted files can't be recovered.
 
 @product@ instance and site administrators can, of course, disable the Recycle 
 Bin. Disabling the Recycle Bin in a site, however, leaves the site vulnerable to
 accidental file deletions that propagate through Sync. 
 
-## Ensuring Sync Security [](id=ensuring-sync-security)
+## Ensuring Sync Security
 
 As an administrator, you're undoubtedly concerned about the security of all
 connections to and from your @product@ instance. As long as your server is 
@@ -232,7 +224,7 @@ and securely transmit files, your @product@ server must also use SSL. The next
 section demonstrates how Sync's permissions work with your @product@ instance's 
 permissions. 
 
-## Liferay Sync Permissions Demonstration [](id=liferay-sync-permissions-demonstration)
+## Liferay Sync Permissions Demonstration
 
 Sync uses @product@'s default permissions to determine files and folders to sync
 with the user's devices. It can only sync files a user can access in the 

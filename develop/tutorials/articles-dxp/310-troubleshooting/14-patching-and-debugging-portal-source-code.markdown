@@ -1,4 +1,8 @@
-# Patching DXP Source Code [](id=patching-dxp-source-code)
+---
+header-id: patching-dxp-source-code
+---
+
+# Patching DXP Source Code
 
 Auto mechanics, enthusiasts, and prospective owners ask about cars, "What's
 under the hood?" Here are common reasons for asking that question:
@@ -21,7 +25,7 @@ Here's how:
 
 [Step 3: Patch the DXP source code](#patch-the-dxp-source-code)
 
-## Step 1: Download DXP, the DXP source code, and patches [](id=download-dxp-the-dxp-source-code-and-patches)
+## Step 1: Download DXP, the DXP source code, and patches
 
 1.  Download a DXP bundle (or DXP JARs) and the DXP source code for the version
     you're using from the [customer
@@ -37,15 +41,15 @@ packs and fix pack source code. If you have a patched DXP installation already
 and want to use it, skip to the section
 [Patching the DXP Source Code](#patch-the-dxp-source-code).
 
-## Step 2: Prepare DXP [](id=prepare-dxp)
+## Step 2: Prepare DXP
 
 Preparing DXP locally involves installing, configuring, and patching DXP. 
 
-### Install and Configure DXP [](id=install-and-configure-dxp)
+### Install and Configure DXP
 
 Here's how to install and configure DXP: 
 
-1.   [Install and Deploy DXP](/discover/deployment/-/knowledge_base/7-0/deploying-liferay-portal)
+1.   [Install and Deploy DXP](/docs/7-0/deploy/-/knowledge_base/d/deploying-liferay-portal)
 locally. 
 
 2.  Start DXP.
@@ -56,7 +60,7 @@ locally.
 
 It's time apply the DXP patches you want.
 
-### Patch DXP [](id=patch-dxp)
+### Patch DXP
 
 Here's how to patch DXP:
 
@@ -69,7 +73,7 @@ Here's how to patch DXP:
 3.  Run the command `patching-tool.sh auto-discovery` to generate the default
     patching profile called `default.properties`. Make sure the profile's
     properties refer to your DXP installation. See the
-    [patching tool documentation](/discover/deployment/-/knowledge_base/7-0/patching-tool)
+    [patching tool documentation](/docs/7-0/deploy/-/knowledge_base/d/patching-tool)
     for more details.
 
     Here's an example profile:
@@ -89,19 +93,19 @@ Here's how to patch DXP:
         patching-tool.sh install
 
     The
-    [patching tool documentation](/discover/deployment/-/knowledge_base/7-0/patching-tool)
+    [patching tool documentation](/docs/7-0/deploy/-/knowledge_base/d/patching-tool)
     describes additional steps that might apply to your situation, such as
     creating database indexes.
 
 It's time to prepare the DXP source code and patch source code. 
 
-## Step 3: Patch the DXP Source Code [](id=patch-the-dxp-source-code)
+## Step 3: Patch the DXP Source Code
 
 Unzip the DXP source code to where you want to work with it. 
 
 Next you'll create a patching tool profile for your DXP source code. 
 
-### Create a Patching Tool Profile for the Source Code [](id=create-a-patching-tool-profile-for-the-source-code)
+### Create a Patching Tool Profile for the Source Code
 
 Here's how to create a profile that refers to your source code. 
 
@@ -119,7 +123,7 @@ Here's how to create a profile that refers to your source code.
 
 It's time to apply the DXP patches you downloaded earlier. 
 
-## Patch the Source Code [](id=patch-the-source-code)
+## Patch the Source Code
 
 DXP's patching tool is safe and easy to use. Beyond installing patches, it has
 these functions:
@@ -130,32 +134,28 @@ these functions:
 
 See the following patching tool documentation for more details:
 
--   [Comparing Patch Levels](/discover/deployment/-/knowledge_base/7-0/patching-tool#comparing-patch-levels)
--   [Removing or Reverting Patches](/discover/deployment/-/knowledge_base/7-0/patching-tool#removing-or-reverting-patches)
+-   [Comparing Patch Levels](/docs/7-0/deploy/-/knowledge_base/d/patching-tool#comparing-patch-levels)
+-   [Removing or Reverting Patches](/docs/7-0/deploy/-/knowledge_base/d/patching-tool#removing-or-reverting-patches)
 
-+$$$
-
-In addition to using the patching tool to manage DXP source code, you can
-optionally manage it in a version control system such as
-[Git](https://git-scm.com/). 
-
-Here are commands for setting up the DXP source code in Git:
-
-    cd [path to source code root folder]
-    git init
-    git add .
-    git commit -a
-
-Here's are the command descriptions:
-
--   `init` creates a Git repository for the current folder (i.e., the root
-    folder) and all its contents.
--   `add` stages the root folder and its contents.
--   `commit` checks in the staged files.
-
-You can commit any code changes (e.g., DXP patches) to your Git repository. 
-
-$$$
+| In addition to using the patching tool to manage DXP source code, you can
+| optionally manage it in a version control system such as
+| [Git](https://git-scm.com/).
+| 
+| Here are commands for setting up the DXP source code in Git:
+| 
+|     cd [path to source code root folder]
+|     git init
+|     git add .
+|     git commit -a
+| 
+| Here's are the command descriptions:
+| 
+| -   `init` creates a Git repository for the current folder (i.e., the root
+|     folder) and all its contents.
+| -   `add` stages the root folder and its contents.
+| -   `commit` checks in the staged files.
+| 
+| You can commit any code changes (e.g., DXP patches) to your Git repository.
 
 The patching tool installs all patches and patch source code from the ZIP files
 it finds in `[LIFERAY_HOME]/patching-tool/patches`. All your patches must be in
@@ -182,8 +182,8 @@ your debugger's documentation for configuration details.
 
 Congratulations! You're free to explore DXP inside and out!
 
-## Related Topics (id=related-topics) [](id=related-topics-idrelated-topics)
+## Related Topics (id=related-topics)
 
-[Troubleshooting](/develop/tutorials/-/knowledge_base/7-0/troubleshooting)
+[Troubleshooting](/docs/7-0/tutorials/-/knowledge_base/t/troubleshooting)
 
-[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/liferay-ide)
+[Liferay @ide@](/docs/7-0/tutorials/-/knowledge_base/t/liferay-ide)

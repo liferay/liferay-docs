@@ -1,4 +1,8 @@
-# Configuring Modules for @product@'s Loaders [](id=configuring-modules-for-products-loaders)
+---
+header-id: configuring-modules-for-products-loaders
+---
+
+# Configuring Modules for @product@'s Loaders
 
 To load your modules in @product@, you need to know when they are needed, where 
 they are located at build time, if you want to bundle them together or load them 
@@ -25,12 +29,12 @@ This tutorial covers these concepts:
 -  How to configure JavaScript modules to use @product@'s Loaders
 -  How to use your loaded JavaScript modules in a portlet or a JavaScript
 
-See the [Preparing your JavaScript Files for ES2015](/develop/tutorials/-/knowledge_base/7-0/preparing-your-javascript-files-for-es2015)
+See the [Preparing your JavaScript Files for ES2015](/docs/7-0/tutorials/-/knowledge_base/t/preparing-your-javascript-files-for-es2015)
 tutorial to learn how to use ES2015 in your JavaScript modules. 
 
 Get started by configuring your module next.
 
-## Configuring your Module [](id=configuring-your-module)
+## Configuring your Module
 
 To use the loaders you must first define your modules. This metadata, known as 
 the *module definition*, provides details such as dependencies, name and 
@@ -42,7 +46,7 @@ a naming convention, but you can use whatever name you prefer.
 You must specify your configuration file's location in your bundle's `bnd.bnd` 
 file, so @product@ knows where to access it. You'll learn how to do this next.
 
-### Configuring your Bundle's BND File [](id=configuring-your-bundles-bnd-file)
+### Configuring your Bundle's BND File
 
 Follow these steps to configure your BND file:
 
@@ -63,7 +67,7 @@ Follow these steps to configure your BND file:
 
 Now that @product@ knows how to find the file, you can write it next.
 
-### Writing the Configuration File [](id=writing-the-configuration-file)
+### Writing the Configuration File
 
 Follow these steps to define your module:
 
@@ -82,7 +86,7 @@ Follow these steps to define your module:
     **YUI and AlloyUI modules:**  Use the `YUI.applyConfig` mechanism to provide 
     the module information. Note that AUI modules use the AUI mechanism built on
     top of the existing YUI mechanism: `AUI().applyConfig`. You can also use 
-    this mechanism to [override @product@'s default YUI/AUI modules](/develop/tutorials/-/knowledge_base/7-0/overriding-liferays-default-yui-and-aui-modules).
+    this mechanism to [override @product@'s default YUI/AUI modules](/docs/7-0/tutorials/-/knowledge_base/t/overriding-liferays-default-yui-and-aui-modules).
 
     **AMD or global libraries**: Use the `Liferay.Loader.addModule` mechanism to 
     provide the module information.
@@ -119,13 +123,9 @@ Follow these steps to define your module:
                 );
         })();
 
-+$$$
-
-**Note:** You can use the `MODULE_PATH` variable to reference your 
-module's location in relative paths. This mechanism is more robust and 
-reliable than hard coded paths in the event of modified system settings.
- 
-$$$
+| **Note:** You can use the `MODULE_PATH` variable to reference your
+| module's location in relative paths. This mechanism is more robust and
+| reliable than hard coded paths in the event of modified system settings.
  
 The parameters used in the AUI module example are defined below:
  
@@ -206,7 +206,7 @@ placement of their configuration.
 Now that your module is configured, you can learn how to use it in @product@ 
 next.
 
-## Using your Module [](id=using-your-module)
+## Using your Module
 
 Once your module is configured, you have a few ways in which you can use it in 
 @product@.
@@ -221,7 +221,7 @@ This example is configured to use a module in the JSP of a portlet, via the
 To adhere to JavaScript standards, references to the module within the script 
 tag are named after the require value, in camel-case and with all invalid 
 characters removed. For more information on using your module in a portlet, see
-the [Using ES2015 Modules in your Portlet](/develop/tutorials/-/knowledge_base/7-0/using-es2015-modules-in-your-portlet)
+the [Using ES2015 Modules in your Portlet](/docs/7-0/tutorials/-/knowledge_base/t/using-es2015-modules-in-your-portlet)
 tutorial.
 
 You can also use the module in a generic JavaScript:
@@ -232,22 +232,18 @@ You can also use the module in a generic JavaScript:
     });
     </script>
 
-+$$$
-
-**Note:** Using `Liferay.Loader.require` rather than just `require` is safer if
-you plan to hide the Loader by disabling the `exposeGlobal` option. 
-
-In @product@ 7.1, `exposeGlobal` will be disabled by default.
-
-$$$
+| **Note:** Using `Liferay.Loader.require` rather than just `require` is safer if
+| you plan to hide the Loader by disabling the `exposeGlobal` option.
+| 
+| In @product@ 7.1, `exposeGlobal` will be disabled by default.
 
 Now you know how to load your custom JavaScript modules and global libraries in 
 @product@!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Preparing your JavaScript Files for ES2015](/develop/tutorials/-/knowledge_base/7-0/preparing-your-javascript-files-for-es2015)
+[Preparing your JavaScript Files for ES2015](/docs/7-0/tutorials/-/knowledge_base/t/preparing-your-javascript-files-for-es2015)
 
-[Using ES2015 Modules in your Portlet](/develop/tutorials/-/knowledge_base/7-0/using-es2015-modules-in-your-portlet)
+[Using ES2015 Modules in your Portlet](/docs/7-0/tutorials/-/knowledge_base/t/using-es2015-modules-in-your-portlet)
 
-[Overriding @product@'s Default YUI and AUI Modules](/develop/tutorials/-/knowledge_base/7-0/overriding-liferays-default-yui-and-aui-modules)
+[Overriding @product@'s Default YUI and AUI Modules](/docs/7-0/tutorials/-/knowledge_base/t/overriding-liferays-default-yui-and-aui-modules)

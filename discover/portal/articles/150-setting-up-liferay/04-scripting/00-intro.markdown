@@ -1,4 +1,8 @@
-# Using Liferay's Script Engine [](id=using-liferays-script-engine)
+---
+header-id: using-liferays-script-engine
+---
+
+# Using Liferay's Script Engine
 
 @product@ provides a robust script engine that can be used to execute scripts in a
 variety of languages. @product@'s script engine was originally developed to allow

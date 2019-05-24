@@ -1,4 +1,8 @@
-# Configuring Applications [](id=configuring-applications)
+---
+header-id: configuring-applications
+---
+
+# Configuring Applications
 
 Just like siblings have common features inherited from their parents,
 applications that ship with @product@ also share common features. These include

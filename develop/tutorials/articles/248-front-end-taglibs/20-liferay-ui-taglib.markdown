@@ -1,4 +1,8 @@
-# Using the Liferay UI Taglib [](id=using-the-liferay-ui-taglib)
+---
+header-id: using-the-liferay-ui-taglib
+---
+
+# Using the Liferay UI Taglib
 
 You can create a lot of components using the Liferay UI taglibs. @product@'s 
 taglibs provide the following benefits to your markup:
@@ -13,7 +17,7 @@ folder in the [Liferay Github Repo](https://github.com/liferay/liferay-portal/tr
 Now that you know the benefits of @product@'s tags, you can learn how to use
 them next.
 
-## Using Liferay UI Tags [](id=using-liferay-ui-tags)
+## Using Liferay UI Tags
 
 A list of the available Liferay UI taglibs can be found [here](@platform-ref@/7.0-latest/taglibs/util-taglib/). 
 To use the Liferay-UI taglib library in your apps, you must add the following 
@@ -55,10 +59,10 @@ Here is an example implementation of a `<liferay-ui:user-display>` taglib:
  
 Now you know how to use Liferay-UI taglibs in your JSPs!
  
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[JavaScript Module Loaders](/develop/tutorials/-/knowledge_base/7-0/javascript-module-loaders)
+[JavaScript Module Loaders](/docs/7-0/tutorials/-/knowledge_base/t/javascript-module-loaders)
 
-[Loading Modules with the AUI Script in Liferay](/develop/tutorials/-/knowledge_base/7-0/loading-modules-with-aui-script-in-liferay)
+[Loading Modules with the AUI Script in Liferay](/docs/7-0/tutorials/-/knowledge_base/t/loading-modules-with-aui-script-in-liferay)
 
-[Using the Liferay Util Taglib](/develop/tutorials/-/knowledge_base/7-0/using-the-liferay-util-taglib)
+[Using the Liferay Util Taglib](/docs/7-0/tutorials/-/knowledge_base/t/using-the-liferay-util-taglib)

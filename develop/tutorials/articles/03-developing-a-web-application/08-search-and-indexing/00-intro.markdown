@@ -1,4 +1,8 @@
-# Leveraging Search [](id=leveraging-search)
+---
+header-id: leveraging-search
+---
+
+# Leveraging Search
 
 Now you have working Guestbook and Guestbook Admin portlets. The Guestbook 
 portlet lets users add, edit, delete, and configure permissions for guestbook 

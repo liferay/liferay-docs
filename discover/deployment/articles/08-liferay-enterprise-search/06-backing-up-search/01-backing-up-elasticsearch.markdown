@@ -1,4 +1,8 @@
-# Backing Up Elasticsearch [](id=backing-up-elasticsearch)
+---
+header-id: backing-up-elasticsearch
+---
+
+# Backing Up Elasticsearch
 
 [Elasticsearch replicas](https://www.elastic.co/guide/en/elasticsearch/guide/current/replica-shards.html)
 protect you against a node going down here or there, but they won't help you in
@@ -17,7 +21,7 @@ guide](https://www.elastic.co/guide/en/elasticsearch/guide/current/administratio
 and in particular to the documentation on the [Snapshot/Restore module](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-snapshots.html)
 and on [backing up your cluster.](https://www.elastic.co/guide/en/elasticsearch/guide/current/backing-up-your-cluster.html#_snapshotting_particular_indices)
 
-## Configuring a Repository [](id=configuring-a-repository)
+## Configuring a Repository
 
 First [configure a repository](https://www.elastic.co/guide/en/elasticsearch/guide/current/backing-up-your-cluster.html#_creating_the_repository)
 where your snapshots will be kept. Several repository types are supported:
@@ -50,7 +54,7 @@ terminal:
 
 Once you have a repository, you can start creating snapshots.
 
-## Snapshotting the Cluster [](id=snapshotting-the-cluster)
+## Snapshotting the Cluster
 
 The easiest approach is to create is a [snapshot of all the indexes in your
 cluster](https://www.elastic.co/guide/en/elasticsearch/guide/current/backing-up-your-cluster.html#_snapshotting_all_open_indices). Here's the basic command for snapshotting everything:
@@ -117,7 +121,7 @@ of data, this can cost time and resources. To cancel the ongoing creation of a
 snapshot, use the same `DELETE` command.  The snapshot process is terminated and
 the partial snapshot is deleted from the repository.
 
-## Restoring from a Snapshot [](id=restoring-from-a-snapshot)
+## Restoring from a Snapshot
 
 What good is a snapshot if you can't use it to 
 [restore your search indexes](https://www.elastic.co/guide/en/elasticsearch/guide/current/_restoring_from_a_snapshot.html) in case of catastrophic failure? Restoring your cluster from a snapshot is easy.

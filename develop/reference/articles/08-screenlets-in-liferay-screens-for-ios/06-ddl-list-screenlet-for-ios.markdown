@@ -1,8 +1,12 @@
-# DDL List Screenlet for iOS [](id=ddllistscreenlet-for-ios)
+---
+header-id: ddllistscreenlet-for-ios
+---
+
+# DDL List Screenlet for iOS
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/O28qAvrumqQ" frameborder="0" allowfullscreen></iframe>
 
-## Requirements [](id=requirements)
+## Requirements
 
 - Xcode 9.3 or above
 - iOS 11 SDK
@@ -12,16 +16,16 @@
   [EE/DXP](http://www.liferay.com/marketplace/-/mp/application/54369726)). 
   This app is preinstalled in Liferay CE Portal 7.0/7.1 and Liferay DXP. 
 
-## Compatibility [](id=compatibility)
+## Compatibility
 
 - iOS 9 and above
 
-## Xamarin Requirements [](id=xamarin-requirements)
+## Xamarin Requirements
 
 - Visual Studio 7.2
 - Mono .NET framework 5.4.1.6
 
-## Features [](id=features)
+## Features
 
 The DDL List Screenlet enables the following features:
 
@@ -32,7 +36,7 @@ The DDL List Screenlet enables the following features:
 - Allows filtering of records by creator.
 - Supports i18n in record values.
 
-## JSON Services Used [](id=json-services-used)
+## JSON Services Used
 
 Screenlets in Liferay Screens call JSON web services in the portal. This 
 Screenlet calls the following services and methods.
@@ -42,11 +46,11 @@ Screenlet calls the following services and methods.
 | `ScreensddlrecordService` (Screens compatibility plugin) | `getDdlRecords` | With `ddlRecordSetId`, or `ddlRecordSetId` and `userId` |
 | `ScreensddlrecordService` (Screens compatibility plugin) | `getDdlRecordsCount` |  |
 
-## Module [](id=module)
+## Module
 
 - DDL
 
-## Themes [](id=themes)
+## Themes
 
 - The Default Theme uses a standard `UITableView` to show the scrollable list. 
   Other Themes may use a different component, such as `UICollectionView` or 
@@ -54,19 +58,19 @@ Screenlet calls the following services and methods.
 
 ![The DDL List Screenlet using the Default (`default`) Theme.](../../images/screens-ios-ddllist.png)
 
-## Portal Configuration [](id=portal-configuration)
+## Portal Configuration
 
 Dynamic Data Lists (DDL) and Data Types should be configured in the portal. For
 more details, please refer to the Liferay User Guide sections 
-[Creating Data Definitions](/discover/portal/-/knowledge_base/7-0/creating-data-definitions) 
+[Creating Data Definitions](/docs/7-0/user/-/knowledge_base/u/creating-data-definitions) 
 and 
-[Creating Data Lists](/discover/portal/-/knowledge_base/7-0/creating-data-lists). 
+[Creating Data Lists](/docs/7-0/user/-/knowledge_base/u/creating-data-lists). 
 
-## Offline [](id=offline)
+## Offline
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/docs/7-0/tutorials/-/knowledge_base/t/architecture-of-offline-mode-in-liferay-screens). 
 Here are the offline mode policies that you can use with this Screenlet: 
 
 | Policy | What happens | When to use |
@@ -76,32 +80,32 @@ Here are the offline mode policies that you can use with this Screenlet:
 | `remote-first` | The Screenlet loads the list from the portal. If this succeeds, the Screenlet shows the list to the user and stores it in the local cache for later use. If a connection issue occurs, the Screenlet retrieves the list from the local cache. If the list doesn't exist there, the Screenlet uses the delegate to notify the developer about the error. | Use this policy to show the most recent version of the data when connected, but show an outdated version when there's no connection. |
 | `cache-first` | The Screenlet loads the list from the local cache. If the list isn't there, the Screenlet requests it from the portal and notifies the developer about any errors that occur (including connectivity errors). | Use this policy to save bandwidth and loading time in case you have local (but probably outdated) data. |
 
-## Required Attributes [](id=required-attributes)
+## Required Attributes
 
 - `recordSetId`
 - `labelFields`
 
-## Attributes [](id=attributes)
+## Attributes
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
 | `recordSetId` | `number` | The ID of the DDL being called. To find the IDs for your DDLs, first open the Product Menu and select the site that contains your DDLs. Then click *Content* &rarr; *Dynamic Data Lists*. Each DDL's ID is in the table's ID column. |
 | `userId` | `number` | The ID of the user to filter records on. Records aren't filtered if the `userId` is `0`. The default value is `0`. |
 | `labelFields` | `string` | The comma-separated names of the DDL fields to show. Refer to the list's data definition to find the field names. To do so, first open the Product Menu and select the site that contains your DDLs. Then click *Content* &rarr; *Dynamic Data Lists*, and find the find the icon (![Configuration Menu](../../images/icon-options.png)) for the Dynamic Data List configuration menu at the upper right. Click this icon and select *Manage Data Definitions*. You can view the fields by clicking on any of the data definitions in the table that appears. Note that the appearance of these values in your app depends on the Theme selected by the user. |
-| `offlinePolicy` | `string` | The offline mode setting. The default value is `remote-first`. See the [Offline section](/develop/reference/-/knowledge_base/7-0/ddllistscreenlet-for-ios#offline) for details. |
+| `offlinePolicy` | `string` | The offline mode setting. The default value is `remote-first`. See the [Offline section](/docs/7-0/reference/-/knowledge_base/r/ddllistscreenlet-for-ios#offline) for details. |
 | `autoLoad` | `boolean` | Whether the list loads automatically when the Screenlet appears in the app's UI. The default value is `true`. |
 | `refreshControl` | `boolean` | Whether a standard [iOS `UIRefreshControl`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRefreshControl_class/) appears when the user performs the pull to refresh gesture. The default value is `true`. |
 | `firstPageSize` | `number` | The number of items retrieved from the server for display on the first page. The default value is `50`. |
 | `pageSize` | `number` | The number of items retrieved from the server for display on the second and subsequent pages. The default value is `25`. |
 | `obcClassName` | `string` | The name of the `OrderByComparator` class to use to sort the results. Omit this property if you don't want to sort the results. [Click here](https://github.com/liferay/liferay-portal/tree/master/modules/apps/forms-and-workflow/dynamic-data-lists/dynamic-data-lists-api/src/main/java/com/liferay/dynamic/data/lists/util/comparator) to see some comparator classes. Note, however, that not all of these classes can be used with `obcClassName`. You can only use comparator classes that extend `OrderByComparator<DDLRecord>`. You can also create your own comparator classes that extend `OrderByComparator<DDLRecord>`. |
 
-## Methods [](id=methods)
+## Methods
 
 | Method | Return | Explanation |
 |-----------|-----------|-------------| 
 |  `loadList()` | `boolean` | Starts the request to load the list of records. The list is shown when the response is received. This method returns `true` if the request is sent. |
 
-## Delegate [](id=delegate)
+## Delegate
 
 The DDL List Screenlet delegates some events in an object that conforms to the 
 `DDLListScreenletDelegate` protocol. This protocol lets you implement the 

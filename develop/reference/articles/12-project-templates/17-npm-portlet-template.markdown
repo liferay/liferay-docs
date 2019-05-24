@@ -1,4 +1,8 @@
-# npm Portlet Template [](id=npm-portlet-template)
+---
+header-id: npm-portlet-template
+---
+
+# npm Portlet Template
 
 In this article, you'll learn how to create an npm portlet as a Liferay module.
 To create an npmportlet via the command line using Blade CLI or Maven, use one
@@ -19,16 +23,12 @@ or
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
 
-+$$$
-
-**Note:** The minifier fails on Liferay DXP 7.0 when JSDoc is present in a 
-portlet. To resolve this, use 
-[Grunt](https://gruntjs.com/getting-started) 
-[uglify](https://www.npmjs.com/package/grunt-contrib-uglify) 
-to remove the JSDoc comments. This process may take a long time, depending on 
-the number of files that require an update. 
-
-$$$
+| **Note:** The minifier fails on Liferay DXP 7.0 when JSDoc is present in a
+| portlet. To resolve this, use
+| [Grunt](https://gruntjs.com/getting-started)
+| [uglify](https://www.npmjs.com/package/grunt-contrib-uglify)
+| to remove the JSDoc comments. This process may take a long time, depending on
+| the number of files that require an update.
 
 The template for this kind of project is `npm-portlet`. Suppose you want to
 create an npm portlet project called `my-npm-portlet` with a package name of

@@ -1,4 +1,8 @@
-# Creating Xamarin Views and Themes [](id=creating-xamarin-views-and-themes)
+---
+header-id: creating-xamarin-views-and-themes
+---
+
+# Creating Xamarin Views and Themes
 
 Recall that Views in Xamarin.Android and Themes in Xamarin.iOS are analogous 
 components that let you customize a Screenlet's look and feel. You can use the 
@@ -13,41 +17,41 @@ Interactors, and an AXML or XIB file for defining the UI.
 
 There are also different types of Views and Themes. These are discussed in the 
 tutorials on creating 
-[Views](/develop/tutorials/-/knowledge_base/7-0/creating-android-views) 
+[Views](/docs/7-0/tutorials/-/knowledge_base/t/creating-android-views) 
 and 
-[Themes](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes) 
+[Themes](/docs/7-0/tutorials/-/knowledge_base/t/creating-ios-themes) 
 in native code. You should read those tutorials before creating Views in 
 Xamarin.Android or Themes in Xamarin.iOS. 
 
 First, you'll determine where to create your View or Theme. 
 
-## Determining the Location of Your View or Theme [](id=determining-the-location-of-your-view-or-theme)
+## Determining the Location of Your View or Theme
 
 If you plan to reuse or redistribute your View or Theme, create it in a new 
 Xamarin project as a 
 [multiplatform library for code sharing](https://developer.xamarin.com/guides/cross-platform/application_fundamentals/nuget-multiplatform-libraries/). 
 Otherwise, create it in your app's project. 
 
-## Creating a Xamarin.Android View [](id=creating-a-xamarin-android-view)
+## Creating a Xamarin.Android View
 
 Creating Views for Xamarin.Android is very similar to doing so in native code. 
 You can create the following View types: 
 
 -   **Themed View:** Creating a Themed View in Xamarin.Android is identical 
-    [to doing so in native code](/develop/tutorials/-/knowledge_base/7-0/creating-android-views#themed-view). 
+    [to doing so in native code](/docs/7-0/tutorials/-/knowledge_base/t/creating-android-views#themed-view). 
     In Xamarin.Android, however, only the Default View Set is available to 
     extend.
 
 -   **Child View:** Creating a Child View in Xamarin.Android is identical 
-    [to doing so in native code](/develop/tutorials/-/knowledge_base/7-0/creating-android-views#child-view). 
+    [to doing so in native code](/docs/7-0/tutorials/-/knowledge_base/t/creating-android-views#child-view). 
 
 -   **Extended View:** Creating an Extended View in Xamarin.Android differs from 
     doing so in native code. The next section shows you how. 
 
-### Extended View [](id=extended-view)
+### Extended View
 
 To create an Extended View in Xamarin.Android, follow 
-[the steps for creating an Extended View in native code](/develop/tutorials/-/knowledge_base/7-0/creating-android-views#extended-view), 
+[the steps for creating an Extended View in native code](/docs/7-0/tutorials/-/knowledge_base/t/creating-android-views#extended-view), 
 but make sure your custom View class in the second step is the appropriate C# 
 class. For example, here's the View class from the native code tutorial, 
 converted to C#: 
@@ -82,10 +86,10 @@ converted to C#:
 
 Awesome! Now you know how to create Extended Views in Xamarin.Android. 
 
-## Creating a Xamarin.iOS Theme [](id=creating-a-xamarin-ios-theme)
+## Creating a Xamarin.iOS Theme
 
 Creating Themes for Xamarin.iOS is very similar 
-[to doing so in native code](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes). 
+[to doing so in native code](/docs/7-0/tutorials/-/knowledge_base/t/creating-ios-themes). 
 You can create the following Theme types in Xamarin.iOS: 
 
 -   **Child Theme:** presents the same UI components as its parent Theme, but 
@@ -95,7 +99,7 @@ You can create the following Theme types in Xamarin.iOS:
 
 First, you'll learn how to create a Child Theme in Xamarin.iOS. 
 
-### Child Theme [](id=child-theme)
+### Child Theme
 
 Child Themes leverage a parent Theme's behavior and UI components, letting you 
 modify the appearance and position of those components. Note that you can't add 
@@ -128,13 +132,13 @@ You can see an example of `LoginView_demo` in
 [the Showcase-iOS demo app](https://github.com/liferay/liferay-screens/tree/develop/xamarin/Samples/Showcase-iOS/CustomViews). 
 Fantastic! Next, you'll learn how to create an Extended Theme. 
 
-### Extended Theme [](id=extended-theme)
+### Extended Theme
 
 An Extended Theme inherits another Theme's UI components and behavior, but lets 
 you add to or alter both. For example, you can extend the parent Theme's View 
 class to change the parent Theme's behavior. You can also create a new XIB file 
 that contains new or modified UI components. An Extended Theme's parent must be 
-[a Full Theme](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes#full-theme). 
+[a Full Theme](/docs/7-0/tutorials/-/knowledge_base/t/creating-ios-themes#full-theme). 
 
 Follow these steps to create an Extended Theme: 
 
@@ -181,18 +185,18 @@ Follow these steps to create an Extended Theme:
 
 Well done! Now you know how to create an Extended Theme. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating Android Views (native code)](/develop/tutorials/-/knowledge_base/7-0/creating-android-views)
+[Creating Android Views (native code)](/docs/7-0/tutorials/-/knowledge_base/t/creating-android-views)
 
-[Creating iOS Themes (native code)](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes)
+[Creating iOS Themes (native code)](/docs/7-0/tutorials/-/knowledge_base/t/creating-ios-themes)
 
-[Preparing Xamarin Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/preparing-xamarin-projects-for-liferay-screens)
+[Preparing Xamarin Projects for Liferay Screens](/docs/7-0/tutorials/-/knowledge_base/t/preparing-xamarin-projects-for-liferay-screens)
 
-[Using Screenlets in Xamarin Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-xamarin-apps)
+[Using Screenlets in Xamarin Apps](/docs/7-0/tutorials/-/knowledge_base/t/using-screenlets-in-xamarin-apps)
 
-[Using Views in Xamarin.Android](/develop/tutorials/-/knowledge_base/7-0/using-views-in-xamarin-android)
+[Using Views in Xamarin.Android](/docs/7-0/tutorials/-/knowledge_base/t/using-views-in-xamarin-android)
 
-[Using Themes in Xamarin.iOS](/develop/tutorials/-/knowledge_base/7-0/using-themes-in-xamarin-ios)
+[Using Themes in Xamarin.iOS](/docs/7-0/tutorials/-/knowledge_base/t/using-themes-in-xamarin-ios)
 
-[Liferay Screens for Xamarin Troubleshooting and FAQs](/develop/tutorials/-/knowledge_base/7-0/liferay-screens-for-xamarin-troubleshooting-and-faqs)
+[Liferay Screens for Xamarin Troubleshooting and FAQs](/docs/7-0/tutorials/-/knowledge_base/t/liferay-screens-for-xamarin-troubleshooting-and-faqs)

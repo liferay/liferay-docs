@@ -1,4 +1,8 @@
-# Configuring XStream [](id=configuring-xstream)
+---
+header-id: configuring-xstream
+---
+
+# Configuring XStream
 
 <div class="learn-path-step">
     <p>Enabling Staging and Export/Import<br>Step 5 of 7</p>
@@ -16,7 +20,7 @@ of XStream via the
   in addition to the default functionality. @product@ defines a default list of
   allowed types, which are available in the portlet data context.
 - *Aliases:* helps with the readability and char length of
-  [LAR files](/develop/tutorials/-/knowledge_base/7-0/understanding-data-handlers#liferay-archive-lar-file)
+  [LAR files](/docs/7-0/tutorials/-/knowledge_base/t/understanding-data-handlers#liferay-archive-lar-file)
   by creating an alias for an otherwise long winded entity name.
 - *Converters:* converts configured objects to and from XML. This is primarily
   used to protect sensitive data; when serialized this way, sensitive data

@@ -1,4 +1,8 @@
-# Module JSP Override [](id=module-jsp-override)
+---
+header-id: module-jsp-override
+---
+
+# Module JSP Override
 
 The Module JSP Override sample conveys Liferay's recommended approach to
 override an application's JSP by leveraging OSGi fragment modules. This example
@@ -7,12 +11,12 @@ adding the red text *changed* to the Sign In form.
 
 ![Figure 1: The customized Sign In form with the new *changed* text.](../../../images/hook-jsp.png)
 
-## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
+## What API(s) and/or code components does this sample highlight?
 
 This sample demonstrates how to create a fragment host module and configure it
 to override an existing module's JSP.
 
-## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
+## How does this sample leverage the API(s) and/or code component?
 
 You can create your own JSP override by
 
@@ -54,10 +58,10 @@ sample.
 
 For more information on using fragment bundles to override application JSPs, see
 the
-[Overriding App JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-a-modules-jsps)
+[Overriding App JSPs](/docs/7-0/tutorials/-/knowledge_base/t/overriding-a-modules-jsps)
 tutorial.
 
-## Where Is This Sample? [](id=where-is-this-sample)
+## Where Is This Sample?
 
 There are three different versions of this sample, each built with a different
 build tool:

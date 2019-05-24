@@ -1,8 +1,12 @@
-# Creating a Theme Thumbnail [](id=creating-a-theme-thumbnail)
+---
+header-id: creating-a-theme-thumbnail
+---
+
+# Creating a Theme Thumbnail
 
 Theme thumbnails help users quickly identify your theme. It's especially
 important to provide thumbnails when your theme offers 
-[color schemes](/develop/tutorials/-/knowledge_base/7-0/specifying-color-schemes). 
+[color schemes](/docs/7-0/tutorials/-/knowledge_base/t/specifying-color-schemes). 
 
 Here's how to create a proper thumbnail image for your theme:
 
@@ -16,16 +20,12 @@ Here's how to create a proper thumbnail image for your theme:
     redeployment, the `thumbnail.png` file automatically becomes the theme's
     thumbnail.
 
-+$$$
-
-**Note:** The 
-[Theme Builder Gradle plugin](/develop/reference/-/knowledge_base/7-0/theme-builder-gradle-plugin) 
-doesn't recognize a `thumbnail.png` file. If you're using this plugin to build 
-your theme instead, you must create a `screenshot.png` file in your theme's 
-`images` folder that is 1080 pixels high by 864 pixels wide. The thumbnail is 
-automatically generated from the screenshot for you when the theme is built.
-
-$$$
+| **Note:** The
+| [Theme Builder Gradle plugin](/docs/7-0/reference/-/knowledge_base/r/theme-builder-gradle-plugin)
+| doesn't recognize a `thumbnail.png` file. If you're using this plugin to build
+| your theme instead, you must create a `screenshot.png` file in your theme's
+| `images` folder that is 1080 pixels high by 864 pixels wide. The thumbnail is
+| automatically generated from the screenshot for you when the theme is built.
 
 Now, when you apply the theme, its thumbnail displays along with the other
 themes that are available to your site.
@@ -34,7 +34,7 @@ themes that are available to your site.
 
 Congrats! Now you know how to create a thumbnail image for your theme!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
-[Specifying Color Schemes in Your Theme](/develop/tutorials/-/knowledge_base/7-0/specifying-color-schemes)
+[Liferay Theme Generator](/docs/7-0/tutorials/-/knowledge_base/t/themes-generator)
+[Specifying Color Schemes in Your Theme](/docs/7-0/tutorials/-/knowledge_base/t/specifying-color-schemes)

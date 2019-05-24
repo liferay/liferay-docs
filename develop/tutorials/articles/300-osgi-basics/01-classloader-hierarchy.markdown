@@ -1,4 +1,8 @@
-# Liferay Portal Classloader Hierarchy [](id=liferay-portal-classloader-hierarchy)
+---
+header-id: liferay-portal-classloader-hierarchy
+---
+
+# Liferay Portal Classloader Hierarchy
 
 All @product@ applications live in its OSGi container. Portal is a web
 application deployed on your application server. Portal's Module Framework
@@ -53,7 +57,7 @@ too. In all contexts, however, the Bootstrap classloader loads classes from
 
 Classloading from a web application perspective is up next. 
 
-## Web Application Classloading Perspective [](id=web-application-classloading-perspective)
+## Web Application Classloading Perspective
 
 Application servers dictate where and in what order web applications, such as
 @product@, search for classes and resources. Application servers such as
@@ -78,10 +82,10 @@ and IBM WebSphere have additional classloaders. They may also have a
 different classloader hierarchy and search order. Consult your application
 server's documentation for classloading details. 
 
-## Other Classloading Perspectives [](id=other-classloading-perspectives)
+## Other Classloading Perspectives
 
 The
-[Bundle Classloading Flow](/develop/tutorials/-/knowledge_base/7-0/bundle-classloading-flow)
+[Bundle Classloading Flow](/docs/7-0/tutorials/-/knowledge_base/t/bundle-classloading-flow)
 tutorial explains classloading from an OSGi bundle perspective. 
 
 Classloading for JSPs and Service Builder classes is similar to that
@@ -90,6 +94,6 @@ of web applications and OSGi bundle classes.
 You now know @product@'s classloading hierarchy, understand it in context of web
 applications, and have references to information on other classloading perspectives. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Bundle Classloading Flow](/develop/tutorials/-/knowledge_base/7-0/bundle-classloading-flow)
+[Bundle Classloading Flow](/docs/7-0/tutorials/-/knowledge_base/t/bundle-classloading-flow)

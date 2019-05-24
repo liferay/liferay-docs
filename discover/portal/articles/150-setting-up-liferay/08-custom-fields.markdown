@@ -1,4 +1,8 @@
-# Custom Fields [](id=custom-fields)
+---
+header-id: custom-fields
+---
+
+# Custom Fields
 
 Have you ever wondered why there's no *Head Circumference* field in the form for
 adding users to @product@? Probably because most sites based on @product@ don't
@@ -27,23 +31,19 @@ to their edit forms. Here's the complete list:
 - Web Content Folder
 - Wiki Page
 
-+$$$
+| **Developer Use Case:** Adding custom fields to @product@ resources affords
+| flexibility to developers. Suppose you must limit the number of users
+| that can be assigned to a particular role. First an administrator creates a custom
+| field called *max-users* for the role. A developer then creates a module that
+| inserts logic before a user is added to that role. If their logic detects that
+| the maximum number of role users would be exceeded by completing the action, an
+| exception is thrown and the action does not complete. A tutorial is being
+| planned to illustrate how this is accomplished using Custom Fields and a [module
+| deployed to @product](/docs/7-0/tutorials/-/knowledge_base/t/fundamentals#modules).
+| 
+| <!-- Add link to expando tutorial when written -->
 
-**Developer Use Case:** Adding custom fields to @product@ resources affords
-flexibility to developers. Suppose you must limit the number of users
-that can be assigned to a particular role. First an administrator creates a custom
-field called *max-users* for the role. A developer then creates a module that
-inserts logic before a user is added to that role. If their logic detects that
-the maximum number of role users would be exceeded by completing the action, an
-exception is thrown and the action does not complete. A tutorial is being
-planned to illustrate how this is accomplished using Custom Fields and a [module
-deployed to @product](/develop/tutorials/-/knowledge_base/7-0/fundamentals#modules).
-
-<!-- Add link to expando tutorial when written -->
-
-$$$
-
-## Adding Custom Fields [](id=adding-custom-fields)
+## Adding Custom Fields
 
 To add custom fields, find the Custom Fields entry beneath the Control Panel's
 Configuration heading.
@@ -56,51 +56,43 @@ To add a custom field to one of the listed entities,
 
 3.  Add a Key.
 
-    +$$$
-
-    **Note:** The Key you enter here is the name of the new field. It's stored
-    in the database and used by developers to access the custom field with the
-    `<liferay-ui:custom-attribute />` tag.
-
-    $$$
+    | **Note:** The Key you enter here is the name of the new field. It's stored
+    | in the database and used by developers to access the custom field with the
+    | `<liferay-ui:custom-attribute />` tag.
 
 4. Choose the type of field you want to add.
 
-    +$$$
-
-    **Available Field Types:** There are a number of field types to choose from:
-
-    Presets:
-
-    - Selection of Integer Values
-    - Selection of Decimal Values
-    - Selection of Text Values
-    - Text Box
-    - Text Box--Indexed
-    - Text Field--Secret
-    - Text Field--Indexed
-
-    Primitives
-
-    - True/False
-    - Date
-    - Decimal number (64-bit)
-    - Group of Decimal numbers (64-bit)
-    - Decimal number (32-bit)
-    - Group of Decimal numbers (32-bit)
-    - Integer (32-bit)
-    - Group of Integers (32-bit)
-    - Integer (64-bit)
-    - Group of Integers (64-bit)
-    - Decimal Number or Integer (64-bit)
-    - Group of Decimal numbers or Integer (64-bit)
-    - Integer (16-bit)
-    - Group of Integers (16-bit)
-    - Text
-    - Group of Text Values
-    - Localized Text
-
-    $$$
+    | **Available Field Types:** There are a number of field types to choose from:
+    | 
+    | Presets:
+    | 
+    | - Selection of Integer Values
+    | - Selection of Decimal Values
+    | - Selection of Text Values
+    | - Text Box
+    | - Text Box--Indexed
+    | - Text Field--Secret
+    | - Text Field--Indexed
+    | 
+    | Primitives
+    | 
+    | - True/False
+    | - Date
+    | - Decimal number (64-bit)
+    | - Group of Decimal numbers (64-bit)
+    | - Decimal number (32-bit)
+    | - Group of Decimal numbers (32-bit)
+    | - Integer (32-bit)
+    | - Group of Integers (32-bit)
+    | - Integer (64-bit)
+    | - Group of Integers (64-bit)
+    | - Decimal Number or Integer (64-bit)
+    | - Group of Decimal numbers or Integer (64-bit)
+    | - Integer (16-bit)
+    | - Group of Integers (16-bit)
+    | - Text
+    | - Group of Text Values
+    | - Localized Text
 
     ![Figure 1: At The Lunar Resort, a Head Circumference field is necessary for all users.](../../images/custom-fields-user-head-circumference.png)
 
@@ -121,7 +113,7 @@ filled out.
 ![Figure 2: The Edit User form's Custom Fields panel is found in the
 Miscellaneous tab.](../../images/custom-fields-panel.png)
 
-## Editing a Custom Field [](id=editing-a-custom-field)
+## Editing a Custom Field
 
 You can't change the key or field type of a custom field, but you can delete it
 and create a new one if necessary. Additionally, once you create the custom

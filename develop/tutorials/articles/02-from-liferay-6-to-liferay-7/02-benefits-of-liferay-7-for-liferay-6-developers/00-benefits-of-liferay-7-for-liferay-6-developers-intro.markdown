@@ -1,4 +1,8 @@
-# Benefits of @product-ver@ for Liferay Portal 6 Developers [](id=benefits-of-liferay-7-for-liferay-6-developers)
+---
+header-id: benefits-of-liferay-7-for-liferay-6-developers
+---
+
+# Benefits of @product-ver@ for Liferay Portal 6 Developers
 
 More than in any other Liferay release, @product-ver@ centers on you, the
 developer. Liferay's platform has been rebuilt, making it easier to build on and
@@ -21,7 +25,7 @@ Here are some key benefits of this release for developers:
 
 Let's consider how they make development easier for you.
 
-## Simpler and Leaner [](id=simpler-and-leaner)
+## Simpler and Leaner
 
 Liferay has always been simple and lean, compared to the proprietary
 alternatives; this version widens the gap even more.
@@ -37,7 +41,7 @@ administrators to remove parts they don't need or don't want; this facilitates
 deployment, reduces startup times and memory footprints, and results in more
 efficiencies and performance improvements.
 
-## Modular Development Paradigm [](id=modular-development-paradigm)
+## Modular Development Paradigm
 
 If you have been using Liferay, you've already experienced some of the benefits
 of modular development, thanks to plugins. @product-ver@ takes these benefits to a
@@ -55,7 +59,7 @@ as many modules as you want. The cool thing is that modules can cooperate,
 allowing you to build applications by combining smaller pieces that are easier
 to develop, deploy, maintain, and reuse.
 
-## Enhanced Reusability [](id=enhanced-reusability)
+## Enhanced Reusability
 
 If you have worked on large developments on top of Liferay you have probably
 experienced situations in which you wanted to share a subset of classes from
@@ -69,7 +73,7 @@ class loader doesn't allow for much more) and doesn't give you the freedom to
 specify any or all classes from one module to use from within another module.
 
 @product-ver@ enables greater reusability, both in code and runtime memory, several
-folds. For any desired reusable functionality you just [create a module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#creating-a-module)
+folds. For any desired reusable functionality you just [create a module](/docs/7-0/tutorials/-/knowledge_base/t/starting-module-development#creating-a-module)
 (remember, it's just a JAR file with some metadata) with the classes you want
 and deploy it. Other modules need only declare that they use the classes in that
 module (by specifying their packages) and @product-ver@ automatically wires them
@@ -81,7 +85,7 @@ intricate class loaders. The runtime environment uses separate class spaces per
 module; it even accommodates using multiple versions of libraries in the same
 application (as long as they can coexist).
 
-## More Extensible, Easier to Maintain [](id=more-extensible-easier-to-maintain)
+## More Extensible, Easier to Maintain
 
 Whenever we ask Liferay developers what is their favorite characteristic of
 Liferay, "Great extensibility" is one of the top three most popular responses.
@@ -109,7 +113,7 @@ become extensible. You can create simple extension points by just creating an
 interface and annotating a setter method with an annotation (@Reference).
 Implementing extensibility has never been easier.
 
-## Optimized for Your Tooling of Choice [](id=optimized-for-your-tooling-of-choice)
+## Optimized for Your Tooling of Choice
 
 @product-ver@ empowers you to use the tools you like.
 
@@ -136,7 +140,7 @@ facilitates starting new projects from templates -- it's especially useful for
 Gradle which doesn't have Maven's concept of archetypes. Blade CLI also offers
 commands to start/stop the server and deploy and administer modules.
 
-## Powerful Configurability [](id=powerful-configurability)
+## Powerful Configurability
 
 Creating configurable code is a breeze with @product-ver@. And applications that use
 Liferay's new Configuration API allow administrators to change the configuration

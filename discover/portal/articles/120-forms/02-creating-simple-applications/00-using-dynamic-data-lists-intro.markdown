@@ -1,4 +1,8 @@
-# Creating Simple Applications [](id=creating-simple-applications)
+---
+header-id: creating-simple-applications
+---
+
+# Creating Simple Applications
 
 Business needs change, and technology must adapt to meet those needs. Things
 that used to be done using manual processes are now done electronically. You

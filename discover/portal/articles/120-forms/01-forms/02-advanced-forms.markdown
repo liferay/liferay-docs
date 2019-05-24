@@ -1,8 +1,12 @@
-# Creating Advanced Forms [](id=creating-advanced-forms)
+---
+header-id: creating-advanced-forms
+---
+
+# Creating Advanced Forms
 
 Liferay's built-in Forms application supports your most basic form building
 needs (something like a one question survey), and your most advanced (like a
-mortgage application, or conference sign-up form). In [a separate article](/discover/portal/-/knowledge_base/7-0/basic-forms), learn
+mortgage application, or conference sign-up form). In [a separate article](/docs/7-0/user/-/knowledge_base/u/basic-forms), learn
 about the basics of form creation:
 
 -  Navigating to the Forms application
@@ -30,22 +34,18 @@ some settings and processing features to explore:
 - Redirecting to a different URL after a successful form submission
 - Sending an email notification whenever a form entry is submitted
 
-+$$$
-
-**Note:** By default, form entries are stored in Liferay's database using JSON
-format. If you navigate to Form Settings (click the *Options*
-(![Options](../../../images/icon-options.png)) button &rarr; *Settings*), you'll
-see that the only storage option is JSON. Keep in mind that developers can
-implement their own storage types if JSON is not desirable. If they do, the
-option will appear here in Form Settings. See the tutorial on custom storage
-types (not yet written) for more information.
-
-$$$
+| **Note:** By default, form entries are stored in Liferay's database using JSON
+| format. If you navigate to Form Settings (click the *Options*
+| (![Options](../../../images/icon-options.png)) button &rarr; *Settings*), you'll
+| see that the only storage option is JSON. Keep in mind that developers can
+| implement their own storage types if JSON is not desirable. If they do, the
+| option will appear here in Form Settings. See the tutorial on custom storage
+| types (not yet written) for more information.
 
 More features are being planned, so don't despair if you need a feature that's
 not yet present in the Forms application.
 
-## The Lunar Resort Employment Application Form [](id=the-lunar-resort-employment-application-form)
+## The Lunar Resort Employment Application Form
 
 At The Lunar Resort, management is VERY particular in its hiring practices. Lots
 of people think they want to work on the moon full time, but it takes a special
@@ -62,7 +62,7 @@ kind of person to really make it work. There's so much that can go wrong:
 There are more hiring pitfalls than the phobias listed above, but it's time to
 start building the application form, starting with the creation of its pages.
 
-## Creating Form Pages [](id=creating-form-pages)
+## Creating Form Pages
 
 Liferay's Forms application supports multi-page forms. To add one, click the
 Actions (![Action](../../../images/icon-actions.png)) button at the top right hand
@@ -89,7 +89,7 @@ with the form page navigation wizard.
 Once you have the form pages created, navigate back to the first page, Personal
 Details.
 
-## Adding Placeholder Text and Predefined Values [](id=adding-placeholder-text-and-predefined-values)
+## Adding Placeholder Text and Predefined Values
 
 To populate the employment application form for The Lunar Resort, you should
 start by adding some of the usual fields, like a Full Name field:
@@ -100,20 +100,16 @@ Placeholder Text: *e.g., Maximillian Aurelius Piroux the 11th*.
 
     ![Figure 3: The Full Name field in the employment form. It has a placeholder value to help users understand what you are looking for.](../../../images/forms-employment-full-name.png)
 
-+$$$
-
-**Note:** There's an important difference between *Predefined Values* and
-*Placeholder Text*. If a field is left untouched by the user, the predefined
-value will be submitted, while placeholder text is not submitted (it's as if the
-user left the field blank).
-
-$$$
+| **Note:** There's an important difference between *Predefined Values* and
+| *Placeholder Text*. If a field is left untouched by the user, the predefined
+| value will be submitted, while placeholder text is not submitted (it's as if the
+| user left the field blank).
 
 Remember that placeholder values will not be submitted if the field is left
 blank, so you don't have to worry about getting a bunch of applications from
 *Maximillian Aurelius Piroux the 11th*.
 
-## Validating Text Fields [](id=validating-text-fields)
+## Validating Text Fields
 
 The HR department needs to weed prospective employees out if they're not mature
 enough. If the user is under a certain age, make sure to ask them if they've
@@ -132,45 +128,41 @@ greater than 0*.
 
     ![Figure 4: The Age field in the employment form. It uses validation to ensure that a number greater than zero is entered.](../../../images/forms-employment-age.png)
 
-+$$$
-
-**Note:** Field validation lets you decide if you're going to reject certain
-types of information from being submitted. If a form field's data doesn't pass
-the validation rules you specify, the entire form entry won't be submitted until
-the user enters valid data. What validation rules are built in for your
-convenience?
-
--  Text: If you begin by selecting *Text*, only text submissions are allowed for
-   your form field. 
-    -  Contains: Selecting *Contains* means you're going to specify a character
-       or word that *must* be entered.
-    -  Does not contain: If you use this rule, you're going to specify a
-       character or word that *must not* be submitted.
-    -  URL: Submissions must be URLs with the proper syntax.
-    -  Email: Submissions must be email addresses with the proper syntax.
-
-    ![Figure 5: You can validate text submissions for text fields.](../../../images/forms-text-validation.png)
--  Number: If you select *Number*, only number submissions are allowed for your
-   form field.
-    -  Is greater than or equal to: Specify the smallest number that can be
-       entered.
-    -  Is greater than: Entries must be greater than the specified number.
-    -  Is equal to: Allow only entries equal to the number you specify.
-    -  Is less than or equal to: Specify the largest number that can be
-       submitted.
-    -  Is less than: Entries must be less than the specified number.
-
-    ![Figure 6: You can validate number submissions for text fields.](../../../images/forms-number-validation.png)
-
-It can be helpful to alert users to your validation rules in help text or
-placeholder text (for example, *You must enter a number greater than 0*).
-
-
-If you mark a field as *Required*, that's another form of validation. Liferay is
-going to make sure that the field is not empty. If it is, an error message will
-appear, directing the user to enter something into the required field.
-
-$$$
+| **Note:** Field validation lets you decide if you're going to reject certain
+| types of information from being submitted. If a form field's data doesn't pass
+| the validation rules you specify, the entire form entry won't be submitted until
+| the user enters valid data. What validation rules are built in for your
+| convenience?
+| 
+| -  Text: If you begin by selecting *Text*, only text submissions are allowed for
+|    your form field.
+|     -  Contains: Selecting *Contains* means you're going to specify a character
+|        or word that *must* be entered.
+|     -  Does not contain: If you use this rule, you're going to specify a
+|        character or word that *must not* be submitted.
+|     -  URL: Submissions must be URLs with the proper syntax.
+|     -  Email: Submissions must be email addresses with the proper syntax.
+| 
+|     ![Figure 5: You can validate text submissions for text fields.](../../../images/forms-text-validation.png)
+| -  Number: If you select *Number*, only number submissions are allowed for your
+|    form field.
+|     -  Is greater than or equal to: Specify the smallest number that can be
+|        entered.
+|     -  Is greater than: Entries must be greater than the specified number.
+|     -  Is equal to: Allow only entries equal to the number you specify.
+|     -  Is less than or equal to: Specify the largest number that can be
+|        submitted.
+|     -  Is less than: Entries must be less than the specified number.
+| 
+|     ![Figure 6: You can validate number submissions for text fields.](../../../images/forms-number-validation.png)
+| 
+| It can be helpful to alert users to your validation rules in help text or
+| placeholder text (for example, *You must enter a number greater than 0*).
+| 
+| 
+| If you mark a field as *Required*, that's another form of validation. Liferay is
+| going to make sure that the field is not empty. If it is, an error message will
+| appear, directing the user to enter something into the required field.
 
 Make one more required field on the first page:
 
@@ -181,7 +173,7 @@ address is entered.
 Next create a field that will be displayed only if the user enters any number
 less than *30* in the Age field.
 
-## Using Field Visibility Expressions [](id=using-field-visibility-expressions)
+## Using Field Visibility Expressions
 
 Sometimes you only want a form field to appear if a certain value is entered in
 another field. In the Lunar Resort  application for employment, you want to ask
@@ -205,118 +197,114 @@ it's checking to make sure that the entered Age value is less than or equal to
 
 ![Figure 7: You can make a field appear based on the value of another field in your form.](../../../images/forms-vis-expr-fields.png)
 
-+$$$
-
-**Note:** There are several functions and operators you can use to control
-field visibility based on the value entered in another field. An expression can
-be as simple as containing a single operator:
-
-    Age<29
-
-Alternatively, operators and functions can be combined to make a more complex
-expression:
-
-    sum(Housing,CarPayment)>MonthlySalary
-
-In this expression, the field would only be displayed if the sum of the
-*Housing* field and the *Car Payment* field is greater than the *Monthly Salary*
-field. 
-
-As demonstrated above, you can use a form field value (whether text or numeric)
-in place of a hard coded value, by entering the Field Name instead of a specific
-value. 
-
-![Figure 8: A form field's Field Name is automatically generated from the Label you give the field.](../../../images/forms-field-name.png)
-
-There are functions and operators for your use in your field visibility
-expressions. First consider the functions: 
-
--  **between(FieldName,lower bound value, upper bound value)**: Check whether
-   the entered value of the specified numeric field is between a lower and upper
-bound. If it is in the specified range, the field will appear on the form. For
-example:
-
-        between(Age,0,29)
-
--  **equals(FieldName, value)**: Display your field only if the value entered
-   into the specified field equals a specific numeric value (or if it equals the
-value of another field). For example:
-
-        equals(Salary,TotalExpenses)
-
--  **sum(FieldName1, FieldName2, ...)**: Add numeric fields together, usually for
-   comparing to a given value using one of the operators covered below. For
-example:
-
-        sum(Expense1,Expense2,Expense3)>Salary
-
--  **min(value, FieldName1, FieldName2,...)**: Get the lowest numeric value in the list of
-   parameters (you can use Field Names and/or values), usually for comparing to
-a given value using one of the operators below. For example:
-
-        Salary>min(TotalExpenses,TotalDebt)
-
--  **max(Field Name, value)**: Get the largest numeric value in the list of
-   parameters, usually for comparing to a given value using one of the operators
-covered below. For example:
-
-        Salary<max(TotalExpenses,TotalDebt)
-
--  **contains(Field Name, value)**: Used to check a field for a specific string
-   of text or the text entered in another field. The text value can be in the
-beginning, middle, or end of the field being checked. For example:
-
-        contains(FullName,LastName)
-
--  **concat(Field Name, value)**: Concatenate a string of text with a given
-   text value, usually used in constructing a larger expression. For example:
-
-        contains(FullName,concat(FirstName, " Smith"))
-
-In addition to the functions described above, there are a bunch of operators you
-can use in building your Field Visibility Expressions:
-
--  **+**: Addition operator
--  **-**: Subtraction operator
--  **\***: Multiplication operator
--  **/**: Division operator
--  **%**: Division remainder operator
--  **^**: Power operator
--  **&&**: *And* condition operator
--  **||**: *Or* condition operator
--  **>**: *Greater than* relational operator
--  **>=**: *Greater than or equal to* relational operator
--  **<**: *Less than* relational operator
--  **<=**: *Less than or equal to* relational operator
--  **==**: *Equals* relational operator
--  **!=**: Relational operator to make sure the arguments are *not* equal
--  **NOT**: Negates a boolean expression. Boolean (true or false) expressions
-   check for a *true* condition by default. You can use *NOT* to check the opposite:
-
-        NOT(contains(FullName, FirstName))
-
-    The above expression checks whether the *FullName* field contains the value
-entered in the *FirstName* field. If it does *not* then your field will appear.
-
-To check for a value in a select field, you need to use the Field Name for
-the field, and as the value, use the Field Name for the select option you
-entered.
-
-![Figure 9: A select field's options will be given Field Names. These are used as the value in your Field Visibility Expression.](../../../images/forms-select-option-name.png)
-
-For example, if you want to display a field only if the *Maximum Time Away From
-Home* field's *>12* option is selected, you could write this Field Visibility
-Expression:
-
-    contains(MaximumTimeAwayFromHome,12)
-
-$$$
+| **Note:** There are several functions and operators you can use to control
+| field visibility based on the value entered in another field. An expression can
+| be as simple as containing a single operator:
+| 
+|     Age<29
+| 
+| Alternatively, operators and functions can be combined to make a more complex
+| expression:
+| 
+|     sum(Housing,CarPayment)>MonthlySalary
+| 
+| In this expression, the field would only be displayed if the sum of the
+| *Housing* field and the *Car Payment* field is greater than the *Monthly Salary*
+| field.
+| 
+| As demonstrated above, you can use a form field value (whether text or numeric)
+| in place of a hard coded value, by entering the Field Name instead of a specific
+| value.
+| 
+| ![Figure 8: A form field's Field Name is automatically generated from the Label you give the field.](../../../images/forms-field-name.png)
+| 
+| There are functions and operators for your use in your field visibility
+| expressions. First consider the functions:
+| 
+| -  **between(FieldName,lower bound value, upper bound value)**: Check whether
+|    the entered value of the specified numeric field is between a lower and upper
+| bound. If it is in the specified range, the field will appear on the form. For
+| example:
+| 
+|         between(Age,0,29)
+| 
+| -  **equals(FieldName, value)**: Display your field only if the value entered
+|    into the specified field equals a specific numeric value (or if it equals the
+| value of another field). For example:
+| 
+|         equals(Salary,TotalExpenses)
+| 
+| -  **sum(FieldName1, FieldName2, ...)**: Add numeric fields together, usually for
+|    comparing to a given value using one of the operators covered below. For
+| example:
+| 
+|         sum(Expense1,Expense2,Expense3)>Salary
+| 
+| -  **min(value, FieldName1, FieldName2,...)**: Get the lowest numeric value in the list of
+|    parameters (you can use Field Names and/or values), usually for comparing to
+| a given value using one of the operators below. For example:
+| 
+|         Salary>min(TotalExpenses,TotalDebt)
+| 
+| -  **max(Field Name, value)**: Get the largest numeric value in the list of
+|    parameters, usually for comparing to a given value using one of the operators
+| covered below. For example:
+| 
+|         Salary<max(TotalExpenses,TotalDebt)
+| 
+| -  **contains(Field Name, value)**: Used to check a field for a specific string
+|    of text or the text entered in another field. The text value can be in the
+| beginning, middle, or end of the field being checked. For example:
+| 
+|         contains(FullName,LastName)
+| 
+| -  **concat(Field Name, value)**: Concatenate a string of text with a given
+|    text value, usually used in constructing a larger expression. For example:
+| 
+|         contains(FullName,concat(FirstName, " Smith"))
+| 
+| In addition to the functions described above, there are a bunch of operators you
+| can use in building your Field Visibility Expressions:
+| 
+| -  **+**: Addition operator
+| -  **-**: Subtraction operator
+| -  **\***: Multiplication operator
+| -  **/**: Division operator
+| -  **%**: Division remainder operator
+| -  **^**: Power operator
+| -  **&&**: *And* condition operator
+| -  **||**: *Or* condition operator
+| -  **>**: *Greater than* relational operator
+| -  **>=**: *Greater than or equal to* relational operator
+| -  **<**: *Less than* relational operator
+| -  **<=**: *Less than or equal to* relational operator
+| -  **==**: *Equals* relational operator
+| -  **!=**: Relational operator to make sure the arguments are *not* equal
+| -  **NOT**: Negates a boolean expression. Boolean (true or false) expressions
+|    check for a *true* condition by default. You can use *NOT* to check the opposite:
+| 
+|         NOT(contains(FullName, FirstName))
+| 
+|     The above expression checks whether the *FullName* field contains the value
+| entered in the *FirstName* field. If it does *not* then your field will appear.
+| 
+| To check for a value in a select field, you need to use the Field Name for
+| the field, and as the value, use the Field Name for the select option you
+| entered.
+| 
+| ![Figure 9: A select field's options will be given Field Names. These are used as the value in your Field Visibility Expression.](../../../images/forms-select-option-name.png)
+| 
+| For example, if you want to display a field only if the *Maximum Time Away From
+| Home* field's *>12* option is selected, you could write this Field Visibility
+| Expression:
+| 
+|     contains(MaximumTimeAwayFromHome,12)
 
 Field Visibility Expressions are great for dynamically displaying a field based
 on another field's entered data. Next, find out how to dynamically populate a
 select list from a Data Provider.
 
-## Populating Select Fields with REST Data Providers [](id=populating-select-fields-with-rest-data-providers)
+## Populating Select Fields with REST Data Providers
 
 On its final page (*Extremely Personal Details*) The Lunar Resort application
 form needs five select fields, all populated with the complete list
@@ -324,34 +312,30 @@ of the countries of earth. Read the sidebar note below to find out why this
 field is needed (it's just a fictional story, so skip if you don't have time for
 some light entertainment).
 
-+$$$
-
-**Note:** Interstellar citizenship rules are strange, and since the moon
-declared independence from earth (Lunar Independence Day is a big deal at The
-Lunar Resort), it has its own set of citizenship rules. Among other things, the
-rules require employees of The Lunar Resort to be citizens of the moon.
-
-Moon citizenship is cool, especially if you're a dual citizen of your native
-earth country and the moon! However, during the Space Wars (in which the moon
-gained its independence), many countries on earth made strict laws dictating
-that dual citizenship would never be granted if the applicant's second
-citizenship allegiance was to the moon. That can lead to interesting situations
-when an employee leaves The Lunar Resort, or is terminated. The Lunar Resort
-management needs to know a leaving employee's top five destinations on earth. If
-none of the countries the employee lists are willing to accept them, there's a
-secret colony of earth's expatriates on the dark side of the moon that usually
-has vacancies.
-
-That's why the application form's last page needs to have five select fields
-with all the countries of earth.
-
-$$$
+| **Note:** Interstellar citizenship rules are strange, and since the moon
+| declared independence from earth (Lunar Independence Day is a big deal at The
+| Lunar Resort), it has its own set of citizenship rules. Among other things, the
+| rules require employees of The Lunar Resort to be citizens of the moon.
+| 
+| Moon citizenship is cool, especially if you're a dual citizen of your native
+| earth country and the moon! However, during the Space Wars (in which the moon
+| gained its independence), many countries on earth made strict laws dictating
+| that dual citizenship would never be granted if the applicant's second
+| citizenship allegiance was to the moon. That can lead to interesting situations
+| when an employee leaves The Lunar Resort, or is terminated. The Lunar Resort
+| management needs to know a leaving employee's top five destinations on earth. If
+| none of the countries the employee lists are willing to accept them, there's a
+| secret colony of earth's expatriates on the dark side of the moon that usually
+| has vacancies.
+| 
+| That's why the application form's last page needs to have five select fields
+| with all the countries of earth.
 
 Unless you have an intern, you don't want to manually enter all the countries of
 earth into five different select fields. Instead, you want to populate the fields
 using a Data Provider.
 
-### Adding and Configuring a Data Provider [](id=adding-and-configuring-a-data-provider)
+### Adding and Configuring a Data Provider
 
 Before using a Data Provider in your select fields, you need to configure one
 that you can use in your forms. Navigate to the Forms application in *Site
@@ -376,7 +360,7 @@ Fill out the Data Providers form, passing in the following values:
 
 You're probably wondering what the *URL*, *Displayed JSON Attribute*, and
 *Stored JSON Attribute* fields are all about. First, it's good to understand
-that what you're doing when setting up a data provider is accessing a [REST web service](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=5&cad=rja&uact=8&ved=0ahUKEwj5xqa_nOLMAhWDYpoKHXCSAl8QFgg-MAQ&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FRepresentational_state_transfer&usg=AFQjCNEbs7wls7WPYkz8WvaaxEkpyhJdeQ&sig2=_HSCpCVSb_gzRMpEwKm3mw). You can use the [JSON web services registered in Liferay](/develop/tutorials/-/knowledge_base/7-0/registering-json-web-services),
+that what you're doing when setting up a data provider is accessing a [REST web service](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=5&cad=rja&uact=8&ved=0ahUKEwj5xqa_nOLMAhWDYpoKHXCSAl8QFgg-MAQ&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FRepresentational_state_transfer&usg=AFQjCNEbs7wls7WPYkz8WvaaxEkpyhJdeQ&sig2=_HSCpCVSb_gzRMpEwKm3mw). You can use the [JSON web services registered in Liferay](/docs/7-0/tutorials/-/knowledge_base/t/registering-json-web-services),
 or any other REST web service you have access to. To find a list of the
 ready-to-use registered JSON web services in Liferay, navigate to
 [http://localhost:8080/api/jsonws](http://localhost:8080/api/jsonws) (assuming you're running Liferay locally). If
@@ -416,7 +400,7 @@ the database for the form entry. The `name` field was selected in this example.
 Once you set up the data provider, click *Save*. Now you can set up five select
 fields that list all the countries of earth in no time.
 
-### Using a Data Provider in a Select Field [](id=using-a-data-provider-in-a-select-field)
+### Using a Data Provider in a Select Field
 
 Back in the application form, go to the third page, Extremely Personal
 Details. Add a select field.
@@ -437,7 +421,7 @@ Your Data Provider is now being used to populate your select fields. However,
 this form is going to be submitted by Guest users, who don't currently have
 permission to see the list of results from the data provider.
 
-### Granting Data Provider Permissions [](id=granting-data-provider-permissions)
+### Granting Data Provider Permissions
 
 To configure the data provider's permissions, navigate to the Forms application (*Site Administration* &rarr; *Content* &rarr;
 *Forms*). Open the Options menu (![Options](../../../images/icon-options.png))
@@ -450,13 +434,9 @@ For the employment application form in The Lunar Resort, Guest users need the
 data provider in the select fields. Once you grant the permission, click *Save*.
 
 
-+$$$
-
-**Note:** If you're developing The Lunar Resort employment application form,
-you'll notice we skipped over the second page, Very Personal Details. It will be
-dealt with in the section on laying out your forms.
-
-$$$
+| **Note:** If you're developing The Lunar Resort employment application form,
+| you'll notice we skipped over the second page, Very Personal Details. It will be
+| dealt with in the section on laying out your forms.
 
 That concludes the actual development of the form (adding pages and form
 fields). The rest of the article covers features of the Forms application that
@@ -464,10 +444,10 @@ you'll use during or after form entry submission.
 <!--Picture of full form?-->
 <!-- Should these Form Settings options be covered separately? -->
 
-## Enabling CAPTCHA on Form Submissions [](id=enabling-captcha-on-form-submissions)
+## Enabling CAPTCHA on Form Submissions
 
 You're probably familiar with CAPTCHA, the program used to prevent a bot from
-submitting forms. It's often used in [Login applications](/discover/deployment/-/knowledge_base/7-0/logging-in-to-liferay),
+submitting forms. It's often used in [Login applications](/docs/7-0/deploy/-/knowledge_base/d/logging-in-to-liferay),
 but you can use it in the Forms application, too. 
 
 ![Figure 12: You can enable CAPTCHA for your form in the Form Settings window.](../../../images/forms-settings-captcha.png)
@@ -481,7 +461,7 @@ all there is to it!
 
 Now, you're much more likely to receive form submissions from humans!
 
-## Setting Up Form Notifications [](id=setting-up-form-notifications)
+## Setting Up Form Notifications
 
 It's possible to have a notification email sent each time a form entry is
 successfully submitted. Open the form's Form Settings section (click the
@@ -499,12 +479,12 @@ email notification for each entry*, and fill out the fields:
    *An application for employment was submitted in The Lunar Resort* might be
 appropriate for the form developed in this article.
 
-If you [enabled workflow for the form](/discover/portal/-/knowledge_base/7-0/sending-form-entries-through-a-workflow),
+If you [enabled workflow for the form](/docs/7-0/user/-/knowledge_base/u/sending-form-entries-through-a-workflow),
 and there's already a notification going to the people who need to process the
 form entry, you might not need to generate any notification from the Forms
 application itself.
 
-## Redirecting Users after Form Submission [](id=redirecting-users-after-form-submission)
+## Redirecting Users after Form Submission
 
 You can send users to any URL you want upon form submission. You might have a
 particular *Thanks for your submission!* type page with a link to the home page,
@@ -521,7 +501,7 @@ haven't configured the permissions yet, so the only user with permission to add
 records is you, the owner! There's a good chance you'll want to customize the
 form's permissions.
 
-## Configuring Form Permissions [](id=configuring-form-permissions)
+## Configuring Form Permissions
 <!-- Is this better in the basic forms article? -->
 
 By default, you can grant the following permissions for a form:
@@ -544,20 +524,16 @@ Navigate to the Forms application (*Site Administration* &rarr; *Content* &rarr;
 (![Actions](../../../images/icon-actions.png)), and select *Permissions*.
 Give the Guest role the View and Add permissions, then click *Save*.
 
-+$$$
+| **Note:** By default, all users inherit the Guest role's permissions. The Guest
+| role represents unauthenticated visitors of your site, and it makes sense that
+| if you want to allow Guest users to submit forms, you're fine with your site
+| members and portal users submitting forms, as well. If you want to disable the
+| automatic inheritance of the Guest role permissions, there's a
+| [property](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Permissions) you can set in your `portal-ext.properties` file:
+| 
+|     permissions.check.guest.enabled=false
 
-**Note:** By default, all users inherit the Guest role's permissions. The Guest
-role represents unauthenticated visitors of your site, and it makes sense that
-if you want to allow Guest users to submit forms, you're fine with your site
-members and portal users submitting forms, as well. If you want to disable the
-automatic inheritance of the Guest role permissions, there's a
-[property](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Permissions) you can set in your `portal-ext.properties` file:
-
-    permissions.check.guest.enabled=false
-
-$$$
-
-## Form Layouts [](id=form-layouts)
+## Form Layouts
 
 Sometimes, it doesn't make sense to have a single column, vertically oriented
 form, which is what you get by default when you just keep clicking the large *Add
@@ -613,18 +589,14 @@ which will appear when you hover your mouse over the field in the layout.
 
 In addition to moving the field, you can edit the field or delete it.
 
-+$$$
-
-**Note:** If you're following along with the employment application form, it's
-time to build the second page of the form (Very Personal Details). Combining
-your form building knowledge with your ability to customize the form layout,
-build the form to match the screenshot below. It will use form text, date,
-single selection, text, and single checkbox (multiple selection on Liferay
-Portal CE) fields, laid out in two columns.
-
-![Figure 21: The second page of The Lunar Resort employment application.](../../../images/forms-page2.png)
-
-$$$
+| **Note:** If you're following along with the employment application form, it's
+| time to build the second page of the form (Very Personal Details). Combining
+| your form building knowledge with your ability to customize the form layout,
+| build the form to match the screenshot below. It will use form text, date,
+| single selection, text, and single checkbox (multiple selection on Liferay
+| Portal CE) fields, laid out in two columns.
+| 
+| ![Figure 21: The second page of The Lunar Resort employment application.](../../../images/forms-page2.png)
 
 Now it's done. Your users, including Guest users, can submit applications to The
 Lunar Resort. The form is multi-page, full of features, and there's even some

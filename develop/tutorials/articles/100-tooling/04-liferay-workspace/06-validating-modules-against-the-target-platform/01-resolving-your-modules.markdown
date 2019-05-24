@@ -1,4 +1,8 @@
-# Resolving Your Modules [](id=resolving-your-modules)
+---
+header-id: resolving-your-modules
+---
+
+# Resolving Your Modules
 
 Deploying your modules only to be met with console errors or mysterious
 problems can be frustrating. You can avoid this painful process by resolving
@@ -9,7 +13,7 @@ your modules before deployment. This can be done by calling the
 
 This task gathers all the capabilities provided by
 
-- the specified version of @product@ (i.e., [targeted platform](/develop/tutorials/-/knowledge_base/7-0/managing-the-target-platform-for-liferay-workspace))
+- the specified version of @product@ (i.e., [targeted platform](/docs/7-0/tutorials/-/knowledge_base/t/managing-the-target-platform-for-liferay-workspace))
 - the current workspace's modules
 
 Some capabilities/information gathered by the `resolve` task that are validated
@@ -28,13 +32,9 @@ the task fails.
 The task can only validate OSGi modules. It does not work with WAR-style
 projects, themes, or npm portlets.
 
-+$$$
-
-**Note:** The `resolve` task can be executed from a specific project folder or
-from the workspace's root folder. Running the task from the root folder
-validates all the modules in your workspace.
-
-$$$
+| **Note:** The `resolve` task can be executed from a specific project folder or
+| from the workspace's root folder. Running the task from the root folder
+| validates all the modules in your workspace.
 
 The `resolve` task can automatically gather the available capabilities from your
 workspace, but you must specify this for your targeted @product@ version. To do
@@ -64,8 +64,8 @@ of capabilities that your modules are validated against.
 You can now validate your module projects before deploying them! Sometimes, you
 must modify the `resolve` task's default behavior to successfully validate your
 app. See the 
-[Modifying the Target Platform's Capabilities](/develop/tutorials/-/knowledge_base/7-1/modifying-the-target-platforms-capabilities)
+[Modifying the Target Platform's Capabilities](/docs/7-1/tutorials/-/knowledge_base/t/modifying-the-target-platforms-capabilities)
 tutorial for more information. For help resolving common output errors printed
 by the `resolve` task, see the
-[Resolving Common Output Errors Reported by the resolve Task](/develop/reference/-/knowledge_base/7-1/resolving-common-output-errors-reported-by-the-resolve-task)
+[Resolving Common Output Errors Reported by the resolve Task](/docs/7-1/reference/-/knowledge_base/r/resolving-common-output-errors-reported-by-the-resolve-task)
 article.

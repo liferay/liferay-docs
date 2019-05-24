@@ -1,21 +1,25 @@
-# Login Screenlet for iOS [](id=loginscreenlet-for-ios)
+---
+header-id: loginscreenlet-for-ios
+---
 
-## Requirements [](id=requirements)
+# Login Screenlet for iOS
+
+## Requirements
 
 - Xcode 9.3 or above
 - iOS 11 SDK
 - Liferay Portal 6.2 CE/EE, Liferay CE Portal 7.0/7.1, Liferay DXP
 
-## Compatibility [](id=compatibility)
+## Compatibility
 
 - iOS 9 and above
 
-## Xamarin Requirements [](id=xamarin-requirements)
+## Xamarin Requirements
 
 - Visual Studio 7.2
 - Mono .NET framework 5.4.1.6
 
-## Features [](id=features)
+## Features
 
 The Login Screenlet authenticates portal users in your iOS app. The following
 authentication methods are supported:
@@ -34,19 +38,15 @@ authentication methods are supported:
   portal. The other authentication types require this permission to access such 
   files. 
 
-+$$$
-
-**Note:** Cookie authentication with Login Screenlet is broken in fix packs 14 
-through 18 of Liferay Digital Enterprise 7.0. This issue is fixed in newer fix 
-packs for Liferay Digital Enterprise 7.0. 
-
-$$$
+| **Note:** Cookie authentication with Login Screenlet is broken in fix packs 14
+| through 18 of Liferay Digital Enterprise 7.0. This issue is fixed in newer fix
+| packs for Liferay Digital Enterprise 7.0.
 
 For instructions on configuring the Screenlet to use these authentication types, 
 see the below 
-[Portal Configuration](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-ios#portal-configuration) 
+[Portal Configuration](/docs/7-0/reference/-/knowledge_base/r/loginscreenlet-for-ios#portal-configuration) 
 and 
-[Screenlet Attributes](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-ios#attributes) 
+[Screenlet Attributes](/docs/7-0/reference/-/knowledge_base/r/loginscreenlet-for-ios#attributes) 
 sections. 
 
 When a user successfully authenticates, their attributes are retrieved for use 
@@ -62,7 +62,7 @@ the method `SessionContext.loadStoredCredentials()` method.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/JlQ8nWGFsyg" frameborder="0" allowfullscreen></iframe>
 
-## JSON Services Used [](id=json-services-used)
+## JSON Services Used
 
 Screenlets in Liferay Screens call the portal's JSON web services. This 
 Screenlet calls the following services and methods. 
@@ -74,23 +74,23 @@ Screenlet calls the following services and methods.
 | `UserService` | `getUserById` | Basic login |
 | `UserService` | `getCurrentUser` | Cookie and OAuth login |
 
-## Module [](id=module)
+## Module
 
 - Auth
 
-## Themes [](id=themes)
+## Themes
 
 - Default (`default`)
 - Flat7 (`flat7`)
 
 For instructions on using Themes, 
-[click here](/develop/tutorials/-/knowledge_base/7-0/using-themes-in-ios-screenlets). 
+[click here](/docs/7-0/tutorials/-/knowledge_base/t/using-themes-in-ios-screenlets). 
 
 ![The Login Screenlet using the Default and Flat7 Themes.](../../images/screens-ios-login.png)
 
-## Portal Configuration [](id=portal-configuration)
+## Portal Configuration
 
-### Basic Authentication [](id=basic-authentication)
+### Basic Authentication
 
 Before using Login Screenlet, you should make sure your portal is configured 
 with the authentication option you want to use. You can choose email address, 
@@ -102,16 +102,12 @@ authenticate?* selector menu.
 ![Setting the authentication method in your Liferay instance.](../../images/screens-portal-auth.png)
 
 For more details, please refer to the 
-[Setting up a Liferay Instance](/discover/portal/-/knowledge_base/7-0/setting-up-a-liferay-instance) 
+[Setting up a Liferay Instance](/docs/7-0/user/-/knowledge_base/u/setting-up-a-liferay-instance) 
 section of the User Guide. 
 
-### OAuth [](id=oauth)
+### OAuth
 
-+$$$
-
-**Note:** OAuth authentication is only available in Liferay DXP instances. 
-
-$$$
+| **Note:** OAuth authentication is only available in Liferay DXP instances.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/hg70gpUEUI0" frameborder="0" allowfullscreen></iframe>
 
@@ -125,14 +121,14 @@ to get this app. Once it's installed, go to *Control Panel* &rarr; *Users*
 Once the application exists, copy the *Consumer Key* and *Consumer Secret* 
 values for later use in Login Screenlet. 
 
-## Offline [](id=offline)
+## Offline
 
 This Screenlet doesn't support offline mode. It requires network connectivity.
 If you need to log in users automatically, even when there's no network 
 connection, you can use the `saveCredentials` attribute together with the 
 `SessionContext.loadStoredCredentials()` method. 
 
-## Attributes [](id=attributes)
+## Attributes
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
@@ -145,7 +141,7 @@ connection, you can use the `saveCredentials` attribute together with the
 | `shouldHandleCookieExpiration` | `bool` | Whether to refresh the cookie automatically when using cookie login. When set to `true` (the default value), the cookie refreshes as it's about to expire.  |
 | `cookieExpirationTime` | `int` | How long the cookie lasts, in seconds. This value depends on your portal instance's configuration. The default value is `900`. |
 
-## Delegate [](id=delegate)
+## Delegate
 
 The Login Screenlet delegates some events to an object that conforms to the 
 `LoginScreenletDelegate` protocol. This protocol lets you implement the 
@@ -166,7 +162,7 @@ following methods:
   credentials are retrieved. Note that this only occurs when the Screenlet is 
   used and stored credentials are available. 
 
-## Challenge-Response Authentication [](id=challenge-response-authentication)
+## Challenge-Response Authentication
 
 To support 
 [challenge-response authentication](https://en.wikipedia.org/wiki/Challenge%E2%80%93response_authentication) 

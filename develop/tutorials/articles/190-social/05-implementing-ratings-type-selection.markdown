@@ -1,4 +1,8 @@
-# Implementing Ratings Type Selection and Value Transformation [](id=ratings)
+---
+header-id: ratings
+---
+
+# Implementing Ratings Type Selection and Value Transformation
 
 @product@ has three different mechanisms for rating content: Stars, Thumbs
 Up/Down, and Likes. Prior to 7.0, there was no way for administrators to select
@@ -37,7 +41,7 @@ Liferay by default doesn't provide any `RatingsDataTransformer` implementation;
 the ratings values always remain the same while Liferay interprets existing
 values for the selected ratings type.
 
-## Specifying an Entity's Ratings Type [](id=specifying-an-entitys-ratings-type)
+## Specifying an Entity's Ratings Type
 
 Ratings type definitions needs to implement the `PortletRatingsDefinition`
 interface. The implementation of method `getDefaultRatingsType` returns the
@@ -74,7 +78,7 @@ portlet that defines the `blogsEntry` ratings data:
 
 Next, let's examine how to transform values between ratings types. 
 
-## Transforming Ratings Values Between Ratings Types [](id=transforming-ratings-values-between-ratings-types)
+## Transforming Ratings Values Between Ratings Types
 
 If the site admin or portal admin changes the ratings type and there are
 existing ratings values in the database, Liferay doesn't modify any of them. It
@@ -153,9 +157,9 @@ In this tutorial, you have learned how to set a ratings type for an entity and
 how to implement a ratings data transformer. Liferay salutes you with a Thumbs 
 Up! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Rating Assets](/develop/tutorials/-/knowledge_base/7-0/rating-assets)
+[Rating Assets](/docs/7-0/tutorials/-/knowledge_base/t/rating-assets)
 
-[Adding Comments to Your App](/develop/tutorials/-/knowledge_base/7-0/adding-comments-to-your-app)
+[Adding Comments to Your App](/docs/7-0/tutorials/-/knowledge_base/t/adding-comments-to-your-app)
 

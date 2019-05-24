@@ -1,4 +1,8 @@
-# Configuring Your Application's Title and Back Link [](id=configuring-your-applications-title-and-back-link)
+---
+header-id: configuring-your-applications-title-and-back-link
+---
+
+# Configuring Your Application's Title and Back Link
 
 For @product-ver@ administration applications, the title should be moved to the 
 inner views of the app and the associated back link should be moved to the 
@@ -43,8 +47,8 @@ example the `edit_entry.jsp` form's cancel button redirects the user:
 
 Now you know how to configure your app's title and back URL!
 
-## Related topics [](id=related-topics)
+## Related topics
 
-[Applying Lexicon Patterns to your Forms, Navigation, and Search](/develop/tutorials/-/knowledge_base/7-0/applying-lexicon-patterns-to-forms-navigation-and-search)
+[Applying Lexicon Patterns to your Forms, Navigation, and Search](/docs/7-0/tutorials/-/knowledge_base/t/applying-lexicon-patterns-to-forms-navigation-and-search)
 
-[Setting Search Container Animations](/develop/tutorials/-/knowledge_base/7-0/setting-search-container-animations)
+[Setting Search Container Animations](/docs/7-0/tutorials/-/knowledge_base/t/setting-search-container-animations)

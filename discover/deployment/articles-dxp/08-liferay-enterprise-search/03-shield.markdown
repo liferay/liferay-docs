@@ -1,4 +1,8 @@
-# Securing Elasticsearch with Shield [](id=securing-elasticsearch-with-shield)
+---
+header-id: securing-elasticsearch-with-shield
+---
+
+# Securing Elasticsearch with Shield
 
 Elasticsearch makes storing, searching, and analyzing your @product@ search data
 easy. When it comes to securing that data, use Elasticsearch's [Shield
@@ -13,16 +17,12 @@ suspicious activity. This guide shows you the basics of how to install and
 configure Shield, and then how to configure @product@ for Shield, using a
 convenient Shield adapter plugin.
 
-+$$$
-
-**Note:** The Shield plugin can only be used when you're running Elasticsearch
-in *remote mode*. If you're not sure what that means refer to the [Configuring
-Elasticsearch article](/discover/deployment/-/knowledge_base/7-0/configuring-elasticsearch).
-It's not possible to install Shield into @product@'s default embedded
-Elasticsearch--and you shouldn't be using embedded Elasticsearch in production
-anyway.
-
-$$$
+| **Note:** The Shield plugin can only be used when you're running Elasticsearch
+| in *remote mode*. If you're not sure what that means refer to the [Configuring
+| Elasticsearch article](/docs/7-0/deploy/-/knowledge_base/d/configuring-elasticsearch).
+| It's not possible to install Shield into @product@'s default embedded
+| Elasticsearch--and you shouldn't be using embedded Elasticsearch in production
+| anyway.
 
 Here's the process for configuring Shield:
 
@@ -37,11 +37,11 @@ These terms will be useful to understand as you read this guide:
 
 -  *Elasticsearch Home* refers to the root folder of your unzipped Elasticsearch
   installation (for example, `elasticsearch-2.4.0`).
--  [*Liferay Home*](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home)
+-  [*Liferay Home*](/docs/7-0/deploy/-/knowledge_base/d/installing-product#liferay-home)
   refers to the root folder of your @product@ installation. It  contains the
   `osgi`, `deploy`, `data`, and `license` folders.
 
-## Installing Shield on Elasticsearch [](id=installing-shield-on-elasticsearch)
+## Installing Shield on Elasticsearch
 
 First install the Shield plugin on your Elasticsearch cluster.
 
@@ -124,7 +124,7 @@ documentation](https://www.elastic.co/guide/en/shield/2.4/installing-shield.html
 
 Once Shield is installed, you can configure @product@'s Shield adapter.
 
-## Installing and Configuring @product@'s Shield Adapter [](id=installing-and-configuring-liferays-shield-adapter)
+## Installing and Configuring @product@'s Shield Adapter
 
 On the @product@ side of the equation, you need to configure the authentication
 token for the *liferay* Shield user you created in the previous section.
@@ -181,7 +181,7 @@ Follow these steps to configure the Shield adapter using System Settings:
 For a complete list of the Shield adapter's available configuration options, see
 [here](/reference/-/official_documentation/reference/shield-adapter-settings).
 
-## Encrypting Elasticsearch Connections [](id=encrypting-elasticsearch-connections)
+## Encrypting Elasticsearch Connections
 
 Your Elasticsearch connection now uses Shield to require authentication, but the
 authentication token is sent in plain text. For additional security, enable
@@ -260,7 +260,7 @@ for the details.
 
 Now Shield is fully configured, with both authentication and encryption
 protecting your Elasticsearch cluster. Next, you can learn how to 
-[install and configure Marvel](/discover/deployment/monitoring-elasticsearch-with-marvel),
+[install and configure Marvel](/docs/igu/deploy/-/knowledge_base/d/e Marvel](/discover/deployment/monitoring-elasticsearch-with-marvel),
 Elasticsearch's monitoring plugin, to visualize the health and performance of
 your Elasticsearch cluster.
 

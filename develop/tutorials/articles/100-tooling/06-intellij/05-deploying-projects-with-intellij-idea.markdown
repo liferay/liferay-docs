@@ -1,9 +1,13 @@
-# Deploying Projects with IntelliJ IDEA [](id=deploying-projects-with-intellij-idea)
+---
+header-id: deploying-projects-with-intellij-idea
+---
+
+# Deploying Projects with IntelliJ IDEA
 
 Once you've
-[created a project](/develop/tutorials/-/knowledge_base/7-0/creating-projects-with-intellij-idea)
+[created a project](/docs/7-0/tutorials/-/knowledge_base/t/creating-projects-with-intellij-idea)
 and
-[installed your Liferay server](/develop/tutorials/-/knowledge_base/7-0/installing-a-server-in-intellij-idea)
+[installed your Liferay server](/docs/7-0/tutorials/-/knowledge_base/t/installing-a-server-in-intellij-idea)
 in IntelliJ, you'll want to deploy your project. Follow the steps below to do
 this:
 

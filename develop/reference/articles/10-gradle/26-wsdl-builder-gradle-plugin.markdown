@@ -1,11 +1,15 @@
-# WSDL Builder Gradle Plugin [](id=wsdl-builder-gradle-plugin)
+---
+header-id: wsdl-builder-gradle-plugin
+---
+
+# WSDL Builder Gradle Plugin
 
 The WSDL Builder Gradle plugin lets you generate [Apache Axis](http://axis.apache.org/axis/)
 client stubs from Web Service Description (WSDL) files.
 
 The plugin has been successfully tested with Gradle 4.10.2.
 
-## Usage [](id=usage)
+## Usage
 
 To use the plugin, include it in your build script:
 
@@ -40,7 +44,7 @@ repositories {
 }
 ```
 
-## Tasks [](id=tasks)
+## Tasks
 
 The plugin adds one main task to your project:
 
@@ -65,14 +69,14 @@ files are named after the WSDL file and saved in `${project.projectDir}/lib`, by
 default, or in `${project.webAppDir}/WEB-INF/lib`, if the `war` plugin is
 applied.
 
-### BuildWSDLTask [](id=buildwsdltask)
+### BuildWSDLTask
 
 Tasks of type `FormatWSDLTask` extend [`SourceTask`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.SourceTask.html),
 so all its properties and methods, such as [`include`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.SourceTask.html#org.gradle.api.tasks.SourceTask:include\(java.lang.Iterable\))
 and [`exclude`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.SourceTask.html#org.gradle.api.tasks.SourceTask:exclude\(java.lang.Iterable\)),
 are available.
 
-#### Task Properties [](id=task-properties)
+#### Task Properties
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -87,14 +91,14 @@ Property Name | Type | Default Value | Description
 
 The properties of type `File` support any type that can be resolved by [`project.file`](https://docs.gradle.org/current/dsl/org.gradle.api.Project.html#org.gradle.api.Project:file\(java.lang.Object\)).
 
-#### Task Methods [](id=task-methods)
+#### Task Methods
 
 Method Signature | Description
 ---------------- | -----------
 `generateOptions.mapping(Object namespace, Object packageName)` | Adds a namespace-to-package mapping.
 `generateOptions.mappings(Map mappings)` | Adds multiple namespace-to-package mappings.
 
-#### Helper Tasks [](id=helper-tasks)
+#### Helper Tasks
 
 At the end of the [project evaluation](https://docs.gradle.org/current/userguide/build_lifecycle.html#N11BAE),
 a series of helper tasks are created for each WSDL file returned by the
@@ -110,11 +114,11 @@ created:
 - `${WSDL file title}Compile` of type [`JavaCompile`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.compile.JavaCompile.html): compiles the client stub Java files for the WSDL file.
 - `${WSDL file title}Jar` of type [`Jar`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Jar.html): packages in a JAR file called `${WSDL file title}-ws.jar`, the client stub for the WSDL file.
 
-## Additional Configuration [](id=additional-configuration)
+## Additional Configuration
 
 There are additional configurations that can help you use WSDL Builder.
 
-### Apache Axis Dependency [](id=apache-axis-dependency)
+### Apache Axis Dependency
 
 By default, the plugin creates a configuration called `wsdlBuilder` and adds the
 following dependencies:

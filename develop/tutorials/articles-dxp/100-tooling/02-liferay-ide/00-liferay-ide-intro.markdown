@@ -1,4 +1,8 @@
-# Liferay @ide@ [](id=liferay-ide)
+---
+header-id: liferay-ide
+---
+
+# Liferay @ide@
 
 Liferay @ide@ provides an all-in-one, integrated development environment based
 on Eclipse that supports development for @product@. @ide@ includes Liferay IDE

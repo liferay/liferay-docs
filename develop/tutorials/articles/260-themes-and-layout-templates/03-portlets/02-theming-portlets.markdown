@@ -1,11 +1,15 @@
-# Theming Portlets [](id=theming-portlets)
+---
+header-id: theming-portlets
+---
+
+# Theming Portlets
 
 @product@ themes can provide additional styles to a portlet. You can change the
 markup for the portlet containers by modifying the `portlet.ftl` file.
 
 This tutorial demonstrates how to style portlets with your themes.
 
-## Portlet FTL [](id=portlet-ftl)
+## Portlet FTL
 
 Here is a quick look at the default [`portlet.ftl`](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/foundation/frontend-theme/frontend-theme-classic/src/templates/portlet.ftl) 
 that's included in the default theme of @product-ver@:
@@ -61,7 +65,7 @@ decorators to achieve the desired look and feel.
 
 Portlet Decorators are explained in more detail next.
 
-## Portlet Decorators [](id=portlet-decorators)
+## Portlet Decorators
 
 In previous versions of @product@, administrators could display or hide the 
 application borders through the Show Borders option of the look and feel 
@@ -71,7 +75,7 @@ application wrapper.
 
 The default portlet decorators are covered next.
 
-### Default Portlet Decorators [](id=default-portlet-decorators)
+### Default Portlet Decorators
 
 Themes come bundled with three default portlet decorators in their 
 `liferay-look-and-feel.xml`. These are listed below:
@@ -88,12 +92,12 @@ theme. When this decorator is applied, the application is wrapped in a white box
 with a border and the application custom title is displayed at the top.
 
 You can learn how to create and apply your own portlet decorators in the section 
-dedicated to [Portlet Decorators](/develop/tutorials/-/knowledge_base/7-0/portlet-decorators).
+dedicated to [Portlet Decorators](/docs/7-0/tutorials/-/knowledge_base/t/portlet-decorators).
 
 Now you know how to make your portlets stylish!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Portlet Decorators](/develop/tutorials/-/knowledge_base/7-0/portlet-decorators)
+[Portlet Decorators](/docs/7-0/tutorials/-/knowledge_base/t/portlet-decorators)
 
-[Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-0/themes-and-layout-templates)
+[Themes and Layout Templates](/docs/7-0/tutorials/-/knowledge_base/t/themes-and-layout-templates)

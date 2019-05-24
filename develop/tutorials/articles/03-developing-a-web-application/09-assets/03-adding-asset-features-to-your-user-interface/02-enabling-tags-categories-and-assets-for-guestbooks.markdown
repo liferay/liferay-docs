@@ -1,4 +1,8 @@
-# Enabling Tags, Categories, and Related Assets for Guestbooks [](id=enabling-tags-categories-and-related-assets-for-guestbooks)
+---
+header-id: enabling-tags-categories-and-related-assets-for-guestbooks
+---
+
+# Enabling Tags, Categories, and Related Assets for Guestbooks
 
 <div class="learn-path-step">
     <p>Adding Asset Features to Your UI<br>Step 3 of 5</p>
@@ -10,7 +14,7 @@ that's left is to enable tags and categories in the UI. In this step, you'll
 update the Guestbook Admin portlet's `edit_guestbook.jsp` so admins can add,
 edit, or remove tags and categories when adding or updating a guestbook. 
 
-## Enabling Asset Features [](id=enabling-asset-features)
+## Enabling Asset Features
 
 Follow these steps: 
 

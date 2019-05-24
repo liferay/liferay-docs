@@ -1,4 +1,8 @@
-# @product@ Trial Plugin Installation [](id=liferay-dxp-trial-plugin-installation)
+---
+header-id: liferay-dxp-trial-plugin-installation
+---
+
+# @product@ Trial Plugin Installation
 
 For Liferay customers who are evaluating @product@ on a trial
 basis, **the plugins can be accessed from within the Marketplace section
@@ -8,7 +12,7 @@ of the Control Panel in the product**.
 @product@ Trial customers. For now, please access EE Plugins through the
 portal installation itself.* 
 
-## The Installation Process [](id=the-installation-process)
+## The Installation Process
 
 **1)** Sign into your Liferay.COM account (LRDC) on the home page. If you
 don't have an account, please register by clicking the same link. 
@@ -41,15 +45,11 @@ also includes access to the @product@-specific plugins from the Liferay
 (LRDC). Trial users do not have access to our customer Knowledge Base and
 LESA (our support ticketing system).
 
-+$$$
+| Note: We are currently working on providing access to @product@ Plugins on the
+| Marketplace website for @product@ Trial customers, which would also include
+| access from within the portal installation.
 
-Note: We are currently working on providing access to @product@ Plugins on the
-Marketplace website for @product@ Trial customers, which would also include
-access from within the portal installation. 
-
-$$$
-
-## FAQ [](id=faq)
+## FAQ
 
 **Q:** Where are the "@product@ Trial Plugins"?
 

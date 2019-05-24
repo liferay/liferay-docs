@@ -1,4 +1,8 @@
-# Creating a New SharePoint Repository Configuration [](id=creating-a-new-sharepoint-repo-configuration)
+---
+header-id: creating-a-new-sharepoint-repo-configuration
+---
+
+# Creating a New SharePoint Repository Configuration
 
 To connect to a remote SharePoint server you must create a repository 
 configuration. To do so, follow these steps: 

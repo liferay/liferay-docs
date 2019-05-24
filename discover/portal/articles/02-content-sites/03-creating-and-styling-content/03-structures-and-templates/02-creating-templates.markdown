@@ -1,4 +1,8 @@
-# Creating Templates [](id=creating-templates)
+---
+header-id: creating-templates
+---
+
+# Creating Templates
 
 <div class="learn-path-step">
     <p>Creating Content<br>Step 3B of 3D</p>

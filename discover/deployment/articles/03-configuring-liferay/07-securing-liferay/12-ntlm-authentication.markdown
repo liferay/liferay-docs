@@ -1,4 +1,8 @@
-#  NTLM Single Sign On Authentication [](id=ntlm-single-sign-on-authentication)
+---
+header-id: ntlm-single-sign-on-authentication
+---
+
+#  NTLM Single Sign On Authentication
 
 NTLM (NT LAN Manager) is a suite of Microsoft protocols that provide
 authentication, integrity, and confidentiality for users. Though Microsoft has
@@ -9,14 +13,10 @@ than NTLMv1.
 
 Note that in order to use NTLM SSO, @product@'s portal instance authentication
 type must be set to screen name as shown 
-[here](/discover/portal/-/knowledge_base/7-0/instance-settings#authentication). 
+[here](/docs/7-0/user/-/knowledge_base/u/instance-settings#authentication). 
 
-+$$$
-
-**Note:** To USE NTLM with @product@, you need to configure your browser.
-Consult your browser vendor's documentation for the details.
-
-$$$
+| **Note:** To USE NTLM with @product@, you need to configure your browser.
+| Consult your browser vendor's documentation for the details.
 
 Most importantly, all users *must* be imported from an Active Directory server.
 NTLM (and Kerberos) works only if the users are in the AD; otherwise any SSO
@@ -52,7 +52,7 @@ Control Panel, click on *Configuration* &rarr; *Instance Settings*, click on
 
 ![Figure 1: The NTLM settings on the Authentication tab let you configure SSO for Microsoft environments.](../../../images/ntlm.png)
 
-## Summary [](id=summary)
+## Summary
 
 NTLM authentication is often highly desirable in Intranet scenarios where the
 IT department has control over what software is running on client devices and

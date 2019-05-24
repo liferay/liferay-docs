@@ -1,4 +1,8 @@
-# Accessing Google Docs&trade; [](id=accessing-google-docs)
+---
+header-id: accessing-google-docs
+---
+
+# Accessing Google Docs&trade;
 
 You can access files stored in Google applications, such as Google Drive&trade; 
 and Google Photos&trade;, through the Document Library. This integration isn't 
@@ -6,15 +10,11 @@ available by default, but you can get it by installing the Liferay Plugin for
 Google Drive&trade; from the 
 [Liferay Marketplace](https://web.liferay.com/marketplace). 
 
-+$$$
-
-**Important:** The Liferay Plugin for Google Drive&trade; is a Labs application 
-available for Liferay DXP and Liferay Portal CE 7.0 GA6+. Apps designated as 
-Labs are experimental and not supported by Liferay. They're released to 
-accelerate the availability of useful and cutting-edge features. This status may 
-change without notice. Please download and use Labs apps at your own discretion. 
-
-$$$
+| **Important:** The Liferay Plugin for Google Drive&trade; is a Labs application
+| available for Liferay DXP and Liferay Portal CE 7.0 GA6+. Apps designated as
+| Labs are experimental and not supported by Liferay. They're released to
+| accelerate the availability of useful and cutting-edge features. This status may
+| change without notice. Please download and use Labs apps at your own discretion.
 
 You must configure @product@ to access Google's Picker API, which accesses files
 stored on Google's servers. Invoking the Google Picker API requires unique API
@@ -29,7 +29,7 @@ This takes three steps:
 
 Start by enabling the Google Picker API in a Google developer project. 
 
-## Step 1: Enable the Google Picker API [](id=step-1-enable-the-google-api-picker)
+## Step 1: Enable the Google Picker API
 
 @product@ uses the *Google Picker API* to access files in Google. 
 
@@ -45,7 +45,7 @@ Start by enabling the Google Picker API in a Google developer project.
 
 Next, you must create credentials to use with the Google API. 
 
-## Step 2: Create Credentials [](id=step-2-create-credentials)
+## Step 2: Create Credentials
 
 1.  In the Google Developer Console, navigate to the *Credentials* screen for
     APIs &amp; services. 
@@ -68,7 +68,7 @@ screen. Keep this screen open to reference these values as you specify them in
 @product@. All that's left is to enter the API key and client ID into
 @product@'s Google Apps configuration. 
 
-## Step 3: Configure @product@'s Google Apps Settings [](id=step-3-configure-liferays-google-apps-settings)
+## Step 3: Configure @product@'s Google Apps Settings
 
 To call Google's APIs, you must configure @product@ with your Google project's
 OAuth client ID and public API access key:
@@ -89,7 +89,7 @@ OAuth client ID and public API access key:
 Your @product@ instance is now ready to access Google documents from the 
 Document Library. 
 
-## Linking to Google Docs&trade; [](id=linking-to-google-docs)
+## Linking to Google Docs&trade;
 
 In your Document Library, you can create file entries that link to Google 
 documents, such as files stored in Google Drive&trade; or photos saved to 

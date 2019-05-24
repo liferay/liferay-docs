@@ -1,4 +1,8 @@
-# Theme Template [](id=theme-template)
+---
+header-id: theme-template
+---
+
+# Theme Template
 
 In this article, you'll learn how to create a Liferay theme as a WAR project. To
 create a Liferay theme via the command line using Blade CLI or Maven, use one of
@@ -58,7 +62,7 @@ this:
 The generated theme is functional and is deployable to a @product@ instance. To
 build upon the generated project, modify the project by adding logic and
 additional files to the folders outlined above. You can visit the
-[simple-theme](/develop/reference/-/knowledge_base/7-0/theme) project for a more
+[simple-theme](/docs/7-0/reference/-/knowledge_base/r/theme) project for a more
 expanded sample of a theme. Likewise, see the
-[Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-0/themes-and-layout-templates)
+[Themes and Layout Templates](/docs/7-0/tutorials/-/knowledge_base/t/themes-and-layout-templates)
 tutorial section for more information on creating themes.

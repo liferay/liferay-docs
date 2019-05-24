@@ -1,4 +1,8 @@
-# Finding Extension Points [](id=finding-extension-points)
+---
+header-id: finding-extension-points
+---
+
+# Finding Extension Points
 
 @product@ provides many features that help users accomplish their tasks.
 Sometimes, however, you may find it necessary to customize a built-in feature.
@@ -17,11 +21,11 @@ There's a process you can follow that makes finding an extension point a breeze.
 In this tutorial, you'll learn how to find an extension point. You'll step
 through a simple example that locates an extension point for importing LDAP
 users. This will require the use of @product@'s
-[Application Manager](/discover/portal/-/knowledge_base/7-0/managing-and-configuring-apps#using-the-app-manager)
+[Application Manager](/docs/7-0/user/-/knowledge_base/u/managing-and-configuring-apps#using-the-app-manager)
 and
-[Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell).
+[Felix Gogo Shell](/docs/7-0/reference/-/knowledge_base/r/using-the-felix-gogo-shell).
 
-## Locate the Related Module and Component [](id=locate-the-related-module-and-component)
+## Locate the Related Module and Component
 
 You must first think of words that describe the application behavior you want to
 change. With the right keywords, you can easily track down the desired module
@@ -59,25 +63,21 @@ component.
 
     ![Figure 3: The component name can be found using the App Manager.](../../../images/usermodellistener-component.png)
 
-    +$$$
-
-    **Note:** When using the Gogo shell later, understand that it can take
-    several tries to find the component for which you're looking; naming
-    conventions should allow you to find your desired extension point in a
-    manageable time frame.
-
-    $$$
+    | **Note:** When using the Gogo shell later, understand that it can take
+    | several tries to find the component for which you're looking; naming
+    | conventions should allow you to find your desired extension point in a
+    | manageable time frame.
 
 Next, you'll begin using the Gogo shell to inspect the component for extension
 points.
 
-## Finding Extension Points in a Component [](id=finding-extension-points-in-a-component)
+## Finding Extension Points in a Component
 
 Once you have the component that relates to the functionality you want to
 extend, you can use the Gogo shell's Service Component Runtime (SCR) commands to
 inspect it. You can execute SCR commands using
-[Liferay Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli) or in
-[Gogo shell via telnet](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell).
+[Liferay Blade CLI](/docs/7-0/tutorials/-/knowledge_base/t/blade-cli) or in
+[Gogo shell via telnet](/docs/7-0/reference/-/knowledge_base/r/using-the-felix-gogo-shell).
 This tutorial assumes you're using the Gogo shell via telnet.
 
 Execute the following command:
@@ -114,7 +114,7 @@ information on the other policies and policy options, visit the
 [OSGi specification](https://osgi.org/download/r6/osgi.enterprise-6.0.0.pdf), in
 particular, sections 112.3.5 and 112.3.6. If you want to learn how to
 override a component's service reference, visit the following
-[tutorial](/develop/tutorials/-/knowledge_base/7-0/overriding-service-references).
+[tutorial](/docs/7-0/tutorials/-/knowledge_base/t/overriding-service-references).
 
 **Important** Not all Extension points in @product@ are available as referenced
 services. Referenced services are common extension points when using

@@ -1,4 +1,8 @@
-# Enabling Remote Live Staging [](id=enabling-remote-live-staging)
+---
+header-id: enabling-remote-live-staging
+---
+
+# Enabling Remote Live Staging
 
 When Remote Live staging is enabled for a site, a connection is established
 between the current site and another site on a remote Liferay server. The remote
@@ -180,7 +184,7 @@ accounts from your local (staging) Liferay server to your remote (live) Liferay
 server. Liferay's Virtual LDAP Server application, available on Liferay
 Marketplace, makes this easy.
 
-## Remote Live Staging Verification [](id=remote-live-staging-verification)
+## Remote Live Staging Verification
 
 Before publishing *any* content, verify that **all** the necessary steps above
 have been completed. Otherwise, Remote Staging will fail.

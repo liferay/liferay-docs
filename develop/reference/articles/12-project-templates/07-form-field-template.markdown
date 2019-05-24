@@ -1,4 +1,8 @@
-# Form Field Template [](id=form-field-template)
+---
+header-id: form-field-template
+---
+
+# Form Field Template
 
 In this article, you'll learn how to create a Liferay form field as a Liferay
 module. To create a Liferay form field via the command line using Blade CLI or

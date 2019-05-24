@@ -1,7 +1,11 @@
-# Shield Adapter Settings [](id=shield-adapter-settings)
+---
+header-id: shield-adapter-settings
+---
+
+# Shield Adapter Settings
 
 The following is a complete list of the settings you can configure with
-[Liferay's Shield adapter](/discover/deployment/-/knowledge_base/7-0/shield).
+[Liferay's Shield adapter](/docs/7-0/deploy/-/knowledge_base/d/shield).
 
 `password=liferay`
 :The String value used for the password part of the authentication token.

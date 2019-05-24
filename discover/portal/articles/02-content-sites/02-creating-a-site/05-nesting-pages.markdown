@@ -1,4 +1,8 @@
-# Nesting Pages [](id=nesting-pages)
+---
+header-id: nesting-pages
+---
+
+# Nesting Pages
 
 <div class="learn-path-step">
     <p>Creating A Site<br>Step 5 of 6</p>
@@ -16,7 +20,7 @@ In this article, you'll nest the existing lunar guide page for Cody under the
 Lunar Guides page. You'll then create more lunar guide pages as child pages of 
 the same Lunar Guides page. 
 
-## Creating Child Pages [](id=creating-child-pages)
+## Creating Child Pages
 
 There are two ways to create a child page in @product@: 
 
@@ -29,7 +33,7 @@ There are two ways to create a child page in @product@:
 You'll start with the second option, since you already created a page (Cody)
 that you want to nest under the Lunar Guides page. 
 
-### Creating Child Pages with Drag and Drop [](id=creating-child-pages-with-drag-and-drop)
+### Creating Child Pages with Drag and Drop
 
 Using a site's *Navigation* menu, you can nest pages via drag and drop. 
 @product@ immediately applies any changes you make here to the site's navigation 
@@ -50,7 +54,7 @@ page:
 Nice work! Next, you'll create the rest of the pages for the lunar guides as 
 child pages of the *Lunar Guides* page. Cody is about to have some company. 
 
-### Creating New Child Pages [](id=creating-new-child-pages)
+### Creating New Child Pages
 
 The Lunar Resort's other lunar guides--Jim, Steve, and Russ--also need pages 
 nested under the *Lunar Guides* page. You'll create these pages directly as 

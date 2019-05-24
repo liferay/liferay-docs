@@ -1,4 +1,8 @@
-# Retrieving Guestbooks and Entries by Status [](id=retrieving-guestbooks-and-entries-by-status)
+---
+header-id: retrieving-guestbooks-and-entries-by-status
+---
+
+# Retrieving Guestbooks and Entries by Status
 
 <div class="learn-path-step">
     <p>Supporting Workflow at the Service Layer<br>Step 3 of 3</p>

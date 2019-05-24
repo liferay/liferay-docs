@@ -1,4 +1,8 @@
-# Setting up the Guestbook Portlet [](id=setting-up-the-guestbook-portlet-ios)
+---
+header-id: setting-up-the-guestbook-portlet-ios
+---
+
+# Setting up the Guestbook Portlet
 
 Before you begin developing the Guestbook app for iOS, you must set up the 
 Guestbook portlet in a @product@ instance. To do this, follow these steps: 
@@ -7,14 +11,14 @@ Guestbook portlet in a @product@ instance. To do this, follow these steps:
 2.  Install and Configure a Local @product@ Bundle
 3.  Deploy the Guestbook Portlet to the Local @product@ Instance
 
-## Installing the JDK [](id=installing-the-jdk)
+## Installing the JDK
 
 To get started, you must have JDK 8 installed. You can download and install the 
 Java SE JDK from the 
 [Java downloads page](http://www.oracle.com/technetwork/java/javase/downloads/index.html). 
 This page also has links to the JDK installation instructions. 
 
-## Installing and Configuring a Local @product@ Bundle [](id=installing-and-configuring-a-local-liferay-bundle)
+## Installing and Configuring a Local @product@ Bundle
 
 Follow these instructions to install and configure a local @product@ instance:
 
@@ -63,7 +67,7 @@ Follow these instructions to install and configure a local @product@ instance:
 
 Great! Next, you'll deploy the Guestbook portlet to your @product@ instance. 
 
-## Deploying the Guestbook Portlet [](id=deploying-the-guestbook-portlet)
+## Deploying the Guestbook Portlet
 
 Now that your portal is set up, you can deploy the Guestbook portlet to it. 
 Follow these instructions to do so: 

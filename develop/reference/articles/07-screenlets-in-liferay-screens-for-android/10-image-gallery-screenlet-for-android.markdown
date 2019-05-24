@@ -1,6 +1,10 @@
-# Image Gallery Screenlet for Android [](id=image-gallery-screenlet-for-android)
+---
+header-id: image-gallery-screenlet-for-android
+---
 
-## Requirements [](id=requirements)
+# Image Gallery Screenlet for Android
+
+## Requirements
 
 - Android SDK 4.1 (API Level 16) or above
 - Liferay Portal 6.2 CE/EE, Liferay CE Portal 7.0/7.1, Liferay DXP
@@ -9,23 +13,23 @@
   [EE/DXP](http://www.liferay.com/marketplace/-/mp/application/54369726)). 
   This app is preinstalled in Liferay CE Portal 7.0/7.1 and Liferay DXP. 
 
-## Compatibility [](id=compatibility)
+## Compatibility
 
 - Android SDK 4.1 (API Level 16) or above
 
-## Xamarin Requirements [](id=xamarin-requirements)
+## Xamarin Requirements
 
 - Visual Studio 7.2
 - Mono .NET framework 5.4.1.6
 
-## Features [](id=features)
+## Features
 
 Image Gallery Screenlet shows a list of images from a Documents and Media folder in a 
 Liferay instance. You can also use Image Gallery Screenlet to upload images to and 
 delete images from the same folder. The Screenlet implements fluent pagination 
 with configurable page size, and supports i18n in asset values. 
 
-## JSON Services Used [](id=json-services-used)
+## JSON Services Used
 
 Screenlets in Liferay Screens call JSON web services in the portal. This 
 Screenlet calls the following services and methods.
@@ -37,11 +41,11 @@ Screenlet calls the following services and methods.
 | `DLAppService` | `addFileEntry` | Upload |
 | `DLAppService` | `deleteFileEntry` | Delete |
 
-## Module [](id=module)
+## Module
 
 - None
 
-## Views [](id=views)
+## Views
 
 The included Views use a standard Android `RecyclerView` to show the scrollable 
 list. Other custom Views may use a different component, such as `ViewPager` or 
@@ -55,12 +59,12 @@ This Screenlet has three different Views:
 
 ![Figure 1: Image Gallery Screenlet using the Grid, Slideshow, and List Views.](../../images/screens-android-imagegallery.png)
 
-## Offline [](id=offline)
+## Offline
 
 This Screenlet supports offline mode so it can function without a network 
 connection when loading or uploading images (deleting images while offline is 
 unsupported). For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/docs/7-0/tutorials/-/knowledge_base/t/architecture-of-offline-mode-in-liferay-screens). 
 This Screenlet supports the `REMOTE_ONLY`, `CACHE_ONLY`, `REMOTE_FIRST`, and 
 `CACHE_FIRST` offline mode policies. 
 
@@ -84,18 +88,18 @@ instance:
 | `REMOTE_FIRST` | The Screenlet sends the image to the Liferay instance. If this succeeds, it also stores the image in the local cache for later use. If a connection issue occurs, the Screenlet stores the image in the local cache and sends it to the Liferay instance when the connection is re-established. | Use this policy when you need to make sure the Screenlet sends the image to the Liferay instance as soon as the connection is restored. |
 | `CACHE_FIRST` | The Screenlet stores the image in the local cache and then attempts to send it to the Liferay instance. If a connection issue occurs, the Screenlet sends the image to the Liferay instance when the connection is re-established. | Use this policy when you need to make sure the Screenlet sends the image to the Liferay instance as soon as the connection is restored. Compared to `REMOTE_FIRST`, this policy always stores the image in the cache. The `REMOTE_FIRST` policy only stores the image in the event of a network error. |
 
-## Required Attributes [](id=required-attributes)
+## Required Attributes
 
 - `folderId`
 - `repositoryId`
 
-## Attributes [](id=attributes)
+## Attributes
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------|
 | `repositoryId` | `number` | The ID of the Liferay instance's Documents and Media repository that contains the image gallery. If you're using a site's default Documents and Media repository, then the `repositoryId` matches the site ID (`groupId`). |
 | `folderId` | `number` | The ID of the Documents and Media repository folder that contains the image gallery. When accessing the folder in your browser, the `folderId` is at the end of the URL. |
-| `cachePolicy` | `string` | The offline mode setting. See the [Offline section](/develop/reference/-/knowledge_base/7-0/image-gallery-screenlet-for-android#offline) for details. |
+| `cachePolicy` | `string` | The offline mode setting. See the [Offline section](/docs/7-0/reference/-/knowledge_base/r/image-gallery-screenlet-for-android#offline) for details. |
 | `firstPageSize` | `number` | The number of items to display on the first page. The default value is `50`. |
 | `pageSize` | `number` | The number of items to display on second and subsequent pages. The default value is `25`. |
 | `mimeTypes` | `string` | The comma-separated list of MIME types for the Screenlet to support. |
@@ -103,13 +107,13 @@ instance:
 | `layoutId` | `@layout` | The layout to use to show the View. |
 | `obcClassName` | `string` | The name of the `OrderByComparator` class to use to sort the results. Omit this property if you don't want to sort the results. Note that you can only use comparator classes that extend `OrderByComparator<DLFileEntry>`. Liferay contains no such comparator classes. You must therefore create your own by extending `OrderByComparator<DLFileEntry>`. To see examples of some comparator classes that extend other Document Library classes, [click here](https://github.com/liferay/liferay-portal/tree/master/portal-impl/src/com/liferay/portlet/documentlibrary/util/comparator). |
 
-## Methods [](id=methods)
+## Methods
 
 | Method | Return | Explanation |
 |-----------|-----------|-------------| 
 | `loadPage(pageNumber)` | `void` | Starts the request to load the specified page of images. The page is shown when the response is received. |
 
-## Listener [](id=listener)
+## Listener
 
 Image Gallery Screenlet delegates some events to an object or class that 
 implements its 

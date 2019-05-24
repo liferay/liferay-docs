@@ -1,4 +1,8 @@
-# Creating Entry List Screenlet's Interactor [](id=creating-entry-list-screenlets-interactor)
+---
+header-id: creating-entry-list-screenlets-interactor
+---
+
+# Creating Entry List Screenlet's Interactor
 
 Recall that Interactors are Screenlet components that make server calls and 
 process the results. Also recall that Interactors themselves are made up of 
@@ -14,11 +18,11 @@ steps required do this. Because Entry List Screenlet's Interactor is so similar
 to that of Guestbook List Screenlet, these steps aren't explained in detail. 
 Focus is instead placed on the few places in the code where the Interactors 
 diverge. For a full explanation of the code, see the article on creating
-[Guestbook List Screenlet's Interactor](/develop/tutorials/-/knowledge_base/7-0/creating-guestbook-list-screenlets-interactor). 
+[Guestbook List Screenlet's Interactor](/docs/7-0/tutorials/-/knowledge_base/t/creating-guestbook-list-screenlets-interactor). 
 
 You'll create the event class first. 
 
-## Creating the Event Class [](id=creating-the-event-class)
+## Creating the Event Class
 
 Recall that you must create an event class to communicate the server call's 
 results via 
@@ -60,7 +64,7 @@ it works with entries instead of guestbooks.
 
 Next, you'll create the Interactor class. 
 
-## Creating the Interactor Class [](id=creating-the-interactor-class)
+## Creating the Interactor Class
 
 Recall that an Interactor class issues the server call and processes the results 
 via the event. In the `interactor` package, create a new class called 

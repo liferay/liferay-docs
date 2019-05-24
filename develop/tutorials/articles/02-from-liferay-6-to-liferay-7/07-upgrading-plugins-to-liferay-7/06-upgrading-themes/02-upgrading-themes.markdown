@@ -1,4 +1,8 @@
-# Upgrading Your Theme from Liferay Portal 6.2 to 7.0 [](id=upgrading-themes)
+---
+header-id: upgrading-themes
+---
+
+# Upgrading Your Theme from Liferay Portal 6.2 to 7.0
 
 This tutorial guides you through the process of upgrading your 6.2 theme to run 
 on @product-ver@. While you're at it, you should leverage theme improvements, 
@@ -15,7 +19,7 @@ Theme upgrades involve these steps:
 -  Applying Lexicon design patterns
 
 As an example, this tutorial applies the steps to a Liferay Portal 6.2 theme called the
-Lunar Resort theme---developed in the Liferay Portal 6.2 Learning Path [Developing a Liferay Theme](/develop/tutorials/-/knowledge_base/6-2/developing-a-liferay-theme).
+Lunar Resort theme---developed in the Liferay Portal 6.2 Learning Path [Developing a Liferay Theme](/docs/6-2/tutorials/-/knowledge_base/t/developing-a-liferay-theme).
 It's similar to many Liferay Portal 6.2 themes as it extends the [`_styled` theme](https://github.com/liferay/liferay-portal/tree/6.2.x/portal-web/docroot/html/themes/_styled),
 adding configurable settings and incorporating a responsive design that
 leverages Font Awesome icons and Bootstrap. The theme [ZIP file](/documents/10184/656312/lunar-resort-theme-migration-6.2.zip)
@@ -23,14 +27,14 @@ contains its original source code.
 
 ![Figure 1: The Lunar Resort example theme upgraded in this tutorial uses a clean, minimal design.](../../../../images/finished-theme.png)
 
-Before upgrading a theme, consider [migrating the theme](/develop/tutorials/-/knowledge_base/7-0/migrating-a-6-2-theme-to-liferay-7)
+Before upgrading a theme, consider [migrating the theme](/docs/7-0/tutorials/-/knowledge_base/t/migrating-a-6-2-theme-to-liferay-7)
 to use the [Liferay JS Theme Toolkit](https://github.com/liferay/liferay-themes-sdk/tree/master/packages), 
-such as those created with the [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator). 
+such as those created with the [Liferay Theme Generator](/docs/7-0/tutorials/-/knowledge_base/t/themes-generator). 
 @product-ver@ doesn't require this migration, but the Liferay JS Theme Toolkit's 
 Gulp `upgrade` task automates many upgrade steps. Themes that use the Liferay JS 
 Theme Toolkit can also leverage exclusive new features, such as the Liferay 
 Theme Generator's sub-generators, and 
-[Themelets](/develop/tutorials/-/knowledge_base/7-0/themelets).
+[Themelets](/docs/7-0/tutorials/-/knowledge_base/t/themelets).
 If you migrate your theme, return here afterward to upgrade it.
 
 No matter the environment in which you're developing your theme, this tutorial
@@ -38,7 +42,7 @@ explains everything required to upgrade it. The easiest option is to use the
 Liferay JS Theme Toolkit's Gulp `upgrade` task, so you'll see that first. Then you'll
 see *all* upgrade steps, in case you want to run them manually. 
 
-## Running the Upgrade Task for Themes that Use Liferay JS Theme Toolkit [](id=running-the-upgrade-task-for-themes-generator-themes)
+## Running the Upgrade Task for Themes that Use Liferay JS Theme Toolkit
 
 A Liferay Portal 6.2 theme can be upgraded to @product-ver@, regardless of its project
 environment (Liferay JS Theme Toolkit, Plugins SDK, Maven, etc.). But a theme 
@@ -67,12 +71,8 @@ Here are the steps for using the theme `gulp upgrade` task:
     - Creates core code for generating theme base files
     - Updates Liferay version references
 
-    +$$$
-
-    **Note**: An upgraded theme can be restored to its original state by
-    executing `gulp upgrade:revert`. 
-
-    $$$
+    | **Note**: An upgraded theme can be restored to its original state by
+    | executing `gulp upgrade:revert`.
 
     The task continues upgrading CSS files, prompting you to update CSS file
     names.
@@ -88,9 +88,9 @@ theme templates.
 
 A *breaking change* is a code modification between versions of @product@ that 
 might be incompatible with existing plugins, including themes. Liferay minimized
-the number of breaking changes, but couldn't avoid some. The [Breaking Changes](/develop/reference/-/knowledge_base/7-0/breaking-changes)
+the number of breaking changes, but couldn't avoid some. The [Breaking Changes](/docs/7-0/reference/-/knowledge_base/r/breaking-changes)
 reference document describes them. The theme's `gulp upgrade` command and the 
-[Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool),
+[Code Upgrade Tool](/docs/7-0/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool),
 in Liferay @ide@ identify and address these changes.
 
 The Gulp `upgrade` task jump-starts the upgrade process, but it doesn't complete
@@ -103,7 +103,7 @@ best to learn all the steps and make sure they're applied to your theme.
 
 The next step is to update the theme's metadata. 
 
-## Updating Project Metadata [](id=updating-project-metadata)
+## Updating Project Metadata
 
 If you're developing your theme in an environment other than the Plugins SDK,
 skip this section. 
@@ -139,7 +139,7 @@ as the DTD and `7.0.0+` as the compatibility version:
 Your theme's Liferay version references are updated for @product-ver@. Next, you'll
 update the CSS.
 
-## Updating CSS Code [](id=updating-css-code)
+## Updating CSS Code
 
 @product-ver@'s UI improvements required these CSS-related changes:
 
@@ -153,17 +153,13 @@ The theme upgrade process involves conforming to these changes.
 In this section, you'll update your theme's CSS to leverage the styling
 improvements. Start with updating CSS file names for Sass. 
 
-### Updating CSS File Names for Sass [](id=updating-css-file-names-for-sass)
+### Updating CSS File Names for Sass
 
 Although Sass was available in Liferay Portal 6.2, only Sass partial files followed the
 Sass naming convention (using file suffix `.scss`). In @product-ver@ themes, all
 Sass files must end in `scss`. 
 
-+$$$
-
-**Note**: The Gulp `upgrade` task renames Sass files automatically.
-
-$$$
+| **Note**: The Gulp `upgrade` task renames Sass files automatically.
 
 For each CSS file you've modified in your theme, except `main.scss` and
 `aui.scss`, change its suffix from `.css` to `.scss`. 
@@ -178,12 +174,12 @@ Here are the Lunar Resort theme's renamed CSS files:
 	- `_aui_variables.scss`
 	- `_custom.scss`
 
-Refer to the [Theme Reference Guide](/develop/reference/-/knowledge_base/7-0/theme-reference-guide)
+Refer to the [Theme Reference Guide](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide)
 for a complete list of expected theme CSS files. 
 
 Next, the CSS rules must be updated to use Bootstrap 3 syntax.
 
-### Updating CSS Rules [](id=updating-css-rules)
+### Updating CSS Rules
 
 @product-ver@ uses Bootstrap 3's CSS rule syntax. The new syntax lets developers
 leverage Bootstrap 3 features and improvements.
@@ -263,12 +259,8 @@ dimensions. [Bootstrap's documentation](https://getbootstrap.com/docs/3.3/css/#l
 describes the box sizing changes. Consider the padding updates the `upgrade`
 task reports for CSS rules. 
 
-+$$$
-
-**Note:** For individual elements, you can overwrite the `box-sizing:
-border-box` rule with `box-sizing: content-box`. 
-
-$$$
+| **Note:** For individual elements, you can overwrite the `box-sizing:
+| border-box` rule with `box-sizing: content-box`.
 
 In all CSS rules that use padding, make sure to update the width and height.
 
@@ -304,7 +296,7 @@ New way:
 
 After updating your theme's CSS rules, you should update its CSS responsiveness. 
 
-### Updating the Responsiveness [](id=updating-the-responsiveness)
+### Updating the Responsiveness
 
 In @product-ver@, Bootstrap 3 explicit media queries replace Bootstrap 2
 `respond-to` mixins for CSS responsiveness. Follow these steps to update CSS
@@ -359,7 +351,7 @@ all unused mixins. If you're not using any of the mixins, delete the
 You've updated the theme's responsiveness. Next, you'll update its Font Awesome
 settings. 
 
-### Updating Font Awesome Icons [](id=updating-font-awesome-icons)
+### Updating Font Awesome Icons
 
 @product@ uses Font Awesome icons extensively. For example, the Lunar Resort
 theme's design incorporates Font Awesome icons in its social media links. 
@@ -371,13 +363,9 @@ The icons are easy to use in themes too.
 In Liferay Portal 6.2, the CSS file `aui.css`  defined the Font Awesome icon paths. In
 @product-ver@, the Sass file `_aui_variables.scss` defines them.
 
-+$$$
-
-**Note:** In @product-ver@, the `aui.css` file holds the `lexicon-base` style
-import. The [Theme Reference Guide](/develop/reference/-/knowledge_base/7-0/theme-reference-guide)
-describes all the @product@ theme files.
-
-$$$
+| **Note:** In @product-ver@, the `aui.css` file holds the `lexicon-base` style
+| import. The [Theme Reference Guide](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide)
+| describes all the @product@ theme files.
 
 The top of the `_aui_variables.scss` file must start with the Font Awesome Icons
 imports. If you modified the `_aui_variables.scss` file in your Liferay Portal 6.2 theme, add
@@ -390,7 +378,7 @@ these Font Awesome imports to the top of it:
 
 Next, you'll update the theme templates.
 
-## Updating Theme Templates [](id=updating-theme-templates)
+## Updating Theme Templates
 
 @product-ver@ theme templates are essentially the same as Liferay Portal 6.2 theme
 templates. Here are the main changes:
@@ -440,14 +428,14 @@ For all the theme's templates, it suggests replacement code for deprecated code.
 Next, you'll learn how to update various theme templates to @product-ver@. If you
 didn't modify any theme templates, you can skip these sections.
 
-### Updating Portal Normal FTL [](id=updating-portal-normal-ftl)
+### Updating Portal Normal FTL
 
 The first one to update is the `portal_normal.ftl` theme template. If you didn't
 customize `portal_normal.ftl`, you can skip this section.
 
 In FreeMarker templates, the new syntax for including taglibs lets you use them
 directly rather than accessing them via the `theme` variable. The change is
-described in the [Breaking Changes](/develop/reference/-/knowledge_base/7-0/breaking-changes#taglibs-are-no-longer-accessible-via-the-theme-variable-in-freemarker)
+described in the [Breaking Changes](/docs/7-0/reference/-/knowledge_base/r/breaking-changes#taglibs-are-no-longer-accessible-via-the-theme-variable-in-freemarker)
 reference document. All modified `portal_normal.ftl` theme templates must be
 updated to use the new syntax. 
 
@@ -552,17 +540,13 @@ updated to use the new syntax.
     To support accessibility, consider adding an `h1` element like the one
     above. 
 
-+$$$
-
-**Note**: The Liferay JS Theme Toolkit's `gulp upgrade` command reports 
-suggested theme template changes. 
-
-$$$
+| **Note**: The Liferay JS Theme Toolkit's `gulp upgrade` command reports
+| suggested theme template changes.
 
 If you modified the navigation template for your theme, follow the steps in the
 next section. 
 
-### Updating Navigation FTL [](id=updating-navigation-ftl)
+### Updating Navigation FTL
 
 Follow these steps to update your modified `navigation.ftl` file:
 
@@ -599,7 +583,7 @@ changes that the `gulp upgrade` command reports.
 After updating the theme templates, you can update your theme's resources
 importer code.
 
-## Updating the Resources Importer [](id=updating-the-resources-importer)
+## Updating the Resources Importer
 
 Liferay's resources importer is now an OSGi module in Liferay's Web Experience
 application suite. Since the suite is bundled with @product@, developers no
@@ -614,20 +598,16 @@ components:
 
 This section shows you how to update these components.
 
-+$$$
-
-**Note:** The example Lunar Resort theme's resources importer web content
-articles have been modified to avoid known issue [LPS-64859](https://issues.liferay.com/browse/LPS-64859).
-Articles in the Liferay Portal 6.2 theme link to pages in the site's layout. Due to the page
-and article import order, the links cause a null pointer exception. To avoid
-this issue with the example theme, the offending links have been removed from
-its articles.
-
-$$$
+| **Note:** The example Lunar Resort theme's resources importer web content
+| articles have been modified to avoid known issue [LPS-64859](https://issues.liferay.com/browse/LPS-64859).
+| Articles in the Liferay Portal 6.2 theme link to pages in the site's layout. Due to the page
+| and article import order, the links cause a null pointer exception. To avoid
+| this issue with the example theme, the offending links have been removed from
+| its articles.
 
 Start updating the plugin properties for the resources importer.
 
-### Updating liferay-plugin-package.properties [](id=updating-liferay-plugin-package-properties)
+### Updating liferay-plugin-package.properties
 
 If you're upgrading a Plugins SDK theme, follow these instructions to update
 resources importer properties. Otherwise, skip this section.
@@ -650,7 +630,7 @@ file:
 Now that the resources importer's properties are configured properly, you can
 update your theme's web content.
 
-### Updating Web Content [](id=updating-web-content)
+### Updating Web Content
 
 All @product-ver@ web content articles must be written in XML and have a structure
 and template. Article creation requires a structure and article content
@@ -812,24 +792,20 @@ That's all that is needed for most basic web content articles. If you're
 following along with the Lunar Resort example, the updated XML articles are in
 the ZIP file's `/resources-importer/journal/articles/Basic Web Content/` folder.
 
-+$$$
-
-**Note:** Although Liferay Portal 6.2 used AlloyUI 2.0.x, @product-ver@ uses AlloyUI 3.0.x.
-As a result, you may need to update your code that uses AlloyUI. Refer to
-AlloyUI's [examples](http://alloyui.com/examples/) and [API docs](http://alloyui.com/api/)
-for details. 
-
-$$$
+| **Note:** Although Liferay Portal 6.2 used AlloyUI 2.0.x, @product-ver@ uses AlloyUI 3.0.x.
+| As a result, you may need to update your code that uses AlloyUI. Refer to
+| AlloyUI's [examples](http://alloyui.com/examples/) and [API docs](http://alloyui.com/api/)
+| for details.
 
 Next, you must update your resources importer's sitemap file.
 
-### Updating the Sitemap [](id=updating-the-sitemap)
+### Updating the Sitemap
 
 In Liferay Portal 6.2, portlet IDs were incremental numbers. In @product-ver@, they're
 explicit class names. The new IDs are intuitive and unique. But you must update
 your `sitemap.json` file with the new portlet IDs.
 
-Some of common portlet IDs are specified in the `sitemap.json` example in the [Importing Resources with a Theme](/develop/tutorials/-/knowledge_base/7-0/importing-resources-with-a-theme)
+Some of common portlet IDs are specified in the `sitemap.json` example in the [Importing Resources with a Theme](/docs/7-0/tutorials/-/knowledge_base/t/importing-resources-with-a-theme)
 tutorial.
 
 You can also retrieve a portlet's ID from the UI:
@@ -850,7 +826,7 @@ lists all the default portlet IDs.
 Next, you can learn how to update your theme's UI to follow Lexicon design
 patterns.
 
-## Applying Lexicon Design Patterns [](id=applying-lexicon-ui-design-patterns)
+## Applying Lexicon Design Patterns
 
 @product-ver@ uses [Lexicon](https://liferay.github.io/clay/), a web 
 implementation of Liferay's [Lexicon Experience Language](https://lexicondesign.io/).
@@ -969,10 +945,10 @@ Plugins SDK project:
 Now your users can continue enjoying the visual styles you've created in your
 upgraded themes. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+[Liferay Theme Generator](/docs/7-0/tutorials/-/knowledge_base/t/themes-generator)
 
-[Migrating a theme to @product-ver@](/develop/tutorials/-/knowledge_base/7-0/migrating-a-6-2-theme-to-liferay-7)
+[Migrating a theme to @product-ver@](/docs/7-0/tutorials/-/knowledge_base/t/migrating-a-6-2-theme-to-liferay-7)
 
 [Upgrading to @product-ver@] (/discover/deployment/-/knowledge_base/7-0/upgrading-to-liferay-7)

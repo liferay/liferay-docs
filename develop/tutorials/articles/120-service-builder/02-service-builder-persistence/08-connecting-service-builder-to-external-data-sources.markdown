@@ -1,19 +1,19 @@
-# Connecting Service Builder to External Data Sources [](id=connecting-service-builder-to-external-data-sources)
+---
+header-id: connecting-service-builder-to-external-data-sources
+---
+
+# Connecting Service Builder to External Data Sources
 
 Sometimes you want to use a data source other than @product@'s. To do this, the
 data source must be defined in `portal-ext.properties` or configured as a JNDI
 data source on @product@'s app server. This tutorial shows how to connect
-[Service Builder](/develop/tutorials/-/knowledge_base/7-0/service-builder)
+[Service Builder](/docs/7-0/tutorials/-/knowledge_base/t/service-builder)
 to a data source.
 
-+$$$
-
-**Note**: All entities defined in a Service Builder module's `service.xml` file 
-are bound to the same data source. Binding different entities to different data
-sources requires defining the entities in separate Service Builder modules and
-configuring each of the modules to use a different data source. 
-
-$$$
+| **Note**: All entities defined in a Service Builder module's `service.xml` file
+| are bound to the same data source. Binding different entities to different data
+| sources requires defining the entities in separate Service Builder modules and
+| configuring each of the modules to use a different data source.
 
 Here are the steps: 
 
@@ -104,17 +104,13 @@ Here are the steps:
     The data source bean `liferayDataSource` is overridden with one
     that refers to the `liferayDataSourceFactory` bean. The override affects
     this bundle (module or
-    [Web Application Bundle](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)) 
+    [Web Application Bundle](/docs/7-0/tutorials/-/knowledge_base/t/using-the-wab-generator)) 
     only. 
 
     The alias `extDataSource` refers to the `liferayDataSource` data source bean. 
  
-    +$$$
- 
-    **Note**: To use an external data source in multiple Service Builder
-    bundles, you must override the `liferayDataSource` bean in each bundle. 
- 
-    $$$
+    | **Note**: To use an external data source in multiple Service Builder
+    | bundles, you must override the `liferayDataSource` bean in each bundle.
 
 2.  In your Service Builder module's `service.xml` file, set your entity's
     data source to the `liferayDataSource` alias you specified in your
@@ -142,18 +138,18 @@ Here are the steps:
 
     Also note that your entity's `<column>`s must have a `db-name` attribute set to the column name.
 
-3.  [Run Service Builder](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code).
+3.  [Run Service Builder](/docs/7-0/tutorials/-/knowledge_base/t/running-service-builder-and-understanding-the-generated-code).
 
 Now your Service Builder services use the data source. You can
-[use the services in your business logic](/develop/tutorials/-/knowledge_base/7-0/business-logic-with-service-builder)
+[use the services in your business logic](/docs/7-0/tutorials/-/knowledge_base/t/business-logic-with-service-builder)
 as you always have regardless of the underlying data source. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Connecting to JNDI Data Sources](/develop/tutorials/-/knowledge_base/7-0/connecting-to-data-sources-using-jndi)
+[Connecting to JNDI Data Sources](/docs/7-0/tutorials/-/knowledge_base/t/connecting-to-data-sources-using-jndi)
 
-[Service Builder](/develop/tutorials/-/knowledge_base/7-0/service-builder)
+[Service Builder](/docs/7-0/tutorials/-/knowledge_base/t/service-builder)
 
-[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code)
+[Running Service Builder and Understanding the Generated Code](/docs/7-0/tutorials/-/knowledge_base/t/running-service-builder-and-understanding-the-generated-code)
 
-[Business Logic with Service Builder](/develop/tutorials/-/knowledge_base/7-0/business-logic-with-service-builder)
+[Business Logic with Service Builder](/docs/7-0/tutorials/-/knowledge_base/t/business-logic-with-service-builder)

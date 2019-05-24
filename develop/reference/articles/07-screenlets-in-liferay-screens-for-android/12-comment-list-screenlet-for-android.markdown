@@ -1,6 +1,10 @@
-# Comment List Screenlet for Android [](id=comment-list-screenlet-for-android)
+---
+header-id: comment-list-screenlet-for-android
+---
 
-## Requirements [](id=requirements)
+# Comment List Screenlet for Android
+
+## Requirements
 
 - Android SDK 4.1 (API Level 16) or above
 - Liferay Portal 6.2 CE/EE, Liferay CE Portal 7.0/7.1, Liferay DXP
@@ -9,21 +13,21 @@
   [EE/DXP](http://www.liferay.com/marketplace/-/mp/application/54369726)). 
   This app is preinstalled in Liferay CE Portal 7.0/7.1 and Liferay DXP. 
 
-## Compatibility [](id=compatibility)
+## Compatibility
 
 - Android SDK 4.1 (API Level 16) or above
 
-## Xamarin Requirements [](id=xamarin-requirements)
+## Xamarin Requirements
 
 - Visual Studio 7.2
 - Mono .NET framework 5.4.1.6
 
-## Features [](id=features)
+## Features
 
 Comment List Screenlet can list all the comments of an asset in a Liferay 
 instance. It also lets the user update or delete comments. 
 
-## JSON Services Used [](id=json-services-used)
+## JSON Services Used
 
 Screenlets in Liferay Screens call JSON web services in the portal. This 
 Screenlet calls the following services and methods.
@@ -33,11 +37,11 @@ Screenlet calls the following services and methods.
 | `ScreenscommentService` (Screens compatibility plugin) | `getComments` |  |
 | `ScreenscommentService` (Screens compatibility plugin) | `getCommentsCount` |  |
 
-## Module [](id=module)
+## Module
 
 - None
 
-## Views [](id=views)
+## Views
 
 - Default
 
@@ -48,11 +52,11 @@ to show an asset's comments. Other Views may use a different component, such as
 
 ![Figure 1: Comment List Screenlet using the Default View.](../../images/screens-android-commentlist.png)
 
-## Offline [](id=offline)
+## Offline
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/docs/7-0/tutorials/-/knowledge_base/t/architecture-of-offline-mode-in-liferay-screens). 
 Here are the offline mode policies that you can use with this Screenlet: 
 
 | Policy | What happens | When to use |
@@ -62,32 +66,32 @@ Here are the offline mode policies that you can use with this Screenlet:
 | `REMOTE_FIRST` | The Screenlet loads the comments from the Liferay instance. If this succeeds, the Screenlet shows the data to the user and stores it in the local cache for later use. If a connection issue occurs, the Screenlet retrieves the data from the local cache. If the data doesn't exist there, the Screenlet uses the listener to notify the developer about the error. | Use this policy to show the most recent version of the data when connected, but show an outdated version when there's no connection. |
 | `CACHE_FIRST` | The Screenlet loads the comments from the local cache. If the data isn't there, the Screenlet requests it from the Liferay instance and notifies the developer about any errors that occur (including connectivity errors). | Use this policy to save bandwidth and loading time in case you have local (but probably outdated) data. |
 
-## Required Attributes [](id=required-attributes)
+## Required Attributes
 
 - `className`
 - `classPK`
 
-## Attributes [](id=attributes)
+## Attributes
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------|
 | `layoutId` | `@layout` | The layout to use to show the View. |
 | `autoLoad` | `boolean` | Whether the list should automatically load when the Screenlet appears in the app's UI. The default value is `true`. |
-| `cachePolicy` | `string` | The offline mode setting. See [the Offline section](/develop/reference/-/knowledge_base/7-0/comment-list-screenlet-for-android#offline) for details. |
+| `cachePolicy` | `string` | The offline mode setting. See [the Offline section](/docs/7-0/reference/-/knowledge_base/r/comment-list-screenlet-for-android#offline) for details. |
 | `className` | `string` | The asset's fully qualified class name. For example, a blog entry's `className` is [`com.liferay.blogs.kernel.model.BlogsEntry`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/blogs/kernel/model/BlogsEntry.html). The `className` and `classPK` attributes are required to instantiate the Screenlet. |
 | `classPK` | `number` | The asset's unique identifier. The `className` and `classPK` attributes are required to instantiate the Screenlet. |
 | `firstPageSize` | `number` | The number of items to retrieve from the server for display on the first page. The default value is `50`. |
 | `pageSize` | `number` | The number of items to retrieve from the server for display on the second and subsequent pages. The default value is `25`. |
-| `labelFields` | `string` | The comma-separated names of the DDL fields to show. Refer to the list's data definition to find the field names. For more information on this, see [the article on structured web content](/discover/portal/-/knowledge_base/7-0/designing-uniform-content). Note that the appearance of data from a structure's fields depends on the `layoutId`. |
+| `labelFields` | `string` | The comma-separated names of the DDL fields to show. Refer to the list's data definition to find the field names. For more information on this, see [the article on structured web content](/docs/7-0/user/-/knowledge_base/u/designing-uniform-content). Note that the appearance of data from a structure's fields depends on the `layoutId`. |
 | `editable` | `boolean` | Whether the user can edit the comment. |
 
-## Methods [](id=methods)
+## Methods
 
 | Method | Return | Explanation |
 |-----------|-----------|-------------| 
 | `loadPage(pageNumber)` | `void` | Starts the request to load the specified page of records. The page is shown when the response is received. |
 
-## Listener [](id=listener)
+## Listener
 
 Comment List Screenlet delegates some events to a class that implements 
 `CommentListListener`. This interface lets you implement the following 

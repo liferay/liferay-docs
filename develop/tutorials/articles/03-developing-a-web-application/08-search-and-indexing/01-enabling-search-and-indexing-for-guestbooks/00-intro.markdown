@@ -1,4 +1,8 @@
-# Enabling Search and Indexing for Guestbooks [](id=enabling-search-and-indexing-for-guestbooks)
+---
+header-id: enabling-search-and-indexing-for-guestbooks
+---
+
+# Enabling Search and Indexing for Guestbooks
 
 In this section, you first create an indexer for guestbooks. You then modify the 
 service layer to use this indexer to update the search index when a guestbook is 

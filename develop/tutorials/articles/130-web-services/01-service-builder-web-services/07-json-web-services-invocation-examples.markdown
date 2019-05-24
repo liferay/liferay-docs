@@ -1,4 +1,8 @@
-# JSON Web Services Invocation Examples [](id=json-web-services-invocation-examples)
+---
+header-id: json-web-services-invocation-examples
+---
+
+# JSON Web Services Invocation Examples
 
 This tutorial provides examples of invoking Liferay's JSON web services via
 JavaScript, URL, and 
@@ -8,7 +12,7 @@ user and adding a user) are shown in each example. This tutorial also includes
 an example of using JavaScript to invoke Liferay's JSON web services from a 
 portlet. 
 
-## Loading AlloyUI [](id=loading-alloyui)
+## Loading AlloyUI
 
 Liferay web pages use the AlloyUI JavaScript framework. Among the JavaScript
 objects created for each Liferay page is a `Liferay` object. This object
@@ -43,7 +47,7 @@ Then you can create an AUI context like this:
 
 Now you're ready to invoke Liferay's JSON web services.
 
-## Get User JSON Web Service Invocation via JavaScript [](id=get-user-json-web-service-invocation-via-javascript)
+## Get User JSON Web Service Invocation via JavaScript
 
 First, examine the following JSON web service invocation, written in JavaScript: 
 
@@ -69,7 +73,7 @@ The `Liferay.Service(...)` function takes three arguments:
 
 The callback function takes the result of the service invocation as an argument.
 
-## Add User JSON Web Service Invocation via JavaScript [](id=add-user-json-web-service-invocation-via-javascript)
+## Add User JSON Web Service Invocation via JavaScript
 
 Here's an example JSON web service invocation, also written in JavaScript, that 
 adds a new user. It requires many more parameters than the one for retrieving a 
@@ -119,7 +123,7 @@ square brackets: `[` and `]`. Thus, the line
 an object containing an array named `assetTagNames`, which contains the string
 `test`. 
 
-## Invoking JSON Web Services via JavaScript in a Application [](id=invoking-json-web-services-via-javascript-in-a-application)
+## Invoking JSON Web Services via JavaScript in a Application
 
 You can adapt the example from the previous section for use in a Liferay app. 
 For example, the JSP page below creates a form that lets the user specify a 
@@ -223,7 +227,7 @@ the code uses the `mvcPath` URL parameter. It's also assumed that the JSP code
 is in a file named `view.jsp`, and that there are also `success.jsp` and 
 `failure.jsp` files in the same directory. 
 
-## Get User JSON Web Service Invocation via URL [](id=get-user-json-web-service-invocation-via-url)
+## Get User JSON Web Service Invocation via URL
 
 Here's a simple JSON web service invocation via URL that returns the user with
 the specified email address:
@@ -236,7 +240,7 @@ service via Liferay's JSONWS API page, the URL provided when you click on the
 you'll add this parameter yourself. Remember that you must be logged in as a 
 user with the required permission to invoke a web service. To find the `p_auth` 
 token that corresponds to your session, see the 
-[Invoking JSON Web Services](/develop/tutorials/-/knowledge_base/7-0/invoking-json-web-services) 
+[Invoking JSON Web Services](/docs/7-0/tutorials/-/knowledge_base/t/invoking-json-web-services) 
 tutorial. 
 
 If you read that tutorial, you know that you can supply parameters as either URL 
@@ -248,7 +252,7 @@ example using URL query parameters:
 
 Next, you'll consider an example that requires many more parameters!
 
-## Add User JSON Web Service Invocation via URL [](id=add-user-json-web-service-invocation-via-url)
+## Add User JSON Web Service Invocation via URL
 
 Here's an example JSON web service invocation via URL that adds a new user with
 the specified attributes:
@@ -260,7 +264,7 @@ parameters:
 
     http://localhost:8080/api/jsonws/user/add-user?companyId=20154&autoPassword=false&password1=test&password2=test&autoScreenName=false&screenName=joe.bloggs&emailAddress=joe.bloggs@liferay.com&facebookId=0&-openId&locale=en_US&firstName=Joe&middleName=T&lastName=Bloggs&prefixId=0&suffixId=0&male=true&birthdayMonth=1&birthdayDay=1&birthdayYear=1970&jobTitle=Tester&-groupIds&-organizationIds&-roleIds&-userGroupIds&sendEmail=false&p_auth=[value]
 
-## Get User JSON Web Service Invocation via cURL [](id=get-user-json-web-service-invocation-via-curl)
+## Get User JSON Web Service Invocation via cURL
 
 Here's an example JSON web service invocation via the cURL tool that returns the
 user with the specified email address:
@@ -273,7 +277,7 @@ user with the specified email address:
 Note that cURL is a command line tool. You can execute this command from a 
 terminal or command prompt. 
 
-## Add User JSON Web Service Invocation via cURL [](id=add-user-json-web-service-invocation-via-curl)
+## Add User JSON Web Service Invocation via cURL
 
 Here's an example JSON web service invocation via the cURL tool that adds the
 user with the specified attributes:
@@ -309,10 +313,10 @@ user with the specified attributes:
 Great! Now you've seen how to invoke Liferay's JSON web services from 
 JavaScript, URL, and cURL. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Invoking JSON Web Services](/develop/tutorials/-/knowledge_base/7-0/invoking-json-web-services)
+[Invoking JSON Web Services](/docs/7-0/tutorials/-/knowledge_base/t/invoking-json-web-services)
 
-[JSON Web Services Invoker](/develop/tutorials/-/knowledge_base/7-0/json-web-services-invoker)
+[JSON Web Services Invoker](/docs/7-0/tutorials/-/knowledge_base/t/json-web-services-invoker)
 
-[Invoking Remote Services](/develop/tutorials/-/knowledge_base/7-0/invoking-remote-services)
+[Invoking Remote Services](/docs/7-0/tutorials/-/knowledge_base/t/invoking-remote-services)

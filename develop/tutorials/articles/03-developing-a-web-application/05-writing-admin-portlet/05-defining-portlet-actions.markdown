@@ -1,4 +1,8 @@
-# Defining Portlet Actions [](id=defining-portlet-actions)
+---
+header-id: defining-portlet-actions
+---
+
+# Defining Portlet Actions
 
 <div class="learn-path-step">
     <p>Writing the Guestbook Admin App<br>Step 4 of 5</p>
@@ -14,7 +18,7 @@ service is published, it can be used via `@Reference`. You'll take advantage of
 this here in the Guestbook Admin portlet to consume one of the same services 
 consumed by the Guestbook portlet (the `addGuestbook` service). 
 
-## Adding Three Portlet Actions [](id=adding-three-portlet-actions)
+## Adding Three Portlet Actions
 
 The Guestbook Admin portlet must let administrators add, update, and delete 
 `Guestbook` objects. You'll create portlet actions to meet these requirements. 

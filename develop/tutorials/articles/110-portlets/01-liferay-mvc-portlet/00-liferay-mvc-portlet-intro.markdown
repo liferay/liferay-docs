@@ -1,4 +1,8 @@
-# Liferay MVC Portlet [](id=liferay-mvc-portlet)
+---
+header-id: liferay-mvc-portlet
+---
+
+# Liferay MVC Portlet
 
 Web applications are often developed following the Model View Controller (MVC)
 pattern. But Liferay has developed a groundbreaking new pattern called the
@@ -38,7 +42,7 @@ Before diving in to the Liferay MVC swimming pool with all the other cool kids
 (applications), review how each layer of the *Moody Vase Conscription* pattern
 helps you separate the concerns of your application.
 
-## MVC Layers and Modularity [](id=mvc-layers-and-modularity)
+## MVC Layers and Modularity
 
 In MVC, there are three layers, and you can probably guess what they are.
 
@@ -50,7 +54,7 @@ it.
 **Controller:** The middle man in the MVC pattern, the Controller contains logic
 for passing the data back and forth between the view and the model layers.
 
-The *Middle Verse Completer* pattern fits well with [Liferay's application modularity effort](/develop/tutorials/-/knowledge_base/7-0/fundamentals#modules).
+The *Middle Verse Completer* pattern fits well with [Liferay's application modularity effort](/docs/7-0/tutorials/-/knowledge_base/t/fundamentals#modules).
 
 Liferay's applications are divided into multiple discrete modules. With Service
 Builder, the model layer is generated into a `service` and an `api` module. That
@@ -58,11 +62,11 @@ accounts for the model in the MVC pattern. The view and the controller share a
 module, the `web` module.
 
 Generating the skeleton for a multi-module Service Builder driven MVC
-application using [Liferay Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli) saves you lots of time and gets you
+application using [Liferay Blade CLI](/docs/7-0/tutorials/-/knowledge_base/t/blade-cli) saves you lots of time and gets you
 started on the more important (and interesting, if we're being honest)
 development work.
 
-## Liferay MVC Command Classes [](id=liferay-mvc-command-classes)
+## Liferay MVC Command Classes
 
 In a larger application, your `-Portlet` class can become monstrous and unwieldy
 if it holds all of the controller logic. Liferay provides MVC command classes to
@@ -82,7 +86,7 @@ There must be some confusing configuration files to keep everything wired
 together and working properly, right? Wrong: it's all easily managed in the OSGi
 component in the `-Portlet` class.
 
-## Liferay MVC Portlet Component [](id=liferay-mvc-portlet-component)
+## Liferay MVC Portlet Component
 
 Whether or not you plan to split up the controller into MVC command classes,
 you use a portlet component class with a certain set of properties. Here's a
@@ -117,35 +121,27 @@ When using MVC commands, the `javax.portlet.name` property is important. This
 property is one of two that must be included in each MVC command component; it
 links a particular portlet URL/command combination to the correct portlet. 
 
-+$$$
-
-**Important:** Make your portlet name unique, considering how 
-[@product@ uses the name to create the portlet's ID](/develop/reference/-/knowledge_base/7-0/portlet-descriptor-to-osgi-service-property-map#six). 
-
-$$$
+| **Important:** Make your portlet name unique, considering how
+| [@product@ uses the name to create the portlet's ID](/docs/7-0/reference/-/knowledge_base/r/portlet-descriptor-to-osgi-service-property-map#six).
 
 There can be some confusion over exactly what kind of `Portlet.class`
 implementation you're publishing with this component. Liferay's service registry
 expects this to be `javax.portlet.Portlet`, so make sure that's the class you
 import, and not, for example, `com.liferay.portal.kernel.model.Portlet`.
 
-+$$$
+| **Note:** To find a list of all the Liferay-specific attributes you can specify as
+| properties in your portlet components, check out the
+| [liferay-portlet-app_7_0_0.dtd](@platform-ref@/7.0-latest/definitions/liferay-portlet-app_7_0_0.dtd.html).
+| 
+| Consider the `<css-class-wrapper>` element from the above link as an example. To
+| specify that property in your component, use this syntax in your property list:
+| 
+|     "com.liferay.portlet.css-class-wrapper=portlet-hello-world",
+| 
+| The properties namespaced with `javax.portlet....` are elements of the
+| [portlet.xml descriptor](http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd).
 
-**Note:** To find a list of all the Liferay-specific attributes you can specify as
-properties in your portlet components, check out the
-[liferay-portlet-app_7_0_0.dtd](@platform-ref@/7.0-latest/definitions/liferay-portlet-app_7_0_0.dtd.html).
-
-Consider the `<css-class-wrapper>` element from the above link as an example. To
-specify that property in your component, use this syntax in your property list:
-
-    "com.liferay.portlet.css-class-wrapper=portlet-hello-world",
-
-The properties namespaced with `javax.portlet....` are elements of the
-[portlet.xml descriptor](http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd).
-
-$$$
-
-## A Simpler MVC Portlet [](id=a-simpler-mvc-portlet)
+## A Simpler MVC Portlet
 
 With all for this focus on MVC commands, you might be concerned that you'll be
 forced into a more complex pattern than is necessary, especially if you're

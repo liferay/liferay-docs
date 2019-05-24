@@ -1,4 +1,8 @@
-# Creating Entry List Screenlet's Delegate [](id=creating-entry-list-screenlets-delegate)
+---
+header-id: creating-entry-list-screenlets-delegate
+---
+
+# Creating Entry List Screenlet's Delegate
 
 Recall that a delegate lets other classes respond to your Screenlet's actions. 
 Like you did for Guestbook List Screenlet, you'll create a delegate for Entry 

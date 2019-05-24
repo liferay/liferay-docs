@@ -1,4 +1,8 @@
-# Social [](id=social)
+---
+header-id: social
+---
+
+# Social
 
 @product@'s social framework lets users provide feedback on content, share that
 content with others across social networks, and subscribe to notifications on

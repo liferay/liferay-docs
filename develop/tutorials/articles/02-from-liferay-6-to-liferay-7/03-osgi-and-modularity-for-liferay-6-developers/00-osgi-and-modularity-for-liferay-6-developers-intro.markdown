@@ -1,4 +1,8 @@
-# OSGi and Modularity for Liferay Portal 6 Developers [](id=osgi-and-modularity-for-liferay-6-developers)
+---
+header-id: osgi-and-modularity-for-liferay-6-developers
+---
+
+# OSGi and Modularity for Liferay Portal 6 Developers
 
 To create a powerful, reliable platform for developing modular applications,
 Liferay sought best-of-breed standards-based frameworks and technologies.
@@ -27,7 +31,7 @@ be.
 
 Here are the topics you'll dig into:
 
-1.  [Modules as an Improvement over Traditional Plugins](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity-for-liferay-6-developers#modules-as-an-improvement-over-traditional-plugins):
+1.  [Modules as an Improvement over Traditional Plugins](/docs/7-0/tutorials/-/knowledge_base/t/osgi-and-modularity-for-liferay-6-developers#modules-as-an-improvement-over-traditional-plugins):
     Development and customization of applications for Liferay has been done
     traditionally in WAR-style plugins (Portlet, Hook, Ext, and Web). In
     @product-ver@, traditional Liferay plugins can be replaced with (or can be
@@ -35,19 +39,19 @@ Here are the topics you'll dig into:
     differences of plugins and modules, and you'll learn the benefits of using
     modules.
 
-2.  [Leveraging Dependencies](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity-for-liferay-6-developers#leveraging-dependencies):
+2.  [Leveraging Dependencies](/docs/7-0/tutorials/-/knowledge_base/t/osgi-and-modularity-for-liferay-6-developers#leveraging-dependencies):
     In @product-ver@, you can both declare dependencies among modules and
     combine modules to create applications. Since leveraging dependencies
     provides huge benefits, it's important to devote a large section for it.
 
-3.  [OSGi Services and Dependency Injection](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity-for-liferay-6-developers#osgi-services-and-dependency-injection-with-declarative-services):
+3.  [OSGi Services and Dependency Injection](/docs/7-0/tutorials/-/knowledge_base/t/osgi-and-modularity-for-liferay-6-developers#osgi-services-and-dependency-injection-with-declarative-services):
     OSGi provides a powerful concept called OSGi Services (also known as
     microservices). OSGi's Declarative Services standard provides a clean way to
     inject dependencies in a dynamic environment. This is similar to Spring DI,
     except the changes happen while the system is running. It also offers an
     elegant extensibility model that @product-ver@ leverages extensively.
 
-4.  [Dynamic Deployment](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity-for-liferay-6-developers#dynamic-deployment):
+4.  [Dynamic Deployment](/docs/7-0/tutorials/-/knowledge_base/t/osgi-and-modularity-for-liferay-6-developers#dynamic-deployment):
     Module deployment is managed by @product-ver@ (not the application server).
     This section demonstrates how to use dynamic deployment for better control
     and efficiency.
@@ -57,7 +61,7 @@ deploying an OSGi module.
 
 Let's start with learning how modules are better than traditional plugins.
 
-## Modules as an Improvement over Traditional Plugins [](id=modules-as-an-improvement-over-traditional-plugins)
+## Modules as an Improvement over Traditional Plugins
 
 In @product-ver@, you can develop applications using OSGi modules or using
 traditional Liferay plugins (WAR-style portlets, hooks, EXT, and web
@@ -93,7 +97,7 @@ precisely the modules you want to use.
 - **In-Context Descriptors** - Where plugins use descriptor files (e.g.,
 `web.xml`, `portlet.xml`, etc.) to describe classes, module classes use OSGi
 annotations to describe themselves. For example, a module portlet class can use
-[OSGi Service annotation properties](/develop/reference/-/knowledge_base/7-0/portlet-descriptor-to-osgi-service-property-map)
+[OSGi Service annotation properties](/docs/7-0/reference/-/knowledge_base/r/portlet-descriptor-to-osgi-service-property-map)
 to specify its name, display name, resource bundle, public render parameters,
 and much more. Instead of specifying that information in descriptor files
 separate from the code, you specify them in context in the code.
@@ -115,7 +119,7 @@ Here are some fundamental characteristics modules share with plugins:
 Now that you've compared and contrasted modules with plugins, it's time to tour
 the module anatomy. 
 
-### Module Structure: A JAR File with a Manifest [](id=module-structure-a-jar-file-with-a-manifest)
+### Module Structure: A JAR File with a Manifest
 
 A module's structure is extremely simple. It has one mandatory file:
 `META-INF/MANIFEST.MF`. You add code and resources to the module and organize
@@ -175,22 +179,22 @@ You can organize and build a module's Java code and resources however you like.
 You're free to use any directory structure conventions, such as those used in
 Maven or by your development team. And you can use any build tool, such as
 Gradle or Maven, to 
-[manage dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies). 
+[manage dependencies](/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies). 
 
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
+[Liferay Workspace](/docs/7-0/tutorials/-/knowledge_base/t/liferay-workspace)
 is an environment for managing module projects (and theme projects). A default
 Workspace provides Gradle build scripts and a Workspace created from the Liferay
 Project Templates Workspace archetype provides Maven build scripts for
 developing on Liferay. Workspace can be used from the command line or from
 within
-[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/liferay-ide).
+[Liferay @ide@](/docs/7-0/tutorials/-/knowledge_base/t/liferay-ide).
 Note also that Liferay @ide@ provides plugins for Gradle, Maven, and BndTools.
 Tooling details are covered later in this series.
 
 Now that you're familiar with the module structure and manifest, it's time to
 explore how to build modules.
 
-### Building Modules with Bnd [](id=building-modules-with-bnd)
+### Building Modules with Bnd
 
 The most common way to build modules is with a little tool called [Bnd](http://bnd.bndtools.org/).
 It's an engine that, among other things, simplifies generating manifest
@@ -229,7 +233,7 @@ Liferay @ide@.
 Now that you're familiar with Bnd and the `Export-Package` and `Import-Package`
 manifest headers, let's explore how to use them to leverage dependencies.
 
-## Leveraging Dependencies [](id=leveraging-dependencies)
+## Leveraging Dependencies
 
 Using an OSGi manifest, a module declares the Java packages it consumes and
 shares. The manifest's `Import-Package` and `Export-Package` settings expose
@@ -245,7 +249,7 @@ This part of the tutorial explains:
 
 Let's start by learning how dependencies operate in @product-ver@.
 
-### How Dependencies Work [](id=how-dependencies-work)
+### How Dependencies Work
 
 Since all of @product-ver@ leverages dependencies, it also demonstrates how to
 use them. As mentioned previously, all of what was in Liferay Portal 6 and its
@@ -297,7 +301,7 @@ don't want.
 Next you want to consider when to modularize existing apps and when to combine
 modules to create apps.
 
-### Dependencies Facilitate Modular Development [](id=dependencies-facilitate-modular-development)
+### Dependencies Facilitate Modular Development
 
 @product-ver@'s support of dependencies and semantic versioning facilitates
 modular development. The dependency frameworks enable you to use modules and
@@ -375,7 +379,7 @@ considered guidelines for modularizing existing apps and creating new modular
 apps. Now, to add to the momentum around OSGi and modularity, you'll explore
 OSGi Services and dependency injection using OSGi Declarative Services.
 
-## OSGi Services and Dependency Injection with Declarative Services [](id=osgi-services-and-dependency-injection-with-declarative-services)
+## OSGi Services and Dependency Injection with Declarative Services
 
 In @product-ver@, the OSGi framework registers objects as *services*. Each service
 offers functionality and can leverage functionality other services provide. The
@@ -452,7 +456,7 @@ publish service components for other classes to use. Developers can update the
 components and even publish alternative component implementations for a service.
 This kind of dynamism is a powerful part of @product-ver@.
 
-## Dynamic Deployment [](id=dynamic-deployment)
+## Dynamic Deployment
 
 In OSGi, all components, Java classes, resources, and descriptors are deployed
 via modules. The `MANIFEST.MF` file describes the module's physical
@@ -484,7 +488,7 @@ The figure below illustrates the module lifecycle.
 
 ![Figure 1: This state diagram illustrates the module lifecycle.](../../../images/module-state-diagram.png) 
 
-The [Apache Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell)
+The [Apache Felix Gogo Shell](/docs/7-0/reference/-/knowledge_base/r/using-the-felix-gogo-shell)
 lets developers manage the module lifecycle. They can install/uninstall modules
 and start/stop them. Developers can update a module and notify dependent modules
 to use the update. Liferay's tools, including Liferay @ide@, Liferay Workspace,
@@ -538,7 +542,7 @@ Declarative Services annotations let you specify component activation and
 service policies. Gogo Shell commands let you control modules and components.
 Next, you'll create and deploy a module and component to @product@. 
 
-## Example: Building an OSGi Module [](id=example-building-an-osgi-module)
+## Example: Building an OSGi Module
 
 The previous sections explained some of the most important concepts for Liferay
 Portal 6 developers to understand about OSGi and modularity. Now it's time to
@@ -546,7 +550,7 @@ put this knowledge to practice by creating and deploying a module.
 
 The module includes a Java class that implements an OSGi service using
 Declarative Services. The project uses Gradle and Bnd, and can be built and
-deployed from within a [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace).
+deployed from within a [Liferay Workspace](/docs/7-0/tutorials/-/knowledge_base/t/liferay-workspace).
 
 Here's the module project's anatomy:
 
@@ -638,13 +642,9 @@ task:
 
     ../../gradlew deploy
 
-+$$$
-
-**Note**: If Blade is installed (recommended), Gradle can be executed by
-entering `blade gw` followed by a task name (e.g., `blade gw deploy`). For
-details on Blade commands, see [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli).
-
-$$$
+| **Note**: If Blade is installed (recommended), Gradle can be executed by
+| entering `blade gw` followed by a task name (e.g., `blade gw deploy`). For
+| details on Blade commands, see [Blade CLI](/docs/7-0/tutorials/-/knowledge_base/t/blade-cli).
 
 On deploying the module, the following message is printed to the server console:
 
@@ -653,7 +653,7 @@ On deploying the module, the following message is printed to the server console:
 Congratulations! You've successfully built and deployed an OSGi module to
 @product@. 
 
-## Learning More about OSGi [](id=learning-more-about-osgi)
+## Learning More about OSGi
 
 There is much more to learn about developing apps using OSGi. Several resources
 are listed below and many more abound. To make the best of your time, however,
@@ -662,7 +662,7 @@ complicated than Declarative Services.
 
 Developers new to OSGi should check out these resources:
 
--   [Introduction to Liferay Development](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-development): 
+-   [Introduction to Liferay Development](/docs/7-0/tutorials/-/knowledge_base/t/introduction-to-liferay-development): 
     For using OSGi to develop on @product@.
 
 -   [OSGi enRoute](http://enroute.osgi.org/) is a site the OSGi Alliance

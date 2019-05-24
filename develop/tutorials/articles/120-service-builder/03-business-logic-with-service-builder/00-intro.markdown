@@ -1,4 +1,8 @@
-# Business Logic with Service Builder [](id=business-logic-with-service-builder)
+---
+header-id: business-logic-with-service-builder
+---
+
+# Business Logic with Service Builder
 
 Once you've defined your application's entities and ran Service Builder to
 generate your service and persistence layers, you can begin adding business

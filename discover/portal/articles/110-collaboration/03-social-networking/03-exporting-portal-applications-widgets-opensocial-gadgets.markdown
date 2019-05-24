@@ -1,11 +1,15 @@
-# Exporting @product@ Applications To Other Websites [](id=exporting-portal-applications-as-widgets-and-opensocia)
+---
+header-id: exporting-portal-applications-as-widgets-and-opensocia
+---
+
+# Exporting @product@ Applications To Other Websites
 
 @product@ can publish its applications to other websites in a variety of formats.
 These range from simple widgets to standards like OpenSocial. This lets you
 provide your application or content in the context of another website, easily.
 Read on to find out how this is done. 
 
-## Sharing OpenSocial Gadgets [](id=sharing-opensocial-gadgets)
+## Sharing OpenSocial Gadgets
 
 OpenSocial consists of a set of APIs for social networking. It may be beneficial
 for you to share applications from your @product@ server with other sites, such 

@@ -1,4 +1,8 @@
-# Creating Guestbook List Screenlet's Interactor [](id=creating-guestbook-list-screenlets-interactor)
+---
+header-id: creating-guestbook-list-screenlets-interactor
+---
+
+# Creating Guestbook List Screenlet's Interactor
 
 *Interactors* are Screenlet components that make server calls and process the 
 results. Interactors themselves are made up of several components: 
@@ -10,7 +14,7 @@ results. Interactors themselves are made up of several components:
 
 2. **The listener interface:** defines the methods the app developer needs to 
    respond to the Screenlet's behavior. For example, 
-   [Login Screenlet's listener](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-android#listener) 
+   [Login Screenlet's listener](/docs/7-0/reference/-/knowledge_base/r/loginscreenlet-for-android#listener) 
    defines the `onLoginSuccess` and `onLoginFailure` methods. Screens calls 
    these methods when login succeeds or fails, respectively. By implementing 
    these methods in the activity or fragment class that contains the Screenlet, 
@@ -23,7 +27,7 @@ Since the list Screenlet framework already contains two listener interfaces, you
 only need to create the event and Interactor classes. You'll create the event 
 class first. 
 
-## Creating the Event Class [](id=creating-the-event-class)
+## Creating the Event Class
 
 1.  First, create a new package called `interactor` in the 
     `com.liferay.docs.guestbooklistscreenlet` package. You'll create your 
@@ -58,7 +62,7 @@ class first.
 
 4.  You must also implement `ListEvent`'s abstract methods in your event class. 
     Note that these methods support 
-    [offline mode](/develop/tutorials/-/knowledge_base/6-2/using-offline-mode-in-android). 
+    [offline mode](/docs/6-2/tutorials/-/knowledge_base/t/using-offline-mode-in-android). 
     Even though Guestbook List Screenlet doesn't support offline mode, you must 
     still implement these methods. Add these methods to `GuestbookEvent` now: 
 
@@ -81,14 +85,14 @@ class first.
             }
 
 Note that this code is almost identical to the example event class in 
-[the list Screenlet tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-screenlets-event). 
+[the list Screenlet tutorial](/docs/7-0/tutorials/-/knowledge_base/t/creating-android-list-screenlets#creating-the-screenlets-event). 
 The only difference is that `GuestbookEvent` handles `GuestbookModel` objects. 
 
 Nice work! Your event class is done. You're almost ready to write the 
 Screenlet's server call. First, however, you should understand the basics of how 
 server calls work in Interactors. 
 
-## Understanding Screenlet Server Calls [](id=understanding-screenlet-server-calls)
+## Understanding Screenlet Server Calls
 
 Recall that Interactor classes use the Liferay Mobile SDK to make server calls 
 and process the results. An Interactor class does this with the following 
@@ -110,7 +114,7 @@ SDK you built and installed earlier. This Mobile SDK contains the services
 required to call the Guestbook portlet's remote services. Next, you'll create 
 Guestbook List Screenlet's Interactor class. 
 
-## Creating the Interactor Class [](id=creating-the-interactor-class)
+## Creating the Interactor Class
 
 A Screenlet's Interactor class is the central component of the Interactor. It 
 makes the server calls, processes the results in the event objects, and notifies 
@@ -209,12 +213,12 @@ Follow these steps to create Guestbook List Screenlet's Interactor class,
         }
 
     This is a boilerplate method that returns a cache key for 
-    [offline mode](/develop/tutorials/-/knowledge_base/7-0/using-offline-mode-in-android). 
+    [offline mode](/docs/7-0/tutorials/-/knowledge_base/t/using-offline-mode-in-android). 
     Even though you won't add offline mode support to Guestbook List Screenlet, 
     this method makes it easier if you decide to do so later. 
 
 Nice work! Your Interactor class is finished. Note that this class is very 
 similar to the Interactor class in 
-[the list Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-screenlets-interactor). 
+[the list Screenlet creation tutorial](/docs/7-0/tutorials/-/knowledge_base/t/creating-android-list-screenlets#creating-the-screenlets-interactor). 
 
 Your Interactor is finished too. Next, you'll create the Screenlet class. 

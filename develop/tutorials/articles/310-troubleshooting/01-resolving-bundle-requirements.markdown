@@ -1,4 +1,8 @@
-# Resolving Bundle Requirements [](id=resolving-bundle-requirements)
+---
+header-id: resolving-bundle-requirements
+---
+
+# Resolving Bundle Requirements
 
 If one of your bundles imports a package that no other bundle in the Liferay
 OSGi runtime exports, you get a bundle exception. Here's an example
@@ -57,7 +61,7 @@ First, note the module's dependencies. Here is the `dependencies` section of the
     }
 
 Then use
-[Felix Gogo Shell's `lb command`](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell)
+[Felix Gogo Shell's `lb command`](/docs/7-0/reference/-/knowledge_base/r/using-the-felix-gogo-shell)
 to verify the dependencies in Liferay's OSGi Runtime:
 
     lb
@@ -91,20 +95,16 @@ the example's bundle exception.
 
 You can follow these similar steps to resolve your bundle exceptions. 
 
-+$$$
+| Note: Bndtools's *Resolve* button can resolve bundle dependencies automatically.
+| You specify the bundles your application requires and Bndtools adds transitive
+| dependencies from your configured artifact repository.
 
-Note: Bndtools's *Resolve* button can resolve bundle dependencies automatically.
-You specify the bundles your application requires and Bndtools adds transitive
-dependencies from your configured artifact repository.
+## Related Topics
 
-$$$
+[Configuring Dependencies](/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies)
 
-## Related Topics [](id=related-topics)
+[Adding Third Party Libraries to a Module](/docs/7-0/tutorials/-/knowledge_base/t/adding-third-party-libraries-to-a-module)
 
-[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
+[Felix Gogo Shell](/docs/7-0/reference/-/knowledge_base/r/using-the-felix-gogo-shell)
 
-[Adding Third Party Libraries to a Module](/develop/tutorials/-/knowledge_base/7-0/adding-third-party-libraries-to-a-module)
-
-[Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell)
-
-[Resolving a Plugins's Dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies)
+[Resolving a Plugins's Dependencies](/docs/7-0/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies)

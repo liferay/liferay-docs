@@ -1,4 +1,8 @@
-# Creating Guestbook List Screenlet's Screenlet Class [](id=creating-guestbook-list-screenlets-screenlet-class)
+---
+header-id: creating-guestbook-list-screenlets-screenlet-class
+---
+
+# Creating Guestbook List Screenlet's Screenlet Class
 
 When using a Screenlet, app developers primarily interact with its Screenlet 
 class. The Screenlet class contains attributes for configuring the Screenlet's 
@@ -17,12 +21,12 @@ You'll use these steps to create the Screenlet class:
 
 First, you'll define Guestbook List Screenlet's attributes. 
 
-## Defining Screenlet Attributes [](id=defining-screenlet-attributes)
+## Defining Screenlet Attributes
 
 Before creating the Screenlet class, you should define its attributes. These are 
 the attributes the app developer can set when inserting the Screenlet's XML in 
 an activity or fragment layout. For example, to use 
-[Login Screenlet](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-android), 
+[Login Screenlet](/docs/7-0/reference/-/knowledge_base/r/loginscreenlet-for-android), 
 the app developer could insert the following Login Screenlet XML in an activity 
 or fragment layout: 
 
@@ -60,7 +64,7 @@ functionality in the Screenlet class.
 Now that you've defined this attribute and know what it needs to do, you're 
 ready to write the Screenlet class. 
 
-## Extending BaseListScreenlet [](id=extending-baselistscreenlet)
+## Extending BaseListScreenlet
 
 Because 
 [the `BaseListScreenlet` class](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListScreenlet.java) 
@@ -179,7 +183,7 @@ Screenlet, `GuestbookListScreenlet`:
 
 Awesome! Your Screenlet class is finished. Note that this Screenlet class is 
 very similar to the one in 
-[the list Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-screenlet-class). 
+[the list Screenlet creation tutorial](/docs/7-0/tutorials/-/knowledge_base/t/creating-android-list-screenlets#creating-the-screenlet-class). 
 
 Your Screenlet is finished, too! Before using Guestbook List Screenlet, however, 
 you'll create Entry List Screenlet to show a list of each guestbook's entries. 

@@ -1,11 +1,15 @@
-# Developing Data Handlers [](id=data-handlers)
+---
+header-id: data-handlers
+---
+
+# Developing Data Handlers
 
 To leverage the Export/Import framework's ability to export/import a LAR file,
 you can implement Data Handlers in your application. There are two types of data
 handlers you can implement: *Portlet Data Handlers* and *Staged Model Data
 Handlers*. For more information on the fundamentals behind Liferay's data
 handlers and how a LAR file is constructed, see the
-[Understanding Data Handlers](/develop/tutorials/-/knowledge_base/7-0/understanding-data-handlers)
+[Understanding Data Handlers](/docs/7-0/tutorials/-/knowledge_base/t/understanding-data-handlers)
 tutorial. You also must ensure your application is properly configured to use
 data handlers; this is also covered in the linked tutorial.
 
@@ -13,7 +17,7 @@ To learn how to implement data handlers for your custom application, you'll
 examine how the Bookmarks application does it. First you'll start with its
 portlet data handler implementation.
 
-## Portlet Data Handlers [](id=portlet-data-handlers)
+## Portlet Data Handlers
 
 The following steps create the `BookmarksPortletDataHandler` class used for the
 Bookmarks application.
@@ -57,14 +61,10 @@ Bookmarks application.
     - The `service` element should point to the `PortletDataHandler.class`
       interface.
 
-    +$$$
-
-    **Note:** In previous versions of @product@, you had to register the portlet
-    data handler in a portlet's `liferay-portlet.xml` file. The registration
-    process is now completed automatically by OSGi using the `@Component`
-    annotation.
-
-    $$$
+    | **Note:** In previous versions of @product@, you had to register the portlet
+    | data handler in a portlet's `liferay-portlet.xml` file. The registration
+    | process is now completed automatically by OSGi using the `@Component`
+    | annotation.
 
 4.  Set what the portlet data handler controls and the portlet's Export/Import
     UI by adding an `activate` method:
@@ -131,7 +131,7 @@ Bookmarks application.
     The `set` methods must be annotated with the
     [@Reference](https://osgi.org/javadoc/r6/residential/org/osgi/service/component/annotations/Reference.html)
     annotation. Visit the
-    [Invoking Liferay Services Locally](/develop/tutorials/-/knowledge_base/7-0/finding-and-invoking-liferay-services#invoking-liferay-services-locally)
+    [Invoking Liferay Services Locally](/docs/7-0/tutorials/-/knowledge_base/t/finding-and-invoking-liferay-services#invoking-liferay-services-locally)
     section of the *Finding and Invoking Liferay Services* tutorial for more
     information on using the `@Reference` annotation in @product@.
 
@@ -319,7 +319,7 @@ support the Export/Import framework and display a UI for it. The next step for
 supporting data handlers in your app is to implement staged model data handlers
 for your staged models. You'll do this next.
 
-## Staged Model Data Handlers [](id=staged-model-data-handlers)
+## Staged Model Data Handlers
 
 Now that your application has a portlet data handler and staged models, you'll
 create the staged model data handlers. The Bookmarks application has two staged
@@ -349,14 +349,10 @@ similar, so you'll examine how this is done for Bookmark entries.
     immediately once its provided module has started. The `service` element
     should point to the `StagedModelDataHandler.class` interface.
 
-    +$$$
-
-    **Note:** In previous versions of @product@, you had to register the staged
-    model data handler in a portlet's `liferay-portlet.xml` file. The
-    registration process is now completed automatically by OSGi using the
-    `@Component` annotation.
-
-    $$$
+    | **Note:** In previous versions of @product@, you had to register the staged
+    | model data handler in a portlet's `liferay-portlet.xml` file. The
+    | registration process is now completed automatically by OSGi using the
+    | `@Component` annotation.
 
 3.  Create a getter and setter method for the local service of the staged model
     for which you want to provide a data handler:

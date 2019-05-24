@@ -1,4 +1,8 @@
-# Creating Entry List Screenlet's Connector [](id=creating-entry-list-screenlets-connector)
+---
+header-id: creating-entry-list-screenlets-connector
+---
+
+# Creating Entry List Screenlet's Connector
 
 Recall that Connectors are Screenlet components that make server calls. Also 
 recall that by making your server calls in Connectors instead of Interactors, 
@@ -8,9 +12,9 @@ In this article, you'll create Entry List Screenlet's Connector. Because this
 Connector is so similar to that of Guestbook List Screenlet, the steps to create 
 it aren't explained in detail. Focus is instead placed on the few places in the 
 code where the Connectors diverge. For a full explanation of the code, see 
-[the article on creating Guestbook List Screenlet's Connector](/develop/tutorials/-/knowledge_base/7-0/creating-guestbook-list-screenlets-connector). 
+[the article on creating Guestbook List Screenlet's Connector](/docs/7-0/tutorials/-/knowledge_base/t/creating-guestbook-list-screenlets-connector). 
 
-## Creating Your Connector's Folder [](id=creating-your-connectors-folder)
+## Creating Your Connector's Folder
 
 Follow these steps to create your Connector's folder: 
 
@@ -25,7 +29,7 @@ Follow these steps to create your Connector's folder:
 
 Now you're ready to create the Connector. 
 
-## Creating the Connector [](id=creating-the-connector)
+## Creating the Connector
 
 Recall that list Screenlet Connectors must extend 
 [the `PaginationLiferayConnector` class](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/BaseListScreenlet/PaginationLiferayConnector.swift). 

@@ -1,4 +1,8 @@
-# Customizing JSPs [](id=overriding-jsps)
+---
+header-id: overriding-jsps
+---
+
+# Customizing JSPs
 
 There are several different ways to customize JSPs in portlets and the core.
 @product@'s API provides the safest ways to customize them. If you customize a
@@ -6,20 +10,20 @@ JSP by other means, new versions of the JSP can render your customization
 invalid and leave you with runtime errors. It's highly recommended to use one of
 the API-based ways. 
 
-## Using @product@'s API to Override a JSP [](id=using-portals-api-to-override-a-jsp)
+## Using @product@'s API to Override a JSP
 
 Here are API-based approaches to overriding JSPs in @product@:
 
  **Approach** | **Description** | **Cons/Limitations** |
  :----------- | :-------------- | :-------------- |
-[Dynamic includes](/develop/tutorials/-/knowledge_base/7-0/jsp-overrides-using-dynamic-includes) | Adds content at dynamic include tags. | Limited to JSPs that have `dynamic-include` tags (or tags whose classes inherit from `IncludeTag`). Only inserts content in the JSPs at the dynamic include tags. |
-[Portlet filters](/develop/tutorials/-/knowledge_base/7-0/jsp-overrides-using-portlet-filters) | Modifies portlet requests and/or responses to simulate a JSP customization. | Although this approach doesn't directly customize a JSP, it achieves the effect of a JSP customization. |
+[Dynamic includes](/docs/7-0/tutorials/-/knowledge_base/t/jsp-overrides-using-dynamic-includes) | Adds content at dynamic include tags. | Limited to JSPs that have `dynamic-include` tags (or tags whose classes inherit from `IncludeTag`). Only inserts content in the JSPs at the dynamic include tags. |
+[Portlet filters](/docs/7-0/tutorials/-/knowledge_base/t/jsp-overrides-using-portlet-filters) | Modifies portlet requests and/or responses to simulate a JSP customization. | Although this approach doesn't directly customize a JSP, it achieves the effect of a JSP customization. |
 
 <!-- TODO - Include inlined content approach after getting more info. - Jim
 Inlined content | Some @product@ JSPs include content from other JSPs that you can modify. This "inlines" the content from the other JSPs into specific places in the root JSP. | Limited to JSPs that inline other JSPs. |
 -->
 
-## Overriding a JSP Without Using Portal's API [](id=overriding-a-jsp-without-using-portals-api)
+## Overriding a JSP Without Using Portal's API
 
 It's strongly recommended to customize JSPs using @product@'s API, as the
 previous section describes. As of Liferay 7.0, overriding a JSP using an OSGi
@@ -37,8 +41,8 @@ Here are ways to customize JSPs without using @product@'s API:
 
  **Approach** | **Description** | **Cons/Limitations** |
  :----------- | :-------------- | :-------------- |
-[OSGi fragment (deprecated as of Liferay 7.0)](/develop/tutorials/-/knowledge_base/7-0/overriding-a-modules-jsps) | Completely overrides a module's JSP using an OSGi fragment | Changes to the original JSP or module can cause runtime errors. |
-[Custom JSP bag (deprecated as of Liferay 7.0)](/develop/tutorials/-/knowledge_base/7-0/overriding-core-jsps) | Completely override a @product@ core JSP or one of its corresponding `-ext.jsp` files. | For @product@ core JSPs only. Changes to the original JSP or module can cause runtime errors. |
+[OSGi fragment (deprecated as of Liferay 7.0)](/docs/7-0/tutorials/-/knowledge_base/t/overriding-a-modules-jsps) | Completely overrides a module's JSP using an OSGi fragment | Changes to the original JSP or module can cause runtime errors. |
+[Custom JSP bag (deprecated as of Liferay 7.0)](/docs/7-0/tutorials/-/knowledge_base/t/overriding-core-jsps) | Completely override a @product@ core JSP or one of its corresponding `-ext.jsp` files. | For @product@ core JSPs only. Changes to the original JSP or module can cause runtime errors. |
 
 All the JSP customization approaches are available to you. It's time to
 customize some JSPs!

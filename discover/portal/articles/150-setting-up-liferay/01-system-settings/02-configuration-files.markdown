@@ -1,10 +1,14 @@
-# Understanding System Configuration Files [](id=understanding-system-configuration-files)
+---
+header-id: understanding-system-configuration-files
+---
+
+# Understanding System Configuration Files
 
 @product@'s 
-[System Settings application](/discover/portal/-/knowledge_base/7-0/system-settings) 
+[System Settings application](/docs/7-0/user/-/knowledge_base/u/system-settings) 
 is convenient for making system-scoped configuration changes and setting default
 configurations for other
-[scopes](/discover/portal/-/knowledge_base/7-0/configuring-liferay#configuration-scope).
+[scopes](/docs/7-0/user/-/knowledge_base/u/configuring-liferay#configuration-scope).
 But there's another supported configuration approach: configuration files. You
 can use configuration files to transfer configurations from pre-production
 systems to production systems, or between any other @product@ systems. Sometimes
@@ -12,10 +16,10 @@ developers choose to distribute the default configuration for their applications
 via configuration file. Whatever the reason, configuration files are
 a straightforward way of configuring @product@.
 
-## Creating Configuration Files [](id=creating-configuration-files)
+## Creating Configuration Files
 
 System Settings provides an
-[*Export*](/discover/portal/-/knowledge_base/7-0/system-settings#exporting-and-importing-configurations)
+[*Export*](/docs/7-0/user/-/knowledge_base/u/system-settings#exporting-and-importing-configurations)
 option that becomes available once you modify a configuration entry. Exporting
 is the recommended way to create `.config` files: you download a `.config` file
 containing the entry's settings in a `key=value` format. @product@ exports an
@@ -35,21 +39,17 @@ Configuration files use the `.config` property value format defined by the [Apac
 Felix Configuration Admin
 framework](http://felix.apache.org/documentation/subprojects/apache-felix-config-admin.html).
 
-+$$$
-
-**Important:** Content generated using templates (e.g., FreeMarker templates and
-Application Display Templates) is cached. Cached content might not reflect
-configuration changes until the cache is invalidated (cleared). The 
-[Server Administration &rarr; Resources tab](/discover/portal/-/knowledge_base/7-0/server-administration)
-provides cache clearing options.
-
-$$$
+| **Important:** Content generated using templates (e.g., FreeMarker templates and
+| Application Display Templates) is cached. Cached content might not reflect
+| configuration changes until the cache is invalidated (cleared). The
+| [Server Administration &rarr; Resources tab](/docs/7-0/user/-/knowledge_base/u/server-administration)
+| provides cache clearing options.
 
 The `.cfg` file format is common in OSGi environments, so @product@ supports it,
 but `.config` files are preferable. You can specify a property value's type, and
 have multi-valued properties. The syntax described below is for `.config` files.
 
-### Key/Value Syntax [](id=key-value-syntax)
+### Key/Value Syntax
 
 The general syntax for all keys and values in a `.config` file is the same: 
 
@@ -59,7 +59,7 @@ For single value configurations without special characters, that's all there is
 to know. Settings with multiple values and certain characters require slight
 modifications. 
 
-### Multi-Value Settings [](id=multi-value-settings)
+### Multi-Value Settings
 
 Configuration entries can have properties that accept multiple values. For
 example, a configuration property for specifying supported file extensions needs
@@ -81,7 +81,7 @@ comma-separated values:
 
     charactersblacklist=["&","'","@","\\","]","}",":","\=",">","/","<","[","{","%","+","#","`","?","\"",";","*","~"]
 
-### Escaping Characters [](id=escaping-characters)
+### Escaping Characters
 
 Double quotes (`"`) and equals signs (`=`) must be *escaped* in `.config` files. 
 Escaping is using another character to denote that a character shouldn't be used 
@@ -104,17 +104,17 @@ In the above example, a `\` is used before each space character to ensure it's
 read and processed properly. If you don't escape spaces yourself, the framework
 adds the backslash for you after deployment.
 
-### Deploying a Configuration File [](id=deploying-a-configuration-file)
+### Deploying a Configuration File
 
 Once you have a configuration file, deploy it so @product@ recognizes it and 
 updates the targeted configuration values. 
 
 To deploy the `.config` file, place it in your 
-[Liferay Home's](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home) 
+[Liferay Home's](/docs/7-0/deploy/-/knowledge_base/d/installing-product#liferay-home) 
 `osgi/configs` folder. To change the configuration further, you can edit the 
 `.config` file directly or use System Settings. 
 
-### Typed Values [](id=typed-values)
+### Typed Values
 
 The `.config` file format supports specifying the type of a configuration value
 by inserting a special type marker character. Because @product@ already knows
@@ -129,33 +129,29 @@ example included above functions identically without the type marker:
 
     addDefaultStructures="true"
 
-## Configuration Files and Clustering [](id=configuration-files-and-clustering)
+## Configuration Files and Clustering
 
 In a clustered environment, each node needs the same configuration values for
 each entry. For example, all nodes should use the same *Blogs* configuration
 settings. To accomplish this, deploy a `.config` file to *one* node. @product@
 uses an internal system that appies the change to all nodes in the cluster. 
 
-## Factory Configurations [](id=factory-configurations)
+## Factory Configurations
 
 Configurations supporting multiple independent occurrences of the same
 configuration entry are called *factory configurations*.
 
-+$$$
-
-**Factory Configuration Example:** @product@ supports the publication of 
-[JAX-WS and JAX-RS web services](/develop/tutorials/-/knowledge_base/7-0/jax-ws-and-jax-rs). 
-These services must use a 
-[CXF Endpoint](/develop/tutorials/-/knowledge_base/7-0/jax-ws-and-jax-rs#cxf-endpoints),
-which is a context path where the web services are deployed and accessed.
-Endpoints can be created via factory configuration by navigating to the CXF
-Endpoints System Settings Entry (System Settings &rarr; Foundation &rarr; CXF
-Endpoints). Using the Add button (![Add](../../../images/icon-add.png)), 
-enter the desired configuration values and repeat the process, adding as many
-CXF Endpoint configurations as needed. Creating CXF Endpoint configurations also
-creates CXF Endpoints themselves. This is how factory configuration works. 
-
-$$$
+| **Factory Configuration Example:** @product@ supports the publication of
+| [JAX-WS and JAX-RS web services](/docs/7-0/tutorials/-/knowledge_base/t/jax-ws-and-jax-rs).
+| These services must use a
+| [CXF Endpoint](/docs/7-0/tutorials/-/knowledge_base/t/jax-ws-and-jax-rs#cxf-endpoints),
+| which is a context path where the web services are deployed and accessed.
+| Endpoints can be created via factory configuration by navigating to the CXF
+| Endpoints System Settings Entry (System Settings &rarr; Foundation &rarr; CXF
+| Endpoints). Using the Add button (![Add](../../../images/icon-add.png)),
+| enter the desired configuration values and repeat the process, adding as many
+| CXF Endpoint configurations as needed. Creating CXF Endpoint configurations also
+| creates CXF Endpoints themselves. This is how factory configuration works.
 
 If a service is meant to support factory configuration, its System Settings
 entry has an Add button (![Add](../../../images/icon-add.png)).
@@ -192,46 +188,38 @@ for *SOAP* web services. Your second configuration file could be named
 
     com.liferay.portal.remote.cxf.common.configuration.CXFEndpointPublisherConfiguration-soap.config
 
-+$$$
+| **Note:** Some System Settings entries (like the CXF Endpoints entry) don't ship
+| with a configuration file, so anything you create is the first occurrence.
+| However, if you configure one and export it to obtain the `.config` file, it's
+| not named `-default.config`. Instead it's given a guaranteed unique identifier
+| for its subname, like
+| 
+|     com.liferay.portal.remote.cxf.common.configuration.CXFEndpointPublisherConfiguration-a6f67e48-6dca-49c6-bf6b-8fd5e6016b2d.config
+| 
+| This is to guarantee that the file has a unique name. If you're exporting
+| the configuration file for deployment in a *separate @product@ system*, you can
+| rename the exported file to use a more descriptive subname. If you rename the
+| file and deploy it to the same system it was exported from, the new
+| subname marks it as an entirely new configuration. You'll end up with an
+| additional configuration instance in this case, not just a renamed one.
 
-**Note:** Some System Settings entries (like the CXF Endpoints entry) don't ship
-with a configuration file, so anything you create is the first occurrence.
-However, if you configure one and export it to obtain the `.config` file, it's
-not named `-default.config`. Instead it's given a guaranteed unique identifier
-for its subname, like
-
-    com.liferay.portal.remote.cxf.common.configuration.CXFEndpointPublisherConfiguration-a6f67e48-6dca-49c6-bf6b-8fd5e6016b2d.config
-
-This is to guarantee that the file has a unique name. If you're exporting
-the configuration file for deployment in a *separate @product@ system*, you can
-rename the exported file to use a more descriptive subname. If you rename the
-file and deploy it to the same system it was exported from, the new
-subname marks it as an entirely new configuration. You'll end up with an
-additional configuration instance in this case, not just a renamed one.
-
-$$$
-
-+$$$
-
-**Warning::** For configuration entries supporting factory configuration,
-omitting the sub-name from a `.config` file's name breaks the System Settings
-application's functionality (but only for the configuration entry targeted by
-the `.config` file). This is caused by a known bug. See
-[LPS-76352](https://issues.liferay.com/browse/LPS-76352) for more information.
-Once an improperly named configuration file is deployed, you can't add any
-entries for the configuration in question from its System Settings entry. For
-example, if you deploy a 
-
-    com.liferay.portal.remote.cxf.common.configuration.CXFEndpointPublisherConfiguration.config
-
-file to configure a CXF Endpoint, not only does this not add a CXF Endpoint, it
-also prevents you from adding any CXF Endpoints via System Settings.
-
-Deploying an erroneous (lacking a sub-name) `.config` file doesn't break
-anything permanently. Just rename the file using the proper convention described
-above or remove it entirely and start over.
-
-$$$
+| **Warning::** For configuration entries supporting factory configuration,
+| omitting the sub-name from a `.config` file's name breaks the System Settings
+| application's functionality (but only for the configuration entry targeted by
+| the `.config` file). This is caused by a known bug. See
+| [LPS-76352](https://issues.liferay.com/browse/LPS-76352) for more information.
+| Once an improperly named configuration file is deployed, you can't add any
+| entries for the configuration in question from its System Settings entry. For
+| example, if you deploy a
+| 
+|     com.liferay.portal.remote.cxf.common.configuration.CXFEndpointPublisherConfiguration.config
+| 
+| file to configure a CXF Endpoint, not only does this not add a CXF Endpoint, it
+| also prevents you from adding any CXF Endpoints via System Settings.
+| 
+| Deploying an erroneous (lacking a sub-name) `.config` file doesn't break
+| anything permanently. Just rename the file using the proper convention described
+| above or remove it entirely and start over.
 
 Now a note of warning. In many cases, configuration files can be used to force a
 factory configuration scenario, but not all configurations are designed to be

@@ -1,4 +1,8 @@
-# Displaying Pages on Mobile Devices [](id=displaying-pages-on-mobile-devices)
+---
+header-id: displaying-pages-on-mobile-devices
+---
+
+# Displaying Pages on Mobile Devices
 
 Mobile device families allow you to configure sets of rules to alter the
 behavior of the instance based on the device being used to access @product@. The
@@ -23,27 +27,23 @@ learn every detail about a device from the device type, which is included in
 each request sent to Liferay. @product@'s Mobile Device Rules can connect to
 device databases so that you can use their device characteristics in your rules. 
 
-+$$$
-
-**Important:** For the features described in this article to work, you must 
-install the Liferay Mobile Device Detection (LMDD) app from the Liferay 
-Marketplace. This app provides the device detection database that's required for 
-your @product@ instance to detect which mobile devices are accessing it. Note 
-that if you're running Liferay DXP, you must install 
-[the lite version of LMDD](https://web.liferay.com/marketplace/-/mp/application/92831494) 
-before you can install 
-[the enterprise version](https://web.liferay.com/marketplace/-/mp/application/35419014). 
-[Click here](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace) 
-for instructions on using Liferay Marketplace to find and install apps. 
-
-$$$
+| **Important:** For the features described in this article to work, you must
+| install the Liferay Mobile Device Detection (LMDD) app from the Liferay
+| Marketplace. This app provides the device detection database that's required for
+| your @product@ instance to detect which mobile devices are accessing it. Note
+| that if you're running Liferay DXP, you must install
+| [the lite version of LMDD](https://web.liferay.com/marketplace/-/mp/application/92831494)
+| before you can install
+| [the enterprise version](https://web.liferay.com/marketplace/-/mp/application/35419014).
+| [Click here](/docs/7-0/user/-/knowledge_base/u/using-the-liferay-marketplace)
+| for instructions on using Liferay Marketplace to find and install apps.
 
 It's possible to develop plugins that integrate with other device databases. 
 Even if you don't have a device database, you can still set up mobile device
 rules. They won't, however, be effective until a database is deployed, because
 the portal won't have enough information about the devices being used to make
 page requests. To learn how to tap into @product@'s Device API, see the
-[Using the Device Recognition API](/develop/tutorials/-/knowledge_base/7-0/using-the-device-recognition-api)
+[Using the Device Recognition API](/docs/7-0/tutorials/-/knowledge_base/t/using-the-device-recognition-api)
 tutorial.
 
 You can access the Mobile Device Families administrative page from the
@@ -75,15 +75,11 @@ you'll be ready to set up some actions. The actions defined for a family
 determine what happens to a particular request when the device is detected and
 the family has been found to apply.
 
-+$$$
-
-**Tip:** The Audience Targeting application offers a *Device* rule that
-evaluates whether the user is accessing content using a particular device
-family. This rule is integrated with the Mobile Device Families app. Visit
-the [Liferay Audience Targeting Rules](/discover/portal/-/knowledge_base/6-2/liferay-audience-targeting-rules#device)
-section for more details.
-
-$$$
+| **Tip:** The Audience Targeting application offers a *Device* rule that
+| evaluates whether the user is accessing content using a particular device
+| family. This rule is integrated with the Mobile Device Families app. Visit
+| the [Liferay Audience Targeting Rules](/docs/6-2/user/-/knowledge_base/u/liferay-audience-targeting-rules#device)
+| section for more details.
 
 <!-- Update the link above for 7.0, when available. -Cody -->
 

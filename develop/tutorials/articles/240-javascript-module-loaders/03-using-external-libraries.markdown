@@ -1,4 +1,8 @@
-# Using External Libraries [](id=using-external-libraries)
+---
+header-id: using-external-libraries
+---
+
+# Using External Libraries
 
 You can use external (i.e., anything but Metal.js, jQuery, or Lodash, which are
 included in @product@) JavaScript libraries in your portlets. There are a few
@@ -11,7 +15,7 @@ Loaders.
 
 Go ahead and get started.
 
-## Configuring Libraries to Support UMD [](id=configuring-libraries-to-support-umd)
+## Configuring Libraries to Support UMD
 
 If you're the owner of the library, you should make sure that it supports [UMD](https://github.com/umdjs/umd)
 (Universal Module Definition). You can configure your code to support UMD with 
@@ -39,21 +43,17 @@ the template shown below:
 
 Next you can learn how to load external libraries as browser globals.
 
-## Loading Libraries as Browser Globals [](id=loading-libraries-as-browser-globals)
+## Loading Libraries as Browser Globals
 
 If you want to use a library that doesn't export itself as a named module 
 (as is the case for many plugins) or load the library as a browser global, 
 follow the steps in this section.
 
-+$$$
-
-**Note:** These steps only apply to users on Liferay Portal CE 7.0 GA4, Liferay 
-Digital Enterprise 7.0 SP2 (Fix Pack 8), or lower patch levels. If you're on a 
-higher patch level, follow the steps in the 
-[Using Libraries that You Host](/develop/tutorials/-/knowledge_base/7-0/using-external-libraries#using-libraries-that-you-host) 
-section.
-
-$$$
+| **Note:** These steps only apply to users on Liferay Portal CE 7.0 GA4, Liferay
+| Digital Enterprise 7.0 SP2 (Fix Pack 8), or lower patch levels. If you're on a
+| higher patch level, follow the steps in the
+| [Using Libraries that You Host](/docs/7-0/tutorials/-/knowledge_base/t/using-external-libraries#using-libraries-that-you-host)
+| section.
 
 Follow these steps to load your libraries as browser globals:
 
@@ -80,7 +80,7 @@ Follow these steps to load your libraries as browser globals:
 This approach lets you load your modules as browser globals. Next, you can learn 
 how to load libraries that you host.
 
-## Using Libraries That You Host [](id=using-libraries-that-you-host)
+## Using Libraries That You Host
 
 If you're hosting the library (and not loading it from a CDN), you must hide the 
 Liferay AMD Loader to use your Library. 
@@ -96,22 +96,18 @@ through the control panel. Follow these steps:
 
 3.  Uncheck the `expose global` option.
 
-+$$$
-
-**Note:**  Once this option is unchecked, you can no longer use the 
-`Liferay.Loader.define` or `Liferay.Loader.require` functions in your app. Also, 
-if you're using third party libraries that are AMD compatible, they could stop 
-working after unchecking this option because they usually use global functions 
-like `require()` or `define()`.
-
-$$$
+| **Note:**  Once this option is unchecked, you can no longer use the
+| `Liferay.Loader.define` or `Liferay.Loader.require` functions in your app. Also,
+| if you're using third party libraries that are AMD compatible, they could stop
+| working after unchecking this option because they usually use global functions
+| like `require()` or `define()`.
 
 If you're running a lower patch level than Liferay Portal CE 7.0 GA4 or Liferay 
 Digital Enterprise 7.0 SP2 (Fix Pack 8), follow these steps to hide the Liferay 
 AMD Loader:
 
 1.  Name the library in the define function, as covered in the 
-    [Configuring Libraries to Support UMD](/develop/tutorials/-/knowledge_base/7-0/using-external-libraries#configuring-libraries-to-support-umd)
+    [Configuring Libraries to Support UMD](/docs/7-0/tutorials/-/knowledge_base/t/using-external-libraries#configuring-libraries-to-support-umd)
     section. Below is an example configuration:
 
         Liferay.Loader.define('mylibrary', [], factory);
@@ -129,10 +125,10 @@ AMD Loader:
 
 Now you know how to adapt external libraries for Liferay's JavaScript Loaders.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Configuring Modules for Liferay Portal's Loaders](/develop/tutorials/-/knowledge_base/7-0/configuring-modules-for-products-loaders)
+[Configuring Modules for Liferay Portal's Loaders](/docs/7-0/tutorials/-/knowledge_base/t/configuring-modules-for-products-loaders)
 
-[Liferay AMD Module Loader](/develop/tutorials/-/knowledge_base/7-0/liferay-amd-module-loader)
+[Liferay AMD Module Loader](/docs/7-0/tutorials/-/knowledge_base/t/liferay-amd-module-loader)
 
-[Using ES2015 Modules in Your Portlet](/develop/tutorials/-/knowledge_base/7-0/using-es2015-modules-in-your-portlet)
+[Using ES2015 Modules in Your Portlet](/docs/7-0/tutorials/-/knowledge_base/t/using-es2015-modules-in-your-portlet)

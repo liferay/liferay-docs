@@ -1,4 +1,8 @@
-# Creating Forms with Liferay's Taglibs [](id=creating-forms-with-liferays-taglibs)
+---
+header-id: creating-forms-with-liferays-taglibs
+---
+
+# Creating Forms with Liferay's Taglibs
 
 This tutorial demonstrates how to:
 
@@ -52,7 +56,7 @@ Bootstrap to allow you to create UI components, easily and effectively. In
 order to use these AUI tags, you will need to have the AUI taglib declaration
 imported into your JSP. You'll take care of this next.
 
-## Adding the Taglib Declaration [](id=adding-the-taglib-declaration)
+## Adding the Taglib Declaration
 
 The first thing you'll need to do is make sure you have the
 `<%@ taglib uri="http://liferay.com/tld/aui" prefix="aui"%>` declaration is in
@@ -67,7 +71,7 @@ and then imports the `init.jsp` into its `view.jsp`, using the following line:
 Once the AUI taglib declaration is imported, you can move onto creating the form
 next.
 
-## Creating the Form [](id=creating-the-form)
+## Creating the Form
 
 A form's design is determined by the input needed from the user. To that end,
 there are multiple design possibilities. The examples covered in the sections
@@ -80,7 +84,7 @@ the API docs for the [AUI Tags](@platform-ref@/7.0-latest/taglibs/util-taglib/au
 
 Go ahead and get started by adding the form tag next.
 
-### Adding the Form Wrapper [](id=adding-the-form-wrapper)
+### Adding the Form Wrapper
 
 Start off by adding a `<aui:form>` tag to your jsp. Make sure to add a closing
 `<aui:form/>` tag, to wrap your form. This acts as a wrapper for your form and
@@ -104,7 +108,7 @@ tag in the [AUI Form Taglib Docs](@platform-ref@/7.0-latest/taglibs/util-taglib/
 
 Now that your form element is created, you can add your fieldsets next.
 
-### Adding the Fieldset Groups and Fieldsets [](id=adding-the-fieldset-groups-and-fieldsets)
+### Adding the Fieldset Groups and Fieldsets
 
 The next main element is the `<aui:fieldset-group>` tag. This tag creates a
 `<div>` to group fieldset elements of the form. Looking at the Portlet
@@ -149,7 +153,7 @@ tag in the [AUI Fieldset Taglib Docs](@platform-ref@/7.0-latest/taglibs/util-tag
 
 Next, you can add your input fields.
 
-### Adding the Input Fields [](id=adding-the-input-fields)
+### Adding the Input Fields
 
 Each fieldset is used to group similar form elements together. In this section,
 you'll take a look at the different kinds of input fields you can use in your
@@ -191,7 +195,7 @@ out the [AUI Input Taglib Docs](@platform-ref@/7.0-latest/taglibs/util-taglib/au
 Once you've added all of your input fields, you can move onto the form's buttons
 next.
 
-### Adding the Button Rows and Buttons [](id=adding-the-button-rows-and-buttons)
+### Adding the Button Rows and Buttons
 
 Taking a look at the portlet configuration application example once again, you
 can see that form buttons follow the pattern below:
@@ -224,10 +228,10 @@ out the [AUI Button Taglib Docs](@platform-ref@/7.0-latest/taglibs/util-taglib/a
 
 Your form is complete!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Portlet Decorators](/develop/tutorials/-/knowledge_base/7-0/portlet-decorators)
+[Portlet Decorators](/docs/7-0/tutorials/-/knowledge_base/t/portlet-decorators)
 
-[Basic Forms](/discover/portal/-/knowledge_base/7-0/basic-forms)
+[Basic Forms](/docs/7-0/user/-/knowledge_base/u/basic-forms)
 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+[Liferay Theme Generator](/docs/7-0/tutorials/-/knowledge_base/t/themes-generator)

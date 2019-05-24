@@ -1,4 +1,8 @@
-# AntiSamy [](id=antisamy)
+---
+header-id: antisamy
+---
+
+# AntiSamy
 
 @product@ includes an AntiSamy module that protects against malicious code that
 users might create. When creating content, users can include malicious code

@@ -1,4 +1,8 @@
-# Application Display Templates [](id=application-display-templates)
+---
+header-id: application-display-templates
+---
+
+# Application Display Templates
 
 <div class="learn-path-step">
     <p>Creating Content<br>Step 6 of 7</p>
@@ -13,7 +17,7 @@ ADTs are essentially the same as Web Content Template, but rather than have the
 variables and fields defined by a structure, they're defined by the application 
 that you're applying the template to.
 
-## ADTs and Scope [](id=adts-and-scope)
+## ADTs and Scope
 
 Liferay comes bundled with several default ADTs which exist at the 
 *Global* scope. Scope, in @product@ simply means where content can be used or 
@@ -26,7 +30,7 @@ is available for both.
 To create your own ADT, switch to the Global scope and create it there alongside
 all of the system default ADTs.
 
-## Creating the ADT [](id=creating-the-adt)
+## Creating the ADT
 
 1. Open the main menu.
 
@@ -118,7 +122,7 @@ create the ADT.
 Once you Save the template, you're all done creating the ADT. Now let's go set
 it up.
 
-## Using the ADT [](id=using-the-adt)
+## Using the ADT
 
 To use the ADT, you'll add a Media Gallery to the page, point it at the 
 appropriate folder, and set it to use the display template we created.

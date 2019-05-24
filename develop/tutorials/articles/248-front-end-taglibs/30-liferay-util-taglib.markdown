@@ -1,10 +1,14 @@
-# Using the Liferay Util Taglib [](id=using-the-liferay-util-taglib)
+---
+header-id: using-the-liferay-util-taglib
+---
+
+# Using the Liferay Util Taglib
 
 The Liferay Util taglib is used to pull in other resources into a portlet 
 or theme, it can be used to dictate which resources need to be inserted at the 
 bottom or top of the HTML source.
 
-## Using Liferay Util Tags [](id=using-liferay-util-tags)
+## Using Liferay Util Tags
 
 A list of the available Liferay Util tags can be found [here](@platform-ref@/7.0-latest/taglibs/util-taglib/). 
 To use the Liferay Util taglib library in your apps, you must add the following 
@@ -24,7 +28,7 @@ to view the requirements for each tag.
 Since each of the Liferay Util taglibs is unique, each tag is covered briefly in 
 the sections that follow.
 
-### Using Liferay Util Body Bottom [](id=using-liferay-util-body-bottom)
+### Using Liferay Util Body Bottom
 
 The `<liferay-util:body-bottom>` tag is not a self-closing tag. The content 
 placed between the opening and closing of this tag is moved to the bottom 
@@ -57,7 +61,7 @@ Below is an example configuration for the `<liferay-util:body-bottom>` tag:
             </div>
     </liferay-util:body-bottom>
 
-### Using Liferay Util Body Top [](id=using-liferay-util-body-top)
+### Using Liferay Util Body Top
 
 The `<liferay-util:body-top>` tag is not a self-closing tag. The content placed 
 between the opening and closing of this tag is moved to the top of the 
@@ -75,7 +79,7 @@ Below is an example configuration for the `<liferay-util:body-top>` tag:
             </div>
     </liferay-util:body-top>
 
-### Using Liferay Util Buffer [](id=using-liferay-util-buffer)
+### Using Liferay Util Buffer
 
 `<liferay-util:buffer>` is not a self-closing tag. The content placed between 
 the opening and closing of this tag is saved to the value of the `var` attribute. 
@@ -103,7 +107,7 @@ Below is an example configuration for the `<liferay-util:buffer>` tag:
             <%= myBuffer %>
     </div>
 
-### Using Liferay Util Dynamic Include [](id=using-liferay-util-dynamic-include)
+### Using Liferay Util Dynamic Include
 
 The `<liferay-util:dynamic-inlude>` tag allows you to register some content with 
 the `DynamicIncludeRegistry`. You can read more about the OSGi Service Registry 
@@ -123,7 +127,7 @@ Below is an example configuration for the `<liferay-util:dynamic-inlude>` tag:
     
     <liferay-util:dynamic-include key="/path/to/jsp#post" />
 
-### Using Liferay Util Get URL [](id=using-liferay-util-get-url)
+### Using Liferay Util Get URL
 
 The `<liferay-util:get-url>` tag scrapes the URL provided by the `url` attribute. 
 If a value is provided for the `var` attribute, the content from the screen 
@@ -148,7 +152,7 @@ Here is an example that uses the `var` attribute:
             </div>
     </div>
 
-### Using Liferay Util HTML Bottom [](id=using-liferay-util-html-bottom)
+### Using Liferay Util HTML Bottom
 
 The `<liferay-util:html-bottom>` tag is not a self-closing tag. The content 
 placed between the opening and closing of this tag will be moved to the bottom 
@@ -174,7 +178,7 @@ is passed to this tag:
             </aui:script>
     </liferay-util:html-bottom>
 
-### Using Liferay Util HTML Top [](id=using-liferay-util-html-top)
+### Using Liferay Util HTML Top
 
 The `<liferay-util:html-top>` tag is not a self-closing tag. The content placed 
 between the opening and closing of this tag is moved to the `head` tag. 
@@ -190,7 +194,7 @@ Below is an example configuration for the `<liferay-util:html-top>` tag:
             <link data-senna-track="permanent" href="/path/to/style.css" rel="stylesheet" type="text/css" />
     </liferay-util:html-top>
 
-### Using Liferay Util Include [](id=using-liferay-util-include)
+### Using Liferay Util Include
 
 The `<liferay-util:include>` tag can be used to include other JSP files in a 
 portlet. This can increase readability as well as provide separation of 
@@ -212,7 +216,7 @@ Below is an example configuration for the `<liferay-util:include>` tag:
     
     <liferay-util:include page="/path/to/view.jsp" servletContext="<%= application %>" />
 
-### Using Liferay Util Param [](id=using-liferay-util-param)
+### Using Liferay Util Param
 
 The `<liferay-util:param>` tag can be used to add a parameter value to a URL. 
 This tag is best used when combined with the `<liferay-util:include>` tag for 
@@ -235,7 +239,7 @@ The new parameter can then be used in `answer.jsp` like this:
             <%= ParamUtil.getString(request, "answer") %></p>
     </div>
 
-### Using Liferay Util Whitespace Remover [](id=using-liferay-util-whitespace-remover)
+### Using Liferay Util Whitespace Remover
 
 The `<liferay-util:whitespace-remover>` tag is used for removing all whitespace 
 from whatever is included between the opening and closing of the tag.
@@ -258,8 +262,8 @@ tag:
 
 Now you know how to use the Liferay-Util taglib!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Loading Modules with the AUI Script in Liferay](/develop/tutorials/-/knowledge_base/7-0/loading-modules-with-aui-script-in-liferay)
+[Loading Modules with the AUI Script in Liferay](/docs/7-0/tutorials/-/knowledge_base/t/loading-modules-with-aui-script-in-liferay)
 
-[Using the Liferay UI Taglib](/develop/tutorials/-/knowledge_base/7-0/using-the-liferay-ui-taglib)
+[Using the Liferay UI Taglib](/docs/7-0/tutorials/-/knowledge_base/t/using-the-liferay-ui-taglib)

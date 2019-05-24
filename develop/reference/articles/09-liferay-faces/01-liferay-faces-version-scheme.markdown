@@ -1,11 +1,15 @@
-# Liferay Faces Version Scheme [](id=liferay-faces-version-scheme)
+---
+header-id: liferay-faces-version-scheme
+---
+
+# Liferay Faces Version Scheme
 
 In this article, you'll learn which Liferay Faces artifacts should be used with
 your portlet and explore the Liferay Faces versioning scheme by discovering what
 each component of a version means. Once you have the versioning scheme mastered,
 you can view several example configurations.
 
-## Using The Liferay Faces Archetype Portlet [](id=using-the-liferay-faces-archetype-portlet)
+## Using The Liferay Faces Archetype Portlet
 
 The [Liferay Faces Archetype portlet](http://liferayfaces.org) can be used to
 determine the Liferay Faces artifacts and versions that you must include in
@@ -16,7 +20,7 @@ of dependencies that can be copied into your build files. In the next section,
 you'll be provided with compatibility information about each version of the
 Liferay Faces artifacts.
 
-## Liferay Faces Alloy [](id=liferay-faces-alloy)
+## Liferay Faces Alloy
 
 Provides a suite of JSF components that utilize [AlloyUI](http://alloyui.com/).
 
@@ -26,7 +30,7 @@ Provides a suite of JSF components that utilize [AlloyUI](http://alloyui.com/).
 |[2.x](https://github.com/liferay/liferay-faces-alloy/tree/2.x)|com.liferay.faces.alloy-2.0.1.jar|2.0.x|2.1+|*AlloyUI 2.0.x is the version that comes bundled with Liferay Portal 6.2.*|
 |[1.x](https://github.com/liferay/liferay-faces-alloy/tree/1.x)|com.liferay.faces.alloy-1.0.1.jar|2.0.x|1.2|*AlloyUI 2.0.x is the version that comes bundled with Liferay Portal 6.2.*|
 
-## Liferay Faces Bridge [](id=liferay-faces-bridge)
+## Liferay Faces Bridge
 
 Provides the ability to deploy JSF web applications as portlets within
 [Apache Pluto](https://portals.apache.org/pluto/), the reference implementation
@@ -40,7 +44,7 @@ for JSR 286 (Portlet 2.0) and JSR 362 (Portlet 3.0).
 |API: [2.x](https://github.com/liferay/liferay-faces-bridge-api/tree/2.x)<br/>IMPL: [2.x](https://github.com/liferay/liferay-faces-bridge-impl/tree/2.x)|com.liferay.faces.bridge.api-2.1.0.jar<br/>com.liferay.faces.bridge.impl-2.0.0.jar|2.0|1.2|[JSR 329](https://www.jcp.org/en/jsr/detail?id=329) (MR1)|*Includes support for Maintenance Release 1 (MR1).*|
 |1.x|N/A|1.0|1.2|[JSR 301](https://www.jcp.org/en/jsr/detail?id=301)|*N/A (Not Applicable) since Liferay Faces Bridge has never implemented JSR 301.*|
 
-## Liferay Faces Bridge Ext [](id=liferay-faces-bridge-ext)
+## Liferay Faces Bridge Ext
 
 Extension to Liferay Faces Bridge that provides compatibility with
 [Liferay Portal](http://www.liferay.com/community/liferay-projects/liferay-portal/overview)
@@ -55,7 +59,7 @@ and also takes advantage of Liferay-specific features such as friendly URLs.
 |[2.x](https://github.com/liferay/liferay-faces-bridge-ext/tree/2.x)|com.liferay.faces.bridge.ext-2.0.1.jar|6.2.x|3.x|2.0|2.1|
 |[1.x](https://github.com/liferay/liferay-faces-bridge-ext/tree/1.x)|com.liferay.faces.bridge.ext-1.0.1.jar|6.2.x|2.x|2.0|1.2|
 
-## Liferay Faces Portal [](id=liferay-faces-portal)
+## Liferay Faces Portal
 
 Provides a suite of JSF components that are based on the JSP tags provided by
 [Liferay Portal](http://www.liferay.com/community/liferay-projects/liferay-portal/overview).
@@ -66,7 +70,7 @@ Provides a suite of JSF components that are based on the JSP tags provided by
 |[2.x](https://github.com/liferay/liferay-faces-portal/tree/2.x)|com.liferay.faces.portal-2.0.1.jar|6.2.x|2.1+|
 |[1.x](https://github.com/liferay/liferay-faces-portal/tree/1.x)|com.liferay.faces.portal-1.0.1.jar|6.2.x|1.2|
 
-## Liferay Faces Util [](id=liferay-faces-util)
+## Liferay Faces Util
 
 Library that contains general purpose JSF utilities to support many of the
 sub-projects that comprise Liferay Faces.

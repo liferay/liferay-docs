@@ -1,4 +1,8 @@
-# Using Guestbook List Screenlet [](id=using-guestbook-list-screenlet-ios)
+---
+header-id: using-guestbook-list-screenlet-ios
+---
+
+# Using Guestbook List Screenlet
 
 The steps for using Guestbook List Screenlet are the same as those for using any 
 Screenlet: 
@@ -14,7 +18,7 @@ You'll follow these steps to use Guestbook List Screenlet in the guestbooks
 scene. You'll also take an extra step to trigger the segue to the entries scene 
 when a user selects a guestbook. 
 
-## Adding Guestbook List Screenlet to the Guestbooks Scene [](id=adding-guestbook-list-screenlet-to-the-guestbooks-scene)
+## Adding Guestbook List Screenlet to the Guestbooks Scene
 
 Follow these steps to add Guestbook List Screenlet to the guestbooks scene: 
 
@@ -39,7 +43,7 @@ Follow these steps to add Guestbook List Screenlet to the guestbooks scene:
 Fantastic! The guestbooks scene now contains Guestbook List Screenlet. Next, 
 you'll conform the scene's view controller class to the Screenlet's delegate. 
 
-## Conforming to the Screenlet's Delegate Protocol [](id=conforming-to-the-screenlets-delegate-protocol)
+## Conforming to the Screenlet's Delegate Protocol
 
 Recall that a view controller can respond to a Screenlet's events by conforming 
 to the Screenlet's delegate protocol. To respond to Guestbook List Screenlet's 

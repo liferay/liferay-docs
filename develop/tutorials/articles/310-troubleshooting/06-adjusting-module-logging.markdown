@@ -1,9 +1,13 @@
-# Adjusting Module Logging [](id=adjusting-module-logging)
+---
+header-id: adjusting-module-logging
+---
+
+# Adjusting Module Logging
 
 @product@ uses [Log4j](http://logging.apache.org/log4j/1.2/) logging
 services. Here are the ways to configure logging for module classes and class hierarchies.
 
--   [@product@'s UI](/discover/portal/-/knowledge_base/7-0/server-administration#log-levels)
+-   [@product@'s UI](/docs/7-0/user/-/knowledge_base/u/server-administration#log-levels)
 -   Configure Log4j for multiple modules in a
     `[anyModule]/src/main/resources/META-INF/module-log4j.xml` file.
 -   Configure Log4j for a specific module in a
@@ -43,29 +47,21 @@ Set each category's `priority` element to the log
 The log messages are printed to Liferay log files in `[Liferay_Home]/logs`.
 
 You can see examples of module logging in several
-[Liferay sample projects](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules).
+[Liferay sample projects](/docs/7-0/tutorials/-/knowledge_base/t/liferay-sample-modules).
 For example, the [action-command-portlet](https://github.com/liferay/liferay-blade-samples/tree/7.0/gradle/apps/action-command-portlet),
-[document-action](/develop/reference/-/knowledge_base/7-0/document-action), and
-[service-builder/jdbc](/develop/reference/-/knowledge_base/7-0/service-builder-application-using-external-database-via-jdbc)
+[document-action](/docs/7-0/reference/-/knowledge_base/r/document-action), and
+[service-builder/jdbc](/docs/7-0/reference/-/knowledge_base/r/service-builder-application-using-external-database-via-jdbc)
 samples (among others) leverage module logging.
 
-+$$$
+| Note: If the log level configuration isn't appearing (e.g., you set the log
+| level to `ERROR` but you're still getting `WARN` messages), make sure the log
+| configuration file name prefix matches the module's symbolic name. If you have
+| Bnd installed, output from command `bnd print [path-to-bundle]` includes the
+| module's symbolic name ([Here](https://github.com/bndtools/bnd/wiki/Install-bnd-on-the-command-line)
+| are instructions for installing Bnd for the command line).
 
-Note: If the log level configuration isn't appearing (e.g., you set the log
-level to `ERROR` but you're still getting `WARN` messages), make sure the log
-configuration file name prefix matches the module's symbolic name. If you have
-Bnd installed, output from command `bnd print [path-to-bundle]` includes the
-module's symbolic name ([Here](https://github.com/bndtools/bnd/wiki/Install-bnd-on-the-command-line)
-are instructions for installing Bnd for the command line).
-
-$$$
-
-+$$$
-
-Note: A Log4j configuration's appenders control log file location, naming, and rotation.
-[To override advanced Log4j options such as @product@'s log appenders, use an Ext plugin](/develop/tutorials/-/knowledge_base/7-0/advanced-customization-with-ext-plugins#using-advanced-configuration-files). 
-
-$$$
+| Note: A Log4j configuration's appenders control log file location, naming, and rotation.
+| [To override advanced Log4j options such as @product@'s log appenders, use an Ext plugin](/docs/7-0/tutorials/-/knowledge_base/t/advanced-customization-with-ext-plugins#using-advanced-configuration-files).
 
 That's it for module log configuration. You're all set to print the information
 you want.

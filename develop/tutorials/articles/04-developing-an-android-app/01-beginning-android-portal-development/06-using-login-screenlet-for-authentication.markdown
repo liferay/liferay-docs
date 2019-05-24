@@ -1,4 +1,8 @@
-# Using Login Screenlet for Authentication [](id=using-login-screenlet-for-authentication)
+---
+header-id: using-login-screenlet-for-authentication
+---
+
+# Using Login Screenlet for Authentication
 
 For the app to retrieve data from the Guestbook portlet, the user must first
 authenticate to the @product@ instance. You can implement authentication
@@ -6,7 +10,7 @@ using the Liferay Mobile SDK, but it takes time to write. Using Liferay Screens
 to authenticate takes about ten minutes. In this article, you'll use Login
 Screenlet to implement authentication in your app. 
 
-## Adding Login Screenlet to the App [](id=adding-login-screenlet-to-the-app)
+## Adding Login Screenlet to the App
 
 To use any Screenlet, you must follow two steps:
 
@@ -20,7 +24,7 @@ insert the Screenlet's XML in `MainActivity`'s layout, `activity_main.xml`.
 You'll then implement Login Screenlet's listener, `LoginListener`, in the 
 `MainActivity` class. 
 
-### Insert the Screenlet's XML [](id=insert-the-screenlets-xml)
+### Insert the Screenlet's XML
 
 Follow these steps to insert Login Screenlet's XML in `activity_main.xml`: 
 
@@ -46,7 +50,7 @@ Follow these steps to insert Login Screenlet's XML in `activity_main.xml`:
     @product@ instance. By default, @product@ instances use email 
     address for authentication. For this Learning Path, you need to set your 
     @product@ instance to authenticate by screen name instead. 
-    [Click here](/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-android#basic-authentication) 
+    [Click here](/docs/6-2/reference/-/knowledge_base/r/loginscreenlet-for-android#basic-authentication) 
     for instructions on changing your @product@ instance's authentication 
     setting. 
 
@@ -70,14 +74,14 @@ Follow these steps to insert Login Screenlet's XML in `activity_main.xml`:
         <style name="AppTheme" parent="default_theme">
             ...
 
-[Click here](/develop/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets)
+[Click here](/docs/6-2/tutorials/-/knowledge_base/t/using-views-in-android-screenlets)
 for more information on using Views in Liferay Screens. For more information on 
 Login Screenlet's available attributes, 
-[click here](/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-android#attributes). 
+[click here](/docs/6-2/reference/-/knowledge_base/r/loginscreenlet-for-android#attributes). 
 
 Next, you'll implement `LoginListener` in the `MainActivity` class. 
 
-### Implement the Screenlet's Listener [](id=implement-the-screenlets-listener)
+### Implement the Screenlet's Listener
 
 To use a Screenlet in an activity or fragment, you must also implement the 
 Screenlet's listener in that activity or fragment's class. You'll do this now to 
@@ -111,7 +115,7 @@ use Login Screenlet in `MainActivity`:
     the moment, they each only do one thing: display a success or failure 
     message to the user. You'll change this shortly. Note that each Screenlet 
     has different listener methods; they're listed in the Screenlet 
-    [reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android). 
+    [reference documentation](/docs/6-2/reference/-/knowledge_base/r/screenlets-in-liferay-screens-for-android). 
 
 3.  Now you must get a reference to the Screenlet and set the `MainActivity` 
     class as its listener. To do so, add the following code to the end of the
@@ -142,7 +146,7 @@ The toast message goes away and you remain on the login screen. Nothing else
 happens. Don't worry, this is supposed to happen; you haven't added any other 
 functionality yet. You'll fix this next. 
 
-## Navigating from Login Screenlet [](id=navigating-from-login-screenlet)
+## Navigating from Login Screenlet
 
 When login succeeds, the app should open `GuestbooksActivity`. You'll do this by 
 using an 

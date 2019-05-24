@@ -1,4 +1,8 @@
-# Handling Assets at the Entry Service Layer [](id=handling-assets-at-the-entry-service-layer)
+---
+header-id: handling-assets-at-the-entry-service-layer
+---
+
+# Handling Assets at the Entry Service Layer
 
 <div class="learn-path-step">
     <p>Enabling Assets at the Service Layer<br>Step 3 of 3</p>

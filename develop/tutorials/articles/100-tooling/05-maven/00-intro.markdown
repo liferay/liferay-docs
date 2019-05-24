@@ -1,4 +1,8 @@
-# Maven [](id=maven)
+---
+header-id: maven
+---
+
+# Maven
 
 [Maven](https://maven.apache.org/) is a viable option for managing Liferay
 projects if you don't want to use Liferay's default Gradle management system.

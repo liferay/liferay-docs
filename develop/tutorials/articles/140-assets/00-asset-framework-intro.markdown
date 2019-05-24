@@ -1,4 +1,8 @@
-# Asset Framework [](id=asset-framework)
+---
+header-id: asset-framework
+---
+
+# Asset Framework
 
 Liferay's asset framework is a system that allows you to add core Liferay 
 features to your application. For example, if you've built an event management
@@ -19,17 +23,17 @@ to generate your persistence layer, that you've implemented permissions on the
 entities that you're persisting, and that you've enabled them for search and
 indexing. You can learn more about Liferay's Service Builder and how to use it
 in the
-[Service Builder](/develop/tutorials/-/knowledge_base/7-0/service-builder)
+[Service Builder](/docs/7-0/tutorials/-/knowledge_base/t/service-builder)
 tutorial section.
 
 If you've yet to do any of those things, you can see how each is done
 in respective tutorials
-[Generating the Back-end](/develop/tutorials/-/knowledge_base/7-0/generating-the-back-end),
-[Using Resources and Permissions](/develop/tutorials/-/knowledge_base/7-0/using-resources-and-permissions),
+[Generating the Back-end](/docs/7-0/tutorials/-/knowledge_base/t/generating-the-back-end),
+[Using Resources and Permissions](/docs/7-0/tutorials/-/knowledge_base/t/using-resources-and-permissions),
 and
-[Leveraging Search](/develop/tutorials/-/knowledge_base/7-0/leveraging-search). 
+[Leveraging Search](/docs/7-0/tutorials/-/knowledge_base/t/leveraging-search). 
 Lastly, the Learning Path
-[Assets: Integrating with Liferay's Framework](/develop/tutorials/-/knowledge_base/7-0/assets-integrating-with-liferays-framework)
+[Assets: Integrating with Liferay's Framework](/docs/7-0/tutorials/-/knowledge_base/t/assets-integrating-with-liferays-framework)
 takes you through the fundamentals of enabling an example application's custom
 entities to use the asset framework. If you haven't traveled through that
 Learning Path, we recommend you do so before continuing with the tutorials in
@@ -71,10 +75,10 @@ deleted. The next tutorial covers that. From that point onward, each tutorial
 shows you how to leverage a particular asset framework feature in your UI.
 It's time to start your asset framework training!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[What is Service Builder](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
+[What is Service Builder](/docs/7-0/tutorials/-/knowledge_base/t/what-is-service-builder)
 
-[Service Builder Persistence](/develop/tutorials/-/knowledge_base/7-0/service-builder-persistence)
+[Service Builder Persistence](/docs/7-0/tutorials/-/knowledge_base/t/service-builder-persistence)
 
-[Configuration](/develop/tutorials/-/knowledge_base/7-0/configuration)
+[Configuration](/docs/7-0/tutorials/-/knowledge_base/t/configuration)

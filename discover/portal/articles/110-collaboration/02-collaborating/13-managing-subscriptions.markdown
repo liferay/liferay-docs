@@ -1,4 +1,8 @@
-# Managing Subscriptions [](id=managing-subscriptions)
+---
+header-id: managing-subscriptions
+---
+
+# Managing Subscriptions
 
 Message Boards, Blogs, and Wikis, oh my! There are a lot of assets that you can 
 subscribe to in @product@, and keeping track of all your subscriptions can be a 

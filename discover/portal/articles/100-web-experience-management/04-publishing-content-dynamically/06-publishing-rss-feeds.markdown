@@ -1,4 +1,8 @@
-# Publishing RSS Feeds [](id=publishing-rss-feeds)
+---
+header-id: publishing-rss-feeds
+---
+
+# Publishing RSS Feeds
 
 RSS is a family of web feed formats used to publish frequently updated works
 such as blog entries and news articles. RSS allows users to stay up-to-date with
@@ -12,13 +16,13 @@ site. Many RSS readers are available today, including web-based readers, ones
 for the Windows, Mac, and Linux platforms, and ones for mobile devices. You'll
 see how to create RSS feeds in @product@ next.
 
-## Configuring RSS Feeds [](id=configuring-rss-feeds)
+## Configuring RSS Feeds
 
 To manage a Liferay site's RSS feeds, navigate to the Site Administration &rarr;
 *Content* page of your site and click *Web Content*. Site administrators can use
 this Web Content menu option to manage their site's web content, including web
 content structures and templates, which you learned in the 
-[Creating Web Content](/discover/portal/-/knowledge_base/7-0/creating-web-content)
+[Creating Web Content](/docs/7-0/user/-/knowledge_base/u/creating-web-content)
 section. Site administrators can also use this option to manage their site's RSS
 feeds. Click the *Options* icon (![Options](../../../images/icon-options.png))
 at the top right of your screen and then *Feeds* if you'd like to add, edit, or
@@ -102,7 +106,7 @@ Please refer to the
 [RSS section](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#RSS)
 of your `portal.properties` file for details.
 
-## Using the RSS Publisher Application [](id=using-the-rss-feeds-application)
+## Using the RSS Publisher Application
 
 The RSS Publisher application lets you display any number of RSS feeds and
 configure how they are displayed. If you're looking for a web-based RSS reader,
@@ -114,14 +118,10 @@ or private pages to make feeds available to guests or site members,
 respectively. In these cases, make sure that only site administrators have
 permission to customize the RSS application and select feeds to be displayed.
 
-+$$$
-
-**Note:** If you are running your server behind a proxy, you must set the 
-appropriate Java proxy settings (such as `http.proxyHost=` and `http.proxyPort=`) 
-in your `setenv` script, or in your `system-ext.properties`. Without these 
-properties, the RSS Publisher application can't access any RSS feeds.
-
-$$$
+| **Note:** If you are running your server behind a proxy, you must set the
+| appropriate Java proxy settings (such as `http.proxyHost=` and `http.proxyPort=`)
+| in your `setenv` script, or in your `system-ext.properties`. Without these
+| properties, the RSS Publisher application can't access any RSS feeds.
 
 Once you've added the RSS Publisher app to a page, open the application's
 Configuration menu by clicking on the *Options* icon

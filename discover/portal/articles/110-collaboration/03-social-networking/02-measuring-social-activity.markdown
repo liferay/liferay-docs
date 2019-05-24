@@ -1,4 +1,8 @@
-# Measuring Social Activity [](id=measuring-social-activity)
+---
+header-id: measuring-social-activity
+---
+
+# Measuring Social Activity
 
 When you have a lot of user interaction on your web site, it can be helpful to
 try to separate the signal from the noise. @product@ contains a lot of

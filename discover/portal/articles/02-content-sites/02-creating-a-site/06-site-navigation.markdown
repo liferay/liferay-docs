@@ -1,4 +1,8 @@
-# Site Navigation [](id=site-navigation)
+---
+header-id: site-navigation
+---
+
+# Site Navigation
 
 <div class="learn-path-step">
     <p>Creating A Site<br>Step 6 of 6</p>
@@ -32,7 +36,7 @@ hierarchy.
 You won't change the theme the Lunar Resort uses, but you'll fine-tune the 
 site's navigation by adding another Navigation Menu app and a Breadcrumb app. 
 
-## Adding a Navigation Menu App [](id=adding-a-navigation-menu-app)
+## Adding a Navigation Menu App
 
 The current Navigation Menu app does a fine job of defining the Lunar Resort's 
 navigation bar, so why would you want to add another one? For footer navigation,
@@ -69,7 +73,7 @@ The navigation footer should look like this:
 
 Great! Next, you'll add a Breadcrumb app. 
 
-## Adding a Breadcrumb App [](id=adding-a-breadcrumb-app)
+## Adding a Breadcrumb App
 
 To add the Breadcrumb app, you'll leverage the power of Page Templates. Recall
 that you created the Lunar Guide pages using a template with the Blogs app in

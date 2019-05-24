@@ -1,4 +1,8 @@
-# Embedding Portlets in Themes [](id=embedding-portlets-in-themes)
+---
+header-id: embedding-portlets-in-themes
+---
+
+# Embedding Portlets in Themes
 
 One thing developers often want to do is embed a portlet in a theme. This makes 
 the portlet visible on all pages where the theme is used. In the past, this was 
@@ -13,7 +17,7 @@ custom theme, and you'll create a module that finds the correct portlet to use
 based on those given parameters. You'll first learn how to embed portlets into a 
 theme. 
 
-## Adding a Portlet to a Custom Theme [](id=adding-a-portlet-to-a-custom-theme)
+## Adding a Portlet to a Custom Theme
 
 The first thing you should do is open the template file for which you want to 
 declare an embedded portlet. For example, the `portal_normal.ftl` template file 
@@ -21,7 +25,7 @@ is a popular place to declare embedded portlets. There are two ways two embed a
 portlet in a theme: by class name or by portlet name. Both methods are covered 
 in this section. 
 
-### Embedding a Portlet by Class Name [](id=embedding-a-portlet-by-class-name)
+### Embedding a Portlet by Class Name
 
 To embed a portlet by class name, insert the following declaration wherever you 
 want to embed the portlet:
@@ -44,18 +48,14 @@ This declares that the theme is requesting to view language entries. @product@
 determines which deployed portlet to use in this case by providing the portlet 
 with the highest service ranking. 
 
-+$$$
-
-**Note:** In some cases, a default portlet is already provided to fulfill
-certain requests. You can override the default portlet with your custom
-portlet by specifying a higher service rank. To do this, set the following
-property in your class' `@Component` declaration:
-
-    property= {"service.ranking:Integer=20"}
-
-Make sure you set the service ranking higher than the default portlet being used.
-
-$$$
+| **Note:** In some cases, a default portlet is already provided to fulfill
+| certain requests. You can override the default portlet with your custom
+| portlet by specifying a higher service rank. To do this, set the following
+| property in your class' `@Component` declaration:
+| 
+|     property= {"service.ranking:Integer=20"}
+| 
+| Make sure you set the service ranking higher than the default portlet being used.
 
 There are five different kinds of actions supported by the Portlet Providers 
 framework: `ADD`, `BROWSE`, `EDIT`, `PREVIEW`, and `VIEW`. Specify the entity 
@@ -65,7 +65,7 @@ Great! Your theme declaration is complete. However, the Portal is not yet
 configured to handle this request. You must create a module that can 
 find the portlet that fits the theme's request. 
 
-1. [Create an OSGi module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#creating-a-module). 
+1. [Create an OSGi module](/docs/7-0/tutorials/-/knowledge_base/t/starting-module-development#creating-a-module). 
 
 2. Create a unique package name in the module's `src` directory, and create a 
    new Java class in that package. To follow naming conventions, name the class 
@@ -120,7 +120,7 @@ You successfully requested a portlet based on the entity and action types
 required, and created and deployed a module that retrieves the portlet and 
 embeds it in your theme. 
 
-### Embedding a Portlet by Portlet Name [](id=embedding-a-portlet-by-portlet-name)
+### Embedding a Portlet by Portlet Name
 
 If you'd like to embed a specific portlet in the theme, you can hard code it by 
 providing its instance ID and name:
@@ -130,14 +130,10 @@ providing its instance ID and name:
         portletName="PORTLET_NAME"
     />
 
-+$$$
-
-**Note:** If your portlet is instanceable, an instance ID must be provided; 
-otherwise, you can remove this line. To set your portlet to non-instanceable, 
-set the property `com.liferay.portlet.instanceable` in the component annotation 
-of your portlet to `false`.
-
-$$$
+| **Note:** If your portlet is instanceable, an instance ID must be provided;
+| otherwise, you can remove this line. To set your portlet to non-instanceable,
+| set the property `com.liferay.portlet.instanceable` in the component annotation
+| of your portlet to `false`.
 
 The portlet name must be the same as `javax.portlet.name`'s value. 
  
@@ -151,7 +147,7 @@ to embed a web content portlet:
 You can also set default preferences for an application. This process is covered 
 next.
 
-### Setting Default Preferences for an Embedded Portlet [](id=setting-default-preferences-for-an-embedded-portlet)
+### Setting Default Preferences for an Embedded Portlet
 
 Follow these steps to set default portlet preferences for an embedded portlet:
 
@@ -178,7 +174,7 @@ Follow these steps to set default portlet preferences for an embedded portlet:
 Now you know how to set default preferences for embedded portlets! Next you can 
 see the additional attributes you can use for your embedded portlets. 
  
-### Additional Attributes for Portlets [](id=additional-attributes-for-portlets)
+### Additional Attributes for Portlets
 
 Below are some additional attributes you can define for embedded portlets:
 
@@ -196,10 +192,10 @@ value is `portletInstance`, but can be set to `group` or `company`.
 Now you know how to embed a portlet in your theme by class name and by portlet 
 name and how to configure your embedded portlet! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Providing Portlets to Manage Requests](/develop/tutorials/-/knowledge_base/7-0/providing-portlets-to-manage-requests)
+[Providing Portlets to Manage Requests](/docs/7-0/tutorials/-/knowledge_base/t/providing-portlets-to-manage-requests)
 
-[Portlets](/develop/tutorials/-/knowledge_base/7-0/portlets)
+[Portlets](/docs/7-0/tutorials/-/knowledge_base/t/portlets)
 
-[Service Builder](/develop/tutorials/-/knowledge_base/7-0/service-builder)
+[Service Builder](/docs/7-0/tutorials/-/knowledge_base/t/service-builder)

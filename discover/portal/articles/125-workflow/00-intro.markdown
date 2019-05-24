@@ -1,4 +1,8 @@
-# Using Workflow [](id=using-workflow)
+---
+header-id: using-workflow
+---
+
+# Using Workflow
 
 The ancient Greeks were pretty important, so we decided to name Liferay's
 workflow engine *Kaleo*. In Greek, Kaleo means "called ones," which is
@@ -31,7 +35,7 @@ After all that, you should be familiar with how to use Liferay's Kaleo workflow
 to set up approval process for any kind of content before it is published to
 your portal. 
 
-## Embedded Workflows [](id=embedded-workflows)
+## Embedded Workflows
 
 In addition to the Single Approver definition, there are some workflow
 definitions that ship with Liferay but are not pre-installed, since they're
@@ -42,7 +46,7 @@ or in your Liferay installation itself. Open your Liferay installation's
 `osgi/marketplace/Liferay CE Forms and Workflow.lpkg`, and then find and open
 the `com.liferay.workflow.kaleo.runtime.impl-[version].jar`. The definitions are
 in the `META-INF/definitions` folder (see the diagrams
-[here](/develop/tutorials/-/knowledge_base/6-2/designing-a-kaleo-workflow-definition)).
+[here](/docs/6-2/tutorials/-/knowledge_base/t/designing-a-kaleo-workflow-definition)).
 Once you have the XML definition files locally, upload them into Liferay:
 
 1.  Navigate to Control Panel &rarr; Configuration &rarr; Workflow Definition.
@@ -55,7 +59,7 @@ Once you have the XML definition files locally, upload them into Liferay:
 Alternatively, you can look at the pre-existing definitions to get ideas while
 designing and building your own definition. 
 
-## Workflow Assignees Have Implicit Asset Permissions [](id=workflow-assignees-have-implicit-asset-permissions)
+## Workflow Assignees Have Implicit Asset Permissions
 
 Users with permission to execute a workflow task (e.g., Users with the Portal
 Content Reviewer Role) have full resource action permissions over the assets

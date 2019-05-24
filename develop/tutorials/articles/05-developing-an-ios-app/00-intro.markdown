@@ -1,4 +1,8 @@
-# Writing an iOS App with Liferay Screens [](id=writing-an-ios-app-with-liferay-screens)
+---
+header-id: writing-an-ios-app-with-liferay-screens
+---
+
+# Writing an iOS App with Liferay Screens
 
 Users expect to access portal content from their mobile devices. As an intrepid
 developer, you naturally want to turn these expectations into reality. 
@@ -16,7 +20,7 @@ If you're an experienced iOS developer but need a start-to-finish guide on how
 to integrate iOS apps with @product@, you're in the right place. This Learning 
 Path walks you through the creation of an iOS app that interacts with the 
 Guestbook portlet developed in the 
-[Developing a Web Application](/develop/tutorials/-/knowledge_base/7-0/developing-a-web-application) 
+[Developing a Web Application](/docs/7-0/tutorials/-/knowledge_base/t/developing-a-web-application) 
 Learning Path. Since this is a custom portlet, you'll write your own Screenlets 
 that let your app retrieve and display guestbooks and their entries. 
 

@@ -1,4 +1,8 @@
-# Creating the Guestbooks Scene [](id=creating-the-guestbooks-scene)
+---
+header-id: creating-the-guestbooks-scene
+---
+
+# Creating the Guestbooks Scene
 
 In the previous article, you used Login Screenlet to implement authentication in 
 the login scene. Now you must create the scene you want the user to see 
@@ -20,7 +24,7 @@ article shows you how to do this with the following steps:
 
 First, you'll add a view controller to the storyboard. 
 
-## Adding a View Controller to the Storyboard [](id=adding-a-view-controller-to-the-storyboard)
+## Adding a View Controller to the Storyboard
 
 Follow these steps to add a view controller to the storyboard:
 
@@ -62,7 +66,7 @@ Great! You now have the guestbooks scene, embedded in a navigation controller.
 For this scene's view controller to work, it must have a class that controls its 
 behavior. You'll create this class next. 
 
-## Creating the Guestbooks Scene's View Controller Class [](id=creating-the-guestbooks-scenes-view-controller-class)
+## Creating the Guestbooks Scene's View Controller Class
 
 Each view controller must have a class that controls its behavior. In this 
 section, you'll create this class for the guestbooks scene's view controller. In 
@@ -99,7 +103,7 @@ user to get from the login scene to the guestbooks scene. This is because
 there's no segue from the login scene to the navigation controller the 
 guestbooks scene is embedded in. You'll fix this next. 
 
-## Creating the Segue [](id=creating-the-segue)
+## Creating the Segue
 
 Follow these steps to create and trigger the segue: 
 

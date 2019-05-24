@@ -1,4 +1,8 @@
-# Tracking User Actions with Audience Targeting [](id=tracking-user-actions-with-audience-targeting)
+---
+header-id: tracking-user-actions-with-audience-targeting
+---
+
+# Tracking User Actions with Audience Targeting
 
 In the Audience Targeting (AT) application, a campaign defines a set of content
 targeted to specific user segments during a time period. Campaign custom reports
@@ -45,7 +49,7 @@ newsletters, if there's more than one.
 
 To learn more about how metrics are used in the Audience Targeting application,
 visit the
-[Defining Metrics](/discover/portal/-/knowledge_base/7-0/managing-campaigns#defining-metrics)
+[Defining Metrics](/docs/7-0/user/-/knowledge_base/u/managing-campaigns#defining-metrics)
 section.
 
 For this tutorial, you'll create a newsletter that can track who views it. This
@@ -59,14 +63,14 @@ described above.
 Now that you have an idea of how to plan your new metric, you'll begin
 creating one next!
 
-## Creating a Metric [](id=creating-a-metric)
+## Creating a Metric
 
 Adding a new metric to the Audience Targeting application is easy. First,
 you must create a module and ensure it has the necessary Content Targeting API 
 dependencies.
 
-1.  [Create a module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#creating-a-module) 
-    project for deploying a metric. A Blade CLI [content-targeting-tracking-action](/develop/reference/-/knowledge_base/7-0/content-targeting-tracking-action-template)
+1.  [Create a module](/docs/7-0/tutorials/-/knowledge_base/t/starting-module-development#creating-a-module) 
+    project for deploying a metric. A Blade CLI [content-targeting-tracking-action](/docs/7-0/reference/-/knowledge_base/r/content-targeting-tracking-action-template)
     template is available to help you get started quickly. It sets the default
     configuration for you, and it contains boilerplate code so you can skip the
     file creation steps and get started right away.
@@ -88,7 +92,7 @@ dependencies.
         }
 
     You can learn more about exposing the Content Targeting API in the
-    [Accessing the Content Targeting API](/develop/tutorials/-/knowledge_base/7-0/accessing-the-content-targeting-api)
+    [Accessing the Content Targeting API](/docs/7-0/tutorials/-/knowledge_base/t/accessing-the-content-targeting-api)
     tutorial. Once you've created your module and specified its dependencies,
     you'll need to define your metric's behavior. How your metric behaves is
     controlled by a Java class file that you create.
@@ -129,7 +133,7 @@ interface's methods. You'll begin implementing these methods next.
 The first thing you'll define in your newsletter metric is the view/save
 lifecycle.
 
-## Defining a Metric's View/Save Lifecycle [](id=defining-a-metrics-view-save-lifecycle)
+## Defining a Metric's View/Save Lifecycle
 
 This section covers how to define a metric's view/save lifecycle. This is when
 a user applies a metric to a report using the Report Editor.
@@ -243,13 +247,13 @@ file is already created.
     You can think of the `populateContext` method as the intermediary between
     your JSP and your backend code. You can see how to create the newsletter
     metric's UI using a JSP by skipping to the
-    [Defining the Metric's UI](/develop/tutorials/-/knowledge_base/7-0/tracking-user-actions-with-audience-targeting#defining-the-metrics-ui)
+    [Defining the Metric's UI](/docs/7-0/tutorials/-/knowledge_base/t/tracking-user-actions-with-audience-targeting#defining-the-metrics-ui)
     section. Once the HTML is successfully retrieved and the user has set the
     newsletter's values and clicked *Save*, the action phase begins. 
 
 3.  Once the action phase begins, AT processes the tracking action (metric). The
     `processTrackingAction(...)` method takes the values from the
-    [metric's UI form](/develop/tutorials/-/knowledge_base/7-0/tracking-user-actions-with-audience-targeting#defining-the-metrics-ui)
+    [metric's UI form](/docs/7-0/tutorials/-/knowledge_base/t/tracking-user-actions-with-audience-targeting#defining-the-metrics-ui)
     and stores them in the corresponding fields of the `trackingActionInstance`.
     Since the
     [BaseTrackingAction](@app-ref@/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/BaseTrackingAction.html)
@@ -261,16 +265,12 @@ file is already created.
     `typeSettings` field of the `trackingActionInstance`, return their value
     instead of `null`.
 
-    +$$$
-
-    **Note:** For more complex cases, you can create your own services to store
-    your metric's information to a database. You should invoke your services'
-    update logic within the `processTrackingAction` method. For more information
-    on creating services, see the
-    [Service Builder](/develop/tutorials/-/knowledge_base/7-0/business-logic-and-data-access)
-    tutorials.
-
-    $$$
+    | **Note:** For more complex cases, you can create your own services to store
+    | your metric's information to a database. You should invoke your services'
+    | update logic within the `processTrackingAction` method. For more information
+    | on creating services, see the
+    | [Service Builder](/docs/7-0/tutorials/-/knowledge_base/t/business-logic-and-data-access)
+    | tutorials.
 
     Once the metric processing ends, the form is reloaded and the lifecycle
     restarts again. The value(s) specified in the metric are stored and are
@@ -325,7 +325,7 @@ file is already created.
 
 Next, you'll define a tracking mechanism for your metric to use.
 
-## Using a Tracking Mechanism [](id=using-a-tracking-mechanism)
+## Using a Tracking Mechanism
 
 Imagine an administrator has successfully configured and saved your custom
 metric to his or her report. Now what? Your metric needs to fulfill its
@@ -409,7 +409,7 @@ Excellent! You've obtained the analytics processor and can create the
 transparent image tracking mechanism. The newsletter metric's behavior is
 defined and complete. The last thing you need to do is create a JSP template.
 
-## Defining the Metric's UI [](id=defining-the-metrics-ui)
+## Defining the Metric's UI
 
 The Java code you've added to this point has assumed that there are three
 configurable fields for your newsletter metric: 
@@ -495,10 +495,10 @@ You can view the finished version of the newsletter metric by downloading its
 Now you've created and examined a fully functional metric and have the knowledge
 to create your own.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating Modules with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-blade-cli)
+[Creating Modules with Blade CLI](/docs/7-0/tutorials/-/knowledge_base/t/creating-modules-with-blade-cli)
 
-[Defining Metrics](/discover/portal/-/knowledge_base/7-0/managing-campaigns#defining-metrics)
+[Defining Metrics](/docs/7-0/user/-/knowledge_base/u/managing-campaigns#defining-metrics)
 
-[Audience Targeting Metrics](/discover/portal/-/knowledge_base/7-0/audience-targeting-metrics)
+[Audience Targeting Metrics](/docs/7-0/user/-/knowledge_base/u/audience-targeting-metrics)

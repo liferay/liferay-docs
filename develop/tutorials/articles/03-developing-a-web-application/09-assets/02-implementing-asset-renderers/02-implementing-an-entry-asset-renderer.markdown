@@ -1,4 +1,8 @@
-# Implementing an Entry Asset Renderer [](id=implementing-an-entry-asset-renderer)
+---
+header-id: implementing-an-entry-asset-renderer
+---
+
+# Implementing an Entry Asset Renderer
 
 <div class="learn-path-step">
     <p>Implementing Asset Renderers<br>Step 2 of 2</p>
@@ -10,7 +14,7 @@ for guestbooks in the previous step. This step provides the code needed for
 guestbook entries. Please review the previous sections for more information on 
 this code. 
 
-## Creating the EntryAssetRenderer Class [](id=creating-the-entryassetrenderer-class)
+## Creating the EntryAssetRenderer Class
 
 In the `com.liferay.docs.guestbook.asset` package, create an 
 `EntryAssetRenderer` class that extends @product@'s `BaseJSPAssetRenderer` 
@@ -198,7 +202,7 @@ guestbook name. `EntryAssetRenderer.getTitle` returns the entry message.
 methods of `EntryAssetRenderer` are nearly identical to those of
 `GuestbookAssetRenderer`. 
 
-## Creating the EntryAssetRendererFactory Class [](id=creating-the-entryassetrendererfactory-class)
+## Creating the EntryAssetRendererFactory Class
 
 Next, you must create the guestbook entry asset renderer's factory class. In the 
 `com.liferay.docs.guestbook.asset` package, create a class called 
@@ -341,7 +345,7 @@ class. Replace its contents with the following code:
 
     }
 
-## Exporting the Asset Package [](id=exporting-the-asset-package)
+## Exporting the Asset Package
 
 The container needs to make the asset renderers and their factories available to
 @product@ when it needs them. To do this, you must export the package. 

@@ -1,4 +1,8 @@
-# Resolving Bundle-SymbolicName Syntax Issues [](id=resolving-bundle-symbolicname-syntax-issues)
+---
+header-id: resolving-bundle-symbolicname-syntax-issues
+---
+
+# Resolving Bundle-SymbolicName Syntax Issues
 
 An OSGi bundle's `Bundle-SymbolicName` and  `Bundle-Version` manifest headers
 uniquely identify it. You can specify a bundle's `Bundle-SymbolicName` in these
@@ -21,7 +25,7 @@ deployment, Liferay's OSGi Runtime framework throws an
 
 For example, if you deploy a plugin WAR that has no `Bundle-SymbolicName` header
 in its `liferay-plugin-package.properties`, the
-[WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)
+[WAB Generator](/docs/7-0/tutorials/-/knowledge_base/t/using-the-wab-generator)
 uses the WAR's name as the WAB's `Bundle-SymbolicName`. If the WAR's name has a
 space in it (e.g., `space-program-theme v1.war`) an
 `IllegalContextNameException` occurs on deployment.
@@ -40,6 +44,6 @@ Here's an example domain name and reverse domain name:
 
 However you set your a `Bundle-SymbolicName`, refrain from using spaces.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using the WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)
+[Using the WAB Generator](/docs/7-0/tutorials/-/knowledge_base/t/using-the-wab-generator)

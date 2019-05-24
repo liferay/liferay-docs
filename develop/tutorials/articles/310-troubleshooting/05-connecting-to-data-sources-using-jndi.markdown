@@ -1,4 +1,8 @@
-# Connecting to JNDI Data Sources [](id=connecting-to-data-sources-using-jndi)
+---
+header-id: connecting-to-data-sources-using-jndi
+---
+
+# Connecting to JNDI Data Sources
 
 Connecting to an application server's JNDI data sources from @product@'s OSGi
 environment is almost the same as connecting to them from the Java EE
@@ -63,23 +67,19 @@ Here are the class imports for the code above:
 Your applications can use similar code to access a data source. Make sure to
 substitute `jdbc/TestDB` with your data source name. 
 
-+$$$
-
-**Note**: An OSGi bundle's attempt to connect to a JNDI data source without
-using @product@'s classloader results in a `java.lang.ClassNotFoundException`.
-For example, here's an exception from attempting to use Apache Tomcat's JNDI API
-without using @product@'s classloader:
-
-    javax.naming.NoInitialContextException: Cannot instantiate class:
-    org.apache.naming.java.javaURLContextFactory [Root exception is
-    java.lang.ClassNotFoundException:
-    org.apache.naming.java.javaURLContextFactory]
-
-$$$
+| **Note**: An OSGi bundle's attempt to connect to a JNDI data source without
+| using @product@'s classloader results in a `java.lang.ClassNotFoundException`.
+| For example, here's an exception from attempting to use Apache Tomcat's JNDI API
+| without using @product@'s classloader:
+| 
+|     javax.naming.NoInitialContextException: Cannot instantiate class:
+|     org.apache.naming.java.javaURLContextFactory [Root exception is
+|     java.lang.ClassNotFoundException:
+|     org.apache.naming.java.javaURLContextFactory]
 
 An easier way to work with databases is to 
-[connect to them using Service Builder](/develop/tutorials/-/knowledge_base/7-0/connecting-service-builder-to-external-data-sources). 
+[connect to them using Service Builder](/docs/7-0/tutorials/-/knowledge_base/t/connecting-service-builder-to-external-data-sources). 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Connecting Service Builder to External Data Sources](/develop/tutorials/-/knowledge_base/7-0/connecting-service-builder-to-external-data-sources)
+[Connecting Service Builder to External Data Sources](/docs/7-0/tutorials/-/knowledge_base/t/connecting-service-builder-to-external-data-sources)

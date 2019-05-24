@@ -1,4 +1,8 @@
-# Installing @product@ on Tomcat 8 [](id=installing-liferay-on-tomcat-8)
+---
+header-id: installing-liferay-on-tomcat-8
+---
+
+# Installing @product@ on Tomcat 8
 
 Liferay Digital Enterprise 7.0 bundled with Tomcat is available on 
 [Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise). 
@@ -16,7 +20,7 @@ Installing @product@ manually requires these basic steps:
 - Installing the @product@ WAR file to your application server
 
 You'll see the term
-[*Liferay Home*](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home)
+[*Liferay Home*](/docs/7-0/deploy/-/knowledge_base/d/installing-product#liferay-home)
 used in this installation guide. *Liferay Home* refers to the folder containing
 your Tomcat server folder. When @product@ is installed on Tomcat, the Liferay
 Home folder contains the Tomcat server folder as well as `data`, `deploy`,
@@ -28,7 +32,7 @@ installation. If you download a Liferay Tomcat-bundle, both refer to the same
 folder (just as with a standard Tomcat installation). This folder is usually
 named `tomcat-[version]` or `apache-tomcat-[version]`.
 
-## Installing @product@ Dependencies [](id=installing-liferay-dependencies)
+## Installing @product@ Dependencies
 
 @product@ depends on many JARs that are included in the @product@ Tomcat bundle.
 Some JARs in the bundle are not strictly required but can still be useful. If
@@ -104,7 +108,7 @@ Checkpoint:
     - `target-platform`
     - `test`
 
-## Tomcat Configuration [](id=tomcat-configuration)
+## Tomcat Configuration
 
 Next, you need to configure Tomcat for running @product@.
 
@@ -132,12 +136,8 @@ Next, you need to configure Tomcat for running @product@.
     around them causes problems with the logging system), sets the time zone to
     GMT, and gives the JVM 1GB of RAM. 
 
-    +$$$
-
-    **Important:** For @product@ to work properly, the application server JVM 
-    must use the `GMT` time zone and `UTF-8` file encoding. 
-
-    $$$
+    | **Important:** For @product@ to work properly, the application server JVM
+    | must use the `GMT` time zone and `UTF-8` file encoding.
 
     These are initial settings. After installation you should tune your system
     for performance. As a result of that process, you may find you want to
@@ -263,7 +263,7 @@ settings.
     the shell scripts in Tomcat's `bin` folder executable.
 
 
-## Tomcat Database Configuration [](id=tomcat-database-configuration)
+## Tomcat Database Configuration
 
 The easiest way to handle your database configuration is to let @product@ manage
 your data source. If you want to use @product@'s built-in data source, you can
@@ -301,7 +301,7 @@ and credentials.
 Your Tomcat managed data source is now configured. Next, let's consider your
 mail session.
 
-## Tomcat Mail Configuration [](id=tomcat-mail-configuration)
+## Tomcat Mail Configuration
 
 As with database configuration, the easiest way to handle mail configuration is
 to let @product@ handle your mail session. If you want to use @product@'s built-in
@@ -338,7 +338,7 @@ session. Make sure to replace the example mail session values with your own.
 Your mail session is configured. Next, you'll make sure @product@ can 
 access your mail session and database.
 
-## Configuring Tomcat-managed Database and Mail Sessions [](id=configuring-tomcat-managed-database-and-mail-sessions)
+## Configuring Tomcat-managed Database and Mail Sessions
 
 In this section, you'll specify appropriate properties for connecting to your
 database and mail session.
@@ -368,7 +368,7 @@ database and mail session.
 It's just that easy! Before you deploy @product@, you should configure
 Portal Access Control Language (PACL) with @product@ on Tomcat.
 
-## Enabling PACL [](id=enabling-pacl)
+## Enabling PACL
 
 To enable PACL, you need to enable Tomcat's security manager. In the Tomcat
 Configuration section above, you already added the required permissions to the
@@ -399,7 +399,7 @@ Tomcat reports the message `Using Security Manager` to your terminal.
 
 Now you have PACL enabled and configured for your portal.
 
-## Deploying @product@ [](id=deploying-liferay)
+## Deploying @product@
 
 Now you're ready to deploy @product@ using your @product@ WAR file.
 

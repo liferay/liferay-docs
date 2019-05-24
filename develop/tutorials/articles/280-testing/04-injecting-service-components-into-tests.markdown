@@ -1,4 +1,8 @@
-# Injecting Service Components into Tests [](id=injecting-service-components-into-tests)
+---
+header-id: injecting-service-components-into-tests
+---
+
+# Injecting Service Components into Tests
 
 You can use @product@'s `@Inject` annotation to inject service components into a
 test, like you use the `@Reference` annotation to inject service components
@@ -10,11 +14,7 @@ matching the field's interface.
 provides this annotation. The annotation accepts `filter` and `type` parameters,
 which you can use separately or together.
 
-+$$$
-
-DXP Digital Enterprise 7.0 Fix Pack 30 and Liferay CE Portal 7.0 GA5 introduced the `@Inject` annotation. 
-
-$$$
+| DXP Digital Enterprise 7.0 Fix Pack 30 and Liferay CE Portal 7.0 GA5 introduced the `@Inject` annotation.
 
 To fill a field with a particular implementation or sub-class object, set the
 `type` with it. 
@@ -70,21 +70,17 @@ At runtime, the `@Inject` annotation blocks the test until a matching service
 component is available. The block has a timeout and messages are logged
 regarding the test's unavailable dependencies.
 
-+$$$
-
-**Important**: If you're publishing the service component you are injecting, the
-test might never run. If you must publish the service component from the test
-class, use [Service Trackers](/develop/tutorials/-/knowledge_base/7-0/service-trackers)
-to access service components.
-
-$$$
+| **Important**: If you're publishing the service component you are injecting, the
+| test might never run. If you must publish the service component from the test
+| class, use [Service Trackers](/docs/7-0/tutorials/-/knowledge_base/t/service-trackers)
+| to access service components.
 
 Great! Now you can inject service components into your tests.
 
-## Related Articles [](id=related-articles)
+## Related Articles
 
-[Service Trackers](/develop/tutorials/-/knowledge_base/7-0/service-trackers)
+[Service Trackers](/docs/7-0/tutorials/-/knowledge_base/t/service-trackers)
 
-[Finding and Invoking Liferay Services](/develop/tutorials/-/knowledge_base/7-0/finding-and-invoking-liferay-services)
+[Finding and Invoking Liferay Services](/docs/7-0/tutorials/-/knowledge_base/t/finding-and-invoking-liferay-services)
 
-[Unit Testing with JUnit](/develop/tutorials/-/knowledge_base/7-0/unit-testing-with-junit)
+[Unit Testing with JUnit](/docs/7-0/tutorials/-/knowledge_base/t/unit-testing-with-junit)

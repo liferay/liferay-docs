@@ -1,4 +1,8 @@
-# Creating JSPs for Displaying Custom Assets in the Asset Publisher [](id=creating-jsps-for-displaying-custom-assets-in-the-asset-publisher)
+---
+header-id: creating-jsps-for-displaying-custom-assets-in-the-asset-publisher
+---
+
+# Creating JSPs for Displaying Custom Assets in the Asset Publisher
 
 <div class="learn-path-step">
     <p>Adding Asset Features to Your UI<br>Step 2 of 5</p>

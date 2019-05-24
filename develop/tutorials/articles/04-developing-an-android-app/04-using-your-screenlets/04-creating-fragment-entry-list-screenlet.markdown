@@ -1,4 +1,8 @@
-# Creating a Fragment for Entry List Screenlet [](id=creating-a-fragment-for-entry-list-screenlet)
+---
+header-id: creating-a-fragment-for-entry-list-screenlet
+---
+
+# Creating a Fragment for Entry List Screenlet
 
 Using a fragment for Entry List Screenlet lets you swap out part of 
 `GuestbookActivity`'s contents without recreating the entire activity from 
@@ -7,7 +11,7 @@ fragments, though. In this step, you'll create a fragment and then add it to
 `GuestbooksActivity`. When you finish, you'll be ready to use Entry List 
 Screenlet in this fragment. 
 
-## Creating the Fragment [](id=creating-the-fragment)
+## Creating the Fragment
 
 Follow these steps to create the fragment: 
 
@@ -71,7 +75,7 @@ Follow these steps to create the fragment:
 
 Next, you'll add this fragment to `GuestbooksActivity`. 
 
-## Adding the Fragment to GuestbooksActivity [](id=adding-the-fragment-to-guestbooksactivity)
+## Adding the Fragment to GuestbooksActivity
 
 Now that `EntriesFragment` exists, you can add it to `GuestbooksActivity`. To do 
 this, you must put an Android fragment container in the layout where you want 

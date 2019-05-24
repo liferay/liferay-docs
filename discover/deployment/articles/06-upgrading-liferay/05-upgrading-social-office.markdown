@@ -1,31 +1,31 @@
-# Upgrading Social Office [](id=upgrading-social-office)
+---
+header-id: upgrading-social-office
+---
+
+# Upgrading Social Office
 
 Liferay Social Office, Liferay's social collaboration product for the 
 enterprise, was an add-on product for Liferay Portal versions prior to 
 @product-ver@. Social Office is no longer available because @product-ver@ 
 contains its features. When upgrading from a previous version of Liferay Portal 
 that contains Social Office, 
-[the standard upgrade procedure](/discover/deployment/-/knowledge_base/7-0/upgrading-to-liferay-7) 
+[the standard upgrade procedure](/docs/7-0/deploy/-/knowledge_base/d/upgrading-to-liferay-7) 
 handles most things for you. You must, however, perform a few additional steps 
 to ensure that Social Office's features work as intended in @product-ver@. This 
 article takes you through these steps. 
 
-+$$$
-
-**Note:** Before upgrading your Social Office installation, you must first 
-upgrade your Liferay Portal installation to @product-ver@. The steps for this 
-are the same as those for upgrading any Liferay Portal installation to 
-@product-ver@; 
-[click here](/discover/deployment/-/knowledge_base/7-0/upgrading-to-liferay-7) 
-to see them. Once you've upgraded to @product-ver@, return here to upgrade your 
-Social Office installation. 
-
-$$$
+| **Note:** Before upgrading your Social Office installation, you must first
+| upgrade your Liferay Portal installation to @product-ver@. The steps for this
+| are the same as those for upgrading any Liferay Portal installation to
+| @product-ver@;
+| [click here](/docs/7-0/deploy/-/knowledge_base/d/upgrading-to-liferay-7)
+| to see them. Once you've upgraded to @product-ver@, return here to upgrade your
+| Social Office installation.
 
 First, you'll learn how Social Office's unique components map to @product-ver@
 features. 
 
-## Social Office Components [](id=social-office-components)
+## Social Office Components
 
 Social Office contained the following components: 
 
@@ -37,7 +37,7 @@ Social Office contained the following components:
 The following sections describe the components and how they work in 
 @product-ver@. 
 
-### Themes and Templates [](id=themes-and-templates)
+### Themes and Templates
 
 Social Office's unique look and feel was defined by its theme and site template.
 These don't exist in @product-ver@. In @product-ver@, however, you can build
@@ -54,7 +54,7 @@ Social Office Theme | Uses Social Office theme | Uses default @product-ver@ them
 Site Template | Uses Social Office site template | The Social Office site template is upgraded to @product-ver@. A custom site template can also be used. |
 Page Templates | Doesn't use page templates | Page templates can be used |
 
-### Liferay Apps [](id=liferay-apps)
+### Liferay Apps
 
 Social Office improved many out-of-the-box apps in previous versions of Liferay 
 Portal. Many of those improvements are now in @product-ver@. 
@@ -64,14 +64,14 @@ Liferay Portal map to @product-ver@.
 
 App | &nbsp;Social Office 3.x | &nbsp;@product-ver@ | 
 --- | ----------------------- | ------------------- | 
-Announcements | UI enhancements | Although the Announcements app is included in @product-ver@, the UI enhancements from Social Office 3.x aren't. See [the Announcements app's documentation](/discover/portal/-/knowledge_base/7-0/sending-alerts-and-announcements) for instructions on using the app in @product-ver@. |
-Document Library File Version Comments | Versioning Improvements | Provided as an add-on module. The [*Module Installation* section below](/discover/deployment/-/knowledge_base/7-0/upgrading-social-office#module-installation) contains a link to this module. |
+Announcements | UI enhancements | Although the Announcements app is included in @product-ver@, the UI enhancements from Social Office 3.x aren't. See [the Announcements app's documentation](/docs/7-0/user/-/knowledge_base/u/sending-alerts-and-announcements) for instructions on using the app in @product-ver@. |
+Document Library File Version Comments | Versioning Improvements | Provided as an add-on module. The [*Module Installation* section below](/docs/7-0/deploy/-/knowledge_base/d/upgrading-social-office#module-installation) contains a link to this module. |
 Notifications | Various enhancements | Included |
 Chat | Various enhancements | This app is available for [Liferay DXP](https://web.liferay.com/marketplace/-/mp/application/15184463) and [Liferay Portal CE](https://web.liferay.com/marketplace/-/mp/application/15392476). |
 Bookmarks | Various enhancements | Included |
 Activities | Various enhancements | Included |
 
-### Social Office Apps [](id=social-office-apps)
+### Social Office Apps
 
 Several apps were unique to Social Office. With the exception of the Tasks 
 portlet, these apps are now in @product-ver@. 
@@ -82,12 +82,12 @@ App | &nbsp;@product-ver@ |
 --- | ------------------- | 
 Microblogs | Included | 
 Contacts Center | Included | 
-Private Messaging | Provided as an add-on module. The [*Module Installation* section below](/discover/deployment/-/knowledge_base/7-0/upgrading-social-office#module-installation) contains more information. | 
+Private Messaging | Provided as an add-on module. The [*Module Installation* section below](/docs/7-0/deploy/-/knowledge_base/d/upgrading-social-office#module-installation) contains more information. | 
 Social Office User Profile | Included | 
 Events List | Provided as an add-on module. [Click here](https://web.liferay.com/marketplace/-/mp/application/83511066) to get it for Liferay Portal CE [or here](https://web.liferay.com/marketplace/-/mp/application/83511153) for Liferay DXP. | 
 WYSIWYG | Provided as an add-on module. [Click here](https://web.liferay.com/marketplace/-/mp/application/15502123) to get it for Liferay Portal CE [or here](https://web.liferay.com/marketplace/-/mp/application/15503342) for Liferay DXP. | 
 
-### UX Enhancements [](id=ux-enhancements)
+### UX Enhancements
 
 The UX in @product-ver@ is different than previous versions. It's the first
 version to use [Lexicon](https://liferay.github.io/clay/), a web implementation 
@@ -125,7 +125,7 @@ Great! Now you know what Social Office functionality is and isn't in
 @product-ver@. Next, you'll install a few modules in preparation for the Social 
 Office upgrade steps. 
 
-## Module Installation [](id=module-installation)
+## Module Installation
 
 To enable Social Office functionality in your @product-ver@ installation, you 
 should first install a few extra modules. Deploy these modules as you would any 
@@ -183,23 +183,19 @@ other @product-ver@ module:
 Once you've installed these modules, you're ready to proceed with the upgrade. 
 Onward! 
 
-## Upgrade [](id=upgrade)
+## Upgrade
 
 Now that you're running @product-ver@ and the preceding modules, you're ready to 
 upgrade your Social Office installation. As mentioned earlier, you'll do this by 
 running a set of actions that the Social Office Upgrade modules provide. 
 
-+$$$
-
-**Warning:** Some of the Social Office upgrade actions may delete or alter 
-existing data in your database. It's essential that you backup your 
-system [properly](/discover/deployment/-/knowledge_base/7-0/backing-up-a-liferay-installation)
-before running any of them. 
-
-$$$
+| **Warning:** Some of the Social Office upgrade actions may delete or alter
+| existing data in your database. It's essential that you backup your
+| system [properly](/docs/7-0/deploy/-/knowledge_base/d/backing-up-a-liferay-installation)
+| before running any of them.
 
 You'll run these actions from the 
-[Apache Felix Gogo shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell) 
+[Apache Felix Gogo shell](/docs/7-0/reference/-/knowledge_base/r/using-the-felix-gogo-shell) 
 built into @product-ver@. With @product-ver@ running, enter the Gogo shell by 
 running the following command in a terminal: 
 
@@ -209,13 +205,9 @@ The resulting `g!` is the Gogo shell command prompt.
 
 ![Figure 1: The Gogo shell lets you execute commands, including the Social Office upgrade commands, in the OSGi runtime that runs @product-ver@. This screenshot shows the `telnet` command that enters the shell, and the resulting Gogo shell command prompt.](../../images/gogo-prompt.png)
 
-+$$$
-
-**Warning:** The Gogo shell is only available from the machine running 
-@product-ver@, unless you explicitly open port 11311. For security reasons, 
-**do not** expose the Gogo console to the outside world. 
-
-$$$
+| **Warning:** The Gogo shell is only available from the machine running
+| @product-ver@, unless you explicitly open port 11311. For security reasons,
+| **do not** expose the Gogo console to the outside world.
 
 Now you're ready to execute the Social Office upgrade actions. To run an action, 
 execute it on the Gogo shell prompt. Before doing so, however, be sure to 
@@ -241,7 +233,7 @@ its description:
 
 Next, you'll attend to some administrative tasks in your @product-ver@ instance. 
 
-## Administration [](id=administration)
+## Administration
 
 After running the upgrade actions, there are a few administrative tasks you 
 should complete in your @product-ver@ instance. These tasks help to retain 
@@ -257,7 +249,7 @@ Social Office functionality in @product-ver@.
   social site for collaboration in @product-ver@, create a new site using the 
   default Social Office site template. For more information on building sites 
   from templates, 
-  [click here](/discover/portal/-/knowledge_base/7-0/building-sites-from-templates). 
+  [click here](/docs/7-0/user/-/knowledge_base/u/building-sites-from-templates). 
 
 - **My Sites:** The Site Navigation app was Social Office's custom version of 
   the My Sites app. It was integrated into Social Office's theme. Since the Site 

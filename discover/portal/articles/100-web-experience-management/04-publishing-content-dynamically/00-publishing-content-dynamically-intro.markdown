@@ -1,7 +1,11 @@
-# Publishing Content Dynamically [](id=publishing-content-dynamically)
+---
+header-id: publishing-content-dynamically
+---
+
+# Publishing Content Dynamically
 
 Any type of content in @product@ is considered an asset. In the 
-[Creating Web Content](/discover/portal/-/knowledge_base/7-0/creating-web-content)
+[Creating Web Content](/docs/7-0/user/-/knowledge_base/u/creating-web-content)
 chapter, you examined @product@'s most common type of asset: web content. Other
 types of assets include blog posts, wiki articles, message board posts,
 bookmarks, and documents. It's possible for developers to define custom asset

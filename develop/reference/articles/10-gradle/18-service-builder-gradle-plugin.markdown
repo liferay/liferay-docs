@@ -1,12 +1,16 @@
-# Service Builder Gradle Plugin [](id=service-builder-gradle-plugin)
+---
+header-id: service-builder-gradle-plugin
+---
+
+# Service Builder Gradle Plugin
 
 The Service Builder Gradle plugin lets you generate a service layer defined in a
-[Service Builder](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
+[Service Builder](/docs/7-0/tutorials/-/knowledge_base/t/what-is-service-builder)
 `service.xml` file.
 
 The plugin has been successfully tested with Gradle 4.10.2.
 
-## Usage [](id=usage)
+## Usage
 
 To use the plugin, include it in your build script:
 
@@ -42,7 +46,7 @@ repositories {
 }
 ```
 
-## Tasks [](id=tasks)
+## Tasks
 
 The plugin adds one task to your project:
 
@@ -67,7 +71,7 @@ Property Name | Default Value
 [`springFile`](#springfile) | <p>**If `osgiModule` is `true`:** the file `META-INF/spring/module-spring.xml` in the first `resources` directory of the `main` source set (by default: `src/main/resources/META-INF/spring/module-spring.xml`)</p><p>**Otherwise:** the file `META-INF/portlet-spring.xml` in the first `resources` directory of the `main` source set (by default: `src/main/resources/META-INF/portlet-spring.xml`)</p>
 [`sqlDir`](#sqldir) | <p>**If the `war` plugin is applied:** `${project.webAppDir}/WEB-INF/sql`</p><p>**Otherwise:** The directory `META-INF/sql` in the first `resources` directory of the `main` source set (by default: `src/main/resources/META-INF/sql`).</p>
 
-In the [typical scenario](/develop/tutorials/-/knowledge_base/7-0/defining-an-object-relational-map-with-service-builder)
+In the [typical scenario](/docs/7-0/tutorials/-/knowledge_base/t/defining-an-object-relational-map-with-service-builder)
 of a data-driven Liferay OSGi application split in `myapp-app`, `myapp-service`
 and `myapp-web` modules, the `service.xml` file is usually contained in the root
 directory of `myapp-service`. In the `build.gradle` of the same module, it is
@@ -84,7 +88,7 @@ buildService {
 While `apiDir` is required, the `testDir` property assignment can be left out,
 in which case Arquillian-based integration test classes are generated.
 
-### BuildServiceTask [](id=buildservicetask)
+### BuildServiceTask
 
 Tasks of type `BuildWSDDTask` extend [`JavaExec`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html),
 so all its properties and methods, such as [`args`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:args\(java.lang.Iterable\))
@@ -98,7 +102,7 @@ Property Name | Default Value
 [`main`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:main) | `"com.liferay.portal.tools.service.builder.ServiceBuilder"`
 [`systemProperties`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:systemProperties) | `["file.encoding": "UTF-8"]`
 
-#### Task Properties [](id=task-properties)
+#### Task Properties
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -112,13 +116,13 @@ Property Name | Type | Default Value | Description
 <a name="hbmfile"></a>`hbmFile` | `File` | `null` | A Hibernate Mapping file to generate. It sets the `service.hbm.file` argument.
 <a name="impldir"></a>`implDir` | `File` | `null` | A directory where the service Java source files are generated. It sets the `service.impl.dir` argument.
 <a name="inputfile"></a>`inputFile` | `File` | `null` | The project's `service.xml` file. It sets the `service.input.file` argument.
-`modelHintsConfigs` | `Set` | `["classpath*:META-INF/portal-model-hints.xml", "META-INF/portal-model-hints.xml", "classpath*:META-INF/ext-model-hints.xml", "classpath*:META-INF/portlet-model-hints.xml"]` | Paths to the [model hints](/develop/tutorials/-/knowledge_base/7-0/customizing-model-entities-with-model-hints) files for Liferay Service Builder to use in generating the service layer. It sets the `service.model.hints.configs` argument.
+`modelHintsConfigs` | `Set` | `["classpath*:META-INF/portal-model-hints.xml", "META-INF/portal-model-hints.xml", "classpath*:META-INF/ext-model-hints.xml", "classpath*:META-INF/portlet-model-hints.xml"]` | Paths to the [model hints](/docs/7-0/tutorials/-/knowledge_base/t/customizing-model-entities-with-model-hints) files for Liferay Service Builder to use in generating the service layer. It sets the `service.model.hints.configs` argument.
 <a name="modelhintsfile"></a>`modelHintsFile` | `File` | `null` | A model hints file for the project. It sets the `service.model.hints.file` argument.
 <a name="osgimodule"></a>`osgiModule` | `boolean` | `false` | Whether to generate the service layer for OSGi modules. It sets the `service.osgi.module` argument.
 <a name="pluginname"></a>`pluginName` | `String` | `null` | If specified, a plugin can enable additional generation features, such as `Clp` class generation, for non-OSGi modules. It sets the `service.plugin.name` argument.
 <a name="propsutil"></a>`propsUtil` | `String` | `null` | The fully qualified class name of the service properties util class to generate. It sets the `service.props.util` argument.
 `readOnlyPrefixes` | `Set` | `["fetch", "get", "has", "is", "load", "reindex", "search"]` | Prefixes of methods to consider read-only. It sets the `service.read.only.prefixes` argument.
-`resourceActionsConfigs` | `Set` | `["META-INF/resource-actions/default.xml", "resource-actions/default.xml"]` | Paths to the [resource actions](/develop/tutorials/-/knowledge_base/7-0/adding-permissions-to-resources) files for Liferay Service Builder to use in generating the service layer. It sets the `service.resource.actions.configs` argument.
+`resourceActionsConfigs` | `Set` | `["META-INF/resource-actions/default.xml", "resource-actions/default.xml"]` | Paths to the [resource actions](/docs/7-0/tutorials/-/knowledge_base/t/adding-permissions-to-resources) files for Liferay Service Builder to use in generating the service layer. It sets the `service.resource.actions.configs` argument.
 <a name="resourcesdir"></a>`resourcesDir` | `File` | `null` | A directory where the service non-Java files are generated. It sets the `service.resources.dir` argument.
 <a name="springfile"></a>`springFile` | `File` | `null` | A service Spring file to generate. It sets the `service.spring.file` argument.
 `springNamespaces` | `Set` | `["beans"]` | Namespaces of Spring XML Schemas to add to the service Spring file. It sets the `service.spring.namespaces` argument.
@@ -135,11 +139,11 @@ The properties of type `File` supports any type that can be resolved by [`projec
 Moreover, it is possible to use Closures and Callables as values for the
 `String` properties, to defer evaluation until task execution.
 
-## Additional Configuration [](id=additional-configuration)
+## Additional Configuration
 
 There are additional configurations that can help you use Service Builder.
 
-### Liferay Service Builder Dependency [](id=liferay-service-builder-dependency)
+### Liferay Service Builder Dependency
 
 By default, the plugin creates a configuration called `serviceBuilder` and adds
 a dependency to the latest released version of Liferay Service Builder. It is

@@ -1,4 +1,8 @@
-# Creating and Managing Pages [](id=creating-and-managing-pages)
+---
+header-id: creating-and-managing-pages
+---
+
+# Creating and Managing Pages
 
 You've successfully created a site for your Liferay instance, but you may need
 to add new pages or edit existing pages. From the Site Administration &rarr;
@@ -39,7 +43,7 @@ site members and members of the organization.
 Regardless of whether the pages are public or private, @product@ uses the same
 interface to manage them. You'll look at this interface more closely next. 
 
-## Creating Pages [](id=creating-pages)
+## Creating Pages
 
 From the Navigation sub-menu in the main Menu, you can add a page or child page to
 any existing page or page set by clicking the *Add Page* button. Because *Public
@@ -55,14 +59,10 @@ Breadcrumb app, at least with most themes (including the default). Developers
 can create themes which have cascading menu bars which show the full hierarchy.
 Some examples of that are in Liferay's plugin repositories.
 
-+$$$
-
-**Note:** The Navigation Menu app lets you configure a root page. This allows
-building navigation menus based on the page hierarchy under a specific page.
-You're given options in the Navigation Menu app's *Configuration* menu to
-specify the root page, root page level, and included pages.
-
-$$$
+| **Note:** The Navigation Menu app lets you configure a root page. This allows
+| building navigation menus based on the page hierarchy under a specific page.
+| You're given options in the Navigation Menu app's *Configuration* menu to
+| specify the root page, root page level, and included pages.
 
 Once you've selected the *Add Page* or *Add Child Page* button, you're directed
 to an *Add New Page* interface that lets you configure the page to your liking.
@@ -76,7 +76,7 @@ When you create a new page, you can create either a blank page or a page
 prepopulated with apps from a page template. When you're entering the name
 of the page, you can select from a list of page templates that are currently
 available. You can learn more about Page Templates and how to use them in the
-[Creating Pages from Templates](/discover/portal/-/knowledge_base/7-0/creating-pages-from-templates) 
+[Creating Pages from Templates](/docs/7-0/user/-/knowledge_base/u/creating-pages-from-templates) 
 section. To view the page you've added, click the page name from the left panel.
 By default, all pages are created as an empty page but in some situations, you
 might want to use one of the other options. You can take a look at all the page
@@ -154,7 +154,7 @@ You should be able to define and manage pages in Liferay at this point so next,
 you'll look at the options you have available for configuring your public or
 private pages as a whole, and the individual pages residing within those groups.
 
-### Customizing the Look and Feel of Site Pages [](id=customizing-the-look-and-feel-of-site-pages)
+### Customizing the Look and Feel of Site Pages
 
 When you select *Configure* for a page set, it defaults to the Look and Feel
 tab. On this tab, you're presented with an interface that allows you to choose a
@@ -207,7 +207,7 @@ tweak a theme in real time by adding new styles or overriding existing ones.
 
 The next option configures the logo that appears for your site. 
 
-### Using a Custom Logo for a Site [](id=using-a-custom-logo-for-a-site)
+### Using a Custom Logo for a Site
 
 By default, the Liferay logo is used for your site pages' logo. If you want to
 use your own logo for a specific site, use the *Logo* tab. Adding a custom logo
@@ -225,7 +225,7 @@ disabled in *Instance Settings*. Removing the site name is not available for the
 default site -- only newly created sites and user pages have the option to have
 the name display. 
 
-### Executing JavaScript in Site Pages [](id=executing-javascript-in-site-pages)
+### Executing JavaScript in Site Pages
 
 If you click on *Advanced* for a page set (either Public Pages or Private
 Pages), you'll find a window where you can enter JavaScript code that will be
@@ -241,7 +241,7 @@ site's JavaScript and you can add some dynamic features to your site's pages.
 Next, you'll look at an advanced features of the *Configure* interface: merging
 the current site's pages with the pages of the default site.
 
-### Merging Pages From Other Sites [](id=merging-pages-from-other-sites)
+### Merging Pages From Other Sites
 
 If you click on *Advanced* &rarr; *Advanced* from the Edit Public Pages
 interface, you'll find an option to merge the public pages of your instance's
@@ -280,7 +280,7 @@ to the default site, site B becomes the previous site, and, again, since site B
 does not have the *Merge Liferay public pages* option enabled, no additional
 pages are added to the default site's navigation menu.
 
-### Rendering Pages for Mobile Devices [](id=rendering-pages-for-mobile-devices)
+### Rendering Pages for Mobile Devices
 
 You can configure your page set for mobile devices by selecting the *Advanced*
 tab and selecting *Mobile Device Rules* option. The ability to modify themes for
@@ -293,11 +293,11 @@ including the theme.
 <!-- Add following sentence when this section is available (App not available
 for CE) -Cody:
 The set up for this option is explained in the
-[Displaying Site Pages to Mobile Devices](/discover/portal/-/knowledge_base/7-0/displaying-pages-on-mobile-devices)
+[Displaying Site Pages to Mobile Devices](/docs/7-0/user/-/knowledge_base/u/displaying-pages-on-mobile-devices)
 section.
 -->
 
-### Configuring Rules for Virtual Hosting [](id=configuring-rules-for-virtual-hosting)
+### Configuring Rules for Virtual Hosting
 
 If you're using virtual hosting for this site, you can configure `robots.txt`
 rules for the domain by selecting the *Robots* option from the *Advanced* tab.
@@ -305,7 +305,7 @@ The Robots page gives you the option to configure your `robots.txt` for both
 public and private pages on a site. If you don't have Virtual Hosting set up,
 this tab is rather boring.
 
-### Notifying Search Engines of Site Pages [](id=notifying-search-engines-of-site-pages)
+### Notifying Search Engines of Site Pages
 
 If you select the *Sitemap* option from the *Advanced* tab for a page set, you
 can send a sitemap to some search engines so they can crawl your site. It uses
@@ -323,7 +323,7 @@ the *preview* link to see the generated XML.
 
 Next, you'll learn how to customize individual site pages.
 
-## Customizing Pages [](id=customizing-pages)
+## Customizing Pages
 
 When you decide to customize a single page, some different options that were not
 available when initially creating a page appear. Customizing a specific page can
@@ -333,23 +333,23 @@ tree. From the Options dropdown, select *Configure Page*. There are three groups
 that the options for customizing a specific page can be defined under. You'll
 learn what each group offers for your site pages.
 
-### Managing Page Content [](id=managing-page-content)
+### Managing Page Content
 
 Managing your page's content drastically improves your page's organization and
 user experience. The site page's configuration options offers some oppurtunities
 to organize page content for your Lunar Resort site.
 
-#### Categorization [](id=categorization)
+#### Categorization
 
 You can explore ways to tag and categorize your page by clicking the *SEO* tab,
 which shows how the categorization options by default. These tools help
 administrators organize the page and allows for users to easily find your page
 and its content through search and navigation. For more information on using
 tags and categories, visit the
-[Organizing Content with Tags and Categories](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories)
+[Organizing Content with Tags and Categories](/docs/7-0/user/-/knowledge_base/u/organizing-content-with-tags-and-categories)
 section.
 
-#### Custom Fields [](id=custom-fields)
+#### Custom Fields
 
 *Custom Fields* lets you edit the custom fields you already have configured for
 the *Page* resource, which is accessible from the *Advanced* tab. If you don't
@@ -358,16 +358,16 @@ you don't have any custom fields configured for the Page resource, you can
 navigate to the Control Panel &rarr; *Custom Fields* located under the
 *Configuration* tab. These are metadata about the page and can be anything you
 like, such as author or creation date. For more information on Custom Fields,
-see the [Custom Fields](/discover/portal/-/knowledge_base/6-2/custom-fields)
+see the [Custom Fields](/docs/6-2/user/-/knowledge_base/u/custom-fields)
 section.
 
-### Improving Page Usability [](id=improving-page-usability)
+### Improving Page Usability
 
 One of the most important tasks for administrators is ensuring the user
 experience is easy and enjoyable. There are configuration options that aid in
 providing a seamless user experience for your site page.
 
-#### Details [](id=details)
+#### Details
 
 The first option you're given (and the default option selected when customizing
 an individual page) is *Details*. This option lets you name the page for any
@@ -376,27 +376,23 @@ set an easy to remember, friendly URL for the page, and select the page type.
 Plus you can specify how apps are arranged on a page. Choose from the available 
 installed templates to modify the layout.
 
-+$$$
-
-**Note:** If you require a more complex page layout, you can install the Liferay 
-Layout Templates app from [Liferay Marketplace](https://web.liferay.com/marketplace) 
-to access four additional layout templates. 
-
-$$$
+| **Note:** If you require a more complex page layout, you can install the Liferay
+| Layout Templates app from [Liferay Marketplace](https://web.liferay.com/marketplace)
+| to access four additional layout templates.
 
 It's easy for developers to define custom layouts and add them to the list. This 
 is covered more thoroughly in the tutorial 
-[Layout Templates with the Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/creating-layout-templates-with-the-themes-generator-0). 
+[Layout Templates with the Liferay Theme Generator](/docs/7-0/tutorials/-/knowledge_base/t/creating-layout-templates-with-the-themes-generator-0). 
 
-#### Look and Feel [](id=look-and-feel)
+#### Look and Feel
 
 The *Look and Feel* option lets you set a page-specific theme. You can inherit
 what you already have configured for your page sets' theme, or you can uniquely
 define them per page. You can see the Page Set's
-[Customizing the Look and Feel of Site Pages](/discover/portal/-/knowledge_base/7-0/creating-and-managing-pages#customizing-the-look-and-feel-of-site-pages)
+[Customizing the Look and Feel of Site Pages](/docs/7-0/user/-/knowledge_base/u/creating-and-managing-pages#customizing-the-look-and-feel-of-site-pages)
 section for more details.
 
-#### Mobile Device Rules [](id=mobile-device-rules)
+#### Mobile Device Rules
 
 This option allows you to apply rules for how this page should be rendered for
 various mobile devices. You can set these up by navigating to your Site
@@ -407,7 +403,7 @@ Families*.
 figure out how this is changing Mobile Device Rules (section still available in
 Page Settings. -Cody -->
 
-#### Embedded Portlets [](id=embedded-portlets)
+#### Embedded Portlets
 
 This option only appears if you have embedded one or more portlets on
 the page. Previous to @product@ 7.0, you were able to embed portlets on a page by
@@ -416,27 +412,27 @@ Display app to embed a portlet on a page. This is no longer possible.
 
 Applications can now be embedded on a page via web content template. To learn
 more about this, see the
-[Adding Templates](/discover/portal/-/knowledge_base/7-0/designing-uniform-content#adding-templates)
+[Adding Templates](/docs/7-0/user/-/knowledge_base/u/designing-uniform-content#adding-templates)
 section. Also, you can embed a portlet in themes programmatically.
 If you're interested in learning more about this, visit the
-[Embedding Portlets in Themes](/develop/tutorials/-/knowledge_base/7-0/embedding-portlets-in-themes)
+[Embedding Portlets in Themes](/docs/7-0/tutorials/-/knowledge_base/t/embedding-portlets-in-themes)
 tutorial.
 
-#### Customization Settings [](id=customization-settings)
+#### Customization Settings
 
 This configuration option located in the *Advanced* tab lets you mark specific
 sections of the page you want users to be able to customize. You can learn more
 about page customizations in the
-[Personalizing Pages](/discover/portal/-/knowledge_base/7-0/creating-and-managing-pages#personalizing-pages)
+[Personalizing Pages](/docs/7-0/user/-/knowledge_base/u/creating-and-managing-pages#personalizing-pages)
 section.
 
-### Enhancing Page Intelligence [](id=enhancing-page-intelligence)
+### Enhancing Page Intelligence
 
 Your page's configuration options offers several opportunities to improve your
 page's data optimization and JavaScript, among others. To enhance your page's
 intelligence, configure the options described below.
 
-#### SEO [](id=seo)
+#### SEO
 
 *SEO* provides several means of optimizing the data the page provides to an
 indexer that's crawling the page, which is accessible from the *SEO* tab. You
@@ -459,7 +455,7 @@ point of view, this will make your pages rank higher since any references to
 variations of a specific URL will all be considered references to the same
 page.
 
-#### JavaScript [](id=javascript)
+#### JavaScript
 
 If you click on *Advanced* &rarr; *JavaScript*, you'll find a window where you
 can enter JavaScript code that will be executed at the bottom of your page. If
@@ -469,10 +465,10 @@ your site's JavaScript code remains in one place.
 
 This configuration option is also available for page sets like Public Pages and
 Private Pages. Visit the
-[Executing JavaScript in Site Pages](/discover/portal/-/knowledge_base/7-0/creating-and-managing-pages#executing-javascript-in-site-pages)
+[Executing JavaScript in Site Pages](/docs/7-0/user/-/knowledge_base/u/creating-and-managing-pages#executing-javascript-in-site-pages)
 section for more information on doing this for page sets.
 
-#### Advanced [](id=advanced)
+#### Advanced
 
 The *Advanced* option contains several optional features. You can set a query
 string to provide parameters to the page. This can become useful to web content
@@ -483,7 +479,7 @@ menu.
 
 Next you'll learn how to add applications to a site page.
 
-## Adding Applications to a Page [](id=adding-applications-to-a-page)
+## Adding Applications to a Page
 
 @product@ pages are composed of applications. All of your site's functionality,
 from blogs to shopping, is composed of apps. Even static web content can be
@@ -512,11 +508,11 @@ app and Blogs Aggregator app to a page.
 It's easy to make your pages look exactly the way you want them to. If the
 default layout options provided aren't enough, you can even develop your own.
 For more information about developing custom layout templates, see the tutorial 
-[Layout Templates with the Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/creating-layout-templates-with-the-themes-generator-0). 
+[Layout Templates with the Liferay Theme Generator](/docs/7-0/tutorials/-/knowledge_base/t/creating-layout-templates-with-the-themes-generator-0). 
 
 Next, you'll practice personalizing pages using page customizations!
 
-## Personalizing Pages [](id=personalizing-pages)
+## Personalizing Pages
 
 Administrators can designate pages or sections of pages to be customizable. When
 a user visits such a page, a notification appears stating that the user can
@@ -619,7 +615,7 @@ In addition to granting the ability to customize app configurations, the
 and to import or export app settings. Next, you'll look at how to change page
 permissions.
 
-## Changing Page Permissions [](id=changing-page-permissions)
+## Changing Page Permissions
 
 By default, public pages are just that: public. They can be viewed by anybody,
 logged in or not logged in. And private pages are really only private from

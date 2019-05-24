@@ -1,4 +1,8 @@
-# Themes and Layout Templates [](id=themes-and-layout-templates)
+---
+header-id: themes-and-layout-templates
+---
+
+# Themes and Layout Templates
 
 Do you want to transform the look and feel of your @product@? Create your
 own user interface with a Liferay Theme! Create a layout template to specify 

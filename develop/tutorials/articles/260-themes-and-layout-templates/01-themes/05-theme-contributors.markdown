@@ -1,10 +1,14 @@
-# Theme Contributors [](id=theme-contributors)
+---
+header-id: theme-contributors
+---
+
+# Theme Contributors
 
 If you want to package UI resources independent of a specific theme and
 include them on a @product@ page, Theme Contributors are your best option. If,
 instead, you'd like to include separate UI resources on a @product@ page that
 are attached to a theme, you should look into
-[themelets](/develop/tutorials/-/knowledge_base/7-0/themelets).
+[themelets](/docs/7-0/tutorials/-/knowledge_base/t/themelets).
 
 A Theme Contributor is a
 [module](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Module)
@@ -20,7 +24,7 @@ This tutorial demonstrates how to
 
 Next, you'll learn how to create a Theme Contributor.
 
-## Creating Theme Contributors [](id=creating-theme-contributors)
+## Creating Theme Contributors
 
 In Liferay versions prior to 7.0, the standard UI for User menus and navigation
 (the Dockbar) was included in the theme template. Starting in @product@
@@ -39,9 +43,9 @@ new UI components to @product@ by creating a Theme Contributor.
 To create a Theme Contributor module, follow these steps:
 
 1.  Create a generic OSGi module using your favorite third party tool, or use
-    [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli). You can also
+    [Blade CLI](/docs/7-0/tutorials/-/knowledge_base/t/blade-cli). You can also
     use the 
-    [Blade Template](/develop/reference/-/knowledge_base/7-0/theme-contributor-template)
+    [Blade Template](/docs/7-0/reference/-/knowledge_base/r/theme-contributor-template)
     to create your module, in which case you can skip step 2.
 
 2.  To identify your module as a Theme Contributor, add the
@@ -84,12 +88,12 @@ That's all you need to do to create a Theme Contributor for your site. Remember,
 with great power comes great responsibility, so use Theme Contributors wisely.
 The UI contributions affect every page and aren't affected by theme deployments.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+[Liferay Theme Generator](/docs/7-0/tutorials/-/knowledge_base/t/themes-generator)
 
-[Themelets](/develop/tutorials/-/knowledge_base/7-0/themelets)
+[Themelets](/docs/7-0/tutorials/-/knowledge_base/t/themelets)
 
-[Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/7-0/importing-resources-with-a-theme)
+[Importing Resources with Your Themes](/docs/7-0/tutorials/-/knowledge_base/t/importing-resources-with-a-theme)
 
-[Theme Contributor Template](/develop/reference/-/knowledge_base/7-0/theme-contributor-template)
+[Theme Contributor Template](/docs/7-0/reference/-/knowledge_base/r/theme-contributor-template)

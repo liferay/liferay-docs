@@ -1,4 +1,8 @@
-# Setting Search Container Animations [](id=setting-search-container-animations)
+---
+header-id: setting-search-container-animations
+---
+
+# Setting Search Container Animations
 
 If you've toured @product-ver@'s UI, you've probably noticed animations in the
 search containers. These animations show the user when there is no available
@@ -13,7 +17,7 @@ This tutorial covers the following topics:
 
 First, you'll learn how to use the default animations in your search container.
 
-## Using the Default Animations in Your Search Container [](id=using-the-default-animations-in-your-search-container)
+## Using the Default Animations in Your Search Container
 
 There are three built-in classes for the search container animation:
 
@@ -59,7 +63,7 @@ tag to set the animation. For example,
 If you don't want to use the default animations packaged with @product-ver@, you 
 can use custom animations instead. This is covered next.
 
-## Using Custom Animations [](id=using-custom-animations)
+## Using Custom Animations
 
 As stated earlier, each animation has a matching CSS class that the search
 container uses. To use a custom animation, therefore, you must modify the
@@ -71,9 +75,9 @@ There are two approaches you can take:
 - Create new styles to make the animation available to the search container
 
 Regardless of the approach you choose, you must provide the CSS styles in a 
-[Theme](/develop/tutorials/-/knowledge_base/7-0/introduction-to-themes), 
-[Themelet](/develop/tutorials/-/knowledge_base/7-0/themelets), or 
-[Theme Contributor](/develop/tutorials/-/knowledge_base/7-0/theme-contributors). 
+[Theme](/docs/7-0/tutorials/-/knowledge_base/t/introduction-to-themes), 
+[Themelet](/docs/7-0/tutorials/-/knowledge_base/t/themelets), or 
+[Theme Contributor](/docs/7-0/tutorials/-/knowledge_base/t/theme-contributors). 
 These styles point to the animation's source. You can provide the animation
 however you like: as long as you have a valid URL (relative or absolute) that
 points to the animation, you can use it.
@@ -82,17 +86,13 @@ The default search container animation styles are provided by the
 [_empty_result_message.scss](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/foundation/frontend-css/frontend-css-web/src/main/resources/META-INF/resources/taglib/_empty_result_message.scss)
 file.
 
-+$$$
-
-**Note:** Search containers can also contain static images for the no results 
-message if you prefer. Just use a valid image type instead. All animations must 
-be of type `GIF` though.
-
-$$$
+| **Note:** Search containers can also contain static images for the no results
+| message if you prefer. Just use a valid image type instead. All animations must
+| be of type `GIF` though.
 
 You can learn how to replace the default animations next. 
 
-### Replacing Default Empty Results Message Animations [](id=replacing-default-empty-results-message-animations)
+### Replacing Default Empty Results Message Animations
 
 Follow these steps to replace the existing animations with your own:
 
@@ -132,7 +132,7 @@ Your custom animation now appears in the search container instead of the default
 animation. If instead you want to add your custom animation to the default ones
 available, follow the steps in the next section.
 
-### Adding A New Empty Results Message Animation [](id=adding-a-new-empty-results-message-animation)
+### Adding A New Empty Results Message Animation
 
 Adding an animation to the empty results message involves the same steps as
 replacing a default animation. The only difference is you must add a new CSS
@@ -173,8 +173,8 @@ animation:
 
 Now you know how to set search container animations in your app!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using the Liferay UI Taglib](/develop/tutorials/-/knowledge_base/7-0/using-the-liferay-ui-taglib)
+[Using the Liferay UI Taglib](/docs/7-0/tutorials/-/knowledge_base/t/using-the-liferay-ui-taglib)
 
-[Introduction to Liferay Search](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search)
+[Introduction to Liferay Search](/docs/7-0/tutorials/-/knowledge_base/t/introduction-to-liferay-search)

@@ -1,4 +1,8 @@
-# Sort Order Changed with a Different Database [](id=sort-order-changed-with-a-different-database)
+---
+header-id: sort-order-changed-with-a-different-database
+---
+
+# Sort Order Changed with a Different Database
 
 If you've been using @product@, but are switching it to use a different database
 type, consult your database vendor documentation to understand your old and new

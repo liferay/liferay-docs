@@ -1,15 +1,15 @@
-# Installing @product@ on WebSphere 8.5.5 [](id=installing-liferay-dxp-on-websphere-8-5-5)
+---
+header-id: installing-liferay-dxp-on-websphere-8-5-5
+---
+
+# Installing @product@ on WebSphere 8.5.5
 
 IBM &reg; WebSphere &reg; is a trademark of International Business Machines 
 Corporation, registered in many jurisdictions worldwide. 
 
-+$$$
-
-**Tip:** Throughout this installation and configuration process, WebSphere 
-prompts you to click *Save* to apply changes to the Master Configuration. Do so 
-intermittently to save your changes. 
-
-$$$
+| **Tip:** Throughout this installation and configuration process, WebSphere
+| prompts you to click *Save* to apply changes to the Master Configuration. Do so
+| intermittently to save your changes.
 
 For @product@ to work correctly, WebSphere 8.5.5 Fix Pack 11 (or later) must be 
 installed.  You can find more information about this fix pack 
@@ -21,12 +21,12 @@ Liberty Profile.
 You should also read the following articles to familiarize yourself with 
 @product@'s general installation steps: 
 
-- [Preparing for Install](/discover/deployment/-/knowledge_base/7-0/preparing-for-install)
-- [Installing @product@](/discover/deployment/-/knowledge_base/7-0/installing-liferay-dxp)
-- [Installing @product@ Manually](/discover/deployment/-/knowledge_base/7-0/installing-liferay-manually)
+- [Preparing for Install](/docs/7-0/deploy/-/knowledge_base/d/preparing-for-install)
+- [Installing @product@](/docs/7-0/deploy/-/knowledge_base/d/installing-liferay-dxp)
+- [Installing @product@ Manually](/docs/7-0/deploy/-/knowledge_base/d/installing-liferay-manually)
 
 Note that the 
-[*Liferay Home* folder](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home)
+[*Liferay Home* folder](/docs/7-0/deploy/-/knowledge_base/d/installing-liferay-portal#liferay-home)
 is important to the operation of @product@. In Liferay Home, @product@ creates 
 certain files and folders that it needs to run. On WebSphere, Liferay Home is 
 typically `[Install Location]/WebSphere/AppServer/profiles/your-profile/liferay`. 
@@ -46,7 +46,7 @@ You'll need the following files:
 
 Without any further ado, get ready to install @product@ in WebSphere! 
 
-## Preparing WebSphere for @product@ [](id=preparing-websphere-for-liferay-dxp)
+## Preparing WebSphere for @product@
 
 When the application server binaries have been installed, start the *Profile 
 Management Tool* to create a profile appropriate for @product@. 
@@ -112,7 +112,7 @@ are a few things you need to configure in your application server.
 
 ![Figure 2: Example of the settings before creating the profile.](../../images-dxp/websphere-02-profile.png)
 
-### Configuring the WebSphere Application Server [](id=configuring-the-websphere-application-server)
+### Configuring the WebSphere Application Server
 
 In this version of WebSphere, servlet filters are not initialized on web 
 application startup, but rather, on first access. This can cause problems when 
@@ -127,7 +127,7 @@ To set `webcontainer` custom properties in the WebSphere application server,
 follow the instructions 
 [here in WebSphere's documentation](http://www-01.ibm.com/support/docview.wss?rss=180&uid=swg21284395). 
 
-### Setting up JVM Parameters for Liferay DXP [](id=setting-up-jvm-parameters-for-liferay-dxp)
+### Setting up JVM Parameters for Liferay DXP
 
 Next, in the WebSphere profile you created for @product@, you must set an 
 argument that supports @product@'s Java memory requirements. You'll modify this 
@@ -139,14 +139,10 @@ Add `maximumHeapSize="2048"` inside the `jvmEntries` tag. For example:
 
     <jvmEntries xmi:id="JavaVirtualMachine_1183122130078" ... maximumHeapSize="2048">
 
-+$$$
-
-**Note:** The JVM parameters used here are defaults intended for production 
-systems development purposes. Administrators can change the settings to other 
-values that best address their specific environments. These will need to be 
-tuned depending on need. 
-
-$$$
+| **Note:** The JVM parameters used here are defaults intended for production
+| systems development purposes. Administrators can change the settings to other
+| values that best address their specific environments. These will need to be
+| tuned depending on need.
 
 Administrators can set the UTF-8 and GMT time zone properties in the
 `server.xml` file. This is required or else special characters will not be
@@ -154,17 +150,13 @@ parsed correctly. Add the following inside the `jvmEntries` tag:
 
     <jvmEntries xmi:id="JavaVirtualMachine_1183122130078" ...genericJvmArguments="-Dfile.encoding=UTF-8 -Duser.timezone=GMT">
 
-+$$$
-
-**Important:** For @product@ to work properly, the application server JVM must 
-use the `GMT` time zone and `UTF-8` file encoding. 
-
-$$$
+| **Important:** For @product@ to work properly, the application server JVM must
+| use the `GMT` time zone and `UTF-8` file encoding.
 
 Alternately, you can set the UTF-8 and GMT properties from the WebSphere Admin
 Console. (See below.)
 
-### Removing the secureSessionCookie Tag [](id=removing-the-securesessioncookie-tag)
+### Removing the secureSessionCookie Tag
 
 In the same profile, you should delete a problematic `secureSessionCookie` tag 
 that can cause @product@ startup errors. Note that this is just a default 
@@ -180,7 +172,7 @@ If this tag is not removed, an error similar to the one here may occur:
     WSVR0501E: Error creating component com.ibm.ws.runtime.component.CompositionUnitMgrImpl@d74fa901    
     com.ibm.ws.exception.RuntimeWarning: com.ibm.ws.webcontainer.exception.WebAppNotLoadedException: Failed to load webapp: Failed to load webapp: SRVE8111E: The application, LiferayEAR, is trying to modify a cookie which matches a pattern in the restricted programmatic session cookies list [domain=*, name=JSESSIONID, path=/].
 
-## Installing @product@'s Dependencies [](id=installing-liferay-dxps-dependencies)
+## Installing @product@'s Dependencies
 
 You must now install @product@'s dependencies. Recall that earlier you 
 downloaded two ZIP files containing these dependencies. Install their contents 
@@ -222,7 +214,7 @@ The following folders should be present within the `/liferay/osgi` folder:
 Once you've installed these dependencies, start the server profile you created 
 for @product@. Once it starts, you're ready to configure your database. 
 
-## Database Configuration [](id=database-configuration)
+## Database Configuration
 
 If you want WebSphere to manage the database connections, follow the 
 instructions below. Note this is not necessary if you're planning on using 
@@ -230,12 +222,8 @@ instructions below. Note this is not necessary if you're planning on using
 You'll set your database information in @product@'s setup wizard after the 
 install. 
 
-+$$$
-
-**Note:** Although @product@'s embedded database is fine for testing purposes, 
-you **should not** use it for production @product@ instances. 
-
-$$$
+| **Note:** Although @product@'s embedded database is fine for testing purposes,
+| you **should not** use it for production @product@ instances.
 
     ![Figure 3: WebSphere JDBC providers](../../images-dxp/websphere-jdbc-providers.png)
 
@@ -300,13 +288,13 @@ $$$
 
 Once you've set up your database, you can set up your mail session. 
 
-## Mail Configuration [](id=mail-configuration)
+## Mail Configuration
 
 If you want WebSphere to manage your mail sessions, use the following procedure. 
 If you want to use @product@'s built-in mail sessions, you can skip this 
 section. 
 
-### Creating a WebSphere-Managed Mail Session (Optional) [](id=creating-a-websphere-managed-mail-session-optional)
+### Creating a WebSphere-Managed Mail Session (Optional)
 
 1. Click *Resources &rarr; Mail &rarr; Mail Providers*. 
 
@@ -332,7 +320,7 @@ Note that you may also need to retrieve a SSL certificate from your mail server
 and add it to WebSphere's trust store. See WebSphere's documentation for 
 instructions on this. 
 
-### Verifying WebSphere Mail Provider [](id=verifying-websphere-mail-provider)
+### Verifying WebSphere Mail Provider
 
 To validate that the mail session has been configured correctly, there are a 
 number of ways to test this once the WAR has been deployed, the server has 
@@ -341,7 +329,7 @@ to validate is to create a new user with a valid email account. The newly
 created user should receive an email notification. The logs should display that 
 the SMTP server has been pinged with the correct port number listed. 
 
-## Enable Cookies for HTTP Sessions [](id=enable-cookies-http-sessions)
+## Enable Cookies for HTTP Sessions
 
 WebSphere 8.5.5.9 restricts cookies to HTTPS sessions by default. If you're 
 using HTTP instead, this prevents users from signing in to @product@ and 
@@ -364,7 +352,7 @@ steps to resolve this issue in WebSphere:
 
 4. Click *Save* 
 
-## Enable UTF-8 [](id=enable-utf-8)
+## Enable UTF-8
 
 If you did not add the `-Dfile.encoding=UTF-8` property in the `server.xml`, you
 can do so in the Administrative Console.
@@ -380,7 +368,7 @@ can do so in the Administrative Console.
 Once the changes have been saved, @product@ can parse special characters if
 there is localized content.
 
-## Deploy @product@ [](id=deploy-liferay-dxp)
+## Deploy @product@
 
 Now you're ready to deploy @product@! 
 
@@ -409,7 +397,7 @@ Now you're ready to deploy @product@!
 
 You've now installed @product@! 
 
-## Setting the JDK Version for Compiling JSPs [](id=setting-the-jdk-version-for-compiling-jsps)
+## Setting the JDK Version for Compiling JSPs
 
 @product@ requires that its JSPs are compiled on Java 8. To ensure that
 WebSphere does this, shut down WebSphere after you've deployed the @product@
@@ -431,7 +419,7 @@ official documentation for
 
 Now restart WebSphere. 
 
-## Enabling Security for Portal Access Control Lists [](id=enabling-security-for-portal-access-control-lists)
+## Enabling Security for Portal Access Control Lists
 
 When you are ready to start using apps from Liferay Marketplace, you must 
 enable Liferay's Portal Access Control Lists (PACL) to enforce security policies 
@@ -467,7 +455,7 @@ See this article
 
 Once this permission has been set, users can start @product@. 
 
-## Start @product@ [](id=start-liferay-dxp)
+## Start @product@
 
 1. If you plan to use @product@'s setup wizard, skip to the next step. If you 
    wish to use WebSphere's data source and mail session, create a file called 

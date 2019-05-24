@@ -1,4 +1,8 @@
-# Preparing to Install Elasticsearch [](id=liferay-elasticsearch)
+---
+header-id: liferay-elasticsearch
+---
+
+# Preparing to Install Elasticsearch
 
 By default, @product-ver@ and its embedded Elasticsearch engine run in the same 
 JVM. Although this enables out-of-the-box search in @product-ver@, it's only 
@@ -13,7 +17,7 @@ The following sections provide a synopsis of Elasticsearch configurations for
 @product-ver@. Prior to deployment, we strongly recommend reading 
 [Elastic's documentation on production deployment](https://www.elastic.co/guide/en/elasticsearch/guide/current/index.html). 
 
-## Sizing Your Deployment [](id=sizing-your-deployment)
+## Sizing Your Deployment
 
 When sizing your Elasticsearch deployment, you must carefully consider your CPU, 
 memory, disk, and network capacity. Generally, you should deploy Elasticsearch
@@ -21,18 +25,18 @@ on medium to large machines. This lets you scale effectively and avoid large
 numbers of machines. You should also avoid running multiple Elasticsearch JVMs
 on the same operating system. 
 
-## CPU [](id=cpu)
+## CPU
 
 Liferay recommends that you allocate at least 4 CPU cores to the Elasticsearch 
 engine. This assumes only 1 Elasticsearch JVM running on the machine. 
 
-## Memory [](id=memory)
+## Memory
 
 Liferay recommends at least 16 GB of memory, with 64 GB preferred. The memory
 allocation depends upon the amount of index data. For index sizes 500 GB to 1
 TB, 64 GB of memory should suffice. 
 
-## Disk [](id=disk)
+## Disk
 
 Search engines store their indexes on disk. Disk I/O capacity can therefore 
 impact search performance. Liferay recommends deploying Elasticsearch on SSD 
@@ -55,7 +59,7 @@ represents. For example, index 25% of your production content and then multiply
 the resulting index size by 4. Keep in mind that indexing a 1 MB file doesn't
 result in 1 MB of space in the search index. 
 
-## Networking [](id=networking)
+## Networking
 
 Elasticsearch relies on clustering and sharding to deliver fast, accurate search 
 results. Therefore, it requires a fast and reliable network. Most modern data 
@@ -66,7 +70,7 @@ cross-continent). To support multi-data center deployments, you must create a
 custom solution that distributes index requests (update, delete, add document)
 to each data center. 
 
-## Shards and Replicas [](id=shards-and-replicas)
+## Shards and Replicas
 
 Elasticsearch uses shards and replicas to scale. Shards divide a search index 
 into smaller, more manageable chunks. For example, if you have a 500 GB index 

@@ -1,10 +1,14 @@
-# Using External Repositories [](id=using-external-repositories)
+---
+header-id: using-external-repositories
+---
+
+# Using External Repositories
 
 @product@'s Documents and Media lets you store files in a number of
 different ways and lets you access external repositories in addition to the
 built in document repository. Your administrator can learn how to set options
 for storing the Documents and Media Library's files
-[here](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration). 
+[here](/docs/7-0/deploy/-/knowledge_base/d/document-repository-configuration). 
 To connect the Documents and Media library to external repositories, read on. 
 
 Documents and Media allows users to connect to multiple third-party
@@ -32,18 +36,14 @@ Here are the CMIS repository integration steps:
 2.   Synchronize user accounts between @product@ and the repository
 3.   Add the repository to Documents and Media
 
-+$$$
-
-Interoperability with SharePoint and Documentum repositories is available to EE
-subscribers with the [Liferay SharePoint Connector](https://web.liferay.com/marketplace/-/mp/application/15188537)
-and [Liferay Documentum Connector](https://web.liferay.com/marketplace/-/mp/application/15098914)
-apps, available on the Marketplace.
-
-$$$
+| Interoperability with SharePoint and Documentum repositories is available to EE
+| subscribers with the [Liferay SharePoint Connector](https://web.liferay.com/marketplace/-/mp/application/15188537)
+| and [Liferay Documentum Connector](https://web.liferay.com/marketplace/-/mp/application/15098914)
+| apps, available on the Marketplace.
 
 Let's start with setting portal properties.
 
-## Step 1: Adjust Portal Properties [](id=adjusting-portal-properties)
+## Step 1: Adjust Portal Properties
 
 In order to authenticate with the third-party repository, you need to store
 passwords for the user sessions. You must configure an authentication type that
@@ -54,7 +54,7 @@ encrypted passwords in the user sessions, SSO can't be used with the external
 repository types. 
 
 Let's configure Liferay Portal for what's required in authentication.
-In  a `portal-ext.properties` file in your [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home),
+In  a `portal-ext.properties` file in your [Liferay Home](/docs/7-0/deploy/-/knowledge_base/d/installing-product#liferay-home),
 set a [`session.store.password`](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Session)
 portal property to `true`:
 
@@ -70,40 +70,32 @@ portal property:
 Alternatively, you can configure both of these properties in the Control Panel
 under *Instance Settings &rarr; Authentication*.
  
-## Step 2: Synchronize the User Accounts [](id=synchronizing-repository-users)
+## Step 2: Synchronize the User Accounts
 
 External repository integration requires @product@ users use the same screen
 name and password as their external repository user. For details on adding and
-managing users, refer to [User Mangement](/discover/portal/-/knowledge_base/7-0/user-management).
+managing users, refer to [User Mangement](/docs/7-0/user/-/knowledge_base/u/user-management).
 Make sure to sign in to @product@ as such a user whenever you're accessing the
 repository from it.
 
-+$$$
+| **Important**: Use lowercase for user names in the external repository, as
+| Liferay screen names are lowercase.
 
-**Important**: Use lowercase for user names in the external repository, as
-Liferay screen names are lowercase.
-
-$$$
-
-+$$$
-
-**Note**: In the external repository, make sure to associate users with
-necessary roles for accessing repository files. In Nuxeo, for example, a user
-must belong to the Nuxeo *Administrators* group to access Nuxeo repository files
-via CMIS.
-
-$$$
+| **Note**: In the external repository, make sure to associate users with
+| necessary roles for accessing repository files. In Nuxeo, for example, a user
+| must belong to the Nuxeo *Administrators* group to access Nuxeo repository files
+| via CMIS.
 
 Adding a *Repository* mapped to the external repository is the final step.
 
-## Step 3: Add the Repository to Documents and Media [](id=step-3-add-the-repository-to-documents-and-media)
+## Step 3: Add the Repository to Documents and Media
 
 The last step is adding a to Documents and Media a *Repository* to inter-operate
 with the external repository. Documents and Media can connect with a CMIS
 repository using the Atom Publishing (AtomPub) protocol or Web Services
 protocol. Let's explore accessing a CMIS Repository using AtomPub. 
 
-### Adding a CMIS Repository that Uses AtomPub [](id=using-a-cmis-repository-with-atompub)
+### Adding a CMIS Repository that Uses AtomPub
 
 AtomPub is the easiest protocol to specify for communicating with a CMIS repository. 
 
@@ -157,7 +149,7 @@ org.apache.chemistry.opencmis.commons.exceptions.CmisObjectNotFoundException: 1b
 
 Next, let's access a CMIS repository with Web Services.
 
-### Adding a CMIS Repository that Uses Web Services [](id=using-a-cmis-repository-with-web-services)
+### Adding a CMIS Repository that Uses Web Services
 
 After adjusting your portal properties and adding any user accounts required by
 the repository, you can add a Documents and Media Repository that inter-operates
@@ -189,13 +181,9 @@ documentation. Example URLs are listed after these steps. Make sure to enter
     - Web Services Repository Service
     - Web Services Versioning Service
 
-    +$$$
-
-    Tips: In a browser, you can open the repository's WSDL  file and verify each
-    service in it. Also make sure to specify the entire URLs--they all end with
-    `?wsdl`. 
-
-    $$$
+    | Tips: In a browser, you can open the repository's WSDL  file and verify each
+    | service in it. Also make sure to specify the entire URLs--they all end with
+    | `?wsdl`.
 
     ![Figure 4: Here's an example of the web service URLs for an Alfresco repository.](../../../images/dm-repo-types-alfresco-ws.png)
 
@@ -209,7 +197,7 @@ Your repository appears in Documents and Media. You can navigate into the
 repository and work with files as you do other files in Documents and Media.
 
 <!--
-### Using a Documentum Repository [](id=using-a-documentum-repository)
+### Using a Documentum Repository
 
 The following versions of Documentum are currently supported:
 
@@ -235,7 +223,7 @@ repository.
 Download and install the [Documentum Connector
 EE](https://www.liferay.com/marketplace/-/mp/application/15098914) from
 Marketplace. See the [Downloading and Installing
-Apps](/discover/portal/-/knowledge_base/6-2/downloading-and-installing-apps)
+Apps](/docs/6-2/user/-/knowledge_base/u/downloading-and-installing-apps)
 section of the *Leveraging the Liferay Marketplace* chapter of this document for
 more information.
 

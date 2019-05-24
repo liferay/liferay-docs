@@ -1,4 +1,8 @@
-# Facebook Connect Single Sign On Authentication [](id=facebook-connect-single-sign-on-authentication)
+---
+header-id: facebook-connect-single-sign-on-authentication
+---
+
+# Facebook Connect Single Sign On Authentication
 
 Facebook Connect SSO authentication is an integration with Facebook's Graph API.
 It retrieves the user's Facebook profile information and matches it to existing
@@ -25,7 +29,7 @@ OAuth 2.0 protocol. Facebook provides you the necessary application ID and
 secret used in OAuth messages sent between @product@ and Facebook. One benefit of
 this is that a Facebook user can revoke @product@'s access at any time.
 
-## Managing Facebook Connect SSO Authentication [](id=managing-facebook-connect-sso-authentication)
+## Managing Facebook Connect SSO Authentication
 
 Apply Facebook Connect SSO configuration at the system scope or instance scope.
 To configure the Facebook Connect SSO module at the System level, navigate to
@@ -69,6 +73,6 @@ order for @product@ to make successful calls to the Facebook Graph API. You
 should only need to change this URL if requests to your @product@ instance need
 to go via a fronting webserver such as Apache that does URL rewriting.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 (Coming Soon)

@@ -1,4 +1,8 @@
-# Tuning and Scaling Elasticsearch [](id=tuning-and-scaling-elasticsearch)
+---
+header-id: tuning-and-scaling-elasticsearch
+---
+
+# Tuning and Scaling Elasticsearch
 
 Since search engines benefit heavily from caching, their JVM memory profiles are 
 substantially different from those of a JVM focused on serving content and web 
@@ -18,7 +22,7 @@ You'll learn how to configure these settings:
 
 Read on to get Elasticsearch humming with @product@! 
 
-## JVM [](id=jvm)
+## JVM
 
 In general, you should allocate 45% of the available system memory to 
 Elasticsearch, up to a maximum of 31 GB. You should configure heap sizing by 
@@ -26,7 +30,7 @@ setting the `ES_HEAP_SIZE` environment variable. Also, the JVM vendor and
 version for the Elasticsearch server must be identical to those of the 
 @product@ server. 
 
-## File System [](id=file-system)
+## File System
 
 You should configure your OS for at least 64,000 file descriptors (the default 
 Linux value is 1024). Elasticsearch also uses NioFS and MMapFS. You must 
@@ -34,7 +38,7 @@ therefore ensure there is sufficient virtual memory available for memory-mapped
 files. Consult your system administrator for information on how to configure 
 these values. 
 
-## Scaling Your Deployment [](id=scaling-your-deployment)
+## Scaling Your Deployment
 
 Proper scaling and tuning of an Elasticsearch cluster primarily depends on the
 type of indexes it holds and how they're intended to be used. Since @product@ is

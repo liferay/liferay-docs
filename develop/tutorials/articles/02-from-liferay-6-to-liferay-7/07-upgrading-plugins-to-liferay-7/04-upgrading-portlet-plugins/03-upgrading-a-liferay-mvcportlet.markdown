@@ -1,4 +1,8 @@
-# Upgrading a Liferay MVC Portlet [](id=upgrading-a-liferay-mvc-portlet)
+---
+header-id: upgrading-a-liferay-mvc-portlet
+---
+
+# Upgrading a Liferay MVC Portlet
 
 Liferay's MVC Portlet framework is used extensively in Liferay's portlets and is
 a popular choice for Liferay Portal 6.2 portlet developers. The
@@ -9,12 +13,12 @@ to @product-ver@ without a hitch.
 
 Upgrading a Liferay MVC Portlet involves these steps:
 
-1.  [Adapt the code to @product-ver@'s API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+1.  [Adapt the code to @product-ver@'s API](/docs/7-0/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
 
-2.  [Resolve dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies)
+2.  [Resolve dependencies](/docs/7-0/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies)
 
 Liferay's 
-[Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+[Code Upgrade Tool](/docs/7-0/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
 identifies code affected by the new API, explains the API changes and how to
 adapt to them, and in many cases, provides options for adapting the code
 automatically. 
@@ -32,10 +36,10 @@ instance. Have fun showing off your upgraded portlet!
 
 **Related Topics**
 
-[Migrating Plugins SDK Projects to Workspace and Gradle](/develop/tutorials/-/knowledge_base/7-0/migrating-traditional-plugins-to-workspace-web-applications)
+[Migrating Plugins SDK Projects to Workspace and Gradle](/docs/7-0/tutorials/-/knowledge_base/t/migrating-traditional-plugins-to-workspace-web-applications)
 
-[Using Dependency Management Tools](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies#managing-dependencies-with-ivy)
+[Using Dependency Management Tools](/docs/7-0/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies#managing-dependencies-with-ivy)
 
-[Using the WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)
+[Using the WAB Generator](/docs/7-0/tutorials/-/knowledge_base/t/using-the-wab-generator)
 
-[Migrating Data Upgrade Processes](/develop/tutorials/-/knowledge_base/7-0/optimizing-app-upgrade-processes)
+[Migrating Data Upgrade Processes](/docs/7-0/tutorials/-/knowledge_base/t/optimizing-app-upgrade-processes)

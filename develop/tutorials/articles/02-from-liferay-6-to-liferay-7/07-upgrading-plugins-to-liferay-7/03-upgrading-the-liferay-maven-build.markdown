@@ -1,4 +1,8 @@
-# Upgrading the Liferay Maven Build [](id=upgrading-the-liferay-maven-build)
+---
+header-id: upgrading-the-liferay-maven-build
+---
+
+# Upgrading the Liferay Maven Build
 
 If you're an avid Maven user and have been using it for Liferay Portal 6.2
 project development, you must upgrade your Maven build to be compatible with
@@ -9,15 +13,15 @@ upgrade process that you must address:
 - Updating Liferay Maven artifact dependencies
 
 For more information on using Maven with @product-ver@, see the
-[Maven tutorial section](/develop/tutorials/-/knowledge_base/7-0/maven). For a
+[Maven tutorial section](/docs/7-0/tutorials/-/knowledge_base/t/maven). For a
 guided and expedited upgrade process for your Maven build, try the
-[Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool).
+[Code Upgrade Tool](/docs/7-0/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool).
 
 <!-- Mention Maven Workspace here when documentation is available. -Cody -->
 
 You'll start off by upgrading your Maven environment's Liferay Maven plugins.
 
-## Upgrading to New @product-ver@ Maven Plugins [](id=upgrading-to-new-product-ver-maven-plugins)
+## Upgrading to New @product-ver@ Maven Plugins
 
 The biggest change for your project's build plugins is the removal of the
 `liferay-maven-plugin`. Liferay now provides several individual Maven plugins
@@ -69,10 +73,10 @@ artifact IDs and tutorials explaining how to configure them:
 
 Name | Artifact ID | Tutorial |
 :----| :---------- | :------- |
-CSS Builder | [com.liferay.css.builder](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.css.builder) | [Compiling SASS Files in a Maven Project](/develop/tutorials/-/knowledge_base/7-0/compiling-sass-files-in-a-maven-project) |
+CSS Builder | [com.liferay.css.builder](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.css.builder) | [Compiling SASS Files in a Maven Project](/docs/7-0/tutorials/-/knowledge_base/t/compiling-sass-files-in-a-maven-project) |
 Lang Builder | [com.liferay.lang.builder](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.lang.builder) | Coming Soon |
-Service Builder | [com.liferay.portal.tools.service.builder](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.portal.tools.service.builder) | [Using Service Builder in a Maven Project](/develop/tutorials/-/knowledge_base/7-0/using-service-builder-in-a-maven-project) |
-Theme Builder | [com.liferay.portal.tools.theme.builder](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.portal.tools.theme.builder) | [Building Themes in a Maven Project](/develop/tutorials/-/knowledge_base/7-0/building-themes-in-a-maven-project) |
+Service Builder | [com.liferay.portal.tools.service.builder](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.portal.tools.service.builder) | [Using Service Builder in a Maven Project](/docs/7-0/tutorials/-/knowledge_base/t/using-service-builder-in-a-maven-project) |
+Theme Builder | [com.liferay.portal.tools.theme.builder](https://search.maven.org/#search%7Cga%7C1%7Ccom.liferay.portal.tools.theme.builder) | [Building Themes in a Maven Project](/docs/7-0/tutorials/-/knowledge_base/t/building-themes-in-a-maven-project) |
 
 In Liferay Portal 6.2, you were also required to specify all your app server
 configuration settings. For example, your parent POM probably contained settings
@@ -113,7 +117,7 @@ Awesome! You've learned about the new Maven plugins available to you for
 @product-ver@ development. Next, you'll learn about updating your Liferay Maven
 artifacts.
 
-## Updating Liferay Maven Artifact Dependencies [](id=updating-liferay-maven-artifact-dependencies)
+## Updating Liferay Maven Artifact Dependencies
 
 Many Liferay Portal 6.2 artifact dependencies you were using have changed in
 @product-ver@. See the table below for popular Liferay Maven artifacts that have
@@ -128,7 +132,7 @@ Liferay Portal 6.2 Artifact ID | @product-ver@ Artifact ID |
 `util-taglib` | `com.liferay.util.taglib` |
 
 For more information on resolving dependencies in @product-ver@, see the
-[Resolving a Plugin's Dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies)
+[Resolving a Plugin's Dependencies](/docs/7-0/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies)
 tutorial.
 
 Of course, you must also update the artifacts you're referencing for your
@@ -137,7 +141,7 @@ artifacts, you won't need to do anything more than update the artifacts in
 your POMs. If, however, you're working behind a proxy or don't have Internet
 access, you must update your company-shared or local repository with the latest
 @product-ver@ Maven artifacts. See the
-[Installing Liferay Maven Artifacts](/develop/tutorials/-/knowledge_base/7-0/installing-liferay-maven-artifacts)
+[Installing Liferay Maven Artifacts](/docs/7-0/tutorials/-/knowledge_base/t/installing-liferay-maven-artifacts)
 tutorial for instructions.
 
 With these updates, you can easily upgrade your Liferay Maven build so you can

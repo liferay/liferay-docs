@@ -1,4 +1,8 @@
-# Customizing the Product Menu [](id=customizing-the-product-menu)
+---
+header-id: customizing-the-product-menu
+---
+
+# Customizing the Product Menu
 
 Liferay's Product Menu comes with three major sections to choose from, by
 default: the Control Panel, User Settings, and Site Administration. These
@@ -8,15 +12,11 @@ category, and when clicking on it, you're presented with four other child panel
 categories: *Users*, *Sites*, *Apps*, and *Configuration*. It you click on one
 of these child panel categories, you're presented with panel apps.
 
-+$$$
-
-**Note:** The Product Menu cannot be changed by applying a new theme. To change
-the layout/style of the Product Menu, you must create and deploy a theme
-contributor. See the
-[Theme Contributors](/develop/tutorials/-/knowledge_base/7-0/theme-contributors)
-tutorial for more details.
-
-$$$
+| **Note:** The Product Menu cannot be changed by applying a new theme. To change
+| the layout/style of the Product Menu, you must create and deploy a theme
+| contributor. See the
+| [Theme Contributors](/docs/7-0/tutorials/-/knowledge_base/t/theme-contributors)
+| tutorial for more details.
 
 This construction of the Product Menu was designed to be intuitive and easy to
 use. For your instance of Liferay, however, you may want to add other panel
@@ -25,16 +25,16 @@ your panel categories and/or apps. In this tutorial, you'll learn how to provide
 your own custom or modify existing panel categories and panel apps for the
 Product Menu.
 
-## Adding Custom Panel Categories [](id=adding-custom-panel-categories)
+## Adding Custom Panel Categories
 
 Liferay provides an easy way to extend the Product Menu and customize it to
 display what is most helpful in your particular situation. First, you'll learn
 how to add a panel category.
 
 1. Create a generic OSGi module using your favorite third party tool, or use
-   [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli). Blade CLI
+   [Blade CLI](/docs/7-0/tutorials/-/knowledge_base/t/blade-cli). Blade CLI
    offers a
-   [Panel App](/develop/reference/-/knowledge_base/7-0/panel-app-template)
+   [Panel App](/docs/7-0/reference/-/knowledge_base/r/panel-app-template)
    template, which you can use to generate a basic panel category and panel app.
 
 2. Create a unique package name in the module's `src` directory and create a
@@ -97,15 +97,11 @@ how to add a panel category.
    implements the methods `include()` and `includeHeader()` for you. This will
    be elaborated on more extensively later.
 
-    +$$$
-
-    **Note:** In this tutorial, JSPs are used to describe how to provide
-    functionality to panel categories and apps. JSPs, however, are not the only
-    way to provide frontend functionality to your categories/apps. You can
-    create your own class implementing `PanelCategory` to use other 
-    technologies, such as FreeMarker.
-
-    $$$
+    | **Note:** In this tutorial, JSPs are used to describe how to provide
+    | functionality to panel categories and apps. JSPs, however, are not the only
+    | way to provide frontend functionality to your categories/apps. You can
+    | create your own class implementing `PanelCategory` to use other
+    | technologies, such as FreeMarker.
 
 5. Since you're implementing the
    [PanelCategory](@app-ref@/web-experience/latest/javadocs/com/liferay/application/list/PanelCategory.html)
@@ -183,7 +179,7 @@ Excellent! You've successfully created a custom panel category to display in the
 Product Menu. In many cases, a panel category holds panel apps for users to
 access. You'll learn about how to add a panel app to a panel category next.
 
-## Adding Custom Panel Apps [](id=adding-custom-panel-apps)
+## Adding Custom Panel Apps
 
 Just as adding panel categories is straight-forward and dynamic, so too is the
 process for adding panel apps. Panel apps are, by default, links provided in a
@@ -197,9 +193,9 @@ Follow the steps below to add a panel app to your Liferay instance's Product
 Menu.
 
 1. Create a generic OSGi module using your favorite third party tool, or use
-   [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli). Blade CLI
+   [Blade CLI](/docs/7-0/tutorials/-/knowledge_base/t/blade-cli). Blade CLI
    offers a
-   [Panel App](/develop/reference/-/knowledge_base/7-0/panel-app-template)
+   [Panel App](/docs/7-0/reference/-/knowledge_base/r/panel-app-template)
    template, which you can use to generate a basic panel category and panel app.
 
 2. Create a unique package name in the module's `src` directory and create a

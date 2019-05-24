@@ -1,4 +1,8 @@
-# Designing Uniform Content [](id=designing-uniform-content)
+---
+header-id: designing-uniform-content
+---
+
+# Designing Uniform Content
 
 If you've ever launched a web site, you know that as it grows, you can
 experience growing pains. This is the case especially if you've given lots of
@@ -17,17 +21,17 @@ Thankfully, Liferay WCM helps you handle all of those situations. You can use
 *Structures* to define which fields are available to users when they create
 content. These can be coupled with *Templates* that define how to display that
 content. Content won't get stale, because you can take advantage of the
-[Scheduling](/discover/portal/-/knowledge_base/7-0/scheduling-web-content-publication)
+[Scheduling](/docs/7-0/user/-/knowledge_base/u/scheduling-web-content-publication)
 feature to determine when content is displayed and when it's
 removed. Additionally, you can configure @product@'s built-in
-[Workflow](/discover/portal/-/knowledge_base/7-0/using-workflow) system to set
+[Workflow](/docs/7-0/user/-/knowledge_base/u/using-workflow) system to set
 up a review and publishing process so only what you want winds up on the live
 site. @product@ gives you the management tools you need to run everything from a
 simple, one-page web site to an enormous, content-rich site.
 
 All of this starts with structures.
 
-## Creating Structured Web Content [](id=creating-structured-web-content)
+## Creating Structured Web Content
 
 Structures are the foundation for web content. They determine which fields are
 available to users as they create new items for display. Structures not only
@@ -62,7 +66,7 @@ content which scrolls with the user, and more.
 Next you'll take a look at how you can create and edit structures through the
 Manage Structures interface.
 
-### Editing Structures [](id=editing-structures)
+### Editing Structures
 
 Go to your site's Site Administration menu and select *Web Content* from the
 Content section. The first way to access the Manage Structures interface is by
@@ -82,7 +86,7 @@ enter a new name for it to avoid confusing it with the original. When you copy a
 web content structure, you'll be prompted to choose whether to copy any detail
 templates or list templates associated with the structure. For information on
 detail templates and list templates, please refer to the
-[Using Web Forms and Dynamic Data Lists](/discover/portal/-/knowledge_base/6-2/using-web-forms-and-dynamic-data-lists)
+[Using Web Forms and Dynamic Data Lists](/docs/6-2/user/-/knowledge_base/u/using-web-forms-and-dynamic-data-lists)
 section.
 
 <!-- TODO: Update link above for 7.0. -Cody -->
@@ -122,17 +126,13 @@ characteristics of the regular article and only add additional fields to the
 more in-depth article. When the in-depth article is configured, it will display
 its parent's fields in addition to its own fields.
 
-+$$$
-
-**Note:** In some instances, there can be more than one structure with the same
-`structureKey`. For example, this can happen when exporting a global structure
-and then importing it back into a site. This scenario would have global and site
-scoped structures with identical `structureKey`s. If this happens, you can no
-longer use the global structure. This is because @product@ is configured to follow
-a specific hierarchy when choosing structures with the same `structureKey`:
-*current site > parent site > global scope*.
-
-$$$
+| **Note:** In some instances, there can be more than one structure with the same
+| `structureKey`. For example, this can happen when exporting a global structure
+| and then importing it back into a site. This scenario would have global and site
+| scoped structures with identical `structureKey`s. If this happens, you can no
+| longer use the global structure. This is because @product@ is configured to follow
+| a specific hierarchy when choosing structures with the same `structureKey`:
+| *current site > parent site > global scope*.
 
 The WebDAV URL feature is available for web content structures and templates so
 users could upload and organize resources from both a web interface and the file
@@ -141,21 +141,17 @@ administrators are capable of adding, browsing, editing, and deleting structures
 and templates on a remote server. After you complete your structure, you can
 access the WebDAV URL by re-opening the structure or template and clicking the
 *Details* section. If you'd like the see WebDAV in action, visit the
-[WebDAV Access](/discover/portal/-/knowledge_base/7-0/publishing-files#desktop-access-to-documents-and-media)
+[WebDAV Access](/docs/7-0/user/-/knowledge_base/u/publishing-files#desktop-access-to-documents-and-media)
 section.
 
-+$$$
-
-**Note:** Some operating systems require a WebDAV server to be class level 2
-(i.e., to support file locking) before allowing files to be read or written. The
-Documents and Media library uses a class level 2 WebDAV server but Web Content
-structures and templates do not. This means that @product@'s Document and Media
-library supports WebDAV file locking but Web Content structures and templates do
-not. However, on operating systems which require WebDAV servers to be class
-level 2, it's possible to avoid the restriction by using third-party WebDAV
-clients (e.g., [Cyberduck](http://cyberduck.ch)).
-
-$$$
+| **Note:** Some operating systems require a WebDAV server to be class level 2
+| (i.e., to support file locking) before allowing files to be read or written. The
+| Documents and Media library uses a class level 2 WebDAV server but Web Content
+| structures and templates do not. This means that @product@'s Document and Media
+| library supports WebDAV file locking but Web Content structures and templates do
+| not. However, on operating systems which require WebDAV servers to be class
+| level 2, it's possible to avoid the restriction by using third-party WebDAV
+| clients (e.g., [Cyberduck](http://cyberduck.ch)).
 
 Another method to edit your structure is switching to *Source* mode and manually
 customizing your structure by editing its XML file. You'll notice by default the
@@ -221,7 +217,7 @@ everything from articles, to video metadata, to databases of wildlife. You're
 limited only by your imagination. To fuel that imagination, you'll look more
 closely at field settings.
 
-### Editing Field Settings [](id=editing-field-settings)
+### Editing Field Settings
 
 When creating a new structure, it is essential that you set variable names.
 Template writers can use these variables to refer to elements on your form. If
@@ -292,7 +288,7 @@ users know what to put into the Body element (example: *This is an HTML text
 area for the body of your content*). Now, when users hover over the Help icon
 near your title, your tip is displayed.
 
-#### Structure Default Values [](id=structure-default-values)
+#### Structure Default Values
 
 Structure Default Values let you easily fill in values which will be repeated 
 for content created from that structure. You can use Structure Default Values 
@@ -321,7 +317,7 @@ This form allows you to manage the structure settings.
 Every new web content you create with this structure is preloaded with the
 data you inserted. Next, you'll learn about assigning permissions.
 
-### Assigning Permissions [](id=assigning-permissions)
+### Assigning Permissions
 
 Setting permissions on structures is done using the same procedure as
 permissions everywhere else in Liferay. Most users should not have the ability
@@ -339,7 +335,7 @@ to handle permissions for structures.
 Now that you understand what structures are used for, you need to understand the
 other half of @product@'s web content management system: templates.
 
-## Designing Web Content with Templates [](id=designing-web-content-with-templates)
+## Designing Web Content with Templates
 
 Developers create templates to display the elements of the structure in the
 markup they want. Content can then be styled properly using CSS, because markup
@@ -356,7 +352,7 @@ has been created using a custom structure.
 
 You'll look more closely at the types of templates @product@ supports next.
 
-### Template Types (FTL, VM, and XSL) [](id=template-types-ftl-vm-and-xsl)
+### Template Types (FTL, VM, and XSL)
 
 @product@ supports templates written in three different templating languages, to
 support the skill sets of the largest number of developers. This increases the
@@ -375,11 +371,7 @@ recommended: you'll get up to speed the fastest.
 logic with HTML. This is similar to other scripting languages, such as PHP,
 though Velocity is much simpler.
 
-+$$$
-
-**Note:** The Velocity template language is deprecated for @product@ 7.0.
-
-$$$
+| **Note:** The Velocity template language is deprecated for @product@ 7.0.
 
 **XSL** (Extensible Style Sheet Language): XSL is used in Liferay templates to
 transform the underlying XML of a structure into markup suitable for the
@@ -387,7 +379,7 @@ browser. While it may not be as clean and compact as Velocity or FreeMarker,
 it's widely used for transforming XML into other formats and it's very likely
 your developers have already been exposed to it.
 
-### Adding Templates [](id=adding-templates)
+### Adding Templates
 
 Liferay WCM makes it easy to create structures, templates, and content from the
 same interface. You'll go through the entire flow of how you'd create a
@@ -460,18 +452,14 @@ When this template is rendered, it looks something like this:
 
 ![Figure 5: The initial and expanded views for the Lunar Resort News Article. After clicking *Read More*, you're able to read the full text body.](../../../images/web-content-structures-templates-completed.png)
 
-+$$$
-
-**Note:** During the creation of a web content article, @product@ provides an
-*Options* &rarr; *Preview* button that gives you the option to preview your
-article as a final product before publishing. In some instances, the preview
-does not give an accurate depiction of the web content article. For example,
-fields provided by the `request` variable are not available because the
-`request` is not populated until the web content is rendered on a Liferay page.
-Therefore, the preview of the article would display errors. Use the *Preview*
-functionality with caution.
-
-$$$
+| **Note:** During the creation of a web content article, @product@ provides an
+| *Options* &rarr; *Preview* button that gives you the option to preview your
+| article as a final product before publishing. In some instances, the preview
+| does not give an accurate depiction of the web content article. For example,
+| fields provided by the `request` variable are not available because the
+| `request` is not populated until the web content is rendered on a Liferay page.
+| Therefore, the preview of the article would display errors. Use the *Preview*
+| functionality with caution.
 
 @product@ also provides the ability to create generic templates that aren't
 connected to a specific structure. In previous versions of Liferay, each
@@ -499,15 +487,11 @@ Currency Converter app in FreeMarker and Velocity:
 
     $theme.runtime("com_liferay_currency_converter_web_portlet_CurrencyConverterPortlet");
 
-+$$$
-
-**Warning:** The `theme` variable is no longer injected into the FreeMarker
-context. For more information about why the theme variable was removed for
-@product@ 7.0 and suggestions for updating your code, visit the
-[Taglibs Are No Longer Accessible via the theme Variable in FreeMarker](/develop/reference/-/knowledge_base/7-0/breaking-changes#taglibs-are-no-longer-accessible-via-the-theme-variable-in-freemarker)
-breaking change entry.
-
-$$$
+| **Warning:** The `theme` variable is no longer injected into the FreeMarker
+| context. For more information about why the theme variable was removed for
+| @product@ 7.0 and suggestions for updating your code, visit the
+| [Taglibs Are No Longer Accessible via the theme Variable in FreeMarker](/docs/7-0/reference/-/knowledge_base/r/breaking-changes#taglibs-are-no-longer-accessible-via-the-theme-variable-in-freemarker)
+| breaking change entry.
 
 In addition to embedding applications in templates, you can embed a template 
 within another template. This allows for reusable code, JS library imports, 
@@ -563,27 +547,23 @@ invoked by typing *${* which opens a drop-down menu of available variables. By
 clicking one of the variables, the editor inserts the variable into the template
 editor.
 
-+$$$
-
-**Note:** The `utilLocator`, `objectUtil`, and `staticUtil` variables for
-FreeMarker and the `utilLocator` variable for Velocity are disabled by default.
-These variables are vulnerable to remote code execution and privilege
-escalation, and should be used with caution, if enabled.
-
-$$$
+| **Note:** The `utilLocator`, `objectUtil`, and `staticUtil` variables for
+| FreeMarker and the `utilLocator` variable for Velocity are disabled by default.
+| These variables are vulnerable to remote code execution and privilege
+| escalation, and should be used with caution, if enabled.
 
 After you've saved your template, @product@ provides a WebDAV URL and static URL.
 These values access the XML source of your structure. You can find these URLs by
 returning to your template after it's been saved and expanding the *Details*
 section. For more information on WebDAV and the uses of the WebDAV URL,
-reference the [WebDAV Access](/discover/portal/-/knowledge_base/7-0/publishing-files#desktop-access-to-documents-and-media)
+reference the [WebDAV Access](/docs/7-0/user/-/knowledge_base/u/publishing-files#desktop-access-to-documents-and-media)
 section.
 
 Now that you've created a handsome template and know how to use the template
 editor, it's time to decide who the lucky people are that get to use your new
 template.
 
-## Assigning Template Permissions [](id=assigning-template-permissions)
+## Assigning Template Permissions
 
 Permissions for templates are similar to permissions for structures. As with
 structures, you only want specific developers editing and creating templates.

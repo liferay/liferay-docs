@@ -1,15 +1,19 @@
-# Creating Layout Templates Manually [](id=creating-layout-templates-manually)
+---
+header-id: creating-layout-templates-manually
+---
 
-You can use the [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+# Creating Layout Templates Manually
+
+You can use the [Liferay Theme Generator](/docs/7-0/tutorials/-/knowledge_base/t/themes-generator)
 to generate Layout Templates automatically. This is covered in the 
-[Layout Templates with the Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/creating-layout-templates-with-the-themes-generator-0) 
+[Layout Templates with the Liferay Theme Generator](/docs/7-0/tutorials/-/knowledge_base/t/creating-layout-templates-with-the-themes-generator-0) 
 tutorial. You may, however, want to create or modify your layout templates manually.
 
 In this tutorial you'll learn how to create or modify a Layout Template manually.
 
 You can see the HTML markup for a basic layout template next.
 
-## Basic Layout Template [](id=basic-layout-template)
+## Basic Layout Template
 
 Below is an example of a basic Layout Template `.tpl` file:
 
@@ -48,7 +52,7 @@ Below is an example of a basic Layout Template `.tpl` file:
 
 The column elements and classes are described in more detail next.
 
-## Column Elements and Classes [](id=column-elements-and-classes)
+## Column Elements and Classes
 
 To understand how the layout template works, you must look closely at how the
 HTML is structured. This section uses the first column of the example above 
@@ -61,7 +65,7 @@ to demonstrate the key elements and classes of a layout template:
 
 You can learn more about the column container next.
 
-### Column Container [](id=column-container)
+### Column Container
 
 Below is a description of each of the column container classes:
 
@@ -80,7 +84,7 @@ For rows with only one column, use the `portlet-column-only` class.
  
 Next you can learn more about the `$processor.processColumn`.
 
-### Processor ProcessColumn [](id=processor-processcolumn)
+### Processor ProcessColumn
 
 `$processor.processColumn` takes these arguments: 
 
@@ -92,7 +96,7 @@ classes with `-content` appended.
 
 Next you can learn how to modify template breakpoints.
 
-## Modifying Template Breakpoints [](id=modifying-template-breakpoints)
+## Modifying Template Breakpoints
 
 When looking at the example template, you'll notice this Bootstrap grid class 
 is used on every column:
@@ -132,7 +136,7 @@ your theme with Theme's Generator, or place it in your theme's
 
 Next you can learn how to include layout templates in a theme.
 
-## Including Layout Templates with a Theme [](id=including-layout-templates-with-a-theme)
+## Including Layout Templates with a Theme
 
 You can deploy a layout template with a theme by specifying it in the theme's 
 `liferay-look-and-feel.xml` file.
@@ -167,8 +171,8 @@ Theme Generator, your file paths may differ.
 There you have it. Now you know how to create and modify layout templates 
 manually and how to include them with a theme!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Layout Templates with the Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/creating-layout-templates-with-the-themes-generator-0)
+[Layout Templates with the Liferay Theme Generator](/docs/7-0/tutorials/-/knowledge_base/t/creating-layout-templates-with-the-themes-generator-0)
 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+[Liferay Theme Generator](/docs/7-0/tutorials/-/knowledge_base/t/themes-generator)

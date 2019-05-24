@@ -1,4 +1,8 @@
-# Creating Sites [](id=creating-sites)
+---
+header-id: creating-sites
+---
+
+# Creating Sites
 
 A site contains a set of pages that can be used to publish content or
 applications. By default, @product@ starts with a single site that has a
@@ -8,7 +12,7 @@ associated with an organization to serve as the website for that organization.
 Liferay's framework provides all the site-building tools you need to manage a
 successful site.
 
-## Understanding Site Management [](id=understanding-site-management)
+## Understanding Site Management
 
 Whether you're building a large corporate website or a small site designed to
 facilitate collaboration among team members, supporting different kinds of
@@ -48,7 +52,7 @@ Content, Members, Configuration, and Publishing.
 ![Figure 1: Your site's content resides in the Site Administration menu.](../../../images/web-content-site-content.png)
 
 For details about @product@'s social collaboration suite, see the
-[Social Collaboration](/discover/portal/-/knowledge_base/6-2/collaboration-suite)
+[Social Collaboration](/docs/6-2/user/-/knowledge_base/u/collaboration-suite)
 section.
 
 <!-- TODO: Replace link above. -Cody -->
@@ -129,17 +133,13 @@ candidate for an open and independent site. Similarly, the home page for a
 corporate intranet should probably be placed in an open independent site so any
 member of the instance can access it.
 
-+$$$
-
-**Tip:** Prior to Liferay Portal 6.1, there were two ways of creating sites:
-organizations and communities. This has been simplified to provide more ease of
-use and allow for more flexibility. The main role of organizations is still to
-organize the users of the instance in a hierarchy but they can also have
-associated sites. Communities can still be created through independent sites but
-the new name reflects the fact that sites can be used for many different
-purposes besides communities.
-
-$$$
+| **Tip:** Prior to Liferay Portal 6.1, there were two ways of creating sites:
+| organizations and communities. This has been simplified to provide more ease of
+| use and allow for more flexibility. The main role of organizations is still to
+| organize the users of the instance in a hierarchy but they can also have
+| associated sites. Communities can still be created through independent sites but
+| the new name reflects the fact that sites can be used for many different
+| purposes besides communities.
 
 For other kinds of web sites, you may want to use independent sites to bring
 users together who share a common interest. If you were building a photo sharing
@@ -155,7 +155,7 @@ changed through the simple configuration of the setup wizard. The instance name
 can also be changed at any time through the Control Panel within *Configuration
 &rarr; *Instance Settings*.
 
-## Adding Sites [](id=adding-sites)
+## Adding Sites
 
 Sites can be created through the Control Panel by a Liferay administrator.
 Liferay's Control Panel provides an administrative interface for managing your
@@ -166,24 +166,20 @@ the Control Panel to manage site templates. Site templates allow Liferay
 administrators to create multiple sites with the same default set of pages and
 content. For information about the Apps, Users, and Configuration sections of
 the Control Panel, see the
-[Leveraging the Liferay Marketplace](/discover/portal/-/knowledge_base/6-2/leveraging-the-liferay-marketplace),
-[User Management](/discover/portal/-/knowledge_base/7-0/user-management), and
-[Using the Control Panel](/discover/portal/-/knowledge_base/6-2/using-the-control-panel)
+[Leveraging the Liferay Marketplace](/docs/6-2/user/-/knowledge_base/u/leveraging-the-liferay-marketplace),
+[User Management](/docs/7-0/user/-/knowledge_base/u/user-management), and
+[Using the Control Panel](/docs/6-2/user/-/knowledge_base/u/using-the-control-panel)
 sections, respectively.
 
 <!-- TODO: Replace links above, when available -Cody -->
 
-+$$$
-
-**Tip:** If you're signed in as an administrator, you can access all sites by
-navigating to the Site Administration menu from the Control Panel. To manage a
-single site, navigate to the site by going to the Menu and clicking the *Site
-Selector* button (![Compass](../../../images/icon-compass.png)) from the sites
-dropdown menu and selecting the appropriate site name you'd like to manage. Once
-finished, the site administration options (i.e., Navigation, Content, Members,
-etc.) for that site are available.
-
-$$$
+| **Tip:** If you're signed in as an administrator, you can access all sites by
+| navigating to the Site Administration menu from the Control Panel. To manage a
+| single site, navigate to the site by going to the Menu and clicking the *Site
+| Selector* button (![Compass](../../../images/icon-compass.png)) from the sites
+| dropdown menu and selecting the appropriate site name you'd like to manage. Once
+| finished, the site administration options (i.e., Navigation, Content, Members,
+| etc.) for that site are available.
 
 To add a site for the Lunar Resort instance, navigate to the Control Panel and
 select *Sites* &rarr; *Sites*. Then click the Add icon
@@ -235,19 +231,15 @@ To activate the *Users* functionality for your organization site, you'll need to
 check *Allow Manual Membership Management* after creating the organization site
 by navigating to its *Site Settings* menu.
 
-+$$$
-
-**Note:** It's possible for site memberships to be handled automatically by a
-membership policy. The membership policy can check various pieces of information
-from each user, such as their first names, last names, birthdays, job titles,
-organizations, and user groups. Using this information, the site membership
-policy can automatically assign members to the site. If your site will implement
-a membership policy, your site administrators can disallow manual membership
-management for their site. When the Allow Manual Membership Management option is
-disabled, the *Members* section of Site Administration (Site Memberships and
-Site Teams) is hidden, even from administrators.
-
-$$$
+| **Note:** It's possible for site memberships to be handled automatically by a
+| membership policy. The membership policy can check various pieces of information
+| from each user, such as their first names, last names, birthdays, job titles,
+| organizations, and user groups. Using this information, the site membership
+| policy can automatically assign members to the site. If your site will implement
+| a membership policy, your site administrators can disallow manual membership
+| management for their site. When the Allow Manual Membership Management option is
+| disabled, the *Members* section of Site Administration (Site Memberships and
+| Site Teams) is hidden, even from administrators.
 
 **Parent Site:** lets you select a parent site for the site that's being
 created. Sites can be organized hierarchically. Using hierarchical sites
@@ -266,13 +258,13 @@ first create a page for it. To add a page for your temporarily invisible site,
 navigate to the *Navigation* option from Site Administration. Then add a public
 page. After adding your site's first page, it renders and your site is viewable.
 For more information about adding pages, see the
-[Creating and Managing Pages](/discover/portal/-/knowledge_base/7-0/creating-and-managing-pages)
+[Creating and Managing Pages](/docs/7-0/user/-/knowledge_base/u/creating-and-managing-pages)
 section.
 
 You also have the option to categorize your site template using tags and
 categories by selecting the *Categorization* menu from the bottom of the page.
 To learn more about using tags and categories in Liferay, see the 
-[Organizing Content with Tags and Categories](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories)
+[Organizing Content with Tags and Categories](/docs/7-0/user/-/knowledge_base/u/organizing-content-with-tags-and-categories)
 section. Lastly, you'll notice at the top of the page an additional tab named
 *Social*. This tab lets you manage whether users of your site can mention other
 users. You'll learn about mentioning users later in the Social Collaboration
@@ -290,7 +282,7 @@ your needs. A site's settings are broken into four categories: General, Social,
 Languages, and Advanced. You'll learn more about your site's settings in the
 next section.
 
-## Configuring Site Settings [](id=configuring-site-settings)
+## Configuring Site Settings
 
 You can access Site Settings by navigating to the Site Administation dropdown
 menu and selecting *Configuration* &rarr; *Site Settings*.
@@ -303,13 +295,13 @@ available, which are available from the *General*, *Social*, *Languages*, and
 *Advanced* tabs, and simulate configuring those settings for your sample Lunar
 Resort site.
 
-### Organizing Site Content [](id=organizing-site-content)
+### Organizing Site Content
 
 Organizing your site's content drastically improves the usability of your site
 for users. The Site Settings menu offers some configuration options that aid in
 your organizational goals.
 
-#### Categorization [](id=categorization)
+#### Categorization
 
 You can explore ways to tag and categorize your site by clicking the
 *Categorization* tab under General. These tools help administrators organize the
@@ -317,10 +309,10 @@ site and allows for users to easily find your site and its content through
 search and navigation. To take full advantage of tags and categories, you'll
 need to add pages with content to your site. For more information on using tags
 and categories, visit the
-[Organizing Content with Tags and Categories](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories)
+[Organizing Content with Tags and Categories](/docs/7-0/user/-/knowledge_base/u/organizing-content-with-tags-and-categories)
 section.
 
-#### Site Template [](id=site-template)
+#### Site Template
 
 The last tab listed under the Basic Information category is *Site Template*. If
 you created your Lunar Resort site as a Blank Site, this option is not available
@@ -329,10 +321,10 @@ this section displays information about the link between the site template and
 the site. Specifically, you can see which site template was used and whether or
 not it allows modifications to the pages inherited from it by site
 administrators. To learn more about site templates and how to create your own,
-see the [Building Sites from Templates](/discover/portal/-/knowledge_base/7-0/building-sites-from-templates)
+see the [Building Sites from Templates](/docs/7-0/user/-/knowledge_base/u/building-sites-from-templates)
 section.
 
-#### Content Sharing [](id=content-sharing)
+#### Content Sharing
 
 If you select the *Content Sharing* tab from the Advanced tab, you can
 configure whether sub-sites can display content from this site. Administrators
@@ -342,16 +334,16 @@ initially allowed content sharing between the parent site and its sub-sites,
 you're able to disable this option and immediately revoke content sharing from
 all sub-sites.
 
-#### Recycle Bin [](id=recycle-bin)
+#### Recycle Bin
 
 The *Recycle Bin* option under the Advanced tab provides the option to
 enable/disable the Recycle Bin for your site. You can also regulate the age (in
 minutes) for which content is able to be stored in the Recycle Bin until it is
 permanently deleted. For a full explanation of the Recycle Bin, see the
-[Restoring Deleted Assets](/discover/portal/-/knowledge_base/7-0/restoring-deleted-assets)
+[Restoring Deleted Assets](/docs/7-0/user/-/knowledge_base/u/restoring-deleted-assets)
 section.
 
-#### Custom Fields [](id=custom-fields)
+#### Custom Fields
 
 *Custom Fields* lets you edit the custom fields you already have configured
 for the Site resource. If you don't have any custom fields configured for the
@@ -359,12 +351,12 @@ Site resource, you can navigate to the Control Panel &rarr; *Custom Fields*
 located under the *Configuration* tab. The Custom Fields tab does not display in
 Site Settings unless you have existing custom fields. For more information on
 Custom Fields, see the
-[Custom Fields](/discover/portal/-/knowledge_base/6-2/custom-fields)
+[Custom Fields](/docs/6-2/user/-/knowledge_base/u/custom-fields)
 section.
 
 <!-- TODO: replace link above. -Cody -->
 
-#### Documents and Media [](id=documents-and-media)
+#### Documents and Media
 
 The last option that relates to organizing your site's content is *Documents and
 Media*, which is found under General. This lets you enable/disable Directory
@@ -376,13 +368,13 @@ http://localhost:8080/documents/lunar-resort if this option is enabled.
 Now that you can organize your site's content using Site Settings, move on to
 the next section to learn how to manage site users.
 
-### Managing Site Users [](id=managing-site-users)
+### Managing Site Users
 
 An always important job for site administrators is managing site users. There
 are configuration options in Site Settings that allow for easier user
 management.
 
-#### Details [](id=details)
+#### Details
 
 *Details* is the leading option under the General tab, which provides
 the same menu you filled out when first creating your Lunar Resort site. This
@@ -400,19 +392,19 @@ select the parent site for the site you're currently on. After selecting a
 parent site, you have a checkbox option to limit membership to members of the
 parent site.
 
-#### Default User Associations [](id=default-user-associations)
+#### Default User Associations
 
 Once you have the basic details of your site saved, you can begin assigning your
 users to roles and teams. *Default User Associations*, the leading option when
 opening the Advanced tab, lets you configure site roles and teams that newly
 assigned site members will have by default. If you'd like to learn more about
 creating roles and/or teams, visit the
-[Roles and Permissions](/discover/portal/-/knowledge_base/6-2/roles-and-permissions)
+[Roles and Permissions](/docs/6-2/user/-/knowledge_base/u/roles-and-permissions)
 and
-[Creating Teams for Advanced Site Membership Management](/discover/portal/-/knowledge_base/7-0/creating-teams-for-advanced-site-membership-management)
+[Creating Teams for Advanced Site Membership Management](/docs/7-0/user/-/knowledge_base/u/creating-teams-for-advanced-site-membership-management)
 sections, respectively.
 
-#### Ratings [](id=ratings)
+#### Ratings
 
 To allow your site's users to rate content in your site, you can use the
 *Ratings* option to select what ratings type to use for applications like
@@ -422,7 +414,7 @@ Likes, and Thumbs. This is the leading option when opening the Social tab.
 <!-- TODO Is there a link we can point to for this? Coordinate with Jim. -Cody
 -->
 
-#### Mentions [](id=mentions)
+#### Mentions
 
 The last configuration option in Site Settings related to managing users is
 *Mentions*. *Mentions* is found under the Social tab. This option allows you to
@@ -430,20 +422,20 @@ enable/disable the Mentioning functionality, which is used to *mention* (notify
 and/or draw attention to) friends and colleagues by entering the "@" character
 followed by their user name. You can learn more about the mentioning feature by
 visiting the
-[Mentioning Users](/discover/portal/-/knowledge_base/7-0/mentioning-users)
+[Mentioning Users](/docs/7-0/user/-/knowledge_base/u/mentioning-users)
 article.
 
 Now that you're aware of your Site Settings abilities to improve User and
 Content management, you'll learn how to improve your site's overall intelligence
 using Site Settings.
 
-### Improving Site Intelligence [](id=improving-site-intelligence)
+### Improving Site Intelligence
 
 Site Settings offers several miscellaneous configuration options that improve
 your site's usability, overall display, and data tracking. To make your Lunar
 Resort site smarter, explore and configure the options below.
 
-#### Site URL [](id=site-url)
+#### Site URL
 
 One of the most important aspects of your site is the simplicity of your site
 URLs. Long obscure site URLs are a hassle for users to deal with, and can
@@ -492,7 +484,7 @@ the Virtual Host tab for the Developers site. This helps users quickly access
 their site without having to recall an extended URL. The *Site URL* option is
 listed under the General tab.
 
-#### Analytics [](id=analytics)
+#### Analytics
 
 Analyzing site traffic is another huge advantage for site administrators that
 want to monitor what content is most popular. @product@ includes built-in
@@ -541,7 +533,7 @@ This is a fairly simple procedure, and it gives you the ability to take
 advantage of some great tools to help you visualize who's coming to your site
 and from where. The *Analytics* option is listed under the Advanced tab.
 
-#### Maps [](id=maps)
+#### Maps
 
 The *Maps* options lets you configure the maps API provider used by your Liferay
 instance when displaying geolocalized assets. Geolocalized assets can be
@@ -554,7 +546,7 @@ This is Jim's area. Good blog on this:
 https://www.liferay.com/web/juan.fernandez/blog/-/blogs/adding-geolocation-support-to-liferay-7-0
 -Cody -->
 
-#### Languages [](id=languages)
+#### Languages
 
 The *Languages* option lets you configure the language options for your
 site. This is the leading option when opening the Languages tab. You have
@@ -563,7 +555,7 @@ options to use the default language options or define a custom default language.
 Now that you know how to configure sites, you'll learn how to customize your
 personal sites.
 
-## Customizing Personal Sites [](id=customizing-personal-sites)
+## Customizing Personal Sites
 
 By default, newly created users in @product@ are each granted a personal site.
 Each user functions as the site administrator of his or her personal site.
@@ -582,12 +574,8 @@ following properties to your `portal-ext.properties` file:
     layout.user.public.layouts.enabled=false
     layout.user.private.layouts.enabled=false
 
-+$$$
-
-**Note:** The public and private page sets of personal sites are handled
-separately. You can leave one page set enabled while disabling the other.
-
-$$$
+| **Note:** The public and private page sets of personal sites are handled
+| separately. You can leave one page set enabled while disabling the other.
 
 What if you initially had user personal sites enabled for your instance but then
 disabled them? Each existing user's personal site remains on your Liferay
@@ -617,15 +605,11 @@ and
 [Default User Private Layouts](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Default%20User%20Private%20Layouts)
 sections of the `portal.properties` file for details.
 
-+$$$
-
-**Note:** By default, users are able to modify the pages and applications of
-their personal sites. Administrators, however, can customize the modifiable
-portions of personal sites through @product@'s permissions system by removing
-permissions from roles. To disallow all Liferay users from modifying something,
-remove the relevant permission from the User role.
-
-$$$
+| **Note:** By default, users are able to modify the pages and applications of
+| their personal sites. Administrators, however, can customize the modifiable
+| portions of personal sites through @product@'s permissions system by removing
+| permissions from roles. To disallow all Liferay users from modifying something,
+| remove the relevant permission from the User role.
 
 Historically (prior to Liferay 5.1), only power users received personal sites.
 Back then, they were called personal communities. If you'd like only power users

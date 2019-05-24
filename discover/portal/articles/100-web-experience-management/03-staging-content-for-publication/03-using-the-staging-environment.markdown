@@ -1,15 +1,19 @@
-# Using the Staging Environment [](id=using-the-staging-environment)
+---
+header-id: using-the-staging-environment
+---
+
+# Using the Staging Environment
 
 After enabling staging (either Local Live or Remote Live) for a site, you'll
 notice additional options provided on the top Control Menu and also in the
 Menu to the left. If you haven't enabled staging for your site, see the
-[Enabling Staging](/discover/portal/-/knowledge_base/7-0/enabling-staging)
+[Enabling Staging](/docs/7-0/user/-/knowledge_base/u/enabling-staging)
 section for instructions. These new menus help you manage staged pages. You'll
 also notice that most of your page management options have been removed, because
 now you can't directly edit live pages. You now must use the staging environment
 to make changes.
 
-## Staging Content [](id=staging-content)
+## Staging Content
 
 Click on the *Staging* button to view the staged area. Your management options
 are restored and you can access some new options related to staging. 
@@ -204,23 +208,19 @@ publishing pages and their content. All you have to do is give the publication
 process a custom name. Once you confirm the configuration settings, your staging
 settings are published.
 
-+$$$
-
-**Note:** When staging is enabled, the options available from your *Publishing
-Tools* tab are modified. When in the Live environment, you're only able to
-access the *Export* feature. When in the Staging environment, you're only able
-to access the *Import* and *Staging* features. The features that are not
-available for each environment don't make sense in that context. For example,
-you shouldn't be able to import content when in the live environment; it must be
-imported into the staged environment and then published before it is available
-in the live site.
-
-$$$
+| **Note:** When staging is enabled, the options available from your *Publishing
+| Tools* tab are modified. When in the Live environment, you're only able to
+| access the *Export* feature. When in the Staging environment, you're only able
+| to access the *Import* and *Staging* features. The features that are not
+| available for each environment don't make sense in that context. For example,
+| you shouldn't be able to import content when in the live environment; it must be
+| imported into the staged environment and then published before it is available
+| in the live site.
 
 Now that you know how to use the staging environment, you'll learn about the
 permissions involved to help manage this environment.
 
-## Managing Permissions [](id=managing-permissions)
+## Managing Permissions
 
 With the staging environment, there are many different options to use for
 building and managing a site and its pages. Sometimes limiting the access to
@@ -265,7 +265,7 @@ staging are listed below:
 Notice that some of the permissions listed above are related to the
 export/import functionality. Since these permissions are directly affected by
 the Publish Staging permission, they are important to note. Visit the
-[Importing/Exporting Pages and Content](/discover/portal/-/knowledge_base/7-0/importing-exporting-pages-and-content)
+[Importing/Exporting Pages and Content](/docs/7-0/user/-/knowledge_base/u/importing-exporting-pages-and-content)
 section for more details on importing/exporting site and page content.
 
 One of the most powerful features of staging is page variations. Next, you'll

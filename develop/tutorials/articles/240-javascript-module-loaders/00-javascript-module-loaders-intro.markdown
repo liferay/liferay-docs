@@ -1,4 +1,8 @@
-# JavaScript Module Loaders [](id=javascript-module-loaders)
+---
+header-id: javascript-module-loaders
+---
+
+# JavaScript Module Loaders
 
 JavaScript modules encapsulate code into useful units that export their
 functions. Structuring an application this way makes it easier to work with in

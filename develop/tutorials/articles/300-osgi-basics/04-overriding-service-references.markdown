@@ -1,4 +1,8 @@
-# Overriding Reluctant Service References [](id=overriding-service-references)
+---
+header-id: overriding-service-references
+---
+
+# Overriding Reluctant Service References
 
 When there's an existing service that you want to customize or implement
 differently, you can override the existing one. To do this, you create and
@@ -40,7 +44,7 @@ The first step to overriding a service reference is finding the name of the
 component, service reference, and service interface. If you already have them,
 you can skip the next section. 
 
-## Find the Component and Service Reference [](id=find-the-component-and-service-reference)
+## Find the Component and Service Reference
 
 You must have the following information to create a custom service and configure
 the component to use it.
@@ -50,18 +54,18 @@ the component to use it.
 -   *Service interface*: Fully qualified name of the referenced service
     interface.
 
-You can [find the component](/develop/tutorials/-/knowledge_base/7-0/finding-extension-points#locate-the-related-module-and-component)
+You can [find the component](/docs/7-0/tutorials/-/knowledge_base/t/finding-extension-points#locate-the-related-module-and-component)
 using @product@'s
-[Application Manager](/discover/portal/-/knowledge_base/7-0/managing-and-configuring-apps#using-the-app-manager)
+[Application Manager](/docs/7-0/user/-/knowledge_base/u/managing-and-configuring-apps#using-the-app-manager)
 and find the service reference information using
-[Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell). 
+[Felix Gogo Shell](/docs/7-0/reference/-/knowledge_base/r/using-the-felix-gogo-shell). 
 
 Gogo Shell's Service Component Runtime (SCR) commands help you inspect
 components. The Gogo Shell command `scr:info [componentName]` lists the
 component's attributes, including the services it uses. Execute the command
 using
-[Liferay Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli) or in
-[Gogo Shell via telnet](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell). 
+[Liferay Blade CLI](/docs/7-0/tutorials/-/knowledge_base/t/blade-cli) or in
+[Gogo Shell via telnet](/docs/7-0/reference/-/knowledge_base/r/using-the-felix-gogo-shell). 
 
 Here's an example of executing the `scr:info` command in a Gogo Shell telnet
 session:
@@ -127,28 +131,24 @@ The example's reference is bound to a component named
 tutorial, the reference will be reconfigured to bind to a custom service
 implementation.
 
-+$$$
-
-**Note**: OSGi Configuration Admin makes all Declarative Services components
-configurable, even if they don't explicitly declare anything about
-configuration. Each `@Reference` annotation in the source code has a name
-property, either *explicitly* set in the annotation or *implicitly* derived from
-the name of the member on which the annotation is used.
-
--   If no reference name property is used and the `@Reference` is on a field,
-    then the reference name is the field name. 
--   If the `@Reference` is on a method, then heuristics derive the reference
-    name. Method name prefixes such as `set`, `add`, and `put` are ignored. If
-    `@Reference` is on a method called`setSearchEngine(SearchEngine se)`, for
-    example, then the reference name is `SearchEngine`. 
-
-$$$
+| **Note**: OSGi Configuration Admin makes all Declarative Services components
+| configurable, even if they don't explicitly declare anything about
+| configuration. Each `@Reference` annotation in the source code has a name
+| property, either *explicitly* set in the annotation or *implicitly* derived from
+| the name of the member on which the annotation is used.
+| 
+| -   If no reference name property is used and the `@Reference` is on a field,
+|     then the reference name is the field name.
+| -   If the `@Reference` is on a method, then heuristics derive the reference
+|     name. Method name prefixes such as `set`, `add`, and `put` are ignored. If
+|     `@Reference` is on a method called`setSearchEngine(SearchEngine se)`, for
+|     example, then the reference name is `SearchEngine`.
 
 Once you've found the referenced service component implementation, you can
 implement a replacement for it. If you've already created one, you can skip this
 section. 
 
-## Create Your Service [](id=create-a-custom-service)
+## Create Your Service
 
 It's time to create your own service implementation. Refer to the appropriate
 [app, app suite](@app-ref@), and [@product@
@@ -191,12 +191,12 @@ the default service by its component name
 `override.my.service.reference.service.impl.SomeServiceImpl`.
 
 To register your service with the @product@'s OSGi runtime framework,
-[deploy its module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#building-and-deploying-a-module).
+[deploy its module](/docs/7-0/tutorials/-/knowledge_base/t/starting-module-development#building-and-deploying-a-module).
 To bind the component reference to your custom service, you must create and
 deploy instructions that configure the component reference to target your custom
 service. 
 
-## Configure the Component to Use Your Service [](id=configure-the-component-to-use-the-custom-service)
+## Configure the Component to Use Your Service
 
 You're ready to change the component's service reference to target your service.
 @product@'s Configuration Admin lets you use configuration files to swap in
@@ -207,16 +207,12 @@ service references on the fly.
 
         override.my.service.reference.portlet.OverrideMyServiceReferencePortlet.config
  
-    +$$$
-
-    **Note:** Liferay DXP DE 7.0 Fix Pack 8 and later, and Liferay CE Portal 7.0 
-    GA4 and later support the Apache Felix ConfigAdmin implementation of OSGi 
-    Configuration Admin files. Felix ConfigAdmin uses the file suffix `.config` 
-    and supports additional types, such as arrays and vectors. The syntax for 
-    `.config` and `.cfg` files can be found 
-    [here](https://sling.apache.org/documentation/bundles/configuration-installer-factory.html). 
-
-    $$$
+    | **Note:** Liferay DXP DE 7.0 Fix Pack 8 and later, and Liferay CE Portal 7.0
+    | GA4 and later support the Apache Felix ConfigAdmin implementation of OSGi
+    | Configuration Admin files. Felix ConfigAdmin uses the file suffix `.config`
+    | and supports additional types, such as arrays and vectors. The syntax for
+    | `.config` and `.cfg` files can be found
+    | [here](https://sling.apache.org/documentation/bundles/configuration-installer-factory.html).
 
 2.  In the configuration file, add a reference target entry that filters on your
     custom service. Follow this format for the entry:
@@ -227,12 +223,8 @@ service references on the fly.
     Replace `[filter]` with service properties that filter on your custom 
     service. 
 
-    +$$$
-
-    **Tip**: You can use a `component.name` or `objectClass` reference to filter 
-    on your custom implementation. 
-
-    $$$
+    | **Tip**: You can use a `component.name` or `objectClass` reference to filter
+    | on your custom implementation.
 
     A `.config` file reference target entry for the example looks like this:
 
@@ -304,8 +296,8 @@ work to it.
 @product@ processed the configuration file and injected the service reference,
 which in turn bound the custom service to the referencing component! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-- [Finding Extension Points](/develop/tutorials/-/knowledge_base/7-0/finding-extension-points)
+- [Finding Extension Points](/docs/7-0/tutorials/-/knowledge_base/t/finding-extension-points)
 
-- [Using Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell)
+- [Using Felix Gogo Shell](/docs/7-0/reference/-/knowledge_base/r/using-the-felix-gogo-shell)

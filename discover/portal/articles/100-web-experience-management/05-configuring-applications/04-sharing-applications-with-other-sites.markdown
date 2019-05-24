@@ -1,4 +1,8 @@
-# Sharing Applications with Other Sites [](id=sharing-applications-with-other-sites)
+---
+header-id: sharing-applications-with-other-sites
+---
+
+# Sharing Applications with Other Sites
 
 The web was once thought of as a number of islands of applications in a vast
 universe of "cyberspace." Many web sites attempted to make their island the
@@ -25,14 +29,14 @@ the app's *Options* icon (![Options](../../../images/icon-options.png)) and
 select the *Sharing* tab. There are five sub-tabs under sharing: Any Website,
 Facebook, OpenSocial Gadget, and Netvibes.
 
-## Any Web Site [](id=any-web-site)
+## Any Web Site
 
 Copy and paste the provided snippet of JavaScript code into the web site to
 which you want to add the application as a widget. That's all you need to do.
 When a user loads the page on the other website, the code will pull the relevant
 app from your site and display it.
 
-## Facebook [](id=facebook)
+## Facebook
 
 You can add any Liferay app as an application on Facebook. To do this, you must
 first get a developer key. A link for doing this is provided to you in the
@@ -48,7 +52,7 @@ can navigate to your app's Options menu and select *Add to Facebook*.
 By having the ability to share your apps, this makes @product@ a fantastic
 platform upon which to build applications for Facebook.
 
-## OpenSocial Gadget [](id=opensocial-gadget)
+## OpenSocial Gadget
 
 OpenSocial comprises a container and a set of APIs for social networking and
 other web applications. iGoogle is a service provided by Google that lets users
@@ -77,7 +81,7 @@ platform. This option provides a shortcut for obtaining the URL and also gives a
 way for users to copy the URL that wouldn't have permission to access the app's
 Configuration menu.
 
-## Netvibes [](id=netvibes)
+## Netvibes
 
 Netvibes offers a similar service to iGoogle--users can log in, create their own
 personal portal, called a *dashboard*, and add customizable widgets to the

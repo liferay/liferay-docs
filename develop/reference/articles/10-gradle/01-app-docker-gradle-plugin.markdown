@@ -1,4 +1,8 @@
-# App Docker Gradle Plugin [](id=app-docker-gradle-plugin)
+---
+header-id: app-docker-gradle-plugin
+---
+
+# App Docker Gradle Plugin
 
 The App Docker Gradle plugin lets you build a single [Docker](https://www.docker.com/)
 image for an application that spans different subprojects, each one representing
@@ -7,7 +11,7 @@ pushed to a registry.
 
 The plugin has been successfully tested with Gradle 4.10.2.
 
-## Usage [](id=usage)
+## Usage
 
 To use the plugin, include it in the build script of the root project:
 
@@ -43,7 +47,7 @@ repositories {
 }
 ```
 
-## Project Extension [](id=project-extension)
+## Project Extension
 
 The App Docker plugin exposes the following properties through the
 extension named `appDocker`:
@@ -67,7 +71,7 @@ Method | Description
 `AppDockerExtension subprojects(Iterable<Project> subprojects)` | Includes additional projects in the app's Docker image.
 `AppDockerExtension subprojects(Project... subprojects)` | Includes additional projects in the app's Docker image.
 
-## Tasks [](id=tasks)
+## Tasks
 
 The plugin adds a series of tasks to your project:
 
@@ -79,7 +83,7 @@ Name | Depends On | Type | Description
 [`pushAppDockerImage_${tag}`](#tasks-pushappdockerimagetag) | `tagAppDockerImage_${tag}` | [`DockerPushImage`](http://bmuschko.github.io/gradle-docker-plugin/docs/groovydoc/com/bmuschko/gradle/docker/tasks/image/DockerPushImage.html) | Pushes the Docker image `${tag}` to the registry.
 [`tagAppDockerImage_${tag}`](#tasks-tagappdockerimagetag) | `buildAppDockerImage` | [`DockerTagImage`](http://bmuschko.github.io/gradle-docker-plugin/docs/groovydoc/com/bmuschko/gradle/docker/tasks/image/DockerTagImage.html) | Creates the tag `${tag}`, which refers to the app's Docker image.
 
-### Task buildAppDockerImage [](id=task-buildappdockerimage)
+### Task buildAppDockerImage
 
 The `buildAppDockerImage` task is automatically configured with sensible
 defaults:
@@ -89,7 +93,7 @@ Property Name | Default Value
 [`inputDir`](http://bmuschko.github.io/gradle-docker-plugin/docs/groovydoc/com/bmuschko/gradle/docker/tasks/image/DockerBuildImage.html#inputDir) | `project.tasks.prepareAppDockerImageInputDir.destinationDir`
 [`tag`](http://bmuschko.github.io/gradle-docker-plugin/docs/groovydoc/com/bmuschko/gradle/docker/tasks/image/DockerBuildImage.html#tag) | `"${appDocker.imageUser}/${appDocker.imageName}"`, or `"${appDocker.imageName}"` if `appDocker.imageUser` is not set.
 
-### Task prepareAppDockerImageInputDir [](id=task-prepareappdockerimageinputdir)
+### Task prepareAppDockerImageInputDir
 
 The `prepareAppDockerImageInputDir` task is automatically configured with
 sensible defaults:
@@ -99,7 +103,7 @@ Property Name | Default Value
 [`destinationDir`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.Sync.html#org.gradle.api.tasks.Sync:destinationDir) | `"${project.buildDir}/docker"`
 [`from`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.Sync.html#org.gradle.api.tasks.Sync:from%28java.lang.Object,%20groovy.lang.Closure%29) | `appDocker.inputDir`, `appDocker.subprojects*.allArtifacts.files` (only the subprojects that respect the `appDocker.onlyIf` conditions are included in the `appDocker.subprojects*.allArtifacts.files` parameter).
 
-### Task pushAppDockerImage [](id=task-pushappdockerimage)
+### Task pushAppDockerImage
 
 The `pushAppDockerImage` task is automatically configured with sensible
 defaults:
@@ -108,7 +112,7 @@ Property Name | Default Value
 ------------- | -------------
 [`imageName`](http://bmuschko.github.io/gradle-docker-plugin/docs/groovydoc/com/bmuschko/gradle/docker/tasks/image/DockerPushImage.html#imageName) | `"${appDocker.imageUser}/${appDocker.imageName}"`, or `"${appDocker.imageName}"` if `appDocker.imageUser` is not set.
 
-### Tasks pushAppDockerImage_${tag} [](id=tasks-pushappdockerimagetag)
+### Tasks pushAppDockerImage_${tag}
 
 For each `imageTag` entry in the `appDocker.imageTags` collection, one task
 `pushAppDockerImage_${appDocker.imageUser}/${appDocker.imageName}:${imageTag}`
@@ -121,7 +125,7 @@ Property Name | Default Value
 [`imageName`](http://bmuschko.github.io/gradle-docker-plugin/docs/groovydoc/com/bmuschko/gradle/docker/tasks/image/DockerPushImage.html#imageName) | `project.tasks.tagAppDockerImage_${tag}.repository`
 [`tag`](http://bmuschko.github.io/gradle-docker-plugin/docs/groovydoc/com/bmuschko/gradle/docker/tasks/image/DockerPushImage.html#tag) | `project.tasks.tagAppDockerImage_${tag}.tag`
 
-### Tasks tagAppDockerImage_${tag} [](id=tasks-tagappdockerimagetag)
+### Tasks tagAppDockerImage_${tag}
 
 For each `imageTag` entry in the `appDocker.imageTags` collection, one task
 `tagAppDockerImage_${appDocker.imageUser}/${appDocker.imageName}:${imageTag}` of

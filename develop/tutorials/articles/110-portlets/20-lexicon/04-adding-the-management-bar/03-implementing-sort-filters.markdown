@@ -1,4 +1,8 @@
-# Implementing a Management Bar Sort Filter [](id=implementing-a-management-bar-sort-filter)
+---
+header-id: implementing-a-management-bar-sort-filter
+---
+
+# Implementing a Management Bar Sort Filter
 
 The Management Bar Sort Filters let you compare entries for a search container 
 field, and sort them by ascending or descending. To do this, you must create a 
@@ -12,7 +16,7 @@ filters to the UI.
 
 Go ahead and get started by creating the Comparator class next.
 
-## Creating the Comparator Class [](id=creating-the-comparator-class)
+## Creating the Comparator Class
 
 The `OrderByComparator` class is a `Comparator` implementation that you can 
 extend to create sort filters. Follow these steps to create the 
@@ -120,7 +124,7 @@ extend to create sort filters. Follow these steps to create the
 Now that your `*Comparator` class is written you must update the service layer 
 to use it.
 
-## Updating the Service Layer [](id=updating-guestbook-services)
+## Updating the Service Layer
 
 Follow these steps to update services:
 
@@ -149,7 +153,7 @@ Follow these steps to update services:
 Now that the services are updated and your exports are in order, you can 
 configure the view to use the comparator next.
 
-## Configuring the View [](id=configuring-the-view)
+## Configuring the View
 
 Follow these steps to configure the view to use the Comparator:
 
@@ -220,8 +224,8 @@ Follow these steps to configure the view to use the Comparator:
 
 The Management Bar Sort Filters are finished!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Implementing a Management Bar Navigation Filter](/develop/tutorials/-/knowledge_base/7-0/implementing-a-management-bar-navigation-filter)
+[Implementing a Management Bar Navigation Filter](/docs/7-0/tutorials/-/knowledge_base/t/implementing-a-management-bar-navigation-filter)
 
-[Disabling the Management Bar](/develop/tutorials/-/knowledge_base/7-0/disabling-the-management-bar)
+[Disabling the Management Bar](/docs/7-0/tutorials/-/knowledge_base/t/disabling-the-management-bar)

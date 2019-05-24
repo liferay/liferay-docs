@@ -1,11 +1,15 @@
-# Applying Lexicon Patterns to Your Forms, Navigation, and Search [](id=applying-lexicon-patterns-to-forms-navigation-and-search)
+---
+header-id: applying-lexicon-patterns-to-forms-navigation-and-search
+---
+
+# Applying Lexicon Patterns to Your Forms, Navigation, and Search
 
 This tutorial covers how to leverage Lexicon patterns in your app's forms, 
 navigation, and search results to make them more user-friendly.
 
 You can learn how to update your navigation next.
 
-## Applying Lexicon to the Navigation Bar [](id=applying-lexicon-to-the-navigation-bar)
+## Applying Lexicon to the Navigation Bar
 
 All administration apps in @product-ver@ have a navigation bar. Applying 
 Lexicon to your existing navigation bar takes only one additional attribute. 
@@ -18,18 +22,14 @@ has the configuration below:
 
     <aui:nav-bar cssClass="collapse-basic-search" markupView="lexicon">
 
-+$$$
-
-**Note:** The `markupView="lexicon"` attribute ensures that the Lexicon markup 
-is used for the UI components, rather than the standard markup. This attribute 
-tells the app to use the `lexicon` folder in the taglib to render the HTML, 
-rather than the default rendering. For example, 
-`<aui:fieldset markupView="lexicon" />` renders the HTML using 
-`/portal/portal-web/docroot/html/taglib/aui/fieldset/lexicon/` instead of the 
-`end.jsp` and `start.jsp` files in 
-`/portal/portal-web/docroot/html/taglib/aui/fieldset/`.
-
-$$$
+| **Note:** The `markupView="lexicon"` attribute ensures that the Lexicon markup
+| is used for the UI components, rather than the standard markup. This attribute
+| tells the app to use the `lexicon` folder in the taglib to render the HTML,
+| rather than the default rendering. For example,
+| `<aui:fieldset markupView="lexicon" />` renders the HTML using
+| `/portal/portal-web/docroot/html/taglib/aui/fieldset/lexicon/` instead of the
+| `end.jsp` and `start.jsp` files in
+| `/portal/portal-web/docroot/html/taglib/aui/fieldset/`.
 
 Alternatively, you can use non-bordered tabs with the `liferay-ui:tabs` taglib 
 as the [Lexicon Guidelines](https://lexicondesign.io/docs/patterns/nav%20tabs.html) 
@@ -38,7 +38,7 @@ state.
 Sweet! Now you know how to style a navigation bar with Lexicon. Next, you'll 
 learn how to apply Lexicon to your forms. 
 
-## Applying Lexicon Patterns to the Application Body [](id=applying-lexicon-patterns-to-the-application-body)
+## Applying Lexicon Patterns to the Application Body
 
 To ensure that your application uses all available screen real state from left
 to right, make the application body fluid in all portlet views. This helps
@@ -58,7 +58,7 @@ add the `container-fluid-1280` class to it. Otherwise add an uppermost
 
 Next, you can learn how to apply Lexicon to your forms.
 
-## Improving your Forms with Lexicon [](id=improving-your-forms-with-lexicon)
+## Improving your Forms with Lexicon
 
 Follow these steps to apply Lexicon to your forms:
 
@@ -92,11 +92,11 @@ Follow these steps to apply Lexicon to your forms:
 Your forms are now configured to use Lexicon! Next, you can learn how to apply 
 Lexicon to the Actions menu for your entities. 
 
-## Applying Lexicon to Your Entity's Actions Menus [](id=applying-lexicon-to-your-entitys-actions-menus)
+## Applying Lexicon to Your Entity's Actions Menus
 
 Your Actions menus can also benefit from Lexicon patterns. Learn how 
 to apply Lexicon patterns to your Admin app's actions in the 
-[Configuring Your Admin app's Actions Menu](/develop/tutorials/-/knowledge_base/7-0/configuring-your-admin-apps-actions-menu) 
+[Configuring Your Admin app's Actions Menu](/docs/7-0/tutorials/-/knowledge_base/t/configuring-your-admin-apps-actions-menu) 
 tutorial. For regular apps, follow these steps:
 
 1.  Open your module's actions JSP (`guestbook_actions.jsp` for example) and 
@@ -123,7 +123,7 @@ tutorial. For regular apps, follow these steps:
 
 Next you can update your search iterator.
 
-## Applying Lexicon to your Search iterator [](id=applying-lexicon-to-your-search-iterator)
+## Applying Lexicon to your Search iterator
 
 To apply Lexicon to your search iterator, add the `markupView="lexicon"` 
 attribute:
@@ -137,14 +137,14 @@ attribute:
 
 The `displayStyle` attribute specifies which display style is set for the 
 management bar. You can learn how to configure display styles in the 
-[Implementing Management Bar Display Styles](/develop/tutorials/-/knowledge_base/7-0/implementing-the-management-bar-display-styles) 
+[Implementing Management Bar Display Styles](/docs/7-0/tutorials/-/knowledge_base/t/implementing-the-management-bar-display-styles) 
 tutorial.
 
 If the results contain different sets of entries (folders and documents, 
 categories and threads, etc.), you must use a class that implements 
 `*ResultRowSplitter` to divide the results. This is covered next.
 
-### Creating a Result Row Splitter [](id=creating-a-result-row-splitter)
+### Creating a Result Row Splitter
 
 Classes that implement the `*ResultRowSplitter` class divide and categorize
 the results based on the different entry types. Follow these steps to create
@@ -210,8 +210,8 @@ For example, the `com.liferay.bookmarks.web` module has the following
 Now you know how to apply Lexicon patterns to your app's forms, navigation, and 
 search results!
 
-## Related topics [](id=related-topics)
+## Related topics
 
-[Configuring Your Application's Title and Back Link](/develop/tutorials/-/knowledge_base/7-0/configuring-your-applications-title-and-back-link)
+[Configuring Your Application's Title and Back Link](/docs/7-0/tutorials/-/knowledge_base/t/configuring-your-applications-title-and-back-link)
 
-[Using Lexicon Icons in Your App](/develop/tutorials/-/knowledge_base/7-0/using-lexicon-icons-in-your-app)
+[Using Lexicon Icons in Your App](/docs/7-0/tutorials/-/knowledge_base/t/using-lexicon-icons-in-your-app)

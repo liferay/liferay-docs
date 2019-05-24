@@ -1,14 +1,18 @@
-# Using Custom Cells with List Screenlets [](id=using-custom-cells-with-list-screenlets)
+---
+header-id: using-custom-cells-with-list-screenlets
+---
+
+# Using Custom Cells with List Screenlets
 
 In most list Screenlets, including those that come with Liferay Screens, the 
 Default Theme uses the default cells in 
 [iOS's `UITableView`](https://developer.apple.com/reference/uikit/uitableview) 
 to show the list. 
-[The Theme creation steps](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes#creating-the-view) 
+[The Theme creation steps](/docs/7-0/tutorials/-/knowledge_base/t/creating-ios-themes#creating-the-view) 
 in the list Screenlet creation tutorial also instruct you to use these cells. 
 You can, however, use custom cells to tailor the list to your needs. To do this, 
 you must 
-[create an extended Theme](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes)
+[create an extended Theme](/docs/7-0/tutorials/-/knowledge_base/t/creating-ios-themes)
 from a Theme that uses `UITableView`'s default cells. This usually means 
 extending a list Screenlet's Default theme. This tutorial shows you how to 
 create such an extended Theme that contains a custom cell for your list 
@@ -19,20 +23,20 @@ at any time.
 
 Note that besides creating your custom cell, this tutorial follows the same 
 basic steps as the 
-[Theme creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes) 
+[Theme creation tutorial](/docs/7-0/tutorials/-/knowledge_base/t/creating-ios-themes) 
 for creating an extended Theme. For example, you must still 
-[determine where to create your Theme](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes#determining-your-themes-location), 
+[determine where to create your Theme](/docs/7-0/tutorials/-/knowledge_base/t/creating-ios-themes#determining-your-themes-location), 
 and create your Theme's XIB and View class. 
 
 First, you'll create your Theme's custom cell. 
 
-## Creating Your Custom Cell [](id=creating-your-custom-cell)
+## Creating Your Custom Cell
 
 Once you 
-[decide where to create your Theme](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes#determining-your-themes-location), 
+[decide where to create your Theme](/docs/7-0/tutorials/-/knowledge_base/t/creating-ios-themes#determining-your-themes-location), 
 you can get started. First, create your custom cell's XIB file and its companion 
 class. Name them according to 
-[the naming conventions in the best practices tutorial](/develop/tutorials/-/knowledge_base/7-0/ios-best-practices#naming-conventions). 
+[the naming conventions in the best practices tutorial](/docs/7-0/tutorials/-/knowledge_base/t/ios-best-practices#naming-conventions). 
 After defining your cell's UI in the XIB, create as many outlets and actions as 
 you need in its companion class. Also be sure to assign this class as the XIB's 
 custom class in Interface Builder. Note that if you want to use different 
@@ -68,7 +72,7 @@ the bookmark's name and URL to the respective label:
 Great! Now you have your custom cell. Next, you'll create the rest of your 
 Theme. 
 
-## Creating Your Theme's XIB and View Class [](id=creating-your-themes-xib-and-view-class)
+## Creating Your Theme's XIB and View Class
 
 Now you're ready to create your Theme's XIB file and View class. Create your XIB 
 by copying the parent Theme's XIB and making any changes you need. You may not 
@@ -146,14 +150,14 @@ When you finish, set your View class as your XIB file's custom class.
 Awesome! You're done! Now you know how to implement your own custom cells for 
 use in list Screenlets. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating iOS List Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-list-screenlets)
+[Creating iOS List Screenlets](/docs/7-0/tutorials/-/knowledge_base/t/creating-ios-list-screenlets)
 
-[Creating iOS Themes](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes)
+[Creating iOS Themes](/docs/7-0/tutorials/-/knowledge_base/t/creating-ios-themes)
 
-[Sorting Your List Screenlet](/develop/tutorials/-/knowledge_base/7-0/sorting-your-list-screenlet)
+[Sorting Your List Screenlet](/docs/7-0/tutorials/-/knowledge_base/t/sorting-your-list-screenlet)
 
-[Creating Complex Lists in Your List Screenlet](/develop/tutorials/-/knowledge_base/7-0/creating-complex-lists-in-your-list-screenlet)
+[Creating Complex Lists in Your List Screenlet](/docs/7-0/tutorials/-/knowledge_base/t/creating-complex-lists-in-your-list-screenlet)
 
-[iOS Best Practices](/develop/tutorials/-/knowledge_base/7-0/ios-best-practices)
+[iOS Best Practices](/docs/7-0/tutorials/-/knowledge_base/t/ios-best-practices)

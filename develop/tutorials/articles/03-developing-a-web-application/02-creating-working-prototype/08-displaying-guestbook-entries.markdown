@@ -1,4 +1,8 @@
-# Displaying Guestbook Entries [](id=viewing-guestbook-entries)
+---
+header-id: viewing-guestbook-entries
+---
+
+# Displaying Guestbook Entries
 
 <div class="learn-path-step">
     <p>Developing Your First Portlet<br>Step 8 of 8</p>
@@ -11,7 +15,7 @@ them on the page. The best way to do this with MVC Portlet is to use the
 paradigm. You already have the view (your JSP files) and your controller (your
 portlet class). Now you need your model.
 
-## Creating Your Model [](id=creating-your-model)
+## Creating Your Model
 
 1.  Create a new package called `com.liferay.docs.guestbook.model`. To do this, 
     right-click your `src/main/java` folder and select *New* &rarr; *Package*. 
@@ -90,7 +94,7 @@ the view layer. Your next step is to enhance the controller (your portlet class)
 so that guestbook entries are processed and ready to display when users see the 
 guestbook application. 
 
-## Customizing How Your Application is Rendered [](id=customizing-how-your-application-is-rendered)
+## Customizing How Your Application is Rendered
 
 As mentioned earlier, your application is using two portlet phases: render and
 action. To make the guestbook show the saved guestbook entries when users view
@@ -136,36 +140,32 @@ which it's currently inheriting from its parent class, `MVCPortlet`.
 
 3. Press [CTRL]+[SHIFT]+O to organize imports. 
 
-+$$$
-
-Note: When you are prompted to choose imports, here are some guidelines:
-
-* Always use `org.osgi...` packages instead of `aQute.bnd...`
-
-* Generally use `java.util...` or `javax.portlet...` packages.
-
-* You never use `java.awt...` in this project.
-
-* Only use `com.liferay...` when it is for a Liferay specific implementation or
-    your custom implementation of a concept.
- 
-For example:
-
-* If you are given the choice between `javax.portlet.Portlet` and
-    `com.liferay.portlet.Portlet` choose `javax.portlet.Portlet`.
-
-* If you are given the choice between `org.osgi.component` and
-  `aQute.bnd.annotation.component` choose `org.osgi.component`
-
-* However, if you are given the choice between `java.util.Map.Entry` and 
-  `com.liferay.docs.guestbook.model.Entry` (the custom class you created) 
-  choose `com.liferay.docs.guestbook.model.Entry`
- 
-If at some point you think you chose an incorrect import, but you're not sure 
-what it might be, you can erase all of the imports from the file and press
-[CTRL]+[SHIFT]+O again and see if you can identify where you went wrong.
-
-$$$
+| Note: When you are prompted to choose imports, here are some guidelines:
+| 
+| * Always use `org.osgi...` packages instead of `aQute.bnd...`
+| 
+| * Generally use `java.util...` or `javax.portlet...` packages.
+| 
+| * You never use `java.awt...` in this project.
+| 
+| * Only use `com.liferay...` when it is for a Liferay specific implementation or
+|     your custom implementation of a concept.
+| 
+| For example:
+| 
+| * If you are given the choice between `javax.portlet.Portlet` and
+|     `com.liferay.portlet.Portlet` choose `javax.portlet.Portlet`.
+| 
+| * If you are given the choice between `org.osgi.component` and
+|   `aQute.bnd.annotation.component` choose `org.osgi.component`
+| 
+| * However, if you are given the choice between `java.util.Map.Entry` and
+|   `com.liferay.docs.guestbook.model.Entry` (the custom class you created)
+|   choose `com.liferay.docs.guestbook.model.Entry`
+| 
+| If at some point you think you chose an incorrect import, but you're not sure
+| what it might be, you can erase all of the imports from the file and press
+| [CTRL]+[SHIFT]+O again and see if you can identify where you went wrong.
 
 As you can see, this method splits the entries in the `String` array into two
 parts based on the caret (`^`) character.
@@ -173,7 +173,7 @@ parts based on the caret (`^`) character.
 Now that you have your controller preparing your data for display, your next
 step is to implement the view so users can see guestbook entries. 
 
-## Displaying Guestbook Entries [](id=displaying-guestbook-entries)
+## Displaying Guestbook Entries
 
 Liferay's development framework makes it easy to loop through data and display 
 it nicely to the end user. You'll use a Liferay UI construct called *Search 

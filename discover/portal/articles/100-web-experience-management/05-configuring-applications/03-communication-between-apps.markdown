@@ -1,4 +1,8 @@
-# Communication Between Apps [](id=communication-between-apps)
+---
+header-id: communication-between-apps
+---
+
+# Communication Between Apps
 
 @product@ implements several communication mechanisms across apps including
 those specified by the JSR-286 standard: public render parameters and events.

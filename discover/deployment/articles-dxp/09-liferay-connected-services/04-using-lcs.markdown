@@ -1,4 +1,8 @@
-# Using LCS [](id=using-lcs)
+---
+header-id: using-lcs
+---
+
+# Using LCS
 
 Once your @product@ server is connected to LCS, you can get down to the business 
 that LCS is designed for---managing and monitoring your servers. If you're not 
@@ -42,7 +46,7 @@ This article's sections each detail one or more of LCS's features:
     Learn about the environment tokens that you use to connect your servers to 
     LCS. 
 
-## What LCS Stores About Your Liferay DXP Servers [](id=what-lcs-stores-about-your-liferay-servers)
+## What LCS Stores About Your Liferay DXP Servers
 
 To protect your users' privacy, LCS only stores system-specific data. LCS
 doesn't gather or store data on your users. 
@@ -65,7 +69,7 @@ By default, LCS stores the following information about your server:
 
 The other data LCS stores depends on the services you enable in your environment 
 token. For more information on this, see 
-[Registering Your Liferay DXP Server with LCS](/discover/deployment/-/knowledge_base/7-0/registering-your-dxp-server-with-lcs).
+[Registering Your Liferay DXP Server with LCS](/docs/7-0/deploy/-/knowledge_base/d/registering-your-dxp-server-with-lcs).
 When you enable the following services, LCS gathers and stores the data listed 
 for each: 
 
@@ -108,21 +112,17 @@ non-sensitive properties:
 
 LCS also lets you prevent it from analyzing specific properties of your 
 choosing. For more information on this, see 
-[Registering Your Liferay DXP Server with LCS](/discover/deployment/-/knowledge_base/7-0/registering-your-dxp-server-with-lcs).
+[Registering Your Liferay DXP Server with LCS](/docs/7-0/deploy/-/knowledge_base/d/registering-your-dxp-server-with-lcs).
 
-## Managing LCS Users in Your Project [](id=managing-lcs-users-in-your-project)
+## Managing LCS Users in Your Project
 
 The Users section of LCS is where you manage the LCS users that are part of your 
 project. It's here that you can grant or revoke LCS Roles. To manage users, 
 first click the *Users* tab just below the Dashboard tab on the upper-left of 
 your screen. 
 
-+$$$
-
-**Note:** You can't add users to your project via the LCS UI or the LCS client 
-app. To add users to your project, you must contact Liferay support. 
-
-$$$
+| **Note:** You can't add users to your project via the LCS UI or the LCS client
+| app. To add users to your project, you must contact Liferay support.
 
 ![Figure 1: The Users tab lets you manage the LCS users in your project.](../../images-dxp/lcs-users.png)
 
@@ -163,7 +163,7 @@ Install Fix Packs in a Particular Environment | true | true | false |
 Now that you know what Roles are available in an LCS project and what they do, 
 you're ready to learn how to manage them. 
 
-### Managing LCS Roles [](id=managing-lcs-roles)
+### Managing LCS Roles
 
 Follow these steps to manage a user's LCS Roles:
 
@@ -174,16 +174,12 @@ Follow these steps to manage a user's LCS Roles:
 3.  To assign a Role, choose the Role (and environment, if applicable) and click 
     *Assign*. 
 
-+$$$
-
-**Note:** A user can't have an environment Role (e.g., LCS Environment Manager, 
-LCS Environment Viewer) and the LCS Administrator Role at the same time. 
-
-$$$
+| **Note:** A user can't have an environment Role (e.g., LCS Environment Manager,
+| LCS Environment Viewer) and the LCS Administrator Role at the same time.
 
 ![Figure 2: You can assign or revoke a user's LCS Roles.](../../images-dxp/lcs-user-roles.png)
 
-## Using the Dashboard [](id=using-the-dashboard)
+## Using the Dashboard
 
 The LCS Dashboard shows a project's environments and servers. If you're not
 already at the Dashboard, click it near the upper left-hand corner of your LCS
@@ -192,7 +188,7 @@ get to the environment view and the server view. Each of these views gives you
 a different look into certain aspects of your LCS project. You'll start with the
 project view. 
 
-### Using the Project View [](id=using-the-project-view)
+### Using the Project View
 
 You can get to the project view at any time by clicking the *Dashboard* tab near
 the upper left-hand corner of your LCS site. The project appears to the right of
@@ -217,17 +213,17 @@ icon indicates the environment's type and status:
 - **Green icon:** The environment's servers are operating properly. 
 - **Icon with a circle:** The environment's servers are clustered. 
 
-## Managing LCS Environments [](id=managing-lcs-environments)
+## Managing LCS Environments
 
 Environments are the key components of your LCS project. When you register a 
 server in LCS, you do so in an environment. An environment is therefore the 
 gateway to managing and monitoring your servers in LCS. 
 
-### Creating Environments [](id=creating-an-environment)
+### Creating Environments
 
 The first time you log in to LCS, a wizard walks you through each step required 
 to create your project's first environment. The 
-[getting started article](/discover/deployment/-/knowledge_base/7-0/getting-started-with-lcs) 
+[getting started article](/docs/7-0/deploy/-/knowledge_base/d/getting-started-with-lcs) 
 explains this in detail. You can create additional environments via the same 
 wizard or a simple form. 
 
@@ -235,20 +231,16 @@ To create an environment, click the *Add Environment* button from the Dashboard.
 This opens the New Environment form. Each section in this form corresponds to a 
 step in the wizard. If you want to use the wizard instead, click the 
 *Open Wizard* link at the top of the form. See the 
-[getting started article](/discover/deployment/-/knowledge_base/7-0/getting-started-with-lcs) 
+[getting started article](/docs/7-0/deploy/-/knowledge_base/d/getting-started-with-lcs) 
 for a description of each setting in the form and wizard. 
 
-+$$$
-
-**Note:** When creating an environment, make your selections carefully for the 
-*Subscription Type*, *Cluster*, and *Elastic* fields. You can't change them 
-after creating the environment. 
-
-$$$
+| **Note:** When creating an environment, make your selections carefully for the
+| *Subscription Type*, *Cluster*, and *Elastic* fields. You can't change them
+| after creating the environment.
 
 ![Figure 4: The New Environment form lets you create environments.](../../images-dxp/lcs-new-environment.png)
 
-### Working with Environments [](id=using-the-environment-view)
+### Working with Environments
 
 Clicking an environment on the left-hand side of the Dashboard takes you to the
 environment view, which lets you manage an environment in your LCS project. 
@@ -287,7 +279,7 @@ The UI is segmented into three tabs:
 
 ![Figure 5: The LCS environment view shows an overview of an LCS environment.](../../images-dxp/lcs-environment-view.png)
 
-## Managing LCS Servers [](id=using-the-server-view)
+## Managing LCS Servers
 
 Clicking a server in the Dashboard or environment view takes you to the server 
 view. Server view provides detailed information about a server, including 
@@ -310,17 +302,13 @@ Java version, and hardware.
 **Server Settings:** View or change your server's name, location, and 
 description. You can also unregister the server from LCS. 
 
-+$$$
+| **Note:** LCS only supports Snapshot Metrics for servers running on Tomcat or
+| WebLogic. On other application servers you may see a console message indicating
+| that LCS doesn't support server metrics for your application server. You may
+| also see a benign `NullPointerException` for the LCS `TaskSchedulerServiceImpl`
+| and `ScheduleTasksCommand`.
 
-**Note:** LCS only supports Snapshot Metrics for servers running on Tomcat or 
-WebLogic. On other application servers you may see a console message indicating 
-that LCS doesn't support server metrics for your application server. You may 
-also see a benign `NullPointerException` for the LCS `TaskSchedulerServiceImpl` 
-and `ScheduleTasksCommand`. 
-
-$$$
-
-### Page Analytics [](id=page-analytics)
+### Page Analytics
 
 Page Analytics appears by default when you enter server view. Page Analytics
 shows page views and load times for the selected site and time period. By
@@ -349,7 +337,7 @@ all load times greater than 3,000 ms in red text.
 
 ![Figure 6: The Page Analytics interface in the LCS Server view.](../../images-dxp/lcs-page-analytics-01.png)
 
-### Snapshot Metrics [](id=snapshot-metrics)
+### Snapshot Metrics
 
 To view other metrics and statistics of your server's performance, click the 
 *Snapshot Metrics* tab near the top of the page. These metrics are broken down 
@@ -385,7 +373,7 @@ Note that in Snapshot Metrics, the application and garbage collector metrics are
 based on data collected by LCS from server registration to the present. Memory 
 and server metrics, however, show only the current state. 
 
-### Fix Packs [](id=fix-packs)
+### Fix Packs
 
 To view your server's fix packs, click the Fix Packs tab near the top of the 
 page. The available and installed fix packs appear in separate tables. The 
@@ -394,7 +382,7 @@ environment view for downloading and installing fix packs.
 
 ![Figure 10: The Fix Packs tab displays your server's available and installed fix packs.](../../images-dxp/lcs-server-fix-packs.png)
 
-### Portal Properties [](id=portal-properties)
+### Portal Properties
 
 The *Portal Properties* tab lets you view your portal's property values in
 a searchable table. This gives you a convenient display for your portal property
@@ -408,7 +396,7 @@ This includes any property values you change via a `portal-ext.properties`
 file.
 
 **Dynamic Properties:** Any property values set at runtime. For example, the 
-[Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home) 
+[Liferay Home](/docs/7-0/deploy/-/knowledge_base/d/installing-product#liferay-home) 
 folder's location depends on your configuration. To specify this folder when
 setting any properties that require it, use `${liferay.home}` instead of an
 absolute directory path. 
@@ -422,7 +410,7 @@ Values*.
 
 ![Figure 11: Click the gear icon to select the type of portal properties to show in the table.](../../images-dxp/lcs-server-portal-properties.png)
 
-### Details [](id=details)
+### Details
 
 The *Details* tab shows general information about your server. There are three 
 tabs under Details: *Software*, *Java*, and *Hardware*. Each shows information, 
@@ -432,14 +420,14 @@ you need their assistance.
 
 ![Figure 12: The Details tab shows information about your server.](../../images-dxp/lcs-server-details.png)
 
-### Server Settings [](id=server-settings)
+### Server Settings
 
 Finally, the *Server Settings* tab lets you view and edit your server's name,
 location, and description. You can also unregister your server from LCS. 
 
 ![Figure 13: You can use the Server Settings tab to give your server a fun name.](../../images-dxp/lcs-server-settings.png)
 
-## Managing Your LCS Account [](id=managing-your-lcs-account)
+## Managing Your LCS Account
 
 To manage your LCS account, select *My Account* from the user menu in the
 Dockbar. This takes you to a UI with four tabs: 
@@ -474,7 +462,7 @@ is the one shown each time you log in to LCS.
 
 ![Figure 15: You can change your LCS account's general preferences.](../../images-dxp/lcs-account-preferences.png)
 
-### Using Web Notifications [](id=using-web-notifications)
+### Using Web Notifications
 
 LCS also displays web notifications under the bell icon in the Dockbar. A red
 badge on this icon shows your unread notification count. LCS and Liferay Support
@@ -489,7 +477,7 @@ the Dockbar.
 
 ![Figure 16: Web notifications let you know what's happening in your LCS projects.](../../images-dxp/lcs-user-web-notifications.png)
 
-## Managing Liferay DXP Subscriptions [](id=managing-liferay-dxp-subscriptions)
+## Managing Liferay DXP Subscriptions
 
 LCS lets you use and view your @product@ subscriptions. Recall that when you 
 [create an environment](#creating-an-environment), 
@@ -545,27 +533,19 @@ There are four tables in the *Details* tab:
 If any of the information in these tables is missing or incorrect, contact 
 Liferay Support. 
 
-+$$$
+| **Note:** If you don't use LCS for activating your servers, then you can
+| register as many servers as you want in LCS.
 
-**Note:** If you don't use LCS for activating your servers, then you can 
-register as many servers as you want in LCS. 
+| **Note:** If you try to activate a server that exceeds the number of processor
+| cores that your subscription allows per server, the activation fails and the
+| server is locked down. A console error also indicates the server's core count.
+| You can compare this with your subscription's processor cores allowed in LCS's
+| Subscriptions table. To activate the server, you can either reduce the number of
+| cores it uses (e.g., by deploying to different server hardware, or reducing the
+| number of virtual processors in a VM or container), or contact Liferay Sales to
+| increase the number of processor cores that your subscription allows per server.
 
-$$$
-
-+$$$
-
-**Note:** If you try to activate a server that exceeds the number of processor 
-cores that your subscription allows per server, the activation fails and the 
-server is locked down. A console error also indicates the server's core count. 
-You can compare this with your subscription's processor cores allowed in LCS's 
-Subscriptions table. To activate the server, you can either reduce the number of 
-cores it uses (e.g., by deploying to different server hardware, or reducing the 
-number of virtual processors in a VM or container), or contact Liferay Sales to 
-increase the number of processor cores that your subscription allows per server. 
-
-$$$
-
-### Decommissioning Servers [](id=decommissioning-servers)
+### Decommissioning Servers
 
 To decommission a server and free its activation key for reuse, select the 
 server's environment on the left and then select the server. In the server's 
@@ -574,20 +554,16 @@ server normally, its activation key is immediately freed for reuse. If the
 server crashes or its shutdown is forced (e.g., kill), its activation key is 
 freed for reuse within six minutes. 
 
-### Elastic Subscriptions [](id=elastic-subscriptions)
+### Elastic Subscriptions
 
 Elastic subscriptions let you register an unlimited number of servers. This is 
 crucial for auto-scaling environments where servers are created and destroyed 
 automatically. You can view data on your elastic servers from the 
 *Subscriptions* tab's *Elastic Subscriptions* tab. 
 
-+$$$
-
-**Note:** To register elastic servers in an environment, that environment must 
-be set as elastic when it's created. For more information, see the 
-[documentation on creating environments](#creating-an-environment).
-
-$$$
+| **Note:** To register elastic servers in an environment, that environment must
+| be set as elastic when it's created. For more information, see the
+| [documentation on creating environments](#creating-an-environment).
 
 ![Figure 18: The *Elastic Subscriptions* tab shows details about your project's elastic servers.](../../images-dxp/lcs-elastic-subscriptions.png)
 
@@ -600,7 +576,7 @@ report of the table's data, click *Download Report*. Also, you can use the
 and month to show data from, respectively. The data in both the graph and the 
 table reflect your selections here. 
 
-## Understanding Environment Tokens [](id=using-environment-tokens)
+## Understanding Environment Tokens
 
 To register a server in an environment, you must use that environment's token 
 file. LCS Administrators and Environment Managers can generate and distribute 
@@ -611,13 +587,9 @@ an activation key from the environment's subscription upon connection. This
 makes it possible to activate servers automatically on startup with no 
 interaction required. 
 
-+$$$
-
-**Note:** For instructions on using and managing your environment tokens, see 
-the instructions on 
-[registering your server with LCS](/discover/deployment/-/knowledge_base/7-0/registering-your-dxp-server-with-lcs). 
-
-$$$
+| **Note:** For instructions on using and managing your environment tokens, see
+| the instructions on
+| [registering your server with LCS](/docs/7-0/deploy/-/knowledge_base/d/registering-your-dxp-server-with-lcs).
 
 There are a few things to keep in mind when using environment tokens: 
 
@@ -657,14 +629,10 @@ connection process, environment tokens are valuable in auto-scaling environments
 where algorithms create and destroy servers automatically. In this situation, 
 having clients that activate and configure themselves is crucial. 
 
-+$$$
-
-**Note**: If your auto-scaling environment creates new server nodes from a 
-server in a system image, that server can't require human interaction during 
-setup. When creating such an image, you must change any portal property settings 
-that prevent automatic setup. By default, @product@'s setup wizard requires 
-human interaction. You must therefore set the `setup.wizard.enabled` property to 
-`false` if you want your auto-scaling environment to create new nodes from the 
-server. 
-
-$$$
+| **Note**: If your auto-scaling environment creates new server nodes from a
+| server in a system image, that server can't require human interaction during
+| setup. When creating such an image, you must change any portal property settings
+| that prevent automatic setup. By default, @product@'s setup wizard requires
+| human interaction. You must therefore set the `setup.wizard.enabled` property to
+| `false` if you want your auto-scaling environment to create new nodes from the
+| server.

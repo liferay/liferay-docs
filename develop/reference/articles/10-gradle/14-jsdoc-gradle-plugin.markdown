@@ -1,11 +1,15 @@
-# JSDoc Gradle Plugin [](id=jsdoc-gradle-plugin)
+---
+header-id: jsdoc-gradle-plugin
+---
+
+# JSDoc Gradle Plugin
 
 The JSDoc Gradle plugin lets you run the [JSDoc](http://usejsdoc.org/) tool in
 order to generate documentation for your project's JavaScript files.
 
 The plugin has been successfully tested with Gradle 4.10.2.
 
-## Usage [](id=usage)
+## Usage
 
 To use the plugin, include it in your build script:
 
@@ -44,7 +48,7 @@ component of the same application:
 Both plugins automatically apply the [`com.liferay.node`](https://github.com/liferay/liferay-portal/tree/master/modules/sdk/gradle-plugins-node)
 plugin.
 
-## JSDoc Plugin [](id=jsdoc-plugin)
+## JSDoc Plugin
 
 The plugin adds two tasks to your project:
 
@@ -67,7 +71,7 @@ Property Name | Default Value
 [`destinationDir`](#destinationdir) | <p>**If the `java` plugin is applied:** `"${project.docsDir}/jsdoc"`</p><p>**Otherwise:** `"${project.buildDir}/jsdoc"`</p>
 [`sourceDirs`](#sourcedirs) | The directory `META-INF/resources` in the first `resources` directory of the `main` source set (by default, `src/main/resources/META-INF/resources`).
 
-## AppJSDoc Plugin [](id=appjsdoc-plugin)
+## AppJSDoc Plugin
 
 To use the App JSDoc plugin, it is required to apply the `com.liferay.app.jsdoc`
 plugin in a parent project (that is, a project that is a
@@ -95,7 +99,7 @@ Property Name | Default Value
 [`destinationDir`](#destinationdir) | `${project.buildDir}/docs/jsdoc`
 [`sourceDirs`](#sourcedirs) | The sum of all the `jsdoc.sourceDirs` values of the subprojects.
 
-## Project Extension [](id=project-extension)
+## Project Extension
 
 The App JSDoc plugin exposes the following properties through the extension
 named `appJSDocConfiguration`:
@@ -111,9 +115,9 @@ Method | Description
 `AppJSDocConfigurationExtension subprojects(Iterable<Project> subprojects)` | Include additional projects in the JavaScript documentation of the app.
 `AppJSDocConfigurationExtension subprojects(Project... subprojects)` | Include additional projects in the JavaScript documentation of the app.
 
-## Tasks [](id=tasks)
+## Tasks
 
-### JSDocTask [](id=jsdoctask)
+### JSDocTask
 
 Tasks of type `JSDocTask` extend `ExecuteNodeScriptTask`, so all its
 properties and methods, such as `args`, `inheritProxy`, and `workingDir`, are
@@ -125,7 +129,7 @@ Property Name | Default Value
 ------------- | -------------
 `scriptFile` | `"${downloadJSDoc.moduleDir}/jsdoc.js"`
 
-#### Task Properties [](id=task-properties)
+#### Task Properties
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------

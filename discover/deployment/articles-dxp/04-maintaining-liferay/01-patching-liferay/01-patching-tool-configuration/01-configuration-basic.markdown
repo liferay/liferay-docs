@@ -1,4 +1,8 @@
-# Patching Tool Basic configuration [](id=patching-tool-basic-configuration)
+---
+header-id: patching-tool-basic-configuration
+---
+
+# Patching Tool Basic configuration
 
 There are two ways to configure the Patching Tool:
 
@@ -22,7 +26,7 @@ you're ready to download and install patches. You can install patches manually
 or automatically.
 
 If you specified the wrong folder or @product@ is not installed in the parent
-folder, the Patching Tool won't be able to find the [Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-liferay-portal#liferay-home)
+folder, the Patching Tool won't be able to find the [Liferay Home](/docs/7-0/deploy/-/knowledge_base/d/installing-liferay-portal#liferay-home)
 folder and shows an error: 
 
     The .liferay-home has not been detected in the given directory tree.

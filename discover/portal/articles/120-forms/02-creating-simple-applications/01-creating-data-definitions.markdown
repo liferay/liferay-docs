@@ -1,4 +1,8 @@
-# Creating Data Definitions [](id=creating-data-definitions)
+---
+header-id: creating-data-definitions
+---
+
+# Creating Data Definitions
 
 <!-- Renumber figures, numbers and captions. -->
 
@@ -50,7 +54,7 @@ in building a list app. An exhaustive discussion of the field types available
 and their configuration options is found at the end of this article. Next, get
 started creating data definitions.
 
-## Creating Data Definitions [](id=creating-data-definitions)
+## Creating Data Definitions
 
 The Lunar Resort List creators can't post and manage lists unless you give them
 some useful definitions. You can, of course, delegate the data definition
@@ -98,14 +102,10 @@ nest fields below each other. Nest all the fields you just added below the Text 
 
     ![Figure 3: Fields can be nested below other fields.](../../../images/ddl-fields-added.png)
 
-    +$$$
-
-    **NOTE:** When you nest fields, they will not appear when the list entries
-    are displayed with the default display template. For more information about
-    templates, see the article on 
-    [Using Templates to Display Forms and Lists](/discover/portal/-/knowledge_base/7-0/using-templates-to-display-forms-and-lists).
-
-    $$$
+    | **NOTE:** When you nest fields, they will not appear when the list entries
+    | are displayed with the default display template. For more information about
+    | templates, see the article on
+    | [Using Templates to Display Forms and Lists](/docs/7-0/user/-/knowledge_base/u/using-templates-to-display-forms-and-lists).
 
 6.  Before adding more fields, configure the current ones. Click on the Text
 field and then click on the wrench icon (![Configure DDL Field Icon](../../../images/configure-ddl-field-icon.png)). Alternatively, click on the field and then click the 
@@ -162,10 +162,10 @@ If you click on the newly created definition (or any definition, for that
 matter), you'll notice that you have access to both a WebDAV URL and a
 static URL, which are used to access the XML source of the data definition. To
 learn more about WebDAV or if you'd like to see WebDAV in action, see 
-the article on [WebDAV access](/discover/portal/-/knowledge_base/6-2/automatic-previews-and-metadata#webdav-access)
+the article on [WebDAV access](/docs/6-2/user/-/knowledge_base/u/automatic-previews-and-metadata#webdav-access)
 <!--Make link to 7-0 when ready-->.
 
-### Using a Parent Definition [](id=using-a-parent-definition)
+### Using a Parent Definition
 
 Though it wasn't necessary for the use case presented above, data definitions
 also have the capability of inheriting characteristics from other definitions.
@@ -199,7 +199,7 @@ Your definition now lives with all the pre-configured ones. There are
 several things you can do with these existing definitions, including deleting
 them, editing them, and copying them.
 
-## Managing Data Definitions [](id=managing-data-definitions)
+## Managing Data Definitions
 
 From a site's Dynamic Data Lists application (accessed through the Product Menu),
 you can either add a new dynamic data list from an existing data type or you can
@@ -220,7 +220,7 @@ instance.
 
 ![Figure 14: You'll be warned if you try to edit a data definition that's referenced in a template.](../../../images/ddl-edit-definition-warning.png)
 
-### Copying Data Definitions [](id=copying-data-definitions)
+### Copying Data Definitions
 
 Liferay Portal 6.2 introduced the ability to *Copy* the DDM structures and templates
 associated with an existing data definition. You can access the Copy button by
@@ -240,7 +240,7 @@ access to the original.
 
 From the actions menu for a data definition, you can also configure its permissions.
 
-### Data Definition Permissions [](id=data-definition-permissions)
+### Data Definition Permissions
 
 From a data definition's Actions menu, you can select Permissions to configure
 the permissions for a particular data definition. Note that these permissions
@@ -257,7 +257,7 @@ definition listed with the others.
 
 You can manage a data definition's templates as well. 
 
-### Managing a Data Definition's Templates [](id=managing-a-data-definitions-templates)
+### Managing a Data Definition's Templates
 
 Manage a data definition's templates by clicking Manage Templates from a data
 definition's actions menu (click the ![Configuration Menu](../../../images/icon-options.png) icon). 
@@ -268,9 +268,9 @@ You can copy templates if you want to create a new template that's similar to an
 existing one, or you can edit them directly. You can also configure permissions
 for a template, and delete templates. All of these are accomplished by clicking
 the actions button for a template. For more information see the article on
-[Using Templates to Display Forms and Lists](/discover/portal/-/knowledge_base/7-0/using-templates-to-display-forms-and-lists).
+[Using Templates to Display Forms and Lists](/docs/7-0/user/-/knowledge_base/u/using-templates-to-display-forms-and-lists).
 
-## Configuring Data Definition Fields [](id=configuring-data-definition-fields)
+## Configuring Data Definition Fields
 
 You already know how to create data definitions, and if you created the example
 definition, you've added and configured some of the field types that can be used
@@ -357,7 +357,7 @@ Set *Indexable* to *Yes* if you want Liferay to index your field for
 search.
 
 Setting *Localizable* to *No* turns off localization for a particular
-field, so that [translations](/discover/portal/-/knowledge_base/6-2/localization) 
+field, so that [translations](/docs/6-2/user/-/knowledge_base/u/localization) 
 cannot be made for that field.
 
 <!-- Add link to 7.0 docs on localization when they're created -->

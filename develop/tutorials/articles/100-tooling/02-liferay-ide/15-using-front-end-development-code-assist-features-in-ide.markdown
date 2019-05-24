@@ -1,4 +1,8 @@
-# Using Front-End Code Assist Features in @ide@ [](id=using-front-end-code-assist-features-in-ide)
+---
+header-id: using-front-end-code-assist-features-in-ide
+---
+
+# Using Front-End Code Assist Features in @ide@
 
 Liferay @ide@ provides extended front-end development tools to assist in Liferay
 development. You now have access to code inferencing and code completion
@@ -10,7 +14,7 @@ section, so you can navigate to the language you're most interested in.
 Continue reading to find out how to use @ide@'s code assist features in your
 project. 
 
-## Using Code Assist Features [](id=using-code-assist-features)
+## Using Code Assist Features
 
 @ide@'s integration of [Tern](http://ternjs.net/) gives you access to code
 assist in JavaScript, AlloyUI, and CSS. To access these features, you must be
@@ -19,21 +23,17 @@ working in a JavaScript, JSP, HTML, or CSS file.
 You must have Tern features enabled in your project in order to use 
 them. By default, Liferay portlet plugins already have Tern features enabled. 
 Visit the
-[Enabling Code Assist Features in your Project](/develop/tutorials/-/knowledge_base/7-0/enabling-code-assist-features-in-your-project)
+[Enabling Code Assist Features in your Project](/docs/7-0/tutorials/-/knowledge_base/t/enabling-code-assist-features-in-your-project)
 tutorial to learn how to enable Tern features for non-Liferay specific projects.
 
-+$$$
-
-**Note:** For those developing with the Plugins SDK, the taglib descriptions
-that @ide@ makes available to users are dependent upon the Plugins SDK version.
-@ide@ uses taglib descriptions from the current SDK's `util-taglib.jar` file, so a
-more up-to-date Plugins SDK means more up-to-date taglib descriptions. 
-
-$$$
+| **Note:** For those developing with the Plugins SDK, the taglib descriptions
+| that @ide@ makes available to users are dependent upon the Plugins SDK version.
+| @ide@ uses taglib descriptions from the current SDK's `util-taglib.jar` file, so a
+| more up-to-date Plugins SDK means more up-to-date taglib descriptions.
 
 You'll begin testing the AlloyUI code assist features next.
 
-### AlloyUI Code Assist Features [](id=alloyui-code-assist-features)
+### AlloyUI Code Assist Features
 
 There are several helpful code assist features that can improve your 
 productivity when writing code for AlloyUI. The example below shows how to 
@@ -50,13 +50,9 @@ access the AlloyUI code assist features in the `main.js` of your project:
 
 ![Figure 1: This figure demonstrates code inference in a JS file.](../../../images/code-inference.png)
 
-+$$$
-
-**Note:** Code assist not only works for methods of an object, but also works
-for AUI-specific Tern completions for objects. For instance, you could type `AU`
-and press *Ctrl+Space* to see a list of objects to choose from.
-
-$$$
+| **Note:** Code assist not only works for methods of an object, but also works
+| for AUI-specific Tern completions for objects. For instance, you could type `AU`
+| and press *Ctrl+Space* to see a list of objects to choose from.
 
 By default, code inference is triggered by a keystroke combination; however, you
 can enable auto activation in @ide@'s Preferences menu. Follow the steps below
@@ -92,13 +88,9 @@ as well as in the HTML/JSP editor when working with `<script>` and
 3.  Select your template and hit *Enter* to paste its contents into your
     `main.js`. 
 
-    +$$$
-
-    **Note:** You can view all the AlloyUI code templates you have 
-    installed by going to @ide@'s Preferences menu and selecting *JavaScript*
-    &rarr; *Editor* &rarr; *Templates*. 
-
-    $$$ 
+    | **Note:** You can view all the AlloyUI code templates you have
+    | installed by going to @ide@'s Preferences menu and selecting *JavaScript*
+    | &rarr; *Editor* &rarr; *Templates*.
 
 In addition to code inference in your JS files, you can also use code inference 
 in your JSP/HTML files using `<aui:script>` tags. 
@@ -126,7 +118,7 @@ to code assist features that improve your workflow.
 
 Next, you'll examine the JavaScript code assist features for @ide@.
 
-### JavaScript Code Assist Features [](id=javascript-code-assist-features)
+### JavaScript Code Assist Features
 
 In addition to AlloyUI code assist features, you also have access to code
 inference and completion using raw JavaScript. This code assist feature is
@@ -134,7 +126,7 @@ available in your project because the Tern module `Liferay` is enabled. This
 plugin provides code completions for the static JavaScript object APIs available
 to portlets when running in Liferay Portal. To learn more about enabling Tern
 modules in Eclipse, refer to the
-[Enabling Code Assist Features in Your Project](/develop/tutorials/-/knowledge_base/7-0/enabling-code-assist-features-in-your-project)
+[Enabling Code Assist Features in Your Project](/docs/7-0/tutorials/-/knowledge_base/t/enabling-code-assist-features-in-your-project)
 tutorial. 
 
 The example below shows how you can use code assist features to easily access
@@ -169,20 +161,16 @@ As you can see, JavaScript development is a breeze using @ide@'s code assist
 features. Now that you know how to use the AlloyUI and JavaScript code assist
 features, you can learn how to use the CSS code assist features next. 
 
-### CSS Code Assist Features [](id=css-code-assist-features)
+### CSS Code Assist Features
 
 @ide@ offers code inference and completion tools for CSS. In order to use these
 tools, you'll need to install an additional plugin. 
 
-+$$$
-
-**Note:** The plugin described below is planned to be bundled with Liferay
-@ide@ in the near future. Initial tests of the plugin revealed performance issues
-in some cases, which is why it is not yet a part of Liferay @ide@. Problems were
-not consistent, so you may have no issues installing the plugin, but we wanted
-to give full disclosure about it. 
-
-$$$
+| **Note:** The plugin described below is planned to be bundled with Liferay
+| @ide@ in the near future. Initial tests of the plugin revealed performance issues
+| in some cases, which is why it is not yet a part of Liferay @ide@. Problems were
+| not consistent, so you may have no issues installing the plugin, but we wanted
+| to give full disclosure about it.
 
 Follow the steps below to install the plugin in @ide@: 
 
@@ -234,21 +222,17 @@ If you look at the code inference dialog for CSS classes, you'll also notice
 that in addition to your own CSS classes, you also have access to Bootstrap CSS
 classes found in Liferay Portal. 
 
-+$$$
-
-**Note:** You can go to the file that the class, ID, or function is located in
-by hovering over top of it in your JSP and holding down the `Ctrl` (Windows) or
-`command` (Mac) key, and clicking the hyperlink that appears. 
-
-$$$
+| **Note:** You can go to the file that the class, ID, or function is located in
+| by hovering over top of it in your JSP and holding down the `Ctrl` (Windows) or
+| `command` (Mac) key, and clicking the hyperlink that appears.
 
 Lastly, you'll learn about the code assist features for jQuery. 
 
-### jQuery Code Assist Features [](id=jquery-code-assist-features)
+### jQuery Code Assist Features
 
 You can also use code assist with jQuery. To do this, you must enable the
 `jQuery` Tern module. Follow the instructions in the
-[Enabling Code Assist Features in Your Project](/develop/tutorials/-/knowledge_base/7-0/enabling-code-assist-features-in-your-project)
+[Enabling Code Assist Features in Your Project](/docs/7-0/tutorials/-/knowledge_base/t/enabling-code-assist-features-in-your-project)
 tutorial to learn how to enable Tern modules in your project. 
 
 The jQuery Tern plugin gives type information for the jQuery framework. In the
@@ -275,10 +259,10 @@ is also made available.
 Excellent! You now know how to use @ide@'s front-end development code assist 
 features to improve your workflow. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Enabling Code Assist Features in your Project](/develop/tutorials/-/knowledge_base/7-0/enabling-code-assist-features-in-your-project) 
+[Enabling Code Assist Features in your Project](/docs/7-0/tutorials/-/knowledge_base/t/enabling-code-assist-features-in-your-project) 
 
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
+[Liferay Workspace](/docs/7-0/tutorials/-/knowledge_base/t/liferay-workspace)
 
-[From Liferay 6 to @product-ver@](/develop/tutorials/-/knowledge_base/7-0/from-liferay-6-to-liferay-7)
+[From Liferay 6 to @product-ver@](/docs/7-0/tutorials/-/knowledge_base/t/from-liferay-6-to-liferay-7)

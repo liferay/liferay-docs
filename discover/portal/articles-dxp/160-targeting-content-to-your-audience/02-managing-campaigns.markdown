@@ -1,4 +1,8 @@
-# Managing Campaigns [](id=managing-campaigns)
+---
+header-id: managing-campaigns
+---
+
+# Managing Campaigns
 
 A campaign represents an effort to expose certain user segments to a set of
 assets within a specific period of time. To manage campaigns for a site,
@@ -48,7 +52,7 @@ visit the Roles section of the Control Panel. Then click on the *Actions* &rarr;
 *Define Permissions* button corresponding to the role you'd like to configure
 permissions for, and search for *Audience Targeting*.
 
-## Managing Campaign Priorities [](id=managing-campaign-priorities)
+## Managing Campaign Priorities
 
 The priority of your campaigns becomes important when multiple campaigns are
 running at the same time on your website. The Campaign Content Display
@@ -63,22 +67,18 @@ applications. Similarly, if a campaign is deactivated or if a campaign's date
 range is exceeded, all of the Campaign Content Display applications on your
 website are affected.
 
-## Defining Metrics [](id=defining-metrics)
+## Defining Metrics
 
 One of the most interesting features of campaigns is that they allow you to
 measure the effectiveness of a campaign. This provides your marketing team with
 real feedback from users. When creating a campaign, you can define the user
 actions that you want to track. This can be done by defining *Metrics*.
 
-+$$$
-
-**Note:** Metrics were previously known as Tracking Actions and were aggregated
-as part of the campaign editing options. Since @product-ver@, Tracking Actions have
-been renamed to Metrics and are aggregated in custom reports. As part of the
-upgrade process to @product-ver@, for each campaign containing Tracking Actions, a
-custom report with the equivalent Metrics is automatically added.
-
-$$$
+| **Note:** Metrics were previously known as Tracking Actions and were aggregated
+| as part of the campaign editing options. Since @product-ver@, Tracking Actions have
+| been renamed to Metrics and are aggregated in custom reports. As part of the
+| upgrade process to @product-ver@, for each campaign containing Tracking Actions, a
+| custom report with the equivalent Metrics is automatically added.
 
 The Audience Targeting app can display reports of how often those actions are
 triggered. For example, suppose you want to run a campaign for an event that
@@ -110,14 +110,14 @@ accessible at the bottom of the *New Report* wizard.
 You could drag and drop *metrics* from the palette to track all the actions
 mentioned above. More types of metrics can be created by developers and deployed
 as OSGi plugins. See the
-[Tracking User Actions with Audience Targeting](/develop/tutorials/-/knowledge_base/6-2/tracking-user-actions-with-audience-targeting)
+[Tracking User Actions with Audience Targeting](/docs/6-2/tutorials/-/knowledge_base/t/tracking-user-actions-with-audience-targeting)
 tutorial for details.
 
 The metrics use an analytics engine called *Audience Targeting Analytics* that
 can be configured per site or per @product@ installation. You'll learn about
 this next.
 
-### Audience Targeting Analytics [](id=audience-targeting-analytics)
+### Audience Targeting Analytics
 
 To configure the analytics engine per site, go to Site Administration and click
 *Configuration* &rarr; *Site Settings* &rarr; *Advanced* &rarr; *Audience
@@ -172,12 +172,12 @@ Now your analytics data is stored in an alternative database schema!
 
 Next you'll learn about Campaign Reports.
 
-## Campaign Reports [](id=campaign-reports)
+## Campaign Reports
 
 Reports are available for campaigns. You can select the campaign name and click
 the *Reports* tab to see the list of reports available. More reports can be
 created by developers and deployed as OSGi plugins. See the
-[Reporting User Behavior with Audience Targeting](/develop/tutorials/-/knowledge_base/6-2/reporting-user-behavior-with-audience-targeting)
+[Reporting User Behavior with Audience Targeting](/docs/6-2/tutorials/-/knowledge_base/t/reporting-user-behavior-with-audience-targeting)
 tutorial for details. You can create a custom report by selecting the a campaign
 and clicking the *Reports* tab &rarr; *Add Custom Report*
 (![Add Custom Report](../../images-dxp/icon-add.png)).
@@ -195,7 +195,7 @@ You can track many other user actions by creating a custom report. You can drag
 and drop different kinds of metrics to track for your campaign, which shows the
 number of times each metric has been triggered by users. For a complete
 reference of all report metrics available, see the
-[Audience Targeting Metrics](/develop/tutorials/-/knowledge_base/7-0/audience-targeting-metrics)
+[Audience Targeting Metrics](/docs/7-0/tutorials/-/knowledge_base/t/audience-targeting-metrics)
 tutorial.
 
 Consider the example that we introduced earlier in the section on metrics:

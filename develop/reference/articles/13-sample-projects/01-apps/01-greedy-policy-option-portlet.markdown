@@ -1,4 +1,8 @@
-# Greedy Policy Option Application [](id=greedy-policy-option-portlet)
+---
+header-id: greedy-policy-option-portlet
+---
+
+# Greedy Policy Option Application
 
 The Greedy Policy Option sample provides two portlets that can be added to a
 @product@ page: Greedy Portlet and Reluctant Portlet.
@@ -9,7 +13,7 @@ These two portlets do not provide anything useful out-of-the-box. They are,
 however, very effective at demonstrating the ability to reference services using
 greedy and reluctant policy options. You'll learn how to do this later.
 
-## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
+## What API(s) and/or code components does this sample highlight?
 
 This sample provides two modules referencing services using greedy and reluctant
 policy options.
@@ -45,7 +49,7 @@ Here are each module's file structures:
     - `bnd.bnd`
     - `src/main/java/com/liferay/blade/reluctant/vs/greedy/svc/HigherRankedService.java` &rarr; Service implementation with service ranking value of `100`
 
-## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
+## How does this sample leverage the API(s) and/or code component?
 
 Here are the things you can learn using the sample modules:
 
@@ -57,7 +61,7 @@ Here are the things you can learn using the sample modules:
 
 Let's walk through the demonstration.
 
-### Binding a newly deployed component's service reference to the highest ranking service instance that's available initially [](id=binding-a-newly-deployed-components-service-reference-to-the-highest-rankin)
+### Binding a newly deployed component's service reference to the highest ranking service instance that's available initially
 
 On deploying a component that references a service, it binds to the highest
 ranking service instance that matches its target filter (if specified).
@@ -181,7 +185,7 @@ The `DefaultService` and portlets *Reluctant Portlet* and *Greedy Portlet* are
 active. Let's activate a higher ranked `SomeService` instance and see how the
 portlets react to it.
 
-### Deploying a module with a higher ranked service instance for binding to greedy references immediately [](id=deploying-a-module-with-a-higher-ranked-service-instance-for-binding-to-gre)
+### Deploying a module with a higher ranked service instance for binding to greedy references immediately
 
 Module `higher-ranked-service` provides a `SomeService` implementation called
 `HigherRankedService`. `HigherRankedService`'s service ranking is `100`--that's
@@ -204,7 +208,7 @@ The part of the message "I am better, use me!" comes from the
 Next, learn how to bind the *Reluctant Portlet* to a `HigherRankedService`
 instance.
 
-### Configuring a component to reference a different service instance dynamically [](id=configuring-a-component-to-reference-a-different-service-instance-dynamical)
+### Configuring a component to reference a different service instance dynamically
 
 The *Reluctant Portlet* is currently bound to a `DefaultService` instance. It's
 "reluctant" to unbind from it and bind to a different service. OSGi
@@ -241,7 +245,7 @@ me!".
 `DefaultService` instance. You've configured *Reluctant Portlet* to use a
 `HigherRankedService` instance!
 
-## Where Is This Sample? [](id=where-is-this-sample)
+## Where Is This Sample?
 
 There are three different versions of this sample, each built with a different
 build tool:

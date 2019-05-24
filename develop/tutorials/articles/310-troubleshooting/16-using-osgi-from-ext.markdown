@@ -1,4 +1,8 @@
-# Using OSGi Services from EXT Plugins [](id=using-osgi-services-from-ext-plugins)
+---
+header-id: using-osgi-services-from-ext-plugins
+---
+
+# Using OSGi Services from EXT Plugins
 
 Using OSGi services from an Ext plugin is done the same way that @product@'s 
 core uses OSGi services: via the `com.liferay.registry` API provided by the 
@@ -42,8 +46,8 @@ you must use @product@'s OSGi services in a servlet, for example, it's a good
 idea to open your service trackers in `Servlet.init()` and close them in 
 `Servlet.destroy()`. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Calling Non-OSGi Code that Uses OSGi Services](/develop/tutorials/-/knowledge_base/7-0/calling-non-osgi-code-that-uses-osgi-services)
+[Calling Non-OSGi Code that Uses OSGi Services](/docs/7-0/tutorials/-/knowledge_base/t/calling-non-osgi-code-that-uses-osgi-services)
 
-[OSGi Basics For Liferay Development](/develop/tutorials/-/knowledge_base/7-0/osgi-basics-for-liferay-development)
+[OSGi Basics For Liferay Development](/docs/7-0/tutorials/-/knowledge_base/t/osgi-basics-for-liferay-development)

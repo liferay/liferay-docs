@@ -1,4 +1,8 @@
-# Adding Permissions to Resources [](id=adding-permissions-to-resources)
+---
+header-id: adding-permissions-to-resources
+---
+
+# Adding Permissions to Resources
 
 Public bulletin boards are great. Anyone can inform others of just about
 anything. On the other hand, *anyone* can post just about *anything* on the
@@ -10,7 +14,7 @@ Fortunately, no matter what your portlet does, access to it and to its content
 can be controlled with permissions. Read on to learn about Liferay's
 permissions system and how add permissions to your application.
 
-## Liferay's Permission System [](id=liferays-permission-system)
+## Liferay's Permission System
 
 Liferay's permission system uses a flexible mechanism that defines the actions
 that a given user can perform within the context of Liferay or a specific
@@ -85,14 +89,10 @@ names of the entities they represent. In the `default.xml` files displayed
 below, permission implementations are first defined for the *portlet* resource
 and then for the *model* resources. 
 
-+$$$
-
-**Note:** For each resource, there are four scopes to which the permissions can
-be applied: company, group, group-template, or individual. See the Javadoc of
-[ResourcePermissionImpl](@platform-ref@/7.0-latest/javadocs/portal-impl/)
-for more information.
-
-$$$
+| **Note:** For each resource, there are four scopes to which the permissions can
+| be applied: company, group, group-template, or individual. See the Javadoc of
+| [ResourcePermissionImpl](@platform-ref@/7.0-latest/javadocs/portal-impl/)
+| for more information.
 
 You can add permissions to your custom portlets using four easy steps (also
 known as *DRAC*): 
@@ -110,7 +110,7 @@ known as *DRAC*):
 4. <b>C</b>heck permission before returning resources. This step is described in 
    the tutorial [Checking Permissions (not yet written)]().
 
-## Define All Resources and Permissions [](id=define-all-resources-and-permissions)
+## Define All Resources and Permissions
 
 The first step is to define your resources and the actions that can be defined
 on them. The Bookmarks application is used here to demonstrate how to define

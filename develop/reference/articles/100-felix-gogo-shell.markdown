@@ -1,26 +1,26 @@
-# Felix Gogo Shell [](id=using-the-felix-gogo-shell)
+---
+header-id: using-the-felix-gogo-shell
+---
+
+# Felix Gogo Shell
 
 To interact with @product@'s module framework on a local server machine, you can
-use the Felix Gogo shell within [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli).
+use the Felix Gogo shell within [Blade CLI](/docs/7-0/tutorials/-/knowledge_base/t/blade-cli).
 
 Here's the command syntax:
 
     blade sh <gogoShellCommand>
 
-+$$$
-
-If you're not using Blade CLI, you can start the Gogo shell from a local telnet
-session. 
-
-    telnet localhost 11311
-
-To disconnect the session, execute the `disconnect` command. 
-
-**Warning**: Commands  `shutdown`, `close`, and `exit` stop the OSGi framework.
-So make sure to use the `disconnect` command to end the telnet Gogo Shell
-session. 
-
-$$$
+| If you're not using Blade CLI, you can start the Gogo shell from a local telnet
+| session.
+| 
+|     telnet localhost 11311
+| 
+| To disconnect the session, execute the `disconnect` command.
+| 
+| **Warning**: Commands  `shutdown`, `close`, and `exit` stop the OSGi framework.
+| So make sure to use the `disconnect` command to end the telnet Gogo Shell
+| session.
 
 Here are some useful Gogo shell commands:
 

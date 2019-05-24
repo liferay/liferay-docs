@@ -1,4 +1,8 @@
-# Styling Apps with Application Display Templates [](id=styling-apps-with-application-display-templates)
+---
+header-id: styling-apps-with-application-display-templates
+---
+
+# Styling Apps with Application Display Templates
 
 The application display template (ADT) framework allows Liferay administrators
 to override the default display templates, removing limitations to the way your
@@ -75,7 +79,7 @@ Wiki ADT into your new one and build off of it. In other words, you can utilize
 ADTs as generic templates which allow for reusable code to be imported by
 Velocity or FreeMarker templates in the system. For more information on how to
 create a custom template, visit the
-[Implementing Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/implementing-application-display-templates)
+[Implementing Application Display Templates](/docs/6-2/tutorials/-/knowledge_base/t/implementing-application-display-templates)
 tutorial.
 
 <!--TODO: Update tutorial link above for 7.0, when available. -Cody -->
@@ -96,17 +100,13 @@ ADT from the menu and expanding the *Details* section. With the WebDAV URL, site
 administrators are capable of adding, browsing, editing, and deleting ADTs on a
 remote server. If you'd like to learn more about what the WebDAV URL can do,
 visit the section on
-[WebDAV access](/discover/portal/-/knowledge_base/7-0/publishing-files#desktop-access-to-documents-and-media).
+[WebDAV access](/docs/7-0/user/-/knowledge_base/u/publishing-files#desktop-access-to-documents-and-media).
 
-+$$$
-
-**Note:** Embedding apps into ADTs, although possible, is not recommended
-because this could cause conflicts with other apps or unexpected behavior (e.g.,
-embedding an app that aggregates data to the breadcrumb). If embedding an app
-into an ADT is your only option, make sure it does not interfere with other
-apps.
-
-$$$
+| **Note:** Embedding apps into ADTs, although possible, is not recommended
+| because this could cause conflicts with other apps or unexpected behavior (e.g.,
+| embedding an app that aggregates data to the breadcrumb). If embedding an app
+| into an ADT is your only option, make sure it does not interfere with other
+| apps.
 
 To enable your ADT for an application, navigate to the app you want to modify
 and open its *Configuration* menu. In the *Setup* tab, select your ADT from the

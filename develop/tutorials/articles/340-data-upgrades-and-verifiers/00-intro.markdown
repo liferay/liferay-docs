@@ -1,4 +1,8 @@
-# Data Upgrades [](id=data-upgrades-and-verifiers)
+---
+header-id: data-upgrades-and-verifiers
+---
+
+# Data Upgrades
 
 Your module goes through various stages of development, because you're
 constantly trying to improve it. You add new features, remove features, enhance

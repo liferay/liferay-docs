@@ -1,9 +1,13 @@
-# MVC Render Command [](id=mvc-render-command)
+---
+header-id: mvc-render-command
+---
+
+# MVC Render Command
 
 If you're here, that means you know that `MVCRenderCommand`s are used to respond
 to portlet render URLs, and you want to know how to create and use MVC render
 commands. If you just want to learn about Liferay's MVC Portlet framework in
-general, that information is in a [separate article](/develop/tutorials/-/knowledge_base/7-0/liferay-mvc-portlet).
+general, that information is in a [separate article](/docs/7-0/tutorials/-/knowledge_base/t/liferay-mvc-portlet).
 
 To use MVC render commands, you need these things:
 
@@ -12,7 +16,7 @@ To use MVC render commands, you need these things:
 -  a Component that publishes the `MVCRenderCommand` service, with two
    properties.
 
-## Implementing MVCRenderCommand [](id=implementing-mvcrendercommand)
+## Implementing MVCRenderCommand
 
 What is it you want to do when a portlet render URL is invoked? Using the
 `mvcRenderCommandName` parameter, direct the request to an `MVCRenderCommand`
@@ -63,7 +67,7 @@ exception being caught, `edit_entry.jsp` is rendered.
 How does a request get directed to your MVC render command? Using a portlet
 render URL.
 
-## Creating a Portlet Render URL [](id=creating-a-portlet-render-url)
+## Creating a Portlet Render URL
 
 You can generate a render URL for your portlet using the `<portlet:renderURL>`
 taglib. To invoke your MVC render command from the render URL, you need to
@@ -82,7 +86,7 @@ Now the request will contain a parameter named `mvcRenderCommandName`. To find
 the proper MVC render command, the OSGi runtime needs to have a
 `mvc.command.name` property with a matching value.
 
-## Registering the MVC Render Command [](id=registering-the-mvc-render-command)
+## Registering the MVC Render Command
 
 In order to respond to a particular render URL, you need an
 `MVCRenderCommand` Component that with two properties:
@@ -127,10 +131,10 @@ command URLs in the same command component, like this:
 
 As you can see, MVC render commands are flexible and very easy to implement.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[MVC Resource Command](/develop/tutorials/-/knowledge_base/7-0/mvc-resource-command)
+[MVC Resource Command](/docs/7-0/tutorials/-/knowledge_base/t/mvc-resource-command)
 
-[MVC Action Command](/develop/tutorials/-/knowledge_base/7-0/mvc-action-command)
+[MVC Action Command](/docs/7-0/tutorials/-/knowledge_base/t/mvc-action-command)
 
-[MVC Command Overrides](/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands)
+[MVC Command Overrides](/docs/7-0/tutorials/-/knowledge_base/t/overriding-mvc-commands)

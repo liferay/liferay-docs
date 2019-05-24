@@ -1,4 +1,8 @@
-# Liferay Sample Projects [](id=liferay-sample-modules)
+---
+header-id: liferay-sample-modules
+---
+
+# Liferay Sample Projects
 
 Liferay provides working examples of sample projects that target different
 integration points in @product@. These working examples can be copy/pasted into
@@ -8,7 +12,7 @@ files. Liferay's sample projects can be found in the
 [liferay-blade-samples](https://github.com/liferay/liferay-blade-samples)
 repository on GitHub. You can find documentation for Liferay's sample projects
 in the
-[Sample Projects](/develop/reference/-/knowledge_base/7-0/sample-modules)
+[Sample Projects](/docs/7-0/reference/-/knowledge_base/r/sample-modules)
 reference section.
 
 If you'd like to browse the repository locally or copy sample projects into your
@@ -43,11 +47,11 @@ Some samples also come configured with logging to help you fully understand
 what the sample is accomplishing behind the scenes. For example, OSGi module
 logging is implemented for several samples (e.g.,
 [action-command-portlet](https://github.com/liferay/liferay-blade-samples/tree/7.0/gradle/apps/action-command-portlet),
-[document-action](/develop/reference/-/knowledge_base/7-0/document-action),
-[service-builder/jdbc](/develop/reference/-/knowledge_base/7-0/service-builder-application-using-external-database-via-jdbc),
+[document-action](/docs/7-0/reference/-/knowledge_base/r/document-action),
+[service-builder/jdbc](/docs/7-0/reference/-/knowledge_base/r/service-builder-application-using-external-database-via-jdbc),
 etc.), which lets OSGi modules supply their own logging configuration defaults
 without external configuration. See the
-[Adjusting Module Logging](/develop/tutorials/-/knowledge_base/7-0/adjusting-module-logging)
+[Adjusting Module Logging](/docs/7-0/tutorials/-/knowledge_base/t/adjusting-module-logging)
 tutorial for more information.
 
 For a list of sample template projects available, visit the

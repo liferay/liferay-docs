@@ -1,4 +1,8 @@
-# Configuring @product@ [](id=configuring-liferay)
+---
+header-id: configuring-liferay
+---
+
+# Configuring @product@
 
 If @product@ is anything, it's configurable. As the core of Liferay is shrinking
 due to its increased modularity<!--Link to modularity docs-->, it's important
@@ -20,7 +24,7 @@ anyone?) configuration options with some new ones (*System Settings* in the
 Control Panel, for example) to configure Liferay, Liferay's applications, and
 any applications added by your enterprise's developers.
 
-## Where Configuration Happens [](id=where-configuration-happens)
+## Where Configuration Happens
 
 Liferay's configuration takes place in the following places: 
 
@@ -38,7 +42,7 @@ the scope you want to affect with the settings you choose.
 At what level do you want to configure Liferay and its apps? Find out about
 configuration scope next.
 
-## Configuration Scope [](id=configuration-scope)
+## Configuration Scope
 
 Scope is an important concept to understand when configuring Liferay. Take
 Language settings, for example. You can set the default language used by the
@@ -53,7 +57,7 @@ portal instances, sites, and portlet instances. At the opposite end of the
 spectrum, configurations made at the *Portlet Instance* level provide
 configuration settings only for that particular instance of the portlet. For
 details on configuring a scope for a particular application instance, visit the
-[Application Scope](/discover/portal/-/knowledge_base/7-0/application-scope)
+[Application Scope](/docs/7-0/user/-/knowledge_base/u/application-scope)
 article. Here's an overview of the available configuration scopes:
 
 *System:* configuring Liferay and its applications through System Settings

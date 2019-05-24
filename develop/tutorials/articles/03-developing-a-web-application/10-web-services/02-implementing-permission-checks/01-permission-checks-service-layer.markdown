@@ -1,4 +1,8 @@
-# Implementing Permission Checks at the Service Layer [](id=implementing-permission-checks-at-the-service-layer)
+---
+header-id: implementing-permission-checks-at-the-service-layer
+---
+
+# Implementing Permission Checks at the Service Layer
 
 <div class="learn-path-step">
     <p>Implementing Permission Checks<br>Step 1 of 2</p>

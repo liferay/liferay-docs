@@ -1,6 +1,10 @@
-# Asset List Screenlet for Android [](id=assetlistscreenlet-for-android)
+---
+header-id: assetlistscreenlet-for-android
+---
 
-## Requirements [](id=requirements)
+# Asset List Screenlet for Android
+
+## Requirements
 
 - Android SDK 4.1 (API Level 16) or above
 - Liferay Portal 6.2 CE/EE, Liferay CE Portal 7.0/7.1, Liferay DXP
@@ -9,16 +13,16 @@
   [EE/DXP](http://www.liferay.com/marketplace/-/mp/application/54369726)). 
   This app is preinstalled in Liferay CE Portal 7.0/7.1 and Liferay DXP. 
 
-## Compatibility [](id=compatibility)
+## Compatibility
 
 - Android SDK 4.1 (API Level 16) or above
 
-## Xamarin Requirements [](id=xamarin-requirements)
+## Xamarin Requirements
 
 - Visual Studio 7.2
 - Mono .NET framework 5.4.1.6
 
-## Features [](id=features)
+## Features
 
 The Asset List Screenlet can be used to show [asset](/tutorials/-/knowledge_base/7-0/asset-framework) 
 lists from a Liferay instance. For example, you can use the Screenlet to show a 
@@ -50,7 +54,7 @@ to the following classes:
 
 The Asset List Screenlet also supports i18n in asset values. 
 
-## JSON Services Used [](id=json-services-used)
+## JSON Services Used
 
 Screenlets in Liferay Screens call JSON web services in the portal. This 
 Screenlet calls the following services and methods.
@@ -61,11 +65,11 @@ Screenlet calls the following services and methods.
 | `ScreensddlrecordService` (Screens compatibility plugin) | `getAssetEntries` | With `companyId`, `groupId`, and `portletItemName` |
 | `AssetEntryService` | `getEntriesCount` |  |
 
-## Module [](id=module)
+## Module
 
 - None
 
-## Views [](id=views)
+## Views
 
 - Default
 - Material
@@ -76,13 +80,13 @@ show the items.
 
 ![Asset List Screenlet using the Default (left) and Material (right) Views.](../../images/screens-android-assetlist.png)
 
-## Portal Configuration [](id=portal-configuration)
+## Portal Configuration
 
 Dynamic Data Lists (DDL) and Data Types should be configured properly in the 
 portal. Refer to the 
-[Creating Data Definitions](/discover/portal/-/knowledge_base/7-0/creating-data-definitions)  
+[Creating Data Definitions](/docs/7-0/user/-/knowledge_base/u/creating-data-definitions)  
 and 
-[Creating Data Lists](/discover/portal/-/knowledge_base/7-0/creating-data-lists) 
+[Creating Data Lists](/docs/7-0/user/-/knowledge_base/u/creating-data-lists) 
 sections of the User Guide for more details.
 
 Also, to allow remote calls without the `userId`, the Liferay Screens 
@@ -90,11 +94,11 @@ Compatibility app must be installed in your Liferay instance. You can find this
 app on 
 [Liferay Marketplace](https://web.liferay.com/marketplace). 
 
-## Offline [](id=offline)
+## Offline
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/docs/7-0/tutorials/-/knowledge_base/t/architecture-of-offline-mode-in-liferay-screens). 
 
 | Policy | What happens | When to use |
 |--------|--------------|-------------|
@@ -103,7 +107,7 @@ connection. For more information on how offline mode works, see the
 | `REMOTE_FIRST` | The Screenlet loads the list from the portal. If this succeeds, the Screenlet shows the list to the user and stores it in the local cache for later use. If a connection issue occurs, the Screenlet retrieves the list from the local cache. If the list doesn't exist there, the Screenlet uses the listener to notify the developer about the error. | Use this policy to show the most recent version of the data when connected, but show an outdated version when there's no connection. |
 | `CACHE_FIRST` | The Screenlet loads the list from the local cache. If the list isn't there, the Screenlet requests it from the portal and notifies the developer about any errors that occur (including connectivity errors). | Use this policy to save bandwidth and loading time in case you have local (but probably outdated) data. |
 
-## Required Attributes [](id=required-attributes)
+## Required Attributes
 
 - `classNameId`
 
@@ -111,28 +115,28 @@ If you don't set `classNameId`, you must set this attribute instead:
 
 - `portletItemName`
 
-## Attributes [](id=attributes)
+## Attributes
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
 | `layoutId` | `@layout` | The layout to use to show the View.|
 | `autoLoad` | `boolean` | Whether the list should be loaded when it's presented on the screen. The default value is `true`. |
 | `groupId` | `number` | The asset's group (site) ID. If this value is `0`, the `groupId` specified in `LiferayServerContext` is used. The default value is `0 `. |
-| `cachePolicy` | `string` | The offline mode setting. See the [Offline section](/develop/reference/-/knowledge_base/7-0/assetlistscreenlet-for-android#offline) for details. |
-| `portletItemName` | `string` | The name of the [configuration template](/discover/portal/-/knowledge_base/7-0/configuration-templates) you used in the Asset Publisher. To use this feature, add an Asset Publisher to one of your site's pages (it may be a hidden page), configure the Asset Publisher's filter (in *Configuration* &rarr; *Setup* &rarr; *Asset Selection*), and then use the Asset Publisher's *Configuration Templates* option to save this configuration with a name. Use this name in this attribute. |
+| `cachePolicy` | `string` | The offline mode setting. See the [Offline section](/docs/7-0/reference/-/knowledge_base/r/assetlistscreenlet-for-android#offline) for details. |
+| `portletItemName` | `string` | The name of the [configuration template](/docs/7-0/user/-/knowledge_base/u/configuration-templates) you used in the Asset Publisher. To use this feature, add an Asset Publisher to one of your site's pages (it may be a hidden page), configure the Asset Publisher's filter (in *Configuration* &rarr; *Setup* &rarr; *Asset Selection*), and then use the Asset Publisher's *Configuration Templates* option to save this configuration with a name. Use this name in this attribute. |
 | `classNameId` | `number` | The asset class name's ID. Use values from the portal's `classname_` database table. |
 | `firstPageSize` | `number` | The number of items to retrieve from the server for display on the list's first page. The default value is `50`. |
 | `pageSize` | `number` | The number of items to retrieve from the server for display on the second and subsequent pages. The default value is `25`. |
-| `labelFields` | `string` | The comma-separated names of the DDL fields to show. Refer to the list's data definition to find the field names. For more information on this, see [Creating Data Definitions](/discover/portal/-/knowledge_base/7-0/creating-data-definitions). Note that the appearance of these values in your app depends on the `layoutId` set. |
+| `labelFields` | `string` | The comma-separated names of the DDL fields to show. Refer to the list's data definition to find the field names. For more information on this, see [Creating Data Definitions](/docs/7-0/user/-/knowledge_base/u/creating-data-definitions). Note that the appearance of these values in your app depends on the `layoutId` set. |
 | `customEntryQuery` | `HashMap` | The set of keys (string) and values (string or number) to be used in the [`AssetEntryQuery` object](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/asset/kernel/service/persistence/AssetEntryQuery.html). These values filter the assets returned by the Liferay instance. | 
 
-## Methods [](id=methods)
+## Methods
 
 | Method | Return | Explanation |
 |-----------|-----------|-------------| 
 | `loadPage(pageNumber)` | `void` | Starts the request to load the specified page of assets. The page is shown when the response is received. |
 
-## Listener [](id=listener)
+## Listener
 
 Asset List Screenlet delegates some events to an object or a class that 
 implements 

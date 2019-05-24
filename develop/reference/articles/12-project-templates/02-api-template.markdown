@@ -1,4 +1,8 @@
-# API Template [](id=api-template)
+---
+header-id: api-template
+---
+
+# API Template
 
 In this tutorial, you'll learn how to create a Liferay API as a Liferay module.
 To create a Liferay API via the command line using Blade CLI or Maven, use one

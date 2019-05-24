@@ -1,8 +1,12 @@
-# Creating Themes with Liferay @ide@ [](id=creating-themes-with-liferay-ide)
+---
+header-id: creating-themes-with-liferay-ide
+---
+
+# Creating Themes with Liferay @ide@
 
 Liferay @ide@ lets you create and configure Liferay theme projects. You can
 create a standalone theme or in a
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace).
+[Liferay Workspace](/docs/7-0/tutorials/-/knowledge_base/t/liferay-workspace).
 You can even create a Gradle or Maven based theme! Read on to learn more about
 creating themes in @ide@.
 
@@ -19,7 +23,7 @@ creating themes in @ide@.
 That's it! You've created a theme project in @ide@!
 
 If you've
-[configured a Liferay Workspace in your @ide@ instance](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace-with-liferay-ide),
+[configured a Liferay Workspace in your @ide@ instance](/docs/7-0/tutorials/-/knowledge_base/t/creating-a-liferay-workspace-with-liferay-ide),
 your theme is available in the workspace's `wars` folder by default. If you
 don't have a workspace configured in @ide@, it's available in the root of
 @ide@'s Project Explorer.
@@ -32,9 +36,9 @@ To modify a theme created in @ide@, mirror the folder structure of the files
 you wish to change and copy them into your theme's `webapp` folder.
 
 Under the hood, @ide@ is using the
-[theme project template](/develop/reference/-/knowledge_base/7-0/theme-template).
+[theme project template](/docs/7-0/reference/-/knowledge_base/r/theme-template).
 If you're interested in creating Liferay themes using the
 Liferay Theme Generator, see its dedicated
-[tutorial](/develop/tutorials/-/knowledge_base/7-0/themes-generator). For more
+[tutorial](/docs/7-0/tutorials/-/knowledge_base/t/themes-generator). For more
 general information on Liferay themes, visit their dedicated tutorial section
-[Themes and Layout Templates](/develop/tutorials/-/knowledge_base/7-0/themes-and-layout-templates).
+[Themes and Layout Templates](/docs/7-0/tutorials/-/knowledge_base/t/themes-and-layout-templates).

@@ -1,4 +1,8 @@
-# Sending Messages [](id=sending-messages)
+---
+header-id: sending-messages
+---
+
+# Sending Messages
 
 Message Bus lets you send messages to destinations that have any number of
 listening classes. As a message sender you don't need to know the message
@@ -18,7 +22,7 @@ Here are the message sending topics:
 
 Start by creating a message. 
 
-## Creating a Message [](id=creating-a-message)
+## Creating a Message
 
 Here's how to create a message:
 
@@ -40,7 +44,7 @@ Here's how to create a message:
 
 Your new message is ready to send. 
 
-## Sending a Message [](id=sending-a-message)
+## Sending a Message
 
 Here are the ways to send a message: 
 
@@ -50,7 +54,7 @@ Here are the ways to send a message:
 
 First, let's consider using Message Bus directly. 
 
-### Directly Using the Message Bus [](id=directly-using-the-message-bus)
+### Directly Using the Message Bus
 
 This method involves obtaining a [`MessageBus` instance](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/MessageBus.html)
 and invoking it to send messages. Here's an example of directly using Message
@@ -78,7 +82,7 @@ Bus to send a message.
 To send messages asynchronously, consider using
 `SingleDestinationMessageSender`.
  
-### Using SingleDestinationMessageSender [](id=using-singledestinationmessagesender)
+### Using SingleDestinationMessageSender
 
 The [`SingleDestinationMessageSender` class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/sender/SingleDestinationMessageSender.html)
 wraps the Message Bus to send messages asynchronously. This class demonstrates
@@ -113,7 +117,7 @@ The `_messageSenderFactory` field's `@Reference` wires it to a
 create a `SingleDestinationMessageSender` for the specified destination, and
 sends the message through the sender. 
 
-### Using a SynchronousMessageSender [](id=using-a-synchronousmessagesender)
+### Using a SynchronousMessageSender
 
 A [`SynchronousMessageSender` instance](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/sender/SynchronousMessageSender.html)
 sends a message to the Message Bus and blocks until receiving a response or the
@@ -157,7 +161,7 @@ And those are the ways to send messages. Next, if you're in a cluster and want
 messages sent to a destination across all nodes, you must register a bridge
 message listener to that destination. 
 
-## Sending Messages Across the Cluster [](id=sending-messages-across-the-cluster)
+## Sending Messages Across the Cluster
 
 To ensure a message sent to a destination is received by all cluster nodes, you
 must register a
@@ -209,8 +213,8 @@ That concludes the tour on sending messages. You've learned how to create
 messages, send messages synchronously and asynchronously, and send messages to a
 destination in a clustered environment. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Messaging Destinations](/develop/tutorials/-/knowledge_base/7-0/messaging-destinations) 
+[Messaging Destinations](/docs/7-0/tutorials/-/knowledge_base/t/messaging-destinations) 
 
-[Message Listeners](/develop/tutorials/-/knowledge_base/7-0/message-listeners)
+[Message Listeners](/docs/7-0/tutorials/-/knowledge_base/t/message-listeners)

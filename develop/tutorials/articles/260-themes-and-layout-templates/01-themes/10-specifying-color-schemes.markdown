@@ -1,4 +1,8 @@
-# Specifying Color Schemes in your Theme [](id=specifying-color-schemes)
+---
+header-id: specifying-color-schemes
+---
+
+# Specifying Color Schemes in your Theme
 
 You can provide various "flavors" of your theme by creating color schemes. Color
 schemes let you keep the styles and overall design for your theme, while giving
@@ -25,12 +29,8 @@ Follow these steps to create color schemes for your theme:
         body.day { background-color: #DDF; }
         .day a { color: #66A; }
 
-    +$$$
-    
-    **Note:** The default color scheme does not require a prefix, as it uses 
-    the theme's `_custom.scss` for styling.
-    
-    $$$
+    | **Note:** The default color scheme does not require a prefix, as it uses
+    | the theme's `_custom.scss` for styling.
 
 4.  Import the color scheme `.scss` files into the `_custom.scss` file. The 
     example below imports `_day.scss` and `_night.scss` files:
@@ -102,13 +102,13 @@ Follow these steps to create color schemes for your theme:
 
 7.  Place a `thumbnail.png` and `screenshot.png` file in each of the color 
     scheme's folders. Make sure thumbnail images follow the specifications 
-    defined in the [Creating a Theme Thumbnail](/develop/tutorials/-/knowledge_base/7-0/creating-a-theme-thumbnail) 
+    defined in the [Creating a Theme Thumbnail](/docs/7-0/tutorials/-/knowledge_base/t/creating-a-theme-thumbnail) 
     tutorial.
 
 There you have it. Now you can go color scheme crazy with your themes!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Layout Templates with the Theme Generator](/develop/tutorials/-/knowledge_base/7-0/creating-layout-templates-with-the-themes-generator-0)
+[Layout Templates with the Theme Generator](/docs/7-0/tutorials/-/knowledge_base/t/creating-layout-templates-with-the-themes-generator-0)
 
-[Creating a Theme Thumbnail](/develop/tutorials/-/knowledge_base/7-0/creating-a-theme-thumbnail)
+[Creating a Theme Thumbnail](/docs/7-0/tutorials/-/knowledge_base/t/creating-a-theme-thumbnail)

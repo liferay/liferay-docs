@@ -1,4 +1,8 @@
-# Development Setup Overview [](id=development-setup-overview)
+---
+header-id: development-setup-overview
+---
+
+# Development Setup Overview
 
 <div class="learn-path-step">
     <p>Development Setup Overview<br>Step 1 of 1</p>
@@ -16,7 +20,7 @@ for installing Liferay @ide@ are
 You'll follow these steps, and then generate an environment for developing your 
 first @product@ application. 
 
-## Installing a Liferay @ide@ Bundle [](id=installing-ide-bundle)
+## Installing a Liferay @ide@ Bundle
 
 To install Liferay @ide@, follow these steps: 
 
@@ -46,14 +50,14 @@ new workspace:
 Nice job! Your development environment is installed and your workspace is set 
 up. 
 
-## Creating a Liferay Workspace [](id=creating-a-liferay-workspace)
+## Creating a Liferay Workspace
 
 Now you'll create another kind of workspace--a 
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace). 
+[Liferay Workspace](/docs/7-0/tutorials/-/knowledge_base/t/liferay-workspace). 
 By holding and managing your @product@ projects, a Liferay Workspace provides a 
 simplified, straightforward way to develop @product@ applications. In the 
 background, a Liferay Workspace uses 
-[Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli) and 
+[Blade CLI](/docs/7-0/tutorials/-/knowledge_base/t/blade-cli) and 
 [Gradle](https://gradle.org/) to manage dependencies and organize your build 
 environment. Note that to avoid configuration issues, you can only create one 
 Liferay Workspace for each Eclipse Workspace. 

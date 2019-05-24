@@ -1,4 +1,8 @@
-# @product@ Failed to Initialize Because the Database Wasn't Ready [](id=portal-failed-to-initialize-because-the-database-wasnt-ready)
+---
+header-id: portal-failed-to-initialize-because-the-database-wasnt-ready
+---
+
+# @product@ Failed to Initialize Because the Database Wasn't Ready
 
 If you start your database server and application server at the same time,
 @product@ might try connecting to the data source before the database is ready.
@@ -17,6 +21,6 @@ retries.
 If at first the connection doesn't succeed, @product@ uses the retry settings to
 try again. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Connecting to JNDI Data Sources](/develop/tutorials/-/knowledge_base/7-0/connecting-to-data-sources-using-jndi)
+[Connecting to JNDI Data Sources](/docs/7-0/tutorials/-/knowledge_base/t/connecting-to-data-sources-using-jndi)

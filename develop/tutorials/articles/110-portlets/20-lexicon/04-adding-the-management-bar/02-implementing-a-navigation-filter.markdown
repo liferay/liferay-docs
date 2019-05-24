@@ -1,4 +1,8 @@
-# Implementing a Management Bar Navigation Filter [](id=implementing-a-management-bar-navigation-filter)
+---
+header-id: implementing-a-management-bar-navigation-filter
+---
+
+# Implementing a Management Bar Navigation Filter
 
 Navigation filters are used to create navigation menus in the Management Bar. 
 You can add as many navigation filters to the Management Bar as your app 
@@ -6,7 +10,7 @@ requires.
 
 You can learn how to configure the navigation filter next.
 
-## Configuring the Navigation Filter [](id=configuring-the-navigation-filter)
+## Configuring the Navigation Filter
 
 Follow these steps to configure the navigation filter:
 
@@ -70,8 +74,8 @@ Follow these steps to configure the navigation filter:
 
 Now you know how to add navigation filters to a management bar!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Implementing a Management Bar Sort Filter](/develop/tutorials/-/knowledge_base/7-0/implementing-a-management-bar-sort-filter)
+[Implementing a Management Bar Sort Filter](/docs/7-0/tutorials/-/knowledge_base/t/implementing-a-management-bar-sort-filter)
 
-[Implementing the Management Bar Display Styles](/develop/tutorials/-/knowledge_base/7-0/implementing-the-management-bar-display-styles)
+[Implementing the Management Bar Display Styles](/docs/7-0/tutorials/-/knowledge_base/t/implementing-the-management-bar-display-styles)

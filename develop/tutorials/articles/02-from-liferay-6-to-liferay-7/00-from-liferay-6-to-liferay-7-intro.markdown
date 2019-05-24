@@ -1,4 +1,8 @@
-# From Liferay Portal 6 to 7 [](id=from-liferay-6-to-liferay-7)
+---
+header-id: from-liferay-6-to-liferay-7
+---
+
+# From Liferay Portal 6 to 7
 
 Becoming familiar with a platform as large and fully featured as Liferay is  a
 big task. You learn the ins and outs of what it can do, the tips and best
@@ -29,14 +33,10 @@ your existing plugins for @product-ver@.
 In the end, we believe you'll both want to adopt @product-ver@, and you'll see
 how you can thrive using it. 
 
-+$$$
-
-**Note**: If you want to learn about @product-ver@'s architectural improvements,
-OSGi and modularity, and tooling improvements, read on. If you're more
-interested in upgrading your plugins first, skip to
-[Planning Plugin Upgrades and Optimizations](/develop/tutorials/-/knowledge_base/7-0/migrating-existing-code-to-liferay-7). 
-
-$$$
+| **Note**: If you want to learn about @product-ver@'s architectural improvements,
+| OSGi and modularity, and tooling improvements, read on. If you're more
+| interested in upgrading your plugins first, skip to
+| [Planning Plugin Upgrades and Optimizations](/docs/7-0/tutorials/-/knowledge_base/t/migrating-existing-code-to-liferay-7).
 
 You'll start by seeing the familiar, good things that remain the same and then
 examine what's changed the most since Liferay Portal 6. 

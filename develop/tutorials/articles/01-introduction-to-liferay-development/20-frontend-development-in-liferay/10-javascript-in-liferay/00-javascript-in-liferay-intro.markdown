@@ -1,4 +1,8 @@
-# JavaScript in @product@ [](id=javascript-in-liferay)
+---
+header-id: javascript-in-liferay
+---
+
+# JavaScript in @product@
 
 @product@'s front-end is extendable, flexible, and future ready.
 
@@ -7,7 +11,7 @@ AlloyUI is based on [YUI](http://yuilibrary.com/), and is no longer under active
 development. Because of this, we have included [jQuery](https://jquery.com) 
 and also have developed a new framework called [MetalJS](http://metaljs.com).
 
-## MetalJS [](id=metaljs)
+## MetalJS
 
 Metal.js is a JavaScript library for building UI components in a solid and 
 flexible way. Metal is built from the ground up with performance in mind and is
@@ -19,18 +23,18 @@ which provides you with clean code that's easy-to-read.
 
 For more information see the [Metal.js docs](http://metaljs.com/docs/).
 
-## ES2015 [](id=es2015)
+## ES2015
 
 [ECMAScript 6 (ES6)/ ECMAScript 2015 (ES2015)](http://www.ecma-international.org/ecma-262/6.0/) 
 is enabled by default in your plugins, so you can write your own modules using 
 the latest improvements to the language.
 
 You can learn more about how to leverage ES6 in your modules in the 
-[Preparing Your JavaScript Files for ES2015](/develop/tutorials/-/knowledge_base/7-0/preparing-your-javascript-files-for-es2015) 
-and [Using ES2015 Modules in your Portlet](/develop/tutorials/-/knowledge_base/7-0/using-es2015-modules-in-your-portlet) 
+[Preparing Your JavaScript Files for ES2015](/docs/7-0/tutorials/-/knowledge_base/t/preparing-your-javascript-files-for-es2015) 
+and [Using ES2015 Modules in your Portlet](/docs/7-0/tutorials/-/knowledge_base/t/using-es2015-modules-in-your-portlet) 
 tutorials.
 
-## AlloyUI [](id=alloyui)
+## AlloyUI
 
 AlloyUI is an open source front-end framework built on top of 
 [Yahoo! User Interface Library (YUI)](http://yuilibrary.com). It leverages all 
@@ -47,7 +51,7 @@ product and actively maintained.
 
 ![Figure 2: AlloyUI is sunsetted as of @product-ver@.](../../../../images/alloyui-website.png)
 
-## jQuery [](id=jquery)
+## jQuery
 
 jQuery is a cross-platform JavaScript library designed to simplify the 
 client-side scripting of HTML. It is the most popular JavaScript library in use 

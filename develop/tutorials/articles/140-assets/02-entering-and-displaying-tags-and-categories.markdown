@@ -1,10 +1,14 @@
-# Implementing Asset Categorization and Tagging [](id=implementing-asset-categorization-and-tagging)
+---
+header-id: implementing-asset-categorization-and-tagging
+---
+
+# Implementing Asset Categorization and Tagging
 
 In this tutorial, you'll allow content authors the ability to specify tags and
 categories for their entities in the UI. Liferay provides a set of JSP tags for
 showing category and tag inputs in your UI. Before beginning, your entities
 should be
-[asset-enabled](/develop/tutorials/-/knowledge_base/7-0/adding-updating-and-deleting-assets-for-custom-entities)
+[asset-enabled](/docs/7-0/tutorials/-/knowledge_base/t/adding-updating-and-deleting-assets-for-custom-entities)
 and you should have asset renderers enabled for them.
 
 ![Figure 1: Adding category and tag input options lets authors aggregate and label custom entities.](../../images/asset-fw-categories-and-tags-options.png)
@@ -80,10 +84,10 @@ categorization and tag input options in a panel that the user can hide/show.
 Great! Now you know how to make category and tag input options available to your
 app's content authors. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Relating Assets](/develop/tutorials/-/knowledge_base/7-0/relating-assets)
+[Relating Assets](/docs/7-0/tutorials/-/knowledge_base/t/relating-assets)
 
-[Adding, Updating, and Deleting Assets for Custom Entities](/develop/tutorials/-/knowledge_base/7-0/adding-updating-and-deleting-assets-for-custom-entities)
+[Adding, Updating, and Deleting Assets for Custom Entities](/docs/7-0/tutorials/-/knowledge_base/t/adding-updating-and-deleting-assets-for-custom-entities)
 
-[What is Service Builder?](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
+[What is Service Builder?](/docs/7-0/tutorials/-/knowledge_base/t/what-is-service-builder)

@@ -1,11 +1,15 @@
-# Adding and Managing Users [](id=adding-and-managing-users)
+---
+header-id: adding-and-managing-users
+---
+
+# Adding and Managing Users
 
 Users are a fundamental entity in Liferay. If your portal requires people (even
 just a set of site administrators) to have an account that they sign into to do
 anything in the portal, you need to know about users. If your users are at all
 divided hierarchically, like into departments, you might find Organizations
 helpful. See the article on
-[organizations](/discover/portal/-/knowledge_base/6-2/the-users-section-of-the-control-panel)
+[organizations](/docs/6-2/user/-/knowledge_base/u/the-users-section-of-the-control-panel)
 for more information.
 
 Whether or not you've ever used Liferay before, you're probably not surprised to
@@ -28,7 +32,7 @@ internal website.
 The user tasks listed above are all resolved in the Users and Organizations
 section of the Control Panel.
 
-## What are Users? [](id=what-are-users)
+## What are Users?
 
 In case there's any confusion over the term, a User in Liferay is an entity that
 can sign into the portal and do something. Generally a User has more
@@ -48,7 +52,7 @@ collections, such as sites or roles. User groups may also be used to customize
 personal site templates for members.
 
 -->
-## Adding Users [](id=adding-users)
+## Adding Users
 
 As the Lunar Resort Administrative user, you can add Users to the portal. 
 
@@ -77,7 +81,7 @@ more information about the user. You don't have to fill anything else out right
 now. Just note that when the user account was created, a password was
 automatically generated. If Liferay was correctly installed and a mail server
 was set up (see
-[here](/discover/portal/-/knowledge_base/6-2/server-administration#mail)), an
+[here](/docs/6-2/user/-/knowledge_base/u/server-administration#mail)), an
 email message with the user's new password was sent to the user's email address.
 This, of course, requires that Liferay can properly communicate with your SMTP
 mail server.
@@ -88,27 +92,23 @@ new user. Enter the new password twice.
 
 ![Figure 3: Enter the password twice to manually set the password for a user. If the Password Policy you're using is configured to allow it, select whether to require the user to reset their password the first time they sign in to the portal.](../../images/usrmgmt-require-password-reset.png)
 
-+$$$
-
-**Note:** See the *Require Password Reset* checkbox at the bottom of the
-Password form? The default password policy is set so that even you, the
-administrator, cannot deselect it. As the administrator, however, you do have
-the ability to modify the default password policy so that this box becomes
-usable. Navigate to Password Policies in the Control Panel, click on the Default
-Password Policy, and deselect the *Change Required* checkbox. Now you can decide
-whether each user you add will need to reset their password. 
-
-See the article on Password Policies for more information on editing the default
-policy or creating your own.
-
-$$$
+| **Note:** See the *Require Password Reset* checkbox at the bottom of the
+| Password form? The default password policy is set so that even you, the
+| administrator, cannot deselect it. As the administrator, however, you do have
+| the ability to modify the default password policy so that this box becomes
+| usable. Navigate to Password Policies in the Control Panel, click on the Default
+| Password Policy, and deselect the *Change Required* checkbox. Now you can decide
+| whether each user you add will need to reset their password.
+| 
+| See the article on Password Policies for more information on editing the default
+| policy or creating your own.
 
 If you haven't yet set up a mail server, use this page to change the default
 password for your user account to something you can remember. Clicking on the
 *Password* link in the navigation pane on the right opens the Password section
 of the Add User form. Enter the new password twice and click *Save*. 
 
-### Adding an Administrative User [](id=adding-an-administrative-user)
+### Adding an Administrative User
 
 What if you are just setting up the Lunar Resort portal for the first time, and
 you're using the default administrator account, the account of one of those
@@ -120,17 +120,13 @@ the default administrator's account, click the *Roles* link in the right
 navigation pane. This page of the form shows the roles to which your account is
 currently assigned. You should have one role: Power User. 
 
-+$$$
-
-**Note:** By default, all users are assigned the Power User role. The Power User
-role doesn't grant any special permissions. It can safely be ignored.
-Alternatively, it can be used to extend the User role. If there are certain
-custom permissions that you'd like all of your portal users to have, you can
-grant these custom permissions to the Power User role. You can also customize
-the default roles a new user receives via *Default User Associations*. This is
-covered in the article on Portal Settings.
-
-$$$
+| **Note:** By default, all users are assigned the Power User role. The Power User
+| role doesn't grant any special permissions. It can safely be ignored.
+| Alternatively, it can be used to extend the User role. If there are certain
+| custom permissions that you'd like all of your portal users to have, you can
+| grant these custom permissions to the Power User role. You can also customize
+| the default roles a new user receives via *Default User Associations*. This is
+| covered in the article on Portal Settings.
 
 Assign the Administrator role to our user account. On the form for
 editing a user, after having clicked on *Roles* at the right side of the screen,
@@ -142,16 +138,12 @@ which is at the bottom of the blue bar of links on the right side of the screen.
 You are now a portal administrator. Log out of the portal and then log back in
 with your own user account. 
 
-+$$$
-
-In production, you should always delete or disable the default administrator
-account to secure your portal.
-
-$$$
+| In production, you should always delete or disable the default administrator
+| account to secure your portal.
 
 Next, let's look at some other aspects of user management. 
 
-## Editing Users [](id=editing-users)
+## Editing Users
 
 If you click on *Users and Organizations* in the Control Panel, you'll see your
 own user's account in the list of users, along with any others. If you want to
@@ -190,7 +182,7 @@ Note that most users can't perform most of the above actions. In fact, most
 users won't have access to the Control Panel at all. You can perform all of the
 above functions because you have administrative access.
 
-## User Images [](id=user-images)
+## User Images
 
 Users in @product@ have avatars. Administrative users can upload images in the
 Edit User form. 
@@ -215,7 +207,7 @@ initials in the default avatars. Just enter
     users.image.default.use.initials=false
 
 in a `portal-ext.properties` file placed in your 
-[Liferay Home](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home) 
+[Liferay Home](/docs/7-0/deploy/-/knowledge_base/d/installing-product#liferay-home) 
 folder. Once you restart @product@, the new default images will be used to
 generate user avatars.
 

@@ -1,4 +1,8 @@
-# Modularizing an Existing Portlet [](id=modularizing-an-existing-portlet)
+---
+header-id: modularizing-an-existing-portlet
+---
+
+# Modularizing an Existing Portlet
 
 An application with properly modularized plugins offers several benefits. You
 can release individually its plugins without releasing the entire application.
@@ -26,7 +30,7 @@ source versions of Liferay.
 
 The first thing you'll do is create your application's web (client) module.
 
-## Converting Your Application's Portlet Classes and UI [](id=converting-your-applications-portlet-classes-and-ui)
+## Converting Your Application's Portlet Classes and UI
 
 The first thing you'll do is create your application's parent directory and the
 directory structure for your application's *web* client module. This module
@@ -39,30 +43,26 @@ modules for your service implementation and service API classes. This tutorial
 assumes the Maven project model, although any build tools or directory setup is
 permissible.
 
-+$$$
-
-**Note:** It's recommended that you use the build plugin versions that support
-the latest OSGi features. The following Gradle or Maven build plugin versions
-should be used in their respective build frameworks:
-
-**Gradle**
-- biz.aQute.bnd:biz.aQute.bnd.gradle:3.1.0 **or**
-- org.dm.gradle:gradle-bundle-plugin:0.8.1
-
-**Maven**
-- biz.aQute.bnd:bnd-maven-plugin:3.1.0 **or**
-- org.apache.felix:maven-bundle-plugin:3.0.1
-
-<!-- These versions support the R6 OSGi released features. -Cody -->
-
-$$$
+| **Note:** It's recommended that you use the build plugin versions that support
+| the latest OSGi features. The following Gradle or Maven build plugin versions
+| should be used in their respective build frameworks:
+| 
+| **Gradle**
+| - biz.aQute.bnd:biz.aQute.bnd.gradle:3.1.0 **or**
+| - org.dm.gradle:gradle-bundle-plugin:0.8.1
+| 
+| **Maven**
+| - biz.aQute.bnd:bnd-maven-plugin:3.1.0 **or**
+| - org.apache.felix:maven-bundle-plugin:3.0.1
+| 
+| <!-- These versions support the R6 OSGi released features. -Cody -->
 
 1.  Create your application's parent folder. It is home for your application's
     independent modules and configuration files. For example, if your
     application's name is *Tasks*, then your parent folder could be *tasks*.
     
     If your application uses Liferay Service Builder, use the following
-    [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli)
+    [Blade CLI](/docs/7-0/tutorials/-/knowledge_base/t/blade-cli)
     command to generate the parent folder and service implementation and service
     API modules in it. If the parent folder already exists, it must be empty.
     This command names the parent folder after the `APPLICATION_NAME`: 
@@ -74,7 +74,7 @@ $$$
 
 2.  Create the folder structure for your web client module. You can do this 
     automatically by using Blade CLI. The 
-    [portlet tutorials](/develop/tutorials/-/knowledge_base/7-0/portlets)
+    [portlet tutorials](/docs/7-0/tutorials/-/knowledge_base/t/portlets)
     demonstrate creating all different kinds of portlets.
 
     Navigate to your parent directory (e.g., `tasks`) and run the following
@@ -137,13 +137,13 @@ $$$
         Web-ContextPath: /journal-web
 
 6.  Open the `build.gradle` file. This is used to [specify all your module's
-    dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies).
+    dependencies](/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies).
     The `build.gradle` file that was generated for you is pre-populated with
     content and default dependencies related to OSGi and @product@. In the
     `dependencies {...}` block, you need to add the web client module's
     dependencies. To learn how to find and specify dependencies on Liferay API
     modules, refer to the reference document 
-    [Finding Liferay API Modules](/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules). 
+    [Finding Liferay API Modules](/docs/7-0/reference/-/knowledge_base/r/finding-liferay-api-modules). 
     When deploying your module into the OSGi container, OSGi checks if the
     dependencies are available in the container. If the dependencies are not
     available in the container, your module will be unavailable. Therefore, your
@@ -186,13 +186,9 @@ $$$
                 - [classes]
         - ...
 
-    +$$$
-
-    **Note:** Many applications have service and API classes. These classes
-    need to live in separate implementation and API modules. You'll learn more
-    about creating these later in this tutorial.
-
-    $$$
+    | **Note:** Many applications have service and API classes. These classes
+    | need to live in separate implementation and API modules. You'll learn more
+    | about creating these later in this tutorial.
 
 9.  Now that you have the necessary classes in your client module, you need to
     edit these classes to be compliant with OSGi. First, you need to choose a
@@ -280,7 +276,7 @@ applications, such as Liferay Service Builder applications, require additional
 modules to hold their service API and service implementation logic. You'll
 learn how to create these modules next.
 
-## Converting Your Application's Service Builder API and Implementation [](id=converting-your-applications-service-builder-api-and-implementation)
+## Converting Your Application's Service Builder API and Implementation
 
 In this section, you'll learn about converting a Liferay Portal 6 Service Builder
 application to a @product-ver@ style application. In the previous section, you
@@ -376,7 +372,7 @@ implementation code.
     SQL, Hibernate, Spring, etc.), depending on your `buildService {...)`
     block's configuration. For more information on configuration options for the
     Service Builder plugin, see the
-    [Service Builder Gradle Plugin](/develop/reference/-/knowledge_base/7-0/service-builder-gradle-plugin)
+    [Service Builder Gradle Plugin](/docs/7-0/reference/-/knowledge_base/r/service-builder-gradle-plugin)
     reference article.
 
 6.  Now that you've run Service Builder, continue copying custom classes into
@@ -426,7 +422,7 @@ Excellent! You've successfully generated your application's services using
 Service Builder. They now reside in modules, and can be deployed to
 @product-ver@.
 
-## Building Your Module JARs for Deployment [](id=building-your-module-jars-for-deployment)
+## Building Your Module JARs for Deployment
 
 Now it's time to build your modules and deploy them to your @product@ instance.
 To build your project, run `gradlew build` from your project's root directory.
@@ -436,18 +432,14 @@ folders. There should be a newly generated JAR file in each, which is the file
 you'll need to deploy to @product@. You can deploy each JAR by running `blade
 deploy` from each module's root directory.
 
-+$$$
-
-**Note:** If you deploy your modules out of order, you might receive error
-messages. For instance, if you try deploying your web client module first,
-you'll receive errors if it relies on the service implementation and service
-API modules. Once each module's dependencies are met, they will successfully be
-deployed for use in Liferay. For more information on checking each module's
-dependencies, see the
-[Using the Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell)
-article.
-
-$$$
+| **Note:** If you deploy your modules out of order, you might receive error
+| messages. For instance, if you try deploying your web client module first,
+| you'll receive errors if it relies on the service implementation and service
+| API modules. Once each module's dependencies are met, they will successfully be
+| deployed for use in Liferay. For more information on checking each module's
+| dependencies, see the
+| [Using the Felix Gogo Shell](/docs/7-0/reference/-/knowledge_base/r/using-the-felix-gogo-shell)
+| article.
 
 Once you've successfully deployed your modules, you can list them from the Gogo
 shell as shown below.
@@ -469,8 +461,8 @@ how to
 
 Great job!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Portlets](/develop/tutorials/-/knowledge_base/7-0/portlets)
+[Portlets](/docs/7-0/tutorials/-/knowledge_base/t/portlets)
 
-[Service Builder](/develop/tutorials/-/knowledge_base/7-0/service-builder)
+[Service Builder](/docs/7-0/tutorials/-/knowledge_base/t/service-builder)

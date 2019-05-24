@@ -1,4 +1,8 @@
-# Look and Feel Configuration [](id=look-and-feel-configuration)
+---
+header-id: look-and-feel-configuration
+---
+
+# Look and Feel Configuration
 
 An administrator can access the look and feel configuration menu of any @product@
 application by clicking on the *Options* icon
@@ -35,20 +39,16 @@ default. This is intended to be an elegant way to show web content articles'
 full view from the Asset Publisher. If you use the View in a Specific Portlet
 feature or web content articles' Display Page attribute, you must be careful
 since it redirects all links and not just links to assets. See the 
-[Configuring Display Settings](/discover/portal/-/knowledge_base/7-0/publishing-assets#configuring-display-settings)
+[Configuring Display Settings](/docs/7-0/user/-/knowledge_base/u/publishing-assets#configuring-display-settings)
 article for more details.
 
 <!--
 Check that below note is valid for 7.0. This functionality is still available.
 -Cody
 
-+$$$
-
-**Note:** The *Link Portlet URLs to Page* menu is deprecated for Liferay Portal 6.2 and
-will be removed in @product-ver@. The functionality of this menu can also be found
-in the Asset Publisher. 
-
-$$$
+| **Note:** The *Link Portlet URLs to Page* menu is deprecated for Liferay Portal 6.2 and
+| will be removed in @product-ver@. The functionality of this menu can also be found
+| in the Asset Publisher.
 -->
 
 You can also choose whether or not to apply application decorators to your app.

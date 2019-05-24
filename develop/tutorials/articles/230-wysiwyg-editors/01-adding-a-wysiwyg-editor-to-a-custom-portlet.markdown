@@ -1,4 +1,8 @@
-# Adding a WYSIWYG Editor to a Portlet [](id=adding-a-wysiwyg-editor-to-a-portlet)
+---
+header-id: adding-a-wysiwyg-editor-to-a-portlet
+---
+
+# Adding a WYSIWYG Editor to a Portlet
 
 It's easy to include WYSIWYG editors in your portlet, thanks to the 
 `<liferay-ui:input-editor />` tag. Below is an example configuration:
@@ -66,10 +70,10 @@ for the complete list of supported attributes.
 
 As you can see, it's easy to include WYSIWYG editors in your portlets! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Adding New Behavior to an Editor](/develop/tutorials/-/knowledge_base/7-0/adding-new-behavior-to-an-editor)
+[Adding New Behavior to an Editor](/docs/7-0/tutorials/-/knowledge_base/t/adding-new-behavior-to-an-editor)
 
-[Modifying an Editor's Configuration](/develop/tutorials/-/knowledge_base/7-0/modifying-an-editors-configuration)
+[Modifying an Editor's Configuration](/docs/7-0/tutorials/-/knowledge_base/t/modifying-an-editors-configuration)
 
-[Using the Liferay UI Taglib](/develop/tutorials/-/knowledge_base/7-0/using-the-liferay-ui-taglib)
+[Using the Liferay UI Taglib](/docs/7-0/tutorials/-/knowledge_base/t/using-the-liferay-ui-taglib)

@@ -1,11 +1,15 @@
-# Theme Builder Gradle Plugin [](id=theme-builder-gradle-plugin)
+---
+header-id: theme-builder-gradle-plugin
+---
+
+# Theme Builder Gradle Plugin
 
 The Theme Builder Gradle plugin lets you run the [Liferay Theme Builder](https://github.com/liferay/liferay-portal/tree/master/modules/util/portal-tools-theme-builder)
 tool to build the Liferay theme files in your project.
 
 The plugin has been successfully tested with Gradle 4.10.2.
 
-## Usage [](id=usage)
+## Usage
 
 To use the plugin, include it in your build script:
 
@@ -41,7 +45,7 @@ repositories {
 }
 ```
 
-## Tasks [](id=tasks)
+## Tasks
 
 The plugin adds one task to your project:
 
@@ -79,7 +83,7 @@ Property Name | Default Value
 [`themeName`](#themename) | `project.name`
 [`unstyledFile`](#unstyledfile) | The first JAR file in the [`parentThemes`](#parent-theme-dependencies) configuration that contains a `META-INF/resources/_unstyled` directory.
 
-### BuildThemeTask [](id=buildthemetask)
+### BuildThemeTask
 
 Tasks of type `BuildThemeTask` extend [`JavaExec`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html),
 so all its properties and methods, such as [`args`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:args\(java.css.Iterable\))
@@ -92,7 +96,7 @@ Property Name | Default Value
 [`classpath`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:classpath) | [`project.configurations.themeBuilder`](#liferay-theme-builder-dependency)
 [`main`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:main) | `"com.liferay.portal.tools.theme.builder.ThemeBuilder"`
 
-#### Task Properties [](id=task-properties)
+#### Task Properties
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -110,11 +114,11 @@ The properties of type `File` support any type that can be resolved by [`project
 Moreover, it is possible to use Closures and Callables as values for the
 `String` properties to defer evaluation until task execution.
 
-## Additional Configuration [](id=additional-configuration)
+## Additional Configuration
 
 There are additional configurations that can help you use the CSS Builder.
 
-### Liferay Theme Builder Dependency [](id=liferay-theme-builder-dependency)
+### Liferay Theme Builder Dependency
 
 By default, the plugin creates a configuration called `themeBuilder` and adds a
 dependency to the latest released version of the Liferay Theme Builder. It is
@@ -127,7 +131,7 @@ dependencies {
 }
 ```
 
-### Parent Theme Dependencies [](id=parent-theme-dependencies)
+### Parent Theme Dependencies
 
 By default, the plugin creates a configuration called `parentThemes` and adds
 dependencies to the latest released versions of the
@@ -147,13 +151,13 @@ dependencies {
 ```
 
 Specifying dependency versions is not required when leveraging workspace's
-[Target Platform](/develop/tutorials/-/knowledge_base/7-0/managing-the-target-platform-for-liferay-workspace)
+[Target Platform](/docs/7-0/tutorials/-/knowledge_base/t/managing-the-target-platform-for-liferay-workspace)
 functionality. All dependencies with the group ID `com.liferay` or
 `com.liferay.portal` are automatically set when targeting a platform. For
 external theme dependencies (e.g., `classic-theme` with the group ID
 `com.liferay.plugins`), you can find the version used by your specific @product@
 instance by leveraging the
-[Gogo shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell).
+[Gogo shell](/docs/7-0/reference/-/knowledge_base/r/using-the-felix-gogo-shell).
 In a Gogo shell prompt, execute the following command:
 
     lb -s theme

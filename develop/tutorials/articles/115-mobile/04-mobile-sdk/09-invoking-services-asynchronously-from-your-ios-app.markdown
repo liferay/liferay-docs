@@ -1,4 +1,8 @@
-# Invoking Services Asynchronously from Your iOS App [](id=invoking-services-asynchronously-from-your-ios-app)
+---
+header-id: invoking-services-asynchronously-from-your-ios-app
+---
+
+# Invoking Services Asynchronously from Your iOS App
 
 The main drawback of using synchronous requests from your app is that each 
 request must terminate before another can begin. If you're sending a large 
@@ -17,7 +21,7 @@ requests in your iOS app:
 
 Objective-C is used in the code snippets that follow. Let the requesting begin! 
 
-## Implementing Your Callback Class [](id=implementing-your-callback-class)
+## Implementing Your Callback Class
 
 To configure asynchronous requests, first create a class that conforms to the 
 `LRCallback` protocol. When implementing this callback class, you need to 
@@ -58,11 +62,11 @@ entries from a Blogs portlet. The service method for this call is
     
 Awesome! Now you have a callback class that you can use with the session.
 
-## Set the Callback to the Session [](id=set-the-callback-to-the-session)
+## Set the Callback to the Session
 
 Next, create an instance of this callback and set it to the session. If you 
 haven't created a session yet, do so now. The tutorial 
-[Invoking Liferay Services in Your iOS App](/develop/tutorials/-/knowledge_base/7-0/invoking-liferay-services-in-your-ios-app) 
+[Invoking Liferay Services in Your iOS App](/docs/7-0/tutorials/-/knowledge_base/t/invoking-liferay-services-in-your-ios-app) 
 shows you how to create a session. Now you're ready to set the callback to the 
 session. For example, this is done here for `BlogsEntriesCallback`: 
 
@@ -72,12 +76,12 @@ session. For example, this is done here for `BlogsEntriesCallback`:
 
 Pretty simple! Now you're ready to make the service call.
 
-## Making the Service Call [](id=making-the-service-call)
+## Making the Service Call
 
 Last but certainly not least, make the service call. This is done the same as 
 calling any other service: create a service object from the session and use it 
 to make the service call. This is also described in the tutorial 
-[Invoking Liferay Services in Your iOS App](/develop/tutorials/-/knowledge_base/7-0/invoking-liferay-services-in-your-ios-app). 
+[Invoking Liferay Services in Your iOS App](/docs/7-0/tutorials/-/knowledge_base/t/invoking-liferay-services-in-your-ios-app). 
 Here, an example service call that gets all the blog entries from a site's Blogs 
 portlet is shown: 
 
@@ -90,7 +94,7 @@ your callback is invoked with the results on the main UI thread.
 Great! Now you know how to make asynchronous requests in your iOS apps. However, 
 there's another way to accomplish the same thing. This is discussed next. 
 
-## Using Blocks as Callbacks [](id=using-blocks-as-callbacks)
+## Using Blocks as Callbacks
 
 Instead of implementing a separate callback class, you can use an Objective-C 
 block as a callback. An example of this is shown here for an asynchronous call 
@@ -121,8 +125,8 @@ blocks works the same way as described in the previous sections.
 Super! Now you know two different ways to make asynchronous service requests in 
 your iOS apps. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Invoking Liferay Services in Your iOS App](/develop/tutorials/-/knowledge_base/7-0/invoking-liferay-services-in-your-ios-app)
+[Invoking Liferay Services in Your iOS App](/docs/7-0/tutorials/-/knowledge_base/t/invoking-liferay-services-in-your-ios-app)
 
-[Creating Android Apps that Use the Mobile SDK](/develop/tutorials/-/knowledge_base/7-0/creating-android-apps-that-use-the-mobile-sdk)
+[Creating Android Apps that Use the Mobile SDK](/docs/7-0/tutorials/-/knowledge_base/t/creating-android-apps-that-use-the-mobile-sdk)

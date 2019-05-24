@@ -1,4 +1,8 @@
-# Understanding The State Object's Architecture [](id=understanding-the-state-object-architecture)
+---
+header-id: understanding-the-state-object-architecture
+---
+
+# Understanding The State Object's Architecture
 
 An example `STATE` object configuration appears below:
 
@@ -37,8 +41,8 @@ the final value.
 
 Now you know the `STATE` object's architecture and how to configure it!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Configuring Portlet Template Parameter State Properties](/develop/tutorials/-/knowledge_base/7-0/configuring-portlet-template-parameter-state-properties)
+[Configuring Portlet Template Parameter State Properties](/docs/7-0/tutorials/-/knowledge_base/t/configuring-portlet-template-parameter-state-properties)
 
-[Configuring Soy Portlet Template Parameters on the Client Side](/develop/tutorials/-/knowledge_base/7-0/configuring-soy-portlet-template-parameters-on-the-client-side)
+[Configuring Soy Portlet Template Parameters on the Client Side](/docs/7-0/tutorials/-/knowledge_base/t/configuring-soy-portlet-template-parameters-on-the-client-side)

@@ -1,11 +1,15 @@
-# Using Entry List Screenlet [](id=using-entry-list-screenlet-ios)
+---
+header-id: using-entry-list-screenlet-ios
+---
+
+# Using Entry List Screenlet
 
 You'll use Entry List Screenlet the same way you use any Screenlet: insert it in 
 a storyboard scene, then conform the scene's view controller class to the 
 Screenlet's delegate protocol. You'll follow these steps now to use Entry List 
 Screenlet in the entries scene. 
 
-## Adding Entry List Screenlet to the Entries Scene [](id=adding-entry-list-screenlet-to-the-entries-scene)
+## Adding Entry List Screenlet to the Entries Scene
 
 Follow these steps to add Entry List Screenlet to the entries scene: 
 
@@ -30,7 +34,7 @@ Follow these steps to add Entry List Screenlet to the entries scene:
 Great! The entries scene now contains Entry List Screenlet. Next, you'll conform 
 the scene's view controller class to the Screenlet's delegate. 
 
-## Conforming to the Screenlet's Delegate Protocol [](id=conforming-to-the-screenlets-delegate-protocol)
+## Conforming to the Screenlet's Delegate Protocol
 
 To respond to Entry List Screenlet's events, `EntriesViewController` must 
 conform to the `EntryListScreenletDelegate` protocol. You created this delegate 
@@ -148,4 +152,4 @@ leverage @product@. Although you learned a great deal in this Learning Path,
 there's still more. You can customize your Screenlet's appearance, package 
 Screenlets and Themes for redistribution, and even add multiple actions to a 
 Screenlet. These topics, and more, are covered in 
-[the tutorials on iOS apps with Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/ios-apps-with-liferay-screens). 
+[the tutorials on iOS apps with Liferay Screens](/docs/7-0/tutorials/-/knowledge_base/t/ios-apps-with-liferay-screens). 

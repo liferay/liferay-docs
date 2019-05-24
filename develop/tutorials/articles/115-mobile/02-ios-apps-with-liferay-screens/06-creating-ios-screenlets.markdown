@@ -1,7 +1,11 @@
-# Creating iOS Screenlets [](id=creating-ios-screenlets)
+---
+header-id: creating-ios-screenlets
+---
+
+# Creating iOS Screenlets
 
 The built-in
-[Screenlets](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-ios)
+[Screenlets](/docs/7-0/reference/-/knowledge_base/r/screenlets-in-liferay-screens-for-ios)
 cover common use cases for mobile apps that use Liferay. They
 authenticate users, interact with Dynamic Data Lists, display assets, and more.
 What if, however, there's no Screenlet for *your* use case? No problem! You can
@@ -20,9 +24,9 @@ In general, you use the following steps to create Screenlets:
 2. Create Your Screenlet's UI (its Theme): Although this tutorial presents all 
    the information you need to create a Theme for your Screenlet, you may first 
    want to learn the steps for 
-   [creating a Theme](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes). 
+   [creating a Theme](/docs/7-0/tutorials/-/knowledge_base/t/creating-ios-themes). 
    For more information on Themes in general, see 
-   [the tutorial on using Themes with Screenlets](/develop/tutorials/-/knowledge_base/7-0/using-themes-in-ios-screenlets). 
+   [the tutorial on using Themes with Screenlets](/docs/7-0/tutorials/-/knowledge_base/t/using-themes-in-ios-screenlets). 
 
 3. Create the Screenlet's Interactor. Interactors are Screenlet components that 
    make server calls. 
@@ -33,12 +37,12 @@ In general, you use the following steps to create Screenlets:
 
 Before getting started, make sure that you're familiar with the architecture of 
 Liferay Screens. 
-[Click here](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-ios) 
+[Click here](/docs/7-0/tutorials/-/knowledge_base/t/architecture-of-liferay-screens-for-ios) 
 to read the Screens architecture tutorial. 
 
 Without further ado, let the Screenlet creation begin! 
 
-## Planning Your Screenlet [](id=planning-your-screenlet)
+## Planning Your Screenlet
 
 Before creating your Screenlet, you must determine what it needs to do and how 
 you want developers to use it. This determines where you'll create your 
@@ -48,7 +52,7 @@ Where you should create your Screenlet depends on how you plan to use it. If you
 want to reuse or redistribute it, you should create it in an empty Cocoa Touch
 Framework project in Xcode. You can then use CocoaPods to publish it. The 
 tutorial 
-[Packaging iOS Themes](/develop/tutorials/-/knowledge_base/7-0/packaging-ios-themes)
+[Packaging iOS Themes](/docs/7-0/tutorials/-/knowledge_base/t/packaging-ios-themes)
 explains how to publish an iOS Screenlet. Even though that tutorial refers to
 Themes, the steps for preparing Screenlets for publication are the same. If you
 don't plan to reuse or redistribute your Screenlet, create it in your app's
@@ -78,7 +82,7 @@ parameters:
 - `description`: The new bookmark's description. 
 
 - `serviceContext`: A 
-  [Liferay `ServiceContext`](/develop/tutorials/-/knowledge_base/7-0/understanding-servicecontext) 
+  [Liferay `ServiceContext`](/docs/7-0/tutorials/-/knowledge_base/t/understanding-servicecontext) 
   object. 
 
 Add Bookmark Screenlet must therefore account for each of these parameters. When 
@@ -90,7 +94,7 @@ Also, the Screenlet's code automatically populates the `description` and
 
 Great! Now you're ready to create your Screenlet's Theme! 
 
-## Creating the Screenlet's UI [](id=creating-the-screenlets-ui)
+## Creating the Screenlet's UI
 
 In Liferay Screens for iOS, a Screenlet's UI is called a Theme. Every Screenlet 
 must have at least one Theme. A Theme has the following components: 
@@ -121,15 +125,11 @@ defines this UI. Because the button triggers the Screenlet's action, it contains
 
 ![Figure 1: Here's the sample Add Bookmark Screenlet's XIB file rendered in Interface Builder.](../../../images/screens-ios-xcode-add-bookmark.png)
 
-+$$$
-
-**Note:** The Screenlet in this tutorial doesn't support multiple Themes. If you 
-want your Screenlet to support multiple Themes, your View class must also 
-conform a *View Model* protocol that you create. For instructions on this, see 
-the tutorial 
-[Supporting Multiple Themes in Your Screenlet](/develop/tutorials/-/knowledge_base/7-0/supporting-multiple-themes-in-your-screenlet). 
-
-$$$
+| **Note:** The Screenlet in this tutorial doesn't support multiple Themes. If you
+| want your Screenlet to support multiple Themes, your View class must also
+| conform a *View Model* protocol that you create. For instructions on this, see
+| the tutorial
+| [Supporting Multiple Themes in Your Screenlet](/docs/7-0/tutorials/-/knowledge_base/t/supporting-multiple-themes-in-your-screenlet).
 
 Now you must create your Screenlet's View class. This class controls the UI you 
 just defined. In the 
@@ -180,7 +180,7 @@ custom class--the grayed-out *Current* default value only suggests a module.
 
 Next, you'll create your Screenlet's Interactor. 
 
-## Creating the Interactor [](id=creating-the-interactor)
+## Creating the Interactor
 
 Create an Interactor class for each of your Screenlet's actions. In the 
 [`Interactor` class](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/Interactor.swift), 
@@ -188,22 +188,18 @@ Screens provides the default functionality required by all Interactor classes.
 Your Interactor class must therefore extend `Interactor` to provide the 
 functionality unique to your Screenlet. 
 
-+$$$
-
-**Note:** You may wish to make your server call in a Connector instead of an 
-Interactor. Doing so provides an additional abstraction layer for your server 
-call, leaving your Interactor to instantiate your Connector and receive its 
-results. For instructions on this, see the tutorial 
-[Create and Use a Connector with Your Screenlet](/develop/tutorials/-/knowledge_base/7-0/create-and-use-a-connector-with-your-screenlet). 
-
-$$$
+| **Note:** You may wish to make your server call in a Connector instead of an
+| Interactor. Doing so provides an additional abstraction layer for your server
+| call, leaving your Interactor to instantiate your Connector and receive its
+| results. For instructions on this, see the tutorial
+| [Create and Use a Connector with Your Screenlet](/docs/7-0/tutorials/-/knowledge_base/t/create-and-use-a-connector-with-your-screenlet).
 
 Interactors work synchronously, but you can use callbacks (delegates) or 
 Connectors to run their operations in the background. For example, the Liferay 
 Mobile SDK provides the 
 [`LRCallback` protocol](https://github.com/liferay/liferay-mobile-sdk/blob/master/ios/Source/Core/LRCallback.h) 
 for this purpose. This is described in 
-[the Mobile SDK tutorial on invoking Liferay services asynchronously](/develop/tutorials/-/knowledge_base/7-0/invoking-services-asynchronously-from-your-ios-app). 
+[the Mobile SDK tutorial on invoking Liferay services asynchronously](/docs/7-0/tutorials/-/knowledge_base/t/invoking-services-asynchronously-from-your-ios-app). 
 Screens bridges this protocol to make it available in Swift. Your Interactor 
 class can conform this protocol to make its server calls asynchronously. To 
 implement an Interactor class:
@@ -305,7 +301,7 @@ status throughout the Screenlet:
 
 Next, you'll create the Screenlet class. 
 
-## Creating the Screenlet Class [](id=creating-the-screenlet-class)
+## Creating the Screenlet Class
 
 The Screenlet class is the central hub of a Screenlet. It contains the 
 Screenlet's properties, a reference to the Screenlet's View class, methods for 
@@ -384,28 +380,28 @@ For reference, the sample Add Bookmark Screenlet's final code is
 
 You're done! Your Screenlet is a ready-to-use component that you can add to your 
 storyboard. You can even 
-[package it](/develop/tutorials/-/knowledge_base/7-0/packaging-ios-themes) 
+[package it](/docs/7-0/tutorials/-/knowledge_base/t/packaging-ios-themes) 
 to contribute to the Screens project or distribute it with CocoaPods. Now you 
 know how to create iOS Screenlets! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Supporting Multiple Themes in Your Screenlet](/develop/tutorials/-/knowledge_base/7-0/supporting-multiple-themes-in-your-screenlet)
+[Supporting Multiple Themes in Your Screenlet](/docs/7-0/tutorials/-/knowledge_base/t/supporting-multiple-themes-in-your-screenlet)
 
-[Adding Screenlet Actions](/develop/tutorials/-/knowledge_base/7-0/adding-screenlet-actions)
+[Adding Screenlet Actions](/docs/7-0/tutorials/-/knowledge_base/t/adding-screenlet-actions)
 
-[Create and Use a Connector with Your Screenlet](/develop/tutorials/-/knowledge_base/7-0/create-and-use-a-connector-with-your-screenlet)
+[Create and Use a Connector with Your Screenlet](/docs/7-0/tutorials/-/knowledge_base/t/create-and-use-a-connector-with-your-screenlet)
 
-[Add a Screenlet Delegate](/develop/tutorials/-/knowledge_base/7-0/add-a-screenlet-delegate)
+[Add a Screenlet Delegate](/docs/7-0/tutorials/-/knowledge_base/t/add-a-screenlet-delegate)
 
-[Using and Creating Progress Presenters](/develop/tutorials/-/knowledge_base/7-0/using-and-creating-progress-presenters)
+[Using and Creating Progress Presenters](/docs/7-0/tutorials/-/knowledge_base/t/using-and-creating-progress-presenters)
 
-[Creating and Using Your Screenlet's Model Class](/develop/tutorials/-/knowledge_base/7-0/creating-and-using-your-screenlets-model-class)
+[Creating and Using Your Screenlet's Model Class](/docs/7-0/tutorials/-/knowledge_base/t/creating-and-using-your-screenlets-model-class)
 
-[Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-ios-apps)
+[Using Screenlets in iOS Apps](/docs/7-0/tutorials/-/knowledge_base/t/using-screenlets-in-ios-apps)
 
-[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-ios)
+[Architecture of Liferay Screens for iOS](/docs/7-0/tutorials/-/knowledge_base/t/architecture-of-liferay-screens-for-ios)
 
-[Creating iOS Themes](/develop/tutorials/-/knowledge_base/7-0/creating-ios-themes)
+[Creating iOS Themes](/docs/7-0/tutorials/-/knowledge_base/t/creating-ios-themes)
 
-[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets)
+[Creating Android Screenlets](/docs/7-0/tutorials/-/knowledge_base/t/creating-android-screenlets)

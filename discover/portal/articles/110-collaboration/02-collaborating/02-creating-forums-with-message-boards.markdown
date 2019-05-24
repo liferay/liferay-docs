@@ -1,4 +1,8 @@
-#  Creating Forums with Message Boards [](id=creating-forums-with-message-boards)
+---
+header-id: creating-forums-with-message-boards
+---
+
+#  Creating Forums with Message Boards
 
 @product@'s Message Boards app is a state of the art forum application
 similar to many forums in which you may have participated. The difference, of
@@ -18,7 +22,7 @@ Message Boards offers many configuration options. They are straightforward to
 use and are the reason why it's a full-featured forum application for your site.
 Let's create a message board. 
 
-## Creating Message Boards [](id=creating-message-boards)
+## Creating Message Boards
 
 You can create a message board instance for a @product@ instance, a site,
 or page. An instance's message board can be used on any of its pages. A message
@@ -42,14 +46,10 @@ To administer a message board, open the *Menu*
 for your site, page, or global scope. The Message Boards administration screen
 appears. 
 
-+$$$
-
-**Note**: To administer a message board for a particular page scope, click the
-*Site Selector* button (![Compass](../../../images/icon-compass.png)) to list
-the available scopes, and select the scope with the page's name. Finally, select
-*Message Boards* from under the *Content* heading.
-
-$$$
+| **Note**: To administer a message board for a particular page scope, click the
+| *Site Selector* button (![Compass](../../../images/icon-compass.png)) to list
+| the available scopes, and select the scope with the page's name. Finally, select
+| *Message Boards* from under the *Content* heading.
 
 ![Figure 1: A Message Board instance starts empty, ready for you to configure for your purposes.](../../../images/message-boards-administration.png)
 
@@ -60,7 +60,7 @@ configuration screen, click the message board's *Options* icon
 Configuration tabs, you can configure the message board for the behavior you
 want. 
 
-### General Setup [](id=general-setup)
+### General Setup
 
 From the *General* configuration tab, you can enable anonymous posting,
 subscribe by default, flags, ratings, and thread as question by default. You can
@@ -99,7 +99,7 @@ posting.
 Enabling *Enable Ratings* allows users to score posts. The scores are used by
 @product@'s social activity system to rank site members by how helpful
 their contributions are. You can read more about social activity in the
-[Measuring Social Activity](/discover/portal/-/knowledge_base/7-0/measuring-social-activity)
+[Measuring Social Activity](/docs/7-0/user/-/knowledge_base/u/measuring-social-activity)
 article. 
 
 Enabling the *Thread as Question by Default* option automatically checks the
@@ -113,7 +113,7 @@ board's *Recent Posts* tab until it is taken away. You have options of 24 hours,
 from *Recent Posts*. However, the post itself isn't deleted. It remains
 accessible everywhere else in the message board. 
 
-### Email Setup [](id=email-setup)
+### Email Setup
 
 Message Boards provides options for configuring the email sender and specifying
 the mail message to use when someone posts a new message board thread or updates
@@ -153,7 +153,7 @@ Message Added Email tab, except it defines the email message that users receive
 whenever a message is updated. Next, you can specify priority classifications
 for message threads. 
 
-### Thread Priorities [](id=thread-priorities)
+### Thread Priorities
 
 You can define custom priorities for message threads on this tab. This allows
 privileged roles to tag a thread with a certain priority in order to highlight it
@@ -174,7 +174,7 @@ are posted above threads with a lower priority.
 The localized language field lets you name the priorities in each locale. You
 can select the locale, update the priority names for it, and save your updates. 
 
-### User Ranks [](id=user-ranks)
+### User Ranks
 
 On this tab, users can be ranked according to the number of messages they have
 posted. You can set up custom ranks here. Defaults have been provided for you,
@@ -208,7 +208,7 @@ Administrator*, or anyone who is the organization owner gets the Moderator rank.
 As with thread priority names, the *Localized Language* field lets you localize
 rank names. RSS feed configuration is next. 
 
-### RSS [](id=rss)
+### RSS
 
 Message board threads can be published as RSS feeds. This tab allows you to
 enable/disable RSS subscriptions and define how the feeds are generated. 
@@ -227,7 +227,7 @@ changes.
 From Message Boards in Site Administration, you can configure the message
 board's permissions. 
 
-### Message Board Permissions [](id=permissions)
+### Message Board Permissions
 
 To edit message board permissions, click on the *Options* icon (![Options](../../../images/icon-options.png))
 and select the *Home Category Permissions* option. This permissions screen
@@ -272,7 +272,7 @@ preference options, if the app has any custom preferences.
 Now that you've configured your message board and set its permissions, you can
 focus on adding categories for message board threads. 
 
-## Adding Categories [](id=adding-categories)
+## Adding Categories
 
 You are now ready to add categories to your message boards. Click the *Add* icon
 (![Add](../../../images/icon-add.png)) and select *Category* button. Enter a name for the
@@ -363,7 +363,7 @@ form and the *Add Category* form are the same.
 email notifications: user subscriptions and mailing lists. Let's discuss user
 subscriptions first and then mailing lists. 
 
-## User Subscriptions and Mailing Lists [](id=user-subscriptions-and-mailing-lists)
+## User Subscriptions and Mailing Lists
 
 The first mechanism @product@ uses for sending email notifications is user
 subscriptions. Users can subscribe to particular categories and threads. Liferay
@@ -425,16 +425,12 @@ whatever you like:
 
     pop.server.notifications.interval=1
 
-+$$$
-
-**Note**: Depending on your mail provider, if you're using multiple devices to
-access email through POP, you might need to configure in your POP settings
-something like Gmail's *recent mode*. In Gmail, recent mode assures that emails
-go to all your devices instead of only the the first client that receives the
-email. To enable recent mode in Gmail, for example, prefix the value of your POP
-client's Username or Email field with `recent:`.
-
-$$$
+| **Note**: Depending on your mail provider, if you're using multiple devices to
+| access email through POP, you might need to configure in your POP settings
+| something like Gmail's *recent mode*. In Gmail, recent mode assures that emails
+| go to all your devices instead of only the the first client that receives the
+| email. To enable recent mode in Gmail, for example, prefix the value of your POP
+| client's Username or Email field with `recent:`.
 
 The second mechanism @product@ uses for sending email notifications is
 mailing lists. Any category in a @product@ message board can have its own
@@ -535,7 +531,7 @@ When you're finished configuring the mailing list for your category, click
 Now that you've created message boards and message board categories, you can
 explore posting messages to them and interacting with other user's threads. 
 
-## Using the Message Boards [](id=using-the-message-boards)
+## Using the Message Boards
 
 You can add the Message Boards application to a page from the *Add*
 (![Add](../../../images/icon-control-menu-add.png)) menu's *Collaboration*
@@ -563,7 +559,7 @@ number of posts, and the number of participants in your message boards. It also
 has a list of your message board's top contributors. The Banned Users tab shows
 all of the users who have been banned from posting on the message boards. 
 
-### Posting New Threads [](id=posting-new-threads)
+### Posting New Threads
 
 To post a new thread click the *Post New Thread* button in the app or
 ![Add](../../../images/icon-add.png) in Message Boards in Site Administration)
@@ -586,7 +582,7 @@ Message Boards uses a rich-text editor. It supports bold, italicized,
 underlined, and crossed-out text, links, images, colors, lists, tables,
 alignments, quotation blocks, code blocks, different fonts and font sizes, and
 more. The editor has keyboard shortcuts Ctrl+b for bold, Ctrl+i for italics, and
-Ctrl+u for underline. You can [mention](/discover/portal/-/knowledge_base/7-0/mentioning-users)
+Ctrl+u for underline. You can [mention](/docs/7-0/user/-/knowledge_base/u/mentioning-users)
 another other user by entering the "@" character followed by the user's user
 name. There are even a bunch of smiley faces that you can use. 
 
@@ -625,7 +621,7 @@ features. When you click on a thread or thread reply's subject link, the
 author's profile picture, name, rank, number of posts, the date the user joined
 the site, and a link to the user's recent posts. 
 
-### Participating in Message Board Threads [](id=participating-in-message-board-threads)
+### Participating in Message Board Threads
 
 To find message board threads that interest you, browse a message board's
 categories or Recent Posts. You can view a category's thread listing by clicking
@@ -661,7 +657,7 @@ objectionable. A message board moderator can evaluate flagged messages and
 decide how to handle the messages and their authors. This provides an
 appropriate segue into the next topic: managing message boards. 
 
-## Managing Message Boards [](id=managing-message-boards)
+## Managing Message Boards
 
 Message boards are powerful, but can become unweildy if left unmanaged. The
 Message Boards in Site Administration facilitates day to day thread
@@ -686,12 +682,12 @@ perform all the message board functions already presented, including creating
 and deleting categories and posting threads. In addition to these, a number of
 other functions are available. 
 
-### Locking Threads [](id=locking-threads)
+### Locking Threads
 
 You may encounter threads that you think should be preserved, but stoppped. You
 can halt activity on a thread by clicking *Lock Thread*. 
 
-### Moving Threads [](id=moving-threads)
+### Moving Threads
 
 Many times a user will post a thread in the wrong category. Administrators may
 in this case want to move a thread to the proper category. This is very easy to
@@ -705,7 +701,7 @@ allows you to post a message explaining why the thread was moved. This message
 will be posted as a reply to the thread you are moving. When finished, click the
 *Move Thread* button and the thread will be moved.
 
-### Deleting Threads [](id=deleting-threads)
+### Deleting Threads
 
 Users with administrative access to the message boards can delete threads.
 Sometimes users begin discussing topics that are inappropriate or that reveal
@@ -715,7 +711,7 @@ the message boards. This is easy to do. First, view the list of threads. Click
 does not prevent users from re-posting the information, so you may need to be
 vigilant in deleting threads or consider the next option. 
 
-### Banning Users [](id=banning-users)
+### Banning Users
 
 Unfortunately, sometimes certain users become abusive. If you wind up with a
 user like this, you can certainly make attempts to warn him or her that the
@@ -731,7 +727,7 @@ abusive behavior, you can choose to reinstate the user. To do this, click the
 *Banned Users* tab at the top of the message board. This will show a list of all
 banned users. Find the user in the list and select *Unban this User*. 
 
-### Splitting Threads [](id=splitting-threads)
+### Splitting Threads
 
 Sometimes a thread will go on for a while and the discussion completely changes
 into something else. In this case, you can split the thread where the discussion
@@ -740,7 +736,7 @@ will see a *Split Thread* link on each post. To split the thread, click the
 link. You will be brought to a form which allows you to add an explanation post
 to the split thread. Click *OK* to split the thread. 
 
-### Editing Posts [](id=editing-posts)
+### Editing Posts
 
 Administrative users can edit anyone's posts, not just their own. Sometimes
 users will post links to copyrighted material or unsuitable pictures. You can
@@ -749,7 +745,7 @@ posted or to censor profanity that is not allowed on your message boards. You
 can also update the thread's priority or mark a reply as an answer to a thread's
 question. 
 
-### Permissions [](id=permissions-0)
+### Permissions
 
 Permissions can be set not only on threads, but also on individual posts. You
 can choose to limit a particular conversation or a post to only a select group
@@ -762,7 +758,7 @@ above permissions are also possible.
 
 That wraps up message board management basics.
 
-## Summary [](id=summary)
+## Summary
 
 As you've discovered, Liferay's Message Boards provides full-featured forums for
 users to ask questions, discuss topics, and share small amounts of information.

@@ -1,4 +1,8 @@
-# Upgrading App JSP Hooks [](id=upgrading-app-jsp-hook-plugins)
+---
+header-id: upgrading-app-jsp-hook-plugins
+---
+
+# Upgrading App JSP Hooks
 
 JSPs in OSGi modules are customized using module fragments. The module fragment
 attaches to the host module to alter the JSPs. To the OSGi runtime, the
@@ -8,7 +12,7 @@ explains module fragments in detail. This tutorial shows you how to upgrade your
 app JSP hooks to @product-ver@.
 
 Liferay @ide@'s Code Upgrade Tool's
-[*Convert Custom JSP Hooks* step](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+[*Convert Custom JSP Hooks* step](/docs/7-0/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
 generates module fragments from app JSP hook plugins. The tool creates module
 fragments in the same folder as your Plugins SDK root if your hook is in a
 Plugins SDK or in the `[liferay_workspace]/modules` folder if your hook is in a
@@ -24,7 +28,7 @@ Here are the steps for upgrading app JSP hook plugins:
 1.  [Declare the Fragment Host](#declare-the-fragment-host)
 2.  [Update the JSP](#update-the-jsp)
 
-## Declare the Fragment Host [](id=declare-the-fragment-host)
+## Declare the Fragment Host
 
 The module fragment's `bnd.bnd` file must specify an OSGi header `Fragment-Host`
 set to the host module name and version. 
@@ -40,7 +44,7 @@ Blogs Web module.
 
 Updating the JSP is straightforward too. 
 
-## Update the JSP [](id=update-the-jsp)
+## Update the JSP
 
 The Code Upgrade Tool creates a module fragment that contains an upgraded
 version of your custom app JSP. 
@@ -58,7 +62,7 @@ app's `init-ext.jsp` file here:
     src/main/resources/META-INF/resources/blogs/init-ext.jsp
 
 The tool's 
-[*Convert Custom JSP Hooks* step](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+[*Convert Custom JSP Hooks* step](/docs/7-0/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
 lets you compare custom JSPs with originals:
 
 - Compare your custom 6.2 JSP with the original 6.2 JSP.
@@ -67,7 +71,7 @@ lets you compare custom JSPs with originals:
 ![Figure 1: The Code Upgrade Tools lets you compare custom JSPs with originals.](../../../../images/upgrading-app-jsp-hook-convert-custom-jsp-hook.png)
 
 Make any additional needed changes in your 7.0 custom JSP. Then
-[deploy](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#building-and-deploying-a-module)
+[deploy](/docs/7-0/tutorials/-/knowledge_base/t/starting-module-development#building-and-deploying-a-module)
 your module fragment. This stops the host module momentarily, attaches the
 fragment to the host, and then restarts the host module. The console output
 reflects this process. 
@@ -80,12 +84,12 @@ module.
 
 Your custom JSP is live.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[JSP Overrides Using OSGi Fragments](/develop/tutorials/-/knowledge_base/7-0/overriding-a-modules-jsps)
+[JSP Overrides Using OSGi Fragments](/docs/7-0/tutorials/-/knowledge_base/t/overriding-a-modules-jsps)
 
-[Upgrading Core JSP Hooks](/develop/tutorials/-/knowledge_base/7-0/upgrading-core-jsp-hooks)
+[Upgrading Core JSP Hooks](/docs/7-0/tutorials/-/knowledge_base/t/upgrading-core-jsp-hooks)
 
-[Resolving a Plugin's Dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies)
+[Resolving a Plugin's Dependencies](/docs/7-0/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies)
 
-[Upgrading the Liferay Maven Build](/develop/tutorials/-/knowledge_base/7-0/upgrading-the-liferay-maven-build)
+[Upgrading the Liferay Maven Build](/docs/7-0/tutorials/-/knowledge_base/t/upgrading-the-liferay-maven-build)

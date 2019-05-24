@@ -1,4 +1,8 @@
-# Portlets and Themes [](id=portlets-and-themes-intro)
+---
+header-id: portlets-and-themes-intro
+---
+
+# Portlets and Themes
 
 @product@ gives you complete control over the look and feel of your portlets. 
 You can provide custom styles for portlets, create style configuration options 

@@ -1,4 +1,8 @@
-# User Groups [](id=user-groups)
+---
+header-id: user-groups
+---
+
+# User Groups
 
 A User Group is a group of users. Were you hoping for a more
 complicated, or enterpris-ey, definition? Try this: A user group is a box.
@@ -17,7 +21,7 @@ hierarchical boundaries. For example, consider The Lunar Resort. It's
 hierarchically divided into the Physical Plant Department, the Recreation
 Department, and the Sales Department. The Lunar Resort's department-driven
 structure is modeled using
-[organizations](/discover/portal/-/knowledge_base/6-2/the-users-section-of-the-control-panel).
+[organizations](/docs/6-2/user/-/knowledge_base/u/the-users-section-of-the-control-panel).
 If there are functions needed in The Lunar Resort public or private sites that
 can't be divided up according to the existing organizational hierarchy, you
 might need user groups. For example, it might make sense to create a user groups
@@ -47,7 +51,7 @@ that adds an Event Coordination page to each List Creator.
 
 At the Lunar Resort, certain employees need the ability to create simple form
 applications using Liferay's
-[Dynamic Data Lists](/discover/portal/-/knowledge_base/7-0/creating-data-lists).
+[Dynamic Data Lists](/docs/7-0/user/-/knowledge_base/u/creating-data-lists).
 On the harsh lunar landscape, it's important to have a proper idea how many
 guests are coming to the next Lunar Hike event. Many of the list creators will
 be users from the Recreation Department, since many of the activities that
@@ -67,7 +71,7 @@ The WAR Boys, Metropolizm, Fanatical Mime to band list -->
 
 ![Figure 1: The List Creators group is needed to manage the sign-up lists on the Activities Sign-Up page of The Lunar Resort.](../../images/user-groups-activities-page.png)
 
-## Creating a User Group [](id=creating-a-user-group)
+## Creating a User Group
 
 User Groups are administered in the Control Panel, under *Users* &rarr; *User
 Groups*. Start by creating a user group called *List Creators*. Later, you'll
@@ -92,7 +96,7 @@ Right now, the user group is just an empty box. The user group has no sites or
 roles to give it any functionality. No users are assigned to the user group, so
 it isn't collecting users yet. That comes next.
 
-## Assigning Members to a User Group [](id=assigning-members-to-a-user-group)
+## Assigning Members to a User Group
 
 To add existing users to a user group:
 
@@ -116,7 +120,7 @@ personal page management. These scenarios are all covered in this article.
 
 Next, add the users in the List Creators group to the Lunar Resort site. 
 
-## User Groups and Site Membership [](id=user-groups-and-site-membership)
+## User Groups and Site Membership
 
 After a user group is created, you can add all its users at once as members of a
 site in one step from the *Site Memberships* UI. In this example you'll see how
@@ -146,7 +150,7 @@ site.
 Managing site membership with user groups is easy. User groups can also have
 their own sites. 
 
-## User Group Sites [](id=user-group-sites)
+## User Group Sites
 
 Each Liferay user has a personal site, consisting of public (Profile) and
 private (Dashboard) pages. A user group site determines the base pages of the
@@ -184,7 +188,7 @@ To create a new site template, navigate to *Sites* &rarr; *Site Templates*. Add
 a site template called Event Coordination and save it. Rename the default Home
 page to Event Coordination. Now there's a site template, but the page is
 currently empty. Go to the Event Coordination page, and add a Message Boards and
-a Calendar application. Read the [documentation on site templates](/discover/portal/-/knowledge_base/6-2/using-site-templates)
+a Calendar application. Read the [documentation on site templates](/docs/6-2/user/-/knowledge_base/u/using-site-templates)
 if you need further explanation.
 
 <!--Get the 7-0 link when ready-->
@@ -242,7 +246,7 @@ personal site without having to modify it directly. When a user is assigned to a
 user group, they'll immediately have access to the user group's site pages from
 their personal site.
 
-### Legacy User Group Sites Behavior [](id=legacy-user-group-sites-behavior)
+### Legacy User Group Sites Behavior
 
 Since the inheritance of user group site pages is now dynamic, even if there are
 hundreds of thousands of users, even millions, there won't be an exponential
@@ -279,13 +283,13 @@ Just like user groups simplify site membership, they can also be used to assign
 a role to all the users of a user group at once. Where you do it depends on the
 scope of the role. 
 
-## Configuring User Group Permissions [](id=configuring-user-group-permissions)
+## Configuring User Group Permissions
 
 The List Creators user group needs the ability to manage Dynamic Data List
 Display portlets on The Lunar Resort's Activities Sign-Up public page. This will
 require the creation of a new Site Role called List Creator, and assignment of
 any necessary permissions so the List Creators can do their job. You can refer
-to the [article on Roles](/discover/portal/-/knowledge_base/6-2/roles-and-permissions) for a more detailed discussion. After creating
+to the [article on Roles](/docs/6-2/user/-/knowledge_base/u/roles-and-permissions) for a more detailed discussion. After creating
 the new role, all that's left to do is assign the role to the user group.
 
 <!--Link to 7-0 docs when ready-->
@@ -319,7 +323,7 @@ Creators user group and select *Assign Site Roles*.
 Now members of the List Creators user group are site members of The Lunar Resort
 site, and anyone in the user group has the List Creator role in the site. If you
 want to continue configuring the List Creators user group, read the articles on
-[Creating Simple Applications](/discover/portal/-/knowledge_base/7-0/creating-simple-applications).
+[Creating Simple Applications](/docs/7-0/user/-/knowledge_base/u/creating-simple-applications).
 In those articles you'll learn to create a data definition that the List
 Creators can use to build new Activities Sign-Up lists and templates with.
 
@@ -328,7 +332,7 @@ Creators can use to build new Activities Sign-Up lists and templates with.
 If you want to know more about User Groups, and how to edit them, keep reading
 here.
 
-## Editing User Groups [](id=editing-user-groups)
+## Editing User Groups
 
 To edit the basic properties a user group, just click on its name or description
 (both are hyperlinks). Alternatively, click the *Edit* link from the Actions
@@ -364,12 +368,8 @@ user group.
 
 **Delete** removes the user group.
 
-+$$$
-
-**Note:** If there are users in the User Group, you won't be able to delete it.
-You'll first need to remove the users from the User Group.
-
-$$$
+| **Note:** If there are users in the User Group, you won't be able to delete it.
+| You'll first need to remove the users from the User Group.
 
 If your user group has site pages, the options *Go to Profile Pages* and *Go to
 Dashboard Pages* also appear in your user group's Actions menu. Clicking one of

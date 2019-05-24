@@ -1,4 +1,8 @@
-# Installing Liferay @ide@ [](id=installing-liferay-ide)
+---
+header-id: installing-liferay-ide
+---
+
+# Installing Liferay @ide@
 
 Liferay @ide@ is a plugin for Eclipse that provides many Liferay-specific
 features and additional enterprise only features. You can install it into your
@@ -13,7 +17,7 @@ you must install a new @ide@ bundle. You cannot install an update for this
 upgrade. Your Liferay Workspace instance and its contents are backwards
 compatible and can be copied to the new 3.1 version.
 
-## Install the Liferay @ide@ Bundle [](id=install-the-liferay-developer-studio-bundle)
+## Install the Liferay @ide@ Bundle
 
 1.  Download and install [Java](http://java.oracle.com). @product@ runs on Java,
     so you'll need it to run everything else. Because you'll be developing apps
@@ -34,13 +38,13 @@ compatible and can be copied to the new 3.1 version.
 
     Your credentials are not saved locally; they're saved as a token in the
     `~/.liferay` folder. The token is used by your @ide@'s
-    [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
+    [Liferay Workspace](/docs/7-0/tutorials/-/knowledge_base/t/liferay-workspace)
     if you ever decide to redownload a @product@ bundle. Furthermore, the
     @product@ bundle that was downloaded in your workspace is also copied to
     your `~/.liferay/bundles` folder, so if you decide to initialize another
     @product@ instance of the same version, the bundle is not re-downloaded. See
     the
-    [Adding a Liferay Bundle to a Workspace](/develop/tutorials/-/knowledge_base/7-0/adding-a-liferay-bundle-to-a-workspace)
+    [Adding a Liferay Bundle to a Workspace](/docs/7-0/tutorials/-/knowledge_base/t/adding-a-liferay-bundle-to-a-workspace)
     for more information on this topic.
 
     **Important:** The token generator sometimes has issues generating a token
@@ -57,11 +61,11 @@ compatible and can be copied to the new 3.1 version.
     ![Figure 1: Choose the folder your @ide@ instance should reside.](../../../images-dxp/dev-studio-install.png)
 
 5.  Liferay @ide@ provides
-    [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
+    [Liferay Workspace](/docs/7-0/tutorials/-/knowledge_base/t/liferay-workspace)
     by default, which is a developer environment used to build and manage
     @product@ projects. The installer automatically installs Liferay Workspace
     and its dedicated command line tool
-    ([Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli)).
+    ([Blade CLI](/docs/7-0/tutorials/-/knowledge_base/t/blade-cli)).
 
     You'll need to choose the Liferay bundle you plan to use in your Liferay
     Workspace: *Liferay DXP Bundle* or *Community Edition Bundle*. Then choose
@@ -79,10 +83,10 @@ folder you specified. To run @ide@, execute the `DeveloperStudio` executable. A
 Liferay Workspace has also been initialized in that same folder. For more
 information on the Liferay Workspace installation related to this installation
 process, see the
-[Using @ide@'s Liferay Workspace Installer](/develop/tutorials/-/knowledge_base/7-0/using-developer-studios-liferay-workspace-installer)
+[Using @ide@'s Liferay Workspace Installer](/docs/7-0/tutorials/-/knowledge_base/t/using-developer-studios-liferay-workspace-installer)
 section.
 
-## Install Liferay @ide@ into Eclipse Environment [](id=install-liferay-developer-studio-into-eclipse-environment)
+## Install Liferay @ide@ into Eclipse Environment
 
 To install @ide@ using an update URL, follow these steps:
 
@@ -99,7 +103,7 @@ To install @ide@ using an update URL, follow these steps:
 
 Liferay @ide@ is now installed in your existing Eclipse environment.
 
-## Install Liferay @ide@ into Eclipse from a ZIP File [](id=install-liferay-ide-into-eclipse-from-a-zip-file)
+## Install Liferay @ide@ into Eclipse from a ZIP File
 
 To install @ide@ using a Zip file, follow these steps:
 
@@ -124,7 +128,7 @@ To install @ide@ using a Zip file, follow these steps:
 
 Awesome! You've installed Liferay @ide@ in your existing Eclipse environment.
 
-## Generating a Workspace Token Manually [](id=generating-a-workspace-token-manually)
+## Generating a Workspace Token Manually
 
 If you run into any issues with generating your token automatically, you can
 follow the steps below to manually create one.
@@ -157,5 +161,5 @@ You've successfully generated your token manually and it's now available for
 your installer to access. If you haven't run the installer, you can do so now.
 If you've already run the installer, you can set the DXP bundle to download
 in the `gradle.properties` file of your workspace. See the
-[Adding a Liferay Bundle to a Workspace](/develop/tutorials/-/knowledge_base/7-0/configuring-a-liferay-workspace#adding-a-liferay-bundle-to-a-workspace)
+[Adding a Liferay Bundle to a Workspace](/docs/7-0/tutorials/-/knowledge_base/t/configuring-a-liferay-workspace#adding-a-liferay-bundle-to-a-workspace)
 tutorial for details.

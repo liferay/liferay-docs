@@ -1,4 +1,8 @@
-# Adding Comments to your App [](id=adding-comments-to-your-app)
+---
+header-id: adding-comments-to-your-app
+---
+
+# Adding Comments to your App
 
 Users adding comments to your content makes your site come alive. Instead of you
 statically giving users information, now the flow goes both ways. @product@'s
@@ -11,11 +15,11 @@ content.
 
 Follow these steps:
 
-1.  Make sure your entity is [asset enabled](/develop/tutorials/-/knowledge_base/7-0/adding-updating-and-deleting-assets-for-custom-entities).
+1.  Make sure your entity is [asset enabled](/docs/7-0/tutorials/-/knowledge_base/t/adding-updating-and-deleting-assets-for-custom-entities).
 
 2.  Choose a read-only view of the entity for the comments. You can display the
     comments component in your portlet's view, or if you've implemented 
-    [asset rendering](/develop/tutorials/-/knowledge_base/7-0/rendering-an-asset),
+    [asset rendering](/docs/7-0/tutorials/-/knowledge_base/t/rendering-an-asset),
     you can display it in the full content view in the Asset Publisher portlet.
 
 3.  Include the Liferay-UI taglib and Portlet taglib declarations in your JSP:
@@ -62,18 +66,18 @@ Follow these steps:
         </liferay-ui:panel-container>
 
 If you haven't already connected your portlet's view to the JSP for your entity,
-you can refer [here](/develop/tutorials/-/knowledge_base/7-0/relating-assets#creating-a-url-to-your-new-jsp)
+you can refer [here](/docs/7-0/tutorials/-/knowledge_base/t/relating-assets#creating-a-url-to-your-new-jsp)
 to see how to connect a portlet's main view JSP to an entity's view JSP.
 
 Great! Now you know how to let users comment on content in your asset enabled
 portlets.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Adding, Updating, and Deleting Assets for Custom Entities](/develop/tutorials/-/knowledge_base/7-0/adding-updating-and-deleting-assets-for-custom-entities)
+[Adding, Updating, and Deleting Assets for Custom Entities](/docs/7-0/tutorials/-/knowledge_base/t/adding-updating-and-deleting-assets-for-custom-entities)
 
-[Adding Permissions to Resources](/develop/tutorials/-/knowledge_base/7-0/adding-permissions-to-resources)
+[Adding Permissions to Resources](/docs/7-0/tutorials/-/knowledge_base/t/adding-permissions-to-resources)
 
-[Rendering an Asset](/develop/tutorials/-/knowledge_base/7-0/rendering-an-asset)
+[Rendering an Asset](/docs/7-0/tutorials/-/knowledge_base/t/rendering-an-asset)
 
-[Applying Social Bookmarks](/develop/tutorials/-/knowledge_base/7-0/applying-social-bookmarks)
+[Applying Social Bookmarks](/docs/7-0/tutorials/-/knowledge_base/t/applying-social-bookmarks)

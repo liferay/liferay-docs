@@ -1,4 +1,8 @@
-# Waiting on Lifecycle Events [](id=waiting-on-lifecycle-events)
+---
+header-id: waiting-on-lifecycle-events
+---
+
+# Waiting on Lifecycle Events
 
 Liferay registers lifecycle events like portal and database initialization
 into the OSGi service registry. Your OSGi Component or non-component class
@@ -13,7 +17,7 @@ defines these names for the lifecycle event services:
 Here you'll learn how to wait on lifecycle event services to act on them from
 within a component or non-component class. 
 
-## Taking action from a component [](id=taking-action-from-a-component)
+## Taking action from a component
 
 [Declarative Services (DS)](https://osgi.org/specification/osgi.cmpn/7.0.0/service.component.html)
 facilitates waiting for OSGi services and acting on them once they're available.
@@ -72,12 +76,12 @@ Your component fires (via its `@Activate` method) after all its service
 dependencies resolve. DS components are the easiest way to act on lifecycle
 event services. 
 
-## Taking action from a non-component class [](id=taking-action-from-a-class-thats-not-a-component)
+## Taking action from a non-component class
 
 Classes that aren't DS components can use a
 `org.osgi.util.tracker.ServiceTracker` or
 `org.osgi.util.tracker.ServiceTrackerCustomizer` as a
-[service callback handler](/develop/tutorials/-/knowledge_base/7-0/service-trackers#implementing-a-callback-handler-for-services)
+[service callback handler](/docs/7-0/tutorials/-/knowledge_base/t/service-trackers#implementing-a-callback-handler-for-services)
 for the lifecycle event. If you depend on multiple services, add logic to your
 `ServiceTracker` or `ServiceTrackerCustomizer` to coordinate taking action when
 all the services are available. 
@@ -105,6 +109,6 @@ handling and some boilerplate code. Using DS components is easier and more
 elegant, but at least service trackers provide a way to work with lifecycle
 events outside of DS components. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Service Trackers](/develop/tutorials/-/knowledge_base/7-0/service-trackers)
+[Service Trackers](/docs/7-0/tutorials/-/knowledge_base/t/service-trackers)

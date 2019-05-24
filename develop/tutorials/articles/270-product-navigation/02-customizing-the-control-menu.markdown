@@ -1,4 +1,8 @@
-# Customizing the Control Menu [](id=customizing-the-control-menu)
+---
+header-id: customizing-the-control-menu
+---
+
+# Customizing the Control Menu
 
 The Control Menu is the most visible and accessible menu in Liferay. It is
 visible to the user in most places, always displaying helpful text or options
@@ -20,34 +24,30 @@ middle, and right portions of the menu. You can create navigation entries for
 each category, which can provide options or further navigation for the
 particular screen you're on.
 
-+$$$
-
-**Note:** You can add the Control Menu to a custom theme by adding the following
-snippet into your `portal_normal.ftl`:
-
-    <@liferay.control_menu />
-
-The other product navigation menus (e.g., Product Menu, Simulation Menu) are
-included in this tag, so specifying the above snippet will embed all three menus
-into your theme. Embedding the User Personal Bar is slightly different. Visit
-the [Providing the User Personal Bar](/develop/tutorials/-/knowledge_base/7-0/providing-the-user-personal-bar)
-tutorial for more information.
-
-$$$
+| **Note:** You can add the Control Menu to a custom theme by adding the following
+| snippet into your `portal_normal.ftl`:
+| 
+|     <@liferay.control_menu />
+| 
+| The other product navigation menus (e.g., Product Menu, Simulation Menu) are
+| included in this tag, so specifying the above snippet will embed all three menus
+| into your theme. Embedding the User Personal Bar is slightly different. Visit
+| the [Providing the User Personal Bar](/docs/7-0/tutorials/-/knowledge_base/t/providing-the-user-personal-bar)
+| tutorial for more information.
 
 You can reference a sample Control Menu Entry by visiting the
-[Control Menu Entry](/develop/reference/-/knowledge_base/7-0/control-menu-entry)
+[Control Menu Entry](/docs/7-0/reference/-/knowledge_base/r/control-menu-entry)
 article.
 
 In this tutorial, you'll learn how to create your own entries to customize the
 Control Menu. Make sure to read the
-[Adding Custom Panel Categories](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu#adding-custom-panel-categories)
+[Adding Custom Panel Categories](/docs/7-0/tutorials/-/knowledge_base/t/customizing-the-product-menu#adding-custom-panel-categories)
 before beginning this tutorial. This tutorial assumes you have knowledge on
 creating a panel category. You'll begin by creating an entry for the Control
 Menu.
 
 1. Create a generic OSGi module using your favorite third party tool, or use
-   [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli). Your module
+   [Blade CLI](/docs/7-0/tutorials/-/knowledge_base/t/blade-cli). Your module
    must contain a Java class, `bnd.bnd` file, and build file (e.g.,
    `build.gradle` or `pom.xml`). You'll create your Java class next if your
    project does not already define one.
@@ -135,7 +135,7 @@ Menu.
     You can also provide a label for the Control Menu entry that displays when
     hovering over it with your pointer. This label is stored in the module's
     resource bundle, which you can learn more about in the
-    [Internationalization](/develop/tutorials/-/knowledge_base/7-0/internationalization)
+    [Internationalization](/docs/7-0/tutorials/-/knowledge_base/t/internationalization)
     tutorials.
 
         @Override

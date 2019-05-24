@@ -1,4 +1,8 @@
-# Themes [](id=introduction-to-themes)
+---
+header-id: introduction-to-themes
+---
+
+# Themes
 
 A Liferay Theme is the overall look and feel for a site. Themes are a 
 combination of CSS, JavaScript, HTML, and FreeMarker templates. Although the
@@ -6,17 +10,17 @@ default themes are nice, you may wish to create your own custom look and feel
 for your site. @product@ provides several tools and environments that you can 
 use to create themes:
 
-- [Theme Builder Gradle Plugin](/develop/reference/-/knowledge_base/7-0/theme-builder-gradle-plugin)
+- [Theme Builder Gradle Plugin](/docs/7-0/reference/-/knowledge_base/r/theme-builder-gradle-plugin)
 - The 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator) 
-- [@ide@](/develop/tutorials/-/knowledge_base/7-0/creating-themes-with-liferay-ide)
-- [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli)'s 
-[Theme Template](/develop/reference/-/knowledge_base/7-0/theme-template) 
+[Liferay Theme Generator](/docs/7-0/tutorials/-/knowledge_base/t/themes-generator) 
+- [@ide@](/docs/7-0/tutorials/-/knowledge_base/t/creating-themes-with-liferay-ide)
+- [Blade CLI](/docs/7-0/tutorials/-/knowledge_base/t/blade-cli)'s 
+[Theme Template](/docs/7-0/reference/-/knowledge_base/r/theme-template) 
 
 What if you only wish to make a minor change to the overall look and feel? Let's
 say you just want to change a menu animation. Instead of creating an entire
 theme for this single modification, you can 
-[create a Themelet](/develop/tutorials/-/knowledge_base/7-0/themelets).
+[create a Themelet](/docs/7-0/tutorials/-/knowledge_base/t/themelets).
 Themelets are modular, customizable, reusable, shareable pieces of code that 
 extend a theme. They enable reusable code for themes. Instead of rewriting the 
 code each time, you can use the same themelet in each theme.
@@ -40,5 +44,5 @@ the changes.
 Once your theme is developed it is packaged as a WAR (Web application ARchive)
 file and can be deployed to the server, either manually or using build tools. 
 Apply your theme to your pages through the 
-[Look and Feel menu](/discover/portal/-/knowledge_base/7-0/creating-and-managing-pages#customizing-the-look-and-feel-of-site-pages). 
+[Look and Feel menu](/docs/7-0/user/-/knowledge_base/u/creating-and-managing-pages#customizing-the-look-and-feel-of-site-pages). 
 The only limitation is your imagination.

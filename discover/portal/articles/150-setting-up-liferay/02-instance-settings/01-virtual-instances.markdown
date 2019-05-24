@@ -1,4 +1,8 @@
-# Virtual Instances [](id=virtual-instances)
+---
+header-id: virtual-instances
+---
+
+# Virtual Instances
 
 Here's a quick scenario: you already have a server hosting a site created with
 Liferay. That means you already have a hosted Liferay database. Let's say you

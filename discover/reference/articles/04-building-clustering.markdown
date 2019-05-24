@@ -1,17 +1,17 @@
-# Building Clustering for Liferay Portal [](id=building-clustering-for-liferay)
+---
+header-id: building-clustering-for-liferay
+---
 
-+$$$
+# Building Clustering for Liferay Portal
 
-**Note:** These instructions are for adding the clustering modules to **Liferay 
-Portal CE**. Skip them if you're running Liferay DXP, as it has clustering
-available out-of-the-box. 
-
-$$$
+| **Note:** These instructions are for adding the clustering modules to **Liferay
+| Portal CE**. Skip them if you're running Liferay DXP, as it has clustering
+| available out-of-the-box.
 
 RMI-based clustering with Liferay Portal requires building and deploying
 clustering modules and blacklisting the single node modules. 
 
-## Build Liferay Portal from source [](id=build-liferay-portal-from-source)
+## Build Liferay Portal from source
 
 These instructions assume building against the latest tagged release but also
 work with any branch.
@@ -28,10 +28,10 @@ work with any branch.
 
 A Liferay Portal bundle is built to the `../bundles/` folder. 
 
-## Blacklist Single Node Modules [](id=blacklist-single-node-modules)
+## Blacklist Single Node Modules
 
 Prevent the single node modules from deploying by
-[blacklisting](/discover/portal/-/knowledge_base/7-0/blacklisting-osgi-modules)
+[blacklisting](/docs/7-0/user/-/knowledge_base/u/blacklisting-osgi-modules)
 them or removing them from your Liferay Portal installation's `/osgi/portal`
 folder.
 
@@ -42,7 +42,7 @@ folder:
     rm -f ../bundles/osgi/portal/com.liferay.portal.cluster.single.jar
     rm -f ../bundles/osgi/portal/com.liferay.portal.scheduler.single.jar 
 
-## Build and Deploy the Clustering Modules [](id=build-and-deploy-clustering-modules)
+## Build and Deploy the Clustering Modules
 
 Now build and deploy the clustering modules:
 
@@ -63,15 +63,11 @@ Now build and deploy the clustering modules:
 
 Your cluster nodes have the modules needed for running in a cluster. 
 
-+$$$
+| **Important:** Make sure to complete the steps for
+| [configuring clustering](/docs/7-0/deploy/-/knowledge_base/d/liferay-clustering).
 
-**Important:** Make sure to complete the steps for 
-[configuring clustering](/discover/deployment/-/knowledge_base/7-0/liferay-clustering).
+## Related Topics
 
-$$$
+[@product@ Clustering](/docs/7-0/deploy/-/knowledge_base/d/liferay-clustering)
 
-## Related Topics [](id=related-topics)
-
-[@product@ Clustering](/discover/deployment/-/knowledge_base/7-0/liferay-clustering)
-
-[Blacklisting Modules](/discover/portal/-/knowledge_base/7-0/blacklisting-osgi-modules)
+[Blacklisting Modules](/docs/7-0/user/-/knowledge_base/u/blacklisting-osgi-modules)

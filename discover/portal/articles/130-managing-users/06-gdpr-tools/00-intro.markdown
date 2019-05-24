@@ -1,4 +1,8 @@
-# GDPR Tools [](id=gdpr-tools)
+---
+header-id: gdpr-tools
+---
+
+# GDPR Tools
 
 Internet users are increasingly and justifiably concerned about how their
 personal data is processed by the systems they use. The enforcement of GDPR is
@@ -12,32 +16,28 @@ User inquiries into how their data is stored and processed.
 Liferay is aware of the need for functionality to address User data management,
 and as of Fix Pack 60 has added two important features toward this end:
 
-[Erase and/or anonymize data associated with a User](/discover/portal/-/knowledge_base/7-0/sanitizing-user-data)
+[Erase and/or anonymize data associated with a User](/docs/7-0/user/-/knowledge_base/u/sanitizing-user-data)
 : Administrative Users go through a step by step process, choosing to erase
 certain pieces of data and anonymize others.
 
-[Export a User's personal data](/discover/portal/-/knowledge_base/7-0/exporting-user-data)
+[Export a User's personal data](/docs/7-0/user/-/knowledge_base/u/exporting-user-data)
 : Export ZIP files containing the data associated with a User.
 
 These features are tools that get you closer to meeting two of GDPR's
 technically challenging requirements, the _right to data portability_ and the
 _right to be forgotten_.
 
-+$$$
+| **Note:** It is Liferay's sincerest hope that through the User Management
+| functionality of @product@, companies processing the personal data of their
+| website's users can satisfy the requirements of GDPR. However, the tools
+| discussed here and anywhere else in the documentation, including those directly
+| aimed at addressing GDPR requirements (as in this article) do not guarantee
+| compliance with the legal requirements of GDPR. Each company or individual whose
+| website processes user personal data and is under the jurisdiction of GDPR must
+| carefully determine the precise steps necessary to ensure they are fully compliant
+| with GDPR.
 
-**Note:** It is Liferay's sincerest hope that through the User Management
-functionality of @product@, companies processing the personal data of their
-website's users can satisfy the requirements of GDPR. However, the tools
-discussed here and anywhere else in the documentation, including those directly
-aimed at addressing GDPR requirements (as in this article) do not guarantee
-compliance with the legal requirements of GDPR. Each company or individual whose
-website processes user personal data and is under the jurisdiction of GDPR must
-carefully determine the precise steps necessary to ensure they are fully compliant
-with GDPR.
-
-$$$
-
-## Anonymizing Data [](id=anonymizing-data)
+## Anonymizing Data
 
 Deleting User data is the safest way to honor _right to be forgotten_ requests.
 When User data must be preserved, automatic anonymization of the data is in
@@ -81,7 +81,7 @@ To edit an existing configuration:
 
 To create a new Anonymous User:
 
-1.  [Create a User](/discover/portal/-/knowledge_base/7-0/adding-and-managing-users#adding-users)
+1.  [Create a User](/docs/7-0/user/-/knowledge_base/u/adding-and-managing-users#adding-users)
     use for data anonymization. Alternatively, you can use an
     existing User.
 
@@ -114,7 +114,7 @@ There can only be one Anonymous User configured for each instance.
 
 ![Figure 2: Assign your own Anonymous User from Control Panel &rarr; Configuration &rarr; System Settings &rarr; Users &rarr; Anonymous User.](../../../images/users-anonymous-config.png)
 
-## Manual Anonymization [](id=manual-anonymization)
+## Manual Anonymization
 
 Anonymizing just the User's identification fields is often not enough. If a User
 named Ziltoid Omniscient complains about The Lunar Resort's coffee in a Message

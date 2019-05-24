@@ -1,4 +1,8 @@
-# Creating Web Content [](id=creating-web-content)
+---
+header-id: creating-web-content
+---
+
+# Creating Web Content
 
 @product@'s Web Content Management (WCM) system allows non-technical users to
 publish content to the web without having advanced knowledge of web technology
@@ -47,23 +51,23 @@ your site's web content.
 
 - **Asset Publisher:** An application which can aggregate different types of
   content together in one view. This app is covered in more detail in the
-  [Publishing Assets](/discover/portal/-/knowledge_base/7-0/publishing-assets)
+  [Publishing Assets](/docs/7-0/user/-/knowledge_base/u/publishing-assets)
   section.
 
 - **Scheduler:** Lets you schedule when content is reviewed, displayed and
   removed. This feature is covered in more detail in the
-  [Scheduling Web Content Publication](/discover/portal/-/knowledge_base/7-0/scheduling-web-content-publication)
+  [Scheduling Web Content Publication](/docs/7-0/user/-/knowledge_base/u/scheduling-web-content-publication)
   section.
 
 - **Workflow Integration:** Run your content through an approval or review
   process. This feature is covered in more detail in the
-  [Using Workflow](/discover/portal/-/knowledge_base/7-0/using-workflow)
+  [Using Workflow](/docs/7-0/user/-/knowledge_base/u/using-workflow)
   section.
 
 - **Staging:** Use a separate staging server or stage your content locally so
   you can keep your changes separate from the live site. This feature is covered
   in more detail in the
-  [Using the Staging Environment](/discover/portal/-/knowledge_base/7-0/using-the-staging-environment)
+  [Using the Staging Environment](/docs/7-0/user/-/knowledge_base/u/using-the-staging-environment)
   section.
 
 With @product@'s WCM, you have the ability to create, edit, stage, approve, and

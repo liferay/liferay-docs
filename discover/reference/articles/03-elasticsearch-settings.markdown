@@ -1,4 +1,8 @@
-# Elasticsearch Settings [](id=elasticsearch-settings)
+---
+header-id: elasticsearch-settings
+---
+
+# Elasticsearch Settings
 
 Elasticsearch is the default search engine for @product-ver@. The *Liferay
 Foundation* suite includes an adapter for Elasticsearch called *Liferay Portal
@@ -7,15 +11,11 @@ OSGi configuration file named
 `com.liferay.portal.search.elasticsearch.configuration.ElasticsearchConfiguration.cfg`
 and deployed to `[Liferay_Home]/osgi/configs`.
 
-+$$$
-
-**Elasticsearch 6:** The 
-[Liferay Connector to Elasticsearch 6](https://web.liferay.com/marketplace/-/mp/application/106004266)
-contains all the settings of the default adapter, along with a few new ones. See
-the end of this article to learn about the settings unique to the
-Elasticsearch 6 connector. 
-
-$$$
+| **Elasticsearch 6:** The
+| [Liferay Connector to Elasticsearch 6](https://web.liferay.com/marketplace/-/mp/application/106004266)
+| contains all the settings of the default adapter, along with a few new ones. See
+| the end of this article to learn about the settings unique to the
+| Elasticsearch 6 connector.
 
 The list below is all the configuration settings for Liferay's default
 Elasticsearch 2.x adapter, in the order they appear in the System Settings
@@ -158,7 +158,7 @@ The following settings are only available in the Elasticsearch 6 adapter:
 `clientTransportPingTimeout=`
 : Set the String value for how long to wait for a node's ping response.
 
-## Configurations only Affecting the Embedded Elasticsearch Server [](id=configurations-only-affecting-the-embedded-elasticsearch-server)
+## Configurations only Affecting the Embedded Elasticsearch Server
 
 These settings (defined above) are only meant to use while configuring the
 embedded Elasticsearch server. Configuring these will elicit no effect on

@@ -1,4 +1,8 @@
-# Adding the Management Bar [](id=adding-the-management-bar)
+---
+header-id: adding-the-management-bar
+---
+
+# Adding the Management Bar
 
 The Management Bar controls display options for search container results. You 
 can use it to display content in a list or a grid, or to display a specific type 

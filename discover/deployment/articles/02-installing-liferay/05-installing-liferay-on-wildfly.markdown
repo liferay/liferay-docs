@@ -1,4 +1,8 @@
-# Installing @product@ on Wildfly 10 [](id=installing-liferay-on-wildfly-10)
+---
+header-id: installing-liferay-on-wildfly-10
+---
+
+# Installing @product@ on Wildfly 10
 
 Liferay Digital Enterprise 7.0 bundled with Wildfly 10 is available on 
 [Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise). 
@@ -16,14 +20,14 @@ Installing @product@ manually requires these basic steps:
 - Installing the @product@ WAR file to your application server
 
 **Liferay Home** is one folder above Wildfly's install location.
-[*Liferay Home*](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home)
+[*Liferay Home*](/docs/7-0/deploy/-/knowledge_base/d/installing-product#liferay-home)
 refers to the folder containing your Wildfly server folder. When @product@ is
 installed on Wildfly, the Liferay Home folder contains the Wildfly server folder
 as well as `data`, `deploy`, `logs`, and `osgi` folders. You'll also see the
 term `$WILDFLY_HOME` used in this guide. `$WILDFLY_HOME` refers to your Wildfly
 server folder. This folder is usually named `wildfly-[version]`.
 
-## Installing @product@ Dependencies [](id=installing-liferay-dependencies)
+## Installing @product@ Dependencies
 
 @product@ depends on many JARs that are included in the @product@ Wildfly bundle.
 Some JARs in the bundle are not strictly required but can still be useful. If
@@ -103,7 +107,7 @@ Checkpoint:
 
 Great! You have your `.jar` files ready. 
 
-## Running @product@ on Wildfly 10.0 in Standalone Mode vs. Domain Mode [](id=running-liferay-on-wildfly-10-0-in-standalone-mode-vs-domain-mode)
+## Running @product@ on Wildfly 10.0 in Standalone Mode vs. Domain Mode
 
 Wildfly 10.0 can be launched in either *standalone* mode or *domain* mode. Domain
 mode allows multiple application server instances to be managed from a single
@@ -126,20 +130,16 @@ Other plugins, such as service or action hooks, should still work properly since
 they don't require Wildfly to access anything (such as JSP files) from an
 exploded `.war` file on the file system.
 
-+$$$
-
-**Note:** This does not prevent @product@ from running in a clustered environment
-on multiple Wildfly servers. You can set up a cluster of @product@ instances
-running on Wildfly 10.0 servers running in standalone mode. Please refer to the
-chapter of this guide on
-[Configuring @product@ for High Availability](/discover/deployment/-/knowledge_base/6-2/configuring-liferay-for-high-availability)
-for information on setting up a @product@ cluster.
-
-$$$
+| **Note:** This does not prevent @product@ from running in a clustered environment
+| on multiple Wildfly servers. You can set up a cluster of @product@ instances
+| running on Wildfly 10.0 servers running in standalone mode. Please refer to the
+| chapter of this guide on
+| [Configuring @product@ for High Availability](/docs/6-2/deploy/-/knowledge_base/d/configuring-liferay-for-high-availability)
+| for information on setting up a @product@ cluster.
 
 <!-- Replace link in note above, when available. -Cody -->
 
-## Configuring Wildfly [](id=configuring-wildfly)
+## Configuring Wildfly
 
 Now you'll make some adjustments in your configuration to support using @product@.
 
@@ -233,40 +233,32 @@ below:
 
         JAVA_OPTS="$JAVA_OPTS -Dfile.encoding=UTF-8 -Djava.net.preferIPv4Stack=true -Dsecmgr -Djava.security.policy=$WILDFLY_HOME/bin/server.policy -Dwildfly.home.dir=$WILDFLY_HOME -Duser.timezone=GMT -Xmx1024m -XX:MaxMetaspaceSize=384m -XX:MetaspaceSize=200m
 
-+$$$
-
-**Important:** For @product@ to work properly, the application server JVM must 
-use the `GMT` time zone and `UTF-8` file encoding. 
-
-$$$
+| **Important:** For @product@ to work properly, the application server JVM must
+| use the `GMT` time zone and `UTF-8` file encoding.
 
 Make sure you replace the `$WILDFLY_HOME` references with the appropriate
 directory. You'll notice some Java security options. You'll finish configuring
 the Java security options in the *Security Configuration* section. 
 
-+$$$
-
-**Note:** If you plan on using the IBM JDK with your Wildfly server, you'll need
-to complete some additional steps. First, navigate to the
-`$WILDFLY_HOME/modules/com/liferay/portal/main/module.xml` file and insert the
-following dependency within the `<dependencies>` element:
-
-    <module name="ibm.jdk" />
-
-Then navigate to the
-`$WILDFLY_HOME/modules/system/layers/base/sun/jdk/main/module.xml` file and
-insert the following path names inside the `<paths>...</paths>` element:
-
-    <path name="com/sun/crypto" />
-    <path name="com/sun/crypto/provider" />
-    <path name="com/sun/image/codec/jpeg" />
-    <path name="com/sun/org/apache/xml/internal/resolver" />
-    <path name="com/sun/org/apache/xml/internal/resolver/tools" />
-
-The added paths resolve issues with portal deployment exceptions and image
-uploading problems on a @product@ instance running on Wildfly 10.0.x. 
-
-$$$
+| **Note:** If you plan on using the IBM JDK with your Wildfly server, you'll need
+| to complete some additional steps. First, navigate to the
+| `$WILDFLY_HOME/modules/com/liferay/portal/main/module.xml` file and insert the
+| following dependency within the `<dependencies>` element:
+| 
+|     <module name="ibm.jdk" />
+| 
+| Then navigate to the
+| `$WILDFLY_HOME/modules/system/layers/base/sun/jdk/main/module.xml` file and
+| insert the following path names inside the `<paths>...</paths>` element:
+| 
+|     <path name="com/sun/crypto" />
+|     <path name="com/sun/crypto/provider" />
+|     <path name="com/sun/image/codec/jpeg" />
+|     <path name="com/sun/org/apache/xml/internal/resolver" />
+|     <path name="com/sun/org/apache/xml/internal/resolver/tools" />
+| 
+| The added paths resolve issues with portal deployment exceptions and image
+| uploading problems on a @product@ instance running on Wildfly 10.0.x.
 
 Checkpoint: 
 
@@ -284,7 +276,7 @@ server's JVM settings.
 The prescribed script modifications are now complete for your @product@
 installation on Wildfly. Next you'll configure mail and the database. 
 
-## Database Configuration [](id=database-configuration)
+## Database Configuration
 
 If you want Wildfly to manage your data source, follow the instructions in this
 section. If you want to use the built-in @product@ data source, you can skip this
@@ -307,13 +299,9 @@ Modify `standalone.xml` and add your data source and driver in the
     Be sure to replace the database name (i.e. `lportal`), user name, and
     password with the appropriate values. 
 
-    +$$$
-
-    **Note:** If you'd like to change your datasource `jndi-name` to something
-    different, you'll need to also edit the `datasource` element in the
-    `<default-bindings>` tag.
-
-    $$$
+    | **Note:** If you'd like to change your datasource `jndi-name` to something
+    | different, you'll need to also edit the `datasource` element in the
+    | `<default-bindings>` tag.
 
 2. Add your driver to the `<drivers>` element also found within the
    `<datasources>` element.
@@ -342,7 +330,7 @@ Your final data sources subsystem should look like this:
 
 Now that you've configured your data source, the mail session is next. 
 
-## Mail Configuration [](id=mail-configuration)
+## Mail Configuration
 
 If you want Wildfly to manage your mail session, use the following instructions.
 If you want to use the built-in @product@ mail session, you can skip this section.
@@ -365,7 +353,7 @@ Specify your mail subsystem in `standalone.xml` as in the following example:
 You've got mail! Next, you'll make sure @product@ can connect using your new mail
 session and database.
 
-## Configuring data sources and mail sessions [](id=configuring-data-sources-and-mail-sessions)
+## Configuring data sources and mail sessions
 
 Now that your data source and mail session are set up, you need to ensure
 @product@ can access them.
@@ -398,7 +386,7 @@ Before you deploy @product@ on your Wildfly app server, you should enable
 and configure Java security so you can use @product@'s plugin security manager
 with your downloaded @product@ applications.
 
-## Security Configuration [](id=security-configuration)
+## Security Configuration
 
 When you're ready to begin using other people's apps from Marketplace, you'll
 want to protect your @product@ instance and your Wildfly server from security
@@ -424,13 +412,13 @@ For extensive information on Java SE Security Architecture, see its
 specification documents at
 [http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html](http://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc.html).
 Also, see the
-[Plugin Security and PACL](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl)
+[Plugin Security and PACL](/docs/6-2/tutorials/-/knowledge_base/t/plugin-security-and-pacl)
 tutorial to learn how to configure @product@ plugin access to resources.
 
 <!-- JSF configuration sections go here, when they've been tested for @product-ver@
 + Wildfly 10 bundles. -Cody -->
 
-## Deploy @product@ [](id=deploy-liferay)
+## Deploy @product@
 
 1. If the folder `$WILDFLY_HOME/standalone/deployments/ROOT.war` already exists
    in your Wildfly installation, delete all of its subfolders and files.

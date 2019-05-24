@@ -1,4 +1,8 @@
-# Advanced Templates [](id=advanced-templates)
+---
+header-id: advanced-templates
+---
+
+# Advanced Templates
 
 <div class="learn-path-step">
     <p>Creating Content<br>Step 3D of 3D</p>
@@ -10,7 +14,7 @@ can also use JavaScript. This lets you create complex, interactive content. To
 illustrate this, you'll create a new structure, and then create its template 
 using JavaScript. 
 
-## Creating the Structure [](id=creating-the-structure)
+## Creating the Structure
 
 The structure for the booking form is relatively simple--it only needs a Text 
 field and an Image field. Follow these steps to create it:
@@ -41,7 +45,7 @@ field and an Image field. Follow these steps to create it:
 
 Now that the structure is complete, you can move on the template.
 
-## Creating the Template [](id=creating-the-template)
+## Creating the Template
 
 The booking form's template styles the text and image, and also contains a 
 JavaScript function that submits the booking. Follow these steps to create this 
@@ -142,7 +146,7 @@ template:
 Awesome! Now you have a template for the booking form. You're ready to use the 
 structure and template to create some content. 
 
-## Creating the Content [](id=creating-the-content)
+## Creating the Content
 
 Like the structure, content for this structure and template is simple. It can 
 only contain an image and button text. Follow these steps to create such content 
@@ -167,7 +171,7 @@ now:
 
 Now, all you need to do is add it to the page.
 
-## Displaying the Content [](id=displaying-the-content)
+## Displaying the Content
 
 1.  Navigate to the Lunar Resort's *Book a Trip* page. 
 

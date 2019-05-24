@@ -1,11 +1,15 @@
-# Validating Modules Outside of Workspace [](id=validating-modules-outside-of-workspace)
+---
+header-id: validating-modules-outside-of-workspace
+---
+
+# Validating Modules Outside of Workspace
 
 If you prefer to not use Liferay Workspace, but still want to validate modules
 against a target platform, you must apply the
-[Target Platform](/develop/reference/-/knowledge_base/7-0/target-platform-gradle-plugin)
+[Target Platform](/docs/7-0/reference/-/knowledge_base/r/target-platform-gradle-plugin)
 Gradle plugin to the root `build.gradle` file of your multi-module Gradle
 build. Follow the
-[Targeting a Platform Outside of Workspace](/develop/tutorials/-/knowledge_base/7-0/managing-the-target-platform-for-liferay-workspace#targeting-a-platform-outside-of-workspace)
+[Targeting a Platform Outside of Workspace](/docs/7-0/tutorials/-/knowledge_base/t/managing-the-target-platform-for-liferay-workspace#targeting-a-platform-outside-of-workspace)
 section to do this.
 
 Once you have the Target Platform plugin and its BOM dependencies configured,

@@ -1,4 +1,8 @@
-# Liferay Slim Runtime [](id=liferay-slim-runtime)
+---
+header-id: liferay-slim-runtime
+---
+
+# Liferay Slim Runtime
 
 The Liferay Slim Runtime provides the bare necessities for running Service
 Builder modules. It's useful for testing applications quickly in a Liferay
@@ -30,7 +34,7 @@ Building and launching a Liferay Slim Runtime is much quicker than a typical
 @product@ bundle. Because of decreased build and startup times, the Slim Runtime
 provides a great environment for testing. You'll learn how to build one next.
 
-## Build [](id=build)
+## Build
 
 To build the Slim Runtime, you must have the
 [liferay-portal](https://github.com/liferay/liferay-portal) Github repository
@@ -46,14 +50,14 @@ file's `app.server.parent.dir` property. Note that the Slim Runtime only
 supports Apache Tomcat 8+. This limitation simplifies packaging and
 configuration.
 
-## Launch [](id=launch)
+## Launch
 
 To launch the Slim Runtime, run the Tomcat start scripts found in the runtime's
 `<tomcat>/bin` directory:
 
     ./startup.[sh|bat]
 
-## Deploying Modules [](id=deploying-modules)
+## Deploying Modules
 
 You can deploy modules from any of the default directories the
 [portal.properties](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html)
@@ -79,7 +83,7 @@ By default, a pristine Slim Runtime has no UI or apps. Requests to it result in
 
 The modules you add provide all the functionality.
 
-## Adding Functionality [](id=adding-functionality)
+## Adding Functionality
 
 A web endpoint is the simplest type of function.
 
@@ -125,7 +129,7 @@ requests to `http://localhost:8080[/*]`:
 
     }
 
-## The Database [](id=the-database)
+## The Database
 
 The Slim Runtime creates the database schema automatically the first time it
 runs.
@@ -152,7 +156,7 @@ Only the following core services are available:
 The Slim Runtime provides no other services! To test your services, therefore,
 you must deploy modules that provide the capabilities they depend on. 
 
-## Service Builder [](id=service-builder)
+## Service Builder
 
 The Service Builder runtime bootstraps all deployed Service Builder services
 (API and service modules).
@@ -174,7 +178,7 @@ database:
     +------------------+
     6 rows in set (0.00 sec)
 
-### A Basic Service Builder Web App [](id=a-basic-service-builder-web-app)
+### A Basic Service Builder Web App
 
 The servlet in the following snippet implements a simple web app that uses the
 contacts service.
@@ -297,8 +301,8 @@ contacts service.
 Note how it uses OSGi Declarative Services to reference an instance of Portal
 Kernel's `CounterLocalService` and Contacts API's `EntryLocalService`.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Arquillian Extension for Liferay Example](/develop/tutorials/-/knowledge_base/7-0/arquillian-extension-for-liferay-example)
+[Arquillian Extension for Liferay Example](/docs/7-0/tutorials/-/knowledge_base/t/arquillian-extension-for-liferay-example)
 
-[Unit Testing with JUnit](/develop/tutorials/-/knowledge_base/7-0/unit-testing-with-junit)
+[Unit Testing with JUnit](/docs/7-0/tutorials/-/knowledge_base/t/unit-testing-with-junit)

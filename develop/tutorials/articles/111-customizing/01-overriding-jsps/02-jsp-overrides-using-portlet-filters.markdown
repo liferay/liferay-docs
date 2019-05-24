@@ -1,4 +1,8 @@
-# JSP Overrides Using Portlet Filters [](id=jsp-overrides-using-portlet-filters)
+---
+header-id: jsp-overrides-using-portlet-filters
+---
+
+# JSP Overrides Using Portlet Filters
 
 Portlet filters let you intercept portlet requests before they're processed and
 portlet responses after they're processed but before they're sent back to the
@@ -196,7 +200,7 @@ the client.
     }
 
 Once you've
-[deployed your module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#building-and-deploying-a-module),
+[deployed your module](/docs/7-0/tutorials/-/knowledge_base/t/starting-module-development#building-and-deploying-a-module),
 the portlet's JSP shows your custom content.
 
 Your portlet filter operates directly on portlet response content. Unlike

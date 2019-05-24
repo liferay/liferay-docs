@@ -1,4 +1,8 @@
-# Implementing Portlet Actions [](id=implementing-portlet-actions)
+---
+header-id: implementing-portlet-actions
+---
+
+# Implementing Portlet Actions
 
 <div class="learn-path-step">
     <p>Developing Your First Portlet<br>Step 7 of 8</p>
@@ -47,13 +51,9 @@ you must use a delimiter to determine where the user name ends and the guestbook
 entry begins. The caret symbol (`^`) makes a good delimiter because users are 
 highly unlikely to use that symbol in a guestbook entry. 
 
-+$$$
-
-**Note:** The portlet preferences API is used here for prototyping purposes 
-only. In most cases, you'll need a more robust solution for storing data. You'll 
-learn how to implement such a solution later in the *Service Builder* section.  
-
-$$$
+| **Note:** The portlet preferences API is used here for prototyping purposes
+| only. In most cases, you'll need a more robust solution for storing data. You'll
+| learn how to implement such a solution later in the *Service Builder* section.
 
 The following method implements adding a guestbook entry to a portlet preference
 called `guestbook-entries`: 

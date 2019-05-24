@@ -1,4 +1,8 @@
-# Monitoring @product@ [](id=monitoring-product)
+---
+header-id: monitoring-product
+---
+
+# Monitoring @product@
 
 In this section, you will learn more about how to monitor @product@. Monitoring
 vital statistics such as Java memory heaps, garbage collection, database

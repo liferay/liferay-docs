@@ -1,4 +1,8 @@
-# Updating Permissions to Support Staging [](id=updating-permissions-to-support-staging)
+---
+header-id: updating-permissions-to-support-staging
+---
+
+# Updating Permissions to Support Staging
 
 <div class="learn-path-step">
     <p>Enabling Staging and Export/Import<br>Step 4 of 7</p>

@@ -1,4 +1,8 @@
-# Publishing Basic Web Content [](id=publishing-basic-web-content)
+---
+header-id: publishing-basic-web-content
+---
+
+# Publishing Basic Web Content
 
 @product@'s Web Content Management is a powerful and robust tool for creating and
 organizing content on your web site. You'll begin by examining some basic
@@ -11,10 +15,10 @@ Liferay. Other types of content (blog posts, wiki articles, message board posts,
 etc.) are also considered assets. @product@ provides a general framework for
 handling assets that includes tags, categories, comments, ratings, and more.
 Please see the
-[Publishing Content Dynamically](/discover/portal/-/knowledge_base/7-0/publishing-content-dynamically)
+[Publishing Content Dynamically](/docs/7-0/user/-/knowledge_base/u/publishing-content-dynamically)
 section for more information on Liferay's asset framework.
 
-## Creating Web Content [](id=creating-web-content)
+## Creating Web Content
 
 Content is the reason web sites exist. @product@ has made it easier than ever to
 get content published to your site. Because @product@ is so flexible, you can use
@@ -47,7 +51,7 @@ to the Site Administration &rarr; *Content* menu. You'll now observe the
 (![Gear](../../../images/icon-control-menu-gear.png)) and choose the page you
 configured. Now the content created in this app is scoped to the *Lunar Rover*
 page only. For more information on scoping content in an application, visit the
-[Application Scope](/discover/portal/-/knowledge_base/7-0/application-scope)
+[Application Scope](/docs/7-0/user/-/knowledge_base/u/application-scope)
 section.
 
 ![Figure 1: You can choose where to create content by navigating to the Site Administration menu and selecting your site and page scope.](../../../images/site-page-scopes.png)
@@ -69,25 +73,21 @@ example, if a web content structure called *FAQ* has been created for Frequently
 Asked Questions articles in your currently selected scope, you can create a new
 FAQ article by clicking *Add* &rarr; *FAQ*.
 
-+$$$
-
-**Note:** In previous versions of Liferay, you could specify web content types
-via `portal.properties`. In @product@ 7.0, web content types are no longer used
-and have been replaced by vocabularies. Vocabularies allow users to filter their
-web content articles by category instead, which lets you filter your content
-using the Asset Publisher and faceted search. To learn more about vocabularies
-and how to use them with web content articles, see the 
-[Defining Categories for Content](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories#defining-categories-for-content)
-section.
-
-$$$
+| **Note:** In previous versions of Liferay, you could specify web content types
+| via `portal.properties`. In @product@ 7.0, web content types are no longer used
+| and have been replaced by vocabularies. Vocabularies allow users to filter their
+| web content articles by category instead, which lets you filter your content
+| using the Asset Publisher and faceted search. To learn more about vocabularies
+| and how to use them with web content articles, see the
+| [Defining Categories for Content](/docs/7-0/user/-/knowledge_base/u/organizing-content-with-tags-and-categories#defining-categories-for-content)
+| section.
 
 You can provide a structure and template to your web content articles. You'll
 learn more about the power of web content structures and templates later. For
 now, you'll cover the basics of creating a piece of web content by first
 exploring the editor.
 
-### Using the WYSIWYG Editor [](id=using-the-wysiwyg-editor)
+### Using the WYSIWYG Editor
 
 Once you've clicked *Add* &rarr; *Basic Web Content*, you'll find a highly
 customizable form that, by default, has three fields: title, summary, and a
@@ -108,15 +108,11 @@ Type the words *Welcome to the Lunar Resort* in the *Title* field. In the
 the *Content* field, you'll add the body of your web content article, which
 you'll dive into next. Lastly, leave the *Searchable* switch enabled.
 
-$$$
-
 **Note:** Disabling the *Searchable* switch for an article prevents it from
 being indexed. This prevents it from appearing in search results or in the Asset
 Publisher. The article is visible, however, to an Administrator in the list of
 web content articles displayed in Site Administration or the Web Content Display
 portlet. 
-
-$$$
 
 The kneejerk reaction to the simplistic looking WYSIWYG editor is "Where are the
 editor's controls?" Don't let the simplistic look of the editor fool you; the
@@ -138,7 +134,7 @@ insert an image, select the icon that depicts a mountain silhouette. The image
 file selector screen appears, allowing you to choose an existing image or upload
 a new one. If you select an existing image in your Documents and Media 
 repository, you can access the 
-[image editor](/discover/portal/-/knowledge_base/7-0/editing-images), 
+[image editor](/docs/7-0/user/-/knowledge_base/u/editing-images), 
 via the pencil icon 
 (![Pencil](../../../images/icon-edit-pencil.png)) in the bottom right corner of 
 the preview window, to make changes to the image. Once you've made edits, a copy 
@@ -190,14 +186,14 @@ functionality. For example, if you navigate to the Control Panel, click on
 this menu, you can install and enable Xuggler. Enabling Xuggler allows you to
 embed audio and video files in web content. Installing and enabling Xuggler is
 easy; you can do it right from the Control Panel. Please refer to the
-[Publishing Files](/discover/portal/-/knowledge_base/7-0/publishing-files)
+[Publishing Files](/docs/7-0/user/-/knowledge_base/u/publishing-files)
 article of this guide for more details.
 
 Once Xuggler has been installed and enabled, embedding audio or video files in a
 web content article is easy. By default the current WYSIWYG editor (AlloyEditor)
 does not provide audio/video files. You can extend the default AlloyEditor by
 adding an audio/video button. You can learn about doing this in the
-[WYSIWYG Editors](/develop/tutorials/-/knowledge_base/7-0/wysiwyg-editors)
+[WYSIWYG Editors](/docs/7-0/tutorials/-/knowledge_base/t/wysiwyg-editors)
 tutorials section. Another option you have is changing the WYSIWYG editor to one
 that supports embedding audio/video files in web content. The CKEditor, for
 example, is an editor that provides this functionality. To use the CKEditor,
@@ -229,7 +225,7 @@ the Edit Web Content screen, after you've created your web content article.
 An XML version of an article is essential when creating content for themes using
 the [Resources Importer](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Resources+Importer).
 If you'd like to learn more about importing web content with a theme, visit its
-dedicated [tutorial](/develop/tutorials/-/knowledge_base/6-2/importing-resources-with-your-themes).
+dedicated [tutorial](/docs/6-2/tutorials/-/knowledge_base/t/importing-resources-with-your-themes).
 
 <!-- Update links above for 7.0, when available. -Cody -->
 
@@ -240,7 +236,7 @@ your web content.
 
 **Structure and Template:** lets you customize the web content article's
 structure and template. To learn more about web content structures and
-templates, visit the [Designing Uniform Content](/discover/portal/-/knowledge_base/7-0/designing-uniform-content)
+templates, visit the [Designing Uniform Content](/docs/7-0/user/-/knowledge_base/u/designing-uniform-content)
 section.
 
 **Small Image:** sets the image that is used for the web content article's
@@ -250,12 +246,12 @@ small image is displayed as the article's icon.
 **Metadata:** let you set the organizational hierarchy of the web content
 article by selecting tags, categories, and priority. To learn more about tags
 and categories, visit the
-[Organizing Content with Tags and Categories](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories)
+[Organizing Content with Tags and Categories](/docs/7-0/user/-/knowledge_base/u/organizing-content-with-tags-and-categories)
 section.
 
 **Schedule:** customizes the date and time your content publishes and/or
 expires. To learn more about scheduling content, visit the
-[Scheduling Web Content Publication](/discover/portal/-/knowledge_base/7-0/scheduling-web-content-publication)
+[Scheduling Web Content Publication](/docs/7-0/user/-/knowledge_base/u/scheduling-web-content-publication)
 section.
 
 **Display Page:** lets you determine where the web contents are displayed when
@@ -277,7 +273,7 @@ Imagine you have 100 sports articles and 100 tech articles. Instead of needing
 to create a page for each article to show it, you can have only one sports page
 and one tech page, and can show all articles in one place in a consistent
 fashion. You'll work through an example of creating a display page in the
-[Creating a Display Page](/discover/portal/-/knowledge_base/7-0/publishing-basic-web-content#creating-a-display-page)
+[Creating a Display Page](/docs/7-0/user/-/knowledge_base/u/publishing-basic-web-content#creating-a-display-page)
 sub-section.
 
 **Related Assets:** lets you determine content relationships between the web
@@ -287,7 +283,7 @@ a Blogs Entry, Message Boards Message, Web Content, Calendar Event, Bookmarks
 Entry, Documents and Media Document, Wiki Page, etc. To learn more about
 defining content relationships and publishing links to those related assets,
 visit the
-[Defining Content Relationships](/discover/portal/-/knowledge_base/7-0/defining-content-relationships)
+[Defining Content Relationships](/docs/7-0/user/-/knowledge_base/u/defining-content-relationships)
 section.
 
 ![Figure 8: This blog entry has links to three Related Assets: one web content and two message board entries.](../../../images/related-assets-link.png)
@@ -321,12 +317,10 @@ de-13 installed. If you do not have the latest fix packs installed, set the
 `portal-ext.properties` file and restart Liferay to activate the permission 
 check.
 
-$$$
-
 Before you display your web content, you'll learn how to localize it to cater to
 different language speaking users.
 
-### Localizing Web Content [](id=localizing-web-content)
+### Localizing Web Content
 
 When you create a new piece of web content, you have the ability to choose a
 default language. First, you'll need to change the system configuration to 
@@ -368,8 +362,6 @@ you should change the default language of your site *only* when you have
 translated values for all localizable entities. Otherwise, you may not be in
 control of what language is displayed in your Liferay instance.
 
-$$$
-
 The ability to completely delete a translation in one step is also available.
 Instead of disabling a translation or having to go through a multistep
 process to remove it, you can select the Delete button (`X`) next to the
@@ -385,7 +377,7 @@ steps above to localize content, only fields within the structure that had the
 
 Next, you'll begin creating a display page to show your web content.
 
-### Creating a Display Page [](id=creating-a-display-page)
+### Creating a Display Page
 
 There are two ways of creating a display page. You can use a *Content Display
 Page* template, which automatically creates everything you need, or you can
@@ -417,7 +409,7 @@ article never changes. Also, if you decide to use the content on another page in
 the future, the article is still available at this URL. This feature is used in
 search results, in related assets, and in Asset Publishers. For more information
 on Liferay's Display Pages, see the
-[Content Display Pages](/discover/portal/-/knowledge_base/7-0/publishing-assets#content-display-pages)
+[Content Display Pages](/docs/7-0/user/-/knowledge_base/u/publishing-assets#content-display-pages)
 article.
 
 For this piece of web content, you don't need to change anything. After you're
@@ -427,7 +419,7 @@ makes the content available for display, but you still have some work to do to
 enable users to see it. In Liferay WCM, all content resides in a container,
 which is the Web Content Display app. You'll look at how it works next.
 
-## Displaying Web Content [](id=displaying-web-content)
+## Displaying Web Content
 
 Now that you've created and published your first piece of web content for
 the Lunar Resort, it's time to display it. First, add the *Web Content Display*
@@ -469,7 +461,7 @@ One of the many options is *Translations*, which shows the available locales for
 your content. If you're working on the page for a particular language, you can
 select the translation of your content that goes with your locale. To learn more
 about translating your content, visit the
-[Localizing Web Content](/discover/portal/-/knowledge_base/7-0/publishing-basic-web-content#localizing-web-content)
+[Localizing Web Content](/docs/7-0/user/-/knowledge_base/u/publishing-basic-web-content#localizing-web-content)
 sub-section.
 
 ![Figure 13: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.](../../../images/web-content-choosing-web-content.png)
@@ -565,11 +557,9 @@ When you publish updates to a web content article that's already being displayed
 somewhere in your Liferay instance (e.g., in a Web Content Display app or an
 Asset Publisher app), the content is immediately updated (unless, of course, you
 have a workflow enabled, which is discussed in greater detail in the
-[Using Workflow](/discover/portal/-/knowledge_base/7-0/using-workflow) section).
+[Using Workflow](/docs/7-0/user/-/knowledge_base/u/using-workflow) section).
 It makes no difference whether you edit it from a Web Content Display app, from
 the Asset Publisher, or from the Site Administration interface.
-
-+$$$ 
 
 **Note:** If you're using a mobile device or tablet and you'd like to view your 
 page the way your users will see it (i.e., without all the app controls and 
@@ -598,7 +588,7 @@ icon (![Subscribe](../../../images/icon-star.png)). Now whenever a web content
 article or folder is modified, you'll receive an email to your account's
 configured email address notifiying you of a change. To learn more about
 configuring your email in @product@, visit the
-[Instance Settings](/discover/portal/-/knowledge_base/7-0/instance-settings)
+[Instance Settings](/docs/7-0/user/-/knowledge_base/u/instance-settings)
 section. You can navigate to your Web Content menu's *Options* icon
 (![Options](../../../images/icon-options.png)) and select *Configuration* to
 modify your Web Content email notification settings.

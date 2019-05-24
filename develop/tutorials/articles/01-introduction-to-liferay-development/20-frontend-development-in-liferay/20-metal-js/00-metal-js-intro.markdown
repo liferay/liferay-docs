@@ -1,4 +1,8 @@
-# Metal.js [](id=metal-js)
+---
+header-id: metal-js
+---
+
+# Metal.js
 
 Metal.js is a lightweight, easy-to-use JavaScript framework that lets you create
 UI Components with ease, thanks to its integration with templating languages.
@@ -50,8 +54,8 @@ get with ES6:
 These are just a few of the ES6 features available that you can use in your
 Metal.js components.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating a Soy Portlet](/develop/tutorials/-/knowledge_base/7-0/creating-a-soy-portlet)
+[Creating a Soy Portlet](/docs/7-0/tutorials/-/knowledge_base/t/creating-a-soy-portlet)
 
-[JavaScript Module Loaders](/develop/tutorials/-/knowledge_base/7-0/javascript-module-loaders)
+[JavaScript Module Loaders](/docs/7-0/tutorials/-/knowledge_base/t/javascript-module-loaders)

@@ -1,4 +1,8 @@
-# IntelliJ IDEA [](id=intellij-idea)
+---
+header-id: intellij-idea
+---
+
+# IntelliJ IDEA
 
 The
 [Liferay IntelliJ plugin](https://plugins.jetbrains.com/plugin/10739-liferay-intellij-plugin)

@@ -1,4 +1,8 @@
-# Service Builder Samples [](id=service-builder-samples)
+---
+header-id: service-builder-samples
+---
+
+# Service Builder Samples
 
 This section focuses on Liferay Service Builder sample projects built with
 various build tools. You can view these samples by visiting the

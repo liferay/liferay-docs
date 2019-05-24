@@ -1,11 +1,15 @@
-# Liferay API Modules [](id=finding-liferay-api-modules)
+---
+header-id: finding-liferay-api-modules
+---
+
+# Liferay API Modules
 
 The following table maps commonly used @product@ components to their API modules
 and key classes. You 
-[configure dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies) 
+[configure dependencies](/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies) 
 on the component API modules to use them. 
 
-## API Modules Table [](id=api-module-names-table)
+## API Modules Table
 
 | Component | Classes | Module Symbolic Name (Artifact ID) |
 | :-------------------- | :---------------- | :----------------------------------------------------------------------------------- |
@@ -116,10 +120,10 @@ docs at
 [@app-ref@](@app-ref@) and the @product@ core reference docs at 
 [@platform-ref@/7.0-latest](@platform-ref@/7.0-latest). 
 
-## Related Articles [](id=related-articles)
+## Related Articles
 
-[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
+[Configuring Dependencies](/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies)
 
-[Development Reference](/develop/reference/-/knowledge_base/7-0/development-reference)
+[Development Reference](/docs/7-0/reference/-/knowledge_base/r/development-reference)
 
-[Adapting to @product-ver@'s API with the Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+[Adapting to @product-ver@'s API with the Code Upgrade Tool](/docs/7-0/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)

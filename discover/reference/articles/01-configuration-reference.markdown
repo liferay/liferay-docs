@@ -1,4 +1,8 @@
-# Configuration Reference [](id=configuration-reference)
+---
+header-id: configuration-reference
+---
+
+# Configuration Reference
 
 The Configuration Reference page gives you shortcuts to Liferay Portal
 configuration reference documentation. From here, you can easily check Liferay

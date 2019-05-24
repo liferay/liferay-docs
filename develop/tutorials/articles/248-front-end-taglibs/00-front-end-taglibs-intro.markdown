@@ -1,4 +1,8 @@
-# Front-End Taglibs [](id=front-end-taglibs)
+---
+header-id: front-end-taglibs
+---
+
+# Front-End Taglibs
 
 @product@ offers a powerful set of taglibs that are fully maintained and 
 integrated. They provide common implementations for UI components and utilities 

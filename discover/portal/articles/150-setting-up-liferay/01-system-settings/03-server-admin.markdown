@@ -1,4 +1,8 @@
-# Server Administration [](id=server-administration)
+---
+header-id: server-administration
+---
+
+# Server Administration
 
 The Server Administration application (accessed by clicking *Control Panel
 &rarr; Configuration &rarr; Server Administration*) lets you perform tasks
@@ -7,14 +11,10 @@ resources available in the JVM.
 
 ![Figure 1: Server Administration is where you configure and monitor many aspects of the server.](../../../images/server-admin-resources.png)
 
-+$$$
-
-**Note:** Liferay DXP customers can use Liferay Connected Services (LCS) to
-obtain additional performance metrics. If you're a DXP customer, see the
-[LCS documentation](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/managing-liferay-with-liferay-connected-services)
-for more information.
-
-$$$
+| **Note:** Liferay DXP customers can use Liferay Connected Services (LCS) to
+| obtain additional performance metrics. If you're a DXP customer, see the
+| [LCS documentation](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/managing-liferay-with-liferay-connected-services)
+| for more information.
 
 The Server Administration functionality is broken into several tabs:
 
@@ -29,7 +29,7 @@ The Server Administration functionality is broken into several tabs:
 - [Script](#script)
 - [Shutdown](#shutdown)
 
-## Resources [](id=resources)
+## Resources
 
 The Resources tab contains several server wide actions that an administrator can
 execute. These include the following items:
@@ -107,7 +107,7 @@ layers aren't aware of lower caching layers. Always clear the cache at the
 lowest (most granular) layer possible, even if you've already cleared a higher
 level cache.
 
-## Log Levels [](id=log-levels)
+## Log Levels
 
 Here, you can make dynamic modifications of log levels for any class hierarchy
 in @product@. Custom objects not on the list can be added with the *Add
@@ -116,7 +116,7 @@ Category* tab. Changes to the log level near the top of the class hierarchy
 that hierarchy. Modifications unnecessarily high in the hierarchy generate too
 many messages to be useful.
 
-## Properties [](id=properties)
+## Properties
 
 Liferay and the JVM contain many settings which are defined as properties. The
 properties tab has two sub-tabs: System Properties and Portal Properties.
@@ -131,7 +131,7 @@ file directly. Portal properties are customizable; you can peruse the full list
 of available
 [portal properties](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html).
 
-## CAPTCHA [](id=captcha)
+## CAPTCHA
 
 CAPTCHA is designed to thwart bots from registering for accounts. By default,
 @product@ ships with its own CAPTCHA service. 
@@ -141,7 +141,7 @@ Server Administration. Check the *Enable ReCAPTCHA* box, enter your public and
 private keys into the provided fields, and click *Save*. @product@ then uses
 reCAPTCHA instead of the native CAPTCHA solution.
 
-## Data Migration [](id=data-migration)
+## Data Migration
 
 This tab is for upgrading @product@ or migrating its data from one system to
 another without writing custom scripts.
@@ -152,21 +152,21 @@ database. However, the database migration tool cannot be used in the current
 version of @product@ and will be removed in the next version of @product@.
 
 The second section, *Migrate documents from one repository to another*, helps
-you migrate your documents to a new repository on a different disk or in a [new format](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration). Here are the steps:
+you migrate your documents to a new repository on a different disk or in a [new format](/docs/7-0/deploy/-/knowledge_base/d/document-repository-configuration). Here are the steps:
 
 1.  Create a backup copy of the Document Library repository and
-    [@product@ database](/discover/deployment/-/knowledge_base/7-0/backing-up-a-liferay-installation). 
+    [@product@ database](/docs/7-0/deploy/-/knowledge_base/d/backing-up-a-liferay-installation). 
 2.  Configure the new file store on that file store's page, listed under *System
     Settings* &rarr; *Foundation*. 
 3.  In this tab (*Server Administration* &rarr; *Data Migration*), select the 
     repository hook for the file store you configured and click *Execute*. 
 4.  After the process completes, [configure the new
-    repository](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration)
+    repository](/docs/7-0/deploy/-/knowledge_base/d/document-repository-configuration)
     as the default. 
 5.  If you used a `portal-ext.properties` file to configure the repository, 
     restart the server. 
 
-## File Uploads [](id=file-uploads)
+## File Uploads
 
 Since @product@ allows users to upload files in various places, you may want to
 restrict the type and size of files users are allowed to upload. The File
@@ -174,11 +174,11 @@ Uploads tab lets you set the overall maximum file size and then grant exceptions
 to that limit for specific applications. You can also limit the allowed file
 extensions generally or by application.
 
-## Mail [](id=mail)
+## Mail
 
 Instead of using a `portal-ext.properties` file to configure a mail server, you
 can configure a mail server from the Mail tab. If your 
-[message boards receive mail](/discover/portal/-/knowledge_base/7-0/creating-forums-with-message-boards#user-subscriptions-and-mailing-lists),
+[message boards receive mail](/docs/7-0/user/-/knowledge_base/u/creating-forums-with-message-boards#user-subscriptions-and-mailing-lists),
 you can connect a POP mail server. If @product@ sends mail (useful for sending
 notifications to users), you can connect to an SMTP server. We highly recommend
 setting up mail servers.
@@ -187,7 +187,7 @@ Note that if you configure mail server settings here in the Control Panel, these
 settings override any mail server settings in your `portal-ext.properties`
 file.
 
-## External Services [](id=external-services)
+## External Services
 
 @product@ lets users upload and share content via the Documents and Media
 library, a customizable and permissions-enabled online repository for files.
@@ -200,7 +200,7 @@ generate automatic previews for many types of files including text files, office
 suite files, PDFs, images, audio files and videos. Users can also use the
 conversion functionality to download documents in a variety of formats. Please
 see the 
-[article on publishing files in @product@](/discover/portal/-/knowledge_base/7-0/publishing-files).
+[article on publishing files in @product@](/docs/7-0/user/-/knowledge_base/u/publishing-files).
 
 LibreOffice is available here: 
 [LibreOffice](http://www.libreoffice.org),
@@ -212,18 +212,14 @@ recommend that you install the latest stable versions. LibreOffice and
 ImageMagick must be installed manually, but you can install Xuggler from
 the Control Panel.
 
-+$$$
-
-**Tip:** If you're running @product@ on a Linux server and experience a problem
-enabling Xuggler, check your server's glibc version. You might have to update
-glibc to version 2.6 or later in order for Xuggler to work.
-
-$$$
+| **Tip:** If you're running @product@ on a Linux server and experience a problem
+| enabling Xuggler, check your server's glibc version. You might have to update
+| glibc to version 2.6 or later in order for Xuggler to work.
 
 Once you've installed these tools, you can use the Control Panel's External
 Services tab to configure @product@ to use them.
 
-### OpenOffice/LibreOffice Configuration [](id=openoffice-libreoffice-configuration)
+### OpenOffice/LibreOffice Configuration
 
 OpenOffice and LibreOffice are open source office suites which are usually run
 in graphical mode to create documents, but they can also be run in server
@@ -233,14 +229,10 @@ documents to and from all of the file types it supports. Once configured,
 install OpenOffice or LibreOffice on the same machine where @product@ is running
 or you can connect to a separate host. 
 
-+$$$
-
-**Note:** Running OpenOffice or LibreOffice in server mode on a remote host is 
-not recommended for converting documents in @product@, and is not fully 
-supported. To avoid unexpected behavior during document conversions, you should 
-run OpenOffice or LibreOffice in server mode on the same machine as @product@. 
-
-$$$
+| **Note:** Running OpenOffice or LibreOffice in server mode on a remote host is
+| not recommended for converting documents in @product@, and is not fully
+| supported. To avoid unexpected behavior during document conversions, you should
+| run OpenOffice or LibreOffice in server mode on the same machine as @product@.
 
 You can start LibreOffice or OpenOffice in server mode with the following
 command:
@@ -283,7 +275,7 @@ and on the Control Panel's External Services configuration page. When you are
 finished, click *Save*. Now @product@ can perform many types of document
 conversions.
 
-### ImageMagick configuration [](id=imagemagick-configuration)
+### ImageMagick configuration
 
 Before configuring ImageMagick to generate image and PDF previews, install it
 and its dependency, Ghostscript. This differs by operating system: on Linux,
@@ -320,7 +312,7 @@ later). To check for the latest ImageMagick versions, visit
 See [LPS-30291](http://issues.liferay.com/browse/LPS-30291) for information on
 efforts to identify incompatible application versions with @product@.
 
-### Xuggler configuration [](id=xuggler-configuration)
+### Xuggler configuration
 
 From the control panel, navigate to the *Server Administration* &rarr; 
 *External Services* page. From the dropdown, select the Xuggler `.jar` file that 
@@ -342,15 +334,15 @@ on *Save*.
 That's it! You've successfully configured Documents and Media to use Xuggler for
 audio and video files. 
 
-## Script [](id=script)
+## Script
 
 The Script tab includes a scripting console for executing migration or
 management code. The Groovy scripting language is supported out of the box. For
 more information, see the 
-[Scripting article](/discover/portal/-/knowledge_base/7-0/using-liferays-script-engine)
+[Scripting article](/docs/7-0/user/-/knowledge_base/u/using-liferays-script-engine)
 for more information on how to use the scripting console and examples.
 
-## Shutdown [](id=shutdown)
+## Shutdown
 
 If you ever need to shut down your @product@ server while users are logged in,
 you can use the Shutdown tab to inform your logged-in users of the impending

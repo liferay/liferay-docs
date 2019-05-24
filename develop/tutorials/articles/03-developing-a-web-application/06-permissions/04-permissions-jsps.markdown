@@ -1,4 +1,8 @@
-# Permissions in JSPs [](id=permissions-in-jsps)
+---
+header-id: permissions-in-jsps
+---
+
+# Permissions in JSPs
 
 <div class="learn-path-step">
     <p>Implementing Permissions<br>Step 4 of 4</p>
@@ -19,7 +23,7 @@ imports to the file:
 The first three are the permissions helper classes you just created. Now it's 
 time to implement permission checks. 
 
-## Checking Permissions in the UI [](id=checking-permissions-in-the-ui)
+## Checking Permissions in the UI
 
 Recall that you want to restrict access to three areas in your application: 
 
@@ -196,21 +200,17 @@ test your application with different users. Administrative users see all the
 buttons, regular users see the Add Entry button, and guests see no buttons at 
 all (but can navigate). 
 
-+$$$
-
-**Note:** You may see an error where the Guestbook portlet doesn't appear at 
-all, and you see this error in the log: 
-
-    Someone may be trying to circumvent the permission checker. 
-
-This is because any data you currently have in the Guestbook application doesn't 
-have resources. In this case, you must drop and re-create your database. To do
-this, find your Liferay Workspace on your file system (it should be inside your
-Eclipse workspace). Inside the `bundles/data` folder is a `hypersonic` folder.
-Shut down @product@, remove everything from this folder, and then restart. After
-adding guestbook to a page, the portlet will work normally. 
-
-$$$
+| **Note:** You may see an error where the Guestbook portlet doesn't appear at
+| all, and you see this error in the log:
+| 
+|     Someone may be trying to circumvent the permission checker.
+| 
+| This is because any data you currently have in the Guestbook application doesn't
+| have resources. In this case, you must drop and re-create your database. To do
+| this, find your Liferay Workspace on your file system (it should be inside your
+| Eclipse workspace). Inside the `bundles/data` folder is a `hypersonic` folder.
+| Shut down @product@, remove everything from this folder, and then restart. After
+| adding guestbook to a page, the portlet will work normally.
 
 Now see if you can do the same for the Guestbook Admin portlet. Don't worry if
 you can't: at the end of this Learning Path is a link to the completed project

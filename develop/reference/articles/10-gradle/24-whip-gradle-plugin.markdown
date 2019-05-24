@@ -1,4 +1,8 @@
-# Whip Gradle Plugin [](id=whip-gradle-plugin)
+---
+header-id: whip-gradle-plugin
+---
+
+# Whip Gradle Plugin
 
 The Whip Gradle plugin lets you use the [Liferay Whip](https://github.com/liferay/liferay-portal/tree/master/modules/test/whip)
 library to ensure that unit tests fully cover your project's code. See
@@ -7,7 +11,7 @@ for a usage sample.
 
 The plugin has been successfully tested with Gradle 4.10.2.
 
-## Usage [](id=usage)
+## Usage
 
 To use the plugin, include it in your build script:
 
@@ -43,7 +47,7 @@ By default, Whip is automatically applied to all tasks of type [`Test`](https://
 If a task has Whip applied and Whip is [enabled](#enabled), then Whip is
 configured as a Java Agent.
 
-## Project Extension [](id=project-extension)
+## Project Extension
 
 The Whip Gradle plugin exposes the following properties through the extension
 named `whip`:
@@ -58,7 +62,7 @@ Method | Description
 ------ | -----------
 `void applyTo(Task task)` | Applies Whip to a task. The task instance must implement the [`JavaForkOptions`](https://docs.gradle.org/current/javadoc/org/gradle/process/JavaForkOptions.html) interface.
 
-## Task Extension [](id=task-extension)
+## Task Extension
 
 If Whip is applied, the following task properties are available through the
 extension named `whip`:
@@ -81,11 +85,11 @@ Method | Description
 `WhipTaskExtension includes(Iterable<Object> includes)` | Adds class name patterns to include when checking for unit test coverage.
 `WhipTaskExtension includes(Object... includes)` | Adds class name patterns to include when checking for unit test coverage.
 
-## Additional Configuration [](id=additional-configuration)
+## Additional Configuration
 
 There are additional configurations that can help you use Whip.
 
-### Liferay Whip Dependency [](id=liferay-whip-dependency)
+### Liferay Whip Dependency
 
 By default, the Whip Gradle plugin creates a configuration called `whip` and
 adds a dependency to the version of Liferay Whip configured in the [`whip.version`](#version)

@@ -1,4 +1,8 @@
-# Calling Non-OSGi Code that Uses OSGi Services [](id=calling-non-osgi-code-that-uses-osgi-services)
+---
+header-id: calling-non-osgi-code-that-uses-osgi-services
+---
+
+# Calling Non-OSGi Code that Uses OSGi Services
 
 @product@'s static utility functions (e.g., `UserServiceUtil`, 
 `CompanyServiceUtil`, `GroupServiceUtil`, etc.) are examples of non-OSGi code 
@@ -18,11 +22,11 @@ Registry API to track the services you want. This way, you let OSGi
 make sure a service's dependencies are satisfied before invoking that service.
 For example, use @product@'s OSGi service `UserService` instead of
 `UserServiceUtil`, which in turn uses the OSGi service `UserService`.
-[Click here](/develop/tutorials/-/knowledge_base/7-0/using-osgi-services-from-ext-plugins)
+[Click here](/docs/7-0/tutorials/-/knowledge_base/t/using-osgi-services-from-ext-plugins)
 to see an example of this. 
 
 Remember that you can check the state of @product@'s services in 
-[the Gogo shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell). 
+[the Gogo shell](/docs/7-0/reference/-/knowledge_base/r/using-the-felix-gogo-shell). 
 If you're running @product@ locally, use the command `telnet localhost 11311` to 
 connect to the Gogo shell. Once connected, the `scr:list` command shows all
 Declarative Services components, including inactive ones from unsatisfied
@@ -32,12 +36,12 @@ commands only show components that haven't been activated because of unsatisfied
 dependencies--they don't show pure service trackers that are waiting for a
 service because of unsatisfied dependencies. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using OSGi Services from EXT Plugins](/develop/tutorials/-/knowledge_base/7-0/using-osgi-services-from-ext-plugins)
+[Using OSGi Services from EXT Plugins](/docs/7-0/tutorials/-/knowledge_base/t/using-osgi-services-from-ext-plugins)
 
-[Detecting Unresolved OSGi Components](/develop/tutorials/-/knowledge_base/7-0/detecting-unresolved-osgi-components)
+[Detecting Unresolved OSGi Components](/docs/7-0/tutorials/-/knowledge_base/t/detecting-unresolved-osgi-components)
 
-[Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell)
+[Felix Gogo Shell](/docs/7-0/reference/-/knowledge_base/r/using-the-felix-gogo-shell)
 
-[OSGi Basics For Liferay Development](/develop/tutorials/-/knowledge_base/7-0/osgi-basics-for-liferay-development)
+[OSGi Basics For Liferay Development](/docs/7-0/tutorials/-/knowledge_base/t/osgi-basics-for-liferay-development)

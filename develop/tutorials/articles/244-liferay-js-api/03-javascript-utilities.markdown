@@ -1,9 +1,13 @@
-# @product@ JavaScript Utilities [](id=javascript-utilities)
+---
+header-id: javascript-utilities
+---
+
+# @product@ JavaScript Utilities
 
 This tutorial explains some of the utility methods and objects inside the 
 `Liferay` global JavaScript object.
 
-## Liferay Browser [](id=liferay-browser)
+## Liferay Browser
 
 The `Liferay.Browser` object contains methods that expose the current user agent 
 characteristics without the need of accessing and parsing the global 
@@ -35,6 +39,6 @@ below:
 | isWebKit | boolean | |
 | isWindows | boolean | |
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Liferay Theme Display](/develop/tutorials/-/knowledge_base/7-0/liferay-themedisplay)
+[Liferay Theme Display](/docs/7-0/tutorials/-/knowledge_base/t/liferay-themedisplay)

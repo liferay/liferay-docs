@@ -1,4 +1,8 @@
-# Creating More Content [](id=creating-more-content)
+---
+header-id: creating-more-content
+---
+
+# Creating More Content
 
 <div class="learn-path-step">
     <p>Creating Content<br>Step 1 of 7</p>
@@ -11,7 +15,7 @@ creating content on the front page to create articles for the *About Us* page.
 On the *About Us* page, you'll add information about the Lunar Resort and other
 related Space Program initiatives.
 
-## Creating the About Us Page Content [](id=creating-the-about-us-page-content)
+## Creating the About Us Page Content
 
 Recall that you created the Welcome page's content in Site Administration and 
 then added it to the page. You'll use a slightly different method to create the 

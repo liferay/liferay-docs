@@ -1,4 +1,8 @@
-# Enabling Assets at the Service Layer [](id=enabling-assets-at-the-service-layer)
+---
+header-id: enabling-assets-at-the-service-layer
+---
+
+# Enabling Assets at the Service Layer
 
 <div class="learn-path-step">
     <p>Enabling Assets at the Service Layer<br>Step 1 of 3</p>

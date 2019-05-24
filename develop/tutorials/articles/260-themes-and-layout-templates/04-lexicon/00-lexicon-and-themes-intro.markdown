@@ -1,4 +1,8 @@
-# Lexicon CSS and Themes [](id=lexicon-and-themes)
+---
+header-id: lexicon-and-themes
+---
+
+# Lexicon CSS and Themes
 
 Lexicon CSS is an extension of Bootstrap's CSS Framework. Bootstrap is by far 
 the most popular CSS framework on the web. Also, it's open source, so anyone can 

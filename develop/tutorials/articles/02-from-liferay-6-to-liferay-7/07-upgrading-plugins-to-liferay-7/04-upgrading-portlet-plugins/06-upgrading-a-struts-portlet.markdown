@@ -1,4 +1,8 @@
-# Upgrading a Struts Portlet [](id=upgrading-a-struts-portlet)
+---
+header-id: upgrading-a-struts-portlet
+---
+
+# Upgrading a Struts Portlet
 
 Struts is a stable, widely adopted framework that implements the Model View
 Controller (MVC) design pattern. If you have a Struts portlet for Liferay Portal
@@ -75,10 +79,10 @@ Upgrading a Struts portlet involves these steps:
 
 2.  [Resolve dependencies](#resolving-dependencies)
 
-## Adapting the code to Liferay Portal 7.0's API [](id=adapting-the-code-to-liferay-portal-7-0s-api)
+## Adapting the code to Liferay Portal 7.0's API
 
 Liferay's 
-[Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+[Code Upgrade Tool](/docs/7-0/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
 identifies code affected by the new API, explains the API changes and how to
 adapt to them, and in many cases, provides options for adapting the code
 automatically.
@@ -86,7 +90,7 @@ automatically.
 Adapting the Sample Struts portlet's code is straightforward. Resolving its
 dependencies is more involved. 
 
-## Resolving dependencies [](id=resolving-dependencies)
+## Resolving dependencies
 
 The Liferay Portal 6.2 Sample Struts portlet depends on Liferay Portal to
 provide required third-party libraries and tag library definitions (TLDs). The
@@ -121,7 +125,7 @@ portlet's `liferay-plugin-package.properties` specifies them:
 
 Resolving the tag libraries is easy.
 
-### Resolving Tag Library Definitions [](id=resolving-tag-library-definitions)
+### Resolving Tag Library Definitions
 
 @product-ver@ continues to provide many of the same TLDs Liferay Portal 6.2 provided. 
 
@@ -131,7 +135,7 @@ add it to your portlet's `portal-dependency-tlds` property in the
 find the TLD on the web, download it, and add it to your portlet's `WEB-INF/tld`
 folder.
 
-### Resolving Third-Party Libraries [](id=resolving-third-party-libraries)
+### Resolving Third-Party Libraries
 
 Third-party libraries listed as `portal-dependency-jars` in a 6.x portlet's
 `liferay-plugin-package.properties` file might not be provided by @product-ver@.
@@ -203,37 +207,29 @@ JAR | [System exports the packages](https://github.com/liferay/liferay-portal/bl
 `struts-taglib.jar` | No | Add to `WEB-INF/lib` |
 `struts-tiles.jar` | No | Add to `WEB-INF/lib` |
 
-+$$$
-
-Note: The official
-[Sample Struts portlet](https://github.com/liferay/liferay-plugins/tree/master/portlets/sample-struts-portlet)
-for @product-ver@ uses
-[Apache Ant/Ivy](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies#managing-dependencies-with-ivy)
-to manage dependencies.
-
-$$$
+| Note: The official
+| [Sample Struts portlet](https://github.com/liferay/liferay-plugins/tree/master/portlets/sample-struts-portlet)
+| for @product-ver@ uses
+| [Apache Ant/Ivy](/docs/7-0/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies#managing-dependencies-with-ivy)
+| to manage dependencies.
 
 For more details on resolving dependencies, see the tutorial
-[Resolving a Plugin's Dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies).
+[Resolving a Plugin's Dependencies](/docs/7-0/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies).
 
 You've resolved the Sample Struts portlet's dependencies. It's ready to deploy. 
 
-+$$$
-
-**Important**: Setting Portal property `jsp.page.context.force.get.attribute` 
-(described in the
-[JSP section](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#JSP)) 
-to `true` (default) forces calls to `com.liferay.taglib.servlet.
-PageContextWrapper#findAttribute(String)` to use `getAttribute(String)`.
-Although this improves performance by avoiding unnecessary fall-backs, it can
-cause attribute lookup problems in Struts portlets. To use Struts portlets in
-your sites, makes sure to set the Portal property
-`jsp.page.context.force.get.attribute` to `false` in a file
-`[Liferay-Home]/portal-ext.properties`. 
-
-    jsp.page.context.force.get.attribute=false
-
-$$$
+| **Important**: Setting Portal property `jsp.page.context.force.get.attribute`
+| (described in the
+| [JSP section](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#JSP))
+| to `true` (default) forces calls to `com.liferay.taglib.servlet.
+| PageContextWrapper#findAttribute(String)` to use `getAttribute(String)`.
+| Although this improves performance by avoiding unnecessary fall-backs, it can
+| cause attribute lookup problems in Struts portlets. To use Struts portlets in
+| your sites, makes sure to set the Portal property
+| `jsp.page.context.force.get.attribute` to `false` in a file
+| `[Liferay-Home]/portal-ext.properties`.
+| 
+|     jsp.page.context.force.get.attribute=false
 
 Deploy the Struts portlet as you normally would. The server prints messages
 indicating the following portlet status:
@@ -260,8 +256,8 @@ The Struts portlet is available on your @product@ instance.
 
 Congratulations on upgrading your Struts portlet to @product-ver@!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using the WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)
+[Using the WAB Generator](/docs/7-0/tutorials/-/knowledge_base/t/using-the-wab-generator)
 
-[Using Dependency Management Tools](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies#managing-dependencies-with-ivy)
+[Using Dependency Management Tools](/docs/7-0/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies#managing-dependencies-with-ivy)

@@ -1,4 +1,8 @@
-# Working with URLs in JavaScript [](id=working-with-urls-in-javascript)
+---
+header-id: working-with-urls-in-javascript
+---
+
+# Working with URLs in JavaScript
 
 In Java, developers are able to create and work with URLs using their APIs. The 
 `Liferay` global object offers some features to help you create and work with 
@@ -7,7 +11,7 @@ URLs.
 This tutorial covers some of the most commonly used methods inside the 
 `Liferay` global JavaScript object to manipulate URLs.
 
-## Liferay PortletURL [](id=liferay-portlet-url)
+## Liferay PortletURL
 
 The `Liferay.PortletURL` class provides a way to create Liferay PortletURL's 
 such as the `actionURL`, `renderURL`, and `resourceURL` through JavaScript.
@@ -22,13 +26,13 @@ Below is an example configuration:
     portletURL.setParameter('p_auth', Liferay.authToken);
     portletURL.setPortletId(Liferay.PortletKeys.DOCUMENT_LIBRARY);
 
-## Liferay AuthToken [](id=liferay-auth-token)
+## Liferay AuthToken
 
 Below is an example configuration for the `Liferay.authToken`:
 
     Liferay.authToken = '<%= AuthTokenUtil.getToken(request) %>';
 
-## Liferay CurrentURL [](id=liferay-current-url)
+## Liferay CurrentURL
 
 The `Liferay.currentURL` variable holds the path of the current URL from the 
 server root.
@@ -39,7 +43,7 @@ For example, if checked from `my.domain.com/es/web/guest/home`, the value is
     // Inside my.domain.com/es/web/guest/home
     console.log(Liferay.currentURL); // "/es/web/guest/home"
 
-## Liferay CurrentURLEncoded [](id=liferay-current-url-encoded)
+## Liferay CurrentURLEncoded
 
 The `Liferay.currentURLEncoded` variable holds the path of the current URL from 
 the server root encoded in ASCII for safe transmission over the Internet.
@@ -53,8 +57,8 @@ For example, if checked from `my.domain.com/es/web/guest/home`, the value is
 Now you know how to manipulate URLs using methods within the `Liferay` global 
 JavaScript object.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[@product@ JavaScript Utilities](/develop/tutorials/-/knowledge_base/7-0/javascript-utilities)
+[@product@ JavaScript Utilities](/docs/7-0/tutorials/-/knowledge_base/t/javascript-utilities)
 
-[Liferay Theme Display](/develop/tutorials/-/knowledge_base/7-0/liferay-themedisplay)
+[Liferay Theme Display](/docs/7-0/tutorials/-/knowledge_base/t/liferay-themedisplay)

@@ -1,18 +1,22 @@
-# Search [](id=search)
+---
+header-id: search
+---
+
+# Search
 
 Sites built on @product@ often feature lots of content split over lots of asset
 types. Web content articles, documents and media files, and blogs entries are
 just a few examples. Most content types in @product@ are *assets*. Under the
 hood, assets use the [Asset
-API](/develop/tutorials/-/knowledge_base/7-0/asset-framework) and have an
+API](/docs/7-0/tutorials/-/knowledge_base/t/asset-framework) and have an
 [Indexer
-class](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search#indexers).
+class](/docs/7-0/tutorials/-/knowledge_base/t/introduction-to-liferay-search#indexers).
 Any content that has these features can be searched in the @product@ Search
 application. 
 
 ![Figure 1: There are many searchable out-of-the-box asset types.](../../images/search-assets.png)
 
-## Searching the Index, not the Database [](id=searching-the-index-not-the-database)
+## Searching the Index, not the Database
 
 @product@ stores its data in a database. You might incorrectly assume that
 you're directly searching the database when you use @product@'s Search
@@ -30,10 +34,10 @@ It's worth adding the complexity of a search engine, rather than searching the
 database directly, for performance reasons and for some of the features that
 search engines provide, like algorithms that give you the ability to use
 relevancy scores. For more technical details, see the [Introduction to
-Search](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search)
+Search](/docs/7-0/tutorials/-/knowledge_base/t/introduction-to-liferay-search)
 developer article.
 
-## Leveraging Elasticsearch in @product@ [](id=leveraging-elasticsearch-in-product)
+## Leveraging Elasticsearch in @product@
 
 The default search engine used by @product@ is Elasticsearch, which is backed by
 the Lucene search library. There's an Elasticsearch server embedded in @product@
@@ -41,9 +45,9 @@ bundles, which is handy for testing and development purposes. Production
 environments must install a separate, remote Elasticsearch server (or even
 better, cluster of servers). For information on how to set up Elasticsearch for
 @product@ in production, read the [deployment
-guide](/discover/deployment/-/knowledge_base/7-0/installing-a-search-engine).
+guide](/docs/7-0/deploy/-/knowledge_base/d/installing-a-search-engine).
 
-## @product@ Search Features [](id=product-search-features)
+## @product@ Search Features
 
 Searching is simple and straghtforward. Find a search portlet (there's one
 embedded in every page by default), enter a term in its search bar, and click
@@ -60,13 +64,13 @@ column you'll see search facets.
 The search bar, search results, and search facets make up three powerful
 features in @product@'s search UI.
 
-### Search Bar [](id=search-bar)
+### Search Bar
 
 The search bar is simple: it's where you enter *search terms*. Search terms are
 the text you send to the search engine to match against the documents in the
 index. The documents that are returned are where this gets interesting.
 
-### Search Results and Relevance [](id=search-results-and-relevance)
+### Search Results and Relevance
 
 The search term is processed by an algorithm in the search engine, and search
 results are returned to users in order of relevance. Relevance is determined by
@@ -88,10 +92,10 @@ than is the case for the same field in other documents, the score will be
 higher. However, if it's a long field (like a *content* field for a Blogs Entry
 document) then the presence of the search term is discounted. Its presence in a
 shorter field (like a *title* field) produces a higher relevance score. See [the
-Search Results article](/discover/portal/-/knowledge_base/7-0/search-results)
+Search Results article](/docs/7-0/user/-/knowledge_base/u/search-results)
 for a longer discussion of relevance.
 
-### Search Facets [](id=search-facets)
+### Search Facets
 
 Facets are a core feature of the @prodcut@ Search application.
 
@@ -116,4 +120,4 @@ online commerce. You search for an item, are presented with a list of results,
 and a list of buckets you can click to further refine the search results,
 without entering additional search terms. Search facets work the same way in
 @product@. Facets are, of course,
-[configurable](/discover/portal/-/knowledge_base/7-0/configuring-facets).
+[configurable](/docs/7-0/user/-/knowledge_base/u/configuring-facets).

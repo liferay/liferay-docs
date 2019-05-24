@@ -1,4 +1,8 @@
-# Using the Patching Tool [](id=patching-tool)
+---
+header-id: patching-tool
+---
+
+# Using the Patching Tool
 
 If you're using a @product@ bundle, the Patching Tool is already installed. When
 an update is necessary to install a patch, the Patching Tool automatically
@@ -12,7 +16,7 @@ the @product@ installation.
 Upgrading is easy: override the previous Patching Tool with newest one by
 unzipping it on top of the old version. 
 
-## Executables [](id=executables)
+## Executables
 
 The Patching Tool is a Java based application. The distribution contains shell/
 .bat scripts to make it easier to use. On Unix systems you can run
@@ -26,7 +30,7 @@ On Windows, run
 The latter method appears in the examples below. On Unix, replace the name of
 the executable before running the scripts.
 
-## Installing Patches [](id=installing-patches)
+## Installing Patches
 
 The first thing you must do when installing patches is to shut down your server.
 On Windows operating systems, files that are in use are locked by the OS, and
@@ -55,27 +59,19 @@ issue the following command:
 
 To make sure the all changed OSGi bundles replace the existing ones, it is
 recommended to delete the `osgi/state` folder from the
-[Liferay Home folder](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home). 
+[Liferay Home folder](/docs/7-0/deploy/-/knowledge_base/d/installing-product#liferay-home). 
 
-+$$$
+| **Important**: The `osgi/state` folder should ONLY be deleted when working in a
+| development environment or when applying a fix pack or hot fix.
 
-**Important**: The `osgi/state` folder should ONLY be deleted when working in a 
-development environment or when applying a fix pack or hot fix. 
-
-$$$
-
-+$$$
-
-**Note**: The `osgi/state` folder in the contains OSGi bundle state information.
-If an OSGi bundle's changes in a hot fix or fix pack are internal only and are,
-therefore, invisible to the OSGi framework, that OSGi bundle stays installed and
-its state information stays unchanged. Hot fixes, for example, may contain
-in-place changes that do not use the API---the framework cannot detect such
-changes. A fix pack's changes may also be transparent to the framework. For
-these reasons, deleting the `osgi/state` folder after applying fix packs and hot
-fixes is recommended. 
-
-$$$
+| **Note**: The `osgi/state` folder in the contains OSGi bundle state information.
+| If an OSGi bundle's changes in a hot fix or fix pack are internal only and are,
+| therefore, invisible to the OSGi framework, that OSGi bundle stays installed and
+| its state information stays unchanged. Hot fixes, for example, may contain
+| in-place changes that do not use the API---the framework cannot detect such
+| changes. A fix pack's changes may also be transparent to the framework. For
+| these reasons, deleting the `osgi/state` folder after applying fix packs and hot
+| fixes is recommended.
 
 If there are new database indexes created by the patch, the Patching Tool tells
 you to update them. To get the list, run this command:
@@ -96,33 +92,25 @@ Once your patches have been installed, you can verify them by using the
 `patching-tool info` command, which now shows your patches in the list of
 installed patches. 
 
-+$$$
-
-**Note:** If there are any issues with the installed fixes, verify that there aren't
-any remaining files from the previous patch installation of a fix pack or
-hotfix within the application server cache.
-
-$$$
+| **Note:** If there are any issues with the installed fixes, verify that there aren't
+| any remaining files from the previous patch installation of a fix pack or
+| hotfix within the application server cache.
 
 During the installation, `patching-backup-deps.zip` and `patching-backup.zip`
 files are created and stored in the `ROOT/WEB-INF` folder. These files are
 necessary to restore the @product@'s original state; removing them would disable
 further patching. 
 
-+$$$
-
-**Note:** When installing patches, @product@'s `web.xml` is always overwritten
-by the one contained in the patch. If you've customized `web.xml`, you must
-re-implement your customizations after installing a patch. 
-
-$$$
+| **Note:** When installing patches, @product@'s `web.xml` is always overwritten
+| by the one contained in the patch. If you've customized `web.xml`, you must
+| re-implement your customizations after installing a patch.
 
 The `patching-backup.zip` file is necessary for installing future patches,
 because the Patching Tool reverts the installed fix pack before installing a new
 one. To revert the installed fix pack, it examines the contents of the
 `patching-backup.zip` to determine the changes that it needs to revert. 
 
-### Handling Hotfixes and Patches [](id=handling-hot-fixes-and-patches)
+### Handling Hotfixes and Patches
 
 As stated above, hotfixes are short term fixes provided as quickly as possible,
 and fix packs are larger bundles of hotfixes provided to all customers at
@@ -137,7 +125,7 @@ If a new version of a fix pack is released, you can use the Patching Tool to
 install it. The Patching Tool uninstalls the old fix pack and installs the new
 version in its place. 
 
-### Including '*support-info*' in LESA Tickets [](id=including-support-info-in-lesa-tickets)
+### Including '*support-info*' in LESA Tickets
 
 To enable Liferay to reproduce subscriber issues, it is critical that the patch
 level in a given environment be made available to Liferay. 
@@ -150,7 +138,7 @@ A text file called `patching-tool-support-info-actual-timestamp.txt` is created
 in the patching-tool folder. Please upload this file to the LESA ticket.
 
 
-### Fix Pack Dependencies [](id=fix-pack-dependencies)
+### Fix Pack Dependencies
 
 Some hotfixes require a fix pack to be installed first. If you attempt to
 install a hotfix that depends on a fix pack, the Patching Tool notifies
@@ -160,7 +148,7 @@ installs them.
 
 The Patching Tool can also remove patches. 
 
-## Removing or Reverting Patches [](id=removing-or-reverting-patches)
+## Removing or Reverting Patches
 
 Have you noticed that the Patching Tool only seems to have an `install` command?
 This is because patches are managed not by the command, but by what appears in
@@ -176,7 +164,7 @@ Prior to Fix Pack 13, the OSGi state folder could retain obsolete bundles in
 its cache. If you're running a version prior to Fix Pack 13, delete the
 *osgi/state* folder in Liferay Home.
 
-## Cleaning Up [](id=cleaning-up)
+## Cleaning Up
 
 After you've performed your patching procedure (whether you've installed or
 removed patches), it's important to clean up @product@'s cache of deployed code.
@@ -186,7 +174,7 @@ just installed the patches for. This is really easy to do.
 In the Liferay Home folder is a folder called `work`. Remove the contents of
 this folder to clear out the cached code. Now you're ready to start your server. 
 
-## Comparing Patch Levels [](id=comparing-patch-levels)
+## Comparing Patch Levels
 
 If you're a developer, the Patching Tool can show you what changed between
 different versions. These commands show you information about the different
@@ -214,7 +202,7 @@ options:
 
 For detailed usage information, run `patching-tool help store`.
 
-## Showing collisions between patches and deployed plugins [](id=list-collisions)
+## Showing collisions between patches and deployed plugins
 
 Some patches update files you might have customized via a plugin. The
 `patching-tool list-collisions` command lists differences (collisions) between
@@ -229,14 +217,10 @@ It is an alias for the following diff command:
 `_base` is the literal patch level name. Collisions are only listed for
 installed patches that contain source code files. 
 
-+$$$
+| **Note:** As of Patching Tool 2.0.9, `patching-tool list-collisions` lists only
+| JSP file collisions in fragment bundles.
 
-**Note:** As of Patching Tool 2.0.9, `patching-tool list-collisions` lists only 
-JSP file collisions in fragment bundles.
-
-$$$
-
-## Separating the Patches from the @product@ Installation [](id=separating-the-patches-from-the-product-installation)
+## Separating the Patches from the @product@ Installation
 
 As of Patching Tool 2.0.6, there's a feature that helps reduce the patched
 @product@ bundle size. If the bundle has been patched, you can make it smaller
@@ -277,7 +261,7 @@ Any other command returns this:
  
 This is how you restore the patch files to your system. Details below. 
 
-### Restoring the Separated Patch Files [](id=restoring-the-separated-patch-files)
+### Restoring the Separated Patch Files
  
 When you need to patch @product@ again, you must restore the
 separated patch artifact. To do this, copy the

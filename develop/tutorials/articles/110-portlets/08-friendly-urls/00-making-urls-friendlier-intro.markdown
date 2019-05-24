@@ -1,4 +1,8 @@
-# Making URLs Friendlier [](id=making-urls-friendlier)
+---
+header-id: making-urls-friendlier
+---
+
+# Making URLs Friendlier
 
 This is a story of two URLs who couldn't be more different. One was full of
 himself, and always wanted to show everyone (users and SEO services alike) just
@@ -19,7 +23,7 @@ encountered.
 If you want your application to be friendly to your users and to SEO services,
 make your URLs friendlier. It only takes a couple steps, after all.
 
-## Creating Friendly URL Routes [](id=creating-friendly-url-routes)
+## Creating Friendly URL Routes
 
 1. First create a `routes.xml` file in your application's web module (if a
 multi-module build, in the pattern of Liferay's native Service Builder
@@ -67,13 +71,9 @@ variable that matches the
 `entryId` value is `123` results in a URL value `/123`, which matches the
 pattern. 
 
-+$$$
-
-**Warning:** Make sure your `pattern` values don't end in a slash `/`. A 
-trailing slash character prevents the request from identifying the correct
-route. 
-
-$$$
+| **Warning:** Make sure your `pattern` values don't end in a slash `/`. A
+| trailing slash character prevents the request from identifying the correct
+| route.
 
 **Important:** If your portlet is instanceable, you must use a variant of the 
 `instanceId` in the `pattern` value. If the starting value is `render-it`, for
@@ -98,7 +98,7 @@ to define any of them, they'll just be generated as usual.
 
 The implicit parameters with the name `mvcRenderCommandName` are very
 important. If you're
-[using an `MVCPortlet` with `MVCRenderCommand` classes](/develop/tutorials/-/knowledge_base/7-0/mvc-render-command),
+[using an `MVCPortlet` with `MVCRenderCommand` classes](/docs/7-0/tutorials/-/knowledge_base/t/mvc-render-command),
 that parameter comes from the `mvc.command.name` property in the `@Component` of
 your `MVCRenderCommand` implementation. Basically, this determines what will be
 rendered (for example, `view.jsp`).
@@ -112,7 +112,7 @@ rendered (for example, `view.jsp`).
         service = MVCRenderCommand.class
     )
 
-## Implementing a Friendly URL Mapper [](id=implementing-a-friendly-url-mapper)
+## Implementing a Friendly URL Mapper
 
 Once you have your URLs mapped in a `routes.xml` file, you need to provide an
 implementation of the
@@ -155,7 +155,7 @@ application:
 All of the Blogs application's friendly URLs begin with the String set here
 (`blogs`).
 
-## Friendly URLs in Action [](id=friendly-urls-in-action)
+## Friendly URLs in Action
 
 Let's look at one of these Friendly URLs in action. If you add a blog entry in
 Liferay, and then add the Blogs application to a page, click on the title of the

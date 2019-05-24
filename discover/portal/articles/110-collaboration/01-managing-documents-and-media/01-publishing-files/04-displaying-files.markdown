@@ -1,4 +1,8 @@
-# Displaying Files [](id=displaying-files)
+---
+header-id: displaying-files
+---
+
+# Displaying Files
 
 Once you've uploaded image files and videos to your Document Library, you'll
 probably want to display them in your site. Here are some ways you can display 
@@ -18,7 +22,7 @@ coffee mugs, and tee-shirts. They even offer to burn media files onto DVDs.
 Let's explore how the media team shows off the guest's pics and videos on a
 site.
 
-## Creating a Media Page [](id=creating-a-media-page)
+## Creating a Media Page
 
 The media team creates a page for each guest party. Team members can customize
 each page to focus on each party's media. Each party's media page will have a
@@ -26,7 +30,7 @@ Media Gallery app. The Media Gallery shows a large thumbnail of each media file,
 lets the user download individual files, and comes with slideshow capabilities.
 Let's create a media page for the Spacey guest party and add the Media Gallery.
 
-[Add a page](/discover/portal/-/knowledge_base/7-0/creating-and-managing-pages)
+[Add a page](/docs/7-0/user/-/knowledge_base/u/creating-and-managing-pages)
 named *Spacey Party*. Next, click the *Add* icon
 (![Add](../../../../images/icon-add-app.png)), then navigate to *Applications
 &rarr; Content Management*, and select *Add* next to *Media Gallery*. The app

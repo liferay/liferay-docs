@@ -1,4 +1,8 @@
-# Installing the Guestbook Mobile SDK and Liferay Screens for Android [](id=installing-the-guestbook-mobile-sdk-and-liferay-screens-for-android)
+---
+header-id: installing-the-guestbook-mobile-sdk-and-liferay-screens-for-android
+---
+
+# Installing the Guestbook Mobile SDK and Liferay Screens for Android
 
 For your Android app to interact with the Guestbook portlet, you must install 
 the following libraries in your Android project:
@@ -11,7 +15,7 @@ the following libraries in your Android project:
   call the Guestbook portlet's remote services. 
 
 - **Liferay Screens:** Screens contains the Screenlet framework and 
-  [several built-in Screenlets](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android) 
+  [several built-in Screenlets](/docs/7-0/reference/-/knowledge_base/r/screenlets-in-liferay-screens-for-android) 
   like Login Screenlet. Because these built-in Screenlets interact with 
   @product@'s core apps, they make their server calls with Liferay's pre-built 
   Mobile SDK. Note that all Screenlets, including those that make server calls 
@@ -25,7 +29,7 @@ install the Guestbook Mobile SDK manually.
 This article walks you through the installation of the Guestbook Mobile SDK and 
 Liferay Screens. When you finish, you'll be ready to start developing the app. 
 
-## Installing the Guestbook Mobile SDK [](id=installing-the-guestbook-mobile-sdk)
+## Installing the Guestbook Mobile SDK
 
 The Mobile SDK Builder generated two separate JAR files in your
 `liferay-mobile-sdk-android-7.0.6` folder: 
@@ -43,7 +47,7 @@ location for your Android app is
 `AndroidStudioProjects/LiferayGuestbook`). That's it! Next, you'll install 
 Liferay Screens. 
 
-## Installing Liferay Screens [](id=installing-liferay-screens)
+## Installing Liferay Screens
 
 To install Liferay Screens, you must edit your app's `build.gradle` file. Note 
 that your project has two `build.gradle` files: one for the project, and another 
@@ -62,7 +66,7 @@ This adds the `liferay-screens` and `liferay-material-viewset` dependencies.
 Although only the `liferay-screens` dependency is necessary to install Screens, 
 adding other View Sets, like the Material View Set, gives you flexibility when 
 designing your app's look and feel. 
-[Click here](/develop/tutorials/-/knowledge_base/7-0/using-views-in-android-screenlets) 
+[Click here](/docs/7-0/tutorials/-/knowledge_base/t/using-views-in-android-screenlets) 
 for more information on Views in Liferay Screens. 
 
 Once you edit `build.gradle`, a message appears at the top of the file that asks 
@@ -94,7 +98,7 @@ The error message should be gone once the sync completes.
 
 Great! Now you're ready to test your Screens and Mobile SDK installations. 
 
-## Verifying the Installations [](id=verifying-the-installations)
+## Verifying the Installations
 
 To check your Screens and Mobile SDK installations, first open your project's 
 `MainActivity` class in Android Studio. It's in the `java` folder's
@@ -110,7 +114,7 @@ If Android Studio recognizes these imports, then you're good to go! Remove them
 once you've verified that they're valid. Next, there's one final small but 
 important task to complete: point your app at the correct @product@ instance. 
 
-## Configuring Communication with @product@ [](id=configuring-communication-with-liferay)
+## Configuring Communication with @product@
 
 For Screens to work properly with your app, you must point it to your @product@ 
 instance. You do this by adding a `server_context.xml` file in your project's 

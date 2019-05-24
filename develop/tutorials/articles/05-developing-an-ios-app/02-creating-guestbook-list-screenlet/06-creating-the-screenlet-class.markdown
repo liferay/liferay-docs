@@ -1,4 +1,8 @@
-# Creating the Screenlet Class [](id=creating-the-screenlet-class)
+---
+header-id: creating-the-screenlet-class
+---
+
+# Creating the Screenlet Class
 
 The Screenlet class is the main component that governs the Screenlet's behavior. 
 When using a Screenlet, app developers primarily interact with its Screenlet 

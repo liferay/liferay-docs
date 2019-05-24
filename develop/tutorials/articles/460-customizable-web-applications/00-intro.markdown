@@ -1,4 +1,8 @@
-# Customizable Web Applications [](id=customizable-web-applications)
+---
+header-id: customizable-web-applications
+---
+
+# Customizable Web Applications
 
 One of the great strengths of @product@ is the sheer number of out of the box
 applications. This gives it great flexibility in what it can do, which is why

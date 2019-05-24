@@ -1,4 +1,8 @@
-# @product@ Security Overview [](id=liferay-portal-security-overview)
+---
+header-id: liferay-portal-security-overview
+---
+
+# @product@ Security Overview
 
 Liferay follows the OWASP Top 10 (2013) and CWE/SANS Top 25 lists to ensure
 that @product@ is as secure as possible. Following these recommendations protects
@@ -20,7 +24,7 @@ store passwords. @product@ also contains mitigation for Quadratic Blowup XXE
 attack, Rosetta Flash vulnerability, Reflected File Download, and other kinds
 of attacks.
 
-## Authentication Overview [](id=authentication-overview)
+## Authentication Overview
 
 @product@ user authentication can take place using any of a variety of prepared
 solutions:
@@ -35,7 +39,7 @@ solutions:
 
 Note: Although Liferay's SSO solutions are incompatible with WebDAV, they can
 be used in conjunction with Liferay Sync. See the
-[Publishing Files](/discover/portal/-/knowledge_base/7-0/publishing-files) 
+[Publishing Files](/docs/7-0/user/-/knowledge_base/u/publishing-files) 
 article for more information on WebDAV and Liferay Sync.
 
 Remote application authentication and authorization can be done using the
@@ -50,7 +54,7 @@ in @product@. Developers can create custom Login portlets and plugins, extend th
 default Login portlet `auth.pipeline`, create `AutoLogin` extensions for SSO,
 or create custom `AuthVerifier` implementations.
 
-## Authorization and Permission Checking [](id=authorization-and-permission-checking)
+## Authorization and Permission Checking
 
 There are several adjustable authorization layers in place to prevent
 unauthorized or unsecured access to data:
@@ -65,7 +69,7 @@ unauthorized or unsecured access to data:
 - Remote IP check for portal remote API authentication methods
 - Service Access Policies to control access to portal remote API
 
-## Additional Security Features [](id=additional-security-features)
+## Additional Security Features
 
 @product@ supports other features, too. @product@ users can be assigned to sites,
 teams, user groups, or organizations. Custom roles can be created, permissions
@@ -74,16 +78,12 @@ are scoped to apply only with a specific context like a site, an organization,
 or globally. See @product@'s [Roles and Permissions (not yet written)]()
 documentation for more information.
 
-+$$$
-
-Note: @product@ relies on the application server for sanitizing CRLF in
-HTTP headers. You should, therefore, make sure this is properly configured in
-your application server, or you may experience false positives in reports from
-automatic security verification software such as Veracode. There is one
-exception to this for Resin, which does not have support for this feature. In
-this case, @product@ sanitizes HTTP headers. 
-
-$$$
+| Note: @product@ relies on the application server for sanitizing CRLF in
+| HTTP headers. You should, therefore, make sure this is properly configured in
+| your application server, or you may experience false positives in reports from
+| automatic security verification software such as Veracode. There is one
+| exception to this for Resin, which does not have support for this feature. In
+| this case, @product@ sanitizes HTTP headers.
 
 There are additional security plugins available from [Liferay Marketplace](https://www.liferay.com/marketplace). For example, you can find an
 Audit plugin for tracking user actions or an AntiSamy plugin for clearing HTML
@@ -100,7 +100,7 @@ these kinds of configuration actions:
 - Configure the file types allowed to be uploaded and downloaded
 - Many other options
 
-## Secure Development Recommendations [](id=secure-development-recommendations)
+## Secure Development Recommendations
 
 @product@ also provides tools to fight vulnerabilities in code.
 
@@ -134,7 +134,7 @@ Here's short list of @product@ security APIs:
   hashes, configured to use PBKDF2 by default
 - `DigesterUtil` - SHA-1 hashes, nowadays usable at most for file checksums
 
-## Secure Configuration and Run Recommendations [](id=secure-configuration-and-run-recommendations)
+## Secure Configuration and Run Recommendations
 
 @product@ is built using the "secure by default" concept in mind. Thus,
 @product@'s default configuration is already very secure. It's not recommended to

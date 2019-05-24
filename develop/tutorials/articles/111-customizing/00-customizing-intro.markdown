@@ -1,8 +1,12 @@
-# Customizing [](id=customizing)
+---
+header-id: customizing
+---
 
-In @product@, [portlets](/develop/tutorials/-/knowledge_base/7-0/portlets)
+# Customizing
+
+In @product@, [portlets](/docs/7-0/tutorials/-/knowledge_base/t/portlets)
 let you add functionality and
-[themes](/develop/tutorials/-/knowledge_base/7-0/themes-and-layout-templates)
+[themes](/docs/7-0/tutorials/-/knowledge_base/t/themes-and-layout-templates)
 let you style your sites. But how do you modify and add to existing
 functionality in @product@ and portlets? How do you change their content? The
 *Customizing* tutorials answer these questions and demonstrate how to affect

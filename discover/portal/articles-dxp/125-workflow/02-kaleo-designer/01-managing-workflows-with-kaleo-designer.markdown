@@ -1,4 +1,8 @@
-# Managing Workflows with Kaleo Designer [](id=managing-workflows-with-kaleo-designer)
+---
+header-id: managing-workflows-with-kaleo-designer
+---
+
+# Managing Workflows with Kaleo Designer
 
 The Kaleo Designer gives you a convenient and intuitive interface for creating
 workflow definitions, from the simplest approval processes to the most complex
@@ -12,7 +16,7 @@ if you find it convenient.
 
 So how do you add a workflow definition?
 
-## Adding New Workflow Definitions with Kaleo Designer [](id=adding-new-workflow-definitions-with-kaleo-designer)
+## Adding New Workflow Definitions with Kaleo Designer
 
 Access Kaleo Designer by going to the Control Panel, then clicking
 Configuration &rarr; Kaleo Designer. Click the Add icon
@@ -23,7 +27,7 @@ workflow.
 
 ![Figure 1: The Kaleo Designer's graphical interface makes designing workflows intuitive.](../../../images-dxp/kaleo-designer-canvas.png)
 
-## Saving and Publishing Workflow Definitions [](id=saving-and-publishing-workflow-definitions)
+## Saving and Publishing Workflow Definitions
 
 First, look below the canvas to see the buttons that let you *Save as Draft*,
 *Publish*, or *Cancel*. Saving the definition as a draft lets you save your
@@ -35,7 +39,7 @@ new Version is added.
 
 ![Figure 2: View a list of the current workflows that can be edited in the Kaleo Designer.](../../../images-dxp/kaleo-designer-definitions.png)
 
-## Adding Nodes [](id=adding-nodes)
+## Adding Nodes
 
 A new workflow is already populated with a start node, an end node,
 and a transition between them. To make the workflow the way you want it, you
@@ -61,7 +65,7 @@ ending point on a node.
 That's it. Of course, if you drag, say, a *Task* node onto the canvas, you'll
 want to configure it.
 
-## Node Settings [](id=node-settings)
+## Node Settings
 
 Now you know how to add nodes to the workflow definition. By default you have
 three things added to your canvas: a start node, a transition, and an end node.
@@ -78,12 +82,12 @@ Of course, there's more you can do besides changing node names. Actions,
 Notifications, and Assignments can be used to make your workflow definition
 really useful and interactive. Keep reading to learn about these features.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Workflow Forms](/discover/portal/-/knowledge_base/7-0/workflow-forms)
+[Workflow Forms](/docs/7-0/user/-/knowledge_base/u/workflow-forms)
 
-[Using Workflow](/discover/portal/-/knowledge_base/7-0/enabling-workflow)
+[Using Workflow](/docs/7-0/user/-/knowledge_base/u/enabling-workflow)
 
-[Liferay's Workflow Framework](/develop/tutorials/-/knowledge_base/7-0/liferays-workflow-framework)
+[Liferay's Workflow Framework](/docs/7-0/tutorials/-/knowledge_base/t/liferays-workflow-framework)
 
-[Creating Simple Applications](/discover/portal/-/knowledge_base/7-0/creating-simple-applications)
+[Creating Simple Applications](/docs/7-0/user/-/knowledge_base/u/creating-simple-applications)

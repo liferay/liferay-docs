@@ -1,4 +1,8 @@
-# Making Your Applications Configurable [](id=making-your-applications-configurable)
+---
+header-id: making-your-applications-configurable
+---
+
+# Making Your Applications Configurable
 
 This tutorial explains how to make your applications configurable. It starts
 with basic configuration and then covers some advanced use cases.
@@ -8,20 +12,16 @@ applications configurable using any other mechanism that you're already
 familiar with. We have found, however, that the method described below provides
 the greatest benefit with the least amount of effort.
 
-+$$$
+| **Note:** To quickly see a working application configuration, deploy the
+| `configuration-action` [Blade
+| sample](https://github.com/liferay/liferay-blade-samples/tree/7.0/gradle/apps/configuration-action)
+| and navigate to System Settings (*Control Panel* &rarr; *Configuration* &rarr;
+| *System Settings*). In the Other category, click the *Message display
+| configuration* entry.
+| 
+| Add the *Blade Message Portlet* to a page to test your configuration choices.
 
-**Note:** To quickly see a working application configuration, deploy the
-`configuration-action` [Blade
-sample](https://github.com/liferay/liferay-blade-samples/tree/7.0/gradle/apps/configuration-action)
-and navigate to System Settings (*Control Panel* &rarr; *Configuration* &rarr;
-*System Settings*). In the Other category, click the *Message display
-configuration* entry.
-
-Add the *Blade Message Portlet* to a page to test your configuration choices.
-
-$$$
-
-## Fundamentals [](id=fundamentals)
+## Fundamentals
 
 While you don't need to know much to make your applications configurable,
 understanding a few key concepts helps you achieve a higher degree of
@@ -63,9 +63,9 @@ Liferay applications can have:
 Enough with the conceptual stuff. You're ready to get started with some code. If
 you already had a portlet or service that was configurable using the traditional
 mechanisms of Liferay Portal 6.2 and before, refer to the
-[Transitioning from Portlet Preferences to the Configuration API](/develop/tutorials/-/knowledge_base/7-0/transitioning-from-portlet-preferences-to-the-configuration-api) tutorial.
+[Transitioning from Portlet Preferences to the Configuration API](/docs/7-0/tutorials/-/knowledge_base/t/transitioning-from-portlet-preferences-to-the-configuration-api) tutorial.
 
-## Making Your Application Configurable [](id=making-your-application-configurable)
+## Making Your Application Configurable
 
 There's a minimal amount of code you need to write to make your application
 configurable the @product@ way. First, you'll learn how to create a
@@ -114,7 +114,7 @@ documentation:
 [http://bnd.bndtools.org/chapters/210-metatype.html](http://bnd.bndtools.org/chapters/210-metatype.html).
 In order to use the `Meta.OCD` and `Meta.AD` annotations in your modules, you
 must 
-[specify a dependency](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies) 
+[specify a dependency](/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies) 
 on the bnd library. We recommend using bnd version 3. Here's an example of how 
 to include this dependency in a Gradle project: 
 
@@ -122,17 +122,13 @@ to include this dependency in a Gradle project:
         compile group: "biz.aQute.bnd", name: "biz.aQute.bndlib", version: "3.1.0"
     }
 
-+$$$
-
-**Note:** The annotations `@Meta.OCD` and `@Meta.AD` are part of the bnd library
-but have also been included as part of the OSGi standard version R6 with the
-names `@ObjectClassDefinition` and `@AttributeDefinition`. However, Liferay
-still uses the bnd annotations since the standard annotations are not available
-at runtime, which is necessary for some of the Liferay specific features
-described below. For the basic usage (the one described in this section) the
-standard annotations can be used safely.
-
-$$$
+| **Note:** The annotations `@Meta.OCD` and `@Meta.AD` are part of the bnd library
+| but have also been included as part of the OSGi standard version R6 with the
+| names `@ObjectClassDefinition` and `@AttributeDefinition`. However, Liferay
+| still uses the bnd annotations since the standard annotations are not available
+| at runtime, which is necessary for some of the Liferay specific features
+| described below. For the basic usage (the one described in this section) the
+| standard annotations can be used safely.
 
 Add the following line to your project's `bnd.bnd` file:
 
@@ -181,23 +177,19 @@ Here are the most relevant aspects of this example:
 4.  The configuration is stored in a `volatile` field. Don't forget to make it
     `volatile` or you'll run into weird problems.
 
-+$$$
-
-**Note:** The bnd library also provides a class called
-`aQute.bnd.annotation.metatype.Configurable` with a `createConfigurable()`
-method. You can use that instead of Liferay's
-`com.liferay.portal.configuration.metatype.bnd.util.ConfigurableUtil` without
-any problems. Liferay's developers created the `ConfigurableUtil` class to
-improve the performance of bnd's implementation, and it's used in internal code.
-Feel free to use whichever method you prefer. 
-
-$$$
+| **Note:** The bnd library also provides a class called
+| `aQute.bnd.annotation.metatype.Configurable` with a `createConfigurable()`
+| method. You can use that instead of Liferay's
+| `com.liferay.portal.configuration.metatype.bnd.util.ConfigurableUtil` without
+| any problems. Liferay's developers created the `ConfigurableUtil` class to
+| improve the performance of bnd's implementation, and it's used in internal code.
+| Feel free to use whichever method you prefer.
 
 That's it. With very few lines of code, you have a configurable application that
 dynamically changes its configuration, has an auto-generated UI, and uses a
 simple API to access the configuration.
 
-## Accessing Your Configuration in a JSP Portlet Application [](id=accessing-your-configuration-in-a-jsp-portlet-application)
+## Accessing Your Configuration in a JSP Portlet Application
 
 In @product@ it's very common to read a configuration from a portlet class. If
 the portlet is a JSP portlet, the configuration object can be added to the
@@ -207,15 +199,11 @@ a configuration from a portlet class, adding it to the request, and reading from
 the view layer. The import statements are included in the code snippets so that
 you can see the fully qualified class names of all the classes that are used.
 
-+$$$
-
-**Note:** There's shortcut method for obtaining a portlet instance
-configuration. The method described in this section takes a straightforward
-approach that does not use this shortcut. See the [Accessing the Portlet
-Instance Configuration Through the PortletDisplay](#accessing-the-portlet-instance-configuration-through-the-portletdisplay) section below to learn about
-the shorter method.
-
-$$$
+| **Note:** There's shortcut method for obtaining a portlet instance
+| configuration. The method described in this section takes a straightforward
+| approach that does not use this shortcut. See the [Accessing the Portlet
+| Instance Configuration Through the PortletDisplay](#accessing-the-portlet-instance-configuration-through-the-portletdisplay) section below to learn about
+| the shorter method.
 
     package com.liferay.docs.exampleconfig;
 
@@ -337,7 +325,7 @@ click on the *Example configuration* link, you can find the `Favorite color`
 setting and change its value. Your application's JSP will reflect this update
 when you refresh the page.
 
-## Categorizing the Configuration [](id=categorizing-the-configuration)
+## Categorizing the Configuration
 
 Because it's easy to make any application or service configurable, there
 are already lots of configuration options in @product@ by default. If you've
@@ -384,9 +372,9 @@ don't match, it will not be able to provide any information provided through
 
 The `@ExtendedObjectClassDefinition` annotation is distributed through the
 `com.liferay.portal.configuration.metatype` module, which you can 
-[configure as a dependency](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies). 
+[configure as a dependency](/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies). 
 
-## Supporting Different Configurations per Virtual Instance, Site, or Portlet Instance [](id=supporting-different-configurations-per-scope)
+## Supporting Different Configurations per Virtual Instance, Site, or Portlet Instance
 
 When an application is deployed to Liferay, it's common to need different
 configurations depending on the scope. That means having different
@@ -396,7 +384,7 @@ achieve this with little effort through a new framework called the Configuration
 API that is based on the standard OSGi Configuration Admin API shown in the
 previous section.
 
-### Using the Configuration Provider [](id=using-the-configuration-provider)
+### Using the Configuration Provider
 
 When using the Configuration Provider, instead of receiving the configuration
 directly, the class that wants to access it will need to receive a
@@ -446,7 +434,7 @@ Once you have created your `ConfigurationBeanDeclaration`, you can use a
 
 - For Spring beans: It is possible to use the same mechanism as for Service
   Builder services (`@ServiceReference`). Check the documentation on [how to
-  integrate Spring beans with OSGi services](/develop/tutorials/-/knowledge_base/7-0/finding-and-invoking-liferay-services#referencing-osgi-services) for more details.
+  integrate Spring beans with OSGi services](/docs/7-0/tutorials/-/knowledge_base/t/finding-and-invoking-liferay-services#referencing-osgi-services) for more details.
 
 Later, the configuration can be obtained using one of the following methods of
 the provider:
@@ -485,7 +473,7 @@ Here are a couple real world examples from Liferay's source code:
 Next, you'll learn how to access a portlet's configuration from outside of an
 OSGi component.
 
-### Accessing the Portlet Instance Configuration Through the PortletDisplay [](id=accessing-the-portlet-instance-configuration-through-the-portletdisplay)
+### Accessing the Portlet Instance Configuration Through the PortletDisplay
 
 Often it's necessary to access a portlet's settings from its JSPs or from Java
 classes that are not OSGi components. To make it easier to read the settings in
@@ -499,7 +487,7 @@ request object). Here is an example of how to use it:
 As you can see, it knows how to find the values and returns a typed bean
 containing them just by passing the configuration class.
 
-## Specifying the Scope of the Configuration [](id=specifying-the-scope-of-the-configuration)
+## Specifying the Scope of the Configuration
 
 The `ExtendedObjectClassDefinition` annotation allows you to specify the scope
 of the configuration. This should match how the configuration object is
@@ -526,7 +514,7 @@ In @product@ version 7.0, the scope property isn't used for anything other than
 making it appear in System Settings so that an administrator can change its
 value. In future releases, may have more purposes.
 
-## Summary [](id=summary)
+## Summary
 
 In this tutorial, you've learned how to make your applications configurable.
 Creating a simple configuration interface allows Liferay to auto-generate a

@@ -1,4 +1,8 @@
-# Invoking Services Asynchronously from Your Android App [](id=invoking-services-asynchronously-from-your-android-app)
+---
+header-id: invoking-services-asynchronously-from-your-android-app
+---
+
+# Invoking Services Asynchronously from Your Android App
 
 Android doesn't allow synchronous HTTP requests to be made from the main UI 
 thread. You can use Android's 
@@ -19,7 +23,7 @@ requests in your Android app:
 
 Now go ahead and get started! 
 
-## Implementing and Instantiating Your Callback Class [](id=implementing-and-instantiating-your-callback-class)
+## Implementing and Instantiating Your Callback Class
 
 Before implementing and instantiating your callback class, you should add the 
 required imports. The imports you add depend on the return type of the service 
@@ -83,12 +87,12 @@ Example code is shown here for `AsyncTaskCallback` and
     
 Now that you have your callback class, you can set it to the session.
 
-## Setting the Callback to the Session [](id=setting-the-callback-to-the-session)
+## Setting the Callback to the Session
 
 Once you've implemented and instantiated your callback class, you're ready to 
 set it to the session. If you haven't created a session yet, do so now. The 
 tutorial 
-[Invoking Liferay Services in Your Android App](/develop/tutorials/-/knowledge_base/7-0/invoking-liferay-services-in-your-android-app) 
+[Invoking Liferay Services in Your Android App](/docs/7-0/tutorials/-/knowledge_base/t/invoking-liferay-services-in-your-android-app) 
 shows you how to create a session. Now you're ready to set the callback to the 
 session. For example, this is done here for `AsyncTaskCallback`: 
 
@@ -96,12 +100,12 @@ session. For example, this is done here for `AsyncTaskCallback`:
 
 Pretty simple! Now you're ready to make the service call.
 
-## Making the Service Call [](id=making-the-service-call)
+## Making the Service Call
 
 Last but certainly not least, make the service call. This is done the same as 
 calling any other service: create a service object from the session and use it 
 to make the service call. This is also described in the tutorial 
-[Invoking Liferay Services in Your Android App](/develop/tutorials/-/knowledge_base/7-0/invoking-liferay-services-in-your-android-app). 
+[Invoking Liferay Services in Your Android App](/docs/7-0/tutorials/-/knowledge_base/t/invoking-liferay-services-in-your-android-app). 
 An example service call that gets all the blog entries from a site's Blogs 
 portlet is shown here: 
 
@@ -135,8 +139,8 @@ The example code from the above sections is shown together here:
 Great! Now you know how to invoke services asynchronously from your Android 
 app. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating iOS Apps that Use the Mobile SDK](/develop/tutorials/-/knowledge_base/7-0/creating-ios-apps-that-use-the-mobile-sdk)
+[Creating iOS Apps that Use the Mobile SDK](/docs/7-0/tutorials/-/knowledge_base/t/creating-ios-apps-that-use-the-mobile-sdk)
 
-[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/7-0/building-mobile-sdks)
+[Building Mobile SDKs](/docs/7-0/tutorials/-/knowledge_base/t/building-mobile-sdks)

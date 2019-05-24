@@ -1,4 +1,8 @@
-# Workflow Forms [](id=workflow-forms)
+---
+header-id: workflow-forms
+---
+
+# Workflow Forms
 
 Business processes are often form-based and workflow-driven. They start with
 some data that needs to be entered and progress by sending the data to other
@@ -10,9 +14,9 @@ effective. Instead, a tool for quickly defining a process to suit each use case
 is needed. The process architect must define the data that gets collected and
 define the process the data must move through to reach its final state. To
 accomplish this, @product@ already includes the 
-[Dynamic Data Lists application](/discover/portal/-/knowledge_base/7-0/creating-data-definitions)
+[Dynamic Data Lists application](/docs/7-0/user/-/knowledge_base/u/creating-data-definitions)
 for defining forms, and the [Kaleo Designer
-application](/discover/portal/-/knowledge_base/7-0/kaleo-designer) for designing
+application](/docs/7-0/user/-/knowledge_base/u/kaleo-designer) for designing
 workflows. The Kaleo Forms solution combines the features of these applications,
 letting you design an integrated process for sending forms through a workflow in
 one intuitive UI.
@@ -22,73 +26,65 @@ The entire process includes:
 1. Creating a Kaleo Process
 
 2. Creating the process's field set (or selecting an existing 
-   [Data Definition](/discover/portal/-/knowledge_base/7-0/creating-data-definitions))
+   [Data Definition](/docs/7-0/user/-/knowledge_base/u/creating-data-definitions))
 
 3. Creating the process's workflow definition (or selecting one that's already
    created)
 
 4. Creating and assigning forms for each workflow task
 
-+$$$
-
-**Example Use Case:** 
-
-The Lunar Resort spa is a popular place. With all the adventure-driven
-activities (lunar hiking, rover races, etc.) available to guests, it's important
-to offer some relaxing and rejuvenating experiences. As the spa expands and new
-Spa Technicians are hired, the Spa Manager decides to implement a new process to
-handle orders. It involves several steps and several people:
-
-- The customer service representative for the spa interacts with a customer and
-  fills out an order form.
-
-- The customer service representative gives the order details to the spa
-  technicians so they can divide up the requests, with a single technician
-  assigned to each order. 
-
-- The spa technician sends the order to the spa manager for final approval and
-  comment. 
-
-- The spa manager sends the final order back to the customer service
-  representative, who contacts the customer with the final details of his spa
-  service order.
-
-A process like this is a nightmare to manage manually, but perfectly suited for
-Kaleo Forms.
-
-$$$
+| **Example Use Case:**
+| 
+| The Lunar Resort spa is a popular place. With all the adventure-driven
+| activities (lunar hiking, rover races, etc.) available to guests, it's important
+| to offer some relaxing and rejuvenating experiences. As the spa expands and new
+| Spa Technicians are hired, the Spa Manager decides to implement a new process to
+| handle orders. It involves several steps and several people:
+| 
+| - The customer service representative for the spa interacts with a customer and
+|   fills out an order form.
+| 
+| - The customer service representative gives the order details to the spa
+|   technicians so they can divide up the requests, with a single technician
+|   assigned to each order.
+| 
+| - The spa technician sends the order to the spa manager for final approval and
+|   comment.
+| 
+| - The spa manager sends the final order back to the customer service
+|   representative, who contacts the customer with the final details of his spa
+|   service order.
+| 
+| A process like this is a nightmare to manage manually, but perfectly suited for
+| Kaleo Forms.
 
 Since Kaleo Forms is accessed through a site's administration menu (under
 Content &rarr; Kaleo Forms Admin), make sure the intended users of your Kaleo
 Processes have access to the application. See the article on [roles and
-permissions](/discover/portal/-/knowledge_base/7-0/roles-and-permissions) if
+permissions](/docs/7-0/user/-/knowledge_base/u/roles-and-permissions) if
 you're unsure how that works.
 
-+$$$
+| **Kaleo Forms Display was removed from @product-ver@:** In prior versions of
+| Liferay Portal EE (for example, see
+| [here](/docs/6-2/user/-/knowledge_base/u/kaleo-forms-display)), A Kaleo
+| Forms Display portlet could be added to a site page, so users with
+| access to the page and the proper permissions could add, delete, and submit
+| Kaleo Processes. No capabilities have been removed from the Kaleo stack in
+| @product-ver@, but the Kaleo Forms Display portlet was removed. This means that
+| administrators must grant permission for users to access Kaleo Forms in Site
+| Administration. Users needing only to manage workflow tasks assigned to them or
+| their roles can use the *My Workflow Tasks* section of their
+| [personal sites](/docs/7-0/user/-/knowledge_base/u/creating-sites#customizing-personal-sites)
+| (in the User Menu, go to *My Account* &rarr; *My Workflow Tasks*).
 
-**Kaleo Forms Display was removed from @product-ver@:** In prior versions of
-Liferay Portal EE (for example, see
-[here](/discover/portal/-/knowledge_base/6-2/kaleo-forms-display)), A Kaleo
-Forms Display portlet could be added to a site page, so users with
-access to the page and the proper permissions could add, delete, and submit
-Kaleo Processes. No capabilities have been removed from the Kaleo stack in
-@product-ver@, but the Kaleo Forms Display portlet was removed. This means that
-administrators must grant permission for users to access Kaleo Forms in Site
-Administration. Users needing only to manage workflow tasks assigned to them or
-their roles can use the *My Workflow Tasks* section of their 
-[personal sites](/discover/portal/-/knowledge_base/7-0/creating-sites#customizing-personal-sites)
-(in the User Menu, go to *My Account* &rarr; *My Workflow Tasks*).
-
-$$$
-
-## Using Kaleo Forms [](id=using-kaleo-forms)
+## Using Kaleo Forms
 
 Access Kaleo Forms from the *Content* section of your site's
 administration menu (click *[Site Name]* &rarr; *Content* &rarr; *Kaleo Forms
 Admin*). Kaleo Forms appears with a listing of the defined processes. If you're
 coming here for the first time, there won't be any, so create one. 
 
-### Creating a Kaleo Process [](id=creating-a-kaleo-process)
+### Creating a Kaleo Process
 
 Click the *Add* (![Add](../../images-dxp/icon-add.png)) button to open the
 New Process Wizard and begin the first step in creating a Kaleo Process. Name
@@ -96,7 +92,7 @@ the process *Spa Order Process*, add a description, and then click *Next*.
 
 ![Figure 1: Add a Kaleo Forms Process to link a form with a workflow definition.](../../images-dxp/kaleo-forms-add.png)
 
-### Creating the Form [](id=creating-the-form)
+### Creating the Form
 
 In the second step of the New Process Wizard, define the fields that can appear
 in your process's forms. There are two methods:
@@ -107,7 +103,7 @@ in your process's forms. There are two methods:
     selecting *Choose*. 
 2.  Create a new field set. Use the *Add Field Set* button to add a new field
     set. If you're not sure about creating a field set, see the documentation on
-    [creating data definitions](/discover/portal/-/knowledge_base/7-0/creating-data-definitions)
+    [creating data definitions](/docs/7-0/user/-/knowledge_base/u/creating-data-definitions)
     first.
     - For this example, Add a new field set: 
         - A Text field called *Customer Name* 
@@ -131,7 +127,7 @@ the process.
 
 ![Figure 2: In the second step of the New Process Wizard, define and choose the fields for your form.](../../images-dxp/kaleo-forms-fields.png)
 
-### Choosing a Workflow [](id=choosing-a-workflow)
+### Choosing a Workflow
 
 In the third step of the New Process Wizard you select a workflow to use for
 your forms. The Single Approver workflow is included by default. See how it's
@@ -152,7 +148,7 @@ started.
 
 The definition has a StartNode and three task nodes. Develop it in the graphical
 designer built into Kaleo Forms. There's a more detailed write-up of the
-Kaleo Designer [here](/discover/portal/-/knowledge_base/7-0/kaleo-designer) if
+Kaleo Designer [here](/docs/7-0/user/-/knowledge_base/u/kaleo-designer) if
 you're not already familiar with it. 
 
 This workflow exhibits simple linear processing, so that the initial form is
@@ -166,52 +162,44 @@ The task assignments of this workflow are as follows:
 - Managerial Approval: Assigned to the Spa Manager Role.
 - Final Order: Assigned to the Asset Creator.
 
-+$$$
-
-**Note:** Create the Spa Technician Role and the Spa Manager Role as 
-[Site Roles](/discover/portal/-/knowledge_base/7-0/roles-and-permissions), 
-and give them
-[permission](/discover/portal/-/knowledge_base/7-0/roles-and-permissions#defining-role-permissions)
-to access the Kaleo Forms application. In the role's page for defining
-permissions, they're under Site Administration &rarr; Content &rarr; Kaleo Forms
-Admin. Give both roles all of the permissions available for Kaleo Forms Admin.
-
-$$$
+| **Note:** Create the Spa Technician Role and the Spa Manager Role as
+| [Site Roles](/docs/7-0/user/-/knowledge_base/u/roles-and-permissions),
+| and give them
+| [permission](/docs/7-0/user/-/knowledge_base/u/roles-and-permissions#defining-role-permissions)
+| to access the Kaleo Forms application. In the role's page for defining
+| permissions, they're under Site Administration &rarr; Content &rarr; Kaleo Forms
+| Admin. Give both roles all of the permissions available for Kaleo Forms Admin.
 
 Once the workflow is done, select it: back on the third step of the New Process
 wizard, click *Actions* &rarr; *Choose* on the workflow you just created.  Then
 click *Next*.
 
-### Adding Task Forms [](id=adding-task-forms)
+### Adding Task Forms
 
 In the fourth (and final) step of the New Process wizard, assign a form to each
 task in the workflow definition (and to the StartNode to get the process kicked
 off). All forms you work with here will be either the entire field set you
 defined in step two, or a subset of it. 
 
-+$$$
-
-**Note:** In this step, you can't add any proper form fields (fields that accept
-user input). If you forgot to add a Select field to the field set in step two,
-for example, you cannot add one here. Instead go back and add it to the field
-set.
-
-While you can't add form fields, you can configure the existing fields
-differently for each form, and you can add these elements to the form that
-enhance its usability:
-
-1. Add a *Fieldset* to provide headings in a form. For example, name it
-   after the workflow task to provide clarity to the task assignee.
-2. Use a *Paragraph* field to add a block of text to the form. For example,
-   provide instructions to assignees about what's expected of them to complete
-   the task.
-3. Use the *Separator* to separate sections of the form visually. For example,
-   combine a Paragraph and a Separator to instruct the assignee to focus on a
-   certain section of the form.
-
-![Figure 4: Use Fieldsets, Paragraphs, and Separators to enhance the appearance of your workflow task forms.](../../images-dxp/kaleo-forms-field-types.png)
-
-$$$
+| **Note:** In this step, you can't add any proper form fields (fields that accept
+| user input). If you forgot to add a Select field to the field set in step two,
+| for example, you cannot add one here. Instead go back and add it to the field
+| set.
+| 
+| While you can't add form fields, you can configure the existing fields
+| differently for each form, and you can add these elements to the form that
+| enhance its usability:
+| 
+| 1. Add a *Fieldset* to provide headings in a form. For example, name it
+|    after the workflow task to provide clarity to the task assignee.
+| 2. Use a *Paragraph* field to add a block of text to the form. For example,
+|    provide instructions to assignees about what's expected of them to complete
+|    the task.
+| 3. Use the *Separator* to separate sections of the form visually. For example,
+|    combine a Paragraph and a Separator to instruct the assignee to focus on a
+|    certain section of the form.
+| 
+| ![Figure 4: Use Fieldsets, Paragraphs, and Separators to enhance the appearance of your workflow task forms.](../../images-dxp/kaleo-forms-field-types.png)
 
 For review, the Spa Order Process has these fields:
 
@@ -253,15 +241,11 @@ appears lets you create a new form if you click the *Add* button
 
 ![Figure 6: Workflow task forms are a subset of the original form.](../../images-dxp/kaleo-forms-form-builder.png)
 
-+$$$
-
-**Note:** If you delete a field by accident or want to add another field to your
-form, drag and drop its icon from the *Fields* tab on the left to the form
-canvas on the right. Fields already on the form that can appear on it only once
-are grayed out. You can also edit the settings of a field in the form by mousing
-over it and clicking the wrench icon.
-
-$$$
+| **Note:** If you delete a field by accident or want to add another field to your
+| form, drag and drop its icon from the *Fields* tab on the left to the form
+| canvas on the right. Fields already on the form that can appear on it only once
+| are grayed out. You can also edit the settings of a field in the form by mousing
+| over it and clicking the wrench icon.
 
 If you don't need to change any field settings in the form, click *Save*. On the
 next screen choose your new form by clicking on it. Now the workflow
@@ -274,26 +258,18 @@ deleting these fields from the full field set:
 - Approved
 - Managerial Comments
 
-+$$$
-
-**Example Use Case Note:** In the Spa Order Process, the Managerial Approval
-workflow task and its associated form are filled out by the spa manager. The
-manager can oversee the order, making sure that customers requests are being met
-and that all technicians are fulfilling their share of the spa's duties.
-
-$$$
+| **Example Use Case Note:** In the Spa Order Process, the Managerial Approval
+| workflow task and its associated form are filled out by the spa manager. The
+| manager can oversee the order, making sure that customers requests are being met
+| and that all technicians are fulfilling their share of the spa's duties.
 
 Create a form to be used in the Managerial Approval task, called *Spa Order
 Process--Managerial Approval Form*. The manager can change anything she wants
 about the order, so include the entire field set in the form.
 
-+$$$
-
-**Example Use Case note:** The customer service representative finalizes the
-order and gets back to the customer on the final details (available time, name
-of technician, and confirms the services they want).
-
-$$$
+| **Example Use Case note:** The customer service representative finalizes the
+| order and gets back to the customer on the final details (available time, name
+| of technician, and confirms the services they want).
 
 There's one more form to create: the *Spa Order Process--Final Order Form*. Like
 the last form, it should have all the form's fields so that the customer service
@@ -303,7 +279,7 @@ representative can review the order with the customer.
 
 Click *Save* when finished. The process is ready to test.
 
-### Test the Process [](id=test-the-process)
+### Test the Process
 
 Once your new process is developed, add records to it by clicking on the process
 name and then the Plus button (![Add](../../images-dxp/icon-add.png)).
@@ -328,12 +304,12 @@ saves it, and sends it along in the workflow.
 The Kaleo Forms application unites two powerful features of Liferay by
 integrating a workflow and a form into a new entity, the Kaleo Process.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Kaleo Designer](/discover/portal/-/knowledge_base/7-0/kaleo-designer)
+[Kaleo Designer](/docs/7-0/user/-/knowledge_base/u/kaleo-designer)
 
-[Using Workflow](/discover/portal/-/knowledge_base/7-0/enabling-workflow)
+[Using Workflow](/docs/7-0/user/-/knowledge_base/u/enabling-workflow)
 
-[Liferay's Workflow Framework](/develop/tutorials/-/knowledge_base/7-0/liferays-workflow-framework)
+[Liferay's Workflow Framework](/docs/7-0/tutorials/-/knowledge_base/t/liferays-workflow-framework)
 
-[Creating Simple Applications](/discover/portal/-/knowledge_base/7-0/creating-simple-applications)
+[Creating Simple Applications](/docs/7-0/user/-/knowledge_base/u/creating-simple-applications)

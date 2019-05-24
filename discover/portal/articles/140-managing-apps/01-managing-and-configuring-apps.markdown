@@ -1,4 +1,8 @@
-# Managing and Configuring Apps [](id=managing-and-configuring-apps)
+---
+header-id: managing-and-configuring-apps
+---
+
+# Managing and Configuring Apps
 
 There are two places in the Control Panel where you can manage and configure 
 apps: the App Manager, and the Components listing. The App Manager lets you 
@@ -14,7 +18,7 @@ apps, you can't use it to install or delete apps.
 
 First, you'll learn how to use the App Manager.
 
-## Using the App Manager [](id=using-the-app-manager)
+## Using the App Manager
 
 Access the App Manager by selecting *Control Panel* &rarr; *Apps* &rarr; *App 
 Manager*. The App Manager lists your Liferay instance's app suites and apps in 
@@ -49,11 +53,11 @@ level in the App Manager, you can use the link trail above the table to go back
 in the hierarchy. 
 
 For information on using the App Manager to install an app, see the article 
-[Installing Apps Manually](/discover/portal/-/knowledge_base/7-0/installing-apps-manually). 
+[Installing Apps Manually](/docs/7-0/user/-/knowledge_base/u/installing-apps-manually). 
 
 Next, you'll learn how to use the Components listing. 
 
-## Using the Components Listing [](id=using-the-components-listing)
+## Using the Components Listing
 
 Access the Components listing by selecting *Control Panel* &rarr; 
 *Configuration* &rarr; *Components*. The Components listing first shows a table 

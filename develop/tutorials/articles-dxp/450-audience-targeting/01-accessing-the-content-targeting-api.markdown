@@ -1,4 +1,8 @@
-# Accessing the Content Targeting API [](id=accessing-the-content-targeting-api)
+---
+header-id: accessing-the-content-targeting-api
+---
+
+# Accessing the Content Targeting API
 
 The [Audience Targeting](https://www.liferay.com/marketplace/-/mp/application/43707761)
 application can be used to show relevant content to users based on profiles. You
@@ -12,7 +16,7 @@ In this tutorial, you'll learn how to give your application access to the
 Content Targeting API. Then you can view some examples of how to use the Java
 and JSON APIs that are available. 
 
-## Exposing the Content Targeting API [](id=exposing-the-content-targeting-api)
+## Exposing the Content Targeting API
 
 Configuring your app to have access to the Content Targeting API requires only
 one line of code. This line of code is a dependency that should be added to your
@@ -37,7 +41,7 @@ Your app now has access to the Content Targeting API and can take advantage of
 everything Audience Targeting has to offer. In the next section, you'll learn
 how to use the Content Targeting API by studying a few examples.
 
-## Using the Content Targeting Java API [](id=using-the-content-targeting-java-api)
+## Using the Content Targeting Java API
 
 There are two ways to call the Content Targeting API: through the Java API or
 through the JSON API. 
@@ -118,7 +122,7 @@ That's it! By importing the `UserSegment` and `UserSegmentLocalService` classes
 into your files, you have direct access to your portal's user segments through
 the Content Targeting Java API. 
 
-## Using the Content Targeting JSON API [](id=using-the-content-targeting-json-api)
+## Using the Content Targeting JSON API
 
 Suppose you'd like to show a list of existing campaigns in your portlet using
 the JSON API. You could do this by opening your portlet's `view.jsp` file and
@@ -167,10 +171,10 @@ JSON API is just as easy as accessing the related Java API.
 You've learned how easy it is to expose the Content Targeting API and use it in
 your application to unleash its power!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating New Audience Rule Types](/develop/tutorials/-/knowledge_base/7-0/creating-new-audience-targeting-rule-types)
+[Creating New Audience Rule Types](/docs/7-0/tutorials/-/knowledge_base/t/creating-new-audience-targeting-rule-types)
 
-[Targeting Content to Your Audience](/discover/portal/-/knowledge_base/7-0/targeting-content-to-your-audience)
+[Targeting Content to Your Audience](/docs/7-0/user/-/knowledge_base/u/targeting-content-to-your-audience)
 
-[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code)
+[Running Service Builder and Understanding the Generated Code](/docs/7-0/tutorials/-/knowledge_base/t/running-service-builder-and-understanding-the-generated-code)

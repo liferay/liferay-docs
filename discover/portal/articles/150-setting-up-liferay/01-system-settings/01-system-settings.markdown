@@ -1,4 +1,8 @@
-# System Settings [](id=system-settings)
+---
+header-id: system-settings
+---
+
+# System Settings
 
 You might be tired of hearing about it by now, but it's worth repeating: 
 @product@ is modular. It's composed of many applications, which are divided into 
@@ -22,7 +26,7 @@ do it. These settings can now be made in the Control Panel, in *Configuration*
 
 ![Figure 1: System Settings are accessed through the Control Panel.](../../../images/system-settings-product-menu.png)
 
-## Editing the Default Configuration [](id=editing-the-default-configuration)
+## Editing the Default Configuration
 
 In System Settings, the configuration options are categorized into logical 
 groupings based on their functionality, and there's a Search box to make finding 
@@ -37,15 +41,11 @@ component you want to configure, or click the actions button
 changes you'd like, then click *Save*. Your configuration changes are saved and 
 applied throughout the system. 
 
-+$$$
-
-**Important:** Content generated using templates (e.g., FreeMarker templates and
-Application Display Templates) is cached. Cached content might not reflect
-configuration changes until the cache is invalidated (cleared). The 
-[Server Administration &rarr; Resources tab](/discover/portal/-/knowledge_base/7-0/server-administration)
-provides cache clearing options.
-
-$$$
+| **Important:** Content generated using templates (e.g., FreeMarker templates and
+| Application Display Templates) is cached. Cached content might not reflect
+| configuration changes until the cache is invalidated (cleared). The
+| [Server Administration &rarr; Resources tab](/docs/7-0/user/-/knowledge_base/u/server-administration)
+| provides cache clearing options.
 
 ![Figure 3: After saving changes to a configuration, the actions *Reset Default Values* and *Export* are available for it.](../../../images/system-settings-actions.png)
 
@@ -54,7 +54,7 @@ what you did, start over by clicking the actions button
 (![Actions](../../../images/icon-actions.png)), then clicking *Reset Default
 Values*. 
 
-## Configuration Scope [](id=configuration-scope)
+## Configuration Scope
 
 While browsing the categories of System Settings, you'll notice that each entry
 has a *Name* and a *Scope*. This scope is different than the overall
@@ -105,7 +105,7 @@ Settings. Only changes to Instance Settings will be recognized.
 
 <!-- Need a Lunar Resort example? -->
 
-## Exporting and Importing Configurations [](id=exporting-and-importing-configurations)
+## Exporting and Importing Configurations
 
 What if you change many default configurations in System Settings, and then need 
 to make the same changes in another @product@ installation? Don't worry, you 
@@ -119,21 +119,17 @@ To export a single entry's configurations, click the actions button
 (![Actions](../../../images/icon-actions.png)), then click *Export*. A `.config` 
 file then downloads that contains any configuration changes you saved. 
 
-+$$$
-
-**Note:** If you're running Liferay DE 7.0 Fix Pack 7 or earlier, or Liferay CE 
-Portal 7.0 GA3 or earlier, System Settings exports a `.cfg` file instead of a 
-`.config` file. The file format was changed to fix a bug with multi-value 
-settings, which the `.cfg` format didn't handle properly. See
-[the bug report](https://issues.liferay.com/browse/LPS-67890)
-for more information. Any @product@ system newer than those listed in this note 
-uses the `.config` file format. 
-
-Although `.config` files are now the default file type exported by System 
-Settings, you're free to continue using `.cfg` files--they're still supported by 
-the configuration framework underlying System Settings. 
-
-$$$
+| **Note:** If you're running Liferay DE 7.0 Fix Pack 7 or earlier, or Liferay CE
+| Portal 7.0 GA3 or earlier, System Settings exports a `.cfg` file instead of a
+| `.config` file. The file format was changed to fix a bug with multi-value
+| settings, which the `.cfg` format didn't handle properly. See
+| [the bug report](https://issues.liferay.com/browse/LPS-67890)
+| for more information. Any @product@ system newer than those listed in this note
+| uses the `.config` file format.
+| 
+| Although `.config` files are now the default file type exported by System
+| Settings, you're free to continue using `.cfg` files--they're still supported by
+| the configuration framework underlying System Settings.
 
 To export all the configuration changes you've made in System Settings, click 
 the System Settings options button 

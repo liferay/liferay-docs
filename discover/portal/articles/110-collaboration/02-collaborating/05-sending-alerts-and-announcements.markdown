@@ -1,4 +1,8 @@
-# Sending Alerts and Announcements [](id=sending-alerts-and-announcements)
+---
+header-id: sending-alerts-and-announcements
+---
+
+# Sending Alerts and Announcements
 
 Suppose you're running a Liferay instance with lots of users. Maybe you have 
 thousands or tens of thousands of users (or more!). Wouldn't it be nice to have 

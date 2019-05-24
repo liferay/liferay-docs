@@ -1,12 +1,16 @@
-# Running Service Builder and Understanding the Generated Code [](id=running-service-builder-and-understanding-the-generated-code)
+---
+header-id: running-service-builder-and-understanding-the-generated-code
+---
+
+# Running Service Builder and Understanding the Generated Code
 
 This tutorial explains how to run Service Builder and provides an overview of
 the code that Service Builder generates. If you'd like to use Service Builder in
 your application but haven't yet created a `service.xml` file, visit the
-[Defining an Object-Relational Map with Service Builder](/develop/tutorials/-/knowledge_base/7-0/defining-an-object-relational-map-with-service-builder)
+[Defining an Object-Relational Map with Service Builder](/docs/7-0/tutorials/-/knowledge_base/t/defining-an-object-relational-map-with-service-builder)
 tutorial and then come back to this one.
 
-## Running Service Builder [](id=running-service-builder)
+## Running Service Builder
 
 To build a service from a `service.xml` file, you can use Liferay @ide@ or a
 terminal window. In this tutorial, you'll refer to the Event Listing example
@@ -14,7 +18,7 @@ project that's referenced throughout the Liferay Service Builder tutorials.
 
 Now let's learn how to run Service Builder.
 
-### Using Liferay @ide@ [](id=using-liferay-ide-or-developer-studio)
+### Using Liferay @ide@
 
 From the Package Explorer, open the `service.xml` file from your `*-service`
 module's root folder. By default, the file opens up in the Service Builder
@@ -27,7 +31,7 @@ Make sure to click the *Build Services* button and not the *Build WSDD* button
 Building the WSDDs won't hurt anything, but you'll generate files for the remote
 service instead of the local one. For information about WSDDs (web service
 deployment descriptors), please refer to the
-[SOAP Web Services](/develop/tutorials/-/knowledge_base/7-0/soap-web-services)
+[SOAP Web Services](/docs/7-0/tutorials/-/knowledge_base/t/soap-web-services)
 tutorial. 
 
 ![Figure 1: The *Overview* mode in the editor provides a nested outline which you can expand, a form for editing basic Service Builder attributes, and buttons for building services or building web service deployment descriptors.](../../../images/service-xml-overview.png)
@@ -38,16 +42,16 @@ name in the Package Explorer and then select *Liferay* &rarr; *build-service*.
 After running Service Builder, your generated files are available. More
 information about the generated files appears below.
 
-### Using the Terminal [](id=using-the-terminal)
+### Using the Terminal
 
 Open a terminal window and navigate to your module project's root folder, which
 should be located in your Liferay Workspace's `modules` directory. To learn more
 about creating your module project in a
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace),
+[Liferay Workspace](/docs/7-0/tutorials/-/knowledge_base/t/liferay-workspace),
 visit the
-[Creating Modules with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-blade-cli)
+[Creating Modules with Blade CLI](/docs/7-0/tutorials/-/knowledge_base/t/creating-modules-with-blade-cli)
 tutorial. You can leverage the
-[Service Builder Template](/develop/reference/-/knowledge_base/7-0/using-the-service-builder-template)
+[Service Builder Template](/docs/7-0/reference/-/knowledge_base/r/using-the-service-builder-template)
 to create your own predefined Service Builder project.
 
 Liferay Workspace offers a Gradle or Maven build environment; this tutorial
@@ -59,14 +63,10 @@ folder to build your services:
 
     gradlew buildService
 
-+$$$
-
-**Note:** Liferay Workspaces provide the Gradle Wrapper script for usage, if you
-don't have Gradle installed globally in your classpath. It is located in the
-workspace's root folder, so you can call it from your module project's root
-folder, if necessary (e.g., `../../gradlew buildService`).
-
-$$$
+| **Note:** Liferay Workspaces provide the Gradle Wrapper script for usage, if you
+| don't have Gradle installed globally in your classpath. It is located in the
+| workspace's root folder, so you can call it from your module project's root
+| folder, if necessary (e.g., `../../gradlew buildService`).
 
 If your module project uses Maven, you can build services running the following
 command from the module project's root folder:
@@ -77,7 +77,7 @@ command from the module project's root folder:
 using the `com.liferay.portal.tools.service.builder` plugin version 1.0.145+.
 Maven projects using an earlier version of the Service Builder plugin should
 update their POM accordingly. See the
-[Using Service Builder in a Maven Project](/develop/tutorials/-/knowledge_base/7-0/using-service-builder-in-a-maven-project)
+[Using Service Builder in a Maven Project](/docs/7-0/tutorials/-/knowledge_base/t/using-service-builder-in-a-maven-project)
 tutorial for more information on using Maven to run Service Builder.
 
 When the service has been successfully generated, a `BUILD SUCCESSFUL` message
@@ -87,7 +87,7 @@ service layer, and persistence layer. Don't worry about the number of generated
 files--you'll never have to customize more than three of them. To review the
 code that Service Builder generates for your entities, see the next section.
 
-## Understanding the Code Generated by Service Builder [](id=understanding-the-code-generated-by-service-builder)
+## Understanding the Code Generated by Service Builder
 
 Now you'll examine the files Service Builder generated for your entity. Note
 that the files listed under Local Service and Remote Service below are only
@@ -196,12 +196,8 @@ than three classes for each entity. These customizable classes are
 
     ![Figure 4: Service Builder generates these model classes and interfaces. Only `EventImpl` allows custom methods to be added to the service layer.](../../../images/service-builder-model-diagram.png)
 
-+$$$
-
-**Note:** `*Util` classes are generated for backwards compatibility purposes
-only. Your module applications should avoid calling the util classes.
-
-$$$
+| **Note:** `*Util` classes are generated for backwards compatibility purposes
+| only. Your module applications should avoid calling the util classes.
 
 Each file that Service Builder generates is assembled from an associated
 FreeMarker template. You can find Service Builder's FreeMarker templates in the
@@ -226,14 +222,14 @@ data in the database. It's important to note, then, that **new fields added to
 `service.xml` are not automatically added to the database.** To add the fields,
 you must do one of two things: 
 
-1.  Write an [upgrade process](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app) 
+1.  Write an [upgrade process](/docs/7-0/tutorials/-/knowledge_base/t/creating-an-upgrade-process-for-your-app) 
     to modify the tables and preserve the data, or
 
 2.  Run the `cleanServiceBuilder`
-    [Gradle task](/develop/reference/-/knowledge_base/7-0/db-support-gradle-plugin)
+    [Gradle task](/docs/7-0/reference/-/knowledge_base/r/db-support-gradle-plugin)
     (also supported on Maven and Ant), which drops your tables so they get
     re-created the next time your app is deployed. See the
-    [Maven DB Support Plugin](/develop/reference/-/knowledge_base/7-0/db-support-plugin)
+    [Maven DB Support Plugin](/docs/7-0/reference/-/knowledge_base/r/db-support-plugin)
     reference article for instructions on how to run this command from a Maven
     project.
 
@@ -241,12 +237,12 @@ Use the first option when you have a released application and you must preserve
 your users' data. Use the second option when you're in the middle of development
 and you're adding new columns during that process. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[What is Service Builder](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
+[What is Service Builder](/docs/7-0/tutorials/-/knowledge_base/t/what-is-service-builder)
 
-[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code)
+[Running Service Builder and Understanding the Generated Code](/docs/7-0/tutorials/-/knowledge_base/t/running-service-builder-and-understanding-the-generated-code)
 
-[Understanding Service Context](/develop/tutorials/-/knowledge_base/7-0/understanding-servicecontext)
+[Understanding Service Context](/docs/7-0/tutorials/-/knowledge_base/t/understanding-servicecontext)
 
-[Creating Local Services](/develop/tutorials/-/knowledge_base/7-0/creating-local-services)
+[Creating Local Services](/docs/7-0/tutorials/-/knowledge_base/t/creating-local-services)

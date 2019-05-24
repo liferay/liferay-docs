@@ -1,4 +1,8 @@
-# Managing User Segments [](id=managing-user-segments)
+---
+header-id: managing-user-segments
+---
+
+# Managing User Segments
 
 The *Audience Targeting* section of the Configuration section of the Site
 Administration area of the Menu allows you to manage user segments and
@@ -47,10 +51,10 @@ Therefore, user segments and campaigns defined in the Global scope will be
 available to any site. User segments and campaigns created in a site will be
 available to all of its child sites.
 
-## User Segment Rules [](id=user-segment-rules)
+## User Segment Rules
 
 Custom rules can be created by developers and deployed as OSGi plugins. See the
-[Creating New Audience Targeting Rule Types](/develop/tutorials/-/knowledge_base/6-2/creating-new-audience-targeting-rule-types)
+[Creating New Audience Targeting Rule Types](/docs/6-2/tutorials/-/knowledge_base/t/creating-new-audience-targeting-rule-types)
 tutorial for details.
 
 <!-- Update tutorial above, when available. -Cody -->
@@ -95,7 +99,7 @@ Once the user belongs to a user segment, you can use that information to direct
 more relevant information to the user in your website using the User Segment
 Content Display application.
 
-## Categorizing Pages and Content for User Segments [](id=categorizing-pages-and-content-for-user-segments)
+## Categorizing Pages and Content for User Segments
 
 Each new user segment that's created can be used to categorize pages or content.
 The Audience Targeting app adds a new *User Segment* select button to the SEO
@@ -126,7 +130,7 @@ Filter*.
 
 Next, you'll learn about managing user segment reports.
 
-## Managing User Segment Reports [](id=managing-user-segment-reports)
+## Managing User Segment Reports
 
 When managing user segments, you can select the user segment name and then
 select the *Reports* tab to see the list of reports available for each user
@@ -146,7 +150,7 @@ users. Simply click the user report you're interested in and select the
 button. This downloads a CSV file with the list of users.
 
 Additional reports can be created by developers and deployed as OSGi plugins.
-See the [Reporting User Behavior with Audience Targeting](/develop/tutorials/-/knowledge_base/6-2/reporting-user-behavior-with-audience-targeting)
+See the [Reporting User Behavior with Audience Targeting](/docs/6-2/tutorials/-/knowledge_base/t/reporting-user-behavior-with-audience-targeting)
 tutorial for details. Reports are generated daily by default. However, you can
 generate a report at any time. To generate a new report when currently viewing a
 report, click on the *Update* button from the *Options* icon 

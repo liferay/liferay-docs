@@ -1,11 +1,15 @@
-# Understanding How @product@ Exposes Configuration For Liferay AMD Loader [](id=how-liferay-portal-exposes-configuration-for-amd)
+---
+header-id: how-liferay-portal-exposes-configuration-for-amd
+---
+
+# Understanding How @product@ Exposes Configuration For Liferay AMD Loader
 
 **NOTE:** This tutorial is for users who know how Liferay AMD Loader works under 
 the hood. You can learn more about Liferay AMD Loader in the 
-[Liferay AMD Module Loader](/develop/tutorials/-/knowledge_base/7-0/liferay-amd-module-loader) 
+[Liferay AMD Module Loader](/docs/7-0/tutorials/-/knowledge_base/t/liferay-amd-module-loader) 
 tutorial.
 
-With [de-duplication](/develop/tutorials/-/knowledge_base/7-0/how-liferay-portal-publishes-npm-packages#package-deduplication) 
+With [de-duplication](/docs/7-0/tutorials/-/knowledge_base/t/how-liferay-portal-publishes-npm-packages#package-deduplication) 
 in place, JavaScript modules are made available to Liferay AMD Loader through 
 the configuration returned by the `/o/js_loaded_modules` URL.
 
@@ -50,7 +54,7 @@ The OSGi bundle shown below is used for reference in this tutorial:
                     - ...
 
 For example, for the specified structure (shown above), as explained in 
-[The Structure of OSGi Bundles Containing npm Packages](/develop/tutorials/-/knowledge_base/7-0/the-structure-of-osgi-bundles-containing-npm-packages) 
+[The Structure of OSGi Bundles Containing npm Packages](/docs/7-0/tutorials/-/knowledge_base/t/the-structure-of-osgi-bundles-containing-npm-packages) 
 tutorial, the following configuration is published for Liferay AMD loader to 
 consume:
 
@@ -108,8 +112,12 @@ Note:
 
 Now you know how @product@ exposes configuration for Liferay AMD Loader!
 
-# Related Topics [](id=related-topics)
+---
+header-id: related-topics
+---
 
-[How @product@ Publishes npm Packages](/develop/tutorials/-/knowledge_base/7-0/how-liferay-portal-publishes-npm-packages)
+# Related Topics
 
-[Understanding How liferay-npm-bundler Formats JavaScript Modules for AMD](/develop/tutorials/-/knowledge_base/7-0/understanding-how-liferay-npm-bundler-formats-javascript-modules-for-amd)
+[How @product@ Publishes npm Packages](/docs/7-0/tutorials/-/knowledge_base/t/how-liferay-portal-publishes-npm-packages)
+
+[Understanding How liferay-npm-bundler Formats JavaScript Modules for AMD](/docs/7-0/tutorials/-/knowledge_base/t/understanding-how-liferay-npm-bundler-formats-javascript-modules-for-amd)

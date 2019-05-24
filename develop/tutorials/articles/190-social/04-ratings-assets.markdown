@@ -1,4 +1,8 @@
-# Rating Assets [](id=rating-assets)
+---
+header-id: rating-assets
+---
+
+# Rating Assets
 
 @product@'s asset framework supports a system for rating content in apps. This
 feature appears in many core apps, such as the Blogs portlet. Ratings give your
@@ -10,11 +14,11 @@ taglibs, you can enable ratings for your app in only a few lines of code.
 Follow these steps: 
 
 1.  Make sure your entity is 
-    [asset enabled](/develop/tutorials/-/knowledge_base/7-0/adding-updating-and-deleting-assets-for-custom-entities).
+    [asset enabled](/docs/7-0/tutorials/-/knowledge_base/t/adding-updating-and-deleting-assets-for-custom-entities).
 
 2.  Choose a read-only view of the entity for the ratings. You can display 
     them in one of your portlet's views, or if you've implemented 
-    [asset rendering](/develop/tutorials/-/knowledge_base/7-0/rendering-an-asset) 
+    [asset rendering](/docs/7-0/tutorials/-/knowledge_base/t/rendering-an-asset) 
     you can display them in the full content view in the Asset Publisher 
     portlet. 
 
@@ -43,14 +47,14 @@ Follow these steps:
 
     Although the ratings type is specified here, you can make the type 
     configurable for administrators by 
-    [Implementing Ratings Type Selection and Value Type Transformation](/develop/tutorials/-/knowledge_base/7-0/ratings) 
+    [Implementing Ratings Type Selection and Value Type Transformation](/docs/7-0/tutorials/-/knowledge_base/t/ratings) 
     in your app. 
 
 Great! Now you know how to let users rate content in your asset-enabled portlets. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Adding Comments to Your App](/develop/tutorials/-/knowledge_base/7-0/adding-comments-to-your-app)
+[Adding Comments to Your App](/docs/7-0/tutorials/-/knowledge_base/t/adding-comments-to-your-app)
 
-[Applying Social Bookmarks](/develop/tutorials/-/knowledge_base/7-0/applying-social-bookmarks)
+[Applying Social Bookmarks](/docs/7-0/tutorials/-/knowledge_base/t/applying-social-bookmarks)
 

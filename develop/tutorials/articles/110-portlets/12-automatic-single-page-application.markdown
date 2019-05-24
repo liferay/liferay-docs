@@ -1,4 +1,8 @@
-# Automatic Single Page Applications [](id=automatic-single-page-applications)
+---
+header-id: automatic-single-page-applications
+---
+
+# Automatic Single Page Applications
 
 A good user experience is the measure of a well-designed site. A user's time is
 highly valuable. The last thing you want is for someone to grow frustrated with
@@ -17,7 +21,7 @@ This tutorial covers these key topics:
 - How to configure SPA settings
 - How to listen to SPA lifecycle events
 
-## The Benefits of SPAs [](id=the-benefits-of-spas)
+## The Benefits of SPAs
 
 Let's say you're surfing the web and you find a really rad site that happens to
 be SPA enabled. Alright! Page load times are blazin' fast. You're deep into the
@@ -41,7 +45,7 @@ If only there was a way to have a Single Page Application, but also be able to
 link to the content you want. Well, don't despair my friend. You can have your
 cake and eat it too, thanks to SennaJS.
 
-## What is SennaJS? [](id=what-is-sennajs)
+## What is SennaJS?
 
 SennaJS is @product@'s SPA engine. SennaJS handles the client-side data, and
 AJAX loads the page's content dynamically. While there are other JavaScript
@@ -90,7 +94,7 @@ You can read more about SennaJS as well as see examples at [http://sennajs.com/]
 Now that you have a better understanding of how SennaJS benefits SPA, you can
 learn how to enable and configure options for SPA within @product@ next.
 
-## Enabling SPA [](id=enabling-spa)
+## Enabling SPA
 
 Enabling SPA is easy. Deploy `com.liferay.frontend.js.spa.web-[version]` module
 deployed and enabled, and you're all set to use SPA. Since this module is
@@ -101,7 +105,7 @@ your workflow or existing code!**
 
 Next you can learn how to customize SPA settings to meet your own needs.
 
-## Customizing SPA Settings [](id=customizing-spa-settings)
+## Customizing SPA Settings
 
 Depending on what behaviors you need to customize, you can configure SPA options
 in one of two places. SPA caching and SPA timeout settings can be configured in
@@ -109,7 +113,7 @@ System Settings. If you wish to disable SPA for a certain link, page, or portlet
 in your site, you can do so within the corresponding element itself. All SPA
 configuration options are covered here. 
 
-### Configuring SPA System Settings [](id=configuring-spa-system-settings)
+### Configuring SPA System Settings
 
 To configure system settings for SPA, follow these steps:
 
@@ -119,16 +123,12 @@ To configure system settings for SPA, follow these steps:
 
 3. Click *Frontend SPA Infrastructure*.
 
-+$$$
-
-**Note:** In prior versions of Liferay, all SPA render requests that didn't
-belong to a portlet (no `p_p_id` in the URL) were cached indefinitely. This can
-confuse users, as the content they view is cached rather than the latest fresh
-content. Since Liferay Portal CE 7.0 GA2 and Liferay DXP 7.0 GA1, administrators
-can use the **Cache Expiration Time** property to set an expiration time for the
-Senna cache.
-
-$$$
+| **Note:** In prior versions of Liferay, all SPA render requests that didn't
+| belong to a portlet (no `p_p_id` in the URL) were cached indefinitely. This can
+| confuse users, as the content they view is cached rather than the latest fresh
+| content. Since Liferay Portal CE 7.0 GA2 and Liferay DXP 7.0 GA1, administrators
+| can use the **Cache Expiration Time** property to set an expiration time for the
+| Senna cache.
 
 The following configuration options are available:
 
@@ -145,7 +145,7 @@ zero value means no notification should be shown.
 Now that you know how to configure system settings for SPA, you can learn how to
 disable SPA for elements in your site next.
 
-### Disabling SPA [](id=disabling-spa)
+### Disabling SPA
 
 Certain elements of your page may require a regular navigation to work properly. 
 For example, you may have downloadable content that you want to share with the 
@@ -193,7 +193,7 @@ That's all you need to do to disable SPA in your app.
 Now that you know how to disable SPA, you can learn how to specify how resources 
 are loaded during navigation.
 
-### Specifying How Resources Are Loaded During Navigation [](id=specifying-how-resources-are-loaded-during-navigation)
+### Specifying How Resources Are Loaded During Navigation
 
 By default, @product@ unloads CSS resources from the `<head>` element on 
 navigation. JavaScript resources in the `<head>`, however, are not removed on 
@@ -210,12 +210,8 @@ navigation. This functionality can be customized by setting the resource's
     Alternatively, set the `data-senna-track` attribute to `temporary` to unload 
     the resource on navigation. 
     
-    +$$$
-
-    **Note:** the `data-senna-track` attribute can be added to resources loaded 
-    outside of the `<head>` element as well to specify navigation behavior.  
-
-    $$$
+    | **Note:** the `data-senna-track` attribute can be added to resources loaded
+    | outside of the `<head>` element as well to specify navigation behavior.
     
 The example below ensures that the JS resource isn't unloaded during navigation:
     
@@ -223,7 +219,7 @@ The example below ensures that the JS resource isn't unloaded during navigation:
 
 Next you can learn about the available SPA lifecycle events next.
 
-## Listening to SPA Lifecycle Events [](id=listening-to-spa-lifecycle-events)
+## Listening to SPA Lifecycle Events
 
 During development, you may need to know when navigation has started or stopped
 in your SPA. SennaJS makes this easy by exposing lifecycle events that
@@ -267,7 +263,7 @@ Due to the nature of SPA navigation, global listeners that you create can become
 problematic over time if not handled properly. You'll learn how to handle these 
 listeners next.
 
-## Detaching Global Listeners [](id=detaching-global-listeners)
+## Detaching Global Listeners
 
 SPA provides several improvements that highly benefit your site and users, but
 there is potentially some additional maintenance as a consequence. In a
@@ -298,10 +294,10 @@ event listeners of a global `category` event:
 
 Now you know how to configure and use SPA in @product@!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Configuring Modules for Liferay Portal's Loaders](/develop/tutorials/-/knowledge_base/7-0/configuring-modules-for-products-loaders)
+[Configuring Modules for Liferay Portal's Loaders](/docs/7-0/tutorials/-/knowledge_base/t/configuring-modules-for-products-loaders)
 
-[Preparing your JavaScript Files for ES2015](/develop/tutorials/-/knowledge_base/7-0/preparing-your-javascript-files-for-es2015)
+[Preparing your JavaScript Files for ES2015](/docs/7-0/tutorials/-/knowledge_base/t/preparing-your-javascript-files-for-es2015)
 
-[Using ES2015 Modules in Your Portlet](/develop/tutorials/-/knowledge_base/7-0/using-es2015-modules-in-your-portlet)
+[Using ES2015 Modules in Your Portlet](/docs/7-0/tutorials/-/knowledge_base/t/using-es2015-modules-in-your-portlet)

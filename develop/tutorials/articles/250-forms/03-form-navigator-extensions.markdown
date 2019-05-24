@@ -1,4 +1,8 @@
-# Form Navigator Extensions [](id=form-navigator)
+---
+header-id: form-navigator
+---
+
+# Form Navigator Extensions
 
 Some data-centric applications require the creation of large data-entry forms.
 Examples abound in healthcare, transportation, pharmaceutical, or any other
@@ -30,7 +34,7 @@ and  click the *View Raw* link.
 Before extending a Form Navigator, you should understand the parts of the Form
 Navigator Framework and what they do. 
 
-## Understanding the Parts of the Form Navigator Framework [](id=understanding-the-parts-of-the-form-navigator-framework)
+## Understanding the Parts of the Form Navigator Framework
 
 Form Navigator implementations contain the following parts:
 
@@ -50,18 +54,14 @@ Liferay's Form Navigator implementations meet all these requirements. They're
 implemented similarly and their IDs are published in the Javadoc for the class
 [`FormNavigatorConstants`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorConstants.html).
 
-+$$$
-
-**Note**: Form Navigator extensions implemented using portal properties and form
-navigation entry JSPs are deprecated but still supported in @product-ver@. All
-new Form Navigator extensions should be implemented as this tutorial describes. 
-
-$$$
+| **Note**: Form Navigator extensions implemented using portal properties and form
+| navigation entry JSPs are deprecated but still supported in @product-ver@. All
+| new Form Navigator extensions should be implemented as this tutorial describes.
 
 Now that you know the parts of a Form Navigator, it'll be easier for you to
 extend one. 
 
-## Extending a Form Navigator [](id=extending-a-form-navigator)
+## Extending a Form Navigator
 
 Here's an overview of the steps to extend a Form Navigator:
 
@@ -73,11 +73,11 @@ Here's an overview of the steps to extend a Form Navigator:
 
 Let's set up a component portlet project to support form navigation. 
 
-### Step 1: Implement a component portlet project to accommodate form navigation [](id=step-1-implement-a-component-portlet-project-to-accommodate-form-navigation)
+### Step 1: Implement a component portlet project to accommodate form navigation
 
 First, your component portlet must be implemented as an OSGi bundle. You
 can develop it in any environment that supports creating a bundle. Please refer
-to the @product-ver@ tutorial section [Tooling](/develop/tutorials/-/knowledge_base/7-0/tooling)
+to the @product-ver@ tutorial section [Tooling](/docs/7-0/tutorials/-/knowledge_base/t/tooling)
 to learn about development environments. The Form Nav Extension portlet
 was created with BLADE based on the `blade.portlet.jsp` template. This is also
 covered in the tutorial section linked above.
@@ -124,7 +124,7 @@ As you progress through this tutorial, you'll refer to the metadata in your
 portlet's classes. Before diving into the Java classes, howerver, let's create
 JSPs for your sections' inputs. 
 
-### Step 2: Create a JSP for each new section of inputs [](id=step-2-create-a-jsp-for-each-new-section-of-inputs)
+### Step 2: Create a JSP for each new section of inputs
 
 The existing Form Navigator has a form, and each of its sections extend the form
 with sets of input. Your section will add its own inputs. You should create your
@@ -171,7 +171,7 @@ Navigator and categories you're adding sections to. You refer to these IDs in
 the category and section classes you'll create to represent your Form Navigator
 extensions. 
 
-### Step 3: Identify the form navigator and category you're extending [](id=step-3-identify-the-form-navigator-and-category-youre-extending)
+### Step 3: Identify the form navigator and category you're extending
 
 Liferay's class
 [`FormNavigatorConstants`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorConstants.html)
@@ -185,7 +185,7 @@ for the navigator's or category's name:
 Note the names of the constants that match the Form Navigator and categories
 you're extending--you'll refer to them in your Java classes in the next steps. 
 
-### Step 4: Create new categories [](id=step-4-create-new-categories)
+### Step 4: Create new categories
 
 To add a new category, create a class that implements the
 [`FormNavigatorCategory`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/servlet/taglib/ui/FormNavigatorCategory.html)
@@ -269,7 +269,7 @@ Portal Setting category:
 After you've implemented new Form Navigator categories, you can add new Form 
 Navigator sections. 
 
-### Step 5: Create new sections [](id=step-5-create-new-sections)
+### Step 5: Create new sections
 
 To add a new section (entry) that uses a JSP, create a class that extends
 the abstract base class
@@ -440,7 +440,7 @@ target the servlet context to your bundle.
 If you're curious about what a working entry implementation looks like, check
 out the example entry class next. 
 
-## Example Form Navigator Entry Class [](id=example-form-navigator-entry-class)
+## Example Form Navigator Entry Class
 
 Inspecting an example implementation can help you work out details in your
 implementation. Here's the Form Nav Extension portlet's entry class
@@ -570,11 +570,11 @@ created JSPs for your new form sections, identified the targeted form navigator
 and categories, created new categories, and created new entry implementations.
 You did it all! You now know what it takes to extend Liferay Form Navigators.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 <!-- TODO Add a link to the tutorial on implementing form navigation in a
 custom portlet -->
 
-[Portlets](/develop/tutorials/-/knowledge_base/7-0/portlets)
+[Portlets](/docs/7-0/tutorials/-/knowledge_base/t/portlets)
 
-[Service Builder](/develop/tutorials/-/knowledge_base/7-0/service-builder)
+[Service Builder](/docs/7-0/tutorials/-/knowledge_base/t/service-builder)

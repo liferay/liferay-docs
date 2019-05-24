@@ -1,4 +1,8 @@
-# Macros [](id=freemarker-macros)
+---
+header-id: freemarker-macros
+---
+
+# Macros
 
 Macros let you assign theme template fragments to a variable. This keeps your 
 theme templates from becoming cluttered and makes them easier to read. @product@ 
@@ -8,7 +12,7 @@ that you can use in your FreeMarker theme templates to include theme resources,
 standard portlets, and more. Likewise, Velocity macros are available in 
 [`VM_liferay.vm` template](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/foundation/portal-template/portal-template-velocity/src/main/resources/VM_liferay.vm) 
 @product@ also exposes its taglibs as FreeMarker macros. See the corresponding 
-[taglib tutorial](/develop/tutorials/-/knowledge_base/7-0/front-end-taglibs) 
+[taglib tutorial](/docs/7-0/tutorials/-/knowledge_base/t/front-end-taglibs) 
 for more information on using the taglib in your FreeMarker templates. This 
 tutorial shows how to use @product@'s macros in your FreeMarker and Velocity 
 theme templates.  
@@ -42,13 +46,9 @@ Velocity:
             #end
     #end
 
-+$$$
-
-**Note:** @product@'s default FreeMarker macro calls are namespaced with 
-`liferay` (for example, `<@liferay.macro_variable_name />`). If you create 
-custom macros, they can be called with the explicit variable name.
-
-$$$
+| **Note:** @product@'s default FreeMarker macro calls are namespaced with
+| `liferay` (for example, `<@liferay.macro_variable_name />`). If you create
+| custom macros, they can be called with the explicit variable name.
 
 To include the template fragment in your theme templates, call the macro using
 the variable name:
@@ -98,7 +98,7 @@ You can read more about FreeMarker macros and Velocity macros at
 @product@ provides several macros that you can use in your theme templates. 
 These are covered next.
 
-## @product@ Macros [](id=product-macros)
+## @product@ Macros
 
 There are several default macros defined in the 
 [`FTL_Liferay.ftl` template](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/foundation/portal-template/portal-template-freemarker/src/main/resources/FTL_liferay.ftl)
@@ -123,11 +123,11 @@ macros and parameters:
 
 Now you know how to use @product@'s macros in your theme templates!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+[Liferay Theme Generator](/docs/7-0/tutorials/-/knowledge_base/t/themes-generator)
 
-[Themelets](/develop/tutorials/-/knowledge_base/7-0/themelets)
+[Themelets](/docs/7-0/tutorials/-/knowledge_base/t/themelets)
 
-[Theme Reference Guide](/develop/reference/-/knowledge_base/7-0/theme-reference-guide)
+[Theme Reference Guide](/docs/7-0/reference/-/knowledge_base/r/theme-reference-guide)
 

@@ -1,4 +1,8 @@
-# Running the Upgrade Process [](id=running-the-upgrade-process)
+---
+header-id: running-the-upgrade-process
+---
+
+# Running the Upgrade Process
 
 Now you're ready to run the upgrade process. It updates the database schema for
 the core and your installed modules. Verification processes test the upgrade.
@@ -22,7 +26,7 @@ modular framework lets you upgrade modules--even the core--individually.
 Focusing first on upgrading the core and your most important modules might be
 better for you. The point is, @product-ver@ upgrade process is flexible. 
 
-## Running the Upgrade Tool [](id=running-the-upgrade)
+## Running the Upgrade Tool
 
 The upgrade tool provides the easiest way to upgrade the core and installed
 modules. You can configure the upgrade from files or inside the tool's command
@@ -50,7 +54,7 @@ core upgrade and non-core module upgrades.
 
 Start with the tool's usage. 
 
-### Upgrade Tool Usage [](id=upgrade-tool-usage)
+### Upgrade Tool Usage
 
 The `db_upgrade.sh` script (`db_upgrade.bat` on Windows) invokes the upgrade
 tool. It resides in the  `[Liferay Home]/tools/portal-tools-db-upgrade-client`
@@ -97,47 +101,39 @@ default name is `upgrade.log`.
 **--shell** or **-s**: Automatically connects you to the Gogo shell after
 finishing the upgrade process.
 
-+$$$
+| **Note:** Only execute the upgrade process on a server with ideal memory, CPU,
+| and database connection configuration. If executing an upgrade remotely using
+| `ssh`, make sure to guard against interruptions:
+| 
+| - If you're executing the upgrade using `ssh`, ignore hangups (connection loss)
+| by using `nohup` or something similar.
+| - On the machine you're connecting from, disable settings that shutdown or sleep
+| that machine.
+| 
+| Since DB Upgrade Tool 2.0.1, the upgrade process continues on the server even if
+| you lose connection to it. If you lose connection, reconnect and monitor upgrade
+| status via the log (default log file is `upgrade.log`). If you're using an
+| earlier version of @product-ver@ and upgrade execution is interrupted, check
+| your log file for where execution stopped.
+| 
+| - If execution stopped during an upgrade process for any module upgrade process,
+|   restart the upgrade tool to continue the upgrade from that point. You can also
+|   use Gogo shell to
+|   [check module upgrade status](#gogo-shell-commands-for-module-upgrades)
+|   and continue upgrading modules.
+| - If execution stopped during an upgrade process for Core 7.0 or lower, you must
+|   [restore the data from a backup](/docs/7-0/deploy/-/knowledge_base/d/backing-up-a-liferay-installation)
+|   and start the upgrade again.
 
-**Note:** Only execute the upgrade process on a server with ideal memory, CPU,
-and database connection configuration. If executing an upgrade remotely using
-`ssh`, make sure to guard against interruptions: 
-
-- If you're executing the upgrade using `ssh`, ignore hangups (connection loss) 
-by using `nohup` or something similar. 
-- On the machine you're connecting from, disable settings that shutdown or sleep
-that machine. 
-
-Since DB Upgrade Tool 2.0.1, the upgrade process continues on the server even if
-you lose connection to it. If you lose connection, reconnect and monitor upgrade
-status via the log (default log file is `upgrade.log`). If you're using an
-earlier version of @product-ver@ and upgrade execution is interrupted, check
-your log file for where execution stopped. 
-
-- If execution stopped during an upgrade process for any module upgrade process,
-  restart the upgrade tool to continue the upgrade from that point. You can also
-  use Gogo shell to
-  [check module upgrade status](#gogo-shell-commands-for-module-upgrades)
-  and continue upgrading modules. 
-- If execution stopped during an upgrade process for Core 7.0 or lower, you must
-  [restore the data from a backup](/discover/deployment/-/knowledge_base/7-0/backing-up-a-liferay-installation)
-  and start the upgrade again. 
-
-$$$
-
-+$$$
-
-**Warning:** To prevent the tool's expanded command from growing too large for
-Windows, execute the upgrade tool script from the `[Liferay
-Home]/tools/portal-tools-db-upgrade-client` folder.
-
-$$$
+| **Warning:** To prevent the tool's expanded command from growing too large for
+| Windows, execute the upgrade tool script from the `[Liferay
+| Home]/tools/portal-tools-db-upgrade-client` folder.
 
 Before
 [starting the upgrade](#running-and-managing-the-core-upgrade),
 decide how to execute non-core module upgrades. 
 
-## Configuring Non-Core Module Upgrades [](id=configuring-module-upgrades)
+## Configuring Non-Core Module Upgrades
 
 You can configure the upgrade tool to upgrade all installed modules
 automatically or to open a Gogo shell (after core upgrade completes) for you to
@@ -155,7 +151,7 @@ tool opens Gogo shell after the core upgrade. In the Gogo shell, you can
 Now that you've decided how to do non-core module upgrades, examine the core
 upgrade configuration options. 
 
-## Configuring the Core Upgrade [](id=configuring-the-core-upgrade)
+## Configuring the Core Upgrade
 
 The core upgrade requires configuration. You can configure it at runtime via the
 command line interface or pre-configure it in these files in `[Liferay
@@ -167,11 +163,11 @@ Home]/tools/portal-tools-db-upgrade-client/`:
     the upgrade requires. You might want to copy your current portal properties
     (except your database properties) into this file. Before copying your
     current properties, make sure you've
-    [updated the portal properties for @product-ver@](/discover/deployment/-/knowledge_base/7-0/preparing-an-upgrade-to-liferay-7#step-4-update-your-portal-properties). 
+    [updated the portal properties for @product-ver@](/docs/7-0/deploy/-/knowledge_base/d/preparing-an-upgrade-to-liferay-7#step-4-update-your-portal-properties). 
 
 Each file's properties are described next. 
 
-### Configuring app-server.properties [](id=configuring-app-server-properties)
+### Configuring app-server.properties
 
 Specify the following information to configure the app server on which 
 @product-ver@ is installed: 
@@ -216,7 +212,7 @@ These properties, for example, are for Unix and use all absolute paths:
     portal.dir=/home/user/liferay/liferay-portal-master/tomcat-8.0.32/webapps/ROOT
     server.detector.server.id=tomcat
 
-### Configuring portal-upgrade-database.properties [](id=configuring-portal-upgrade-database-properties)
+### Configuring portal-upgrade-database.properties
 
 Specify the following information to configure the database you're upgrading.
 Note that these properties correspond exactly to the
@@ -231,23 +227,23 @@ you'd use in a `portal-ext.properties` file.
 
 **jdbc.default.password** *(required)*
 
-### Configuring portal-upgrade-ext.properties [](id=configuring-portal-upgrade-ext-properties)
+### Configuring portal-upgrade-ext.properties
 
 Specify the following information to configure the upgrade itself: 
 
-**liferay.home:** the [Liferay home folder](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home) *(required)*
+**liferay.home:** the [Liferay home folder](/docs/7-0/deploy/-/knowledge_base/d/installing-product#liferay-home) *(required)*
 
 **dl.store.impl:** the implementation for persisting documents to the document
 library store. This property's default value is
 `com.liferay.portal.store.file.system.FileSystemStore`.
 If you updated the property
-[in your `portal-ext.properties`](/discover/deployment/-/knowledge_base/7-0/preparing-an-upgrade-to-liferay-7#configuring-your-documents-and-media-file-store)
+[in your `portal-ext.properties`](/docs/7-0/deploy/-/knowledge_base/d/preparing-an-upgrade-to-liferay-7#configuring-your-documents-and-media-file-store)
 to use a different implementation, specify the updated property here. 
 
 **hibernate.jdbc.batch_size:** the JDBC batch size used to improve performance;
 set to *250* by default *(optional)* 
 
-### Example Upgrade Configuration [](id=example-upgrade-configuration)
+### Example Upgrade Configuration
 
 Here's an example interaction with the upgrade tool's command line interface:
 
@@ -298,7 +294,7 @@ into `[Liferay Home]/tools/portal-tools-db-upgrade-client/`:
 
 It's time to start the core upgrade. 
 
-## Running and Managing the Core Upgrade [](id=running-and-managing-the-core-upgrade)
+## Running and Managing the Core Upgrade
 
 Start the upgrade tool, as explained in the 
 [upgrade tool usage](#upgrade-tool-usage). 
@@ -321,17 +317,13 @@ Gogo shell and starts upgrading them. The Gogo shell lets you upgrade modules,
 check module upgrade status, verify upgrades, and restart module upgrades. Read
 on to learn how to use Gogo shell commands to complete @product@ upgrades. 
 
-## Gogo shell commands for module upgrades [](id=gogo-shell-commands-for-module-upgrades)
+## Gogo shell commands for module upgrades
 
 @product@'s Gogo shell commands let you upgrade modules, check module status, or
 execute verify processes.
 
-+$$$
-
-**Note**: [Configuring the core upgrade](#configuring-the-core-upgrade)
-is required before using Gogo shell commands to upgrade the core. 
-
-$$$
+| **Note**: [Configuring the core upgrade](#configuring-the-core-upgrade)
+| is required before using Gogo shell commands to upgrade the core.
 
 If you ran the upgrade tool and it opened Gogo shell, you're already connected.
 Otherwise, you can connect to Gogo shell via telnet:
@@ -371,10 +363,10 @@ module's verify process
 **verify:list:** lists all registered verifiers
 
 There are many useful
-[Liferay commands and standard commands available in Gogo shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell).
+[Liferay commands and standard commands available in Gogo shell](/docs/7-0/reference/-/knowledge_base/r/using-the-felix-gogo-shell).
 The following sections describe Liferay upgrade commands. 
 
-### Listing module upgrade processes [](id=listing-module-upgrade-processes)
+### Listing module upgrade processes
 
 Before upgrading modules, you should find which have unresolved dependencies,
 which are resolved and available to upgrade, and examine the module upgrade
@@ -426,7 +418,7 @@ version's lowest step (`step-1`) and finishes on the target version (`1.0.0`).
 Once you understand the module's upgrade process, you can execute it with
 confidence. 
 
-### Executing module upgrades [](id=executing-module-upgrades)
+### Executing module upgrades
 
 Executing `upgrade:execute [module_name]` upgrades the module. You might run
 into upgrade errors that you must resolve. Executing the command again starts
@@ -455,7 +447,7 @@ version is `1.0.0`:
 For module upgrades that don't complete, you can check their status and resolve
 their issues.  
 
-### Checking upgrade status [](id=checking-the-upgrade-status)
+### Checking upgrade status
 
 It's good to know things still need upgrading and why. You might have forgotten
 to upgrade a module or its upgrade failed. In any case, it's important to know
@@ -500,7 +492,7 @@ Each module has one `Release_` table record, and the value for its
 for @product-ver@ modules, except for those that were previously traditional
 plugins intended for Liferay Portal version 6.2 or earlier). 
 
-## Executing verify processes [](id=executing-verify-processes)
+## Executing verify processes
 
 Verify processes make sure the upgrade executed successfully. Verify processes
 in the core are automatically executed after upgrading @product@. You can also
@@ -512,7 +504,7 @@ Also, some modules have verify processes. To check for available verify
 processes, enter the Gogo shell command `verify:list`. To run a verify process,
 enter `verify:execute [verify_qualified_name]`. 
 
-## Post-Upgrade Tasks [](id=post-upgrade-tasks)
+## Post-Upgrade Tasks
 
 After upgrading and running verify processes, make sure to re-enable search
 indexing by either removing the
@@ -526,7 +518,7 @@ Then you should reindex @product@'s search indexes. Don't just do this blindly,
 however. By default, @product@ ships with an embedded configuration for
 Elasticsearch. This configuration works great for demo purposes, but is not
 supported in production. Make sure to
-[install and configure a standalone Elasticsearch instance to run in production](/discover/deployment/-/knowledge_base/7-0/installing-elasticsearch).
+[install and configure a standalone Elasticsearch instance to run in production](/docs/7-0/deploy/-/knowledge_base/d/installing-elasticsearch).
 
 Once you've configured search and reindexed your search index, your upgraded
 system is ready for action! Congratulations! 

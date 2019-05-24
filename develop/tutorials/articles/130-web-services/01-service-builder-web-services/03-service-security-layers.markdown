@@ -1,4 +1,8 @@
-# Service Security Layers [](id=service-security-layers)
+---
+header-id: service-security-layers
+---
+
+# Service Security Layers
 
 Liferay's remote services are secured by default. They sit behind a layer of
 security that allows only local connections. To invoke Liferay services from a 
@@ -28,18 +32,14 @@ authorized host for the service, the machine is allowed to connect to Liferay's
 web services, pass in the appropriate user credentials, and upload the 
 documents. 
 
-+$$$
-
-**Note:** The `portal.properties` file resides on the Liferay instance's host 
-machine and is controlled by the instance administrator. Instance administrators 
-can configure security settings for the Axis Servlet, the Liferay Tunnel 
-Servlet, the Spring Remoting Servlet, the JSON Servlet, the JSON Web Service 
-Servlet, and the WebDAV Servlet. The `portal.properties` file (online version is 
-available at 
-[@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html))
-describes these properties. 
-
-$$$
+| **Note:** The `portal.properties` file resides on the Liferay instance's host
+| machine and is controlled by the instance administrator. Instance administrators
+| can configure security settings for the Axis Servlet, the Liferay Tunnel
+| Servlet, the Spring Remoting Servlet, the JSON Servlet, the JSON Web Service
+| Servlet, and the WebDAV Servlet. The `portal.properties` file (online version is
+| available at
+| [@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html))
+| describes these properties.
 
 Next, if you invoke the remote service via web services (e.g., JSON WS, old 
 JSON, Axis, REST, etc.), a two step process of authentication and authentication
@@ -74,19 +74,15 @@ services on an untrusted network. Most HTTP clients (e.g.,
 [cURL](http://curl.haxx.se/)) let you specify the basic authentication 
 credentials in the URL--this is very handy for testing.
 
-+$$$
-
-**Important:** To invoke a Liferay web service via your browser, you must be
-logged in to Liferay. You must also supply an authentication token (the `p_auth`
-parameter). If you navigate to your Liferay instance's JSON web services API 
-page (
-[localhost:8080/api/jsonws](localhost:8080/api/jsonws), by default) and click
-on a remote service method, you'll see the `p_auth` token for your browser
-session. This token is automatically supplied when you invoke a Liferay web
-service via the JSON web services API page or via JavaScript using
-`Liferay.Service(...)`.
-
-$$$
+| **Important:** To invoke a Liferay web service via your browser, you must be
+| logged in to Liferay. You must also supply an authentication token (the `p_auth`
+| parameter). If you navigate to your Liferay instance's JSON web services API
+| page (
+| [localhost:8080/api/jsonws](localhost:8080/api/jsonws), by default) and click
+| on a remote service method, you'll see the `p_auth` token for your browser
+| session. This token is automatically supplied when you invoke a Liferay web
+| service via the JSON web services API page or via JavaScript using
+| `Liferay.Service(...)`.
 
 Use the following syntax to call the Axis web service using credentials.
 
@@ -159,14 +155,14 @@ have been configured to allow access.
 
 **Related Topics**
 
-[Configuring JSON Web Services](/develop/tutorials/-/knowledge_base/7-0/portal-configuration-of-json-web-services)
+[Configuring JSON Web Services](/docs/7-0/tutorials/-/knowledge_base/t/portal-configuration-of-json-web-services)
 
-[Invoking Remote Services](/develop/tutorials/-/knowledge_base/7-0/invoking-remote-services)
+[Invoking Remote Services](/docs/7-0/tutorials/-/knowledge_base/t/invoking-remote-services)
 
-[Invoking JSON Web Services](/develop/tutorials/-/knowledge_base/7-0/invoking-json-web-services)
+[Invoking JSON Web Services](/docs/7-0/tutorials/-/knowledge_base/t/invoking-json-web-services)
 
-[JSON Web Services Invoker](/develop/tutorials/-/knowledge_base/7-0/json-web-services-invoker)
+[JSON Web Services Invoker](/docs/7-0/tutorials/-/knowledge_base/t/json-web-services-invoker)
 
-[JSON Web Services Invocation Examples](/develop/tutorials/-/knowledge_base/7-0/json-web-services-invocation-examples)
+[JSON Web Services Invocation Examples](/docs/7-0/tutorials/-/knowledge_base/t/json-web-services-invocation-examples)
 
-[SOAP Web Services](/develop/tutorials/-/knowledge_base/7-0/soap-web-services)
+[SOAP Web Services](/docs/7-0/tutorials/-/knowledge_base/t/soap-web-services)

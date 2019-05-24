@@ -1,7 +1,11 @@
-# Arquillian Functional Test Example [](id=arquillian-functional-test-example)
+---
+header-id: arquillian-functional-test-example
+---
+
+# Arquillian Functional Test Example
 
 Where the
-[integration test](/develop/tutorials/-/knowledge_base/7-0/arquillian-integration-test-example)
+[integration test](/docs/7-0/tutorials/-/knowledge_base/t/arquillian-integration-test-example)
 invokes the `SampleService`'s `add` method directly, the functional test invokes
 the `add` method indirectly using a web browser. The Arquillian Blade Example's
 functional tests interact with the portlet UI to verify content and validate
@@ -239,27 +243,23 @@ Testing portlets via a web client is that simple!
 
 Functional tests typically require more setup than integration tests. 
 
-## Dependencies [](id=dependencies)
+## Dependencies
 
 In addition to the Liferay Arquillian container, JUnit, and an Arquillian JUnit
 test container artifacts that the
-[integration test](/develop/tutorials/-/knowledge_base/7-0/arquillian-integration-test-example#dependencies)
+[integration test](/docs/7-0/tutorials/-/knowledge_base/t/arquillian-integration-test-example#dependencies)
 required, the `BasicPortletFunctionalTest` class requires Arquillian's Graphine
 extension to use the web client. Here's the dependency from the Gradle file
 `build.gradle`:
 
     testIntegrationCompile group: "org.jboss.arquillian.graphene", name: "graphene-webdriver", version: "2.1.0.Final"
 
-+$$$
-
-**Note**: To learn more about functional testing using Graphine, see this
-[guide](http://arquillian.org/guides/functional_testing_using_graphene/).
-
-$$$
+| **Note**: To learn more about functional testing using Graphine, see this
+| [guide](http://arquillian.org/guides/functional_testing_using_graphene/).
 
 The test requires additional Arquillian configuration elements too. 
 
-## Arquillian Configuration [](id=arquillian-configuration)
+## Arquillian Configuration
 
 In addition to the `deploymentExportPath` property introduced with the
 integration test, this functional test specifies the browser type using
@@ -283,23 +283,19 @@ integration test, this functional test specifies the browser type using
         </engine>
     </arquillian>
 
-+$$$
-
-**Note**: The Arquillian Liferay Extension
-provides these options for injecting the URL of the container (e.g., Apache Tomcat):
-    
-1.  In a test class deployment method or field, use the annotation
-    `@ArquillianResource` to designate the URL.
-
-2.  Configure Arquillian using the graphene URL property (via
-    `arquillian.xml`, `arquillian.properties`, or System Properties).
-
-$$$
+| **Note**: The Arquillian Liferay Extension
+| provides these options for injecting the URL of the container (e.g., Apache Tomcat):
+| 
+| 1.  In a test class deployment method or field, use the annotation
+|     `@ArquillianResource` to designate the URL.
+| 
+| 2.  Configure Arquillian using the graphene URL property (via
+|     `arquillian.xml`, `arquillian.properties`, or System Properties).
 
 You should use Portal properties to prevent @product@ from launching a browser
 and the Setup Wizard. 
 
-## Portal Properties [](id=portal-properties)
+## Portal Properties
 
 The Arquillian Blade Example specifies the following Portal properties in file
 `src/testIntegration/resources/portal-ext.properties`:
@@ -321,5 +317,5 @@ explained next.
 
 If you'd rather launch the Arquillian Blade Example before investigating JaCoCo,
 skip to [Running the Arquillian
-Example](/develop/tutorials/-/knowledge_base/7-0/running-the-arquillian-example).
+Example](/docs/7-0/tutorials/-/knowledge_base/t/running-the-arquillian-example).
 Otherwise, jump into JaCoCo! 

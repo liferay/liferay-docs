@@ -1,4 +1,8 @@
-# Configuring service.properties [](id=configuring-service-properties)
+---
+header-id: configuring-service-properties
+---
+
+# Configuring service.properties
 
 In this tutorial, you'll learn how to use and edit the `service.properties`
 file. You'll also learn about the properties included in this file and how to
@@ -22,29 +26,25 @@ Here are some of the properties included in the `service.properties` file:
 - `include-and-override`: The default value of this property defines
   `service-ext.properties` as an override file for `service.properties`.
 
-+$$$
-
-**Note:** The `build.auto.upgrade` property is available for WAR-style Service
-Builder applications. This property determines whether or not Liferay should
-automatically apply changes to the database model when a new version of the
-plugin is deployed. This is `true` by default. This property is not necessary
-for module-style applications.
-
-It's sometimes useful to override the `build.auto.upgrade` property in legacy
-projects from `service.properties`. Setting `build.auto.upgrade=false` in your
-`service-ext.properties` file prevents Liferay from trying automatically to
-apply any changes to the database model when a new version of the plugin is
-deployed. This is needed in projects to manually manage the changes to the
-database (recommended) or in which the SQL schema has intentionally been
-modified manually after generation by Service Builder.
-
-$$$
+| **Note:** The `build.auto.upgrade` property is available for WAR-style Service
+| Builder applications. This property determines whether or not Liferay should
+| automatically apply changes to the database model when a new version of the
+| plugin is deployed. This is `true` by default. This property is not necessary
+| for module-style applications.
+| 
+| It's sometimes useful to override the `build.auto.upgrade` property in legacy
+| projects from `service.properties`. Setting `build.auto.upgrade=false` in your
+| `service-ext.properties` file prevents Liferay from trying automatically to
+| apply any changes to the database model when a new version of the plugin is
+| deployed. This is needed in projects to manually manage the changes to the
+| database (recommended) or in which the SQL schema has intentionally been
+| modified manually after generation by Service Builder.
 
 Awesome! You now have all the tools necessary to set up your own
 `service-ext.properties` file.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[What is Service Builder?](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
+[What is Service Builder?](/docs/7-0/tutorials/-/knowledge_base/t/what-is-service-builder)
 
-[Creating Local Services](/develop/tutorials/-/knowledge_base/7-0/creating-local-services)
+[Creating Local Services](/docs/7-0/tutorials/-/knowledge_base/t/creating-local-services)

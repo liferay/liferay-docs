@@ -1,4 +1,8 @@
-# Liferay Digital Enterprise Configuration and Tuning Guidelines [](id=liferay-digital-enterprise-configuration-and-tuning-guidelines)
+---
+header-id: liferay-digital-enterprise-configuration-and-tuning-guidelines
+---
+
+# Liferay Digital Enterprise Configuration and Tuning Guidelines
 
 When tuning @product@ installation, there are several factors to take into
 consideration; some are specific to @product@, while others are concepts that
@@ -6,14 +10,14 @@ apply to all Java and Java enterprise applications. The following guidelines are
 meant to serve as an initial baseline from which to tune your specific
 deployment.
 
-## Application Server Tuning [](id=application-server-tuning)
+## Application Server Tuning
 
 Although the actual setting names may differ, these concepts are applicable
 across most application servers. For brevity, we will use Tomcat as an example.
 For other application servers, consult the application server provider's
 documentation for additional specific settings.
 
-### Database Connection Pool [](id=database-connection-pool)
+### Database Connection Pool
 
 The database connection pool is usually sized at roughly 30-40% of the thread
 pool size. The connection pool provides a connection whenever @product@ needs to
@@ -48,7 +52,7 @@ You may choose from a variety of database connection pool providers, including
 DBCP, C3P0, HikariCP, and Tomcat. You may also choose to configure the Liferay
 JDBC settings in your portal.properties.
 
-### Deactivate Development Settings in the JSP Engine [](id=deactivate-development-settings-in-the-jsp-engine)
+### Deactivate Development Settings in the JSP Engine
 
 Many application servers have their JSP Engines configured for development mode
 by default. Liferay recommends deactivating these settings prior to entering
@@ -78,7 +82,7 @@ Update the JSP servlet to look like the following configuration:
         <load-on-startup>3</load-on-startup> 
     </servlet>
 
-### Thread Pool [](id=thread-pool)
+### Thread Pool
 
 Each incoming request to the application server consumes a worker thread for the
 duration of the request. When no threads are available to process requests, the
@@ -108,7 +112,7 @@ Additional tuning parameters around Connectors are available, including the
 connector types,  the connection timeouts, and TCP queue. Consult the
 appropriate Tomcat documentation for further details.
 
-## Java Virtual Machine Tuning [](id=java-virtual-machine-tuning)
+## Java Virtual Machine Tuning
 
 Tuning the JVM primarily focuses on tuning the garbage collector and the Java
 memory heap. These parameters are used to optimize the throughput of your
@@ -117,7 +121,7 @@ also choose other supported JVM versions and implementations. Please consult the
 [Liferay Digital Enterprise Compatibility Matrix](https://web.liferay.com/group/customer/dxp/support/compatibility-matrix)
 for additional compatible JVMs.
 
-### Garbage Collector [](id=garbage-collector)
+### Garbage Collector
 
 Choosing the appropriate garbage collector (GC) helps improve the responsiveness
 of your @product@ deployment. Liferay recommends using the concurrent low pause
@@ -142,7 +146,7 @@ Engineering's tests for G1 have indicated that it does not improve performance.
 Your application performance may vary and you should add it to your testing and
 tuning plans.
 
-### Code Cache [](id=code-cache)
+### Code Cache
 
 Java uses a just-in-time (JIT) compiler that generates native code to improve
 performance. The default size is 48M. This may not be sufficient for larger
@@ -157,7 +161,7 @@ parameters:
 
     -XX:+PrintCodeCache -XX:+PrintCodeCacheOnCompilation
 
-### Java Heap [](id=java-heap)
+### Java Heap
 
 When most people think about tuning the Java memory heap, they think of setting
 the maximum and minimum memory of the heap. Unfortunately, most deployments
@@ -184,14 +188,10 @@ profile.
 operation system to activate them. In Linux, run `cat /proc/meminfo` and look
 at "huge page" items. 
 
-+$$$
+| **Caution:** Avoid allocating more than 32GB to your JVM heap. Your heap size
+| should be commensurate with the speed and quantity of available CPU resources.
 
-**Caution:** Avoid allocating more than 32GB to your JVM heap. Your heap size
-should be commensurate with the speed and quantity of available CPU resources.
-
-$$$
-
-### JVM Advanced Options [](id=jvm-advanced-options)
+### JVM Advanced Options
 
 The following advanced JVM options were also applied in the Liferay benchmark
 environment:
@@ -218,13 +218,9 @@ Combining the above recommendations together, we have this configuration:
     -XX:+BindGCTaskThreadsToCPUs -XX:+UseFastAccessorMethods
     -XX:InitialCodeCacheSize=32m -XX:ReservedCodeCacheSize=96m
  
-+$$$
-
-**Caution:** The above JVM settings should formulate a starting point for your
-performance tuning. Every system's final parameters vary due to many factors
-including number of current users and transaction speed.
-
-$$$
+| **Caution:** The above JVM settings should formulate a starting point for your
+| performance tuning. Every system's final parameters vary due to many factors
+| including number of current users and transaction speed.
 
 Liferay recommends monitoring the garbage collector statistics to ensure your
 environment has sufficient allocations for metaspace and also for the survivor

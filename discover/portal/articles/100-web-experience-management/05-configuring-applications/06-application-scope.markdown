@@ -1,4 +1,8 @@
-# Application Scope [](id=application-scope)
+---
+header-id: application-scope
+---
+
+# Application Scope
 
 As you learned earlier, roles can be scoped by the instance, by a site, or by an
 organization. A role only takes effect within its scope. For example, a Message

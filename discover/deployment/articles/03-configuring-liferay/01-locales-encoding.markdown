@@ -1,11 +1,15 @@
-# Locales and Encoding Configuration [](id=locales-encoding-configuration)
+---
+header-id: locales-encoding-configuration
+---
+
+# Locales and Encoding Configuration
 
 @product@ lets you display content based on language, time zone, "right to left"
 (that is, languages such as Hebrew, Arabic, and Persian), and lets you localize
 user names and titles. Administrators can localize specific core UI messages so
 that the messages display in certain languages.
 
-## Time Zones [](id=time-zones)
+## Time Zones
 
 Time zones can be set in the Control Panel and theoretically in the JVM (but
 this must be set to GMT: see below). 
@@ -31,7 +35,7 @@ section:
 
 As an example, the above property changes the locale to English, Great Britain. 
  
-## Set the JVM Time Zone to GMT [](id=set-the-jvm-time-zone-to-gmt)
+## Set the JVM Time Zone to GMT
 
 It is possible to set time zones at the JVM level. However, users will encounter
 issues such as Calendar Events and Web Content articles displaying the wrong
@@ -44,7 +48,7 @@ calculated correctly, the time zone must be configured to GMT at the JVM level.
 Otherwise, it will result in incorrect time zone offset and cause the display
 date to be wrongly calculated and displayed. 
 
-## Friendly URLs and Locales [](id=friendly-urls-and-locales)
+## Friendly URLs and Locales
 
 In addition to configuring @product@'s instance settings, users can also provide
 unique URLs for specific languages using the `I18nServlet` by editing
@@ -68,14 +72,14 @@ circumstances. Because this requires stopping and possibly redeploying @product@
 to modify these settings. If you're clustered, you must make these changes on
 all nodes.
 
-## Modifying Language Keys [](id=modifying-language-keys)
+## Modifying Language Keys
 
 Developers can add or modify certain core UI messages (e.g. *Your request
 completed successfully.*) by 
-[modifying the language keys](/develop/tutorials/-/knowledge_base/7-0/overriding-language-keys#modifying-liferays-language-keys) 
+[modifying the language keys](/docs/7-0/tutorials/-/knowledge_base/t/overriding-language-keys#modifying-liferays-language-keys) 
 that ship by default. 
 
-### Right to Left [](id=right-to-left)
+### Right to Left
 
 For languages that are displayed right to left, modify the `language.properties`
 using the following properties:
@@ -84,7 +88,7 @@ using the following properties:
 	lang.line.begin=right
 	lang.line.end=left
 
-### Localizing User Names [](id=localizing-user-names)
+### Localizing User Names
 
 Users can change the prefix and suffix values for a locale. For example, for
 Spanish, the `language_es.properties` file contains these values: 
@@ -94,12 +98,12 @@ Spanish, the `language_es.properties` file contains these values:
 	lang.user.name.required.field.names=last-name
 
 For more information, see 
-[Using Liferay Language Settings](/develop/tutorials/-/knowledge_base/7-0/using-liferays-language-settings).
+[Using Liferay Language Settings](/docs/7-0/tutorials/-/knowledge_base/t/using-liferays-language-settings).
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using Liferay Language Settings](/develop/tutorials/-/knowledge_base/7-0/using-liferays-language-settings)
+[Using Liferay Language Settings](/docs/7-0/tutorials/-/knowledge_base/t/using-liferays-language-settings)
 
-[Modifying @product@'s Language Keys](/develop/tutorials/-/knowledge_base/7-0/overriding-language-keys#modifying-liferays-language-keys)
+[Modifying @product@'s Language Keys](/docs/7-0/tutorials/-/knowledge_base/t/overriding-language-keys#modifying-liferays-language-keys)
 
-[Overriding a Module's Language Keys](/develop/tutorials/-/knowledge_base/7-0/overriding-language-keys#overriding-a-modules-language-keys)
+[Overriding a Module's Language Keys](/docs/7-0/tutorials/-/knowledge_base/t/overriding-language-keys#overriding-a-modules-language-keys)

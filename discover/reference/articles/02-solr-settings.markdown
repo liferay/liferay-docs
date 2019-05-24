@@ -1,4 +1,8 @@
-# Solr Settings [](id=solr-settings)
+---
+header-id: solr-settings
+---
+
+# Solr Settings
 
 Solr can be configured for use with @product-ver@. Liferay Marketplace includes a
 Solr adapter called Liferay Enterprise Search-Solr Search Engine. The adapter is

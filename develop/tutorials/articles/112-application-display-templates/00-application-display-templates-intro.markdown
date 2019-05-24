@@ -1,4 +1,8 @@
-# Application Display Templates [](id=application-display-templates)
+---
+header-id: application-display-templates
+---
+
+# Application Display Templates
 
 The application display template (ADT) framework allows portal administrators to
 override the default display templates, removing limitations to the way your 
@@ -13,7 +17,7 @@ able to provide authorized portal users the ability to apply custom display
 interfaces to portlets.
 
 Be of good cheer! That's precisely what
-[Application Display Templates](/discover/portal/-/knowledge_base/7-0/styling-apps-with-application-display-templates)
+[Application Display Templates](/docs/7-0/user/-/knowledge_base/u/styling-apps-with-application-display-templates)
 (ADTs) provide--the ability to add custom display templates to your portlets from
 the portal. This isn't actually a new concept in Liferay; some applications
 already had templating capabilities (e.g., *Web Content* and *Dynamic Data 

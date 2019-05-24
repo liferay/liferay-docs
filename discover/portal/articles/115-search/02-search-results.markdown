@@ -1,4 +1,8 @@
-# Search Results [](id=search-results)
+---
+header-id: search-results
+---
+
+# Search Results
 
 The ideal search experience involves a user entering a search term, waiting an
 infinitesimal amount of time, and having the perfectly matching asset delivered
@@ -8,11 +12,11 @@ to them at the top of a list of other extremely relevant hits. Like this:
 
 The developers of each asset control much about how the asset's information is
 stored in the search engine (this process is called
-[*indexing*](/develop/tutorials/-/knowledge_base/7-0/understanding-search-and-indexing)),
+[*indexing*](/docs/7-0/tutorials/-/knowledge_base/t/understanding-search-and-indexing)),
 and how its information is searched and returned in the search results.
 Developers who dislike how a particular asset behaves in search can use an
 [*Indexer Post
-Processor*](/develop/reference/-/knowledge_base/7-0/indexer-post-processor) to
+Processor*](/docs/7-0/reference/-/knowledge_base/r/indexer-post-processor) to
 modify the asset's indexing behavior, and how search queries are constructed to
 look up the assets in @product@.
 
@@ -31,7 +35,7 @@ Search results, called *hits* in the backend search infrastructure, are the end
 of the road, the destination, to some users. To others, they're just the
 beginning of the journey. Either way, you can configure how they're displayed.
 
-## Configuring Results Display [](id=configuring-results-display)
+## Configuring Results Display
 
 The search application has a nice format for displaying search results. It also
 allows users to click on a specific result so they can look at it in more
@@ -49,18 +53,18 @@ to search, select *Let the User Choose*.
 
 The list of facet settings on this page is also quite important. Learn more
 about facets and their configuration options in a [separate
-article](/discover/portal/-/knowledge_base/7-0/configuring-facets).
+article](/docs/7-0/user/-/knowledge_base/u/configuring-facets).
 
 For more display options, click the *Other Settings* tab. There are several
 options:
 
 **Display Results in Document Form**
 : Display results as [search
-documents](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search).
+documents](/docs/7-0/tutorials/-/knowledge_base/t/introduction-to-liferay-search).
 Never use this in production. Developers use this feature to view search
 responses in their indexed, document-based format. Part of a developer's job
 when writing [search
-indexers](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search#indexers)
+indexers](/docs/7-0/tutorials/-/knowledge_base/t/introduction-to-liferay-search#indexers)
 is to convert documents (the objects that get indexed) to the actual object and
 back again. This option allows developers to see how their objects are being
 indexed. Once enabled, expand each individual result whose document form you'd
@@ -90,10 +94,10 @@ search code, and then custom assets are aggregated with native @product@ assets
 seamlessly.
 
 For further reading, check out how to [return suggestions for better search
-terms](/discover/portal/-/knowledge_base/7-0/searching-for-assets#spell-checking-user-queries)
+terms](/docs/7-0/user/-/knowledge_base/u/searching-for-assets#spell-checking-user-queries)
 (for example, "Did you mean...") when not enough results are returned initially.
 
-## Filtering Results with Facets [](id=filtering-results-with-facets)
+## Filtering Results with Facets
 
 Results are filtered using *facets*. The usage by end users is quite simple and
 intuitive. Most users will have encountered similar filtering capabilities in
@@ -102,9 +106,9 @@ enter a search term, are presented with a list of results and search facets,
 which you can think of as buckets that group results together if they share a
 common characteristic.
 
-Administrators can configure facets. Read about [configuring facets](/discover/portal/-/knowledge_base/7-0/configuring-facets) to learn more.
+Administrators can configure facets. Read about [configuring facets](/docs/7-0/user/-/knowledge_base/u/configuring-facets) to learn more.
 
-## Search Results Relevance [](id=search-results-relevance)
+## Search Results Relevance
 
 How does the search engine decide which results to return at the top of the
 list? It uses the concept of *relevance*. Relevance is based on a score
@@ -157,10 +161,10 @@ of search scoring.
 
 See the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/guide/current/scoring-theory.html#tfidf) for more information on [relevancy scoring](https://www.elastic.co/guide/en/elasticsearch/guide/current/relevance-intro.html#relevance-intro).
 
-## Permissions and Search Results [](id=permissions-and-search-results)
+## Permissions and Search Results
 
 @product@ includes a robust [role-based permissions
-system](/discover/portal/-/knowledge_base/7-0/roles-and-permissions). It's
+system](/docs/7-0/user/-/knowledge_base/u/roles-and-permissions). It's
 important that users lacking permission to view an asset also can't see it in
 the search results. A logged in user with the Site Administrator role will
 likely see more search results than a guest user to the site. To understand
@@ -185,10 +189,10 @@ prior to display, so the facet count is not updated. This can result in
 inaccurate result counts in the Search Portlet. This behavior will be fixed in
 the next version of the Search application.
 
-## Search and Staging [](id=search-and-staging)
+## Search and Staging
 
 @product@ supports the concept of
-[staging](/discover/portal/-/knowledge_base/7-0/staging-content-for-publication),
+[staging](/docs/7-0/user/-/knowledge_base/u/staging-content-for-publication),
 where content is first placed in a preview and testing environment before being
 published for consumption by end users (on the live site). Content added to the
 search index is marked so that the search API can decipher whether an item is
@@ -206,7 +210,7 @@ document called `stagingGroup`, which is either `true` or `false`. If set to
 false, the document is searchable in the live site. Documents only in the
 staging site -->
 
-## Result Summaries [](id=result-summaries)
+## Result Summaries
 
 Search results must be displayed to users to be useful. If each result was
 displayed in its JSON document form, users would faint and User Experience
@@ -245,7 +249,7 @@ Bookmarks entries show the title and the URL.
 
 ![Figure 8: Bookmarks Entries summaries show the title and the URL.](../../images/search-bookmarks.png)
 
-## Highlighting [](id=highlighting)
+## Highlighting
 
 By now you've probably noticed that search terms appearing in the summary are
 <mark>highlighted</mark>. 

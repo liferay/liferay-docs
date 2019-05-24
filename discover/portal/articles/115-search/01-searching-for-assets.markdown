@@ -1,35 +1,31 @@
-# Searching for Assets [](id=searching-for-assets)
+---
+header-id: searching-for-assets
+---
+
+# Searching for Assets
 
 As explained in the [Search
-introduction](/discover/portal/-/knowledge_base/7-0/search), all indexed assets
+introduction](/docs/7-0/user/-/knowledge_base/u/search), all indexed assets
 can be returned as search results. Since any developer can create their own
 assets, your @product@ instance might have additional asset types beyond the
 ones that @product@ ships with by default. 
 
-+$$$
+| **Searching for Users:** When you click an asset in the search results, it's displayed
+| in an Asset Publisher (unless you use the *View in Context* option for the
+| asset). Users are different, though. Think of them as invisible assets, not
+| intended for display in the Asset Publisher application. While users appear as
+| search results with other indexed assets, when you click one you're taken to the
+| user's profile page. If [public personal
+| pages](/docs/7-0/user/-/knowledge_base/u/creating-sites#customizing-personal-sites)
+| have been disabled, clicking on a user from the list of search results shows you a
+| blank page.
 
-**Searching for Users:** When you click an asset in the search results, it's displayed
-in an Asset Publisher (unless you use the *View in Context* option for the
-asset). Users are different, though. Think of them as invisible assets, not
-intended for display in the Asset Publisher application. While users appear as
-search results with other indexed assets, when you click one you're taken to the
-user's profile page. If [public personal
-pages](/discover/portal/-/knowledge_base/7-0/creating-sites#customizing-personal-sites)
-have been disabled, clicking on a user from the list of search results shows you a
-blank page.
+| **Versioning Note:** If there are multiple versions of the same content, the
+| latest approved version is the only one searched.  <!-- IS THIS A SEARCH THING
+| OR AN INDEXING DECISION THAT'S UP TO THE COMPONENT
+| TEAM?-->
 
-$$$
-
-+$$$
-
-**Versioning Note:** If there are multiple versions of the same content, the
-latest approved version is the only one searched.  <!-- IS THIS A SEARCH THING
-OR AN INDEXING DECISION THAT'S UP TO THE COMPONENT
-TEAM?-->
-
-$$$
-
-## Search Bar [](id=search-bar)
+## Search Bar
 
 The search bar is where users enter the search context. Users enter search
 terms, hit their *Enter* button (or click the magnifying glass icon), and
@@ -39,7 +35,7 @@ and facets that apply.
 ![Figure 1: The Search application displays just the search bar in its default view,
 beckoning users to enter the search context.](../../images/search-bar.png)
 
-### Entering Search Terms [](id=entering-search-terms)
+### Entering Search Terms
 
 @product@, backed by Elasticsearch, supports *full text search*. It does not,
 however, support advanced search syntax, such as Elasticsearch's [query string
@@ -49,7 +45,7 @@ operators like *AND/OR/NOT*. Liferay is weighing the costs and benefits of
 enabling the use of string queries out of the box in a future version of
 @product@.
 
-### Prefix Searching [](id=prefix-searching)
+### Prefix Searching
 
 *Prefix* searching is cool. If you're searching in a site for classical
 musicians, you might search for the term *instrument*. This search of course
@@ -63,7 +59,7 @@ returns documents with the full word in them, but it also returns variants with
 Another way to ensure users see results is using the spell check settings.
 
 <!-- A 7.1 feature, not 7.0 ### Configuring the Search Bar [](id=configuring-the-search-bar) -->
-## Spell Checking User Queries [](id=spell-checking-user-queries)
+## Spell Checking User Queries
 
 Spell check settings allow administrators to configure the Search application so
 that if a user types a search term that doesn't return many results (for
@@ -94,24 +90,20 @@ user's query doesn't return a minimum number of results (0 by default).
 default). If the Display Related Queries setting is enabled, it can be used as a
 related query for similar search queries that don't produce enough results.
 
-+$$$
-
-**Note:** To enable the spell checking behavior described above, you must first
-trigger a reindex of the spell check indexes. Navigate to the *Control Panel*
-&rarr; *Configuration* &rarr; *Server Administration*. Find the Index Actions
-entry for *Reindex all spell check indexes.* Click *Execute*, and look for a
-message in your log your indicating that the spell checking indexes were created
-successfully:
-
-    16:19:35,793 INFO  [liferay/search_writer/SYSTEM_ENGINE-24][BaseSpellCheckIndexWriter:257] 
-        Start indexing dictionary for com/liferay/portal/search/dependencies/spellchecker/en_US.txt
-    16:19:41,932 INFO  [liferay/search_writer/SYSTEM_ENGINE-24][BaseSpellCheckIndexWriter:2910] 
-        Finished indexing dictionary for com/liferay/portal/search/dependencies/spellchecker/en_US.txt
-
-Once the spell checking indexes are created, your spell check settings become
-effective.
-
-$$$
+| **Note:** To enable the spell checking behavior described above, you must first
+| trigger a reindex of the spell check indexes. Navigate to the *Control Panel*
+| &rarr; *Configuration* &rarr; *Server Administration*. Find the Index Actions
+| entry for *Reindex all spell check indexes.* Click *Execute*, and look for a
+| message in your log your indicating that the spell checking indexes were created
+| successfully:
+| 
+|     16:19:35,793 INFO  [liferay/search_writer/SYSTEM_ENGINE-24][BaseSpellCheckIndexWriter:257]
+|         Start indexing dictionary for com/liferay/portal/search/dependencies/spellchecker/en_US.txt
+|     16:19:41,932 INFO  [liferay/search_writer/SYSTEM_ENGINE-24][BaseSpellCheckIndexWriter:2910]
+|         Finished indexing dictionary for com/liferay/portal/search/dependencies/spellchecker/en_US.txt
+| 
+| Once the spell checking indexes are created, your spell check settings become
+| effective.
 
 In addition to enabling or disabling the spell check settings, thresholds for
 all of the settings are changeable, to produce the desired behavior.

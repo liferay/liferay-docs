@@ -1,11 +1,15 @@
-# Creating Guestbook List Screenlet's Delegate [](id=creating-guestbook-list-screenlets-delegate)
+---
+header-id: creating-guestbook-list-screenlets-delegate
+---
+
+# Creating Guestbook List Screenlet's Delegate
 
 A delegate is a Screenlet component that lets other classes to respond to a 
 Screenlet's actions. For example, 
-[Login Screenlet's delegate](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-ios#delegate) 
+[Login Screenlet's delegate](/docs/7-0/reference/-/knowledge_base/r/loginscreenlet-for-ios#delegate) 
 lets the app developer implement methods that respond to login success or 
 failure. Note that the 
-[reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-ios) 
+[reference documentation](/docs/7-0/reference/-/knowledge_base/r/screenlets-in-liferay-screens-for-ios) 
 for each Screenlet that comes with Liferay Screens lists the Screenlet's 
 delegate methods. 
 

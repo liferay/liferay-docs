@@ -1,4 +1,8 @@
-# Overriding Portal Properties using a Hook [](id=overriding-portal-properties-using-a-hook)
+---
+header-id: overriding-portal-properties-using-a-hook
+---
+
+# Overriding Portal Properties using a Hook
 
 A portal properties hook plugin lets you override a subset of
 [portal properties](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html)
@@ -7,13 +11,9 @@ generators, and content sanitizers. The
 [`liferay-hook-7.0.dtd` file](@platform-ref@/7.0-latest/definitions/liferay-hook_7_0_0.dtd.html)
 lists this subset of properties. 
 
-+$$$
-
-**Note:** To customize a property that's not in the 
-[`liferay-hook-7.0.dtd` file](@platform-ref@/7.0-latest/definitions/liferay-hook_7_0_0.dtd.html), you must use an
-[Ext plugin](/develop/tutorials/-/knowledge_base/7-0/advanced-customization-with-ext-plugins). 
-
-$$$
+| **Note:** To customize a property that's not in the
+| [`liferay-hook-7.0.dtd` file](@platform-ref@/7.0-latest/definitions/liferay-hook_7_0_0.dtd.html), you must use an
+| [Ext plugin](/docs/7-0/tutorials/-/knowledge_base/t/advanced-customization-with-ext-plugins).
 
 Some portal properties accept *multiple* values. For example, the
 `login.event.pre` property defines action classes to invoke before login.
@@ -34,9 +34,9 @@ multiple hooks override it.
 Here's how to override a portal property using a Hook:
 
 1.  Create a Hook plugin using
-    [Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/liferay-ide)
+    [Liferay @ide@](/docs/7-0/tutorials/-/knowledge_base/t/liferay-ide)
     or
-    [Maven](/develop/tutorials/-/knowledge_base/7-0/generating-new-projects-using-archetypes).
+    [Maven](/docs/7-0/tutorials/-/knowledge_base/t/generating-new-projects-using-archetypes).
 
 2.  In the plugin's `WEB-INF/src` folder, create a `portal.properties` file and
     override properties with the values you want. 
@@ -51,15 +51,15 @@ Here's how to override a portal property using a Hook:
 4.  Deploy the plugin. 
 
 You've modified the portal property. The
-[*Server Administration* page's *Properties* screen](/discover/portal/-/knowledge_base/7-0/server-administration#properties)
+[*Server Administration* page's *Properties* screen](/docs/7-0/user/-/knowledge_base/u/server-administration#properties)
 in the Control Panel shows your new property setting. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Portal Properties Reference](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html)
 
-[Server Administration](/discover/portal/-/knowledge_base/7-0/server-administration#properties)
+[Server Administration](/docs/7-0/user/-/knowledge_base/u/server-administration#properties)
 
-[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/liferay-ide)
+[Liferay @ide@](/docs/7-0/tutorials/-/knowledge_base/t/liferay-ide)
 
-[Generating New Projects using Maven Archetypes](/develop/tutorials/-/knowledge_base/7-0/generating-new-projects-using-archetypes).
+[Generating New Projects using Maven Archetypes](/docs/7-0/tutorials/-/knowledge_base/t/generating-new-projects-using-archetypes).

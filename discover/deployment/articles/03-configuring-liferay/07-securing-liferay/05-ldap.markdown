@@ -1,4 +1,8 @@
-# LDAP [](id=ldap)
+---
+header-id: ldap
+---
+
+# LDAP
 
 @product@ fully supports LDAP as a user store. Use the LDAP tab in Instance
 Settings's Authentication page to connect @product@ to an LDAP directory. Users
@@ -12,7 +16,7 @@ create a whole new set of user accounts for @product@. In this article, you'll
 learn how to connect @product@ to an LDAP server and how to configure import
 settings, export settings, and related LDAP configuration settings. 
 
-## Configuring @product@'s LDAP Settings [](id=configuring-liferays-ldap-settings)
+## Configuring @product@'s LDAP Settings
 
 To access @product@'s LDAP configuration settings, navigate to *Control Panel
 &rarr; Configuration* &rarr; *Instance Settings*, then scroll down and expand the
@@ -71,7 +75,7 @@ LDAP Configuration*.
 
 Once you've finished configuring LDAP, click the *Save* button. 
 
-### LDAP Options Available in System Settings [](id=ldap-options-available-in-system-settings)
+### LDAP Options Available in System Settings
 
 Although most LDAP configuration can be done from Instance Settings, there are
 several configuration parameters that are only available in System Settings. In
@@ -123,24 +127,20 @@ not work with your LDAP server. If they don't, you can replace the values of
 these properties with phrases from your server's error messages. This enables
 @product@ to recognize them.
 
-+$$$
-
-**Note**: When you make a change in System Settings, it takes effect for the
-virtual instance you're in. If after changing a setting you create a new
-virtual instance, that virtual instance inherits the settings of the one it was
-created from as defaults. For example, say you have virtual instances named A,
-B, and C. From A, you modify *Error password history keywords*. This change
-appears only in A, not in B or C. Then from A, you create virtual instance D.
-The change to *Error password history keywords* appears in D (not B or C),
-since D defaults to A's settings because you created it from A. 
-
-$$$
+| **Note**: When you make a change in System Settings, it takes effect for the
+| virtual instance you're in. If after changing a setting you create a new
+| virtual instance, that virtual instance inherits the settings of the one it was
+| created from as defaults. For example, say you have virtual instances named A,
+| B, and C. From A, you modify *Error password history keywords*. This change
+| appears only in A, not in B or C. Then from A, you create virtual instance D.
+| The change to *Error password history keywords* appears in D (not B or C),
+| since D defaults to A's settings because you created it from A.
 
 In summary, if there's a configuration you need to set up @product@ with LDAP, and
 you don't find it in Instance Settings, look in the LDAP System Settings
 entries.
 
-### Adding LDAP Servers [](id=adding-ldap-servers)
+### Adding LDAP Servers
 
 Click on the *Add* button beneath the LDAP Servers heading to add an LDAP
 server connection. If you have more than one LDAP server, you can arrange the
@@ -180,7 +180,7 @@ enough data to synchronize back to the @product@ database when a user attempts t
 log in. To test the connection to your LDAP server, click the *Test LDAP
 Connection* button.
 
-#### Checkpoint [](id=checkpoint)
+#### Checkpoint
 
 Before proceeding to fine tune @product@'s LDAP connections, ensure the
 following steps have been taken:
@@ -196,7 +196,7 @@ following steps have been taken:
     *Connection* values are correct. It is always a good idea to click the *Test
     LDAP Connection* before saving.
 
-### Security [](id=security)
+### Security
 
 If you are running your LDAP directory in SSL mode to prevent credential
 information from passing through the network unencrypted, you must perform extra
@@ -224,7 +224,7 @@ LDAP URL in the Base DN field to the secure version by changing the protocol to
 
 Save the changes. Your @product@ now encrypts its authentication to LDAP.
 
-## Managing LDAP Server [](id=managing-ldap-server)
+## Managing LDAP Server
 
 **Users:** This section contains settings for finding users in your LDAP
 directory.
@@ -333,19 +333,15 @@ Once you set all your options and tested your connection, click *Save*. From
 here, you can add another LDAP server or set just a few more options that apply
 to all of your LDAP server connections.
 
-+$$$
-
-**Note:** If a user changes a value like a password in @product@, that change is
-passed to the LDAP server, provided @product@ has enough schema access to make
-the change. 
-
-$$$
+| **Note:** If a user changes a value like a password in @product@, that change is
+| passed to the LDAP server, provided @product@ has enough schema access to make
+| the change.
 
 Now you know how to connect an LDAP server to @product@ and how to
 configure user import behavior, export behavior, and other LDAP settings.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[@product@ Security Overview](/discover/deployment/-/knowledge_base/7-0/liferay-portal-security-overview)
-[Logging into @product@](/discover/deployment/-/knowledge_base/7-0/logging-in-to-liferay)
+[@product@ Security Overview](/docs/7-0/deploy/-/knowledge_base/d/liferay-portal-security-overview)
+[Logging into @product@](/docs/7-0/deploy/-/knowledge_base/d/logging-in-to-liferay)
 

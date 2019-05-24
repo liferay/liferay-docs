@@ -1,4 +1,8 @@
-# Dynamic Query [](id=dynamic-query)
+---
+header-id: dynamic-query
+---
+
+# Dynamic Query
 
 Liferay lets you use custom SQL queries to retrieve data from the database.
 However, it's sometimes more convenient to build queries dynamically at runtime
@@ -20,7 +24,7 @@ To use Liferay's Dynamic Query API, you need to create a finder implementation
 for your model entity. You can define model entities in `service.xml` and run
 Service Builder to generate model, persistence, and service layers for your
 application. See the
-[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code)
+[Running Service Builder and Understanding the Generated Code](/docs/7-0/tutorials/-/knowledge_base/t/running-service-builder-and-understanding-the-generated-code)
 learning path for more information on using Service Builder. This tutorial
 assumes that you're creating a Liferay application that consists of a service
 module, an API module, and a web module. Once you've used Service Builder to
@@ -41,7 +45,7 @@ Once you've taken these steps, you can access your custom finder as a service
 method. Note: You can create multiple or overloaded `findBy-` finder methods in
 your `-FinderImpl` class. Next, let's examine these steps in more detail.
 
-## Step 1: Defining a Custom Finder Method [](id=step-1-defining-a-custom-finder-method)
+## Step 1: Defining a Custom Finder Method
 
 To define any custom query, either by specifying custom SQL or by defining a
 dynamic query, you need a finder class. Create a `[Entity]FinderImpl` class in
@@ -84,7 +88,7 @@ this:
 Your next step is to actually define your query in your custom finder method
 using the Dynamic Query API.
 
-## Step 2: Implementing Your Custom Finder Method Using Dynamic Query [](id=step-2-implementing-your-custom-finder-method-using-dynamic-query)
+## Step 2: Implementing Your Custom Finder Method Using Dynamic Query
 
 Your first step in implementing your custom finder method in your `-FinderImpl`
 class is to open a new Hibernate session. Since your `-FinderImpl` class extends
@@ -300,21 +304,17 @@ Lastly, you apply the order defined earlier to the entries returned by the
 This orders the list of guestbook entities by the `modifiedDate` attribute, from
 most recent to least recent.
 
-+$$$
-
-**Note:** Service Builder not only generates a `public List
-dynamicQuery(DynamicQuery dynamicQuery)` method in `-LocalServiceBaseImpl` but it
-also generates `public List dynamicQuery(DynamicQuery dynamicQuery, int start,
-int end)` and `public List dynamicQuery(DynamicQuery dynamicQuery, int start,
-int end, OrderByComparator orderByComparator)` methods. You can go back to step
-1 and either modify your custom finder method or create overloaded versions of
-your custom finder method to take advantage of these extra methods and their
-parameters. The `int start` and `int end` parameters are useful when paginating
-a result list. `start` is the lower bound of the range of model entity instances
-and `end` is the upper bound. The `OrderByComparator orderByComparator` is the
-comparator by which to order the results.
-
-$$$
+| **Note:** Service Builder not only generates a `public List
+| dynamicQuery(DynamicQuery dynamicQuery)` method in `-LocalServiceBaseImpl` but it
+| also generates `public List dynamicQuery(DynamicQuery dynamicQuery, int start,
+| int end)` and `public List dynamicQuery(DynamicQuery dynamicQuery, int start,
+| int end, OrderByComparator orderByComparator)` methods. You can go back to step
+| 1 and either modify your custom finder method or create overloaded versions of
+| your custom finder method to take advantage of these extra methods and their
+| parameters. The `int start` and `int end` parameters are useful when paginating
+| a result list. `start` is the lower bound of the range of model entity instances
+| and `end` is the upper bound. The `OrderByComparator orderByComparator` is the
+| comparator by which to order the results.
 
 To use the overloaded `dynamicQuery` methods of your `-LocalServiceBaseImpl`
 class in the (optionally overloaded) custom finders of your `-FinderImpl` class,
@@ -326,7 +326,7 @@ just choose the appropriate methods for running the dynamic queries:
 Great! You've now created a custom finder method using Liferay's Dynamic Query
 API. Your last step is to add a service method that calls your finder.
 
-## Step 3: Accessing Your Custom Finder Method from the Service Layer [](id=step-3-accessing-your-custom-finder-method-from-the-service-layer)
+## Step 3: Accessing Your Custom Finder Method from the Service Layer
 
 So far, you've created a `-FinderImpl` class, defined a custom `findBy-` finder
 method in that class, and implemented the custom finder method using Dynamic
@@ -342,13 +342,9 @@ business logic of the services published from your application's service module.
 The services, in turn, access the data model using the persistence layer's
 finder classes.
 
-+$$$
-
-**Note:** In previous versions of Liferay Portal, your finder methods were
-accessible via `-FinderUtil` utility classes. Finder methods are now injected
-into your app's local services, removing the need to call finder utilities.
-
-$$$
+| **Note:** In previous versions of Liferay Portal, your finder methods were
+| accessible via `-FinderUtil` utility classes. Finder methods are now injected
+| into your app's local services, removing the need to call finder utilities.
 
 So you'll add a method in the `-LocalServiceImpl` class that invokes the finder
 method implementation via the `-Finder` class. Then you'll rebuild your
@@ -375,7 +371,7 @@ JSP by calling `EntryLocalService.findByEntryNameGuestbookName(...)`!
 Congratulations on following the three step process of developing a dynamic
 query in a custom finder and exposing it as a service for your portlet!
 
-## Actionable Dynamic Queries [](id=actionable-dynamic-queries)
+## Actionable Dynamic Queries
 
 Suppose you have over a million users on your portal, and you want to perform
 some kind of mass update to a large portion of them. One approach might be
@@ -479,10 +475,10 @@ To see an example invocation of an indexable actionable dynamic query, see the
 `reindexEntries` method of the Bookmarks application's indexer
 [here](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/collaboration/bookmarks/bookmarks-service/src/main/java/com/liferay/bookmarks/search/BookmarksEntryIndexer.java#L155-L210).
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Service Builder Web Services](/develop/tutorials/-/knowledge_base/7-0/service-builder-web-services)
+[Service Builder Web Services](/docs/7-0/tutorials/-/knowledge_base/t/service-builder-web-services)
 
-[Creating Local Service](/develop/tutorials/-/knowledge_base/7-0/creating-local-services)
+[Creating Local Service](/docs/7-0/tutorials/-/knowledge_base/t/creating-local-services)
 
-[Invoking Local Services](/develop/tutorials/-/knowledge_base/7-0/invoking-local-services)
+[Invoking Local Services](/docs/7-0/tutorials/-/knowledge_base/t/invoking-local-services)

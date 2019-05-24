@@ -1,11 +1,15 @@
-# Getting Started with Guestbook List Screenlet [](id=getting-started-with-guestbook-list-screenlet)
+---
+header-id: getting-started-with-guestbook-list-screenlet
+---
+
+# Getting Started with Guestbook List Screenlet
 
 Before creating a Screenlet, you should know how you'll use it. If you plan to 
 use it in only one app, then you can create it in that app's project. If you 
 need to use it in several apps, however, then it's best to create it in a 
 separate project for redistribution. For information on creating Screenlets for 
 redistribution, see the tutorial 
-[Packaging Your Android Screenlets](/develop/tutorials/-/knowledge_base/7-0/packaging-your-android-screenlets). 
+[Packaging Your Android Screenlets](/docs/7-0/tutorials/-/knowledge_base/t/packaging-your-android-screenlets). 
 Since you'll use Guestbook List Screenlet in only this app, you can create it in 
 a new package inside the app's project. Create this package now:
 
@@ -25,7 +29,7 @@ a new package inside the app's project. Create this package now:
 Before getting started, you should understand how pagination works in list 
 Screenlets.
 
-## Pagination [](id=pagination)
+## Pagination
 
 To ensure that users can scroll smoothly through large lists of items, list 
 Screenlets support fluent pagination. Support for this is built into the list 
@@ -35,7 +39,7 @@ in the list.
 
 Now you're ready to begin! 
 
-## Creating the Model Class for Guestbooks [](id=creating-the-model-class-for-guestbooks)
+## Creating the Model Class for Guestbooks
 
 Entities come back from Liferay Portal in JSON. To work with these results 
 efficiently in your app, you must convert them to model objects that represent 
@@ -188,7 +192,7 @@ returns this `Map`, which contains the data of a guestbook retrieved from the
 portlet. To get the guestbook's data from the `Map`, the constructor uses the 
 `get` method with each parameter of the portlet's `Guestbook` entity. To see how 
 the portlet defines these parameters, 
-[see the Liferay MVC Learning Path article on Service Builder](/develop/tutorials/-/knowledge_base/6-2/using-service-builder-to-generate-a-persistence-fr). 
+[see the Liferay MVC Learning Path article on Service Builder](/docs/6-2/tutorials/-/knowledge_base/t/using-service-builder-to-generate-a-persistence-fr). 
 For now, the only parameters you really need in `GuestbookModel` are 
 `guestbookId` and `name`. Because you might need the rest later, however, it's 
 best to add all of them now. 

@@ -1,4 +1,8 @@
-# Upgrading a Spring MVC portlet [](id=upgrading-a-spring-mvc-portlet)
+---
+header-id: upgrading-a-spring-mvc-portlet
+---
+
+# Upgrading a Spring MVC portlet
 
 The [Spring Portlet MVC framework](https://docs.spring.io/spring/docs/current/spring-framework-reference/html/portlet.html)
 facilitates injecting dependencies and implementing the Model View Controller
@@ -44,10 +48,10 @@ Here are the Spring MVC portlet upgrade steps:
 
 2.  [Resolve dependencies](#resolve-dependencies)
 
-## Adapt the code to @product-ver@'s API [](id=adapt-the-code-to-liferay-api-changes)
+## Adapt the code to @product-ver@'s API
 
 The
-[Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+[Code Upgrade Tool](/docs/7-0/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
 facilitates updating the code and resolving compilation issues quickly.
 
 The Code Upgrade Tool detects if the value of the `liferay-versions` property in
@@ -55,7 +59,7 @@ your plugin's `liferay-plugin-package.properties` file needs updating and it
 provides an option to fix it automatically. This is the only code adaptation
 required by `my-spring-mvc-portlet`. 
 
-## Resolve Dependencies [](id=resolve-dependencies)
+## Resolve Dependencies
 
 In Liferay Portal 6.2, `my-spring-mvc-portlet` leveraged Portal's JARs by
 specifying them in the `liferay-plugin-package.properties` file's
@@ -63,7 +67,7 @@ specifying them in the `liferay-plugin-package.properties` file's
 @product-ver@, you should acquire dependencies using a dependency management
 framework, such as Gradle, Maven, or Apache Ant/Ivy.
 
-[Converting the sample portlet plugin from a traditional plugin to a Liferay Workspace web application](/develop/tutorials/-/knowledge_base/7-0/migrating-traditional-plugins-to-workspace-web-applications)
+[Converting the sample portlet plugin from a traditional plugin to a Liferay Workspace web application](/docs/7-0/tutorials/-/knowledge_base/t/migrating-traditional-plugins-to-workspace-web-applications)
 facilitated resolving its dependencies. 
 
 Here's the updated `my-spring-mvc-portlet`'s `build.gradle` file:
@@ -97,68 +101,56 @@ Some of `my-spring-mvc-portlet`'s dependency artifacts have new names.
 [Maven Central](https://search.maven.org/) provides artifact dependency
 information. 
 
-+$$$
+| **Note**: If the Spring Framework version you're using differs from the version
+| @product@ uses, you must name your Spring Framework JARs differently from
+| @product@'s Spring Framework JARs. If you don't rename your JARs, @product@
+| assumes you're using its Spring Framework JARs and excludes yours from the
+| generated WAB (Web Application Bundle).
+| [Portal property `module.framework.web.generator.excluded.paths`](https://docs.liferay.com/ce/portal/7.0-latest/propertiesdoc/portal.properties.html#Module%20Framework)
+| lists @product@'s Spring Framework JARs.
+| [Understanding Excluded JARs](/docs/7-0/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies#understanding-excluded-jars)
+| explains how to detect the Spring Framework version @product@ uses.
 
-**Note**: If the Spring Framework version you're using differs from the version
-@product@ uses, you must name your Spring Framework JARs differently from
-@product@'s Spring Framework JARs. If you don't rename your JARs, @product@
-assumes you're using its Spring Framework JARs and excludes yours from the
-generated WAB (Web Application Bundle).
-[Portal property `module.framework.web.generator.excluded.paths`](https://docs.liferay.com/ce/portal/7.0-latest/propertiesdoc/portal.properties.html#Module%20Framework)
-lists @product@'s Spring Framework JARs. 
-[Understanding Excluded JARs](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies#understanding-excluded-jars)
-explains how to detect the Spring Framework version @product@ uses. 
-
-$$$
-
-+$$$
-
-**Note**: If a dependency is an OSGi module JAR and @product@ already exports
-your plugin's required packages, *exclude* the JAR from your plugin's WAR file.
-This prevents your plugin from exporting the same package(s) that Liferay is
-already exporting. This prevents class loader collisions. To exclude a JAR from
-deployment, add its name to the your project's
-`liferay-plugin-package.properties` file's `deploy-excludes` property.
-
-    deploy-excludes=\
-        **/WEB-INF/lib/module-a.jar,\ 
-        **/WEB-INF/lib/module-b.jar
-
-Since `my-spring-mvc-portlet`'s dependencies aren't OSGi modules, no JARs
-must be excluded.
-
-$$$
+| **Note**: If a dependency is an OSGi module JAR and @product@ already exports
+| your plugin's required packages, *exclude* the JAR from your plugin's WAR file.
+| This prevents your plugin from exporting the same package(s) that Liferay is
+| already exporting. This prevents class loader collisions. To exclude a JAR from
+| deployment, add its name to the your project's
+| `liferay-plugin-package.properties` file's `deploy-excludes` property.
+| 
+|     deploy-excludes=\
+|         **/WEB-INF/lib/module-a.jar,\
+|         **/WEB-INF/lib/module-b.jar
+| 
+| Since `my-spring-mvc-portlet`'s dependencies aren't OSGi modules, no JARs
+| must be excluded.
 
 To import class packages referenced by your portlet's descriptor files, add the
 packages to an `Import-Package` header in the
 `liferay-plugin-package.properties` file. See 
-[Packaging a Spring MVC Portlet](/develop/tutorials/-/knowledge_base/7-0/spring-mvc#packaging-a-spring-mvc-portlet)
+[Packaging a Spring MVC Portlet](/docs/7-0/tutorials/-/knowledge_base/t/spring-mvc#packaging-a-spring-mvc-portlet)
 for details.
 
 If you depend on a package from Java's `rt.jar` other than its `java.*`
 packages, override
 [portal property `org.osgi.framework.bootdelegation`](@platform-ref@/7.0-latest/propertiesdoc/portal.properties.html#Module%20Framework)
-and add it to the property's list. Go [here](/develop/tutorials/-/knowledge_base/7-0/resolving-classnotfoundexception-and-noclassdeffounderror-in-osgi-bundles#case-4-the-missing-class-belongs-to-a-java-runtime-package)
+and add it to the property's list. Go [here](/docs/7-0/tutorials/-/knowledge_base/t/resolving-classnotfoundexception-and-noclassdeffounderror-in-osgi-bundles#case-4-the-missing-class-belongs-to-a-java-runtime-package)
 for details. 
 
-+$$$
-
-**Note**: Spring MVC portlets whose embedded JARs contain properties files
-(e.g., `spring.handlers`, `spring.schemas`, `spring.tooling`) might be affected
-by issue
-[LPS-75212](https://issues.liferay.com/browse/LPS-75212).
-The last JAR that has properties files is the only JAR whose properties are
-added to the resulting WAB's classpath. Properties in other JARs aren't added.
-
-[Packaging a Spring MVC Portlet](/develop/tutorials/-/knowledge_base/7-0/spring-mvc#packaging-a-spring-mvc-portlet)
-explains how to add all the embedded JAR properties.
-
-$$$
+| **Note**: Spring MVC portlets whose embedded JARs contain properties files
+| (e.g., `spring.handlers`, `spring.schemas`, `spring.tooling`) might be affected
+| by issue
+| [LPS-75212](https://issues.liferay.com/browse/LPS-75212).
+| The last JAR that has properties files is the only JAR whose properties are
+| added to the resulting WAB's classpath. Properties in other JARs aren't added.
+| 
+| [Packaging a Spring MVC Portlet](/docs/7-0/tutorials/-/knowledge_base/t/spring-mvc#packaging-a-spring-mvc-portlet)
+| explains how to add all the embedded JAR properties.
 
 The portlet is ready to deploy. Deploy it as you always have.
 
 @product@'s
-[WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)
+[WAB Generator](/docs/7-0/tutorials/-/knowledge_base/t/using-the-wab-generator)
 converts the portlet WAR to a Web Application Bundle (WAB) and installs the WAB
 to Liferay's OSGi Runtime Framework. 
 
@@ -173,12 +165,12 @@ to Liferay's OSGi Runtime Framework.
 
 You've upgraded a Spring MVC portlet to @product-ver@. Way to go!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Spring MVC](/develop/tutorials/-/knowledge_base/7-0/spring-mvc)
+[Spring MVC](/docs/7-0/tutorials/-/knowledge_base/t/spring-mvc)
 
-[Migrating Plugins SDK Projects to Workspace and Gradle](/develop/tutorials/-/knowledge_base/7-0/migrating-traditional-plugins-to-workspace-web-applications)
+[Migrating Plugins SDK Projects to Workspace and Gradle](/docs/7-0/tutorials/-/knowledge_base/t/migrating-traditional-plugins-to-workspace-web-applications)
 
-[Using Dependency Management Tools](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies#managing-dependencies-with-ivy)
+[Using Dependency Management Tools](/docs/7-0/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies#managing-dependencies-with-ivy)
 
-[Using the WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)
+[Using the WAB Generator](/docs/7-0/tutorials/-/knowledge_base/t/using-the-wab-generator)

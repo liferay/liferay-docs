@@ -1,4 +1,8 @@
-# Upgrading a GenericPortlet [](id=upgrading-a-genericportlet)
+---
+header-id: upgrading-a-genericportlet
+---
+
+# Upgrading a GenericPortlet
 
 It's common to create portlets that extend `javax.portlet.GenericPortlet`. After
 all, `GenericPortlet` provides a default `javax.portlet.Portlet` interface
@@ -35,21 +39,17 @@ The portlet uses a traditional Plugins SDK portlet project folder structure.
 
 Upgrading most `GenericPortlet` portlets involves these steps:
 
-1.  [Adapt the code to @product-ver@'s API](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
-2.  [Resolve dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies)
+1.  [Adapt the code to @product-ver@'s API](/docs/7-0/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+2.  [Resolve dependencies](/docs/7-0/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies)
 
 Since the sample portlet's dependencies haven't changed, upgrading it involves
 only adapting the code to @product-ver@'s API. The
-[Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+[Code Upgrade Tool](/docs/7-0/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
 facilitates updating the code and resolving compilation issues quickly. 
 
-+$$$
-
-**Note**: Refer to tutorial
-[Resolving a Plugin's Dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies)
-if you need to adapt to dependency changes. 
-
-$$$
+| **Note**: Refer to tutorial
+| [Resolving a Plugin's Dependencies](/docs/7-0/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies)
+| if you need to adapt to dependency changes.
 
 You deploy a `GenericPortlet` to @product-ver@ in the same way you deploy to
 Portal 6.x. When the plugin WAR file lands in the `[Liferay_Home]/deploy`
@@ -80,10 +80,10 @@ portlet as you always have. It's just that easy!
 
 **Related Topics**
 
-[Migrating Plugins SDK Projects to Workspace and Gradle](/develop/tutorials/-/knowledge_base/7-0/migrating-traditional-plugins-to-workspace-web-applications)
+[Migrating Plugins SDK Projects to Workspace and Gradle](/docs/7-0/tutorials/-/knowledge_base/t/migrating-traditional-plugins-to-workspace-web-applications)
 
-[Using Dependency Management Tools](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies#managing-dependencies-with-ivy)
+[Using Dependency Management Tools](/docs/7-0/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies#managing-dependencies-with-ivy)
 
-[Using the WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)
+[Using the WAB Generator](/docs/7-0/tutorials/-/knowledge_base/t/using-the-wab-generator)
 
-[Migrating Data Upgrade Processes](/develop/tutorials/-/knowledge_base/7-0/optimizing-app-upgrade-processes)
+[Migrating Data Upgrade Processes](/docs/7-0/tutorials/-/knowledge_base/t/optimizing-app-upgrade-processes)

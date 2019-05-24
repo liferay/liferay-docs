@@ -1,9 +1,13 @@
-# Rendering an Asset [](id=rendering-an-asset)
+---
+header-id: rendering-an-asset
+---
+
+# Rendering an Asset
 
 There are several options you have for rendering an asset in @product@. Before
 setting up the rendering process for your asset, make sure it's added to the
 asset framework by following the
-[Adding, Updating, and Deleting Assets](/develop/tutorials/-/knowledge_base/7-0/adding-updating-and-deleting-assets-for-custom-entities)
+[Adding, Updating, and Deleting Assets](/docs/7-0/tutorials/-/knowledge_base/t/adding-updating-and-deleting-assets-for-custom-entities)
 tutorial. Once you have your asset added to the framework, @product@ can
 render the asset by default using the Asset Publisher application. The default
 rendering process @product@ provides, however, only displays the asset's title
@@ -42,7 +46,7 @@ renderer can be customized to fit your needs.
 If you want to create an asset and make it do more than display its title and
 description, read on to learn more!
 
-## Prerequisites for Asset Enabling and Application [](id=prerequisites-for-asset-enabling-and-application)
+## Prerequisites for Asset Enabling and Application
 
 To asset-enable your application, you need two things: 
 
@@ -64,7 +68,7 @@ to learn how to add one.
 Now that you have all that taken care of, you can move on to creating an Asset 
 Renderer.
 
-## Creating an Asset Renderer [](id=creating-an-asset-renderer)
+## Creating an Asset Renderer
 
 An asset renderer lets you provide your own HTML for your asset. The
 `AssetRenderer` interface requires that you choose a templating technology (JSP,
@@ -111,7 +115,7 @@ class, which configures the asset renderer framework for the Blogs application.
     The `BlogsEntryAssetRenderer` also sets the resource bundle loader, which
     loads the language keys for a module. You can learn more about the resource
     bundle loader in the
-    [Overriding Language Keys](/develop/tutorials/-/knowledge_base/7-0/overriding-language-keys)
+    [Overriding Language Keys](/docs/7-0/tutorials/-/knowledge_base/t/overriding-language-keys)
     tutorial.
 
     Also, make sure to define the `_entry` and `_resourceBundleLoader` fields in
@@ -334,7 +338,7 @@ using a templating technology. The `BlogsEntryAssetRenderer` is configured to
 use JSP templates to generate HTML for the Asset Publisher. You'll learn more
 about how to do this next.
 
-### Configuring JSP Templates for an Asset Renderer [](id=configuring-jsp-templates-for-an-asset-renderer)
+### Configuring JSP Templates for an Asset Renderer
 
 An asset can be displayed in several different ways in the Asset Publisher, by
 default. There are three templates to implement provided by the `AssetRenderer`
@@ -497,7 +501,7 @@ You've learned all about implementing the `AssetRenderer`'s provided templates
 and customizing them to fit your needs. Next, you'll put your asset renderer
 into action by creating a factory.
 
-## Creating a Factory for the Asset Renderer [](id=creating-a-factory-for-the-asset-renderer)
+## Creating a Factory for the Asset Renderer
 
 You've successfully created an asset renderer, but you must create a factory
 class to generate asset renderers for each asset instance. For example, the
@@ -541,14 +545,10 @@ renderer factory.
     - The `service` element should point to the `AssetRendererFactory.class`
       interface.
 
-    +$$$
-
-    **Note:** In previous versions of @product@, you had to register the asset
-    renderer factory in a portlet's `liferay-portlet.xml` file. The registration
-    process is now completed automatically by OSGi using the `@Component`
-    annotation.
-
-    $$$
+    | **Note:** In previous versions of @product@, you had to register the asset
+    | renderer factory in a portlet's `liferay-portlet.xml` file. The registration
+    | process is now completed automatically by OSGi using the `@Component`
+    | annotation.
 
 3.  Create a constructor for the factory class that presets private attributes
     of the factory.
@@ -614,7 +614,7 @@ renderer factory.
         private BlogsEntryLocalService _blogsEntryLocalService;
 
     The setter method is annotated with the `@Reference` tag. Visit the
-    [Invoking Liferay Services Locally](/develop/tutorials/-/knowledge_base/7-0/finding-and-invoking-liferay-services#invoking-liferay-services-locally)
+    [Invoking Liferay Services Locally](/docs/7-0/tutorials/-/knowledge_base/t/finding-and-invoking-liferay-services#invoking-liferay-services-locally)
     section of the *Finding and Invoking Liferay Services* tutorial for more
     information.
 

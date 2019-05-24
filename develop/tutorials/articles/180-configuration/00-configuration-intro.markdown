@@ -1,4 +1,8 @@
-# Configuration [](id=configuration)
+---
+header-id: configuration
+---
+
+# Configuration
 
 Many applications provide users a way of setting preferences for their use. In
 @product@, this could be as simple as setting a location for a weather display

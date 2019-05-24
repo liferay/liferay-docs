@@ -1,11 +1,15 @@
-# Creating Custom Item Selector Entities [](id=creating-custom-item-selector-entities)
+---
+header-id: creating-custom-item-selector-entities
+---
+
+# Creating Custom Item Selector Entities
 
 Does your app require users to select an item that the Item Selector isn't 
 configured for? No problem. You can create a new entity.
 
 This tutorial explains how to create a new entity for the Item Selector.
 
-## Creating Item Selector Criterion [](id=creating-item-selector-criterion)
+## Creating Item Selector Criterion
 
 First, you must create a new criterion for your entity. Follow these steps to 
 create an Item Selector criterion:
@@ -69,12 +73,8 @@ create an Item Selector criterion:
         
         }
 
-    +$$$
-
-    **Note:** Criterion fields should be serializable and should expose a 
-    public empty constructor (as shown above).
-    
-    $$$
+    | **Note:** Criterion fields should be serializable and should expose a
+    | public empty constructor (as shown above).
 
 2.  Create an OSGi component class that implements the 
     [`BaseItemSelectorCriterionHandler` class](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/BaseItemSelectorCriterionHandler.html). 
@@ -109,13 +109,13 @@ your entity returns information that is already defined by an existing return
 type, you can use that return type instead.
 
 You can view the default available criteria in the 
-[Item Selector Criterion and Return Types](/develop/reference/-/knowledge_base/7-0/item-selector-criterion-and-return-types) 
+[Item Selector Criterion and Return Types](/docs/7-0/reference/-/knowledge_base/r/item-selector-criterion-and-return-types) 
 reference.
 
 If, however, your entity returns information that is not covered by an existing 
 return type, you'll need to create a new return type next.
 
-## Creating Item Selector Return Types [](id=creating-item-selector-return-types)
+## Creating Item Selector Return Types
 
 To create a return type, you must create a class that implements the 
 [`ItemSelectorReturnType` class](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorReturnType.html).
@@ -145,18 +145,18 @@ type returns, as well as the format, as Javadoc (as shown in the
 So far, you've created an API that you can use to create a selection view for 
 your new entity. The entity's criterion and return type classes are used by your
 application to create the Item Selector URL. You can follow the 
-[Selecting Entities using the Item Selector](/develop/tutorials/-/knowledge_base/7-0/selecting-entities-using-the-item-selector)
+[Selecting Entities using the Item Selector](/docs/7-0/tutorials/-/knowledge_base/t/selecting-entities-using-the-item-selector)
 tutorial to learn how to obtain the Item Selector URL.
 
 **The selection view is responsible for returning the proper entity information 
 specified by the return type.** Currently there isn't a selection view to select 
-your entity. Follow the [Creating Custom Item Selector Views](/develop/tutorials/-/knowledge_base/7-0/creating-custom-item-selector-views) 
+your entity. Follow the [Creating Custom Item Selector Views](/docs/7-0/tutorials/-/knowledge_base/t/creating-custom-item-selector-views) 
 tutorial to learn how to create your new view.
 
 Now you know how to create an entity for the Item Selector!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Selecting Entities using the Item Selector](/develop/tutorials/-/knowledge_base/7-0/selecting-entities-using-the-item-selector)
+[Selecting Entities using the Item Selector](/docs/7-0/tutorials/-/knowledge_base/t/selecting-entities-using-the-item-selector)
 
-[Creating Custom Item Selector Views](/develop/tutorials/-/knowledge_base/7-0/creating-custom-item-selector-views)
+[Creating Custom Item Selector Views](/docs/7-0/tutorials/-/knowledge_base/t/creating-custom-item-selector-views)

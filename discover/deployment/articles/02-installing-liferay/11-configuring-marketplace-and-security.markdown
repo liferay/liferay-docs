@@ -1,4 +1,8 @@
-# Setting Up Marketplace and Portal Security [](id=configuring-liferay-marketplace)
+---
+header-id: configuring-liferay-marketplace
+---
+
+# Setting Up Marketplace and Portal Security
 
 Liferay Marketplace is more than just a store for Liferay applications. Under
 the hood, it not only provides the store, it also provides @product@'s
@@ -10,7 +14,7 @@ should do is enable Liferay's Portal Access Control List, or PACL.
 First, you'll learn about some scenarios in which Marketplace fails to run, but
 they can all be worked around. Next, you'll configure PACL. 
 
-## Server is Firewalled without Access to the Internet [](id=server-is-firewalled-without-access-to-the-internet)
+## Server is Firewalled without Access to the Internet
 
 Your server might be behind a firewall that prevents access to the Internet. Or
 your security policy might not allow direct download and installation from the
@@ -23,9 +27,9 @@ Internet. In these cases, you have two options:
 
 2. Alternately, once you have the downloaded `.lpkg` file, use the Liferay App
    Manager to deploy the plugin. This option is especially helpful if the
-   application server does not support hot deploy. See [Installing Apps Manually](/discover/portal/-/knowledge_base/7-0/installing-apps-manually).
+   application server does not support hot deploy. See [Installing Apps Manually](/docs/7-0/user/-/knowledge_base/u/installing-apps-manually).
 
-## Application Server Does Not Support Hot Deploy [](id=application-server-does-not-support-hot-deploy)
+## Application Server Does Not Support Hot Deploy
 
 If your application server does not support hot deploy, you can't leverage
 @product@'s auto deploy feature. You can, however, manually deploy the plugin in
@@ -35,7 +39,7 @@ two steps:
 
 2. Then use your app server's tools to do the actual deployment.
 
-## Limited Database Access [](id=limited-database-access)
+## Limited Database Access
 
 Some production environments do not have the necessary database permissions for
 @product@ and its plugins to maintain their tables. In these cases:
@@ -53,7 +57,7 @@ the Marketplace plugin--require new tables when deployed. If your environment
 restricts database access, you may need to repeat the above steps whenever you
 deploy a new app to the @product@.
 
-## Configuring Liferay Portal Security [](id=configuring-liferay-portal-security)
+## Configuring Liferay Portal Security
 
 Liferay Marketplace is an online store for obtaining applications that run on
 the @product@ platform. These applications are provided not only by

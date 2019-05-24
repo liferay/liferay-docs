@@ -1,4 +1,8 @@
-# Service Access Policies [](id=service-access-policies)
+---
+header-id: service-access-policies
+---
+
+# Service Access Policies
 
 Service access policies are a layer of web service security on top of
 @product@'s remote services. Together with the permissions layer,
@@ -33,7 +37,7 @@ the client doesn't perform these operations, having access to them is a
 security risk if the mobile device is lost or stolen or the client app
 is compromised by an attacker.
 
-## How Service Access Policies Work [](id=how-service-access-policies-work)
+## How Service Access Policies Work
 
 When a remote client issues a request to a web service, the request
 contains the user's credentials or an authorization token. An
@@ -47,29 +51,29 @@ service(s) permitted by the policy.
 
 Service Access policies are created in the Control Panel by
 administrators. If you want to start creating policies yourself, see
-[this article on service access policies](/discover/deployment/-/knowledge_base/7-0/service-access-policies)
+[this article on service access policies](/docs/7-0/deploy/-/knowledge_base/d/service-access-policies)
 that documents creating them in the UI.
 
 There may be cases, however, when your server-side Liferay app needs to use the
 service access policies API. For example, your app may:
 
-- use [custom remote API authentication](/develop/tutorials/-/knowledge_base/7-0/auto-login)
+- use [custom remote API authentication](/docs/7-0/tutorials/-/knowledge_base/t/auto-login)
   (tokens) and require certain services to be available for clients using
   the tokens.
 
 - require its services be made available to guest users, with no authentication
   necessary.
 
-- contain a [remote service authorization layer](/develop/tutorials/-/knowledge_base/7-0/password-based-authentication-pipelines)
+- contain a [remote service authorization layer](/docs/7-0/tutorials/-/knowledge_base/t/password-based-authentication-pipelines)
   that needs to drive access to remote services based on granted
   privileges.
 
-## API Overview [](id=api-overview)
+## API Overview
 
 Liferay provides an Interface and a `ThreadLocal` if you don't want to roll your own
 policies. If you want to get low level, an API is provided that
 Liferay itself has used to implement 
-[Liferay Sync](/discover/portal/-/knowledge_base/7-0/administering-liferay-sync). 
+[Liferay Sync](/docs/7-0/user/-/knowledge_base/u/administering-liferay-sync). 
 
 1. The Interface and `ThreadLocal` are available in the 
    [package `com.liferay.portal.kernel.security.service.access.policy`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/security/service/access/policy/package-summary.html).
@@ -124,7 +128,7 @@ service call to grant the associated policy during the request. The module:
   supported policies when authorizing the remote application, to associate
   the token with an existing policy.
 
-## Example [](id=example)
+## Example
 
 [Liferay Sync's](https://www.liferay.com/supporting-products/liferay-sync)
 `sync-security` module is an example of such a module. It uses

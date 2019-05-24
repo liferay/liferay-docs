@@ -1,10 +1,14 @@
-# Item Selector Criterion and Return Types [](id=item-selector-criterion-and-return-types)
+---
+header-id: item-selector-criterion-and-return-types
+---
+
+# Item Selector Criterion and Return Types
 
 @product@ bundles have apps and app suites containing [`ItemSelectorCriterion` classes](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorCriterion.html)
 and [`ItemSelectorReturnType` classes](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorReturnType.html)
 developers can use. 
 
-## Item Selector Criterion Classes [](id=item-selector-criterion-classes)
+## Item Selector Criterion Classes
 
 **Collaboration App Suite Modules:**
 
@@ -42,7 +46,7 @@ If there's no criterion class for your entity, you can create your
 own [`ItemSelectorCriterion` class](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorCriterion.html)
 (tutorial coming soon).
 
-## Item Selector Return Type Classes [](id=item-selector-return-type-classes)
+## Item Selector Return Type Classes
 
 The Liferay Collaboration app suite's [`com.liferay.item.selector.criteria.api` module](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/criteria/package-summary.html)
 includes the following return types:

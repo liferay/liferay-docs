@@ -1,4 +1,8 @@
-# Defining the Component Metadata Properties [](id=defining-the-component-metadata-properties)
+---
+header-id: defining-the-component-metadata-properties
+---
+
+# Defining the Component Metadata Properties
 
 <div class="learn-path-step">
     <p>Refactoring the Prototype<br>Step 2 of 6</p>

@@ -1,4 +1,8 @@
-# Displaying Guestbook Status [](id=displaying-guestbook-status)
+---
+header-id: displaying-guestbook-status
+---
+
+# Displaying Guestbook Status
 
 <div class="learn-path-step">
     <p>Displaying Approved Workflow Items<br>Step 1 of 2</p>

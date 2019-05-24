@@ -1,4 +1,8 @@
-# Restoring Deleted Assets [](id=restoring-deleted-assets)
+---
+header-id: restoring-deleted-assets
+---
+
+# Restoring Deleted Assets
 
 Have you ever had that life-altering experience where you deleted an important
 file and immediately regretted deleting it? The deed is usually followed by a
@@ -10,7 +14,7 @@ be restored back to its original state. Recycled items can expire after a
 certain period of time, resulting in their permanent deletion. Before diving
 into how the Recycle Bin works, you'll look at how to configure it.
 
-## Configuring the Recycle Bin [](id=configuring-the-recycle-bin)
+## Configuring the Recycle Bin
 
 The Recycle Bin supports instance-wide scope or site-specific scope. The
 instance-wide scope of the Recycle Bin is set by adding the `trash.enabled`
@@ -35,12 +39,8 @@ Recycle Bin until its permanent deletion (default is 43200 minutes, or 30 days).
 
 When you've finished configuring your Recycle Bin settings, click *Save*.
 
-+$$$
-
-**Note:** If you disable the Recycle Bin while it's still holding recycled
-items, the recycled items reappear in the Recycle Bin if it is re-enabled.
-
-$$$
+| **Note:** If you disable the Recycle Bin while it's still holding recycled
+| items, the recycled items reappear in the Recycle Bin if it is re-enabled.
 
 You can also configure the Recycle Bin via properties in the `portal.properties`
 file. Remember that it's a best practice not to edit the `portal.properties`
@@ -77,7 +77,7 @@ recycled can restore the document.
 Now that you've successfully configured the Recycle Bin, you'll look at how to
 use it.
 
-## Using the Recycle Bin [](id=using-the-recycle-bin)
+## Using the Recycle Bin
 
 The Recycle Bin is temporary storage configured for multiple asset types across
 you Liferay instance. Instead of offering a specific Recycle Bin for each asset
@@ -98,14 +98,10 @@ You can recycle several different types of assets, including:
 <!-- TODO: Planned for RB compatibility - Calendar (LPS-35264), Pages
 (LPS-29964), Structures (LPS-29970), Templates (LPS-29970). -->
 
-+$$$
-
-**Note:** The wiki and Message Board attachments are stored in a separate
-Recycle Bin instance unique to the attachment's app. For instance, when moving a
-wiki attachment to the Recycle Bin, it can only be restored from the Wiki app's
-*Removed Attachments* Menu, not the site-scoped Recycle Bin.
-
-$$$
+| **Note:** The wiki and Message Board attachments are stored in a separate
+| Recycle Bin instance unique to the attachment's app. For instance, when moving a
+| wiki attachment to the Recycle Bin, it can only be restored from the Wiki app's
+| *Removed Attachments* Menu, not the site-scoped Recycle Bin.
 
 For a quick example to show how easy the Recycle Bin is to use, you'll practice
 sending a web content article to the Recycle Bin and then restoring it. You'll
@@ -164,7 +160,7 @@ Recycle Bin* option accessible from the
 Bin screen. This permanently deletes all the files from the Recycle Bin. Next,
 you'll learn how to use the drag and drop feature.
 
-### Drag and Drop [](id=drag-and-drop)
+### Drag and Drop
 
 A quick and easy way to dispose of your unwanted assets is to drag and drop them
 into the Recycle Bin. While you're in the Control Panel, you can simply select
@@ -180,7 +176,7 @@ original location and transferred to the Recycle Bin.
 Next, you'll explore the Recycle Bin's intelligence and behind the scenes
 support that aids in a seamless recycling experience.
 
-### Recycle Bin Intelligence and Support [](id=recycle-bin-intelligence-and-support)
+### Recycle Bin Intelligence and Support
 
 Have you ever wondered if it's possible to check the IQ of a software feature?
 Unfortunately, there is no tangible way to do this; however, if there were, the
@@ -232,13 +228,9 @@ this, the separate Staging Recycle Bin is necessary and only used during the
 staging process. Finally, when you publish your staged material to live, the
 Staging Recycle Bin content is transferred to the Live Recycle Bin.
 
-+$$$
-
-**Note:** The Staging Recycle Bin saves its contents until the staged material
-has been published to the live site. This means that you can turn the staging
-mode on and off without losing your recycled material.
-
-$$$
+| **Note:** The Staging Recycle Bin saves its contents until the staged material
+| has been published to the live site. This means that you can turn the staging
+| mode on and off without losing your recycled material.
 
 The Recycle Bin saves you time by letting you restore content that's been
 recycled. Instead of recreating or re-uploading content, you'll be tailoring

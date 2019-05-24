@@ -1,4 +1,8 @@
-# Starting Module Development [](id=starting-module-development)
+---
+header-id: starting-module-development
+---
+
+# Starting Module Development
 
 Developing modules for @product@ requires:
 
@@ -11,7 +15,7 @@ Developing modules for @product@ requires:
     implementing logic.
 
 -   **Compilation**:
-    [Acquiring dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
+    [Acquiring dependencies](/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies)
     and building the module. Common build tools that manage dependencies include
     Gradle, Maven, and Ant/Ivy.
 
@@ -23,28 +27,20 @@ tutorial demonstrates starting a new module using Liferay Workspace. It's
 Liferay's opinionated build environment based on Gradle and BndTools that
 simplifies module development and automates much of it.
 
-+$$$
+| **Note**: Liferay supports developers using their build tool of choice. In
+| addition to providing Liferay Workspace for those who don't already have a
+| preferred build environment, Liferay provides good support for Maven and Gradle.
+| The following tutorials and samples demonstrate developing in these
+| environments.
+| 
+| -   [Maven tutorials](/docs/7-0/tutorials/-/knowledge_base/t/maven)
+|     and [samples](/docs/7-0/tutorials/-/knowledge_base/t/liferay-sample-modules)
+| 
+| -   [Gradle in Liferay @ide@](/docs/7-0/tutorials/-/knowledge_base/t/using-gradle-in-liferay-ide)
+|     and [samples](/docs/7-0/tutorials/-/knowledge_base/t/liferay-sample-modules)
 
-**Note**: Liferay supports developers using their build tool of choice. In
-addition to providing Liferay Workspace for those who don't already have a
-preferred build environment, Liferay provides good support for Maven and Gradle.
-The following tutorials and samples demonstrate developing in these
-environments.
-
--   [Maven tutorials](/develop/tutorials/-/knowledge_base/7-0/maven)
-    and [samples](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
-
--   [Gradle in Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/using-gradle-in-liferay-ide)
-    and [samples](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
-
-$$$
-
-+$$$
-
-**Note**: Themes and Layout Templates are not built as modules. To learn how to
-create them, see the [Themes and Layout Templates tutorials](/develop/tutorials/-/knowledge_base/7-0/themes-and-layout-templates).
-
-$$$
+| **Note**: Themes and Layout Templates are not built as modules. To learn how to
+| create them, see the [Themes and Layout Templates tutorials](/docs/7-0/tutorials/-/knowledge_base/t/themes-and-layout-templates).
 
 Here are the steps for starting module development:
 
@@ -57,13 +53,13 @@ Here are the steps for starting module development:
 On completing this tutorial you'll have created a module and deployed it to a
 local @product@ bundle.
 
-## Setting up a Liferay Workspace [](id=setting-up-a-liferay-workspace)
+## Setting up a Liferay Workspace
 
 Creating and configuring a Liferay Workspace (Workspace) is straightforward
 using a tool called Blade CLI (Blade). Blade is a command line tool that creates
 Workspaces and performs common tasks.
 
-Follow the steps in [this tutorial to install Blade](/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli)
+Follow the steps in [this tutorial to install Blade](/docs/7-0/tutorials/-/knowledge_base/t/installing-blade-cli)
 if you don't already have it.
 
 The `blade` executable is now in the system path.
@@ -81,50 +77,42 @@ Workspace can be configured to use a @product@ installation bundle anywhere on
 the local file system. The `liferay.workspace.home.dir` property in
 `gradle.properties` sets the default bundle location to a folder
 `<workspace>/bundles` (not yet created). For convenience it's suggested to
-[install a @product@ bundle](/discover/deployment/-/knowledge_base/7-0/preparing-for-install)
+[install a @product@ bundle](/docs/7-0/deploy/-/knowledge_base/d/preparing-for-install)
 there. If you install it to a different location, uncomment the
 `liferay.workspace.home.dir` property and set it to that location.
 
-+$$$
-
-**Note**: User interfaces in Liferay @ide@ lets developers create and import
-Liferay Workspace projects.
-
-To create a project, follow the tutorial [Creating a Liferay Workspace Project with Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace-with-liferay-ide).
-
-To import a project, use the wizard from *File &rarr; Import &rarr; Liferay &rarr; Liferay Workspace Project*.
-
-$$$
+| **Note**: User interfaces in Liferay @ide@ lets developers create and import
+| Liferay Workspace projects.
+| 
+| To create a project, follow the tutorial [Creating a Liferay Workspace Project with Liferay @ide@](/docs/7-0/tutorials/-/knowledge_base/t/creating-a-liferay-workspace-with-liferay-ide).
+| 
+| To import a project, use the wizard from *File &rarr; Import &rarr; Liferay &rarr; Liferay Workspace Project*.
 
 The Workspace is ready for creating modules.
 
-## Creating a Module [](id=creating-a-module)
+## Creating a Module
 
 Blade provides module *templates* and module *samples*. The templates stub out
 files for different types of modules. The samples can be generated in a
 Workspace and demonstrate many module types. Developers can use templates and
 samples to develop modules.
 
-### Using Module Templates [](id=using-module-templates)
+### Using Module Templates
 
 The Blade command `blade create -l` lists the module templates.
 
 ![Figure 2: Blade's `create` command generates a module based on a template. Executing `create -l` lists the template names.](../../../images/starting-module-dev-blade-templates.png)
 
-+$$$
-
-**Note**: Liferay @ide@'s module wizard lets developers select a template for
-their module project. For details, see the tutorial
-[Creating a Module with Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-liferay-ide).
-
-$$$
+| **Note**: Liferay @ide@'s module wizard lets developers select a template for
+| their module project. For details, see the tutorial
+| [Creating a Module with Liferay @ide@](/docs/7-0/tutorials/-/knowledge_base/t/creating-modules-with-liferay-ide).
 
 Here's the command syntax for creating a module:
 
     blade create [options] moduleName
 
 Module templates and their options are described
-[here](/develop/reference/-/knowledge_base/7-0/project-templates). 
+[here](/docs/7-0/reference/-/knowledge_base/r/project-templates). 
 
 Here's an example of creating a Liferay MVC Portlet module:
 
@@ -145,7 +133,7 @@ Here's the module project anatomy:
 -   `bnd.bnd` &rarr; Specifies essential OSGi module manifest headers
 
 -   `build.gradle` &rarr;
-    [Configures dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
+    [Configures dependencies](/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies)
     and more using Gradle
 
 The figure below shows an MVC portlet module project.
@@ -154,7 +142,7 @@ The figure below shows an MVC portlet module project.
 
 Sample modules are another helpful development resource.
 
-### Using Module Samples [](id=using-module-samples)
+### Using Module Samples
 
 An alternative to creating a module from a template is to generate a *sample*
 module. Developers can examine or modify sample modules as desired.
@@ -175,22 +163,18 @@ It creates the sample project in a subfolder of the current folder.
 
 Building a module and deploying it to @product@ is easy.
 
-## Building and Deploying a Module [](id=building-and-deploying-a-module)
+## Building and Deploying a Module
 
 Liferay Workspace provides Gradle tasks for building and deploying modules.
 Blade's `blade gw` command solves a common need in Gradle projects: invoking the
 Gradle wrapper from any project directory. You can use `blade gw` just as you
 would invoke `gradlew`, without having to specify the wrapper path.
 
-+$$$
-
-**Note**: For an even simpler Gradle wrapper command, install *gw*.
-
-`(sudo) jpm install gw@1.0.1`
-
-Usage: `gw <task>`
-
-$$$
+| **Note**: For an even simpler Gradle wrapper command, install *gw*.
+| 
+| `(sudo) jpm install gw@1.0.1`
+| 
+| Usage: `gw <task>`
 
 In a module folder, execute this command to list the Gradle tasks available:
 
@@ -207,14 +191,10 @@ deployment to @product@.
 
 Start your @product@ server, if you haven't already started it.
 
-+$$$
-
-**Tip**: To open a new terminal window and the Workspace's @product@ server
-(bundled with Tomcat or JBoss/Wildfly), execute this command:
-
-`blade server start -b`
-
-$$$
+| **Tip**: To open a new terminal window and the Workspace's @product@ server
+| (bundled with Tomcat or JBoss/Wildfly), execute this command:
+| 
+| `blade server start -b`
 
 Blade can deploy modules to any local @product@ server. It communicates with
 @product@'s OSGi framework using Felix Gogo shell and deploys modules directly
@@ -237,21 +217,17 @@ deploy all modules in a Workspace's modules folder, for example, execute
 
 If you're using Liferay @ide@, you can deploy modules by dragging them from the
 Package Explorer onto the @product@ server. @ide@ provides access to
-[Liferay Workspace Gradle tasks](/develop/tutorials/-/knowledge_base/7-0/managing-module-projects-with-liferay-ide)
+[Liferay Workspace Gradle tasks](/docs/7-0/tutorials/-/knowledge_base/t/managing-module-projects-with-liferay-ide)
 too.
 
 ![Figure 5: Liferay @ide@ lets developers deploy modules using drag-and-drop.](../../../images/starting-module-dev-drag-module.png)
 
-+$$$
-
-**Note:** When deploying a module to @product@ using Blade CLI, the module is
-directly installed into @product@'s OSGi container. This means that the module
-is stored differently in @product@ than if it were copied into the
-`LIFERAY_HOME/deploy` folder. See the
-[Deploying Modules with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/deploying-modules-with-blade-cli)
-tutorial for more information.
-
-$$$
+| **Note:** When deploying a module to @product@ using Blade CLI, the module is
+| directly installed into @product@'s OSGi container. This means that the module
+| is stored differently in @product@ than if it were copied into the
+| `LIFERAY_HOME/deploy` folder. See the
+| [Deploying Modules with Blade CLI](/docs/7-0/tutorials/-/knowledge_base/t/deploying-modules-with-blade-cli)
+| tutorial for more information.
 
 Once you've deployed a portlet module, it's available in the @product@ UI under
 the application category and name you specified via the portlet component's
@@ -260,7 +236,7 @@ properties in the `@Component` annotation.
 
 ![Figure 6: Here's a bare-bones portlet based on one of Liferay's module templates.](../../../images/starting-module-dev-portlet.png)
 
-## Redeploying Module Changes Automatically [](id=redeploying-module-changes-automatically)
+## Redeploying Module Changes Automatically
 
 Blade lets developers set a *watch* on changes to a module project's output
 files. If they're modified, Blade redeploys the module automatically. To set a
@@ -301,14 +277,14 @@ the module if its output files change.
 
 Congratulations on a great start to developing your module!
 
-## Related Articles [](id=related-articles)
+## Related Articles
 
-[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
+[Configuring Dependencies](/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies)
 
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace)
+[Liferay Workspace](/docs/7-0/tutorials/-/knowledge_base/t/liferay-workspace)
 
-[Tooling](/develop/tutorials/-/knowledge_base/7-0/tooling)
+[Tooling](/docs/7-0/tutorials/-/knowledge_base/t/tooling)
 
-[OSGi Basics for Liferay Development](/develop/tutorials/-/knowledge_base/7-0/osgi-basics-for-liferay-development)
+[OSGi Basics for Liferay Development](/docs/7-0/tutorials/-/knowledge_base/t/osgi-basics-for-liferay-development)
 
-[Portlets](/develop/tutorials/-/knowledge_base/7-0/portlets)
+[Portlets](/docs/7-0/tutorials/-/knowledge_base/t/portlets)

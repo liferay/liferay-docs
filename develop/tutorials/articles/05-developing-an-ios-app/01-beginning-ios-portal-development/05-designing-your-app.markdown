@@ -1,4 +1,8 @@
-# Designing Your App [](id=designing-your-app-ios)
+---
+header-id: designing-your-app-ios
+---
+
+# Designing Your App
 
 As a developer, you know that developing any kind of app without an overall 
 design goal and plan to implement it is a recipe for disaster. To avoid this, 
@@ -10,7 +14,7 @@ straightforward way to do three things:
 3. Display entries
 
 To authenticate users, all you need to do is insert and configure 
-[Login Screenlet](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-ios) 
+[Login Screenlet](/docs/7-0/reference/-/knowledge_base/r/loginscreenlet-for-ios) 
 in your app. Login Screenlet comes complete with its own UI. The design for
 authentication, therefore, like with @product@ itself, is done for you. 
 

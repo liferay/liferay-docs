@@ -1,11 +1,15 @@
-# Publishing Content with Content Display Pages [](id=publishing-content-with-content-display-pages)
+---
+header-id: publishing-content-with-content-display-pages
+---
+
+# Publishing Content with Content Display Pages
 
 <div class="learn-path-step">
     <p>Creating Content<br>Step 4 of 7</p>
 </div>
 
 So far, you've manually published most of your site's content. Now you'll use 
-[content display pages](/discover/portal/-/knowledge_base/7-0/publishing-assets#content-display-pages) 
+[content display pages](/docs/7-0/user/-/knowledge_base/u/publishing-assets#content-display-pages) 
 to publish content automatically. @product@'s Asset Publisher app makes this 
 possible. You can configure the Asset Publisher to automatically publish any 
 type of asset (e.g., images, blogs, web content). A content display page is 
@@ -17,7 +21,7 @@ content.
 First, you'll create a simple content display page for displaying a single piece 
 of content. 
 
-## Creating a Content Display Page [](id=creating-a-content-display-page)
+## Creating a Content Display Page
 
 Follow these instructions to create the content display page:
 
@@ -44,7 +48,7 @@ Follow these instructions to create the content display page:
  
 Nice! Now you're ready to create the page's content. 
 
-## Creating the Display Page's Content [](id=creating-the-display-pages-content)
+## Creating the Display Page's Content
 
 Use these steps to create the page's content:
 
@@ -82,7 +86,7 @@ Use these steps to create the page's content:
 Awesome! Now that your content exists on the display page, you'll configure a 
 link to it so that users can view it. 
 
-## Using Content Display Pages [](id=using-content-display-pages)
+## Using Content Display Pages
 
 You'll display the content via a link in an Asset Publisher. To do so, follow 
 these steps: 

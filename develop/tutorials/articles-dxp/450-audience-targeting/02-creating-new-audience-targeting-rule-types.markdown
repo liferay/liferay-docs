@@ -1,4 +1,8 @@
-# Creating New Audience Targeting Rule Types [](id=creating-new-audience-targeting-rule-types)
+---
+header-id: creating-new-audience-targeting-rule-types
+---
+
+# Creating New Audience Targeting Rule Types
 
 In the Audience Targeting application, a User Segment is defined as a group of
 users that match a set of rules. Out of the box, Liferay provides several types
@@ -38,14 +42,14 @@ for sunglasses.
 Now that you have an idea of how to plan your custom rule's development, you'll
 begin creating one yourself!
 
-## Creating a Custom Rule Type [](id=creating-a-custom-rule-type)
+## Creating a Custom Rule Type
 
 Adding a new type of rule to the Audience Targeting application is easy. First,
 you must create a module and ensure it has the necessary Content Targeting API 
 dependencies.
 
-1.  [Create a module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#creating-a-module) 
-    project for deploying a rule. A Blade CLI [content-targeting-rule](/develop/reference/-/knowledge_base/7-0/content-targeting-rule-template)
+1.  [Create a module](/docs/7-0/tutorials/-/knowledge_base/t/starting-module-development#creating-a-module) 
+    project for deploying a rule. A Blade CLI [content-targeting-rule](/docs/7-0/reference/-/knowledge_base/r/content-targeting-rule-template)
     template is available to help you get started quickly. It sets the default
     configuration for you, and it contains boilerplate code so you can skip the
     file creation steps and get started right away.
@@ -67,7 +71,7 @@ dependencies.
         }
 
     You can learn more about exposing the Content Targeting API in the
-    [Accessing the Content Targeting API](/develop/tutorials/-/knowledge_base/7-0/accessing-the-content-targeting-api)
+    [Accessing the Content Targeting API](/docs/7-0/tutorials/-/knowledge_base/t/accessing-the-content-targeting-api)
     tutorial. Once you've created your module and specified its dependencies,
     you'll need to define your rule's behavior. How your rule behaves is
     controlled by a Java class file that you create.
@@ -102,20 +106,16 @@ implementing the
 [Rule](@app-ref@/content-targeting/2.0.0/javadocs/com/liferay/content/targeting/api/model/Rule.html)
 interface's methods. You'll begin implementing these methods next.
 
-+$$$
-
-**Note:** If you're planning on developing a social rule type that classifies
-users based on their social network profile, it's important to remember that
-the specific social network's SSO (Single Sign On) must be enabled and
-configured properly. Visit the
-[Social Rules](/discover/portal/-/knowledge_base/7-0/liferay-audience-targeting-rules#social-rules)
-section for more details.
-
-$$$
+| **Note:** If you're planning on developing a social rule type that classifies
+| users based on their social network profile, it's important to remember that
+| the specific social network's SSO (Single Sign On) must be enabled and
+| configured properly. Visit the
+| [Social Rules](/docs/7-0/user/-/knowledge_base/u/liferay-audience-targeting-rules#social-rules)
+| section for more details.
 
 The first thing you'll define in your weather rule is the view/save lifecycle.
 
-## Defining a Rule's View/Save Lifecycle [](id=defining-a-rules-view-save-lifecycle)
+## Defining a Rule's View/Save Lifecycle
 
 This section covers how to define a rule's view/save lifecycle. This is when
 a user applies a rule to a user segment using the User Segment Editor.
@@ -237,7 +237,7 @@ created.
     You can think of the `populateContext` method as the intermediary between
     your JSP and your backend code. You can see how to create the weather rule's
     UI using a JSP by seeing the
-    [Defining the Rule's UI](/develop/tutorials/-/knowledge_base/7-0/creating-new-audience-targeting-rule-types#defining-the-rules-ui)
+    [Defining the Rule's UI](/docs/7-0/tutorials/-/knowledge_base/t/creating-new-audience-targeting-rule-types#defining-the-rules-ui)
     section. Once the HTML is successfully retrieved and the user has set the
     weather value and clicked *Save*, the action phase begins. 
 
@@ -308,7 +308,7 @@ created.
 Next, you'll learn how to evaluate a rule that is configured and saved to a user
 segment.
 
-## Evaluating a Rule [](id=evaluating-a-rule)
+## Evaluating a Rule
 
 Imagine an administrator has successfully configured and saved your custom rule
 to his or her user segment. Now what? Your rule needs to fulfill its purpose,
@@ -443,7 +443,7 @@ logic in your `-Rule` class to acquire a user's local weather. The weather
 rule's behavior is defined and complete. The last thing you need to do is create
 a JSP template.
 
-## Defining the Rule's UI [](id=defining-the-rules-ui)
+## Defining the Rule's UI
 
 The Java code you've added to this point has assumed that a preset weather value
 is available for comparing during the evaluation process. To let administrators
@@ -473,14 +473,10 @@ When the user selects an option, it's passed from the view template to the
 
 ![Figure 4: The weather rule uses a `select` drop-down box to set the weather value.](../../images-dxp/select-box-rule.png)
 
-+$$$
-
-The weather rule uses JSP templates to display the rule's view. Audience
-Targeting, however, is compatible with any UI technology. Visit the
-[Selecting a UI Technology](/develop/tutorial/-/knowledge_base/7-0/best-practices-for-rules#selecting-a-ui-technology)
-section for details on how to use other UI technologies like FreeMarker.
-
-$$$
+| The weather rule uses JSP templates to display the rule's view. Audience
+| Targeting, however, is compatible with any UI technology. Visit the
+| [Selecting a UI Technology](/develop/tutorial/-/knowledge_base/7-0/best-practices-for-rules#selecting-a-ui-technology)
+| section for details on how to use other UI technologies like FreeMarker.
 
 Congratulations! You've created the weather rule and can now target users based
 on their weather conditions. You can view the finished version of the weather
@@ -492,12 +488,12 @@ to create your own.
 
 <!-- ## Customize the Rules Engine -->
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Best Practices for Rules](/develop/tutorials/-/knowledge_base/7-0/best-practices-for-rules)
+[Best Practices for Rules](/docs/7-0/tutorials/-/knowledge_base/t/best-practices-for-rules)
 
-[Creating Modules with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-blade-cli)
+[Creating Modules with Blade CLI](/docs/7-0/tutorials/-/knowledge_base/t/creating-modules-with-blade-cli)
 
-[Internationalization](/develop/tutorials/-/knowledge_base/7-0/internationalization)
+[Internationalization](/docs/7-0/tutorials/-/knowledge_base/t/internationalization)
 
-[Service Builder Persistence](/develop/tutorials/-/knowledge_base/7-0/service-builder-persistence)
+[Service Builder Persistence](/docs/7-0/tutorials/-/knowledge_base/t/service-builder-persistence)

@@ -1,4 +1,8 @@
-# Configuring Your Permissions Scheme [](id=configuring-your-permissions-scheme)
+---
+header-id: configuring-your-permissions-scheme
+---
+
+# Configuring Your Permissions Scheme
 
 <div class="learn-path-step">
     <p>Implementing Permissions<br>Step 1 of 4</p>

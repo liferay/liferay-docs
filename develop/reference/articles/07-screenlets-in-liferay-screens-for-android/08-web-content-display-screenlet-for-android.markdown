@@ -1,8 +1,12 @@
-# Web Content Display Screenlet for Android [](id=webcontentdisplayscreenlet-for-android)
+---
+header-id: webcontentdisplayscreenlet-for-android
+---
+
+# Web Content Display Screenlet for Android
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/JVxfjAnCve8" frameborder="0" allowfullscreen></iframe>
 
-## Requirements [](id=requirements)
+## Requirements
 
 - Android SDK 4.1 (API Level 16) or above
 - Liferay Portal 6.2 CE/EE, Liferay CE Portal 7.0/7.1, Liferay DXP
@@ -11,22 +15,22 @@
   [EE/DXP](http://www.liferay.com/marketplace/-/mp/application/54369726)). 
   This app is preinstalled in Liferay CE Portal 7.0/7.1 and Liferay DXP. 
 
-## Compatibility [](id=compatibility)
+## Compatibility
 
 - Android SDK 4.1 (API Level 16) or above
 
-## Xamarin Requirements [](id=xamarin-requirements)
+## Xamarin Requirements
 
 - Visual Studio 7.2
 - Mono .NET framework 5.4.1.6
 
-## Features [](id=features)
+## Features
 
 The Web Content Display Screenlet shows web content elements in your app, 
 rendering the web content's inner HTML. The Screenlet also supports i18n, 
 rendering contents differently depending on the device's locale. 
 
-## JSON Services Used [](id=json-services-used)
+## JSON Services Used
 
 Screenlets in Liferay Screens call JSON web services in the portal. This 
 Screenlet calls the following services and methods.
@@ -38,11 +42,11 @@ Screenlet calls the following services and methods.
 | `JournalArticleService` | `getArticleContent` |  |
 | `ScreensddlrecordService` (Screens compatibility plugin) | `getJournalArticleContent` | With `entryQuery` |
 
-## Module [](id=module)
+## Module
 
 - None
 
-## Views [](id=views)
+## Views
 
 - Default
 
@@ -50,19 +54,19 @@ The Default View uses a standard `WebView` to render the HTML.
 
 ![Web Content Display Screenlet using the Default View.](../../images/screens-android-webcontentdisplay.png)
 
-## Portal Configuration [](id=portal-configuration)
+## Portal Configuration
 
 For the Web Content Display Screenlet to function properly, there should be web 
 content in the Liferay instance your app connects to. For more details on web 
 content, see the 
-[Creating Web Content](/discover/portal/-/knowledge_base/7-0/creating-web-content) 
+[Creating Web Content](/docs/7-0/user/-/knowledge_base/u/creating-web-content) 
 section of the Liferay User Guide. 
 
-## Offline [](id=offline)
+## Offline
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/docs/7-0/tutorials/-/knowledge_base/t/architecture-of-offline-mode-in-liferay-screens). 
 Here are the offline mode policies that you can use with this Screenlet: 
 
 | Policy | What happens | When to use |
@@ -72,15 +76,15 @@ Here are the offline mode policies that you can use with this Screenlet:
 | `REMOTE_FIRST` | The Screenlet loads the content from the portal. If this succeeds, the Screenlet shows the content to the user and stores it in the local cache for later use. If a connection issue occurs, the Screenlet retrieves the content from the local cache. If the content doesn't exist there, the Screenlet uses the listener to notify the developer about the error. | Use this policy to show the most recent version of the content when connected, but show a possibly outdated version when there's no connection. |
 | `CACHE_FIRST` | The Screenlet loads the content from the local cache. If the content isn't there, the Screenlet requests it from the portal and notifies the developer about any errors that occur (including connectivity errors). | Use this policy to save bandwidth and loading time in case you have local (but probably outdated) content. |
 
-## Required Attributes [](id=required-attributes)
+## Required Attributes
 
 - `articleId`
 
 Note that if your web content uses 
-[structures and templates](/discover/portal/-/knowledge_base/7-0/designing-uniform-content), 
+[structures and templates](/docs/7-0/user/-/knowledge_base/u/designing-uniform-content), 
 you can use `templateId` or `structureId` in conjunction with `articleId`. 
 
-## Attributes [](id=attributes)
+## Attributes
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
@@ -88,21 +92,21 @@ you can use `templateId` or `structureId` in conjunction with `articleId`.
 | `groupId` | `number` | The site (group) identifier where the asset is stored. If this value is `0`, the `groupId` specified in `LiferayServerContext` is used. |
 | `articleId` | `string` | The identifier of the web content to display. You can find the identifier by clicking *Edit* on the web content in the portal. |
 | `classPK` | `number` | The corresponding asset's class primary key. If the web content is an asset (from Asset List Screenlet, for example), this is the asset's identifier. This attribute is used only if `articleId` is empty. |
-| `templateId` | `number` | The identifier of the template used to render the web content. This only applies to [structured web content](/discover/portal/-/knowledge_base/7-0/designing-uniform-content). |
+| `templateId` | `number` | The identifier of the template used to render the web content. This only applies to [structured web content](/docs/7-0/user/-/knowledge_base/u/designing-uniform-content). |
 | `structureId` | `number` | The identifier of the `DDMStructure` used to model the web content. This parameter lets the Screenlet retrieve and parse the structure. |
 | `labelFields` | `string` | A comma-delimited list of `DDMStructure` fields to display in the Screenlet. |
 | `autoLoad` | `boolean` | Whether the content should be retrieved from the portal as soon as the screenlet appears. Default value is `true`. |
 | `javascriptEnabled` | `boolean` | Enables support for JavaScript. This is disabled by default. |
-| `cachePolicy` | `string` | The offline mode setting. See the [Offline section](/develop/reference/-/knowledge_base/7-0/webcontentdisplayscreenlet-for-android#offline) for details. |
+| `cachePolicy` | `string` | The offline mode setting. See the [Offline section](/docs/7-0/reference/-/knowledge_base/r/webcontentdisplayscreenlet-for-android#offline) for details. |
 
-## Methods [](id=methods)
+## Methods
 
 | Method | Return | Explanation |
 |-----------|-----------|-------------| 
 | `load()` | `void` | Starts the request to load the web content. The HTML is rendered when the response is received. |
 | `getLocalized(String name)` | `String` | Returns the value, according to the device locale, of a field of the `DDMStructure` used to render the web content.
 
-## Listener [](id=listener)
+## Listener
 
 The Web Content Display Screenlet delegates some events to an object that 
 implements the `WebContentDisplayListener` interface. This interface lets you 

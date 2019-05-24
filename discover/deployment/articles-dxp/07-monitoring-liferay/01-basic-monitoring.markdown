@@ -1,30 +1,30 @@
-# Monitoring Garbage Collection and JVM [](id=monitoring-garbage-collection-and-jvm)
+---
+header-id: monitoring-garbage-collection-and-jvm
+---
+
+# Monitoring Garbage Collection and JVM
 
 Although the 
-[tuning parameters](/discover/deployment/-/knowledge_base/7-0/liferay-digital-enterprise-configuration-and-tuning-guidelines)
+[tuning parameters](/docs/7-0/deploy/-/knowledge_base/d/liferay-digital-enterprise-configuration-and-tuning-guidelines)
 give you a good start to tuning your JVM, you must monitor GC performance to
 ensure you have the best settings to meet your needs. There are several tools to
 help you monitor Oracle JVM performance including.
 
-## Visual VM [](id=visual-vm)
+## Visual VM
 
 This tool provides a centralized console for viewing Oracle JVM performance
 information, including garbage collector activities.
 
 ![Visual VM shows the garbage collector in real-time.](../../images-dxp/visual-vm-gc.png)
 
-## JMX Console [](id=jmx-console)
+## JMX Console
 
 This tool helps display various statistics like @product@'s distributed cache
 performance, the performance of application server threads, JDBC connection pool
 usage, and more. 
 
-+$$$
-
-**Note:** The JMX Console is the preferred tool to use when observing Tomcat
-performance information.
-
-$$$
+| **Note:** The JMX Console is the preferred tool to use when observing Tomcat
+| performance information.
 
 To enable JMX connections, add the following configuration to your application
 server's JVM arguments:
@@ -34,7 +34,7 @@ server's JVM arguments:
 
 ![Visual VM lets you monitor using Java Management Extensions.](../../images-dxp/visual-vm-jmx.png)
 
-## Garbage Collector Verbose Logging [](id=garbage-collector-verbose-logging)
+## Garbage Collector Verbose Logging
 
 Add the following configuration to your JVM arguments to activate verbose
 logging for the JVM garbage collector.

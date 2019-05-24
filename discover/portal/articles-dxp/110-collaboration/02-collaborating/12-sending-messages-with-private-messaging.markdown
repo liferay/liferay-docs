@@ -1,24 +1,24 @@
-# Sending Messages with Private Messaging [](id=sending-messages-with-private-messaging)
+---
+header-id: sending-messages-with-private-messaging
+---
+
+# Sending Messages with Private Messaging
 
 The Private Messaging app lets you send email-like messages to other users. Its
 interface is similar to an email client. Messages are aggregated by thread, with
 the most recent message displayed. You can mark messages as read or unread or
 delete them.
 
-+$$$
-
-**Note:** There is a known issue, [LPS-69331](https://issues.liferay.com/browse/LPS-69331), 
-which causes the Private Messaging app to be treated as a brand-new module 
-during the initial upgrade process. This issue is fixed in Liferay fixpack de-10.
-
-$$$
+| **Note:** There is a known issue, [LPS-69331](https://issues.liferay.com/browse/LPS-69331),
+| which causes the Private Messaging app to be treated as a brand-new module
+| during the initial upgrade process. This issue is fixed in Liferay fixpack de-10.
 
 The Private Messaging app must be installed from Marketplace. Once installed,
 the app must be added to a user's private *Dashboard* page. Now that you know
 where you can get the app and where to place it, you're probably eager to write
 messages. This is covered next.
 
-## Composing Messages [](id=composing-messages)
+## Composing Messages
 
 Once the app is added to a user's Dashboard page, click the *New Message* 
 button to compose a new message. Just like email, you can enter a subject, 
@@ -31,7 +31,7 @@ to. You can select any number of users.
 By default, all users are available in this list. You can filter the available
 list of users by configuring the app. This is covered next.
 
-## Configuring System Settings [](id=configuring-system-settings)
+## Configuring System Settings
 
 You can filter the set of available users in the *To* field's autocomplete
 recipient list by social connection, status, or site membership. This

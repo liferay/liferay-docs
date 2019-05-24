@@ -1,4 +1,8 @@
-# Resource Bundle Override [](id=resource-bundle-override)
+---
+header-id: resource-bundle-override
+---
+
+# Resource Bundle Override
 
 This example overrides the default `add-blog-entry` language key (English and
 Spanish) for @product@'s default Blogs application. After deploying this sample
@@ -13,13 +17,13 @@ For reference, the Blogs application's language keys are stored in the
 [liferay-portal](https://github.com/liferay/liferay-portal) Github repo's
 `modules/apps/collaboration/blogs/blogs-web/src/main/resources/content` folder.
 
-## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
+## What API(s) and/or code components does this sample highlight?
 
 This sample leverages the
 [ResourceBundleLoader](@product-ref@/portal-kernel/com/liferay/portal/kernel/util/ResourceBundleLoader.html)
 API.
 
-## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
+## How does this sample leverage the API(s) and/or code component?
 
 This sample conveys the recommended approach to override an application's
 language keys file for any module that is deployed to @product@'s OSGi runtime
@@ -95,15 +99,15 @@ example's goal is to only override the English and Spanish keys, the
 This approach can be used to override any application's language keys (i.e.,
 `language.properties` files that are inside a module deployed to @product@'s
 OSGi runtime). If you need to override @product@'s core language keys, see the
-[Modifying Liferay's Language Keys](/develop/tutorials/-/knowledge_base/7-0/overriding-language-keys#modifying-liferays-language-keys)
+[Modifying Liferay's Language Keys](/docs/7-0/tutorials/-/knowledge_base/t/overriding-language-keys#modifying-liferays-language-keys)
 tutorial.
 
 For more information on using a resource bundle to override an application's
 language keys, see the
-[Overriding a Module's Language Keys](/develop/tutorials/-/knowledge_base/7-0/overriding-language-keys#overriding-a-modules-language-keys)
+[Overriding a Module's Language Keys](/docs/7-0/tutorials/-/knowledge_base/t/overriding-language-keys#overriding-a-modules-language-keys)
 tutorial.
 
-## Where Is This Sample? [](id=where-is-this-sample)
+## Where Is This Sample?
 
 There are three different versions of this sample, each built with a different
 build tool:

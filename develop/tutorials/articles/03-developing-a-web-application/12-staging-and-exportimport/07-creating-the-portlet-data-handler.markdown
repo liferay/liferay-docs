@@ -1,4 +1,8 @@
-# Creating the Portlet Data Handler [](id=creating-the-portlet-data-handler)
+---
+header-id: creating-the-portlet-data-handler
+---
+
+# Creating the Portlet Data Handler
 
 <div class="learn-path-step">
     <p>Enabling Staging and Export/Import<br>Step 7 of 7</p>
@@ -237,7 +241,7 @@ handle your portlet's data and control its staged model data handlers.
 
 Your Guestbook app is now leveraging the Staging and Export/Import frameworks!
 To verify this, when you go to
-[enable Staging](/discover/portal/-/knowledge_base/7-0/enabling-staging), you
+[enable Staging](/docs/7-0/user/-/knowledge_base/u/enabling-staging), you
 can now enable it for your Guestbook app.
 
 ![Figure 4: Enable the Guestbook Staging functionality.](../../../images/guestbook-staging-enable.png)

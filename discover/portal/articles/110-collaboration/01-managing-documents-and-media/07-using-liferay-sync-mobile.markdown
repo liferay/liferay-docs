@@ -1,7 +1,11 @@
-# Using Liferay Sync on Your Mobile Device [](id=using-liferay-sync-on-your-mobile-device)
+---
+header-id: using-liferay-sync-on-your-mobile-device
+---
+
+# Using Liferay Sync on Your Mobile Device
 
 Liferay Sync for Android and iOS contains most of the
-[desktop Sync client](/discover/portal/-/knowledge_base/6-2/using-liferay-sync-on-your-desktop)'s
+[desktop Sync client](/docs/6-2/user/-/knowledge_base/u/using-liferay-sync-on-your-desktop)'s
 functionality. The mobile client can, however, only be connected to one 
 @product@ instance account at a time. Also, mobile Sync doesn't automatically 
 download files to your device. To save precious storage space on your device, 
@@ -18,7 +22,7 @@ from the
 Once you've installed the Sync app on your device, follow the instructions below 
 to learn how to use it. 
 
-## Connecting to Your @product@ Instance [](id=connecting-to-your-portal)
+## Connecting to Your @product@ Instance
 
 When Liferay Sync first starts on your mobile device, press the *Get Started*
 button to begin setup. The setup screen asks for your login credentials and your
@@ -54,7 +58,7 @@ toggle are the app's version and a link to send app feedback to Liferay.
 Great! Now that you know how to connect to your @product@ instance and find your 
 sites, you can get started managing the sites' files and folders. 
 
-## Managing Files and Folders [](id=managing-files-and-folders)
+## Managing Files and Folders
 
 Whether you're working in My Documents or My Sites, you manage files and folders
 the same way. Pressing a site or folder shows you a list of its files and
@@ -99,15 +103,11 @@ app's Settings menu. Doing so removes all downloaded files from your device, but
 preserves them in the instance. If you're on Android, it may be possible to use 
 a system file browser app to manually remove downloaded files. 
 
-+$$$
-
-**Warning:** Deleting a file in the mobile Sync app deletes it in the @product@ 
-instance and across any synced clients. If you accidentally delete a file, the 
-instance or site administrator can restore it from the instance's Recycle Bin. 
-The Recycle Bin is enabled by default. If the instance or site administrator 
-disables the Recycle Bin, however, recovering deleted files is impossible. 
-
-$$$
+| **Warning:** Deleting a file in the mobile Sync app deletes it in the @product@
+| instance and across any synced clients. If you accidentally delete a file, the
+| instance or site administrator can restore it from the instance's Recycle Bin.
+| The Recycle Bin is enabled by default. If the instance or site administrator
+| disables the Recycle Bin, however, recovering deleted files is impossible.
 
 The context menu also provides additional options for files. A small badge on
 the file icon's top-right corner indicates the file's version in the @product@ 

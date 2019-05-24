@@ -1,4 +1,8 @@
-# The Structure of OSGi Bundles Containing npm Packages [](id=the-structure-of-osgi-bundles-containing-npm-packages)
+---
+header-id: the-structure-of-osgi-bundles-containing-npm-packages
+---
+
+# The Structure of OSGi Bundles Containing npm Packages
 
 To deploy JavaScript modules, you must create an OSGi bundle with the npm 
 dependencies extracted from the project's `node_modules` folder and modify them 
@@ -54,7 +58,7 @@ or no npm packages at all.
 Now that you know the structure for OSGi bundles containing npm packages, you 
 can learn how the liferay-npm-bundler handles inline JavaScript packages. 
 
-## Inline JavaScript packages [](id=inline-javascript-packages)
+## Inline JavaScript packages
 
 The resulting OSGi bundle that the liferay-npm-bundler creates lets you deploy 
 one inline JavaScript package (named `my-bundle-package` in the example) with 
@@ -72,10 +76,10 @@ inline package is only used for organizational purposes.
 
 Now you know the liferay-npm-bundler creates OSGi bundles for npm packages!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Configuring liferay-npm-bundler](/develop/tutorials/-/knowledge_base/7-0/configuring-liferay-npm-bundler)
+[Configuring liferay-npm-bundler](/docs/7-0/tutorials/-/knowledge_base/t/configuring-liferay-npm-bundler)
 
-[liferay-npm-bundler](/develop/tutorials/-/knowledge_base/7-0/liferay-npm-bundler)
+[liferay-npm-bundler](/docs/7-0/tutorials/-/knowledge_base/t/liferay-npm-bundler)
 
-[Adding liferay-npm-bundler to Your Portlet](/develop/tutorials/-/knowledge_base/7-0/adding-liferay-npm-bundler-to-your-portlet)
+[Adding liferay-npm-bundler to Your Portlet](/docs/7-0/tutorials/-/knowledge_base/t/adding-liferay-npm-bundler-to-your-portlet)

@@ -1,6 +1,10 @@
-# Comment Display Screenlet for iOS [](id=comment-display-screenlet-for-ios)
+---
+header-id: comment-display-screenlet-for-ios
+---
 
-## Requirements [](id=requirements)
+# Comment Display Screenlet for iOS
+
+## Requirements
 
 - Xcode 9.3 or above
 - iOS 11 SDK
@@ -10,21 +14,21 @@
   [EE/DXP](http://www.liferay.com/marketplace/-/mp/application/54369726)). 
   This app is preinstalled in Liferay CE Portal 7.0/7.1 and Liferay DXP. 
 
-## Compatibility [](id=compatibility)
+## Compatibility
 
 - iOS 9 and above
 
-## Xamarin Requirements [](id=xamarin-requirements)
+## Xamarin Requirements
 
 - Visual Studio 7.2
 - Mono .NET framework 5.4.1.6
 
-## Features [](id=features)
+## Features
 
 Comment Display Screenlet can show one comment of an asset in a Liferay 
 instance. It also lets the user update or delete the comment. 
 
-## JSON Services Used [](id=json-services-used)
+## JSON Services Used
 
 Screenlets in Liferay Screens call JSON web services in the portal. This 
 Screenlet calls the following services and methods.
@@ -35,26 +39,26 @@ Screenlet calls the following services and methods.
 | `ScreenscommentService` (Screens compatibility plugin) | `updateComment` |  |
 | `CommentmanagerjsonwsService` | `deleteComment` |  |
 
-## Module [](id=module)
+## Module
 
 - None
 
-## Themes [](id=themes)
+## Themes
 
 - Default
 
 The Default Theme uses 
-[User Portrait Screenlet](/develop/reference/-/knowledge_base/7-0/userportraitscreenlet-for-ios) 
+[User Portrait Screenlet](/docs/7-0/reference/-/knowledge_base/r/userportraitscreenlet-for-ios) 
 and iOS `UILabel` elements to show an asset's comment. Other Themes may use 
 different components to show the comment. 
 
 ![Figure 1: Comment Display Screenlet using the Default Theme.](../../images/screens-ios-commentdisplay.png)
 
-## Offline [](id=offline)
+## Offline
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/docs/7-0/tutorials/-/knowledge_base/t/architecture-of-offline-mode-in-liferay-screens). 
 This Screenlet supports the `remote-only`, `cache-only`, `remote-first`, and 
 `cache-first` offline mode policies. 
 
@@ -78,26 +82,26 @@ a Liferay instance:
 | `remote-first` | The Screenlet sends the data to the Liferay instance. If this succeeds, it also stores the data in the local cache for later use. If a connection issue occurs, the Screenlet stores the data in the local cache and sends it to the Liferay instance when the connection is re-established. | Use this policy when you need to make sure the Screenlet sends the data to the Liferay instance as soon as the connection is restored. |
 | `cache-first` | The Screenlet stores the data in the local cache and then attempts to send it to the Liferay instance. If a connection issue occurs, the Screenlet sends the data to the Liferay instance when the connection is re-established. | Use this policy when you need to make sure the Screenlet sends the data to the Liferay instance as soon as the connection is restored. Compared to `remote-first`, this policy always stores the data in the cache. The `remote-first` policy only stores the data in the event of a network error. |
 
-## Required Attributes [](id=required-attributes)
+## Required Attributes
 
 - `commentId`
 
-## Attributes [](id=attributes)
+## Attributes
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------|
 | `commentId` | `number` | The primary key of the comment to display. |
 | `autoLoad` | `boolean` | Whether the list should automatically load when the Screenlet appears in the app's UI. The default value is `true`. |
 | `editable` | `boolean` | Whether the user can edit the comment. |
-| `offlinePolicy` | `string` | The offline mode setting. The default is `remote-first`. See [the Offline section](/develop/reference/-/knowledge_base/7-0/comment-display-screenlet-for-ios#offline) for details. |
+| `offlinePolicy` | `string` | The offline mode setting. The default is `remote-first`. See [the Offline section](/docs/7-0/reference/-/knowledge_base/r/comment-display-screenlet-for-ios#offline) for details. |
 
-## Methods [](id=methods)
+## Methods
 
 | Method | Return | Explanation |
 |-----------|-----------|-------------| 
 | `load()` | none | Starts the request to load the comment. |
 
-## Delegate [](id=delegate)
+## Delegate
 
 Comment Display Screenlet delegates some events to an object that conforms to 
 the `CommentDisplayScreenletDelegate` protocol. This protocol lets you implement 

@@ -1,4 +1,8 @@
-# Displaying Approved Entries [](id=displaying-approved-entries)
+---
+header-id: displaying-approved-entries
+---
+
+# Displaying Approved Entries
 
 <div class="learn-path-step">
     <p>Displaying Approved Workflow Items<br>Step 2 of 2</p>

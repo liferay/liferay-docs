@@ -1,4 +1,8 @@
-# Overriding Liferay Services (Service Wrappers) [](id=customizing-liferay-services-service-wrappers)
+---
+header-id: customizing-liferay-services-service-wrappers
+---
+
+# Overriding Liferay Services (Service Wrappers)
 
 Why might you need to customize Liferay services? Perhaps you've added a custom
 field to Liferay's `User` object and you want its value to be saved whenever the
@@ -8,7 +12,7 @@ Whatever your case may be, Liferay's service wrappers provide easy-to-use
 extension points for customizing Liferay's services.
 
 To create a module that overrides one of Liferay's services, follow the 
-[Service Wrapper Template](/develop/reference/-/knowledge_base/7-0/using-the-service-wrapper-template)
+[Service Wrapper Template](/docs/7-0/reference/-/knowledge_base/r/using-the-service-wrapper-template)
 reference article to create a `servicewrapper` project type.
 
 As an example, here's the `UserLocalServiceOverride` class that's 
@@ -49,7 +53,7 @@ The bottom line is that when using `blade create` to create a service wrapper
 project, you must specify a fully qualified class name as the `service`
 argument. (This is also true when using `blade create` to create a service
 project.) For information about creating service projects, please see the
-[Service Builder](/develop/tutorials/-/knowledge_base/7-0/service-builder)
+[Service Builder](/docs/7-0/tutorials/-/knowledge_base/t/service-builder)
 tutorial.
 
 The generated `UserLocalServiceOverride` class does not actually customize any
@@ -113,10 +117,10 @@ methods have taken effect by checking Liferay's log for the print statements
 that you added. Congratulations! You've created and deployed a @product-ver@ service
 wrapper module!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Upgrading Service Wrappers](/develop/tutorials/-/knowledge_base/7-0/upgrading-service-wrappers)
+[Upgrading Service Wrappers](/docs/7-0/tutorials/-/knowledge_base/t/upgrading-service-wrappers)
 
-[Installing Blade CLI](/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli)
+[Installing Blade CLI](/docs/7-0/tutorials/-/knowledge_base/t/installing-blade-cli)
 
-[Creating Modules with Blade CLI](/develop/tutorials/-/knowledge_base/7-0/creating-modules-with-blade-cli)
+[Creating Modules with Blade CLI](/docs/7-0/tutorials/-/knowledge_base/t/creating-modules-with-blade-cli)

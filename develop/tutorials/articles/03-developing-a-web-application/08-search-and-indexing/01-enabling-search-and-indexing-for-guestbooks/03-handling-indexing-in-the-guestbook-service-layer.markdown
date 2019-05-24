@@ -1,4 +1,8 @@
-# Handling Indexing in the Guestbook Service Layer [](id=handling-indexing-in-the-guestbook-service-layer)
+---
+header-id: handling-indexing-in-the-guestbook-service-layer
+---
+
+# Handling Indexing in the Guestbook Service Layer
 
 <div class="learn-path-step">
     <p>Enabling Search and Indexing for Guestbooks<br>Step 3 of 3</p>

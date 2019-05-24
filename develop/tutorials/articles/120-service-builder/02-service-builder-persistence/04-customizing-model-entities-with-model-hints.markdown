@@ -1,4 +1,8 @@
-# Customizing Model Entities With Model Hints [](id=customizing-model-entities-with-model-hints)
+---
+header-id: customizing-model-entities-with-model-hints
+---
+
+# Customizing Model Entities With Model Hints
 
 If you've already used Service Builder to define your model entities and have
 implemented business logic for creating and modifying those entities, you might
@@ -21,16 +25,12 @@ form's input fields based on these hints. Model hints can also be used to
 specify the size of the database columns used to store the entities and to 
 specify other entity details. 
 
-+$$$
-
-**Note:** Service Builder generates a number of XML configuration files in your
-service module's `src/main/resources/META-INF` folder. Service Builder uses
-most of these files to manage Spring and Hibernate configurations. Don't modify
-the Spring or Hibernate configuration files; your changes will be overwritten
-the next time Service Builder runs. However, you can safely edit the
-`portlet-model-hints.xml` file.
-
-$$$
+| **Note:** Service Builder generates a number of XML configuration files in your
+| service module's `src/main/resources/META-INF` folder. Service Builder uses
+| most of these files to manage Spring and Hibernate configurations. Don't modify
+| the Spring or Hibernate configuration files; your changes will be overwritten
+| the next time Service Builder runs. However, you can safely edit the
+| `portlet-model-hints.xml` file.
 
 As an example, consider 
 [the Bookmarks app's model hints file](https://github.com/liferay/liferay-portal/blob/7.0.6-ga7/modules/apps/collaboration/bookmarks/bookmarks-service/src/main/resources/META-INF/portlet-model-hints.xml):

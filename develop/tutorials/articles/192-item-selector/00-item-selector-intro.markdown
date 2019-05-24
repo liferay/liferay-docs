@@ -1,4 +1,8 @@
-# Item Selector [](id=item-selector)
+---
+header-id: item-selector
+---
+
+# Item Selector
 
 People's tasks often involve making choices: which shirt to wear, what to eat
 for breakfast, or what profile picture to use. The power of choice is a terrific

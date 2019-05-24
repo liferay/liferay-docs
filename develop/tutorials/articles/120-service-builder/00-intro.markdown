@@ -1,4 +1,8 @@
-# Service Builder [](id=service-builder)
+---
+header-id: service-builder
+---
+
+# Service Builder
 
 An application without reliable business logic or persistence isn't much of an 
 application at all. Unfortunately, writing your own persistence code often takes 

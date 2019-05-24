@@ -1,4 +1,8 @@
-# Modifying an Editor's Configuration [](id=modifying-an-editors-configuration)
+---
+header-id: modifying-an-editors-configuration
+---
+
+# Modifying an Editor's Configuration
 
 @product@ supports many different kinds of WYSIWYG editors that can be used in
 portlets to edit content. Depending on the content you're editing, you may want
@@ -6,7 +10,7 @@ to modify the editor to provide a better configuration for your needs. In this
 tutorial, you'll learn how to extend your Liferay supported WYSIWYG editor to
 add new or modify existing configurations exactly how you'd like.
 
-## Extending the Editor's Configuration [](id=extending-the-editors-configuration)
+## Extending the Editor's Configuration
 
 To modify the editor's configuration, create a module that has a component that
 implements the
@@ -15,7 +19,7 @@ interface. When you implement this interface, your module will provide a service
 that modifies the editors you'd like to change. A simple example of this is
 provided below.
 
-1.  [Create an OSGi module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#creating-a-module).
+1.  [Create an OSGi module](/docs/7-0/tutorials/-/knowledge_base/t/starting-module-development#creating-a-module).
 
 2.  Create a unique package name in the module's `src` directory, and create a
     new Java class in that package. The class should extend the
@@ -61,65 +65,57 @@ provided below.
     This annotation declares that the following service is applied for the
     AlloyEditor identified by the `contentEditor` configuration key. 
     
-    +$$$
-    
-    **Note:** If you're targeting all editors for a portlet, the 
-    `editor.config.key` is not required. For example, if you just want to target 
-    the Web Content portlet's editors, you can provide the configuration below:
-    
-        @Component(
-          property = {"editor.name=ckeditor",
-          "javax.portlet.name=com_liferay_journal_web_portlet_JournalPortlet",
-          "service.ranking:Integer=100"
-        }
-    
-    $$$
+    | **Note:** If you're targeting all editors for a portlet, the
+    | `editor.config.key` is not required. For example, if you just want to target
+    | the Web Content portlet's editors, you can provide the configuration below:
+    | 
+    |     @Component(
+    |       property = {"editor.name=ckeditor",
+    |       "javax.portlet.name=com_liferay_journal_web_portlet_JournalPortlet",
+    |       "service.ranking:Integer=100"
+    |     }
     
     Two portlet names are specified (Blogs and Blogs Admin), which means the 
     service applies to all editors in those portlets. Lastly, the service 
     ranking is listed, which prioritizes this service over others that are 
     currently deployed in @product@.
 
-    +$$$
-    
-    **NOTE:** If you want to create a global configuration that applies to an 
-    editor everywhere it's used, you must create two separate configurations: 
-    one configuration that targets just the editor and a second configuration 
-    that targets the Blogs and Blogs Admin portlets. For example, the two 
-    separate configurations below apply the updates to AlloyEditor everywhere 
-    it's used:
-    
-    Configuration one:
-    
-    ```java
-    @Component(
-        immediate = true, 
-        property = {
-            "editor.name=alloyeditor", 
-            "service.ranking:Integer=100"
-        },
-    
-        service = EditorConfigContributor.class
-    )
-    ```
-    
-    Configuration two:
-    
-    ```java
-    @Component(
-        immediate = true, 
-        property = {
-            "editor.name=alloyeditor",
-            "javax.portlet.name=com_liferay_blogs_web_portlet_BlogsPortlet",
-            "javax.portlet.name=com_liferay_blogs_web_portlet_BlogsAdminPortlet", 
-            "service.ranking:Integer=100"
-        },
-    
-        service = EditorConfigContributor.class
-    )
-    ```
-    
-    $$$
+    | **NOTE:** If you want to create a global configuration that applies to an
+    | editor everywhere it's used, you must create two separate configurations:
+    | one configuration that targets just the editor and a second configuration
+    | that targets the Blogs and Blogs Admin portlets. For example, the two
+    | separate configurations below apply the updates to AlloyEditor everywhere
+    | it's used:
+    | 
+    | Configuration one:
+    | 
+    | ```java
+    | @Component(
+    |     immediate = true,
+    |     property = {
+    |         "editor.name=alloyeditor",
+    |         "service.ranking:Integer=100"
+    |     },
+    | 
+    |     service = EditorConfigContributor.class
+    | )
+    | ```
+    | 
+    | Configuration two:
+    | 
+    | ```java
+    | @Component(
+    |     immediate = true,
+    |     property = {
+    |         "editor.name=alloyeditor",
+    |         "javax.portlet.name=com_liferay_blogs_web_portlet_BlogsPortlet",
+    |         "javax.portlet.name=com_liferay_blogs_web_portlet_BlogsAdminPortlet",
+    |         "service.ranking:Integer=100"
+    |     },
+    | 
+    |     service = EditorConfigContributor.class
+    | )
+    | ```
 
 4.  Now that you've specified which editor configurations you want to modify,
     you must specify what about them must change. Add the following method to
@@ -152,18 +148,14 @@ provided below.
 
     This gets the editor's toolbar.
 
-    +$$$
-
-    **Note:** This toolbar configuration is only applicable for the AlloyEditor.
-    If you choose a configuration that is supported by multiple editors, you
-    could apply it to them all. To do this, you could specify all the editors
-    (e.g., `"editor.name=alloyeditor"`, `"editor.name=ckeditor"`,
-    `ckeditor_bbcode` etc.) in the `@Component` annotation  of your
-    `EditorConfigContributor` implementation, as you did in step 3. Use the 
-    site links provided at the bottom of this tutorial to view each editor's 
-    configuration options and requirements.
-
-    $$$
+    | **Note:** This toolbar configuration is only applicable for the AlloyEditor.
+    | If you choose a configuration that is supported by multiple editors, you
+    | could apply it to them all. To do this, you could specify all the editors
+    | (e.g., `"editor.name=alloyeditor"`, `"editor.name=ckeditor"`,
+    | `ckeditor_bbcode` etc.) in the `@Component` annotation  of your
+    | `EditorConfigContributor` implementation, as you did in step 3. Use the
+    | site links provided at the bottom of this tutorial to view each editor's
+    | configuration options and requirements.
 
     Now that you've retrieved the toolbar, you can modify it. You'll do this
     next.
@@ -203,10 +195,10 @@ configuration is available for use.
 Make sure to visit each editor's configuration API to learn what each editor
 offers for configuration settings.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Adding New Behavior to an Editor](/develop/tutorials/-/knowledge_base/7-0/adding-new-behavior-to-an-editor)
+[Adding New Behavior to an Editor](/docs/7-0/tutorials/-/knowledge_base/t/adding-new-behavior-to-an-editor)
 
-[Embedding Portlets in Themes](/develop/tutorials/-/knowledge_base/7-0/embedding-portlets-in-themes)
+[Embedding Portlets in Themes](/docs/7-0/tutorials/-/knowledge_base/t/embedding-portlets-in-themes)
 
-[Developing Portlets](/develop/tutorials/-/knowledge_base/7-0/portlets)
+[Developing Portlets](/docs/7-0/tutorials/-/knowledge_base/t/portlets)

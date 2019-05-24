@@ -1,4 +1,8 @@
-# Building Websites with Liferay Web Experience Management [](id=building-websites-with-liferay-web-experience-management)
+---
+header-id: building-websites-with-liferay-web-experience-management
+---
+
+# Building Websites with Liferay Web Experience Management
 
 Nowadays, few people build websites using only a text editor because that still
 requires a lot of effort. Why do it manually when you can have the computer do

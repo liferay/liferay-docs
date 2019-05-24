@@ -1,4 +1,8 @@
-# Using Guestbook List Screenlet [](id=using-guestbook-list-screenlet)
+---
+header-id: using-guestbook-list-screenlet
+---
+
+# Using Guestbook List Screenlet
 
 The steps for using Guestbook List Screenlet are the same as those for using any
 Screenlet: 
@@ -12,7 +16,7 @@ Recall that you used these steps to insert Login Screenlet in `MainActivity`.
 First, you'll insert Guestbook List Screenlet's XML in `GuestbooksActivity`'s 
 layout. 
 
-## Inserting the Screenlet XML in the Layout [](id=inserting-the-screenlet-xml-in-the-layout)
+## Inserting the Screenlet XML in the Layout
 
 Recall that `activity_guestbooks.xml` defines `GuestbooksActivity`'s UI. Also 
 recall that the `NavigationView` in `activity_guestbooks.xml` defines the 
@@ -63,7 +67,7 @@ header from overlapping.
 Great! Next, you'll implement the Screenlet's listener interface in 
 `GuestbooksActivity`. 
 
-## Implementing the Screenlet's Listener [](id=implementing-the-screenlets-listener)
+## Implementing the Screenlet's Listener
 
 To use a Screenlet, you must implement its listener methods in the class of the 
 activity or fragment where you want the Screenlet to appear. How you implement 

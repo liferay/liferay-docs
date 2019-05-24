@@ -1,23 +1,27 @@
-# JaCoCo Code Coverage Example [](id=jacoco-code-coverage-example)
+---
+header-id: jacoco-code-coverage-example
+---
+
+# JaCoCo Code Coverage Example
 
 [JaCoCo](http://eclemma.org/jacoco/) measures Java code coverage. The
 Arquillian Blade Example uses JaCoCo to report parts and percentages of the product code the tests execute. 
 
 ![Figure 1: JaCoCo reports lines of code tests execute in methods and classes.](../../../images/arquillian-example-jacoco-results.png)
 
-## Enabling JaCoCo [](id=enabling-jacoco)
+## Enabling JaCoCo
 
 JaCoCo requires attaching an agent to the JVM. To attach the JaCoCo agent,
 append the following JaCoCo options to  the Tomcat environment script's
 `CATALINA_OPTS` variable.
 
-### `setenv.sh` JaCoCo Settings [](id=setenv-sh-jacoco-settings)
+### `setenv.sh` JaCoCo Settings
 
     JACOCO_OPTS="-javaagent:PATH_TO_JACOCO_AGENT_JAR/jacocoagent.jar=destfile=JACOCO_EXEC_FILE,output=file,append=true,jmx=true"
     
     CATALINA_OPTS="${CATALINA_OPTS} ${JACOCO_OPTS}"
 
-### `setenv.bat` JaCoCo Settings [](id=setenv-bat-jacoco-settings)
+### `setenv.bat` JaCoCo Settings
 
     set "JACOCO_OPTS=-javaagent:PATH_TO_JACOCO_AGENT_JAR/jacocoagent.jar=destfile=JACOCO_EXEC_FILE,output=file,append=true,jmx=true"
     
@@ -26,7 +30,7 @@ append the following JaCoCo options to  the Tomcat environment script's
 Replace `PATH_TO_JACOCO_AGENT_JAR` with the path to the `jacocoagent.jar` file
 and `JACOCO_EXEC_FILE` with the path to the JaCoCo result dump file. 
 
-## JaCoCo Build Instructions [](id=jacoco-build-instructions)
+## JaCoCo Build Instructions
 
 The Gradle build file `build.gradle` specifies several JaCoCo-related
 instructions:

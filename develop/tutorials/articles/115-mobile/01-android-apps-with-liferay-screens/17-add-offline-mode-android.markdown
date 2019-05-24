@@ -1,4 +1,8 @@
-# Adding Offline Mode Support to Your Android Screenlet [](id=adding-offline-mode-support-to-your-android-screenlet)
+---
+header-id: adding-offline-mode-support-to-your-android-screenlet
+---
+
+# Adding Offline Mode Support to Your Android Screenlet
 
 Offline mode lets Screenlets function without a network connection. For offline 
 mode to work with your Screenlet, you must manually add support for it. 
@@ -13,7 +17,7 @@ Screenlet communicates with the server:
 
 - **A write Screenlet:** writes data to a server. The Add Bookmark Screenlet
   created in the 
-  [basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets) 
+  [basic Screenlet creation tutorial](/docs/7-0/tutorials/-/knowledge_base/t/creating-android-screenlets) 
   is a good example of a simple write Screenlet. It asks the user to enter a URL 
   and a title, which it then sends to the Bookmarks portlet in @product@ 
   to create a bookmark. 
@@ -21,31 +25,31 @@ Screenlet communicates with the server:
   Screenlet included with Liferay Screens is a good example of a read Screenlet. 
   It retrieves web content from @product@ for display in an Android 
   app. 
-  [Click here](/develop/reference/-/knowledge_base/7-0/webcontentdisplayscreenlet-for-android) 
+  [Click here](/docs/7-0/reference/-/knowledge_base/r/webcontentdisplayscreenlet-for-android) 
   to see Web Content Display Screenlet's documentation. 
 
 This tutorial shows you how to add offline mode support to both kinds of 
 Screenlets. You'll start with write Screenlets, using Add Bookmark Screenlet as 
 an example. Before getting started, be sure to read 
-[the basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets) 
+[the basic Screenlet creation tutorial](/docs/7-0/tutorials/-/knowledge_base/t/creating-android-screenlets) 
 to familiarize yourself with Add Bookmark Screenlet's code. You'll conclude by
 learning how offline mode implementation in read Screenlets differs from that of
 write Screenlets. 
 
-## Adding Offline Mode Support to Write Screenlets [](id=adding-offline-mode-support-to-write-screenlets)
+## Adding Offline Mode Support to Write Screenlets
 
 To add offline mode support to write Screenlets, you'll follow these steps: 
 
-1. [Create or update the event class](/develop/tutorials/-/knowledge_base/7-0/adding-offline-mode-support-to-your-android-screenlet#create-or-update-the-event-class). 
-2. [Update the listener interface](/develop/tutorials/-/knowledge_base/7-0/adding-offline-mode-support-to-your-android-screenlet#update-the-listener). 
-3. [Update the Interactor class](/develop/tutorials/-/knowledge_base/7-0/adding-offline-mode-support-to-your-android-screenlet#update-the-interactor-class). 
-4. [Update the Screenlet class](/develop/tutorials/-/knowledge_base/7-0/adding-offline-mode-support-to-your-android-screenlet#update-the-screenlet-class). 
-5. [Sync the cache with the server](/develop/tutorials/-/knowledge_base/7-0/adding-offline-mode-support-to-your-android-screenlet#sync-the-cache-with-the-server). 
+1. [Create or update the event class](/docs/7-0/tutorials/-/knowledge_base/t/adding-offline-mode-support-to-your-android-screenlet#create-or-update-the-event-class). 
+2. [Update the listener interface](/docs/7-0/tutorials/-/knowledge_base/t/adding-offline-mode-support-to-your-android-screenlet#update-the-listener). 
+3. [Update the Interactor class](/docs/7-0/tutorials/-/knowledge_base/t/adding-offline-mode-support-to-your-android-screenlet#update-the-interactor-class). 
+4. [Update the Screenlet class](/docs/7-0/tutorials/-/knowledge_base/t/adding-offline-mode-support-to-your-android-screenlet#update-the-screenlet-class). 
+5. [Sync the cache with the server](/docs/7-0/tutorials/-/knowledge_base/t/adding-offline-mode-support-to-your-android-screenlet#sync-the-cache-with-the-server). 
 
 Each of the sections that follow detail one of these steps. You'll begin by 
 creating or updating the event class. 
 
-### Create or Update the Event Class [](id=create-or-update-the-event-class)
+### Create or Update the Event Class
 
 Recall from the basic Screenlet creation tutorial that an event class is 
 required to handle communication between Screenlet components. Also recall that 
@@ -99,7 +103,7 @@ event class, `BookmarkEvent`:
 
 Next, you'll update the listener. 
 
-### Update the Listener [](id=update-the-listener)
+### Update the Listener
 
 Recall from the basic Screenlet creation tutorial that the listener interface 
 defines a success method and a failure method. This lets implementing classes 
@@ -129,7 +133,7 @@ activity or fragment that implements the listener), and replace any failure
 method calls with `error` method calls. You'll do the latter next when updating 
 the Interactor class. 
 
-### Update the Interactor Class [](id=update-the-interactor-class)
+### Update the Interactor Class
 
 Recall from the basic Screenlet creation tutorial that Interactor classes extend 
 `BaseRemoteInteractor` with the listener and event as type arguments. To support 
@@ -199,7 +203,7 @@ trying to add a bookmark to the server:
         getListener().error(event.getException(), "ADD_BOOKMARK"); 
     }
 
-### Update the Screenlet Class [](id=update-the-screenlet-class)
+### Update the Screenlet Class
 
 Updating the Screenlet class for offline mode is straightforward. In the 
 Screenlet class's `onUserAction` method, you'll change the call to the 
@@ -228,7 +232,7 @@ That's it! Your write Screenlet now supports offline mode. There's one more
 detail to keep in mind, however, when using the Screenlet: syncing the cache 
 with the server. You'll learn about this next. 
 
-### Sync the Cache with the Server [](id=sync-the-cache-with-the-server)
+### Sync the Cache with the Server
 
 When using a write Screenlet that supports offline mode, new data written to the 
 cache must also be synced with the server. The write Screenlets included with 
@@ -275,7 +279,7 @@ from shared preferences:
 
 Next, you'll learn how to add offline mode support to read Screenlets. 
 
-## Adding Offline Mode Support to Read Screenlets [](id=adding-offline-mode-support-to-read-screenlets)
+## Adding Offline Mode Support to Read Screenlets
 
 Implementing offline mode support in a read Screenlet is almost identical to 
 doing so in a write Screenlet. There are two small differences, though: 
@@ -300,11 +304,11 @@ doing so in a write Screenlet. There are two small differences, though:
 
 That's it! Next, you'll learn about list Screenlets and offline mode support. 
 
-### Adding Offline Mode Support to List Screenlets [](id=adding-offline-mode-support-to-list-screenlets)
+### Adding Offline Mode Support to List Screenlets
 
 A list Screenlet is a special type of read Screenlet that displays entities in a 
 list. Recall from the 
-[list Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets) 
+[list Screenlet creation tutorial](/docs/7-0/tutorials/-/knowledge_base/t/creating-android-list-screenlets) 
 that list Screenlets have a model class that encapsulates entities retrieved
 from the server. To support offline mode, a list Screenlet's event class must
 extend `ListEvent` with the model class as a type argument. This event class
@@ -318,17 +322,17 @@ The list Screenlet creation tutorial contains example model and event classes
 that support offline mode for Bookmark List Screenlet. Click the following links 
 to see the sections in the tutorial that show you how to create these classes: 
 
-- [Creating the Model Class](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-model-class) 
-- [Creating the Event](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets#creating-the-screenlets-event)
+- [Creating the Model Class](/docs/7-0/tutorials/-/knowledge_base/t/creating-android-list-screenlets#creating-the-model-class) 
+- [Creating the Event](/docs/7-0/tutorials/-/knowledge_base/t/creating-android-list-screenlets#creating-the-screenlets-event)
 
 And that's all! Now you know how to support offline mode in your Screenlets. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using Offline Mode in Android](/develop/tutorials/-/knowledge_base/7-0/using-offline-mode-in-android)
+[Using Offline Mode in Android](/docs/7-0/tutorials/-/knowledge_base/t/using-offline-mode-in-android)
 
-[Architecture of Offline Mode in Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens)
+[Architecture of Offline Mode in Liferay Screens](/docs/7-0/tutorials/-/knowledge_base/t/architecture-of-offline-mode-in-liferay-screens)
 
-[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-android-screenlets)
+[Creating Android Screenlets](/docs/7-0/tutorials/-/knowledge_base/t/creating-android-screenlets)
 
-[Creating Android List Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-android-list-screenlets)
+[Creating Android List Screenlets](/docs/7-0/tutorials/-/knowledge_base/t/creating-android-list-screenlets)

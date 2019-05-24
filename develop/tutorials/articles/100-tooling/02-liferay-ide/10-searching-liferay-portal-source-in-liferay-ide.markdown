@@ -1,10 +1,14 @@
-# Searching @product@ Source in Liferay @ide@ [](id=searching-product-source-in-liferay-ide)
+---
+header-id: searching-product-source-in-liferay-ide
+---
+
+# Searching @product@ Source in Liferay @ide@
 
 In Liferay @ide@, you can search through @product@'s source code to aid in the
 development of your project. Liferay provides great resources to help with
 development (e.g., official documentation,
 [docs.liferay.com](https://docs.liferay.com/),
-[sample projects](/develop/reference/-/knowledge_base/7-0/sample-modules),
+[sample projects](/docs/7-0/reference/-/knowledge_base/r/sample-modules),
 etc.), but sometimes, searching through Liferay's codebase (i.e., platform and
 official apps) for patterns is just as useful. For example, if you're creating a
 custom app that extends a class provided in Liferay's `portal-kernel` JAR, you
@@ -12,11 +16,11 @@ can inspect that class and research how it's used in other areas of @product@'s
 codebase.
 
 To do this, you must be developing in a
-[Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace).
+[Liferay Workspace](/docs/7-0/tutorials/-/knowledge_base/t/liferay-workspace).
 Liferay Workspace is able to provide this functionality by targeting a specific
 @product@ version, which indexes the configured @product@ source code to provide
 advanced search. See the
-[Managing the Target Platform in Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/managing-the-target-platform-for-liferay-workspace)
+[Managing the Target Platform in Liferay Workspace](/docs/7-0/tutorials/-/knowledge_base/t/managing-the-target-platform-for-liferay-workspace)
 tutorial for more information on how this works.
 
 In this tutorial, you'll explore three use cases where advanced search would be
@@ -31,7 +35,7 @@ See Eclipse's documentation on
 [Java Search](http://help.eclipse.org/oxygen/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2Fconcepts%2Fconcept-java-search.htm&resultof=%22%6a%61%76%61%22%20)
 for a comprehensive guide.
 
-## Search Class Hierarchy [](id=search-class-hierarchy)
+## Search Class Hierarchy
 
 Inspecting classes that extend a similar superclass can help you find useful
 patterns and examples for how you can develop your own app. For example, suppose
@@ -47,7 +51,7 @@ platform that extend `MVCPortlet`.
 Great! Now you can search for all extensions and implementations of a
 class/interface to aid in your quest for developing the perfect app.
 
-## Search Method Declarations [](id=search-method-declarations)
+## Search Method Declarations
 
 Sometimes you want a search to be more granular, exploring the declarations of
 a specific method provided by a class/interface. Liferay @ide@'s advanced search
@@ -66,7 +70,7 @@ declaration in your custom app's class and selecting *Declarations* &rarr;
 The rendered Search window displays the other occurrences in the target platform
 where that method was overridden.
 
-## Search Annotation References [](id=search-annotation-references)
+## Search Annotation References
 
 Annotations used in @product@'s source code can sometimes be cryptic. With the
 ability to search where these types of annotations reside in Liferay's target

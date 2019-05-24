@@ -1,4 +1,8 @@
-# Advanced Content Display Page Options [](id=advanced-content-display-page-options)
+---
+header-id: advanced-content-display-page-options
+---
+
+# Advanced Content Display Page Options
 
 <div class="learn-path-step">
     <p>Creating Content<br>Step 5 of 7</p>
@@ -7,14 +11,14 @@
 Now that you've used a basic use case for the content display page, let's take
 a deeper look at how they work and how to use them for more advanced use cases.
 
-## Choose Your Own Content Display Page [](id=choose-your-own-content-display-page)
+## Choose Your Own Content Display Page
 
 A Content Display Page can be any page with an Asset Publisher configured as the
 "default" asset publisher for a page, and you can set up the rest of the page 
 however you like. This allows you to use Content Display Pages for things beyond
 displaying a single static piece of content or providing a friendly URL.
 
-### Configuring Asset Publishers [](id=configuring-asset-publishers)
+### Configuring Asset Publishers
 
 Now, let's configure an Asset Publisher to function as our primary content 
 display.
@@ -62,7 +66,7 @@ Most of the configuration options are self explanatory. Next, configure the Asse
 The Asset Publishers are configured, but there's no content configured for this
 page. Next you'll create content that uses a Content Display Page.
 
-## Creating Content with a Display Page [](id=creating-content-with-a-display-page)
+## Creating Content with a Display Page
 
 Any content can have a display page set for it, and any page can be a display
 page if it has a properly configured Asset Publisher on it. Next, you'll create
@@ -90,7 +94,7 @@ an image.
     `lunar-spelunking.png` image, set the Content Display Page to *Activities* 
     and click *Publish*.
 
-## Housekeeping and Final Test [](id=housekeeping-and-final-test)
+## Housekeeping and Final Test
 
 Now to add a few finishing touches.
 

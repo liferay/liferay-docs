@@ -1,6 +1,10 @@
-# Theme Gulp Tasks [](id=theme-gulp-tasks)
+---
+header-id: theme-gulp-tasks
+---
 
-Theme projects created using the [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+# Theme Gulp Tasks
+
+Theme projects created using the [Liferay Theme Generator](/docs/7-0/tutorials/-/knowledge_base/t/themes-generator)
 have a `gulpfile.js` file that provides several [gulp](https://www.npmjs.com/package/gulp)
 tasks you can execute to manage and deploy your theme.
 
@@ -13,13 +17,9 @@ Here are the gulp tasks you can execute:
 *  `deploy`: runs the `build` task and deploys the WAR file to the
     configured local app server.
 
-    +$$$
-
-    **Note:** If you're running the [Felix Gogo shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell), 
-    you can also deploy your theme using the `gulp deploy:gogo` command. **This 
-    task will NOT work for 6.2 themes.**
-
-    $$$
+    | **Note:** If you're running the [Felix Gogo shell](/docs/7-0/reference/-/knowledge_base/r/using-the-felix-gogo-shell),
+    | you can also deploy your theme using the `gulp deploy:gogo` command. **This
+    | task will NOT work for 6.2 themes.**
 
 *  `extend`: allows you to specify a base theme to extend. By default, themes
     created with the [Liferay Theme Generator](https://github.com/liferay/generator-liferay-theme)
@@ -51,9 +51,9 @@ Here are the gulp tasks you can execute:
     save any changes to a file in your theme, applicable changes are compiled
     and they're copied directly to your app server. **Note:** In order for the
     `watch` task to work, you must have [Developer
-    Mode](/develop/tutorials/-/knowledge_base/7-0/using-developer-mode-with-themes)
+    Mode](/docs/7-0/tutorials/-/knowledge_base/t/using-developer-mode-with-themes)
     enabled.
 
 **Related Topics**
 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+[Liferay Theme Generator](/docs/7-0/tutorials/-/knowledge_base/t/themes-generator)

@@ -1,4 +1,8 @@
-# Invoking Liferay Services From Scripts [](id=invoking-liferay-services-from-scripts)
+---
+header-id: invoking-liferay-services-from-scripts
+---
+
+# Invoking Liferay Services From Scripts
 
 Many scripting scenarios require invoking @product@'s services.
 
@@ -41,7 +45,7 @@ These modules are all freely available on
 First, let's see how this would work in Beanshell, which is very similar to
 Java.
  
-## Beanshell [](id=beanshell)
+## Beanshell
 
 Beanshell is a Java scripting language that's designed to run Java code with
 little or no changes. In this example, we only have one small change to make
@@ -61,7 +65,7 @@ because Beanshell doesn't support the use of Java Generics:
 Next, we'll show the same thing in Groovy, another scripting language designed
 to be similar to Java. -->
 
-## Groovy [](id=groovy)
+## Groovy
 
 Groovy is based on Java, and code written in Java also runs in Groovy. This
 means we can execute the exact same code from our Java example without any
@@ -96,7 +100,7 @@ look at some practical uses for @product@'s script engine.
 name, you should be aware that JavaScript bears little resemblance to Java, but
 you can still use it in Liferay's script engine. 
 
-## JavaScript [](id=javascript)
+## JavaScript
 
 @product@ uses the Rhino JavaScript Engine to provide JavaScript support in the
 script engine. The following code provides a JavaScript version of our original
@@ -113,7 +117,7 @@ Java program:
  
 You can see that the JavaScript example is compact. Ruby is even more compact. 
 
-## Ruby [](id=ruby)
+## Ruby
 
 Ruby is supported through the use of JRuby. Our example could be implemented in
 Ruby as follows: 
@@ -124,7 +128,7 @@ Ruby as follows:
  
 Python users aren't left out either. 
 
-## Python [](id=python)
+## Python
 
 @product@ provides Python support based on Jython. Our example could be
 implemented with the following code:
@@ -138,10 +142,10 @@ implemented with the following code:
     for user in users:
         print user.getFullName()
 -->
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Running Scripts From the Script Console](/discover/portal/-/knowledge_base/7-0/running-scripts-from-the-script-console)
+[Running Scripts From the Script Console](/docs/7-0/user/-/knowledge_base/u/running-scripts-from-the-script-console)
 
-[Leveraging the Script Engine in Workflow](/discover/portal/-/knowledge_base/7-0/leveraging-the-script-engine-in-workflow)
+[Leveraging the Script Engine in Workflow](/docs/7-0/user/-/knowledge_base/u/leveraging-the-script-engine-in-workflow)
 
-[Using Liferay's Script Engine](/discover/portal/-/knowledge_base/7-0/using-liferays-script-engine)
+[Using Liferay's Script Engine](/docs/7-0/user/-/knowledge_base/u/using-liferays-script-engine)

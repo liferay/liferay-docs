@@ -1,4 +1,8 @@
-# Installing Liferay Screens and the Guestbook Mobile SDK [](id=installing-liferay-screens-and-the-guestbook-mobile-sdk)
+---
+header-id: installing-liferay-screens-and-the-guestbook-mobile-sdk
+---
+
+# Installing Liferay Screens and the Guestbook Mobile SDK
 
 For your iOS app to work with the Guestbook portlet, you must install the 
 following in your iOS project: 
@@ -11,7 +15,7 @@ following in your iOS project:
     call the Guestbook portlet's remote services. 
 
 -   **Liferay Screens:** Screens contains the Screenlet framework and 
-    [several built-in Screenlets](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-ios) 
+    [several built-in Screenlets](/docs/7-0/reference/-/knowledge_base/r/screenlets-in-liferay-screens-for-ios) 
     like Login Screenlet. Because these built-in Screenlets work with 
     @product@'s core apps, they make their server calls with Liferay's pre-built
     Mobile SDK. Note that all Screenlets, including those that make server calls
@@ -25,7 +29,7 @@ install the Guestbook Mobile SDK manually.
 This article walks you through the installation of the Guestbook Mobile SDK and 
 Liferay Screens. When you finish, you'll be ready to start developing the app. 
 
-## Anatomy of the Liferay Guestbook iOS Project [](id=anatomy-of-the-liferay-guestbook-ios-project)
+## Anatomy of the Liferay Guestbook iOS Project
 
 Before getting started, you should learn a couple of terms this Learning Path 
 uses when referring to the project's structure. Knowing these terms ensures that 
@@ -56,7 +60,7 @@ to see the finished app in GitHub.
 
 Now you're ready to install Liferay Screens! 
 
-## Installing Liferay Screens [](id=installing-liferay-screens)
+## Installing Liferay Screens
 
 You'll use 
 [CocoaPods](https://cocoapods.org/) 
@@ -131,7 +135,7 @@ to install Screens:
 Great! You just installed Liferay Screens and the Liferay Mobile SDK! Next, 
 you'll install the Guestbook Mobile SDK. 
 
-## Installing the Guestbook Mobile SDK [](id=installing-the-guestbook-mobile-sdk)
+## Installing the Guestbook Mobile SDK
 
 To install the Guestbook Mobile SDK, you must add its service classes to your 
 project. Recall that these service classes are Objective-C. 
@@ -225,7 +229,7 @@ instructions to do so:
 Awesome! You've successfully installed the Guestbook Mobile SDK. Next, you'll 
 configure your app to communicate with your @product@ installation. 
 
-## Configuring Communication with Liferay Portal [](id=configuring-communication-with-liferay-portal)
+## Configuring Communication with Liferay Portal
 
 For Liferay Screens to work with your app, you must configure it to communicate 
 with your @product@ installation. You'll do this by setting attributes in a 
@@ -279,7 +283,7 @@ with your @product@ installation. You'll do this by setting attributes in a
 
 Next, you'll configure iOS App Transport Security. 
 
-## Disabling App Transport Security [](id=disabling-app-transport-security)
+## Disabling App Transport Security
 
 App Transport Security is an iOS security feature that restricts all network 
 activity to HTTPS. It isn't necessary for use in development and testing. Since 

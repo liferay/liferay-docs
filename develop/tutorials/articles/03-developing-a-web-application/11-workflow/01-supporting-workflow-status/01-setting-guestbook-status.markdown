@@ -1,4 +1,8 @@
-# Setting the Guestbook Status [](id=setting-the-guestbook-status)
+---
+header-id: setting-the-guestbook-status
+---
+
+# Setting the Guestbook Status
 
 <div class="learn-path-step">
     <p>Supporting Workflow at the Service Layer<br>Step 1 of 3</p>

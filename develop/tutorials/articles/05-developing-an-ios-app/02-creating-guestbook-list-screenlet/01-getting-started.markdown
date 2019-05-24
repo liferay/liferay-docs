@@ -1,11 +1,15 @@
-# Getting Started with Guestbook List Screenlet [](id=getting-started-with-guestbook-list-screenlet-ios)
+---
+header-id: getting-started-with-guestbook-list-screenlet-ios
+---
+
+# Getting Started with Guestbook List Screenlet
 
 Before creating a Screenlet, you should know how you'll use it. If you plan to 
 use it in only one app, then you can create it in that app's project. If you 
 need to use it in several apps, however, then it's best to create it in a 
 separate project for redistribution. For information on creating Screenlets for 
 redistribution, see the tutorial 
-[Packaging iOS Themes](/develop/tutorials/-/knowledge_base/7-0/packaging-ios-themes). 
+[Packaging iOS Themes](/docs/7-0/tutorials/-/knowledge_base/t/packaging-ios-themes). 
 Even though that tutorial is for packaging Themes, you can use the same steps to 
 package Screenlets. 
 
@@ -29,7 +33,7 @@ Great! Now you have a folder to create Guestbook List Screenlet in. Before
 getting started, you should understand how pagination works in in list 
 Screenlets. 
 
-## Pagination [](id=pagination)
+## Pagination
 
 To ensure that users can scroll smoothly through large lists of items, list 
 Screenlets support 
@@ -40,7 +44,7 @@ for the start row and end row of a page in the list.
 
 Now you're ready to begin creating the Screenlet! 
 
-## Creating the Model Class [](id=creating-the-model-class)
+## Creating the Model Class
 
 Liferay Screens typically receives entities from a @product@ instance as a 
 `[String:AnyObject]` dictionary, where `String` is the entity's attribute and 
@@ -146,7 +150,7 @@ guestbook parameter in `attributes`. For example, the `guestbookId` property
 returns the value of the `guestbookId` parameter, the `groupId` property returns 
 the value of the `groupId` parameter, and so on. To see how the Guestbook 
 portlet defines these parameters, see the 
-[section on generating the portlet's back end](/develop/tutorials/-/knowledge_base/7-0/generating-the-back-end) 
+[section on generating the portlet's back end](/docs/7-0/tutorials/-/knowledge_base/t/generating-the-back-end) 
 in the Liferay Web Application Learning Path. 
 
 Also note that each computed property defaults to an empty string or `0`, 

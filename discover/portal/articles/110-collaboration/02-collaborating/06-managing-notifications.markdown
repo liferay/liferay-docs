@@ -1,4 +1,8 @@
-# Managing Notifications and Requests [](id=managing-notifications-and-requests)
+---
+header-id: managing-notifications-and-requests
+---
+
+# Managing Notifications and Requests
 
 If you subscribed to a blog or message board, or if someone sent you a
 private message, invitation, event reminder, or mentioned you in a post, you
@@ -18,7 +22,7 @@ view and manage your requests.
 
 ![Figure 2: The *Notifications List* section displays all your notifications in a paginated list.](../../../images/notifications-list.png)
 
-## Managing Notifications [](id=managing-notifications)
+## Managing Notifications
 
 Notifications can pile up after some time, especially if you were away for a few
 days. Since Liferay DXP Fix Pack 30 and Liferay Portal 7.0 CE GA5, the
@@ -42,7 +46,7 @@ To mark notifications, select *Mark as read* or *Mark as unread* from the
 actions menu for the notification. The *Delete* action permanently deletes the
 notification.
 
-### Managing Multiple Notifications [](id=managing-multiple-notifications)
+### Managing Multiple Notifications
 
 You can also manage multiple notifications at once. Select the checkbox next to
 notifications you want to manage and choose an option from the Management Bar.
@@ -57,18 +61,14 @@ Button](../../../images/button-delete.png)) (delete).
 Selecting the *Mark all notifications as read* action in the app's actions menu
 marks them as read.
 
-+$$$
-
-**Note:** This feature is only available if at least one notification is unread. 
-Clicking it marks all notifications as read, selected or not. 
-
-$$$
+| **Note:** This feature is only available if at least one notification is unread.
+| Clicking it marks all notifications as read, selected or not.
 
 **This action can not be undone.** You must manually paginate through all 
 the notifications and either bulk mark them as unread for the page, or 
 individually mark the notifications as unread if you wish to change the state.
 
-## Managing Requests [](id=managing-requests)
+## Managing Requests
 
 When you get a request, it appears in the *Requests List* section. 
 In its Action menu, you can click *Confirm* to accept, *Ignore* to decline, or

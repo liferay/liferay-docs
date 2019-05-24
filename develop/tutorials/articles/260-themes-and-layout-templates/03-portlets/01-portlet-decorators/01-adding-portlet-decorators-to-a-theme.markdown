@@ -1,4 +1,8 @@
-# Adding Portlet Decorators to a Theme [](id=adding-portlet-decorators-to-a-theme)
+---
+header-id: adding-portlet-decorators-to-a-theme
+---
+
+# Adding Portlet Decorators to a Theme
 
 Portlet Decorators are associated with a particular theme. If your theme
 does not define any portlet decorators, none are available. It is recommended
@@ -28,16 +32,12 @@ includes three Portlet Decorators:
 
     ![Figure 3: The Classic theme's Barebone Application Decorator displays only the application's content.](../../../../images/application-decorator-barebone.png)
 
-+$$$
-
-**Note:** Upgrading to @product@ will assign the *borderless* decorator
-automatically to those portlets that had the *Show Borders* option set to false
-in previous versions of Liferay.
-
-As mentioned, you should consider updating your @product@ Themes to provide at
-least one for the *decorate*, *borderless* and *barebone* use cases.
-
-$$$
+| **Note:** Upgrading to @product@ will assign the *borderless* decorator
+| automatically to those portlets that had the *Show Borders* option set to false
+| in previous versions of Liferay.
+| 
+| As mentioned, you should consider updating your @product@ Themes to provide at
+| least one for the *decorate*, *borderless* and *barebone* use cases.
 
 This tutorial demonstrates how to
 
@@ -48,7 +48,7 @@ This tutorial demonstrates how to
 Now that you know why you should have Portlet Decorators in your theme, you
 can learn how to add them to your theme.
 
-## Adding Portlet Decorators to a Theme [](id=adding-application-decorators-to-a-theme)
+## Adding Portlet Decorators to a Theme
 
 Adding Portlet Decorators to your theme is similar to adding Color Schemes. You
 just have to follow these steps:
@@ -57,7 +57,7 @@ just have to follow these steps:
 2.  Define the Application Decorator CSS styles
 3.  Optional: Add conditions to your theme's markup
 
-### Configuring liferay-look-and-feel.xml [](id=configuring-liferay-look-and-feel-xml)
+### Configuring liferay-look-and-feel.xml
 
 The first thing you must do is declare the Portlet Decorators in your theme's
 `liferay-look-and-feel.xml`.
@@ -111,7 +111,7 @@ You can define as many Portlet Decorators as you want, but it's recommended
 to include at least one for the *decorate*, *borderless* and *barebone* use
 cases.
 
-### Define the Styles for Your Application Decorator CSS Class [](id=define-the-styles-for-your-application-decorator-css-class)
+### Define the Styles for Your Application Decorator CSS Class
 
 Once you've declared your Portlet Decorators, it's time to define their
 effect in the application look and feel. While the previous step was
@@ -137,7 +137,7 @@ That's all that is required to add Portlet Decorators to your theme. If you
 want to modify your application's markup with your Portlet Decorators, read
 the next section.
 
-### Changing Your Application Markup with Portlet Decorators [](id=changing-your-application-markup-with-application-decorators)
+### Changing Your Application Markup with Portlet Decorators
 
 So far you've seen how to use Portlet Decorators to change the look and feel
 of an application with styles.
@@ -158,8 +158,8 @@ For example, this is how the Classic theme shows the application title when the
 There you have it! Now you know how to add Portlet Decorators to your theme.
 Let your creativity be your guide.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Themelets](/develop/tutorials/-/knowledge_base/7-0/themelets)
+[Themelets](/docs/7-0/tutorials/-/knowledge_base/t/themelets)
 
-[Making Your Applications Configurable](/develop/tutorials/-/knowledge_base/7-0/making-your-applications-configurable)
+[Making Your Applications Configurable](/docs/7-0/tutorials/-/knowledge_base/t/making-your-applications-configurable)

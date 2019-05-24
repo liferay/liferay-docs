@@ -1,16 +1,20 @@
-# Upgrading Portlets that use Service Builder [](id=upgrading-portlets-that-use-service-builder)
+---
+header-id: upgrading-portlets-that-use-service-builder
+---
+
+# Upgrading Portlets that use Service Builder
 
 @product-ver@ continues to use 
-[Service Builder](/develop/tutorials/-/knowledge_base/7-0/service-builder), so
+[Service Builder](/docs/7-0/tutorials/-/knowledge_base/t/service-builder), so
 you can focus on your application's business logic instead of its persistence
 details. It still generates model classes, local and remote services, and
 persistence. 
 
 This tutorial demonstrates upgrading a Liferay Plugins SDK 6.2 portlet
 called Guestbook portlet (project `guestbook-portlet`). It's from the
-[Writing a Data-Driven Application](/develop/tutorials/-/knowledge_base/6-2/writing-a-data-driven-application)
+[Writing a Data-Driven Application](/docs/6-2/tutorials/-/knowledge_base/t/writing-a-data-driven-application)
 section of the Liferay Portal 6.2 Learning Path
-[Writing a Liferay MVC Application](/develop/tutorials/-/knowledge_base/6-2/writing-a-liferay-mvc-application).
+[Writing a Liferay MVC Application](/docs/6-2/tutorials/-/knowledge_base/t/writing-a-liferay-mvc-application).
 
 ![Figure 1: The Guestbook portlet to model guestbooks and guestbook entries.](../../../../images/upgrade-service-builder-portlet-guestbook.png)
 
@@ -36,10 +40,10 @@ Upgrading most Service Builder Portlets involves these steps:
 
 Start by adapting the code. 
 
-## 1. Adapt the code to @product-ver@'s API [](id=1-adapt-the-code-to-product-vers-api)
+## 1. Adapt the code to @product-ver@'s API
 
 Use the
-[Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+[Code Upgrade Tool](/docs/7-0/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
 to update the code and resolve compilation issues quickly. Then fix any
 remaining compilation errors manually. 
 
@@ -67,17 +71,17 @@ Remove the `total` attribute assignment to make the tag like this:
 
 That's the Guestbook portlet's only compilation error you need to fix manually. 
 
-## 2. Resolve dependencies [](id=2-resolve-dependencies)
+## 2. Resolve dependencies
 
 Since the Guestbook portlet's dependencies haven't changed, there aren't any
 dependencies to resolve.  
 
 If you need to adapt a portlet's dependencies, refer to tutorial
-[Resolving a Plugin's Dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies).
+[Resolving a Plugin's Dependencies](/docs/7-0/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies).
 
-## 3. Build the services [](id=3-build-the-services)
+## 3. Build the services
 
-[Build the services](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code)
+[Build the services](/docs/7-0/tutorials/-/knowledge_base/t/running-service-builder-and-understanding-the-generated-code)
 as you did in Liferay Portal 6.2.
 
 The Guestbook portlet's `service.xml` file specifies exception class names in
@@ -137,12 +141,12 @@ The portlet is now available on @product@.
 
 Congratulations on upgrading and deploying a portlet that uses Service Builder.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Migrating Plugins SDK Projects to Workspace and Gradle](/develop/tutorials/-/knowledge_base/7-0/migrating-traditional-plugins-to-workspace-web-applications)
+[Migrating Plugins SDK Projects to Workspace and Gradle](/docs/7-0/tutorials/-/knowledge_base/t/migrating-traditional-plugins-to-workspace-web-applications)
 
-[Using Dependency Management Tools](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies#managing-dependencies-with-ivy)
+[Using Dependency Management Tools](/docs/7-0/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies#managing-dependencies-with-ivy)
 
-[Using the WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)
+[Using the WAB Generator](/docs/7-0/tutorials/-/knowledge_base/t/using-the-wab-generator)
 
-[Migrating Data Upgrade Processes](/develop/tutorials/-/knowledge_base/7-0/optimizing-app-upgrade-processes)
+[Migrating Data Upgrade Processes](/docs/7-0/tutorials/-/knowledge_base/t/optimizing-app-upgrade-processes)

@@ -1,4 +1,8 @@
-# Creating Data Lists [](id=creating-data-lists)
+---
+header-id: creating-data-lists
+---
+
+# Creating Data Lists
 
 <!-- Update Screen shots to Lunar Resort example -->
 
@@ -52,22 +56,18 @@ records.
 
 ![Figure 2: You can enter a new data record directly from the Dynamic Data Lists portlet by clicking on *Content* &rarr; *Dynamic data Lists* from the from the Product Menu, clicking the list you want to add a record for, then click the *Add* button.  Alternatively, you can add the Dynamic Data List Display portlet to a page and configure it to allow users to submit new data records.](../../../images/ddl-displayportlet-add.png)
 
-+$$$
-
-**Note:** If you want to allow guests to submit
- DDL forms, you'll need to enable the *Allow Multiple Submissions* feature.
- Liferay treats the Guest user as one user. Therefore, if a guest submits a DDL
- form, Liferay assumes the Guest user filled out their one form and it won't
- allow any other guests to submit a form. Thus, allowing the Guest user to
- submit multiple submissions allows all your guests to submit DDL forms.
-
-$$$
+| **Note:** If you want to allow guests to submit
+|  DDL forms, you'll need to enable the *Allow Multiple Submissions* feature.
+|  Liferay treats the Guest user as one user. Therefore, if a guest submits a DDL
+|  form, Liferay assumes the Guest user filled out their one form and it won't
+|  allow any other guests to submit a form. Thus, allowing the Guest user to
+|  submit multiple submissions allows all your guests to submit DDL forms.
 
 But how will the list of entries appear on a page? Whether its the awesome, new Lunar
 Rover Race Sign-Up sheet or that boring Jobs Listing, the display side of the
 equation is very important. 
 
-## Using Default Displays [](id=using-default-displays)
+## Using Default Displays
 
 Lists are published in the portal through the Dynamic Data List Display portlet.
 If list creators don't customize the display, their lists use the default display

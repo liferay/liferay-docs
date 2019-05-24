@@ -1,11 +1,15 @@
-# Add a Screenlet Delegate [](id=add-a-screenlet-delegate)
+---
+header-id: add-a-screenlet-delegate
+---
+
+# Add a Screenlet Delegate
 
 Screenlet delegates let other classes respond to your Screenlet's actions. For 
 example, 
-[Login Screenlet's delegate](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-ios#delegate) 
+[Login Screenlet's delegate](/docs/7-0/reference/-/knowledge_base/r/loginscreenlet-for-ios#delegate) 
 lets the app developer implement methods that respond to login success or 
 failure. Note that the 
-[reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-ios) 
+[reference documentation](/docs/7-0/reference/-/knowledge_base/r/screenlets-in-liferay-screens-for-ios) 
 for each Screenlet that comes with Liferay Screens lists the Screenlet's 
 delegate methods. 
 
@@ -91,10 +95,10 @@ Great! Now you know how to add a delegate to your Screenlets.
 
 **Related Topics**
 
-[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets)
+[Creating iOS Screenlets](/docs/7-0/tutorials/-/knowledge_base/t/creating-ios-screenlets)
 
-[Adding Screenlet Actions](/develop/tutorials/-/knowledge_base/7-0/adding-screenlet-actions)
+[Adding Screenlet Actions](/docs/7-0/tutorials/-/knowledge_base/t/adding-screenlet-actions)
 
-[Creating iOS List Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-list-screenlets)
+[Creating iOS List Screenlets](/docs/7-0/tutorials/-/knowledge_base/t/creating-ios-list-screenlets)
 
-[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-ios)
+[Architecture of Liferay Screens for iOS](/docs/7-0/tutorials/-/knowledge_base/t/architecture-of-liferay-screens-for-ios)

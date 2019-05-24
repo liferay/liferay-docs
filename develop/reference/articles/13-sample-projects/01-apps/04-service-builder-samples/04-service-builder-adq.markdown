@@ -1,4 +1,8 @@
-# Service Builder Application Demonstrating Actionable Dynamic Query [](id=service-builder-application-demonstrating-actionable-dynamic-query)
+---
+header-id: service-builder-application-demonstrating-actionable-dynamic-query
+---
+
+# Service Builder Application Demonstrating Actionable Dynamic Query
 
 This sample is similar to the
 [`basic` Service Builder sample](https://github.com/liferay/liferay-blade-samples/tree/7.0/gradle/apps/service-builder/basic),
@@ -27,13 +31,13 @@ To see the ADQ Service Builder sample in action, complete the following steps:
 
 You've leveraged the actionable dynamic query API in your sample!
 
-## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
+## What API(s) and/or code components does this sample highlight?
 
 This sample demonstrates @product@'s actionable dynamic query API. Specifically,
 it demonstrates how to create an ADQ, add criteria to an ADQ, specify an action
 for the ADQ, and execute the ADQ.
 
-## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
+## How does this sample leverage the API(s) and/or code component?
 
 An action request is sent to the `JSPPortlet` with a `cmd` request parameter.
 When the `JSPPortlet`'s `processAction` method processes the request, the value

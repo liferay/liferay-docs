@@ -1,22 +1,26 @@
-# Configuring Your Admin App's Actions Menu [](id=configuring-your-admin-apps-actions-menu)
+---
+header-id: configuring-your-admin-apps-actions-menu
+---
+
+# Configuring Your Admin App's Actions Menu
 
 In versions prior to @product-ver@, it was common to have a series of buttons or 
 menus with actions in the different views of the app. In @product-ver@ the 
 proposed pattern is to move all of these actions to the upper right menu of the 
 administrative portlet, leaving the primary action (often an "Add" operation) 
-visible in the add menu, [using the Add Button pattern](/develop/tutorials/-/knowledge_base/7-0/applying-the-add-button-pattern).
+visible in the add menu, [using the Add Button pattern](/docs/7-0/tutorials/-/knowledge_base/t/applying-the-add-button-pattern).
 For example, the web content application has the actions menu shown below:
 
 ![Figure 1: The upper right ellipsis menu contains most of the actions for the app.](../../../images/actions-menu.png)
 
 The changes covered in this tutorial do not refer to actions menus associated 
 with entities. For those, see 
-[Applying Lexicon Patterns to Your Forms, Navigation, and Search](/develop/tutorials/-/knowledge_base/7-0/applying-lexicon-patterns-to-forms-navigation-and-search). 
+[Applying Lexicon Patterns to Your Forms, Navigation, and Search](/docs/7-0/tutorials/-/knowledge_base/t/applying-lexicon-patterns-to-forms-navigation-and-search). 
 
 This tutorial shows how to configure the actions menu in your admin app. The
 first step is to create the `PortletConfigurationIconFactory` class.
 
-## Creating the Icon Factory Class [](id=creating-the-icon-factory-class)
+## Creating the Icon Factory Class
 
 To add an action to the upper right menu of the Admin portlet you must first 
 create a [`PortletConfigurationIcon` Component class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/configuration/icon/PortletConfigurationIcon.html).
@@ -63,7 +67,7 @@ For MVCPortlet with MVC Commands, the path should contain the
 Now that your `PortletConfigurationIconFactory` class is written, you can write 
 the `PortletConfigurationIcon` class next.
 
-## Writing the Configuration Icon Class [](id=writing-the-configuration-icon-class)
+## Writing the Configuration Icon Class
 
 The second class that you must write is a class that extends the 
 [`BasePortletConfigurationIcon` class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/configuration/icon/BasePortletConfigurationIcon.html).
@@ -129,8 +133,8 @@ should be added to the portlet:
 
 Now you know how to configure your admin app's actions!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Applying Lexicon Patterns to your Forms, Navigation, and Search](/develop/tutorials/-/knowledge_base/7-0/applying-lexicon-patterns-to-forms-navigation-and-search)
+[Applying Lexicon Patterns to your Forms, Navigation, and Search](/docs/7-0/tutorials/-/knowledge_base/t/applying-lexicon-patterns-to-forms-navigation-and-search)
 
-[Configuring Your Application's Title and Back Link](/develop/tutorials/-/knowledge_base/7-0/configuring-your-applications-title-and-back-link)
+[Configuring Your Application's Title and Back Link](/docs/7-0/tutorials/-/knowledge_base/t/configuring-your-applications-title-and-back-link)

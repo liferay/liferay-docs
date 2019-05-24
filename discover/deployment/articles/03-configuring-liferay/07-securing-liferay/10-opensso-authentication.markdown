@@ -1,4 +1,8 @@
-# OpenAM Single Sign On Authentication [](id=opensso-single-sign-on-authentication)
+---
+header-id: opensso-single-sign-on-authentication
+---
+
+# OpenAM Single Sign On Authentication
 
 OpenAM is an open source single sign-on solution that comes from the code base
 of Sun's System Access Manager product. @product@ integrates with OpenAM,
@@ -40,12 +44,8 @@ find these settings to configure. The values configured here provide the default
 values for all portal instances. Enter the in the same format as you would when
 initializing a Java primitive type with a literal value.
 
-+$$$
-
-**Note**: OpenAM 12 and below work with @product@, but are at end of life.
-Because of this, we recommend only OpenAM 13 for production use. OpenAM 13 requires @product@ Fix Pack 80+ patch level.
-
-$$$
+| **Note**: OpenAM 12 and below work with @product@, but are at end of life.
+| Because of this, we recommend only OpenAM 13 for production use. OpenAM 13 requires @product@ Fix Pack 80+ patch level.
 
 Property Label | Property Key | Description | Type
 ----- | ----- | ----- | -----
@@ -67,7 +67,7 @@ top.
 
 ![Figure 1: @product@'s OpenSSO tab lets you configure OpanAM.](../../../images/opensso.png)
 
-## Summary [](id=summary)
+## Summary
 
 OpenAM is useful when all the applications that require SSO are within the
 same web domain. Thus, OpenAM it is often used for intranets. OpenAM can be

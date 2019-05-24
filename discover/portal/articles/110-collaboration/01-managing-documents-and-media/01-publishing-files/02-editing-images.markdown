@@ -1,4 +1,8 @@
-# Editing Images [](id=editing-images)
+---
+header-id: editing-images
+---
+
+# Editing Images
 
 You've uploaded an image to the document library. It's almost perfect, but it's 
 missing a little something. It could use a little more focus to really highlight 

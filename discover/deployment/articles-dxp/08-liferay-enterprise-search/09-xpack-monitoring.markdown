@@ -1,7 +1,11 @@
-# Installing X-Pack Monitoring for Elasticsearch 6.5 [](id=installing-x-pack-monitoring-for-elasticsearch-6)
+---
+header-id: installing-x-pack-monitoring-for-elasticsearch-6
+---
+
+# Installing X-Pack Monitoring for Elasticsearch 6.5
 
 To monitor Elasticsearch, use X-Pack Monitoring. First 
-[install X-Pack onto Elasticsearch](/discover/deployment/-/knowledge_base/7-0/securing-elasticsearch-6-with-x-pack)
+[install X-Pack onto Elasticsearch](/docs/7-0/deploy/-/knowledge_base/d/securing-elasticsearch-6-with-x-pack)
 and configure security if you're using X-Pack's security features. Then come
 back here for instructions on installing and configuring Kibana (the monitoring
 server) with X-Pack so that Elasticsearch, Kibana, and @product@ can communicate
@@ -30,9 +34,9 @@ this integration. Contact
 5.  Configure the connector to communicate with Elasticsearch.
 
 For the X-Pack security procedure, refer to the 
-[X-Pack security article](/discover/deployment/-/knowledge_base/7-0/securing-elasticsearch-6-with-x-pack).
+[X-Pack security article](/docs/7-0/deploy/-/knowledge_base/d/securing-elasticsearch-6-with-x-pack).
 
-## Enable Data Collection [](id=enable-data-collection)
+## Enable Data Collection
 
 Monitoring is enabled on Elasticsearch by default, but data collection isn't.
 Enable data collection by adding this line to `elasticsearch.yml`.
@@ -41,7 +45,7 @@ Enable data collection by adding this line to `elasticsearch.yml`.
 
 Now install Kibana.
 
-## Install Kibana [](id=install-kibana)
+## Install Kibana
 
 Make sure to install the correct version of Kibana. Check the 
 [Liferay Enterprise Search compatibility matrix](https://web.liferay.com/group/customer/dxp/support/compatibility-matrix/enterprise-search)
@@ -65,7 +69,7 @@ for details.
 If you're using X-Pack's security features on the Elasticsearch server, there's
 additional configuration required before starting Kibana.
 
-### Configure Kibana with Authentication [](id=configure-kibana-with-authentication)
+### Configure Kibana with Authentication
 
 If X-Pack requires authentication to access the Elasticsearch cluster, follow
 these steps or refer to 
@@ -89,7 +93,7 @@ these steps or refer to
     and navigate to `localhost:5601`. Log in with a user who has the
     `kibana_user` role.
 
-### Configuring Kibana with Encryption [](id=configuring-kibana-with-encryption)
+### Configuring Kibana with Encryption
 
 Follow these steps to configure Kibana if X-Pack encrypts communication with the
 Elasticsearch cluster. Consult 
@@ -116,7 +120,7 @@ environment, refer to
 After this step you can access Kibana at `https://localhost:5601` and sign in
 with a Kibana user. The last step is to hook Kibana up with @product@.
 
-## Configuring the Liferay Connector to X-Pack Monitoring [](id=configuring-the-liferay-connector-to-x-pack-monitoring)
+## Configuring the Liferay Connector to X-Pack Monitoring
 
 If you have a Liferay Enterprise Search (Premium or Standard) subscription,
 download the Liferay Connector to X-Pack Monitoring [Elastic Stack 6.x]. Install
@@ -125,7 +129,7 @@ there is to it.
 
 1.  Once the connector is installed and Kibana and Elasticsearch are securely
     configured, create a 
-    [configuration file](/discover/portal/-/knowledge_base/7-0/understanding-system-configuration-files)
+    [configuration file](/docs/7-0/user/-/knowledge_base/u/understanding-system-configuration-files)
     named
 
         com.liferay.portal.search.elasticsearch6.xpack.monitoring.web.internal.configuration.XPackMonitoringConfiguration.config
@@ -184,7 +188,7 @@ there is to it.
 
 Restart @product@ and Kibana.
 
-## Monitoring in @product@ [](id=monitoring-in-product)
+## Monitoring in @product@
 
 Once Kibana and X-Pack are successfully installed and configured and all the
 servers are up and running, add the X-Pack Monitoring portlet to a page:

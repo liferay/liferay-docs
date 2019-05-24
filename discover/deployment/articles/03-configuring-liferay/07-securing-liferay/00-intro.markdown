@@ -1,4 +1,8 @@
-# @product@ Security [](id=liferay-portal-security)
+---
+header-id: liferay-portal-security
+---
+
+# @product@ Security
 
 Liferay takes security very seriously. Liferay has established several
 procedures to make sure that @product@ is as secure as possible. First of

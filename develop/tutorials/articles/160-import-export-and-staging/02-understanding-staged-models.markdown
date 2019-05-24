@@ -1,4 +1,8 @@
-# Understanding Staged Models [](id=understanding-staged-models)
+---
+header-id: understanding-staged-models
+---
+
+# Understanding Staged Models
 
 To track an entity of an application with the Staging framework, you must
 implement the
@@ -13,15 +17,15 @@ and both implement the `StagedModel` interface. Once you've configured your
 staged models, you can create staged model data handlers, which supply
 information about a staged model (entity) and its referenced content to the
 Export/Import and Staging frameworks. See the
-[Understanding Data Handlers](/develop/tutorials/-/knowledge_base/7-0/understanding-data-handlers)
+[Understanding Data Handlers](/docs/7-0/tutorials/-/knowledge_base/t/understanding-data-handlers)
 tutorial for more information.
 
 There are two ways to create staged models for your application's entities:
 
 - Using Service Builder to generate the required Staging implementations
-  ([tutorial](/develop/tutorials/-/knowledge_base/7-0/generating-staged-models-using-service-builder)).
+  ([tutorial](/docs/7-0/tutorials/-/knowledge_base/t/generating-staged-models-using-service-builder)).
 - Implementing the required Staging interfaces manually
-  ([tutorial](/develop/tutorials/-/knowledge_base/7-0/creating-staged-models-manually)).
+  ([tutorial](/docs/7-0/tutorials/-/knowledge_base/t/creating-staged-models-manually)).
 
 You can follow step-by-step procedures for creating staged models for your
 entities by visiting their respective tutorials.
@@ -39,7 +43,7 @@ You'll learn more about this later.
 
 You'll explore the provided staged model interfaces next.
 
-## Staged Model Interfaces [](id=staged-model-interfaces)
+## Staged Model Interfaces
 
 The `StagedModel` interface must be implemented by your app's model classes, but
 this is typically done through inheritance by implementing one of the
@@ -80,13 +84,13 @@ bookmark entries are group models.
 Now that you have a better understanding about staged model interfaces, you'll
 dive into the attributes used in Staging and why they're important.
 
-## Important Attributes in Staging [](id=important-attributes-in-staging)
+## Important Attributes in Staging
 
 If you'd like to generate your staged models using
-[Service Builder](/develop/tutorials/-/knowledge_base/7-0/service-builder), you
+[Service Builder](/docs/7-0/tutorials/-/knowledge_base/t/service-builder), you
 must define the proper attributes in your project's `service.xml` file. If you'd
 like more detail on how this is done, see the
-[Generating Staged Models using Service Builder](/develop/tutorials/-/knowledge_base/7-0/generating-staged-models-using-service-builder)
+[Generating Staged Models using Service Builder](/docs/7-0/tutorials/-/knowledge_base/t/generating-staged-models-using-service-builder)
 tutorial. You'll learn some general information about this process next.
 
 One of the most important attributes used by the Staging framework is the UUID
@@ -97,7 +101,7 @@ Because the UUID always remains the same, it's unique across multiple systems.
 Why is this so important?
 
 Suppose you're using
-[remote staging](/discover/portal/-/knowledge_base/7-0/enabling-remote-live-staging)
+[remote staging](/docs/7-0/user/-/knowledge_base/u/enabling-remote-live-staging)
 and you create a new entity on your local staging site and publish it to your
 remote live site. What happens when you go back to modify the entity on your
 local site and want to publish those changes? Without a UUID, the Staging
@@ -119,7 +123,7 @@ If you want a staged grouped model, also include the `groupId` and
 
 Next, you'll learn how to build staged models from scratch.
 
-## Adapting Your Business Logic to Build Staged Models [](id=adapting-your-business-logic-to-build-staged-models)
+## Adapting Your Business Logic to Build Staged Models
 
 What if you don't want to extend your model with special attributes that may not
 be needed in your business logic? In this case, you should adapt your business
@@ -162,5 +166,5 @@ To adapt your model classes to staged models, follow the steps outlined below:
 
 To step through the process for leveraging the Model Adapter Builder for an
 existing app, visit the
-[Creating Staged Models Manually](/develop/tutorials/-/knowledge_base/7-0/creating-staged-models-manually)
+[Creating Staged Models Manually](/docs/7-0/tutorials/-/knowledge_base/t/creating-staged-models-manually)
 tutorial.

@@ -1,4 +1,8 @@
-# Web Services [](id=web-services)
+---
+header-id: web-services
+---
+
+# Web Services
 
 Generating and invoking web services is a central part of the Liferay 
 development experience. After all, what good is it if you can't generate remote 

@@ -1,4 +1,8 @@
-# CKEditor Plugin Reference Guide [](id=ckeditor-plugin-reference-guide)
+---
+header-id: ckeditor-plugin-reference-guide
+---
+
+# CKEditor Plugin Reference Guide
 
 This reference guide provides a list of the default CKEditor plugins bundled 
 with @product@'s AlloyEditor. Each plugin below links to its `plugin.js` file 
@@ -67,29 +71,25 @@ for reference:
 - [wikilink](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/foundation/frontend-editor/frontend-editor-ckeditor-web/src/main/resources/META-INF/resources/_diffs/plugins/wikilink/plugin.js)
 - [wysiwygarea](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/wysiwygarea/plugin.js)
 
-+$$$
-
-**Note:** The following CKEditor plugins are not available for inline mode in 
-AlloyEditor at this time; however, you can still use them in the classic 
-CKEditor:
-
-- [maximize](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/maximize/plugin.js)
-- [print](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/print/plugin.js)
-- [save](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/save/plugin.js)
-
-To use the Classic CKEditor instead of AlloyEditor, there are a few 
-properties you can use, depending on the portlet. Add the 
-[properties](https://github.com/liferay/liferay-portal/blob/7.0.x/portal-impl/src/portal.properties#L6030-L6039) 
-that you need to your `portal-ext.properties` file:
-
-    editor.wysiwyg.default=ckeditor
-    editor.wysiwyg.portal-impl.portlet.ddm.text_html.ftl=ckeditor
-    editor.wysiwyg.portal-web.docroot.html.portlet.announcements.edit_entry.jsp=ckeditor
-    editor.wysiwyg.portal-web.docroot.html.portlet.blogs.edit_entry.jsp=ckeditor
-    editor.wysiwyg.portal-web.docroot.html.portlet.mail.edit.jsp=ckeditor
-    editor.wysiwyg.portal-web.docroot.html.portlet.mail.edit_message.jsp=ckeditor
-    editor.wysiwyg.portal-web.docroot.html.portlet.message_boards.edit_message.html.jsp=ckeditor
-    editor.wysiwyg.portal-web.docroot.html.taglib.ui.discussion.jsp=ckeditor
-    editor.wysiwyg.portal-web.docroot.html.taglib.ui.email_notification_settings.jsp=ckeditor
-
-$$$
+| **Note:** The following CKEditor plugins are not available for inline mode in
+| AlloyEditor at this time; however, you can still use them in the classic
+| CKEditor:
+| 
+| - [maximize](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/maximize/plugin.js)
+| - [print](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/print/plugin.js)
+| - [save](https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/save/plugin.js)
+| 
+| To use the Classic CKEditor instead of AlloyEditor, there are a few
+| properties you can use, depending on the portlet. Add the
+| [properties](https://github.com/liferay/liferay-portal/blob/7.0.x/portal-impl/src/portal.properties#L6030-L6039)
+| that you need to your `portal-ext.properties` file:
+| 
+|     editor.wysiwyg.default=ckeditor
+|     editor.wysiwyg.portal-impl.portlet.ddm.text_html.ftl=ckeditor
+|     editor.wysiwyg.portal-web.docroot.html.portlet.announcements.edit_entry.jsp=ckeditor
+|     editor.wysiwyg.portal-web.docroot.html.portlet.blogs.edit_entry.jsp=ckeditor
+|     editor.wysiwyg.portal-web.docroot.html.portlet.mail.edit.jsp=ckeditor
+|     editor.wysiwyg.portal-web.docroot.html.portlet.mail.edit_message.jsp=ckeditor
+|     editor.wysiwyg.portal-web.docroot.html.portlet.message_boards.edit_message.html.jsp=ckeditor
+|     editor.wysiwyg.portal-web.docroot.html.taglib.ui.discussion.jsp=ckeditor
+|     editor.wysiwyg.portal-web.docroot.html.taglib.ui.email_notification_settings.jsp=ckeditor

@@ -1,4 +1,8 @@
-# Creating Pages from Templates [](id=creating-pages-from-templates)
+---
+header-id: creating-pages-from-templates
+---
+
+# Creating Pages from Templates
 
 Page templates function similarly to site templates but at the page level. Each
 page template provides a pre-configured page to reuse. Within a page template,
@@ -67,7 +71,7 @@ those pages. Site administrators can disable this behavior by disabling the
 *Inherit Changes* selector. Occasionally, propagation for page templates fails
 due to unintended errors. To learn how to manage a failed page template
 propagation, visit the
-[Propagating Changes from Site Templates to Sites](/discover/portal/-/knowledge_base/7-0/building-sites-from-templates#propagating-changes-from-site-templates-to-sites)
+[Propagating Changes from Site Templates to Sites](/docs/7-0/user/-/knowledge_base/u/building-sites-from-templates#propagating-changes-from-site-templates-to-sites)
 section of this chapter.
 
 If staging has been enabled, changes to the page template are automatically
@@ -79,7 +83,7 @@ Changes* selector does not appear.
 You'll learn about staging later in the User's Guide. For now you'll look at
 importing and exporting templates.
 
-## Sharing Page Templates [](id=sharing-page-templates)
+## Sharing Page Templates
 
 If you want to export a page that uses a page template to a different
 environment (through a LAR file or remote publication), the template must be
@@ -98,7 +102,7 @@ To export a page using a page template, use the following process:
 
 The page template can now be imported normally to your new environment. For more
 information on exporting/importing content, visit the
-[Importing/Exporting Pages and Content](/discover/portal/-/knowledge_base/7-0/importing-exporting-pages-and-content)
+[Importing/Exporting Pages and Content](/docs/7-0/user/-/knowledge_base/u/importing-exporting-pages-and-content)
 article.
 
 Next, you'll examine the tools @product@ provides for exporting/importing content.

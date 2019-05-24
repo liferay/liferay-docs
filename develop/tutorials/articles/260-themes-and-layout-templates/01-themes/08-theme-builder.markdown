@@ -1,17 +1,21 @@
-# Theme Builder [](id=theme-builder)
+---
+header-id: theme-builder
+---
+
+# Theme Builder
 
 Liferay's Theme Builder gives developers who aren't using
-[Liferay's Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+[Liferay's Theme Generator](/docs/7-0/tutorials/-/knowledge_base/t/themes-generator)
 (e.g., Gradle or Maven) a way to compile and build a theme WAR file. To use the
 Theme Builder, you must apply it to your project. If you're unsure how to
 structure themes for @product@, see the
-[Introduction to Themes](/develop/tutorials/-/knowledge_base/7-0/introduction-to-themes)
+[Introduction to Themes](/docs/7-0/tutorials/-/knowledge_base/t/introduction-to-themes)
 tutorial.
 
 Follow the instructions below to apply the Theme Builder plugin and build your
 theme WAR.
 
-##  Step 1: Apply the Theme Builder Plugin to Your Theme Project [](id=step-1-apply-the-theme-builder-plugin-to-your-theme-project)
+##  Step 1: Apply the Theme Builder Plugin to Your Theme Project
 
 Liferay provides two Theme Builder plugins depending on your build tool:
 
@@ -52,12 +56,12 @@ required parameters to build your theme.
 
 For assistance applying the Theme Builder plugin for a Gradle or Maven project,
 see the
-[Theme Builder Gradle Plugin](/develop/reference/-/knowledge_base/7-0/theme-builder-gradle-plugin)
+[Theme Builder Gradle Plugin](/docs/7-0/reference/-/knowledge_base/r/theme-builder-gradle-plugin)
 or
-[Building Themes in a Maven Project](/develop/tutorials/-/knowledge_base/7-0/building-themes-in-a-maven-project)
+[Building Themes in a Maven Project](/docs/7-0/tutorials/-/knowledge_base/t/building-themes-in-a-maven-project)
 articles, respectively.
 
-## Step 2: Build Your Theme [](id=step-2-build-your-theme)
+## Step 2: Build Your Theme
 
 Execute the appropriate command based on your build tool: 
 
@@ -75,5 +79,5 @@ used:
 That's it! You've successfully configured and leveraged the Theme Builder in
 your project. You can also use the Theme Builder to migrate a Plugins SDK
 theme to Liferay Workspace. See the
-[Migrating a Theme from the Plugins SDK to Workspace](/develop/tutorials/-/knowledge_base/7-0/migrating-a-theme-from-the-plugins-sdk-to-workspace)
+[Migrating a Theme from the Plugins SDK to Workspace](/docs/7-0/tutorials/-/knowledge_base/t/migrating-a-theme-from-the-plugins-sdk-to-workspace)
 tutorial for details.

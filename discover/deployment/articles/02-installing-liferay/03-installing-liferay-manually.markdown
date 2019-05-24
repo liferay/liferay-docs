@@ -1,7 +1,11 @@
-# Installing @product@ Manually [](id=installing-liferay-manually)
+---
+header-id: installing-liferay-manually
+---
+
+# Installing @product@ Manually
 
 The easiest way to install @product@ is to
-[use a @product@ bundle](/discover/deployment/-/knowledge_base/7-0/installing-product).
+[use a @product@ bundle](/docs/7-0/deploy/-/knowledge_base/d/installing-product).
 However, this is not always possible. Some organizations have an existing
 infrastructure into which @product@ must be installed. Other organizations have
 standardized on a particular application server. @product@ has been designed to
@@ -11,7 +15,7 @@ straightforward. Before you get started, note that there are two distinct
 approaches to managing @product@'s data source and mail session. Let's review
 these options.
 
-## Using Data Sources [](id=using-data-sources)
+## Using Data Sources
 
 @product@ provides two ways to configure your data source:
 
@@ -41,7 +45,7 @@ Manual Configuration section below.
 Since mail sessions are configured similarly to data sources, we'll look at
 them next.
 
-## Using Mail Sessions [](id=using-mail-sessions)
+## Using Mail Sessions
 
 As with databases, you have two ways to configure your mail server:
 
@@ -78,7 +82,7 @@ to follow the instructions in the Manual Configuration section below. The
 includes instructions for configuring your application server to manage
 @product@'s database connection and mail server.
 
-## Manual Configuration [](id=manual-configuration)
+## Manual Configuration
 
 If you want your application server to manage either your database connection
 or mail server (or both), you'll need to manually create this configuration.
@@ -140,7 +144,7 @@ All the instructions above assumed that you wanted to install @product@ at
 the root context of your server. But what if that isn't the case? Next, you'll
 see how to use a different context for @product@.
 
-## Making @product@ Coexist with Other Java EE Applications [](id=making-liferay-coexist-with-other-java-ee-applications)
+## Making @product@ Coexist with Other Java EE Applications
 
 By default, @product@ is configured to sit at the root (i.e., `/`) of your
 application server. Dedicating your application server to running only @product@

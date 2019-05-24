@@ -1,4 +1,8 @@
-# Developing a Web Application [](id=developing-a-web-application)
+---
+header-id: developing-a-web-application
+---
+
+# Developing a Web Application
 
 In this Learning Path, you'll create the Liferay Guestbook Web Application from 
 scratch using tools like Liferay @ide@ and BLADE tools. As you create this 

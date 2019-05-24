@@ -1,4 +1,8 @@
-# Template Context Contributor Template [](id=template-context-contributor-template)
+---
+header-id: template-context-contributor-template
+---
+
+# Template Context Contributor Template
 
 In this article, you'll learn how to create a Liferay template context
 contributor as a Liferay module. To create a template context contributor via
@@ -65,5 +69,5 @@ files to the folders outlined above. You can visit the
 [template-context-contributor](https://github.com/liferay/liferay-blade-samples/tree/7.0/gradle/themes/template-context-contributor)
 sample project for a more expanded sample of a template context contributor.
 Likewise, see the
-[Context Contributors](/develop/tutorials/-/knowledge_base/7-0/context-contributors)
+[Context Contributors](/docs/7-0/tutorials/-/knowledge_base/t/context-contributors)
 tutorial for instructions on customizing a template context contributor project.

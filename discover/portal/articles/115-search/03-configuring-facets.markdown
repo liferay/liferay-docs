@@ -1,4 +1,8 @@
-# Configuring Facets [](id=configuring-facets)
+---
+header-id: configuring-facets
+---
+
+# Configuring Facets
 
 To get started using faceted search, enter a search term in the Search
 application's search bar. You'll see a page with results on the right and a
@@ -26,7 +30,7 @@ are Blogs Entries). So what facets are included in @product@ by default?
 In this article, explore how facets are used by end users, and learn how
 administrators can configure facets for their use case.
 
-## Using Facets [](id=using-facets)
+## Using Facets
 
 After a search is executed, clicking on a specific site from the Site facet
 filters the search results to only display assets within the specified site.
@@ -34,28 +38,24 @@ Clicking on a specific user filters the search results to only display assets
 added by the specified user. The frequency with which the term was found for
 each facet is listed in parentheses after the facet. Sometimes, viewing assets
 with certain [tags or
-categories](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories)
+categories](/docs/7-0/user/-/knowledge_base/u/organizing-content-with-tags-and-categories)
 is helpful.
 
 ![Figure 2: Asset tag facets let you see how many assets contain the terms for which you searched *and* contain certain tags. Click on a specific tag to see only content to which the tag has been applied.](../../images/faceted-search-tags.png)
 
-+$$$
-
-**Example:** Pretend you're an accomplished oboe player (maybe you really are,
-but if not, pretend), and you're visiting a site for classical musicians. You
-remember reading a great technical analysis of Johann Bach's compositions, but
-you forgot to bookmark it (or would it be a *bachmark*?). You enter the term
-*bach* into the search bar, and, because Johann Bach was a very important and
-famous composer, you get lots of results: too many, in fact. At first you're
-discouraged but you remember that there's a site member who produces most of the
-site's good technical content, who's named *back2bach*. You see that his name is
-listed in the User facet, and there aren't many results in the facet count (the
-number in parentheses next to the facet). You click into the facet and quickly
-find the content you were looking for.
-
-![Figure 3: When presented with lots of search results, facets are used to narrow down the results list so users can find relevant content.](../../images/search-facets1.png)
-
-$$$
+| **Example:** Pretend you're an accomplished oboe player (maybe you really are,
+| but if not, pretend), and you're visiting a site for classical musicians. You
+| remember reading a great technical analysis of Johann Bach's compositions, but
+| you forgot to bookmark it (or would it be a *bachmark*?). You enter the term
+| *bach* into the search bar, and, because Johann Bach was a very important and
+| famous composer, you get lots of results: too many, in fact. At first you're
+| discouraged but you remember that there's a site member who produces most of the
+| site's good technical content, who's named *back2bach*. You see that his name is
+| listed in the User facet, and there aren't many results in the facet count (the
+| number in parentheses next to the facet). You click into the facet and quickly
+| find the content you were looking for.
+| 
+| ![Figure 3: When presented with lots of search results, facets are used to narrow down the results list so users can find relevant content.](../../images/search-facets1.png)
 
 Clicking on a facet narrows down the search results. It's added to the filter
 list and the results list is refined by the selected facets. If you need to
@@ -72,7 +72,7 @@ all the available asset types are visible.](../../images/search-facet-any.png)
 The default facet behavior is quite useful, but you can configure the facets to
 your liking.
 
-## Facet Settings [](id=facet-settings)
+## Facet Settings
 
 To configure the Search application's facets, click the options menu
 (![Options](../../images/icon-options.png)) and select *Configuration*. The tab
@@ -117,7 +117,7 @@ rendered.
 **Range (Modified Date facet only)**
 : Define an interval within all the matching terms frequencies' are summed.
 
-## Asset Tags and Categories [](id=asset-tags-and-categories)
+## Asset Tags and Categories
 
 If tags or categories have been applied to any asset that appears in the result
 set, it may be displayed in the Asset Tag or Asset Category facet, respectively.

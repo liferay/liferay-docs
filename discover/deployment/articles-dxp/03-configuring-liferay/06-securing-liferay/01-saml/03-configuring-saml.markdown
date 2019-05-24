@@ -1,4 +1,8 @@
-# Configuring SAML [](id=configuring-saml)
+---
+header-id: configuring-saml
+---
+
+# Configuring SAML
 
 As noted in the previous tutorials, anything related to configuring SP
 connections must be done through the SAML Admin UI where configurations are
@@ -29,15 +33,11 @@ Configuration Admin. The affected properties are those in the
 The SAML Admin UI remains the place for creating the portal instance scoped
 configuration instances.
 
-+$$$
-
-**Note:** Don't use OSGi `.config` files or @product@'s System Settings Control
-Panel application to configure SAML providers (IdP or SP). The System Settings
-UI is auto-generated, and is for advanced admins. It does not perform the
-enhanced validation on the fields that the SAML Admin UI performs, so it could
-allow administrators to create invalid configurations. 
-
-$$$
+| **Note:** Don't use OSGi `.config` files or @product@'s System Settings Control
+| Panel application to configure SAML providers (IdP or SP). The System Settings
+| UI is auto-generated, and is for advanced admins. It does not perform the
+| enhanced validation on the fields that the SAML Admin UI performs, so it could
+| allow administrators to create invalid configurations.
 
 Note that there is also a system wide configuration, represented by the
 `SamlConfiguration` metatype. 

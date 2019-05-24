@@ -1,4 +1,8 @@
-# Message Listeners [](id=message-listeners)
+---
+header-id: message-listeners
+---
+
+# Message Listeners
 
 If you're interested in messages sent to a destination, you need to "listen" for
 them. That is, you must create and register a message listener for the
@@ -25,16 +29,12 @@ Here are the ways to register your listener with Message Bus:
     specific destination and use it directly to register the listener with that
     destination.
 
-+$$$
-
-**Note**: The [`DestinationNames` class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/DestinationNames.html)
-defines `String` constants for Liferay's preconfigured destinations. 
-
-$$$
+| **Note**: The [`DestinationNames` class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/DestinationNames.html)
+| defines `String` constants for Liferay's preconfigured destinations.
 
 The Declarative Services component module provides the easiest way to register a message listener. 
 
-## Automatic Registration as a Component [](id=automatic-registration-as-a-component)
+## Automatic Registration as a Component
 
 You can specify a message listener in the Declarative Services (DS) `@Component`
 annotation: 
@@ -62,7 +62,7 @@ yet registered, Message Bus queues the listener until the destination registers.
 Registration as a component is the preferred way to register message listeners
 to destinations.
 
-## Registering via MessageBus [](id=registering-via-messagebus)
+## Registering via MessageBus
 
 You can use the [`MessageBus` instance](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/messaging/MessageBus.html)
 directly to register message listeners to destinations. You might want to do
@@ -108,7 +108,7 @@ register the listener to a destination named `"myDestination"`. When this
 registrator component is destroyed, the `deactivate` method unregisters the
 listener. 
 
-## Registering directly to the Destination [](id=registering-directly-to-the-destination)
+## Registering directly to the Destination
 
 You can use a `Destination` instance to register a listener to that destination.
 You might want to do this if, for example, you want to create some special proxy
@@ -155,8 +155,8 @@ the `deactivate` method unregisters the listener.
 Now you know how to create and register message listeners for receiving
 messages sent to the destinations.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Messaging Destinations](/develop/tutorials/-/knowledge_base/7-0/messaging-destinations) 
+[Messaging Destinations](/docs/7-0/tutorials/-/knowledge_base/t/messaging-destinations) 
 
-[Sending Messages](/develop/tutorials/-/knowledge_base/7-0/sending-messages)
+[Sending Messages](/docs/7-0/tutorials/-/knowledge_base/t/sending-messages)

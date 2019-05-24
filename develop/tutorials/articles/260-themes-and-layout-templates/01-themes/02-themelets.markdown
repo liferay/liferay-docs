@@ -1,4 +1,8 @@
-# Themelets [](id=themelets)
+---
+header-id: themelets
+---
+
+# Themelets
 
 Themelets are small, extendable, and reusable pieces of code. Whereas themes
 require multiple components, a themelet only requires the files you wish to
@@ -28,10 +32,10 @@ This tutorial demonstrates how to:
 
 To create a themelet, you need a theme to extend and the Liferay Theme Generator 
 and dependencies installed, as explained in the 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator) 
+[Liferay Theme Generator](/docs/7-0/tutorials/-/knowledge_base/t/themes-generator) 
 tutorial.
 
-## Creating a Themelet [](id=creating-a-themelet)
+## Creating a Themelet
 
 Follow these steps to create a themelet:
 
@@ -57,7 +61,7 @@ Follow these steps to create a themelet:
 
 Now that your themelet is developed, you can install it in your theme. 
 
-## Installing a Themelet [](id=installing-a-themelet)
+## Installing a Themelet
 
 After you've developed your themelet, follow the steps below to install it into
 your theme.
@@ -81,8 +85,8 @@ your theme.
 Your themelet is installed! As you can see, themelets are a handy tool to add to
 your theme development bag o' tricks.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Importing Resources with Your Themes](/develop/tutorials/-/knowledge_base/7-0/importing-resources-with-a-theme)
+[Importing Resources with Your Themes](/docs/7-0/tutorials/-/knowledge_base/t/importing-resources-with-a-theme)
 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+[Liferay Theme Generator](/docs/7-0/tutorials/-/knowledge_base/t/themes-generator)

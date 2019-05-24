@@ -1,4 +1,8 @@
-# Classes Moved from portal-service.jar [](id=classes-moved-from-portal-service-jar)
+---
+header-id: classes-moved-from-portal-service-jar
+---
+
+# Classes Moved from portal-service.jar
 
 <p>
 To leverage the benefits of modularization in @product-ver@, many classes from
@@ -6370,6 +6374,6 @@ caption {
 
 **Related Articles:**
 
-[Adapting to @product-ver@'s API with the Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
+[Adapting to @product-ver@'s API with the Code Upgrade Tool](/docs/7-0/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
 
-[Development Reference](/develop/reference/-/knowledge_base/7-0/development-reference)
+[Development Reference](/docs/7-0/reference/-/knowledge_base/r/development-reference)

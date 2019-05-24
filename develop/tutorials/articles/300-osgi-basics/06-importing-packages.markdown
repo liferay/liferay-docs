@@ -1,7 +1,11 @@
-# Importing Packages [](id=importing-packages)
+---
+header-id: importing-packages
+---
+
+# Importing Packages
 
 Your modules will often need to use Java classes from packages
-[exported](/develop/tutorials/-/knowledge_base/7-0/exporting-packages) by other
+[exported](/docs/7-0/tutorials/-/knowledge_base/t/exporting-packages) by other
 modules. When a module is set up to import, the OSGi framework finds other
 registered modules that export the needed packages and wires them to the
 importing module. At run time, the importing module gets the class from the
@@ -20,26 +24,22 @@ packages a module uses and add them to the package imports in the module JAR's
 manifest. Let's explore how package imports are specified in different
 scenarios.
 
-[Gradle and Maven module projects](/develop/reference/-/knowledge_base/7-0/project-templates)
+[Gradle and Maven module projects](/docs/7-0/reference/-/knowledge_base/r/project-templates)
 created using
-[Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli),
-[Liferay's Maven archetypes](/develop/tutorials/-/knowledge_base/7-0/maven),
+[Blade CLI](/docs/7-0/tutorials/-/knowledge_base/t/blade-cli),
+[Liferay's Maven archetypes](/docs/7-0/tutorials/-/knowledge_base/t/maven),
 or
-[Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/liferay-ide)
+[Liferay @ide@](/docs/7-0/tutorials/-/knowledge_base/t/liferay-ide)
 use
 [bnd](http://bnd.bndtools.org/).
 On building such a project's module JAR, bnd detects the packages the module
 uses and generates a `META-INF/MANIFEST.MF` file whose `Import-Package` header
 specifies the packages. 
 
-+$$$
-
-**Note**: Liferay's Maven module archetypes use the `bnd-maven-plugin`.
-Liferay's Gradle module project templates use
-[a third-party Gradle plugin](https://github.com/TomDmitriev/gradle-bundle-plugin)
-to invoke bnd. 
-
-$$$
+| **Note**: Liferay's Maven module archetypes use the `bnd-maven-plugin`.
+| Liferay's Gradle module project templates use
+| [a third-party Gradle plugin](https://github.com/TomDmitriev/gradle-bundle-plugin)
+| to invoke bnd.
 
 For example, suppose you're developing a Liferay module using Maven or Gradle.
 In most cases, you specify your module's dependencies in your `pom.xml` or
@@ -67,10 +67,10 @@ Note that your build file need only specify JAR file dependencies. bnd examines
 your module's class path to determine which packages from those JAR files
 contain classes your application uses and imports the packages. The examination
 includes all classes found in the class path--even those from embedded
-[third party library JARs](/develop/tutorials/-/knowledge_base/7-0/adding-third-party-libraries-to-a-module). 
+[third party library JARs](/docs/7-0/tutorials/-/knowledge_base/t/adding-third-party-libraries-to-a-module). 
 
 Regarding classes used by a traditional Liferay plugin WAR,
-[Liferay's WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)
+[Liferay's WAB Generator](/docs/7-0/tutorials/-/knowledge_base/t/using-the-wab-generator)
 detects their use in the WAR's JSPs, descriptor files, and classes (in
 `WEB-INF/classes` and embedded JARs). The WAB Generator searches the `web.xml`,
 `liferay-web.xml`, `portlet.xml`, `liferay-portlet.xml`, and `liferay-hook.xml`
@@ -98,12 +98,12 @@ type:
 Congratulations! Now you can import all kinds of packages for your modules and
 plugins to use.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
+[Configuring Dependencies](/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies)
 
-[Resolving a Plugin's Dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies)
+[Resolving a Plugin's Dependencies](/docs/7-0/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies)
 
-[Using the WAB Generator](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator)
+[Using the WAB Generator](/docs/7-0/tutorials/-/knowledge_base/t/using-the-wab-generator)
 
-[Tooling](/develop/tutorials/-/knowledge_base/7-0/tooling)
+[Tooling](/docs/7-0/tutorials/-/knowledge_base/t/tooling)

@@ -1,16 +1,20 @@
-# Configuring Soy Portlet Template Parameters on the Client Side [](id=configuring-soy-portlet-template-parameters-on-the-client-side)
+---
+header-id: configuring-soy-portlet-template-parameters-on-the-client-side
+---
 
-[Portlet template parameters](/develop/tutorials/-/knowledge_base/7-0/creating-a-soy-portlet#using-portlet-template-parameters-in-the-soy-template) 
+# Configuring Soy Portlet Template Parameters on the Client Side
+
+[Portlet template parameters](/docs/7-0/tutorials/-/knowledge_base/t/creating-a-soy-portlet#using-portlet-template-parameters-in-the-soy-template) 
 are set in the Soy Portlet's server-side code. MetalJS's `state` class provides 
 a 
-[`STATE` object](/develop/tutorials/-/knowledge_base/7-0/understanding-the-state-object-architecture) 
+[`STATE` object](/docs/7-0/tutorials/-/knowledge_base/t/understanding-the-state-object-architecture) 
 that exposes these parameters as properties so you can access them on the client 
 side. This tutorial covers how to configure your view component's `STATE` 
 object and its properties on the client side so you can update the UI.
 
 This tutorial references the example below.
 
-## An Example Header State Portlet [](id=example-header-state-portlet)
+## An Example Header State Portlet
 
 This tutorial references the example portlet covered in this section. It 
 includes one view with a header that reads *Hello Soy* by default.
@@ -71,7 +75,7 @@ class and Soy template appear below for reference:
     	</div>
     {/template}
 
-## Configuring the State properties [](id=configuring-the-state-properties)
+## Configuring the State properties
 
 Soy Portlets are registered automatically using the 
 [`Liferay.component` API](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/foundation/portal-template/portal-template-soy/src/main/resources/com/liferay/portal/template/soy/utils/dependencies/bootstrap.js.tpl), 
@@ -95,13 +99,9 @@ Follow these steps:
 
         Liferay.component("_MyStateSoyPortlet_").getState();
  
-    +$$$
-
-    **Note:** The `Liferay.component()` method only returns the `STATE` object 
-    information for components currently on the page. These are the state 
-    properties defined for the current view.
-
-    $$$
+    | **Note:** The `Liferay.component()` method only returns the `STATE` object
+    | information for components currently on the page. These are the state
+    | properties defined for the current view.
 
 3.  Now that you retrieved your Soy portlet's component, you can access its 
     state properties the same way you would access any object's properties: the 
@@ -136,8 +136,8 @@ Follow these steps:
 
 Now you know how to configure Soy portlet state properties on the client side!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Understanding the State Object's Architecture](/develop/tutorials/-/knowledge_base/7-0/understanding-the-state-object-architecture)
+[Understanding the State Object's Architecture](/docs/7-0/tutorials/-/knowledge_base/t/understanding-the-state-object-architecture)
 
-[Configuring Portlet Template Parameter State Properties](/develop/tutorials/-/knowledge_base/7-0/configuring-portlet-template-parameter-state-properties)
+[Configuring Portlet Template Parameter State Properties](/docs/7-0/tutorials/-/knowledge_base/t/configuring-portlet-template-parameter-state-properties)

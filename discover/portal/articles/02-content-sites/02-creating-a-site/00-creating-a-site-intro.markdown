@@ -1,4 +1,8 @@
-# Creating a Site [](id=creating-a-site)
+---
+header-id: creating-a-site
+---
+
+# Creating a Site
 
 Now that you've created basic web content, you're ready for something a bit more
 intricate than a single page with a line of text and an image. In this part of

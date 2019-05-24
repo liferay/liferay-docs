@@ -1,4 +1,8 @@
-# Portlet Decorators [](id=portlet-decorators)
+---
+header-id: portlet-decorators
+---
+
+# Portlet Decorators
 
 In previous versions of @product@, administrators could display or hide the
 application borders through the *Show Borders* option of the look and feel
@@ -23,7 +27,7 @@ when the *Decorate* Portlet Decorator is applied:
 ![Figure 1: Portlet Decorators add the decorator's CSS class to the application's wrapper](../../../../images/portlet-application-markup.png)
 
 Once your Portlet Decorator is complete, apply it to your applications
-through the [Look and Feel Configuration menu](/discover/portal/-/knowledge_base/7-0/look-and-feel-configuration).
+through the [Look and Feel Configuration menu](/docs/7-0/user/-/knowledge_base/u/look-and-feel-configuration).
 
 ![Figure 2: Portlet Decorators can be applied through the Look and Feel Configuration menu](../../../../images/app-decor-look-and-feel.png)
 

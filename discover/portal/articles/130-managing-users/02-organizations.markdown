@@ -1,4 +1,8 @@
-# Adding and Managing Organizations [](id=adding-and-managing-organizations)
+---
+header-id: adding-and-managing-organizations
+---
+
+# Adding and Managing Organizations
 
 <!-- Contains 6.2 links for now. Needs more links, and needs screen shots, when
 applicable. -->
@@ -20,15 +24,15 @@ in your portal, read this next section to help you wrap your head around it.
 
 <!-- If at all possible, this next section should be made more brief.  -->
 
-## What are Organizations? [](id=what-are-organizations)
+## What are Organizations?
 
 An Organization is a way to group Liferay Users hierarchically. For example,
 your company's departments (Human Resources, for example) could be an
 organization in Liferay. Often times, organizations have their own site.
 
 Many simple portal designs don't use organizations at all; they only use sites
-(see the sections on [Web content Management](/discover/portal/-/knowledge_base/6-2/web-content-management) and
-[Advanced Web Content Management](/discover/portal/-/knowledge_base/6-2/advanced-web-content-management)
+(see the sections on [Web content Management](/docs/6-2/user/-/knowledge_base/u/web-content-management) and
+[Advanced Web Content Management](/docs/6-2/user/-/knowledge_base/u/advanced-web-content-management)
 for more information on sites). The main purpose of organizations is to allow
 for distributed user management. Using organizations, portal administrators can
 delegate some user management responsibilities to organization administrators.
@@ -72,22 +76,18 @@ Resort, its Departments, and divisions within each department.
 Each department is a sub-organization of the resort, and each further division
 is a sub-organization of the department.
 
-+$$$
-
-**Note:** It's easy to confuse User Groups (covered in a separate article) and
-Organizations. Both are used to group users, but User Groups are usually an ad
-hoc collection of users, organized for a specific function in the portal. In the
-Lunar Resort, if you wanted a group of bloggers, for example, it wouldn't make
-sense to assign the Sales Department the role of blogging (again, see the
-article on roles if you're not sure what they are). The Sales Department users
-would be able to blog whenever a new t-shirt design became available in the
-Lunar Resort store, but they probably wouldn't be as diligent about announcing
-the new Rover Racing schedule. Instead, creating a user group containing one
-individual from each department who is responsible for blogging would make more
-sense. Read the article on User Groups to learn more about how to use them in
-your portal.
-
-$$$
+| **Note:** It's easy to confuse User Groups (covered in a separate article) and
+| Organizations. Both are used to group users, but User Groups are usually an ad
+| hoc collection of users, organized for a specific function in the portal. In the
+| Lunar Resort, if you wanted a group of bloggers, for example, it wouldn't make
+| sense to assign the Sales Department the role of blogging (again, see the
+| article on roles if you're not sure what they are). The Sales Department users
+| would be able to blog whenever a new t-shirt design became available in the
+| Lunar Resort store, but they probably wouldn't be as diligent about announcing
+| the new Rover Racing schedule. Instead, creating a user group containing one
+| individual from each department who is responsible for blogging would make more
+| sense. Read the article on User Groups to learn more about how to use them in
+| your portal.
 
 Whenever you have a collection of users that fit into a hierarchical structure,
 you can use organizations to model those users. Organization administrators can
@@ -156,7 +156,7 @@ requirements for permissions within an organization, you can create custom
 organization-scoped roles to assemble the permissions you wish to grant to
 particular users. Alternatively, you could consider attaching a site to your
 organization and using site teams to assemble the sets of permissions (see
-below). See the [Roles and Permissions article](/discover/portal/-/knowledge_base/6-2/roles-and-permissions) for more detail.
+below). See the [Roles and Permissions article](/docs/6-2/user/-/knowledge_base/u/roles-and-permissions) for more detail.
 
 Does your organization need to have its own site? Many organizations don't, but
 since some do, Liferay allows sites to be attached to organizations. If an
@@ -173,7 +173,7 @@ distributed user administration.
 That's a lot of information on organizations. Next, learn how to create and
 manage organizations. 
 
-## Adding Organizations [](id=adding-organizations)
+## Adding Organizations
 
 Now add an organization to the portal (perhaps start by adding the *Physical
 Plant Department* organization to the Lunar Resort): 
@@ -199,23 +199,19 @@ can be used to indicate the operating hours of the organization, if any.
 
 <!-- Figure that shows a screenshot of the additional info for the org. -->
 
-+$$$
+| **Tip:** After creating an organization, you should assign the desired user to
+| the Organization Owner Role. The Organization Owner can do everything that an
+| Organization Administrator can. In addition to their full administrative rights
+| within the organization, they can do these things:
+| 
+| - Appoint other users to be Organization Administrators
+| - Appoint other users to be Organization Owners
+| - Remove the memberships of other Organization Administrators or Owners
+| 
+| Organization Administrators can't make these role assignments and can't manage
+| the memberships of other Organization Administrators or Owners.
 
-**Tip:** After creating an organization, you should assign the desired user to
-the Organization Owner Role. The Organization Owner can do everything that an
-Organization Administrator can. In addition to their full administrative rights
-within the organization, they can do these things:
-
-- Appoint other users to be Organization Administrators 
-- Appoint other users to be Organization Owners
-- Remove the memberships of other Organization Administrators or Owners
-
-Organization Administrators can't make these role assignments and can't manage
-the memberships of other Organization Administrators or Owners.
-
-$$$
-
-## Editing Organizations [](id=editing-organizations)
+## Editing Organizations
 
 To edit an organization go to the Users and Organizations section of the Control
 Panel. You should see any active portal users and organizations listed.  Click
@@ -257,7 +253,7 @@ this organization and a list of all the sub-organizations of this organization.
 <!-- See if a screenshot of this for the proposed Lunar Resort intranet
 organizations could replace the textual hierarchy representation above -->
 
-## Organization Types [](id=organization-types)
+## Organization Types
 
 By default, @product@ only includes the *Organization* type. Configure
 additional organization types using `portal.properties`. There are two main

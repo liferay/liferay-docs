@@ -1,4 +1,8 @@
-# Using Gradle in Liferay @ide@ [](id=using-gradle-in-liferay-ide)
+---
+header-id: using-gradle-in-liferay-ide
+---
+
+# Using Gradle in Liferay @ide@
 
 [Gradle](http://gradle.org/) is a popular open source build automation system.
 You can take full advantage of Gradle in Liferay @ide@ by utilizing
@@ -12,7 +16,7 @@ higher.
 The first thing you'll learn about in this tutorial is creating Gradle projects
 in @ide@.
 
-## Creating and Importing Gradle Projects [](id=creating-and-importing-gradle-projects)
+## Creating and Importing Gradle Projects
 
 You can create a Gradle project by using the Gradle Project wizard.
 
@@ -47,7 +51,7 @@ You can also import existing Gradle projects in Liferay @ide@.
 Next you'll learn about Gradle tasks and executions, and learn how to run and
 display them in Liferay @ide@.
 
-## Gradle Tasks and Executions [](id=gradle-tasks-and-executions)
+## Gradle Tasks and Executions
 
 Liferay @ide@ provides two views to enhance your developing experience using
 Gradle: Gradle Tasks and Gradle Executions. You can open these views by

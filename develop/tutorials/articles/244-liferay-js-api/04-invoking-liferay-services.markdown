@@ -1,4 +1,8 @@
-# Invoking Liferay Services [](id=invoking-liferay-services)
+---
+header-id: invoking-liferay-services
+---
+
+# Invoking Liferay Services
 
 @product@ provides many web services out-of-the-box to you. These services 
 include retrieving data and information about various assets, creating new 
@@ -14,7 +18,7 @@ This tutorial explains how to invoke these web services using JavaScript.
 
 Go ahead and get started.
 
-## Invoking Web Services via JavaScript [](id=invoking-web-services-via-javascript)
+## Invoking Web Services via JavaScript
 
 @product-ver@ contains a global JavaScript object called `Liferay` that has 
 many useful utilities. One method is `Liferay.Service`, which is used for 
@@ -100,7 +104,7 @@ resembles the following JSON object:
 Now that you know how to send an individual request, you're ready to run batch
 requests.
 
-## Batching Requests [](id=batching-requests)
+## Batching Requests
 
 Another format for invoking the `Liferay.Service` method is by passing an object 
 with the keys as the service to call and the value as the service configuration 
@@ -148,7 +152,7 @@ passing in an array of service objects. Here's an example:
  
 Next you can learn how to nest your requests.
 
-## Nesting Requests [](id=nesting-requests)
+## Nesting Requests
 
 Nested service calls allow you to bind information from related objects together
 in a JSON object. You can call other services in the same HTTP request and
@@ -161,12 +165,8 @@ The example in this section retrieves user data with `/user/get-user-by-id`, and
 uses the `contactId` returned from that service to then invoke 
 `/contact/get-contact` in the same request.
 
-+$$$
-
-**Note:** You must flag parameters that take values from existing variables. To 
-flag a parameter, insert the `@` prefix before the parameter name.
-
-$$$
+| **Note:** You must flag parameters that take values from existing variables. To
+| flag a parameter, insert the `@` prefix before the parameter name.
 
 Below is an example configuration that demonstrates the concepts covered in this
 section:
@@ -235,7 +235,7 @@ Here is what the response data would look like for the request above:
 Now that you know how to process requests, you can learn how to filter the
 results next.
 
-## Filtering Results [](id=filtering-results)
+## Filtering Results
 
 If you don't want all the properties returned by a service, you can define a 
 whitelist of properties. This returns only the specific properties you request
@@ -267,7 +267,7 @@ Below is the filtered response:
 
 Next you can learn how to populate the inner parameters of the request.
  
-## Inner Parameters [](id=inner-parameters)
+## Inner Parameters
 
 When you pass in an object parameter, you'll often need to populate its inner 
 parameters (i.e., fields).
@@ -290,6 +290,6 @@ fields such as`scopeGroupId`, as shown below:
  
 Now you know how to invoke Liferay services!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Liferay JavaScript APIs](/develop/tutorials/-/knowledge_base/7-0/liferay-javascript-apis)
+[Liferay JavaScript APIs](/docs/7-0/tutorials/-/knowledge_base/t/liferay-javascript-apis)

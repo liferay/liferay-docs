@@ -1,4 +1,8 @@
-# Troubleshooting FAQ [](id=troubleshooting)
+---
+header-id: troubleshooting
+---
+
+# Troubleshooting FAQ
 
 When coding on any platform, you can sometimes run into issues that have no
 clear resolution. This can be particularly frustrating. If you have issues
@@ -13,7 +17,7 @@ Here are the troubleshooting sections:
 
 Click a question to view the answer.
 
-## Modules [](id=troubleshooting-modules)
+## Modules
 
 <div class="ldn-faq-question">
   <span class="ldn-faq-toggle-button" data-show="false" style="font-weight: normal;">How can I configure dependencies on Liferay Portal artifacts?&nbsp;<span class="icon-caret-right" style="pointer-events:none;"></span></span>
@@ -117,7 +121,7 @@ Click a question to view the answer.
   </div>
 </div>
 
-## Services and Components [](id=troubleshooting-services-and-components)
+## Services and Components
 
 <div class="ldn-faq-question">
   <span class="ldn-faq-toggle-button" data-show="false" style="font-weight: normal;">How can I detect unresolved OSGi components?&nbsp;<span class="icon-caret-right" style="pointer-events:none;"></span></span>

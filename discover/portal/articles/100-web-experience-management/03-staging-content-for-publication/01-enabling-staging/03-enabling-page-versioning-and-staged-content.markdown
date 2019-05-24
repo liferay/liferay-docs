@@ -1,4 +1,8 @@
-# Enabling Page Versioning and Staged Content [](id=enabling-page-versioning-and-staged-content)
+---
+header-id: enabling-page-versioning-and-staged-content
+---
+
+# Enabling Page Versioning and Staged Content
 
 Enabling page versioning for a site lets site administrators work in parallel on
 multiple versions of the site's pages. Page versioning also maintains a history
@@ -91,7 +95,7 @@ about the other supported apps, as well. -Cody
 Before you activate staging, you can choose which of these applications' data
 you'd like to copy to staging. You'll learn about many of the collaboration
 apps listed under the Staged Portlets heading when you read the
-[Collaboration Suite](/discover/portal/-/knowledge_base/7-0/collaboration)
+[Collaboration Suite](/docs/7-0/user/-/knowledge_base/u/collaboration)
 chapter. For now, you just need to be aware that you can enable or disable
 staging for any of these applications. Why might you want to enable staging for
 some application types but not others? In the case of collaborative apps,

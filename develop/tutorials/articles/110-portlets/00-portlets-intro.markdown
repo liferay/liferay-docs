@@ -1,4 +1,8 @@
-# Portlets [](id=portlets)
+---
+header-id: portlets
+---
+
+# Portlets
 
 Web apps in @product@ are called *portlets*. Like many web apps, portlets
 process requests and generate responses. In the response, the portlet returns
@@ -106,7 +110,7 @@ may now be saying, "Hold on a minute! I thought @product@ was
 standards-compliant? What gives?" @product@ is standards-compliant, but it 
 contains some sweeteners in the form of APIs designed to make developers' lives 
 easier. For example, @product@ contains an 
-[MVC framework](/develop/tutorials/-/knowledge_base/7-0/liferay-mvc-portlet) 
+[MVC framework](/docs/7-0/tutorials/-/knowledge_base/t/liferay-mvc-portlet) 
 that makes it simpler to implement MVC in your portlet. This framework, however, 
 is only available in Liferay's portal. Without modification, a portlet that uses 
 this framework won't run if deployed to a non-Liferay portal container. Note, 
@@ -120,7 +124,7 @@ develop and deploy your portlet as a traditional WAR file; you can do so as OSGi
 modules instead. We recommend the latter, so you can take advantage of the 
 modularity features inherent in OSGi. For a detailed description of these 
 features, see the tutorial 
-[OSGi and Modularity](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity-for-liferay-6-developers). 
+[OSGi and Modularity](/docs/7-0/tutorials/-/knowledge_base/t/osgi-and-modularity-for-liferay-6-developers). 
 Note, however, that @product@ portlets you develop as OSGi modules won't run on 
 other portlet containers that lack an OSGi runtime. Even so, the advantages of 
 modularity are so great that we still recommend you develop your portlets as 

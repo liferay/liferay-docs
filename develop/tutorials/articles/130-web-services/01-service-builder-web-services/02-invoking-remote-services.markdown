@@ -1,4 +1,8 @@
-# Invoking Remote Services [](id=invoking-remote-services)
+---
+header-id: invoking-remote-services
+---
+
+# Invoking Remote Services
 
 You can invoke the remote services of any installed Liferay application the same
 way that you invoke your local services. Doing so could be described as
@@ -23,7 +27,7 @@ a JSON API and via SOAP. By default, running Service Builder with
 API for your project. You can access your project's JSON-based RESTful services
 via a convenient web interface. 
 
-## Invoking Liferay Services Remotely [](id=invoking-liferay-services-remotely)
+## Invoking Liferay Services Remotely
 
 Many default Liferay services are available as web services. Liferay exposes its
 web services via SOAP and JSON web services. If you're running Liferay locally
@@ -46,14 +50,10 @@ JSON web services via a direct URL. For example, the URL for the Web Content
 app's JSON web services is
 [http://localhost:8080/api/jsonws?contextName=journal](http://localhost:8080/api/jsonws?contextName=journal).
 
-+$$$
-
-**Important:** To invoke Liferay services remotely, your Liferay instance must
-be configured to allow remote web service access. Please see the
-[Understanding Liferay's Service Security Model](/develop/tutorials/-/knowledge_base/7-0/service-security-layers) 
-tutorial for details.
-
-$$$
+| **Important:** To invoke Liferay services remotely, your Liferay instance must
+| be configured to allow remote web service access. Please see the
+| [Understanding Liferay's Service Security Model](/docs/7-0/tutorials/-/knowledge_base/t/service-security-layers)
+| tutorial for details.
 
 Each entity's available service methods are listed in the left column of the
 JSON web services page. To view details about a service method, click it. The
@@ -77,7 +77,7 @@ using Apache Axis. After you've built your `*-service` project's WSDD (web
 service deployment descriptor) and deployed your project's modules, its services 
 are available on your Liferay server. You can view your Liferay instance's and 
 app's SOAP services in a browser as described in the tutorial 
-[Creating Remote Services](/develop/tutorials/-/knowledge_base/7-0/creating-remote-services). 
+[Creating Remote Services](/docs/7-0/tutorials/-/knowledge_base/t/creating-remote-services). 
 
 When viewing your SOAP services in a browser, Liferay lists the services 
 available for all your entities and provides links to their WSDL documents. For 
@@ -89,33 +89,33 @@ following URL:
 This WSDL document lists the entity's SOAP web services. Once the web service's 
 WSDL is available, any SOAP web service client can access it. To see examples of 
 SOAP web service client implementations, see the tutorial 
-[SOAP Web Services](/develop/tutorials/-/knowledge_base/7-0/soap-web-services).
+[SOAP Web Services](/docs/7-0/tutorials/-/knowledge_base/t/soap-web-services).
 
 Liferay web services are designed to be invoked by client applications.
 Liferay's web services APIs can be accessed by many different kinds of clients,
 including non-portlet and even non-Java clients. For information on how to
 develop client applications that can access Liferay's JSON web services, please
 see the
-[Invoking JSON Web Services](/develop/tutorials/-/knowledge_base/7-0/invoking-json-web-services)
+[Invoking JSON Web Services](/docs/7-0/tutorials/-/knowledge_base/t/invoking-json-web-services)
 tutorial. For information on how to develop
 client applications that access Liferay's SOAP web services, please see the
-[SOAP Web Services](/develop/tutorials/-/knowledge_base/7-0/soap-web-services)
+[SOAP Web Services](/docs/7-0/tutorials/-/knowledge_base/t/soap-web-services)
 tutorial. To learn how to create remote web services for your own application,
 please refer to the
-[Creating Remote Services](/develop/tutorials/-/knowledge_base/7-0/creating-remote-services)
+[Creating Remote Services](/docs/7-0/tutorials/-/knowledge_base/t/creating-remote-services)
 tutorial. 
 
 For more information on Liferay services, see the Liferay Portal CE Javadocs at
 [@platform-ref@/7.0-latest/javadocs/](@platform-ref@/7.0-latest/javadocs/).
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Invoking JSON Web Services](/develop/tutorials/-/knowledge_base/7-0/invoking-json-web-services)
+[Invoking JSON Web Services](/docs/7-0/tutorials/-/knowledge_base/t/invoking-json-web-services)
 
-[JSON Web Services Invoker](/develop/tutorials/-/knowledge_base/7-0/json-web-services-invoker)
+[JSON Web Services Invoker](/docs/7-0/tutorials/-/knowledge_base/t/json-web-services-invoker)
 
-[JSON Web Services Invocation Examples](/develop/tutorials/-/knowledge_base/7-0/json-web-services-invocation-examples)
+[JSON Web Services Invocation Examples](/docs/7-0/tutorials/-/knowledge_base/t/json-web-services-invocation-examples)
 
-[SOAP Web Services](/develop/tutorials/-/knowledge_base/7-0/soap-web-services)
+[SOAP Web Services](/docs/7-0/tutorials/-/knowledge_base/t/soap-web-services)
 
-[Creating Remote Services](/develop/tutorials/-/knowledge_base/7-0/creating-remote-services)
+[Creating Remote Services](/docs/7-0/tutorials/-/knowledge_base/t/creating-remote-services)

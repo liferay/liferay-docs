@@ -1,7 +1,11 @@
-# Modularizing Plugins [](id=modularizing-plugins)
+---
+header-id: modularizing-plugins
+---
+
+# Modularizing Plugins
 
 As described in
-[Benefits of Liferay 7 for Liferay 6 Developers](/develop/tutorials/-/knowledge_base/7-0/benefits-of-liferay-7-for-liferay-6-developers),
+[Benefits of Liferay 7 for Liferay 6 Developers](/docs/7-0/tutorials/-/knowledge_base/t/benefits-of-liferay-7-for-liferay-6-developers),
 applications that comprise OSGi modules offer considerable advantages over
 monolithic applications. 
 

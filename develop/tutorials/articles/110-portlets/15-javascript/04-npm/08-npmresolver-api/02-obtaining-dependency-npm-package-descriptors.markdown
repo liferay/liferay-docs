@@ -1,4 +1,8 @@
-# Obtaining an OSGi bundle's Dependency npm Package Descriptors [](id=obtaining-dependency-npm-package-descriptors)
+---
+header-id: obtaining-dependency-npm-package-descriptors
+---
+
+# Obtaining an OSGi bundle's Dependency npm Package Descriptors
 
 While writing your npm portlet, you may need to reference a dependency package 
 or its modules. For instance, you can retrieve an npm dependency package 
@@ -47,10 +51,10 @@ CSS or image files), as shown in the example below:
 
 Now you know how to obtain an OSGi bundle's dependency npm packages descriptors!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Obtaining an OSGi bundle's npm Package Descriptors](/develop/tutorials/-/knowledge_base/7-0/obtaining-dependency-npm-package-descriptors)
+[Obtaining an OSGi bundle's npm Package Descriptors](/docs/7-0/tutorials/-/knowledge_base/t/obtaining-dependency-npm-package-descriptors)
 
-[The Structure of OSGi Bundles Containing npm Packages](/develop/tutorials/-/knowledge_base/7-0/the-structure-of-osgi-bundles-containing-npm-packages)
+[The Structure of OSGi Bundles Containing npm Packages](/docs/7-0/tutorials/-/knowledge_base/t/the-structure-of-osgi-bundles-containing-npm-packages)
 
-[How @product@ Publishes npm Packages](/develop/tutorials/-/knowledge_base/7-0/how-liferay-portal-publishes-npm-packages)
+[How @product@ Publishes npm Packages](/docs/7-0/tutorials/-/knowledge_base/t/how-liferay-portal-publishes-npm-packages)

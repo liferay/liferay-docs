@@ -1,10 +1,14 @@
-# Enabling Staging [](id=enabling-staging)
+---
+header-id: enabling-staging
+---
+
+# Enabling Staging
 
 @product@ provides site administrators with two different ways to set up
 staging:
-[Local Live](/discover/portal/-/knowledge_base/7-0/enabling-local-live-staging)
+[Local Live](/docs/7-0/user/-/knowledge_base/u/enabling-local-live-staging)
 and
-[Remote Live](/discover/portal/-/knowledge_base/7-0/enabling-remote-live-staging).
+[Remote Live](/docs/7-0/user/-/knowledge_base/u/enabling-remote-live-staging).
 Whether you enable Local Live or Remote Live staging, the interface for managing
 and publishing staged pages is the same.
 

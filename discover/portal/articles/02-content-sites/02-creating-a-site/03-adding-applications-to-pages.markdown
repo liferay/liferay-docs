@@ -1,4 +1,8 @@
-# Adding Applications to Pages [](id=adding-applications-to-pages)
+---
+header-id: adding-applications-to-pages
+---
+
+# Adding Applications to Pages
 
 <div class="learn-path-step">
     <p>Creating A Site<br>Step 3 of 6</p>
@@ -9,7 +13,7 @@ as simple as displaying content, or as complex as social networking. You create
 your page's functionality by adding applications to the page. You'll get started
 by adding applications to the Activities and About Us pages. 
 
-## The Activities Page [](id=the-activities-page)
+## The Activities Page
 
 You'll add two Asset Publisher applications to display different assets, like
 images, web content articles, or any other kind of content in @product@. Follow
@@ -26,7 +30,7 @@ these steps to add two Asset Publishers to the page:
 
 ![Figure 1: This screenshot shows the Asset Publisher being placed in the page's right column. The narrow blue bar indicates where the application will appear when you release the mouse button.](../../../images/001-drag-asset-publisher.png)
 
-## The About Us Page [](id=the-about-us-page)
+## The About Us Page
 
 To add functionality to the About Us page, you'll add several Web Content 
 Display applications. Recall that this application displays web content. 

@@ -1,4 +1,8 @@
-# Preparing Your JavaScript Files for ES2015 [](id=preparing-your-javascript-files-for-es2015)
+---
+header-id: preparing-your-javascript-files-for-es2015
+---
+
+# Preparing Your JavaScript Files for ES2015
 
 To use the ES2015 syntax in a JavaScript file, add the extension `.es` to its
 name. For example, you rename file `filename.js` to `filename.es.js`. The
@@ -32,8 +36,8 @@ The Module Config Generator creates the module based on this information. There
 you have it! In just a few steps you can prepare your module to leverage the
 latest JavaScript standard features and publish it.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using ES2015 Modules in Your Portlet](/develop/tutorials/-/knowledge_base/7-0/using-es2015-modules-in-your-portlet)
+[Using ES2015 Modules in Your Portlet](/docs/7-0/tutorials/-/knowledge_base/t/using-es2015-modules-in-your-portlet)
 
-[OSGi and Modularity for Liferay Portal 6 Developers](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity-for-liferay-6-developers)
+[OSGi and Modularity for Liferay Portal 6 Developers](/docs/7-0/tutorials/-/knowledge_base/t/osgi-and-modularity-for-liferay-6-developers)

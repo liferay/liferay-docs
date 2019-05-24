@@ -1,4 +1,8 @@
-# App Javadoc Builder Gradle Plugin [](id=app-javadoc-builder-gradle-plugin)
+---
+header-id: app-javadoc-builder-gradle-plugin
+---
+
+# App Javadoc Builder Gradle Plugin
 
 The App Javadoc Builder Gradle plugin lets you generate API documentation as a
 single, combined HTML document for an application that spans different
@@ -7,7 +11,7 @@ application.
 
 The plugin has been successfully tested with Gradle 4.10.2.
 
-## Usage [](id=usage)
+## Usage
 
 To use the plugin, include it in the build script of the root project:
 
@@ -30,7 +34,7 @@ apply plugin: "com.liferay.app.javadoc.builder"
 The App Javadoc Builder plugin automatically applies the [`base`](https://docs.gradle.org/current/userguide/standard_plugins.html#N135C1)
 and `reporting-base` plugins.
 
-## Project Extension [](id=project-extension)
+## Project Extension
 
 The App Javadoc Builder plugin exposes the following properties through the
 extension named `appJavadocBuilder`:
@@ -52,7 +56,7 @@ Method | Description
 `AppJavadocBuilderExtension subprojects(Iterable<Project> subprojects)` | Include additional projects in the API documentation of the app.
 `AppJavadocBuilderExtension subprojects(Project... subprojects)` | Include additional projects in the API documentation of the app.
 
-## Tasks [](id=tasks)
+## Tasks
 
 The plugin adds two tasks to your project:
 

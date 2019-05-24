@@ -1,11 +1,15 @@
-# Overriding lpkg files [](id=overriding-lpkg-files)
+---
+header-id: overriding-lpkg-files
+---
+
+# Overriding lpkg files
 
 Applications are delivered through Liferay Marketplace as *lpkg* files. This is
 a simple compressed file format that contains .jar files to be deployed to
 @product@. If you want to examine an application from Marketplace, all you have
 to do is unzip it to reveal the .jar files it contains. 
 
-After examining them, you may want to [customize](/develop/tutorials/-/knowledge_base/7-0/customizing)
+After examining them, you may want to [customize](/docs/7-0/tutorials/-/knowledge_base/t/customizing)
 one of these applications. Make your customization, but don't deploy it the way
 you'd normally deploy an application. Instead, @product@ provides a way to
 update application modules without modifying the original .lpkg file they're

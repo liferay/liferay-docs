@@ -1,4 +1,8 @@
-# Using the Audience Targeting Applications [](id=using-the-audience-targeting-applications)
+---
+header-id: using-the-audience-targeting-applications
+---
+
+# Using the Audience Targeting Applications
 
 The Audience Targeting app not only adds the Audience Targeting application to
 the Site Administration area of the Control Panel, it also includes the
@@ -13,7 +17,7 @@ site administrators can customize the look and feel of the application. Any of
 Liferay Portal's out-of-the-box Asset Publisher ADTs can actually be re-used for
 these Audience Targeting applications.
 
-## User Segment Content Display [](id=user-segment-content-display)
+## User Segment Content Display
 
 The User Segment Content Display application allows administrators to specify
 exactly which content to display to a user based on the user segments that the
@@ -55,17 +59,13 @@ The User Segment Content Display application allows site administrators to
 preview the various assets that have been configured to be displayed to
 different user segments.
 
-+$$$
+| **Note:** You can also provide similar functionality from the Asset Publisher
+| application. You're able to configure a User Segments Filter that will only
+| display content for particular user segments. To learn more about this, see the
+| [Categorizing Pages and Content for User Segments](/docs/7-0/tutorials/-/knowledge_base/t/categorizing-pages-and-content-for-user-segments)
+| tutorial.
 
-**Note:** You can also provide similar functionality from the Asset Publisher
-application. You're able to configure a User Segments Filter that will only
-display content for particular user segments. To learn more about this, see the
-[Categorizing Pages and Content for User Segments](/develop/tutorials/-/knowledge_base/7-0/categorizing-pages-and-content-for-user-segments)
-tutorial.
-
-$$$
-
-## User Segment Content List [](id=user-segment-content-list)
+## User Segment Content List
 
 The User Segment Content List application displays content that has been
 categorized for the user segments that match the user segments to which the
@@ -88,7 +88,7 @@ articles and documents. The User Segment Content List application also provides
 filtering for categories, tags, scopes, etc., offering a wide variety of
 filtering options so you can display the specific content you want.
 
-## Campaign Content Display [](id=campaign-content-display)
+## Campaign Content Display
 
 The Campaign Content Display application is similar to the User Segment Content
 Display application except that instead of displaying an asset based on the user
@@ -130,25 +130,21 @@ will see the default image. Of course, once a campaign has ended, no users will
 match that campaign. Once all campaigns have ended, all users will see the
 default image.
 
-+$$$
-
-**Note:** When Audience Targeting is enabled with a large number of rules,
-tracking actions, and reports, you may need to adjust some JVM parameters of
-your server for optimal performance.
-
-<!-- Visit the
-[Performance Tuning](/discover/deployment/-/knowledge_base/6-2/performance-tuning)
-section for details.
-
-Update link above, when available. -Cody -->
-
-$$$
+| **Note:** When Audience Targeting is enabled with a large number of rules,
+| tracking actions, and reports, you may need to adjust some JVM parameters of
+| your server for optimal performance.
+| 
+| <!-- Visit the
+| [Performance Tuning](/docs/6-2/deploy/-/knowledge_base/d/performance-tuning)
+| section for details.
+| 
+| Update link above, when available. -Cody -->
 
 The Campaign Content Display application, like the User Segment Content Display
 application, allows site administrators to preview the different assets that
 will be displayed for different campaigns.
 
-## Asset Publisher [](id=asset-publisher)
+## Asset Publisher
 
 The Asset Publisher is part of Liferay's Web Experience Management suite, but it
 serves an important function with Audience Targeting. When Audience Targeting is

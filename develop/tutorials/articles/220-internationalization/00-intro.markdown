@@ -1,4 +1,8 @@
-# Internationalization [](id=internationalization)
+---
+header-id: internationalization
+---
+
+# Internationalization
 
 @product@ makes it easier than ever to localize content and design apps for
 different locales. You can centralize messages (language keys) and have manual

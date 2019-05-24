@@ -1,4 +1,8 @@
-# Enabling Comments and Ratings for Guestbook Entries [](id=enabling-comments-and-ratings-for-guestbook-entries)
+---
+header-id: enabling-comments-and-ratings-for-guestbook-entries
+---
+
+# Enabling Comments and Ratings for Guestbook Entries
 
 <div class="learn-path-step">
     <p>Adding Asset Features to Your UI<br>Step 5 of 5</p>
@@ -19,7 +23,7 @@ Follow these steps to enable comments and ratings on guestbook entries:
 2.  Add a Java scriptlet to the file you just created. In this scriptlet, use an 
     `entryId` request attribute to get an entry object. For security reasons, 
     convert this object to an escaped model as discussed in the earlier step 
-    [Creating JSPs for Displaying Customs Assets in the Asset Publisher](/develop/tutorials/-/knowledge_base/7.0/creating-jsps-for-displaying-custom-assets-in-the-asset-publisher):
+    [Creating JSPs for Displaying Customs Assets in the Asset Publisher](/docs/7.0/tutorials/-/knowledge_base/t/creating-jsps-for-displaying-custom-assets-in-the-asset-publisher):
 
         <%@ include file="../init.jsp"%>
 
@@ -141,22 +145,18 @@ Follow these steps to enable comments and ratings on guestbook entries:
     Make sure you add the closing `</c:if>` tag after the closing 
     `</liferay-ui:panel-container>` tag.
     
-    +$$$
-
-    **Note:** Discussions (comments) are implemented as message board messages 
-    in @product@. In the `MBMessage` table, there's a `classPK` column. This
-    `classPK` represents the `entryId` of the guestbook entry the comment 
-    belongs to. Ratings are stored in the `RatingsEntry` table. Similarly, the 
-    `RatingsEntry` table contains a `classPK` column. This `classPK` represents 
-    the `entryId` of the guestbook entry the rating belongs to. Using a 
-    `classPK` foreign key in one table to represent the primary key of another 
-    table is a common pattern that's used throughout @product@. 
-
-    $$$
+    | **Note:** Discussions (comments) are implemented as message board messages
+    | in @product@. In the `MBMessage` table, there's a `classPK` column. This
+    | `classPK` represents the `entryId` of the guestbook entry the comment
+    | belongs to. Ratings are stored in the `RatingsEntry` table. Similarly, the
+    | `RatingsEntry` table contains a `classPK` column. This `classPK` represents
+    | the `entryId` of the guestbook entry the rating belongs to. Using a
+    | `classPK` foreign key in one table to represent the primary key of another
+    | table is a common pattern that's used throughout @product@.
 
 Next, you'll update the guestbook actions to use the new view. 
 
-## Updating the Entry Actions JSP [](id=updating-the-entry-actions-jsp)
+## Updating the Entry Actions JSP
 
 Nothing links to your `view_entry.jsp` page--it's currently orphaned. Fix this 
 by adding the *View* option to the Actions Menu. Open the 

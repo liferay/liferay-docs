@@ -1,4 +1,8 @@
-# Understanding How liferay-npm-bundler Formats JavaScript Modules for AMD [](id=understanding-how-liferay-npm-bundler-formats-javascript-modules-for-amd)
+---
+header-id: understanding-how-liferay-npm-bundler-formats-javascript-modules-for-amd
+---
+
+# Understanding How liferay-npm-bundler Formats JavaScript Modules for AMD
 
 Liferay AMD Loader is based on the 
 [AMD specification](https://github.com/amdjs/amdjs-api/wiki/AMD). 
@@ -7,7 +11,7 @@ All modules inside an npm OSGi bundle must be in AMD format. This is done for
 a `define` call. The liferay-npm-bundler helps automate this process by wrapping 
 the module for you. This tutorial references the OSGi structure below as an 
 example. You can learn more about this structure in 
-[The Structure of OSGi Bundles Containing NPM Packages](/develop/tutorials/-/knowledge_base/7-0/the-structure-of-osgi-bundles-containing-npm-packages) 
+[The Structure of OSGi Bundles Containing NPM Packages](/docs/7-0/tutorials/-/knowledge_base/t/the-structure-of-osgi-bundles-containing-npm-packages) 
 tutorial.
 
 - `my-bundle/`
@@ -78,13 +82,9 @@ The updated module code configured for AMD format is shown below:
         }
     );
 
-+$$$
-
-**Note:** The module's name must be based on its package, version, and file path 
-(for example `my-bundle-package$isobject@2.1.0/index`), otherwise Liferay AMD 
-Loader can't find it. 
-
-$$$
+| **Note:** The module's name must be based on its package, version, and file path
+| (for example `my-bundle-package$isobject@2.1.0/index`), otherwise Liferay AMD
+| Loader can't find it.
 
 Note the module's dependencies: 
 `['module', 'require', 'my-bundle-package$isarray']`.
@@ -126,8 +126,8 @@ AMD conversion:
 Now you have a better understanding of how liferay-npm-bundler formats 
 JavaScript modules for AMD!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[How @product@ Publishes NPM Packages](/develop/tutorials/-/knowledge_base/7-0/how-liferay-portal-publishes-npm-packages)
+[How @product@ Publishes NPM Packages](/docs/7-0/tutorials/-/knowledge_base/t/how-liferay-portal-publishes-npm-packages)
 
-[Configuring liferay-npm-bundler](/develop/tutorials/-/knowledge_base/7-0/configuring-liferay-npm-bundler)
+[Configuring liferay-npm-bundler](/docs/7-0/tutorials/-/knowledge_base/t/configuring-liferay-npm-bundler)

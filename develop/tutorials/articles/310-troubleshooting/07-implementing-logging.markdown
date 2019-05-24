@@ -1,4 +1,8 @@
-# Implementing Logging [](id=implementing-logging)
+---
+header-id: implementing-logging
+---
+
+# Implementing Logging
 
 @product-ver@ uses the Log4j logging framework, but a different one may
 eventually replace it. It's a best practice to use [Simple Logging Facade for

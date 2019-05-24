@@ -1,4 +1,8 @@
-# Auditing Users [](id=auditing-users)
+---
+header-id: auditing-users
+---
+
+# Auditing Users
 
 You've just finished lunch and are ready to get back to work. You have a site in
 Liferay you use to manage your project, and before you left, you were about to
@@ -50,7 +54,7 @@ We'll come back to Tom, Dick and Harry's story later. For now, let's look at
 how to configure and use Liferay's Audit application so you can do the same
 thing Harry's about to do. 
 
-## Using Audit Events [](id=using-audit-events)
+## Using Audit Events
 
 It's easy to use audit events to view activities in your @product@. Navigate to the
 Control Panel and you'll find an entry in the Configuration section called
@@ -72,26 +76,22 @@ can get populated very quickly. That's why page view events aren't displayed by
 default. They'll clutter up your audit report, since they'll definitely be the
 most often triggered event. 
 
-+$$$
-
-**Note:** You can add page view events to your audit report, but keep in mind
-that doing so will add LOTS of events. Add this property to your
-`portal-ext.properties` file:
-
-    audit.message.com.liferay.portal.kernel.model.Layout.VIEW=true
-
-In Liferay's code, pages are referred to as *layouts*. Setting this to `true`,
-therefore, records audit events for page views. It's turned off by default
-because this is too fine-grained for most installations. 
-
-Once you've added the property, restart your Liferay server.
-
-$$$
+| **Note:** You can add page view events to your audit report, but keep in mind
+| that doing so will add LOTS of events. Add this property to your
+| `portal-ext.properties` file:
+| 
+|     audit.message.com.liferay.portal.kernel.model.Layout.VIEW=true
+| 
+| In Liferay's code, pages are referred to as *layouts*. Setting this to `true`,
+| therefore, records audit events for page views. It's turned off by default
+| because this is too fine-grained for most installations.
+| 
+| Once you've added the property, restart your Liferay server.
 
 Now that you know how to browse and view audit events, let's learn how to search
 for specific events.
 
-## Viewing Audit Reports [](id=viewing-audit-reports)
+## Viewing Audit Reports
 
 Finding what you want in a big list of events is, to use the expression, like
 searching for a needle in a haystack. This is why the Audit application provides a
@@ -160,7 +160,7 @@ happening in your @product@. You can use this information to troubleshoot proble
 determine ownership of particular actions, or, as Harry is about to do, find out
 who made permission changes they weren't supposed to make. 
 
-## Configuring Audits [](id=configuring-audits)
+## Configuring Audits
 
 @product@, enables audits by default. As described above, the Control Panel
 app reports audit events, but you can also report them in Liferay's logs or
@@ -176,7 +176,7 @@ There are two main ways to configure @product@:
 
 These methods apply to each of the audit configuration options explained below.
 
-### Reporting Audit Events in Liferay's Logs and Console [](id=reporting-audit-events-in-liferays-logs-and-console)
+### Reporting Audit Events in Liferay's Logs and Console
 
 **In the Control Panel:** Go to *Control Panel* &rarr; *System Settings* &rarr;
 *Foundation* &rarr; *Logging Message Audit Message Processor*.
@@ -232,7 +232,7 @@ This configures Log4J to record INFO level messages from the
 class to a file called `audit.yyyy-MM-dd.log` in the `[LIFERAY_HOME]/logs`
 folder. Adjust the audit file properties or log level to your liking.
 
-### Configuring Audit Events for Scheduled Liferay Jobs [](id=configuring-audit-events-for-scheduled-liferay-jobs)
+### Configuring Audit Events for Scheduled Liferay Jobs
 
 By default, scheduled jobs don't trigger audit events. To enable them via the
 Control Panel, go to *Control Panel* &rarr; *System Settings* &rarr;
@@ -250,7 +250,7 @@ Auditing scheduled jobs is a smart choice if there's a chance someone with a
 dubious competence level would try to schedule jobs, as you'll find out below in
 the conclusion of our story. 
 
-### Enabling or Disabling Audit Events Entirely [](id=enabling-or-disabling-audit-events-entirely)
+### Enabling or Disabling Audit Events Entirely
 
 Audit events are enabled by default. To disable them via the Control Panel, go
 to *Control Panel* &rarr; *System Settings* &rarr; *Foundation* &rarr; *Audit*.
@@ -267,7 +267,7 @@ in your `[LIFERAY_HOME]/osgi/modules` folder with this configuration:
 
 These are the default values which you can adjust as desired.
 
-## Conclusion of the Story [](id=conclusion-of-the-story)
+## Conclusion of the Story
 
 "Okay," says Harry, "let's fire up Liferay's audit system and see if we can
 figure out what happened." 

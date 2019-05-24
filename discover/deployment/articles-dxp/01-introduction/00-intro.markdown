@@ -1,4 +1,8 @@
-# Introduction to @product@ Deployment [](id=introduction-to-product-deployment)
+---
+header-id: introduction-to-product-deployment
+---
+
+# Introduction to @product@ Deployment
 
 @product@ is one of the most flexible applications on the market today with
 respect to database and application server support. @product@ supports a wide
@@ -8,7 +12,7 @@ shared hosting account, on a multi-node cluster running a commercial application
 server, or on anything in between. In fact, @product@ is used successfully in all
 of these scenarios every day.
 
-## Supported Platforms and Limitations [](id=supported-platforms-and-limitations)
+## Supported Platforms and Limitations
 
 The list of supported OSes, application servers, databases, and other
 environments is always available on the Customer Portal at
@@ -23,7 +27,7 @@ specified in the application's description. If you are planning to use these
 additional products, make sure @product@ is running on a supported environment
 before installing one of these applications. 
 
-## Reference Architecture [](id=reference-architecture)
+## Reference Architecture
 
 When considering deploying @product@, selecting the right architecture is one of
 the first decisions you need to make. You need to consider these factors: 
@@ -58,7 +62,7 @@ The architecture contains the following tiers:
 
 The hardware deployed within each tier varies depending on the type of transactions. 
 
-### Virtualized and Cloud Deployments [](id=virtualized-and-cloud-deployments)
+### Virtualized and Cloud Deployments
 
 While the reference architecture describes a physical deployment, the same
 concepts may be applied to a cloud based or virtualized deployment. Many @product@
@@ -75,7 +79,7 @@ EC2 Compute Units. Thus, to plan the virtualized / cloud deployment properly,
 customers must account not only for virtualization overhead, but also for
 allocation of sufficient CPU resources.
 
-### Fault Tolerance [](id=fault-tolerance)
+### Fault Tolerance
 
 The reference architecture is fault tolerant at every level. With clusters at
 the web, application, and database tier, you may suffer a catastrophic hardware
@@ -91,7 +95,7 @@ maintaining sufficient fault tolerance.
 Multi-data-center fault tolerant architectures are not provided as part of the
 reference architecture.
 
-### Performance [](id=performance)
+### Performance
 
 Each deployment's performance characteristics vary depending on the type of
 activity and the performance of custom application elements. Liferay Engineering
@@ -105,21 +109,21 @@ within the reference architecture while using no more than 40% of CPU
 resources in the Web Tier, 86% of CPU resources in the Application Tier, and 50%
 of CPU resources in the Database Tier.
 
-### Scalability [](id=scalability)
+### Scalability
 
 Liferay Engineering's testing has shown @product-ver@ to scale
 linearly. Thus, if you know a single application server supports X virtual users
 and assuming sufficient database and web server resources, you may calculate the
 total number of application servers required.
 
-### Security [](id=security)
+### Security
 
 The firewall preceding the Load Balancer Tier provides sufficient intrusion
 detection and prevention. However, depending on your organization's information
 security requirements, you may introduce additional firewall layers between each
 tier to further secure the infrastructure.
 
-### Environment Types [](id=environment-types)
+### Environment Types
 
 Before starting to plan your @product@ deployment, it's important to include
 different environments to be able to maintain the projects. Liferay uses the

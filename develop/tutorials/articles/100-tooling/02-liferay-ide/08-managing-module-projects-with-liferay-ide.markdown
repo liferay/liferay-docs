@@ -1,10 +1,14 @@
-# Managing Module Projects with Liferay @ide@ [](id=managing-module-projects-with-liferay-ide)
+---
+header-id: managing-module-projects-with-liferay-ide
+---
+
+# Managing Module Projects with Liferay @ide@
 
 Liferay @ide@ provides the ability to manage Liferay module projects from a GUI.
 Before you begin learning about managing your modules from Liferay @ide@, you
 should make sure a Liferay server is configured in your Eclipse workspace so you
 can deploy and run your projects. You can learn how to create a Liferay bundle
-and link it to your Liferay workspace in the [Creating a Liferay Workspace with Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/creating-a-liferay-workspace-with-liferay-ide)
+and link it to your Liferay workspace in the [Creating a Liferay Workspace with Liferay @ide@](/docs/7-0/tutorials/-/knowledge_base/t/creating-a-liferay-workspace-with-liferay-ide)
 tutorial.
 
 Once you've created modules, you can deploy them using Liferay @ide@. First, make
@@ -18,7 +22,7 @@ a module to your running Liferay instance!
 
 For the deployed module project, you can check if it has been deployed
 successfully by using
-[Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell).
+[Gogo Shell](/docs/7-0/reference/-/knowledge_base/r/using-the-felix-gogo-shell).
 Right-click the started portal in server view and select
 *Open Gogo Shell*.
 
@@ -45,7 +49,7 @@ and then the build command you want to execute.
 ![Figure 4: You can execute build operations by right-clicking the Gradle project in the Project Explorer.](../../../images/gradle-build-operations.png)
 
 To learn more about Gradle development in Liferay @ide@, see the
-[Using Gradle in Liferay @ide@](/develop/tutorials/-/knowledge_base/7-0/using-gradle-in-liferay-ide)
+[Using Gradle in Liferay @ide@](/docs/7-0/tutorials/-/knowledge_base/t/using-gradle-in-liferay-ide)
 tutorial.
 
 Excellent! You've learned how to manage your Gradle-based Liferay Workspace

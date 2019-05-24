@@ -1,4 +1,8 @@
-# Using Site Pages Variations [](id=using-site-pages-variations)
+---
+header-id: using-site-pages-variations
+---
+
+# Using Site Pages Variations
 
 Let's say you're working on a product-oriented site where you'll have several
 major changes to a page or a set of pages over a short period of time. Also you

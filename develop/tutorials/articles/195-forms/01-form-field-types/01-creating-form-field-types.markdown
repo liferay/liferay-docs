@@ -1,4 +1,8 @@
-# Creating Form Field Types [](id=creating-form-field-types)
+---
+header-id: creating-form-field-types
+---
+
+# Creating Form Field Types
 
 Liferay's Forms application does not contain a dedicated time field
 out-of-the-box. For ease of use and to ensure proper data is collected, you can
@@ -13,27 +17,23 @@ There are several steps involved in creating a form field type:
 4. Implement a `DDMFormFieldType`
 5. Render the field type
 
-+$$$
-
-**Note:** To avoid manually creating your own project, use
-[BladeCLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli). If you have
-Blade CLI on your machine, there's a template for creating form fields you can
-leverage using the following command syntax:
-
-    blade create -t form-field [ADDITIONAL OPTIONS] [PROJECT NAME]
-
-See the [BladeCLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli)
-documentation for more information, such as the answer to yuor question, What
-are those additional options?"
-
-Using Blade CLI, you get a project skeleton with much of the boilerplate
-filled in, and you can focus on coding without delay.
-
-$$$
+| **Note:** To avoid manually creating your own project, use
+| [BladeCLI](/docs/7-0/tutorials/-/knowledge_base/t/blade-cli). If you have
+| Blade CLI on your machine, there's a template for creating form fields you can
+| leverage using the following command syntax:
+| 
+|     blade create -t form-field [ADDITIONAL OPTIONS] [PROJECT NAME]
+| 
+| See the [BladeCLI](/docs/7-0/tutorials/-/knowledge_base/t/blade-cli)
+| documentation for more information, such as the answer to yuor question, What
+| are those additional options?"
+| 
+| Using Blade CLI, you get a project skeleton with much of the boilerplate
+| filled in, and you can focus on coding without delay.
 
 Start by setting up the project's metadata.
 
-## Specifying OSGi Metadata [](id=specifying-osgi-metadata)
+## Specifying OSGi Metadata
 
 First specify the necessary OSGi metadata in a `bnd.bnd` file (see
 [here](https://bnd.bndtools.org/chapters/800-headers.html)
@@ -55,7 +55,7 @@ available upon module activation.
 
 Next add your dependencies to a `build.gradle` file.
 
-## Specifying Dependencies [](id=specifying-dependencies)
+## Specifying Dependencies
 
 If you're using Gradle to manage your dependencies (as @product@ modules do),
 add this to your `build.gradle` file:
@@ -115,7 +115,7 @@ conventions presented here.
 Next craft the OSGi Component that marks your class as an implementation of
 `DDMFormFieldType`. 
 
-## Creating a DDMFormFieldType Component [](id=creating-a-ddmformfieldtype-component)
+## Creating a DDMFormFieldType Component
 
 If you're creating a *Time* field type, define the Component at the top of your
 `*DDMFormFieldType` class like this:
@@ -165,7 +165,7 @@ the field's capabilities (for example, rendering and validation).
 
 Next code the `*DDMFormFieldType` class.
 
-## Implementing DDMFormFieldType [](id=implementing-ddmformfieldtype)
+## Implementing DDMFormFieldType
 
 Implementing the field type in Java is made easier because of
 `BaseDDMFormFieldType`, an abstract class you can leverage in your code.
@@ -183,7 +183,7 @@ specifying the name of your new field type:
 That's all there is to defining the field type. Next determine how your field
 type is rendered.
 
-## Rendering Field Types [](id=rendering-field-types)
+## Rendering Field Types
 
 Before you get to the frontend coding necessary to render your field type,
 there's another Component to define and a Java class to code.
@@ -236,17 +236,13 @@ Here you're setting the templating language (Soy closure templates), the
 template namespace (`ddm.time`), and pointing to the location of the templates
 within your module (`/META-INF/resource/time.soy`).
 
-+$$$
-
-**Note:** [Closure templates](https://developers.google.com/closure/templates/)
-are a templating system for building UI elements. @product@ developers chose to
-build the Forms UI with closure templates because they enable a smooth,
-responsive repainting of the UI as a user enters data. With closure templates
-there's no need to reload the entire page from the server side when the UI is
-updated by the user: only the relevant portion of the page is updated from the
-server. This makes for a smooth user experience.
-
-$$$
+| **Note:** [Closure templates](https://developers.google.com/closure/templates/)
+| are a templating system for building UI elements. @product@ developers chose to
+| build the Forms UI with closure templates because they enable a smooth,
+| responsive repainting of the UI as a user enters data. With closure templates
+| there's no need to reload the entire page from the server side when the UI is
+| updated by the user: only the relevant portion of the page is updated from the
+| server. This makes for a smooth user experience.
 
 Now it's time to write the template you referenced in the renderer: `time.soy`
 in the case of the time field type.
@@ -391,7 +387,7 @@ dependencies of the declared JavaScript components (`requires...`), and where
 the files are located (`path...`). The `config.js` is used by the Alloy loader
 when it satisfies dependencies for each JavaScript component. For more
 information about the Alloy loader see the [tutorial on its
-usage](/develop/tutorials/-/knowledge_base/7-0/liferay-amd-module-loader).
+usage](/docs/7-0/tutorials/-/knowledge_base/t/liferay-amd-module-loader).
 
 [![Figure 1: Add your own form field types to the Forms application.](../../../images/forms-time-field-type.png)
 
@@ -399,7 +395,7 @@ If you build and deploy your new field type module, you'll see that you get
 exactly what you described in the `time.soy` file: a single text input field. Of
 course, that's not what you want! You need a time picker.
 
-## Adding Behavior to the Field [](id=adding-behavior-to-the-field)
+## Adding Behavior to the Field
 
 If you want to do more than simply provide a text input field, define the
 behavior in the `time_field.js` file. To add an AlloyUI timepicker, first

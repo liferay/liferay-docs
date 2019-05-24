@@ -1,4 +1,8 @@
-# Using Files to Configure Module Components [](id=using-files-to-configure-product-modules)
+---
+header-id: using-files-to-configure-product-modules
+---
+
+# Using Files to Configure Module Components
 
 @product@ uses 
 [Felix File Install](http://felix.apache.org/documentation/subprojects/apache-felix-file-install.html)
@@ -9,9 +13,9 @@ of
 to let you use files to configure module service components. 
 
 To learn how to work with configuration files, first review 
-[Understanding System Configuration Files](/discover/portal/-/knowledge_base/7-0/understanding-system-configuration-files). 
+[Understanding System Configuration Files](/docs/7-0/user/-/knowledge_base/u/understanding-system-configuration-files). 
 
-## Configuration File Formats [](id=configuration-file-formats)
+## Configuration File Formats
 
 There are two different configuration file formats: 
 
@@ -28,14 +32,14 @@ that aren't Strings). Since `.config` files can include type information, using
 them eliminates this need. The articles below provide a detailed explanation of
 these file formats, including their syntax: 
 
--   [Understanding System Configuration Files](/discover/portal/-/knowledge_base/7-0/understanding-system-configuration-files)
+-   [Understanding System Configuration Files](/docs/7-0/user/-/knowledge_base/u/understanding-system-configuration-files)
 -   [Configuration file (`.config`) syntax](https://sling.apache.org/documentation/bundles/configuration-installer-factory.html#configuration-files-config)
 -   [Properties file(`.cfg`) syntax](https://sling.apache.org/documentation/bundles/configuration-installer-factory.html#property-files-cfg)
 
-## Naming Configuration Files [](id=naming-configuration-files)
+## Naming Configuration Files
 
 Before you
-[create a configuration file](/discover/portal/-/knowledge_base/7-0/understanding-system-configuration-files#creating-configuration-files),
+[create a configuration file](/docs/7-0/user/-/knowledge_base/u/understanding-system-configuration-files#creating-configuration-files),
 you should determine whether multiple instances of the component can be created, 
 or if the component is intended to be a singleton. Follow these steps to make 
 that determination:
@@ -57,7 +61,7 @@ that determination:
 for *persistent identity*) and end with `.config` or `.cfg`. 
 
 For example, this class uses 
-[Declarative Services](/develop/tutorials/-/knowledge_base/7-0/osgi-and-modularity-for-liferay-6-developers#osgi-services-and-dependency-injection-with-declarative-services) 
+[Declarative Services](/docs/7-0/tutorials/-/knowledge_base/t/osgi-and-modularity-for-liferay-6-developers#osgi-services-and-dependency-injection-with-declarative-services) 
 to define a component:
 
     package com;
@@ -105,9 +109,9 @@ configuration file names:
     [PID].config
 
 When you're done creating a configuration file, you can
-[deploy it](/discover/portal/-/knowledge_base/7-0/understanding-system-configuration-files#deploying-a-configuration-file). 
+[deploy it](/docs/7-0/user/-/knowledge_base/u/understanding-system-configuration-files#deploying-a-configuration-file). 
 
-## Resolving Configuration File Deployment Failures [](id=resolving-configuration-file-deployment-failures)
+## Resolving Configuration File Deployment Failures
 
 The following `IOException` hints that the configuration file has a syntax
 issue: 
@@ -116,11 +120,11 @@ issue:
     java.io.IOException: Unexpected token 78; expected: 61 (line=0, pos=107)
 
 To resolve this, fix the 
-[configuration file's syntax](/develop/tutorials/-/knowledge_base/7-0/using-files-to-configure-product-modules#configuration-file-formats). 
+[configuration file's syntax](/docs/7-0/tutorials/-/knowledge_base/t/using-files-to-configure-product-modules#configuration-file-formats). 
 
 Great! Now you know how to configure module components using configuration 
 files. 
 
-## Related Articles [](id=related-articles)
+## Related Articles
 
-[Understanding System Configuration Files](/discover/portal/-/knowledge_base/7-0/understanding-system-configuration-files)
+[Understanding System Configuration Files](/docs/7-0/user/-/knowledge_base/u/understanding-system-configuration-files)

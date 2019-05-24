@@ -1,4 +1,8 @@
-# npm Samples [](id=npm-samples)
+---
+header-id: npm-samples
+---
+
+# npm Samples
 
 This section focuses on Liferay npm sample portlets built with Gradle. You can
 view these samples by visiting the
@@ -28,15 +32,11 @@ The following npm samples are documented:
 - [Simple npm Portlet](simple-npm-portlet)
 - [Vue.js npm Portlet](vue-js-npm-portlet)
 
-+$$$
-
-**Note:** The minifier fails on Liferay DXP 7.0 when JSDoc is present in a 
-portlet. To resolve this, use 
-[Grunt](https://gruntjs.com/getting-started) 
-[uglify](https://www.npmjs.com/package/grunt-contrib-uglify) 
-to remove the JSDoc comments. This process may take a long time, depending on 
-the number of files that require an update. 
-
-$$$
+| **Note:** The minifier fails on Liferay DXP 7.0 when JSDoc is present in a
+| portlet. To resolve this, use
+| [Grunt](https://gruntjs.com/getting-started)
+| [uglify](https://www.npmjs.com/package/grunt-contrib-uglify)
+| to remove the JSDoc comments. This process may take a long time, depending on
+| the number of files that require an update.
 
 Visit a particular sample page to learn more!

@@ -1,4 +1,8 @@
-# Running the Arquillian Example [](id=running-the-arquillian-example)
+---
+header-id: running-the-arquillian-example
+---
+
+# Running the Arquillian Example
 
 You're ready to run the Arquillian Blade Example tests. Open a terminal to the
 project root and execute the following command:
@@ -25,12 +29,8 @@ Test results are found in these locations:
 
 ![Figure 1: Open the test reports to analyze the results.](../../../images/arquillian-example-test-results.png)
 
-+$$$
-
-Note: before rerunning the tests, you must delete the `build/reports/` and
-`build/test-results/` folders.
-
-$$$
+| Note: before rerunning the tests, you must delete the `build/reports/` and
+| `build/test-results/` folders.
 
 Now that you've examined Arquillian functional and integration tests and JaCoCo
 code coverage capabilities, you can create similar tests and improve test code
@@ -38,6 +38,6 @@ coverage in your projects.
 
 **Related Topics**
 
-[Liferay's Slim Runtime](/develop/tutorials/-/knowledge_base/7-0/liferay-slim-runtime)
+[Liferay's Slim Runtime](/docs/7-0/tutorials/-/knowledge_base/t/liferay-slim-runtime)
 
-[Unit Testing with JUnit](/develop/tutorials/-/knowledge_base/7-0/unit-testing-with-junit)
+[Unit Testing with JUnit](/docs/7-0/tutorials/-/knowledge_base/t/unit-testing-with-junit)

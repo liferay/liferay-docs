@@ -1,7 +1,11 @@
-# How @product@ Publishes npm Packages [](id=how-liferay-portal-publishes-npm-packages)
+---
+header-id: how-liferay-portal-publishes-npm-packages
+---
+
+# How @product@ Publishes npm Packages
 
 When you deploy an OSGi bundle with the specified structure, as explained in 
-[The Structure of OSGi Bundles Containing NPM Packages](/develop/tutorials/-/knowledge_base/7-0/the-structure-of-osgi-bundles-containing-npm-packages) 
+[The Structure of OSGi Bundles Containing NPM Packages](/docs/7-0/tutorials/-/knowledge_base/t/the-structure-of-osgi-bundles-containing-npm-packages) 
 tutorial, its modules are made available for consumption through canonical 
 URLs. To better illustrate resolved modules, the example structure below is the 
 standard structure that the liferay-npm-bundler 1.x generates, and therefore 
@@ -59,15 +63,11 @@ available (one for each module):
 
 - [http://localhost/o/js/module/598/isarray@2.0.0/index.js](http://localhost/o/js/module/598/isarray@2.0.0/index.js)
 
-+$$$
-
-**NOTE:** The OSGi bundle ID (598) may vary.
-
-$$$
+| **NOTE:** The OSGi bundle ID (598) may vary.
 
 You can learn about package de-duplication next.
 
-## Package De-duplication [](id=package-deduplication)
+## Package De-duplication
 
 Since two or more OSGi modules may export multiple copies of the same package 
 and version, Liferay Portal must de-duplicate such collisions. To accomplish 
@@ -91,19 +91,15 @@ module URLs shown below:
 
 - [http://localhost/o/js/resolved-module/my-bundle-package$isarray@2.0.0/index.js](http://localhost/o/js/resolved-module/my-bundle-package$isarray@2.0.0/index.js)
 
-+$$$
-
-**NOTE:** The OSGi bundle ID (598 in the example) is removed and module is 
-replaced by `resolved-module`.
-
-$$$
+| **NOTE:** The OSGi bundle ID (598 in the example) is removed and module is
+| replaced by `resolved-module`.
 
 Next you can learn how the bundler (since version 2.0.0) isolates package 
 dependencies. See 
-[What Changed Between liferay-npm-bundler 1.x and 2.x](/develop/reference/-/knowledge_base/7-0/changes-between-liferay-npm-bundler-1-and-2) 
+[What Changed Between liferay-npm-bundler 1.x and 2.x](/docs/7-0/reference/-/knowledge_base/r/changes-between-liferay-npm-bundler-1-and-2) 
 for more information on why this change was made. 
 
-## Isolated Package Dependencies [](id=isolated-package-dependencies)
+## Isolated Package Dependencies
 
 A typical OSGi bundle structure generated with liferay-npm-bundler 2.x is shown 
 below:
@@ -190,7 +186,7 @@ had in its `node_modules` folder when it was developed.
 Now that you understand how namespacing modules isolates bundle dependencies, 
 avoiding collisions, you can learn about de-duplication next. 
 
-## De-duplication through Importing [](id=deduplication-through-importing)
+## De-duplication through Importing
 
 Isolated dependencies are very useful, but there are times when sharing the same 
 package between modules would be more beneficial. To do this, the 
@@ -270,7 +266,7 @@ it keeps requiring `wui-provider$` prefixed modules all the way down.
 
 Next, you will learn possible strategies for importing.
 
-## Strategies When Importing Packages [](id=strategies-when-importing-packages)
+## Strategies When Importing Packages
 
 De-duplication by importing is a powerful tool, but you must design a versioning 
 strategy suitable for you so that you don't run into errors. 
@@ -317,8 +313,8 @@ dependencies are satisfied at runtime.
 
 Now you know how @product@ publishes npm packages!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Understanding How liferay-npm-bundler Formats JavaScript Modules for AMD](/develop/tutorials/-/knowledge_base/7-0/understanding-how-liferay-npm-bundler-formats-javascript-modules-for-amd)
+[Understanding How liferay-npm-bundler Formats JavaScript Modules for AMD](/docs/7-0/tutorials/-/knowledge_base/t/understanding-how-liferay-npm-bundler-formats-javascript-modules-for-amd)
 
-[Understanding How @product@ Exposes Configuration for Liferay AMD Loader](/develop/tutorials/-/knowledge_base/7-0/how-liferay-portal-exposes-configuration-for-amd)
+[Understanding How @product@ Exposes Configuration for Liferay AMD Loader](/docs/7-0/tutorials/-/knowledge_base/t/how-liferay-portal-exposes-configuration-for-amd)

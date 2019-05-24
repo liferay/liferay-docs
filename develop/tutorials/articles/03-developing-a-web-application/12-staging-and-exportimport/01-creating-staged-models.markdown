@@ -1,4 +1,8 @@
-# Creating Staged Models [](id=creating-staged-models)
+---
+header-id: creating-staged-models
+---
+
+# Creating Staged Models
 
 <div class="learn-path-step">
     <p>Enabling Staging and Export/Import<br>Step 1 of 7</p>
@@ -12,7 +16,7 @@ framework by implementing the
 interface in your Guestbook's model classes.
 
 Service Builder generates an app's models as staged models when 
-[certain attributes](/develop/tutorials/-/knowledge_base/7-1/understanding-staged-models#important-attributes-in-staging)
+[certain attributes](/docs/7-1/tutorials/-/knowledge_base/t/understanding-staged-models#important-attributes-in-staging)
 are specified in the app's `service.xml` file. The Guestbook app already defines
 many of the necessary attributes in its `service.xml` file, so both your
 `GuestbookModel` and `EntryModel` interfaces already extend the `StagedModel`
@@ -49,13 +53,13 @@ entity's instance and creation/modification dates.
 
 The others leverage features of the Staging framework like automatic group
 mapping or entity level Last Publish Date handling. See the
-[Understanding Staged Models](/develop/tutorials/-/knowledge_base/7-0/understanding-staged-models)
+[Understanding Staged Models](/docs/7-0/tutorials/-/knowledge_base/t/understanding-staged-models)
 tutorial for more information.
 
 Before adding Staging features to your Guestbook app, you must declare some
 necessary dependencies.
 
-## Declaring Staging Dependencies [](id=declaring-staging-dependencies)
+## Declaring Staging Dependencies
 
 There are two Staging-specific dependencies used by the Guestbook's Staging
 functionality.
@@ -72,7 +76,7 @@ functionality.
 
 Now you're ready to begin implementing staging in your app.
 
-## Updating the Extended Staged Model Interface [](id=updating-the-extended-staged-model-interface)
+## Updating the Extended Staged Model Interface
 
 Staged models that extend the `StagedAuditedModel` interface function
 independently from the group concept (sometimes referred to as company models).
@@ -100,6 +104,6 @@ For example, your `EntryModel` interface's declaration now looks like this:
         StagedGroupedModel, WorkflowedModel {
 
 For more information on the available staged model interfaces, see this
-[tutorial](/develop/tutorials/-/knowledge_base/7-0/understanding-staged-models#staged-model-interfaces).
+[tutorial](/docs/7-0/tutorials/-/knowledge_base/t/understanding-staged-models#staged-model-interfaces).
 
 Excellent! Now it's time to create your staged model data handlers.

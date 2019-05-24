@@ -1,10 +1,14 @@
-# Using the Default CKEditor Plugins Bundled with AlloyEditor [](id=using-ckeditor-plugins-in-alloyeditor)
+---
+header-id: using-ckeditor-plugins-in-alloyeditor
+---
+
+# Using the Default CKEditor Plugins Bundled with AlloyEditor
 
 You can customize an editor's configuration to include several modifications, 
 such as 
-[adding new buttons](/develop/tutorials/-/knowledge_base/7-0/creating-and-contributing-new-buttons-to-alloyeditor) 
+[adding new buttons](/docs/7-0/tutorials/-/knowledge_base/t/creating-and-contributing-new-buttons-to-alloyeditor) 
 and 
-[adding new behaviors](/develop/tutorials/-/knowledge_base/7-0/adding-new-behavior-to-an-editor).
+[adding new behaviors](/docs/7-0/tutorials/-/knowledge_base/t/adding-new-behavior-to-an-editor).
 You can also use existing CKEditor plugins in AlloyEditor. Several 
 CKEditor plugins are packaged with @product@'s AlloyEditor, so you can use them 
 with just a few configuration adjustments. This tutorial shows how to use the 
@@ -15,7 +19,7 @@ is used as an example throughout this tutorial.
 Follow these steps:
 
 1.  Create a module to 
-    [modify the AlloyEditor's configuration](/develop/tutorials/-/knowledge_base/7-0/modifying-an-editors-configuration). 
+    [modify the AlloyEditor's configuration](/docs/7-0/tutorials/-/knowledge_base/t/modifying-an-editors-configuration). 
     The example boilerplate below modifies the AlloyEditor's configuration for 
     the Blogs and Blogs Admin portlets:
 
@@ -50,7 +54,7 @@ Follow these steps:
         String extraPlugins = jsonObject.getString("extraPlugins");
 
 3.  Choose the plugin(s) you want to use from the 
-    [default CKEditor plugins bundled with @product@'s AlloyEditor](/develop/reference/-/knowledge_base/7-0/ckeditor-plugin-reference-guide).
+    [default CKEditor plugins bundled with @product@'s AlloyEditor](/docs/7-0/reference/-/knowledge_base/r/ckeditor-plugin-reference-guide).
 
 4.  Add the CKEditor plugin(s) you want to use to the `extraPlugins` 
     configuration. @product@'s AlloyEditor also comes with several plugins to 
@@ -71,12 +75,8 @@ Follow these steps:
         
         jsonObject.put("extraPlugins", extraPlugins);
 
-    +$$$
-
-    **Note:** Make sure the `ae_uibridge` plugin appears first, followed by 
-    the remaining UI bridge plugins, and finally the CKEditor plugin(s).
-
-    $$$
+    | **Note:** Make sure the `ae_uibridge` plugin appears first, followed by
+    | the remaining UI bridge plugins, and finally the CKEditor plugin(s).
 
 5.  If the plugin includes buttons, add them in the appropriate toolbar. The
     configuration below retrieves the Text Selection Toolbar's buttons and adds
@@ -116,17 +116,13 @@ Follow these steps:
 
          jsonObject.put("toolbars", toolbarsJSONObject);
  
-+$$$
-
-**Note:** A plugin's buttons may not have the same name as the plugin. You can 
-find the button names for a plugin by 
-[searching its `plugin.js` file](/develop/reference/-/knowledge_base/7-0/ckeditor-plugin-reference-guide) 
-for `editor.ui.addButton`. Note that button names are case sensitive and may be 
-aliased in the `addButton()` method, such as the 
-[`clipboard` plugin's](https://github.com/ckeditor/ckeditor-dev/blob/release/4.0.x/plugins/clipboard/plugin.js#L341-L350) 
-`Cut`, `Copy`, and `Paste` buttons.
-
-$$$
+| **Note:** A plugin's buttons may not have the same name as the plugin. You can
+| find the button names for a plugin by
+| [searching its `plugin.js` file](/docs/7-0/reference/-/knowledge_base/r/ckeditor-plugin-reference-guide)
+| for `editor.ui.addButton`. Note that button names are case sensitive and may be
+| aliased in the `addButton()` method, such as the
+| [`clipboard` plugin's](https://github.com/ckeditor/ckeditor-dev/blob/release/4.0.x/plugins/clipboard/plugin.js#L341-L350)
+| `Cut`, `Copy`, and `Paste` buttons.
 
 Below is the full example `*EditorConfigContributor` class that adds the `font` 
 plugin to the AlloyEditor for the Blogs and Blogs Admin portlets:
@@ -225,10 +221,10 @@ plugin to the AlloyEditor for the Blogs and Blogs Admin portlets:
 
 Now you know how to use @product@'s bundled CKEditor plugins in its AlloyEditor!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Modifying an Editor's Configuration](/develop/tutorials/-/knowledge_base/7-0/modifying-an-editors-configuration)
+[Modifying an Editor's Configuration](/docs/7-0/tutorials/-/knowledge_base/t/modifying-an-editors-configuration)
 
-[Creating and Contributing New Buttons to AlloyEditor](/develop/tutorials/-/knowledge_base/7-0/creating-and-contributing-new-buttons-to-alloyeditor)
+[Creating and Contributing New Buttons to AlloyEditor](/docs/7-0/tutorials/-/knowledge_base/t/creating-and-contributing-new-buttons-to-alloyeditor)
 
-[Adding New Behavior to an Editor](/develop/tutorials/-/knowledge_base/7-0/adding-new-behavior-to-an-editor)
+[Adding New Behavior to an Editor](/docs/7-0/tutorials/-/knowledge_base/t/adding-new-behavior-to-an-editor)

@@ -1,4 +1,8 @@
-# Using a SharePoint Repository [](id=using-a-sharepoint-repository)
+---
+header-id: using-a-sharepoint-repository
+---
+
+# Using a SharePoint Repository
 
 The 
 [Liferay Marketplace](http://marketplace.liferay.com/) 
@@ -6,22 +10,14 @@ app *Liferay Connector for SharePoint* lets users add a SharePoint repository
 type to @product@'s Documents and Media Library. It supports SharePoint 2013 and
 SharePoint 2016. 
 
-+$$$
+| **Note:** To access SharePoint 2010, you must use the Liferay Marketplace app
+| *Liferay Connector for SharePoint 2010*.
 
-**Note:** To access SharePoint 2010, you must use the Liferay Marketplace app 
-*Liferay Connector for SharePoint 2010*. 
-
-$$$
-
-+$$$
-
-**Note:** Liferay Connector for SharePoint uses Azure ACS with OAuth 2 for 
-SharePoint server authorization. You must therefore enable HTTPS support in your 
-app server. Consult your app server's documentation for instructions. For 
-example, the required steps for Tomcat can be found in 
-[its documentation](https://tomcat.apache.org/tomcat-8.0-doc/ssl-howto.html). 
-
-$$$
+| **Note:** Liferay Connector for SharePoint uses Azure ACS with OAuth 2 for
+| SharePoint server authorization. You must therefore enable HTTPS support in your
+| app server. Consult your app server's documentation for instructions. For
+| example, the required steps for Tomcat can be found in
+| [its documentation](https://tomcat.apache.org/tomcat-8.0-doc/ssl-howto.html).
 
 Liferay Connector for SharePoint provides these key benefits: 
 

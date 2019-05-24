@@ -1,4 +1,8 @@
-# Importing Lexicon CSS into a Theme [](id=importing-lexicon-css-into-a-theme)
+---
+header-id: importing-lexicon-css-into-a-theme
+---
+
+# Importing Lexicon CSS into a Theme
 
 As mentioned before, Lexicon CSS fills the gaps between Bootstrap and the 
 specific needs of @product@. Bootstrap features have been extended to cover more 
@@ -31,7 +35,7 @@ consuming tasks such as these:
 
 Next you can learn more about Lexicon's structure.
 
-## Lexicon CSS Structure [](id=lexicon-css-structure)
+## Lexicon CSS Structure
 
 Lexicon CSS is bundled with two sub-themes: Lexicon Base and Atlas. Lexicon Base 
 is @product@'s Bootstrap API extension. It is also the theme that is used in 
@@ -46,16 +50,12 @@ Its purpose is to overwrite and manipulate Bootstrap and Lexicon Base to create
 @product@'s classic look and feel. Atlas is equivalent to installing a Bootstrap 
 third party theme.
 
-+$$$
-
-**Note:** It is not recommended to integrate third party themes with Atlas, as
-it adds variables and styles that are outside the scope of Bootstrap's API.
-
-$$$
+| **Note:** It is not recommended to integrate third party themes with Atlas, as
+| it adds variables and styles that are outside the scope of Bootstrap's API.
 
 You can learn how to customize the Atlas theme next.
 
-## Customizing Atlas in @product@ [](id=customizing-atlas-in-liferay)
+## Customizing Atlas in @product@
 
 If you want to include all the Classic Theme's files, you can skip these steps
 and move on to the next section.
@@ -102,7 +102,7 @@ Follow these steps to customize the Atlas theme:
 Place your custom CSS in this file. Next you can learn how to extend Atlas with
 the Classic theme.
 
-### Extending Atlas with the Classic Theme [](id=extending-atlas-with-the-classic-theme)
+### Extending Atlas with the Classic Theme
 
 To extend the Atlas theme with the Classic theme, copy all the files located in
 these directories into your theme:
@@ -119,7 +119,7 @@ command and following the prompts.
 
 Next you can learn how to customize the Lexicon Base.
 
-## Customizing Lexicon Base in @product@ [](id=customizing-lexicon-base-in-liferay)
+## Customizing Lexicon Base in @product@
 
 You can customize Lexicon Base with just a few imports.
 
@@ -140,7 +140,7 @@ As mentioned earlier, any custom CSS should be placed in `_custom.scss`.
 
 You can learn how to add third party themes in @product@ next.
 
-## Adding a Third Party Theme [](id=adding-a-third-party-theme)
+## Adding a Third Party Theme
 
 Third party themes must be built with Sass to be compatible with @product@. 
 **Make sure the Sass files are included before making any theme purchase.**
@@ -148,7 +148,7 @@ Third party themes must be built with Sass to be compatible with @product@.
 Follow these steps to add a third party theme:
 
 1.  Follow the steps in the 
-    [Customizing Lexicon Base in @product@](/develop/tutorials/-/knowledge_base/7-0/importing-lexicon-css-into-a-theme#customizing-lexicon-base-in-liferay) section.
+    [Customizing Lexicon Base in @product@](/docs/7-0/tutorials/-/knowledge_base/t/importing-lexicon-css-into-a-theme#customizing-lexicon-base-in-liferay) section.
 
 2.  Create a folder inside `/src/css` (for legacy ant themes, `/_diff/css`) 
     that contains your third party theme (e.g. `/src/css/awesome-theme` or 
@@ -159,11 +159,7 @@ Follow these steps to add a third party theme:
 4.  In `_aui_variables.scss`, import the file containing the theme variables. 
     For example, `@import "awesome-theme/variables.scss";`
  
-    +$$$ 
-
-    **Note:** You may omit the leading underscore when importing Sass files.
-
-    $$$
+    | **Note:** You may omit the leading underscore when importing Sass files.
 
 5.  In `_custom.scss`, import the file containing the CSS. For example, 
     `@import "awesome-theme/main.scss";`
@@ -173,6 +169,6 @@ Follow these steps to add a third party theme:
 
 Now you know how to use Lexicon CSS in your theme!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Applying Lexicon Styles to Your App](/develop/tutorials/-/knowledge_base/7-0/applying-lexicon-styles-to-your-app)
+[Applying Lexicon Styles to Your App](/docs/7-0/tutorials/-/knowledge_base/t/applying-lexicon-styles-to-your-app)

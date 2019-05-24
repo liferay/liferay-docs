@@ -1,4 +1,8 @@
-# Customizing JSPs with Dynamic Includes [](id=jsp-overrides-using-dynamic-includes)
+---
+header-id: jsp-overrides-using-dynamic-includes
+---
+
+# Customizing JSPs with Dynamic Includes
 
 The
 [`liferay-util:dynamic-include` tag](@platform-ref@/7.0-latest/taglibs/util-taglib/liferay-util/dynamic-include.html)
@@ -6,14 +10,10 @@ is an extension point for inserting content (e.g., JavaScript code, HTML, and
 more). To do this, create a module that has content you want to insert, register
 that content with the dynamic include tag, and deploy your module. 
 
-+$$$
-
-**Note**: If the JSP you want to customize has no `liferay-util:dynamic-include`
-tags (or tags whose classes inherit from `IncludeTag`), you must use a
-different customization approach, such as
-[portlet filters](/develop/tutorials/-/knowledge_base/7-0/jsp-overrides-using-portlet-filters).
-
-$$$
+| **Note**: If the JSP you want to customize has no `liferay-util:dynamic-include`
+| tags (or tags whose classes inherit from `IncludeTag`), you must use a
+| different customization approach, such as
+| [portlet filters](/docs/7-0/tutorials/-/knowledge_base/t/jsp-overrides-using-portlet-filters).
 
 We'll demonstrate how dynamic includes work using the Blogs entries. For reference, you can download the
 [example module](https://dev.liferay.com/documents/10184/656312/example-dynamic-include-blogs-master.zip). 
@@ -37,7 +37,7 @@ We'll demonstrate how dynamic includes work using the Blogs entries. For referen
     - `key="com.liferay.blogs.web#/blogs/view_entry.jsp#pre"`
     - `key="com.liferay.blogs.web#/blogs/view_entry.jsp#post"`
 
-2.  [Create a module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development)
+2.  [Create a module](/docs/7-0/tutorials/-/knowledge_base/t/starting-module-development)
     (e.g., `blade create my-dynamic-include`). The module will 
     hold your dynamic include implementation. 
 
@@ -128,6 +128,6 @@ We'll demonstrate how dynamic includes work using the Blogs entries. For referen
     	}
  
 Once you've
-[deployed your module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#building-and-deploying-a-module),
+[deployed your module](/docs/7-0/tutorials/-/knowledge_base/t/starting-module-development#building-and-deploying-a-module),
 the overridden JSP dynamically includes your content. Congratulations on
 injecting dynamic content into a JSP! 

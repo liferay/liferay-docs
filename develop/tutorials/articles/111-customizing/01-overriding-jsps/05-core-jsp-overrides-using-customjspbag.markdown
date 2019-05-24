@@ -1,6 +1,10 @@
-# JSP Overrides Using Custom JSP Bag [](id=overriding-core-jsps)
+---
+header-id: overriding-core-jsps
+---
 
-[Liferay's API based approaches to overriding JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-jsps#using-portals-api-to-override-a-jsp)
+# JSP Overrides Using Custom JSP Bag
+
+[Liferay's API based approaches to overriding JSPs](/docs/7-0/tutorials/-/knowledge_base/t/overriding-jsps#using-portals-api-to-override-a-jsp)
 are the best way to override JSPs in apps and in the core. You can also use
 Custom JSP Bags to override core JSPs. But the approach is not as stable as the
 API based approaches. If your Custom JSP Bag's JSP is buggy (because of your
@@ -40,7 +44,7 @@ this folder of your module:
 
     my-module/src/META-INF/custom_jsps/html/common/themes/bottom-ext.jsp
 
-## Implement a Custom JSP Bag [](id=implement-a-custom-jsp-bag)
+## Implement a Custom JSP Bag
 
 Create a class that implements `CustomJspBag`. The overall goal is to make sure
 that Liferay (specifically the
@@ -95,7 +99,7 @@ For an example of a full class that provides a working implementation of a
 custom JSP bag, refer to the
 [core-jsp-override BLADE project](https://github.com/liferay/liferay-blade-samples/blob/master/gradle/overrides/core-jsp-override/src/main/java/com/liferay/blade/samples/corejsphook/BladeCustomJspBag.java).
 
-## Register the Custom JSP Bag [](id=register-the-custom-jsp-bag)
+## Register the Custom JSP Bag
 
 Register the custom JSP bag implementation from your module in the OSGi runtime
 with three properties:
@@ -112,7 +116,7 @@ a separate custom JSP bag implementation and gives theirs a ranking of `101`,
 you're out of luck. Theirs will take precedence. Logically then, you should use
 `102`.
 
-## Extend a JSP [](id=extend-a-jsp)
+## Extend a JSP
 
 If you want to add something to a core JSP, see if it has an empty `-ext.jsp`
 and override that instead of the whole JSP. It'll keep things simpler and more
@@ -140,23 +144,23 @@ in your module to add functionality and content.
 Remember, this type of customization should be seen as a last resort. There's a
 risk that your override will break due to the nature of this implementation, and
 core functionality in Liferay can go down with it. If the JSP you want to
-override is in another module, refer to the section on [API based approaches to overriding JSPs](/develop/tutorials/-/knowledge_base/7-0/overriding-jsps#using-portals-api-to-override-a-jsp).
+override is in another module, refer to the section on [API based approaches to overriding JSPs](/docs/7-0/tutorials/-/knowledge_base/t/overriding-jsps#using-portals-api-to-override-a-jsp).
 
-## Site Scoped JSP Customization [](id=site-scoped-jsp-customization)
+## Site Scoped JSP Customization
 
-In Liferay Portal 6.2, you could use [Application Adapters](/develop/tutorials/-/knowledge_base/6-2/customizing-sites-and-site-templates-with-application-adapters) to scope your core JSP
+In Liferay Portal 6.2, you could use [Application Adapters](/docs/6-2/tutorials/-/knowledge_base/t/customizing-sites-and-site-templates-with-application-adapters) to scope your core JSP
 customizations to a specific site. Since the majority of JSPs were moved into
 modules for @product-ver@, the use case for this has shrunk considerably. If you
 need to scope a core JSP customization to a site, prepare an application adapter
-[as you would have for Liferay Portal 6.2](/develop/tutorials/-/knowledge_base/6-2/customizing-sites-and-site-templates-with-application-adapters), and deploy it to @product-ver@. It will still
+[as you would have for Liferay Portal 6.2](/docs/6-2/tutorials/-/knowledge_base/t/customizing-sites-and-site-templates-with-application-adapters), and deploy it to @product-ver@. It will still
 work. However, note that this approach is deprecated in @product-ver@ and won't be
 supported at all in Liferay 8.0.
 
 <!-- Uncomment once we cover scoping to a site
 If you're interested in scoping a module's JSP customization to a site, that's
-another story. See the documentation on [using Dynamic Include](/develop/tutorials/-/knowledge_base/7-0/jsp-overrides-using-dynamic-includes).
+another story. See the documentation on [using Dynamic Include](/docs/7-0/tutorials/-/knowledge_base/t/jsp-overrides-using-dynamic-includes).
 -->
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Upgrading Core JSP Hooks](/develop/tutorials/-/knowledge_base/7-0/upgrading-core-jsp-hooks)
+[Upgrading Core JSP Hooks](/docs/7-0/tutorials/-/knowledge_base/t/upgrading-core-jsp-hooks)

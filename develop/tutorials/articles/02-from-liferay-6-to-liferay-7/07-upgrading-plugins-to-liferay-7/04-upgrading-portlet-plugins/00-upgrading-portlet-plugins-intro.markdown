@@ -1,4 +1,8 @@
-# Upgrading Portlet Plugins [](id=upgrading-portlet-plugins)
+---
+header-id: upgrading-portlet-plugins
+---
+
+# Upgrading Portlet Plugins
 
 All portlet plugin types developed for Liferay Portal 6 can be upgraded and
 deployed to @product-ver@.

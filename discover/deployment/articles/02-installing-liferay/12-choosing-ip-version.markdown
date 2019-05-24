@@ -1,4 +1,8 @@
-# Choosing IPv4 or IPv6 [](id=choosing-ipv4-or-ipv6)
+---
+header-id: choosing-ipv4-or-ipv6
+---
+
+# Choosing IPv4 or IPv6
 
 @product@ supports both the IPv4 and IPv6 address formats. By default,
 @product@ uses IPv4 addresses. If you're on an IPv6 network, you'll need to
@@ -14,6 +18,6 @@ simple steps:
    `setenv.sh` or `setenv.bat` file in the `${TOMCAT_HOME}/bin` folder and set
    `-Djava.net.preferIPv4Stack=false` in `CATALINA_OPTS`.
 2. Create a `portal-ext.properties` file in your portal's
-   [Liferay Home folder](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home)
+   [Liferay Home folder](/docs/7-0/deploy/-/knowledge_base/d/installing-product#liferay-home)
    (if one does not already exist) and set the `tunnel.servlet.hosts.allowed`
    property to the target hosts you want to allow (e.g., *0:0:0:0:0:0:0:1*).

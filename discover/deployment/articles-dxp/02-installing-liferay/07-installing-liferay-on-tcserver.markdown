@@ -1,4 +1,8 @@
-# Installing @product@ on tc Server [](id=installing-liferay-on-tc-server)
+---
+header-id: installing-liferay-on-tc-server
+---
+
+# Installing @product@ on tc Server
 
 @product@ is supported on tc Server. Please see the 
 [Compatibility Matrix](https://web.liferay.com/documents/14/21598941/Liferay+DXP+Compatibility+Matrix.pdf)
@@ -20,17 +24,13 @@ Installing @product@ manually requires these basic steps:
 - Installing @product@ by providing the WAR file to your application server and
   the OSGi folder for @product@
 
-+$$$
+| **Note:** You'll see the term
+| [*Liferay Home*](/docs/7-0/deploy/-/knowledge_base/d/installing-product#liferay-home)
+| used in this installation guide. *Liferay Home* refers to the folder containing
+| your tc Server instance and some @product@-specific folders:. `data`, `deploy`,
+| `licenses`, and `osgi` folders.
 
-**Note:** You'll see the term
-[*Liferay Home*](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home)
-used in this installation guide. *Liferay Home* refers to the folder containing
-your tc Server instance and some @product@-specific folders:. `data`, `deploy`,
-`licenses`, and `osgi` folders. 
-
-$$$
-
-## Installing @product@ Dependencies [](id=installing-liferay-dependencies)
+## Installing @product@ Dependencies
 
 @product@ depends on some additional JARs that aren't included with tc Server by
 default. There are even more JARs that you'd find in a @product@ bundle
@@ -38,15 +38,11 @@ that are not required but can be useful. If you don't have a @product@
 bundle, you can download the required JARs from third parties, as
 described below.
 
-+$$$
-
-**Note:** Many required and useful JARs are pre-installed when you build
-@product@ from the source code or 
-[download a @product@ bundle](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise). 
-If you want to acquire all of the JARs that ship with a @product@ bundle
-quickly, using one of these sources might save you time.
-
-$$$
+| **Note:** Many required and useful JARs are pre-installed when you build
+| @product@ from the source code or
+| [download a @product@ bundle](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise).
+| If you want to acquire all of the JARs that ship with a @product@ bundle
+| quickly, using one of these sources might save you time.
 
 Here are the JARs included in the dependencies zip file: 
 
@@ -97,7 +93,7 @@ Place these JARs in *Liferay Home*'s `lib` folder (not tc Server's) (see more st
 and copy the `osgi` folder to your Liferay Home folder. The `osgi` folder
 contains many required JAR files and a few configuration files.
 
-## Configuring tc Server [](id=configuring-tc-server)
+## Configuring tc Server
 
 There are a few configuration edits to make so @product@ runs well on tc Server.
 All of these configuration changes should be made in your tc Server runtime
@@ -172,12 +168,8 @@ runtime instance.
 
         set JVM_OPTS=-Dfile.encoding=UTF-8 -Duser.timezone=GMT -Xmx1024M -Xss512K -XX:MaxMetaspaceSize=512m
 
-    +$$$
-    
-    **Important:** For @product@ to work properly, the application server JVM must 
-    use the `GMT` time zone and `UTF-8` file encoding. 
-    
-    $$$
+    | **Important:** For @product@ to work properly, the application server JVM must
+    | use the `GMT` time zone and `UTF-8` file encoding.
 
 2. Next, you should make sure that UTF-8 URI encoding is used consistently. Open
 `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/conf/server.xml` and make sure the
@@ -212,15 +204,11 @@ runtime instance.
         wrapper.java.additional.10="-XX:MaxMetaspaceSize=256M"
         wrapper.java.additional.11="-Dfile.encoding=UTF-8"
 
-    +$$$
-
-    **Important:** For @product@ to work properly, the application server JVM 
-    must use the `GMT` time zone and `UTF-8` file encoding. If your Java wrapper
-    doesn't already specify the `GMT` time zone, add an entry for it:
-
-        wrapper.java.additional.12=-Duser.timezone=GMT
-
-    $$$
+    | **Important:** For @product@ to work properly, the application server JVM
+    | must use the `GMT` time zone and `UTF-8` file encoding. If your Java wrapper
+    | doesn't already specify the `GMT` time zone, add an entry for it:
+    | 
+    |     wrapper.java.additional.12=-Duser.timezone=GMT
 
 4. Last, open `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/conf/web.xml` and add the following after `<load-on-startup>3</load-on-startup>`    
 
@@ -234,7 +222,7 @@ runtime instance.
         </init-param> 
 
 
-## Database Configuration [](id=database-configuration)
+## Database Configuration
 
 The easiest way to handle your database configuration is to let @product@ manage
 your data source. If you want to use @product@'s built-in data source, you can
@@ -270,7 +258,7 @@ credentials.
 
 Your data source is now configured. Next set up the mail session.
 
-## Mail Configuration [](id=mail-configuration)
+## Mail Configuration
 
 As with database configuration, the easiest way to handle mail configuration is
 to let @product@ handle your mail session. If you want to use @product@'s built-in
@@ -304,7 +292,7 @@ example mail session values with your own.
 Your mail session is configured. Next, you'll make sure @product@ can 
 access your mail session and database.
 
-## Configuring a Database and Mail Session [](id=configuring-a-database-and-mail-session)
+## Configuring a Database and Mail Session
 
 In this section you'll specify appropriate properties for @product@ to use in
 connecting to your database and mail session.
@@ -322,7 +310,7 @@ to the `portal-ext.properties` file in your *Liferay Home*.
 Before you deploy @product@, you should configure a Portal Access Control List
 (PACL).
 
-## Enabling PACL [](id=enabling-pacl)
+## Enabling PACL
 
 To enable PACL, you need to enable Tomcat's security manager. Make sure
 `[TCSERVER_INSTANCE_HOME]/servers/dxp-server/conf/catalina.policy` specifies the permissions
@@ -339,7 +327,7 @@ following code into the `CATALINA_OPTS` variable (inside quotation marks):
 
 Now you have PACL enabled and configured for your portal.
 
-## Deploying @product@ [](id=deploying-liferay)
+## Deploying @product@
 
 Now you're ready to deploy @product@ using your @product@ WAR file.
 

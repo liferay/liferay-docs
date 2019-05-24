@@ -1,9 +1,13 @@
-# Loading Modules with AUI Script in @product@ [](id=loading-modules-with-aui-script-in-liferay)
+---
+header-id: loading-modules-with-aui-script-in-liferay
+---
+
+# Loading Modules with AUI Script in @product@
 
 The `aui:script` tag is a JSP tag that loads JavaScript in script tags on the
 page, while ensuring that certain resources are loaded before executing.
 
-## Using aui:script [](id=using-aui-script)
+## Using aui:script
 
 The `aui:script` tag supports the following options:
 
@@ -18,7 +22,7 @@ The `aui:script` tag supports the following options:
 
 Next you can learn how to load ES2015 and Metal.js modules.
 
-## Loading ES2015 and Metal.js Modules [](id=loading-es2015-and-metaljs-modules)
+## Loading ES2015 and Metal.js Modules
 
 You can use `aui:script` to load your ES2015 and Metal.js modules like this:
 
@@ -44,7 +48,7 @@ In the browser, the `aui:script` translates to the full HTML shown below:
  
 Next you can learn how to load AlloyUI modules.
 
-## Loading AlloyUI Modules [](id=loading-alloyui-modules)
+## Loading AlloyUI Modules
 
 You can use the `use` attribute to load AlloyUI/YUI modules:
 
@@ -78,7 +82,7 @@ In the browser, the `aui:script` translates to the full HTML shown below:
 Next you can learn how to load AlloyUI modules together with ES2015 and Metal.js 
 modules. 
 
-## Loading AlloyUI Modules and ES2015 and Metal.js Modules Together [](id=loading-alloyui-modules-and-es2015-and-metal-js-modules-together)
+## Loading AlloyUI Modules and ES2015 and Metal.js Modules Together
 
 You may want to load an AUI module along with an ES2015 module or Metal.js 
 module in an `aui:script`. The `aui:script` tag doesn't support both the 
@@ -98,6 +102,6 @@ function within the script. Below is an example configuration:
 
 Now you know how to load modules with the `aui:script` tag! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Configuring Modules for Liferay Portal Loaders](/develop/tutorials/-/knowledge_base/7-0/configuring-modules-for-products-loaders)
+[Configuring Modules for Liferay Portal Loaders](/docs/7-0/tutorials/-/knowledge_base/t/configuring-modules-for-products-loaders)

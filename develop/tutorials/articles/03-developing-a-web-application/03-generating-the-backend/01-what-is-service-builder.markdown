@@ -1,4 +1,8 @@
-# What is Service Builder? [](id=what-is-service-builder-0)
+---
+header-id: what-is-service-builder-0
+---
+
+# What is Service Builder?
 
 <div class="learn-path-step">
     <p>Generating the Back-end<br>Step 1 of 3</p>
@@ -9,7 +13,7 @@ find operations for your application. You'll also use Service Builder to
 generate the necessary model, persistence, and service layers for your 
 application. Then you can add your application's necessary business logic. 
 
-## Guestbook Application Design [](id=guestbook-application-design)
+## Guestbook Application Design
 
 In the prototype application, you defined a single guestbook's entries and 
 displayed them in a list. The full application will handle multiple Guestbooks 
@@ -18,7 +22,7 @@ one for guestbooks, and one for guestbook entries.
 
 <!-- Insert screenshot of final application here. --> 
 
-## Service Layer [](id=service-layer)
+## Service Layer
 
 This application is data-driven. It uses services for storing and retrieving 
 data. The application asks for data, and the service fetches it. The application 

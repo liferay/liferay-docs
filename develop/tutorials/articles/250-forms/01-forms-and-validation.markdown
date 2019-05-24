@@ -1,4 +1,8 @@
-# Forms and Validation [](id=forms-and-validation)
+---
+header-id: forms-and-validation
+---
+
+# Forms and Validation
 
 Creating forms is easy and flexible, thanks to @product@'s form, input, and 
 validation tags.
@@ -24,12 +28,12 @@ The following tags support validators natively:
 - `<liferay-ui:input-search>`
 
 All other fields can be validated using the method described in the
-[Adding Custom Validators in JavaScript](/develop/tutorials/-/knowledge_base/7-0/forms-and-validation#adding-custom-validators-in-javascript)
+[Adding Custom Validators in JavaScript](/docs/7-0/tutorials/-/knowledge_base/t/forms-and-validation#adding-custom-validators-in-javascript)
 section below.
 
 Get started by creating a basic form next.
 
-## Creating Your First Form [](id=creating-your-first-form)
+## Creating Your First Form
 
 Below is an example configuration for a simple form in a JSP:
 
@@ -65,7 +69,7 @@ the back-end. The full HTML generated for this example is shown below:
 As you can see, the tags provide all this to you for very little work! Next you
 can learn how to add validation to your forms.
 
-## Adding Validation [](id=adding-validation)
+## Adding Validation
 
 What if you want to ensure the user enters the required data? Add validators.
 
@@ -146,7 +150,7 @@ a range between 3 and 8 characters long is specified here
 Now that you know how to validate your forms, you can learn how to conditionally
 require user input next.
 
-## Conditionally Requiring A Field [](id=conditionally-requiring-a-field)
+## Conditionally Requiring A Field
 
 Sometimes you'll want to validate a field based on the value of another field.
 You can do this by checking for that condition in a JavaScript function within 
@@ -168,7 +172,7 @@ Below is an example configuration:
 
 Next you can learn how to add custom validators.
 
-## Adding Custom Validators [](id=adding-custom-validators)
+## Adding Custom Validators
 
 So far, you've only seen the default set of AUI validator rules. What if you
 need something that the default rules don't provide?
@@ -196,7 +200,7 @@ validator.
 
 Next you can learn how to add custom validators in JavaScript.
 
-## Adding Custom Validators in JavaScript [](id=adding-custom-validators-in-javascript)
+## Adding Custom Validators in JavaScript
 
 Sometimes you need to add additional validation dynamically after the page has 
 rendered. Perhaps some additional fields were added to the DOM via an AJAX 
@@ -248,7 +252,7 @@ the whole form.
 
 Next you can learn how to validate your forms manually. 
 
-## Manual Validation [](id=manual-validation)
+## Manual Validation
 
 You may need to execute validation on a field, based on some event not typical
 of user input. For instance, you may need to validate a related field at the
@@ -286,6 +290,6 @@ configuration:
  
 Now you know how to create and validate forms!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Front-End Taglibs](/develop/tutorials/-/knowledge_base/7-0/front-end-taglibs)
+[Front-End Taglibs](/docs/7-0/tutorials/-/knowledge_base/t/front-end-taglibs)

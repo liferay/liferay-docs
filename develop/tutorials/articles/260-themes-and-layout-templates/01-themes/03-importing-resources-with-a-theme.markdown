@@ -1,4 +1,8 @@
-# Importing Resources with a Theme [](id=importing-resources-with-a-theme)
+---
+header-id: importing-resources-with-a-theme
+---
+
+# Importing Resources with a Theme
 
 A theme without content is like an empty house. If you're trying to sell an
 empty house, it may be difficult for prospective buyers to see its full beauty.
@@ -18,28 +22,20 @@ Marketplace users: a user can download a theme from Marketplace, install it on
 see their new theme in action. In this tutorial, we explain how to include 
 resources with your theme.
 
-+$$$
+| **Note:** The resources importer has undergone some changes that affect the
+| properties, class names, and structures that were referred to in versions prior
+| to @product-ver@. Please read through the steps below to see the updates. In
+| previous versions of Liferay, you had to deploy the resources importer if you
+| declared it as a dependency in your theme's `liferay-plugin-package.properties`
+| file. In @product-ver@ and up, this is no longer a requirement. The resources
+| importer is now an OSGi module, and is deployed to your instance by default.
 
-**Note:** The resources importer has undergone some changes that affect the
-properties, class names, and structures that were referred to in versions prior 
-to @product-ver@. Please read through the steps below to see the updates. In 
-previous versions of Liferay, you had to deploy the resources importer if you 
-declared it as a dependency in your theme's `liferay-plugin-package.properties` 
-file. In @product-ver@ and up, this is no longer a requirement. The resources 
-importer is now an OSGi module, and is deployed to your instance by default.
-
-$$$
-
-<!--+$$$(Need to update once new article is written)
-
-**Note:** The [resources importer](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Resources+Importer) can be
-used in any type of plugin project to import resources. Importing resources
-within a theme is just one of the more common use cases. To learn how to
-use the resources importer in other types of projects, please see the
-[Creating Plugins to Share Structures, Templates, and More](/develop/tutorials/-/knowledge_base/6-2/creating-plugins-to-share-structures-templates-and-more)
-tutorial.
-
-$$$-->
+<!--| **Note:** The [resources importer](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Resources+Importer) can be
+<!--| used in any type of plugin project to import resources. Importing resources
+<!--| within a theme is just one of the more common use cases. To learn how to
+<!--| use the resources importer in other types of projects, please see the
+<!--| [Creating Plugins to Share Structures, Templates, and More](/docs/6-2/tutorials/-/knowledge_base/t/creating-plugins-to-share-structures-templates-and-more)
+<!--| tutorial.
 
 <!-- (Need to find replacement example)
 
@@ -65,14 +61,10 @@ manually delete the sites or site templates built by the resources importer,
 each time you want to apply changes from your theme's
 `src/WEB-INF/src/resources-importer` folder. 
 
-+$$$
-
-**Warning:** the `resources-importer-developer-mode-enabled=true` setting can be
-dangerous since it involves *deleting* (and re-creating) the affected site or
-site template. It's only intended to be used during development. Never use it in
-production. 
-
-$$$
+| **Warning:** the `resources-importer-developer-mode-enabled=true` setting can be
+| dangerous since it involves *deleting* (and re-creating) the affected site or
+| site template. It's only intended to be used during development. Never use it in
+| production.
 
 If you'd like to import your theme's resources directly into a site, instead of
 into a site template, you can specify the following in your
@@ -86,22 +78,18 @@ If you're using the `resources-importer-target-value=[site-name]` property,
 double check the site name that you're specifying. If you specify the wrong
 value, you could end up deleting (and re-creating) the wrong site!
 
-+$$$
-
-**Warning:** It's safer to import theme resources into a site template than into
-an actual site. The
-`resources-importer-target-class-name=com.liferay.portal.kernel.model.Group` 
-setting can be handy for development and testing but should be used cautiously. 
-Don't use this setting in a theme that will be deployed to a production Liferay
-instance or a theme that will be submitted to Liferay Marketplace. To prepare a
-theme for deployment to a production Liferay instance, use the default setting
-so that the resources are imported into a site template. You can do this
-explicitly by setting
-`resources-importer-target-class-name=com.liferay.portal.kernel.model.LayoutSetPrototype`
-or implicitly by commenting out or removing the
-`resources-importer-target-class-name` property.
-
-$$$
+| **Warning:** It's safer to import theme resources into a site template than into
+| an actual site. The
+| `resources-importer-target-class-name=com.liferay.portal.kernel.model.Group`
+| setting can be handy for development and testing but should be used cautiously.
+| Don't use this setting in a theme that will be deployed to a production Liferay
+| instance or a theme that will be submitted to Liferay Marketplace. To prepare a
+| theme for deployment to a production Liferay instance, use the default setting
+| so that the resources are imported into a site template. You can do this
+| explicitly by setting
+| `resources-importer-target-class-name=com.liferay.portal.kernel.model.LayoutSetPrototype`
+| or implicitly by commenting out or removing the
+| `resources-importer-target-class-name` property.
 
 All of the resources a theme uses with the resources importer go in the
 `[theme-name]/src/WEB-INF/src/resources-importer` folder. The assets to be
@@ -192,15 +180,11 @@ folder specifies the site pages, layout templates, web content, assets, and
 portlet configurations provided with the theme. This file describes the contents
 and hierarchy of the site for Liferay to import as a site or site template.
 
-+$$$
-
-**Note:** Site templates only support the importing of either public page sets 
-or private page sets.
-
-If you want to import both public and private page sets, as shown in the example 
-`sitemap.json` below, you must import your resources into a site.
-
-$$$
+| **Note:** Site templates only support the importing of either public page sets
+| or private page sets.
+| 
+| If you want to import both public and private page sets, as shown in the example
+| `sitemap.json` below, you must import your resources into a site.
 
 Even if you're not familiar with JSON, the `sitemap.json` file is easy to 
 understand. Let's examine a sample `sitemap.json` file:
@@ -439,7 +423,7 @@ more information.
 
 **portletSetupPortletDecoratorId:** Specifies the portlet decorator to use 
 for the portlet (`borderless` || `barebone` || `decorate`). See the 
-[Portlet Decorators](/develop/tutorials/-/knowledge_base/7-0/portlet-decorators) 
+[Portlet Decorators](/docs/7-0/tutorials/-/knowledge_base/t/portlet-decorators) 
 tutorial for more info.
 
 **portlets:** specifies the portlets to display in the layout's column. To nest 
@@ -463,50 +447,42 @@ Possible values are `copy` (copy of a page of this site),
 **typeSettings:** Specifies settings (using key/value pairs) for the layout 
 `type`.
 
-+$$$
+| **Note:** Portlet preferences set in `sitemap.json` are saved in the database to
+| the column: `portletPreferences.preferences`. To determine the proper key:value
+| pair for a portlet preference, there are a couple approaches you can take.
+| 
+| You can manually set the portlet preference in @product@, and then check the
+| values in this column of the database as a hint for what to configure in your
+| `sitemap.json`. For example, you can configure the Asset Publisher to display
+| assets that match the specified asset tags, using the following configuration:
+| 
+|     "queryName0": "assetTags",
+|     "queryValues0": "MyAssetTagName"
+| 
+| Alternatively, you can search each app in your @product@ bundle for the keyword
+| `preferences--`. This returns some of the app's JSPs that have the portlet
+| preferences defined for the portlet.
+| 
+| You can use a combination of both of these approaches to determine the key/value
+| pairs for the portlet preferences.
+| 
+| Note that portlet preferences that require an existing configuration, such as a
+| tag or category, may require you to create the configuration on the Global site
+| first, so that the Resources Importer finds a match when deployed with the theme.
 
-**Note:** Portlet preferences set in `sitemap.json` are saved in the database to 
-the column: `portletPreferences.preferences`. To determine the proper key:value 
-pair for a portlet preference, there are a couple approaches you can take.
-
-You can manually set the portlet preference in @product@, and then check the 
-values in this column of the database as a hint for what to configure in your 
-`sitemap.json`. For example, you can configure the Asset Publisher to display 
-assets that match the specified asset tags, using the following configuration:
-
-    "queryName0": "assetTags",
-    "queryValues0": "MyAssetTagName"
-
-Alternatively, you can search each app in your @product@ bundle for the keyword 
-`preferences--`. This returns some of the app's JSPs that have the portlet 
-preferences defined for the portlet.
-
-You can use a combination of both of these approaches to determine the key/value 
-pairs for the portlet preferences. 
-
-Note that portlet preferences that require an existing configuration, such as a 
-tag or category, may require you to create the configuration on the Global site 
-first, so that the Resources Importer finds a match when deployed with the theme.  
-
-$$$
-
-+$$$
-
-**Tip:** You can specify an application display template (ADT) for a portlet in
-the `sitemap.json` file by setting the `displayStyle` and `displayStyleGroupId`
-portlet preferences. For example:
-
-    "portletId": "com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet",
-        "portletPreferences": {
-            "displayStyleGroupId": "10197",
-            "displayStyle": "ddmTemplate_6fe4851b-53bc-4ca7-868a-c836982836f4",
-    }
-
-To learn more about ADTs, visit the
-[Styling Apps with Application Display Templates](/discover/portal/-/knowledge_base/7-0/styling-apps-with-application-display-templates)
-chapter. 
-
-$$$
+| **Tip:** You can specify an application display template (ADT) for a portlet in
+| the `sitemap.json` file by setting the `displayStyle` and `displayStyleGroupId`
+| portlet preferences. For example:
+| 
+|     "portletId": "com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet",
+|         "portletPreferences": {
+|             "displayStyleGroupId": "10197",
+|             "displayStyle": "ddmTemplate_6fe4851b-53bc-4ca7-868a-c836982836f4",
+|     }
+| 
+| To learn more about ADTs, visit the
+| [Styling Apps with Application Display Templates](/docs/7-0/user/-/knowledge_base/u/styling-apps-with-application-display-templates)
+| chapter.
 
 Optionally, you can create an `assets.json` file in your
 `[theme-name]/src/WEB-INF/src/resources-importer` folder. While the
@@ -550,13 +526,9 @@ you've already created in Liferay. Let's go over how to leverage your HTML
 (basic web content), JSON (structures), or VM or FTL (templates) files from
 Liferay:
 
-+$$$
-
-**Note:** In previous versions of Liferay, basic web content could be added
-without the need of a structure or template. In @product-ver@ and above, all web
-content articles require a structure and template.
-
-$$$
+| **Note:** In previous versions of Liferay, basic web content could be added
+| without the need of a structure or template. In @product-ver@ and above, all web
+| content articles require a structure and template.
 
 - **web content:** Edit the article, and copy the content from the *Source* view. 
   Create a folder for the article under `resources-importer/journal/articles/`, 
@@ -613,14 +585,10 @@ resources:
     
         #resources-importer-target-value
         
-    +$$$
-    
-    **Note:** By default resources are imported into a new site template named 
-    after the theme. If you want your resources to be imported into an existing 
-    site or site template, you must specify a value for the 
-    `resources-importer-target-value` property.
-
-    $$$
+    | **Note:** By default resources are imported into a new site template named
+    | after the theme. If you want your resources to be imported into an existing
+    | site or site template, you must specify a value for the
+    | `resources-importer-target-value` property.
     
 7.  Comment out the `resources-importer-target-class-name` property to import 
     into a site template or set it to `com.liferay.portal.kernel.model.Group` to 
@@ -671,10 +639,10 @@ please examine the Zoe themes which you can find on Github here
 and which you can download from Liferay Marketplace.
 -->
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+[Liferay Theme Generator](/docs/7-0/tutorials/-/knowledge_base/t/themes-generator)
 
-[Styling Apps with Application Display Templates](/discover/portal/-/knowledge_base/7-0/styling-apps-with-application-display-templates)
+[Styling Apps with Application Display Templates](/docs/7-0/user/-/knowledge_base/u/styling-apps-with-application-display-templates)
 
 

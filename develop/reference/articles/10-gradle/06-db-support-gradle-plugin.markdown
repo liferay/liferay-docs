@@ -1,4 +1,8 @@
-# DB Support Gradle Plugin [](id=db-support-gradle-plugin)
+---
+header-id: db-support-gradle-plugin
+---
+
+# DB Support Gradle Plugin
 
 The DB Support Gradle plugin lets you run the [Liferay DB Support](https://github.com/liferay/liferay-portal/tree/master/modules/util/portal-tools-db-support)
 tool to execute certain actions on a local Liferay database. So far, the
@@ -9,7 +13,7 @@ module.
 
 The plugin has been successfully tested with Gradle 4.10.2.
 
-## Usage [](id=usage)
+## Usage
 
 To use the plugin, include it in your build script:
 
@@ -41,7 +45,7 @@ repositories {
 }
 ```
 
-## Tasks [](id=tasks)
+## Tasks
 
 The plugin adds one task to your project:
 
@@ -58,7 +62,7 @@ Property Name | Default Value
 [`servletContextName`](#servletcontextname) | <p>**If the `base` plugin is applied:**  The bundle symbolic name of the project inferred via the [`OsgiHelper`](https://github.com/gradle/gradle/blob/master/subprojects/osgi/src/main/java/org/gradle/api/internal/plugins/osgi/OsgiHelper.java) class.</p><p>**Otherwise:** `null`</p>
 [`serviceXmlFile`](#servicexmlfile) | `"${project.projectDir}/service.xml"`
 
-### CleanServiceBuilderTask [](id=cleanservicebuildertask)
+### CleanServiceBuilderTask
 
 Tasks of type `BuildDeploymentHelperTask` extend [`JavaExec`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html),
 so all its properties and methods, such as [`args`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:args\(java.lang.Iterable\))
@@ -71,7 +75,7 @@ Property Name | Default Value
 [`classpath`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:classpath) | [`project.configurations.dbSupport`](#jdbc-drivers-dependency) + [`project.configurations.dbSupportTool`](#liferay-db-support-dependency)
 [`main`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html#org.gradle.api.tasks.JavaExec:main) | `"com.liferay.portal.tools.db.support.DBSupport"`
 
-#### Task Properties [](id=task-properties)
+#### Task Properties
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -86,11 +90,11 @@ The properties of type `File` support any type that can be resolved by [`project
 Moreover, it is possible to use Closures and Callables as values for the `int`
 and `String` properties to defer evaluation until task execution.
 
-## Additional Configuration [](id=additional-configuration)
+## Additional Configuration
 
 There are additional configurations that can help you use the Deployment Helper.
 
-### JDBC Drivers Dependency [](id=jdbc-drivers-dependency)
+### JDBC Drivers Dependency
 
 The plugin creates a configuration called `dbSupport`, which can be used to
 provide the suitable JDBC driver for your Liferay database:
@@ -103,7 +107,7 @@ dependencies {
 }
 ```
 
-### Liferay DB Support Dependency [](id=liferay-db-support-dependency)
+### Liferay DB Support Dependency
 
 By default, the plugin creates a configuration called `dbSupportTool` and adds a
 dependency to the latest released version of the Liferay DB Support. It is

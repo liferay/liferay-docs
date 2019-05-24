@@ -1,10 +1,14 @@
-# Using Solr [](id=using-solr)
+---
+header-id: using-solr
+---
+
+# Using Solr
 
 Solr is a popular enterprise search platform build on Apache Lucene. It's
 popular for its reliability, scalability, and fault tolerance. Read more about
 it [here](http://lucene.apache.org/solr/).
 
-Although [Elasticsearch](/discover/deployment/-/knowledge_base/7-0/configuring-elasticsearch-for-liferay-0)
+Although [Elasticsearch](/docs/7-0/deploy/-/knowledge_base/d/configuring-elasticsearch-for-liferay-0)
 is the default search engine that ships with @product@, it's perfectly valid to
 use Solr instead. In particular, if you've already been using Solr with a
 previous version of @product@, or your deployment system (for example, your OS or
@@ -36,7 +40,7 @@ the `osgi`, `deploy`, `data`, and `license` folders, among others.
 
 Before configuring @product@ for Solr, you need to install and set up Solr.
 
-## Installing and Configuring Solr 5 [](id=installing-and-configuring-solr-5)
+## Installing and Configuring Solr 5
 
 To install and properly configure Solr for @product@:
 
@@ -105,7 +109,7 @@ To install and properly configure Solr for @product@:
 
 Solr is now installed. Next install and configure @product@'s Solr adapter.
 
-## Installing and Configuring the Liferay Solr Adapter [](id=installing-and-configuring-the-liferay-solr-adapter)
+## Installing and Configuring the Liferay Solr Adapter
 
 Since Elasticsearch is the default search engine in @product@, the Elasticsearch
 adapter is already installed and running. Stop it before configuring the Solr
@@ -142,23 +146,19 @@ Stop the Elasticsearch adapter by entering
 
 In the case above, the `[bundle ID]` is `239`. 
 
-+$$$
-
-**Liferay Digital Enterprise:** Digital Enterprise customers should 
-[blacklist](/discover/portal/-/knowledge_base/7-0/blacklisting-osgi-modules) 
-the Elasticsearch, Shield, and Marvel plugins. 
-
-1.  Create a 
-
-        com.liferay.portal.bundle.blacklist.internal.BundleBlacklistConfiguration.config
-
-    file with these contents:
-
-        blacklistBundleSymbolicNames=["com.liferay.portal.search.elasticsearch","com.liferay.portal.search.elasticsearch.shield","com.liferay.portal.search.elasticsearch.marvel.web"]
-
-2.  Place the file in `Liferay Home/osgi/configs`.
-
-$$$
+| **Liferay Digital Enterprise:** Digital Enterprise customers should
+| [blacklist](/docs/7-0/user/-/knowledge_base/u/blacklisting-osgi-modules)
+| the Elasticsearch, Shield, and Marvel plugins.
+| 
+| 1.  Create a
+| 
+|         com.liferay.portal.bundle.blacklist.internal.BundleBlacklistConfiguration.config
+| 
+|     file with these contents:
+| 
+|         blacklistBundleSymbolicNames=["com.liferay.portal.search.elasticsearch","com.liferay.portal.search.elasticsearch.shield","com.liferay.portal.search.elasticsearch.marvel.web"]
+| 
+| 2.  Place the file in `Liferay Home/osgi/configs`.
 
 Now you can install and configure the Solr adapter:
 
@@ -189,7 +189,7 @@ configurations.
 
 ![Figure 2: You can configure Solr from @product@'s System Settings application. This is most useful during development and testing.](../../images/solr-system-settings.png)
 
-## High Availability with SolrCloud [](id=high-availability-with-solrcloud)
+## High Availability with SolrCloud
 
 You can use SolrCloud if you need a cluster of Solr servers featuring fault
 tolerance and high availability. Note that to use SolrCloud in production, you
@@ -284,7 +284,7 @@ To stop Solr while running in SolrCloud mode, use the *stop* command, like this:
 
     bin/solr stop -all
 
-## Configure the Solr Adapter for SolrCloud [](id=configure-the-solr-adapter-for-solrcloud)
+## Configure the Solr Adapter for SolrCloud
 
 There's only one thing left to do: specify the client type as *CLOUD* in
 Liferay's Solr adapter.
@@ -296,13 +296,9 @@ Liferay's Solr adapter.
 
 2. Start @product@ if it's not running already.
 
-+$$$
-
-**Note:** For a complete list of settings available in the Solr adapter, see the
-[Solr Settings reference
-article](/discover/reference/-/knowledge_base/7-0/solr-settings).
-
-$$$
+| **Note:** For a complete list of settings available in the Solr adapter, see the
+| [Solr Settings reference
+| article](/discover/reference/-/knowledge_base/7-0/solr-settings).
 
 Now you're able to configure @product@ for Solr, and Solr for @product@. Remember
 that Elasticsearch is the default search engine for @product@, so if you're not

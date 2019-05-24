@@ -1,4 +1,8 @@
-# Blacklisting OSGi Modules and Components [](id=blacklisting-osgi-modules)
+---
+header-id: blacklisting-osgi-modules
+---
+
+# Blacklisting OSGi Modules and Components
 
 Blacklists are used for good and evil. An evil blacklist penalizes unfairly; a
 good blacklist protects. @product@'s OSGi module blacklists and component
@@ -10,21 +14,13 @@ Components list, or Gogo shell.
 Using the Control Panel's Bundle Blacklist screen and Component Blacklist
 Configuration screen are the best ways to create blacklist files. 
 
-+$$$
+| **Note**: Blacklisting OSGi modules appears in DXP Digital Enterprise 7.0 Fix
+| Pack 30 and Liferay CE Portal 7.0 GA5.
 
-**Note**: Blacklisting OSGi modules appears in DXP Digital Enterprise 7.0 Fix 
-Pack 30 and Liferay CE Portal 7.0 GA5.
+| **Note**: Blacklisting OSGi components appears in DXP Digital Enterprise 7.0 Fix
+| Pack 40 and Liferay CE Portal 7.0 GA6.
 
-$$$
-
-+$$$
-
-**Note**: Blacklisting OSGi components appears in DXP Digital Enterprise 7.0 Fix
-Pack 40 and Liferay CE Portal 7.0 GA6.
-
-$$$
-
-## Blacklisting Modules [](id=blacklisting-steps)
+## Blacklisting Modules
 
 Follow these steps to blacklist modules:
 
@@ -57,11 +53,7 @@ Follow these steps to blacklist modules:
 5.  Copy the configuration file into the 
     `[Liferay_Home]/osgi/configs` folder to deploy it. 
 
-+$$$
-
-**Note**: Blacklisting an LPKG uninstalls all of its internal modules. 
-
-$$$
+| **Note**: Blacklisting an LPKG uninstalls all of its internal modules.
 
 **Blacklist Bundle Symbolic Names**
 
@@ -74,7 +66,7 @@ Type |  &nbsp;Bundle Symbolic Name |
 @product@ removes installed modules on the blacklist. Blacklisted modules can't
 be installed. The @product@ log reports each module uninstallation.
 
-## Reinstalling Blacklisted Modules [](id=reinstalling-blacklisted-modules)
+## Reinstalling Blacklisted Modules
 
 To reinstall and permit installation of blacklisted modules, follow these steps:
 
@@ -88,24 +80,20 @@ To reinstall *all* the blacklisted modules execute one of these options:
 
 -   Remove the configuration file.
 -   Uninstall the module `com.liferay.portal.bundle.blacklist` using the
-    [Application Manager](/discover/portal/-/knowledge_base/7-0/managing-and-configuring-apps#using-the-app-manager)
+    [Application Manager](/docs/7-0/user/-/knowledge_base/u/managing-and-configuring-apps#using-the-app-manager)
     or
-    [Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell).
+    [Felix Gogo Shell](/docs/7-0/reference/-/knowledge_base/r/using-the-felix-gogo-shell).
 
-+$$$
-
-**Note**: To temporarily reinstall a module that's been blacklisted, you can 
-remove its symbolic name from the Bundle Blacklist module in System Settings and
-click the *Update* button. If you want the module to install on subsequent
-Liferay server startup, make sure to remove the module's symbolic name from any
-existing module blacklist configuration file in the
-`[Liferay_Home]/osgi/configs` folder.
-
-$$$
+| **Note**: To temporarily reinstall a module that's been blacklisted, you can
+| remove its symbolic name from the Bundle Blacklist module in System Settings and
+| click the *Update* button. If you want the module to install on subsequent
+| Liferay server startup, make sure to remove the module's symbolic name from any
+| existing module blacklist configuration file in the
+| `[Liferay_Home]/osgi/configs` folder.
 
 The @product@ log reports each module installation. 
 
-## Blacklisting Components [](id=blacklisting-components)
+## Blacklisting Components
 
 Follow these steps to blacklist components:
 
@@ -136,7 +124,7 @@ Follow these steps to blacklist components:
 5.  Copy the configuration file into the `[Liferay_Home]/osgi/configs` folder to
     deploy it. 
 
-## Re-enabling Blacklisted Components [](id=re-enabling-blacklisted-components)
+## Re-enabling Blacklisted Components
 
 To re-enable and permit enabling of blacklisted components, follow these steps:
 
@@ -148,15 +136,11 @@ To re-enable and permit enabling of blacklisted components, follow these steps:
 
 To enable *all* the blacklisted components remove the configuration file.
 
-+$$$
-
-**Note**: To temporarily reactivate a component that's been blacklisted, you can
-remove its name from the Component Blacklist Configuration module in System
-Settings and click the *Update* button. If you want the component to activate on
-subsequent Liferay server startup, make sure to remove the component's name from
-any existing component blacklist configuration file in the
-`[Liferay_Home]/osgi/configs` folder.
-
-$$$
+| **Note**: To temporarily reactivate a component that's been blacklisted, you can
+| remove its name from the Component Blacklist Configuration module in System
+| Settings and click the *Update* button. If you want the component to activate on
+| subsequent Liferay server startup, make sure to remove the component's name from
+| any existing component blacklist configuration file in the
+| `[Liferay_Home]/osgi/configs` folder.
 
 Now you know how to use the blacklisting features for modules and components.

@@ -1,4 +1,8 @@
-# Converting StrutsActionWrappers to MVCCommands [](id=converting-strutsactionwrappers-to-mvccommands)
+---
+header-id: converting-strutsactionwrappers-to-mvccommands
+---
+
+# Converting StrutsActionWrappers to MVCCommands
 
 Since Liferay Portal 6.1, developers could customize the Portal and Portlet
 Struts Actions using a Hook and `StrutsActionWrappers`. For example, the
@@ -26,7 +30,7 @@ instead use `MVCCommands`.
 This tutorial demonstrates how to convert your existing `StrutsActionWrappers` to
 `MVCCommands`. 
 
-## Converting Your old wrapper to MVCCommands [](id=converting-your-old-wrapper-to-mvccommands)
+## Converting Your old wrapper to MVCCommands
 
 Converting `StrutsActionWrappers` to `MVCCommands` is easier than you may think.
 
@@ -41,7 +45,7 @@ to use the matching MVCCommand shown below:
 -   render &rarr; MVCRenderCommand
 -   serveResource &rarr; MVCResourceCommand
 
-Look at the [ExampleStrutsPortletAction class](/develop/tutorials/-/knowledge_base/6-2/overriding-and-adding-struts-actions)
+Look at the [ExampleStrutsPortletAction class](/docs/6-2/tutorials/-/knowledge_base/t/overriding-and-adding-struts-actions)
 for a `StrutsActionWrapper` example. Depending on the actions overridden, the 
 user must use different `MVCCommands`. In this example, the action and 
 render were overridden, so in order to migrate to the new pattern, you would 
@@ -50,7 +54,7 @@ need to create two classes: `MVCActionCommand` and `MVCRenderCommand`.
 Next you'll need to determine the associated mapping that is used by the 
 `MVCCommand`.
 
-## Mapping Your MVCCommand URLs [](id=mapping-your-mvccommand-urls)
+## Mapping Your MVCCommand URLs
 
 For most cases, the `MVCCommand` mapping is the same mapping defined in the 
 legacy struts action.
@@ -84,12 +88,12 @@ Depending on the URL it is a different parameter:
 Once you have this information, you can override the `MVCCommand` by following the
 instructions found in these sections of the Overriding MVC Commands tutorial:
 
--   [/Overriding MVCActionCommands](/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands#overriding-mvcactioncommand)
--   [Overriding MVCResourceCommands](/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands#overriding-mvcresourcecommand)
--   [Overriding MVCRenderCommands](/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands#adding-logic-to-an-existing-mvc-render-command)
+-   [/Overriding MVCActionCommands](/docs/7-0/tutorials/-/knowledge_base/t/overriding-mvc-commands#overriding-mvcactioncommand)
+-   [Overriding MVCResourceCommands](/docs/7-0/tutorials/-/knowledge_base/t/overriding-mvc-commands#overriding-mvcresourcecommand)
+-   [Overriding MVCRenderCommands](/docs/7-0/tutorials/-/knowledge_base/t/overriding-mvc-commands#adding-logic-to-an-existing-mvc-render-command)
 
 Now you know how to convert your `StrutsActionWrapper`s to `MVCCommand`s!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Overriding MVC Commands](/develop/tutorials/-/knowledge_base/7-0/overriding-mvc-commands)
+[Overriding MVC Commands](/docs/7-0/tutorials/-/knowledge_base/t/overriding-mvc-commands)

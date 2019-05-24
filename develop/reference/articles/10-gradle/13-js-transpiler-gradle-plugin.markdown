@@ -1,20 +1,20 @@
-# JS Transpiler Gradle Plugin [](id=js-transpiler-gradle-plugin)
+---
+header-id: js-transpiler-gradle-plugin
+---
+
+# JS Transpiler Gradle Plugin
 
 The JS Transpiler Gradle plugin lets you run [`metal-cli`](https://github.com/metal/metal-cli)
 to build [Metal.js](http://metaljs.com/) code, compile Soy files, and transpile
 ES6 to ES5.
 
-+$$$
-
-**Important:** If you're using [Liferay Workspace](/develop/tutorials/-/knowledge_base/7-0/liferay-workspace) 
-to create your app, the JS Transpiler Gradle plugin is applied by default. Do 
-not apply the JS Transpiler Gradle plugin if you're using Liferay Workspace. 
-
-$$$
+| **Important:** If you're using [Liferay Workspace](/docs/7-0/tutorials/-/knowledge_base/t/liferay-workspace)
+| to create your app, the JS Transpiler Gradle plugin is applied by default. Do
+| not apply the JS Transpiler Gradle plugin if you're using Liferay Workspace.
 
 The plugin has been successfully tested with Gradle 4.10.2.
 
-## Usage [](id=usage)
+## Usage
 
 To use the plugin, include it in your build script:
 
@@ -52,7 +52,7 @@ in Node.js scripts:
     apply plugin: "com.liferay.js.transpiler.base"
     ```
 
-## JS Transpiler Plugin [](id=js-transpiler-plugin)
+## JS Transpiler Plugin
 
 The JS Transpiler plugin automatically applies the [*JS Transpiler Base Plugin*](#js-transpiler-base-plugin).
 
@@ -89,7 +89,7 @@ or more dependencies are added to this configuration, they will be expanded into
 temporary directories and passed to the `transpileJS` task as additional
 [`soyDependencies`](#soydependencies) values.
 
-## JS Transpiler Base Plugin [](id=js-transpiler-base-plugin)
+## JS Transpiler Base Plugin
 
 The JS Transpiler Base plugin automatically applies the [`com.liferay.node`](https://github.com/liferay/liferay-portal/tree/master/modules/sdk/gradle-plugins-node)
 plugin.
@@ -111,9 +111,9 @@ running any [script](https://docs.npmjs.com/misc/scripts) declared in the
 `package.json` file of the project, all the `jsCompile` dependencies will be
 expanded into the `node_modules` directory.
 
-## Tasks [](id=tasks)
+## Tasks
 
-### TranspileJSTask [](id=transpilejstask)
+### TranspileJSTask
 
 Tasks of type `TranspileJSTask` extend `ExecuteNodeScriptTask`, so all its
 properties and methods, such as `args`, `inheritProxy`, and `workingDir`, are
@@ -129,7 +129,7 @@ The purpose of this task is to run the `build` command of `metal-cli` to
 build Metal.js code from [`sourceDir`](#sourcedir) into the `workingDir`
 directory.
 
-#### Task Properties [](id=task-properties)
+#### Task Properties
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -150,7 +150,7 @@ The properties of type `File` support any type that can be resolved by [`project
 Moreover, it is possible to use Closures and Callables as values for the `int`
 and `String` properties to defer evaluation until task execution.
 
-#### Task Methods [](id=task-methods)
+#### Task Methods
 
 Method | Description
 ------ | -----------

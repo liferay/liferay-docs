@@ -1,4 +1,8 @@
-# Sending Your Android App's Requests Using Batch Processing [](id=sending-your-android-apps-requests-using-batch-processing)
+---
+header-id: sending-your-android-apps-requests-using-batch-processing
+---
+
+# Sending Your Android App's Requests Using Batch Processing
 
 The Mobile SDK also allows sending requests in batch. This can be much more 
 efficient than sending separate requests. For example, suppose you want to 
@@ -9,10 +13,10 @@ them all together.
 This tutorial shows you how to implement batch processing for your Android app.
 It's assumed that you already know how to invoke Liferay services from your
 Android app. If you don't, see the tutorial 
-[Invoking Liferay Services in Your Android App](/develop/tutorials/-/knowledge_base/7-0/invoking-liferay-services-in-your-android-app).
+[Invoking Liferay Services in Your Android App](/docs/7-0/tutorials/-/knowledge_base/t/invoking-liferay-services-in-your-android-app).
 Now get ready to whip up a fresh batch of service calls! 
 
-## Implementing Batch Processing [](id=implementing-batch-processing)
+## Implementing Batch Processing
 
 Making service calls in batch only requires two extra steps over making them one 
 at a time: 
@@ -67,13 +71,13 @@ the callback as a `BatchAsyncTaskCallback` instance:
 
 This is similar to the procedure for making asynchronous calls as described in 
 the tutorial 
-[Invoking Services Asynchronously from Your Android App](/develop/tutorials/-/knowledge_base/7-0/invoking-services-asynchronously-from-your-android-app). 
+[Invoking Services Asynchronously from Your Android App](/docs/7-0/tutorials/-/knowledge_base/t/invoking-services-asynchronously-from-your-android-app). 
 Awesome! Now you know how to make efficient service calls in batch! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Invoking Liferay Services in Your Android App](/develop/tutorials/-/knowledge_base/7-0/invoking-liferay-services-in-your-android-app)
+[Invoking Liferay Services in Your Android App](/docs/7-0/tutorials/-/knowledge_base/t/invoking-liferay-services-in-your-android-app)
 
-[Invoking Services Asynchronously from Your Android App](/develop/tutorials/-/knowledge_base/7-0/invoking-services-asynchronously-from-your-android-app)
+[Invoking Services Asynchronously from Your Android App](/docs/7-0/tutorials/-/knowledge_base/t/invoking-services-asynchronously-from-your-android-app)
 
-[Creating iOS Apps that Use the Mobile SDK](/develop/tutorials/-/knowledge_base/7-0/creating-ios-apps-that-use-the-mobile-sdk)
+[Creating iOS Apps that Use the Mobile SDK](/docs/7-0/tutorials/-/knowledge_base/t/creating-ios-apps-that-use-the-mobile-sdk)

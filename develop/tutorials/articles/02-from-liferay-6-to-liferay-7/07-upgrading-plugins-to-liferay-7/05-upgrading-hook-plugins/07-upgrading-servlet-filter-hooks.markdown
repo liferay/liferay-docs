@@ -1,10 +1,14 @@
-# Upgrading Servlet Filter Hooks [](id=upgrading-servlet-filter-hooks)
+---
+header-id: upgrading-servlet-filter-hooks
+---
+
+# Upgrading Servlet Filter Hooks
 
 If you have Servlet Filter Hooks ready to be upgraded, this tutorial's for you.
 The process is quite simple:
 
 1.  Adapt your plugin to @product-ver@'s API using
-    [Liferay @ide@'s Code Upgrade Tool](/develop/tutorials/-/knowledge_base/7-0/adapting-to-liferay-7s-api-with-the-code-upgrade-tool).
+    [Liferay @ide@'s Code Upgrade Tool](/docs/7-0/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool).
 
 2.  Deploy the plugin.
 
@@ -13,8 +17,8 @@ Application Bundle (WAB) and installs it to Liferay's OSGi Runtime.
 
 Your Servlet Filter is running on @product-ver@!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Resolving a Plugin's Dependencies](/develop/tutorials/-/knowledge_base/7-0/resolving-a-plugins-dependencies)
+[Resolving a Plugin's Dependencies](/docs/7-0/tutorials/-/knowledge_base/t/resolving-a-plugins-dependencies)
 
-[Upgrading the Liferay Maven Build](/develop/tutorials/-/knowledge_base/7-0/upgrading-the-liferay-maven-build)
+[Upgrading the Liferay Maven Build](/docs/7-0/tutorials/-/knowledge_base/t/upgrading-the-liferay-maven-build)

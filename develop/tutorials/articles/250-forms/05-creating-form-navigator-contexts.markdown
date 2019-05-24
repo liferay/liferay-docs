@@ -1,8 +1,12 @@
-# Creating Form Navigator Contexts [](id=creating-form-navigator-contexts)
+---
+header-id: creating-form-navigator-contexts
+---
+
+# Creating Form Navigator Contexts
 
 Form Navigator System Settings let you specify what categories and sections are 
 visible in your forms. You can learn how to set Form Navigator 
-System Settings in [Configuring Form Navigator Forms](/discover/portal/-/knowledge_base/7-0/configuring-form-navigator-forms). 
+System Settings in [Configuring Form Navigator Forms](/docs/7-0/user/-/knowledge_base/u/configuring-form-navigator-forms). 
 Form Navigator configurations let you specify an optional context 
 which defines the circumstances for which the configuration is applied. The
 following Form Navigator contexts are available by default:
@@ -22,7 +26,7 @@ create additional contexts for Form Navigators.
 
 Your first step is to manage the dependencies.
 
-## Adding the Form Navigator Dependency [](id=adding-the-form-navigator-dependency)
+## Adding the Form Navigator Dependency
 
 Open your module's `build.gradle` file and add the following dependency:
 
@@ -34,7 +38,7 @@ Open your module's `build.gradle` file and add the following dependency:
 Now that you have the Form Navigator taglib dependency added, you can create the 
 component class. 
 
-## Implementing the Context Provider Class [](id=implementing-the-context-provider-class)
+## Implementing the Context Provider Class
 
 Follow these steps to create a Form Navigator Context:
 
@@ -115,7 +119,7 @@ The new context is ready to use in your Form Navigator configurations.
  
 A full `*ContextProvider` example class is provided next.
 
-## Context Provider Example class [](id=context-provider-example-class)
+## Context Provider Example class
 
 Below is an example configuration for the 
 [`com.liferay.users.admin.web.servlet.taglib.ui.UsersFormNavigatorContextProvider` class](https://github.com/liferay/liferay-portal/blob/7.0.x/modules/apps/foundation/users-admin/users-admin-web/src/main/java/com/liferay/users/admin/web/servlet/taglib/ui/UsersFormNavigatorContextProvider.java):
@@ -172,8 +176,8 @@ Below is an example configuration for the
     
 Now you know how to create a Form Navigator context!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Configuring Form Navigator Forms](/discover/portal/-/knowledge_base/7-0/configuring-form-navigator-forms)
+[Configuring Form Navigator Forms](/docs/7-0/user/-/knowledge_base/u/configuring-form-navigator-forms)
 
-[Form Navigator Extensions](/develop/tutorials/-/knowledge_base/7-0/form-navigator)
+[Form Navigator Extensions](/docs/7-0/tutorials/-/knowledge_base/t/form-navigator)

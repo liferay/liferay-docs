@@ -1,4 +1,8 @@
-# Knowledge Base Configuration [](id=knowledge-base-configuration)
+---
+header-id: knowledge-base-configuration
+---
+
+# Knowledge Base Configuration
 
 These are the settings to configure the Knowledge Base, including the migration 
 of properties from Liferay Portal 6.2.
@@ -8,13 +12,13 @@ This reference doc has two sections:
 - Knowledge Base System Settings
 - Overriding Settings
 
-## Knowledge Base System Settings [](id=knowledge-base-system-settings)
+## Knowledge Base System Settings
 
 Configuration changes made in System Settings set the default configuration for
 the corresponding app across all sites. Knowledge Base apps in your site can
 override these default values through their *Configuration* menu.
 
-### Knowledge Base Article Configuration [](id=knowledge-base-article-configuration)
+### Knowledge Base Article Configuration
 
 -  **Resource Prim key:** Sets the primary key that identifies a 
    Knowledge Base article or Knowledge Base folder (depending on the resource 
@@ -70,7 +74,7 @@ override these default values through their *Configuration* menu.
    `portal-ext.properties` file. The default value is 
    `${server-property://com.liferay.portal/social.bookmark.types}`.
 
-### Knowledge Base Display Configuration [](id=knowledge-base-display-configuration)
+### Knowledge Base Display Configuration
 
 -  **Resource Prim key:** Sets the primary key that identifies a 
    Knowledge Base article or Knowledge Base folder (depending on the resource 
@@ -128,7 +132,7 @@ override these default values through their *Configuration* menu.
 
 -  **Content root prefix:** Sets the default value for the content root prefix.
 
-### Knowledge Base Service Configuration [](id=knowledge-base-service-configuration)
+### Knowledge Base Service Configuration
 
 The list below describes what each configuration option does in the System
 Settings UI.
@@ -252,7 +256,7 @@ Settings UI.
    the `rss.feed.types` portal property. The default value is
    `${server-property://com.liferay.portal/rss.feed.type.default}`.
 
-### Knowledge Base Search Configuration [](id=knowledge-base-search-configuration)
+### Knowledge Base Search Configuration
 
 -  **Show KBArticle author column:** Sets whether to display the author column
    in the search results of the application. This is enabled by default.
@@ -312,7 +316,7 @@ Settings UI.
    `portal-ext.properties` file. The default value is 
    `${server-property://com.liferay.portal/social.bookmark.types}`.
  
-### Knowledge Base Section Configuration [](id=knowledge-base-section-configuration)
+### Knowledge Base Section Configuration
 
 -  **Show KBArticles sections title:** Sets whether to show the sections title
    in the application. This is enabled by default.
@@ -379,7 +383,7 @@ Settings UI.
 Although some of these settings can be modified through the configuration menu, 
 others require more effort to change. These settings are specified next.
 
-## Overriding Settings [](id=overriding-settings)
+## Overriding Settings
 
 Some of the configuration settings have values and must be overridden through
 either a portal properties file or a configuration file. For example, the
@@ -412,30 +416,26 @@ absolute file path.
 Note that email templates can also be modified through the Knowledge Base app's 
 *Configuration* button in the Options menu.
 
-+$$$
-
-**Note:** Once you've exported the configuration files, as explained in the 
-[System Settings](/discover/portal/-/knowledge_base/7-0/system-settings#exporting-and-importing-configurations) 
-User Guide documentation, the configuration files are located in a folder called
-`liferay-system-settings`. Within this folder you'll find the 
-configuration(.config) files, named after the full class name for that file.
-
-For example, the *Knowledge Base Service* configuration file is called
-`com.liferay.knowledge.base.configuration.KBGroupServiceConfiguration.config` and
-the *Knowledge Base Section* configuration file is called
-`com.liferay.knowledge.base.web.configuration.KBSectionPortletInstanceConfiguration.config`.
-
-To override a configuration file, you must create a new configuration file with 
-the same name, specify your property values, and place it in the `osgi/config` 
-directory.
-
-$$$
+| **Note:** Once you've exported the configuration files, as explained in the
+| [System Settings](/docs/7-0/user/-/knowledge_base/u/system-settings#exporting-and-importing-configurations)
+| User Guide documentation, the configuration files are located in a folder called
+| `liferay-system-settings`. Within this folder you'll find the
+| configuration(.config) files, named after the full class name for that file.
+| 
+| For example, the *Knowledge Base Service* configuration file is called
+| `com.liferay.knowledge.base.configuration.KBGroupServiceConfiguration.config` and
+| the *Knowledge Base Section* configuration file is called
+| `com.liferay.knowledge.base.web.configuration.KBSectionPortletInstanceConfiguration.config`.
+| 
+| To override a configuration file, you must create a new configuration file with
+| the same name, specify your property values, and place it in the `osgi/config`
+| directory.
 
 You can view the current configuration files and settings by exporting the 
-configuration file as explained in the [System Settings](/discover/portal/-/knowledge_base/7-0/system-settings#exporting-and-importing-configurations) 
+configuration file as explained in the [System Settings](/docs/7-0/user/-/knowledge_base/u/system-settings#exporting-and-importing-configurations) 
 User Guide documentation.
  
-### Equivalent Configuration Properties for 6.2 Portlet Properties [](id=equivalent-configuration-properties-for-6-2-portlet-properties)
+### Equivalent Configuration Properties for 6.2 Portlet Properties
 
 The table below compares the 6.2 `portlet.properties` to the configuration
 properties and equivalent System Settings for the current version of the
@@ -843,5 +843,5 @@ The properties below have been removed or relocated:
    Base app's configuration menu in System Settings.
 
 You can view the full list of available configuration files and properties by 
-exporting the configuration files, as explained in the [System Settings](/discover/portal/-/knowledge_base/7-0/system-settings#exporting-and-importing-configurations) 
+exporting the configuration files, as explained in the [System Settings](/docs/7-0/user/-/knowledge_base/u/system-settings#exporting-and-importing-configurations) 
 User Guide documentation.

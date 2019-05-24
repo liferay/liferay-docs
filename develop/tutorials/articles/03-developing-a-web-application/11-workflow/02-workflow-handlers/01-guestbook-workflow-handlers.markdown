@@ -1,4 +1,8 @@
-# Creating a Workflow Handler for Guestbooks [](id=creating-a-workflow-handler-for-guestbooks)
+---
+header-id: creating-a-workflow-handler-for-guestbooks
+---
+
+# Creating a Workflow Handler for Guestbooks
 
 <div class="learn-path-step">
     <p>Handling Workflow<br>Step 1 of 2</p>

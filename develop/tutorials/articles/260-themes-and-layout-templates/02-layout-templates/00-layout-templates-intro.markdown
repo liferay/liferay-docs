@@ -1,4 +1,8 @@
-# Layout Templates [](id=layout-templates-intro)
+---
+header-id: layout-templates-intro
+---
+
+# Layout Templates
 
 Are you craving more than @product@'s default page layouts? Do you have a 
 special use case that a default layout template doesn't meet? Well, look no 

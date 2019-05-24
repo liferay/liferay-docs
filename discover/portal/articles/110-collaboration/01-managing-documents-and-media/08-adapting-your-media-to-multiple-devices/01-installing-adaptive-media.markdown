@@ -1,26 +1,26 @@
-# Installing Adaptive Media [](id=installing-adaptive-media)
+---
+header-id: installing-adaptive-media
+---
+
+# Installing Adaptive Media
 
 You can install the Adaptive Media app from 
 [Liferay Marketplace](https://web.liferay.com/marketplace) 
 for Liferay Portal CE 7.0 GA5+ or Liferay DXP. Search for *Adaptive Media* in 
 the Marketplace and follow the app installation instructions at 
-[Using the Liferay Marketplace](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace). 
+[Using the Liferay Marketplace](/docs/7-0/user/-/knowledge_base/u/using-the-liferay-marketplace). 
 
-+$$$
-
-**Note:** To use the Adaptive Media app in Liferay DXP, you must be running 
-Liferay Digital Enterprise 7.0 Fix Pack 35 or higher. See the 
-[customer portal](https://web.liferay.com/group/customer) 
-to download fix packs. 
-
-$$$
+| **Note:** To use the Adaptive Media app in Liferay DXP, you must be running
+| Liferay Digital Enterprise 7.0 Fix Pack 35 or higher. See the
+| [customer portal](https://web.liferay.com/group/customer)
+| to download fix packs.
 
 If you're running Liferay Portal CE 7.0 GA6+, or Liferay DXP with Fix Pack 35+, 
 then installing the Adaptive Media app is all you need to do. If you're running 
 Liferay Portal CE 7.0 GA5, however, then you must also install another module. 
 The next section explains how to do this. 
 
-## Installing Adaptive Media in Liferay Portal CE 7.0 GA5 [](id=installing-adaptive-media-in-liferay-portal-ce-7-0-ga5)
+## Installing Adaptive Media in Liferay Portal CE 7.0 GA5
 
 If you're running Liferay Portal CE 7.0 GA5, then you must install another 
 module after installing the Adaptive Media app: 
@@ -48,7 +48,7 @@ module after installing the Adaptive Media app:
     old module. 
 
 5.  You can verify this by running the command `lb "Journal Service"` from the 
-    [Gogo shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell). 
+    [Gogo shell](/docs/7-0/reference/-/knowledge_base/r/using-the-felix-gogo-shell). 
     It should indicate that the module is active: 
 
         ID|State      |Level|Name
@@ -57,7 +57,7 @@ module after installing the Adaptive Media app:
 Well done! Next, you'll learn which modules in the Adaptive Media app are 
 mandatory or optional. 
 
-## Adaptive Media's Modules [](id=adaptive-medias-modules)
+## Adaptive Media's Modules
 
 Some modules in the Adaptive Media app are mandatory and must be enabled for 
 Adaptive Media to function, while others can be disabled. The Adaptive Media API 
@@ -114,7 +114,7 @@ There are two more optional modules included in Adaptive Media:
 
 -   **Liferay Adaptive Media Document Library Thumbnails:** Lets thumbnails in 
     Documents and Media use adapted images. For this to work, you must first 
-    [migrate the original thumbnails to adapted images](/discover/portal/-/knowledge_base/7-0/migrating-documents-and-media-thumbnails-to-adaptive-media). 
+    [migrate the original thumbnails to adapted images](/docs/7-0/user/-/knowledge_base/u/migrating-documents-and-media-thumbnails-to-adaptive-media). 
     We highly recommend that you enable this module, but it's not mandatory. 
 
 Great! Now you know the mandatory and optional modules that come with Adaptive 
@@ -122,14 +122,14 @@ Media. The next section discusses the installation requirements for using
 animated GIFs with Adaptive Media. If you don't need to use GIFs, you can skip 
 ahead to the article on adding image resolutions to Adaptive Media. 
 
-## Processing Animated GIFs [](id=processing-animated-gifs)
+## Processing Animated GIFs
 
 To process animated GIFs, Adaptive Media uses an external tool called 
 [Gifsicle](https://www.lcdf.org/gifsicle). 
 This tool ensures that the animation works when the GIF is scaled to different 
 resolutions. You must manually install Gifsicle on the server and ensure that
 it's on the `PATH`. Once it's installed, you must enable it in Adaptive Media's
-[advanced configuration options](/discover/portal/-/knowledge_base/7-0/advanced-configuration-options). 
+[advanced configuration options](/docs/7-0/user/-/knowledge_base/u/advanced-configuration-options). 
 
 If Gifsicle isn't installed and `image/gif` is included as a supported MIME type
 in the advanced configuration options, Adaptive Media scales only a GIF's single

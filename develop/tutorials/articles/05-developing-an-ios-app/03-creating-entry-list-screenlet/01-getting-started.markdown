@@ -1,4 +1,8 @@
-# Getting Started with Entry List Screenlet [](id=getting-started-with-entry-list-screenlet-ios)
+---
+header-id: getting-started-with-entry-list-screenlet-ios
+---
+
+# Getting Started with Entry List Screenlet
 
 Like Guestbook List Screenlet, you'll create Entry List Screenlet in its own 
 folder inside your app's project. Create this folder now: 
@@ -16,7 +20,7 @@ folder inside your app's project. Create this folder now:
 
 Now you're ready to begin! 
 
-## Creating the Model Class [](id=creating-the-model-class)
+## Creating the Model Class
 
 Recall that you need a model class to represent entities retrieved from 
 @product@. The model class you'll create for guestbook entries, `EntryModel`, 
@@ -100,6 +104,6 @@ the `model` folder:
 
 Besides working with entries instead of guestbooks, this class is almost 
 identical to `GuestbookModel`. For an explanation of the code, see 
-[the article on getting started with Guestbook List Screenlet](/develop/tutorials/-/knowledge_base/7-0/getting-started-with-guestbook-list-screenlet-ios). 
+[the article on getting started with Guestbook List Screenlet](/docs/7-0/tutorials/-/knowledge_base/t/getting-started-with-guestbook-list-screenlet-ios). 
 
 Next, you'll create the Screenlet's UI. 

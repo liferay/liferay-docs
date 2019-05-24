@@ -1,7 +1,11 @@
-# Detecting Unresolved OSGi Components [](id=detecting-unresolved-osgi-components)
+---
+header-id: detecting-unresolved-osgi-components
+---
+
+# Detecting Unresolved OSGi Components
 
 @product@ includes 
-[Gogo shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell) 
+[Gogo shell](/docs/7-0/reference/-/knowledge_base/r/using-the-felix-gogo-shell) 
 commands that come in handy when trying to diagnose a problem due to an 
 unresolved OSGi component. The specific tools to use depend on the component 
 framework of the unresolved component. Most @product@ components are developed 
@@ -22,7 +26,7 @@ The troubleshooting instructions are divided into these sections:
     -   [Unavailable Component Scanner](#unavailable-component-scanner)
     -   [ServiceProxyFactory](#serviceproxyfactory)
 
-## Declarative Services Components [](id=declarative-services-components)
+## Declarative Services Components
 
 Start with DS, since most @product@ components, apart from Service Builder
 components, are DS components. Suppose one of your bundle's components has an
@@ -36,14 +40,10 @@ unsatisfied service reference. How can you detect this? Two ways:
     [Gogo shell command `ds:unsatisfied`](#ds-unsatisfied-command)
     to check for them manually.
 
-### Declarative Services Unsatisfied Component Scanner [](id=declarative-services-unsatisfied-component-scanner)
+### Declarative Services Unsatisfied Component Scanner
 
-+$$$
-
-**Note**: The Declarative Services Unsatisfied Component Scanner appears in DXP
-Digital Enterprise Fix 7.0 Pack 31 and Liferay CE Portal 7.0 GA5.
-
-$$$
+| **Note**: The Declarative Services Unsatisfied Component Scanner appears in DXP
+| Digital Enterprise Fix 7.0 Pack 31 and Liferay CE Portal 7.0 GA5.
 
 Here are the steps for enabling the unsatisfied component scanner:
 
@@ -74,7 +74,7 @@ unsatisfied reference to a component of type `ItemSelectorHelper`. The
 referencing component's ID (SCR ID) is `3333` and the component belongs to
 bundle `631`. 
 
-### ds:unsatisfied Command [](id=ds-unsatisfied-command)
+### ds:unsatisfied Command
 
 Another way to detect unsatisfied component references is to invoke the Gogo
 shell command `ds:unsatisfied`. 
@@ -82,12 +82,8 @@ shell command `ds:unsatisfied`.
 -   `ds:unsatisfied` shows all unsatisfied services
 -   `ds:unsatisfied [BUNDLE_ID]` shows the bundle's unsatisfied services
 
-+$$$
-
-**Note**: The Gogo shell command `ds:unsatisfied` appears in DXP Digital
-Enterprise Fix 7.0 Pack 31 and Liferay CE Portal 7.0 GA5.
-
-$$$
+| **Note**: The Gogo shell command `ds:unsatisfied` appears in DXP Digital
+| Enterprise Fix 7.0 Pack 31 and Liferay CE Portal 7.0 GA5.
 
 To view more detailed information about the component with the unsatisfied 
 reference, use the command `scr:info [component ID]`. For example, the following 
@@ -135,7 +131,7 @@ missing a `Foo` service. Now you can focus on why `Foo` is unavailable. The
 solution may be as simple as starting or deploying a bundle that provides the
 `Foo` service. 
 
-## Service Builder Components [](id=service-builder-components)
+## Service Builder Components
 
 @product@'s Service Builder modules are implemented using Spring. @product@ uses
 [the Apache Felix Dependency Manager](http://felix.apache.org/documentation/subprojects/apache-felix-dependency-manager.html) 
@@ -148,14 +144,14 @@ situation where your application has an unresolved Spring-related  OSGi
 component. This could occur, for example, if you update your application's
 database schema but forget to trigger an upgrade (for information on creating
 database upgrade processes for your @product@ applications, see the tutorial 
-[Creating an Upgrade Process for Your App](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app)). 
+[Creating an Upgrade Process for Your App](/docs/7-0/tutorials/-/knowledge_base/t/creating-an-upgrade-process-for-your-app)). 
 
 These features detect unresolved Service Builder related components. 
 
 -   [Unavailable Component Scanner](#unavailable-component-scanner)
 -   [ServiceProxyFactory](#serviceproxyfactory)
 
-### Unavailable Component Scanner [](id=unavailable-component-scanner)
+### Unavailable Component Scanner
 
 The Liferay Foundation application suite's Unavailable Component Scanner reports
 missing components in modules that use Service Builder. Here are the steps for
@@ -186,25 +182,17 @@ declarative services components and Service Builder components are published and
 used in the same module. We recommend you publish DS components and Service
 Builder components in separate modules. 
 
-+$$$
+| **Note**: The Spring Extender Unavailable Component Scanner appears in DXP
+| Digital Enterprise Fix 7.0 Pack 24 and Liferay CE Portal 7.0 GA5.
 
-**Note**: The Spring Extender Unavailable Component Scanner appears in DXP
-Digital Enterprise Fix 7.0 Pack 24 and Liferay CE Portal 7.0 GA5.
-
-$$$
-
-### ServiceProxyFactory [](id=serviceproxyfactory)
+### ServiceProxyFactory
 
 @product@'s logs report unresolved Service Builder components too. For example,
 @product@ logs an error when a Service Proxy Factory can't create a new instance
 of a Service Builder based entity because a service is unresolved. 
 
-+$$$
-
-**Note**: The Service Proxy Factory timeout logs appear in DXP Digital
-Enterprise Fix 7.0 Pack 32 and Liferay CE Portal 7.0 GA5.
-
-$$$
+| **Note**: The Service Proxy Factory timeout logs appear in DXP Digital
+| Enterprise Fix 7.0 Pack 32 and Liferay CE Portal 7.0 GA5.
 
 The following code demonstrates using a
 [`ServiceProxyFactory` class](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/portal/kernel/util/ServiceProxyFactory.html)
@@ -231,10 +219,10 @@ the `dependencymanager:dm` command. This command lists all Service Builder
 components, their required services, and whether each required service is
 available. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Calling Non-OSGi Code that Uses OSGi Services](/develop/tutorials/-/knowledge_base/7-0/calling-non-osgi-code-that-uses-osgi-services)
+[Calling Non-OSGi Code that Uses OSGi Services](/docs/7-0/tutorials/-/knowledge_base/t/calling-non-osgi-code-that-uses-osgi-services)
 
-[Felix Gogo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell)
+[Felix Gogo Shell](/docs/7-0/reference/-/knowledge_base/r/using-the-felix-gogo-shell)
 
-[OSGi Basics For Liferay Development](/develop/tutorials/-/knowledge_base/7-0/osgi-basics-for-liferay-development)
+[OSGi Basics For Liferay Development](/docs/7-0/tutorials/-/knowledge_base/t/osgi-basics-for-liferay-development)

@@ -1,4 +1,8 @@
-# Providing the User Personal Bar [](id=providing-the-user-personal-bar)
+---
+header-id: providing-the-user-personal-bar
+---
+
+# Providing the User Personal Bar
 
 Liferay offers a touch of personability with the User Personal Bar. This
 navigation menu is used to display options that are unique to the current logged
@@ -12,7 +16,7 @@ add more functionality to the user bar to fit your needs. Unlike other product
 navigation menus (e.g., Product Menu), the User Personal Bar does not require
 the extension/creation of panel categories and panel apps. It uses another
 common Liferay framework for providing functionality:
-[Portlet Providers](/develop/tutorials/-/knowledge_base/7-0/providing-portlets-to-manage-requests).
+[Portlet Providers](/docs/7-0/tutorials/-/knowledge_base/t/providing-portlets-to-manage-requests).
 Be sure to visit the linked tutorial to learn about how the Portlet Providers
 framework works in Liferay.
 
@@ -21,20 +25,16 @@ default, Liferay provides one sample *User Personal Bar* portlet that fills that
 placeholder, but the portlet Liferay provides can be easily replaced by other
 portlets.
 
-+$$$
-
-**Note:** You can add the User Personal Bar to a custom theme by adding the
-following snippet into your `portal_normal.ftl`:
-
-    <@liferay.user_personal_bar />
-
-$$$
+| **Note:** You can add the User Personal Bar to a custom theme by adding the
+| following snippet into your `portal_normal.ftl`:
+| 
+|     <@liferay.user_personal_bar />
 
 In this tutorial, you'll learn how to customize the User Personal Bar. You'll
 create a single Java class where you'll specify a portlet to replace the
 existing default portlet.
 
-1. [Create an OSGi module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#creating-a-module).
+1. [Create an OSGi module](/docs/7-0/tutorials/-/knowledge_base/t/starting-module-development#creating-a-module).
 
 2. Create a unique package name in the module's `src` directory and create a
    new Java class in that package.
@@ -54,7 +54,7 @@ existing default portlet.
     type you want the portlet to handle. In this case, you want your portlet to
     be provided based on whether or not it can be displayed in the User Personal
     Bar. You may recall from the
-    [Portlet Providers](/develop/tutorials/-/knowledge_base/7-0/providing-portlets-to-manage-requests)
+    [Portlet Providers](/docs/7-0/tutorials/-/knowledge_base/t/providing-portlets-to-manage-requests)
     tutorial that you can request portlets in several different ways (e.g.,
     *Edit*, *Browse*, etc.).
 

@@ -1,4 +1,8 @@
-# Document Action [](id=document-action)
+---
+header-id: document-action
+---
+
+# Document Action
 
 The Document Action sample shows how to add a context menu option to an entry in
 the Documents and Media portlet. When deploying this sample with no
@@ -19,20 +23,20 @@ selecting *Show Actions* from the portlet's Configuration menu.
 
 ![Figure 4: The Documents And Media portlet provides the option from its Document Detail too.](../../../images/documents-and-media-portlet-detail.png)
 
-## What API(s) and/or code components does this sample highlight? [](id=what-apis-and-or-code-components-does-this-sample-highlight)
+## What API(s) and/or code components does this sample highlight?
 
 This sample leverages the
 [PortletConfigurationIcon](@product-ref@/portal-kernel/com/liferay/portal/kernel/portlet/configuration/icon/PortletConfigurationIcon.html)
 API.
 
-## How does this sample leverage the API(s) and/or code component? [](id=how-does-this-sample-leverage-the-apis-and-or-code-component)
+## How does this sample leverage the API(s) and/or code component?
 
 There are four Java classes used in this sample:
 
 - `BladeActionConfigurationIcon`: Adds the new context menu option to the
    Document Detail screen options (![Options](../../../images/icon-options.png))
    (top right corner) of the Documents and Media Admin portlet. See the
-   [Configuring Your Admin App's Actions Menu](/develop/tutorials/-/knowledge_base/7-0/configuring-your-admin-apps-actions-menu)
+   [Configuring Your Admin App's Actions Menu](/docs/7-0/tutorials/-/knowledge_base/t/configuring-your-admin-apps-actions-menu)
    tutorial for more details.
 - `BladeActionDisplayContext`: Adds the Display Context for the document action.
    More about Display Contexts are described later.
@@ -74,7 +78,7 @@ from the separation of concerns that DCs provide and customers can extend your
 portlet DCs to specify which UI elements to display. And they don't need to
 worry about missing out on the updates you make to the JSPs.
 
-## Where Is This Sample? [](id=where-is-this-sample)
+## Where Is This Sample?
    
 There are three different versions of this sample, each built with a different
 build tool:

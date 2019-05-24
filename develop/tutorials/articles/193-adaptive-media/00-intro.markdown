@@ -1,10 +1,14 @@
-# Adaptive Media [](id=adaptive-media)
+---
+header-id: adaptive-media
+---
+
+# Adaptive Media
 
 The Adaptive Media app on 
 [Liferay Marketplace](https://web.liferay.com/marketplace) 
 lets administrators tailor the quality of images in @product@ to the device 
 viewing those images. For information on using this app, see 
-[the Adaptive Media user guide](/discover/portal/-/knowledge_base/7-0/adapting-your-media-across-multiple-devices). 
+[the Adaptive Media user guide](/docs/7-0/user/-/knowledge_base/u/adapting-your-media-across-multiple-devices). 
 
 But what if you want to leverage Adaptive Media in your own app? Then you're in 
 the right place! The tutorials in this section explain how to use adapted images 

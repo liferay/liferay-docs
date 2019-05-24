@@ -1,18 +1,18 @@
-# Adding liferay-npm-bundler to Your Portlet [](id=adding-liferay-npm-bundler-to-your-portlet)
+---
+header-id: adding-liferay-npm-bundler-to-your-portlet
+---
+
+# Adding liferay-npm-bundler to Your Portlet
 
 Adding liferay-npm-bundler to your portlet involves installing the package via
 npm and adding it to your npm build process. 
 
-## Installing liferay-npm-bundler [](id=installing-liferay-npm-bundler)
+## Installing liferay-npm-bundler
 
-+$$$
-
-**Note:** liferay-npm-bundler 1.x performs aggressive semantic version 
-resolution, which can potentially lead to unstable results. To avoid issues, we 
-recommend that you use the latest version of the bundler (2.x at the time of 
-this writing). 
-
-$$$
+| **Note:** liferay-npm-bundler 1.x performs aggressive semantic version
+| resolution, which can potentially lead to unstable results. To avoid issues, we
+| recommend that you use the latest version of the bundler (2.x at the time of
+| this writing).
 
 Follow these steps to install liferay-npm-bundler:
 
@@ -24,29 +24,25 @@ Follow these steps to install liferay-npm-bundler:
      
     If you don't have a portlet already, create an empty MVC portlet. For 
     convenience, you can use 
-    [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/installing-blade-cli) 
-    to create an empty portlet with the [mvc portlet blade template](/develop/reference/-/knowledge_base/7-0/using-the-mvc-portlet-template).
+    [Blade CLI](/docs/7-0/tutorials/-/knowledge_base/t/installing-blade-cli) 
+    to create an empty portlet with the [mvc portlet blade template](/docs/7-0/reference/-/knowledge_base/r/using-the-mvc-portlet-template).
 
 3.  Run the following command to install the liferay-npm-bundler:
 
         npm install --save-dev liferay-npm-bundler
 
-+$$$
-
-**Note:** Use npm from within your portlet project's root folder 
-(where the `package.json` file lives), as you normally do on a typical web 
-project.
-
-$$$
+| **Note:** Use npm from within your portlet project's root folder
+| (where the `package.json` file lives), as you normally do on a typical web
+| project.
 
 Now that you have the liferay-npm-bundler installed, you can add it to your npm 
 build process.
 
-## Adding liferay-npm-bundler to Your Build Process [](id=adding-liferay-npm-bundler-to-your-build-process)
+## Adding liferay-npm-bundler to Your Build Process
 
 Once your source is transpiled (if necessary) to ECMAScript and converted to AMD
 format for the 
-[Liferay AMD Loader](/develop/tutorials/-/knowledge_base/7-0/liferay-amd-module-loader), 
+[Liferay AMD Loader](/docs/7-0/tutorials/-/knowledge_base/t/liferay-amd-module-loader), 
 you must run liferay-npm-bundler in `package.json` to pack the needed npm 
 packages and transform them to AMD. This lets Liferay AMD Loader grab the 
 packages from the Portal.
@@ -67,8 +63,8 @@ the build script is called as part of the process.
 
 Now you know how to add the liferay-npm-bundler to your portlet!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Configuring liferay-npm-bundler](/develop/tutorials/-/knowledge_base/7-0/configuring-liferay-npm-bundler)
+[Configuring liferay-npm-bundler](/docs/7-0/tutorials/-/knowledge_base/t/configuring-liferay-npm-bundler)
 
-[Understanding How liferay-npm-bundler Formats JavaScript Modules for AMD](/develop/tutorials/-/knowledge_base/7-0/understanding-how-liferay-npm-bundler-formats-javascript-modules-for-amd)
+[Understanding How liferay-npm-bundler Formats JavaScript Modules for AMD](/docs/7-0/tutorials/-/knowledge_base/t/understanding-how-liferay-npm-bundler-formats-javascript-modules-for-amd)

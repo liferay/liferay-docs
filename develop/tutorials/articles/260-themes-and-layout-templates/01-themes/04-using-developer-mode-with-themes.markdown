@@ -1,4 +1,8 @@
-# Using Developer Mode with Themes [](id=using-developer-mode-with-themes)
+---
+header-id: using-developer-mode-with-themes
+---
+
+# Using Developer Mode with Themes
 
 Do you want to develop @product@ themes without having to redeploy to see your
 modifications? Use @product@'s Developer Mode! In Developer Mode, all caches are 
@@ -21,15 +25,11 @@ override settings that trigger them (if applicable):
 - Minification of CSS and JavaScript resources is disabled
   (`minifier.enabled=false`).
 
-+$$$
-
-**Note:** There are two known issues [LPS-71350](https://issues.liferay.com/browse/LPS-71350) 
-and [LPS-70364](https://issues.liferay.com/browse/LPS-70364) that prevent CSS 
-changes from being applied to the page and the Control Panel and Product Menu to
-break when using Developer Mode. Both these issues are fixed in Liferay Portal
-CE 7.0.3 GA4 and Liferay DXP Fixpack DE 13.
-
-$$$
+| **Note:** There are two known issues [LPS-71350](https://issues.liferay.com/browse/LPS-71350)
+| and [LPS-70364](https://issues.liferay.com/browse/LPS-70364) that prevent CSS
+| changes from being applied to the page and the Control Panel and Product Menu to
+| break when using Developer Mode. Both these issues are fixed in Liferay Portal
+| CE 7.0.3 GA4 and Liferay DXP Fixpack DE 13.
 
 Individual file loading of your styling and behaviors, combined with disabled
 caching for layout and FreeMarker templates, lets you see your changes more 
@@ -43,7 +43,7 @@ properties as needed. These configurations are covered in this tutorial.
 
 First, you can explore how it's done in @ide@. 
 
-## Setting Developer Mode for Your Server in @ide@ [](id=setting-developer-mode-for-your-server-in-liferay-ide)
+## Setting Developer Mode for Your Server in @ide@
 
 To enable Developer Mode for your server in @ide@, follow these steps: 
  
@@ -56,12 +56,8 @@ To enable Developer Mode for your server in @ide@, follow these steps:
 
 ![Figure 1: The *Use developer mode* option lets you enable Developer Mode for your server in @ide@.](../../../images/developer-mode-ide.png)
 
-+$$$
-
-**Warning:** Only change the Server settings from the runtime environment's 
-Liferay Launch section.
-
-$$$
+| **Warning:** Only change the Server settings from the runtime environment's
+| Liferay Launch section.
 
 For Liferay Portal servers below version 6.2 (e.g., Liferay v6.1 CE Server,
 Liferay v6.0 CE Server), @ide@ enables Developer Mode by default. When
@@ -73,13 +69,13 @@ which enables Developer Mode.
 Most of the configuration is provided by the `portal-developer.properties` file, 
 but you still have to configure the FreeMarker template setting. Follow the 
 steps in the 
-[Configuring FreeMarker System Settings](/develop/tutorials/-/knowledge_base/7-0/using-developer-mode-with-themes#configuring-freemarker-system-settings) 
+[Configuring FreeMarker System Settings](/docs/7-0/tutorials/-/knowledge_base/t/using-developer-mode-with-themes#configuring-freemarker-system-settings) 
 section to configure the FreeMarker template cache. 
 
 If you're not using @ide@, manual configuration for Developer Mode is covered 
 next.
 
-## Setting Developer Mode for Your Server Using portal-developer.properties [](id=setting-developer-mode-for-your-server-using-portal-developer-properties)
+## Setting Developer Mode for Your Server Using portal-developer.properties
 
 To set Developer Mode manually, you must point to `portal-developer.properties` 
 as shown in the last section. Add the `portal-ext.properties` file to the root 
@@ -92,7 +88,7 @@ Developer Mode is enabled upon starting your app server.
 for smooth development. To disable the cache for FreeMarker templates, you must 
 update the System Setting covered in the next section. 
 
-## Configuring FreeMarker System Settings [](id=configuring-freemarker-system-settings)
+## Configuring FreeMarker System Settings
 
 FreeMarker Templates for themes and web content are cached by default. Therefore, 
 any changes you make to your FreeMarker theme templates aren't immediately
@@ -110,7 +106,7 @@ steps:
 Your FreeMarker templates are ready for development. Next you can learn how you 
 can improve JavaScript file loading for development. 
 
-## JavaScript Fast Loading [](id=javascript-fast-loading)
+## JavaScript Fast Loading
 
 By default, JavaScript fast loading is enabled in Developer Mode 
 (`javascript.fast.load=true`). This loads the packed version of files listed in 
@@ -120,25 +116,21 @@ disable JavaScript fast loading for easier debugging for development. Just set
 `javascript.fast.load` to `false` in your `portal.properties`, or you can 
 disable fast loading by setting the URL parameter `js_fast_load` to `0`.
 
-+$$$
-
-**Note:** JavaScript fast loading is retrieved from one of three places: the 
-request (determined by the current URL: 
-`http://localhost:8080/web/guest/home?js_fast_load=1`(on) or 
-`...?js_fast_load=0`(off)), the Session, or the Portal Property 
-(`javascript.fast.load=true`). @product@ gives preference in the order of 
-request, session, and then Portal Properties. This lets you change 
-`js_fast_load`'s value from the default in `portal.properties` without having to 
-manually re-enter `js_fast_load` into the URL upon every new page load.
-
-$$$
+| **Note:** JavaScript fast loading is retrieved from one of three places: the
+| request (determined by the current URL:
+| `http://localhost:8080/web/guest/home?js_fast_load=1`(on) or
+| `...?js_fast_load=0`(off)), the Session, or the Portal Property
+| (`javascript.fast.load=true`). @product@ gives preference in the order of
+| request, session, and then Portal Properties. This lets you change
+| `js_fast_load`'s value from the default in `portal.properties` without having to
+| manually re-enter `js_fast_load` into the URL upon every new page load.
 
 Great! You've set up your @product@ server for Developer Mode. Now, when you
 modify your theme's file directly in your bundle, you can see your changes 
 applied immediately on redeploying your theme!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating Layout Templates Manually](/develop/tutorials/-/knowledge_base/7-0/creating-layout-templates-manually)
+[Creating Layout Templates Manually](/docs/7-0/tutorials/-/knowledge_base/t/creating-layout-templates-manually)
 
-[Creating Themes with @ide@](/develop/tutorials/-/knowledge_base/7-0/creating-themes-with-liferay-ide)
+[Creating Themes with @ide@](/docs/7-0/tutorials/-/knowledge_base/t/creating-themes-with-liferay-ide)

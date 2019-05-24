@@ -1,4 +1,8 @@
-# Installing Liferay Maven Artifacts [](id=installing-liferay-maven-artifacts)
+---
+header-id: installing-liferay-maven-artifacts
+---
+
+# Installing Liferay Maven Artifacts
 
 To create Liferay modules using Maven, you'll need the archives required by
 Liferay (e.g., JAR and WAR files). This isn't a problem--Liferay provides
@@ -12,7 +16,7 @@ You can get the Liferay artifacts in two ways:
 
 First, you'll consider the installation process using remote repositories.
 
-## Installing Artifacts from a Remote Repository [](id=installing-artifacts-from-a-remote-repository)
+## Installing Artifacts from a Remote Repository
 
 There are two repositories that contain Liferay artifacts: Central Repository
 and Liferay Repository. The Central Repository is the default repository used to
@@ -24,7 +28,7 @@ identical. You'll learn how to reference both of them next.
 
 Using the Central Repository to install Liferay Maven artifacts only requires
 that you 
-[specify your module's dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies) 
+[specify your module's dependencies](/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies) 
 in its `pom.xml` file. For example, the snippet below sets a dependency on
 Liferay's `com.liferay.portal.kernel` artifact:
 
@@ -69,19 +73,15 @@ following snippet in your project's parent `pom.xml`:
 
 The above configuration retrieves artifacts from Liferay's release repository.
 
-+$$$
-
-**Note:** Liferay also provides a
-[snapshot repository](https://repository.liferay.com/nexus/content/repositories/liferay-public-snapshots/)
-that you can access by modifying the `<id>`, `<name>`, and `<url>` tags to
-point to that repo. This repository should only be used in special cases. You
-must also enable accessing snapshot artifacts:
-
-    <snapshots>
-        <enabled>true</enabled>
-    </snapshots>
-
-$$$
+| **Note:** Liferay also provides a
+| [snapshot repository](https://repository.liferay.com/nexus/content/repositories/liferay-public-snapshots/)
+| that you can access by modifying the `<id>`, `<name>`, and `<url>` tags to
+| point to that repo. This repository should only be used in special cases. You
+| must also enable accessing snapshot artifacts:
+| 
+|     <snapshots>
+|         <enabled>true</enabled>
+|     </snapshots>
 
 <!-- When the Liferay repository is configured in your `settings.xml` file,
 archetypes are generated based on that repository's contents. See the
@@ -105,7 +105,7 @@ most up-to-date Maven artifacts produced by Liferay.
 If you can't use either of these options, you can still install Liferay Maven
 artifacts from a local repository.
 
-## Installing Artifacts from a Local Repository [](id=installing-artifacts-from-a-local-repository)
+## Installing Artifacts from a Local Repository
 
 Liferay offers a utility that lets you download all of Liferay's artifacts and
 install them to a Maven repository of your choice.

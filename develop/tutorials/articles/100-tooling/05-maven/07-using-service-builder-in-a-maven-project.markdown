@@ -1,7 +1,11 @@
-# Using Service Builder in a Maven Project [](id=using-service-builder-in-a-maven-project)
+---
+header-id: using-service-builder-in-a-maven-project
+---
+
+# Using Service Builder in a Maven Project
 
 Liferay's
-[Service Builder](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
+[Service Builder](/docs/7-0/tutorials/-/knowledge_base/t/what-is-service-builder)
 is a model-driven service generation tool that is frequently used by many Liferay
 module projects. If you have a Liferay Maven project, you may be wondering if
 Service Builder works with your Maven modules; the answer is a resounding yes!
@@ -9,7 +13,7 @@ Service Builder works with your Maven modules; the answer is a resounding yes!
 The easiest way to add Service Builder to your Maven project is to create a
 new Maven project using Liferay's provided Service Builder archetype. You can
 learn how to generate a Service Builder Maven project by visiting the
-[Service Builder Template](/develop/reference/-/knowledge_base/7-0/using-the-service-builder-template)
+[Service Builder Template](/docs/7-0/reference/-/knowledge_base/r/using-the-service-builder-template)
 tutorial. In some cases, this may not be possible due to a number of reasons:
 
 - You're updating a legacy Maven project to follow OSGi modular architecture.
@@ -60,9 +64,9 @@ Time to get started!
     implementation directory name, model hints file, Spring configurations, SQL
     configurations, etc. You can reference all the configurable Service Builder
     properties in the
-    [Service Builder with Maven](/develop/reference/-/knowledge_base/7-0/service-builder-with-maven)
+    [Service Builder with Maven](/docs/7-0/reference/-/knowledge_base/r/service-builder-with-maven)
     reference article. Also, visit the
-    [Defining an Object-Relational Map with Service Builder](/develop/tutorials/-/knowledge_base/7-0/defining-an-object-relational-map-with-service-builder)
+    [Defining an Object-Relational Map with Service Builder](/docs/7-0/tutorials/-/knowledge_base/t/defining-an-object-relational-map-with-service-builder)
     tutorial for more information on defining a `service.xml` file to configure
     Service Builder.
 
@@ -82,7 +86,7 @@ Time to get started!
 
     The WSDD Builder is necessary to generate your project's remote services.
     Visit the
-    [Creating Remote Services](/develop/tutorials/-/knowledge_base/7-0/creating-remote-services)
+    [Creating Remote Services](/docs/7-0/tutorials/-/knowledge_base/t/creating-remote-services)
     tutorial for more information on WSDD (Web Service Deployment Descriptor).
     Similar to the Service Builder configuration, the `service.xml` file is set
     to define your project's remote services. Also, the `outputDirName` defines
@@ -95,5 +99,5 @@ Terrific! You've successfully configured your Maven project to use Service
 Builder by applying the `com.liferay.portal.tools.service.builder` and
 `com.liferay.portal.tools.wsdd.builder` plugins in your project's POM. To run
 Service Builder, see the
-[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code)
+[Running Service Builder and Understanding the Generated Code](/docs/7-0/tutorials/-/knowledge_base/t/running-service-builder-and-understanding-the-generated-code)
 tutorial for instructions.

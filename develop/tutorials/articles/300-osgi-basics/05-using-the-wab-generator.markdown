@@ -1,4 +1,8 @@
-# Using the WAB Generator [](id=using-the-wab-generator)
+---
+header-id: using-the-wab-generator
+---
+
+# Using the WAB Generator
 
 Developers creating applications for @product-ver@ can choose to create them as
 Java EE-style Web Application ARchive (WAR) artifacts or as Java ARchive (JAR)
@@ -40,17 +44,13 @@ header's list of values.
 -   Reflection code
 -   Class loader code
 
-+$$$
-
-**Note**: A
-[known issue](https://issues.liferay.com/browse/LPS-76229)
-is preventing packages referenced in `web.xml` file `listener-class` elements
-from being detected and added to WAB `META-INF/MANIFEST.MF` file
-`Import-Package` headers. To import such packages, add them to an
-`Import-Package` header in the plugin's
-`WEB-INF/liferay-plugin-package.properties` file.
-
-$$$
+| **Note**: A
+| [known issue](https://issues.liferay.com/browse/LPS-76229)
+| is preventing packages referenced in `web.xml` file `listener-class` elements
+| from being detected and added to WAB `META-INF/MANIFEST.MF` file
+| `Import-Package` headers. To import such packages, add them to an
+| `Import-Package` header in the plugin's
+| `WEB-INF/liferay-plugin-package.properties` file.
 
 The WAB folder structure and WAR folder structure differ. Consider the following
 folder structure of a WAR-style portlet:
@@ -125,10 +125,10 @@ Generator in action.
 
 Awesome! You've seen the WAB Generator in action!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Generating a JSF Application](/develop/tutorials/-/knowledge_base/7-0/generating-a-jsf-application)
+[Generating a JSF Application](/docs/7-0/tutorials/-/knowledge_base/t/generating-a-jsf-application)
 
-[Customizing the Product Menu](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu)
+[Customizing the Product Menu](/docs/7-0/tutorials/-/knowledge_base/t/customizing-the-product-menu)
 
-[Configuration](/develop/tutorials/-/knowledge_base/7-0/configuration)
+[Configuration](/docs/7-0/tutorials/-/knowledge_base/t/configuration)

@@ -1,4 +1,8 @@
-# Building the Lunar Guides and Book a Trip Pages [](id=building-the-lunar-guides-and-book-a-trip-pages)
+---
+header-id: building-the-lunar-guides-and-book-a-trip-pages
+---
+
+# Building the Lunar Guides and Book a Trip Pages
 
 <div class="learn-path-step">
     <p>Creating A Site<br>Step 2 of 6</p>
@@ -16,7 +20,7 @@ Double-check the page layouts for these pages to make sure they're as intended,
 and not just copied over from the earlier instructions.
 -->
 
-## Creating the Lunar Guides Page [](id=creating-the-lunar-guides-page)
+## Creating the Lunar Guides Page
 
 1.  Open the main menu and expand the *Navigation* menu for *The Lunar Resort*. 
 
@@ -31,7 +35,7 @@ and not just copied over from the earlier instructions.
 
 5.  Leave the other options on their default settings and click *Add Page*. 
 
-## Creating the Book a Trip Page [](id=creating-the-book-a-trip-page)
+## Creating the Book a Trip Page
 
 1.  Open the main menu and expand the *Navigation* menu for *The Lunar Resort*. 
 
@@ -45,7 +49,7 @@ and not just copied over from the earlier instructions.
 
 5.  Leave the other options on their default settings and click *Add Page*. 
 
-## Arranging Pages [](id=arranging-pages)
+## Arranging Pages
 
 The new pages now appear in the navigation bar with the other pages. If these
 pages are out of your preferred order, you can rearrange them via drag and drop.

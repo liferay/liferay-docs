@@ -1,4 +1,8 @@
-# Accessing the Liferay Session in iOS [](id=accessing-the-liferay-session-in-ios)
+---
+header-id: accessing-the-liferay-session-in-ios
+---
+
+# Accessing the Liferay Session in iOS
 
 A session is a conversation state between the client and server. It typically 
 consists of multiple requests and responses between the two. To facilitate this 
@@ -18,7 +22,7 @@ user without showing Login Screenlet.
 This tutorial explains some common `SessionContext` use cases, and also 
 describes the class's most important methods. 
 
-## Getting the current session [](id=getting-the-current-session)
+## Getting the current session
 
 The current session is established after the user successfully logs in with 
 Login Screenlet. Use `SessionContext.currentContext` to retrieve the session. 
@@ -26,7 +30,7 @@ Note this will return `nil` if the user didn't sign in with Login Screenlet. You
 can also use the `SessionContext` property `isLoggedIn` to determine if a 
 session exists. This returns `false` if there's no current session. 
 
-## Creating a Liferay Session [](id=creating-a-liferay-session)
+## Creating a Liferay Session
 
 When working with Liferay Screens, you may wish to call the remote JSON web 
 services provided by the Liferay Mobile SDK. Every operation with the Liferay 
@@ -47,7 +51,7 @@ you're not using Login Screenlet? There won't be an existing session to
 retrieve. No sweat! You can still use `SessionContext` to create one manually. 
 The next section shows you how to do this. 
 
-## Creating a Session Manually [](id=creating-a-session-manually)
+## Creating a Session Manually
 
 If you don't use Login Screenlet, then `SessionContext` doesn't have a session 
 for you to retrieve. In this case, you must create one manually. You can do this 
@@ -65,7 +69,7 @@ attributes, see the
 Super! Now you know how to create a session manually. The next section shows you 
 how to implement auto-login, and save or restore a session. 
 
-## Implementing Auto-login and Saving or Restoring a Session [](id=implementing-auto-login-and-saving-or-restoring-a-session)
+## Implementing Auto-login and Saving or Restoring a Session
 
 Although Login Screenlet is awesome, your users may not want to enter their 
 credentials every time they open your app. It's very common for apps to only 
@@ -88,11 +92,11 @@ a typical implementation of this:
 
 Awesome! Now you know how to implement auto-login in your Liferay Screens apps. 
 For more information on available `SessionContext` methods, see the 
-[Methods section](/develop/tutorials/-/knowledge_base/7-0/accessing-the-liferay-session-in-ios#methods) 
+[Methods section](/docs/7-0/tutorials/-/knowledge_base/t/accessing-the-liferay-session-in-ios#methods) 
 at the end of this tutorial. Next, you'll learn how to implement relogin for 
 cases where a user's credentials change on the server while they're logged in. 
 
-## Implementing Relogin [](id=implementing-relogin)
+## Implementing Relogin
 
 A session, whether created via Login Screenlet or auto-login, contains basic 
 user data that verifies the user in the Liferay instance. If that data changes 
@@ -132,7 +136,7 @@ handy `SessionContext` can be. It can do even more! The next section lists some
 additional `SessionContext` methods, and some more detail on the ones used in 
 this tutorial. 
 
-## Methods [](id=methods)
+## Methods
 
 | Method | Return Type | Explanation |
 |--------|-------------|-------------| 
@@ -147,7 +151,7 @@ this tutorial.
 | `removeStoredCredentials()` | `Bool` | Clears the session and user information from storage. |
 | `loadStoredCredentials()` | `Bool` | Loads the session and user information from storage. They're then used, respectively, as the current session and user. |
 
-## Properties [](id=properties)
+## Properties
 
 | Property | Type | Explanation |
 |--------|-------------|-------------| 
@@ -160,8 +164,8 @@ this tutorial.
 For more information, see the 
 [`SessionContext` source code in GitHub](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Context/SessionContext.swift).
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Login Screenlet for iOS](/develop/reference/-/knowledge_base/7-0/loginscreenlet-for-ios)
+[Login Screenlet for iOS](/docs/7-0/reference/-/knowledge_base/r/loginscreenlet-for-ios)
 
-[Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-ios-apps)
+[Using Screenlets in iOS Apps](/docs/7-0/tutorials/-/knowledge_base/t/using-screenlets-in-ios-apps)

@@ -1,4 +1,8 @@
-# Publishing Files Summary [](id=publishing-files-summary)
+---
+header-id: publishing-files-summary
+---
+
+# Publishing Files Summary
 
 You've learned the fundamentals of uploading, managing, and collaborating on
 files in your sites. The Document Library integrates each file into @product@,

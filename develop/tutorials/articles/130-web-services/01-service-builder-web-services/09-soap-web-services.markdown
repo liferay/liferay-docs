@@ -1,15 +1,15 @@
-# SOAP Web Services [](id=soap-web-services)
+---
+header-id: soap-web-services
+---
+
+# SOAP Web Services
 
 You can access Liferay's web services via Simple Object Access Protocol (SOAP) 
 over HTTP. The packaging protocol is SOAP, and the transport protocol is HTTP. 
 
-+$$$
-
-**Note:** An authentication token must accompany each Liferay web service
-invocation. For details, see the tutorial on 
-[Service Security Layers](/develop/tutorials/-/knowledge_base/7-0/service-security-layers). 
-
-$$$
+| **Note:** An authentication token must accompany each Liferay web service
+| invocation. For details, see the tutorial on
+| [Service Security Layers](/docs/7-0/tutorials/-/knowledge_base/t/service-security-layers).
 
 As an example, consider some example SOAP web service clients for Liferay's 
 `Company`, `User`, and `UserGroup` services that perform these tasks: 
@@ -51,7 +51,7 @@ by opening your browser to the following URL:
 Note that this URL only lists services in the portal context. To learn how to 
 find services in other contexts in your Liferay instance, see the SOAP sections 
 in the tutorial 
-[Creating Remote Services](/develop/tutorials/-/knowledge_base/7-0/creating-remote-services). 
+[Creating Remote Services](/docs/7-0/tutorials/-/knowledge_base/t/creating-remote-services). 
 
 Regardless of the context you're viewing SOAP services in, each web service is 
 listed with its name, operations, and a link to its WSDL file. For example, 
@@ -74,7 +74,7 @@ Note that some of these methods are overloaded.
 
 Liferay uses Service Builder to automatically generate JSON and SOAP web service 
 interfaces. If you haven't used Service Builder before, see its 
-[introductory tutorial](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder). 
+[introductory tutorial](/docs/7-0/tutorials/-/knowledge_base/t/what-is-service-builder). 
 
 The WSDL file is written in XML and provides a model for describing and
 locating the web service. Here's a WSDL excerpt of the `addUserGroup` operation 
@@ -89,7 +89,7 @@ To use the service, you pass in the WSDL URL along with your login credentials
 to the SOAP service locator for your service. The next section shows you an 
 example of this. 
 
-## SOAP Java Client [](id=soap-java-client)
+## SOAP Java Client
 
 Now you'll learn how to invoke Liferay's SOAP web services. As an example, 
 you'll do this by setting up a Java web services client in Eclipse. You can use 
@@ -308,7 +308,7 @@ specified in the WSDL for each Liferay web service. It's all there for you!
 
 Next, you'll learn how to implement a web service client in PHP. 
 
-## SOAP PHP Client [](id=soap-php-client)
+## SOAP PHP Client
 
 You can write your client in any language that supports web services invocation. 
 The following example code invokes the same operations as before, but uses PHP 
@@ -352,12 +352,12 @@ and a PHP SOAP client instead of Java:
 Remember, you can implement a web service client in any language that supports 
 SOAP web services. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Service Security Layers](/develop/tutorials/-/knowledge_base/7-0/service-security-layers)
+[Service Security Layers](/docs/7-0/tutorials/-/knowledge_base/t/service-security-layers)
 
-[Creating Remote Services](/develop/tutorials/-/knowledge_base/7-0/creating-remote-services)
+[Creating Remote Services](/docs/7-0/tutorials/-/knowledge_base/t/creating-remote-services)
 
-[Invoking Remote Services](/develop/tutorials/-/knowledge_base/7-0/invoking-remote-services)
+[Invoking Remote Services](/docs/7-0/tutorials/-/knowledge_base/t/invoking-remote-services)
 
-[What is Service Builder?](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
+[What is Service Builder?](/docs/7-0/tutorials/-/knowledge_base/t/what-is-service-builder)

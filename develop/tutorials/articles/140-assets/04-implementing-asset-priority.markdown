@@ -1,7 +1,11 @@
-# Implementing Asset Priority [](id=implementing-asset-priority)
+---
+header-id: implementing-asset-priority
+---
+
+# Implementing Asset Priority
 
 The 
-[Asset Publisher](/discover/portal/-/knowledge_base/7-0/publishing-assets) 
+[Asset Publisher](/docs/7-0/user/-/knowledge_base/u/publishing-assets) 
 lets you order assets by priority. For this to work, 
 however, users must be able to set the asset's priority when creating or editing 
 the asset. For example, when creating or editing web content, users can assign 
@@ -13,7 +17,7 @@ This field isn't enabled by default for your custom assets. You must manually
 add support for it. Fortunately, this is very straightforward. This tutorial 
 shows you how. Onwards! 
 
-## Add the Priority Field to Your JSP [](id=add-the-priority-field-to-your-jsp)
+## Add the Priority Field to Your JSP
 
 In the JSP for adding and editing your asset, add the following input field that 
 lets users set the asset's priority. This example also validates the input to 
@@ -29,7 +33,7 @@ That's it for the view layer! Now when users create or edit your custom asset,
 they can enter its priority. Next, you'll learn how to use that value in your
 service layer. 
 
-## Using the Priority Value in Your Service Layer [](id=using-the-priority-value-in-your-service-layer)
+## Using the Priority Value in Your Service Layer
 
 To make the priority value functional, you must retrieve it from the view and
 add it to the asset in your database. The priority value is automatically
@@ -73,14 +77,14 @@ retrieves the priority:
 
 Sweet! Now you know how to enable priorities for your app's assets. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Adding, Updating, and Deleting Assets For Custom Entities](/develop/tutorials/-/knowledge_base/7-0/adding-updating-and-deleting-assets-for-custom-entities)
+[Adding, Updating, and Deleting Assets For Custom Entities](/docs/7-0/tutorials/-/knowledge_base/t/adding-updating-and-deleting-assets-for-custom-entities)
 
-[Implementing Asset Categorization and Tagging](/develop/tutorials/-/knowledge_base/7-0/implementing-asset-categorization-and-tagging)
+[Implementing Asset Categorization and Tagging](/docs/7-0/tutorials/-/knowledge_base/t/implementing-asset-categorization-and-tagging)
 
-[Relating Assets](/develop/tutorials/-/knowledge_base/7-0/relating-assets)
+[Relating Assets](/docs/7-0/tutorials/-/knowledge_base/t/relating-assets)
 
-[Rendering an Asset](/develop/tutorials/-/knowledge_base/7-0/rendering-an-asset)
+[Rendering an Asset](/docs/7-0/tutorials/-/knowledge_base/t/rendering-an-asset)
 
-[Publishing Assets](/discover/portal/-/knowledge_base/7-0/publishing-assets)
+[Publishing Assets](/docs/7-0/user/-/knowledge_base/u/publishing-assets)

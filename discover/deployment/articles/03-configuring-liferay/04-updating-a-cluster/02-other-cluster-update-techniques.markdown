@@ -1,11 +1,15 @@
-# Other Cluster Update Techniques [](id=other-cluster-update-techniques)
+---
+header-id: other-cluster-update-techniques
+---
+
+# Other Cluster Update Techniques
 
 Several update scenarios cannot be done by
-[rolling restart](/discover/deployment/-/knowledge_base/7-0/using-rolling-restarts)
+[rolling restart](/docs/7-0/deploy/-/knowledge_base/d/using-rolling-restarts)
 because they affect cluster communication, break compatibility with existing
 plugins/modules, or break Service Builder services. Also non-revertible updates
 are disqualified because reversing their effects requires restoring data from a 
-[backup](/discover/deployment/-/knowledge_base/7-0/backing-up-a-liferay-installation). 
+[backup](/docs/7-0/deploy/-/knowledge_base/d/backing-up-a-liferay-installation). 
 
 Maintenance changes ineligible for rolling restart are typically done on all
 nodes at once, when they're shut down. The following sections describe
@@ -19,14 +23,14 @@ techniques for applying these changes.
 
 Data schema changes are explained first. 
 
-## Custom Module/Plugin Data Schema Changes [](id=custom-plugin-module-data-schema-changes)
+## Custom Module/Plugin Data Schema Changes
 
 Custom module/plugin data schema changes that break compatibility with existing
 modules and plugins must be introduced over several releases in which the data
 is transitioned and maintained in old and new columns until the old column is no
 longer needed. 
 
-## Custom Module/Plugin Data Changes [](id=custom-plugin-module-data-changes)
+## Custom Module/Plugin Data Changes
 
 Data changes to modules or plugins you've developed require these steps:
 
@@ -39,12 +43,12 @@ Data changes to modules or plugins you've developed require these steps:
 
 4.  Delete the column in the next release. 
 
-## Non-revertible Fix Packs (DXP only) [](id=non-revertible-fix-packs-dxp-only)
+## Non-revertible Fix Packs (DXP only)
 
 The Customer Portal identifies fix packs that are not revertible. Non-revertible
 fix packs must be applied to nodes when they are all shut down. 
 
-## Service Builder Service Schema Version Changes [](id=service-builder-service-schema-version-changes)
+## Service Builder Service Schema Version Changes
 
 A module's `Liferay-Require-SchemaVersion` (specified in its `bnd.bnd`) must
 match the module's schema version value in the `Release_` table. Installing a
@@ -56,7 +60,7 @@ Service Builder services become unavailable. Such changes cannot be reverted:
 the database must be restored from a backup. These schema version changes must
 be applied while all nodes are shut down. 
 
-## Cluster Code Changes [](id=cluster-code-changes)
+## Cluster Code Changes
 
 Cluster communication must stay intact. For this reason, cluster code must not
 be updated in rolling restarts. The Customer Portal identifies DXP fix packs
@@ -75,10 +79,10 @@ change in rolling restarts:
 
 Now you know how to update your cluster using ways other than rolling restart. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[@product@ Clustering](/discover/deployment/-/knowledge_base/7-0/liferay-clustering)
+[@product@ Clustering](/docs/7-0/deploy/-/knowledge_base/d/liferay-clustering)
 
-[Maintaining @product@](/discover/deployment/-/knowledge_base/7-0/maintaining-liferay)
+[Maintaining @product@](/docs/7-0/deploy/-/knowledge_base/d/maintaining-liferay)
 
-[Implementing Data Upgrades](/develop/tutorials/-/knowledge_base/7-0/data-upgrades-and-verifiers)
+[Implementing Data Upgrades](/docs/7-0/tutorials/-/knowledge_base/t/data-upgrades-and-verifiers)

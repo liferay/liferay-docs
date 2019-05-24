@@ -1,4 +1,8 @@
-# Liferay App Types [](id=liferay-app-types)
+---
+header-id: liferay-app-types
+---
+
+# Liferay App Types
 
 For maximum flexibility, Liferay supports several different types of apps. Some 
 apps can even contain other apps. The types of apps that Liferay can run 
@@ -12,7 +16,7 @@ include:
 
 Read on to learn about these app types. 
 
-## OSGi Modules [](id=osgi-modules)
+## OSGi Modules
 
 Since Liferay runs on OSGi, apps can be implemented as OSGi modules. An OSGi 
 module is a JAR file adapted to run on OSGi. Although it's possible for a single 
@@ -24,12 +28,12 @@ developers that need to leverage custom APIs that Liferay doesn't provide. By
 providing such an API via one or more OSGi modules, you can let developers 
 leverage your API. To see a list of Liferay's API modules, see the reference 
 article 
-[Finding Liferay API Modules](/develop/reference/-/knowledge_base/7-0/finding-liferay-api-modules). 
+[Finding Liferay API Modules](/docs/7-0/reference/-/knowledge_base/r/finding-liferay-api-modules). 
 
 OSGi modules can also contain apps that have a UI: portlets. The next section 
 discusses these. 
 
-## Portlets [](id=portlets)
+## Portlets
 
 Portlets are small web applications that run in a portion of a web page. For 
 example, Liferay's Blogs app is a portlet. Portlet applications, like servlet 
@@ -48,7 +52,7 @@ files. For information on developing OSGi modules for Liferay, including
 portlets, see 
 [Liferay's developer tutorials](/develop/tutorials). 
 
-## Web Plugins [](id=web-plugins)
+## Web Plugins
 
 Web plugins, another type of app that can run on Liferay, are regular Java EE 
 web modules designed to work with Liferay. Liferay supports integration with 
@@ -56,7 +60,7 @@ various Enterprise Service Bus (ESB) implementations, as well as Single Sign-On
 implementations, workflow engines, and so on. These are implemented as web 
 modules used by Liferay portlets to provide functionality. 
 
-## Templates and Themes [](id=templates-and-themes)
+## Templates and Themes
 
 Templates and themes are plugins that change Liferay's appearance. Templates 
 (layout templates) control how Liferay arranges portlets on a page. They make up 
@@ -74,9 +78,9 @@ theme developers, as they can customize existing themes instead of writing a new
 one from scratch. 
 
 For information on developing themes and templates, see 
-[this section of tutorials](/develop/tutorials/-/knowledge_base/7-0/themes-and-layout-templates). 
+[this section of tutorials](/docs/7-0/tutorials/-/knowledge_base/t/themes-and-layout-templates). 
 
-## Liferay Marketplace App Packages [](id=liferay-marketplace-app-packages)
+## Liferay Marketplace App Packages
 
 Regardless of app type, each 
 [Liferay Marketplace](https://web.liferay.com/marketplace) 

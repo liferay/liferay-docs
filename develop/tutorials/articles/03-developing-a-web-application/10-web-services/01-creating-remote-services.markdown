@@ -1,4 +1,8 @@
-# Creating Remote Services with Service Builder [](id=creating-remote-services-with-service-builder)
+---
+header-id: creating-remote-services-with-service-builder
+---
+
+# Creating Remote Services with Service Builder
 
 <div class="learn-path-step">
     <p>Creating Remote Services<br>Step 1 of 1</p>
@@ -12,7 +16,7 @@ by any application with permission to access your server via the web. Remote
 services are published as JSON or SOAP. 
 
 For more information, 
-[click here](/develop/tutorials/-/knowledge_base/7-0/service-builder-web-services) 
+[click here](/docs/7-0/tutorials/-/knowledge_base/t/service-builder-web-services) 
 to see the Service Builder Web Services section of tutorials. 
 
 Creating web services for the Guestbook application takes two steps: 

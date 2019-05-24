@@ -1,4 +1,8 @@
-# Bookmarking Sites [](id=bookmarking-sites)
+---
+header-id: bookmarking-sites
+---
+
+# Bookmarking Sites
 
 Many of us enjoy collecting things we value: stamps, comic books, sea shells,
 shoes, or even vintage musical instruments. You've probably never thought about
@@ -13,7 +17,7 @@ access web sites and administrators can publish links tailored to specific user
 segments. Both internal pages as well as external sites can be bookmarked. Next, 
 you'll learn how to create bookmarks and folders in the Bookmarks app.
 
-## Creating Bookmarks and Folders [](id=creating-bookmarks-and-folders)
+## Creating Bookmarks and Folders
 
 To use the Bookmarks app, you must first add it to a page. Select *Add* &rarr;
 *Applications* &rarr; Community, and then drag *Bookmarks* onto the page. By
@@ -40,7 +44,7 @@ you click the Add button, a small menu pops up that lets you select *Folder* or
 lets you add a bookmark by filling in the *Name*, *URL*, and *Description* 
 fields. Below these fields, there are additional options for Categorization, 
 Related Assets, and Permissions, just like in other Liferay apps. See the 
-[Publishing Content Dynamically](/discover/portal/-/knowledge_base/7-0/publishing-content-dynamically) 
+[Publishing Content Dynamically](/docs/7-0/user/-/knowledge_base/u/publishing-content-dynamically) 
 section for more information on this. When you're finished filling in the Add 
 Bookmark form, click *Save* to create the bookmark. If you select *Folder* from 
 the add button, this brings up the *Add Folder* form. This form is very similar 
@@ -56,11 +60,11 @@ have any number of subfolders.
 To import or export bookmarks, mouse-over the app, click the *Options* button 
 next to the Add button at the top of the app, and select *Export/Import*. In the 
 window that appears, you can start a new export or import process. For details, 
-[see the article on importing and exporting pages and content](/discover/portal/-/knowledge_base/7-0/importing-exporting-pages-and-content). 
+[see the article on importing and exporting pages and content](/docs/7-0/user/-/knowledge_base/u/importing-exporting-pages-and-content). 
 
 Next, you'll learn how to manage bookmarks and folders. 
 
-## Managing Bookmarks and Folders [](id=managing-bookmarks-and-folders)
+## Managing Bookmarks and Folders
 
 The Bookmarks app provides several ways to manage your bookmarks and folders. 
 One is the management bar. Checking the checkbox on the left-hand side of the 
@@ -120,7 +124,11 @@ selected folder.
 
 ![Figure 5: Choose the folder to move the item to.](../../../images/bookmarks-move-folder.png)
 
-# Summary [](id=summary-0)
+---
+header-id: summary-0
+---
+
+# Summary
 
 Liferay's Bookmarks app gives users and administrators a straightforward way to 
 add and manage bookmarks in your Liferay instance. This lets everyone share and 

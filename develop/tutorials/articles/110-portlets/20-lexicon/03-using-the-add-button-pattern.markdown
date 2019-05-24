@@ -1,4 +1,8 @@
-# Applying the Add Button Pattern [](id=applying-the-add-button-pattern)
+---
+header-id: applying-the-add-button-pattern
+---
+
+# Applying the Add Button Pattern
 
 Lexicon's add button pattern is for actions that add entities (for example
 a new blog entry button): it gives you a clean, minimal UI. You can use it in
@@ -38,8 +42,8 @@ uses the following add button pattern:
 
 There you have it! Now you know how to use the add button pattern. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Setting Search Container Animations](/develop/tutorials/-/knowledge_base/7-0/setting-search-container-animations)
+[Setting Search Container Animations](/docs/7-0/tutorials/-/knowledge_base/t/setting-search-container-animations)
 
-[Adding the Management Bar](/develop/tutorials/-/knowledge_base/7-0/adding-the-management-bar)
+[Adding the Management Bar](/docs/7-0/tutorials/-/knowledge_base/t/adding-the-management-bar)

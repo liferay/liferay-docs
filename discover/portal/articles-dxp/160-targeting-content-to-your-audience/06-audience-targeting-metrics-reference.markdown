@@ -1,4 +1,8 @@
-# Audience Targeting Metrics [](id=audience-targeting-metrics)
+---
+header-id: audience-targeting-metrics
+---
+
+# Audience Targeting Metrics
 
 Metrics enable Audience Targeting administrators to build custom reports and
 measure the effectiveness of a campaign by tracking certain user actions.
@@ -15,17 +19,17 @@ Metrics can be created by developers and deployed as extensions. Out of the box,
 Audience Targeting includes metrics to track the most common user actions. These
 metrics are described below.
 
-## Content [](id=content)
+## Content
 
 Tracks the number of times certain content has been viewed. Use the content
 selector to set the content to be tracked.
 
-## Page [](id=page)
+## Page
 
 Tracks the number of times a selected page has been viewed. You can track views
 on both both public or private pages.
 
-## Form [](id=form)
+## Form
 
 Tracks how many users view a form, interact with it (i.e., type or select values
 in the inputs) or submit it. If you select the *All* option from the *Event
@@ -40,7 +44,7 @@ number of visits to the landing page, form interactions, and form submissions to
 measure the success of their campaign. This Form metric would allow campaign
 administrators the ability to track forms in their site.
 
-## Link [](id=link)
+## Link
 
 Tracks how often links are clicked. This helps campaign administrators determine
 if they're sufficiently visible or helpful.
@@ -49,7 +53,7 @@ Similar to forms, you must provide the ID of the link you want to track. If you
 don't know it, you can inspect the HTML of the page where the link is and
 extract this information.
 
-## YouTube Videos [](id=youtube-videos)
+## YouTube Videos
 
 Tracks how users interact with embedded YouTube videos. You must enter the ID of
 the YouTube video. You can extract this ID from the video URL as the value for

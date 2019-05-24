@@ -1,4 +1,8 @@
-# Staging Content for Publication [](id=staging-content-for-publication)
+---
+header-id: staging-content-for-publication
+---
+
+# Staging Content for Publication
 
 Today's enterprises are generating an enormous amount of content for their
 users. @product@ provides advanced publishing tools to make the content easily and

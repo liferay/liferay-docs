@@ -1,4 +1,8 @@
-# Creating Guestbook List Screenlet's Interactor [](id=creating-guestbook-list-screenlets-interactor-ios)
+---
+header-id: creating-guestbook-list-screenlets-interactor-ios
+---
+
+# Creating Guestbook List Screenlet's Interactor
 
 Interactors implement your Screenlet's actions. In non-list Screenlets, this can 
 include making the server call. List Screenlets, however, make server calls via 
@@ -8,7 +12,7 @@ instantiate the Connector and receive the server call's results. This is the
 case for Guestbook List Screenlet's Interactor. You'll create this Interactor 
 now. 
 
-## Creating Your Interactor's Folder [](id=creating-your-interactors-folder)
+## Creating Your Interactor's Folder
 
 Follow these steps to create your Interactor's folder: 
 
@@ -25,7 +29,7 @@ Follow these steps to create your Interactor's folder:
 
 Now you're ready to create the Interactor. 
 
-## Creating the Interactor [](id=creating-the-interactor)
+## Creating the Interactor
 
 The Interactor class of a list Screenlet that implements fluent pagination must 
 extend 
@@ -114,7 +118,7 @@ Follow these steps to create Guestbook List Screenlet's Interactor:
         }
 
 6.  Override the `cacheKey` method to return a key that can be used with 
-    [offline mode](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+    [offline mode](/docs/7-0/tutorials/-/knowledge_base/t/architecture-of-offline-mode-in-liferay-screens). 
     Although Guestbook List Screenlet won't initially support offline mode, this 
     method is still required. For this Screenlet, the `groupId` serves as a 
     sufficient key. Add this method as follows: 

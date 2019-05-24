@@ -1,11 +1,15 @@
-# Theme Builder Plugin [](id=theme-builder-plugin)
+---
+header-id: theme-builder-plugin
+---
+
+# Theme Builder Plugin
 
 The Theme Builder plugin lets you build Liferay theme files in your project.
 Visit the
-[Building Themes in a Maven Project](/develop/tutorials/-/knowledge_base/7-0/building-themes-in-a-maven-project)
+[Building Themes in a Maven Project](/docs/7-0/tutorials/-/knowledge_base/t/building-themes-in-a-maven-project)
 tutorial to learn more about applying Theme Builder to your Maven project.
 
-## Usage [](id=usage)
+## Usage
 
 To use the plugin, include it in your project's root `pom.xml` file:
 
@@ -34,7 +38,7 @@ To use the plugin, include it in your project's root `pom.xml` file:
 You can view an example POM containing the Theme Builder configuration
 [here](https://github.com/liferay/liferay-portal/blob/master/modules/util/portal-tools-theme-builder/samples/pom.xml).
 
-## Goals [](id=goals)
+## Goals
 
 The plugin adds one Maven goal to your project:
 
@@ -42,7 +46,7 @@ Name | Description
 ---- | -----------
 `theme-builder:build` |  Builds the theme files.
 
-## Available Parameters [](id=available-parameters)
+## Available Parameters
 
 You can set the following parameters in the `<configuration>` section of the
 POM:
@@ -83,5 +87,5 @@ dependencies:
 
 There is an additional Liferay theme-related dependency you can manage this
 way that's provided by the CSS Builder. See
-[this section](/develop/reference/-/knowledge_base/7-1/css-builder-plugin) for
+[this section](/docs/7-1/reference/-/knowledge_base/r/css-builder-plugin) for
 more information.

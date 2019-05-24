@@ -1,4 +1,8 @@
-# Using Liferay Push in Android Apps [](id=using-liferay-push-in-android-apps)
+---
+header-id: using-liferay-push-in-android-apps
+---
+
+# Using Liferay Push in Android Apps
 
 Liferay Screens supports push notifications in Android apps. To use
 them, you must configure some APIs and modify your app to consume and/or
@@ -6,7 +10,7 @@ produce push notifications. This tutorial shows how to do all these things.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4LjutX0dcRw" frameborder="0" allowfullscreen></iframe>
 
-## Configuring to Use Liferay Push Notifications [](id=configuring-to-use-liferay-push-notifications)
+## Configuring to Use Liferay Push Notifications
 
 Your first step is to create and configure a Google project to use Google Cloud
 Messaging ([GCM](https://developers.google.com/cloud-messaging/)). You also need
@@ -42,7 +46,7 @@ of retries in the event that sending a notification fails.
 Great! Your @product@ instance is now ready to send push notifications to your 
 Android apps! 
 
-## Receiving and Sending Push Notifications [](id=receiving-and-sending-push-notifications)
+## Receiving and Sending Push Notifications
 
 [The Liferay Push Client for Android](https://github.com/liferay-mobile/liferay-push-android) 
 streamlines registering a device with the portal for receiving and sending push
@@ -52,7 +56,7 @@ use the client, the
 explains them in detail. 
 
 In your Android application's Gradle build file, 
-[add a new dependency](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies) 
+[add a new dependency](/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies) 
 on the Liferay Push Client for Android: 
 
 	dependencies {
@@ -71,7 +75,7 @@ Notifications portlet as a required deployment context:
 
 Next, you'll learn how to register listeners for push notifications. 
 
-### Receiving Push Notifications [](id=receiving-push-notifications)
+### Receiving Push Notifications
 
 First, register your device in GCM with the `SENDER_ID` you generated
 previously:
@@ -97,7 +101,7 @@ as an example push notifications implementation.
 
 Next, you'll learn how to send push notifications. 
 
-### Sending Push Notifications [](id=sending-push-notifications)
+### Sending Push Notifications
 
 Using the Liferay Push app, sending notifications to your app's users is
 straightforward. You can specify the user IDs along with the message content: 
@@ -124,8 +128,8 @@ In this tutorial, you've configured your portal to accommodate push
 notifications, registered notification listeners, and implemented sending push 
 notifications. Way to go! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Preparing Android Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/preparing-android-projects-for-liferay-screens)
+[Preparing Android Projects for Liferay Screens](/docs/7-0/tutorials/-/knowledge_base/t/preparing-android-projects-for-liferay-screens)
 
-[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-android-apps)
+[Using Screenlets in Android Apps](/docs/7-0/tutorials/-/knowledge_base/t/using-screenlets-in-android-apps)

@@ -1,4 +1,8 @@
-# What Hasn't Changed and What Has [](id=whats-changed-and-what-hasnt)
+---
+header-id: whats-changed-and-what-hasnt
+---
+
+# What Hasn't Changed and What Has
 
 @product-ver@ is a new major version of the Liferay platform and as such it
 includes many improvements over previous versions. Having said that, most of the
@@ -58,7 +62,7 @@ them.
 consistent; it's based on the standard `@Component` annotation instead of
 declarations in `portal.properties` or `portlet.xml`. Note, previous
 registration mechanisms have been preserved where possible. See the
-[Breaking Changes](/develop/reference/-/knowledge_base/7-0/breaking-changes)
+[Breaking Changes](/docs/7-0/reference/-/knowledge_base/r/breaking-changes)
 article to examine where extensions and configurations that have not kept
 backwards compatibility.
 
@@ -75,14 +79,14 @@ Since the modularization of the Liferay web application is the change most
 relevant to you as a developer, let's dig deeper into that change and how it
 affects Liferay's architecture.
 
-## Embracing a Modular Architecture [](id=embracing-a-modular-architecture)
+## Embracing a Modular Architecture
 
 The largest improvement in Liferay's architecture is the adoption of a modular
 development paradigm. Within each Liferay module (or group of modules that form
 an app), as well as within what remains as Liferay's core, the existing great
 characteristics of previous versions of Liferay prevail.
 
-### Tiered Architecture [](id=tiered-architecture)
+### Tiered Architecture
 
 Liferay Portal 6's architecture diagrams often focused on the tiers for the
 frontend, services layer (for the business logic), and persistence layer (mostly
@@ -98,21 +102,21 @@ Those benefits are described in the next section. The modules are often grouped
 into apps (such as Wiki or Message Boards) and the main apps are grouped into
 suites (such as Web Experience, Collaboration, and Forms & Workflow).
 
-### Modular Architecture [](id=modular-architecture)
+### Modular Architecture
 
 The figure below represents @product-ver@'s architecture from a structural
 perspective.
 
 ![Figure 2: @product-ver@ is composed of the Liferay Core, independent application modules, and App Suites, each with their own set of application and framework modules.](../../../images/from-liferay-6-core-suites-and-apps.png)
 
-#### Liferay Core [](id=liferay-core)
+#### Liferay Core
 
 As its name implies, it's @product-ver@'s central and most important part. The
 Liferay Core is a Java EE application in charge of bootstrapping the system and
 receiving and delegating all requests. It also contains Liferay's OSGi Engine on
 top of which all applications run.
 
-#### Foundation [](id=foundation)
+#### Foundation
 
 The Foundation suite sits on top of the core, providing administrative
 interfaces and familiar development building blocks. It includes modules for
@@ -125,25 +129,25 @@ Most of the apps, frameworks, and APIs you've come to know and love have been
 aggregated in App Suites. The suites are available in Liferay bundles and are
 also available on the Marketplace. Here are the different App Suites:
 
-#### Liferay Web Experience [](id=liferay-web-experience)
+#### Liferay Web Experience
 
 Contains apps such as Web Content and Site management, Web Content Display,
 Asset Publisher, and Breadcrumbs and features and frameworks such as Application
 Display Templates, Tags, and Recycle Bin.
 
-#### Liferay Collaboration [](id=liferay-collaboration)
+#### Liferay Collaboration
 
 Comprises Liferay's social apps and collaboration apps, such as Message Boards,
 Wiki, and Blogs. It also contains Liferay's Documents & Media Library.
 
-#### Liferay Forms and Workflow [](id=liferay-forms-and-workflow)
+#### Liferay Forms and Workflow
 
 Provides apps such as Forms (New!), Dynamic Data Lists, Kaleo Workflow, and
 Calendar. It also contains the Dynamic Data Mapping framework used by Web
 Content and Documents & Media to provide custom form and templating
 capabilities.
 
-#### Independent Apps [](id=independent-apps)
+#### Independent Apps
 
 Last but not least, Liferay's independent apps and modules also play a part.
 They provide unique functionality and stand on their own; it would be unnatural
@@ -161,7 +165,7 @@ Application Bundle (WAB), which is a module.
 
 Let's consider the structure of a @product-ver@ modular app.
 
-### The Structure of a Modular App [](id=the-structure-of-an-app)
+### The Structure of a Modular App
 
 As mentioned, each app can be formed by one or more modules. This section
 explains the most common way to structure an app.

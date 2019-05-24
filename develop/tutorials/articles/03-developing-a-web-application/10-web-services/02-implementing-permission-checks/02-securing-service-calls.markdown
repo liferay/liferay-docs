@@ -1,4 +1,8 @@
-# Securing Service Calls at the Portlet Layer [](id=securing-service-calls-at-the-portlet-layer)
+---
+header-id: securing-service-calls-at-the-portlet-layer
+---
+
+# Securing Service Calls at the Portlet Layer
 
 <div class="learn-path-step">
     <p>Implementing Permission Checks<br>Step 2 of 2</p>
@@ -25,21 +29,17 @@ layer that has permission checking. Thus, to secure service calls at the portlet
 layer, all you have to do is replace the local service calls with remote service 
 calls. 
 
-+$$$
-
-**Note:** An alternative approach to securing service calls at the portlet
-layer is to check permissions at the portlet layer manually. To do this, get a 
-`ThemeDisplay` from the `ActionRequest` (`ThemeDisplay themeDisplay = 
-(ThemeDisplay) request.getAttribute(WebKeys.THEME_DISPLAY);`) and get a 
-`PermissionChecker` from the `ThemeDisplay` (`PermissionChecker 
-permissionChecker = themeDisplay.getPermissionChecker();`). If the user passes
-the permission check, then call the local service method. However, it's best to
-avoid rewriting permission checks whenever possible. For this reason, if you 
-must wrap a service call in a permission check, implement that service method as
-a remote service and add the permission check to the remote service. This is the 
-pattern @product@ uses and that you have followed in this Learning Path. 
-
-$$$
+| **Note:** An alternative approach to securing service calls at the portlet
+| layer is to check permissions at the portlet layer manually. To do this, get a
+| `ThemeDisplay` from the `ActionRequest` (`ThemeDisplay themeDisplay =
+| (ThemeDisplay) request.getAttribute(WebKeys.THEME_DISPLAY);`) and get a
+| `PermissionChecker` from the `ThemeDisplay` (`PermissionChecker
+| permissionChecker = themeDisplay.getPermissionChecker();`). If the user passes
+| the permission check, then call the local service method. However, it's best to
+| avoid rewriting permission checks whenever possible. For this reason, if you
+| must wrap a service call in a permission check, implement that service method as
+| a remote service and add the permission check to the remote service. This is the
+| pattern @product@ uses and that you have followed in this Learning Path.
 
 Use the following steps to secure the service calls in the `GuestbookPortlet` 
 class: 

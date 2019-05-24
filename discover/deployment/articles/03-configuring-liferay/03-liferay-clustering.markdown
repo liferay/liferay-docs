@@ -1,15 +1,15 @@
-# @product@ Clustering [](id=liferay-clustering)
+---
+header-id: liferay-clustering
+---
+
+# @product@ Clustering
 
 @product@ can serve everything from the smallest to the largest web sites. Out
 of the box, it's configured optimally for a single server environment. If one
 server isn't sufficient to serve the high traffic needs of your site, @product@
 scales to the size you need. 
 
-+$$$
-
-**Note:** Clustering is available in @product-ver@ GA5+. 
-
-$$$
+| **Note:** Clustering is available in @product-ver@ GA5+.
 
 ![Figure 1: @product@ is designed to scale to as large an installation as you need.](../../images/clustering-enterprise-configuration.png) 
 
@@ -50,21 +50,17 @@ It's a best practice to copy the relevant section you want to modify from
 `portal.properties` into your `portal-ext.properties` file, and then modify the
 values there.
 
-+$$$
-
-**Note:** This article documents a @product@-specific cluster configuration
-without getting into specific implementations of third party software, such as
-Java EE application servers, HTTP servers, and load balancers. Please consult
-your documentation for those components of your cluster to configure those
-components. Before creating a @product@ cluster, make sure your OS is not
-defining the hostname of your box to the local network at 127.0.0.1.
-
-$$$
+| **Note:** This article documents a @product@-specific cluster configuration
+| without getting into specific implementations of third party software, such as
+| Java EE application servers, HTTP servers, and load balancers. Please consult
+| your documentation for those components of your cluster to configure those
+| components. Before creating a @product@ cluster, make sure your OS is not
+| defining the hostname of your box to the local network at 127.0.0.1.
 
 Each step defined above is covered below to give you a step by step process for
 creating your cluster. 
 
-## 1. All Nodes Should Point to the Same @product@ Database [](id=all-nodes-should-point-to-the-same-liferay-database)
+## 1. All Nodes Should Point to the Same @product@ Database
 
 Each node should have a data source that points to one @product@ database (or a
 database cluster) that all the nodes will share. This means, of course,
@@ -76,7 +72,7 @@ database server should be on a separate system from the server which is running
 You can also use a read-writer database configuration to optimize your database
 configuration.
 
-### Read-Writer Database Configuration [](id=read-writer-database-configuration)
+### Read-Writer Database Configuration
 
 @product@ allows you to use two different data sources for reading and writing.
 This enables you to split your database infrastructure into two sets: one
@@ -149,13 +145,13 @@ The next time you start @product@, it uses the two data sources you have
 defined. Make sure to correctly set up your two databases for replication before
 starting @product@.
 
-## 2. Documents and Media Library Clustering [](id=documents-and-media-library-clustering)
+## 2. Documents and Media Library Clustering
 
 @product@'s Documents and Media Library can mount several repositories at a time
 while presenting a unified interface to the user. By default, users can use the
 @product@ repository, which is already mounted. This repository is built into
 @product@ and can use one of 
-[several different store implementations](/discover/deployment/-/knowledge_base/7-0/document-repository-configuration) 
+[several different store implementations](/docs/7-0/deploy/-/knowledge_base/d/document-repository-configuration) 
 as its back-end. In addition to this, users can mount many different kinds of
 third party repositories. In a cluster, Documents and Media must have the exact
 same configuration on all nodes. If you have a separate repository you've
@@ -172,22 +168,18 @@ reason, you must look at your store configuration.
 Note that the file systems used by the `File System` or `Advanced File System`
 stores must support concurrent requests and file locking.
 
-+$$$
+| **Checkpoint**: To test if the sharing works well, execute the following steps:
+| 
+| 1. On Node 1 upload a document to the Documents and Media.
+| 2. On Node 2 download the document. The download should be successful.
+| 3. Repeat the test with reversed roles.
 
-**Checkpoint**: To test if the sharing works well, execute the following steps:
-
-1. On Node 1 upload a document to the Documents and Media.
-2. On Node 2 download the document. The download should be successful.
-3. Repeat the test with reversed roles.
-
-$$$
-
-## 3. Clustering Search [](id=clustering-search)
+## 3. Clustering Search
 
 Search should always run on a separate environment from your @product@ server.
-@product@ supports [Elasticsearch](/discover/deployment/-/knowledge_base/7-0/configuring-elasticsearch-for-liferay-0) 
+@product@ supports [Elasticsearch](/docs/7-0/deploy/-/knowledge_base/d/configuring-elasticsearch-for-liferay-0) 
 or 
-[Solr](/discover/deployment/-/knowledge_base/7-0/using-solr), 
+[Solr](/docs/7-0/deploy/-/knowledge_base/d/using-solr), 
 and either of those environments can also be clustered. 
 
 <!-- Have a Google doc for this: https://docs.google.com/document/d/19oaISXylCyKueuMkIjCKtnrNuyhbvrkMJZvyGQLPIpk/edit#heading=h.ayvbwz8pwsz0 -->
@@ -214,7 +206,7 @@ Solr Cloud (cluster) managed by _Apache Solr Zookeeper_. Connect the @product@
 cluster to Zookeeper and finish the final configurations to connect the two
 clusters.
 
-## 4. Enable Cluster Link [](id=4-enable-cluster-link)
+## 4. Enable Cluster Link
 
 Enabling Cluster Link automatically activates distributed caching. Distributed
 caching enables some RMI (Remote Method Invocation) cache listeners that are
@@ -238,7 +230,7 @@ To enable Cluster Link, add this property to `portal-ext.properties`:
 
     cluster.link.enabled=true
 
-### Modifying the Cache Configuration with a Module [](id=modifying-the-cache-configuration-with-a-module)
+### Modifying the Cache Configuration with a Module
 
 It's recommended to test your system under a load that best simulates the kind
 of traffic your system needs to handle. If you'll be serving up a lot of message
@@ -304,11 +296,11 @@ cache settings. This is a great benefit, but beware: since Ehcache doesn't allow
 for changes to cache settings while the cache is alive, reconfiguring a cache
 while the server is running flushes the cache. 
 
-## 5. Hot Deploy to All Nodes [](id=hot-deploy)
+## 5. Hot Deploy to All Nodes
 
 If you want to deploy any module or WAR file onto the cluster, it must be 
 deployed to all nodes of the cluster. Because @product@ now 
-[installs applications as OSGi bundles](/develop/tutorials/-/knowledge_base/7-0/using-the-wab-generator), 
+[installs applications as OSGi bundles](/docs/7-0/tutorials/-/knowledge_base/t/using-the-wab-generator), 
 this means you cannot rely on your application server's means of installing WAR 
 files (even if you only intend to install WAR files) to deploy an application to 
 the entire cluster. Instead, the application must be placed in @product@'s 
@@ -319,7 +311,7 @@ uploads applications to each node using sftp or some other service. This way,
 when you deploy an application, it is uploaded to each node's `deploy` folder
 and installed by each running @product@ installation. 
 
-## Summary [](id=summary)
+## Summary
 
 Setting up @product@ on a cluster takes five steps: 
 

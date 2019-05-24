@@ -1,4 +1,8 @@
-# Adding Files to a Document Library [](id=adding-files)
+---
+header-id: adding-files
+---
+
+# Adding Files to a Document Library
 
 There are several reasons why you might want to upload files to your site. You
 might want to share photos and video files or embed them in web content. Or you
@@ -19,7 +23,7 @@ groups of users to store, organize, and share files. And no matter what kinds of
 files you work with, the fundamentals of granting file operation permissions is
 the same. Let's explore how to do this for the Lunar Resort.
 
-## Granting File Permissions and Roles [](id=granting-file-permissions-and-roles)
+## Granting File Permissions and Roles
 
 The Lunar Resort needs to manage carefully who can add, view, and update groups
 of files. The resort stores in their Documents and Media libraries all kinds of
@@ -27,7 +31,7 @@ files for various purposes. The libraries not only contain guest media but also
 departmental documents and media. Most of the documents are meant to be
 disseminated within the departments only. Using @product@, we can
 implement the resort's use cases. You see, @product@'s [Roles and
-Permissions](/discover/portal/-/knowledge_base/7-0/roles-and-permissions) let
+Permissions](/docs/7-0/user/-/knowledge_base/u/roles-and-permissions) let
 you precisely specify access to documents and media files. In addition, the
 Document Library's folder permissions help you organize media. Let's get started
 on the right foot with the Lunar Resorts guest media files by leveraging roles,
@@ -54,20 +58,16 @@ to the users who manage the media. Snappy Fingers (username: *snappy*) is the
 Lunar Resort's trigger-happy photographer. We assigned her to the *Resort Guest
 Media Manager* role.
 
-+$$$
-
-**Note:** To learn how to create a role and define a role's permissions, refer
-to
-[Roles and Permissions](/discover/portal/-/knowledge_base/7-0/roles-and-permissions).
-
-$$$
+| **Note:** To learn how to create a role and define a role's permissions, refer
+| to
+| [Roles and Permissions](/docs/7-0/user/-/knowledge_base/u/roles-and-permissions).
 
 You've created your specialized role and assigned users to it. In the Documents
 and Media library, you need a place for that role to manage Lunar Resort guest
 media. A Documents and Media folder fits the bill. In the folder we'll create,
 the role will add, organize, and share the guest media files. 
 
-## Using the Add Menu [](id=using-the-add-menu)
+## Using the Add Menu
 
 Open the Menu, click on your site's name, and navigate to *Content &rarr;
 Documents and Media* for your site. The Documents and Media screen appears and
@@ -88,7 +88,7 @@ You can set permissions on the shortcut to specify who can access the original
 document through the shortcut.
 
 **Repository**: allows you to add access to an external repository. Refer to
-[Repostory Types](/discover/portal/-/knowledge_base/7-0/liferay-repository-types)
+[Repostory Types](/docs/7-0/user/-/knowledge_base/u/liferay-repository-types)
 to learn how to add access to them. 
 
 **Multiple Documents**: allows you to upload several documents at once.
@@ -100,7 +100,7 @@ documents are not described by any metadata sets.
 **Google Docs**: available through an additional Liferay Plugin for Google 
 Drive&trade; from the [Marketplace](https://web.liferay.com/marketplace). This 
 option lets you create a file entry that links to a Google document. The section
-[Accessing Google Docs&trade;](/discover/portal/-/knowledge_base/7-0/accessing-google-docs)
+[Accessing Google Docs&trade;](/docs/7-0/user/-/knowledge_base/u/accessing-google-docs)
 explains how to use this feature.
 
 The remaining items in the Add menu are default [document 
@@ -124,7 +124,7 @@ Library applies the metadata fields associated with the document type to your
 document. On selecting a document type, you're prompted to fill in the fields
 associated with it. 
 
-## Creating Folders [](id=creating-folders)
+## Creating Folders
 
 Let's continue with our example and create folders to organize the Lunar Resort
 guest photos and videos that we'll upload. From the document library's Add menu,
@@ -153,7 +153,7 @@ workflow settings.
 You've created a folder named *Resort Guest Media*. You can now specify its
 permissions. 
 
-## Setting Folder Permissions [](id=setting-folder-permissions)
+## Setting Folder Permissions
 
 Since we only want the *Resort Guest Media Manager* role to manage files in it, 
 we must fine tune the folder's permissions. Click on the folder's *Actions* icon (![Actions](../../../../images/icon-actions.png)) and select the *Permissions* 
@@ -218,7 +218,7 @@ In your Document Library's *Resort Guest Media* folder, you've created a
 subfolder named *Spacey Party*. Next, let's add the Spacey's photos to the
 subfolder.
 
-## Adding Multiple Documents [](id=adding-multiple-documents)
+## Adding Multiple Documents
 
 There are a few different ways you can add image files, or any file for that
 matter. You can add them one at a time or add multiple files simultaneously.
@@ -232,7 +232,7 @@ Selected Files* section lists several options for the files. You can fill in a
 common *Description* for the files. You can also specify a *Document Type* to
 apply. Since we're uploading image files, we'll use the *Basic Document* type,
 which is the default type. There are also options for
-[categorizing and tagging](/discover/portal/-/knowledge_base/7-0/organizing-content-with-tags-and-categories)
+[categorizing and tagging](/docs/7-0/user/-/knowledge_base/u/organizing-content-with-tags-and-categories)
 the selected files, and assigning them default permissions. We'll tighten up
 permissions by clicking the *More Options* link and deselecting all the
 permissions. When you're ready to upload the files, click *Publish*. The Add
@@ -243,7 +243,7 @@ taken back to the folder you're adding files to.
 
 ![Figure 4: Documents and Media conveniently lets you add multiple files at once.](../../../../images/dm-add-multiple-files.png)
 
-## Using the Documents and Media Management Bar [](id=using-the-documents-and-media-management-bar)
+## Using the Documents and Media Management Bar
 
 Documents and Media lists your current folder's subfolders and file entries. A
 *file entry* is the Document Library's representation of a file. It wraps the
@@ -299,11 +299,11 @@ secured lock is for file check-out, the unsecured lock is for file check-in, the
 arrows are for moving the files, and the trash can is for moving files to the 
 Recycle Bin. You can also move selected files to a subfolder via drag and drop. 
 File check-out and check-in is explained in
-[Collaborating on Files](/discover/portal/-/knowledge_base/7-0/collaborating-on-files).
+[Collaborating on Files](/docs/7-0/user/-/knowledge_base/u/collaborating-on-files).
 
 ![Figure 6: A file's entry view lets you act on the file, preview it, and inspect its details. If you've installed an appropriate preview plugin for a file, its preview image displays in the preview area. Liferay can, by default, preview many image types.](../../../../images/dm-file-entry-details.png)
 
-## Viewing File Previews [](id=viewing-file-previews)
+## Viewing File Previews
 
 You've added several files to the *Spacey Party* folder. In the Document 
 Library, each file has a file entry view. To open its file entry view, click the 
@@ -341,7 +341,7 @@ and video previews, lets you play audio and video files in your browser, and
 extracts thumbnails from video files. You can configure the tools via portal
 properties you can set in the Control Panel's Server Administration screen or in
 a `portal-ext.properties` file. To learn how to use these tools, refer to
-[Configuring @product@](/discover/portal/-/knowledge_base/7-0/configuring-liferay).
+[Configuring @product@](/docs/7-0/user/-/knowledge_base/u/configuring-liferay).
 
 You can view a document with a customized viewer that allows you to navigate
 through the different pages of the document and read its content. In addition,
@@ -367,13 +367,13 @@ are the file options:
 
 **Edit**: Lets you modify the file's name, description, document type,
 categorization, and [related 
-assets](/discover/portal/-/knowledge_base/7-0/defining-content-relationships).
+assets](/docs/7-0/user/-/knowledge_base/u/defining-content-relationships).
 You can even upload a new file to replace it. Note, modifying the file
 increments its version.
 
 **Edit With Image Editor**: Opens the Image Editor to modify the image. The 
 Image Editor is explained in [Editing 
-Images](/discover/portal/-/knowledge_base/7-0/editing-images).
+Images](/docs/7-0/user/-/knowledge_base/u/editing-images).
 
 **Move**: Relocate the file to a different parent folder.
 
@@ -424,7 +424,7 @@ To view the *Version History* click the drown-down arrow next to *Details* and
 select *Versions*. This section lists the different versions of the file and 
 lets you view, download, remove, and revert to specific file versions. File 
 version history actions are explained in the [Collaborating on 
-Files](/discover/portal/-/knowledge_base/7-0/collaborating-on-files) guide.
+Files](/docs/7-0/user/-/knowledge_base/u/collaborating-on-files) guide.
 
 Let's review what you've done so far. First, you created a role to manage a
 specific set of files for your site. You assigned users to the role and created

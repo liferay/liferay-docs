@@ -1,4 +1,8 @@
-# Setting Up a @product@ Instance [](id=setting-up-a-liferay-instance)
+---
+header-id: setting-up-a-liferay-instance
+---
+
+# Setting Up a @product@ Instance
 
 Once you have a @product@ installation, you're going to want to configure it.
 Whether that means adding a virtual instance, setting up the initial instance to

@@ -1,4 +1,8 @@
-# Installing Marvel for Elasticsearch [](id=monitoring-elasticsearch-with-marvel)
+---
+header-id: monitoring-elasticsearch-with-marvel
+---
+
+# Installing Marvel for Elasticsearch
 
 Marvel is a monitoring tool for Elasticsearch. It lets you view the performance
 and health of your Elasticsearch cluster, so you can anticipate issues ahead of
@@ -16,16 +20,12 @@ This article shows you how to install and configure Marvel for @product@--and
 
 -   [Install Marvel and Kibana on Elasticsearch.](#installing-kibana-and-marvel)
 
-     +$$$
-
-     **Note:** If you're wondering what
-     [Kibana](https://www.elastic.co/products/kibana) is, it's the visualization
-     piece of the equation. Elasticsearch is the search engine, and a Marvel
-     agent in Elasticsearch collects and sends data from Elasticsearch to
-     Kibana. Kibana, including a Marvel UI plugin, displays the Marvel agent's
-     data.
-
-     $$$
+     | **Note:** If you're wondering what
+     | [Kibana](https://www.elastic.co/products/kibana) is, it's the visualization
+     | piece of the equation. Elasticsearch is the search engine, and a Marvel
+     | agent in Elasticsearch collects and sends data from Elasticsearch to
+     | Kibana. Kibana, including a Marvel UI plugin, displays the Marvel agent's
+     | data.
 
 -   [Configure Kibana to work with Shield and to be accessed through the Marvel Portlet.](#configuring-kibana-for-elasticsearch)
 
@@ -33,43 +33,39 @@ This article shows you how to install and configure Marvel for @product@--and
 
 -   [Add the Marvel portlet to a page and start monitoring your cluster.](#accessing-marvels-ui-in-liferay)
 
-+$$$
-
-**Note:** This tutorial shows you how to get Marvel up and running by installing
-it onto your Elasticsearch cluster directly. The best approach is to follow
-Elastic's guide and [set up the Marvel cluster separately from the production
-cluster](https://www.elastic.co/guide/en/marvel/2.4/installing-marvel.html#monitoring-cluster),
-so that a troublesome Elasticsearch cluster does not inhibit your ability to use
-Marvel to diagnose its problems. In short, it involves these steps:
-
-1. Install the Marvel agent and License plugins on the production Elasticsearch
-   cluster.
-2. Install a separate Elasticsearch cluster (the monitoring cluster).
-3. Configure your production cluster's nodes to send Marvel data to the
-   monitoring cluster.
-4. Download and install Kibana on the monitoring cluster's machine.
-5. Install the Marvel app into Kibana.
-6. Configure Kibana to connect to the monitoring cluster.
-7. Live long and prosper.
-
-$$$
+| **Note:** This tutorial shows you how to get Marvel up and running by installing
+| it onto your Elasticsearch cluster directly. The best approach is to follow
+| Elastic's guide and [set up the Marvel cluster separately from the production
+| cluster](https://www.elastic.co/guide/en/marvel/2.4/installing-marvel.html#monitoring-cluster),
+| so that a troublesome Elasticsearch cluster does not inhibit your ability to use
+| Marvel to diagnose its problems. In short, it involves these steps:
+| 
+| 1. Install the Marvel agent and License plugins on the production Elasticsearch
+|    cluster.
+| 2. Install a separate Elasticsearch cluster (the monitoring cluster).
+| 3. Configure your production cluster's nodes to send Marvel data to the
+|    monitoring cluster.
+| 4. Download and install Kibana on the monitoring cluster's machine.
+| 5. Install the Marvel app into Kibana.
+| 6. Configure Kibana to connect to the monitoring cluster.
+| 7. Live long and prosper.
 
 These terms will be useful to understand as you read this guide:
 
 - *Elasticsearch Home* refers to the root folder of your unzipped Elasticsearch 
    installation (for example, `elasticsearch-2.4.0`).
-- [*Liferay Home*](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home)
+- [*Liferay Home*](/docs/7-0/deploy/-/knowledge_base/d/installing-product#liferay-home)
    refers to the root folder of your @product@ installation. It  contains the
    `osgi`, `deploy`, `data`, and `license` folders.
 - *Kibana Home* refers to the root folder of your Kibana installation.
 
-## Installing Kibana and Marvel [](id=installing-kibana-and-marvel)
+## Installing Kibana and Marvel
 
 Before you install Kibana or Marvel, make sure you've read and followed the
 instructions on
-[installing](/discover/deployment/-/knowledge_base/7-0/installing-elasticsearch)
+[installing](/docs/7-0/deploy/-/knowledge_base/d/installing-elasticsearch)
 and
-[configuring](/discover/deployment/-/knowledge_base/7-0/configuring-elasticsearch)
+[configuring](/docs/7-0/deploy/-/knowledge_base/d/configuring-elasticsearch)
 Elasticsearch for @product@.
 
 1.  Install the `marvel-agent` plugin on Elasticsearch by navigating to
@@ -104,10 +100,10 @@ Elasticsearch for @product@.
 
 The next step is to configure Kibana to connect with Elasticsearch. The
 instructions vary depending on whether you are using
-[Shield](/discover/deployment/-/knowledge_base/7-0/securing-elasticsearch-with-shield) 
+[Shield](/docs/7-0/deploy/-/knowledge_base/d/securing-elasticsearch-with-shield) 
 or not.
 
-## Configuring Kibana for Elasticsearch [](id=configuring-kibana-for-elasticsearch)
+## Configuring Kibana for Elasticsearch
 
 Now you need to configure Kibana. Since you'll use @product@'s Marvel Portlet as
 a proxy servlet to view the Kibana UI and Marvel, you'll start configuring that
@@ -160,7 +156,7 @@ the steps below. If not, skip the steps that begin with *[Shield]*.
 
     Note: the `/o` prefix is a default. Change it if you're running @product@
     under a different
-    [web context path](/discover/deployment/-/knowledge_base/7-0/installing-liferay-manually#making-liferay-coexist-with-other-java-ee-applications).
+    [web context path](/docs/7-0/deploy/-/knowledge_base/d/installing-liferay-manually#making-liferay-coexist-with-other-java-ee-applications).
 
 7.  Start Elasticsearch by running 
 
@@ -176,7 +172,7 @@ the steps below. If not, skip the steps that begin with *[Shield]*.
 
 9.  Start @product@.
 
-## Configuring SSL on Kibana [](id=configuring-ssl-on-kibana)
+## Configuring SSL on Kibana
 
 To run Kibana with SSL encryption you'll need to do these things:
 
@@ -186,15 +182,11 @@ To run Kibana with SSL encryption you'll need to do these things:
     be able to trust the connection, so add the certificate to the JVM
     truststore.
 
-+$$$
+| **Note:** @product@ does not support protecting your Kibana connection with
+| Shield. If you try to secure Kibana with Shield, Marvel will not work inside
+| @product@'s portlet.
 
-**Note:** @product@ does not support protecting your Kibana connection with
-Shield. If you try to secure Kibana with Shield, Marvel will not work inside
-@product@'s portlet.
-
-$$$
-
-## Configuring @product@'s Marvel Adapter [](id=configuring-liferays-marvel-adapter)
+## Configuring @product@'s Marvel Adapter
 
 Now that you have Marvel and Kibana configured, you can configure the Marvel
 adapter in @product@.
@@ -231,7 +223,7 @@ authenticating to Shield. This setting is ignored if Shield isn't installed.
 : Set the String password used for Shield authentication. This setting is
 ignored if Shield isn't configured.
 
-## Accessing Marvel's UI in @product@ [](id=accessing-marvels-ui-in-liferay)
+## Accessing Marvel's UI in @product@
 
 As mentioned earlier, Liferay provides a Marvel Portlet that displays an
 embedded, proxied version of the Marvel UI from Kibana.

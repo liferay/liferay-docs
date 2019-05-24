@@ -1,4 +1,8 @@
-# Basic Forms [](id=basic-forms)
+---
+header-id: basic-forms
+---
+
+# Basic Forms
 
 It's really easy to create simple forms with the Forms Application. 
 
@@ -10,7 +14,7 @@ they'd like in an optional field.
 
 You can develop a form like this before lunch time, even if that's in 5 minutes.
 
-## Building a Form [](id=building-a-form)
+## Building a Form
 
 Whether you're creating a simple or complex form, it all starts in the same
 place: the Forms Application in your site's *Content* section. You access this
@@ -78,7 +82,7 @@ If you want to see additional options, click *Show More Options*.
 Now your form can be added to a page, and Lunar Resort guests can be emailed and
 provided with a link to the page where the form is displayed.
 
-## Displaying Forms [](id=displaying-forms)
+## Displaying Forms
 
 The form is developed. Now you just need to display it in The Lunar Resort site. 
 
@@ -101,7 +105,7 @@ The form is developed. Now you just need to display it in The Lunar Resort site.
 Next learn how to view the form entries. Since there aren't any yet, fill out and
 submit the form a few times. 
 
-## Viewing Form Entries [](id=viewing-form-entries)
+## Viewing Form Entries
 
 When users fill out your forms, they're generating data. If you're collecting data, you're
 going to want to see it at some point. 
@@ -125,7 +129,7 @@ Viewing entries is great, but this is serious data we're talking about. You
 might need to get all the entries into a spreadsheet so you can work with them,
 for example.
 
-## Exporting Form Entries [](id=exporting-form-entries)
+## Exporting Form Entries
 
 So, you need to put your form entries in a spreadsheet to do spreadhseet things
 with them? No problem.
@@ -144,24 +148,20 @@ spreadsheet for you.
 
 ![Figure 10: You can export entries as CSV or XML files.](../../../images/forms-export-csv.png)
 
-+$$$
-
-**Note:** The Forms application itself has an *Import/Export* window that you can
-access from the application's Configuration menu
-(![Configuration](../../../images/icon-options.png)). This is how you import and
-export the application configuration and its data (forms and form entries). The
-file format for this type of import and export is a LAR file. For more
-information, see the article on
-[importing and exporting application content.](/discover/portal/-/knowledge_base/7-0/importing-exporting-pages-and-content).
-
-![Figure 11: As with other Liferay Apps, you can import or export forms and their entries with a LAR file.](../../../images/forms-import-export-lar.png)
-
-$$$
+| **Note:** The Forms application itself has an *Import/Export* window that you can
+| access from the application's Configuration menu
+| (![Configuration](../../../images/icon-options.png)). This is how you import and
+| export the application configuration and its data (forms and form entries). The
+| file format for this type of import and export is a LAR file. For more
+| information, see the article on
+| [importing and exporting application content.](/docs/7-0/user/-/knowledge_base/u/importing-exporting-pages-and-content).
+| 
+| ![Figure 11: As with other Liferay Apps, you can import or export forms and their entries with a LAR file.](../../../images/forms-import-export-lar.png)
 
 Once you export a batch of form entries, it can make sense to delete them from
 the database.
 
-## Deleting Form Entries [](id=deleting-form-entries)
+## Deleting Form Entries
 
 What if you export a form's entries and now you want them to be removed from the
 Liferay database? It's easy to delete all of a form's entries at once.

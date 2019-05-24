@@ -1,4 +1,8 @@
-# Context Contributors [](id=context-contributors)
+---
+header-id: context-contributors
+---
+
+# Context Contributors
 
 JSP templates are the predominant templating framework in @product@. Themes,
 application display templates (ADTs), DDM templates, and more make use of JSPs
@@ -40,7 +44,7 @@ First, you'll learn how to create your own context contributor, and then you'll
 examine one example of how @product@ uses context contributors.
 
 1.  Create a generic OSGi module using your favorite third party tool, or use
-    [Blade CLI](/develop/tutorials/-/knowledge_base/7-0/blade-cli).
+    [Blade CLI](/docs/7-0/tutorials/-/knowledge_base/t/blade-cli).
 
 2.  Create a unique package name in the module's `src` directory and create a
     new Java class in that package. To follow naming conventions, begin the
@@ -125,16 +129,12 @@ making them accessible to the theme. Specifically, the `cssClass` variable
 provides styling for the Product Menu and the `productMenuState` variable
 determines whether the visible Product Menu should be open or closed.
 
-+$$$
-
-**Note:** In previous versions of Liferay, if you needed to inject variables
-into themes, you were forced to create those variables in the `init.ftl` file of
-every theme. This forced theme developers to keep that logic updated in every
-theme version of every theme they developed. With context contributors, you can
-inject variables into existing frameworks without forcing theme developers to
-update their `init.ftl` files.
-
-$$$
+| **Note:** In previous versions of Liferay, if you needed to inject variables
+| into themes, you were forced to create those variables in the `init.ftl` file of
+| every theme. This forced theme developers to keep that logic updated in every
+| theme version of every theme they developed. With context contributors, you can
+| inject variables into existing frameworks without forcing theme developers to
+| update their `init.ftl` files.
 
 The `prepare` method above also determines whether to show the Product Menu or
 not with the following if statement:
@@ -174,10 +174,10 @@ do the same with your custom context contributor. With the power to inject
 additional variables to any context in Liferay, you're free to fully harness the
 power of your chosen templating language.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Customizing the Product Menu](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu)
+[Customizing the Product Menu](/docs/7-0/tutorials/-/knowledge_base/t/customizing-the-product-menu)
 
-[Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+[Liferay Theme Generator](/docs/7-0/tutorials/-/knowledge_base/t/themes-generator)
 
-[Theme Contributors](/develop/tutorials/-/knowledge_base/7-0/theme-contributors)
+[Theme Contributors](/docs/7-0/tutorials/-/knowledge_base/t/theme-contributors)

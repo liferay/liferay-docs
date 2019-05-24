@@ -1,4 +1,8 @@
-# npm Billboard.js Portlet Template [](id=npm-billboard-js-portlet-template)
+---
+header-id: npm-billboard-js-portlet-template
+---
+
+# npm Billboard.js Portlet Template
 
 In this article, you'll learn how to create an npm Billboard.js portlet as a
 Liferay module. To create an npm Billboard.js portlet via the command line using
@@ -19,16 +23,12 @@ or
 You can also insert the `-b maven` parameter in the Blade command to generate a
 Maven project using Blade CLI.
 
-+$$$
-
-**Note:** The minifier fails on Liferay DXP 7.0 when JSDoc is present in a 
-portlet. To resolve this, use 
-[Grunt](https://gruntjs.com/getting-started) 
-[uglify](https://www.npmjs.com/package/grunt-contrib-uglify) 
-to remove the JSDoc comments. This process may take a long time, depending on 
-the number of files that require an update. 
-
-$$$
+| **Note:** The minifier fails on Liferay DXP 7.0 when JSDoc is present in a
+| portlet. To resolve this, use
+| [Grunt](https://gruntjs.com/getting-started)
+| [uglify](https://www.npmjs.com/package/grunt-contrib-uglify)
+| to remove the JSDoc comments. This process may take a long time, depending on
+| the number of files that require an update.
 
 The template for this kind of project is `npm-billboardjs-portlet`. Suppose you
 want to create an npm Billboard.js portlet project called

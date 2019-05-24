@@ -1,4 +1,8 @@
-# Applying Lexicon Styles to your App [](id=applying-lexicon-styles-to-your-app)
+---
+header-id: applying-lexicon-styles-to-your-app
+---
+
+# Applying Lexicon Styles to your App
 
 It's important to have a consistent user experience across your apps.
 @product@'s built-in apps achieve this through Liferay's 

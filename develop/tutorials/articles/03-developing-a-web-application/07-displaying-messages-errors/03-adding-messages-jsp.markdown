@@ -1,4 +1,8 @@
-# Adding Messages to JSPs [](id=adding-messages-to-jsps)
+---
+header-id: adding-messages-to-jsps
+---
+
+# Adding Messages to JSPs
 
 <div class="learn-path-step">
     <p>Displaying Messages and Errors<br>Step 3 of 3</p>

@@ -1,8 +1,12 @@
-# DDL Form Screenlet for iOS [](id=ddlformscreenlet-for-ios)
+---
+header-id: ddlformscreenlet-for-ios
+---
+
+# DDL Form Screenlet for iOS
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Z1efQ2-LQQc" frameborder="0" allowfullscreen></iframe>
 
-## Requirements [](id=requirements)
+## Requirements
 
 - Xcode 9.3 or above
 - iOS 11 SDK
@@ -12,16 +16,16 @@
   [EE/DXP](http://www.liferay.com/marketplace/-/mp/application/54369726)). 
   This app is preinstalled in Liferay CE Portal 7.0/7.1 and Liferay DXP. 
 
-## Compatibility [](id=compatibility)
+## Compatibility
 
 - iOS 9 and above
 
-## Xamarin Requirements [](id=xamarin-requirements)
+## Xamarin Requirements
 
 - Visual Studio 7.2
 - Mono .NET framework 5.4.1.6
 
-## Features [](id=features)
+## Features
 
 DDL Form Screenlet can be used to show a collection of fields so that a user can 
 fill in their values. Initial or existing values may be shown in the fields. 
@@ -53,7 +57,7 @@ Screenlet. They are listed here:
 - Selection of multiple items in the Radio and Select data types isn't supported 
   yet. 
 
-## JSON Services Used [](id=json-services-used)
+## JSON Services Used
 
 Screenlets in Liferay Screens call JSON web services in the portal. This 
 Screenlet calls the following services and methods.
@@ -66,11 +70,11 @@ Screenlet calls the following services and methods.
 | `DDLRecordService` | `addRecord` | Submit form |
 | `DDLRecordService` | `updateRecord` | Update form |
 
-## Module [](id=module)
+## Module
 
 - DDL
 
-## Themes [](id=themes)
+## Themes
 
 - Default
 
@@ -80,7 +84,7 @@ or others, to show the fields.
 
 ![Figure 1: DDL Form Screenlet using the Default (`default`) Theme.](../../images/screens-ios-ddlform.png)
 
-### Custom Cells [](id=custom-cells)
+### Custom Cells
 
 A Theme needs to define a cell view for each field type. For instance, the `xib` 
 file `DDLFieldDateTableCell_default` is used to render `Date` fields in the 
@@ -95,19 +99,19 @@ Theme. You just need to create an `xib` file for the field `subscriberName`. The
 filename is therefore `DDLCustomFieldSubscriberNameTableCell_default`. Be
 careful to keep the same components and `IBOutlet` defined in the custom file.
 
-## Portal Configuration [](id=portal-configuration)
+## Portal Configuration
 
 Before using DDL Form Screenlet, you should make sure that Dynamic Data Lists 
 and Data Types are configured properly in the portal. Refer to the 
-[Creating Data Definitions](/discover/portal/-/knowledge_base/7-0/creating-data-definitions) 
+[Creating Data Definitions](/docs/7-0/user/-/knowledge_base/u/creating-data-definitions) 
 and 
-[Creating Data Lists](/discover/portal/-/knowledge_base/7-0/creating-data-lists) 
+[Creating Data Lists](/docs/7-0/user/-/knowledge_base/u/creating-data-lists) 
 sections of the User Guide for more details. If Workflow is required, it must 
 also be configured. See the 
-[Using Workflow](/discover/portal/-/knowledge_base/7-0/using-workflow) 
+[Using Workflow](/docs/7-0/user/-/knowledge_base/u/using-workflow) 
 section of the User Guide for details. 
 
-### Permissions [](id=permissions)
+### Permissions
 
 To use DDL Form Screenlet to add new records, you must grant the Add Record 
 permission in the Dynamic Data List in the portal. If you want to use DDL Form 
@@ -124,16 +128,16 @@ grant permissions in the target repository and folder. For more details, see the
 ![Figure 3: The permission for adding a document to a Documents and Media folder.](../../images/screens-portal-permission-folder-add.png)
 
 For more details, please see the User Guide sections 
-[Creating Data Definitions](/discover/portal/-/knowledge_base/7-0/creating-data-definitions), 
-[Creating Data Lists](/discover/portal/-/knowledge_base/7-0/creating-data-lists), 
+[Creating Data Definitions](/docs/7-0/user/-/knowledge_base/u/creating-data-definitions), 
+[Creating Data Lists](/docs/7-0/user/-/knowledge_base/u/creating-data-lists), 
 and 
-[Using Workflow](/discover/portal/-/knowledge_base/7-0/using-workflow). 
+[Using Workflow](/docs/7-0/user/-/knowledge_base/u/using-workflow). 
 
-## Offline [](id=offline)
+## Offline
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/docs/7-0/tutorials/-/knowledge_base/t/architecture-of-offline-mode-in-liferay-screens). 
 
 When loading the form or record, the Screenlet supports the following offline 
 mode policies:
@@ -155,12 +159,12 @@ policies:
 | `remote-first` | The Screenlet sends the record to the portal. If this succeeds, it also stores the record in the local cache for later usage. If a connection issue occurs, then Screenlet stores the record in the local cache with the *dirty flag* enabled. This causes the synchronization process to send the record to the portal when it runs. | Use this policy when you need to make sure the Screenlet sends the record to the portal as soon as the connection is restored. |
 | `cache-first` | The Screenlet stores the record in the local cache and then sends it to the remote portal. If a connection issue occurs, then Screenlet stores the record in the local cache with the *dirty flag* enabled. This causes the the synchronization process to send the record to the portal when it runs. | Use this policy when you need to make sure the Screenlet sends the record to the portal as soon as the connection is restored. Compared to `remote-first`, this policy always stores the record in the cache. The `remote-first` policy only stores the record in the event of a network error. |
 
-## Required Attributes [](id=required-attributes)
+## Required Attributes
 
 - `structureId`
 - `recordSetId`
 
-## Attributes [](id=attributes)
+## Attributes
 
 | Attribute | Data Type | Explanation |
 |-----------|-----------|-------------| 
@@ -176,7 +180,7 @@ policies:
 | `showSubmitButton` | `boolean` | Sets whether or not the form shows a submit button at the bottom. If this is set to `false`, you should call the `submitForm()` method. |
 | `editable` | `boolean` | Sets whether the values can be changed by the user. The default is `true`. |
 
-## Methods [](id=methods)
+## Methods
 
 | Method | Return Type | Explanation |
 |-----------|-----------|-------------| 
@@ -184,7 +188,7 @@ policies:
 | `loadRecord()` | `boolean` | Starts the request to load the record specified in `recordId`. If needed, the form definition is also loaded. The form fields are shown filled with record values when the response is received. This method returns `true` if the request is sent. |
 | `submitForm()` | `boolean` | Starts the request to submit form values to the dynamic data list specified in `recordSetId`. All fields are validated prior to submission. Validation errors stop the submit process. |
 
-## Delegate [](id=delegate)
+## Delegate
 
 DDL Form Screenlet delegates some events to an object that conforms with the 
 `DDLFormScreenletDelegate` protocol. This protocol lets you implement the 

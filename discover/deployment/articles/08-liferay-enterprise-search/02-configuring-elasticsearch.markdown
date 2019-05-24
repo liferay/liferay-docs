@@ -1,4 +1,8 @@
-# Configuring Elasticsearch [](id=configuring-elasticsearch-for-liferay-0)
+---
+header-id: configuring-elasticsearch-for-liferay-0
+---
+
+# Configuring Elasticsearch
 
 @product@ is an open source project, so you won't be surprised to learn that its
 default search engine is also an open source project. Elasticsearch is a highly
@@ -9,11 +13,11 @@ supported in production as a separate server or cluster. This guide walks you
 through the process of configuring Elasticsearch.
 
 If you'd rather use Solr, it's also supported. See
-[here](/discover/deployment/-/knowledge_base/7-0/using-solr) for information on
+[here](/docs/7-0/deploy/-/knowledge_base/d/using-solr) for information on
 installing and configuring Solr.
 
 To get up and running quickly with Elasticsearch as a remote server, refer to
-the [Installing Elasticsearch article](/discover/deployment/-/knowledge_base/7-0/installing-elasticsearch).
+the [Installing Elasticsearch article](/docs/7-0/deploy/-/knowledge_base/d/installing-elasticsearch).
 In that article you'll find the basic instructions for the installation and
 configuration of Elasticsearch in a single server environment. This article
 includes more details and information on clustering and tuning Elasticsearch. In
@@ -22,27 +26,22 @@ for use in production environments.
 
 If you've come here looking for information on search engines in general, or the
 low level search infrastructure of @product@, refer instead to the developer
-tutorial [Introduction to Liferay Search](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search).
+tutorial [Introduction to Liferay Search](/docs/7-0/tutorials/-/knowledge_base/t/introduction-to-liferay-search).
 
 These terms will be useful to understand as you read this guide:
 
 -  *Elasticsearch Home* refers to the root folder of your unzipped Elasticsearch
    installation (for example, `elasticsearch-2.4.0`). 
 
--  [*Liferay Home*](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home)
+-  [*Liferay Home*](/docs/7-0/deploy/-/knowledge_base/d/installing-product#liferay-home)
    refers to the root folder of your @product@ installation. It contains the
    `osgi`, `deploy`, `data`, and `license` folders, among others.
 
-+$$$
+| **Upgrading to Elasticsearch 6.5:** If you have an existing 2.4 or 6.1
+| Elasticsearch installation, follow [the upgrade guide](/docs/7-0/deploy/-/knowledge_base/d/upgrading-to-elasticsearch-6)
+| to move onto Elasticsearch 6.5.
 
-**Upgrading to Elasticsearch 6.5:** If you have an existing 2.4 or 6.1
-Elasticsearch installation, follow [the upgrade
-guide](/discover/deployment/-/knowledge_base/7-0/upgrading-to-elasticsearch-6)
-to move onto Elasticsearch 6.5. 
-
-$$$
-
-## Embedded vs. Remote Operation Mode [](id=embedded-vs-remote-operation-mode)
+## Embedded vs. Remote Operation Mode
 
 When you install @product@, there's an embedded Elasticsearch already installed.
 In embedded mode, Elasticsearch search runs in the same JVM to make it easy to
@@ -57,7 +56,7 @@ run Elasticsearch in embedded mode in production either. Instead, run
 Elasticsearch in *remote operation mode*, as a standalone server or cluster of
 server nodes.
 
-## Configuring Elasticsearch [](id=configuring-elasticsearch)
+## Configuring Elasticsearch
 
 For detailed Elasticsearch configuration information, refer to the
 [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/setup-configuration.html#settings).
@@ -93,7 +92,7 @@ navigate to Elasticsearch Home and enter
 Feel free to change the node name or the cluster name. Once you configure
 Elasticsearch to your liking, start it up.
 
-## Starting Elasticsearch [](id=starting-elasticsearch)
+## Starting Elasticsearch
 
 Start Elasticsearch by navigating to Elasticsearch Home and typing 
 
@@ -109,27 +108,22 @@ To run as a daemon in the background, add the `-d` switch to either command:
 
     ./bin/elasticsearch -d
 
-When you have Elasticsearch itself installed and running, and [@product@ installed](/discover/deployment/-/knowledge_base/6-2/liferay-installation-overview)
+When you have Elasticsearch itself installed and running, and [@product@ installed](/docs/6-2/deploy/-/knowledge_base/d/liferay-installation-overview)
 and running (do that if you haven't already) you need to introduce @product@ and
 Elasticsearch to each other. Fortunately, Liferay provides an adapter that helps
 it find and integrate your Elasticsearch cluster.
 
-## Configuring the Liferay Elasticsearch Adapter [](id=configuring-the-liferay-elasticsearch-adapter)
+## Configuring the Liferay Elasticsearch Adapter
 
 The Elasticsearch connector is a module that ships with the Foundation Suite and
 deployed to the OSGi runtime, titled *Liferay Portal Search Elasticsearch*. This
 connector provides integration between Elasticsearch and @product@. Before you
 configure the adapter, make sure Elasticsearch is running. 
 
-+$$$
-
-**Elasticsearch 6.5:** The connector for Elasticsearch 6.5 is called *Liferay
-Connector to Elasticsearch 6*. Download the Elasticcsearch 6.5 connector from
-Liferay Marketplace and install it, following the [Marketplace
-documentation](/discover/portal/-/knowledge_base/7-0/using-the-liferay-marketplace)
-if necessary.
-
-$$$
+| **Elasticsearch 6.5:** The connector for Elasticsearch 6.5 is called *Liferay
+| Connector to Elasticsearch 6*. Download the Elasticsearch 6.5 connector from
+| Liferay Marketplace and install it, following the [Marketplace documentation](/docs/7-0/user/-/knowledge_base/u/using-the-liferay-marketplace)
+| if necessary.
 
 There are two ways to configure the adapter: 
 
@@ -140,12 +134,12 @@ There are two ways to configure the adapter:
 It's convenient to configure the Elasticsearch adapter from System Settings, but
 this is often only possible during development and testing. If you're not
 familiar with System Settings, you can read about it
-[here](/discover/portal/-/knowledge_base/7-0/system-settings). Even if you need
+[here](/docs/7-0/user/-/knowledge_base/u/system-settings). Even if you need
 a configuration file so you can use the same configuration on another @product@
 system, you can still use System Settings. Just make the configuration edits you
 need, then export the `.config` file with your configuration.
 
-### Configuring the Adapter in the Control Panel [](id=configuring-the-adapter-in-the-control-panel)
+### Configuring the Adapter in the Control Panel
 
 Here are the steps to configure the Elasticsearch adapter from the System
 Settings application:
@@ -171,7 +165,7 @@ Settings application:
    Administration*, find the *Index Actions* section, and click *Execute* next
    to *Reindex all search indexes.* 
 
-### Configuring the Adapter with an OSGi `.config` File [](id=configuring-the-adapter-with-an-osgi-config-file)
+### Configuring the Adapter with an OSGi `.config` File
 
 When preparing a system for production deployment, you want to set up a
 repeatable deployment process. Therefore, it's best to use the OSGi
@@ -207,7 +201,7 @@ testing under load, and tuning again, so we encourage you to examine the
 well as the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/important-settings.html#important-settings) 
 and go through that process once you have a working configuration. 
 
-## Configuring a Remote Elasticsearch Host [](id=configuring-a-remote-elasticsearch-host)
+## Configuring a Remote Elasticsearch Host
 
 In production systems Elasticsearch and @product@ are installed on different
 servers. To make @product@ aware of the Elasticsearch cluster, set
@@ -219,14 +213,10 @@ Elasticsearch nodes in this property as you'd like. This tells @product@ the IP
 address or host name where search requests are to be sent. If using System
 Settings, set the value in the *Transport Addresses* property.
 
-+$$$
-
-**Note:** In an Elasticsearch cluster you can list the transport addresses for
-multiple Elasticsearch nodes, if appropriate. Just use a comma-separated list in
-the `transportAddresses` property. If you set only one transport address,
-@product@ loses contact with Elasticsearch if that node goes down.
-
-$$$
+| **Note:** In an Elasticsearch cluster you can list the transport addresses for
+| multiple Elasticsearch nodes, if appropriate. Just use a comma-separated list in
+| the `transportAddresses` property. If you set only one transport address,
+| @product@ loses contact with Elasticsearch if that node goes down.
 
 On the Elasticsearch side, set the `network.host` property in your
 `elasticsearch.yml` file. This property simultaneously sets both the *bind host*
@@ -235,22 +225,18 @@ host name or IP address Elasticsearch uses to communicate with other nodes). See
 [here](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-network.html)
 for more information.
 
-## Clustering Elasticsearch in Remote Operation Mode [](id=clustering-elasticsearch-in-remote-operation-mode)
+## Clustering Elasticsearch in Remote Operation Mode
 
 Clustering Elasticsearch is easy. Each time you run the Elasticsearch start
 script, a new local storage node is added to the cluster. If you want four nodes
 running locally, for example, just run `./bin/elasticsearch` four times. If you
 only run the start script once, you have a cluster with just one node.
 
-+$$$
-
-**Elasticsearch 6.5:** To start multiple local storage nodes in Elasticsearch
-6.5, you must also configure `node.max_local_storage_nodes` to be something
-greater than `1`. See
-[here](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/modules-node.html#max-local-storage-nodes)
-for more information.
-
-$$$
+| **Elasticsearch 6.5:** To start multiple local storage nodes in Elasticsearch
+| 6.5, you must also configure `node.max_local_storage_nodes` to be something
+| greater than `1`. See
+| [here](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/modules-node.html#max-local-storage-nodes)
+| for more information.
 
 Elasticsearch's default configuration works for a cluster of up to ten nodes,
 since the default number of shards is `5`, while the default number of replica
@@ -259,41 +245,33 @@ shards is `1`:
     index.number_of_shards: 5
     index.number_of_replicas: 1
 
-+$$$
+| **Note:** Elasticsearch uses the [Zen Discovery
+| Module](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-discovery-zen.html)
+| by default, which provides unicast discovery. Additionally, nodes in the
+| cluster communicate using the [Transport
+| Module](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-transport.html),
+| through TCP. See the Elasticsearch documentation for the available properties
+| (to be set in the `elasticsearch.yml` file), and the @product@ Elasticsearch
+| Adapter's [reference
+| article](/discover/reference/-/knowledge_base/7-0/elasticsearch-settings)
+| for the adapter's available settings.
+| 
+| At a minimum, provide the list of hosts to act as gossip routers during unicast
+| discovery in the `elasticsearch.yml`:
+| 
+|     discovery.zen.ping.unicast.hosts: ["node1.ip.address", "node2.ip.address"]
 
-**Note:** Elasticsearch uses the [Zen Discovery
-Module](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-discovery-zen.html)
-by default, which provides unicast discovery. Additionally, nodes in the
-cluster communicate using the [Transport
-Module](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-transport.html),
-through TCP. See the Elasticsearch documentation for the available properties
-(to be set in the `elasticsearch.yml` file), and the @product@ Elasticsearch
-Adapter's [reference
-article](/discover/reference/-/knowledge_base/7-0/elasticsearch-settings)
-for the adapter's available settings.
-
-At a minimum, provide the list of hosts to act as gossip routers during unicast
-discovery in the `elasticsearch.yml`:
-
-    discovery.zen.ping.unicast.hosts: ["node1.ip.address", "node2.ip.address"]
-
-$$$
-
-+$$$
-
-**Elasticsearch 6.5:** Elasticsearch 6 removed the setting that specifies the
-number of shards and replicas in the `elasticsearch.yml`file. Configure these
-index-level settings in the Elasticsearch 6.5 connector, using the
-`indexNumberOfShards` and `indexNumberOfReplicas` properties to specify the
-number of primary shards and number of replica shards, respectively.
-
-$$$
+| **Elasticsearch 6.5:** Elasticsearch 6 removed the setting that specifies the
+| number of shards and replicas in the `elasticsearch.yml`file. Configure these
+| index-level settings in the Elasticsearch 6.5 connector, using the
+| `indexNumberOfShards` and `indexNumberOfReplicas` properties to specify the
+| number of primary shards and number of replica shards, respectively.
 
 
 For more information on configuring an Elasticsearch cluster, see the
 documentation on [Elasticsearch Index Settings](https://www.elastic.co/guide/en/elasticsearch/guide/current/_index_settings.html).
 
-## Advanced Configuration of the Liferay Elasticsearch Adapter [](id=advanced-configuration-of-the-liferay-elasticsearch-adapter)
+## Advanced Configuration of the Liferay Elasticsearch Adapter
 
 The default configurations for Liferay's Elasticsearch adapter module are set
 in a Java class called `ElasticsearchConfiguration`.
@@ -304,7 +282,7 @@ by default. In this case, add the configuration options you need. If something
 is configurable for Elasticsearch, its configurable using the Elasticsearch
 adapter.
 
-### Adding Settings and Mappings to the Liferay Elasticsearch Adapter [](id=adding-settings-and-mappings-to-the-liferay-elasticsearch-adapter)
+### Adding Settings and Mappings to the Liferay Elasticsearch Adapter
 
 The [available configuration
 options](/discover/reference/-/knowledge_base/7-0/elasticsearch-settings) are
@@ -318,7 +296,7 @@ specify the settings you need by using one or more of the
 ![Figure 3: You can add Elasticsearch configurations to the ones currently available
 in System Settings.](../../images/elasticsearch-additional-configs.png)
 
-#### Adding Configurations [](id=adding-configurations)
+#### Adding Configurations
 
 `additionalConfigurations` is used to define extra settings (defined in YAML)
 for the embedded Elasticsearch or the local Elasticsearch client when running
@@ -326,13 +304,9 @@ in remote mode. In production, only one additional configuration can be added he
 
     client.transport.ping_timeout
 
-+$$$
-
-**Elasticsearch 6.5:** The Elasticsearch 6.5 connector includes the
-`client.transport.ping_timeout` as a native setting. Configure it through its
-dedicated setting rather than with `additionalConfigurations`.
-
-$$$
+| **Elasticsearch 6.5:** The Elasticsearch 6.5 connector includes the
+| `client.transport.ping_timeout` as a native setting. Configure it through its
+| dedicated setting rather than with `additionalConfigurations`.
 
 The rest of the settings for the client are available as default configuration
 options in the Liferay Elasticsearch adapter. See the [Elasticsearch
@@ -341,7 +315,7 @@ reference article for more information. See the [Elasticsearch
 documentation](https://www.elastic.co/guide/en/elasticsearch/client/java-api/2.4/transport-client.html)
 for a description of all the client settings and for an example.
 
-#### Adding Index Configurations [](id=adding-index-configurations)
+#### Adding Index Configurations
 
 `additionalIndexConfigurations` is used to define extra settings (in JSON or
 YAML format) that are applied to the @product@ index when it's created. For
@@ -374,7 +348,7 @@ that can be applied to a field or dynamic template (see
         }
     }
 
-#### Adding Type Mappings [](id=adding-type-mappings)
+#### Adding Type Mappings
 
 `additionalTypeMappings` is used to define extra mappings for the
 `LiferayDocumentType` type definition, which are applied when the index is
@@ -403,8 +377,6 @@ in Elasticsearch.
             }   
         }
     }
-
-+$$$
 
 **Elasticsearch 6:** The above property mapping looks different in Elasticsearch
 6.1:
@@ -446,7 +418,7 @@ Here's what it would look like for an Elasticsearch instance running on
 In the above URL, `liferay-20116`is the index name. Including it indicates that
 you want to see the mappings that were used to create the index with that name.
 
-#### Overriding Type Mappings [](id=overriding-type-mappings)
+#### Overriding Type Mappings
 
 Use `overrideTypeMappings` to override @product@'s default type mappings. This
 is an advanced feature that should be used only if strictly necessary. If you
@@ -504,28 +476,24 @@ with `_ja`, overriding the default `template_ja` mapping.
         }
     }
 
-+$$$
+| **Note:** There's actually a third way to add configuration options to the
+| Elasticsearch adapter. You or your favorite developer can publish a Settings
+| Contributor Component and deploy it to Liferay's OSGi runtime. A developer
+| tutorial on Search Extension Points will be written for this. In summary, the
+| contributor module needs these things:
+| 
+| -  A class that implements either
+| `com.liferay.portal.search.elasticsearch.settings.SettingsContributor` or
+| `com.liferay.portal.search.elasticsearch.settings.IndexSettingsContributor`.
+|     -  If you're adding settings that would go into `additionalConfigurations`,
+|     override `SettingsContributor`.
+|     -  If you want to add settings that would go into
+|     `additionalIndexConfigurations` or `additionalTypeMappings`, implement
+|     `IndexSettingsContributor`.
+| -  An OSGi `@Component` annotation for either of the implementations mentioned
+|     in the last step.
 
-**Note:** There's actually a third way to add configuration options to the
-Elasticsearch adapter. You or your favorite developer can publish a Settings
-Contributor Component and deploy it to Liferay's OSGi runtime. A developer
-tutorial on Search Extension Points will be written for this. In summary, the
-contributor module needs these things:
-
--  A class that implements either
-`com.liferay.portal.search.elasticsearch.settings.SettingsContributor` or
-`com.liferay.portal.search.elasticsearch.settings.IndexSettingsContributor`.
-    -  If you're adding settings that would go into `additionalConfigurations`,
-    override `SettingsContributor`. 
-    -  If you want to add settings that would go into
-    `additionalIndexConfigurations` or `additionalTypeMappings`, implement
-    `IndexSettingsContributor`.
--  An OSGi `@Component` annotation for either of the implementations mentioned
-    in the last step.
-
-$$$
-
-### Multi-line YAML Configurations [](id=multi-line-yaml-configurations)
+### Multi-line YAML Configurations
 
 If you configure the settings from the last section using an OSGi configuration
 file, you might find yourself needing to write YAML snippets that span multiple
@@ -541,7 +509,7 @@ line with `\n\`, like this:
                         monitor.jvm.gc.old.warn: 600s\n\
                         monitor.jvm.gc.young.warn: 600s
 
-## Troubleshooting Elasticsearch [](id=troubleshooting-elasticsearch)
+## Troubleshooting Elasticsearch
 
 Sometimes things don't go as planned. If you've set up @product@ with
 Elasticsearch in remote mode, but @product@ can't connect to Elasticsearch, check
@@ -562,7 +530,7 @@ you can read
 [here](https://customer.liferay.com/documentation/7.0/deploy/-/official_documentation/deployment/securing-elasticsearch-with-shield)
 to learn about configuring Shield to secure your Elasticsearch data. 
 
-## Elasticsearch Connector System Settings, By Operation Mode [](id=elasticsearch-connector-system-settings-by-operation-mode)
+## Elasticsearch Connector System Settings, By Operation Mode
 
 Some of the settings available for the Elasticsearch connector are applicable
 for only one operation mode (REMOTE or EMBEDDED). Refer to the table below:
@@ -598,10 +566,10 @@ Adapter Setting/Operation Mode | EMBEDDED | REMOTE |
 
 \* **Note:** Available in the Liferay Connector to Elasticsearch 6 only.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Introduction to Liferay Search](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-search)
+[Introduction to Liferay Search](/docs/7-0/tutorials/-/knowledge_base/t/introduction-to-liferay-search)
 
-[Customizing Liferay Search](/develop/tutorials/-/knowledge_base/7-0/customizing-liferay-search)
+[Customizing Liferay Search](/docs/7-0/tutorials/-/knowledge_base/t/customizing-liferay-search)
 
 <a name="footnote1">1</a> This is, of course, a nod to all those fans of [Boaty Mcboatface](http://www.theatlantic.com/international/archive/2016/05/boaty-mcboatface-parliament-lessons/482046). 

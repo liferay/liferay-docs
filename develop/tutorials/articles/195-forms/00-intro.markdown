@@ -1,8 +1,12 @@
-# Liferay Forms [](id=liferay-forms)
+---
+header-id: liferay-forms
+---
+
+# Liferay Forms
 
 Many modern websites rely on forms for their functionality. Liferay's Forms
 application is maturing rapidly, offering [rich out-of-the-box
-functionality](/discover/portal/-/knowledge_base/7-0/collecting-information-from-users).
+functionality](/docs/7-0/user/-/knowledge_base/u/collecting-information-from-users).
 Many use cases, from the simplest to the most complex, can be met using the
 Forms application as it is. However, why not make the application behave exactly
 as you'd like it to? Just because something is good, doesn't mean it's perfect

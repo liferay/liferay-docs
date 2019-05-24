@@ -1,4 +1,8 @@
-# Arquillian Extension for Liferay Example [](id=arquillian-extension-for-liferay-example)
+---
+header-id: arquillian-extension-for-liferay-example
+---
+
+# Arquillian Extension for Liferay Example
 
 [Arquillian](http://arquillian.org) is an extensible Java testing platform
 that's designed to make integration testing easy. Arquillian manages the
@@ -23,8 +27,8 @@ or access its latest code on
 
 Here are the tutorial sections:
 
--   [Arquillian Sample Portlet](/develop/tutorials/-/knowledge_base/7-0/arquillian-example-sample-portlet)
--   [Arquillian Integration Test Example](/develop/tutorials/-/knowledge_base/7-0/arquillian-integration-test-example)
--   [Arquillian Functional Test Example](/develop/tutorials/-/knowledge_base/7-0/arquillian-functional-test-example)
--   [JaCoCo Code Coverage Example](/develop/tutorials/-/knowledge_base/7-0/jacoco-code-coverage-example)
--   [Running the Arquillian Example](/develop/tutorials/-/knowledge_base/7-0/running-the-arquillian-example)
+-   [Arquillian Sample Portlet](/docs/7-0/tutorials/-/knowledge_base/t/arquillian-example-sample-portlet)
+-   [Arquillian Integration Test Example](/docs/7-0/tutorials/-/knowledge_base/t/arquillian-integration-test-example)
+-   [Arquillian Functional Test Example](/docs/7-0/tutorials/-/knowledge_base/t/arquillian-functional-test-example)
+-   [JaCoCo Code Coverage Example](/docs/7-0/tutorials/-/knowledge_base/t/jacoco-code-coverage-example)
+-   [Running the Arquillian Example](/docs/7-0/tutorials/-/knowledge_base/t/running-the-arquillian-example)

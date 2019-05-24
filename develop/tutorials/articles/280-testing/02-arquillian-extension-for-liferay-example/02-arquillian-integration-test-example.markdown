@@ -1,4 +1,8 @@
-# Arquillian Integration Test Example [](id=arquillian-integration-test-example)
+---
+header-id: arquillian-integration-test-example
+---
+
+# Arquillian Integration Test Example
 
 Integration tests exercise module interaction. The following integration test
 validates the sample portlet using its API. Although the example's
@@ -113,7 +117,7 @@ The Liferay Arquillian Extension injects the `_sampleService` field with a
 
 The integration test has some dependencies, of course. 
 
-## Dependencies [](id=dependencies)
+## Dependencies
 
 The project's `build.gradle` file specifies this test's dependencies on
 Liferay's Arquillian container, JUnit, and an Arquillian JUnit test container:
@@ -124,7 +128,7 @@ Liferay's Arquillian container, JUnit, and an Arquillian JUnit test container:
 
 Arquillian tests are configurable too.  
 
-## Arquillian Configuration [](id=arquillian-configuration)
+## Arquillian Configuration
 
 Arquillian configuration file `src/testIntegration/resources/arquillian.xml`
 uses property `deploymentExportPath` (optional) to write a test archive (e.g.,
@@ -148,7 +152,7 @@ here's an abbreviated view of the
 The project uses  Java Management Extensions (JMX) to deploy OSGi modules to
 @product@. Enabling JMX for the application server is next. 
 
-## JMX Settings [](id=jmx-settings)
+## JMX Settings
 
 Apache Aries JMX exposes the JMX API that Arquillian uses to
 install/deploy/start the modules. Since DXP Digital Enterprise 7.0 Fix Pack 16
@@ -156,7 +160,7 @@ and Liferay CE 7.0 GA4, Liferay Workspace's `startTestableTomcat` Gradle task
 installs the Apache Aries JMX modules automatically. In case you're using an
 earlier @product@ version or haven't already installed the Aries modules, here's
 their group ID, artifact ID, and version information. You can install them using
-[Apache Felix GoGo Shell](/develop/reference/-/knowledge_base/7-0/using-the-felix-gogo-shell):
+[Apache Felix GoGo Shell](/docs/7-0/reference/-/knowledge_base/r/using-the-felix-gogo-shell):
 
     "org.apache.aries.jmx:org.apache.aries.jmx:1.1.5"
     "org.apache.aries:org.apache.aries.util:1.1.3"
@@ -165,13 +169,13 @@ JMX is enabled on the application server via Java runtime options. The following
 Apache Tomcat environment script excerpts demonstrate enabling JMX (without
 authentication) on port 8099. 
 
-### `setenv.sh` JMX Settings [](id=setenv-sh-jmx-settings)
+### `setenv.sh` JMX Settings
 
     JMX_OPTS="-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=8099 -Dcom.sun.management.jmxremote.ssl=false"
 
     CATALINA_OPTS="${CATALINA_OPTS} ${JMX_OPTS}"
 
-### `setenv.bat` JMX Settings [](id=setenv-bat-jmx-settings)
+### `setenv.bat` JMX Settings
 
     set "JMX_OPTS=-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.port=8099 -Dcom.sun.management.jmxremote.ssl=false"
 

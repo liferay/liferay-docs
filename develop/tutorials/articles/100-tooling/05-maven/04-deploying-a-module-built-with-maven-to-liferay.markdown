@@ -1,4 +1,8 @@
-# Deploying a Module Built with Maven to @product@ [](id=deploying-a-module-built-with-maven-to-product)
+---
+header-id: deploying-a-module-built-with-maven-to-product
+---
+
+# Deploying a Module Built with Maven to @product@
 
 There are two ways to deploy a Maven-built Liferay module:
 
@@ -19,7 +23,7 @@ applied to Maven projects built from Liferay archetypes.
 
 A prerequisite for this tutorial is to have your project configured to generate
 an OSGi module JAR; if you haven't done this, visit the
-[Creating a Module JAR Using Maven](/develop/tutorials/-/knowledge_base/7-0/creating-a-module-jar-using-maven)
+[Creating a Module JAR Using Maven](/docs/7-0/tutorials/-/knowledge_base/t/creating-a-module-jar-using-maven)
 tutorial for more information.
 
 1.  Add the following plugin configuration to your Liferay Maven project's
@@ -48,7 +52,7 @@ tutorial for more information.
     [Bundle Support plugin](https://repository.liferay.com/nexus/content/groups/public/com/liferay/com.liferay.portal.tools.bundle.support/)
     by defining its `groupId`, `artifactId`, and `version`. You can learn more
     about this plugin in the
-    [Maven Workspace](/develop/tutorials/-/knowledge_base/7-0/maven-workspace)
+    [Maven Workspace](/docs/7-0/tutorials/-/knowledge_base/t/maven-workspace)
     tutorial. The logic also defines the
     [`executions` tag](https://maven.apache.org/guides/mini/guide-configuring-plugins.html#Using_the_executions_Tag),
     which configures the Bundle Support plugin to run during the
@@ -73,14 +77,10 @@ tutorial for more information.
             <liferayHome>C:/liferay/liferay-ce-portal-7.0-ga7</liferayHome>
         </configuration>
 
-    +$$$
-
-    **Note:** Maven applications built for previous Liferay Portal versions
-    required the `<liferay.maven.plugin.version>` tag to do various tasks (e.g.,
-    deploying to a Liferay server). This tag is not needed since the old
-    `liferay-maven-plugin` is no longer used.
-
-    $$$
+    | **Note:** Maven applications built for previous Liferay Portal versions
+    | required the `<liferay.maven.plugin.version>` tag to do various tasks (e.g.,
+    | deploying to a Liferay server). This tag is not needed since the old
+    | `liferay-maven-plugin` is no longer used.
 
 3.  Run this command to deploy your project:
 

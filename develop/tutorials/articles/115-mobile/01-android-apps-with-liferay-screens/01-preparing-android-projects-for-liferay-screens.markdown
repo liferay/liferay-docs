@@ -1,4 +1,8 @@
-# Preparing Android Projects for Liferay Screens [](id=preparing-android-projects-for-liferay-screens)
+---
+header-id: preparing-android-projects-for-liferay-screens
+---
+
+# Preparing Android Projects for Liferay Screens
 
 To use Liferay Screens, you must install it in your Android project and then 
 configure it to communicate with your @product@ instance. Note that Screens is 
@@ -13,15 +17,11 @@ There are three different ways to install Screens. This tutorial shows you each:
 2. With Maven
 3. Manually
 
-+$$$
+| **Note:** After installation, you must configure Liferay Screens to communicate
+| with your @product@ instance. The last section in this tutorial shows you how to
+| do this.
 
-**Note:** After installation, you must configure Liferay Screens to communicate 
-with your @product@ instance. The last section in this tutorial shows you how to 
-do this. 
-
-$$$
-
-## Requirements [](id=requirements)
+## Requirements
 
 Liferay Screens for Android includes the Component Library (the Screenlets) and 
 a sample project. It requires the following software:
@@ -39,21 +39,21 @@ a sample project. It requires the following software:
 Liferay Screens for Android uses
 [EventBus](https://github.com/greenrobot/EventBus) internally. 
 
-## Securing JSON Web Services [](id=securing-json-web-services)
+## Securing JSON Web Services
 
 Each Screenlet in Liferay Screens calls one or more of @product@'s JSON web 
 services, which are enabled by default. The Screenlet 
-[reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-android) 
+[reference documentation](/docs/7-0/reference/-/knowledge_base/r/screenlets-in-liferay-screens-for-android) 
 lists the web services that each Screenlet calls. To use a Screenlet, its web 
 services must be enabled in the portal. It's possible, however, to disable the 
 web services needed by Screenlets you're not using. For instructions on this, 
 see the tutorial 
-[Configuring JSON Web Services](/develop/tutorials/-/knowledge_base/7-0/portal-configuration-of-json-web-services). 
+[Configuring JSON Web Services](/docs/7-0/tutorials/-/knowledge_base/t/portal-configuration-of-json-web-services). 
 You can also use 
-[Service Access Policies](/develop/tutorials/-/knowledge_base/7-0/service-access-policies) 
+[Service Access Policies](/docs/7-0/tutorials/-/knowledge_base/t/service-access-policies) 
 for more fine-grained control over accessible services. 
 
-## Using Gradle to Install Liferay Screens [](id=configuring-your-project-with-gradle)
+## Using Gradle to Install Liferay Screens
 
 To use Gradle to install Liferay Screens in your Android Studio project, you 
 must edit your app's `build.gradle` file. Note that your project has two 
@@ -112,7 +112,7 @@ several options:
 Although we strongly recommend that you use Gradle to install Screens, the 
 following section shows you how to install Screens with Maven. 
 
-## Using Maven to Install Liferay Screens [](id=configuring-your-project-with-maven)
+## Using Maven to Install Liferay Screens
 
 Note that we strongly recommend that you use Gradle to install Screens. It's
 possible though to use Maven to install Screens. Follow these steps to
@@ -156,7 +156,7 @@ new repository in your maven settings (e.g., `.m2/settings.xml` file):
 
 Nice work! 
 
-## Manual Configuration in Gradle [](id=manual-configuration-in-gradle)
+## Manual Configuration in Gradle
 
 Although we strongly recommend that you use Gradle to install Screens 
 automatically, it's possible to use Gradle to install Screens manually. Follow 
@@ -188,7 +188,7 @@ import a Liferay Screens class (like Login Screenlet).
 
 Next, you'll set up communication with @product@. 
 
-## Configuring Communication with @product@ [](id=configuring-communication-with-liferay)
+## Configuring Communication with @product@
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QEJPEicgle8" frameborder="0" allowfullscreen></iframe>
 
@@ -262,7 +262,7 @@ interact with a @product@ instance's DDLs. You can see an additional example
 
 Super! Your Android project's ready for Liferay Screens.
 
-## Example Apps [](id=example-apps)
+## Example Apps
 
 As you use Screens to develop your apps, you may want to refer to some example 
 apps that also use it. There are two demo applications available:
@@ -277,10 +277,10 @@ apps that also use it. There are two demo applications available:
 Great! Now you're ready to put Screens to use. The following tutorials show you 
 how to do this.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/7-0/using-screenlets-in-android-apps)
+[Using Screenlets in Android Apps](/docs/7-0/tutorials/-/knowledge_base/t/using-screenlets-in-android-apps)
 
-[Using Views in Android Screenlets](/develop/tutorials/-/knowledge_base/7-0/using-views-in-android-screenlets)
+[Using Views in Android Screenlets](/docs/7-0/tutorials/-/knowledge_base/t/using-views-in-android-screenlets)
 
-[Preparing iOS Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/7-0/preparing-ios-projects-for-liferay-screens)
+[Preparing iOS Projects for Liferay Screens](/docs/7-0/tutorials/-/knowledge_base/t/preparing-ios-projects-for-liferay-screens)

@@ -1,4 +1,8 @@
-# Adding New Behavior to an Editor [](id=adding-new-behavior-to-an-editor)
+---
+header-id: adding-new-behavior-to-an-editor
+---
+
+# Adding New Behavior to an Editor
 
 With the support of several kinds of WYSIWYG editors, Liferay gives you many
 options to support your users' editing needs. Sometimes, however, you can't get
@@ -10,24 +14,20 @@ This can be done by using the `liferay-util:dynamic-include` JavaScript
 extension point. This allows anyone to inject JavaScript code right after the
 editor instantiation to configure/change the editor.
 
-+$$$
-
-**Note:** By default, the CKEditor strips empty `<i>` tags, such as those used 
-for Font Awesome icons, from published content, when switching between the Code 
-View and the Source View of the editor. You can disable this behavior by using 
-the `ckeditor#onEditorCreate` or `alloyeditor#onEditorCreate` extension points 
-to 
-[add the following code](/develop/tutorials/-/knowledge_base/7-0/adding-new-behavior-to-an-editor) 
-to the editor:
-
-    CKEDITOR.dtd.$removeEmpty.i = 0
-
-$$$
+| **Note:** By default, the CKEditor strips empty `<i>` tags, such as those used
+| for Font Awesome icons, from published content, when switching between the Code
+| View and the Source View of the editor. You can disable this behavior by using
+| the `ckeditor#onEditorCreate` or `alloyeditor#onEditorCreate` extension points
+| to
+| [add the following code](/docs/7-0/tutorials/-/knowledge_base/t/adding-new-behavior-to-an-editor)
+| to the editor:
+| 
+|     CKEDITOR.dtd.$removeEmpty.i = 0
 
 In this tutorial, you'll learn how to use the JavaScript extension point in your
 Liferay supported WYSIWYG editor.
 
-## Injecting JavaScript into a WYSIWYG Editor [](id=injecting-javascript-into-a-wysiwyg-editor)
+## Injecting JavaScript into a WYSIWYG Editor
 
 The `liferay-util:dynamic-include` extension point is available in the JSP files
 of @product@'s configurable editors. This extension point serves as the gateway
@@ -51,7 +51,7 @@ extension point, you should follow these steps:
     table cells, so the table cells are removed from the options displayed to
     the user when running in Creole mode.
 
-2.  [Create a module](/develop/tutorials/-/knowledge_base/7-0/starting-module-development#creating-a-module) 
+2.  [Create a module](/docs/7-0/tutorials/-/knowledge_base/t/starting-module-development#creating-a-module) 
     that can register your new JS file and inject it into your editor instance. 
     The module should have a structure similar to this:
 
@@ -158,10 +158,10 @@ That's it! The JS code that you created is now injected into the editor instance
 you've specified. You're now able to use JavaScript to add new behavior to your
 Liferay supported WYSIWYG editor!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Modifying an Editor's Configuration](/develop/tutorials/-/knowledge_base/7-0/modifying-an-editors-configuration)
+[Modifying an Editor's Configuration](/docs/7-0/tutorials/-/knowledge_base/t/modifying-an-editors-configuration)
 
-[Embedding Portlets in Themes](/develop/tutorials/-/knowledge_base/7-0/embedding-portlets-in-themes)
+[Embedding Portlets in Themes](/docs/7-0/tutorials/-/knowledge_base/t/embedding-portlets-in-themes)
 
-[Portlets](/develop/tutorials/-/knowledge_base/7-0/portlets)
+[Portlets](/docs/7-0/tutorials/-/knowledge_base/t/portlets)

@@ -1,4 +1,8 @@
-# Defining an Object-Relational Map with Service Builder [](id=defining-an-object-relational-map-with-service-builder)
+---
+header-id: defining-an-object-relational-map-with-service-builder
+---
+
+# Defining an Object-Relational Map with Service Builder
 
 In this tutorial, you'll learn how to define an object relational map for your
 application so that it can persist data. As an example, you'll examine the
@@ -24,10 +28,10 @@ this section. The application's view layer is implemented in the JSPs in the
 
 You can learn how to generate a generic modular application from scratch that
 includes the `*api`, `*service`, and `*web` modules by default in the
-[Modularizing an Existing Portlet](/develop/tutorials/-/knowledge_base/7-0/modularizing-an-existing-portlet)
+[Modularizing an Existing Portlet](/docs/7-0/tutorials/-/knowledge_base/t/modularizing-an-existing-portlet)
 tutorial. This tutorial assumes you've assembled your application's modules
 similarly to the linked tutorial above. Be sure to also visit the
-[Fundamentals](/develop/tutorials/-/knowledge_base/7-0/fundamentals)
+[Fundamentals](/docs/7-0/tutorials/-/knowledge_base/t/fundamentals)
 tutorial for additional info on the `*api`, `*service`, and `*web` modules.
 
 The first step in using Service Builder is to define your model classes and
@@ -66,7 +70,7 @@ Liferay @ide@ makes it very easy to define entities in your application's
 You'll examine these steps in detail next, starting with creating a
 `service.xml` file.
 
-## Step 1: Creating the service.xml File [](id=step-1-creating-the-service-xml-file)
+## Step 1: Creating the service.xml File
 
 To define a service for your portlet project, you must create a `service.xml`
 file. The DTD (Document Type Declaration) file
@@ -105,7 +109,7 @@ wish.
 
 Next, you can start filling out the global information for your service. 
 
-## Step 2: Defining Global Service Information [](id=step-2-defining-global-service-information)
+## Step 2: Defining Global Service Information
 
 A service's global information applies to all of its entities, so it's a good
 place to start. In Liferay @ide@, select the *Service Builder* node in the upper
@@ -127,7 +131,7 @@ and
 [bookmarks-service](https://github.com/liferay/liferay-portal/tree/master/modules/apps/collaboration/bookmarks/bookmarks-service)
 modules to see an example of how these are automatically generated for you.
 Refer to the
-[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code)
+[Running Service Builder and Understanding the Generated Code](/docs/7-0/tutorials/-/knowledge_base/t/running-service-builder-and-understanding-the-generated-code)
 tutorial for a description of the contents of these packages. 
 
 Service Builder uses the service namespace in naming the database tables it
@@ -139,16 +143,12 @@ following SQL scripts it generates in your `src/main/resources/META-INF/sql` fol
 - `sequences.sql`
 - `tables.sql`
 
-+$$$
-
-**Note:** The folder location for holding your generated SQL scripts is
-configurable. For example, if you're using Gradle, you can define the `sqlDir`
-attribute in the app's `build.gradle` file. Likewise, those using Ant can
-configure an argument in their `build.xml` similar to the following:
-
-    <arg value="service.sql.dir=${basedir}/../sql"/>
-
-$$$
+| **Note:** The folder location for holding your generated SQL scripts is
+| configurable. For example, if you're using Gradle, you can define the `sqlDir`
+| attribute in the app's `build.gradle` file. Likewise, those using Ant can
+| configure an argument in their `build.xml` similar to the following:
+| 
+|     <arg value="service.sql.dir=${basedir}/../sql"/>
 
 @product@ uses these scripts to create database tables for all the entities
 defined in the `service.xml` file. Service Builder prepends the namespace
@@ -159,12 +159,8 @@ Separate plugins should use separate namespaces and should not use a namespace
 already used by Liferay (such as `Users` or `Groups`). Check the table names in
 Liferay's database if you're wondering which namespaces are already in use.
 
-+$$$
-
-**Warning:** Use caution when assigning the namespace value. Some databases have
-strong restrictions on database table name lengths.
-
-$$$
+| **Warning:** Use caution when assigning the namespace value. Some databases have
+| strong restrictions on database table name lengths.
 
 As the last piece of global information, enter your name as the service's
 *author* in your `service.xml` file. Service Builder adds `@author` annotations
@@ -172,7 +168,7 @@ with the specified name to all of the generated Java classes and interfaces.
 Save your `service.xml` file to preserve the information you added. Next, you'll
 add entities for your service's events and locations. 
 
-## Step 3:  Defining Service Entities [](id=step-3-defining-service-entities)
+## Step 3:  Defining Service Entities
 
 Entities are the heart and soul of a service. Entities represent the map between
 the model objects in Java and the fields and tables in your database. Once your
@@ -223,22 +219,18 @@ service to `false` for your entities. If, however, you want to enable remote
 access to your application's services, you should set both local service and
 remote service to `true`.
 
-+$$$
-
-**Tip:** Suppose you have an existing DAO service for an entity built using some
-other framework such as JPA. You can set local service to `false` and remote
-service to `true` so that the methods of your remote `-Impl` class can call the
-methods of your existing DAO. This enables your entity to integrate with
-Liferay's permission-checking system and provides access to the web service APIs
-generated by Service Builder. This is a very handy, quite powerful, and often
-used feature of Liferay. 
-
-$$$
+| **Tip:** Suppose you have an existing DAO service for an entity built using some
+| other framework such as JPA. You can set local service to `false` and remote
+| service to `true` so that the methods of your remote `-Impl` class can call the
+| methods of your existing DAO. This enables your entity to integrate with
+| Liferay's permission-checking system and provides access to the web service APIs
+| generated by Service Builder. This is a very handy, quite powerful, and often
+| used feature of Liferay.
 
 Now that you've seen how to create your application's entities, you'll learn
 how to describe their attributes using entity *columns*. 
 
-## Step 4: Defining the Columns (Attributes) for Each Service Entity [](id=step-4-defining-the-columns-attributes-for-each-service-entity)
+## Step 4: Defining the Columns (Attributes) for Each Service Entity
 
 Each entity is described by its columns, which represent an entity's attributes.
 These attributes map on the one side to fields in a table and on the other side
@@ -265,21 +257,13 @@ Listing example. However, it's possible to use multiple columns as the primary
 key for an entity. In this case, the combination of columns makes up a compound
 primary key for the entity.
 
-+$$$
+| **Note:** Each Service Builder generated `*LocalServiceImpl` class has a
+| [`CounterLocalService`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/counter/kernel/service/CounterLocalService.html)
+| field for generating unique entity instance primary keys. For details, see
+| [Creating Local Services](/docs/7-1/tutorials/-/knowledge_base/t/creating-local-services).
 
-**Note:** Each Service Builder generated `*LocalServiceImpl` class has a 
-[`CounterLocalService`](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/counter/kernel/service/CounterLocalService.html)
-field for generating unique entity instance primary keys. For details, see
-[Creating Local Services](/develop/tutorials/-/knowledge_base/7-1/creating-local-services). 
-
-$$$
-
-+$$$
-
-**Note**: On deploying a `*service` module, Service Builder automatically 
-generates indexes for all entity primary keys. 
-
-$$$
+| **Note**: On deploying a `*service` module, Service Builder automatically
+| generates indexes for all entity primary keys.
 
 Similar to the way you used the form table for adding entities, add attribute
 columns for each of your entities. Create each attribute by clicking on the Add
@@ -330,7 +314,7 @@ Great! Your entities are set with the columns that not only represent their
 attributes, but also support multi-tenancy and entity auditing. Next, you'll
 learn how to specify the relationship service entities. 
 
-## Step 5: Defining Relationships Between Service Entities [](id=step-5-defining-relationships-between-service-entities)
+## Step 5: Defining Relationships Between Service Entities
 
 Often you'll want to reference one type of entity in the context of another
 entity. That is, you'll want to *relate* the entities. Liferay's Bookmarks
@@ -362,7 +346,7 @@ of the corresponding entity instance reference. For example:
 Now that your entity columns are in place, you can specify the default order in
 which the entity instances are retrieved from the database. 
 
-## Step 6: Defining Ordering of Service Entity Instances [](id=step-6-defining-ordering-of-service-entity-instances)
+## Step 6: Defining Ordering of Service Entity Instances
 
 Often, you want to retrieve multiple instances of a given entity and list them
 in a particular order. Liferay lets you specify the default order of the
@@ -384,7 +368,7 @@ descending order.
 Now that you know how to order your service entities, the last thing to do is to
 define the finder methods for retrieving entity instances from the database. 
 
-## Step 7: Defining Service Entity Finder Methods [](id=step-7-defining-service-entity-finder-methods)
+## Step 7: Defining Service Entity Finder Methods
 
 Finder methods retrieve entity objects from the database based on specified
 parameters. You'll probably want to create at least one finder method for each
@@ -404,17 +388,13 @@ to name the methods that Service Builder creates. The IDE creates a new
 finder sub-node under the *Finders* node in the outline. Next, you'll learn how
 to specify the finder column for this node. 
 
-+$$$
-
-**Important**: DO NOT create finders that use entity primary key as parameters. 
-They're unnecessary as Service Builder automatically generates
-`findByPrimaryKey` and `fetchByPrimaryKey` methods for all entity primary keys.
-On deploying a `*service` module, Service Builder creates indexes for all entity
-primary key columns and finder columns. Adding finders that use entity primary
-keys results in attempts to create multiple indexes for the same
-columns---Oracle DB, for example, reports these attempts as errors. 
-
-$$$
+| **Important**: DO NOT create finders that use entity primary key as parameters.
+| They're unnecessary as Service Builder automatically generates
+| `findByPrimaryKey` and `fetchByPrimaryKey` methods for all entity primary keys.
+| On deploying a `*service` module, Service Builder creates indexes for all entity
+| primary key columns and finder columns. Adding finders that use entity primary
+| keys results in attempts to create multiple indexes for the same
+| columns---Oracle DB, for example, reports these attempts as errors.
 
 Under the new finder node, the IDE created a *Finder Columns* node. Select the
 *Finder Columns* node to specify the columns for your finder's parameters.
@@ -448,11 +428,11 @@ Now that you've specified the service for your project, you're ready to *build*
 the service by running Service Builder. To learn how to run Service Builder and
 to learn about the code that Service Builder generates, please refer to the
 [Running Service Builder and Understanding the Generated
-Code](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code)
+Code](/docs/7-0/tutorials/-/knowledge_base/t/running-service-builder-and-understanding-the-generated-code)
 tutorial. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[What is Service Builder?](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
+[What is Service Builder?](/docs/7-0/tutorials/-/knowledge_base/t/what-is-service-builder)
 
-[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code)
+[Running Service Builder and Understanding the Generated Code](/docs/7-0/tutorials/-/knowledge_base/t/running-service-builder-and-understanding-the-generated-code)

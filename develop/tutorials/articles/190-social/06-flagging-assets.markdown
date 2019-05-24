@@ -1,4 +1,8 @@
-# Flagging Inappropriate Asset Content [](id=flagging-inappropriate-asset-content)
+---
+header-id: flagging-inappropriate-asset-content
+---
+
+# Flagging Inappropriate Asset Content
 
 In a perfect world, people would post nice, kind, and decent content. They would 
 reply to comments with constructive feedback and never lash out at one another. 
@@ -15,11 +19,11 @@ This tutorial shows you how to enable flagging of content in a portlet.
 Follow these steps: 
 
 1.  Make sure your entity is 
-    [asset enabled](/develop/tutorials/-/knowledge_base/7-0/adding-updating-and-deleting-assets-for-custom-entities).
+    [asset enabled](/docs/7-0/tutorials/-/knowledge_base/t/adding-updating-and-deleting-assets-for-custom-entities).
 
 2.  Choose a read-only view of the entity for the flags. You can display 
     them in one of your portlet's views, or if you've implemented 
-    [asset rendering](/develop/tutorials/-/knowledge_base/7-0/rendering-an-asset), 
+    [asset rendering](/docs/7-0/tutorials/-/knowledge_base/t/rendering-an-asset), 
     you can display them in the full content view in the Asset Publisher 
     portlet. 
 
@@ -49,8 +53,8 @@ Follow these steps:
 
 Great! Now you know how to let users flag content in your asset-enabled portlets. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Adding Comments to Your App](/develop/tutorials/-/knowledge_base/7-0/adding-comments-to-your-app)
+[Adding Comments to Your App](/docs/7-0/tutorials/-/knowledge_base/t/adding-comments-to-your-app)
 
-[Applying Social Bookmarks](/develop/tutorials/-/knowledge_base/7-0/applying-social-bookmarks)
+[Applying Social Bookmarks](/docs/7-0/tutorials/-/knowledge_base/t/applying-social-bookmarks)

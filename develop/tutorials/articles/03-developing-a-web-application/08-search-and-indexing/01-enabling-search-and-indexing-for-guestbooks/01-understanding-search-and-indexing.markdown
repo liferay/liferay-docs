@@ -1,4 +1,8 @@
-# Understanding Search and Indexing [](id=understanding-search-and-indexing)
+---
+header-id: understanding-search-and-indexing
+---
+
+# Understanding Search and Indexing
 
 <div class="learn-path-step">
     <p>Enabling Search and Indexing for Guestbooks<br>Step 1 of 3</p>

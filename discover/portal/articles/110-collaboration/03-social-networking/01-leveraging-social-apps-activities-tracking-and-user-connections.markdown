@@ -1,4 +1,8 @@
-# Leveraging Social Applications, Activities Tracking, and User Connections [](id=leveraging-social-applications-activities-tracking-and-user-connections)
+---
+header-id: leveraging-social-applications-activities-tracking-and-user-connections
+---
+
+# Leveraging Social Applications, Activities Tracking, and User Connections
 
 @product@ has many apps available for social interaction and collaboration. Some
 of these apps are designed to help you work together as a team, while others are 
@@ -40,7 +44,7 @@ Unless otherwise noted, these apps have minimal configuration options. Some of
 them provide additional options for customizing feed lengths or display styles.
 Additional styling changes can be made through custom CSS.
 
-## @product@'s Social Tools in Action [](id=liferays-social-tools-in-action)
+## @product@'s Social Tools in Action
 
 To get started with @product@'s social features, you first want to add social 
 apps to your users' public personal pages. You can set things up any way you 
@@ -48,7 +52,7 @@ want, but for simplicity's sake, this example shows something that's fairly
 similar to the original Facebook layout. You'll give your users a way to send 
 and receive connection request using their Profile and Dashboard pages. 
 
-### Setting up Users' Personal Pages [](id=setting-up-users-personal-pages)
+### Setting up Users' Personal Pages
 
 Before you start adding apps to pages, you should configure @product@ so that
 everyone (or some subset of everyone) has the same social features. You can do
@@ -82,14 +86,10 @@ and fill out the form. Call your new site template *Social Layout Public*. Click
 
 ![Figure 1: You can give your site template a custom name and description and also specify several configuration settings..](../../../images/social-networking-site-template.png)
 
-+$$$
-
-Tip: Disabling *Allow Site Administrators to
-Modify the Pages Associated with this Site Template* only prevents users from
-modifying the specific pages contained in the template. It does not keep a user
-from adding or modifying additional pages.
-
-$$$
+| Tip: Disabling *Allow Site Administrators to
+| Modify the Pages Associated with this Site Template* only prevents users from
+| modifying the specific pages contained in the template. It does not keep a user
+| from adding or modifying additional pages.
 
 Now repeat the process and create a site template called *Social Layout
 Private*. 
@@ -134,7 +134,7 @@ Awesome! You've now enabled your users to make social connections. Now the
 question is, how do we encourage users to visit each others' fancy new profile
 pages?
 
-### Connecting Users Through Collaboration [](id=connecting-users-through-collaboration)
+### Connecting Users Through Collaboration
 
 There are many ways that social networks connect users. These generally involve
 some kind of mutual interest or experience. On a site like Facebook, you can
@@ -168,13 +168,13 @@ of our connection being forced or arbitrary, we've connected based on our direct
 interaction and share a common interest--just like people did before they had
 the Internet.
 
-## Using @product@'s Social Apps [](id=using-the-core-liferay-social-apps)
+## Using @product@'s Social Apps
 
 @product@'s social apps provide a default implementation of @product@'s social 
 API. However, this only scratches the surface of the platform's capability. It's 
 also possible to develop your own implementation of @product@'s social API to 
 use different social relationships. Please refer to 
-[the @product@ Developer Tutorials](/develop/tutorials/-/knowledge_base/7-0/introduction-to-liferay-development) 
+[the @product@ Developer Tutorials](/docs/7-0/tutorials/-/knowledge_base/t/introduction-to-liferay-development) 
 or the  [Javadocs](@platform-ref@/7.0-latest/javadocs/portal-kernel/com/liferay/social/kernel/service/package-summary.html)
 for information about @product@'s social API. 
 

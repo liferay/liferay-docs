@@ -1,4 +1,8 @@
-# Updating Liferay Workspace [](id=updating-liferay-workspace)
+---
+header-id: updating-liferay-workspace
+---
+
+# Updating Liferay Workspace
 
 Liferay Workspace is continuously being updated with new features. If you
 created your Workspace a while ago, you may be missing out on some of the latest

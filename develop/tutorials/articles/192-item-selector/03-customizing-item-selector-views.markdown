@@ -1,4 +1,8 @@
-# Creating Custom Item Selector Views [](id=creating-custom-item-selector-views)
+---
+header-id: creating-custom-item-selector-views
+---
+
+# Creating Custom Item Selector Views
 
 Have you found you need to create a new selection view for your app? No problem.
 Item Selector views are determined by the type of entity the user is selecting.
@@ -31,7 +35,7 @@ This tutorial covers how to create new selection views for the Item Selector.
 
 Get started by configuring the module for your view next.
 
-## Configuring the Module [](id=configuring-the-module)
+## Configuring the Module
 
 Follow these steps to prepare your module:
 
@@ -69,7 +73,7 @@ Follow these steps to prepare your module:
 
 Now that your module is configured, you can create the view next.
 
-## Implementing the View [](id=implementing-the-view)
+## Implementing the View
 
 To create a new view you must first know what kind of entities you want to 
 select in the new view: images, videos, users, etc. The kind of entities you 
@@ -82,7 +86,7 @@ selected. For example, if the entity returns its URL, you would use
 `URLItemSelectorReturnType` for the return type.
 
 For a full list of the available criterion and returns types that Liferay's apps
-and app suite's provide see the [Item Selector Criterion and Return Types](/develop/reference/-/knowledge_base/7-0/item-selector-criterion-and-return-types)
+and app suite's provide see the [Item Selector Criterion and Return Types](/docs/7-0/reference/-/knowledge_base/r/item-selector-criterion-and-return-types)
 reference.
 
 Once you've determined the kinds of entities you wish to select, follow these 
@@ -137,15 +141,11 @@ steps to create your selection view:
     returns a list of *ItemSelectorReturnType*s. You'll populate this list in a 
     later step to specify the return types the selection view supports.
 
-    +$$$
-    
-    **Note:** If you want your new selection view to be available only when
-    selecting the entity for something specific such as a blog entry, replace
-    the `*ItemSelectorCriterion` in your `*ItemSelectorView` class with the
-    `*ItemSelectorCriterion` class you wish to use, such as the
-    [`BlogsItemSelectorCriterion` class](@app-ref@/collaboration/latest/javadocs/com/liferay/blogs/item/selector/criterion/BlogsItemSelectorCriterion.html).
-    
-    $$$
+    | **Note:** If you want your new selection view to be available only when
+    | selecting the entity for something specific such as a blog entry, replace
+    | the `*ItemSelectorCriterion` in your `*ItemSelectorView` class with the
+    | `*ItemSelectorCriterion` class you wish to use, such as the
+    | [`BlogsItemSelectorCriterion` class](@app-ref@/collaboration/latest/javadocs/com/liferay/blogs/item/selector/criterion/BlogsItemSelectorCriterion.html).
 
 3.  Configure the title, search options, and visibility settings for the
     selection view:
@@ -177,16 +177,12 @@ steps to create your selection view:
     - [`isShowSearch()` method](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorView.html#isShowSearch--): 
     returns whether the Item Selector view should show the search field. 
     
-    +$$$
-    
-    **Note:** To implement search, return `true` for this method. The 
-    `renderHTML` method, covered in the next section, indicates whether a user 
-    performed a search based on the value of the `search` parameter. Then the 
-    keywords the user searched can be obtained as follows:
-
-        String keywords = ParamUtil.getString(request, "keywords");
-
-    $$$
+    | **Note:** To implement search, return `true` for this method. The
+    | `renderHTML` method, covered in the next section, indicates whether a user
+    | performed a search based on the value of the `search` parameter. Then the
+    | keywords the user searched can be obtained as follows:
+    | 
+    |     String keywords = ParamUtil.getString(request, "keywords");
 
     - [`isVisible()` method](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorView.html#isVisible-com.liferay.portal.kernel.theme.ThemeDisplay-):
     returns whether the Item Selector view is visible. In most cases, you'll 
@@ -341,7 +337,7 @@ The diagram below illustrates how the Item Selector's API works (right-click to 
 Once you've implemented your Item Selector view, you must create the view 
 markup.
 
-## Writing your View Markup [](id=writing-your-view-markup)
+## Writing your View Markup
 
 You've implemented your view, specifying the criteria and return types, along
 with important configuration information, such as how to render the view. All
@@ -402,7 +398,7 @@ of the page:
     </liferay-util:html-top>
     
 You can learn more about using the `liferay-util` taglibs in the 
-[Using the Liferay Util Taglib](/develop/tutorials/-/knowledge_base/7-0/using-the-liferay-util-taglib)
+[Using the Liferay Util Taglib](/docs/7-0/tutorials/-/knowledge_base/t/using-the-liferay-util-taglib)
 tutorial.
 
 This snippet creates the UI to display the layout entities. It uses the 
@@ -544,8 +540,8 @@ anything in those portlets.
 
 Now you know how to create custom views for the Item Selector!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Selecting Entities Using the Item Selector](/develop/tutorials/-/knowledge_base/7-0/selecting-entities-using-the-item-selector)
+[Selecting Entities Using the Item Selector](/docs/7-0/tutorials/-/knowledge_base/t/selecting-entities-using-the-item-selector)
 
-[Creating Custom Item Selector Entities](/develop/tutorials/-/knowledge_base/7-0/creating-custom-item-selector-entities)
+[Creating Custom Item Selector Entities](/docs/7-0/tutorials/-/knowledge_base/t/creating-custom-item-selector-entities)

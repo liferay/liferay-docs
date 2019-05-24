@@ -1,4 +1,8 @@
-# Building Sites from Templates [](id=building-sites-from-templates)
+---
+header-id: building-sites-from-templates
+---
+
+# Building Sites from Templates
 
 Site Templates can be administered from the Control Panel. They let Liferay
 administrators create multiple sites with the same default set of pages and
@@ -43,14 +47,10 @@ configuration of pages and apps is copied from the template to the site. By
 default, all changes made to the site template are automatically copied to sites
 based on that template.
 
-+$$$
-
-**Tip:** If you want to publish a piece of web content to many sites and ensure
-modifications are applied to all, don't use site template content for that
-purpose. Instead, place the content in the global scope and then reference it
-from a *Web Content Display* application in each site.
-
-$$$
+| **Tip:** If you want to publish a piece of web content to many sites and ensure
+| modifications are applied to all, don't use site template content for that
+| purpose. Instead, place the content in the global scope and then reference it
+| from a *Web Content Display* application in each site.
 
 The Content section offers separate repositories for content related apps
 based on your site template. For instance, by clicking *Polls* from the Content
@@ -86,7 +86,7 @@ By default, the following site templates are provided:
 Now that you know the basics for creating and managing your site templates,
 you'll put your knowledge to the test by completing an example next.
 
-## Site Templates Example [](id=site-templates-example)
+## Site Templates Example
 
 Suppose you need to create the following three sites for the Lunar Resort's
 internal use: Engineering, Marketing, and Legal. These should be private sites
@@ -146,7 +146,7 @@ users add and share content within the sites. Also, site administrators can add
 new pages, apps, and content to their sites, further differentiating each
 department's site from the others.
 
-## Propagating Changes from Site Templates to Sites [](id=propagating-changes-from-site-templates-to-sites)
+## Propagating Changes from Site Templates to Sites
 
 It's possible for site template administrators to add, update, or delete site
 template pages. Changes made to a site template can be propagated to sites whose
@@ -231,16 +231,12 @@ that has a Wiki app with lots of wiki articles, the wiki articles are copied
 from the site template's scope to the site's scope and the site's Wiki app is
 updated with the IDs of the copied wiki articles.
 
-+$$$
-
-**Important:** App data, related resources, and permissions on resources are
-only copied from a site template to a site when that site is *first* created
-based on the template. No changes made in a a template's portlet data, related
-resources, or permissions are propagated to the site after the site is created.
-Neither are such changes propagated to a site by the *Reset* or *Reset and
-Propagate* features.
-
-$$$
+| **Important:** App data, related resources, and permissions on resources are
+| only copied from a site template to a site when that site is *first* created
+| based on the template. No changes made in a a template's portlet data, related
+| resources, or permissions are propagated to the site after the site is created.
+| Neither are such changes propagated to a site by the *Reset* or *Reset and
+| Propagate* features.
 
 For example, consider a site template administrator who includes a Message
 Boards app as part of a site template. They even create Message Board
@@ -253,7 +249,7 @@ administrator adds, removes, or deletes some categories, however, such changes
 Now that you've learned how site templates work, you'll learn how to share site
 templates. 
 
-## Sharing Site Templates [](id=sharing-site-templates)
+## Sharing Site Templates
 
 If you want to export a site that uses site or page templates to a different
 environment (through a LAR file or remote publication), the templates must be
@@ -276,7 +272,7 @@ To export a Site using a Site Template, use the following process:
 
 Now the site can be exported and imported normally to this new environment. For
 more information on exporting/importing content, visit the
-[Importing/Exporting Pages and Content](/discover/portal/-/knowledge_base/7-0/importing-exporting-pages-and-content)
+[Importing/Exporting Pages and Content](/docs/7-0/user/-/knowledge_base/u/importing-exporting-pages-and-content)
 article.
 
 In the next section, you'll learn about page templates.

@@ -1,4 +1,8 @@
-# Mentioning Users [](id=mentioning-users)
+---
+header-id: mentioning-users
+---
+
+# Mentioning Users
 
 Have you ever wanted to include another user in a discussion on the Message
 Boards? Have you ever wanted to give kudos to a colleague in content you're
@@ -22,13 +26,9 @@ you're entering. In the selector, each user is represented by his/her profile
 picture, name, and user name. Click on the user you want to mention and finish
 editing your content.
 
-+$$$
-
-**Known Limitation**: In comments, homepage hyperlinks aren't displayed for
-mentioned users. Refer to issue
-[LPS-56020](https://issues.liferay.com/browse/LPS-56020) for details. 
-
-$$$
+| **Known Limitation**: In comments, homepage hyperlinks aren't displayed for
+| mentioned users. Refer to issue
+| [LPS-56020](https://issues.liferay.com/browse/LPS-56020) for details.
 
 On publishing the content, mentioned users receive a
 notification next to their profile picture and an email, informing them that

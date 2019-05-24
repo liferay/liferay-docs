@@ -1,4 +1,8 @@
-# Creating the Screenlet Class [](id=creating-the-screenlet-class-ios)
+---
+header-id: creating-the-screenlet-class-ios
+---
+
+# Creating the Screenlet Class
 
 Recall that the Screenlet class is the main component that governs the 
 Screenlet's behavior. Also recall that a list Screenlet's class must do the 

@@ -1,4 +1,8 @@
-# Creating Entry List Screenlet's UI [](id=creating-entry-list-screenlets-ui-ios)
+---
+header-id: creating-entry-list-screenlets-ui-ios
+---
+
+# Creating Entry List Screenlet's UI
 
 Recall that in Liferay Screens for iOS, Screenlet UIs are called *Themes*, and 
 every Screenlet must have at least one Theme. You'll create Entry List 
@@ -9,7 +13,7 @@ Screenlet's Theme:
 2.  Create an XIB file and use it to construct the UI. 
 3.  Create your Theme's View class and set it as the XIB file's custom class. 
 
-## Creating Your Theme's Folder [](id=creating-your-themes-folder)
+## Creating Your Theme's Folder
 
 Like Guestbook List Screenlet's Theme, you'll create Entry List Screenlet's 
 Theme in a `Themes/Default` folder. Follow these steps to create this folder 
@@ -30,7 +34,7 @@ structure in Entry List Screenlet's folder:
 Now you're ready to start creating your Theme. First, you'll create its XIB 
 file. 
 
-## Creating the XIB File [](id=creating-the-xib-file)
+## Creating the XIB File
 
 A Theme requires an XIB file to define the UI's components and layout. Use these 
 steps to create your Theme's XIB file: 
@@ -55,7 +59,7 @@ steps to create your Theme's XIB file:
 
 Your Theme's XIB is now finished. Next, you'll create your View class. 
 
-## Creating the Theme's View Class [](id=creating-the-themes-view-class)
+## Creating the Theme's View Class
 
 Every Theme needs a View class that controls its behavior. Recall that a list 
 Screenlet's View class gets most of its functionality by extending 
@@ -108,7 +112,7 @@ Follow these steps to create your Screenlet's View class:
     the name of the person who left the message. This way, a single cell 
     displays both pieces of information. For a description of the code shared 
     with `GuestbookListView_default`, see 
-    [the article on creating Guestbook List Screenlet's Theme](/develop/tutorials/-/knowledge_base/7-0/creating-guestbook-list-screenlets-ui-ios). 
+    [the article on creating Guestbook List Screenlet's Theme](/docs/7-0/tutorials/-/knowledge_base/t/creating-guestbook-list-screenlets-ui-ios). 
 
 3.  Return to the Theme's XIB in Interface Builder and set 
     `EntryListView_default` as the the parent View's custom class. To do this, 

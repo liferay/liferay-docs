@@ -1,7 +1,11 @@
-# Sending Form Entries through a Workflow [](id=sending-form-entries-through-a-workflow)
+---
+header-id: sending-form-entries-through-a-workflow
+---
+
+# Sending Form Entries through a Workflow
 
 @product@ has a [workflow
-feature](/discover/portal/-/knowledge_base/7-0/using-workflow) that directs a
+feature](/docs/7-0/user/-/knowledge_base/u/using-workflow) that directs a
 submitted asset through a workflow process before it's published. Most assets
 are configured to use workflow at the instance or site level.
 
@@ -16,7 +20,7 @@ Instead, the Forms application lets you configure the workflow that's used for
 a workflow process before being marked as *Approved*. Configure workflow for
 a form in its Settings window.
 
-## Enabling Workflow in a Form [](id=enabling-workflow-in-a-form)
+## Enabling Workflow in a Form
 
 To enable workflow in a form: 
 
@@ -37,7 +41,7 @@ you're interested in.
     ![Figure 4: Select the form's workflow using the Select a Workflow dropdown
 menu.](../../../images/forms-workflow.png)
 
-## Testing the Workflow [](id=testing-the-workflow)
+## Testing the Workflow
 
 Test the workflow process by submitting a form entry. If you're using the Single
 Approver workflow that ships with @product@ and you're the administrative user,
@@ -68,7 +72,7 @@ marked as *Approved*.
 ![Figure 5: Each entry's status is visible in the Forms application's View
 Entries screen.](../../../images/forms-view-entries-status.png)
 
-## Example: Win a Free, All-Inclusive Trip to the Lunar Resort [](id=example-win-a-free-all-inclusive-trip-to-the-lunar-resort)
+## Example: Win a Free, All-Inclusive Trip to the Lunar Resort
 
 The Lunar Resort is giving away a free, all-inclusive trip to several lucky
 families. All a user must do is click the *I Want a Free Trip* link from the

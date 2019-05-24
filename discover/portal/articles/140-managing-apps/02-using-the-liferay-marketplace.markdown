@@ -1,4 +1,8 @@
-# Using the Liferay Marketplace [](id=using-the-liferay-marketplace)
+---
+header-id: using-the-liferay-marketplace
+---
+
+# Using the Liferay Marketplace
 
 Liferay Marketplace is a hub for sharing, browsing and downloading 
 Liferay-compatible apps. As enterprises look for ways to build and enhance their 
@@ -32,7 +36,7 @@ Here you'll learn how to,
 
 Start with finding and purchasing the apps you want. 
 
-## Finding and Purchasing Apps [](id=finding-and-purchasing-apps)
+## Finding and Purchasing Apps
 
 If you've used an app store before, then you'll instantly be familiar with 
 Marketplace. Marketplace displays apps in the center of the page, in the 
@@ -77,7 +81,7 @@ it's compatible with. If you purchase the app on the Marketplace website,
 however, your receipt is displayed immediately after purchase. To download the 
 app, click the *See Purchased* button on the bottom of the receipt, and then 
 click the *App* button to start the download. You must then 
-[install the app manually](/discover/portal/-/knowledge_base/7-0/installing-apps-manually). 
+[install the app manually](/docs/7-0/user/-/knowledge_base/u/installing-apps-manually). 
 Alternatively, you can use Marketplace within a running Liferay instance to 
 download and install the app after purchase on the Marketplace website. The next 
 section shows you how to do this. 
@@ -90,11 +94,11 @@ app from this directory. Manual install is also required if the Liferay instance
 is behind a corporate firewall or otherwise lacks direct Marketplace access. 
 Regardless of how the app is downloaded, the manual install process is the same. 
 For details, see the article 
-[Installing Apps Manually](/discover/portal/-/knowledge_base/7-0/installing-apps-manually). 
+[Installing Apps Manually](/docs/7-0/user/-/knowledge_base/u/installing-apps-manually). 
 
 Next, you'll learn how to manage your purchased apps. 
 
-## Managing Purchased Apps [](id=managing-purchased-apps)
+## Managing Purchased Apps
 
 There are two places to manage your purchased apps:
 
@@ -122,19 +126,15 @@ There are two places to manage your purchased apps:
     ![Figure 4: You can also manage your purchased apps from within a running Liferay instance.](../../images/marketplace-purchased.png)
     
    
-+$$$
+| **Important**: When uninstalling an app or module, make sure to use the same
+| agent as you used to install the app. If you installed it with Marketplace,
+| uninstall it with Marketplace. If you installed it with the file system, use the
+| [file system](/docs/7-0/user/-/knowledge_base/u/installing-apps-manually)
+| to uninstall it. If you installed it with the App Manager, however, use
+| [Blacklisting](/docs/7-0/user/-/knowledge_base/u/blacklisting-osgi-modules)
+| to uninstall it.
 
-**Important**: When uninstalling an app or module, make sure to use the same 
-agent as you used to install the app. If you installed it with Marketplace,
-uninstall it with Marketplace. If you installed it with the file system, use the
-[file system](/discover/portal/-/knowledge_base/7-0/installing-apps-manually)
-to uninstall it. If you installed it with the App Manager, however, use 
-[Blacklisting](/discover/portal/-/knowledge_base/7-0/blacklisting-osgi-modules)
-to uninstall it. 
-
-$$$
-
-## Renewing a Purchased App [](id=renewing-a-purchased-app)
+## Renewing a Purchased App
 
 To continue using a purchased app whose license terms are non-perpetual, you
 must renew your app subscription, register your server to use the app, and
@@ -163,7 +163,7 @@ servers).
 9. Click *Download*. The new app activation key to use on your server downloads.
 
 10. Copy the activation key file to your
-[`[Liferay Home]/deploy`](/discover/deployment/-/knowledge_base/7-0/installing-product#liferay-home)
+[`[Liferay Home]/deploy`](/docs/7-0/deploy/-/knowledge_base/d/installing-product#liferay-home)
 folder. 
 
 You can continue using the application on your server. 

@@ -1,11 +1,15 @@
-# Implementing Configuration Actions [](id=implementing-configuration-actions)
+---
+header-id: implementing-configuration-actions
+---
+
+# Implementing Configuration Actions
 
 When developing an application, it's important to think about the different
 configuration options that your application should support. It's also important
 to think about how users should be able to access your application's
 configuration interface. @product@ supports a flexible mechanism for configuring
 applications. You can read about it in the
-[Making Your Applications Configurable](/develop/tutorials/-/knowledge_base/7-0/making-your-applications-configurable) 
+[Making Your Applications Configurable](/docs/7-0/tutorials/-/knowledge_base/t/making-your-applications-configurable) 
 tutorial. In this tutorial, you'll learn to implement a configuration action.
 The configuration action is invoked when a user clicks on the gear icon and
 selects *Configuration*.
@@ -28,23 +32,19 @@ configuration action, follow these steps:
    configuration in your configuration action class
 4. Implement the user interface for configuring your application
 
-+$$$
-
-**Note:** To quickly see a working configuration action, deploy the
-`configuration-action` [Blade
-sample](https://github.com/liferay/liferay-blade-samples/tree/7.0/gradle/apps/configuration-action)
-and add the *Blade Message Portlet* to a page. Click the *Options* button
-(![Options](../../images/icon-app-options.png)) and select *Configuration*.
-Change the configuration options and save them to see them in action.
-
-$$$
+| **Note:** To quickly see a working configuration action, deploy the
+| `configuration-action` [Blade
+| sample](https://github.com/liferay/liferay-blade-samples/tree/7.0/gradle/apps/configuration-action)
+| and add the *Blade Message Portlet* to a page. Click the *Options* button
+| (![Options](../../images/icon-app-options.png)) and select *Configuration*.
+| Change the configuration options and save them to see them in action.
 
 Let's get started.
 
-## Creating a Configuration Interface [](id=creating-a-configuration-interface)
+## Creating a Configuration Interface
 
 As explained in the
-[Making Your Applications Configurable](/develop/tutorials/-/knowledge_base/7-0/making-your-applications-configurable)
+[Making Your Applications Configurable](/docs/7-0/tutorials/-/knowledge_base/t/making-your-applications-configurable)
 tutorial, if you want to make your application configurable, you should create a
 Java interface to represent the configuration. Decorate your interface with the
 `@Meta.OCD` annotation and specify a unique ID using the annotation's `id`
@@ -82,10 +82,10 @@ you'll learn how to facilitate this.
 
 This sample configuration contains a single string field called `favoriteColor`.
 
-## Referencing Your Configuration From Your Application Class [](id=referencing-your-configuration-from-your-application-class)
+## Referencing Your Configuration From Your Application Class
 
 As was also explained in the
-[Making Your Applications Configurable](/develop/tutorials/-/knowledge_base/7-0/making-your-applications-configurable)
+[Making Your Applications Configurable](/docs/7-0/tutorials/-/knowledge_base/t/making-your-applications-configurable)
 tutorial, if you want a reference to the configuration in your application
 class, you need to declare the configuration as a `volatile` member variable,
 decorate your application class with the `@Component` annotation, specify the
@@ -160,7 +160,7 @@ However, it's useful since adding the configuration to the request object before
 calling `super.doView` makes the configuration able to be read from the request
 by the application's JSPs.
 
-## Implementing a Configuration Action [](id=implementing-a-configuration-action)
+## Implementing a Configuration Action
 
 To implement a configuration action, you should create a class that extends
 @product@'s `DefaultConfigurationAction` class. Then you need to add a reference
@@ -265,7 +265,7 @@ Now that your configuration action class has been created, you're ready to
 create a user interface for selecting configuration options and submitting the
 selections.
 
-## Implementing the User Interface For Configuring Your Application [](id=implementing-the-user-interface-for-configuring-your-application)
+## Implementing the User Interface For Configuring Your Application
 
 When creating a JSP-based user interface, it's convenient to create an
 `init.jsp` page for your application. The `init.jsp` page should contain all of

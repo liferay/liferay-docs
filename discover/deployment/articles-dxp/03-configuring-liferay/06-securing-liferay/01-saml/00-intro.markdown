@@ -1,4 +1,8 @@
-# What is SAML? [](id=what-is-saml)
+---
+header-id: what-is-saml
+---
+
+# What is SAML?
 
 @product@'s SAML (Security Assertion Markup Language) adapter lets you
 execute Single Sign On (SSO) and Single Log Off (SLO) in your deployment. Each
@@ -14,33 +18,25 @@ SSO solution.
     - Identity Provider initiated SLO
     - Service Provider initiated SLO
 
-+$$$
-
-**Note:** A single @product@ instance is *either* the SP or the IdP in your SSO
-setup; it can't be both. You can, however, use separate instances for both
-purposes (for example, one instance is the SP and another is the IdP).
-
-$$$
+| **Note:** A single @product@ instance is *either* the SP or the IdP in your SSO
+| setup; it can't be both. You can, however, use separate instances for both
+| purposes (for example, one instance is the SP and another is the IdP).
 
 Below is background on how SAML works. To jump right to its configuration, see
 the articles on 
-[Setting Up SAML as an Identity Provider](/discover/deployment/-/knowledge_base/7-0/setting-up-liferay-as-a-saml-identity-provider)
+[Setting Up SAML as an Identity Provider](/docs/7-0/deploy/-/knowledge_base/d/setting-up-liferay-as-a-saml-identity-provider)
 or 
-[Setting Up SAML as a Service Provider](/discover/deployment/-/knowledge_base/7-0/setting-up-liferay-as-a-saml-service-provider) 
+[Setting Up SAML as a Service Provider](/docs/7-0/deploy/-/knowledge_base/d/setting-up-liferay-as-a-saml-service-provider) 
 for instructions on using the 
 [SAML adapter](https://web.liferay.com/marketplace/-/mp/application/15188711). Use
 the instructions to make the conceptual magic from this article come to life!
 
-+$$$
+| **Note:** If you're migrating from a Liferay SAML adapter prior to version
+| 3.1.0, your properties are automatically migrated to settings. Please see the
+| [Configuring SAML](/docs/7-0/deploy/-/knowledge_base/d/configuring-saml)
+| article for details on settings.
 
-**Note:** If you're migrating from a Liferay SAML adapter prior to version
-3.1.0, your properties are automatically migrated to settings. Please see the 
-[Configuring SAML](/discover/deployment/-/knowledge_base/7-0/configuring-saml)
-article for details on settings. 
-
-$$$
-
-## Important SAML URLs [](id=important-saml-urls)
+## Important SAML URLs
 
 For reference, here are a few important SAML URLs.
 
@@ -56,7 +52,7 @@ default keystore file is `[Liferay Home]/data/keystore.jks`. The exported
 certificate can be imported by a third-party application like Salesforce.
 
 
-## Single Sign On [](id=single-sign-on)
+## Single Sign On
 
 Both the IdP and the SP can initiate the Single Sign On process, and the SSO
 flow is different depending on each one. Regardless of how it's initiated, SSO
@@ -67,14 +63,14 @@ the [SAML 2.0 specification](http://saml.xml.org/saml-specifications).
 
 Consider IdP initiated SSO first.
 
-### Identity Provider Initiated SSO [](id=identity-provider-initiated-sso)
+### Identity Provider Initiated SSO
 
 Sometimes a user enters the SSO cycle by sending a request directly from the
 browser to the IdP.
 
 ![Figure 1: Identity Provider Initiated SSO](../../../../images-dxp/saml-idp-initiated-sso.png)
 
-#### The SSO Request to the IdP [](id=the-sso-request-to-the-idp)
+#### The SSO Request to the IdP
 
 If @product@ is the IdP, the IdP initiated SSO URL
 
@@ -95,11 +91,11 @@ documentation on constructing IdP initiated SSO URLs.
 If the IdP determines that the user isn't authenticated, it prompts the user
 with the appropriate login screen. 
 
-#### The SSO Response from the IdP [](id=the-sso-response-from-the-idp)
+#### The SSO Response from the IdP
 
 Upon successful authentication the IdP constructs a SAML Response. It includes
 attribute statements configured in the designated Service Provider Connection
-(SPC; see the [next article](/discover/portal/-/knowledge_base/7-0/setting-up-saml) on setting up
+(SPC; see the [next article](/docs/7-0/user/-/knowledge_base/u/setting-up-saml) on setting up
 the SPC in @product@'s SAML adapter).
 
 The IdP sends the response to the Assertion Consumer Service URL using HTTP-POST
@@ -113,16 +109,12 @@ and
 
     RelayState
 
-+$$$
+| **Note:** The method for sending the SAML response (for example, HTTP-Post) and
+| the Assertion Consumer Service URL are generally imported as part of the SAML
+| metadata XML provided by the SP. In @product@, you import the SP's metadata in the
+| SAML Adapter's Service Provider Connections tab.
 
-**Note:** The method for sending the SAML response (for example, HTTP-Post) and
-the Assertion Consumer Service URL are generally imported as part of the SAML
-metadata XML provided by the SP. In @product@, you import the SP's metadata in the
-SAML Adapter's Service Provider Connections tab.
-
-$$$
-
-#### The SP Processes the SSO Response [](id=the-sp-processes-the-sso-response)
+#### The SP Processes the SSO Response
 
 The SP validates and processes the SAML Response. @product@'s SAML solution
 requires `SAMLResponse` messages to be signed. This signature process ensures
@@ -138,11 +130,11 @@ proper identification for the IdP and prevents potential SAML Response spoofing.
 If a `RelayState` is included in the SAML Response, the user is redirected to
 it. Otherwise the home page of the SP is served.
 
-### Service Provider Initiated SSO [](id=service-provider-initiated-sso)
+### Service Provider Initiated SSO
 
 ![Figure 2: Service Provider Initiated SSO](../../../../images-dxp/saml-sp-initiated-sso.png)
 
-#### The SSO Request to the SP [](id=the-sso-request-to-the-sp)
+#### The SSO Request to the SP
 
 When the user's browser requests a protected resource or sign on URL on the SP,
 it triggers the SP initiated SSO process. When @product@ is the SAML SP, SSO is
@@ -156,7 +148,7 @@ in the `RelayState` parameter. If the user requested `/c/portal/login`, the
 `RelayState`. For non-@product@ SPs, consult the vendor documentation on initiating
 SSO.
 
-#### The AuthnRequest to the IdP [](id=the-authnrequest-to-the-idp)
+#### The AuthnRequest to the IdP
 
 The SP looks up the IdP's Single Sign On service URL and sends an
 `AuthnRequest`. When @product@ is the SP it looks up the configured SAML Identity
@@ -170,7 +162,7 @@ the SP, the user must authenticate by providing his or her credentials. When
 @product@ is the IdP, authentication occurs in the Login Portlet. @product@ decodes
 and verifies the `AuthnRequest` before requesting the user to authenticate.
 
-#### The SSO Response from the IdP [](id=the-sso-response-from-the-idp-0)
+#### The SSO Response from the IdP
 
 After authentication a SAML Response is constructed, sent to the Assertion
 Consumer Service URL of the SP, and verified.
@@ -195,17 +187,17 @@ The user is redirected to the requested resource or to the URL contained in the
 `RelayState` parameter (for example, the last page the user accessed before
 initiating SSO).
 
-## Single Log Off [](id=single-log-off)
+## Single Log Off
 
 The Single Log Off request is sent from the user's browser to either the IdP or
 to a SP, and the SLO flow differs in each case. First consider IdP initiated
 SLO.
 
-### Identity Provider Initiated SLO [](id=identity-provider-initiated-slo)
+### Identity Provider Initiated SLO
 
 ![Figure 3: Identity Provider Initiated SLO](../../../../images-dxp/saml-idp-initiated-slo.png)
 
-#### The SLO Request to the IdP [](id=the-slo-request-to-the-idp)
+#### The SLO Request to the IdP
 
 An IdP initiated SLO request is a SLO request sent directly to the IdP by the
 user's browser. When @product@ serves as the IdP, the IdP initiated SSO URL
@@ -230,7 +222,7 @@ The IdP sends a SAML `LogoutRequest` to the SP.
   are HTTP-Post, HTTP-Redirect, or SOAP.
 - For other IdPs or SPs, please consult the vendor's documentation.
 
-#### The SLO Response from the SP [](id=the-slo-response-from-the-sp)
+#### The SLO Response from the SP
 
 The SP delivers a `LogoutResponse` to the IdP. When @product@ is configured as
 the SP, the `LogoutResponse` is delivered using either HTTP-Post, HTTP-Redirect,
@@ -246,11 +238,11 @@ HTTP-Redirect, or direct response to SOAP request. The process is repeated for
 all SPs the user is logged into. When @product@ is the IdP, @product@ logs the user
 out after the last SP has delivered its `LogoutResponse` or has timed out.
 
-### Service Provider Initiated SLO [](id=service-provider-initiated-slo)
+### Service Provider Initiated SLO
 
 ![Figure 4: Service Provider Initiated SLO](../../../../images-dxp/saml-sp-initiated-slo.png)
 
-#### The SLO Request to the SP [](id=the-slo-request-to-the-sp)
+#### The SLO Request to the SP
 
 In SP initiated SLO, user's browser requests logout directly to the SP.  When
 @product@ is configured as the SP, the SLO is initiated by requesting the logout
@@ -264,7 +256,7 @@ A SAML `LogoutRequest` is sent to the Single Log Out service URL of the IdP.
 
 -  If @product@ serves as the SP, the `LogoutRequest` is sent to the IdP 
 configured by the IdP Connection tab of the SAML provider (see the [next
-article](/discover/portal/-/knowledge_base/7-0/setting-up-saml) to set up the
+article](/docs/7-0/user/-/knowledge_base/u/setting-up-saml) to set up the
 IdP Connection) and the SLO service URL defined in the SAML metadata. The
 request is sent using HTTP-POST or HTTP-Redirect binding.
 
@@ -274,7 +266,7 @@ flagging any that can't be looged out of (some SPs might not support SLO or are
 currently down). If there are no other SPs to log out of, the SAML session
 terminates and the IdP destroys its session.
 
-#### The SLO Response from the SP [](id=the-slo-response-from-the-sp-0)
+#### The SLO Response from the SP
 
 If the user is logged in to additional SPs (beyond just the initiating SP), the
 IdP sends the SAML `LogoutRequest` to each one. When @product@ is the IdP, the
@@ -292,8 +284,8 @@ session, logging out the user.
 Finally, the IdP sends a `LogoutResponse` to the SP that initiated SLO. The
 initiating SP terminates its SAML session and logs the user out.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-- [Setting Up SAML as an Identity Provider](/discover/deployment/-/knowledge_base/7-0/setting-up-liferay-as-a-saml-identity-provider)
-- [Setting Up SAML as a Service Provider](/discover/deployment/-/knowledge_base/7-0/setting-up-liferay-as-a-saml-service-provider) 
-- [Token-Based SSO Authentication](/discover/deployment/-/knowledge_base/7-0/token-based-single-sign-on-authentication)
+- [Setting Up SAML as an Identity Provider](/docs/7-0/deploy/-/knowledge_base/d/setting-up-liferay-as-a-saml-identity-provider)
+- [Setting Up SAML as a Service Provider](/docs/7-0/deploy/-/knowledge_base/d/setting-up-liferay-as-a-saml-service-provider) 
+- [Token-Based SSO Authentication](/docs/7-0/deploy/-/knowledge_base/d/token-based-single-sign-on-authentication)

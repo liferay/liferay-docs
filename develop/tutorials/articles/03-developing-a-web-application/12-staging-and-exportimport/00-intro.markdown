@@ -1,4 +1,8 @@
-# Enabling Staging and Export/Import [](id=using-staging-and-export-import)
+---
+header-id: using-staging-and-export-import
+---
+
+# Enabling Staging and Export/Import
 
 Your Guestbook application creates guestbooks and entries that are immediately
 published when they're saved. Sites constantly change, however, so it's crucial

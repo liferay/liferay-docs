@@ -1,9 +1,13 @@
-# Liferay AMD Module Loader [](id=liferay-amd-module-loader)
+---
+header-id: liferay-amd-module-loader
+---
+
+# Liferay AMD Module Loader
 
 The [Liferay AMD Module Loader](https://github.com/liferay/liferay-amd-loader#amd-module-loader) 
 is a JavaScript  module loader.
 
-## What is a JavaScript module? [](id=what-is-a-javascript-module)
+## What is a JavaScript module?
 
 A JavaScript module encapsulates a piece of code into a useful unit that exports
 its capability/value. This makes it easy for other modules to explicitly require
@@ -12,7 +16,7 @@ the broader scope, easier to find what you're looking for, and keeps related
 pieces close together. This way of coding is a specification for the JavaScript
 language called Asynchronous Module Definition, or AMD. 
 
-## Purpose of Liferay AMD Module Loader [](id=purpose-of-liferay-amd-module-loader)
+## Purpose of Liferay AMD Module Loader
 
 A normal web page usually loads JavaScript files via HTML `script` tags. That's 
 fine for small websites, but when developing large scale web applications, a 
@@ -23,7 +27,7 @@ the module name.
 Now that you know the purpose of the Liferay AMD Module Loader, you can learn
 how to define modules next.
 
-## Defining a Module [](id=defining-a-module)
+## Defining a Module
 
 The Liferay AMD Module loader works with JavaScript modules that are in the AMD 
 format. Here is a basic example of the definition of an AMD module:
@@ -64,7 +68,7 @@ condition.
 
 Next you can learn how to load a module.
 
-## Loading a Module [](id=loading-a-module)
+## Loading a Module
 
 Loading a module is as easy as passing the module name to the `Liferay.Loader.require` method.
 The example below loads a module called `my-dialog`:
@@ -78,7 +82,7 @@ The example below loads a module called `my-dialog`:
 
 Next you can learn how to map module names.
  
-## Mapping Module Names [](id=mapping-module-names)
+## Mapping Module Names
 
 You can map module names to specific versions or other naming conventions. The
 example below maps the `liferay` and `liferay2` modules to `liferay@1.0.0`:
@@ -97,7 +101,7 @@ Under the hood, this is the same as the value shown below:
 
     Liferay.Loader.require('liferay@1.0.0/html/js/autocomplete'...)
 
-## Using Liferay AMD Module Loader in @product@ [](id=using-liferay-amd-module-loader-in-liferay)
+## Using Liferay AMD Module Loader in @product@
 
 Tools, like the [Liferay AMD Module Config Generator](https://github.com/liferay/liferay-module-config-generator), 
 have been integrated into @product@ to make it easy for developers to create 
@@ -129,6 +133,6 @@ they are, and what dependencies they require.
 
 Now you know all about the Liferay AMD Module Loader!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Configuring Modules for Liferay Portal's Loaders](/develop/tutorials/-/knowledge_base/7-0/configuring-modules-for-products-loaders)
+[Configuring Modules for Liferay Portal's Loaders](/docs/7-0/tutorials/-/knowledge_base/t/configuring-modules-for-products-loaders)

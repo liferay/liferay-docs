@@ -1,4 +1,8 @@
-# XML Formatter Gradle Plugin [](id=xml-formatter-gradle-plugin)
+---
+header-id: xml-formatter-gradle-plugin
+---
+
+# XML Formatter Gradle Plugin
 
 The XML Formatter Gradle plugin lets you format a project's XML files using the
 [Liferay XML Formatter](https://github.com/liferay/liferay-portal/tree/master/modules/util/xml-formatter)
@@ -6,7 +10,7 @@ tool.
 
 The plugin has been successfully tested with Gradle 4.10.2.
 
-## Usage [](id=usage)
+## Usage
 
 To use the plugin, include it in your build script:
 
@@ -38,7 +42,7 @@ repositories {
 }
 ```
 
-## Tasks [](id=tasks)
+## Tasks
 
 The plugin adds one task to your project:
 
@@ -51,14 +55,14 @@ plugin is applied, the task formats XML files contained in the [`resources`](htt
 directories of the `main` [source set](https://docs.gradle.org/current/userguide/java_plugin.html#N1503E)
 (by default: `src/main/resources/**/*.xml`).
 
-### FormatXMLTask [](id=formatxmltask)
+### FormatXMLTask
 
 Tasks of type `FormatXMLTask` extend [`SourceTask`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.SourceTask.html),
 so all its properties and methods, such as [`include`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.SourceTask.html#org.gradle.api.tasks.SourceTask:include\(java.lang.Iterable\))
 and [`exclude`](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.SourceTask.html#org.gradle.api.tasks.SourceTask:exclude\(java.lang.Iterable\)),
 are available.
 
-#### Task Properties [](id=task-properties)
+#### Task Properties
 
 Property Name | Type | Default Value | Description
 ------------- | ---- | ------------- | -----------
@@ -66,11 +70,11 @@ Property Name | Type | Default Value | Description
 `mainClassName` | `String` | `"com.liferay.xml.formatter.XMLFormatter"` | The fully qualified name of the XML Formatter Main class.
 `stripComments` | `boolean` | `false` | Whether to remove all the comments from the XML files. It sets the `xml.formatter.strip.comments` argument.
 
-## Additional Configuration [](id=additional-configuration)
+## Additional Configuration
 
 There are additional configurations that can help you use the XML Formatter.
 
-### Liferay XML Formatter Dependency [](id=liferay-xml-formatter-dependency)
+### Liferay XML Formatter Dependency
 
 By default, the plugin creates a configuration called `xmlFormatter` and adds
 a dependency to the latest released version of the Liferay XML Formatter. It is

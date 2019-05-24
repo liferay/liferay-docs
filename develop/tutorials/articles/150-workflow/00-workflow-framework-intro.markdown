@@ -1,4 +1,8 @@
-# Liferay's Workflow Framework [](id=liferays-workflow-framework)
+---
+header-id: liferays-workflow-framework
+---
+
+# Liferay's Workflow Framework
 
 Enabling your application's entities to support workflow is so easy, you could do it in
 your sleep (but don't try). Workflow enabled entities require a few things:
@@ -9,7 +13,7 @@ your sleep (but don't try). Workflow enabled entities require a few things:
 -  Some extra fields in their database table that help keep track of their
    status.
 
-    In most Liferay applications, [Service Builder](/develop/tutorials/-/knowledge_base/6-2/service-builder) will be used to create those fields. 
+    In most Liferay applications, [Service Builder](/docs/6-2/tutorials/-/knowledge_base/t/service-builder) will be used to create those fields. 
 <!--Update link to 7-0 when ready-->
 
 -  Updates to the service layer. 
@@ -30,7 +34,7 @@ you implement the workflow handler? It should go in the module with your service
 implementations. It's nice to keep your back end code separate from your view
 layer and controller (in the MVC pattern).
 
-## Creating a Workflow Handler [](id=creating-a-workflow-handler)
+## Creating a Workflow Handler
 
 First create a Component class. It should extend `BaseWorkflowHandler<T>`, an
 abstract class that provides a default implementation of the `WorkflowHandler<T>`
@@ -95,7 +99,7 @@ Now your entity can be handled by Liferay's workflow framework. Next, update the
 service methods to account for workflow status, and add a new method to update
 the status of an entity in the database.
 
-## Updating the Service Layer [](id=updating-the-service-layer)
+## Updating the Service Layer
 
 Make sure your entity database table has `status`, `statusByUserId`,
 `statusByUserName`, and `statusDate` fields. If you're using service builder,
@@ -196,7 +200,7 @@ Save your work and run Service Builder. Once you've accounted for workflow
 status in your service layer, there's only one thing left to do: update the user
 interface.
 
-## Workflow Status and the View Layer [](id=workflow-status-and-the-view-layer)
+## Workflow Status and the View Layer
 
 If you have an application with database entities, you're likely displaying
 them. If you're sending entities through a workflow process, you only want

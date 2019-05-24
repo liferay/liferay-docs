@@ -1,18 +1,18 @@
-# Declaring Optional Import Package Requirements [](id=declaring-optional-import-package-requirements)
+---
+header-id: declaring-optional-import-package-requirements
+---
+
+# Declaring Optional Import Package Requirements
 
 When developing @product@ modules, you can declare *optional* dependencies. An
 optional dependency is one your module can use if it's available, but can still
 function without it. 
 
-+$$$
-
-**Important:** Try to avoid optional dependencies. The best module designs
-rely on normal dependencies. If an optional dependency seems desirable, your
-module may be trying to provide distinct types of functionality. In such a
-situation, it's best to split it into multiple modules that provide smaller,
-more focused functionality. 
-
-$$$
+| **Important:** Try to avoid optional dependencies. The best module designs
+| rely on normal dependencies. If an optional dependency seems desirable, your
+| module may be trying to provide distinct types of functionality. In such a
+| situation, it's best to split it into multiple modules that provide smaller,
+| more focused functionality.
 
 If you decide that your module requires an optional dependency, follow these 
 steps to add it: 
@@ -81,6 +81,6 @@ command:
 For more information about optional dependencies, see 
 [OSGi Enroute's documentation](http://enroute.osgi.org/tutorial_wrap/220-optional-dependencies). 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Configuring Dependencies](/develop/tutorials/-/knowledge_base/7-0/configuring-dependencies)
+[Configuring Dependencies](/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies)

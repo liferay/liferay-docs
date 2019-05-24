@@ -1,4 +1,8 @@
-# Installing @product@ [](id=installing-product)
+---
+header-id: installing-product
+---
+
+# Installing @product@
 
 Now that you've performed the steps needed to prepare for your installation,
 you're ready to install @product@! Since bundles are the easiest way to complete
@@ -11,7 +15,7 @@ Now you're ready. You've created a blank database for @product@ and have
 gathered the credentials you need for your mail server. The next step is to
 install @product@. 
 
-## Liferay Home [](id=liferay-home)
+## Liferay Home
 
 @product@ bundles contain the same folder structure regardless of application
 server. The top-level folder is named for the release of @product@. This folder
@@ -55,7 +59,7 @@ sets the auto-deploy location.
 especially when trying to diagnose a problem. `portal-impl.jar`'s
 `portal-impl/src/META-INF/portal-log4j.xml` file sets the location for the log
 files. To override the log file location, you must
-[use an `ext-impl/src/META-INF/portal-log4j-ext.xml` file in an Ext plugin](/develop/tutorials/-/knowledge_base/7-0/advanced-customization-with-ext-plugins#using-advanced-configuration-files). 
+[use an `ext-impl/src/META-INF/portal-log4j-ext.xml` file in an Ext plugin](/docs/7-0/tutorials/-/knowledge_base/t/advanced-customization-with-ext-plugins#using-advanced-configuration-files). 
 
 `osgi`: All the JAR files and a few configuration files for @product@'s OSGi
 runtime belong in this folder.
@@ -91,7 +95,7 @@ is running @product@. In this case, the `liferay` folder becomes Liferay Home.
 For example, if the operating system user's name was jbloggs, the Liferay Home
 folder could be `/home/bloggs/liferay` or `C:\Users\jbloggs\liferay`.
 
-## Extracting a @product@ Bundle [](id=extracting-a-liferay-bundle)
+## Extracting a @product@ Bundle
 
 Getting a @product@ bundle up and running is as easy as uncompressing the
 archive, possibly copying a JDBC driver, and then starting the application
@@ -112,7 +116,7 @@ finished with the installation (and before you've started @product@ for the
 first time), come back to this spot, because you need to hook it up to your
 database. 
 
-## Connecting @product@ to Your Database [](id=connecting-product-to-your-database)
+## Connecting @product@ to Your Database
 
 You can connect @product@ through either your app server's data source or the one
 that ships with @product@. Because of its suitability for tuning, it is
@@ -129,7 +133,7 @@ for your database and paste it into this file.
 Now all you have to do is customize it. Enter the proper host name and user and
 password credentials for your database, and then save the file. 
 
-## Running @product@ for the First Time [](id=running-product-for-the-first-time)
+## Running @product@ for the First Time
 
 Next, start your app server, or start the @product@ app in your app server. For
 example, if you're using the @product@-Tomcat bundle, start Tomcat as if you had
@@ -157,7 +161,11 @@ displays @product@'s Basic Configuration page. If for some reason your browser
 doesn't load the Basic Configuration page, launch your web browser and navigate
 to [http://localhost:8080](http://localhost:8080). 
 
-# Using @product@'s Setup Wizard [](id=using-liferays-setup-wizard)
+---
+header-id: using-liferays-setup-wizard
+---
+
+# Using @product@'s Setup Wizard
 
 @product@'s Setup Wizard runs when you start @product@ for the first time. To make
 it easy to configure @product@, the first thing you see when browsing to your
@@ -197,24 +205,20 @@ you should use the `portal-ext.properties` file you created earlier. All the
 possible properties that can be placed in this file are documented in [our
 reference documentation](@platform-ref@/7.0-latest/propertiesdoc).
 
-+$$$
-
-**Tip:** The wizard is an extremely helpful tool, especially if you're setting
-up @product@ for the first time. If you're a @product@ veteran and you already have
-your various properties set up, you can disable the setup wizard. If you disable
-the setup wizard, you must configure everything manually from the 
-`portal-ext.properties` file. To disable the setup wizard, enter
-`setup.wizard.enabled=false` in your `portal-ext.properties` file. Note that
-property values in `portal-setup-wizard.properties` (the file created in Liferay
-Home by the setup wizard) override property values in `portal-ext.properties`.
-
-$$$
+| **Tip:** The wizard is an extremely helpful tool, especially if you're setting
+| up @product@ for the first time. If you're a @product@ veteran and you already have
+| your various properties set up, you can disable the setup wizard. If you disable
+| the setup wizard, you must configure everything manually from the
+| `portal-ext.properties` file. To disable the setup wizard, enter
+| `setup.wizard.enabled=false` in your `portal-ext.properties` file. Note that
+| property values in `portal-setup-wizard.properties` (the file created in Liferay
+| Home by the setup wizard) override property values in `portal-ext.properties`.
 
 After you've entered the information requested by the Basic Configuration page,
 @product@ should bring you to its home page. You should set up your mail
 configuration next. 
 
-## Configuring Mail [](id=configuring-mail)
+## Configuring Mail
 
 Now that @product@ is up and running, log in as the administrative user you
 created in the setup wizard. Click the menu icon and then go to Control Panel

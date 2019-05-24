@@ -1,4 +1,8 @@
-# Creating Basic Web Content [](id=creating-basic-web-content)
+---
+header-id: creating-basic-web-content
+---
+
+# Creating Basic Web Content
 
 As soon as @product@ is installed, you have all the tools you need to build
 sites and create content. This means you can start right away! The first thing

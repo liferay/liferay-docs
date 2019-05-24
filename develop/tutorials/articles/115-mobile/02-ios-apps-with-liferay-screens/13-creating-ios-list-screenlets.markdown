@@ -1,13 +1,17 @@
-# Creating iOS List Screenlets [](id=creating-ios-list-screenlets)
+---
+header-id: creating-ios-list-screenlets
+---
+
+# Creating iOS List Screenlets
 
 It's very common for mobile apps to display lists. Liferay Screens 
 lets you display asset lists and DDL lists in your iOS app by using 
-[Asset List Screenlet](/develop/reference/-/knowledge_base/7-0/assetlistscreenlet-for-ios) 
+[Asset List Screenlet](/docs/7-0/reference/-/knowledge_base/r/assetlistscreenlet-for-ios) 
 and 
-[DDL List Screenlet](/develop/reference/-/knowledge_base/7-0/ddllistscreenlet-for-ios), 
+[DDL List Screenlet](/docs/7-0/reference/-/knowledge_base/r/ddllistscreenlet-for-ios), 
 respectively. Screens also includes list Screenlets for displaying lists of 
 other Liferay entities like web content articles, images, and more. 
-[The Screenlet reference documentation](/develop/reference/-/knowledge_base/7-0/screenlets-in-liferay-screens-for-ios) 
+[The Screenlet reference documentation](/docs/7-0/reference/-/knowledge_base/r/screenlets-in-liferay-screens-for-ios) 
 lists all the Screenlets included with Liferay Screens. If there's not a list 
 Screenlet for the entity you want to display in a list, you must create your own 
 list Screenlet. A list Screenlet can display any entity from a Liferay instance. 
@@ -23,11 +27,11 @@ Note that because this tutorial focuses on creating a list Screenlet, it doesn't
 explain general Screenlet concepts and components. Before beginning, you should 
 therefore read the following tutorials: 
 
-- [Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets)
-- [Supporting Multiple Themes in Your Screenlet](/develop/tutorials/-/knowledge_base/7-0/supporting-multiple-themes-in-your-screenlet)
-- [Create and Use a Connector with Your Screenlet ](/develop/tutorials/-/knowledge_base/7-0/create-and-use-a-connector-with-your-screenlet)
-- [Add a Screenlet Delegate](/develop/tutorials/-/knowledge_base/7-0/add-a-screenlet-delegate)
-- [Creating and Using Your Screenlet's Model Class](/develop/tutorials/-/knowledge_base/7-0/creating-and-using-your-screenlets-model-class)
+- [Creating iOS Screenlets](/docs/7-0/tutorials/-/knowledge_base/t/creating-ios-screenlets)
+- [Supporting Multiple Themes in Your Screenlet](/docs/7-0/tutorials/-/knowledge_base/t/supporting-multiple-themes-in-your-screenlet)
+- [Create and Use a Connector with Your Screenlet ](/docs/7-0/tutorials/-/knowledge_base/t/create-and-use-a-connector-with-your-screenlet)
+- [Add a Screenlet Delegate](/docs/7-0/tutorials/-/knowledge_base/t/add-a-screenlet-delegate)
+- [Creating and Using Your Screenlet's Model Class](/docs/7-0/tutorials/-/knowledge_base/t/creating-and-using-your-screenlets-model-class)
 
 This tutorial uses the following steps to show you how to create a list 
 Screenlet: 
@@ -41,7 +45,7 @@ Screenlet:
 
 First though, you should understand how pagination works with list Screenlets. 
 
-## Pagination [](id=pagination)
+## Pagination
 
 To ensure that users can scroll smoothly through large lists of items, list 
 Screenlets support 
@@ -51,18 +55,18 @@ you construct your list Screenlet.
 
 Now you're ready to begin! 
 
-## Creating the Model Class [](id=creating-the-model-class)
+## Creating the Model Class
 
 Recall that a model class transforms each `[String:AnyObject]` entity Screens 
 receives into a model object that represents the corresponding Liferay entity. 
 For instructions on creating your model class, see the tutorial 
-[Creating and Using Your Screenlet's Model Class](/develop/tutorials/-/knowledge_base/7-0/creating-and-using-your-screenlets-model-class). 
+[Creating and Using Your Screenlet's Model Class](/docs/7-0/tutorials/-/knowledge_base/t/creating-and-using-your-screenlets-model-class). 
 The example model class in that tutorial is identical to Bookmark List 
 Screenlet's. 
 
 Next, you'll create your Screenlet's Theme. 
 
-## Creating the Theme [](id=creating-the-view)
+## Creating the Theme
 
 Recall that each Screenlet needs a Theme to serve as its UI. A Theme needs an 
 XIB file to define the UI's components and layout. Since a list Screenlet 
@@ -70,7 +74,7 @@ displays a list of entities, its XIB file must contain a Table View. Use these
 steps to create your Theme's XIB file: 
 
 1.  In Xcode, create a new XIB file and name it according to 
-    [these naming conventions](/develop/tutorials/-/knowledge_base/7-0/ios-best-practices#naming-conventions). 
+    [these naming conventions](/docs/7-0/tutorials/-/knowledge_base/t/ios-best-practices#naming-conventions). 
     For example, the XIB for Bookmark List Screenlet's Default Theme is 
     `BookmarkListView_default.xib`. 
 
@@ -100,7 +104,7 @@ Follow these steps to create your Screenlet's View class and configure the XIB
 file to use it: 
 
 1.  Create your Theme's View class, and name it according to 
-    [these naming conventions](/develop/tutorials/-/knowledge_base/7-0/ios-best-practices#naming-conventions). 
+    [these naming conventions](/docs/7-0/tutorials/-/knowledge_base/t/ios-best-practices#naming-conventions). 
     Since the XIB uses `UITableView`, your View class must extend 
     `BaseListTableView`. For example, this is Bookmark List Screenlet's View 
     class declaration: 
@@ -149,7 +153,7 @@ file to use it:
 
 That's it! Now that your Theme is finished, you can create the Connector. 
 
-## Creating the Connector [](id=creating-the-connector)
+## Creating the Connector
 
 Recall that Connectors make a server call. To support pagination, a List 
 Screenlet's Connector class must extend the 
@@ -193,7 +197,7 @@ arguments:
 
 Next, if you want to validate any of your Screenlet's properties, override the 
 `validateData` method as described in 
-[the tutorial on creating Connectors](/develop/tutorials/-/knowledge_base/7-0/create-and-use-a-connector-with-your-screenlet#creating-connectors). 
+[the tutorial on creating Connectors](/docs/7-0/tutorials/-/knowledge_base/t/create-and-use-a-connector-with-your-screenlet#creating-connectors). 
 Note that Bookmark List Screenlet only needs to validate the `folderId`: 
 
     override public func validateData() -> ValidationError? {
@@ -261,7 +265,7 @@ Lastly, you must override the following two methods in the Connector class:
 
 Now that you have your Connector class, you're ready to create the Interactor. 
 
-## Creating the Interactor [](id=creating-the-interactor)
+## Creating the Interactor
 
 Recall that Interactors implement your Screenlet's actions. In list Screenlets, 
 loading entities is usually the only action a user can take. The Interactor 
@@ -333,7 +337,7 @@ retrieved from the server. For example, `BookmarkListPageLoadInteractor`'s
     }
 
 You may also want to support 
-[offline mode](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens) 
+[offline mode](/docs/7-0/tutorials/-/knowledge_base/t/architecture-of-offline-mode-in-liferay-screens) 
 in your Interactor. To do so, the Interactor must override the `cacheKey` method 
 to return a cache key unique to your Screenlet. For example, 
 `BookmarkListPageLoadInteractor`'s `cacheKey` method returns a cache key that 
@@ -345,11 +349,11 @@ includes the Screenlet's `groupId` and `folderId` settings:
 
 Great! Next, you'll create your Screenlet's delegate. 
 
-## Creating the Delegate [](id=creating-the-delegate)
+## Creating the Delegate
 
 Recall that a delegate is required if you want other classes to respond to your 
 Screenlet's actions. Create your delegate by following the first step in 
-[the tutorial on adding a Screenlet delegate](/develop/tutorials/-/knowledge_base/7-0/add-a-screenlet-delegate). 
+[the tutorial on adding a Screenlet delegate](/docs/7-0/tutorials/-/knowledge_base/t/add-a-screenlet-delegate). 
 A list Screenlet's delegate must also define a method for responding to a list 
 item selection. For example, Bookmark List Screenlet's delegate needs the 
 following methods: 
@@ -378,7 +382,7 @@ The `BookmarkListScreenletDelegate` protocol defines these methods:
 
 Nice work! Next, you'll create the Screenlet class. 
 
-## Creating the Screenlet Class [](id=creating-the-screenlet-class)
+## Creating the Screenlet Class
 
 Now that your list Screenlet's other components exist, you can create the 
 Screenlet class. A list Screenlet's Screenlet class must extend the 
@@ -472,26 +476,26 @@ handle, you'll call your delegate methods in these `BaseListScreenlet` methods:
 
 Awesome! You're done! Your list Screenlet, like any other Screenlet, is a 
 ready-to-use component that you can add to your storyboard. You can even 
-[package it using the same steps you use to package a Theme](/develop/tutorials/-/knowledge_base/7-0/packaging-ios-themes), 
+[package it using the same steps you use to package a Theme](/docs/7-0/tutorials/-/knowledge_base/t/packaging-ios-themes), 
 and then contribute it to the Liferay Screens project or distribute it with 
 CocoaPods. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/7-0/creating-ios-screenlets)
+[Creating iOS Screenlets](/docs/7-0/tutorials/-/knowledge_base/t/creating-ios-screenlets)
 
-[Supporting Multiple Themes in Your Screenlet](/develop/tutorials/-/knowledge_base/7-0/supporting-multiple-themes-in-your-screenlet)
+[Supporting Multiple Themes in Your Screenlet](/docs/7-0/tutorials/-/knowledge_base/t/supporting-multiple-themes-in-your-screenlet)
 
-[Create and Use a Connector with Your Screenlet ](/develop/tutorials/-/knowledge_base/7-0/create-and-use-a-connector-with-your-screenlet)
+[Create and Use a Connector with Your Screenlet ](/docs/7-0/tutorials/-/knowledge_base/t/create-and-use-a-connector-with-your-screenlet)
 
-[Add a Screenlet Delegate](/develop/tutorials/-/knowledge_base/7-0/add-a-screenlet-delegate)
+[Add a Screenlet Delegate](/docs/7-0/tutorials/-/knowledge_base/t/add-a-screenlet-delegate)
 
-[Creating and Using Your Screenlet's Model Class](/develop/tutorials/-/knowledge_base/7-0/creating-and-using-your-screenlets-model-class)
+[Creating and Using Your Screenlet's Model Class](/docs/7-0/tutorials/-/knowledge_base/t/creating-and-using-your-screenlets-model-class)
 
-[Using Custom Cells with List Screenlets](/develop/tutorials/-/knowledge_base/7-0/using-custom-cells-with-list-screenlets)
+[Using Custom Cells with List Screenlets](/docs/7-0/tutorials/-/knowledge_base/t/using-custom-cells-with-list-screenlets)
 
-[Sorting Your List Screenlet](/develop/tutorials/-/knowledge_base/7-0/sorting-your-list-screenlet)
+[Sorting Your List Screenlet](/docs/7-0/tutorials/-/knowledge_base/t/sorting-your-list-screenlet)
 
-[Creating Complex Lists in Your List Screenlet](/develop/tutorials/-/knowledge_base/7-0/creating-complex-lists-in-your-list-screenlet)
+[Creating Complex Lists in Your List Screenlet](/docs/7-0/tutorials/-/knowledge_base/t/creating-complex-lists-in-your-list-screenlet)
 
-[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/7-0/architecture-of-liferay-screens-for-ios)
+[Architecture of Liferay Screens for iOS](/docs/7-0/tutorials/-/knowledge_base/t/architecture-of-liferay-screens-for-ios)

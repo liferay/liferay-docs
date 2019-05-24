@@ -1,4 +1,8 @@
-# Initiating New Processes with ExportImportConfiguration Objects [](id=initiating-new-processes-with-exportimportconfiguration-objects)
+---
+header-id: initiating-new-processes-with-exportimportconfiguration-objects
+---
+
+# Initiating New Processes with ExportImportConfiguration Objects
 
 @product@'s Staging and Export/Import features are the building blocks for
 creating, managing, and publishing a site. These features can be accessed in
@@ -102,16 +106,12 @@ initiate your custom export/import or staging process.
     layouts from Portal. Although this example code resides in @product@,
     you could easily use this framework from your own plugin or module.
 
-    +$$$
-
-    **Note:** If you're not calling the export/import or staging service methods
-    from an OSGi module, you should not use the interface. The Liferay
-    OSGi container automatically handles interface referencing, which is why
-    using the interface is permitted for modules. If you're calling
-    export/import or staging service methods outside of a module, you should use
-    their service Util classes (e.g., `ExportImportLocalServiceUtil`).
-
-    $$$
+    | **Note:** If you're not calling the export/import or staging service methods
+    | from an OSGi module, you should not use the interface. The Liferay
+    | OSGi container automatically handles interface referencing, which is why
+    | using the interface is permitted for modules. If you're calling
+    | export/import or staging service methods outside of a module, you should use
+    | their service Util classes (e.g., `ExportImportLocalServiceUtil`).
 
 It's that easy! To start your own export/import or staging process, you must
 create an `ExportImportConfiguration` object using a combination of the three

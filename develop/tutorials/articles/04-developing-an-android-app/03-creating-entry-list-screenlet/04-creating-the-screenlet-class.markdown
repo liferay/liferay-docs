@@ -1,4 +1,8 @@
-# Creating Entry List Screenlet's Screenlet Class [](id=creating-entry-list-screenlets-screenlet-class)
+---
+header-id: creating-entry-list-screenlets-screenlet-class
+---
+
+# Creating Entry List Screenlet's Screenlet Class
 
 Recall that when using a Screenlet, the app developer primarily interacts with 
 its Screenlet class. The Screenlet class contains attributes for configuring the 
@@ -14,7 +18,7 @@ Even the Screenlets' attributes are the same.
 Therefore, this article doesn't explain all the code in detail. Focus is instead 
 placed on the few parts that differ from Guestbook List Screenlet. For a full 
 explanation of the code, 
-[click here](/develop/tutorials/-/knowledge_base/7-0/creating-guestbook-list-screenlets-screenlet-class) 
+[click here](/docs/7-0/tutorials/-/knowledge_base/t/creating-guestbook-list-screenlets-screenlet-class) 
 to see the article on creating Guestbook List Screenlet's Screenlet class. 
 
 You'll create Entry List Screenlet's class with the same steps you used to
@@ -30,7 +34,7 @@ create Guestbook List Screenlet's class:
 
 First, you'll define Entry List Screenlet's attributes. 
 
-## Defining Screenlet Attributes [](id=defining-screenlet-attributes)
+## Defining Screenlet Attributes
 
 Recall that before creating the Screenlet class, you must define the attributes 
 the app developer needs to control the Screenlet's behavior. Entry List 
@@ -47,7 +51,7 @@ contents with this code:
 
 Next, you'll create the Screenlet class.
 
-## Creating the Screenlet Class [](id=creating-the-screenlet-class)
+## Creating the Screenlet Class
 
 Entry List Screenlet's class must contain an instance variable for the ID of the
 guestbook the Screenlet retrieves entries from. This is required to start the
@@ -137,7 +141,7 @@ scenes, the list Screenlet framework passes `guestbookId` to the Interactor's
 argument. This is why you were able to extract `guestbookId` from the `args` 
 argument in these methods. For an explanation of how the rest of this Screenlet 
 class works, 
-[click here](/develop/tutorials/-/knowledge_base/7-0/creating-guestbook-list-screenlets-screenlet-class) 
+[click here](/docs/7-0/tutorials/-/knowledge_base/t/creating-guestbook-list-screenlets-screenlet-class) 
 to see the article on creating Guestbook List Screenlet's Screenlet class. 
 
 That's it! Now you're ready to use Entry List Screenlet alongside Guestbook List 

@@ -1,4 +1,8 @@
-# Leveraging the Script Engine in Workflow [](id=leveraging-the-script-engine-in-workflow)
+---
+header-id: leveraging-the-script-engine-in-workflow
+---
+
+# Leveraging the Script Engine in Workflow
 
 Liferay's Kaleo workflow engine provides a robust system for reviewing and
 approving content in an enterprise environment. Even if you don't leverage
@@ -28,21 +32,17 @@ you could use this. Here are a few practical examples:
 - Creating an alert to be displayed in the Alerts portlet for any user assigned
   to approve content
 
-+$$$
-
-**Note:** In earlier versions of @product@, a
-[bug](https://issues.liferay.com/browse/LPS-70234) made it difficult (without a
-messy workaround) to resolve classes outside of @product@'s core (for example,
-the `portal-kernel` module). That bug is fixed as of the following versions:
-
-- Liferay Digital Enterprise 7.0 Fix Pack 11
-- Liferay Portal 7.0 GA 4
-
-If your workflow script depends on services in a module outside of @product@'s
-core (for example, `JournalArticleLocalService`), make sure you are running an
-up-to-date version of @product@.
-
-$$$
+| **Note:** In earlier versions of @product@, a
+| [bug](https://issues.liferay.com/browse/LPS-70234) made it difficult (without a
+| messy workaround) to resolve classes outside of @product@'s core (for example,
+| the `portal-kernel` module). That bug is fixed as of the following versions:
+| 
+| - Liferay Digital Enterprise 7.0 Fix Pack 11
+| - Liferay Portal 7.0 GA 4
+| 
+| If your workflow script depends on services in a module outside of @product@'s
+| core (for example, `JournalArticleLocalService`), make sure you are running an
+| up-to-date version of @product@.
 
 Of course, before you try any of this, you need to know the appropriate syntax
 for inserting a script into a workflow. In an XML workflow definition, a script
@@ -123,12 +123,12 @@ For a complete example of a workflow script that uses the above Groovy script,
 please see this `legal-workflow-script.xml` file:
 [https://github.com/liferay/liferay-docs/blob/6.2.x/userGuide/code/legal-workflow-script.xml](https://github.com/liferay/liferay-docs/blob/6.2.x/userGuide/code/legal-workflow-script.xml).
 
-## Calling OSGi Services [](id=calling-osgi-services)
+## Calling OSGi Services
 
 How do you call OSGi services from a workflow script, accounting for the dynamic
 environment of the OSGi runtime, where services your script depends on can
 disappear without notice? 
-[Use a service tracker](/develop/tutorials/-/knowledge_base/7-0/service-trackers). 
+[Use a service tracker](/docs/7-0/tutorials/-/knowledge_base/t/service-trackers). 
 That way you can check to make sure your code has access to the service it
 needs, and if not, do something appropriate in response. Here's a little example
 code to show you how this might look in Groovy (import statements excluded):
@@ -157,7 +157,7 @@ code to show you how this might look in Groovy (import statements excluded):
     }
 
 If you read the article on 
-[service trackers](/develop/tutorials/-/knowledge_base/7-0/service-trackers), 
+[service trackers](/docs/7-0/tutorials/-/knowledge_base/t/service-trackers), 
 the only odd looking piece of the above code is the `getBundle` call: why is
 `GroovyExecutor.class` passed as a parameter? The parameter passed to the
 `FrameworkUtil.getBundle` call must be a class from the bundle executing the
@@ -173,12 +173,12 @@ dangerous. When configuring your permissions, be aware of the potential
 consequences of poorly or maliciously written scripts inside of a workflow
 definition. For more information on creating workflow definitions with Kaleo
 workflow, see @product@'s 
-[workflow documentation](/discover/portal/-/knowledge_base/7-0/using-workflow).
+[workflow documentation](/docs/7-0/user/-/knowledge_base/u/using-workflow).
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Invoking Liferay Services From Scripts](/discover/portal/-/knowledge_base/7-0/invoking-liferay-services-from-scripts)
+[Invoking Liferay Services From Scripts](/docs/7-0/user/-/knowledge_base/u/invoking-liferay-services-from-scripts)
 
-[Running Scripts From the Script Console](/discover/portal/-/knowledge_base/7-0/running-scripts-from-the-script-console)
+[Running Scripts From the Script Console](/docs/7-0/user/-/knowledge_base/u/running-scripts-from-the-script-console)
 
-[Using Liferay's Script Engine](/discover/portal/-/knowledge_base/7-0/using-liferays-script-engine)
+[Using Liferay's Script Engine](/docs/7-0/user/-/knowledge_base/u/using-liferays-script-engine)

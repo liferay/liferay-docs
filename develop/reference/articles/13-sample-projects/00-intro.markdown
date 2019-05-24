@@ -1,12 +1,12 @@
-# Sample Projects [](id=sample-modules)
+---
+header-id: sample-modules
+---
 
-+$$$
+# Sample Projects
 
-**Note:** This section of articles does not provide documentation for *all*
-sample projects residing in the `liferay-blade-samples` repo. The documentation
-for these samples is in progress and will grow over time.
-
-$$$
+| **Note:** This section of articles does not provide documentation for *all*
+| sample projects residing in the `liferay-blade-samples` repo. The documentation
+| for these samples is in progress and will grow over time.
 
 Liferay provides sample projects that target different integration points in
 @product@. These projects reside in the
@@ -19,16 +19,12 @@ build tools used to generate them:
 - `liferay-workspace`
 - `maven`
 
-+$$$
-
-**Note:** The Liferay Workspace folder stores WAR-type samples in a separate
-folder named
-[wars](https://github.com/liferay/liferay-blade-samples/tree/7.0/liferay-workspace/wars).
-The Gradle and Maven tool folders mix WAR samples with the other sample types
-(apps, extensions, etc.).
-
-$$$
+| **Note:** The Liferay Workspace folder stores WAR-type samples in a separate
+| folder named
+| [wars](https://github.com/liferay/liferay-blade-samples/tree/7.0/liferay-workspace/wars).
+| The Gradle and Maven tool folders mix WAR samples with the other sample types
+| (apps, extensions, etc.).
 
 For more information on these sample projects, visit the 
-[Liferay Sample Projects](/develop/tutorials/-/knowledge_base/7-0/liferay-sample-modules)
+[Liferay Sample Projects](/docs/7-0/tutorials/-/knowledge_base/t/liferay-sample-modules)
 tutorial.

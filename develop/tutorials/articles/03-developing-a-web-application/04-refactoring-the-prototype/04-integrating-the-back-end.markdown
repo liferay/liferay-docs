@@ -1,4 +1,8 @@
-# Integrating the New Back-end [](id=integrating-the-new-back-end)
+---
+header-id: integrating-the-new-back-end
+---
+
+# Integrating the New Back-end
 
 <div class="learn-path-step">
     <p>Refactoring the Prototype<br>Step 4 of 6</p>

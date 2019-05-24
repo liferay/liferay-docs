@@ -1,6 +1,10 @@
-# Workflow Definition Nodes [](id=workflow-definition-nodes)
+---
+header-id: workflow-definition-nodes
+---
 
-Once you know the basics of [creating workflow definitions](/discover/portal/-/knowledge_base/7-0/managing-workflow-definitions-with-kaleo-designer)
+# Workflow Definition Nodes
+
+Once you know the basics of [creating workflow definitions](/docs/7-0/user/-/knowledge_base/u/managing-workflow-definitions-with-kaleo-designer)
 with the Kaleo Designer, it's time to starts getting into the details. In this
 article you'll learn about Actions and Notifications, two important features
 your workflow nodes can use. You'll also learn how to affect the processing of
@@ -16,20 +20,20 @@ There are several node types you can use in workflow definitions:
 - State nodes
 
 Because they're the most complex node, and often the meat of your workflow
-definitions, Task nodes are covered in a [separate article](/discover/portal/-/knowledge_base/7-0/creating-tasks-in-kaleo-designer).
+definitions, Task nodes are covered in a [separate article](/docs/7-0/user/-/knowledge_base/u/creating-tasks-in-kaleo-designer).
 
 Fork, Join, and Condition nodes are discussed, along with Transitions, in an
-article on [workflow processing](/discover/portal/-/knowledge_base/7-0/affecting-the-processing-of-workflow-definitions),
+article on [workflow processing](/docs/7-0/user/-/knowledge_base/u/affecting-the-processing-of-workflow-definitions),
 since they're used for affecting the processing of the workflow.
 
 This article discusses State nodes, Start nodes, and End nodes, as well as
 Actions and Notifications.
 
-## Node Actions and Notifications [](id=node-actions-and-notifications)
+## Node Actions and Notifications
 
 Any node can have Actions and Notifications.
 
-### Actions [](id=actions)
+### Actions
 
 Actions are used to do some additional processing before entering the node,
 after exiting a node, or once a task node is assigned. They're configured by
@@ -69,7 +73,7 @@ you'd like.
 It's good to assign a task to a user, and it's even more useful if the user can
 get a notification that something is required in the workflow.
 
-### Notifications [](id=notifications)
+### Notifications
 
 Notifications are often sent to tell task assignees that something is required
 of them in the workflow or to update asset creators on the status of the
@@ -99,7 +103,7 @@ receives a notification when assigned a task in the workflow. To do this you
 just choose *Task Assignees* under Recipient Type when configuring the
 notification.
 
-## Start and End Nodes [](id=start-and-end-nodes)
+## Start and End Nodes
 
 Start and end nodes kick off the workflow processing and bring the asset to its
 final, approved state. Often you can use the default start and end nodes without
@@ -122,7 +126,7 @@ By default, there's a transition connecting the start node and end node, but
 you'll probably want to delete it, since most workflows won't proceed straight
 from the initial state to approved.
 
-## State Nodes [](id=state-nodes)
+## State Nodes
 
 State nodes can have Notifications and Actions. The default end node added by
 Kaleo Designer is a pre-configured state node that sets the workflow status to
@@ -138,12 +142,12 @@ what it would look like in Groovy:
 
 Next, you'll learn to do parallel processing using fork and join nodes.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Workflow Forms](/discover/portal/-/knowledge_base/7-0/workflow-forms)
+[Workflow Forms](/docs/7-0/user/-/knowledge_base/u/workflow-forms)
 
-[Using Workflow](/discover/portal/-/knowledge_base/7-0/enabling-workflow)
+[Using Workflow](/docs/7-0/user/-/knowledge_base/u/enabling-workflow)
 
-[Liferay's Workflow Framework](/develop/tutorials/-/knowledge_base/7-0/liferays-workflow-framework)
+[Liferay's Workflow Framework](/docs/7-0/tutorials/-/knowledge_base/t/liferays-workflow-framework)
 
-[Creating Simple Applications](/discover/portal/-/knowledge_base/7-0/creating-simple-applications)
+[Creating Simple Applications](/docs/7-0/user/-/knowledge_base/u/creating-simple-applications)

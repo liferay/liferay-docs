@@ -1,27 +1,31 @@
-# User Portrait Screenlet for Android [](id=userportraitscreenlet-for-android)
+---
+header-id: userportraitscreenlet-for-android
+---
 
-## Requirements [](id=requirements)
+# User Portrait Screenlet for Android
+
+## Requirements
 
 - Android SDK 4.1 (API Level 16) or above
 - Liferay Portal 6.2 CE/EE, Liferay CE Portal 7.0/7.1, Liferay DXP
 - Picasso library
 
-## Compatibility [](id=compatibility)
+## Compatibility
 
 - Android SDK 4.1 (API Level 16) or above
 
-## Xamarin Requirements [](id=xamarin-requirements)
+## Xamarin Requirements
 
 - Visual Studio 7.2
 - Mono .NET framework 5.4.1.6
 
-## Features [](id=features)
+## Features
 
 The User Portrait Screenlet shows the users' profile pictures. If a user
 doesn't have a profile picture, a placeholder image is shown. The Screenlet
 allows the profile picture to be edited via the `editable` property. 
 
-## JSON Services Used [](id=json-services-used)
+## JSON Services Used
 
 Screenlets in Liferay Screens call JSON web services in the portal. This 
 Screenlet calls the following services and methods.
@@ -30,33 +34,33 @@ Screenlet calls the following services and methods.
 | ------- | ------ | ----- |
 | `UserService` | `getUserById` |  |
 
-## Module [](id=module)
+## Module
 
 - None
 
-## Views [](id=views)
+## Views
 
 - Default
 - Material
 
 ![The User Portrait Screenlet using the Default (left) and Material (right) Views.](../../images/screens-android-userportrait.png)
 
-## Portal Configuration [](id=portal-configuration)
+## Portal Configuration
 
 No additional steps required.
 
-## Activity Configuration [](id=activity-configuration)
+## Activity Configuration
 
 The User Portrait Screenlet needs the following user permissions:
 
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
-## Offline [](id=offline)
+## Offline
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/7-0/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/docs/7-0/tutorials/-/knowledge_base/t/architecture-of-offline-mode-in-liferay-screens). 
 
 When loading the portrait, the Screenlet supports the following offline mode 
 policies:
@@ -78,14 +82,14 @@ policies:
 | `REMOTE_FIRST` | The Screenlet sends the user portrait to the portal. If this succeeds, the Screenlet also stores the portrait in the local cache for later usage. If a connection issue occurs, the Screenlet stores the portrait in the local cache with the *dirty flag* enabled. This causes the portrait to be sent to the portal when the synchronization process runs. | Use this policy when you need to make sure the Screenlet sends the new portrait to the portal as soon as the connection is restored. |
 | `CACHE_FIRST` | The Screenlet stores the user portrait in the local cache and then sends it to the portal. If a connection issue occurs, the Screenlet stores the portrait in the local cache with the *dirty flag* enabled. This causes the portrait to be sent to the portal when the synchronization process runs. | Use this policy when you need to make sure the Screenlet sends the new portrait to the portal as soon as the connection is restored. Compared to `REMOTE_FIRST`, this policy always stores the portrait in the cache. The `REMOTE_FIRST` policy only stores the new image in the cache in the event of a network error or a successful upload. |
 
-## Required Attributes [](id=required-attributes)
+## Required Attributes
 
 - None
 
 Note that if you don't set any attributes, the Screenlet loads the logged-in 
 user's portrait. 
 
-## Attributes [](id=attributes)
+## Attributes
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
@@ -98,14 +102,14 @@ user's portrait.
 | `editable` | `boolean` | Lets the user change the portrait image by taking a photo or selecting a gallery picture. |
 | `offlinePolicy` | `enum` | Configure the loading and saving behavior in case of connectivity issues. For more details, read the "Offline" section below. |
 
-## Methods [](id=methods)
+## Methods
 
 | Method | Return | Explanation |
 |-----------|-----------|-------------| 
 | `load()` | `void` | Starts the request to load the user specified in the `userId` property, or the portrait specified in the `portraitId`and `uuid` properties. |
 | `upload(int requestCode,`<br/>`Intent onActivityResultData)` | `void` | Starts the request to upload a profile picture from the source specified in the `requestCode` property (gallery or camera), and with the path stored in the `onActivityResultData` variable. |
 
-## Listener [](id=listener)
+## Listener
 
 The User Portrait Screenlet delegates some events to an object that implements 
 the `UserPortraitListener` interface. This interface lets you implement the 

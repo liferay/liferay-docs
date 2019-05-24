@@ -1,13 +1,17 @@
-# Upgrading Your Theme from Liferay Portal 6.1 to 7.0 [](id=upgrading-your-theme-from-6-1-to-7-0)
+---
+header-id: upgrading-your-theme-from-6-1-to-7-0
+---
+
+# Upgrading Your Theme from Liferay Portal 6.1 to 7.0
 
 This tutorial guides you through the process of upgrading your 6.1 theme to run 
 on @product-ver@.
 
 For a more in depth tutorial that covers upgrading 6.2 themes, please see the 
-[Upgrading Themes](/develop/tutorials/-/knowledge_base/7-0/upgrading-themes) 
+[Upgrading Themes](/docs/7-0/tutorials/-/knowledge_base/t/upgrading-themes) 
 tutorial.
 
-## Setting Up Your Theme With Liferay Theme Generator [](id=setting-up-your-theme-with-liferay-theme-generator)
+## Setting Up Your Theme With Liferay Theme Generator
 
 You'll use Liferay Theme Generator to get the upgrade process started. Liferay 
 Theme Generator supplies your theme with the necessary tools to deploy and make 
@@ -16,7 +20,7 @@ quick modifications.
 In this tutorial, you'll use Liferay Theme Generator's Import feature to help 
 set up the upgrade process.
 
-### Preparing Your Theme [](id=preparing-your-theme)
+### Preparing Your Theme
 
 Before you import your theme, you need to make some modifications to your theme 
 to ensure Liferay Theme Generator sets up the correct version and template 
@@ -46,28 +50,24 @@ Make sure these settings are present in your theme:
 
         liferay-versions=6.2+
 
-+$$$
-
-**Note:** Liferay Theme Generator's importer only recognizes 6.2 themes. 
-Therefore, 6.1 themes must be versioned as 6.2+ to be recognized by the 
-importer.
-
-The importer only supports importing 6.2 themes generated with the Plugins SDK. 
-If your theme was not generated with the Plugins SDK, such as those created with 
-Maven, you must modify your theme to match the Plugins SDK structure before 
-importing.
-
-$$$
+| **Note:** Liferay Theme Generator's importer only recognizes 6.2 themes.
+| Therefore, 6.1 themes must be versioned as 6.2+ to be recognized by the
+| importer.
+| 
+| The importer only supports importing 6.2 themes generated with the Plugins SDK.
+| If your theme was not generated with the Plugins SDK, such as those created with
+| Maven, you must modify your theme to match the Plugins SDK structure before
+| importing.
 
 Now that your theme is prepped, you can start the import process next.
 
-### Importing Your Theme [](id=importing-your-theme)
+### Importing Your Theme
 
 Follow these steps to import your theme:
 
 1.  Install Liferay Theme Generator and its required dependencies, as explained 
     in the 
-    [Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator) 
+    [Liferay Theme Generator](/docs/7-0/tutorials/-/knowledge_base/t/themes-generator) 
     tutorial.
 
 2.  Navigate to the folder where you want your theme imported: 
@@ -86,11 +86,11 @@ called `my-awesome-theme-for-61-theme`.
 
 Next, you can learn how to update your theme for 7.0.
 
-## Updating Your Theme For 7.0 [](id=updating-your-theme-for-7-0)
+## Updating Your Theme For 7.0
 
 Now that you've successfully imported your theme, you have the tools necessary 
 to develop your theme for 7.0. These tools are provided by the 
-[Liferay Theme Tasks](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks), 
+[Liferay Theme Tasks](/docs/7-0/reference/-/knowledge_base/r/theme-gulp-tasks), 
 part of the [Liferay JS Theme Toolkit](https://github.com/liferay/liferay-themes-sdk/tree/master/packages).
 
 The first of these tools you'll use is the Upgrade task. This task does a few 
@@ -108,13 +108,9 @@ things:
 - Creates a "compatibility" file for Compass mixins, which may have been used 
   in your 6.1 theme.
 
-+$$$
-
-**Important**: Before you run the Update task, read the section below titled 
-[An Important Note About Core Stylesheets](/develop/tutorials/-/knowledge_base/7-0/upgrading-your-theme-from-6-1-to-7-0#an-important-note-about-core-stylesheets) 
-for advice on renaming (effectively overriding) "core" stylesheets.
-
-$$$
+| **Important**: Before you run the Update task, read the section below titled
+| [An Important Note About Core Stylesheets](/docs/7-0/tutorials/-/knowledge_base/t/upgrading-your-theme-from-6-1-to-7-0#an-important-note-about-core-stylesheets)
+| for advice on renaming (effectively overriding) "core" stylesheets.
 
 Upgrade your theme, by running these commands:
 
@@ -130,32 +126,28 @@ revert them back using the Upgrade Revert task:
 The Upgrade task automates some of the steps for you, but some manual changes 
 are still required. These are covered next. 
 
-## Additional Manual Changes To Your Theme [](id=additional-manual-changes-to-your-theme)
+## Additional Manual Changes To Your Theme
 
 When the Upgrade task finishes, the console may output additional manual changes 
 you may need to make to your theme.
 
-+$$$
-
-**Note:** Because Liferay Portal 7.0 uses Bootstrap 3, the default 
-[box model](https://css-tricks.com/box-sizing/) 
-has been changed to box-sizing: border-box. If you were using width or height 
-and padding together on an element, you may need to make changes, or those 
-elements may have unexpected sizes.
-
-$$$
+| **Note:** Because Liferay Portal 7.0 uses Bootstrap 3, the default
+| [box model](https://css-tricks.com/box-sizing/)
+| has been changed to box-sizing: border-box. If you were using width or height
+| and padding together on an element, you may need to make changes, or those
+| elements may have unexpected sizes.
 
 There are likely changes that you still need to make, which these tools and this 
 guide can't realistically cover. Therefore, it's recommended that you make 
 changes gradually, rather than all at once. This allows you to more easily 
 identify any issues your theme may have.
 
-Please refer to the [Appendix](/develop/tutorials/-/knowledge_base/7-0/upgrading-your-theme-from-6-1-to-7-0#appendix) 
+Please refer to the [Appendix](/docs/7-0/tutorials/-/knowledge_base/t/upgrading-your-theme-from-6-1-to-7-0#appendix) 
 below for ways on how to update your theme manually.
 
 Follow the instructions in the next section to build and deploy your theme.
 
-## Building And Deploying Your Theme [](id=building-and-deploying-your-theme)
+## Building And Deploying Your Theme
 
 Follow these steps to build and deploy your theme:
 
@@ -175,27 +167,27 @@ forward compatibility.*
 
 It's recommended that you migrate to using Freemarker for your theme templates. 
 For more details, please see the 
-[Upgrading Theme Templates](/develop/tutorials/-/knowledge_base/7-0/upgrading-your-theme-from-6-1-to-7-0#upgrading-theme-templates) 
+[Upgrading Theme Templates](/docs/7-0/tutorials/-/knowledge_base/t/upgrading-your-theme-from-6-1-to-7-0#upgrading-theme-templates) 
 section in the Appendix.
 
 Additional tasks and info can be found in the 
-[Liferay Gulp Tasks reference guide](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks). 
+[Liferay Gulp Tasks reference guide](/docs/7-0/reference/-/knowledge_base/r/theme-gulp-tasks). 
 
 Congratulations! You've now completed a major step in upgrading your theme.
 
-## Appendix: Making Manual Compatibility Adjustments To Your Theme [](id=appendix)
+## Appendix: Making Manual Compatibility Adjustments To Your Theme
 
 This appendix covers the changes you need to make to your theme if you 
 manually update your files, or if you need to make additional changes after 
 using the Liferay JS Theme Toolkit's Upgrade task.
 
-### Upgrading Theme Metadata [](id=upgrading-theme-metadata)
+### Upgrading Theme Metadata
 
 Your theme contains metadata about its capabilities and requirements. This 
 metadata needs to be updated to ensure your theme is available for use in 
 @product@.
 
-#### Liferay Portal Version [](id=liferay-portal-version)
+#### Liferay Portal Version
 
 Your theme must target the proper @product@ version: in your case, 7.0.0+.
 You must update the theme version in two places:
@@ -214,7 +206,7 @@ You must update the theme version in two places:
             </compatibility>
             ...
 
-#### Template Extension [](id=template-extension)
+#### Template Extension
 
 If you're not using the default Theme Template language, Freemarker (.ftl), 
 you must add a `template-extension` tag to your `liferay-look-and-feel.xml`
@@ -226,7 +218,7 @@ file:
             <template-extension>vm</template-extension>
             ...
 
-#### Required Deployment Contexts [](id=required-deployment-contexts)
+#### Required Deployment Contexts
 
 If you have any Required Deployment Contexts listed in your 
 `liferay-plugin-package.properties` file, these will likely need to be removed.
@@ -237,11 +229,11 @@ If you have any Required Deployment Contexts listed in your
 - `portal-compat-hook`: Because this tutorial is focused on upgrading a theme 
   rather than importing content and assets, it does not cover the Resources 
   Importer. You can learn more about the Resources Importer in the 
-  [Importing Resources with a Theme](/develop/tutorials/-/knowledge_base/7-0/importing-resources-with-a-theme) tutorial.
+  [Importing Resources with a Theme](/docs/7-0/tutorials/-/knowledge_base/t/importing-resources-with-a-theme) tutorial.
 
-### Upgrading Stylesheets [](id=upgrading-stylesheets)
+### Upgrading Stylesheets
 
-#### An Important Note About "Core" Stylesheets [](id=an-important-note-about-core-stylesheets)
+#### An Important Note About "Core" Stylesheets
 
 If you've made customizations to "core" @product@ stylesheets, it's 
 recommended that you not use these customizations right away. @product@'s 
@@ -272,20 +264,16 @@ These "core" files would be:
 
 - `taglib.css`
 
-+$$$
-
-**Important:** Rename these files to something like `my_application.css`, 
-`my_aui.css`, etc. If you don't rename these files, you may get an error when 
-building your theme. This is because Sass is importing ambiguous names like 
-application, aui, etc.
-
-$$$
+| **Important:** Rename these files to something like `my_application.css`,
+| `my_aui.css`, etc. If you don't rename these files, you may get an error when
+| building your theme. This is because Sass is importing ambiguous names like
+| application, aui, etc.
 
 It's recommended that you get your theme working in @product-ver@ first, 
 and then audit the styles in these "core" CSS files to see if they're still 
 necessary and don't cause any issues.
 
-#### Renaming CSS Files [](id=renaming-css-files)
+#### Renaming CSS Files
 
 @product-ver@ now uses the `.scss` extension for Sass stylesheets.
 
@@ -298,7 +286,7 @@ necessary and don't cause any issues.
     For example, `my-feature.css` becomes `_my-feature.scss`, and `fonts.css` 
     becomes `_fonts.scss`.
 
-#### Imported Stylesheet References [](id=imported-stylesheet-references)
+#### Imported Stylesheet References
 
 If you've imported any renamed stylesheets into another, you'll want to update 
 those references.
@@ -311,7 +299,7 @@ to:
 
     @import "my-fonts";
 
-#### Sass Framework Import [](id=sass-framework-import)
+#### Sass Framework Import
 
 Beginning with version 7.0, Liferay Portal now uses 
 [Bourbon](http://bourbon.io/) 
@@ -325,7 +313,7 @@ But you must still import or link to these to use them.
 Remove `@import "compass"` from all your Sass files, and don't worry about 
 importing Bourbon.
 
-#### Mixins [](id=mixins)
+#### Mixins
 
 When Liferay Portal switched from using Compass to 
 [Bourbon](http://bourbon.io/), 
@@ -377,11 +365,11 @@ becomes:
 Please refer to [Compass](http://compass-style.org/index/mixins/) and 
 [Bourbon](http://bourbon.io/docs/#mixins) documentation for more details.
 
-#### Bootstrap 3 [](id=bootstrap-3)
+#### Bootstrap 3
 
 If you've used Bootstrap 2.3.2 in your theme, a [migration guide](http://getbootstrap.com/migration/) is available.
 
-#### Remove `.aui` Class Used In Descendant Selectors [](id=remove-aui-class-used-in-descendant-selectors)
+#### Remove `.aui` Class Used In Descendant Selectors
 
 The class `.aui` is no longer in use. Selectors that contain `.aui` as a parent 
 qualifier must be modified, or those selectors will not match the expected 
@@ -436,7 +424,7 @@ or maybe:
         // ...
     }
 
-### Upgrading JavaScript [](id=upgrading-javascript)
+### Upgrading JavaScript
 
 In August 2014 
 [Yahoo stopped all new development of YUI](https://yahooeng.tumblr.com/post/96098168666/important-announcement-regarding-yui), 
@@ -453,7 +441,7 @@ Moving forward, it's recommended to migrate your AlloyUI/YUI code to either
 Metal.js or the framework of your choice. Below, you'll find some libraries used 
 in @product@. Feel free to use them as well.
 
-#### jQuery [](id=jquery)
+#### jQuery
 
 [jQuery](https://jquery.com/) is a fast, small, and feature-rich JavaScript 
 library. It makes things like HTML document traversal and manipulation, event 
@@ -462,7 +450,7 @@ developers, making it ideal for getting started quickly.
 
 For more in depth coverage, see [jQuery's documentation](http://api.jquery.com/).
 
-#### Lodash [](id=lodash)
+#### Lodash
 
 [Lodash](https://lodash.com/) is a modern JavaScript utility library delivering 
 modularity, performance & extras. It's used in @product@ to fill the void left 
@@ -470,7 +458,7 @@ by YUI's utility modules.
 
 For more in depth coverage, see [Lodash's documentation](http://lodash.com/docs/).
 
-#### Metal.js [](id=metal-js)
+#### Metal.js
 
 Written by Liferay to specifically to meet the needs of @product@, 
 [Metal.js](http://www.metaljs.com/) 
@@ -478,7 +466,7 @@ is a JavaScript library for building UI components in a solid, flexible way.
 
 For more in depth coverage, see [Metal.js's documentation](http://metaljs.com/docs/)
 
-### Upgrading Theme Templates [](id=upgrading-theme-templates)
+### Upgrading Theme Templates
 
 In prior versions of Liferay Portal, Velocity templates (`.vm` files) were the 
 default template language for writing theme markup. But Velocity had
@@ -488,7 +476,7 @@ the default template language, and Velocity templates are deprecated.
 With that in mind, if your themes are written in `.vm` files, they should still 
 work, but you're missing out on additional theme features. In a future release, support for Velocity templates will be removed.
 
-#### Migrating to Freemarker Templates [](id=migrating-to-freemarker-templates)
+#### Migrating to Freemarker Templates
 
 For a typical theme, migrating to Freemarker should be simple. The syntaxes of 
 both languages are relatively similar.
@@ -554,20 +542,20 @@ Here's a comparison:
 Whichever language you decide to use, there are several convenient macros
 included with @product@: 
 
-- [Freemarker macros on LDN](/develop/tutorials/-/knowledge_base/7-0/freemarker-macros)
+- [Freemarker macros on LDN](/docs/7-0/tutorials/-/knowledge_base/t/freemarker-macros)
 
 - [Freemarker macros source](https://github.com/liferay/liferay-portal/blob/7.0.2-ga3/modules/apps/foundation/portal-template/portal-template-freemarker/src/main/resources/FTL_liferay.ftl)
 
 - [Velocity macros source](https://github.com/liferay/liferay-portal/blob/7.0.2-ga3/modules/apps/foundation/portal-template/portal-template-velocity/src/main/resources/VM_liferay.vm)
 
-### Noteworthy Breaking Changes [](id=noteworthy-breaking-changes)
+### Noteworthy Breaking Changes
 
 There are many changes since Liferay Portal 6.1 which break in version 7.0. Some
 of these changes are documented in 
-[@product@'s Breaking Changes](/develop/reference/-/knowledge_base/7-0/breaking-changes).
+[@product@'s Breaking Changes](/docs/7-0/reference/-/knowledge_base/r/breaking-changes).
 Below are some notable ones. 
 
-#### Dockbar Is Now Called Control Menu [](id=dockbar-is-now-called-control-menu)
+#### Dockbar Is Now Called Control Menu
 
 In `portal_normal.vm`, admin controls are now called using `#control_menu()`.
 
@@ -583,7 +571,7 @@ Liferay Portal 6.1:
 
     #control_menu()
 
-#### Portlet Configuration Options [](id=portlet-configuration-options)
+#### Portlet Configuration Options
 
 In `portlet.vm`, portlet menu icons have been condensed into a single call and 
 are now controlled using the `PortletConfigurationIcon` classes.
@@ -604,10 +592,10 @@ Liferay Portal 6.1:
 
 See Liferay Portal's Breaking Changes for more details:
 
-- [Removed the Tags that Start with portlet:icon-](/develop/reference/-/knowledge_base/7-0/breaking-changes#removed-the-tags-that-start-with-portleticon-)
-- [Portlet Configuration Options May Not Always Be Displayed](/develop/reference/-/knowledge_base/7-0/breaking-changes#portlet-configuration-options-may-not-always-be-displayed)
+- [Removed the Tags that Start with portlet:icon-](/docs/7-0/reference/-/knowledge_base/r/breaking-changes#removed-the-tags-that-start-with-portleticon-)
+- [Portlet Configuration Options May Not Always Be Displayed](/docs/7-0/reference/-/knowledge_base/r/breaking-changes#portlet-configuration-options-may-not-always-be-displayed)
 
-#### Navigation Item Icons [](id=navigation-item-icons)
+#### Navigation Item Icons
 
 In `navigation.vm`, access to icons have been changed, to minimize dependency on 
 taglibs.
@@ -620,9 +608,9 @@ Liferay Portal 6.1:
 
     $theme.layoutIcon($nav_item.getLayout())
  
-See [Liferay Portal's Breaking Changes](/develop/reference/-/knowledge_base/7-0/breaking-changes#removed-the-icon-method-from-navitem) for more details.
+See [Liferay Portal's Breaking Changes](/docs/7-0/reference/-/knowledge_base/r/breaking-changes#removed-the-icon-method-from-navitem) for more details.
 
-### Upgrading Layout Templates [](id=upgrading-layout-templates)
+### Upgrading Layout Templates
 
 The only significant change to Layout Templates has been the addition of 
 [Bootstrap's Grid system](https://getbootstrap.com/docs/3.3/css/#grid).
@@ -657,10 +645,10 @@ Liferay Portal 7.0:
 
     </div>
  
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Themes Generator](/develop/tutorials/-/knowledge_base/7-0/themes-generator)
+[Themes Generator](/docs/7-0/tutorials/-/knowledge_base/t/themes-generator)
 
-[Themelets](/develop/tutorials/-/knowledge_base/7-0/themelets)
+[Themelets](/docs/7-0/tutorials/-/knowledge_base/t/themelets)
 
-[Importing Resources with a Theme](/develop/tutorials/-/knowledge_base/7-0/importing-resources-with-a-theme)
+[Importing Resources with a Theme](/docs/7-0/tutorials/-/knowledge_base/t/importing-resources-with-a-theme)

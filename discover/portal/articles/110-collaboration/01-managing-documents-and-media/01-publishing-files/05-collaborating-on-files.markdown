@@ -1,4 +1,8 @@
-# Collaborating on Files [](id=collaborating-on-files)
+---
+header-id: collaborating-on-files
+---
+
+# Collaborating on Files
 
 Not only does @product@'s Documents and Media enable you to publish files
 easily, but it also provides a terrific environment for collaborating on
@@ -50,7 +54,7 @@ to check documents out from within the web interface and download them to his
 computer to work on them. Let's follow Tenzing as he produces multiple versions
 of the newsletter. 
 
-## Creating New File Versions [](id=creating-new-file-versions)
+## Creating New File Versions
 
 To prevent other users from accidentally overwriting changes you're making to a
 document, the Document Library allows you to *checkout* the document. The user
@@ -69,7 +73,7 @@ cancel checkout. Tenzing proceeds with the next step towards contributing to the
 file.
 
 Unless you're using
-[Liferay Sync](/discover/portal/-/knowledge_base/7-0/using-liferay-sync-on-your-desktop)
+[Liferay Sync](/docs/7-0/user/-/knowledge_base/u/using-liferay-sync-on-your-desktop)
 or a local drive mapped to the file's WebDAV (explained in the next section)
 URL, you'll typically follow the basic workflow below to edit a Document Library
 file from your machine:
@@ -101,16 +105,12 @@ Select the *Changes Create a Major Version* checkbox, describe your changes in
 the *Change Log* field, and click *Save*. The file's major version number is
 incremented and its status is now *Approved*.
 
-+$$$
-
-**Note**: If you *Edit* a file without checking it out, the Edit screen displays
-a checkbox *Customize the Version Number Increment and Describe My Changes*. For
-your file modification, if you want to select between major/minor version types
-and/or want to enter a change log then select the checkbox. On clicking
-*Publish*, the *Describe Your Changes* screen appears so you can specify your
-change's version increment type and description.
-
-$$$
+| **Note**: If you *Edit* a file without checking it out, the Edit screen displays
+| a checkbox *Customize the Version Number Increment and Describe My Changes*. For
+| your file modification, if you want to select between major/minor version types
+| and/or want to enter a change log then select the checkbox. On clicking
+| *Publish*, the *Describe Your Changes* screen appears so you can specify your
+| change's version increment type and description.
 
 Since the file is checked in, any user can now check it out. Tenzing realizes
 there are some minor details he wants to add. As Tenzing, checkout the file once
@@ -153,7 +153,7 @@ document library to a network drive on her workstation. This lets her edit
 documents without having to meddle with the Lunar Resort site. It's worth
 explaining how they integrated her file manager with the document library. 
 
-## Desktop Access to Documents and Media [](id=desktop-access-to-documents-and-media)
+## Desktop Access to Documents and Media
 
 You can access the Document Library from your computer's file manager via
 WebDAV. WebDAV stands for Web-based Distributed Authoring and Versioning. It's a

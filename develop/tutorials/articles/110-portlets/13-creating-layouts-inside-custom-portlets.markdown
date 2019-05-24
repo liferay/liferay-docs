@@ -1,11 +1,15 @@
-# Creating Layouts inside Custom Portlets [](id=creating-layouts-inside-custom-portlets)
+---
+header-id: creating-layouts-inside-custom-portlets
+---
+
+# Creating Layouts inside Custom Portlets
 
 Page layout tags let you create layouts using Bootstrap 3 within your portlets.
 
 This tutorial explains the `<aui:*>` tags that developers can use to create 
 layouts.
 
-## AUI Container [](id=aui-container)
+## AUI Container
 
 The `<aui:container>` tag creates a container `<div>` tag to wrap `<aui:row>` 
 components and offer additional styling.
@@ -19,7 +23,7 @@ It supports the following attributes:
 | fluid | boolean | Whether to enable the container to span the entire width of the viewport. The default value is true |
 | id | String | An ID for the component instance |
 
-## AUI Row [](id=aui-row)
+## AUI Row
 
 The `<aui:row>` tag creates a row to hold `<aui:col>` components.
 
@@ -30,7 +34,7 @@ It supports the following attributes:
 | cssClass | String | A CSS class for styling the component |
 | id | String | An ID for the component instance |
 
-## AUI Col [](id=aui-col)
+## AUI Col
 
 The `<aui:col>` tag creates a column to display content in an `<aui:row>` 
 component.
@@ -48,7 +52,7 @@ It supports the following attributes:
 | span | int | The width of the column in the containing row as a fraction of 12. For example, a span of 4 would result in a column width 4/12 (or 1/3) of the total width of the containing row.
 | width | int | The width of the column in the containing row as a percentage, overriding the span attribute. The width is then converted to a span expressed as ((width/100) x 12), rounded to the nearest whole number. For example, a width of 33 would be converted to 3.96, which would be rounded up to a span value of 4.
 
-## Example JSP [](id=example-jsp)
+## Example JSP
 
 Below is an example layout created in a portlet:
 
@@ -94,6 +98,6 @@ Below is an example layout created in a portlet:
  
 Now you know how to create layouts inside your portlets!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Layout Templates with the Liferay Theme Generator](/develop/tutorials/-/knowledge_base/7-0/creating-layout-templates-with-the-themes-generator-0)
+[Layout Templates with the Liferay Theme Generator](/docs/7-0/tutorials/-/knowledge_base/t/creating-layout-templates-with-the-themes-generator-0)

@@ -1,4 +1,8 @@
-# Pre upgrade - Speed up the process [](id=pre-upgrade-speed-up-the-process)
+---
+header-id: pre-upgrade-speed-up-the-process
+---
+
+# Pre upgrade - Speed up the process
 
 The most complex step in upgrading @product@ is running the process
 that upgrades the database from the old version to the new version. It
@@ -8,7 +12,7 @@ You can shorten this process by performing a few steps before you upgrade your
 production environment. Here's a summary of the steps:
 
 1.  Copy your most
-    [recent complete backup](/discover/deployment/-/knowledge_base/7-0/backing-up-a-liferay-installation)
+    [recent complete backup](/docs/7-0/deploy/-/knowledge_base/d/backing-up-a-liferay-installation)
     from production to a non-production environment in which you can analyze
     your database and test upgrading, as explained in the remaining steps. 
 2.  [Examine your database](#analyzing-your-database-step-2).
@@ -24,7 +28,7 @@ production environment. Here's a summary of the steps:
 
 The sections that follow explain the more in-depth steps listed above.
 
-## Examine Your Database (Step 2) [](id=analyzing-your-database-step-2)
+## Examine Your Database (Step 2)
 
 Here are the most important things to examine in your non-production
 environment's copy of the production database:
@@ -197,26 +201,22 @@ an unneeded `Group` object also deletes related unneeded layouts, journal
 articles, and more. This reduces the number of records your upgrade needs to
 process, making your upgrade faster. 
 
-## Use Liferay's API to remove unused objects (Step 3) [](id=remove-unused-data-from-the-database-using-liferays-api-step-3)
+## Use Liferay's API to remove unused objects (Step 3)
 
 Your database analysis revealed tables that were large or contained lots of
 records. It's recommended to find unneeded objects that can be deleted by
 examining objects associated with these tables. Also there are some common areas
 (listed below) to look for unneeded objects. 
 
-+$$$
-
-**Important**: You should only use
-Liferay's API--[Core API](@platform-ref@/7.0-latest/javadocs/)
-and [app APIs](@app-ref@)--
-to delete objects because the API accounts for relationships between @product@
-objects. You can invoke the API through the Control Panel's script console or a
-portlet you create. 
-
-Never run SQL directly on your database to remove records. Your SQL might miss
-object relationships, resulting in orphaned objects and performance problems.
-
-$$$
+| **Important**: You should only use
+| Liferay's API--[Core API](@platform-ref@/7.0-latest/javadocs/)
+| and [app APIs](@app-ref@)--
+| to delete objects because the API accounts for relationships between @product@
+| objects. You can invoke the API through the Control Panel's script console or a
+| portlet you create.
+| 
+| Never run SQL directly on your database to remove records. Your SQL might miss
+| object relationships, resulting in orphaned objects and performance problems.
 
 Here are some common areas to find unneeded objects:
 
@@ -294,7 +294,7 @@ Here are some common areas to find unneeded objects:
 
 After you've removed unneeded objects, test your changes. 
 
-## Execute the upgrade process (Step 4) [](id=execute-the-upgrade-process-step-4)
+## Execute the upgrade process (Step 4)
 
 It's time to upgrade your non-production environment and note what upgrade
 processes take the longest. Each @product@ upgrade process logs how long it
@@ -317,14 +317,10 @@ processes. Consider searching for unneeded objects associated these longer
 upgrade processes. Once again, make sure to delete them using Liferay's API and
 test your changes. 
 
-+$$$
+| **Note**: Learning [how upgrade processes are created](/docs/7-0/tutorials/-/knowledge_base/t/creating-an-upgrade-process-for-your-app)
+| can help you understand their data better.
 
-**Note**: Learning [how upgrade processes are created](/develop/tutorials/-/knowledge_base/7-0/creating-an-upgrade-process-for-your-app)
-can help you understand their data better.
-
-$$$ 
-
-## Remove Unused Objects from Production (Step 8) [](id=remove-unused-objects-from-production-step-8)
+## Remove Unused Objects from Production (Step 8)
 
 Now that you have removed unused objects from your non-production environment
 and tested your changes, you can use Liferay's API to remove the same objects
@@ -334,7 +330,7 @@ issues, knowing that they're not related to upgrade processes. Another benefit
 of doing this even while you work through the upgrade is that your production
 environment will perform better and be easier to maintain.
 
-## Conclusion [](id=conclusion)
+## Conclusion
 
 By removing unused objects from @product@, you can both reduce
 upgrade time and improve your server's performance on the new version.

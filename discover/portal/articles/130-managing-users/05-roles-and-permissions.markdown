@@ -1,4 +1,8 @@
-# Roles and Permissions [](id=roles-and-permissions)
+---
+header-id: roles-and-permissions
+---
+
+# Roles and Permissions
 
 If a *role* were to win a Grammy or an Oscar or some other ego-feeding
 popularity contest, it better remember to thank all its *permissions* groupies
@@ -15,18 +19,14 @@ is likely to have permissions relevant to the specific Message Board portlets
 delegated to it. Users with this role inherit the permissions collected underneath
 the umbrella of the role.
 
-+$$$
+| **NOTE:** Roles are managed through the Control Panel, but not all permissions
+| are. Asset-level permissions (for instance, permission to edit an individual
+| blog post, or view a folder in the Documents and Media library) are managed from
+| the individual asset. See
+| [Application Permissions](/docs/7-0/user/-/knowledge_base/u/application-permissions)
+| for details.
 
-**NOTE:** Roles are managed through the Control Panel, but not all permissions
-are. Asset-level permissions (for instance, permission to edit an individual
-blog post, or view a folder in the Documents and Media library) are managed from
-the individual asset. See 
-[Application Permissions](/discover/portal/-/knowledge_base/7-0/application-permissions)
-for details.
-
-$$$
-
-## Managing Roles in Liferay [](id=managing-roles-in-liferay)
+## Managing Roles in Liferay
 
 Manage Liferay's roles in the Control Panel (*Control Panel* &rarr; *Users*
 &rarr; *Roles*).  There you'll find an application for creating roles, granting
@@ -42,31 +42,27 @@ optional. If you enter a name and a title, the title is displayed in the list of
 roles on the Roles page of the Control Panel. If you do not enter a title, the
 name is displayed. When you finish, click *Save*.
 
-+$$$
-
-**Note:** In addition to regular roles, site roles, and organization roles, there are also
-teams. Teams can be created by site administrators within a specific site. The
-permissions granted to a team are defined and applied only within the team's
-site. The permissions defined by regular, site, and organization roles, by
-contrast, are defined at the portal level, although they are applied to
-different scopes. The differences between the four types of roles can be
-described as follows:
-
-- Regular role: Permissions are defined at the *portal* level and are applied at
-  the *portal* level.
-
-- Site role: Permissions are defined at the *portal* level and are applied to
-  one *specific site*.
-
-- Organization role: Permissions are defined at the *portal* level and are
-  applied to one *specific organization*.
-
-- Team: Permissions are defined within a *specific site* and are assigned within
-  that *specific site*.
-
-Read [here](/discover/portal/-/knowledge_base/7-0/creating-teams-for-advanced-site-membership-management) For more information about teams.
-
-$$$
+| **Note:** In addition to regular roles, site roles, and organization roles, there are also
+| teams. Teams can be created by site administrators within a specific site. The
+| permissions granted to a team are defined and applied only within the team's
+| site. The permissions defined by regular, site, and organization roles, by
+| contrast, are defined at the portal level, although they are applied to
+| different scopes. The differences between the four types of roles can be
+| described as follows:
+| 
+| - Regular role: Permissions are defined at the *portal* level and are applied at
+|   the *portal* level.
+| 
+| - Site role: Permissions are defined at the *portal* level and are applied to
+|   one *specific site*.
+| 
+| - Organization role: Permissions are defined at the *portal* level and are
+|   applied to one *specific organization*.
+| 
+| - Team: Permissions are defined within a *specific site* and are assigned within
+|   that *specific site*.
+| 
+| Read [here](/docs/7-0/user/-/knowledge_base/u/creating-teams-for-advanced-site-membership-management) For more information about teams.
 
 After you save, your role is added to the exiting list of roles. To see what
 functions you can perform on your new role, click the *Actions* button.
@@ -90,7 +86,7 @@ role.-->
 Once you have a role you want to configure, the first step is often to define
 its permissions.
 
-## Defining Role Permissions [](id=defining-role-permissions)
+## Defining Role Permissions
 
 Roles collect permissions, so when a user is given a role, they receive all the
 permissions defined by the role. 
@@ -105,16 +101,12 @@ category (such as *Site Administration* &rarr; *Navigation* &rarr; *Site
 Pages*). Select any permissions that you'd like to add the role, then click
 *Save*. 
 
-+$$$
-
-**Note:** The Roles application in the Control Panel is not the only place where
-permissions are configured. You can configure a role's permissions for a particular
-application instance from its *Options*
-(![Options](../../images/icon-options.png)) menu. However, permissions
-granted or removed in the Control Panel override those made at the more granular
-level.
-
-$$$
+| **Note:** The Roles application in the Control Panel is not the only place where
+| permissions are configured. You can configure a role's permissions for a particular
+| application instance from its *Options*
+| (![Options](../../images/icon-options.png)) menu. However, permissions
+| granted or removed in the Control Panel override those made at the more granular
+| level.
 
 There are three basic categories of permissions: *Control Panel*, *Site
 Administration*, and *User*. By default, any Liferay user can manage their
@@ -203,7 +195,7 @@ Roles are very powerful and allow portal administrators to define various
 permissions in whatever combinations they like. This gives you as much
 flexibility as possible to build the site you have designed.
 
-## Permission for Delegating Social Activities Configuration [](id=permission-for-delegating-social-activities-configuration)
+## Permission for Delegating Social Activities Configuration
 
 There's a permission that allows site administrators to delegate responsibility
 for configuring social activities to other users. To dd this permission to a
@@ -220,7 +212,7 @@ permissions category. Flag all of the permissions and then click *Save*:
 Once these permissions are assigned, assignees can manage the site's Social
 Activities.
 
-## Deleting Asset Containers [](id=deleting-asset-containers)
+## Deleting Asset Containers
 
 A Web Content Folder contains Web Content articles. The Web Content Folder is
 an asset container, and the Web Content Article is an asset. It's possible to
@@ -235,7 +227,7 @@ Folders, Message Boards Categories, Wiki Nodes, and Documents and Media Folders.
 You might not need to create a role for a certain functionality. Liferay
 provides many pre-configured roles for your convenience.
 
-## Default Liferay Roles [](id=default-liferay-roles)
+## Default Liferay Roles
 
 In the Roles Application, you'll see a list of all the roles in Liferay, by
 scope. These are some of the pre-configured roles:
@@ -280,17 +272,13 @@ Power Users have personal sites.
   portal, including global portal settings and individual sites, organizations,
   and users.
 
-+$$$
-
-**Tip:** It's easy to overlook the differences between owner type roles and
-administrator type roles for sites and organizations. Site and organization
-administrators *cannot* remove the administrator or owner role from any other
-administrator or owner, and they *cannot* appoint other users as site or
-organization administrators or owners. 
-
-In contrast, site and organization owners *can* do those things.
-
-$$$
+| **Tip:** It's easy to overlook the differences between owner type roles and
+| administrator type roles for sites and organizations. Site and organization
+| administrators *cannot* remove the administrator or owner role from any other
+| administrator or owner, and they *cannot* appoint other users as site or
+| organization administrators or owners.
+| 
+| In contrast, site and organization owners *can* do those things.
 
 Roles, and the permissions granted with their assignment, are foundational
 components in Liferay. Understanding their uses and configuration should enhance
@@ -298,7 +286,7 @@ your ability to configure @product@ to suit your organizational needs.
 
 
 <!--
-## Note About the Power Users Role [](id=note-about-the-power-users-role)
+## Note About the Power Users Role
 
 Prior to Liferay Portal 6.0, the default configurations of many Liferay portlets
 allowed power users, but not regular users, to access them. Liferay Portal 6.0 and
@@ -307,18 +295,14 @@ regular users. This way, portal administrators are not forced to use the power
 users role. However, Liferay encourages those who do to create their own custom
 permissions for the role. 
 
-+$$$
-
-**Note:** Prior to Liferay version 6.0, Power Users and Users did *not* have the
-same default permissions. So if are using Liferay 5.2 or a previous version,
-it's dangerous to remove the Power Users role from the default user
-associations: this could remove certain permissions you expect to apply to all
-users. If you decide to remove the Power Users role from the default user
-associations anyway, you will probably want to modify the permissions on certain
-portlets to make them accessible to all users. To do this, see the section on
-Plugins Configuration below.
-
-$$$
+| **Note:** Prior to Liferay version 6.0, Power Users and Users did *not* have the
+| same default permissions. So if are using Liferay 5.2 or a previous version,
+| it's dangerous to remove the Power Users role from the default user
+| associations: this could remove certain permissions you expect to apply to all
+| users. If you decide to remove the Power Users role from the default user
+| associations anyway, you will probably want to modify the permissions on certain
+| portlets to make them accessible to all users. To do this, see the section on
+| Plugins Configuration below.
 
 
 

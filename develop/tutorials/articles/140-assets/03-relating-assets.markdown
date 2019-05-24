@@ -1,4 +1,8 @@
-# Relating Assets [](id=relating-assets)
+---
+header-id: relating-assets
+---
+
+# Relating Assets
 
 The ability to relate assets is one of the most powerful features of Liferay's
 asset framework. By relating assets, you can connect individual pieces of
@@ -11,16 +15,16 @@ the Asset Publisher application.
 
 This tutorial shows you how to provide a way for authors to relate content.
 This tutorial assumes that you've
-[asset enabled](/develop/tutorials/-/knowledge_base/7-0/adding-updating-and-deleting-assets-for-custom-entities)
+[asset enabled](/docs/7-0/tutorials/-/knowledge_base/t/adding-updating-and-deleting-assets-for-custom-entities)
 your appliation. If you've already done this, go ahead and begin relating your
 assets!
 
-## Relating Assets in the Service Layer [](id=relating-assets-in-the-service-layer)
+## Relating Assets in the Service Layer
 
 First, you must make some modifications to your portlet's service layer. You
 must implement persisting your entity's asset relationships. In your portlet's
 `service.xml`, put the following line of code below any finder method elements
-and then [run](/develop/tutorials/-/knowledge_base/7-0/running-service-builder-and-understanding-the-generated-code)
+and then [run](/docs/7-0/tutorials/-/knowledge_base/t/running-service-builder-and-understanding-the-generated-code)
 Service Builder:
 
     <reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
@@ -64,7 +68,7 @@ Super! Now your portlet's service layer can handle related assets. Even so,
 there's still nothing in your portlet's UI that lets your users relate assets.
 You'll take care of that in the next step.
 
-## Relating Assets in the UI [](id=relating-assets-in-the-ui)
+## Relating Assets in the UI
 
 You typically implement the UI for linking assets in the JSP that you provide
 users the ability to create and edit your entity, This way only content creators
@@ -96,7 +100,7 @@ fully qualified class name as the key's name and the new simplified name as the
 key's value. Put the language key in file
 `docroot/WEB-INF/src/content/Language.properties` in your portlet. You can refer
 to the
-[Overriding Language Keys](/develop/tutorials/-/knowledge_base/7-0/overriding-language-keys)
+[Overriding Language Keys](/docs/7-0/tutorials/-/knowledge_base/t/overriding-language-keys)
 tutorial for more documentation on using language properties.
 
 Upon redeploying your portlet, the value you assigned to the fully qualified
@@ -107,7 +111,7 @@ application. The next thing you need to do is reveal any such related assets to
 the rest of your application's users. After all, you don't want to give everyone
 edit access just so they can view related assets!
 
-## Showing Related Assets [](id=showing-related-assets)
+## Showing Related Assets
 
 You can show related assets in your application's view of that entity or, if
 you've implemented asset rendering for your custom entity, you can show related
@@ -149,7 +153,7 @@ If you've already connected your portlet's view to the view JSP for your entity,
 you've completed the tutorial. You can otherwise follow the remainder of this
 tutorial to learn how to implement that connection. 
 
-## Creating a URL to Your New JSP [](id=creating-a-url-to-your-new-jsp)
+## Creating a URL to Your New JSP
 
 Now that you've implemented showing off this asset feature, you must connect
 your application's main view JSP to your entity's view JSP. If your main view JSP
@@ -190,12 +194,12 @@ the page.
 Excellent! Now you know how to implement related assets in your apps. Another
 thing you might want to do is investigate permissioning in the UI. For more
 information on this, see the tutorial
-[Checking Permissions in the UI](/develop/tutorials/-/knowledge_base/7-0/permissions-in-jsps#checking-permissions-in-the-ui).
+[Checking Permissions in the UI](/docs/7-0/tutorials/-/knowledge_base/t/permissions-in-jsps#checking-permissions-in-the-ui).
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Adding, Updating, and Deleting Assets for Custom Entities](/develop/tutorials/-/knowledge_base/7-0/adding-updating-and-deleting-assets-for-custom-entities)
+[Adding, Updating, and Deleting Assets for Custom Entities](/docs/7-0/tutorials/-/knowledge_base/t/adding-updating-and-deleting-assets-for-custom-entities)
 
-[What is Service Builder?](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
+[What is Service Builder?](/docs/7-0/tutorials/-/knowledge_base/t/what-is-service-builder)
 
-[Defining Content Relationships](/discover/portal/-/knowledge_base/7-0/defining-content-relationships)
+[Defining Content Relationships](/docs/7-0/user/-/knowledge_base/u/defining-content-relationships)

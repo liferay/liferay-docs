@@ -1,4 +1,8 @@
-# Using Documents and Media [](id=using-documents-and-media)
+---
+header-id: using-documents-and-media
+---
+
+# Using Documents and Media
 
 <div class="learn-path-step">
     <p>Creating Content<br>Step 2 of 7</p>
@@ -20,7 +24,7 @@ folders just as you would on a traditional desktop environment.
 
 Now you'll take advantage of these features in the Lunar Resort. 
 
-## Adding Files [](id=adding-files)
+## Adding Files
 
 You still need to create more content in the Lunar Resort, and this content 
 needs images. You'll upload all these images now in the Documents and Media 
@@ -52,7 +56,7 @@ library:
 Great! The Lunar Resort's Documents and Media library now contains more 
 images--enough to warrant organizing them in folders. 
 
-## Adding Folders [](id=adding-folders)
+## Adding Folders
 
 Your Documents and Media library is now a bit more crowded. It's time to 
 organize it with folders. Besides basic file organization, you can also use 
@@ -78,7 +82,7 @@ library:
 Sweet! The Lunar Resort's Documents and Media library now contains two folders. 
 You'll use them to organize images next. 
 
-## Organizing Media [](id=organizing-media)
+## Organizing Media
 
 Before moving your files into the new folders, it's important to know that you 
 can move files that are currently in use, without issue. For example, if a piece 

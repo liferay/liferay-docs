@@ -1,4 +1,8 @@
-# Disabling the Management Bar [](id=disabling-the-management-bar)
+---
+header-id: disabling-the-management-bar
+---
+
+# Disabling the Management Bar
 
 When there's no content in the app, you should disable all the Management Bar's 
 buttons, except the info button. 
@@ -25,8 +29,8 @@ buttons when the search container displays 0 results:
     
 Now you know how to disable the Management Bar!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Implementing a Management Bar Sort Filter](/develop/tutorials/-/knowledge_base/7-0/implementing-a-management-bar-sort-filter)
+[Implementing a Management Bar Sort Filter](/docs/7-0/tutorials/-/knowledge_base/t/implementing-a-management-bar-sort-filter)
 
-[Setting Search Container Animations](/develop/tutorials/-/knowledge_base/7-0/setting-search-container-animations)
+[Setting Search Container Animations](/docs/7-0/tutorials/-/knowledge_base/t/setting-search-container-animations)

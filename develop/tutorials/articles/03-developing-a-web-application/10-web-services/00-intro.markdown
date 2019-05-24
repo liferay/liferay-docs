@@ -1,4 +1,8 @@
-# Generating Web Services [](id=generating-web-services)
+---
+header-id: generating-web-services
+---
+
+# Generating Web Services
 
 Assets opened the door to support many features of @product@'s development
 framework. There's more to cover, but the Guestbook app's back-end is now mature 

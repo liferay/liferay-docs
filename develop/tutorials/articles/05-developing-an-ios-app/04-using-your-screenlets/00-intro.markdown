@@ -1,4 +1,8 @@
-# Using Your Screenlets [](id=using-your-screenlets)
+---
+header-id: using-your-screenlets
+---
+
+# Using Your Screenlets
 
 Now that you have the Guestbook List and Entry List Screenlets, you're ready to 
 put them to work. As you'll see, using these Screenlets isn't much more 

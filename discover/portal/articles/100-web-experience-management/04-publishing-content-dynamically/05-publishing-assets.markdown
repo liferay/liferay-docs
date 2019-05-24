@@ -1,4 +1,8 @@
-# Publishing Assets [](id=publishing-assets)
+---
+header-id: publishing-assets
+---
+
+# Publishing Assets
 
 As you create web content, it's important to keep in mind that to @product@, the
 pieces of content are assets, just like message board entries and blog posts.
@@ -9,7 +13,7 @@ This helps in creating a more dynamic web site: you can place user-created wiki
 entries, blog posts, or message board messages in context with your content.
 You'll examine some of the Asset Publisher's features next.
 
-## Querying for Content [](id=querying-for-content)
+## Querying for Content
 
 The Asset Publisher is a highly configurable application that lets you query for
 mixed types of content on the fly. By giving you the ability to control what and
@@ -52,7 +56,7 @@ start by learning how select content manually. You'll see that it's very similar
 to using the Web Content Display application except that you can select assets
 of any type, not just web content articles.
 
-### Selecting Assets Manually [](id=selecting-assets-manually)
+### Selecting Assets Manually
 
 By selecting *Manual* from the select box beneath *Asset Selection*, you're
 telling the Asset Publisher that you want to select content manually. You can
@@ -103,7 +107,7 @@ different scopes, it can be time-consuming to periodically update the assets
 that should be displayed. It's often more convenient to use the Asset Publisher
 to select content dynamically.
 
-### Selecting Assets Dynamically [](id=selecting-assets-dynamically)
+### Selecting Assets Dynamically
 
 The Asset Publisher's default behavior is to select assets dynamically according
 a set of customizable rules. These rules can be stacked on top of each other so
@@ -202,7 +206,7 @@ settings which you'll examine next.
 
 Other changes in the rest of the options will come into effect after clicking *Save*.
 
-## Configuring Display Settings [](id=configuring-display-settings)
+## Configuring Display Settings
 
 Open the *Display Settings* subtab of the Setup tab of the Asset Publisher's
 Configuration window. Here, you can configure many more settings that control
@@ -234,7 +238,7 @@ default site:
     There's also the *Rich Summary* and *Map* display templates that belong to
     the global scope. The Rich Summary template provides a summary view of each
     asset along with a *Read More* link to the article's full content. The Map
-    template displays [geolocalized assets](/discover/portal/-/knowledge_base/7-0/geolocating-assets)
+    template displays [geolocalized assets](/docs/7-0/user/-/knowledge_base/u/geolocating-assets)
     in either a Google Map or an Open Street Map provider. The map provider can
     be configured in Instance Settings, and Site Settings in the Advanced
     section.
@@ -254,17 +258,13 @@ where it was created. Similarly, a generic web content article would be
 displayed in the Asset Publisher of its configured display page. See the section
 below on display pages for more information.
 
-+$$$
-
-**Tip:** When the Asset Publisher displays web content articles that have an
-associated small image, the small image becomes a link to the full article. To
-use this feature, add or edit a web content article that the Asset Publisher
-should display. Before clicking *Publish*, click on *Abstracts*, flag *Small
-Image*, and upload an image. Then click *Publish*. Once your web content
-article appears in the Asset Publisher's list, clicking the small image takes
-you to the full article.
-
-$$$
+| **Tip:** When the Asset Publisher displays web content articles that have an
+| associated small image, the small image becomes a link to the full article. To
+| use this feature, add or edit a web content article that the Asset Publisher
+| should display. Before clicking *Publish*, click on *Abstracts*, flag *Small
+| Image*, and upload an image. Then click *Publish*. Once your web content
+| article appears in the Asset Publisher's list, clicking the small image takes
+| you to the full article.
 
 **Number of Items to Display**: This selector lets you select the maximum number
 of assets that can be displayed by the Asset Publisher. If pagination, however,
@@ -306,7 +306,7 @@ formats:
 - TXT
 
     Please refer to the section on
-    [Liferay Server Administration](/discover/portal/-/knowledge_base/6-2/server-administration)
+    [Liferay Server Administration](/docs/6-2/user/-/knowledge_base/u/server-administration)
     for information on setting up Liferay's OpenOffice/LibreOffice document
     conversion functionality.
 
@@ -329,14 +329,10 @@ with a print view of the asset. Enabling flags, related assets, ratings,
 comments, comment ratings, or social bookmarks add links to the corresponding
 social features to the view full of the asset in the Asset Publisher.
 
-+$$$
-
-**Tip:** An alternate way to add flags, comments, and ratings to a page is
-through the *Page Flags*, *Page Comments*, and *Page Ratings* applications. Just
-add the applications in the appropriate location near the asset you'd like to
-have feedback for.
-
-$$$
+| **Tip:** An alternate way to add flags, comments, and ratings to a page is
+| through the *Page Flags*, *Page Comments*, and *Page Ratings* applications. Just
+| add the applications in the appropriate location near the asset you'd like to
+| have feedback for.
 
 When enabling social bookmarks, you're given sub-options to edit the display
 style of your social bookmarks and whether they are listed at the top or bottom
@@ -357,7 +353,7 @@ adjust the ones that apply to your situation. You'll want to use the Asset
 Publisher to query for different kinds of assets in @product@ that contain
 relevant information for your users.
 
-## Configuring Asset Publisher Subscriptions [](id=configuring-asset-publisher-subscriptions)
+## Configuring Asset Publisher Subscriptions
 
 The Asset Publisher application supports two kinds of subscriptions: RSS
 subscriptions and email subscriptions. To enable subscriptions, click the Asset
@@ -403,7 +399,7 @@ they're available, we'll need to document how to change these settings. -Cody
 
 Next, you'll look at Display Pages.
 
-## Content Display Pages [](id=content-display-pages)
+## Content Display Pages
 
 If you've been using @product@ for a while, you might have noticed something about
 how @product@ handles web content--content is never tied directly to a page. While
@@ -429,15 +425,11 @@ configuration window. Then navigate to the Display Settings tab and check the
 settings, set the Display Style to *Simple* and the Asset Link Behavior to *View
 in Context*.
 
-+$$$
-
-**Note:** Web content linked in the Asset Publisher can be viewed by clicking
-their asset links. With the *View in Context* behavior checked, the link
-displays the web content in its configured display page. If the web content does
-not have a configured display page, it is displayed in the Web Content Display
-application to which the asset belongs.
-
-$$$
+| **Note:** Web content linked in the Asset Publisher can be viewed by clicking
+| their asset links. With the *View in Context* behavior checked, the link
+| displays the web content in its configured display page. If the web content does
+| not have a configured display page, it is displayed in the Web Content Display
+| application to which the asset belongs.
 
 You may now be thinking, "Wait, you just told me that each web content item has
 its own URL, and that this is somehow related to pages where we display a whole

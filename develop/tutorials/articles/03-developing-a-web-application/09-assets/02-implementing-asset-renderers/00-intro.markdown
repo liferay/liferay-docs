@@ -1,4 +1,8 @@
-# Implementing Asset Renderers [](id=implementing-asset-renderers)
+---
+header-id: implementing-asset-renderers
+---
+
+# Implementing Asset Renderers
 
 Assets are generic versions of entities, so they contain fields like `title`,
 `description`, and `summary`. @product@ uses these fields to display assets. 

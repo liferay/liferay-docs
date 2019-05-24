@@ -1,4 +1,8 @@
-# Generating New Projects Using Archetypes [](id=generating-new-projects-using-archetypes)
+---
+header-id: generating-new-projects-using-archetypes
+---
+
+# Generating New Projects Using Archetypes
 
 Creating Maven projects from scratch can be a lot of work. What dependencies
 does my Liferay portlet project need? What does a Liferay Maven Service Builder
@@ -29,36 +33,32 @@ are compatible with @product-ver@.
 Here's a brief list of some popular Maven archetypes provided by Liferay:
 
 - Activator
-- [Context Contributor](/develop/tutorials/-/knowledge_base/7-0/context-contributors)
-- [Liferay Faces](/develop/tutorials/-/knowledge_base/7-0/jsf-portlets-with-liferay-faces)
+- [Context Contributor](/docs/7-0/tutorials/-/knowledge_base/t/context-contributors)
+- [Liferay Faces](/docs/7-0/tutorials/-/knowledge_base/t/jsf-portlets-with-liferay-faces)
   portlets
     - [Alloy](https://web.liferay.com/community/liferay-projects/liferay-faces/alloy)
     - [ICEfaces](http://www.icesoft.org/java/projects/ICEfaces/overview.jsf)
     - [JSF](https://web.liferay.com/community/liferay-projects/liferay-faces/overview)
     - [PrimeFaces](http://primefaces.org/)
     - [RichFaces](http://richfaces.jboss.org/)
-- [MVC Portlet](/develop/tutorials/-/knowledge_base/7-0/liferay-mvc-portlet)
-- [Panel App](/develop/tutorials/-/knowledge_base/7-0/customizing-the-product-menu#adding-custom-panel-apps)
-- [Portlet Provider](/develop/tutorials/-/knowledge_base/7-0/providing-portlets-to-manage-requests)
-- [Service Builder](/develop/tutorials/-/knowledge_base/7-0/what-is-service-builder)
+- [MVC Portlet](/docs/7-0/tutorials/-/knowledge_base/t/liferay-mvc-portlet)
+- [Panel App](/docs/7-0/tutorials/-/knowledge_base/t/customizing-the-product-menu#adding-custom-panel-apps)
+- [Portlet Provider](/docs/7-0/tutorials/-/knowledge_base/t/providing-portlets-to-manage-requests)
+- [Service Builder](/docs/7-0/tutorials/-/knowledge_base/t/what-is-service-builder)
 - Service Wrapper
 - Vaadin Liferay portlet
 
 For documentation on the archetypes (project templates) compatible with @product-ver@,
 see the
-[Project Templates](/develop/reference/-/knowledge_base/7-0/project-templates)
+[Project Templates](/docs/7-0/reference/-/knowledge_base/r/project-templates)
 reference section. Visit Maven's
 [Archetype Generation](http://maven.apache.org/archetype/maven-archetype-plugin/generate-mojo.html)
 documentation for further details on how to modify the Maven archetype
 generation process.
 
-+$$$
-
-**Note:** If you're creating a JSF portlet using Liferay Faces, you can find
-example archetype declarations for JSF component suites at
-[http://www.liferayfaces.org](http://www.liferayfaces.org/). 
-
-$$$
+| **Note:** If you're creating a JSF portlet using Liferay Faces, you can find
+| example archetype declarations for JSF component suites at
+| [http://www.liferayfaces.org](http://www.liferayfaces.org/).
 
 Here's an example that creates a Liferay MVC portlet using its Liferay Maven
 archetype.

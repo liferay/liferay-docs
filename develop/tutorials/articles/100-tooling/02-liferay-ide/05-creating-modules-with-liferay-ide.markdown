@@ -1,4 +1,8 @@
-# Creating Modules with Liferay @ide@ [](id=creating-modules-with-liferay-ide)
+---
+header-id: creating-modules-with-liferay-ide
+---
+
+# Creating Modules with Liferay @ide@
 
 @ide@ provides a Module Project Wizard for users to create a variety of
 different module projects. You can create a new Liferay module project by
@@ -9,7 +13,7 @@ navigating to *File* &rarr; *New* &rarr; *Liferay Module Project*.
 You're given options for project name, location, build type, and template type.
 You can build your project using Gradle or Maven. If you're unsure for which
 template type to choose, see the
-[Project Templates](/develop/reference/-/knowledge_base/7-0/project-templates)
+[Project Templates](/docs/7-0/reference/-/knowledge_base/r/project-templates)
 reference section. Click *Next* and you're given additional configuration
 options for a component class.
 
@@ -22,7 +26,7 @@ The properties you assign are the ones found in the `@Component` annotation's
 Once you've configured your module project's component class, click *Finish* to
 create your project.
 
-## Creating Component Classes [](id=creating-component-classes)
+## Creating Component Classes
 
 You can also create a new component class for a pre-existing module project.
 Navigate to *File* &rarr; *New* &rarr; *Liferay Component Class*. This is a
@@ -47,7 +51,7 @@ Template` list:
 - *Struts in Action*: creates a new struts action
 - *Struts Portlet Action*: creates a new struts portlet action
 
-## Possible Dependency Issues [](id=possible-dependency-issues)
+## Possible Dependency Issues
 
 When selecting the `Authenticator`, `Portlet Action Command`, `Rest`,
 or `Service Wrapper` templates, you may run into some dependency issues that

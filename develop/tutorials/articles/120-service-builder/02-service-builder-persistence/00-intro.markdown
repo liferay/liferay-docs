@@ -1,4 +1,8 @@
-# Service Builder Persistence [](id=service-builder-persistence)
+---
+header-id: service-builder-persistence
+---
+
+# Service Builder Persistence
 
 Liferay's Service Builder can generate your project's persistence layer by
 automating the creation of interfaces and classes. Your application's

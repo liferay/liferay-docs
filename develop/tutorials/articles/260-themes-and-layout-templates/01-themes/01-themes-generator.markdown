@@ -1,4 +1,8 @@
-# Liferay Theme Generator [](id=themes-generator)
+---
+header-id: themes-generator
+---
+
+# Liferay Theme Generator
 
 The Liferay Theme Generator is an easy-to-use command-line wizard that
 streamlines the theme creation process. It is independent of the Liferay Plugins
@@ -8,13 +12,9 @@ just one of
 This tutorial focuses on using the Liferay Theme Generator to create themes. In 
 just a few steps, you'll have a working Liferay theme.
 
-+$$$
-
-**Note:** The [Liferay Theme Generator](https://github.com/liferay/generator-liferay-theme)
-is unsupported. The tool is still in development and is not guaranteed to work
-on all platforms and environments. 
-
-$$$
+| **Note:** The [Liferay Theme Generator](https://github.com/liferay/generator-liferay-theme)
+| is unsupported. The tool is still in development and is not guaranteed to work
+| on all platforms and environments.
 
 This tutorial demonstrates how to:
 
@@ -24,7 +24,7 @@ This tutorial demonstrates how to:
 
 The first step is to install the Liferay Theme Generator.
 
-## Installing the Theme Generator [](id=installing-the-theme-generator)
+## Installing the Theme Generator
 
 The Liferay Theme Generator has several dependencies. Follow these steps to 
 install them:
@@ -92,7 +92,7 @@ install them:
 If you are on Windows, you must do additional setup for generated themes to use
 Sass. 
 
-### Installing Sass on Windows [](id=installing-sass-on-windows)
+### Installing Sass on Windows
 
 To use Sass on Windows, you must use either Sass from node-sass or Sass from
 Ruby. By default, the generator creates theme projects to use node-sass; but you
@@ -100,21 +100,17 @@ can reconfigure them to use Ruby based Sass and Compass. Since node-sass
 indirectly requires Visual Studio, developers who are not already using Visual
 Studio may opt to use Ruby based Sass and Compass instead of node-sass.
 
-+$$$
-
-**Note:** If your theme was built with an older version of the Liferay Theme 
-Generator and specifies the `"liferay-theme-deps-7.0": "1.0.0"` dependency in 
-its `package.json`, `npm install` may fail in Liferay DXP due to its dependency 
-on node-sass `v3.13.1`. To fix this issue, change the dev dependency in your 
-`package.json` to `"liferay-theme-deps-7.0": "7.0.0"` and rebuild your theme. We 
-recommend that you use the latest 7.x.x version of the Theme Generator and 
-dependencies in your `package.json` to ensure full compatibility. 
-
-$$$
+| **Note:** If your theme was built with an older version of the Liferay Theme
+| Generator and specifies the `"liferay-theme-deps-7.0": "1.0.0"` dependency in
+| its `package.json`, `npm install` may fail in Liferay DXP due to its dependency
+| on node-sass `v3.13.1`. To fix this issue, change the dev dependency in your
+| `package.json` to `"liferay-theme-deps-7.0": "7.0.0"` and rebuild your theme. We
+| recommend that you use the latest 7.x.x version of the Theme Generator and
+| dependencies in your `package.json` to ensure full compatibility.
 
 This section explains both Sass installations. 
 
-#### Installing Sass from node-sass [](id=installing-sass-from-node-sass)
+#### Installing Sass from node-sass
 
 By default, the generator uses Sass from node-sass. node-sass requires node-gyp,
 which in turn requires Python and Visual Studio. The 
@@ -123,18 +119,14 @@ explain how to set up node-gyp, Python, and Visual Studio. Since Visual Studio
 is a particularly large dependency, if you aren't already using Visual Studio 
 you might want to consider using Ruby Sass instead of node-sass. 
 
-#### Installing Ruby Sass and Compass [](id=installing-ruby-sass-and-compass)
+#### Installing Ruby Sass and Compass
 
 As an alternative to using Sass from node-sass, you can use Sass from Ruby.
 Liferay themes require using Compass along with Ruby based Sass. In order to
 install and use Sass and Compass, you must install Ruby via the [Ruby installer](http://rubyinstaller.org/).
 
-+$$$
-
-**Note:** Sass version 3.5 has compatibility issues with Compass. We recommend 
-that you install Sass version 3.4.0 as shown in the command below.  
-
-$$$
+| **Note:** Sass version 3.5 has compatibility issues with Compass. We recommend
+| that you install Sass version 3.4.0 as shown in the command below.
 
 The following commands install the Sass and Compass gems:
 
@@ -148,38 +140,30 @@ configure a project to use Ruby based Sass and Compass.
 Now that you've installed the Liferay Theme Generator and theme dependencies, 
 you can generate a theme.
 
-## Running the Liferay Theme Generator [](id=running-the-themes-generator)
+## Running the Liferay Theme Generator
 
 When you installed the Liferay Theme Generator, you also installed three
 sub-generators with it: a 
-[layout template creator](/develop/tutorials/-/knowledge_base/7-0/creating-layout-templates-with-the-themes-generator-0), 
+[layout template creator](/docs/7-0/tutorials/-/knowledge_base/t/creating-layout-templates-with-the-themes-generator-0), 
 a 
-[themelet creator](/develop/tutorials/-/knowledge_base/7-0/themelets), 
+[themelet creator](/docs/7-0/tutorials/-/knowledge_base/t/themelets), 
 and a 
-[theme importer](/develop/tutorials/-/knowledge_base/7-0/migrating-a-6-2-theme-to-liferay-7). 
+[theme importer](/docs/7-0/tutorials/-/knowledge_base/t/migrating-a-6-2-theme-to-liferay-7). 
 For the purposes of this tutorial, the focus will be on the default Liferay 
 Theme Generator.
 
-+$$$
-
-**Note**: If you run into permissions issues during theme generation, make sure 
-you have read/write access to all folders on your system. 
-
-$$$
+| **Note**: If you run into permissions issues during theme generation, make sure
+| you have read/write access to all folders on your system.
 
 From a directory in which you want to create a theme, run the following command:
 
     yo liferay-theme
 
-+$$$
-    
-**Note**: Some theme options are deprecated for 7.0 (such as Velocity theme 
-templates). To view the deprecated options, run the generator with the 
-`--deprecated` flag:
-
-    yo liferay-theme --deprecated
-    
-$$$
+| **Note**: Some theme options are deprecated for 7.0 (such as Velocity theme
+| templates). To view the deprecated options, run the generator with the
+| `--deprecated` flag:
+| 
+|     yo liferay-theme --deprecated
 
 The Liferay Theme Generator prompts you for the following things:
 
@@ -205,21 +189,17 @@ The Liferay Theme Generator prompts you for the following things:
 The generator creates a new theme project in your current directory. The theme
 inherits styles from the [liferay-theme-styled](https://www.npmjs.com/package/liferay-theme-styled)
 theme. Note that you can switch to using a different base theme by executing the
-[`gulp extend`](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks)
+[`gulp extend`](/docs/7-0/reference/-/knowledge_base/r/theme-gulp-tasks)
 command. 
 
-+$$$
-
-**Note**: The 
-[liferay-theme-styled](https://www.npmjs.com/package/liferay-theme-styled) 
-and 
-[liferay-theme-unstyled](https://www.npmjs.com/package/liferay-theme-unstyled) 
-themes are base themes. They're analogous to Java APIs. Liferay's Classic theme 
-and other themes that use liferay-theme-styled or liferay-theme-unstyled as a 
-base theme are analogous to API implementations--they're not meant to be 
-extended. Extending Liferay's Classic theme is strongly discouraged.
-
-$$$
+| **Note**: The
+| [liferay-theme-styled](https://www.npmjs.com/package/liferay-theme-styled)
+| and
+| [liferay-theme-unstyled](https://www.npmjs.com/package/liferay-theme-unstyled)
+| themes are base themes. They're analogous to Java APIs. Liferay's Classic theme
+| and other themes that use liferay-theme-styled or liferay-theme-unstyled as a
+| base theme are analogous to API implementations--they're not meant to be
+| extended. Extending Liferay's Classic theme is strongly discouraged.
 
 **Important**: By default, your theme is based off of the styled theme and uses
 lib-sass/bourbon, instead of Compass. If, however, you are on Windows and are
@@ -268,31 +248,27 @@ To deploy your theme to your configured @product@ instance, execute this command
     gulp deploy
 
 You can apply your theme by following the instructions found in the 
-[Creating and Managing Pages](/discover/portal/-/knowledge_base/7-0/creating-and-managing-pages#customizing-the-look-and-feel-of-site-pages)
+[Creating and Managing Pages](/docs/7-0/user/-/knowledge_base/u/creating-and-managing-pages#customizing-the-look-and-feel-of-site-pages)
 User Guide. 
 
-+$$$
-
-**Note:** By default theme images are cached by the browser. If you need to 
-update images in the theme, it is best practice to use versioning in the image 
-URL. For example, `background-image:url("../images/image.jpg?v=1")` . You can
-then just update the version each time you update the image, which will remove
-the potential for any caching issues.
-
-$$$
+| **Note:** By default theme images are cached by the browser. If you need to
+| update images in the theme, it is best practice to use versioning in the image
+| URL. For example, `background-image:url("../images/image.jpg?v=1")` . You can
+| then just update the version each time you update the image, which will remove
+| the potential for any caching issues.
     
 Now that you've created a theme and deployed it, you can use the theme project's
-[gulp tasks](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks) 
+[gulp tasks](/docs/7-0/reference/-/knowledge_base/r/theme-gulp-tasks) 
 to further develop and manage your theme. These offer basic functions, such as 
 `build` and `deploy`, as well as more complex interactions, such as auto 
 deploying when a change is made and setting the base theme.
 
 There you have it! You're ready to design a terrific theme!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Theme Gulp Tasks](/develop/reference/-/knowledge_base/7-0/theme-gulp-tasks)
+[Theme Gulp Tasks](/docs/7-0/reference/-/knowledge_base/r/theme-gulp-tasks)
 
-[Themelets](/develop/tutorials/-/knowledge_base/7-0/themelets)
+[Themelets](/docs/7-0/tutorials/-/knowledge_base/t/themelets)
 
-[Importing Resources with a Theme](/develop/tutorials/-/knowledge_base/7-0/importing-resources-with-a-theme)
+[Importing Resources with a Theme](/docs/7-0/tutorials/-/knowledge_base/t/importing-resources-with-a-theme)

@@ -1,4 +1,8 @@
-# FreeMarker Portlet Template [](id=freemarker-portlet-template)
+---
+header-id: freemarker-portlet-template
+---
+
+# FreeMarker Portlet Template
 
 In this article, you'll learn how to create a Liferay FreeMarker portlet
 application as a Liferay module. To create a Liferay FreeMarker portlet
