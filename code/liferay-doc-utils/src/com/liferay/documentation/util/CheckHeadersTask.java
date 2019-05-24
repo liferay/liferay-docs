@@ -5,25 +5,25 @@ import java.io.FileReader;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.LineNumberReader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Queue;
 import java.util.regex.Pattern;
 
-public class CheckHeadersTask {
+import org.apache.tools.ant.BuildException;
+import org.apache.tools.ant.Task;
 
-	public static void main(String[] args) throws Exception {
-		
-		if (args == null || args.length < 1) {
-			throw new IllegalArgumentException(
-				"Requires 1 argument: ${doc.dir}");
-		}
+public class CheckHeadersTask extends Task {
 
-		String docDir = args[0];
-		String productType = args[1];
-		
+	@Override
+	public void execute() throws BuildException {
+
+		String docDir = _docdir;
+		String productType = _productType;
+
 		List<String> dirTypes = new ArrayList<String>();
 		dirTypes.add("");
 
@@ -36,9 +36,13 @@ public class CheckHeadersTask {
 			File articlesDir = new File("../" + docDir + "/articles" + dirType);
 			File docSetDir = new File("../" + docDir);
 
-			if (!articlesDir.exists() || !articlesDir.isDirectory()) {
-				throw new Exception(
-						"FAILURE - bad articles directory " + articlesDir);
+			if (!articlesDir.exists()) {
+				if (!dirType.contains("dxp")) {
+					throw new BuildException("FAILURE - no articles directory " + articlesDir);
+				}
+				else {
+					continue;
+				}
 			}
 
 			List<File> docSetDirFolders = new ArrayList<File>();
@@ -100,25 +104,54 @@ public class CheckHeadersTask {
 					LineNumberReader in = new LineNumberReader(
 							new FileReader(inFile));
 
-					String line = in.readLine();
-					if (line != null) {
+					String line;
+					String titleLine = null;
+					String titleLineError1 = null;
+					String titleLineError2 = null;
+					int counter = 0;
+					boolean headerSyntaxExists = false;
+
+					while ((line = in.readLine()) != null) {
+						if (counter == 2) {
+							headerSyntaxExists = true;
+
+							titleLine = Files.readAllLines(Paths.get(filename)).get(in.getLineNumber());
+							titleLineError1 = Files.readAllLines(Paths.get(filename)).get(in.getLineNumber() - 1);
+							titleLineError2 = Files.readAllLines(Paths.get(filename)).get(in.getLineNumber() + 1);
+
+							break;
+						}
+						if (line.startsWith("---")) {
+							counter++;
+						}
+					}
+
+					if (titleLine != null) {
 
 						// Check whether the markdown file starts with the proper single #
 						// header. 
 						// If it doesn't, throw an exception identifying the file
 
-						if (!line.startsWith("# ")) {
+						if (!titleLine.startsWith("# ")) {
 
-							String message = "FAILURE - " + filename +
-									":Line 1 does not start with a single # for a header";
+							String message;
 
-							if (line.startsWith("<!--")) {
+							if (titleLineError1.startsWith("# ") || titleLineError2.startsWith("# ")) {
+								message = "FAILURE - " + filename +
+										": File's single # header is spaced incorrectly.";
+							}
+							else {
+								message = "FAILURE - " + filename +
+										": File does not start with a single # for a header";
+							}
+
+							if (titleLine.startsWith("<!--")) {
 
 								in.close();
 
-								throw new Exception(message);
+								throw new BuildException(message);
 							}
-							else if (line.startsWith("<")) {
+							else if (titleLine.startsWith("<")) {
 
 								// Allow non-comment tags
 
@@ -128,8 +161,15 @@ public class CheckHeadersTask {
 
 							in.close();
 
-							throw new Exception(message);
+							throw new BuildException(message);
 						}
+					}
+
+					if (!headerSyntaxExists) {
+						String message = "FAILURE - " + filename +
+								": File does not start with proper header syntax.";
+						in.close();
+						throw new BuildException(message);
 					}
 
 					in.close();
@@ -137,11 +177,22 @@ public class CheckHeadersTask {
 					// Throw exception
 
 				} catch (IOException e) {
-					throw new Exception(e.getLocalizedMessage());
+					throw new BuildException(e.getLocalizedMessage());
 				}
 			}
-			
+
 			System.out.println("Finished checking headers in articles" + dirType);
 		}
 	}
+
+	public void setDocdir(String docdir) {
+		_docdir = docdir;
+	}
+
+	public void setProductType(String productType) {
+		_productType = productType;
+	}
+
+	private String _docdir;
+	private String _productType;
 }
