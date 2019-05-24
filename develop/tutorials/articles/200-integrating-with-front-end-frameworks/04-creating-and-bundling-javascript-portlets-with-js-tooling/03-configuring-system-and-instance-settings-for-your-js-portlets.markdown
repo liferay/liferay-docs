@@ -1,11 +1,11 @@
-# Configuring System Settings and Instance Settings for Your JavaScript portlet [](id=configuring-system-settings-and-instance-settings-for-your-js-portlet)
+# Configuring System Settings and Instance Settings for Your JavaScript Widget [](id=configuring-system-settings-and-instance-settings-for-your-js-portlet)
 
 As of v1.1.0 of the JS Portlet Extender, you can define configuration options 
-for your portlet. These options are passed to the portlet's JavaScript entry point 
+for your widget. These options are passed to the widget's JavaScript entry point 
 as the `configuration` parameter. See the 
 [main entry point's reference](/develop/reference/-/knowledge_base/7-1/understanding-the-js-portlet-extender-configuration#main-entry-point) 
 for more information on the entry point. Follow these steps to set system and/or 
-portlet instance settings for your portlet:
+portlet instance settings for your widget:
 
 1.  Add a `/features` folder in your project's root folder if it doesn't already 
     exist. 
@@ -76,10 +76,10 @@ portlet instance settings for your portlet:
     descriptor.
 
 Awesome! Now you know how to configure system settings and portlet instance 
-settings for your portlet. 
+settings for your widget. 
 
 ## Related Topics [](id=related-topics)
 
-- [Localizing Your Portlet](/develop/tutorials/-/knowledge_base/7-1/localizing-your-portlet)
-- [Using Translation Features in Your JavaScript Portlet](/develop/tutorials/-/knowledge_base/7-1/using-translation-features-in-your-javascript-portlet)
-- [Configuring Portlet Properties for Your JavaScript Portlet](/develop/tutorials/-/knowledge_base/7-1/configuring-portlet-properties-for-your-js-portlet)
+- [Localizing Your Widget](/develop/tutorials/-/knowledge_base/7-1/localizing-your-portlet)
+- [Using Translation Features in Your JavaScript Widget](/develop/tutorials/-/knowledge_base/7-1/using-translation-features-in-your-javascript-portlet)
+- [Configuring Portlet Properties for Your JavaScript Widget](/develop/tutorials/-/knowledge_base/7-1/configuring-portlet-properties-for-your-js-portlet)

@@ -1,6 +1,6 @@
-# Creating and Bundling JavaScript Portlets with JavaScript Tooling [](id=creating-and-bundling-javascript-portlets-with-javascript-tooling)
+# Creating and Bundling JavaScript Widgets with JavaScript Tooling [](id=creating-and-bundling-javascript-portlets-with-javascript-tooling)
 
-The Liferay JS Generator generates JavaScript portlets for @product@. It is 
+The Liferay JS Generator generates JavaScript widgets for @product@. It is 
 just one of Liferay JS Bundle Toolkit's 
 [tools](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages). 
 
@@ -21,13 +21,13 @@ $$$
 
 Portlets are a Java standard, so you must have a knowledge and understanding of 
 how Java works to write one. This can be quite the hurdle for front-end 
-developers who want to use JavaScript frameworks in their portlets. Thanks to 
+developers who want to use JavaScript frameworks in their widgets. Thanks to 
 the JS Portlet Extender and 
 [liferay-npm-bundler](/develop/reference/-/knowledge_base/7-1/liferay-npm-bundler), 
-developers can easily create and develop JavaScript portlets in @product@ using 
+developers can easily create and develop JavaScript widgets in @product@ using 
 pure JavaScript tooling. 
 
-![Figure 1: The JS Portlet Extender lets you use pure JavaScript tooling to write portlets.](../../../images/extender-lifecycle.png)
+![Figure 1: The JS Portlet Extender lets you use pure JavaScript tooling to write widgets.](../../../images/extender-lifecycle.png)
 
 +$$$
 
@@ -37,7 +37,7 @@ use JS frameworks for site rendering, you **must** set up your server-side
 
 $$$
 
-This section explains how to configure these options for generated JS portlets: 
+This section explains how to configure these options for generated JS widgets: 
 
 - Installing the Liferay JS Generator and generating a bundle
 - Configuring system and instance settings

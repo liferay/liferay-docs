@@ -26,5 +26,5 @@ $$$
 
 - `npm run translate`: Runs the translation features for your bundle. Note that 
   this feature requires Microsoft Translator credentials. See 
-  [Using Translation Features in Your Portlet](/develop/tutorials/-/knowledge_base/7-1/using-translation-features-in-your-portlet) 
+  [Using Translation Features in Your widget](/develop/tutorials/-/knowledge_base/7-1/using-translation-features-in-your-portlet) 
   for more information.

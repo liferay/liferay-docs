@@ -1,6 +1,6 @@
-# Localizing Your Portlet [](id=localizing-your-portlet)
+# Localizing Your Widget [](id=localizing-your-portlet)
 
-Follow the steps below to learn how to localize your portlet:
+Follow the steps below to learn how to localize your widget:
 
 1.  If you didn't choose to use localization when you generated the bundle, 
     follow this step to enable it in your bundle now, otherwise you can skip 
@@ -14,7 +14,7 @@ Follow the steps below to learn how to localize your portlet:
     		"output-dir": "dist",
     		"features": {
     			"js-extender": true,
-    			"web-context": "/my-test-js-portlet",
+    			"web-context": "/my-test-js-widget",
     			"localization": "features/localization/Language",
     			"settings": "features/settings.json"
     		}
@@ -35,9 +35,9 @@ Follow the steps below to learn how to localize your portlet:
     [language keys](/develop/tutorials/-/knowledge_base/7-1/localizing-your-application#what-are-language-keys) 
     for each 
     [available translation](/develop/tutorials/-/knowledge_base/7-1/localizing-your-application#what-locales-are-available-by-default). 
-    The *JavaScript based portlet* configuration is shown below:
+    The *JavaScript based widget* configuration is shown below:
 
-    javax.portlet.title.my_js_portlet_project=My JS Portlet Project
+    javax.portlet.title.my_js_portlet_project=My JS widget Project
     porlet-namespace=Porlet Namespace
     context-path=Context Path
     portlet-element-id=Portlet Element Id
@@ -51,10 +51,10 @@ Follow the steps below to learn how to localize your portlet:
 3.  Retrieve a language key's localized value in JavaScript with the 
     `Liferay.Language.get('key')` method.
 
-Great! Now you know how to localize your portlet! 
+Great! Now you know how to localize your widget! 
 
 ## Related Topics [](id=related-topics)
 
-- [Configuring System Settings and Instance Settings for Your JavaScript Portlet](/develop/tutorials/-/knowledge_base/7-1/configuring-system-settings-and-instance-settings-for-your-js-portlet)
-- [Using Translation Features in Your JavaScript Portlet](/develop/tutorials/-/knowledge_base/7-1/using-translation-features-in-your-javascript-portlet)
-- [Configuring Portlet Properties for Your JavaScript Portlet](/develop/tutorials/-/knowledge_base/7-1/configuring-portlet-properties-for-your-js-portlet)
+- [Configuring System Settings and Instance Settings for Your JavaScript Widget](/develop/tutorials/-/knowledge_base/7-1/configuring-system-settings-and-instance-settings-for-your-js-portlet)
+- [Using Translation Features in Your JavaScript Widget](/develop/tutorials/-/knowledge_base/7-1/using-translation-features-in-your-javascript-portlet)
+- [Configuring Portlet Properties for Your JavaScript Widget](/develop/tutorials/-/knowledge_base/7-1/configuring-portlet-properties-for-your-js-portlet)

@@ -1,4 +1,4 @@
-# Using Translation Features in Your Portlet [](id=using-translation-features-in-your-portlet)
+# Using Translation Features in Your Widget [](id=using-translation-features-in-your-portlet)
 
 By default, the Liferay JS Generator creates an empty configuration for 
 translation. The translate script instructs the user how to add new supported 
@@ -35,6 +35,6 @@ features in your app.
 
 ## Related Topics [](id=related-topics)
 
-- [Configuring System Settings and Instance Settings for Your JavaScript Portlet](/develop/tutorials/-/knowledge_base/7-1/configuring-system-settings-and-instance-settings-for-your-js-portlet)
-- [Localizing Your Portlet](/develop/tutorials/-/knowledge_base/7-1/localizing-your-portlet)
-- [Configuring Portlet Properties for Your JavaScript Portlet](/develop/tutorials/-/knowledge_base/7-1/configuring-portlet-properties-for-your-js-portlet)
+- [Configuring System Settings and Instance Settings for Your JavaScript Widget](/develop/tutorials/-/knowledge_base/7-1/configuring-system-settings-and-instance-settings-for-your-js-portlet)
+- [Localizing Your Widget](/develop/tutorials/-/knowledge_base/7-1/localizing-your-portlet)
+- [Configuring Portlet Properties for Your JavaScript Widget](/develop/tutorials/-/knowledge_base/7-1/configuring-portlet-properties-for-your-js-portlet)

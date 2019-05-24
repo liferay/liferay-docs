@@ -2,7 +2,7 @@
 
 If you're 
 [creating an OSGi bundle with the Liferay JS Generator](/develop/tutorials/-/knowledge_base/7-1/creating-and-bundling-javascript-portlets-with-javascript-tooling) 
-and want to provide system settings for your portlet, you must provide a 
+and want to provide system settings for your widget, you must provide a 
 `configuration.json` file. This reference guide lists the available configuration 
 options for `configuration.json` along with example code.
 
@@ -114,7 +114,7 @@ An example configuration is shown below:
         }
       },
       "portletInstance": {
-        "name": "Portlet configuration",
+        "name": "Widget configuration",
         "fields": {
           "a-float": {
             "type": "float",
