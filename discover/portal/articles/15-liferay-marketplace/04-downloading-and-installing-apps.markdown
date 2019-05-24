@@ -1,5 +1,5 @@
 # Downloading and Installing Apps [](id=downloading-and-installing-apps)
- 
+
 Once you've found an app you wish to download and install, click on the name of
 the app to display its detailed information screen.
 
