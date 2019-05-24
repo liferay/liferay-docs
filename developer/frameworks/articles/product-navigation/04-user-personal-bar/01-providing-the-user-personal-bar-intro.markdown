@@ -1,40 +1,56 @@
 # Providing the User Personal Bar [](id=providing-the-user-personal-bar)
 
 The User Personal Bar displays options unique to the current user. By default,
-this menu appears as an avatar button that expands the User Settings sub-menu in
-the Product Menu. In a custom theme, the User Personal Bar could appear anywhere
-in the interface.
+this portlet appears as an avatar button that expands the Personal Menu when
+selected. In a custom theme, the User Personal Bar could appear anywhere in the
+interface.
 
-![Figure 1: By default, the User Personal Menu contains the signed-in user's avatar, which navigates to the Product Menu when selected.](../../images/user-personal-bar.png)
-
-Although Liferay's default User Personal Bar is bare-bones, you can
-add more functionality to fit your needs. Unlike other product navigation menus
-(e.g., Product Menu), the User Personal Bar does not require the
-extension/creation of panel categories and panel apps.
-
-<!-- Add below reference once portlet providers tutorial is available.
-
-It uses another common
-Liferay framework for providing functionality:
-[Portlet Providers](develop/tutorials/-/knowledge_base/7-1/portlet-providers).
--->
+![Figure 1: By default, the User Personal Bar contains the signed-in user's avatar, which opens the Personal Menu when selected.](../../../images/user-personal-bar.png)
 
 The User Personal Bar can be seen as a placeholder in every Liferay theme. By
 default, Liferay provides one sample *User Personal Bar* portlet that fills that
-placeholder, but the portlet Liferay provides can be replaced by other portlets.
+placeholder, but the portlet Liferay provides can be replaced by a custom portlet.
 
-+$$$
+## Displaying the Personal Menu
 
-**Note:** You can add the User Personal Bar to your theme by adding the
-following snippet into your `portal_normal.ftl`:
+Starting with @product-ver@, the Personal Menu is attached to the User Personal
+Bar rather than the Product Menu. To display the Personal Menu, embed the User
+Personal Bar into your theme by adding the following snippet into your
+`portal_normal.ftl`:
 
-    <@liferay.user_personal_bar />
+```ftl
+<@liferay.user_personal_bar />
+```
 
-$$$
+If you use a custom portlet as you user personal bar, you must also render the
+Personal Menu. Include the following taglib in your portlet's jsp:
 
-In this tutorial, you'll learn how to customize the User Personal Bar. You'll
-create a single Java class where you'll specify a portlet to replace the
-existing default portlet.
+```jsp
+<liferay-product-navigation:personal-menu
+    expanded="<%= true %>"
+    label="<%= userAvatar %>"
+/>
+```
+
+| **Note:** The recommended way to display the Personal Menu is by embedding the
+| User Personal Bar in a theme. If this is not practical, a workaround exists: go
+| to *Control Panel* &rarr; *Configuration* &rarr; *Instance Settings* &rarr;
+| *Users* and select *Personal Menu*. Enable the *Show in Control Menu* toggle
+| and click *Update*.
+| 
+| This places a button to expand the Personal Menu in the Control Menu. It
+| appears on every site and page in your virtual instance, including sites that
+| have the User Personal Bar embedded in the theme.
+
+Unlike the Product Menu, the Personal Menu can be customized without
+creating panel categories and panel apps. See 
+[Customizing the Personal Menu](/docs/7-2/frameworks/-/knowledge_base/f/customizing-the-personal-menu)
+for details.
+
+## Using a Custom Portlet as the User Personal Bar
+
+Replacing the default User Personal Bar with a Custom Portlet requires a single
+Java class. Follow these steps:
 
 1.  [Create an OSGi module](/develop/tutorials/-/knowledge_base/7-1/starting-module-development).
 
@@ -55,14 +71,6 @@ existing default portlet.
      The `model.class.name` property must be set to the class name of the entity
      type you want the portlet to handle. In this case, you want your portlet to
      be provided based on whether it can be displayed in the User Personal Bar.
-
-     <!-- Add below reference once portlet providers tutorial is available.
-
-     You may recall from the 
-     [Portlet Providers](develop/tutorials/-/knowledge_base/7-1/portlet-providers)
-     tutorial that you can request portlets in several different ways (e.g.,
-     *Edit*, *Browse*, etc.).
-     -->
 
      You should also specify the service rank for your new portlet so it
      overrides the default. Make sure to set the `service.ranking:Integer`
