@@ -67,29 +67,31 @@ category is listed among other sibling categories assigned to a parent.
 
 Finally, your `service` element should specify the `PanelCategory.class`
 service. You can view an example of a similar `@Component` annotation for
-the `UserPanelCategory` class below.
+the `SiteAdministrationPanelCategory` class below.
 
-        @Component(
-            immediate = true,
-            property = {
-                "panel.category.key=" + PanelCategoryKeys.ROOT,
-                "panel.category.order:Integer=200"
-            },
-            service = PanelCategory.class
-        )
+```java
+@Component(
+	immediate = true,
+	property = {
+		"panel.category.key=" + PanelCategoryKeys.ROOT,
+		"panel.category.order:Integer=300"
+	},
+	service = PanelCategory.class
+)
+```
 
 +$$$
 
 **Note:** To insert a panel category between existing categories in the
 default menu, you must know the `panel.category.order:Integer` property
 for the existing categories. Default categories with a given
-panel.category.key are numbered in increments of 100, starting with 100.
+panel.category.key are usually numbered in increments of 100, starting with 100.
 
-For example, the Product Menu's three main sections---Control Panel, User
-Menu, and Site Administration---have `panel.category.order:Integer`
-properties of 100, 200, and 300, respectively. A new panel inserted between
-Control Panel and User Menu would need a `panel.category.key` of ROOT and
-a `panel.category.order:Integer` of 150.
+There are exceptions: for example, the Product Menu's main sections---Control
+Panel and Site Administration---have `panel.category.order:Integer` properties
+of 100 and 300, respectively. A new panel inserted between Control Panel
+and Site Administration should have a `panel.category.key` of ROOT and a
+`panel.category.order:Integer` anywhere from 101 to 299.
 
 $$$
 
