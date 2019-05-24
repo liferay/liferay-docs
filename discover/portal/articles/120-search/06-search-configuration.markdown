@@ -37,6 +37,8 @@ automatically adds `description`, `userName`, and `title` fields to the
 keyword search query. Specify the entry class names
 `DefaultKeywordQueryContributor` should ignore.
 
+Configuration file: `com.liferay.portal.search.configuration.DefaultKeywordQueryConfiguration.config`
+
 ### Default Search Result Permission Filter [](id=default-search-result-permission-filter)
 
 The Default Search Result Permission Filter entry allows configuration of
@@ -49,6 +51,8 @@ for more information on these settings:
 
 - `searchQueryResultWindowLimit`
 
+Configuration file: `com.liferay.portal.search.configuration.DefaultSearchResultPermissionFilterConfiguration.config`
+
 ### Index Status Manager [](id=index-status-manager)
 
 The Index Status Manager entry has one setting:
@@ -57,6 +61,8 @@ The Index Status Manager entry has one setting:
 search engine. Searches return only the documents already indexed. This is
 useful for speeding up large data imports, but it should be disabled and a full
 re-index executed once the import is finished.
+
+Configuration file: `com.liferay.portal.search.configuration.IndexStatusManagerConfiguration.config`
 
 ### Indexer Writer Helper [](id=indexer-writer-helper)
 
@@ -77,6 +83,8 @@ newly added content. See the
 [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/guide/current/near-real-time.html)
 for more information.
 
+Configuration file: `com.liferay.portal.search.configuration.IndexWriterHelperConfiguration.config`
+
 ### Index Registry [](id=index-registry)
 
 Configure the buffering of index requests:
@@ -92,6 +100,8 @@ requests are executed immediately.
 only the specified percent of space left, the existing requests in the
 buffer are executed in one batch and removed from the buffer.
 
+Configuration file: `com.liferay.portal.search.configuration.IndexerRegistryConfiguration.config`
+
 ### Index Query Preprocessor [](id=index-query-preprocessor)
 
 This entry has one repeatable property (use array syntax if you're defining via 
@@ -105,35 +115,19 @@ larger. For substring matching, relying on the
 [ngram tokenizer](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/analysis-ngram-tokenizer.html)
 usually performs better.
 
+Configuration file: `com.liferay.portal.search.configuration.QueryPreProcessConfiguration.config`
+
 ### Reindex [](id=reindex)
 
 This entry contains only one property:
 
-`indexingBatchSizes`: Sets the number of documents indexed
+`indexingBatchSizes`: Set the number of documents indexed per batch for model
+types that support batch indexing---defaults to
+`com.liferay.journal.model.JournalArticle=10000`. For models with large
+documents, decreasing this value may improve stability when executing a full
+re-index.
 
-**Index Registry**
-: Disable or configure the buffering of indexing requests. To stop the buffering
-of index requests, set the Buffered property to *Disabled*. If buffering is
-enabled, set the Maximum Buffer Size so that additional indexing requests are
-executed immediately. Minimum Buffer Availability Percentage sets a different
-threshold: when the capacity of the buffer has only a certain percent of space
-left, the existing requests in the buffer are executed in one batch and removed
-from the buffer.
-
-**Index Query Preprocessor**
-: Fields with names matching the patterns set here are treated as non-analyzed
-keyword fields. Instead of scored full text queries, matching is performed by
-non-scored wildcard queries. This is a resource intensive operation that
-degrades search engine performance as indexes grow larger. For substring
-matching, relying on the
-[NGram Tokenizer](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/analysis-ngram-tokenizer.html) 
-usually performs better.
-
-**Reindex**
-: Use the Indexing Batch Sizes property to set the number of documents indexed
-per batch for model types that support batch indexing. Defaults to 10000. For
-models with large documents, decreasing this value may improve stability when
-executing a full re-index.
+Configuration file: `com.liferay.portal.search.configuration.ReindexConfiguration.config`
 
 ### Engine Helper [](id=engine-helper)
 
@@ -147,6 +141,8 @@ from the Users and Organizations application, but should not be searched in
 the Search application. Thus, Organizations are added to
 `excludedEntryClassNames`.
 
+Configuration file: `com.liferay.portal.search.configuration.SearchEngineHelperConfiguration.config`
+
 ### Permission Checker [](id=permission-checker)
 
 Configure *pre-filtering permission checking* (permission checking on the
@@ -157,6 +153,8 @@ for more information on these properties:
 - `includeInheritedPermission`
 
 - `permissionTermsLimit`
+
+Configuration file: `com.liferay.portal.search.configuration.SearchPermissionCheckerConfiguration.config`
 
 ### Elasticsearch 6 [](id=elasticsearch-6)
 
@@ -191,6 +189,8 @@ for more information on these properties:
 - `overrideTypeMappings`
 - `synchronizedSearch`
 
+Configuration file: `com.liferay.portal.search.elasticsearch6.configuration.ElasticsearchConfiguration.config`
+
 ### Search Web [](id=search-web)
 
 This entry contains one property:
@@ -199,6 +199,8 @@ using the new Search Widgets to the classic Search Portlet that was standard
 in past releases. See
 [here](/discover/portal/-/knowledge_base/7-1/configuring-search-pages#legacy-search-experience)
 for more information.
+
+Configuration file: `com.liferay.portal.search.web.internal.configuration.SearchWebConfiguration.config`
 
 ### Reindexing from Search Administration [](id=reindexing-from-search-administration)
 
