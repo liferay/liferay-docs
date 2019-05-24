@@ -1,4 +1,8 @@
-# Liferay's Deprecation Policy [](id=liferays-deprecation-policy)
+---
+header-id: liferays-deprecation-policy
+---
+
+# Liferay's Deprecation Policy
 
 Methods in Liferay's APIs are deprecated when they're no longer called by
 Liferay internally. Method deprecation occurs during major releases of Liferay.

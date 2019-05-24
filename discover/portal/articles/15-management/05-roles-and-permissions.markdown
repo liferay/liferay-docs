@@ -1,4 +1,8 @@
-# Roles and Permissions [](id=roles-and-permissions)
+---
+header-id: roles-and-permissions
+---
+
+# Roles and Permissions
 
 Roles are used to collect permissions that define a particular function within
 the portal, according to a particular scope. Roles can be granted permissions to
@@ -65,7 +69,7 @@ role.
 
 Next, let's examine how to configure the permissions granted by different roles.
 
-## Defining Permissions on a Role [](id=defining-permissions-on-a-role)
+## Defining Permissions on a Role
 
 Roles serve as repositories of permissions to be assigned to users who belong to
 them. So, to use a role, you need to assign members to it and define the
@@ -161,7 +165,7 @@ Roles are very powerful and allow portal administrators to define various
 permissions in whatever combinations they like. This gives you as much
 flexibility as possible to build the site you have designed.
 
-## Note About Permissions for Deleting Containers [](id=note-about-permissions-for-deleting-containers)
+## Note About Permissions for Deleting Containers
 
 Liferay Portal contains many types of portal resources upon which permissions
 can be defined. These include both assets and asset containers. The term *asset*
@@ -181,7 +185,7 @@ of the contained assets is *not* a common use case. Nevertheless, it's important
 to note that assets in a container can be indirectly deleted if their asset
 container is deleted.
 
-## Special Note About the Power Users Role [](id=special-note-about-the-power-users-role)
+## Special Note About the Power Users Role
 
 Prior to Liferay 6.0, the default configurations of many Liferay portlets
 allowed power users, but not regular users, to access them. Liferay 6.0 and
@@ -190,18 +194,14 @@ regular users. This way, portal administrators are not forced to use the power
 users role. However, Liferay encourages those who do to create their own custom
 permissions for the role. 
 
-+$$$
-
-**Note:** Prior to Liferay version 6.0, Power Users and Users did *not* have the 
-same default permissions. So if are using Liferay 5.2 or a previous version, 
-it's dangerous to remove the Power Users role from the default user 
-associations: this could remove certain permissions you expect to apply to all 
-users. If you decide to remove the Power Users role from the default user 
-associations anyway, you will probably want to modify the permissions on certain 
-portlets to make them accessible to all users. To do this, see the section on 
-Plugins Configuration below.
-
-$$$
+| **Note:** Prior to Liferay version 6.0, Power Users and Users did *not* have the
+| same default permissions. So if are using Liferay 5.2 or a previous version,
+| it's dangerous to remove the Power Users role from the default user
+| associations: this could remove certain permissions you expect to apply to all
+| users. If you decide to remove the Power Users role from the default user
+| associations anyway, you will probably want to modify the permissions on certain
+| portlets to make them accessible to all users. To do this, see the section on
+| Plugins Configuration below.
 
 Now that we've seen how to use organizations and user groups to manage users and
 how to use roles to define permissions, let's examine the general portal

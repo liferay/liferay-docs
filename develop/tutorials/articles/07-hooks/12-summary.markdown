@@ -1,4 +1,8 @@
-# Summary [](id=summary-4)
+---
+header-id: summary-4
+---
+
+# Summary
 
 In this chapter we discussed some of the many uses of the versatile hook plugin,
 the preferred tool for customizing Liferay. You learned how to perform custom

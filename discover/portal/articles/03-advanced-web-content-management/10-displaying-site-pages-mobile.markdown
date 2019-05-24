@@ -1,4 +1,8 @@
-# Displaying Site Pages to Mobile Devices [](id=displaying-site-pages-to-mobile-devices)
+---
+header-id: displaying-site-pages-to-mobile-devices
+---
+
+# Displaying Site Pages to Mobile Devices
 
 Mobile device rules allow you to configure sets of rules to alter the behavior
 of the portal based on the device being used to access Liferay. The proportion
@@ -25,23 +29,19 @@ device databases so that you can use their device characteristics in your rules.
 
 Liferay provides such a database in the Liferay Mobile Device Detection (LMDD) 
 app from the Liferay Marketplace. 
-[Click here](/discover/portal/-/knowledge_base/6-1/leveraging-the-liferay-marketplace) 
+[Click here](/docs/6-1/user/-/knowledge_base/u/leveraging-the-liferay-marketplace) 
 for instructions on using Liferay Marketplace to find and install apps. 
 
-+$$$
-
-**Note:** The Liferay Mobile Device Detection (LMDD) app is EE-only for Liferay 
-Portal 6.1. Although you can use other device detection databases, doing so 
-requires you to manually integrate the database with Liferay APIs. 
-
-$$$
+| **Note:** The Liferay Mobile Device Detection (LMDD) app is EE-only for Liferay
+| Portal 6.1. Although you can use other device detection databases, doing so
+| requires you to manually integrate the database with Liferay APIs.
 
 It's possible to develop plugins that integrate with other device databases.
 Even if you don't have a device database, you can still set up mobile device
 rules. They won't, however, be effective until a database is deployed, because
 the portal won't have enough information about the devices being used to make
 page requests. To learn how to tap into Liferay's Device API, see the
-[Device Detection](/develop/tutorials/-/knowledge_base/6-1/device-detection).
+[Device Detection](/docs/6-1/tutorials/-/knowledge_base/t/device-detection).
 
 You can access the Mobile Device Rules administrative page from the Content
 section of the Control Panel. Select the appropriate scope using the context

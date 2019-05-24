@@ -1,4 +1,8 @@
-# Other frameworks [](id=other-frameworks)
+---
+header-id: other-frameworks
+---
+
+# Other frameworks
 
 Liferay has a variety of frameworks that simplify development of complex
 functionalities for your own applications. Liferay's frameworks have evolved

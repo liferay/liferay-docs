@@ -1,4 +1,8 @@
-# Overriding web resources [](id=overriding-web-resources)
+---
+header-id: overriding-web-resources
+---
+
+# Overriding web resources
 
 Hooks are commonly used to override web resources, found in `portal-web` in the
 Liferay source. You can use a hook to override JSP files, JSPF files, JavaScript
@@ -57,13 +61,9 @@ Liferay core, while retaining thew ability to easily revert your changes.
 However, it's not possible to override the same JSP from multiple hooks; Liferay
 won't know which version to use. 
 
-+$$$
-
-**Note:** We don't recommend changing the *Terms of Use* with a hook. You can
-replace the *Terms of Use* with web content simply by setting two properties in
-`portal-ext.properties`. Although our hook wasn't necessary, it was a good way
-to demonstrate overriding a JSP with a hook. 
-
-$$$
+| **Note:** We don't recommend changing the *Terms of Use* with a hook. You can
+| replace the *Terms of Use* with web content simply by setting two properties in
+| `portal-ext.properties`. Although our hook wasn't necessary, it was a good way
+| to demonstrate overriding a JSP with a hook.
 
 Next, we'll look at a different way to customize a JSP. 

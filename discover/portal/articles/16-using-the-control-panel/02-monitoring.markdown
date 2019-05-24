@@ -1,4 +1,8 @@
-# Monitoring [](id=monitoring)
+---
+header-id: monitoring
+---
+
+# Monitoring
 
 The next link on the left side of the control panel is for monitoring. You can
 use the Monitoring page to view all of the live sessions in the portal. For

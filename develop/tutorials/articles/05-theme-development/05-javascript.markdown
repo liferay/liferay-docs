@@ -1,4 +1,8 @@
-# JavaScript [](id=javascript)
+---
+header-id: javascript
+---
+
+# JavaScript
 
 Liferay has its own JavaScript library called AlloyUI, an extension to Yahoo's
 YUI3 framework. You can take advantage of AlloyUI or YUI3 in your themes. Inside

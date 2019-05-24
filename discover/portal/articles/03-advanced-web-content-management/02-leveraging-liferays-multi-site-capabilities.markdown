@@ -1,4 +1,8 @@
-# Leveraging Liferay's Multi-Site Capabilities [](id=leveraging-liferays-multi-site-capabilities)
+---
+header-id: leveraging-liferays-multi-site-capabilities
+---
+
+# Leveraging Liferay's Multi-Site Capabilities
 
 As stated in chapter 1, a site is a set of pages that can be used to publish
 content or applications. Sites can be independent or they can be associated with
@@ -65,17 +69,13 @@ changed through the simple configuration of the setup wizard. The portal name
 can also be changed at any time through the Control Panel within *Portal
 Settings*.
 
-+$$$
-
-**Tip:** Prior to Liferay 6.1, there were two ways of creating sites: 
-organizations and communities. This has been simplified to provide more ease of 
-use and allow for more flexibility. The main role of organizations is still to 
-organize the users of the portal in a hierarchy but they can also have 
-associated sites. Communities can still be created through independent sites but 
-the new name reflects the fact that sites can be used for many different 
-purposes besides communities.
-
-$$$
+| **Tip:** Prior to Liferay 6.1, there were two ways of creating sites:
+| organizations and communities. This has been simplified to provide more ease of
+| use and allow for more flexibility. The main role of organizations is still to
+| organize the users of the portal in a hierarchy but they can also have
+| associated sites. Communities can still be created through independent sites but
+| the new name reflects the fact that sites can be used for many different
+| purposes besides communities.
 
 Sites can be created through the Control Panel by a portal administrator. To add
 a site, click on *Sites* under the Portal section of the Control Panel and then

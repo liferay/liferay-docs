@@ -1,4 +1,8 @@
-# File Storage Framework [](id=file-storage-framework)
+---
+header-id: file-storage-framework
+---
+
+# File Storage Framework
 
 The File Storage Framework lets you store files using the back end of the
 Document Library. If you use this framework you won't have to worry about

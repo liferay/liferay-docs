@@ -1,4 +1,8 @@
-# Marketplace Concepts: Users, Companies and Apps [](id=marketplace-concepts-users-companies-and-apps)
+---
+header-id: marketplace-concepts-users-companies-and-apps
+---
+
+# Marketplace Concepts: Users, Companies and Apps
 
 Anyone can browse the apps available on Liferay Marketplace at
 [http://liferay.com/marketplace](http://liferay.com/marketplace) but a

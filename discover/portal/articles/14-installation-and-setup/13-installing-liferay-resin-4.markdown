@@ -1,4 +1,8 @@
-# Installing Liferay on Resin 4 [](id=installing-liferay-on-resin-4)
+---
+header-id: installing-liferay-on-resin-4
+---
+
+# Installing Liferay on Resin 4
 
 **Liferay Home** is one folder above Resin's install location.
 
@@ -19,7 +23,7 @@ the dependencies file should be called
 Now that you have all of your installation files, you are ready to start
 installing and configuring Liferay on Resin.
 
-## Dependency Jars [](id=dependency-jars)
+## Dependency Jars
 
 Let's work with the depenency jar files first.
 
@@ -50,7 +54,7 @@ Let's work with the depenency jar files first.
 Great! now you have your `.jar` files in place. Next, let's configure Resin for
 Liferay. 
 
-## Configuring Resin [](id=configuring-resin)
+## Configuring Resin
 
 The primary file used in configuring your domain is
 `$RESIN_HOME/conf/resin.xml`. You need to make common modifications necessary to
@@ -102,7 +106,7 @@ Resin's logs. But let's start with the changes to `resin.xml`.
 Now that you've completed some important common configuration tasks to support
 Liferay, let's consider database configuration. 
 
-## Database Configuration [](id=database-configuration)
+## Database Configuration
 
 If you want to manage your data source within Resin, continue following the
 instructions in this section. If you want to use the built-in Liferay data
@@ -135,7 +139,7 @@ password value with values specific to your database.
 Resin is now managing your database connection. Let's consider next how to
 configure mail.
 
-## Mail Configuration [](id=mail-configuration)
+## Mail Configuration
 
 If you want to manage your mail session within Resin, use the following
 instructions. If you want to use the built-in Liferay mail session, you can skip
@@ -177,7 +181,7 @@ You can specify additional properties for your mail session as needed.
 Now that your mail session is squared away, we'll make sure Liferay can access
 it.
 
-## Configuring Data Source and Mail Session [](id=configuring-data-source-and-mail-session)
+## Configuring Data Source and Mail Session
 
 Let's make sure Liferay's connected to your data source and mail session.
 
@@ -206,7 +210,7 @@ Let's make sure Liferay's connected to your data source and mail session.
 Great! Now Liferay can access your database and your mail session. Now, let's
 deploy Liferay.
 
-## Deploy Liferay [](id=deploy-liferay)
+## Deploy Liferay
 
 Liferay can be deployed as an exploded web archive within `$RESIN_HOME/webapps`.
 
@@ -253,12 +257,8 @@ Liferay can be deployed as an exploded web archive within `$RESIN_HOME/webapps`.
     The `portal-setup-wizard.properties` file the setup wizard creates has
     `setup.wizard.enabled=false` conveniently specified for you.
 
-    +$$$
-
-    **Note:** Property values in `portal-setup-wizard.properties` override 
-    property values in `portal-ext.properties`.
-
-    $$$
+    | **Note:** Property values in `portal-setup-wizard.properties` override
+    | property values in `portal-ext.properties`.
 
     Now its time to launch Liferay Portal on Resin!
 

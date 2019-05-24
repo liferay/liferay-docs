@@ -1,4 +1,8 @@
-# App Servers [](id=app-servers)
+---
+header-id: app-servers
+---
+
+# App Servers
 
 When it comes time to install Liferay Portal on your server, you'll find it's
 easiest to do this by starting with a bundle. But many enterprises can't do
@@ -11,7 +15,7 @@ Liferay Home folder, databases and Liferay's main configuration file. These were
 touched on in the section on bundles above but we'll look at them in more detail
 now. 
 
-## Liferay Home [](id=liferay-home)
+## Liferay Home
 
 Liferay Portal uses a special folder defined as *Liferay Home*. This folder is
 one folder higher than the location of the application server itself. This is
@@ -29,19 +33,15 @@ are created there and you can also put a special configuration file called
 `portal-ext.properties` there. This file is fully documented in chapter 20, a
 reference for Liferay properties.
 
-+$$$
-
-**Note:** To use database properties from a `portal-ext.properties` file you 
-must disable the Setup Wizard by specifying `setup.wizard.enabled=false` in that 
-`portal-ext.properties`.  Also, note that property values in 
-`portal-setup-wizard.properties` (the file created in Liferay Home by the Setup 
-Wizard) override property values in `portal-ext.properties`. 
-
-$$$
+| **Note:** To use database properties from a `portal-ext.properties` file you
+| must disable the Setup Wizard by specifying `setup.wizard.enabled=false` in that
+| `portal-ext.properties`.  Also, note that property values in
+| `portal-setup-wizard.properties` (the file created in Liferay Home by the Setup
+| Wizard) override property values in `portal-ext.properties`.
 
 Let's move on to examining the database. 
 
-## Liferay's Database [](id=liferays-database)
+## Liferay's Database
 
 As stated above, if you create your database and grant a user ID full access to
 it, Liferay can use that user ID to create its indexes and tables automatically.
@@ -53,15 +53,11 @@ own. It is by far the best way to set up your Liferay installation.
 If you'll be setting up Liferay's database with the recommended permissions, you
 can skip to the next section.
 
-+$$$
-
-**Note:** This is not the recommended set up for Liferay installations but is 
-documented here so enterprises with more restrictive standards can install 
-Liferay with more strict -- but suboptimal -- database settings. If it's at all 
-possible, Liferay recommends that you use the automatic method as documented 
-above instead of the procedure outlined below.
-
-$$$
+| **Note:** This is not the recommended set up for Liferay installations but is
+| documented here so enterprises with more restrictive standards can install
+| Liferay with more strict -- but suboptimal -- database settings. If it's at all
+| possible, Liferay recommends that you use the automatic method as documented
+| above instead of the procedure outlined below.
 
 Even though Liferay can create its database automatically, some enterprises
 prefer *not* to allow the user ID configured in an application server to have
@@ -93,7 +89,7 @@ you attempt to install them.
 
 Once you have your database ready, you can install Liferay on your server. 
 
-## Liferay Installation Overview [](id=liferay-installation-overview)
+## Liferay Installation Overview
 
 Before we begin, it's important to go over the various facets of the
 installation. They are: 
@@ -120,7 +116,7 @@ the instructions for your application server. This method uses the setup wizard
 to create a working configuration. We'll go through the steps in order, so first
 we'll look at the options for data sources. 
 
-### Using Data Sources [](id=using-data-sources)
+### Using Data Sources
 
 Liferay comes bundled with its own built-in data source. It's configured by a
 number of properties which are set in a properties file. By default, the setup
@@ -141,7 +137,7 @@ such a big deal.
 Since mail sessions are configured in a similar way to data sources, we'll look
 at them next. 
 
-### Using Mail Sessions [](id=using-mail-sessions)
+### Using Mail Sessions
 
 Liferay's default configuration looks for a mail server on the same machine on
 which Liferay's running and it tries to send mail via SMTP to this server. If
@@ -164,7 +160,7 @@ Let's look next at this configuration file and, if you're choosing not to use
 the setup wizard, show you how to get Liferay connected to your database and
 your mail server. 
 
-### The portal-ext.properties File [](id=the-portal-ext-properties-file)
+### The portal-ext.properties File
 
 Liferay's properties files differ from the configuration files of most other
 products in that changing the default configuration file is discouraged. In
@@ -194,24 +190,20 @@ This file should be created in your Liferay Home folder. You'll use this file
 throughout this book to change many of Liferay's settings. An exhaustive list of
 the configurable properties is provided in chapter 20. 
 
-+$$$
-
-**Warning:** The configuration you choose in the setup wizard is saved in a 
-`portal-setup-wizard.properties` file in your Liferay Home directory. In the 
-setup wizard, however, if you specify a different Liferay Home directory than 
-the default, the `portal-setup-wizard.properties` file that's saved there will 
-not be read upon restarting your server. To have Liferay read your
-`portal-setup-wizard.properties` file, create a `portal-ext.properties` file in
-your new Liferay Home directory and add the following line to it, where
-`${liferay.home}` is the new Liferay Home directory that you chose:
-
-    include-and-override=${liferay.home}/portal-setup-wizard.properties
-
-Without this workaround, Liferay will not read the
-`portal-setup-wizard.properties` file with your saved configuration when you
-restart your server and you'll see the setup wizard again. 
-
-$$$
+| **Warning:** The configuration you choose in the setup wizard is saved in a
+| `portal-setup-wizard.properties` file in your Liferay Home directory. In the
+| setup wizard, however, if you specify a different Liferay Home directory than
+| the default, the `portal-setup-wizard.properties` file that's saved there will
+| not be read upon restarting your server. To have Liferay read your
+| `portal-setup-wizard.properties` file, create a `portal-ext.properties` file in
+| your new Liferay Home directory and add the following line to it, where
+| `${liferay.home}` is the new Liferay Home directory that you chose:
+| 
+|     include-and-override=${liferay.home}/portal-setup-wizard.properties
+| 
+| Without this workaround, Liferay will not read the
+| `portal-setup-wizard.properties` file with your saved configuration when you
+| restart your server and you'll see the setup wizard again.
 
 You now have all the background information you need. Next you need to make your
 decision: will you use Liferay's built-in data source, or the one provided by

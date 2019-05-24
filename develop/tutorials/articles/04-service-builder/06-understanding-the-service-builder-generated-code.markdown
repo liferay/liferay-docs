@@ -1,4 +1,8 @@
-# Understanding the Service Builder-generated Code [](id=understanding-the-service-builder-generated-code)
+---
+header-id: understanding-the-service-builder-generated-code
+---
+
+# Understanding the Service Builder-generated Code
 
 Now let's examine the files Service Builder generated for your Event entity.
 Note that the files listed under Local Service and Remote Service below are only

@@ -1,4 +1,8 @@
-# Creating and Integrating with OpenSocial Gadgets [](id=creating-and-integrating-with-opensocial-gadgets)
+---
+header-id: creating-and-integrating-with-opensocial-gadgets
+---
+
+# Creating and Integrating with OpenSocial Gadgets
 
 OpenSocial is a public specification for creating web applications using
 standard technologies like HTML, CSS, and Javascript. It was originally

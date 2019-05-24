@@ -1,4 +1,8 @@
-# Setting up Display Pages [](id=setting-up-display-pages)
+---
+header-id: setting-up-display-pages
+---
+
+# Setting up Display Pages
 
 The Display Settings section gives you precise control over the display of your
 assets. There are a multitude of options available to configure how you want
@@ -8,7 +12,7 @@ conversions. Additionally, you can enable printing, flags, ratings, comments and
 comment ratings, and these work the same way they do in the Web Content Display
 portlet.
 
-## Display Style [](id=display-style)
+## Display Style
 
 **Abstracts:** Shows the first 200-500 characters of the content, defined by the
 **Abstract Length** field.
@@ -20,7 +24,7 @@ developer.
 
 **Full Content:** The entire content of the entry.
 
-## Other Settings [](id=other-settings)
+## Other Settings
 
 **Asset Link Behavior:** The default value is *Show Full Content*. With this
 value selected, when the link to an asset is clicked, the full asset is
@@ -72,7 +76,7 @@ users.
 Next, we'll look at Display Pages, an addition to the asset framework introduced
 by Liferay 6.1.
 
-## Display Page [](id=display-page)
+## Display Page
 
 If you've been using Liferay for a while, or you've just spent a little bit of
 time with this guide, you might have noticed something about how Liferay handles

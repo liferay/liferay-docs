@@ -1,4 +1,8 @@
-# Installing Liferay on Jetty 7 [](id=installing-liferay-on-jetty-7)
+---
+header-id: installing-liferay-on-jetty-7
+---
+
+# Installing Liferay on Jetty 7
 
 **Liferay Home** is one folder above Jetty's install location.
 
@@ -19,7 +23,7 @@ the dependencies file should be called
 Now that you have all of your installation files, you're ready to start
 installing and configuring Liferay on Jetty.
 
-## Dependency Jars [](id=dependency-jars)
+## Dependency Jars
 
 Let's work with the Liferay depenency jar files first.
 
@@ -53,7 +57,7 @@ Let's work with the Liferay depenency jar files first.
 
 Now that your `.jar` files are in place, let's configure your domain.
 
-## Jetty Configuration [](id=jetty-configuration)
+## Jetty Configuration
 
 To get Jetty ready for running Liferay Portal, you must make a number of
 modifications that involve configuration files, initialization files and run
@@ -148,7 +152,7 @@ scripts.
 Now that your general Jetty startup files are set in place, let's consider how
 you will manage your data source. 
 
-## Database Configuration [](id=database-configuration)
+## Database Configuration
 
 If you want to manage your data source within Jetty, continue following the
 instructions in this section. If you want to use the built-in Liferay data
@@ -188,7 +192,7 @@ source, you can skip this section.
 Super! Now you have your database specified and ready for use with Liferay on
 Jetty. Let's consider your mail session next.
 
-## Mail Configuration [](id=mail-configuration)
+## Mail Configuration
 
 If you want to manage your mail session within Jetty, use the following
 instructions. If you want to use the built-in Liferay mail session, you can skip
@@ -229,7 +233,7 @@ session values with your own.
 
 Great! Now you'll be able to use this mail session with Liferay.
 
-## Configuring Data Sources and Mail Sessions [](id=configuring-data-sources-and-mail-sessions)
+## Configuring Data Sources and Mail Sessions
 
 Let's revisit your configuration to make sure we'll be able to access your data
 source and mail session from Liferay Portal.
@@ -259,7 +263,7 @@ source and mail session from Liferay Portal.
 
 Let's start your server and deploy Liferay Portal! 
 
-## Deploy Liferay [](id=deploy-liferay)
+## Deploy Liferay
 
 Liferay can be deployed as an exploded web archive within `$JETTY_HOME/webapps`.
 
@@ -297,12 +301,8 @@ Liferay can be deployed as an exploded web archive within `$JETTY_HOME/webapps`.
     The `portal-setup-wizard.properties` file the setup wizard creates has
     `setup.wizard.enabled=false` conveniently specified for you.
 
-    +$$$
-
-    **Note:** Property values in `portal-setup-wizard.properties` override 
-    property values in `portal-ext.properties`.
-
-    $$$
+    | **Note:** Property values in `portal-setup-wizard.properties` override
+    | property values in `portal-ext.properties`.
 
     Now its time to launch Liferay Portal!
 

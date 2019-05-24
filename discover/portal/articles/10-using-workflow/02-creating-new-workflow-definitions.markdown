@@ -1,4 +1,8 @@
-# Creating New Workflow Definitions [](id=creating-new-workflow-definitions)
+---
+header-id: creating-new-workflow-definitions
+---
+
+# Creating New Workflow Definitions
 
 A Kaleo workflow, called a *process definition*, is defined in an XML file and
 is executed by users on the portal. You can create as many different workflow
@@ -36,7 +40,7 @@ different transition to the Approved state.
 
 Let's look in detail at how you'd create a workflow using a single approver.
 
-## Starting a Workflow Definition [](id=starting-a-workflow-definition)
+## Starting a Workflow Definition
 
 Below is a diagram of a single approver workflow definition. It has only two
 tasks and two states.  
@@ -67,7 +71,7 @@ control panel when users choose and configure workflows.
 
 After that, you define your initial state. 
 
-## Creating an Initial State [](id=creating-an-initial-state)
+## Creating an Initial State
 
 In this case, the state is simply that the asset has been created. States can
 contain actions and transitions. Actions can contain scripts. You can specify
@@ -95,7 +99,7 @@ is blocked so the asset can be reviewed.
 
 The next step is to create a task. 
 
-## Creating Tasks [](id=creating-tasks)
+## Creating Tasks
 
 The task has several parts and is the most complex part of the definition. Tasks
 are linked with roles in order to choose who should complete the task. Roles are
@@ -164,7 +168,7 @@ content creators any time a new item is submitted. Regardless of who you're
 notifying, you definitely want to send a notification to anyone who is
 responsible for approving content.
 
-## Sending Notifications [](id=sending-notifications)
+## Sending Notifications
 
 Notifications need an `execution-type` which can be `onAssignment`, `onEntry` or
 `onExit`.
@@ -238,7 +242,7 @@ notification based on the scope and can be set as *community*, *organization* or
 
 Once the content is approved you'll want to transition to a new state. 
 
-## Using Transitions [](id=using-transitions)
+## Using Transitions
 
 In this case, you only need a single approver, then the transition goes to the
 final approved state. In more complex workflows, you might transition to a
@@ -295,7 +299,7 @@ transition to the *approved* state.
 
 You can also use *forks* and *joins* to create more complex workflows.
 
-## Using Forks and Joins [](id=using-forks-and-joins)
+## Using Forks and Joins
 
 Forks and joins are used for parallel processing. For example, say you have a
 new offer you'd like to put up on your site but it needs to go through both the
@@ -355,7 +359,7 @@ of making them wait in line, timers allow you to add some urgency to the
 process.
 	
 <!-- | TODO I accidentally removed this one too -->
-## Timers [](id=timers)
+## Timers
 
 **Timers** are a new workflow feature in 6.1, which help make sure important
 tasks in a workflow aren't forgotten or left undone because of an oversight or
@@ -464,7 +468,7 @@ having multiple bottlenecks through the process. Using timers in conjunction
 with other workflow features can help you create powerful workflows for your
 organization.
 
-## Putting it All Together [](id=putting-it-all-together)
+## Putting it All Together
 
 The Kaleo workflow engine is deeply integrated with Liferay Portal. It can
 generate roles scoped for organizations, sites and for the whole portal based on

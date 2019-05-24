@@ -1,4 +1,8 @@
-# What Makes Liferay Portal Unique [](id=what-makes-liferay-portal-unique)
+---
+header-id: what-makes-liferay-portal-unique
+---
+
+# What Makes Liferay Portal Unique
 
 Liferay Portal is a web experience platform that contains all of the common
 applications you'd use as building blocks for your web site. Because of this,

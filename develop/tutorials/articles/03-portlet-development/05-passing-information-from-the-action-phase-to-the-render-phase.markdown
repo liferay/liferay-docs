@@ -1,4 +1,8 @@
-# Passing Information from the Action Phase to the Render Phase [](id=passing-information-from-the-action-phase-to-the-render-phase)
+---
+header-id: passing-information-from-the-action-phase-to-the-render-phase
+---
+
+# Passing Information from the Action Phase to the Render Phase
 
 There are two ways to pass information from the action phase to the render
 phase. The first way is through render parameters. In the `processAction` method
@@ -17,19 +21,15 @@ the `processAction` method). In order to pass parameter values to the render
 phase you must read them from the `actionRequest` and then invoke the
 `setRenderParameter` method for each parameter needed. 
 
-+$$$
-
-**Tip:** Liferay offers a convenient extension to the portlet specification
-through the `MVCPortlet` class to copy all action parameters directly as render
-parameters. You can achieve this by setting the following `init-param` in your
-`portlet.xml`:
-
-    <init-param>
-        <name>copy-request-parameters</name>
-        <value>true</value>
-    </init-param>
-
-$$$
+| **Tip:** Liferay offers a convenient extension to the portlet specification
+| through the `MVCPortlet` class to copy all action parameters directly as render
+| parameters. You can achieve this by setting the following `init-param` in your
+| `portlet.xml`:
+| 
+|     <init-param>
+|         <name>copy-request-parameters</name>
+|         <value>true</value>
+|     </init-param>
 
 One final note about render parameters: the portal remembers them for all later
 executions of the portlet until the portlet is invoked with *different*

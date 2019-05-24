@@ -1,4 +1,8 @@
-# Managing Portal Settings [](id=managing-portal-settings)
+---
+header-id: managing-portal-settings
+---
+
+# Managing Portal Settings
 
 After you have created users, user groups, organizations, roles, sites and teams
 your portal will be ready to host content and applications. You can configure
@@ -17,7 +21,7 @@ the portal operates and integrates with other systems you may have. Let's begin
 our discussion of Liferay's portal settings by examining how to configure
 password policies.
 
-## Password Policies [](id=password-policies)
+## Password Policies
 
 Password policies can enhance the security of your portal. You can set
 requirements on password strength, frequency of password expiration and more.
@@ -84,7 +88,7 @@ policy. You cannot delete the default policy.
 
 Next, let's examine Liferay's Portal Settings.
 
-## Portal Settings [](id=portal-settings)
+## Portal Settings
 
 Most global portal settings can be configured from the Portal Settings section
 of the control panel. The Configuration heading contains the following links:
@@ -118,7 +122,7 @@ etc. You can customize those messages here.
 
 Let's discuss these settings next.
 
-## General [](id=general)
+## General
 
 The General link takes you to a page with three headings: Main Configuration,
 Navigation and Additional Information. Under the Main Configuration heading, you
@@ -131,7 +135,7 @@ page for your portal here as well as default landing and logout pages. Under the
 Additional Information heading, you can specify a Legal name, ID, company type,
 SIC code, ticker symbol, industry and industry type.
 
-## Authentication [](id=authentication)
+## Authentication
 
 The Authentication page has several tabs: General, LDAP, CAS, Facebook, NTLM,
 OpenID, Open SSO and SiteMinder. You can use any of these authentication methods

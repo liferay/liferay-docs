@@ -1,4 +1,8 @@
-# Portal Access Control List (PACL) Properties [](id=portal-access-control-list-pacl-properties)
+---
+header-id: portal-access-control-list-pacl-properties
+---
+
+# Portal Access Control List (PACL) Properties
 
 Liferay Portal's Plugin Security Manager checks all your plugin's API access
 attempts against the security manager properties specified in your plugin's

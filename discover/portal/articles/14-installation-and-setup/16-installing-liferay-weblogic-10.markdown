@@ -1,4 +1,8 @@
-# Installing Liferay on WebLogic 10 [](id=installing-liferay-on-weblogic-10)
+---
+header-id: installing-liferay-on-weblogic-10
+---
+
+# Installing Liferay on WebLogic 10
 
 **Liferay Home** is one folder above the domain to which you will be installing
 Liferay. For example, if your domain location is
@@ -18,16 +22,12 @@ the dependencies file should be called
 These instructions assume you have already configured a domain and server and
 that you have access to the WebLogic console.
 
-+$$$
-
-**Note:** WebLogic 10.0 supports JDK 1.5 but does *not* support JDK 1.6.
-
-$$$
+| **Note:** WebLogic 10.0 supports JDK 1.5 but does *not* support JDK 1.6.
 
 Now that you have all of your installation files, you are ready to start
 installing and configuring Liferay on WebLogic.
 
-## Dependency Jars [](id=dependency-jars)
+## Dependency Jars
 
 Liferay requires several `.jar` files including the Liferay Dependency JARs and
 a JAR file for your database driver. The following steps describe how to install
@@ -52,7 +52,7 @@ these `.jar` files properly.
 Now that you have your WebLogic installation is loaded up with JAR files for
 Liferay to use, let's consider how to configure your database.
 
-## Database Configuration [](id=database-configuration)
+## Database Configuration
 
 If you want WebLogic to manage your data source, use the following procedure. If
 you want to use Liferay's built-in data source, you can skip this section.
@@ -89,7 +89,7 @@ you want to use Liferay's built-in data source, you can skip this section.
 Great work! Your data source can now be managed from within WebLogic. Next,
 let's consider the mail session for your domain.
 
-## Mail Configuration [](id=mail-configuration)
+## Mail Configuration
 
 If you want WebLogic to manage your mail sessions, use the following procedure.
 If you want to use Liferay's built-in mail sessions, you can skip this section.
@@ -116,7 +116,7 @@ If you want to use Liferay's built-in mail sessions, you can skip this section.
 
 Now you have your mail session specified and ready for Liferay to use. 
 
-## Domain Configuration - Continued [](id=domain-configuration-continued)
+## Domain Configuration - Continued
 
 In order for special characters and other languages to display correctly, you
 must set `-Dfile.encoding=utf8` under `JAVA_OPTIONS` in the `setDomainEnv` file.
@@ -151,7 +151,7 @@ data source and mail session from Liferay Portal.
 Liferay can now communicate with your data source and mail session. It's now
 time to deploy Liferay!
 
-## Deploy Liferay [](id=deploy-liferay)
+## Deploy Liferay
 
 Follow the instructions in this section to deploy Liferay Portal to your domain.
 
@@ -183,12 +183,8 @@ To start the server without triggering the setup wizard, specify
 The `portal-setup-wizard.properties` file the setup wizard creates has
 `setup.wizard.enabled=false` conveniently specified for you.
 
-+$$$
-
-**Note:** Property values in `portal-setup-wizard.properties` override property 
-values in `portal-ext.properties`.
-
-$$$
+| **Note:** Property values in `portal-setup-wizard.properties` override property
+| values in `portal-ext.properties`.
 
 Now that you have enabled or disabled the setup wizard, let's move on to
 deployment of Liferay Portal.

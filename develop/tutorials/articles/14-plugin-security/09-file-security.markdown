@@ -1,4 +1,8 @@
-# File Security [](id=file-security)
+---
+header-id: file-security
+---
+
+# File Security
 
 The following properties address file deletion, execution, reading, writing and
 replacement operations. The `*` character in a path name indicates all files in

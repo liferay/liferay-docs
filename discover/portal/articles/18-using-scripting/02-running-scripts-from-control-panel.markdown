@@ -1,4 +1,8 @@
-# Running Scripts from the Control Panel [](id=running-scripts-from-the-control-panel)
+---
+header-id: running-scripts-from-the-control-panel
+---
+
+# Running Scripts from the Control Panel
 
 To see a very simple example of the script console in action, log into the
 portal as an administrator and navigate to the control panel &rarr; Server

@@ -1,4 +1,8 @@
-# Installing Liferay on an Existing Application Server [](id=installing-liferay-on-an-existing-application-server)
+---
+header-id: installing-liferay-on-an-existing-application-server
+---
+
+# Installing Liferay on an Existing Application Server
 
 This section contains detailed instructions for installing Liferay Portal using
 its .war file distribution. This allows system administrators to deploy Liferay
@@ -6,7 +10,7 @@ in existing application server installations. It is recommended that you have a
 good understanding of how to deploy Java EE applications in your application
 server of choice.
 
-## Installing Liferay in Five Easy Steps [](id=installing-liferay-in-five-easy-steps)
+## Installing Liferay in Five Easy Steps
 
 There are five generic steps to installing Liferay on an existing application
 server:
@@ -38,15 +42,11 @@ The following instructions assume an installation on a local machine. When
 installing to a remote server, substitute `localhost` with the host name or IP
 of the server.
 
-+$$$
-
-**Tip:** Note that Liferay *requires* JDK 5 or greater. Do not attempt to 
-install Liferay 6.x on an application server that runs under Java 1.4 or lower; 
-it will not work. If you are running an application server that ships with a JDK 
-and that JDK is 1.4 or lower, you'll need to upgrade your application server to 
-run current versions of Liferay Portal.
-
-$$$
+| **Tip:** Note that Liferay *requires* JDK 5 or greater. Do not attempt to
+| install Liferay 6.x on an application server that runs under Java 1.4 or lower;
+| it will not work. If you are running an application server that ships with a JDK
+| and that JDK is 1.4 or lower, you'll need to upgrade your application server to
+| run current versions of Liferay Portal.
 
 Without further ado, let's get to the application servers. The first one we'll
 cover is Mule Tcat. If you don't have an application server preference, and you

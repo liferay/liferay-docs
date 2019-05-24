@@ -1,4 +1,8 @@
-# Creating a Layout Template [](id=creating-a-layout-template)
+---
+header-id: creating-a-layout-template
+---
+
+# Creating a Layout Template
 
 With the Plugins SDK you can deploy layout templates as plugins, and creating
 layout templates with Liferay Developer Studio is easier than ever. Let's call

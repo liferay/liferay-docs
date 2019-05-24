@@ -1,4 +1,8 @@
-# Defining Content Relationships [](id=defining-content-relationships)
+---
+header-id: defining-content-relationships
+---
+
+# Defining Content Relationships
 
 Related Assets is a new feature in Liferay 6.1 that enables you to connect an
 asset to other assets within the same site or to global assets, even if they

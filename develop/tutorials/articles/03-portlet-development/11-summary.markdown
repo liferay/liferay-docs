@@ -1,4 +1,8 @@
-# Summary [](id=summary-0)
+---
+header-id: summary-0
+---
+
+# Summary
 
 You've covered a lot of ground learning Liferay Portlet development. You created
 a portlet project, studied its anatomy, and created the "My Greeting Portlet".

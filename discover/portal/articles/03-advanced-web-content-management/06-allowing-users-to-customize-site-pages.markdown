@@ -1,4 +1,8 @@
-# Allowing Users to Customize Site Pages [](id=allowing-users-to-customize-site-pages)
+---
+header-id: allowing-users-to-customize-site-pages
+---
+
+# Allowing Users to Customize Site Pages
 
 As we discussed before, as your site becomes larger and more complex, management
 of the content becomes more challenging. We've gone over Liferay management

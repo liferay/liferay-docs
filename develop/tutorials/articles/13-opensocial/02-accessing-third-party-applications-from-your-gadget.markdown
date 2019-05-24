@@ -1,4 +1,8 @@
-# Accessing third-party applications from your gadget [](id=accessing-third-party-applications-from-your-gadget)
+---
+header-id: accessing-third-party-applications-from-your-gadget
+---
+
+# Accessing third-party applications from your gadget
 
 Is there data on sites like Evernote, Facebook, Google, Netflix, Photobucket,
 Twitter, or Yahoo you'd like to access in your OpenSocial gadgets? Perhaps you'd
@@ -15,7 +19,7 @@ gadget's access to their resources on the external web applications. It's just
 that easy!
 
 Read the
-[Gadget personalization](/discover/portal/-/knowledge_base/6-1/exporting-portal-applications-as-widgets-and-opensocial-gadgets)
+[Gadget personalization](/docs/6-1/user/-/knowledge_base/u/exporting-portal-applications-as-widgets-and-opensocial-gadgets)
 section in *Using Liferay Portal 6.1* for instructions on configuring and using
 OAuth enabled gadgets. To learn how to write OAuth enabled gadgets, see Google's
 [Writing OAuth Gadgets](https://developers.google.com/gadgets/docs/oauth)

@@ -1,4 +1,8 @@
-# Summary [](id=summary-12)
+---
+header-id: summary-12
+---
+
+# Summary
 
 In this chapter we introduced concepts and instructions for developers to make
 their apps available on the Liferay Marketplace. We looked at how to create,

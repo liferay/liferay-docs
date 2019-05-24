@@ -1,4 +1,8 @@
-# Document Management [](id=document-management)
+---
+header-id: document-management
+---
+
+# Document Management
 
 Liferay's Documents and Media library provides a mechanism for storing files
 online using the same type of structure that you use to store files locally. You

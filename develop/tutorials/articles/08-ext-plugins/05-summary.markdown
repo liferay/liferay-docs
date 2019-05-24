@@ -1,4 +1,8 @@
-# Summary [](id=summary-5)
+---
+header-id: summary-5
+---
+
+# Summary
 
 Ext plugins are a powerful way to extend Liferay. There are no limits to what
 you can use them to customize, so use them carefully. Before using an Ext

@@ -1,4 +1,8 @@
-# Asset Framework [](id=asset-framework)
+---
+header-id: asset-framework
+---
+
+# Asset Framework
 
 Liferay's asset framework is a system that allow you to add common functionality
 to your application. For example, you might build an event management
@@ -66,7 +70,7 @@ saying taglibs provide widgets that allow...-->
 Next let's dive head first into the first step; informing the Asset Framework
 when you add, update, or delete assets. 
 
-## Adding, updating and deleting assets [](id=adding-updating-and-deleting-assets)
+## Adding, updating and deleting assets
 
 Whenever you create a new entity, you need to let the Asset Framework know. In
 this sense, it's similar to permission resources. It's a simple procedure: you
@@ -156,7 +160,7 @@ Here's an example invocation extracted again from the blogs portlet:
 Now that you can create and modify assets, consider tagging and categorizing
 them. Let's tackle that next. 
 
-## Entering and displaying tags and categories [](id=entering-and-displaying-tags-and-categories)
+## Entering and displaying tags and categories
 
 In the last section we let Asset Framework know about the tags and categories
 that we associated with a given asset; but how does a content author specify
@@ -181,14 +185,10 @@ be associated with new or existing tags or predefined categories:
 These two taglibs create appropriate form controls that allow the user to
 search for a tag or create a new one or select an existing category. 
 
-+$$$
-
-**Tip:** If you're using Liferay's Alloy UI Form taglibs, creating fields to
-enter tags and categories is even simpler. You just use `<aui:input name="tags"
-type="assetTags" />` and `<aui:input name="categories" type="assetCategories"
-/>`, respectively. 
-
-$$$
+| **Tip:** If you're using Liferay's Alloy UI Form taglibs, creating fields to
+| enter tags and categories is even simpler. You just use `<aui:input name="tags"
+| type="assetTags" />` and `<aui:input name="categories" type="assetCategories"
+| />`, respectively.
 
 Once the tags and categories have been entered, you'll want to show them along
 with the content of the asset. Here's how to display the tags and categories: 
@@ -219,7 +219,7 @@ Great job! You'll have no problem associating tags and categories with your
 assets. Before we go further with our example, let's take a look at more JSP
 tags you can use to leverage Asset Framework's features. 
 
-## More JSP tags for assets [](id=more-jsp-tags-for-assets)
+## More JSP tags for assets
 
 In addition to tags and categories, there are more features that Asset Framework
 provides. These features allow users to do the following with your assets: 
@@ -292,7 +292,7 @@ don't need to do this now, but we should do it later, for the 6.2 release. -Rich
 With Liferay's taglib tags, you can easily apply these features to your assets.
 No problemo, right? So let's get the assets published in your portal. 
 
-## Publishing assets with Asset Publisher [](id=publishing-assets-with-asset-publisher)
+## Publishing assets with Asset Publisher
 
 A huge benefit of using the asset framework is that you can leverage the Asset
 Publisher portlet to publish lists of your custom asset types. You can choose

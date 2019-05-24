@@ -1,4 +1,8 @@
-# Installing Liferay on GlassFish 3 [](id=installing-liferay-on-glassfish-3)
+---
+header-id: installing-liferay-on-glassfish-3
+---
+
+# Installing Liferay on GlassFish 3
 
 *Liferay Home* is three folders above your GlassFish domain folder.
 
@@ -25,7 +29,7 @@ and that you have access to the GlassFish administrative console.
 
 Let's start out by installing the JAR files you will need.
 
-## Dependency Jars [](id=dependency-jars)
+## Dependency Jars
 
 Liferay depends on jar files found in the Liferay Dependencies Archive. You
 should also have installed your database driver.
@@ -47,7 +51,7 @@ should also have installed your database driver.
 Terrific, you have your JAR files just where you'll need them. Next we'll
 configure your domain.
 
-### Domain Configuration [](id=domain-configuration)
+### Domain Configuration
 
 There are a couple of modifications you need to make in your domain to use
 Liferay Portal.
@@ -92,7 +96,7 @@ location to allow your Liferay Portal default page to be displayed.
 
 Next, let's get your database configured.
 
-## Database Configuration [](id=database-configuration)
+## Database Configuration
 
 If you want to use GlassFish to manage your domain's data source, follow the
 instructions found in this section. If you want to use Liferay Portal to manage
@@ -168,14 +172,14 @@ your data source, you can skip this section.
 
 Congratulations! You've now configured your domain's data source on GlassFish!
 
-## Mail Configuration [](id=mail-configuration)
+## Mail Configuration
 
 If you want to use GlassFish to manage your mail session, follow GlassFish's
 documentation on configuring a JavaMail session with a JNDI name of
 `mail/MailSession`. If you want to use Liferay Portal to manage your mail
 session, you can skip this step.
 
-## Domain Configuration - Continued [](id=domain-configuration-continued)
+## Domain Configuration - Continued
 
 Let's tie up some loose ends with regards to Liferay being able to access your
 database and mail session.
@@ -208,7 +212,7 @@ your `portal-ext.properties` file to reference that mail session:
 Liferay can now communicate with your database and mail session. So let's go
 ahead and deploy Liferay.
 
-## Deploy Liferay [](id=deploy-liferay)
+## Deploy Liferay
 
 Here are the steps you'll need to follow to deploy Liferay Portal to your
 domain's server. Before you deploy Liferay Portal, let's consider whether you
@@ -239,12 +243,8 @@ To startup the server without triggering the setup wizard, specify
 Once you run the setup wizard, the `portal-setup-wizard.properties` file it
 creates already has `setup.wizard.enabled=false` conveniently specified for you.
 
-+$$$
-
-**Note:** Property values in `portal-setup-wizard.properties` override property 
-values in `portal-ext.properties`.
-
-$$$
+| **Note:** Property values in `portal-setup-wizard.properties` override property
+| values in `portal-ext.properties`.
 
 1. Start your domain's application server.
 

@@ -1,4 +1,8 @@
-# Weather [](id=weather)
+---
+header-id: weather
+---
+
+# Weather
 
 Liferay's Weather portlet displays basic weather-related information
 (temperature, conditions) for multiple configurable locations. It's available as

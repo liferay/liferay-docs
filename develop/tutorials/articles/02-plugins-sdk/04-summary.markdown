@@ -1,4 +1,8 @@
-# Summary [](id=summary)
+---
+header-id: summary
+---
+
+# Summary
 
 Now your Plugins SDK is configured, you know the directory structure and
 available targets, and you've learned some best practices. You're ready to start

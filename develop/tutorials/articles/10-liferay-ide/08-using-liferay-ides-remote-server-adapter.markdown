@@ -1,4 +1,8 @@
-# Using Liferay IDE's Remote Server Adapter [](id=using-liferay-ides-remote-server-adapter)
+---
+header-id: using-liferay-ides-remote-server-adapter
+---
+
+# Using Liferay IDE's Remote Server Adapter
 
 The Remote Server Adapter is a feature that lets you deploy your Liferay
 projects to a remote Liferay Portal server. If you need to work with a 
@@ -40,17 +44,13 @@ machine before using the Remote Server Adapter, so that you can compile plugins
 for deployment. Follow the instructions earlier in the chapter to get your
 Liferay IDE or Liferay Developer Studio environment up and running. 
 
-+$$$
-
-**Important:** Keep a record of your portal administrator login credentials
-(e.g., username/password) for your remote Liferay server; you'll need them to
-configure your connection from Liferay IDE to the remote Liferay server. 
-
-$$$
+| **Important:** Keep a record of your portal administrator login credentials
+| (e.g., username/password) for your remote Liferay server; you'll need them to
+| configure your connection from Liferay IDE to the remote Liferay server.
 
 Let's start by configuring the Remote Server Adapter. 
 
-## Configuring the Remote Server Adapter [](id=configuring-the-remote-server-adapter)
+## Configuring the Remote Server Adapter
 
 You can use Liferay IDE's Remote Server wizard to configure the Remote
 Server Adapter and install the Remote IDE Connector to your Liferay instance.
@@ -135,7 +135,7 @@ Server Adapter, use the following steps:
 Now that your remote Liferay Portal server is configured, let's test the remote
 server adapter!
 
-## Using the Remote Server Adapter [](id=using-the-remote-server-adapter)
+## Using the Remote Server Adapter
 
 Once your remote Liferay Portal server is correctly configured and Liferay IDE
 is connected to it, you can begin publishing projects to it and using it as you
@@ -145,13 +145,9 @@ Here's how to publish plugin projects to your remote server in Liferay IDE:
 
 1.  Right click on the server and choose *Add and Remove...*. 
 
-    +$$$
-
-    **Note:** Make sure you have available projects configured in Liferay IDE.
-    If not, you'll get an error message indicating there are no available
-    resources to add or remove from the server. 
-
-    $$$
+    | **Note:** Make sure you have available projects configured in Liferay IDE.
+    | If not, you'll get an error message indicating there are no available
+    | resources to add or remove from the server.
 
 2.  Select the Liferay projects to publish to your remote server; click *Add* to
     add them to your remote server, then click *Finish*. Deployment begins

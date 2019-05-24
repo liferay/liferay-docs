@@ -1,4 +1,8 @@
-# Performing a Custom Action [](id=performing-a-custom-action)
+---
+header-id: performing-a-custom-action
+---
+
+# Performing a Custom Action
 
 Hooks are useful for triggering custom actions on common portal events,
 like user log in or system start up. The actions for each of these events are
@@ -40,14 +44,10 @@ custom actions for other events, too. For actions that require access to the
 `HttpServletRequest`, extend `com.liferay.portal.kernel.events.Action`; for
 others, extend `com.liferay.portal.struts.SimpleAction`. 
 
-+$$$
-
-**Important:** For better forward compatibility, use hooks to customize Struts
-actions rather than Ext plugins. For more information, see the
-[Properties Reference](http://docs.liferay.com/portal/6.1/propertiesdoc/portal.properties.html)
-document. 
-
-$$$
+| **Important:** For better forward compatibility, use hooks to customize Struts
+| actions rather than Ext plugins. For more information, see the
+| [Properties Reference](http://docs.liferay.com/portal/6.1/propertiesdoc/portal.properties.html)
+| document.
 
 Extending and overriding portal properties is just as easy, so let's do that
 next.

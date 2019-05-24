@@ -1,4 +1,8 @@
-# Using Model Hints [](id=using-model-hints)
+---
+header-id: using-model-hints
+---
+
+# Using Model Hints
 
 Now that you've created your model entities and implemented your business logic
 to create and modify those entities, you probably have some ideas for helping

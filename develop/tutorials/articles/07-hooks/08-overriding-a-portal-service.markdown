@@ -1,4 +1,8 @@
-# Overriding a Portal Service [](id=overriding-a-portal-service)
+---
+header-id: overriding-a-portal-service
+---
+
+# Overriding a Portal Service
 
 All the functionality provided by Liferay is enclosed in a layer of services
 that are accessed by the controller layer in portlets. This is a standard
@@ -41,14 +45,10 @@ Liferay to use your service class instead of the original.
             }
         }
 
-    +$$$
-
-    **Note:** The wrapper class (`MyUserLocalServiceImpl` in this example) will
-    be loaded in the hook's class loader. That means it will have access to any
-    other class included in the same WAR file, but *not* the *internal* classes
-    of Liferay. 
-
-    $$$
+    | **Note:** The wrapper class (`MyUserLocalServiceImpl` in this example) will
+    | be loaded in the hook's class loader. That means it will have access to any
+    | other class included in the same WAR file, but *not* the *internal* classes
+    | of Liferay.
 
 2.  Edit `liferay-hook.xml`, located in the `example-hook/docroot/WEB-INF`
     directory, by adding the following after `</custom-jsp-dir>`:

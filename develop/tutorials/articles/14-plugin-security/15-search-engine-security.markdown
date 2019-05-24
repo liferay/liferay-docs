@@ -1,4 +1,8 @@
-# Search Engine Security [](id=search-engine-security)
+---
+header-id: search-engine-security
+---
+
+# Search Engine Security
 
 Specify the IDs of search engines the plugin is permitted to access. 
 

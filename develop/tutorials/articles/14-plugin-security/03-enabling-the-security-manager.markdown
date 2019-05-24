@@ -1,4 +1,8 @@
-# Enabling the Security Manager [](id=enabling-the-security-manager)
+---
+header-id: enabling-the-security-manager
+---
+
+# Enabling the Security Manager
 
 If you want to distribute plugins, either on the Liferay Marketplace or through
 your web site, you have to assume users will insist the Security Manager is

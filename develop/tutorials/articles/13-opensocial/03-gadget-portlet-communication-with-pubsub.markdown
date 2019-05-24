@@ -1,4 +1,8 @@
-# Gadget/Portlet Communication with PubSub [](id=gadget-portlet-communication-with-pubsub)
+---
+header-id: gadget-portlet-communication-with-pubsub
+---
+
+# Gadget/Portlet Communication with PubSub
 
 Have you ever wanted your gadgets to communicate with each other or with
 portlets? You can do so with *PubSub*. It is a messaging pattern in which
@@ -89,7 +93,7 @@ I bet you are wondering how to implement PubSub messaging in your gadgets and
 portlets. We'll dive into the code next. In fact, we'll complete exercises
 demonstrating gadget to gadget interaction and portlet to gadget interaction.
 
-## Gadget to Gadget [](id=gadget-to-gadget)
+## Gadget to Gadget
 
 For gadget to gadget communication, two independent gadgets are placed on a page
 and configured with PubSub. These two gadgets are able to communicate with one
@@ -289,7 +293,7 @@ Gadgets are not limited to only communicating with other gadgets. In the next
 section, we will demonstrate the capabilities of communication between portlets
 and gadgets.
 
-## Communicating Between Portlets and Gadgets [](id=communicating-between-portlets-and-gadgets)
+## Communicating Between Portlets and Gadgets
 
 For this section, we will continue implementing the *Google Map* gadget on your
 site. If you have portlet applications that can take advantage of the
@@ -326,13 +330,9 @@ they are broadcast across a channel. Notice that you don't need to change anythi
 for your *Google Map* gadget, since it's already subscribed to that channel. You
 only needed to define the *Directory* portlet as a publisher to that channel.
 
-+$$$
-
-**Note:** If you would like to broadcast messages to portlets, follow the same
-guidelines, but don't use the `gadget:` prefix in your topic parameter value for
-the call to the `Liferay.fire()` function.
-
-$$$
+| **Note:** If you would like to broadcast messages to portlets, follow the same
+| guidelines, but don't use the `gadget:` prefix in your topic parameter value for
+| the call to the `Liferay.fire()` function.
 
 After editing the JSP, you can add the *Directory* Portlet and *Google Map*
 gadget to a Liferay page and test it out. Here is a snapshot of what the

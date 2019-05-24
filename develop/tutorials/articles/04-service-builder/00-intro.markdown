@@ -1,4 +1,8 @@
-# Generating Your Service Layer [](id=generating-your-service-layer)
+---
+header-id: generating-your-service-layer
+---
+
+# Generating Your Service Layer
 
 The word *service* can mean many specific things, but the general dictionary
 definition states that it's "an act of helpful activity." Everyone has

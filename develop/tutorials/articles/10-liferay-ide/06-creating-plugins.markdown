@@ -1,4 +1,8 @@
-# Creating Plugins [](id=creating-plugins)
+---
+header-id: creating-plugins
+---
+
+# Creating Plugins
 
 Liferay projects can contain multiple plugins. If you've followed the
 instructions from the earlier section on creating new Liferay projects, you

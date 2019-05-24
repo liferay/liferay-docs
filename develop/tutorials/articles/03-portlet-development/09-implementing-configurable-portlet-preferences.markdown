@@ -1,4 +1,8 @@
-# Implementing Configurable Portlet Preferences [](id=implementing-configurable-portlet-preferences)
+---
+header-id: implementing-configurable-portlet-preferences
+---
+
+# Implementing Configurable Portlet Preferences
 
 Portlet Preferences are properties for storing basic portlet configuration data.
 Preferences are often used by administrators to provide customized views of a
@@ -11,7 +15,7 @@ it.
 
 We'll use the Location Listing Portlet we developed in the [Generating Your
 Service
-Layer](/develop/tutorials/-/knowledge_base/6-1/generating-your-service-layer)
+Layer](/docs/6-1/tutorials/-/knowledge_base/t/generating-your-service-layer)
 chapter. We'll create a configuration page and add a custom option to it,
 allowing administrators to hide the address portion of the locations. Let's dive
 into portlet preferences by running through an example of creating a
@@ -25,7 +29,7 @@ icon in the upper right corner and select *Configuration*. If you already have a
 *Setup* tab, you can skip the next section. Otherwise we'll show you how to
 create the default setup tab for your portlet's configuration page. 
 
-## Creating a Default Setup Tab in the Portlet's Configuration Page [](id=creating-a-default-setup-tab-in-the-portlets-configuration-page)
+## Creating a Default Setup Tab in the Portlet's Configuration Page
 
 Open the `liferay-portlet.xml` file and add the element
 `<configuration-action-class>com.liferay.portal.kernel.portlet.DefaultConfigurationAction</configuration-action-class>`
@@ -64,7 +68,7 @@ Portlet Preference Value
 
 Let's specify a configuration JSP file, first. 
 
-## Step 1: Specify a Configuration JSP in the portlet.xml [](id=step-1-specify-a-configuration-jsp-in-the-portlet-xml)
+## Step 1: Specify a Configuration JSP in the portlet.xml
 
 Your portlet will need a way to display configuration options to the user.
 Liferay checks to see if your portlet specifies a configuration JSP via a
@@ -79,7 +83,7 @@ Listing Portlet's `<portlet-class>...</portlet-class>` tag:
          <value>/html/locationlisting/configuration.jsp</value>
      </init-param>
 
-## Step 2: Create the Configuration JSP for Displaying the Portlet Preference Options [](id=step-2-create-the-configuration-jsp-for-displaying-the-portlet-preference-o)
+## Step 2: Create the Configuration JSP for Displaying the Portlet Preference Options
 
 We'll create a configuration JSP file and add JavaScript to let the user select
 a portlet preference value. For our example, we'll provide a custom option in
@@ -147,7 +151,7 @@ provides useful portlet variables such as *renderRequest*, *portletConfig*, and
 Your `configuration.jsp` is all set to display your portlet preference options.
 Let's implement a custom class to handle the configuration action. 
 
-## Step 3: Create a Configuration Action Implementation Class for Processing the Portlet Preference Value [](id=step-3-create-a-configuration-action-implementation-class-for-processing-th)
+## Step 3: Create a Configuration Action Implementation Class for Processing the Portlet Preference Value
 
 Now let's create a custom configuration action class for accessing the portlet
 preference. We'll have it extend the
@@ -201,13 +205,9 @@ Another common method to include in a custom configuration action class is a
 configuration icon. For this example, we'll stick with the original render
 method from the `DefaultConfigurationAction` class we're extending.
 
-+$$$
-
-**Note:** You won't need to store portlet preferences by calling
-`preferences.store()` since they're automatically stored in the
-`DefaultConfigurationAction` class, which your configuration class extends.
-
-$$$
+| **Note:** You won't need to store portlet preferences by calling
+| `preferences.store()` since they're automatically stored in the
+| `DefaultConfigurationAction` class, which your configuration class extends.
 
 Lastly, let's specify our new custom configuration class in the
 `liferay-portlet.xml`. Replace the existing `<configuration-action-class>...</configuration-action-class>`
@@ -232,7 +232,7 @@ Here's a snippet to show you where it goes in the context of the
 Since your configuration action implementation is ready to process your portlet
 preference, let's update the view JSP to respond to the portlet preference. 
 
-## Step 4: Modify the View JSP to Respond to the Current Portlet Preference Value [](id=step-4-modify-the-view-jsp-to-respond-to-the-current-portlet-preference-val)
+## Step 4: Modify the View JSP to Respond to the Current Portlet Preference Value
 
 Let's add logic in our `view.jsp` to show/hide the location addresses based on
 the value of our portlet preference key `showLocationAddress`. 

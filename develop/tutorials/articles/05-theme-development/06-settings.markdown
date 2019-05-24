@@ -1,4 +1,8 @@
-# Settings [](id=settings)
+---
+header-id: settings
+---
+
+# Settings
 
 You can define settings to make your theme configurable. Create a file named
 `liferay-look-and-feel.xml` in the `WEB-INF` directory, with the following
@@ -80,14 +84,10 @@ company's name in the footer of your site's pages:
             </p>
         </footer>
 
-+$$$
-
-**Note:** Let's look more closely at two theme setting variables appearing in
-the above logic. The `display-slogan-footer` variable holds a boolean value
-indicating whether to display the version of the footer that contains your
-slogan. The `slogan` variable holds your slogan text.
-
-$$$
+| **Note:** Let's look more closely at two theme setting variables appearing in
+| the above logic. The `display-slogan-footer` variable holds a boolean value
+| indicating whether to display the version of the footer that contains your
+| slogan. The `slogan` variable holds your slogan text.
 
 2.  Declare the two theme setting variables in your `liferay-look-and-feel.xml`,
     located in your theme's `WEB-INF` folder:
@@ -106,19 +106,15 @@ $$$
             />
         </settings>
 
-+$$$
-
-**Warning:** Make sure you have an up-to-date DTD version specified for your
-`liferay-look-and-feel.xml` file. For example,
-`http://www.liferay.com/dtd/liferay-look-and-feel_6_1_0.dtd`. When referencing
-older DTD files (e.g., 6.0.0), the slogan settings are unavailable.
- 
-$$$
+| **Warning:** Make sure you have an up-to-date DTD version specified for your
+| `liferay-look-and-feel.xml` file. For example,
+| `http://www.liferay.com/dtd/liferay-look-and-feel_6_1_0.dtd`. When referencing
+| older DTD files (e.g., 6.0.0), the slogan settings are unavailable.
 
 The portal administrator can enter a slogan and activate it for the portal via
 the *Look and Feel* section of the *Manage Site Pages* panel (see the *Creating
 sites and managing pages* section of [Using Liferay
-Portal](/discover/portal/-/knowledge_base/6-1/creating-sites-and-managing-pages)). 
+Portal](/docs/6-1/user/-/knowledge_base/u/creating-sites-and-managing-pages)). 
 
  ![Figure 5.5: Setting the footer display slogan in the *Look and Feel* of the site's page settings.](../../images/themes-custom-configurable-setting.png)
 
@@ -127,14 +123,10 @@ footer, including the slogan.
 
  ![Figure 5.6: The slogan displayed in the page footer.](../../images/themes-custom-configurable-setting-displayed.png)
 
-+$$$
-
-**Note:** Use a language properties hook to display configurable theme settings
-properly, like the slogan text area and footer checkbox from the previous
-example. For details, see the
-[Overriding a *Language.properties* File](/develop/tutorials/-/knowledge_base/6-1/overriding-a-language-properties-file)
-section found in the *Hooks* chapter of this guide.
-
-$$$
+| **Note:** Use a language properties hook to display configurable theme settings
+| properly, like the slogan text area and footer checkbox from the previous
+| example. For details, see the
+| [Overriding a *Language.properties* File](/docs/6-1/tutorials/-/knowledge_base/t/overriding-a-language-properties-file)
+| section found in the *Hooks* chapter of this guide.
 
 Next, let's customize your theme's color scheme. 

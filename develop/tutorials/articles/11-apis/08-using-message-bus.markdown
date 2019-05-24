@@ -1,4 +1,8 @@
-# Using Message Bus [](id=using-message-bus)
+---
+header-id: using-message-bus
+---
+
+# Using Message Bus
 
 The *Message Bus* is a service level API used to exchange messages within
 Liferay. The Message Bus is a mechanism for sending message payloads to
@@ -29,7 +33,7 @@ System's architecture.
 "subtopics" list, so I left his change and also changed the subtopics list into
 a paragraph. Russ--> 
 
-## The Message Bus System [](id=the-message-bus-system)
+## The Message Bus System
 
 The Message Bus system contains the following components: 
 
@@ -71,13 +75,9 @@ Configuration of Message Bus is done using the following files:
   Make sure you add `messaging-spring.xml` to your list of Spring configurations
   in this file.
 
-+$$$
-
-**Note:** The internal file `META-INF/messaging-core-spring.xml` of
-`portal-impl.jar` specifies the default Message Bus class, default asynchronous
-message sender class, and default synchronous message sender class for Liferay. 
-
-$$$
+| **Note:** The internal file `META-INF/messaging-core-spring.xml` of
+| `portal-impl.jar` specifies the default Message Bus class, default asynchronous
+| message sender class, and default synchronous message sender class for Liferay.
 
 You can control your *Message Types* by using either the `Message` or
 `JSONObject` class. Liferay core services are typically serialized and
@@ -89,7 +89,7 @@ destinations, senders, listeners, and approaches to sending messages. Next we'll
 show you how easy it is to create your destinations, register listeners, and
 send your messages. To demonstrate, we'll implement a business use case.
 
-## Example Use Case--Procurement process [](id=example-use-case-procurement-process)
+## Example Use Case--Procurement process
 
 Our use case will consider Jungle Gyms R-Us and its distribution of playground
 equipment, buying the equipment from manufacturers and selling the equipment to
@@ -126,7 +126,7 @@ Departments have to enter purchase requests, and the message bus automatically
 emails certain departments when a purchase request is entered. -Rich -->
 
 Jungle Gyms R-Us could use Liferay's [Workflow with
-Kaleo](/discover/portal/-/knowledge_base/6-1/workflow-with-kaleo)
+Kaleo](/docs/6-1/user/-/knowledge_base/u/workflow-with-kaleo)
 to resolve the communication breakdown, but we'll resolve the Jungle Gym's
 communication woes using Message Bus, to show you how it works. 
 Here are the inter-department message exchanges we'll accommodate:
@@ -141,7 +141,7 @@ Here are the inter-department message exchanges we'll accommodate:
 
 Let's implement Procurement's request to Finance first. 
 
-## Synchronous messaging [](id=synchronous-messaging)
+## Synchronous messaging
 
 In our example, equipment purchases can't proceed without approval from Finance
 and Legal departments. Since special offers from the manufacturers often only
@@ -400,7 +400,7 @@ about the slide's safety ratings!
 Next let's have Procurement notify the Sales and Warehouse departments and
 solicit their feedback.
 
-## Asynchronous messaging with callbacks [](id=asynchronous-messaging-with-callbacks)
+## Asynchronous messaging with callbacks
 
 Asynchronous messaging consists of sending a message and then continuing with
 processing without blocking waiting for an immediate response. This allows the
@@ -588,7 +588,7 @@ employees.
 
 <!-- Missing transition. --> 
 
-## Asynchronous "Send and Forget" [](id=asynchronous-send-and-forget)
+## Asynchronous "Send and Forget"
 
 In the *send and forget* model, the sender sends messages and continues
 processing. We'll apply this behavior to Jungle Gym's company-wide new product

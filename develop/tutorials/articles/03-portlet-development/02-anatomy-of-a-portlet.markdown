@@ -1,4 +1,8 @@
-# Anatomy of a Portlet [](id=anatomy-of-a-portlet)
+---
+header-id: anatomy-of-a-portlet
+---
+
+# Anatomy of a Portlet
 
 A portlet project is made up of at least three components:
 
@@ -67,7 +71,7 @@ or `<head>`.  Additionally, namespace all CSS classes and element IDs to prevent
 conflicts with other portlets. Liferay provides two tools, a taglib and API
 methods, to generate a namespace for you. 
 
-## A Closer Look at the My Greeting Portlet [](id=a-closer-look-at-the-my-greeting-portlet)
+## A Closer Look at the My Greeting Portlet
 
 If you're new to portlet development, this section will enhance your
 understanding of portlet configuration options. 
@@ -153,15 +157,11 @@ Here's a basic summary of what each element represents:
     specifying your default values and specify the localized values in separate
     resource bundles.
 
-    +$$$
-    
-    **Note:** You should not specify values for a portlet's title, short title,
-    and keywords in both a portlet's `<portlet-info>` element in `portlet.xml`
-    and in a resource bundle. But if by accident you do, the values in the
-    resource bundle take precedence over the values in the `<portlet-info>`
-    element.
-
-    $$$
+    | **Note:** You should not specify values for a portlet's title, short title,
+    | and keywords in both a portlet's `<portlet-info>` element in `portlet.xml`
+    | and in a resource bundle. But if by accident you do, the values in the
+    | resource bundle take precedence over the values in the `<portlet-info>`
+    | element.
 
     Specifying *localized* values for your portlet's title, short title, and
     keywords in resource bundles is easy. For example, if you're supporting

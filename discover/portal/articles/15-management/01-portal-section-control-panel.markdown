@@ -1,4 +1,8 @@
-# The Portal Section of the Control Panel [](id=the-portal-section-of-the-control-panel)
+---
+header-id: the-portal-section-of-the-control-panel
+---
+
+# The Portal Section of the Control Panel
 
 The Portal section of the control panel is used for most administrative tasks.
 You'll find there an interface for the creation and maintenance of the following

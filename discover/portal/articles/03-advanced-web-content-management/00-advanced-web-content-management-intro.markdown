@@ -1,4 +1,8 @@
-# Advanced Web Content Management [](id=advanced-web-content-management)
+---
+header-id: advanced-web-content-management
+---
+
+# Advanced Web Content Management
 
 In the previous chapter we looked at some basic ways you can use Liferay to
 handle your web content. In this chapter we'll delve deeper into slightly more

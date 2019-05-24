@@ -1,4 +1,8 @@
-# Finding Portal Services [](id=finding-portal-services)
+---
+header-id: finding-portal-services
+---
+
+# Finding Portal Services
 
 Liferay's Javadocs are easy to browse and well-organized. Here's how you find
 the *Organization* services: 

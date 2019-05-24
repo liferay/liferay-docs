@@ -1,19 +1,19 @@
-# Migrating old extension environments [](id=migrating-old-extension-environments)
+---
+header-id: migrating-old-extension-environments
+---
+
+# Migrating old extension environments
 
 Because Ext plugins are an evolution of the extension environment provided in
 Liferay 5.2 and earlier, you might need to migrate your extension environment
 into Ext plugins when upgrading Liferay. If you need to do this, we have good
 news; migrating is automated and relatively easy. 
 
-+$$$
-
-**Tip:** When migrating an extension environment, first consider whether any of
-the extension environment's features can be moved into other types of plugins.
-Portlets and hooks are designed to meet specific needs and they're easier to
-learn. Additionally, they're easier to maintain since they often require fewer
-changes when upgrading to a new version of Liferay. 
-
-$$$
+| **Tip:** When migrating an extension environment, first consider whether any of
+| the extension environment's features can be moved into other types of plugins.
+| Portlets and hooks are designed to meet specific needs and they're easier to
+| learn. Additionally, they're easier to maintain since they often require fewer
+| changes when upgrading to a new version of Liferay.
 
 To successfully migrate, execute an Ant target within the `ext` directory of the
 Plugins SDK, pointing to the old extension environment and naming the new
@@ -50,7 +50,7 @@ to portlet plugins; extension environment portlets have been deprecated since
 Liferay Portal 6.0, and support isn't guaranteed in future Liferay Portal
 releases. 
 
-## Licensing and Contributing [](id=licensing-and-contributing)
+## Licensing and Contributing
 
 Liferay Portal is Open Source software licensed under the LGPL 2.1 license
 ([http://www.gnu.org/licenses/lgpl-2.1.html](http://www.gnu.org/licenses/lgpl-2.1.html)).

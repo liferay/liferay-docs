@@ -1,4 +1,8 @@
-# Patching Liferay [](id=patching-liferay)
+---
+header-id: patching-liferay
+---
+
+# Patching Liferay
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
@@ -18,7 +22,7 @@ packs are provided to all of Liferay's customers.
 
 Now that you know what patching is all about, let's check out the tool. 
 
-## Installing the Patching Tool [](id=installing-the-patching-tool)
+## Installing the Patching Tool
 
 If you're using a Liferay bundle, congratulations! The Patching Tool is already
 installed. Your job isn't done yet, however, because Liferay *might* have
@@ -71,7 +75,7 @@ you're ready to download and install patches. You can install patches manually
 or automatically. For automatic patch installation, you need to set up the 
 Patching Tool Agent. This is presented next.
 
-### Configuring the Patching Tool Agent [](id=configuring-the-patching-tool-agent)
+### Configuring the Patching Tool Agent
 
 The Patching Tool Agent automatically installs downloaded patches on server 
 startup. For the agent to start with your server, you need to set the `javaagent` 
@@ -117,7 +121,7 @@ You can specify these as follows:
 
 Now let's see how to use the Patching Tool to get your patches installed. 
 
-## Installing patches [](id=installing-patches)
+## Installing patches
 
 The absolute first thing you must do when installing one or more patches is to
 shut down your server. On Windows operating systems, files that are in use are
@@ -171,7 +175,7 @@ Once your patches have been installed, you can verify them by using the
 `./patching-tool.sh info` command, which now shows your patch in the list of
 installed patches. Next, let's look now at how to manage your patches. 
 
-### Handling hotfixes and patches [](id=handling-hot-fixes-and-patches)
+### Handling hotfixes and patches
 
 As stated above, hotfixes are short term fixes provided as quickly as possible
 and fix packs are larger bundles of hotfixes provided to all customers at
@@ -186,7 +190,7 @@ If a new version of a fix pack is released, you can use the Patching Tool to
 install it. The Patching Tool uninstalls the old fix pack and installs the new
 version in its place. 
 
-### Additional notes [](id=additional-notes)
+### Additional notes
 
 If you customized the Application Server's web.xml, you should manually check
 and update this file after a patch has applied on your environment as it will be
@@ -196,7 +200,7 @@ this file.
 In order to determine if a patch contains such a modification, please utilize
 the `diff` command described below in the new features paragraph.
 
-### Fix pack dependencies [](id=fix-pack-dependencies)
+### Fix pack dependencies
 
 Some hotfix require a fix pack to be installed first. If you attempt to
  install a hotfix that depends on a fix pack, the Patching Tool notifies
@@ -206,7 +210,7 @@ Some hotfix require a fix pack to be installed first. If you attempt to
 
 The Patching Tool can also remove patches. 
 
-## Removing or reverting patches [](id=removing-or-reverting-patches)
+## Removing or reverting patches
 
 Have you noticed that the Patching Tool only seems to have an `install` command?
 This is because patches are managed not by the command, but by what appears in
@@ -222,7 +226,7 @@ What we've described so far is the simplest way to use the Patching Tool, but
 you can also use the Patching Tool in the most complex, multi-VM, clustered
 environments. This is done by using profiles. 
 
-## Using profiles with the Patching Tool [](id=using-profiles-with-the-patching-tool)
+## Using profiles with the Patching Tool
 
 When you ran the auto-discovery task after installing the Patching Tool, it
 created a default profile that points to the application server it discovered.
@@ -275,13 +279,13 @@ is only valid if your `patching.mode` is `source`.
 You can have as many profiles as you want, and use the same Patching Tool to
 patch all of them. This helps to keep all your installations in sync. 
 
-## New features [](id=new-features)
+## New features
 
 Starting with Version 18 of the Patching Tool, we have included some major
 improvements that provide assistance to developers for detecting the source
 changes introduced by the patches.
 
-### Diff command [](id=diff-command)
+### Diff command
     ./patching-tool.sh diff
 This command prints the differences between two patch levels to the output.
 At least one stored patch level must be available for the tool.
@@ -304,7 +308,7 @@ numbers to track certain fixes.
 For the detailed usage information, please run `./patching-tool help diff`
 command.
 
-### Store command [](id=store-command)
+### Store command
     ./patching-tool.sh store
 Manages patching level information for `diff` command. The command needs
 patches with sources to be able to prepare usable information for the `diff`

@@ -1,4 +1,8 @@
-# Developing Plugins Using Maven [](id=developing-plugins-using-maven)
+---
+header-id: developing-plugins-using-maven
+---
+
+# Developing Plugins Using Maven
 
 "Once upon a midnight dreary, while I pondered weak and weary..."
 

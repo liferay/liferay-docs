@@ -1,4 +1,8 @@
-# Summary [](id=summary-13)
+---
+header-id: summary-13
+---
+
+# Summary
 
 In this chapter, we began to examine Liferay's control panel. Site memberships
 and teams aren't the only way for portal administrators to group and manage

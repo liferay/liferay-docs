@@ -1,4 +1,8 @@
-# Developing an Ext Plugin [](id=developing-an-ext-plugin)
+---
+header-id: developing-an-ext-plugin
+---
+
+# Developing an Ext Plugin
 
 An Ext plugin changes Liferay itself when deployed; it's not a separate
 component that can be easily removed at any time. For this reason, the Ext
@@ -31,7 +35,7 @@ customization techniques.
 
 Now let's look at each step of the development proces in more detail. 
 
-## Set up [](id=set-up)
+## Set up
 
 Before deploying an Ext plugin, you must edit the `build.[username].properties`
 file in the root folder of your Plugins SDK. If the file doesn't yet exist,
@@ -63,20 +67,16 @@ the application server *within* our Liferay bundle `.zip` file is
 `C:/work/liferay-portal-6.1.2-ce-ga3/tomcat-7.0.40` as our `app.server.dir`
 property value. 
 
-+$$$
-
-**Note:** Some Liferay bundles come installed with a sample website. It's useful
-for showcasing certain features of Liferay, but if you removed it, you likely
-don't want it reinstalled each time your bundle is unzipped. To prevent the
-reinstallation of 7-Cogs, unzip your bundle, delete the
-`[work]/liferay-portal-[version]/[app-server]-[version]/webapps/welcome-theme`
-folder, then re-zip your bundle. 
-
-$$$
+| **Note:** Some Liferay bundles come installed with a sample website. It's useful
+| for showcasing certain features of Liferay, but if you removed it, you likely
+| don't want it reinstalled each time your bundle is unzipped. To prevent the
+| reinstallation of 7-Cogs, unzip your bundle, delete the
+| `[work]/liferay-portal-[version]/[app-server]-[version]/webapps/welcome-theme`
+| folder, then re-zip your bundle.
 
 Next we'll change our newly created Ext plugin and deploy it. 
 
-## Initial deployment [](id=initial-deployment)
+## Initial deployment
 
 Our environment is set up and we're ready to start customizing. First let's look
 at a simple example that customizes the sections of a user profile. The
@@ -93,7 +93,7 @@ our portal.
 
 Now we're ready to deploy. 
 
-### Deploy the plugin [](id=deploy-the-plugin)
+### Deploy the plugin
 
 You can deploy your plugin from Liferay Developer Studio or the terminal. 
 
@@ -138,7 +138,7 @@ appropriate destinations inside the deployed and running Liferay application.
 Restart your application server, and let's find out about *publishing* your
 changes. 
 
-### Publish the plugin [](id=publish-the-plugin)
+### Publish the plugin
 
 To complete the deployment process, your Ext plugin must be published to the
 Liferay server. As with deployment, you can publish using Liferay Developer
@@ -306,7 +306,7 @@ for the key named *basic* is already included in Liferay's language bundle.
 
 Let's redeploy our Ext plugin to review the changes we made. 
 
-## Redeployment [](id=redeployment)
+## Redeployment
 
 So far, Ext plugin development has been similar to the development of other
 plugin types. You've now reached the point of divergence. When the plugin is
@@ -390,7 +390,7 @@ After your `example-ext` plugin is published to Liferay Portal, check out your
 That completes the development process. Let's learn how you can package your Ext
 plugin for distribution and production. 
 
-## Distribution [](id=distribution)
+## Distribution
 
 Once you're finished developing the plugin, you can package it in a `.war` file
 for distribution and production deployment. 
@@ -413,7 +413,7 @@ next section covers JBoss 7 requirements for packaging up an Ext plugin
 containing a new taglib. If this doesn't apply to you, feel free to skip over
 it and to start reading about advanced customization techniques. 
 
-## Ext Plugin Packaging Requirements for JBoss 7 [](id=ext-plugin-packaging-requirements-for-jboss-7)
+## Ext Plugin Packaging Requirements for JBoss 7
 
 If you're developing an Ext plugin that defines a new taglib, you need to take
 JBoss's classloading behavior into account. Before packaging this kind of Ext
@@ -455,7 +455,7 @@ Now that you've learned the basics of Ext plugin development have covered this
 requirement for JBoss customizations, let's look at some advanced customizations
 that you can do.
 
-## Advanced customization techniques [](id=advanced-customization-techniques)
+## Advanced customization techniques
 
 With Ext plugins, you can change almost everything in Liferay. Let's look at
 some additional customization techniques made possible by Ext plugins. As
@@ -477,7 +477,7 @@ In the following subsections, we'll cover these topics:
 
 Let's learn to use advanced configuration files next. 
 
-### Using advanced configuration files [](id=using-advanced-configuration-files)
+### Using advanced configuration files
 
 Liferay uses several internal configuration files for its own architecture; in
 addition, there are configuration files for the libraries and frameworks Liferay
@@ -551,7 +551,7 @@ the original file in Liferay Portal:
 
 Let's learn how to configure a Lucene Analyzer next. 
 
-### Configuring Lucene Analyzers [](id=configuring-lucene-analyzers)
+### Configuring Lucene Analyzers
 
 Liferay uses Lucene to facilitate search and indexing within the portal. In old
 versions of Liferay, you could configure Lucene analyzers from
@@ -612,7 +612,7 @@ You can define custom analyzers for any fields, including custom fields.
 
 Let's learn to change the API of a core service next. 
 
-### Changing the API of a core service [](id=changing-the-api-of-a-core-service)
+### Changing the API of a core service
 
 Sometimes you might need to change the API of a method provided by one of
 Liferay's services (e.g., `UserLocalService`). This is an advanced customization
@@ -644,7 +644,7 @@ bean: your new implementation.
 You can also replace core classes in `portal-impl`. Keep reading to find out
 how. 
 
-### Replacing core classes in portal-impl [](id=replacing-core-classes-in-portal-impl)
+### Replacing core classes in portal-impl
 
 If you're sure you need to change a core portal-impl class, and certain it can't
 be replaced in a configuration file, here's the best way to do it while avoiding
@@ -665,15 +665,11 @@ conflicts when merging with a new portal version:
 This strategy will help you determine what you'll need to merge when a new
 version of Liferay is released. 
 
-+$$$
-
-**Tip:** This is an advanced technique; it may have a large impact on the
-maintainability of your code, especially if abused. Seek alternatives, and if
-you're sure this is your only option, think of it as a short term solution.
-Contact Liferay's developers about applying the necessary changes to the
-product's source code. 
-
-$$$
+| **Tip:** This is an advanced technique; it may have a large impact on the
+| maintainability of your code, especially if abused. Seek alternatives, and if
+| you're sure this is your only option, think of it as a short term solution.
+| Contact Liferay's developers about applying the necessary changes to the
+| product's source code.
 
 That's it for advanced customization techniques. Let's talk about deploying in
 porudction next. 

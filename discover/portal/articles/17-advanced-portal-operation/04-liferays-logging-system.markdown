@@ -1,4 +1,8 @@
-# Liferay's Logging System [](id=liferays-logging-system)
+---
+header-id: liferays-logging-system
+---
+
+# Liferay's Logging System
 
 Liferay uses Log4j extensively to implement logging for nearly every class in
 the portal. If you need to debug something specific while the system is running,

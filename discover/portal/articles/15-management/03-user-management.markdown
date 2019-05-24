@@ -1,4 +1,8 @@
-# User Management [](id=user-management)
+---
+header-id: user-management
+---
+
+# User Management
 
 If you click the *Users* link on the left menu of the control panel, there are
 now two users in the list of users. If you want to change something about a
@@ -23,7 +27,7 @@ of the above functions because you have administrative access.
 
 Let's look next at how to manage organizations. 
 
-## Organizations [](id=organizations)
+## Organizations
 
 Organizations are used to represent hierarchical structures of users such as
 those of companies, businesses, non-profit organizations, churches, schools, and
@@ -153,14 +157,10 @@ location cannot have any suborganizations.
 parent of the organization you are creating. Click the *Remove* button to remove
 the currently configured parent.
 
-+$$$
-
-**Tip:** Note that you're already a member of any organizations you create. By 
-creating an organization, you become both a member and receive the Organization 
-Owner role, which gives you full rights to the organization. You can, of course, 
-add other users to this role to make them Organization Owners. 
-
-$$$
+| **Tip:** Note that you're already a member of any organizations you create. By
+| creating an organization, you become both a member and receive the Organization
+| Owner role, which gives you full rights to the organization. You can, of course,
+| add other users to this role to make them Organization Owners.
 
 Fill out the information for your organization and click *Save*. As before with
 users, the form reappears and you can enter more information about the

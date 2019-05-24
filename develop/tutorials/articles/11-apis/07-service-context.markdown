@@ -1,4 +1,8 @@
-# Service Context [](id=service-context)
+---
+header-id: service-context
+---
+
+# Service Context
 
 The `ServiceContext` class is a parameter class used for passing contextual
 information for a service. Using a parameter class lets you consolidate many
@@ -16,7 +20,7 @@ and populate a Service Context, and learn to access Service Context data.
 
 First we'll look at the fields of the `ServiceContext` class.
 
-## Service Context Fields [](id=service-context-fields)
+## Service Context Fields
 
 The `ServiceContext` class has many fields. The best field descriptions are
 found in the Javadoc: 
@@ -71,7 +75,7 @@ Here we'll give you a helpful categorical listing of the fields:
 Are you wondering how the `ServiceContext` fields get populated? Good! We'll
 show you that next.
 
-### Creating and Populating a Service Context  [](id=lp-6-1-dgen08-creating-and-populating-a-service-context--0)
+### Creating and Populating a Service Context 
 
 Although all the `ServiceContext` class fields are optional, services that
 store any type of content need the scope group ID specified, at least. Here's a
@@ -106,7 +110,7 @@ portletRequest)`, you can assure your expando bridge attributes are set on the
 
 Next let's see an example of accessing information from a `ServiceContext`. 
 
-## Accessing Service Context data [](id=accessing-service-context-data)
+## Accessing Service Context data
 
 We'll use code snippets from `BlogsEntryLocalServiceImpl.addEntry(...,
 ServiceContext)` to show you how to access information from a `ServiceContext`

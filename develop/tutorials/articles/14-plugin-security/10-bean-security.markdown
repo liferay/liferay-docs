@@ -1,4 +1,8 @@
-# Bean Security [](id=bean-security)
+---
+header-id: bean-security
+---
+
+# Bean Security
 
 Specify bean properties the plugin is permitted to acquire. 
 

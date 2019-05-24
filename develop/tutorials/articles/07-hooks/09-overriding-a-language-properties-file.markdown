@@ -1,4 +1,8 @@
-# Overriding a Language.properties File [](id=overriding-a-language-properties-file)
+---
+header-id: overriding-a-language-properties-file
+---
+
+# Overriding a Language.properties File
 
 Hooks let you change any of the messages displayed by Liferay, to suit your
 needs. To do so, create a *Language* file for the locale of the messages you
@@ -15,13 +19,9 @@ like so:
         ...
     </hook>
 
-+$$$
-
-**Tip:** Check the DTD of each Liferay XML file you modify for the elements and
-attributes that can be included in the XML and the specified order for those
-elements. 
-
-$$$
+| **Tip:** Check the DTD of each Liferay XML file you modify for the elements and
+| attributes that can be included in the XML and the specified order for those
+| elements.
 
 Great! You now know how to customize language keys. Next, let's discuss
 extending your Indexer Post Processor.

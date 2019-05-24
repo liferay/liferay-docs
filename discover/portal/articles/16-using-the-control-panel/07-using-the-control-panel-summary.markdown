@@ -1,4 +1,8 @@
-# Summary [](id=summary-14)
+---
+header-id: summary-14
+---
+
+# Summary
 
 In this chapter, we finished our overview of Liferay's control panel that we
 began in chapter 15. We saw how to configure mail host names, email

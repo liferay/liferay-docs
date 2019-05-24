@@ -1,4 +1,8 @@
-# Portal Predefined Settings [](id=portal-predefined-settings)
+---
+header-id: portal-predefined-settings
+---
+
+# Portal Predefined Settings
 
 The portal defines some settings that allow the theme to determine certain
 behaviors. As of this writing, predefined settings are only available for
@@ -6,17 +10,13 @@ portlet borders, bullet styles, and the site name, but more settings may be
 added in the future. Modify these settings from the `liferay-look-and-feel.xml`
 file.
 
-+$$$
-
-**Note:** To override default behavior for individual portlets, you can modify
-the a portlet's `liferay-portlet.xml` file.
-
-$$$
+| **Note:** To override default behavior for individual portlets, you can modify
+| the a portlet's `liferay-portlet.xml` file.
 
 Let's get on with learning about predefining settings using themes. First, let's
 take a look at settings for portlet borders. 
 
-## Portlet Borders [](id=portlet-borders)
+## Portlet Borders
 
 The theme turns on portlet borders, by default. But you can turn them off by
 setting `portlet-setup-show-borders-default` to `false` in your theme's
@@ -38,7 +38,7 @@ the borders as the default:
 Now that you've configured portlet borders, let's configure bullet styles
 used in your sites. 
 
-## Bullet Styles [](id=bullet-styles)
+## Bullet Styles
 
 Liferay's Navigation portlet can be configured to use any bullet styles
 inherited by your theme or implemented in your theme. For example, if your
@@ -83,7 +83,7 @@ Using CSS, and maybe some unobtrusive JavaScript, you can create a navigation
 menu that looks just the way you want it. Next, let's take a look at how to
 configure display your site's name. 
 
-## Site Names [](id=site-names)
+## Site Names
 
 The site name settings let site administrators decide whether to display a
 site's name (i.e., title). But, if you are using using logo, that mentions your

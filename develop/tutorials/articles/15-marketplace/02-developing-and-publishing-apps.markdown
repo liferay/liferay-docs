@@ -1,11 +1,15 @@
-# Developing and publishing apps [](id=developing-and-publishing-apps)
+---
+header-id: developing-and-publishing-apps
+---
+
+# Developing and publishing apps
 
 Let's jump right in with an example. In this section, we'll walk you through the
 creation and publication steps (but we won't actually publish the app on the
 Marketplace, since this example app isn't very useful!). After walking through
 this, you should understand how Marketplace App development typically occurs.
 
-## Develop a sample app [](id=develop-a-sample-app)
+## Develop a sample app
 
 Before you can publish anything, you first have to create (develop) an app! Apps
 are nothing more than collections of individual plugins, so the first step in
@@ -22,7 +26,7 @@ these advanced tasks are dealt with is out of scope for this section, but some
 tips and considerations for Marketplace development can be found later in this
 chapter.
 
-## Specify App Packaging Directives [](id=specify-app-packaging-directives)
+## Specify App Packaging Directives
 
 When publishing your app, each plugin you upload is packaged into one or more
 *packages* for each Liferay release you intend to support. When you upload your
@@ -56,14 +60,10 @@ using this form: `liferay-versions=CE,CE,CE+,EE,EE,EE+` (where `CE` and `EE`
 are replaced with the corresponding Liferay Releases with which your app is
 compatible).
 
-+$$$
-
-**Note:** If your app is compatible with both CE and EE, you must specify a set
-of versions for both CE and EE releases. If you only specify compatibility with
-CE, then your app will not be compatible with (and will fail to deploy to) any
-EE release.
- 
-$$$
+| **Note:** If your app is compatible with both CE and EE, you must specify a set
+| of versions for both CE and EE releases. If you only specify compatibility with
+| CE, then your app will not be compatible with (and will fail to deploy to) any
+| EE release.
 
 For example, to specify that a particular plugin in your app is compatible with
 Liferay 6.1 CE GA3 (and later), and 6.1 EE GA3 (and later), add this line to
@@ -76,18 +76,14 @@ and 6.1 EE release starting with EE GA3. Marketplace will create two packages,
 one that is compatible with the 6.1 CE GA3 release and *later*, and another that
 is compatible with 6.1 EE GA3 release and *later*.
 
-+$$$
-
-**Note:** Any CE or EE versions you include in your packaging directives *must*
-be terminated with a version using the `+` symbol. This ensures that your app
-will be deployable onto future versions of Liferay (but does not guarantee your
-app will work in future versions). So, `liferay-versions=6.1.1,6.1.2` will not
-work, but `liferay-versions=6.1.1,6.1.2+` will work. Similarly,
-`liferay-versions=6.1.2+,6.1.30,6.1.31` will not work (as the EE versions are
-not properly terminated), but `liferay=versions=6.1.2+,6.1.30,6.1.31+` will
-work.
-
-$$$
+| **Note:** Any CE or EE versions you include in your packaging directives *must*
+| be terminated with a version using the `+` symbol. This ensures that your app
+| will be deployable onto future versions of Liferay (but does not guarantee your
+| app will work in future versions). So, `liferay-versions=6.1.1,6.1.2` will not
+| work, but `liferay-versions=6.1.1,6.1.2+` will work. Similarly,
+| `liferay-versions=6.1.2+,6.1.30,6.1.31` will not work (as the EE versions are
+| not properly terminated), but `liferay=versions=6.1.2+,6.1.30,6.1.31+` will
+| work.
 
 Here are some additional examples:
 
@@ -106,7 +102,7 @@ You may find it advantageous to implement one of your app's plugins in multiple
 ways, customizing that plugin for different Liferay releases. We'll illustrate
 this with an example. 
 
-### Example App: Using Different Versions of a Hook [](id=example-app-using-different-versions-of-a-hook)
+### Example App: Using Different Versions of a Hook
 
 Suppose your app consists of two plugins: a portlet and a hook. The portlet uses
 standard API calls that work on all Liferay 6.1 releases. Your hook, on the
@@ -128,7 +124,7 @@ that has plugins targeted to different Liferay releases, but it's easy.
 Marketplace takes care of it based on the `liferay-versions` values you
 specified for each plugin. We'll talk about that next.  
 
-### Marketplace Packages Your App's Plugins [](id=marketplace-packages-your-apps-plugins)
+### Marketplace Packages Your App's Plugins
 
 When you upload your app's plugins, as demonstrated later on in this chapter,
 you'll notice that Marketplace groups them into separate packages based on the
@@ -144,7 +140,7 @@ for each your app's plugins.
 Now that you've developed your app and specified its packaging directives, it's
 time to get it to the Marketplace! 
 
-## Establish a Marketplace Account [](id=establish-a-marketplace-account)
+## Establish a Marketplace Account
 
 Before you can publish anything to the Marketplace, you must first have an
 account on [liferay.com](http://liferay.com). If you do not have an account,
@@ -190,12 +186,12 @@ that have been purchased on behalf of companies you are associated with.
 Since you have not purchased or published any apps, the first two tabs are
 likely empty. Let's get publishing!
 
-## Upload (Publish) your app [](id=upload-publish-your-app)
+## Upload (Publish) your app
 
 To begin the process of publishing your app, click *Add an App*. A form appears,
 allowing you to fill in your app's details.
 
-### Initial app details [](id=initial-app-details)
+### Initial app details
 
 The first step is to enter the basic details about your app. 
 
@@ -282,7 +278,7 @@ the *What is a version* section in this chapter to choose a good version
 specifier and enter it here. For our example, since this is the first version,
 enter `1.0`. Click *Next*.
 
-### Upload files (plugins) for your app [](id=upload-files-plugins-for-your-app)
+### Upload files (plugins) for your app
 
 This screen allows you to upload different sets of plugin files (variations) to
 support different Liferay versions. You must upload at least one plugin file
@@ -310,7 +306,7 @@ portlet plugin was automatically copied for use in both the EE and CE
 variations, even though you only uploaded the portlet plugin once. Click *Next*
 to advance to the final screen.
 
-### Preview and submit the app [](id=preview-and-submit-the-app)
+### Preview and submit the app
 
 Whenever you make a change (app details, adding files, adding new versions), you
 always wind up at a *Preview* screen. This allows you to preview your app as it
@@ -326,7 +322,7 @@ this example on Liferay's Marketplace, don't do it, since this is only an
 example app. The next section describes what happens when you submit apps or app
 changes.
 
-## The review process [](id=the-review-process)
+## The review process
 
 When you submit apps to the Marketplace, they are reviewed by Liferay
 Marketplace staff to ensure that your app meets the minimum standards described

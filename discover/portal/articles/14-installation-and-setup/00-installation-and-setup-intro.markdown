@@ -1,4 +1,8 @@
-# Installation and Setup [](id=installation-and-setup)
+---
+header-id: installation-and-setup
+---
+
+# Installation and Setup
 
 Liferay Portal is one of the most flexible applications on the market today with
 regard to application server environments. You can install Liferay Portal on

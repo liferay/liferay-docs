@@ -1,4 +1,8 @@
-# Obtaining Liferay Portal [](id=obtaining-liferay-portal)
+---
+header-id: obtaining-liferay-portal
+---
+
+# Obtaining Liferay Portal
 
 The CE version of Liferay is freely downloadable from our web site at
 [http://www.liferay.com](http://www.liferay.com). Click the *Downloads* link at

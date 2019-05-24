@@ -1,4 +1,8 @@
-# Best Practices [](id=best-practices)
+---
+header-id: best-practices
+---
+
+# Best Practices
 
 The Plugins SDK can house all of your plugin projects enterprise-wide, or you
 can have separate Plugins SDK projects for each plugin. For example, if you have

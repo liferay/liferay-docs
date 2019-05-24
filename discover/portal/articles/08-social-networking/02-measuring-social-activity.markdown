@@ -1,4 +1,8 @@
-# Measuring Social Activity [](id=measuring-social-activity)
+---
+header-id: measuring-social-activity
+---
+
+# Measuring Social Activity
 
 <!-- | TODO This is all out of date. It's been reimplemented for Liferay 6.1.
 Please rewrite. | --> When you have a lot of user interaction on your web site,

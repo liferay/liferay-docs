@@ -1,4 +1,8 @@
-# Using the Control Panel [](id=using-the-control-panel)
+---
+header-id: using-the-control-panel
+---
+
+# Using the Control Panel
 
 In this chapter, we continue our coverage of Liferay's control panel that we
 began in chapter 15. We'll cover the following topics:
@@ -20,14 +24,14 @@ began in chapter 15. We'll cover the following topics:
 
 Let's begin with mail host names.
 
-## Mail Host Names [](id=mail-host-names)
+## Mail Host Names
 
 Mail Host Names appears after Authentication and Users on the Portal Settings
 page of the control panel. You can enter other mail host names (one per line)
 besides the one you configured on the General tab. This lets the portal know
 which mail host names are owned by your organization.
 
-## Email Notifications [](id=email-notifications)
+## Email Notifications
 
 There are five tabs under the Email Notifications page of Portal Settings. The
 Sender tab allows you to set the portal's administrative name and email address.
@@ -48,14 +52,14 @@ A list of tokens, entitled "Definition of Terms," is provided so you can insert
 certain values (such as the portal URL or the user ID) when you are setting up
 the custom email messages.
 
-## Identification [](id=identification)
+## Identification
 
 The identification section has several links for addresses, phone numbers and
 other information you can configure in your portal. This allows you to set up
 contact information for the organization that owns the portal. Developers can
 query for this information in their applications.
 
-## Miscellaneous: Display Settings [](id=miscellaneous-display-settings)
+## Miscellaneous: Display Settings
 
 This section allows you to set the default portal language and the time zone.
 You can also set up a portal-wide logo which appears in the top left corners of

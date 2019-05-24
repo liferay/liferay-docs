@@ -1,4 +1,8 @@
-# Summary [](id=summary-16)
+---
+header-id: summary-16
+---
+
+# Summary
 
 In this chapter we saw how Liferay's script engine opens up many exciting
 posibilities for working with Liferay regardless of your language of choice. We

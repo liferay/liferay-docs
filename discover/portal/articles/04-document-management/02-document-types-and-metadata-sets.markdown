@@ -1,4 +1,8 @@
-# Document Types and Metadata Sets [](id=document-types-and-metadata-sets)
+---
+header-id: document-types-and-metadata-sets
+---
+
+# Document Types and Metadata Sets
 
 Customizable document types and metadata sets are new features in Liferay 6.1.
 When a user assigns a document type to a document, the user is required to fill

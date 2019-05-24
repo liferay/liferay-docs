@@ -1,4 +1,8 @@
-# Overriding and Adding Struts Actions [](id=overriding-and-adding-struts-actions)
+---
+header-id: overriding-and-adding-struts-actions
+---
+
+# Overriding and Adding Struts Actions
 
 Do you want to add a new Struts action to Liferay portal or override existing
 Struts actions? *Struts action hooks* let you do just that. 
@@ -164,45 +168,41 @@ of `BaseStrutsAction`, but not the `execute(StrutsAction, HttpServletRequest,
 HttpServletResponse)` method. The original Struts action's `execute()` method
 is ignored. That's fine for our example.
 
-+$$$
-
-**Warning:** Due to a known bug
-([LPS-52754](https://issues.liferay.com/browse/LPS-52754)), a problem can occur
-when overriding Struts actions with overlapping paths. Struts action paths
-overlap when one path is a substring of another path. The following example from
-Liferay's `struts-config.xml` file shows three Struts action paths. Notice that
-the first Struts action path is a substring of each of the last two.
-
-    <action path="/document_library/edit_file_entry" ...
-    </action>
-
-    <action path="/document_library/edit_file_entry_discussion" ...
-    </action>
-
-    <action path="/document_library/edit_file_entry_type" ...
-    </action>
-
-Suppose you create a hook plugin to override the
-`/document_library/edit_file_entry` path. Due to the bug mentioned above, your
-hook's new, custom action is triggered not only when the intended path is
-invoked, but also when one of the larger, containing paths (e.g.,
-`document_library/edit_file_entry_discussion`) is invoked!
-
-To work around this issue, use the following steps:
-
-1. Find any Struts actions with paths that contain the path of the Struts
-action that you are overriding.
-
-2. If any offending paths are found, create a `<struts-action>` for them in
-your `liferay-hook.xml`.
-
-3. In the class you create for each Struts action, override only the
-`processAction`, `render`, and `serveResource` methods.
-
-4. In each overridden method, simply call the original Struts action's method
-(e.g., `originalStrutsPortletAction.processAction`).
-
-$$$
+| **Warning:** Due to a known bug
+| ([LPS-52754](https://issues.liferay.com/browse/LPS-52754)), a problem can occur
+| when overriding Struts actions with overlapping paths. Struts action paths
+| overlap when one path is a substring of another path. The following example from
+| Liferay's `struts-config.xml` file shows three Struts action paths. Notice that
+| the first Struts action path is a substring of each of the last two.
+| 
+|     <action path="/document_library/edit_file_entry" ...
+|     </action>
+| 
+|     <action path="/document_library/edit_file_entry_discussion" ...
+|     </action>
+| 
+|     <action path="/document_library/edit_file_entry_type" ...
+|     </action>
+| 
+| Suppose you create a hook plugin to override the
+| `/document_library/edit_file_entry` path. Due to the bug mentioned above, your
+| hook's new, custom action is triggered not only when the intended path is
+| invoked, but also when one of the larger, containing paths (e.g.,
+| `document_library/edit_file_entry_discussion`) is invoked!
+| 
+| To work around this issue, use the following steps:
+| 
+| 1. Find any Struts actions with paths that contain the path of the Struts
+| action that you are overriding.
+| 
+| 2. If any offending paths are found, create a `<struts-action>` for them in
+| your `liferay-hook.xml`.
+| 
+| 3. In the class you create for each Struts action, override only the
+| `processAction`, `render`, and `serveResource` methods.
+| 
+| 4. In each overridden method, simply call the original Struts action's method
+| (e.g., `originalStrutsPortletAction.processAction`).
 
 **Best Practice:** When overriding an existing Struts action, it's usually best
 to override the method that takes the original Struts action handle as a
@@ -213,46 +213,42 @@ original action won't be executed. If you override the `execute` method that
 *does not take* the original action as a parameter, you are ignoring the
 original action and it won't be executed.
 
-+$$$
-
-**Warning:** There's a classloading bug that manifests under certain conditions
-when executing an original Struts action. The issue is fixed in
-[LPS-30162](http://issues.liferay.com/browse/LPS-30162). If you don't have the
-fix pack for this bug, set the context classloader to the portal classloader and
-execute the original action in a `try` block. Then, in a corresponding `finally`
-block, reset the classloader back to the original classloader. 
-
-Here's an example for the temporary workaround:
-
-    public class SampleLayoutStrutsAction extends BaseStrutsAction {
-
-            @Override
-            public String execute(StrutsAction originalStrutsAction,
-                HttpServletRequest request, HttpServletResponse response)
-                throws Exception {
-
-                System.out.println("SampleLayoutStrutsAction.execute() - " +
-                    request.getRequestURI());
-
-                Thread currentThread = Thread.currentThread();
-
-                ClassLoader contextClassLoader =
-                    currentThread.getContextClassLoader();
-
-                currentThread.setContextClassLoader(
-                    PortalClassLoaderUtil.getClassLoader());
-
-                try {
-                    return originalStrutsAction.execute(request, response);
-                }
-                finally {
-                    currentThread.setContextClassLoader(contextClassLoader);
-                }
-            }
-
-        }
-
-$$$
+| **Warning:** There's a classloading bug that manifests under certain conditions
+| when executing an original Struts action. The issue is fixed in
+| [LPS-30162](http://issues.liferay.com/browse/LPS-30162). If you don't have the
+| fix pack for this bug, set the context classloader to the portal classloader and
+| execute the original action in a `try` block. Then, in a corresponding `finally`
+| block, reset the classloader back to the original classloader.
+| 
+| Here's an example for the temporary workaround:
+| 
+|     public class SampleLayoutStrutsAction extends BaseStrutsAction {
+| 
+|             @Override
+|             public String execute(StrutsAction originalStrutsAction,
+|                 HttpServletRequest request, HttpServletResponse response)
+|                 throws Exception {
+| 
+|                 System.out.println("SampleLayoutStrutsAction.execute() - " +
+|                     request.getRequestURI());
+| 
+|                 Thread currentThread = Thread.currentThread();
+| 
+|                 ClassLoader contextClassLoader =
+|                     currentThread.getContextClassLoader();
+| 
+|                 currentThread.setContextClassLoader(
+|                     PortalClassLoaderUtil.getClassLoader());
+| 
+|                 try {
+|                     return originalStrutsAction.execute(request, response);
+|                 }
+|                 finally {
+|                     currentThread.setContextClassLoader(contextClassLoader);
+|                 }
+|             }
+| 
+|         }
 
 That's it for overriding the Struts actions! Now Let's get our new Struts
 path working. 

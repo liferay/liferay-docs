@@ -1,4 +1,8 @@
-# Installing Liferay on WebSphere 8.0 [](id=installing-liferay-on-websphere-8-0)
+---
+header-id: installing-liferay-on-websphere-8-0
+---
+
+# Installing Liferay on WebSphere 8.0
 
 **Tip:** Throughout this installation and configuration process, WebSphere 
 prompts you to Click Save to apply changes to Master Configuration. Do so 
@@ -7,7 +11,7 @@ intermittently to save your changes.
 **Liferay Home** is in a folder called `liferay` in the home folder of the user
 ID that is running WebSphere.
 
-## Preparing WebSphere for Liferay [](id=preparing-websphere-for-liferay)
+## Preparing WebSphere for Liferay
 
 When the application server binaries have been installed, start the **Profile
 Management Tool** to create a profile appropriate for Liferay. 
@@ -74,7 +78,7 @@ Management Tool** to create a profile appropriate for Liferay.
 12. WebSphere then creates your profile and finishes with a message telling you
 	the profile was created successfully. You're now ready to install Liferay! 
 
-## Copying Portal Dependencies [](id=copying-portal-dependencies)
+## Copying Portal Dependencies
 
 Liferay ships with dependency .jars it needs to have on the global classpath.
 These should be copied to WebSphere's global folder provided for this purpose: 
@@ -84,7 +88,7 @@ These should be copied to WebSphere's global folder provided for this purpose:
 Once you've copied the .jars here, start the server profile you're planning to
 use for Liferay. Once it starts, you're ready to configure your database. 
 
-## Database Configuration [](id=database-configuration)
+## Database Configuration
 
 If you want WebSphere to manage the database connections, follow the
 instructions below. Note this is not necessary if you're planning on using
@@ -152,7 +156,7 @@ install.
 
 Once you've set up your database, you can set up your mail session. 
 
-## Mail Configuration [](id=mail-configuration)
+## Mail Configuration
 
 If you want WebSphere to manage your mail sessions, use the following procedure.
 If you want to use Liferay's built-in mail sessions, you can skip this section. 
@@ -172,7 +176,7 @@ If you want to use Liferay's built-in mail sessions, you can skip this section.
 
 Great! Now you're ready to deploy Liferay. 
 
-## Deploy Liferay [](id=deploy-liferay)
+## Deploy Liferay
 
 1. Click *Applications &rarr; New Application &rarr; New Enterprise
    Application*.
@@ -188,7 +192,7 @@ Great! Now you're ready to deploy Liferay.
 6. Click *Finish*. When Liferay has installed, click *Save to Master
    Configuration*.
 
-## Start Liferay [](id=start-liferay)
+## Start Liferay
 
 1. If you plan to use Liferay's setup wizard, skip to the next step. If you wish
    to use WebSphere's data source and mail session, create a file called

@@ -1,4 +1,8 @@
-# Extending the Indexer Post Processor [](id=extending-the-indexer-post-processor)
+---
+header-id: extending-the-indexer-post-processor
+---
+
+# Extending the Indexer Post Processor
 
 Would you like to modify the search summaries, indexes, and queries available in
 your portal instance? Developing an Indexer Post Processor hook lets you do just

@@ -1,4 +1,8 @@
-# Creating a Theme [](id=creating-a-theme)
+---
+header-id: creating-a-theme
+---
+
+# Creating a Theme
 
 The theme creation process is nearly identical to the portlet creation process
 that we covered in the last chapter. Our theme will be named *Deep Blue*, so the
@@ -18,7 +22,7 @@ Studio first, and then with the terminal.
     If you select the Maven build type, you'll be prompted to enter an artifact
     version, group ID, and active profile for your project. See  [Using Liferay
 	IDE with
-	Maven](/develop/tutorials/-/knowledge_base/6-1/using-liferay-ide-with-maven)
+	Maven](/docs/6-1/tutorials/-/knowledge_base/t/using-liferay-ide-with-maven)
     for more information. Otherwise, select the Ant build type, a Plugins SDK
     and a Liferay runtime.  
 
@@ -29,9 +33,9 @@ Studio first, and then with the terminal.
     - **Liferay runtime:** `[a configured Liferay runtime]`
 
     For more information, see sections [Installing the
-    SDK](/develop/tutorials/-/knowledge_base/6-1/installing-the-sdk)
+    SDK](/docs/6-1/tutorials/-/knowledge_base/t/installing-the-sdk)
     and [Setting Up Liferay
-    IDE](/develop/tutorials/-/knowledge_base/6-1/setting-up-liferay-ide).
+    IDE](/docs/6-1/tutorials/-/knowledge_base/t/setting-up-liferay-ide).
 
 4.  Select *Theme* for your Plugin type. 
 
@@ -74,7 +78,7 @@ automatically named by appending "-theme" to your project name. Right now your
 theme is empty. Your next step is to set a base theme that serves as the default
 for your theme. 
 
-## Setting a base Theme [](id=setting-a-base-theme)
+## Setting a base Theme
 
 All themes in Liferay are built on top of two base themes, named *_unstyled* and
 *_styled*. Your newly created theme is based on these by default, but they
@@ -92,7 +96,7 @@ To specify a base theme, edit the `build.xml` file for your theme and change
 existing theme that's installed or in your Plugins SDK. Now that your base theme
 is set, let's deploy the theme to your portal instance.
 
-## Deploying the Theme [](id=deploying-the-theme)
+## Deploying the Theme
 
 If you're already familiar with portlet deployment from reading Chapter 3, theme
 deployment will be a piece of cake! You can deploy your theme in Developer

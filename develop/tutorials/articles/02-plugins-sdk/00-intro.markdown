@@ -1,4 +1,8 @@
-# The Plugins SDK [](id=the-plugins-sdk)
+---
+header-id: the-plugins-sdk
+---
+
+# The Plugins SDK
 
 Java developers use a wide variety of tools and development environments.
 Liferay makes every effort to remain tool agnostic, so you can choose the tools
@@ -9,12 +13,8 @@ SDK and a text editor, but use whatever tool you're most comfortable with. As an
 alternative to the Plugins SDK, in Chapter 10 we discuss Liferay IDE, a plugin
 for Eclipse that simplifies development for Liferay. 
 
-+$$$
-
-**Tip**: If you use Eclipse and intend to use it from the very beginning, you
-might want to check out Chapter 10 first before reading this chapter.
-
-$$$
+| **Tip**: If you use Eclipse and intend to use it from the very beginning, you
+| might want to check out Chapter 10 first before reading this chapter.
 
 We discuss the following topics in this chapter: 
 

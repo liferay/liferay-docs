@@ -1,4 +1,8 @@
-# Invoking the API Remotely [](id=invoking-the-api-remotely)
+---
+header-id: invoking-the-api-remotely
+---
+
+# Invoking the API Remotely
 
 *Remote* clients run outside of the portal JVM or on a remote machine, but they
 can still access Liferay's service APIs. The main benefit of remotely accessing

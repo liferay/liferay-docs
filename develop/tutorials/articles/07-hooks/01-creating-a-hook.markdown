@@ -1,4 +1,8 @@
-# Creating a Hook [](id=creating-a-hook)
+---
+header-id: creating-a-hook
+---
+
+# Creating a Hook
 
 Regardless of whether you use the Plugins SDK or your terminal to create hooks,
 hooks projects are stored in the Plugins SDK's `hooks` directory. 
@@ -28,7 +32,7 @@ hooks projects are stored in the Plugins SDK's `hooks` directory.
     If you select the Maven build type, you'll be prompted to enter an artifact
     version, group ID, and active profile for your project. See [Using Liferay
 	IDE with
-	Maven](/develop/tutorials/-/knowledge_base/6-1/using-liferay-ide-with-maven)
+	Maven](/docs/6-1/tutorials/-/knowledge_base/t/using-liferay-ide-with-maven)
     for more information. Otherwise, select the Ant build type, a Plugins SDK
     and a Liferay runtime.  
 
@@ -39,9 +43,9 @@ hooks projects are stored in the Plugins SDK's `hooks` directory.
     - **Liferay runtime:** `[a configured Liferay runtime]`
     
     For more information, see sections [Installing the
-    SDK](/develop/tutorials/-/knowledge_base/6-1/installing-the-sdk)
+    SDK](/docs/6-1/tutorials/-/knowledge_base/t/installing-the-sdk)
     and [Setting Up Liferay
-    IDE](/develop/tutorials/-/knowledge_base/6-1/setting-up-liferay-ide).
+    IDE](/docs/6-1/tutorials/-/knowledge_base/t/setting-up-liferay-ide).
 
 4.  Select the *Hook* Plugin Type. 
 
@@ -70,7 +74,7 @@ automatically named the hook by appending "-hook" to the project name.
 
 Now that you've created a hook, let's go ahead and deploy it.
 
-## Deploying the Hook [](id=deploying-the-hook)
+## Deploying the Hook
 
 ***Using Developer Studio:*** Click and drag your hook project onto your server.
 Upon deployment, your server displays messages indicating that your hook was
@@ -92,17 +96,13 @@ A BUILD SUCCESSFUL message indicates your hook is now being deployed. If you
 switch to the terminal window running Liferay, in a few seconds you
 should see the message "Hook for example-hook is available for use". 
 
-+$$$
-
-**Note:** When we created portlets and themes, they were fully functional upon
-deployment. Hooks aren't like that, because they're Liferay customizations, and
-the default customization is the original implementation! 
-
-$$$
+| **Note:** When we created portlets and themes, they were fully functional upon
+| deployment. Hooks aren't like that, because they're Liferay customizations, and
+| the default customization is the original implementation!
 
 Next, let's look at the anatomy of a Liferay hook. 
 
-## Anatomy of the Hook [](id=anatomy-of-the-hook)
+## Anatomy of the Hook
 
 To make your hook useful, you need to customize something in Liferay. You begin
 by mirroring the structure of Liferay's code that you plan to customize. A hook

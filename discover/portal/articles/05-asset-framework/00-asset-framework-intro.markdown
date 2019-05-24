@@ -1,4 +1,8 @@
-# Leveraging the Asset Framework [](id=leveraging-the-asset-framework)
+---
+header-id: leveraging-the-asset-framework
+---
+
+# Leveraging the Asset Framework
 
 Any type of content in Liferay is considered an asset. In chapters 2 and 3, we
 already examined Liferay's most common type of asset: web content. Other types

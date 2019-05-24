@@ -1,4 +1,8 @@
-# Device Detection [](id=device-detection)
+---
+header-id: device-detection
+---
+
+# Device Detection
 
 As you know, Internet traffic has risen exponentially over the past decade and
 shows no sign of stopping. With the latest and greatest devices, mobile Internet
@@ -15,21 +19,17 @@ based on the device. To use these features, you must first install a  device
 detection database that can detect which mobile devices are accessing the
 portal. Liferay provides such a database in the Liferay Mobile Device Detection
 (LMDD) app from the Liferay Marketplace. 
-[Click here](/discover/portal/-/knowledge_base/6-1/leveraging-the-liferay-marketplace) 
+[Click here](/docs/6-1/user/-/knowledge_base/u/leveraging-the-liferay-marketplace) 
 for instructions on using Liferay Marketplace to find and install apps. 
 
-+$$$
-
-**Note:** The Liferay Mobile Device Detection (LMDD) app is EE-only for Liferay 
-Portal 6.1. Although you can use other device detection databases, doing so 
-requires you to manually integrate the database with Liferay APIs. 
-
-$$$
+| **Note:** The Liferay Mobile Device Detection (LMDD) app is EE-only for Liferay
+| Portal 6.1. Although you can use other device detection databases, doing so
+| requires you to manually integrate the database with Liferay APIs.
 
 You can create your own plugin to use your device's database. Let's look at some
 simple uses of the Device Detection API and talk about its properties. 
 
-## Using the Device API [](id=using-the-device-api)
+## Using the Device API
 
 Let's look at a couple of code snippets to get you started. You can obtain the
 object `Device` from the `themeDisplay` object like this:
@@ -51,7 +51,7 @@ attributes that help you take care of the pesky problems that arise when sending
 content to different devices. You can refer to the Device Javadocs mentioned
 above for assistance.  Let's look at some device properties next.
 
-## Device Properties [](id=device-capabilities)
+## Device Properties
 
 Most of the properties of a device can be detected, depending on the device
 detection implementation you're using. For example, you can obtain the brand

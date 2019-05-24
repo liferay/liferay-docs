@@ -1,4 +1,8 @@
-# Socket Security [](id=socket-security)
+---
+header-id: socket-security
+---
+
+# Socket Security
 
 Specify sockets permitted to accept connections in the plugin.
 

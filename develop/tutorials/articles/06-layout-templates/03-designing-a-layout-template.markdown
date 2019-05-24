@@ -1,4 +1,8 @@
-# Designing a layout template [](id=designing-a-layout-template)
+---
+header-id: designing-a-layout-template
+---
+
+# Designing a layout template
 
 Initially, the layout template's generated TPL files are empty, a fresh canvas
 on which you design layout templates. If this seems overwhelming, don't worry.

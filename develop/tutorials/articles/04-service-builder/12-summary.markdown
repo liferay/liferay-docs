@@ -1,4 +1,8 @@
-# Summary [](id=summary-1)
+---
+header-id: summary-1
+---
+
+# Summary
 
 You've covered a lot of ground in this chapter. You learned how to map out
 your data model as entities to use in services. You used Service Builder and

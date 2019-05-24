@@ -1,4 +1,8 @@
-# Using Page Templates [](id=using-page-templates)
+---
+header-id: using-page-templates
+---
+
+# Using Page Templates
 
 Click on *Page Templates* in the Control Panel to see a list of page templates.
 Page templates function similarly to site templates but at the page level. Each
@@ -82,7 +86,7 @@ appear.
 We'll discuss staging in more detail later in this chapter. For now let's look
 at importing and exporting templates.
 
-## Exporting and Importing Site Templates and Page Templates [](id=exporting-and-importing-site-templates-and-page-templates)
+## Exporting and Importing Site Templates and Page Templates
 
 If you want to export a site that uses site or page Templates to a different
 environment (through a LAR file or remote publication), the Templates must be

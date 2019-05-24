@@ -1,4 +1,8 @@
-# Installing Liferay on Oracle WebLogic 10.3 [](id=installing-liferay-on-oracle-weblogic-10-3)
+---
+header-id: installing-liferay-on-oracle-weblogic-10-3
+---
+
+# Installing Liferay on Oracle WebLogic 10.3
 
 **Liferay Home** is one folder above the domain to which you will be installing
 Liferay.
@@ -22,17 +26,13 @@ that you have access to the WebLogic console.
 
 If you still have the `mainWebApp` module installed, remove it first.
 
-+$$$
-
-**Note:** There is a known issue with the Sun and JRockit JVMs bundled with 
-WebLogic 10.3.2 (see [http://bugs.sun.com/view_bug.do?bug_id=6795561](issue)). 
-To resolve this, use Sun JVM 1.6.0_u24 or JRockit JVM 1.6.0_24.
-
-$$$
+| **Note:** There is a known issue with the Sun and JRockit JVMs bundled with
+| WebLogic 10.3.2 (see [http://bugs.sun.com/view_bug.do?bug_id=6795561](issue)).
+| To resolve this, use Sun JVM 1.6.0_u24 or JRockit JVM 1.6.0_24.
 
 Let's get started by installing the JAR files Liferay needs.
 
-## Dependency Jars [](id=dependency-jars)
+## Dependency Jars
 
 Liferay needs the JAR files contained in the Liferay Dependencies Archive and
 the driver JAR file applicable for your database.
@@ -50,7 +50,7 @@ So far so good. Your JAR files are in place and ready for Liferay.
 Start Oracle WebLogic if you want to configure your database and/or mail session
 within Oracle WebLogic.
 
-## Database Configuration [](id=database-configuration)
+## Database Configuration
 
 If you want WebLogic to manage your data source, use the following procedure. If
 you want to use Liferay's built-in data source, you can skip this section.
@@ -90,7 +90,7 @@ you want to use Liferay's built-in data source, you can skip this section.
 
 Next, let's configure a mail session in WebLogic.
 
-## Mail Configuration [](id=mail-configuration)
+## Mail Configuration
 
 If you want WebLogic to manage your mail sessions, use the following procedure.
 If you want to use Liferay's built-in mail sessions, you can skip this section.
@@ -107,7 +107,7 @@ If you want to use Liferay's built-in mail sessions, you can skip this section.
 
 Now let's make sure Liferay can access this mail session.
 
-## Domain Configuration - Continued [](id=domain-configuration-continued)
+## Domain Configuration - Continued
 
 Let's revisit domain configuration to make sure we'll be able to access your
 data source and mail session from Liferay Portal.
@@ -153,7 +153,7 @@ must set `-Dfile.encoding=utf8` under `JAVA_OPTIONS` in the `setDomainEnv` file.
 
 Now its the moment you've been waiting for: Liferay deployment!
 
-## Deploy Liferay [](id=deploy-liferay)
+## Deploy Liferay
 
 This section provides instructions for deploying Liferay to your application
 server domain.
@@ -186,12 +186,8 @@ wizard.
   The `portal-setup-wizard.properties` file the setup wizard creates has
   `setup.wizard.enabled=false` conveniently specified for you.
 
-+$$$
-
-**Note:** Property values in `portal-setup-wizard.properties` override property 
-values in `portal-ext.properties`.
-
-$$$
+| **Note:** Property values in `portal-setup-wizard.properties` override property
+| values in `portal-ext.properties`.
 
 Now, let's deploy Liferay Portal.
 
@@ -223,17 +219,13 @@ Now, let's deploy Liferay Portal.
 
 Please see the section above for how to use the setup wizard. 
 
-+$$$
-
-**Note:** After Liferay is installed, you may see an error initializing the Web 
-Proxy portlet. Because the XSL parser configured by default within WebLogic 
-cannot compile a style sheet in this portlet, Liferay disables it by default. To 
-re-enable this portlet, extract `xalan.jar` and `serializer.jar` from the 
-Liferay `.war` archive and copy them to your JDK's endorsed folder for 
-libraries. If you are using JRockit, this folder may be
-`[$WEBLOGIC_HOME]/jrockit_160_05/jre/lib/ext`; if your are using Sun JDK,  this
-folder may be `[$WEBLOGIC_HOME]/jdk160_24/jre/lib/ext`.
-
-$$$
+| **Note:** After Liferay is installed, you may see an error initializing the Web
+| Proxy portlet. Because the XSL parser configured by default within WebLogic
+| cannot compile a style sheet in this portlet, Liferay disables it by default. To
+| re-enable this portlet, extract `xalan.jar` and `serializer.jar` from the
+| Liferay `.war` archive and copy them to your JDK's endorsed folder for
+| libraries. If you are using JRockit, this folder may be
+| `[$WEBLOGIC_HOME]/jrockit_160_05/jre/lib/ext`; if your are using Sun JDK,  this
+| folder may be `[$WEBLOGIC_HOME]/jdk160_24/jre/lib/ext`.
 
 Congratulations! You are now running Liferay on Oracle WebLogic.

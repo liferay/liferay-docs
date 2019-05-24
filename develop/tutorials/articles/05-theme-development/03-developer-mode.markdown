@@ -1,4 +1,8 @@
-# Developer Mode [](id=developer-mode)
+---
+header-id: developer-mode
+---
+
+# Developer Mode
 
 Do you want to develop Liferay resources without having to redeploy to see your
 portal modifications? Use Liferay Developer Mode! In Developer mode, all caches
@@ -33,16 +37,12 @@ If you're already using the system property `external-properties` to load other
 properties files, add `portal-developer.properties` to the list and use a comma
 to separate it from other entries.
 
-+$$$
-
-**Note:** Older versions of Liferay 6.1 bundled with Tomcat use the `JAVA_OPTS`
-variable line. This caused some performance issues and was changed to
-`CATALINA_OPTS`. If you have the `JAVA_OPTS` variable line in your `setenv.sh`
-or `setenv.bat` file, change the variable line to `CATALINA_OPTS` to take full
-advantage of the performance upgrade. More information on this change can be
-referenced in [LPS-26464](https://issues.liferay.com/browse/LPS-26464).
-
-$$$
+| **Note:** Older versions of Liferay 6.1 bundled with Tomcat use the `JAVA_OPTS`
+| variable line. This caused some performance issues and was changed to
+| `CATALINA_OPTS`. If you have the `JAVA_OPTS` variable line in your `setenv.sh`
+| or `setenv.bat` file, change the variable line to `CATALINA_OPTS` to take full
+| advantage of the performance upgrade. More information on this change can be
+| referenced in [LPS-26464](https://issues.liferay.com/browse/LPS-26464).
 
 How does Developer Mode let you see your changes more quickly? In Developer
 Mode, there are several changes to the normal order of operations. Some of these

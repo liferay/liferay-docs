@@ -1,24 +1,24 @@
-# Installing the SDK [](id=installing-the-sdk)
+---
+header-id: installing-the-sdk
+---
+
+# Installing the SDK
 
 The first thing you should do is install Liferay Portal. If you haven't already
 installed a Liferay bundle, follow the instructions in the [Installation and
-Setup](/discover/portal/-/knowledge_base/6-1/installation-and-setup)
+Setup](/docs/6-1/user/-/knowledge_base/u/installation-and-setup)
 chapter of *Using Liferay Portal*. Many people use the Tomcat bundle for
 development, as it's small, fast, and takes up fewer resources than most other
 servlet containers. Although you can use any application server supported by
 Liferay Portal for development, our examples use the Tomcat bundle. 
 
-+$$$
-
-**Note:** In Liferay Developer Studio, the SDK is already installed and ready to
-use. Liferay Portal Enterprise Edition (EE) comes with Liferay Developer Studio
-and much more (see
-[CE vs EE](http://www.liferay.com/downloads/liferay-portal/overview)).
-Download a
-[free trial](http://www.liferay.com/c/portal/register_trial_license?redirect=/products/liferay-portal/ee/30-day-trial)
-of Liferay Portal EE today. 
-
-$$$
+| **Note:** In Liferay Developer Studio, the SDK is already installed and ready to
+| use. Liferay Portal Enterprise Edition (EE) comes with Liferay Developer Studio
+| and much more (see
+| [CE vs EE](http://www.liferay.com/downloads/liferay-portal/overview)).
+| Download a
+| [free trial](http://www.liferay.com/c/portal/register_trial_license?redirect=/products/liferay-portal/ee/30-day-trial)
+| of Liferay Portal EE today.
 
 Installation steps:
 
@@ -42,19 +42,15 @@ Installation steps:
     Plugins SDK must also be on your `C:\` drive in order for Service Builder to
     be able to run successfully.
 
-+$$$
-
-**Tip**: By default, Liferay Portal Community Edition comes bundled with many
-plugins. It's common to remove them to speed up the server start-up. Just
-navigate to the `liferay-portal-[version]/tomcat-[tomcat-version]/webapps`
-directory and delete all its subdirectories except for `ROOT` and `tunnel-web`. 
-
-$$$
+| **Tip**: By default, Liferay Portal Community Edition comes bundled with many
+| plugins. It's common to remove them to speed up the server start-up. Just
+| navigate to the `liferay-portal-[version]/tomcat-[tomcat-version]/webapps`
+| directory and delete all its subdirectories except for `ROOT` and `tunnel-web`.
 
 Now that you've installed the Plugins SDK, let's configure Apache Ant for use in
 developing your plugins. 
 
-## Ant Configuration [](id=ant-configuration)
+## Ant Configuration
 
 Building projects in the Plugins SDK requires that you install Ant (version 1.7
 or higher) on your machine. Download the latest version of Ant from
@@ -111,7 +107,7 @@ referenced in your path.
 
 Now that Ant is configured, let's set up your Plugins SDK environment. 
 
-## Plugins SDK Configuration [](id=plugins-sdk-configuration)
+## Plugins SDK Configuration
 
 Now we have the proper tools, but we need to configure the Plugins SDK to deploy
 into your Liferay instance. The Plugins SDK contains a `build.properties` file

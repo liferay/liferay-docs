@@ -1,4 +1,8 @@
-# Plugin Security Management [](id=plugin-security-management)
+---
+header-id: plugin-security-management
+---
+
+# Plugin Security Management
 
 We all wish cyberspace were free of malicious software and unwanted bugs. Since
 it isn't, we need to guard ourselves and our portals from these evils. Enter

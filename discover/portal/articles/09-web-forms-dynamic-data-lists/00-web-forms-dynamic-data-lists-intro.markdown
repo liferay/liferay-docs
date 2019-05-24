@@ -1,4 +1,8 @@
-# Using Web Forms and Dynamic Data Lists [](id=using-web-forms-and-dynamic-data-lists)
+---
+header-id: using-web-forms-and-dynamic-data-lists
+---
+
+# Using Web Forms and Dynamic Data Lists
 
 As needs change in business and organizations, the technology used to fulfill
 those needs must adapt as well. People use electronic means to do things that

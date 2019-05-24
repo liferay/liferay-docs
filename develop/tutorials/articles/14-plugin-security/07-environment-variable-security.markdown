@@ -1,4 +1,8 @@
-# Environment Variable Security [](id=environment-variable-security)
+---
+header-id: environment-variable-security
+---
+
+# Environment Variable Security
 
 Specify regular expression patterns used to match environment variables
 that the plugin is permitted to access. 

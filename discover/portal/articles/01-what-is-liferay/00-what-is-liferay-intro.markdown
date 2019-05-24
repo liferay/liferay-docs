@@ -1,4 +1,8 @@
-# What is Liferay? [](id=what-is-liferay)
+---
+header-id: what-is-liferay
+---
+
+# What is Liferay?
 
 If you're reading this, we're going to make a wild guess and say that you're
 probably looking for some software to help you run your web site. Creating a

@@ -1,4 +1,8 @@
-# Writing Remote Service Classes [](id=writing-remote-service-classes)
+---
+header-id: writing-remote-service-classes
+---
+
+# Writing Remote Service Classes
 
 Many default Liferay services are available as web services. Liferay exposes its
 web services via SOAP and JSON web services. If you're running Liferay locally
@@ -120,7 +124,7 @@ your service's Web Services Definition Language (WSDL) available after you've
 built its WSDD and deployed your portlet project. Let's learn how to call your
 remote services next. 
 
-## Calling Remote Services [](id=calling-remote-services)
+## Calling Remote Services
 
 Service Builder can expose your project's remote web services both via a JSON
 API and via SOAP. By default, running Service Builder with `remote-service` set
@@ -153,7 +157,7 @@ interface is a great way to test them. You can also examine alternate equivalent
 methods of calling the SOAP and JSON web services via JavaScript, Curl, and
 URLs. If you'd like to learn more about how to invoke remote services from a
 client application, visit the
-[JSON Web Services](/develop/tutorials/-/knowledge_base/6-1/json-web-services)
+[JSON Web Services](/docs/6-1/tutorials/-/knowledge_base/t/json-web-services)
 tutorial. Next, we'll consider how to implement custom SQL queries in your
 portlet, so you can easily leverage information from multiple entity types.
 

@@ -1,4 +1,8 @@
-# Ext plugins [](id=ext-plugins)
+---
+header-id: ext-plugins
+---
+
+# Ext plugins
 
 Ext plugins are powerful tools for extending Liferay. Because they increase the
 complexity of your Liferay instance, you should only use an Ext plugin if you're

@@ -1,4 +1,8 @@
-# Message Bus Security [](id=message-bus-security)
+---
+header-id: message-bus-security
+---
+
+# Message Bus Security
 
 Specify which services the plugin is permitted to listen on via the portal's
 message bus.

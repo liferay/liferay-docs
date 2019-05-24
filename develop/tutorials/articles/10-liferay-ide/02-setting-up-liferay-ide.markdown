@@ -1,4 +1,8 @@
-# Setting Up Liferay IDE [](id=setting-up-liferay-ide)
+---
+header-id: setting-up-liferay-ide
+---
+
+# Setting Up Liferay IDE
 
 Now that you have Liferay IDE installed, either from a downloaded zip file or
 from the update site appropriate for your Eclipse version, you need to perform
@@ -8,7 +12,7 @@ develop your Liferay portal and test your customizations.
 Before setting up Liferay IDE, let's make sure you have all the appropriate
 software packages installed. 
 
-## Requirements [](id=requirements)
+## Requirements
 
 Before setting up Liferay IDE, you need to have appropriate versions of Liferay
 Portal, Liferay Plugins SDK and/or Maven, and Eclipse. Make sure you satisfy
@@ -24,27 +28,23 @@ these requirements before proceeding:
     and the Liferay IDE extension--see the *Installation* section if you haven't
     already done this. 
 
-+$$$
-
-**Note:** Earlier versions of Liferay (e.g., 5.2.x) are not supported by Liferay
-IDE. 
-
-$$$
+| **Note:** Earlier versions of Liferay (e.g., 5.2.x) are not supported by Liferay
+| IDE.
 
 Let's set up your Liferay Plugins SDK. 
 
-## Registering the Liferay Plugins SDK with Liferay IDE [](id=registering-the-liferay-plugins-sdk-with-liferay-ide)
+## Registering the Liferay Plugins SDK with Liferay IDE
 
 Before you begin creating new Liferay plugin projects, a supported Liferay
 Plugins SDK and/or Maven installation and Liferay Portal must be installed and
 configured in your Liferay IDE. If you're thinking, "Wait a second, buster! I
 thought the Plugins SDK and Maven could be used without Liferay IDE!", then
 you're right. In the [The Plugins
-SDK](/develop/tutorials/-/knowledge_base/6-1/the-plugins-sdk)
+SDK](/docs/6-1/tutorials/-/knowledge_base/t/the-plugins-sdk)
 chapter, we'll explain how to use the Plugins SDK on its own, with a text
 editor. Also, we'll explain how to use Maven on its own in the [Developing
 plugins using
-Maven](/develop/tutorials/-/knowledge_base/6-1/developing-plugins-using-maven)
+Maven](/docs/6-1/tutorials/-/knowledge_base/t/developing-plugins-using-maven)
 chapter. Here, we explain the easiest way to use the Plugins SDK: by running it
 from Liferay IDE. 
 
@@ -59,16 +59,12 @@ from Liferay IDE.
 4.  Select *OK* and verify that your SDK was added to the list of *Installed
     Liferay Plugin SDKs*. 
 
-+$$$
-
-**Note:** You can have Multiple SDKs in your preferences. Set one as the default
-SDK by checking its box in the list of *Installed Liferay Plugin SDKs*. 
-
-$$$
+| **Note:** You can have Multiple SDKs in your preferences. Set one as the default
+| SDK by checking its box in the list of *Installed Liferay Plugin SDKs*.
 
 Let's set up your Liferay Portal Tomcat runtime and server. 
 
-## Liferay Portal Tomcat Runtime and Server Setup [](id=liferay-portal-tomcat-runtime-and-server-setup)
+## Liferay Portal Tomcat Runtime and Server Setup
 
 1.  In Eclipse, go to *Window* &rarr; *Preferences* &rarr; *Server* &rarr;
     *Runtime Environments*. 

@@ -1,10 +1,14 @@
-# Creating an Ext plugin [](id=creating-an-ext-plugin)
+---
+header-id: creating-an-ext-plugin
+---
+
+# Creating an Ext plugin
 
 You can create Ext plugins in Liferay Developer Studio or in your terminal
 environment. The Ext plugin is stored in the `ext` directory of the Plugins SDK
 (see Chapter 2, The Plugins SDK). 
 
-## Using Developer Studio [](id=using-developer-studio)
+## Using Developer Studio
 
 1.  Go to *File* &rarr; *New* &rarr; *Liferay Plugin Project*. 
 
@@ -18,7 +22,7 @@ environment. The Ext plugin is stored in the `ext` directory of the Plugins SDK
 4.  Select the *Ant (liferay-plugins-sdk)* option for your build type. If
 	you'd like to use *Maven* for your build type, navigate to the [Using Liferay
 	IDE with
-	Maven](/develop/tutorials/-/knowledge_base/6-1/using-liferay-ide-with-maven)
+	Maven](/docs/6-1/tutorials/-/knowledge_base/t/using-liferay-ide-with-maven)
 	section for details. 
 
 5.  Your configured SDK and Liferay Runtime should already be selected. If you
@@ -38,7 +42,7 @@ The Plugins SDK automatically appended `-ext` to the project name when naming
 the parent folder of your Ext plugin. In Developer Studio, you can either create
 a completely new plugin or add a new plugin to an existing plugin project. 
 
-## Using the terminal [](id=using-the-terminal)
+## Using the terminal
 
 Navigate to the *ext* directory in the Liferay Plugins SDK and enter the
 appropriate command for your operating system to create a new Ext plugin: 
@@ -55,7 +59,7 @@ A `BUILD SUCCESSFUL` message from Ant tells you there's a new folder named
 `example-ext` inside the `ext` folder in your Plugins SDK. The Plugins SDK
 automatically named the EXT by appending `-ext` to the project name. 
 
-## Anatomy of the Ext Plugin [](id=anatomy-of-the-ext-plugin)
+## Anatomy of the Ext Plugin
 
 The structure of your new `example-ext` folder looks like this: 
 
@@ -136,15 +140,11 @@ significant:
     - `struts-config-ext.xml` and `tiles-defs-ext.xml`: These files are used to
       customize the struts actions used by Liferay's core portlets. 
 
-+$$$
-
-**Tip:** After creating an Ext plugin, remove the files you don't need to
-customize from `docroot/WEB-INF/ext-web/docroot/WEB-INF`. Liferay keeps track of
-the files deployed by each Ext plugin and won't let you deploy multiple Ext
-plugins that override the same file. If you remove unnecessary (uncustomized)
-files, you'll avoid collisions with Ext plugins deployed alongside yours. 
-
-$$$
+| **Tip:** After creating an Ext plugin, remove the files you don't need to
+| customize from `docroot/WEB-INF/ext-web/docroot/WEB-INF`. Liferay keeps track of
+| the files deployed by each Ext plugin and won't let you deploy multiple Ext
+| plugins that override the same file. If you remove unnecessary (uncustomized)
+| files, you'll avoid collisions with Ext plugins deployed alongside yours.
 
 You've now created an Ext plugin and are familiar with its directory structure
 and its most significant files. Let's use your Ext plugin to customize Liferay

@@ -1,4 +1,8 @@
-# Color Schemes [](id=color-schemes)
+---
+header-id: color-schemes
+---
+
+# Color Schemes
 
 Specify color schemes with a CSS class name, which of course also lets you
 choose different background images, different border colors, and more. 

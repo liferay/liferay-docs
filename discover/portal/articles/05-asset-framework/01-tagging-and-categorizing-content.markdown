@@ -1,4 +1,8 @@
-# Tagging and Categorizing Content [](id=tagging-and-categorizing-content)
+---
+header-id: tagging-and-categorizing-content
+---
+
+# Tagging and Categorizing Content
 
 Tags and categories are two important tools you can use to help organize
 information on your portal and make it easier for your users to find the content
@@ -15,7 +19,7 @@ each site in the portal. This interface can be used to manage all your tags and
 categories in one place. It is important that you both tag and categorize your
 content when you enter it. Let's take a closer look at tags and categories.
 
-## Tags [](id=tags)
+## Tags
 
 Tags are an important tool that you can use to help organize information on your
 portal and make it easier for your users to find content that they're looking
@@ -42,7 +46,7 @@ tag, or add properties.
 Tags are not the only portal-wide mechanism for describing content: you can also
 use categories.
 
-## Categories [](id=categories)
+## Categories
 
 Categories are similar in concept to tags, but are designed for use by
 administrators, not regular users. Hierarchies of categories can be created, and

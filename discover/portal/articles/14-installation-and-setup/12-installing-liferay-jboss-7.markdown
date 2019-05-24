@@ -1,4 +1,8 @@
-# Installing Liferay on JBoss 7 [](id=installing-liferay-on-jboss-7)
+---
+header-id: installing-liferay-on-jboss-7
+---
+
+# Installing Liferay on JBoss 7
 
 **Liferay Home** is one folder above JBoss's install location.
 
@@ -12,7 +16,7 @@
 Now that you have all of your installation files, you are ready to start
 installing and configuring Liferay on JBoss.
 
-## Dependency Jars [](id=dependency-jars)
+## Dependency Jars
 
 Let's work with the dependency jar files first.
 
@@ -54,7 +58,7 @@ resource root entry with that of your database driver.
 		
 Great! You have your `.jar` files ready for your domain.
 
-## Configuring JBoss [](id=configuring-jboss)
+## Configuring JBoss
 
 Let's make some adjustments in your configuration to support using Liferay.
 
@@ -134,7 +138,7 @@ Then add the following `JAVA_OPTS` assignment one line above the
 The prescribed script modifications are now complete for your Liferay
 installation on JBoss. Next we'll consider the database and mail configuration. 
 
-## Database Configuration [](id=database-configuration)
+## Database Configuration
 
 If you want JBoss to manage your data source, follow the instructions in this
 section. If you want to use the built-in Liferay data source, you can skip this
@@ -201,7 +205,7 @@ Your final data sources subsystem should look something like this:
 Now that you've configured your data source, let's go over how to configure your
 mail session within JBoss.
 
-## Mail Configuration [](id=mail-configuration)
+## Mail Configuration
 
 At the time this document was written, JavaMail was not yet supported in JBoss
 AS 7.0.1 - however, it was implemented in the JBoss AS 7.1 alpha (see
@@ -227,7 +231,7 @@ Specify your mail subsystem  in `standalone.xml` as in the following example:
 You've got mail! Next, we'll make sure Liferay is configured to properly connect
 with your new mail session and database.
 
-## Configuring Data Sources and Mail Sessions [](id=configuring-data-sources-and-mail-sessions)
+## Configuring Data Sources and Mail Sessions
 
 Now that your data source and mail session are set up, you need to ensure
 Liferay Portal can access them.
@@ -259,7 +263,7 @@ You've completed the steps necessary for your deployment of Liferay so Liferay
 Portal can now communicate with your data source and mail session--way to go!
 Now you're ready to deploy Liferay Portal.
 
-## Deploy Liferay [](id=deploy-liferay)
+## Deploy Liferay
 
 1. If the folder `$JBOSS_HOME/standalone/deployments/ROOT.war` already exists in
    your JBoss installation, delete all of its subfolders and files. Otherwise,
@@ -307,12 +311,8 @@ Now you're ready to deploy Liferay Portal.
     The `portal-setup-wizard.properties` file the setup wizard creates has
     `setup.wizard.enabled=false` conveniently specified for you.
 
-    +$$$
-
-    **Note:** Property values in `portal-setup-wizard.properties` override 
-    property values in `portal-ext.properties`.
-
-    $$$
+    | **Note:** Property values in `portal-setup-wizard.properties` override
+    | property values in `portal-ext.properties`.
 
     Now it's time to start Liferay Portal on JBoss!
 

@@ -1,4 +1,8 @@
-# Creating Teams for Advanced Site Membership Management [](id=creating-teams-for-advanced-site-membership-management)
+---
+header-id: creating-teams-for-advanced-site-membership-management
+---
+
+# Creating Teams for Advanced Site Membership Management
 
 Teams don't appear as a link in the Control Panel because they exist *within*
 sites. Teams allow site administrators a greater degree of flexibility than was

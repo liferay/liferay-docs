@@ -1,4 +1,8 @@
-# Summary [](id=summary-11)
+---
+header-id: summary-11
+---
+
+# Summary
 
 In this chapter, we introduced Liferay Marketplace, your one-stop shop for
 browsing and downloading Liferay-compatible applications. We looked at how to

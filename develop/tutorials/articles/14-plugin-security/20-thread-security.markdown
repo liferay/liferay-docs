@@ -1,4 +1,8 @@
-# Thread Security [](id=thread-security)
+---
+header-id: thread-security
+---
+
+# Thread Security
 
 Specify regular expression patterns used to match names of the thread pool
 executor for the plugin to access.

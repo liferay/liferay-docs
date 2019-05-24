@@ -1,4 +1,8 @@
-# Extending and Overriding portal.properties [](id=extending-and-overriding-portal-properties)
+---
+header-id: extending-and-overriding-portal-properties
+---
+
+# Extending and Overriding portal.properties
 
 In our hook that created a custom login action, we modified the
 `login.events.pre` portal property. This property accepts *multiple* values, so
@@ -14,15 +18,11 @@ Liferay's
 Properties](http://docs.liferay.com/portal/6.1/propertiesdoc/portal.properties.html)
 document. 
 
-+$$$
-
-**Note:** Hooks support customizing a specific list of predefined properties.
-This list is found in `liferay-hook-[liferay version].dtd`, in the `definitions`
-folder of the Liferay source code. In addition to defining custom actions, hooks
-can override portal properties to define model listeners, validators,
-generators, and content sanitizers. If you want to customize a property that's
-not found in this list, you must use an Ext plugin (Chapter 8). 
-
-$$$
+| **Note:** Hooks support customizing a specific list of predefined properties.
+| This list is found in `liferay-hook-[liferay version].dtd`, in the `definitions`
+| folder of the Liferay source code. In addition to defining custom actions, hooks
+| can override portal properties to define model listeners, validators,
+| generators, and content sanitizers. If you want to customize a property that's
+| not found in this list, you must use an Ext plugin (Chapter 8).
 
 Now let's look at overriding and adding Struts actions from a hook plugin. 

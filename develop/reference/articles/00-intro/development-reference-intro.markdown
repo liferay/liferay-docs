@@ -1,4 +1,8 @@
-# Development Reference [](id=development-reference)
+---
+header-id: development-reference
+---
+
+# Development Reference
 
 Here you'll find Liferay's reference documentation for Java, JavaScript
 (including AlloyUI), tag libraries, deployment descriptors, and Liferay Faces. 

@@ -1,4 +1,8 @@
-# Installing Liferay on Tomcat 7 [](id=installing-liferay-on-tomcat-7)
+---
+header-id: installing-liferay-on-tomcat-7
+---
+
+# Installing Liferay on Tomcat 7
 
 **Liferay Home** is one folder above Tomcat's install location.
 
@@ -18,7 +22,7 @@ the dependencies file should be called
 
 Next, let's get started by addressing Liferay's library dependencies.
 
-## Dependency Jars [](id=dependency-jars)
+## Dependency Jars
 
 Liferay Portal needs to have the Liferay Portal Dependency JARs, an appropriate
 JDBC driver and a few other JARs installed.
@@ -73,7 +77,7 @@ JDBC driver and a few other JARs installed.
 Now that you have the necessary libraries in place, we'll move on to configuring
 your domain.
 
-## Tomcat Configuration [](id=tomcat-configuration)
+## Tomcat Configuration
 
 The steps in this section focus on:
 
@@ -168,7 +172,7 @@ Let's get started with our configuration tasks.
 
 Excellent work! Now let's consider configuration of your database.
 
-## Database Configuration [](id=database-configuration)
+## Database Configuration
 
 If you want Tomcat to manage your data source, use the following procedure. If
 you want to use Liferay's built-in data source, you can skip this section.
@@ -201,7 +205,7 @@ you want to use Liferay's built-in data source, you can skip this section.
 Your Tomcat managed data source is now configured. Let's move on to your mail
 session.
 
-## Mail Configuration [](id=mail-configuration)
+## Mail Configuration
 
 If you want to manage your mail session within Tomcat, use the following
 instructions. If you want to use the built-in Liferay mail session, you can skip
@@ -235,7 +239,7 @@ replace the mail session values with your own.
 Super! Your mail session is configured. Next, we'll make sure Liferay will be
 able to access your mail session and database.
 
-## Configuring Your Database and Mail Session [](id=configuring-your-database-and-mail-session)
+## Configuring Your Database and Mail Session
 
 In this section we'll specify appropriate properties for Liferay to use in
 connecting to your database and mail session.
@@ -263,7 +267,7 @@ connecting to your database and mail session.
 It's just that easy! Now it's time to deploy Liferay Portal on your Tomcat
 server. 
 
-## Deploy Liferay [](id=deploy-liferay)
+## Deploy Liferay
 
 We'll deploy Liferay as an exploded web archive within your
 `$TOMCAT_HOME/webapps` folder.
@@ -301,12 +305,8 @@ We'll deploy Liferay as an exploded web archive within your
     The `portal-setup-wizard.properties` file the setup wizard creates has
     `setup.wizard.enabled=false` conveniently specified for you.
 
-    +$$$
-
-    **Note:** Property values in `portal-setup-wizard.properties` override 
-    property values in `portal-ext.properties`.
-
-    $$$
+    | **Note:** Property values in `portal-setup-wizard.properties` override
+    | property values in `portal-ext.properties`.
 
     Now its time to launch Liferay Portal on Tomcat!
 

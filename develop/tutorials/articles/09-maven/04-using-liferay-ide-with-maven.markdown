@@ -1,4 +1,8 @@
-# Using Liferay IDE with Maven [](id=using-liferay-ide-with-maven)
+---
+header-id: using-liferay-ide-with-maven
+---
+
+# Using Liferay IDE with Maven
 
 Wouldn't it be nice if you could manage your Liferay Maven projects from Liferay
 IDE? You can! Liferay IDE 2.0 introduces the Maven project configurator
@@ -6,7 +10,7 @@ IDE? You can! Liferay IDE 2.0 introduces the Maven project configurator
 Liferay IDE projects. Let's explore what the Maven project configurator does,
 how to install it, and how to install its dependencies. 
 
-## Installing Maven Plugins for Liferay IDE [](id=installing-maven-plugins-for-liferay-ide)
+## Installing Maven Plugins for Liferay IDE
 
 In order to properly support Maven projects in the IDE, you first need a
 mechanism to recognize Maven projects as Liferay IDE projects. IDE projects are
@@ -68,7 +72,7 @@ uncheck the *Group items by category* checkbox.
 Awesome! The required Maven plugins are installed and your IDE instance is ready
 to be mavenized! Next, let's learn how to configure an existing Maven project.
 
-## Configuring your Liferay Maven Project [](id=configuring-your-liferay-maven-project)
+## Configuring your Liferay Maven Project
 
 Now your Liferay IDE instance is Maven-ready and you have an existing Maven
 project. Let's investigate what is going on under the hood and configure your
@@ -77,14 +81,10 @@ IDE, visit the *Creating Liferay Plugins with Maven* section. Furthermore, you
 can import an existing Maven project by navigating to *File* &rarr; *Import*
 &rarr; *Maven* and selecting the location of your Maven project source code. 
 
-+$$$
-
-**Note:** Due to the lifecycle mapping of Eclipse and Maven, it is unsafe to
-manually insert or overwrite the `.classpath` and `.project` files and
-`.settings` folder. IDE automatically generates these files when a project is
-imported and updates them appropriately.
-
-$$$
+| **Note:** Due to the lifecycle mapping of Eclipse and Maven, it is unsafe to
+| manually insert or overwrite the `.classpath` and `.project` files and
+| `.settings` folder. IDE automatically generates these files when a project is
+| imported and updates them appropriately.
 
 The `m2e-core` plugin delegates your Liferay Maven plugin's project
 configuration to the `m2e-liferay` project configurator. The `m2e-wtp` project

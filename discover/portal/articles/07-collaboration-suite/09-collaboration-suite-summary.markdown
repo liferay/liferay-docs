@@ -1,4 +1,8 @@
-# Summary [](id=summary-5)
+---
+header-id: summary-5
+---
+
+# Summary
 
 We have explored many of the portlets in Liferay's collaboration suite. You
 have seen how you can configure all of the portlets in a similar fashion using

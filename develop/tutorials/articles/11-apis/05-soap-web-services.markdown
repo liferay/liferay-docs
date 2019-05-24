@@ -1,4 +1,8 @@
-# SOAP Web Services [](id=soap-web-services)
+---
+header-id: soap-web-services
+---
+
+# SOAP Web Services
 
 You can access Liferay's services via *Simple Object Access Protocol* (*SOAP*)
 over HTTP. The *packaging* protocol is SOAP and the *transport* protocol is
@@ -54,13 +58,9 @@ Here's the list of *secure* web services for `UserGroup`:
     - `unsetTeamUserGroups`
     - `updateUserGroup`
 
-+$$$
-
-**Note:** Liferay's developers use a tool called *Service Builder* to expose
-their services via SOAP automatically. If you're interested in using Service
-Builder, check out the *Service Builder* chapter in this guide. 
-
-$$$
+| **Note:** Liferay's developers use a tool called *Service Builder* to expose
+| their services via SOAP automatically. If you're interested in using Service
+| Builder, check out the *Service Builder* chapter in this guide.
 
 Each web service is listed with its name, operations, and a link to its WSDL
 file. The WSDL file is written in XML and provides a model for describing and
@@ -82,7 +82,7 @@ next section.
 
 Next, let's invoke the web service! 
 
-## SOAP Java Client [](id=soap-java-client)
+## SOAP Java Client
 
 A Java web service client can easily be set up using Eclipse IDE. Here's how: 
 
@@ -276,7 +276,7 @@ specified in the WSDL for each Liferay web service. It's all there for you!
 
 Next let's implement a web service client implemented in PHP. 
 
-## SOAP PHP Client [](id=soap-php-client)
+## SOAP PHP Client
 
 You can write your client in any language that supports web services invocation.
 Let's invoke the same operations we did when we created our Java client, this

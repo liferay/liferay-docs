@@ -1,4 +1,8 @@
-# Enabling Workflow [](id=enabling-workflow)
+---
+header-id: enabling-workflow
+---
+
+# Enabling Workflow
 
 Liferay's Kaleo workflow engine can be installed for both CE and EE versions of
 Liferay. The web plugin's name is `kaleo-web` and is bundled in the *Kaleo Forms

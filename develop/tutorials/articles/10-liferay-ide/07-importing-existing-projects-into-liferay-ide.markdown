@@ -1,4 +1,8 @@
-# Importing Existing Projects into Liferay IDE [](id=importing-existing-projects-into-liferay-ide)
+---
+header-id: importing-existing-projects-into-liferay-ide
+---
+
+# Importing Existing Projects into Liferay IDE
 
 What if you have existing projects that you want to work on in Liferay IDE?
 You can import your existing projects into Liferay IDE to take advantage of
@@ -22,13 +26,9 @@ in your Liferay IDE Eclipse workspace. These projects might already have
 `.project` or `.classpath` files in them; regardless, we'll use the same
 procedure to import them.
 
-+$$$
-
-**Note:** The next two sections assume that you've created projects with the
-Plugins SDK and are familiar with the directory structure used by the Plugins
-SDK. 
-
-$$$
+| **Note:** The next two sections assume that you've created projects with the
+| Plugins SDK and are familiar with the directory structure used by the Plugins
+| SDK.
 
 First let's look at the import process for creating a single Liferay IDE project
 from a Plugins SDK project. Follow these steps:
@@ -65,7 +65,7 @@ multiple Liferay IDE projects from a single Plugins SDK.
 Next we'll show you how to import all your Plugins SDK projects into Liferay
 IDE. 
 
-## Batch Importing Multiple Projects into Liferay IDE [](id=batch-importing-multiple-projects-into-liferay-ide)
+## Batch Importing Multiple Projects into Liferay IDE
 
 Does your Plugins SDK contain multiple plugins? You can easily batch import each
 plugin in your Plugins SDK as its own Liferay IDE project. 
@@ -78,15 +78,11 @@ plugin in your Plugins SDK as its own Liferay IDE project.
 2.  In the *Import Projects* window, use the combo box to select the *Liferay
     Plugins SDK* you're importing plugins from. 
 
-    +$$$
-
-    **Note:** If your SDK isn't configured in Liferay IDE (i.e., it's not in the
-    dropdown list of the *Import Projects* window), use the *Configure* link to
-    add one. To configure a Plugins SDK on the Installed SDKs on the pref page
-    just click *Add* and then Browse to the directory of the Plugins SDK root
-    directory.
-
-    $$$
+    | **Note:** If your SDK isn't configured in Liferay IDE (i.e., it's not in the
+    | dropdown list of the *Import Projects* window), use the *Configure* link to
+    | add one. To configure a Plugins SDK on the Installed SDKs on the pref page
+    | just click *Add* and then Browse to the directory of the Plugins SDK root
+    | directory.
 
 3.  Once you select your Plugins SDK in the combo box, the *Liferay Plugin SDK
     Location* and *Liferay Plugin SDK Version* fields are automatically filled
@@ -106,7 +102,7 @@ plugin in your Plugins SDK as its own Liferay IDE project.
 Your plugins are imported! Next, we'll talk about importing existing Eclipse
 projects into Liferay IDE. 
 
-## Importing Existing Eclipse Projects into Liferay IDE [](id=importing-existing-eclipse-projects-into-liferay-ide)
+## Importing Existing Eclipse Projects into Liferay IDE
 
 The steps we outlined above let you import projects that have never been opened
 in Eclipse. If you've been using Eclipse without Liferay IDE, you may already
@@ -116,14 +112,10 @@ convert your project.
 1.  In Eclipse, right-click the project in your Project Explorer, and select
     *Liferay* &rarr; *Convert to Liferay plugin project*. 
 
-    +$$$
-
-    **Note:** If you don't have a convert action available it means either that
-    the project is already a Liferay IDE project, or that it is not faceted
-    (i.e., Java and Dynamic Web project facets are not yet configured).
-    Configure accordingly before moving on. 
-
-    $$$
+    | **Note:** If you don't have a convert action available it means either that
+    | the project is already a Liferay IDE project, or that it is not faceted
+    | (i.e., Java and Dynamic Web project facets are not yet configured).
+    | Configure accordingly before moving on.
 
 2.  In the *Convert Project* wizard, your project should be selected and the SDK
     location and SDK version should be detected automatically. If they aren't
@@ -140,7 +132,7 @@ Remember to verify that your import was successful and that your project was
 configured correctly as a Liferay IDE project. We have one more import scenario
 to cover--importing existing Liferay IDE projects into your Liferay IDE. 
 
-## Importing an existing Liferay IDE project [](id=importing-an-existing-liferay-ide-project)
+## Importing an existing Liferay IDE project
 
 What if you had a Liferay IDE project in your workspace, but it's not there
 anymore? Here's how you can import it into your current workspace: 
@@ -156,25 +148,21 @@ anymore? Here's how you can import it into your current workspace:
 
 5.  Click *Finish*. 
 
-+$$$
-
-**Note:** There are two common errors that occur when importing existing Liferay
-IDE projects into your workspace:
-
-- The SDK name used in that project doesn't exist in your new workspace. 
-
-- The runtime id used doesn't exist in your new workspace. 
-
-You can modify the SDK name in *Project Properties* &rarr; *Liferay* dialog
-window; you can modify the targeted runtime in the *Project properties* &rarr;
-*Targeted Runtimes* dialog window. 
-
-$$$
+| **Note:** There are two common errors that occur when importing existing Liferay
+| IDE projects into your workspace:
+| 
+| - The SDK name used in that project doesn't exist in your new workspace.
+| 
+| - The runtime id used doesn't exist in your new workspace.
+| 
+| You can modify the SDK name in *Project Properties* &rarr; *Liferay* dialog
+| window; you can modify the targeted runtime in the *Project properties* &rarr;
+| *Targeted Runtimes* dialog window.
 
 Let's verify the success of your imports and ensure that they're properly
 configured as Liferay IDE projects. 
 
-## Verifying that the import has succeeded [](id=verifying-that-the-import-has-succeeded)
+## Verifying that the import has succeeded
 
 After importing projects into Liferay IDE, you'll want to verify that they
 imported successfully, and that they're properly configured as Liferay IDE

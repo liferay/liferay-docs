@@ -1,4 +1,8 @@
-# Invoking the API Locally [](id=invoking-the-api-locally)
+---
+header-id: invoking-the-api-locally
+---
+
+# Invoking the API Locally
 
 Each service provides a local interface to clients running in the same JVM as
 Liferay Portal. There are two ways to invoke a service API's methods: 
@@ -24,14 +28,10 @@ organization.
 This JSP code invokes the static method `getOrganizationStatsUsers()` from the
 `-LocalServiceUtil` class `BlogsStatsUserLocalServiceUtil`. 
 
-+$$$
-
-**Note:** Permission checks are not performed when you invoke services locally
-(i.e., from the same JVM that's Liferay Portal runs on). To ensure permission
-checks are performed, use the remote variant of the API, even from a local
-context. 
-
-$$$
+| **Note:** Permission checks are not performed when you invoke services locally
+| (i.e., from the same JVM that's Liferay Portal runs on). To ensure permission
+| checks are performed, use the remote variant of the API, even from a local
+| context.
 
 <!-- I don't believe the above tip is true anymore. If the -ServiceUtil class
 uses the filterFindBy implementation, permission checks are performed. -Rich --> 

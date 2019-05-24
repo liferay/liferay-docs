@@ -1,4 +1,8 @@
-# Liferay APIs [](id=liferay-apis)
+---
+header-id: liferay-apis
+---
+
+# Liferay APIs
 
 An *Application Programming Interface* (API) is a protocol that, when invoked,
 performs an action or set of actions. You can invoke an API from your own code

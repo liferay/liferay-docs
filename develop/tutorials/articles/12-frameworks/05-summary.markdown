@@ -1,4 +1,8 @@
-# Summary [](id=summary-9)
+---
+header-id: summary-9
+---
+
+# Summary
 
 With Liferay's frameworks, implementing complex functionality in your custom
 portlets becomes easy. We covered security and permissions and the 

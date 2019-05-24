@@ -1,4 +1,8 @@
-# Creating a Portlet [](id=creating-a-portlet)
+---
+header-id: creating-a-portlet
+---
+
+# Creating a Portlet
 
 Portlet creation using the Plugins SDK is simple. There's a `portlets` folder
 inside the Plugins SDK folder, where your portlet projects reside. The first
@@ -27,7 +31,7 @@ Liferay Developer Studio first, then by using the terminal.
 4.  Select the *Ant (liferay-plugins-sdk)* option for your build type. If
 	you'd like to use *Maven* for your build type, navigate to the [Using Liferay
 	IDE with
-	Maven](/develop/tutorials/-/knowledge_base/6-1/using-liferay-ide-with-maven)
+	Maven](/docs/6-1/tutorials/-/knowledge_base/t/using-liferay-ide-with-maven)
 	section for details. 
 
 5.  Your configured SDK and Liferay Runtime should already be selected. If you
@@ -79,16 +83,12 @@ necessary to build your newly created portlet project. This is not a recommended
 configuration, and we encourage you to keep your projects in the Plugins SDK. 
 
 
-+$$$
+| **Tip**: If you are using a source control system such as Subversion, CVS,
+| Mercurial, Git, etc., this might be a good moment to do an initial check-in of
+| your changes. After building the plugin for deployment, several additional files
+| will be generated that should *not* be handled by the source control system.
 
-**Tip**: If you are using a source control system such as Subversion, CVS,
-Mercurial, Git, etc., this might be a good moment to do an initial check-in of
-your changes. After building the plugin for deployment, several additional files
-will be generated that should *not* be handled by the source control system. 
-
-$$$
-
-## Deploying the Portlet [](id=deploying-the-portlet)
+## Deploying the Portlet
 
 Liferay provides a mechanism called auto-deploy that makes deploying portlets
 (and any other plugin types) a breeze. All you need to do is drop the plugin's
@@ -96,16 +96,12 @@ WAR file into the deploy directory, and the portal makes the necessary changes
 specific to Liferay and then deploys the plugin to the application server. This
 is a method of deployment used throughout this guide.
 
-+$$$
-
-**Note:** Liferay supports a wide variety of application servers. Many, such as
-Tomcat and Jboss, provide a simple way to deploy web applications by just
-copying a file into a folder and Liferay's auto-deploy mechanism takes advantage
-of that ability. You should be aware though, that some application servers, such
-as Websphere or Weblogic, require the use of specific tools to deploy web
-applications; Liferay's auto-deploy process won't work for them. 
-
-$$$
+| **Note:** Liferay supports a wide variety of application servers. Many, such as
+| Tomcat and Jboss, provide a simple way to deploy web applications by just
+| copying a file into a folder and Liferay's auto-deploy mechanism takes advantage
+| of that ability. You should be aware though, that some application servers, such
+| as Websphere or Weblogic, require the use of specific tools to deploy web
+| applications; Liferay's auto-deploy process won't work for them.
 
 ***Deploying in Developer Studio***: Drag your portlet project onto your
 server. When deploying your plugin, your server displays messages indicating

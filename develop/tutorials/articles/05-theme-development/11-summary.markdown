@@ -1,4 +1,8 @@
-# Summary [](id=summary-2)
+---
+header-id: summary-2
+---
+
+# Summary
 
 In this chapter, you learned how to customize the look and feel of your Liferay
 Portal by creating custom themes. During this process, you created your own

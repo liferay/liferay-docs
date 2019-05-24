@@ -1,4 +1,8 @@
-# Installing a Bundle [](id=installing-a-bundle)
+---
+header-id: installing-a-bundle
+---
+
+# Installing a Bundle
 
 Liferay bundles contain the same directory structure regardless of application
 server. The top-level folder is named for the release of Liferay. This folder is

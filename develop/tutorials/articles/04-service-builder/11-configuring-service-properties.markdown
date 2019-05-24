@@ -1,4 +1,8 @@
-# Configuring service.properties [](id=configuring-service-properties)
+---
+header-id: configuring-service-properties
+---
+
+# Configuring service.properties
 
 Service Builder generates a `service.properties` file in your project's
 `docroot/WEB-INF/src` folder. Liferay Portal uses the properties in this file to

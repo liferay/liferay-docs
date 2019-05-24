@@ -1,4 +1,8 @@
-# Using the gadget editor [](id=using-the-gadget-editor)
+---
+header-id: using-the-gadget-editor
+---
+
+# Using the gadget editor
 
 As part of Liferay's OpenSocial integration, the *OpenSocial Gadget Editor* is
 included with Liferay Portal. The gadget editor is a complete development

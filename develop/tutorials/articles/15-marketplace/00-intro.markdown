@@ -1,4 +1,8 @@
-# Liferay Marketplace [](id=liferay-marketplace)
+---
+header-id: liferay-marketplace
+---
+
+# Liferay Marketplace
 
 The **Liferay Marketplace** is an exciting new hub for sharing, browsing and
 downloading Liferay-compatible applications. As enterprises look for ways to
@@ -18,6 +22,6 @@ including:
 
 This chapter focuses on the topics of interest to a Liferay developer. It is
 highly recommended that you first read the
-[Liferay Marketplace](/discover/portal/-/knowledge_base/6-1/leveraging-the-liferay-marketplace)
+[Liferay Marketplace](/docs/6-1/user/-/knowledge_base/u/leveraging-the-liferay-marketplace)
 chapter of *Using Liferay Portal*, where you will find detailed information about the
 Marketplace from an end user's perspective.

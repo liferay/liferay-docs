@@ -1,4 +1,8 @@
-# Installation [](id=installation)
+---
+header-id: installation
+---
+
+# Installation
 
 Liferay IDE is a plugin for Eclipse. You can install it in two ways: bundled
 with Eclipse (this is the easiest way) or into an existing Eclipse installation. 

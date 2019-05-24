@@ -1,4 +1,8 @@
-# Liferay IDE and Liferay Developer Studio [](id=liferay-ide-and-liferay-developer-studio)
+---
+header-id: liferay-ide-and-liferay-developer-studio
+---
+
+# Liferay IDE and Liferay Developer Studio
 
 If you've been writing software for a while, you probably have a set of tools
 that you regularly use. This set of tools has been carefully collected over the

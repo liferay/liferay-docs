@@ -1,4 +1,8 @@
-# Adding Friendly URL Mapping to the Portlet [](id=adding-friendly-url-mapping-to-the-portlet)
+---
+header-id: adding-friendly-url-mapping-to-the-portlet
+---
+
+# Adding Friendly URL Mapping to the Portlet
 
 When you click the *Edit greeting* link, you're taken to a page with a URL that
 looks like this:

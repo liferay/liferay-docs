@@ -1,4 +1,8 @@
-# Creating Liferay Plugins with Maven [](id=creating-liferay-plugins-with-maven)
+---
+header-id: creating-liferay-plugins-with-maven
+---
+
+# Creating Liferay Plugins with Maven
 
 Liferay offers many archetypes to help create Maven projects for multiple plugin
 types, including portlet, theme, hook, and layout template plugins. We provide
@@ -9,12 +13,8 @@ you almost certainly have the archetype you need.
 Liferay portlet project. With Archetype, you can use the same steps we detail
 below to generate Liferay plugin projects of any type. 
 
-+$$$
-
-**Note:** Make sure Maven is installed and that its executable is in your path
-environment variable. 
-
-$$$
+| **Note:** Make sure Maven is installed and that its executable is in your path
+| environment variable.
 
 We'll demonstrate two ways of creating Liferay plugins with Maven: using Liferay
 IDE and using the command line. First, let's learn how to use Maven archetypes
@@ -82,13 +82,9 @@ plugins using the command line.
     want to create the plugin project. Archetype will create a sub-directory for
     the plugin project you create.
 
-    +$$$
-
-    **Note:** If you haven't already created a parent project, you may want to
-    consider creating one to share common project information. See section
-    *Using a Parent Plugin Project* for details.
-
-    $$$
+    | **Note:** If you haven't already created a parent project, you may want to
+    | consider creating one to share common project information. See section
+    | *Using a Parent Plugin Project* for details.
 
 2.  Execute the command
 
@@ -173,15 +169,11 @@ plugins using the command line.
     Maven's Archetype tool creates a Liferay plugin project directory with a new
     `pom.xml` file and source code. 
 
-+$$$
-
-**Note:** The archetype file is downloaded and installed automatically to your
-local repository (e.g.,
-`.m2/repository/com/liferay/maven/archetypes/<archetype>`). If you configured a
-mirror pointing to your public repository on Nexus, the plugin is installed
-there. 
-
-$$$
+| **Note:** The archetype file is downloaded and installed automatically to your
+| local repository (e.g.,
+| `.m2/repository/com/liferay/maven/archetypes/<archetype>`). If you configured a
+| mirror pointing to your public repository on Nexus, the plugin is installed
+| there.
     
 ![Figure 9.12: Your archetype and its dependencies are now available in your local repository.](../../images/maven-public-plugin.png)
 

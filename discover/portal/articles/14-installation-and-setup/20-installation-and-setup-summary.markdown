@@ -1,4 +1,8 @@
-# Summary [](id=summary-12)
+---
+header-id: summary-12
+---
+
+# Summary
 
 This chapter is a guide to everything about installing Liferay. Whether you
 choose a Liferay bundle or an existing application server, Liferay Portal

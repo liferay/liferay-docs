@@ -1,4 +1,8 @@
-# Deploying in production [](id=deploying-in-production)
+---
+header-id: deploying-in-production
+---
+
+# Deploying in production
 
 Often times you can't use Ant to deploy web applications in production or
 pre-production environments. Additionally, some application servers such as
@@ -6,7 +10,7 @@ WebSphere or Weblogic have their own deployment tools, and Liferay's autodeploy
 process won't work. Let's look at two methods for deploying and redeploying Ext
 plugins in these scenarios. 
 
-## Method 1: Redeploying Liferay's web application [](id=method-1-redeploying-liferays-web-application)
+## Method 1: Redeploying Liferay's web application
 
 You can use this method in any application server that supports auto-deploy;
 Tomcat and Glassfish are two examples. What's the benefit? The only artifact
@@ -31,7 +35,7 @@ small and easy to transport. Execute these steps on the server:
 3.  Once the Ext plugin is detected and deployed by Liferay, restart your
     Liferay server. 
 
-## Method 2: Generate an aggregated WAR file [](id=method-2-generate-an-aggregated-war-file)
+## Method 2: Generate an aggregated WAR file
 
 Some application servers don't support auto-deploy; WebSphere and Weblogic are
 two examples. With an aggregated WAR file, all Ext plugins are merged before
@@ -40,7 +44,7 @@ changes from all your Ext plugins. Before you deploy the Liferay `.war` file,
 copy the dependency `.jar` files for Liferay and all Ext plugins to the global
 application server class loader in the production server. The precise location
 varies from server to server; see [Using Liferay Portal
-6.1](/discover/portal/-/knowledge_base/6-1/installation-and-setup) to get
+6.1](/docs/6-1/user/-/knowledge_base/u/installation-and-setup) to get
 the details for your application server. 
 
 The first step in creating the aggregated `.war` file is to deploy your Ext
