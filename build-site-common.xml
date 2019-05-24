@@ -27,6 +27,17 @@
 
 	<!-- taskdefs -->
 
+	<taskdef name="addtoc" classname="com.liferay.documentation.util.AddTOCTask">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
 	<taskdef name="checkimgssite" classname="com.liferay.documentation.util.CheckImagesTaskDevSite">
 		<classpath>
 			<fileset dir="${project.dir}/lib" includes="*.jar" />
@@ -39,6 +50,17 @@
 	</taskdef>
 
 	<taskdef name="checkintros" classname="com.liferay.documentation.util.CheckIntrosTask">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
+	<taskdef name="checkheaders" classname="com.liferay.documentation.util.CheckHeadersTask">
 		<classpath>
 			<fileset dir="${project.dir}/lib" includes="*.jar" />
 			<!-- Use below instead of above fileset when testing changes to classes
@@ -93,6 +115,17 @@
 		</classpath>
 	</taskdef>
 
+	<taskdef name="numberheaders" classname="com.liferay.documentation.util.NumberHeadersTask">
+		<classpath>
+			<fileset dir="${project.dir}/lib" includes="*.jar" />
+			<!-- Use below instead of above fileset when testing changes to classes
+			<pathelement path="${project.dir}/code/liferay-doc-utils/classes"/>
+			-->
+
+			<fileset dir="${project.dir}/code/liferay-doc-utils/lib" includes="*.jar" />
+		</classpath>
+	</taskdef>
+
 	<taskdef name="numberimgssite" classname="com.liferay.documentation.util.NumberImagesTaskDevSite">
 		<classpath>
 			<fileset dir="${project.dir}/lib" includes="*.jar" />
@@ -116,6 +149,11 @@
 
 	<!-- targets -->
 
+	<target name="add-toc" description="Adds the Table of Contents syntax for each CE Markdown article.">
+		<addtoc docdir="${doc.dir}" producttype="ce">
+		</addtoc>
+	</target>
+
 	<target name="article-to-html" depends="prepare, check-images-site" description="Converts a single Markdown article to an HTML file.">
 		<echo message="... converting ${article} to html file ${build.dir}/${article}.html"/>
 		<java
@@ -130,14 +168,8 @@
 	</target>
 
 	<target name="check-headers" description="Check the headers of Markdown articles found in ${doc.dir}/articles">
-		<java
-			classname="com.liferay.documentation.util.CheckHeadersTask"
-			classpathref="project.classpath"
-			fork="true"
-			failonerror="true"
-		>
-			<arg value="${doc.dir}"/>
-		</java>
+		<checkheaders docdir="${doc.dir}" producttype="ce">
+		</checkheaders>
 	</target>
 	
 	<target name="concat-markdown" description="Concatenates the Markdown files in a specific folder for preparation to convert to other formats.">
@@ -250,15 +282,8 @@
 	</target>
 
 	<target name="number-headers" description="Numbers the headers of Markdown articles found in ${doc.dir}/articles">
-		<property file="${project.dir}/release-site.properties" />
-		<java
-			classname="com.liferay.documentation.util.NumberHeadersSiteMain"
-			classpathref="project.classpath"
-			failonerror="true"
-			fork="true"
-		>
-			<arg value="${doc.dir}"/>
-		</java>
+		<numberheaders docdir="${doc.dir}" producttype="ce">
+		</numberheaders>
 	</target>
 
 	<target name="number-images-site" description="numbers the images in a markdown chapter file">
@@ -280,7 +305,7 @@
 		</copy>
 	</target>
 
-	<target name="prepare-dist" depends="check-images-site, check-intros, clean-dist, number-headers, number-images-site, check-headers, create-metadata-file" description="Prepares the document for distribution.">
+	<target name="prepare-dist" depends="add-toc, check-images-site, check-intros, clean-dist, number-headers, number-images-site, check-headers, create-metadata-file" description="Prepares the document for distribution.">
 		<echo message="... creating ${dist.dir} directory"/>
 		<mkdir dir="${dist.dir}"/>
 	</target>
