@@ -1,4 +1,8 @@
-# Using the Device Recognition API [](id=using-the-device-recognition-api)
+---
+header-id: using-the-device-recognition-api
+---
+
+# Using the Device Recognition API
 
 As you know, Internet traffic has risen exponentially over the past decade, and
 this trend shows no sign of stopping. In addition, the bulk of Internet traffic 
@@ -14,22 +18,18 @@ device. To use these features, you must first install a device detection
 database that can detect which mobile devices are accessing the portal. Liferay 
 provides such a database in the Liferay Mobile Device Detection (LMDD) app from 
 the Liferay Marketplace. 
-[Click here](/discover/portal/-/knowledge_base/6-2/leveraging-the-liferay-marketplace) 
+[Click here](/docs/6-2/user/-/knowledge_base/u/leveraging-the-liferay-marketplace) 
 for instructions on using Liferay Marketplace to find and install apps. 
 
-+$$$
-
-**Note:** The Liferay Mobile Device Detection (LMDD) app is EE-only for Liferay 
-Portal 6.2. Although you can use other device detection databases, doing so 
-requires you to manually integrate the database with Liferay APIs. 
-
-$$$
+| **Note:** The Liferay Mobile Device Detection (LMDD) app is EE-only for Liferay
+| Portal 6.2. Although you can use other device detection databases, doing so
+| requires you to manually integrate the database with Liferay APIs.
 
 You can create your own plugin that makes use of the device database. This 
 tutorial shows you some of the methods in the Device API that you can use to 
 retrieve device attributes and capabilities. Now go ahead and get started! 
 
-## Getting Started with the Device API [](id=getting-started-with-the-device-api)
+## Getting Started with the Device API
 
 One important thing that you'll want to get using the Device API is the 
 `Device` object. You can obtain it from the `themeDisplay` object like this: 
@@ -50,7 +50,7 @@ attributes that help you take care of the pesky problems that arise when sending
 content to different devices. Refer to the Device Javadocs mentioned above for 
 assistance. Next, you'll learn about retrieving some other device capabilities.
 
-## Getting Device Properties [](id=getting-device-capabilities)
+## Getting Device Properties
 
 With the Device API, you can detect the *properties* of a device making a
 request to your portal and then render content accordingly. Properties refer
@@ -78,8 +78,8 @@ grandma's gnarly tablet and your cousin's awesome new smart phone can make
 requests to your portal and receive identical content. This will make everyone 
 happy! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using the Mobile SDK](/develop/tutorials/-/knowledge_base/6-2/mobile)
+[Using the Mobile SDK](/docs/6-2/tutorials/-/knowledge_base/t/mobile)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
+[Service Builder and Services](/docs/6-2/tutorials/-/knowledge_base/t/service-builder)

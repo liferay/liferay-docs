@@ -1,10 +1,14 @@
-# Publishing and Configuring Workflows [](id=publishing-and-configuring-workflows)
+---
+header-id: publishing-and-configuring-workflows
+---
+
+# Publishing and Configuring Workflows
 
 Once a workflow is developed, it must be published to Liferay. After that,
 there's even more workflow configuration possbility, such as associating the
 workflow with a Dynamic Data List, and using Kaleo Forms to run the workflow.
 
-## Publishing Workflows to the Server [](id=publishing-workflows-to-the-server)
+## Publishing Workflows to the Server
 
 After you create a new workflow or modify an existing one, you'll have to
 publish it onto your Liferay server before your site's members can use it. Let's
@@ -25,17 +29,13 @@ your *Package Explorer* view onto your Liferay server in your *Servers* view.
 If you are not using the Kaleo Designer for Java plugin and you'd like to
 publish workflow definitions you've written in XML, you can do so by uploading
 them from within Liferay Portal's workflow configuration screens. For details,
-see the chapter on [Using Workflow](/discover/portal/-/knowledge_base/6-2/using-workflow) 
+see the chapter on [Using Workflow](/docs/6-2/user/-/knowledge_base/u/using-workflow) 
 in *Discover* &rarr; *Portal*.
 
-+$$$
-
-**Note:** To update your Kaleo Workflows
-folder with the latest workflow versions created or modified in Liferay Portal
-using Kaleo Workflow Designer from the *Kaleo Forms* portlet, right click *Kaleo
-Workflows* under your server and select *Refresh*. 
-
-$$$
+| **Note:** To update your Kaleo Workflows
+| folder with the latest workflow versions created or modified in Liferay Portal
+| using Kaleo Workflow Designer from the *Kaleo Forms* portlet, right click *Kaleo
+| Workflows* under your server and select *Refresh*.
 
 You probably understand why it's necessary to publish new workflow definitions
 onto the Liferay server; it might be less clear why you need to republish
@@ -59,7 +59,7 @@ Are you ready for our *Kaleo Designer for Java* finale? You just have to
 activate the workflow in your Liferay Portal, then we'll set up the DDL record
 and try out our new workflow. Let's activate! 
 
-## Using Workflows in Liferay Portal [](id=using-workflows-in-liferay-portal)
+## Using Workflows in Liferay Portal
 
 Let's put some finishing touches on your workflow and test drive it in Liferay
 Portal. Before you can use a workflow definition, it must be activated in your
@@ -70,13 +70,13 @@ heading, select *Workflow*. Then, in the *Definitions* tab, click on the
 A workflow definition can be associated with publication of an asset or DDL
 record. Let's associate our ticket process workflow definition with a DDL record
 that lets a developer indicate whether she'll fix a ticket's issue. You can find
-detailed instructions for creating a DDL by visiting the section [Defining data types](/discover/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-)
+detailed instructions for creating a DDL by visiting the section [Defining data types](/docs/6-2/user/-/knowledge_base/u/building-a-list-platform-in-liferay-and-defining-data-)
 in *Discover* &rarr; *Portal*. We'll demonstrate how easy it is.
 
-## Using Dynamic Data Lists with Workflows [](id=using-dynamic-data-lists-with-workflows)
+## Using Dynamic Data Lists with Workflows
 
 Let's associate our workflow with a Dynamic Data List (DDL) record. To learn
-more about DDLs, visit [Using Web Forms and Dynamic Data Lists](/discover/portal/-/knowledge_base/6-2/using-web-forms-and-dynamic-data-lists)
+more about DDLs, visit [Using Web Forms and Dynamic Data Lists](/docs/6-2/user/-/knowledge_base/u/using-web-forms-and-dynamic-data-lists)
 in *Discover* &rarr; *Portal*.
 
 First we'll create a data definition that lets the user select a status value. 
@@ -123,11 +123,11 @@ ticket process workflow and the Status data definition when creating this DDL.
 Now our DDL is set for use inside our ticket process workflow! Let's use the
 Kaleo Forms portlet to test our new workflow definition! 
 
-## Using Kaleo Forms to Run Workflows [](id=using-kaleo-forms-to-run-workflows)
+## Using Kaleo Forms to Run Workflows
 
 Let's use the Kaleo Forms portlet to invoke our workflow from Liferay Portal.
 Deploy the Kaleo Forms portlet to your portal and add it to a page on your site.
-You can learn how to use Kaleo Forms in the [Kaleo Forms](/discover/portal/-/knowledge_base/6-2/kaleo-forms-defining-business-processes)
+You can learn how to use Kaleo Forms in the [Kaleo Forms](/docs/6-2/user/-/knowledge_base/u/kaleo-forms-defining-business-processes)
 section of *Discover* &rarr; *Portal*; we'll demonstrate its use here by using it
 with our ticket process workflow.
 

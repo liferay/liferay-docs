@@ -1,4 +1,8 @@
-# Styling Your Theme with CSS [](id=styling-your-theme-with-css)
+---
+header-id: styling-your-theme-with-css
+---
+
+# Styling Your Theme with CSS
 
 Previously, you built the framework for the theme and imported the content for
 the Lunar Resort. The end result may have seemed a little underwhelming. All

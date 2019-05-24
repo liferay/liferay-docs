@@ -1,4 +1,8 @@
-# Recycling Assets with the Recycle Bin [](id=recycling-assets-with-the-recycle-bin)
+---
+header-id: recycling-assets-with-the-recycle-bin
+---
+
+# Recycling Assets with the Recycle Bin
 
 Have you ever had that life-altering experience where you deleted an important
 file and immediately regretted deleting it? The deed is usually followed by a
@@ -10,7 +14,7 @@ be restored back to its original state. Recycled items can expire after a
 certain period of time, resulting in their permanent deletion. Before diving
 into how the Recycle Bin works, let's look at how to configure it.
 
-## Configuring the Recycle Bin [](id=configuring-the-recycle-bin)
+## Configuring the Recycle Bin
 
 To begin using the Recycle Bin, you must enable it where you plan to use it. The
 Recycle Bin supports portal-wide scope or site-specific scope. The portal-wide
@@ -35,13 +39,9 @@ Recycle Bin until its permanent deletion (default is 30 days).
 
 When you've finished configuring your Recycle Bin settings, click *Save*.
 
-+$$$
-
-**Note:** If you disable the Recycle Bin while
- it's still holding recycled items, the recycled items reappear in the Recycle
- Bin if it is re-enabled.
-
-$$$
+| **Note:** If you disable the Recycle Bin while
+|  it's still holding recycled items, the recycled items reappear in the Recycle
+|  Bin if it is re-enabled.
 
 You can also configure the Recycle Bin via properties in the `portal.properties`
 file. Remember that it's a best practice not to edit the `portal.properties`
@@ -74,7 +74,7 @@ recycled can restore the document.
 Now that you've successfully configured the Recycle Bin, let's look at how to
 use it.
 
-## Using the Recycle Bin [](id=using-the-recycle-bin)
+## Using the Recycle Bin
 
 The Recycle Bin is temporary storage configured for multiple asset types across
 the portal. Instead of offering a specific Recycle Bin for each asset type,
@@ -156,7 +156,7 @@ Recycle Bin* button located at the top of the Recycle Bin screen. This
 permanently deletes all the files from the Recycle Bin. Next, let's discuss how
 to use the drag and drop feature.
 
-### Drag and Drop [](id=drag-and-drop)
+### Drag and Drop
 
 A quick and easy way to dispose of your unwanted assets is to drag and drop them
 into the Recycle Bin. While you're in the Control Panel, you can simply select
@@ -172,7 +172,7 @@ original location and transferred to the Recycle Bin.
 Next, let's explore the Recycle Bin's intelligence and behind the scenes support
 that aids in a seamless recycling experience.
 
-### Recycle Bin intelligence and support [](id=recycle-bin-intelligence-and-support)
+### Recycle Bin intelligence and support
 
 Have you ever wondered if it's possible to check the IQ of a software feature?
 Unfortunately, there is no tangible way to do this; however, if there were, the
@@ -232,13 +232,9 @@ options provided by the RB when publishing to Live aren't final. Need to
 check-up on progress periodically. (Bug in LP build, need to test when snapshot
 appears the same as in LPS-26266.) -->
 
-+$$$
-
-**Note:** The Staging Recycle Bin saves its
-contents until the staged material has been published to live. This means that
-you can turn the staging mode on and off without losing your recycled material.
-
-$$$
+| **Note:** The Staging Recycle Bin saves its
+| contents until the staged material has been published to live. This means that
+| you can turn the staging mode on and off without losing your recycled material.
 
 The Recycle Bin saves you time by letting you restore content that's been
 recycled. Instead of recreating or re-uploading content, you'll be tailoring

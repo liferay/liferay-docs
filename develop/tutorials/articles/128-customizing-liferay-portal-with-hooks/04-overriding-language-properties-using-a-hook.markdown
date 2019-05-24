@@ -1,4 +1,8 @@
-# Overriding Language Properties Using a Hook [](id=overriding-language-properties-using-a-hook)
+---
+header-id: overriding-language-properties-using-a-hook
+---
+
+# Overriding Language Properties Using a Hook
 
 A language properties hook lets you change Liferay Portal's messages and labels
 to suit your needs. For example, you may want to change the title of a Liferay
@@ -22,7 +26,7 @@ First, you'll learn how to find the language key properties that specify
 Liferay's default text values. It's time to get started and locate the default
 language files. 
 
-## Locating the Default Language Keys [](id=locating-the-default-language-keys)
+## Locating the Default Language Keys
 
 Liferay's default language files are in the
 `WEB-INF/lib/portal-impl.jar/content` folder of the Liferay Portal deployment on
@@ -45,14 +49,14 @@ customize, you can create new language properties files to specify the text
 values that you prefer. You'll create these properties files in a Liferay hook
 plugin. 
 
-## Creating Language Files [](id=creating-language-files)
+## Creating Language Files
 
 The steps in this section show you how to use Liferay IDE to create a language
 property hook plugin for overriding Liferay's default text values with your own
 custom values. 
 
 1.  If you don't yet have a hook project, create one following the steps in the 
-    [Creating a Hook](/develop/tutorials/-/knowledge_base/6-2/creating-a-hook-project-in-the-plugins-sdk)
+    [Creating a Hook](/docs/6-2/tutorials/-/knowledge_base/t/creating-a-hook-project-in-the-plugins-sdk)
     tutorial.
 
 2.  In Liferay IDE, right click your hook project and select *New* &rarr;
@@ -72,15 +76,11 @@ custom values.
     of each of the custom language properties files you specified. It creates
     them in the hook project's `docroot/WEB-INF/src/content/` folder. 
 
-    +$$$
-
-    **Note:** If you are creating the hook via the Plugins SDK, you must first
-    create a folder `docroot/WEB-INF/src/content` in your plugin. Then you must
-    create your custom language properties files in that folder and reference
-    each custom language file in your `liferay-hook.xml` file. The next section
-    explains how to do this. 
-
-    $$$
+    | **Note:** If you are creating the hook via the Plugins SDK, you must first
+    | create a folder `docroot/WEB-INF/src/content` in your plugin. Then you must
+    | create your custom language properties files in that folder and reference
+    | each custom language file in your `liferay-hook.xml` file. The next section
+    | explains how to do this.
 
 4.  In the generated properties files, specify each of the properties that you
     are customizing and assign your custom values to them. 
@@ -115,11 +115,11 @@ files, simply run the wizard again.
 The Liferay Hook Configuration wizard is the easiest way to create and configure
 custom language properties files. If you didn't use Liferay IDE's Liferay Hook
 Configuration wizard or you created your hook project using the 
-[Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/creating-a-hook-project-in-the-plugins-sdk#creating-a-hook-project-from-the-command-line),
+[Plugins SDK](/docs/6-2/tutorials/-/knowledge_base/t/creating-a-hook-project-in-the-plugins-sdk#creating-a-hook-project-from-the-command-line),
 the next section shows you how to create and configure custom
 language properties files manually. 
 
-## Manually Creating and Referencing Custom Language Files [](id=manually-creating-and-referencing-custom-language-files)
+## Manually Creating and Referencing Custom Language Files
 
 In order to override any one of Portal's language properties files, you must put
 the custom language properties file in your hook plugin's
@@ -180,22 +180,18 @@ create each custom properties file .
 If you want to view the XML references that Liferay IDE generated for you, click
 on the *Source* tab of `liferay-hook.xml` editor.
 
-+$$$
-
-**Tip:** You can check the DTD of any Liferay
- XML file, such as `liferay-hook.xml`.  You can find the Liferay DTDs
- online at [http://docs.liferay.com/portal/6.2/definitions](http://docs.liferay.com/portal/6.2/definitions).
-
-$$$
+| **Tip:** You can check the DTD of any Liferay
+|  XML file, such as `liferay-hook.xml`.  You can find the Liferay DTDs
+|  online at [http://docs.liferay.com/portal/6.2/definitions](http://docs.liferay.com/portal/6.2/definitions).
 
 Now that you've customized the Liferay language key values, you can enjoy seeing
 your new titles, labels, and message strings in your portal. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)
+[Application Display Templates](/docs/6-2/tutorials/-/knowledge_base/t/application-display-templates)
 
 <!-- TODO Activate topic link when the tutorial is available.
-[Extending your Indexer Post Processor Using a Hook](/develop/tutorials/-/knowledge_base/6-2/extending-the-indexer-post-processor-using-a-hook)
+[Extending your Indexer Post Processor Using a Hook](/docs/6-2/tutorials/-/knowledge_base/t/extending-the-indexer-post-processor-using-a-hook)
 -->
 

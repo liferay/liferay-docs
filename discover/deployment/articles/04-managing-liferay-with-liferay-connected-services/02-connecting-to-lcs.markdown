@@ -1,9 +1,13 @@
-# Connecting to LCS [](id=connecting-to-lcs)
+---
+header-id: connecting-to-lcs
+---
+
+# Connecting to LCS
 
 Follow these steps to connect your Liferay Portal server to LCS: 
 
 1.  Ensure that you've completed the 
-    [LCS preconfiguration steps](/discover/deployment/-/knowledge_base/6-2/lcs-preconfiguration). 
+    [LCS preconfiguration steps](/docs/6-2/deploy/-/knowledge_base/d/lcs-preconfiguration). 
 
 2.  Log in to 
     [lcs.liferay.com](https://lcs.liferay.com). 
@@ -19,14 +23,14 @@ Follow these steps to connect your Liferay Portal server to LCS:
     subscription type can only be assigned to an environment when creating the 
     environment. If you have sufficient permissions in your company's project, 
     you can 
-    [create a new environment](/discover/deployment/-/knowledge_base/6-2/using-lcs#creating-an-environment) 
+    [create a new environment](/docs/6-2/deploy/-/knowledge_base/d/using-lcs#creating-an-environment) 
     by selecting *Add Environment*. 
 
     ![Figure 4.5: To connect to LCS, you must register your Liferay Portal server in an LCS environment. The red box in this screenshot highlights environments.](../../images/lcs-registration-select-environment.png)
 
 4.  Select the environment's *Registration* tab. This is where you manage and 
     download the 
-    [environment's token file](/discover/deployment/-/knowledge_base/6-2/using-lcs#using-environment-tokens), 
+    [environment's token file](/docs/6-2/deploy/-/knowledge_base/d/using-lcs#using-environment-tokens), 
     which you'll use to connect servers to the environment. 
 
     In the Registration tab's *Services* section, change the LCS service 
@@ -40,7 +44,7 @@ Follow these steps to connect your Liferay Portal server to LCS:
     Analysis are selected by default. If Portal Property Analysis is selected, 
     you can prevent LCS from analyzing specific properties. Enter them into the 
     box that appears when you select *Show Blacklisted Properties*. Note that 
-    [LCS doesn't access security sensitive properties](/discover/deployment/-/knowledge_base/6-2/using-lcs#what-lcs-stores-about-your-liferay-servers). 
+    [LCS doesn't access security sensitive properties](/docs/6-2/deploy/-/knowledge_base/d/using-lcs#what-lcs-stores-about-your-liferay-servers). 
 
     ![Figure 3: An environment's Registration tab lets you manage the token file used to connect your server to the environment.](../../images/lcs-registration.png)
 
@@ -53,7 +57,7 @@ Follow these steps to connect your Liferay Portal server to LCS:
 
 6.  Place the token file in your server's `[Liferay Home]/data` folder. Note 
     that 
-    [Liferay Home](/discover/deployment/-/knowledge_base/6-2/liferay-home) 
+    [Liferay Home](/docs/6-2/deploy/-/knowledge_base/d/liferay-home) 
     is usually the parent folder of the application server's folder. If your 
     server is running, it should connect to LCS in about 1 minute. If your 
     server isn't running, it connects to LCS on startup. Upon connection, your 
@@ -63,20 +67,16 @@ Follow these steps to connect your Liferay Portal server to LCS:
 
 7.  Celebrate! Your Liferay Portal server is connected to LCS. 
 
-+$$$
-
-**Note:** You may be wondering what happens if LCS goes offline. Don't worry, 
-this won't cause a rift in the space-time continuum. LCS is deployed on a global 
-cloud infrastructure set up for automatic failure recovery. The potential for 
-non-availability is very low. In the event of an outage, however, registered 
-servers maintain a local copy of their uptime information to transmit to LCS 
-when it comes back online. If you're using LCS for activation, active 
-subscriptions have a 30-day grace period to re-establish connectivity and remain 
-valid. This is ample time for LCS to come back online. Should an extended LCS 
-outage occur, Liferay Support can provide activation keys that don't require 
-LCS. 
-
-$$$
+| **Note:** You may be wondering what happens if LCS goes offline. Don't worry,
+| this won't cause a rift in the space-time continuum. LCS is deployed on a global
+| cloud infrastructure set up for automatic failure recovery. The potential for
+| non-availability is very low. In the event of an outage, however, registered
+| servers maintain a local copy of their uptime information to transmit to LCS
+| when it comes back online. If you're using LCS for activation, active
+| subscriptions have a 30-day grace period to re-establish connectivity and remain
+| valid. This is ample time for LCS to come back online. Should an extended LCS
+| outage occur, Liferay Support can provide activation keys that don't require
+| LCS.
 
 In your Liferay Portal instance, you can view your LCS connection status in the 
 LCS client app. Access the client by clicking *Control Panel* &rarr; *Apps* 

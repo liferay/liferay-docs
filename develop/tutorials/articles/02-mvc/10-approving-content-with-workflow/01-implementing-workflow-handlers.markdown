@@ -1,10 +1,14 @@
-# Implementing Workflow Handlers [](id=implementing-workflow-handlers)
+---
+header-id: implementing-workflow-handlers
+---
+
+# Implementing Workflow Handlers
 
 In this section you'll learn to implement workflow handlers. Workflow handlers
 are fairly simple classes that interact with both the portal's workflow classes
 and your service layer (by calling `updateStatus` on the appropriate entity).
 
-## Creating a Workflow Handler for Guestbook Entries [](id=creating-a-workflow-handler-for-guestbook-entries)
+## Creating a Workflow Handler for Guestbook Entries
 
 Create a new package in your `docroot/WEB-INF/src` folder and call it
 `com.liferay.docs.guestbook.workflow`. Create a new class in the package
@@ -68,7 +72,7 @@ workflow handler are methods with no implementation in `BaseWorkflowHandler`.
 The most important thing to note is that this class calls `updateStatus` from
 `EntryLocalServiceUtil`. You'll add that method later.
 
-## Creating a Workflow Handler for Guestbooks [](id=creating-a-workflow-handler-for-guestbooks)
+## Creating a Workflow Handler for Guestbooks
 
 Each workflow enabled entity needs a `WorkflowHandler`. Create
 `GuestbokWorkflowHandler` in `com.liferay.docs.guestbook.workflow`. Populate it
@@ -116,7 +120,7 @@ each entity is properly handled by the portal. The `updateStatus` method called
 in this class must be added to your local service implementation. You'll do that
 in the next section of the Learning Path.
 
-## Registering the Guestbook Portlet's Workflow Handlers [](id=registering-the-guestbook-portlets-workflow-handlers)
+## Registering the Guestbook Portlet's Workflow Handlers
 
 Now that you have new `-WorkflowHandler`s, you need to register them with
 Liferay. Add the following lines to `docroot/WEB-INF/liferay-portlet.xml`,

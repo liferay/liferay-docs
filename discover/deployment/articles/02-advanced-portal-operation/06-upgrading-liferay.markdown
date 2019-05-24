@@ -1,4 +1,8 @@
-# Upgrading Liferay [](id=upgrading-liferay)
+---
+header-id: upgrading-liferay
+---
+
+# Upgrading Liferay
 
 Liferay upgrades are fairly straightforward. A consistent set of steps is all
 you need to follow to upgrade a standard Liferay installation. Things do get
@@ -33,7 +37,7 @@ in the section.
 Now that we've discussed the general philosophy of upgrading, let's outline the
 procedure for upgrading to Liferay 6.2.
 
-## Preparing for an Upgrade [](id=preparing-for-an-upgrade)
+## Preparing for an Upgrade
 
 Before you begin upgrading Liferay to a new version, consider your current
 Liferay installation. If you're running Liferay EE, is it patched to the most
@@ -72,36 +76,28 @@ that you can perform your upgrade as efficiently as possible. Be sure to test
 the upgrade in a non-production environment before upgrading your production
 Liferay instance. 
 
-+$$$
-
-**Note**: In Liferay 6.2, the Global repository that was used to store Web
-Content and Documents and Media is now its own site with the reserved friendly
-URL `/global`; upgrading to Liferay 6.2 will fail if any sites are using the
-same URL. Before upgrading to Liferay 6.2, make sure no current friendly URL
-violates the restriction. 
-
-$$$
+| **Note**: In Liferay 6.2, the Global repository that was used to store Web
+| Content and Documents and Media is now its own site with the reserved friendly
+| URL `/global`; upgrading to Liferay 6.2 will fail if any sites are using the
+| same URL. Before upgrading to Liferay 6.2, make sure no current friendly URL
+| violates the restriction.
 
 Let's look at the preparatory tasks you should perform one by one. 
 
-## Migrate to Algorithm 6 [](id=migrate-to-algorithm-6)
+## Migrate to Algorithm 6
 
 If your Liferay installation has existed for a while, you might be on a
 different permission algorithm than the one that's available in Liferay Portal
 6.1. Permission algorithms 1-5 were deprecated in Liferay Portal 6.0 and
 were removed in 6.1, which means you must migrate *before* you upgrade.
 
-+$$$
-
-**Important**: Before upgrading a Liferay instance
- that's using one of permissions algorithms 1-5, you *must* migrate to
- permissions algorithm 6 before attempting to upgrade to Liferay 6.2. You can't
- use the seamless upgrade feature to upgrade directly to 6.2 because Liferay's
- permissions migration tool is not included with Liferay 6.2. Follow the
- instructions in this section to migrate to permissions algorithm 6 before
- continuing with your upgrade.
-
-$$$
+| **Important**: Before upgrading a Liferay instance
+|  that's using one of permissions algorithms 1-5, you *must* migrate to
+|  permissions algorithm 6 before attempting to upgrade to Liferay 6.2. You can't
+|  use the seamless upgrade feature to upgrade directly to 6.2 because Liferay's
+|  permissions migration tool is not included with Liferay 6.2. Follow the
+|  instructions in this section to migrate to permissions algorithm 6 before
+|  continuing with your upgrade.
 
 If you're on Liferay 5.2 or below, you must upgrade to the latest available
 release of Liferay 6.0 first. Please follow the instructions in the [*Liferay
@@ -148,7 +144,7 @@ Restart your server. Congratulations! You've successfully migrated your
 installation to use the latest, highest performing permissions algorithm. Next,
 you'll find out if you have any Web Content structures to fix before upgrading. 
 
-## Find and Remove Duplicate Field Names [](id=find-and-remove-duplicate-field-names)
+## Find and Remove Duplicate Field Names
 
 If you make use of the Web Content Management system, you've probably created a
 library of structures and templates to help you manage your content. In prior
@@ -249,7 +245,7 @@ the steps above.
 
 Next, you might need to explicitly set your Image Gallery storage option. 
 
-## Migrate Your Image Gallery Images [](id=migrate-your-image-gallery-images)
+## Migrate Your Image Gallery Images
 
 Liferay 6.1 introduced a major change to how Liferay handles files. Liferay 6.0
 and previous versions had a separate Document Library and Image Gallery. In
@@ -286,7 +282,7 @@ property setting:
 The third thing you need to do to prepare for your upgrade is to review the new
 property defaults. 
 
-## Review the Liferay 6.2 Properties Defaults [](id=review-the-liferay-6-2-properties-defaults)
+## Review the Liferay 6.2 Properties Defaults
 
 The next thing you'll need to look at are the defaults that have changed between
 your old Liferay instance's version and Liferay 6.2. These are preserved in a
@@ -400,7 +396,7 @@ If you're not using Tomcat, check your application server's documentation to see
 how to modify runtime properties. Your final task is to catalog all the plugins
 you have installed, so you can install the new versions in your upgraded system. 
 
-## Catalog All Installed Plugins [](id=catalog-all-installed-plugins)
+## Catalog All Installed Plugins
 
 Finally, you need to take note of any plugins you have installed. Liferay's
 plugins are usually version-specific, so you'll need to obtain new versions of
@@ -421,7 +417,7 @@ Once you've upgraded your permissions algorithm, reviewed your properties, and
 collected all the plugins you'll need, you're ready to follow the upgrade
 procedure. Remember to back up your system before you begin. 
 
-## Upgrade Choices: Upgrade a Bundle or Upgrade Manually [](id=upgrade-choices-upgrade-a-bundle-or-upgrade-manually)
+## Upgrade Choices: Upgrade a Bundle or Upgrade Manually
 
 There are two different procedures to upgrade Liferay. The first one, upgrading
 a Liferay bundle, is the most common. The second procedure is for manually
@@ -437,7 +433,7 @@ we'll run the risk of overly repeating ourselves: back up your database.
 
 Let's look at upgrading a bundle, which is the easiest upgrade path. 
 
-### Upgrading a Bundle [](id=upgrading-a-bundle)
+### Upgrading a Bundle
 
 If you're running a Liferay bundle, the best way to do the upgrade is to follow
 the steps below. The new Liferay is installed in a newer version of your bundle
@@ -477,7 +473,7 @@ versions are mandated by the environment you're in or by management. For this
 reason, Liferay also ships as an installable .war file that can be used on any
 supported application server. 
 
-### Upgrading Manually [](id=upgrading-manually)
+### Upgrading Manually
 
 Running a manual upgrade is almost as easy as upgrading a bundle: 
 
@@ -522,7 +518,7 @@ That's all there is to it. Most everything is handled by Liferay's upgrade
 procedure. Note as stated above, if you have to upgrade over several Liferay
 versions, you will need to repeat these steps for each major release. 
 
-## Post-Upgrade Tasks [](id=post-upgrade-tasks)
+## Post-Upgrade Tasks
 
 After upgrading to Liferay 6.2, you should reindex your portal's search indexes.
 Liferay 6.2 indexes new information in many places, including Documents and

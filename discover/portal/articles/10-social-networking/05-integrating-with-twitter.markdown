@@ -1,4 +1,8 @@
-# Integrating with Twitter [](id=integrating-with-twitter)
+---
+header-id: integrating-with-twitter
+---
+
+# Integrating with Twitter
 
 Liferay Portal also provides integration with Twitter via the Twitter app on 
 [Liferay Marketplace](http://liferay.com/marketplace). Once you register your 

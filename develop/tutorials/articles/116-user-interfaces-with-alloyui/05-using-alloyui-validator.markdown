@@ -1,13 +1,17 @@
-# Using the AlloyUI Validator Tag [](id=using-the-alloyui-validator-tag)
+---
+header-id: using-the-alloyui-validator-tag
+---
+
+# Using the AlloyUI Validator Tag
 
 The AlloyUI validator tag is a handy way to make sure users enter the right data
 into a form's AlloyUI input fields. It offers multiple data checks, making form
 validation a simple task. This tutorial covers using the `aui:validator` tag in
 your portlets. AlloyUI also offers a comprehensive form validator module that
-incorporates much of what is covered in this tutorial. See the [AlloyUI Form Validator](/develop/tutorials/-/knowledge_base/6-2/using-the-alloyui-form-validator-in-a-portlet) 
+incorporates much of what is covered in this tutorial. See the [AlloyUI Form Validator](/docs/6-2/tutorials/-/knowledge_base/t/using-the-alloyui-form-validator-in-a-portlet) 
 tutorial to learn more about it. 
 
-## Setting Up the AlloyUI Validator Tag [](id=setting-up-the-alloyui-validator-tag)
+## Setting Up the AlloyUI Validator Tag
 
 It doesn't take much to get the `aui:validator` tag working. 
 
@@ -18,7 +22,7 @@ It doesn't take much to get the `aui:validator` tag working.
 The example below uses these steps to implement AlloyUI input field 
 validation in a portlet. Follow along and you'll be validating in no time!
 
-### Step 1: Reference the AUI Taglib [](id=step-1-reference-the-aui-taglib)
+### Step 1: Reference the AUI Taglib
 
 First you need to make sure that you've referenced the `aui` taglib in your JSP. 
 If you're already using AlloyUI tags in your JSP, then you can skip this step. 
@@ -30,7 +34,7 @@ declaration:
 Just like that you're ready to use the AUI tags in your portlet. Onward to the 
 next step! 
 
-### Step 2: Set Up the Form and Input Fields [](id=step-2-set-up-the-form-and-input-fields)
+### Step 2: Set Up the Form and Input Fields
 
 If you don't yet have an AlloyUI form with input fields then you need to create 
 one. Add the `aui:form` tag to the bottom of the `view.jsp` and place your input 
@@ -45,7 +49,7 @@ fields inside. It should look similar to the example here:
 Repeat this step to add as many input fields as you need for your form. You're 
 almost done! Onwards to the last step! 
 
-### Step 3: Insert and Configure the AUI Validator Tag in the View JSP [](id=step-3-insert-and-configure-the-aui-validator-tag-in-the-view-jsp)
+### Step 3: Insert and Configure the AUI Validator Tag in the View JSP
 
 The final step is where you actually implement the field validation. This is 
 straightforward but there are a few things to keep in mind. Still inside the 
@@ -77,7 +81,7 @@ that `"alpha"` is used as the validation rule to restrict users to alphabetic
 characters for that field. Next, the full list of values available
 for the `name` attribute of the `aui:validator` tag are presented. 
 
-## Available Validation Rules [](id=available-validation-rules)
+## Available Validation Rules
 
 There are several validation rules that you can implement for your input fields. 
 As shown in the previous example, this is done by choosing different values for 
@@ -161,7 +165,7 @@ The custom error message is supplied as a string at the moment. As this is not
 best practice, you should supply the custom error message via a language key.
 You'll take care of this next.
 
-## Creating a Language Key Hook for the Error Message [](id=creating-a-language-key-hook-for-the-error-message)
+## Creating a Language Key Hook for the Error Message
 
 In order to supply the language key for the custom error message you will need
 to create a hook.
@@ -212,10 +216,10 @@ The error message now uses the language key you just created!
 Congrats! Now you know how to use the `aui:validator` tag. As you can see, it 
 gives you a lot of control over what your users can enter in input fields.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[User Interfaces with the Liferay UI Taglib](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+[User Interfaces with the Liferay UI Taglib](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ui-taglibs)
 
-[Themes and Layout Templates](/develop/tutorials/-/knowledge_base/6-2/themes-and-layout-templates)
+[Themes and Layout Templates](/docs/6-2/tutorials/-/knowledge_base/t/themes-and-layout-templates)
 
-[Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)
+[Application Display Templates](/docs/6-2/tutorials/-/knowledge_base/t/application-display-templates)

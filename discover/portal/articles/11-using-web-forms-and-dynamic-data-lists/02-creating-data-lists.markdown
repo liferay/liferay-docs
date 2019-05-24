@@ -1,4 +1,8 @@
-# Creating Data Lists [](id=creating-data-lists)
+---
+header-id: creating-data-lists
+---
+
+# Creating Data Lists
 
 Building out new lists really isn't all that different from creating new pieces
 of web content. Just as you can create new Web Content Structures to control the
@@ -39,7 +43,7 @@ But how will this data appear? How will my awesome, new Volunteer Sign-Up sheet
 or that boring Jobs Listing look? The answers to these pressing, burning
 questions bring us to the mecca that is the display side of this equation.
 
-## Using Data List Forms [](id=using-data-list-forms)
+## Using Data List Forms
 
 A nice way to enable people to use your forms is the Dynamic Data List Form
 portlet. This portlet is tailored to entering new records. When you deploy that
@@ -67,21 +71,17 @@ the *Allow Multiple Submissions* box is checked, each time a user visits your
 page with the Sign-Up form, the Dynamic Data List Form portlet presents them
 with a form to fill out.
 
-+$$$
-
-**Note:** If you want to allow guests to submit
- DDL forms, you'll need to enable the *Allow Multiple Submissions* feature.
- Liferay treats the Guest user as one user. Therefore, if a guest submits a DDL
- form, Liferay assumes the Guest user filled out their one form and it won't
- allow any other guests to submit a form. Thus, allowing the Guest user to
- submit multiple submissions allows all your guests to submit DDL forms.
-
-$$$
+| **Note:** If you want to allow guests to submit
+|  DDL forms, you'll need to enable the *Allow Multiple Submissions* feature.
+|  Liferay treats the Guest user as one user. Therefore, if a guest submits a DDL
+|  form, Liferay assumes the Guest user filled out their one form and it won't
+|  allow any other guests to submit a form. Thus, allowing the Guest user to
+|  submit multiple submissions allows all your guests to submit DDL forms.
 
 Once records have been submitted for lists, you can publish the lists anywhere
 in your portal. Read on to find out more about that. 
 
-## Using Default Displays [](id=using-default-displays)
+## Using Default Displays
 
 Lists are published in the portal through the Dynamic Data List Display portlet.
 If Listies don't customize the display, their lists look something like this:

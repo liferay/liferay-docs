@@ -1,4 +1,8 @@
-# Summary [](id=summary-0)
+---
+header-id: summary-0
+---
+
+# Summary
 
 This chapter has provided an introduction to Liferay site management and web
 content management. We've learned how you can use Liferay to create multiple
@@ -13,7 +17,7 @@ Liferay WCM also includes a powerful workflow engine, allowing you to set up
 custom publishing rules to fit your organization. You can set up custom approval
 processes for different sites as well as for different kinds of content within a
 site. We'll examine sites in more detail in the 
-[Advanced Web Content Management](/discover/portal/-/knowledge_base/6-2/advanced-web-content-management)
+[Advanced Web Content Management](/docs/6-2/user/-/knowledge_base/u/advanced-web-content-management)
 chapter. We'll also cover some more advanced web content management tools such
 as web content structures and templates, page templates and site templates,
 staging, and mobile device rules.

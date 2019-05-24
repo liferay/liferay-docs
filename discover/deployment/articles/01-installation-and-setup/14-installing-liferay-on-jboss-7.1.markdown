@@ -1,4 +1,8 @@
-# Installing Liferay on JBoss 7.1 [](id=installing-liferay-on-jboss-7-1)
+---
+header-id: installing-liferay-on-jboss-7-1
+---
+
+# Installing Liferay on JBoss 7.1
 
 **Liferay Home** is one folder above JBoss's install location.
 
@@ -12,7 +16,7 @@
 Now that you have all of your installation files, you are ready to start
 installing and configuring Liferay on JBoss.
 
-## Dependency Jars [](id=dependency-jars)
+## Dependency Jars
 
 Let's work with the dependency jar files first.
 
@@ -54,7 +58,7 @@ not be matched to the version of the database you're using.
 
 Great! You have your `.jar` files ready. 
 
-## Running Liferay on JBoss 7.1 in Standalone Mode vs. Domain Mode [](id=running-liferay-on-jboss-7-1-in-standalone-mode-vs-domain-mode)
+## Running Liferay on JBoss 7.1 in Standalone Mode vs. Domain Mode
 
 JBoss 7.1 can be launched in either *standalone* mode or *domain* mode. Domain
 mode allows multiple application server instances to be managed from a single
@@ -76,18 +80,14 @@ Other plugins, such as service or action hooks, should still work properly since
 they don't require JBoss to access anything (such as JSP files) from an exploded
 `.war` file on the file system. 
 
-+$$$
+| **Note:** This does not prevent Liferay from running in a clustered environment
+| on multiple JBoss servers. You can set up a cluster of Liferay instances running
+| on JBoss 7.1 servers running in standalone mode. Please refer to the chapter of
+| this guide on
+| [Configuring Liferay for High Availability](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/configuring-liferay-for-high-availabili-liferay-portal-6-2-user-guide-20-en)
+| for information on setting up a Liferay cluster.
 
-**Note:** This does not prevent Liferay from running in a clustered environment
-on multiple JBoss servers. You can set up a cluster of Liferay instances running
-on JBoss 7.1 servers running in standalone mode. Please refer to the chapter of
-this guide on
-[Configuring Liferay for High Availability](https://www.liferay.com/documentation/liferay-portal/6.2/user-guide/-/ai/configuring-liferay-for-high-availabili-liferay-portal-6-2-user-guide-20-en)
-for information on setting up a Liferay cluster.
-
-$$$
-
-## Configuring JBoss [](id=configuring-jboss)
+## Configuring JBoss
 
 Let's make some adjustments in your configuration to support using Liferay.
 
@@ -190,27 +190,23 @@ insert the following path names inside the `<paths>...</paths>` element:
 The added paths resolve issues with portal deployment exceptions and image
 uploading problems on a Liferay Portal instance running on JBoss 7.1.x. 
 
-+$$$
-
-**Warning:** There are a few known issues with JBoss 7.1.1 that should be noted
-when using your Liferay instance with it.
-
-- JBoss 7.1.1 does not read JSP configurations
-([AS7-4187](https://issues.jboss.org/browse/AS7-4187)). Because of this issue,
-developers must manually remove the portlet and empty the JBoss `/tmp` folder
-before deploying a new version of a file to ensure that changes to JSP files are
-recognized.
-- JBoss 7.1.1 causes web services not to work with Spring MVC
-([JBWS-3453](https://issues.jboss.org/browse/JBWS-3453)). This issue may be
-significant for developers who are using Spring MVC and connecting to remote web
-services.
-
-$$$
+| **Warning:** There are a few known issues with JBoss 7.1.1 that should be noted
+| when using your Liferay instance with it.
+| 
+| - JBoss 7.1.1 does not read JSP configurations
+| ([AS7-4187](https://issues.jboss.org/browse/AS7-4187)). Because of this issue,
+| developers must manually remove the portlet and empty the JBoss `/tmp` folder
+| before deploying a new version of a file to ensure that changes to JSP files are
+| recognized.
+| - JBoss 7.1.1 causes web services not to work with Spring MVC
+| ([JBWS-3453](https://issues.jboss.org/browse/JBWS-3453)). This issue may be
+| significant for developers who are using Spring MVC and connecting to remote web
+| services.
 
 The prescribed script modifications are now complete for your Liferay
 installation on JBoss. Next you'll configure mail and the database. 
 
-## Using the IBM JDK with JBoss [](id=using-the-ibm-jdk-with-jboss)
+## Using the IBM JDK with JBoss
 
 If you plan on using the IBM JDK with your JBoss application server, follow the
 instructions in this section. If you plan on using another type of JDK, you can
@@ -296,7 +292,7 @@ called `module.xml` in that folder.
 Your JBoss application server is now configured to use the IBM JDK. Next, you'll
 learn about managing a data source with JBoss. 
 
-## Database Configuration [](id=database-configuration)
+## Database Configuration
 
 If you want JBoss to manage your data source, follow the instructions in this
 section. If you want to use the built-in Liferay data source, you can skip this
@@ -346,7 +342,7 @@ Your final data sources subsystem should look like this:
 
 Now that you've configured your data source, the mail session is next. 
 
-## Mail Configuration [](id=mail-configuration)
+## Mail Configuration
 
 If you want JBoss to manage your mail session, use the following instructions.
 If you want to use the built-in Liferay mail session, you can skip this section.
@@ -377,7 +373,7 @@ Specify your mail subsystem in `standalone.xml` as in the following example:
 You've got mail! Next, you'll make sure Liferay can connect using your new mail
 session and database.
 
-## Configuring data sources and mail sessions [](id=configuring-data-sources-and-mail-sessions)
+## Configuring data sources and mail sessions
 
 Now that your data source and mail session are set up, you need to ensure
 Liferay Portal can access them.
@@ -410,7 +406,7 @@ Before you deploy Liferay Portal on your JBoss app server, you should enable and
 configure Java security so you can use Liferay's plugin security manager
 with your downloaded Liferay applications.
 
-## Security Configuration [](id=security-configuration)
+## Security Configuration
 
 When you're ready to begin using other people's apps from Marketplace, you'll
 want to protect your portal and your JBoss server from security threats. To do
@@ -439,14 +435,14 @@ Also, see section [*Understanding Plugin Security Management*](https://www.lifer
 in the Developer's Guide to learn how to configure Liferay plugin
 access to resources.
 
-## JSF Configuration [](id=jsf-configuration)
+## JSF Configuration
 
 If you plan on using JSF applications in your application server, follow the
 instructions below. In this section, you'll learn how to upgrade Mojarra and
 Weld so your app server's versions are identical to the versions used by Liferay
 Faces. 
 
-### Upgrading Mojarra [](id=upgrading-mojarra)
+### Upgrading Mojarra
 
 Some versions of JBoss 7.1.x are not bundled with the correct Mojarra version
 necessary to use Liferay Faces. For example, JBoss AS 7.1.1 comes with Mojarra
@@ -503,7 +499,7 @@ the bottom of the portlet.
 
 Next you'll learn how to upgrade Weld. 
 
-### Upgrading Weld [](id=upgrading-weld)
+### Upgrading Weld
 
 Some versions of JBoss 7.1.x are not bundled with the correct Weld version
 necessary to use Liferay Faces. For example, JBoss AS 7.1.1 comes with Weld
@@ -529,12 +525,12 @@ and copy it to the following location:
 You've successfully upgraded your Weld version. If you're interested in
 configuring CDI for your JSF portlets running on JBoss, you'll need to configure
 a few more things. For more information on configuring CDI, visit the
-[Configuring JSF Portlets to Use CDI](/develop/tutorials/-/knowledge_base/6-2/contexts-and-dependency-injection-for-jsf-portlets#configuring-jsf-portlets-to-use-cdi)
+[Configuring JSF Portlets to Use CDI](/docs/6-2/tutorials/-/knowledge_base/t/contexts-and-dependency-injection-for-jsf-portlets#configuring-jsf-portlets-to-use-cdi)
 section. 
 
 Now you're ready to deploy Liferay Portal. 
 
-## Deploy Liferay [](id=deploy-liferay)
+## Deploy Liferay
 
 1. If the folder `$JBOSS_HOME/standalone/deployments/ROOT.war` already exists in
    your JBoss installation, delete all of its subfolders and files. Otherwise,

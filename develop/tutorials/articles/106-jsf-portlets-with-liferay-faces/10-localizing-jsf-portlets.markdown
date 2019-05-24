@@ -1,4 +1,8 @@
-# Localizing JSF Portlets [](id=localizing-jsf-portlets)
+---
+header-id: localizing-jsf-portlets
+---
+
+# Localizing JSF Portlets
 
 In this tutorial, you'll learn how to internationalize your JSF portlet. If
 you're unfamiliar with the term localization, you can learn the basics about it
@@ -12,7 +16,7 @@ demo. This method integrates JSF and Liferay seamlessly because it lets you
 includes, and allows you to add your own keys. The following steps demonstrate
 how to do this:
    
-1. Create a [language properties hook](/develop/tutorials/-/knowledge_base/6-2/overriding-language-properties-using-a-hook)
+1. Create a [language properties hook](/docs/6-2/tutorials/-/knowledge_base/t/overriding-language-properties-using-a-hook)
    inside your portlet plugin and make sure to add a `language-properties`
    element for each locale that your portlet supports. A sample
    `liferay-hook.xml` file that hooks into a Liferay Portal language properties
@@ -42,14 +46,14 @@ Internationalizing your portlets is especially easy to do using the options that
 Liferay Faces provides. Awesome! You now know how to internationalize your JSF
 portlet. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Liferay Faces Alloy UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-alloy-ui-components)
+[Liferay Faces Alloy UI Components](/docs/6-2/tutorials/-/knowledge_base/t/liferay-faces-alloy-ui-components)
 
-[Liferay Faces Bridge UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-bridge-ui-components)
+[Liferay Faces Bridge UI Components](/docs/6-2/tutorials/-/knowledge_base/t/liferay-faces-bridge-ui-components)
 
-[Understanding Liferay Faces Bridge](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-bridge)
+[Understanding Liferay Faces Bridge](/docs/6-2/tutorials/-/knowledge_base/t/understanding-liferay-faces-bridge)
 
-[Understanding Liferay Faces Portal](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-portal)
+[Understanding Liferay Faces Portal](/docs/6-2/tutorials/-/knowledge_base/t/understanding-liferay-faces-portal)
 
-[Understanding Liferay Faces Alloy](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-alloy)
+[Understanding Liferay Faces Alloy](/docs/6-2/tutorials/-/knowledge_base/t/understanding-liferay-faces-alloy)

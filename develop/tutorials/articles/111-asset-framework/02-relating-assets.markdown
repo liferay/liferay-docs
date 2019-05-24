@@ -1,4 +1,8 @@
-# Relating Assets [](id=relating-assets)
+---
+header-id: relating-assets
+---
+
+# Relating Assets
 
 <!--
 Testing Notes:
@@ -21,18 +25,18 @@ assets related to a Blog entry appear alongside that entry in the Blogs portlet.
 ![Figure 1: You and your users can find it helpful to relate assets to entities, such as this blogs entry.](../../images/asset-fw-related-blog-insults.png)
 
 This tutorial shows you how to provide a way for authors to relate content.
-This tutorial assumes that you've [asset enabled](/develop/tutorials/-/knowledge_base/6-2/adding-updating-and-deleting-assets-for-custom-entities)
+This tutorial assumes that you've [asset enabled](/docs/6-2/tutorials/-/knowledge_base/t/adding-updating-and-deleting-assets-for-custom-entities)
 your portlet. A custom Insults portlet is used as an example. After all, users
 of such a portlet would want to relate their insults to all kinds of content!
 The completed Insults portlet code that uses this feature is on [Github](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-03-end-insults-portlet). 
 Now go ahead and get started relating your assets!
 
-## Relating Assets in the Service Layer [](id=relating-assets-in-the-service-layer)
+## Relating Assets in the Service Layer
 
 First, you must make some modifications to your portlet's service layer. You
 must implement persisting your entity's asset relationships. In your portlet's
 `service.xml`, put the following line of code below any finder method elements
-and then [run](/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
+and then [run](/docs/6-2/tutorials/-/knowledge_base/t/running-service-builder-and-understanding-the-generated-code)
 Service Builder:
 
     <reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
@@ -76,7 +80,7 @@ Super! Now your portlet's service layer can handle related assets. Even so,
 there's still nothing in your portlet's UI that lets your users to relate
 assets. You'll take care of that in the next step.
 
-## Relating Assets in the UI [](id=relating-assets-in-the-ui)
+## Relating Assets in the UI
 
 You typically implement the UI for linking assets in the JSP that you provide
 users the ability to create and edit your entity, This way only content creators
@@ -113,7 +117,7 @@ menu with a simplified name for your entity, add a language key that uses the
 fully qualified class name as the key's name and the new simplified name as the
 key's value. Put the language key in file
 `docroot/WEB-INF/src/content/Language.properties` in your portlet. You can refer
-to a tutorial [here](/develop/tutorials/-/knowledge_base/6-2/generating-language-properties-file-and-automated-t#implementing-translations-in-your-portlet)
+to a tutorial [here](/docs/6-2/tutorials/-/knowledge_base/t/generating-language-properties-file-and-automated-t#implementing-translations-in-your-portlet)
 for more documentation on using language properties.
 
 Here's a language key to simplify the label for the `Insult` entity class used
@@ -131,11 +135,11 @@ The next thing you need to do is reveal any such related assets to the rest of
 your portlet's users. After all, you don't want to give everyone edit access 
 just so they can view related assets!
 
-## Showing Related Assets [](id=showing-related-assets)
+## Showing Related Assets
 
 You can show related assets in your portlet's view of that entity or, if you've
 implemented 
-[asset rendering](/develop/tutorials/-/knowledge_base/6-2/implementing-asset-renderers)
+[asset rendering](/docs/6-2/tutorials/-/knowledge_base/t/implementing-asset-renderers)
 for your custom entity, you can show related assets in the full content view of
 your entity for users to view in an Asset Publisher portlet. 
 
@@ -174,7 +178,7 @@ If you've already connected your portlet's view to the view JSP for your entity,
 you've completed the tutorial. You can otherwise follow the remainder of this
 tutorial to learn how to implement that connection. 
 
-## Creating a URL to Your New JSP [](id=creating-a-url-to-your-new-jsp)
+## Creating a URL to Your New JSP
 
 Now that you've implemented showing off this asset feature, you must connect
 your portlet's main view JSP to your entity's view JSP. If your main view JSP
@@ -222,14 +226,14 @@ example, the Insults portlet only allows assets to be related by those with
 `ADD_INSULT` or `UPDATE` permissions. These permissions are checked in the
 Insults portlet's `view.jsp` and `insult_actions.jsp`, respectively. For more
 information on this, see the learning path 
-[Checking for Permissions in the UI](/develop/tutorials/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
+[Checking for Permissions in the UI](/docs/6-2/tutorials/-/knowledge_base/t/checking-for-permissions-in-the-ui).
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Asset Enabling Custom Entities](/develop/tutorials/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Asset Enabling Custom Entities](/docs/6-2/tutorials/-/knowledge_base/t/asset-enabling-custom-entities)
 
-[Implementing Asset Renderers](/develop/tutorials/-/knowledge_base/6-2/implementing-asset-renderers)
+[Implementing Asset Renderers](/docs/6-2/tutorials/-/knowledge_base/t/implementing-asset-renderers)
 
-[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+[Liferay UI Taglibs](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ui-taglibs)
 
-[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)
+[User Interfaces with AlloyUI](/docs/6-2/tutorials/-/knowledge_base/t/alloyui)

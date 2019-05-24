@@ -1,4 +1,8 @@
-# Using the portlet:renderURL UI Component [](id=using-the-portletrenderurl-ui-component)
+---
+header-id: using-the-portletrenderurl-ui-component
+---
+
+# Using the portlet:renderURL UI Component
 
 The Liferay Faces Bridge component suite provides many Portlet 2.0 `UIComponent`
 tags that are useful for JSF development. In this tutorial, you'll learn about
@@ -27,8 +31,8 @@ Otherwise, the URL is written to the response.
 
 Fantastic! You can add another UIComponent to your repertoire! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Liferay Faces Alloy UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-alloy-ui-components)
+[Liferay Faces Alloy UI Components](/docs/6-2/tutorials/-/knowledge_base/t/liferay-faces-alloy-ui-components)
 
-[Understanding Liferay Faces Bridge](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-bridge)
+[Understanding Liferay Faces Bridge](/docs/6-2/tutorials/-/knowledge_base/t/understanding-liferay-faces-bridge)

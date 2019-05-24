@@ -1,10 +1,14 @@
-# Audience Targeting [](id=audience-targeting)
+---
+header-id: audience-targeting
+---
+
+# Audience Targeting
 
 Liferay's Audience Targeting application allows you to monitor your portal's
 audience. You can organize them into user segments, target specific content to
 those user segments, and create campaigns to expose user segments to a certain
 set of assets. Visit the
-[Targeting Content to your Audience](/discover/portal/-/knowledge_base/6-2/targeting-content-to-your-audience)
+[Targeting Content to your Audience](/docs/6-2/user/-/knowledge_base/u/targeting-content-to-your-audience)
 chapter for more information on Audience Targeting and how to use it.
 
 Although the Audience Targeting app can be configured to monitor your portal's

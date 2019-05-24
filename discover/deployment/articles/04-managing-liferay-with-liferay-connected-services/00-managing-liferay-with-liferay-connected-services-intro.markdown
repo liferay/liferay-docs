@@ -1,4 +1,8 @@
-# Managing Liferay with Liferay Connected Services [](id=managing-liferay-with-liferay-connected-services)
+---
+header-id: managing-liferay-with-liferay-connected-services
+---
+
+# Managing Liferay with Liferay Connected Services
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 

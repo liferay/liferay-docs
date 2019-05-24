@@ -1,18 +1,22 @@
-# Using Screenlets in Xamarin Apps [](id=using-screenlets-in-xamarin-apps)
+---
+header-id: using-screenlets-in-xamarin-apps
+---
+
+# Using Screenlets in Xamarin Apps
 
 You can start using Screenlets once you've 
-[prepared](/develop/tutorials/-/knowledge_base/6-2/preparing-xamarin-projects-for-liferay-screens) 
+[prepared](/docs/6-2/tutorials/-/knowledge_base/t/preparing-xamarin-projects-for-liferay-screens) 
 your Xamarin project to use Liferay Screens. The Screenlet reference 
 documentation describes the available Screenlets: 
 
--   [Screenlets in Liferay Screens for Android](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android)
--   [Screenlets in Liferay Screens for iOS](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios)
+-   [Screenlets in Liferay Screens for Android](/docs/6-2/reference/-/knowledge_base/r/screenlets-in-liferay-screens-for-android)
+-   [Screenlets in Liferay Screens for iOS](/docs/6-2/reference/-/knowledge_base/r/screenlets-in-liferay-screens-for-ios)
 
 Using Screenlets is very straightforward. This tutorial shows you how to insert 
 and configure Screenlets in your Xamarin app. You'll be a Screenlet master in no 
 time! 
 
-## Xamarin.iOS [](id=xamarin-ios)
+## Xamarin.iOS
 
 Follow these steps to insert Screenlets in your Xamarin.iOS app:
 
@@ -39,16 +43,12 @@ Follow these steps to insert Screenlets in your Xamarin.iOS app:
     can be called from Objective-C, which is required for it to work in Screens. 
     You should also set any Screenlet attributes you need. Each Liferay 
     Screenlet's 
-    [reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios) 
+    [reference documentation](/docs/6-2/reference/-/knowledge_base/r/screenlets-in-liferay-screens-for-ios) 
     lists its available attributes and delegate methods. 
 
-    +$$$
-
-    **Note:** In Liferay Screens for Xamarin, Screenlet delegates are prefixed 
-    with an `I`. For example, Login Screenlet's delegate in native code is 
-    `LoginScreenletDelegate`, while in Xamarin it's `ILoginScreenletDelegate`. 
-
-    $$$
+    | **Note:** In Liferay Screens for Xamarin, Screenlet delegates are prefixed
+    | with an `I`. For example, Login Screenlet's delegate in native code is
+    | `LoginScreenletDelegate`, while in Xamarin it's `ILoginScreenletDelegate`.
 
     For example, here's a view controller that implements Login Screenlet's 
     delegate, `ILoginScreenletDelegate`. Note that the `ViewDidLoad()` method 
@@ -89,7 +89,7 @@ See
 [the Showcase-iOS app](https://github.com/liferay/liferay-screens/tree/develop/xamarin/Samples/Showcase-iOS/ViewController)
 for more examples of view controllers that use Liferay's Screenlets. 
 
-## Xamarin.Android [](id=xamarin-android)
+## Xamarin.Android
 
 Follow these steps to insert Screenlets in your Xamarin.Android app: 
 
@@ -111,7 +111,7 @@ Follow these steps to insert Screenlets in your Xamarin.Android app:
         </FrameLayout>
 
 2.  Set the Screenlet's attributes. If it's a Liferay Screenlet, refer to the 
-    [Screenlet reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android) 
+    [Screenlet reference documentation](/docs/6-2/reference/-/knowledge_base/r/screenlets-in-liferay-screens-for-android) 
     to learn the Screenlet's required and supported attributes. This screenshot 
     shows Login Screenlet's attributes being set: 
 
@@ -120,17 +120,13 @@ Follow these steps to insert Screenlets in your Xamarin.Android app:
 3.  To configure your app to listen for events the Screenlet triggers, implement 
     the Screenlet's listener interface in your activity or fragment class. Refer 
     to the 
-    [Screenlet's reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android) 
+    [Screenlet's reference documentation](/docs/6-2/reference/-/knowledge_base/r/screenlets-in-liferay-screens-for-android) 
     to learn its listener interface. Then register that activity or fragment as 
     the Screenlet's listener. 
 
-    +$$$
-
-    **Note:** In Liferay Screens for Xamarin, Screenlet listeners are prefixed 
-    with an `I`. For example, Login Screenlet's listener in native code is 
-    `LoginListener`, while in Xamarin it's `ILoginListener`. 
-
-    $$$
+    | **Note:** In Liferay Screens for Xamarin, Screenlet listeners are prefixed
+    | with an `I`. For example, Login Screenlet's listener in native code is
+    | `LoginListener`, while in Xamarin it's `ILoginListener`.
 
     For example, the following activity class implements Login Screenlet's 
     `ILoginListener` interface, and registers itself as the Screenlet's 
@@ -171,14 +167,14 @@ See
 [the Showcase-Android app](https://github.com/liferay/liferay-screens/tree/develop/xamarin/Samples/Showcase-Android/Activities)
 for more examples of activities that use Liferay's Screenlets. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Preparing Xamarin Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/preparing-xamarin-projects-for-liferay-screens)
+[Preparing Xamarin Projects for Liferay Screens](/docs/6-2/tutorials/-/knowledge_base/t/preparing-xamarin-projects-for-liferay-screens)
 
-[Using Views in Xamarin.Android](/develop/tutorials/-/knowledge_base/6-2/using-views-in-xamarin-android)
+[Using Views in Xamarin.Android](/docs/6-2/tutorials/-/knowledge_base/t/using-views-in-xamarin-android)
 
-[Using Themes in Xamarin.iOS](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-xamarin-ios)
+[Using Themes in Xamarin.iOS](/docs/6-2/tutorials/-/knowledge_base/t/using-themes-in-xamarin-ios)
 
-[Creating Xamarin Views and Themes](/develop/tutorials/-/knowledge_base/6-2/creating-xamarin-views-and-themes)
+[Creating Xamarin Views and Themes](/docs/6-2/tutorials/-/knowledge_base/t/creating-xamarin-views-and-themes)
 
-[Liferay Screens for Xamarin Troubleshooting and FAQs](/develop/tutorials/-/knowledge_base/6-2/liferay-screens-for-xamarin-troubleshooting-and-faqs)
+[Liferay Screens for Xamarin Troubleshooting and FAQs](/docs/6-2/tutorials/-/knowledge_base/t/liferay-screens-for-xamarin-troubleshooting-and-faqs)

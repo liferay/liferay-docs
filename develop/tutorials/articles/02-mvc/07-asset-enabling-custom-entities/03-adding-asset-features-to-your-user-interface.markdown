@@ -1,4 +1,8 @@
-# Adding Asset Features to Your User Interface [](id=adding-asset-features-to-your-user-interface)
+---
+header-id: adding-asset-features-to-your-user-interface
+---
+
+# Adding Asset Features to Your User Interface
 
 Now that your guestbook and guestbook entry entities have been asset-enabled,
 you're ready to use Liferay's asset functionality in your application. You'll
@@ -26,7 +30,7 @@ Add the following imports to your guestbook-portlet project's
 It's simpler to add these imports now (rather than as you go) so that you don't
 run into errors as you're working through this section.
 
-## Creating JSPs for Displaying Custom Assets in the Asset Publisher [](id=creating-jsps-for-displaying-custom-assets-in-the-asset-publisher)
+## Creating JSPs for Displaying Custom Assets in the Asset Publisher
 
 Before you proceed, you need to tie up one loose end from the previous section.
 Remember that you implemented `render` methods in your `GuestbookAssetRenderer`
@@ -106,7 +110,7 @@ displays additional links for Twitter, Facebook, and Google Plus. These links
 allow you to publicize your asset on social media. The *Back* icon and the *View
 in Context* link return you to the Asset Publisher's default view.
 
-## Enabling Tags, Categories, and Related Assets for Guestbooks [](id=enabling-tags-categories-and-related-assets-for-guestbooks)
+## Enabling Tags, Categories, and Related Assets for Guestbooks
 
 Since you've already asset-enabled guestbooks at the service layer, your
 guestbook entities are all set to take advantage of Liferay's back-end support
@@ -232,21 +236,17 @@ and, say, a web content article. Then select one asset as a related asset of the
 other and click *Save*. Or create two guestbooks and add one as a related asset
 of the other.
 
-+$$$
-
-**Warning:** When you click on *Related Assets* from the Guestbook Admin
-portlet's Add/Update Guestbook form, the fully qualified Java class name of your
-entity appears in the list instead of just *Guestbook*. This is easy to fix by
-adding a language hook to your guestbook-portlet project. See the [Language Hooks](www.liferay.com)
-tutorial for details about creating language hooks.
-
-$$$
+| **Warning:** When you click on *Related Assets* from the Guestbook Admin
+| portlet's Add/Update Guestbook form, the fully qualified Java class name of your
+| entity appears in the list instead of just *Guestbook*. This is easy to fix by
+| adding a language hook to your guestbook-portlet project. See the [Language Hooks](www.liferay.com)
+| tutorial for details about creating language hooks.
 
 Asset links represent a reciprocal relationship. If one asset is a related asset
 of a second, the second is a related asset of the first. Check this for the
 assets that you linked together.
 
-## Enabling Comments and Ratings for Guestbooks [](id=enabling-comments-and-ratings-for-guestbooks)
+## Enabling Comments and Ratings for Guestbooks
 
 Liferay's asset framework allows users to comment on and rate assets. As with
 tags, categories, and related assets, since you already asset-enabled guestbooks
@@ -363,18 +363,14 @@ requires an action URL to be supplied for its `formAction` attribute. The
 comment after the user clicks *Add Comment*, enters a comment, and clicks
 *Reply*.
 
-+$$$
-
-**Note:** Discussions (comments) are implemented as message board messages in
-Liferay. In Liferay's `MBMessage` table, there's a `classPK` column. This
-`classPK` represents the `guestbookId` of the guestbook to which the comment was
-added. Ratings are stored in Liferay's `RatingsEntry` table. The `RatingsEntry`
-table contains a `classPK` column where the `classPK` represents the
-`guestbookId` of the guestbook to which the rating was added. Using a `classPK`
-foreign key in one table to represent the primary key of another table is a
-common pattern that's used throughout Liferay.
-
-$$$
+| **Note:** Discussions (comments) are implemented as message board messages in
+| Liferay. In Liferay's `MBMessage` table, there's a `classPK` column. This
+| `classPK` represents the `guestbookId` of the guestbook to which the comment was
+| added. Ratings are stored in Liferay's `RatingsEntry` table. The `RatingsEntry`
+| table contains a `classPK` column where the `classPK` represents the
+| `guestbookId` of the guestbook to which the rating was added. Using a `classPK`
+| foreign key in one table to represent the primary key of another table is a
+| common pattern that's used throughout Liferay.
 
 Note that the whole panel container is wrapped in a `<c:if>` tag.  You're
 restricting access to comments and ratings to users who have signed in with a
@@ -409,7 +405,7 @@ you created and adding an `href` attribute that points to this URL. Test this
 link by clicking on an existing guestbook. Then test that comments and ratings
 work as expected.
 
-## Enabling Tags, Categories, and Related Assets for Guestbook Entries [](id=enabling-tags-categories-and-related-assets-for-guestbook-entries)
+## Enabling Tags, Categories, and Related Assets for Guestbook Entries
 
 Enabling tags, categories, and related assets for guestbook entries is very
 similar to enabling them for guestbooks. As with guestbooks, you'll separate the
@@ -479,7 +475,7 @@ Test your JSP by using the Guestbook portlet to add and update Guestbook
 entries. Try add and removing tags, categories, and related assets. All these
 operations should work.
 
-## Enabling Comments and Ratings for Guestbook Entries [](id=enabling-comments-and-ratings-for-guestbook-entries)
+## Enabling Comments and Ratings for Guestbook Entries
 
 Create a new file called `view_entry.jsp` in your guestbook-portlet project's
 `docroot/WEB-INF/html/guestbook` folder. Add the following contents to it:
@@ -572,6 +568,6 @@ that you can add comments and ratings to guestbook entries. Excellent! You've
 asset-enabled your guestbook and guestbook entry entities! And you've enabled
 tags, categories, related assets, comments, and ratings for both entities.
 
-## Next Steps [](id=next-steps)
+## Next Steps
 
-[Using AlloyUI in Your Application](/develop/tutorials/-/knowledge_base/6-2/using-alloy-ui-in-your-application)
+[Using AlloyUI in Your Application](/docs/6-2/tutorials/-/knowledge_base/t/using-alloy-ui-in-your-application)

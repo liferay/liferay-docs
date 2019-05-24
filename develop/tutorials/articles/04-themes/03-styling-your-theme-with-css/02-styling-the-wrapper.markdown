@@ -1,4 +1,8 @@
-# Styling the Wrapper [](id=styling-the-wrapper)
+---
+header-id: styling-the-wrapper
+---
+
+# Styling the Wrapper
 
 The Wrapper is the container that holds the theme's elements. It is used for
 positioning and styling the theme as a whole. You'll use the Wrapper to create

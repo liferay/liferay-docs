@@ -1,4 +1,8 @@
-# Designing a Kaleo Workflow Definition [](id=designing-a-kaleo-workflow-definition)
+---
+header-id: designing-a-kaleo-workflow-definition
+---
+
+# Designing a Kaleo Workflow Definition
 
 To illustrate several different workflow strategies, here are diagrams of each
 of the workflows that ship with the Kaleo Web plugin. You'll find these
@@ -55,16 +59,12 @@ Drag and drop any nodes you need onto the Kaleo Workflow Designer for Java
 workflow diagram. Each node type supports execution of scripted actions and
 sending notifications that can use templates. 
 
-+$$$
-
-**Note:** Unlike most tutorials on Liferay Developer Network, this set of
-tutorials works toward building a specific project, the
-*ticket-process-definition* workflow. We started building the project in the
-tutorial on [Creating a Workflow Definition with Kaleo Designer for
-Java](/develop/tutorials/-/knowledge_base/6-2/creating-a-workflow-definition-with-kaleo-designer-for-java).
-However, you can use the information you find here in your own workflow project.
-
-$$$
+| **Note:** Unlike most tutorials on Liferay Developer Network, this set of
+| tutorials works toward building a specific project, the
+| *ticket-process-definition* workflow. We started building the project in the
+| tutorial on [Creating a Workflow Definition with Kaleo Designer for
+| Java](/docs/6-2/tutorials/-/knowledge_base/t/creating-a-workflow-definition-with-kaleo-designer-for-java).
+| However, you can use the information you find here in your own workflow project.
 
 For the ticket-process-definition workflow diagram, there's a simple
 `StartNode` *State* node, followed by the `Developer` *Task* node, followed by
@@ -136,7 +136,7 @@ Otherwise, create a user named "Joe Bloggs" with screen name "joe". For the user
 to receive emails, he must be registered within Liferay Portal. If you haven't
 registered Joe Bloggs ("joe") already, see the *Discover* documentation on
 [Adding and Editing
-Users](/discover/portal/-/knowledge_base/6-2/the-users-section-of-the-control-panel#adding-and-editing-users). To configure the user's email, login to the
+Users](/docs/6-2/user/-/knowledge_base/u/the-users-section-of-the-control-panel#adding-and-editing-users). To configure the user's email, login to the
 user's account and visit *Control Panel* &rarr; *Server Administration* &rarr;
 *Mail* for setup options. 
 
@@ -296,12 +296,12 @@ Now you know what the resulting XML is like for your workflow definition. You
 can check your definition's source code anytime from within Liferay Studio or
 your favorite XML editor. To learn more on the different workflow nodes
 available to use in Liferay workflow definitions, see
-the *Discover* documentation on [Creating New Workflow Definitions](/discover/portal/-/knowledge_base/6-2/creating-new-workflow-definitions). 
+the *Discover* documentation on [Creating New Workflow Definitions](/docs/6-2/user/-/knowledge_base/u/creating-new-workflow-definitions). 
 
 Since we've been using Designer's Workflow Diagram mode, let's go over some of
 its features. 
 
-## Workflow Diagram Features [](id=workflow-diagram-features)
+## Workflow Diagram Features
 
 Developer Studio provides you with additional features within the workflow
 diagram. Below we list some of these features; they can greatly enhance your
@@ -331,7 +331,7 @@ workflow designing experience.
 You've probably noticed the *Properties* and *Outline* views below your workflow
 diagram. Let's explore them next. 
 
-## Properties View and Outline View [](id=properties-view-and-outline-view)
+## Properties View and Outline View
 
 The *Properties* and *Outline* views contain more cool features you can use to
 customize your workflow; they're located on the bottom and bottom right of
@@ -376,7 +376,7 @@ focus.
 Developer Studio's *Properties* and *Outline* views make customizing your
 workflow easier than ever! 
 
-## Viewing Workflow Definition XML Source [](id=viewing-workflow-definition-xml-source)
+## Viewing Workflow Definition XML Source
 
 The workflow diagram view of your workflow definition is convenient; sometimes
 you'll also want to edit and review your workflow definition's XML source code.
@@ -397,20 +397,16 @@ takes you to the XML, and you can easily switch contexts as you need.
   edit code. When you're inserting variables, it also lists all available
   variables that are a part of the Kaleo workflow. 
 
-+$$$
-
-**Note:** The *Discover* &rarr; *Portal* section
-[Creating New Workflow Definitions](/discover/portal/-/knowledge_base/6-2/creating-new-workflow-definitions)
-explains how to define workflows via XML.
-
-$$$
+| **Note:** The *Discover* &rarr; *Portal* section
+| [Creating New Workflow Definitions](/docs/6-2/user/-/knowledge_base/u/creating-new-workflow-definitions)
+| explains how to define workflows via XML.
 
 With the *Source* view, you can keep track of your edits while using Developer
 Studio's powerful graphical features. 
 
 Designing a workflow is good. Creating nodes and transitions is good, too. But
-there's more you can do with it; keep reading to learn about [creating workflow scripts](/develop/tutorials/-/knowledge_base/6-2/using-workflow-scripts), or
-[making your notifications more interesting using Freemarker templates](/develop/tutorials/-/knowledge_base/6-2/leveraging-template-editors-for-notifications).
+there's more you can do with it; keep reading to learn about [creating workflow scripts](/docs/6-2/tutorials/-/knowledge_base/t/using-workflow-scripts), or
+[making your notifications more interesting using Freemarker templates](/docs/6-2/tutorials/-/knowledge_base/t/leveraging-template-editors-for-notifications).
 
 <!-- ## Related Topics -->
 

@@ -1,4 +1,8 @@
-# Implementing a UI with Liferay Taglibs [](id=implementing-a-ui-with-liferay-taglibs)
+---
+header-id: implementing-a-ui-with-liferay-taglibs
+---
+
+# Implementing a UI with Liferay Taglibs
 
 Clearly, now that you've implemented all the other layers of your application,
 you need a user interface that's a bit more organized and extensible than the
@@ -7,7 +11,7 @@ of this, you'll implement a UI pattern that Liferay uses for its own
 applications. You'll find that this makes it easy for you to organize your code
 and share repeated code elements in one place. 
 
-## Using init.jsp For All Declarations [](id=using-init-jsp-for-all-declarations)
+## Using init.jsp For All Declarations
 
 So far, you've had to repeat certain elements in all your JSP files. These
 include declarations of any tag libraries you plan to use in your JSP, any
@@ -53,7 +57,7 @@ As you can see, this file contains only what you'd need to use in the logic of
 your other JSPs. Since there's not much interesting going on here, it's best to
 move on to where things are really happening. 
 
-## Viewing Guestbooks and Their Entries [](id=viewing-guestbooks-and-their-entries)
+## Viewing Guestbooks and Their Entries
 
 Since you already have logic in your controller class that creates a default
 guestbook when the portlet is added to a page, you don't need to create the JSP
@@ -190,7 +194,7 @@ on it step by step.
 Excellent! You've now updated the default view of your application. Next, you'll
 update the form for adding entries. 
 
-## Adding Guestbook Entries [](id=adding-guestbook-entries)
+## Adding Guestbook Entries
 
 Your `edit_entry.jsp` for services will be much the same as the one you already
 wrote for the preference-based version of this portlet. For this reason, instead
@@ -224,7 +228,7 @@ of replacing its contents, just edit what you have; it'll be easier.
 Your guestbook entry form is now complete. All that's left is to create your
 guestbook form. 
 
-## Adding Guestbooks [](id=adding-guestbooks)
+## Adding Guestbooks
 
 The `edit_guestbook.jsp` will look very much like the guestbook entry form,
 except since it contains only one field, it's much simpler. For that reason, the
@@ -265,6 +269,6 @@ Congratulations! You've used Liferay's Service Builder persistence framework to
 create a data-driven application! Of course, there are many more things you'll
 want to add, some of which are listed below. 
 
-## Next Steps [](id=next-steps)
+## Next Steps
 
-[Setting Permissions](/develop/tutorials/-/knowledge_base/6-2/setting-permissions)
+[Setting Permissions](/docs/6-2/tutorials/-/knowledge_base/t/setting-permissions)

@@ -1,4 +1,8 @@
-# Configuring a Basic Permissions Scheme [](id=configuring-a-basic-permissions-scheme)
+---
+header-id: configuring-a-basic-permissions-scheme
+---
+
+# Configuring a Basic Permissions Scheme
 
 The first thing you need to do is create a configuration file that defines
 permissions you want inside your application. This main configuration file can
@@ -12,7 +16,7 @@ identical to the MVC portlet's process. Therefore, you can refer to the learning
 path for the MVC portlet to successfully create you configuration file. 
 
 Navigate to the
-[Configuring Your Permissions Scheme](/develop/tutorials/-/knowledge_base/6-2/configuring-your-permissions-scheme)
+[Configuring Your Permissions Scheme](/docs/6-2/tutorials/-/knowledge_base/t/configuring-your-permissions-scheme)
 learning path and follow the instructions beneath the *Defining Permissions For
 Your Application*. Once you've completed the section, navigate back to this spot
 in the document to continue configuring your permissions scheme for your JSF
@@ -26,7 +30,7 @@ resource.
 Now that your `default.xml` file is created, it's time to begin using the
 permission definitions you configured. 
 
-## Updating Your Managed Beans with Permissioning Logic [](id=updating-your-managed-beans-with-permissioning-logic)
+## Updating Your Managed Beans with Permissioning Logic
 
 With your permission definitions configured, its time to introduce those
 permissions in your managed beans. To do this, you'll provide getter and setter
@@ -140,7 +144,7 @@ get started!
 Excellent! Now it's time to check for the boolean properties in the guestbook
 portlet's UI. You'll do that next. 
 
-## Checking for Basic Permissions in JSF Views [](id=checking-for-basic-permissions-in-jsf-views)
+## Checking for Basic Permissions in JSF Views
 
 You've successfully created methods that can be called to return boolean
 properties that distinguish whether or not a user has permissions to view or add

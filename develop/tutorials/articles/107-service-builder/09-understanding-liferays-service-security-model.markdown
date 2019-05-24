@@ -1,4 +1,8 @@
-# Service Security Layers [](id=service-security-layers)
+---
+header-id: service-security-layers
+---
+
+# Service Security Layers
 
 Liferay's remote services are secured by default. They sit behind a layer of
 security that allows only local connections. If you want to invoke Liferay
@@ -27,17 +31,13 @@ If the IP address of the machine where the batch job runs is listed as an
 authorized host for the service, it's allowed to connect to Liferay's web
 services, pass in the appropriate user credentials, and upload the documents. 
 
-+$$$
-
-**Note:** The `portal.properties` file resides on the portal host machine and is
-controlled by the portal administrator. Portal administrators can configure
-security settings for the Axis Servlet, the Liferay Tunnel Servlet, the Spring
-Remoting Servlet, the JSON Servlet, the JSON Web Service Servlet, and the WebDAV
-Servlet. The `portal.properties` file (online version is available at
-[http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html))
-describes these properties. 
-
-$$$
+| **Note:** The `portal.properties` file resides on the portal host machine and is
+| controlled by the portal administrator. Portal administrators can configure
+| security settings for the Axis Servlet, the Liferay Tunnel Servlet, the Spring
+| Remoting Servlet, the JSON Servlet, the JSON Web Service Servlet, and the WebDAV
+| Servlet. The `portal.properties` file (online version is available at
+| [http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html))
+| describes these properties.
 
 Next, if you're invoking the remote service via web services (e.g., JSON WS, old
 JSON, Axis, REST, etc.), a two step process of authentication and authentication
@@ -72,18 +72,14 @@ accessing Liferay services on an untrusted network. Most HTTP clients (e.g.,
 [cURL](http://curl.haxx.se/)) let you specify the basic authentication
 credentials in the URL--this is very handy for testing.
 
-+$$$
-
-**Important:** To invoke a Liferay web service via your browser, you must be
-logged in to Liferay. You must also supply an authentication token (the `p_auth`
-parameter). If you navigate to your portal's JSON web services API page
-([localhost:8080/api/jsonws](localhost:8080/api/jsonws), by default) and click
-on a remote service method, you'll see the `p_auth` token for your browser
-session. This token is automatically supplied when you invoke a Liferay web
-service via the JSON web services API page or via JavaScript using
-`Liferay.Service(...)`.
-
-$$$
+| **Important:** To invoke a Liferay web service via your browser, you must be
+| logged in to Liferay. You must also supply an authentication token (the `p_auth`
+| parameter). If you navigate to your portal's JSON web services API page
+| ([localhost:8080/api/jsonws](localhost:8080/api/jsonws), by default) and click
+| on a remote service method, you'll see the `p_auth` token for your browser
+| session. This token is automatically supplied when you invoke a Liferay web
+| service via the JSON web services API page or via JavaScript using
+| `Liferay.Service(...)`.
 
 Use the following syntax to call the AXIS web service using credentials.
 
@@ -133,7 +129,7 @@ line for the appropriate authentication type:
     #company.security.auth.type=userId
 
 Your Liferay Portal password policies (see the
-[Password Policies](/discover/portal/-/knowledge_base/6-2/roles-and-permissions#password-policies)
+[Password Policies](/docs/6-2/user/-/knowledge_base/u/roles-and-permissions#password-policies)
 documentation) should be reviewed, since they'll be enforced on your
 administrative user as well. If the portal is enforcing password policies on its
 users (e.g., requiring them to change their passwords on a periodic basis), an
@@ -159,11 +155,11 @@ If you'd like to develop client applications that can invoke Liferay's web
 services, make sure that your Liferay instance's web service security settings
 have been configured to allow access.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Plugin Security and PACL](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl)
+[Plugin Security and PACL](/docs/6-2/tutorials/-/knowledge_base/t/plugin-security-and-pacl)
 
-[Security and Permissions](/develop/tutorials/-/knowledge_base/6-2/security-and-permissions)
+[Security and Permissions](/docs/6-2/tutorials/-/knowledge_base/t/security-and-permissions)
 
-[Finding and Invoking Liferay Services](/develop/tutorials/-/knowledge_base/6-2/finding-and-invoking-liferay-services)
+[Finding and Invoking Liferay Services](/docs/6-2/tutorials/-/knowledge_base/t/finding-and-invoking-liferay-services)
 

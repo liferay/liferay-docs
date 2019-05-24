@@ -1,4 +1,8 @@
-# Defining liferay-plugin-package.properties [](id=defining-liferay-plugin-package-properties)
+---
+header-id: defining-liferay-plugin-package-properties
+---
+
+# Defining liferay-plugin-package.properties
 
 In this section, you'll configure the `liferay-plugin-package.properties` file
 for the Resources Importer.

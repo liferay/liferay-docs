@@ -1,4 +1,8 @@
-#  Installation and Setup [](id=installation-and-setup)
+---
+header-id: installation-and-setup
+---
+
+#  Installation and Setup
 
 <div id="62-PDF" style="width:250px; float: left; text-align:center"><a href="https://dev.liferay.com/documents/10184/359510/using-liferay-portal-6.2.pdf">PDF</a></div>
 

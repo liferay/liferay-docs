@@ -1,4 +1,8 @@
-# Using Page Templates [](id=using-page-templates)
+---
+header-id: using-page-templates
+---
+
+# Using Page Templates
 
 Click on *Page Templates* in the Control Panel to see a list of page templates.
 Page templates function similarly to site templates but at the page level. Each
@@ -68,7 +72,7 @@ template, any future changes to the template are automatically propagated to
 those pages. Site administrators can disable this behavior by unchecking the
 *Automatically apply changes done to the page template* box. Occasionally,
 propagation for page templates fails due to unintended errors. To learn how to
-manage a failed page template propagation, visit the [Propagating Changes from Site Templates to Sites](/discover/portal/-/knowledge_base/6-2/using-site-templates#propagating-changes-from-site-templates-to-sites) section of this chapter.
+manage a failed page template propagation, visit the [Propagating Changes from Site Templates to Sites](/docs/6-2/user/-/knowledge_base/u/using-site-templates#propagating-changes-from-site-templates-to-sites) section of this chapter.
 
 If staging has been enabled, changes to the page template are automatically
 propagated to the staged page. These changes still need to be approved before
@@ -80,7 +84,7 @@ appear.
 We'll discuss staging in more detail later in this chapter. For now let's look
 at importing and exporting templates.
 
-## Exporting and Importing Site Templates and Page Templates [](id=exporting-and-importing-site-templates-and-page-templates)
+## Exporting and Importing Site Templates and Page Templates
 
 If you want to export a site that uses site or page templates to a different
 environment (through a LAR file or remote publication), the templates must be

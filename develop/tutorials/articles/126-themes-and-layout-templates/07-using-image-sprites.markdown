@@ -1,4 +1,8 @@
-# Using Image Sprites [](id=using-image-sprites)
+---
+header-id: using-image-sprites
+---
+
+# Using Image Sprites
 
 You might already know that every image on a site generates an HTTP request.
 Page load time is impacted every time the browser has to negotiate another HTTP
@@ -56,12 +60,12 @@ design and performance up a notch--BAM!
 
 **Related Topics**
 
-[Themes and Layout Templates](/develop/tutorials/-/knowledge_base/6-2/themes-and-layout-templates)
+[Themes and Layout Templates](/docs/6-2/tutorials/-/knowledge_base/t/themes-and-layout-templates)
 
-[Customizing Liferay Portal](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+[Customizing Liferay Portal](/docs/6-2/tutorials/-/knowledge_base/t/customizing-liferay-portal)
 
-[MVC Portlets](/develop/tutorials/-/knowledge_base/6-2/developing-jsp-portlets-using-liferay-mvc)
+[MVC Portlets](/docs/6-2/tutorials/-/knowledge_base/t/developing-jsp-portlets-using-liferay-mvc)
 
-[User Interfaces with the Liferay UI Taglib](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+[User Interfaces with the Liferay UI Taglib](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ui-taglibs)
 
-[User Interfaces with the AlloyUI Taglib](/develop/tutorials/-/knowledge_base/6-2/alloyui)
+[User Interfaces with the AlloyUI Taglib](/docs/6-2/tutorials/-/knowledge_base/t/alloyui)

@@ -1,4 +1,8 @@
-# Advanced Content with Structures and Templates [](id=advanced-content-with-structures-and-templates)
+---
+header-id: advanced-content-with-structures-and-templates
+---
+
+# Advanced Content with Structures and Templates
 
 If you've ever launched a web site, you know that as it grows, you can
 experience growing pains. This is the case especially if you've given lots of
@@ -21,7 +25,7 @@ everything from a simple, one-page web site to an enormous, content-rich site.
 
 All of this starts with structures.
 
-## Using Structures [](id=using-structures)
+## Using Structures
 
 Structures are the foundation for web content. They determine which fields are
 available to users as they create new items for display. Structures not only
@@ -56,7 +60,7 @@ content which scrolls with the user and more.
 Let's look at how we can create and edit structures through the Manage
 Structures interface.
 
-### Editing Structures [](id=editing-structures)
+### Editing Structures
 
 Go back to the Site Administration page and select *Web Content* from the
 Content section. The first way to access the Manage Structures interface is
@@ -75,7 +79,7 @@ enter a new name for it to avoid confusing it with the original. When you copy a
 web content structure, you'll be prompted to choose whether to copy any detail
 templates or list templates associated with the structure. For information on
 detail templates and list templates, please refer to the
-[Using Web Forms and Dynamic Data Lists](/discover/portal/-/knowledge_base/6-2/using-web-forms-and-dynamic-data-lists)
+[Using Web Forms and Dynamic Data Lists](/docs/6-2/user/-/knowledge_base/u/using-web-forms-and-dynamic-data-lists)
 section.
 
 ![Figure 3.1: You can access the Manage Structures interface by clicking *Manage* &rarr; *Structures* from the Web Content page.](../../images/manage-structures.png)
@@ -114,22 +118,18 @@ and deleting structures and templates on a remote server. After you complete
 your structure, you can access the WebDAV URL by re-opening the structure or
 template and clicking the *Details* section. If you'd like the see WebDAV in
 action, visit the
-[WebDAV Access](/discover/portal/-/knowledge_base/6-2/automatic-previews-and-metadata#webdav-access)
+[WebDAV Access](/docs/6-2/user/-/knowledge_base/u/automatic-previews-and-metadata#webdav-access)
 section.
 
-+$$$
-
-**Note:** Some operating systems require a
- WebDAV server to be class level 2 before (i.e., to support file locking) before
- allowing files to be read or written. For Liferay 6.2, the Documents and Media
- library was upgraded to class level 2 but Web Content structures and templates
- were not. This means that Liferay 6.2's Document and Media library supports
- WebDAV file locking but Web Content structures and templates do not. However,
- on operating systems which require WebDAV servers to be class level 2, it's
- possible to avoid the restriction by using third-party WebDAV clients (e.g.,
- [Cyberduck](http://cyberduck.ch)).
-
-$$$
+| **Note:** Some operating systems require a
+|  WebDAV server to be class level 2 before (i.e., to support file locking) before
+|  allowing files to be read or written. For Liferay 6.2, the Documents and Media
+|  library was upgraded to class level 2 but Web Content structures and templates
+|  were not. This means that Liferay 6.2's Document and Media library supports
+|  WebDAV file locking but Web Content structures and templates do not. However,
+|  on operating systems which require WebDAV servers to be class level 2, it's
+|  possible to avoid the restriction by using third-party WebDAV clients (e.g.,
+|  [Cyberduck](http://cyberduck.ch)).
 
 Another method to edit your structure is switching to *Source* mode and manually
 customizing your structure by editing its XML file. You'll notice by default the
@@ -184,7 +184,7 @@ everything from articles, to video metadata, to databases of wildlife. You're
 limited only by your imagination. To fire that imagination, let's look more
 closely at field settings.
 
-### Editing Field Settings [](id=editing-field-settings)
+### Editing Field Settings
 
 When creating a new structure, it is essential that you set variable names.
 Template writers can use these variables to refer to elements on your form. If
@@ -254,7 +254,7 @@ know what to put into the Body element (example: *This is an HTML text area for
 the body of your content*). Now, when users hover over the Help icon near your
 title, your tip is displayed.
 
-#### Structure Default Values [](id=structure-default-values)
+#### Structure Default Values
 
 Structure Default Values allow you to create one structure that uses common data
 from multiple articles.
@@ -278,7 +278,7 @@ This form allows you to manage the structure settings.
 Every new web content you create with this structure is preloaded with the
 data you inserted. Next, let's demonstrate assigning permissions.
 
-### Assigning Permissions [](id=assigning-permissions)
+### Assigning Permissions
 
 Setting permissions on structures is done using the same procedure as
 permissions everywhere else in Liferay. Most users should not have the ability
@@ -296,7 +296,7 @@ to handle permissions for structures.
 Now that you understand what structures are used for, you need to understand the
 other half of Liferay's web content management system: templates.
 
-## Using Templates [](id=using-templates)
+## Using Templates
 
 Developers create templates to display the elements of the structure in the
 markup they want. Content can then be styled properly using CSS, because markup
@@ -313,7 +313,7 @@ created using a custom structure.
 
 Let's look more closely at the types of templates Liferay supports.
 
-### Template Types (FTL, VM, and XSL) [](id=template-types-ftl-vm-and-xsl)
+### Template Types (FTL, VM, and XSL)
 
 Liferay supports templates written in three different templating languages, to
 support the skill sets of the largest number of developers. This increases the
@@ -338,7 +338,7 @@ browser. While it may not be as clean and compact as Velocity or FTL, it's
 widely used for transforming XML into other formats and it's very likely your
 developers have already been exposed to it.
 
-### Adding Templates [](id=adding-templates)
+### Adding Templates
 
 Liferay WCM makes it easy to create structures, templates, and content from the
 same interface. Let's go through the entire flow of how you'd create a
@@ -415,18 +415,14 @@ When this template is rendered, it looks something like this:
 
 <!--Figure needs to be reworked-->
 
-+$$$
-
-**Note:** During the creation of a web content article, Portal provides a *Basic
-Preview* button that gives you the option to preview your article as a final
-product before publishing. In some instances, the preview does not give an
-accurate depiction of the web content article. For example, fields provided by
-the `request` variable are not available because the `request` is not populated
-until the web content is rendered on a portal page. Therefore, the preview of
-the article would display errors. Use the *Basic Preview* functionality with
-caution.
-
-$$$
+| **Note:** During the creation of a web content article, Portal provides a *Basic
+| Preview* button that gives you the option to preview your article as a final
+| product before publishing. In some instances, the preview does not give an
+| accurate depiction of the web content article. For example, fields provided by
+| the `request` variable are not available because the `request` is not populated
+| until the web content is rendered on a portal page. Therefore, the preview of
+| the article would display errors. Use the *Basic Preview* functionality with
+| caution.
 
 <!-- Eduardo expressed that the *Basic Preview* functionality may change for
 7.0, giving the user a 100% accurate depiction of their web content article.
@@ -469,38 +465,34 @@ by typing *${* which opens a drop-down menu of available variables. By clicking
 one of the variables, the editor inserts the variable into the template editor.
 
 
-+$$$
-
-**Note:** Templates are the gateway to great power; but with
-great power comes great responsibility. For security reasons, several useful
-FreeMarker and Velocity variables and classes are restricted by default. You can
-find them in your [`portal.properties`
-file](https://docs.liferay.com/ce/portal/6.2/propertiesdoc/portal.properties.html):
-
-    velocity.engine.restricted.classes
-    velocity.engine.restricted.variables
-    freemarker.engine.restricted.classes
-    freemarker.engine.restricted.variables
-
-You can manage these properties using a `portal-ext.properties` file in your
-[Liferay
-Home](/discover/deployment/-/knowledge_base/6-2/liferay-home).
-
-$$$
+| **Note:** Templates are the gateway to great power; but with
+| great power comes great responsibility. For security reasons, several useful
+| FreeMarker and Velocity variables and classes are restricted by default. You can
+| find them in your [`portal.properties`
+| file](https://docs.liferay.com/ce/portal/6.2/propertiesdoc/portal.properties.html):
+| 
+|     velocity.engine.restricted.classes
+|     velocity.engine.restricted.variables
+|     freemarker.engine.restricted.classes
+|     freemarker.engine.restricted.variables
+| 
+| You can manage these properties using a `portal-ext.properties` file in your
+| [Liferay
+| Home](/docs/6-2/deploy/-/knowledge_base/d/liferay-home).
 
 After you've saved your template, Liferay provides a WebDAV URL and static URL.
 These values access the XML source of your structure. You can find these URLs by
 returning to your template after it's been saved and expanding the *Details*
 section. For more information on WebDAV and the uses of the WebDAV URL,
 reference the
-[WebDAV Access](/discover/portal/-/knowledge_base/6-2/automatic-previews-and-metadata#webdav-access)
+[WebDAV Access](/docs/6-2/user/-/knowledge_base/u/automatic-previews-and-metadata#webdav-access)
 section.
 
 Now that you've created a handsome template and know how to use the template
 editor, it's time to decide who the lucky people are that get to use your new
 template.
 
-## Assigning Template Permissions [](id=assigning-template-permissions)
+## Assigning Template Permissions
 
 Permissions for templates are similar to permissions for structures. As with
 structures, you only want specific developers editing and creating templates.

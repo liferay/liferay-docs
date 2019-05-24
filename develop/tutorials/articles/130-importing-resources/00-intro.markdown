@@ -1,4 +1,8 @@
-# Importing Resources [](id=leveraging-the-resources-importer)
+---
+header-id: leveraging-the-resources-importer
+---
+
+# Importing Resources
 
 A theme without content is like an empty house. If you're trying to sell an
 empty house, it may be difficult for prospective buyers to see its full beauty.

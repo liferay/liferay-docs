@@ -1,4 +1,8 @@
-# Setting up the Theme [](id=setting-up-the-theme)
+---
+header-id: setting-up-the-theme
+---
+
+# Setting up the Theme
 
 In this portion of the Learning Path, you'll create the foundation for the Lunar
 Resort theme. You'll learn the proper workflow and directory structure needed to

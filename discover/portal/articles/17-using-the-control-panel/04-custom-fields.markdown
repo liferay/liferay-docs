@@ -1,4 +1,8 @@
-# Custom Fields [](id=custom-fields)
+---
+header-id: custom-fields
+---
+
+# Custom Fields
 
 Custom fields appear beneath Portal Settings under the Configuration heading of
 the Control Panel. Custom fields are a way to add attributes to many types of

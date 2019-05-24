@@ -1,4 +1,8 @@
-# Liferay installation overview [](id=liferay-installation-overview)
+---
+header-id: liferay-installation-overview
+---
+
+# Liferay installation overview
 
 Before we begin, it's important to go over the various facets of the
 installation. They are: 

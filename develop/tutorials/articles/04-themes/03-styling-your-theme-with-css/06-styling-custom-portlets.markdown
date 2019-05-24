@@ -1,8 +1,12 @@
-# Styling Custom Portlets [](id=styling-custom-portlets)
+---
+header-id: styling-custom-portlets
+---
+
+# Styling Custom Portlets
 
 If you click the *Make Your Reservation* link, the site presents you with a
 reservation form, along with the Guestbook portlet from the 
-[MVC Learning Path](/develop/tutorials/-/knowledge_base/6-2/writing-a-liferay-mvc-application). 
+[MVC Learning Path](/docs/6-2/tutorials/-/knowledge_base/t/writing-a-liferay-mvc-application). 
 
 The Guestbook portlet is looking pretty plain at the moment. It's time to change
 that. It can be styled just like any other element on the page; you just need to

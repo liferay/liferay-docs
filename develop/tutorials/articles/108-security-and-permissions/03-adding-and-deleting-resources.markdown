@@ -1,4 +1,8 @@
-# Adding and Deleting Resources [](id=adding-and-deleting-resources)
+---
+header-id: adding-and-deleting-resources
+---
+
+# Adding and Deleting Resources
 
 Liferay provides a system that allows you to implement permissions for your
 custom portlets. The first step in implementing permissions is to define all
@@ -32,9 +36,9 @@ which an action can be performed.
 **Permission**: An action that can be performed on a resource.
 
 For further explanation and examples, please see the
-[Adding Permissions to Resources](/develop/tutorials/-/knowledge_base/6-2/using-portal-roles-in-a-portlet) tutorial.
+[Adding Permissions to Resources](/docs/6-2/tutorials/-/knowledge_base/t/using-portal-roles-in-a-portlet) tutorial.
 
-## Adding a Resource [](id=adding-a-resource)
+## Adding a Resource
 
 Resources should be added at the same time that entities are added to the
 database. To do this, you must invoke Liferay service methods to manage Liferay
@@ -110,7 +114,7 @@ Notice that this `<liferay-ui:input-permissions />` tag appears within an
 `<aui:form />` tag. The `<liferay-ui:input-permissions />` tag only makes sense
 in the context of a form.
 
-## Deleting a Resource [](id=deleting-a-resource)
+## Deleting a Resource
 
 When you remove an entity from the database, you should remove permissions that
 were mapped directly to the entity. This prevents dead resources from taking up
@@ -125,14 +129,14 @@ method:
 
 Great! Now you know how to work with resource permissions! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Customizing Liferay Portal](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+[Customizing Liferay Portal](/docs/6-2/tutorials/-/knowledge_base/t/customizing-liferay-portal)
 
-[Plugin Security and PACL](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl)
+[Plugin Security and PACL](/docs/6-2/tutorials/-/knowledge_base/t/plugin-security-and-pacl)
 
-[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/liferay-ide)
+[Developing Plugins with Liferay IDE](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ide)
 
-[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)
+[User Interfaces with AlloyUI](/docs/6-2/tutorials/-/knowledge_base/t/alloyui)
 
-[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+[Liferay UI Taglibs](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ui-taglibs)

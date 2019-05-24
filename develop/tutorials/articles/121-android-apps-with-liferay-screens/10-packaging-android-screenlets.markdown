@@ -1,4 +1,8 @@
-# Packaging Your Android Screenlets [](id=packaging-your-android-screenlets)
+---
+header-id: packaging-your-android-screenlets
+---
+
+# Packaging Your Android Screenlets
 
 To reuse your Screenlet in another app or distribute it, you can package it in a
 module (Android library). You can optionally share it with other developers via
@@ -12,7 +16,7 @@ package and distribute Screenlets by following these steps:
 
 Now get ready to package and distribute Screenlets like a pro! 
 
-## Create a New Android Module [](id=create-a-new-android-module)
+## Create a New Android Module
 
 Android Studio's *Create New Module* wizard can automatically create a module
 and add it to your `settings.gradle` file. Go to *File* &rarr; *New Module...*,
@@ -39,7 +43,7 @@ Here's an example configuration:
 
 Now that you have a module, you're ready to configure its dependencies.
 
-## Configure Dependencies Between Each Module [](id=configure-dependencies-between-each-module)
+## Configure Dependencies Between Each Module
 
 Next, you must configure your app to use the module. To do so, add a project
 compile statement to your `build.gradle` file's dependencies: 
@@ -62,7 +66,7 @@ dependencies the following project compile statement:
 
 Awesome! Now you're ready to share your Screenlet with the world!
 
-## Upload the Module to jCenter or Maven Central [](id=upload-the-module-to-jcenter-or-maven-central)
+## Upload the Module to jCenter or Maven Central
 
 To make your module available to anyone, you can upload your module to jCenter
 or Maven Central. Before doing so, you must configure your `build.gradle` file
@@ -74,12 +78,12 @@ Screenlet as any other Android dependency by specifying its repository,
 artifact, group ID, and version in their Gradle files. Congratulations on
 publishing your Screenlet! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets)
+[Creating Android Screenlets](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-screenlets)
 
-[Preparing Android Projects for Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/preparing-android-projects-for-liferay-screens)
+[Preparing Android Projects for Liferay Screens](/docs/6-2/tutorials/-/knowledge_base/t/preparing-android-projects-for-liferay-screens)
 
-[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps)
+[Using Screenlets in Android Apps](/docs/6-2/tutorials/-/knowledge_base/t/using-screenlets-in-android-apps)
 
-[Creating Android Views](/develop/tutorials/-/knowledge_base/6-2/creating-android-views)
+[Creating Android Views](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-views)

@@ -1,4 +1,8 @@
-# Creating the Android Project [](id=creating-the-android-project)
+---
+header-id: creating-the-android-project
+---
+
+# Creating the Android Project
 
 Now that you've built the Guestbook Mobile SDK, you're ready to create the 
 Guestbook Android app. This article walks you through the steps required to 
@@ -6,7 +10,7 @@ create the app's project in Android Studio. After this, you'll be ready to
 install the Guestbook Mobile SDK and Liferay Screens. First though, you should 
 make sure you've installed Android's development tools. 
 
-## Installing Android Studio [](id=installing-android-studio)
+## Installing Android Studio
 
 This Learning Path uses Android Studio--Android's official IDE--to develop the 
 Guestbook app. As an Android developer, you're likely very familiar with Android 
@@ -18,7 +22,7 @@ topics in Android Studio's documentation:
 
 Once Android Studio is up and running, you're ready to create the Guestbook app! 
 
-## Creating the Guestbook App [](id=creating-the-guestbook-app)
+## Creating the Guestbook App
 
 When you start Android Studio, it presents a welcome screen containing a Quick 
 Start menu. Click *Start a new Android Studio project* in this menu. This 
@@ -45,7 +49,7 @@ finished.
 You must now specify your app's first activity. Although you'll use this
 activity to authenticate users to your Liferay Portal instance, don't select
 Login Activity. Select *Empty Activity* instead. Later, you'll insert 
-[Login Screenlet](/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-android)
+[Login Screenlet](/docs/6-2/reference/-/knowledge_base/r/loginscreenlet-for-android)
 in this activity. Login Screenlet contains everything your users need to
 authenticate to a Liferay Portal instance, including the UI. Click *Next*. 
 

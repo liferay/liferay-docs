@@ -1,4 +1,8 @@
-# Using Workflow Scripts [](id=using-workflow-scripts)
+---
+header-id: using-workflow-scripts
+---
+
+# Using Workflow Scripts
 
 You can use Developer Studio to edit workflow scripts; it recognizes multiple
 script languages, so you can choose one you're comfortable with. Developer
@@ -19,7 +23,7 @@ script. It's not guaranteed that every ticket submitted has a resolution. If the
 issue was due to a silly user error, there's no reason to change the product. In
 such cases the developer will resolve the ticket and indicate there is no
 resolution in the product (i.e., no modifications are were made). Regardless,
-we'll have the developer fill out an online Dynamic Data List (DDL; see the tutorial on [Publsihing and Configuring Workflow](/develop/tutorials/-/knowledge_base/6-2/publishing-and-configuring-workflows)) form to
+we'll have the developer fill out an online Dynamic Data List (DDL; see the tutorial on [Publsihing and Configuring Workflow](/docs/6-2/tutorials/-/knowledge_base/t/publishing-and-configuring-workflows)) form to
 initiate a workflow for each of her tickets. Once the workflow is invoked, its
 associated DDL record is accessible from our workflow's context. Let's use a
 condition node to handle the ticket based on the DDL record. 
@@ -109,12 +113,8 @@ written inside the `<script></script>` tags for the `<condition/>` element that
 represents our node in our workflow definition's XML file (in our case,
 `ticket-process-definition.xml`). 
 
-+$$$
-
-**Note:** Developer Studio lets you use multiple script editors even while
-modifying the same workflow definition XML file. 
-
-$$$
+| **Note:** Developer Studio lets you use multiple script editors even while
+| modifying the same workflow definition XML file.
 
 The *Palette* view is much different from when you were working in the workflow
 diagram; it's associated with your Java/Groovy script editor now and includes
@@ -217,15 +217,11 @@ block of XML looks like, including the Java in our Groovy script:
         </transitions>
     </condition>
 
-+$$$
-
- **Note:** Make sure you correctly name
- the transitions stemming from the condition node. The "No" transition should
- point to the EndNode, while the "Yes" transition should point to the Developer.
- If the condition script's return values don't match the transition names, the
- workflow engine won't know which transition to use. 
-
-$$$
+|  **Note:** Make sure you correctly name
+|  the transitions stemming from the condition node. The "No" transition should
+|  point to the EndNode, while the "Yes" transition should point to the Developer.
+|  If the condition script's return values don't match the transition names, the
+|  workflow engine won't know which transition to use.
 
 Here's a snapshot of our current ticket process workflow after inserting the
 condition node. If your transition names don't match the ones in this 
@@ -236,8 +232,8 @@ and editing them.
 
 We need to create a valid DDL record to invoke this workflow properly. If you've
 never set up a DDL record before, or don't even know what a DDL does, don't
-fret. We've got you covered in the tutorial on [Publishing and Configuring Workflows](/develop/tutorials/-/knowledge_base/6-2/publishing-and-configuring-workflows). 
+fret. We've got you covered in the tutorial on [Publishing and Configuring Workflows](/docs/6-2/tutorials/-/knowledge_base/t/publishing-and-configuring-workflows). 
 
-Next, you might want to look at the tutorial on [leveraging template editors for notifications](/develop/tutorials/-/knowledge_base/6-2/leveraging-template-editors-for-notifications). 
+Next, you might want to look at the tutorial on [leveraging template editors for notifications](/docs/6-2/tutorials/-/knowledge_base/t/leveraging-template-editors-for-notifications). 
 
 <!-- ## Related Topics -->

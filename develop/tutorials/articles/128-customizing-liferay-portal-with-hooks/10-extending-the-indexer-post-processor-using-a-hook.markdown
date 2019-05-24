@@ -1,4 +1,8 @@
-# Extending the Indexer Post Processor Using a Hook [](id=extending-the-indexer-post-processor-using-a-hook)
+---
+header-id: extending-the-indexer-post-processor-using-a-hook
+---
+
+# Extending the Indexer Post Processor Using a Hook
 
 Would you like to modify the search summaries, indexes, and queries available in
 your portal instance? Developing an Indexer Post Processor hook lets you do just
@@ -10,10 +14,10 @@ In this tutorial, you'll run through a simple example to learn what you can
 accomplish with an indexer hook. For this example, you'll add *Job Title* into 
 the User Indexer, so you can search for users by job title.
 
-## Implementing the Indexer Post Processor Hook [](id=implementing-the-indexer-post-processor-hook)
+## Implementing the Indexer Post Processor Hook
 
 1. If you don't yet have a hook project, create one following the steps in the 
-   [Creating a Hook Project in the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/creating-a-hook-project-in-the-plugins-sdk)
+   [Creating a Hook Project in the Plugins SDK](/docs/6-2/tutorials/-/knowledge_base/t/creating-a-hook-project-in-the-plugins-sdk)
    tutorial.
 
 2. In your hook project, open `docroot/WEB-INF/liferay-hook.xml` and insert the
@@ -94,7 +98,7 @@ the User Indexer, so you can search for users by job title.
 	`postProcessDocument` method adds the *Job Title* field, enabling users to
 	search by *Job Title*. You've just extended an indexer!
 	
-4. [Deploy](/develop/tutorials/-/knowledge_base/6-2/deploying-plugins-to-a-local-portal-instance)
+4. [Deploy](/docs/6-2/tutorials/-/knowledge_base/t/deploying-plugins-to-a-local-portal-instance)
    the hook plugin. 
 
 5. You now need to reindex the portal. Go to the *Control Panel* and click 
@@ -115,12 +119,12 @@ the User Indexer, so you can search for users by job title.
 Great! Now you know the basics of extending the Indexer Post Processor using a 
 hook.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)
+[Application Display Templates](/docs/6-2/tutorials/-/knowledge_base/t/application-display-templates)
 
-[Customizing Liferay Portal with Hooks](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+[Customizing Liferay Portal with Hooks](/docs/6-2/tutorials/-/knowledge_base/t/customizing-liferay-portal)
 
-[Developging Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/liferay-ide)
+[Developging Plugins with Liferay IDE](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ide)
 
-[Developing with Maven](/develop/tutorials/-/knowledge_base/6-2/maven)
+[Developing with Maven](/docs/6-2/tutorials/-/knowledge_base/t/maven)

@@ -1,4 +1,8 @@
-# Registering JSON Web Services [](id=registering-json-web-services)
+---
+header-id: registering-json-web-services
+---
+
+# Registering JSON Web Services
 
 Liferay's developers use a tool called *Service Builder* to build services. When
 you build services with Service Builder, all remote-enabled services (i.e.,
@@ -36,22 +40,18 @@ portal scans it for remote services! We are not forcing you to use Service
 Builder. We recommend using it because it easily does so many things with
 regards to your remote services. 
 
-+$$$
-
-**Note:** Liferay's developers use *Service Builder* to expose their services
-via JSON automatically. If you haven't used Service Builder before, please see
-the
-[Defining an Object-Relational Map with Service Builder](/develop/tutorials/-/knowledge_base/6-2/defining-an-object-relational-map-with-service-builder)
-tutorial.
-
-$$$
+| **Note:** Liferay's developers use *Service Builder* to expose their services
+| via JSON automatically. If you haven't used Service Builder before, please see
+| the
+| [Defining an Object-Relational Map with Service Builder](/docs/6-2/tutorials/-/knowledge_base/t/defining-an-object-relational-map-with-service-builder)
+| tutorial.
 
 OK, now let's see how you can register your plugin's remote services as JSON web
 services. Keep in mind that Liferay's developers use this same mechanism. This
 is why Liferay Portal's remote service are exposed as JSON web services
 out-of-the-box. 
 
-## Registering Plugin JSON Web Services [](id=registering-plugin-json-web-services)
+## Registering Plugin JSON Web Services
 
 Let's say you have a portlet named `SupraSurf` that has some services. And you
 decide to expose them as remote services. After enabling the `remote-service`
@@ -77,7 +77,7 @@ plugin to Liferay.
 To get some feedback from the portal on registering your plugin's services,
 configure the portal to log the plugin's informational messages (i.e., its `INFO
 ...` messages). See the section on Liferay's logging system in
-[Using Liferay Portal](/discover/deployment/-/knowledge_base/6-2/liferays-logging-system) for details.
+[Using Liferay Portal](/docs/6-2/deploy/-/knowledge_base/d/liferays-logging-system) for details.
 
 To test Liferay's JSON web service registration process, add a simple method to
 your plugin's services. Edit your `*ServiceImpl` class and add the following
@@ -101,7 +101,7 @@ conveniently enabled by default, so you don't have to configure them.
 Next, let's learn how to form a mapped URL for the remote service so we can
 access it. 
 
-## Mapping and Naming Conventions [](id=mapping-and-naming-conventions)
+## Mapping and Naming Conventions
 
 You can form the mapped URL of an exposed service by following the naming
 convention below: 
@@ -150,7 +150,7 @@ associated with the user's current portal session.
 
 Next, we'll learn to how to *list* JSON web services available from our portal. 
 
-## Listing Available JSON Web Services [](id=listing-available-json-web-services)
+## Listing Available JSON Web Services
 
 To see which service methods are registered and available for use, open your
 browser to the following address: 
@@ -180,7 +180,7 @@ control the visibility of methods using annotations at the method level.
 
 Let's find out how to ignore a specific method. 
 
-## Ignoring a Method [](id=ignoring-a-method)
+## Ignoring a Method
 
 To keep a method from being exposed as a service, annotate the method with the
 following option:
@@ -191,7 +191,7 @@ Methods with this annotation don't become part of the JSON Web Service API.
 
 Let's learn how to define custom HTTP method names and URL names. 
 
-## HTTP Method Name and URL [](id=http-method-name-and-url)
+## HTTP Method Name and URL
 
 At the method level, you can define custom HTTP method names and URL names. Just
 use an annotation like this one: 
@@ -223,7 +223,7 @@ of the default class name `surfboard`.
 Next, we'll show you a different approach to exposing your methods as we discuss
 manual registration. 
 
-## Manual Registration Mode [](id=manual-registration-mode)
+## Manual Registration Mode
 
 Up to now, it is assumed that you want to expose most of your service methods,
 while hiding some specific methods (the *blacklist* approach).
@@ -242,6 +242,6 @@ Now only the `addBoard` method and any other method annotated with
 `@JSONWebService` will be part of the JSON Web Service API; all other methods
 of this service will be excluded from the API.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Invoking JSON Web Services](/develop/tutorials/-/knowledge_base/6-2/invoking-json-web-services)
+[Invoking JSON Web Services](/docs/6-2/tutorials/-/knowledge_base/t/invoking-json-web-services)

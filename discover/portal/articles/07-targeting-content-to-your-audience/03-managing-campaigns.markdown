@@ -1,4 +1,8 @@
-# Managing Campaigns [](id=managing-campaigns)
+---
+header-id: managing-campaigns
+---
+
+# Managing Campaigns
 
 A campaign represents an effort to expose a certain user segment to a certain
 set of assets within a specific period of time. To manage campaigns for a site,
@@ -42,7 +46,7 @@ visit the Roles section of the Control Panel. Then click on the *Actions* &rarr;
 *Define Permissions* button corresponding to the role you'd like to configure
 permissions for, and search for *Audience Targeting Resources*.
 
-## Managing Campaign Priorities [](id=managing-campaign-priorities)
+## Managing Campaign Priorities
 
 The priority of your campaigns becomes important when multiple campaigns are
 running at the same time on your website. The Campaign Content Display
@@ -57,7 +61,7 @@ applications. Similarly, if a campaign is deactivated or if a campaign's date
 range is exceeded, all of the Campaign Content Display applications on your
 website are affected.
 
-## Defining Tracking Actions [](id=defining-tracking-actions)
+## Defining Tracking Actions
 
 One of the most interesting features of campaigns is that they allow you to
 measure the effectiveness of a campaign. This provides your marketing team with
@@ -87,7 +91,7 @@ something not working as your team expected:
 You could drag and drop *tracking actions* from the palette to track all the
 actions mentioned above. More types of tracking actions can be created by
 developers and deployed as OSGI plugins. See the
-[Tracking User Actions with Audience Targeting](/develop/tutorials/-/knowledge_base/6-2/tracking-user-actions-with-audience-targeting)
+[Tracking User Actions with Audience Targeting](/docs/6-2/tutorials/-/knowledge_base/t/tracking-user-actions-with-audience-targeting)
 tutorial for details.
 
 The tracking actions use an analytics engine called *Audience Targeting
@@ -98,12 +102,12 @@ Settings*. To configure it per portal instance, go to *Control Panel* &rarr;
 users) can be a very heavy load for your server. Therefore, it's best to disable
 the tracking of any actions about which you don't need information.
 
-## Campaign Reports [](id=campaign-reports)
+## Campaign Reports
 
 Reports are available for campaigns. You can click *Actions* &rarr; *Reports*
 next to a campaign to see the list of reports available. More reports can be
 created by developers and deployed as OSGI plugins. See the
-[Reporting User Behavior with Audience Targeting](/develop/tutorials/-/knowledge_base/6-2/reporting-user-behavior-with-audience-targeting)
+[Reporting User Behavior with Audience Targeting](/docs/6-2/tutorials/-/knowledge_base/t/reporting-user-behavior-with-audience-targeting)
 tutorial for details. 
 
 The Content Views report shows the number of times that different assets have

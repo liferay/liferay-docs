@@ -1,4 +1,8 @@
-# Hot Deploy Versus Auto Deploy [](id=deploying-your-plugins-hot-deploy-vs-auto-deploy)
+---
+header-id: deploying-your-plugins-hot-deploy-vs-auto-deploy
+---
+
+# Hot Deploy Versus Auto Deploy
 
 As you develop plugins you'll want to deploy them to your test servers and as
 you finish developing plugins you'll want to deploy them to your production
@@ -11,7 +15,7 @@ How, you say? We're glad you asked! This tutorial gives you a brief synopsis of
 each deployment method. Go ahead and get started by learning about the hot 
 deployment method.
 
-## Using Hot Deployment [](id=using-hot-deployment)
+## Using Hot Deployment
 
 The first deployment method you'll explore is *hot* deployment. You may be
 familiar with hot deployment in the context of Java EE application servers. In
@@ -79,7 +83,7 @@ overrides not being loaded by your application server.
 Hopefully this whets your appetite for doing hot deployments. Stay hungry, as
 it's time to explore auto deployment next. 
 
-## Using Auto Deployment [](id=using-auto-deployment)
+## Using Auto Deployment
 
 The Liferay *auto* deployment feature is a mostly optional feature that works in
 conjunction with the hot deployment capabilities of your application server.
@@ -121,7 +125,7 @@ The `direct-deploy` Ant task creates an exploded WAR from which you can easily
 create a WAR file. The location of the exploded WAR depends on the deployment
 directory of the application server you've configured in your Plugins SDK
 environment. See the
-[Developing with the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
+[Developing with the Plugins SDK](/docs/6-2/tutorials/-/knowledge_base/t/plugins-sdk)
 tutorials for instructions on configuring the Plugins SDK for your app server.
 The Plugins SDK's `build.properties` provides a default deployment directory
 value for each supported app server. But you can override the default value by
@@ -137,8 +141,8 @@ Understanding what's going on during the deployment of your plugins is crucial
 for troubleshooting anything that goes wrong, and can help you simplify your
 deployment process and make it more efficient.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/deploying-liferay-plugins-with-maven)
+[Deploying Liferay Plugins with Maven](/docs/6-2/tutorials/-/knowledge_base/t/deploying-liferay-plugins-with-maven)
 
-[Using Liferay IDE's Remote Server Adapter](/develop/tutorials/-/knowledge_base/6-2/using-liferay-ides-remote-server-adapter)
+[Using Liferay IDE's Remote Server Adapter](/docs/6-2/tutorials/-/knowledge_base/t/using-liferay-ides-remote-server-adapter)

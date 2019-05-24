@@ -1,4 +1,8 @@
-# Flagging Inappropriate Asset Content [](id=flagging-inappropriate-asset-content)
+---
+header-id: flagging-inappropriate-asset-content
+---
+
+# Flagging Inappropriate Asset Content
 
 <!--
 Testing Notes:
@@ -27,7 +31,7 @@ inappropriate by users.
 ![Figure 1: Flags for letting users mark objectionable content are enabled in the built in Blogs portlet](../../images/asset-fw-flags-blog.png)
 
 This tutorial shows you how to enable flagging of content in a portlet. As a 
-prerequisite, you must have [assets enabled](/develop/tutorials/-/knowledge_base/6-2/adding-updating-and-deleting-assets-for-custom-entities)
+prerequisite, you must have [assets enabled](/docs/6-2/tutorials/-/knowledge_base/t/adding-updating-and-deleting-assets-for-custom-entities)
 for your portlet's custom entity before you can enable content flagging. This
 tutorial demonstrates implementing this feature in a custom Insults portlet.
 Coming up with great insults is a natural part of comedy, but sometimes things
@@ -38,7 +42,7 @@ enabled on [Github](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/t
 Now it's time to get on with the flagging!
 
 If you've implemented 
-[asset rendering](/develop/tutorials/-/knowledge_base/6-2/implementing-asset-renderers)
+[asset rendering](/docs/6-2/tutorials/-/knowledge_base/t/implementing-asset-renderers)
 for your entity, you can use flags in the full content view of an Asset
 Publisher portlet. You can also use flags in any view JSP you create for viewing
 the entity. 
@@ -71,7 +75,7 @@ Awesome! Now you have a JSP that lets your users flag inappropriate content in
 your portlet. 
 
 If you haven't already connected your portlet's view to the JSP for your entity,
-you can refer [here](/develop/tutorials/-/knowledge_base/6-2/relating-assets#creating-a-url-to-your-new-jsp)
+you can refer [here](/docs/6-2/tutorials/-/knowledge_base/t/relating-assets#creating-a-url-to-your-new-jsp)
 to see how to connect your portlet's main view JSP to your entity's view JSP.
 
 Now redeploy your portlet and refresh the page so that the your plugin's UI
@@ -87,14 +91,14 @@ who can flag content. For example, the Add Insult and Permissions buttons of the
 Insults portlet are wrapped in a permissions check in the 
 [`view.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/view.jsp).
 For more information on this, see the Learning Path 
-[Checking for Permissions in the UI](/develop/tutorials/-/knowledge_base/6-2/checking-for-permissions-in-the-ui).
+[Checking for Permissions in the UI](/docs/6-2/tutorials/-/knowledge_base/t/checking-for-permissions-in-the-ui).
 
 **Related Topics**
 
-[Customizing Liferay Portal](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+[Customizing Liferay Portal](/docs/6-2/tutorials/-/knowledge_base/t/customizing-liferay-portal)
 
-[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+[Liferay UI Taglibs](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ui-taglibs)
 
-[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)
+[User Interfaces with AlloyUI](/docs/6-2/tutorials/-/knowledge_base/t/alloyui)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
+[Service Builder and Services](/docs/6-2/tutorials/-/knowledge_base/t/service-builder)

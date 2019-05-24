@@ -1,4 +1,8 @@
-# Invoking JSON Web Services [](id=invoking-json-web-services)
+---
+header-id: invoking-json-web-services
+---
+
+# Invoking JSON Web Services
 
 Liferay's JSON web service API can be invoked in languages other than Java, such
 as Beanshell, Groovy, JavaScript, Python, and Ruby. It can also be invoked via
@@ -22,7 +26,7 @@ Example*, or *URL example* to see different ways of invoking the web service.
 This tutorial explains general techniques for working with JSON web services and
 includes details about invoking via URL. For examples of invoking Liferay's JSON
 web services via JavaScript, URL, and cURL, please see the
-[JSON Web Services Invocation Examples](/develop/tutorials/-/knowledge_base/6-2/json-web-services-invocation-examples)
+[JSON Web Services Invocation Examples](/docs/6-2/tutorials/-/knowledge_base/t/json-web-services-invocation-examples)
 tutorial.
 
 How you invoke a JSON web service depends on how you pass in its parameters. In
@@ -37,21 +41,17 @@ It's important to provide all parameters, but it doesn't matter *how* you do it
 (e.g., as part of the URL line, as request parameters, etc.). The order of the
 parameters doesn't matter either. 
 
-+$$$
-
-**Note:** An authentication related token (`p_auth`) must accompany each Liferay
-web service invocation. For details, please see the
-[Service Security Layers](/develop/tutorials/-/knowledge_base/6-2/service-security-layers)
-tutorial. Also, please see the note in the following section to learn how to
-find the `p_auth` token value that corresponds to your Liferay Portal session.
-
-$$$
+| **Note:** An authentication related token (`p_auth`) must accompany each Liferay
+| web service invocation. For details, please see the
+| [Service Security Layers](/docs/6-2/tutorials/-/knowledge_base/t/service-security-layers)
+| tutorial. Also, please see the note in the following section to learn how to
+| find the `p_auth` token value that corresponds to your Liferay Portal session.
 
 Exceptions abound in life, and there's an exception to the rule that *all*
 parameters are required. When using numeric *hints* to match methods, not all of
 the parameters are required. Let's look at using hints next. 
 
-## Using Hints When Invoking a Service via URL [](id=using-hints)
+## Using Hints When Invoking a Service via URL
 
 Adding numeric hints lets you specify how many method arguments a service has.
 If you don't specify an argument for a parameter, it's automatically
@@ -110,7 +110,7 @@ to invoke services from your browser!
 
 Next, find out how to pass parameters as part of the URL path.
 
-## Passing Parameters as Part of a URL Path [](id=passing-parameters-as-part-of-a-url-path)
+## Passing Parameters as Part of a URL Path
 
 You can pass parameters as part of the URL path. After the service URL, just
 specify method parameters in name-value pairs. Parameter names must be formed
@@ -130,7 +130,7 @@ you.
 
 You can also pass parameters in a URL query, and we'll show you how next. 
 
-## Passing Parameters as a URL Query [](id=passing-parameters-as-a-url-query)
+## Passing Parameters as a URL Query
 
 You can pass in parameters as request parameters. Parameter names are specified
 as is (e.g. camelCase) and are set equal to their argument values, like this: 
@@ -180,7 +180,7 @@ web service parameters for a `List<Locale>` Java method argument type:
 
 Now let's see how to specify an argument as `null`. 
 
-## Sending NULL Values [](id=sending-null-values)
+## Sending NULL Values
 
 To pass a `null` value for an argument, prefix the parameter name with a dash.
 Here's an example: 
@@ -207,7 +207,7 @@ explicitly, even without a prefix. Here's an example:
 
 Now let's learn about encoding parameters. 
 
-## Encoding Parameters [](id=encoding-parameters)
+## Encoding Parameters
 
 There's a difference between URL encoding and query (i.e., request parameters)
 encoding. The difference lies in how the space character is encoded. When the
@@ -233,7 +233,7 @@ original characters.
 
 Did you know you can send files as arguments? Find out how next. 
 
-## Sending Files as Arguments [](id=sending-files-as-arguments)
+## Sending Files as Arguments
 
 Files can be uploaded using multipart forms and requests. Here's an example: 
 
@@ -255,7 +255,7 @@ This is a common upload form that invokes the `addFileEntry` method of the
 
 Now we'll show you how to invoke JSON web services using JSON-RPC. 
 
-## JSON-RPC [](id=json-rpc)
+## JSON-RPC
 
 You can invoke JSON Web Service using [JSON-RPC](http://json-rpc.org). Most of
 the JSON-RPC 2.0 specification is supported in Liferay JSON web services. One
@@ -276,7 +276,7 @@ Here's an example of invoking a JSON web service using JSON-RPC:
 Let's talk about parameters that are made available to secure JSON web
 services by default. 
 
-## Default Parameters [](id=default-parameters)
+## Default Parameters
 
 When accessing *secure* JSON web services (i.e., services for which the user
 must be authenticated), some parameters are made available to the web services
@@ -294,7 +294,7 @@ Here are the available default parameters:
 
 Let's find out about object parameters next. 
 
-## Object Parameters [](id=object-parameters)
+## Object Parameters
 
 Most services accept simple parameters like numbers and strings. However,
 sometimes you might need to provide an object (a non-simple type) as a service
@@ -347,12 +347,12 @@ method parameter.
 Once you pass in an object parameter, you might want to populate the object.
 Find out how next. 
 
-## Inner Parameters [](id=inner-parameters)
+## Inner Parameters
 
 When you pass in an object parameter, you'll often need to populate its inner
 parameters (i.e., fields). Consider a default parameter `serviceContext` of type
 `ServiceContext` (see the
-[Understanding ServiceContext](/develop/tutorials/-/knowledge_base/6-2/servicecontext)
+[Understanding ServiceContext](/docs/6-2/tutorials/-/knowledge_base/t/servicecontext)
 tutorial to find out more about this type). To make an appropriate call to
 JSONWS, you might need to set the `serviceContext` parameter's
 `addGroupPermissions` and `scopeGroupId` fields. 
@@ -368,16 +368,12 @@ executed.
 Inner parameters aren't counted as regular parameters for matching methods
 and are ignored during matching. 
 
-+$$$
-
-**Tip:** Use inner parameters with object parameters to set inner contents of
-created object parameter instances! 
-
-$$$
+| **Tip:** Use inner parameters with object parameters to set inner contents of
+| created object parameter instances!
 
 Next, let's see what values are returned when a JSON web service is invoked. 
 
-## Returned Values [](id=returned-values)
+## Returned Values
 
 No matter how a JSON web service is invoked, it returns a JSON string that
 represents the service method result. Returned objects are *loosely* serialized
@@ -426,7 +422,7 @@ The returned `String` represents the `UserGroup` object you just created,
 serialized into a JSON string. To find out more about JSON strings, go to
 [json.org](http://www.json.org/). 
 
-## Common JSON Web Service Errors [](id=common-json-web-service-errors)
+## Common JSON Web Service Errors
 
 While working with JSON web services, you may encounter errors. Let's discuss
 the following common errors:
@@ -478,10 +474,10 @@ the following common errors:
 
     Had you going there, didn't we? 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Registering JSON Web Services](/develop/tutorials/-/knowledge_base/6-2/registering-json-web-services)
+[Registering JSON Web Services](/docs/6-2/tutorials/-/knowledge_base/t/registering-json-web-services)
 
-[JSON Web Services Invoker](/develop/tutorials/-/knowledge_base/6-2/json-web-services-invoker)
+[JSON Web Services Invoker](/docs/6-2/tutorials/-/knowledge_base/t/json-web-services-invoker)
 
-[JSON Web Services Invocation Examples](/develop/tutorials/-/knowledge_base/6-2/json-web-services-invocation-examples)
+[JSON Web Services Invocation Examples](/docs/6-2/tutorials/-/knowledge_base/t/json-web-services-invocation-examples)

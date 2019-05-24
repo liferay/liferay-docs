@@ -1,10 +1,14 @@
-# Developing Liferay Faces Portlets with Maven [](id=developing-liferay-faces-portlets-with-maven)
+---
+header-id: developing-liferay-faces-portlets-with-maven
+---
+
+# Developing Liferay Faces Portlets with Maven
 
 If you're unfamiliar with the Liferay Faces project, it's important to know that
 Liferay Faces is an umbrella project that provides support for the JavaServer
 Faces (JSF) standard in Liferay Portal. Thus, Liferay Faces portlets and JSF
 portlets are closely related. Visit the 
-[JSF-related learning path](/develop/tutorials/-/knowledge_base/6-2/writing-a-jsf-application-using-liferay-faces)
+[JSF-related learning path](/docs/6-2/tutorials/-/knowledge_base/t/writing-a-jsf-application-using-liferay-faces)
 for further details on JSF portlets and the Liferay Faces project. 
 
 This tutorial explains the Liferay Faces portlets generation process using
@@ -15,12 +19,12 @@ created. -Cody -->
 
 You'll begin creating a Liferay Faces portlet plugin next. 
 
-## Creating a Liferay Faces Portlet Plugin [](id=creating-a-liferay-faces-portlet-plugin)
+## Creating a Liferay Faces Portlet Plugin
 
 To create your Liferay Faces portlet plugin project, follow the 
-[Creating Liferay Maven Plugins from Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-liferay-ide)
+[Creating Liferay Maven Plugins from Liferay IDE](/docs/6-2/tutorials/-/knowledge_base/t/creating-liferay-maven-plugins-from-liferay-ide)
 tutorial or the
-[Creating Liferay Maven Plugins from the Command Line](/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-the-command-lin)
+[Creating Liferay Maven Plugins from the Command Line](/docs/6-2/tutorials/-/knowledge_base/t/creating-liferay-maven-plugins-from-the-command-lin)
 tutorial, making sure to select *Portlet* as the plugin type and *JSF 2.x* as
 the portlet framework. Lastly, you'll be required to select a JSF component
 suite. 
@@ -34,19 +38,15 @@ the [*JSF Standard*](http://en.wikipedia.org/wiki/JavaServer_Faces) suite, and
 [*ICEfaces*](http://www.icesoft.org/java/projects/ICEfaces/overview.jsf). Each
 JSF component suite has an archetype that is used in creating the portlet. 
 
-+$$$
-
-**Tip**: If you're using Maven's
-Archetype command line tool to generate your portlet project, you can filter on
-the group ID `liferay`, or even the group ID/artifact ID combination
-`liferay:portlet`, to find the Liferay portlet archetypes more easily. 
-
-$$$
+| **Tip**: If you're using Maven's
+| Archetype command line tool to generate your portlet project, you can filter on
+| the group ID `liferay`, or even the group ID/artifact ID combination
+| `liferay:portlet`, to find the Liferay portlet archetypes more easily.
 
 It's helpful to familiarize yourself with a Liferay Faces portlet plugin
 project's directory structure. You can explore its anatomy next. 
 
-## Anatomy [](id=anatomy)
+## Anatomy
 
 A portlet project created from the
 `com.liferay.maven.archetypes:liferay-portlet-jsf-archetype` has the following
@@ -94,11 +94,11 @@ Web source  | `src/main/webapp` | `docroot`             |
 Congratulations! You now know how to create Liferay Faces portlets that can
 leverage one of several powerful JSF frameworks. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[JSF Portlets with Liferay Faces](/develop/tutorials/-/knowledge_base/6-2/jsf-portlets-with-liferay-faces)
+[JSF Portlets with Liferay Faces](/docs/6-2/tutorials/-/knowledge_base/t/jsf-portlets-with-liferay-faces)
 
-[Developing Liferay Plugins with Additional Maven Archetypes](/develop/tutorials/-/knowledge_base/6-2/developing-liferay-plugins-with-additional-maven-ar)
+[Developing Liferay Plugins with Additional Maven Archetypes](/docs/6-2/tutorials/-/knowledge_base/t/developing-liferay-plugins-with-additional-maven-ar)
 
-[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/deploying-liferay-plugins-with-maven)
+[Deploying Liferay Plugins with Maven](/docs/6-2/tutorials/-/knowledge_base/t/deploying-liferay-plugins-with-maven)
 

@@ -1,4 +1,8 @@
-# Using Entry List Screenlet [](id=using-entry-list-screenlet)
+---
+header-id: using-entry-list-screenlet
+---
+
+# Using Entry List Screenlet
 
 You'll use Entry List Screenlet by following the same steps to use any 
 Screenlet: insert the Screenlet's XML in an activity or fragment layout, and 
@@ -9,7 +13,7 @@ You'll follow these steps here to insert Entry List Screenlet in
 First, you'll insert Entry List Screenlet's XML in `EntriesFragment`'s layout, 
 `fragment_entries.xml`. 
 
-## Inserting the Screenlet in the Layout [](id=inserting-the-screenlet-in-the-layout)
+## Inserting the Screenlet in the Layout
 
 Inserting Entry List Screenlet's XML is very simple. Since all you want 
 `fragment_entries.xml` to do is display the Screenlet, it must only contain 
@@ -27,7 +31,7 @@ following markup:
 As with Guestbook List Screenlet, you'll use the `android:id` value to get a 
 Screenlet reference. Next, you must implement the Screenlet's listener. 
 
-## Implementing the Screenlet's Listener [](id=implementing-the-screenlets-listener)
+## Implementing the Screenlet's Listener
 
 Recall that to use a Screenlet, you must implement its listener. The listener 
 methods let the app developer respond to the Screenlet's behavior in the 
@@ -57,7 +61,7 @@ Follow these steps to implement Entry List Screenlet's listener in
     [`BaseCacheListener` interface's](https://github.com/liferay/liferay-screens/blob/2.1.0/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListListener.java), 
     `error` method, since `BaseListListener` extends `BaseCacheListener`. For a 
     full explanation of the methods in both listeners, see 
-    [using Guestbook List Screenlet](/develop/tutorials/-/knowledge_base/6-2/using-guestbook-list-screenlet). 
+    [using Guestbook List Screenlet](/docs/6-2/tutorials/-/knowledge_base/t/using-guestbook-list-screenlet). 
     Note that in `EntriesFragment`, you don't need to take any action in these 
     methods. There are no UI elements or other parts of the fragment that must 
     be updated or processed in response to the Screenlet's behavior. All this 
@@ -171,4 +175,4 @@ leverage Liferay Portal. Although you learned a great deal in this Learning
 Path, there's still more. You can customize your Screenlet's appearance, package 
 it for redistribution, and even configure it to receive push notifications. 
 These topics, and more, are covered in the 
-[tutorials on Android apps with Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/android-apps-with-liferay-screens). 
+[tutorials on Android apps with Liferay Screens](/docs/6-2/tutorials/-/knowledge_base/t/android-apps-with-liferay-screens). 

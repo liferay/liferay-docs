@@ -1,4 +1,8 @@
-# Customizing Sites and Site Templates with Application Adapters [](id=customizing-sites-and-site-templates-with-application-adapters)
+---
+header-id: customizing-sites-and-site-templates-with-application-adapters
+---
+
+# Customizing Sites and Site Templates with Application Adapters
 
 <!-- The ending example hook can be found here:
 https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/plat-fws/application-adap/end/example-hook
@@ -16,7 +20,7 @@ you'll create your own Application Adapter hook.
 
 Here's how to do it: 
 
-1. [Create a hook plugin](/develop/tutorials/-/knowledge_base/6-2/creating-a-hook-project-in-the-plugins-sdk). 
+1. [Create a hook plugin](/docs/6-2/tutorials/-/knowledge_base/t/creating-a-hook-project-in-the-plugins-sdk). 
 
 2. Modify your hook's `liferay-hook.xml` to specify the location of your custom
    JSP and set the global custom JSP setting to `false`: 
@@ -64,15 +68,11 @@ Here's how to do it:
     original JSP you're extending and set the `useCustomPage` attribute to
     `false`. 
 
-    +$$$
-
-    **Note:** When extending an original JSP in a global hook, you must end the
-    JSP file's name with the suffix `.portal.jsp` within the
-    `<liferay-util:include>` tag. However, when using an application adapter
-    hook, you specify the JSP normally and set the `useCustomPage` attribute
-    to `false`. 
-
-    $$$
+    | **Note:** When extending an original JSP in a global hook, you must end the
+    | JSP file's name with the suffix `.portal.jsp` within the
+    | `<liferay-util:include>` tag. However, when using an application adapter
+    | hook, you specify the JSP normally and set the `useCustomPage` attribute
+    | to `false`.
 
 4. Deploy your application adapter hook plugin. Liferay installs the application
    adapter under the name of the hook. 
@@ -112,7 +112,7 @@ for yourself and learned best practices along the way.
 
 **Related Topics**
 
-[Themes and Layout Templates](/develop/tutorials/-/knowledge_base/6-2/themes-and-layout-templates)
+[Themes and Layout Templates](/docs/6-2/tutorials/-/knowledge_base/t/themes-and-layout-templates)
 
-[Advanced Content with Structures and Layout Templates](/discover/portal/-/knowledge_base/6-2/advanced-content-with-structures-and-templates)
+[Advanced Content with Structures and Layout Templates](/docs/6-2/user/-/knowledge_base/u/advanced-content-with-structures-and-templates)
 

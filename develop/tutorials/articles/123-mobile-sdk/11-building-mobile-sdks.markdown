@@ -1,4 +1,8 @@
-# Building Mobile SDKs [](id=building-mobile-sdks)
+---
+header-id: building-mobile-sdks
+---
+
+# Building Mobile SDKs
 
 The Liferay Mobile SDK lets you connect your Android and iOS apps to a Liferay 
 Portal instance. By accessing built-in portal services through Liferay's 
@@ -17,23 +21,23 @@ custom Mobile SDK for the Android and iOS platforms. The Mobile SDK Builder
 does this by generating client libraries that let your native mobile apps invoke 
 a custom portlet's remote web services. Think of the Mobile SDK Builder as a 
 Service Builder on the client side 
-([click here](/develop/tutorials/-/knowledge_base/6-2/service-builder) 
+([click here](/docs/6-2/tutorials/-/knowledge_base/t/service-builder) 
 to learn about Service Builder). 
 
 This tutorial covers how to build a custom Mobile SDK for Android and iOS. 
 You'll begin by making sure the remote services are configured for any custom 
 portlets you have. 
 
-## Configuring Your Portlet's Remote Services [](id=configuring-your-portlets-remote-services)
+## Configuring Your Portlet's Remote Services
 
 For the Mobile SDK Builder to discover a portlet's remote services, the services 
 must be available and accompanied by a Web Service Deployment Descriptor (WSDD). 
 For instructions on creating a portlet's remote services and building its WSDD, 
-[click here](/develop/tutorials/-/knowledge_base/6-2/creating-remote-services-with-service-builder). 
+[click here](/docs/6-2/tutorials/-/knowledge_base/t/creating-remote-services-with-service-builder). 
 
 Next, you'll download the Liferay Mobile SDK's source code. 
 
-## Downloading the Liferay Mobile SDK [](id=downloading-the-liferay-mobile-sdk)
+## Downloading the Liferay Mobile SDK
 
 To build a Mobile SDK for your custom portlet's services, you need to have the 
 [Liferay Mobile SDK's source code](https://github.com/liferay/liferay-mobile-sdk) 
@@ -63,7 +67,7 @@ tags on GitHub.
 
 Now you're ready to build the Mobile SDK! 
 
-## Building a Liferay Mobile SDK [](id=building-a-liferay-mobile-sdk)
+## Building a Liferay Mobile SDK
 
 After you've downloaded the Mobile SDK's source code, you must build the module 
 in which you'll build your custom portlet's Mobile SDK. The Mobile SDK Builder 
@@ -146,7 +150,7 @@ Awesome! Now you know how to create and regenerate a Mobile SDK for your custom
 portlet's remote services. Next, you'll finish by packaging your Mobile SDK for 
 the Android and iOS. 
 
-### Packaging Your Mobile SDK for Android [](id=packaging-your-mobile-sdk-for-android)
+### Packaging Your Mobile SDK for Android
 
 To package your Mobile SDK in a JAR file for use in an Android project, run the 
 following command from your module's folder: 
@@ -161,7 +165,7 @@ To call your portlet's remote services, you must first install this file in your
 Android project. To do so, copy the file into your Android app's `app/libs` 
 folder. Note that you must also install Liferay's prebuilt Mobile SDK in your 
 app. 
-[Click here](/develop/tutorials/-/knowledge_base/6-2/making-liferay-and-custom-portlet-services-available-in-your-android-app#adding-the-sdk-to-gradle-project) 
+[Click here](/docs/6-2/tutorials/-/knowledge_base/t/making-liferay-and-custom-portlet-services-available-in-your-android-app#adding-the-sdk-to-gradle-project) 
 for instructions on doing this. 
 
 Also note that if you regenerate your Mobile SDK to include new functionality, 
@@ -171,13 +175,13 @@ initially built, you could update it's version by setting `version=1.1` in your
 module's `gradle.properties` file. 
 
 To learn how to use the Mobile SDK in your Android app, 
-[click here](/develop/tutorials/-/knowledge_base/6-2/creating-android-apps-that-use-liferay) 
+[click here](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-apps-that-use-liferay) 
 to see the rest of the Android Mobile SDK documentation. You can also use your 
 Mobile SDK to create custom Screenlets in Liferay Screens. 
-[Click here](/develop/tutorials/-/knowledge_base/6-2/android-apps-with-liferay-screens) 
+[Click here](/docs/6-2/tutorials/-/knowledge_base/t/android-apps-with-liferay-screens) 
 to see the Liferay Screens documentation for Android. 
 
-### Packaging Your Mobile SDK for iOS [](id=packaging-your-mobile-sdk-for-ios)
+### Packaging Your Mobile SDK for iOS
 
 To package your Mobile SDK in a ZIP file for use in an iOS project, run the 
 following command from your module's folder: 
@@ -193,20 +197,20 @@ Xcode project. To do so, simply unzip it and add its files to your Xcode
 project. 
 
 To learn how to use the Mobile SDK in your iOS app, 
-[click here](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay) 
+[click here](/docs/6-2/tutorials/-/knowledge_base/t/creating-ios-apps-that-use-liferay) 
 to see the rest of the iOS Mobile SDK documentation. You can also use your 
 Mobile SDK to create custom Screenlets in Liferay Screens. 
-[Click here](/develop/tutorials/-/knowledge_base/6-2/ios-apps-with-liferay-screens) 
+[Click here](/docs/6-2/tutorials/-/knowledge_base/t/ios-apps-with-liferay-screens) 
 to see the Liferay Screens documentation for iOS. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating Android Apps that Use the Mobile SDK](/develop/tutorials/-/knowledge_base/6-2/creating-android-apps-that-use-liferay)
+[Creating Android Apps that Use the Mobile SDK](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-apps-that-use-liferay)
 
-[Creating iOS Apps that Use the Mobile SDK](/develop/tutorials/-/knowledge_base/6-2/creating-ios-apps-that-use-liferay)
+[Creating iOS Apps that Use the Mobile SDK](/docs/6-2/tutorials/-/knowledge_base/t/creating-ios-apps-that-use-liferay)
 
-[Android Apps with Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/android-apps-with-liferay-screens)
+[Android Apps with Liferay Screens](/docs/6-2/tutorials/-/knowledge_base/t/android-apps-with-liferay-screens)
 
-[iOS Apps with Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/ios-apps-with-liferay-screens)
+[iOS Apps with Liferay Screens](/docs/6-2/tutorials/-/knowledge_base/t/ios-apps-with-liferay-screens)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
+[Service Builder and Services](/docs/6-2/tutorials/-/knowledge_base/t/service-builder)

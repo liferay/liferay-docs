@@ -1,4 +1,8 @@
-# Integrating Your Persistence Framework into Your Application [](id=integrating-your-persistence-framework-into-your-a)
+---
+header-id: integrating-your-persistence-framework-into-your-a
+---
+
+# Integrating Your Persistence Framework into Your Application
 
 Once you've generated your persistence framework with Service Builder, your next
 task is to bring all that functionality into your application. On the
@@ -12,7 +16,7 @@ Builder is not for you.
 First, you'll implement a service layer for your `Guestbook` entity, and then
 you'll implement one for your `Entry` entity. 
 
-## Writing a Service API for Guestbooks [](id=writing-a-service-api-for-guestbooks)
+## Writing a Service API for Guestbooks
 
 1.  Open the `com.liferay.docs.guestbook.service.impl` package. Service Builder
     has generated several stub classes for you here, two for each entity. The
@@ -133,7 +137,7 @@ Next, you'll create similar methods for adding guestbook entries, and then
 you'll move over the UI of your app and update it to take advantage of your new
 service and persistence layers. 
 
-## Writing a Service API for Guestbook Entries [](id=writing-a-service-api-for-guestbook-entries)
+## Writing a Service API for Guestbook Entries
 
 Now it's time to do the same thing for the guestbook entries. You did the
 `Guestbook` entity first, because all `Entry` entities have a `Guestbook` as a

@@ -1,4 +1,8 @@
-# Creating Your JSF Application's Action Buttons [](id=creating-your-jsf-applications-action-buttons)
+---
+header-id: creating-your-jsf-applications-action-buttons
+---
+
+# Creating Your JSF Application's Action Buttons
 
 Now that you have the power to edit and delete entries, and also control their
 permissions, it's time to expose those capabilities to your users through your
@@ -37,15 +41,11 @@ Find the following `<h:column>...</h:column>` tag:
     portlet. They are formatted as an `h:column`. Also notice that each button
     calls the `EntryBacking` bean's appropriate action method. 
 
-    +$$$
-    
-    **Note:** Currently, the drop-down *Actions* button used in many MVC
-    portlets is not supported in Liferay Faces. If your unfamiliar with MVC
-    portlets' Actions button, visit the
-    [Creating Action Buttons](/develop/tutorials/-/knowledge_base/6-2/creating-action-buttons)
-    learning path to learn more about its functionality. 
-
-    $$$
+    | **Note:** Currently, the drop-down *Actions* button used in many MVC
+    | portlets is not supported in Liferay Faces. If your unfamiliar with MVC
+    | portlets' Actions button, visit the
+    | [Creating Action Buttons](/docs/6-2/tutorials/-/knowledge_base/t/creating-action-buttons)
+    | learning path to learn more about its functionality.
 
 Your buttons are now ready for use! Redeploy your Guestbook portlet and give
 them a shot! The Edit and Delete buttons should function as expected. The

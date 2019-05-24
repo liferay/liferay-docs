@@ -1,4 +1,8 @@
-# JavaScript in Liferay [](id=javascript-in-liferay)
+---
+header-id: javascript-in-liferay
+---
+
+# JavaScript in Liferay
 
 As much as Java is used throughout Liferay's back-end data layer, JavaScript is
 used throughout its presentation layer. Liferay uses JavaScript to implement

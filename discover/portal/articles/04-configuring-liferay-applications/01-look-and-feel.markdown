@@ -1,4 +1,8 @@
-# Look and Feel [](id=look-and-feel)
+---
+header-id: look-and-feel
+---
+
+# Look and Feel
 
 An administrator can access the look and feel configuration menu of any Liferay
 portlet by clicking on the gear icon at the top right corner of the portlet and
@@ -31,15 +35,11 @@ portlet URLs will point to the page you selected. The current page is the
 default. Note that you can use the Asset Publisher's View in a Specific Portlet
 feature and web content articles' Display Page attribute to achieve a more
 elegant solution for displaying the full view of web content articles on
-specific pages. Please see the [Setting Up Display Pages](/discover/portal/-/knowledge_base/6-1/setting-up-display-pages) article for details.
+specific pages. Please see the [Setting Up Display Pages](/docs/6-1/user/-/knowledge_base/u/setting-up-display-pages) article for details.
 
-+$$$
-
-**Note:** The *Link Portlet URLs to Page* menu is deprecated for Liferay 6.2 and
-will be removed in Liferay 7.0. The functionality of this menu can also be found
-in the Asset Publisher. 
-
-$$$
+| **Note:** The *Link Portlet URLs to Page* menu is deprecated for Liferay 6.2 and
+| will be removed in Liferay 7.0. The functionality of this menu can also be found
+| in the Asset Publisher.
 
 You can also choose whether or not to display borders around your portlet. By
 default, borders are displayed. Be careful about turning portlet borders off;

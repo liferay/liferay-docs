@@ -1,4 +1,8 @@
-# Creating Plugins to Extend Plugins [](id=creating-plugins-to-extend-plugins)
+---
+header-id: creating-plugins-to-extend-plugins
+---
+
+# Creating Plugins to Extend Plugins
 
 For Liferay plugins, you can create a new plugin that extends an existing one.
 By extending a plugin, you can use all its features in your new plugin while
@@ -7,7 +11,7 @@ keeping your changes/extensions separate from the existing plugin's source code.
 To create a plugin that extends another, follow these steps: 
 
 1. Create a new empty plugin in the Plugins SDK. Visit the
-   [Developing with the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
+   [Developing with the Plugins SDK](/docs/6-2/tutorials/-/knowledge_base/t/plugins-sdk)
    tutorials for information on how to develop plugins using the Plugins SDK. 
 
 2. Remove all the auto-generated files except `build.xml` and the docroot
@@ -67,10 +71,10 @@ To create a plugin that extends another, follow these steps:
 This generates a plugin (you can find the WAR file in the `/dist` folder of your
 plugins SDK) which combines the original one with your changes. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Customizing JSPs by Extending the Original](/develop/tutorials/-/knowledge_base/6-2/customizing-jsps-by-extending-the-original)
+[Customizing JSPs by Extending the Original](/docs/6-2/tutorials/-/knowledge_base/t/customizing-jsps-by-extending-the-original)
 
-[Overriding and Adding Struts Actions](/develop/tutorials/-/knowledge_base/6-2/overriding-and-adding-struts-actions)
+[Overriding and Adding Struts Actions](/docs/6-2/tutorials/-/knowledge_base/t/overriding-and-adding-struts-actions)
 
-[What is Service Builder?](/develop/tutorials/-/knowledge_base/6-2/what-is-service-builder)
+[What is Service Builder?](/docs/6-2/tutorials/-/knowledge_base/t/what-is-service-builder)

@@ -1,4 +1,8 @@
-# Displaying Site Pages to Mobile Devices [](id=displaying-site-pages-to-mobile-devices)
+---
+header-id: displaying-site-pages-to-mobile-devices
+---
+
+# Displaying Site Pages to Mobile Devices
 
 Mobile device families allow you to configure sets of rules to alter the
 behavior of the portal based on the device being used to access Liferay. The
@@ -25,23 +29,19 @@ device databases so that you can use their device characteristics in your rules.
 
 Liferay provides such a database in the Liferay Mobile Device Detection (LMDD) 
 app from the Liferay Marketplace. 
-[Click here](/discover/portal/-/knowledge_base/6-2/leveraging-the-liferay-marketplace) 
+[Click here](/docs/6-2/user/-/knowledge_base/u/leveraging-the-liferay-marketplace) 
 for instructions on using Liferay Marketplace to find and install apps. 
 
-+$$$
-
-**Note:** The Liferay Mobile Device Detection (LMDD) app is EE-only for Liferay 
-Portal 6.2. Although you can use other device detection databases, doing so 
-requires you to manually integrate the database with Liferay APIs. 
-
-$$$
+| **Note:** The Liferay Mobile Device Detection (LMDD) app is EE-only for Liferay
+| Portal 6.2. Although you can use other device detection databases, doing so
+| requires you to manually integrate the database with Liferay APIs.
 
 It's possible to develop plugins that integrate with other device databases. 
 Even if you don't have a device database, you can still set up mobile device
 rules. They won't, however, be effective until a database is deployed, because
 the portal won't have enough information about the devices being used to make
 page requests. To learn how to tap into Liferay's Device API, see the
-[Using the Device Recognition API](/develop/tutorials/-/knowledge_base/6-2/using-the-device-recognition-api)
+[Using the Device Recognition API](/docs/6-2/tutorials/-/knowledge_base/t/using-the-device-recognition-api)
 tutorial. 
 
 You can access the Mobile Device Families administrative page from the
@@ -73,15 +73,11 @@ you'll be ready to set up some actions. The actions defined for a family
 determine what happens to a particular request when the device is detected and
 the family has been found to apply.
 
-+$$$
-
-**Tip:** The Audience Targeting application offers a *Device* rule that
-evaluates whether the user is accessing content using a particular device
-family. This rule is integrated with the Mobile Device Families portlet. Visit
-the [Liferay Audience Targeting Rules](/discover/portal/-/knowledge_base/6-2/liferay-audience-targeting-rules#device)
-section for more details.
-
-$$$
+| **Tip:** The Audience Targeting application offers a *Device* rule that
+| evaluates whether the user is accessing content using a particular device
+| family. This rule is integrated with the Mobile Device Families portlet. Visit
+| the [Liferay Audience Targeting Rules](/docs/6-2/user/-/knowledge_base/u/liferay-audience-targeting-rules#device)
+| section for more details.
 
 You can add actions to a family from the Site Pages page of Site Administration.
 Select either the public or private pages and then look for the *Mobile Device

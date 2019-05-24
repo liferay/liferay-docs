@@ -1,4 +1,8 @@
-# Page Customizations [](id=page-customizations)
+---
+header-id: page-customizations
+---
+
+# Page Customizations
 
 Liferay 6.1 introduced the concept of page customizations. Administrators can
 designate pages or sections of pages to be customizable. When a user visits such

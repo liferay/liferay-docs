@@ -1,4 +1,8 @@
-# Touring Liferay Portal's User Interface [](id=touring-liferay-portals-user-interface)
+---
+header-id: touring-liferay-portals-user-interface
+---
+
+# Touring Liferay Portal's User Interface
 
 Liferay Portal's user interface is designed to be simple and intuitive. Across
 the top is what's known as the *Dockbar*, a series of links that appear based on
@@ -25,13 +29,9 @@ but leaves each request for you to respond to individually. Clicking
 you've received and lets you configure your preferences for receiving 
 notifications and requests.
 
-+$$$
-
-**Note:** Currently, requests do not appear under the Requests section of the 
-Notifications portlet. Any received requests instead appear as regular 
-notifications.
-
-$$$
+| **Note:** Currently, requests do not appear under the Requests section of the
+| Notifications portlet. Any received requests instead appear as regular
+| notifications.
 
 Finally, the user section shows the users name and provides links to the user's
 profile (his or her publicly-accessible pages), dashboard (his or her private

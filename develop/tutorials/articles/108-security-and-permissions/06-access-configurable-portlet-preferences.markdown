@@ -1,4 +1,8 @@
-# Controlling Access with Configurable Portlet Preferences [](id=controlling-access-with-configurable-portlet-preferences)
+---
+header-id: controlling-access-with-configurable-portlet-preferences
+---
+
+# Controlling Access with Configurable Portlet Preferences
 
 As a Liferay application developer, using Liferay's permissions system isn't
 your only option for controlling access to the features of your application. You
@@ -17,7 +21,7 @@ control access to your portlet's features. With Liferay, it's easy to create
 portlet preferences and allow users to configure them. You'll be a master of
 configurations in no time flat!
 
-## Deciding to Use Configurable Portlet Preferences [](id=deciding-to-use-configurable-portlet-preferences)
+## Deciding to Use Configurable Portlet Preferences
 
 So why bother with configurable portlet preferences for controlling access to
 portlet features? Why not just use permissions? First of all, portlet
@@ -53,10 +57,10 @@ solution.
 Now that you understand how portlet preferences can be useful, it's time to
 learn how to implement them.
 
-## Implementing Configurable Portlet Preferences [](id=implementing-configurable-portlet-preferences)
+## Implementing Configurable Portlet Preferences
 
 Implementing configurable portlet preferences is a straightforward task. For 
-instructions, see the tutorial [Using Configurable Portlet Preferences](/develop/tutorials/-/knowledge_base/6-2/using-configurable-portlet-preferences). 
+instructions, see the tutorial [Using Configurable Portlet Preferences](/docs/6-2/tutorials/-/knowledge_base/t/using-configurable-portlet-preferences). 
 Keep in mind that unless you need to use the portlet preferences with some
 additional logic in your controller, you can skip the third step of that
 tutorial. Once you've created your configuration JSP and any additional control
@@ -90,14 +94,14 @@ Setup tab.
 Stupendous! Now you know when and how to use configurable portlet preferences to 
 control access to your portlet's features. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[MVC Portlets](/develop/tutorials/-/knowledge_base/6-2/developing-jsp-portlets-using-liferay-mvc)
+[MVC Portlets](/docs/6-2/tutorials/-/knowledge_base/t/developing-jsp-portlets-using-liferay-mvc)
 
-[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)
+[User Interfaces with AlloyUI](/docs/6-2/tutorials/-/knowledge_base/t/alloyui)
 
-[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+[Liferay UI Taglibs](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ui-taglibs)
 
-[Customizing Liferay Portal](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+[Customizing Liferay Portal](/docs/6-2/tutorials/-/knowledge_base/t/customizing-liferay-portal)
 
-[Plugin Security and PACL](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl)
+[Plugin Security and PACL](/docs/6-2/tutorials/-/knowledge_base/t/plugin-security-and-pacl)

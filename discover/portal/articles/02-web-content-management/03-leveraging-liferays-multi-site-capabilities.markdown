@@ -1,6 +1,10 @@
-# Leveraging Liferay's Multi-site Capabilities [](id=leveraging-liferays-multi-site-capabilities)
+---
+header-id: leveraging-liferays-multi-site-capabilities
+---
 
-As stated in the [Building a site with Liferay Web Content](/discover/portal/-/knowledge_base/6-2/building-a-site-with-liferay-web-content)
+# Leveraging Liferay's Multi-site Capabilities
+
+As stated in the [Building a site with Liferay Web Content](/docs/6-2/user/-/knowledge_base/u/building-a-site-with-liferay-web-content)
 section, a site is a set of pages that can be used to publish content or
 applications. Sites can be independent or they can be associated with an
 organization and serve as the website for that organization. With Liferay, you
@@ -84,17 +88,13 @@ candidate for an open and independent site. Similarly, the home page for a
 corporate intranet should probably be placed in an open independent site so any
 member of the portal can access it.
 
-+$$$
-
-**Tip:** Prior to Liferay 6.1, there were two ways of creating sites:
-organizations and communities. This has been simplified to provide more ease of
-use and allow for more flexibility. The main role of organizations is still to
-organize the users of the portal in a hierarchy but they can also have
-associated sites. Communities can still be created through independent sites but
-the new name reflects the fact that sites can be used for many different
-purposes besides communities.
-
-$$$
+| **Tip:** Prior to Liferay 6.1, there were two ways of creating sites:
+| organizations and communities. This has been simplified to provide more ease of
+| use and allow for more flexibility. The main role of organizations is still to
+| organize the users of the portal in a hierarchy but they can also have
+| associated sites. Communities can still be created through independent sites but
+| the new name reflects the fact that sites can be used for many different
+| purposes besides communities.
 
 For other kinds of web sites, you may want to use independent sites to bring
 users together who share a common interest. If you were building a photo sharing
@@ -110,7 +110,7 @@ changed through the simple configuration of the setup wizard. The portal name
 can also be changed at any time through the Control Panel within *Portal
 Settings*.
 
-## Creating and Managing Sites [](id=creating-and-managing-sites)
+## Creating and Managing Sites
 
 Sites can be created through the Control Panel by a portal administrator.
 Liferay's Control Panel provides an administrative interface for managing your
@@ -119,23 +119,19 @@ Sites, Apps, and Configuration. In this section, we'll learn how to use the
 Control Panel to manage sites. In the next section, we'll learn about using the
 Control Panel to manage site templates and page templates. For information about
 the Apps, Users, and Configuration sections of the Control Panel, please see the
-[Leveraging the Liferay Marketplace](/discover/portal/-/knowledge_base/6-2/leveraging-the-liferay-marketplace),
-[User Management](/discover/portal/-/knowledge_base/6-2/user-management), and
-[Using the Control Panel](/discover/portal/-/knowledge_base/6-2/using-the-control-panel)
+[Leveraging the Liferay Marketplace](/docs/6-2/user/-/knowledge_base/u/leveraging-the-liferay-marketplace),
+[User Management](/docs/6-2/user/-/knowledge_base/u/user-management), and
+[Using the Control Panel](/docs/6-2/user/-/knowledge_base/u/using-the-control-panel)
 sections, respectively.
 
-+$$$
-
-**Tip:** Prior to Liferay 6.2, the Control Panel included interfaces both for
-site administration and for portal administration. In Liferay 6.2, these
-interfaces have been separated. If you're signed in as an administrator, you can
-access the Liferay 6.2 Control Panel by clicking *Admin* &rarr; *Control Panel*.
-To manage a single site, navigate to the site by clicking on *My Sites* and
-clicking on the site's name. Then click on *Admin* &rarr; *Site Administration*.
-The Site Administration interface allows to configure site settings and manage
-the pages, content, and users of the site.
-
-$$$
+| **Tip:** Prior to Liferay 6.2, the Control Panel included interfaces both for
+| site administration and for portal administration. In Liferay 6.2, these
+| interfaces have been separated. If you're signed in as an administrator, you can
+| access the Liferay 6.2 Control Panel by clicking *Admin* &rarr; *Control Panel*.
+| To manage a single site, navigate to the site by clicking on *My Sites* and
+| clicking on the site's name. Then click on *Admin* &rarr; *Site Administration*.
+| The Site Administration interface allows to configure site settings and manage
+| the pages, content, and users of the site.
 
 To add a site, click on *Sites* under the Sites section of the Control Panel and
 then click *Add*. If there is at least one site template available, a dropdown
@@ -178,19 +174,15 @@ unavailable. To activate the *Users* functionality for your organization site,
 you'll need to check *Allow Manual Membership Management* after creating the
 organization site by navigating to its *Site Settings* menu.
 
-+$$$
-
-**Note:** It's possible for site memberships to be handled automatically by a
-membership policy. The membership policy can check various pieces of information
-from each user, such as their first names, last names, birthdays, job titles,
-organizations, and user groups. Using this information, the site membership
-policy can automatically assign members to the site. If your site will implement
-a membership policy, your site administrators can disallow manual membership
-management for their site. When the Allow Manual Membership Management option is
-disabled, the *Users* section of *Site Administration* (Site Memberships and
-Site Teams) is hidden, even from administrators.
-
-$$$
+| **Note:** It's possible for site memberships to be handled automatically by a
+| membership policy. The membership policy can check various pieces of information
+| from each user, such as their first names, last names, birthdays, job titles,
+| organizations, and user groups. Using this information, the site membership
+| policy can automatically assign members to the site. If your site will implement
+| a membership policy, your site administrators can disallow manual membership
+| management for their site. When the Allow Manual Membership Management option is
+| disabled, the *Users* section of *Site Administration* (Site Memberships and
+| Site Teams) is hidden, even from administrators.
 
 <!--See the (TBD) chapter of the Developer's Guide for information about
 creating site membership policies. -JR -->
@@ -225,7 +217,7 @@ permission to do so.
 
 Now that our new site is created, lets learn how to create and manage its pages.
 
-## Creating and Managing Pages [](id=creating-and-managing-pages)
+## Creating and Managing Pages
 
 You have a few options for accessing and configuring your site's page editing
 interface. There are three interfaces to be aware of: *Site Pages*, *Page*, and
@@ -274,7 +266,7 @@ site members and members of the organization.
 Regardless of whether the pages are public or private, Liferay uses the same
 interface to manage them. Let's look at this interface more closely. 
 
-### More Page Management Tools [](id=more-page-management-tools)
+### More Page Management Tools
 
 From the Site Pages interface in Site Administration, you can add a page to the
 site by clicking the *Add Page* button. Because *Public Pages* is selected on
@@ -330,7 +322,7 @@ page. This is because you're only managing the current page.
 Once you've created pages and populated them with content, Liferay provides a
 way for you to back them up to separate files. Let's see how that works. 
 
-#### Backing up and Restoring Pages [](id=backing-up-and-restoring-pages)
+#### Backing up and Restoring Pages
 
 Next to the *Add Page* button on the Site Pages screen, there are two buttons
 labeled *Export* and *Import*. The Export button allows you to export the your
@@ -358,7 +350,7 @@ and move it all in one shot to a site on another server. You can use LARs to
 import data onto production servers, but you should not make this a regular
 occurrence. If you want to regularly move pages from one server to another, you
 should use Liferay's staging environment, which we discuss in the
-[Advanced Web Content Management](/discover/portal/-/knowledge_base/6-2/advanced-web-content-management)
+[Advanced Web Content Management](/docs/6-2/user/-/knowledge_base/u/advanced-web-content-management)
 chapter.
 
 LARs can be a good way to back up your site's content. You can export them to a
@@ -380,16 +372,12 @@ until there's no collision. This behavior takes place for friendly URL
 translations as well. Similarly, if importing a LAR into a site causes a
 category name collision, Liferay renames the imported categories.
 
-+$$$
-
-**Note:** LAR files are version dependent. You can't import a LAR file that was
-exported from one version of Liferay into a Liferay server that's running a
-different version of Liferay. Also, note that periodically exporting LARs is
-*not* a complete backup solution; please refer to the
-[Backing up a Liferay Installation](/discover/deployment/-/knowledge_base/6-2/backing-up-a-liferay-installation)
-section for information on backing up Liferay.
-
-$$$
+| **Note:** LAR files are version dependent. You can't import a LAR file that was
+| exported from one version of Liferay into a Liferay server that's running a
+| different version of Liferay. Also, note that periodically exporting LARs is
+| *not* a complete backup solution; please refer to the
+| [Backing up a Liferay Installation](/docs/6-2/deploy/-/knowledge_base/d/backing-up-a-liferay-installation)
+| section for information on backing up Liferay.
 
 Let's be good administrators and export a LAR file for backup purposes. Click on
 the *Export* button and then name the file `lunarresortv1.lar`. Use the check
@@ -410,7 +398,7 @@ selecting it.
 Next, we'll look at the options on the right side menu, starting with Look and
 Feel. 
 
-#### Customizing the Look and Feel of Site Pages [](id=customizing-the-look-and-feel-of-site-pages)
+#### Customizing the Look and Feel of Site Pages
 
 When you open *Site Pages* from within Site Administration, it defaults to the
 Look and Feel tab. On this tab, you're presented with an interface that allows
@@ -444,7 +432,7 @@ Starting in Liferay 6.2, WAP related technologies have been deprecated. In
 particular, the ability to modify themes for regular browsers and mobile devices
 can now only be accomplished using Mobile Device Rules, which can be found in
 the right menu. You can learn more about using Mobile Device Rules in the
-[Displaying Site Pages to Mobile Devices](/discover/portal/-/knowledge_base/6-2/displaying-site-pages-to-mobile-devices)
+[Displaying Site Pages to Mobile Devices](/docs/6-2/user/-/knowledge_base/u/displaying-site-pages-to-mobile-devices)
 section. You can enable the WAP functionality for your portal's Look and Feel
 section by opening/creating your `portal-ext.properties` file in your
 `${LIFERAY_HOME}` directory and setting
@@ -457,7 +445,7 @@ or overriding existing ones.
 
 The next option configures the logo that appears for your site. 
 
-#### Using a Custom Logo for a Site [](id=using-a-custom-logo-for-a-site)
+#### Using a Custom Logo for a Site
 
 By default, the Liferay logo is used for your site pages' logo. If you want to
 use your own logo for a specific site, use the *Logo* tab. Adding a custom logo
@@ -475,7 +463,7 @@ disabled in *Portal Settings*. Removing the site name is not available for the
 default site -- only newly created sites and user pages have the option to have
 the name display. 
 
-#### JavaScript [](id=javascript)
+#### JavaScript
 
 If you click on *JavaScript* from the Site Pages interface for a page set
 (either Public Pages or Private Pages), you'll find a window where you can enter
@@ -492,7 +480,7 @@ and you can add some dynamic features to your site's pages.
 Next, let's look at an advanced feature of the Site Pages interface: merging the
 current site's pages with the pages of the default site.
 
-#### Advanced [](id=advanced)
+#### Advanced
 
 If you click on *Advanced* from the Site Pages interface for a public page set,
 you'll find an option to merge the public pages of your portal's default site
@@ -533,7 +521,7 @@ enabled, no additional pages are added to the default site's navigation menu.
 
 Next, let's examine how to configure individual pages.
 
-### Changing Options for Individual Pages [](id=changing-options-for-individual-pages)
+### Changing Options for Individual Pages
 
 When you use the *Edit Page* interface for a single page, some different options
 appear. Let's look at what these do. 
@@ -555,20 +543,16 @@ Liferay generate canonical links by language. If you want to set some of these
 settings for the entire site, you can specify them from the Sitemaps and Robots
 tabs of the Manage Site Settings dialog box (see below).
 
-+$$$
-
-**Note:** In previous versions of Liferay, it was possible that a single page
-could be indexed multiple times. In Liferay 6.1, all URLs that direct to the
-same page will only create one entry in the index. Previously, the simple URL
-*http\://www.lunar-resort.com/web/guest/blog/-/blogs/themoon* and different
-versions of the URL which provided additional information about the referring
-page had different entries in the index. As of Liferay 6.1, each asset (web
-content article, blog entry, etc.) has a unique URL. From the search engine's
-point of view, this will make your pages rank higher since any references to
-variations of a specific URL will all be considered references to the same
-page.] 
-
-$$$
+| **Note:** In previous versions of Liferay, it was possible that a single page
+| could be indexed multiple times. In Liferay 6.1, all URLs that direct to the
+| same page will only create one entry in the index. Previously, the simple URL
+| *http\://www.lunar-resort.com/web/guest/blog/-/blogs/themoon* and different
+| versions of the URL which provided additional information about the referring
+| page had different entries in the index. As of Liferay 6.1, each asset (web
+| content article, blog entry, etc.) has a unique URL. From the search engine's
+| point of view, this will make your pages rank higher since any references to
+| variations of a specific URL will all be considered references to the same
+| page.]
 
 **Look and Feel:** lets you set a page-specific theme.
 
@@ -605,22 +589,18 @@ content article, and select the article in the web content display portlet. Once
 you've selected the new web content article, the embedded portlet appears on the
 page.
 
-+$$$
-
-**Note:** Usually, you don't want the web content display portlet that you're
-using to embed a portlet to be visible. To make the web content display portlet
-invisible, click on the gear icon of the web content display portlet, select
-*Look and Feel*, set *Show Borders* to *No*, and click *Save*. Once you've
-refreshed the page, only the embedded portlet will be visible.
-
-$$$
+| **Note:** Usually, you don't want the web content display portlet that you're
+| using to embed a portlet to be visible. To make the web content display portlet
+| invisible, click on the gear icon of the web content display portlet, select
+| *Look and Feel*, set *Show Borders* to *No*, and click *Save*. Once you've
+| refreshed the page, only the embedded portlet will be visible.
 
 **Customization Settings:** lets you mark specific sections of the page you want
 users to be able to customize.
 
 Next, we'll run practice modifying page layouts!
 
-### Modifying Page Layouts [](id=modifying-page-layouts)
+### Modifying Page Layouts
 
 Page layouts allow you to arrange your pages so the content appears the way you
 want it to. Liferay comes with many layouts already defined. Developers can
@@ -645,7 +625,7 @@ you virtually unlimited options for laying out your pages.
 
 The next option we'll explore is page customizations. 
 
-### Page Customizations [](id=page-customizations)
+### Page Customizations
 
 With page customizations, any user with the appropriate permissions can create
 personalized versions of any public page. Before users can create personalized
@@ -668,13 +648,13 @@ columns of the page and can also customize portlet configurations. If at any
 time users determine they don't like their customizations, they can click *Reset
 My Customizations* to revert their pages back to the default. For more
 information about page customizations, please refer to the
-[Page Customizations](/discover/portal/-/knowledge_base/6-2/page-customizations)
+[Page Customizations](/docs/6-2/user/-/knowledge_base/u/page-customizations)
 section.
 
 Now that you know how to enable page customizations, let's look at the settings
 for the site as a whole.
 
-### Configuring Site Settings [](id=configuring-site-settings)
+### Configuring Site Settings
 
 As with Site Pages, you can access Site Settings by navigating to Site
 Administration and clicking *Site Settings* from the Configuration section on
@@ -767,15 +747,15 @@ don't have Virtual Hosting set up, this tab is rather boring.
 **Default User Associations:** lets you configure site roles and teams that
 newly assigned site members will have by default. If you'd like to learn more
 about creating roles and/or teams, visit the
-[Roles and Permissions](/discover/portal/-/knowledge_base/6-2/roles-and-permissions)
+[Roles and Permissions](/docs/6-2/user/-/knowledge_base/u/roles-and-permissions)
 and
-[Creating Teams for Advanced Site Membership Management](/discover/portal/-/knowledge_base/6-2/creating-teams-for-advanced-site-membership-management)
+[Creating Teams for Advanced Site Membership Management](/docs/6-2/user/-/knowledge_base/u/creating-teams-for-advanced-site-membership-management)
 sections, respectively. 
 
 **Staging:** enables you to edit and revise a page behind the scenes, then
 publish changes to your site once they have been completed and reviewed. For a
 full explanation of Staging, see the
-[Staging Page Publication](/discover/portal/-/knowledge_base/6-2/staging-page-publication)
+[Staging Page Publication](/docs/6-2/user/-/knowledge_base/u/staging-page-publication)
 section.
 
 **Analytics:** allows you to integrate your pages with Google Analytics. Liferay
@@ -796,7 +776,7 @@ revoke content sharing from all sub-sites.
 site. You can also regulate the age (in days) for which content is able to be
 stored in the Recycle Bin until it is permanently deleted. For a full
 explanation of the Recycle Bin, see the
-[Recyling Assets with the Recycle Bin](/discover/portal/-/knowledge_base/6-2/recycling-assets-with-the-recycle-bin)
+[Recyling Assets with the Recycle Bin](/docs/6-2/user/-/knowledge_base/u/recycling-assets-with-the-recycle-bin)
 section.
 
 **Custom Fields:** lets you edit the custom fields you already have configured
@@ -826,7 +806,7 @@ section.
 Now that you know how to configure sites, let's look at page templates and site
 templates.
 
-### Page Templates and Site Templates [](id=page-templates-and-site-templates)
+### Page Templates and Site Templates
 
 *Page Templates* and *Site Templates* are invaluable tools for building similar
 pages on larger portals. As you continue to add pages to sites in your portal,
@@ -836,12 +816,12 @@ create. Site templates allow you to do the same thing but on the scale of a
 site--if you have multiple sites that use a similar structure of pages, you can
 create a single site template and use it to create as many sites as desired. For
 more information on page templates and site templates, see the
-[Using Page Templates](/discover/portal/-/knowledge_base/6-2/using-page-templates)
+[Using Page Templates](/docs/6-2/user/-/knowledge_base/u/using-page-templates)
 and
-[Using Site Templates](/discover/portal/-/knowledge_base/6-2/using-site-templates)
+[Using Site Templates](/docs/6-2/user/-/knowledge_base/u/using-site-templates)
 sections. 
 
-### Site Content [](id=site-content)
+### Site Content
 
 Liferay 6.2 separates Web Content management from the Control Panel by placing
 it on the *Admin* &rarr; *Site Administration* page. From Site Administration,
@@ -851,26 +831,22 @@ managed, including web content.
 ![Figure 2.11: Your site's content resides on the Site Administration page.](../../images/web-content-site-content.png)
 
 For details about Liferay's social collaboration suite, see the
-[Social Collaboration](/discover/portal/-/knowledge_base/6-2/collaboration-suite)
+[Social Collaboration](/docs/6-2/user/-/knowledge_base/u/collaboration-suite)
 section.
 
-+$$$
-
-**Note:** The *Web Content List* and *Recent Content* plugins were deprecated in
-Liferay 6.2 and are disabled by default. To activate a disabled plugin, navigate
-to the Control Panel &rarr; *Plugins Configuration* and scroll through the list
-of portlets until you find the plugin. Select the plugins name and click the
-*Active* checkbox. Then click *Save*. Both plugins will be removed in Liferay
-7.0.
-
-The Web Content List portlet will be migrated to the Asset Publisher for 7.0,
-and configured to only display web content with the category matching the type. 
-
-$$$
+| **Note:** The *Web Content List* and *Recent Content* plugins were deprecated in
+| Liferay 6.2 and are disabled by default. To activate a disabled plugin, navigate
+| to the Control Panel &rarr; *Plugins Configuration* and scroll through the list
+| of portlets until you find the plugin. Select the plugins name and click the
+| *Active* checkbox. Then click *Save*. Both plugins will be removed in Liferay
+| 7.0.
+| 
+| The Web Content List portlet will be migrated to the Asset Publisher for 7.0,
+| and configured to only display web content with the category matching the type.
 
 Next, let's learn more details about creating pages.
 
-## Creating Pages [](id=creating-pages)
+## Creating Pages
 
 There are a lot of other things you can do beyond placing portlets on a page. So
 let's start working on the Lunar Resort site. You can do this by going up to the
@@ -912,7 +888,7 @@ hierarchy. Some examples of that are in Liferay's plugin repositories.
 For now, click the back arrow. You should be able to define and manage pages in
 Liferay at this point so let's look at what you'd put on a page.
 
-### Adding Portlets to a Page [](id=adding-portlets-to-a-page)
+### Adding Portlets to a Page
 
 As we discussed earlier, Liferay Portal pages are composed of portlets. All of
 your site's functionality, from blogs to shopping, is composed of portlets. Even
@@ -940,10 +916,10 @@ portlet and Blogs Aggregator portlet to the Community page.
 It's easy to make your pages look exactly the way you want them to. If the
 default layout options provided aren't enough, you can even develop your own.
 To find more information about developing custom layout templates, please refer
-to the [Creating a Layout Template Project in the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/creating-a-layout-template-project-in-the-plugins-sdk)
+to the [Creating a Layout Template Project in the Plugins SDK](/docs/6-2/tutorials/-/knowledge_base/t/creating-a-layout-template-project-in-the-plugins-sdk)
 tutorial. 
 
-### Page Permissions [](id=page-permissions)
+### Page Permissions
 
 By default, public pages are just that: public. They can be viewed by anybody,
 logged in or not logged in. And private pages are really only private from

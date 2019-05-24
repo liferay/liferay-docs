@@ -1,7 +1,11 @@
-# Creating Model Listeners [](id=creating-model-listeners)
+---
+header-id: creating-model-listeners
+---
+
+# Creating Model Listeners
 
 Model Listeners are used to listen for events on models and do something
-in response. They're similar in concept to [custom action hooks](/develop/tutorials/-/knowledge_base/6-2/performing-a-custom-action-using-a-hook),
+in response. They're similar in concept to [custom action hooks](/docs/6-2/tutorials/-/knowledge_base/t/performing-a-custom-action-using-a-hook),
 which perform actions in response to portal events (user login, for
 example). Model listeners implement the
 [`ModelListener`](https://docs.liferay.com/portal/6.2/javadocs-all/com/liferay/portal/model/ModelListener.html)
@@ -19,15 +23,15 @@ Liferay's core:
 The remainder of the tutorial shows these steps, using the portal's `User`
 entity for illustrative purposes.
 
-## Creating a Hook Plugin Project [](id=creating-a-hook-plugin-project)
+## Creating a Hook Plugin Project
 
-First, create a hook plugin project in a [Liferay Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/creating-a-hook-project-in-the-plugins-sdk)
+First, create a hook plugin project in a [Liferay Plugins SDK](/docs/6-2/tutorials/-/knowledge_base/t/creating-a-hook-project-in-the-plugins-sdk)
 or with 
-[Maven](/develop/tutorials/-/knowledge_base/6-2/developing-liferay-hook-plugins-with-maven).
+[Maven](/docs/6-2/tutorials/-/knowledge_base/t/developing-liferay-hook-plugins-with-maven).
 
 Once you have a hook plugin, start developing your model listener.
 
-## Creating a Model Listener Class [](id=creating-a-modellistener-class)
+## Creating a Model Listener Class
 
 Create a `-ModelListener` class under the hook's `docroot/WEB-INF/src`
 directory that extends `BaseModelListener`. You can implement the
@@ -77,7 +81,7 @@ events:
 After writing your listener class, there are some Liferay-specific actions you
 need to take so the portal runs your code.
 
-## Modifying liferay-hook.xml [](id=modifying-liferay-hook-xml)
+## Modifying liferay-hook.xml
 
 Open `docroot/WEB-INF/liferay-hook.xml` and add a `<portal-properties>`
 element inside the `<hook>` tags: 
@@ -87,7 +91,7 @@ element inside the `<hook>` tags:
 The last step is to add your listener class name to the correct property in a
 `portal.properties` file.
 
-## Adding the Model Listener as a Portal Property [](id=adding-the-model-listener-in-portal-properties)
+## Adding the Model Listener as a Portal Property
 
 You have your class created, but Liferay doesn't know it exists yet. If you
 don't yet have one, create a `portal.properties` file under
@@ -104,7 +108,7 @@ looks like this:
 Your model listener is ready to be deployed and tested. There are a few
 additional points for consideration.
 
-## Additional Model Listener Considerations [](id=additional-model-listener-considerations)
+## Additional Model Listener Considerations
 
 If you look into the *Value Object* section of Liferay's
 [`portal.properties`](https://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Value%20Object)
@@ -125,28 +129,24 @@ You can create model listeners for any of the portal's entities, using the
 same process outlined above. If there is no existing listener on the model, your
 model listener is the only one that runs.
 
-+$$$
-
-**Important:** Since portal properties like `value.object.listener` accept
-multiple values, you must append your values to the existing values. You can
-repeatedly modify the properties from additional hooks, but the order in which
-the listeners run cannot be controlled. 
-
-Only modify a portal property that accepts a single value from a single hook
-plugin. If the property's value is overridden from multiple plugins, Liferay
-won't know which value to use. 
-
-$$$
+| **Important:** Since portal properties like `value.object.listener` accept
+| multiple values, you must append your values to the existing values. You can
+| repeatedly modify the properties from additional hooks, but the order in which
+| the listeners run cannot be controlled.
+| 
+| Only modify a portal property that accepts a single value from a single hook
+| plugin. If the property's value is overridden from multiple plugins, Liferay
+| won't know which value to use.
 
 Listening for events on Liferay's entities is just one of the many interesting
 ways to customize Liferay's core functionality with hooks. Keep reading in 
-[this section](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal) to
+[this section](/docs/6-2/tutorials/-/knowledge_base/t/customizing-liferay-portal) to
 learn about more of Liferay's extension points. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Overriding a Portal Service Using a Hook](/develop/tutorials/-/knowledge_base/6-2/overriding-a-portal-service-using-a-hook)
+[Overriding a Portal Service Using a Hook](/docs/6-2/tutorials/-/knowledge_base/t/overriding-a-portal-service-using-a-hook)
 
-[Performing a Custom Action Using a Hook](/develop/tutorials/-/knowledge_base/6-2/performing-a-custom-action-using-a-hook)
+[Performing a Custom Action Using a Hook](/docs/6-2/tutorials/-/knowledge_base/t/performing-a-custom-action-using-a-hook)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
+[Service Builder and Services](/docs/6-2/tutorials/-/knowledge_base/t/service-builder)

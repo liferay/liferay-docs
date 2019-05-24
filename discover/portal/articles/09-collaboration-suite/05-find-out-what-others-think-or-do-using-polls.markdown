@@ -1,4 +1,8 @@
-# Find out what others think or do using Polls [](id=find-out-what-others-think-or-do-using-polls)
+---
+header-id: find-out-what-others-think-or-do-using-polls
+---
+
+# Find out what others think or do using Polls
 
 How well do you know your users? Do you ever wonder what they're thinking? Is
 using your site easy for them? How do they feel about the hot-button issues of
@@ -28,7 +32,7 @@ combine several questions inside a nested portlet to create a survey.
 
 We'll begin by creating a poll.
 
-## Creating a Poll [](id=creating-a-poll)
+## Creating a Poll
 
 On your site's Site Administration page, navigate to the *Polls* link under
 Content. Click the *Add Question* button. A form appears that allows you to fill
@@ -70,7 +74,7 @@ further information about permissions, please see chapters 15 and 16.
 As you can see, creating a poll is fairly straightforward. Next, let's complete
 the two-step process and put your poll on a page.
 
-## Adding a Poll to a Page [](id=adding-a-poll-to-a-page)
+## Adding a Poll to a Page
 
 Now that you have created your poll question, it's time to present it to your
 users. Navigate to your site and add the Polls Display portlet to a page. It is
@@ -114,7 +118,7 @@ You can also manage the Polls Display portlet by clicking the gear symbol in
 the upper right corner of the portlet's title bar. Now let's see the poll
 results.
 
-## Viewing the Poll Results [](id=viewing-the-poll-results)
+## Viewing the Poll Results
 
 When you create a poll question, it appears in a list in the *Content* section
 of Site Administration. After users vote in the poll, the data is collected

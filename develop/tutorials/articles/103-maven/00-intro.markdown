@@ -1,4 +1,8 @@
-# Developing with Maven [](id=maven)
+---
+header-id: maven
+---
+
+# Developing with Maven
 
 I'm giving you fair warning. I was recently reading the famous poem by Edgar
 Allen Poe, The Raven. So, naturally, I interwove our documentation on Maven with

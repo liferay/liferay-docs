@@ -1,4 +1,8 @@
-# Styling the Footer [](id=styling-the-footer)
+---
+header-id: styling-the-footer
+---
+
+# Styling the Footer
 
 As you create a theme, you want to keep the whole picture in view. The footer 
 can be seen as the bow that nicely wraps the finished package. With that in 

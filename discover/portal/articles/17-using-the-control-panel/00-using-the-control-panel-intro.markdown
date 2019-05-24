@@ -1,4 +1,8 @@
-# Using the Control Panel [](id=using-the-control-panel)
+---
+header-id: using-the-control-panel
+---
+
+# Using the Control Panel
 
 In the previous chapter, we learned how to use the Control Panel for user
 management. We learned how to manage users, organizations, user group, roles,

@@ -1,4 +1,8 @@
-# Developing a Liferay Theme [](id=developing-a-liferay-theme)
+---
+header-id: developing-a-liferay-theme
+---
+
+# Developing a Liferay Theme
 
 As a developer, you want your site to communicate your ideas clearly and 
 effectively. You don't want the design of your site to inhibit users from
@@ -19,13 +23,13 @@ configurable theme settings.
 
 Before you start, make sure you have a Liferay development environment installed. 
 You can learn how to install Liferay IDE or Liferay Developer Studio in the 
-[Beginning Liferay Development](/develop/tutorials/-/knowledge_base/6-2/beginning-liferay-development)
+[Beginning Liferay Development](/docs/6-2/tutorials/-/knowledge_base/t/beginning-liferay-development)
 Learning Path. You can use other tools for development, but Liferay's
 development tools are the most natural to use, since they're designed for
 Liferay. Because you'll be deploying a lot of changes throughout this
 Learning Path, make sure you also have developer mode enabled in your Portal.
 You can learn how to enable developer mode for your Portal in
-the [Using Developer Mode with Themes](/develop/tutorials/-/knowledge_base/6-2/using-developer-mode-with-themes)
+the [Using Developer Mode with Themes](/docs/6-2/tutorials/-/knowledge_base/t/using-developer-mode-with-themes)
 tutorial.
 
 It's time to get started! 

@@ -1,4 +1,8 @@
-# What is Liferay? [](id=what-is-liferay)
+---
+header-id: what-is-liferay
+---
+
+# What is Liferay?
 
 <div id="62-PDF" style="width:250px; float: left; text-align:center"><a href="https://dev.liferay.com/documents/10184/510059/indexed-using-liferay-portal-62.pdf">PDF</a></div>
 

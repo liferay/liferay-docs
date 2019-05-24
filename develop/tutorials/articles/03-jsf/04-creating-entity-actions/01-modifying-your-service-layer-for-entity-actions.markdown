@@ -1,4 +1,8 @@
-# Modifying Your Service Layer for Entity Actions [](id=modifying-your-service-layer-for-entity-actions)
+---
+header-id: modifying-your-service-layer-for-entity-actions
+---
+
+# Modifying Your Service Layer for Entity Actions
 
 Just as you did in the previous learning path on setting permissions, you'll
 need to modify your service layer. Your current Guestbook portlet is only

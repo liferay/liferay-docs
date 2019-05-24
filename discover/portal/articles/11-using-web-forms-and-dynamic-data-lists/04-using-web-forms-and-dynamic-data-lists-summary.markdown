@@ -1,4 +1,8 @@
-# Summary [](id=summary-8)
+---
+header-id: summary-8
+---
+
+# Summary
 
 Our `list.it` experience is now much more enjoyable than when we first signed
 up. As new Listies, we had no idea how to define our own data types for our

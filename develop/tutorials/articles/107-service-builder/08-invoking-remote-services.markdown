@@ -1,4 +1,8 @@
-# Invoking Remote Services [](id=invoking-remote-services)
+---
+header-id: invoking-remote-services
+---
+
+# Invoking Remote Services
 
 You can invoke the remote services of any installed Liferay application the same
 way that you invoke your local services. Doing so could be described as
@@ -78,8 +82,8 @@ service's WSDL is available, any SOAP web service client can access it.
 
 **Related Topics**
 
-[Invoking Local Services](/develop/tutorials/-/knowledge_base/6-2/invoking-local-services)
+[Invoking Local Services](/docs/6-2/tutorials/-/knowledge_base/t/invoking-local-services)
 
-[Invoking Liferay Services in your Android App](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-android-app)
+[Invoking Liferay Services in your Android App](/docs/6-2/tutorials/-/knowledge_base/t/invoking-liferay-services-in-your-android-app)
 
-[Invoking Liferay Services in your iOS App](/develop/tutorials/-/knowledge_base/6-2/invoking-liferay-services-in-your-ios-app)
+[Invoking Liferay Services in your iOS App](/docs/6-2/tutorials/-/knowledge_base/t/invoking-liferay-services-in-your-ios-app)

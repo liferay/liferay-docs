@@ -1,4 +1,8 @@
-# Sharing Language Keys Between Your Portlets [](id=sharing-language-keys-between-your-portlets)
+---
+header-id: sharing-language-keys-between-your-portlets
+---
+
+# Sharing Language Keys Between Your Portlets
 
 <!-- The beginning and ending test portlets can be found at the following:
 Begin: https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/liferay-mvc/prefs/begin/event-listing-portlet
@@ -114,14 +118,10 @@ in the same project.
 At this point, any language keys you specify in the language properties files
 are accessible from all of your plugin project's portlets. 
 
-+$$$
-
-**Note:** It's best to use the Liferay
-naming convention for the language resource bundle file and folder so that your
-portlets can access the bundle and so that you can use the automatic language
-building capabilities of Liferay IDE and the Plugins SDK with the bundle. 
-
-$$$
+| **Note:** It's best to use the Liferay
+| naming convention for the language resource bundle file and folder so that your
+| portlets can access the bundle and so that you can use the automatic language
+| building capabilities of Liferay IDE and the Plugins SDK with the bundle.
 
 In this tutorial, you created language keys, specified the language key values
 in different languages translations, and shared the new language keys among
@@ -129,10 +129,10 @@ your plugin project's portlets.
 
 Related topics: 
 
-[Overriding Language Properties Using a Hook](/develop/tutorials/-/knowledge_base/6-2/overriding-language-properties-using-a-hook)
+[Overriding Language Properties Using a Hook](/docs/6-2/tutorials/-/knowledge_base/t/overriding-language-properties-using-a-hook)
 
-[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+[Liferay UI Taglibs](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ui-taglibs)
 
-[Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)
+[Application Display Templates](/docs/6-2/tutorials/-/knowledge_base/t/application-display-templates)
 
-[Customizing Liferay Portal](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+[Customizing Liferay Portal](/docs/6-2/tutorials/-/knowledge_base/t/customizing-liferay-portal)

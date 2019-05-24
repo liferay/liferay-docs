@@ -1,4 +1,8 @@
-# Kaleo Forms Admin [](id=kaleo-forms-admin)
+---
+header-id: kaleo-forms-admin
+---
+
+# Kaleo Forms Admin
 
 You can access Kaleo Forms Admin from the Dockbar by clicking
 *Admin* &rarr; *Site Administration* &rarr; *Content* and then clicking *Kaleo 

@@ -1,4 +1,8 @@
-# Creating Liferay Maven Plugins from Liferay IDE [](id=creating-liferay-maven-plugins-from-liferay-ide)
+---
+header-id: creating-liferay-maven-plugins-from-liferay-ide
+---
+
+# Creating Liferay Maven Plugins from Liferay IDE
 
 Liferay offers many archetypes to help create Maven projects for multiple plugin
 types. These types include portlet, theme, hook, and layout template plugins. To 
@@ -11,14 +15,14 @@ detailed below to generate Liferay plugin projects of any type.
 As a prerequisite to running Archetype, make sure Maven is installed and that
 its executable is in your `$PATH` environment variable. Maven must also be fully
 configured. To configure Maven, follow the steps in the
-[Setting Up Maven](/develop/tutorials/-/knowledge_base/6-2/setting-up-maven)
+[Setting Up Maven](/docs/6-2/tutorials/-/knowledge_base/t/setting-up-maven)
 tutorial.
 
 There are two ways of creating Liferay plugins with Maven: using Liferay
 IDE and using the command line. This tutorial demonstrates using Liferay IDE to
 create them. 
 
-## Creating Liferay Maven Plugins Using Liferay IDE [](id=creating-liferay-maven-plugins-using-liferay-ide)
+## Creating Liferay Maven Plugins Using Liferay IDE
 
 In the following steps, you'll learn how to use Maven archetypes to generate a
 Liferay plugin project using Liferay IDE:
@@ -48,7 +52,7 @@ Liferay plugin project using Liferay IDE:
     the plugin project, specify the parent plugin project directory for the
     Location. It's a best practice to create a parent project for your Maven
     plugins, so they can all share common project information. See the
-    [Using Liferay Maven Parent Plugin Projects](/develop/tutorials/-/knowledge_base/6-2/using-liferay-maven-parent-plugin-projects)
+    [Using Liferay Maven Parent Plugin Projects](/docs/6-2/tutorials/-/knowledge_base/t/using-liferay-maven-parent-plugin-projects)
     tutorial for details. 
 
 4.  Specify the *Artifact version*. For example, you can specify `1.0-SNAPSHOT`
@@ -75,7 +79,7 @@ Liferay plugin project using Liferay IDE:
     deployable. You'll need to specify the necessary properties within the new
     profile; the *Configuring
     Your Liferay Maven Project* section of the 
-    [Using Maven From Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/using-maven-from-liferay-ide)
+    [Using Maven From Liferay IDE](/docs/6-2/tutorials/-/knowledge_base/t/using-maven-from-liferay-ide)
     tutorial demonstrates specifying these properties. 
 
     You also have the option to create a profile based on a Liferay runtime. To
@@ -131,15 +135,15 @@ creates your new plugin project to your specification.
 Great! You've successfully created a Liferay plugin project using Maven in 
 Liferay IDE! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/deploying-liferay-plugins-with-maven)
+[Deploying Liferay Plugins with Maven](/docs/6-2/tutorials/-/knowledge_base/t/deploying-liferay-plugins-with-maven)
 
-[Developing Liferay Portlets with Maven](/develop/tutorials/-/knowledge_base/6-2/creating-liferay-portlets-with-maven)
+[Developing Liferay Portlets with Maven](/docs/6-2/tutorials/-/knowledge_base/t/creating-liferay-portlets-with-maven)
 
-[Developing Liferay Hook Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/developing-liferay-hook-plugins-with-maven)
+[Developing Liferay Hook Plugins with Maven](/docs/6-2/tutorials/-/knowledge_base/t/developing-liferay-hook-plugins-with-maven)
 
-[Developing Liferay Theme Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/developing-liferay-theme-plugins-with-maven)
+[Developing Liferay Theme Plugins with Maven](/docs/6-2/tutorials/-/knowledge_base/t/developing-liferay-theme-plugins-with-maven)
 
-[Developing Liferay Layout Template Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/developing-liferay-layout-template-plugins-with-mav)
+[Developing Liferay Layout Template Plugins with Maven](/docs/6-2/tutorials/-/knowledge_base/t/developing-liferay-layout-template-plugins-with-mav)
 

@@ -1,6 +1,10 @@
-# Forgot Password Screenlet for Android [](id=forgotpasswordscreenlet-for-android)
+---
+header-id: forgotpasswordscreenlet-for-android
+---
 
-## Requirements [](id=requirements)
+# Forgot Password Screenlet for Android
+
+## Requirements
 
 - Android SDK 4.0 (API Level 15) or above
 - Liferay Portal 6.2 (CE or EE), Liferay 7.0 CE, Liferay DXP 
@@ -9,16 +13,16 @@
   or 
   [Liferay Portal EE](http://www.liferay.com/marketplace/-/mp/application/54369726)). 
 
-## Compatibility [](id=compatibility)
+## Compatibility
 
 - Android SDK 4.0 (API Level 15) and above
 
-## Xamarin Requirements [](id=xamarin-requirements)
+## Xamarin Requirements
 
 - Visual Studio 7.2
 - Mono .NET framework 5.4.1.6
 
-## Features [](id=features)
+## Features
 
 The Forgot Password Screenlet sends an email to registered users with their 
 new passwords or password reset links, depending on the server configuration. 
@@ -28,7 +32,7 @@ The available authentication methods are
 - Screen name
 - User id
 
-## JSON Services Used [](id=json-services-used)
+## JSON Services Used
 
 Screenlets in Liferay Screens call JSON web services in the portal. This 
 Screenlet calls the following services and methods.
@@ -39,32 +43,32 @@ Screenlet calls the following services and methods.
 | `UserService` | `sendPasswordByUserId` |  |
 | `UserService` | `sendPasswordByScreenName` |  |
 
-## Module [](id=module)
+## Module
 
 - Auth
 
-## Views [](id=views)
+## Views
 
 - Default
 - Material
 
 ![The Forgot Password Screenlet with the Default (left) and Material (right) Viewsets.](../../images/screens-android-forgotpwd.png)
 
-## Portal Configuration [](id=portal-configuration)
+## Portal Configuration
 
 To use Forgot Password Screenlet, the portal must be configured to allow users 
 to request new passwords. The below sections show you how to do this. 
 Also, [Liferay Screens' Compatibility Plugin](https://github.com/liferay/liferay-screens/tree/master/portal) 
 must be installed. 
 
-### Authentication Method [](id=authentication-method)
+### Authentication Method
 
 The authentication method configured in the portal can be different from the one 
 used by this Screenlet. For example, it's *perfectly fine* to use `screenName` 
 for sign in authentication, but allow users to recover their password using the 
 `email` authentication method.
 
-### Password Reset [](id=password-reset)
+### Password Reset
 
 Password recovery depends on the authentication settings in the portal:
 
@@ -79,22 +83,22 @@ For more details on authentication in Liferay Portal, please refer to the
 [Configuring Portal Settings](/portal/-/knowledge_base/6-2/configuring-portal-settings) 
 section of the User Guide.
 
-### Anonymous Request [](id=anonymous-request)
+### Anonymous Request
 
 An anonymous request can be made without the user being logged in. However, 
 authentication is needed to call the API. To allow this operation, the portal
 administrator should create a specific user with minimal permissions. 
 
-## Offline [](id=offline)
+## Offline
 
 This Screenlet doesn't support offline mode. It requires network connectivity.
 
-## Required Attributes [](id=required-attributes)
+## Required Attributes
 
 - `anonymousApiUserName`
 - `anonymousApiPassword`
 
-## Attributes [](id=attributes)
+## Attributes
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
@@ -104,7 +108,7 @@ This Screenlet doesn't support offline mode. It requires network connectivity.
 | `companyId` | `number` | When set, a user within the specified company is authenticated. If the value is set to `0`, the company specified in `LiferayServerContext` is used. |
 | `basicAuthMethod` | `string` | The authentication method presented to the user. This can be `email`, `screenName`, or `userId`. The default value is `email`. |
 
-## Listener [](id=listener)
+## Listener
 
 The Forgot Password Screenlet delegates some events to an object that implements 
 the `ForgotPasswordListener` interface. This interface lets you implement the 

@@ -1,4 +1,8 @@
-# Understanding Liferay's Releases [](id=understanding-liferays-releases)
+---
+header-id: understanding-liferays-releases
+---
+
+# Understanding Liferay's Releases
 
 Which version of Liferay should you install? That's an easy question to answer:
 if this is a new installation, we recommend you install the latest version
@@ -38,7 +42,7 @@ These rules are relaxed when a minor or major release is still in beta quality.
 
 Now let's delve into the evolution of versions.
 
-## Release Process [](id=release-process)
+## Release Process
 
 Each release of Liferay has a surname that specifies its expected quality.  This
 is needed because pre-releases of Liferay look very much like maintenance
@@ -91,7 +95,7 @@ installation.
   work in Liferay 6.2 GA2 or a GA2 fix pack. 
 
 For more details on updating Liferay Portal, see the
-[Upgrading Liferay](/discover/deployment/-/knowledge_base/6-2/upgrading-liferay)
+[Upgrading Liferay](/docs/6-2/deploy/-/knowledge_base/d/upgrading-liferay)
 article.
 
 Liferay Portal is a very flexible application that runs well on several

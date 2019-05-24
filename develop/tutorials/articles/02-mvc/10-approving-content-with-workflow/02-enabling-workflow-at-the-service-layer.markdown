@@ -1,4 +1,8 @@
-# Enabling Workflow at the Service Layer [](id=enabling-workflow-at-the-service-layer)
+---
+header-id: enabling-workflow-at-the-service-layer
+---
+
+# Enabling Workflow at the Service Layer
 
 In the Learning Path on assets, you learned that asset enabled entities are
 added to the `AssetEntry` table. There's no special table for workflow entities,
@@ -18,7 +22,7 @@ proper fields for workflow. However, if you add an `Entry`, you'll see that the
 new fields are not populated. The local service implementation classes need
 some modifications to put values in these fields. 
 
-## Setting the Workflow Fields in EntryLocalServiceImpl [](id=setting-the-workflow-fields-in-entrylocalserviceimpl)
+## Setting the Workflow Fields in EntryLocalServiceImpl
 
 Open `EntryLocalServiceImpl` and add the following line in the
 `addGuestbookEntry` method, immediately following the current setter methods
@@ -88,7 +92,7 @@ workflow status and does one of two things:
 - If the entity is not approved, it is marked as not visible and can't be
   displayed in the Asset Publisher portlet.
 
-## Setting the Workflow Fields in GuestbookLocalServiceImpl [](id=setting-the-workflow-fields-in-guestbooklocalserviceimpl)
+## Setting the Workflow Fields in GuestbookLocalServiceImpl
 
 You need to repeat the above steps to enable the service layer of the
 `Guestbook` entity to set the necessary status fields needed for workflow.

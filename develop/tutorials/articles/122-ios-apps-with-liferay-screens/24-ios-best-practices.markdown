@@ -1,4 +1,8 @@
-# iOS Best Practices [](id=ios-best-practices)
+---
+header-id: ios-best-practices
+---
+
+# iOS Best Practices
 
 When developing iOS projects with Liferay Screens, there are a few best 
 practices that you should follow to ensure your code is as clean and bug-free as 
@@ -7,13 +11,13 @@ coding conventions for contributing to the Liferay Screens project on GitHub.
 [Click here](https://github.com/liferay/liferay-screens/blob/master/ios/swift-style-guide.md) 
 to see these.
 
-## Naming Conventions [](id=naming-conventions)
+## Naming Conventions
 
 Using the naming conventions described here leads to consistency and a better 
 understanding of the Screens library. This makes working with your Screenlets 
 much simpler. 
 
-### Screenlet Folder [](id=screenlet-folder)
+### Screenlet Folder
 
 Your Screenlet folder's name should indicate your Screenlet's functionality. For 
 example, 
@@ -21,37 +25,37 @@ example,
 
 If you have multiple Screenlets that operate on the same entity, you can place 
 them inside a folder named for that entity. For example, 
-[Asset Display Screenlet](/develop/reference/-/knowledge_base/6-2/asset-display-screenlet-for-ios) 
+[Asset Display Screenlet](/docs/6-2/reference/-/knowledge_base/r/asset-display-screenlet-for-ios) 
 and 
-[Asset List Screenlet](/develop/reference/-/knowledge_base/6-2/assetlistscreenlet-for-ios) 
+[Asset List Screenlet](/docs/6-2/reference/-/knowledge_base/r/assetlistscreenlet-for-ios) 
 both work with Liferay assets. They're therefore in the Screens library's 
 [`Asset` folder](https://github.com/liferay/liferay-screens/tree/master/ios/Framework/Core/Asset). 
 
-### Screenlets [](id=screenlets)
+### Screenlets
 
 Naming Screenlets properly is very important; they're the main focus of Liferay 
 Screens. Your Screenlet should be named with its principal action first, 
 followed by *Screenlet*. Its Screenlet class should also follow this pattern. 
 For example, 
-[Login Screenlet's](/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-ios) 
+[Login Screenlet's](/docs/6-2/reference/-/knowledge_base/r/loginscreenlet-for-ios) 
 principal action is to log users into a Liferay instance. Its Screenlet class is 
 `LoginScreenlet`. 
 
-### View Models [](id=view-models)
+### View Models
 
 You should place View Models in your Screenlet's root folder and name them 
 after your Screenlet. For example, 
-[Forgot Password Screenlet's](/develop/reference/-/knowledge_base/6-2/forgotpasswordscreenlet-for-ios) 
+[Forgot Password Screenlet's](/docs/6-2/reference/-/knowledge_base/r/forgotpasswordscreenlet-for-ios) 
 View Model is in the 
 [`ForgotPasswordScreenlet` folder](https://github.com/liferay/liferay-screens/tree/master/ios/Framework/Core/Auth/ForgotPasswordScreenlet) 
 and is named `ForgotPasswordViewModel`. 
 
-### Interactors [](id=interactors)
+### Interactors
 
 You should place your Screenlet's Interactors in a folder named `Interactors` in 
 your Screenlet's root folder. You should name each Interactor with its action 
 first, followed by *Interactor*. For example, 
-[Rating Screenlet](/develop/reference/-/knowledge_base/6-2/rating-screenlet-for-ios) 
+[Rating Screenlet](/docs/6-2/reference/-/knowledge_base/r/rating-screenlet-for-ios) 
 has three Interactors in 
 [its `Interactors` folder](https://github.com/liferay/liferay-screens/tree/master/ios/Framework/Core/Rating/Interactors): 
 
@@ -59,7 +63,7 @@ has three Interactors in
 - `LoadRatingsInteractor`: Loads an asset's ratings
 - `UpdateRatingInteractor`: Updates an asset's ratings
 
-### Connectors [](id=connectors)
+### Connectors
 
 Name your Connectors with the same naming conventions as Interactors, replacing 
 *Interactor* with *Connector*. If your Connector calls a Liferay service, 
@@ -68,7 +72,7 @@ precede *Connector* with *Liferay*. For example,
 adds comments to an asset in a Liferay instance. A Connector that retrieves a 
 webpage's title from any URL would be called `GetWebsiteTitleConnector`. 
 
-### Themes [](id=themes)
+### Themes
 
 Place your Screenlet's Themes in a folder named *Themes* in your Screenlet's 
 root folder. If you're creating a group of similarly styled Themes for multiple 
@@ -79,7 +83,7 @@ for
 The `Default` and `Flat7` folders each contain similarly styled Themes for 
 several Screenlets. Also note that each Screenlet's Theme is in its own folder. 
 For example, 
-[Forgot Password Screenlet's](/develop/reference/-/knowledge_base/6-2/forgotpasswordscreenlet-for-ios) 
+[Forgot Password Screenlet's](/docs/6-2/reference/-/knowledge_base/r/forgotpasswordscreenlet-for-ios) 
 Default Theme is in 
 [the folder `Themes/Default/Auth/ForgotPasswordScreenlet`](https://github.com/liferay/liferay-screens/tree/master/ios/Framework/Themes/Default/Auth/ForgotPasswordScreenlet). 
 Note that the `Auth` folder is the Screenlet's module. Creating your Screenlets 
@@ -92,13 +96,13 @@ for Forgot Password Screenlet's Default theme are
 `ForgotPasswordView_default.xib` and `ForgotPasswordView_default.swift`, 
 respectively. 
 
-## Avoid Hardcoded Elements [](id=avoid-hardcoded-elements)
+## Avoid Hardcoded Elements
 
 Using constants instead of hard coded elements is a simple way to avoid bugs. 
 Constants reduce the likelihood that you'll make a typo when referring to common 
 elements. They also gather these elements in a single location. For example, 
 when you 
-[add an action to your Screenlet](/develop/tutorials/-/knowledge_base/6-2/adding-screenlet-actions), 
+[add an action to your Screenlet](/docs/6-2/tutorials/-/knowledge_base/t/adding-screenlet-actions), 
 each Screenlet action used as a `restorationIdentifier` in the View class is 
 defined as a constant in the Screenlet class. The Screenlet class's 
 `createInteractor` method then uses the constants to distinguish between the 
@@ -107,12 +111,12 @@ break your Screenlet and would be difficult to track down. Defining the actions
 in one place via constants avoids this potentially maddening complication. 
 
 Screenlet attributes, like those listed in each Screenlet's 
-[reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-ios), 
+[reference documentation](/docs/6-2/reference/-/knowledge_base/r/screenlets-in-liferay-screens-for-ios), 
 are another good example of this. Although you can set these directly in 
 Interface Builder, it's better to set them via constants in a `plist` file. This 
 puts all your Screenlets' attributes in a single location that is also subject 
 to version control. For instructions on setting attributes in a `plist` file, 
-[see the Configuring Communication with Liferay section](/develop/tutorials/-/knowledge_base/6-2/preparing-ios-projects-for-liferay-screens#configuring-communication-with-liferay) 
+[see the Configuring Communication with Liferay section](/docs/6-2/tutorials/-/knowledge_base/t/preparing-ios-projects-for-liferay-screens#configuring-communication-with-liferay) 
 of the tutorial on preparing iOS projects for Liferay Screens. 
 
 To retrieve these values in your code, you can use the following `LiferayServerContext` methods:
@@ -138,13 +142,13 @@ it to Image Gallery Screenlet's `folderId` attribute:
         }
     }
 
-## Stay in Your Layer [](id=stay-in-your-layer)
+## Stay in Your Layer
 
 When accessing variables that belong to other Screenlet components, you should 
 avoid those outside your current Screenlet layer. This achieves better 
 decoupling between the layers, which tends to reduce bugs and simplify 
 maintenance. For an explanation of the layers in Liferay Screens, see 
-[the architecture tutorial](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios).
+[the architecture tutorial](/docs/6-2/tutorials/-/knowledge_base/t/architecture-of-liferay-screens-for-ios).
 For example, you shouldn't directly access View variables from an Interactor. 
 This Interactor's `start` method gets a View instance and accesses its `title` 
 variable: 
@@ -176,7 +180,7 @@ Interactor now contains its own `title` variable, set in its initializer:
 The Screenlet class's `createInteractor` method calls this initializer when 
 creating an instance of the Interactor. Also note that the Screenlet's View 
 Model is used to retrieve the View's `title`. As explained in the tutorial 
-[Supporting Multiple Themes in Your Screenlet](/develop/tutorials/-/knowledge_base/6-2/supporting-multiple-themes-in-your-screenlet), 
+[Supporting Multiple Themes in Your Screenlet](/docs/6-2/tutorials/-/knowledge_base/t/supporting-multiple-themes-in-your-screenlet), 
 a View Model serves as an abstraction layer for your View, which lets you use 
 different Themes with a Screenlet: 
 
@@ -204,18 +208,18 @@ wouldn't be possible for layers to interact):
 - The Screenlet class's View Model references. This is required for the 
   Screenlet to communicate with the View. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-screenlets)
+[Creating iOS Screenlets](/docs/6-2/tutorials/-/knowledge_base/t/creating-ios-screenlets)
 
-[Creating iOS List Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-ios-list-screenlets)
+[Creating iOS List Screenlets](/docs/6-2/tutorials/-/knowledge_base/t/creating-ios-list-screenlets)
 
-[Creating iOS Themes](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes)
+[Creating iOS Themes](/docs/6-2/tutorials/-/knowledge_base/t/creating-ios-themes)
 
-[Supporting Multiple Themes in Your Screenlet](/develop/tutorials/-/knowledge_base/6-2/supporting-multiple-themes-in-your-screenlet)
+[Supporting Multiple Themes in Your Screenlet](/docs/6-2/tutorials/-/knowledge_base/t/supporting-multiple-themes-in-your-screenlet)
 
-[Adding Screenlet Actions](/develop/tutorials/-/knowledge_base/6-2/adding-screenlet-actions)
+[Adding Screenlet Actions](/docs/6-2/tutorials/-/knowledge_base/t/adding-screenlet-actions)
 
-[Create and Use a Connector with Your Screenlet](/develop/tutorials/-/knowledge_base/6-2/create-and-use-a-connector-with-your-screenlet)
+[Create and Use a Connector with Your Screenlet](/docs/6-2/tutorials/-/knowledge_base/t/create-and-use-a-connector-with-your-screenlet)
 
-[Architecture of Liferay Screens for iOS](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-ios)
+[Architecture of Liferay Screens for iOS](/docs/6-2/tutorials/-/knowledge_base/t/architecture-of-liferay-screens-for-ios)

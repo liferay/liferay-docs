@@ -1,4 +1,8 @@
-# Using Web Services for Remote Portlets (WSRP) [](id=using-web-services-for-remote-portlets-wsrp)
+---
+header-id: using-web-services-for-remote-portlets-wsrp
+---
+
+# Using Web Services for Remote Portlets (WSRP)
 
 The Web Services for Remote Portlets (WSRP) specification defines a web service
 interface for accessing and interacting with presentation-oriented web services
@@ -22,7 +26,7 @@ presents it to the user in a portlet window.
 Below, you'll see how the components interact with each other. So without
 further ado, let's explore WSRP in Liferay!
 
-## WSRP with Liferay [](id=wsrp-with-liferay)
+## WSRP with Liferay
 
 Liferay provides a deployable WSRP portlet that supports the 1.0 and 2.0
 specifications. The portlet is available from Liferay Marketplace as a CE or EE
@@ -66,22 +70,18 @@ Now that you know a little bit about the WSRP process, let's begin configuring
 WSRP on Liferay Portal. For this demonstration, we'll assume you have two portal
 servers.
 
-+$$$
-
-**Tip**: If you're following along with this
- example and don't have an additional portal server, you can download another
- instance of Liferay Portal and have it running at the same time as your current
- Liferay instance to simulate an additional portal server. Remember, typical use
- cases have WSRP producers and consumers linked on differing portal servers. To
- run two portal instances locally at the same time, you'll need to change one of
- your portal's server configurations. Navigate to one of your portal's
- `tomcat-[VERSION]\conf\server.xml` and change the `port=` designations to
- different values (e.g., change `8080` to `18080`). Also, you can specify the
- new port number for your browser launcher URL by adding
- `browser.launcher.url=http://localhost:18080` to your portal's
- `portal-ext.properties` file.
-
-$$$
+| **Tip**: If you're following along with this
+|  example and don't have an additional portal server, you can download another
+|  instance of Liferay Portal and have it running at the same time as your current
+|  Liferay instance to simulate an additional portal server. Remember, typical use
+|  cases have WSRP producers and consumers linked on differing portal servers. To
+|  run two portal instances locally at the same time, you'll need to change one of
+|  your portal's server configurations. Navigate to one of your portal's
+|  `tomcat-[VERSION]\conf\server.xml` and change the `port=` designations to
+|  different values (e.g., change `8080` to `18080`). Also, you can specify the
+|  new port number for your browser launcher URL by adding
+|  `browser.launcher.url=http://localhost:18080` to your portal's
+|  `portal-ext.properties` file.
 
 To create a producer, go to the *Producers* tab and click *Add Producer*. Give
 your producer a name and choose the appropriate version of WSRP to use. Liferay
@@ -119,7 +119,7 @@ portal.
 
 Next, you'll learn how to create custom remote portlets.
 
-## Creating Custom Remote Portlets [](id=creating-custom-remote-portlets)
+## Creating Custom Remote Portlets
 
 With the demand for dynamic portlets by end users, sometimes a finite,
 pre-selected list of remote portlets isn't enough. Because of this, Liferay

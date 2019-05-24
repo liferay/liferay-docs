@@ -1,4 +1,8 @@
-# Invoking Liferay Services in Your iOS App [](id=invoking-liferay-services-in-your-ios-app)
+---
+header-id: invoking-liferay-services-in-your-ios-app
+---
+
+# Invoking Liferay Services in Your iOS App
 
 Once the appropriate Mobile SDKs are set up in your iOS project, you can access 
 and invoke Liferay Portal's services in your app. This tutorial takes you 
@@ -15,15 +19,15 @@ Objective-C.
 First, you'll learn about securing Liferay Portal's JSON web services in the 
 portal. 
 
-## Securing JSON Web Services [](id=securing-json-web-services)
+## Securing JSON Web Services
 
 The Liferay Mobile SDK calls Liferay Portal's JSON web services, which are 
 enabled by default. The web services you call via the Mobile SDK must remain 
 enabled for those calls to work. It's possible, however, to disable the web 
 services that you don't need to call. For instructions on this, see the tutorial 
-[Portal Configuration of JSON Web Services](/develop/tutorials/-/knowledge_base/6-2/portal-configuration-of-json-web-services). 
+[Portal Configuration of JSON Web Services](/docs/6-2/tutorials/-/knowledge_base/t/portal-configuration-of-json-web-services). 
 
-## Step 1: Create a Session [](id=step-1-create-a-session)
+## Step 1: Create a Session
 
 A session is a conversion state between the client and server, consisting of 
 multiple requests and responses between the two. You need a session to pass 
@@ -56,14 +60,10 @@ Liferay instance. To learn how to use OAuth authentication with the Mobile SDK,
 see the
 [OAuth sample app](https://github.com/brunofarache/liferay-ios-sdk-oauth). 
 
-+$$$
-
-**Warning:** Be careful when using administrator credentials on a production 
-Liferay instance, as you'll have permission to call any service. Make sure not 
-to modify data accidentally. Of course, the default administrator credentials 
-should be disabled on a production Liferay instance. 
-
-$$$
+| **Warning:** Be careful when using administrator credentials on a production
+| Liferay instance, as you'll have permission to call any service. Make sure not
+| to modify data accidentally. Of course, the default administrator credentials
+| should be disabled on a production Liferay instance.
 
 If you're building a sign in view for your app, you can use the `LRSignIn` 
 utility class to check if the credentials given by the user are valid:
@@ -108,7 +108,7 @@ For more examples of this, see
 Next, you're shown how to create an unauthenticated session in the limited cases 
 where this is possible.
 
-### Creating an Unauthenticated Session [](id=creating-an-unauthenticated-session)
+### Creating an Unauthenticated Session
 
 In some cases, it's possible to create an `LRSession` instance without user 
 credentials. However, most Liferay remote methods don't accept unauthenticated 
@@ -135,7 +135,7 @@ URL only:
 Fantastic! Now that you have a session, you can use it to call Liferay's 
 services.
 
-## Step 2: Import the Service [](id=step-2-import-the-service)
+## Step 2: Import the Service
 
 First, you should determine the Liferay services you need to call. You can find 
 the available portal and plugin services at 
@@ -155,7 +155,7 @@ Because service class names contain the Liferay version they're compatible with,
 you can use several Mobile SDKs simultaneously to support different Liferay 
 versions in the same app. 
 
-## Step 3: Calling the Service [](id=step-3-calling-the-service)
+## Step 3: Calling the Service
 
 Once you have a session and have imported the service class, you're ready to 
 make the service call. This is done by creating a service object for the service 
@@ -180,7 +180,7 @@ This `LRBlogsEntryService` call is a basic example of a synchronous service
 call. The method in a synchronous service call returns only after the request is 
 finished.
 
-## Non-Primitive Arguments [](id=non-primitive-arguments)
+## Non-Primitive Arguments
 
 There are some special cases in which service method arguments aren't 
 primitives. In these cases, you should use `LRJSONObjectWrapper`. For example: 
@@ -204,7 +204,7 @@ The server looks for the class name in its classpath and instantiates the object
 for you. It then calls setters, as in the previous example. The abstract class 
 `OrderByComparator` is a good example of this. This is discussed next. 
 
-### OrderByComparator [](id=orderbycomparator)
+### OrderByComparator
 
 On the server side, `OrderByComparator` is an abstract class. You must therefore 
 pass the name of a class that implements it. For example: 
@@ -235,7 +235,7 @@ the following code:
 For more examples, see the test case 
 [`OrderByComparatorTest.m`](https://github.com/liferay/liferay-mobile-sdk/blob/ios-6.2.0.17/ios/Test/OrderByComparatorTest.m).
 
-### ServiceContext [](id=servicecontext)
+### ServiceContext
 
 Another non-primitive argument is `ServiceContext`. It requires special 
 attention because most Liferay service methods require it. However, you aren't 
@@ -255,7 +255,7 @@ to a new `NSDictionary` and then passing it as the `ServiceContext` argument:
 For more examples, see the test case 
 [`ServiceContextTest.m`](https://github.com/liferay/liferay-mobile-sdk/blob/ios-6.2.0.17/ios/Test/ServiceContextTest.m). 
 
-### Binaries [](id=binaries)
+### Binaries
 
 Some Liferay services require binary argument types like `NSData` or 
 `LRUploadData`. The Mobile SDK converts `NSData` instances to `NSString` before 
@@ -311,10 +311,10 @@ request size. For example:
 For more examples of this, see the test case 
 [`FileUploadTest.m`](https://github.com/liferay/liferay-mobile-sdk/blob/ios-6.2.0.17/ios/Test/FileUploadTest.m).
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Building Mobile SDKs](/develop/tutorials/-/knowledge_base/6-2/building-mobile-sdks)
+[Building Mobile SDKs](/docs/6-2/tutorials/-/knowledge_base/t/building-mobile-sdks)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
+[Service Builder and Services](/docs/6-2/tutorials/-/knowledge_base/t/service-builder)
 
-[Creating Android Apps that Use Liferay](/develop/tutorials/-/knowledge_base/6-2/creating-android-apps-that-use-liferay)
+[Creating Android Apps that Use Liferay](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-apps-that-use-liferay)

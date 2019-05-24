@@ -1,4 +1,8 @@
-# Checking Permissions [](id=checking-permissions)
+---
+header-id: checking-permissions
+---
+
+# Checking Permissions
 
 When implementing permissions for a custom portlet, your last step is to ensure
 that the configured permissions are enforced. You can achieve this by adding
@@ -7,15 +11,11 @@ check for permission before deleting a resource, or your user interface can hide
 a button that adds an entity (e.g. a guestbook or guestbook entry) if the user
 doesn't have permission.
 
-+$$$
+| **Note:** The Guestbook project is used in this tutorial to illustrate how to
+| run permissions checks. You can find it in the Liferay Docs repository here:
+| [Liferay Guestbook project](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/01-mvc/learning-sdk/portlets/guestbook-portlet).
 
-**Note:** The Guestbook project is used in this tutorial to illustrate how to
-run permissions checks. You can find it in the Liferay Docs repository here:
-[Liferay Guestbook project](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/01-mvc/learning-sdk/portlets/guestbook-portlet).
-
-$$$
-
-## Implementing Permissions Checking [](id=implementing-permissions-checking)
+## Implementing Permissions Checking
 
 Once you've defined permissions in your
 `docroot/WEB-INF/src/resource-actions/default.xml` file, you need to implement
@@ -132,7 +132,7 @@ helper classes makes it easier to invoke permission checks. When using
 permissions helper classes, you won't have to invoke the
 `PermissionChecker.hasPermission(...)` method manually.
 
-## Creating Helper Classes for Permission Checking [](id=creating-helper-classes-for-permission-checking)
+## Creating Helper Classes for Permission Checking
 
 Helper classes streamline your code. They encapsulate the use of
 `permissionChecker` and the names of the resources for a specific portlet. This
@@ -240,14 +240,14 @@ against a guestbook resource. The action ID is used to indicate the action
 requiring the permission check. You're encouraged to use custom portlet action
 keys like the `ActionKeys.DELETE` string used above.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Customizing Liferay Portal](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+[Customizing Liferay Portal](/docs/6-2/tutorials/-/knowledge_base/t/customizing-liferay-portal)
 
-[Plugin Security and PACL](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl)
+[Plugin Security and PACL](/docs/6-2/tutorials/-/knowledge_base/t/plugin-security-and-pacl)
 
-[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/liferay-ide)
+[Developing Plugins with Liferay IDE](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ide)
 
-[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)
+[User Interfaces with AlloyUI](/docs/6-2/tutorials/-/knowledge_base/t/alloyui)
 
-[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+[Liferay UI Taglibs](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ui-taglibs)

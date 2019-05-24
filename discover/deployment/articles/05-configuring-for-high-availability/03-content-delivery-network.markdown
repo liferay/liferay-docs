@@ -1,4 +1,8 @@
-# Content Delivery Network [](id=content-delivery-network)
+---
+header-id: content-delivery-network
+---
+
+# Content Delivery Network
 
 A Content Delivery Network (CDN) is an interconnected system of servers deployed
 in multiple data centers that use geographical proximity as a criteria to
@@ -11,7 +15,7 @@ general guidelines for using a CDN in your Liferay Portal instance. Then, you'll
 learn the steps to configure a CDN for your portal. It's time to expand your
 Liferay content around the world! 
 
-## Using CDN for Performance Enhancements [](id=using-cdn-for-performance-enhancements)
+## Using CDN for Performance Enhancements
 
 A CDN serves web resources to users of a Liferay Portal instance. These
 resources (images, CSS files, JavaScript files, etc.) from the portal are stored
@@ -33,7 +37,7 @@ Because of the reduced wait time for requests and reduced load on your
 application server, a CDN is a great option to improve your portal's
 performance. Using a CDN with Liferay, however, has some restrictions. 
 
-## Liferay CDN Requirements [](id=liferay-cdn-requirements)
+## Liferay CDN Requirements
 
 Liferay only works with CDNs that can dynamically retrieve requested resources
 from Liferay. Dynamic resources are resources which change over time or via
@@ -62,7 +66,7 @@ requires permission checking or complex policy access.
 There are several properties in Liferay that enable you to configure your CDN
 and tweak it to suite your portal's needs. You'll learn how to do this next.
 
-## Configuring Liferay to Use a CDN [](id=configuring-liferay-to-use-a-cdn)
+## Configuring Liferay to Use a CDN
 
 Now that you have a general understanding of what a CDN accomplishes and how
 it's used in Liferay, it's time to set one up for yourself. You can set your CDN

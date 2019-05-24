@@ -1,4 +1,8 @@
-# Editions of Liferay [](id=editions-of-liferay)
+---
+header-id: editions-of-liferay
+---
+
+# Editions of Liferay
 
 Liferay ships in two editions: one for the community and one for enterprise
 subscribers. The community edition is the same Liferay Portal that has been

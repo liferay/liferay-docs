@@ -1,4 +1,8 @@
-# Using PreDestroy and BridgePreDestroy Annotations with Liferay Faces Bridge [](id=using-predestroy-and-bridgepredestroy-annotations-with-liferay-faces-bridg)
+---
+header-id: using-predestroy-and-bridgepredestroy-annotations-with-liferay-faces-bridg
+---
+
+# Using PreDestroy and BridgePreDestroy Annotations with Liferay Faces Bridge
 
 For this tutorial, you'll learn about the`PreDestroy` and `BridgePreDestroy`
 annotations and how to use them. 
@@ -9,12 +13,8 @@ destroyed, they typically annotate a method inside the bean using the
 discusses the need for the `@BridgePreDestroy` and
 `@BridgeRequestScopeAttributeAdded` annotations in the bridge API. 
 
-+$$$
-
-**Note:** For an in-depth discussion of this issue, please refer to
-<http://issues.liferay.com/browse/FACES-146>. 
-
-$$$
+| **Note:** For an in-depth discussion of this issue, please refer to
+| <http://issues.liferay.com/browse/FACES-146>.
 
 In order to understand this requirement, it's necessary to differentiate between
 *local* portals and *remote* portals. Local portals invoke portlets that are
@@ -63,14 +63,14 @@ Be learning these requirements, you're able to perform cleanup on managed-beans
 before they're destroyed. You can do all of this while still abiding by section
 6.8.1 of the JSR 329/378 standard. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Understanding Liferay Faces Bridge](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-bridge)
+[Understanding Liferay Faces Bridge](/docs/6-2/tutorials/-/knowledge_base/t/understanding-liferay-faces-bridge)
 
-[Liferay Faces Bridge UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-bridge-ui-components)
+[Liferay Faces Bridge UI Components](/docs/6-2/tutorials/-/knowledge_base/t/liferay-faces-bridge-ui-components)
 
-[Understanding Liferay Faces Alloy](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-alloy)
+[Understanding Liferay Faces Alloy](/docs/6-2/tutorials/-/knowledge_base/t/understanding-liferay-faces-alloy)
 
-[Liferay Faces Alloy UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-alloy-ui-components)
+[Liferay Faces Alloy UI Components](/docs/6-2/tutorials/-/knowledge_base/t/liferay-faces-alloy-ui-components)
 
-[Understanding Liferay Faces Portal](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-portal)
+[Understanding Liferay Faces Portal](/docs/6-2/tutorials/-/knowledge_base/t/understanding-liferay-faces-portal)

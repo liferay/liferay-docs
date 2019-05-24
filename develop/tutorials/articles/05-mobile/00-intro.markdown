@@ -1,4 +1,8 @@
-# Writing an Android App with Liferay Screens [](id=writing-an-android-app-for-your-portal)
+---
+header-id: writing-an-android-app-for-your-portal
+---
+
+# Writing an Android App with Liferay Screens
 
 Users expect to access portal content from their mobile devices. As an intrepid
 developer, you naturally want to turn these expectations into reality. 
@@ -16,7 +20,7 @@ If you're an experienced Android developer but need a start-to-finish guide on
 how to integrate Android apps with Liferay Portal, you're in the right place. 
 This Learning Path walks you through the creation of an Android app that 
 interacts with the Guestbook portlet developed in the 
-[Liferay MVC learning path](/develop/tutorials/-/knowledge_base/6-2/writing-a-liferay-mvc-application). 
+[Liferay MVC learning path](/docs/6-2/tutorials/-/knowledge_base/t/writing-a-liferay-mvc-application). 
 Since this is a custom portlet, you'll write your own Screenlets that let your 
 app retrieve and display guestbooks and their entries. 
 

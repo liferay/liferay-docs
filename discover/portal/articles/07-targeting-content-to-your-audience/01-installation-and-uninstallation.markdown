@@ -1,4 +1,8 @@
-# Installation and Uninstallation [](id=installation-and-uninstallation)
+---
+header-id: installation-and-uninstallation
+---
+
+# Installation and Uninstallation
 
 The easiest way to install the Audience Targeting app is via
 [Liferay Marketplace](http://www.liferay.com/marketplace). Make sure to install
@@ -10,7 +14,7 @@ running Liferay EE.
 
 If you're running Liferay on JBoss, make sure to have your
 `jboss-deployment-structure.xml` file configured correctly. See the
-[Installing Liferay on JBoss](/discover/deployment/-/knowledge_base/6-2/installing-liferay-on-jboss-7-1)
+[Installing Liferay on JBoss](/docs/6-2/deploy/-/knowledge_base/d/installing-liferay-on-jboss-7-1)
 instructions for details.
 
 If you're running Liferay on WebLogic, note that the Audience Targeting app
@@ -20,7 +24,7 @@ If you're running Liferay on WebSphere, note that the Audience Targeting app
 requires Liferay 6.2 EE SP11 and above to work properly. Also, when running
 Liferay on WebSphere, you must have the servlet filters configured to initialize
 on application startup. See the
-[Installing Liferay on WebSphere 8.5](/discover/deployment/-/knowledge_base/6-2/installing-liferay-on-websphere-8-5)
+[Installing Liferay on WebSphere 8.5](/docs/6-2/deploy/-/knowledge_base/d/installing-liferay-on-websphere-8-5)
 section for details.
 
 If you can't uninstall the Audience Targeting app via Marketplace or you want to

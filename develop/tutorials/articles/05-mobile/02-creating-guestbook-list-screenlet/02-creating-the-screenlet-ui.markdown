@@ -1,4 +1,8 @@
-# Creating Guestbook List Screenlet's UI [](id=creating-guestbook-list-screenlets-ui)
+---
+header-id: creating-guestbook-list-screenlets-ui
+---
+
+# Creating Guestbook List Screenlet's UI
 
 Recall that in Liferay Screens for Android, Screenlet UIs are called Views, and 
 every Screenlet must have at least one View. In this article, you'll use the 
@@ -19,13 +23,13 @@ following steps to create a View for Guestbook List Screenlet:
    For a list Screenlet, this is a scrollable list. 
 
 Note that these are the same steps for creating a View as those in 
-[the list Screenlet tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-android-list-screenlets#creating-the-screenlets-view). 
+[the list Screenlet tutorial](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-list-screenlets#creating-the-screenlets-view). 
 
 You'll create Guestbook List Screenlet's View in its own package inside the 
 `guestbooklistscreenlet` package. Create a new package named `view` inside the 
 `guestbooklistscreenlet` package. Now you're ready to create the row layout. 
 
-## Creating the Row Layout [](id=creating-the-row-layout)
+## Creating the Row Layout
 
 First, you must create the layout that defines the UI for each row instance in 
 the list. Since each row in Guestbook List Screenlet displays only a single 
@@ -51,7 +55,7 @@ Note that the `textSize` and `padding` values result in clean, readable text for
 this example. When you develop your own list Screenlets, you can style your row 
 layouts however you like. 
 
-## Creating the Adapter Class [](id=creating-the-adapter-class)
+## Creating the Adapter Class
 
 [Android adapters](https://developer.android.com/guide/topics/ui/declaring-layout.html#AdapterViews) 
 fill a layout with content. In Guestbook List Screenlet, the layout is 
@@ -133,7 +137,7 @@ text.
 
 Next, you'll create the View class. 
 
-## Creating the View Class [](id=creating-the-view-class)
+## Creating the View Class
 
 Recall that the View class controls a Screenlet's UI. It renders the UI, 
 handles user interactions, and communicates with the Screenlet class. The list 
@@ -195,7 +199,7 @@ returning the row layout `guestbook_row`.
 
 Now you're ready to create your View's main layout. 
 
-## Creating the View's Layout [](id=creating-the-views-layout)
+## Creating the View's Layout
 
 Although you already created a layout for your list rows, you must still create 
 a layout to define the list as a whole. This layout must contain: 

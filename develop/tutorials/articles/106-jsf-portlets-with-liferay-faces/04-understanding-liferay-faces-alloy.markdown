@@ -1,4 +1,8 @@
-# Understanding Liferay Faces Alloy [](id=understanding-liferay-faces-alloy)
+---
+header-id: understanding-liferay-faces-alloy
+---
+
+# Understanding Liferay Faces Alloy
 
 Liferay Faces Alloy is distributed in a `.jar` file. You can add Liferay Faces
 Alloy as a dependency to your portlet projects, in order to use AlloyUI in a
@@ -11,7 +15,7 @@ the option of choosing the portlet's JSF Component Suite. The options include
 [*PrimeFaces*](http://primefaces.org/),
 [*RichFaces*](http://richfaces.jboss.org/), and *Liferay Faces Alloy*. You can
 visit the
-[JSF learning path](/develop/tutorials/-/knowledge_base/6-2/writing-a-jsf-application-using-liferay-faces)
+[JSF learning path](/docs/6-2/tutorials/-/knowledge_base/t/writing-a-jsf-application-using-liferay-faces)
 to walk through this process. 
 
 If you selected the Liferay Faces Alloy JSF Component Suite during your
@@ -34,14 +38,14 @@ the `alloy:` tags.
 As you can see, it's extremely easy to configure your JSF application to use
 Liferay's AlloyUI tags. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Liferay Faces Alloy UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-alloy-ui-components)
+[Liferay Faces Alloy UI Components](/docs/6-2/tutorials/-/knowledge_base/t/liferay-faces-alloy-ui-components)
 
-[Creating and Deploying JSF Portlets](/develop/tutorials/-/knowledge_base/6-2/creating-and-deploying-jsf-portlets)
+[Creating and Deploying JSF Portlets](/docs/6-2/tutorials/-/knowledge_base/t/creating-and-deploying-jsf-portlets)
 
-[Developing Liferay Faces Portlets with Maven](/develop/tutorials/-/knowledge_base/6-2/developing-liferay-faces-portlets-with-maven)
+[Developing Liferay Faces Portlets with Maven](/docs/6-2/tutorials/-/knowledge_base/t/developing-liferay-faces-portlets-with-maven)
 
-[Understanding Liferay Faces Bridge](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-bridge)
+[Understanding Liferay Faces Bridge](/docs/6-2/tutorials/-/knowledge_base/t/understanding-liferay-faces-bridge)
 
-[Understanding Liferay Faces Portal](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-portal)
+[Understanding Liferay Faces Portal](/docs/6-2/tutorials/-/knowledge_base/t/understanding-liferay-faces-portal)

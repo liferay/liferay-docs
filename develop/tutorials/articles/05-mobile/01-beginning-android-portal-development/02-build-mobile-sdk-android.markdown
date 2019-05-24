@@ -1,4 +1,8 @@
-# Building the Guestbook Mobile SDK [](id=building-the-guestbook-mobile-sdk)
+---
+header-id: building-the-guestbook-mobile-sdk
+---
+
+# Building the Guestbook Mobile SDK
 
 Once you've deployed the Guestbook portlet, you're ready to build the Guestbook
 Mobile SDK. You might be asking yourself, "Why do I have to build a separate
@@ -13,14 +17,14 @@ Mobile SDK doesn't know about (the Guestbook portlet), you must build a Mobile
 SDK that can call its services. Now put on your hard hat, because it's time to 
 get building! 
 
-## Building the Mobile SDK [](id=building-the-mobile-sdk)
+## Building the Mobile SDK
 
 Liferay provides a Mobile SDK Builder that you can use to build your own Mobile 
 SDKs. For the builder to generate the classes that can call a non-core app's 
 remote services, those services must be available and accompanied by a Web 
 Service Deployment Descriptor (WSDD). To learn how the Guestbook portlet's 
 remote services and WSDD were generated, see the article 
-[Creating Web Services for Your Application](/develop/tutorials/-/knowledge_base/6-2/creating-web-services-for-your-application). 
+[Creating Web Services for Your Application](/docs/6-2/tutorials/-/knowledge_base/t/creating-web-services-for-your-application). 
 Since the Guestbook portlet's web services already exist, you don't need to 
 generate them. Just remember that you must generate web services when developing 
 your own portlets. 

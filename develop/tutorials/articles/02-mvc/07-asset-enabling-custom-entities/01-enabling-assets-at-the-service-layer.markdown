@@ -1,4 +1,8 @@
-# Enabling Assets at the Service Layer [](id=enabling-assets-at-the-service-layer)
+---
+header-id: enabling-assets-at-the-service-layer
+---
+
+# Enabling Assets at the Service Layer
 
 Every Liferay asset is represented by a row in the `AssetEntry` table of
 Liferay's database. Each row in this table has an `entryId` primary key and
@@ -28,7 +32,7 @@ corresponding to guestbooks and guestbook entries. You'll also use Liferay's
 `AssetLink` service so that your application will support related assets.
 "Asset links" are Liferay's back-end term for related assets.
 
-## Handling Assets at the Guestbook Service Layer [](id=handling-assets-at-the-guestbook-service-layer)
+## Handling Assets at the Guestbook Service Layer
 
 Next, you need to update the add, update, and delete methods of your project's
 `GuestbookLocalServiceImpl` and `EntryLocalServiceImpl` classes. Open your
@@ -212,7 +216,7 @@ asset entry and, finally, the asset entry itself. As you might expect, the
 method signatures of the methods for deleting asset entries and asset links are
 shorter than the ones for adding/updating!
 
-## Handling Assets at the Entry Service Layer [](id=handling-assets-at-the-entry-service-layer)
+## Handling Assets at the Entry Service Layer
 
 You've updated the guestbook entity's service methods. Now it's time to update
 the guestbook entry entity's service methods. The calls you need to make to

@@ -1,4 +1,8 @@
-# Implementing Search and Indexing [](id=implementing-search-and-indexing)
+---
+header-id: implementing-search-and-indexing
+---
+
+# Implementing Search and Indexing
 
 Liferay's search and indexing functionality is provided by Apache Lucene, a
 Java-based search library. To implement search and indexing functionality for an
@@ -38,7 +42,7 @@ make sure you're familiar with the following search and indexing terminology.
 - The result of a search is a collection of *hits*. Hits are pointers to
   documents that match the search query.
 
-## Creating and Registering an Indexer Class [](id=creating-and-registering-an-indexer-class)
+## Creating and Registering an Indexer Class
 
 Indexer classes are responsible for creating the Lucene documents that represent
 your entities. When creating an indexer class, you need to decide which
@@ -51,7 +55,7 @@ existing portal frameworks such as faceted search. If you want to asset-enable
 your entities, creating an indexer for them is a necessary step. When
 creating an indexer class, you can use the indexer classes that correspond to
 Liferay assets as examples. These include `BlogsIndexer`,
-`JournalArticleIndexer`, `WikiPageIndexer`, etc. You can refer to the [Search and Indexing](/develop/tutorials/-/knowledge_base/6-2/enabling-search-and-indexing)
+`JournalArticleIndexer`, `WikiPageIndexer`, etc. You can refer to the [Search and Indexing](/docs/6-2/tutorials/-/knowledge_base/t/enabling-search-and-indexing)
 learning path for another example.
 
 If your indexer class extends `com.liferay.portal.kernel.search.BaseIndexer` (as
@@ -75,7 +79,7 @@ should contain the names of the entity classes and the name of the associated
 portlet. Liferay's `*Indexer` classes follow this convention. Using these
 constants in your plugin ensures that you are consistently using the correct
 class names and portlet ID throughout your indexing code. The 
-[search and indexing learning path](/develop/tutorials/-/knowledge_base/6-2/enabling-search-and-indexing) 
+[search and indexing learning path](/docs/6-2/tutorials/-/knowledge_base/t/enabling-search-and-indexing) 
 referenced above explains how to implement the required methods. Liferay's 
 `*Indexer` classes also provide good examples.
 
@@ -106,12 +110,8 @@ indexer. To access the Script console, go to *Admin* &rarr; *Control Panel*,
 then click on *Server Administration*, then *Script*. Select *Groovy* for the
 language, and then enter the following script.
 
-+$$$
-
-**Caution:** Before executing any script on a production Liferay instance, make
-sure to test it locally first.
-
-$$$
+| **Caution:** Before executing any script on a production Liferay instance, make
+| sure to test it locally first.
 
 Review the script, then click *Execute*.
 
@@ -138,7 +138,7 @@ Check your console to find a list of portlet IDs and their associated indexer
 class names. Check that your portlet and the indexer class that you registered
 in `liferay-portlet.xml` appear in the list.
 
-## Implementing Indexing at the Service Layer [](id=implementing-indexing-at-the-service-layer)
+## Implementing Indexing at the Service Layer
 
 If you're creating a data-driven application, you've presumably written code for
 adding, updating, and deleting your entities. If you want the documents
@@ -237,7 +237,7 @@ search query syntax, please refer to Lucene's
 [documentation](http://lucene.apache.org/core/3_5_0/queryparsersyntax.html).
 Note: Liferay 6.2 uses Lucene 3.5.0.
 
-## Providing a Search Mechanism [](id=providing-a-search-mechanism)
+## Providing a Search Mechanism
 
 Now that your indexer has been registered and the index is updated whenever an
 entity is added, updated, or deleted, it's time to create a search mechanism.
@@ -295,7 +295,7 @@ package path and entity name. Then click *Save*. You can add any number of
 entities to the Search portlet's configuration this way. For more
 information on the JSON configuration of the Search portlet, please refer to the
 Search portlet's documentation:
-[Searching for Content in Liferay](/discover/portal/-/knowledge_base/6-2/searching-for-content-in-liferay).
+[Searching for Content in Liferay](/docs/6-2/user/-/knowledge_base/u/searching-for-content-in-liferay).
 
 However, you don't have to use Liferay's Search portlet. In this section, you'll
 learn how to use Liferay's API to create a search mechanism in your own
@@ -457,7 +457,7 @@ such a query, you could use the following code:
 In addition to `BooleanQuery`, `TermRangeQuery`, and `TermQuery`, Liferay
 provides a `StringQuery` implementation class. This query implementation allows
 you to construct queries using Lucene's query syntax. Please refer to the
-[Faceted Search and Customized Search Filtering](/develop/tutorials/-/knowledge_base/6-2/faceted-search-and-customized-search-filtering)
+[Faceted Search and Customized Search Filtering](/docs/6-2/tutorials/-/knowledge_base/t/faceted-search-and-customized-search-filtering)
 tutorial for an example that uses a `StringQuery`. Once you've performed a
 search and have obtained a `Hits` object, you can retrieve the corresponding
 documents in array form like this:
@@ -471,7 +471,7 @@ Or you can retrieve the documents in list form:
 To display the search results, you have to iterate over the array or list of
 documents. Each document is essentially a hash map of the indexed fields and
 their values. Please refer to the
-[Search and Indexing Learning Path](/develop/tutorials/-/knowledge_base/6-2/enabling-search-and-indexing)
+[Search and Indexing Learning Path](/docs/6-2/tutorials/-/knowledge_base/t/enabling-search-and-indexing)
 for an explanation of how to create a portlet user interface that facilitates
 searching and viewing search results. In that Learning Path's example, a search
 bar is added to the JSP that renders the main portlet view. When a search query
@@ -492,6 +492,6 @@ search API to configure a search context, perform a search, and obtain a list of
 search results. To explore more features of Liferay's search API, please see the
 tutorial on Faceted Search and Customized Search Filtering.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Faceted Search and Customized Search Filtering](/develop/tutorials/-/knowledge_base/6-2/faceted-search-and-customized-search-filtering)
+[Faceted Search and Customized Search Filtering](/docs/6-2/tutorials/-/knowledge_base/t/faceted-search-and-customized-search-filtering)

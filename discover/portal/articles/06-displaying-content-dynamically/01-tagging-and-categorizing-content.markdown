@@ -1,4 +1,8 @@
-# Tagging and Categorizing Content [](id=tagging-and-categorizing-content)
+---
+header-id: tagging-and-categorizing-content
+---
+
+# Tagging and Categorizing Content
 
 Tags and categories are two important tools you can use to help organize
 information on your portal. These tools help users to easily find the content
@@ -16,7 +20,7 @@ each site in the portal. This interface can be used to manage all your tags and
 categories in one place. It is important that you both tag and categorize your
 content when you enter it. Let's take a closer look at tags and categories.
 
-## Tags [](id=tags)
+## Tags
 
 Tags are an important tool that can help organize information on your portal and
 make it easier for users to find the content that they're interested in. Tags
@@ -59,7 +63,7 @@ specific tags that provide information about the tags.
 Tags are not the only portal-wide mechanism for describing content: you can also
 use categories.
 
-## Categories [](id=categories)
+## Categories
 
 Categories are similar in concept to tags, but are designed for use by
 administrators, not regular users. Hierarchies of categories can be created, and
@@ -131,7 +135,7 @@ Categories* and *Required* checkboxes for vocabularies and categories. The three
 new features are targeted vocabularies, single/multi-valued vocabularies, and
 separated widgets for every vocabulary.
 
-### Targeted Vocabularies [](id=targeted-vocabularies)
+### Targeted Vocabularies
 
 Targeted Vocabularies allow you to decide which vocabularies can be applied to
 an asset type and which vocabularies are required for an asset type. To
@@ -148,7 +152,7 @@ vocabulary is configured to be available for Web Content instances and Blog
 entries, but it is not required. It is mandatory, however, for Documents and
 Media files.
 
-### Single and Multi-valued Vocabularies [](id=single-and-multi-valued-vocabularies)
+### Single and Multi-valued Vocabularies
 
 You can also decide if users can choose one or more categories from the same
 vocabulary to apply to an asset. If a vocabulary is single-valued you can only
@@ -162,7 +166,7 @@ through the categories administration portlet. Edit a vocabulary and deselect
 the *Allow Multiple Categories* checkbox to create a single-valued vocabulary.
 Use the default option to create a multi-valued vocabulary.
 
-### Separated Widgets [](id=separated-widgets)
+### Separated Widgets
 
 A third feature of vocabularies and categories is that every vocabulary has its
 own separated widget. These widgets appear in the Categorization section of the

@@ -1,6 +1,10 @@
-# Asset List Screenlet for iOS [](id=assetlistscreenlet-for-ios)
+---
+header-id: assetlistscreenlet-for-ios
+---
 
-## Requirements [](id=requirements)
+# Asset List Screenlet for iOS
+
+## Requirements
 
 - Xcode 9.0
 - iOS 11 SDK
@@ -10,16 +14,16 @@
   or 
   [Liferay Portal EE](http://www.liferay.com/marketplace/-/mp/application/54369726)). 
 
-## Compatibility [](id=compatibility)
+## Compatibility
 
 - iOS 9 and above
 
-## Xamarin Requirements [](id=xamarin-requirements)
+## Xamarin Requirements
 
 - Visual Studio 7.2
 - Mono .NET framework 5.4.1.6
 
-## Features [](id=features)
+## Features
 
 The Asset List Screenlet can be used to show lists of [assets](/tutorials/-/knowledge_base/6-2/asset-framework) 
 from a Liferay instance. For example, you can use the Screenlet to show a 
@@ -57,7 +61,7 @@ following classes:
 
 The Asset List Screenlet also supports i18n in asset values.
 
-## JSON Services Used [](id=json-services-used)
+## JSON Services Used
 
 Screenlets in Liferay Screens call JSON web services in the portal. This 
 Screenlet calls the following services and methods.
@@ -68,11 +72,11 @@ Screenlet calls the following services and methods.
 | `ScreensassetentryService` (Screens compatibility plugin) | `getAssetEntries` | With `companyId`, `groupId`, and `portletItemName` |
 | `AssetEntryService` | `getEntriesCount` |  |
 
-## Module [](id=module)
+## Module
 
 - None
 
-## Themes [](id=themes)
+## Themes
 
 - Default
 
@@ -82,11 +86,11 @@ others, to show the items.
 
 ![Figure 1: Asset List Screenlet using the Default (`default`) Theme.](../../images/screens-ios-assetlist.png)
 
-## Offline [](id=offline)
+## Offline
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/6-2/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/docs/6-2/tutorials/-/knowledge_base/t/architecture-of-offline-mode-in-liferay-screens). 
 Here are the offline mode policies that you can use with this Screenlet: 
 
 | Policy | What happens | When to use |
@@ -96,7 +100,7 @@ Here are the offline mode policies that you can use with this Screenlet:
 | `remote-first` | The Screenlet loads the list from the portal. If this succeeds, the Screenlet shows the list to the user and stores it in the local cache for later use. If a connection issue occurs, the Screenlet retrieves the list from the local cache. If the list doesn't exist there, the Screenlet uses the delegate to notify the developer about the error. | Use this policy to show the most recent version of the data when connected, but show an outdated version when there's no connection. |
 | `cache-first` | The Screenlet loads the list from the local cache. If the list isn't there, the Screenlet requests it from the portal and notifies the developer about any errors that occur (including connectivity errors). | Use this policy to save bandwidth and loading time in case you have local (but probably outdated) data. |
 
-## Required Attributes [](id=required-attributes)
+## Required Attributes
 
 - `classNameId`
 
@@ -104,27 +108,27 @@ If you don't use `classNameId`, you must use this attribute:
 
 - `portletItemName`
 
-## Attributes [](id=attributes)
+## Attributes
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
 | `groupId` | `number` | The ID of the site (group) where the asset is stored. If set to `0`, the `groupId` specified in `LiferayServerContext` is used. The default value is `0`. |
 | `classNameId` | `number` | The ID of the asset's class name. Use values from the `AssetClassNameId` class or the portal's `classname_` database table. |
 | `portletItemName` | `string` | The archive name you used in the Asset Publisher. To use this feature, add an Asset Publisher to one of your site's pages (it may be a hidden page), configure the Asset Publisher filter (Asset Selection on configuration page), and then use the *Archive Setup* option to save this configuration with a name. Use this name in this attribute. |
-| `offlinePolicy` | `string` | The offline mode setting. The default value is `remote-first`. See the [Offline section](/develop/reference/-/knowledge_base/6-2/assetlistscreenlet-for-ios#offline) for details. |
+| `offlinePolicy` | `string` | The offline mode setting. The default value is `remote-first`. See the [Offline section](/docs/6-2/reference/-/knowledge_base/r/assetlistscreenlet-for-ios#offline) for details. |
 | `autoLoad` | `boolean` | Whether the list loads automatically when the Screenlet appears in the app's UI. The default value is `true`. |
 | `refreshControl` | `boolean` | Defines whether a standard [UIRefreshControl](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIRefreshControl_class/) is shown when the user does the pull to refresh gesture. The default value is `true`. |
 | `firstPageSize` | `number` | The number of items retrieved from the server for display on the first page. The default value is `50`. |
 | `pageSize` | `number` | The number of items retrieved from the server for display on the second and subsequent pages. The default value is `25`. |
 | `customEntryQuery` | `Dictionary` | The set of keys (string) and values (string or number) to be used in the [`AssetEntryQuery` object](/portal/6.2/javadocs/com/liferay/portlet/asset/service/persistence/AssetEntryQuery.html). These values filter the assets returned by the portal. |
 
-## Methods [](id=methods)
+## Methods
 
 | Method | Return | Explanation |
 |-----------|-----------|-------------| 
 | `loadList()` | `boolean` | Starts the request to load the list of assets. This list is shown when the response is received. Returns `true` if the request is sent. |
 
-## Delegate [](id=delegate)
+## Delegate
 
 The Asset List Screenlet delegates some events to an object that conforms to the 
 `AssetListScreenletDelegate` protocol. This protocol lets you implement the 

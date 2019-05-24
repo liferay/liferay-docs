@@ -1,4 +1,8 @@
-# Deploying Liferay Plugins with Maven [](id=deploying-liferay-plugins-with-maven)
+---
+header-id: deploying-liferay-plugins-with-maven
+---
+
+# Deploying Liferay Plugins with Maven
 
 With Maven, it's easy to deploy plugins to a Liferay Portal instance. This
 tutorial explain the process. Just follow these steps: 
@@ -6,7 +10,7 @@ tutorial explain the process. Just follow these steps:
 1.  Make sure you've specified the Liferay specific properties (the properties
     starting with `liferay.`) in your plugin's (or your parent plugin's)
     `pom.xml`. See the 
-    [Using Maven Parent Plugin Projects](/develop/tutorials/-/knowledge_base/6-2/using-liferay-maven-parent-plugin-projects)
+    [Using Maven Parent Plugin Projects](/docs/6-2/tutorials/-/knowledge_base/t/using-liferay-maven-parent-plugin-projects)
     tutorial for descriptions of these Liferay properties. 
 
     Here's an example where these *properties* are specified for a Liferay
@@ -76,18 +80,14 @@ tutorial explain the process. Just follow these steps:
         INFO  [pool-2-thread-2][PluginPackageUtil:1033] Reading plugin package for s
         ample-portlet
 
-    +$$$
- 
-    **Note:** If you get the following error after executing `mvn
-    liferay:deploy`, make sure you're executing the command from your plugin's
-    directory (e.g., `sample-portlet`)--not your parent project's directory. 
- 
-     `[ERROR] No plugin found for prefix 'liferay' in the current project and in
-     the plugin groups [org.apache.maven.plugins, org.codehaus.mojo] available
-     from the repositories [local (C:\Users\cdhoag\.m2\repository), central
-     (http://repo.maven .apache.org/maven2)] -> [Help 1]`
-    
-    $$$
+    | **Note:** If you get the following error after executing `mvn
+    | liferay:deploy`, make sure you're executing the command from your plugin's
+    | directory (e.g., `sample-portlet`)--not your parent project's directory.
+    | 
+    |  `[ERROR] No plugin found for prefix 'liferay' in the current project and in
+    |  the plugin groups [org.apache.maven.plugins, org.codehaus.mojo] available
+    |  from the repositories [local (C:\Users\cdhoag\.m2\repository), central
+    |  (http://repo.maven .apache.org/maven2)] -> [Help 1]`
 
 5.  If you're deploying the plugin to a release or snapshot repository,
     specify the repository by adding a distribution management section to your
@@ -123,23 +123,19 @@ tutorial explain the process. Just follow these steps:
 
 Your plugin is now available in your Nexus repository!
 
-+$$$
-
-**Note:** There are three build phases you'll use when developing plugins with
-Maven: 
-
-- In Maven's *compile* phase, explicit dependencies are downloaded to your
-  local repository (i.e., `.m2/repository/com/liferay/portal`).
-- In Maven's *package* phase, the plugin's inferred dependencies are downloaded
-  to your local repository (i.e., `.m2/repository`). 
-- In Maven's *install* phase, your plugin is installed to your local
-  repository. 
-
-$$$
+| **Note:** There are three build phases you'll use when developing plugins with
+| Maven:
+| 
+| - In Maven's *compile* phase, explicit dependencies are downloaded to your
+|   local repository (i.e., `.m2/repository/com/liferay/portal`).
+| - In Maven's *package* phase, the plugin's inferred dependencies are downloaded
+|   to your local repository (i.e., `.m2/repository`).
+| - In Maven's *install* phase, your plugin is installed to your local
+|   repository.
 
 Congratulations on deploying your plugin to Liferay and to your repository! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Deploying Plugins](/develop/tutorials/-/knowledge_base/6-2/deploying-plugins)
+[Deploying Plugins](/docs/6-2/tutorials/-/knowledge_base/t/deploying-plugins)
 

@@ -1,4 +1,8 @@
-# Writing a Liferay MVC Application [](id=writing-a-liferay-mvc-application)
+---
+header-id: writing-a-liferay-mvc-application
+---
+
+# Writing a Liferay MVC Application
 
 A popular way to develop Liferay applications is to use the 
 [Model View Controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) 

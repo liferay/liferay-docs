@@ -1,9 +1,13 @@
-# Liferay Faces Bridge UI Components [](id=liferay-faces-bridge-ui-components)
+---
+header-id: liferay-faces-bridge-ui-components
+---
+
+# Liferay Faces Bridge UI Components
 
 Although the JSR 329 standard does not define any JSF components that bridge
 implementations are required to provide, Liferay Faces Bridge comes with a
 handful of components that are helpful to use in JSF portlets. To learn
-more about Liferay Faces Bridge, visit the [Understanding Liferay Faces Bridge](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-bridge)
+more about Liferay Faces Bridge, visit the [Understanding Liferay Faces Bridge](/docs/6-2/tutorials/-/knowledge_base/t/understanding-liferay-faces-bridge)
 tutorial.
 
 For listings, demos, and code examples of Liferay Faces Bridge components, check
@@ -32,8 +36,8 @@ namespaces for the Bridge and Portlet 2.0 tags, respectively. In the following
 tutorials, you'll explore several of these tags and learn about how they work
 inside a JSF portlet. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Liferay Faces Alloy UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-alloy-ui-components)
+[Liferay Faces Alloy UI Components](/docs/6-2/tutorials/-/knowledge_base/t/liferay-faces-alloy-ui-components)
 
-[Understanding Liferay Faces Bridge](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-bridge)
+[Understanding Liferay Faces Bridge](/docs/6-2/tutorials/-/knowledge_base/t/understanding-liferay-faces-bridge)

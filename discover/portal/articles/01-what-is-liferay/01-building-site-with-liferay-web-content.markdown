@@ -1,4 +1,8 @@
-# Building a site with Liferay Web Content [](id=building-a-site-with-liferay-web-content)
+---
+header-id: building-a-site-with-liferay-web-content
+---
+
+# Building a site with Liferay Web Content
 
 When you log into Liferay and look at its default screen, one thing should jump
 out at you right away: it's built for all clients that access the web, not just
@@ -102,7 +106,7 @@ related assets, and more.
 This is just the web content portion of Liferay's content management system.
 Liferay Portal is also great at managing file-based content. 
 
-## Keeping track of documents, images, video, and more [](id=keeping-track-of-documents-images-video-and-more)
+## Keeping track of documents, images, video, and more
 
 It's rare to find in an open source project a full-featured content management
 system. Most of the time, you'll find web content management systems and

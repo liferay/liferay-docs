@@ -1,4 +1,8 @@
-# Moving and Restoring Parent Entities [](id=moving-and-restoring-parent-entities)
+---
+header-id: moving-and-restoring-parent-entities
+---
+
+# Moving and Restoring Parent Entities
 
 What happens if you need to trash a parent entity, such as a parent wiki page, 
 or a web content folder full of articles? Don't sweat it. Moving parent entries
@@ -10,7 +14,7 @@ move/restore albums to/from the Recycle Bin. This tutorial uses code from the
 Jukebox portlet to demonstrate moving/restoring parent entities. You can
 translate the logic for your app's parent entities. 
 
-## Step 1: Mark Container Model Service Entities [](id=step-1-mark-container-model-service-entities)
+## Step 1: Mark Container Model Service Entities
 
 First, define each container/parent model as such in your app's services. To do
 this, open your app's `service.xml` file and add the `container-model="true"`
@@ -30,7 +34,7 @@ and use these models as container models.
 
 Next, you'll handle the child entities.
 
-## Step 2: Manage Children Entities [](id=step-2-manage-children-entities)
+## Step 2: Manage Children Entities
 
 Because parent entities hold child entities, the child entities must be
 recycled if the parent entity is. You'll implement service methods both to
@@ -153,14 +157,14 @@ entities in your service definition. You've provided a means to trash/restore a
 parent's child entities when trashing/restoring that parent, and you've learned
 how the Recycle Bin UI lets you work with a parent's child entities.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Recycling Assets with the Recycle Bin](/discover/portal/-/knowledge_base/6-2/recycling-assets-with-the-recycle-bin)
+[Recycling Assets with the Recycle Bin](/docs/6-2/user/-/knowledge_base/u/recycling-assets-with-the-recycle-bin)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
+[Service Builder and Services](/docs/6-2/tutorials/-/knowledge_base/t/service-builder)
 
-[Enabling Search and Indexing](/develop/tutorials/-/knowledge_base/6-2/enabling-search-and-indexing)
+[Enabling Search and Indexing](/docs/6-2/tutorials/-/knowledge_base/t/enabling-search-and-indexing)
 
-[Asset Framework](/develop/tutorials/-/knowledge_base/6-2/asset-framework)
+[Asset Framework](/docs/6-2/tutorials/-/knowledge_base/t/asset-framework)
 
-[Asset Enabling Custom Entities](/develop/tutorials/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Asset Enabling Custom Entities](/docs/6-2/tutorials/-/knowledge_base/t/asset-enabling-custom-entities)

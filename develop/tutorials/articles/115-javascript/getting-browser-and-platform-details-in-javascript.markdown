@@ -1,4 +1,8 @@
-# Getting Browser and Platform Details in JavaScript [](id=getting-browser-and-platform-details-in-javascript)
+---
+header-id: getting-browser-and-platform-details-in-javascript
+---
+
+# Getting Browser and Platform Details in JavaScript
 
 As you design apps, you have to consider the user's browser and platform. Often,
 you find that you must tailor an app's UI to the features and limitations of
@@ -10,7 +14,7 @@ use them.
 
 First, you can determine a browser's type and version. 
 
-## Getting Browser Details [](id=getting-browser-details)
+## Getting Browser Details
 
 The following methods return `true` if the user's browser matches the type:
 
@@ -38,7 +42,7 @@ revision number might have no resemblance to the version number.
 Now that you're familiar with the browser type and version methods, you can
 learn how to get a user's platform information. 
 
-## Getting Platform Details [](id=getting-platform-details)
+## Getting Platform Details
 
 The `Liferay.Browser` object has methods that can help you determine the user's
 platform, including the user's device type and operating system. 
@@ -73,10 +77,10 @@ event:
 You can use `Liferay.Browser` object's methods to cater to users on various
 browsers and platforms. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Getting IDs, Paths, and Sign-in Details in JavaScript](/develop/tutorials/-/knowledge_base/6-2/getting-ids-paths-and-sign-in-details-in-javascript)
+[Getting IDs, Paths, and Sign-in Details in JavaScript](/docs/6-2/tutorials/-/knowledge_base/t/getting-ids-paths-and-sign-in-details-in-javascript)
 
-[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)
+[User Interfaces with AlloyUI](/docs/6-2/tutorials/-/knowledge_base/t/alloyui)
 
-[User Interfaces with the Liferay UI Taglib](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+[User Interfaces with the Liferay UI Taglib](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ui-taglibs)

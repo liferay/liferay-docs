@@ -1,13 +1,17 @@
-# Rendering Web Content in Your iOS App [](id=rendering-web-content-in-your-ios-app)
+---
+header-id: rendering-web-content-in-your-ios-app
+---
+
+# Rendering Web Content in Your iOS App
 
 Liferay Screens provides several ways to render 
-[web content](/discover/portal/-/knowledge_base/6-2/web-content-management) 
+[web content](/docs/6-2/user/-/knowledge_base/u/web-content-management) 
 in your app. For historical reasons, web content articles are `JournalArticle` 
 entities in Liferay. Using Web Content Display Screenlet is a simple and 
 powerful way to display HTML from a `JournalArticle` in your app. To fit your 
 needs, this Screenlet supports several use cases. This tutorial describes them. 
 
-## Retrieving Basic Web Content [](id=retrieving-basic-web-content)
+## Retrieving Basic Web Content
 
 The simplest use case for Web Content Display Screenlet is to retrieve a web 
 content article's HTML and render it in a 
@@ -22,7 +26,7 @@ must provide the CSS inline or use a template. The HTML returned isn't aware of
 a Liferay instance's global CSS. 
 
 You can also modify the rendered HTML with a delegate, as explained in the 
-[Web Content Display Screenlet reference documentation](/develop/reference/-/knowledge_base/6-2/webcontentdisplayscreenlet-for-ios). 
+[Web Content Display Screenlet reference documentation](/docs/6-2/reference/-/knowledge_base/r/webcontentdisplayscreenlet-for-ios). 
 
 As you can see, this is all fairly straightforward. What could go wrong? Famous 
 last words. A common mistake is to use the default site ID (`groupId`) instead 
@@ -31,10 +35,10 @@ using a default `groupId` in your app, but use a different one for Web Content
 Display Screenlet, assign the Screenlet's *Group Id* property in Interface 
 Builder. 
 
-## Using Templates [](id=using-templates)
+## Using Templates
 
 Web Content Display Screenlet can also use 
-[templates](/discover/portal/-/knowledge_base/6-2/advanced-content-with-structures-and-templates) 
+[templates](/docs/6-2/user/-/knowledge_base/u/advanced-content-with-structures-and-templates) 
 to render web content articles. For example, your Liferay instance may have 
 a custom template specifically designed to display content on mobile devices. To 
 use a template, set the template's ID as the Screenlet's `templateId` property 
@@ -44,10 +48,10 @@ Recall that structured web content in Liferay can have many templates. You can
 create your own template if there's not one suitable for displaying web content 
 in your app. 
 
-## Rendering Structured Web Content [](id=rendering-structured-web-content)
+## Rendering Structured Web Content
 
 To render 
-[structured](/discover/portal/-/knowledge_base/6-2/advanced-content-with-structures-and-templates) 
+[structured](/docs/6-2/user/-/knowledge_base/u/advanced-content-with-structures-and-templates) 
 web content in Web Content Display Screenlet, you must create a custom theme 
 capable of doing so. Also, you must create a custom theme for each structure you 
 want to display in your app. In this case, you may find it convenient to create 
@@ -61,7 +65,7 @@ each. If you create these themes as children of another custom theme called
 Regardless of where you create your themes or what you name them, use the 
 following steps to create them: 
 
-1. [Create a theme](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes) 
+1. [Create a theme](/docs/6-2/tutorials/-/knowledge_base/t/creating-ios-themes) 
    to render your web content. If you've already created your own theme, you can 
    skip this step. 
 
@@ -105,18 +109,18 @@ following steps to create them:
 
 Next, you'll learn how to display a list of web content articles in your app. 
 
-## Displaying a List of Web Content Articles [](id=displaying-a-list-of-web-content-articles)
+## Displaying a List of Web Content Articles
 
 The preceding examples show you how to use Web Content Display Screenlet to 
 display a single web content article's contents in your app. But what if you 
 want to display a list of articles instead? No problem! You can do this by using 
-[Web Content List Screenlet](/develop/reference/-/knowledge_base/6-2/web-content-list-screenlet-for-ios), 
+[Web Content List Screenlet](/docs/6-2/reference/-/knowledge_base/r/web-content-list-screenlet-for-ios), 
 or 
-[Asset List Screenlet](/develop/reference/-/knowledge_base/6-2/assetlistscreenlet-for-ios). 
+[Asset List Screenlet](/docs/6-2/reference/-/knowledge_base/r/assetlistscreenlet-for-ios). 
 
 First, you'll learn how to use Web Content List Screenlet. 
 
-### Using Web Content List Screenlet [](id=using-web-content-list-screenlet)
+### Using Web Content List Screenlet
 
 Web Content List Screenlet lets you retrieve and display a list of web content 
 articles from a web content folder. Follow these steps to use the Screenlet:
@@ -132,9 +136,9 @@ articles from a web content folder. Follow these steps to use the Screenlet:
   objects. 
 
 For more information on the Screenlet and its supported functionality, see the 
-[Web Content List Screenlet reference documentation](/develop/reference/-/knowledge_base/6-2/web-content-list-screenlet-for-ios). 
+[Web Content List Screenlet reference documentation](/docs/6-2/reference/-/knowledge_base/r/web-content-list-screenlet-for-ios). 
 
-### Using Asset List Screenlet [](id=using-asset-list-screenlet)
+### Using Asset List Screenlet
 
 Asset List Screenlet is similar to Web Content Display Screenlet in that it can 
 display a list of items from a Liferay instance. Asset List Screenlet, however, 
@@ -154,19 +158,19 @@ doing this:
   parameter as `WebContent` and then retrieve field values from the web 
   content's `structuredRecord` property. If you want custom cells, you can also 
   override the `doRegisterCellNibs` and `doCreateCell` methods. See the 
-  [Asset List Screenlet reference documentation](/develop/reference/-/knowledge_base/6-2/assetlistscreenlet-for-ios) 
+  [Asset List Screenlet reference documentation](/docs/6-2/reference/-/knowledge_base/r/assetlistscreenlet-for-ios) 
   for more details on customizing your asset list. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-ios-apps)
+[Using Screenlets in iOS Apps](/docs/6-2/tutorials/-/knowledge_base/t/using-screenlets-in-ios-apps)
 
-[Using Themes in iOS Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-themes-in-ios-screenlets)
+[Using Themes in iOS Screenlets](/docs/6-2/tutorials/-/knowledge_base/t/using-themes-in-ios-screenlets)
 
-[Creating iOS Themes](/develop/tutorials/-/knowledge_base/6-2/creating-ios-themes)
+[Creating iOS Themes](/docs/6-2/tutorials/-/knowledge_base/t/creating-ios-themes)
 
-[Web Content Display Screenlet for iOS](/develop/reference/-/knowledge_base/6-2/webcontentdisplayscreenlet-for-ios)
+[Web Content Display Screenlet for iOS](/docs/6-2/reference/-/knowledge_base/r/webcontentdisplayscreenlet-for-ios)
 
-[Web Content List Screenlet for iOS](/develop/reference/-/knowledge_base/6-2/web-content-list-screenlet-for-ios)
+[Web Content List Screenlet for iOS](/docs/6-2/reference/-/knowledge_base/r/web-content-list-screenlet-for-ios)
 
-[Asset List Screenlet for iOS](/develop/reference/-/knowledge_base/6-2/assetlistscreenlet-for-ios)
+[Asset List Screenlet for iOS](/docs/6-2/reference/-/knowledge_base/r/assetlistscreenlet-for-ios)

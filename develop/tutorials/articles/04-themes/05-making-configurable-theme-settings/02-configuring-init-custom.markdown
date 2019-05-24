@@ -1,4 +1,8 @@
-# Configuring init_custom.ftl [](id=configuring-initcustom-ftl)
+---
+header-id: configuring-initcustom-ftl
+---
+
+# Configuring init_custom.ftl
 
 So far you've added the theme settings to the *Look and Feel* menu in Liferay.
 In this section you'll add the logic to the theme settings.

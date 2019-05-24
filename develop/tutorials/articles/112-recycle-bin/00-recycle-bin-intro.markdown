@@ -1,10 +1,14 @@
-# Recycle Bin [](id=recycle-bin)
+---
+header-id: recycle-bin
+---
+
+# Recycle Bin
 
 How many times have you deleted something only to realize it was a mistake? Does
 the app you're working on have a delete function? If so, you can add the
 ability to move items into a recycle bin. Have you been looking for an easy way
 to implement this capability in your app? Fortunately, you can, with Liferay's
-[Recycle Bin](/discover/portal/-/knowledge_base/6-2/recycling-assets-with-the-recycle-bin).
+[Recycle Bin](/docs/6-2/user/-/knowledge_base/u/recycling-assets-with-the-recycle-bin).
 
 The Recycle Bin tutorials use code from Liferay's [Jukebox Portlet](https://github.com/liferay-labs/jukebox-portlet)
 to demonstrate implementing the Recycle Bin in an app. The Jukebox Portlet

@@ -1,4 +1,8 @@
-# Summary [](id=kaleo-forms-summary)
+---
+header-id: kaleo-forms-summary
+---
+
+# Summary
 
 As you can see, Liferay Portal and the Kaleo Workflow engine combine to create a
 robust environment for web content management. The Kaleo Forms portlets

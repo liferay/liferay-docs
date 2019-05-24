@@ -1,4 +1,8 @@
-# Remotely Accessing Liferay Services [](id=remotely-accessing-liferay-services)
+---
+header-id: remotely-accessing-liferay-services
+---
+
+# Remotely Accessing Liferay Services
 
 Liferay includes a utility called the *Service Builder* which is used to
 generate all of the low level code for accessing resources from the portal
@@ -114,7 +118,7 @@ of two security checks:
 2.  The user ID being used must have permission to access the resources it
     attempts to access.
 
-## Accessing Liferay's JSON Web Services [](id=accessing-liferays-json-web-services)
+## Accessing Liferay's JSON Web Services
 
 To see which Liferay service methods are registered and available for use via
 JSON web services, open your browser to the following address:
@@ -134,7 +138,7 @@ use its context path in your URL:
 
 This lists the JSON Web Service API for the plugin. 
 
-## Accessing Liferay's WSDL [](id=accessing-liferays-wsdl)
+## Accessing Liferay's WSDL
 
 After configuring the security settings properly, your first step in obtaining
 access to Liferay's remote SOAP web services is to access the WSDL. If you are

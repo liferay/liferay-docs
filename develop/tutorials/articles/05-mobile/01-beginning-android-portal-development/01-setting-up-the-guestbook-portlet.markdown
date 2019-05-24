@@ -1,25 +1,29 @@
-# Setting up the Guestbook Portlet [](id=setting-up-the-guestbook-portlet)
+---
+header-id: setting-up-the-guestbook-portlet
+---
+
+# Setting up the Guestbook Portlet
 
 Before you begin developing the Guestbook app for Android, you must set up the 
 Guestbook portlet in a Liferay Portal instance. To do this, follow these steps: 
 
-1.  [Install JDK 8](/develop/tutorials/-/knowledge_base/6-2/setting-up-the-guestbook-portlet#installing-the-jdk)
-2.  [Install and Configure a Local Liferay Portal Bundle](/develop/tutorials/-/knowledge_base/6-2/setting-up-the-guestbook-portlet#installing-and-configuring-a-local-liferay-bundle)
-3.  [Deploy the Guestbook Portlet to the Local Liferay Portal Instance](/develop/tutorials/-/knowledge_base/6-2/setting-up-the-guestbook-portlet#deploying-the-guestbook-portlet)
+1.  [Install JDK 8](/docs/6-2/tutorials/-/knowledge_base/t/setting-up-the-guestbook-portlet#installing-the-jdk)
+2.  [Install and Configure a Local Liferay Portal Bundle](/docs/6-2/tutorials/-/knowledge_base/t/setting-up-the-guestbook-portlet#installing-and-configuring-a-local-liferay-bundle)
+3.  [Deploy the Guestbook Portlet to the Local Liferay Portal Instance](/docs/6-2/tutorials/-/knowledge_base/t/setting-up-the-guestbook-portlet#deploying-the-guestbook-portlet)
 
-## Installing the JDK [](id=installing-the-jdk)
+## Installing the JDK
 
 To get started, you must have JDK 8 installed. You can download and install the 
 Java SE JDK from the 
 [Java downloads page](http://www.oracle.com/technetwork/java/javase/downloads/index.html). 
 This page also has links to the JDK installation instructions. 
 
-## Installing and Configuring a Local Liferay Portal Bundle [](id=installing-and-configuring-a-local-liferay-bundle)
+## Installing and Configuring a Local Liferay Portal Bundle
 
 First, download a Liferay Portal 6.2 Tomcat bundle from 
 [liferay.com](https://www.liferay.com/). 
 Then 
-[click here](/discover/deployment/-/knowledge_base/6-2/installing-a-bundle)
+[click here](/docs/6-2/deploy/-/knowledge_base/d/installing-a-bundle)
 and follow the instructions to install the bundle. To follow best practices, you 
 should create a `bundles` folder and unzip it there. The bundle's root 
 folder is referred to as *Liferay Home* and is named according to the 
@@ -55,7 +59,7 @@ takes you to its default site.
 Great! Next, you'll deploy the Guestbook portlet to your Liferay Portal 
 instance. 
 
-## Deploying the Guestbook Portlet [](id=deploying-the-guestbook-portlet)
+## Deploying the Guestbook Portlet
 
 Now that your portal is set up, you can deploy the Guestbook portlet to it. 
 Download the Guestbook portlet's `.war` package from 

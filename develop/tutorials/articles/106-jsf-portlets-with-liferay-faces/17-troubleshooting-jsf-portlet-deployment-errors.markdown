@@ -1,4 +1,8 @@
-# Troubleshooting JSF Portlet Deployment Errors [](id=troubleshooting-jsf-portlet-deployment-errors)
+---
+header-id: troubleshooting-jsf-portlet-deployment-errors
+---
+
+# Troubleshooting JSF Portlet Deployment Errors
 
 Many of us have experienced it; you go to deploy a new application into your
 portal instance and see the dreaded deployment error messages. What do you do?
@@ -18,23 +22,23 @@ server.
 1. Download a Liferay + *[app server]* bundle.
 
 2. Determine the correct version of Liferay Faces. Visit the
-   [Understanding the Liferay Faces Version Scheme](/develop/tutorials/-/knowledge_base/6-2/understanding-the-liferay-faces-version-scheme)
+   [Understanding the Liferay Faces Version Scheme](/docs/6-2/tutorials/-/knowledge_base/t/understanding-the-liferay-faces-version-scheme)
    tutorial for more information.
 
 3. Upgrade your app server's Mojarra version (if applicable) so it's identical
    to the one used by Liferay Faces. Visit the *Upgrading Mojarra* section of
    your respective app server's installation tutorial found in the
-   [Installation and Setup](/discover/deployment/-/knowledge_base/6-2/installation-and-setup)
+   [Installation and Setup](/docs/6-2/deploy/-/knowledge_base/d/installation-and-setup)
    section for more information.
 
 4. Upgrade your app server's Weld version (if applicable) so it's identical
    to the one used by Liferay Faces. Visit the *Upgrading Weld* section of
    your respective app server's installation tutorial found in the
-   [Installation and Setup](/discover/deployment/-/knowledge_base/6-2/installation-and-setup)
+   [Installation and Setup](/docs/6-2/deploy/-/knowledge_base/d/installation-and-setup)
    section for more information.
 
 5. Download and build Liferay Faces from its project source code. Visit the
-   [Building Liferay Faces from Source](/develop/tutorials/-/knowledge_base/6-2/building-liferay-faces-from-source)
+   [Building Liferay Faces from Source](/docs/6-2/tutorials/-/knowledge_base/t/building-liferay-faces-from-source)
    tutorial for more information.
 
 6. Build the `jsf-applicant-portlet` from liferay-faces on Github and deploy it to your
@@ -52,13 +56,9 @@ server.
         mvn -P jboss clean package
         cp target/primefaces-applicant-portlet*.war $LIFERAY_HOME/deploy
 
-    +$$$
-
-    **Note:** In some cases, you may need to clean and reinstall all projects in
-    the Git repo before you can succesfully build the demo portlets. To do
-    this, run `mvn clean install` from the top-level directory.
-
-    $$$
+    | **Note:** In some cases, you may need to clean and reinstall all projects in
+    | the Git repo before you can succesfully build the demo portlets. To do
+    | this, run `mvn clean install` from the top-level directory.
 
 8. Examine the working example WARs and find out how they are different from the
    WARs that you are having trouble deploying.

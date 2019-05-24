@@ -1,4 +1,8 @@
-# Summary [](id=summary-9)
+---
+header-id: summary-9
+---
+
+# Summary
 
 In this chapter, we explained how to install the Kaleo workflow plugin for
 Liferay EE. Liferay's Kaleo workflow engine is included with Liferay CE. We

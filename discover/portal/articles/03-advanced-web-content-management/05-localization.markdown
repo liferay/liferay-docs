@@ -1,4 +1,8 @@
-# Localization [](id=localization)
+---
+header-id: localization
+---
+
+# Localization
 
 When you create a new piece of Web Content, you have the ability to choose a
 default language. If you click *Change*, you can select your default language
@@ -23,16 +27,12 @@ followed by your preferred languages in your `portal-ext.properties` file. For
 example, `locales.enabled=ar_SA,nl_NL,hi_IN` offers *Arabic (Saudi Arabia)*,
 *Dutch (Netherlands)*, and *Hindi (India)*.
 
-+$$$
-
-**Warning:** If you switch your site's default language (e.g., via friendly
-URL), but do not have the necessary translations for localizable fields, your
-site's language values will be used from the old default language. Therefore,
-you should change the default language of your site *only* when you have
-translated values for all localizable entities. Otherwise, you may not be in
-control of what language is displayed in the portal.
-
-$$$
+| **Warning:** If you switch your site's default language (e.g., via friendly
+| URL), but do not have the necessary translations for localizable fields, your
+| site's language values will be used from the old default language. Therefore,
+| you should change the default language of your site *only* when you have
+| translated values for all localizable entities. Otherwise, you may not be in
+| control of what language is displayed in the portal.
 
 The ability to completely delete a translation in one step has also been added.
 Instead of simply disabling a translation or having to go through a multistep
@@ -47,13 +47,9 @@ can make sure those fields aren't listed as localizable. When you follow the
 steps above to localize content, only fields within the structure that had the
 *Localizable* box checked appear within the translation window.
 
-+$$$
-
-**Note:** The Localizable checkbox was removed for 6.2 CE GA1 and GA2, and 6.2
-EE GA1, SP1, and SP2. However, the Localizable checkbox is now available for
-Liferay following these versions for web content structure fields. You can view
-[LPS-33161](https://issues.liferay.com/browse/LPS-33161) for more details.
-
-$$$
+| **Note:** The Localizable checkbox was removed for 6.2 CE GA1 and GA2, and 6.2
+| EE GA1, SP1, and SP2. However, the Localizable checkbox is now available for
+| Liferay following these versions for web content structure fields. You can view
+| [LPS-33161](https://issues.liferay.com/browse/LPS-33161) for more details.
 
 Next, we'll discuss how to let users customize their site pages.

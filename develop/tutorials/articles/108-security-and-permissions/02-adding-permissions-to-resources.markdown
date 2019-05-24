@@ -1,4 +1,8 @@
-# Adding Permissions to Resources [](id=adding-permissions-to-resources)
+---
+header-id: adding-permissions-to-resources
+---
+
+# Adding Permissions to Resources
 
 Public bulletin boards are great. Anyone can inform others of just about
 anything. On the other hand, *anyone* can post just about *anything* on the
@@ -10,7 +14,7 @@ Fortunately, no matter what your portlet does, access to it and to its content
 can be controlled with permissions. Read on to learn about Liferay's permissions
 system and how add permissions to your application.
 
-## Liferay's Permission System [](id=liferays-permission-system)
+## Liferay's Permission System
 
 Liferay's permission system uses a flexible mechanism that defines the actions
 that a given user can perform within the context of the portal or a specific
@@ -66,14 +70,10 @@ qualified class names of the entities they represent. In the XML displayed
 below, permission implementations are first defined for the *portlet* resource
 and then for the *model* resources. 
 
-+$$$
-
-**Note:** For each resource, there are four scopes to which the permissions can
-be applied: company, group, group-template, or individual. See the Javadoc of
-[ResourcePermissionImpl](https://github.com/liferay/liferay-portal/blob/6.2.x/portal-impl/src/com/liferay/portal/model/impl/ResourcePermissionImpl.java)
-for more information.
-
-$$$
+| **Note:** For each resource, there are four scopes to which the permissions can
+| be applied: company, group, group-template, or individual. See the Javadoc of
+| [ResourcePermissionImpl](https://github.com/liferay/liferay-portal/blob/6.2.x/portal-impl/src/com/liferay/portal/model/impl/ResourcePermissionImpl.java)
+| for more information.
 
 You can add permissions to your custom portlets using four easy steps (also
 known as *DRAC*): 
@@ -83,15 +83,15 @@ known as *DRAC*):
 
 2. <b>R</b>egister all defined resources in the permissions system. This is also
    known as *adding resources*. This step is discussed in the tutorial 
-   [Adding and Deleting Resources](/develop/tutorials/-/knowledge_base/6-2/adding-and-deleting-resources).
+   [Adding and Deleting Resources](/docs/6-2/tutorials/-/knowledge_base/t/adding-and-deleting-resources).
 
 3. <b>A</b>ssociate the necessary permissions with resources. This step is 
-   discussed in the tutorial [Exposing the Permission Interface to Users](/develop/tutorials/-/knowledge_base/6-2/exposing-the-permission-interface-to-users).
+   discussed in the tutorial [Exposing the Permission Interface to Users](/docs/6-2/tutorials/-/knowledge_base/t/exposing-the-permission-interface-to-users).
 
 4. <b>C</b>heck permission before returning resources. This step is described in 
-   the tutorial [Checking Permissions](/develop/tutorials/-/knowledge_base/6-2/checking-permissions).
+   the tutorial [Checking Permissions](/docs/6-2/tutorials/-/knowledge_base/t/checking-permissions).
  
-## Define All Resources and Permissions [](id=define-all-resources-and-permissions)
+## Define All Resources and Permissions
 
 The first step is to define your resources and the actions that can be defined
 on them. The Guestbook portlet is used here to demonstrate how to define portlet
@@ -353,14 +353,14 @@ permissions in the context of a portlet plugin, check out the
 [Liferay Plugins repository](https://github.com/liferay/liferay-plugins)
 and examine the portlet `sample-permissions-portlet`.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Customizing Liferay Portal](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+[Customizing Liferay Portal](/docs/6-2/tutorials/-/knowledge_base/t/customizing-liferay-portal)
 
-[Plugin Security and PACL](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl)
+[Plugin Security and PACL](/docs/6-2/tutorials/-/knowledge_base/t/plugin-security-and-pacl)
 
-[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/liferay-ide)
+[Developing Plugins with Liferay IDE](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ide)
 
-[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)
+[User Interfaces with AlloyUI](/docs/6-2/tutorials/-/knowledge_base/t/alloyui)
 
-[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+[Liferay UI Taglibs](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ui-taglibs)

@@ -1,4 +1,8 @@
-# Using Liferay Maven Parent Plugin Projects [](id=using-liferay-maven-parent-plugin-projects)
+---
+header-id: using-liferay-maven-parent-plugin-projects
+---
+
+# Using Liferay Maven Parent Plugin Projects
 
 Maven supports project inheritance. You can create a *parent* project that
 contains properties that *child* projects inherit. This saves time, since you
@@ -194,7 +198,7 @@ Follow these steps to create a Liferay Maven parent plugin project:
     You can also specify these key properties in your global or user
     `settings.xml` file. To learn more about this method, visit the *Configuring
     Your Liferay Maven Project* section of the
-    [Using Maven From Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/using-maven-from-liferay-ide) 
+    [Using Maven From Liferay IDE](/docs/6-2/tutorials/-/knowledge_base/t/using-maven-from-liferay-ide) 
     tutorial. 
 
     The Liferay plugins that you develop depend on several Liferay artifacts.
@@ -202,19 +206,15 @@ Follow these steps to create a Liferay Maven parent plugin project:
     `dependencies` element. All of your parent project's modules (i.e., projects
     that refer to this parent) can leverage these dependencies. 
 
-+$$$
-
-**Note:** You could just as easily
-    include such dependencies in the POM of each of your plugin projects, but
-    specifying them in a parent project makes them accessible to child projects
-    through inheritance. 
-
-$$$
+| **Note:** You could just as easily
+|     include such dependencies in the POM of each of your plugin projects, but
+|     specifying them in a parent project makes them accessible to child projects
+|     through inheritance.
 
 You've configured your parent plugin project. 
 
 **Related Topics:**
 
-[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/liferay-ide)
-[Developing with Maven](/develop/tutorials/-/knowledge_base/6-2/maven)
+[Developing Plugins with Liferay IDE](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ide)
+[Developing with Maven](/docs/6-2/tutorials/-/knowledge_base/t/maven)
 

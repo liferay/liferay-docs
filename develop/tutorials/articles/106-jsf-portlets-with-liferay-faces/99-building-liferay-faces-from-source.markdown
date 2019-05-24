@@ -1,4 +1,8 @@
-# Building Liferay Faces From Source [](id=building-liferay-faces-from-source)
+---
+header-id: building-liferay-faces-from-source
+---
+
+# Building Liferay Faces From Source
 
 You may have several reasons for downloading and building Liferay Faces from its
 project source code: 
@@ -22,11 +26,11 @@ different Github repositories:
 
 First, you'll start with installing a Liferay Faces project. 
 
-## Installing a Liferay Faces Project [](id=installing-the-liferay-faces-project)
+## Installing a Liferay Faces Project
 
 It's important to install the version of Liferay Faces that you want. So, it's a
 good idea to check the
-[Liferay Faces Version Scheme](/develop/tutorials/-/knowledge_base/6-2/understanding-the-liferay-faces-version-scheme)
+[Liferay Faces Version Scheme](/docs/6-2/tutorials/-/knowledge_base/t/understanding-the-liferay-faces-version-scheme)
 to confirm the version of Liferay Faces. 
 
 You can either install the project by cloning it from GitHub or by downloading
@@ -80,7 +84,7 @@ Now that you've installed the Liferay Faces project, you can configure your
 environment for building the project. In the next section of this tutorial,
 you'll explore building Liferay Faces with Maven. 
 
-## Building Liferay Faces with Maven [](id=building-liferay-faces-with-maven)
+## Building Liferay Faces with Maven
 
 Maven is required to build the Liferay Faces project. You can download Maven
 from
@@ -116,10 +120,10 @@ generated in other Liferay Faces projects follow a similar folder path.
 
 That's it; you've built Liferay Faces from source! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating and Deploying JSF Portlets](/develop/tutorials/-/knowledge_base/6-2/creating-and-deploying-jsf-portlets)
+[Creating and Deploying JSF Portlets](/docs/6-2/tutorials/-/knowledge_base/t/creating-and-deploying-jsf-portlets)
 
-[Developing Liferay Faces Portlets with Maven](/develop/tutorials/-/knowledge_base/6-2/developing-liferay-faces-portlets-with-maven)
+[Developing Liferay Faces Portlets with Maven](/docs/6-2/tutorials/-/knowledge_base/t/developing-liferay-faces-portlets-with-maven)
 
-[Understanding Liferay Faces Bridge](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-bridge)
+[Understanding Liferay Faces Bridge](/docs/6-2/tutorials/-/knowledge_base/t/understanding-liferay-faces-bridge)

@@ -1,8 +1,12 @@
-# DDL List Screenlet for Android [](id=ddllistscreenlet-for-android)
+---
+header-id: ddllistscreenlet-for-android
+---
+
+# DDL List Screenlet for Android
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/A_QEZzkuGHg" frameborder="0" allowfullscreen></iframe>
 
-## Requirements [](id=requirements)
+## Requirements
 
 - Android SDK 4.0 (API Level 15) or above
 - Liferay Portal 6.2 (CE or EE), Liferay 7.0 CE, Liferay DXP 
@@ -11,16 +15,16 @@
   or 
   [Liferay Portal EE](http://www.liferay.com/marketplace/-/mp/application/54369726)). 
 
-## Compatibility [](id=compatibility)
+## Compatibility
 
 - Android SDK 4.0 (API Level 15) and above
 
-## Xamarin Requirements [](id=xamarin-requirements)
+## Xamarin Requirements
 
 - Visual Studio 7.2
 - Mono .NET framework 5.4.1.6
 
-## Features [](id=features)
+## Features
 
 The DDL List Screenlet has the following features:
 
@@ -30,7 +34,7 @@ The DDL List Screenlet has the following features:
 - Allows record filtering by creator.
 - Supports i18n in record values.
 
-## JSON Services Used [](id=json-services-used)
+## JSON Services Used
 
 Screenlets in Liferay Screens call JSON web services in the portal. This 
 Screenlet calls the following services and methods.
@@ -40,11 +44,11 @@ Screenlet calls the following services and methods.
 | `ScreensddlrecordService` (Screens compatibility plugin) | `getDdlRecords` | With `ddlRecordSetId`, or `ddlRecordSetId` and `userId` |
 | `ScreensddlrecordService` (Screens compatibility plugin) | `getDdlRecordsCount` |  |
 
-## Module [](id=module)
+## Module
 
 - DDL
 
-## Views [](id=views)
+## Views
 
 - Default
 - Material
@@ -55,21 +59,21 @@ show the items.
 
 ![The DDL List Screenlet using the Default and Material Views.](../../images/screens-android-ddllist.png)
 
-## Portal Configuration [](id=portal-configuration)
+## Portal Configuration
 
 DDLs and Data Types should be configured in the portal before using
 DDL List Screenlet. For more details, see the Liferay User Guide sections 
-[Defining Data Types](/discover/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-) 
-and [Creating Data Lists](/discover/portal/-/knowledge_base/6-2/creating-data-lists). 
+[Defining Data Types](/docs/6-2/user/-/knowledge_base/u/building-a-list-platform-in-liferay-and-defining-data-) 
+and [Creating Data Lists](/docs/6-2/user/-/knowledge_base/u/creating-data-lists). 
 
 Also, [Liferay Screens' Compatibility Plugin](https://github.com/liferay/liferay-screens/tree/master/portal) 
 must be installed to allow remote calls without the `userId`. 
 
-## Offline [](id=offline)
+## Offline
 
 This Screenlet supports offline mode so it can function without a network 
 connection. For more information on how offline mode works, see the 
-[tutorial on its architecture](/develop/tutorials/-/knowledge_base/6-2/architecture-of-offline-mode-in-liferay-screens). 
+[tutorial on its architecture](/docs/6-2/tutorials/-/knowledge_base/t/architecture-of-offline-mode-in-liferay-screens). 
 
 | Policy | What happens | When to use |
 |--------|--------------|-------------|
@@ -78,12 +82,12 @@ connection. For more information on how offline mode works, see the
 | `REMOTE_FIRST` | The Screenlet loads the list from the portal. If this succeeds, the Screenlet shows the list to the user and stores it in the local cache for later use. If a connection issue occurs, the Screenlet retrieves the list from the local cache. If the list doesn't exist there, the Screenlet uses the listener to notify the developer about the error. | Use this policy to show the most recent version of the data when connected, but show an outdated version when there's no connection. |
 | `CACHE_FIRST` | The Screenlet loads the list from the local cache. If the list isn't there, the Screenlet requests it from the portal and notifies the developer about any errors that occur (including connectivity errors). | Use this policy to save bandwidth and loading time in case you have local (but probably outdated) data. |
 
-## Required Attributes [](id=required-attributes)
+## Required Attributes
 
 - `recordSetId`
 - `labelFields`
 
-## Attributes [](id=attributes)
+## Attributes
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
@@ -91,19 +95,19 @@ connection. For more information on how offline mode works, see the
 | `autoLoad` | `boolean` | Defines whether the list should be loaded when it's presented on the screen. The default value is `true`. |
 | `recordSetId` | `number` | The ID of the DDL being called. To find your DDLs' IDs, click *Admin* &rarr; *Content* from the Dockbar. Then click *Dynamic Data Lists* on the left. Each DDL's ID is in the ID column of the table. |
 | `userId` | `number` | The ID of the user to filter records on. Records aren't filtered if the `userId` is `0`. The default value is `0`. |
-| `cachePolicy` | `string` | The offline mode setting. See the [Offline section](/develop/reference/-/knowledge_base/6-2/ddllistscreenlet-for-android#offline) for details. |
+| `cachePolicy` | `string` | The offline mode setting. See the [Offline section](/docs/6-2/reference/-/knowledge_base/r/ddllistscreenlet-for-android#offline) for details. |
 | `firstPageSize` | `number` | The number of items to retrieve from the server for display on the first page. The default value is `50`. |
 | `pageSize` | `number` | The number of items to retrieve from the server for display on the second and subsequent pages. The default value is `25`. |
-| `labelFields` | `string` | The comma-separated names of the DDL fields to show. Refer to the list's data definition to find the field names. For more information on this, see [Defining Data Types](/discover/portal/-/knowledge_base/6-2/building-a-list-platform-in-liferay-and-defining-data-). Note that the appearance of these values in your app depends on the `layoutId` set. |
+| `labelFields` | `string` | The comma-separated names of the DDL fields to show. Refer to the list's data definition to find the field names. For more information on this, see [Defining Data Types](/docs/6-2/user/-/knowledge_base/u/building-a-list-platform-in-liferay-and-defining-data-). Note that the appearance of these values in your app depends on the `layoutId` set. |
 | `obcClassName` | `string` | The name of the [`OrderByComparator` class](https://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/util/OrderByComparator.html) to use to sort the results. Omit this property if you don't want to sort the results. You can only use comparator classes that extend `OrderByComparator<DDLRecord>`. You can also create your own comparator classes that extend `OrderByComparator<DDLRecord>`. |
 
-## Methods [](id=methods)
+## Methods
 
 | Method | Return | Explanation |
 |-----------|-----------|-------------| 
 | `loadPage(pageNumber)` | `void` | Starts the request to load the specified page of records. The page is shown when the response is received. |
 
-## Listener [](id=listener)
+## Listener
 
 DDL List Screenlet delegates some events to an object or a class that implements 
 [the `BaseListListener` interface](https://github.com/liferay/liferay-screens/blob/master/android/library/src/main/java/com/liferay/mobile/screens/base/list/BaseListListener.java). 

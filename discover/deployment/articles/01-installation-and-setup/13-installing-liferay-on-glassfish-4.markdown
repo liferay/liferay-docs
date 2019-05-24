@@ -1,4 +1,8 @@
-# Installing Liferay on GlassFish 4 [](id=installing-liferay-on-glassfish-4)
+---
+header-id: installing-liferay-on-glassfish-4
+---
+
+# Installing Liferay on GlassFish 4
 
 *Liferay Home* is three folders above your GlassFish domain folder.
 
@@ -25,7 +29,7 @@ you have access to the GlassFish administrative console.
 
 Let's start out by installing the JAR files you will need.
 
-## Dependency Jars [](id=dependency-jars)
+## Dependency Jars
 
 Liferay depends on jar files found in the Liferay Dependencies Archive. You
 should also have installed your database driver.
@@ -47,7 +51,7 @@ should also have installed your database driver.
 Terrific, you have your JAR files just where you need them. Next, we'll
 configure your domain.
 
-#### Domain Configuration [](id=domain-configuration)
+#### Domain Configuration
 
 There are a couple of modifications you need to make in your domain to use
 Liferay Portal.
@@ -106,7 +110,7 @@ location to allow your Liferay Portal default page to be displayed.
 
 Next, let's get your database configured.
 
-## Database Configuration [](id=database-configuration)
+## Database Configuration
 
 If you want to use GlassFish to manage your domain's data source, follow the
 instructions found in this section. If you want to use Liferay Portal to manage
@@ -183,14 +187,14 @@ your data source, you can skip this section.
 
 Congratulations! You've now configured your domain's data source on GlassFish!
 
-## Mail Configuration [](id=mail-configuration)
+## Mail Configuration
 
 If you want to use GlassFish to manage your mail session, follow GlassFish's
 documentation on configuring a JavaMail session with a JNDI name of
 `mail/MailSession`. If you want to use Liferay Portal to manage your mail
 session, you can skip this step.
 
-## Domain Configuration - Continued [](id=domain-configuration-continued)
+## Domain Configuration - Continued
 
 Let's tie up some loose ends with regards to Liferay being able to access your
 database and mail session.
@@ -223,7 +227,7 @@ database and mail session.
 
 Liferay will now be able to communicate with your database and mail session.
 
-## PACL Configuration [](id=pacl-configuration)
+## PACL Configuration
 
 To enable PACL on GlassFish, you need to make some security configurations.
 First, enable the security manager by editing
@@ -245,7 +249,7 @@ Next, add the required permissions to the server policy configuration file:
 
 Now let's go ahead and deploy Liferay.
 
-## Deploy Liferay [](id=deploy-liferay)
+## Deploy Liferay
 
 1. Start your domain's application server.
 

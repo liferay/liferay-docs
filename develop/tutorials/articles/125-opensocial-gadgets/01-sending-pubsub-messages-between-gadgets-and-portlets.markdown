@@ -1,4 +1,8 @@
-# Sending PubSub Messages Between Gadgets and Portlets [](id=sending-pubsub-messages-between-gadgets-and-portlet)
+---
+header-id: sending-pubsub-messages-between-gadgets-and-portlet
+---
+
+# Sending PubSub Messages Between Gadgets and Portlets
 
 <!-- You can test the gadget-to-gadget tutorial using the following gadgets:
 https://raw.github.com/dejuknow/opensocial-gadgets/master/GoogleMaps/GoogleMapsPublisher.xml
@@ -29,7 +33,7 @@ Maps into Liferay Portal. After we've run through the exercises, we'll briefly
 analyze specific code fragments that made the PubSub messaging possible. Let's
 get started!
 
-## Communicating Between Gadgets [](id=communicating-between-gadgets)
+## Communicating Between Gadgets
 
 For gadget to gadget communication, two independent gadgets are placed on a page
 and configured with PubSub; these two gadgets are able to communicate with one
@@ -58,15 +62,11 @@ That's all there is to it! The gadgets are communicating well with each other.
 This simple tutorial demonstrated two gadgets communicating with each other
 using PubSub. 
 
-+$$$
-
-**Note:** Gadget-to-gadget communication
-using the publish-subscribe framework has been deprecated for Google gadgets:
-[https://developers.google.com/gadgets/docs/pubsub](https://developers.google.com/gadgets/docs/pubsub).
-However, PubSub is still the primary communication for gadgets and will be
-supported with gadgets on Liferay.
-
-$$$
+| **Note:** Gadget-to-gadget communication
+| using the publish-subscribe framework has been deprecated for Google gadgets:
+| [https://developers.google.com/gadgets/docs/pubsub](https://developers.google.com/gadgets/docs/pubsub).
+| However, PubSub is still the primary communication for gadgets and will be
+| supported with gadgets on Liferay.
 
 We will now dive into the source code and analyze how this interaction is
 accomplished. To view the full contents of the Google Map, visit the
@@ -145,22 +145,18 @@ Gadgets are not limited to only communicating with other gadgets. In the next
 section, we will demonstrate the capabilities of communication between portlets
 and gadgets.
 
-## Communicating Between Portlets and Gadgets [](id=communicating-between-portlets-and-gadgets)
+## Communicating Between Portlets and Gadgets
 
 For this tutorial, we'll continue exploring the *Google Map* gadget inside of
 Liferay. If you have portlet applications that can take advantage of the
 functionality your Maps gadgets have to offer, it would certainly be convenient
 for a user to allow communications between those gadgets and your portlets.
 
-+$$$
-
-**Note:** The publish-subscribe
-framework has been deprecated for Google gadgets:
-[https://developers.google.com/gadgets/docs/pubsub](https://developers.google.com/gadgets/docs/pubsub).
-However, PubSub is still a primary communication mechanism between portlets and
-gadgets and will be supported on Liferay.
-
-$$$
+| **Note:** The publish-subscribe
+| framework has been deprecated for Google gadgets:
+| [https://developers.google.com/gadgets/docs/pubsub](https://developers.google.com/gadgets/docs/pubsub).
+| However, PubSub is still a primary communication mechanism between portlets and
+| gadgets and will be supported on Liferay.
 
 As a demonstration, we'll show a customized *Portal Directory* portlet that
 communicates to the Google Map gadget using PubSub. For each user listed in the
@@ -174,13 +170,9 @@ The Portal Directory portlet's `addresses.jsp` file was edited to assign the
 portlet as a PubSub publisher, but what edits to the JSP file made this
 possible?
 
-+$$$
-
-**Note:** If you'd like to edit a
-Liferay core portlet, it's not recommended to edit its code directly. Always
-customize Liferay core portlets using Liferay hooks.
-
-$$$
+| **Note:** If you'd like to edit a
+| Liferay core portlet, it's not recommended to edit its code directly. Always
+| customize Liferay core portlets using Liferay hooks.
 
 As you know from explanations given earlier, the *Google Map* gadget is
 distinguished as a subscriber. Therefore, the Portal Directory portlet needed to
@@ -206,14 +198,10 @@ Notice that you don't need to change anything for your *Google Map* gadget,
 since it's already subscribed to that channel; you only needed to define the
 Portal Directory portlet as a publisher to that channel.
 
-+$$$
-
-**Note:** If you would like to broadcast
-messages to portlets, follow the same guidelines, but don't use the `gadget:`
-prefix in your topic parameter value for the call to the `Liferay.fire()`
-function.
-
-$$$
+| **Note:** If you would like to broadcast
+| messages to portlets, follow the same guidelines, but don't use the `gadget:`
+| prefix in your topic parameter value for the call to the `Liferay.fire()`
+| function.
 
 Lastly, a button is needed to initiate the publishing of the address to the
 topic in the Portal Directory portlet; to do this, we inserted the following
@@ -225,12 +213,12 @@ Letting your portlets communicate with gadgets enhances your portlet
 applications and gives you a plethora of different ways you can enhance your 
 user's experience. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using Liferay's Message Bus](/develop/tutorials/-/knowledge_base/6-2/using-liferays-message-bus)
+[Using Liferay's Message Bus](/docs/6-2/tutorials/-/knowledge_base/t/using-liferays-message-bus)
 
-[Customizing Liferay Portal with Hooks](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+[Customizing Liferay Portal with Hooks](/docs/6-2/tutorials/-/knowledge_base/t/customizing-liferay-portal)
 
-[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)
+[User Interfaces with AlloyUI](/docs/6-2/tutorials/-/knowledge_base/t/alloyui)
 
-[Localization](/develop/tutorials/-/knowledge_base/6-2/localization)
+[Localization](/docs/6-2/tutorials/-/knowledge_base/t/localization)

@@ -1,4 +1,8 @@
-# OpenSocial Gadgets [](id=opensocial-gadgets)
+---
+header-id: opensocial-gadgets
+---
+
+# OpenSocial Gadgets
 
 OpenSocial is a public specification for creating web applications using
 standard technologies like HTML, CSS, and JavaScript. It was originally

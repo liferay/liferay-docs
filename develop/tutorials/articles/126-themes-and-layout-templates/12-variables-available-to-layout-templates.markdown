@@ -1,4 +1,8 @@
-# Variables Available to Layout Templates [](id=variables-available-to-layout-templates)
+---
+header-id: variables-available-to-layout-templates
+---
+
+# Variables Available to Layout Templates
 
 A number of variables are available for you to use in your custom TPL files. For
 your convenience, they're all listed in the table below. 
@@ -28,6 +32,6 @@ for your layout templates!
 
 **Related Topics**
 
-[Making Themes Configurable with Settings](/develop/tutorials/-/knowledge_base/6-2/making-themes-configurable-with-settings)
+[Making Themes Configurable with Settings](/docs/6-2/tutorials/-/knowledge_base/t/making-themes-configurable-with-settings)
 
-[Creating a Layout Template Project in the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/creating-a-layout-template-project-in-the-plugins-sdk)
+[Creating a Layout Template Project in the Plugins SDK](/docs/6-2/tutorials/-/knowledge_base/t/creating-a-layout-template-project-in-the-plugins-sdk)

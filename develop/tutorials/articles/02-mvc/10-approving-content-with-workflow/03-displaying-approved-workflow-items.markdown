@@ -1,4 +1,8 @@
-# Displaying Approved Workflow Items [](id=displaying-approved-workflow-items)
+---
+header-id: displaying-approved-workflow-items
+---
+
+# Displaying Approved Workflow Items
 
 To display only approved entities, you'll add a new *finder*, then a *getter*
 that uses it in your service layer. The new methods will serve the purpose of
@@ -6,7 +10,7 @@ getting only entities with the proper workflow status. Then you can display only
 those entities in the portlet's search container. Service Builder makes this
 easy.
 
-## Adding a Finder for the Entry [](id=adding-a-finder-for-the-entry)
+## Adding a Finder for the Entry
 
 If you look in `docroot/html/guestbook/view.jsp`, you'll see that entries are
 retrieved from the database for display in the search container using the
@@ -38,7 +42,7 @@ tag below the current list of finders for the `Entry` entity:
 
 Run Service Builder.
 
-## Exposing the Entry's New Finder in the Service Layer [](id=exposing-the-entrys-new-finder-in-the-service-layer)
+## Exposing the Entry's New Finder in the Service Layer
 
 It's all well and good to have a finder, but the portlet's service layer needs
 to expose it to be of any use. Open `EntryLocalServiceImpl` and delete these
@@ -69,7 +73,7 @@ Since there's nowhere in the portlet where an `Entry`'s workflow status should
 be ignored, it's a best practice to replace the current getters with appropriate
 ones.
 
-## Updating the View Layer to Display Approved Entries [](id=updating-the-view-layer-to-display-approved-entries)
+## Updating the View Layer to Display Approved Entries
 
 Back in the `view.jsp`, find the following tag, which currently retrieves the
 entries from the database for display in the search container:
@@ -101,7 +105,7 @@ Open `init.jsp` and add the following import:
 The `Entry` entity is now fully enabled for workflow. Do the same thing for
 `Guestbook`s next.
 
-## Adding a Finder for the Guestbook [](id=adding-a-finder-for-the-guestbook)
+## Adding a Finder for the Guestbook
 
 In the portlet's `view.jsp`, you can see the code that displays `Guestbook`s in
 the `<aui:nav cssClass="nav-tabs">` section. Here's the call to the local
@@ -122,7 +126,7 @@ finder tags for the `Guestbook`:
 
 Run service builder. 
 
-## Exposing the Guestbook's New Finder in the Service Layer [](id=exposing-the-guestbooks-new-finder-in-the-service-layer)
+## Exposing the Guestbook's New Finder in the Service Layer
 
 Open `GuestbookLocalServiceImpl`. Find the current method with the signature
 `public List<Guestbook> getGuestbooks(long groupId)`. Delete it and add this
@@ -139,7 +143,7 @@ are used to populate its search container. What you will do later is add a
 column to the Guestbook Admin portlet's Search Container to display guestbooks'
 statuses. 
 
-## Updating the View Layer to Display Approved Guestbooks [](id=updating-the-view-layer-to-display-approved-guestbooks)
+## Updating the View Layer to Display Approved Guestbooks
 
 Open `view.jsp`, and find this method call:
 
@@ -167,7 +171,7 @@ layer is modified accordingly. But what about the Guestbook Admin Portlet that's
 accessed through the portal's Site Administration section? What should the
 strategy be there?
 
-## Modifying the Guestbook Admin Portlet to Display Workflow Status [](id=modifying-the-guestbook-admin-portlet-to-display-workflow-status)
+## Modifying the Guestbook Admin Portlet to Display Workflow Status
 
 The Guestbook Admin portlet currently displays the `Guestbook`s for a site in a
 Search Container, which is how all of Liferay's portlets work. Like those
@@ -210,7 +214,7 @@ Note that you didn't change the `getter` method for one that only returns
 Portlet, you're allowing all `Guestbook`s to be displayed with their workflow
 status.
 
-## Testing Workflow [](id=testing-workflow)
+## Testing Workflow
 
 To test that workflow is working properly for both entities, log in to the
 portal and go to *Admin* &rarr; *Control Panel* &rarr; *Configuration*

@@ -1,4 +1,8 @@
-# Communication [](id=communication)
+---
+header-id: communication
+---
+
+# Communication
 
 Liferay implements several communication mechanisms across portlets including
 those specified by the JSR-286 standard: public render parameters and events.

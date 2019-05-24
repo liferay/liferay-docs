@@ -1,22 +1,26 @@
-# Login Screenlet for Android [](id=loginscreenlet-for-android)
+---
+header-id: loginscreenlet-for-android
+---
 
-## Requirements [](id=requirements)
+# Login Screenlet for Android
+
+## Requirements
 
 - Android SDK 4.0 (API Level 15) or above
 - Liferay Portal 6.2 (CE or EE), Liferay 7.0 CE, Liferay DXP 
 - [Liferay OAuth Provider plugin](https://www.liferay.com/marketplace/-/mp/application/45261909) 
   (only when using OAuth for authentication)
 
-## Compatibility [](id=compatibility)
+## Compatibility
 
 - Android SDK 4.0 (API Level 15) and above
 
-## Xamarin Requirements [](id=xamarin-requirements)
+## Xamarin Requirements
 
 - Visual Studio 7.2
 - Mono .NET framework 5.4.1.6
 
-## Features [](id=features)
+## Features
 
 The Login Screenlet lets you authenticate portal users in your Android app. The 
 following types of authentication are supported:
@@ -37,9 +41,9 @@ following types of authentication are supported:
 
 For instructions on configuring the Screenlet to use these authentication types, 
 see the below 
-[Portal Configuration](/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-android#portal-configuration) 
+[Portal Configuration](/docs/6-2/reference/-/knowledge_base/r/loginscreenlet-for-android#portal-configuration) 
 and 
-[Screenlet Attributes](/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-android#attributes) 
+[Screenlet Attributes](/docs/6-2/reference/-/knowledge_base/r/loginscreenlet-for-android#attributes) 
 sections. 
 
 When a user successfully authenticates, their attributes are retrieved for use 
@@ -55,7 +59,7 @@ the method `SessionContext.loadStoredCredentials()`.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/kEZEahTzuck" frameborder="0" allowfullscreen></iframe>
 
-## JSON Services Used [](id=json-services-used)
+## JSON Services Used
 
 Screenlets in Liferay Screens call the portal's JSON web services. This 
 Screenlet calls the following services and methods. 
@@ -67,23 +71,23 @@ Screenlet calls the following services and methods.
 | `UserService` | `getUserById` | Basic login |
 | `ScreensuserService` (Screens compatibility plugin) | `getCurrentUser` | Cookie and OAuth login |
 
-## Module [](id=module)
+## Module
 
 - Auth
 
-## Views [](id=views)
+## Views
 
 - Default
 - Material
 
 For instructions on using these Views, see the `layoutId` attribute in the 
-[Attributes section below](/develop/reference/-/knowledge_base/6-2/loginscreenlet-for-android#attributes). 
+[Attributes section below](/docs/6-2/reference/-/knowledge_base/r/loginscreenlet-for-android#attributes). 
 
 ![The Login Screenlet using the Default (left) and Material (right) Viewsets.](../../images/screens-android-login.png)
 
-## Portal Configuration [](id=portal-configuration)
+## Portal Configuration
 
-### Basic Authentication [](id=basic-authentication)
+### Basic Authentication
 
 Before using Login Screenlet, you should make sure your portal is configured 
 with the authentication option you want to use. You can choose email address, 
@@ -95,7 +99,7 @@ screen name, or user ID. You can set this in the Control Panel by clicking
 For more details, see the [Configuring Portal Settings](/portal/-/knowledge_base/6-2/configuring-portal-settings) 
 section of the User Guide. 
 
-### OAuth Authentication [](id=oauth-authentication)
+### OAuth Authentication
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/u5-_VVAyY-0" frameborder="0" allowfullscreen></iframe>
 
@@ -109,22 +113,22 @@ values for later use in Login Screenlet.
 
 ![Copy the Consumer Key and Consumer Secret from OAuth Admin in your portal.](../../images/screens-portal-oauth.png)
 
-## Offline [](id=offline)
+## Offline
 
 This Screenlet doesn't support offline mode. It requires network connectivity.
 If you need to log in users automatically, even when there's no network 
 connection, you can use the `credentialsStorage` attribute together with the 
 `SessionContext.loadStoredCredentials` method. 
 
-## Required Attributes [](id=required-attributes)
+## Required Attributes
 
 - None
 
-## Attributes [](id=attributes)
+## Attributes
 
 | Attribute | Data type | Explanation |
 |-----------|-----------|-------------| 
-| `layoutId` | `@layout` | The ID of the View's layout. You can set this attribute to `@layout/login_default` (Default View) or `@layout/login_material` (Material View). To use the Material View, you must first install the Material View Set. [Click here](/develop/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets) for instructions on installing and using Views and View Sets, including the Material View Set. |
+| `layoutId` | `@layout` | The ID of the View's layout. You can set this attribute to `@layout/login_default` (Default View) or `@layout/login_material` (Material View). To use the Material View, you must first install the Material View Set. [Click here](/docs/6-2/tutorials/-/knowledge_base/t/using-views-in-android-screenlets) for instructions on installing and using Views and View Sets, including the Material View Set. |
 | `companyId` | `number` | The ID of the portal instance to authenticate to. If you don't set this attribute or set it to `0`, the Screenlet uses the `companyId` setting in `LiferayServerContext`. |
 | `loginMode` | `enum` | The Screenlet's authentication type. You can set this attribute to `basic`, `oauth`, or `cookie`. If you don't set this attribute, the Screenlet defaults to basic authentication. |
 | `basicAuthMethod` | `string` | Specifies the authentication option to use with basic or cookie authentication. You can set this attribute to `email`, `screenName` or `userId`. This must match the server's authentication option. If you don't set this attribute, and don't set the `loginMode` attribute to `oauth`, the Screenlet defaults to basic authentication with the `email` option. |
@@ -135,7 +139,7 @@ connection, you can use the `credentialsStorage` attribute together with the
 | `cookieExpirationTime` | `int` | How long the cookie lasts, in seconds. This value depends on your portal instance's configuration. The default value is `900`. |
 | `authenticator` | `Authenticator` | An instance of a class that implements the `Authenticator` interface. The *Challenge-Response Authentication* section below discusses this further. |
 
-## Listener [](id=listener)
+## Listener
 
 The Login Screenlet delegates some events to an object that implements the 
 `LoginListener` interface. This interface let you implement the following 
@@ -147,7 +151,7 @@ methods:
 
 - `onLoginFailure(Exception e)`: Called when an error occurs in the process.
 
-## Challenge-Response Authentication [](id=challenge-response-authentication)
+## Challenge-Response Authentication
 
 To support 
 [challenge-response authentication](https://en.wikipedia.org/wiki/Challenge%E2%80%93response_authentication) 

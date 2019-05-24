@@ -1,4 +1,8 @@
-# Creating a Theme Thumbnail [](id=creating-a-theme-thumbnail)
+---
+header-id: creating-a-theme-thumbnail
+---
+
+# Creating a Theme Thumbnail
 
 Have you associated a thumbnail image with your theme? In the *Look and Feel*
 settings of your site pages in the Site Administration screen, notice that each
@@ -24,4 +28,4 @@ Congrats! Now you know how to create a thumbnail image for your theme!
 
 **Related Topics**
 
-[Developing Liferay Theme Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/developing-liferay-theme-plugins-with-maven)
+[Developing Liferay Theme Plugins with Maven](/docs/6-2/tutorials/-/knowledge_base/t/developing-liferay-theme-plugins-with-maven)

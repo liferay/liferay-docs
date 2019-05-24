@@ -1,4 +1,8 @@
-# Exporting Portal Applications as Widgets and OpenSocial Gadgets [](id=exporting-portal-applications-as-widgets-and-opensocia)
+---
+header-id: exporting-portal-applications-as-widgets-and-opensocia
+---
+
+# Exporting Portal Applications as Widgets and OpenSocial Gadgets
 
 OpenSocial is a framework designed for the creation of socially themed
 application programming interfaces (APIs). OpenSocial applications, called
@@ -21,7 +25,7 @@ on pages (community/team pages), applications (gadgets/widgets/portlets), data,
 users, roles and authorization, and policies. In short, you can develop gadgets
 to allow individuals to access and share data within their social networks.
 
-## Adding OpenSocial Gadgets [](id=adding-opensocial-gadgets)
+## Adding OpenSocial Gadgets
 
 The OpenSocial plugin can be installed through Liferay Marketplace for both
 Liferay CE and EE. Installing the OpenSocial plugin enables you to add
@@ -33,7 +37,7 @@ of gadgets:
 
 First, we'll go through steps to add an Adhoc gadget to a page.
 
-### Adding Adhoc Gadgets [](id=adding-adhoc-gadgets)
+### Adding Adhoc Gadgets
 
 This method is a quick way to add a gadget to a single page. To do this, go to
 the *Add* &rarr; *More* menu and add *OpenSocial Gadget* to the page. The
@@ -58,7 +62,7 @@ flexibility to fit them into your themed sites. As you find gadgets that would
 work nicely throughout your portal, you can publish them for portal-wide use.
 You'll learn that next.
 
-### Adding Gadgets for Portal-wide Use [](id=adding-gadgets-for-portal-wide-use)
+### Adding Gadgets for Portal-wide Use
 
 You can easily make gadgets available for adding to pages as you would any other
 application. We'll demonstrate this by adding a *To-Do List* gadget for
@@ -104,7 +108,7 @@ If you navigate to *Add* &rarr; *Applications* &rarr; *Gadgets*, you should see 
 In the next section, we'll demonstrate how to share OpenSocial gadgets with
 other sites.
 
-## Sharing OpenSocial Gadgets [](id=sharing-opensocial-gadgets)
+## Sharing OpenSocial Gadgets
 
 OpenSocial consists of a set of APIs for social networking. Liferay implements
 the OpenSocial standard, so you can be assured that your gadgets run on Liferay.
@@ -115,15 +119,11 @@ iGoogle lets users customize their own page and add gadgets to their page. Your
 Liferay Portal users can share their portlets and other OpenSocial gadgets on
 iGoogle or any other OpenSocial-compatible site. Let's try this now.
 
-+$$$
-
-**Warning:** The iGoogle site will be removed
-completely from Google on November 1, 2013:
-[https://support.google.com/websearch/answer/2664197](https://support.google.com/websearch/answer/2664197).
-Therefore, after the specified date, sharing your Liferay OpenSocial gadgets to
-iGoogle will no longer be possible.
-
-$$$
+| **Warning:** The iGoogle site will be removed
+| completely from Google on November 1, 2013:
+| [https://support.google.com/websearch/answer/2664197](https://support.google.com/websearch/answer/2664197).
+| Therefore, after the specified date, sharing your Liferay OpenSocial gadgets to
+| iGoogle will no longer be possible.
 
 <!-- Since Google has discontinued iGoogle (see
 http://googlesystem.blogspot.com/2012/07/igoogle-will-be-discontinued.html),
@@ -168,7 +168,7 @@ portal at a glance. As you can imagine, you can share all kinds of information
 from your portal gadgets and portlets with your various circles of friends,
 colleagues, and fellow community members.
 
-## Gadget Personalization [](id=gadget-personalization)
+## Gadget Personalization
 
 Liferay allows gadgets on your site to be personalized with data from
 third-party applications. Some of the third-party sites that authorize users to
@@ -184,12 +184,12 @@ with another site without supplying typical credentials, such as their user name
 and password. OAuth uses request and access tokens as well as a token secret to
 authenticate the users of your gadget. For more information on OAuth and how it
 can be incorporated into your portal, visit the
-[OAuth](/discover/portal/-/knowledge_base/6-2/oauth)
+[OAuth](/docs/6-2/user/-/knowledge_base/u/oauth)
 section of this guide.
 
 Let's see how to implement OAuth in a custom OpenSocial gadget!
 
-### OAuth Admin Configuration [](id=oauth-admin-configuration)
+### OAuth Admin Configuration
 
 OpenSocial defines a specification that allows gadgets to incorporate OAuth to
 access protected resources from service providers. A brief example is provided
@@ -262,7 +262,7 @@ Congratulations! Your Twitter gadget is now configured with OAuth.
 
 Next, we'll configure the gadget within Liferay Portal.
 
-## Incorporating OAuth Within Your Site [](id=incorporating-oauth-within-your-site)
+## Incorporating OAuth Within Your Site
 
 Now that your gadget is registered with Twitter and is configured with OAuth,
 you can add it to your Liferay Portal. The OAuth client you configured in the
@@ -303,7 +303,7 @@ OAuth-configured gadget to your page.
 As you can see, OAuth is easy to configure and offers users the freedom to
 securely add valuable data from third-party sites.
 
-## Creating and Editing OpenSocial Gadgets [](id=creating-and-editing-opensocial-gadgets)
+## Creating and Editing OpenSocial Gadgets
 
 OpenSocial gadgets are XML documents, so as part of Liferay's OpenSocial
 integration, a gadget editor is included. The gadget editor is a complete

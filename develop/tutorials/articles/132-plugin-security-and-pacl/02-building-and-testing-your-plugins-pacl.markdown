@@ -1,4 +1,8 @@
-# Building and Testing Your Plugin's PACL [](id=building-and-testing-your-plugins-pacl)
+---
+header-id: building-and-testing-your-plugins-pacl
+---
+
+# Building and Testing Your Plugin's PACL
 
 Liferay's Plugin Security Manager requires that a plugin specify in advance the 
 portal resources that it intends to access. If a plugin tries to access 
@@ -21,7 +25,7 @@ properties.
 Now go ahead and get started--you don't want to run afoul of the Security 
 Manager!
 
-## Develop Your Plugin [](id=develop-your-plugin)
+## Develop Your Plugin
 
 Start by creating your plugin the way you normally do. Design your application,
 write the code, unit test your code, and have users beta test your app. In 
@@ -34,7 +38,7 @@ Before the Plugin Security Manager is enabled, you must specify the resources
 your plugin accesses. You do this by building a list of these resources in your 
 plugin's PACL. 
 
-## Build Your Plugin's PACL [](id=build-your-plugins-pacl)
+## Build Your Plugin's PACL
 
 Rather than tediously figuring out all of the resources your plugin accesses on
 your own, let Liferay's PACL Policy Generation tool to give you a head start!
@@ -58,7 +62,7 @@ Here's how to generate a PACL policy for your plugin:
     Your app server may require certain startup arguments to be used for
     activiting the security manager. Check the PACL and security manager
     instructions for your app server in the
-    [Installation and Setup](/discover/deployment/-/knowledge_base/6-2/installation-and-setup)
+    [Installation and Setup](/docs/6-2/deploy/-/knowledge_base/d/installation-and-setup)
     chapter of *Using Liferay Portal*. Some app servers, like Tomcat, output
     a terminal message like "Using Security Manager", indicating that it's
     using the security manager. 
@@ -101,31 +105,27 @@ Here's how to generate a PACL policy for your plugin:
     `liferay-plugin-package.properties` file. It's just a matter of merging the
     properties that start with the "security-manager-" prefix. 
 
-+$$$
-
-**Note:** There is a known issue
- [LPS-41716](https://issues.liferay.com/browse/LPS-41716) in which Liferay may
- need to be restarted after deploying your plugin, in order for the security
- manager to detect and write out the complete set of policies for a plugin. If
- you are using your plugin with the "security-manager-" generated properties the
- first time and notice security violations, then you may need to turn on policy
- generation one more time and restart Liferay. This gives the security manager
- another opportunity to detect additional properties to satisfy your security
- policy. If you are still seeing security violations on deployment, you'll need
- to address them per instructions that follow in this tutorial. Here are the
- work-around steps: Remove the previously generated
- `[servletContextName].policy` file, set `security-manager-enabled=generate` in
- your `liferay-plugin-package.properties` file, restart Liferay, redeploy your
- plugin, and merge any new properties from the newly generated
- `[servletContextName].policy` file into your
- `liferay-plugin-package.properties` file. 
- 
-$$$
+| **Note:** There is a known issue
+|  [LPS-41716](https://issues.liferay.com/browse/LPS-41716) in which Liferay may
+|  need to be restarted after deploying your plugin, in order for the security
+|  manager to detect and write out the complete set of policies for a plugin. If
+|  you are using your plugin with the "security-manager-" generated properties the
+|  first time and notice security violations, then you may need to turn on policy
+|  generation one more time and restart Liferay. This gives the security manager
+|  another opportunity to detect additional properties to satisfy your security
+|  policy. If you are still seeing security violations on deployment, you'll need
+|  to address them per instructions that follow in this tutorial. Here are the
+|  work-around steps: Remove the previously generated
+|  `[servletContextName].policy` file, set `security-manager-enabled=generate` in
+|  your `liferay-plugin-package.properties` file, restart Liferay, redeploy your
+|  plugin, and merge any new properties from the newly generated
+|  `[servletContextName].policy` file into your
+|  `liferay-plugin-package.properties` file.
 
 Now that you've thoroughly specified the resources your plugin accesses, you can 
 enable the security manager and do final testing of your PACL properties. 
 
-## Test Your Plugin with the Security Manager Enabled [](id=test-your-plugin-with-the-security-manager-enabled)
+## Test Your Plugin with the Security Manager Enabled
 
 If you want to distribute plugins, either through the Liferay Marketplace or 
 your web site, you have to assume potential users will insist that the Security 
@@ -159,7 +159,7 @@ permissible within the context of your app's plugins.
 In case you need it for your plugin, go ahead and get familiar with the Java 
 Security Policy file. 
 
-## Use a Java Security Policy File, if Necessary [](id=use-a-java-security-policy-file-if-necessary)
+## Use a Java Security Policy File, if Necessary
 
 If you can't find a way to specify PACL permissions for an operation that your
 plugin must access, you can specify the permission in a Java Security Policy
@@ -225,7 +225,7 @@ specify all of the resources your plugin needs to access! Now it's time to
 revisit the file path values that the PACL Policy Generation Tool wrote to your
 `liferay-plugin-package.properties` file. 
 
-## Convert PACL Absolute File Paths into Relative Paths [](id=convert-pacl-absolute-file-paths-into-relative-paths)
+## Convert PACL Absolute File Paths into Relative Paths
 
 As mentioned earlier in this tutorial, using the PACL generation tool to give
 you a head start on specifying your plugin's security rules is recommended. The
@@ -302,7 +302,7 @@ Manager.
 
 The next section provides some additional details regarding PACL properties. 
 
-## Portal Access Control List (PACL) Details [](id=portal-access-control-list-pacl-details)
+## Portal Access Control List (PACL) Details
 
 Liferay Portal's Plugin Security Manager checks all your plugin's API access
 attempts against the Security Manager properties specified in your plugin's
@@ -367,16 +367,16 @@ cutting it. Armed with this knowledge, you can confidently build, test, and
 deploy plugins that don't end up on the wrong side of Liferay's Plugin Security 
 Manager.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Setting Permissions](/develop/tutorials/-/knowledge_base/6-2/setting-permissions)
+[Setting Permissions](/docs/6-2/tutorials/-/knowledge_base/t/setting-permissions)
 
-[Developing with the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
+[Developing with the Plugins SDK](/docs/6-2/tutorials/-/knowledge_base/t/plugins-sdk)
 
-[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/liferay-ide)
+[Developing Plugins with Liferay IDE](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ide)
 
-[Developing with Maven](/develop/tutorials/-/knowledge_base/6-2/maven)
+[Developing with Maven](/docs/6-2/tutorials/-/knowledge_base/t/maven)
 
-[MVC Portlets](/develop/tutorials/-/knowledge_base/6-2/developing-jsp-portlets-using-liferay-mvc)
+[MVC Portlets](/docs/6-2/tutorials/-/knowledge_base/t/developing-jsp-portlets-using-liferay-mvc)
 
-[Liferay Faces](/develop/tutorials/-/knowledge_base/6-2/writing-a-jsf-application-using-liferay-faces)
+[Liferay Faces](/docs/6-2/tutorials/-/knowledge_base/t/writing-a-jsf-application-using-liferay-faces)

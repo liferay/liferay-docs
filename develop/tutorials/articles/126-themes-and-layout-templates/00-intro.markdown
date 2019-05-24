@@ -1,4 +1,8 @@
-# Themes and Layout Templates [](id=themes-and-layout-templates)
+---
+header-id: themes-and-layout-templates
+---
+
+# Themes and Layout Templates
 
 Do you want to transform the look and feel of your Liferay Portal? Create your
 own Liferay Theme! Themes are hot deployable plugins unique to a site. With

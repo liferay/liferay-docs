@@ -1,4 +1,8 @@
-# Liferay Faces Alloy UI Components [](id=liferay-faces-alloy-ui-components)
+---
+header-id: liferay-faces-alloy-ui-components
+---
+
+# Liferay Faces Alloy UI Components
 
 <!-- Eventually, this section (and module) needs to be expanded. First, the
 reader needs some insight as to what AlloyUI is and why they'd want to use it.
@@ -19,7 +23,7 @@ The Liferay Faces Alloy project home page can be found at
 <http://www.liferay.com/community/liferay-projects/liferay-faces/alloy>. 
 
 Because Liferay Faces has several active 
-[versions](/develop/tutorials/-/knowledge_base/6-2/understanding-the-liferay-faces-version-scheme)
+[versions](/docs/6-2/tutorials/-/knowledge_base/t/understanding-the-liferay-faces-version-scheme)
 (targeting different versions of JSF, Liferay Portal, etc.), there are several
 versions of the project's View Declaration Language (VDL) documentation for
 these tags: 
@@ -34,7 +38,7 @@ these tags:
 
 **Liferay Faces 3.0-legacy:** <http://docs.liferay.com/faces/3.0-legacy/vdldoc/> 
 
-## Deprecated/Removed Tags [](id=deprecated-removed-tags)
+## Deprecated/Removed Tags
 
 The following tags have been deprecated in the Liferay Faces Alloy 3.2.5-ga6
 release and removed in the Liferay Faces Alloy 4.2.5-ga6 release: 
@@ -61,10 +65,10 @@ release and removed in the Liferay Faces Alloy 4.2.5-ga6 release:
 | [`aui-cc:message`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/aui-cc/message.html) | [`alloy:message`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/alloy/message.html) |
 | [`aui-cc:messages`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/aui-cc/messages.html) | [`alloy:messages`](http://www.liferayfaces.org/doc/faces/3.2/vdldoc/alloy/messages.html) |
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Liferay Faces Bridge UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-bridge-ui-components)
+[Liferay Faces Bridge UI Components](/docs/6-2/tutorials/-/knowledge_base/t/liferay-faces-bridge-ui-components)
 
-[Liferay Faces Portal UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-portal-ui-components)
+[Liferay Faces Portal UI Components](/docs/6-2/tutorials/-/knowledge_base/t/liferay-faces-portal-ui-components)
 
-[Understanding Liferay Faces Bridge](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-alloy)
+[Understanding Liferay Faces Bridge](/docs/6-2/tutorials/-/knowledge_base/t/understanding-liferay-faces-alloy)

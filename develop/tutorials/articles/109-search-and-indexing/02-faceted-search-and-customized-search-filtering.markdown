@@ -1,4 +1,8 @@
-# Faceted Search and Customized Search Filtering [](id=faceted-search-and-customized-search-filtering)
+---
+header-id: faceted-search-and-customized-search-filtering
+---
+
+# Faceted Search and Customized Search Filtering
 
 Faceted search is a search mechanism that allows search results to be narrowed
 down by applying a set of filters to the result of a search query. Liferay's
@@ -56,7 +60,7 @@ Before proceeding, make sure you're familiar with the following terminology:
   documents in the first range and 18 documents in the second range. Ranges
   cannot be used with multi-value fields.
 
-## Configuring Custom Facets [](id=configuring-custom-facets)
+## Configuring Custom Facets
 
 There are two ways to configure custom facets for search in Liferay:
 
@@ -111,7 +115,7 @@ JSON configuration:
 
 To learn how to configure Liferay's Search portlet, including an explanation of
 this example, please refer to the
-[Search portlet documentation](/discover/portal/-/knowledge_base/6-2/searching-for-content-in-liferay).
+[Search portlet documentation](/docs/6-2/user/-/knowledge_base/u/searching-for-content-in-liferay).
 
 Faceted search in Liferay is not restricted to Liferay's Search portlet. If
 you're implementing a search feature for a custom Liferay portlet, you can still
@@ -174,7 +178,7 @@ type name does not belong to the `entryClassName` array is filtered out of the
 search results. Likewise, any indexed document whose `groupId` does not belong
 to the `groupIds` array is filtered out of the search results.
 
-## Customized Search Filtering [](id=customized-search-filtering)
+## Customized Search Filtering
 
 Sometimes, you might be required to implement very specific kinds of search
 filters. For example, suppose you need to search both web content articles and
@@ -272,9 +276,9 @@ the Search portlet. Check that it only returns web content articles or documents
 and media files with the `.pdf` file extension as search results. Note: If you
 only want your Search portlet customizations to apply to a single site, use an
 application adapter hook. See the
-[Application Adapters](/develop/tutorials/-/knowledge_base/6-2/customizing-sites-and-site-templates-with-application-adapters)
+[Application Adapters](/docs/6-2/tutorials/-/knowledge_base/t/customizing-sites-and-site-templates-with-application-adapters)
 tutorial for details.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Enabling Search and Indexing](/develop/tutorials/-/knowledge_base/6-2/enabling-search-and-indexing)
+[Enabling Search and Indexing](/docs/6-2/tutorials/-/knowledge_base/t/enabling-search-and-indexing)

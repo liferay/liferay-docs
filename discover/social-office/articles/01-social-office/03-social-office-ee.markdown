@@ -1,4 +1,8 @@
-# Social Office EE [](id=social-office-ee)
+---
+header-id: social-office-ee
+---
+
+# Social Office EE
 
 Social Office EE can only be installed on a Liferay EE instance; it's not
 possible to install Social Office EE on Liferay CE. Social Office EE provides
@@ -12,7 +16,7 @@ These additional features include the following:
 - Bug fixes and usability improvements since Social Office 3.0 CE
 - Access to Liferay Support
 
-## Installing Social Office EE [](id=installing-social-office-ee)
+## Installing Social Office EE
 
 To find Social Office EE on Liferay Marketplace, click on the *EE Marketplace*
 link and look for the Social Office EE app. Once you've found it, click on it to
@@ -50,18 +54,14 @@ confirm that these plugins, in addition to the ones included with Social Office
 CE, have been successfully deployed (or removed). Your server's console log 
 should indicate whether or not each plugin has been successfully deployed.
 
-+$$$
-
-**Note:** Beginning with Social Office EE 3.1, the Documentum plugin is no 
-longer included.
-
-$$$
+| **Note:** Beginning with Social Office EE 3.1, the Documentum plugin is no
+| longer included.
 
 **EE Plugins:**
 
 - sharepoint-hook
 
-## Social Office EE Features [](id=social-office-ee-features)
+## Social Office EE Features
 
 The Sharepoint plugin that is included in Social Office EE is the same plugin as 
 provided by the [Sharepoint Connector EE](https://www.liferay.com/marketplace/-/mp/application/15188537) app on
@@ -69,7 +69,7 @@ Liferay Marketplace. This plugin integrates Liferay's Documents and Media
 functionality with Sharepoint. It allows Sharepoint repositories to be mounted 
 within Liferay's Documents and Media system. Please refer to the Liferay 
 Marketplace app description and the Documents and Media section of the 
-[Liferay User Guide](/discover/portal/-/knowledge_base/6-2/using-external-repositories)
+[Liferay User Guide](/docs/6-2/user/-/knowledge_base/u/using-external-repositories)
 for information on properties and configuration.
 
 Other features provided by Social Office EE include auditing improvements to the

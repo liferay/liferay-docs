@@ -1,4 +1,8 @@
-# Using AlloyUI Form Validation [](id=using-alloyui-form-validation)
+---
+header-id: using-alloyui-form-validation
+---
+
+# Using AlloyUI Form Validation
 
 In a previous learning path, you created a form for users to submit when adding
 an entry to a guestbook. You implemented back-end validation (checking the entry
@@ -27,7 +31,7 @@ special format (e.g., the email address field). Then you'll use the AlloyUI
 Character Counter module to limit the number of characters that comprise a
 guestbook entry message.
 
-## Using the AUI Validator Tag [](id=using-the-aui-validator-tag)
+## Using the AUI Validator Tag
 
 Validating AUI input fields is very easy. You just have to add an
 `<aui:validator>` tag and specify the appropriate attributes.
@@ -88,7 +92,7 @@ displayed. Your Add Entry form should look like this:
 Good! You've implemented form validation using AUI's validator tag. Next, you'll
 learn how to limit the length of guestbook entry messages.
 
-## Using the AUI Character Counter Module [](id=using-the-aui-character-counter-module)
+## Using the AUI Character Counter Module
 
 AUI modules are small, powerful building blocks of UI functionality. Each module
 provides a unique set of functionality that's designed to solve a particular
@@ -138,13 +142,9 @@ can be entered is `140`. Please refer to the
 [AlloyUI Char Counter tutorial](http://alloyui.com/tutorials/char-counter)
 tutorial for more information about the character counter module.
 
-+$$$
-
-**Note:** Liferay IDE provides a *script* snippet that's available from the
-Liferay AUI Taglib category of the Snippets tab. You can use this snippet
-whenever you need to add an `<aui:script>` tag to a JSP page.
-
-$$$
+| **Note:** Liferay IDE provides a *script* snippet that's available from the
+| Liferay AUI Taglib category of the Snippets tab. You can use this snippet
+| whenever you need to add an `<aui:script>` tag to a JSP page.
 
 The following code loads the `aui-char-counter` module:
 

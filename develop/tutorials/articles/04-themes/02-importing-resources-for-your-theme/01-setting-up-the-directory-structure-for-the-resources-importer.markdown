@@ -1,4 +1,8 @@
-# Setting up the Directory Structure for the Resources Importer [](id=setting-up-the-directory-structure-for-the-resources-importer)
+---
+header-id: setting-up-the-directory-structure-for-the-resources-importer
+---
+
+# Setting up the Directory Structure for the Resources Importer
 
 A blank `resources-importer` directory was created with your theme. Rather than
 add each file individually and create all the remaining folders, go ahead and

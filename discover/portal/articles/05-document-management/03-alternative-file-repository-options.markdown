@@ -1,4 +1,8 @@
-# Alternative File Repository Options [](id=alternative-file-repository-options)
+---
+header-id: alternative-file-repository-options
+---
+
+# Alternative File Repository Options
 
 By default, Liferay stores documents and media files on the file system of the
 server on which it's running. You can choose a specific location for the
@@ -19,24 +23,16 @@ Liferay:
 - JCRStore (Java Content Repository)
 - S3Store (Amazon Simple Storage)
 
-+$$$
+| **Warning:** If a database transaction rollback occurs in a Document Library
+| that uses a file system based store, file system changes that have occurred
+| since the start of the transaction won't be reversed. Inconsistencies between
+| Document Library files and those in the file system store can occur and may
+| require manual synchronization. All stores except DBStore are vulnerable to this
+| limitation.
 
-**Warning:** If a database transaction rollback occurs in a Document Library
-that uses a file system based store, file system changes that have occurred
-since the start of the transaction won't be reversed. Inconsistencies between
-Document Library files and those in the file system store can occur and may
-require manual synchronization. All stores except DBStore are vulnerable to this
-limitation.
-
-$$$
-
-+$$$
-
-**Warning:** DBStore's file (stored as a blob) size limit is 1 gigabyte. To
-store such large files, use Simple File System Store or Advanced File System
-Store.
-
-$$$
+| **Warning:** DBStore's file (stored as a blob) size limit is 1 gigabyte. To
+| store such large files, use Simple File System Store or Advanced File System
+| Store.
 
 For example, you can store documents and media files in your Liferay instance's
 database using DBStore. To enable DStore, add the following line to your

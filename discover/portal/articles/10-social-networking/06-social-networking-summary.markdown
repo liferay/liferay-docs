@@ -1,4 +1,8 @@
-# Summary [](id=summary-7)
+---
+header-id: summary-7
+---
+
+# Summary
 
 <!-- | TODO: This is too thin. Please use the headings to summarize what the
 chapter was about. | -->

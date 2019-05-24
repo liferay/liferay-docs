@@ -1,4 +1,8 @@
-# Getting Started with the Documents and Media Portlet [](id=getting-started-with-the-documents-and-media-portlet)
+---
+header-id: getting-started-with-the-documents-and-media-portlet
+---
+
+# Getting Started with the Documents and Media Portlet
 
 The Documents and Media portlet, like many other of Liferay's portlets, is
 non-instanceable. This means that each page on your portal can host at most one
@@ -24,7 +28,7 @@ window shows only documents that belong to the selected document type. When you
 add custom document types, which we discuss below, they are added to the filter
 list. Next, let's look at how to navigate around Documents and Media.
 
-## Navigating the Documents and Media Portlet [](id=navigating-the-documents-and-media-portlet)
+## Navigating the Documents and Media Portlet
 
 In the main window of the Documents and Media portlet, you can click on a
 document to view details about it. Its version number, version history, status,
@@ -79,7 +83,7 @@ subscribes you to the folder you're currently viewing so that you'll receive
 email notifications. You'll be notified about any actions that take place in the
 folder such as file additions, edits, or deletions.
 
-### Actions [](id=actions)
+### Actions
 
 The Actions menu will only be displayed if you have selected one or more
 documents with the check boxes.
@@ -103,7 +107,7 @@ same time. Moving documents and folders is also possible via drag & drop.
 portlet. You can move multiple documents and folders to the Recycle Bin at the
 same time.
 
-### Add [](id=add)
+### Add
 
 From the Add button, you can add documents, folders, and shortcuts just like on
 your local file system.
@@ -154,7 +158,7 @@ currently support uploading folders from desktops.
 
 Let's move on and discuss the Sort action.
 
-### Sort [](id=sort)
+### Sort
 
 You can sort the items displayed in the main window of the Documents and Media
 portlet using the *Sort By* menu. You can sort by title, create date, modified
@@ -173,7 +177,7 @@ downloaded.
 
 Let's dive into the Manage action next!
 
-### Manage [](id=manage)
+### Manage
 
 The Manage menu allows you to view the names of document types and metadata
 sets, as well as the last times they were edited.

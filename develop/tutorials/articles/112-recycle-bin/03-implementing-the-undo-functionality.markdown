@@ -1,4 +1,8 @@
-# Implementing the Undo Functionality [](id=implementing-the-undo-functionality)
+---
+header-id: implementing-the-undo-functionality
+---
+
+# Implementing the Undo Functionality
 
 Sometimes, users accidentally send the wrong entry to the Recycle Bin. It
 seems kind of grueling to navigate away from your page to the Recycle Bin to
@@ -17,7 +21,7 @@ Walk through the following steps to implement the Undo functionality:
 
 Go ahead and implement the Undo button and its related links!
 
-## Step 1: Add the Undo Tag [](id=step-1-add-the-undo-tag)
+## Step 1: Add the Undo Tag
 
 First, you must use the `liferay-ui:trash-undo` tag in your JSP. Then you need
 to set a portlet action URL and pass it to the `liferay-ui:trash-undo` tag.
@@ -34,7 +38,7 @@ song in the Jukebox portlet:
 Now that you've added the tag and action URL, go ahead and implement the 
 portlet action to restore the entry.
 
-## Step 2: Create a Portlet Action to Initiate Restoration [](id=step-2-create-a-portlet-action-to-initiate-restoration)
+## Step 2: Create a Portlet Action to Initiate Restoration
 
 You must create a portlet action method that invokes your service method to
 restore the entry. 
@@ -62,7 +66,7 @@ entries by calling the `restore*` service method.
 Are you wondering how this portlet action gets the IDs of the entries to
 restore? You'll learn how to pass this data to the session next. 
 
-## Step 3: Providing Trash Entry Data for the Taglib [](id=step-3-providing-trash-entry-data-for-the-taglib)
+## Step 3: Providing Trash Entry Data for the Taglib
 
 The final step for implementing the Undo button is to provide the trashed
 entry's information to the `liferay-ui:trash-undo` tag. In order for the
@@ -117,14 +121,14 @@ In your portlet's delete action, you can similarly populate the session with the
 entry information of the entries being deleted. Now you know how to implement
 the Undo functionality for your app's trash-enabled entities!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Recycling Assets with the Recycle Bin](/discover/portal/-/knowledge_base/6-2/recycling-assets-with-the-recycle-bin)
+[Recycling Assets with the Recycle Bin](/docs/6-2/user/-/knowledge_base/u/recycling-assets-with-the-recycle-bin)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
+[Service Builder and Services](/docs/6-2/tutorials/-/knowledge_base/t/service-builder)
 
-[Enabling Search and Indexing](/develop/tutorials/-/knowledge_base/6-2/enabling-search-and-indexing)
+[Enabling Search and Indexing](/docs/6-2/tutorials/-/knowledge_base/t/enabling-search-and-indexing)
 
-[Asset Framework](/develop/tutorials/-/knowledge_base/6-2/asset-framework)
+[Asset Framework](/docs/6-2/tutorials/-/knowledge_base/t/asset-framework)
 
-[Asset Enabling Custom Entities](/develop/tutorials/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Asset Enabling Custom Entities](/docs/6-2/tutorials/-/knowledge_base/t/asset-enabling-custom-entities)

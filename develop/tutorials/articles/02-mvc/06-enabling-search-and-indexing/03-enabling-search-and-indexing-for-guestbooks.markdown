@@ -1,4 +1,8 @@
-# Enabling Search and Indexing for Guestbooks [](id=enabling-search-and-indexing-for-guestbooks)
+---
+header-id: enabling-search-and-indexing-for-guestbooks
+---
+
+# Enabling Search and Indexing for Guestbooks
 
 To enable search and indexing for guestbook entities, you need to follow these
 three steps:
@@ -19,7 +23,7 @@ guestbooks to take advantage of Liferay's asset framework. You'll explore the
 sets of functionality provided by Liferay's asset framework in the next learning
 path, and you'll update your guestbook-portlet project to use some of them.
 
-## Creating a Guestbook Indexer [](id=creating-a-guestbook-indexer)
+## Creating a Guestbook Indexer
 
 In the `com.liferay.docs.guestbook.search` package of your guestbook-project's
 `docroot/WEB-INF/src` folder, create a new class called `GuestbookIndexer` that
@@ -206,7 +210,7 @@ class. If you have questions about any of the methods in the `GuestbookIndexer`
 class, please refer to the explanation for the `EntryIndexer` class that
 appeared earlier in this learning path.
 
-## Registering a Guestbook Indexer [](id=registering-a-guestbook-indexer)
+## Registering a Guestbook Indexer
 
 Next, you need to register your guestbook indexer with the Guestbook Admin
 portlet. Add the following line to your guestbook-portlet project's
@@ -219,7 +223,7 @@ The next time you deploy your project, Liferay will register your indexer with
 the Guestbook Admin portlet. Now you need to update the Guestbook service layer
 to use the Guestbook indexer.
 
-## Handling Indexing in the Guestbook Service Layer [](id=handling-indexing-in-the-guestbook-service-layer)
+## Handling Indexing in the Guestbook Service Layer
 
 You need to make sure that whenever a guestbook is added, updated, or deleted,
 its index is updated accordingly. To accomplish this, you need to update each of
@@ -250,7 +254,7 @@ If you have questions about them, please refer to the explanation for the
 Guestbook entry service layer update that appeared earlier in this learning
 path.
 
-## Registering Indexers To Different Portlets In The Same Project [](id=registering-indexers-to-different-portlets-in-the-same-project)
+## Registering Indexers To Different Portlets In The Same Project
 
 When you wrote the `EntryIndexer` and `GuestbookIndexer` classes, you specified
 a portlet ID for each indexer. It's a Liferay convention to specify portlet IDs
@@ -299,6 +303,6 @@ your guestbook and guestbook entry entities are all set to take advantage of
 Liferay's asset framework. We'll explore Liferay's asset framework in the next
 learning path.
 
-## Next Steps [](id=next-steps)
+## Next Steps
 
-[Asset-Enabling Custom Entities](/develop/tutorials/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Asset-Enabling Custom Entities](/docs/6-2/tutorials/-/knowledge_base/t/asset-enabling-custom-entities)

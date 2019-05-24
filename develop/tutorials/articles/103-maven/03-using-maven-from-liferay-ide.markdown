@@ -1,4 +1,8 @@
-# Using Maven From Liferay IDE [](id=using-maven-from-liferay-ide)
+---
+header-id: using-maven-from-liferay-ide
+---
+
+# Using Maven From Liferay IDE
 
 Wouldn't it be nice if you could manage your Liferay Maven projects from Liferay
 IDE? You can! Liferay IDE 2.0 introduces the Maven project configurator
@@ -8,7 +12,7 @@ configurator does, how to install it, and how to install its dependencies. As
 you read through it, you'll examine the structure of Liferay Maven projects and
 explore some configuration options.
 
-## Installing Maven Plugins for Liferay IDE [](id=installing-maven-plugins-for-liferay-ide)
+## Installing Maven Plugins for Liferay IDE
 
 In order to properly support Maven projects in the IDE, you first need a
 mechanism to recognize Maven projects as Liferay IDE projects. IDE projects are
@@ -66,26 +70,22 @@ uncheck the *Group items by category* checkbox.
 Awesome! The required Maven plugins are installed and your IDE instance is ready
 to be mavenized! Next, you'll learn how to configure an existing Maven project.
 
-## Configuring Your Liferay Maven Project [](id=configuring-your-liferay-maven-project)
+## Configuring Your Liferay Maven Project
 
 Now that your Liferay IDE is Maven-ready, you can examine the anatomy of a
 Liferay Maven project. Note, you don't need to have an existing Liferay Maven
 project to continue. However, if you'd like to create a new Liferay Maven
 portlet project in the IDE before proceeding, you can do so by following
 instructions in the tutorial
-[Developing Liferay Portlets with Maven](/develop/tutorials/-/knowledge_base/6-2/creating-liferay-portlets-with-maven).
+[Developing Liferay Portlets with Maven](/docs/6-2/tutorials/-/knowledge_base/t/creating-liferay-portlets-with-maven).
 Alternatively, you can import an existing Maven project by navigating to *File*
 &rarr; *Import* &rarr; *Maven* and selecting the location of Maven project's
 source code. 
 
-+$$$
-
-**Note:** Due to the lifecycle mapping
-of Eclipse and Maven, it is unsafe to manually insert or overwrite the
-`.classpath` file, `.project` file, and `.settings` folder. IDE automatically
-generates these files when a project is imported and updates them appropriately.
-
-$$$
+| **Note:** Due to the lifecycle mapping
+| of Eclipse and Maven, it is unsafe to manually insert or overwrite the
+| `.classpath` file, `.project` file, and `.settings` folder. IDE automatically
+| generates these files when a project is imported and updates them appropriately.
 
 The `m2e-core` plugin delegates your Liferay Maven plugin's project
 configuration to the `m2e-liferay` project configurator. The `m2e-wtp` project
@@ -99,7 +99,7 @@ project's properties. The configurator detects invalid properties and reports
 them as errors in the IDE's POM editor. There are a list of key properties that
 your project must specify in order for it to become a valid Liferay IDE project.
 The
-[Using Maven Parent Plugin Projects](/develop/tutorials/-/knowledge_base/6-2/using-liferay-maven-parent-plugin-projects)
+[Using Maven Parent Plugin Projects](/docs/6-2/tutorials/-/knowledge_base/t/using-liferay-maven-parent-plugin-projects)
 tutorial identifies these properties and explains how they are used. 
 
 Liferay IDE's Quick Fix features provide two options for resolving missing
@@ -164,7 +164,7 @@ parent `pom.xml` overrides the user `settings.xml` file, and the user
 Note that if a *profile* is active from your user `settings.xml`, its values 
 override your properties in a POM. If you'd like to specify the properties in a
 POM, see the
-[Using Liferay Maven Parent Plugin Projects](/develop/tutorials/-/knowledge_base/6-2/using-liferay-maven-parent-plugin-projects)
+[Using Liferay Maven Parent Plugin Projects](/docs/6-2/tutorials/-/knowledge_base/t/using-liferay-maven-parent-plugin-projects)
 tutorial for more details. 
 
 Here's an example of what a Maven profile looks like inside the `settings.xml`
@@ -233,10 +233,10 @@ The figure below, shows the `pom.xml` file editor and its modes.
 By taking advantage of these interactive modes, modifying and organizing your
 POM and its dependencies has never been easier!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating Liferay Maven Plugins from Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/creating-liferay-maven-plugins-from-liferay-ide)
+[Creating Liferay Maven Plugins from Liferay IDE](/docs/6-2/tutorials/-/knowledge_base/t/creating-liferay-maven-plugins-from-liferay-ide)
 
-[Deploying Liferay Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/deploying-liferay-plugins-with-maven)
+[Deploying Liferay Plugins with Maven](/docs/6-2/tutorials/-/knowledge_base/t/deploying-liferay-plugins-with-maven)
 
-[Setting Up Liferay Maven Facets in Existing Liferay Maven Plugin Projects](/develop/tutorials/-/knowledge_base/6-2/setting-up-liferay-maven-facets-in-existing-liferay-maven-plugin-projects)
+[Setting Up Liferay Maven Facets in Existing Liferay Maven Plugin Projects](/docs/6-2/tutorials/-/knowledge_base/t/setting-up-liferay-maven-facets-in-existing-liferay-maven-plugin-projects)

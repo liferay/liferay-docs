@@ -1,4 +1,8 @@
-# Understanding Liferay Faces Portal [](id=understanding-liferay-faces-portal)
+---
+header-id: understanding-liferay-faces-portal
+---
+
+# Understanding Liferay Faces Portal
 
 *Liferay Faces Portal* is distributed in a `.jar` file. You can add Liferay
 Faces Portal as a dependency for your portlet projects to use its
@@ -35,13 +39,13 @@ Some of the features included in Liferay Faces Portal are:
 Great! You now have an understanding of what Liferay Faces Portal is, and what
 it accomplishes in your JSF application. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating and Deploying JSF Portlets](/develop/tutorials/-/knowledge_base/6-2/creating-and-deploying-jsf-portlets)
+[Creating and Deploying JSF Portlets](/docs/6-2/tutorials/-/knowledge_base/t/creating-and-deploying-jsf-portlets)
 
-[Developing Liferay Faces Portlets with Maven](/develop/tutorials/-/knowledge_base/6-2/developing-liferay-faces-portlets-with-maven)
+[Developing Liferay Faces Portlets with Maven](/docs/6-2/tutorials/-/knowledge_base/t/developing-liferay-faces-portlets-with-maven)
 
-[Understanding Liferay Faces Bridge](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-bridge)
+[Understanding Liferay Faces Bridge](/docs/6-2/tutorials/-/knowledge_base/t/understanding-liferay-faces-bridge)
 
-[Understanding Liferay Faces Alloy](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-alloy)
+[Understanding Liferay Faces Alloy](/docs/6-2/tutorials/-/knowledge_base/t/understanding-liferay-faces-alloy)
 

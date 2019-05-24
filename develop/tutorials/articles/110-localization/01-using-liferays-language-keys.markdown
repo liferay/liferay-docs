@@ -1,4 +1,8 @@
-# Using Liferay's Language Keys [](id=using-liferays-language-keys)
+---
+header-id: using-liferays-language-keys
+---
+
+# Using Liferay's Language Keys
 
 <!-- The beginning and ending test portlets can be found at the following:
 Begin: https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/liferayui/success/end/my-greeting-portlet
@@ -100,5 +104,5 @@ a Liferay portlet.
 
 Related Topics:
 
-[Overriding Language Properties Using a Hook](/develop/tutorials/-/knowledge_base/6-2/overriding-language-properties-using-a-hook)
+[Overriding Language Properties Using a Hook](/docs/6-2/tutorials/-/knowledge_base/t/overriding-language-properties-using-a-hook)
 

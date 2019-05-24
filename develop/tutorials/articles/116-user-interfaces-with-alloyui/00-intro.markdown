@@ -1,4 +1,8 @@
-# User Interfaces with AlloyUI [](id=alloyui)
+---
+header-id: alloyui
+---
+
+# User Interfaces with AlloyUI
 
 AlloyUI gives you skinnable, scalable UI components, so you can provide a
 consistent look and feel for your application. It's a framework containing 

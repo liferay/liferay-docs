@@ -1,4 +1,8 @@
-# Exposing the Permission Interface to Users [](id=exposing-the-permission-interface-to-users)
+---
+header-id: exposing-the-permission-interface-to-users
+---
+
+# Exposing the Permission Interface to Users
 
 Imagine that you bought a really nice electric guitar. Now imagine that you
 bought an even nicer amplifier to go along with it. You get them home, and much
@@ -18,15 +22,11 @@ configured?
 This tutorial covers exposing your portlet permissions to users. Get ready to 
 rock! 
 
-+$$$
+| **Note:** The Guestbook project is used in this tutorial to illustrate exposing
+| permissions to users. You can find it in the Liferay Docs repository here:
+| [Liferay Guestbook project](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/01-mvc/learning-sdk/portlets/guestbook-portlet).
 
-**Note:** The Guestbook project is used in this tutorial to illustrate exposing
-permissions to users. You can find it in the Liferay Docs repository here:
-[Liferay Guestbook project](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/01-mvc/learning-sdk/portlets/guestbook-portlet).
-
-$$$
-
-## Adding Permissions [](id=adding-permissions)
+## Adding Permissions
 
 To allow permissions to be configured for model resources, you must add the
 permissions interface to the UI. Just add these two Liferay UI tags to your JSP:
@@ -72,14 +72,14 @@ There's an optional attribute called `redirect` that's available if you want to
 override the default behavior of the upper right arrow link. That's it; now your
 users can configure the permission settings for model resources!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Customizing Liferay Portal](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+[Customizing Liferay Portal](/docs/6-2/tutorials/-/knowledge_base/t/customizing-liferay-portal)
 
-[Plugin Security and PACL](/develop/tutorials/-/knowledge_base/6-2/plugin-security-and-pacl)
+[Plugin Security and PACL](/docs/6-2/tutorials/-/knowledge_base/t/plugin-security-and-pacl)
 
-[Developing Plugins with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/liferay-ide)
+[Developing Plugins with Liferay IDE](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ide)
 
-[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)
+[User Interfaces with AlloyUI](/docs/6-2/tutorials/-/knowledge_base/t/alloyui)
 
-[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+[Liferay UI Taglibs](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ui-taglibs)

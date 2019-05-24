@@ -1,13 +1,17 @@
-# Creating Android List Screenlets [](id=creating-android-list-screenlets)
+---
+header-id: creating-android-list-screenlets
+---
+
+# Creating Android List Screenlets
 
 It's very common for mobile apps to display lists. Liferay Screens 
 lets you display asset lists and DDL lists in your Android app by using 
-[Asset List Screenlet](/develop/reference/-/knowledge_base/6-2/assetlistscreenlet-for-android) 
+[Asset List Screenlet](/docs/6-2/reference/-/knowledge_base/r/assetlistscreenlet-for-android) 
 and 
-[DDL List Screenlet](/develop/reference/-/knowledge_base/6-2/ddllistscreenlet-for-android), 
+[DDL List Screenlet](/docs/6-2/reference/-/knowledge_base/r/ddllistscreenlet-for-android), 
 respectively. Screens also includes list Screenlets for displaying lists of 
 other Liferay entities like web content articles, images, and more. 
-[The Screenlet reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android) 
+[The Screenlet reference documentation](/docs/6-2/reference/-/knowledge_base/r/screenlets-in-liferay-screens-for-android) 
 lists all the Screenlets included with Liferay Screens. If there's not a list 
 Screenlet for the entity you want to display in a list, you must create your 
 own. A list Screenlet can display any entity from a Liferay instance. For 
@@ -23,19 +27,19 @@ Note that because this tutorial focuses on creating a list Screenlet, it doesn't
 explain general Screenlet concepts and components. Before beginning, you should 
 therefore read the following tutorials: 
 
-- [Screens architecture tutorial](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android)
-- [Basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets)
+- [Screens architecture tutorial](/docs/6-2/tutorials/-/knowledge_base/t/architecture-of-liferay-screens-for-android)
+- [Basic Screenlet creation tutorial](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-screenlets)
 
 You'll create the list Screenlet by following these steps: 
 
-1. [Creating the Model Class](/develop/tutorials/-/knowledge_base/6-2/creating-android-list-screenlets#creating-the-model-class)
-2. [Creating the View](/develop/tutorials/-/knowledge_base/6-2/creating-android-list-screenlets#creating-the-screenlets-view)
-3. [Creating the Interactor](/develop/tutorials/-/knowledge_base/6-2/creating-android-list-screenlets#creating-the-screenlets-interactor)
-4. [Creating the Screenlet Class](/develop/tutorials/-/knowledge_base/6-2/creating-android-list-screenlets#creating-the-screenlet-class)
+1. [Creating the Model Class](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-list-screenlets#creating-the-model-class)
+2. [Creating the View](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-list-screenlets#creating-the-screenlets-view)
+3. [Creating the Interactor](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-list-screenlets#creating-the-screenlets-interactor)
+4. [Creating the Screenlet Class](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-list-screenlets#creating-the-screenlet-class)
 
 First though, you should understand how pagination works with list Screenlets. 
 
-## Pagination [](id=pagination)
+## Pagination
 
 To ensure that users can scroll smoothly through large lists of items, list 
 Screenlets support fluent pagination. Support for this is built into the list 
@@ -43,7 +47,7 @@ Screenlet framework. You'll see this as you construct your list Screenlet.
 
 Now you're ready to begin! 
 
-## Creating the Model Class [](id=creating-the-model-class)
+## Creating the Model Class
 
 Entities come back from Liferay in JSON. To work with these results efficiently 
 in your app, you must convert them to model objects that represent the entity in 
@@ -122,10 +126,10 @@ Besides the getters and setter, the rest of this class implements
 
 Now that you have your model class, you can create your Screenlet's View. 
 
-## Creating the Screenlet's View [](id=creating-the-screenlets-view)
+## Creating the Screenlet's View
 
 Recall from 
-[the basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets#creating-the-screenlets-ui) 
+[the basic Screenlet creation tutorial](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-screenlets#creating-the-screenlets-ui) 
 that a View defines a Screenlet's UI. To accommodate its list, a list 
 Screenlet's View is constructed a bit differently than that of a non-list 
 Screenlet. To create a List Screenlet's View, you'll create the following 
@@ -142,7 +146,7 @@ components:
 
 First, you'll create the row layout. 
 
-### Creating the Row Layout [](id=creating-the-row-layout)
+### Creating the Row Layout
 
 Before constructing the rest of the View, you should first define the layout to 
 use for each row in the list. For example, Bookmark List Screenlet needs to 
@@ -168,7 +172,7 @@ simple or complex as you need them to be to display your content.
 
 Next, you'll create the adapter class. 
 
-### Creating the Adapter Class [](id=creating-the-adapter-class)
+### Creating the Adapter Class
 
 [Android adapters](https://developer.android.com/guide/topics/ui/declaring-layout.html#AdapterViews) 
 fill a layout with content. In the example Bookmark List Screenlet, the layout 
@@ -235,11 +239,11 @@ method calls the view holder's `bind` method to set the bookmark's URL as the
 
 Great! Your adapter class is finished. Next, you'll create the View class. 
 
-### Creating the View Class [](id=creating-the-view-class)
+### Creating the View Class
 
 Now that your adapter exists, you can create your list Screenlet's View class. 
 Recall from 
-[the basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets#creating-the-screenlets-ui) 
+[the basic Screenlet creation tutorial](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-screenlets#creating-the-screenlets-ui) 
 that the View class is the central hub of any Screenlet's UI. It renders the UI, 
 handles user interactions, and communicates with the Screenlet class. The list 
 Screenlet framework provides most of this functionality for you via 
@@ -297,7 +301,7 @@ returning the row layout `bookmark_row`:
 
 Next, you'll create your View's main layout. 
 
-### Creating the View's Main Layout [](id=creating-the-views-main-layout)
+### Creating the View's Main Layout
 
 Although you already created a layout for your list rows, you must still create 
 a layout to define the list as a whole. This layout must contain: 
@@ -334,21 +338,17 @@ list Screenlets. For example, here's Bookmark List Screenlet's layout
             android:visibility="gone"/>
     </com.liferay.mobile.screens.listbookmark.BookmarkListView>
 
-+$$$
-
-**Warning:** The `android:id` values in your View's layout XML must **exactly** 
-match the ones shown here. These values are hardcoded into the Screens framework 
-and changing them will cause your app to crash. 
-
-$$$
+| **Warning:** The `android:id` values in your View's layout XML must **exactly**
+| match the ones shown here. These values are hardcoded into the Screens framework
+| and changing them will cause your app to crash.
 
 Great job! Your View is finished. Next, you'll create your Screenlet's 
 Interactor. 
 
-## Creating the Screenlet's Interactor [](id=creating-the-screenlets-interactor)
+## Creating the Screenlet's Interactor
 
 Recall from 
-[the basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets#creating-the-screenlets-Interactor-class) 
+[the basic Screenlet creation tutorial](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-screenlets#creating-the-screenlets-Interactor-class) 
 that Interactors retrieve and process a server call's results. Also recall that 
 the following components make up an Interactor: 
 
@@ -361,7 +361,7 @@ in non-list Screenlets. Creating them, however, is a bit different. Each of the
 following sections show you how to create one of these components. First, you'll 
 create the event.
 
-### Creating the Event [](id=creating-the-screenlets-event)
+### Creating the Event
 
 Screens uses the 
 [EventBus](http://greenrobot.org/eventbus/) 
@@ -392,7 +392,7 @@ its `BookmarkEvent(Bookmark bookmark)` constructor sets:
 
 You must also implement `ListEvent`'s abstract methods in your event class. Note 
 that these methods support 
-[offline mode](/develop/tutorials/-/knowledge_base/6-2/using-offline-mode-in-android). 
+[offline mode](/docs/6-2/tutorials/-/knowledge_base/t/using-offline-mode-in-android). 
 Although these methods are briefly described here, supporting offline mode in 
 your Screenlets is addressed in detail in a separate tutorial. 
 
@@ -416,7 +416,7 @@ your Screenlets is addressed in detail in a separate tutorial.
 
 Next, you'll create your Screenlet's listener. 
 
-### Creating the Listener [](id=creating-the-screenlets-listener)
+### Creating the Listener
 
 Recall that listeners let the app developer respond to events that occur in 
 Screenlets. For example, an app developer using Login Screenlet in an activity 
@@ -458,7 +458,7 @@ called:
 
 Next, you'll create the Interactor class. 
 
-### Creating the Interactor Class [](id=creating-the-interactor-class)
+### Creating the Interactor Class
 
 Recall that as an Interactor's central component, the Interactor class makes the 
 service call to retrieve entities from @product@, and processes the results of 
@@ -486,7 +486,7 @@ and process the results:
   the Screenlet XML in a fragment or activity. The `getPageRowsRequest` method 
   finishes by calling `BookmarksEntryService`'s `getEntries` method to retrieve 
   a page of bookmarks. Note that the service call, like the service call in the 
-  [basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets#creating-the-screenlets-Interactor-class), 
+  [basic Screenlet creation tutorial](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-screenlets#creating-the-screenlets-Interactor-class), 
   uses `LiferayServerContext.isLiferay7()` to check the portal version to make 
   sure the correct service instance is used. This isn't required if you only 
   plan to use your Screenlet with one portal version. Also note that the 
@@ -558,7 +558,7 @@ and process the results:
 
 - `getIdFromArgs`: a boilerplate method that returns the value of the first 
   object argument as a string. This serves as a cache key for 
-  [offline mode](/develop/tutorials/-/knowledge_base/6-2/using-offline-mode-in-android): 
+  [offline mode](/docs/6-2/tutorials/-/knowledge_base/t/using-offline-mode-in-android): 
 
         @Override
         protected String getIdFromArgs(Object... args) {
@@ -575,10 +575,10 @@ To see the complete `BookmarkListInteractor` class,
 
 Next, you'll create the Screenlet class. 
 
-## Creating the Screenlet Class [](id=creating-the-screenlet-class)
+## Creating the Screenlet Class
 
 Recall from 
-[the basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets#creating-the-screenlet-class) 
+[the basic Screenlet creation tutorial](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-screenlets#creating-the-screenlet-class) 
 that the Screenlet class serves as your Screenlet's focal point. It governs the 
 Screenlet's behavior and is the primary component the app developer interacts 
 with. As with non-list Screenlets, you should first define any XML attributes 
@@ -659,7 +659,7 @@ the `Exception` and `userAction`:
 
 Next, override the `createScreenletView` method to read the values of the XML 
 attributes you defined earlier and create the Screenlet's View. Recall from 
-[the basic Screenlet creation tutorial](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets#creating-the-screenlet-class) 
+[the basic Screenlet creation tutorial](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-screenlets#creating-the-screenlet-class) 
 that this method assigns the attribute values to their corresponding instance 
 variables. For example, the `createScreenletView` method in 
 `BookmarkListScreenlet` assigns the `folderId` and `comparator` attribute values 
@@ -716,14 +716,14 @@ return the new instance. For example, `BookmarkListScreenlet`'s
 
 You're done! Your Screenlet is a ready-to-use component that you can use in your 
 app. You can even 
-[package your Screenlet](/develop/tutorials/-/knowledge_base/6-2/packaging-your-android-screenlets)
+[package your Screenlet](/docs/6-2/tutorials/-/knowledge_base/t/packaging-your-android-screenlets)
 and contribute it to the Screens project, or distribute it in Maven Central or 
 jCenter. 
 
-## Using the Screenlet [](id=using-the-screenlet)
+## Using the Screenlet
 
 You can now use your new list Screenlet 
-[the same way you use any other Screenlet](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps): 
+[the same way you use any other Screenlet](/docs/6-2/tutorials/-/knowledge_base/t/using-screenlets-in-android-apps): 
 
 1. Insert the Screenlet's XML in the layout of the activity or fragment you want 
    to use the Screenlet in. For example, here's Bookmark List Screenlet's XML: 
@@ -766,14 +766,14 @@ You can now use your new list Screenlet
 
 Well done! Now you know how to create list Screenlets. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets)
+[Creating Android Screenlets](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-screenlets)
 
-[Architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android)
+[Architecture of Liferay Screens for Android](/docs/6-2/tutorials/-/knowledge_base/t/architecture-of-liferay-screens-for-android)
 
-[Packaging Your Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/packaging-your-android-screenlets)
+[Packaging Your Android Screenlets](/docs/6-2/tutorials/-/knowledge_base/t/packaging-your-android-screenlets)
 
-[Using Views in Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets)
+[Using Views in Android Screenlets](/docs/6-2/tutorials/-/knowledge_base/t/using-views-in-android-screenlets)
 
-[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps)
+[Using Screenlets in Android Apps](/docs/6-2/tutorials/-/knowledge_base/t/using-screenlets-in-android-apps)

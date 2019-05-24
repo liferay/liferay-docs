@@ -1,4 +1,8 @@
-# Localization [](id=localization)
+---
+header-id: localization
+---
+
+# Localization
 
 If your portlets target an international audience, you can localize your
 portlets' user interfaces. To localize a portlet, you need to create language
@@ -19,6 +23,6 @@ same resource bundle so that you can leverage Liferay's language building
 capabilities from Liferay IDE and the Plugins SDK. You'll learn how to
 localize your portlets in all of these scenarios.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Localizing JSF Portlets](/develop/tutorials/-/knowledge_base/6-2/localizing-jsf-portlets)
+[Localizing JSF Portlets](/docs/6-2/tutorials/-/knowledge_base/t/localizing-jsf-portlets)

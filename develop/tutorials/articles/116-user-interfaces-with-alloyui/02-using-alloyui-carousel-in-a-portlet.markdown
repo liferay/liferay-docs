@@ -1,4 +1,8 @@
-# Using AlloyUI Carousel in Your Portlet [](id=using-alloyui-carousel-in-your-portlet)
+---
+header-id: using-alloyui-carousel-in-your-portlet
+---
+
+# Using AlloyUI Carousel in Your Portlet
 
 Image carousels are often the first thing people see when they visit sites.
 Carousels provide an interactive way of cycling through visual elements and are
@@ -26,13 +30,13 @@ Carousel
 Walk through each of these steps to get a carousel up and running in your
 portlet. 
 
-### Step 1: Add Images to Your Portlet for Displaying in Your Carousel [](id=step-1-add-images-to-your-portlet-for-displaying-in-your-carousel)
+### Step 1: Add Images to Your Portlet for Displaying in Your Carousel
 
 Create a location in your portlet to store your carousel's images and then copy
 the images into that folder. For example, you could create a folder named `img`
 in your portlet's `docroot` folder and then put your image files in it. 
 
-### Step 2: Add a Carousel to Your View JSP [](id=step-2-add-a-carousel-to-your-view-jsp)
+### Step 2: Add a Carousel to Your View JSP
 
 1.  Open your view JSP. Create one if you don't already have one in your
 portlet. 
@@ -94,7 +98,7 @@ configured and the carousel has no reference to the image files. Don't worry;
 you can use CSS to configure the items and map the image files to your JSP. The
 next step shows you how to take care of these requirements. 
 
-### Step 3: Write CSS Code to Configure Your Carousel and to Map Images to the Carousel [](id=step-3-write-css-code-to-configure-your-carousel-and-to-map-images-to-the-c)
+### Step 3: Write CSS Code to Configure Your Carousel and to Map Images to the Carousel
 
 This step's instructions demonstrate using CSS to configure the carousel's
 items. 
@@ -143,9 +147,9 @@ Now that you've written code to display your carousel, you can deploy your
 plugin and see your images in the carousel. Give yourself a pat on the back.
 You've just successfully used the `aui-carousel` in your portlet! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[User Interfaces with the Liferay UI taglib](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+[User Interfaces with the Liferay UI taglib](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ui-taglibs)
 
-[Using AlloyUI in Your Application](/develop/tutorials/-/knowledge_base/6-2/using-alloy-ui-in-your-application)
+[Using AlloyUI in Your Application](/docs/6-2/tutorials/-/knowledge_base/t/using-alloy-ui-in-your-application)
 

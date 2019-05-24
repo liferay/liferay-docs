@@ -1,4 +1,8 @@
-# Modifying Your Service Layer [](id=modifying-your-service-layer)
+---
+header-id: modifying-your-service-layer
+---
+
+# Modifying Your Service Layer
 
 You want to add three new functions to your portlet: modifying guestbook
 entries, deleting guestbook entries, and setting permissions for guestbook
@@ -10,7 +14,7 @@ this functionality.
 It's time to jump back into your service layer to enable deleting and updating
 guestbook entries. 
 
-## Adding Methods to the Service Layer [](id=adding-methods-to-the-service-layer)
+## Adding Methods to the Service Layer
 
 Remember: with Service Builder, you work in reverse. Instead of modifying the
 interface and then implementing it, all you need to do is add the method you

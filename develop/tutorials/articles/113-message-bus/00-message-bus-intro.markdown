@@ -1,4 +1,8 @@
-# Message Bus [](id=using-liferays-message-bus)
+---
+header-id: using-liferays-message-bus
+---
+
+# Message Bus
 
 Liferay's *Message Bus* is a service level API that components can use to send
 and receive messages. It provides loose coupling between message producers and
@@ -23,7 +27,7 @@ and how to style message formats.
 Before you get into those topics, you should first learn about the Message Bus 
 system's architecture. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 [Service Builder and Services](/tutorials/-/knowledge_base/6-2/service-builder)
 

@@ -1,4 +1,8 @@
-# Implementing Asset Renderers [](id=implementing-asset-renderers)
+---
+header-id: implementing-asset-renderers
+---
+
+# Implementing Asset Renderers
 
 You need to create asset renderer classes for your guestbook and guestbook entry
 entities and register them with Liferay. Without these classes, Liferay's Asset
@@ -11,7 +15,7 @@ tables of the entities themselves (e.g., they are not columns in the
 `GB_Guestbook` table in the case of your guestbook entities). Rather, they are
 are stored in the `AssetEntry` table.
 
-## Implementing a Guestbook Asset Renderer [](id=implementing-a-guestbook-asset-renderer)
+## Implementing a Guestbook Asset Renderer
 
 Create a new package called `com.liferay.docs.guestbook.asset` in your
 guestbook-portlet project's `docroot/WEB-INF/src` folder. In this package,
@@ -245,7 +249,7 @@ This entry should go just below the `<control-panel-entry-weight>` element and
 just above the `<header-portlet-css>` element. Good! Now your asset renderer
 factory will be registered the next time you re-deploy your plugin.
 
-## Implementing an Entry Asset Renderer [](id=implementing-an-entry-asset-renderer)
+## Implementing an Entry Asset Renderer
 
 Next, you need to implement an asset renderer and an asset renderer factory for
 guestbook entries. In the `com.liferay.docs.guestbook.asset` package, create an
@@ -464,19 +468,15 @@ kind from the current site.
 Confirm that the Asset Publisher is displaying the guestbooks and guestbook
 entries that you added.
 
-## Adding Custom Icons to Portlets and Asset Renderers [](id=adding-custom-icons-to-portlets-and-asset-renderers)
+## Adding Custom Icons to Portlets and Asset Renderers
 
 You can configure custom icons for your Guestbook and Guestbook Admin portlets.
 To do so, just open your project's `liferay-portlet.xml`, and update the paths
 inside of the `<icon>` elements inside of the `<portlet>` elements corresponding
 to the Guestbook and Guestbook Admin portlets.
 
-+$$$
-
-**Note:** The recommended size for your portlet icons is 16 by 16 pixels. If
-your portlet icons are a different size, they might not be displayed correctly.
-
-$$$
+| **Note:** The recommended size for your portlet icons is 16 by 16 pixels. If
+| your portlet icons are a different size, they might not be displayed correctly.
 
 Here is a sample icon for the Guestbook portlet that's intended to represent a
 guestbook entry. Download this icon and add it to your guestbook-portlet

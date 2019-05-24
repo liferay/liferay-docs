@@ -1,4 +1,8 @@
-# Configuring Portal Settings [](id=configuring-portal-settings)
+---
+header-id: configuring-portal-settings
+---
+
+# Configuring Portal Settings
 
 Most global portal settings can be configured from the Portal Settings section
 of the Control Panel. The Configuration heading contains the following links:
@@ -37,7 +41,7 @@ their parent sites.
 
 Let's discuss these settings in more detail.
 
-## General [](id=general)
+## General
 
 The General link takes you to a screen with three headings: Main Configuration,
 Navigation, and Additional Information. Under the Main Configuration heading,
@@ -63,7 +67,7 @@ and [Default Logout Page](http://docs.liferay.com/portal/6.2/propertiesdoc/porta
 Under the Additional Information heading, you can specify a Legal name, ID, 
 company type, SIC code, ticker symbol, industry and industry type.
 
-## Authentication [](id=authentication)
+## Authentication
 
 The Authentication page has several tabs: General, LDAP, CAS, Facebook, NTLM,
 OpenID, Open SSO and SiteMinder. You can use any of these authentication methods

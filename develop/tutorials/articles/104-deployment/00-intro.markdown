@@ -1,4 +1,8 @@
-# Deploying Plugins [](id=deploying-plugins)
+---
+header-id: deploying-plugins
+---
+
+# Deploying Plugins
 
 In order for a plugin to affect the portal it must be deployed to it. As you
 develop plugins you'll want to test them on a portal. Commonly, developers test

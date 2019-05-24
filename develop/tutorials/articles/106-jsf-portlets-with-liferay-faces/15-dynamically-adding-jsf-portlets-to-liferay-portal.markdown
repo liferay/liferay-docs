@@ -1,4 +1,8 @@
-# Dynamically Adding JSF Portlets to Liferay Portal [](id=dynamically-adding-jsf-portlets-to-liferay-portal)
+---
+header-id: dynamically-adding-jsf-portlets-to-liferay-portal
+---
+
+# Dynamically Adding JSF Portlets to Liferay Portal
 
 For this tutorial, you'll learn how to dynamically add portlets to Liferay
 Portal pages. Here are the places in which you can add a portlet: 
@@ -76,12 +80,12 @@ ensures that JSF 2 is properly initialized. You specify the required
 Now, you know the options you have in dynamically adding your JSF portlets at
 runtime. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Liferay Faces Alloy UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-alloy-ui-components)
+[Liferay Faces Alloy UI Components](/docs/6-2/tutorials/-/knowledge_base/t/liferay-faces-alloy-ui-components)
 
-[Liferay Faces Bridge UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-bridge-ui-components)
+[Liferay Faces Bridge UI Components](/docs/6-2/tutorials/-/knowledge_base/t/liferay-faces-bridge-ui-components)
 
-[Understanding Liferay Faces Portal](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-portal)
+[Understanding Liferay Faces Portal](/docs/6-2/tutorials/-/knowledge_base/t/understanding-liferay-faces-portal)
 
-[Understanding Liferay Faces Alloy](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-alloy)
+[Understanding Liferay Faces Alloy](/docs/6-2/tutorials/-/knowledge_base/t/understanding-liferay-faces-alloy)

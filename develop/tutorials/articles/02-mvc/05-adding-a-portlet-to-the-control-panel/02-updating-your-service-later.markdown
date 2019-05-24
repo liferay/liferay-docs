@@ -1,4 +1,8 @@
-# Updating Your Service Layer [](id=updating-your-service-layer)
+---
+header-id: updating-your-service-layer
+---
+
+# Updating Your Service Layer
 
 In an earlier learning path, you wrote an `addGuestbook` service method in
 `GuestbookLocalServiceImpl`. The `addGuestbook` method of `GuestbookPortlet`
@@ -11,7 +15,7 @@ when you're implementing your user interface since you'll use a Liferay tag
 library construct called Search Container. Your search container needs to know
 how many guestbooks to display.
 
-## Adding Guestbook Service Methods [](id=adding-guestbook-service-methods)
+## Adding Guestbook Service Methods
 
 Remember that when working with Service Builder, the `*Impl` classes are your
 extension points. After you add or remove a method from an `*Impl` class or

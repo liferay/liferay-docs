@@ -1,4 +1,8 @@
-# Using Offline Mode in Android [](id=using-offline-mode-in-android)
+---
+header-id: using-offline-mode-in-android
+---
+
+# Using Offline Mode in Android
 
 Offline mode in Liferay Screens lets your apps function when connectivity is 
 unavailable or intermittent. Even though the steady march of technology makes 
@@ -10,11 +14,11 @@ users flexibility in these situations.
 
 This tutorial shows you how to use offline mode in Screenlets. For an 
 explanation of how offline mode works, see the tutorial 
-[Architecture of Offline Mode in Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/architecture-of-offline-mode-in-liferay-screens). 
+[Architecture of Offline Mode in Liferay Screens](/docs/6-2/tutorials/-/knowledge_base/t/architecture-of-offline-mode-in-liferay-screens). 
 Offline mode's architecture is the same on iOS and Android, although its use on 
 these platforms differs.
 
-## Configuring Screenlets for Offline Mode [](id=configuring-screenlets-for-offline-mode)
+## Configuring Screenlets for Offline Mode
 
 If you want to enable offline mode in any of your screenlets, you must configure
 the `offlinePolicy` attribute when inserting the Screenlet's XML in a layout.
@@ -26,12 +30,12 @@ This attribute can take four possible values:
 - `CACHE_FIRST`
 
 For a description of these values, see the section 
-[Using Policies with Offline Mode](/develop/tutorials/-/knowledge_base/6-2/architecture-of-offline-mode-in-liferay-screens#using-policies-with-offline-mode) 
+[Using Policies with Offline Mode](/docs/6-2/tutorials/-/knowledge_base/t/architecture-of-offline-mode-in-liferay-screens#using-policies-with-offline-mode) 
 in the offline mode architecture tutorial. Note that each Screenlet behaves a 
 bit differently with offline mode. For specific details, see the 
-[Screenlet reference documentation](/develop/reference/-/knowledge_base/6-2/screenlets-in-liferay-screens-for-android). 
+[Screenlet reference documentation](/docs/6-2/reference/-/knowledge_base/r/screenlets-in-liferay-screens-for-android). 
 
-## Handling Synchronization [](id=handling-synchronization)
+## Handling Synchronization
 
 Under some scenarios, values stored in the local cache need to be synchronized 
 with the portal. To do this, you need to use the `CacheSyncService` class. This 
@@ -64,12 +68,12 @@ The `CacheSyncService` performs the synchronization process when invoked from
 the above receiver. This is currently an unassisted process. Future versions 
 will include some kind of control mechanism.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Architecture of Offline Mode in Liferay Screens](/develop/tutorials/-/knowledge_base/6-2/architecture-of-offline-mode-in-liferay-screens)
+[Architecture of Offline Mode in Liferay Screens](/docs/6-2/tutorials/-/knowledge_base/t/architecture-of-offline-mode-in-liferay-screens)
 
-[Using Screenlets in Android Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-android-apps)
+[Using Screenlets in Android Apps](/docs/6-2/tutorials/-/knowledge_base/t/using-screenlets-in-android-apps)
 
-[Using Offline Mode in iOS](/develop/tutorials/-/knowledge_base/6-2/using-offline-mode-in-ios)
+[Using Offline Mode in iOS](/docs/6-2/tutorials/-/knowledge_base/t/using-offline-mode-in-ios)
 
-[Using Screenlets in iOS Apps](/develop/tutorials/-/knowledge_base/6-2/using-screenlets-in-ios-apps)
+[Using Screenlets in iOS Apps](/docs/6-2/tutorials/-/knowledge_base/t/using-screenlets-in-ios-apps)

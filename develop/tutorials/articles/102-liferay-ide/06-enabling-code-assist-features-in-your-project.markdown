@@ -1,4 +1,8 @@
-# Enabling Code Assist Features in Your Project [](id=enabling-code-assist-features-in-your-project)
+---
+header-id: enabling-code-assist-features-in-your-project
+---
+
+# Enabling Code Assist Features in Your Project
 
 Liferay IDE's integration of [Tern](http://ternjs.net/) provides many valuable
 front-end and back-end development tools for code inference and completion. This
@@ -24,7 +28,7 @@ installation process.
 Now that the necessary features are installed, follow the steps below to learn
 how to enable Tern's code assist features in your project. 
 
-## Setting Up Tern Features [](id=setting-up-tern-features)
+## Setting Up Tern Features
 
 Tern features are enabled on a project-by-project basis. By default, Tern 
 features are already enabled for Liferay portlet plugins. For all other project 
@@ -52,10 +56,10 @@ types, you'll need to follow the steps below:
 
 Your project is now set up to use IDE's Tern features. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using Front-End Development Code Assist Features in IDE](/develop/tutorials/-/knowledge_base/6-2/using-front-end-development-code-assist-features-in-ide)
+[Using Front-End Development Code Assist Features in IDE](/docs/6-2/tutorials/-/knowledge_base/t/using-front-end-development-code-assist-features-in-ide)
 
-[Developing Applications with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/developing-apps-with-liferay-ide)
+[Developing Applications with Liferay IDE](/docs/6-2/tutorials/-/knowledge_base/t/developing-apps-with-liferay-ide)
 
-[Using the AlloyUI Form Validator in a Portlet](/develop/tutorials/-/knowledge_base/6-2/using-the-alloyui-form-validator-in-a-portlet)
+[Using the AlloyUI Form Validator in a Portlet](/docs/6-2/tutorials/-/knowledge_base/t/using-the-alloyui-form-validator-in-a-portlet)

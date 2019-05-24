@@ -1,4 +1,8 @@
-# Creating Android Views [](id=creating-android-views)
+---
+header-id: creating-android-views
+---
+
+# Creating Android Views
 
 By creating your own Views, you can customize your mobile app's layout, style,
 and functionality. You can create them from scratch or use an existing View as a
@@ -29,13 +33,13 @@ from a Screenlet's current theme.
 
 This tutorial explains how to create all four types of Views. To understand
 View concepts and components, you might want to examine the
-[architecture](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android)
+[architecture](/docs/6-2/tutorials/-/knowledge_base/t/architecture-of-liferay-screens-for-android)
 of Liferay Screens for Android. And the tutorial
-[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets)
+[Creating Android Screenlets](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-screenlets)
 can help you create or extend any Screenlet classes your View requires. Now get
 ready to create some great Views! 
 
-## Determining Your View's Location [](id=determining-your-views-location)
+## Determining Your View's Location
 
 First, decide whether you'll reuse your view or if it's just for your current
 app. If you don't plan to reuse it in another app or don't want to redistribute
@@ -43,12 +47,12 @@ it, create it in your app project.
 
 If you want to reuse your View in another app, create it in a new Android
 application module; the tutorial
-[Packaging Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/packaging-your-android-screenlets)
+[Packaging Android Screenlets](/docs/6-2/tutorials/-/knowledge_base/t/packaging-your-android-screenlets)
 explains how. When your View's project is in place, you can start creating it. 
 
 First, you'll learn how to create a Themed View. 
 
-## Themed View [](id=themed-view)
+## Themed View
 
 Screens provides several existing View Sets that you can reuse and customize in 
 your app to create a Themed View. If you use or override the Android color 
@@ -118,7 +122,7 @@ the styles and colors defined earlier in `AppTheme.NoActionBar`:
 
 Next, you'll learn how to create a Child View. 
 
-## Child View [](id=child-view)
+## Child View
 
 A Child View presents the same behavior and UI components as its parent, but can
 change the UI components' appearance and position. It can't add or remove any UI
@@ -199,7 +203,7 @@ Default View, but using
 Stupendous! Now you know how to create Child Views. Next, you'll learn how to
 create Extended Views. 
 
-## Extended View [](id=extended-view)
+## Extended View
 
 An Extended View inherits the parent View's behavior and appearance, but lets
 you change and add to both. You can do so by writing a custom View class and a
@@ -280,7 +284,7 @@ and the custom View class
 Awesome! Now you know how to create Extended Views. Next, you can learn how to
 create a Full View. 
 
-## Full View [](id=full-view)
+## Full View
 
 A Full View has a unique Screenlet class, a View class, and layout XML file.
 It's standalone and doesn't inherit from any View. You should create a Full View
@@ -335,7 +339,7 @@ You can follow these steps to create a Full View:
 
 2.  Create a new custom View class named after the layout's root element. The
     tutorial on creating Android Screenlets explains how to
-    [create a View class](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets#creating-the-screenlets-view-class).
+    [create a View class](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-screenlets#creating-the-screenlets-view-class).
     Note that you don't have to extend a View class to implement a View Model
     interface, but you might want to for convenience. The custom View class
     [`LoginFullView`](https://github.com/liferay/liferay-screens/blob/master/android/samples/test-app/src/main/java/com/liferay/mobile/screens/testapp/fullview/LoginFullView.java),
@@ -372,7 +376,7 @@ Interactor `SignUpInteractor`.
 Sweetness! Now you know how to create a Full View. Next, you'll learn how to 
 package Views for distribution. 
 
-## Packaging Your Views [](id=packaging-your-views)
+## Packaging Your Views
 
 If you want to distribute or reuse Views, you should package them in a module
 that is then added as an app's project dependency. To do this, use the 
@@ -400,10 +404,10 @@ Super! Now you know how to create and package Views in Liferay Screens for
 Android. This gives you extensive control over your app's visual design and
 behavior and also lets you distribute and reuse your Views. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using Views in Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/using-views-in-android-screenlets)
+[Using Views in Android Screenlets](/docs/6-2/tutorials/-/knowledge_base/t/using-views-in-android-screenlets)
 
-[Architecture of Liferay Screens for Android](/develop/tutorials/-/knowledge_base/6-2/architecture-of-liferay-screens-for-android)
+[Architecture of Liferay Screens for Android](/docs/6-2/tutorials/-/knowledge_base/t/architecture-of-liferay-screens-for-android)
 
-[Creating Android Screenlets](/develop/tutorials/-/knowledge_base/6-2/creating-android-screenlets)
+[Creating Android Screenlets](/docs/6-2/tutorials/-/knowledge_base/t/creating-android-screenlets)

@@ -1,9 +1,13 @@
-# Using Xamarin with Liferay Screens [](id=using-xamarin-with-liferay-screens)
+---
+header-id: using-xamarin-with-liferay-screens
+---
+
+# Using Xamarin with Liferay Screens
 
 Liferay Screens for 
-[Android](/develop/tutorials/-/knowledge_base/6-2/android-apps-with-liferay-screens) 
+[Android](/docs/6-2/tutorials/-/knowledge_base/t/android-apps-with-liferay-screens) 
 and 
-[iOS](/develop/tutorials/-/knowledge_base/6-2/ios-apps-with-liferay-screens) 
+[iOS](/docs/6-2/tutorials/-/knowledge_base/t/ios-apps-with-liferay-screens) 
 lets you use *Screenlets* to develop native mobile apps on each platform. 
 Screenlets are complete visual components that you insert in your app to 
 leverage Liferay Portal's content and services. As of Liferay Screens 3.0, you 
@@ -16,10 +20,6 @@ Liferay Screens and Xamarin. You'll start by preparing your Xamarin project for
 Screens. You'll then learn how to use Screenlets in Xamarin, customize their 
 appearance, and more. 
 
-+$$$
-
-**Note:** These tutorials assume that you know how to use Xamarin. If you need 
-assistance with Xamarin, see 
-[its documentation](https://developer.xamarin.com/). 
-
-$$$
+| **Note:** These tutorials assume that you know how to use Xamarin. If you need
+| assistance with Xamarin, see
+| [its documentation](https://developer.xamarin.com/).

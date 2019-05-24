@@ -1,4 +1,8 @@
-# Installing Kaleo Designer for Java [](id=installing-kaleo-designer-for-java-liferay-portal-6-2-dev-guide-07-en)
+---
+header-id: installing-kaleo-designer-for-java-liferay-portal-6-2-dev-guide-07-en
+---
+
+# Installing Kaleo Designer for Java
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
@@ -53,16 +57,12 @@ plugins. Here's how to download and install *Kaleo Forms EE*:
 
 3.  Download and install the *Kaleo Forms EE* app.
 
-+$$$
-
-**Note:** The *Kaleo Forms EE* app comes with an existing workflow designer
-that's used *within* Liferay Portal. It's used to design workflow configuration
-and is described in the [Kaleo Forms: Defining Business Processes](/discover/portal/-/knowledge_base/6-2/kaleo-forms-defining-business-processes)
-chapter of *Discover* &rarr; *Portal*. Refer to the [Using Workflow](/discover/portal/-/knowledge_base/6-2/using-workflow)
-chapter of *Discover* &rarr; *Portal* if you're unfamiliar with basic Kaleo workflow
-concepts or want to know how to design your workflow within Liferay Portal. 
-
-$$$
+| **Note:** The *Kaleo Forms EE* app comes with an existing workflow designer
+| that's used *within* Liferay Portal. It's used to design workflow configuration
+| and is described in the [Kaleo Forms: Defining Business Processes](/docs/6-2/user/-/knowledge_base/u/kaleo-forms-defining-business-processes)
+| chapter of *Discover* &rarr; *Portal*. Refer to the [Using Workflow](/docs/6-2/user/-/knowledge_base/u/using-workflow)
+| chapter of *Discover* &rarr; *Portal* if you're unfamiliar with basic Kaleo workflow
+| concepts or want to know how to design your workflow within Liferay Portal.
 
 **Note:** After downloading and installing the Kaleo Forms EE application, you must
 restart the Liferay Server. For Developer Studio to connect to the Kaleo APIs to
@@ -94,17 +94,13 @@ To open a workflow, double click it in the Kaleo Workflows folder. This
 retrieves the workflow definition from the Liferay server so you can edit it in
 Developer Studio. 
 
-+$$$
-
-**Note:** When you open a workflow, you'll be prompted to choose whether to
-switch to the Kaleo designer perspective. Clicking *Yes* lets you use the
-perspective's helpful features, including the palette toolbar, properties view,
-and outline view. 
-
-$$$
+| **Note:** When you open a workflow, you'll be prompted to choose whether to
+| switch to the Kaleo designer perspective. Clicking *Yes* lets you use the
+| perspective's helpful features, including the palette toolbar, properties view,
+| and outline view.
 
 Once you have Kaleo Designer for Java installed, get into the flow (pun
-intended) by [creating your own workflow](/develop/tutorials/-/knowledge_base/6-2/creating-a-workflow-definition-with-kaleo-designer-for-java) using the Kaleo Workflow Designer for
+intended) by [creating your own workflow](/docs/6-2/tutorials/-/knowledge_base/t/creating-a-workflow-definition-with-kaleo-designer-for-java) using the Kaleo Workflow Designer for
 Java. 
 
 <!-- ## Related Topics -->

@@ -1,4 +1,8 @@
-# Introduction [](id=tutorials)
+---
+header-id: tutorials
+---
+
+# Introduction
 
 Welcome to Liferay's tutorials and Learning Paths! Both show you how to build 
 powerful, robust apps using Liferay's tools, frameworks, and APIs. The first few 
@@ -10,10 +14,10 @@ be followed from beginning to end and cover multiple topics along the way.
 Learning Paths are thus ideal for getting started with Liferay development. 
 Currently, the following learning paths are available: 
 
-- [Writing a Liferay MVC Application](/develop/tutorials/-/knowledge_base/6-2/writing-a-liferay-mvc-application)
-- [Writing a JSF Application Using Liferay Faces](/develop/tutorials/-/knowledge_base/6-2/writing-a-jsf-application-using-liferay-faces)
-- [Developing a Liferay Theme](/develop/tutorials/-/knowledge_base/6-2/developing-a-liferay-theme)
-- [Writing an Android App for Your Portal](/develop/tutorials/-/knowledge_base/6-2/writing-an-android-app-for-your-portal)
+- [Writing a Liferay MVC Application](/docs/6-2/tutorials/-/knowledge_base/t/writing-a-liferay-mvc-application)
+- [Writing a JSF Application Using Liferay Faces](/docs/6-2/tutorials/-/knowledge_base/t/writing-a-jsf-application-using-liferay-faces)
+- [Developing a Liferay Theme](/docs/6-2/tutorials/-/knowledge_base/t/developing-a-liferay-theme)
+- [Writing an Android App for Your Portal](/docs/6-2/tutorials/-/knowledge_base/t/writing-an-android-app-for-your-portal)
 
 The sections that follow the Learning Paths are tutorials. Rather than spanning 
 the multiple topics a Learning Path requires to produce a specific example 
@@ -30,7 +34,7 @@ in Liferay development. The tutorials cover the following three main areas:
 
 First, consider the tools Liferay provides to make your job easier.
 
-#### Using Liferay Development Tools [](id=using-liferay-development-tools)
+#### Using Liferay Development Tools
 
 Since many developers coming to Liferay already have a set of tools they use,
 these tutorials assume you're using one of three common environments: 1) An
@@ -52,15 +56,15 @@ be written in any way Java code is written.
 
 Here are some links to instructions on Liferay development tools:
 
-[Beginning Liferay Development](/develop/tutorials/-/knowledge_base/6-2/beginning-liferay-development) 
+[Beginning Liferay Development](/docs/6-2/tutorials/-/knowledge_base/t/beginning-liferay-development) 
 
-[Developing with the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
+[Developing with the Plugins SDK](/docs/6-2/tutorials/-/knowledge_base/t/plugins-sdk)
 
-[Developing with Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/liferay-ide)
+[Developing with Liferay IDE](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ide)
 
-[Developing with Maven](/develop/tutorials/-/knowledge_base/6-2/maven)
+[Developing with Maven](/docs/6-2/tutorials/-/knowledge_base/t/maven)
 
-#### Developing Liferay Applications [](id=developing-liferay-applications)
+#### Developing Liferay Applications
 
 As a developer wanting to run your own applications on top of Liferay Portal,
 you probably want to know *what's the best and quickest way to do it?* Liferay
@@ -78,30 +82,30 @@ and letting users enter comments, categories, and tags.
 
 In addition to Liferay's frameworks, you'll want to check out the powerful
 tag libraries and snazzy UI components that
-[AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui) and
-[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+[AlloyUI](/docs/6-2/tutorials/-/knowledge_base/t/alloyui) and
+[Liferay UI Taglibs](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ui-taglibs)
 provide.
 
 Start learning to develop apps for Liferay:
 
-[Writing Your First Application](/develop/tutorials/-/knowledge_base/6-2/writing-your-first-liferay-application)
+[Writing Your First Application](/docs/6-2/tutorials/-/knowledge_base/t/writing-your-first-liferay-application)
 
-[MVC Portlets](/develop/tutorials/-/knowledge_base/6-2/developing-jsp-portlets-using-liferay-mvc)
+[MVC Portlets](/docs/6-2/tutorials/-/knowledge_base/t/developing-jsp-portlets-using-liferay-mvc)
 
-[Liferay Faces](/develop/tutorials/-/knowledge_base/6-2/writing-a-jsf-application-using-liferay-faces)
+[Liferay Faces](/docs/6-2/tutorials/-/knowledge_base/t/writing-a-jsf-application-using-liferay-faces)
 
-[OpenSocial Gadgets](/develop/tutorials/-/knowledge_base/6-2/opensocial-gadgets)
+[OpenSocial Gadgets](/docs/6-2/tutorials/-/knowledge_base/t/opensocial-gadgets)
 
-#### Styling and Customizing Liferay [](id=styling-and-customizing-liferay)
+#### Styling and Customizing Liferay
 
 What if you want to skin Liferay or customize it? Creating themes and 
 customizations is easy in Liferay. 
 
 Here are some good tutorials to start with:
 
-[Themes and Layout Templates](/develop/tutorials/-/knowledge_base/6-2/themes-and-layout-templates)
+[Themes and Layout Templates](/docs/6-2/tutorials/-/knowledge_base/t/themes-and-layout-templates)
 
-[Customizing Liferay Portal](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+[Customizing Liferay Portal](/docs/6-2/tutorials/-/knowledge_base/t/customizing-liferay-portal)
 
 Now that you know what the articles here offer, it's time to discover new things 
 as you develop sites in Liferay. 

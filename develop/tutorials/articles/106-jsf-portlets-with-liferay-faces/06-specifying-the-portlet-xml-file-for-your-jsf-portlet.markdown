@@ -1,4 +1,8 @@
-# Specifying the portlet.xml File for Your JSF Portlet [](id=specifying-the-portlet-xml-file-for-your-jsf-portlet)
+---
+header-id: specifying-the-portlet-xml-file-for-your-jsf-portlet
+---
+
+# Specifying the portlet.xml File for Your JSF Portlet
 
 Each portlet project must have a `WEB-INF/portlet.xml` deployment descriptor
 file. When creating a JSF portlet using Liferay IDE or the Plugins SDK, this
@@ -56,12 +60,12 @@ to the `/view.xhtml` facelet by the `<init-param>` element:
 You can set up your `portlet.xml` file similarly. Next, you'll start using
 portlet preferences. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Using Portlet Preferences with JSF](/develop/tutorials/-/knowledge_base/6-2/using-portlet-preferences-with-jsf)
+[Using Portlet Preferences with JSF](/docs/6-2/tutorials/-/knowledge_base/t/using-portlet-preferences-with-jsf)
 
-[Liferay Faces Alloy UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-alloy-ui-components)
+[Liferay Faces Alloy UI Components](/docs/6-2/tutorials/-/knowledge_base/t/liferay-faces-alloy-ui-components)
 
-[Liferay Faces Bridge UI Components](/develop/tutorials/-/knowledge_base/6-2/liferay-faces-bridge-ui-components)
+[Liferay Faces Bridge UI Components](/docs/6-2/tutorials/-/knowledge_base/t/liferay-faces-bridge-ui-components)
 
-[Understanding Liferay Faces Bridge](/develop/tutorials/-/knowledge_base/6-2/understanding-liferay-faces-bridge)
+[Understanding Liferay Faces Bridge](/docs/6-2/tutorials/-/knowledge_base/t/understanding-liferay-faces-bridge)

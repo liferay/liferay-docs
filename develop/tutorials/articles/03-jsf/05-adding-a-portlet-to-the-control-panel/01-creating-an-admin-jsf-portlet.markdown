@@ -1,4 +1,8 @@
-# Creating an Admin JSF Portlet [](id=creating-an-admin-jsf-portlet)
+---
+header-id: creating-an-admin-jsf-portlet
+---
+
+# Creating an Admin JSF Portlet
 
 Similar to what you completed when creating your Guestbook portlet, you'll
 complete similar steps to create the Guestbook Admin portlet. You'll use the New
@@ -8,7 +12,7 @@ case, adds entries to these files for your new admin portlet. In this learning
 path, you'll create the new Guestbook Admin portlet, and then examine what's
 different in your JSF portlet project. 
 
-## Using the New Liferay Portlet Wizard [](id=using-the-new-liferay-portlet-wizard)
+## Using the New Liferay Portlet Wizard
 
 To create your new Guestbook Admin portlet, follow the steps below:
 

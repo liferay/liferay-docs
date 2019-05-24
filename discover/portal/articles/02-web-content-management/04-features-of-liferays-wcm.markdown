@@ -1,4 +1,8 @@
-# Features of Liferay's WCM [](id=features-of-liferays-wcm)
+---
+header-id: features-of-liferays-wcm
+---
+
+# Features of Liferay's WCM
 
 Liferay's WCM offers a host of features that makes managing the content of your
 site easier:
@@ -39,10 +43,10 @@ Liferay. Other types of content (blog posts, wiki articles, message board posts,
 etc.) are also considered assets. Liferay provides a general framework for
 handling assets that includes tags, categories, comments, ratings, and more.
 Please see the
-[Displaying Content Dynamically](/discover/portal/-/knowledge_base/6-2/displaying-content-dynamically)
+[Displaying Content Dynamically](/docs/6-2/user/-/knowledge_base/u/displaying-content-dynamically)
 section for more information on Liferay's asset framework.
 
-## Creating (Basic) Content [](id=creating-basic-content)
+## Creating (Basic) Content
 
 As we've already discussed, content is the reason web sites exist. Liferay
 Portal has made it easier than ever to get content published to your site.
@@ -92,7 +96,7 @@ view the web content templates associated with a structure or add a new
 template to a structure. In the next chapter, we'll cover advanced features such
 as structures, templates, and content scheduling in detail.
 
-### Rich, WYSIWYG Editing [](id=rich-wysiwyg-editing)
+### Rich, WYSIWYG Editing
 
 Once you've clicked *Add* &rarr; *Basic Web Content*, you'll find a highly
 customizable form that by default has two fields: a title and a powerful WYSIWYG
@@ -140,7 +144,7 @@ functionality. For example, if you navigate to the Control Panel, click on
 *Server Administration* and then on *External Services*, you can install and
 enable Xuggler. Enabling Xuggler allows you to embed audio and video files in
 web content. Installing and enabling Xuggler is easy; you can do it right from
-the Control Panel. Please refer to the [Server Administration](/discover/portal/-/knowledge_base/6-2/server-administration)
+the Control Panel. Please refer to the [Server Administration](/docs/6-2/user/-/knowledge_base/u/server-administration)
 article of this guide for more details.
 
 Once Xuggler has been installed and enabled, embedding audio or video files in a
@@ -164,18 +168,14 @@ after you've created your web content article.
 An XML version of an article is essential when creating content for themes using
 the [Resources Importer](/participate/liferaypedia/-/wiki/Main/Resources+Importer).
 If you'd like to learn more about importing web content with a theme, visit its
-dedicated [tutorial](/develop/tutorials/-/knowledge_base/6-2/importing-resources-with-your-themes).
+dedicated [tutorial](/docs/6-2/tutorials/-/knowledge_base/t/importing-resources-with-your-themes).
 
-+$$$
-
-**Note:** The *Download* button for web content articles comes standard for
-Liferay 6.2 versions CE 6.2 GA4 and EE 6.2 SP10 and later. Prior Liferay 6.2
-versions require the [Resources Importer CE](https://www.liferay.com/marketplace/-/mp/application/15502239)
-or [EE](https://www.liferay.com/marketplace/-/mp/application/15502140) app
-installed, depending on your Liferay Portal edition. The Resources Importer app
-can be downloaded from [Liferay Marketplace](https://www.liferay.com/marketplace).
-
-$$$
+| **Note:** The *Download* button for web content articles comes standard for
+| Liferay 6.2 versions CE 6.2 GA4 and EE 6.2 SP10 and later. Prior Liferay 6.2
+| versions require the [Resources Importer CE](https://www.liferay.com/marketplace/-/mp/application/15502239)
+| or [EE](https://www.liferay.com/marketplace/-/mp/application/15502140) app
+| installed, depending on your Liferay Portal edition. The Resources Importer app
+| can be downloaded from [Liferay Marketplace](https://www.liferay.com/marketplace).
 
 The right side of the New Web Content form provides options for customizing your
 web content.
@@ -193,13 +193,9 @@ these categories are defined by a property in the properties file; see the
 [Properties Document](https://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Journal%20Portlet)
 for further information.
 
-+$$$
-
-**Note:** The Web Content Type portlet, located within the Categorization menu,
-is deprecated for Liferay 6.2 and will be removed in Liferay 7.0. The portlet
-will be migrated to a vocabulary with categories.
-
-$$$
+| **Note:** The Web Content Type portlet, located within the Categorization menu,
+| is deprecated for Liferay 6.2 and will be removed in Liferay 7.0. The portlet
+| will be migrated to a vocabulary with categories.
 
 **Schedule:** customizes the date and time your content publishes and/or
 expires.
@@ -224,7 +220,7 @@ of Liferay you'd need to create a page for each article to show it. Now with
 only one sports page and one tech page, you can show all articles in one place
 in a consistent fashion.
 
-### Creating a Display Page [](id=creating-a-display-page)
+### Creating a Display Page
 
 There are two ways of creating a display page. You can use a *Content Display
 Page* template, which automatically creates everything you need, or you can
@@ -255,7 +251,7 @@ search engine that's crawling your site, this means that the location of your
 article never changes. And if you decide to use the content on another page in
 the future, the article is still available at this URL. This feature is used in
 search results, in related assets and in Asset Publishers. For more information
-on Liferay's Display Pages, see the [Content Display Pages](/discover/portal/-/knowledge_base/6-2/using-the-asset-publisher#content-display-pages)
+on Liferay's Display Pages, see the [Content Display Pages](/docs/6-2/user/-/knowledge_base/u/using-the-asset-publisher#content-display-pages)
 article.
 
 **Related Assets:** enables you to connect any number of assets within a site or
@@ -268,7 +264,7 @@ a Wiki Page.
 
 You'll learn how to publish links to related assets using the Related Assets
 portlet in the
-[Defining Content Relationships](/discover/portal/-/knowledge_base/6-2/defining-content-relationships)
+[Defining Content Relationships](/docs/6-2/user/-/knowledge_base/u/defining-content-relationships)
 section.
 
 **Permissions:** customize who has access to the content. By default, content is
@@ -292,7 +288,7 @@ If custom fields have been defined for web content (which can be done from the
 *Custom Fields* page of the Control Panel), they appear here.
 
 For more information on Custom Fields see the
-[Custom Fields](/discover/portal/-/knowledge_base/6-2/custom-fields) section.
+[Custom Fields](/docs/6-2/user/-/knowledge_base/u/custom-fields) section.
 
 For this piece of web content, we don't need to change anything. After you're
 finished with permissions, click *Save as Draft*. This saves the content in
@@ -303,7 +299,7 @@ which is one of two portlets: Web Content Display or Web Content List. By far
 the most frequently used is the *Web Content Display* portlet. Let's look at how
 it works.
 
-## Publishing (Basic) Content [](id=publishing-basic-content)
+## Publishing (Basic) Content
 
 Now that we've created and published our first piece of web content for
 the Lunar Resort, it's time to display it. First, add the *Web Content Display*
@@ -328,7 +324,7 @@ all the options). You can also show the available locales for your content. If
 you're working on the page for a particular language, you can select the
 translation of your content that goes with your locale. To learn more about
 translating your content, visit the
-[Localization](/discover/portal/-/knowledge_base/6-2/localization) section.
+[Localization](/docs/6-2/user/-/knowledge_base/u/localization) section.
 
 ![Figure 2.22: Publishing web content is a snap. At a minimum, you only have to select the content you wish to publish. You can also enable lots of optional features to let your users interact with your content.](../../images/04-web-content-choosing-web-content.png)
 
@@ -379,7 +375,7 @@ both processes.
 Editing content that's already been published is just as easy as creating new
 content is. You'll use the same exact tools.
 
-## Editing Content [](id=editing-content)
+## Editing Content
 
 Once the content is displayed--whether you've selected content or created it in
 the Web Content Display portlet--you can edit the content directly from the Web
@@ -407,6 +403,6 @@ Controls* to return to the original format.
 That's pretty much all there is to simple content creation. Whole sites have
 been created this way. But if you want to take advantage of the full power of
 Liferay's WCM, you'll want to use structures and templates found in the
-[Advanced Web Content Management](/discover/portal/-/knowledge_base/6-2/advanced-web-content-management)
+[Advanced Web Content Management](/docs/6-2/user/-/knowledge_base/u/advanced-web-content-management)
 chapter. Next, let's see how you can manage your content with an approval
 process called workflow.

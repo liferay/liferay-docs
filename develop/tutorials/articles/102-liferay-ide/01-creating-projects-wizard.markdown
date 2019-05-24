@@ -1,4 +1,8 @@
-# Creating Projects Using the New Project Wizard [](id=creating-projects-using-the-new-project-wizard)
+---
+header-id: creating-projects-using-the-new-project-wizard
+---
+
+# Creating Projects Using the New Project Wizard
 
 If you want to create new plugin projects for Liferay Portal, then Liferay IDE
 is your new best friend. The *New Project Wizard* in Liferay IDE/Developer
@@ -9,7 +13,7 @@ creation of your new plugin project. You're able to choose the plugin's type,
 build system, location, and much more. This tutorial shows you how to create new
 projects in Liferay IDE using this wizard. Ready your wands!
 
-## Using the New Project Wizard [](id=using-the-new-project-wizard)
+## Using the New Project Wizard
 
 To create a new Liferay plugin with the New Project Wizard, select *File* &rarr;
 *New* &rarr; *Liferay Plugin Project*. The first screen of the wizard contains
@@ -61,7 +65,7 @@ Unless you're creating a portlet or theme, you're done--just click *Finish* and
 get started developing your plugin in Liferay IDE! If you're creating a portlet 
 or theme, click *Next* to move on to the next step in the New Project Wizard.
 
-## Additional Steps in the New Project Wizard [](id=additional-steps-in-the-new-project-wizard)
+## Additional Steps in the New Project Wizard
 
 The only two plugin types that require additional steps in the New Project
 Wizard are portlet and theme plugin types. If you're creating a portlet, the
@@ -91,16 +95,16 @@ Once you've completed the above selections for your portlet or theme, click
 the New Project Wizard isn't so scary after all. Now you know how to use it
 anytime you want to create new plugin projects for your Liferay Portal.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Developing with the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
+[Developing with the Plugins SDK](/docs/6-2/tutorials/-/knowledge_base/t/plugins-sdk)
 
-[Developing with Maven](/develop/tutorials/-/knowledge_base/6-2/maven)
+[Developing with Maven](/docs/6-2/tutorials/-/knowledge_base/t/maven)
 
-[MVC Portlets](/develop/tutorials/-/knowledge_base/6-2/developing-jsp-portlets-using-liferay-mvc)
+[MVC Portlets](/docs/6-2/tutorials/-/knowledge_base/t/developing-jsp-portlets-using-liferay-mvc)
 
-[Liferay Faces](/develop/tutorials/-/knowledge_base/6-2/writing-a-jsf-application-using-liferay-faces)
+[Liferay Faces](/docs/6-2/tutorials/-/knowledge_base/t/writing-a-jsf-application-using-liferay-faces)
 
-[Themes and Layout Templates](/develop/tutorials/-/knowledge_base/6-2/themes-and-layout-templates)
+[Themes and Layout Templates](/docs/6-2/tutorials/-/knowledge_base/t/themes-and-layout-templates)
 
-[Customizing Liferay Portal](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+[Customizing Liferay Portal](/docs/6-2/tutorials/-/knowledge_base/t/customizing-liferay-portal)

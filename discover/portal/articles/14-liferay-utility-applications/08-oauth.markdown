@@ -1,4 +1,8 @@
-# OAuth [](id=oauth)
+---
+header-id: oauth
+---
+
+# OAuth
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
@@ -23,7 +27,7 @@ more. This assures users that their personal information is safe, but gives
 them freedom to take advantage of valuable resources they typically use from the
 service provider's site.
 
-## Registering OAuth Applications [](id=registering-oauth-applications)
+## Registering OAuth Applications
 
 The first thing you'll need to do is register an application for OAuth's
 services. To access the OAuth Admin page, navigate to the Control Panel and,
@@ -56,11 +60,11 @@ value the application uses to establish ownership of the consumer key.
 Take note of your application credentials; you'll need them when configuring
 your application with OAuth. To learn how to configure an application with
 OAuth, visit the
-[Authorizing Access to Services with OAuth](/develop/tutorials/-/knowledge_base/6-2/authorizing-access-to-services-with-oauth).
+[Authorizing Access to Services with OAuth](/docs/6-2/tutorials/-/knowledge_base/t/authorizing-access-to-services-with-oauth).
 tutorial. Once you have your application configured to use OAuth, visit the next
 section to begin authorizing requests via OAuth. 
 
-## Authorizing Requests via OAuth [](id=authorizing-requests-via-oauth)
+## Authorizing Requests via OAuth
 
 Once you have your application configured to use OAuth, you can place your
 application on a page and test out the process. Here is a basic synopsis of

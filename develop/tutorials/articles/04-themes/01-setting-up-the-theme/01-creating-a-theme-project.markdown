@@ -1,8 +1,12 @@
-# Creating a Theme Project [](id=creating-a-theme-project)
+---
+header-id: creating-a-theme-project
+---
+
+# Creating a Theme Project
 
 The rest of this Learning Path assumes you've followed the instructions for
-setting up [Liferay IDE](/develop/tutorials/-/knowledge_base/6-2/developing-apps-with-liferay-ide)
-or [Liferay Developer Studio](/develop/tutorials/-/knowledge_base/6-2/developing-applications-with-liferay-developer-stu). 
+setting up [Liferay IDE](/docs/6-2/tutorials/-/knowledge_base/t/developing-apps-with-liferay-ide)
+or [Liferay Developer Studio](/docs/6-2/tutorials/-/knowledge_base/t/developing-applications-with-liferay-developer-stu). 
 If you've done that, you're ready to begin! 
 
 1. Select *File* &rarr; *New* &rarr; *Liferay Plugin Project*.
@@ -18,14 +22,10 @@ and click *Finish*.
 
 ![Figure 1: The Project Wizard makes it easy to build a theme.](../../../images/theme-creation-01.png)
 
-+$$$
-
-**Note:** The first time you create a project, make sure you're online. In the 
-background, Liferay's Plugins SDK downloads several necessary JAR files. This
-keeps the initial Plugins SDK download small, but it may take several minutes to
-create your first project. Subsequent projects are created almost instantly.
-
-$$$
+| **Note:** The first time you create a project, make sure you're online. In the
+| background, Liferay's Plugins SDK downloads several necessary JAR files. This
+| keeps the initial Plugins SDK download small, but it may take several minutes to
+| create your first project. Subsequent projects are created almost instantly.
 
 You'll now see your project in the Package Explorer on the left. What you've
 just done is create a blank Liferay theme based off of Liferay's *_styled* 

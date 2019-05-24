@@ -1,4 +1,8 @@
-# Overriding a Portal Service Using a Hook [](id=overriding-a-portal-service-using-a-hook)
+---
+header-id: overriding-a-portal-service-using-a-hook
+---
+
+# Overriding a Portal Service Using a Hook
 
 Liferay Portal and its core portlets offer a host of services that you can
 programmatically invoke from local and remote clients. One only needs to look at
@@ -28,7 +32,7 @@ future patches to the interface.
 This tutorial shows you how to modify a portal service using a hook. By the end
 of this tutorial, you'll have a hook plugin that overrides a Liferay service. 
 
-## Implementing the Portal Service Override [](id=implementing-the-portal-service-override)
+## Implementing the Portal Service Override
 
 Hook plugins are the best tool for leveraging this architecture to customize
 portal service behavior. To modify the functionality of a service from a hook,
@@ -40,9 +44,9 @@ You can follow these steps to override any Liferay service from your own
 hook plugin: 
 
 1.  Create a Liferay Hook plugin project in a
-    [Liferay Plugins SDK project](/develop/tutorials/-/knowledge_base/6-2/creating-a-hook-project-in-the-plugins-sdk)
+    [Liferay Plugins SDK project](/docs/6-2/tutorials/-/knowledge_base/t/creating-a-hook-project-in-the-plugins-sdk)
     or
-    [Maven project](/develop/tutorials/-/knowledge_base/6-2/developing-liferay-hook-plugins-with-maven). 
+    [Maven project](/docs/6-2/tutorials/-/knowledge_base/t/developing-liferay-hook-plugins-with-maven). 
 
 2.  Create a class that extends the wrapper class of the service interface you
     want to override. 
@@ -112,13 +116,9 @@ hook plugin:
     Now that you've created your wrapper extension class, you can add methods to
     it to override Liferay's implementation of the service interface.  
 
-    +$$$
-
-    **Note:** On deployment, the wrapper class extension is loaded in the hook's
-    class loader, which means the extension can access any other class included in
-    the same WAR file but *cannot* access Liferay's *internal* classes.
-
-    $$$
+    | **Note:** On deployment, the wrapper class extension is loaded in the hook's
+    | class loader, which means the extension can access any other class included in
+    | the same WAR file but *cannot* access Liferay's *internal* classes.
 
 2.  You must specify your custom service implementation class in the 
     `liferay-hook.xml` file. On creating wrapper extension classes using Liferay
@@ -139,7 +139,7 @@ hook plugin:
 			</service>
 		</hook>
 
-3.  [Deploy](/develop/tutorials/-/knowledge_base/6-2/deploying-plugins) your hook to
+3.  [Deploy](/docs/6-2/tutorials/-/knowledge_base/t/deploying-plugins) your hook to
     your portal. 
 
 Your hook substitutes the service's default behavior with the behavior of your
@@ -165,34 +165,30 @@ services of any of Liferay Portal's core portlets. To access Javadocs for a
 different version of Liferay, visit <http://docs.liferay.com/portal>, select the
 Liferay Portal version, and click on the *Javadocs* link. 
 
-+$$$
-
-**Note:** To modify a portal utility class, you can extend
-the utility's base implementation in a hook. But first, check Liferay's
-[`portal.properties`](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html)
-file to see if there's an option for specifying an extension to the utility. For
-example, to customize the behavior of Liferay's 
-[`SanitizerUtil`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/sanitizer/SanitizerUtil.html)
-class, you can extend the
-[`BaseSanitizer`](http://docs.liferay.com/portal/6.2/javadocs-all/com/liferay/portal/kernel/sanitizer/BaseSanitizer.html)
-class with your custom implementation. Then you'd set the
-[`sanitizer.impl`](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Sanitizer)
-property to the fully qualified name of your implementation class.
-
-$$$
+| **Note:** To modify a portal utility class, you can extend
+| the utility's base implementation in a hook. But first, check Liferay's
+| [`portal.properties`](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html)
+| file to see if there's an option for specifying an extension to the utility. For
+| example, to customize the behavior of Liferay's
+| [`SanitizerUtil`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/kernel/sanitizer/SanitizerUtil.html)
+| class, you can extend the
+| [`BaseSanitizer`](http://docs.liferay.com/portal/6.2/javadocs-all/com/liferay/portal/kernel/sanitizer/BaseSanitizer.html)
+| class with your custom implementation. Then you'd set the
+| [`sanitizer.impl`](http://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Sanitizer)
+| property to the fully qualified name of your implementation class.
 
 You've done well learning how to properly customize Liferay services. Now get 
 out there and put your newfound skills to use!
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
 <!-- Uncomment when the tutorial is available. Jim
-[Override language.properties using a Hook](/develop/tutorials/-/knowledge_base/6-2/overriding-language-properties-using-a-hook)
+[Override language.properties using a Hook](/docs/6-2/tutorials/-/knowledge_base/t/overriding-language-properties-using-a-hook)
 -->
 
-[Developing Plugins with the Plugins SDK](/develop/tutorials/-/knowledge_base/6-2/plugins-sdk)
+[Developing Plugins with the Plugins SDK](/docs/6-2/tutorials/-/knowledge_base/t/plugins-sdk)
 
-[Developing Liferay Hook Plugins with Maven](/develop/tutorials/-/knowledge_base/6-2/developing-liferay-hook-plugins-with-maven)
+[Developing Liferay Hook Plugins with Maven](/docs/6-2/tutorials/-/knowledge_base/t/developing-liferay-hook-plugins-with-maven)
 
-[Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)
+[Application Display Templates](/docs/6-2/tutorials/-/knowledge_base/t/application-display-templates)
 

@@ -1,4 +1,8 @@
-# Localizing Site Administration Portlets [](id=localizing-site-administration-portlets)
+---
+header-id: localizing-site-administration-portlets
+---
+
+# Localizing Site Administration Portlets
 
 <!-- The beginning and ending test portlets can be found at the following:
 Begin: https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/liferay-mvc/prefs/begin/event-listing-portlet
@@ -23,16 +27,12 @@ Next, you'll configure your project's portlets to display in Site
 Administration, and then you'll localize its title and description. You'll
 create one resource bundle for the title and another one for the description. 
 
-+$$$
-
-**Note:** If your project only has one
-portlet, it's best to put your resource bundle directly in the `content`
-folder. Specifying your bundle in the file `content/Language.properties` lets
-you leverage the Plugins SDK's language building capabilities, via
-right-clicking on the `Language.properties` file &rarr; *Liferay* &rarr; *Build
-Languages* in Developer Studio or executing `ant build-lang` from the terminal. 
-
-$$$
+| **Note:** If your project only has one
+| portlet, it's best to put your resource bundle directly in the `content`
+| folder. Specifying your bundle in the file `content/Language.properties` lets
+| you leverage the Plugins SDK's language building capabilities, via
+| right-clicking on the `Language.properties` file &rarr; *Liferay* &rarr; *Build
+| Languages* in Developer Studio or executing `ant build-lang` from the terminal.
 
 Specify and localize a title and description for each of your project's portlets
 by following these steps: 
@@ -138,27 +138,19 @@ by following these steps:
 
 You're becoming an expert localizer!
 
-+$$$
+| **Tip:** Do you know how your portlet
+| title is processed? If your portlet doesn't define a resource bundle or
+| `javax.portlet.title`, the portal container next checks the `<portlet-info>`
+| and inner `<portlet-title>` node in the `portlet.xml` descriptor. If they're
+| missing too, the `<portlet-name>` node value is rendered as the portlet title.
 
-**Tip:** Do you know how your portlet
-title is processed? If your portlet doesn't define a resource bundle or
-`javax.portlet.title`, the portal container next checks the `<portlet-info>`
-and inner `<portlet-title>` node in the `portlet.xml` descriptor. If they're
-missing too, the `<portlet-name>` node value is rendered as the portlet title. 
-
-$$$
-
-+$$$
-
-**Note:** Be aware that using a Struts 
-portlet and referring to a `StrutsResource` bundle in your `portlet.xml`
-engages a different title and description algorithm. Titles and long titles are
-pulled using the following respective keys:
-
-- `javax.portlet.title`
-- `javax.portlet.long-title` 
-
-$$$
+| **Note:** Be aware that using a Struts
+| portlet and referring to a `StrutsResource` bundle in your `portlet.xml`
+| engages a different title and description algorithm. Titles and long titles are
+| pulled using the following respective keys:
+| 
+| - `javax.portlet.title`
+| - `javax.portlet.long-title`
 
 Terrific! You've configured your plugin's portlets to show in the Site
 Administration page, created resource bundles specifically for each portlet,
@@ -167,5 +159,5 @@ portlets' translated titles and descriptions!
 
 Related Topics:
 
-[Overriding Language Properties Using a Hook](/develop/tutorials/-/knowledge_base/6-2/overriding-language-properties-using-a-hook)
+[Overriding Language Properties Using a Hook](/docs/6-2/tutorials/-/knowledge_base/t/overriding-language-properties-using-a-hook)
 

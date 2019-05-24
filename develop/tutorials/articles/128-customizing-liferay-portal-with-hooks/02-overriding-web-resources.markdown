@@ -1,4 +1,8 @@
-# Overriding Web Resources [](id=overriding-web-resources)
+---
+header-id: overriding-web-resources
+---
+
+# Overriding Web Resources
 
 Hooks are commonly used to override web resources, found in the `portal-web`
 directory of Liferay's source. You can use a hook to override JSP files, JSPF
@@ -9,7 +13,7 @@ includes the JSPF.
 
 Replacing a portal JSP is a simple task with hooks. 
 
-## Replacing a Liferay Portal JSP [](id=replacing-a-liferay-portal-jsp)
+## Replacing a Liferay Portal JSP
 
 Suppose you need to manually override one of Liferay Portal's JSPs, like its
 Terms of Use page. You can accomplish this by following these steps: 
@@ -48,14 +52,10 @@ Terms of Use page. You can accomplish this by following these steps:
 
     Modify the JSP file with your customization.
 
-    +$$$
-
-    **Note:** Many errors may show in the editor because the resources used in
-    the JSP (e.g., `PortalUtil`) are not available in the project; but they'll
-    be available from the portal once the hook plugin is deployed to the portal
-    server. 
-
-    $$$
+    | **Note:** Many errors may show in the editor because the resources used in
+    | the JSP (e.g., `PortalUtil`) are not available in the project; but they'll
+    | be available from the portal once the hook plugin is deployed to the portal
+    | server.
 
 6.  Deploy your hook and wait until it is deployed successfully.
 
@@ -96,8 +96,8 @@ demonstrates how to override Liferay's JSP files.
 
 Congratulations on overriding a Liferay Portal JSP! 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Overriding Language Properties Using a Hook](/develop/tutorials/-/knowledge_base/6-2/overriding-language-properties-using-a-hook)
+[Overriding Language Properties Using a Hook](/docs/6-2/tutorials/-/knowledge_base/t/overriding-language-properties-using-a-hook)
 
-[Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)
+[Application Display Templates](/docs/6-2/tutorials/-/knowledge_base/t/application-display-templates)

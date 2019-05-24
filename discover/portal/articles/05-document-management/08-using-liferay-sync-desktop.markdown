@@ -1,4 +1,8 @@
-# Using Liferay Sync on Your Desktop [](id=using-liferay-sync-on-your-desktop)
+---
+header-id: using-liferay-sync-on-your-desktop
+---
+
+# Using Liferay Sync on Your Desktop
 
 Liferay Sync synchronizes files between your Liferay sites and desktop devices.
 It lets you work with your files without using a browser. The Sync clients also
@@ -22,7 +26,7 @@ administrator to ensure that Sync is enabled for your sites. You then need to
 install the Sync client on your desktop device. The next section walks you 
 through installing the client. 
 
-## Installing the Desktop Liferay Sync Client [](id=installing-the-desktop-liferay-sync-client)
+## Installing the Desktop Liferay Sync Client
 
 You can download the desktop client from the
 [Liferay Sync downloads page](https://www.liferay.com/downloads/liferay-sync). 
@@ -38,15 +42,11 @@ time Sync runs, you need to configure it to connect and sync with your Liferay
 instance. The configuration steps are shown below, after the Mac installation
 instructions. 
 
-+$$$
-
-**Note:** You can upgrade previous versions of the desktop Liferay Sync client
-to version 3.0. When doing so, however, you need to set up your account again in
-the new version of the client. Prior to upgrading, it's typically best to shut 
-down Liferay Sync, backup files from your local Sync folder, and delete that 
-folder. 
-
-$$$
+| **Note:** You can upgrade previous versions of the desktop Liferay Sync client
+| to version 3.0. When doing so, however, you need to set up your account again in
+| the new version of the client. Prior to upgrading, it's typically best to shut
+| down Liferay Sync, backup files from your local Sync folder, and delete that
+| folder.
 
 The Liferay Sync client for Mac is packaged in a DMG file. Double-clicking on
 the DMG file mounts it as a disk image and opens a window showing the image's
@@ -60,7 +60,7 @@ appears when installing or upgrading the tool.
 
 Next, you'll configure the Sync client. 
 
-## Configuring the Liferay Sync Desktop Client [](id=configuring-the-liferay-sync-desktop-client)
+## Configuring the Liferay Sync Desktop Client
 
 Now that you've installed Sync, you're ready to configure it! The configuration 
 steps for Sync on Windows and Mac are identical. 
@@ -109,12 +109,8 @@ steps for Sync on Windows and Mac are identical.
     specify any unique name and location for the Sync folder. Click *Start 
     Syncing* to begin syncing files. 
 
-    +$$$
-
-    **Note:** Syncing to network drives is not supported because Liferay Sync
-    can't reliably detect local file changes on such drives. 
-
-    $$$
+    | **Note:** Syncing to network drives is not supported because Liferay Sync
+    | can't reliably detect local file changes on such drives.
 
     ![Figure 5.20: Specify your local Sync folder's name and location.](../../images/sync-setup-03.png)
 
@@ -131,7 +127,7 @@ steps for Sync on Windows and Mac are identical.
 
 Next, you'll learn how to use the Liferay Sync desktop client. 
 
-## Using the Liferay Sync Desktop Client [](id=using-the-liferay-sync-desktop-client)
+## Using the Liferay Sync Desktop Client
 
 When Liferay Sync is running its icon appears in your task bar (Windows) or menu 
 bar (Mac). Clicking this icon opens a menu that lets you work with and manage 
@@ -167,7 +163,7 @@ the following three options:
 Next, you'll learn how to use Sync's preferences to control how Sync functions 
 on your machine. 
 
-### Using Sync Preferences [](id=using-sync-preferences)
+### Using Sync Preferences
 
 You can use Sync's preferences to add/remove Liferay instances to sync with, 
 edit instance connection settings, and control Sync's basic behavior. Open 
@@ -186,7 +182,7 @@ The *Accounts* tab contains the following:
   should use caution when deleting an account from your Sync client, as doing so 
   also deletes any local files and folders for that account. Adding an account 
   takes you through the same set of steps you used to set up the Sync client. 
-  [Click here](/discover/portal/-/knowledge_base/7-0/using-liferay-sync-on-your-desktop#configuring-the-liferay-sync-desktop-client) 
+  [Click here](/docs/7-0/user/-/knowledge_base/u/using-liferay-sync-on-your-desktop#configuring-the-liferay-sync-desktop-client) 
   for instructions on this. 
 
 - **Syncing Sites:** the sites you have permission to sync with for the selected 
@@ -195,7 +191,7 @@ The *Accounts* tab contains the following:
   change the sites you sync with, click the *Manage Sites* button. The window 
   that appears lets you select and/or unselect sites to sync with. This window 
   is identical to the one that appeared when you first configured the client. 
-  [Click here](/discover/portal/-/knowledge_base/7-0/using-liferay-sync-on-your-desktop#configuring-the-liferay-sync-desktop-client) 
+  [Click here](/docs/7-0/user/-/knowledge_base/u/using-liferay-sync-on-your-desktop#configuring-the-liferay-sync-desktop-client) 
   and see step two for instructions on using it. Use caution when de-selecting
   sites. De-selecting a site deletes its folder on your machine. 
 
@@ -219,7 +215,7 @@ Sync client's general behavior. It lists the following options:
 Now that you have a handle on configuring Sync, it's time to see how it works 
 with the files in your Sync folder. 
 
-### Using Your Local Sync Folder [](id=using-your-local-sync-folder)
+### Using Your Local Sync Folder
 
 Once you configure and run Sync, Sync automatically uploads to your Liferay 
 instance any files you add or modify in your Sync folder. Sync also downloads to 
@@ -231,15 +227,11 @@ still be recovered from the instance's Recycle Bin, which is enabled by default.
 Note, if the instance or site administrator has disabled the Recycle Bin, 
 recovering deleted files is impossible. 
 
-+$$$
-
-**Warning:** Deleting a file in your Sync folder also deletes it in the Liferay 
-instance and in other clients. If you accidentally delete a file, it can be 
-recovered from the instance's Recycle Bin. The Recycle Bin is enabled by 
-default. File recovery is, however, impossible if the instance or site 
-administrator has disabled the Recycle Bin. 
-
-$$$
+| **Warning:** Deleting a file in your Sync folder also deletes it in the Liferay
+| instance and in other clients. If you accidentally delete a file, it can be
+| recovered from the instance's Recycle Bin. The Recycle Bin is enabled by
+| default. File recovery is, however, impossible if the instance or site
+| administrator has disabled the Recycle Bin.
 
 You can run through the following exercise to familiarize yourself with how to 
 create, edit, download, and upload files with Sync. First, open your Sync folder 

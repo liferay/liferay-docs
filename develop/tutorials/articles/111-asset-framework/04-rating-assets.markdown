@@ -1,4 +1,8 @@
-# Rating Assets [](id=rating-assets)
+---
+header-id: rating-assets
+---
+
+# Rating Assets
 
 <!--
 Testing Notes:
@@ -28,13 +32,13 @@ tutorial uses code from a custom Insults portlet as an example. The Insults
 portlet seemed appropriate, since a truly distinguished writer of insults needs
 to know how good his or her insults really are. 
 
-In order to implement ratings on your custom entity, it must be [asset enabled](/develop/tutorials/-/knowledge_base/6-2/adding-updating-and-deleting-assets-for-custom-entities). 
+In order to implement ratings on your custom entity, it must be [asset enabled](/docs/6-2/tutorials/-/knowledge_base/t/adding-updating-and-deleting-assets-for-custom-entities). 
 The completed Insults portlet code that uses this feature is on GitHub, [here](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-03-end-insults-portlet).
 
 Now go ahead and get started learning how to add ratings to your portlets!
 
 If you've implemented 
-[asset rendering](/develop/tutorials/-/knowledge_base/6-2/implementing-asset-renderers) 
+[asset rendering](/docs/6-2/tutorials/-/knowledge_base/t/implementing-asset-renderers) 
 for your custom entity, you can display ratings in the full content view
 of your entity. You can, of course, also display this asset feature in any view
 JSP you create for viewing the entity. 
@@ -65,7 +69,7 @@ thumbs-up or thumbs-down rating system by changing this value to
 `"thumbs"`.
 
 If you haven't already connected your portlet's view to the JSP for your entity,
-you can refer [here](/develop/tutorials/-/knowledge_base/6-2/relating-assets#creating-a-url-to-your-new-jsp)
+you can refer [here](/docs/6-2/tutorials/-/knowledge_base/t/relating-assets#creating-a-url-to-your-new-jsp)
 to see how to connect your portlet's main view JSP to your entity's view JSP.
 
 Great! Now you have the JSP that lets your users rate content.
@@ -82,14 +86,14 @@ Permissions buttons of the Insults portlet are wrapped in a permissions check in
 its 
 [`view.jsp`](https://github.com/liferay/liferay-docs/blob/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/asset-framework-03-end-insults-portlet/docroot/html/insult/view.jsp).
 For more information on this, see the learning path 
-[Checking for Permissions in the UI](/develop/tutorials/-/knowledge_base/6-2/checking-for-permissions-in-the-ui). 
+[Checking for Permissions in the UI](/docs/6-2/tutorials/-/knowledge_base/t/checking-for-permissions-in-the-ui). 
 
 **Related Topics**
 
-[Asset Enabling Custom Entities](/develop/tutorials/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Asset Enabling Custom Entities](/docs/6-2/tutorials/-/knowledge_base/t/asset-enabling-custom-entities)
 
-[Implementing Asset Renderers](/develop/tutorials/-/knowledge_base/6-2/implementing-asset-renderers)
+[Implementing Asset Renderers](/docs/6-2/tutorials/-/knowledge_base/t/implementing-asset-renderers)
 
-[Liferay UI Taglibs](/develop/tutorials/-/knowledge_base/6-2/liferay-ui-taglibs)
+[Liferay UI Taglibs](/docs/6-2/tutorials/-/knowledge_base/t/liferay-ui-taglibs)
 
-[User Interfaces with AlloyUI](/develop/tutorials/-/knowledge_base/6-2/alloyui)
+[User Interfaces with AlloyUI](/docs/6-2/tutorials/-/knowledge_base/t/alloyui)

@@ -1,4 +1,8 @@
-# Using External Repositories [](id=using-external-repositories)
+---
+header-id: using-external-repositories
+---
+
+# Using External Repositories
 
 Liferay Portal's Documents and Media lets you access external repositories in
 addition to the built in document repository. Some of the features supported
@@ -26,7 +30,7 @@ apps to work with SharePoint and Documentum in Documents and Media.
 
 Let's start with the common configuration steps. 
 
-## Common Configuration Steps [](id=common-configuration-steps)
+## Common Configuration Steps
 
 The configuration steps are the same for repositories that support CMIS, and are
 even similar between CMIS repositories and those that use proprietary APIs. So
@@ -40,7 +44,7 @@ The common configuration steps are:
 
 Let's adjust the portal properties.
 
-### Step 1: Adjust Portal Properties [](id=adjusting-portal-properties)
+### Step 1: Adjust Portal Properties
 
 In order to authenticate with the third-party repository, you need to store
 passwords for the user sessions. You must configure an authentication type that
@@ -51,7 +55,7 @@ encrypted passwords in the user sessions, SSO can't be used with the external
 repository types. 
 
 Let's configure Liferay Portal for what's required in authentication.
-In your [Liferay Home](/discover/deployment/-/knowledge_base/6-2/liferay-home),
+In your [Liferay Home](/docs/6-2/deploy/-/knowledge_base/d/liferay-home),
 create a `portal-ext.properties` file, if one doesn't already exist, and add a [`session.store.password`](https://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Session)
 portal property set to `true`:
 
@@ -67,32 +71,24 @@ portal property to your `portal-ext.properties` file:
 Alternatively, configure these properties in the Control Panel under *Portal 
 Settings* &rarr; *Authentication*.
 
-### Step 2: Synchronize the User Accounts [](id=adding-required-repository-users)
+### Step 2: Synchronize the User Accounts
 
 External repository integration requires Liferay Portal users use the same
 screen name and password as their external repository user. See sections of the
 *Management* chapter on adding and managing users. Make sure to sign in to
 Liferay Portal as such a user whenever you're accessing the repository from it.
 
-+$$$
+| **Important**: Use lowercase for user names in the external repository, as
+| Liferay screen names are lowercase.
 
-**Important**: Use lowercase for user names in the external repository, as
-Liferay screen names are lowercase.
-
-$$$
-
-+$$$
-
-**Note**: In the external repository, make sure to associate users with
-necessary roles for accessing repository files. In Nuxeo, for example, a user
-must belong to the Nuxeo *Administrators* group to access Nuxeo repository files
-via CMIS.
-
-$$$
+| **Note**: In the external repository, make sure to associate users with
+| necessary roles for accessing repository files. In Nuxeo, for example, a user
+| must belong to the Nuxeo *Administrators* group to access Nuxeo repository files
+| via CMIS.
 
 Adding a *Repository* mapped to the external repository is the final step.
 
-### Step 3: Add the Repository to Documents and Media [](id=adding-the-repository)
+### Step 3: Add the Repository to Documents and Media
 
 You can add new repositories from the UI by clicking the *Add* button from the
 Home folder. Repositories can only be mounted in the Home folder.
@@ -102,7 +98,7 @@ Home folder. Repositories can only be mounted in the Home folder.
 The next sections explain how to add specific types of repositories including
 CMIS repositories and SharePoint repositories.
 
-## Adding a CMIS Repository [](id=adding-a-cmis-repository)
+## Adding a CMIS Repository
 
 Liferay Portal's Documents and Media can inter-operate with repositories that
 support the Content Management Interoperability Services (CMIS) standard. CMIS
@@ -113,7 +109,7 @@ protocols.
 
 Let's explore accessing a CMIS Repository using AtomPub. 
 
-### Adding a CMIS Repository that Uses AtomPub [](id=adding-a-cmis-repository-that-uses-atompub)
+### Adding a CMIS Repository that Uses AtomPub
 
 AtomPub is the easiest protocol to specify for communicating with a CMIS repository. 
 
@@ -147,7 +143,7 @@ the repository and manage files.
 
 Next, let's access a CMIS repository with Web Services.
 
-### Adding a CMIS Repository that Uses Web Services [](id=adding-a-cmis-repository-that-uses-web-services)
+### Adding a CMIS Repository that Uses Web Services
 
 After adjusting your portal properties and adding any user accounts required by
 the repository, you can add a Documents and Media Repository that inter-operates
@@ -179,13 +175,9 @@ documentation. Example URLs are listed after these steps. Make sure to enter
     - Web Services Repository Service
     - Web Services Versioning Service
 
-    +$$$
-
-    Tips: In a browser, you can open the repository's WSDL  file and verify each
-    service in it. Also make sure to specify the entire URLs--they all end with
-    `?wsdl`. 
-
-    $$$
+    | Tips: In a browser, you can open the repository's WSDL  file and verify each
+    | service in it. Also make sure to specify the entire URLs--they all end with
+    | `?wsdl`.
     
 6.  Leave *Repository ID* blank, as Liferay generates the ID
      automatically. 
@@ -197,7 +189,7 @@ repository and work with files as you do other files in Documents and Media.
 
 Next, let's learn how to use a SharePoint repository. 
                                                 
-## Using a SharePoint Repository [](id=example-repository-setup-sharepoint)
+## Using a SharePoint Repository
 
 ![EE Only Feature](../../images/ee-feature-web.png)
 
@@ -213,7 +205,7 @@ files.
 is available to EE subscribers on 
 [Liferay's Marketplace](http://marketplace.liferay.com/). 
 See the article 
-[Downloading and Installing Apps](/discover/portal/-/knowledge_base/6-2/downloading-and-installing-apps) 
+[Downloading and Installing Apps](/docs/6-2/user/-/knowledge_base/u/downloading-and-installing-apps) 
 for information on using Marketplace to download and install apps. 
 
 As with other third-party repositories that support the CMIS standard, users can
@@ -245,7 +237,7 @@ configure the SharePoint and Liferay environments to support authentication with
 SharePoint and then add a Documents and Media Repository that connects to
 SharePoint. Let's start by configuring the environments.
 
-### Environment Setup [](id=environment-setup)
+### Environment Setup
 
 Here's an overview of what you must do to configure your host, Liferay Portal,
 and SharePoint to use SharePoint from Liferay's Documents and Media Library:
@@ -262,7 +254,7 @@ Before you can use SharePoint as an external repository with Liferay Portal, you
 must set up a few things on the SharePoint host and in the SharePoint server
 application.
 
-#### Step 1: Enable Basic Authentication on the SharePoint Host [](id=step-1-enable-basic-authentication-on-the-sharepoint-host)
+#### Step 1: Enable Basic Authentication on the SharePoint Host
 
 For the Liferay Connector for SharePoint 2010 to authenticate to the SharePoint 
 web services, you must enable Basic Authentication on the SharePoint host. As 
@@ -301,7 +293,7 @@ You've configured Basic Authentication on the SharePoint host.
 Next, you should enable versioning support in your SharePoint library so that
 users can leverage file versioning between Liferay Portal and SharePoint. 
 
-#### Step 2: Enable Versioning Support in the SharePoint Library [](id=step-2-enable-versioning-support-in-the-sharepoint-library)
+#### Step 2: Enable Versioning Support in the SharePoint Library
 
 You must enable versioning in SharePoint library for Liferay Portal's
 check-in/out features to work with SharePoint. To enable it, follow these steps:
@@ -320,7 +312,7 @@ You've set SharePoint to accept versioning requests from Liferay Portal.
 
 Next, you'll configure authentication for Liferay Portal. 
 
-#### Step 3: Authentication on Liferay [](id=step-3-authentication-on-liferay)
+#### Step 3: Authentication on Liferay
 
 In order to authenticate with the Sharepoint repository, you need to store
 passwords for the user sessions. You must configure an authentication type that
@@ -331,7 +323,7 @@ encrypted passwords in the user sessions, SSO can't be used with the Liferay
 Connector for SharePoint 2010 app.
 
 Let's configure Liferay Portal for what's required in authentication.
-In your [Liferay Home](/discover/deployment/-/knowledge_base/6-2/liferay-home),
+In your [Liferay Home](/docs/6-2/deploy/-/knowledge_base/d/liferay-home),
 create a `portal-ext.properties` file, if one doesn't already exist, and add a [`session.store.password`](https://docs.liferay.com/portal/6.2/propertiesdoc/portal.properties.html#Session)
 portal property set to `true`:
 
@@ -347,21 +339,21 @@ portal property to your `portal-ext.properties` file:
 Alternatively, configure these properties in the Control Panel under *Portal 
 Settings* &rarr; *Authentication*.
 
-#### Step 4: Synchronize Credentials [](id=step-4-synchronize-credentials)
+#### Step 4: Synchronize Credentials
 
 As a Liferay Portal system administrator, you must ensure that the same credentials
-and authentication are used in Liferay Portal and in SharePoint. [LDAP](/discover/portal/-/knowledge_base/6-2/integrating-existing-users-into-liferay#ldap)
+and authentication are used in Liferay Portal and in SharePoint. [LDAP](/docs/6-2/user/-/knowledge_base/u/integrating-existing-users-into-liferay#ldap)
 is a typical mechanism for synchronizing them. If you don't have LDAP, however,
 you must manually synchronize the credentials and authentication. 
  
 For Liferay Portal users to access the external repository, their screen names
 and passwords must be the same in Liferay Portal and in Sharepoint. For details
-on adding and managing Liferay Portal users, refer to [User Mangement](/discover/portal/-/knowledge_base/6-2/user-management).
+on adding and managing Liferay Portal users, refer to [User Mangement](/docs/6-2/user/-/knowledge_base/u/user-management).
 
 From within Liferay's Documents and Media Library, you are now prepared to mount
 the SharePoint library as an additional external repository. 
 
-### Add SharePoint as a Liferay Documents and Media repository [](id=add-sharepoint-as-a-liferay-documents-and-media-repository)
+### Add SharePoint as a Liferay Documents and Media repository
 
 It's time to add a Documents and Media Library Repository of type SharePoint,
 so users can work with SharePoint in Liferay Portal. 

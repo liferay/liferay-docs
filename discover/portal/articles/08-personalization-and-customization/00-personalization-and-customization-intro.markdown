@@ -1,4 +1,8 @@
-# Personalization and Customization [](id=personalization-and-customization)
+---
+header-id: personalization-and-customization
+---
+
+# Personalization and Customization
 
 In this chapter, we discuss several ways Liferay users can customize pages,
 applications, and the way they use your portal. We'll cover the following

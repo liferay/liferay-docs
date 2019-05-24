@@ -1,4 +1,8 @@
-# Understanding Your Theme's JavaScript Callbacks in main.js [](id=understanding-your-themes-javascript-callbacks-in-main-js)
+---
+header-id: understanding-your-themes-javascript-callbacks-in-main-js
+---
+
+# Understanding Your Theme's JavaScript Callbacks in main.js
 
 Liferay has a product called [AlloyUI](http://alloyui.com/), which is an
 extension to Yahoo's YUI3 framework. Liferay Portal by default uses AlloyUI for
@@ -56,9 +60,9 @@ The contents of the `main.js` file are listed below:
 There you have it. You can leverage these JavaScript callbacks in your theme by
 adding your own logic to the callbacks. 
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
- [Application Display Templates](/develop/tutorials/-/knowledge_base/6-2/application-display-templates)
+ [Application Display Templates](/docs/6-2/tutorials/-/knowledge_base/t/application-display-templates)
  
- [Customizing Liferay Portal](/develop/tutorials/-/knowledge_base/6-2/customizing-liferay-portal)
+ [Customizing Liferay Portal](/docs/6-2/tutorials/-/knowledge_base/t/customizing-liferay-portal)
 

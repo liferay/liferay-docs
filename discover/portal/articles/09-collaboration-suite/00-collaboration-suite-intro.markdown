@@ -1,4 +1,8 @@
-# Collaboration Suite [](id=collaboration-suite)
+---
+header-id: collaboration-suite
+---
+
+# Collaboration Suite
 
 Liferay Portal ships with a robust suite of collaboration applications which
 you can use to build communities of users for your site. These applications

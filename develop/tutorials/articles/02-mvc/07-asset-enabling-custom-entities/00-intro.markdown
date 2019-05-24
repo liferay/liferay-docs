@@ -1,4 +1,8 @@
-# Asset Enabling Custom Entities [](id=asset-enabling-custom-entities)
+---
+header-id: asset-enabling-custom-entities
+---
+
+# Asset Enabling Custom Entities
 
 Liferay's asset framework provides a set of features that are common to many
 different types of content. Web content articles, blog posts, wiki articles, and

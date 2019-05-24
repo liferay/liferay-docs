@@ -1,4 +1,8 @@
-# Manipulating the DOM with AlloyUI [](id=manipulating-the-dom-with-alloyui)
+---
+header-id: manipulating-the-dom-with-alloyui
+---
+
+# Manipulating the DOM with AlloyUI
 
 In the last section, you used AlloyUI to implement form validation on several
 fields. In this section, you'll learn how to use AlloyUI to manipulate HTML
@@ -12,7 +16,7 @@ the message field is populated with the selected message. To achieve
 these goals, you'll use the AlloyUI Node module for DOM manipulation and the
 AlloyUI Event module to create event listeners.
 
-## Creating Populate Buttons for the Name and Email Fields [](id=creating-populate-buttons-for-the-name-and-email-fields)
+## Creating Populate Buttons for the Name and Email Fields
 
 To keep the Add Entry form as clean as possible, you'll create a collapsible
 panel where you'll add the buttons for populating the form fields. Add the
@@ -179,7 +183,7 @@ Name* button you already created.
 Next, you'll develop a more complex example that uses AUI to add and remove DOM
 nodes.
 
-## Creating Populate Buttons for the Message Field [](id=creating-autopopulate-buttons-for-the-message-field)
+## Creating Populate Buttons for the Message Field
 
 So far, Guestbook portlet users can click on *Add Entry* to enter and save a
 guestbook entry. A guestbook entry consists of a name, email address, and
@@ -663,6 +667,6 @@ completed this section:
     };
     </aui:script>
 
-## Next Steps [](id=next-steps)
+## Next Steps
 
-[Making URLs Friendly](/develop/tutorials/-/knowledge_base/6-2/making-urls-friendly)
+[Making URLs Friendly](/docs/6-2/tutorials/-/knowledge_base/t/making-urls-friendly)

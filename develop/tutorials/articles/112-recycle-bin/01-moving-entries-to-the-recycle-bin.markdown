@@ -1,4 +1,8 @@
-# Moving Entries to the Recycle Bin [](id=moving-entries-to-the-recycle-bin)
+---
+header-id: moving-entries-to-the-recycle-bin
+---
+
+# Moving Entries to the Recycle Bin
 
 This tutorial covers how to add the ability to move your app's entries to the
 Recycle Bin. 
@@ -15,7 +19,7 @@ Here are the steps for implementing this Recycle Bin component:
 
 Start off by configuring the app's service. 
 
-## Step 1: Enable Trash for Service Entities [](id=step-1-enable-trash-for-service-entities)
+## Step 1: Enable Trash for Service Entities
 
 For every entity you want to recycle bin-enable, you must enable the trash
 feature. To do this, insert insert the `trash-enabled="true"` attribute inside
@@ -24,12 +28,12 @@ entity element should look similar to this one:
 
     <entity name="YourEntity" local-service="true" remote-service="true" uuid="true" trash-enabled="true">
 
-Run [Service Builder](/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
+Run [Service Builder](/docs/6-2/tutorials/-/knowledge_base/t/running-service-builder-and-understanding-the-generated-code)
 to generate back-end trash related classes for the entities. 
 
 You'll implement trash handlers for these entities next.
 
-## Step 2: Implement a Trash Handler for Each Trash-Enabled Entity [](id=step-2-implement-a-trash-handler-for-each-trash-enabled-entity)
+## Step 2: Implement a Trash Handler for Each Trash-Enabled Entity
 
 As with many other Liferay frameworks--such as the workflow, assets, and
 indexing frameworks--you must implement a handler class for Recycle Bin. A
@@ -65,19 +69,15 @@ Jukebox's Song portlet specifies the song trash handler like this:
 You can refer to the Jukebox portlet's [`liferay-portlet.xml`](https://github.com/liferay-labs/jukebox-portlet/blob/6.2.x/docroot/WEB-INF/liferay-portlet.xml)
 file to see the trash handlers it specifies. 
 
-+$$$
-
-**Note:** A trash handler refers to an entity, not a portlet. A trash handler
-can, therefore, be declared in any of a plugin's portlets. A best practice is to
-declare them in the app's principal portlet.
-
-$$$
+| **Note:** A trash handler refers to an entity, not a portlet. A trash handler
+| can, therefore, be declared in any of a plugin's portlets. A best practice is to
+| declare them in the app's principal portlet.
 
 Great! You have trash handlers ready to manage your trash entries, but you still
 need a way to get the entries to the Recycle Bin. You must create a service
 method for moving them there.
 
-## Step 3: Create a Service Method to Move Entries to the Recycle Bin [](id=step-3-create-a-service-method-to-move-entries-to-the-recycle-bin)
+## Step 3: Create a Service Method to Move Entries to the Recycle Bin
 
 You'll implement a local service method for moving them to the
 Recycle Bin. This service method must implement a trash service for the
@@ -146,14 +146,10 @@ invisible in its original location? I thought I was moving it to the Recycle Bin
 Importantly, entries that are moved to the Recycle Bin are actually left in
 their original location; they're just not visible. 
 
-+$$$
-
-**Note:** If you're not using assets with your entity, you'll need to filter the
-elements in your UI by status, so it only shows approved entities. Otherwise,
-trashed entities still appear. The `updateVisible` method only works on asset
-enabled entities.
-
-$$$
+| **Note:** If you're not using assets with your entity, you'll need to filter the
+| elements in your UI by status, so it only shows approved entities. Otherwise,
+| trashed entities still appear. The `updateVisible` method only works on asset
+| enabled entities.
 
 Next, notice that the service method adds a new trash entry to the Recycle Bin:
 
@@ -164,9 +160,9 @@ Next, notice that the service method adds a new trash entry to the Recycle Bin:
 Lastly, the `moveSongToTrash` service method invokes `TrashUtil`'s [`getTrashTitle`](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portlet/trash/util/TrashUtil.html#getTrashTitle(long))
 method to set the entry's *trash title*. The trash title is an alternative
 reference to the entry. The trash title prevents duplicate entry name conflicts,
-discussed in the tutorial [Resolving Recycling Conflicts](/develop/tutorials/-/knowledge_base/6-2/resolving-recycling-conflicts).
+discussed in the tutorial [Resolving Recycling Conflicts](/docs/6-2/tutorials/-/knowledge_base/t/resolving-recycling-conflicts).
 
-## Step 4: Create a Portlet Action to Initiate Moving Entries to Recycle Bin [](id=step-4-create-a-portlet-action-to-initiate-moving-entries-to-recycle-bin)
+## Step 4: Create a Portlet Action to Initiate Moving Entries to Recycle Bin
 
 Great! You must now provide the means of invoking the service method from your
 portlet. You implement this using a portlet action that you can trigger from
@@ -243,7 +239,7 @@ Bin, you're ready to set up the framework for rendering the trashed entries in
 the Recycle Bin. You do this by implementing trash renderers for the
 trash-enabled entities. 
 
-## Step 5: Implement a Trash Renderer for Each Trash-Enabled Entity [](id=step-5-implement-a-trash-renderer-for-each-trash-enabled-entity)
+## Step 5: Implement a Trash Renderer for Each Trash-Enabled Entity
 
 In a similar way to creating a trash handler, you create a class to render trash
 entries in the Recycle Bin. If you're already using an asset renderer, you can
@@ -277,14 +273,14 @@ based on the file shortcut instance. You can similarly create a
 Congratulations! You now know how to implement moving your app's entries to the
 Recycle Bin.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[Recycling Assets with the Recycle Bin](/discover/portal/-/knowledge_base/6-2/recycling-assets-with-the-recycle-bin)
+[Recycling Assets with the Recycle Bin](/docs/6-2/user/-/knowledge_base/u/recycling-assets-with-the-recycle-bin)
 
-[Service Builder and Services](/develop/tutorials/-/knowledge_base/6-2/service-builder)
+[Service Builder and Services](/docs/6-2/tutorials/-/knowledge_base/t/service-builder)
 
-[Enabling Search and Indexing](/develop/tutorials/-/knowledge_base/6-2/enabling-search-and-indexing)
+[Enabling Search and Indexing](/docs/6-2/tutorials/-/knowledge_base/t/enabling-search-and-indexing)
 
-[Asset Framework](/develop/tutorials/-/knowledge_base/6-2/asset-framework)
+[Asset Framework](/docs/6-2/tutorials/-/knowledge_base/t/asset-framework)
 
-[Asset Enabling Custom Entities](/develop/tutorials/-/knowledge_base/6-2/asset-enabling-custom-entities)
+[Asset Enabling Custom Entities](/docs/6-2/tutorials/-/knowledge_base/t/asset-enabling-custom-entities)

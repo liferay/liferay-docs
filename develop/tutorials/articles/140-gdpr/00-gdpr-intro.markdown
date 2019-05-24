@@ -1,4 +1,8 @@
-# GDPR: Right to be Forgotten and Data Portability [](id=gdpr-right-to-be-forgotten-and-data-portability)
+---
+header-id: gdpr-right-to-be-forgotten-and-data-portability
+---
+
+# GDPR: Right to be Forgotten and Data Portability
 
 Enforcement of the General Data Protection Regulation (GDPR) began May 25,
 2018. Companies processing the personal data of EU residents must adopt
@@ -30,7 +34,7 @@ compiled in a web plugin. It's up to you. A sample web plugin containing this
 code can be referenced
 [here](https://github.com/liferay/liferay-plugins/tree/6.2.x/webs/sample-personal-data-web).
 
-## Right to Data Portability [](id=right-to-data-portability)
+## Right to Data Portability
 
 The 
 [right to data portability](https://gdpr-info.eu/art-20-gdpr/) 
@@ -40,10 +44,10 @@ data upon request.
 There's no easy way through the UI to export a given user's personal data on
 Liferay Portal 6.2. One straightforward way to fulfill this requirement
 programmatically for applications built using Service Builder is to leverage
-[Actionable Dynamic Queries](/develop/tutorials/-/knowledge_base/7-0/dynamic-query).
+[Actionable Dynamic Queries](/docs/7-0/tutorials/-/knowledge_base/t/dynamic-query).
 
 This example exports all of a user's blogs created using Liferay's
-[Blogs](/discover/portal/-/knowledge_base/7-0/publishing-blogs)
+[Blogs](/docs/7-0/user/-/knowledge_base/u/publishing-blogs)
 app to a JSON-formatted file. It starts by creating an instance of
 `BlogsEntryActionableDynamicQuery` and overriding the `addCriteria` method to
 grab all `BlogEntries` that match the user by `userId` or `statusByUserId`. This
@@ -187,7 +191,7 @@ Now the exported data is cleaner and only contains user-inputted personal data.
 As this code is essentially boilerplate for all of Liferay's service generated
 classes, you can generalize this solution using reflection. 
 
-## Right to be Forgotten [](id=right-to-be-forgotten)
+## Right to be Forgotten
 
 The 
 [right to erasure](https://gdpr-info.eu/art-17-gdpr/) 
@@ -196,7 +200,7 @@ user's personal data upon request (excluding data the
 organization has a legitimate reason to retain like financial records, public
 interest data, etc).
 
-### Erasing the data [](id=erasing-the-data)
+### Erasing the data
 
 Unfortunately, simply deleting the `User` object by calling
 `UserLocalServiceUtil.deleteUser(User user)` does not sufficiently fulfill this
@@ -226,7 +230,7 @@ matches.
 
     actionableDynamicQuery.performActions();
 
-### Anonymizing the data [](id=anonymizing-the-data)
+### Anonymizing the data
 
 But what if blogs contain valuable data we want to keep? Perhaps a community
 member wrote a blog post on DE 7.0 upgrade tips but now requests to be
@@ -302,9 +306,13 @@ that's been anonymized.
 
 Again, this solution is mostly boilerplate code and can be generalized to data
 built using 
-[Service Builder](/develop/tutorials/-/knowledge_base/6-2/service-builder).
+[Service Builder](/docs/6-2/tutorials/-/knowledge_base/t/service-builder).
 
-# Conclusion [](id=conclusion)
+---
+header-id: conclusion
+---
+
+# Conclusion
 
 These examples demonstrate how to leverage Liferay's existing APIs to address
 GDPR's new standard for personal data protection. Ultimately, true compliance

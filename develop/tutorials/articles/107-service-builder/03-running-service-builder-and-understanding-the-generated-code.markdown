@@ -1,12 +1,16 @@
-# Running Service Builder and Understanding the Generated Code [](id=running-service-builder-and-understanding-the-generated-code)
+---
+header-id: running-service-builder-and-understanding-the-generated-code
+---
+
+# Running Service Builder and Understanding the Generated Code
 
 This tutorial explains how to run Service Builder and provides an overview of
 the code that Service Builder generates. If you'd like to use Service Builder in
 your application but haven't yet created a `service.xml` file, please see the
-[Defining an Object-Relational Map with Service Builder](/develop/tutorials/-/knowledge_base/6-2/defining-an-object-relational-map-with-service-builder)
+[Defining an Object-Relational Map with Service Builder](/docs/6-2/tutorials/-/knowledge_base/t/defining-an-object-relational-map-with-service-builder)
 tutorial and then come back to this one.
 
-## Running Service Builder [](id=running-service-builder)
+## Running Service Builder
 
 To build a service from a `service.xml` file, you can use *Liferay IDE*,
 *Liferay Developer Studio*, or use a terminal window. In this tutorial, we refer
@@ -14,14 +18,10 @@ to the Event Listing example project that's referenced throughout the Liferay
 Service Builder tutorials. You can find the Event Listing example project on
 [Github](https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/tutorials-sdk/portlets/event-listing-portlet).
 
-+$$$
-
-**Note:** On Windows, your Liferay Portal instance and your Plugins SDK must be
-on the same drive in order to build services. E.g., if your Liferay Portal
-instance is on your `C:\` drive, your Plugins SDK must also be on your `C:\`
-drive in order for Service Builder to be able to run successfully.
-
-$$$
+| **Note:** On Windows, your Liferay Portal instance and your Plugins SDK must be
+| on the same drive in order to build services. E.g., if your Liferay Portal
+| instance is on your `C:\` drive, your Plugins SDK must also be on your `C:\`
+| drive in order for Service Builder to be able to run successfully.
 
 Now let's learn how to run Service Builder.
 
@@ -36,7 +36,7 @@ Make sure to click the *Build Services* button and not the *Build WSDD* button
 that appears next to it. Building the WSDDs won't hurt anything, but you'll
 generate files for the remote service instead of the local one. For information
 about WSDDs (web service deployment descriptors), please refer to the
-[Working with SOAP Web Services](/develop/tutorials/-/knowledge_base/6-2/soap-web-services)
+[Working with SOAP Web Services](/docs/6-2/tutorials/-/knowledge_base/t/soap-web-services)
 tutorial. 
 
 ![Figure 1: The *Overview* mode in the editor provides a nested outline which you can expand, a form for editing basic Service Builder attributes, and buttons for building services or building web service deployment descriptors.](../../images/service-xml-overview.png)
@@ -80,22 +80,18 @@ all of the properties that Liferay IDE and Developer Studio override. Specifying
 the value of the `app.server.parent.dir` property suffices as long you haven't
 changed the relative locations of the `app.server.tomcat.*` directories.
 
-+$$$
-
-**Tip:** One potentially useful property that's not automatically configured by
-Liferay IDE or Developer Studio is the `auto.deploy.dir` property. By default,
-`auto.deploy.dir=${app.server.parent.dir}/deploy`. This property specifies
-Liferay's auto-deploy directory, i.e., the directory into which the Plugins SDK
-will copy plugins (WAR files) to be deployed. Liferay modifies the WAR files
-before deploying and exploding them to the `app.server.tomcat.deploy.dir`
-directory. If you customize the value of the `auto.deploy.dir` property in your
-Plugins SDK, make sure you also configure Liferay to scan the new directory. To
-do so, you must configure Liferay's `auto.deploy.deploy.dir` portal property
-(e.g., in `portal-ext.properties`) to point to the same directory that you
-specified via the `auto.deploy.dir` property of your Plugins SDK's
-`build.[username].properties` file.
-
-$$$
+| **Tip:** One potentially useful property that's not automatically configured by
+| Liferay IDE or Developer Studio is the `auto.deploy.dir` property. By default,
+| `auto.deploy.dir=${app.server.parent.dir}/deploy`. This property specifies
+| Liferay's auto-deploy directory, i.e., the directory into which the Plugins SDK
+| will copy plugins (WAR files) to be deployed. Liferay modifies the WAR files
+| before deploying and exploding them to the `app.server.tomcat.deploy.dir`
+| directory. If you customize the value of the `auto.deploy.dir` property in your
+| Plugins SDK, make sure you also configure Liferay to scan the new directory. To
+| do so, you must configure Liferay's `auto.deploy.deploy.dir` portal property
+| (e.g., in `portal-ext.properties`) to point to the same directory that you
+| specified via the `auto.deploy.dir` property of your Plugins SDK's
+| `build.[username].properties` file.
 
 When you've finished configuring your `build.[username].properties` file,
 navigate to your `portlets/event-listing-project-portlet` directory and enter
@@ -110,7 +106,7 @@ service layer, and persistence layer. Don't worry about the number of generated
 files--you'll never have to customize more than three of them. To review the
 code that Service Builder generates for your entities, see the next section.
 
-## Understanding the Code Generated by Service Builder [](id=understanding-the-code-generated-by-service-builder)
+## Understanding the Code Generated by Service Builder
 
 Let's examine the files Service Builder generates for your entity. Note that the
 files listed under Local Service and Remote Service below are only generated for
@@ -241,13 +237,13 @@ method signature of a `*LocalServiceImpl` class, `*ServiceImpl` class, or
 `*Impl` class, you should run Service Builder again to regenerate the affected
 interfaces and the service JAR.
 
-## Related Topics [](id=related-topics)
+## Related Topics
 
-[What is Service Builder](/develop/tutorials/-/knowledge_base/6-2/what-is-service-builder)
+[What is Service Builder](/docs/6-2/tutorials/-/knowledge_base/t/what-is-service-builder)
 
-[Running Service Builder and Understanding the Generated Code](/develop/tutorials/-/knowledge_base/6-2/running-service-builder-and-understanding-the-generated-code)
+[Running Service Builder and Understanding the Generated Code](/docs/6-2/tutorials/-/knowledge_base/t/running-service-builder-and-understanding-the-generated-code)
 
-[Understanding Service Context](/develop/tutorials/-/knowledge_base/6-2/servicecontext)
+[Understanding Service Context](/docs/6-2/tutorials/-/knowledge_base/t/servicecontext)
 
-[Creating Local Services](/develop/tutorials/-/knowledge_base/6-2/writing-local-service-classes)
+[Creating Local Services](/docs/6-2/tutorials/-/knowledge_base/t/writing-local-service-classes)
 

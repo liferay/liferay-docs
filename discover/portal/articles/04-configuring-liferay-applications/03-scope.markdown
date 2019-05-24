@@ -1,4 +1,8 @@
-# Scope [](id=scope)
+---
+header-id: scope
+---
+
+# Scope
 
 As we learned earlier, roles can be scoped by the portal, by a site, or by an
 organization. A role only takes effect within its scope. For example, a Message
