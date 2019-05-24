@@ -12,7 +12,7 @@ Collision detection is possible with the following assets:
 - Web content template
 
 As an example, assume there are two content editors managing their own separate
-change lists with both change lists started off the same production environment.
+change lists with both change lists based on the same production environment.
 Consider this scenario:
 
 1.  There is an existing production template in Site A (v1.0).
@@ -41,11 +41,13 @@ change list, the production environment your change list was based on is
 reestablished and your changes are published on top of that.
 
 Note that web content articles were not listed as a supported content type for
-collision detection. When a scenario similar to the one listed previously occurs
-for a web content article, an error is thrown.
+collision detection management. When a scenario similar to the one listed
+previously occurs for a web content article, an error is thrown.
 
-![Figure 2: You cannot edit web content articles in parallel.](../../../images/error-for-multi-user-edits.png)
+![Figure 2: You cannot ignore collisions or leverage its pre-detection features.](../../../images/error-for-multi-user-edits.png)
 
+When a collision is detected for web content articles, your only option is to
+copy the latest article's content in the production environment to your active
+change list and then apply your changes to it.
 
-
-
+Great! Now you know how to manage collisions for your change list!
