@@ -32,6 +32,10 @@ from `liferay-npm-bundler-preset-standard`:
     	}
     }
 
+The configuration above states that for all npm packages (`*`) the pre-process 
+phase (`plugins`) must run the `replace-browser-modules` plugin. Setting this to 
+`post-plugins` would run it during the post phase instead. 
+
 +$$$
 
 **Note:** You can override configuration preset values by adding your own 
@@ -63,8 +67,9 @@ applies the following plugins to packages:
   files.
 
 - [replace-browser-modules](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/liferay-npm-bundler-plugin-replace-browser-modules):
-  Replace modules listed under `browser`/`unpkg`/`jsdelivr` section of 
-  `package.json` files.
+  Replaces the server side files for modules listed under 
+  `browser`/`unpkg`/`jsdelivr` section of `package.json` with their browser 
+  counterparts. 
 
 - [resolve-linked-dependencies](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/liferay-npm-bundler-plugin-resolve-linked-dependencies):
   Replace linked dependencies versions appearing in `package.json` files 

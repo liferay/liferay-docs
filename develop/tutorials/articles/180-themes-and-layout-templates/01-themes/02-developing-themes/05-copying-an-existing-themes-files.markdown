@@ -16,6 +16,15 @@ which can potentially overwrite files with the same name. Proceed with caution.
 
 $$$
 
++$$$
+
+**Note:** Gulp is included as a local dependency in generated themes, so you 
+are not required to install it. It can be accessed by running 
+`node_modules\.bin\gulp` followed by the Gulp task from a generated theme's 
+root folder.
+
+$$$
+
 To kickstart your theme, follow these steps:
 
 1.  Navigate to your theme's root folder and run `gulp kickstart`.

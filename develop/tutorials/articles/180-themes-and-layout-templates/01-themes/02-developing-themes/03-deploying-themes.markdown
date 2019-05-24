@@ -16,6 +16,15 @@ you can also deploy your theme using the `gulp deploy:gogo` command.
 
 $$$
 
++$$$
+
+**Note:** Gulp is included as a local dependency in generated themes, so you 
+are not required to install it. It can be accessed by running 
+`node_modules\.bin\gulp` followed by the Gulp task from a generated theme's 
+root folder.
+
+$$$
+
 Follow these steps to deploy your theme:
 
 1.  Navigate to your theme's root folder and run `gulp deploy`.

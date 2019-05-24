@@ -44,10 +44,10 @@ Here are the steps for using the Gulp `upgrade` task:
     `_custom.scss`). The `upgrade` task prompts you for each CSS file to rename. 
 
     +$$$
-
-    **Note**: An upgraded theme can be restored to its original state by 
-    executing `gulp upgrade:revert`. 
-
+    
+    **Note**: The `gulp upgrade` task overwrites the theme's files. We recommend 
+    that you backup your theme's files before running it. 
+    
     $$$
 
     The upgrade task automatically upgrades CSS code that it can identify. For 

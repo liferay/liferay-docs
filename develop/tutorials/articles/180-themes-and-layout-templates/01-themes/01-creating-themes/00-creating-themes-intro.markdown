@@ -21,7 +21,16 @@ Follow these steps to install the Liferay Theme Generator and generate a theme:
     and 
     [gulp](https://gulpjs.com/):
 
-        npm install -g yo gulp
+        npm install -g yo
+
+    +$$$
+
+    **Note:** Gulp is included as a local dependency in generated themes, so you 
+    are not required to install it. It can be accessed by running 
+    `node_modules\.bin\gulp` followed by the Gulp task from a generated theme's 
+    root folder.
+            
+    $$$
 
 3.  Install the Liferay Theme Generator. A few versions of the Liferay Theme 
     Generator are available. The version you must install depends on the version 

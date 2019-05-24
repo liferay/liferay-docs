@@ -5,6 +5,15 @@ make a change. This can become tedious during the development process. The
 `gulp watch` task lets you see the changes you make to your theme without 
 requiring a full redeploy.
 
++$$$
+
+**Note:** Gulp is included as a local dependency in generated themes, so you 
+are not required to install it. It can be accessed by running 
+`node_modules\.bin\gulp` followed by the Gulp task from a generated theme's 
+root folder.
+
+$$$
+
 Follow these steps to deploy changes to your theme automatically: 
 
 1.  Enable

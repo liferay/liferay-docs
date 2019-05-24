@@ -4,6 +4,15 @@ Once your theme is
 [built](/develop/tutorials/-/knowledge_base/7-1/building-your-themes-files), 
 you can use the `gulp extend` task to change your theme's base theme. 
 
++$$$
+
+**Note:** Gulp is included as a local dependency in generated themes, so you 
+are not required to install it. It can be accessed by running 
+`node_modules\.bin\gulp` followed by the Gulp task from a generated theme's 
+root folder.
+
+$$$
+
 Follow these steps to change your base theme:
 
 1.  Navigate to your theme's root folder and run `gulp extend` and choose option 

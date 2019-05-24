@@ -3,6 +3,15 @@
 The `gulp build` task generates the base theme files, compiles Sass into CSS, 
 and zips all theme files into a WAR file that you can deploy to your server. 
 
++$$$
+
+**Note:** Gulp is included as a local dependency in generated themes, so you 
+are not required to install it. It can be accessed by running 
+`node_modules\.bin\gulp` followed by the Gulp task from a generated theme's 
+root folder.
+
+$$$
+
 Follow these steps to build your theme's files:
 
 1.  Navigate to your theme's root folder and run `gulp build`.
