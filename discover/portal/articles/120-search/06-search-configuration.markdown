@@ -121,7 +121,11 @@ Configuration file: `com.liferay.portal.search.configuration.QueryPreProcessConf
 
 This entry contains only one property:
 
-`indexingBatchSizes`: Use this property to set the number of documents indexed per batch for model types that support batch indexing. Defaults to `com.liferay.journal.model.JournalArticle=10000`. For models with large documents, decreasing this value may improve stability when executing a full re-index.
+`indexingBatchSizes`: Set the number of documents indexed per batch for model
+types that support batch indexing---defaults to
+`com.liferay.journal.model.JournalArticle=10000`. For models with large
+documents, decreasing this value may improve stability when executing a full
+re-index.
 
 Configuration file: `com.liferay.portal.search.configuration.ReindexConfiguration.config`
 
