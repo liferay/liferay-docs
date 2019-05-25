@@ -4,6 +4,8 @@ header-id: managing-and-configuring-apps
 
 # Managing and Configuring Apps
 
+[TOC levels=1-4]
+
 @product@ is a platform for deploying apps that comprise modules and components.
 It has conveniences for managing apps and app management best practices for
 maximizing stability.

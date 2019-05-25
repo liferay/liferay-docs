@@ -4,6 +4,8 @@ header-id: script-examples
 
 # Script Examples
 
+[TOC levels=1-4]
+
 Here are some examples to help you use Liferay's script console. Note: Most of
 these originated from a [Liferay blog post](https://www.liferay.com/web/sebastien.lemarchand/blog/-/blogs/5-tips-to-improve-usage-of-the-liferay-script-console).
 

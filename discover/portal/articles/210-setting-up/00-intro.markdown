@@ -4,6 +4,8 @@ header-id: setting-up
 
 # Setting Up
 
+[TOC levels=1-4]
+
 If @product@ is anything, it's configurable. As the core is shrinking
 due to its increased modularity, it's important that all the applications in
 Liferay are also configurable. 

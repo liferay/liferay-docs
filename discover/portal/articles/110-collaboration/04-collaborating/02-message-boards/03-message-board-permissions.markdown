@@ -4,6 +4,8 @@ header-id: message-board-permissions
 
 # Message Board Permissions
 
+[TOC levels=1-4]
+
 Open the Message Boards app in your scope's Site Administration menu, as 
 described in 
 [the article on creating message boards](/docs/7-1/user/-/knowledge_base/u/creating-message-boards). 

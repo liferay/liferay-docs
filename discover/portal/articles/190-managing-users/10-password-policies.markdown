@@ -4,6 +4,8 @@ header-id: password-policies
 
 # Password Policies
 
+[TOC levels=1-4]
+
 Password policies enforce password rules to help users specify secure passwords.
 Use the default policy that ships with Liferay (modified or as is), or create
 your own policies. Password policies can be assigned to Users or Organizations,

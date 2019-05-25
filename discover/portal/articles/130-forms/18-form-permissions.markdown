@@ -4,6 +4,8 @@ header-id: form-permissions
 
 # Form Permissions
 
+[TOC levels=1-4]
+
 To access a form's permissions, first navigate to the Forms app in 
 *Site Administration* (your site's menu) &rarr; *Content* &rarr; *Forms*. Then 
 click the form's *Actions* button 

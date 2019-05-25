@@ -4,6 +4,8 @@ header-id: built-in-mobile-support
 
 # Built-in Mobile Support
 
+[TOC levels=1-4]
+
 Out of the box, there are several features that help make your pages look just
 as good and have the same functionality on mobile devices as they do on
 a desktop:

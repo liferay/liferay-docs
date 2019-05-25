@@ -4,6 +4,8 @@ header-id: virtual-instances
 
 # Virtual Instances
 
+[TOC levels=1-4]
+
 Here's a quick scenario: you already have a server hosting a @product@ 
 installation and a database. It has many 
 [Users](/docs/7-1/user/-/knowledge_base/u/users-and-organizations), 

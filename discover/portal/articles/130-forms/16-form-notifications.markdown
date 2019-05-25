@@ -4,6 +4,8 @@ header-id: form-notifications
 
 # Form Notifications
 
+[TOC levels=1-4]
+
 You can configure the Forms app to send a notification email each time a form 
 entry is submitted.
 

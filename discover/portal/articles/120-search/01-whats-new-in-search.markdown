@@ -4,6 +4,8 @@ header-id: whats-new-with-search
 
 # What's New with Search?
 
+[TOC levels=1-4]
+
 There are lots of new features in the search functionality. This brief overview
 can get you familiar with the changes. More details are in the remaining
 articles.

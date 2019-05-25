@@ -4,6 +4,8 @@ header-id: setting-a-default-adt
 
 # Setting a Default ADT
 
+[TOC levels=1-4]
+
 You can change the ADT for an individual widget through its own configuration,
 but to configure the default ADT for all widgets of that type, you must go to
 **System Settings**. In the System Settings you can find a configuration for

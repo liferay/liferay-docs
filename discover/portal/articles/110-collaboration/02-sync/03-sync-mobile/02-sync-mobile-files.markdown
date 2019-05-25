@@ -4,6 +4,8 @@ header-id: managing-files-and-folders-in-liferay-sync-mobile
 
 # Managing Files and Folders in Liferay Sync Mobile
 
+[TOC levels=1-4]
+
 Whether you're working in My Documents or My Sites, you manage files and folders
 the same way. Pressing a Site or folder shows you a list of its files and
 folders. It displays each file's size and modification date. You can refresh the

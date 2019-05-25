@@ -4,6 +4,8 @@ header-id: designing-web-content-with-templates
 
 # Designing Web Content with Templates
 
+[TOC levels=1-4]
+
 Developers create templates to display the elements of the structure in the
 markup they want. In essence, templates are scripts that tell @product@ how to 
 display content in the structure. Changes to the structure require corresponding

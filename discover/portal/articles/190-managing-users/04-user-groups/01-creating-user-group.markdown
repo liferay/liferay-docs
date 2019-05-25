@@ -4,6 +4,8 @@ header-id: creating-a-user-group
 
 # Creating a User Group
 
+[TOC levels=1-4]
+
 Follow these steps to create a user group: 
 
 1.  Open the Menu 

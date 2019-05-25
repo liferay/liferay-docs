@@ -4,6 +4,8 @@ header-id: configuring-rss-feeds
 
 # Configuring RSS Feeds
 
+[TOC levels=1-4]
+
 To manage a Liferay site's RSS feeds, navigate to your Site's Site
 Administration &rarr; *Content* page and click *Web Content*. Site
 administrators can use this Web Content menu option to manage their site's web

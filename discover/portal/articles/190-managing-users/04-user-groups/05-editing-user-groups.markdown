@@ -4,6 +4,8 @@ header-id: editing-user-groups
 
 # Editing User Groups
 
+[TOC levels=1-4]
+
 Editing an existing user group is a straightforward process. You can access your 
 portal's user groups from *Control Panel* &rarr; *Users* &rarr; *User Groups*, 
 which lists user groups in a table. Managing membership is the most common 

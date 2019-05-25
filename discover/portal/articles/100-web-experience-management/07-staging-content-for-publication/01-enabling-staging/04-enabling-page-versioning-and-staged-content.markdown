@@ -4,6 +4,8 @@ header-id: enabling-page-versioning-and-staged-content
 
 # Enabling Page Versioning and Staged Content
 
+[TOC levels=1-4]
+
 Enabling page versioning for a site lets site administrators work in parallel on
 multiple versions of the site's pages. Page versioning also maintains a history
 of all updates to the site from the time page versioning was enabled. Site

@@ -4,6 +4,8 @@ header-id: responding-to-knowledge-base-feedback
 
 # Responding to Knowledge Base Feedback
 
+[TOC levels=1-4]
+
 The Knowledge Base app's *Suggestions* tab shows user feedback on articles and 
 lets you mark progress on addressing the feedback. To navigate to this app, open 
 the Menu 

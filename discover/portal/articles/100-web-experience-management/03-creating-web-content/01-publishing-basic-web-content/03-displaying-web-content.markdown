@@ -4,6 +4,8 @@ header-id: publishing-web-content
 
 # Publishing Web Content
 
+[TOC levels=1-4]
+
 In the previous sections, you created and edited an article. Now it's time to 
 publish it. 
 

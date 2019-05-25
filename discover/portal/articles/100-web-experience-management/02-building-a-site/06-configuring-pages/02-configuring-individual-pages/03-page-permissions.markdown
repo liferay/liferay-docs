@@ -4,6 +4,8 @@ header-id: changing-page-permissions
 
 # Changing Page Permissions
 
+[TOC levels=1-4]
+
 Public pages are just that: public. They can be viewed by anybody, logged in or
 not. And private pages are only private from non-members of the Site. If someone
 has joined your Site or is a member of your organization, that person can see

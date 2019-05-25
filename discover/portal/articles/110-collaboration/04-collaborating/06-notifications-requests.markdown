@@ -4,6 +4,8 @@ header-id: managing-notifications-and-requests
 
 # Managing Notifications and Requests
 
+[TOC levels=1-4]
+
 If you subscribed to a blog or message board, or if someone sent you a
 private message, invitation, event reminder, or mentioned you in a post, you
 received a notification or request.

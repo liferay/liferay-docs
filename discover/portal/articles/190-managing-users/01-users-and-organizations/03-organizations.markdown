@@ -4,6 +4,8 @@ header-id: organizations
 
 # Organizations
 
+[TOC levels=1-4]
+
 An *Organization* groups
 [*Users*](/docs/7-1/user/-/knowledge_base/u/users) 
 hierarchically. For example, you can model a company's departments (i.e., Human

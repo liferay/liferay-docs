@@ -4,6 +4,8 @@ header-id: configuring-search-pages
 
 # Configuring Search Pages
 
+[TOC levels=1-4]
+
 There are multiple ways to skin the search cat (disclaimer: no actual cats have
 been harmed during the writing of this article). 
 

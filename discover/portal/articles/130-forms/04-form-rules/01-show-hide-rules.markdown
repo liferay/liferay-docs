@@ -4,6 +4,8 @@ header-id: action-show-and-hide
 
 # Action: Show and Hide
 
+[TOC levels=1-4]
+
 With a show and hide rule, you use one or more conditions to determine whether
 to show or hide a field if the condition evaluates to *true*.
 

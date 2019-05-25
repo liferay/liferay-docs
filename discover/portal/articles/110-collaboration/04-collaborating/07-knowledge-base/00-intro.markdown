@@ -4,6 +4,8 @@ header-id: using-the-knowledge-base
 
 # Using the Knowledge Base
 
+[TOC levels=1-4]
+
 The Knowledge Base app can be used to display professional product documentation
 or form complete books or guides. It even lets you import article source files
 written in Markdown. It's 

@@ -4,6 +4,8 @@ header-id: adding-sites
 
 # Adding Sites
 
+[TOC levels=1-4]
+
 Sites can be created through the Control Panel by a Liferay administrator. The
 Control Panel provides an administrative interface for managing your Liferay
 instance. There are four main sections of the Liferay Control Panel: Users,

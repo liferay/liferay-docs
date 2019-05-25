@@ -4,6 +4,8 @@ header-id: creating-display-pages
 
 # Creating Display Pages
 
+[TOC levels=1-4]
+
 Display Pages are created initially in much the same way as Content Pages. You 
 select any number of page fragments and add them to the page. Display
 pages differ in that after you add the fragments, you can then map editable

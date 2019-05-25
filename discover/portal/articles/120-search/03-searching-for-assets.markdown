@@ -4,6 +4,8 @@ header-id: searching-for-assets
 
 # Searching for Assets
 
+[TOC levels=1-4]
+
 As explained in the 
 [Search introduction](/docs/7-1/user/-/knowledge_base/u/search), 
 all indexed assets can be returned as search results. Developers can create

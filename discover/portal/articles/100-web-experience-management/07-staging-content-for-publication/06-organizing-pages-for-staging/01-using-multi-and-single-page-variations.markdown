@@ -4,6 +4,8 @@ header-id: using-multi-and-single-page-variations
 
 # Using Multi and Single Page Variations
 
+[TOC levels=1-4]
+
 There are two page variation options available from the Staging Bar:
 
 - *Site Pages Variation:* Different variations for a set of Site

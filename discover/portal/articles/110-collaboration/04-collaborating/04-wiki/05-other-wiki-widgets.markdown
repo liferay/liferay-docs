@@ -4,6 +4,8 @@ header-id: other-wiki-widgets
 
 # Other Wiki Widgets
 
+[TOC levels=1-4]
+
 The widgets that accompany the main Wiki widget help you display and navigate 
 particular wiki nodes. The following widgets are available: 
 

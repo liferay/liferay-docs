@@ -4,6 +4,8 @@ header-id: managing-user-data
 
 # Managing User Data
 
+[TOC levels=1-4]
+
 Internet users are increasingly and justifiably concerned about how their
 personal data is processed by the systems they use. The enforcement of GDPR is
 a crystallization of these concerns into legislative action. Companies

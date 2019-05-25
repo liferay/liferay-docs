@@ -4,6 +4,8 @@ header-id: using-the-calendar-widget
 
 # Using the Calendar Widget
 
+[TOC levels=1-4]
+
 The calendar widget displays a small monthly calendar showing an overview of
 upcoming events. A larger area shows the Scheduler, a more detailed calendar
 with a number of options: you can set it to to display a *Day*, *Week*, or

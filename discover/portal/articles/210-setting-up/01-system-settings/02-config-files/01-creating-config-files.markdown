@@ -4,6 +4,8 @@ header-id: creating-configuration-files
 
 # Creating Configuration Files
 
+[TOC levels=1-4]
+
 System Settings provides an
 [*Export*](/docs/7-1/user/-/knowledge_base/u/system-settings#exporting-and-importing-configurations)
 option that becomes available once you modify a configuration entry. Exporting

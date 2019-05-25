@@ -4,6 +4,8 @@ header-id: translating-forms
 
 # Translating Forms
 
+[TOC levels=1-4]
+
 Forms can be translated to any locale that @product@ supports. The form builder 
 specifies a translation of the form's default language. 
 

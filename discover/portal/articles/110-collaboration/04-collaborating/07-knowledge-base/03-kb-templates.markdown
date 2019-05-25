@@ -4,6 +4,8 @@ header-id: knowledge-base-templates
 
 # Knowledge Base Templates
 
+[TOC levels=1-4]
+
 Templates give users a starting point. For example, you can create templates
 that contain default headers or other content for articles. Templates help
 foster consistent formatting and content organization for articles. You can

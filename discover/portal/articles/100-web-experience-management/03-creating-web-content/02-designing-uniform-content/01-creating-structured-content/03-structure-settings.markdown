@@ -4,6 +4,8 @@ header-id: structure-settings
 
 # Structure Settings
 
+[TOC levels=1-4]
+
 After you have created a structure and configured its fields, there is
 additional configuration to consider including permissions and remote access to
 managing structures.

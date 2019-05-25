@@ -4,6 +4,8 @@ header-id: styling-form-pages
 
 # Styling Form Pages
 
+[TOC levels=1-4]
+
 Let's face it: nobody likes an ugly, confusing form. Styling your 
 [form pages](/docs/7-1/user/-/knowledge_base/u/form-pages) 
 lets you make your forms user friendly. There are two features for styling your

@@ -4,6 +4,8 @@ header-id: identification-and-social
 
 # Identification and Social
 
+[TOC levels=1-4]
+
 The Identification and Social sections of Instance Settings are smaller than
 some of the other sections, but contain important settings for some virtual
 instances. Both are top level tabs of Control Panel &rarr; Configuration &rarr;

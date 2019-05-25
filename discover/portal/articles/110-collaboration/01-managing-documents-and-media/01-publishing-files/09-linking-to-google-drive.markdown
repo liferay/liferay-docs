@@ -4,6 +4,8 @@ header-id: linking-to-google-drive
 
 # Linking to Google Drive™
 
+[TOC levels=1-4]
+
 You can create Document Library files that link to files in Google Drive&trade; 
 and Google Photos&trade;. This lets you access your Google files from the 
 Document Library. Note that this functionality isn't available by default. To 

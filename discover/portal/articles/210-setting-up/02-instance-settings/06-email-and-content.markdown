@@ -4,6 +4,8 @@ header-id: email-and-content
 
 # Email and Content
 
+[TOC levels=1-4]
+
 There are a few sections of the Configuration tab dedicated to configuring
 email and content sharing:
 

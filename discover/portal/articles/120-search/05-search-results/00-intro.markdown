@@ -4,6 +4,8 @@ header-id: search-results
 
 # Search Results
 
+[TOC levels=1-4]
+
 The ideal search experience involves a User entering a search term, waiting an
 infinitesimal amount of time, and having the perfectly matching asset delivered
 at the top of a list of other extremely relevant hits. Like this:

@@ -4,6 +4,8 @@ header-id: managing-message-boards
 
 # Managing Message Boards
 
+[TOC levels=1-4]
+
 Message boards can become unwieldy if left unmanaged. The Message Boards in Site 
 Administration facilitates day-to-day thread administration. You may wish to 
 assign this function to a 

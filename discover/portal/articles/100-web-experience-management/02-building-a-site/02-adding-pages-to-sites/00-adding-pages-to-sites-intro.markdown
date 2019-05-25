@@ -4,6 +4,8 @@ header-id: creating-and-managing-pages
 
 # Adding Pages to Sites
 
+[TOC levels=1-4]
+
 In the previous section, you learned how to create sites. You may have gathered 
 from that section that sites aren't particularly useful without pages. In
 fact, sites primarily exist for the sake of organizing pages and content, so 

@@ -4,6 +4,8 @@ header-id: user-group-sites
 
 # User Group Sites
 
+[TOC levels=1-4]
+
 Each user has a personal Site that consists of public (Profile) and private 
 (Dashboard) pages. A *user group Site* determines the base pages of the user 
 group members' personal Sites. If the user group Site pages are added to a 

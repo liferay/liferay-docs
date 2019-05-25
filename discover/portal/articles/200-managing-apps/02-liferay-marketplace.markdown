@@ -4,6 +4,8 @@ header-id: using-the-liferay-marketplace
 
 # Using the Liferay Marketplace
 
+[TOC levels=1-4]
+
 Liferay Marketplace is a hub for sharing, browsing, and downloading apps.
 Marketplace leverages the entire Liferay ecosystem to release and share apps in
 a user-friendly, one-stop shop. 

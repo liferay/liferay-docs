@@ -4,6 +4,8 @@ header-id: knowledge-base-importer-faqs
 
 # Knowledge Base Importer FAQs
 
+[TOC levels=1-4]
+
 -   **What happens when I import an existing article?** 
 
     The importer checks if the source file's leading header ID (e.g., 

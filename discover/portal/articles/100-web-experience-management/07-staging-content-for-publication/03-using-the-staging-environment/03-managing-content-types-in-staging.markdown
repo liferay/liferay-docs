@@ -4,6 +4,8 @@ header-id: managing-content-types-in-staging
 
 # Managing Content Types in Staging
 
+[TOC levels=1-4]
+
 When managing content in Staging's Advanced Publication menu, there are several
 factors to consider when preparing your content for publication. As described in
 [Advanced Publication with Staging](/docs/7-1/user/-/knowledge_base/u/advanced-publication-with-staging),

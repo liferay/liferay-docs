@@ -4,6 +4,8 @@ header-id: creating-form-templates
 
 # Creating Form Templates
 
+[TOC levels=1-4]
+
 Form templates control how the data entry form appears for a data definition.
 Follow these steps to create a form template for a definition: 
 

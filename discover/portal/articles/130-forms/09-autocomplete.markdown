@@ -4,6 +4,8 @@ header-id: autocompleting-text-fields
 
 # Autocompleting Text Fields
 
+[TOC levels=1-4]
+
 It's been scientifically proven that Internet users are lazy (not you, of 
 course---other Internet users). For example, some users may not fill out your 
 form if you make them type the entire title of their country in an employment

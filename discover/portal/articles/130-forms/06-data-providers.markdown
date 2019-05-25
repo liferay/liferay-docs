@@ -4,6 +4,8 @@ header-id: data-providers
 
 # Data Providers
 
+[TOC levels=1-4]
+
 Select from List fields can hold a lot of options. There are around 200
 countries on Earth, for example. If you have unoccupied unpaid interns you could
 ask them to type each country into the Select from List field manually, or you

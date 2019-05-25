@@ -4,6 +4,8 @@ header-id: the-rss-publisher-widget
 
 # The RSS Publisher Widget
 
+[TOC levels=1-4]
+
 The RSS Publisher widget displays RSS feeds. If you're looking for a web-based
 RSS reader, look no further: just add the RSS Publisher widget to one your
 personal Site's private pages, and *voila*! You have your own personal RSS reader.

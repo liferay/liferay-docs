@@ -4,6 +4,8 @@ header-id: working-together-with-the-wiki
 
 # Working Together with the Wiki
 
+[TOC levels=1-4]
+
 Wikis are for collaboratively building a collection of information. The most
 famous wiki on the planet is Wikipedia. It's a full encyclopedia developed
 collaboratively by users from all over the world, using a wiki. @product@'s wiki

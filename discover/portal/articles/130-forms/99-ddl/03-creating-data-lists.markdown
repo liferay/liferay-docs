@@ -4,6 +4,8 @@ header-id: creating-data-lists
 
 # Creating Data Lists
 
+[TOC levels=1-4]
+
 There are two places to create dynamic data lists: 
 
 1.  **Site Administration:** Open the Menu 

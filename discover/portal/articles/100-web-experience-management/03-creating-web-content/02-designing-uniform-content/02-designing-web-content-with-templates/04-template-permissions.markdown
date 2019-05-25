@@ -4,6 +4,8 @@ header-id: assigning-template-permissions
 
 # Assigning Template Permissions
 
+[TOC levels=1-4]
+
 Structures and Templates provide direct access to Liferay's APIs which makes
 them powerful, but it also means that they can be dangerous in the wrong hands.
 Only trusted users should be given access. The recommended practice is to

@@ -4,6 +4,8 @@ header-id: creating-and-managing-navigation-menus
 
 # Creating and Managing Navigation Menus
 
+[TOC levels=1-4]
+
 To better understand Navigation Menus, it's time to create a new menu.
 
 ## Creating a Navigation Menu

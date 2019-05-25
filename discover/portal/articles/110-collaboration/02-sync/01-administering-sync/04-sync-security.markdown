@@ -4,6 +4,8 @@ header-id: ensuring-liferay-sync-security
 
 # Ensuring Liferay Sync Security
 
+[TOC levels=1-4]
+
 As an administrator, you have a stake in the security of all connections to and
 from your servers. As long as @product@ is configured to use HTTPS, Sync clients
 use user-supplied credentials to communicate securely. Users can only access the

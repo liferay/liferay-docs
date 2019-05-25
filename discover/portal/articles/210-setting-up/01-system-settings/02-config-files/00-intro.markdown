@@ -4,6 +4,8 @@ header-id: understanding-system-configuration-files
 
 # Understanding System Configuration Files
 
+[TOC levels=1-4]
+
 The [System Settings application](/docs/7-1/user/-/knowledge_base/u/system-settings) 
 is convenient for making system-scoped configuration changes and setting default
 configurations for other

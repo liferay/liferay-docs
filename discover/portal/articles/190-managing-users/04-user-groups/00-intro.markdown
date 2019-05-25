@@ -4,6 +4,8 @@ header-id: user-groups
 
 # User Groups
 
+[TOC levels=1-4]
+
 A user group is a list of users created for a specific purpose. User groups can
 be created across the hierarchical boundaries of
 [organizations](/docs/7-1/user/-/knowledge_base/u/organizations). 

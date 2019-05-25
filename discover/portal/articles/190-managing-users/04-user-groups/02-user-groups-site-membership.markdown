@@ -4,6 +4,8 @@ header-id: user-groups-and-site-membership
 
 # User Groups and Site Membership
 
+[TOC levels=1-4]
+
 User groups are used to manage Site membership. When you assign a user group 
 to a Site, the group's users become members of that Site. This is one of the 
 main use cases for user groups. 

@@ -4,6 +4,8 @@ header-id: managing-users
 
 # Managing Users
 
+[TOC levels=1-4]
+
 Ever heard a retailer advertise as a "one stop shop" for anything you want? The
 idea is they have so much stuff that whatever you want is probably there.
 Liferay's Control Panel is like this. Where do you create users, organizations,

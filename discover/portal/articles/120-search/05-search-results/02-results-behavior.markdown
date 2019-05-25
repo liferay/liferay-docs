@@ -4,6 +4,8 @@ header-id: search-results-behavior
 
 # Search Results Behavior
 
+[TOC levels=1-4]
+
 The previous article covered ways to display search results. This article
 covers these additional Search Results concepts and configurations: 
 

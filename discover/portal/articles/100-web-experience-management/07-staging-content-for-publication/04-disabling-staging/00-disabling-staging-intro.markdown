@@ -4,6 +4,8 @@ header-id: disabling-staging
 
 # Disabling Staging
 
+[TOC levels=1-4]
+
 Disabling staging doesn't take a lot of steps, but should not be done lightly.
 It's important to know the consequences of turning the staging environment off
 so you can decide if your circumstances really warrant it.

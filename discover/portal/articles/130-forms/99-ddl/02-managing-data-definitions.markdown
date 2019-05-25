@@ -4,6 +4,8 @@ header-id: managing-data-definitions
 
 # Managing Data Definitions
 
+[TOC levels=1-4]
+
 There are several ways to manage your data definitions. Of course, you can edit
 a data definition, but you can also configure its permissions, manage its
 templates, copy it, or delete it. 

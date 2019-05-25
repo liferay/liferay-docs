@@ -4,6 +4,8 @@ header-id: styling-widgets-with-application-display-templates
 
 # Styling Widgets with Application Display Templates
 
+[TOC levels=1-4]
+
 Suppose you're customizing the Lunar Resort Site and want to allow users to use 
 Facebook or Twitter to communicate with other interested travelers. You can add
 this functionality to an existing widget using ADTs: launch a template editor,

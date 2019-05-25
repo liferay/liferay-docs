@@ -4,6 +4,8 @@ header-id: managing-form-entries
 
 # Managing Form Entries
 
+[TOC levels=1-4]
+
 Once users begin submitting form entries, you'll want to do these things with
 them:
 

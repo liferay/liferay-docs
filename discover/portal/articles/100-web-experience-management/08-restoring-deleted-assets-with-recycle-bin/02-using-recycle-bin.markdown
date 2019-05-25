@@ -4,6 +4,8 @@ header-id: using-the-recycle-bin
 
 # Using the Recycle Bin
 
+[TOC levels=1-4]
+
 The Recycle Bin is temporary storage where assets go when you delete 
 them. You can recycle several different types of assets:
 

@@ -4,6 +4,8 @@ header-id: adt-example
 
 # ADT Example
 
+[TOC levels=1-4]
+
 Now that you know the general functions of ADTs, you'll create your own. This
 brief demonstration will show you just how easy, yet powerful, ADTs can be for
 your Liferay instance.

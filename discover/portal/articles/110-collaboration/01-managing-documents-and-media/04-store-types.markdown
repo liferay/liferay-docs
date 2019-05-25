@@ -4,6 +4,8 @@ header-id: store-types
 
 # Store Types
 
+[TOC levels=1-4]
+
 You can change the file system (the *store*) that the Documents and Media 
 library uses to store files. This is configured in the `portal-ext.properties` 
 file by setting the `dl.store.impl=`property. Configuring stores is covered in 

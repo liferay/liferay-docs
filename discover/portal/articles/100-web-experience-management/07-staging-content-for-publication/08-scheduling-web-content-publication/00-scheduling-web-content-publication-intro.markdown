@@ -4,6 +4,8 @@ header-id: scheduling-web-content-publication
 
 # Scheduling Web Content Publication
 
+[TOC levels=1-4]
+
 Liferay's WEM lets you define when your content goes live. You can determine
 when the content is displayed, expired, and/or reviewed. This is an excellent
 way to keep your Site current and free from outdated (and perhaps incorrect)

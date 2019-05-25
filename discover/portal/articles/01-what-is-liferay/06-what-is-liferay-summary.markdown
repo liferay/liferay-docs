@@ -4,6 +4,8 @@ header-id: conclusion-what-product-really-is
 
 # Conclusion: What @product@ Really Is
 
+[TOC levels=1-4]
+
 So what is @product@? As you can see, it's hard to describe, because it does so
 much. What we've essentially done is say it's a totally awesome content and
 document managing, user collaborating, socially enabling, application

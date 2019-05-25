@@ -4,6 +4,8 @@ header-id: defining-categories-for-content
 
 # Defining Categories for Content
 
+[TOC levels=1-4]
+
 Categories are similar in concept to tags, but are designed for use by
 administrators, not regular users. Hierarchies of categories can be created, and
 categories can be grouped together in *vocabularies*. While tags represent an

@@ -4,6 +4,8 @@ header-id: reviewing-assets
 
 # Reviewing Assets
 
+[TOC levels=1-4]
+
 User interaction is required at each workflow process Task Node. How do
 users complete tasks? In the *My Workflow Tasks* application of the *My Account*
 menu.

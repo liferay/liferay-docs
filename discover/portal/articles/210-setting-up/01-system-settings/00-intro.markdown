@@ -4,6 +4,8 @@ header-id: system-wide-settings
 
 # System Wide Settings
 
+[TOC levels=1-4]
+
 It can be hard to keep track of all the configuration interfaces. The Control
 Panel's Configuration section houses a lot of the higher level (for example,
 system and instance scoped) configuration options. This section considers the

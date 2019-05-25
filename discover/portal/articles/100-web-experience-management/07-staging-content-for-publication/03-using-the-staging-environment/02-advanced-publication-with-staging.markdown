@@ -4,6 +4,8 @@ header-id: advanced-publication-with-staging
 
 # Advanced Publication with Staging
 
+[TOC levels=1-4]
+
 Once you've finished your changes on the staged site and want to publish them,
 select the *Publish to Live* button from the Staging Bar. To configure advanced
 publication options, select the *Switch to Advanced Publication* button. Opening

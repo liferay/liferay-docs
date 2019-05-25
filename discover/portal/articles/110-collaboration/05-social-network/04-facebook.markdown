@@ -4,6 +4,8 @@ header-id: integrating-with-facebook
 
 # Integrating with Facebook
 
+[TOC levels=1-4]
+
 @product@ provides tools for integrating your portal and its content with 
 Facebook. For example, you can use Facebook for authentication and even export 
 widgets as Facebook applications. This article shows you how. 

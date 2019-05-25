@@ -4,6 +4,8 @@ header-id: sending-alerts-and-announcements
 
 # Sending Alerts and Announcements
 
+[TOC levels=1-4]
+
 You can use the Alerts and Announcements widgets on Site pages to broadcast 
 important information to users. The Alerts widget is designed for displaying 
 high-priority information (e.g. planned downtime alerts, security alerts, etc.). 

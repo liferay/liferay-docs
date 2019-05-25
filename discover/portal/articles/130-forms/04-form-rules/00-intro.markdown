@@ -4,6 +4,8 @@ header-id: form-rules
 
 # Form Rules
 
+[TOC levels=1-4]
+
 What's the difference between a chicken and a dog? Among other things, you can't
 train a chicken, while dogs are quite trainable. If you're skeptical, try
 teaching your chicken to sit on command or herd sheep. Better yet, get a team of

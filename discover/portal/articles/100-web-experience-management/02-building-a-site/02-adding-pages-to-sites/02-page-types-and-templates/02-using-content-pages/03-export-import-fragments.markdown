@@ -4,6 +4,8 @@ header-id: exporting-and-importing-fragments
 
 # Exporting and Importing Fragments
 
+[TOC levels=1-4]
+
 Often you'll want to reuse Fragments or re-purpose some of the code from
 Fragments in another Site or somewhere else altogether. Since all the content is
 plain text, copy/pasting your code would always be an option, but there's

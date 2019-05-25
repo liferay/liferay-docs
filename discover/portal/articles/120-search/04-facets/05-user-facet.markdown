@@ -4,6 +4,8 @@ header-id: user-facet
 
 # User Facet
 
+[TOC levels=1-4]
+
 The User Facet narrows search results down to those created by a certain User.
 
 ![Figure 1: Each User with matching content is a facet term.](../../../images/search-user-facet.png)

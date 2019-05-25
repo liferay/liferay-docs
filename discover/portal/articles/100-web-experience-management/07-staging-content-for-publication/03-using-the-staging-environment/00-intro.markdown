@@ -4,6 +4,8 @@ header-id: using-the-staging-environment
 
 # Using the Staging Environment
 
+[TOC levels=1-4]
+
 After [enabling staging](/docs/7-1/user/-/knowledge_base/u/enabling-staging)
 (either Local Live or Remote Live) for a site, you'll notice additional options
 provided on the top Control Menu (Staging Bar) and also in the menu to the left.

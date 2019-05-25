@@ -4,6 +4,8 @@ header-id: using-social-bookmarks
 
 # Using Social Bookmarks
 
+[TOC levels=1-4]
+
 Social bookmarks appear below content as buttons for sharing that content on
 social networks. For example, social bookmarks appear by default in the Blogs
 widget below each blog post. For more information on configuring social

@@ -4,6 +4,8 @@ header-id: inviting-members-to-your-site
 
 # Inviting Members to Your Site
 
+[TOC levels=1-4]
+
 The Invite Members widget lets site administrators send invitations to join the 
 Site. You can add this widget to a page from the 
 menu *Add* 

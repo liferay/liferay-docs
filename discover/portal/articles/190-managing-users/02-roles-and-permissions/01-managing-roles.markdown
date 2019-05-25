@@ -4,6 +4,8 @@ header-id: managing-roles
 
 # Managing Roles
 
+[TOC levels=1-4]
+
 You manage Roles and Permissions in the Control Panel (*Control Panel* &rarr;
 *Users* &rarr; *Roles*). There you'll find an application for creating Roles,
 granting them permissions, and assigning Users to them. Roles can be scoped by

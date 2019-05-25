@@ -4,6 +4,8 @@ header-id: collaboration
 
 # Collaboration
 
+[TOC levels=1-4]
+
 @product@ contains an expansive collaboration suite that empowers users to 
 create content and communities that they couldn't create alone. A robust 
 document management system is a key component of this suite. As users produce

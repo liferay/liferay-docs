@@ -4,6 +4,8 @@ header-id: sending-form-entries-through-a-workflow
 
 # Workflow and Forms
 
+[TOC levels=1-4]
+
 [Kaleo](/docs/7-1/user/-/knowledge_base/u/workflow)
 is a workflow engine for sending a submitted asset through a workflow process
 before it's published. Most assets are configured to use workflow at the

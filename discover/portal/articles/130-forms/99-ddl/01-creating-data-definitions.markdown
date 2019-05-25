@@ -4,6 +4,8 @@ header-id: creating-data-definitions
 
 # Creating Data Definitions
 
+[TOC levels=1-4]
+
 Follow these steps to create a data definition: 
 
 1.  Open the Menu 

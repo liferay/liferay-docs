@@ -4,6 +4,8 @@ header-id: getting-started-with-wikis
 
 # Getting Started with Wikis
 
+[TOC levels=1-4]
+
 The Menu (![Menu](../../../../images/icon-menu.png)) 
 is the best place to start working with your wikis. Click the *Menu* 
 (![Menu](../../../../images/icon-menu.png)), navigate to your site, and select 

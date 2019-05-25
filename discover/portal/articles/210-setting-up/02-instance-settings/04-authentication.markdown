@@ -4,6 +4,8 @@ header-id: authentication
 
 # Authentication
 
+[TOC levels=1-4]
+
 Configure authentication at Control Panel &rarr; Configuration &rarr; Instance
 Settings. In the Configuration tab, scroll down to the Authentication section
 and expand it.

@@ -4,6 +4,8 @@ header-id: widget-permissions
 
 # Widget Permissions
 
+[TOC levels=1-4]
+
 All of Liferay's widgets support @product@'s robust, fine-grained permissions
 system. Some higher level permissions can be configured in the permissions tab
 of the widget's configuration dialog box. You can grant Roles permission to

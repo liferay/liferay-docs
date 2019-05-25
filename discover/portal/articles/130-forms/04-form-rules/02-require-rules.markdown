@@ -4,6 +4,8 @@ header-id: action-require
 
 # Action: Require
 
+[TOC levels=1-4]
+
 Use a require rule to make a field required based on one or more conditions.
 
 | **Example:** If you are following the example, you already set up a _show_ rule,

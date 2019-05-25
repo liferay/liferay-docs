@@ -4,6 +4,8 @@ header-id: form-pages
 
 # Form Pages
 
+[TOC levels=1-4]
+
 Are users more likely to abandon long forms with lots of scrolling? Are they 
 more likely to see a multi-page form and abandon it without a second look, 
 assuming that it gets longer and more tedious with every passing page? Such 

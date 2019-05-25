@@ -4,6 +4,8 @@ header-id: other-content-options
 
 # Other Content Options
 
+[TOC levels=1-4]
+
 Here are some options and tools that you can use to enhance your content and
 user experience.
 

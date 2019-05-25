@@ -4,6 +4,8 @@ header-id: configuring-user-group-permissions
 
 # Configuring User Group Permissions
 
+[TOC levels=1-4]
+
 Administrators commonly create user groups so the group's users can take some
 specific action in a Site. This is done by assigning the permissions for that
 action to a Role, and then assigning that Role to the user group. This grants

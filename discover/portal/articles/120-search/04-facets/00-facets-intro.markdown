@@ -4,6 +4,8 @@ header-id: facets
 
 # Facets
 
+[TOC levels=1-4]
+
 Enter a keyword in the Search Bar and click the Search button
 (![Search](../../../images/icon-search.png)). The default search experience
 redirects to a page with results on the right and a collection of *facets* on

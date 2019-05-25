@@ -4,6 +4,8 @@ header-id: advanced-page-set-options
 
 # Advanced Page Set Options
 
+[TOC levels=1-4]
+
 There are some powerful options that should only be used by those with a firm
 command of the technology, or they could have major unintended side effects. You
 can find these options under the *Advanced* tab.

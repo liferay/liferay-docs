@@ -4,6 +4,8 @@ header-id: editing-structures
 
 # Editing Structures
 
+[TOC levels=1-4]
+
 To start, go to the *Structures* page.
 
 1.  From *Site Administration* go to *Content* &rarr; *Web Content*.

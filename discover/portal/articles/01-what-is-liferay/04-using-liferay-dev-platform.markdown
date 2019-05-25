@@ -4,6 +4,8 @@ header-id: using-liferay-as-a-dev-platform
 
 # Using Liferay as a Development Platform
 
+[TOC levels=1-4]
+
 Building your site on Liferay's development platform can give you a head start.
 It provides everything you need to support your applications, so you can
 concentrate solely on what *you're* building, and not the rest of the features

@@ -4,6 +4,8 @@ header-id: recycle-bin-intelligence-and-support
 
 # Recycle Bin Intelligence and Support
 
+[TOC levels=1-4]
+
 Have you ever wondered what happens to file shortcuts if their linked assets 
 are recycled? What if you restore a file that has the same name as another file 
 currently stored in your site/instance? The Recycle Bin already knows how to 

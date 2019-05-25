@@ -4,6 +4,8 @@ header-id: creating-and-managing-forms
 
 # Creating and Managing Forms
 
+[TOC levels=1-4]
+
 The Forms widget can do a lot of things really well, but if you just need
 a simple form, how do you wade through all the features you don't need? Is your
 simple survey going to make you late for that lunch outing you've been planning

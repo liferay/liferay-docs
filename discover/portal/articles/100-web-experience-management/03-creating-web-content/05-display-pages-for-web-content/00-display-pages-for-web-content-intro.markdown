@@ -4,6 +4,8 @@ header-id: display-pages-for-web-content
 
 # Display Pages for Web Content
 
+[TOC levels=1-4]
+
 Display Pages provide a new level of control over the look and feel of your
 content. Display pages empower marketers and designers to create stunning
 designs for Web Content. Display Pages use both Page Fragments and Web Content

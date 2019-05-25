@@ -4,6 +4,8 @@ header-id: folder-facet
 
 # Folder Facet
 
+[TOC levels=1-4]
+
 The Folder Facet narrows search results down to those contained in a certain
 Asset Folder. If you search for *space*, a Folder titled *Space Images* doesn't
 necessarily show up here. The content inside the folder must match the keyword.

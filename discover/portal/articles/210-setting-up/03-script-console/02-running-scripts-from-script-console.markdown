@@ -4,6 +4,8 @@ header-id: running-scripts-from-the-script-console
 
 # Running Scripts From the Script Console
 
+[TOC levels=1-4]
+
 The script console provides a single view for executing Groovy scripts and
 printing their output. It has predefined variables that facilitate printing
 output and working with portlets and users. Here you'll learn these things:

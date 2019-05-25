@@ -4,6 +4,8 @@ header-id: tagging-content
 
 # Tagging Content
 
+[TOC levels=1-4]
+
 Tags are an important tool that can help organize information and make it easier
 for users to find the content they want. Tags are all-lowercase words or phrases
 that you can attach to any content. Tagging content makes your search results

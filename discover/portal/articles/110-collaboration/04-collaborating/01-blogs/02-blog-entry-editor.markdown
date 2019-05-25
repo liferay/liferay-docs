@@ -4,6 +4,8 @@ header-id: using-the-blog-entry-editor
 
 # Using the Blog Entry Editor
 
+[TOC levels=1-4]
+
 When you 
 [create a new blog entry](/docs/7-1/user/-/knowledge_base/u/adding-blog-entries), 
 you create its content with the blog entry editor. This editor is simple yet 

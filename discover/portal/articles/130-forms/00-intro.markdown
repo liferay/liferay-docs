@@ -4,6 +4,8 @@ header-id: forms
 
 # Forms
 
+[TOC levels=1-4]
+
 Users sometimes must give you information so you can help them. Whether you're
 asking them to submit a brief survey or apply for a mortgage, you must design a
 form. Liferay Forms gives you almost limitless form building capability. For a

@@ -4,6 +4,8 @@ header-id: metadata-sets
 
 # Metadata Sets
 
+[TOC levels=1-4]
+
 You can define metadata fields that users fill out when they create or edit
 Document Library files. You do this by creating *metadata sets* and then
 associating them with document types, which wrap Document Library files and thus

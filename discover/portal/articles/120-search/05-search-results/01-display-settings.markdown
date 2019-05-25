@@ -4,6 +4,8 @@ header-id: display-settings
 
 # Display Settings
 
+[TOC levels=1-4]
+
 The Search Results widget's default display is a paginated list. Each list item
 is a summarized hit to a search query. Click on a specific result to look at it
 in more detail. Configure display options by opening the Search Results options

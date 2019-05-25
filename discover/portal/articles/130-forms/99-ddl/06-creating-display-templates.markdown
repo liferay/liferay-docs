@@ -4,6 +4,8 @@ header-id: creating-display-templates
 
 # Creating Display Templates
 
+[TOC levels=1-4]
+
 For every data definition, you can create as many displays as you need. If
 you've created a form template that doesn't show all the fields of a particular
 data definition in the data list's form view, you probably don't want to display

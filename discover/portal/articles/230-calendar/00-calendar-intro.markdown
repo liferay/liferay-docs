@@ -4,6 +4,8 @@ header-id: using-the-calendar
 
 # Using the Calendar
 
+[TOC levels=1-4]
+
 The Calendar widget is an updated, digitized, 3D-printed sundial. Okay, it's
 really a tool for storing and sharing scheduled events. It's a personal planner
 for individual users, a shared calendar for an entire site, or both at the same

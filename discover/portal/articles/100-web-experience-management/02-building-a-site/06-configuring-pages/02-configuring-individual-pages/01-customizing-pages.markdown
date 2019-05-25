@@ -4,6 +4,8 @@ header-id: individual-page-settings
 
 # Individual Page Settings
 
+[TOC levels=1-4]
+
 On the Configure page are four tabs: General, SEO, Look and Feel, and 
 Advanced. Options selected here have no effect on the rest of the 
 Site; just the page you've selected. Many of these options are the same as

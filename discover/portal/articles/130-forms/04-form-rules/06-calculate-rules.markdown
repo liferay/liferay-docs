@@ -4,6 +4,8 @@ header-id: action-calculate
 
 # Action: Calculate
 
+[TOC levels=1-4]
+
 Calculate rules let you automatically populate a numeric field by calculating
 its value based on other fields. Calculations are limited to numeric fields.
 

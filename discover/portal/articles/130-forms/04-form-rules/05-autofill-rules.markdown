@@ -4,6 +4,8 @@ header-id: action-autofill
 
 # Action: Autofill
 
+[TOC levels=1-4]
+
 Autofill rules let you change the selection options of another field based on
 the value entered into a related field. A 
 [data provider's](/docs/7-1/user/-/knowledge_base/u/data-providers) 

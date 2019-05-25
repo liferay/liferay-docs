@@ -4,6 +4,8 @@ header-id: factory-configurations
 
 # Factory Configurations
 
+[TOC levels=1-4]
+
 Configurations supporting multiple entries are called *factory configurations*. 
 
 | **Factory Configuration Example:**

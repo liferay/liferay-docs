@@ -4,6 +4,8 @@ header-id: publishing-blogs
 
 # Publishing Blogs
 
+[TOC levels=1-4]
+
 The Blogs app's editor has a complete set of WYSIWYG controls that appear when 
 and where you need them. You can also switch to source mode to edit your 
 content's HTML code. In source mode, you can work with light text on a dark 

@@ -4,6 +4,8 @@ header-id: configuring-structure-fields
 
 # Configuring Structure Fields
 
+[TOC levels=1-4]
+
 There are many options available for configuring each structure field. Some of
 them relate to how the fields are displayed or how users interact with them, but
 probably the most important field configuration is the **Name**. When you create

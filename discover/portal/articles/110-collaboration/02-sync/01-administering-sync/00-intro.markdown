@@ -4,6 +4,8 @@ header-id: administering-liferay-sync
 
 # Administering Liferay Sync
 
+[TOC levels=1-4]
+
 Before your users can use Liferay Sync with their Sites, you must install and 
 configure it on your @product@ server. The articles here walk you through this 
 and also discuss important topics like preventing accidental file deletion and 

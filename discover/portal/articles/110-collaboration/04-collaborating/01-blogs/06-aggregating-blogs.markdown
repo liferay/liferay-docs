@@ -4,6 +4,8 @@ header-id: aggregating-blogs
 
 # Aggregating Blogs
 
+[TOC levels=1-4]
+
 You can set up a whole web site devoted just to blogging if you wish. The Blogs 
 Aggregator lets you publish entries from multiple bloggers on one page, giving 
 further visibility to blog entries. You can add it to a page from the 

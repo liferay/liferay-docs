@@ -4,6 +4,8 @@ header-id: configuring-message-boards
 
 # Configuring Message Boards
 
+[TOC levels=1-4]
+
 Before using a message board, configure it to your needs. First, open the
 Message Boards app in your scope's Site Administration menu, as described 
 [earlier](/docs/7-1/user/-/knowledge_base/u/creating-message-boards). 

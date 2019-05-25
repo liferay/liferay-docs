@@ -4,6 +4,8 @@ header-id: creating-message-boards
 
 # Creating Message Boards
 
+[TOC levels=1-4]
+
 You can create and manage message boards in the Global, Site, and Page scopes. 
 Regardless of scope, you manage a message board via the Site Administration 
 menu. The following sections show you how to use this menu to manage message 

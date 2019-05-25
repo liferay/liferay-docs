@@ -4,6 +4,8 @@ header-id: creating-widget-pages
 
 # Creating Widget Pages
 
+[TOC levels=1-4]
+
 Widget Pages are the classic type of page in @product@. They're simple to create
 and fill with content or functionality. You create a blank page, define
 a layout, and then add widgets to the layout. Widgets can display content or

@@ -4,6 +4,8 @@ header-id: configuring-individual-pages
 
 # Configuring Individual Pages
 
+[TOC levels=1-4]
+
 After you've configured your Page Set, you can reconfigure some options at the
 individual page level. When you decide to customize a single page, options that
 were not available when initially creating a page appear. You can customize

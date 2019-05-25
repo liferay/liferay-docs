@@ -4,6 +4,8 @@ header-id: introduction-web-content
 
 # Creating Web Content
 
+[TOC levels=1-4]
+
 Web Content Management (WCM) helps users who are not web developers publish
 content with a simple point and click interface, while enabling developers to
 create complex templates with dynamic elements. Once these templates have been

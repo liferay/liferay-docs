@@ -4,6 +4,8 @@ header-id: whats-new-with-liferay-forms
 
 # What's New with Liferay Forms
 
+[TOC levels=1-4]
+
 Liferay Forms is evolving. This article compiles the prominent changes and
 additions to Forms. More details on these features are found in the other
 articles of this section.

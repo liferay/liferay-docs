@@ -4,6 +4,8 @@ header-id: action-jump-to-page
 
 # Action: Jump to Page
 
+[TOC levels=1-4]
+
 Use a Jump to Page rule to navigate automatically to a specific page in the form
 based on one or more conditions. This is useful if some pages don't apply to all
 the form's users. Even fields marked as required on the skipped pages can be

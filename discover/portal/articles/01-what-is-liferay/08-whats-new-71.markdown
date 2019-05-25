@@ -4,6 +4,8 @@ header-id: whats-new-in-71
 
 # What's New in @product-ver@
 
+[TOC levels=1-4]
+
 @product-ver@ launches new features for efficient, beautiful page design, along
 with an extensive upgrade to forms. The user experience has also been
 streamlined throughout the platform to help save time while managing sites.

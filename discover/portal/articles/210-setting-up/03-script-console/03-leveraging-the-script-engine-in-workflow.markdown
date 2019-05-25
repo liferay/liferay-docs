@@ -4,6 +4,8 @@ header-id: leveraging-the-script-engine-in-workflow
 
 # Leveraging the Script Engine in Workflow
 
+[TOC levels=1-4]
+
 Liferay's Kaleo workflow engine provides a robust system for reviewing and
 approving content in an enterprise environment. Even if you don't leverage
 scripts, it's a powerful and robust workflow solution. Adding scripts takes it

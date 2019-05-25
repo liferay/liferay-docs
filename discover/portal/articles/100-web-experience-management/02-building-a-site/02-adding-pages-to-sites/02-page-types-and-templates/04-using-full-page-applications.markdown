@@ -4,6 +4,8 @@ header-id: using-full-page-applications
 
 # Using Full Page Applications
 
+[TOC levels=1-4]
+
 Full Page Applications are the ideal way to display a Message Board, Wiki, or
 other application that demands a full page.
 

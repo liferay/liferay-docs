@@ -4,6 +4,8 @@ header-id: mobile-device-actions
 
 # Mobile Device Actions
 
+[TOC levels=1-4]
+
 After you've created families and applied rules to define those families, you 
 can associate specific actions that occur when a user visits that Site on
 a device.

@@ -4,6 +4,8 @@ header-id: display-page-example
 
 # Display Page Example
 
+[TOC levels=1-4]
+
 Create a new Display Page:
 
 1.  Go to *Build* &rarr; *Pages* in Site Administration.

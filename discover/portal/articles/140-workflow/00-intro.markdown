@@ -4,6 +4,8 @@ header-id: workflow
 
 # Workflow
 
+[TOC levels=1-4]
+
 Liferay's workflow engine is named *Kaleo*. In Greek, Kaleo means "called ones,"
 which is appropriate for a workflow engine that calls users to participate in
 a review process designed for them. Kaleo workflow makes it possible to define

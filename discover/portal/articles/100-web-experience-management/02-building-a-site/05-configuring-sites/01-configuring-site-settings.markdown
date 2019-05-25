@@ -4,6 +4,8 @@ header-id: configuring-site-settings
 
 # General Settings
 
+[TOC levels=1-4]
+
 General settings range from core configuration, like your Site's Membership
 Type, to finer details like Documents and Media indexing options.
 

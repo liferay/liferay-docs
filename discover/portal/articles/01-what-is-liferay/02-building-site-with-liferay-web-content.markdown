@@ -4,6 +4,8 @@ header-id: building-a-site-with-liferay-web-experience
 
 # Building a site with Liferay Web Experience
 
+[TOC levels=1-4]
+
 When you log into @product@ and look at its default screen, one thing to notice is
 that it's built for all clients that access the web, not just desktop browsers. 
 

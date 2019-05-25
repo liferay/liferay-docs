@@ -4,6 +4,8 @@ header-id: message-board-categories
 
 # Message Board Categories
 
+[TOC levels=1-4]
+
 Message Board categories organize threads by topic. This makes it easier to find
 the right topic for discussion, and can also help discussions stay on topic. For
 example, a tropical fishkeeping message board may have separate categories for

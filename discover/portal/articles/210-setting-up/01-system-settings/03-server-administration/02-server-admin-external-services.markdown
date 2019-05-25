@@ -4,6 +4,8 @@ header-id: server-administration-external-services
 
 # Server Administration: External Services
 
+[TOC levels=1-4]
+
 Users can upload and share any type of file via the Documents and Media library, 
 a customizable and permissions-enabled online repository for files (see 
 [publishing files ](/docs/7-1/user/-/knowledge_base/u/publishing-files) 

@@ -4,6 +4,8 @@ header-id: connecting-users
 
 # Connecting Users
 
+[TOC levels=1-4]
+
 By adding the Contacts Center and Activities widgets to users' private 
 Dashboards, administrators can let users form social connections. The Contacts 
 Center widget lets users form these connection types: 

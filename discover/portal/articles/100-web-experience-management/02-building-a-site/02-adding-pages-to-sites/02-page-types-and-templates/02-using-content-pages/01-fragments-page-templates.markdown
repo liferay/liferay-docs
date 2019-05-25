@@ -4,6 +4,8 @@ header-id: creating-fragments
 
 # Creating Page Fragments
 
+[TOC levels=1-4]
+
 To create Content Pages, you must first have some Fragments. Fragments are one
 of the building blocks that you can use to create rich content in Liferay.
 Fragments are intended to be created by developers as they are built using HTML,

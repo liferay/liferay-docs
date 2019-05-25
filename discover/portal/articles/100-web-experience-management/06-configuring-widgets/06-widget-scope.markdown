@@ -4,6 +4,8 @@ header-id: widget-scope
 
 # Widget Scope
 
+[TOC levels=1-4]
+
 As you learned earlier, Roles can be scoped by the instance, by Site, or by an
 Organization. A Role only takes effect within its scope. For example, a Message
 Boards Administrator Role with complete access to the Message Boards has

@@ -4,6 +4,8 @@ header-id: enabling-staging
 
 # Enabling Staging
 
+[TOC levels=1-4]
+
 You have two different ways to set up staging:
 [Local Live](/docs/7-1/user/-/knowledge_base/u/enabling-local-live-staging)
 and

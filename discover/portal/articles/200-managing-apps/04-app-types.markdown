@@ -4,6 +4,8 @@ header-id: app-types
 
 # App Types
 
+[TOC levels=1-4]
+
 There are several different kinds of apps. Some apps can even contain other
 apps. The types of apps you can install include: 
 

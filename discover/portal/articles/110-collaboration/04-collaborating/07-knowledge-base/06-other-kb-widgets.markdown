@@ -4,6 +4,8 @@ header-id: other-knowledge-base-widgets
 
 # Other Knowledge Base Widgets
 
+[TOC levels=1-4]
+
 There are other Knowledge Base widgets you can add to Site pages besides 
 [Knowledge Base Display](/docs/7-1/user/-/knowledge_base/u/knowledge-base-display): 
 

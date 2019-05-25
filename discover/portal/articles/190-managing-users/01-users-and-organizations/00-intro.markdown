@@ -4,6 +4,8 @@ header-id: users-and-organizations
 
 # Users and Organizations
 
+[TOC levels=1-4]
+
 *Users* and *Organizations* are fundamental entities. If your portal requires
 people (even just a set of site administrators) to have accounts to do anything,
 you need to know about users. If your users are at all divided hierarchically,

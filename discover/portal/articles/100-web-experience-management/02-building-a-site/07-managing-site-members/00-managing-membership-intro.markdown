@@ -4,6 +4,8 @@ header-id: managing-members-in-your-site
 
 # Managing Members in Your Site
 
+[TOC levels=1-4]
+
 Users and Sites are important concepts. Sites are where all your content and 
 pages are stored, and Users access and create that content. While user
 management is covered in depth in our 

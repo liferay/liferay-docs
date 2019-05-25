@@ -4,6 +4,8 @@ header-id: tag-and-category-facets
 
 # Tag and Category Facets
 
+[TOC levels=1-4]
+
 If tags or categories were applied to an asset appearing in the result set,
 they're displayed in the Tag or Category facet, respectively. Like other facets
 with the Frequency Threshold configuration option, not all tags necessarily

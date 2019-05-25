@@ -4,6 +4,8 @@ header-id: sanitizing-user-data
 
 # Sanitizing User Data
 
+[TOC levels=1-4]
+
 One of the technically challenging requirements of the General Data Protection
 Regulation (GDPR) is _the right to be forgotten_. The purpose of this article is
 not to go into the details of this requirement, but to show you how the personal

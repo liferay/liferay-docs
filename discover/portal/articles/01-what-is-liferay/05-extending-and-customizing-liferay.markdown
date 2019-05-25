@@ -4,6 +4,8 @@ header-id: extending-and-customizing-liferay-for-your-own-needs
 
 # Extending and customizing Liferay for your own needs
 
+[TOC levels=1-4]
+
 @product@ was specifically designed to be extended and modified, beyond what
 even most open source projects provide. Though its source code is available,
 @product@'s developers have created many extension points so you don't have to

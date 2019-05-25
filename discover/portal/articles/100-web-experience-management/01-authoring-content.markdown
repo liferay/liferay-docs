@@ -4,6 +4,8 @@ header-id: authoring-content-structured-and-inline-content
 
 # Authoring Content: Structured and Inline Content
 
+[TOC levels=1-4]
+
 The primary goal of Content Management isn't to show off the flashiest new 
 features or follow all the latest trends in design, but to provide you with the
 tools you need to create digital content that communicates your message clearly

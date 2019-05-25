@@ -4,6 +4,8 @@ header-id: redirecting-users
 
 # Redirecting Users
 
+[TOC levels=1-4]
+
 When users submit a form, you can present them with another page indicating 
 success or some other information related to their submission. Sometimes all you 
 need is a 

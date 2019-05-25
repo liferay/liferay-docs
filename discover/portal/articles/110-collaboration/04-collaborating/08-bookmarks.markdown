@@ -4,6 +4,8 @@ header-id: bookmarking-sites
 
 # Bookmarking Sites
 
+[TOC levels=1-4]
+
 The Bookmarks widget provides a list of bookmarks that benefit your Site. For
 example, a Site that focuses on auto repair could use this widget to provide
 bookmarks to technical manuals, part specifications, maintenance tips, and more.

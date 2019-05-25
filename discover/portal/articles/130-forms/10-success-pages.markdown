@@ -4,6 +4,8 @@ header-id: form-success-pages
 
 # Form Success Pages
 
+[TOC levels=1-4]
+
 After users submit one of your whiz-bang forms, what's next? How will they know
 they're done and can close the browser window or tab? What if they think their
 submission didn't go through and wonder if they need to fill out the whole form

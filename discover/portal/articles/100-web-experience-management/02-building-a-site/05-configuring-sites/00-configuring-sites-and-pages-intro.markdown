@@ -4,6 +4,8 @@ header-id: configuring-sites
 
 # Configuring Sites
 
+[TOC levels=1-4]
+
 Just like there's more than one way to cook and an egg --- or eat an egg for 
 that matter --- there's more than one way to build a site. Liferay is created 
 with that in mind, and beyond just creating content and pages, Liferay has a 

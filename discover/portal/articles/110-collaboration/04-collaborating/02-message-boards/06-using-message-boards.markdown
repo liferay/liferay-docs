@@ -4,6 +4,8 @@ header-id: using-the-message-boards
 
 # Using the Message Boards
 
+[TOC levels=1-4]
+
 You can add a Message Boards widget to a page from the *Add* 
 (![Add](../../../../images/icon-control-menu-add.png)) menu's *Collaboration*
 section. The Message Boards interface is similar to other message boards 

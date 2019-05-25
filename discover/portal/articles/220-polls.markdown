@@ -4,6 +4,8 @@ header-id: polls
 
 # Polls
 
+[TOC levels=1-4]
+
 How can The Lunar Resort stay connected with its earthbound clientèle from
 239,000 miles away? Make them feel really involved and enthusiastic about the
 resort by asking them for feedback. You're not just creating a poll, you're

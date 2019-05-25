@@ -4,6 +4,8 @@ header-id: knowledge-base-system-settings
 
 # Knowledge Base System Settings
 
+[TOC levels=1-4]
+
 Administrators can use the System Settings UI to set the Knowledge Base's global 
 configuration (across sites). You can access this UI in *Control Panel* &rarr; 
 *Configuration* &rarr; *System Settings* &rarr; *Knowledge Base*. There are five 

@@ -4,6 +4,8 @@ header-id: help-text-placeholder-text-and-predefined-values
 
 # Help Text, Placeholder Text, and Predefined Values
 
+[TOC levels=1-4]
+
 Form fields can have help text, placeholder text, and predefined values.
 
 -   **Help Text:** Text that appears as a sub-heading to the field label, but 

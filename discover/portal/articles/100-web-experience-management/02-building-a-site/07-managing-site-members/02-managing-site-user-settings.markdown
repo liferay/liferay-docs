@@ -4,6 +4,8 @@ header-id: managing-site-settings-for-members
 
 # Managing Site Settings for Members
 
+[TOC levels=1-4]
+
 Now you'll learn how to set some global settings for your Sites: site membership types, default user associations, and Site ratings. 
 
 1.  Open the *Product Menu* and use the site selector to choose the site you 

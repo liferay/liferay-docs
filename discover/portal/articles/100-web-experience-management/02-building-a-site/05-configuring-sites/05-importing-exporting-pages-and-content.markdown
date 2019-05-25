@@ -4,6 +4,8 @@ header-id: importing-exporting-pages-and-content
 
 # Importing/Exporting Sites and Content
 
+[TOC levels=1-4]
+
 Export/Import lets you backup and restore your Site and app data as a LAR
 (Liferay Archive). There are two primary places Export/Import is used: Sites
 and apps. You can learn more about exporting/importing app data in the

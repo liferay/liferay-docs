@@ -4,6 +4,8 @@ header-id: using-the-wysiwyg-editor
 
 #  Using the Web Content Editor
 
+[TOC levels=1-4]
+
 In the previous tutorial you created a simple web content article, but the Web
 Content editor can do much more than make plain text articles.
 

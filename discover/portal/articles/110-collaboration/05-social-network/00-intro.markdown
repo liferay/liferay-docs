@@ -4,6 +4,8 @@ header-id: creating-a-social-network
 
 # Creating A Social Network
 
+[TOC levels=1-4]
+
 @product@ contains several features and widgets for leveraging its social
 framework. The Activities widget lets you broadcast user activities on a Site.
 This is a good way for Site members to see what's going on in their communities.

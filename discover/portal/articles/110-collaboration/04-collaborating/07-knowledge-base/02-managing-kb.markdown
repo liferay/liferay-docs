@@ -4,6 +4,8 @@ header-id: managing-the-knowledge-base
 
 # Managing the Knowledge Base
 
+[TOC levels=1-4]
+
 The Knowledge Base app in Site Administration manages the Knowledge Base. To
 navigate to this app, open the Menu (![Menu](../../../../images/icon-menu.png))
 then go to Site Administration (the menu for your site) &rarr; *Content* &rarr;

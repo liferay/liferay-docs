@@ -4,6 +4,8 @@ header-id: custom-facet
 
 # Custom Facet
 
+[TOC levels=1-4]
+
 All Facets are configurable, allowing you to narrow down search results based on
 a shared characteristic (all Blog Entries, for example). The Custom Facet lets
 you create entirely new Facets. The first thing to do is enter the Custom

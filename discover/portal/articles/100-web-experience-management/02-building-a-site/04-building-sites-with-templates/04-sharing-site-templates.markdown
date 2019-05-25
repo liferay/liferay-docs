@@ -4,6 +4,8 @@ header-id: sharing-site-templates
 
 # Sharing Site Templates
 
+[TOC levels=1-4]
+
 If you want to export a Site that uses Site or Page Templates to a different
 environment (through a LAR file or remote publication), the templates must be
 exported and imported manually in advance or the import fails.

@@ -4,6 +4,8 @@ header-id: knowledge-base-display
 
 # Knowledge Base Display
 
+[TOC levels=1-4]
+
 You can use the Knowledge Base Display widget to display your published 
 Knowledge Base articles. You can customize how this widget displays articles, 
 and which ones it displays. To get started, add the widget to the Site page

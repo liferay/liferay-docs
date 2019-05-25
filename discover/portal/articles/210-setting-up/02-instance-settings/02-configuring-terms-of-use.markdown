@@ -4,6 +4,8 @@ header-id: terms-of-use
 
 # Terms of Use
 
+[TOC levels=1-4]
+
 Terms of Use are important when you need them, but not all Sites do. They're not
 first in the Instance Settings interface, but they're one of the first things
 to configure for your virtual instance.

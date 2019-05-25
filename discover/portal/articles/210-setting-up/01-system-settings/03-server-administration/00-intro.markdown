@@ -4,6 +4,8 @@ header-id: server-administration
 
 # Server Administration
 
+[TOC levels=1-4]
+
 Server Administration lets you manage and monitor your @product@ server. Access
 the application by clicking *Control Panel* &rarr; *Configuration* &rarr;
 *Server Administration*. 

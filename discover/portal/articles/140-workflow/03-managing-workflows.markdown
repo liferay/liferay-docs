@@ -4,6 +4,8 @@ header-id: managing-workflows
 
 # Managing Workflows
 
+[TOC levels=1-4]
+
 Like other resources, workflow definitions can be added, edited, and deleted.
 But that's just the beginning of workflow management.
 

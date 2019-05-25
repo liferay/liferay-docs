@@ -4,6 +4,8 @@ header-id: enabling-captcha-on-form-submissions
 
 # Enabling CAPTCHA on Form Submissions
 
+[TOC levels=1-4]
+
 [CAPTCHA](https://en.wikipedia.org/wiki/CAPTCHA) 
 prevents a bot from submitting forms. It's often used in 
 [login apps](/docs/7-1/deploy/-/knowledge_base/d/logging-into-liferay), 

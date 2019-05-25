@@ -4,6 +4,8 @@ header-id: wiki-page-details
 
 # Wiki Page Details
 
+[TOC levels=1-4]
+
 When viewing a wiki page, you can view its details by clicking *Details* above 
 the page content. Several tabs appear, to give you access to several
 categories of information about the page.

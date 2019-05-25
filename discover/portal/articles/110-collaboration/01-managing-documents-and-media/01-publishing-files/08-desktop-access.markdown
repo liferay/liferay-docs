@@ -4,6 +4,8 @@ header-id: desktop-access-to-documents-and-media
 
 # Desktop Access to Documents and Media
 
+[TOC levels=1-4]
+
 You can access the Document Library from your desktop file manager via 
 [WebDAV](https://en.wikipedia.org/wiki/WebDAV). 
 WebDAV is a set of methods based on HTTP that let users create, edit, move, or 

@@ -4,6 +4,8 @@ header-id: configuring-the-recycle-bin
 
 # Configuring the Recycle Bin
 
+[TOC levels=1-4]
+
 The Recycle Bin supports instance-wide scope or site-specific scope. The
 instance-wide scope of the Recycle Bin is set by adding the `trash.enabled`
 property to your `portal-ext.properties` file. By default, the Recycle Bin is

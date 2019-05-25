@@ -4,6 +4,8 @@ header-id: targeted-vocabularies
 
 # Targeted Vocabularies
 
+[TOC levels=1-4]
+
 You can decide which vocabularies can be applied to an asset type and which
 vocabularies are required for an asset type with Targeted Vocabularies. To
 configure these settings, go to the Categories application in Site

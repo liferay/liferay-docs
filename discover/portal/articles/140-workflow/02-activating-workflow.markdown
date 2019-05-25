@@ -4,6 +4,8 @@ header-id: activating-workflow
 
 # Activating Workflow
 
+[TOC levels=1-4]
+
 Assets are integrated with the 
 [workflow framework](/docs/7-1/tutorials/-/knowledge_base/t/liferays-workflow-framework)
 if their content is meant to be sent through review processes. Since this is

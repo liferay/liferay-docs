@@ -4,6 +4,8 @@ header-id: validating-text-and-numeric-fields
 
 # Validating Text and Numeric Fields
 
+[TOC levels=1-4]
+
 Validation ensures that only certain values are entered in a field. Validation
 functionality is available for text and numeric fields. 
 

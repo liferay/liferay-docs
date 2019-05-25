@@ -4,6 +4,8 @@ header-id: using-liferay-portal-as-a-collaborative-platform
 
 # Using @product@ as a collaborative platform
 
+[TOC levels=1-4]
+
 @product@ includes a suite of collaborative applications, and they're all
 integrated together. 
 

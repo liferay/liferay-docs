@@ -4,6 +4,8 @@ header-id: creating-web-content
 
 # Creating Web Content
 
+[TOC levels=1-4]
+
 To start you'll create and publish some simple content using the WYSIWYG
 editor to the home page of the Lunar Resort's web site. 
 

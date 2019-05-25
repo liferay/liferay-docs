@@ -4,6 +4,8 @@ header-id: site-facet
 
 # Site Facet
 
+[TOC levels=1-4]
+
 The Site Facet narrows search results down to those existing in a certain site.
 Each Site with content matching the searched keyword appears as a facet term.
 

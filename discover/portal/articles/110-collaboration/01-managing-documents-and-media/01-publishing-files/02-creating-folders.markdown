@@ -4,6 +4,8 @@ header-id: creating-folders
 
 # Creating Folders
 
+[TOC levels=1-4]
+
 You'll need folders to organize all but the most limited set of files. Here,
 you'll learn how to work with folders in a Document Library: 
 

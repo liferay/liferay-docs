@@ -4,6 +4,8 @@ header-id: using-taglibs-in-templates
 
 # Using Taglibs in Templates
 
+[TOC levels=1-4]
+
 Liferay's taglibs are also accessible to web content administrators developing
 in FreeMarker. There is no need to instantiate these taglibs within your
 FreeMarker template; they're already provided for you automatically. You can

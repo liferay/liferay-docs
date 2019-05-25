@@ -4,6 +4,8 @@ header-id: miscellaneous-settings
 
 # Miscellaneous Settings
 
+[TOC levels=1-4]
+
 The Miscellaneous tab of Control Panel &rarr; Configuration &rarr; Instance
 Settings contains display settings and a few integration configurations.
 

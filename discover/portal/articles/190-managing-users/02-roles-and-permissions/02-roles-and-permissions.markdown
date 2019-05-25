@@ -4,6 +4,8 @@ header-id: defining-role-permissions
 
 # Defining Role Permissions
 
+[TOC levels=1-4]
+
 Roles collect permissions, so when Users are given a Role, they receive all the
 permissions defined by the Role. 
 

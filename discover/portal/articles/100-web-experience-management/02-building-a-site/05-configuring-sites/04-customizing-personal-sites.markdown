@@ -4,6 +4,8 @@ header-id: customizing-personal-sites
 
 # Customizing Personal Sites
 
+[TOC levels=1-4]
+
 By default, newly created users are granted a personal Site.
 
 -  Users function as Site administrators of their personal Sites.

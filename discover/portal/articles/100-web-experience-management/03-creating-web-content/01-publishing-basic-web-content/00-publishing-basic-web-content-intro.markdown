@@ -4,6 +4,8 @@ header-id: publishing-basic-web-content
 
 # Publishing Basic Web Content
 
+[TOC levels=1-4]
+
 Web Content is one of many different kinds of assets, along with blog posts,
 wiki articles, message board posts, and other kinds of content. Like all of
 these assets, @product@ handles Web Content using an asset framework that

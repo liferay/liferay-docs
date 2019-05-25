@@ -4,6 +4,8 @@ header-id: checking-out-and-editing-files
 
 # Checking Out and Editing Files
 
+[TOC levels=1-4]
+
 When you check out a document in the Document Library, only you can make changes 
 to it until you check it back in. This prevents conflicting edits on the same 
 document by multiple users. When you check out a file, you can download it, 

@@ -4,6 +4,8 @@ header-id: general-settings
 
 # General Settings
 
+[TOC levels=1-4]
+
 General virtual instance settings are configured at *Control Panel* &rarr;
 *Configuration* &rarr; *Instance Settings*. The General settings are at the top of
 the first tab, Configuration.

@@ -4,6 +4,8 @@ header-id: creating-mobile-device-rules
 
 # Creating Mobile Device Rules
 
+[TOC levels=1-4]
+
 To configure mobile device rules, you need a way to find out the characteristics
 of the device. While some of the characteristics are provided by the device,
 most are not. For this reason, there are databases that contain information

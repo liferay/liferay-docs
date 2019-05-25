@@ -4,6 +4,8 @@ header-id: building-content-pages-from-fragments
 
 # Building Content Pages from Fragments
 
+[TOC levels=1-4]
+
 After Page Fragment collections are published, you are ready to create Page
 Templates.  A Page Template is composed of some number of Fragments---one or
 fifty; it doesn't matter.

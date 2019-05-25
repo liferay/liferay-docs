@@ -4,6 +4,8 @@ header-id: defining-content-relationships
 
 # Defining Content Relationships
 
+[TOC levels=1-4]
+
 Related Assets are assets connected to other assets, even if they don't share
 any tags and aren't in the same category. Here you'll focus on how to define
 relationships between assets so when you begin publishing assets, the Related

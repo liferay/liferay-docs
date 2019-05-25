@@ -4,6 +4,8 @@ header-id: communication-between-portlet-widgets
 
 # Communication Between Portlet Widgets
 
+[TOC levels=1-4]
+
 Portlet widgets can communicate with each other using public render parameters and
 events. Public render parameters are easy to use and can be quite powerful.
 Some Liferay portlets provide a configuration UI to help you get the most out

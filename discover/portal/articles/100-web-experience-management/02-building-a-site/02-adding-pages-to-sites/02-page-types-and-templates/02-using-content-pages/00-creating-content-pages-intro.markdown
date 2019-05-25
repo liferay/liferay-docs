@@ -4,6 +4,8 @@ header-id: using-page-fragments
 
 # Using Content Pages
 
+[TOC levels=1-4]
+
 Content Pages are new in @product-ver@. They provide a way to create pages with
 inline content. Traditionally in Liferay, all content has lived outside the
 page, to be added to any page as needed. With Content Pages, you can create

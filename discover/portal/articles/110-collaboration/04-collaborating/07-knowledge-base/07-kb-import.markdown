@@ -4,6 +4,8 @@ header-id: importing-knowledge-base-articles
 
 # Importing Knowledge Base Articles
 
+[TOC levels=1-4]
+
 As mentioned earlier, the Knowledge Base app can import articles in bulk. This 
 lets you have an offline process where articles are prepared ahead of time 
 before they're published. Articles are imported into the Knowledge Base as 

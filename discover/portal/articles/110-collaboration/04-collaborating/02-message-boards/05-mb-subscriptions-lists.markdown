@@ -4,6 +4,8 @@ header-id: user-subscriptions-and-mailing-lists
 
 # User Subscriptions and Mailing Lists
 
+[TOC levels=1-4]
+
 The Message Boards notifies users of message boards activity via email in two
 ways:
 

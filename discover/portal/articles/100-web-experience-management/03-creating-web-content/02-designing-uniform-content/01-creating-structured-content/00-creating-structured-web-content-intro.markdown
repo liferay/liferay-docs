@@ -4,6 +4,8 @@ header-id: creating-structured-web-content
 
 # Creating Structured Web Content
 
+[TOC levels=1-4]
+
 Structures are the foundation for web content. They determine which fields are
 available to users as they create new items for display. Structures not only
 improve manageability for the administrator, they also make it much easier for

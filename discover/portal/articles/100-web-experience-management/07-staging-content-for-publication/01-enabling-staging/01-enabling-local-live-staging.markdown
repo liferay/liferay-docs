@@ -4,6 +4,8 @@ header-id: enabling-local-live-staging
 
 # Enabling Local Live Staging
 
+[TOC levels=1-4]
+
 Local Live staging places both your staging environment and your live
 environment on the same server. When it's enabled, a clone of the site is
 created containing copies of all of the site's existing pages. This means the

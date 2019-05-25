@@ -4,6 +4,8 @@ header-id: staging-content
 
 # Staging Content
 
+[TOC levels=1-4]
+
 When you're on the staged site, you have several options in the Staging Bar to
 help start your staging conquest.
 

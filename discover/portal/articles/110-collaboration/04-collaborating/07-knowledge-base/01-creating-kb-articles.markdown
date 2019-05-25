@@ -4,6 +4,8 @@ header-id: creating-knowledge-base-articles
 
 # Creating Knowledge Base Articles
 
+[TOC levels=1-4]
+
 The Knowledge Base app in Site Administration contains everything you need to 
 create articles in the Knowledge Base. You can create articles by authoring them 
 in the app's WYSIWYG editor or by importing them from Markdown files 

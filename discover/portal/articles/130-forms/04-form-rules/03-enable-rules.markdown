@@ -4,6 +4,8 @@ header-id: action-enable-and-disable
 
 # Action: Enable and Disable
 
+[TOC levels=1-4]
+
 Use an enable/disable rule to make a field editable based on one or more conditions.
 
 | **Example:** Part of the race registration fee pays for dog food. You don't have

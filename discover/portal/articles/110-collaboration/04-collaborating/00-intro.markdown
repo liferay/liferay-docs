@@ -4,6 +4,8 @@ header-id: collaborating
 
 # Collaborating
 
+[TOC levels=1-4]
+
 Your users can leverage a robust suite of collaboration apps to get things done
 and form extensive communities. These apps provide all the features that you
 would expect of standalone apps, but these apps are integrated: they share

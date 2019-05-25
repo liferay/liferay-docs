@@ -4,6 +4,8 @@ header-id: geolocating-assets
 
 # Geolocating Assets
 
+[TOC levels=1-4]
+
 Geolocation adds the geographic coordinates where an asset was created as
 metadata to your assets. You can add geolocation metadata to your web content,
 Data Lists, and Documents & Media. This feature is provided for you

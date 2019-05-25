@@ -4,6 +4,8 @@ header-id: adding-editing-and-deleting-users
 
 # Adding, Editing, and Deleting Users
 
+[TOC levels=1-4]
+
 At the root of managing Users is adding, editing, and deleting them. As long as
 you're the Administrative user, you can do all these things and more. 
 

@@ -4,6 +4,8 @@ header-id: dynamic-data-lists
 
 # Dynamic Data Lists
 
+[TOC levels=1-4]
+
 Dynamic data lists display forms created from field sets called *data
 definitions*. Data definitions consist of a form's field types (e.g., text,
 boolean, date, radio buttons, selector menus, etc.) and those fields' labels and

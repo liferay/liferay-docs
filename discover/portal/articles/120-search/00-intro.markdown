@@ -4,6 +4,8 @@ header-id: search
 
 # Search
 
+[TOC levels=1-4]
+
 Sites often feature lots of content split over lots of asset types.  Web content
 articles, documents and media files, and blogs entries are just a few examples.
 Most content types are *assets*. Under the hood, assets use the

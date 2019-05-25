@@ -4,6 +4,8 @@ header-id: form-element-sets
 
 # Form Element Sets
 
+[TOC levels=1-4]
+
 If you're here looking for information on reusable field sets, you're in the
 right place. We call them Element Sets in the Liferay Forms application because
 these sets include more than just fields: they include the layout and

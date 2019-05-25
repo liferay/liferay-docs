@@ -4,6 +4,8 @@ header-id: creating-multi-and-single-page-variations
 
 # Creating Multi and Single Page Variations
 
+[TOC levels=1-4]
+
 You can create two types of page variations:
 
 - Site Pages Variation (multiple pages)

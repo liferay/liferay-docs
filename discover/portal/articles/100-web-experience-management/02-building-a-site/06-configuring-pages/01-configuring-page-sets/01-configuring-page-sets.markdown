@@ -4,6 +4,8 @@ header-id: page-set-look-and-feel
 
 # Page Set Look and Feel
 
+[TOC levels=1-4]
+
 Page Set configuration starts with the *Look and Feel* tab. Here you have an 
 interface for choosing a theme for the current Site.
 

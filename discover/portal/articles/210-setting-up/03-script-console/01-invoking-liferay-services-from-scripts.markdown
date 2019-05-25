@@ -4,6 +4,8 @@ header-id: invoking-liferay-services-from-scripts
 
 # Invoking Liferay Services From Scripts
 
+[TOC levels=1-4]
+
 Many scripting scenarios require invoking Liferay services.
 [Liferay `*ServiceUtil` classes](https://docs.liferay.com/ce/portal/7.1-latest/javadocs/portal-kernel/)
 are the fastest and most convenient way to invoke Liferay

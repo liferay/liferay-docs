@@ -4,6 +4,8 @@ header-id: calendar-resources-and-porting
 
 # Calendar Resources and Porting
 
+[TOC levels=1-4]
+
 With calendar resources, you can invite entities other than people to your
 events. This is beneficial for finding the availability of important resources
 your event requires, like a conference room, laptop, or, at The Lunar Resort,

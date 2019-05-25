@@ -4,6 +4,8 @@ header-id: building-sites-from-templates
 
 # Building Sites from Templates
 
+[TOC levels=1-4]
+
 Site Templates create a single Site structure that can be used for any new Site.
 They are created and administered from the Control Panel. In addition to
 creating multiple Sites with the same design, you can also use them to manage

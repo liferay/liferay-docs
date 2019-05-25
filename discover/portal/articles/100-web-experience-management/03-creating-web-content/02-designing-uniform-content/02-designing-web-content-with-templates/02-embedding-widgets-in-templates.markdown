@@ -4,6 +4,8 @@ header-id: embedding-widgets-in-templates
 
 # Embedding Widgets in Templates
 
+[TOC levels=1-4]
+
 You can also embed widgets in web content templates. Core apps and custom apps, 
 instanceable or non-instanceable can be embedded in web content templates. Below
 are examples of embedding a Language widget in FreeMarker and Velocity:
