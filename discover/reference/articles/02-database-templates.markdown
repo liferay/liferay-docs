@@ -4,6 +4,8 @@ header-id: database-templates
 
 # Database Templates
 
+[TOC levels=1-4]
+
 Below are templates for configuring the various databases that @product@
 supports with Liferay's built-in data source. 
 

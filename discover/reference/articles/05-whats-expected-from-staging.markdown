@@ -4,6 +4,8 @@ header-id: whats-expected-from-staging
 
 # What's Expected from Staging?
 
+[TOC levels=1-4]
+
 Have you ever wondered what happens to an entity during the Staging process?
 Does Staging recognize the change? If so, how does it handle the update?
 

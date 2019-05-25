@@ -4,6 +4,8 @@ header-id: form-field-types
 
 # Form Field Types
 
+[TOC levels=1-4]
+
 A form without fields is no form at all. To meet your form-building needs,
 Liferay Forms provides useful and highly configurable field types. To see
 examples of the form fields described here, visit the 
