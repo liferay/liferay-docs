@@ -4,6 +4,8 @@ header-id: defining-the-attributes
 
 # Defining the Attributes
 
+[TOC levels=1-4]
+
 Before creating the Screenlet class, you should define its attributes. These are 
 the attributes the app developer can set when inserting the Screenlet's XML in 
 an activity or fragment layout. For example, to use 

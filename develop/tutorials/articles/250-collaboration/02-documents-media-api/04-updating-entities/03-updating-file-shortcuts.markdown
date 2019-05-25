@@ -4,6 +4,8 @@ header-id: updating-file-shortcuts
 
 # Updating File Shortcuts
 
+[TOC levels=1-4]
+
 The Documents and Media API lets you update file shortcuts (`FileShortcut` 
 entities). You can update a shortcut to change the file it points to or the 
 folder it resides in. You can do this via the 

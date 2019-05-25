@@ -4,6 +4,8 @@ header-id: using-oauth-2-in-liferay-screens-for-android
 
 # Using OAuth 2 in Liferay Screens for Android
 
+[TOC levels=1-4]
+
 You can use 
 [OAuth 2](https://oauth.net/2/) 
 to authenticate using 

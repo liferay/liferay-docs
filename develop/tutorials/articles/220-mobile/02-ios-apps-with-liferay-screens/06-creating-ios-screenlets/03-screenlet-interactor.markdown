@@ -4,6 +4,8 @@ header-id: creating-the-ios-screenlets-interactor
 
 # Creating the iOS Screenlet's Interactor
 
+[TOC levels=1-4]
+
 Create an Interactor class for each of your Screenlet's actions. In the 
 [`Interactor` class](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/Interactor.swift), 
 Screens provides the default functionality required by all Interactor classes. 

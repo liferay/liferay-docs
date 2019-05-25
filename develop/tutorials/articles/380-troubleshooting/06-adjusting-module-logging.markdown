@@ -4,6 +4,8 @@ header-id: adjusting-module-logging
 
 # Adjusting Module Logging
 
+[TOC levels=1-4]
+
 @product@ uses [Log4j](http://logging.apache.org/log4j/1.2/) logging
 services. Here are the ways to configure logging for module classes and class
 hierarchies.

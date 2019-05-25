@@ -4,6 +4,8 @@ header-id: form-field-types
 
 # Form Field Types
 
+[TOC levels=1-4]
+
 The Forms application contains many highly configurable field types
 out-of-the-box. Most use cases are met with one of the existing field types. 
 

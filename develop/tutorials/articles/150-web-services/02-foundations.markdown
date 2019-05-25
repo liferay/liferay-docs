@@ -4,6 +4,8 @@ header-id: foundations-jax-rs-osgi-whiteboard-and-apio
 
 # Foundations: JAX-RS, OSGi Whiteboard, and APIO
 
+[TOC levels=1-4]
+
 Hypermedia REST APIs in @product@ are built on these technologies:
 
 -   JAX-RS

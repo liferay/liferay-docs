@@ -4,6 +4,8 @@ header-id: scoping-configurations
 
 # Scoping Configurations
 
+[TOC levels=1-4]
+
 Applications can have different configurations depending on the scope: per
 virtual instance (a.k.a. `Company`), site (a.k.a. `Group`), or portlet instance.
 The Configuration Provider API (based on the standard OSGi Configuration Admin

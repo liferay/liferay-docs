@@ -4,6 +4,8 @@ header-id: adapting-to-liferay-7s-api-with-the-code-upgrade-tool
 
 # Adapting to @product-ver@'s API with the Code Upgrade Tool
 
+[TOC levels=1-4]
+
 The first and easiest plugin upgrade step is adapting to  @product-ver@'s API.
 @product-ver@'s modular architecture 
 [benefits Liferay Portal 6 developers](/docs/7-1/tutorials/-/knowledge_base/t/benefits-of-liferay-7-for-liferay-6-developers). 

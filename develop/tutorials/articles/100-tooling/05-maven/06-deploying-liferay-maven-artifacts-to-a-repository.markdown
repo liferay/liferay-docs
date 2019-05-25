@@ -4,6 +4,8 @@ header-id: deploying-liferay-maven-artifacts-to-a-repository
 
 # Deploying Liferay Maven Artifacts to a Repository
 
+[TOC levels=1-4]
+
 Deploying artifacts to a remote repository is important if you intend to share
 your Maven projects with others. First, you must have a remote repository that
 can hold deployed Maven artifacts. If you do not currently have a remote

@@ -4,6 +4,8 @@ header-id: bar-charts
 
 # Bar Charts
 
+[TOC levels=1-4]
+
 Bar charts contain multiple sets of data. A bar chart models the data in bars. 
 Each data series (created with the `addColumns()` method) is defined with a new 
 instance of the 

@@ -4,6 +4,8 @@ header-id: invoking-remote-services
 
 # Invoking Remote Services
 
+[TOC levels=1-4]
+
 You can invoke the remote services of any installed Liferay application the same
 way you invoke your local services. Doing so could be described as "invoking
 remote services locally." One reason to invoke a remote service instead of the

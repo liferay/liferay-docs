@@ -4,6 +4,8 @@ header-id: using-esplus-modules-in-your-portlet
 
 # Using ES2015 Modules in your Portlet
 
+[TOC levels=1-4]
+
 Once you've 
 [exposed your modules](/docs/7-1/tutorials/-/knowledge_base/t/preparing-your-javascript-files-for-esplus) 
 via your `package.json` file, you can use them in your portlets. The 

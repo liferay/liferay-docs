@@ -4,6 +4,8 @@ header-id: waiting-on-lifecycle-events
 
 # Waiting on Lifecycle Events
 
+[TOC levels=1-4]
+
 Liferay registers lifecycle events like portal and database initialization
 into the OSGi service registry. Your OSGi Component or non-component class
 can listen for these events by way of their service registrations. The 

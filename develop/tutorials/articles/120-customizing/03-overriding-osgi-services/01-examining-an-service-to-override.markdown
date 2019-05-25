@@ -4,6 +4,8 @@ header-id: examining-an-osgi-service-to-override
 
 # Examining an OSGi Service to Override
 
+[TOC levels=1-4]
+
 Creating and injecting a custom service in place of an existing service requires
 three things: 
 

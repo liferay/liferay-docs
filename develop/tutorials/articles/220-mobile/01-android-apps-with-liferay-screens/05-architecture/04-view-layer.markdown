@@ -4,6 +4,8 @@ header-id: view-layer
 
 # View Layer
 
+[TOC levels=1-4]
+
 The View layer lets developers set a Screenlet's look and feel. Each Screenlet's
 `liferay:layoutId` attribute specifies its View. A View consists of a Screenlet
 class, view class, and layout XML file. The layout XML file specifies the UI

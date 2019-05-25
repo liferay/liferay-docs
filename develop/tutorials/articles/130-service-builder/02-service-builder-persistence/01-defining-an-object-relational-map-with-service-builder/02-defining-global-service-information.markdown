@@ -4,6 +4,8 @@ header-id: defining-global-service-information
 
 # Defining Global Service Information
 
+[TOC levels=1-4]
+
 A service's global information applies to all its entities, so it's a good place
 to start. In Liferay @ide@, select the *Service Builder* node in the upper left
 corner of the Overview mode of your `service.xml` file. The main section of the

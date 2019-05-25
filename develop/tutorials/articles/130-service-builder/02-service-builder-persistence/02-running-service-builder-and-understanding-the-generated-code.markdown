@@ -4,6 +4,8 @@ header-id: running-service-builder
 
 # Running Service Builder
 
+[TOC levels=1-4]
+
 This tutorial demonstrates how to run Service Builder. If want to use Service
 Builder in your application but haven't yet
 [created a `service.xml` file that defines an object-relational map for you application](/docs/7-1/tutorials/-/knowledge_base/t/defining-an-object-relational-map-with-service-builder),

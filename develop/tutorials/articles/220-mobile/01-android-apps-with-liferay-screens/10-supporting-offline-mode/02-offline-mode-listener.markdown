@@ -4,6 +4,8 @@ header-id: update-the-listener
 
 # Update the Listener
 
+[TOC levels=1-4]
+
 Recall from the basic Screenlet creation tutorial that the listener interface 
 defines a success method and a failure method. This lets implementing classes 
 respond to the server call's success or failure. Listeners that support offline 

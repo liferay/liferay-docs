@@ -4,6 +4,8 @@ header-id: upgrading-7-0-themes-to-7-1
 
 # Upgrading Your Theme from Liferay Portal 7.0 to 7.1
 
+[TOC levels=1-4]
+
 This section of tutorials guides you through the process of upgrading your 7.0 
 theme to run on @product-ver@. While you're at it, you should leverage theme 
 improvements, including support for Bootstrap 4 and Lexicon 2.0. 

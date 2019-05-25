@@ -4,6 +4,8 @@ header-id: service-trackers
 
 # Service Trackers
 
+[TOC levels=1-4]
+
 In an OSGi runtime ecosystem, you must consider how your modules can rely on
 services in other modules for functionality. It's possible for service
 implementations to be swapped out or removed entirely, and your module must not

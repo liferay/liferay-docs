@@ -4,6 +4,8 @@ header-id: jax-rs
 
 # JAX-RS
 
+[TOC levels=1-4]
+
 JAX-RS web services work in Liferay modules the same way they work outside of
 Liferay. The only difference is that you must register the class in the OSGi
 framework. Liferay's development tools make this easy by providing a template. 

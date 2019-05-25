@@ -4,6 +4,8 @@ header-id: deploying-projects-with-liferay-ide
 
 # Deploying Projects with Liferay Dev Studio
 
+[TOC levels=1-4]
+
 Deploying projects in Liferay Dev Studio is a cinch. Before deploying your
 project, make sure you have a Liferay server configured in Dev Studio. To see
 how to do this, see the

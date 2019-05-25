@@ -4,6 +4,8 @@ header-id: overriding-global-language-keys
 
 # Overriding Global Language Keys
 
+[TOC levels=1-4]
+
 Language files contain 
 [translations of your application's user interface
 messages](/docs/7-1/tutorials/-/knowledge_base/t/localizing-your-application).

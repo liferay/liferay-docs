@@ -4,6 +4,8 @@ header-id: implementing-asset-categorization-and-tagging
 
 # Implementing Asset Categorization and Tagging
 
+[TOC levels=1-4]
+
 In this tutorial, you'll enable tags and categories entities in the UI through
 a set of JSP tags. Before beginning, your entities should be
 [asset-enabled](/docs/7-1/tutorials/-/knowledge_base/t/adding-updating-and-deleting-assets)

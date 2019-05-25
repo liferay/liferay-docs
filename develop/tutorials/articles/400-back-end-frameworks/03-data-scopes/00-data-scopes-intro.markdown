@@ -4,6 +4,8 @@ header-id: data-scopes
 
 # Data Scopes
 
+[TOC levels=1-4]
+
 Apps can restrict their data to specific scopes. Scopes provide a context for
 the application's data.
 

@@ -4,6 +4,8 @@ header-id: top-head-jsp-dynamic-includes
 
 # Top Head JSP Dynamic Includes
 
+[TOC levels=1-4]
+
 The `top_head.jsp` dynamic includes load additional links in the theme's head.
 It uses the following keys: 
 

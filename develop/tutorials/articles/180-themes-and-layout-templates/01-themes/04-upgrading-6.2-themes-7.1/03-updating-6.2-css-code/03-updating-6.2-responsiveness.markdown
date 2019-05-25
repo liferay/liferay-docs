@@ -4,6 +4,8 @@ header-id: updating-the-6-2-responsiveness
 
 # Updating the Responsiveness
 
+[TOC levels=1-4]
+
 Bootstrap 4 explicit media queries replaced the Bootstrap 2 `respond-to` mixins
 for CSS responsiveness. Follow these steps to update your theme's
 responsiveness:

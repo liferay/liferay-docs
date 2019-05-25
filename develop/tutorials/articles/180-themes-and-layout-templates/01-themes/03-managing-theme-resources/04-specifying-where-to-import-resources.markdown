@@ -4,6 +4,8 @@ header-id: specifying-where-to-import-your-themes-resources
 
 # Specifying Where to Import Your Theme's Resources
 
+[TOC levels=1-4]
+
 By default, resources are imported into a new site template named after the 
 theme, but you can also import resources into a new site or existing sites or 
 site templates. This tutorial covers all these options. 

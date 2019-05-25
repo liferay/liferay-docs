@@ -4,6 +4,8 @@ header-id: deploying-a-project-built-with-maven-to-product
 
 # Deploying a Project Built with Maven to @product@
 
+[TOC levels=1-4]
+
 There are two ways to deploy a Maven-built Liferay project:
 
 1.  Copy your generated Maven JAR/WAR to your @product@ instance's `/deploy`

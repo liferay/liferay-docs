@@ -4,6 +4,8 @@ header-id: defining-an-object-relational-map-with-service-builder
 
 # Defining an Object-Relational Map with Service Builder
 
+[TOC levels=1-4]
+
 In this tutorial, you'll learn how to define an object relational map so your
 application can persist data. As an example, you'll examine the existing
 Liferay Bookmarks application that uses Service Builder.

@@ -4,6 +4,8 @@ header-id: resolving-bundle-symbolicname-syntax-issues
 
 # Resolving Bundle-SymbolicName Syntax Issues
 
+[TOC levels=1-4]
+
 Liferay's OSGi Runtime framework sometimes throws an
 `IllegalContextNameException`. Often, this is because an OSGi bundle's
 `Bundle-SymbolicName` manifest header has a space in it.

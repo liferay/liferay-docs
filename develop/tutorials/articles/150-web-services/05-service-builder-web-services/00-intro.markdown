@@ -4,6 +4,8 @@ header-id: service-builder-web-services
 
 # Service Builder Web Services
 
+[TOC levels=1-4]
+
 Service Builder can generate local and remote services for your 
 Liferay apps. 
 [The section of tutorials on Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/what-is-service-builder) 

@@ -4,6 +4,8 @@ header-id: packaging-a-jsf-application
 
 # Packaging a JSF Application
 
+[TOC levels=1-4]
+
 Developers creating portlets for @product-ver@ can package their portlets as
 Java EE style Web Application ARchive (WAR) artifacts or as Java ARchive (JAR)
 OSGi bundle artifacts. JSF portlet developers, however, must package their

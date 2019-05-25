@@ -4,6 +4,8 @@ header-id: creating-the-ios-list-screenlets-class
 
 # Creating the iOS List Screenlet's Class
 
+[TOC levels=1-4]
+
 Now that your list Screenlet's other components exist, you can create the 
 Screenlet class. A list Screenlet's Screenlet class must extend the 
 [`BaseListScreenlet` class](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/BaseListScreenlet/BaseListScreenlet.swift) 

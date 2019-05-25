@@ -4,6 +4,8 @@ header-id: developing-portlet-data-handlers
 
 # Developing Portlet Data Handlers
 
+[TOC levels=1-4]
+
 There are two types of data handlers you can implement: *Portlet Data Handlers*
 and *Staged Model Data Handlers*. For more information on the fundamentals
 behind Liferay's data handlers and how a LAR file is constructed, see the

@@ -4,6 +4,8 @@ header-id: liferay-soy-portlet
 
 # Liferay Soy Portlet
 
+[TOC levels=1-4]
+
 A Soy portlet is an extension of Liferay's MVC portlet framework. This gives you
 access to all the MVC Portlet functionality you are familiar with, plus the
 added bonus of using Soy templates for writing your front-end. Soy templates use 

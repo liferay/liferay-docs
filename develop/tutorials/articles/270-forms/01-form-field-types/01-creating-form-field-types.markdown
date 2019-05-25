@@ -4,6 +4,8 @@ header-id: creating-form-field-types
 
 # Creating Form Field Types
 
+[TOC levels=1-4]
+
 Liferay's Forms application does not contain a dedicated time field
 out-of-the-box. For ease of use and to ensure proper time data is collected,
 you'll develop a time field and learn how @product@'s field types work at the

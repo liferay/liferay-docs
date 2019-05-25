@@ -4,6 +4,8 @@ header-id: upgrading-themes-created-with-the-theme-generator
 
 # Upgrading Themes Created With the Liferay Theme Generator
 
+[TOC levels=1-4]
+
 A Liferay Portal 7.0 theme can be upgraded to @product-ver@, regardless of its 
 project environment (Liferay Theme Generator, Plugins SDK, Maven, etc.). But a 
 theme created with the Liferay Theme Generator can leverage the theme's 

@@ -4,6 +4,8 @@ header-id: deciding-to-create-local-and-remote-services
 
 # Deciding to Create Local and Remote Services
 
+[TOC levels=1-4]
+
 [Defining your object model](/docs/7-1/tutorials/-/knowledge_base/t/defining-an-object-relational-map-with-service-builder)
 involves choosing whether to generate local and or remote service interfaces.
 Local services can only be invoked from the Liferay server on which they're

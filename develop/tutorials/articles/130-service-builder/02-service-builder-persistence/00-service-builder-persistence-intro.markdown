@@ -4,6 +4,8 @@ header-id: service-builder-persistence
 
 # Service Builder Persistence
 
+[TOC levels=1-4]
+
 Liferay's Service Builder can generate your project's persistence layer by
 automating the creation of interfaces and classes. Your application's
 persistence layer persists data represented by your configured entities to a

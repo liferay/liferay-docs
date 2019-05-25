@@ -4,6 +4,8 @@ header-id: accessing-the-liferay-session-in-ios
 
 # Accessing the Liferay Session in iOS
 
+[TOC levels=1-4]
+
 A session is a conversation state between the client and server. It typically 
 consists of multiple requests and responses between the two. To facilitate this 
 communication, the session must have the server IP address, and a user's login 

@@ -4,6 +4,8 @@ header-id: upgrading-model-listener-hooks
 
 # Upgrading Model Listener Hooks
 
+[TOC levels=1-4]
+
 Developers have been creating model listeners for several Liferay Portal
 versions. Upgrading Model Listener Hooks from previous portal versions has never
 been easier. 

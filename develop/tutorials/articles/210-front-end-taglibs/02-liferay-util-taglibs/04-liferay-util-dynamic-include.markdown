@@ -4,6 +4,8 @@ header-id: using-liferay-util-dynamic-include
 
 # Using Liferay Util Dynamic Include
 
+[TOC levels=1-4]
+
 The dynamic include tag lets you specify a point or points in a JSP or theme 
 where a developer can inject additional HTML, resources, or functionality, using 
 the `DynamicIncludeRegistry`. You can read more about the OSGi Service Registry 

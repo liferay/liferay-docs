@@ -4,6 +4,8 @@ header-id: android-apps-with-liferay-screens
 
 # Android Apps with Liferay Screens
 
+[TOC levels=1-4]
+
 Liferay Screens speeds up and simplifies developing native mobile apps that use
 Liferay. Its power lies in its *Screenlets*. A Screenlet is a visual component
 that you insert into your native app to leverage Liferay Portal's content and

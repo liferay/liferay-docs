@@ -4,6 +4,8 @@ header-id: registering-json-web-services
 
 # Registering JSON Web Services
 
+[TOC levels=1-4]
+
 Liferay's developers use a tool called *Service Builder* to build services.
 When you build services with Service Builder, all remote-enabled services
 (i.e., `service.xml` entities with the property `remote-service="true"`) are

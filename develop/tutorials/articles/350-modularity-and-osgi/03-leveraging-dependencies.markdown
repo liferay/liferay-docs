@@ -4,6 +4,8 @@ header-id: leveraging-dependencies
 
 # Leveraging Dependencies
 
+[TOC levels=1-4]
+
 Using an OSGi manifest, a module declares the Java packages it consumes and
 shares. The manifest's `Import-Package` and `Export-Package` settings expose
 this information. As you determine whether to use a particular module, you know

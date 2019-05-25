@@ -4,6 +4,8 @@ header-id: implementing-an-entry-asset-renderer
 
 # Implementing an Entry Asset Renderer
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Implementing Asset Renderers<br>Step 2 of 2</p>
 </div>

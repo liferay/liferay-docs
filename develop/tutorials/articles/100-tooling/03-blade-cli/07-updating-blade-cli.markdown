@@ -4,6 +4,8 @@ header-id: updating-blade-cli
 
 # Updating Blade CLI
 
+[TOC levels=1-4]
+
 If your Blade CLI version is outdated, you can run the following command to
 automatically download and install the latest version of Blade CLI:
 

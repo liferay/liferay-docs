@@ -4,6 +4,8 @@ header-id: updating-6-2-project-metadata
 
 # Updating 6.2 Project Metadata
 
+[TOC levels=1-4]
+
 If your theme uses the 
 [Liferay JS Theme Toolkit](https://github.com/liferay/liferay-themes-sdk/tree/master/packages), 
 the 

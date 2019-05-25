@@ -4,6 +4,8 @@ header-id: disabling-all-or-portions-of-the-management-bar
 
 # Disabling All or Portions of the Management Bar
 
+[TOC levels=1-4]
+
 When there are no search results to display, you should disable all the 
 Management Bar's buttons, except the sidenav toggler button. 
 

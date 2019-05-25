@@ -4,6 +4,8 @@ header-id: file-checkin
 
 # File Check-in
 
+[TOC levels=1-4]
+
 After checking out and editing a file, you must check it back in for other users 
 to see the new version. Once you do so, you can't access the private working 
 copy. The next time the file is checked out, the private working copy's contents 

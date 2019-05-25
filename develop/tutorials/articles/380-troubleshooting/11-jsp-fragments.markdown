@@ -4,6 +4,8 @@ header-id: why-arent-jsp-overrides-i-made-using-fragments-showing
 
 # Why Aren't JSP overrides I Made Using Fragments Showing?
 
+[TOC levels=1-4]
+
 | **Important:** It's strongly recommended to
 | [customize JSPs using @product@'s API](/docs/7-1/tutorials/-/knowledge_base/t/customizing-jsps).
 | Since overriding a JSP using an OSGi fragment is not based on APIs there's no

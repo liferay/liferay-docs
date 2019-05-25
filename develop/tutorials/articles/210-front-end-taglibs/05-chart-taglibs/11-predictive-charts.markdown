@@ -4,6 +4,8 @@ header-id: predictive-charts
 
 # Predictive Charts
 
+[TOC levels=1-4]
+
 Predictive charts let you visualize current data along with predicted/forecasted 
 data within a given value range. 
 

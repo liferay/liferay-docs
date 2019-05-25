@@ -4,6 +4,8 @@ header-id: making-liferay-and-custom-portlet-services-available-in-your-ios-app
 
 # Making Liferay and Custom Portlet Services Available in Your iOS App
 
+[TOC levels=1-4]
+
 Your iOS app is no doubt pretty great, or at least off to a great start. Now you 
 want it to access Liferay services. How do you accomplish this? Use Liferay's 
 iOS Mobile SDK, of course! You must install the correct Mobile SDKs in your iOS 

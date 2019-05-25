@@ -4,6 +4,8 @@ header-id: injecting-service-components-into-tests
 
 # Injecting Service Components into Integration Tests
 
+[TOC levels=1-4]
+
 You can use @product@'s `@Inject` annotation to inject service components into
 an integration test, like you use the
 [`@Reference` annotation to inject service components](/docs/7-1/tutorials/-/knowledge_base/t/osgi-services-and-dependency-injection-with-declarative-services)

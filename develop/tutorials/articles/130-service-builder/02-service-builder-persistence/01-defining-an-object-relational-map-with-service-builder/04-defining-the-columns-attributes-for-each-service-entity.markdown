@@ -4,6 +4,8 @@ header-id: defining-the-columns-attributes-for-each-service-entity
 
 # Defining the Columns (Attributes) for Each Service Entity
 
+[TOC levels=1-4]
+
 An entity's columns represent its attributes. These attributes map table fields
 to Java object fields. To add attributes for your entity, drill down to its
 columns in the Overview mode outline of the `service.xml` file. From the

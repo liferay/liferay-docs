@@ -4,6 +4,8 @@ header-id: defining-jsf-portlet-descriptors
 
 # Defining JSF Portlet Descriptors
 
+[TOC levels=1-4]
+
 Since JSF portlets must follow a WAR-style folder structure, they must also have
 WAR-style portlet descriptors.
 

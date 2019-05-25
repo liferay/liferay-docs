@@ -4,6 +4,8 @@ header-id: rating-assets
 
 # Rating Assets
 
+[TOC levels=1-4]
+
 [The asset framework](/docs/7-1/tutorials/-/knowledge_base/t/asset-framework) 
 supports a system that lets users rate content in apps. This feature appears in 
 many of @product@'s built-in apps. For example, users can rate articles 

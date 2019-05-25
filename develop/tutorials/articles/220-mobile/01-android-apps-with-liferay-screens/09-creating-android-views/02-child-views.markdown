@@ -4,6 +4,8 @@ header-id: child-views
 
 # Child Views
 
+[TOC levels=1-4]
+
 A Child View presents the same behavior and UI components as its parent, but can
 change the UI components' appearance and position. It can't add or remove any UI
 components. A Child View specifies visual changes in its own layout XML file; it

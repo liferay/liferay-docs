@@ -4,6 +4,8 @@ header-id: installing-the-bundle-generator-and-generating-a-bundle
 
 # Installing the Bundle Generator and Generating a Bundle
 
+[TOC levels=1-4]
+
 This tutorial shows how to install the 
 [Liferay JS Generator](https://www.npmjs.com/package/generator-liferay-js) 
 and how to use it to create JavaScript widgets. 

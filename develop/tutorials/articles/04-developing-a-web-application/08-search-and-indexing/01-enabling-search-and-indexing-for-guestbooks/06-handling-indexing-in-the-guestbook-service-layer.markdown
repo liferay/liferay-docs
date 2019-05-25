@@ -4,6 +4,8 @@ header-id: handling-indexing-in-the-guestbook-service-layer
 
 # Handling Indexing in the Guestbook Service Layer
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Enabling Search and Indexing for Guestbooks<br>Step 6 of 6</p>
 </div>

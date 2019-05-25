@@ -4,6 +4,8 @@ header-id: applying-clay-styles-to-your-app
 
 # Applying Clay Styles to your App
 
+[TOC levels=1-4]
+
 It's important to have a consistent user experience across your apps. 
 Portal's built-in apps achieve this through Liferay's 
 [Lexicon Experience Language](https://lexicondesign.io/) and its web 

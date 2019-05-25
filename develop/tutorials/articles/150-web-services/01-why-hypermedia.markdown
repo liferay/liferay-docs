@@ -4,6 +4,8 @@ header-id: why-hypermedia-rest-apis
 
 # Why Hypermedia REST APIs?
 
+[TOC levels=1-4]
+
 [Hypermedia](https://en.wikipedia.org/wiki/Hypermedia) 
 is hypertext (the H in HTML) extended to other media, like images, audio, video, 
 or links. This isn't a new concept. When a browser requests a web page, it 

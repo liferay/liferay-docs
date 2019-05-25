@@ -4,6 +4,8 @@ header-id: using-vue-in-your-portlets
 
 # Using Vue in Your Portlets
 
+[TOC levels=1-4]
+
 You can create a Vue project manually or use the [npm Vue portlet
 template](/docs/7-1/reference/-/knowledge_base/r/npm-vue-js-portlet-template)
 to automate much of the required configuration for you. For convenience, all

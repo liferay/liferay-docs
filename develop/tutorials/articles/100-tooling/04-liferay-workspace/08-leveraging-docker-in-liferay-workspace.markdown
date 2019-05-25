@@ -4,6 +4,8 @@ header-id: leveraging-docker
 
 # Leveraging Docker
 
+[TOC levels=1-4]
+
 Docker has become increasingly popular in today's development lifecycle, by
 providing an automated way to package software and its dependencies into
 a standardized unit that can be shared cross-platform. Read Docker's extensive

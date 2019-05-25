@@ -4,6 +4,8 @@ header-id: migrating-existing-code-to-liferay-7
 
 # Planning Plugin Upgrades and Optimizations
 
+[TOC levels=1-4]
+
 If you've explored @product-ver@'s features and possibly created new
 portlet modules themes with Liferay's new  [tooling](/docs/7-1/tutorials/-/knowledge_base/t/improved-developer-tooling-liferay-workspace-maven-plugins-and-more)
 and 

@@ -4,6 +4,8 @@ header-id: android-best-practices
 
 # Android Best Practices
 
+[TOC levels=1-4]
+
 When developing Android projects with Liferay Screens, there are a few best 
 practices that you should follow to ensure your code is as clean and bug-free as 
 possible. This tutorial lists these. 

@@ -4,6 +4,8 @@ header-id: upgrading-6-2-layout-templates
 
 # Upgrading 6.2 Layout Templates
 
+[TOC levels=1-4]
+
 If you've developed layout templates in @product@ 6.2, you can upgrade them for
 @product-ver@. The upgrade process requires minimal changes. 
 

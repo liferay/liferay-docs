@@ -4,6 +4,8 @@ header-id: applying-social-bookmarks
 
 # Applying Social Bookmarks
 
+[TOC levels=1-4]
+
 When you enable social bookmarks, icons for sharing on Twitter, Facebook, and
 Google Plus appear below your application's content. Taglibs provide the markup
 you need to add this feature to your app. 

@@ -4,6 +4,8 @@ header-id: configuring-the-view-layer
 
 # Configuring the View Layer
 
+[TOC levels=1-4]
+
 This section briefly covers how to get your view layer working, from organizing
 your imports in one JSP file, to creating URLs that direct processing to
 methods in your portlet class. 

@@ -4,6 +4,8 @@ header-id: automatically-deploying-theme-changes
 
 # Automatically Deploying Theme Changes
 
+[TOC levels=1-4]
+
 You may have noticed that you have to deploy your theme manually each time you 
 make a change. This can become tedious during the development process. The 
 `gulp watch` task lets you see the changes you make to your theme without 

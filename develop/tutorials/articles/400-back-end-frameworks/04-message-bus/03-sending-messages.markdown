@@ -4,6 +4,8 @@ header-id: sending-messages
 
 # Sending Messages
 
+[TOC levels=1-4]
+
 Message Bus lets you send messages to destinations that have any number of
 listening classes. As a message sender you don't need to know the message
 recipients. Instead, you focus on creating message content (payload) and sending

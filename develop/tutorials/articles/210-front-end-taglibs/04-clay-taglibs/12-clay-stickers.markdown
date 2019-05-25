@@ -4,6 +4,8 @@ header-id: clay-stickers
 
 # Clay Stickers
 
+[TOC levels=1-4]
+
 Whereas badges display numbers and labels display short information, stickers
 are small visual indicators of the content (usually the content type). They
 can include a small label or a Liferay icon, and they come in two shapes:

@@ -4,6 +4,8 @@ header-id: adding-buttons-to-alloyeditor-toolbars
 
 # Adding Buttons to AlloyEditor's Toolbars
 
+[TOC levels=1-4]
+
 AlloyEditor's toolbars contain several useful functions out-of-the-box. You 
 may, however, want to customize the default configuration to include a button
 you've created, to add an existing button to a toolbar, or to add an 

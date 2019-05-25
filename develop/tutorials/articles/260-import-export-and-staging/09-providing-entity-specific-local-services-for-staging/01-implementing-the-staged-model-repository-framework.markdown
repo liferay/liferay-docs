@@ -4,6 +4,8 @@ header-id: implementing-the-staged-model-repository-framework
 
 # Implementing the Staged Model Repository Framework
 
+[TOC levels=1-4]
+
 Providing specialized local services for your app's staging functionality lets
 you abstract the additional staging-specific information away from your data
 handlers. Before you can begin using the Staged Model Repository framework in

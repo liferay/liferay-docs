@@ -4,6 +4,8 @@ header-id: importing-resources-with-a-theme
 
 # Importing Resources with a Theme
 
+[TOC levels=1-4]
+
 To truly appreciate a theme, you must view it with content. Showcasing a theme 
 in the proper context is key to communicating the true intentions of its design.
 Who better to do this than the theme's designer? Designers can provide a sample

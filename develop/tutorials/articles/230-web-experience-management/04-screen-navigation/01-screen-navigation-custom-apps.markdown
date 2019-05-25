@@ -4,6 +4,8 @@ header-id: using-the-framework-for-your-application
 
 # Using the Framework for Your Application
 
+[TOC levels=1-4]
+
 The Screen Navigation Framework comprises two parts: Java classes for your
 screens and a tag library for your front-end. First you'll create the necessary
 Java classes and then add the front-end support through JSPs.

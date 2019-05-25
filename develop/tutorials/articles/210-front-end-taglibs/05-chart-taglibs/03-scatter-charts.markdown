@@ -4,6 +4,8 @@ header-id: scatter-charts
 
 # Scatter Charts
 
+[TOC levels=1-4]
+
 Scatter charts contain multiple sets of data. A scatter chart models the data as 
 individual points. Each data series (created with the `addColumns()` method) is 
 defined with a new instance of the 

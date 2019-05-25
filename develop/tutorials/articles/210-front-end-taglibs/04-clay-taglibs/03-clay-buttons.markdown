@@ -4,6 +4,8 @@ header-id: clay-buttons
 
 # Clay Buttons
 
+[TOC levels=1-4]
+
 Buttons come in several types and variations. This tutorial covers the 
 different styles and variations of buttons you can create with the Clay 
 taglibs. 

@@ -4,6 +4,8 @@ header-id: defining-assets-for-the-resources-importer
 
 # Defining Assets for the Resources Importer
 
+[TOC levels=1-4]
+
 The `sitemap.json` file defines the pages of the site or site template to
 import---along with the layout templates, portlets, and portlet preferences of
 these pages. You may also want to provide details about the assets you include

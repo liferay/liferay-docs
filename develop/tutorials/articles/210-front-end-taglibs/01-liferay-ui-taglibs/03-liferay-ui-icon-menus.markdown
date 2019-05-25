@@ -4,6 +4,8 @@ header-id: liferay-ui-icon-menus
 
 # Liferay UI Icon Menus
 
+[TOC levels=1-4]
+
 You can add a pop-up navigation menu to your app with the `liferay-ui:icon-menu`
 tag. Icon menus display menu options when needed, storing them away in
 a collapsed menu when they're not. This keeps the UI clean and uncluttered. Just

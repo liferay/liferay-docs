@@ -4,6 +4,8 @@ header-id: jsp-overrides-using-osgi-fragments
 
 # JSP Overrides Using OSGi Fragments
 
+[TOC levels=1-4]
+
 You can completely override JSPs using OSGi fragments. This approach is powerful
 but can make things unstable when the host module is upgraded: 
 

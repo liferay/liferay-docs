@@ -4,6 +4,8 @@ header-id: overriding-inline-content-using-jsps
 
 # Overriding Inline Content Using JSPs
 
+[TOC levels=1-4]
+
 Some @product@ core content, such as tag library tags, can only be overridden
 using JSPs ending in `.readme`. The suffix `.readme` facilitates finding them.
 The code from these JSPs is now inlined (brought into @product@ Java source

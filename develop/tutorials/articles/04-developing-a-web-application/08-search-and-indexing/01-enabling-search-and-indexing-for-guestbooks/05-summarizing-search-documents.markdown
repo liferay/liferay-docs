@@ -4,6 +4,8 @@ header-id: generating-results-summaries
 
 # Generating Results Summaries
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Enabling Search and Indexing for Guestbooks<br>Step 5 of 6</p>
 </div>

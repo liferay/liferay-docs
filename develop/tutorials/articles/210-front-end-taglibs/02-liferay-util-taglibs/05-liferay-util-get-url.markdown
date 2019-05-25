@@ -4,6 +4,8 @@ header-id: using-liferay-util-get-url
 
 # Using Liferay Util Get URL
 
+[TOC levels=1-4]
+
 The get URL tag scrapes the URL provided by the `url` attribute. If a value is 
 provided for the `var` attribute, the content from the screen scrape is scoped 
 to that variable. Otherwise, the scraped content is displayed where the taglib 

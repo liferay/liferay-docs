@@ -4,6 +4,8 @@ header-id: system-check
 
 # System Check
 
+[TOC levels=1-4]
+
 During development, all kinds of strange things can happen in the OSGi
 container. Liferay's `system:check` 
 [Gogo shell](/docs/7-1/reference/-/knowledge_base/r/using-the-felix-gogo-shell)

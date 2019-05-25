@@ -4,6 +4,8 @@ header-id: defining-a-jsf-applications-structure-and-dependencies
 
 # Defining a JSF Application's Structure and Dependencies
 
+[TOC levels=1-4]
+
 JSF portlets are supported on Liferay Portal by using
 [Liferay Faces Bridge](/docs/7-1/reference/-/knowledge_base/r/understanding-liferay-faces-bridge).
 Liferay Faces Bridge makes developing JSF portlets as similar as possible to JSF

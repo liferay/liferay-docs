@@ -4,6 +4,8 @@ header-id: creating-a-maven-repository
 
 # Creating a Maven Repository
 
+[TOC levels=1-4]
+
 You'll frequently want to share Liferay artifacts and modules with teammates or
 manage your repositories using a GUI. You can do this using
 [Sonatype Nexus](http://www.sonatype.org/nexus/). It's a Maven repository

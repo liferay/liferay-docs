@@ -4,6 +4,8 @@ header-id: connecting-service-builder-to-external-databases
 
 # Connecting Service Builder to External Databases
 
+[TOC levels=1-4]
+
 Sometimes you want to use a database other than @product@'s. To do this, its
 data source must be defined in `portal-ext.properties` or configured as a JNDI
 data source on the app server. This tutorial shows how to connect

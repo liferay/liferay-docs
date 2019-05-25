@@ -4,6 +4,8 @@ header-id: dynamic-deployment
 
 # Dynamic Deployment
 
+[TOC levels=1-4]
+
 In OSGi, all components, Java classes, resources, and descriptors are deployed
 via modules. The `MANIFEST.MF` file describes the module's physical
 characteristics, such as the packages it exports and imports. The module's

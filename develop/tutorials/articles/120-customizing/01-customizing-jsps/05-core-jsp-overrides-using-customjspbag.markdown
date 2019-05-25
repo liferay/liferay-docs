@@ -4,6 +4,8 @@ header-id: jsp-overrides-using-custom-jsp-bag
 
 # JSP Overrides Using Custom JSP Bag
 
+[TOC levels=1-4]
+
 Liferay's API based approaches to overriding JSPs (i.e.,
 [Dynamic Includes](/docs/7-1/tutorials/-/knowledge_base/t/customizing-jsps-with-dynamic-includes)
 and

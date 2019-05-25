@@ -4,6 +4,8 @@ header-id: portlet-providers
 
 # Portlet Providers
 
+[TOC levels=1-4]
+
 Some apps perform the same operations on different entity types. For example,
 the Asset Publisher lets users browse, add, preview, and view various entities
 as assets including documents, web content, blogs, and more. The entities vary,

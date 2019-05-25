@@ -4,6 +4,8 @@ header-id: upgrading-7-0-layout-templates-to-7-1
 
 # Upgrading 7.0 Layout Templates to 7.1
 
+[TOC levels=1-4]
+
 If you're upgrading your @product@ 7.0 layout template to @product-ver@, you 
 must upgrade your layout template version to 7.1: 
 

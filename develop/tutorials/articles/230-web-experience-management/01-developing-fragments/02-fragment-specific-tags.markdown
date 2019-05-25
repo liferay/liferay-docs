@@ -4,6 +4,8 @@ header-id: fragment-specific-tags
 
 # Fragment Specific Tags
 
+[TOC levels=1-4]
+
 While HTML, CSS, and JavaScript are universal tools for building websites, 
 @product@ includes some additional tools to make fragments more powerful. One
 tag can make text editable not just in the HTML editor, but also at the time of

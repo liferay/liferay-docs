@@ -4,6 +4,8 @@ header-id: migrating-a-liferay-npm-bundler-project-from-1-x-to-2-x
 
 # Migrating a liferay-npm-bundler Project from 1.x to 2.x
 
+[TOC levels=1-4]
+
 You should use the latest 2.x version of the liferay-npm-bundler. It 
 [offers more stability and includes more features out-of-the-box](/docs/7-1/reference/-/knowledge_base/r/changes-between-liferay-npm-bundler-1x-and-2x). 
 If you already created a project using the 1.x version, don't worry. Follow

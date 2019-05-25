@@ -4,6 +4,8 @@ header-id: creating-layout-templates-manually
 
 # Creating Layout Templates Manually
 
+[TOC levels=1-4]
+
 Although you can 
 [generate layout templates with the Liferay Theme Generator](/docs/7-1/tutorials/-/knowledge_base/t/creating-layout-templates-with-the-themes-generator),  
 you may prefer to create or modify them manually using your own tools. In this 

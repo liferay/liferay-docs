@@ -4,6 +4,8 @@ header-id: adding-a-wysiwyg-editor-to-a-portlet
 
 # Adding a WYSIWYG Editor to a Portlet
 
+[TOC levels=1-4]
+
 It's easy to include WYSIWYG editors in your portlet, thanks to the 
 `<liferay-editor:editor />` tag. 
 

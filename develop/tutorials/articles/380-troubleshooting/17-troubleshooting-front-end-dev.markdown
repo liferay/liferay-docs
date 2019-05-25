@@ -4,6 +4,8 @@ header-id: troubleshooting-front-end-development-issues
 
 # Troubleshooting Front-End Development Issues
 
+[TOC levels=1-4]
+
 Front-end development involves many moving parts. Sometimes it's hard to tell 
 what may be causing the issues you run into along the way. This can be 
 particularly frustrating. These frequently asked questions and answers help you 

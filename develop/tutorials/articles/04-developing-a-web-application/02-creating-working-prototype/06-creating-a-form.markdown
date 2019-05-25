@@ -4,6 +4,8 @@ header-id: creating-a-form
 
 # Creating a Form
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Developing Your First Portlet<br>Step 6 of 8</p>
 </div>

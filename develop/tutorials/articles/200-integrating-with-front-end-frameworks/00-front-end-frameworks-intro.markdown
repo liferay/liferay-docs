@@ -4,6 +4,8 @@ header-id: using-front-end-frameworks-in-your-portlets
 
 # Using Front-End Frameworks in Your portlets
 
+[TOC levels=1-4]
+
 You can use the most popular Front-End frameworks in your portlets with just a 
 few minor updates to the standard portlet configuration. To help kick-start your 
 portlet project, you can choose from several 

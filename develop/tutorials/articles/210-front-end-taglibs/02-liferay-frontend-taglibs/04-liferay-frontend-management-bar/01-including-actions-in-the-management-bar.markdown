@@ -4,6 +4,8 @@ header-id: including-actions-in-the-management-bar
 
 # Including Actions in the Management Bar
 
+[TOC levels=1-4]
+
 While an actions menu is typically included with each search container result, 
 you can also include these actions in the management bar. This keeps everything 
 organized within the same UI. This update adds a checkbox next to each search 

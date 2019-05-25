@@ -4,6 +4,8 @@ header-id: obtaining-dependency-npm-package-descriptors
 
 # Obtaining an OSGi bundle's Dependency npm Package Descriptors
 
+[TOC levels=1-4]
+
 While writing your npm portlet, you may need to reference a dependency package 
 or its modules. For instance, you can retrieve an npm dependency package 
 module's CSS file and use it in your portlet. The 

@@ -4,6 +4,8 @@ header-id: decision-to-implement-staging
 
 # Decision to Implement Staging
 
+[TOC levels=1-4]
+
 Staging is an advanced publication tool that lets you create or modify your site
 before releasing it to the public. Most of @product@'s included applications
 (e.g., Web Content, Bookmarks, etc.) support Staging. Implementing Staging in

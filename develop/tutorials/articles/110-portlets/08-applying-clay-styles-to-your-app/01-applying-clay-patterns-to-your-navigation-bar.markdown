@@ -4,6 +4,8 @@ header-id: applying-clay-patterns-to-navigation
 
 # Applying Clay Patterns to Navigation
 
+[TOC levels=1-4]
+
 This tutorial covers how to leverage Clay patterns in your app's navigation 
 to make it more user-friendly. Updating your app's navigation bar to use Clay is 
 easy, thanks to the `<clay:navigation-bar />` tag. Follow these steps to update 

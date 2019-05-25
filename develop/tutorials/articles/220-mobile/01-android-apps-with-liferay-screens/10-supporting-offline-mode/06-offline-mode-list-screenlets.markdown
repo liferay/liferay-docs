@@ -4,6 +4,8 @@ header-id: supporting-offline-mode-in-list-screenlets
 
 # Supporting Offline Mode in List Screenlets
 
+[TOC levels=1-4]
+
 A list Screenlet is a special type of read Screenlet that displays entities in a 
 list. Recall from the 
 [list Screenlet creation tutorial](/docs/7-1/tutorials/-/knowledge_base/t/creating-android-list-screenlets) 

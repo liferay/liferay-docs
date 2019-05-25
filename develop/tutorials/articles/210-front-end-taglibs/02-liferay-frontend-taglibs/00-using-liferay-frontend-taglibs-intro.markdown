@@ -4,6 +4,8 @@ header-id: using-liferay-frontend-taglibs-in-your-portlet
 
 # Using Liferay Front-end Taglibs in Your Portlet
 
+[TOC levels=1-4]
+
 The Liferay Front-end tag library provides a set of tags for creating common
 front-end UI components in your app. 
 

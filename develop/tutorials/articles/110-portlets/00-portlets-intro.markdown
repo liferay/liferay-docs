@@ -4,6 +4,8 @@ header-id: portlets
 
 # Portlets
 
+[TOC levels=1-4]
+
 Web apps in @product@ are called *portlets*. Like many web apps, portlets
 process requests and generate responses. In the response, the portlet returns
 content (e.g., HTML, XHTML) for display in browsers. One key difference between

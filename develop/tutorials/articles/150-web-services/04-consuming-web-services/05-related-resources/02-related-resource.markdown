@@ -4,6 +4,8 @@ header-id: navigating-to-a-related-resource
 
 # Navigating to a Related Resource
 
+[TOC levels=1-4]
+
 When you get a resource, you can use the response to get related resources. For
 example, the GET request to the *Livingstone Hotels & Resorts* Site in the 
 [previous tutorial](/docs/7-1/tutorials/-/knowledge_base/t/navigating-from-a-collection-to-its-elements)

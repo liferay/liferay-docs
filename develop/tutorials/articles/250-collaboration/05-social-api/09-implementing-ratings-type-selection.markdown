@@ -4,6 +4,8 @@ header-id: implementing-ratings-type-selection-and-value-transformation
 
 # Implementing Ratings Type Selection and Value Transformation
 
+[TOC levels=1-4]
+
 @product@ has three different mechanisms for rating content: 
 
 -   Likes

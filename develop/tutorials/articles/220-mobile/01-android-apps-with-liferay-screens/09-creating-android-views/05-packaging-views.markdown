@@ -4,6 +4,8 @@ header-id: packaging-your-views
 
 # Packaging Your Views
 
+[TOC levels=1-4]
+
 If you want to distribute or reuse Views, you should package them in a module
 that is then added as an app's project dependency. To do this, use the 
 [material](https://github.com/liferay/liferay-screens/tree/master/android/viewsets/material) 

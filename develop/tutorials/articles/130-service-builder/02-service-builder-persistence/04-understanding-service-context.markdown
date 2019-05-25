@@ -4,6 +4,8 @@ header-id: understanding-servicecontext
 
 # Understanding ServiceContext
 
+[TOC levels=1-4]
+
 The `ServiceContext` class holds contextual information for a service. It
 aggregates information necessary for features used throughout Liferay's
 portlets, such as permissions, tagging, categorization, and more. This tutorial

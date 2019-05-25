@@ -4,6 +4,8 @@ header-id: liferay-ui-tabs
 
 # Liferay UI Tabs
 
+[TOC levels=1-4]
+
 Tabs create dividers that organize content into individual sections. Content can
 be embedded or included from another JSP. 
 

@@ -4,6 +4,8 @@ header-id: creating-a-custom-osgi-service
 
 # Creating a Custom OSGi Service
 
+[TOC levels=1-4]
+
 It's time to implement your OSGi service. Make sure to
 [examine the service and service reference details](/docs/7-1/tutorials/-/knowledge_base/t/examining-an-osgi-service-to-override),
 if you haven't done so already. Here you'll create a custom service that

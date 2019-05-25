@@ -4,6 +4,8 @@ header-id: updating-css-file-names-for-clay-and-sass
 
 # Updating CSS File Names for Clay and Sass
 
+[TOC levels=1-4]
+
 Although Sass was available in Liferay Portal 6.2, only Sass partial files 
 followed the Sass naming convention (using file suffix `.scss`). In 
 @product-ver@ themes, all Sass files must end in `scss`, and `aui` filename 

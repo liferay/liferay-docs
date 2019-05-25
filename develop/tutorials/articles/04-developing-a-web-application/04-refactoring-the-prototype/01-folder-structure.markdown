@@ -4,6 +4,8 @@ header-id: organizing-folders-for-larger-applications
 
 # Organizing Folders for Larger Applications
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Refactoring the Prototype<br>Step 1 of 6</p>
 </div>

@@ -4,6 +4,8 @@ header-id: modifying-the-target-platforms-capabilities
 
 # Modifying the Target Platform's Capabilities
 
+[TOC levels=1-4]
+
 In a perfect world, everything the `resolve` task gathers and checks against
 would work during your development process. Unfortunately, there are exceptions
 that may force you to modify the default functionality of the `resolve` task. If

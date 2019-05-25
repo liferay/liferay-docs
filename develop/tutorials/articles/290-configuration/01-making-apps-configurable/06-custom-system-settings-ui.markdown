@@ -4,6 +4,8 @@ header-id: customizing-the-system-settings-user-interface
 
 # Customizing the System Settings User Interface
 
+[TOC levels=1-4]
+
 @product@ applications use the Apache Felix Configuration Admin Service to
 provide application configuration. By specifying a single Configuration
 Interface class, the configuration data is typed and scoped, and the application

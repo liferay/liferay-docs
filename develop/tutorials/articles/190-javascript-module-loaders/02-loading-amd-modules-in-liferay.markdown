@@ -4,6 +4,8 @@ header-id: loading-amd-modules-in-liferay
 
 # Loading AMD Modules in Liferay
 
+[TOC levels=1-4]
+
 Modularized JavaScript code is a specification for the JavaScript language
 called Asynchronous Module Definition, or AMD. The 
 [Liferay AMD Module Loader](https://github.com/liferay/liferay-amd-loader#amd-module-loader) 

@@ -4,6 +4,8 @@ header-id: adding-comments-to-your-app
 
 # Adding Comments to Your App
 
+[TOC levels=1-4]
+
 Letting users comment on content makes your app come alive. Taglibs provide the
 markup you need to add this feature. This tutorial shows you how to use these
 taglibs to enable comments. 

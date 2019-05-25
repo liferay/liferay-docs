@@ -4,6 +4,8 @@ header-id: querying-for-guestbook-documents
 
 # Querying for Guestbook Documents
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Enabling Search and Indexing for Guestbooks<br>Step 4 of 6</p>
 </div>

@@ -4,6 +4,8 @@ header-id: using-the-bootstrap-3-lexicon-css-compatibility-layer
 
 # Using the Bootstrap 3 Lexicon CSS Compatibility Layer
 
+[TOC levels=1-4]
+
 By default, @product@ includes Bootstrap 4 out-of-the-box. Bootstrap 4 has been 
 completely rewritten and therefore includes some 
 [notable changes](https://getbootstrap.com/docs/4.1/migration/) 

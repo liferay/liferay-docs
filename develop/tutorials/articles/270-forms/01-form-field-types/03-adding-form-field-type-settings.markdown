@@ -4,6 +4,8 @@ header-id: adding-settings-to-form-field-types
 
 # Adding Settings to Form Field Types
 
+[TOC levels=1-4]
+
 Once you develop a 
 [Form Field Type](/docs/7-1/tutorials/-/knowledge_base/t/creating-form-field-types), you
 might need to add settings to it. For example, a Time field might accept

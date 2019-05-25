@@ -4,6 +4,8 @@ header-id: automatic-single-page-applications
 
 # Automatic Single Page Applications
 
+[TOC levels=1-4]
+
 A good user experience is the measure of a well-designed site. A user's time is
 highly valuable. The last thing you want is for someone to grow frustrated with
 your site because of constant page reloads. A Single Page Application (SPA) 

@@ -4,6 +4,8 @@ header-id: using-liferays-macros-in-your-theme
 
 # Using @product@'s Macros in Your Theme
 
+[TOC levels=1-4]
+
 [Macros](https://freemarker.apache.org/docs/ref_directive_macro.html) 
 can assign theme template fragments to a variable. This keeps your theme 
 templates from becoming cluttered and makes them easier to read. @product@ 

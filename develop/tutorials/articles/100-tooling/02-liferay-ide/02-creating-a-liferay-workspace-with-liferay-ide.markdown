@@ -4,6 +4,8 @@ header-id: creating-a-liferay-workspace-with-liferay-ide
 
 # Creating a Liferay Workspace with Dev Studio
 
+[TOC levels=1-4]
+
 In this tutorial, you'll learn how to generate a Liferay Workspace using Liferay
 Dev Studio, which runs on the
 [Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/blade-cli) behind the

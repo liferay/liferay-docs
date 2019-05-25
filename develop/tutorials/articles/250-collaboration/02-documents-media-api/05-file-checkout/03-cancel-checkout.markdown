@@ -4,6 +4,8 @@ header-id: cancelling-a-checkout
 
 # Canceling a Check-out
 
+[TOC levels=1-4]
+
 The Documents and Media API also lets you cancel a check-out. Use caution with 
 this operation---it discards any edits made since check-out. If you're sure you 
 want to cancel a check-out, do so with the 

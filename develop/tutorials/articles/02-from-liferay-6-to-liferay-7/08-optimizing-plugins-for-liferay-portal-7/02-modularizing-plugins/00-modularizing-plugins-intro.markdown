@@ -4,6 +4,8 @@ header-id: modularizing-plugins
 
 # Modularizing Plugins
 
+[TOC levels=1-4]
+
 As described in
 [Benefits of Liferay 7 for Liferay 6 Developers](/docs/7-1/tutorials/-/knowledge_base/t/benefits-of-liferay-7-for-liferay-6-developers),
 applications that comprise OSGi modules offer considerable advantages over

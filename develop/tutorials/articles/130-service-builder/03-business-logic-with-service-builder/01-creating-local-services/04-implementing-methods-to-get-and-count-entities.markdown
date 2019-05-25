@@ -4,6 +4,8 @@ header-id: implementing-methods-to-get-and-count-entities
 
 # Implementing Methods to Get and Count Entities
 
+[TOC levels=1-4]
+
 Service Builder generates `findBy*` methods and `countBy*` methods in your
 [`*Persistence` classes](/docs/7-1/tutorials/-/knowledge_base/t/understanding-the-code-generated-by-service-builder)
 based on your  `service.xml` file's

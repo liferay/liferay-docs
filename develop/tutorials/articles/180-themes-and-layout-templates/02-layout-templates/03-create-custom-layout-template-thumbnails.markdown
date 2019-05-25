@@ -4,6 +4,8 @@ header-id: creating-custom-layout-template-thumbnail-previews
 
 # Creating Custom Layout Template Thumbnail Previews
 
+[TOC levels=1-4]
+
 If you 
 [created a layout template with the Theme Generator](/docs/7-1/tutorials/-/knowledge_base/t/creating-layout-templates-with-the-themes-generator), 
 it generated a default thumbnail preview for your layout template. Follow these 

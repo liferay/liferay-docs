@@ -4,6 +4,8 @@ header-id: creating-new-buttons-for-alloyeditor
 
 # Creating New Buttons for AlloyEditor
 
+[TOC levels=1-4]
+
 AlloyEditor is built on `React.js` and uses `jsx` to render each button in the 
 editor. To add a new button to the AlloyEditor, you must create an OSGi bundle 
 that contains three key pieces:

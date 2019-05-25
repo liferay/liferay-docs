@@ -4,6 +4,8 @@ header-id: embedding-related-resources
 
 # Embedding Related Resources
 
+[TOC levels=1-4]
+
 [The tutorial on related resources](/docs/7-1/tutorials/-/knowledge_base/t/navigating-to-a-related-resource) 
 shows you how to request a resource and identify related resources in the 
 response. Getting a related resource, however, requires that you send another

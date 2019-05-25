@@ -4,6 +4,8 @@ header-id: overriding-mvcrendercommand
 
 # Overriding MVCRenderCommands
 
+[TOC levels=1-4]
+
 You can override [`MVCRenderCommand`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCRenderCommand.html)
 for any portlet that uses Liferay's MVC framework and publishes an
 `MVCRenderCommand` component.

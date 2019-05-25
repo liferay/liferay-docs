@@ -4,6 +4,8 @@ header-id: get-started-invoke-a-service
 
 # Get Started: Invoke a Service
 
+[TOC levels=1-4]
+
 Once you identify the resource you want via the 
 [API's root entry point](/docs/7-1/tutorials/-/knowledge_base/t/get-started-discover-the-api), 
 you can access that resource's URL. Suppose you want to manage organizations. If

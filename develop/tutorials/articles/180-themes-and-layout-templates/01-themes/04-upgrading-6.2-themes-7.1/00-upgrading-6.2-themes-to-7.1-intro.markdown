@@ -4,6 +4,8 @@ header-id: upgrading-6-2-themes-to-7-1
 
 # Upgrading Your Theme from Liferay Portal 6.2 to 7.1
 
+[TOC levels=1-4]
+
 This section guides you through the process of upgrading your 6.2 theme to run
 on @product-ver@. While you're at it, you should leverage theme improvements,
 including support for Sass, Bootstrap 4 and Lexicon 2.0. 

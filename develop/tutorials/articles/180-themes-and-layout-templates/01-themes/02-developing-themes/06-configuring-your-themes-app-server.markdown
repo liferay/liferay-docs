@@ -4,6 +4,8 @@ header-id: configuring-your-themes-app-server
 
 # Configuring Your Theme's App Server
 
+[TOC levels=1-4]
+
 When your theme was first created with the 
 [Liferay Theme Generator](/docs/7-1/tutorials/-/knowledge_base/t/creating-themes), 
 you had to specify the app server's location. This was done with the `gulp init` 

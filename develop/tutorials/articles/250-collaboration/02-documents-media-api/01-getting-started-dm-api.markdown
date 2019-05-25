@@ -4,6 +4,8 @@ header-id: getting-started-with-the-documents-and-media-api
 
 # Getting Started with the Documents and Media API
 
+[TOC levels=1-4]
+
 Before you start using the Documents and Media API, you must learn these things: 
 
 -   [**Key Interfaces:**](#key-interfaces) 

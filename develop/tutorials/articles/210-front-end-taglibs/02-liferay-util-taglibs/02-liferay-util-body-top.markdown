@@ -4,6 +4,8 @@ header-id: using-liferay-util-body-top
 
 # Using Liferay Util Body Top
 
+[TOC levels=1-4]
+
 The body top tag is not a self-closing tag. The content placed between the 
 opening and closing of this tag is moved to the top of the `body` tag. When 
 something is passed using this taglib, the 

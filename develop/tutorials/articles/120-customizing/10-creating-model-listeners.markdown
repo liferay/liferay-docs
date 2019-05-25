@@ -4,6 +4,8 @@ header-id: model-listeners
 
 # Creating Model Listeners
 
+[TOC levels=1-4]
+
 Model Listeners implement the
 [`ModelListener` interface](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/model/ModelListener.html).
 They are used to listen for persistence events on models and do something in

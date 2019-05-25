@@ -4,6 +4,8 @@ header-id: updating-files
 
 # Updating Files
 
+[TOC levels=1-4]
+
 Updating a file is a bit more complicated than 
 [creating one](/docs/7-1/tutorials/-/knowledge_base/t/creating-files). 
 This is due to the way the update operation handles a file's metadata and 

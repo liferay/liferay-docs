@@ -4,6 +4,8 @@ header-id: using-osgi-services-from-ext-plugins
 
 # Using OSGi Services from EXT Plugins
 
+[TOC levels=1-4]
+
 [`ServiceTrackers`](/docs/7-1/tutorials/-/knowledge_base/t/service-trackers)
 are the best way for Ext plugins to access OSGi services. They account for the
 possibility of OSGi services coming and going. 

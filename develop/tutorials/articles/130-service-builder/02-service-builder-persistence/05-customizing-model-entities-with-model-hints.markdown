@@ -4,6 +4,8 @@ header-id: customizing-model-entities-with-model-hints
 
 # Customizing Model Entities With Model Hints
 
+[TOC levels=1-4]
+
 Once you've used Service Builder to define model entities, you may want to
 further refine how users enter that data. For example, model hints can define a
 calendar field where only future dates should be selectable. Model hints provide

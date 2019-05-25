@@ -4,6 +4,8 @@ header-id: converting-strutsactionwrappers-to-mvccommands
 
 # Converting StrutsAction Wrappers to MVCCommands
 
+[TOC levels=1-4]
+
 In Liferay Portal 6.1 and 6.2, developers could customize the Portal and Portlet
 Struts Actions using a Hook and `StrutsAction` wrapper. For example, the
 `liferay-hook.xml` file for a hook that overrode the login portlet's login

@@ -4,6 +4,8 @@ header-id: creating-and-bundling-javascript-portlets-with-javascript-tooling
 
 # Creating and Bundling JavaScript Widgets with JavaScript Tooling
 
+[TOC levels=1-4]
+
 The Liferay JS Generator generates JavaScript widgets for @product@. It is 
 just one of Liferay JS Bundle Toolkit's 
 [tools](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages). 

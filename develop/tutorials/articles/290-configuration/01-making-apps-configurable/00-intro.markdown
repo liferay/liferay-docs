@@ -4,6 +4,8 @@ header-id: making-applications-configurable
 
 # Making Applications Configurable
 
+[TOC levels=1-4]
+
 A configurable application allows a user with appropriate permissions to change
 certain aspects of the application, within bounds set by the developer.
 Liferay's configuration framework simplifies the task by auto-generating a UI if

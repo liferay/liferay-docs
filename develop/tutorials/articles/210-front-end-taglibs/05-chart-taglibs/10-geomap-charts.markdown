@@ -4,6 +4,8 @@ header-id: geomap-charts
 
 # Geomap Charts
 
+[TOC levels=1-4]
+
 A Geomap Chart lets you visualize data based on geography, given a specified 
 color range---a lighter color representing a lower rank and a darker a higher 
 rank usually. The default configuration comes from the Clay charts 

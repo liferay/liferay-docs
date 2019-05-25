@@ -4,6 +4,8 @@ header-id: using-the-liferay-ui-taglib-in-your-portlets
 
 # Using the Liferay UI Taglib
 
+[TOC levels=1-4]
+
 The Liferay UI tag library provides tags that implement commonly used UI 
 components. These tags make your markup consistent, responsive, and accessible. 
 

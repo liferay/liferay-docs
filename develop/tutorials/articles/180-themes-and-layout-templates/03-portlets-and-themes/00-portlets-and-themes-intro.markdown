@@ -4,6 +4,8 @@ header-id: portlets-and-themes-intro
 
 # Portlets and Themes
 
+[TOC levels=1-4]
+
 The default theme sets the basic look and feel for all your portlets, and,
 through Portlet Decorators, gives you a way to fine-tune the look of individual
 portlets with the click of a mouse. But you aren't limited to defaults. The

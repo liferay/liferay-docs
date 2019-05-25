@@ -4,6 +4,8 @@ header-id: item-selector
 
 # Item Selector
 
+[TOC levels=1-4]
+
 An *Item Selector* is a UI component for selecting entities in a user-friendly
 manner. Many Liferay apps use Item Selectors to let users select items such as
 images, videos, audio files, documents, and pages. For example, the Documents

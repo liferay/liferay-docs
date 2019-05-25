@@ -4,6 +4,8 @@ header-id: applying-clay-design-patterns-to-6-2-themes
 
 # Applying Clay Design Patterns
 
+[TOC levels=1-4]
+
 @product-ver@ uses 
 [Clay](https://liferay.github.io/clay/), 
 a web implementation of Liferay's 

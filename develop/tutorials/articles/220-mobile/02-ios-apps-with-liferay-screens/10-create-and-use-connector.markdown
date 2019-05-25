@@ -4,6 +4,8 @@ header-id: create-and-use-a-connector-with-your-screenlet
 
 # Create and Use a Connector with Your Screenlet
 
+[TOC levels=1-4]
+
 In Liferay Screens, a Connector is a class that interacts asynchronously with 
 local and remote data sources and Liferay instances. Recall that callbacks also 
 make asynchronous service calls. So why bother with a Connector? Connectors 

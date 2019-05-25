@@ -4,6 +4,8 @@ header-id: dynamic-includes
 
 # Dynamic Includes
 
+[TOC levels=1-4]
+
 Dynamic includes expose extension points in JSPs for injecting additional 
 HTML, adding resources, modifying editors, and more. Several dynamic includes
 are available. Once you know the dynamic include's key, you can

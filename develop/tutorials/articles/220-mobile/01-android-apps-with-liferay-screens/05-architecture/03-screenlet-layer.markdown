@@ -4,6 +4,8 @@ header-id: screenlet-layer
 
 # Screenlet Layer
 
+[TOC levels=1-4]
+
 The Screenlet layer contains the Screenlets available in Liferay Screens for
 Android. The following diagram uses Screenlet classes prefixed with
 *MyScreenlet* to show the Screenlet layer's relationship with the core, View,

@@ -4,6 +4,8 @@ header-id: line-charts
 
 # Line Charts
 
+[TOC levels=1-4]
+
 Line charts contain multiple sets of data. A Line chart displays the data 
 linearly. Each data series (created with the `addColumns()` method) is defined 
 with a new instance of the 

@@ -4,6 +4,8 @@ header-id: generating-a-jsf-application
 
 # Generating a JSF Project from the Command Line
 
+[TOC levels=1-4]
+
 You can generate a Liferay Faces application without having to create your own
 folder structure, descriptor files, and such manually. If you really want to do
 that manually, you can examine the structure of a JSF application and create one

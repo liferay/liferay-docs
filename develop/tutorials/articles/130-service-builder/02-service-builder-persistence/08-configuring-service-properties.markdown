@@ -4,6 +4,8 @@ header-id: configuring-service-properties
 
 # Configuring service.properties
 
+[TOC levels=1-4]
+
 This tutorial explains how to use and edit the `service.properties` file. It
 also tells you about the properties and how to set them to fit your needs.
 

@@ -4,6 +4,8 @@ header-id: screen-navigation-framework
 
 # Screen Navigation Framework
 
+[TOC levels=1-4]
+
 The Screen Navigation Framework is for customizing and extending application
 UIs. You can use it to make Liferay's applications your own and to make your
 applications customizable by others. 

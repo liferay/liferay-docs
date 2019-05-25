@@ -4,6 +4,8 @@ header-id: creating-the-screenlet-class
 
 # Creating the Screenlet Class
 
+[TOC levels=1-4]
+
 The Screenlet class is the central hub of a Screenlet. It contains attributes 
 for configuring the Screenlet's behavior, a reference to the Screenlet's View, 
 methods for invoking Interactor operations, and more. When using a Screenlet, 

@@ -4,6 +4,8 @@ header-id: developing-themes
 
 # Developing Themes
 
+[TOC levels=1-4]
+
 Theme projects created using the 
 [Liferay Theme Generator](/docs/7-1/tutorials/-/knowledge_base/t/creating-themes) 
 have access to several 

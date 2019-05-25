@@ -4,6 +4,8 @@ header-id: compiling-and-building-themes-with-ant-gradle-and-maven
 
 # Compiling and Building Themes with Ant, Gradle, and Maven
 
+[TOC levels=1-4]
+
 Liferay's Theme Builder gives developers who aren't using
 [Liferay's Theme Generator](/docs/7-1/tutorials/-/knowledge_base/t/creating-themes)
 (e.g., Gradle or Maven) a way to compile and build a theme WAR file. To use the

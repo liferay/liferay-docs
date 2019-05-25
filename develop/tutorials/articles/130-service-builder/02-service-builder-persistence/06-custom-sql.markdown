@@ -4,6 +4,8 @@ header-id: custom-sql
 
 # Custom SQL
 
+[TOC levels=1-4]
+
 Service Builder creates finder methods that retrieve entities by their
 attributes: their column values. When you add a column as a parameter for the
 finder in your `service.xml` file and run Service Builder, it generates the

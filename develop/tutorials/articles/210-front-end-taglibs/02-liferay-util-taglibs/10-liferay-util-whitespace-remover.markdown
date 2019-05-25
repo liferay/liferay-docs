@@ -4,6 +4,8 @@ header-id: using-liferay-util-whitespace-remover
 
 # Using Liferay Util Whitespace Remover
 
+[TOC levels=1-4]
+
 The whitespace remover tag removes line breaks and tabs from code blocks 
 included between the opening and closing of the tag. Below is an example 
 configuration for the `<liferay-util:whitespace-remover>` tag:

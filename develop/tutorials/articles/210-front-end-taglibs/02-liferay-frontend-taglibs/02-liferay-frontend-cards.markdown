@@ -4,6 +4,8 @@ header-id: liferay-frontend-cards
 
 # Liferay Front-end Cards
 
+[TOC levels=1-4]
+
 If you have data you want to compare that's heavy on image usage, cards are the
 component for the job. Cards visually represent data in a minimal and compact
 format. Use them for images, document libraries, user profiles, and more. There

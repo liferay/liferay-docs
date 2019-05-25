@@ -4,6 +4,8 @@ header-id: create-or-update-the-event-class
 
 # Create or Update the Event Class
 
+[TOC levels=1-4]
+
 Recall from the basic Screenlet creation tutorial that an event class is 
 required to handle communication between Screenlet components. Also recall that 
 many Screenlets can use the event class included with Screens, `BasicEvent`, as 

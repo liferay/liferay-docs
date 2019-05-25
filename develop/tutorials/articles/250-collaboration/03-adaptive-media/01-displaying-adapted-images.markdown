@@ -4,6 +4,8 @@ header-id: displaying-adapted-images-in-your-app
 
 # Displaying Adapted Images in Your App
 
+[TOC levels=1-4]
+
 To display 
 [adapted images](/docs/7-1/user/-/knowledge_base/u/adapting-your-media-across-multiple-devices) 
 in your apps, Adaptive Media offers a convenient tag library in 

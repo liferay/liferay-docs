@@ -4,6 +4,8 @@ header-id: overriding-mvcactioncommand
 
 # Overriding MVCActionCommands
 
+[TOC levels=1-4]
+
 In case you want add to a Liferay MVC action command, you can. The OSGi
 framework lets you override MVC action commands if you follow the instructions
 for [adding logic to MVC commands](/docs/7-1/tutorials/-/knowledge_base/t/adding-logic-to-mvc-commands).

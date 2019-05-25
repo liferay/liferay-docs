@@ -4,6 +4,8 @@ header-id: implementing-update-and-delete-methods
 
 # Implementing update and delete Methods
 
+[TOC levels=1-4]
+
 After you've implementing an
 [`add*` method](/docs/7-1/tutorials/-/knowledge_base/t/implementing-an-add-method) for 
 creating service entities, you'll want to create

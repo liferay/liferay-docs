@@ -4,6 +4,8 @@ header-id: using-angular-js-in-your-portlets
 
 # Using Angular JS in Your Portlets
 
+[TOC levels=1-4]
+
 You can use the 
 [npm Angular portlet template](/docs/7-1/reference/-/knowledge_base/r/npm-angular-portlet-template) 
 to automate much of the required configuration for you, or create the module

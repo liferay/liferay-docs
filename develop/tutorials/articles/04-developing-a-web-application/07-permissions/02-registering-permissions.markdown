@@ -4,6 +4,8 @@ header-id: registering-your-defined-permissions
 
 # Registering Your Defined Permissions
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Implementing Permissions<br>Step 2 of 4</p>
 </div>

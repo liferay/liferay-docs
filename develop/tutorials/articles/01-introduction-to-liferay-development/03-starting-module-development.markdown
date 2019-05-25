@@ -4,6 +4,8 @@ header-id: starting-module-development
 
 # Starting Module Development
 
+[TOC levels=1-4]
+
 Developing modules for @product@ requires:
 
 -   **Creating a folder structure**: A good folder structure facilitates

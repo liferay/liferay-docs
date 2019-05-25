@@ -4,6 +4,8 @@ header-id: supporting-offline-mode
 
 # Supporting Offline Mode
 
+[TOC levels=1-4]
+
 Offline mode lets Screenlets function without a network connection. For offline 
 mode to work with your Screenlet, you must manually add support for it. 
 Fortunately, Liferay Screens 2.0 introduced a simpler way of implementing 

@@ -4,6 +4,8 @@ header-id: invoking-services-from-service-builder-code
 
 # Invoking Services from Service Builder Code
 
+[TOC levels=1-4]
+
 All the services created within a Service Builder application are wired using an
 internal Spring Application Context. This uses AOP proxies to adapt the services
 for transactions, indexing, and security. In a module's `module-spring.xml`

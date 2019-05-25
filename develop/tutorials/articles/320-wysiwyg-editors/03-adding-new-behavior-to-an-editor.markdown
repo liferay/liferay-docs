@@ -4,6 +4,8 @@ header-id: adding-new-behavior-to-an-editor
 
 # Adding New Behavior to an Editor
 
+[TOC levels=1-4]
+
 You can select from several different WYSIWYG editors for your users, and each
 is configurable and has its strengths and weaknesses. Configuration alone,
 however, doesn't always expose the features you want. In these cases, you can

@@ -4,6 +4,8 @@ header-id: creating-portlet-keys
 
 # Creating Portlet Keys
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Refactoring the Prototype<br>Step 3 of 6</p>
 </div>

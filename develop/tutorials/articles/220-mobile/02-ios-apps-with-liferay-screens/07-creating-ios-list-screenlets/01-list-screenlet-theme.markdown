@@ -4,6 +4,8 @@ header-id: creating-the-ios-list-screenlets-theme
 
 # Creating the iOS List Screenlet's Theme
 
+[TOC levels=1-4]
+
 Recall that each Screenlet needs a Theme to serve as its UI. A Theme needs an 
 XIB file to define the UI's components and layout. Since a list Screenlet 
 displays a list of entities, its XIB file must contain a Table View. Use these 

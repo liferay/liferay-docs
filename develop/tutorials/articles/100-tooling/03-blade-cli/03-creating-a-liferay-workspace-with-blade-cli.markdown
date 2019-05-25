@@ -4,6 +4,8 @@ header-id: creating-a-liferay-workspace-with-blade-cli
 
 # Creating a Liferay Workspace with Blade CLI
 
+[TOC levels=1-4]
+
 In this tutorial, you'll learn how to generate a Liferay Workspace using Blade
 CLI. The Blade CLI tool you installed in the
 [Installing Blade CLI](/docs/7-1/tutorials/-/knowledge_base/t/installing-blade-cli)

@@ -4,6 +4,8 @@ header-id: getting-collections
 
 # Getting Collections
 
+[TOC levels=1-4]
+
 Requests for collection resources are the same as those for non-collection 
 resources. For example, an 
 [authenticated request](/docs/7-1/tutorials/-/knowledge_base/t/making-authenticated-requests)

@@ -4,6 +4,8 @@ header-id: using-liferay-util-html-bottom
 
 # Using Liferay Util HTML Bottom
 
+[TOC levels=1-4]
+
 The HTML bottom tag is not a self-closing tag. Content placed between the 
 opening and closing of this tag is moved to the bottom of the `<html>` tag. When 
 something is passed using this taglib, the 

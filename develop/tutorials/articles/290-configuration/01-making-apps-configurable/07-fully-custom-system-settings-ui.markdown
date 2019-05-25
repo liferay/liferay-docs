@@ -4,6 +4,8 @@ header-id: configuration-form-renderer
 
 # Configuration Form Renderer
 
+[TOC levels=1-4]
+
 There are various approaches to customizing the auto-generated System Settings
 UI for your configurable application. To replace an application's auto-generated
 configuration screen with a form built from scratch, you follow these steps:

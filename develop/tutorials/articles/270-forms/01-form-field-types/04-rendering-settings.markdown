@@ -4,6 +4,8 @@ header-id: rendering-form-field-settings
 
 # Rendering Form Field Settings
 
+[TOC levels=1-4]
+
 Once the settings are added to the class backing the field's settings, make sure
 the `*Renderer` can get the settings and update the front-end code.
 

@@ -4,6 +4,8 @@ header-id: consuming-web-services
 
 # Consuming Web Services
 
+[TOC levels=1-4]
+
 Client apps can't work without web services to consume. Since @product@'s web
 services are implemented via hypermedia REST APIs, developers can discover and
 traverse the APIs using the hypermedia URLs that the server returns in response

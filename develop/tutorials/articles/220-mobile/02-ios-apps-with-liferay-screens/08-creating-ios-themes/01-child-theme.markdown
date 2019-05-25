@@ -4,6 +4,8 @@ header-id: creating-an-ios-child-theme
 
 # Creating an iOS Child Theme
 
+[TOC levels=1-4]
+
 In a Child Theme, you leverage a parent Theme's behavior and UI components, but
 you can modify the appearance and position of the UI components. Note that you
 can't add or remove any components and the parent Theme must be a Full Theme.

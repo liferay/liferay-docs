@@ -4,6 +4,8 @@ header-id: creating-the-ios-list-screenlets-interactor
 
 # Creating the iOS List Screenlet's Interactor
 
+[TOC levels=1-4]
+
 Recall that Interactors implement your Screenlet's actions. In list Screenlets, 
 loading entities is usually the only action a user can take. The Interactor 
 class of a list Screenlet that implements fluent pagination must extend the 

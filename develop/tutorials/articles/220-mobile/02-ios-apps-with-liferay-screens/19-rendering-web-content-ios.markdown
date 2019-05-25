@@ -4,6 +4,8 @@ header-id: rendering-web-content-in-your-ios-app
 
 # Rendering Web Content in Your iOS App
 
+[TOC levels=1-4]
+
 Liferay Screens provides several ways to render 
 [web content](/docs/7-1/user/-/knowledge_base/u/creating-web-content) 
 in your app. For historical reasons, web content articles are `JournalArticle` 

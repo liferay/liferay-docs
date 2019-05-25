@@ -4,6 +4,8 @@ header-id: deleting-files
 
 # Deleting Files
 
+[TOC levels=1-4]
+
 There are two methods you can use to delete files: 
 
 -   [`deleteFileEntry(long fileEntryId)`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html#deleteFileEntry-long-)

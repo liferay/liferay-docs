@@ -4,6 +4,8 @@ header-id: clay-form-elements
 
 # Clay Form Elements
 
+[TOC levels=1-4]
+
 The Liferay Clay tag library provides several tags for creating form elements. 
 An example of each tag is shown below. 
 

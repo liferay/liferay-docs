@@ -4,6 +4,8 @@ header-id: converting-your-applications-portlet-classes-and-ui
 
 # Converting Your Application's Portlet Classes and UI
 
+[TOC levels=1-4]
+
 The first thing you'll do is create your application's root folder and the
 folder structure for its *web* client module. This module holds portlet classes
 and the web UI. Before you start creating a skeleton structure for the modules,

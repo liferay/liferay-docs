@@ -4,6 +4,8 @@ header-id: api-vocabulary
 
 # API Vocabulary
 
+[TOC levels=1-4]
+
 When defining an API, the developer must decide how to expose the representation
 of its resources. This determines its ease of use and how it can evolve.
 Traditionally, there are two approaches: 

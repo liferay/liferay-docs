@@ -4,6 +4,8 @@ header-id: defining-resources-for-a-jsf-application
 
 # Defining Resources for a JSF Application
 
+[TOC levels=1-4]
+
 If you look back at the Hello User portlet's structure, you'll notice two
 `resources` folders defined. Why are there two of these folders for one portlet?
 These two folders have distinct differences in how they're used and what should

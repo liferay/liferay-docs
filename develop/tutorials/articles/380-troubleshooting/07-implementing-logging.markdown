@@ -4,6 +4,8 @@ header-id: implementing-logging
 
 # Implementing Logging
 
+[TOC levels=1-4]
+
 @product-ver@ uses the Log4j logging framework, but it may be replaced in the
 future. It's a best practice to use [Simple Logging Facade for Java
 \(SLF4J\)](https://www.slf4j.org/) to log messages in your modules and

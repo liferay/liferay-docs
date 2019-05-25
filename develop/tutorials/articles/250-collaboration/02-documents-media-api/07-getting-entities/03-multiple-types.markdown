@@ -4,6 +4,8 @@ header-id: getting-multiple-entity-types
 
 # Getting Multiple Entity Types
 
+[TOC levels=1-4]
+
 There are also methods in the Documents and Media API that retrieve lists 
 containing several entity types. These methods use many of the same parameters 
 as those already described for retrieving files and folders. For example, 

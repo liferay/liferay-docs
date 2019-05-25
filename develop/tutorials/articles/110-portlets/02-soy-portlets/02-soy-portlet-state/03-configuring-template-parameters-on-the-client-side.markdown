@@ -4,6 +4,8 @@ header-id: configuring-soy-portlet-template-parameters-on-the-client-side
 
 # Configuring Soy Portlet Template Parameters on the Client Side
 
+[TOC levels=1-4]
+
 [Portlet template parameters](/docs/7-1/tutorials/-/knowledge_base/t/creating-a-soy-portlet#using-portlet-template-parameters-in-the-soy-template) 
 are set in the Soy Portlet's server-side code. MetalJS's `state` class provides 
 a 

@@ -4,6 +4,8 @@ header-id: file-checkout-and-checkin
 
 # File Check-out and Check-in
 
+[TOC levels=1-4]
+
 The Document Library lets users 
 [check out files](/docs/7-1/user/-/knowledge_base/u/checking-out-and-editing-files) 
 for editing. Only the user who checked out the file can edit it. This prevents 

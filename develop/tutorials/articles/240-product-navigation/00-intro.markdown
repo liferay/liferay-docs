@@ -4,6 +4,8 @@ header-id: product-navigation
 
 # Product Navigation
 
+[TOC levels=1-4]
+
 Liferay's product navigation consists of the main menus you use to customize,
 configure, and navigate the system. When you edit a page, switch to a different
 Site scope, access a User's credentials, etc., you're using the default

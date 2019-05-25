@@ -4,6 +4,8 @@ header-id: liferay-screens-for-xamarin-troubleshooting-and-faqs
 
 # Liferay Screens for Xamarin Troubleshooting and FAQs
 
+[TOC levels=1-4]
+
 Even though Liferay developed Liferay Screens for Xamarin with great care, you 
 may still run into some common issues. This tutorial lists tips and solutions 
 for these issues, as well as answers to common questions about Screens for 

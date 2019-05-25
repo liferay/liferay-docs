@@ -4,6 +4,8 @@ header-id: copying-folders
 
 # Copying Folders
 
+[TOC levels=1-4]
+
 The Documents and Media API lets you copy folders within a repository. You 
 can't, however, copy a folder between different repositories. Also note that 
 copying a folder also copies its contents. 

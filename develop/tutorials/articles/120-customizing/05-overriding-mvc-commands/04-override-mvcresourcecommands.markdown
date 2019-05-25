@@ -4,6 +4,8 @@ header-id: overriding-mvcresourcecommand
 
 # Overriding MVCResourceCommands
 
+[TOC levels=1-4]
+
 If you need to add functionality to a Liferay MVC resource command, you can. The
 Liferay MVC command framework supports customizing MVC resource commands. It
 follows the process for [adding logic to MVC commands](/docs/7-1/tutorials/-/knowledge_base/t/adding-logic-to-mvc-commands)

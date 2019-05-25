@@ -4,6 +4,8 @@ header-id: using-translation-features-in-your-portlet
 
 # Using Translation Features in Your Widget
 
+[TOC levels=1-4]
+
 By default, the Liferay JS Generator creates an empty configuration for 
 translation. The translate script instructs the user how to add new supported 
 locales or configure the credentials when it is run. The translate target reads 

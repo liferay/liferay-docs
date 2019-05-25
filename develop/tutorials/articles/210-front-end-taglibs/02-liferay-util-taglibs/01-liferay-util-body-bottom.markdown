@@ -4,6 +4,8 @@ header-id: using-liferay-util-body-bottom
 
 # Using Liferay Util Body Bottom
 
+[TOC levels=1-4]
+
 The body bottom tag is not a self-closing tag. It lets you add additional HTML 
 or scripts to the bottom of the `body` tag. content placed between the opening 
 and closing of this tag is passed to the 

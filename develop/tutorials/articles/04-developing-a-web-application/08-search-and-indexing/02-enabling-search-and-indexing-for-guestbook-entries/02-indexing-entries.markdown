@@ -4,6 +4,8 @@ header-id: indexing-entries
 
 # Indexing Entries
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Enabling Search and Indexing for Entries<br>Step 2 of 5</p>
 </div>

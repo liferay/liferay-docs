@@ -4,6 +4,8 @@ header-id: referencing-an-npm-modules-package
 
 # Referencing an npm Module's Package to Improve Code Maintenance
 
+[TOC levels=1-4]
+
 Once you've 
 [exposed your modules](/docs/7-1/tutorials/-/knowledge_base/t/preparing-your-javascript-files-for-esplus), 
 you can use them in your portlet via the `aui:script` tag's `require` attribute. 

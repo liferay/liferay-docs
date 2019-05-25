@@ -4,6 +4,8 @@ header-id: dynamic-query
 
 # Dynamic Query
 
+[TOC levels=1-4]
+
 Though you can use custom SQL queries with Service Builder to retrieve data
 from the database, sometimes it's more convenient to build queries dynamically
 at runtime. You can do this with Liferay's Dynamic Query API, which wraps

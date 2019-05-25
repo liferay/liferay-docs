@@ -4,6 +4,8 @@ header-id: jax-ws
 
 # JAX-WS
 
+[TOC levels=1-4]
+
 Liferay supports 
 [JAX-WS](https://en.wikipedia.org/wiki/Java_API_for_XML_Web_Services) 
 via the [Apache CXF](http://cxf.apache.org/) implementation. Apps can publish

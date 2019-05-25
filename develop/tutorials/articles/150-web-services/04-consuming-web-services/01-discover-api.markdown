@@ -4,6 +4,8 @@ header-id: get-started-discover-the-api
 
 # Get Started: Discover the API
 
+[TOC levels=1-4]
+
 To begin consuming web services, you must first know where they are (e.g.,
 a service catalog), what operations you can invoke, and how to invoke them.
 Because hypermedia REST APIs leverage

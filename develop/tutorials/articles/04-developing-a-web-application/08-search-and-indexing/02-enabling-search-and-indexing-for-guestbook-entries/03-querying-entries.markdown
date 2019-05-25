@@ -4,6 +4,8 @@ header-id: querying-for-entry-documents
 
 # Querying for Entry Documents
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Enabling Search and Indexing for Entries<br>Step 3 of 5</p>
 </div>

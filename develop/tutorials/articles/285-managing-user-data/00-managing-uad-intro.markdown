@@ -4,6 +4,8 @@ header-id: managing-user-associated-data-stored-by-custom-applications
 
 # Managing User-Associated Data Stored by Custom Applications
 
+[TOC levels=1-4]
+
 @product-ver@ makes it possible for administrators to [delete or
 anonymize](/docs/7-1/user/-/knowledge_base/u/managing-user-data)
 User Associated Data (UAD), providing a useful tool for compliance with the EU's

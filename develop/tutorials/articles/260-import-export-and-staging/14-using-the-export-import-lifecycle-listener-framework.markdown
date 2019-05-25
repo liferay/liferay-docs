@@ -4,6 +4,8 @@ header-id: using-the-export-import-lifecycle-listener-framework
 
 # Using the Export/Import Lifecycle Listener Framework
 
+[TOC levels=1-4]
+
 The `ExportImportLifecycleListener` framework lets developers write code that
 listens for certain staging or export/import events during the publication
 process. The staging and export/import processes have many behind-the-scenes

@@ -4,6 +4,8 @@ header-id: forms-storage-adapters
 
 # Forms Storage Adapters
 
+[TOC levels=1-4]
+
 When a User adds a form record, the Forms API routes the processing of the
 request through the storage adapter API. The same is true for the other *CRUD*
 operations performed on form entries (read, update, and delete operations). The

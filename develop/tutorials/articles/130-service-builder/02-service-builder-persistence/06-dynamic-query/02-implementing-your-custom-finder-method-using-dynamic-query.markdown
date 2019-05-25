@@ -4,6 +4,8 @@ header-id: implementing-a-custom-finder-method-using-dynamic-query
 
 # Implementing a Custom Finder Method Using Dynamic Query
 
+[TOC levels=1-4]
+
 Once you've
 [defined your custom finder method](/docs/7-1/tutorials/-/knowledge_base/t/defining-a-custom-finder-method),
 you can use the Dynamic Query API to implement your query in it. Here's what you

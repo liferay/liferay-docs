@@ -4,6 +4,8 @@ header-id: making-liferay-and-custom-portlet-services-available-in-your-android-
 
 # Making Liferay and Custom Portlet Services Available in Your Android App
 
+[TOC levels=1-4]
+
 You must install the correct Mobile SDKs in your Android project to call the 
 remote services you need in your app. You should first install Liferay's 
 prebuilt Mobile SDK. This is required for any app that leverages Liferay. To 

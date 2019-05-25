@@ -4,6 +4,8 @@ header-id: creating-layouts-inside-custom-portlets
 
 # Creating Layouts inside Custom Portlets
 
+[TOC levels=1-4]
+
 Layout templates specify how your portlets and content are organized on your 
 site pages. What if, instead, you want to organize your portlet's content? 
 `<aui>` tags let you create layouts using Bootstrap within your 

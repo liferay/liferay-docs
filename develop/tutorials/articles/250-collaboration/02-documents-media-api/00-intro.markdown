@@ -4,6 +4,8 @@ header-id: documents-and-media-api
 
 # Documents and Media API
 
+[TOC levels=1-4]
+
 @product@'s Documents and Media library stores uploaded files so users can use,
 manage, and share them. For example, users can embed files in content, organize
 them in folders, edit and collaborate on them with other users, and more. See

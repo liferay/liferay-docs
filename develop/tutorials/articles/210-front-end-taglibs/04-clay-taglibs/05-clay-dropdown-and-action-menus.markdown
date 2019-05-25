@@ -4,6 +4,8 @@ header-id: clay-dropdown-menus-and-action-menus
 
 # Clay Dropdown Menus and Action Menus
 
+[TOC levels=1-4]
+
 You can add dropdown menus to your app via the `clay:dropdown-menu` and 
 `clay:actions-menu` taglibs. The Clay taglibs provide several menu variations 
 for you to choose. Both taglibs with several examples are shown below.

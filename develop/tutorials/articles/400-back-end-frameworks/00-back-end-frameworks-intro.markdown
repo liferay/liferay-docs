@@ -4,6 +4,8 @@ header-id: back-end-frameworks
 
 # Back-end Frameworks
 
+[TOC levels=1-4]
+
 Back-end frameworks are analogous to supporting actors and actresses in show
 business. They fill out the stories in films we know and love. As actors bring
 richness and life to their films, Liferay's powerful back-end frameworks bring

@@ -4,6 +4,8 @@ header-id: creating-an-ios-full-theme
 
 # Creating an iOS Full Theme
 
+[TOC levels=1-4]
+
 A Full Theme implements unique behavior and appearance for a Screenlet, without
 using a parent Theme. Its View class must inherit Screens's
 [`BaseScreenletView`](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/BaseScreenletView.swift)

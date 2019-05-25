@@ -4,6 +4,8 @@ header-id: localizing-your-portlet
 
 # Localizing Your Widget
 
+[TOC levels=1-4]
+
 Follow the steps below to learn how to localize your widget:
 
 1.  If you didn't choose to use localization when you generated the bundle, 

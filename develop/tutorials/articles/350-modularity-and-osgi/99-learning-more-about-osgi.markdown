@@ -4,6 +4,8 @@ header-id: learning-more-about-osgi
 
 # Learning More about OSGi
 
+[TOC levels=1-4]
+
 There is much more to learn about developing apps using OSGi. Several resources
 are listed below and many more abound. To make the best of your time, however,
 avoid OSGi service articles that explain techniques that are older and more

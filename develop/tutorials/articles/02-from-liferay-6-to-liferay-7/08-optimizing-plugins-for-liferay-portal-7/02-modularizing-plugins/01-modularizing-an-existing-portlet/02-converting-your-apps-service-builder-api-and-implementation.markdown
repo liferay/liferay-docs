@@ -4,6 +4,8 @@ header-id: converting-your-applications-service-builder-api-and-implementation
 
 # Converting Your Application's Service Builder API and Implementation
 
+[TOC levels=1-4]
+
 In this tutorial, you'll learn about converting a Liferay Portal 6 Service Builder
 application to a @product-ver@ style application. In the
 [previous tutorial](/docs/7-1/tutorials/-/knowledge_base/t/converting-your-applications-portlet-classes-and-ui),

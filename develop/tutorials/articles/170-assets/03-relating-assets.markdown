@@ -4,6 +4,8 @@ header-id: relating-assets
 
 # Relating Assets
 
+[TOC levels=1-4]
+
 Relating assets connects individual pieces of content across your site or
 portal. This helps users discover related content, particularly when there's an
 abundance of other available content. For example, assets related to a web

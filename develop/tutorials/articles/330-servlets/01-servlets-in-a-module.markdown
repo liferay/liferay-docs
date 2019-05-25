@@ -4,6 +4,8 @@ header-id: servlets-in-a-module
 
 # Servlets in a Module
 
+[TOC levels=1-4]
+
 You can use servlets or [JAX-RS](/docs/7-1/tutorials/-/knowledge_base/t/jax-rs)
 to provide a lightweight web integration or a web endpoint to a browser client.
 Servlets, rather than REST endpoints or portlets, let you control an

@@ -4,6 +4,8 @@ header-id: linking-to-another-page
 
 # Linking to Another Page
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Developing Your First Portlet<br>Step 4 of 8</p>
 </div>

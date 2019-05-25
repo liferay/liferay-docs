@@ -4,6 +4,8 @@ header-id: using-custom-cells-with-list-screenlets
 
 # Using Custom Cells with List Screenlets
 
+[TOC levels=1-4]
+
 In most list Screenlets, including those that come with Liferay Screens, the 
 Default Theme uses the default cells in 
 [iOS's `UITableView`](https://developer.apple.com/reference/uikit/uitableview) 

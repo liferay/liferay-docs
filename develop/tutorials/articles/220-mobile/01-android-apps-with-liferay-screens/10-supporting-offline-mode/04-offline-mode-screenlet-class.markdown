@@ -4,6 +4,8 @@ header-id: update-the-screenlet-class
 
 # Update the Screenlet Class
 
+[TOC levels=1-4]
+
 Updating the Screenlet class for offline mode is straightforward. In the 
 Screenlet class's `onUserAction` method, you'll change the call to the 
 Interactor's `start` method so that it takes only an event as an argument. 

@@ -4,6 +4,8 @@ header-id: creating-remote-services
 
 # Creating Remote Services
 
+[TOC levels=1-4]
+
 Many default @product@ services are published as JSON and SOAP web services. If
 you run the portal locally on port 8080, visit this URL to browse the default
 JSON web services:

@@ -4,6 +4,8 @@ header-id: creating-the-ios-list-screenlets-connector
 
 # Creating the iOS List Screenlet's Connector
 
+[TOC levels=1-4]
+
 Recall that Connectors make a server call. To support pagination, a List 
 Screenlet's Connector class must extend the 
 [`PaginationLiferayConnector` class](https://github.com/liferay/liferay-screens/blob/master/ios/Framework/Core/Base/BaseListScreenlet/PaginationLiferayConnector.swift). 

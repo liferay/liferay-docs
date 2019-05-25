@@ -4,6 +4,8 @@ header-id: improved-developer-tooling-liferay-workspace-maven-plugins-and-more
 
 # Improved Developer Tooling: Liferay Workspace, Maven Plugins and More
 
+[TOC levels=1-4]
+
 Creating applications is fun when you have the right tools. Here are some key
 ingredients:
 

@@ -4,6 +4,8 @@ header-id: adding-custom-panel-apps
 
 # Adding Custom Panel Apps
 
+[TOC levels=1-4]
+
 After you have created a Category, create a Panel app to go in it:
 
 1.  Create an OSGi module using your favorite third party tool, or use

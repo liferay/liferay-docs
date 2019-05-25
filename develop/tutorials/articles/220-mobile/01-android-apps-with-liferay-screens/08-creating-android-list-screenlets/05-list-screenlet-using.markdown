@@ -4,6 +4,8 @@ header-id: using-the-list-screenlet
 
 # Using the List Screenlet
 
+[TOC levels=1-4]
+
 You can now use your new list Screenlet 
 [the same way you use any other Screenlet](/docs/7-1/tutorials/-/knowledge_base/t/using-screenlets-in-android-apps): 
 

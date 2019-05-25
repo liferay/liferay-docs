@@ -4,6 +4,8 @@ header-id: using-the-wab-generator
 
 # Using the WAB Generator
 
+[TOC levels=1-4]
+
 You can create applications for @product@ as Java EE-style Web Application
 ARchive (WAR) artifacts or as Java ARchive (JAR) OSGi bundle artifacts. Some
 portlet types, however, limit your flexibility. Portlets like Spring MVC and JSF

@@ -4,6 +4,8 @@ header-id: creating-configurable-styles-for-portlet-wrappers
 
 # Creating Configurable Styles for Portlet Wrappers
 
+[TOC levels=1-4]
+
 Portlet Decorators customize the style of an application's wrapper. If you 
 inspect the markup of your application when it's on a page you'll observe that 
 it is wrapped by two layers. Among other things, these layers provide some 

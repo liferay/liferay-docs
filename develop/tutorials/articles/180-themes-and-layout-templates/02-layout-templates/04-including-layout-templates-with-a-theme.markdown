@@ -4,6 +4,8 @@ header-id: including-layout-templates-with-a-theme
 
 # Including Layout Templates with a Theme
 
+[TOC levels=1-4]
+
 Although you can deploy a layout template by itself, you can also bundle it with 
 a theme. To include a layout template with a theme, follow these steps:
 

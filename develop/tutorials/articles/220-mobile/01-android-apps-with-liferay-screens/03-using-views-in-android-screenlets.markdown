@@ -4,6 +4,8 @@ header-id: using-views-in-android-screenlets
 
 # Using Views in Android Screenlets
 
+[TOC levels=1-4]
+
 You can use a Liferay Screens *View* to set a Screenlet's look and feel 
 independent of the Screenlet's core functionality. Liferay's Screenlets come 
 with several Views, and more are being developed by Liferay and the community. 

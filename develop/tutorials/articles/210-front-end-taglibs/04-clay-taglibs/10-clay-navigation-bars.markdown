@@ -4,6 +4,8 @@ header-id: clay-navigation-bars
 
 # Clay Navigation Bars
 
+[TOC levels=1-4]
+
 Similar to dropdown menus, navigation bars display a list of navigation items. 
 The key difference is navigation bars are displayed in a horizontal bar with all 
 navigation items visible at all times. The navigation bar also indicates the 

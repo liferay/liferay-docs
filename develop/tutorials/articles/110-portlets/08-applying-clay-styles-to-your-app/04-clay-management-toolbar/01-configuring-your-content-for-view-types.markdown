@@ -4,6 +4,8 @@ header-id: implementing-the-view-types
 
 # Implementing the View Types
 
+[TOC levels=1-4]
+
 The Management Toolbar has three predefined view types for your app's search 
 container results. Each style offers a slightly different look and feel. To 
 provide these view types in your app, you must make some updates to your search 

@@ -4,6 +4,8 @@ header-id: using-react-in-your-portlets
 
 # Using React in Your Portlets
 
+[TOC levels=1-4]
+
 You can use the 
 [npm React portlet template](/docs/7-1/reference/-/knowledge_base/r/npm-react-portlet-template) 
 to automate much of the required configuration for you or create the module

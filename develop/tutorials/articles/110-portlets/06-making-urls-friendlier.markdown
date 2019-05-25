@@ -4,6 +4,8 @@ header-id: making-urls-friendlier
 
 # Making URLs Friendlier
 
+[TOC levels=1-4]
+
 This is a story of two URLs who couldn't be more different. One was full of
 himself and always wanted to show everyone (users and SEO services alike) just
 how smart he was by openly displaying all the parameters he carried. He was

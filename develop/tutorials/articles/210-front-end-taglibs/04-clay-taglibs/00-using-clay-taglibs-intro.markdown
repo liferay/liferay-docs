@@ -4,6 +4,8 @@ header-id: using-the-clay-taglib-in-your-portlets
 
 # Using the Clay Taglib in Your portlets
 
+[TOC levels=1-4]
+
 The Liferay Clay tag library provides a set of tags for creating 
 [Clay](https://claycss.com/docs/clay/) 
 UI components in your app. 

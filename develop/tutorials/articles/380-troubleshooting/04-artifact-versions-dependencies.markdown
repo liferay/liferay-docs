@@ -4,6 +4,8 @@ header-id: identifying-liferay-artifact-versions-for-dependencies
 
 # Identifying Liferay Artifact Versions for Dependencies
 
+[TOC levels=1-4]
+
 When you're developing an application using Liferay APIs or tools---for example,
 you might create a Service Builder application or use Message Bus or Asset
 Framework---you must determine which versions of Liferay artifacts (modules,

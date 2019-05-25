@@ -4,6 +4,8 @@ header-id: creating-the-interactor-0
 
 # Creating the Interactor
 
+[TOC levels=1-4]
+
 Recall from 
 [the basic Screenlet creation tutorial](/docs/7-1/tutorials/-/knowledge_base/t/creating-the-interactor) 
 that Interactors retrieve and process a server call's results. Also recall that 

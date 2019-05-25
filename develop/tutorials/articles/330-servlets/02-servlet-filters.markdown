@@ -4,6 +4,8 @@ header-id: servlet-filters
 
 # Servlet Filters
 
+[TOC levels=1-4]
+
 Servlet filters can both pre-process requests as they arrive and post-process
 responses before they go to the client browser. They let you apply functionality
 to requests and responses for multiple servlets, without the servlets knowing.

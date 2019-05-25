@@ -4,6 +4,8 @@ header-id: creating-projects-with-blade-cli
 
 # Creating Projects with Blade CLI
 
+[TOC levels=1-4]
+
 When you use Blade CLI to create a project, your project's folder structure,
 build script (e.g., `build.gradle`), Java classes, and other resources (such as
 JSPs) are created based on the chosen template. In this tutorial, you'll learn

@@ -4,6 +4,8 @@ header-id: writing-controller-code
 
 # Writing Controller Code
 
+[TOC levels=1-4]
+
 In MVC, your controller receives requests from the front-end, and it pulls data
 from the back-end. It's a traffic director: it provides data to the right
 front-end view for display to the user, and it takes data the user entered in

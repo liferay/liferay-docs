@@ -4,6 +4,8 @@ header-id: deploying-projects-with-blade-cli
 
 # Deploying Projects with Blade CLI
 
+[TOC levels=1-4]
+
 Deploying projects to a Liferay server using Blade CLI is easy. To use
 the Blade `deploy` command, you must first have built a project to deploy. See
 the

@@ -4,6 +4,8 @@ header-id: architecture-of-offline-mode-in-liferay-screens
 
 # Architecture of Offline Mode in Liferay Screens
 
+[TOC levels=1-4]
+
 Mobile users may encounter difficulty getting or maintaining a network 
 connection at certain locations or times of day. Using offline mode with 
 Screenlets ensures that your app still functions in these situations. You should 

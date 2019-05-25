@@ -4,6 +4,8 @@ header-id: donut-charts
 
 # Donut Charts
 
+[TOC levels=1-4]
+
 Donut charts are percentage-based. A donut chart is similar to a pie chart, but 
 it has a hole in the center. Each data set must be defined as a new instance of 
 the 

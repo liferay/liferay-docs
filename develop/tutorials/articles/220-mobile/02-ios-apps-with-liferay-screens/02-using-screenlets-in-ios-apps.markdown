@@ -4,6 +4,8 @@ header-id: using-screenlets-in-ios-apps
 
 # Using Screenlets in iOS Apps
 
+[TOC levels=1-4]
+
 Once you've
 [prepared](/docs/7-1/tutorials/-/knowledge_base/t/preparing-ios-projects-for-liferay-screens)
 your iOS project to use Liferay Screens, you can use Screenlets in your app.

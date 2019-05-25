@@ -4,6 +4,8 @@ header-id: file-checkout
 
 # File Check-out
 
+[TOC levels=1-4]
+
 Here's what happens when you check out a file: 
 
 -   A private working copy of the file is created that only you and 

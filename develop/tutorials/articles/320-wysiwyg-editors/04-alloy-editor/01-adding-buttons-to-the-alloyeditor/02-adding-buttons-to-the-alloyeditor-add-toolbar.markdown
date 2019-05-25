@@ -4,6 +4,8 @@ header-id: adding-a-button-to-the-add-toolbar
 
 # Adding a Button to the Add Toolbar
 
+[TOC levels=1-4]
+
 The Add Toolbar appears in the AlloyEditor when your cursor is in the editor and
 you click the Add button: 
 

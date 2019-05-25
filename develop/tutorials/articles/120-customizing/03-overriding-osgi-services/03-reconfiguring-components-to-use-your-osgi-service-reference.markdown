@@ -4,6 +4,8 @@ header-id: reconfiguring-components-to-use-your-service
 
 # Reconfiguring Components to Use Your OSGi Service
 
+[TOC levels=1-4]
+
 In many cases, assigning your
 [custom service (service)](/docs/7-1/tutorials/-/knowledge_base/t/creating-a-custom-osgi-service)
 a higher ranking convinces components to unbind from their current service and

@@ -4,6 +4,8 @@ header-id: defining-portlets-in-a-sitemap
 
 # Defining Portlets in a Sitemap
 
+[TOC levels=1-4]
+
 You can embed portlets in a sitemap for the pages you define. You can embed them 
 with the default settings or provide portlet preferences for a more custom look 
 and feel. This tutorial covers both these options. 

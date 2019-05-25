@@ -4,6 +4,8 @@ header-id: upgrading-a-genericportlet
 
 # Upgrading a GenericPortlet
 
+[TOC levels=1-4]
+
 It's common to create portlets that extend `javax.portlet.GenericPortlet`. After
 all, `GenericPortlet` provides a default `javax.portlet.Portlet` interface
 implementation. Upgrading a `GenericPortlet` is straightforward and takes only

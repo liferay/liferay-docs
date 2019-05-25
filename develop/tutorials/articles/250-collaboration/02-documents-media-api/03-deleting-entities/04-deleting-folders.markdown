@@ -4,6 +4,8 @@ header-id: deleting-folders
 
 # Deleting Folders
 
+[TOC levels=1-4]
+
 Deleting folders is similar to 
 [deleting files](/docs/7-1/tutorials/-/knowledge_base/t/deleting-files). 
 There are two methods you can use to delete a folder. Click each method to see 

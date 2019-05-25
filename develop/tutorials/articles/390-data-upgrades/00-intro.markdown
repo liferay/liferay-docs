@@ -4,6 +4,8 @@ header-id: data-upgrades
 
 # Data Upgrades
 
+[TOC levels=1-4]
+
 The development process doesn't end when you first release your application.
 Through your own planning, feature requests, and bug reports, developers improve
 their applications on a regular basis. 

@@ -4,6 +4,8 @@ header-id: implementing-a-guestbook-asset-renderer
 
 # Implementing a Guestbook Asset Renderer
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Implementing Asset Renderers<br>Step 1 of 2</p>
 </div>

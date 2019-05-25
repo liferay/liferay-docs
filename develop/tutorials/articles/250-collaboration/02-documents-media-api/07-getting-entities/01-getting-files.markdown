@@ -4,6 +4,8 @@ header-id: getting-files
 
 # Getting Files
 
+[TOC levels=1-4]
+
 Getting files is one of the most common tasks you'll perform with the Documents 
 and Media API. There are two main method families for getting files: 
 

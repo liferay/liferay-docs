@@ -4,6 +4,8 @@ header-id: creating-projects-with-intellij-idea
 
 # Creating Projects with IntelliJ IDEA
 
+[TOC levels=1-4]
+
 IntelliJ IDEA provides a New Liferay Modules wizard to create a variety of
 different module projects. You can also use the same wizard to create theme
 projects, WAR-style projects, and more. Before beginning, ensure you've

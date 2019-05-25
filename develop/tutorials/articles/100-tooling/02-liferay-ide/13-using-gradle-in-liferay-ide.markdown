@@ -4,6 +4,8 @@ header-id: using-gradle-in-liferay-ide
 
 # Using Gradle in Liferay Dev Studio
 
+[TOC levels=1-4]
+
 [Gradle](http://gradle.org/) is a popular open source build automation system.
 You can take full advantage of Gradle in Liferay Dev Studio by utilizing
 [Buildship](https://projects.eclipse.org/releases/photon), which is a collection

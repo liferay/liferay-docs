@@ -4,6 +4,8 @@ header-id: customizing
 
 # Customizing
 
+[TOC levels=1-4]
+
 [Portlets](/docs/7-1/tutorials/-/knowledge_base/t/portlets) are the main
 application platform, and
 [themes](/docs/7-1/tutorials/-/knowledge_base/t/themes-and-layout-templates)

@@ -4,6 +4,8 @@ header-id: combination-charts
 
 # Combination Charts
 
+[TOC levels=1-4]
+
 Combination charts have minor differences from other charts. In a combination
 chart, you must define the representation type of each data set: `AREA`,
 `AREA_SPLINE`, `AREA_STEP`, `BAR`, `BUBBLE`, `DONUT`, `GAUGE`, `LINE`, `PIE`,

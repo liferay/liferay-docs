@@ -4,6 +4,8 @@ header-id: workflow
 
 # Workflow
 
+[TOC levels=1-4]
+
 Use the workflow framework to run assets through a business process that suit your
 organization's needs. Workflow processes are created using XML or via the handy
 [Kaleo Designer](https://customer.liferay.com/documentation/7.1/admin/-/official_documentation/portal/kaleo-designer)

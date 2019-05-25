@@ -4,6 +4,8 @@ header-id: packaging-ios-themes
 
 # Packaging iOS Themes
 
+[TOC levels=1-4]
+
 Once you've 
 [created a Theme](/docs/7-1/tutorials/-/knowledge_base/t/creating-ios-themes), 
 you can package it for 

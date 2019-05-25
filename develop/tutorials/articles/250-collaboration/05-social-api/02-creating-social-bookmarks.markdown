@@ -4,6 +4,8 @@ header-id: creating-social-bookmarks
 
 # Creating Social Bookmarks
 
+[TOC levels=1-4]
+
 [Applying social bookmarks](/docs/7-1/tutorials/-/knowledge_base/t/applying-social-bookmarks) 
 lets you link your app's content to the social networks of your choice. By 
 default, @product@ supports social bookmarks for Twitter, Facebook, LinkedIn, 

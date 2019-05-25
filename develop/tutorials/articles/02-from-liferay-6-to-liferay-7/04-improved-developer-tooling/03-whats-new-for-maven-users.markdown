@@ -4,6 +4,8 @@ header-id: whats-new-for-maven-users
 
 # What's New for Maven Users
 
+[TOC levels=1-4]
+
 Liferay Portal 7.0+ and Liferay DXP fully support Maven development and offers
 several new and improved features: 
 

@@ -4,6 +4,8 @@ header-id: creating-the-interactor
 
 # Creating the Interactor
 
+[TOC levels=1-4]
+
 A Screenlet's Interactor makes the service call to retrieve the data you need 
 from a Liferay instance. An Interactor is made up of several components: 
 

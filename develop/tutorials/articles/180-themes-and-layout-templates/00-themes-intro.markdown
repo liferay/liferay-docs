@@ -4,6 +4,8 @@ header-id: themes-and-layout-templates
 
 # Themes and Layout Templates
 
+[TOC levels=1-4]
+
 A Theme provides the overall look and feel for a site. 
 [Understanding the page layout](/docs/7-1/reference/-/knowledge_base/r/understanding-the-page-layout) 
 is crucial to targeting the correct markup for styling, organizing your

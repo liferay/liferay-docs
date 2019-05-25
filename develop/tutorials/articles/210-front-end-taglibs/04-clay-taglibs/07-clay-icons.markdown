@@ -4,6 +4,8 @@ header-id: clay-icons
 
 # Clay Icons
 
+[TOC levels=1-4]
+
 The Liferay Clay taglibs provide several icons that you can use in your apps. 
 Use the `clay:icon` tag and specify the icon with the `symbol` attribute:
 

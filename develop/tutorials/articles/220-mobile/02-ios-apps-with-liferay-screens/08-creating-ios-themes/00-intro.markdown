@@ -4,6 +4,8 @@ header-id: creating-ios-themes
 
 # Creating iOS Themes
 
+[TOC levels=1-4]
+
 By creating your own Themes, you can customize your mobile app's design and
 functionality. You can create them from scratch or use an existing Theme as a
 foundation. Themes include a View class for implementing Screenlet behavior and

@@ -4,6 +4,8 @@ header-id: optimizing-plugins-for-liferay-7
 
 # Optimizing Plugins for @product-ver@
 
+[TOC levels=1-4]
+
 Once you've
 [upgraded your plugin](/docs/7-1/tutorials/-/knowledge_base/t/upgrading-plugins-to-liferay-7), 
 you can optimize it to take advantage of all @product-ver@

@@ -4,6 +4,8 @@ header-id: creating-an-ios-extended-theme
 
 # Creating an iOS Extended Theme
 
+[TOC levels=1-4]
+
 An Extended Theme inherits another Theme's UI components and behavior, but lets
 you add to or alter it by extending the parent Theme's View class and
 creating a new XIB file. An Extended Theme's parent must be a Full Theme. The

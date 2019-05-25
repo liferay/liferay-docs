@@ -4,6 +4,8 @@ header-id: configuring-json-web-services
 
 # Configuring JSON Web Services
 
+[TOC levels=1-4]
+
 JSON web services are enabled in Liferay by default. If you must disable them,
 specify this portal property setting in a `portal-ext.properties` file: 
 

@@ -4,6 +4,8 @@ header-id: mvc-resource-command
 
 # MVC Resource Command
 
+[TOC levels=1-4]
+
 When using Liferay's MVC framework, you can create resource URLs in your JSPs to 
 retrieve images, XML, or any other kind of resource from a Liferay instance. The 
 resource URL then invokes the corresponding MVC resource command class 

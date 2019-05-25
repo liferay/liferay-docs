@@ -4,6 +4,8 @@ header-id: clay-labels-and-links
 
 # Clay Labels and Links
 
+[TOC levels=1-4]
+
 Liferay Clay taglibs provide tags for creating labels and links in your app. 
 This tutorial shows how to add both of these UI elements to your apps. 
 

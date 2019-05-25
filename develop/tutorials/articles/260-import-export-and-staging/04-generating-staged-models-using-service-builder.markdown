@@ -4,6 +4,8 @@ header-id: generating-staged-models-using-service-builder
 
 # Generating Staged Models Using Service Builder
 
+[TOC levels=1-4]
+
 A Staged model is an essential building block to implementing the Staging and
 Export/Import frameworks in your application. Instead of having to create staged
 models for your app manually, you can leverage

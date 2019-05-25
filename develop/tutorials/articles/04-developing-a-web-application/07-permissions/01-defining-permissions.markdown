@@ -4,6 +4,8 @@ header-id: defining-permissions
 
 # Defining Permissions
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Implementing Permissions<br>Step 1 of 4</p>
 </div>

@@ -4,6 +4,8 @@ header-id: creating-the-alloyeditor-buttons-osgi-bundle
 
 # Creating the AlloyEditor Button's OSGi Bundle
 
+[TOC levels=1-4]
+
 Follow these steps to create your OSGi bundle for your new button:
 
 1.  [Create an OSGi module](/docs/7-1/tutorials/-/knowledge_base/t/starting-module-development#creating-a-module) 

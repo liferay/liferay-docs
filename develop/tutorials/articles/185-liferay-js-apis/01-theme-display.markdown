@@ -4,6 +4,8 @@ header-id: liferay-themedisplay
 
 # Accessing ThemeDisplay Information
 
+[TOC levels=1-4]
+
 The `Liferay` global JavaScript Object exposes useful methods, objects, and
 properties, each containing a wealth of information, one of which is
 `ThemeDisplay`. If you have experience with Java development in @product@, you

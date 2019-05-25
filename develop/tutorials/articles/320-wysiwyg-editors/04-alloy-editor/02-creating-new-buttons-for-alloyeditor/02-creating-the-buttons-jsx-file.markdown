@@ -4,6 +4,8 @@ header-id: creating-the-alloyeditor-buttons-jsx-file
 
 # Creating the Button's JSX File
 
+[TOC levels=1-4]
+
 Follow these steps to create your button for AlloyEditor:
 
 1.  Create a `.jsx` file in your OSGi bundle's `resources\META-INF\resources\js` 

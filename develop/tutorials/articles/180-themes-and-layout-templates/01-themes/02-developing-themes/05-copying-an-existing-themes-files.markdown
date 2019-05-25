@@ -4,6 +4,8 @@ header-id: copying-an-existing-themes-files
 
 # Copying an Existing Theme's Files
 
+[TOC levels=1-4]
+
 If you want to jump start developing your theme, you can copy an 
 existing theme's files and build on top of them. The `gulp kickstart` task 
 automates this process for you. It copies another theme's css, images, js, and 

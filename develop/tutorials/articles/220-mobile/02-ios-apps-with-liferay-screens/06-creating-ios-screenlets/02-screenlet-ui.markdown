@@ -4,6 +4,8 @@ header-id: creating-the-ios-screenlets-ui
 
 # Creating the iOS Screenlet's UI
 
+[TOC levels=1-4]
+
 In Liferay Screens for iOS, a Screenlet's UI is called a Theme. Every Screenlet 
 must have at least one Theme. A Theme has the following components: 
 

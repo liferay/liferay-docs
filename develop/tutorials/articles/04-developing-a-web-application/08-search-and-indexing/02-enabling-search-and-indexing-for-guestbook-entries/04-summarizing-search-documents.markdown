@@ -4,6 +4,8 @@ header-id: generating-results-summaries-0
 
 # Generating Results Summaries
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Enabling Search and Indexing for Entries<br>Step 3 of 5</p>
 </div>

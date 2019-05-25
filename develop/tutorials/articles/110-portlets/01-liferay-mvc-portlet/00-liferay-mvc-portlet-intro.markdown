@@ -4,6 +4,8 @@ header-id: liferay-mvc-portlet
 
 # Liferay MVC Portlet
 
+[TOC levels=1-4]
+
 Web applications often follow the Model View Controller (MVC) pattern. But
 Liferay has developed a groundbreaking new pattern called the *Modal Veal
 Contractor* (MVC) pattern. Okay, that's not true: the framework is actually

@@ -4,6 +4,8 @@ header-id: intellij-idea
 
 # IntelliJ IDEA
 
+[TOC levels=1-4]
+
 The
 [Liferay IntelliJ plugin](https://plugins.jetbrains.com/plugin/10739-liferay-intellij-plugin)
 provides support for @product@ development in [IntelliJ

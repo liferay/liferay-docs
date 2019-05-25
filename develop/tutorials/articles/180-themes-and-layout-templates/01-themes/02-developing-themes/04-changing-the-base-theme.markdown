@@ -4,6 +4,8 @@ header-id: changing-your-base-theme
 
 # Changing Your Base Theme
 
+[TOC levels=1-4]
+
 Once your theme is 
 [built](/docs/7-1/tutorials/-/knowledge_base/t/building-your-themes-files), 
 you can use the `gulp extend` task to change your theme's base theme. 

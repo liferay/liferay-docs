@@ -4,6 +4,8 @@ header-id: creating-the-screenlet-class-0
 
 # Creating the Screenlet Class
 
+[TOC levels=1-4]
+
 Recall from 
 [the basic Screenlet creation tutorial](/docs/7-1/tutorials/-/knowledge_base/t/creating-the-screenlet-class) 
 that the Screenlet class serves as your Screenlet's focal point. It governs the 

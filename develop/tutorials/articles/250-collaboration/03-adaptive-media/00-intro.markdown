@@ -4,6 +4,8 @@ header-id: adaptive-media
 
 # Adaptive Media
 
+[TOC levels=1-4]
+
 The Adaptive Media app lets administrators tailor the quality of images to the
 device viewing those images. For information on using this app, see 
 [the Adaptive Media user guide](/docs/7-1/user/-/knowledge_base/u/adapting-your-media-across-multiple-devices). 

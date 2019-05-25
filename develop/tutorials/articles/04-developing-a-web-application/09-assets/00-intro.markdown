@@ -4,6 +4,8 @@ header-id: assets-integrating-with-liferays-framework
 
 # Assets: Integrating with Liferay's Framework
 
+[TOC levels=1-4]
+
 The asset framework transforms entities into a common format that can be
 published anywhere in your Site. Web content articles, blog posts, wiki
 articles, and documents are some asset-enabled entities that come

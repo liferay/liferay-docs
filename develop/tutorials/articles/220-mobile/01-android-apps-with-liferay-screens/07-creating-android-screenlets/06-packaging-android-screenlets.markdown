@@ -4,6 +4,8 @@ header-id: packaging-your-screenlets
 
 # Packaging Your Screenlets
 
+[TOC levels=1-4]
+
 To reuse your Screenlet in another app or distribute it, you can package it in a
 module (Android library). You can optionally share it with other developers via
 jCenter or Maven Central. Developers can then use your Screenlet by adding its

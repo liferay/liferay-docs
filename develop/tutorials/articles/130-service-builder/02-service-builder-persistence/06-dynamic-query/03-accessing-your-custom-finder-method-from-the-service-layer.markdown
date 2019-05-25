@@ -4,6 +4,8 @@ header-id: accessing-your-custom-finder-method-from-the-service-layer
 
 # Accessing Your Custom Finder Method from the Service Layer
 
+[TOC levels=1-4]
+
 So far, you've created a `*FinderImpl` class, defined a `findBy*` finder method
 in that class, and implemented the finder method using Dynamic Query. Now how do
 you call your finder method from the service layer?

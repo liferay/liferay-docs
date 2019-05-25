@@ -4,6 +4,8 @@ header-id: from-the-plugins-sdk-to-liferay-workspace
 
 # From the Plugins SDK to Liferay Workspace
 
+[TOC levels=1-4]
+
 The Liferay Plugins SDK is not available for @product-ver@. Visit the
 [Deprecated Apps in 7.1: What To Do](/docs/7-1/deploy/-/knowledge_base/d/deprecated-apps-in-7-1-what-to-do#foundation)
 article for more information on the Plugins SDK removal.

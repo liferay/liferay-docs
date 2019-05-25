@@ -4,6 +4,8 @@ header-id: upgrading-6-2-layout-templates-to-7-1
 
 # Upgrading 6.2 Layout Templates to 7.1
 
+[TOC levels=1-4]
+
 Upgrading your @product@ 6.2 layout template to @product-ver@ a few updates:
 
 1.  Open your layout template's `liferay-plugin-package.properties` file and 

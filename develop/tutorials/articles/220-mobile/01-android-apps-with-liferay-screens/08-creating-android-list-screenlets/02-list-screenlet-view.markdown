@@ -4,6 +4,8 @@ header-id: creating-the-view
 
 # Creating the View
 
+[TOC levels=1-4]
+
 Recall from 
 [the basic Screenlet creation tutorial](/docs/7-1/tutorials/-/knowledge_base/t/creating-the-ui) 
 that a View defines a Screenlet's UI. To accommodate its list, a list 

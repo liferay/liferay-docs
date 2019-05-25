@@ -4,6 +4,8 @@ header-id: liferay-ui-icon-help
 
 # Liferay UI Icon Help
 
+[TOC levels=1-4]
+
 The icon help tag lets you communicate additional information to your users in 
 an unobtrusive way. It renders as an iconic question mark that provides more 
 information through a pop-up tooltip on mouse over. You can see an example of 

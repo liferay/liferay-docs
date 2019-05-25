@@ -4,6 +4,8 @@ header-id: building-forms-with-aui-tags
 
 # Building Forms with AUI Tags
 
+[TOC levels=1-4]
+
 The 
 [AUI tag library](https://docs.liferay.com/portal/7.1-latest/taglibs/util-taglib/aui/tld-summary.html) 
 provides all the components you need to build forms for your applications. AUI 

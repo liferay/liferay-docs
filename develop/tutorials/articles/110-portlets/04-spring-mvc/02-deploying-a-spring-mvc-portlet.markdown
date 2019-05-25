@@ -4,6 +4,8 @@ header-id: deploying-a-spring-mvc-portlet
 
 # Deploying a Spring MVC Portlet
 
+[TOC levels=1-4]
+
 Developers creating portlets for @product@ can usually deploy their portlet as
 Java EE-style Web Application ARchive (WAR) artifacts or as Java ARchive (JAR)
 OSGi bundle artifacts. Spring MVC portlet developers don't have that

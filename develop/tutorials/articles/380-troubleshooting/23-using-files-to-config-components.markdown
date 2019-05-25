@@ -4,6 +4,8 @@ header-id: using-files-to-configure-product-modules
 
 # Using Files to Configure Module Components
 
+[TOC levels=1-4]
+
 @product@ uses 
 [Felix File Install](http://felix.apache.org/documentation/subprojects/apache-felix-file-install.html)
 to monitor file system folders for new/updated configuration files, and the

@@ -4,6 +4,8 @@ header-id: understanding-the-item-selector-apis-components
 
 # Understanding the Item Selector API's Components
 
+[TOC levels=1-4]
+
 Before working with the Item Selector API, you should learn about its 
 components. You'll work with these components as you leverage the API in your 
 apps: 

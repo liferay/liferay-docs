@@ -4,6 +4,8 @@ header-id: example-building-an-osgi-module
 
 # Example: Building an OSGi Module
 
+[TOC levels=1-4]
+
 The previous sections explained some of the most important concepts for Liferay
 Portal 6 developers to understand about OSGi and modularity. Now it's time to
 put this knowledge to practice by creating and deploying a module.

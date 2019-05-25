@@ -4,6 +4,8 @@ header-id: creating-a-fragment
 
 # Creating a Fragment
 
+[TOC levels=1-4]
+
 The first example is simple. If you aren't sure about the basics of Fragments
 and Collections, you should read [Creating Page Fragments](/docs/7-1/user/-/knowledge_base/u/creating-fragments) first 
 so you know what you're getting yourself into.

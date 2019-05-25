@@ -4,6 +4,8 @@ header-id: creating-layout-templates-with-the-themes-generator
 
 # Creating Layout Templates
 
+[TOC levels=1-4]
+
 Layout Templates specify how content is arranged on your site pages, as shown in 
 the *1-2-1 Columns* layout below:
 

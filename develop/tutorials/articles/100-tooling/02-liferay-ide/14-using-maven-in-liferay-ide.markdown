@@ -4,6 +4,8 @@ header-id: using-maven-in-liferay-ide
 
 # Using Maven in Liferay Dev Studio
 
+[TOC levels=1-4]
+
 You can take full advantage of Maven in Liferay Dev Studio with its built-in
 Maven support. In this tutorial, you'll learn about the following topics:
 

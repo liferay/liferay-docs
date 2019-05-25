@@ -4,6 +4,8 @@ header-id: creating-a-sitemap-for-the-resources-importer
 
 # Creating a Sitemap for the Resources Importer
 
+[TOC levels=1-4]
+
 You have two options for specifying resources to be imported with your theme: a 
 sitemap or an 
 [archive LAR file](/docs/7-1/tutorials/-/knowledge_base/t/archiving-your-sites-resources). 

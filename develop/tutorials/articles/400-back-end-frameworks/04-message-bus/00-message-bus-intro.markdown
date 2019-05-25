@@ -4,6 +4,8 @@ header-id: message-bus
 
 # Message Bus
 
+[TOC levels=1-4]
+
 If you ever need to do some data processing outside the scope of the web's
 request/response, look no further than the Message Bus. It's conceptually
 similar to Java Messaging Service (JMS) Topics, but sacrifices transactional,

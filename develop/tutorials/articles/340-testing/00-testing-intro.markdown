@@ -4,6 +4,8 @@ header-id: testing
 
 # Testing
 
+[TOC levels=1-4]
+
 Assuring top quality is paramount in producing awesome software. Test driven
 development plays a key role in this process. Liferay's tooling and integration
 with standard test frameworks support test driven development and help you reach

@@ -4,6 +4,8 @@ header-id: creating-modules-with-liferay-ide
 
 # Creating Modules with Liferay Dev Studio
 
+[TOC levels=1-4]
+
 Dev Studio provides a Module Project Wizard for users to create a variety of
 different module projects. You can create a new Liferay module project by
 navigating to *File* &rarr; *New* &rarr; *Liferay Module Project*.

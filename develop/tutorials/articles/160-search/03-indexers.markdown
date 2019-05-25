@@ -4,6 +4,8 @@ header-id: indexing-framework
 
 # Indexing Framework
 
+[TOC levels=1-4]
+
 Unless you're searching for model entities using database queries (not
 recommended in most cases), each asset in @product@ must be indexed in the
 search engine. The indexing code is specific to each asset, as the asset's

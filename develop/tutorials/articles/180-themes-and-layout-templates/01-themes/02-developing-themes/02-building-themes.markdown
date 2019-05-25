@@ -4,6 +4,8 @@ header-id: building-your-themes-files
 
 # Building Your Theme's Files
 
+[TOC levels=1-4]
+
 The `gulp build` task generates the base theme files, compiles Sass into CSS, 
 and zips all theme files into a WAR file that you can deploy to your server. 
 

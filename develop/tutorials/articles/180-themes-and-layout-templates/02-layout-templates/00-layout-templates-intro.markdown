@@ -4,6 +4,8 @@ header-id: layout-templates-intro
 
 # Layout Templates
 
+[TOC levels=1-4]
+
 Layout templates define how content can be placed on a page. @product@ includes 
 several default layout templates out-of-the-box that you can use to organize 
 content on your pages:

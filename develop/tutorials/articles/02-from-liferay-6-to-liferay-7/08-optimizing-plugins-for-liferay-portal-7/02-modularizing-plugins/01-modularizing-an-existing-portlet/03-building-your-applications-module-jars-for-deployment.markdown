@@ -4,6 +4,8 @@ header-id: building-your-module-jars-for-deployment
 
 # Building Your Application's Module JARs for Deployment
 
+[TOC levels=1-4]
+
 Now it's time to build and deploy your modules. To build your project, run
 `gradlew build` from your application project's root folder.
 

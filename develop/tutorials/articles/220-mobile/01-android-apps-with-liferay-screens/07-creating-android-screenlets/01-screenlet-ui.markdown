@@ -4,6 +4,8 @@ header-id: creating-the-ui
 
 # Creating the UI
 
+[TOC levels=1-4]
+
 In Liferay Screens for Android, Screenlet UIs are called Views. Every Screenlet 
 must have at least one View. A View consists of the following components: 
 

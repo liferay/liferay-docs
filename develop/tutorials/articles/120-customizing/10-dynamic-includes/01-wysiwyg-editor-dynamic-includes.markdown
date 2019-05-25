@@ -4,6 +4,8 @@ header-id: wysiwyg-editor-dynamic-includes
 
 # WYSIWYG Editor Dynamic Includes
 
+[TOC levels=1-4]
+
 All WYSIWYG editors share the same dynamic include extension points for these
 things:
 

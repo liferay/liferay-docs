@@ -4,6 +4,8 @@ header-id: using-your-screenlet
 
 # Using Your Screenlet
 
+[TOC levels=1-4]
+
 To use any Screenlet, you must follow these 
 [general steps](/docs/7-1/tutorials/-/knowledge_base/t/using-screenlets-in-android-apps): 
 

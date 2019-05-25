@@ -4,6 +4,8 @@ header-id: using-oauth-2-in-the-ios-mobile-sdk
 
 # Using OAuth 2 in the iOS Mobile SDK
 
+[TOC levels=1-4]
+
 You can use [OAuth 2](https://oauth.net/2/) 
 to authenticate using the following 
 [OAuth 2 grant types](https://oauth.net/2/grant-types/): 

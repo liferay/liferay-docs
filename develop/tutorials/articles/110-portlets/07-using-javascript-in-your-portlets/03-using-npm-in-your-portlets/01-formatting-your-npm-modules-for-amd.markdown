@@ -4,6 +4,8 @@ header-id: formatting-your-npm-modules-for-amd
 
 # Formatting Your npm Modules for AMD
 
+[TOC levels=1-4]
+
 For @product@ to recognize your npm modules, they must be formatted for the 
 Liferay AMD Loader. Luckily, the liferay-npm-bundler handles this for you, you 
 just have to provide the proper configuration and add it to your build script. 

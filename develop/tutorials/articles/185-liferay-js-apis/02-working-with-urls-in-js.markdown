@@ -4,6 +4,8 @@ header-id: working-with-urls-in-javascript
 
 # Working with URLs in JavaScript
 
+[TOC levels=1-4]
+
 The `Liferay` global JavaScript Object exposes methods, objects, and properties
 that access the portal context. Four of these are helpful when working with
 URLS: `authToken`, `currentURL`, `currentURLEncoded`, and `PortletURL`. If you

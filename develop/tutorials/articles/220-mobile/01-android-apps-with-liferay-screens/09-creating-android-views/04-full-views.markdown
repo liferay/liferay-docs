@@ -4,6 +4,8 @@ header-id: full-views
 
 # Full Views
 
+[TOC levels=1-4]
+
 A Full View has a unique Screenlet class, a View class, and layout XML file.
 It's standalone and doesn't inherit from any View. You should create a Full View
 if there's no other View that you can extend to meet your needs or if your

@@ -4,6 +4,8 @@ header-id: creating-ios-list-screenlets
 
 # Creating iOS List Screenlets
 
+[TOC levels=1-4]
+
 It's very common for mobile apps to display lists. Liferay Screens 
 lets you display asset lists and DDL lists in your iOS app by using 
 [Asset List Screenlet](/docs/7-1/reference/-/knowledge_base/r/assetlistscreenlet-for-ios) 

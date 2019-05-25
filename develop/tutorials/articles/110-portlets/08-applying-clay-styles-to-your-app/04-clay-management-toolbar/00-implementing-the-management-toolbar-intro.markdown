@@ -4,6 +4,8 @@ header-id: implementing-the-management-toolbar
 
 # Implementing the Management Toolbar
 
+[TOC levels=1-4]
+
 The Management Toolbar is a combination of search, filters, sorting options, 
 and display options that let you manage data. For admin apps, we recommend that 
 you add a management toolbar to manage your search container results. The 

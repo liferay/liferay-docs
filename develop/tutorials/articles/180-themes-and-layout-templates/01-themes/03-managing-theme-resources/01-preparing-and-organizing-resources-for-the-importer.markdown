@@ -4,6 +4,8 @@ header-id: preparing-and-organizing-web-content-for-the-resources-importer
 
 # Preparing and Organizing Web Content for the Resources Importer
 
+[TOC levels=1-4]
+
 You must create the resources to import with your theme. You can create 
 resources from scratch and/or bring in resources that you've already created. 
 This tutorial covers how to prepare and organize your resources for the 

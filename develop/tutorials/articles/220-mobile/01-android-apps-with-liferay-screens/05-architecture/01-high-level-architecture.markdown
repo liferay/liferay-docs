@@ -4,6 +4,8 @@ header-id: high-level-architecture
 
 # High-Level Architecture
 
+[TOC levels=1-4]
+
 Liferay Screens for Android is composed of a Core, a Screenlet layer, a View
 layer, Interactors, and Server Connectors. Interactors are technically part of 
 the core, but are worth covering separately. They facilitate interaction with 

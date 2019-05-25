@@ -4,6 +4,8 @@ header-id: configurable-applications
 
 # Configurable Applications
 
+[TOC levels=1-4]
+
 Many applications must be configurable, whether by end users or administrators.
 A viable configuration solution must support use cases ranging from setting a
 location for a weather display to more complex cases like settings for a mail

@@ -4,6 +4,8 @@ header-id: registering-permissions
 
 # Registering Permissions
 
+[TOC levels=1-4]
+
 Defining permissions was your first step; now you're ready to register the
 permissions you've defined. You must register your entities both in the database
 and in the permissions service running in the OSGi container. 

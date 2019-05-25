@@ -4,6 +4,8 @@ header-id: pie-charts
 
 # Pie Charts
 
+[TOC levels=1-4]
+
 Pie charts are percentage-based. A pie chart models percentage-based data as 
 individual slices of pie. Each data set must be defined as a new instance of the 
 [`SingleValueColumn` object](@app-ref@/foundation/latest/javadocs/com/liferay/frontend/taglib/chart/model/SingleValueColumn.html). 

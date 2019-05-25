@@ -4,6 +4,8 @@ header-id: upgrading-7-0-themes-intro
 
 # Upgrading 7.0 Themes
 
+[TOC levels=1-4]
+
 If you've developed themes in @product@ 7.0, as part of your upgrade you'll 
 want to use them in @product-ver@. The upgrade process requires several 
 modifications. The 

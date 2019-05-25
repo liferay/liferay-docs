@@ -4,6 +4,8 @@ header-id: sync-the-cache-with-the-server
 
 # Sync the Cache with the Server
 
+[TOC levels=1-4]
+
 When using a write Screenlet that supports offline mode, new data written to the 
 cache must also be synced with the server. The write Screenlets included with 
 Liferay Screens do this for you. However, you must do this manually when using a 

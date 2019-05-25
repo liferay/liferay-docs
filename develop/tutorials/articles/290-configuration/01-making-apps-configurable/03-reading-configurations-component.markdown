@@ -4,6 +4,8 @@ header-id: reading-configuration-values-from-a-component
 
 # Reading Configuration Values from a Component
 
+[TOC levels=1-4]
+
 Once you have the 
 [application configured](/docs/7-1/tutorials/-/knowledge_base/t/making-applications-configurable)
 so that administrators can configure it in System Settings, you might be

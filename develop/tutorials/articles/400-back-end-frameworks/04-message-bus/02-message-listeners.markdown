@@ -4,6 +4,8 @@ header-id: message-listeners
 
 # Message Listeners
 
+[TOC levels=1-4]
+
 If you're interested in messages sent to a destination, you need to "listen" for
 them. That is, you must create and register a message listener for the
 destination. 

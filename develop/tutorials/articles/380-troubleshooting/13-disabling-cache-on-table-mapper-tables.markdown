@@ -4,6 +4,8 @@ header-id: disabling-cache-for-table-mapper-tables
 
 # Disabling Cache for Table Mapper Tables
 
+[TOC levels=1-4]
+
 Service Builder creates 
 [relational mappings between entities](/docs/7-1/tutorials/-/knowledge_base/t/defining-relationships-between-service-entities).
 It uses mapping tables to associate the entities. In your `service.xml` file,

@@ -4,6 +4,8 @@ header-id: defining-layout-templates-in-a-sitemap
 
 # Defining Layout Templates in a Sitemap
 
+[TOC levels=1-4]
+
 The first thing you should declare in your `sitemap.json` file is a default 
 layout template ID so the target site or site template can reference the layout 
 template to use for its pages. When defined outside the scope of a page, the 

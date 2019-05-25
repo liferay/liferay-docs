@@ -4,6 +4,8 @@ header-id: optimizing-app-upgrade-processes
 
 # Migrating Data Upgrade Processes to the New Framework for Modules
 
+[TOC levels=1-4]
+
 When you make database changes to your application, you must use a *data
 upgrade process* to migrate users' existing data to the new database schema.
 While the old framework required several classes, the new framework can

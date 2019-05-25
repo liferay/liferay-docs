@@ -4,6 +4,8 @@ header-id: using-oauth-2-in-liferay-screens-for-ios
 
 # Using OAuth 2 in Liferay Screens for iOS
 
+[TOC levels=1-4]
+
 You can use [OAuth 2](https://oauth.net/2/) 
 to authenticate using 
 [Login Screenlet](/docs/7-1/reference/-/knowledge_base/r/loginscreenlet-for-ios) 

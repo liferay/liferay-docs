@@ -4,6 +4,8 @@ header-id: export-import-and-staging
 
 # Export/Import and Staging
 
+[TOC levels=1-4]
+
 The Export/Import and Staging features give users the power to plan page
 publication and manage content. The Export/Import feature lets users export
 content from the portal and import external content into the portal. Providing

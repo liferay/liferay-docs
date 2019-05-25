@@ -4,6 +4,8 @@ header-id: benefits-of-liferay-7-for-liferay-6-developers
 
 # Benefits of 7.1 for Liferay Portal 6 Developers
 
+[TOC levels=1-4]
+
 More than in any other Liferay release, @product-ver@ centers on you, the
 developer. Liferay's platform was rebuilt in Liferay 7.0, making it easier to
 build on and maintain, and providing more new developer features than any

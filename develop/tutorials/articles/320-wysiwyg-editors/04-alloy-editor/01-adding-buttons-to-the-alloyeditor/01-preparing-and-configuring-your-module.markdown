@@ -4,6 +4,8 @@ header-id: creating-the-osgi-module-and-configuring-the-editorconfigcontributor
 
 # Creating the OSGi Module and Configuring the EditorConfigContributor Class
 
+[TOC levels=1-4]
+
 To add a button to the AlloyEditor's toolbars, you must first create an OSGi 
 component class of service type `EditorConfigContributor.class`. Follow these 
 steps to create and configure the OSGi module:

@@ -4,6 +4,8 @@ header-id: viewing-guestbook-entries
 
 # Displaying Guestbook Entries
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Developing Your First Portlet<br>Step 8 of 8</p>
 </div>

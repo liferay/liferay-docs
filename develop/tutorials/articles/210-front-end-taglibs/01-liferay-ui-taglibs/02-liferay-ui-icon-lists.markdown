@@ -4,6 +4,8 @@ header-id: liferay-ui-icon-lists
 
 # Liferay UI Icon Lists
 
+[TOC levels=1-4]
+
 An icon list displays icons in a horizontal list, instead of in a pop-up
 navigation menu like an 
 [icon menu](/docs/7-1/tutorials/-/knowledge_base/t/liferay-ui-icon-menus). You

@@ -4,6 +4,8 @@ header-id: updating-the-resources-importer
 
 # Updating the Resources Importer
 
+[TOC levels=1-4]
+
 The Resources Importer is now an OSGi module in Liferay's Web Experience
 application suite. Since the suite is bundled with @product@, you don't have to
 download the Resources Importer separately. The following components have been

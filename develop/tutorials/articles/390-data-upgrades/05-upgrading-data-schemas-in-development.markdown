@@ -4,6 +4,8 @@ header-id: upgrading-data-schemas-in-development
 
 # Upgrading Data Schemas in Development
 
+[TOC levels=1-4]
+
 As you develop modules, you might need to iterate through several database 
 schema changes. Before you release new module versions with your finalized
 schema changes, you must create a formal 

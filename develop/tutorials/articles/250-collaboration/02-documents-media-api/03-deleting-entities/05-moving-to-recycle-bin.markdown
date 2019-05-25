@@ -4,6 +4,8 @@ header-id: moving-entities-to-the-recycle-bin
 
 # Moving Entities to the Recycle Bin
 
+[TOC levels=1-4]
+
 Instead of deleting entities, you can move them to the 
 [Recycle Bin](/docs/7-1/user/-/knowledge_base/u/restoring-deleted-assets). 
 Note that the Recycle Bin isn't part of the Documents and Media API. Although 

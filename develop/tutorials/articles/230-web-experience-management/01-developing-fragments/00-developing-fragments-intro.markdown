@@ -4,6 +4,8 @@ header-id: developing-fragments
 
 # Developing Page Fragments
 
+[TOC levels=1-4]
+
 The goal of Page Fragments is to take a mock-up design and realize it on a web 
 page as accurately as possible. To do this, developers are given a space where 
 they have a "blank slate."  You have three tools at your disposal to accomplish 

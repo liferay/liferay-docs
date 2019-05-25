@@ -4,6 +4,8 @@ header-id: managing-themes-in-liferay-workspace
 
 # Managing Themes in Liferay Workspace
 
+[TOC levels=1-4]
+
 Creating a @product@ theme can be accomplished using two different tools:
 
 - [Liferay Theme Generator](/docs/7-1/tutorials/-/knowledge_base/t/creating-themes)

@@ -4,6 +4,8 @@ header-id: creating-the-service-xml-file
 
 # Creating the service.xml File
 
+[TOC levels=1-4]
+
 To define a service for your portlet project, you must create a `service.xml`
 file. The DTD (Document Type Declaration) file
 [liferay-service-builder_7_1_0.dtd](https://docs.liferay.com/ce/portal/7.1-latest/definitions/liferay-service-builder_7_1_0.dtd.html)

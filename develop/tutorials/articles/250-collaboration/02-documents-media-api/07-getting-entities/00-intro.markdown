@@ -4,6 +4,8 @@ header-id: getting-entities
 
 # Getting Entities
 
+[TOC levels=1-4]
+
 The Documents and Media API contains many methods for getting entities from a 
 repository. Most methods in 
 [`DLAppService`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html) 

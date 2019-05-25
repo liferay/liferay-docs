@@ -4,6 +4,8 @@ header-id: creating-local-services
 
 # Creating Local Services
 
+[TOC levels=1-4]
+
 The heart of your service is its `*LocalServiceImpl` class. This class is your
 entity's local service extension point. Local services are invoked from your
 application or by other applications running on the same instance as your

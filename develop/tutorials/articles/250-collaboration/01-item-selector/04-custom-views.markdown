@@ -4,6 +4,8 @@ header-id: creating-custom-item-selector-views
 
 # Creating Custom Item Selector Views
 
+[TOC levels=1-4]
+
 Item Selector's default selection views may provide everything you need for your 
 app. Custom selection views are required, however, for certain situations. For 
 example, if you want your users to be able to select images from an external 

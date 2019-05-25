@@ -4,6 +4,8 @@ header-id: osgi-and-modularity
 
 # OSGi and Modularity
 
+[TOC levels=1-4]
+
 Modularity makes writing software, especially as a team, fun! Here are some
 benefits to modular development on DXP: 
 

@@ -4,6 +4,8 @@ header-id: upgrading-portlets-that-use-service-builder
 
 # Upgrading Portlets that use Service Builder
 
+[TOC levels=1-4]
+
 @product-ver@ continues to use 
 [Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/service-builder), so
 you can focus on your application's business logic instead of its persistence

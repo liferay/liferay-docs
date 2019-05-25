@@ -4,6 +4,8 @@ header-id: whats-changed-and-what-hasnt
 
 # What Hasn't Changed and What Has
 
+[TOC levels=1-4]
+
 Liferay 7.0 was a new major version of the Liferay platform and as such it
 included many improvements over previous versions. Having said that, most of the
 characteristics from Liferay Portal 6 that you have learned to love are

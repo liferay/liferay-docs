@@ -4,6 +4,8 @@ header-id: defining-service-entity-finder-methods
 
 # Defining Service Entity Finder Methods
 
+[TOC levels=1-4]
+
 Finder methods retrieve entity objects from the database based on specified
 parameters. You'll probably want to create at least one finder method for each
 entity you create in your services. Service Builder generates several methods

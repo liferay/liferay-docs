@@ -4,6 +4,8 @@ header-id: defining-pages-in-a-sitemap
 
 # Defining Pages in a Sitemap
 
+[TOC levels=1-4]
+
 A sitemap defines the layouts---pages---that your site or site template uses.
 This tutorial covers the configuration options that are available for pages in
 a sitemap. 

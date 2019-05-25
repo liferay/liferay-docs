@@ -4,6 +4,8 @@ header-id: upgrading-servlet-filter-hooks
 
 # Upgrading Servlet Filter Hooks
 
+[TOC levels=1-4]
+
 If you have Servlet Filter Hooks ready to be upgraded, this tutorial's for you.
 The process is quite simple:
 

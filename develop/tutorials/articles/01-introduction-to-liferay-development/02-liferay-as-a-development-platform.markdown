@@ -4,6 +4,8 @@ header-id: liferay-as-a-development-platform
 
 # Liferay as a Development Platform
 
+[TOC levels=1-4]
+
 If you've been reading everything up to this point, you've heard all about
 @product@'s architecture, modularity, and technologies. What's left is to tell
 you what it's like to use Liferay's platform as a basis for your site by

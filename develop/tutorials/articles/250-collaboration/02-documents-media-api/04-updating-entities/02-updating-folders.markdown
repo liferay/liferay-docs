@@ -4,6 +4,8 @@ header-id: updating-folders
 
 # Updating Folders
 
+[TOC levels=1-4]
+
 The Documents and Media API lets you 
 [copy or move](/docs/7-1/tutorials/-/knowledge_base/t/copying-and-moving-entities) 
 folders to a different location. Options for in-place folder updates, however, 

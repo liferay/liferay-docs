@@ -4,6 +4,8 @@ header-id: enabling-hypermedia-rest-apis
 
 # Enabling Hypermedia REST APIs
 
+[TOC levels=1-4]
+
 Liferay's Hypermedia REST APIs are an implementation of 
 [Apio Architect](https://github.com/liferay/com-liferay-apio-architect), 
 which is pre-installed @product@. Apio Architect is a server-side library 

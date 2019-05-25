@@ -4,6 +4,8 @@ header-id: overriding-a-modules-language-keys
 
 # Overriding a Module's Language Keys
 
+[TOC levels=1-4]
+
 What do you do if the language keys you want to modify are in one of Liferay's
 applications or another module whose source code you don't control? Since module
 language keys are in the respective module, the process for overriding a

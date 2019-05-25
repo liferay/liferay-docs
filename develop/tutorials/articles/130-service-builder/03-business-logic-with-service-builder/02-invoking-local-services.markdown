@@ -4,6 +4,8 @@ header-id: invoking-local-services
 
 # Invoking Local Services
 
+[TOC levels=1-4]
+
 Once you deploy your services module, those services are available in the
 container. Service Builder generates local and remote service classes as OSGi
 Declarative Services (DS) components. These components are accessible to other

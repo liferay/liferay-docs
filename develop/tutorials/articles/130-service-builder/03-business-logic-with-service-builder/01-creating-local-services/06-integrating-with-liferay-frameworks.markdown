@@ -4,6 +4,8 @@ header-id: integrating-with-liferays-frameworks
 
 # Integrating with Liferay's Frameworks
 
+[TOC levels=1-4]
+
 New car buyers expect certain features to be standard: power windows, cruise
 control, floor mats (at least the cheap ones), and so on. Similarly, users
 expect applications to have certain features and expect those features to behave

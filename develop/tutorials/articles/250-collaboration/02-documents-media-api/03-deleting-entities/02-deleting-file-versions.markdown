@@ -4,6 +4,8 @@ header-id: deleting-file-versions
 
 # Deleting File Versions
 
+[TOC levels=1-4]
+
 When a file is modified, Documents and Media creates a new file version and 
 leaves the previous version intact. Over time, old file versions can accumulate 
 and consume precious storage space. Fortunately, you can use the Documents and 

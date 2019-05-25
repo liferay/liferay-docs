@@ -4,6 +4,8 @@ header-id: mobile-sdk
 
 # Mobile SDK
 
+[TOC levels=1-4]
+
 Want to wield Liferay's power in your mobile apps? Thanks to Liferay's Mobile 
 SDK, you can do just that. The Liferay Mobile SDK provides a way to streamline 
 consuming Liferay core web services, Liferay utilities, and custom app web 

@@ -4,6 +4,8 @@ header-id: actionable-dynamic-queries
 
 # Actionable Dynamic Queries
 
+[TOC levels=1-4]
+
 Suppose you have over a million users, and you want to perform some kind of mass
 update to some of them. One approach might be to use a dynamic query to retrieve
 the list of users in question. Once loaded into memory, you could loop through

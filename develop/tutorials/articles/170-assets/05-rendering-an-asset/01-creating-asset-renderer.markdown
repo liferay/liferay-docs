@@ -4,6 +4,8 @@ header-id: creating-an-asset-renderer
 
 # Creating an Asset Renderer
 
+[TOC levels=1-4]
+
 In this tutorial, you'll learn how to create an `Asset Renderer` and associate your JSP templates with it, along with configuring several other options.
 
 To learn how an asset renderer is created, you'll create the pre-existing

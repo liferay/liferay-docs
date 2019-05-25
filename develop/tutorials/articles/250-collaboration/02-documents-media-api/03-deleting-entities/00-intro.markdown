@@ -4,6 +4,8 @@ header-id: deleting-entities
 
 # Deleting Entities
 
+[TOC levels=1-4]
+
 Now that you know how to 
 [create Documents and Media entities](/docs/7-1/tutorials/-/knowledge_base/t/creating-files-folders-and-shortcuts),
 you should learn how to delete them. Note that the exact meaning of *delete*

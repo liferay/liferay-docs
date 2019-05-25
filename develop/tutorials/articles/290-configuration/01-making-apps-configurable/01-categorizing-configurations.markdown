@@ -4,6 +4,8 @@ header-id: categorizing-the-configuration
 
 # Categorizing the Configuration
 
+[TOC levels=1-4]
+
 Because it's easy to make any application or service configurable, there are
 already lots of configuration options in @product@ by default. If you've
 deployed custom applications and services, there are even more. To make it

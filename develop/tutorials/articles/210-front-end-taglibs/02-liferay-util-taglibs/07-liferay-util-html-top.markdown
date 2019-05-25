@@ -4,6 +4,8 @@ header-id: using-liferay-util-html-top
 
 # Using Liferay Util HTML Top
 
+[TOC levels=1-4]
+
 The HTML top tag is not a self-closing tag. The content placed between the 
 opening and closing of this tag is moved to the `<head>` tag. When something is 
 passed using this taglib, the 

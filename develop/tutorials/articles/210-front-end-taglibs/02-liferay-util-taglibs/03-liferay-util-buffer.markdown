@@ -4,6 +4,8 @@ header-id: using-liferay-util-buffer
 
 # Using Liferay Util Buffer
 
+[TOC levels=1-4]
+
 The buffer tag is not a self-closing tag. The content placed between the opening 
 and closing of this tag is saved to a buffer and its output is assigned to the 
 Java variable declared with the tag's `var` attribute. The output is returned as 

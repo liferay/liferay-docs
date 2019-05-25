@@ -4,6 +4,8 @@ header-id: modules-as-an-improvement-over-traditional-plugins
 
 # Modules as an Improvement over Traditional Plugins
 
+[TOC levels=1-4]
+
 In @product-ver@, you can develop applications using OSGi modules or using
 traditional Liferay plugins (WAR-style portlets, hooks, EXT, and web
 applications). Liferay's Plugin Compatibility Layer (explained later) makes it

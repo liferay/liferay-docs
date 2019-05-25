@@ -4,6 +4,8 @@ header-id: building-mobile-sdks
 
 # Building Mobile SDKs
 
+[TOC levels=1-4]
+
 The Liferay Mobile SDK lets you connect your Android and iOS apps to a @product@ 
 instance. By accessing built-in portal services through Liferay's prebuilt 
 Mobile SDK, your apps can access the out-of-the-box functionality in a @product@ 

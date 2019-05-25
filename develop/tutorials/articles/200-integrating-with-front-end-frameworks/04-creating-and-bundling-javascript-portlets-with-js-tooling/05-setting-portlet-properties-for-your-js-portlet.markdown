@@ -4,6 +4,8 @@ header-id: configuring-portlet-properties-for-your-js-portlet
 
 # Configuring Portlet Properties for Your JS Widget
 
+[TOC levels=1-4]
+
 Follow these steps to configure your portlet's properties:
 
 1.  Open your generated JavaScript widget's `package.json` file.

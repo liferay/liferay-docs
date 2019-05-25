@@ -4,6 +4,8 @@ header-id: generating-a-jsf-project-using-ide
 
 # Generating a JSF Project Using Dev Studio
 
+[TOC levels=1-4]
+
 You can generate a Liferay Faces application without having to create your own
 folder structure and descriptor files manually using Liferay Dev Studio. If
 you're interested in creating the structure of a JSF application manually or if

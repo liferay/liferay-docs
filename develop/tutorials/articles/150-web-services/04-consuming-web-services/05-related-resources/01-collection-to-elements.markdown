@@ -4,6 +4,8 @@ header-id: navigating-from-a-collection-to-its-elements
 
 # Navigating from a Collection to its Elements
 
+[TOC levels=1-4]
+
 When you 
 [get a collection](/docs/7-1/tutorials/-/knowledge_base/t/getting-collections), 
 you can use the response to get an element of that collection. Follow these 

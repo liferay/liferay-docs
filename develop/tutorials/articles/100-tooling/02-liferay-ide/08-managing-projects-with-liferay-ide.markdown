@@ -4,6 +4,8 @@ header-id: managing-projects-with-liferay-ide
 
 # Managing Projects with Liferay Dev Studio
 
+[TOC levels=1-4]
+
 Liferay Dev Studio provides the ability to manage Liferay projects from a GUI.
 Before you begin learning about managing your projects from Liferay Dev Studio,
 you should make sure a Liferay server is configured in your Eclipse workspace so

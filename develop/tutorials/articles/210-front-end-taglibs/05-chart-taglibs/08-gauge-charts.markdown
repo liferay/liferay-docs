@@ -4,6 +4,8 @@ header-id: gauge-charts
 
 # Gauge Charts
 
+[TOC levels=1-4]
+
 Gauge charts are percentage-based. A gauge chart shows where percentage-based 
 data falls over a given range. Each data set must be defined as a new instance 
 of the 

@@ -4,6 +4,8 @@ header-id: developing-modules-with-liferay-workspace
 
 # Developing Modules with Liferay Workspace
 
+[TOC levels=1-4]
+
 Workspace is a great Liferay module development environment because of these
 features: 
 

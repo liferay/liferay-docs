@@ -4,6 +4,8 @@ header-id: listing-your-themes-extensions
 
 # Listing Your Theme's Extensions
 
+[TOC levels=1-4]
+
 Do you need to know what base theme/themelets your theme extends? There's a gulp 
 task for that. While you can manually check your theme's `package.json` for this 
 information, the `gulp status` task displays this information for you. Navigate 

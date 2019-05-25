@@ -4,6 +4,8 @@ header-id: creating-an-mvc-portlet
 
 # Creating an MVC Portlet
 
+[TOC levels=1-4]
+
 MVC Portlet applications are web modules containing at least one portlet class
 that's registered in Liferay's runtime environment as a component. Web modules
 describe themselves using standard OSGi metadata and can use any build

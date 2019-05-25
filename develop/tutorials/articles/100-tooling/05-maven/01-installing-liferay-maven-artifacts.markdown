@@ -4,6 +4,8 @@ header-id: installing-liferay-maven-artifacts
 
 # Installing Liferay Maven Artifacts
 
+[TOC levels=1-4]
+
 To create Liferay modules using Maven, you'll need the archives required by
 Liferay (e.g., JAR and WAR files). This isn't a problem--Liferay provides
 them as Maven artifacts. 

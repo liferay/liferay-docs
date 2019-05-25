@@ -4,6 +4,8 @@ header-id: updating-project-metadata
 
 # Updating Project Metadata
 
+[TOC levels=1-4]
+
 If your theme uses the 
 [Liferay Theme Generator](/docs/7-1/tutorials/-/knowledge_base/t/creating-themes), 
 the 

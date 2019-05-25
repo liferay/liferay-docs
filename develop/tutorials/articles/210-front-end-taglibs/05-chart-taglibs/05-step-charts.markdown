@@ -4,6 +4,8 @@ header-id: step-charts
 
 # Step Charts
 
+[TOC levels=1-4]
+
 Step charts contain multiple sets of data. A step chart steps between the points 
 of data, resembling steps. Each data series 
 (created with the `addColumns()` method) is defined with a new instance of the 

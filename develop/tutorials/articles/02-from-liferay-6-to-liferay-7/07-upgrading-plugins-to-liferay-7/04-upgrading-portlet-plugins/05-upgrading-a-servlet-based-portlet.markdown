@@ -4,6 +4,8 @@ header-id: upgrading-a-servlet-based-portlet
 
 # Upgrading a Servlet-based Portlet
 
+[TOC levels=1-4]
+
 This tutorial shows you how to upgrade servlet-based portlets. It refers to
 code from before and after upgrading a sample servlet-based portlet called
 *Sample JSON* (project `sample-json-portlet`). The portlet shows a *Click me*

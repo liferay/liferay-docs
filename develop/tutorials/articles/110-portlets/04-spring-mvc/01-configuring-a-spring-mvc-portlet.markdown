@@ -4,6 +4,8 @@ header-id: configuring-a-spring-mvc-portlet
 
 # Configuring a Spring MVC Portlet
 
+[TOC levels=1-4]
+
 This isn't a comprehensive guide to configuring a Spring MVC portlet. It covers
 the high points, assuming you already have familiarity with Spring MVC. If you
 don't, you should consider using

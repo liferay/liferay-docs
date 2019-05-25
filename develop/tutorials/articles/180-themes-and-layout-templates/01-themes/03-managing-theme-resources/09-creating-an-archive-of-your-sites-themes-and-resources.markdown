@@ -4,6 +4,8 @@ header-id: archiving-your-sites-resources
 
 # Archiving Site Resources
 
+[TOC levels=1-4]
+
 Although a `sitemap.json` is the recommended approach for including resources 
 with a theme, you can also export your site's data in a LAR (Liferay Archive) 
 file. A LAR file is version-specific; it won't work on any version of 

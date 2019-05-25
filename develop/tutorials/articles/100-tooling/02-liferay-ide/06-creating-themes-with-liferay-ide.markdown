@@ -4,6 +4,8 @@ header-id: creating-themes-with-liferay-ide
 
 # Creating Themes with Liferay Dev Studio
 
+[TOC levels=1-4]
+
 Liferay Dev Studio lets you create and configure Liferay theme projects. You can
 create a theme standalone or in a
 [Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace).

@@ -4,6 +4,8 @@ header-id: customizing-liferay-services-service-wrappers
 
 # Overriding Liferay Services (Service Wrappers)
 
+[TOC levels=1-4]
+
 Why might you need to customize Liferay services? Perhaps you've added a new
 field to Liferay's `User` object and you want its value to be saved whenever the
 `addUser` or `updateUser` methods of Liferay's API are called. Or maybe you want

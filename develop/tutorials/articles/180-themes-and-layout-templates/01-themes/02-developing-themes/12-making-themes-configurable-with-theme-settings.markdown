@@ -4,6 +4,8 @@ header-id: making-configurable-theme-settings
 
 # Making Configurable Theme Settings
 
+[TOC levels=1-4]
+
 Every time you want to make a change to a theme, you must make the change and
 then deploy it to your server. For a Site Administrator, this process is
 tedious, especially if it's a minor change to a theme, such as a banner color

@@ -4,6 +4,8 @@ header-id: customizing-jsps
 
 # Customizing JSPs
 
+[TOC levels=1-4]
+
 There are several different ways to customize JSPs in portlets and the core.
 @product@'s API provides the safest ways to customize them. If you customize a
 JSP by other means, new versions of the JSP can render your customization

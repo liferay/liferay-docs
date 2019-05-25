@@ -4,6 +4,8 @@ header-id: business-logic-with-service-builder
 
 # Business Logic with Service Builder
 
+[TOC levels=1-4]
+
 Once you've
 [defined your application's entities](/docs/7-1/tutorials/-/knowledge_base/t/defining-an-object-relational-map-with-service-builder)
 and

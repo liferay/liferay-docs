@@ -4,6 +4,8 @@ header-id: upgrading-a-liferay-mvc-portlet
 
 # Upgrading a Liferay MVC Portlet
 
+[TOC levels=1-4]
+
 Liferay's MVC Portlet framework is used extensively in Liferay's portlets and is
 a popular choice for Liferay Portal 6.2 portlet developers. The
 [`MVCPortlet` class](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/portal/kernel/portlet/bridges/mvc/MVCPortlet.html)

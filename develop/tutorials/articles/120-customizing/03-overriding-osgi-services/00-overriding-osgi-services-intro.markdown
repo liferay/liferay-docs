@@ -4,6 +4,8 @@ header-id: overriding-service-references
 
 # Overriding OSGi Services
 
+[TOC levels=1-4]
+
 Components register as services with the OSGi service registry. A service
 component's availability, ranking, and attributes determine whether components
 referring to the service type bind to that particular service. @product@'s OSGI

@@ -4,6 +4,8 @@ header-id: upgrade-processes-for-former-service-builder-plugins
 
 # Upgrade Processes for Former Service Builder Plugins
 
+[TOC levels=1-4]
+
 If you modularized a traditional Liferay plugin application that implements
 Service Builder services, your new modular application must register itself in
 the @product@'s `Release_` table. This is required regardless of whether release

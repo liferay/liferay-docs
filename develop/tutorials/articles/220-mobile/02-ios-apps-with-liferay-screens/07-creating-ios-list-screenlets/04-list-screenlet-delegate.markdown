@@ -4,6 +4,8 @@ header-id: creating-the-ios-list-screenlets-delegate
 
 # Creating the iOS List Screenlet's Delegate
 
+[TOC levels=1-4]
+
 Recall that a delegate is required if you want other classes to respond to your 
 Screenlet's actions. Create your delegate by following the first step in 
 [the tutorial on adding a Screenlet delegate](/docs/7-1/tutorials/-/knowledge_base/t/add-a-screenlet-delegate). 

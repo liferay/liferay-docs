@@ -4,6 +4,8 @@ header-id: portal-failed-to-initialize-because-the-database-wasnt-ready
 
 # @product@ Failed to Initialize Because the Database Wasn't Ready
 
+[TOC levels=1-4]
+
 If you start your database server and application server at the same time,
 @product@ might try connecting to the data source before the database is ready.
 By default, @product@ doesn't retry connecting to the database; it just fails.

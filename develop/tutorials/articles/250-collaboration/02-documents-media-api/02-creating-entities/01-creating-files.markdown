@@ -4,6 +4,8 @@ header-id: creating-files
 
 # Creating Files
 
+[TOC levels=1-4]
+
 To create files (`FileEntry` entities) in the Documents and Media library, you 
 must use the 
 [`DLAppService`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html) 

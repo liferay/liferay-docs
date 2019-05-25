@@ -4,6 +4,8 @@ header-id: enabling-search-and-indexing-for-guestbooks
 
 # Enabling Search and Indexing for Guestbooks
 
+[TOC levels=1-4]
+
 In this section, you'll create the classes that control these aspects of the
 search functionality:
 

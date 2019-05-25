@@ -4,6 +4,8 @@ header-id: creating-jsps-for-displaying-custom-assets-in-the-asset-publisher
 
 # Creating JSPs for Displaying Custom Assets in the Asset Publisher
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Adding Asset Features to Your UI<br>Step 2 of 5</p>
 </div>

@@ -4,6 +4,8 @@ header-id: introduction-to-liferay-development
 
 # Introduction to Liferay Development
 
+[TOC levels=1-4]
+
 How many times have you had to start over from scratch? Probably almost as many
 times as you've started a new project, because each time you have to write not
 only the code to build the project, but also the underlying code that supports

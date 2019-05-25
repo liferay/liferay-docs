@@ -4,6 +4,8 @@ header-id: using-service-builder-in-a-maven-project
 
 # Using Service Builder in a Maven Project
 
+[TOC levels=1-4]
+
 Liferay's
 [Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/what-is-service-builder)
 is a model-driven service generation tool that is frequently used by many

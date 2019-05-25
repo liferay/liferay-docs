@@ -4,6 +4,8 @@ header-id: reading-configuration-values-from-a-configuration-provider
 
 # Reading Configuration Values from a Configuration Provider
 
+[TOC levels=1-4]
+
 When an application is deployed, it's common to need different configurations
 [depending on the scope](/docs/7-1/tutorials/-/knowledge_base/t/scoping-configurations).
 That means having different

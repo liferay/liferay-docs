@@ -4,6 +4,8 @@ header-id: clay-cards
 
 # Clay Cards
 
+[TOC levels=1-4]
+
 Cards visually represent data. Use them for images, document libraries, user
 profiles and more. There are four main types of Cards:
 

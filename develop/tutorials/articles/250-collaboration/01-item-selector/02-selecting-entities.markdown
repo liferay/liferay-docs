@@ -4,6 +4,8 @@ header-id: selecting-entities-using-the-item-selector
 
 # Selecting Entities Using an Item Selector
 
+[TOC levels=1-4]
+
 An Item Selector lets users select entities such as images, videos, documents, 
 and sites. You can use an Item Selector in your app to let users select such 
 entities. This tutorial shows you how to do this via these steps: 

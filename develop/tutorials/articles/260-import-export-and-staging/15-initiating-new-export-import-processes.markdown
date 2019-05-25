@@ -4,6 +4,8 @@ header-id: initiating-new-export-import-processes
 
 # Initiating New Export/Import Processes
 
+[TOC levels=1-4]
+
 The Staging and Export/Import features are the building blocks for creating,
 managing, and publishing a site. These features can be accessed in the
 *Publishing Tools* menu. You can also, however, start these processes

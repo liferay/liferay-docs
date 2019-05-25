@@ -4,6 +4,8 @@ header-id: theming-portlets
 
 # Theming Portlets
 
+[TOC levels=1-4]
+
 Themes can provide additional styles for your apps. You can change the markup 
 for portlet containers by modifying the theme's `portlet.ftl` file.
 

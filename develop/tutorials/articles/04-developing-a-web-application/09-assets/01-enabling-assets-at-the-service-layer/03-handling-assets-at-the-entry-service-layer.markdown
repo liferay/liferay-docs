@@ -4,6 +4,8 @@ header-id: handling-assets-at-the-entry-service-layer
 
 # Handling Assets for Entry Service Layer
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Enabling Assets at the Service Layer<br>Step 3 of 3</p>
 </div>

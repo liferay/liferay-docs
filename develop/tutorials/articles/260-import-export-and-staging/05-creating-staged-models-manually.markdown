@@ -4,6 +4,8 @@ header-id: creating-staged-models-manually
 
 # Creating Staged Models Manually
 
+[TOC levels=1-4]
+
 There are times when using
 [Service Builder to generate your staged models](/docs/7-1/tutorials/-/knowledge_base/t/understanding-staged-models#important-attributes-in-staging)
 is not practical. In these cases, you should create your staged models manually.

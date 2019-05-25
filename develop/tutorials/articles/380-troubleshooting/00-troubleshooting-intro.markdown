@@ -4,6 +4,8 @@ header-id: troubleshooting-faq
 
 # Troubleshooting FAQ
 
+[TOC levels=1-4]
+
 When coding on any platform, you can sometimes run into issues that have no
 clear resolution. This can be particularly frustrating. If you have issues
 building, deploying, or running apps and modules, you want to resolve them

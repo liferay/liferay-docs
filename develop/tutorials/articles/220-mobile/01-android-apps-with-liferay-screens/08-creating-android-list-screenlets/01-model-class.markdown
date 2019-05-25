@@ -4,6 +4,8 @@ header-id: creating-the-model-class
 
 # Creating the Model Class
 
+[TOC levels=1-4]
+
 Entities come back from Liferay in JSON. To work with these results efficiently 
 in your app, you must convert them to model objects that represent the entity in 
 Liferay. Although Screens's 

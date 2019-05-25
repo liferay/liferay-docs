@@ -4,6 +4,8 @@ header-id: elasticsearch-logging
 
 # Elasticsearch Logging
 
+[TOC levels=1-4]
+
 When you first start @product@, an embedded Elasticsearch server starts so that
 search works out of the box. The embedded search engine is not suitable for
 production, but is useful for testing and development.

@@ -4,6 +4,8 @@ header-id: defining-icons-and-tooltips
 
 # Defining Icons and Tooltips
 
+[TOC levels=1-4]
+
 When creating a Control Menu entry, you can use an icon in addition to or in
 place of text. You can also use tooltips to provide a more in depth
 explanation.

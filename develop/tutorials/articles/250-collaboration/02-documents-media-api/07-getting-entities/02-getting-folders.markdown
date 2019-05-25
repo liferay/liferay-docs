@@ -4,6 +4,8 @@ header-id: getting-folders
 
 # Getting Folders
 
+[TOC levels=1-4]
+
 The Documents and Media API can get folders in a similar way to getting files.
 The main difference is that folder retrieval methods may have an additional
 argument to tell the system whether to include *mount folders*. Mount folders

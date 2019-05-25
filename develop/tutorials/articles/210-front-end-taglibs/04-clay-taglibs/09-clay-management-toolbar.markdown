@@ -4,6 +4,8 @@ header-id: clay-management-toolbar
 
 # Clay Management Toolbar
 
+[TOC levels=1-4]
+
 The Management Toolbar gives administrators control over search container 
 results in their apps. It lets you filter, sort, and choose a view type for 
 search results, so you can quickly identify the document, web content, asset 

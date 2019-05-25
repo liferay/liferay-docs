@@ -4,6 +4,8 @@ header-id: deploying-your-theme
 
 # Deploying Your Theme
 
+[TOC levels=1-4]
+
 To deploy your theme to your app server, run the `gulp deploy` task. The `gulp 
 deploy` task 
 [builds your theme's files](/docs/7-1/tutorials/-/knowledge_base/t/building-your-themes-files), 

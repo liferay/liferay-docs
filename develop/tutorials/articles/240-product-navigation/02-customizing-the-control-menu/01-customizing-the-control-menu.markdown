@@ -4,6 +4,8 @@ header-id: creating-control-menu-entries
 
 # Creating Control Menu Entries
 
+[TOC levels=1-4]
+
 Now you'll create entries to customize the Control Menu. Make sure to read
 [Adding Custom Panel Categories](/docs/7-1/tutorials/-/knowledge_base/t/adding-custom-panel-categories)
 before beginning this tutorial. This tutorial assumes you know how to create a 

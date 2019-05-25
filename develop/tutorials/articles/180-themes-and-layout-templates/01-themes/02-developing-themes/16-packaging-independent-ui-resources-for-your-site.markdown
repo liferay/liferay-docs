@@ -4,6 +4,8 @@ header-id: packaging-independent-ui-resources-for-your-site
 
 # Packaging Independent UI Resources for Your Site
 
+[TOC levels=1-4]
+
 If you want to package UI resources independent of a specific theme and
 include them on a @product@ page, Theme Contributors are your best option. If,
 instead, you'd like to include separate UI resources on a @product@ page that

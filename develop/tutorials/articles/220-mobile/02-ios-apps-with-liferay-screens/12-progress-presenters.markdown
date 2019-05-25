@@ -4,6 +4,8 @@ header-id: using-and-creating-progress-presenters
 
 # Using and Creating Progress Presenters
 
+[TOC levels=1-4]
+
 Many apps display a progress indicator while performing an operation. For 
 example, you've likely seen the spinners in iOS apps that let you know the app 
 is performing some kind of work. For more information, see 

@@ -4,6 +4,8 @@ header-id: pagination
 
 # Pagination
 
+[TOC levels=1-4]
+
 A small collection can be transmitted in a single response without difficulty. 
 Transmitting a large collection all at once, however, can consume too much 
 bandwidth, time, and memory. It can also overwhelm the user with too much data. 

@@ -4,6 +4,8 @@ header-id: implementing-asset-priority
 
 # Implementing Asset Priority
 
+[TOC levels=1-4]
+
 The 
 [Asset Publisher](/docs/7-1/user/-/knowledge_base/u/publishing-assets) 
 lets you order assets by priority. For this to work, however, users must be able

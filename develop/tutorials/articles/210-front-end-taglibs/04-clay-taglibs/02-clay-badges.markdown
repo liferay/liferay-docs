@@ -4,6 +4,8 @@ header-id: clay-badges
 
 # Clay Badges
 
+[TOC levels=1-4]
+
 Badges help highlight important information such as notifications or new and 
 unread messages. Badges have circular borders and are only used to specify a 
 number. This tutorial covers the different types of Clay badges you can add to 

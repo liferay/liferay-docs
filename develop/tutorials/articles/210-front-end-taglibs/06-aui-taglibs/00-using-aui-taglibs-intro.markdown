@@ -4,6 +4,8 @@ header-id: using-aui-taglibs-in-your-portlets
 
 # Using AUI Taglibs
 
+[TOC levels=1-4]
+
 The AUI tag library provides tags that implement commonly used UI components. 
 These tags make your markup consistent, responsive, and accessible. 
 

@@ -4,6 +4,8 @@ header-id: modifying-an-editors-configuration
 
 # Modifying an Editor's Configuration
 
+[TOC levels=1-4]
+
 You can use many different kinds of WYSIWYG editors to edit content in
 portlets. Depending on the content you're editing, you may want to modify the
 editor to provide a customized configuration for your needs. In this tutorial,

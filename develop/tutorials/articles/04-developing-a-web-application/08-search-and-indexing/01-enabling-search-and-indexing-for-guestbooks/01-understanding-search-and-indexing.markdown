@@ -4,6 +4,8 @@ header-id: understanding-search-and-indexing
 
 # Understanding Search and Indexing
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Enabling Search and Indexing for Guestbooks<br>Step 1 of 6</p>
 </div>

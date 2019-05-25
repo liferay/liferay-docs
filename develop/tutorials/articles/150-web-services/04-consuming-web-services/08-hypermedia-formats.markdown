@@ -4,6 +4,8 @@ header-id: hypermedia-formats-and-content-negotiation
 
 # Hypermedia Formats and Content Negotiation
 
+[TOC levels=1-4]
+
 The responses in the preceding examples use the 
 [JSON-LD hypermedia format](https://json-ld.org/), 
 which is the default response format for @product@'s hypermedia REST APIs. 

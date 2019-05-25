@@ -4,6 +4,8 @@ header-id: using-liferay-util-include
 
 # Using Liferay Util Include
 
+[TOC levels=1-4]
+
 The include tag lets you include other JSP files in your portlet's JSP, theme, 
 or web content. This can increase readability as well as provide separation of 
 concerns for JSP files. 

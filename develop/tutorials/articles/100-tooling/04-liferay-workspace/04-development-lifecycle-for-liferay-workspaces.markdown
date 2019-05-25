@@ -4,6 +4,8 @@ header-id: development-lifecycle-for-a-liferay-workspace
 
 # Development Lifecycle for a Liferay Workspace
 
+[TOC levels=1-4]
+
 Liferay Workspaces provide an environment that supports all phases of a Liferay
 module's development lifecycle:
 

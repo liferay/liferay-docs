@@ -4,6 +4,8 @@ header-id: service-builder
 
 # Service Builder
 
+[TOC levels=1-4]
+
 An application without reliable business logic or persistence isn't much of an
 application at all. Unfortunately, writing your own persistence code often takes
 a great deal of time. Fortunately, Liferay provides the Liferay Service Builder

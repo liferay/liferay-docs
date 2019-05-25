@@ -4,6 +4,8 @@ header-id: checking-permissions
 
 # Checking Permissions
 
+[TOC levels=1-4]
+
 Now that you've defined your permissions, registered resources in the database
 and with the OSGi container, and enabled users to associate permissions with
 resources, you're ready to add permission checks in the appropriate places in

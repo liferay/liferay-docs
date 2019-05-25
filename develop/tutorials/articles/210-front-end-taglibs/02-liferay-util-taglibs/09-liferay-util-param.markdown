@@ -4,6 +4,8 @@ header-id: using-liferay-util-param
 
 # Using Liferay Util Param
 
+[TOC levels=1-4]
+
 The param tag lets you set a parameter for an 
 [included JSP page](/docs/7-1/tutorials/-/knowledge_base/t/using-liferay-util-include). 
 This configuration requires two JSPs. JSP A, the main view of the app, includes 

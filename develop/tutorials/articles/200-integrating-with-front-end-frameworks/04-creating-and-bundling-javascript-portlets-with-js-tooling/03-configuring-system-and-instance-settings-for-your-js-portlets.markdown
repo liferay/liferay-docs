@@ -4,6 +4,8 @@ header-id: configuring-system-settings-and-instance-settings-for-your-js-portlet
 
 # Configuring System Settings and Instance Settings for Your JavaScript Widget
 
+[TOC levels=1-4]
+
 As of v1.1.0 of the JS Portlet Extender, you can define configuration options 
 for your widget. These options are passed to the widget's JavaScript entry point 
 as the `configuration` parameter. See the 

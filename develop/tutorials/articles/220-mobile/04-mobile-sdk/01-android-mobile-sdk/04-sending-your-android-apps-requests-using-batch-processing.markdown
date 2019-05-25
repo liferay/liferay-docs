@@ -4,6 +4,8 @@ header-id: sending-your-android-apps-requests-using-batch-processing
 
 # Sending Your Android App's Requests Using Batch Processing
 
+[TOC levels=1-4]
+
 The Mobile SDK also allows sending requests in batch. This can be much more 
 efficient than sending separate requests. For example, suppose you want to 
 delete ten blog entries in a site's Blogs portlet at the same time. Instead of 

@@ -4,6 +4,8 @@ header-id: adding-logic-to-mvc-commands
 
 # Adding Logic to MVC Commands
 
+[TOC levels=1-4]
+
 You can completely override MVC commands, or any OSGi service for that matter,
 but *adding logic* to the commands is the better option. Discarding necessary
 logic is bad. Conversely any logic you copy from the original might not work in

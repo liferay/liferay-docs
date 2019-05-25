@@ -4,6 +4,8 @@ header-id: deleting-file-shortcuts
 
 # Deleting File Shortcuts
 
+[TOC levels=1-4]
+
 The Documents and Media API also lets you delete file shortcuts. To do so, use 
 the 
 [`DLAppService`](@platform-ref@/7.1-latest/javadocs/portal-kernel/com/liferay/document/library/kernel/service/DLAppService.html) 

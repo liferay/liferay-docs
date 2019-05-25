@@ -4,6 +4,8 @@ header-id: update-the-interactor-class
 
 # Update the Interactor Class
 
+[TOC levels=1-4]
+
 Recall from the basic Screenlet creation tutorial that Interactor classes extend 
 `BaseRemoteInteractor` with the listener and event as type arguments. To support 
 offline mode, your Interactor class must instead extend one of the following 

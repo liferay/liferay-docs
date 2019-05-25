@@ -4,6 +4,8 @@ header-id: mvc-action-command
 
 # MVC Action Command
 
+[TOC levels=1-4]
+
 Liferay's MVC framework lets you split your portlet's [action methods](/docs/7-1/tutorials/-/knowledge_base/t/creating-an-mvc-portlet#action-methods)
 into separate classes. This can be very helpful in portlets that have many
 actions. Each action URL in your portlet's JSPs then calls the appropriate

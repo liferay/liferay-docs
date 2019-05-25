@@ -4,6 +4,8 @@ header-id: using-npm-in-your-portlets
 
 # Using npm in Your Portlets
 
+[TOC levels=1-4]
+
 npm is a powerful tool, and almost a necessity for Front-End development. You 
 can use npm as your JavaScript package manager tool---including npm and npm
 packages---while developing portlets in your normal, everyday workflow. 

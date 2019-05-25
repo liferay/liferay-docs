@@ -4,6 +4,8 @@ header-id: providing-entity-specific-local-services-for-staging
 
 # Providing Entity-Specific Local Services for Staging
 
+[TOC levels=1-4]
+
 When creating your data handlers, you must leverage your app's local services to
 perform Staging-related tasks for its entities. When the Staging framework
 operates on entities (i.e., staged models), it often cannot manage important

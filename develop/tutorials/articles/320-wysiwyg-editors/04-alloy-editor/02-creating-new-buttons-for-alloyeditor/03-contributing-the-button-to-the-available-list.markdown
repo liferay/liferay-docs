@@ -4,6 +4,8 @@ header-id: contributing-the-button-to-alloyeditor
 
 # Contributing the Button to AlloyEditor
 
+[TOC levels=1-4]
+
 Once you've created your button, you can add it to the list of available 
 buttons. This can be achieved thanks to some smartly placed 
 `<liferay-util:dynamic-include />` tags in the editor's infrastructure. To make 

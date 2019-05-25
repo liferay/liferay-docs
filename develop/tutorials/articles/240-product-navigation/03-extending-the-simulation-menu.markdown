@@ -4,6 +4,8 @@ header-id: extending-the-simulation-menu
 
 # Extending the Simulation Menu
 
+[TOC levels=1-4]
+
 When testing how pages and apps appear for users, it's important to simulate
 their views in as many ways as possible. The Simulation Menu on the right-side
 of the main page allows this, and you can extend the menu if you need to

@@ -4,6 +4,8 @@ header-id: making-authenticated-requests
 
 # Making Authenticated Requests
 
+[TOC levels=1-4]
+
 When you make an unauthenticated request, you do so as a guest user and receive 
 only public information in the response. To make an authenticated request, you 
 must authenticate as a specific user. 

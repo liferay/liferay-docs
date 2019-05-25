@@ -4,6 +4,8 @@ header-id: retrieving-portlet-ids-with-the-gogo-shell
 
 # Retrieving Portlet IDs with the Gogo Shell
 
+[TOC levels=1-4]
+
 To 
 [include a portlet in
 a sitemap](/docs/7-1/tutorials/-/knowledge_base/t/defining-portlets-in-a-sitemap),

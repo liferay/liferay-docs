@@ -4,6 +4,8 @@ header-id: connecting-to-data-sources-using-jndi
 
 # Connecting to JNDI Data Sources
 
+[TOC levels=1-4]
+
 Connecting to an application server's JNDI data sources from @product@'s OSGi
 environment is almost the same as connecting to them from the Java EE
 environment. In an OSGi environment, the only difference is that you must use

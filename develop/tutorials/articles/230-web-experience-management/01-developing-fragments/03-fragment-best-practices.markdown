@@ -4,6 +4,8 @@ header-id: recommendations-and-best-practices
 
 # Recommendations and Best Practices
 
+[TOC levels=1-4]
+
 In general all your code should be semantic and highly reusable. A main concern
 is making sure that everything is namespaced properly so it won't interfere with
 other elements on the page outside of the Fragment.

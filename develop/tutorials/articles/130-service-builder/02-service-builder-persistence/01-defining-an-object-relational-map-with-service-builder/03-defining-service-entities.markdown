@@ -4,6 +4,8 @@ header-id: defining-service-entities
 
 # Defining Service Entities
 
+[TOC levels=1-4]
+
 Entities are the heart and soul of a service. They represent the map between the
 model objects in Java and your database fields and tables. Service Builder maps
 the entities you define automatically, giving you a facility for taking Java

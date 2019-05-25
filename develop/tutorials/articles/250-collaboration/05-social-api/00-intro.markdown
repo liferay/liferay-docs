@@ -4,6 +4,8 @@ header-id: social-api
 
 # Social API
 
+[TOC levels=1-4]
+
 The social API lets users interact with content throughout the portal, including
 content in your applications. For example, users can provide feedback on
 content, share that content with others, subscribe to receive notifications, and

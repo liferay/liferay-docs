@@ -4,6 +4,8 @@ header-id: applying-portlet-decorators-to-embedded-portlets
 
 # Applying Portlet Decorators to Embedded Portlets
 
+[TOC levels=1-4]
+
 Once you have installed a theme that contains Portlet Decorators, site
 administrators can apply them to a portlet instance by selecting the
 Application Decorator in the Look and Feel Configuration dialog. If your theme

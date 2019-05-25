@@ -4,6 +4,8 @@ header-id: introduction-to-frontend-development
 
 # Introduction to Front-End Development
 
+[TOC levels=1-4]
+
 @product@ offers complete developer front-end freedom. Whether you like coding 
 JavaScript by hand, have used Liferay's front-end frameworks in the past, or 
 prefer jQuery, Lodash, or modules, you can use your front-end framework of 

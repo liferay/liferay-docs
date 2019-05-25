@@ -4,6 +4,8 @@ header-id: using-oauth-2-in-the-android-mobile-sdk
 
 # Using OAuth 2 in the Android Mobile SDK
 
+[TOC levels=1-4]
+
 You can use 
 [OAuth 2](https://oauth.net/2/) 
 to authenticate with the following 

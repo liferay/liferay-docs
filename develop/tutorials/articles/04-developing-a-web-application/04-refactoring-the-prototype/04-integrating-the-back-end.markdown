@@ -4,6 +4,8 @@ header-id: integrating-the-new-back-end
 
 # Integrating the New Back-end
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Refactoring the Prototype<br>Step 4 of 6</p>
 </div>

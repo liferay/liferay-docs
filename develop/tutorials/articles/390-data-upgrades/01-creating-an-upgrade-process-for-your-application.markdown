@@ -4,6 +4,8 @@ header-id: creating-an-upgrade-process-for-your-app
 
 # Creating Data Upgrade Processes for Modules
 
+[TOC levels=1-4]
+
 Some changes you make to a module involve modifying the database. These changes
 bring with them the need for an upgrade process to move your module's database
 from one version to the next. Liferay has an upgrade framework you can use to

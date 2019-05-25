@@ -4,6 +4,8 @@ header-id: messaging-destinations
 
 # Messaging Destinations
 
+[TOC levels=1-4]
+
 In Message Bus, you send messages to *destinations*. A destination is a named
 logical (not physical) location. Sender classes send messages to destinations,
 while listener classes wait to receive messages at the destinations. In this

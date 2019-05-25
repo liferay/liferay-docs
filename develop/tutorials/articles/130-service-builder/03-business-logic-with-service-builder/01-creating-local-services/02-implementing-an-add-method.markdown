@@ -4,6 +4,8 @@ header-id: implementing-an-add-method
 
 # Implementing an Add Method
 
+[TOC levels=1-4]
+
 Your `*LocalServiceImpl` operates on the entities your `service.xml` defines.
 The first method to implement, therefore, is one that creates entities.
 Liferay's convention is to implement this in an `add*` method, where the part

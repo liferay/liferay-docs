@@ -4,6 +4,8 @@ header-id: embedding-content-in-the-alloy-editor
 
 # Embedding Content in the AlloyEditor
 
+[TOC levels=1-4]
+
 Whether it's a video from a popular streaming service, or an entertaining 
 podcast, embedded content is commonplace on the web. Sharing content from a 
 third party is sometimes required to properly cover a topic. The `EmbedProvider` 

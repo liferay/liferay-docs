@@ -4,6 +4,8 @@ header-id: defining-resources-and-permissions
 
 # Defining Resources and Permissions
 
+[TOC levels=1-4]
+
 Your first step in implementing permissions is to define the resources and the
 permissions that protect them. There are two different kinds of resources:
 *portlet resources* and *model resources*. 

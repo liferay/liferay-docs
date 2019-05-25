@@ -4,6 +4,8 @@ header-id: moving-folders-and-files
 
 # Moving Folders and Files
 
+[TOC levels=1-4]
+
 The move operation is more flexible than the 
 [copy operation](/docs/7-1/tutorials/-/knowledge_base/t/copying-folders). 
 Copying only works with folders, and you can't copy between repositories. 

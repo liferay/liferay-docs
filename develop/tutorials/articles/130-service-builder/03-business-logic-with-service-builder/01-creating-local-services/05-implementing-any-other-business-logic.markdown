@@ -4,6 +4,8 @@ header-id: implementing-any-other-business-logic
 
 # Implementing Any Other Business Logic
 
+[TOC levels=1-4]
+
 This section's earlier local service tutorials focus on CRUD methods: methods
 that **c**reate (add), **r**ead (get), **u**pdate, and **d**elete entities. But
 you might also need methods that provide business logic. 

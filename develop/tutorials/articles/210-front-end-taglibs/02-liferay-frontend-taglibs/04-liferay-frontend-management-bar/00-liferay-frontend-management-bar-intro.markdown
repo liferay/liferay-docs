@@ -4,6 +4,8 @@ header-id: liferay-frontend-management-bar
 
 # Liferay Front-end Management Bar
 
+[TOC levels=1-4]
+
 The Management Bar gives administrators control over search container results.
 It lets you filter, sort, and choose a display style for search results, so you
 can quickly identify the document, web content, asset entry, or whatever you're

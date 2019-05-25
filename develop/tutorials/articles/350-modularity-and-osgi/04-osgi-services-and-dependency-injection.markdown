@@ -4,6 +4,8 @@ header-id: osgi-services-and-dependency-injection-with-declarative-services
 
 # OSGi Services and Dependency Injection with Declarative Services
 
+[TOC levels=1-4]
+
 In @product@, the OSGi framework registers objects as *services*. Each service
 offers functionality and can leverage functionality other services provide. The
 OSGi Services model supports a collaborative environment for objects.

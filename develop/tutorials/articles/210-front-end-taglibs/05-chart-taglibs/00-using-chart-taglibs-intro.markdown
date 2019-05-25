@@ -4,6 +4,8 @@ header-id: using-the-chart-taglib-in-your-portlets
 
 # Using the Chart Taglib in Your Portlets
 
+[TOC levels=1-4]
+
 Lines, splines, bars, pies and more, the Chart tag Library provides everything 
 you need to model data. Each taglib gives you access to the corresponding 
 [Clay component](https://github.com/liferay/clay/tree/develop/packages/clay-charts/src). 

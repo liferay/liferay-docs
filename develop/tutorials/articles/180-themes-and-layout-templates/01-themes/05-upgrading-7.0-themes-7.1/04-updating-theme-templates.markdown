@@ -4,6 +4,8 @@ header-id: updating-theme-templates
 
 # Updating Theme Templates
 
+[TOC levels=1-4]
+
 @product-ver@ theme templates are essentially the same as Liferay Portal 7.0 
 theme templates. Here are the main changes:
 

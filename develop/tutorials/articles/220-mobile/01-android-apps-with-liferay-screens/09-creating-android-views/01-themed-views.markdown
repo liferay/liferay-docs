@@ -4,6 +4,8 @@ header-id: themed-views
 
 # Themed Views
 
+[TOC levels=1-4]
+
 Screens provides several existing View Sets that you can reuse and customize in 
 your app to create a Themed View. If you use or override the Android color 
 palette's values (for example, `primaryColor`, `secondaryColor`, etc...), you'll 

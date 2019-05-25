@@ -4,6 +4,8 @@ header-id: web-services
 
 # Web Services
 
+[TOC levels=1-4]
+
 It's important for apps on different machines to communicate. To enable this, an
 app can expose APIs so remote components (other apps or devices) can access the
 app's features. For example, one service could have a client app presenting

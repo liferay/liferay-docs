@@ -4,6 +4,8 @@ header-id: configuring-dependencies
 
 # Configuring Dependencies
 
+[TOC levels=1-4]
+
 Using external artifacts in your project requires configuring their
 dependencies. To do this, look up the artifact's attributes and plug them into
 dependency entries for your build system (either 

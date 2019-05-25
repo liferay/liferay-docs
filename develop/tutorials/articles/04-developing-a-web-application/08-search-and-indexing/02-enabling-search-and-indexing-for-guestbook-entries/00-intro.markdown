@@ -4,6 +4,8 @@ header-id: enabling-search-and-indexing-for-entries
 
 # Enabling Search and Indexing for Entries
 
+[TOC levels=1-4]
+
 In this section, you'll create the classes that control these aspects of the
 search functionality:
 

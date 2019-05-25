@@ -4,6 +4,8 @@ header-id: upgrading-app-jsp-hook-plugins
 
 # Upgrading App JSP Hooks
 
+[TOC levels=1-4]
+
 JSPs in OSGi modules can be customized using module fragments. The module
 fragment attaches to the host module to alter the JSPs. To the OSGi runtime, the
 fragment is part of the host module. Section 3.14 of the 

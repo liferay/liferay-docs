@@ -4,6 +4,8 @@ header-id: liferay-frontend-info-bar
 
 # Liferay Front-end Info Bar
 
+[TOC levels=1-4]
+
 An info bar provides a button that toggles the visibility of additional sidebar 
 information. This is perfect for providing more detailed metadata for a search 
 result, such as the file size, type, URL, etc. 

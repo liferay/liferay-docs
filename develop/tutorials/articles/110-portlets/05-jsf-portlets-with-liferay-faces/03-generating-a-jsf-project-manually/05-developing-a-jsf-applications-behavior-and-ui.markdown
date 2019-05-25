@@ -4,6 +4,8 @@ header-id: developing-a-jsf-applications-behavior-and-ui
 
 # Developing a JSF Application's Behavior and UI
 
+[TOC levels=1-4]
+
 Your current JSF application satisfies the requirements for portlet descriptors
 and WAR-style structure, but it doesn't do anything yet. You'll learn how to
 develop a JSF application's back-end and give it a simple UI next.

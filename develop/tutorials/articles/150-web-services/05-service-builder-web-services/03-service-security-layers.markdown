@@ -4,6 +4,8 @@ header-id: service-security-layers
 
 # Service Security Layers
 
+[TOC levels=1-4]
+
 Liferay's remote services are secured by default, because they only allow local
 connections. Enabling remote access requires peeling away several layers of
 security, first by IP address, then by user authentication and verification.

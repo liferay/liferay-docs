@@ -4,6 +4,8 @@ header-id: more-ways-osgi-improves-development-on-liferay
 
 # More Ways OSGi Improves Development on Liferay
 
+[TOC levels=1-4]
+
 Here are more ways OSGi meets the
 [developer experience goals](/docs/7-1/tutorials/-/knowledge_base/t/osgi-and-modularity-for-liferay-6-developers)
 mentioned earlier. These topics apply to both new and veteran Liferay

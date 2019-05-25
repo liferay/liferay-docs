@@ -4,6 +4,8 @@ header-id: bottom-jsp-dynamic-includes
 
 # Bottom JSP Dynamic Includes
 
+[TOC levels=1-4]
+
 The `bottom.jsp` dynamic includes load additional HTML or scripts in the bottom
 of the theme's body. The following keys are available:
 

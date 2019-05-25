@@ -4,6 +4,8 @@ header-id: liferay-ui-icons
 
 # Liferay UI Icons
 
+[TOC levels=1-4]
+
 The Liferay UI taglibs provide several icons you can include in your apps. To 
 add an icon to your app, use the `liferay-ui:icon` tag and specify the icon with 
 either the `icon`, `iconCssClass`, or `image` attribute. An example of each use 

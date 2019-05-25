@@ -4,6 +4,8 @@ header-id: core-layer
 
 # Core Layer
 
+[TOC levels=1-4]
+
 The core layer is the micro-framework that lets developers write Screenlets in a
 structured and isolated way. All Screenlets share a common structure based on
 the core classes, but each Screenlet can have a unique purpose and communication

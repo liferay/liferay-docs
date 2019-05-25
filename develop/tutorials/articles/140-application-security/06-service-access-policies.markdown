@@ -4,6 +4,8 @@ header-id: service-access-policies
 
 # Service Access Policies
 
+[TOC levels=1-4]
+
 Service access policies provide web service security beyond user authentication
 to remote services. Together with
 [permissions](/docs/7-1/tutorials/-/knowledge_base/t/defining-application-permissions),

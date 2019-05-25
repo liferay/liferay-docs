@@ -4,6 +4,8 @@ header-id: rendering-an-asset
 
 # Rendering an Asset
 
+[TOC levels=1-4]
+
 Before you create a way to render your asset, make sure it's added to the asset
 framework by following the
 [[Adding, Updating, and Deleting Assets](/docs/7-1/tutorials/-/knowledge_base/t/adding-updating-and-deleting-assets)

@@ -4,6 +4,8 @@ header-id: beyond-the-basics-for-portlets
 
 # Beyond the Basics for Portlets
 
+[TOC levels=1-4]
+
 The tutorial you've just completed should get you up and running with a Liferay
 MVC Web module, but there's more to know about creating an app in Liferay. To
 support more actions, complex render logic, and or serving resources, continue

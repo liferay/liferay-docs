@@ -4,6 +4,8 @@ header-id: creating-the-classes
 
 # Creating the Classes
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Writing the Guestbook Admin App<br>Step 1 of 5</p>
 </div>

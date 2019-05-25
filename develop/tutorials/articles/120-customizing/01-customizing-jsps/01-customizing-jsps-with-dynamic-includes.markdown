@@ -4,6 +4,8 @@ header-id: customizing-jsps-with-dynamic-includes
 
 # Customizing JSPs with Dynamic Includes
 
+[TOC levels=1-4]
+
 The
 [`liferay-util:dynamic-include` tag](@platform-ref@/7.1-latest/taglibs/util-taglib/liferay-util/dynamic-include.html)
 is placeholder into which you can inject content. Every JSP's dynamic include

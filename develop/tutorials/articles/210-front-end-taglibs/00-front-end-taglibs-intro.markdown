@@ -4,6 +4,8 @@ header-id: front-end-taglibs
 
 # Front-End Taglibs
 
+[TOC levels=1-4]
+
 You have access to a powerful set of taglibs for creating commonly used UI
 components in your apps, themes, and web content. The following taglibs are 
 covered in this section of tutorials:

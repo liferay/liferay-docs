@@ -4,6 +4,8 @@ header-id: meaningful-schema-versioning
 
 # Meaningful Schema Versioning
 
+[TOC levels=1-4]
+
 Data schema versions can be as arbitrary as you like; but they are most helpful
 when they provide meaning. Liferay's data schema version convention communicates
 a schema's compatibility with older versions of the software. It tells you

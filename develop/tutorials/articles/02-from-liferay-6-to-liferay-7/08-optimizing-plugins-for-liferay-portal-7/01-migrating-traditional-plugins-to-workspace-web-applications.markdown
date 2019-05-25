@@ -4,6 +4,8 @@ header-id: migrating-traditional-plugins-to-workspace-web-applications
 
 # Migrating Traditional Plugins to Workspace Web Applications
 
+[TOC levels=1-4]
+
 After you've
 [adapted your traditional plugin](/docs/7-1/tutorials/-/knowledge_base/t/adapting-to-liferay-7s-api-with-the-code-upgrade-tool)
 to @product@'s API, you can continue maintaining it in the Plugins SDK 7.0. The

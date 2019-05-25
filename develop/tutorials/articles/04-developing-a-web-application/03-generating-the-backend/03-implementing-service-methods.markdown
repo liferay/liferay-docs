@@ -4,6 +4,8 @@ header-id: implementing-service-methods
 
 # Implementing Service Methods
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Generating the Back-end<br>Step 3 of 3</p>
 </div>

@@ -4,6 +4,8 @@ header-id: managing-module-projects-with-blade-cli
 
 # Managing Your Liferay Server with Blade CLI
 
+[TOC levels=1-4]
+
 In this tutorial, you'll learn how to manage a Liferay server using Blade CLI.
 For example, Blade CLI lets you install, start, stop, inspect, and modify a
 Liferay server.

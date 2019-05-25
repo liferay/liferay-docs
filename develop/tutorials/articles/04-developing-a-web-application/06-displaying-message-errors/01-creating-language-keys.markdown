@@ -4,6 +4,8 @@ header-id: creating-language-keys
 
 # Creating Language Keys
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Displaying Messages and Errors<br>Step 1 of 3</p>
 </div>

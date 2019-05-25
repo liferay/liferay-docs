@@ -4,6 +4,8 @@ header-id: upgrading-core-jsp-hooks
 
 # Upgrading Core JSP Hooks
 
+[TOC levels=1-4]
+
 Getting a core JSP hook running on @product-ver@ takes two steps:
 
 1.  Adapt your code to @product-ver@'s API using

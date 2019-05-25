@@ -4,6 +4,8 @@ header-id: why-is-a-package-i-use-from-the-fragment-host-unresolved
 
 # Why doesn't the package I use from the fragment host resolve?
 
+[TOC levels=1-4]
+
 An OSGi fragment can access all of the fragment host's packages---it 
 doesn't need to import them from another bundle. bnd adds external packages the
 fragment uses (even ones in the fragment host) to the fragment's

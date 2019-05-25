@@ -4,6 +4,8 @@ header-id: clay-alerts
 
 # Clay Alerts
 
+[TOC levels=1-4]
+
 Clay alerts come in two types: embedded and stripe. This tutorial covers both 
 types and provides several examples of each.
 

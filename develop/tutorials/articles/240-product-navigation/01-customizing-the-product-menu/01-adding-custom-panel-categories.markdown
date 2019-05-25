@@ -4,6 +4,8 @@ header-id: adding-custom-panel-categories
 
 # Adding Custom Panel Categories
 
+[TOC levels=1-4]
+
 As you navigate the Product Menu, you can see that Panel Apps like *Web
 Content* and *Site Settings* are organized into Panel Categories such as
 *Content* and *Configuration*. This tutorial explains how to add new Panel

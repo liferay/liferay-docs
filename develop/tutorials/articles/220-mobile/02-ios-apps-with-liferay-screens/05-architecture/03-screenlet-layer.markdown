@@ -4,6 +4,8 @@ header-id: screenlet-layer-of-liferay-screens-for-ios
 
 # Screenlet Layer of Liferay Screens for iOS
 
+[TOC levels=1-4]
+
 The Screenlet layer contains the available Screenlets in Liferay Screens for
 iOS. The following diagram shows the Screenlet layer in relation to the Core,
 Interactor, Theme, and Connector layers. The Screenlet classes in the diagram 

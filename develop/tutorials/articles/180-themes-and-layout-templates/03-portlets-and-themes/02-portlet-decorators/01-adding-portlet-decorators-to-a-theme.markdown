@@ -4,6 +4,8 @@ header-id: adding-portlet-decorators-to-a-theme
 
 # Adding Portlet Decorators to a Theme
 
+[TOC levels=1-4]
+
 Portlet Decorators are associated with a particular theme. If your theme
 does not define any portlet decorators, none are available. It is recommended
 that you provide a few decorators for your portlets to cover the basic use

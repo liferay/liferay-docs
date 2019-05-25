@@ -4,6 +4,8 @@ header-id: adding-a-button-to-a-styles-toolbar
 
 # Adding a Button to a Styles Toolbar
 
+[TOC levels=1-4]
+
 A Styles Toolbar appears when content is selected or highlighted in AlloyEditor. 
 There are five Styles toolbars to choose from:
 

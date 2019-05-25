@@ -4,6 +4,8 @@ header-id: what-is-service-builder-0
 
 # What is Service Builder?
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Generating the Back-end<br>Step 1 of 3</p>
 </div>

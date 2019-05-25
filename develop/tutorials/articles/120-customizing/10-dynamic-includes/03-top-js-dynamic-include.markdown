@@ -4,6 +4,8 @@ header-id: top-js-dynamic-include
 
 # Top JS Dynamic Include
 
+[TOC levels=1-4]
+
 The `top_js.jspf` dynamic include adds additional JavaScript files to the
 theme's head. For example, you can use this extension point to include a JS
 library that you need present in the theme's head: 

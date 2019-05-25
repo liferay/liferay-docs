@@ -4,6 +4,8 @@ header-id: navigating-between-related-resources
 
 # Navigating Between Related Resources
 
+[TOC levels=1-4]
+
 A key benefit of Liferay's hypermedia REST APIs is discovering and navigating 
 all the services from a single starting point, the API's home URL. This is 
 possible because each endpoint contains links to its related resources or 

@@ -4,6 +4,8 @@ header-id: search-and-indexing
 
 # Search and Indexing
 
+[TOC levels=1-4]
+
 The Guestbook and Guestbook Admin portlets are up and running. The Guestbook
 portlet lets users add, edit, delete, and configure permissions for Guestbook
 Entries. The Guestbook Admin portlet lets Site administrators create, edit,

@@ -4,6 +4,8 @@ header-id: invoking-json-web-services
 
 # Invoking JSON Web Services
 
+[TOC levels=1-4]
+
 If you know the URL and are connected to the Internet, you can invoke Liferay's
 JSON web service API in any language you want or directly with the URL or
 [cURL](http://curl.haxx.se/). Additionally, Liferay provides a handy JSON web

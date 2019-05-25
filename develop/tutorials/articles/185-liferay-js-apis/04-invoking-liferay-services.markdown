@@ -4,6 +4,8 @@ header-id: invoking-liferay-services
 
 # Invoking Liferay Services
 
+[TOC levels=1-4]
+
 @product@ provides many web services out-of-the-box. To see a comprehensive list 
 of the available web services, navigate to `http://localhost:8080/api/jsonws` 
 (assuming your localhost is running on port 8080). If you've deployed your own 

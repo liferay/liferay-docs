@@ -4,6 +4,8 @@ header-id: using-the-liferay-util-taglib
 
 # Using the Liferay Util Taglib
 
+[TOC levels=1-4]
+
 The Liferay Util taglib is used to pull other resources into a portlet or theme. 
 You can use it to specify which resources to insert at the bottom or top of the 
 page's HTML. 

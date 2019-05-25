@@ -4,6 +4,8 @@ header-id: configuring-a-liferay-workspace
 
 # Configuring a Liferay Workspace
 
+[TOC levels=1-4]
+
 A Liferay Workspace offers a development environment that can be configured to
 fit your development needs. You'll learn about the files/folders a workspace
 provides by default, and then you'll dive into configuring your workspace.

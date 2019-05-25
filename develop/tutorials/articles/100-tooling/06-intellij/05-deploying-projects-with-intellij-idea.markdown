@@ -4,6 +4,8 @@ header-id: deploying-projects-with-intellij-idea
 
 # Deploying Projects with IntelliJ IDEA
 
+[TOC levels=1-4]
+
 Once you've
 [created a project](/docs/7-1/tutorials/-/knowledge_base/t/creating-projects-with-intellij-idea)
 and

@@ -4,6 +4,8 @@ header-id: rendering-field-types
 
 # Rendering Field Types
 
+[TOC levels=1-4]
+
 Before you get to the front-end coding necessary to render your field type,
 there's another Component to define and a Java class to code.
 

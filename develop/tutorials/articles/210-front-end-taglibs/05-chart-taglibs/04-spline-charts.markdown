@@ -4,6 +4,8 @@ header-id: spline-charts
 
 # Spline Charts
 
+[TOC levels=1-4]
+
 Spline charts contain multiple sets of data. A spline chart connects points of 
 data with a smooth curve. Each data series 
 (created with the `addColumns()` method) is defined with a new instance of the 

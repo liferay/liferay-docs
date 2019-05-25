@@ -4,6 +4,8 @@ header-id: providing-the-user-personal-bar
 
 # Providing the User Personal Bar
 
+[TOC levels=1-4]
+
 The User Personal Bar displays options unique to the current user. By default,
 this menu appears as an avatar button that expands the User Settings sub-menu in
 the Product Menu. In a custom theme, the User Personal Bar could appear anywhere

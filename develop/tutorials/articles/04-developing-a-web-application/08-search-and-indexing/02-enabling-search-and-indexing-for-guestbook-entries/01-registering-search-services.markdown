@@ -4,6 +4,8 @@ header-id: registering-entries-with-the-search-framework
 
 # Registering Entries with the Search Framework
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Enabling Search and Indexing for Entries<br>Step 1 of 5</p>
 </div>

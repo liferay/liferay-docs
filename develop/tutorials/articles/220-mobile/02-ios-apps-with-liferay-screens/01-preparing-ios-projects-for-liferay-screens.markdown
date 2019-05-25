@@ -4,6 +4,8 @@ header-id: preparing-ios-projects-for-liferay-screens
 
 # Preparing iOS Projects for Liferay Screens
 
+[TOC levels=1-4]
+
 To develop iOS apps with Liferay Screens, you must first install and configure 
 Screens in your iOS project. Screens is released as a standard 
 [CocoaPods](https://cocoapods.org) 

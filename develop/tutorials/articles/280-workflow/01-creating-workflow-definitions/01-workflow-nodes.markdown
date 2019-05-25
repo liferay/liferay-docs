@@ -4,6 +4,8 @@ header-id: workflow-definition-nodes
 
 # Workflow Definition Nodes
 
+[TOC levels=1-4]
+
 After your definition's schema and metadata are in place, begin defining the
 process. *Node* elements, with their sub-elements, are fundamental building
 blocks making up workflow definitions.

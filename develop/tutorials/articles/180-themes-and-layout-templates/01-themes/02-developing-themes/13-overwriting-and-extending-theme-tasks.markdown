@@ -4,6 +4,8 @@ header-id: overwriting-and-extending-liferay-theme-tasks
 
 # Overwriting and Extending Liferay Theme Tasks
 
+[TOC levels=1-4]
+
 Themes created with the Liferay Theme Generator have access to several default 
 gulp theme tasks that provide the standard features required to develop and 
 build your theme (build, deploy, watch, etc.). You may, however, want to run 

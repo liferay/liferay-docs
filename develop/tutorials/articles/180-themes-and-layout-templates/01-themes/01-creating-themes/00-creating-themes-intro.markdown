@@ -4,6 +4,8 @@ header-id: creating-themes
 
 # Creating Themes
 
+[TOC levels=1-4]
+
 The Liferay Theme Generator lets you create themes, themelets, layout templates 
 and more. It is just one of Liferay JS Theme Toolkit's 
 [tools](https://github.com/liferay/liferay-themes-sdk/tree/master/packages). 

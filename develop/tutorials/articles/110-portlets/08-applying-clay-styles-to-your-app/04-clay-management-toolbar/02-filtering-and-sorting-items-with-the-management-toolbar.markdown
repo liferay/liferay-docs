@@ -4,6 +4,8 @@ header-id: filtering-and-sorting-items-with-the-management-toolbar
 
 # Filtering and Sorting Items with the Management Toolbar
 
+[TOC levels=1-4]
+
 The Management Toolbar lets you filter and sort your search container results. 
 While you can configure the toolbar's filters in the JSP, this can quickly crowd 
 the JSP. We recommend instead that you move this functionality to a separate 
