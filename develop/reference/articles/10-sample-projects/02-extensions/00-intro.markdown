@@ -4,6 +4,8 @@ header-id: extensions
 
 # Extensions
 
+[TOC levels=1-4]
+
 This section focuses on Liferay sample extensions. You can view these sample
 extensions by visiting the `extensions` folder corresponding to your preferred
 build tool:

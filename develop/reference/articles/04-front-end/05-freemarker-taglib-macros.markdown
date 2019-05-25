@@ -4,6 +4,8 @@ header-id: freemarker-taglib-macros
 
 # FreeMarker Taglib Macros
 
+[TOC levels=1-4]
+
 @product@'s taglibs are mapped to FreeMarker macros, so you can use them in your 
 FreeMarker templates. See the 
 [Taglib tutorials](/docs/7-1/tutorials/-/knowledge_base/t/front-end-taglibs) 

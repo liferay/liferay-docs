@@ -4,6 +4,8 @@ header-id: theme-reference-guide
 
 # Theme Reference Guide
 
+[TOC levels=1-4]
+
 A theme is made up of several files. Although most of the files are named after
 their matching components, their functions may be unclear. This reference guide
 explains each file's usage to make clear which files to modify.

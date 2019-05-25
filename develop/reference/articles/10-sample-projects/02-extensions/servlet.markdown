@@ -4,6 +4,8 @@ header-id: servlet
 
 # Servlet
 
+[TOC levels=1-4]
+
 The Servlet sample provides an OSGi Whiteboard Servlet in @product@. When
 deploying this sample and configuring the servlet, a *Hello World* message is
 displayed when accessing the servlet page URL. Log info is also outputted to

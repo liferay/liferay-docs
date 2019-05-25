@@ -4,6 +4,8 @@ header-id: developing-an-ext-plugin
 
 # Developing an Ext Plugin
 
+[TOC levels=1-4]
+
 An Ext plugin changes @product@ itself when the plugin is deployed; it's not a
 separate component that you can easily remove at any time. For this reason, the
 Ext plugin development process is different from other project types. It's

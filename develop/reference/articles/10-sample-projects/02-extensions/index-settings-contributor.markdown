@@ -4,6 +4,8 @@ header-id: index-settings-contributor
 
 # Index Settings Contributor
 
+[TOC levels=1-4]
+
 The Index Settings Contributor sample demonstrates how to add a custom type
 mapping to @product@. You can demo this sample by completing the following
 steps:

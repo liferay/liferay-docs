@@ -4,6 +4,8 @@ header-id: kotlin-portlet
 
 # Kotlin Portlet
 
+[TOC levels=1-4]
+
 The Kotlin Portlet sample provides an input form that accepts a name. Once
 submitting a name, the portlet renders a greeting message.
 

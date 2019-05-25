@@ -4,6 +4,8 @@ header-id: document-action
 
 # Document Action
 
+[TOC levels=1-4]
+
 The Document Action sample shows how to add a context menu option to an entry in
 the Documents and Media portlet. When deploying this sample with no
 customizations, an additional menu option is available in the Documents and

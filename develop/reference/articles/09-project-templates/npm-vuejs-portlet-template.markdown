@@ -4,6 +4,8 @@ header-id: npm-vue-js-portlet-template
 
 # npm Vue.js Portlet Template
 
+[TOC levels=1-4]
+
 In this article, you'll learn how to create an npm Vue.js portlet as a
 Liferay module. To create an npm Vue.js portlet via the command line using
 Blade CLI or Maven, use one of the commands with the following parameters:

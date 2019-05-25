@@ -4,6 +4,8 @@ header-id: developing-an-ext-module
 
 # Developing an Ext Module
 
+[TOC levels=1-4]
+
 You can create your own Ext module project by
 
 - Declaring the original module name and version.

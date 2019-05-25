@@ -4,6 +4,8 @@ header-id: indexer-post-processor
 
 # Indexer Post Processor
 
+[TOC levels=1-4]
+
 The Indexer Post Processor sample demonstrates using the `IndexerPostProcessor`
 interface, which is provided to customize search queries and documents before
 they're sent to the search engine, and/or customize result summaries when

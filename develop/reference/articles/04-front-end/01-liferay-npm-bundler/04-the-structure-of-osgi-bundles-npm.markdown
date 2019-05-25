@@ -4,6 +4,8 @@ header-id: the-structure-of-osgi-bundles-containing-npm-packages
 
 # The Structure of OSGi Bundles Containing npm Packages
 
+[TOC levels=1-4]
+
 To deploy JavaScript modules, you must create an OSGi bundle with the npm 
 dependencies extracted from the project's `node_modules` folder and modify them 
 to work with the 

@@ -4,6 +4,8 @@ header-id: ddllistscreenlet-for-ios
 
 # DDL List Screenlet for iOS
 
+[TOC levels=1-4]
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/O28qAvrumqQ" frameborder="0" allowfullscreen></iframe>
 
 ## Requirements

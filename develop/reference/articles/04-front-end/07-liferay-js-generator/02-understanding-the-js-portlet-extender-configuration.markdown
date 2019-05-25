@@ -4,6 +4,8 @@ header-id: understanding-the-js-portlet-extender-configuration
 
 # Understanding the JS Portlet Extender Configuration
 
+[TOC levels=1-4]
+
 Bundles generated with the Liferay JS Generator require specific method 
 signatures, MANIFEST headers, and configuration within their `package.json` 
 file to use the JS Portlet Extender. This configuration is provided by default. 

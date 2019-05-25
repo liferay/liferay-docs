@@ -4,6 +4,8 @@ header-id: service-builder-gradle-plugin
 
 # Service Builder Gradle Plugin
 
+[TOC levels=1-4]
+
 The Service Builder Gradle plugin lets you generate a service layer defined in a
 [Service Builder](/docs/7-1/tutorials/-/knowledge_base/t/what-is-service-builder)
 `service.xml` file.

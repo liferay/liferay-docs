@@ -4,6 +4,8 @@ header-id: resolving-common-output-errors-reported-by-the-resolve-task
 
 # Resolving Common Output Errors Reported by the resolve Task
 
+[TOC levels=1-4]
+
 [Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace)
 provides the `resolve` Gradle task to
 [validate modules](/docs/7-1/tutorials/-/knowledge_base/t/resolving-your-modules).

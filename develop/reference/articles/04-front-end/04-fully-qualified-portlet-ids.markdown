@@ -4,6 +4,8 @@ header-id: fully-qualified-portlet-ids
 
 # Fully Qualified Portlet IDs
 
+[TOC levels=1-4]
+
 Below is a listing of the portlet IDs for the default portlets in @product@. You 
 can use these IDs to embed portlets in your theme's 
 [sitemap](/docs/7-1/tutorials/-/knowledge_base/t/defining-portlets-in-a-sitemap). 

@@ -4,6 +4,8 @@ header-id: understanding-how-liferay-npm-bundler-formats-javascript-modules-for-
 
 # Understanding How liferay-npm-bundler Formats JavaScript Modules for AMD
 
+[TOC levels=1-4]
+
 Liferay AMD Loader is based on the 
 [AMD specification](https://github.com/amdjs/amdjs-api/wiki/AMD). 
 All modules inside an npm OSGi bundle must be in AMD format. This is done for 

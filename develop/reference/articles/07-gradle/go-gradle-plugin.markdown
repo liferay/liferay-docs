@@ -4,6 +4,8 @@ header-id: go-gradle-plugin
 
 # Go Gradle Plugin
 
+[TOC levels=1-4]
+
 The Go Gradle plugin lets you run [Go](https://golang.org/) as part of your
 build.
 

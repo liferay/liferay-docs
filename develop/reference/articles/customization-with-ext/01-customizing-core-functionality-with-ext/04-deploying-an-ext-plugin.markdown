@@ -4,6 +4,8 @@ header-id: deploying-an-ext-plugin
 
 # Deploying an Ext Plugin
 
+[TOC levels=1-4]
+
 Deploying an Ext plugin is similar to deploying any other @product@ project. For
 example, you'll step through deploying an Ext plugin in Liferay Workspace.
 

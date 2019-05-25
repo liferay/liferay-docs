@@ -4,6 +4,8 @@ header-id: metal-js-npm-portlet
 
 # Metal.js npm Portlet
 
+[TOC levels=1-4]
+
 The Metal.js npm Portlet sample provides a portlet that uses the
 [Metal.js](https://metaljs.com/) framework to render its output.
 

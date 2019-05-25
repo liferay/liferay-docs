@@ -4,6 +4,8 @@ header-id: liferay-js-generator-commands
 
 # Liferay JS Generator Commands
 
+[TOC levels=1-4]
+
 The npm commands shown below are available for the Liferay JS Generator:
 
 - `npm run build`: Places the output of liferay-npm-bundler in the designated 

@@ -4,6 +4,8 @@ header-id: db-support-plugin
 
 # DB Support Plugin
 
+[TOC levels=1-4]
+
 The DB Support plugin lets you run the Liferay DB Support tool to execute
 certain actions on a local @product@ database. The following actions are
 available:

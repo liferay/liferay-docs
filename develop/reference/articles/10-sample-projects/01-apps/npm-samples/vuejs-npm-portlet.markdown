@@ -4,6 +4,8 @@ header-id: vue-js-npm-portlet
 
 # Vue.js npm Portlet
 
+[TOC levels=1-4]
+
 The Vue.js npm Portlet sample provides a portlet that uses the
 [Vue.js](https://vuejs.org/) framework to render its output.
 

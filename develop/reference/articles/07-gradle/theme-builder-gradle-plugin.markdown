@@ -4,6 +4,8 @@ header-id: theme-builder-gradle-plugin
 
 # Theme Builder Gradle Plugin
 
+[TOC levels=1-4]
+
 The Theme Builder Gradle plugin lets you run the [Liferay Theme Builder](https://github.com/liferay/liferay-portal/tree/master/modules/util/portal-tools-theme-builder)
 tool to build the Liferay theme files in your project.
 

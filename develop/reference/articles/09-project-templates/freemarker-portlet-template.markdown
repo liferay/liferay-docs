@@ -4,6 +4,8 @@ header-id: freemarker-portlet-template
 
 # FreeMarker Portlet Template
 
+[TOC levels=1-4]
+
 In this article, you'll learn how to create a Liferay FreeMarker portlet
 application as a Liferay module. To create a Liferay FreeMarker portlet
 application via the command line using Blade CLI or Maven, use one of the

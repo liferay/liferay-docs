@@ -4,6 +4,8 @@ header-id: login-web-ext
 
 # Login Web Ext
 
+[TOC levels=1-4]
+
 The Login Ext Module sample demonstrates how to customize a default Liferay
 module's source code. This example replaces the default `login.jsp` file in the
 `com.liferay.login.web` bundle by adding the text *Hello from

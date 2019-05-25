@@ -4,6 +4,8 @@ header-id: resource-bundle-override
 
 # Resource Bundle Override
 
+[TOC levels=1-4]
+
 This example overrides the default
 `javax.portlet.title.com_liferay_login_web_portlet_LoginPortlet` language key
 for @product@'s default Login portlet. After deploying this sample to @product@,

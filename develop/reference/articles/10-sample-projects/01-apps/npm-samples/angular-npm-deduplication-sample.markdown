@@ -4,6 +4,8 @@ header-id: angular-npm-deduplication-sample
 
 # Angular npm Deduplication Sample
 
+[TOC levels=1-4]
+
 The Angular npm Deduplication sample provides a portlet that uses the
 [Angular](https://angular.io/) framework to render its output.
 

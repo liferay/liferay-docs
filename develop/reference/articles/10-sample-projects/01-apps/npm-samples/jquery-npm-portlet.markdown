@@ -4,6 +4,8 @@ header-id: jquery-npm-portlet
 
 # jQuery npm Portlet
 
+[TOC levels=1-4]
+
 The jQuery npm Portlet sample provides a portlet that uses the
 [jQuery](https://jquery.com/) framework to render its output.
 

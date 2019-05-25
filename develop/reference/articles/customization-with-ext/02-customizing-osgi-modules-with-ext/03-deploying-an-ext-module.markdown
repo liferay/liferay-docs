@@ -4,6 +4,8 @@ header-id: deploying-an-ext-module
 
 # Deploying an Ext Module
 
+[TOC levels=1-4]
+
 Before deploying your Ext module, you must stop the original bundle you intend
 to override. This is because an Ext module's generated JAR includes the original
 bundle source plus your modified source files.

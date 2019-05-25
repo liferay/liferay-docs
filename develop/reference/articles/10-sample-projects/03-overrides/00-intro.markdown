@@ -4,6 +4,8 @@ header-id: overrides
 
 # Overrides
 
+[TOC levels=1-4]
+
 This section focuses on Liferay sample overrides. You can view these sample
 overrides by visiting the `overrides` folder corresponding to your preferred
 build tool:

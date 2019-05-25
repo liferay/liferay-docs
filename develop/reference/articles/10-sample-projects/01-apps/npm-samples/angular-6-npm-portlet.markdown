@@ -4,6 +4,8 @@ header-id: angular-6-npm-portlet
 
 # Angular 6 npm Portlet
 
+[TOC levels=1-4]
+
 The Angular 6 npm Portlet sample provides a portlet that uses the
 [Angular](https://angular.io/) framework (version 6) to render its output.
 

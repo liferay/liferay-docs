@@ -4,6 +4,8 @@ header-id: bundle-support-plugin
 
 # Bundle Support Plugin
 
+[TOC levels=1-4]
+
 The Bundle Support plugin lets you use
 [Liferay Workspace](/docs/7-1/tutorials/-/knowledge_base/t/liferay-workspace)
 as a Maven project. For more information on how a Maven Workspace works and the

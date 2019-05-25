@@ -4,6 +4,8 @@ header-id: how-liferay-amd-loader-configuration-is-exported
 
 # Understanding How Liferay AMD Loader Configuration is Exported
 
+[TOC levels=1-4]
+
 **NOTE:** This article is for users who know how Liferay AMD Loader works under 
 the hood. You can learn more about Liferay AMD Loader in the 
 [Liferay AMD Module Loader](/docs/7-1/tutorials/-/knowledge_base/t/loading-amd-modules-in-liferay) 

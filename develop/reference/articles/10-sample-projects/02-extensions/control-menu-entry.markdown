@@ -4,6 +4,8 @@ header-id: control-menu-entry
 
 # Control Menu Entry
 
+[TOC levels=1-4]
+
 The Control Menu Entry sample provides a customizable button that is added to
 Liferay Portal's default Control Menu. When deploying this sample with no
 customizations, an additional button is added to the User (right side) portion

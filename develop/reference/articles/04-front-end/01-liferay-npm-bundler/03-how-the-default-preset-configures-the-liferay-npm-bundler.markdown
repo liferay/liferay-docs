@@ -4,6 +4,8 @@ header-id: how-the-default-preset-configures-the-liferay-npm-bundler
 
 # How the Default Preset Configures the liferay-npm-bundler
 
+[TOC levels=1-4]
+
 The liferay-npm-bundler comes with a default configuration preset: 
 [`liferay-npm-bundler-preset-standard`](https://github.com/liferay/liferay-npm-build-tools/tree/master/packages/liferay-npm-bundler-preset-standard)
 ---Note you may omit the `liferay-npm-bundler` prefix from the npm package name 

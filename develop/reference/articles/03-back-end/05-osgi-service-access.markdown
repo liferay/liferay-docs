@@ -4,6 +4,8 @@ header-id: osgi-service-access
 
 # OSGi Service Access
 
+[TOC levels=1-4]
+
 Accessing an OSGi service depends on the type of code (e.g., Spring Bean, OSGi
 component, etc.) accessing it and the code's application context. 
 

@@ -4,6 +4,8 @@ header-id: app-javadoc-builder-gradle-plugin
 
 # App Javadoc Builder Gradle Plugin
 
+[TOC levels=1-4]
+
 The App Javadoc Builder Gradle plugin lets you generate API documentation as a
 single, combined HTML document for an application that spans different
 subprojects, each one representing a different component of the same

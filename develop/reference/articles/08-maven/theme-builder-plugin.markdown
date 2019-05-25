@@ -4,6 +4,8 @@ header-id: theme-builder-plugin
 
 # Theme Builder Plugin
 
+[TOC levels=1-4]
+
 The Theme Builder plugin lets you build Liferay theme files in your project.
 Visit the
 [Building Themes in a Maven Project](/docs/7-1/tutorials/-/knowledge_base/t/building-themes-in-a-maven-project)

@@ -4,6 +4,8 @@ header-id: image-display-screenlet-for-android
 
 # Image Display Screenlet for Android
 
+[TOC levels=1-4]
+
 ## Requirements
 
 - Android SDK 4.1 (API Level 16) or above

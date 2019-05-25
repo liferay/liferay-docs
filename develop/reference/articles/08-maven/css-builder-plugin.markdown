@@ -4,6 +4,8 @@ header-id: css-builder-plugin
 
 # CSS Builder Plugin
 
+[TOC levels=1-4]
+
 The CSS Builder plugin lets you compile [Sass](http://sass-lang.com/) files in
 your project.
 

@@ -4,6 +4,8 @@ header-id: liferay-startup-phases
 
 # @product@ Startup Phases
 
+[TOC levels=1-4]
+
 Knowing Liferay's startup phases helps you troubleshoot startup failures. By
 learning the phase triggered events, you can listen for phases and act on them.
 This article describes the startup phases and identifies how to [implement

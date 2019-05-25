@@ -4,6 +4,8 @@ header-id: template-context-contributor-template
 
 # Template Context Contributor Template
 
+[TOC levels=1-4]
+
 In this article, you'll learn how to create a Liferay template context
 contributor as a Liferay module. To create a template context contributor via
 the command line using Blade CLI or Maven, use one of the commands with the

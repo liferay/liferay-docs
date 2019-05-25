@@ -4,6 +4,8 @@ header-id: embedding-widgets-in-page-fragments
 
 # Embedding Widgets in Page Fragments
 
+[TOC levels=1-4]
+
 You can embed both a selection of Liferay widgets and your own custom widgets in Page Fragments. For a more information on embedding custom widgets, see the [Fragment Specific Tags](/docs/7-1/tutorials/-/knowledge_base/t/fragment-specific-tags) tutorial.
 
 ## Embedding Liferay Widgets

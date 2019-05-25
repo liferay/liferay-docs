@@ -4,6 +4,8 @@ header-id: third-party-packages-portal-exports
 
 # Third Party Packages Portal Exports
 
+[TOC levels=1-4]
+
 The `com.liferay.portal.bootstrap` module exports many third party Java packages
 that can cause problems if used improperly. If your WAR's Gradle file, for
 example, uses the `compile` scope for a dependency that Liferay's OSGi runtime

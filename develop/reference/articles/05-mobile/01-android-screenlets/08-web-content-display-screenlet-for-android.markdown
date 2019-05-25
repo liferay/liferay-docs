@@ -4,6 +4,8 @@ header-id: webcontentdisplayscreenlet-for-android
 
 # Web Content Display Screenlet for Android
 
+[TOC levels=1-4]
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/JVxfjAnCve8" frameborder="0" allowfullscreen></iframe>
 
 ## Requirements

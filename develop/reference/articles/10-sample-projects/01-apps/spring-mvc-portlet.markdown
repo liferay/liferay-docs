@@ -4,6 +4,8 @@ header-id: spring-mvc-portlet
 
 # Spring MVC Portlet
 
+[TOC levels=1-4]
+
 The Spring MVC portlet provides a way to add various different fields into the
 database and display them in a table. This project is a Spring MVC based portlet
 WAR that implements the same functionality as the

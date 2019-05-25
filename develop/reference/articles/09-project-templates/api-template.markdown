@@ -4,6 +4,8 @@ header-id: api-template
 
 # API Template
 
+[TOC levels=1-4]
+
 In this tutorial, you'll learn how to create a Liferay API as a Liferay module.
 To create a Liferay API via the command line using Blade CLI or Maven, use one
 of the commands with the following parameters:

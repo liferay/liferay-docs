@@ -4,6 +4,8 @@ header-id: pdf-display-screenlet-for-ios
 
 # PDF Display Screenlet for iOS
 
+[TOC levels=1-4]
+
 ## Requirements
 
 - Xcode 9.3 or above

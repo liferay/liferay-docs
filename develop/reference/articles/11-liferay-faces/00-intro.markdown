@@ -4,6 +4,8 @@ header-id: liferay-faces
 
 # Liferay Faces
 
+[TOC levels=1-4]
+
 Liferay Faces is an umbrella project that provides support for the
 JavaServer&#8482; Faces (JSF) standard within Liferay Portal. It encompasses the
 following projects:

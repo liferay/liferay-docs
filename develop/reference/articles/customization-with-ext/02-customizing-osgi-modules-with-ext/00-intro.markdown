@@ -4,6 +4,8 @@ header-id: customizing-osgi-modules-with-ext
 
 # Customizing OSGi Modules with Ext
 
+[TOC levels=1-4]
+
 An Ext module is a powerful tool for extending @product@'s OSGi modules. For
 example, if you want to overwrite a default module's JSP to display a different
 view, you can create an Ext module to customize the original module's JSP (for

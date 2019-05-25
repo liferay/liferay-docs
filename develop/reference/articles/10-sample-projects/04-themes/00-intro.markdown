@@ -4,6 +4,8 @@ header-id: themes
 
 # Themes
 
+[TOC levels=1-4]
+
 This section focuses on Liferay sample themes. You can view these sample themes
 by visiting the `themes` folder corresponding to your preferred build tool:
 

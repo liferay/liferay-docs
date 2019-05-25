@@ -4,6 +4,8 @@ header-id: image-gallery-screenlet-for-android
 
 # Image Gallery Screenlet for Android
 
+[TOC levels=1-4]
+
 ## Requirements
 
 - Android SDK 4.1 (API Level 16) or above

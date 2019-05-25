@@ -4,6 +4,8 @@ header-id: configuring-system-settings-for-osgi-bundles-created-with-the-bundler
 
 # Configuring System Settings for OSGi Bundles Created with the liferay-npm-bundler
 
+[TOC levels=1-4]
+
 If you're 
 [creating an OSGi bundle with the Liferay JS Generator](/docs/7-1/tutorials/-/knowledge_base/t/creating-and-bundling-javascript-portlets-with-javascript-tooling) 
 and want to provide system settings for your widget, you must provide a 

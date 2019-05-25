@@ -4,6 +4,8 @@ header-id: using-the-felix-gogo-shell
 
 # Felix Gogo Shell
 
+[TOC levels=1-4]
+
 To interact with @product@'s module framework, you can leverage the Gogo shell
 portlet. You can access this portlet in the Control Panel &rarr; *Configuration*
 &rarr; *Gogo Shell*.

@@ -4,6 +4,8 @@ header-id: deployment-helper-plugin
 
 # Deployment Helper Plugin
 
+[TOC levels=1-4]
+
 The Deployment Helper plugin lets you create a cluster deployable WAR from your
 OSGi artifacts.
 

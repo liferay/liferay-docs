@@ -4,6 +4,8 @@ header-id: customization-with-ext
 
 # Customization with Ext
 
+[TOC levels=1-4]
+
 **Customization with Ext projects is deprecated and should only be used if
 absolutely necessary.**
 

@@ -4,6 +4,8 @@ header-id: tlddoc-builder-gradle-plugin
 
 # TLDDoc Builder Gradle Plugin
 
+[TOC levels=1-4]
+
 The TLDDoc Builder Gradle plugin lets you run the
 [Tag Library Documentation Generator](http://web.archive.org/web/20070624180825/https://taglibrarydoc.dev.java.net/)
 tool in order to generate documentation for the JSP Tag Library Descriptor (TLD)

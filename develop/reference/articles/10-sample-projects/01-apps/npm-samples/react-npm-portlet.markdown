@@ -4,6 +4,8 @@ header-id: react-npm-portlet
 
 # React npm Portlet
 
+[TOC levels=1-4]
+
 The React npm Portlet sample provides a portlet that uses the
 [React](https://reactjs.org/) framework to render its output.
 

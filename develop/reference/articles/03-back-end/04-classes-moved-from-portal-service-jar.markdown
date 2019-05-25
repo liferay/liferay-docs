@@ -4,6 +4,8 @@ header-id: classes-moved-from-portal-service-jar
 
 # Classes Moved from portal-service.jar
 
+[TOC levels=1-4]
+
 To leverage the benefits of modularization in @product-ver@, many classes from
 former Liferay Portal 6 JAR file <em>portal-service.jar</em> have been moved
 into application and framework API modules. The table below provides details

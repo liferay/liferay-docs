@@ -4,6 +4,8 @@ header-id: image-gallery-screenlet-for-ios
 
 # Image Gallery Screenlet for iOS
 
+[TOC levels=1-4]
+
 ## Requirements
 
 - Xcode 9.3 or above

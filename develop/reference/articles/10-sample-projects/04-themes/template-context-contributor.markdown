@@ -4,6 +4,8 @@ header-id: template-context-contributor
 
 # Template Context Contributor
 
+[TOC levels=1-4]
+
 The Template Context Contributor sample injects a new variable into @product@'s
 theme context. When deploying this sample with no customizations, you can use
 the `${sample_text}` variable from any theme.

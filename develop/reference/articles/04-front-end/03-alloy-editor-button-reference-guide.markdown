@@ -4,6 +4,8 @@ header-id: alloyeditor-button-reference-guide
 
 # AlloyEditor Button Reference Guide
 
+[TOC levels=1-4]
+
 This reference guide provides additional information that you may find helpful 
 while 
 [creating new buttons for AlloyEditor](/docs/7-1/tutorials/-/knowledge_base/t/creating-new-buttons-for-alloyeditor). 

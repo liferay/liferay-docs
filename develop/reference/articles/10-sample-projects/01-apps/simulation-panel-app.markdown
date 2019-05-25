@@ -4,6 +4,8 @@ header-id: simulation-panel-app
 
 # Simulation Panel App
 
+[TOC levels=1-4]
+
 The Simulation Panel App provides new functionality in @product@'s Simulation
 Menu. When deploying this sample with no customizations, the *Simulation Sample*
 feature is provided in the Simulation Menu with four options.

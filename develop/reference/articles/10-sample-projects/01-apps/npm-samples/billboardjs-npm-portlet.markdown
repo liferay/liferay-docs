@@ -4,6 +4,8 @@ header-id: billboard-js-npm-portlet
 
 # Billboard.js npm Portlet
 
+[TOC levels=1-4]
+
 The Billboard.js npm Portlet sample provides a portlet that uses the
 [Billboard.js](https://naver.github.io/billboard.js/) framework to render its
 output.

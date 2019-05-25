@@ -4,6 +4,8 @@ header-id: configuring-liferay-npm-bundler
 
 # Configuring liferay-npm-bundler
 
+[TOC levels=1-4]
+
 The liferay-npm-bundler is configured via a `.npmbundlerrc` file placed in 
 the portlet project's root folder. You can create a complete configuration 
 manually or extend a configuration preset (via Babel). 

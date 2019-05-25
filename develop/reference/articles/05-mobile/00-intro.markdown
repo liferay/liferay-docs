@@ -4,6 +4,8 @@ header-id: screenlets-in-liferay-screens
 
 # Screenlets in Liferay Screens
 
+[TOC levels=1-4]
+
 Liferay Screens includes several Screenlets that you can use in your mobile 
 apps. Screenlets are ready-to-use components that contain a complete UI and the 
 code necessary to call @product@'s remote services for tasks like logging in, 

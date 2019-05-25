@@ -4,6 +4,8 @@ header-id: wsdl-builder-gradle-plugin
 
 # WSDL Builder Gradle Plugin
 
+[TOC levels=1-4]
+
 The WSDL Builder Gradle plugin lets you generate [Apache Axis](http://axis.apache.org/axis/)
 client stubs from Web Service Description (WSDL) files.
 

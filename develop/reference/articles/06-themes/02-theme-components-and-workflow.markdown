@@ -4,6 +4,8 @@ header-id: theme-components-and-workflow
 
 # Theme Components and Workflow
 
+[TOC levels=1-4]
+
 If you want to develop a website, you must have three key components: CSS,
 JavaScript, and HTML. @product@ supports SASS as well as multiple JavaScript
 frameworks. The HTML, however, is rendered via

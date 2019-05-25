@@ -4,6 +4,8 @@ header-id: screenlets-in-liferay-screens-for-ios
 
 # Screenlets in Liferay Screens for iOS
 
+[TOC levels=1-4]
+
 Liferay Screens for iOS contains several Screenlets that you can use in your iOS 
 apps. This section contains the reference documentation for each. If you're 
 looking for instructions on using Screens, see the 
