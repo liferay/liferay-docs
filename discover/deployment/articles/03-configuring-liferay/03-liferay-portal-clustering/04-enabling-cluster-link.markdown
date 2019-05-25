@@ -4,6 +4,8 @@ header-id: enabling-cluster-link
 
 # Enabling Cluster Link
 
+[TOC levels=1-4]
+
 Enabling Cluster Link automatically activates distributed caching.  The cache is
 distributed across multiple @product@ nodes running concurrently. Cluster Link
 does

@@ -4,6 +4,8 @@ header-id: adding-ldap-servers
 
 # Adding LDAP Servers
 
+[TOC levels=1-4]
+
 Click on the *Add* button beneath the LDAP Servers heading to add an LDAP
 server connection. If you have more than one LDAP server, you can arrange the
 servers by order of preference using the up/down arrows. When you add an LDAP

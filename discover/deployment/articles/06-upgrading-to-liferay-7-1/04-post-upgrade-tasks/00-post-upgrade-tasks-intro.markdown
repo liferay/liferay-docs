@@ -4,6 +4,8 @@ header-id: post-upgrade-tasks
 
 # Post-Upgrade Tasks
 
+[TOC levels=1-4]
+
 After upgrading and running verify processes, there are post-upgrade tasks:
 
 1. Re-enable search indexing and reindex search indexes. 

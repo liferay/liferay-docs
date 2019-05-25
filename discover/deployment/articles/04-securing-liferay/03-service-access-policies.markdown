@@ -4,6 +4,8 @@ header-id: service-access-policies
 
 # Service Access Policies
 
+[TOC levels=1-4]
+
 *Service access policies* are an additional layer of web service security that
 define which services or service methods can be invoked remotely. As such, they
 affect only remote services, not local services. You can apply many of them at

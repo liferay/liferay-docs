@@ -4,6 +4,8 @@ header-id: gogo-shell-commands-for-module-upgrades
 
 # Gogo Shell Commands for Module Upgrades
 
+[TOC levels=1-4]
+
 Liferay's Gogo shell commands let you upgrade and verify individual modules.
 It's a fine grained approach to upgrading the core and non-core modules. Here's
 what you can do with the commands: 

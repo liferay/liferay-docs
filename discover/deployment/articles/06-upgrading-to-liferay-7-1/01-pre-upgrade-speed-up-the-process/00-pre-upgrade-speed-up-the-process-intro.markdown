@@ -4,6 +4,8 @@ header-id: pre-upgrade-speed-up-the-process
 
 # Pre upgrade - Speed up the process
 
+[TOC levels=1-4]
+
 The most complex step in upgrading @product@ is running the process
 that upgrades the database from the old version to the new version. It
 takes a long time to restructure the data to the new format.

@@ -4,6 +4,8 @@ header-id: point-all-nodes-to-the-same-database
 
 # Point all Nodes to the Same @product@ Database
 
+[TOC levels=1-4]
+
 Each node should have a data source that points to one @product@ database
 (or a database cluster) that all the nodes share. This means, of course,
 @product@ cannot (and should not) use the embedded HSQL database that is

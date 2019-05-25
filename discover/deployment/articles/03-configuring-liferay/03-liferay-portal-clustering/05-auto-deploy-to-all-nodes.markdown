@@ -4,6 +4,8 @@ header-id: auto-deploy-to-all-nodes
 
 # Auto Deploy to All Nodes
 
+[TOC levels=1-4]
+
 All modules and WAR files you deploy onto the cluster must be deployed to all
 cluster nodes. Because @product@ 
 [installs applications as OSGi bundles](/docs/7-1/tutorials/-/knowledge_base/t/using-the-wab-generator), 

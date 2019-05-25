@@ -4,6 +4,8 @@ header-id: token-based-single-sign-on-authentication
 
 # Token-based Single Sign On Authentication
 
+[TOC levels=1-4]
+
 Token-based SSO authentication was introduced in @product@ 7.0 to standardize
 support for Shibboleth, SiteMinder, and any other SSO product which works on the
 basis of propagating a token via one of the following mechanisms:

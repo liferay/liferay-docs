@@ -4,6 +4,8 @@ header-id: setting-up-marketplace-and-portal-security
 
 # Setting Up Marketplace
 
+[TOC levels=1-4]
+
 [Liferay Marketplace](https://www.liferay.com/marketplace)
 is more than just a store for Liferay applications. Under the hood, it provides
 both the store and @product@'s application deployment features. For this

@@ -4,6 +4,8 @@ header-id: clustering-search
 
 # Clustering Search
 
+[TOC levels=1-4]
+
 Search should always run on a separate environment from your @product@ server.
 @product@ supports [Elasticsearch](/docs/7-1/deploy/-/knowledge_base/d/installing-elasticsearch), 
 

@@ -4,6 +4,8 @@ header-id: upgrading-sharded-environment
 
 # Upgrading a Sharded Environment
 
+[TOC levels=1-4]
+
 Since @product@ 7.0, Liferay removed its own physical partitioning
 implementation (also known as sharding) in favor of the capabilities provided
 natively by database vendors. Upgrading a sharded installation to @product-ver@

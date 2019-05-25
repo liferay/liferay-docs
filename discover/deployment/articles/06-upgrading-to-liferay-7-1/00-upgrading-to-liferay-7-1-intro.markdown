@@ -4,6 +4,8 @@ header-id: upgrading-to-liferay-71
 
 # Upgrading to @product-ver@
 
+[TOC levels=1-4]
+
 Upgrading to @product-ver@ consists of two main steps: upgrading your
 installation and then upgrading the database. To upgrade to the latest release
 directly, you must be coming from Liferay Portal 6.1 or higher.

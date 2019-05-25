@@ -4,6 +4,8 @@ header-id: installing-product-on-wildfly
 
 # Installing @product@ on Wildfly
 
+[TOC levels=1-4]
+
 @product-ver@ bundled with Wildfly 11 is available on the
 [Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/7-1)
 (DXP) or [Liferay Downloads](https://www.liferay.com/downloads) (Portal CE).

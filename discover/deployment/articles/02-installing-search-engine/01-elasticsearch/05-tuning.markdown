@@ -4,6 +4,8 @@ header-id: tuning-elasticsearch
 
 # Tuning Elasticsearch
 
+[TOC levels=1-4]
+
 Since search engines benefit heavily from caching, their JVM memory profiles are 
 substantially different from those of a JVM focused on serving content and web 
 views (e.g., a JVM running @product@). In production environments, search 

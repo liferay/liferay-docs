@@ -4,6 +4,8 @@ header-id: running-the-upgrade-process
 
 # Running the Upgrade Process
 
+[TOC levels=1-4]
+
 Now you're ready to run the upgrade process. It updates the database schema for
 the core and your installed modules. Verification processes test the upgrade.
 Configured verifications for the core and modules run afterwards, but can be run

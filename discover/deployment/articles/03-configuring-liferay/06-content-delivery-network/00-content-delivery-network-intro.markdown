@@ -4,6 +4,8 @@ header-id: content-delivery-network
 
 # Content Delivery Network
 
+[TOC levels=1-4]
+
 A Content Delivery Network (CDN) is an network of servers deployed in multiple
 data centers that contain your static content. When users hit your site, that
 static content is loaded from a server with geographical proximity to the user,

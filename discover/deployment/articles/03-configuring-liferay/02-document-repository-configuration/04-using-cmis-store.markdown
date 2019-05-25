@@ -4,6 +4,8 @@ header-id: using-the-cmis-store
 
 # Using the CMIS Store
 
+[TOC levels=1-4]
+
 Though you can mount as many different CMIS (Content Management Interoperability
 Services) repositories as you like in the Documents and Media library, you can
 also define the @product@ repository to point to a CMIS repository. 

@@ -4,6 +4,8 @@ header-id: configure-documents-and-media-the-same-for-all-nodes
 
 # Configure Documents and Media the Same for all Nodes
 
+[TOC levels=1-4]
+
 In a cluster, Documents and Media must use the same
 [document repository configuration](/docs/7-1/deploy/-/knowledge_base/d/document-repository-configuration)
 on all nodes. 

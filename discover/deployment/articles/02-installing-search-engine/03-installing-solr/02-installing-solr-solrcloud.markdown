@@ -4,6 +4,8 @@ header-id: high-availability-with-solrcloud
 
 # Installing Solr: High Availability with SolrCloud
 
+[TOC levels=1-4]
+
 Use SolrCloud if you need a cluster of Solr servers. Note that to use SolrCloud
 in production, you should set up an 
 [external ZooKeeper ensemble](https://cwiki.apache.org/confluence/display/solr/Setting+Up+an+External+ZooKeeper+Ensemble).

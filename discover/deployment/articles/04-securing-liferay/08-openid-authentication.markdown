@@ -4,6 +4,8 @@ header-id: openid-single-sign-on-authentication
 
 # OpenID Single Sign On Authentication
 
+[TOC levels=1-4]
+
 OpenID is a single sign-on standard implemented by multiple vendors.  Users can
 register for an ID with the vendor they trust. The credential issued by that
 vendor can be used by all the web sites that support OpenID. Some high profile

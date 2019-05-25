@@ -4,6 +4,8 @@ header-id: deprecated-apps-in-7-1-what-to-do
 
 # Deprecated Apps in 7.1: What to Do
 
+[TOC levels=1-4]
+
 During the development of any software product, it's sometimes necessary to stop 
 development on or remove outdated or unpopular features. @product-ver@ is no 
 different. Liferay has deprecated several apps in @product-ver@. It's important 

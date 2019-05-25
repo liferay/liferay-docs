@@ -4,6 +4,8 @@ header-id: other-cluster-update-techniques
 
 # Blue-Green Deployment
 
+[TOC levels=1-4]
+
 Blue-green is a deployment technique in which you duplicate your production
 environment (the *blue* environment) and modify the duplicate (the *green*
 environment) with software and data changes. When you've successfully tested the

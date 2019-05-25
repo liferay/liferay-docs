@@ -4,6 +4,8 @@ header-id: installing-product-on-tomcat
 
 # Installing @product@ on Tomcat
 
+[TOC levels=1-4]
+
 @product-ver@ bundled with Tomcat 9 is available on the
 [Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/7-1)
 (DXP) or

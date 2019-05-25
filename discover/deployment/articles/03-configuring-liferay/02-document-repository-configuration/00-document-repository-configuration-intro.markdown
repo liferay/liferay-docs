@@ -4,6 +4,8 @@ header-id: document-repository-configuration
 
 # Document Repository Configuration
 
+[TOC levels=1-4]
+
 You can configure file storage in several ways. Each option is a *store* which
 can be configured through the `portal-ext.properties` file by setting the
 [`dl.store.impl=`

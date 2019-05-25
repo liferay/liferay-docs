@@ -4,6 +4,8 @@ header-id: using-the-simple-file-system-store
 
 # Using the Simple File System Store
 
+[TOC levels=1-4]
+
 The simple file storage implementation is the default store. It uses a local
 folder to store files. You can use the file system for your clustered
 configuration, but the folder you're pointing to must be shared by all nodes and

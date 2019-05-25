@@ -4,6 +4,8 @@ header-id: opensso-single-sign-on-authentication
 
 # OpenAM Single Sign On Authentication
 
+[TOC levels=1-4]
+
 OpenAM is an open source single sign-on solution that comes from the code base
 of Sun's System Access Manager product. @product@ integrates with OpenAM,
 allowing you to use OpenAM to integrate @product@ into an infrastructure that

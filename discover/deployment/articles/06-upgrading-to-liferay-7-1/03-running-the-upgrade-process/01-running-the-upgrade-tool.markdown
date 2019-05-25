@@ -4,6 +4,8 @@ header-id: running-the-upgrade
 
 # Running the Upgrade Tool
 
+[TOC levels=1-4]
+
 The upgrade tool provides the easiest way to upgrade the core and installed
 modules. You can configure the upgrade from files or inside the tool's command
 line interface. The upgrade tool lets you upgrade everything--the core and all

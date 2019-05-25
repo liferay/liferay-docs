@@ -4,6 +4,8 @@ header-id: installing-solr
 
 # Installing Solr
 
+[TOC levels=1-4]
+
 Solr is a popular enterprise search platform built on Apache Lucene. It's
 reliable, scalable, and fault tolerant. Read more about it
 [here](http://lucene.apache.org/solr/).

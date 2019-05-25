@@ -4,6 +4,8 @@ header-id: installing-solr-basic-installation
 
 # Installing Solr: Basic Installation
 
+[TOC levels=1-4]
+
 There are two ways to install the Liferay Connector to Solr 7:
 
 1. Navigate to 

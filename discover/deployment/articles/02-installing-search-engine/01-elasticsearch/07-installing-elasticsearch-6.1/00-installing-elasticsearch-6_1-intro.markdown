@@ -4,6 +4,8 @@ header-id: installing-elasticsearch-6-1
 
 # Installing Elasticsearch 6.1
 
+[TOC levels=1-4]
+
 | **Note:** Elasticsearch 6.1.x is a supported search engine for @product-ver@,
 | but it's not the newest supported version. If you're installing Elasticsearch
 | for the first time, considering following the instructions for installing

@@ -4,6 +4,8 @@ header-id: configuring-elasticsearch-for-liferay-0
 
 # Elasticsearch
 
+[TOC levels=1-4]
+
 Elasticsearch is an open source, highly scalable, full-text search and
 analytics engine.
 

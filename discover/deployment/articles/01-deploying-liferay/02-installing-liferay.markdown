@@ -4,6 +4,8 @@ header-id: installing-liferay
 
 # Installing @product@
 
+[TOC levels=1-4]
+
 Now that you've performed the steps needed to [prepare for your
 installation](/docs/7-1/deploy/-/knowledge_base/d/preparing-for-install),
 you're ready to install @product@! Since bundles are the easiest way to complete

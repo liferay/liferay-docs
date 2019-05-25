@@ -4,6 +4,8 @@ header-id: using-amazon-simple-storage-service
 
 # Using Amazon Simple Storage Service
 
+[TOC levels=1-4]
+
 Amazon's simple storage service (S3) is a cloud-based storage solution that you
 can use with Documents and Media. All you need is an account, and you can store
 your documents to the cloud from all nodes, seamlessly. 

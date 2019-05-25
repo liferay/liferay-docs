@@ -4,6 +4,8 @@ header-id: using-rolling-restarts
 
 # Rolling Restarts
 
+[TOC levels=1-4]
+
 The rolling restart cluster maintenance process involves shutting down and
 updating nodes one at a time (while the other nodes are running) until they're
 all updated. It maximizes uptime while you update your cluster. Rolling restarts

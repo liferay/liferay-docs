@@ -4,6 +4,8 @@ header-id: using-the-advanced-file-system-store
 
 # Using the Advanced File System Store
 
+[TOC levels=1-4]
+
 The advanced file system store is similar to the simple file system
 store (the default store). Like that store, it saves files to the local file
 system---which, of course, could be a remote file system mount. It uses a

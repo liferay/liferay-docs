@@ -4,6 +4,8 @@ header-id: liferay-clustering
 
 # @product@ Clustering
 
+[TOC levels=1-4]
+
 @product@ can serve everything from the smallest to the largest web sites. Out
 of the box, it's configured optimally for a single server environment. If one
 server isn't sufficient to serve your site's high traffic needs, @product@

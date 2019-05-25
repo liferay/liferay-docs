@@ -4,6 +4,8 @@ header-id: preparing-to-install-elasticsearch
 
 # Preparing to Install Elasticsearch
 
+[TOC levels=1-4]
+
 By default, @product-ver@ and its 
 [embedded Elasticsearch engine](/docs/7-1/deploy/-/knowledge_base/d/configuring-elasticsearch-for-liferay-0#embedded-vs-remote-operation-mode)
 run in the same JVM. Although this enables out-of-the-box search, it's only
