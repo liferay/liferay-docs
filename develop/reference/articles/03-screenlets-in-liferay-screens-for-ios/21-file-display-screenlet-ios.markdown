@@ -4,6 +4,8 @@ header-id: file-display-screenlet-for-ios
 
 # File Display Screenlet for iOS
 
+[TOC levels=1-4]
+
 ## Requirements
 
 - Xcode 9.0

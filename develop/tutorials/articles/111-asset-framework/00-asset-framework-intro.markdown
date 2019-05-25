@@ -4,6 +4,8 @@ header-id: asset-framework
 
 # Asset Framework
 
+[TOC levels=1-4]
+
 Liferay's asset framework is a system that allows you to add core Liferay 
 features to your application. For example, if you've built an event management
 application that displays a list of upcoming events, you can use the asset

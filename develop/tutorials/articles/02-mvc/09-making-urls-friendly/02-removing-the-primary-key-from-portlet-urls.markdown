@@ -4,6 +4,8 @@ header-id: removing-the-primary-key-from-portlet-urls
 
 # Removing the Primary Key from Portlet URLs
 
+[TOC levels=1-4]
+
 After the last section on Making URLs Friendly, you have a good understanding of
 Liferay's Friendly URL pattern, from declaring your intentions in
 `liferay-portlet.xml` to writing some quick routes in the

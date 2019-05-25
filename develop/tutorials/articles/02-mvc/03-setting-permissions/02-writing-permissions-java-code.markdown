@@ -4,6 +4,8 @@ header-id: writing-permissions-java-code
 
 # Writing Permissions Java Code
 
+[TOC levels=1-4]
+
 As you've seen, permissions in Liferay Portal are defined using a configuration
 file. The permissions themselves, however, must be stored in the database in
 order to be checked, and this means that you need to make a change to your

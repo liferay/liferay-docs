@@ -4,6 +4,8 @@ header-id: using-the-portletnamespace-ui-component
 
 # Using the portlet:namespace UI Component
 
+[TOC levels=1-4]
+
 Liferay Faces Bridge provides many useful Portlet 2.0 `UIComponent` tags as part
 of its component suite. In this tutorial, you'll learn about the
 `portlet:namespace` tag. 

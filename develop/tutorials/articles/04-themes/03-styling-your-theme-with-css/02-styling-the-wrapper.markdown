@@ -4,6 +4,8 @@ header-id: styling-the-wrapper
 
 # Styling the Wrapper
 
+[TOC levels=1-4]
+
 The Wrapper is the container that holds the theme's elements. It is used for
 positioning and styling the theme as a whole. You'll use the Wrapper to create
 the dimensions and background for the theme.

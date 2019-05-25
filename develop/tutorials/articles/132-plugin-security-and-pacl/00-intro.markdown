@@ -4,6 +4,8 @@ header-id: plugin-security-and-pacl
 
 # Plugin Security and PACL
 
+[TOC levels=1-4]
+
 Everyone wishes that cyberspace were free of malicious software and unwanted 
 bugs. Since it isn't, you need to guard yourself and your portal from these 
 evils. Liferay Portal's Plugin Security Manager to the rescue! It's like a 

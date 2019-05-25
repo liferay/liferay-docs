@@ -4,6 +4,8 @@ header-id: communicating-between-jsf-portlets-using-ipc
 
 # Communicating Between JSF Portlets Using IPC
 
+[TOC levels=1-4]
+
 Liferay Faces Bridge supports Portlet 2.0 Inter Portlet Communication (IPC),
 using the JSR 329/378 approach for supporting Portlet 2.0 Events and Portlet 2.0
 Public Render Parameters. 

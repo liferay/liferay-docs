@@ -4,6 +4,8 @@ header-id: flagging-inappropriate-asset-content
 
 # Flagging Inappropriate Asset Content
 
+[TOC levels=1-4]
+
 <!--
 Testing Notes:
 

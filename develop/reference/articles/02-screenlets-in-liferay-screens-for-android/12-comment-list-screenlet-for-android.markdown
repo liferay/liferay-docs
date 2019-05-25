@@ -4,6 +4,8 @@ header-id: comment-list-screenlet-for-android
 
 # Comment List Screenlet for Android
 
+[TOC levels=1-4]
+
 ## Requirements
 
 -   Android SDK 4.0 (API Level 15) or above

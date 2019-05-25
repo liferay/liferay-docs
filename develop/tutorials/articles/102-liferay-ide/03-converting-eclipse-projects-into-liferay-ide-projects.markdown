@@ -4,6 +4,8 @@ header-id: converting-eclipse-projects-into-liferay-ide-projec
 
 # Converting Eclipse Projects into Liferay IDE Projects
 
+[TOC levels=1-4]
+
 Liferay IDE lets you import non-Liferay projects in your Eclipse workspace
 (i.e., you can see them in Eclipse's Project Explorer) and convert them to
 Liferay projects.

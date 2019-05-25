@@ -4,6 +4,8 @@ header-id: deploying-your-plugins-hot-deploy-vs-auto-deploy
 
 # Hot Deploy Versus Auto Deploy
 
+[TOC levels=1-4]
+
 As you develop plugins you'll want to deploy them to your test servers and as
 you finish developing plugins you'll want to deploy them to your production
 servers. There are *hot* deploy and *auto* deploy options to use in deploying

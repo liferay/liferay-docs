@@ -4,6 +4,8 @@ header-id: configuring-your-permissions-scheme
 
 # Configuring Your Permissions Scheme
 
+[TOC levels=1-4]
+
 Liferay's permissions system is composed of several components. The main
 component is a configuration file that really could have any name, but by
 convention is called `default.xml` in plugin applications. This configuration

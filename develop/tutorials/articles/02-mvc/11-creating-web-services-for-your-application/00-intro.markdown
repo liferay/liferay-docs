@@ -4,6 +4,8 @@ header-id: creating-web-services-for-your-application
 
 # Creating Web Services for Your Application
 
+[TOC levels=1-4]
+
 In this learning path, you'll use Service Builder to create remote web services
 for the Guestbook application. When you're finished, authorized clients, such as
 mobile devices, will be able to consume your application's web services. This

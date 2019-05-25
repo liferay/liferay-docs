@@ -4,6 +4,8 @@ header-id: checking-for-permissions-in-the-ui
 
 # Checking for Permissions in the UI
 
+[TOC levels=1-4]
+
 Liferay's user interface can be wrapped in permission checks pretty easily. In
 this last step of this Learning Path, you'll learn how. 
 

@@ -4,6 +4,8 @@ header-id: invoking-services-asynchronously-from-your-ios-app
 
 # Invoking Services Asynchronously from Your iOS App
 
+[TOC levels=1-4]
+
 The main drawback of using synchronous requests from your app is that each 
 request must terminate before another can begin. If you're sending a large 
 number of synchronous requests, performance suffers as a bottleneck forms while 

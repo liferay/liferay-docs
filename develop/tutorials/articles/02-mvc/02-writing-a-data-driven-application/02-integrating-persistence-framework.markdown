@@ -4,6 +4,8 @@ header-id: integrating-your-persistence-framework-into-your-a
 
 # Integrating Your Persistence Framework into Your Application
 
+[TOC levels=1-4]
+
 Once you've generated your persistence framework with Service Builder, your next
 task is to bring all that functionality into your application. On the
 persistence side of things, Service Builder has generated all the basic

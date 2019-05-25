@@ -4,6 +4,8 @@ header-id: ddllistscreenlet-for-android
 
 # DDL List Screenlet for Android
 
+[TOC levels=1-4]
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/A_QEZzkuGHg" frameborder="0" allowfullscreen></iframe>
 
 ## Requirements

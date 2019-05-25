@@ -4,6 +4,8 @@ header-id: liferay-faces-bridge-ui-components
 
 # Liferay Faces Bridge UI Components
 
+[TOC levels=1-4]
+
 Although the JSR 329 standard does not define any JSF components that bridge
 implementations are required to provide, Liferay Faces Bridge comes with a
 handful of components that are helpful to use in JSF portlets. To learn

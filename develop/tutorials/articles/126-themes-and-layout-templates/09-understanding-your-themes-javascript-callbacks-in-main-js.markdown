@@ -4,6 +4,8 @@ header-id: understanding-your-themes-javascript-callbacks-in-main-js
 
 # Understanding Your Theme's JavaScript Callbacks in main.js
 
+[TOC levels=1-4]
+
 Liferay has a product called [AlloyUI](http://alloyui.com/), which is an
 extension to Yahoo's YUI3 framework. Liferay Portal by default uses AlloyUI for
 its JavaScript framework, so you can take advantage of AlloyUI or YUI3

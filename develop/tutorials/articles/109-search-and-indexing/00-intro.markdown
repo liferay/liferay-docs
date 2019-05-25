@@ -4,6 +4,8 @@ header-id: search-and-indexing
 
 # Search and Indexing
 
+[TOC levels=1-4]
+
 Suppose you're developing a data-driven application. You anticipate that your
 application will have to store a huge number of database records. You could
 provide some canned queries to your users, but you know you can't mind-read

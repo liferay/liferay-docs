@@ -4,6 +4,8 @@ header-id: creating-a-hook-project-in-the-plugins-sdk
 
 # Creating a Hook Project in the Plugins SDK
 
+[TOC levels=1-4]
+
 Hook plugins are a special type of Liferay plugin that is designed for
 customizing Liferay in some way. You can do anything from customizing a service,
 to modifying a core JSP, to changing properties, to adding language keys, and

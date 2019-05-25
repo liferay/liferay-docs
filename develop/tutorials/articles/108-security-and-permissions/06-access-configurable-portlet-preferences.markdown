@@ -4,6 +4,8 @@ header-id: controlling-access-with-configurable-portlet-preferences
 
 # Controlling Access with Configurable Portlet Preferences
 
+[TOC levels=1-4]
+
 As a Liferay application developer, using Liferay's permissions system isn't
 your only option for controlling access to the features of your application. You
 can allow access to your portlet's features to be configured through

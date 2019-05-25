@@ -4,6 +4,8 @@ header-id: building-and-testing-your-plugins-pacl
 
 # Building and Testing Your Plugin's PACL
 
+[TOC levels=1-4]
+
 Liferay's Plugin Security Manager requires that a plugin specify in advance the 
 portal resources that it intends to access. If a plugin tries to access 
 something it hasn't told the Security Manager about, the Security Manager puts a 

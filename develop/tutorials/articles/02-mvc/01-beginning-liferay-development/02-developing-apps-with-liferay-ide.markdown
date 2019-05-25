@@ -4,6 +4,8 @@ header-id: developing-apps-with-liferay-ide
 
 # Developing Applications with Liferay IDE
 
+[TOC levels=1-4]
+
 To develop an application, you need a development environment. Liferay provides
 a great environment with Liferay IDE. 
 

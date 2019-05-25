@@ -4,6 +4,8 @@ header-id: creating-a-layout-template-project-in-the-plugins-sdk
 
 # Creating a Layout Template Project in the Plugins SDK
 
+[TOC levels=1-4]
+
 Are there times when you find yourself limited by Liferay's page layout options?
 Maybe your Feng Shui (pronounced *fung SHWAY*) senses are picking up on some
 negative energy? Or perhaps you find yourself adding the same portlets over and

@@ -4,6 +4,8 @@ header-id: creating-the-sitemap-json-file
 
 # Creating the sitemap.json File
 
+[TOC levels=1-4]
+
 The `sitemap.json` file defines the layout for the web content, pages, and
 portlets in your site. As the file extension suggests, `sitemap.json` uses JSON
 syntax, so if you are familiar with JSON you should be able to navigate your way

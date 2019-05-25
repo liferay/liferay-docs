@@ -4,6 +4,8 @@ header-id: updating-your-user-interface-for-search
 
 # Updating Your User Interface For Search
 
+[TOC levels=1-4]
+
 Updating the Guestbook portlet's user interface for search involves two steps:
 
 1. Updating the Guestbook portlet's default view JSP to display a search bar

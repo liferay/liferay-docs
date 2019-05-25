@@ -4,6 +4,8 @@ header-id: creating-remote-services
 
 # Creating Remote Services
 
+[TOC levels=1-4]
+
 Many default Liferay services are available as web services. Liferay exposes its
 web services via JSON and SOAP web services. If you're running Liferay locally
 on port 8080, visit the following URL to browse Liferay's default JSON web

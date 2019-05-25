@@ -4,6 +4,8 @@ header-id: developing-liferay-layout-template-plugins-with-mav
 
 # Developing Liferay Layout Template Plugins with Maven
 
+[TOC levels=1-4]
+
 You can create layout templates to customize the display of portlets on your
 page and to embed commonly used portlets. The introduction to the themes
 tutorial described a nice scene where you're relaxing in a luxurious chair,

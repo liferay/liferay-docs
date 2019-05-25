@@ -4,6 +4,8 @@ header-id: localizing-jsf-portlets
 
 # Localizing JSF Portlets
 
+[TOC levels=1-4]
+
 In this tutorial, you'll learn how to internationalize your JSF portlet. If
 you're unfamiliar with the term localization, you can learn the basics about it
 [here](http://en.wikipedia.org/wiki/Internationalization_and_localization).

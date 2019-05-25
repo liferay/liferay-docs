@@ -4,6 +4,8 @@ header-id: organizing-content-with-alloyui-rows-and-columns
 
 # Organizing Content with AlloyUI Rows and Columns
 
+[TOC levels=1-4]
+
 Say goodbye to sleepless nights tossing, turning, and worrying about the
 potentially daunting task of arranging content in your portlets! It doesn't have
 to be complicated. AlloyUI's `aui:col` and `aui:row` tags simplify organizing

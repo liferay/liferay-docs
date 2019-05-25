@@ -4,6 +4,8 @@ header-id: resolving-recycling-conflicts
 
 # Resolving Recycling Conflicts
 
+[TOC levels=1-4]
+
 The Conflict Resolution framework helps Liferay users identify and solve
 conflicts in the Recycle Bin. The most common conflict for the Recycle Bin is
 duplicate naming. For instance, say you create a file called `myfile.txt` in a

@@ -4,6 +4,8 @@ header-id: setting-theme-settings-for-an-individual-page
 
 # Setting Theme Settings for an Individual Page
 
+[TOC levels=1-4]
+
 For most pages, you'll set the default theme settings so they work for the
 majority of your site. For some pages, however, you may want settings different
 from the defaults. This is where individual page settings come into play. 

@@ -4,6 +4,8 @@ header-id: developing-liferay-faces-portlets-with-maven
 
 # Developing Liferay Faces Portlets with Maven
 
+[TOC levels=1-4]
+
 If you're unfamiliar with the Liferay Faces project, it's important to know that
 Liferay Faces is an umbrella project that provides support for the JavaServer
 Faces (JSF) standard in Liferay Portal. Thus, Liferay Faces portlets and JSF

@@ -4,6 +4,8 @@ header-id: defining-portlet-actions
 
 # Defining Portlet Actions
 
+[TOC levels=1-4]
+
 You need to add action methods to the Guestbook Admin portlet for adding,
 updating, and deleting guestbooks. The portlet action methods call the
 corresponding service methods. Using Service Builder in your guestbook-portlet

@@ -4,6 +4,8 @@ header-id: configuring-a-basic-permissions-scheme
 
 # Configuring a Basic Permissions Scheme
 
+[TOC levels=1-4]
+
 The first thing you need to do is create a configuration file that defines
 permissions you want inside your application. This main configuration file can
 have any name, but as a best practice, is named `default.xml`. This file is the

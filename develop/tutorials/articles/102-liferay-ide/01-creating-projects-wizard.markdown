@@ -4,6 +4,8 @@ header-id: creating-projects-using-the-new-project-wizard
 
 # Creating Projects Using the New Project Wizard
 
+[TOC levels=1-4]
+
 If you want to create new plugin projects for Liferay Portal, then Liferay IDE
 is your new best friend. The *New Project Wizard* in Liferay IDE/Developer
 Studio guides you through the process of creating new plugin projects. Even if

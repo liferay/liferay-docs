@@ -4,6 +4,8 @@ header-id: enabling-assets-at-the-service-layer
 
 # Enabling Assets at the Service Layer
 
+[TOC levels=1-4]
+
 Every Liferay asset is represented by a row in the `AssetEntry` table of
 Liferay's database. Each row in this table has an `entryId` primary key and
 `classNameId` and `classPK` foreign keys (among many others). An asset entry

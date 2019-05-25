@@ -4,6 +4,8 @@ header-id: implementing-the-undo-functionality
 
 # Implementing the Undo Functionality
 
+[TOC levels=1-4]
+
 Sometimes, users accidentally send the wrong entry to the Recycle Bin. It
 seems kind of grueling to navigate away from your page to the Recycle Bin to
 restore the item, just to go back to where you originally started, right?

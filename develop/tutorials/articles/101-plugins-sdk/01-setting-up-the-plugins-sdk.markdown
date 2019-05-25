@@ -4,6 +4,8 @@ header-id: setting-up-the-plugins-sdk
 
 # Setting Up the Plugins SDK
 
+[TOC levels=1-4]
+
 This tutorial explains how to install and configure the Liferay Plugins SDK and
 its dependencies. 
 

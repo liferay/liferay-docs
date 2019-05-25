@@ -4,6 +4,8 @@ header-id: setting-permissions
 
 # Setting Permissions
 
+[TOC levels=1-4]
+
 Storing your data in a database is really only the first step in creating a
 full-blown, data-driven application. Once the data is there, most of the time
 you'll want to make sure that some of that data is protected from the general

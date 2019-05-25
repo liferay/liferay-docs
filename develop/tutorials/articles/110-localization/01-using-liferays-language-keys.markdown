@@ -4,6 +4,8 @@ header-id: using-liferays-language-keys
 
 # Using Liferay's Language Keys
 
+[TOC levels=1-4]
+
 <!-- The beginning and ending test portlets can be found at the following:
 Begin: https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/liferayui/success/end/my-greeting-portlet
 End: https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/loc/use-lang-keys/end/my-greeting-portlet

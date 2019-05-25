@@ -4,6 +4,8 @@ header-id: adding-actions-to-your-controller
 
 # Adding Actions to Your Controller
 
+[TOC levels=1-4]
+
 Remember that the controller layer of your application is like a traffic
 director. The user tells your application what he or she wants to do, and the
 controller calls the business logic that does that. For this reason, you don't

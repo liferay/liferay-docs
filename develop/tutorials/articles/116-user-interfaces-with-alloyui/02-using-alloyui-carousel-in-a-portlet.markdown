@@ -4,6 +4,8 @@ header-id: using-alloyui-carousel-in-your-portlet
 
 # Using AlloyUI Carousel in Your Portlet
 
+[TOC levels=1-4]
+
 Image carousels are often the first thing people see when they visit sites.
 Carousels provide an interactive way of cycling through visual elements and are
 an effective means of communicating information to users. AlloyUI's

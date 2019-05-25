@@ -4,6 +4,8 @@ header-id: writing-your-first-liferay-application
 
 # Writing Your First Liferay Application
 
+[TOC levels=1-4]
+
 Getting started with your first Liferay application takes only minutes. We'll
 guide you through the step-by-step process of creating your project and
 deploying your application to Liferay. Before you know it, you'll have your

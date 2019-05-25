@@ -4,6 +4,8 @@ header-id: displaying-approved-workflow-items
 
 # Displaying Approved Workflow Items
 
+[TOC levels=1-4]
+
 To display only approved entities, you'll add a new *finder*, then a *getter*
 that uses it in your service layer. The new methods will serve the purpose of
 getting only entities with the proper workflow status. Then you can display only

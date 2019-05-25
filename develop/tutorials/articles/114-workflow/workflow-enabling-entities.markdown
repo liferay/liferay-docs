@@ -4,6 +4,8 @@ header-id: workflow-enabling-entities
 
 # Workflow Enabling Entities
 
+[TOC levels=1-4]
+
 Enabling your app's entities to support workflow is so easy, you could do it in
 your sleep (but don't try). Workflow enabled (Workflown? Workflowed?
 Workflowized?) entities require a workflow handler class to interact with

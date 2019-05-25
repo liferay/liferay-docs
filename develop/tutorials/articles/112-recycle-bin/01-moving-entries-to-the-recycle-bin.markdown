@@ -4,6 +4,8 @@ header-id: moving-entries-to-the-recycle-bin
 
 # Moving Entries to the Recycle Bin
 
+[TOC levels=1-4]
+
 This tutorial covers how to add the ability to move your app's entries to the
 Recycle Bin. 
 

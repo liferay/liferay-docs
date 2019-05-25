@@ -4,6 +4,8 @@ header-id: using-the-bridgeinputfile-ui-component
 
 # Using the bridge:inputFile UI Component
 
+[TOC levels=1-4]
+
 Liferay Faces Bridge provides bridge-specific `UIComponent` tags as part of its
 component suite. In this tutorial, you'll explore the `bridge:inputFile` tag and
 learn what it can do for your JSF portlet. 

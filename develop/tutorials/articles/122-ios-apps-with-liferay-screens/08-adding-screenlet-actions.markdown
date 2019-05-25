@@ -4,6 +4,8 @@ header-id: adding-screenlet-actions
 
 # Adding Screenlet Actions
 
+[TOC levels=1-4]
+
 With multiple Interactors, it's possible for a Screenlet to have multiple 
 actions. You must create an Interactor class for each action. For example, if 
 your Screenlet needs to make two server calls, then you need two Interactors: 

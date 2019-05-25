@@ -4,6 +4,8 @@ header-id: using-workflow-scripts
 
 # Using Workflow Scripts
 
+[TOC levels=1-4]
+
 You can use Developer Studio to edit workflow scripts; it recognizes multiple
 script languages, so you can choose one you're comfortable with. Developer
 Studio provides you many script editing features so you can quickly implement

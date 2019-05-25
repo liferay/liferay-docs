@@ -4,6 +4,8 @@ header-id: plugins-sdk
 
 # Developing with the Plugins SDK
 
+[TOC levels=1-4]
+
 Java developers use a wide variety of tools and development environments.
 Liferay makes every effort to remain tool agnostic, so you can choose the tools
 that work best for you. For convenience, 

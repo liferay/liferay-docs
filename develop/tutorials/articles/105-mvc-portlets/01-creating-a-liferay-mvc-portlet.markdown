@@ -4,6 +4,8 @@ header-id: creating-a-liferay-mvc-portlet-project
 
 # Creating a Liferay MVC Portlet Project
 
+[TOC levels=1-4]
+
 Portlets can be created in a Plugins SDK project or a Liferay Maven 
 project. Liferay IDE lets you create either project type using command line 
 tools: Ant in the Plugins SDK or Maven Archetype in Maven. 

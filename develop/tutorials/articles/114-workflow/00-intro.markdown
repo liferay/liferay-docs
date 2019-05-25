@@ -4,6 +4,8 @@ header-id: workflow
 
 # Workflow
 
+[TOC levels=1-4]
+
 Applications accepting user created content usually need to support an approval
 process so that low quality, objectionable, or otherwise undesirable data is
 not inadvertently published. 

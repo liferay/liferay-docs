@@ -4,6 +4,8 @@ header-id: tutorials
 
 # Introduction
 
+[TOC levels=1-4]
+
 Welcome to Liferay's tutorials and Learning Paths! Both show you how to build 
 powerful, robust apps using Liferay's tools, frameworks, and APIs. The first few 
 sections here are Learning Paths. Learning Paths walk you through the 

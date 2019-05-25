@@ -4,6 +4,8 @@ header-id: extending-the-permissions-scheme-with-wrapper-classes
 
 # Extending the Permissions Scheme with Wrapper Classes
 
+[TOC levels=1-4]
+
 When extending a portlet's permissions scheme, it's best practice to create
 wrapper classes that extend your model entity wrappers. This gives your
 permissions methods a unique place to reside. By doing this, each entity of

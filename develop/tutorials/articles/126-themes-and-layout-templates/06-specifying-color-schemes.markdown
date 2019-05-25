@@ -4,6 +4,8 @@ header-id: specifying-color-schemes
 
 # Specifying Color Schemes
 
+[TOC levels=1-4]
+
 You can provide various "flavors" of your theme by creating color schemes for
 it. Color schemes let you keep the styles and overall design for your theme,
 while at the same time giving a new look for your users to enjoy. You specify

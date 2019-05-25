@@ -4,6 +4,8 @@ header-id: adding-permissions-resources-to-the-service-layer
 
 # Adding Permissions Resources to the Service Layer
 
+[TOC levels=1-4]
+
 Up to this point, you've successfully configured permissions checking for your
 Guestbook portlet. However, you're portlet is not currently able to store
 permissions to the database. This means, in the future, if you'd like to

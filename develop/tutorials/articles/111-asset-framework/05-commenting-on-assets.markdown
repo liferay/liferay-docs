@@ -4,6 +4,8 @@ header-id: commenting-on-assets
 
 # Commenting on Assets
 
+[TOC levels=1-4]
+
 <!--
 Testing Notes:
 

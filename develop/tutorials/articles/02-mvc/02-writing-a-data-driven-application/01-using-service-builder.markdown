@@ -4,6 +4,8 @@ header-id: using-service-builder-to-generate-a-persistence-fr
 
 # Using Service Builder to Generate a Persistence Framework
 
+[TOC levels=1-4]
+
 In the last learning path, you built an application using Liferay's
 Model-View-Controller portlet framework. MVC is a great design pattern for web
 applications, but it contains only three components: a model for your data, a

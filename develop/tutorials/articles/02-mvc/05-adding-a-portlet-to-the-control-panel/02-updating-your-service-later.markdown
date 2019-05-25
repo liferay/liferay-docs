@@ -4,6 +4,8 @@ header-id: updating-your-service-layer
 
 # Updating Your Service Layer
 
+[TOC levels=1-4]
+
 In an earlier learning path, you wrote an `addGuestbook` service method in
 `GuestbookLocalServiceImpl`. The `addGuestbook` method of `GuestbookPortlet`
 calls this service method. You can reuse the `addGuestbook` method of

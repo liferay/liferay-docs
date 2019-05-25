@@ -4,6 +4,8 @@ header-id: migrating-from-liferay-faces-3-1-to-liferay-faces-3-2-4-2
 
 # Migrating from Liferay Faces 3.1 to Liferay Faces 3.2/4.2
 
+[TOC levels=1-4]
+
 Liferay Faces 3.2 and 4.2 are compatible with Liferay Portal 6.2 (see the
 [Liferay Faces Version Scheme](/docs/6-2/tutorials/-/knowledge_base/t/understanding-the-liferay-faces-version-scheme)
 for more info on Liferay Portal compatibility). Migrating to Liferay Faces

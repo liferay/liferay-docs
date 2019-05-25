@@ -4,6 +4,8 @@ header-id: creating-and-deploying-jsf-portlets
 
 # Creating and Deploying JSF Portlets
 
+[TOC levels=1-4]
+
 <!-- The JSF calendar portlet using PrimeFaces can be found at the following:
 https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/liferay-faces/creating-jsf-port/calendar/my-jsf-portlet
 -->

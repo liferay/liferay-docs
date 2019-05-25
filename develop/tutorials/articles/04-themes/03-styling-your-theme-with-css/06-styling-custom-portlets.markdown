@@ -4,6 +4,8 @@ header-id: styling-custom-portlets
 
 # Styling Custom Portlets
 
+[TOC levels=1-4]
+
 If you click the *Make Your Reservation* link, the site presents you with a
 reservation form, along with the Guestbook portlet from the 
 [MVC Learning Path](/docs/6-2/tutorials/-/knowledge_base/t/writing-a-liferay-mvc-application). 

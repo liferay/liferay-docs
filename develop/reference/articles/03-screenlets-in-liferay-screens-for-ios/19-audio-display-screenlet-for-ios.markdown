@@ -4,6 +4,8 @@ header-id: audio-display-screenlet-for-ios
 
 # Audio Display Screenlet for iOS
 
+[TOC levels=1-4]
+
 ## Requirements
 
 - Xcode 9.0

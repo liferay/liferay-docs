@@ -4,6 +4,8 @@ header-id: liferay-faces-alloy-ui-components
 
 # Liferay Faces Alloy UI Components
 
+[TOC levels=1-4]
+
 <!-- Eventually, this section (and module) needs to be expanded. First, the
 reader needs some insight as to what AlloyUI is and why they'd want to use it.
 Then, eventually, we need to demonstrate using AlloyUI in a JSF portlet. - Jim

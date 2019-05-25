@@ -4,6 +4,8 @@ header-id: creating-liferay-portlets-with-maven
 
 # Developing Liferay Portlets with Maven
 
+[TOC levels=1-4]
+
 This tutorial explains how to create Liferay portlet plugins using Maven and the
 anatomy of the Liferay Maven portlet plugin project. 
 

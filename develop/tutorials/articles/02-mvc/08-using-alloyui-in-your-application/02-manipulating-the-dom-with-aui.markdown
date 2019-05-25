@@ -4,6 +4,8 @@ header-id: manipulating-the-dom-with-alloyui
 
 # Manipulating the DOM with AlloyUI
 
+[TOC levels=1-4]
+
 In the last section, you used AlloyUI to implement form validation on several
 fields. In this section, you'll learn how to use AlloyUI to manipulate HTML
 elements in the DOM (Document Object Model). You'll add several buttons to the

@@ -4,6 +4,8 @@ header-id: adding-actions-to-your-managed-beans
 
 # Adding Actions to Your Managed Beans
 
+[TOC levels=1-4]
+
 Just as you added action methods in the
 [Creating Managed Beans to Use Services](/learning-paths/jsf/-/knowledge_base/6-2/creating-managed-beans-to-use-services)
 learning path, you'll do the same for creating action methods for your action

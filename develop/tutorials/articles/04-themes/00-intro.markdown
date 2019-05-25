@@ -4,6 +4,8 @@ header-id: developing-a-liferay-theme
 
 # Developing a Liferay Theme
 
+[TOC levels=1-4]
+
 As a developer, you want your site to communicate your ideas clearly and 
 effectively. You don't want the design of your site to inhibit users from
 interacting with your content. This is where themes come into play. Themes allow

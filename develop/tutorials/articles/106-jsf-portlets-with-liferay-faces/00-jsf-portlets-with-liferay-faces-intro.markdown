@@ -4,6 +4,8 @@ header-id: jsf-portlets-with-liferay-faces
 
 # JSF Portlets with Liferay Faces
 
+[TOC levels=1-4]
+
 ![ ](../../images/04-liferay-faces-logo.png)
 
 Do you want to develop MVC-based portlets using the Java EE standard? Do you

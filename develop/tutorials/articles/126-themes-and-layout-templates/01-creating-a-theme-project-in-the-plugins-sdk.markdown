@@ -4,6 +4,8 @@ header-id: creating-a-theme-project-in-the-plugins-sdk
 
 # Creating a Theme Project in the Plugins SDK
 
+[TOC levels=1-4]
+
 You can create themes in a Plugins SDK project or a Liferay Maven project. You
 can create either type of project from Liferay IDE/Developer Studio or from the
 command line. This tutorial focuses on creating themes in a Plugins SDK project,

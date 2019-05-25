@@ -4,6 +4,8 @@ header-id: customizing-sites-and-site-templates-with-application-adapters
 
 # Customizing Sites and Site Templates with Application Adapters
 
+[TOC levels=1-4]
+
 <!-- The ending example hook can be found here:
 https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/plat-fws/application-adap/end/example-hook
 -->

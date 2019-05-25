@@ -4,6 +4,8 @@ header-id: liferay-ui-taglibs
 
 # User Interfaces with the Liferay UI Taglib
 
+[TOC levels=1-4]
+
 Liferay UI is a set of taglibs that are fully integrated with Liferay Portal.
 They provide powerful UI tags that implement commonly used UI components.
 They're built on [AlloyUI](http://alloyui.com/) to give your customers a

@@ -4,6 +4,8 @@ header-id: defining-liferay-plugin-package-properties
 
 # Defining liferay-plugin-package.properties
 
+[TOC levels=1-4]
+
 In this section, you'll configure the `liferay-plugin-package.properties` file
 for the Resources Importer.
 

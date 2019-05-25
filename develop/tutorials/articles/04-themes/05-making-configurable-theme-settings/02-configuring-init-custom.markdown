@@ -4,6 +4,8 @@ header-id: configuring-initcustom-ftl
 
 # Configuring init_custom.ftl
 
+[TOC levels=1-4]
+
 So far you've added the theme settings to the *Look and Feel* menu in Liferay.
 In this section you'll add the logic to the theme settings.
 

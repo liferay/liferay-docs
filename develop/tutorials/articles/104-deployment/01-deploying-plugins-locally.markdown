@@ -4,6 +4,8 @@ header-id: deploying-plugins-to-a-local-portal-instance
 
 # Deploying Plugins to a Local Portal Instance
 
+[TOC levels=1-4]
+
 Liferay IDE provides multiple options for deploying plugins: you can drag and
 drop your project onto the server or right click the server and select *Add and
 Remove...*. It's almost as easy using an Ant target directly from the Plugins

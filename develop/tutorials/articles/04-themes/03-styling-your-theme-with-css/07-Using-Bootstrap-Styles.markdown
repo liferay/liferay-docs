@@ -4,6 +4,8 @@ header-id: using-bootstrap-styles
 
 # Using Bootstrap Styles
 
+[TOC levels=1-4]
+
 Since Liferay Portal 6.2, themes are based on Bootstrap 2.3.2. When writing
 common markup such as buttons, forms, and layouts, it is recommended that you
 let Bootstrap handle the styling for you.

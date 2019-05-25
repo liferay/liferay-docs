@@ -4,6 +4,8 @@ header-id: leveraging-the-portal-users-locale-with-liferay-faces-portal
 
 # Leveraging the Portal User's Locale with Liferay Faces Portal
 
+[TOC levels=1-4]
+
 By default, the
 [`Locale`](http://docs.oracle.com/javase/7/docs/api/java/util/Locale.html) that
 is normally used to present internationalized JSF views is based on the

@@ -4,6 +4,8 @@ header-id: modifying-your-service-layer
 
 # Modifying Your Service Layer
 
+[TOC levels=1-4]
+
 You want to add three new functions to your portlet: modifying guestbook
 entries, deleting guestbook entries, and setting permissions for guestbook
 entries. Only two out of the three of these requires modifying your service

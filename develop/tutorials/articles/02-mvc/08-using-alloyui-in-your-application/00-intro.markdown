@@ -4,6 +4,8 @@ header-id: using-alloy-ui-in-your-application
 
 # Using AlloyUI in Your Application
 
+[TOC levels=1-4]
+
 AlloyUI is Liferay's user interface framework. While you can use any framework
 to develop a user interface for your application, AlloyUI is an excellent choice
 since it's already used by the portal. Using AlloyUI minimizes the amount of

@@ -4,6 +4,8 @@ header-id: responding-to-tablet-and-phone-views
 
 # Responding to Tablet and Phone Views
 
+[TOC levels=1-4]
+
 With the theme elements identified, you can now add the CSS to make them
 responsive for phones and tablets.
 

@@ -4,6 +4,8 @@ header-id: liferay-faces-portal-ui-components
 
 # Liferay Faces Portal UI Components
 
+[TOC levels=1-4]
+
 <!-- Eventually, this section (and module) needs to be expanded. First, the
 reader needs some insight as to what Portal components are and why they'd want to use them.
 Then, eventually, we need to demonstrate using Portal components in a JSF portlet. - Jim

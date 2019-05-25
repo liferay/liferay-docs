@@ -4,6 +4,8 @@ header-id: writing-a-data-driven-application
 
 # Writing a Data-Driven Application
 
+[TOC levels=1-4]
+
 One of the most common ways to store data in an application is to use a
 database. If you've followed the introductory learning path, you learned how to
 write a Liferay application using only the simple API for portlet preferences.

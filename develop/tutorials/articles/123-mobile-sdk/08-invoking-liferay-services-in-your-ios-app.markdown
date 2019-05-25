@@ -4,6 +4,8 @@ header-id: invoking-liferay-services-in-your-ios-app
 
 # Invoking Liferay Services in Your iOS App
 
+[TOC levels=1-4]
+
 Once the appropriate Mobile SDKs are set up in your iOS project, you can access 
 and invoke Liferay Portal's services in your app. This tutorial takes you 
 through the steps you must follow to invoke these services: 

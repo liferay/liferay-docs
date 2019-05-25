@@ -4,6 +4,8 @@ header-id: creating-guestbook-list-screenlets-screenlet-class
 
 # Creating Guestbook List Screenlet's Screenlet Class
 
+[TOC levels=1-4]
+
 When using a Screenlet, app developers primarily interact with its Screenlet 
 class. The Screenlet class contains attributes for configuring the Screenlet's 
 behavior, a reference to the Screenlet's View, methods for invoking Interactor 

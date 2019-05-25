@@ -4,6 +4,8 @@ header-id: liferay-screens-for-android-troubleshooting-and-faqs
 
 # Liferay Screens for Android Troubleshooting and FAQs
 
+[TOC levels=1-4]
+
 Even though Liferay developed Screens for Android with great care, you may still
 run into some common issues. Here are solutions and tips for solving these
 issues. You'll also find answers to common questions about Screens for Android. 

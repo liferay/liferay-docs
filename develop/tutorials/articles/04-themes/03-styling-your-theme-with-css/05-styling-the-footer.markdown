@@ -4,6 +4,8 @@ header-id: styling-the-footer
 
 # Styling the Footer
 
+[TOC levels=1-4]
+
 As you create a theme, you want to keep the whole picture in view. The footer 
 can be seen as the bow that nicely wraps the finished package. With that in 
 mind, it's good to find a way to unify the theme with the Footer's design; in

@@ -4,6 +4,8 @@ header-id: organizing-icons-with-the-liferay-ui-icon-menu-tag
 
 # Creating a Navigation Menu With the Liferay UI Icon Menu Tag
 
+[TOC levels=1-4]
+
 Liferay contains some standard navigation elements that are used throughout its
 interface. You can use the same elements, because they are encapsulated into
 tags that build those elements for you. Liferay UI provides the Icon Menu tag to

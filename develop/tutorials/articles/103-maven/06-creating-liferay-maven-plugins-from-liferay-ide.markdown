@@ -4,6 +4,8 @@ header-id: creating-liferay-maven-plugins-from-liferay-ide
 
 # Creating Liferay Maven Plugins from Liferay IDE
 
+[TOC levels=1-4]
+
 Liferay offers many archetypes to help create Maven projects for multiple plugin
 types. These types include portlet, theme, hook, and layout template plugins. To 
 make sure that you can find the archetypes you need, Liferay provides archetypes 

@@ -4,6 +4,8 @@ header-id: giving-feedback-to-users-with-validation-messages
 
 # Giving Feedback to Users with Validation Messages
 
+[TOC levels=1-4]
+
 For this tutorial, you'll learn about giving feedback to your users with
 validation messages, and how easy JSF makes this process. 
 

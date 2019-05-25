@@ -4,6 +4,8 @@ header-id: creating-an-admin-jsf-portlet
 
 # Creating an Admin JSF Portlet
 
+[TOC levels=1-4]
+
 Similar to what you completed when creating your Guestbook portlet, you'll
 complete similar steps to create the Guestbook Admin portlet. You'll use the New
 Liferay Portlet wizard, which creates various configuration files such as

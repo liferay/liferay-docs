@@ -4,6 +4,8 @@ header-id: preparing-xamarin-projects-for-liferay-screens
 
 # Preparing Xamarin Projects for Liferay Screens
 
+[TOC levels=1-4]
+
 To use Liferay Screens with Xamarin, you must install Screens in your Xamarin 
 project. You must then configure your project to communicate with your Liferay 
 Portal instance. Note that Liferay Screens for Xamarin is released as a 

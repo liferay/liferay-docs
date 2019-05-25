@@ -4,6 +4,8 @@ header-id: using-liferay-ui-tabs-and-sections
 
 # Using Liferay UI Tabs and Sections
 
+[TOC levels=1-4]
+
 Using tabs is a good way to keep your portlet's UI clean and organized.
 Liferay's `liferay-ui` tag library provides simple, easy-to-use tags to
 implement tabs in your UI. By using the `liferay-ui:tabs` tag in conjunction

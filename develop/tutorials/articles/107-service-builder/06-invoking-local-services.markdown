@@ -4,6 +4,8 @@ header-id: invoking-local-services
 
 # Invoking Local Services
 
+[TOC levels=1-4]
+
 Once Service Builder has generated your portlet project's services, you can call
 them from anywhere in your application. For example, you can invoke services
 from your application's `*Portlet` classes or from your application's view layer

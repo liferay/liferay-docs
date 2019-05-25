@@ -4,6 +4,8 @@ header-id: updating-your-jsf-applications-service-layer
 
 # Updating Your JSF Application's Service Layer
 
+[TOC levels=1-4]
+
 Just as you did in a previous JSF learning path on
 [Adding Permissions Resources to the Service Layer](/docs/6-2/tutorials/-/knowledge_base/t/adding-permissions-resources-to-the-service-layer),
 you'll need to add a service method in your `GuestbookLocalServiceImpl` class.

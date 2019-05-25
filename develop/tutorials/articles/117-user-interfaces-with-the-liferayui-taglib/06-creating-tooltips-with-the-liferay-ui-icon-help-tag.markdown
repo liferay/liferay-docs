@@ -4,6 +4,8 @@ header-id: creating-tooltips-with-the-liferay-ui-icon-help-tag
 
 # Creating Tooltips with the Liferay UI Icon Help Tag
 
+[TOC levels=1-4]
+
 An unfamiliar UI can be tricky to navigate. Your users can feel as though they 
 are lost in a jungle, wandering around aimlessly, desperately trying to get 
 their bearings. The `liferay-ui` tag library offers a helpful solution in the 

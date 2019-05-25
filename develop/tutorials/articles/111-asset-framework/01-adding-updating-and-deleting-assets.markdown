@@ -4,6 +4,8 @@ header-id: adding-updating-and-deleting-assets-for-custom-entities
 
 # Adding, Updating, and Deleting Assets for Custom Entities
 
+[TOC levels=1-4]
+
 <!--
 Testing Notes:
 

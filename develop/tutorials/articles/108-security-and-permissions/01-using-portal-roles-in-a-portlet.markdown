@@ -4,6 +4,8 @@ header-id: using-portal-roles-in-a-portlet
 
 # Using Portal Roles in a Portlet
 
+[TOC levels=1-4]
+
 "A role, a role, my portal for a role!" Don't worry, using portal roles in your
 portlets isn't too difficult. Roles in Liferay Portal are the primary means for
 granting or restricting access to content. When a role is assigned to a user,

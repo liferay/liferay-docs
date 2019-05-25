@@ -4,6 +4,8 @@ header-id: designing-a-kaleo-workflow-definition
 
 # Designing a Kaleo Workflow Definition
 
+[TOC levels=1-4]
+
 To illustrate several different workflow strategies, here are diagrams of each
 of the workflows that ship with the Kaleo Web plugin. You'll find these
 definitions in the directory

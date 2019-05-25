@@ -4,6 +4,8 @@ header-id: understanding-guestbooksactivitys-ui
 
 # Understanding GuestbooksActivity's UI
 
+[TOC levels=1-4]
+
 Recall that you used Android Studio's Navigation Drawer Activity template to 
 create `GuestbooksActivity`. Any activity this template creates contains a 
 navigation drawer and all the components the activity needs. This includes 

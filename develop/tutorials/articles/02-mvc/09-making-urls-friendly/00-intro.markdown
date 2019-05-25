@@ -4,6 +4,8 @@ header-id: making-urls-friendly
 
 # Making URLs Friendly
 
+[TOC levels=1-4]
+
 You're probably feeling good about the Guestbook Portlet now. The UI is looking
 snazzy, it has front- and back-end validation, and you've implemented several
 other features that a modern app should have. But before you jump off the

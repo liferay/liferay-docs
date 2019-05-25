@@ -4,6 +4,8 @@ header-id: setting-a-base-theme
 
 # Setting a Base Theme
 
+[TOC levels=1-4]
+
 Liferay's themes are built on top of two base themes, named *_unstyled* and
 *_styled*. If you have another theme that you're rather base yours on, you can
 do that by setting the theme of your choice as the base for your theme. 

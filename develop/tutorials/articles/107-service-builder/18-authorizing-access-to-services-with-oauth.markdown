@@ -4,6 +4,8 @@ header-id: authorizing-access-to-services-with-oauth
 
 # Authorizing Access to Services with OAuth
 
+[TOC levels=1-4]
+
 Suppose you wanted users to authenticate to your Liferay Portal plugin from a
 provider, like Twitter. You might think that you'd need to store the user's
 credentials (e.g., the user's Twitter account name and password), so you could

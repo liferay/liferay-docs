@@ -4,6 +4,8 @@ header-id: developing-liferay-theme-plugins-with-maven
 
 # Developing Liferay Theme Plugins with Maven
 
+[TOC levels=1-4]
+
 Lets use the style of Egar Allen Poe's poem The Raven to help us explain Liferay
 theme development with Maven. To recap, since our narrative is a bit different
 than Poe's original, so far we have you and your cat, Lenore II, sitting by a

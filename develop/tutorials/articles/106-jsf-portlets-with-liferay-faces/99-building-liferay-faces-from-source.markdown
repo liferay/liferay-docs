@@ -4,6 +4,8 @@ header-id: building-liferay-faces-from-source
 
 # Building Liferay Faces From Source
 
+[TOC levels=1-4]
+
 You may have several reasons for downloading and building Liferay Faces from its
 project source code: 
 

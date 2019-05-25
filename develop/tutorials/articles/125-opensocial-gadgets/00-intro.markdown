@@ -4,6 +4,8 @@ header-id: opensocial-gadgets
 
 # OpenSocial Gadgets
 
+[TOC levels=1-4]
+
 OpenSocial is a public specification for creating web applications using
 standard technologies like HTML, CSS, and JavaScript. It was originally
 developed by Google, Myspace, and others to standardize common social networking

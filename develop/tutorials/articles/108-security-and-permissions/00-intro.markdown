@@ -4,6 +4,8 @@ header-id: security-and-permissions
 
 # Security and Permissions
 
+[TOC levels=1-4]
+
 The Java portlet standard defines a simple security scheme using portlet roles 
 and their mapping to portal roles. On top of this, Liferay provides a 
 fine-grained permissions system that you can use to implement access security 

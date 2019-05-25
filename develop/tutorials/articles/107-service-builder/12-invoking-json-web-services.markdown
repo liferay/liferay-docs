@@ -4,6 +4,8 @@ header-id: invoking-json-web-services
 
 # Invoking JSON Web Services
 
+[TOC levels=1-4]
+
 Liferay's JSON web service API can be invoked in languages other than Java, such
 as Beanshell, Groovy, JavaScript, Python, and Ruby. It can also be invoked via
 URL or [cURL](http://curl.haxx.se/). Additionally, Liferay provides a handy JSON

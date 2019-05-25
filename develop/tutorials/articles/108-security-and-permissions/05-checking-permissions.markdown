@@ -4,6 +4,8 @@ header-id: checking-permissions
 
 # Checking Permissions
 
+[TOC levels=1-4]
+
 When implementing permissions for a custom portlet, your last step is to ensure
 that the configured permissions are enforced. You can achieve this by adding
 permission checks to your application. For example, your business layer can

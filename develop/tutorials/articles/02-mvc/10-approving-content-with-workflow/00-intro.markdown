@@ -4,6 +4,8 @@ header-id: approving-content-with-workflow
 
 # Approving Content with Workflow
 
+[TOC levels=1-4]
+
 In any application that accepts user created content, it's important to have an
 approval process for publishing that content. Review and approval might be
 necessary for a number of reasons:

@@ -4,6 +4,8 @@ header-id: creating-plugins-to-share-structures-templates-and-more
 
 # Creating Plugins to Share Structures, Templates, and More
 
+[TOC levels=1-4]
+
 Have you ever wanted to share page templates with other users? Are colleagues
 and clients banging at your door to get hold of the structures and templates you
 use for your web content articles and wikis? If so, you can bundle these up in a

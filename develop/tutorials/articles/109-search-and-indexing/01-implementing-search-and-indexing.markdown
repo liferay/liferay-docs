@@ -4,6 +4,8 @@ header-id: implementing-search-and-indexing
 
 # Implementing Search and Indexing
 
+[TOC levels=1-4]
+
 Liferay's search and indexing functionality is provided by Apache Lucene, a
 Java-based search library. To implement search and indexing functionality for an
 entity, you need to follow these three steps:

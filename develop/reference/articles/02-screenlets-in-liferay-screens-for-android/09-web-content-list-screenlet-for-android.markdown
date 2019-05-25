@@ -4,6 +4,8 @@ header-id: web-content-list-screenlet-for-android
 
 # Web Content List Screenlet for Android
 
+[TOC levels=1-4]
+
 ## Requirements
 
 - Android SDK 4.0 (API Level 15) or above

@@ -4,6 +4,8 @@ header-id: accessing-the-portlet-api-with-externalcontext
 
 # Accessing the Portlet API with ExternalContext for JSF Portlets
 
+[TOC levels=1-4]
+
 Just as JSF *web app* developers rely on `ExternalContext` to access the Servlet
 API, JSF *portlet* developers rely on it to access the Portlet API. 
 

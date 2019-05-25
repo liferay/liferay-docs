@@ -4,6 +4,8 @@ header-id: customizing-the-aui-carousel
 
 # Customizing the AUI-Carousel
 
+[TOC levels=1-4]
+
 AlloyUI's carousel module has a lot to offer as is, but you can take it to the
 next level by customizing it and making it your own. If you need to learn how to
 set up the basic `aui-carousel`, please refer to the tutorial

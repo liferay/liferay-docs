@@ -4,6 +4,8 @@ header-id: creating-social-media-links-for-your-theme
 
 # Creating Social Media Links for Your Theme
 
+[TOC levels=1-4]
+
 Follow the steps below to add the social media links to the Footer.
 
 1.  Open `portal_normal.ftl`.

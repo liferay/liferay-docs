@@ -4,6 +4,8 @@ header-id: getting-started-with-guestbook-list-screenlet
 
 # Getting Started with Guestbook List Screenlet
 
+[TOC levels=1-4]
+
 Before creating a Screenlet, you should know how you'll use it. If you plan to 
 use it in only one app, then you can create it in that app's project. If you 
 need to use it in several apps, however, then it's best to create it in a 

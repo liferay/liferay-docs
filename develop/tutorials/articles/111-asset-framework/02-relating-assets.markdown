@@ -4,6 +4,8 @@ header-id: relating-assets
 
 # Relating Assets
 
+[TOC levels=1-4]
+
 <!--
 Testing Notes:
 

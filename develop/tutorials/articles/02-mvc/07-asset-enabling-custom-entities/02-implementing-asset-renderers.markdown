@@ -4,6 +4,8 @@ header-id: implementing-asset-renderers
 
 # Implementing Asset Renderers
 
+[TOC levels=1-4]
+
 You need to create asset renderer classes for your guestbook and guestbook entry
 entities and register them with Liferay. Without these classes, Liferay's Asset
 Renderer portlet is unable to display your entities. Liferay assets contain such

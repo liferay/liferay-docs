@@ -4,6 +4,8 @@ header-id: deploying-liferay-plugins-with-maven
 
 # Deploying Liferay Plugins with Maven
 
+[TOC levels=1-4]
+
 With Maven, it's easy to deploy plugins to a Liferay Portal instance. This
 tutorial explain the process. Just follow these steps: 
 

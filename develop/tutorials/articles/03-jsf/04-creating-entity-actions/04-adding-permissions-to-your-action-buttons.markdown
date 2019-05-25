@@ -4,6 +4,8 @@ header-id: adding-permissions-to-your-action-buttons
 
 # Adding Permissions to Your Action Buttons
 
+[TOC levels=1-4]
+
 Recall from the previous learning path when you created wrapper classes to hold
 permissions methods. You also updated your managed beans to call those wrapped
 entities. By doing this, the guestbook and entry entities you use in your

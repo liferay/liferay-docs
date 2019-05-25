@@ -4,6 +4,8 @@ header-id: customizing-jsps-by-extending-the-original
 
 # Customizing JSPs by Extending the Original
 
+[TOC levels=1-4]
+
 <!-- 
 Testing Notes:
 

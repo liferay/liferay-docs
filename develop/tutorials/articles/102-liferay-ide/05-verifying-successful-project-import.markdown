@@ -4,6 +4,8 @@ header-id: verifying-successful-project-import
 
 # Verifying Successful Project Import
 
+[TOC levels=1-4]
+
 Once you've imported a project, you can verify that Liferay IDE correctly 
 recognizes it as a Liferay project. 
 

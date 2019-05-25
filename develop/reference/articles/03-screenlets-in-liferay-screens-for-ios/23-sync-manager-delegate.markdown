@@ -4,6 +4,8 @@ header-id: syncmanagerdelegate
 
 # SyncManagerDelegate
 
+[TOC levels=1-4]
+
 The `SyncManagerDelegate` class is required to 
 [use Screenlets with offline mode](/docs/6-2/tutorials/-/knowledge_base/t/using-offline-mode-in-ios).
 This class receives the events produced in the synchronization process. This 

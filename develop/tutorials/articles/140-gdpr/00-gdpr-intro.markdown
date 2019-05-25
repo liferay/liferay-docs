@@ -4,6 +4,8 @@ header-id: gdpr-right-to-be-forgotten-and-data-portability
 
 # GDPR: Right to be Forgotten and Data Portability
 
+[TOC levels=1-4]
+
 Enforcement of the General Data Protection Regulation (GDPR) began May 25,
 2018. Companies processing the personal data of EU residents must adopt
 appropriate measures to protect their user data. A wealth of available

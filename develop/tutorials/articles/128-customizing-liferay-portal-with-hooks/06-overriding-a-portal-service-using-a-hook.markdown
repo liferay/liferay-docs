@@ -4,6 +4,8 @@ header-id: overriding-a-portal-service-using-a-hook
 
 # Overriding a Portal Service Using a Hook
 
+[TOC levels=1-4]
+
 Liferay Portal and its core portlets offer a host of services that you can
 programmatically invoke from local and remote clients. One only needs to look at
 Portal's [service API](http://docs.liferay.com/portal/6.2/javadocs/com/liferay/portal/service/package-summary.html)

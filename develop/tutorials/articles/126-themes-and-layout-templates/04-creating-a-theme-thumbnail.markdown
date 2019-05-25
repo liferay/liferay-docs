@@ -4,6 +4,8 @@ header-id: creating-a-theme-thumbnail
 
 # Creating a Theme Thumbnail
 
+[TOC levels=1-4]
+
 Have you associated a thumbnail image with your theme? In the *Look and Feel*
 settings of your site pages in the Site Administration screen, notice that each
 available theme has a thumbnail image. It's time to dress up your theme with

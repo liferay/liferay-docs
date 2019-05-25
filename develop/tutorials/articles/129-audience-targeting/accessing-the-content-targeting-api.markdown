@@ -4,6 +4,8 @@ header-id: accessing-the-content-targeting-api
 
 # Accessing the Content Targeting API
 
+[TOC levels=1-4]
+
 The [Audience Targeting](https://www.liferay.com/marketplace/-/mp/application/43707761)
 application available in Liferay's Marketplace can be used to target content to
 specific audiences. You might want to take this to the next step and use the

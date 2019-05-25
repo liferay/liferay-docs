@@ -4,6 +4,8 @@ header-id: importing-projects-from-plugins-sdk
 
 # Importing Projects from a Plugins SDK
 
+[TOC levels=1-4]
+
 Do you want to import one or more Liferay projects into your Liferay IDE
 workspace from a Liferay Plugins SDK? Liferay IDE makes it easy. Don't worry if
 the projects already contain `.project` or `.classpath` files, the process used

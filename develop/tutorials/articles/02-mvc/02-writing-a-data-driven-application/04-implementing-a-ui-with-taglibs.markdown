@@ -4,6 +4,8 @@ header-id: implementing-a-ui-with-liferay-taglibs
 
 # Implementing a UI with Liferay Taglibs
 
+[TOC levels=1-4]
+
 Clearly, now that you've implemented all the other layers of your application,
 you need a user interface that's a bit more organized and extensible than the
 one you created for the preferences-based version of this application. Because

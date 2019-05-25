@@ -4,6 +4,8 @@ header-id: making-your-theme-responsive
 
 # Making Your Theme Responsive
 
+[TOC levels=1-4]
+
 Designing a theme is a challenging process, especially when you take
 responsiveness into consideration. How will your theme look on a desktop
 computer? How will it look on a phone or a tablet? These are the kinds of

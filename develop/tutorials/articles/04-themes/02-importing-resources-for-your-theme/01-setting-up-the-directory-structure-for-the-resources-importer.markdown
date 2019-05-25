@@ -4,6 +4,8 @@ header-id: setting-up-the-directory-structure-for-the-resources-importer
 
 # Setting up the Directory Structure for the Resources Importer
 
+[TOC levels=1-4]
+
 A blank `resources-importer` directory was created with your theme. Rather than
 add each file individually and create all the remaining folders, go ahead and
 delete the existing `resources-importer` directory.

@@ -4,6 +4,8 @@ header-id: using-alloyui-form-validation
 
 # Using AlloyUI Form Validation
 
+[TOC levels=1-4]
+
 In a previous learning path, you created a form for users to submit when adding
 an entry to a guestbook. You implemented back-end validation (checking the entry
 name, email address, and message for `null` values) in the service layer, but

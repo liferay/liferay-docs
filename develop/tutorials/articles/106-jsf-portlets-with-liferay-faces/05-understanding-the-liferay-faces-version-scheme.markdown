@@ -4,6 +4,8 @@ header-id: understanding-the-liferay-faces-version-scheme
 
 # Understanding the Liferay Faces Version Scheme
 
+[TOC levels=1-4]
+
 In this article, you'll learn which Liferay Faces artifacts should be used with
 your portlet and explore the Liferay Faces versioning scheme by discovering what
 each component of a version means. For Liferay Portal 6.2, there are two

@@ -4,6 +4,8 @@ header-id: forgotpasswordscreenlet-for-ios
 
 # Forgot Password Screenlet for iOS
 
+[TOC levels=1-4]
+
 ## Requirements
 
 - Xcode 9.0

@@ -4,6 +4,8 @@ header-id: sending-pubsub-messages-between-gadgets-and-portlet
 
 # Sending PubSub Messages Between Gadgets and Portlets
 
+[TOC levels=1-4]
+
 <!-- You can test the gadget-to-gadget tutorial using the following gadgets:
 https://raw.github.com/dejuknow/opensocial-gadgets/master/GoogleMaps/GoogleMapsPublisher.xml
 https://raw.github.com/dejuknow/opensocial-gadgets/master/GoogleMaps/GoogleMapsViewer.xml

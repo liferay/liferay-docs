@@ -4,6 +4,8 @@ header-id: defining-an-object-relational-map-with-service-builder
 
 # Defining an Object-Relational Map with Service Builder
 
+[TOC levels=1-4]
+
 In this tutorial, you'll learn how to define an object relational map for your
 application so that it can persist data. The example code in this tutorial, as
 well as the example code in the other Service Builder and Services tutorials,

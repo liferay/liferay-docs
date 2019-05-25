@@ -4,6 +4,8 @@ header-id: using-select-lists-to-present-options
 
 # Using Select Lists to Present Options
 
+[TOC levels=1-4]
+
 Select lists are UI components that present collapsible groups of options. A
 select list initially shows a single default option. When clicked, all the
 options are displayed. When an option is selected, it collapses to display only

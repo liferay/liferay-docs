@@ -4,6 +4,8 @@ header-id: audience-targeting
 
 # Audience Targeting
 
+[TOC levels=1-4]
+
 Liferay's Audience Targeting application allows you to monitor your portal's
 audience. You can organize them into user segments, target specific content to
 those user segments, and create campaigns to expose user segments to a certain

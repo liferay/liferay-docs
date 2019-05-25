@@ -4,6 +4,8 @@ header-id: defining-portlet-actions-and-permissions
 
 # Defining Portlet Actions and Permissions
 
+[TOC levels=1-4]
+
 Now that your Guestbook Admin portlet has the appropriate service methods,
 you'll now add portlet actions and permissions to your portlet. The action
 methods will be used by each of your action buttons in the Guestbook Admin

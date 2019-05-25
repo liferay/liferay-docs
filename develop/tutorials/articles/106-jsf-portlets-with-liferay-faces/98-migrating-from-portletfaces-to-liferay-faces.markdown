@@ -4,6 +4,8 @@ header-id: migrating-from-portletfaces-to-liferay-faces
 
 # Migrating From PortletFaces to Liferay Faces
 
+[TOC levels=1-4]
+
 The Liferay Faces project originated from the <http://portletfaces.org>
 community website. On April 3, 2012 Liferay announced that it would be assuming
 leadership for the portletfaces.org community. Consequently, projects at

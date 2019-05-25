@@ -4,6 +4,8 @@ header-id: themes-and-layout-templates
 
 # Themes and Layout Templates
 
+[TOC levels=1-4]
+
 Do you want to transform the look and feel of your Liferay Portal? Create your
 own Liferay Theme! Themes are hot deployable plugins unique to a site. With
 themes, you can create whatever user interface you want for your site. In this

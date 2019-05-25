@@ -4,6 +4,8 @@ header-id: creating-your-jsf-applications-user-interface
 
 # Creating Your JSF Application's User Interface
 
+[TOC levels=1-4]
+
 All of the Guestbook Admin portlet's back-end code is developed; the only thing
 left to do is create the portlet's user interface. The default view should have
 a button for adding new guestbooks, and it should also display a list of the

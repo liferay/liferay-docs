@@ -4,6 +4,8 @@ header-id: advanced-customization-with-ext-plugins
 
 # Advanced Customization with Ext Plugins
 
+[TOC levels=1-4]
+
 Ext plugins are powerful tools for extending Liferay. Because they increase the
 complexity of your Liferay instance, you should only use an Ext plugin if you're
 sure you can't accomplish your goal using a different method. Check out [Application Display Templates](/docs/6-2/tutorials/-/knowledge_base/t/application-display-templates)

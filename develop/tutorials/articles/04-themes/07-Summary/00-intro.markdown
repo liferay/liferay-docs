@@ -4,6 +4,8 @@ header-id: summary
 
 # Summary
 
+[TOC levels=1-4]
+
 Congratulations! You've learned how to build a theme from start to finish. So
 what's next? Now that you've created a theme, you can publish it to Liferay's
 [Marketplace](https://www.liferay.com/marketplace) for others to download. You

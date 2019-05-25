@@ -4,6 +4,8 @@ header-id: using-the-portletrenderurl-ui-component
 
 # Using the portlet:renderURL UI Component
 
+[TOC levels=1-4]
+
 The Liferay Faces Bridge component suite provides many Portlet 2.0 `UIComponent`
 tags that are useful for JSF development. In this tutorial, you'll learn about
 the `portlet:renderURL` tag. 

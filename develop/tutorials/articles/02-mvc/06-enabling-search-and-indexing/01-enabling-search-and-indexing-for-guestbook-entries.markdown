@@ -4,6 +4,8 @@ header-id: enabling-search-and-indexing-for-guestbook-entries
 
 # Enabling Search and Indexing for Guestbook Entries
 
+[TOC levels=1-4]
+
 To enable search in the Guestbook portlet for guestbook entries, you need to
 follow these four steps:
 

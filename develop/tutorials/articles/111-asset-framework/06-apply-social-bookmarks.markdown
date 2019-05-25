@@ -4,6 +4,8 @@ header-id: apply-social-bookmarks
 
 # Apply Social Bookmarks
 
+[TOC levels=1-4]
+
 <!--
 Testing Notes:
 

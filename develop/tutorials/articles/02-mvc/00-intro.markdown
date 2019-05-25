@@ -4,6 +4,8 @@ header-id: writing-a-liferay-mvc-application
 
 # Writing a Liferay MVC Application
 
+[TOC levels=1-4]
+
 A popular way to develop Liferay applications is to use the 
 [Model View Controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) 
 (MVC) pattern. If you're a battle-tested developer, you're likely familiar with 

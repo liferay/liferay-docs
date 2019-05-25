@@ -4,6 +4,8 @@ header-id: understanding-liferay-faces-portal
 
 # Understanding Liferay Faces Portal
 
+[TOC levels=1-4]
+
 *Liferay Faces Portal* is distributed in a `.jar` file. You can add Liferay
 Faces Portal as a dependency for your portlet projects to use its
 Liferay-specific utilities and UI components. When Liferay Faces Portal is

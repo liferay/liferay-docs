@@ -4,6 +4,8 @@ header-id: setting-up-maven
 
 # Setting Up Maven
 
+[TOC levels=1-4]
+
 This tutorial explains how to install and configure Maven and Nexus. Nexus is a
 Maven repository management server. Using Nexus for Maven repository management
 is convenient but not required. Once you've installed and configured Maven (and,

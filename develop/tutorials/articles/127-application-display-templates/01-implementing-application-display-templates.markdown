@@ -4,6 +4,8 @@ header-id: implementing-application-display-templates
 
 # Implementing Application Display Templates
 
+[TOC levels=1-4]
+
 <!-- You can test this tutorial using the following portlet project 
 https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/wc/impl-adts/begin/event-listing-portlet)
 -->

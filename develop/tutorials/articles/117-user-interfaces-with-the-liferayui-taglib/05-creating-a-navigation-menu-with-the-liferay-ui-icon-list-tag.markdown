@@ -4,6 +4,8 @@ header-id: creating-a-navigation-menu-with-the-liferay-uiicon-list-tag
 
 # Creating a Navigation Menu With the liferay-ui:icon-list Tag
 
+[TOC levels=1-4]
+
 The navigation for your site can have a huge impact on how people interact with 
 it. Poorly designed navigation can ruin even the best of content, causing people 
 to run screaming from your site to warn the other villagers of the monster you 

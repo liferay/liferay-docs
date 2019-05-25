@@ -4,6 +4,8 @@ header-id: importing-resources-for-your-theme
 
 # Importing Resources for Your Theme
 
+[TOC levels=1-4]
+
 You've created the theme for the Lunar Resort, but it's looking pretty empty at 
 the moment. You need some default content to go with it, so it looks nice when
 it's first installed. There are a couple methods you can use to import resources

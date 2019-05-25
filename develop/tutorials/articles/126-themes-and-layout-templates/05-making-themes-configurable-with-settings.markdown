@@ -4,6 +4,8 @@ header-id: making-themes-configurable-with-settings
 
 # Making Themes Configurable with Settings
 
+[TOC levels=1-4]
+
 You can define settings to make your theme configurable for site administrators.
 You can add a simple text field input setting, which is the default setting
 type, or add other types of settings, such as text areas, checkboxes, etc.

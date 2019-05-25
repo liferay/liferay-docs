@@ -4,6 +4,8 @@ header-id: what-are-the-breaking-changes-for-liferay-6-2
 
 # What are the Breaking Changes for Liferay 6.2?
 
+[TOC levels=1-4]
+
 This document presents a chronological list of changes that break existing
 functionality, APIs, or contracts with third party Liferay developers or users.
 We try our best to minimize these disruptions, but sometimes they are

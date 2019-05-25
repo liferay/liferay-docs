@@ -4,6 +4,8 @@ header-id: creating-entity-actions
 
 # Creating Entity Actions
 
+[TOC levels=1-4]
+
 So far, you've created a Guestbook application that uses a database to store its
 entries. This application is integrated with Liferay's permissions mechanism,
 allowing you to control who has access to different parts of your application.

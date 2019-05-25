@@ -4,6 +4,8 @@ header-id: restoring-entries-from-the-recycle-bin
 
 # Restoring Entries from the Recycle Bin
 
+[TOC levels=1-4]
+
 This tutorial covers how to implement restoring entries from the Recycle Bin. If
 you haven't yet implemented the framework for using the Recycle Bin in your
 apps, refer to the tutorial 

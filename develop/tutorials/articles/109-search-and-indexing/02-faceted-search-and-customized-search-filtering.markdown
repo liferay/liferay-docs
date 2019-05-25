@@ -4,6 +4,8 @@ header-id: faceted-search-and-customized-search-filtering
 
 # Faceted Search and Customized Search Filtering
 
+[TOC levels=1-4]
+
 Faceted search is a search mechanism that allows search results to be narrowed
 down by applying a set of filters to the result of a search query. Liferay's
 Search portlet supports faceted search. Its default configuration contains

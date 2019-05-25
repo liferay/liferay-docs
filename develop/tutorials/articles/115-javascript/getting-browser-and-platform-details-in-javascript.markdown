@@ -4,6 +4,8 @@ header-id: getting-browser-and-platform-details-in-javascript
 
 # Getting Browser and Platform Details in JavaScript
 
+[TOC levels=1-4]
+
 As you design apps, you have to consider the user's browser and platform. Often,
 you find that you must tailor an app's UI to the features and limitations of
 user environments. You might, for example, display one set of controls to a user

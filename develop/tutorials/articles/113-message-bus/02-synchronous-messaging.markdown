@@ -4,6 +4,8 @@ header-id: implementing-synchronous-messaging
 
 # Implementing Synchronous Messaging
 
+[TOC levels=1-4]
+
 Synchronous messaging occurs when the sender blocks, waiting for a response from 
 the recipient. During this block, the sender cannot process *any* additional 
 information. This means that the thread the message is sent from is effectively 

@@ -4,6 +4,8 @@ header-id: invoking-services-using-skinny-json-provider
 
 # Invoking Services Using Skinny JSON Provider
 
+[TOC levels=1-4]
+
 **Important:** The Skinny JSON Provider is a "Labs" application. Any app
 designated as "Labs" includes experimental features and is not supported by
 Liferay. This status may change without notice. Labs apps allow us to accelerate

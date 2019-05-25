@@ -4,6 +4,8 @@ header-id: integrating-your-persistence-framework
 
 # Integrating Your Persistence Framework
 
+[TOC levels=1-4]
+
 Now that you've generated your persistence framework, its time to integrate it
 into your JSF guestbook so you can use it. On the persistence side of things,
 Service Builder has generated all the basic functionality you'll need for the

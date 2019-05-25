@@ -4,6 +4,8 @@ header-id: writing-a-jsf-application-using-liferay-faces
 
 # Writing a JSF Application Using Liferay Faces
 
+[TOC levels=1-4]
+
 If you're just getting started with Liferay Faces development, you've come to
 the right place. This learning path starts with creating a JSF portlet and
 drives down the path of useful JSF features, exploring how each feature is

@@ -4,6 +4,8 @@ header-id: setting-permissions-using-jsf
 
 # Setting Permissions Using JSF
 
+[TOC levels=1-4]
+
 To this point, your guestbook application is able to create guestbooks and
 guestbook entries and store them as data to the database. However, everyone that
 visits your site has the ability to do this, which could present problems as an

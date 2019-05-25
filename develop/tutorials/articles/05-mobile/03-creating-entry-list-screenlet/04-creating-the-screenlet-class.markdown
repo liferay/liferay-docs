@@ -4,6 +4,8 @@ header-id: creating-entry-list-screenlets-screenlet-class
 
 # Creating Entry List Screenlet's Screenlet Class
 
+[TOC levels=1-4]
+
 Recall that when using a Screenlet, the app developer primarily interacts with 
 its Screenlet class. The Screenlet class contains attributes for configuring the 
 Screenlet's behavior, a reference to the Screenlet's View, methods for invoking 

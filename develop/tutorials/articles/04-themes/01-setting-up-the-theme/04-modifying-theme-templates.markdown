@@ -4,6 +4,8 @@ header-id: modifying-theme-templates
 
 # Modifying Theme Templates
 
+[TOC levels=1-4]
+
 In this section, you'll add some touches to `portal_normal.ftl` and
 `navigation.ftl` to match the finished mock up for the Lunar Resort.
 

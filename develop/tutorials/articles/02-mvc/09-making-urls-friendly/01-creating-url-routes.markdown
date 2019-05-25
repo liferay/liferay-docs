@@ -4,6 +4,8 @@ header-id: creating-url-routes
 
 # Creating URL Routes
 
+[TOC levels=1-4]
+
 If you have the Guestbook Portlet deployed and added to a page, click on the
 *Add Guestbook* button. Here's what the generated URL looks like:
 

@@ -4,6 +4,8 @@ header-id: publishing-and-configuring-workflows
 
 # Publishing and Configuring Workflows
 
+[TOC levels=1-4]
+
 Once a workflow is developed, it must be published to Liferay. After that,
 there's even more workflow configuration possbility, such as associating the
 workflow with a Dynamic Data List, and using Kaleo Forms to run the workflow.

@@ -4,6 +4,8 @@ header-id: enabling-search-and-indexing-for-guestbooks
 
 # Enabling Search and Indexing for Guestbooks
 
+[TOC levels=1-4]
+
 To enable search and indexing for guestbook entities, you need to follow these
 three steps:
 

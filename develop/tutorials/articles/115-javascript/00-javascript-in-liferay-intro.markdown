@@ -4,6 +4,8 @@ header-id: javascript-in-liferay
 
 # JavaScript in Liferay
 
+[TOC levels=1-4]
+
 As much as Java is used throughout Liferay's back-end data layer, JavaScript is
 used throughout its presentation layer. Liferay uses JavaScript to implement
 responsive control logic and provide powerful UI components, and the scripts

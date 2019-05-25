@@ -4,6 +4,8 @@ header-id: building-maven-artifacts-from-source
 
 # Building Liferay Maven Artifacts from Source
 
+[TOC levels=1-4]
+
 You can download the Liferay Maven artifacts if you're just interested in using
 the artifacts for a specific release. However, if you'd like to use the very
 latest Liferay CE Maven artifacts, you can build them from source. To build the

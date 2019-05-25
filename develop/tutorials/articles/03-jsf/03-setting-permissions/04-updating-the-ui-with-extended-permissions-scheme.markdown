@@ -4,6 +4,8 @@ header-id: updating-the-ui-with-extended-permissions-scheme
 
 # Updating the UI with Extended Permissions Scheme
 
+[TOC levels=1-4]
+
 Now that you have your permissions scheme configured to handle individual
 entities, it's time to add a permissions method that can be called from your
 `master` view. You'll create a method that checks a user's permissions for the

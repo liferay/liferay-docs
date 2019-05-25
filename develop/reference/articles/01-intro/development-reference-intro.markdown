@@ -4,6 +4,8 @@ header-id: development-reference
 
 # Development Reference
 
+[TOC levels=1-4]
+
 Here you'll find Liferay's reference documentation for Java, JavaScript
 (including AlloyUI), tag libraries, deployment descriptors, and Liferay Faces. 
 

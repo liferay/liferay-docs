@@ -4,6 +4,8 @@ header-id: troubleshooting-jsf-portlet-deployment-errors
 
 # Troubleshooting JSF Portlet Deployment Errors
 
+[TOC levels=1-4]
+
 Many of us have experienced it; you go to deploy a new application into your
 portal instance and see the dreaded deployment error messages. What do you do?
 Is the error message helpful? How can I find the solution?

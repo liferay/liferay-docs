@@ -4,6 +4,8 @@ header-id: adding-permissions-to-resources
 
 # Adding Permissions to Resources
 
+[TOC levels=1-4]
+
 Public bulletin boards are great. Anyone can inform others of just about
 anything. On the other hand, *anyone* can post just about *anything* on the
 bulletin board. Some of this content might not be relevant to the community.

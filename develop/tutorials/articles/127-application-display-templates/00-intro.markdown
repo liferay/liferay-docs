@@ -4,6 +4,8 @@ header-id: application-display-templates
 
 # Application Display Templates
 
+[TOC levels=1-4]
+
 A portlet's Display Settings (*Options* &rarr; *Configuration* &rarr; *Setup*
 &rarr; *Display Settings*) let you customize its display. They come built in
 with Liferay, so you don't have to do anything special to enable them for your

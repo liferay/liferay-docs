@@ -4,6 +4,8 @@ header-id: liferays-message-bus-system
 
 # Liferay's Message Bus System
 
+[TOC levels=1-4]
+
 Liferay's Message Bus system is a great way to handle communication both
 between and within your applications. However, before you get started with
 Message Bus, you should know the basics of how it's structured. This tutorial

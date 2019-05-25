@@ -4,6 +4,8 @@ header-id: using-configurable-portlet-preferences
 
 # Using Configurable Portlet Preferences
 
+[TOC levels=1-4]
+
 <!-- The beginning and ending test portlets can be found at the following:
 https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/liferay-mvc/prefs/begin/event-listing-portlet
 https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/liferay-mvc/prefs/end/event-listing-portlet

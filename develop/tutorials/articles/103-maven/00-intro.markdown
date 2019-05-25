@@ -4,6 +4,8 @@ header-id: maven
 
 # Developing with Maven
 
+[TOC levels=1-4]
+
 I'm giving you fair warning. I was recently reading the famous poem by Edgar
 Allen Poe, The Raven. So, naturally, I interwove our documentation on Maven with
 references to the poem, sometimes accurately, and other times adapted for my own

@@ -4,6 +4,8 @@ header-id: working-with-the-dom-in-alloyui
 
 # Working With the DOM in AlloyUI
 
+[TOC levels=1-4]
+
 In this tutorial, you'll learn how to manipulate HTML elements in the DOM
 (Document Object Model) using AlloyUI. You'll also learn how to handle events on
 elements. And if you're playful at heart or you simply want to see DOM

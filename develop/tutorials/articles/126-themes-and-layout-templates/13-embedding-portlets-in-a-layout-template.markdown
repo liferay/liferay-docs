@@ -4,6 +4,8 @@ header-id: embedding-portlets-in-a-layout-template
 
 # Embedding Portlets in a Layout Template
 
+[TOC levels=1-4]
+
 Are there portlets you need displayed in the same location on your pages that
 use the same layout template? Or perhaps you want to prevent users from moving
 portlets you've carefully placed, knowing that it disrupts the Feng Shui of your

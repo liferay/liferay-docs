@@ -4,6 +4,8 @@ header-id: using-the-gadget-editor
 
 # Using the Gadget Editor
 
+[TOC levels=1-4]
+
 As part of Liferay's OpenSocial integration, the *OpenSocial Gadget Editor* is
 included with Liferay Portal. The gadget editor is a complete development
 environment for gadgets, providing syntax highlighting, preview functionality,

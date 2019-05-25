@@ -4,6 +4,8 @@ header-id: liferay-ide
 
 # Developing Plugins with Liferay IDE
 
+[TOC levels=1-4]
+
 The best Liferay-specific development tool is Liferay IDE, a fully featured
 Integrated Development Environment (IDE) based on Eclipse. Even if you're a
 grizzled veteran Java developer, consider using Liferay IDE when you're doing a

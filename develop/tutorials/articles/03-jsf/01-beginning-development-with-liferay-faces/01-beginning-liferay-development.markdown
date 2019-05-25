@@ -4,6 +4,8 @@ header-id: beginning-liferay-jsf-development
 
 # Beginning Liferay JSF Development
 
+[TOC levels=1-4]
+
 Before you begin developing a JSF application, you'll need to install a Liferay
 development environment. Although it's possible to use anything from a text
 editor and command line to any Java IDE available, Liferay provides two nearly

@@ -4,6 +4,8 @@ header-id: asset-enabling-custom-entities
 
 # Asset Enabling Custom Entities
 
+[TOC levels=1-4]
+
 Liferay's asset framework provides a set of features that are common to many
 different types of content. Web content articles, blog posts, wiki articles, and
 documents are a few examples of Liferay assets. Developers can define custom

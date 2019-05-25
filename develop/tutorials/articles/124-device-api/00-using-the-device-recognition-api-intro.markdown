@@ -4,6 +4,8 @@ header-id: using-the-device-recognition-api
 
 # Using the Device Recognition API
 
+[TOC levels=1-4]
+
 As you know, Internet traffic has risen exponentially over the past decade, and
 this trend shows no sign of stopping. In addition, the bulk of Internet traffic 
 now comes from mobile devices. The mobile boom presents new obstacles and 

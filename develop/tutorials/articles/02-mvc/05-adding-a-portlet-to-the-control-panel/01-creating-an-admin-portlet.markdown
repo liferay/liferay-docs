@@ -4,6 +4,8 @@ header-id: creating-an-admin-portlet
 
 # Creating an Admin Portlet
 
+[TOC levels=1-4]
+
 To create the Guestbook Admin portlet, you'll use the New Liferay Portlet
 wizard. You used this wizard in an earlier learning path when you created the
 Guestbook portlet. The New Liferay Portlet wizard creates various required

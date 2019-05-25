@@ -4,6 +4,8 @@ header-id: adding-a-jsf-portlet-to-the-control-panel
 
 # Adding a JSF Portlet to the Control Panel
 
+[TOC levels=1-4]
+
 Up to this point, you've created a fully-functional, data-driven JSF application
 using Service Builder. You've also created managed beans and JSF views to
 enhance your portlet's functionality and UI experience. Lastly, you've

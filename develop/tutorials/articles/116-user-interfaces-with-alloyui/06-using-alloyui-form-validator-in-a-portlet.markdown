@@ -4,6 +4,8 @@ header-id: using-the-alloyui-form-validator-in-a-portlet
 
 # Using the AlloyUI Form Validator in a Portlet
 
+[TOC levels=1-4]
+
 <!-- 
 Testing notes: 
 

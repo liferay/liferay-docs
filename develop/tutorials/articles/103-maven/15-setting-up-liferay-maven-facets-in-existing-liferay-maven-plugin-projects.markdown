@@ -4,6 +4,8 @@ header-id: setting-up-liferay-maven-facets-in-existing-liferay-maven-plugin-proj
 
 # Setting Up Liferay Maven Facets in Existing Liferay Maven Plugin Projects
 
+[TOC levels=1-4]
+
 Liferay Maven plugin projects created with Liferay IDE (2.0 Milestone 1 and
 newer) have all the required Liferay facets, including the new m2e-liferay
 plugin. The m2e-liferay plugin provides a project life cycle map for building

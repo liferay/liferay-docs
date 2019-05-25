@@ -4,6 +4,8 @@ header-id: importing-resources-with-your-themes
 
 # Importing Resources with Your Themes
 
+[TOC levels=1-4]
+
 A theme without content is like an empty house. If you're trying to sell an
 empty house, it may be difficult for prospective buyers to see its full beauty.
 However, staging the house with some furniture and decorations helps prospective

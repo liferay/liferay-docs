@@ -4,6 +4,8 @@ header-id: asynchronous-messaging-with-callbacks
 
 # Asynchronous Messaging with Callbacks
 
+[TOC levels=1-4]
+
 Asynchronous messaging consists of sending a message and then continuing with
 processing. The sender doesn't block and wait for an immediate response. This 
 allows the sender to continue with other tasks. Even so, it's often necessary 

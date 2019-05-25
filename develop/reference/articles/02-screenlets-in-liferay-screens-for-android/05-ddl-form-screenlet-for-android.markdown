@@ -4,6 +4,8 @@ header-id: ddlformscreenlet-for-android
 
 # DDL Form Screenlet for Android
 
+[TOC levels=1-4]
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rHsreHmStLo" frameborder="0" allowfullscreen></iframe>
 
 ## Requirements

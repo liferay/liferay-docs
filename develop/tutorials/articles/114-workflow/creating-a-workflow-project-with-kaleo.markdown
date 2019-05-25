@@ -4,6 +4,8 @@ header-id: creating-a-workflow-definition-with-kaleo-designer-for-java
 
 # Creating a Workflow Definition with Kaleo Designer for Java
 
+[TOC levels=1-4]
+
 Developer Studio makes it easy for you to write custom business logic that
 enhances Kaleo workflows. Learn to create your own workflow in Developer Studio
 and discover features from Kaleo Designer for Java (Designer) along the way.

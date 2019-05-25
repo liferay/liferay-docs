@@ -4,6 +4,8 @@ header-id: creating-managed-beans-to-use-services
 
 # Creating Managed Beans to Use Services
 
+[TOC levels=1-4]
+
 Now that your persistence and service layers are created, it's time to create
 your managed beans to store and retrieve guestbooks and guestbook entries for
 your users. 

@@ -4,6 +4,8 @@ header-id: deploying-plugins
 
 # Deploying Plugins
 
+[TOC levels=1-4]
+
 In order for a plugin to affect the portal it must be deployed to it. As you
 develop plugins you'll want to test them on a portal. Commonly, developers test
 their plugins on a portal instance on their machine. Deploying to a local

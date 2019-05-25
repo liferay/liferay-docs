@@ -4,6 +4,8 @@ header-id: performing-a-custom-action-using-a-hook
 
 # Performing a Custom Action Using a Hook
 
+[TOC levels=1-4]
+
 <!-- The custom-action-hook project can be found here:
 https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/cust/custom-action/end/custom-action-hook
 -->

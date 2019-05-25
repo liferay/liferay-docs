@@ -4,6 +4,8 @@ header-id: using-the-plugins-sdk
 
 # Using the Plugins SDK
 
+[TOC levels=1-4]
+
 This tutorial describes the Plugins SDK's directory structure and project Ant
 targets, demonstrates how to create plugin projects, and shows how to deploy
 them. 

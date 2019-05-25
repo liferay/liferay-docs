@@ -4,6 +4,8 @@ header-id: json-web-services-invocation-examples
 
 # JSON Web Services Invocation Examples
 
+[TOC levels=1-4]
+
 This tutorial provides examples of invoking Liferay's JSON web services via
 JavaScript, URL, and [cURL](http://curl.haxx.se/). The same two examples
 (getting a user and adding a user) are used for each method of invocation so

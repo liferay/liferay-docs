@@ -4,6 +4,8 @@ header-id: using-front-end-development-code-assist-features-in-ide
 
 # Using Front-End Development Code Assist Features in IDE
 
+[TOC levels=1-4]
+
 Since IDE 2.2, front-end development has become a much smoother process. You now
 have access to code inferencing and code completion features for AlloyUI,
 JavaScript, CSS, and jQuery. 

@@ -4,6 +4,8 @@ header-id: architecture-of-liferay-screens-for-android
 
 # Architecture of Liferay Screens for Android
 
+[TOC levels=1-4]
+
 Liferay Screens applies architectural ideas from
 [Model View Presenter](http://en.wikipedia.org/wiki/Model-view-presenter), 
 [Model View ViewModel](http://en.wikipedia.org/wiki/Model_View_ViewModel), and 

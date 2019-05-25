@@ -4,6 +4,8 @@ header-id: creating-your-jsf-applications-entity-actions
 
 # Creating Your JSF Application's Entity Actions
 
+[TOC levels=1-4]
+
 To this point, you've created a JSF guestbook application that uses a database
 to store its entries. Also, the application is integrated with Liferay's
 permissions mechanism, allowing you to control who can access different parts of

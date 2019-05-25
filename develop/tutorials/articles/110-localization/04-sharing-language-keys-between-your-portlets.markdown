@@ -4,6 +4,8 @@ header-id: sharing-language-keys-between-your-portlets
 
 # Sharing Language Keys Between Your Portlets
 
+[TOC levels=1-4]
+
 <!-- The beginning and ending test portlets can be found at the following:
 Begin: https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/liferay-mvc/prefs/begin/event-listing-portlet
 End: https://github.com/codyhoag/liferay-docs/tree/6.2.x/develop/tutorials/code/loc/share-lang-keys/end/event-listing-portlet

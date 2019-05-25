@@ -4,6 +4,8 @@ header-id: reporting-user-behavior-with-audience-targeting
 
 # Reporting User Behavior with Audience Targeting
 
+[TOC levels=1-4]
+
 In the Audience Targeting application, a report is a tool that allows
 administrators to analyze the behavior of users in a campaign or belonging to
 specific user segments.

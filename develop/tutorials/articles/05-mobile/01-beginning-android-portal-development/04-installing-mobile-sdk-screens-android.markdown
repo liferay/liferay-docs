@@ -4,6 +4,8 @@ header-id: installing-the-guestbook-mobile-sdk-and-liferay-screens-for-android
 
 # Installing the Guestbook Mobile SDK and Liferay Screens for Android
 
+[TOC levels=1-4]
+
 For your Android app to interact with the Guestbook portlet, you must install 
 the following libraries in your Android project:
 

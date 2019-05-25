@@ -4,6 +4,8 @@ header-id: dynamically-adding-jsf-portlets-to-liferay-portal
 
 # Dynamically Adding JSF Portlets to Liferay Portal
 
+[TOC levels=1-4]
+
 For this tutorial, you'll learn how to dynamically add portlets to Liferay
 Portal pages. Here are the places in which you can add a portlet: 
 

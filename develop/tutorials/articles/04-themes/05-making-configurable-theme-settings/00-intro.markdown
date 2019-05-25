@@ -4,6 +4,8 @@ header-id: making-configurable-theme-settings
 
 # Making Configurable Theme Settings
 
+[TOC levels=1-4]
+
 Theme settings allow you to give Administrators control over the elements of 
 the page without having to touch any of the code directly.
 

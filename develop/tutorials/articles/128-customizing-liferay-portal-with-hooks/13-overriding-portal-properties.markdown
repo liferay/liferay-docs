@@ -4,6 +4,8 @@ header-id: overriding-portal-properties-dynamically
 
 # Overriding Portal Properties Dynamically
 
+[TOC levels=1-4]
+
 A portal properties hook lets you override a subset of
 [portal properties](@platform-ref@/6.2/propertiesdoc/portal.properties.html)
 that define event actions, model listeners, validators, generators, and content

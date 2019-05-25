@@ -4,6 +4,8 @@ header-id: signupscreenlet-for-ios
 
 # Sign Up Screenlet for iOS
 
+[TOC levels=1-4]
+
 ## Requirements
 
 - Xcode 9.0

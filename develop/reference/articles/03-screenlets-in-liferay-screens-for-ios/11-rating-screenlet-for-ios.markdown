@@ -4,6 +4,8 @@ header-id: rating-screenlet-for-ios
 
 # Rating Screenlet for iOS
 
+[TOC levels=1-4]
+
 ## Requirements
 
 - Xcode 9.0

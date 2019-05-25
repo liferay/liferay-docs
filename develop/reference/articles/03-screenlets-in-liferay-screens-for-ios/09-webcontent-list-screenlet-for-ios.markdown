@@ -4,6 +4,8 @@ header-id: web-content-list-screenlet-for-ios
 
 # Web Content List Screenlet for iOS
 
+[TOC levels=1-4]
+
 ## Requirements
 
 - Xcode 9.0

@@ -4,6 +4,8 @@ header-id: leveraging-template-editors-for-notifications
 
 # Leveraging Template Editors for Notifications
 
+[TOC levels=1-4]
+
 Designer lets you leverage the FreeMarker editor to customize templates for your 
 workflow notifications. A FreeMarker editor comes bundled with Developer Studio.
 

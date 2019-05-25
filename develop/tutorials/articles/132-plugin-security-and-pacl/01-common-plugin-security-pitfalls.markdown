@@ -4,6 +4,8 @@ header-id: common-plugin-security-pitfalls
 
 # Common Plugin Security Pitfalls
 
+[TOC levels=1-4]
+
 As you develop your plugin, you need to anticipate your plugin's actions in 
 light of Liferay's secured environment. Liferay's Plugin Security Manager 
 leverages the Java SE Security Architecture. Therefore, understanding Java SE 

@@ -4,6 +4,8 @@ header-id: using-portlet-preferences-with-jsf
 
 # Using Portlet Preferences with JSF
 
+[TOC levels=1-4]
+
 JSF portlet developers often must enable the end-user to personalize portlets
 in some way. To meet this requirement, the Portlet 2.0 specification lets you
 define portlet preferences for each portlet. Preference names and default values

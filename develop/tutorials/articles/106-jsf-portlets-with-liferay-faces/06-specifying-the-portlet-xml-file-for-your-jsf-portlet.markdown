@@ -4,6 +4,8 @@ header-id: specifying-the-portlet-xml-file-for-your-jsf-portlet
 
 # Specifying the portlet.xml File for Your JSF Portlet
 
+[TOC levels=1-4]
+
 Each portlet project must have a `WEB-INF/portlet.xml` deployment descriptor
 file. When creating a JSF portlet using Liferay IDE or the Plugins SDK, this
 file is created for you. JSF portlets require a couple deployment descriptors. 

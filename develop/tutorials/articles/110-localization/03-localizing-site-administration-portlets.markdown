@@ -4,6 +4,8 @@ header-id: localizing-site-administration-portlets
 
 # Localizing Site Administration Portlets
 
+[TOC levels=1-4]
+
 <!-- The beginning and ending test portlets can be found at the following:
 Begin: https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/liferay-mvc/prefs/begin/event-listing-portlet
 End: https://github.com/liferay/liferay-docs/tree/6.2.x/develop/tutorials/code/loc/loc-sa-port/end/event-listing-portlet

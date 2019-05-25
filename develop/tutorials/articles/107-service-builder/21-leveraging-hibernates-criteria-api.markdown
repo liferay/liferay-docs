@@ -4,6 +4,8 @@ header-id: leveraging-hibernates-criteria-api
 
 # Leveraging Hibernate's Criteria API
 
+[TOC levels=1-4]
+
 Liferay allows you to use custom SQL queries to retrieve data from the database.
 Sometimes, however, it's more convenient to build queries dynamically at
 runtime than it is to invoke predefined SQL queries. Liferay allows you to

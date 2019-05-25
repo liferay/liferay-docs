@@ -4,6 +4,8 @@ header-id: rating-screenlet-for-android
 
 # Rating Screenlet for Android
 
+[TOC levels=1-4]
+
 ## Requirements
 
 -   Android SDK 4.0 (API Level 15) or above

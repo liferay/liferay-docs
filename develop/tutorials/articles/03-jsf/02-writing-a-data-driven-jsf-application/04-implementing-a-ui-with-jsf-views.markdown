@@ -4,6 +4,8 @@ header-id: implementing-a-ui-with-jsf-views
 
 # Implementing a UI with JSF Views
 
+[TOC levels=1-4]
+
 Your services and managed beans are all set for action, but how will your users
 interact with the portlet? You'll need to implement a user interface for your
 users to interact with using JSF views. 

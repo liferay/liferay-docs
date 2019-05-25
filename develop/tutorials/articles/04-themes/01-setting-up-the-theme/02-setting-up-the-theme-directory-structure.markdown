@@ -4,6 +4,8 @@ header-id: setting-up-the-themes-directory-structure
 
 # Setting Up the Theme's Directory Structure
 
+[TOC levels=1-4]
+
 | needed to set up the theme. This was mentioned in the introduction to this step.
 
 Your theme's directory structure should reflect the one below when it is 

@@ -4,6 +4,8 @@ header-id: using-the-alloyui-validator-tag
 
 # Using the AlloyUI Validator Tag
 
+[TOC levels=1-4]
+
 The AlloyUI validator tag is a handy way to make sure users enter the right data
 into a form's AlloyUI input fields. It offers multiple data checks, making form
 validation a simple task. This tutorial covers using the `aui:validator` tag in

@@ -4,6 +4,8 @@ header-id: developing-liferay-hook-plugins-with-maven
 
 # Developing Liferay Hook Plugins with Maven
 
+[TOC levels=1-4]
+
 Hooks are the optimal plugin type for customizing Liferay's core features.
 Creating a hook plugin with Maven is very similar to creating a portlet plugin
 with Maven. This tutorial explains how to create a hook plugin and explains

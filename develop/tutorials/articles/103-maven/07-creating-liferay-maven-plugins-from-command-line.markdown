@@ -4,6 +4,8 @@ header-id: creating-liferay-maven-plugins-from-the-command-lin
 
 # Creating Liferay Maven Plugins from the Command Line
 
+[TOC levels=1-4]
+
 To learn how to use Liferay IDE to create Liferay Maven plugins, please refer to
 the 
 [Creating Liferay Maven Plugins from Liferay IDE](/docs/6-2/tutorials/-/knowledge_base/t/creating-liferay-maven-plugins-from-liferay-ide)

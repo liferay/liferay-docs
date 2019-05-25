@@ -4,6 +4,8 @@ header-id: implementing-asset-categorization-and-tagging
 
 # Implementing Asset Categorization and Tagging
 
+[TOC levels=1-4]
+
 <!--
 Testing Notes:
 

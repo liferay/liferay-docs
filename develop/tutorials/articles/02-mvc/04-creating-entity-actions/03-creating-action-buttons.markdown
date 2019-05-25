@@ -4,6 +4,8 @@ header-id: creating-action-buttons
 
 # Creating Action Buttons
 
+[TOC levels=1-4]
+
 Your final task is to create the user interface elements that give users access
 to the functions you just created in both your controller and your service
 layer. A common way to do this in Liferay, which makes your application operate

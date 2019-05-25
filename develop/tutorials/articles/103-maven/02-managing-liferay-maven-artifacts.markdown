@@ -4,6 +4,8 @@ header-id: managing-liferay-maven-artifacts
 
 # Installing and Managing Liferay Maven Artifacts
 
+[TOC levels=1-4]
+
 To create Liferay plugins using Maven, you'll need the archives required by
 Liferay (e.g., required JAR and WAR files). This won't be problem--Liferay
 provides them as Maven artifacts. This tutorial explains how to install the

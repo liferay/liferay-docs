@@ -4,6 +4,8 @@ header-id: tracking-user-actions-with-audience-targeting
 
 # Tracking User Actions with Audience Targeting
 
+[TOC levels=1-4]
+
 In the Audience Targeting application, a campaign defines a set of content
 targeted to specific user segments in a time period. Tracking actions allow
 campaign administrators to learn how users behave in the context of a campaign

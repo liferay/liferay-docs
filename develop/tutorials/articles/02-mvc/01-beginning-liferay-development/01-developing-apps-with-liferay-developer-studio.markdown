@@ -4,6 +4,8 @@ header-id: developing-applications-with-liferay-developer-stu
 
 # Developing Applications with Liferay Developer Studio
 
+[TOC levels=1-4]
+
 To develop an application, you need a developer environment. Liferay provides a
 great environment with Liferay Developer Studio. 
 

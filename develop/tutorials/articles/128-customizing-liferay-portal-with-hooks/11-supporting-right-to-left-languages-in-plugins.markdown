@@ -4,6 +4,8 @@ header-id: supporting-right-to-left-languages-in-plugins
 
 # Supporting Right-to-Left Languages in Plugins
 
+[TOC levels=1-4]
+
 Middle Eastern languages such as Hebrew and Arabic are written right-to-left
 (RTL). Many sites that use RTL languages are multilingual, requiring both RTL
 and left-to-right (LTR) content. Modern browsers support [language and

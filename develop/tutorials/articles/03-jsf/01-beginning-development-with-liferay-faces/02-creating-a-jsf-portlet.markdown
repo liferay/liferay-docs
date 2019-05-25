@@ -4,6 +4,8 @@ header-id: creating-a-jsf-portlet
 
 # Creating a JSF Portlet
 
+[TOC levels=1-4]
+
 Since you're configured with Liferay IDE/Developer Studio, you can jump right in
 to creating a JSF application. Applications in Liferay Portal are called
 *portlets*, so you'll create a JSF portlet project. 

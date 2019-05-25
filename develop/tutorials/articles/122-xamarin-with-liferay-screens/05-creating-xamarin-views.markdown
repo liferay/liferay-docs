@@ -4,6 +4,8 @@ header-id: creating-xamarin-views-and-themes
 
 # Creating Xamarin Views and Themes
 
+[TOC levels=1-4]
+
 Recall that Views in Xamarin.Android and Themes in Xamarin.iOS are analogous 
 components that let you customize a Screenlet's look and feel. You can use the 
 Views and Themes provided by Liferay Screens, or write your own. Writing your 

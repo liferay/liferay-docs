@@ -4,6 +4,8 @@ header-id: creating-a-theme-project
 
 # Creating a Theme Project
 
+[TOC levels=1-4]
+
 The rest of this Learning Path assumes you've followed the instructions for
 setting up [Liferay IDE](/docs/6-2/tutorials/-/knowledge_base/t/developing-apps-with-liferay-ide)
 or [Liferay Developer Studio](/docs/6-2/tutorials/-/knowledge_base/t/developing-applications-with-liferay-developer-stu). 

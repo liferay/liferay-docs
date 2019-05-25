@@ -4,6 +4,8 @@ header-id: comment-add-screenlet-for-ios
 
 # Comment Add Screenlet for iOS
 
+[TOC levels=1-4]
+
 ## Requirements
 
 - Xcode 9.0

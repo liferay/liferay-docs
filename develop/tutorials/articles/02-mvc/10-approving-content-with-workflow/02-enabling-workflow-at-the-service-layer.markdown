@@ -4,6 +4,8 @@ header-id: enabling-workflow-at-the-service-layer
 
 # Enabling Workflow at the Service Layer
 
+[TOC levels=1-4]
+
 In the Learning Path on assets, you learned that asset enabled entities are
 added to the `AssetEntry` table. There's no special table for workflow entities,
 but there are some additional database columns in the entity table (e.g.,

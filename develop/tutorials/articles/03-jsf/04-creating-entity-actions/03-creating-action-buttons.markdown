@@ -4,6 +4,8 @@ header-id: creating-your-jsf-applications-action-buttons
 
 # Creating Your JSF Application's Action Buttons
 
+[TOC levels=1-4]
+
 Now that you have the power to edit and delete entries, and also control their
 permissions, it's time to expose those capabilities to your users through your
 JSF views. This will be a similar process to when you created the Add Guestbook

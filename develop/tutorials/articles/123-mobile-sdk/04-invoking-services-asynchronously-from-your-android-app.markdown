@@ -4,6 +4,8 @@ header-id: invoking-services-asynchronously-from-your-android-app
 
 # Invoking Services Asynchronously from Your Android App
 
+[TOC levels=1-4]
+
 Android doesn't allow synchronous HTTP requests to be made from the main UI 
 thread. You can use Android's 
 [`AsyncTask`](http://developer.android.com/reference/android/os/AsyncTask.html) 

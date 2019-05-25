@@ -4,6 +4,8 @@ header-id: enabling-code-assist-features-in-your-project
 
 # Enabling Code Assist Features in Your Project
 
+[TOC levels=1-4]
+
 Liferay IDE's integration of [Tern](http://ternjs.net/) provides many valuable
 front-end and back-end development tools for code inference and completion. This
 tutorial covers how to enable Tern features for your projects. 

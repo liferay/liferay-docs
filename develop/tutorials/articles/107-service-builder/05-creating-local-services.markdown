@@ -4,6 +4,8 @@ header-id: writing-local-service-classes
 
 # Creating Local Services
 
+[TOC levels=1-4]
+
 The heart of your service is its `*LocalServiceImpl` class. This class is your
 entity's local service extension point. Local services can be invoked within
 your application or by other Liferay applications running on the same Liferay

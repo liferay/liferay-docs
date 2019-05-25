@@ -4,6 +4,8 @@ header-id: using-liferay-uisuccess-and-liferay-uierror-message
 
 # Using liferay-ui:success and liferay-ui:error Messages
 
+[TOC levels=1-4]
+
 As users perform different actions in your portlet, it's helpful for them to get
 feedback as to whether the portlet's actions are succeeding or failing. For
 example, on completing an action successfully, you can reassure the user of the

@@ -4,6 +4,8 @@ header-id: developing-liferay-plugins-with-additional-maven-ar
 
 # Developing Liferay Plugins with Additional Maven Archetypes
 
+[TOC levels=1-4]
+
 Liferay provides more archetypes than just the ones for portlets, hooks, themes,
 and layout templates. The Liferay team has been busy expanding the list of
 archetypes available for Liferay app development. 

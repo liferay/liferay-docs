@@ -4,6 +4,8 @@ header-id: creating-a-user-interface
 
 # Creating a User Interface
 
+[TOC levels=1-4]
+
 It's time to create the Guestbook Admin portlet's user interface. The default
 view of the portlet should have a button for adding new guestbooks. It should
 also display a list of all the guestbooks that have already been added to the

@@ -4,6 +4,8 @@ header-id: finding-and-invoking-liferay-services
 
 # Finding and Invoking Liferay Services
 
+[TOC levels=1-4]
+
 You can find Liferay's services by searching for them in the Javadocs:
 [http://docs.liferay.com/portal/6.2/javadocs/](http://docs.liferay.com/portal/6.2/javadocs/).
 Below, we'll show you how to search for portal services and portlet services.

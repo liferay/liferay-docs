@@ -4,6 +4,8 @@ header-id: generating-a-persistence-framework-using-service-builder
 
 # Generating a Persistence Framework Using Service Builder
 
+[TOC levels=1-4]
+
 If you've read the MVC learning path, it goes specifically through creating a
 persistence framework for the MVC version of the guestbook portlet; but could
 you follow the same steps for a JSF portlet? The answer is *yes*. 

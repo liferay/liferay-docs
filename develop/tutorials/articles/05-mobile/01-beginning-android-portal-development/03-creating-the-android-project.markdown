@@ -4,6 +4,8 @@ header-id: creating-the-android-project
 
 # Creating the Android Project
 
+[TOC levels=1-4]
+
 Now that you've built the Guestbook Mobile SDK, you're ready to create the 
 Guestbook Android app. This article walks you through the steps required to 
 create the app's project in Android Studio. After this, you'll be ready to 

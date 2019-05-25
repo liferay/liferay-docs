@@ -4,6 +4,8 @@ header-id: building-the-guestbook-mobile-sdk
 
 # Building the Guestbook Mobile SDK
 
+[TOC levels=1-4]
+
 Once you've deployed the Guestbook portlet, you're ready to build the Guestbook
 Mobile SDK. You might be asking yourself, "Why do I have to build a separate
 Mobile SDK? Can't I just use the pre-built Mobile SDK that Liferay already

@@ -4,6 +4,8 @@ header-id: service-builder
 
 # Service Builder and Services
 
+[TOC levels=1-4]
+
 For an introduction to Liferay's Service Builder tool, please refer to the
 [Writing a Data-Driven Application](/docs/6-2/tutorials/-/knowledge_base/t/writing-a-data-driven-application)
 learning path. This learning path demonstrates how to create easy-to-maintain

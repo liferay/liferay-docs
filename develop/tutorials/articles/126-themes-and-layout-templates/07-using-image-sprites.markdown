@@ -4,6 +4,8 @@ header-id: using-image-sprites
 
 # Using Image Sprites
 
+[TOC levels=1-4]
+
 You might already know that every image on a site generates an HTTP request.
 Page load time is impacted every time the browser has to negotiate another HTTP
 request. The more image files a page has, the slower the page loads. The way to

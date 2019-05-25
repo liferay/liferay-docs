@@ -4,6 +4,8 @@ header-id: contexts-and-dependency-injection-for-jsf-portlets
 
 # Contexts and Dependency Injection for JSF Portlets
 
+[TOC levels=1-4]
+
 In December 2009, [JSR 299](http://jcp.org/en/jsr/detail?id=299) introduced the
 Contexts and Dependency Injection (CDI) 1.0 standard into the Java EE 6
 platform. In April 2013, [JSR 346](http://jcp.org/en/jsr/detail?id=346) updated

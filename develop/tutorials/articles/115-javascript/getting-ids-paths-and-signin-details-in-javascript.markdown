@@ -4,6 +4,8 @@ header-id: getting-ids-paths-and-sign-in-details-in-javascript
 
 # Getting IDs, Paths, and Sign-in Details in JavaScript
 
+[TOC levels=1-4]
+
 In Java, developers are used to being able to find lots of context information
 at runtime. You can learn about what user is browsing your application, what
 page it's on, what site it's in, and lots more. Wouldn't it be great if you

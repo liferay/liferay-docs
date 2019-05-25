@@ -4,6 +4,8 @@ header-id: using-the-portletactionurl-ui-component
 
 # Using the portlet:actionURL UI Component
 
+[TOC levels=1-4]
+
 Liferay Faces Bridge provides several Portlet 2.0 `UIComponent` tags as part of
 its component suite. In this tutorial, you'll learn about the
 `portlet:actionURL` tag. 

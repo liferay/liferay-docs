@@ -4,6 +4,8 @@ header-id: localization
 
 # Localization
 
+[TOC levels=1-4]
+
 If your portlets target an international audience, you can localize your
 portlets' user interfaces. To localize a portlet, you need to create language
 properties files, also called resource bundles, for each language you wish to

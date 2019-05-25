@@ -4,6 +4,8 @@ header-id: modifying-your-service-layer-for-entity-actions
 
 # Modifying Your Service Layer for Entity Actions
 
+[TOC levels=1-4]
+
 Just as you did in the previous learning path on setting permissions, you'll
 need to modify your service layer. Your current Guestbook portlet is only
 allowed to add entries and their resources, but you have no way of deleting

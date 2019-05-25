@@ -4,6 +4,8 @@ header-id: using-predestroy-and-bridgepredestroy-annotations-with-liferay-faces-
 
 # Using PreDestroy and BridgePreDestroy Annotations with Liferay Faces Bridge
 
+[TOC levels=1-4]
+
 For this tutorial, you'll learn about the`PreDestroy` and `BridgePreDestroy`
 annotations and how to use them. 
 

@@ -4,6 +4,8 @@ header-id: creating-ios-screenlets
 
 # Creating iOS Screenlets
 
+[TOC levels=1-4]
+
 The built-in
 [Screenlets](/docs/6-2/reference/-/knowledge_base/r/screenlets-in-liferay-screens-for-ios)
 cover common use cases for mobile apps that use Liferay. They

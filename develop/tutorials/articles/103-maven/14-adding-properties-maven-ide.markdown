@@ -4,6 +4,8 @@ header-id: adding-properties-to-a-maven-project-in-liferay-ide
 
 # Adding Properties to a Maven Project in Liferay IDE
 
+[TOC levels=1-4]
+
 When working with Maven projects in Liferay IDE, you may encounter situations
 where your project is missing [required Maven properties](/docs/6-2/tutorials/-/knowledge_base/t/using-liferay-maven-parent-plugin-projects).
 Maven properties go missing when a Maven profile ID isn't associated with the

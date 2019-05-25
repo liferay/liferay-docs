@@ -4,6 +4,8 @@ header-id: creating-entry-list-screenlets-interactor
 
 # Creating Entry List Screenlet's Interactor
 
+[TOC levels=1-4]
+
 Recall that Interactors are Screenlet components that make server calls and 
 process the results. Also recall that Interactors themselves are made up of 
 several components: 

@@ -4,6 +4,8 @@ header-id: installing-kaleo-designer-for-java-liferay-portal-6-2-dev-guide-07-en
 
 # Installing Kaleo Designer for Java
 
+[TOC levels=1-4]
+
 ![EE Only Feature](../../images/ee-feature-web.png)
 
 Kaleo Designer for Java lets you incorporate back-end Java development and

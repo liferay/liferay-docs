@@ -4,6 +4,8 @@ header-id: beginning-development-with-liferay-faces
 
 # Beginning Development with Liferay Faces
 
+[TOC levels=1-4]
+
 Getting started with a JSF application for Liferay is very easy. This learning
 path guides you step-by-step through creating and developing a JSF application.
 In particular, you'll develop a guestbook application which users can use to add

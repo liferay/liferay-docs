@@ -4,6 +4,8 @@ header-id: developing-osgi-plugins-for-liferay
 
 # Modularization with OSGi Plugins
 
+[TOC levels=1-4]
+
 OSGi (Open Services Gateway initiative) is a framework for developing modular
 Java applications. OSGi implements a complete and dynamic component model. OSGi
 components, also called bundles, can be remotely installed, started, stopped,

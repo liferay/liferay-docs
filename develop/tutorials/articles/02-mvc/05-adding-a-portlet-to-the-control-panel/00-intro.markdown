@@ -4,6 +4,8 @@ header-id: adding-a-portlet-to-the-control-panel
 
 # Adding a Portlet to the Control Panel
 
+[TOC levels=1-4]
+
 Up to this point, you've created a fully-functional Guestbook portlet. You've
 written a `service.xml` file to define your application's data model and used
 Service Builder to generate back-end code including model, service, and

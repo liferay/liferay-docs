@@ -4,6 +4,8 @@ header-id: configuring-liferay-look-and-feel-xml
 
 # Configuring liferay-look-and-feel.xml
 
+[TOC levels=1-4]
+
 First, you'll need to identify the theme elements you want to make configurable.
 In the case of the Lunar Resort, you want to make the Breadcrumbs, Portlet
 borders, and Page Title elements configurable.

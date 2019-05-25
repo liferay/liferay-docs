@@ -4,6 +4,8 @@ header-id: overriding-and-adding-struts-actions
 
 # Overriding and Adding Struts Actions
 
+[TOC levels=1-4]
+
 <!--
 Testing Notes:
 

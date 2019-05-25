@@ -4,6 +4,8 @@ header-id: using-maven-from-liferay-ide
 
 # Using Maven From Liferay IDE
 
+[TOC levels=1-4]
+
 Wouldn't it be nice if you could manage your Liferay Maven projects from Liferay
 IDE? You can! Liferay IDE 2.0 introduces the Maven project configurator
 (`m2e-liferay`), or the added support of configuring Maven projects as full

@@ -4,6 +4,8 @@ header-id: designing-a-layout-template
 
 # Designing a Layout Template
 
+[TOC levels=1-4]
+
 Initially, the layout template's generated TPL files are empty, a fresh canvas
 on which you can design a page layout template. If this seems overwhelming,
 don't worry. By the end of this tutorial, you'll be able to build a new layout

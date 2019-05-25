@@ -4,6 +4,8 @@ header-id: faceting-a-plugin-project-for-liferay-ide
 
 # Faceting a Plugin Project for Liferay IDE
 
+[TOC levels=1-4]
+
 When you drag your plugin project onto your Liferay server in Liferay IDE, is
 the plugin not deploying? Is there no "L" overlay image on your project's icon
 in the *Package Explorer*? These are symptoms of an unfaceted plugin project. In

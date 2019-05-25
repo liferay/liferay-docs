@@ -4,6 +4,8 @@ header-id: using-xamarin-with-liferay-screens
 
 # Using Xamarin with Liferay Screens
 
+[TOC levels=1-4]
+
 Liferay Screens for 
 [Android](/docs/6-2/tutorials/-/knowledge_base/t/android-apps-with-liferay-screens) 
 and 

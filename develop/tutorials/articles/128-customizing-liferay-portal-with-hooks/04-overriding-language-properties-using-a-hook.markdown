@@ -4,6 +4,8 @@ header-id: overriding-language-properties-using-a-hook
 
 # Overriding Language Properties Using a Hook
 
+[TOC levels=1-4]
+
 A language properties hook lets you change Liferay Portal's messages and labels
 to suit your needs. For example, you may want to change the title of a Liferay
 core portlet, a message Liferay displays on successfully completing a request,

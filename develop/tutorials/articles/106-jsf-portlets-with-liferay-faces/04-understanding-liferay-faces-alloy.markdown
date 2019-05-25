@@ -4,6 +4,8 @@ header-id: understanding-liferay-faces-alloy
 
 # Understanding Liferay Faces Alloy
 
+[TOC levels=1-4]
+
 Liferay Faces Alloy is distributed in a `.jar` file. You can add Liferay Faces
 Alloy as a dependency to your portlet projects, in order to use AlloyUI in a
 way that is consistent with JSF development. 

@@ -4,6 +4,8 @@ header-id: rendering-web-content-in-your-android-app
 
 # Rendering Web Content in Your Android App
 
+[TOC levels=1-4]
+
 Liferay Portal represents 
 [web content](/docs/6-2/user/-/knowledge_base/u/web-content-management) 
 articles as `JournalArticle` entities. Liferay Screens provides several ways to 

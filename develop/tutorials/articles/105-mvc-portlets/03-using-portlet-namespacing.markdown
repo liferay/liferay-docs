@@ -4,6 +4,8 @@ header-id: using-portlet-namespacing
 
 # Using Portlet Namespacing
 
+[TOC levels=1-4]
+
 Namespacing ensures that a given portlet's name is uniquely associated with
 elements in request parameters it sends to the portal. This prevents name
 conflicts with other elements on the portal page and with elements from other

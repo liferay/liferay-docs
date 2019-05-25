@@ -4,6 +4,8 @@ header-id: developing-custom-sql-queries
 
 # Developing Custom SQL Queries
 
+[TOC levels=1-4]
+
 Service Builder's finder methods facilitate searching for entities by their
 attributes--their column values. Add the column as a parameter for the finder in
 your `service.xml` file, run Service Builder, and it generates the finder method

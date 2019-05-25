@@ -4,6 +4,8 @@ header-id: creating-model-listeners
 
 # Creating Model Listeners
 
+[TOC levels=1-4]
+
 Model Listeners are used to listen for events on models and do something
 in response. They're similar in concept to [custom action hooks](/docs/6-2/tutorials/-/knowledge_base/t/performing-a-custom-action-using-a-hook),
 which perform actions in response to portal events (user login, for

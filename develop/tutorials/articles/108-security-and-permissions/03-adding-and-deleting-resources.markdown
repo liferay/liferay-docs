@@ -4,6 +4,8 @@ header-id: adding-and-deleting-resources
 
 # Adding and Deleting Resources
 
+[TOC levels=1-4]
+
 Liferay provides a system that allows you to implement permissions for your
 custom portlets. The first step in implementing permissions is to define all
 resources and the actions that can be performed on them. Once you've done this,

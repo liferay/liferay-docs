@@ -4,6 +4,8 @@ header-id: creating-ios-apps-that-use-liferay
 
 # Creating iOS Apps that Use Liferay
 
+[TOC levels=1-4]
+
 The Liferay Mobile SDK provides a way to streamline consuming Liferay core web 
 services, Liferay utilities, and custom portlet web services. It wraps Liferay
 JSON web services, making them easy to call in native mobile apps. It takes care

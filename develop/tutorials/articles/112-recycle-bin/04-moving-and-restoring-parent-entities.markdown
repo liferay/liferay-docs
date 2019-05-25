@@ -4,6 +4,8 @@ header-id: moving-and-restoring-parent-entities
 
 # Moving and Restoring Parent Entities
 
+[TOC levels=1-4]
+
 What happens if you need to trash a parent entity, such as a parent wiki page, 
 or a web content folder full of articles? Don't sweat it. Moving parent entries
 to and from the Recycle Bin is similar to moving non-parent entries. 

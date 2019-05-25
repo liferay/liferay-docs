@@ -4,6 +4,8 @@ header-id: creating-and-using-your-screenlets-model-class
 
 # Creating and Using Your Screenlet's Model Class
 
+[TOC levels=1-4]
+
 Liferay Screens typically receives entities from a Liferay instance as 
 `[String:AnyObject]`, where `String` is the entity's attribute and `AnyObject` 
 is the attribute's value. Although you can use these dictionary objects 

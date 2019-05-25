@@ -4,6 +4,8 @@ header-id: rating-assets
 
 # Rating Assets
 
+[TOC levels=1-4]
+
 <!--
 Testing Notes:
 

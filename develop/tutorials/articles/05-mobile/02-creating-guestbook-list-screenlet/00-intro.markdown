@@ -4,6 +4,8 @@ header-id: creating-guestbook-list-screenlet
 
 # Creating Guestbook List Screenlet
 
+[TOC levels=1-4]
+
 In the previous section, you created an Android app that contains the Guestbook
 Mobile SDK and Liferay Screens. You also used 
 [Login Screenlet](/docs/6-2/reference/-/knowledge_base/r/loginscreenlet-for-android)

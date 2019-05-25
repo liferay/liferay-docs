@@ -4,6 +4,8 @@ header-id: styling-the-content-div
 
 # Styling the Content Div
 
+[TOC levels=1-4]
+
 The Content `<div>` is used to position and set the dimensions for the theme's 
 content. Currently the Content `<div>` is pressed right up against the edge of 
 the Wrapper, giving the theme a claustrophobic feel. It's time to give the 

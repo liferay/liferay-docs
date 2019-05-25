@@ -4,6 +4,8 @@ header-id: using-liferay-push-in-android-apps
 
 # Using Liferay Push in Android Apps
 
+[TOC levels=1-4]
+
 Liferay Screens supports push notifications in Android apps. To use
 them, you must configure some APIs and modify your app to consume and/or
 produce push notifications. This tutorial shows how to do all these things. 

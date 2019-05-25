@@ -4,6 +4,8 @@ header-id: previewing-your-theme
 
 # Previewing Your Theme
 
+[TOC levels=1-4]
+
 To determine what changes need to be made, you can use Liferay's preview window 
 to see how the theme responds with the existing CSS styles. Locate the Dockbar 
 icons on the left side of the screen. Underneath the plus icon, you'll see a 

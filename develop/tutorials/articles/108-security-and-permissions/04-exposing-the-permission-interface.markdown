@@ -4,6 +4,8 @@ header-id: exposing-the-permission-interface-to-users
 
 # Exposing the Permission Interface to Users
 
+[TOC levels=1-4]
+
 Imagine that you bought a really nice electric guitar. Now imagine that you
 bought an even nicer amplifier to go along with it. You get them home, and much
 to the chagrin of your neighbors, you get ready to rock! Much to *your*

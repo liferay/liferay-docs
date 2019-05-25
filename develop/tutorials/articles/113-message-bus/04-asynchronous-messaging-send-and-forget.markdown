@@ -4,6 +4,8 @@ header-id: asynchronous-send-and-forget-messaging
 
 # Asynchronous Send and Forget Messaging
 
+[TOC levels=1-4]
+
 Asynchronous messaging occurs when the sender sends a message and then continues 
 processing. In the *send and forget* model of asynchronous messaging, the 
 sender's messages don't contain any response information. Message listeners 

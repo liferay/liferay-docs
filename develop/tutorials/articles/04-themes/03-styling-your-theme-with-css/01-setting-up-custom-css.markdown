@@ -4,6 +4,8 @@ header-id: setting-up-custom-css
 
 # Setting Up custom.css
 
+[TOC levels=1-4]
+
 Before you add the CSS for your theme, you'll need to complete some preliminary
 steps.
 

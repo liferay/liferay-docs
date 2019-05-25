@@ -4,6 +4,8 @@ header-id: using-developer-mode-with-themes
 
 # Using Developer Mode with Themes
 
+[TOC levels=1-4]
+
 Do you want to develop Liferay resources without having to redeploy to see your
 portal modifications? Use Liferay Developer Mode! In Developer Mode, all caches
 are removed, so any changes you make are visible right away. Also, you don't

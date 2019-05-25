@@ -4,6 +4,8 @@ header-id: beginning-liferay-development
 
 # Beginning Liferay Development
 
+[TOC levels=1-4]
+
 If you're just getting started with Liferay development, Liferay's learning
 paths are for you. We start at the beginning: installing a Liferay development
 environment. Though you can use anything from a text editor and the command line
