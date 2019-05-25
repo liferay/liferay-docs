@@ -150,7 +150,7 @@ When you create a wiki node, it has no pages. It's not until you navigate into
 that node that a default page called *FrontPage* is created automatically. To
 view the page, click on the wiki node's name. The FrontPage appears and shows a
 default message that explains the page is empty and needs you to add content.
-The message is a link; cick on it to start editing the page.
+The message is a link; click on it to start editing the page.
 
 ![Figure 4: Each empty wiki page presents a default message link you can click to edit the page.](../../../images/wiki-empty-frontpage.png)
 
@@ -162,8 +162,7 @@ Next, highlight your pare of your text. Text formatting options appear. They let
 you markup the text as bold or italics, add it to an ordered or unordered list,
 or make it a link. You can also use keyboard shortcuts Ctrl+b for bold, Ctrl+i
 for italics, and Ctrl+u for underline. To remove all formatting, click the
-*Remove Format* icon (![Remove 
-Format](../../../images/icon-remove-formatting.png)). To insert an image, table,
+*Remove Format* icon. To insert an image, table,
 or horizontal line, you can click the `+` icon to bring up the insert content
 menu (![Insert](../../../images/icon-content-insert-controls.png)).
 
@@ -183,7 +182,7 @@ can then use in your wiki.
 You're working in the editor's regular mode. Source mode, on the other hand,
 lets you enter text in Creole format. You can switch to source mode by clicking
 the *Source* icon (`</>`) or switch back to regular mode by clicking the
-*Roller* icon (![Roller](../../../images/icon-roller.png))--the editor always
+*Roller* icon (![Roller](../../../images/icon-roller.png))---the editor always
 displays the other mode's icon so you can switch between modes. Click on the
 *Source* icon to switch to source mode.
 
@@ -340,7 +339,8 @@ displaying them. The *Enable Related Assets*, *Enable Page Ratings*, *Enable
 Comments*, and *Enable Comment Ratings* check boxes let you enable or disable
 those features for the Wiki app. They give you the ability to set how you want
 users to interact with wiki documents: a little, a lot, or not at all. The
-*Display Template* drop-down option lets you choose the [Application Display Template](/docs/7-0/user/-/knowledge_base/u/styling-apps-with-application-display-templates)
+*Display Template* drop-down option lets you choose the 
+[Application Display Template](/docs/7-0/user/-/knowledge_base/u/styling-apps-with-application-display-templates)
 for the app. Below this, you can set which wikis (wiki nodes) are
 visible in the Wiki and which are hidden. You might host two wikis on a given
 site, exposing one to the public and keeping the other private for site members.
@@ -356,25 +356,25 @@ parameters: categoryId, nodeId, nodeName, resetCur, tag, and title. For each
 parameter you can:
 
 -   Ignore the values for this parameter that come from other portlets. For
-    example, the wiki app can be used along with the tags navigation
-app. When a user clicks on a tag in the tags navigation app, the wiki
-shows a list of pages with that tag. In some cases an administrator may want
-the wiki app to always show the front page independently of any tag
-navigation done through other portlets. This can be achieved by checking the
-Ignore check box so that the values of the parameter coming from those other
-portlets are ignored.
+    example, the wiki app can be used along with the tags navigation app. When
+    a user clicks on a tag in the tags navigation app, the wiki shows a list of
+    pages with that tag. In some cases an administrator may want the wiki app to
+    always show the front page independently of any tag navigation done through
+    other portlets. This can be achieved by checking the Ignore check box so
+    that the values of the parameter coming from those other portlets are
+    ignored.
 
 -   Read the value of a parameter from another app. This is an advanced but
-    very powerful option that allows portlets to communicate without
-configuring it beforehand. For example, imagine that the wiki app is used
-to publish information about certain countries. Imagine further that a custom
-app that allows browsing countries for administrative reasons was written
-and placed on the same page. We could associate to this second app a public
-render parameter called *country* to designate the name of the country. Using
-this procedure, we can cause the wiki to show the information from the country
-being browsed through in the other app. You can do this here for the wiki
-by setting the value for the title parameter to be read from the country
-parameter of the other app.
+    very powerful option that allows portlets to communicate without configuring
+    it beforehand. For example, imagine that the wiki app is used to publish
+    information about certain countries. Imagine further that a custom app that
+    allows browsing countries for administrative reasons was written and placed
+    on the same page. We could associate to this second app a public render
+    parameter called *country* to designate the name of the country. Using this
+    procedure, we can cause the wiki to show the information from the country
+    being browsed through in the other app. You can do this here for the wiki by
+    setting the value for the title parameter to be read from the country
+    parameter of the other app.
 
 **Sharing**: displays options you're likely to be familiar with such as the tab
 for sharing the application with websites, Facebook, and NetVibes.
@@ -394,7 +394,8 @@ Along with the Configuration option, the Wiki application's options menu lists
 all of the standard application options. The options enable you to specify the
 app's [look and feel](/docs/7-0/user/-/knowledge_base/u/look-and-feel-configuration),
 [export or import app data](/docs/7-0/user/-/knowledge_base/u/exporting-importing-app-data),
-minimize or maximize the app in the browser, use [Configuration Templates](/docs/7-0/user/-/knowledge_base/u/configuration-templates)
+minimize or maximize the app in the browser, use 
+[Configuration Templates](/docs/7-0/user/-/knowledge_base/u/configuration-templates)
 to store your current application setup or apply an existing archived setup to
 this application instance, or remove the app from the page.
 
@@ -529,7 +530,7 @@ the Configuration screen, select the *Setup* tab. Set the *Node* you want to
 display and click *Save*; then select a *Page* in that node that you want to
 display. This page provides the gateway into the wiki node. 
 
-![Figure 13: The Wiki Display lets users explore a wiki node, starting from one of its pages--the front page, typically.](../../../images/wiki-display-configuration-setup.png)
+![Figure 13: The Wiki Display lets users explore a wiki node, starting from one of its pages---the front page, typically.](../../../images/wiki-display-configuration-setup.png)
 
 The configuration options and user interface for the Wiki Display are almost
 identical to that of the Wiki application. 
