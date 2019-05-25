@@ -4,6 +4,8 @@ header-id: upgrading-to-elasticsearch-6
 
 # Upgrading to Elasticsearch 6
 
+[TOC levels=1-4]
+
 Elasticsearch 6.5.x is supported for Digital Enterprise subscribers running Fix
 Pack 79 or later. Community Edition users running 7.0 CE GA 7 or greater can
 use up to Elasticsearch 6.1.x. If you're not already running a remote

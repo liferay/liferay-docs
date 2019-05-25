@@ -4,6 +4,8 @@ header-id: liferay-elasticsearch
 
 # Preparing to Install Elasticsearch
 
+[TOC levels=1-4]
+
 By default, @product-ver@ and its embedded Elasticsearch engine run in the same 
 JVM. Although this enables out-of-the-box search in @product-ver@, it's only 
 supported for development; production use isn't supported. For production use, 

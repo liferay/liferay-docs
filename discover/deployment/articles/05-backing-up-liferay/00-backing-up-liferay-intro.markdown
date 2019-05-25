@@ -4,6 +4,8 @@ header-id: backing-up-a-liferay-installation
 
 # Backing up a @product@ Installation
 
+[TOC levels=1-4]
+
 Once you have an installation of @product@ running, you should implement a
 comprehensive backup plan. In case some kind of catastrophic hardware failure
 occurs, you'll be thankful to have backups and procedures for restoring

@@ -4,6 +4,8 @@ header-id: preparing-for-install
 
 # Preparing for Install
 
+[TOC levels=1-4]
+
 Installing @product@ is easy. But before you begin, you should answer a few
 questions.
 

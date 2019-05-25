@@ -4,6 +4,8 @@ header-id: using-solr
 
 # Using Solr
 
+[TOC levels=1-4]
+
 Solr is a popular enterprise search platform build on Apache Lucene. It's
 popular for its reliability, scalability, and fault tolerance. Read more about
 it [here](http://lucene.apache.org/solr/).

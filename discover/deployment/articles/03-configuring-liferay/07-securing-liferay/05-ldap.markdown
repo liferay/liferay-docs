@@ -4,6 +4,8 @@ header-id: ldap
 
 # LDAP
 
+[TOC levels=1-4]
+
 @product@ fully supports LDAP as a user store. Use the LDAP tab in Instance
 Settings's Authentication page to connect @product@ to an LDAP directory. Users
 can be imported into @product@ from LDAP or exported to LDAP from @product@. If your

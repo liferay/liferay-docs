@@ -4,6 +4,8 @@ header-id: installing-liferay-manually
 
 # Installing @product@ Manually
 
+[TOC levels=1-4]
+
 The easiest way to install @product@ is to
 [use a @product@ bundle](/docs/7-0/deploy/-/knowledge_base/d/installing-product).
 However, this is not always possible. Some organizations have an existing

@@ -4,6 +4,8 @@ header-id: installing-product
 
 # Installing @product@
 
+[TOC levels=1-4]
+
 Now that you've performed the steps needed to prepare for your installation,
 you're ready to install @product@! Since bundles are the easiest way to complete
 an installation, all the installation steps below assume a bundle has been

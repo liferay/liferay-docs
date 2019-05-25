@@ -4,6 +4,8 @@ header-id: configuring-remote-staging-in-a-clustered-environment
 
 # Configuring Remote Staging in a Clustered Environment
 
+[TOC levels=1-4]
+
 If you're running @product@ as a
 [clustered environment](/docs/7-0/deploy/-/knowledge_base/d/liferay-clustering)
 and you want to use remote staging, you must configure it properly for a

@@ -4,6 +4,8 @@ header-id: locales-encoding-configuration
 
 # Locales and Encoding Configuration
 
+[TOC levels=1-4]
+
 @product@ lets you display content based on language, time zone, "right to left"
 (that is, languages such as Hebrew, Arabic, and Persian), and lets you localize
 user names and titles. Administrators can localize specific core UI messages so

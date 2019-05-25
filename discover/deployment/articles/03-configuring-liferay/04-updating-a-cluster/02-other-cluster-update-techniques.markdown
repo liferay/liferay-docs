@@ -4,6 +4,8 @@ header-id: other-cluster-update-techniques
 
 # Other Cluster Update Techniques
 
+[TOC levels=1-4]
+
 Several update scenarios cannot be done by
 [rolling restart](/docs/7-0/deploy/-/knowledge_base/d/using-rolling-restarts)
 because they affect cluster communication, break compatibility with existing

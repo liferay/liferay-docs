@@ -4,6 +4,8 @@ header-id: facebook-connect-single-sign-on-authentication
 
 # Facebook Connect Single Sign On Authentication
 
+[TOC levels=1-4]
+
 Facebook Connect SSO authentication is an integration with Facebook's Graph API.
 It retrieves the user's Facebook profile information and matches it to existing
 @product@ users (either by Facebook ID or by email address). Once the user's

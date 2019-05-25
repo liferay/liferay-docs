@@ -4,6 +4,8 @@ header-id: configuring-elasticsearch-for-liferay-0
 
 # Configuring Elasticsearch
 
+[TOC levels=1-4]
+
 @product@ is an open source project, so you won't be surprised to learn that its
 default search engine is also an open source project. Elasticsearch is a highly
 scalable, full-text search and analytics engine.

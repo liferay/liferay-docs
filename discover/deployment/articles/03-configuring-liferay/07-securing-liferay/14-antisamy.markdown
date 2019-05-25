@@ -4,6 +4,8 @@ header-id: antisamy
 
 # AntiSamy
 
+[TOC levels=1-4]
+
 @product@ includes an AntiSamy module that protects against malicious code that
 users might create. When creating content, users can include malicious code
 either intentionally or unintentionally. The AntiSamy module filters on

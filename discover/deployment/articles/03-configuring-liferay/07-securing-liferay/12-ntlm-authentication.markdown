@@ -4,6 +4,8 @@ header-id: ntlm-single-sign-on-authentication
 
 #  NTLM Single Sign On Authentication
 
+[TOC levels=1-4]
+
 NTLM (NT LAN Manager) is a suite of Microsoft protocols that provide
 authentication, integrity, and confidentiality for users. Though Microsoft has
 adopted Kerberos in modern versions of Windows server, NTLM is still used when

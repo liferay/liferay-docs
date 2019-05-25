@@ -4,6 +4,8 @@ header-id: installing-liferay-on-wildfly-10
 
 # Installing @product@ on Wildfly 10
 
+[TOC levels=1-4]
+
 Liferay Digital Enterprise 7.0 bundled with Wildfly 10 is available on 
 [Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise). 
 Even if you want to manually install @product@ on an existing Wildfly 10

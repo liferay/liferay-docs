@@ -4,6 +4,8 @@ header-id: using-rolling-restarts
 
 # Using Rolling Restarts
 
+[TOC levels=1-4]
+
 A rolling restart is shutting down and updating nodes one at a time (while the
 other nodes are running) until they're all updated. This keeps your site running
 while you update your cluster, whether it's physical, container, or image based.

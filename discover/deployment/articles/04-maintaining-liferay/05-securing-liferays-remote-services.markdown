@@ -4,6 +4,8 @@ header-id: securing-liferays-remote-services
 
 # Securing @product@'s Remote Services
 
+[TOC levels=1-4]
+
 @product@ includes a script console which administrators can use to invoke
 @product@'s API. See the [Using @product@'s Script Console](/docs/7-0/user/-/knowledge_base/u/running-scripts-from-the-script-console)
 article for more information. @product@'s API can also be invoked remotely. How

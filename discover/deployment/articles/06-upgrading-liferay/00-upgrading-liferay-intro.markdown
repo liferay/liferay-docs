@@ -4,6 +4,8 @@ header-id: upgrading-to-liferay-7
 
 # Upgrading to @product@
 
+[TOC levels=1-4]
+
 Upgrading to @product@ consists of two main steps: upgrading your installation
 and then upgrading the database. @product@ can be upgraded using a
 straightforward process. To upgrade to the latest release directly, you must be

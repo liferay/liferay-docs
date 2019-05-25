@@ -4,6 +4,8 @@ header-id: installing-liferay-on-tomcat-8
 
 # Installing @product@ on Tomcat 8
 
+[TOC levels=1-4]
+
 Liferay Digital Enterprise 7.0 bundled with Tomcat is available on 
 [Customer Portal](https://web.liferay.com/group/customer/dxp/downloads/digital-enterprise). 
 Even if you want to install @product@ manually on an existing Tomcat 8

@@ -4,6 +4,8 @@ header-id: liferay-portal-security-overview
 
 # @product@ Security Overview
 
+[TOC levels=1-4]
+
 Liferay follows the OWASP Top 10 (2013) and CWE/SANS Top 25 lists to ensure
 that @product@ is as secure as possible. Following these recommendations protects
 the portal against known kinds of attacks and security vulnerabilities. For

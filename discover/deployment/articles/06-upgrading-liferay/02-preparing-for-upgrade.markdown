@@ -4,6 +4,8 @@ header-id: preparing-an-upgrade-to-liferay-7
 
 # Preparing an Upgrade to @product-ver@
 
+[TOC levels=1-4]
+
 Now that you've completed the
 [pre-upgrade process of cleaning and normalizing your data](/docs/7-0/deploy/-/knowledge_base/d/pre-upgrade-speed-up-the-process),
 you're ready to prepare your environment for upgrading to @product-ver@. Here's

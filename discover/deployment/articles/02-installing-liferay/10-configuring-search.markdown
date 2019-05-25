@@ -4,6 +4,8 @@ header-id: installing-elasticsearch
 
 # Installing Elasticsearch
 
+[TOC levels=1-4]
+
 @product@ uses Elasticsearch to index its content. By default, @product@ uses
 Elasticsearch as an embedded service. It works, but this is not a supported
 configuration for a production server. Feel free to use it while you're testing

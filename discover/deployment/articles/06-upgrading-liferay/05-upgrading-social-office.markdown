@@ -4,6 +4,8 @@ header-id: upgrading-social-office
 
 # Upgrading Social Office
 
+[TOC levels=1-4]
+
 Liferay Social Office, Liferay's social collaboration product for the 
 enterprise, was an add-on product for Liferay Portal versions prior to 
 @product-ver@. Social Office is no longer available because @product-ver@ 

@@ -4,6 +4,8 @@ header-id: updating-a-cluster
 
 # Updating a Cluster
 
+[TOC levels=1-4]
+
 Maintaining a
 [cluster](/docs/7-0/deploy/-/knowledge_base/d/liferay-clustering)
 is a big responsibility. It includes deploying new and updated modules and

@@ -4,6 +4,8 @@ header-id: authenticating-with-openid-connect
 
 # Authenticating with OpenID Connect
 
+[TOC levels=1-4]
+
 | **Note:** OpenID Connect authentication is available in @product@ on Fix Pack 79 or higher patch level.
 
 

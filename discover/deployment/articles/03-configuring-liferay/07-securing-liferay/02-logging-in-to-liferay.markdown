@@ -4,6 +4,8 @@ header-id: logging-in-to-liferay
 
 # Logging in to @product@
 
+[TOC levels=1-4]
+
 One of the primary functions of a web portal is to restrict access to different
 pages, content, and web applications. These kinds of portal resources should
 only be accessible by the appropriate users. E.g., a student who logs in to a

@@ -4,6 +4,8 @@ header-id: liferay-portal-security
 
 # @product@ Security
 
+[TOC levels=1-4]
+
 Liferay takes security very seriously. Liferay has established several
 procedures to make sure that @product@ is as secure as possible. First of
 all, @product@ is an open source product. As such, Liferay encourages
