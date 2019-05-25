@@ -4,6 +4,8 @@ header-id: application-permissions
 
 # Application Permissions
 
+[TOC levels=1-4]
+
 All of Liferay's apps support @product@'s robust, fine-grained permissions
 system. Some higher level permissions can be configured in the permissions tab
 of the app's configuration dialog box. You can grant roles permission to:

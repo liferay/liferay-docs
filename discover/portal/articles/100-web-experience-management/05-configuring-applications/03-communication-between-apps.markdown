@@ -4,6 +4,8 @@ header-id: communication-between-apps
 
 # Communication Between Apps
 
+[TOC levels=1-4]
+
 @product@ implements several communication mechanisms across apps including
 those specified by the JSR-286 standard: public render parameters and events.
 Public render parameters are easy to use and can be quite powerful. Some

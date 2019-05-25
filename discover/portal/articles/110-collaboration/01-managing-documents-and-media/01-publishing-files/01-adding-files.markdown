@@ -4,6 +4,8 @@ header-id: adding-files
 
 # Adding Files to a Document Library
 
+[TOC levels=1-4]
+
 There are several reasons why you might want to upload files to your site. You
 might want to share photos and video files or embed them in web content. Or you
 might simply want to back them up from your device to your site. You may have

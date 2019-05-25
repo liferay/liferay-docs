@@ -4,6 +4,8 @@ header-id: invoking-liferay-services-from-scripts
 
 # Invoking Liferay Services From Scripts
 
+[TOC levels=1-4]
+
 Many scripting scenarios require invoking @product@'s services.
 
 To illustrate the correct syntax for interacting with Liferay services, consider

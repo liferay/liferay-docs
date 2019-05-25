@@ -4,6 +4,8 @@ header-id: creating-sites
 
 # Creating Sites
 
+[TOC levels=1-4]
+
 A site contains a set of pages that can be used to publish content or
 applications. By default, @product@ starts with a single site that has a
 single page. You can build any website you wish out of this, complete with

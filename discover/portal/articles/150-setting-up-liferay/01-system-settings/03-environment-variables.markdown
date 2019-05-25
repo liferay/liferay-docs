@@ -4,6 +4,8 @@ header-id: environment-variables
 
 # Environment Variables
 
+[TOC levels=1-4]
+
 You can use environment variables to configure @product@, which is especially
 useful in cloud-based environments. 
 

@@ -4,6 +4,8 @@ header-id: designing-uniform-content
 
 # Designing Uniform Content
 
+[TOC levels=1-4]
+
 If you've ever launched a web site, you know that as it grows, you can
 experience growing pains. This is the case especially if you've given lots of
 people access to the site to make whatever changes they need to make. Without

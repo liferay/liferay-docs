@@ -4,6 +4,8 @@ header-id: application-display-templates
 
 # Application Display Templates
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Creating Content<br>Step 6 of 7</p>
 </div>

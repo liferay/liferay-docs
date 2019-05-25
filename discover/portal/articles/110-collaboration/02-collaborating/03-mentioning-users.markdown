@@ -4,6 +4,8 @@ header-id: mentioning-users
 
 # Mentioning Users
 
+[TOC levels=1-4]
+
 Have you ever wanted to include another user in a discussion on the Message
 Boards? Have you ever wanted to give kudos to a colleague in content you're
 writing? With the Mentions feature, you can [*mention*](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Mentions)

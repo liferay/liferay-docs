@@ -4,6 +4,8 @@ header-id: system-wide-settings
 
 # System Wide Settings
 
+[TOC levels=1-4]
+
 Liferay is so configurable it can be hard to keep track of where all the
 configuration interfaces reside. Fortunately, the Control Panel is most often
 the place to look, and there's a tidy *Configruation* section there that houses

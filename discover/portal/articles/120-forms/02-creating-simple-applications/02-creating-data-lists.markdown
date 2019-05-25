@@ -4,6 +4,8 @@ header-id: creating-data-lists
 
 # Creating Data Lists
 
+[TOC levels=1-4]
+
 <!-- Update Screen shots to Lunar Resort example -->
 
 To create list applications, it's not enough to just create data definitions, as

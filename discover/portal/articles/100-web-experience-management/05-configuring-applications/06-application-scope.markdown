@@ -4,6 +4,8 @@ header-id: application-scope
 
 # Application Scope
 
+[TOC levels=1-4]
+
 As you learned earlier, roles can be scoped by the instance, by a site, or by an
 organization. A role only takes effect within its scope. For example, a Message
 Boards Administrator role with complete access to the Message Boards app

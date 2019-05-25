@@ -4,6 +4,8 @@ header-id: site-navigation
 
 # Site Navigation
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Creating A Site<br>Step 6 of 6</p>
 </div>

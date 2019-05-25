@@ -4,6 +4,8 @@ header-id: installing-apps-manually
 
 # Installing Apps Manually
 
+[TOC levels=1-4]
+
 By default, apps you download in a running Liferay instance via Liferay 
 Marketplace install automatically. But what if the app you want to install isn't 
 on Marketplace? What if all you have is the app's file? In this case, you must 

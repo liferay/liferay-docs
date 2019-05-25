@@ -4,6 +4,8 @@ header-id: publishing-content-dynamically
 
 # Publishing Content Dynamically
 
+[TOC levels=1-4]
+
 Any type of content in @product@ is considered an asset. In the 
 [Creating Web Content](/docs/7-0/user/-/knowledge_base/u/creating-web-content)
 chapter, you examined @product@'s most common type of asset: web content. Other

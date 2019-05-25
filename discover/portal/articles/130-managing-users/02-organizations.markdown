@@ -4,6 +4,8 @@ header-id: adding-and-managing-organizations
 
 # Adding and Managing Organizations
 
+[TOC levels=1-4]
+
 <!-- Contains 6.2 links for now. Needs more links, and needs screen shots, when
 applicable. -->
 

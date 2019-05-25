@@ -4,6 +4,8 @@ header-id: using-site-pages-variations
 
 # Using Site Pages Variations
 
+[TOC levels=1-4]
+
 Let's say you're working on a product-oriented site where you'll have several
 major changes to a page or a set of pages over a short period of time. Also you
 need to be working on multiple versions of the site at the same time to ensure

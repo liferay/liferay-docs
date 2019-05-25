@@ -4,6 +4,8 @@ header-id: creating-advanced-forms
 
 # Creating Advanced Forms
 
+[TOC levels=1-4]
+
 Liferay's built-in Forms application supports your most basic form building
 needs (something like a one question survey), and your most advanced (like a
 mortgage application, or conference sign-up form). In [a separate article](/docs/7-0/user/-/knowledge_base/u/basic-forms), learn

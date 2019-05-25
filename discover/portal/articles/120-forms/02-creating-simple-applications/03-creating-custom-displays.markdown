@@ -4,6 +4,8 @@ header-id: using-templates-to-display-forms-and-lists
 
 # Using Templates to Display Forms and Lists
 
+[TOC levels=1-4]
+
 After creating data definitions and lists, you can control how the form appears
 to your users, and how the resulting list of records is displayed. You do this
 by creating templates for each view (form view and record display view) and

@@ -4,6 +4,8 @@ header-id: publishing-assets
 
 # Publishing Assets
 
+[TOC levels=1-4]
+
 As you create web content, it's important to keep in mind that to @product@, the
 pieces of content are assets, just like message board entries and blog posts.
 This allows you to publish different kinds of content using @product@'s Asset

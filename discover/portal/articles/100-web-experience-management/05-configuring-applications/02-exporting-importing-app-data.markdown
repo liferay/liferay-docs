@@ -4,6 +4,8 @@ header-id: exporting-importing-app-data
 
 # Exporting/Importing App Data
 
+[TOC levels=1-4]
+
 There are times when you want to export/import specific content created from an
 application, and not deal with site data at all. Many Liferay apps allow you to
 export or import their app data indiviually. These include many of Liferay's

@@ -4,6 +4,8 @@ header-id: instance-settings
 
 # Instance Settings
 
+[TOC levels=1-4]
+
 Most global instance settings can be configured from the Instance Settings section
 of the Control Panel. 
 

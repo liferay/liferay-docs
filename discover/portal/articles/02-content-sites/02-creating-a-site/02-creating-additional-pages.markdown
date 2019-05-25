@@ -4,6 +4,8 @@ header-id: building-the-lunar-guides-and-book-a-trip-pages
 
 # Building the Lunar Guides and Book a Trip Pages
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Creating A Site<br>Step 2 of 6</p>
 </div>

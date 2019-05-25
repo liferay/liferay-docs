@@ -4,6 +4,8 @@ header-id: server-administration
 
 # Server Administration
 
+[TOC levels=1-4]
+
 The Server Administration application (accessed by clicking *Control Panel
 &rarr; Configuration &rarr; Server Administration*) lets you perform tasks
 related to the @product@ server. Clicking the link displays a graph showing the 

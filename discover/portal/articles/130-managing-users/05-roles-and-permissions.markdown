@@ -4,6 +4,8 @@ header-id: roles-and-permissions
 
 # Roles and Permissions
 
+[TOC levels=1-4]
+
 If a *role* were to win a Grammy or an Oscar or some other ego-feeding
 popularity contest, it better remember to thank all its *permissions* groupies
 during the acceptance speech, because they're the ones doing the real work. The

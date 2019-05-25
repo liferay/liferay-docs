@@ -4,6 +4,8 @@ header-id: administering-liferay-sync
 
 # Administering Liferay Sync
 
+[TOC levels=1-4]
+
 Liferay Sync is an add-on product for @product@ that synchronizes files between
 your @product@ server and users' desktop and mobile environments. With Liferay
 Sync, users can publish and access shared documents and files from their native

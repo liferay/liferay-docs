@@ -4,6 +4,8 @@ header-id: running-scripts-from-the-script-console
 
 # Running Scripts From the Script Console
 
+[TOC levels=1-4]
+
 To see a very simple example of the script console in action, log into the
 portal as an administrator and navigate to the *Control Panel* &rarr; *Server
 Administration* area of the Control Panel. Then click on *Script*. This is

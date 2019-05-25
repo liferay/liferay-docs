@@ -4,6 +4,8 @@ header-id: liferay-repository-types
 
 # Liferay Store Types
 
+[TOC levels=1-4]
+
 There are several options available for configuring how Liferay's Documents and
 Media library stores files. Each option is a *store* which can be configured
 through the `portal-ext.properties` file by setting the `dl.store.impl=`

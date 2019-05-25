@@ -4,6 +4,8 @@ header-id: search
 
 # Search
 
+[TOC levels=1-4]
+
 Sites built on @product@ often feature lots of content split over lots of asset
 types. Web content articles, documents and media files, and blogs entries are
 just a few examples. Most content types in @product@ are *assets*. Under the

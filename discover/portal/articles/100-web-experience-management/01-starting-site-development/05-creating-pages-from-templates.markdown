@@ -4,6 +4,8 @@ header-id: creating-pages-from-templates
 
 # Creating Pages from Templates
 
+[TOC levels=1-4]
+
 Page templates function similarly to site templates but at the page level. Each
 page template provides a pre-configured page to reuse. Within a page template,
 it's possible to select a theme or layout template, and add applications to the

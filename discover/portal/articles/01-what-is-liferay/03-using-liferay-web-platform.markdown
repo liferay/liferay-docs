@@ -4,6 +4,8 @@ header-id: using-liferay-as-a-web-platform
 
 # Using Liferay as a web platform
 
+[TOC levels=1-4]
+
 We can't even begin to imagine what you're thinking of building, but whatever it
 is, you're going to put your heart and soul into it. Building it on Liferay's
 web platform can give you a leg up. It provides everything you need to support

@@ -4,6 +4,8 @@ header-id: configuration-templates
 
 # Configuration Templates
 
+[TOC levels=1-4]
+
 Once you've configured an application, Configuration Templates enable you to
 save those settings in a reusable template. If someone goes in and changes the
 settings of a particular app, it then becomes easy to revert those changes back

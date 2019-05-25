@@ -4,6 +4,8 @@ header-id: configuring-form-navigator-forms
 
 # Configuring Form Navigator Forms
 
+[TOC levels=1-4]
+
 @product@'s forms can be built to gather large amounts of data. These larger
 forms are organized into easily navigable sections and categories. This is
 possible thanks to the 

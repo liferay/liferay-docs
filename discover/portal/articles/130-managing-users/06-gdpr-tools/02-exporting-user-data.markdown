@@ -4,6 +4,8 @@ header-id: exporting-user-data
 
 # Exporting User Data
 
+[TOC levels=1-4]
+
 User Management practices must account for the EU's General Data Protection
 Regulation. One of its tenets is that Users have a right to _data portability_.
 

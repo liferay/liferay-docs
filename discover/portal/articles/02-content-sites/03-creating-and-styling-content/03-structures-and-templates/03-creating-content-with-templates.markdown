@@ -4,6 +4,8 @@ header-id: creating-content-with-structures-and-templates
 
 # Creating Content with Structures and Templates
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Creating Content<br>Step 3C of 3D</p>
 </div>

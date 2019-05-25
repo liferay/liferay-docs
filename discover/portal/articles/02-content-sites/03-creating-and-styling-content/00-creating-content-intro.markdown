@@ -4,6 +4,8 @@ header-id: creating-content
 
 # Creating Content
 
+[TOC levels=1-4]
+
 So far you've created the Lunar Resort site's outline. By creating pages and
 using templates, the site now has a structure and the pages have layouts. Now
 it's time to color everything in with content.

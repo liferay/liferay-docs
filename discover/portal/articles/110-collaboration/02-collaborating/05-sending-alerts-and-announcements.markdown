@@ -4,6 +4,8 @@ header-id: sending-alerts-and-announcements
 
 # Sending Alerts and Announcements
 
+[TOC levels=1-4]
+
 Suppose you're running a Liferay instance with lots of users. Maybe you have 
 thousands or tens of thousands of users (or more!). Wouldn't it be nice to have 
 an easy way to periodically communicate important information to them? And 

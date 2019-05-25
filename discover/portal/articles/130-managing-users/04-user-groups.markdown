@@ -4,6 +4,8 @@ header-id: user-groups
 
 # User Groups
 
+[TOC levels=1-4]
+
 A User Group is a group of users. Were you hoping for a more
 complicated, or enterpris-ey, definition? Try this: A user group is a box.
 What's inside the box? Users. Is that definition still lacking? A user group

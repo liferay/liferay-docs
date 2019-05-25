@@ -4,6 +4,8 @@ header-id: creating-forums-with-message-boards
 
 #  Creating Forums with Message Boards
 
+[TOC levels=1-4]
+
 @product@'s Message Boards app is a state of the art forum application
 similar to many forums in which you may have participated. The difference, of
 course, is that Liferay's message boards can inherit the abilities of

@@ -4,6 +4,8 @@ header-id: enabling-workflow
 
 # Enabling Workflow
 
+[TOC levels=1-4]
+
 The workflow functionality bundled with the Liferay Forms and Workflow suite comes
 with one pre-installed workflow definition called the Single Approver Workflow. This
 workflow requires one approval before an asset can be published. One of the

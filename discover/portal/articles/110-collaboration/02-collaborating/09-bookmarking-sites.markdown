@@ -4,6 +4,8 @@ header-id: bookmarking-sites
 
 # Bookmarking Sites
 
+[TOC levels=1-4]
+
 Many of us enjoy collecting things we value: stamps, comic books, sea shells,
 shoes, or even vintage musical instruments. You've probably never thought about
 collecting URLs, even though most of us collect them. Anyone that uses a browser

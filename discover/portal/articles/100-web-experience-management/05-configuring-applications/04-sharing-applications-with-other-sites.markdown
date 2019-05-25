@@ -4,6 +4,8 @@ header-id: sharing-applications-with-other-sites
 
 # Sharing Applications with Other Sites
 
+[TOC levels=1-4]
+
 The web was once thought of as a number of islands of applications in a vast
 universe of "cyberspace." Many web sites attempted to make their island the
 biggest. Some succeeded to a large extent and some failed. More recently, the

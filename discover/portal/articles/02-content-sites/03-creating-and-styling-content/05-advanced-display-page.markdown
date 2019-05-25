@@ -4,6 +4,8 @@ header-id: advanced-content-display-page-options
 
 # Advanced Content Display Page Options
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Creating Content<br>Step 5 of 7</p>
 </div>

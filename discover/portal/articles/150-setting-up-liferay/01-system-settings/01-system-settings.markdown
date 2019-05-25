@@ -4,6 +4,8 @@ header-id: system-settings
 
 # System Settings
 
+[TOC levels=1-4]
+
 You might be tired of hearing about it by now, but it's worth repeating: 
 @product@ is modular. It's composed of many applications, which are divided into 
 even smaller "chunks" of functionality. The applications, and sometimes even 

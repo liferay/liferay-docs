@@ -4,6 +4,8 @@ header-id: publishing-basic-web-content
 
 # Publishing Basic Web Content
 
+[TOC levels=1-4]
+
 @product@'s Web Content Management is a powerful and robust tool for creating and
 organizing content on your web site. You'll begin by examining some basic
 concepts involving sites and pages.

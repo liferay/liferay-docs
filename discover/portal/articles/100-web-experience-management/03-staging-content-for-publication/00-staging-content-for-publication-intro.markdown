@@ -4,6 +4,8 @@ header-id: staging-content-for-publication
 
 # Staging Content for Publication
 
+[TOC levels=1-4]
+
 Today's enterprises are generating an enormous amount of content for their
 users. @product@ provides advanced publishing tools to make the content easily and
 reliably available for users.

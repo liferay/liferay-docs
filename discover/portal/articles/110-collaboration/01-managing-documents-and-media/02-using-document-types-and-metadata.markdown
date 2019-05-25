@@ -4,6 +4,8 @@ header-id: using-document-types-and-metadata-sets
 
 # Using Document Types and Metadata Sets
 
+[TOC levels=1-4]
+
 If you're concerned only with a file's content and are happy with its basic
 built-in metadata, then add the file to Documents and Media as a Basic Document.
 What do you do, however, if you want to ascribe more characteristics to a file?

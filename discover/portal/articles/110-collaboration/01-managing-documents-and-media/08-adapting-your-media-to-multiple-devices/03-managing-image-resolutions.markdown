@@ -4,6 +4,8 @@ header-id: managing-image-resolutions
 
 # Managing Image Resolutions
 
+[TOC levels=1-4]
+
 Adaptive Media lets you manage image resolutions and their resulting adapted 
 images. For example, you can disable, enable, edit, and delete resolutions. You 
 can also generate any adapted images that may be missing for a resolution. This 

@@ -4,6 +4,8 @@ header-id: editing-images
 
 # Editing Images
 
+[TOC levels=1-4]
+
 You've uploaded an image to the document library. It's almost perfect, but it's 
 missing a little something. It could use a little more focus to really highlight 
 the message you're trying to communicate. Just a little editing and the image 

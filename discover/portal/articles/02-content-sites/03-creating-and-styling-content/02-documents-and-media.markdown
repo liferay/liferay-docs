@@ -4,6 +4,8 @@ header-id: using-documents-and-media
 
 # Using Documents and Media
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Creating Content<br>Step 2 of 7</p>
 </div>

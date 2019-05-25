@@ -4,6 +4,8 @@ header-id: publishing-basic-content
 
 # Publishing Basic Content
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Creating Basic Web Content<br>Step 3 of 3</p>
 </div>

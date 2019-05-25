@@ -4,6 +4,8 @@ header-id: sharing-status-with-microblogs
 
 # Sharing Status with Microblogs
 
+[TOC levels=1-4]
+
 Liferay's Microblogs Status Update and Microblogs apps let you post, receive, 
 and share short, 150 character status updates from your personal pages in 
 Liferay. This gives you a quick and simple way to interact with your social 

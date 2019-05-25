@@ -4,6 +4,8 @@ header-id: creating-structures
 
 # Creating Structures
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Creating Content<br>Step 3A of 3D</p>
 </div>

@@ -4,6 +4,8 @@ header-id: sending-messages-with-private-messaging
 
 # Sending Messages with Private Messaging
 
+[TOC levels=1-4]
+
 The Private Messaging app lets you send email-like messages to other users. Its
 interface is similar to an email client. Messages are aggregated by thread, with
 the most recent message displayed. You can mark messages as read or unread or

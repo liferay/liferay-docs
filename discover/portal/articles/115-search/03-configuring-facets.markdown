@@ -4,6 +4,8 @@ header-id: configuring-facets
 
 # Configuring Facets
 
+[TOC levels=1-4]
+
 To get started using faceted search, enter a search term in the Search
 application's search bar. You'll see a page with results on the right and a
 collection of *facets*, with the number of search results for each facet (in

@@ -4,6 +4,8 @@ header-id: creating-templates
 
 # Creating Templates
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Creating Content<br>Step 3B of 3D</p>
 </div>

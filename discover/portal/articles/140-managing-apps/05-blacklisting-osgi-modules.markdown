@@ -4,6 +4,8 @@ header-id: blacklisting-osgi-modules
 
 # Blacklisting OSGi Modules and Components
 
+[TOC levels=1-4]
+
 Blacklists are used for good and evil. An evil blacklist penalizes unfairly; a
 good blacklist protects. @product@'s OSGi module blacklists and component
 blacklists are files dropped in a folder to prevent particular modules from

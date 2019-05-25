@@ -4,6 +4,8 @@ header-id: organizing-content-with-tags-and-categories
 
 # Organizing Content with Tags and Categories
 
+[TOC levels=1-4]
+
 Tags and categories are two important tools you can use to help organize
 information in @product@. These tools help users to easily find the content
 they're looking for through search or navigation. Tagging and categorizing

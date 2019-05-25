@@ -4,6 +4,8 @@ header-id: adding-and-managing-users
 
 # Adding and Managing Users
 
+[TOC levels=1-4]
+
 Users are a fundamental entity in Liferay. If your portal requires people (even
 just a set of site administrators) to have an account that they sign into to do
 anything in the portal, you need to know about users. If your users are at all

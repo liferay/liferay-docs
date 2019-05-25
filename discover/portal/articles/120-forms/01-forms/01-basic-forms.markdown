@@ -4,6 +4,8 @@ header-id: basic-forms
 
 # Basic Forms
 
+[TOC levels=1-4]
+
 It's really easy to create simple forms with the Forms Application. 
 
 At The Lunar Resort, it's important to capture guest's feelings about their stay

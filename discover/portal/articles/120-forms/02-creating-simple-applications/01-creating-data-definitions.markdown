@@ -4,6 +4,8 @@ header-id: creating-data-definitions
 
 # Creating Data Definitions
 
+[TOC levels=1-4]
+
 <!-- Renumber figures, numbers and captions. -->
 
 Imagine this: The Lunar Resort is becoming a popular destination. The Recreation

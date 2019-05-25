@@ -4,6 +4,8 @@ header-id: creating-a-social-network
 
 # Creating A Social Network
 
+[TOC levels=1-4]
+
 Since the first social networks rose to popularity, concepts such as
 *Friend* and later *Like*--previously reserved for direct human
 interaction--have taken on new meaning in an always-online, information

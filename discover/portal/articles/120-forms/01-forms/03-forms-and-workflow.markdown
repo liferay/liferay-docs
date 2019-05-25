@@ -4,6 +4,8 @@ header-id: sending-form-entries-through-a-workflow
 
 # Sending Form Entries through a Workflow
 
+[TOC levels=1-4]
+
 @product@ has a [workflow
 feature](/docs/7-0/user/-/knowledge_base/u/using-workflow) that directs a
 submitted asset through a workflow process before it's published. Most assets

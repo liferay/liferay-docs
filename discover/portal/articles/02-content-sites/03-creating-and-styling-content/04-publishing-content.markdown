@@ -4,6 +4,8 @@ header-id: publishing-content-with-content-display-pages
 
 # Publishing Content with Content Display Pages
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Creating Content<br>Step 4 of 7</p>
 </div>

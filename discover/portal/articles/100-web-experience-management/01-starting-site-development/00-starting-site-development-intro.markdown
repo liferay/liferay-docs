@@ -4,6 +4,8 @@ header-id: starting-site-development
 
 # Starting Site Development
 
+[TOC levels=1-4]
+
 A site is a set of pages that can be used to publish content or applications.
 Sites can be independent or they can be associated with an organization and
 serve as the website for that organization. With @product@, you can create as

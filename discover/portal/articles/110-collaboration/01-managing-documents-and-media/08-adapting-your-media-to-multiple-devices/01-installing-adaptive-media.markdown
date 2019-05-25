@@ -4,6 +4,8 @@ header-id: installing-adaptive-media
 
 # Installing Adaptive Media
 
+[TOC levels=1-4]
+
 You can install the Adaptive Media app from 
 [Liferay Marketplace](https://web.liferay.com/marketplace) 
 for Liferay Portal CE 7.0 GA5+ or Liferay DXP. Search for *Adaptive Media* in 

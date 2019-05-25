@@ -4,6 +4,8 @@ header-id: collecting-information-from-users
 
 # Collecting Information from Users
 
+[TOC levels=1-4]
+
 Collecting information from your site's Users is important, whether you're
 asking them to submit a brief survey or apply for a mortgage. In either case,
 you need to design a form. Liferay gives you almost limitless form building

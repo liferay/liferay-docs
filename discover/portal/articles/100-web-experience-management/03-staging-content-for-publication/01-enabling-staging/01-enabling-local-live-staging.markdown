@@ -4,6 +4,8 @@ header-id: enabling-local-live-staging
 
 # Enabling Local Live Staging
 
+[TOC levels=1-4]
+
 Staging allows changes to be made in a staging environment so that work can be
 reviewed, possibly using a workflow, before it's published to a live site. With
 Local Live staging, both your staging environment and your live environment are

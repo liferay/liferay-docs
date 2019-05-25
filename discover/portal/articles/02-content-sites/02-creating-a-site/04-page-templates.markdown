@@ -4,6 +4,8 @@ header-id: page-templates
 
 # Page Templates
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Creating A Site<br>Step 4 of 6</p>
 </div>

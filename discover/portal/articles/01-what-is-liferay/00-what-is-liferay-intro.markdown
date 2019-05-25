@@ -4,6 +4,8 @@ header-id: what-is-liferay
 
 # What is @product@
 
+[TOC levels=1-4]
+
 Let's attempt some mind reading: you're reading this because you need to build
 a website. You're thinking about using @product@ for your site, or you've already
 decided to use it and you want to learn all about it. Either way, you've come to

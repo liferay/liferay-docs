@@ -4,6 +4,8 @@ header-id: managing-subscriptions
 
 # Managing Subscriptions
 
+[TOC levels=1-4]
+
 Message Boards, Blogs, and Wikis, oh my! There are a lot of assets that you can 
 subscribe to in @product@, and keeping track of all your subscriptions can be a 
 job. Thanks to the My Subscriptions app, available on 

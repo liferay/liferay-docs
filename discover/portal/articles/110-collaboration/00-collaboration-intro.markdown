@@ -4,6 +4,8 @@ header-id: collaboration
 
 # Collaboration
 
+[TOC levels=1-4]
+
 What comes to mind when you think of *collaboration*? 
 
 George Lucas, Steven Spielberg, and John Williams collaborated to give us the

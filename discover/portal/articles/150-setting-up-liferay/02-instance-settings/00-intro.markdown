@@ -4,6 +4,8 @@ header-id: setting-up-a-liferay-instance
 
 # Setting Up a @product@ Instance
 
+[TOC levels=1-4]
+
 Once you have a @product@ installation, you're going to want to configure it.
 Whether that means adding a virtual instance, setting up the initial instance to
 suit your needs, or integrating existing users into the installation. Recall

@@ -4,6 +4,8 @@ header-id: importing-exporting-pages-and-content
 
 # Importing/Exporting Pages and Content
 
+[TOC levels=1-4]
+
 @product@'s Export/Import feature gives you the power to backup and restore your
 site and app data. The export feature grants users the flexibility of
 exporting site or app-specific content they've created as a LAR (Liferay

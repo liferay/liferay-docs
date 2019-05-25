@@ -4,6 +4,8 @@ header-id: displaying-files
 
 # Displaying Files
 
+[TOC levels=1-4]
+
 Once you've uploaded image files and videos to your Document Library, you'll
 probably want to display them in your site. Here are some ways you can display 
 your media files:

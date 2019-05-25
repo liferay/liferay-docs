@@ -4,6 +4,8 @@ header-id: using-workflow
 
 # Using Workflow
 
+[TOC levels=1-4]
+
 The ancient Greeks were pretty important, so we decided to name Liferay's
 workflow engine *Kaleo*. In Greek, Kaleo means "called ones," which is
 appropriate for a workflow engine that calls users to participate in a review

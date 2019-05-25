@@ -4,6 +4,8 @@ header-id: using-external-repositories
 
 # Using External Repositories
 
+[TOC levels=1-4]
+
 @product@'s Documents and Media lets you store files in a number of
 different ways and lets you access external repositories in addition to the
 built in document repository. Your administrator can learn how to set options

@@ -4,6 +4,8 @@ header-id: integrating-with-facebook-twitter-and-more
 
 # Integrating with Facebook, Twitter, and More
 
+[TOC levels=1-4]
+
 Social media is a powerful tool that allows people to communicate and share 
 thoughts and ideas. Integrating social media features into your site is a no 
 brainer. @product@ offers several different ways for you to integrate with 

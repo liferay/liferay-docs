@@ -4,6 +4,8 @@ header-id: custom-fields
 
 # Custom Fields
 
+[TOC levels=1-4]
+
 Have you ever wondered why there's no *Head Circumference* field in the form for
 adding users to @product@? Probably because most sites based on @product@ don't
 need it. However, as an administrator at the Lunar Resort, you certainly need to

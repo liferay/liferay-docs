@@ -4,6 +4,8 @@ header-id: web-experience-management
 
 # Web Experience Management
 
+[TOC levels=1-4]
+
 **Experience**; consider that word for a moment. Not the type of experience you
 gain with repetition, but the contact or encounter you have with something. For
 example, if you're hiking in the woods and are mauled by a black panther, you

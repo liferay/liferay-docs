@@ -4,6 +4,8 @@ header-id: liferay-app-types
 
 # Liferay App Types
 
+[TOC levels=1-4]
+
 For maximum flexibility, Liferay supports several different types of apps. Some 
 apps can even contain other apps. The types of apps that Liferay can run 
 include: 

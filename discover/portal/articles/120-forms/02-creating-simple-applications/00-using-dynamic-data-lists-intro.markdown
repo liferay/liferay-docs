@@ -4,6 +4,8 @@ header-id: creating-simple-applications
 
 # Creating Simple Applications
 
+[TOC levels=1-4]
+
 Business needs change, and technology must adapt to meet those needs. Things
 that used to be done using manual processes are now done electronically. You
 may want your team to sign up on your web site for a holiday party. Maybe you

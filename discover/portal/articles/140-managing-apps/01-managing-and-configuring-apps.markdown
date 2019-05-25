@@ -4,6 +4,8 @@ header-id: managing-and-configuring-apps
 
 # Managing and Configuring Apps
 
+[TOC levels=1-4]
+
 There are two places in the Control Panel where you can manage and configure 
 apps: the App Manager, and the Components listing. The App Manager lets you 
 manage apps in Liferay's OSGi framework. You can use the App Manager to install, 

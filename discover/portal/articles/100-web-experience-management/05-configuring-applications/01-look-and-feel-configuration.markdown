@@ -4,6 +4,8 @@ header-id: look-and-feel-configuration
 
 # Look and Feel Configuration
 
+[TOC levels=1-4]
+
 An administrator can access the look and feel configuration menu of any @product@
 application by clicking on the *Options* icon
 (![Options](../../../images/icon-options.png)) at the top right corner of the

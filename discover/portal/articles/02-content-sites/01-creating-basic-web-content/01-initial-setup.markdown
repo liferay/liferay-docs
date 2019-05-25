@@ -4,6 +4,8 @@ header-id: initial-setup
 
 # Initial Setup
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Creating Basic Web Content<br>Step 1 of 3</p>
 </div>

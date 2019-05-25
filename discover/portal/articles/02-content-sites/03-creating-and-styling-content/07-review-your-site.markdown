@@ -4,6 +4,8 @@ header-id: review-your-site
 
 # Review Your Site
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Creating Content<br>Step 7 of 7</p>
 </div>

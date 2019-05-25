@@ -4,6 +4,8 @@ header-id: building-sites-from-templates
 
 # Building Sites from Templates
 
+[TOC levels=1-4]
+
 Site Templates can be administered from the Control Panel. They let Liferay
 administrators create multiple sites with the same default set of pages and
 content. Site templates can contain multiple pages, each with its own theme,

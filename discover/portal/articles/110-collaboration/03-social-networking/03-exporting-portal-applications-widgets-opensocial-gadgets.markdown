@@ -4,6 +4,8 @@ header-id: exporting-portal-applications-as-widgets-and-opensocia
 
 # Exporting @product@ Applications To Other Websites
 
+[TOC levels=1-4]
+
 @product@ can publish its applications to other websites in a variety of formats.
 These range from simple widgets to standards like OpenSocial. This lets you
 provide your application or content in the context of another website, easily.

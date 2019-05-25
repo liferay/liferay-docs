@@ -4,6 +4,8 @@ header-id: enabling-staging
 
 # Enabling Staging
 
+[TOC levels=1-4]
+
 @product@ provides site administrators with two different ways to set up
 staging:
 [Local Live](/docs/7-0/user/-/knowledge_base/u/enabling-local-live-staging)

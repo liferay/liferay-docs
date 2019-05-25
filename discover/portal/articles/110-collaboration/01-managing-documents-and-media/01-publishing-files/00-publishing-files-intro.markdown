@@ -4,6 +4,8 @@ header-id: publishing-files
 
 # Publishing Files
 
+[TOC levels=1-4]
+
 As you create sites, you'll probably want to share files on them. @product@'s 
 Documents and Media library (Document Library) let's you upload and publish all 
 kinds of files on your sites. Pictures, videos, spreadsheets, slide 

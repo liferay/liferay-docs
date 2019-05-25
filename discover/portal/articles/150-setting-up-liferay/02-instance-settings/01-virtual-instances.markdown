@@ -4,6 +4,8 @@ header-id: virtual-instances
 
 # Virtual Instances
 
+[TOC levels=1-4]
+
 Here's a quick scenario: you already have a server hosting a site created with
 Liferay. That means you already have a hosted Liferay database. Let's say you
 need to set up another site that runs on Liferay. While there's more than one

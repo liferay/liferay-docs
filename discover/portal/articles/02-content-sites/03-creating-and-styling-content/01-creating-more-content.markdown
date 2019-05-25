@@ -4,6 +4,8 @@ header-id: creating-more-content
 
 # Creating More Content
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Creating Content<br>Step 1 of 7</p>
 </div>

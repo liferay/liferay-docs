@@ -4,6 +4,8 @@ header-id: managing-apps
 
 # Managing Apps
 
+[TOC levels=1-4]
+
 Apps are the central focus of the Liferay experience. For example, Liferay's web 
 experience management, collaboration, and business productivity features all 
 consist of apps. Even the Control Panel consists of apps that let you configure 

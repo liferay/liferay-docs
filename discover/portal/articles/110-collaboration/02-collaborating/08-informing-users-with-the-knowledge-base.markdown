@@ -4,6 +4,8 @@ header-id: informing-users-with-the-knowledge-base
 
 # Informing Users with the Knowledge Base
 
+[TOC levels=1-4]
+
 Liferay's Knowledge Base app lets you create and organize articles in a 
 site. For example, it can be used to display professional product documentation 
 or form complete books or guides. It even lets you import article source files 

@@ -4,6 +4,8 @@ header-id: advanced-templates
 
 # Advanced Templates
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Creating Content<br>Step 3D of 3D</p>
 </div>

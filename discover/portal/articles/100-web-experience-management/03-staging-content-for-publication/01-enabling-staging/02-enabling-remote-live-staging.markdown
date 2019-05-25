@@ -4,6 +4,8 @@ header-id: enabling-remote-live-staging
 
 # Enabling Remote Live Staging
 
+[TOC levels=1-4]
+
 When Remote Live staging is enabled for a site, a connection is established
 between the current site and another site on a remote Liferay server. The remote
 site becomes the live environment and the current site becomes the staging

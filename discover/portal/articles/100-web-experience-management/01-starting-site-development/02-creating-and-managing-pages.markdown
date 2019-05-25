@@ -4,6 +4,8 @@ header-id: creating-and-managing-pages
 
 # Creating and Managing Pages
 
+[TOC levels=1-4]
+
 You've successfully created a site for your Liferay instance, but you may need
 to add new pages or edit existing pages. From the Site Administration &rarr;
 *Navigation* section of the Menu, your site pages can be accessed and

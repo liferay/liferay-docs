@@ -4,6 +4,8 @@ header-id: accessing-google-docs
 
 # Accessing Google Docs&trade;
 
+[TOC levels=1-4]
+
 You can access files stored in Google applications, such as Google Drive&trade; 
 and Google Photos&trade;, through the Document Library. This integration isn't 
 available by default, but you can get it by installing the Liferay Plugin for 

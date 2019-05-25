@@ -4,6 +4,8 @@ header-id: password-policies
 
 # Password Policies
 
+[TOC levels=1-4]
+
 Password policies can enhance the security of @product@. You can use the default
 policy that ships with Liferay (modified or as is), or you can create your own
 policies. Policies can be assigned to users or organizations, or can be set as

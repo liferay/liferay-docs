@@ -4,6 +4,8 @@ header-id: working-together-with-the-wiki
 
 # Working Together with the Wiki
 
+[TOC levels=1-4]
+
 @product@'s Wiki is a full-featured [wiki](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/Wiki)
 application which has all the features you would expect in a state of the art
 wiki. Again, though, it has the benefit of being able to take advantage of all

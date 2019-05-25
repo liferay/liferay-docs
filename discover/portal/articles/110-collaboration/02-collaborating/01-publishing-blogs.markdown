@@ -4,6 +4,8 @@ header-id: publishing-blogs
 
 # Publishing Blogs
 
+[TOC levels=1-4]
+
 Since blogs are a mainstay on the web, bloggers and blog administrators expect
 feature-rich environments for publishing blogs. They want both a powerful
 editor and a pleasurable authoring experience. Blog admins demand an intuitive

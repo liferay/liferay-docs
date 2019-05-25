@@ -4,6 +4,8 @@ header-id: web-content-structures-and-templates
 
 # Web Content Structures and Templates
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Creating Content<br>Step 3 of 7</p>
 </div>

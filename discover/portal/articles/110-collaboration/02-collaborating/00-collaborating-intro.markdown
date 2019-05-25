@@ -4,6 +4,8 @@ header-id: collaborating
 
 # Collaborating
 
+[TOC levels=1-4]
+
 @product@ ships with a robust suite of collaboration applications that you
 can use to build communities of users for your site. These applications provide
 all the features that you would expect of standalone applications outside a

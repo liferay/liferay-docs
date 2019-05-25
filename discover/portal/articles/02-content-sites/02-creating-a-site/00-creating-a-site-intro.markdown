@@ -4,6 +4,8 @@ header-id: creating-a-site
 
 # Creating a Site
 
+[TOC levels=1-4]
+
 Now that you've created basic web content, you're ready for something a bit more
 intricate than a single page with a line of text and an image. In this part of
 the Learning Path, you'll create more pages (including nested pages) and use

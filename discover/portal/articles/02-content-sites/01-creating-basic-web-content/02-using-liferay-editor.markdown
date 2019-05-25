@@ -4,6 +4,8 @@ header-id: using-products-content-editor
 
 # Using @product@'s Content Editor
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Creating Basic Web Content<br>Step 2 of 3</p>
 </div>

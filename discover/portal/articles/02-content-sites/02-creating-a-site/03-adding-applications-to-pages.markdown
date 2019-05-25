@@ -4,6 +4,8 @@ header-id: adding-applications-to-pages
 
 # Adding Applications to Pages
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Creating A Site<br>Step 3 of 6</p>
 </div>

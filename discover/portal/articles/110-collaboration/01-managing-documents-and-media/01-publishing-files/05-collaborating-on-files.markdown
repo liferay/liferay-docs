@@ -4,6 +4,8 @@ header-id: collaborating-on-files
 
 # Collaborating on Files
 
+[TOC levels=1-4]
+
 Not only does @product@'s Documents and Media enable you to publish files
 easily, but it also provides a terrific environment for collaborating on
 documents. There are many common collaboration scenarios. For example, you might

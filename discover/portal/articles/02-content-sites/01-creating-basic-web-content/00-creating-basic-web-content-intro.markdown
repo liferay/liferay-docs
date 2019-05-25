@@ -4,6 +4,8 @@ header-id: creating-basic-web-content
 
 # Creating Basic Web Content
 
+[TOC levels=1-4]
+
 As soon as @product@ is installed, you have all the tools you need to build
 sites and create content. This means you can start right away! The first thing
 to learn is the tool into which your creative juices flow: @product@'s content

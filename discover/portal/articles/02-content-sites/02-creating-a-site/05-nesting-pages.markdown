@@ -4,6 +4,8 @@ header-id: nesting-pages
 
 # Nesting Pages
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Creating A Site<br>Step 5 of 6</p>
 </div>

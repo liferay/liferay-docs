@@ -4,6 +4,8 @@ header-id: configuring-applications
 
 # Configuring Applications
 
+[TOC levels=1-4]
+
 Just like siblings have common features inherited from their parents,
 applications that ship with @product@ also share common features. These include
 look and feel, exporting/importing app data, communication, sharing,

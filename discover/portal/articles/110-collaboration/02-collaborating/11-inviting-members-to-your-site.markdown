@@ -4,6 +4,8 @@ header-id: inviting-members-to-your-site
 
 # Inviting Members to Your Site
 
+[TOC levels=1-4]
+
 You've built a new site and now you need to get the word out about it. What 
 better way to get the word out about your site then to invite users to join it. 
 The Invite Members app lets you to do just that!

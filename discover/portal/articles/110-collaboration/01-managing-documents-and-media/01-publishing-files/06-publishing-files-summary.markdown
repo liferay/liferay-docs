@@ -4,6 +4,8 @@ header-id: publishing-files-summary
 
 # Publishing Files Summary
 
+[TOC levels=1-4]
+
 You've learned the fundamentals of uploading, managing, and collaborating on
 files in your sites. The Document Library integrates each file into @product@,
 allowing you to apply permissions, workflows, and rich metadata. And it provides

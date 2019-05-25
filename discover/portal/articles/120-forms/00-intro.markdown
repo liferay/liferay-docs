@@ -4,6 +4,8 @@ header-id: forms-and-lists
 
 # Forms and Lists
 
+[TOC levels=1-4]
+
 When you need a form, what you're really looking for is data. @product@ has two
 applications for building forms to collect precisely the data you need:
 

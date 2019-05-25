@@ -4,6 +4,8 @@ header-id: using-liferays-script-engine
 
 # Using Liferay's Script Engine
 
+[TOC levels=1-4]
+
 @product@ provides a robust script engine that can be used to execute scripts in a
 variety of languages. @product@'s script engine was originally developed to allow
 developers to write portlets in languages other than Java such as PHP, Groovy,

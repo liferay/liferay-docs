@@ -4,6 +4,8 @@ header-id: styling-apps-with-application-display-templates
 
 # Styling Apps with Application Display Templates
 
+[TOC levels=1-4]
+
 The application display template (ADT) framework allows Liferay administrators
 to override the default display templates, removing limitations to the way your
 site's content is displayed. With ADTs, you can define custom display templates

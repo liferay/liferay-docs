@@ -4,6 +4,8 @@ header-id: leveraging-social-applications-activities-tracking-and-user-connectio
 
 # Leveraging Social Applications, Activities Tracking, and User Connections
 
+[TOC levels=1-4]
+
 @product@ has many apps available for social interaction and collaboration. Some
 of these apps are designed to help you work together as a team, while others are 
 designed to foster social interactions between team members at your 
