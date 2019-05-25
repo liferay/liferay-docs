@@ -4,6 +4,8 @@ header-id: using-entry-list-screenlet-ios
 
 # Using Entry List Screenlet
 
+[TOC levels=1-4]
+
 You'll use Entry List Screenlet the same way you use any Screenlet: insert it in 
 a storyboard scene, then conform the scene's view controller class to the 
 Screenlet's delegate protocol. You'll follow these steps now to use Entry List 

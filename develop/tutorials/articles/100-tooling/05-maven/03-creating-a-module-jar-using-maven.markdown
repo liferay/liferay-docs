@@ -4,6 +4,8 @@ header-id: creating-a-module-jar-using-maven
 
 # Creating a Module JAR Using Maven
 
+[TOC levels=1-4]
+
 If you have an existing Liferay module built with Maven that you created from
 scratch, or you're upgrading your Maven project from a previous version of
 Liferay, your project probably can't generate an executable OSGi JAR. Don't

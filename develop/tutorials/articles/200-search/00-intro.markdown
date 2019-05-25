@@ -4,6 +4,8 @@ header-id: introduction-to-liferay-search
 
 # Search
 
+[TOC levels=1-4]
+
 Liferay stores its information in a database. If you need to search for data,
 why not search the database directly? Why add the complexity of a search
 engine? Database table merges are expensive! Documents in a search index often

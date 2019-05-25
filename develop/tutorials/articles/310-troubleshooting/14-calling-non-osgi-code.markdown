@@ -4,6 +4,8 @@ header-id: calling-non-osgi-code-that-uses-osgi-services
 
 # Calling Non-OSGi Code that Uses OSGi Services
 
+[TOC levels=1-4]
+
 @product@'s static utility functions (e.g., `UserServiceUtil`, 
 `CompanyServiceUtil`, `GroupServiceUtil`, etc.) are examples of non-OSGi code 
 that use OSGi services. 

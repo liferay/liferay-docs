@@ -4,6 +4,8 @@ header-id: invoking-liferay-services
 
 # Invoking Liferay Services
 
+[TOC levels=1-4]
+
 @product@ provides many web services out-of-the-box to you. These services 
 include retrieving data and information about various assets, creating new 
 assets, and even editing existing assets.

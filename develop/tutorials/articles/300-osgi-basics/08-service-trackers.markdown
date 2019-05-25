@@ -4,6 +4,8 @@ header-id: service-trackers
 
 # Service Trackers
 
+[TOC levels=1-4]
+
 Now that Liferay is promoting more modular plugins deployed into an OSGi
 runtime, you have to consider how your own code, living in its own module, can
 rely on services in other modules for functionality. You must account for the

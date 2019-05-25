@@ -4,6 +4,8 @@ header-id: configuring-xstream
 
 # Configuring XStream
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Enabling Staging and Export/Import<br>Step 5 of 7</p>
 </div>

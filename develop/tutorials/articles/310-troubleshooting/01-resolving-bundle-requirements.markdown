@@ -4,6 +4,8 @@ header-id: resolving-bundle-requirements
 
 # Resolving Bundle Requirements
 
+[TOC levels=1-4]
+
 If one of your bundles imports a package that no other bundle in the Liferay
 OSGi runtime exports, you get a bundle exception. Here's an example
 exception:

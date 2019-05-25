@@ -4,6 +4,8 @@ header-id: finding-adapted-images
 
 # Finding Adapted Images
 
+[TOC levels=1-4]
+
 In most cases, you can rely on the Adaptive Media taglib to 
 [display adapted images in your app](/docs/7-0/tutorials/-/knowledge_base/t/displaying-adapted-images-in-your-app). 
 This taglib uses the file version you give it to query Adaptive Media's finder 

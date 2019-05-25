@@ -4,6 +4,8 @@ header-id: liferay-sample-modules
 
 # Liferay Sample Projects
 
+[TOC levels=1-4]
+
 Liferay provides working examples of sample projects that target different
 integration points in @product@. These working examples can be copy/pasted into
 your own independent project so you can take advantage of various Liferay

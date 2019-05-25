@@ -4,6 +4,8 @@ header-id: setting-search-container-animations
 
 # Setting Search Container Animations
 
+[TOC levels=1-4]
+
 If you've toured @product-ver@'s UI, you've probably noticed animations in the
 search containers. These animations show the user when there is no available
 content.

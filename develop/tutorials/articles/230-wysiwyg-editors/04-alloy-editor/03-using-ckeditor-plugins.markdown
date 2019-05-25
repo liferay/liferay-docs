@@ -4,6 +4,8 @@ header-id: using-ckeditor-plugins-in-alloyeditor
 
 # Using the Default CKEditor Plugins Bundled with AlloyEditor
 
+[TOC levels=1-4]
+
 You can customize an editor's configuration to include several modifications, 
 such as 
 [adding new buttons](/docs/7-0/tutorials/-/knowledge_base/t/creating-and-contributing-new-buttons-to-alloyeditor) 

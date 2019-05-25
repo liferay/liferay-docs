@@ -4,6 +4,8 @@ header-id: using-guestbook-list-screenlet-ios
 
 # Using Guestbook List Screenlet
 
+[TOC levels=1-4]
+
 The steps for using Guestbook List Screenlet are the same as those for using any 
 Screenlet: 
 

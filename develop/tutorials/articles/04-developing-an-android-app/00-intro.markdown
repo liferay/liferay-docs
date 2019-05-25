@@ -4,6 +4,8 @@ header-id: writing-an-android-app-for-product
 
 # Writing an Android App for @product@
 
+[TOC levels=1-4]
+
 Users expect to access @product@ content from their mobile devices. As an 
 intrepid developer, you naturally want to turn these expectations into reality. 
 Thankfully, Liferay provides a way for your mobile apps to access @product@ 

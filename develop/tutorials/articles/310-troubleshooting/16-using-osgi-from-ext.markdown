@@ -4,6 +4,8 @@ header-id: using-osgi-services-from-ext-plugins
 
 # Using OSGi Services from EXT Plugins
 
+[TOC levels=1-4]
+
 Using OSGi services from an Ext plugin is done the same way that @product@'s 
 core uses OSGi services: via the `com.liferay.registry` API provided by the 
 `registry-api` bundle. All usages of this API in @product@'s core can serve as 

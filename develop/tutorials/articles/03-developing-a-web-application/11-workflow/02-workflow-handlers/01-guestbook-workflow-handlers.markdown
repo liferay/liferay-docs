@@ -4,6 +4,8 @@ header-id: creating-a-workflow-handler-for-guestbooks
 
 # Creating a Workflow Handler for Guestbooks
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Handling Workflow<br>Step 1 of 2</p>
 </div>

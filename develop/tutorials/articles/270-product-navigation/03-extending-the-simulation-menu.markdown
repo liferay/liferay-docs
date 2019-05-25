@@ -4,6 +4,8 @@ header-id: extending-the-simulation-menu
 
 # Extending the Simulation Menu
 
+[TOC levels=1-4]
+
 When testing how Liferay pages and apps will appear for users, it's critical to
 simulate their views on as many useful ways as possible. By default, Liferay
 provides the Simulation Menu on the right-side of the main page. What if,

@@ -4,6 +4,8 @@ header-id: jax-ws-and-jax-rs
 
 # JAX-WS and JAX-RS
 
+[TOC levels=1-4]
+
 Liferay supports 
 [JAX-WS](https://en.wikipedia.org/wiki/Java_API_for_XML_Web_Services) and 
 [JAX-RS](https://en.wikipedia.org/wiki/Java_API_for_RESTful_Web_Services) 

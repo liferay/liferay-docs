@@ -4,6 +4,8 @@ header-id: context-contributors
 
 # Context Contributors
 
+[TOC levels=1-4]
+
 JSP templates are the predominant templating framework in @product@. Themes,
 application display templates (ADTs), DDM templates, and more make use of JSPs
 as a templating engine. JSPs, however, are not the only templating language

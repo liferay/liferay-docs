@@ -4,6 +4,8 @@ header-id: theme-builder
 
 # Theme Builder
 
+[TOC levels=1-4]
+
 Liferay's Theme Builder gives developers who aren't using
 [Liferay's Theme Generator](/docs/7-0/tutorials/-/knowledge_base/t/themes-generator)
 (e.g., Gradle or Maven) a way to compile and build a theme WAR file. To use the

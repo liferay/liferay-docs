@@ -4,6 +4,8 @@ header-id: using-workflow
 
 # Using Workflow
 
+[TOC levels=1-4]
+
 The Guestbook application accepts submissions from any logged in user, so 
 there's no telling what people could post. Illegal data, objectionable content, 
 the entire contents of Don Quixote: all of these and more are possibilities. 

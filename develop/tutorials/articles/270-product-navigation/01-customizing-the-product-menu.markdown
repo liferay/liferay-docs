@@ -4,6 +4,8 @@ header-id: customizing-the-product-menu
 
 # Customizing the Product Menu
 
+[TOC levels=1-4]
+
 Liferay's Product Menu comes with three major sections to choose from, by
 default: the Control Panel, User Settings, and Site Administration. These
 options are called panel categories, which is the term used to differentiate

@@ -4,6 +4,8 @@ header-id: creating-entry-list-screenlets-interactor-ios
 
 # Creating Entry List Screenlet's Interactor
 
+[TOC levels=1-4]
+
 Recall that list Screenlets require an Interactor to instantiate the Connector 
 and receive the server call's results. In this article, you'll create Entry List 
 Screenlet's Interactor. 

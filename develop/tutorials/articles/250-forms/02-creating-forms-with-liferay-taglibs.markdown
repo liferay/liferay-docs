@@ -4,6 +4,8 @@ header-id: creating-forms-with-liferays-taglibs
 
 # Creating Forms with Liferay's Taglibs
 
+[TOC levels=1-4]
+
 This tutorial demonstrates how to:
 
 - Create a form using @product-ver@'s taglibs in your application's JSPs

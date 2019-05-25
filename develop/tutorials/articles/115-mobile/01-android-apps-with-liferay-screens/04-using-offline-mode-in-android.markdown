@@ -4,6 +4,8 @@ header-id: using-offline-mode-in-android
 
 # Using Offline Mode in Android
 
+[TOC levels=1-4]
+
 Offline mode in Liferay Screens lets your apps function when connectivity is 
 unavailable or intermittent. Even though the steady march of technology makes 
 connections more stable and prevalent, there are still plenty of places the 

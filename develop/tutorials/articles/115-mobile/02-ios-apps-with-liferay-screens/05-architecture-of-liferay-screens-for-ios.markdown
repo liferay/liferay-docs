@@ -4,6 +4,8 @@ header-id: architecture-of-liferay-screens-for-ios
 
 # Architecture of Liferay Screens for iOS
 
+[TOC levels=1-4]
+
 Liferay Screens separates its presentation and business-logic code using ideas 
 from
 [Model View Presenter](http://en.wikipedia.org/wiki/Model-view-presenter),

@@ -4,6 +4,8 @@ header-id: creating-the-portlet-data-handler
 
 # Creating the Portlet Data Handler
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Enabling Staging and Export/Import<br>Step 7 of 7</p>
 </div>

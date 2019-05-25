@@ -4,6 +4,8 @@ header-id: upgrading-portlet-language-key-hooks
 
 # Upgrading Portlet Language Key Hooks
 
+[TOC levels=1-4]
+
 You can upgrade your portlet language key hooks to @product-ver@ by following
 these steps: 
 

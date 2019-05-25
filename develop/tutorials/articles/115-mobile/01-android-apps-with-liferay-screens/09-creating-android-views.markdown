@@ -4,6 +4,8 @@ header-id: creating-android-views
 
 # Creating Android Views
 
+[TOC levels=1-4]
+
 By creating your own Views, you can customize your mobile app's layout, style,
 and functionality. You can create them from scratch or use an existing View as a
 foundation. Views include a View class for implementing Screenlet behavior, a

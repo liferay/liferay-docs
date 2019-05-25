@@ -4,6 +4,8 @@ header-id: generating-model-service-and-persistence-layers
 
 # Generating Model, Service, and Persistence Layers
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Generating the Back-end<br>Step 2 of 3</p>
 </div>

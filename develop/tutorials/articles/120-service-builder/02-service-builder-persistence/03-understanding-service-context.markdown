@@ -4,6 +4,8 @@ header-id: understanding-servicecontext
 
 # Understanding ServiceContext
 
+[TOC levels=1-4]
+
 The `ServiceContext` class is a parameter class used for passing contextual
 information for a service. Using a parameter class lets you consolidate many
 different methods with different sets of optional parameters into a single,

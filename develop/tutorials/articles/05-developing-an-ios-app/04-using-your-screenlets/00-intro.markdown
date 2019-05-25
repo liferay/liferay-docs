@@ -4,6 +4,8 @@ header-id: using-your-screenlets
 
 # Using Your Screenlets
 
+[TOC levels=1-4]
+
 Now that you have the Guestbook List and Entry List Screenlets, you're ready to 
 put them to work. As you'll see, using these Screenlets isn't much more 
 difficult than using Login Screenlet. This is an advantage of Screenlets; it 

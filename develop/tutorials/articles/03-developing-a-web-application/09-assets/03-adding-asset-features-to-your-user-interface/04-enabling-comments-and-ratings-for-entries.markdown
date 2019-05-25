@@ -4,6 +4,8 @@ header-id: enabling-comments-and-ratings-for-guestbook-entries
 
 # Enabling Comments and Ratings for Guestbook Entries
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Adding Asset Features to Your UI<br>Step 5 of 5</p>
 </div>

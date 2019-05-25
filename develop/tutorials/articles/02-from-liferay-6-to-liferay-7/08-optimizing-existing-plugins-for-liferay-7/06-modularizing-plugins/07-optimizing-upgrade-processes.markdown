@@ -4,6 +4,8 @@ header-id: optimizing-app-upgrade-processes
 
 # Migrating Data Upgrade Processes to the New Framework for Modules
 
+[TOC levels=1-4]
+
 When you make changes to your plugin that affect the database, you can use a
 *data upgrade process* to upgrade data to the new database schema. @product-ver@
 has a new data upgrade framework for modules. While the old framework required

@@ -4,6 +4,8 @@ header-id: creating-a-jsf-project-manually
 
 # Creating a JSF Project Manually
 
+[TOC levels=1-4]
+
 @product@'s modular architecture lends itself well to modular applications
 created using a multitude of different technologies. JSF applications are no
 different and can be developed to integrate seamlessly into the Liferay

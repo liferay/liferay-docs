@@ -4,6 +4,8 @@ header-id: updating-permissions-to-support-staging
 
 # Updating Permissions to Support Staging
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Enabling Staging and Export/Import<br>Step 4 of 7</p>
 </div>

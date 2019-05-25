@@ -4,6 +4,8 @@ header-id: adding-the-management-bar
 
 # Adding the Management Bar
 
+[TOC levels=1-4]
+
 The Management Bar controls display options for search container results. You 
 can use it to display content in a list or a grid, or to display a specific type 
 of content. You can also customize your app's Management Bar. 

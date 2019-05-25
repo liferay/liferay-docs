@@ -4,6 +4,8 @@ header-id: what-is-service-builder
 
 # What is Service Builder?
 
+[TOC levels=1-4]
+
 Service Builder is a model-driven code generation tool built by Liferay that
 allows developers to define custom object models called entities. Service
 Builder generates a service layer through object-relational mapping (ORM)

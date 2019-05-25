@@ -4,6 +4,8 @@ header-id: semantic-versioning
 
 # Semantic Versioning
 
+[TOC levels=1-4]
+
 [Semantic Versioning](https://semver.org) is a three tiered versioning system
 that increments version numbers based on the type of API change introduced to
 a releasable software component. It's a standard way of communicating

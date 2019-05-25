@@ -4,6 +4,8 @@ header-id: customizing-the-control-menu
 
 # Customizing the Control Menu
 
+[TOC levels=1-4]
+
 The Control Menu is the most visible and accessible menu in Liferay. It is
 visible to the user in most places, always displaying helpful text or options
 at the top of the page. For example, on your home page, the Control Menu offers

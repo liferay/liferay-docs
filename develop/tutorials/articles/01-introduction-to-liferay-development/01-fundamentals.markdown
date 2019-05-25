@@ -4,6 +4,8 @@ header-id: fundamentals
 
 # Fundamentals
 
+[TOC levels=1-4]
+
 What are the fundamentals that every Liferay developer should know?
 
 1.  It's Open Source and puts a strong emphasis on following standards, instead

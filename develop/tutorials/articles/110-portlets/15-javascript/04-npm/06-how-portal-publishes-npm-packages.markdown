@@ -4,6 +4,8 @@ header-id: how-liferay-portal-publishes-npm-packages
 
 # How @product@ Publishes npm Packages
 
+[TOC levels=1-4]
+
 When you deploy an OSGi bundle with the specified structure, as explained in 
 [The Structure of OSGi Bundles Containing NPM Packages](/docs/7-0/tutorials/-/knowledge_base/t/the-structure-of-osgi-bundles-containing-npm-packages) 
 tutorial, its modules are made available for consumption through canonical 

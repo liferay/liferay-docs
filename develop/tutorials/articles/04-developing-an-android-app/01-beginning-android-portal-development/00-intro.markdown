@@ -4,6 +4,8 @@ header-id: beginning-android-development-for-your-liferay-instance
 
 # Beginning Android Development for Your @product@ Instance
 
+[TOC levels=1-4]
+
 Getting started with Liferay Screens for Android is a straightforward process. 
 This series of Learning Path articles walks you through creating an Android app 
 and preparing it to work with the Guestbook portlet developed in the 

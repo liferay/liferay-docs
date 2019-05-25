@@ -4,6 +4,8 @@ header-id: injecting-service-components-into-tests
 
 # Injecting Service Components into Tests
 
+[TOC levels=1-4]
+
 You can use @product@'s `@Inject` annotation to inject service components into a
 test, like you use the `@Reference` annotation to inject service components
 into a module component.

@@ -4,6 +4,8 @@ header-id: freemarker-macros
 
 # Macros
 
+[TOC levels=1-4]
+
 Macros let you assign theme template fragments to a variable. This keeps your 
 theme templates from becoming cluttered and makes them easier to read. @product@ 
 defines several FreeMarker macros in 

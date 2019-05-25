@@ -4,6 +4,8 @@ header-id: modifying-an-editors-configuration
 
 # Modifying an Editor's Configuration
 
+[TOC levels=1-4]
+
 @product@ supports many different kinds of WYSIWYG editors that can be used in
 portlets to edit content. Depending on the content you're editing, you may want
 to modify the editor to provide a better configuration for your needs. In this

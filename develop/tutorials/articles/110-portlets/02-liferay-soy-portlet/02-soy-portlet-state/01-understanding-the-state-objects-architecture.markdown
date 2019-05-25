@@ -4,6 +4,8 @@ header-id: understanding-the-state-object-architecture
 
 # Understanding The State Object's Architecture
 
+[TOC levels=1-4]
+
 An example `STATE` object configuration appears below:
 
     View.STATE {

@@ -4,6 +4,8 @@ header-id: liferays-workflow-framework
 
 # Liferay's Workflow Framework
 
+[TOC levels=1-4]
+
 Enabling your application's entities to support workflow is so easy, you could do it in
 your sleep (but don't try). Workflow enabled entities require a few things:
 

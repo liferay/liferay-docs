@@ -4,6 +4,8 @@ header-id: application-security
 
 # Application Security
 
+[TOC levels=1-4]
+
 Nothing has received more attention on the web in recent years than security.
 Liferay has a robust security model for you to use in your applications, and it
 supports a wide variety of security features. In this section, you can learn

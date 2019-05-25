@@ -4,6 +4,8 @@ header-id: running-service-builder-and-understanding-the-generated-code
 
 # Running Service Builder and Understanding the Generated Code
 
+[TOC levels=1-4]
+
 This tutorial explains how to run Service Builder and provides an overview of
 the code that Service Builder generates. If you'd like to use Service Builder in
 your application but haven't yet created a `service.xml` file, visit the

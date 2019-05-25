@@ -4,6 +4,8 @@ header-id: why-arent-my-modules-javascript-and-css-changes-showing
 
 # Why Aren't my Module's JavaScript and CSS Changes Showing?
 
+[TOC levels=1-4]
+
 To determine why JavaScript and CSS updates to your module aren't having an 
 effect in your browser, perform these checks: 
 

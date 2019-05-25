@@ -4,6 +4,8 @@ header-id: configuring-your-admin-apps-actions-menu
 
 # Configuring Your Admin App's Actions Menu
 
+[TOC levels=1-4]
+
 In versions prior to @product-ver@, it was common to have a series of buttons or 
 menus with actions in the different views of the app. In @product-ver@ the 
 proposed pattern is to move all of these actions to the upper right menu of the 

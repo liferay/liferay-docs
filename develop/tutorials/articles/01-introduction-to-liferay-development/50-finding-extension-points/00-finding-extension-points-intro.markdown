@@ -4,6 +4,8 @@ header-id: finding-extension-points
 
 # Finding Extension Points
 
+[TOC levels=1-4]
+
 @product@ provides many features that help users accomplish their tasks.
 Sometimes, however, you may find it necessary to customize a built-in feature.
 It's easy to **find** an area you want to customize, but it may seem like a

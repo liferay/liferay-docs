@@ -4,6 +4,8 @@ header-id: arquillian-integration-test-example
 
 # Arquillian Integration Test Example
 
+[TOC levels=1-4]
+
 Integration tests exercise module interaction. The following integration test
 validates the sample portlet using its API. Although the example's
 `BasicPortletIntegrationTest` class demonstrates invoking the sample module's

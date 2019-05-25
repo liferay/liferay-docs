@@ -4,6 +4,8 @@ header-id: flagging-inappropriate-asset-content
 
 # Flagging Inappropriate Asset Content
 
+[TOC levels=1-4]
+
 In a perfect world, people would post nice, kind, and decent content. They would 
 reply to comments with constructive feedback and never lash out at one another. 
 Unfortunately, sometimes people have a bad day and decide to take their 

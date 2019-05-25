@@ -4,6 +4,8 @@ header-id: tooling
 
 # Tooling
 
+[TOC levels=1-4]
+
 Liferay is very flexible when it comes to supporting different development
 tooling. Instead of being pigeonholed into using a specific tool, Liferay works
 with whatever tools you like to use. This set of tutorials describes some of the

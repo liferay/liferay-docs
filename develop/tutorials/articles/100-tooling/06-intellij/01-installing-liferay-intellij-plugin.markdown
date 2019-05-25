@@ -4,6 +4,8 @@ header-id: installing-the-liferay-intellij-plugin
 
 # Installing the Liferay IntelliJ Plugin
 
+[TOC levels=1-4]
+
 To install the Liferay IntelliJ plugin in IntelliJ IDEA, follow the steps below:
 
 1.  Navigate to the

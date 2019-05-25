@@ -4,6 +4,8 @@ header-id: implementing-asset-renderers
 
 # Implementing Asset Renderers
 
+[TOC levels=1-4]
+
 Assets are generic versions of entities, so they contain fields like `title`,
 `description`, and `summary`. @product@ uses these fields to display assets. 
 Asset Renderers translate an entity into an asset via these fields. For 

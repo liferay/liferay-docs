@@ -4,6 +4,8 @@ header-id: liferay-ide
 
 # Liferay @ide@
 
+[TOC levels=1-4]
+
 Liferay @ide@ is an extension for the Eclipse platform that supports development
 of @product@ plugins. The Liferay @ide@ environment is fully integrated with
 Eclipse and is designed to work with build tools such as Gradle and Maven, and

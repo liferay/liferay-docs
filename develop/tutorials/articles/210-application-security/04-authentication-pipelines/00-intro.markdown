@@ -4,6 +4,8 @@ header-id: authentication-pipelines
 
 # Authentication Pipelines
 
+[TOC levels=1-4]
+
 The authentication process in @product@ is a pipeline through which users can be
 validated by one or several systems. @product@'s flexibility and extensibility
 makes it possible for you to make it authenticate users to anything you wish, 

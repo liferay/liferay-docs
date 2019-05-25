@@ -4,6 +4,8 @@ header-id: forms
 
 # HTML Forms
 
+[TOC levels=1-4]
+
 Forms are a must-have tool in any developer's UI bag. Rather than write
 your HTML from scratch, Liferay provides you with taglibs that offer
 everything standard HTML elements have, as well as some additional attributes

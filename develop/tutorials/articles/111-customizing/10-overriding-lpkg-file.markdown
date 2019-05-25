@@ -4,6 +4,8 @@ header-id: overriding-lpkg-files
 
 # Overriding lpkg files
 
+[TOC levels=1-4]
+
 Applications are delivered through Liferay Marketplace as *lpkg* files. This is
 a simple compressed file format that contains .jar files to be deployed to
 @product@. If you want to examine an application from Marketplace, all you have

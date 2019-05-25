@@ -4,6 +4,8 @@ header-id: preparing-android-projects-for-liferay-screens
 
 # Preparing Android Projects for Liferay Screens
 
+[TOC levels=1-4]
+
 To use Liferay Screens, you must install it in your Android project and then 
 configure it to communicate with your @product@ instance. Note that Screens is 
 released as an 

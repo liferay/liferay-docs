@@ -4,6 +4,8 @@ header-id: services-in-jsf
 
 # Services in JSF
 
+[TOC levels=1-4]
+
 Creating services works the same in a JSF portlet as it would in any other
 standard WAR-style MVC portlet; generate custom services as separate API and
 Impl JARs and deploy them as individual modules to @product@. You can generate

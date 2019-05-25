@@ -4,6 +4,8 @@ header-id: creating-entry-list-screenlets-connector
 
 # Creating Entry List Screenlet's Connector
 
+[TOC levels=1-4]
+
 Recall that Connectors are Screenlet components that make server calls. Also 
 recall that by making your server calls in Connectors instead of Interactors, 
 you gain an additional layer of abstraction. 

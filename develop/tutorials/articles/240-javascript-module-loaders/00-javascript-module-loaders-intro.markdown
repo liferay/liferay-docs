@@ -4,6 +4,8 @@ header-id: javascript-module-loaders
 
 # JavaScript Module Loaders
 
+[TOC levels=1-4]
+
 JavaScript modules encapsulate code into useful units that export their
 functions. Structuring an application this way makes it easier to work with in
 these ways: 

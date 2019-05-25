@@ -4,6 +4,8 @@ header-id: relating-assets
 
 # Relating Assets
 
+[TOC levels=1-4]
+
 The ability to relate assets is one of the most powerful features of Liferay's
 asset framework. By relating assets, you can connect individual pieces of
 content across your site or portal. This helps your users discover related

@@ -4,6 +4,8 @@ header-id: whats-changed-and-what-hasnt
 
 # What Hasn't Changed and What Has
 
+[TOC levels=1-4]
+
 @product-ver@ is a new major version of the Liferay platform and as such it
 includes many improvements over previous versions. Having said that, most of the
 characteristics from Liferay Portal 6 that you have learned to love are

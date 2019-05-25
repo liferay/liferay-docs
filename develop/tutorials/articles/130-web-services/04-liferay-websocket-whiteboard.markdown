@@ -4,6 +4,8 @@ header-id: liferay-websocket-whiteboard
 
 # Liferay WebSocket Whiteboard
 
+[TOC levels=1-4]
+
 Modern web apps exchange large amounts of data with clients. The WebSockets 
 specification lets this exchange occur over a full-duplex connection that 
 remains open, therefore enabling real-time communication. This approach is more

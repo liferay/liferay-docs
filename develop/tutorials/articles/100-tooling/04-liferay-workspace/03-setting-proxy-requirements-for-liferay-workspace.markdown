@@ -4,6 +4,8 @@ header-id: setting-proxy-requirements-for-liferay-workspace
 
 # Setting Proxy Requirements for Liferay Workspace
 
+[TOC levels=1-4]
+
 If you're working behind a corporate firewall that requires using a proxy server
 to access external repositories, you need to add some extra configuration to
 make Liferay Workspace work within your environment. You'll learn how to set

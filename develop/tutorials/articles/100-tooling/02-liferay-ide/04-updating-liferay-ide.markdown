@@ -4,6 +4,8 @@ header-id: updating-liferay-ide
 
 # Updating Liferay @ide@
 
+[TOC levels=1-4]
+
 If you're already using Liferay @ide@ but need to update your environment,
 follow the steps below:
 

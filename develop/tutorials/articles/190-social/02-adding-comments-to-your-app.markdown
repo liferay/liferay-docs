@@ -4,6 +4,8 @@ header-id: adding-comments-to-your-app
 
 # Adding Comments to your App
 
+[TOC levels=1-4]
+
 Users adding comments to your content makes your site come alive. Instead of you
 statically giving users information, now the flow goes both ways. @product@'s
 asset framework makes it easy to add a comment system to your app. 

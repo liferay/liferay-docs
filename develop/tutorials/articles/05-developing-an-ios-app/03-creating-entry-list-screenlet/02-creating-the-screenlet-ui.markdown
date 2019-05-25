@@ -4,6 +4,8 @@ header-id: creating-entry-list-screenlets-ui-ios
 
 # Creating Entry List Screenlet's UI
 
+[TOC levels=1-4]
+
 Recall that in Liferay Screens for iOS, Screenlet UIs are called *Themes*, and 
 every Screenlet must have at least one Theme. You'll create Entry List 
 Screenlet's Theme with the same steps you used to create Guestbook List 

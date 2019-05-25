@@ -4,6 +4,8 @@ header-id: implementing-configuration-actions
 
 # Implementing Configuration Actions
 
+[TOC levels=1-4]
+
 When developing an application, it's important to think about the different
 configuration options that your application should support. It's also important
 to think about how users should be able to access your application's

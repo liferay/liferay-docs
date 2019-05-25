@@ -4,6 +4,8 @@ header-id: creating-a-soy-portlet
 
 # Creating a Soy Portlet
 
+[TOC levels=1-4]
+
 To create a Soy portlet, you'll need these key components:
 
 -  A module that publishes a portlet component with the necessary properties

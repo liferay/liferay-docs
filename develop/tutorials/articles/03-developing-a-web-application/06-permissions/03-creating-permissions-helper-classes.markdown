@@ -4,6 +4,8 @@ header-id: creating-permissions-helper-classes
 
 # Creating Permissions Helper Classes
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Implementing Permissions<br>Step 3 of 4</p>
 </div>

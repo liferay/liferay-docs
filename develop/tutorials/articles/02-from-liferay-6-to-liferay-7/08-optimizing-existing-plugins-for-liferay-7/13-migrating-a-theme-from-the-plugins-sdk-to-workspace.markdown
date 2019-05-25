@@ -4,6 +4,8 @@ header-id: migrating-a-theme-from-the-plugins-sdk-to-workspace
 
 # Migrating a Theme from the Plugins SDK to Workspace
 
+[TOC levels=1-4]
+
 After you've adapted your Plugins SDK theme to @product@'s API, you can continue
 maintaining it in the Plugins SDK. The Plugins SDK, however, is deprecated as of
 @product-ver@. Maintaining plugins in the SDK will become increasingly

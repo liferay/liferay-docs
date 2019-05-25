@@ -4,6 +4,8 @@ header-id: enabling-search-and-indexing-for-guestbooks
 
 # Enabling Search and Indexing for Guestbooks
 
+[TOC levels=1-4]
+
 In this section, you first create an indexer for guestbooks. You then modify the 
 service layer to use this indexer to update the search index when a guestbook is 
 persisted:

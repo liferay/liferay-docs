@@ -4,6 +4,8 @@ header-id: adding-messages-to-jsps
 
 # Adding Messages to JSPs
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Displaying Messages and Errors<br>Step 3 of 3</p>
 </div>

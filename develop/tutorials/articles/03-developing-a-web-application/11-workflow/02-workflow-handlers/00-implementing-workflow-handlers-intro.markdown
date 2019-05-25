@@ -4,6 +4,8 @@ header-id: handling-workflow
 
 # Handling Workflow
 
+[TOC levels=1-4]
+
 The guestbook project's service layer is now updated to handle workflow. It now
 properly sets the status fields for guestbooks and guestbook entries, gets
 entities by their statuses, and sends entities to @product@'s workflow framework

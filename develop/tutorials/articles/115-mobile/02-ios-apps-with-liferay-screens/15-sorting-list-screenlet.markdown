@@ -4,6 +4,8 @@ header-id: sorting-your-list-screenlet
 
 # Sorting Your List Screenlet
 
+[TOC levels=1-4]
+
 To sort your list Screenlet, you must point it to a *comparator class* in your 
 portal. A comparator class implements the logic that sorts your entities. You 
 can create your own comparator class or use those that already exist in your 

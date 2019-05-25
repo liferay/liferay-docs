@@ -4,6 +4,8 @@ header-id: upgrading-portlet-plugins
 
 # Upgrading Portlet Plugins
 
+[TOC levels=1-4]
+
 All portlet plugin types developed for Liferay Portal 6 can be upgraded and
 deployed to @product-ver@.
 

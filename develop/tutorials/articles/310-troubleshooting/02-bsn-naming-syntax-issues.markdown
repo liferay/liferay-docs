@@ -4,6 +4,8 @@ header-id: resolving-bundle-symbolicname-syntax-issues
 
 # Resolving Bundle-SymbolicName Syntax Issues
 
+[TOC levels=1-4]
+
 An OSGi bundle's `Bundle-SymbolicName` and  `Bundle-Version` manifest headers
 uniquely identify it. You can specify a bundle's `Bundle-SymbolicName` in these
 ways:

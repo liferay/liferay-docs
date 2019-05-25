@@ -4,6 +4,8 @@ header-id: running-the-arquillian-example
 
 # Running the Arquillian Example
 
+[TOC levels=1-4]
+
 You're ready to run the Arquillian Blade Example tests. Open a terminal to the
 project root and execute the following command:
 

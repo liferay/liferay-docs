@@ -4,6 +4,8 @@ header-id: embedding-portlets-in-themes
 
 # Embedding Portlets in Themes
 
+[TOC levels=1-4]
+
 One thing developers often want to do is embed a portlet in a theme. This makes 
 the portlet visible on all pages where the theme is used. In the past, this was 
 only possible by hard-coding a specific portlet into place, which has many 

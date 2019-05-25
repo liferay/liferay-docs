@@ -4,6 +4,8 @@ header-id: creating-custom-item-selector-entities
 
 # Creating Custom Item Selector Entities
 
+[TOC levels=1-4]
+
 Does your app require users to select an item that the Item Selector isn't 
 configured for? No problem. You can create a new entity.
 

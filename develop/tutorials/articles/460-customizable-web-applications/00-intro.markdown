@@ -4,6 +4,8 @@ header-id: customizable-web-applications
 
 # Customizable Web Applications
 
+[TOC levels=1-4]
+
 One of the great strengths of @product@ is the sheer number of out of the box
 applications. This gives it great flexibility in what it can do, which is why
 @product@ is used to run many different kinds of websites around the world.

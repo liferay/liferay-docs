@@ -4,6 +4,8 @@ header-id: supporting-workflow-at-the-service-layer
 
 # Supporting Workflow at the Service Layer
 
+[TOC levels=1-4]
+
 When you 
 [asset enabled the Guestbook Application](/docs/7-0/tutorials/-/knowledge_base/t/assets-integrating-with-liferays-framework),
 you added four database columns in the Guestbook entities (e.g., `GB_Entry`)

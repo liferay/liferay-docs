@@ -4,6 +4,8 @@ header-id: declaring-optional-import-package-requirements
 
 # Declaring Optional Import Package Requirements
 
+[TOC levels=1-4]
+
 When developing @product@ modules, you can declare *optional* dependencies. An
 optional dependency is one your module can use if it's available, but can still
 function without it. 

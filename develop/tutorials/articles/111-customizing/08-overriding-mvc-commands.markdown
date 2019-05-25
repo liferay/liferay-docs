@@ -4,6 +4,8 @@ header-id: overriding-mvc-commands
 
 # Overriding MVC Commands
 
+[TOC levels=1-4]
+
 MVC Commands are used to break up the controller layer of a Liferay MVC
 application into smaller, more digestible code chunks.
 

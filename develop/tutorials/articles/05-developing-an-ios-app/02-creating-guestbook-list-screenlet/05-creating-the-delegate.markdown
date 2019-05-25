@@ -4,6 +4,8 @@ header-id: creating-guestbook-list-screenlets-delegate
 
 # Creating Guestbook List Screenlet's Delegate
 
+[TOC levels=1-4]
+
 A delegate is a Screenlet component that lets other classes to respond to a 
 Screenlet's actions. For example, 
 [Login Screenlet's delegate](/docs/7-0/reference/-/knowledge_base/r/loginscreenlet-for-ios#delegate) 

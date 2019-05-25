@@ -4,6 +4,8 @@ header-id: enabling-tags-categories-and-related-assets-for-guestbooks
 
 # Enabling Tags, Categories, and Related Assets for Guestbooks
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Adding Asset Features to Your UI<br>Step 3 of 5</p>
 </div>

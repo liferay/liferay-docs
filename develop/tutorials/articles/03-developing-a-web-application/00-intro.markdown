@@ -4,6 +4,8 @@ header-id: developing-a-web-application
 
 # Developing a Web Application
 
+[TOC levels=1-4]
+
 In this Learning Path, you'll create the Liferay Guestbook Web Application from 
 scratch using tools like Liferay @ide@ and BLADE tools. As you create this 
 application, you'll learn how to create a back-end database, web services, a 

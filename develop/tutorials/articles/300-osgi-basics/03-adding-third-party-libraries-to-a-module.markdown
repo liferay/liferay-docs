@@ -4,6 +4,8 @@ header-id: adding-third-party-libraries-to-a-module
 
 # Resolving Third Party Library Package Dependencies
 
+[TOC levels=1-4]
+
 The OSGi framework lets you build applications composed of multiple modules. The
 modules must resolve their Java package dependencies for the framework to
 assemble the modules into a working system. In a perfect world, every Java

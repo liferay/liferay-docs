@@ -4,6 +4,8 @@ header-id: resolving-classnotfoundexception-and-noclassdeffounderror-in-osgi-bun
 
 # Resolving ClassNotFoundException and NoClassDefFoundError in OSGi Bundles
 
+[TOC levels=1-4]
+
 Understanding a `ClassNotFoundException` or `NoClassDefFoundError` in non-OSGi
 environments is straightforward. 
 

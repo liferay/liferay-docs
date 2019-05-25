@@ -4,6 +4,8 @@ header-id: upgrading-a-struts-portlet
 
 # Upgrading a Struts Portlet
 
+[TOC levels=1-4]
+
 Struts is a stable, widely adopted framework that implements the Model View
 Controller (MVC) design pattern. If you have a Struts portlet for Liferay Portal
 6.2,  you can upgrade it to @product-ver@.

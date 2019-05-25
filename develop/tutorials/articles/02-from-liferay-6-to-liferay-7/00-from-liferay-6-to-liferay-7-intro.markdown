@@ -4,6 +4,8 @@ header-id: from-liferay-6-to-liferay-7
 
 # From Liferay Portal 6 to 7
 
+[TOC levels=1-4]
+
 Becoming familiar with a platform as large and fully featured as Liferay is  a
 big task. You learn the ins and outs of what it can do, the tips and best
 practices of the experts, and you work your way through the APIs. As you do

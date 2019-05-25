@@ -4,6 +4,8 @@ header-id: web-services
 
 # Web Services
 
+[TOC levels=1-4]
+
 Generating and invoking web services is a central part of the Liferay 
 development experience. After all, what good is it if you can't generate remote 
 services for an app you're developing, or call Liferay's built-in remote 

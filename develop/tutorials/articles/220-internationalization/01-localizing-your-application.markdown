@@ -4,6 +4,8 @@ header-id: localizing-your-application
 
 # Localizing Your Application
 
+[TOC levels=1-4]
+
 If you're writing a Liferay Application, you're probably a genius who is also
 really cool. Which means your application is going to be used throughout the
 entire world. At least, it will if the messages that appear to its users can be

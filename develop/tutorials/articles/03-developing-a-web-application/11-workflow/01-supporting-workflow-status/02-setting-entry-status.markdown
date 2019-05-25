@@ -4,6 +4,8 @@ header-id: setting-the-entry-workflow-status
 
 # Setting the Entry Workflow Status
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Supporting Workflow at the Service Layer<br>Step 2 of 3</p>
 </div>

@@ -4,6 +4,8 @@ header-id: managing-module-projects-with-liferay-ide
 
 # Managing Module Projects with Liferay @ide@
 
+[TOC levels=1-4]
+
 Liferay @ide@ provides the ability to manage Liferay module projects from a GUI.
 Before you begin learning about managing your modules from Liferay @ide@, you
 should make sure a Liferay server is configured in your Eclipse workspace so you

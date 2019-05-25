@@ -4,6 +4,8 @@ header-id: item-selector
 
 # Item Selector
 
+[TOC levels=1-4]
+
 People's tasks often involve making choices: which shirt to wear, what to eat
 for breakfast, or what profile picture to use. The power of choice is a terrific
 privilege, but the means by which a person makes his/her selection can make an

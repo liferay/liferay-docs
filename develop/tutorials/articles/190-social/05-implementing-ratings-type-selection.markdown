@@ -4,6 +4,8 @@ header-id: ratings
 
 # Implementing Ratings Type Selection and Value Transformation
 
+[TOC levels=1-4]
+
 @product@ has three different mechanisms for rating content: Stars, Thumbs
 Up/Down, and Likes. Prior to 7.0, there was no way for administrators to select
 a ratings type as it was hard-coded. Now, portal and site admins can select the

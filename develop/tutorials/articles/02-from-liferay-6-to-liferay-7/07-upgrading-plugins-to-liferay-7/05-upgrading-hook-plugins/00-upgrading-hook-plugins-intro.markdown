@@ -4,6 +4,8 @@ header-id: upgrading-hook-plugins
 
 # Upgrading Hook Plugins
 
+[TOC levels=1-4]
+
 @product@ has more extension points than ever, and connecting existing hook
 plugins to them takes very few steps. In most cases, after you upgrade your
 hook using

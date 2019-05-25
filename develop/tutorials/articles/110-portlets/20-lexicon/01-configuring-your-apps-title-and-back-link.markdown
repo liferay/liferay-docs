@@ -4,6 +4,8 @@ header-id: configuring-your-applications-title-and-back-link
 
 # Configuring Your Application's Title and Back Link
 
+[TOC levels=1-4]
+
 For @product-ver@ administration applications, the title should be moved to the 
 inner views of the app and the associated back link should be moved to the 
 portlet titles. 

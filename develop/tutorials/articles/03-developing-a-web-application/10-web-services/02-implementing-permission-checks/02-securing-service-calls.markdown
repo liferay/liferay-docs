@@ -4,6 +4,8 @@ header-id: securing-service-calls-at-the-portlet-layer
 
 # Securing Service Calls at the Portlet Layer
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Implementing Permission Checks<br>Step 2 of 2</p>
 </div>

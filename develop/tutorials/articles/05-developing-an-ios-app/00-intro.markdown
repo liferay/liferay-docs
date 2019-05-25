@@ -4,6 +4,8 @@ header-id: writing-an-ios-app-with-liferay-screens
 
 # Writing an iOS App with Liferay Screens
 
+[TOC levels=1-4]
+
 Users expect to access portal content from their mobile devices. As an intrepid
 developer, you naturally want to turn these expectations into reality. 
 Thankfully, Liferay provides a way for your mobile apps to access portal

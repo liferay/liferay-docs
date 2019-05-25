@@ -4,6 +4,8 @@ header-id: themes-generator
 
 # Liferay Theme Generator
 
+[TOC levels=1-4]
+
 The Liferay Theme Generator is an easy-to-use command-line wizard that
 streamlines the theme creation process. It is independent of the Liferay Plugins
 SDK, and generates themes for Liferay Portal 6.2, @product-ver@, and up. It is 

@@ -4,6 +4,8 @@ header-id: data-handlers
 
 # Developing Data Handlers
 
+[TOC levels=1-4]
+
 To leverage the Export/Import framework's ability to export/import a LAR file,
 you can implement Data Handlers in your application. There are two types of data
 handlers you can implement: *Portlet Data Handlers* and *Staged Model Data

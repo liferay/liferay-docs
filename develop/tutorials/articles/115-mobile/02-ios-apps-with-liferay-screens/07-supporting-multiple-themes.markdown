@@ -4,6 +4,8 @@ header-id: supporting-multiple-themes-in-your-screenlet
 
 # Supporting Multiple Themes in Your Screenlet
 
+[TOC levels=1-4]
+
 Themes let you present the same Screenlet with a different look and feel. For 
 example, if you have multiple apps that use the same Screenlet, you can use 
 different Themes to match the Screenlet's appearance to each app's style. Each 

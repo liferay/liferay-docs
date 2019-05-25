@@ -4,6 +4,8 @@ header-id: applying-lexicon-styles-to-your-app
 
 # Applying Lexicon Styles to your App
 
+[TOC levels=1-4]
+
 It's important to have a consistent user experience across your apps.
 @product@'s built-in apps achieve this through Liferay's 
 [Lexicon Experience Language](https://v1.lexicondesign.io/) and its web 

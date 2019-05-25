@@ -4,6 +4,8 @@ header-id: invoking-local-services
 
 # Invoking Local Services
 
+[TOC levels=1-4]
+
 In this tutorial, you'll learn about the differences between local and remote
 services, and when you should invoke local services rather than their remote
 service counterparts.

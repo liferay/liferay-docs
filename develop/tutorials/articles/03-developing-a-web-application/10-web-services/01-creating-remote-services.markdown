@@ -4,6 +4,8 @@ header-id: creating-remote-services-with-service-builder
 
 # Creating Remote Services with Service Builder
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Creating Remote Services<br>Step 1 of 1</p>
 </div>

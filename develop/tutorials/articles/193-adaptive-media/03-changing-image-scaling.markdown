@@ -4,6 +4,8 @@ header-id: changing-adaptive-medias-image-scaling
 
 # Changing Adaptive Media's Image Scaling
 
+[TOC levels=1-4]
+
 As described in 
 [the Adaptive Media user guide](/docs/7-0/user/-/knowledge_base/u/adapting-your-media-across-multiple-devices), 
 Adaptive Media scales images to match the image resolutions defined by the 

@@ -4,6 +4,8 @@ header-id: adaptive-media
 
 # Adaptive Media
 
+[TOC levels=1-4]
+
 The Adaptive Media app on 
 [Liferay Marketplace](https://web.liferay.com/marketplace) 
 lets administrators tailor the quality of images in @product@ to the device 

@@ -4,6 +4,8 @@ header-id: deploying-modules-with-blade-cli
 
 # Deploying Modules with Blade CLI
 
+[TOC levels=1-4]
+
 Deploying modules to a Liferay server using Blade CLI is easy. To use the Blade
 `deploy` command, you must first have built a module to deploy. See the
 [Creating Projects with Blade CLI](/docs/7-0/tutorials/-/knowledge_base/t/creating-modules-with-blade-cli)

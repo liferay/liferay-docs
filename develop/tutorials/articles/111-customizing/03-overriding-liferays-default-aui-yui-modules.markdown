@@ -4,6 +4,8 @@ header-id: overriding-liferays-default-yui-and-aui-modules
 
 # Overriding @product@'s Default YUI and AUI Modules
 
+[TOC levels=1-4]
+
 @product@ contains several default YUI/AUI modules. You may need to override
 functionality provided by these module's scripts. It's possible to 
 [override JSPs using fragments](/docs/7-0/tutorials/-/knowledge_base/t/overriding-a-modules-jsps),

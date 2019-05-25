@@ -4,6 +4,8 @@ header-id: using-the-wab-generator
 
 # Using the WAB Generator
 
+[TOC levels=1-4]
+
 Developers creating applications for @product-ver@ can choose to create them as
 Java EE-style Web Application ARchive (WAR) artifacts or as Java ARchive (JAR)
 OSGi bundle artifacts. Some plugin developers, however, don't have that

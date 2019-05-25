@@ -4,6 +4,8 @@ header-id: configuring-your-permissions-scheme
 
 # Configuring Your Permissions Scheme
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Implementing Permissions<br>Step 1 of 4</p>
 </div>

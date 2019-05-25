@@ -4,6 +4,8 @@ header-id: creating-a-search-results-jsp-for-the-guestbook-portlet
 
 # Creating a Search Results JSP for the Guestbook Portlet
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Updating Your UI for Search<br>Step 2 of 2</p>
 </div>

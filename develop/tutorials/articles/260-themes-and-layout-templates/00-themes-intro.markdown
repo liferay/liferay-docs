@@ -4,6 +4,8 @@ header-id: themes-and-layout-templates
 
 # Themes and Layout Templates
 
+[TOC levels=1-4]
+
 Do you want to transform the look and feel of your @product@? Create your
 own user interface with a Liferay Theme! Create a layout template to specify 
 where content can be placed on a page! Define a custom look and feel for your 

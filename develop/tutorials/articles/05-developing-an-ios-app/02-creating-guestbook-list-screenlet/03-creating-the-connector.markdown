@@ -4,6 +4,8 @@ header-id: creating-guestbook-list-screenlets-connector
 
 # Creating Guestbook List Screenlet's Connector
 
+[TOC levels=1-4]
+
 Connectors are Screenlet components that make server calls. Non-list Screenlets 
 don't require Connectors--they can make server calls in Interactors instead. 
 Connectors, however, provide a layer of abstraction by making the server call 

@@ -4,6 +4,8 @@ header-id: layout-templates-intro
 
 # Layout Templates
 
+[TOC levels=1-4]
+
 Are you craving more than @product@'s default page layouts? Do you have a 
 special use case that a default layout template doesn't meet? Well, look no 
 further. Create your own Layout Template! Layout templates allow you to set

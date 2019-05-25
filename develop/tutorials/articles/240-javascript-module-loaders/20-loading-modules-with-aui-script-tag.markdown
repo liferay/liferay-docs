@@ -4,6 +4,8 @@ header-id: loading-modules-with-aui-script-in-liferay
 
 # Loading Modules with AUI Script in @product@
 
+[TOC levels=1-4]
+
 The `aui:script` tag is a JSP tag that loads JavaScript in script tags on the
 page, while ensuring that certain resources are loaded before executing.
 

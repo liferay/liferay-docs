@@ -4,6 +4,8 @@ header-id: importing-lexicon-css-into-a-theme
 
 # Importing Lexicon CSS into a Theme
 
+[TOC levels=1-4]
+
 As mentioned before, Lexicon CSS fills the gaps between Bootstrap and the 
 specific needs of @product@. Bootstrap features have been extended to cover more 
 use cases. Here are some of the new components added by Lexicon CSS:

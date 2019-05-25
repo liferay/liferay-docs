@@ -4,6 +4,8 @@ header-id: the-benefits-of-modularity
 
 # The Benefits of Modularity
 
+[TOC levels=1-4]
+
 Dictionary.com defines 
 [modularity](http://www.dictionary.com/browse/modularity)
 as *the use of individually distinct functional units, as in assembling an

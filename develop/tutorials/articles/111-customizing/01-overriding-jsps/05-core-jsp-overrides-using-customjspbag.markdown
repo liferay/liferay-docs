@@ -4,6 +4,8 @@ header-id: overriding-core-jsps
 
 # JSP Overrides Using Custom JSP Bag
 
+[TOC levels=1-4]
+
 [Liferay's API based approaches to overriding JSPs](/docs/7-0/tutorials/-/knowledge_base/t/overriding-jsps#using-portals-api-to-override-a-jsp)
 are the best way to override JSPs in apps and in the core. You can also use
 Custom JSP Bags to override core JSPs. But the approach is not as stable as the

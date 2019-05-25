@@ -4,6 +4,8 @@ header-id: portlet-decorators
 
 # Portlet Decorators
 
+[TOC levels=1-4]
+
 In previous versions of @product@, administrators could display or hide the
 application borders through the *Show Borders* option of the look and feel
 configuration menu. In @product-ver@ this option has been replaced with

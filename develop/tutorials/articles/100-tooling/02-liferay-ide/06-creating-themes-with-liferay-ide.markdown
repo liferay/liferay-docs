@@ -4,6 +4,8 @@ header-id: creating-themes-with-liferay-ide
 
 # Creating Themes with Liferay @ide@
 
+[TOC levels=1-4]
+
 Liferay @ide@ lets you create and configure Liferay theme projects. You can
 create a standalone theme or in a
 [Liferay Workspace](/docs/7-0/tutorials/-/knowledge_base/t/liferay-workspace).

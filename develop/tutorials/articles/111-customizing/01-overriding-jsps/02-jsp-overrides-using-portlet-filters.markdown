@@ -4,6 +4,8 @@ header-id: jsp-overrides-using-portlet-filters
 
 # JSP Overrides Using Portlet Filters
 
+[TOC levels=1-4]
+
 Portlet filters let you intercept portlet requests before they're processed and
 portlet responses after they're processed but before they're sent back to the
 client. You can operate on the request and / or response to modify the JSP

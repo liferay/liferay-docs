@@ -4,6 +4,8 @@ header-id: setting-up-the-guestbook-portlet-ios
 
 # Setting up the Guestbook Portlet
 
+[TOC levels=1-4]
+
 Before you begin developing the Guestbook app for iOS, you must set up the 
 Guestbook portlet in a @product@ instance. To do this, follow these steps: 
 

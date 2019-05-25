@@ -4,6 +4,8 @@ header-id: using-external-libraries
 
 # Using External Libraries
 
+[TOC levels=1-4]
+
 You can use external (i.e., anything but Metal.js, jQuery, or Lodash, which are
 included in @product@) JavaScript libraries in your portlets. There are a few
 methods you can use to make external libraries available. The method you should 

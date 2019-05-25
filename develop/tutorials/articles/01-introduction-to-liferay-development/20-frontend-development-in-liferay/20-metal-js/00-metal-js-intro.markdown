@@ -4,6 +4,8 @@ header-id: metal-js
 
 # Metal.js
 
+[TOC levels=1-4]
+
 Metal.js is a lightweight, easy-to-use JavaScript framework that lets you create
 UI Components with ease, thanks to its integration with templating languages.
 

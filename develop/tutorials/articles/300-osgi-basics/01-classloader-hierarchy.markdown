@@ -4,6 +4,8 @@ header-id: liferay-portal-classloader-hierarchy
 
 # Liferay Portal Classloader Hierarchy
 
+[TOC levels=1-4]
+
 All @product@ applications live in its OSGi container. Portal is a web
 application deployed on your application server. Portal's Module Framework
 bundles (modules) live in the OSGi container and have class loaders. All the

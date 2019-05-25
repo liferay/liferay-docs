@@ -4,6 +4,8 @@ header-id: creating-the-entry-staged-model-data-handler
 
 # Creating the Entry Staged Model Data Handler
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Enabling Staging and Export/Import<br>Step 2 of 7</p>
 </div>

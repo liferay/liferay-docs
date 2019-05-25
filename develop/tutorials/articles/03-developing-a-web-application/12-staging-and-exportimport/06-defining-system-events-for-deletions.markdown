@@ -4,6 +4,8 @@ header-id: defining-system-events-for-deletions
 
 # Defining System Events for Deletions
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Enabling Staging and Export/Import<br>Step 6 of 7</p>
 </div>

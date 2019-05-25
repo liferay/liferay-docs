@@ -4,6 +4,8 @@ header-id: implementing-permission-checks
 
 # Implementing Permission Checks
 
+[TOC levels=1-4]
+
 Now that your guestbook and guestbook entry web services exist, you must 
 implement permission checks for them. Implementing permission checks for a web 
 service ensures that only users with the correct permissions can invoke the web 

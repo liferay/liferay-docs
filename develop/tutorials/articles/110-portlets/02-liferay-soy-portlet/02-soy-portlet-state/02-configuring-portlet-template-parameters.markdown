@@ -4,6 +4,8 @@ header-id: configuring-portlet-template-parameter-state-properties
 
 # Configuring Portlet Template Parameter State Properties
 
+[TOC levels=1-4]
+
 [Portlet template parameters](/docs/7-0/tutorials/-/knowledge_base/t/creating-a-soy-portlet#using-portlet-template-parameters-in-the-soy-template) 
 are added automatically as state properties to the 
 [view component](/docs/7-0/tutorials/-/knowledge_base/t/creating-a-soy-portlet#configuring-the-view-layer)'s 

@@ -4,6 +4,8 @@ header-id: migrating-a-6-2-theme-to-liferay-7
 
 # Migrating a Theme from the Plugins SDK to the Liferay Theme Generator
 
+[TOC levels=1-4]
+
 After you've upgraded your Liferay Portal 6 theme to @product-ver@, the Themes
 Generator offers enhanced development features and tools for optimizing your
 theme and streamlining theme management. To introduce one of its most powerful

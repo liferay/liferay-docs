@@ -4,6 +4,8 @@ header-id: handling-assets-at-the-guestbook-service-layer
 
 # Handling Assets at the Guestbook Service Layer
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Enabling Assets at the Service Layer<br>Step 2 of 3</p>
 </div>

@@ -4,6 +4,8 @@ header-id: upgrading-a-liferay-jsf-portlet
 
 # Upgrading a Liferay JSF Portlet
 
+[TOC levels=1-4]
+
 Liferay JSF portlets are easy to upgrade and require few changes. They interface
 with the [Liferay Faces](/docs/7-0/reference/-/knowledge_base/r/liferay-faces)
 project, which encapsulates @product@'s Java API and JavaScript code. Because

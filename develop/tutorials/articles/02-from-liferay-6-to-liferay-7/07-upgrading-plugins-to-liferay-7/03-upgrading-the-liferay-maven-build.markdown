@@ -4,6 +4,8 @@ header-id: upgrading-the-liferay-maven-build
 
 # Upgrading the Liferay Maven Build
 
+[TOC levels=1-4]
+
 If you're an avid Maven user and have been using it for Liferay Portal 6.2
 project development, you must upgrade your Maven build to be compatible with
 @product-ver@ development. There are two main parts of the Maven environment

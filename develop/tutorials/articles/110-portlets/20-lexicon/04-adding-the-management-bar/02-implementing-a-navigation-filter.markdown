@@ -4,6 +4,8 @@ header-id: implementing-a-management-bar-navigation-filter
 
 # Implementing a Management Bar Navigation Filter
 
+[TOC levels=1-4]
+
 Navigation filters are used to create navigation menus in the Management Bar. 
 You can add as many navigation filters to the Management Bar as your app 
 requires.

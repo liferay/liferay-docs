@@ -4,6 +4,8 @@ header-id: creating-guestbook-list-screenlets-ui
 
 # Creating Guestbook List Screenlet's UI
 
+[TOC levels=1-4]
+
 Recall that in Liferay Screens for Android, Screenlet UIs are called Views, and 
 every Screenlet must have at least one View. In this article, you'll use the 
 following steps to create a View for Guestbook List Screenlet: 

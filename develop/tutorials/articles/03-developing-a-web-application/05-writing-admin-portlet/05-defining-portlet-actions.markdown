@@ -4,6 +4,8 @@ header-id: defining-portlet-actions
 
 # Defining Portlet Actions
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Writing the Guestbook Admin App<br>Step 4 of 5</p>
 </div>

@@ -4,6 +4,8 @@ header-id: creating-entry-list-screenlets-ui
 
 # Creating Entry List Screenlet's UI
 
+[TOC levels=1-4]
+
 Once you have the model class for entries, you can create the Screenlet's UI. 
 Recall that in Liferay Screens for Android, you create a Screenlet's UI by 
 implementing a View. In this article, you'll create Entry List Screenlet's View 

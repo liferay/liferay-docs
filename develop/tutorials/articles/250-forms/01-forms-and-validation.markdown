@@ -4,6 +4,8 @@ header-id: forms-and-validation
 
 # Forms and Validation
 
+[TOC levels=1-4]
+
 Creating forms is easy and flexible, thanks to @product@'s form, input, and 
 validation tags.
 

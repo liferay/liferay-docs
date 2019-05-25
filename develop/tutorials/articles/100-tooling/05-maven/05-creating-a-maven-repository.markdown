@@ -4,6 +4,8 @@ header-id: creating-a-maven-repository
 
 # Creating a Maven Repository
 
+[TOC levels=1-4]
+
 You'll frequently want to share Liferay artifacts and modules with teammates or
 manage your repositories using a GUI. Sonatype Nexus is a valuable tool for
 managing your repositories. It's a Maven repository management server that

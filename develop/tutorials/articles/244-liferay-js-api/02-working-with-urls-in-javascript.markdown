@@ -4,6 +4,8 @@ header-id: working-with-urls-in-javascript
 
 # Working with URLs in JavaScript
 
+[TOC levels=1-4]
+
 In Java, developers are able to create and work with URLs using their APIs. The 
 `Liferay` global object offers some features to help you create and work with 
 URLs.

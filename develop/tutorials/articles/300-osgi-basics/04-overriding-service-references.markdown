@@ -4,6 +4,8 @@ header-id: overriding-service-references
 
 # Overriding Reluctant Service References
 
+[TOC levels=1-4]
+
 When there's an existing service that you want to customize or implement
 differently, you can override the existing one. To do this, you create and
 deploy a new, higher-ranked service implementation. But how do you replace a

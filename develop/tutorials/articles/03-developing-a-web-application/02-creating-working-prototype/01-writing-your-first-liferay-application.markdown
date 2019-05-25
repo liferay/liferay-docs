@@ -4,6 +4,8 @@ header-id: writing-your-first-liferay-application
 
 # Writing Your First @product@ Application
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Developing Your First Portlet<br>Step 1 of 8</p>
 </div>

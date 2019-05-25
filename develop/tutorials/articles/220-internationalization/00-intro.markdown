@@ -4,6 +4,8 @@ header-id: internationalization
 
 # Internationalization
 
+[TOC levels=1-4]
+
 @product@ makes it easier than ever to localize content and design apps for
 different locales. You can centralize messages (language keys) and have manual
 and automatic translation, including localizing forms and setting text

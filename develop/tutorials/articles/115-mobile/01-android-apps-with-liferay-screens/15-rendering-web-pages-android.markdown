@@ -4,6 +4,8 @@ header-id: rendering-web-pages-in-your-android-app
 
 # Rendering Web Pages in Your Android App
 
+[TOC levels=1-4]
+
 The 
 [Rendering Web Content](/docs/7-0/tutorials/-/knowledge_base/t/rendering-web-content-in-your-android-app) 
 tutorial shows you how to display 

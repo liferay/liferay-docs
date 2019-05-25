@@ -4,6 +4,8 @@ header-id: modularizing-an-existing-portlet
 
 # Modularizing an Existing Portlet
 
+[TOC levels=1-4]
+
 An application with properly modularized plugins offers several benefits. You
 can release individually its plugins without releasing the entire application.
 External clients can consume services from particular plugins, without having to

@@ -4,6 +4,8 @@ header-id: liferay-slim-runtime
 
 # Liferay Slim Runtime
 
+[TOC levels=1-4]
+
 The Liferay Slim Runtime provides the bare necessities for running Service
 Builder modules. It's useful for testing applications quickly in a Liferay
 runtime environment free of Liferay add-ons.

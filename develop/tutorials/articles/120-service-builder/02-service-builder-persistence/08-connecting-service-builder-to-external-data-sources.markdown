@@ -4,6 +4,8 @@ header-id: connecting-service-builder-to-external-data-sources
 
 # Connecting Service Builder to External Data Sources
 
+[TOC levels=1-4]
+
 Sometimes you want to use a data source other than @product@'s. To do this, the
 data source must be defined in `portal-ext.properties` or configured as a JNDI
 data source on @product@'s app server. This tutorial shows how to connect

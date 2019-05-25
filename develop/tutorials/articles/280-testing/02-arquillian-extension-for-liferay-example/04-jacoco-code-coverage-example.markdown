@@ -4,6 +4,8 @@ header-id: jacoco-code-coverage-example
 
 # JaCoCo Code Coverage Example
 
+[TOC levels=1-4]
+
 [JaCoCo](http://eclemma.org/jacoco/) measures Java code coverage. The
 Arquillian Blade Example uses JaCoCo to report parts and percentages of the product code the tests execute. 
 

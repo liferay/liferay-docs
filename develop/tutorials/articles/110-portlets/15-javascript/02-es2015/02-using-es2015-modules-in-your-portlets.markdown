@@ -4,6 +4,8 @@ header-id: using-es2015-modules-in-your-portlet
 
 # Using ES2015 Modules in your Portlet
 
+[TOC levels=1-4]
+
 Once you've [exposed your modules](/docs/7-0/tutorials/-/knowledge_base/t/preparing-your-javascript-files-for-es2015)
 via your `package.json` file, you can use them in your portlets. The `aui:script`
 tag's `require` attribute makes it easy.

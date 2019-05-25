@@ -4,6 +4,8 @@ header-id: making-your-applications-configurable
 
 # Making Your Applications Configurable
 
+[TOC levels=1-4]
+
 This tutorial explains how to make your applications configurable. It starts
 with basic configuration and then covers some advanced use cases.
 

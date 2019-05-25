@@ -4,6 +4,8 @@ header-id: resolving-a-plugins-dependencies
 
 # Resolving a Plugin's Dependencies
 
+[TOC levels=1-4]
+
 Now that you've imported your plugin project to Liferay @ide@, you probably see
 compile errors for some of the Liferay classes it uses. These classes are listed
 as undefined classes or unresolved symbols because they've been moved, renamed,

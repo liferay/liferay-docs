@@ -4,6 +4,8 @@ header-id: data-access
 
 # Data Access
 
+[TOC levels=1-4]
+
 @product@'s data can be retrieved using its APIs. It's important, however, to 
 understand how data is used amid all of @product@'s constructs. At a basic 
 level, all the data is represented by an object model. This is retrieved from 

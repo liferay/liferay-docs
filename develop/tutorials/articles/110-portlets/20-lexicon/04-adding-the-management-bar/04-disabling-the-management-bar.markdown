@@ -4,6 +4,8 @@ header-id: disabling-the-management-bar
 
 # Disabling the Management Bar
 
+[TOC levels=1-4]
+
 When there's no content in the app, you should disable all the Management Bar's 
 buttons, except the info button. 
 

@@ -4,6 +4,8 @@ header-id: setting-the-guestbook-status
 
 # Setting the Guestbook Status
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Supporting Workflow at the Service Layer<br>Step 1 of 3</p>
 </div>

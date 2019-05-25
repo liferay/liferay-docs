@@ -4,6 +4,8 @@ header-id: displaying-guestbook-status
 
 # Displaying Guestbook Status
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Displaying Approved Workflow Items<br>Step 1 of 2</p>
 </div>

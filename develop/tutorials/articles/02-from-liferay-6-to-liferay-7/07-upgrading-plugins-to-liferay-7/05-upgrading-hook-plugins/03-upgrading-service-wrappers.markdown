@@ -4,6 +4,8 @@ header-id: upgrading-service-wrappers
 
 # Upgrading Service Wrappers
 
+[TOC levels=1-4]
+
 Upgrading traditional 
 [service wrapper hook plugins](/docs/6-2/tutorials/-/knowledge_base/t/overriding-a-portal-service-using-a-hook) 
 to @product-ver@ is quick and easy. 

@@ -4,6 +4,8 @@ header-id: using-login-screenlet-for-authentication-ios
 
 # Using Login Screenlet for Authentication
 
+[TOC levels=1-4]
+
 For the app to retrieve data from the Guestbook portlet, the user must first
 authenticate to the @product@ instance. You can implement authentication
 using the Liferay Mobile SDK, but it takes time to write. Using Liferay Screens

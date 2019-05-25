@@ -4,6 +4,8 @@ header-id: deploying-a-module-built-with-maven-to-product
 
 # Deploying a Module Built with Maven to @product@
 
+[TOC levels=1-4]
+
 There are two ways to deploy a Maven-built Liferay module:
 
 1.  Copy your generated Maven module JAR to your @product@ instance's

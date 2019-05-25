@@ -4,6 +4,8 @@ header-id: using-staging-and-export-import
 
 # Enabling Staging and Export/Import
 
+[TOC levels=1-4]
+
 Your Guestbook application creates guestbooks and entries that are immediately
 published when they're saved. Sites constantly change, however, so it's crucial
 to have an area where updates can be planned and tested before publishing

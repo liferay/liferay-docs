@@ -4,6 +4,8 @@ header-id: customizing-model-entities-with-model-hints
 
 # Customizing Model Entities With Model Hints
 
+[TOC levels=1-4]
+
 If you've already used Service Builder to define your model entities and have
 implemented business logic for creating and modifying those entities, you might
 have some ideas for helping users to submit valid model entity data. For

@@ -4,6 +4,8 @@ header-id: resolving-your-modules
 
 # Resolving Your Modules
 
+[TOC levels=1-4]
+
 Deploying your modules only to be met with console errors or mysterious
 problems can be frustrating. You can avoid this painful process by resolving
 your modules before deployment. This can be done by calling the

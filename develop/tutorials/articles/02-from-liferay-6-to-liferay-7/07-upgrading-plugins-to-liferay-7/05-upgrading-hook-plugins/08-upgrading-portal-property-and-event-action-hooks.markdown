@@ -4,6 +4,8 @@ header-id: upgrading-portal-property-and-event-action-hooks
 
 # Upgrading Portal Property and Event Action Hooks
 
+[TOC levels=1-4]
+
 All portal properties in Liferay Portal 6.2 that are also used in @product-ver@
 can be overridden. Portal property and portal event action hooks that use these
 properties can be upgraded to @product-ver@ by following these steps:

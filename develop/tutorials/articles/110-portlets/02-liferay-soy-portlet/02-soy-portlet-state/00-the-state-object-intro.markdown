@@ -4,6 +4,8 @@ header-id: the-state-object
 
 # The State Object
 
+[TOC levels=1-4]
+
 MetalJS's `component` class, which your 
 [view component](/docs/7-0/tutorials/-/knowledge_base/t/creating-a-soy-portlet#configuring-the-view-layer) 
 extends, extends MetalJS's `state` class. The `state` class provides a `STATE` 

@@ -4,6 +4,8 @@ header-id: blade-cli
 
 # Blade CLI
 
+[TOC levels=1-4]
+
 The [Blade CLI](https://github.com/liferay/liferay-blade-cli/) is the
 easiest way for Liferay developers to create new Liferay modules. Although the
 Plugins SDK is also supported, Blade CLI lets you create projects that can be

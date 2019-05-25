@@ -4,6 +4,8 @@ header-id: applying-the-add-button-pattern
 
 # Applying the Add Button Pattern
 
+[TOC levels=1-4]
+
 Lexicon's add button pattern is for actions that add entities (for example
 a new blog entry button): it gives you a clean, minimal UI. You can use it in
 any of your app's screens. The add button pattern consists of an 

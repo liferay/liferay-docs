@@ -4,6 +4,8 @@ header-id: getting-started-with-entry-list-screenlet
 
 # Getting Started with Entry List Screenlet
 
+[TOC levels=1-4]
+
 Like Guestbook List Screenlet, you'll create Entry List Screenlet in a new 
 package inside your app's project. Get started by creating the package 
 `com.liferay.docs.entrylistscreenlet`. Once you have this package, you're ready 

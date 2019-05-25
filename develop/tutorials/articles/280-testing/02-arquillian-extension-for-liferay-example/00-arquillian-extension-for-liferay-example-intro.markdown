@@ -4,6 +4,8 @@ header-id: arquillian-extension-for-liferay-example
 
 # Arquillian Extension for Liferay Example
 
+[TOC levels=1-4]
+
 [Arquillian](http://arquillian.org) is an extensible Java testing platform
 that's designed to make integration testing easy. Arquillian manages the
 lifecycle of setting up, starting, or connecting to a container (e.g., Tomcat),

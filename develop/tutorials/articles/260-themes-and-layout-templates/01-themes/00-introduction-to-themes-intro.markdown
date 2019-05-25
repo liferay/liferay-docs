@@ -4,6 +4,8 @@ header-id: introduction-to-themes
 
 # Themes
 
+[TOC levels=1-4]
+
 A Liferay Theme is the overall look and feel for a site. Themes are a 
 combination of CSS, JavaScript, HTML, and FreeMarker templates. Although the
 default themes are nice, you may wish to create your own custom look and feel

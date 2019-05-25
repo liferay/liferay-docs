@@ -4,6 +4,8 @@ header-id: arquillian-functional-test-example
 
 # Arquillian Functional Test Example
 
+[TOC levels=1-4]
+
 Where the
 [integration test](/docs/7-0/tutorials/-/knowledge_base/t/arquillian-integration-test-example)
 invokes the `SampleService`'s `add` method directly, the functional test invokes

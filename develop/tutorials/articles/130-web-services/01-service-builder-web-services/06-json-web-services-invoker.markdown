@@ -4,6 +4,8 @@ header-id: json-web-services-invoker
 
 # JSON Web Services Invoker
 
+[TOC levels=1-4]
+
 To use JSON web services, you send a request that defines a service method and 
 parameters, and you receive the result as a JSON object. As straightforward as 
 this seems, it can be improved. In this tutorial, you'll learn how to use JSON 

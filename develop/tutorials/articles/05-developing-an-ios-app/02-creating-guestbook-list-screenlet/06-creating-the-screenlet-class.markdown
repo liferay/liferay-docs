@@ -4,6 +4,8 @@ header-id: creating-the-screenlet-class
 
 # Creating the Screenlet Class
 
+[TOC levels=1-4]
+
 The Screenlet class is the main component that governs the Screenlet's behavior. 
 When using a Screenlet, app developers primarily interact with its Screenlet 
 class. A list Screenlet's Screenlet class must extend 

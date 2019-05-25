@@ -4,6 +4,8 @@ header-id: creating-an-add-guestbook-button
 
 # Creating an Add Entry Button
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Developing Your First Portlet<br>Step 2 of 8</p>
 </div>

@@ -4,6 +4,8 @@ header-id: preparing-guestbooksactivity-for-guestbook-list-screenlet
 
 # Preparing GuestbooksActivity for Guestbook List Screenlet
 
+[TOC levels=1-4]
+
 Recall that you want `GuestbooksActivity` to display Guestbook List Screenlet 
 and Entry List Screenlet. Before using these Screenlets, however, you must 
 prepare `GuestbooksActivity` as follows: 

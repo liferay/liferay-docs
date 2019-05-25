@@ -4,6 +4,8 @@ header-id: displaying-approved-workflow-items
 
 # Displaying Approved Workflow Items
 
+[TOC levels=1-4]
+
 There's not much left to do. Both entities in the guestbook project's back-end
 are workflow enabled, so it's time to update the UI. The Guestbook Admin portlet
 and the Guestbook portlet each requires its own display strategy.

@@ -4,6 +4,8 @@ header-id: using-liferays-language-settings
 
 # Using Liferay's Language Settings
 
+[TOC levels=1-4]
+
 For a given locale, you can [override Liferay's core UI messages](/docs/7-0/tutorials/-/knowledge_base/t/overriding-language-keys).
 Modifying Language key values in Liferay provides a lot of localization
 flexibility in itself, but we're always looking for new ways to give you more

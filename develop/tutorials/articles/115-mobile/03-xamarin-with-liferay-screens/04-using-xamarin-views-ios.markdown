@@ -4,6 +4,8 @@ header-id: using-themes-in-xamarin-ios
 
 # Using Themes in Xamarin.iOS
 
+[TOC levels=1-4]
+
 *Themes* in Xamarin.iOS are analogous to *Views* in Xamarin.Android. Like Views, 
 Themes let you set a Screenlet's look and feel independent of the Screenlet's 
 core functionality. Liferay's Screenlets come with several Themes, and more are 

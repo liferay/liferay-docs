@@ -4,6 +4,8 @@ header-id: form-navigator
 
 # Form Navigator Extensions
 
+[TOC levels=1-4]
+
 Some data-centric applications require the creation of large data-entry forms.
 Examples abound in healthcare, transportation, pharmaceutical, or any other
 heavily regulated industry. For these applications, you need an easy way to

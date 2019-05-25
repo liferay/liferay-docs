@@ -4,6 +4,8 @@ header-id: rating-assets
 
 # Rating Assets
 
+[TOC levels=1-4]
+
 @product@'s asset framework supports a system for rating content in apps. This
 feature appears in many core apps, such as the Blogs portlet. Ratings give your
 users a voice, and you can benefit from their feedback.  Thanks to @product@'s

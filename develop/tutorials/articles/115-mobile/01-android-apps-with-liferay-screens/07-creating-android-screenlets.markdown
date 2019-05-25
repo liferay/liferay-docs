@@ -4,6 +4,8 @@ header-id: creating-android-screenlets
 
 # Creating Android Screenlets
 
+[TOC levels=1-4]
+
 The
 [Screenlets](/docs/7-0/reference/-/knowledge_base/r/screenlets-in-liferay-screens-for-android)
 that come with Liferay Screens cover common use cases for mobile apps that use

@@ -4,6 +4,8 @@ header-id: mobile
 
 # Mobile
 
+[TOC levels=1-4]
+
 Liferay provides two ways to create native Android and iOS apps that work with 
 your Liferay instances: Liferay Screens and the Liferay Mobile SDK. Liferay 
 Screens does this via ready-to-use components called *Screenlets*. Since 

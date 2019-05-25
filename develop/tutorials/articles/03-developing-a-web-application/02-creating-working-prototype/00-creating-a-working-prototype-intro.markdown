@@ -4,6 +4,8 @@ header-id: creating-a-working-prototype
 
 # Creating a Working Prototype
 
+[TOC levels=1-4]
+
 So far, you've installed and set up Liferay @ide@, and created a Liferay 
 Workspace. Next, you'll create your application and start adding basic features 
 to it. Here's what you'll do: 

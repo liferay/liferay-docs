@@ -4,6 +4,8 @@ header-id: introduction-to-frontend-development
 
 # Introduction to Front-End Development
 
+[TOC levels=1-4]
+
 When approaching the development of your application's front-end, @product@ 
 offers a wide range of approaches, frameworks, utilities, and mechanisms to make 
 your life easier.

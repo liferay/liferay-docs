@@ -4,6 +4,8 @@ header-id: themelets
 
 # Themelets
 
+[TOC levels=1-4]
+
 Themelets are small, extendable, and reusable pieces of code. Whereas themes
 require multiple components, a themelet only requires the files you wish to
 extend. This creates a more modular approach to theme design, that lends itself

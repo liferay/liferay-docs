@@ -4,6 +4,8 @@ header-id: creating-guestbook-list-screenlets-ui-ios
 
 # Creating Guestbook List Screenlet's UI
 
+[TOC levels=1-4]
+
 In Liferay Screens for iOS, Screenlet UIs are called *Themes*. Every Screenlet 
 must have at least one Theme. You'll use the following steps to create a Theme 
 for Guestbook List Screenlet: 

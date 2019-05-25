@@ -4,6 +4,8 @@ header-id: data-scopes
 
 # Data Scopes
 
+[TOC levels=1-4]
+
 Apps in @product@ can restrict their data to specific 
 [scopes](https://dev.liferay.com/participate/liferaypedia/-/wiki/Main/scope).
 Scopes provide a context for the application's data. For example, a site-scoped

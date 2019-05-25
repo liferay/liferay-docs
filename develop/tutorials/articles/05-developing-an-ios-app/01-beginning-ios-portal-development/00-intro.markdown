@@ -4,6 +4,8 @@ header-id: beginning-ios-development-for-your-portal
 
 # Beginning iOS Development for Your Portal
 
+[TOC levels=1-4]
+
 Getting started with Liferay Screens for iOS is straightforward. This series of 
 Learning Path articles walks you through creating an iOS app and preparing it to 
 work with the Guestbook portlet developed in the 

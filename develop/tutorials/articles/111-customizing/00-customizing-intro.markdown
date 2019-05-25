@@ -4,6 +4,8 @@ header-id: customizing
 
 # Customizing
 
+[TOC levels=1-4]
+
 In @product@, [portlets](/docs/7-0/tutorials/-/knowledge_base/t/portlets)
 let you add functionality and
 [themes](/docs/7-0/tutorials/-/knowledge_base/t/themes-and-layout-templates)

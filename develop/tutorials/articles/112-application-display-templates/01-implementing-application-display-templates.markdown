@@ -4,6 +4,8 @@ header-id: implementing-application-display-templates
 
 # Implementing Application Display Templates
 
+[TOC levels=1-4]
+
 [Application Display Templates](/docs/7-0/user/-/knowledge_base/u/styling-apps-with-application-display-templates)
 (ADTs) provide--the ability to add custom display templates to your portlets
 from the portal. The figure below shows what the Display Template option looks

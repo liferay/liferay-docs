@@ -4,6 +4,8 @@ header-id: using-themes-in-ios-screenlets
 
 # Using Themes in iOS Screenlets
 
+[TOC levels=1-4]
+
 Using a Liferay Screens *Theme*, you can set your Screenlet's UI components,
 style, and behavior. They let you focus on a Screenlet's UI and UX, without
 having to worry about its core functionality. Liferay's Screenlets come with

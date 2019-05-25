@@ -4,6 +4,8 @@ header-id: advanced-customization-with-ext-plugins
 
 # Customization with Ext Plugins
 
+[TOC levels=1-4]
+
 | **Ext plugins are deprecated for @product-ver@ and should only be used if
 | absolutely necessary. They are deployable to Liferay Portal 7.0 CE GA4+.**
 | 

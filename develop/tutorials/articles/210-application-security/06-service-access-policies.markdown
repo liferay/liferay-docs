@@ -4,6 +4,8 @@ header-id: service-access-policies
 
 # Service Access Policies
 
+[TOC levels=1-4]
+
 Service access policies are a layer of web service security on top of
 @product@'s remote services. Together with the permissions layer,
 service access policies limit remote service access by remote client

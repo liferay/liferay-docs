@@ -4,6 +4,8 @@ header-id: upgrading-layout-templates
 
 # Upgrading Layout Templates
 
+[TOC levels=1-4]
+
 Layout templates for @product-ver@ differ slightly from layout templates for
 Liferay Portal 6. The layout template's rows and columns are affected by Bootstrap's
 new grid system syntax.

@@ -4,6 +4,8 @@ header-id: overriding-language-keys
 
 # Overriding Language Keys
 
+[TOC levels=1-4]
+
 @product@ Core and portlet module `language*.properties` files implement site
 internationalization. They're fully customizable, too. This tutorial
 demonstrates this in the following topics:

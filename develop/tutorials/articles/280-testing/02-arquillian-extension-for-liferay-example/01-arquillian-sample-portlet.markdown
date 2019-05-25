@@ -4,6 +4,8 @@ header-id: arquillian-example-sample-portlet
 
 # Arquillian Example Sample Portlet
 
+[TOC levels=1-4]
+
 The sample portlet calculates the sum of two numbers. 
 
 ![Figure 1: The Arquillian Sample Portlet calculates the sum of two numbers.](../../../images/arquillian-example-portlet.png)

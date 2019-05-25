@@ -4,6 +4,8 @@ header-id: installing-liferay-screens-and-the-guestbook-mobile-sdk
 
 # Installing Liferay Screens and the Guestbook Mobile SDK
 
+[TOC levels=1-4]
+
 For your iOS app to work with the Guestbook portlet, you must install the 
 following in your iOS project: 
 

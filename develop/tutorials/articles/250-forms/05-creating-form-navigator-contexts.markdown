@@ -4,6 +4,8 @@ header-id: creating-form-navigator-contexts
 
 # Creating Form Navigator Contexts
 
+[TOC levels=1-4]
+
 Form Navigator System Settings let you specify what categories and sections are 
 visible in your forms. You can learn how to set Form Navigator 
 System Settings in [Configuring Form Navigator Forms](/docs/7-0/user/-/knowledge_base/u/configuring-form-navigator-forms). 

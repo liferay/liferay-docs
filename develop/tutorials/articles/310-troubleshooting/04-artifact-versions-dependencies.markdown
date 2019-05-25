@@ -4,6 +4,8 @@ header-id: identifying-liferay-artifact-versions-for-dependencies
 
 # Identifying Liferay Artifact Versions for Dependencies
 
+[TOC levels=1-4]
+
 When you're developing a @product@ application, it's often necessary to use 
 various @product@ APIs or tools. For example, you might want to create a Service 
 Builder application or use @product@'s message bus or asset framework. How can 

@@ -4,6 +4,8 @@ header-id: transitioning-from-portlet-preferences-to-the-configuration-api
 
 # Transitioning from Portlet Preferences to the Configuration API
 
+[TOC levels=1-4]
+
 This tutorial describes how to take an existing portlet developed for Liferay
 Portal 6.2 or prior, which uses portlet preferences to allow administrators to
 configure the portlet, and convert it to use the new Configuration API.

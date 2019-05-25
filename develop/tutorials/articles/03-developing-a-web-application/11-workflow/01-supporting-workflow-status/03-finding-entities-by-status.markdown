@@ -4,6 +4,8 @@ header-id: retrieving-guestbooks-and-entries-by-status
 
 # Retrieving Guestbooks and Entries by Status
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Supporting Workflow at the Service Layer<br>Step 3 of 3</p>
 </div>

@@ -4,6 +4,8 @@ header-id: writing-an-administrative-portlet
 
 # Writing an Administrative Portlet
 
+[TOC levels=1-4]
+
 Like the prototype, the real application lets users add and view guestbook 
 entries. The application's back-end, however, is much more powerful. It can 
 support many guestbooks and their associated entries. Despite this, there's no 

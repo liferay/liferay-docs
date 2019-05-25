@@ -4,6 +4,8 @@ header-id: using-the-npmresolver-api-in-your-portlets
 
 # Using the NPMResolver API in Your Portlets
 
+[TOC levels=1-4]
+
 If you're developing an npm-based portlet, your OSGi bundle's `package.json` is 
 a treasure-trove of information. It contains everything that's stored in the 
 npm registry about your bundle: default entry point, dependencies, modules, 

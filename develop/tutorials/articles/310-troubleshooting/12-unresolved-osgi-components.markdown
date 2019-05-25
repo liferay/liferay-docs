@@ -4,6 +4,8 @@ header-id: detecting-unresolved-osgi-components
 
 # Detecting Unresolved OSGi Components
 
+[TOC levels=1-4]
+
 @product@ includes 
 [Gogo shell](/docs/7-0/reference/-/knowledge_base/r/using-the-felix-gogo-shell) 
 commands that come in handy when trying to diagnose a problem due to an 

@@ -4,6 +4,8 @@ header-id: exporting-packages
 
 # Exporting Packages
 
+[TOC levels=1-4]
+
 An OSGi module's Java packages are private by default. To expose a package, you
 must explicitly export it. This way you share only the classes you want to
 share. Exporting a package in your OSGi module JAR's manifest makes all the

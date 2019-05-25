@@ -4,6 +4,8 @@ header-id: using-lexicon-icons-in-your-app
 
 # Using Lexicon Icons in Your App
 
+[TOC levels=1-4]
+
 Whether you're updating your app to @product-ver@ or writing a new 
 @product-ver@ app, follow the process here to use Lexicon's icons. 
 You can find the list of available Lexicon icons on the 

@@ -4,6 +4,8 @@ header-id: debugging-product-source-in-liferay-ide
 
 # Debugging @product@ Source in Liferay @ide@
 
+[TOC levels=1-4]
+
 You can use Liferay @ide@ to debug @product@ source code to help resolve errors.
 Debugging @product@ code follows most of the same techniques associated with
 debugging in Eclipse. If you need some help with general debugging, you can

@@ -4,6 +4,8 @@ header-id: creating-and-contributing-new-buttons-to-alloyeditor
 
 # Creating and Contributing new Buttons to AlloyEditor
 
+[TOC levels=1-4]
+
 It is possible to add additional AlloyEditor functionality through OSGi bundles. 
 This tutorial demonstrates how to add a button to the editor.
 

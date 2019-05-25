@@ -4,6 +4,8 @@ header-id: implementing-the-management-bar-display-styles
 
 # Implementing the Management Bar Display Styles
 
+[TOC levels=1-4]
+
 The Management Bar offers a few display styles for your app's search container 
 contents: descriptive, icon, and list. These views are standard in @product@'s 
 control panel apps. While you are not required to implement all these display 

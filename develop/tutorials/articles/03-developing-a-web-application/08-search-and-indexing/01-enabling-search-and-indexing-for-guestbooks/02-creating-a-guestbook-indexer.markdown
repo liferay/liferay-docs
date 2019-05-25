@@ -4,6 +4,8 @@ header-id: creating-a-guestbook-indexer
 
 # Creating a Guestbook Indexer
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Enabling Search and Indexing for Guestbooks<br>Step 2 of 3</p>
 </div>

@@ -4,6 +4,8 @@ header-id: theming-portlets
 
 # Theming Portlets
 
+[TOC levels=1-4]
+
 @product@ themes can provide additional styles to a portlet. You can change the
 markup for the portlet containers by modifying the `portlet.ftl` file.
 

@@ -4,6 +4,8 @@ header-id: creating-a-user-interface
 
 # Creating a User Interface
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Writing the Guestbook Admin App<br>Step 5 of 5</p>
 </div>

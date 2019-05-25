@@ -4,6 +4,8 @@ header-id: upgrading-a-servlet-based-portlet
 
 # Upgrading a Servlet-based Portlet
 
+[TOC levels=1-4]
+
 Servlet-based portlets have little overhead and are easy to upgrade. This
 tutorial shows you how to upgrade them and refers to code from before and after
 upgrading a sample servlet-based portlet called *Sample JSON* (project

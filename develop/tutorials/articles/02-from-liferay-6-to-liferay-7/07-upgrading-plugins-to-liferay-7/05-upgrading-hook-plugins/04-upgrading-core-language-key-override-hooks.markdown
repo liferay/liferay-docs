@@ -4,6 +4,8 @@ header-id: upgrading-core-language-key-hooks
 
 # Upgrading Core Language Key Hooks
 
+[TOC levels=1-4]
+
 Here are the steps for upgrading a core language key hook to @product-ver@. 
 
 1.  Create a new module based on the Blade sample `resource-bundle` in 

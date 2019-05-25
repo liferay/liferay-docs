@@ -4,6 +4,8 @@ header-id: adding-offline-mode-support-to-your-android-screenlet
 
 # Adding Offline Mode Support to Your Android Screenlet
 
+[TOC levels=1-4]
+
 Offline mode lets Screenlets function without a network connection. For offline 
 mode to work with your Screenlet, you must manually add support for it. 
 Fortunately, Liferay Screens 2.0 introduced a simpler way of implementing 

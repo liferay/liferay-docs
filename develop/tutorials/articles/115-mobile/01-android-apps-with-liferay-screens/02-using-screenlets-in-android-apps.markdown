@@ -4,6 +4,8 @@ header-id: using-screenlets-in-android-apps
 
 # Using Screenlets in Android Apps
 
+[TOC levels=1-4]
+
 You can start using Screenlets once you've
 [prepared](/docs/7-0/tutorials/-/knowledge_base/t/preparing-android-projects-for-liferay-screens)
 your project to use Liferay Screens. There are plenty of Liferay Screenlets

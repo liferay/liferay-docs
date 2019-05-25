@@ -4,6 +4,8 @@ header-id: maven-workspace
 
 # Maven Workspace
 
+[TOC levels=1-4]
+
 A Liferay Maven Workspace is a generated environment that is built to hold and
 manage Liferay projects built with Maven. This workspace aids in Liferay project
 management by applying various Maven plugins and configured properties. The

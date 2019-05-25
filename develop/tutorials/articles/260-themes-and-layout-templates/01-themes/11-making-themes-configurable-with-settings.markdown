@@ -4,6 +4,8 @@ header-id: making-themes-configurable-with-settings
 
 # Making Themes Configurable with Settings
 
+[TOC levels=1-4]
+
 Theme settings let site administrators control the look and feel of certain 
 aspects of a theme. For example, you can create a theme setting to control the 
 visibility of theme elements, such as only showing a site banner when the user 

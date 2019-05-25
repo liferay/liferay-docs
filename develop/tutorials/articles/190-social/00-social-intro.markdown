@@ -4,6 +4,8 @@ header-id: social
 
 # Social
 
+[TOC levels=1-4]
+
 @product@'s social framework lets users provide feedback on content, share that
 content with others across social networks, and subscribe to notifications on
 content, so they can stay up to date on the latest and greatest that you have to

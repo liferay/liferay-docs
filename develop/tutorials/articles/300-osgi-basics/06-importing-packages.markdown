@@ -4,6 +4,8 @@ header-id: importing-packages
 
 # Importing Packages
 
+[TOC levels=1-4]
+
 Your modules will often need to use Java classes from packages
 [exported](/docs/7-0/tutorials/-/knowledge_base/t/exporting-packages) by other
 modules. When a module is set up to import, the OSGi framework finds other

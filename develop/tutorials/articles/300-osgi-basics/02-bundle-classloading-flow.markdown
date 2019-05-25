@@ -4,6 +4,8 @@ header-id: bundle-classloading-flow
 
 # Bundle Classloading Flow
 
+[TOC levels=1-4]
+
 The OSGi container searches several places for imported classes. It's important
 to know where it looks and in what order. @product@'s classloading flow for OSGi
 bundles follows the OSGi Core specification. It's straightforward, but complex.

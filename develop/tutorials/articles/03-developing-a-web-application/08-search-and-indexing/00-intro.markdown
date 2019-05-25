@@ -4,6 +4,8 @@ header-id: leveraging-search
 
 # Leveraging Search
 
+[TOC levels=1-4]
+
 Now you have working Guestbook and Guestbook Admin portlets. The Guestbook 
 portlet lets users add, edit, delete, and configure permissions for guestbook 
 entries. The Guestbook Admin portlet lets site administrators create, edit, 

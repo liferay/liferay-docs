@@ -4,6 +4,8 @@ header-id: unit-testing-with-junit
 
 # Unit Testing with JUnit
 
+[TOC levels=1-4]
+
 Test driven development is a best practice for any developer. Unit tests verify
 and validate functionality of classes and methods in isolation by "mocking" 
 external dependencies. One of the most widely-used tools for test driven

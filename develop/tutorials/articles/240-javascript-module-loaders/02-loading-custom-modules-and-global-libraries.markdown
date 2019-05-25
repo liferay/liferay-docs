@@ -4,6 +4,8 @@ header-id: configuring-modules-for-products-loaders
 
 # Configuring Modules for @product@'s Loaders
 
+[TOC levels=1-4]
+
 To load your modules in @product@, you need to know when they are needed, where 
 they are located at build time, if you want to bundle them together or load them 
 independently, and you must assemble them at runtime. Keeping track of all these 

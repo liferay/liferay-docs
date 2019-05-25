@@ -4,6 +4,8 @@ header-id: creating-layouts-inside-custom-portlets
 
 # Creating Layouts inside Custom Portlets
 
+[TOC levels=1-4]
+
 Page layout tags let you create layouts using Bootstrap 3 within your portlets.
 
 This tutorial explains the `<aui:*>` tags that developers can use to create 

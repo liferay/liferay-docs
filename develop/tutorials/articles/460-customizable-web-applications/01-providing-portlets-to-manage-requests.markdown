@@ -4,6 +4,8 @@ header-id: providing-portlets-to-manage-requests
 
 # Providing Portlets to Manage Requests
 
+[TOC levels=1-4]
+
 In this tutorial, you'll learn how to declare an entity type and action for a
 desired function, and you'll create a module that finds the correct application
 (portlet) to use based on those given parameters.

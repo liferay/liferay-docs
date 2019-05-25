@@ -4,6 +4,8 @@ header-id: spring-mvc
 
 # Spring MVC
 
+[TOC levels=1-4]
+
 Liferay is an open platform in an ecosystem of open platforms. Just because
 Liferay has its own [MVC framework](/docs/7-0/tutorials/-/knowledge_base/t/liferay-mvc-portlet),
 therefore, doesn't mean you have to use it. It is perfectly valid to bring the

@@ -4,6 +4,8 @@ header-id: adding-new-behavior-to-an-editor
 
 # Adding New Behavior to an Editor
 
+[TOC levels=1-4]
+
 With the support of several kinds of WYSIWYG editors, Liferay gives you many
 options to support your users' editing needs. Sometimes, however, you can't get
 what you want with configuration alone. To help developers in these situations,

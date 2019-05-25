@@ -4,6 +4,8 @@ header-id: creating-the-entries-scene
 
 # Creating the Entries Scene
 
+[TOC levels=1-4]
+
 Currently, the login and guestbooks scenes are the only two scenes in your app. 
 The login scene contains Login Screenlet, and you'll put Guestbook List 
 Screenlet in the guestbooks scene. Before you can use Entry List Screenlet, you 

@@ -4,6 +4,8 @@ header-id: creating-staged-models
 
 # Creating Staged Models
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Enabling Staging and Export/Import<br>Step 1 of 7</p>
 </div>

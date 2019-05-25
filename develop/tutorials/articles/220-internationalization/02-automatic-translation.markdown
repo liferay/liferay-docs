@@ -4,6 +4,8 @@ header-id: automatically-generating-language-files
 
 # Automatically Generating Language Files
 
+[TOC levels=1-4]
+
 If you already have a `Language.properties` file that holds
 [language keys for your user interface messages](/docs/7-0/tutorials/-/knowledge_base/t/localizing-your-application),
 or even a language module that holds these keys, you're in the right place.

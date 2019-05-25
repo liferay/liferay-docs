@@ -4,6 +4,8 @@ header-id: creating-the-screenlet-class-ios
 
 # Creating the Screenlet Class
 
+[TOC levels=1-4]
+
 Recall that the Screenlet class is the main component that governs the 
 Screenlet's behavior. Also recall that a list Screenlet's class must do the 
 following: 

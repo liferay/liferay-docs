@@ -4,6 +4,8 @@ header-id: creating-a-theme-thumbnail
 
 # Creating a Theme Thumbnail
 
+[TOC levels=1-4]
+
 Theme thumbnails help users quickly identify your theme. It's especially
 important to provide thumbnails when your theme offers 
 [color schemes](/docs/7-0/tutorials/-/knowledge_base/t/specifying-color-schemes). 

@@ -4,6 +4,8 @@ header-id: theme-contributors
 
 # Theme Contributors
 
+[TOC levels=1-4]
+
 If you want to package UI resources independent of a specific theme and
 include them on a @product@ page, Theme Contributors are your best option. If,
 instead, you'd like to include separate UI resources on a @product@ page that

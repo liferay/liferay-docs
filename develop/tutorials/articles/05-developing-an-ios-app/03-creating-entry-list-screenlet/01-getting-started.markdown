@@ -4,6 +4,8 @@ header-id: getting-started-with-entry-list-screenlet-ios
 
 # Getting Started with Entry List Screenlet
 
+[TOC levels=1-4]
+
 Like Guestbook List Screenlet, you'll create Entry List Screenlet in its own 
 folder inside your app's project. Create this folder now: 
 

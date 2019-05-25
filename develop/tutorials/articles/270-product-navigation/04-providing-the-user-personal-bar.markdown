@@ -4,6 +4,8 @@ header-id: providing-the-user-personal-bar
 
 # Providing the User Personal Bar
 
+[TOC levels=1-4]
+
 Liferay offers a touch of personability with the User Personal Bar. This
 navigation menu is used to display options that are unique to the current logged
 in user. By default, Liferay displays this menu as a simple avatar button that

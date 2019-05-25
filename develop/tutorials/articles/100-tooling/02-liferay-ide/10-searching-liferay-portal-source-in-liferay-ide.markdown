@@ -4,6 +4,8 @@ header-id: searching-product-source-in-liferay-ide
 
 # Searching @product@ Source in Liferay @ide@
 
+[TOC levels=1-4]
+
 In Liferay @ide@, you can search through @product@'s source code to aid in the
 development of your project. Liferay provides great resources to help with
 development (e.g., official documentation,

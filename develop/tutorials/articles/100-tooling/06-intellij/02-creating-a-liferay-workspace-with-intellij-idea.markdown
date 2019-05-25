@@ -4,6 +4,8 @@ header-id: creating-a-liferay-workspace-with-intellij-idea
 
 # Creating a Liferay Workspace with IntelliJ IDEA
 
+[TOC levels=1-4]
+
 In this tutorial, you'll learn how to generate a Liferay Workspace using
 IntelliJ IDEA, which runs on
 [Blade CLI](/docs/7-0/tutorials/-/knowledge_base/t/blade-cli) behind the

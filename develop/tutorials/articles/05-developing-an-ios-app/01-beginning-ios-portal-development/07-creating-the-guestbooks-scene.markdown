@@ -4,6 +4,8 @@ header-id: creating-the-guestbooks-scene
 
 # Creating the Guestbooks Scene
 
+[TOC levels=1-4]
+
 In the previous article, you used Login Screenlet to implement authentication in 
 the login scene. Now you must create the scene you want the user to see 
 following login: the guestbooks scene. Later in this Learning Path, you'll 

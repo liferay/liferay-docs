@@ -4,6 +4,8 @@ header-id: javascript-in-liferay
 
 # JavaScript in @product@
 
+[TOC levels=1-4]
+
 @product@'s front-end is extendable, flexible, and future ready.
 
 Like previous versions, many components are written using [AlloyUI](http://alloyui.com).

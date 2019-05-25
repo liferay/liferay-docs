@@ -4,6 +4,8 @@ header-id: fitting-it-all-together
 
 # Fitting it All Together
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Refactoring the Prototype<br>Step 6 of 6</p>
 </div>

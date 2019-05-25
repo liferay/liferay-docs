@@ -4,6 +4,8 @@ header-id: applying-lexicon-patterns-to-forms-navigation-and-search
 
 # Applying Lexicon Patterns to Your Forms, Navigation, and Search
 
+[TOC levels=1-4]
+
 This tutorial covers how to leverage Lexicon patterns in your app's forms, 
 navigation, and search results to make them more user-friendly.
 

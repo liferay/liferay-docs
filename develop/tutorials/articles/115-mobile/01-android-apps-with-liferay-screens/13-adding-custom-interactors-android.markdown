@@ -4,6 +4,8 @@ header-id: adding-custom-interactors-to-android-screenlets
 
 # Adding Custom Interactors to Android Screenlets
 
+[TOC levels=1-4]
+
 Interactors are Screenlet components that implement server communication for a 
 specific use case. For example, the Login Screenlet's interactor calls the 
 Liferay Mobile SDK service that authenticates a user to the portal. Similarly, 

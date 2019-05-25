@@ -4,6 +4,8 @@ header-id: liferay-themedisplay
 
 # Liferay ThemeDisplay
 
+[TOC levels=1-4]
+
 In Java, developers are used to being able to find lots of context information
 at runtime. You can learn about what user is browsing your application, what
 page it's on, what site it's in, and lots more. Wouldn't it be great if you

@@ -4,6 +4,8 @@ header-id: creating-an-mvc-portlet
 
 # Creating an MVC Portlet
 
+[TOC levels=1-4]
+
 You're convinced that Liferay's MVC Framework is right for you, and you want to learn how to configure it.
 
 You'll need:

@@ -4,6 +4,8 @@ header-id: configuration
 
 # Configuration
 
+[TOC levels=1-4]
+
 Many applications provide users a way of setting preferences for their use. In
 @product@, this could be as simple as setting a location for a weather display
 or as complex as settings for a mail or a time sheet application. 

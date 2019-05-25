@@ -4,6 +4,8 @@ header-id: jsp-overrides-using-dynamic-includes
 
 # Customizing JSPs with Dynamic Includes
 
+[TOC levels=1-4]
+
 The
 [`liferay-util:dynamic-include` tag](@platform-ref@/7.0-latest/taglibs/util-taglib/liferay-util/dynamic-include.html)
 is an extension point for inserting content (e.g., JavaScript code, HTML, and

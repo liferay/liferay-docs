@@ -4,6 +4,8 @@ header-id: how-liferay-portal-exposes-configuration-for-amd
 
 # Understanding How @product@ Exposes Configuration For Liferay AMD Loader
 
+[TOC levels=1-4]
+
 **NOTE:** This tutorial is for users who know how Liferay AMD Loader works under 
 the hood. You can learn more about Liferay AMD Loader in the 
 [Liferay AMD Module Loader](/docs/7-0/tutorials/-/knowledge_base/t/liferay-amd-module-loader) 

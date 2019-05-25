@@ -4,6 +4,8 @@ header-id: rendering-an-asset
 
 # Rendering an Asset
 
+[TOC levels=1-4]
+
 There are several options you have for rendering an asset in @product@. Before
 setting up the rendering process for your asset, make sure it's added to the
 asset framework by following the

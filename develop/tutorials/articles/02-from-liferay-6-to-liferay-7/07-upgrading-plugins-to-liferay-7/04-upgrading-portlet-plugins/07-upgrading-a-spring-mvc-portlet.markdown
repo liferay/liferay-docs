@@ -4,6 +4,8 @@ header-id: upgrading-a-spring-mvc-portlet
 
 # Upgrading a Spring MVC portlet
 
+[TOC levels=1-4]
+
 The [Spring Portlet MVC framework](https://docs.spring.io/spring/docs/current/spring-framework-reference/html/portlet.html)
 facilitates injecting dependencies and implementing the Model View Controller
 pattern in portlets. If you use this framework in a portlet for Liferay Portal

@@ -4,6 +4,8 @@ header-id: setting-proxy-requirements-for-liferay-ide
 
 # Setting Proxy Requirements for Liferay @ide@
 
+[TOC levels=1-4]
+
 If you have proxy server requirements and want to configure your http(s) proxy		
 to work with Liferay @ide@, follow the instructions below.
 

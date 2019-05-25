@@ -4,6 +4,8 @@ header-id: refactoring-the-prototype
 
 # Refactoring the Prototype
 
+[TOC levels=1-4]
+
 In an earlier section of this Learning Path, you created a Guestbook portlet 
 prototype. Then you wrote a `service.xml` file to define your application's data 
 model, and used Service Builder to generate the back-end code (the model, 

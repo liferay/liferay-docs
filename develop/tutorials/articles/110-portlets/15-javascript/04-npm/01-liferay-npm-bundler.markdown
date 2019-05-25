@@ -4,6 +4,8 @@ header-id: liferay-npm-bundler
 
 # liferay-npm-bundler
 
+[TOC levels=1-4]
+
 The liferay-npm-bundler is a bundler (like [Webpack](https://webpack.github.io/) 
 or [Browserify](http://browserify.org/)) that targets @product@ as a platform 
 and assumes you're using your npm packages from portlets (as opposed to typical

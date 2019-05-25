@@ -4,6 +4,8 @@ header-id: selecting-entities-using-the-item-selector
 
 # Selecting Entities Using the Item Selector
 
+[TOC levels=1-4]
+
 The Item Selector allows users to select entities, such as images, videos,
 documents, and sites. 
 

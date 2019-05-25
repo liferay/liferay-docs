@@ -4,6 +4,8 @@ header-id: creating-complex-lists-in-your-list-screenlet
 
 # Creating Complex Lists in Your List Screenlet
 
+[TOC levels=1-4]
+
 Most list Screenlets' Themes use 
 [iOS's `UITableView`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableView_Class/) 
 to display simple lists. Although `UITableView` is great for this, it's not so 

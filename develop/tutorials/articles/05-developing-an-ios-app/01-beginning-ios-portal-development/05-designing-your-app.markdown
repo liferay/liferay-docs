@@ -4,6 +4,8 @@ header-id: designing-your-app-ios
 
 # Designing Your App
 
+[TOC levels=1-4]
+
 As a developer, you know that developing any kind of app without an overall 
 design goal and plan to implement it is a recipe for disaster. To avoid this, 
 you need to decide some things upfront. The Liferay Guestbook app needs a 

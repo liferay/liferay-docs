@@ -4,6 +4,8 @@ header-id: lexicon-and-themes
 
 # Lexicon CSS and Themes
 
+[TOC levels=1-4]
+
 Lexicon CSS is an extension of Bootstrap's CSS Framework. Bootstrap is by far 
 the most popular CSS framework on the web. Also, it's open source, so anyone can 
 use it. Built with Sass, Lexicon CSS fills the front-end gaps between Bootstrap 

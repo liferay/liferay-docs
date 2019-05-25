@@ -4,6 +4,8 @@ header-id: upgrading-your-theme-from-6-1-to-7-0
 
 # Upgrading Your Theme from Liferay Portal 6.1 to 7.0
 
+[TOC levels=1-4]
+
 This tutorial guides you through the process of upgrading your 6.1 theme to run 
 on @product-ver@.
 

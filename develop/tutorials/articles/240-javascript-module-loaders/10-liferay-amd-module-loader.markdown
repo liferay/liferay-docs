@@ -4,6 +4,8 @@ header-id: liferay-amd-module-loader
 
 # Liferay AMD Module Loader
 
+[TOC levels=1-4]
+
 The [Liferay AMD Module Loader](https://github.com/liferay/liferay-amd-loader#amd-module-loader) 
 is a JavaScript  module loader.
 

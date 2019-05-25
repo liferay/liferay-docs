@@ -4,6 +4,8 @@ header-id: liferay-forms
 
 # Liferay Forms
 
+[TOC levels=1-4]
+
 Many modern websites rely on forms for their functionality. Liferay's Forms
 application is maturing rapidly, offering [rich out-of-the-box
 functionality](/docs/7-0/user/-/knowledge_base/u/collecting-information-from-users).

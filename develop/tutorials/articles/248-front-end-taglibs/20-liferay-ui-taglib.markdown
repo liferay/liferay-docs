@@ -4,6 +4,8 @@ header-id: using-the-liferay-ui-taglib
 
 # Using the Liferay UI Taglib
 
+[TOC levels=1-4]
+
 You can create a lot of components using the Liferay UI taglibs. @product@'s 
 taglibs provide the following benefits to your markup:
 

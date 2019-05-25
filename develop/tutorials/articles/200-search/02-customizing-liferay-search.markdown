@@ -4,6 +4,8 @@ header-id: customizing-liferay-search
 
 # Customizing Liferay Search
 
+[TOC levels=1-4]
+
 There are several extension points available for users to customize.  The most
 obvious is the ability to add a new search engine adapter.
 

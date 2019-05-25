@@ -4,6 +4,8 @@ header-id: creating-guestbook-list-screenlets-interactor
 
 # Creating Guestbook List Screenlet's Interactor
 
+[TOC levels=1-4]
+
 *Interactors* are Screenlet components that make server calls and process the 
 results. Interactors themselves are made up of several components: 
 

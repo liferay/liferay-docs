@@ -4,6 +4,8 @@ header-id: add-a-screenlet-delegate
 
 # Add a Screenlet Delegate
 
+[TOC levels=1-4]
+
 Screenlet delegates let other classes respond to your Screenlet's actions. For 
 example, 
 [Login Screenlet's delegate](/docs/7-0/reference/-/knowledge_base/r/loginscreenlet-for-ios#delegate) 

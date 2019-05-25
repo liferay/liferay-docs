@@ -4,6 +4,8 @@ header-id: generating-web-services
 
 # Generating Web Services
 
+[TOC levels=1-4]
+
 Assets opened the door to support many features of @product@'s development
 framework. There's more to cover, but the Guestbook app's back-end is now mature 
 enough to widen its appeal. 

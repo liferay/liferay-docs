@@ -4,6 +4,8 @@ header-id: displaying-messages-and-errors
 
 # Displaying Messages and Errors
 
+[TOC levels=1-4]
+
 When users interact with your application, they perform tasks it defines, like 
 saving or editing things. The Guestbook application is no different. Your 
 application should also provide feedback on these operations so users can know 

@@ -4,6 +4,8 @@ header-id: creating-custom-item-selector-views
 
 # Creating Custom Item Selector Views
 
+[TOC levels=1-4]
+
 Have you found you need to create a new selection view for your app? No problem.
 Item Selector views are determined by the type of entity the user is selecting.
 The Item Selector can render multiple views for the same entity type. For

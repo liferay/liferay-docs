@@ -4,6 +4,8 @@ header-id: implementing-asset-categorization-and-tagging
 
 # Implementing Asset Categorization and Tagging
 
+[TOC levels=1-4]
+
 In this tutorial, you'll allow content authors the ability to specify tags and
 categories for their entities in the UI. Liferay provides a set of JSP tags for
 showing category and tag inputs in your UI. Before beginning, your entities

@@ -4,6 +4,8 @@ header-id: implementing-a-management-bar-sort-filter
 
 # Implementing a Management Bar Sort Filter
 
+[TOC levels=1-4]
+
 The Management Bar Sort Filters let you compare entries for a search container 
 field, and sort them by ascending or descending. To do this, you must create a 
 comparator class for each field that you want to sort.

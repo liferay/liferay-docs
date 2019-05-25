@@ -4,6 +4,8 @@ header-id: using-resources-and-permissions
 
 # Using Resources and Permissions
 
+[TOC levels=1-4]
+
 You now have an application that uses the database for data storage. This is a
 great foundation to build on. What comes next? What if users want a Guestbook 
 that's limited to certain trusted people? To do that, you have to implement 

@@ -4,6 +4,8 @@ header-id: using-entry-list-screenlet
 
 # Using Entry List Screenlet
 
+[TOC levels=1-4]
+
 You'll use Entry List Screenlet by following the same steps to use any 
 Screenlet: insert the Screenlet's XML in an activity or fragment layout, and 
 then implement the Screenlet's listener in the activity or fragment class. 

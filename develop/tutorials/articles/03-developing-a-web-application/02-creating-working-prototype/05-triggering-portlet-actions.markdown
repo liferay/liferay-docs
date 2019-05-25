@@ -4,6 +4,8 @@ header-id: triggering-portlet-actions
 
 # Triggering Portlet Actions
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Developing Your First Portlet<br>Step 5 of 8</p>
 </div>

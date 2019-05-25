@@ -4,6 +4,8 @@ header-id: development-setup-overview
 
 # Development Setup Overview
 
+[TOC levels=1-4]
+
 <div class="learn-path-step">
     <p>Development Setup Overview<br>Step 1 of 1</p>
 </div>

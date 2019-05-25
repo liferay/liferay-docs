@@ -4,6 +4,8 @@ header-id: javascript-utilities
 
 # @product@ JavaScript Utilities
 
+[TOC levels=1-4]
+
 This tutorial explains some of the utility methods and objects inside the 
 `Liferay` global JavaScript object.
 

@@ -4,6 +4,8 @@ header-id: creating-a-fragment-for-entry-list-screenlet
 
 # Creating a Fragment for Entry List Screenlet
 
+[TOC levels=1-4]
+
 Using a fragment for Entry List Screenlet lets you swap out part of 
 `GuestbookActivity`'s contents without recreating the entire activity from 
 scratch each time a guestbook is selected. Your app doesn't currently have any 

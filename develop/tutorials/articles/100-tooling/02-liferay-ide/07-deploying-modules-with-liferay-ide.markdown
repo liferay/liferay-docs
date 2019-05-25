@@ -4,6 +4,8 @@ header-id: deploying-modules-with-liferay-ide
 
 # Deploying Modules with Liferay @ide@
 
+[TOC levels=1-4]
+
 Deploying modules in Liferay @ide@ is a cinch. Before deploying your module,
 make sure you have a Liferay server configured in @ide@. To see how to do this,
 see the

@@ -4,6 +4,8 @@ header-id: building-themes-in-a-maven-project
 
 # Building Themes in a Maven Project
 
+[TOC levels=1-4]
+
 Liferay's Theme Builder is a tool used to build @product@ theme files in your
 project. You can incorporate the Theme Builder into your Maven project to
 generate WAR-style themes deployable to @product@. To learn more about theming

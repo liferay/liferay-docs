@@ -4,6 +4,8 @@ header-id: adding-updating-and-deleting-assets-for-custom-entities
 
 # Adding, Updating, and Deleting Assets for Custom Entities
 
+[TOC levels=1-4]
+
 To use Liferay's asset framework with an entity, you must inform the 
 asset framework about each entity instance you create, modify, and delete. In
 this sense, it's similar to informing Liferay's permissions framework about a

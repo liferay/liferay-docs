@@ -4,6 +4,8 @@ header-id: adding-liferay-npm-bundler-to-your-portlet
 
 # Adding liferay-npm-bundler to Your Portlet
 
+[TOC levels=1-4]
+
 Adding liferay-npm-bundler to your portlet involves installing the package via
 npm and adding it to your npm build process. 
 

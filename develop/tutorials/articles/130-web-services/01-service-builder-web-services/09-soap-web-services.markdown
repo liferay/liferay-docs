@@ -4,6 +4,8 @@ header-id: soap-web-services
 
 # SOAP Web Services
 
+[TOC levels=1-4]
+
 You can access Liferay's web services via Simple Object Access Protocol (SOAP) 
 over HTTP. The packaging protocol is SOAP, and the transport protocol is HTTP. 
 

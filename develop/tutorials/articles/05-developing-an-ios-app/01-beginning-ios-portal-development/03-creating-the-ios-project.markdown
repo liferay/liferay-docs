@@ -4,6 +4,8 @@ header-id: creating-the-ios-project
 
 # Creating the iOS Project
 
+[TOC levels=1-4]
+
 Now that you've built the Guestbook Mobile SDK, you're ready to create the 
 Guestbook iOS app. This article walks you through the steps required to 
 create the app's project in Xcode. After this, you'll be ready to install the 

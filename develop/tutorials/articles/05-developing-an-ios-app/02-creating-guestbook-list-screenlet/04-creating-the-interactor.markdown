@@ -4,6 +4,8 @@ header-id: creating-guestbook-list-screenlets-interactor-ios
 
 # Creating Guestbook List Screenlet's Interactor
 
+[TOC levels=1-4]
+
 Interactors implement your Screenlet's actions. In non-list Screenlets, this can 
 include making the server call. List Screenlets, however, make server calls via 
 Connectors. Also, loading entities is usually the only action a user can take in 

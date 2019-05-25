@@ -4,6 +4,8 @@ header-id: preparing-your-javascript-files-for-es2015
 
 # Preparing Your JavaScript Files for ES2015
 
+[TOC levels=1-4]
+
 To use the ES2015 syntax in a JavaScript file, add the extension `.es` to its
 name. For example, you rename file `filename.js` to `filename.es.js`. The
 extension indicates it uses ES2015 syntax and must therefore be transpiled by

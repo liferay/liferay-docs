@@ -4,6 +4,8 @@ header-id: generating-new-projects-using-archetypes
 
 # Generating New Projects Using Archetypes
 
+[TOC levels=1-4]
+
 Creating Maven projects from scratch can be a lot of work. What dependencies
 does my Liferay portlet project need? What does a Liferay Maven Service Builder
 project look like? How do I create a Liferay Maven-based context contributor?

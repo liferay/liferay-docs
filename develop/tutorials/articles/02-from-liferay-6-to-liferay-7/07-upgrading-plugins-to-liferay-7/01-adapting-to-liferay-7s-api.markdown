@@ -4,6 +4,8 @@ header-id: adapting-to-liferay-7s-api-with-the-code-upgrade-tool
 
 # Adapting to @product-ver@'s API with the Code Upgrade Tool
 
+[TOC levels=1-4]
+
 | **Note:** This tutorial assumes you're using Liferay @ide@ 3.1.x or 3.2.x. You
 | can use later versions of the Code Upgrade Tool to upgrade your 6.2 plugins to
 | @product-ver@, but the option to upgrade a Liferay Plugins SDK 6.2 to 7.0 is no

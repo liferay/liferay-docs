@@ -4,6 +4,8 @@ header-id: using-front-end-code-assist-features-in-ide
 
 # Using Front-End Code Assist Features in @ide@
 
+[TOC levels=1-4]
+
 Liferay @ide@ provides extended front-end development tools to assist in Liferay
 development. You now have access to code inferencing and code completion
 features for AlloyUI, JavaScript, CSS, and jQuery. 

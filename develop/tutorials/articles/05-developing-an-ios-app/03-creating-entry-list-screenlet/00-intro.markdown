@@ -4,6 +4,8 @@ header-id: creating-entry-list-screenlet-ios
 
 # Creating Entry List Screenlet
 
+[TOC levels=1-4]
+
 In the previous section, you created Guestbook List Screenlet to retrieve and
 display guestbooks from the Guestbook portlet. You still need a way to retrieve
 and display each guestbook's entries, though. You'll do this by creating another
