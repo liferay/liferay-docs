@@ -4,6 +4,8 @@ header-id: module-jsp-override
 
 # Module JSP Override
 
+[TOC levels=1-4]
+
 The Module JSP Override sample conveys Liferay's recommended approach to
 override an application's JSP by leveraging OSGi fragment modules. This example
 overrides the default `login.jsp` file in the `com.liferay.login.web` bundle by

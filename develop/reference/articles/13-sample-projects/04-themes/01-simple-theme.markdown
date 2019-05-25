@@ -4,6 +4,8 @@ header-id: theme
 
 # Simple Theme
 
+[TOC levels=1-4]
+
 The Simple Theme sample provides the base files for a theme, using the
 [Theme Builder Gradle plugin](/docs/7-0/reference/-/knowledge_base/r/theme-builder-gradle-plugin).
 When deploying this sample with no customizations, a theme based off of the 

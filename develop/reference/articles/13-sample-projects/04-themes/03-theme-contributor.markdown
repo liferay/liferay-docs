@@ -4,6 +4,8 @@ header-id: theme-contributor
 
 # Theme Contributor
 
+[TOC levels=1-4]
+
 The Theme Contributor sample contributes updates to the UI of the theme
 body, Control Menu, Product Menu, and Simulation Panel. When deploying this
 sample with no customizations, the colors of the theme and aforementioned menus

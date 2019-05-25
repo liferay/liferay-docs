@@ -4,6 +4,8 @@ header-id: core-jsp-hook
 
 # Core JSP Override
 
+[TOC levels=1-4]
+
 The Core JSP Override sample lets you override core/kernel JSPs by adding them
 to the module's `META-INF/jsps` folder. This module overrides the @product@'s
 `bottom.jsp` file by inserting the `bottom-ext.jsp` file in the

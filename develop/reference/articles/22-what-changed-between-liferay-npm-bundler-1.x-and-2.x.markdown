@@ -4,6 +4,8 @@ header-id: changes-between-liferay-npm-bundler-1-and-2
 
 # What Changed Between Liferay npm Bundler 1.x and 2.x
 
+[TOC levels=1-4]
+
 This reference doc outlines the key changes between liferay-npm-bundler version 
 1.x and 2.x.
 

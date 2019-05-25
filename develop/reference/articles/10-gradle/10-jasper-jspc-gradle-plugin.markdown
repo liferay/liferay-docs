@@ -4,6 +4,8 @@ header-id: jasper-jspc-gradle-plugin
 
 # Jasper JSPC Gradle Plugin
 
+[TOC levels=1-4]
+
 The Jasper JSPC Gradle plugin lets you run the [Liferay Jasper JSPC](https://github.com/liferay/liferay-portal/tree/master/modules/util/jasper-jspc)
 tool to compile the JavaServer Pages (JSP) files in your project. This
 can be useful to

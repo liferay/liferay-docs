@@ -4,6 +4,8 @@ header-id: isomorphic-npm-portlet
 
 # Isomorphic npm Portlet
 
+[TOC levels=1-4]
+
 The Isomorphic npm Portlet sample provides a portlet that uses
 [isomorphic](https://en.wikipedia.org/wiki/Isomorphic_JavaScript) code (i.e.,
 can run from client and/or server side) on the client side. 

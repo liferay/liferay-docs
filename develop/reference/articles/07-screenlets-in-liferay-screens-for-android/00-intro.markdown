@@ -4,6 +4,8 @@ header-id: screenlets-in-liferay-screens-for-android
 
 # Screenlets in Liferay Screens for Android
 
+[TOC levels=1-4]
+
 Liferay Screens for Android contains several Screenlets that you can use in your 
 Android apps. This section contains the reference documentation for each. If 
 you're looking for instructions on using Screens, see the 

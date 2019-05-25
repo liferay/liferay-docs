@@ -4,6 +4,8 @@ header-id: gulp-gradle-plugin
 
 # Gulp Gradle Plugin
 
+[TOC levels=1-4]
+
 The Gulp Gradle plugin lets you run [Gulp](http://gulpjs.com/) tasks as part of
 your build.
 

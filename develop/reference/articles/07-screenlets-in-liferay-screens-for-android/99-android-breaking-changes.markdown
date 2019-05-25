@@ -4,6 +4,8 @@ header-id: android-breaking-changes
 
 # Android Breaking Changes
 
+[TOC levels=1-4]
+
 This document presents a list of changes in Liferay Screens for Android 2.0 that 
 break preceding functionality. We try our best to minimize these disruptions, 
 but sometimes they are unavoidable. 

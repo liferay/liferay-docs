@@ -4,6 +4,8 @@ header-id: finding-liferay-api-modules
 
 # Liferay API Modules
 
+[TOC levels=1-4]
+
 The following table maps commonly used @product@ components to their API modules
 and key classes. You 
 [configure dependencies](/docs/7-0/tutorials/-/knowledge_base/t/configuring-dependencies) 

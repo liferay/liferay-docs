@@ -4,6 +4,8 @@ header-id: development-reference
 
 # Development Reference
 
+[TOC levels=1-4]
+
 Here you'll find reference documentation for @product@, Liferay Screens, Liferay
 Faces, and technologies related to you as a third-party developer.
 

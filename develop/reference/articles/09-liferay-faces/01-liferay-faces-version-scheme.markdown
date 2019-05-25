@@ -4,6 +4,8 @@ header-id: liferay-faces-version-scheme
 
 # Liferay Faces Version Scheme
 
+[TOC levels=1-4]
+
 In this article, you'll learn which Liferay Faces artifacts should be used with
 your portlet and explore the Liferay Faces versioning scheme by discovering what
 each component of a version means. Once you have the versioning scheme mastered,

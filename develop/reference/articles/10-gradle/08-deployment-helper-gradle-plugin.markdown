@@ -4,6 +4,8 @@ header-id: deployment-helper-gradle-plugin
 
 # Deployment Helper Gradle Plugin
 
+[TOC levels=1-4]
+
 The Deployment Helper Gradle plugin lets you run the [Liferay Deployment Helper](https://github.com/liferay/liferay-portal/tree/master/modules/util/deployment-helper)
 tool to create a cluster deployable WAR from your OSGi artifacts.
 

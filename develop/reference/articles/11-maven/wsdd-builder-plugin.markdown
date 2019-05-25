@@ -4,6 +4,8 @@ header-id: wsdd-builder-plugin
 
 # WSDD Builder Plugin
 
+[TOC levels=1-4]
+
 The WSDD Builder plugin lets you generate the
 [Apache Axis](http://axis.apache.org/axis/) Web Service Deployment Descriptor
 (WSDD) files from a

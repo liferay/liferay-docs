@@ -4,6 +4,8 @@ header-id: service-builder-samples
 
 # Service Builder Samples
 
+[TOC levels=1-4]
+
 This section focuses on Liferay Service Builder sample projects built with
 various build tools. You can view these samples by visiting the
 `apps/service-builder` folder corresponding to your preferred build tool:

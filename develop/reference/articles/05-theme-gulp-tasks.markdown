@@ -4,6 +4,8 @@ header-id: theme-gulp-tasks
 
 # Theme Gulp Tasks
 
+[TOC levels=1-4]
+
 Theme projects created using the [Liferay Theme Generator](/docs/7-0/tutorials/-/knowledge_base/t/themes-generator)
 have a `gulpfile.js` file that provides several [gulp](https://www.npmjs.com/package/gulp)
 tasks you can execute to manage and deploy your theme.

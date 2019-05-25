@@ -4,6 +4,8 @@ header-id: node-gradle-plugin
 
 # Node Gradle Plugin
 
+[TOC levels=1-4]
+
 The Node Gradle plugin lets you run [Node.js](https://nodejs.org/) and
 [NPM](https://www.npmjs.com/) as part of your build.
 

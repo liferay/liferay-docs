@@ -4,6 +4,8 @@ header-id: jsdoc-gradle-plugin
 
 # JSDoc Gradle Plugin
 
+[TOC levels=1-4]
+
 The JSDoc Gradle plugin lets you run the [JSDoc](http://usejsdoc.org/) tool in
 order to generate documentation for your project's JavaScript files.
 

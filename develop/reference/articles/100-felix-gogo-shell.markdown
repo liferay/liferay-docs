@@ -4,6 +4,8 @@ header-id: using-the-felix-gogo-shell
 
 # Felix Gogo Shell
 
+[TOC levels=1-4]
+
 To interact with @product@'s module framework on a local server machine, you can
 use the Felix Gogo shell within [Blade CLI](/docs/7-0/tutorials/-/knowledge_base/t/blade-cli).
 

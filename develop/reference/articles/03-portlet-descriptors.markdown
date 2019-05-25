@@ -4,6 +4,8 @@ header-id: portlet-descriptor-to-osgi-service-property-map
 
 # Portlet Descriptor to OSGi Service Property Map
 
+[TOC levels=1-4]
+
 This section describes the mapping of portlet XML descriptor values to OSGi
 service properties that can be used when publishing OSGi Portlets. 
 

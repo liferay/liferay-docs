@@ -4,6 +4,8 @@ header-id: greedy-policy-option-portlet
 
 # Greedy Policy Option Application
 
+[TOC levels=1-4]
+
 The Greedy Policy Option sample provides two portlets that can be added to a
 @product@ page: Greedy Portlet and Reluctant Portlet.
 

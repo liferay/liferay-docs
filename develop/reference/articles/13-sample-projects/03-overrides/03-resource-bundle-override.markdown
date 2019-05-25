@@ -4,6 +4,8 @@ header-id: resource-bundle-override
 
 # Resource Bundle Override
 
+[TOC levels=1-4]
+
 This example overrides the default `add-blog-entry` language key (English and
 Spanish) for @product@'s default Blogs application. After deploying this sample
 hook to @product@, the Blogs application's *Add Blog Entry* button is modified

@@ -4,6 +4,8 @@ header-id: model-listener
 
 # Model Listener
 
+[TOC levels=1-4]
+
 The Model Listener sample demonstrates adding a custom model listener to a
 Liferay Portal out-of-the-box entity. When deploying this sample with no
 customizations, a custom model listener is added to the portal's layouts,

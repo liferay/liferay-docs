@@ -4,6 +4,8 @@ header-id: shared-language-keys
 
 # Shared Language Keys
 
+[TOC levels=1-4]
+
 The Shared Language Keys sample provides a JSP portlet that displays language
 keys.
 

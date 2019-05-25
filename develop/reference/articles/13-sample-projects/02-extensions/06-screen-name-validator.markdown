@@ -4,6 +4,8 @@ header-id: screen-name-validator
 
 # Screen Name Validator
 
+[TOC levels=1-4]
+
 The Screen Name Validator sample provides a way to validate a user's inputted
 screen name. During validation, the screen name is tested client-side and
 server-side.

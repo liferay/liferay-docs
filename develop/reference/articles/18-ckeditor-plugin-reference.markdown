@@ -4,6 +4,8 @@ header-id: ckeditor-plugin-reference-guide
 
 # CKEditor Plugin Reference Guide
 
+[TOC levels=1-4]
+
 This reference guide provides a list of the default CKEditor plugins bundled 
 with @product@'s AlloyEditor. Each plugin below links to its `plugin.js` file 
 for reference:

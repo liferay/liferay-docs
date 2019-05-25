@@ -4,6 +4,8 @@ header-id: using-the-service-builder-template
 
 # Service Builder Template
 
+[TOC levels=1-4]
+
 In this article, you'll learn how to create a Liferay portlet application that
 uses Service Builder as Liferay modules. To create a Liferay Service Builder
 project via the command line using Blade CLI or Maven, use one of the commands

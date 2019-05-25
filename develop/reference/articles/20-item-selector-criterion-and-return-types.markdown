@@ -4,6 +4,8 @@ header-id: item-selector-criterion-and-return-types
 
 # Item Selector Criterion and Return Types
 
+[TOC levels=1-4]
+
 @product@ bundles have apps and app suites containing [`ItemSelectorCriterion` classes](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorCriterion.html)
 and [`ItemSelectorReturnType` classes](@app-ref@/collaboration/latest/javadocs/com/liferay/item/selector/ItemSelectorReturnType.html)
 developers can use. 

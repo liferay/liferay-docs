@@ -4,6 +4,8 @@ header-id: soy-gradle-plugin
 
 # Soy Gradle Plugin
 
+[TOC levels=1-4]
+
 The Soy Gradle plugin lets you compile [Closure Templates](https://developers.google.com/closure/templates/)
 into JavaScript functions. It also lets you use a custom localization mechanism
 in the generated `.soy.js` files by replacing [`goog.getMsg`](https://developers.google.com/closure/templates/docs/translation#closurecompiler)

@@ -4,6 +4,8 @@ header-id: service-builder-application-using-external-database-via-jdbc
 
 # Service Builder Application Using External Database via JDBC
 
+[TOC levels=1-4]
+
 This sample demonstrates how to connect a Liferay Service Builder application to
 an external database via a JDBC connection. Here, an external database means any
 database other than @product@'s database. For this sample to work correctly, you

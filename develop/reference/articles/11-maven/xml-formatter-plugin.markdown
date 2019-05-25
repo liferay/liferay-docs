@@ -4,6 +4,8 @@ header-id: xml-formatter-plugin
 
 # XML Formatter Plugin
 
+[TOC levels=1-4]
+
 The XML Formatter plugin lets you format a project's XML files.
 
 ## Usage

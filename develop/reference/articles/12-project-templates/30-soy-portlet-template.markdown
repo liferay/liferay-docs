@@ -4,6 +4,8 @@ header-id: soy-portlet-template
 
 # Soy Portlet Template
 
+[TOC levels=1-4]
+
 In this article, you'll learn how to create a Soy portlet application as
 a Liferay module. To create a Soy portlet as a module via the command
 line using Blade CLI or Maven, use one of the commands with the following

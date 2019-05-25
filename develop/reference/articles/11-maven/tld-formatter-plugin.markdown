@@ -4,6 +4,8 @@ header-id: tld-formatter-plugin
 
 # TLD Formatter Plugin
 
+[TOC levels=1-4]
+
 The TLD Formatter plugin lets you format a project's TLD files.
 
 ## Usage

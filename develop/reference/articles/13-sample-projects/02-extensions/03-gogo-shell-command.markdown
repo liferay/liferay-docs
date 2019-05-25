@@ -4,6 +4,8 @@ header-id: gogo-shell-command
 
 # Gogo Shell Command
 
+[TOC levels=1-4]
+
 The Gogo Shell Command sample demonstrates adding a custom command to
 @product@'s Gogo shell environment. All @product@ installations have a Gogo
 shell environment, which lets system administrators interact with @product@'s

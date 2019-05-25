@@ -4,6 +4,8 @@ header-id: sample-modules
 
 # Sample Projects
 
+[TOC levels=1-4]
+
 | **Note:** This section of articles does not provide documentation for *all*
 | sample projects residing in the `liferay-blade-samples` repo. The documentation
 | for these samples is in progress and will grow over time.

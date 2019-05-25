@@ -4,6 +4,8 @@ header-id: panel-app-template
 
 # Panel App Template
 
+[TOC levels=1-4]
+
 In this article, you'll learn how to create a Liferay panel app and category as
 a Liferay module. To create a Liferay panel app and category via the command
 line using Blade CLI or Maven, use one of the commands with the following

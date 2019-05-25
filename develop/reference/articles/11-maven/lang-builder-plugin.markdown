@@ -4,6 +4,8 @@ header-id: lang-builder-plugin
 
 # Lang Builder Plugin
 
+[TOC levels=1-4]
+
 The Lang Builder plugin lets you sort and translate the language keys in your
 project.
 

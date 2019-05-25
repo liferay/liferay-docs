@@ -4,6 +4,8 @@ header-id: angular-npm-portlet
 
 # Angular npm Portlet
 
+[TOC levels=1-4]
+
 The Angular npm Portlet sample provides a portlet that uses the
 [Angular](https://angular.io/) framework to render its output.
 

@@ -4,6 +4,8 @@ header-id: simple-npm-portlet
 
 # Simple npm Portlet
 
+[TOC levels=1-4]
+
 The Simple npm Portlet sample provides a portlet that uses the
 [isarray npm package](https://www.npmjs.com/package/isarray) when rendering its
 output.

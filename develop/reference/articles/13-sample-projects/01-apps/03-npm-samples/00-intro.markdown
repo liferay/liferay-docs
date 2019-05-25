@@ -4,6 +4,8 @@ header-id: npm-samples
 
 # npm Samples
 
+[TOC levels=1-4]
+
 This section focuses on Liferay npm sample portlets built with Gradle. You can
 view these samples by visiting the
 [gradle/apps/npm](https://github.com/liferay/liferay-blade-samples/tree/7.0/gradle/apps/npm)
