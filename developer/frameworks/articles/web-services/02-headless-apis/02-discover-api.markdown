@@ -44,37 +44,39 @@ Run this `curl` command to access the home URL:
 
 You should get a response like this: 
 
-    openapi: 3.0.1
-    info:
-      title: Headless Delivery
-      version: v1.0
-    paths:
-      /v1.0/blog-posting-images/{blogPostingImageId}:
-        get:
-          tags:
-          - BlogPostingImage
-          operationId: getBlogPostingImage
-          parameters:
-          - name: blogPostingImageId
-            in: path
-            required: true
-            schema:
-              type: integer
-              format: int64
-          responses:
-            default:
-              description: default response
-              content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/BlogPostingImage'
-    (...)
+```yaml
+openapi: 3.0.1
+info:
+  title: Headless Delivery
+  version: v1.0
+paths:
+  /v1.0/blog-posting-images/{blogPostingImageId}:
+    get:
+      tags:
+      - BlogPostingImage
+      operationId: getBlogPostingImage
+      parameters:
+      - name: blogPostingImageId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        default:
+          description: default response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BlogPostingImage'
+(...)
+```
 
 This response follows the OpenAPI version 3.0 syntax to specify the endpoints 
 (URLs) of the API and schemas returned. You can also open the OpenAPI profile in 
 an OpenAPI editor like the 
 [Swagger Editor](https://editor.swagger.io). 
-You can use this editor to inspect the documentation and parameters, and make 
+You can use this editor to inspect the documentation and parameters and make 
 requests to the API. 
 
 There are also many other tools that support OpenAPI, such as client generators, 
