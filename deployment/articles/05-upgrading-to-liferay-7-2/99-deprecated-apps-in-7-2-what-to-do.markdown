@@ -63,7 +63,7 @@ Here are the apps deprecated in @product-ver@.
 | App |  Availability |  Notes |
 | --- | ------------------ | ----------- |
 | Central Authentication Service | Bundled |   |
-| Google Login | Marketplace release planned | Replaced by [OpenID Connect]((/docs/7-2/deploy/-/knowledge_base/d/authenticating-with-openid-connect). |
+| Google Login | Marketplace release planned | Replaced by [OpenID Connect](/docs/7-2/deploy/-/knowledge_base/d/authenticating-with-openid-connect). |
 | NTLM | Marketplace release planned. | Replaced by [Kerberos](/docs/7-2/deploy/-/knowledge_base/d/authenticating-with-kerberos). |
 | OAuth 1.0a | Marketplace release planned. | Replaced by OAuth 2.0, which is included in the bundle. |
 | OpenAM / OpenSSO | Bundled |  |
