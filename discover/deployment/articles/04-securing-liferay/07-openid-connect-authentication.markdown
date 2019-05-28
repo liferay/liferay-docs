@@ -77,6 +77,10 @@ who is issuing the user information.
 **JWKS URI:** A URL that points to the provider's JSON Web Key Set that contains
 the public keys that can verify the provider's tokens. 
 
+**ID Token Signing Algorithms:** Set the supported ID token algorithms manually.
+Normally, this is "discovered" at the discovery endpoint. You can add as many of
+these as you need. 
+
 **Subject Types:** A Subject Identifier is a unique and never reassigned
 identifier the provider uses to establish who the user is, and is consumed by
 the client (i.e., @product@). There are two types: public (provides the same
