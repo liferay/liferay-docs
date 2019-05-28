@@ -35,14 +35,14 @@ Here are the apps deprecated in @product-ver@.
 
 | App |  Availability |  Notes |
 | --- | ------------- | ------ |
-| Bookmarks | Marketplace |  |
-| Directory | Nexus |  |
-| Documentum | Nexus |  |
-| Microblogs | Nexus |  |
-| Quick Note | Nexus |  |
-| Recent Documents | Nexus |  |
-| Social Bookmarks | Marketplace | |
-| Social Networking | Nexus | |
+| Bookmarks | Marketplace | Not yet available for 7.2. Originally deprecated in 7.1. |
+| Directory | Nexus | Originally deprecated in 7.1. |
+| Liferay Documentum Connector EE | Nexus | Originally deprecated in 7.1. |
+| Microblogs | Nexus | Originally deprecated in 7.1. |
+| Quick Note | Nexus | Originally deprecated in 7.1. |
+| Recent Documents | Nexus | Originally deprecated in 7.1. |
+| Social Bookmarks | Marketplace | Not yet available for 7.2. Originally deprecated in 7.1. |
+| Social Networking | Nexus | Originally deprecated in 7.1. |
 
 ## Foundation
 
