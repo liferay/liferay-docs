@@ -68,3 +68,8 @@ Here are the apps deprecated in @product-ver@.
 | OAuth 1.0a | Marketplace release planned. | Replaced by OAuth 2.0, which is included in the bundle. |
 | OpenAM / OpenSSO | Bundled |  |
 | OpenID | Marketplace release planned | [OpenID Connect]((/docs/7-2/deploy/-/knowledge_base/d/authenticating-with-openid-connect). |
+
+## User and System Management
+| App |  Availability |  Notes |
+| --- | ------------------ | ----------- |
+| Live Users | Enabled through Portal Properties |  |
