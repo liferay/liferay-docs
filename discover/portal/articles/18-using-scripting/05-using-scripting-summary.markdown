@@ -4,6 +4,8 @@ header-id: summary-16
 
 # Summary
 
+[TOC levels=1-4]
+
 In this chapter we saw how Liferay's script engine opens up many exciting
 posibilities for working with Liferay regardless of your language of choice. We
 learned how you can leverage Liferay's Services Oriented Architecture (SOA) from

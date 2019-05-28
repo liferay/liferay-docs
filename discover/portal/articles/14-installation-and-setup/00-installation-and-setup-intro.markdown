@@ -4,6 +4,8 @@ header-id: installation-and-setup
 
 # Installation and Setup
 
+[TOC levels=1-4]
+
 Liferay Portal is one of the most flexible applications on the market today with
 regard to application server environments. You can install Liferay Portal on
 everything from a shared Tomcat installation to a multi-node cluster running a

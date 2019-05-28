@@ -4,6 +4,8 @@ header-id: defining-data-types
 
 # Defining Data Types
 
+[TOC levels=1-4]
+
 When new users log in to `list.it`, they are going to want to build a few lists
 for themselves. Chances are, many of the lists they would want to create--to do
 lists, shopping lists and memos come to mind--are already defined in the portal.

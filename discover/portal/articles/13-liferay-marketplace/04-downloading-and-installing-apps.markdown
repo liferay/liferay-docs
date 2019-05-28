@@ -4,6 +4,8 @@ header-id: downloading-and-installing-apps
 
 # Downloading and Installing Apps
 
+[TOC levels=1-4]
+
 Once you've found an app you wish to download and use, click on the name of the
 app to display its detailed information screen.
 

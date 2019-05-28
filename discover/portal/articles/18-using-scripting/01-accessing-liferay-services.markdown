@@ -4,6 +4,8 @@ header-id: accessing-liferay-services
 
 # Accessing Liferay Services
 
+[TOC levels=1-4]
+
 In many cases, you'll want to interact with one of Liferay's many services. This
 is possible from all of the scripting languages supported, but the syntax is a
 little different for each language. 

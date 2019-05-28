@@ -4,6 +4,8 @@ header-id: plugin-security-management
 
 # Plugin Security Management
 
+[TOC levels=1-4]
+
 We all wish cyberspace were free of malicious software and unwanted bugs. Since
 it isn't, we need to guard ourselves and our portals from these evils. Enter
 Liferay Portal's Plugin Security Manager! It's like a super-hero in a cape and

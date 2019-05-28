@@ -4,6 +4,8 @@ header-id: opensocial-gadget-basics
 
 # OpenSocial gadget basics
 
+[TOC levels=1-4]
+
 An OpenSocial Gadget is specified in an XML document that has two parts. The
 first part of the document specifies *meta-data* declaring gadget dependencies,
 defining characteristics about the gadget, and specifying user preferences. The

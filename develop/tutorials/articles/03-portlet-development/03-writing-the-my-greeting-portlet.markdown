@@ -4,6 +4,8 @@ header-id: writing-the-my-greeting-portlet
 
 # Writing the My Greeting Portlet
 
+[TOC levels=1-4]
+
 Let's make our portlet do something useful. First, we'll give it two pages:
 
 - **view.jsp**: displays the greeting and provides a link to the *edit* page. 

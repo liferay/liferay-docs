@@ -4,6 +4,8 @@ header-id: using-model-hints
 
 # Using Model Hints
 
+[TOC levels=1-4]
+
 Now that you've created your model entities and implemented your business logic
 to create and modify those entities, you probably have some ideas for helping
 users input valid model entity data. For example, in the Event Listing project

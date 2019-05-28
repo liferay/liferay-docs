@@ -4,6 +4,8 @@ header-id: summary-7
 
 # Summary
 
+[TOC levels=1-4]
+
 In this chapter we explored Liferay IDE, an extension of Eclipse IDE. You
 learned to to install and set up Liferay IDE, then to create and deploy Liferay
 projects, as well as import existing projects into Liferay IDE. Admit it--it's a

@@ -4,6 +4,8 @@ header-id: working-together-with-the-wiki
 
 # Working Together with the Wiki
 
+[TOC levels=1-4]
+
 Liferay's Wiki portlet, like the Message Boards portlet, is a full-featured
 wiki application which has all of the features you would expect in a state of
 the art wiki. Again, though, it has the benefit of being able to take advantage

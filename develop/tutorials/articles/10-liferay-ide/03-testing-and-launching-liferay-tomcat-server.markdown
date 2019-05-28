@@ -4,6 +4,8 @@ header-id: testing-and-launching-liferay-tomcat-server
 
 # Testing and Launching Liferay Tomcat Server
 
+[TOC levels=1-4]
+
 Once your Liferay Portal Server is set up, you can launch it from the Servers
 tab in Eclipse. You have a few options for launching and stopping the server
 once it's selected in the Servers tab. 

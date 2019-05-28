@@ -4,6 +4,8 @@ header-id: creating-a-portlet
 
 # Creating a Portlet
 
+[TOC levels=1-4]
+
 Portlet creation using the Plugins SDK is simple. There's a `portlets` folder
 inside the Plugins SDK folder, where your portlet projects reside. The first
 thing to do is give your portlet a project name (without spaces) and a display

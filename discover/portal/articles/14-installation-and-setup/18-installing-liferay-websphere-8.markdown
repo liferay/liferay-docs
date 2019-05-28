@@ -4,6 +4,8 @@ header-id: installing-liferay-on-websphere-8-0
 
 # Installing Liferay on WebSphere 8.0
 
+[TOC levels=1-4]
+
 **Tip:** Throughout this installation and configuration process, WebSphere 
 prompts you to Click Save to apply changes to Master Configuration. Do so 
 intermittently to save your changes.

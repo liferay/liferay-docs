@@ -4,6 +4,8 @@ header-id: page-customizations
 
 # Page Customizations
 
+[TOC levels=1-4]
+
 Liferay 6.1 introduced the concept of page customizations. Administrators can
 designate public pages or sections of public pages to be customizable. When a
 user visits such a page, a notification will appear stating that the user can

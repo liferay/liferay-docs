@@ -4,6 +4,8 @@ header-id: color-schemes
 
 # Color Schemes
 
+[TOC levels=1-4]
+
 Specify color schemes with a CSS class name, which of course also lets you
 choose different background images, different border colors, and more. 
 

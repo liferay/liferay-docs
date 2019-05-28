@@ -4,6 +4,8 @@ header-id: liferay-sync
 
 # Liferay Sync
 
+[TOC levels=1-4]
+
 Liferay Sync, released in September 2012, is an add-on product for Liferay 6.1
 GA2 CE and EE that synchronizes files between your Liferay server and users'
 desktop and mobile environments. With Liferay Sync, your users can publish and

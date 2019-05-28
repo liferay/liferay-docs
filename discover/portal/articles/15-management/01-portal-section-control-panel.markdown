@@ -4,6 +4,8 @@ header-id: the-portal-section-of-the-control-panel
 
 # The Portal Section of the Control Panel
 
+[TOC levels=1-4]
+
 The Portal section of the control panel is used for most administrative tasks.
 You'll find there an interface for the creation and maintenance of the following
 portal entities: users, organizations, user groups, sites, teams, site

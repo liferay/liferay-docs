@@ -4,6 +4,8 @@ header-id: getting-started-with-the-documents-and-media-portlet
 
 # Getting Started with the Documents and Media Portlet
 
+[TOC levels=1-4]
+
 The Documents and Media portlet is non-instanceable. This means that each page
 on your portal can host at most one such portlet. Furthermore, if you add
 multiple Documents and Media portlets to pages in the same site, these portlets

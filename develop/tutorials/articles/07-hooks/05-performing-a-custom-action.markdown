@@ -4,6 +4,8 @@ header-id: performing-a-custom-action
 
 # Performing a Custom Action
 
+[TOC levels=1-4]
+
 Hooks are useful for triggering custom actions on common portal events,
 like user log in or system start up. The actions for each of these events are
 defined in `portal.properties`, so we'll need to extend this file to create a

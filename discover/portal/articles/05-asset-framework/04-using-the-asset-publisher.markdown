@@ -4,6 +4,8 @@ header-id: using-the-asset-publisher
 
 # Using the Asset Publisher
 
+[TOC levels=1-4]
+
 As we create web content, it's important to keep in mind that to Liferay, the
 pieces of content are assets, just like message board entries and blog posts.
 This allows you to publish your web content using Liferay's Asset Publisher.

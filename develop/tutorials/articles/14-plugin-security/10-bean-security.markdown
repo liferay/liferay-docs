@@ -4,6 +4,8 @@ header-id: bean-security
 
 # Bean Security
 
+[TOC levels=1-4]
+
 Specify bean properties the plugin is permitted to acquire. 
 
 *Example:*

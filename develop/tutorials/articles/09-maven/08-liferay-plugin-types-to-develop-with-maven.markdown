@@ -4,6 +4,8 @@ header-id: liferay-plugin-types-to-develop-with-maven
 
 # Liferay Plugin Types to Develop with Maven
 
+[TOC levels=1-4]
+
 You can develop all Liferay plugin types with Maven: portlets, themes,
 layout templates, hooks, and Ext. Next, you'll learn how to create each plugin
 type using Maven, and we'll point out where each plugin's directory structure is

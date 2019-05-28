@@ -4,6 +4,8 @@ header-id: embedding-portlets-in-a-layout-template
 
 # Embedding portlets in a layout template
 
+[TOC levels=1-4]
+
 Are there portlets you need displayed in the same location on all pages using
 a particular layout template? Perhaps you want to prevent others from disrupting
 the Feng Shui you've generated with your design? You can embed portlets in

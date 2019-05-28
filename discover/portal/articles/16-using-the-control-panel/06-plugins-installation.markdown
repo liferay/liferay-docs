@@ -4,6 +4,8 @@ header-id: plugins-installation
 
 # Plugins Installation
 
+[TOC levels=1-4]
+
 The *Plugins Installation* page of the control panel shows all of the plugins
 currently installed. These are divided into tabs for portlets, themes, layout
 templates, hook plugins and web plugins. If you want to install a new plugin,

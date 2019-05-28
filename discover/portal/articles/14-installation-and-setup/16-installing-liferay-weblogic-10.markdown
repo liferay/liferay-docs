@@ -4,6 +4,8 @@ header-id: installing-liferay-on-weblogic-10
 
 # Installing Liferay on WebLogic 10
 
+[TOC levels=1-4]
+
 **Liferay Home** is one folder above the domain to which you will be installing
 Liferay. For example, if your domain location is
 `/Oracle/Middleware/user_projects/domains/base_domain`, then your Liferay Home

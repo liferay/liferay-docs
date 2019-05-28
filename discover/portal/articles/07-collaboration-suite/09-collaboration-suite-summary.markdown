@@ -4,6 +4,8 @@ header-id: summary-5
 
 # Summary
 
+[TOC levels=1-4]
+
 We have explored many of the portlets in Liferay's collaboration suite. You
 have seen how you can configure all of the portlets in a similar fashion using
 a unified user interface. After this, we went over all of the portlets in

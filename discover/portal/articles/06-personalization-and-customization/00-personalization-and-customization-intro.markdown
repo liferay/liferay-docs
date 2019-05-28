@@ -4,6 +4,8 @@ header-id: personalization-and-customization
 
 # Personalization and Customization
 
+[TOC levels=1-4]
+
 In this chapter, we discuss several ways Liferay users can customize pages,
 applications, and the way they use your portal. We'll cover the following
 topics:

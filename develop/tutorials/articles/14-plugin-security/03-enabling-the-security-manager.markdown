@@ -4,6 +4,8 @@ header-id: enabling-the-security-manager
 
 # Enabling the Security Manager
 
+[TOC levels=1-4]
+
 If you want to distribute plugins, either on the Liferay Marketplace or through
 your web site, you have to assume users will insist the Security Manager is
 enabled in your plugin. For this reason, you should enable it when testing your

@@ -4,6 +4,8 @@ header-id: documentation-errata
 
 # Documentation Errata
 
+[TOC levels=1-4]
+
 For Liferay 6.1 and backward, the documentation's primary format was books. We
 created two books: *Using Liferay Portal* and *Liferay Portal Developers Guide*.
 When you publish a book, it's set in stone: that ISBN must point to that book,

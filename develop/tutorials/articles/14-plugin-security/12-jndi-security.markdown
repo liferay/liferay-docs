@@ -4,6 +4,8 @@ header-id: jndi-security
 
 # JNDI Security
 
+[TOC levels=1-4]
+
 Specify which services the plugin can look up. You can use regular expressions
 to make this dynamic. 
 

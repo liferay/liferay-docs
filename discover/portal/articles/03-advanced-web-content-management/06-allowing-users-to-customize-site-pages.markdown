@@ -4,6 +4,8 @@ header-id: allowing-users-to-customize-site-pages
 
 # Allowing Users to Customize Site Pages
 
+[TOC levels=1-4]
+
 As we discussed before, as your site becomes larger and more complex, management
 of the content becomes more challenging. We've gone over Liferay management
 tools that help you create content quickly and in an orderly fashion. You

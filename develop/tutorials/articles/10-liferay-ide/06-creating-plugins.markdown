@@ -4,6 +4,8 @@ header-id: creating-plugins
 
 # Creating Plugins
 
+[TOC levels=1-4]
+
 Liferay projects can contain multiple plugins. If you've followed the
 instructions from the earlier section on creating new Liferay projects, you
 should already have created the event-listing-portlet project. In this section

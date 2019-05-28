@@ -4,6 +4,8 @@ header-id: passing-information-from-the-action-phase-to-the-render-phase
 
 # Passing Information from the Action Phase to the Render Phase
 
+[TOC levels=1-4]
+
 There are two ways to pass information from the action phase to the render
 phase. The first way is through render parameters. In the `processAction` method
 you can invoke the `setRenderParameter` method to add a new parameter to the

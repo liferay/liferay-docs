@@ -4,6 +4,8 @@ header-id: roles-and-permissions
 
 # Roles and Permissions
 
+[TOC levels=1-4]
+
 Roles are used to collect permissions that define a particular function within
 the portal, according to a particular scope. Roles can be granted permissions to
 various functions within portlet applications. A roles is basically just a

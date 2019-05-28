@@ -4,6 +4,8 @@ header-id: measuring-social-activity
 
 # Measuring Social Activity
 
+[TOC levels=1-4]
+
 <!-- | TODO This is all out of date. It's been reimplemented for Liferay 6.1.
 Please rewrite. | --> When you have a lot of user interaction on your web site,
 it can be helpful to try to separate the signal from the noise. Liferay contains

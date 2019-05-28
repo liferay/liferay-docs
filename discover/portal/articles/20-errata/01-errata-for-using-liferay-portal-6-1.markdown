@@ -4,6 +4,8 @@ header-id: errata-for-using-liferay-portal-6-1
 
 # Errata for Using Liferay Portal 6.1
 
+[TOC levels=1-4]
+
 ## Page 75: Propagating changes from site templates to sites
 
 In the *Propagating changes from site templates to sites* subsection of the

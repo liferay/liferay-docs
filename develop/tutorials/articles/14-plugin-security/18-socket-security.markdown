@@ -4,6 +4,8 @@ header-id: socket-security
 
 # Socket Security
 
+[TOC levels=1-4]
+
 Specify sockets permitted to accept connections in the plugin.
 
 *Example:*

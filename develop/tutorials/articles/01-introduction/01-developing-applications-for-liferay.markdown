@@ -4,6 +4,8 @@ header-id: developing-applications-for-liferay
 
 # Developing applications for Liferay
 
+[TOC levels=1-4]
+
 According to Wikipedia "A web application is an application that is accessed
 over a network such as the Internet or an intranet." A portal application is a
 web application that can civilly coexist with other applications. Portal

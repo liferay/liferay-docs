@@ -4,6 +4,8 @@ header-id: extending-and-customizing-liferay-for-your-own-needs
 
 # Extending and Customizing Liferay for Your Own Needs
 
+[TOC levels=1-4]
+
 Beyond using Liferay as a development platform for new applications, Liferay
 Portal has also been designed to be extended and modified. As an open source
 project, its source code is available, but Liferay Portal's developers have

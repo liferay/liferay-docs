@@ -4,6 +4,8 @@ header-id: generating-your-service-layer
 
 # Generating Your Service Layer
 
+[TOC levels=1-4]
+
 The word *service* can mean many specific things, but the general dictionary
 definition states that it's "an act of helpful activity." Everyone has
 experienced this in some way. Whether it's an act of kindness from a

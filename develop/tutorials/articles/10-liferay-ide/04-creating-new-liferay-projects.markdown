@@ -4,6 +4,8 @@ header-id: creating-new-liferay-projects
 
 # Creating New Liferay Projects
 
+[TOC levels=1-4]
+
 Creating Liferay projects is a straightforward process, similar to creating
 other Eclipse project types. Plugins for Liferay Portal must be created inside
 of a Liferay project. A Liferay project is essentially a root directory with a

@@ -4,6 +4,8 @@ header-id: gadget-portlet-communication-with-pubsub
 
 # Gadget/Portlet Communication with PubSub
 
+[TOC levels=1-4]
+
 Have you ever wanted your gadgets to communicate with each other or with
 portlets? You can do so with *PubSub*. It is a messaging pattern in which
 publishers send messages to topics and subscribers receive the messages on those

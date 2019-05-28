@@ -4,6 +4,8 @@ header-id: automatic-previews-and-metadata
 
 # Automatic Previews and Metadata
 
+[TOC levels=1-4]
+
 Whenever possible, Liferay 6.1 generates previews of documents added to the
 Documents and Media library. Out of the box, Liferay only ships with Java-based
 APIs to generate previews for documents. The only tool available that is 100%

@@ -4,6 +4,8 @@ header-id: calling-liferay-services
 
 # Calling Liferay Services
 
+[TOC levels=1-4]
+
 Every service provides a local interface to clients running in the same JVM as
 Liferay Portal. These are called by use of the  -`ServiceUtil` classes. These
 classes mask the complexity of service implementations. The core Liferay

@@ -4,6 +4,8 @@ header-id: best-practices
 
 # Best Practices
 
+[TOC levels=1-4]
+
 The Plugins SDK can house all of your plugin projects enterprise-wide, or you
 can have separate Plugins SDK projects for each plugin. For example, if you have
 an internal Intranet using Liferay with some custom portlets, you can keep those

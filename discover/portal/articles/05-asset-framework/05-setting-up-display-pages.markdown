@@ -4,6 +4,8 @@ header-id: setting-up-display-pages
 
 # Setting up Display Pages
 
+[TOC levels=1-4]
+
 The Display Settings section gives you precise control over the display of your
 assets. There are a multitude of options available to configure how you want
 your content to appear. You can configure the style, length of abstracts,

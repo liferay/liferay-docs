@@ -4,6 +4,8 @@ header-id: integrating-liferay-users-into-your-enterprise
 
 # Integrating Liferay Users into Your Enterprise
 
+[TOC levels=1-4]
+
 ## LDAP
 
 You can use the LDAP tab of the Authentication page to connect Liferay to an

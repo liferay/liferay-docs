@@ -4,6 +4,8 @@ header-id: user-groups
 
 # User Groups
 
+[TOC levels=1-4]
+
 User Groups are designed to allow portal administrators to create groups of
 users that traverse the organizations hierarchy. They can be used to create
 arbitrary groupings of users who don't necessarily share an obvious hierarchical

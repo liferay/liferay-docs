@@ -4,6 +4,8 @@ header-id: using-message-bus
 
 # Using Message Bus
 
+[TOC levels=1-4]
+
 The *Message Bus* is a service level API used to exchange messages within
 Liferay. The Message Bus is a mechanism for sending message payloads to
 different components in Liferay, providing loose coupling between message

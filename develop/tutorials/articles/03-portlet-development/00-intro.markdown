@@ -4,6 +4,8 @@ header-id: portlet-development
 
 # Portlet Development
 
+[TOC levels=1-4]
+
 In this chapter we'll create and deploy a simple portlet using the Plugins SDK.
 It will allow a customized greeting to be saved in the portlet's preferences and
 then display it whenever the portlet is viewed. Last we'll clean up the

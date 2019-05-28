@@ -4,6 +4,8 @@ header-id: developing-plugins-with-security-in-mind
 
 # Developing Plugins with security in mind
 
+[TOC levels=1-4]
+
 At the start of plugin developement, you may not have a clear picture of all the
 aspects of the portal you'll need to access, and that's fine. In fact, we
 suggest you go ahead and develop your plugin first and address your plugin's

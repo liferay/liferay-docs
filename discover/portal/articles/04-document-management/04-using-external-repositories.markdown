@@ -4,6 +4,8 @@ header-id: using-external-repositories
 
 # Using External Repositories
 
+[TOC levels=1-4]
+
 Adding repositories in Documents and Media is a new feature in Liferay 6.1.
 Content Management Interoperability Services (CMIS) is a specification for
 improving interoperability between Enterprise Content Management systems.

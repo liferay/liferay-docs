@@ -4,6 +4,8 @@ header-id: writing-local-service-classes
 
 # Writing Local Service Classes
 
+[TOC levels=1-4]
+
 The heart of your service is its `-LocalServiceImpl` class, where you put core
 business logic for working with your model. Throughout this chapter, you've been
 constructing services for the Nose-ster Event Listing example portlet project.

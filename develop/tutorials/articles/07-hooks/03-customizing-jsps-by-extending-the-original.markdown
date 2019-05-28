@@ -4,6 +4,8 @@ header-id: customizing-jsps-by-extending-the-original
 
 # Customizing JSPs by Extending the Original
 
+[TOC levels=1-4]
+
 If we can replace a JSP with a hook plugin, why learn another way to accomplish
 the same thing? Good question. Let's say you want to preserve the original JSP's
 content and functionality, but you want to add more to the JSP. And when you

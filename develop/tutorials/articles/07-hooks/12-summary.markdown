@@ -4,6 +4,8 @@ header-id: summary-4
 
 # Summary
 
+[TOC levels=1-4]
+
 In this chapter we discussed some of the many uses of the versatile hook plugin,
 the preferred tool for customizing Liferay. You learned how to perform custom
 portal actions, override and extend custom portal JSPs, modify portal

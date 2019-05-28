@@ -4,6 +4,8 @@ header-id: resources-for-liferay-developers
 
 # Resources for Liferay Developers
 
+[TOC levels=1-4]
+
 The following are useful reference resources for developers working with the Liferay Platform:
 
 - Liferay specific resources:

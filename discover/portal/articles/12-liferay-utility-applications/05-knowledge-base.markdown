@@ -4,6 +4,8 @@ header-id: knowledge-base
 
 # Knowledge Base
 
+[TOC levels=1-4]
+
 Liferay's Knowledge Base portlet provides a means for creating and organizing
 articles within a site. The knowledge base is perfect for creating and
 organizing information more formally than in a wiki. For example, it can be used

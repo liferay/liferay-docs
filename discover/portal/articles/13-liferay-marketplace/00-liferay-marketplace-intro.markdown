@@ -4,6 +4,8 @@ header-id: leveraging-the-liferay-marketplace
 
 # Leveraging the Liferay Marketplace
 
+[TOC levels=1-4]
+
 Liferay Marketplace is an exciting new hub for sharing, browsing and downloading
 Liferay-compatible applications. As enterprises look for ways to build and
 enhance their existing platforms, developers and software vendors are searching

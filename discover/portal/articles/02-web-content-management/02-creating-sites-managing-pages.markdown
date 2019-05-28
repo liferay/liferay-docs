@@ -4,6 +4,8 @@ header-id: creating-sites-and-managing-pages
 
 # Creating Sites and Managing Pages
 
+[TOC levels=1-4]
+
 With most products, you would learn what the software can do in terms of setting
 up your users and security model and then start building your system. You'd
 design your infrastructure and get your server environment up and running while

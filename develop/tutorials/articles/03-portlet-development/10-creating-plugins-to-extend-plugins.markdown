@@ -4,6 +4,8 @@ header-id: creating-plugins-to-extend-plugins
 
 # Creating Plugins to extend Plugins
 
+[TOC levels=1-4]
+
 For Liferay plugins, you can create a new plugin that extends an existing one.
 By extending a plugin, you can use all its features in your new plugin while
 keeping your changes/extensions separate from the existing plugin's source code. 

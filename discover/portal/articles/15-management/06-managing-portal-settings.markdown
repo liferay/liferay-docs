@@ -4,6 +4,8 @@ header-id: managing-portal-settings
 
 # Managing Portal Settings
 
+[TOC levels=1-4]
+
 After you have created users, user groups, organizations, roles, sites and teams
 your portal will be ready to host content and applications. You can configure
 Liferay's portal settings to fit your environment and your particular portal

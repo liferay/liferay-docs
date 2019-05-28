@@ -4,6 +4,8 @@ header-id: file-security
 
 # File Security
 
+[TOC levels=1-4]
+
 The following properties address file deletion, execution, reading, writing and
 replacement operations. The `*` character in a path name indicates all files in
 the current directory. The `-` character in a path name indicates all files in

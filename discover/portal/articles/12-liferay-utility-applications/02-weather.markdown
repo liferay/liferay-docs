@@ -4,6 +4,8 @@ header-id: weather
 
 # Weather
 
+[TOC levels=1-4]
+
 Liferay's Weather portlet displays basic weather-related information
 (temperature, conditions) for multiple configurable locations. It's available as
 an app from Liferay Marketplace. For each configured location, a link to [Open Weather Map](http://openweathermap.org/)

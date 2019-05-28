@@ -4,6 +4,8 @@ header-id: user-management
 
 # User Management
 
+[TOC levels=1-4]
+
 If you click the *Users* link on the left menu of the control panel, there are
 now two users in the list of users. If you want to change something about a
 particular user, you can click the *Actions* button next to that user.

@@ -4,6 +4,8 @@ header-id: finding-portal-services
 
 # Finding Portal Services
 
+[TOC levels=1-4]
+
 Liferay's Javadocs are easy to browse and well-organized. Here's how you find
 the *Organization* services: 
 

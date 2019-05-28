@@ -4,6 +4,8 @@ header-id: user-personal-sites
 
 # User Personal Sites
 
+[TOC levels=1-4]
+
 By default, newly created users in Liferay are each granted a personal site.
 Each user functions as the site administrator of his or her personal site.
 Personal sites are fully customizable but cannot have more than one member. The

@@ -4,6 +4,8 @@ header-id: calling-local-services
 
 # Calling Local Services
 
+[TOC levels=1-4]
+
 Once Service Builder has generated your portlet project's services, you can call
 them in our project's `-Portlet` classes. You can call any methods in your
 `EventLocalServiceUtil` or `LocationLocalServiceUtil` static utility classes

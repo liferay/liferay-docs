@@ -4,6 +4,8 @@ header-id: using-a-parent-plugin-project
 
 # Using a Parent Plugin Project
 
+[TOC levels=1-4]
+
 Maven supports project inheritance. You can create a *parent* project that
 contains properties child projects have in common, and *child* projects
 inherit those properties from the parent project. This saves time, since you

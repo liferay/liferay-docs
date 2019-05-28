@@ -4,6 +4,8 @@ header-id: message-bus-security
 
 # Message Bus Security
 
+[TOC levels=1-4]
+
 Specify which services the plugin is permitted to listen on via the portal's
 message bus.
 

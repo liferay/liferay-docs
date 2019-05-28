@@ -4,6 +4,8 @@ header-id: anatomy-of-a-layout-template-project
 
 # Anatomy of a Layout Template Project
 
+[TOC levels=1-4]
+
 Let's look at the directory structure of a layout template project and learn
 about its various files: 
 

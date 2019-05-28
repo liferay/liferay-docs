@@ -4,6 +4,8 @@ header-id: what-makes-liferay-portal-unique
 
 # What Makes Liferay Portal Unique
 
+[TOC levels=1-4]
+
 Liferay Portal is a web experience platform that contains all of the common
 applications you'd use as building blocks for your web site. Because of this,
 using Liferay completely changes the way you'd approach building your site,

@@ -4,6 +4,8 @@ header-id: summary-4
 
 # Summary
 
+[TOC levels=1-4]
+
 In this chapter, we discussed personal sites for portal users. We showed how to
 enable or disable them, how to set whether or not pages should be automatically
 created, and how to customize automatically created pages. We also examined

@@ -4,6 +4,8 @@ header-id: creating-new-workflow-definitions
 
 # Creating New Workflow Definitions
 
+[TOC levels=1-4]
+
 A Kaleo workflow, called a *process definition*, is defined in an XML file and
 is executed by users on the portal. You can create as many different workflow
 definitions as needed to manage the work done on your portal. You can define new

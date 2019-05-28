@@ -4,6 +4,8 @@ header-id: alternative-file-repository-options
 
 # Alternative File Repository Options
 
+[TOC levels=1-4]
+
 By default, Liferay stores documents and media files on the file system of the
 server where it's running. You can choose a specific location for the document
 library store's root directory by adding the following property to your

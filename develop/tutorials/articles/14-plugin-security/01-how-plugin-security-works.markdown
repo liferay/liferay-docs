@@ -4,6 +4,8 @@ header-id: how-plugin-security-works
 
 # How plugin security works
 
+[TOC levels=1-4]
+
 When the Plugin Security Manager is enabled for your plugin, it checks your
 plugin's *Portal Access Control List (PACL)*. This list describes what APIs the
 plugin accesses, so people deploying the plugin can review what it does without

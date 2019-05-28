@@ -4,6 +4,8 @@ header-id: adding-friendly-url-mapping-to-the-portlet
 
 # Adding Friendly URL Mapping to the Portlet
 
+[TOC levels=1-4]
+
 When you click the *Edit greeting* link, you're taken to a page with a URL that
 looks like this:
 

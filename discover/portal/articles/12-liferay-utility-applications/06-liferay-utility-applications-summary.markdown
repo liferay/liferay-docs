@@ -4,6 +4,8 @@ header-id: summary-10
 
 # Summary
 
+[TOC levels=1-4]
+
 In this chapter, we examined two Liferay utility applications: the Software
 Catalog and the Knowledge Base. The Software Catalog allows you to define a set
 of software items to make available to visitors to your portal. Remember that

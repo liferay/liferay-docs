@@ -4,6 +4,8 @@ header-id: liferay-frameworks
 
 # Liferay Frameworks
 
+[TOC levels=1-4]
+
 Picture a hot, summer day. You're on vacation, and you're just coming back from
 the beach after a day of frolicking on the sand and in the water. After all that
 activity, you're hungry. Time to grill up some burgers and dogs. 

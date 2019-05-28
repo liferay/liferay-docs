@@ -4,6 +4,8 @@ header-id: structure-of-the-sdk
 
 # Structure of the SDK
 
+[TOC levels=1-4]
+
 Each folder in the Plugins SDK contains scripts for creating new plugins of that
 type. Here is the directory structure of the Plugins SDK: 
 

@@ -4,6 +4,8 @@ header-id: writing-remote-service-classes
 
 # Writing Remote Service Classes
 
+[TOC levels=1-4]
+
 Many default Liferay services are available as web services. Liferay exposes its
 web services via SOAP and JSON web services. If you're running Liferay locally
 on port 8080, visit the following URL to browse Liferay's default SOAP web

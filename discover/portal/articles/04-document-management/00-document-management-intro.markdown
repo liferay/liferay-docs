@@ -4,6 +4,8 @@ header-id: document-management
 
 # Document Management
 
+[TOC levels=1-4]
+
 Liferay's Documents and Media library provides a mechanism for storing files
 online using the same type of structure that you use to store files locally. You
 can use it to store files of any kind; it serves as a virtual shared drive. The

@@ -4,6 +4,8 @@ header-id: ext-plugins
 
 # Ext plugins
 
+[TOC levels=1-4]
+
 Ext plugins are powerful tools for extending Liferay. Because they increase the
 complexity of your Liferay instance, you should only use an Ext plugin if you're
 sure you can't accomplish your goal using a different tool. Check out Chapter 6,

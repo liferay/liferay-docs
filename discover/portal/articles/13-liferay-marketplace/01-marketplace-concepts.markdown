@@ -4,6 +4,8 @@ header-id: marketplace-concepts-users-companies-and-apps
 
 # Marketplace Concepts: Users, Companies and Apps
 
+[TOC levels=1-4]
+
 Anyone can browse the apps available on Liferay Marketplace at
 [http://liferay.com/marketplace](http://liferay.com/marketplace) but a
 `liferay.com` user account is required for purchasing and downloading apps,

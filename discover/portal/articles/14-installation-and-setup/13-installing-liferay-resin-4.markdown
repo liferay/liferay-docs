@@ -4,6 +4,8 @@ header-id: installing-liferay-on-resin-4
 
 # Installing Liferay on Resin 4
 
+[TOC levels=1-4]
+
 **Liferay Home** is one folder above Resin's install location.
 
 For this section, we will refer to your Resin server's installation location as

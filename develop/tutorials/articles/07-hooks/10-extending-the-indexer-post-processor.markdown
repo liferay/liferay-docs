@@ -4,6 +4,8 @@ header-id: extending-the-indexer-post-processor
 
 # Extending the Indexer Post Processor
 
+[TOC levels=1-4]
+
 Would you like to modify the search summaries, indexes, and queries available in
 your portal instance? Developing an Indexer Post Processor hook lets you do just
 that. The indexer hook implements a post processing system on top of the

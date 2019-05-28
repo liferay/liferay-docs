@@ -4,6 +4,8 @@ header-id: invoking-the-api-locally
 
 # Invoking the API Locally
 
+[TOC levels=1-4]
+
 Each service provides a local interface to clients running in the same JVM as
 Liferay Portal. There are two ways to invoke a service API's methods: 
 

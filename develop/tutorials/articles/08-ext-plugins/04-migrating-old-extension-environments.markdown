@@ -4,6 +4,8 @@ header-id: migrating-old-extension-environments
 
 # Migrating old extension environments
 
+[TOC levels=1-4]
+
 Because Ext plugins are an evolution of the extension environment provided in
 Liferay 5.2 and earlier, you might need to migrate your extension environment
 into Ext plugins when upgrading Liferay. If you need to do this, we have good

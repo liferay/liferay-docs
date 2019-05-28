@@ -4,6 +4,8 @@ header-id: anatomy-of-a-theme
 
 # Anatomy of a Theme
 
+[TOC levels=1-4]
+
 Custom themes are created by layering your customizations on top of one of
 Liferay's built-in themes. 
 

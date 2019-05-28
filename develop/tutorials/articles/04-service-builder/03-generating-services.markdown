@@ -4,6 +4,8 @@ header-id: generating-services
 
 # Generating Services
 
+[TOC levels=1-4]
+
 To build a service from a `service.xml` file, you can use *Liferay IDE*,
 *Liferay Developer Studio*, or use a terminal window. Next, you'll generate the
 service for the example Event Listing portlet project you've been developing

@@ -4,6 +4,8 @@ header-id: overriding-a-portal-service
 
 # Overriding a Portal Service
 
+[TOC levels=1-4]
+
 All the functionality provided by Liferay is enclosed in a layer of services
 that are accessed by the controller layer in portlets. This is a standard
 architecture, and it lets you change how a core portlet of Liferay behaves

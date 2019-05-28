@@ -4,6 +4,8 @@ header-id: plugin-management
 
 # Plugin Management
 
+[TOC levels=1-4]
+
 One of the primary ways of extending the functionality of Liferay Portal is by
 the use of plugins. *Plugin* is an umbrella term for installable portlet, theme,
 layout template, hook, Ext and web module Java EE `.war` files. Though Liferay

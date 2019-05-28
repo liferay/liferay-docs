@@ -4,6 +4,8 @@ header-id: installing-liferay-on-jboss-5-1
 
 # Installing Liferay on JBoss 5.1
 
+[TOC levels=1-4]
+
 Note: Java 7 deprecated some classes used by JBoss 5.1. Use Java 5 or Java 6 to
 run JBoss 5.1.
 

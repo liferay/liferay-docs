@@ -4,6 +4,8 @@ header-id: localizing-your-portlet
 
 # Localizing your Portlet
 
+[TOC levels=1-4]
+
 If your portlets target an international audience, you can localize the user
 interface. Localizing your portlet's language is done using language keys for
 each language you wish to support. You can translate these manually or use a web

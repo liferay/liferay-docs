@@ -4,6 +4,8 @@ header-id: summary-6
 
 # Summary
 
+[TOC levels=1-4]
+
 "But the chair whose violet lining with the lamp-light gloating o'er,
 Lenore II shall press, ah, nevermore!"
 

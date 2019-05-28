@@ -4,6 +4,8 @@ header-id: how-can-liferays-wcm-help-you
 
 # How Can Liferay's WCM Help You?
 
+[TOC levels=1-4]
+
 With Liferay's WCM you have the ability to create, edit, stage, publish and
 approve content with easy to learn yet powerful tools. Liferay's WCM streamlines
 the content creation process for end users. It's much faster to use Liferay's

@@ -4,6 +4,8 @@ header-id: portlet-service-security
 
 # Portlet Service Security
 
+[TOC levels=1-4]
+
 For each portlet the plugin accesses, replicate this property substituting
 `some-portlet` in the `[` square brackets `]` with the name of the accessible
 portlet. 

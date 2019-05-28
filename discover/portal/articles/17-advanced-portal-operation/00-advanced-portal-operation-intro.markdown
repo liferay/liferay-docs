@@ -4,6 +4,8 @@ header-id: advanced-portal-operation
 
 # Advanced Portal Operation
 
+[TOC levels=1-4]
+
 In this chapter we discuss several advanced features of Liferay Portal,
 including audit trails and portal maintainence, backup, and logging. Audit
 trails allow portal administrators to track the activities of portal users--this

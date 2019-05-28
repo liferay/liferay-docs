@@ -4,6 +4,8 @@ header-id: editions-of-liferay
 
 # Editions of Liferay
 
+[TOC levels=1-4]
+
 Liferay ships in two different editions: Liferay Portal Community Edition (CE)
 and Liferay Portal Enterprise Edition (EE). CE is the same Liferay Portal that
 has been available for years: frequently updated and bursting with the latest

@@ -4,6 +4,8 @@ header-id: choosing-your-development-tools
 
 # Choosing your development tools
 
+[TOC levels=1-4]
+
 The Java ecosystem is known for providing a variety of options for almost any
 type of software development. This is advantageous because you can find the tool
 that best fits your needs and the way you work. Naturally, when you get

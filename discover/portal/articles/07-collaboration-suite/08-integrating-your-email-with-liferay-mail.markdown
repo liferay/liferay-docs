@@ -4,6 +4,8 @@ header-id: integrating-your-email-with-liferay-mail
 
 # Integrating Your Email with Liferay Mail
 
+[TOC levels=1-4]
+
 Liferay's Mail portlet enables your users to interact with their email using an
 easy to use, ubiquitous web interface. If your mail system supports the IMAP
 protocol, you can use the Mail portlet to integrate your users' mail with the

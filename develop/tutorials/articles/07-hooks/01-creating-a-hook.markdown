@@ -4,6 +4,8 @@ header-id: creating-a-hook
 
 # Creating a Hook
 
+[TOC levels=1-4]
+
 Regardless of whether you use the Plugins SDK or your terminal to create hooks,
 hooks projects are stored in the Plugins SDK's `hooks` directory. 
 

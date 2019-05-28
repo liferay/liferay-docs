@@ -4,6 +4,8 @@ header-id: using-liferay-portal-as-a-content-management-system
 
 # Using Liferay Portal as a Content Management System
 
+[TOC levels=1-4]
+
 One of the most common uses of Liferay Portal is as a content management system.
 In fact, many use Liferay Portal just for content management, whether it be web
 content management or management of file-based content (documents, media files,

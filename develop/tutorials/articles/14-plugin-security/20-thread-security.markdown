@@ -4,6 +4,8 @@ header-id: thread-security
 
 # Thread Security
 
+[TOC levels=1-4]
+
 Specify regular expression patterns used to match names of the thread pool
 executor for the plugin to access.
 

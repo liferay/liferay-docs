@@ -4,6 +4,8 @@ header-id: installing-the-sdk
 
 # Installing the SDK
 
+[TOC levels=1-4]
+
 The first thing you should do is install Liferay Portal. If you haven't already
 installed a Liferay bundle, follow the instructions in the [Installation and
 Setup](/docs/6-1/user/-/knowledge_base/u/installation-and-setup)

@@ -4,6 +4,8 @@ header-id: installing-liferay-on-oracle-weblogic-10-3
 
 # Installing Liferay on Oracle WebLogic 10.3
 
+[TOC levels=1-4]
+
 **Liferay Home** is one folder above the domain to which you will be installing
 Liferay.
 

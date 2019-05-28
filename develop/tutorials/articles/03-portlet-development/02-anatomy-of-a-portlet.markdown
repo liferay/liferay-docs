@@ -4,6 +4,8 @@ header-id: anatomy-of-a-portlet
 
 # Anatomy of a Portlet
 
+[TOC levels=1-4]
+
 A portlet project is made up of at least three components:
 
 1.  Java Source. 

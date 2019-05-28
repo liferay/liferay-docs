@@ -4,6 +4,8 @@ header-id: server-administration
 
 # Server Administration
 
+[TOC levels=1-4]
+
 The Server Administration page of the control panel lets you perform various
 tasks related to the portal server itself, as opposed to the resources in the
 portal. Clicking the link makes this clear: you're immediately presented with a

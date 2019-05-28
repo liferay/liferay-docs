@@ -4,6 +4,8 @@ header-id: accessing-third-party-applications-from-your-gadget
 
 # Accessing third-party applications from your gadget
 
+[TOC levels=1-4]
+
 Is there data on sites like Evernote, Facebook, Google, Netflix, Photobucket,
 Twitter, or Yahoo you'd like to access in your OpenSocial gadgets? Perhaps you'd
 like to provide a gadget for portal users to add movies to their Netflix queue

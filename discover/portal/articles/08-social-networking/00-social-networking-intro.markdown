@@ -4,6 +4,8 @@ header-id: social-networking
 
 # Social Networking
 
+[TOC levels=1-4]
+
 Since the first social networks rose to popularity, concepts such as *Friend*
 and later *Like*--previously reserved for direct human interaction--have taken
 on new meaning in an always-online, information driven culture. It could be

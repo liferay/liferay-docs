@@ -4,6 +4,8 @@ header-id: defining-your-object-relational-map
 
 # Defining Your Object-Relational Map
 
+[TOC levels=1-4]
+
 In order to demonstrate how to use Service Builder, let's create an example
 portlet project that Nose-ster, a fictitious organization, can use to schedule
 social events. For our example, we'll create a new Liferay portlet project for

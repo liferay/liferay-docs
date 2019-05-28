@@ -4,6 +4,8 @@ header-id: using-workflow
 
 # Using Workflow
 
+[TOC levels=1-4]
+
 Liferay Portal includes a workflow engine called Kaleo. In Greek, this word
 means "called ones," which is appropriate for a workflow engine that calls users
 to participate in a process designed for them. Kaleo workflow allows a user to

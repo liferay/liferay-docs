@@ -4,6 +4,8 @@ header-id: portal-predefined-settings
 
 # Portal Predefined Settings
 
+[TOC levels=1-4]
+
 The portal defines some settings that allow the theme to determine certain
 behaviors. As of this writing, predefined settings are only available for
 portlet borders, bullet styles, and the site name, but more settings may be

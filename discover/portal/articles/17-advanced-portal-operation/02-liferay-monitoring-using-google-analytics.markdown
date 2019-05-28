@@ -4,6 +4,8 @@ header-id: liferay-monitoring-using-google-analytics
 
 # Liferay Monitoring Using Google Analytics
 
+[TOC levels=1-4]
+
 Liferay includes built-in support for Google Analytics, allowing administrators
 to make use of Google's tool set for analyzing site traffic data. When you sign
 up for Google Analytics, a snippet of code is provided which needs to be added

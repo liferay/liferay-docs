@@ -4,6 +4,8 @@ header-id: making-changes-to-published-apps
 
 # Making changes to published apps
 
+[TOC levels=1-4]
+
 After your app is published and approved, you will undoubtedly need to make one
 or more of these kinds of changes during the life of the app:
 

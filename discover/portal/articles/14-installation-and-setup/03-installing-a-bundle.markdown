@@ -4,6 +4,8 @@ header-id: installing-a-bundle
 
 # Installing a Bundle
 
+[TOC levels=1-4]
+
 Liferay bundles contain the same directory structure regardless of application
 server. The top-level folder is named for the release of Liferay. This folder is
 called *Liferay Home* and we refer to it thoughout this documentation. 

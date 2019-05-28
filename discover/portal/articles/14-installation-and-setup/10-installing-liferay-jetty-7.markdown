@@ -4,6 +4,8 @@ header-id: installing-liferay-on-jetty-7
 
 # Installing Liferay on Jetty 7
 
+[TOC levels=1-4]
+
 **Liferay Home** is one folder above Jetty's install location.
 
 For this section, we'll refer to Jetty server's installation location as

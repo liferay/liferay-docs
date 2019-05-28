@@ -4,6 +4,8 @@ header-id: discuss-ask-and-answer-using-the-message-boards
 
 # Discuss, Ask and Answer Using the Message Boards
 
+[TOC levels=1-4]
+
 Liferay's Message Boards portlet is a state of the art forum application
 similar to many forums in which you may have participated. The difference, of
 course, is that Liferay's message boards can inherit the abilities of the

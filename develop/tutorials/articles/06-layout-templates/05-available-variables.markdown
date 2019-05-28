@@ -4,6 +4,8 @@ header-id: available-variables
 
 # Available variables
 
+[TOC levels=1-4]
+
 A number of variables are available for you to use in your custom TPL files. For
 your convenience, we've listed all of them in the following table. 
 

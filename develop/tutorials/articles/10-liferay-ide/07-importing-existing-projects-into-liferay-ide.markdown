@@ -4,6 +4,8 @@ header-id: importing-existing-projects-into-liferay-ide
 
 # Importing Existing Projects into Liferay IDE
 
+[TOC levels=1-4]
+
 What if you have existing projects that you want to work on in Liferay IDE?
 You can import your existing projects into Liferay IDE to take advantage of
 Liferay IDE's developer tools. 

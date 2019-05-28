@@ -4,6 +4,8 @@ header-id: javascript
 
 # JavaScript
 
+[TOC levels=1-4]
+
 Liferay has its own JavaScript library called AlloyUI, an extension to Yahoo's
 YUI3 framework. You can take advantage of AlloyUI or YUI3 in your themes. Inside
 your theme's `main.js` file, you'll find definitions for three JavaScript

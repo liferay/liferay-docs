@@ -4,6 +4,8 @@ header-id: shopping
 
 # Shopping
 
+[TOC levels=1-4]
+
 Would your organization like to make some money selling promotional items? Are
 you an artist looking to share your work with the world? Perhaps your company
 produces a publication that customers want to purchase? If you have something of

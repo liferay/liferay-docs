@@ -4,6 +4,8 @@ header-id: summary-13
 
 # Summary
 
+[TOC levels=1-4]
+
 In this chapter, we began to examine Liferay's control panel. Site memberships
 and teams aren't the only way for portal administrators to group and manage
 users: organizations can be used to arrange users into hierarchical structures

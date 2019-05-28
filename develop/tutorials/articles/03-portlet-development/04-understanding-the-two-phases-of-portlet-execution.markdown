@@ -4,6 +4,8 @@ header-id: understanding-the-two-phases-of-portlet-execution
 
 # Understanding the Two phases of Portlet Execution
 
+[TOC levels=1-4]
+
 Our portlet needs two execution phases, the action phase and the render phase.
 Multiple execution phases can be confusing to developers used to regular servlet
 development or used to other environments such as PHP, Python or Ruby. However,

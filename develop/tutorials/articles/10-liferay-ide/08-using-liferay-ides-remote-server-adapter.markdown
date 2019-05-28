@@ -4,6 +4,8 @@ header-id: using-liferay-ides-remote-server-adapter
 
 # Using Liferay IDE's Remote Server Adapter
 
+[TOC levels=1-4]
+
 The Remote Server Adapter is a feature that lets you deploy your Liferay
 projects to a remote Liferay Portal server. If you need to work with a 
 development instance of Liferay that's on another machine, then the remote

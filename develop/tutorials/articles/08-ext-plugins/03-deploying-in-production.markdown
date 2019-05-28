@@ -4,6 +4,8 @@ header-id: deploying-in-production
 
 # Deploying in production
 
+[TOC levels=1-4]
+
 Often times you can't use Ant to deploy web applications in production or
 pre-production environments. Additionally, some application servers such as
 WebSphere or Weblogic have their own deployment tools, and Liferay's autodeploy

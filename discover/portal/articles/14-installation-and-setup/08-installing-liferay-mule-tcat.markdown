@@ -4,6 +4,8 @@ header-id: installing-liferay-on-mule-tcat
 
 # Installing Liferay on Mule Tcat
 
+[TOC levels=1-4]
+
 Liferay Portal Tcat Edition is a combination of Liferay Portal, the leading open
 source portal, and Tcat Server, an enterprise grade administration console for
 the Apache Tomcat application server.

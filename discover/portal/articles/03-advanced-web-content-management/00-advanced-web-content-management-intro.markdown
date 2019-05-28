@@ -4,6 +4,8 @@ header-id: advanced-web-content-management
 
 # Advanced Web Content Management
 
+[TOC levels=1-4]
+
 In the previous chapter we looked at some basic ways you can use Liferay to
 handle your web content. In this chapter we'll delve deeper into slightly more
 complex web content management techniques. But don't be alarmed, it's not too

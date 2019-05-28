@@ -4,6 +4,8 @@ header-id: audit-trails
 
 # Audit Trails
 
+[TOC levels=1-4]
+
 ![EE Only Feature](../../images/ee-feature-web.png)
 
 You've just finished lunch and are ready to get back to work. You have a site in

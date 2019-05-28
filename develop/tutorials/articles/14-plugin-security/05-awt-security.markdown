@@ -4,6 +4,8 @@ header-id: awt-security
 
 # AWT Security
 
+[TOC levels=1-4]
+
 Specify the AWT operations the plugin is permitted to access. 
 
 *Example:*

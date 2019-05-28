@@ -4,6 +4,8 @@ header-id: implementing-configurable-portlet-preferences
 
 # Implementing Configurable Portlet Preferences
 
+[TOC levels=1-4]
+
 Portlet Preferences are properties for storing basic portlet configuration data.
 Preferences are often used by administrators to provide customized views of a
 portlet to subsets of users or even all of a portlet's users. Portlet

@@ -4,6 +4,8 @@ header-id: summary-9
 
 # Summary
 
+[TOC levels=1-4]
+
 With Liferay's frameworks, implementing complex functionality in your custom
 portlets becomes easy. We covered security and permissions and the 
 Asset Framework. Make sure  you check back regularly to find more detailed

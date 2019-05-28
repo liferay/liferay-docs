@@ -4,6 +4,8 @@ header-id: creating-liferay-themes
 
 # Creating Liferay Themes
 
+[TOC levels=1-4]
+
 Do you want to transform the look and feel of your Liferay Portal? Create your
 own Liferay Theme! Themes are hot deployable plugins unique to a site served by
 the portal. With themes, you can alter the user interface so completely that

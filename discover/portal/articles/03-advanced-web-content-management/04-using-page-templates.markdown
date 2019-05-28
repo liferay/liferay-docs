@@ -4,6 +4,8 @@ header-id: using-page-templates
 
 # Using Page Templates
 
+[TOC levels=1-4]
+
 Click on *Page Templates* in the Control Panel to see a list of page templates.
 Page templates function similarly to site templates but at the page level. Each
 page template provides a pre-configured page to reuse. Within a page template,

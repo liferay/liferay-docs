@@ -4,6 +4,8 @@ header-id: theme-inheritance
 
 # Theme inheritance
 
+[TOC levels=1-4]
+
 By default, themes are based on the *_styled* theme, which provides only basic
 styling of portlets. If you open the `build.xml` file in your theme's directory
 using the Build Application Configuration Editor, you see the following code:

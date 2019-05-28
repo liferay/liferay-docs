@@ -4,6 +4,8 @@ header-id: tracking-app-performance
 
 # Tracking app performance
 
+[TOC levels=1-4]
+
 One of the main reasons for developing and publishing apps into the Marketplace
 is to drive downloads and adoption of your app. The Marketplace enables you, as
 the developer of your app, to get detailed reports about the number of views,

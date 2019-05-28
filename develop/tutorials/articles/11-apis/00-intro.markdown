@@ -4,6 +4,8 @@ header-id: liferay-apis
 
 # Liferay APIs
 
+[TOC levels=1-4]
+
 An *Application Programming Interface* (API) is a protocol that, when invoked,
 performs an action or set of actions. You can invoke an API from your own code
 directly through a Java invocation, or through web services. This chapter

@@ -4,6 +4,8 @@ header-id: environment-variable-security
 
 # Environment Variable Security
 
+[TOC levels=1-4]
+
 Specify regular expression patterns used to match environment variables
 that the plugin is permitted to access. 
 

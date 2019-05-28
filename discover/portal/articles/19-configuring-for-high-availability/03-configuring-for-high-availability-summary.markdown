@@ -4,6 +4,8 @@ header-id: summary-17
 
 # Summary
 
+[TOC levels=1-4]
+
 We've seen how good a fit Liferay Portal is for the enterprise. It can be scaled
 linearly to grow to whatever size you need to serve your users. Clustering is a 
 snap, and Liferay harmonizes very well with whatever environment you may have. 

@@ -4,6 +4,8 @@ header-id: collaboration-suite
 
 # Collaboration Suite
 
+[TOC levels=1-4]
+
 Liferay Portal ships with a robust suite of collaboration applications which
 you can use to build communities of users for your site. These applications
 provide all the features that you would expect of standalone versions outside

@@ -4,6 +4,8 @@ header-id: using-faceted-search
 
 # Using Faceted Search
 
+[TOC levels=1-4]
+
 To stay organized, I (RS) used to use a paper-based planner. It had various
 sections for various areas of my life. Its initial incarnation came from a
 commercial company, but over the years I tweaked it into something that worked

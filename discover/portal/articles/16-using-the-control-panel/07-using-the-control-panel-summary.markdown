@@ -4,6 +4,8 @@ header-id: summary-14
 
 # Summary
 
+[TOC levels=1-4]
+
 In this chapter, we finished our overview of Liferay's control panel that we
 began in chapter 15. We saw how to configure mail host names, email
 notifications, identification, and portal display settings. We showed how you

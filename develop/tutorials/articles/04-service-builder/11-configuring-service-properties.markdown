@@ -4,6 +4,8 @@ header-id: configuring-service-properties
 
 # Configuring service.properties
 
+[TOC levels=1-4]
+
 Service Builder generates a `service.properties` file in your project's
 `docroot/WEB-INF/src` folder. Liferay Portal uses the properties in this file to
 alter your service's database schema and load Spring configuration files to

@@ -4,6 +4,8 @@ header-id: extending-and-customizing-liferay
 
 # Extending and customizing Liferay
 
+[TOC levels=1-4]
+
 Liferay provides many out-of-the-box features, including a fully featured
 content management system, a social collaboration suite, and several
 productivity tools. For most installations, these features are exactly what you

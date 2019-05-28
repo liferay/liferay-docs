@@ -4,6 +4,8 @@ header-id: publishing-basic-content
 
 # Publishing Basic Content
 
+[TOC levels=1-4]
+
 Now that we've created and published our first piece of web content for
 Nose-ster, it's time to display it. First, add the *Web Content Display* portlet
 to our Welcome page by selecting *Add &rarr; Web Content Display* from the

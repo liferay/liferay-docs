@@ -4,6 +4,8 @@ header-id: creating-liferay-layout-templates
 
 # Creating Liferay Layout Templates
 
+[TOC levels=1-4]
+
 By now, you've likely added portlets to a page by dragging them from the *Add*
 menu and dropping them into place. Are there times, though, when you find
 yourself limited by Liferay's page layout options? Maybe your Feng Shui

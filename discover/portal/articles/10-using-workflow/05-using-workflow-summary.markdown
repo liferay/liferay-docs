@@ -4,6 +4,8 @@ header-id: summary-8
 
 # Summary
 
+[TOC levels=1-4]
+
 In this chapter, we explained how to install the Kaleo workflow plugin for
 Liferay EE. Liferay's Kaleo workflow engine is included with Liferay CE. We
 discussed how to create new workflow definitions and examined the XML schema for

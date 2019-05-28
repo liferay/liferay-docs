@@ -4,6 +4,8 @@ header-id: thumbnails
 
 # Thumbnails
 
+[TOC levels=1-4]
+
 Now that your theme is available in Liferay, it's time to dress it up for a
 stylistic appeal. Currently in the *Look and Feel* settings, your theme's
 thumbnail is a broken image. To remedy this, create a 1080 pixels wide by 864

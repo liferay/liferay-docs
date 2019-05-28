@@ -4,6 +4,8 @@ header-id: tagging-and-categorizing-content
 
 # Tagging and Categorizing Content
 
+[TOC levels=1-4]
+
 Tags and categories are two important tools you can use to help organize
 information on your portal and make it easier for your users to find the content
 they're looking for through search or navigation. Tagging and categorizing web

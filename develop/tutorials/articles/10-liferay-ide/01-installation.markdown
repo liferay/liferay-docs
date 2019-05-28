@@ -4,6 +4,8 @@ header-id: installation
 
 # Installation
 
+[TOC levels=1-4]
+
 Liferay IDE is a plugin for Eclipse. You can install it in two ways: bundled
 with Eclipse (this is the easiest way) or into an existing Eclipse installation. 
 

@@ -4,6 +4,8 @@ header-id: portal-access-control-list-pacl-properties
 
 # Portal Access Control List (PACL) Properties
 
+[TOC levels=1-4]
+
 Liferay Portal's Plugin Security Manager checks all your plugin's API access
 attempts against the security manager properties specified in your plugin's
 `liferay-plugin-package.properties` file. If your plugin tries to access a

@@ -4,6 +4,8 @@ header-id: using-workflow-with-other-applications
 
 # Using Workflow with Other Applications
 
+[TOC levels=1-4]
+
 We saw an example of how to use workflow with Liferay web content in chapter 2.
 In this section, we'll discuss how to use workflow with other applications.
 First, we'll look at using workflow with Documents and Media. After that, we'll

@@ -4,6 +4,8 @@ header-id: liferay-ide-and-liferay-developer-studio
 
 # Liferay IDE and Liferay Developer Studio
 
+[TOC levels=1-4]
+
 If you've been writing software for a while, you probably have a set of tools
 that you regularly use. This set of tools has been carefully collected over the
 years, and every tool is there for one reason: to contribute to your

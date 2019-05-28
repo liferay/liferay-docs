@@ -4,6 +4,8 @@ header-id: other-hooks
 
 # Other hooks
 
+[TOC levels=1-4]
+
 Since hooks are the preferred plugin type for customizing Liferay's core
 features, the Liferay team is happy to keep providing you new hooks. This
 section is a placeholder for hooks that are available in Liferay Portal 6.1,

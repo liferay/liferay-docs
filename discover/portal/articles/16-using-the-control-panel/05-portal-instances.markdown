@@ -4,6 +4,8 @@ header-id: portal-instances
 
 # Portal Instances
 
+[TOC levels=1-4]
+
 Liferay Portal allows you to run more than one portal instance on a single
 server. The Portal Instances page of the control panel lets you manage these
 instances. Data for each portal instance are kept separate from every other

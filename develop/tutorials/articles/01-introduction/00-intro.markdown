@@ -4,6 +4,8 @@ header-id: tutorials
 
 # Introduction
 
+[TOC levels=1-4]
+
 Welcome to the Developer's Guide, Liferay's official guide for developers. If
 you're interested in developing applications on Liferay portal or customizing
 it, you're in the right place. This guide assumes you already know

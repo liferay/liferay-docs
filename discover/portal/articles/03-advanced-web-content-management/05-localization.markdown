@@ -4,6 +4,8 @@ header-id: localization
 
 # Localization
 
+[TOC levels=1-4]
+
 Previous versions of Liferay had the ability to create and manage different
 translations of your web content but with Liferay 6.1 we've added several
 improvements.

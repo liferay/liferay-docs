@@ -4,6 +4,8 @@ header-id: device-detection
 
 # Device Detection
 
+[TOC levels=1-4]
+
 As you know, Internet traffic has risen exponentially over the past decade and
 shows no sign of stopping. With the latest and greatest devices, mobile Internet
 access has become the norm and is predicted to pass PC based Internet access

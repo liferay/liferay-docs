@@ -4,6 +4,8 @@ header-id: developing-an-ext-plugin
 
 # Developing an Ext Plugin
 
+[TOC levels=1-4]
+
 An Ext plugin changes Liferay itself when deployed; it's not a separate
 component that can be easily removed at any time. For this reason, the Ext
 plugin development process is different from other plugin types. It's

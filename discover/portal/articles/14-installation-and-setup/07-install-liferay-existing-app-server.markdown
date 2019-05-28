@@ -4,6 +4,8 @@ header-id: installing-liferay-on-an-existing-application-server
 
 # Installing Liferay on an Existing Application Server
 
+[TOC levels=1-4]
+
 This section contains detailed instructions for installing Liferay Portal using
 its .war file distribution. This allows system administrators to deploy Liferay
 in existing application server installations. It is recommended that you have a

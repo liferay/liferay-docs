@@ -4,6 +4,8 @@ header-id: scheduling-web-content
 
 # Scheduling Web Content
 
+[TOC levels=1-4]
+
 Liferay's WCM lets you define when your content goes live. You can determine
 when the content is displayed, expired and/or reviewed. This is an excellent way
 to keep your site current and free from outdated (and perhaps incorrect)

@@ -4,6 +4,8 @@ header-id: deploying-new-liferay-projects-to-liferay-server
 
 # Deploying New Liferay Projects to Liferay Server
 
+[TOC levels=1-4]
+
 You have a plugin project, but you need to deploy it onto your Liferay
 Server. Let's do it now. There are two ways to do it, and the first is very
 easy. Select your project, drag it down, and drop it on your server. Voila! Your

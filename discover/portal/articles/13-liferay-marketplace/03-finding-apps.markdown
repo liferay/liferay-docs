@@ -4,6 +4,8 @@ header-id: finding-apps
 
 # Finding Apps
 
+[TOC levels=1-4]
+
 There are several ways to search for and find apps you are interested in.
 
 1. Browsing Categories. Click on a category (for example, *Communication* or

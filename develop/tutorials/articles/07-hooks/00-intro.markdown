@@ -4,6 +4,8 @@ header-id: hooks
 
 # Hooks
 
+[TOC levels=1-4]
+
 Liferay Hooks are the best plugin for customizing Liferay's core features.  If
 possible, use hooks whenever you need to override Liferay's core functionality.
 It's possible to use Ext plugins for many of the same tasks, but hooks are

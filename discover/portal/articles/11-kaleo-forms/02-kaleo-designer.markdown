@@ -4,6 +4,8 @@ header-id: kaleo-designer
 
 # Kaleo Designer
 
+[TOC levels=1-4]
+
 Kaleo Designer provides a drag and drop interface for users to create custom
 workflows. It's an incredibly powerful tool for managing workflow definitions.
 The Workflow Designer can only be accessed through the Kaleo Forms portlet but

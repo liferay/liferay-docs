@@ -4,6 +4,8 @@ header-id: developing-plugins-using-maven
 
 # Developing Plugins Using Maven
 
+[TOC levels=1-4]
+
 "Once upon a midnight dreary, while I pondered weak and weary..."
 
 Here's the scene--you're sitting in a luxurious armchair next to a dancing fire,

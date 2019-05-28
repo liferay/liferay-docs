@@ -4,6 +4,8 @@ header-id: designing-a-layout-template
 
 # Designing a layout template
 
+[TOC levels=1-4]
+
 Initially, the layout template's generated TPL files are empty, a fresh canvas
 on which you design layout templates. If this seems overwhelming, don't worry.
 With the handy palette in Developer Studio's *Layout Template Editor*,

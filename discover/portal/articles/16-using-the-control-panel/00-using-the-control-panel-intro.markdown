@@ -4,6 +4,8 @@ header-id: using-the-control-panel
 
 # Using the Control Panel
 
+[TOC levels=1-4]
+
 In this chapter, we continue our coverage of Liferay's control panel that we
 began in chapter 15. We'll cover the following topics:
 

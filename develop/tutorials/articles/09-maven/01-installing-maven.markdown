@@ -4,6 +4,8 @@ header-id: installing-maven
 
 # Installing Maven
 
+[TOC levels=1-4]
+
 You can download Maven from
 [http://maven.apache.org/download.cgi](http://maven.apache.org/download.cgi). We
 recommend putting your Maven installation's `bin` directory in your system's

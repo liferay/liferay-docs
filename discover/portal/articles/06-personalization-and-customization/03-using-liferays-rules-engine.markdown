@@ -4,6 +4,8 @@ header-id: using-liferays-rules-engine
 
 # Using Liferay's Rules Engine
 
+[TOC levels=1-4]
+
 ![EE Only Feature](../../images/ee-feature-web.png)
 
 Liferay Portal Enterprise Edition provides an implementation of a JSR-94

@@ -4,6 +4,8 @@ header-id: file-storage-framework
 
 # File Storage Framework
 
+[TOC levels=1-4]
+
 The File Storage Framework lets you store files using the back end of the
 Document Library. If you use this framework you won't have to worry about
 clustering or backups, since they'll already be taken care of for the Document

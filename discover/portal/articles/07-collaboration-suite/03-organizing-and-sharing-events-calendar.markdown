@@ -4,6 +4,8 @@ header-id: organizing-and-sharing-events-with-the-calendar
 
 # Organizing and Sharing Events with the Calendar
 
+[TOC levels=1-4]
+
 Liferay's Calendar portlet is a complete calendaring solution. You can schedule
 any number of events of different types, receive alarms via email or text
 message, import and export your calendar, and much more. Additionally, you can

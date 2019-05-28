@@ -4,6 +4,8 @@ header-id: marketplace-basics
 
 # Marketplace basics
 
+[TOC levels=1-4]
+
 Before diving into the details of developing for the Marketplace, it is
 important to have a good grasp of new concepts introduced in the Marketplace.
 The following list of questions will help in understanding the concepts that you

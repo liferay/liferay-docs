@@ -4,6 +4,8 @@ header-id: leveraging-the-asset-framework
 
 # Leveraging the Asset Framework
 
+[TOC levels=1-4]
+
 Any type of content in Liferay is considered an asset. In chapters 2 and 3, we
 already examined Liferay's most common type of asset: web content. Other types
 of assets include blog posts, wiki articles, message board posts, bookmarks, and

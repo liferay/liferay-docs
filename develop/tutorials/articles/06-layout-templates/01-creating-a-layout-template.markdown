@@ -4,6 +4,8 @@ header-id: creating-a-layout-template
 
 # Creating a Layout Template
 
+[TOC levels=1-4]
+
 With the Plugins SDK you can deploy layout templates as plugins, and creating
 layout templates with Liferay Developer Studio is easier than ever. Let's call
 our layout template called *Columns 1 4 1*. 

@@ -4,6 +4,8 @@ header-id: creating-your-own-plugin-repository
 
 # Creating Your Own Plugin Repository
 
+[TOC levels=1-4]
+
 As your enterprise builds its own library of portlets for internal use, you can
 create your own plugin repository to make it easy to install and upgrade
 portlets. This will allow different departments who may be running different

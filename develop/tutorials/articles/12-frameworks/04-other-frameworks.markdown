@@ -4,6 +4,8 @@ header-id: other-frameworks
 
 # Other frameworks
 
+[TOC levels=1-4]
+
 Liferay has a variety of frameworks that simplify development of complex
 functionalities for your own applications. Liferay's frameworks have evolved
 from its built in applications, so they're proven to work in the real world,

@@ -4,6 +4,8 @@ header-id: extending-and-overriding-portal-properties
 
 # Extending and Overriding portal.properties
 
+[TOC levels=1-4]
+
 In our hook that created a custom login action, we modified the
 `login.events.pre` portal property. This property accepts *multiple* values, so
 our value was appended to the existing `login.events.pre` values. We can

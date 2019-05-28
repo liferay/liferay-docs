@@ -4,6 +4,8 @@ header-id: upgrading-liferay
 
 # Upgrading Liferay
 
+[TOC levels=1-4]
+
 Liferay upgrades are fairly straightforward. A consistent set of steps is all
 you need to follow to upgrade a standard Liferay installation. Things do get
 more complicated if your organization has used Ext plugins to customize Liferay.

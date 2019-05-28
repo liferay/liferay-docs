@@ -4,6 +4,8 @@ header-id: staying-in-touch-with-the-chat
 
 # Staying in Touch With the Chat
 
+[TOC levels=1-4]
+
 Liferay's Chat portlet provides a convenient way of allowing users to send each
 other instant messages when they are logged into your web site. It appears as a
 bar at the bottom of every page, showing who is logged on, their statuses, and

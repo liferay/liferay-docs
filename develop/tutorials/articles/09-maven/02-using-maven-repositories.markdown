@@ -4,6 +4,8 @@ header-id: using-maven-repositories
 
 # Using Maven repositories
 
+[TOC levels=1-4]
+
 Wouldn't it be nice to install and deploy your Liferay artifacts to a
 repository? Great news! Maven lets you install your artifacts to your machine's
 local repository and even deploy them to remote repositories; so you can share

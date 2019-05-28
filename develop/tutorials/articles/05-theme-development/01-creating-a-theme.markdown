@@ -4,6 +4,8 @@ header-id: creating-a-theme
 
 # Creating a Theme
 
+[TOC levels=1-4]
+
 The theme creation process is nearly identical to the portlet creation process
 that we covered in the last chapter. Our theme will be named *Deep Blue*, so the
 project name (without spaces) is *deep-blue*, and the display name (which can

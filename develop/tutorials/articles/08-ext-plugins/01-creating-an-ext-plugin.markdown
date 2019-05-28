@@ -4,6 +4,8 @@ header-id: creating-an-ext-plugin
 
 # Creating an Ext plugin
 
+[TOC levels=1-4]
+
 You can create Ext plugins in Liferay Developer Studio or in your terminal
 environment. The Ext plugin is stored in the `ext` directory of the Plugins SDK
 (see Chapter 2, The Plugins SDK). 

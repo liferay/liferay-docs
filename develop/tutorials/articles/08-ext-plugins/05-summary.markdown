@@ -4,6 +4,8 @@ header-id: summary-5
 
 # Summary
 
+[TOC levels=1-4]
+
 Ext plugins are a powerful way to extend Liferay. There are no limits to what
 you can use them to customize, so use them carefully. Before using an Ext
 plugin, see if you can implement all or part of the desired functionality

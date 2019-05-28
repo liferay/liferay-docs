@@ -4,6 +4,8 @@ header-id: summary-0
 
 # Summary
 
+[TOC levels=1-4]
+
 You've covered a lot of ground learning Liferay Portlet development. You created
 a portlet project, studied its anatomy, and created the "My Greeting Portlet".
 You understood the Action phase and Render phase, and have have passed

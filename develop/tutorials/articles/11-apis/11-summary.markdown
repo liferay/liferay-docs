@@ -4,6 +4,8 @@ header-id: summary-8
 
 # Summary
 
+[TOC levels=1-4]
+
 We've covered a lot of ground here. You've learned how to use Liferay's remote
 APIs, how to enable and disable remote services and access to them, and how to
 leverage `ServiceContext` objects in your use of Liferay services. You've

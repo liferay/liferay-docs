@@ -4,6 +4,8 @@ header-id: staging-page-publication
 
 # Staging Page Publication
 
+[TOC levels=1-4]
+
 Staging is an important feature of Liferay WCM. The concept of staging is a
 simple one: you can modify your site behind the scenes and then publish all your
 updates in one shot. You don't want users seeing your web site change before

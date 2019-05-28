@@ -4,6 +4,8 @@ header-id: displaying-site-pages-to-mobile-devices
 
 # Displaying Site Pages to Mobile Devices
 
+[TOC levels=1-4]
+
 Mobile device rules allow you to configure sets of rules to alter the behavior
 of the portal based on the device being used to access Liferay. The proportion
 of mobile device users browsing the web has been steadily increasing, so it's

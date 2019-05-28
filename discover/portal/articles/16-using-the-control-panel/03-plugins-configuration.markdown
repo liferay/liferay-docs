@@ -4,6 +4,8 @@ header-id: plugins-configuration
 
 # Plugins Configuration
 
+[TOC levels=1-4]
+
 The Plugins Configuration page contains tabs for three types of plugins:
 portlets, themes and layouts. You can use these tabs to view which roles can add
 plugins to pages or you can make the plugins active or inactive.

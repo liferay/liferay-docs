@@ -4,6 +4,8 @@ header-id: kaleo-forms
 
 # Kaleo Forms
 
+[TOC levels=1-4]
+
 Add the Kaleo Forms portlet to a page. In the portlet's initial state, the
 *Summary* tab displays similar information to what you might see in the *My
 Workflow Tasks* portion of the Control Panel. Because the Kaleo Forms portlet is

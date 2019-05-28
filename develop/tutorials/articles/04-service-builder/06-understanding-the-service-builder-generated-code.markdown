@@ -4,6 +4,8 @@ header-id: understanding-the-service-builder-generated-code
 
 # Understanding the Service Builder-generated Code
 
+[TOC levels=1-4]
+
 Now let's examine the files Service Builder generated for your Event entity.
 Note that the files listed under Local Service and Remote Service below are only
 generated for an entity that has both `local-service` and `remote-service`

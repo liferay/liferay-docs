@@ -4,6 +4,8 @@ header-id: configuring-the-documents-and-media-portlet
 
 # Configuring the Documents and Media Portlet
 
+[TOC levels=1-4]
+
 To configure the Documents and Media portlet, click on the wrench icon at the
 top of the portlet window and select *Configuration*. The portlet-specific
 customizations appear on the Setup tab. To change your Documents and Media

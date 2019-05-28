@@ -4,6 +4,8 @@ header-id: designing-workflows-with-kaleo-designer-for-java
 
 # Designing workflows with Kaleo Designer for Java
 
+[TOC levels=1-4]
+
 ![EE Only Feature](../../images/ee-feature-web.png)
 
 Liferay Portal includes a workflow engine called *Kaleo Designer for Java*.

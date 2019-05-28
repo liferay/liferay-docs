@@ -4,6 +4,8 @@ header-id: overriding-a-language-properties-file
 
 # Overriding a Language.properties File
 
+[TOC levels=1-4]
+
 Hooks let you change any of the messages displayed by Liferay, to suit your
 needs. To do so, create a *Language* file for the locale of the messages you
 want to customize, then refer to your file from your `liferay-hook.xml` file.

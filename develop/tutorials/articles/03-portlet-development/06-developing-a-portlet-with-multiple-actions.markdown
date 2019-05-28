@@ -4,6 +4,8 @@ header-id: developing-a-portlet-with-multiple-actions
 
 # Developing a Portlet with Multiple Actions
 
+[TOC levels=1-4]
+
 Right now our portlet only has two views: the default view and edit view. Adding
 more views is easy, and you can link to them using the `mvcPath` parameter in
 your `renderURL`. But we only have one action. What if we want to add another

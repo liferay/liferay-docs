@@ -4,6 +4,8 @@ header-id: developing-and-publishing-apps
 
 # Developing and publishing apps
 
+[TOC levels=1-4]
+
 Let's jump right in with an example. In this section, we'll walk you through the
 creation and publication steps (but we won't actually publish the app on the
 Marketplace, since this example app isn't very useful!). After walking through

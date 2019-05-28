@@ -4,6 +4,8 @@ header-id: installing-liferay-on-jonas-5-2
 
 # Installing Liferay on JOnAS 5.2
 
+[TOC levels=1-4]
+
 JOnAS is somewhat unique among the open-source application servers for two
 reasons: it is built entirely on an OSGi core, allowing for dynamic deployment
 of simultaneous webapps and containers and allows the clean separation of the

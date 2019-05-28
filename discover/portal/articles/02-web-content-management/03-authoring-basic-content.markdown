@@ -4,6 +4,8 @@ header-id: authoring-basic-content
 
 # Authoring Basic Content
 
+[TOC levels=1-4]
+
 You've been assigned the task to build a web site for an innovative new social
 networking site called Nose-ster. You've decided to take advantage of Liferay
 Portal and its rapid deployment features as well as its ability to get a fully

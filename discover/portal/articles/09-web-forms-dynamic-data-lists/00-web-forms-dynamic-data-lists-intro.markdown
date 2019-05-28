@@ -4,6 +4,8 @@ header-id: using-web-forms-and-dynamic-data-lists
 
 # Using Web Forms and Dynamic Data Lists
 
+[TOC levels=1-4]
+
 As needs change in business and organizations, the technology used to fulfill
 those needs must adapt as well. People use electronic means to do things that
 years ago were done using manual processes. For example, you may want your team

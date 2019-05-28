@@ -4,6 +4,8 @@ header-id: understanding-liferays-common-configuration-options
 
 # Understanding Liferay's Common Configuration Options
 
+[TOC levels=1-4]
+
 Just like siblings have common features inherited from their parents,
 applications that ship with Liferay also share common features. These include
 look and feel, communication, scoping, sharing, permissions, archive

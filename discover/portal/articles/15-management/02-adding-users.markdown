@@ -4,6 +4,8 @@ header-id: adding-users
 
 # Adding Users
 
+[TOC levels=1-4]
+
 Let's add a user account for yourself and configure this account so it has the
 same administrative access as the default administrator account. Go up to the
 Dockbar, mouse over *Go to* and click *Control Panel*. Then open the *Users and

@@ -4,6 +4,8 @@ header-id: setting-up-liferay-ide
 
 # Setting Up Liferay IDE
 
+[TOC levels=1-4]
+
 Now that you have Liferay IDE installed, either from a downloaded zip file or
 from the update site appropriate for your Eclipse version, you need to perform
 some basic setup. This section describes the setup steps to perform so you can

@@ -4,6 +4,8 @@ header-id: customizing-sites-and-site-templates-with-application-adapters
 
 # Customizing Sites and Site Templates with Application Adapters
 
+[TOC levels=1-4]
+
 All the hooks we've demonstrated so far are scoped to the portal. What if you
 need to customize specific sites without propagating the customizations
 throughout the entire portal? You can! *Application Adapters* are special hooks

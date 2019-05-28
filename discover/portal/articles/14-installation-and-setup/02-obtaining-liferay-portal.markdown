@@ -4,6 +4,8 @@ header-id: obtaining-liferay-portal
 
 # Obtaining Liferay Portal
 
+[TOC levels=1-4]
+
 The CE version of Liferay is freely downloadable from our web site at
 [http://www.liferay.com](http://www.liferay.com). Click the *Downloads* link at
 the top of the page and you are presented with multiple options for getting a

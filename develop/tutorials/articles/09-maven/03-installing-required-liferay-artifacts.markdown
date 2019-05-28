@@ -4,6 +4,8 @@ header-id: installing-required-liferay-artifacts
 
 #  Installing Required Liferay Artifacts
 
+[TOC levels=1-4]
+
 To create Liferay plugins using Maven, you'll need the archives required by
 Liferay (e.g., required JAR and WAR files). This won't be problem--Liferay
 provides them as Maven artifacts. 

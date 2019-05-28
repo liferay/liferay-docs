@@ -4,6 +4,8 @@ header-id: overriding-and-adding-struts-actions
 
 # Overriding and Adding Struts Actions
 
+[TOC levels=1-4]
+
 Do you want to add a new Struts action to Liferay portal or override existing
 Struts actions? *Struts action hooks* let you do just that. 
 

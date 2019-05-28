@@ -4,6 +4,8 @@ header-id: summary-12
 
 # Summary
 
+[TOC levels=1-4]
+
 In this chapter we introduced concepts and instructions for developers to make
 their apps available on the Liferay Marketplace. We looked at how to create,
 publish, maintain, and track apps. You do this through

@@ -4,6 +4,8 @@ header-id: liferay-utility-applications
 
 # Liferay Utility Applications
 
+[TOC levels=1-4]
+
 In this chapter we'll look at some Liferay utility applications that might be
 useful for you. The Software Catalog is currently packaged with Liferay but will
 soon be replaced by Liferay Marketplace. Please see chapter 13 for information

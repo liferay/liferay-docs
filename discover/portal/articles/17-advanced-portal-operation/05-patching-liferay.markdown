@@ -4,6 +4,8 @@ header-id: patching-liferay
 
 # Patching Liferay
 
+[TOC levels=1-4]
+
 ![EE Only Feature](../../images/ee-feature-web.png)
 
 While we strive for perfection with every release of Liferay Portal, the reality

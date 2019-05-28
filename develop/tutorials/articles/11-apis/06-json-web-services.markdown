@@ -4,6 +4,8 @@ header-id: json-web-services
 
 # JSON Web Services
 
+[TOC levels=1-4]
+
 JSON Web Services let you access portal service methods by exposing them as a
 JSON HTTP API. Service methods are made easily accessible using HTTP requests,
 both from JavaScript within the portal and from any JSON-speaking client. 
