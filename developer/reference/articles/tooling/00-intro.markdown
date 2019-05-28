@@ -22,17 +22,17 @@ NodeJS). They include
   projects.
 - [Liferay Dev Studio](/docs/7-2/reference/-/knowledge_base/r/liferay-dev-studio):
   an Eclipse-based IDE supporting development for @product@.
-- [Liferay IntelliJ Plugin](/docs/7-2/reference/-/knowledge_base/r/intellij-idea):
+- [Liferay IntelliJ Plugin](/docs/7-2/reference/-/knowledge_base/r/intellij):
   a plugin providing support for @product@ development with IntelliJ IDEA.
 - [Liferay Theme Generator](/docs/7-2/reference/-/knowledge_base/r/theme-generator):
   a generator that creates themes, layouts templates, and themelets for 
   @product@ development.
 
 Liferay also provides a plethora of
-[Gradle](/docs/7-2/reference/-/knowledge_base/r/gradle) and
-[Maven plugins](/docs/7-2/reference/-/knowledge_base/r/maven) you can apply
-to your projects. Many of these are already built into tools such as Liferay
-Workspace.
+[Gradle](/docs/7-2/reference/-/knowledge_base/r/gradle-plugins) and
+[Maven plugins](/docs/7-2/reference/-/knowledge_base/r/maven-plugins) you can
+apply to your projects. Many of these are already built into tools such as
+Liferay Workspace.
 
 Want samples or predefined project templates? Liferay has you covered with 30+
 [project templates](/docs/7-2/reference/-/knowledge_base/r/project-templates)

@@ -4,6 +4,8 @@ header-id: authentication-verifiers
 
 # Authentication Verifiers
 
+[TOC levels=1-4]
+
 The Authentication Verification Layer is a centralized and extensible way to
 authenticate remote invocations of @product@'s API.
 

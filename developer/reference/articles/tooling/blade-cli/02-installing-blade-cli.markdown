@@ -53,5 +53,5 @@ That's it! Blade CLI is installed on your machine! If you specified a location
 to initialize a Liferay Workspace folder, that is also available.
 
 If Blade CLI doesn't work properly on your machine, visit the
-[Common Errors with Blade CLI](/docs/7-2/reference/-/knowledge_base/r/common-errors-with-blade-cli-installation)
+[Common Errors with Blade CLI](/docs/7-2/reference/-/knowledge_base/r/common-errors-with-blade-cli)
 article for solutions to common problems.

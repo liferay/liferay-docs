@@ -4,6 +4,8 @@ header-id: authenticating-with-openid-connect
 
 # Authenticating with OpenID Connect
 
+[TOC levels=1-4]
+
 OpenID Connect is a lightweight authentication layer built on top of the 
 [OAuth 2.0](/docs/7-2/deploy/-/knowledge_base/d/oauth-2-0) 
 authorization protocol. It compliments local accounts by enabling users to
