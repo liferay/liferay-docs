@@ -1,4 +1,10 @@
+---
+header-id: installing-liferay-enterprise-search
+---
+
 # Installing Liferay Enterprise Search
+
+[TOC levels=1-4]
 
 X-Pack is an 
 [Elasticsearch extension](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/setup-xpack.html)
