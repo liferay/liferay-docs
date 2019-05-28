@@ -8,7 +8,7 @@ header-id: managing-content-types-in-staging
 
 When managing content in Staging's Advanced Publication menu, there are several
 factors to consider when preparing your content for publication. As described in
-[Advanced Publication with Staging](/docs/7-2/user/-/knowledge_base/user/advanced-publication-with-staging),
+[Advanced Publication with Staging](/docs/7-2/user/-/knowledge_base/u/advanced-publication-with-staging),
 you can navigate to the Content area of the Advanced Publication menu
 to select content you want to publish. There are options attached to each
 content group (e.g., Web Content) that you can manage too.

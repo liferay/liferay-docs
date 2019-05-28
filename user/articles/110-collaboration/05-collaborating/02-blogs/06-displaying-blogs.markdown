@@ -54,7 +54,7 @@ buttons on each blog entry. To move social networking sites between the
 *Current* and *Available* columns, select the sites and use the arrows between 
 those columns. Similarly, use the up/down arrows beneath the *Current* column to 
 reorder the sites as they appear on each blog entry. For more information, see 
-[the social bookmarks documentation](/discover/portal/-/knowledge_base/7-2/using-social-bookmarks). 
+[the social bookmarks documentation](/docs/7-2/user/-/knowledge_base/u/using-social-bookmarks). 
 
 **Display Style:** The display style for social bookmarks. *Inline* is the 
 default and displays the social bookmark icons in a row. *Menu* hides them 
@@ -78,7 +78,7 @@ choose the following:
 
 To select a different application display template (ADT) or create your own, 
 click *Manage Templates*. For more information, see the documentation on 
-[application display templates](/discover/portal/-/knowledge_base/7-2/using-page-fragments). 
+[application display templates](/docs/7-2/user/-/knowledge_base/u/using-page-fragments). 
 
 **Enable Report Inappropriate Content:** Whether to let users flag content as 
 inappropriate, which sends an email to administrators. 

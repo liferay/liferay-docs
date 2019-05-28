@@ -167,7 +167,7 @@ for more information on these properties:
 ### Elasticsearch 6
 
 Configure the connection between @product@ and Elasticsearch 6. See
-[here](/discover/deployment/-/knowledge_base/7-2/configuring-the-liferay-elasticsearch-connector) 
+[here](/docs/7-2/deploy/-/knowledge_base/d/configuring-the-liferay-elasticsearch-connector) 
 for more information on these properties:
 
 - `clusterName`

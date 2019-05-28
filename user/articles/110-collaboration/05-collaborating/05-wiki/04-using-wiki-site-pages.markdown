@@ -29,7 +29,7 @@ Comments*, *Enable Ratings for Comments*, and *Enable Highlighting* check boxes
 enable or disable those features for the Wiki. You can set how you want users
 to interact with wiki documents. The *Display Template* selector menu lets you
 choose the Wiki's 
-[Application Display Template](/discover/portal/-/knowledge_base/7-2/styling-widgets-with-application-display-templates).
+[Application Display Template](/docs/7-2/user/-/knowledge_base/u/styling-widgets-with-application-display-templates).
 Below this, you can set which wiki nodes are visible. For example, you might
 host two wikis on a given site, exposing one to the public and keeping the
 other private for site members.
@@ -76,14 +76,14 @@ Once you set the wiki's configuration options the way you want them, click
 The Wiki's Options menu also contains the usual widget options: 
 
 **Look and Feel Configuration:** Set the widget's [look and
-feel](/discover/portal/-/knowledge_base/7-2/look-and-feel-configuration).
+feel](/docs/7-2/user/-/knowledge_base/u/look-and-feel-configuration).
 
-**Export/Import:** [Export or import widget data](/discover/portal/-/knowledge_base/7-2/exporting-importing-widget-data).
+**Export/Import:** [Export or import widget data](/docs/7-2/user/-/knowledge_base/u/exporting-importing-widget-data).
 
 **Permissions:** Set the widget's permissions.
 
 **Configuration Templates:** Use 
-[configuration templates](/discover/portal/-/knowledge_base/7-2/configuration-templates) to
+[configuration templates](/docs/7-2/user/-/knowledge_base/u/configuration-templates) to
 store the widget's current setup or apply an existing archived setup.
 
 **Remove:** Remove the widget from the page. 
@@ -120,7 +120,7 @@ are enabled and your permissions:
 
 **Details:** View the wiki page's details (if you have sufficient permissions). 
 This is explained further in 
-[the documentation on page details](/discover/portal/-/knowledge_base/7-2/wiki-page-details). 
+[the documentation on page details](/docs/7-2/user/-/knowledge_base/u/wiki-page-details). 
 
 **Print:** Print the wiki page.
 

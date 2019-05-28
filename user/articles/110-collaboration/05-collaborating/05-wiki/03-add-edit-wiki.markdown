@@ -14,7 +14,7 @@ content. That message is a link; click it to start editing the page. The wiki
 page editing form then appears. 
 
 | **Note:** See the 
-| [getting started article](/discover/portal/-/knowledge_base/7-2/getting-started-with-wikis) 
+| [getting started article](/docs/7-2/user/-/knowledge_base/u/getting-started-with-wikis) 
 | for instructions on accessing your wiki nodes. 
 
 ![Figure 1: Each empty wiki page presents a default message link you can click to edit the page.](../../../../images/wiki-empty-frontpage.png)
@@ -30,14 +30,14 @@ Follow these steps to use the wiki page editing form:
     Help* if you need help with Creole syntax (e.g., syntax for text styling,
     header formatting, link creation, etc.). For a detailed explanation of the
     rest of the editor, see the 
-    [Blogs documentation](/discover/portal/-/knowledge_base/7-2/using-the-blog-entry-editor). 
+    [Blogs documentation](/docs/7-2/user/-/knowledge_base/u/using-the-blog-entry-editor). 
 
 2.  If you want to attach files to the page, open the *Attachments* section of 
     the form and add them via drag and drop or the *Select Files* button. 
 
 3.  If you want to associate a tag with the page, open the *Categorization* 
     section and enter a new or existing tag in the *Tags* field. See 
-    [the documentation on tags](/discover/portal/-/knowledge_base/7-2/tagging-content) 
+    [the documentation on tags](/docs/7-2/user/-/knowledge_base/u/tagging-content) 
     for more information. 
 
 4.  If you want to select an existing asset in the portal (e.g., a media file, 
@@ -111,7 +111,7 @@ type:
 **List** (![List](../../../../images/icon-view-type-list.png)): Shows the pages
 in a list with an icon representing each page. Each page's entry contains the
 name of its author, when it was last modified, and its
-[workflow](/discover/portal/-/knowledge_base/7-2/workflow) status (e.g.,
+[workflow](/docs/7-2/user/-/knowledge_base/u/workflow) status (e.g.,
 Approved, Draft, etc.). 
 
 **Table** (![Table](../../../../images/icon-view-type-table.png)): Shows the
