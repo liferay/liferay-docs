@@ -35,15 +35,14 @@ Here are the apps deprecated in @product-ver@.
 
 | App |  Availability |  Notes |
 | --- | ------------- | ------ |
-| Chat | TBD |  |
-| Directory | TBD |  |
-| Group Statistics | TBD |  |
-| Microblogs | TBD |  |
-| Quick Note | TBD |  |
-| Recently Downloaded | TBD |  |
-| Social Activity | TBD |  |
-| Social Networking | TBD | Formerly available as an unsupported Labs app via Marketplace. | 
-| User Statistics | TBD |  |
+| Bookmarks | Marketplace |  |
+| Directory | Nexus |  |
+| Documentum | Nexus |  |
+| Microblogs | Nexus |  |
+| Quick Note | Nexus |  |
+| Recent Documents | Nexus |  |
+| Social Bookmarks | Marketplace | |
+| Social Networking | Nexus | |
 
 ## Foundation
 
