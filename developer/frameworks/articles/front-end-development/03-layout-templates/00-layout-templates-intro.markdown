@@ -25,18 +25,20 @@ templates are written in
 [FreeMarker](https://freemarker.apache.org/). 
 An example row's HTML markup is shown below:
 
-    <div class="portlet-layout row">
-            <div class="col-md-4 col-sm-6 portlet-column portlet-column-first" 
-            id="column-1">
-                    ${processor.processColumn("column-1", 
-                    "portlet-column-content portlet-column-content-first")}
-            </div>
-            <div class="col-md-8 col-sm-6 portlet-column portlet-column-last" 
-            id="column-2">
-                    ${processor.processColumn("column-2", 
-                    "portlet-column-content portlet-column-content-last")}
-            </div>
-    </div>
+```html
+<div class="portlet-layout row">
+        <div class="col-md-4 col-sm-6 portlet-column portlet-column-first" 
+        id="column-1">
+                ${processor.processColumn("column-1", 
+                "portlet-column-content portlet-column-content-first")}
+        </div>
+        <div class="col-md-8 col-sm-6 portlet-column portlet-column-last" 
+        id="column-2">
+                ${processor.processColumn("column-2", 
+                "portlet-column-content portlet-column-content-last")}
+        </div>
+</div>
+```
 
 Columns use the 
 [Bootstrap grid system](https://getbootstrap.com/docs/4.0/layout/grid/). 
