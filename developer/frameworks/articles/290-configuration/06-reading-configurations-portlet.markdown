@@ -169,7 +169,7 @@ public boolean isFavoriteColorMatched {
 
     String userFavoriteColor = ParamUtil.getString(request, "userFavoriteColor");
 
-    if (_configuration.favoriteColor == userFavoriteColor) {
+    if (_configuration.favoriteColor() == userFavoriteColor) {
 
         SessionMessages.add(request, "congratulateUser");
 
