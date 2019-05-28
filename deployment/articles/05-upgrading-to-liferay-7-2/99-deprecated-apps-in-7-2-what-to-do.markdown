@@ -67,7 +67,7 @@ Here are the apps deprecated in @product-ver@.
 | NTLM | Marketplace release planned. | Replaced by [Kerberos](/docs/7-2/deploy/-/knowledge_base/d/authenticating-with-kerberos). |
 | OAuth 1.0a | Marketplace release planned. | Replaced by OAuth 2.0, which is included in the bundle. |
 | OpenAM / OpenSSO | Bundled |  |
-| OpenID | Marketplace release planned | [OpenID Connect](/docs/7-2/deploy/-/knowledge_base/d/authenticating-with-openid-connect). |
+| OpenID | Marketplace release planned | Replaced by [OpenID Connect](/docs/7-2/deploy/-/knowledge_base/d/authenticating-with-openid-connect). |
 
 ## User and System Management
 | App |  Availability |  Notes |
