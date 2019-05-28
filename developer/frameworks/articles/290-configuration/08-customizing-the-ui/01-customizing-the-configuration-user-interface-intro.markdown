@@ -1,4 +1,10 @@
-# Customizing the Configuration User Interface [](id=customizing-the-configuration-user-interface)
+---
+header-id: customizing-the-configuration-user-interface
+---
+
+# Customizing the Configuration User Interface
+
+[TOC levels=1-4]
 
 There are three ways to customize a configuration UI.
 
@@ -12,7 +18,7 @@ There are three ways to customize a configuration UI.
 -   Exclude a configuration object. You'll want this option if you're using
     a configuration interface but don't wan't a UI generated for you.
 
-## Providing Custom Configuration Forms [](id=providing-custom-configuration-forms)
+## Providing Custom Configuration Forms
 
 Customize your auto-generated UI by implementing the `ConfigurationFormRender`
 interface. To write this interface, you must refer to your configuration
@@ -101,7 +107,7 @@ To see a complete demonstration, including JSP markup, read the dedicated
 tutorial on creating a 
 [configuration form renderer](/develop/tutorials/-/knowledge_base/7-1/configuration-form-renderer).
 
-## Creating a Completely Custom Configuration UI [](id=creating-a-completely-custom-configuration-ui)
+## Creating a Completely Custom Configuration UI
 
 You get more flexibility if you create a completely custom UI using
 a `ConfigurationScreen` implementation.
@@ -197,7 +203,7 @@ It's beyond the scope of this tutorial to write the JSP markup. A separate
 tutorial will provide a complete demonstration of the `ConfigurationScreen` and
 implementation and the JSP markup to demonstrate its usage.
 
-## Excluding a Configuration UI [](id=excluding-a-configuration-ui-from-system-settings)
+## Excluding a Configuration UI
 
 If you don't want a UI to be generated for you, you have two options.
 

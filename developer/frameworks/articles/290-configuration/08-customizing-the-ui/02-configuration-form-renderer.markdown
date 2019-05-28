@@ -1,4 +1,10 @@
-# Configuration Form Renderer [](id=configuration-form-renderer)
+---
+header-id: configuration-form-renderer
+---
+
+# Configuration Form Renderer
+
+[TOC levels=1-4]
 
 To replace an application's auto-generated configuration screen with a form
 built from scratch, you follow these steps:
@@ -23,7 +29,7 @@ Specifically, the text input field labeled *DDM Template Key* in the
 auto-generated UI is replaced with a select list field type called *Language
 Selection Style*, populated with all possible DDM Template Keys.
 
-## Creating a `DisplayContext` [](id=creating-a-displaycontext)
+## Creating a `DisplayContext`
 
 A `DisplayContext` class is a POJO that simplifies and minimizes the use of Java
 logic in JSPs. Display context usage isn't required, but it's a nice convention
@@ -76,7 +82,7 @@ public class LanguageTemplateConfigurationDisplayContext {
 
 Next implement the `ConfigurationFormRenderer`.
 
-## Implementing a `ConfigurationFormRenderer` [](id=implementing-a-configurationformrenderer)
+## Implementing a `ConfigurationFormRenderer`
 
 First create the component and class declarations. Set the `service` property
 to `ConfigurationFormRenderer.class`:
@@ -243,7 +249,7 @@ private ServletContext _servletContext;
 Once the configuration form renderer is implemented, you can write the JSP
 markup for the form.
 
-## Writing the JSP Markup [](id=writing-the-jsp-markup)
+## Writing the JSP Markup
 
 Now write the JSP:
 
