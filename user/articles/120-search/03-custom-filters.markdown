@@ -1,7 +1,5 @@
 # Filtering Search Results with the Custom Filter Widget
 
-| **This widget only works with Elasticsearch.**
-
 You often need to exert control over the displayed search results. One viable
 approach is to develop your own search portlets using the @product@ APIs. That
 can be overkill if you just want to make a slight modification to how the search
