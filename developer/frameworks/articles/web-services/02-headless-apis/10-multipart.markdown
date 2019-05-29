@@ -10,37 +10,39 @@ Several operations accept a binary file via a multipart request. For example,
 the definition for posting a file to a `DocumentFolder` specifies a multipart 
 request: 
 
-    post:
-        operationId: postDocumentFolderDocument
-        parameters:
-            - in: path
-              name: documentFolderId
-              required: true
-              schema:
-                  format: int64
-                  type: integer
-        requestBody:
+```yaml
+post:
+    operationId: postDocumentFolderDocument
+    parameters:
+        - in: path
+          name: documentFolderId
+          required: true
+          schema:
+              format: int64
+              type: integer
+    requestBody:
+        content:
+            multipart/form-data:
+                schema:
+                    properties:
+                        document:
+                            $ref: "#/components/schemas/Document"
+                        file:
+                            format: binary
+                            type: string
+                    type: object
+    responses:
+        200:
             content:
-                multipart/form-data:
+                application/json:
                     schema:
-                        properties:
-                            document:
-                                $ref: "#/components/schemas/Document"
-                            file:
-                                format: binary
-                                type: string
-                        type: object
-        responses:
-            200:
-                content:
-                    application/json:
-                        schema:
-                            $ref: "#/components/schemas/Document"
-                    application/xml:
-                        schema:
-                            $ref: "#/components/schemas/Document"
-                description: ""
-        tags: ["Document"]
+                        $ref: "#/components/schemas/Document"
+                application/xml:
+                    schema:
+                        $ref: "#/components/schemas/Document"
+            description: ""
+    tags: ["Document"]
+```
 
 This operation returns a `Document` (in JSON or XML). To create this `Document`, 
 you must supply the operation's multipart request with 2 components: 
@@ -63,25 +65,27 @@ the folder with the ID `38549`:
 
 And here's the response: 
 
-    {
-      "contentUrl": "/documents/20123/38549/podcast.mp3/e978e316-620c-df9f-e0bd-7cc0447cca49?version=1.0&t=1556100111417",
-      "creator": {
-        "familyName": "Test",
-        "givenName": "Test",
-        "id": 20129,
-        "name": "Test Test",
-        "profileURL": "/web/test"
-      },
-      "dateCreated": "2019-04-24T10:01:51Z",
-      "dateModified": "2019-04-24T10:01:51Z",
-      "documentFolderId": 38549,
-      "encodingFormat": "audio/mpeg",
-      "fileExtension": "mp3",
-      "id": 38553,
-      "numberOfComments": 0,
-      "sizeInBytes": 28482097,
-      "title": "podcast"
-    }
+```json
+{
+  "contentUrl": "/documents/20123/38549/podcast.mp3/e978e316-620c-df9f-e0bd-7cc0447cca49?version=1.0&t=1556100111417",
+  "creator": {
+    "familyName": "Test",
+    "givenName": "Test",
+    "id": 20129,
+    "name": "Test Test",
+    "profileURL": "/web/test"
+  },
+  "dateCreated": "2019-04-24T10:01:51Z",
+  "dateModified": "2019-04-24T10:01:51Z",
+  "documentFolderId": 38549,
+  "encodingFormat": "audio/mpeg",
+  "fileExtension": "mp3",
+  "id": 38553,
+  "numberOfComments": 0,
+  "sizeInBytes": 28482097,
+  "title": "podcast"
+}
+```
 
 ## Related Topics
 
