@@ -7,7 +7,7 @@ header-id: creating-a-configuration-interface
 [TOC levels=1-4]
 
 First, you'll learn how to create a configuration with no scope declaration.
-This will automatically scope your configuration to `SYSTEM`.
+This automatically scopes your configuration to `SYSTEM`.
 
 1.  Create a Java interface to represent the configuration and its default
     values. Using a Java interface allows for an advanced type system for each
@@ -48,30 +48,27 @@ This will automatically scope your configuration to `SYSTEM`.
     **Meta.OCD:** Registers this class as a configuration with a specific
     id. The ID must be the fully qualified configuration class name.
 
-    **Meta.AD:** Specifies [optional
-    metadata](http://bnd.bndtools.org/chapters/210-metatype.html) about the
-    field, such as whether it's a required field or if it has a default
-    value.  Note that if you set a field as required and don't specify a
-    default value, the system administrator must specify a value in order
-    for your application to work properly. Use the `deflt` property to
-    specify a default value.
+    **Meta.AD:** Specifies [optional metadata](http://bnd.bndtools.org/chapters/210-metatype.html) 
+    about the field, such as whether it's a required field or if it has
+    a default value.  Note that if you set a field as required and don't specify
+    a default value, the system administrator must specify a value in order for
+    your application to work properly. Use the `deflt` property to specify
+    a default value.
 
     The fully-qualified name of the `Meta` class above is
     `aQute.bnd.annotation.metatype.Meta`. For more information about this class and
-    the `Meta.OCD` and `Meta.AD` annotations, please refer to the [bndtools
-    documentation](http://bnd.bndtools.org/chapters/210-metatype.html).
+    the `Meta.OCD` and `Meta.AD` annotations, please refer to the 
+    [bndtools documentation](http://bnd.bndtools.org/chapters/210-metatype.html).
 
 2.  To use the `Meta.OCD` and `Meta.AD` annotations in your modules, you must
     [specify a dependency](/docs/7-2/customization/-/knowledge_base/c/configuring-dependencies)
     on the bnd library. We recommend using bnd version 3. Here's an example of
     how to include this dependency in a Gradle project: 
 
-```java
-
+```groovy
     dependencies {
         compile group: "biz.aQute.bnd", name: "biz.aQute.bndlib", version: "3.1.0"
     }
-
 ```
 
 | **Note:** The annotations `@Meta.OCD` and `@Meta.AD` are part of the bnd
@@ -90,5 +87,5 @@ This will automatically scope your configuration to `SYSTEM`.
 
 When you register a configuration interface, a UI is auto-generated for it in
 *System Settings* &rarr; *Platform* &rarr; *Third Party*. That's the default
-location; read the next section to learn how to locate it somewhere more
+location; read the next section to learn how to move it somewhere more
 intuitive.
