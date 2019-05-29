@@ -28,39 +28,44 @@ When you send a request without specifying the API format, the server responds
 with the default JSON. For example, here's such a request for a list of folders 
 from the Site with the ID `20124`: 
 
-    curl "http://localhost:8080/o/headless-delivery/v1.0/sites/20124/document-folders" \
-         -u 'test@liferay.com:test'
+```bash
+curl "http://localhost:8080/o/headless-delivery/v1.0/sites/20124/document-folders" -u 'test@liferay.com:test'
+```
 
+```json
+{
+  "items": [
     {
-      "items": [
-        {
-          "creator": {
-            "familyName": "Test",
-            "givenName": "Test",
-            "id": 20130,
-            "name": "Test Test",
-            "profileURL": "/web/test"
-          },
-          "dateCreated": "2019-04-22T10:21:20Z",
-          "dateModified": "2019-04-22T10:21:20Z",
-          "id": 59319,
-          "name": "REST APIs Documentation",
-          "numberOfDocumentFolders": 0,
-          "numberOfDocuments": 0,
-          "siteId": 20124
-        }
-      ],
-      "lastPage": 1,
-      "page": 1,
-      "pageSize": 20,
-      "totalCount": 1
+      "creator": {
+        "familyName": "Test",
+        "givenName": "Test",
+        "id": 20130,
+        "name": "Test Test",
+        "profileURL": "/web/test"
+      },
+      "dateCreated": "2019-04-22T10:21:20Z",
+      "dateModified": "2019-04-22T10:21:20Z",
+      "id": 59319,
+      "name": "REST APIs Documentation",
+      "numberOfDocumentFolders": 0,
+      "numberOfDocuments": 0,
+      "siteId": 20124
     }
+  ],
+  "lastPage": 1,
+  "page": 1,
+  "pageSize": 20,
+  "totalCount": 1
+}
+```
 
 If you request the headers, the `Content-Type` response attribute lists the 
 content type's format (JSON, in this case): 
 
-    curl "http://localhost:8080/o/headless-delivery/v1.0/sites/20124/document-folders" \
-         -u 'test@liferay.com:test' --head
+
+```bash
+curl "http://localhost:8080/o/headless-delivery/v1.0/sites/20124/document-folders" -u 'test@liferay.com:test' --head
+```
 
     HTTP/1.1 200 
     X-Content-Type-Options: nosniff
@@ -80,10 +85,11 @@ To get the response in XML instead, specify `application/xml` in the request's
 `Accept` header. Note that the XML response includes the same information as 
 JSON, but is structured differently: 
 
-    curl "http://localhost:8080/o/headless-delivery/v1.0/documents/59203" \
-             -H 'Accept: application/xml' \
-             -u 'test@liferay.com:test'
+```bash
+curl "http://localhost:8080/o/headless-delivery/v1.0/documents/59203"  -H 'Accept: application/xml'  -u 'test@liferay.com:test'
+```
 
+```xml
     <Page>
         <items>
             <items>
@@ -108,13 +114,14 @@ JSON, but is structured differently:
         <pageSize>20</pageSize>
         <totalCount>1</totalCount>
     </Page>
+```
 
 Requesting the headers, you can see that the response is in XML 
 (`application/xml`): 
 
-    curl "http://localhost:8080/o/headless-delivery/v1.0/documents/59203" \
-             -H 'Accept: application/xml' \
-             -u 'test@liferay.com:test' --head
+```bash
+curl "http://localhost:8080/o/headless-delivery/v1.0/documents/59203"  -H 'Accept: application/xml'  -u 'test@liferay.com:test' --head
+```
 
     HTTP/1.1 200 
     X-Content-Type-Options: nosniff
@@ -136,54 +143,57 @@ APIs that are available in different languages return the options in a block
 called `availableLanguages`. For example, this block in the following response 
 lists U.S. English (`en-US`) and Spain/Castilian Spanish (`es-ES`): 
 
+```json
+{
+  "availableLanguages": [
+    "en-US",
+    "es-ES"
+  ],
+  "contentFields": [
     {
-      "availableLanguages": [
-        "en-US",
-        "es-ES"
-      ],
-      "contentFields": [
-        {
-          "dataType": "html",
-          "name": "content",
-          "repeatable": false,
-          "value": {
-            "data": "<p>The main reason is because Headless APIs have been designed with real use cases in mind...</p>"
-          }
-        }
-      ],
-      "contentStructureId": 36801,
-      "creator": {
-        "familyName": "Test",
-        "givenName": "Test",
-        "id": 20130,
-        "name": "Test Test",
-        "profileURL": "/web/test"
-      },
-      "dateCreated": "2019-04-22T10:29:40Z",
-      "dateModified": "2019-04-22T10:30:31Z",
-      "datePublished": "2019-04-22T10:28:00Z",
-      "friendlyUrlPath": "why-headless-apis-are-better-than-json-ws-services-",
-      "id": 59325,
-      "key": "59323",
-      "numberOfComments": 0,
-      "renderedContents": [
-        {
-          "renderedContentURL": "http://localhost:8080/o/headless-delivery/v1.0/structured-contents/59325/rendered-content/36804",
-          "templateName": "Basic Web Content"
-        }
-      ],
-      "siteId": 20124,
-      "title": "Why Headless APIs are better than JSON-WS services?",
-      "uuid": "e1c4c152-e47c-313f-2d16-2ee4eba5cd26"
+      "dataType": "html",
+      "name": "content",
+      "repeatable": false,
+      "value": {
+        "data": "<p>The main reason is because Headless APIs have been designed with real use cases in mind...</p>"
+      }
     }
+  ],
+  "contentStructureId": 36801,
+  "creator": {
+    "familyName": "Test",
+    "givenName": "Test",
+    "id": 20130,
+    "name": "Test Test",
+    "profileURL": "/web/test"
+  },
+  "dateCreated": "2019-04-22T10:29:40Z",
+  "dateModified": "2019-04-22T10:30:31Z",
+  "datePublished": "2019-04-22T10:28:00Z",
+  "friendlyUrlPath": "why-headless-apis-are-better-than-json-ws-services-",
+  "id": 59325,
+  "key": "59323",
+  "numberOfComments": 0,
+  "renderedContents": [
+    {
+      "renderedContentURL": "http://localhost:8080/o/headless-delivery/v1.0/structured-contents/59325/rendered-content/36804",
+      "templateName": "Basic Web Content"
+    }
+  ],
+  "siteId": 20124,
+  "title": "Why Headless APIs are better than JSON-WS services?",
+  "uuid": "e1c4c152-e47c-313f-2d16-2ee4eba5cd26"
+}
+```
 
 To request the content in another language, specify your desired locale in the 
 request's `Accept-Language` header: 
 
-    curl "http://localhost:8080/o/headless-delivery/v1.0/structured-contents/59325" \
-         -H 'Accept-Language: es-ES' \
-         -u 'test@liferay.com:test'
+```bash
+curl "http://localhost:8080/o/headless-delivery/v1.0/structured-contents/59325"  -H 'Accept-Language: es-ES'  -u 'test@liferay.com:test'
+```
 
+```json
     {
       "availableLanguages": [
         "en-US",
@@ -224,16 +234,17 @@ request's `Accept-Language` header:
       "title": "¿Por qué las APIs Headless son mejores que JSON-WS?",
       "uuid": "e1c4c152-e47c-313f-2d16-2ee4eba5cd26"
     }
+```
 
 ### Creating Content with Different Languages
 
-By default, when sending a POST/PUT request, the `Accept-Language` header will 
-be used as the content's language. However, there is one exception. Some 
-entities require the first POST to be in the Site's default language. In such 
-cases, a POST request for a different language will result in an error. 
+By default, when sending a POST/PUT request, the `Accept-Language` header is
+used as the content's language. However, there is one exception. Some entities
+require the first POST to be in the Site's default language. In such 
+cases, a POST request for a different language results in an error. 
 
 After creating a new resource, PUT requests in a different language add that 
-translation. PATCH requests will return an error (you are expected to update, 
+translation. PATCH requests return an error (you are expected to update, 
 not create, in a PATCH request). 
 
 ## Related Topics
