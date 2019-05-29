@@ -80,37 +80,40 @@ append this filter string to the request URL:
 
 Here's an example of the full request: 
 
-    curl "http://localhost:8080/o/headless-delivery/v1.0/sites/20124/blog-postings/?filter=headline%20eq%20%27New%20Headless%20APIs%27" \
-         -u 'test@liferay.com:test'
+```bash
+curl "http://localhost:8080/o/headless-delivery/v1.0/sites/20124/blog-postings/?filter=headline%20eq%20%27New%20Headless%20APIs%27"  -u 'test@liferay.com:test'
+```
 
+```json
+{
+  "items": [
     {
-      "items": [
-        {
-          "alternativeHeadline": "The power of OpenAPI & Liferay",
-          "articleBody": "<p>We are happy to announce...</p>",
-          "creator": {
-            "familyName": "Test",
-            "givenName": "Test",
-            "id": 20130,
-            "name": "Test Test",
-            "profileURL": "/web/test"
-          },
-          "dateCreated": "2019-04-22T07:04:47Z",
-          "dateModified": "2019-04-22T07:04:51Z",
-          "datePublished": "2019-04-22T07:02:00Z",
-          "encodingFormat": "text/html",
-          "friendlyUrlPath": "new-headless-apis",
-          "headline": "New Headless APIs",
-          "id": 59301,
-          "numberOfComments": 0,
-          "siteId": 20124
-        }
-      ],
-      "lastPage": 1,
-      "page": 1,
-      "pageSize": 20,
-      "totalCount": 1
+      "alternativeHeadline": "The power of OpenAPI & Liferay",
+      "articleBody": "<p>We are happy to announce...</p>",
+      "creator": {
+        "familyName": "Test",
+        "givenName": "Test",
+        "id": 20130,
+        "name": "Test Test",
+        "profileURL": "/web/test"
+      },
+      "dateCreated": "2019-04-22T07:04:47Z",
+      "dateModified": "2019-04-22T07:04:51Z",
+      "datePublished": "2019-04-22T07:02:00Z",
+      "encodingFormat": "text/html",
+      "friendlyUrlPath": "new-headless-apis",
+      "headline": "New Headless APIs",
+      "id": 59301,
+      "numberOfComments": 0,
+      "siteId": 20124
     }
+  ],
+  "lastPage": 1,
+  "page": 1,
+  "pageSize": 20,
+  "totalCount": 1
+}
+```
 
 ### Filtering in Structured Content Fields (ContentField)
 
@@ -128,37 +131,40 @@ want results from any field, rather than specific ones. To perform a search, use
 the optional parameter `search` followed by the search terms. For example, this 
 request searches for all the `BlogEntry` fields containing OAuth: 
 
-    curl "http://localhost:8080/o/headless-delivery/v1.0/sites/20124/blog-postings/?search=OAuth" \
-         -u 'test@liferay.com:test'
+```bash
+curl "http://localhost:8080/o/headless-delivery/v1.0/sites/20124/blog-postings/?search=OAuth"  -u 'test@liferay.com:test'
+```
 
+```json
+{
+  "items": [
     {
-      "items": [
-        {
-          "alternativeHeadline": "How to work with OAuth",
-          "articleBody": "<p>To configure OAuth...</p>",
-          "creator": {
-            "familyName": "Test",
-            "givenName": "Test",
-            "id": 20130,
-            "name": "Test Test",
-            "profileURL": "/web/test"
-          },
-          "dateCreated": "2019-04-22T09:35:09Z",
-          "dateModified": "2019-04-22T09:35:09Z",
-          "datePublished": "2019-04-22T09:34:00Z",
-          "encodingFormat": "text/html",
-          "friendlyUrlPath": "authenticated-requests",
-          "headline": "Authenticated requests",
-          "id": 59309,
-          "numberOfComments": 0,
-          "siteId": 20124
-        }
-      ],
-      "lastPage": 1,
-      "page": 1,
-      "pageSize": 20,
-      "totalCount": 1
+      "alternativeHeadline": "How to work with OAuth",
+      "articleBody": "<p>To configure OAuth...</p>",
+      "creator": {
+        "familyName": "Test",
+        "givenName": "Test",
+        "id": 20130,
+        "name": "Test Test",
+        "profileURL": "/web/test"
+      },
+      "dateCreated": "2019-04-22T09:35:09Z",
+      "dateModified": "2019-04-22T09:35:09Z",
+      "datePublished": "2019-04-22T09:34:00Z",
+      "encodingFormat": "text/html",
+      "friendlyUrlPath": "authenticated-requests",
+      "headline": "Authenticated requests",
+      "id": 59309,
+      "numberOfComments": 0,
+      "siteId": 20124
     }
+  ],
+  "lastPage": 1,
+  "page": 1,
+  "pageSize": 20,
+  "totalCount": 1
+}
+```
 
 ## Sorting
 
