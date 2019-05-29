@@ -16,8 +16,8 @@ and easy to find.
 | configuration so that a UI is generated in Instance Settings as well, your
 | categorization will apply to that UI also.
 
-You have two options: either locate your configuration UI in an existing
-category and section, or create your own.
+You have two options: 1) locate your configuration UI in an existing
+category and section, or 2) create your own.
 
 Here are the default  System Settings sections. All available categories are
 nested beneath these sections:
@@ -44,12 +44,10 @@ right before the interface's `@Meta.OCD` annotation, places the UI in the
 `dynamic-data-mapping` category in the Content management section:
 
 ```java
-
     @ExtendedObjectClassDefinition(
         category = "dynamic-data-mapping",
         scope = ExtendedObjectClassDefinition.Scope.GROUP
     )
-
 ```
 
 This annotation does two things:
@@ -80,7 +78,6 @@ Here's code that creates the *Content and Data* section and the *Dynamic
 Data Mapping* category:
 
 ```java
-
 @Component(service = ConfigurationCategory.class)
 public class DynamicDataMappingConfigurationCategory
 	implements ConfigurationCategory {
@@ -115,7 +112,7 @@ Similarly, `getCategoryKey` returns the key for the new category. Provide
 localized values for these keys in your module's
 `src/main/resources/content/Language.properties` file.
 
-| **Note:** the language keys for categories and sections need to follow
+| **Note:** the language keys for categories and sections must follow
 | a specific format. Prefix each section language key with `category-section.` and
 | each category language key with `category.` For example:
 | 
