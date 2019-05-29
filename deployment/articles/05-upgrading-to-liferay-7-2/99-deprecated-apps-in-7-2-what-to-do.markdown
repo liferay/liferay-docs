@@ -29,12 +29,6 @@ There are three types of deprecated apps:
 
 Here are the apps deprecated in @product-ver@. 
 
-## Collaboration
-
-| App |  Availability |  Notes |
-| --- | ------------- | ------ |
-| Bookmarks | Nexus | Originally deprecated in 7.1. |
-
 ## Foundation
 
 | App |  Availability |  Notes |
@@ -55,11 +49,6 @@ Here are the apps deprecated in @product-ver@.
 | --- | ------------- | ------ |
 | RSS Publisher | Bundled | See [the article](/docs/7-1/user/-/knowledge_base/u/the-rss-publisher-widget) on enabling and using this widget. |
 | User Group Pages (Copy Mode) | TBD |  |
-
-## Forms and Workflow
-
-| App |  Availability |  Notes |
-| --- | ------------- | ------ |
 
 ## Security
 
