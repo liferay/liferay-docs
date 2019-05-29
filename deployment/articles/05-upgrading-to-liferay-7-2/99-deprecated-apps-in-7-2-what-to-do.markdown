@@ -33,7 +33,7 @@ Here are the apps deprecated in @product-ver@.
 
 | App |  Availability |  Notes |
 | --- | ------------- | ------ |
-| Bookmarks | Marketplace release planned |  |
+| Bookmarks | Nexus | Originally deprecated in 7.1. |
 
 ## Foundation
 
