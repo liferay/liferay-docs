@@ -6,7 +6,7 @@ header-id: using-screen-navigation-for-your-application
 
 [TOC levels=1-4]
 
-To use the Screen Navigation framework with your application you will create a
+To use the Screen Navigation framework with your application you must create a
 Screen Navigation Category and Entry, and then create the JSP to provide the
 layout for the Screen Navigation Entry.
 
@@ -19,18 +19,21 @@ instructions for integrating Screen Navigation for a sample application.
 
 First, create the Navigation Category:
 
-1.  Inside of your existing application, create a component named 
-    `SampleScreenNavigationCategory` that implements the  
+1.  In your existing application, create a component named
+    `SampleScreenNavigationCategory` that implements the
     `ScreenNavigationCategory` interface. 
 
-2.  Inside of the `@Component` declaration, set your priority property which determines what order items appear in in the side navigation:
+2.  In the `@Component` declaration, set your priority property which determines
+    what order items appear in in the side navigation:
 
-```property = "screen.navigation.category.order:Integer=10",
+```java
+property = "screen.navigation.category.order:Integer=10",
 ```
 
 3.  Add the following methods to the class body:
 
-```@Override
+```java
+@Override
 public String getCategoryKey() {
 	return SampleScreenNavigationConstants.
 		CATEGORY_KEY_SAMPLE_CONFIGURATION;
@@ -46,12 +49,13 @@ public String getScreenNavigationKey() {
 	return SampleScreenNavigationConstants.
 		SAMPLE_KEY_METHOD;
 }
-```     
-    
-When you're finished, your `ScreenNavigationCategory` class will look 
-like :
-    
-```@Component(
+``` 
+ 
+When you're finished, your `ScreenNavigationCategory` class looks 
+like this:
+ 
+```java
+@Component(
 property = "screen.navigation.category.order:Integer=10",
 service = ScreenNavigationCategory.class
 )
@@ -84,7 +88,8 @@ Next, add a Navigation Entry:
 
 2.  Create the the `@Reference` variables you need for the render logic:
 
-```@Reference
+```java
+@Reference
 private ConfigurationProvider _configurationProvider;
 
 @Reference
@@ -101,7 +106,8 @@ private ServletContext _servletContext;
 
 3.  Implement the following methods in your component:
 
-```@Override
+```java
+@Override
 public String getCategoryKey() {
     return SampleScreenNavigationConstants.
     	CATEGORY_KEY_SAMPLE_CONFIGURATION;
@@ -149,8 +155,9 @@ throws IOException {
 ```    
     
     Here is what the `SampleScreenNavigationEntry` class looks like:
-    
-```@Component(
+
+```java
+@Component(
 property = "screen.navigation.entry.order:Integer=20",
 service = ScreenNavigationEntry.class
 )
@@ -225,20 +232,20 @@ below.
 The `render` method that you created in your last step references 
 `/my-category/view-category.jsp`. Create the JSP now:
 
-1.  Inside of `/src/resources/META-INF/resources` create the `my-category` 
+1.  In `/src/resources/META-INF/resources` create the `my-category` 
     folder.
-    
+
 2.  Inside of that folder, create `view-category.jsp`.
 
 3.  Inside the JSP add the `liferay-frontend:screen-navigation` taglib with the 
     required parameters:
 
-```<liferay-frontend:screen-navigation key=
-"<%= AssetCategoriesConstants.CATEGORY_KEY_GENERAL %>"
-modelBean="<%= category %>"
-portletURL="<%= portletURL %>"
+```jsp
+<liferay-frontend:screen-navigation key="<%= AssetCategoriesConstants.CATEGORY_KEY_GENERAL %>"
+	modelBean="<%= category %>"
+	portletURL="<%= portletURL %>"
 />
 ```
 
-After that tag, you would add the rest of the content of the JSP file to handle
-user interactions and communication with the back-end for configuration.
+After that tag, add the rest of the content of the JSP file to handle user
+interactions and communication with the back-end for configuration.
