@@ -129,8 +129,8 @@ configuration.
 ### Controlling the Sort Order
 
 To control the order for the sort option, add a plus or minus symbol after the
-`fieldName`. Look how it's done for the existing options called _Created_ and
-_Created (oldest first)_ to understand how it works:
+`fieldName`. Look how it's done for the existing sort options labeled _Created_
+and _Created (oldest first)_ to understand how it works:
 
 **Label:** _Created_
 **Field:** `createDate-`
@@ -142,6 +142,6 @@ the top of the list.
 **Label:** _Created (oldest first)_
 **Field:** `createDate+`
 
-The `+` sign following the field name indicates that the order is _descending_.
+The `+` sign following the field name indicates that the order is _ascending_.
 Choosing to sort with this will bring the oldest (by creation date) results to
 the top of the list.
