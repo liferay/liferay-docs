@@ -29,7 +29,6 @@ Pass one of these valid scope options to `@ExtendedObjectClassDefinition`:
 Here is an example:
 
 ```java
-
 @ExtendedObjectClassDefinition(
     category = "dynamic-data-mapping",
     scope = ExtendedObjectClassDefinition.Scope.GROUP
@@ -42,7 +41,6 @@ Here is an example:
 )
 
 public interface DDMFormWebConfiguration {
-
 ```
 
 ## Step 2: Enabling the Configuration for Scoped Retrieval
@@ -57,7 +55,7 @@ To create a configuration bean declaration:
         implements ConfigurationBeanDeclaration {
 ```
 
-2.  This class has one method that returns the class of the configurationn
+2.  This class has one method that returns the class of the configuration
     interface you created. It enables the system to keep track of configuration
     changes as they happen, making requests for the configuration very fast.
 
