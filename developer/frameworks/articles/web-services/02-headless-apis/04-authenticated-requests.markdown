@@ -30,7 +30,9 @@ must encode the `user:password` string. Here's an example of the `openssl`
 command for encoding the `user:password` string for a user `test@liferay.com` 
 with the password `Liferay`: 
 
-    openssl base64 <<< test@liferay.com:Liferay
+```bash
+openssl base64 <<< test@liferay.com:Liferay
+```
 
 This returns the encoded value: 
 
@@ -38,7 +40,9 @@ This returns the encoded value:
 
 If you don't have `openssl` installed, try the `base64` command: 
 
-    base64 <<< test@liferay.com:Liferay
+```bash
+base64 <<< test@liferay.com:Liferay
+```
 
 | **Warning:** Encoding a string as shown here does not encrypt the resulting 
 | string. Such an encoded string can easily be decoded by executing 
@@ -52,60 +56,64 @@ If you don't have `openssl` installed, try the `base64` command:
 Use the encoded value for the HTTP Authorization header when sending the 
 request: 
 
-    curl -H "Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTpMaWZlcmF5Cg==" http://localhost:8080/o/headless-delivery/v1.0/sites/{siteId}/blog-postings/
+```bash
+curl -H "Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTpMaWZlcmF5Cg==" http://localhost:8080/o/headless-delivery/v1.0/sites/{siteId}/blog-postings/
+```
 
 The response contains data instead of the 403 error that an unauthenticated 
 request receives. For more information on the response's structure, see 
 [Working with Collections of Data](/docs/7-2/frameworks/-/knowledge_base/f/working-with-collections-of-data). 
 
+```json
+{
+  "items": [
     {
-      "items": [
-        {
-          "alternativeHeadline": "The power of OpenAPI & Liferay",
-          "articleBody": "<p>We are happy to announce...</p>",
-          "creator": {
-            "familyName": "Test",
-            "givenName": "Test",
-            "id": 20130,
-            "name": "Test Test",
-            "profileURL": "/web/test"
-          },
-          "dateCreated": "2019-04-22T07:04:47Z",
-          "dateModified": "2019-04-22T07:04:51Z",
-          "datePublished": "2019-04-22T07:02:00Z",
-          "encodingFormat": "text/html",
-          "friendlyUrlPath": "new-headless-apis",
-          "headline": "New Headless APIs",
-          "id": 59301,
-          "numberOfComments": 0,
-          "siteId": 20124
-        },
-        {
-          "alternativeHeadline": "How to work with OAuth",
-          "articleBody": "<p>To configure OAuth...</p>",
-          "creator": {
-            "familyName": "Test",
-            "givenName": "Test",
-            "id": 20130,
-            "name": "Test Test",
-            "profileURL": "/web/test"
-          },
-          "dateCreated": "2019-04-22T09:35:09Z",
-          "dateModified": "2019-04-22T09:35:09Z",
-          "datePublished": "2019-04-22T09:34:00Z",
-          "encodingFormat": "text/html",
-          "friendlyUrlPath": "authenticated-requests",
-          "headline": "Authenticated requests",
-          "id": 59309,
-          "numberOfComments": 0,
-          "siteId": 20124
-        }
-      ],
-      "lastPage": 1,
-      "page": 1,
-      "pageSize": 20,
-      "totalCount": 2
+      "alternativeHeadline": "The power of OpenAPI & Liferay",
+      "articleBody": "<p>We are happy to announce...</p>",
+      "creator": {
+        "familyName": "Test",
+        "givenName": "Test",
+        "id": 20130,
+        "name": "Test Test",
+        "profileURL": "/web/test"
+      },
+      "dateCreated": "2019-04-22T07:04:47Z",
+      "dateModified": "2019-04-22T07:04:51Z",
+      "datePublished": "2019-04-22T07:02:00Z",
+      "encodingFormat": "text/html",
+      "friendlyUrlPath": "new-headless-apis",
+      "headline": "New Headless APIs",
+      "id": 59301,
+      "numberOfComments": 0,
+      "siteId": 20124
+    },
+    {
+      "alternativeHeadline": "How to work with OAuth",
+      "articleBody": "<p>To configure OAuth...</p>",
+      "creator": {
+        "familyName": "Test",
+        "givenName": "Test",
+        "id": 20130,
+        "name": "Test Test",
+        "profileURL": "/web/test"
+      },
+      "dateCreated": "2019-04-22T09:35:09Z",
+      "dateModified": "2019-04-22T09:35:09Z",
+      "datePublished": "2019-04-22T09:34:00Z",
+      "encodingFormat": "text/html",
+      "friendlyUrlPath": "authenticated-requests",
+      "headline": "Authenticated requests",
+      "id": 59309,
+      "numberOfComments": 0,
+      "siteId": 20124
     }
+  ],
+  "lastPage": 1,
+  "page": 1,
+  "pageSize": 20,
+  "totalCount": 2
+}
+```
 
 ## OAuth 2.0 Authentication
 
@@ -134,7 +142,7 @@ After clicking *Save* to finish creating the application, write down the Client
 ID and Client Secret values that appear at the top of the form. 
 
 Next, you must get an OAuth 2.0 access token. To do this, see the tutorial 
-[Authorization Account Access with OAuth 2](/docs/7-2/deploy/-/knowledge_base/d/authorizing-account-access-with-oauth2). 
+[Authorizing Account Access with OAuth 2](/docs/7-2/deploy/-/knowledge_base/d/authorizing-account-access-with-oauth2). 
 
 ### Invoking the Service with an OAuth 2.0 Token
 
@@ -143,9 +151,11 @@ Once you have a valid OAuth 2.0 token, include it in the request's
 [bearer token](https://tools.ietf.org/html/rfc6750). 
 For example: 
 
-    curl -H "Authorization: Bearer d5571ff781dc555415c478872f0755c773fa159" http://localhost:8080/o/headless-delivery/v1.0/sites/{siteId}/blog-postings/
+```bash
+curl -H "Authorization: Bearer d5571ff781dc555415c478872f0755c773fa159" http://localhost:8080/o/headless-delivery/v1.0/sites/{siteId}/blog-postings/
+```
 
-The response will contain the resources that the authenticated user has 
+The response contains the resources that the authenticated user has 
 permission to access, just like the response from Basic authentication. 
 
 ## Making Unauthenticated Requests
@@ -157,10 +167,12 @@ APIs. You can, however, enable them manually by following these steps:
     `com.liferay.headless.delivery.internal.jaxrs.application.HeadlessDeliveryApplication-default.config` 
     and add this code to it: 
 
-        oauth2.scopechecker.type="none"
-        auth.verifier.auth.verifier.BasicAuthHeaderAuthVerifier.urls.includes="*"
-        auth.verifier.auth.verifier.OAuth2RestAuthVerifier.urls.includes="*"
-        auth.verifier.guest.allowed="true"
+```properties
+oauth2.scopechecker.type="none"
+auth.verifier.auth.verifier.BasicAuthHeaderAuthVerifier.urls.includes="*"
+auth.verifier.auth.verifier.OAuth2RestAuthVerifier.urls.includes="*"
+auth.verifier.guest.allowed="true"
+```
 
     Note that the last property (`auth.verifier.guest.allowed`) lets guests 
     access public content via the APIs. To turn this off, set the property to 
@@ -172,7 +184,9 @@ APIs. You can, however, enable them manually by following these steps:
 
 3.  Test the APIs by making a request to an OpenAPI profile URL: 
 
-        curl "http://localhost:8080/o/headless-delivery/v1.0/openapi.yaml"
+```bash
+curl "http://localhost:8080/o/headless-delivery/v1.0/openapi.yaml"
+```
 
 You should get the OpenAPI profile for the API you sent the request to. 
 
