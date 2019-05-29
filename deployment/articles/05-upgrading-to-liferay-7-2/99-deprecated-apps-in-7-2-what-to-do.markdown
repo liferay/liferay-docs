@@ -12,7 +12,7 @@ to note what, exactly, *deprecated* means here.
 There are three types of deprecated apps: 
 
 1.  Deprecated apps that remain in @product@, but will be removed in a future
-    release. (Availability: *Release \(Bundle\)*)
+    release. (Availability: *Bundled*)
 
 2.  Deprecated apps that have been removed from @product@, yet are still 
     available for download via [Liferay
