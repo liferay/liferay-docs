@@ -17,7 +17,8 @@ Administration.
 
 2. Add the following Component annotation above the class declaration:
 
-```@Component(
+```java
+@Component(
     property = {
     	"screen.navigation.category.order:Integer=1",
 	    "screen.navigation.entry.order:Integer=1"
@@ -35,7 +36,8 @@ Administration.
 
 3.  For the class body, insert this code:
 
-```@Override
+```java
+@Override
 public String getCategoryKey() {
     return "custom-screen";
 }
@@ -69,10 +71,11 @@ private JSPRenderer _jspRenderer;
 4.  Create a `custom-screen.jsp` in the 
     `/resources/META-INF/resources/category/` folder.
  
-5.  At the top of your JSP class, insert the following scriplet to use the 
+5.  At the top of your JSP class, insert the following scriptlet to use the 
     Screen Navigation UI:
 
-```<%
+```jsp
+<%
 String redirect = ParamUtil.getString(request, "redirect", assetCategoriesDisplayContext.getEditCategoryRedirect());
 
 long categoryId = ParamUtil.getLong(request, "categoryId");
@@ -92,7 +95,8 @@ renderResponse.setTitle(((category == null) ? LanguageUtil.get(request, "add-new
 
 6.  Below that, insert the following tag:
 
-```<liferay-frontend:screen-navigation key=
+```jsp
+<liferay-frontend:screen-navigation key=
 "<%= AssetCategoriesConstants.CATEGORY_KEY_GENERAL %>"
 modelBean="<%= category %>"
 portletURL="<%= portletURL %>"
