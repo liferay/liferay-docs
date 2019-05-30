@@ -30,15 +30,17 @@ class, which configures the asset renderer framework for the Blogs application.
     [`AssetEntry`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/asset/kernel/model/AssetEntry.html)
     interface. Consider the `BlogsEntryAssetRenderer` class as an example:
 
-        public class BlogsEntryAssetRenderer
-            extends BaseJSPAssetRenderer<BlogsEntry> implements TrashRenderer {
+    ```java
+    public class BlogsEntryAssetRenderer
+        extends BaseJSPAssetRenderer<BlogsEntry> implements TrashRenderer {
+    ```
 
     The `BlogsEntryAssetRenderer` class extends the
     [`BaseJSPAssetRenderer`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/asset/kernel/model/BaseJSPAssetRenderer.html),
     which is an extension class intended for those who plan on using JSP
     templates to generate their asset's HTML. The `BaseJSPAssetRenderer` class
     implements the `AssetRenderer` interface. You'll notice the asset renderer
-    is also implementing the
+    also implements the
     [`TrashRenderer`](@platform-ref@/7.2-latest/javadocs/portal-kernel/com/liferay/portal/kernel/trash/TrashRenderer.html)
     interface. This is a common practice for many applications, so they can use
     @product@'s Recycle Bin.
@@ -46,58 +48,64 @@ class, which configures the asset renderer framework for the Blogs application.
 3.  Define the asset renderer class's constructor, which typically sets the
     asset object to use in the asset renderer class.
 
-        public BlogsEntryAssetRenderer(
-            BlogsEntry entry, ResourceBundleLoader resourceBundleLoader) {
+    ```java
+    public BlogsEntryAssetRenderer(
+        BlogsEntry entry, ResourceBundleLoader resourceBundleLoader) {
 
-            _entry = entry;
-            _resourceBundleLoader = resourceBundleLoader;
-        }
+        _entry = entry;
+        _resourceBundleLoader = resourceBundleLoader;
+    }
+    ```
 
     The `BlogsEntryAssetRenderer` also sets the resource bundle loader, which
     loads the language keys for a module. You can learn more about the resource
     bundle loader in the
-    [Overriding Language Keys](/develop/tutorials/-/knowledge_base/7-2/overriding-language-keys)
+    [Overriding Language Keys](/docs/7-2/customization/-/knowledge_base/c/overriding-language-keys)
     tutorial.
 
     Also, make sure to define the `_entry` and `_resourceBundleLoader` fields in
     the class:
 
-        private final BlogsEntry _entry;
-        private final ResourceBundleLoader _resourceBundleLoader;
+    ```java
+    private final BlogsEntry _entry;
+    private final ResourceBundleLoader _resourceBundleLoader;
+    ```
 
 4.  Now that your class declaration and constructor are defined for the blogs
     asset renderer, you must begin connecting your asset renderer to your
     asset. The following getter methods accomplish this:
 
-        @Override
-        public BlogsEntry getAssetObject() {
-            return _entry;
-        }
+    ```java
+    @Override
+    public BlogsEntry getAssetObject() {
+        return _entry;
+    }
 
-        @Override
-        public String getClassName() {
-            return BlogsEntry.class.getName();
-        }
+    @Override
+    public String getClassName() {
+        return BlogsEntry.class.getName();
+    }
 
-        @Override
-        public long getClassPK() {
-            return _entry.getEntryId();
-        }
+    @Override
+    public long getClassPK() {
+        return _entry.getEntryId();
+    }
 
-        @Override
-        public long getGroupId() {
-            return _entry.getGroupId();
-        }
+    @Override
+    public long getGroupId() {
+        return _entry.getGroupId();
+    }
 
-        @Override
-        public String getType() {
-            return BlogsEntryAssetRendererFactory.TYPE;
-        }
+    @Override
+    public String getType() {
+        return BlogsEntryAssetRendererFactory.TYPE;
+    }
 
-        @Override
-        public String getUuid() {
-            return _entry.getUuid();
-        }
+    @Override
+    public String getUuid() {
+        return _entry.getUuid();
+    }
+    ```
 
     The `getAssetObject()` method sets the `BlogsEntry` that was set in the
     constructor as your asset to track. Likewise, the `getType()` method
@@ -109,40 +117,46 @@ class, which configures the asset renderer framework for the Blogs application.
     case of a blogs asset, its portlet ID should be linked to the Blogs
     application.
 
-        @Override
-        public String getPortletId() {
-            AssetRendererFactory<BlogsEntry> assetRendererFactory =
-                getAssetRendererFactory();
+    ```java
+    @Override
+    public String getPortletId() {
+        AssetRendererFactory<BlogsEntry> assetRendererFactory =
+            getAssetRendererFactory();
 
-            return assetRendererFactory.getPortletId();
-        }
+        return assetRendererFactory.getPortletId();
+    }
+    ```
 
     The `getPortletId()` method instantiates an asset renderer factory for a
     `BlogsEntry` and retrieves the portlet ID for the portlet used to display
     blogs entries.
 
-6.  If you're interested in enabling workflow for your asset, add the following
-    method similar to what was done for the Blogs application:
+6.  If you want to enable workflow for your asset, add the following method
+    similar to what was done for the Blogs application:
 
-        @Override
-        public int getStatus() {
-            return _entry.getStatus();
-        }
+    ```java
+    @Override
+    public int getStatus() {
+        return _entry.getStatus();
+    }
+    ```
 
     This method retrieves the workflow status for the asset.
 
-7.  Another popular feature many developers want for their asset is to comment
-    on it. This is enabled for the Blogs application with the following method:
+7.  Another feature many developers want for their asset is comments. This is
+    enabled for the Blogs application with the following method:
 
-        @Override
-        public String getDiscussionPath() {
-            if (PropsValues.BLOGS_ENTRY_COMMENTS_ENABLED) {
-                return "edit_entry_discussion";
-            }
-            else {
-                return null;
-            }
+    ```java
+    @Override
+    public String getDiscussionPath() {
+        if (PropsValues.BLOGS_ENTRY_COMMENTS_ENABLED) {
+            return "edit_entry_discussion";
         }
+        else {
+            return null;
+        }
+    }
+    ```
 
     A comments section is an available option if it returns a non-null value. 
     For the comments section to display for your asset, you must enable it in 
@@ -153,37 +167,39 @@ class, which configures the asset renderer framework for the Blogs application.
 8.  At a minimum, you should create a title and summary for your asset. Here's
     how the `BlogsEntryAssetRenderer` does it:
 
-        @Override
-        public String getSummary(
-            PortletRequest portletRequest, PortletResponse portletResponse) {
+    ```java
+    @Override
+    public String getSummary(
+        PortletRequest portletRequest, PortletResponse portletResponse) {
 
-            int abstractLength = AssetUtil.ASSET_ENTRY_ABSTRACT_LENGTH;
+        int abstractLength = AssetUtil.ASSET_ENTRY_ABSTRACT_LENGTH;
 
-            if (portletRequest != null) {
-                abstractLength = GetterUtil.getInteger(
-                    portletRequest.getAttribute(
-                        WebKeys.ASSET_ENTRY_ABSTRACT_LENGTH),
-                    AssetUtil.ASSET_ENTRY_ABSTRACT_LENGTH);
-            }
-
-            String summary = _entry.getDescription();
-
-            if (Validator.isNull(summary)) {
-                summary = HtmlUtil.stripHtml(
-                    StringUtil.shorten(_entry.getContent(), abstractLength));
-            }
-
-            return summary;
+        if (portletRequest != null) {
+            abstractLength = GetterUtil.getInteger(
+                portletRequest.getAttribute(
+                    WebKeys.ASSET_ENTRY_ABSTRACT_LENGTH),
+                AssetUtil.ASSET_ENTRY_ABSTRACT_LENGTH);
         }
 
-        @Override
-        public String getTitle(Locale locale) {
-            ResourceBundle resourceBundle =
-                _resourceBundleLoader.loadResourceBundle(
-                    LanguageUtil.getLanguageId(locale));
+        String summary = _entry.getDescription();
 
-            return BlogsEntryUtil.getDisplayTitle(resourceBundle, _entry);
+        if (Validator.isNull(summary)) {
+            summary = HtmlUtil.stripHtml(
+                StringUtil.shorten(_entry.getContent(), abstractLength));
         }
+
+        return summary;
+    }
+
+    @Override
+    public String getTitle(Locale locale) {
+        ResourceBundle resourceBundle =
+            _resourceBundleLoader.loadResourceBundle(
+                LanguageUtil.getLanguageId(locale));
+
+        return BlogsEntryUtil.getDisplayTitle(resourceBundle, _entry);
+    }
+    ```
 
     These two methods return information about your asset, so the asset 
     publisher can display it. The title and summary can be anything. 
@@ -202,18 +218,22 @@ class, which configures the asset renderer framework for the Blogs application.
     localhost:8080/-/this-is-my-blog-asset). You can do this by providing the
     following method:
 
-        @Override
-        public String getUrlTitle() {
-            return _entry.getUrlTitle();
-        }
+    ```java
+    @Override
+    public String getUrlTitle() {
+        return _entry.getUrlTitle();
+    }
+    ```
 
 10. Insert the `isPrintable()` method, which enables the Asset Publisher's
     printing capability for your asset.
 
-        @Override
-        public boolean isPrintable() {
-            return true;
-        }
+    ```java
+    @Override
+    public boolean isPrintable() {
+        return true;
+    }
+    ```
 
     This displays a Print icon when your asset is displayed in the Asset
     Publisher. For the icon to appear, you must enable it in the Asset
@@ -226,32 +246,34 @@ class, which configures the asset renderer framework for the Blogs application.
     the asset via the asset renderer. See the logic below for an example used 
     in the `BlogsEntryAssetRenderer` class:
 
-        @Override
-        public long getUserId() {
-            return _entry.getUserId();
-        }
+    ```java
+    @Override
+    public long getUserId() {
+        return _entry.getUserId();
+    }
 
-        @Override
-        public String getUserName() {
-            return _entry.getUserName();
-        }
+    @Override
+    public String getUserName() {
+        return _entry.getUserName();
+    }
 
-        public boolean hasDeletePermission(PermissionChecker permissionChecker) {
-            return BlogsEntryPermission.contains(
-                permissionChecker, _entry, ActionKeys.DELETE);
-        }
+    public boolean hasDeletePermission(PermissionChecker permissionChecker) {
+        return BlogsEntryPermission.contains(
+            permissionChecker, _entry, ActionKeys.DELETE);
+    }
 
-        @Override
-        public boolean hasEditPermission(PermissionChecker permissionChecker) {
-            return BlogsEntryPermission.contains(
-                permissionChecker, _entry, ActionKeys.UPDATE);
-        }
+    @Override
+    public boolean hasEditPermission(PermissionChecker permissionChecker) {
+        return BlogsEntryPermission.contains(
+            permissionChecker, _entry, ActionKeys.UPDATE);
+    }
 
-        @Override
-        public boolean hasViewPermission(PermissionChecker permissionChecker) {
-            return BlogsEntryPermission.contains(
-                permissionChecker, _entry, ActionKeys.VIEW);
-        }
+    @Override
+    public boolean hasViewPermission(PermissionChecker permissionChecker) {
+        return BlogsEntryPermission.contains(
+            permissionChecker, _entry, ActionKeys.VIEW);
+    }
+    ```
 
     Before you can check if a user has permission to view your asset, you must
     use the `getUserId()` and `getUserName()` to retrieve the entry's user ID 

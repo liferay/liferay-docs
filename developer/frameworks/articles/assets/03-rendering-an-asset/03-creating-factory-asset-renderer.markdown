@@ -48,14 +48,10 @@ renderer factory.
     - The `service` element should point to the `AssetRendererFactory.class`
       interface.
 
-    +$$$
-
-    **Note:** In previous versions of @product@, you had to register the asset
-    renderer factory in a portlet's `liferay-portlet.xml` file. The registration
-    process is now completed automatically by OSGi using the `@Component`
-    annotation.
-
-    $$$
+    | **Note:** In previous versions of @product@, you had to register the asset
+    | renderer factory in a portlet's `liferay-portlet.xml` file. The registration
+    | process is now completed automatically by OSGi using the `@Component`
+    | annotation.
 
 3.  Create a constructor for the factory class that presets private attributes
     of the factory.

@@ -2,7 +2,7 @@
 header-id: search
 ---
 
-# Search 
+# Search
 
 [TOC levels=1-4]
 
