@@ -63,7 +63,7 @@ alongside the clicked asset. Here's how to do it:
     Administration &rarr; *Content* &rarr; *Web Content*.
 
 4.  You've now defined relationship with your three assets. Click the *Add* icon
-    (![Add](../../../images/icon-control-menu-add.png)) at the top of your page
+    (![Add](../../../images/icon-add.png)) at the top of your page
     in the Control Menu, select *Widgets*, and add the Related Assets and
     Asset Publisher widgets to the page. Don't panic: related assets don't
     appear until you select an asset in the Asset Publisher.

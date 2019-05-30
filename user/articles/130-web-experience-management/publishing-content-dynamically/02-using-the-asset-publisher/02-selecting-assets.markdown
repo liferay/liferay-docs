@@ -124,7 +124,7 @@ With this organizational setup, adding an Asset Publisher and specifying
 content that had been categorized as *Moon*. Pretty cool, right?
 
 See 
-[Defining Categories for Content](/discover/portal/-/knowledge_base/7.1/defining-categories-for-content)
+[Defining Categories for Content](/discover/portal/-/knowledge_base/7.2/defining-categories-for-content)
 for further information. 
 
 In addition, you can use these advanced filters:

@@ -33,7 +33,7 @@ are in every site by default:
 There's also the *Rich Summary* and *Map* display templates that belong to
 the global scope. The Rich Summary template provides a summary view of each
 asset along with a *Read More* link to the article's full content. The Map
-template displays [geo-localized assets](/discover/portal/-/knowledge_base/7-1/geolocating-assets)
+template displays [geo-localized assets](/discover/portal/-/knowledge_base/7-2/geolocating-assets)
 in either a Google Map or an Open Street Map provider. The map provider can
 be configured in Instance Settings, and Site Settings in the Advanced
 section.
