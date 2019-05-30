@@ -25,7 +25,7 @@ The list of Collections appears on the left in the Page Fragments page.
 
 2.  Click the [Add](../../../images/icon-add.png) button and select *Section*.
 
-3.  Name your Section "Basic Section"
+3.  Name your Section *Basic Section*
 
 You're now on the Fragment editing page. There are four panes on this screen.
 You enter HTML in the top left pane, CSS in the top right, JavaScript in the
@@ -105,8 +105,8 @@ a button with a link as a Component:
     page.
 
 This fragment did not require any CSS. For the button link, no target is 
-provided by default, so the link will need to be configured when it is added
-to the page.
+provided by default, so the link must be configured when it is added to the
+page.
 
 From here, the Fragment can be added to a Page. To see this process in action, 
 see the [Building Content Pages from Fragments](user-guide-link) tutorial.
@@ -121,7 +121,7 @@ managing them. To access the collections management menu,
 2.  Click on the [Options](../../../images/icon-options.png) menu next to the 
     collection name.
  
-3.  Select whether you want to *Edit*, *Export*, *Import*, or *Delete* the 
+3.  Select whether you want to *Edit*, *Export*, *Import*, or *Delete* the
     collection.
 
 **Edit**: change the name or description for the collection.
@@ -130,7 +130,7 @@ managing them. To access the collections management menu,
 
 **Import**: select a `.zip` file to upload with additional Fragments.
 
-**Delete**: delete the current collection and all of its contents.
+**Delete**: remove the current collection and all of its contents.
 
 To access the fragment management menu,
 
