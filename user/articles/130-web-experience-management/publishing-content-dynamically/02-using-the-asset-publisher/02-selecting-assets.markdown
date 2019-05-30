@@ -4,6 +4,8 @@ header-id: selecting-assets
 
 # Selecting Assets
 
+[TOC levels=1-4]
+
 You can configure Asset Publisher to select assets manually or dynamically 
 through various criteria. Within those options there is flexibility in what
 assets are displayed and how they are displayed.

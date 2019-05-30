@@ -4,6 +4,8 @@ header-id: publishing-content-dynamically
 
 # Publishing Content Dynamically
 
+[TOC levels=1-4]
+
 Most content types are Assets. In the 
 [Creating Web Content](/discover/portal/-/knowledge_base/7-2/creating-web-content) 
 tutorial, you examined the most common type of asset: web content. Other types
