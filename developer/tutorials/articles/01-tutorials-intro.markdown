@@ -4,6 +4,8 @@ header-id: developer-tutorials
 
 # Developer Tutorials
 
+[TOC levels=1-4]
+
 Liferay's developer tutorials help you learn from scratch. They are the
 "opinionated" way to work with code on Liferay's platform. Here, you'll learn
 these things: 
