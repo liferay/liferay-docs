@@ -2,7 +2,7 @@
 header-id: creating-an-asset-renderer
 ---
 
-# Creating an Asset Renderer [](id=creating-an-asset-renderer)
+# Creating an Asset Renderer 
 
 [TOC levels=1-4]
 
