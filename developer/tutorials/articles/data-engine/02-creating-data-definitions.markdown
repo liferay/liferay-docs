@@ -1,7 +1,7 @@
 # Creating Data Definitions
 
-We'll use `curl` since it's a cross-platform tool. Feel free to use any REST
-client.
+We'll use cURL, a cross-platform tool for making HTTP calls. Feel free to use
+any REST client.
 
 ### Adding DataDefinition
 
@@ -33,16 +33,105 @@ curl -i -X POST \
 Here you're specifying the endpoint for the data definitions API, passing in
 the `siteId`. Then you're creating a request body that includes:
 
-- `dataDefinitiionFields` 
-- `description` 
-- `name`
+- `dataDefinitionFields`: The example is simple, with just a `fieldType` and a
+    `name` element for one field. Here's the complete list of elements that each
+    field can have:
+    - `customProperties` <!-- DESCRIBE -->
+    - `defaultValue`: provide a default value for a field. 
+    - `id` <!-- is this a key that you can set yourself? Like the old
+        DDMTemplateKey that coudl be configured in the UI? DESCRIBE --> 
+    - `indexable` can be set to `true` (default)  or `false` to control whether the
+        fields is indexed in the search engine.
+    - `label`: set a human readable label for each of the custom properties the
+        fields has.
+    - `localizable`: can be set to `true` (default) or `false` to control
+        whether the locale of the User is appended when he or she adds a data
+        record.
+    - `repeatable`: set to `true` or `false` to control whether the field
+        accepts multiple values per data record.
+    - `tip`: provide help text for the field's properties.
+    - `name`: a required element that names the field. This defaults to `string`
+        if left blank.
+- `description`: use this optional element to describe the data definition.
+- `name`: name the data definition.
+- `dataDefinitionRules`: set validation rules for the data definition.
+- `dateCreated` and `dateModified`: these are set by the system, so it's not
+    necessary to do anything here.
 
-There are plenty more elements you can add to the request body. 
+<!--saved in the ddmStructure table. Record Collections in the ddlRecordSet
+table. -->
 
-<!--Put them in here, with their functions-->
+```json
+{
+  "dataDefinitionFields": [
+    {
+      "customProperties": {
+        "additionalProp1": {},
+        "additionalProp2": {},
+        "additionalProp3": {}
+      },
+      "defaultValue": {
+        "additionalProp1": {},
+        "additionalProp2": {},
+        "additionalProp3": {}
+      },
+      "fieldType": "string",
+      "id": 0,
+      "indexable": true,
+      "label": {
+        "additionalProp1": {},
+        "additionalProp2": {},
+        "additionalProp3": {}
+      },
+      "localizable": true,
+      "name": "string",
+      "repeatable": true,
+      "tip": {
+        "additionalProp1": {},
+        "additionalProp2": {},
+        "additionalProp3": {}
+      }
+    }
+  ],
+  "dataDefinitionRules": [
+    {
+      "dataDefinitionFieldNames": [
+        "string"
+      ],
+      "dataDefinitionRuleParameters": {
+        "additionalProp1": {},
+        "additionalProp2": {},
+        "additionalProp3": {}
+      },
+      "name": "string",
+      "ruleType": "string"
+    }
+  ],
+  "dateCreated": "2019-05-30T20:48:25.939Z",
+  "dateModified": "2019-05-30T20:48:25.939Z",
+  "description": {
+    "additionalProp1": {},
+    "additionalProp2": {},
+    "additionalProp3": {}
+  },
+  "id": 0,
+  "name": {
+    "additionalProp1": {},
+    "additionalProp2": {},
+    "additionalProp3": {}
+  },
+  "siteId": 0,
+  "storageType": "string",
+  "userId": 0
+}
+```
 
-This returns a DataDefinition in the body. You will need its `id` in the next
-request.
+For more elements that can be added to your data definitions, see the
+`data-engine-rest-impl/rest-openapi.yaml` file.
+
+One your POST call is processed, a `DataDefinition` is returned in the body. You
+will need its `id` to create data record collections for the definition's
+records.
 
 ```sh
 HTTP/1.1 200 
@@ -59,8 +148,6 @@ Date: Thu, 23 May 2019 20:18:16 GMT
 Content-Type: application/json
 Content-Length: 307
 
-
-```json
 {
   "dataDefinitionFields" : [ {
     "fieldType" : "text",
@@ -75,6 +162,34 @@ Content-Length: 307
   "siteId" : 20123,
   "userId" : 20129
 }
+```
+
+Here you can see that some informationw as added by the data engine itself:
+
+- `id` <!-- is this a key that you can set yourself? Like the old
+    DDMTemplateKey that coudl be configured in the UI? DESCRIBE --> 
+- `indexable` is set to `true` by default, so the field is indexed in the search
+    engine.
+- `localizable` is set to `false` by default.
+- `repeatable` is set to `false` by default, so submitting the same filed
+    multiple times for the same data record is not allowed.
+- `dateCreated` and `dateModified`: the data engine updates this metadata when
+    the data definition is first created and when it's updated, respectively.
+- `userId` is set to the numeric ID of the User that created the definition.
+
+Before we move on, it's important to link the data definition and the data
+record, since they're closely related. A data record must conform to the fields
+defined in this data definition creation step. Therefore, when you add a data
+record in a later step your request will need to use a `dataRecordValues`
+structure like this:
+
+```json
+    "dataRecordValues": {
+
+        "product": { 
+            "en_US": "Bicycle"
+        }
+    }
 ```
 
 ## CURL Commands
@@ -136,7 +251,7 @@ Add a data record collection
 
 ```sh
 curl -i -X POST \
-  http://localhost:8080/o/data-engine/v1.0/data-definitions/39207/data-record-collections \
+  http://localhost:8080/o/data-engine/v1.0/data-definitions/86524/data-record-collections \
   -H 'Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTp0ZXN0' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -164,15 +279,16 @@ curl -i -X GET \
 
 ```sh
 curl -i -X POST \
-  http://localhost:8080/o/data-engine/v1.0/data-record-collections/39212/data-records \
+  http://localhost:8080/o/data-engine/v1.0/data-record-collections/86531/data-records \
   -H 'Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTp0ZXN0' \
   -H 'Content-Type: application/json' \
   -d '{
 
         "dataRecordValues": {
 
-            "name": "product",
-            "value": "Bicycle"
+            "product": { 
+                "en_US": "Bicycle"
+            }
         }
 }'
 ```
