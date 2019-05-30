@@ -19,8 +19,8 @@ special tags to add dynamic behavior.
 
 The HTML, CSS, and JavaScript are all completely standard, but can be 
 enhanced with Liferay-specific features. You can specify text, images, and 
-links as editable, as well as providing for "rich" text with formatting. Liferay
-portlets can also be embedded in Fragments as "widgets," making pages with
+links as editable and provide for "rich" text with formatting. Liferay
+portlets can also be embedded in Fragments as widgets, making pages with
 Fragments more dynamic than regular web content.
 
 ## Creating Page Fragments
@@ -30,12 +30,12 @@ defines columns, padding, and spacing on the page. A Component contains content
 that is added to a Section.
 
 Fragments are created inside of Collections. Collections provide an easy way to 
-manage and share groups of related Fragments. They are also used when a user is 
+manage and share groups of related Fragments. Users navigate Collections when 
 selecting Fragments to add to a page. You can create and manage Fragments and
 Collections without using any external tools, but you can also use your
 preferred tools for Web Development. For an explanation of Fragment creation
 using Liferay's built in tools, see 
-[Creating a Fragment](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-fragments). 
+[Creating a Fragment](/docs/7-2/frameworks/-/knowledge_base/f/creating-fragments). 
 
 ### Fragment CLI
 
@@ -45,7 +45,6 @@ more information about the CLI, see the
 [official Liferay Fragments CLI project](https://github.com/liferay/generator-liferay-fragments/blob/master/README.md)
 reference. Using this CLI is also covered in 
 [Developing a Fragment using Desktop Tools](/docs/7-2/frameworks/-/knowledge_base/f/page-fragments-desktop-tools).
-
 
 ## Contributed Collections
 
@@ -105,4 +104,4 @@ You can make a Fragment even more dynamic by including a widget. Currently,
 portlets are the only embeddable types of widgets, but other options are planned.
 
 You can find a complete list and usage examples of these in the 
-[Page Fragments Reference](/docs/7-2/frameworks/-/knowledge_base/frameworks/fragment-specific-tags).
+[Page Fragments Reference](/docs/7-2/frameworks/-/knowledge_base/f/fragment-specific-tags).
