@@ -10,21 +10,20 @@ With
 [asset auto tagging enabled](/docs/7-2/user/-/knowledge_base/u/configuring-asset-auto-tagging), 
 you can also configure text auto tagging. Text auto tagging automatically 
 [tags](/docs/7-2/user/-/knowledge_base/u/tagging-content) 
-text-based assets in the portal. This lets you use tags without requiring anyone 
-to manually apply them. 
+text-based assets. This lets you use tags without requiring anyone to manually
+apply them. 
 
 | **Note:** Currently, text auto tagging is only available for text-based 
 | documents and web content. Tags applied automatically are English only. 
 
-Text auto tagging is disabled by default. To use it, you must do the following: 
+Text auto tagging is disabled by default. To use it, you must enable it: 
 
 1.  Ensure that 
     [asset auto tagging](/docs/7-2/user/-/knowledge_base/u/configuring-asset-auto-tagging) 
     is enabled. Although it's enabled by default, administrators can disable it. 
 
-2.  Ensure that a text auto tagging provider is configured in the portal. These 
-    providers aren't configured by default. Here, you'll learn how to configure 
-    them. 
+2.  Ensure that a text auto tagging provider is configured. These providers
+    aren't configured by default. Here, you'll learn how to configure them. 
 
 3.  For the asset type you want to tag automatically (e.g., documents, web 
     content), enable the text auto-tagging provider that you configured in step 
@@ -68,14 +67,12 @@ Natural Language API:
     **Confidence:** Set the classifier's confidence of the category. This number 
     represents how certain the classifier is that this category represents the 
     given text. 
-    <!-- What does that mean? What values are possible, and what do they do? -->
 
     **Entity Endpoint Enabled:** Whether to enable auto tagging of text using 
     the Google Cloud Natural Language API Entity endpoint. 
 
     **Salience:** The salience score for an entity provides information about 
     the importance or centrality of that entity to the entire text. 
-    <!-- What does that mean? What values are possible, and what do they do? --> 
 
 3.  Click *Save* to save your changes. 
 
