@@ -106,7 +106,7 @@ for developing portlets.
 
 [Bean Portlet](/docs/7-2/appdev/-/knowledge_base/a/bean-portlet)
 
-[Spring Portlet MVC: PortletMVC4Spring](/docs/7-2/appdev/-/knowledge_base/a/spring-portlet-mvc)
+[Spring Portlet MVC: PortletMVC4Spring](/docs/7-2/appdev/-/knowledge_base/a/portlet-mvc-for-spring-portletmvc4spring)
 
 [Liferay MVC Portlet](/docs/7-2/appdev/-/knowledge_base/a/liferay-mvc-portlet)
 
