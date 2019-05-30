@@ -8,7 +8,7 @@ To better understand Navigation Menus, it's time to create a new menu.
 
 ## Creating a Navigation Menu
 
-1.  Go to *Site Administration* &rarr; *Build* &rarr; *Navigation Menus*.
+1.  Go to *Site Administration* &rarr; *Site Builder* &rarr; *Navigation Menus*.
 
 2.  Click the `+` button to add a new menu.
 

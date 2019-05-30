@@ -9,13 +9,13 @@ those pages in whatever order or structure that you see fit.
 
 ## Creating a Page
 
-New pages are created on the *Build* &rarr; *Pages* page in Site 
+New pages are created on the *Site Builder* &rarr; *Pages* page in Site 
 Administration. Pages can be created as *Public Pages* which anyone can view, 
 or *Private Pages* which can only be viewed by Site Members. To create a new 
 page,
 
 1.  Go to *Site Administration* for the Site you want to work on, then
-    *Build* &rarr; *Pages*.
+    *Site Builder* &rarr; *Pages*.
 
 ![Figure 1: In the default site, initially only the *Welcome* and the hidden *Search* pages exist in the Public Pages Hierarchy.](../../../../images/default-nav-pages.png)
 
@@ -27,9 +27,6 @@ page,
 4.  Set the *Name* as *About Us*.
 
 5.  Click *Save*.
-
-6.  On the next page, note the *Show in Public Page Hierarchy Menu* selection, 
-    leave the defaults and click *Save*.
 
 ![Figure 2: When you create a page, by default it is added to the site hierarchy.](../../../../images/page-hierarchy-menu.png)
 
