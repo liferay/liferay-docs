@@ -173,7 +173,7 @@ Here's how set it using portal properties:
     if you haven't created one already. 
 
 2.  Copy a set of `jdbc.*` properties from one of the
-    [JDBC templates](/docs/7-2/deploy/-/knowledge_base/d/jdbc-templates)
+    [JDBC templates](/docs/7-2/deploy/-/knowledge_base/d/database-templates)
     into your `portal-ext.properties` file.
 
 3.  Modify the `jdbc.*` property values to specify your database and database 
@@ -266,7 +266,7 @@ database before you attempt to install the plugins.
 
 @product@ has many more configurable features; but they
 can wait until *after* deployment. The
-[Configuring @product@](/deployment/docs/7-2/deploy/-/knowledge_base/d/configuring-product)
+[Configuring @product@](/docs/7-2/deploy/-/knowledge_base/d/configuring-product)
 section explains them. 
 
 Now it's time to install @product@. 
