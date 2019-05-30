@@ -160,6 +160,10 @@ entirely so you can put your own UI in its place.
     or by [.config file](/docs/7-2/user/-/knowledge_base/u/understanding-system-configuration-files)
     ---you can [just leave it out](/docs/frameworks/-/knowledge_base/7-2/customizing-the-system-settings-user-interface#excluding-a-configuration-ui-from-system-settings).
 
+-   If you want the UI to render only under certain
+    circumstances, you can write logic to 
+    [do that, too](/developer/frameworks/-/knowledge_base/7-2/customizing-the-system-settings-user-interface#excluding-a-configuration-ui-from-system-settings).
+
 Enough conceptual stuff. You're ready to get started with some code. If you
 already have an app that was configurable under an earlier version of
 @product@, see 
