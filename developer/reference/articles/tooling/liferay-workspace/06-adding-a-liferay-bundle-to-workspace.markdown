@@ -55,7 +55,7 @@ Your distribution file is available from the workspace's `/build` folder.
 
 | **Note:** You can define different environments for your Liferay bundle for
 | easy testing. You can learn more about this in the
-| [Testing Projects](/docs/reference/7-2/-/knowledge_base/reference/liferay-workspace#testing-projects)
+| [Testing Projects](/docs/7-2/reference/-/knowledge_base/reference/liferay-workspace#testing-projects)
 | section.
 
 You're all set to develop projects for a nested @product@ bundle.
