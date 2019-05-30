@@ -20,7 +20,7 @@ visited pages, and the rest can appear in secondary navigation. You can also
 create specific menus for different landing pages to direct users to content
 that is relevant to them.
 
-Go to *Navigation* &rarr; *Pages* to view the existing pages or create new
+Go to *Site Builder* &rarr; *Pages* to view the existing pages or create new
 pages. The Site hierarchy as displayed on *Pages* is the main reference for the
 organization of pages on that Site. While Navigation Menus can customize their
 organization and what appears and what doesn't appear, this menu is always the

@@ -19,7 +19,7 @@ page,
 1.  Go to *Site Administration* for the Site you want to work on, then
     *Site Builder* &rarr; *Pages*.
 
-![Figure 1: In the default site, initially only the *Welcome* and the hidden *Search* pages exist in the Public Pages Hierarchy.](../../../../images/default-nav-pages.png)
+![Figure 1: In the default site, initially only the *Home* and the hidden *Search* pages exist in the Public Pages Hierarchy.](../../../../images/default-nav-pages.png)
 
 2.  Click *Add* [Add Page](../../../../images/icon-add.png) and select *Public 
     Page*.

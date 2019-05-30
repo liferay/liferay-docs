@@ -12,9 +12,9 @@ instance. There are four main sections of the Liferay Control Panel: Users,
 Sites, Apps, and Configuration. In this section, you'll learn how to use the
 Control Panel to manage Sites.  For information about the Apps, Users, and
 Configuration sections of the Control Panel, see the 
-[Using the Liferay Marketplace](/docs/7-1/user/-/knowledge_base/u/using-the-liferay-marketplace),
-[Managing Users](/docs/7-1/user/-/knowledge_base/u/managing-users), and
-[System Wide Settings](/docs/7-1/user/-/knowledge_base/u/system-wide-settings) sections,
+[Using the Liferay Marketplace](/docs/7-2/user/-/knowledge_base/u/using-the-liferay-marketplace),
+[Managing Users](/docs/7-2/user/-/knowledge_base/u/managing-users), and
+[System Wide Settings](/docs/7-2/user/-/knowledge_base/u/system-wide-settings) sections,
 respectively.
 
 +$$$
@@ -122,13 +122,13 @@ To add a page for your temporarily invisible Site, navigate to the *Navigation*
 option from Site Administration. Then add a public page. After adding your
 Site's first page, it renders and your Site is viewable. For more information
 about adding pages, see the
-[Creating and Managing Pages](/docs/7-1/user/-/knowledge_base/u/creating-and-managing-pages)
+[Creating and Managing Pages](/docs/7-2/user/-/knowledge_base/u/creating-and-managing-pages)
 section.
 
 You can also categorize your Site template using tags and categories by
 selecting the *Categorization* menu from the bottom of the page. To learn more
 about using tags and categories in Liferay, see the 
-[Organizing Content with Tags and Categories](/docs/7-1/user/-/knowledge_base/u/organizing-content-with-tags-and-categories)
+[Organizing Content with Tags and Categories](/docs/7-2/user/-/knowledge_base/u/organizing-content-with-tags-and-categories)
 section. Lastly, at the top of the page is an additional tab named *Social*.
 This tab manages whether users of your Site can mention other users. You'll
 learn about mentioning users later in the Social Collaboration sections.
@@ -140,6 +140,4 @@ to any Site based on it. A checkbox appears for unlinking the Site template if
 the User has permission to do so.
 
 Once the Site has been created, you should configure its settings to fit your
-needs. You can learn more about Site Settings in [Configuring Sites](/docs/7-1/user/-/knowledge_base/u/configuring-sites).
-
-Next, you'll learn about creating pages.
+needs. You can learn more about Site Settings in [Configuring Sites](/docs/7-2/user/-/knowledge_base/u/configuring-sites).
