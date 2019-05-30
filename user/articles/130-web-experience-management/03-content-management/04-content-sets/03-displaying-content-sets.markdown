@@ -1,18 +1,26 @@
 # Displaying Content Sets
 
-Content Sets are primarily displayed through the Asset Publisher. It is currently the only method to display them out of the box, but you can [develop your own external applications or widgets to utilize Content Sets](dev-guide-link). In [Creating Content Sets](user-guide-link) you created
-two Content Sets. Now display them on a page.
+[TOC levels=1-4]
+
+Content Sets are primarily displayed through the Asset Publisher. It is 
+currently the only method to display them out of the box, but you can develop 
+your own external applications or widgets to utilize Content Sets. In [Creating Content Sets](user-guide-link) you created two Content Sets. Now display them 
+on a page.
 
 ## Configuring the Asset Publisher for Content Sets
 
 To display the Content Sets, start with a blank page, and then add the 
 necessary Asset Publishers and configure them to display the Content Sets.
 
-1.  Create a new *Home* page for your site as a Widget Page with a 1 column layout. If you're using a fresh @product@ bundle, you can just remove the *Hello World* widget from the sample *Home* page.
+1.  Create a new *Home* page for your site as a Widget Page with a 1 column 
+    layout. If you're using a fresh @product@ bundle, you can just remove the 
+    *Hello World* widget from the sample *Home* page.
     
-2.  Open the *Add* menu and add two *Content Management* &rarr; *Asset Publishers* to the page stacked vertically.
+2.  Open the *Add* menu and add two *Content Management* &rarr; *Asset 
+    Publishers* to the page stacked vertically.
 
-3.  Click ![Options](../../../../images/icon-options.png) &rarr; *Configuration* for the top Asset Publisher.
+3.  Click ![Options](../../../../images/icon-options.png) &rarr; 
+    *Configuration* for the top Asset Publisher.
 
 4.  Under *Asset Selection* choose *Content Set*.
 
@@ -63,8 +71,8 @@ upload a new image, tag it, and add it to the static set manually.
 3.  To add it to the manual set, go back to *Site Administration* &rarr; 
     *Content & Data* &rarr; *Site Builder*.
 
-4.  Click on *Space Program Images* or select ![Options](../../../../images/icon-options.png) &rarr; *Edit* next to *Space 
-    Program Images*.
+4.  Click on *Space Program Images* or select ![Options](../../../../images/icon-options.png) &rarr; *Edit* next to 
+    *Space Program Images*.
     
 5.  Next to *Asset Entries* click *Select* &rarr; *Basic Document*.
 

@@ -1,5 +1,7 @@
 # Creating Content Sets
 
+[TOC levels=1-4]
+
 Content Sets are created by content administrators through the Content Sets 
 interface in Site Administration. Content Sets can use either Manual or Dynamic 
 secltion, and you can create any number of Content Sets, and display them 
