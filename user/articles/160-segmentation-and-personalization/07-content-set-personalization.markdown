@@ -1,4 +1,10 @@
+---
+header-id: content-set-personalization
+---
+
 # Content Set Personalization
+
+[TOC levels=1-4]
 
 In [Creating User Segments](/user/7-2/-/knowledge-base/user/creating-user-segments) you created a 
 Segment called *American Engineers*. Now, you'll use it to demonstrate Content 

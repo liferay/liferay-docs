@@ -1,4 +1,10 @@
+---
+header-id: content-page-personalization
+---
+
 # Content Page Personalization
+
+[TOC levels=1-4]
 
 In [Creating Segments with Customer Fields and Session Data](/user/7-2/-/knowledge-base/user/creating-segments-with-custom-fields-and-session-data) you created a Segment called *Premium Card Prospects*. Now, you'll
 use it to demonstrate Content Page Personalization.
@@ -67,7 +73,7 @@ The *Default* version of the page will display for everyone except for those
 defined as *Premium Card Prospects*, but customers in that segment will have
 an experience curated just for them.
 
-![Figure 3: Your final result for the card prospects might look something like this.](../../images/personalization-prospects.png)
+![Figure 4: Your final result for the card prospects might look something like this.](../../images/personalization-prospects.png)
 
 | **Note:** When you create a new experience, it will copy the *Default*
 | experience at the time that it is created. Any further changes to the
