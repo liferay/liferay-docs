@@ -26,6 +26,14 @@ for instructions on using the
 [SAML adapter](https://web.liferay.com/marketplace/-/mp/application/15188711). Use
 the instructions to make the conceptual magic from this article come to life!
 
+## What's new in Liferay Connector to SAML 2.0
+
+The `5.0.0` version of the application for @product@ brings some long-awaited improvments and opens up the possibility for adding more in the future. These are:
+* Allow to configure @product@ when acting as a Service Provider (SP) to be able to connect to multiple Identity Providers (IdP)
+* Extension point for developers to customize which Identity Providers to display end-users to sign in with
+* Support for other Signature Algorithms (like `SHA-256`)
+* Allow to blacklist signature method algorithm URL's from being used in the metadata (for example disabling `SHA-1`: `http://www.w3.org/2000/09/xmldsig#rsa-sha1`)
+
 | **Note:** If you're migrating from a Liferay SAML adapter prior to version
 | 3.1.0, your properties are automatically migrated to settings. Please see the
 | [Configuring SAML](/docs/7-2/deploy/-/knowledge_base/d/configuring-saml)
