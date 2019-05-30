@@ -141,12 +141,12 @@ directly.
 
 The last icon on the right side of the page will bring you to the *Look and 
 Feel* configuration for the page where you can change the theme or manage other 
-options for the page. These options are fully documented in the [Page Management](user-guide-link) section.
+options for the page. These options are fully documented in the [Page Management](docs/7-2/user/-/knowledge_base/user/creating-pages) section.
 
 ### The Title Bar
 
 The title bar provides navigation back to the Main Menu, a link to page 
 configuration, and the ability to search for other The title bar is covered in 
-more detail in the [Page Management](user-guide-link) section.
+more detail in the [Page Management](docs/7-2/user/-/knowledge_base/user/creating-pages) section.
 
 ![Figure 12: The title bar has several tools built into it.](../../../images/content-page-edit-title-bar.png)

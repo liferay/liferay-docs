@@ -72,4 +72,5 @@ finish it up, change the background color for the section to black.
 In just a few minutes, you used the power of Content Pages and Fragments to go 
 from nothing to perfectly recreating a page design. To take it to the next 
 level, head over the [Segmentation and Personalization guide](user-guide-link) 
-and the [Content Page Personalization section](user-guide-link).
+and the [Content Page Personalization section](docs/7-2/user/-/knowledge_base/user/segmentation-and-personalization
+).
