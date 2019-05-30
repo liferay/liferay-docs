@@ -14,8 +14,8 @@ interface:
 - `full_content`
 - `preview`
 
-Besides these supported templates, you can also create JSPs for buttons you'd
-like to provide for direct access and manipulation of the asset. For example,
+Besides these supported templates, you can also create JSPs for buttons for
+direct access and manipulation of the asset. For example,
 
 - Edit
 - View
@@ -29,17 +29,19 @@ asset renderer is put together to satisfy JSP template development requirements.
     return the path to your JSP, which is rendered inside the Asset Publisher.
     This is how the `BlogsEntryAssetRenderer` uses this method:
 
-        @Override
-        public String getJspPath(HttpServletRequest request, String template) {
-            if (template.equals(TEMPLATE_ABSTRACT) ||
-                template.equals(TEMPLATE_FULL_CONTENT)) {
+    ```java
+    @Override
+    public String getJspPath(HttpServletRequest request, String template) {
+        if (template.equals(TEMPLATE_ABSTRACT) ||
+            template.equals(TEMPLATE_FULL_CONTENT)) {
 
-                return "/blogs/asset/" + template + ".jsp";
-            }
-            else {
-                return null;
-            }
+            return "/blogs/asset/" + template + ".jsp";
         }
+        else {
+            return null;
+        }
+    }
+    ```
 
     Blogs assets provide `abstract.jsp` and `full_content.jsp` templates. This
     means that a blogs asset can render a blog's abstract description or the
@@ -60,16 +62,18 @@ asset renderer is put together to satisfy JSP template development requirements.
     must override this method to set an attribute in the request to use in
     the blog's views:
 
-        @Override
-        public boolean include(
-                HttpServletRequest request, HttpServletResponse response,
-                String template)
-            throws Exception {
+    ```java
+    @Override
+    public boolean include(
+            HttpServletRequest request, HttpServletResponse response,
+            String template)
+        throws Exception {
 
-            request.setAttribute(WebKeys.BLOGS_ENTRY, _entry);
+        request.setAttribute(WebKeys.BLOGS_ENTRY, _entry);
 
-            return super.include(request, response, template);
-        }
+        return super.include(request, response, template);
+    }
+    ```
 
     The attribute includes the blogs entry object. Adding the blog object this
     way is not mandatory; you could obtain the blog entry directly from the
@@ -83,27 +87,28 @@ your asset. That's not all you can do with JSP templates, however! The asset
 renderer framework provides several other methods that let you render convenient
 buttons for your asset.
 
-1.  Blogs assets provide an Edit button that lets you edit the asset.
-    Provide this by adding the following method to the `BlogsEntryAssetRenderer`
-    class:
+1.  Blogs assets provide an Edit button for editing the asset. Provide this by
+    adding the following method to the `BlogsEntryAssetRenderer` class:
 
-        @Override
-        public PortletURL getURLEdit(
-                LiferayPortletRequest liferayPortletRequest,
-                LiferayPortletResponse liferayPortletResponse)
-            throws Exception {
+    ```java
+    @Override
+    public PortletURL getURLEdit(
+            LiferayPortletRequest liferayPortletRequest,
+            LiferayPortletResponse liferayPortletResponse)
+        throws Exception {
 
-            Group group = GroupLocalServiceUtil.fetchGroup(_entry.getGroupId());
+        Group group = GroupLocalServiceUtil.fetchGroup(_entry.getGroupId());
 
-            PortletURL portletURL = PortalUtil.getControlPanelPortletURL(
-                liferayPortletRequest, group, BlogsPortletKeys.BLOGS, 0, 0,
-                PortletRequest.RENDER_PHASE);
+        PortletURL portletURL = PortalUtil.getControlPanelPortletURL(
+            liferayPortletRequest, group, BlogsPortletKeys.BLOGS, 0, 0,
+            PortletRequest.RENDER_PHASE);
 
-            portletURL.setParameter("mvcRenderCommandName", "/blogs/edit_entry");
-            portletURL.setParameter("entryId", String.valueOf(_entry.getEntryId()));
+        portletURL.setParameter("mvcRenderCommandName", "/blogs/edit_entry");
+        portletURL.setParameter("entryId", String.valueOf(_entry.getEntryId()));
 
-            return portletURL;
-        }
+        return portletURL;
+    }
+    ```
 
     The Asset Publisher loads the blogs asset using the Blogs application. Then
     the `edit_entry.jsp` template generates the HTML for an editing UI. Once the
@@ -113,35 +118,37 @@ buttons for your asset.
 2.  You can specify how to view your asset by providing methods similar to the
     methods outlined below in the `BlogsEntryAssetRenderer` class:
 
-        @Override
-        public String getURLView(
-                LiferayPortletResponse liferayPortletResponse,
-                WindowState windowState)
-            throws Exception {
-
-            AssetRendererFactory<BlogsEntry> assetRendererFactory =
-                getAssetRendererFactory();
-
-            PortletURL portletURL = assetRendererFactory.getURLView(
-                liferayPortletResponse, windowState);
-
-            portletURL.setParameter("mvcRenderCommandName", "/blogs/view_entry");
-            portletURL.setParameter("entryId", String.valueOf(_entry.getEntryId()));
-            portletURL.setWindowState(windowState);
-
-            return portletURL.toString();
-        }
-
-        @Override
-        public String getURLViewInContext(
-            LiferayPortletRequest liferayPortletRequest,
+    ```java
+    @Override
+    public String getURLView(
             LiferayPortletResponse liferayPortletResponse,
-            String noSuchEntryRedirect) {
+            WindowState windowState)
+        throws Exception {
 
-            return getURLViewInContext(
-                liferayPortletRequest, noSuchEntryRedirect, "/blogs/find_entry",
-                "entryId", _entry.getEntryId());
-        }
+        AssetRendererFactory<BlogsEntry> assetRendererFactory =
+            getAssetRendererFactory();
+
+        PortletURL portletURL = assetRendererFactory.getURLView(
+            liferayPortletResponse, windowState);
+
+        portletURL.setParameter("mvcRenderCommandName", "/blogs/view_entry");
+        portletURL.setParameter("entryId", String.valueOf(_entry.getEntryId()));
+        portletURL.setWindowState(windowState);
+
+        return portletURL.toString();
+    }
+
+    @Override
+    public String getURLViewInContext(
+        LiferayPortletRequest liferayPortletRequest,
+        LiferayPortletResponse liferayPortletResponse,
+        String noSuchEntryRedirect) {
+
+        return getURLViewInContext(
+            liferayPortletRequest, noSuchEntryRedirect, "/blogs/find_entry",
+            "entryId", _entry.getEntryId());
+    }
+    ```
 
     The `getURLView(...)` method generates a URL that displays the full content
     of the asset in the Asset Publisher. This is assigned to the clickable asset
