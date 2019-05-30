@@ -1,8 +1,12 @@
+---
+header-id: converting-asset-publisher
+---
+
 # Converting Asset Publisher Configurations to Content Sets
 
 [TOC levels=1-4]
 
-In the previous two guides in this section, you've seen [Creating Content Sets](user-guide-link) and [Displaying Content Sets](user-guide-link) 
+In the previous two guides in this section, you've seen [Creating Content Sets](/docs/7-2/user/-/knowledge_base/user/creating-content-sets) and [Displaying Content Sets](/docs/7-2/user/-/knowledge_base/user/displaying-content-sets) 
 demonstrated. Next, try out converting an existing Asset Publisher 
 configuration to a Content Set.
 

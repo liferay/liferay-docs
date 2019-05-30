@@ -1,3 +1,7 @@
+---
+header-id: creating-content-sets
+---
+
 # Creating Content Sets
 
 [TOC levels=1-4]
@@ -5,11 +9,11 @@
 Content Sets are created by content administrators through the Content Sets 
 interface in Site Administration. Content Sets can use either Manual or Dynamic 
 secltion, and you can create any number of Content Sets, and display them 
-through the Asset Publisher or [custom applications](dev-guide-link). Content 
-Sets can also have [personalizated variations](user-guide-link) which provide 
+through the Asset Publisher or custom applications. Content 
+Sets can also have [personalizated variations](/docs/7-2/user/-/knowledge_base/user/content-set-personalization) which provide 
 different experiences for different users based on criteria that you specify. 
 The criteria management is shared with the Asset Publisher, so for more 
-information on each option, see the official [Asset Publisher Documentation](user-guide-link).
+information on each option, see the official [Asset Publisher Documentation](/docs/7-2/user/-/knowledge_base/user/publishing-content-dynamically).
 
 ## Creating a Manual Content Set
 
@@ -30,7 +34,7 @@ On the next screen, you can select the assets to include in the Content Set.
 
 1.  Click *Select* &rarr; *Basic Document*.
 
-![Figure 2: You can select the type of asset to add to the Content Set.](../../../../images/content-sets-select-basic-document.png)
+![Figure 2: You can select the type of asset to add to the Content Set.](../../../../images/content-sets-select-document.png)
 
 2.  Now, check the boxes for each image that you want to add and click *Add*.
 
@@ -66,4 +70,4 @@ This will create a Content Set which will contain any items that are currently
 tagged as "trending" and any future items with the "trending" tag will be added 
 to the Content Set automatically.
 
-Now that you have your Content Sets created, you can [display them on a page](user-guide-link).
+Now that you have your Content Sets created, you can [display them on a page](/docs/7-2/user/-/knowledge_base/user/displaying-content-sets).
