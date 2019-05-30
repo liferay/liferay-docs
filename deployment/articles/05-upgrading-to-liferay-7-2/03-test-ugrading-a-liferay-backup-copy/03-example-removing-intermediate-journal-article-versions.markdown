@@ -7,9 +7,9 @@ header-id: example-removing-intermediate-journal-article-versions
 [TOC levels=1-4]
 
 These instructions and code samples demonstrate removing intermediate Journal
-Article versions. To ,  In the [script
-console](/docs/7-2/user/-/knowledge_base/u/running-scripts-from-the-script-console),
-you can remove unneeded object versions by executing similar Java code or Groovy
+Article versions. In the 
+[script console](/docs/7-2/user/-/knowledge_base/u/running-scripts-from-the-script-console),
+you can remove unneeded object versions by executing Java or Groovy
 code. 
 
 Here are example steps for removing intermediate Journal Article versions: 
@@ -24,8 +24,7 @@ Here are example steps for removing intermediate Journal Article versions:
     API](@platform-ref@/7.2-latest/javadocs/portal-kernel/) are available at
     [@platform-ref@](@platform-ref@).
 
-    If it's a [Service
-    Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder) entity,
+    If it's a [Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder) entity,
     examine the `delete*` methods in the entity's `*LocalServiceUtil` class. For
     example, this `deleteArticle` in
     [`JournalArticleLocalServiceUtil`](@app-ref@/apps/web-experience/latest/javadocs/com/liferay/journal/service/JournalArticleLocalServiceUtil.html#deleteArticle-long-java.lang.String-double-java.lang.String-com.liferay.portal.kernel.service.ServiceContext-)
@@ -40,7 +39,7 @@ Here are example steps for removing intermediate Journal Article versions:
 3.  Aggregate the entity versions to delete and the information required to 
     delete them. For example, get all the Journal Article versions in range that
     match your removal criteria and associate their entity IDs and group IDs
-    with them--the `deleteArticle` method requires the entity ID and group ID. 
+    with them---the `deleteArticle` method requires the entity ID and group ID. 
 
     The entity object (e.g., `JournalArticle`) typically has a version field.
     `JournalArticleResource` has each Journal Article's article ID (the entity's
@@ -55,7 +54,7 @@ Here are example steps for removing intermediate Journal Article versions:
         JournalArticleLocalServiceUtil.getJournalArticleResources(start, end);
     ```
 
-    2.  Get each Journal Article version's workflow status via the  
+    2.  Get each Journal Article version's workflow status via the 
         `JournalArticle` object associated with each `JournalArticleResource`.
         [Dynamic Query](/docs/7-2/appdev/-/knowledge_base/a/dynamic-query) is an
         efficient way to get exactly the data you want (and nothing more) from
