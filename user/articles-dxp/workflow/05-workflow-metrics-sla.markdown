@@ -19,17 +19,17 @@ Workflow Reports shows data for all processes with SLAs, including each
 workflow item's SLA status: on time or overdue.
 
 | **Editing a Workflow with SLAs:** Editing a workflow (e.g., removing nodes, editing a task name) with
-| SLAs defined on it is likely to cause problems, and may invalidate the SLA for
+| SLAs defined on it may invalidate the SLA for
 | items already in the workflow/SLA pipeline.
 |
-| **Creating or Editing SLAs for Active Processes:** Editing a SLA's duration, or
-| defining a new SLA while items are already in the workflow process will cause a
+| **Creating or Editing SLAs for Active Processes:** Editing an SLA's duration or
+| defining a new SLA while items are already in the workflow process causes a
 | recalculation for all instances currently in the workflow. Completed workflow
 | instances are not recalculated.
 
 ## Adding SLAs
 
-To add a SLA,
+To add an SLA,
 
 1.  Go to Control Panel &rarr; Workflow &rarr; Metrics.
 
@@ -38,7 +38,7 @@ To add a SLA,
     The Reports UI for the process is displayed. 
 
 3.  If there's no SLA for the process, a warning message stating
-    as much is displayed. Click the _Add a new SLA_ link from the warning to
+    as much appears. Click the _Add a new SLA_ link from the warning to
     access the New SLA form directly.
 
     Alternatively, click the Options (![Options](../../images/icon-options.png))
@@ -46,7 +46,7 @@ To add a SLA,
 
     ![Figure 1: Add SLAs to a workflow definition from the Metrics application.](../../images/workflow-add-sla.png)
 
-3.  On the SLAs screen, click the Add button
+3.  On the SLAs screen, click the *Add* button
     (![Add](../../images/icon-add.png)).
 
 4.  In the New SLA form, Give the SLA a Name and Description.
@@ -66,8 +66,9 @@ To add a SLA,
 6.  Define the duration (i.e., the deadline) for the SLA. Fill out at least one
     of the two time boxes.
 
-    - Days: Enter a whole number of days.
-    - Hours: Enter hours and minutes in the format HH:MM
+    **Days:** Enter a whole number of days.
+
+    **Hours:** Enter hours and minutes in the format HH:MM
 
 7.  Once you click *Save*, you'll see the SLA listed on the SLAs screen.
 
@@ -75,20 +76,19 @@ To add a SLA,
 | SLA duration should continue counting all the time: in other words, 24 hours
 | per day, seven days per week. If you need a different calendar format, find a
 | friendly developer to create a custom calendar. Official docs will be written
-| for this extension point, but the basic ideas is to implement the
+| for this extension point, but the basic idea is to implement the
 | `WorkflowMetricsSLACalendar` interface. New implementations of this service are
 | picked up automatically by the Workflow Metrics applications, so it becomes
-| available as soon as the module holding the service implementation is deployed
-| to @product@. The interface has three methods to implement:
+| available as soon as the module holding the service implementation is
+| deployed. The interface has three methods to implement:
 |
+| `public Duration getDuration(
+|   LocalDateTime startLocalDateTime, LocalDateTime endLocalDateTime);`
 |
-| - `public Duration getDuration(
-|     LocalDateTime startLocalDateTime, LocalDateTime endLocalDateTime);`
+| `public LocalDateTime getOverdueLocalDateTime(
+|   LocalDateTime nowLocalDateTime, Duration remainingDuration);`
 |
-| - `public LocalDateTime getOverdueLocalDateTime(
-|     LocalDateTime nowLocalDateTime, Duration remainingDuration);`
-|
-| - `public String getTitle(Locale locale);`
+| `public String getTitle(Locale locale);`
 |
 | See the `DefaultWorkflowMetricsSLACalendar` from the
 | `portal-workflow-metrics-service` module for example code. If you define a new
@@ -137,7 +137,7 @@ Example Duration: 36 hours
 Example Duration: 6.5 hours
 : Valid --- Hours: _06:30_
 
-Once your SLAs are configured, activate the workflow on a portal asset, stretch
+Once your SLAs are configured, activate the workflow on an asset, stretch
 your fingers, and get ready for the submissions to roll in if you're one of the
 workflow assignees. You're on the hook to get those workflow items through the
 process within the SLA duration!
