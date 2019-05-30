@@ -3,7 +3,7 @@
 We'll use cURL, a cross-platform tool for making HTTP calls. Feel free to use
 any REST client.
 
-### Adding DataDefinition
+### Adding Data Definitions
 
 Get the `siteId` from the Site Menu &rarr; Configuration &rarr; Site Settings.
 
@@ -191,6 +191,35 @@ structure like this:
         }
     }
 ```
+
+### Retrieving Data Definitions
+
+```ah
+curl -i -X GET \
+  http://localhost:8080/o/data-engine/v1.0/sites/20123/data-definitions \
+  -H 'Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTp0ZXN0' \
+  -H 'Content-Type: application/json' \
+```
+
+
+### Deleting Data Definitions
+
+```sh
+curl -i -X DELETE \
+  http://localhost:8080/o/data-engine/v1.0/data-definitions/39108 \
+  -H 'Authorization: Basic dGVzdEBsaWZlcmF5LmNvbTp0ZXN0' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "dataDefinitionFields": [
+        {
+            "fieldType": "text",
+            "name": "product"
+        }
+    ]}'
+```
+
+
+
 
 ## CURL Commands
 
