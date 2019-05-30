@@ -52,30 +52,30 @@ both standard and targeted content. You can learn more about this in
 
 ## Personalizing Experiences
 
-The most important piece of the puzzle isn't defining groups or analyzing use 
-behavior. It's the final step of using all of that to provide users and site 
+The most important piece of the puzzle isn't defining groups or analyzing user 
+behavior. It's the final step of using the data to provide users and site 
 visitors with the best possible experience, and driving campaigns and content 
 engagement. If you strategically create segments, you can then use that to 
-enhance user experiences, and make sure that users are seeing content
-targeted to them. Content Page Personalization and Content List Personalization 
-are two key aspects of this.
+enhance user experiences, and make sure that users see content targeted to them.
+Content Page Personalization and Content List Personalization are two key
+aspects of this.
 
 ### Content Page Personalization
 
-Content Page Personalization let's you dynamically change the page layout and 
+Content Page Personalization dynamically changes the page layout and 
 content based on who is viewing the page. You can create *Experiences* for any 
 [Content Page](user-guide-link) which provide different text, images, widgets, 
 and even different layouts based on the segment criteria of the user viewing 
-the page. You can see a step by step demonstration of this in [Content Page Personalization](/docs/7-2/user/-/knowledge_base/user/content-page-personalization).
+the page. You can see a step by step demonstration of this in [Content Page Personalization](/docs/7-2/user/-/knowledge_base/u/content-page-personalization).
 
 ### Content Set Personalization
 
-[Content Sets](user-guide-link) are a tool for organizing and displaying 
-content. Content Set Personalization provides dynamic selection of Content Sets 
-based on User Segments. This means the Content Set which displays in a given 
-context is determined by their segment criteria. For example, you could use a 
-content list to display "featured" articles at the top of a page. Then you 
-could create a Segments which contain users who should receive more specialized 
-content, rather than the default. Those Segments would then see content 
-personalized to their interest rather than the default. You can see 
+[Content Sets](user-guide-link) organize and display content. Content Set
+Personalization provides dynamic selection of Content Sets based on User
+Segments. This means the Content Set which displays in a given context is
+determined by their segment criteria. For example, you could use a content list
+to display "featured" articles at the top of a page. Then you could create
+Segments containing users who should receive more specialized content,
+rather than the default. Those Segments would then see content personalized to
+their interest rather than the default. You can see 
 a step by step demonstration of this in [Content Set Personalization](/docs/7-2/user/-/knowledge_base/user/content-set-personalization).
