@@ -4,6 +4,8 @@ header-id: propagating-changes-from-site-templates-to-sites
 
 # Propagating Changes from Site Templates to Sites
 
+[TOC levels=1-4]
+
 Site Template administrators can add, update, or delete Site Template pages.
 Changes made to a Site Template can be propagated to Sites whose page sets are
 linked to the Site Template. When you create a Site based on a Site Template

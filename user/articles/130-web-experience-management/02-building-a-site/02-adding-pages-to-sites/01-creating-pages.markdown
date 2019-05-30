@@ -4,6 +4,8 @@ header-id: creating-pages
 
 # Creating Pages
 
+[TOC levels=1-4]
+
 After you create a Site, you can add new pages and maintain them. You can do
 everything you need with pages from Site Administration.
 

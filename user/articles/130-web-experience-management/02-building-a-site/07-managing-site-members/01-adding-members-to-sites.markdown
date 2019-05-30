@@ -4,6 +4,8 @@ header-id: adding-members-to-sites
 
 # Adding Members to Sites
 
+[TOC levels=1-4]
+
 In [Adding Sites](/docs/7-1/user/-/knowledge_base/u/adding-sites) you 
 learned the difference between Site Membership Types and about public and 
 private pages within a Site. Now you'll learn how to add users manually to Sites

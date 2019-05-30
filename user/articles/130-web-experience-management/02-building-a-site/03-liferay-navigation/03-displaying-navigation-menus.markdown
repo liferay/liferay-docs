@@ -4,6 +4,8 @@ header-id: displaying-navigation-menus
 
 # Displaying Navigation Menus
 
+[TOC levels=1-4]
+
 You can display Navigation Menus in different ways on your Site. You may want
 to configure different display styles for a main menu, sidebar, and footer menu
 all on one page.

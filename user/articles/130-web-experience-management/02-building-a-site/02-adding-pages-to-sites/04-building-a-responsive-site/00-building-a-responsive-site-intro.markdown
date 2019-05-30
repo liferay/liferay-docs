@@ -4,6 +4,8 @@ header-id: building-a-responsive-site
 
 # Building a Responsive Site
 
+[TOC levels=1-4]
+
 Now more than half of all page views in the world come from mobile devices 
 like phones and tablets. That means that if your pages don't look good on 
 mobile devices, your pages don't look good for more than half the people

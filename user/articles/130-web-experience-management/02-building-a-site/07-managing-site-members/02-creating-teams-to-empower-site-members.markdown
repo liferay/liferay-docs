@@ -4,6 +4,8 @@ header-id: creating-teams-for-advanced-site-membership-management
 
 # Creating Teams to Empower Site Members
 
+[TOC levels=1-4]
+
 If you have an *ad hoc* group of Users who perform the same set of tasks in
 a Site, you can organize them into Site Teams, and then assign the team
 permissions for various site-specific functions. Site Teams are the preferred

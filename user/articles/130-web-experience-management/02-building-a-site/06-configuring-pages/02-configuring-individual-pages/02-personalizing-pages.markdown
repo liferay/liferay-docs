@@ -4,6 +4,8 @@ header-id: personalizing-pages
 
 # Personalizing Pages
 
+[TOC levels=1-4]
+
 Administrators can designate pages or sections of Widget Pages as customizable.
 When a user visits such a page, a notification appears stating that the user can
 customize the page. Users can make customizations only in the sections of pages

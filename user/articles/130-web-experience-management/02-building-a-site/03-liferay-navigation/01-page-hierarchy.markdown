@@ -4,6 +4,8 @@ header-id: page-hierarchy
 
 # Page Hierarchy
 
+[TOC levels=1-4]
+
 Using the Page Hierarchy, you create public and private pages and organize
 those pages in whatever order or structure that you see fit.
 

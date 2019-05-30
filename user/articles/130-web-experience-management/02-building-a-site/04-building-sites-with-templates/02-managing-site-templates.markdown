@@ -4,6 +4,8 @@ header-id: managing-site-templates
 
 # Managing Site Templates
 
+[TOC levels=1-4]
+
 To get started, click on *Site Templates* in the Sites section of the Control
 Panel. Here, you can add, manage, or delete Site templates. You can also
 configure the permissions of Site templates. As long as a Site is linked to the

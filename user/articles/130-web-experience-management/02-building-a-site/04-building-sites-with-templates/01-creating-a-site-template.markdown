@@ -4,6 +4,8 @@ header-id: creating-a-site-template
 
 # Creating a Site Template
 
+[TOC levels=1-4]
+
 Suppose you need to create the following three private Sites for the Lunar
 Resort's internal use: Engineering, Marketing, and Legal. These should be
 accessible only to members of these respective departments. You could design

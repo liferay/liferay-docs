@@ -4,6 +4,8 @@ header-id: mobile-device-actions
 
 # Mobile Device Actions
 
+[TOC levels=1-4]
+
 After you've created families and applied rules to define those families, you 
 can associate specific actions that occur when a user visits that Site on
 a device.
@@ -104,7 +106,7 @@ Next create a rule for the family:
 As with the previous example, you only need one rule to describe your device
 family. Now you must apply the rule to some pages.
 
-1.  Go to *Build* &rarr; *Pages* in Site Administration.
+1.  Go to *Site Builder* &rarr; *Pages* in Site Administration.
 
 2.  Click on the *Configuration* icon for the *Public Pages*
 

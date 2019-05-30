@@ -4,6 +4,8 @@ header-id: sharing-widgets-with-other-sites
 
 # Sharing Widgets with Other Sites
 
+[TOC levels=1-4]
+
 You can share widgets with other Sites by embedding an instance of a widget
 running on your Site into another website, such as Facebook. This opens up
 a whole new avenue of exposure to your web site that you would not have had

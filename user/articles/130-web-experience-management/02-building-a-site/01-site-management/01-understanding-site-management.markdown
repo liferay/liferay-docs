@@ -4,6 +4,8 @@ header-id: understanding-Site-management
 
 # Understanding Site Management
 
+[TOC levels=1-4]
+
 Whether you're building a large corporate webSite or a small Site for
 facilitating collaboration among team members, supporting different kinds of
 collaboration and social scenarios is a must. Liferay's Sites provide three

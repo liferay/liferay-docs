@@ -4,6 +4,8 @@ header-id: look-and-feel-configuration
 
 # Look and Feel Configuration
 
+[TOC levels=1-4]
+
 To access the look and feel configuration menu of any widget,
 
 1.  Click *Options* (![Options](../../../images/icon-options.png)) in the top

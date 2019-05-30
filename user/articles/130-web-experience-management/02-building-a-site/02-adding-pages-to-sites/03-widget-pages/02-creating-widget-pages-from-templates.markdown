@@ -4,6 +4,8 @@ header-id: creating-widget-pages-from-templates
 
 # Creating Widget Pages from Templates
 
+[TOC levels=1-4]
+
 Page templates provide pre-configured pages to reuse. There are two types of
 page templates in @product-ver@: Widget Page templates consist of a portlet
 layout and configuration. Content Page templates are constructed from

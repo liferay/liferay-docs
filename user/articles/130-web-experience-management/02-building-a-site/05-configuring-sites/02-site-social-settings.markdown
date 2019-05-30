@@ -4,6 +4,8 @@ header-id: social-settings-and-languages
 
 # Social Settings and Languages
 
+[TOC levels=1-4]
+
 The Social tab provides options for managing the social interactions on your
 Site. Languages lets you configure language options and change the default
 language options for the Site.

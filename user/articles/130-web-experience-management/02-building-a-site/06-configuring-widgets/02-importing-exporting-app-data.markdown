@@ -4,6 +4,8 @@ header-id: exporting-importing-widget-data
 
 # Exporting/Importing Widget Data
 
+[TOC levels=1-4]
+
 You may need to export data from a specific widget instance, without regard to
 content on the rest of the Site. There are many widgets that let you export or
 import their data individually: 

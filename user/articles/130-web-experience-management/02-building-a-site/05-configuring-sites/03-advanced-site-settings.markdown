@@ -4,6 +4,8 @@ header-id: advanced-site-settings
 
 # Advanced Site Settings
 
+[TOC levels=1-4]
+
 Advanced Settings relate to security (like User Roles) or require external
 configuration (like creating a Google Analytics account) to use.
 

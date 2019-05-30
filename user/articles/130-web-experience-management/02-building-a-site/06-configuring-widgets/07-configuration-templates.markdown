@@ -4,6 +4,8 @@ header-id: configuration-templates
 
 # Configuration Templates
 
+[TOC levels=1-4]
+
 Once you've configured a widget, Configuration Templates can save those
 settings in a reusable template. If someone goes in and changes the settings of
 a particular widget, it then becomes easy to revert those changes back to the

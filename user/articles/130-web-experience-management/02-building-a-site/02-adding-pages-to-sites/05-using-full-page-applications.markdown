@@ -4,6 +4,8 @@ header-id: using-full-page-applications
 
 # Using Full Page Applications
 
+[TOC levels=1-4]
+
 Full Page Applications are the ideal way to display a Message Board, Wiki, or
 other application that demands a full page.
 
@@ -12,7 +14,7 @@ other application that demands a full page.
 Creating a Full Page Application starts just like creating any other type of 
 page.
 
-1.  Go to *Site Administration* &rarr; *Build* &rarr; *Site Pages*.
+1.  Go to *Site Administration* &rarr; *Site Builder* &rarr; *Site Pages*.
 
 2.  Click the (![Add Page](../../../../../images/icon-add.png)) icon.
 
