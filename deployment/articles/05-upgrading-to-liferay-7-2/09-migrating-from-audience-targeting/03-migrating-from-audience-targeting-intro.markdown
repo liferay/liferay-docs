@@ -15,7 +15,7 @@ for each rule type.
 
 Some User Attributes, like Gender or Age, do not have a direct equivalent in 
 @product-ver@. User Attributes retrieved from external sources like Facebook 
-also do not have a replacement. To replace these, you must create a [custom user field](user-docs-link) and use that to define your new Segment.
+also do not have a replacement. To replace these, you must create a [custom user field](/docs/7-2/user/-/knowledge_base/user/creating-segments-with-custom-fields-and-session-data) and use that to define your new Segment.
 
 ## Session Rules
 
@@ -27,7 +27,7 @@ session tracking needs.
 ## Behavior Rules
 
 In @product-ver@ analytics is now managed through Analytics Cloud. You can 
-learn more about creating behavior based rules in the [Migrating Behavior-Based features](ac-link) section of  the Analytics Cloud documentation.
+learn more about creating behavior based rules in the [Analytics Cloud documentation](https://help.liferay.com/hc/en-us/articles/360006947671-Creating-Segments).
 
 ## Migrating Custom Rules
 
@@ -35,17 +35,17 @@ Audience Targeting segmentation features could be extended with custom rules.
 As part of the upgrade planning process the function of any such rules should 
 be re-evaluated with the new Segmentation features of @product-ver@ in mind. 
 
-First, check the [Segmentation reference](user-guide-linnk) if any new criteria 
+First, check the [Segmentation reference](/docs/7-2/user/-/knowledge_base/user/segmentation-personalization) if any new criteria 
 fields can replace their function. In particular, custom fields, URL fields, 
 and cookies might help you migrate your custom rules with little to no 
 additional development. 
 
 If none of them cover your requirements, follow the development guide for 
-instructions on [how to add new criteria fields and contributors](dev-guide-link].
+instructions on [how to add new criteria fields and contributors](/docs/7-2/frameworks/-/knowledge_base/frameworks/segmentation-personalization).
 
 ## Migrating Display Portlets
 
-With Audience Targeting, you could display personalized content with the User Segment Display Content portlet or by using Asset Publisher with the Segments filter enabled [LINK to AT documentation in https://help.liferay.com/hc/en-us/articles/360018174271-Using-the-Audience-Targeting-Widgets-]. In @product-ver@, you will have to choose the most appropriate personalization option for your use cases. 
+With Audience Targeting, you could display personalized content with the User Segment Display Content portlet or by using Asset Publisher with the [Segments filter enabled](https://help.liferay.com/hc/en-us/articles/360018174271-Using-the-Audience-Targeting-Widgets-). In @product-ver@, you will have to choose the most appropriate personalization option for your use cases. 
 
 ### User Segment Content Display
 
@@ -53,12 +53,13 @@ The User Segment Content Display portlet was used to display existing content
 based on segment membership rules. In @product-ver@, you can cover the same use 
 case by defining manual content sets with variations for your different 
 audiences, and applying it to an asset publisher. See the documentation for 
-[creating personalized Content Sets](user-docs-link). With this feature, you 
-can assign any number of assets to the Content List for the given audience, and 
-then use the Asset Publisher to define how content is displayed on the page. 
+[creating personalized Content Sets](/docs/7-2/user/-/knowledge_base/user/content-set-personalization). With 
+this feature, you can assign any number of assets to the Content List for the 
+given audience, and then use the Asset Publisher to define how content is 
+displayed on the page. 
 
 ### Asset Publisher Personalization
 
 Finally, if you want to display a dynamic list of content for your different audiences based on a filter in the same way you did with in Audience Targeting with the Segments filter in the Asset Publisher, you can create a dynamic content set with variations for your audiences and apply it to an asset publisher [Link to Personalized Content Sets, dynamic section]. 
 
-In addition, the new [Experience-based Content Page personalization](user-guide-link) may fulfill a use case that you were previously solving with one of the methods previously available.
+In addition, the new [Experience-based Content Page personalization](/docs/7-2/user/-/knowledge_base/user/content-page-personalization) may fulfill a use case that you were previously solving with one of the methods previously available.

@@ -46,4 +46,4 @@ And here is the same segment migrated to Liferay 7.2:
 
 ![Figure 2: A Liferay 7.2 Segment](../../../images/migrating-new-segment.png)
 
-For those Audience Targeting rules without a direct equivalent, a manual migration is required. If you have any these rules, you can learn about your next steps in the [Manual Migration section](LINK TO THE SECTION).
+For those Audience Targeting rules without a direct equivalent, a manual migration is required. If you have any these rules, you can learn about your next steps in the [Manual Migration section](/docs/7-2/deployment/-/knowledge_base/deployment/manual-migration).
