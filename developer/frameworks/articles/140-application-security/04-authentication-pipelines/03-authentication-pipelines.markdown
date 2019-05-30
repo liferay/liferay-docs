@@ -4,6 +4,8 @@ header-id: password-based-authentication-pipelines
 
 # Password-Based Authentication Pipelines
 
+[TOC levels=1-4]
+
 By default, once a user submits credentials, those credentials are checked
 against @product@'s database, though you can also delegate authentication to an
 LDAP server. To use some other system in your environment instead of or in

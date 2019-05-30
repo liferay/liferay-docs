@@ -1,4 +1,10 @@
+---
+header-id: custom-rendering-of-information-with-infoitemrenderer
+---
+
 # Custom rendering of information with InfoItemRenderer
+
+[TOC levels=1-4]
 
 To demonstrate the `InfoItemRender`, implement a class that can render 
 information provided through a custom class called MyOrder. 

@@ -1,4 +1,10 @@
+---
+header-id: the-info-framework
+---
+
 # The Info Framework
+
+[TOC levels=1-4]
 
 @product-ver@ introduces the Info Framework to provide a greater degree of 
 extensibility for the most common needs of retrieving, processing and 
@@ -21,7 +27,7 @@ that developers can choose which features to use and ignore the others. This
 lowers the learning curve and minimizes work for developers.
 
 
-| Note: Liferay veterans may notice some similarities between the [Asset Framework](asset-framework-link) and Info 
+| Note: Liferay veterans may notice some similarities between the [Asset Framework](/docs/7-2/frameworks/-/knowledge_base/f/asset-framework) and Info 
 | Frameworks. The Info Framework can be considered a generalization of the | 
 | Asset Framework and its design has considered lots of lessons learned with 
 | the asset framework. In particular, the Info Framework provides many similar 
@@ -72,7 +78,7 @@ long as it can be represented through a Java class.
 
 **`getInfoListCount()`** provides total number of items. This is needed for the paginated variant of `getInfoList`.
 
-For an example of how to create Information List providers, see [Creating Information List Providers](new-link).
+For an example of how to create Information List providers, see [Creating Information List Providers](/docs/7-2/frameworks/-/knowledge_base/f/creating-an-information-list-provider).
 
 ###Item Renderers
 
@@ -92,5 +98,5 @@ be leveraged further in future Liferay versions.
 To create an Information Item Renderer you must create a class that implements 
 `InfoItemRenderer` and registers it as a component. Inside that class, all you 
 need is the `render()` method and any additional logic the `render()` method 
-will need. To learn to Information Item Renderers, see [Creating Information Item Renderers](new-link).
+will need. To learn to Information Item Renderers, see [Creating Information Item Renderers](/docs/7-2/frameworks/-/knowledge_base/f/creating-item-renderer).
 

@@ -1,4 +1,10 @@
+---
+header-id: creating-an-information-list-provider
+---
+
 # Creating an Information List Provider
+
+[TOC levels=1-4]
 
 To demonstrate Information List Providers, follow the instructions below to 
 implement an `InfoListProvider` for the most viewed asset entries. In this case 

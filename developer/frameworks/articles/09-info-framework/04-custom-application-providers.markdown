@@ -1,4 +1,10 @@
+---
+header-id: using-providers-with-custom-applications
+---
+
 # Using Providers with Custom Applications
+
+[TOC levels=1-4]
 
 To demonstrate a Custom Application, imagine a widget that can display lists of 
 orders. Instead of hardcoding which lists it can provide, you can use the Info 
