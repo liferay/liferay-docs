@@ -12,6 +12,11 @@ that this task only works for themes that use the
 such as those created with the 
 [Liferay Theme Generator](/docs/7-2/reference/-/knowledge_base/r/installing-the-theme-generator-and-creating-a-theme). 
 
+| **Note:** Gulp is included as a local dependency in generated themes, so you 
+| are not required to install it. It can be accessed by running 
+| `node_modules\.bin\gulp` followed by the Gulp task from a generated theme's 
+| root folder.
+
 1.  Navigate to your theme's root folder and run `gulp extend`. 
 
     ![Figure 1: Run the `gulp extend` task to change your base theme.](../../../../images/theme-ext-changing-base-themes-gulp-extend-base-theme.png)

@@ -9,14 +9,21 @@ header-id: copying-an-existing-themes-files
 Follow these steps to copy an existing theme's files with the Kickstart task. 
 Unlike extending a base theme, which is a dynamic inheritance that applies your 
 `src` files on top of the base theme on every build, the Kickstart task is a one 
-time inheritance. Note that this task only works for themes that use the 
-[liferay JS Theme Toolkit](https://github.com/liferay/liferay-themes-sdk/tree/master/packages), 
-such as those created with the 
-[Liferay Theme Generator](/docs/7-2/reference/-/knowledge_base/r/installing-the-theme-generator-and-creating-a-theme).
+time inheritance. 
 
 | **Note:** The gulp kickstart task copies an existing theme's files into 
 | your own, which can potentially overwrite files with the same name. 
 | Proceed with caution. 
+
+Note that this task only works for themes that use the 
+[liferay JS Theme Toolkit](https://github.com/liferay/liferay-themes-sdk/tree/master/packages), 
+such as those created with the 
+[Liferay Theme Generator](/docs/7-2/reference/-/knowledge_base/r/installing-the-theme-generator-and-creating-a-theme).
+
+| **Note:** Gulp is included as a local dependency in generated themes, so you 
+| are not required to install it. It can be accessed by running 
+| `node_modules\.bin\gulp` followed by the Gulp task from a generated theme's 
+| root folder.
 
 1.  Navigate to your theme's root folder and run `gulp kickstart`.
 
