@@ -15,18 +15,20 @@ entities. Here's what the tags look like in the
 [edit_entry.jsp](https://github.com/liferay/liferay-portal/blob/master/modules/apps/blogs/blogs-web/src/main/resources/META-INF/resources/blogs/edit_entry.jsp) 
 for the Blogs portlet: 
 
-    <liferay-ui:asset-categories-error />
-    <liferay-ui:asset-tags-error />
+```jsp
+<liferay-ui:asset-categories-error />
+<liferay-ui:asset-tags-error />
+...
+<aui:fieldset-group markupView="lexicon">
     ...
-    <aui:fieldset-group markupView="lexicon">
-        ...
-        <aui:fieldset collapsed="<%= true %>" collapsible="<%= true %>" label="categorization">
-            <liferay-asset:asset-categories-selector name="categories" type="assetCategories" />
+    <aui:fieldset collapsed="<%= true %>" collapsible="<%= true %>" label="categorization">
+        <liferay-asset:asset-categories-selector name="categories" type="assetCategories" />
 
-            <liferay-asset:asset-tags-selector name="tags" type="assetTags" />
-        </aui:fieldset>
-        ...
-    </aui:fieldset-group>
+        <liferay-asset:asset-tags-selector name="tags" type="assetTags" />
+    </aui:fieldset>
+    ...
+</aui:fieldset-group>
+```
 
 The `liferay-asset:asset-categories-selector` and 
 `liferay-asset:asset-tags-selector` tags generate form controls that let users 
@@ -46,35 +48,36 @@ markup view.
 Tags and categories should be displayed with the content of the asset. Here's
 how to display the tags and categories: 
 
-	<liferay-asset:asset-categories-available
-		className="<%= [AssetEntry].class.getName() %>"
-		classPK="<%= entry.getEntryId() %>"
-	>
-		<div class="entry-categories">
-			<liferay-asset:asset-categories-summary
-				className="<%= [AssetEntry].class.getName() %>"
-				classPK="<%= entry.getEntryId() %>"
-				portletURL="<%= renderResponse.createRenderURL() %>"
-			/>
-		</div>
-	</liferay-asset:asset-categories-available>
+```jsp
+<liferay-asset:asset-categories-available
+    className="<%= [AssetEntry].class.getName() %>"
+    classPK="<%= entry.getEntryId() %>"
+>
+    <div class="entry-categories">
+        <liferay-asset:asset-categories-summary
+            className="<%= [AssetEntry].class.getName() %>"
+            classPK="<%= entry.getEntryId() %>"
+            portletURL="<%= renderResponse.createRenderURL() %>"
+        />
+    </div>
+</liferay-asset:asset-categories-available>
 
-    ...
+...
 
-	<liferay-asset:asset-tags-available
-		className="<%= [AssetEntry].class.getName() %>"
-		classPK="<%= entry.getEntryId() %>"
-	>
-		<div class="entry-tags">
-			<liferay-asset:asset-tags-summary
-				className="<%= [AssetEntry].class.getName() %>"
-				classPK="<%= entry.getEntryId() %>"
-				portletURL="<%= renderResponse.createRenderURL() %>"
-			/>
-		</div>
-	</liferay-asset:asset-tags-available>
-    
-    
+<liferay-asset:asset-tags-available
+    className="<%= [AssetEntry].class.getName() %>"
+    classPK="<%= entry.getEntryId() %>"
+>
+    <div class="entry-tags">
+        <liferay-asset:asset-tags-summary
+            className="<%= [AssetEntry].class.getName() %>"
+            classPK="<%= entry.getEntryId() %>"
+            portletURL="<%= renderResponse.createRenderURL() %>"
+        />
+    </div>
+</liferay-asset:asset-tags-available>
+```
+
 The `portletURL` parameter is used for both tags and categories. Each tag that
 uses this parameter becomes a link containing the `portletURL` *and* `tag` or
 `categoryId` parameter value. To implement this, you must implement the look-up
