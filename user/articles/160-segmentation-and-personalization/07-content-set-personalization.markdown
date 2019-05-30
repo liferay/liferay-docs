@@ -6,14 +6,15 @@ header-id: content-set-personalization
 
 [TOC levels=1-4]
 
-In [Creating User Segments](/user/7-2/-/knowledge-base/user/creating-user-segments) you created a 
+In [Creating User Segments](/docs/user/7-2/-/knowledge-base/u/creating-user-segments) you created a 
 Segment called *American Engineers*. Now, you'll use it to demonstrate Content 
-Set Personalization. For this example, create a Content Set which will be the 
-default displayed on the *Home* page, and then modified to create a 
-personalized variation with with technical articles that will be displayed for 
-members of the *American Engineers* segment.
+Set Personalization. For this example, create a Content Set to be the 
+default displayed on the *Home* page. Then you'll modify it to create a 
+personalized variation containing technical articles for members of the
+*American Engineers* segment.
 
-If you're not familiar with Content Set, see the [Creating Content Sets](user-docs-link) guide before you get started here. 
+If you're not familiar with Content Set, see the [Creating Content
+Sets](user-docs-link) guide before you get started here. 
 
 ## Creating and Setting the Default Content Set
 
@@ -24,7 +25,7 @@ Asset Publisher.
 
 2.  Click the ![Add](../../images/icon-add.png) button and choose *Manual 
     Selection*.
-    
+
 3.  Name it *Home Page Content*.
 
 4.  For the new Content Set, click *Select* next to *Asset Entries* and select
@@ -32,19 +33,19 @@ Asset Publisher.
 
 ![Figure 1: Click *Select* to add a new Asset Entries.](../../images/create-default-content-set.png)
 
-5.  On the *Select Basic Web Content* page. check the boxes next to the content 
+5.  On the *Select Basic Web Content* page, check the boxes next to the content 
     you want to add and click *Add*.
-    
-6.  Now, navigate to the *Home* page and add an Asset Publisher to the page.
+
+6.  Now navigate to the *Home* page and add an Asset Publisher to the page.
 
 7.  Open *Configuration* for the Asset Publisher.
 
 8.  Under *Asset Selection* select *Content Set*.
 
-9.  Under *Select Content Set* click *Select*, choose *Home Page Content*
+9.  Under *Select Content Set* click *Select*, choose *Home Page Content*,
     and click *Save*.
-    
-Now the Content Set that you configured will appear in the Asset Publisher on 
+
+Now the Content Set that you configured appears in the Asset Publisher on 
 the *Home Page*. Next configure the Content Set for Personalization.
 
 ## Personalizing the Content Set
@@ -63,5 +64,5 @@ Now create the content set for engineers and configure its display.
 4.  Select articles appropriate to an engineering audience and click *Add*.
 
 Now anytime a member of the *American Engineers* segment views this Content Set 
-being displayed, they will see the personalized version and not the default. 
-Test this now, using the *Simulator*.
+being displayed, they see the personalized version and not the default. Test
+this now, using the *Simulator*.
