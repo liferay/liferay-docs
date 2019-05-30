@@ -30,7 +30,7 @@ depends on the selected view type:
 card-like rendering of the blog entry, with the author's profile picture. If the 
 entry doesn't contain a cover image, a generic rendering of the entry is 
 displayed. Each card also contains the entry's timestamp, title, 
-[workflow](/discover/portal/-/knowledge_base/7-2/workflow) 
+[workflow](/docs/7-2/user/-/knowledge_base/u/workflow) 
 status (e.g., Approved, Draft, etc.), and an Actions menu 
 (![Actions](../../../../images/icon-actions.png)). 
 
