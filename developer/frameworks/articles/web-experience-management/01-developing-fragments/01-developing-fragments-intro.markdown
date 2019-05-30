@@ -13,29 +13,29 @@ at your disposal to accomplish your vision:
 **HTML**: The markup of the fragment. Fragments use standard HTML with 
 special tags to add dynamic behavior.
 
-**CSS**: CSS styles and positions the fragment's markup. 
+**CSS**: Styles and positions the fragment's markup. 
 
-**JavaScript**: JavaScript provides dynamic behavior to the fragment.
+**JavaScript**: Provides dynamic behavior to the fragment.
 
-The HTML, CSS, and JavaScript are all completely standard, but can be 
-enhanced with Liferay-specific features. You can specify text, images, and 
-links as editable, as well as providing for "rich" text with formatting. Liferay
-portlets can also be embedded in Fragments as "widgets," making pages with
-Fragments more dynamic than regular web content.
+The HTML, CSS, and JavaScript are all completely standard, but can be enhanced
+with Liferay-specific features. You can specify text, images, and links as
+editable, as well as providing for "rich" text with formatting. Liferay portlets
+can also be embedded in Fragments as "widgets," making pages with Fragments more
+dynamic than regular web content.
 
 ## Creating Page Fragments
 
-There are two types of Page Fragments, *Sections* and *Components*. A Section
+There are two types of Page Fragments: *Sections* and *Components*. A Section
 defines columns, padding, and spacing on the page. A Component contains content
 that is added to a Section.
 
-Fragments are created inside of Collections. Collections provide an easy way to 
-manage and share groups of related Fragments. They are also used when a user is 
+Fragments are created inside of Collections. Collections provide an easy way to
+manage and share groups of related Fragments. They are also used when a user is
 selecting Fragments to add to a page. You can create and manage Fragments and
 Collections without using any external tools, but you can also use your
-preferred tools for Web Development. For an explanation of Fragment creation
-using Liferay's built in tools, see 
-[Creating a Fragment](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-fragments). 
+preferred web development tools. For an explanation of Fragment creation using
+Liferay's built in tools, see 
+[Creating a Fragment](/docs/7-2/frameworks/-/knowledge_base/f/creating-fragments). 
 
 ### Fragment CLI
 
@@ -105,4 +105,4 @@ You can make a Fragment even more dynamic by including a widget. Currently,
 portlets are the only embeddable types of widgets, but other options are planned.
 
 You can find a complete list and usage examples of these in the 
-[Page Fragments Reference](/docs/7-2/frameworks/-/knowledge_base/frameworks/fragment-specific-tags).
+[Page Fragments Reference](/docs/7-2/frameworks/-/knowledge_base/f/fragment-specific-tags).
