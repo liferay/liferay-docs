@@ -20,7 +20,9 @@ must implement persisting your entity's asset relationships.
     [run](/docs/7-2/appdev/-/knowledge_base/appdev/running-service-builder)
     Service Builder:
 
-        <reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
+    ```xml
+    <reference package-path="com.liferay.portlet.asset" entity="AssetLink" />
+    ```
 
 2.  Modify the `add-`, `delete-`, and `update-` methods in your
     `-LocalServiceImpl` to persist the asset relationships. You'll use your
@@ -32,9 +34,11 @@ must implement persisting your entity's asset relationships.
     `assetLinkLocalService`. Here's the `updateLinks` invocation in the Wiki
     application's `WikiPageLocalServiceImpl.updateStatus(...)` method:
 
-        assetLinkLocalService.updateLinks(
-            userId, assetEntry.getEntryId(), assetLinkEntryIds,
-            AssetLinkConstants.TYPE_RELATED);
+    ```java
+    assetLinkLocalService.updateLinks(
+        userId, assetEntry.getEntryId(), assetLinkEntryIds,
+        AssetLinkConstants.TYPE_RELATED);
+    ```
 
     To call the `updateLinks` method, you must pass in the current user's ID, the
     asset entry's ID, the asset link entries' IDs, and the link type. Invoke
@@ -49,10 +53,12 @@ must implement persisting your entity's asset relationships.
     asset's relationships before deleting the asset. For example, you could
     delete your existing asset link relationships by using the following code:
 
-        AssetEntry assetEntry = assetEntryLocalService.fetchEntry(
-            ENTITY.class.getName(), ENTITYId);
+    ```java
+    AssetEntry assetEntry = assetEntryLocalService.fetchEntry(
+        ENTITY.class.getName(), ENTITYId);
 
-        assetLinkLocalService.deleteLinks(assetEntry.getEntryId());
+    assetLinkLocalService.deleteLinks(assetEntry.getEntryId());
+    ```
 
 Make sure to replace the *ENTITY* place holders for your custom `-delete`
 method.
@@ -72,12 +78,14 @@ placed inside the `aui:fieldset` tags of the JSP.
 1.  Add the `liferay-asset:input-asset-links` tag to your form. Here's how it's
     added in the Blogs application: 
 
-        <aui:fieldset collapsed="<%= true %>" collapsible="<%= true %>" label="related-assets">
-				<liferay-asset:input-asset-links
-					className="<%= [AssetEntry].class.getName() %>"
-					classPK="<%= entryId %>"
-				/>
-		</aui:fieldset>
+    ```jsp
+    <aui:fieldset collapsed="<%= true %>" collapsible="<%= true %>" label="related-assets">
+            <liferay-asset:input-asset-links
+                className="<%= [AssetEntry].class.getName() %>"
+                classPK="<%= entryId %>"
+            />
+    </aui:fieldset>
+    ```
 
     The following screenshot shows the Related Assets menu for an application. Note
     that it is contained in a collapsible panel titled Related Assets.
@@ -110,24 +118,28 @@ Publisher portlet.
 
 1.  You must get the `AssetEntry` object associated with your entity: 
 
-        <%
-        long insultId = ParamUtil.getLong(renderRequest, "insultId");
-        Insult ins = InsultLocalServiceUtil.getInsult(insultId);
-        AssetEntry assetEntry = AssetEntryLocalServiceUtil.getEntry(Insult.class.getName(), ins.getInsultId());
-        %>
+    ```jsp
+    <%
+    long insultId = ParamUtil.getLong(renderRequest, "insultId");
+    Insult ins = InsultLocalServiceUtil.getInsult(insultId);
+    AssetEntry assetEntry = AssetEntryLocalServiceUtil.getEntry(Insult.class.getName(), ins.getInsultId());
+    %>
+    ```
 
 2.  Use the `liferay-asset:asset-links` tag to show the entity's related assets.
     For this tag, you retrieve the `assetEntryId` from the `assetEntry` object, 
     retrieve your asset's `className`, and get the entity's primary key 
     (`classPK`) from the specific `entry`. The tag then retrieves any other 
     assets linked to your asset.
-    
 
-		<liferay-asset:asset-links
-			assetEntryId="<%= (assetEntry != null) ? assetEntry.getEntryId() : 0 %>"
-			className="<%= [myAssetEntry].class.getName() %>"
-			classPK="<%= entry.getEntryId() %>"
-		/>
+
+    ```jsp
+    <liferay-asset:asset-links
+        assetEntryId="<%= (assetEntry != null) ? assetEntry.getEntryId() : 0 %>"
+        className="<%= [myAssetEntry].class.getName() %>"
+        classPK="<%= entry.getEntryId() %>"
+    />
+    ```
 
 Great! Now you have the JSP that lets your users view related assets. Related
 assets, if you've created any yet, should be visible near the bottom of the
