@@ -15,11 +15,13 @@ In the JSP for adding and editing your asset, add the following input field
 that lets users set the asset's priority. This example also validates the input 
 to make sure the value the user sets is a number higher than zero: 
 
-    <aui:input label="priority" name="assetPriority" type="text" value="<%= priority %>">
-        <aui:validator name="number" />
+```jsp
+<aui:input label="priority" name="assetPriority" type="text" value="<%= priority %>">
+    <aui:validator name="number" />
 
-        <aui:validator name="min">[0]</aui:validator>
-    </aui:input>
+    <aui:validator name="min">[0]</aui:validator>
+</aui:input>
+```
 
 That's it for the view layer! Now when users create or edit your asset, they can
 enter its priority. Next, you'll learn how to use that value in your service
@@ -39,33 +41,37 @@ which it passes as the last argument to its
 `assetEntryLocalService.updateEntry` 
 call: 
 
-    @Override
-    public void updateAsset(
-            long userId, BlogsEntry entry, long[] assetCategoryIds,
-            String[] assetTagNames, long[] assetLinkEntryIds, Double priority)
-        throws PortalException {
+```java
+@Override
+public void updateAsset(
+        long userId, BlogsEntry entry, long[] assetCategoryIds,
+        String[] assetTagNames, long[] assetLinkEntryIds, Double priority)
+    throws PortalException {
 
-        ...
+    ...
 
-        AssetEntry assetEntry = assetEntryLocalService.updateEntry(
-            userId, entry.getGroupId(), entry.getCreateDate(),
-            entry.getModifiedDate(), BlogsEntry.class.getName(),
-            entry.getEntryId(), entry.getUuid(), 0, assetCategoryIds,
-            assetTagNames, true, visible, null, null, null, null,
-            ContentTypes.TEXT_HTML, entry.getTitle(), entry.getDescription(),
-            summary, null, null, 0, 0, priority);
+    AssetEntry assetEntry = assetEntryLocalService.updateEntry(
+        userId, entry.getGroupId(), entry.getCreateDate(),
+        entry.getModifiedDate(), BlogsEntry.class.getName(),
+        entry.getEntryId(), entry.getUuid(), 0, assetCategoryIds,
+        assetTagNames, true, visible, null, null, null, null,
+        ContentTypes.TEXT_HTML, entry.getTitle(), entry.getDescription(),
+        summary, null, null, 0, 0, priority);
 
-        ...
-	}
+    ...
+}
+```
 
 The `BlogsEntryLocalServiceImpl` class calls this `updateAsset` method when 
 adding or updating a blog entry. Note that `serviceContext.getAssetPriority()` 
 retrieves the priority: 
 
-    updateAsset(
-            userId, entry, serviceContext.getAssetCategoryIds(),
-            serviceContext.getAssetTagNames(),
-            serviceContext.getAssetLinkEntryIds(),
-            serviceContext.getAssetPriority());
+```java
+updateAsset(
+        userId, entry, serviceContext.getAssetCategoryIds(),
+        serviceContext.getAssetTagNames(),
+        serviceContext.getAssetLinkEntryIds(),
+        serviceContext.getAssetPriority());
+```
 
 Sweet! Now you know how to enable priorities for your app's assets. 
