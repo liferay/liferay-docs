@@ -35,7 +35,7 @@ The `5.0.0` version of the application for @product@ brings some long-awaited im
 * Allow to blacklist signature method algorithm URL's from being used in the metadata (for example disabling `SHA-1`: `http://www.w3.org/2000/09/xmldsig#rsa-sha1`)
 
 | **Note:** If you're migrating from a Liferay SAML adapter prior to version
-| 3.1.0, your properties are automatically migrated to settings. Please see the
+| 3.1.0, your portal properties are automatically migrated to System Settings configurations. Please see the
 | [Configuring SAML](/docs/7-2/deploy/-/knowledge_base/d/configuring-saml)
 | article for details on settings.
 
