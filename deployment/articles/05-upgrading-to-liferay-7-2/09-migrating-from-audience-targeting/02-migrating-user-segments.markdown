@@ -1,4 +1,10 @@
+---
+header-id: migrating-user-segments
+---
+
 # Migrating User Segments
+
+[TOC levels=1-4]
 
 In Audience Targeting, a user segment represents a subset of users. A user segment is defined by one or more rules that users must match to belong to that user segment. In Liferay Portal 7.2, segments work in a similar way, but they are defined by criteria instead of rules. Segment criteria are sets of fields defined by different user actions or properties (profile information, organization information, session information) that can be combined through operations (like equals, not equals, contains, not contains, greater than, and less than) and conjunctions (AND, OR) to define complex filters. 
 

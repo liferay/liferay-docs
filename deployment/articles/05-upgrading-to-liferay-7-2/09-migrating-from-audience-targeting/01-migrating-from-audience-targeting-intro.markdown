@@ -1,4 +1,10 @@
+---
+header-id: migrating-from-audience-targeting-to-segmentation-and-personalization
+---
+
 # Migrating From Audience Targeting to Segmentation and Personalization
+
+[TOC levels=1-4]
 
 @product-ver@ integrates all the features of the Audience Targeting app 
 into Liferay's core as Segmentation and Personalization. This enables better 
