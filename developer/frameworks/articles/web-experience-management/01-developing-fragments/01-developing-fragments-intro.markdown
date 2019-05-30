@@ -7,8 +7,8 @@ header-id: page-fragments
 [TOC levels=1-4]
 
 You can use Page Fragments to take your design vision and accurately realize it
-on a web page. You get a space where with a "blank slate." You have three tools
-at your disposal to accomplish this:
+on a web page. You start with a "blank slate." You then have three tools
+at your disposal to accomplish your vision:
 
 **HTML**: The markup of the fragment. Fragments use standard HTML with 
 special tags to add dynamic behavior.
@@ -35,7 +35,7 @@ selecting Fragments to add to a page. You can create and manage Fragments and
 Collections without using any external tools, but you can also use your
 preferred tools for Web Development. For an explanation of Fragment creation
 using Liferay's built in tools, see 
-[Creating a Fragment](/docs/7-2/frameworks/-/knowledge_base/f/creating-fragments). 
+[Creating a Fragment](/docs/7-2/frameworks/-/knowledge_base/frameworks/creating-fragments). 
 
 ### Fragment CLI
 
@@ -105,4 +105,4 @@ You can make a Fragment even more dynamic by including a widget. Currently,
 portlets are the only embeddable types of widgets, but other options are planned.
 
 You can find a complete list and usage examples of these in the 
-[Page Fragments Reference](/docs/7-2/frameworks/-/knowledge_base/f/fragment-specific-tags).
+[Page Fragments Reference](/docs/7-2/frameworks/-/knowledge_base/frameworks/fragment-specific-tags).
