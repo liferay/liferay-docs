@@ -29,6 +29,8 @@ There are several steps to effective workflowing:
 
 - [Sending assets through review](/docs/7-2/user/-/knowledge_base/u/reviewing-assets)
 
+- [Using Workflow Metrics](/docs/7-2/user/-/knowledge_base/u/workflow-metrics)
+
 After all that, you'll be familiar with using Liferay's workflow engine to set
 up approval processes for any
 [workflow-enabled content](/docs/7-2/user/-/knowledge_base/u/activating-workflow).
