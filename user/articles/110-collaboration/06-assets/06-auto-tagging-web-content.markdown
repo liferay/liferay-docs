@@ -9,8 +9,7 @@ header-id: auto-tagging-web-content
 Once you've 
 [configured text auto tagging](/docs/7-2/user/-/knowledge_base/u/auto-tagging-text) 
 for your provider of choice, you can enable it to auto tag text-based web 
-content. Recall that there are two text auto tagging providers available in the 
-portal: 
+content. Recall that there are two text auto tagging providers available: 
 
 -   Google Cloud Natural Language Text Auto Tagging 
 -   OpenNLP Text Auto Tagging 
