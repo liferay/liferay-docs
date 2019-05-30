@@ -1,4 +1,10 @@
+---
+header-id: felix-gogo-shell
+---
+
 # Felix Gogo Shell
+
+[TOC levels=1-4]
 
 The Gogo shell provides a way to interact with @product@'s module framework. You
 can
