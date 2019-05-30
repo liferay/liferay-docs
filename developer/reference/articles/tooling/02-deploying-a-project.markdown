@@ -10,11 +10,11 @@ Deploying a project to @product@ can be completed using your tool of choice. The
 following tools are preconfigured (or can be easily configured) for Liferay
 project generation:
 
-- [Blade CLI](/developer/reference/-/knowledge_base/7-2/blade-cli)
+- [Blade CLI](/docs/7-2/reference/-/knowledge_base/r/blade-cli)
 - [Gradle](https://gradle.org/)
-- [Liferay Dev Studio](/developer/reference/-/knowledge_base/7-2/liferay-dev-studio)
-- [Liferay IntelliJ Plugin](/developer/reference/-/knowledge_base/7-2/liferay-intellij-plugin)
-- [Maven](/developer/reference/-/knowledge_base/7-2/maven)
+- [Liferay Dev Studio](/docs/7-2/reference/-/knowledge_base/r/liferay-dev-studio)
+- [Liferay IntelliJ Plugin](/docs/7-2/reference/-/knowledge_base/r/intellij)
+- [Maven](/docs/7-2/reference/-/knowledge_base/r/maven)
 
 The deployment process is the same across all tools; the deployment
 command/action builds and copies your project to the @product@ `/deploy` folder,
@@ -23,7 +23,7 @@ preconfigured in most cases; if it's not, ways to configure it are included
 below. All tools support JAR and WAR-style project deployment.
 
 It's recommended to deploy Liferay projects within a
-[Liferay Workspace](/developer/tutorials/-/knowledge_base/7-2/liferay-workspace).
+[Liferay Workspace](/docs/7-2/reference/-/knowledge_base/r/liferay-workspace).
 Most tools, however, support deploying projects in a standalone environment
 (except for IntelliJ). Visit the appropriate section to learn how to deploy a
 project with the highlighted tool.
@@ -63,7 +63,7 @@ deploying Liferay Gradle projects in most cases.
 ## Liferay Dev Studio
 
 These steps assume you've
-[installed a Liferay server in Dev Studio](/developer/reference/-/knowledge_base/7-2/installing-a-server-in-liferay-dev-studio).
+[installed a Liferay server in Dev Studio](/docs/7-2/reference/-/knowledge_base/r/installing-a-liferay-server-in-dev-studio). 
 
 1.  Right-click the server from the Servers window and select *Add and
     Remove...*.
@@ -79,7 +79,7 @@ These steps assume you've
 ## Liferay IntelliJ Plugin
 
 These steps assume you've
-[installed a Liferay server in IntelliJ](/developer/reference/-/knowledge_base/7-2/installing-a-server-in-intellij-idea).
+[installed a Liferay server in IntelliJ](/docs/7-2/reference/-/knowledge_base/r/installing-a-server-in-intellij).
 A configured Liferay Workspace is required to create and deploy Liferay projects
 in IntelliJ.
 
@@ -122,7 +122,7 @@ If you're developing your project in a Liferay Workspace, skip to step 3.
         </build>
 
     This POM configuration applies Liferay's
-    [Bundle Support plugin](/developer/reference/-/knowledge_base/7-2/bundle-support-plugin).
+    [Bundle Support plugin](/docs/7-2/reference/-/knowledge_base/r/bundle-support-plugin).
     This plugin is applied in Liferay Workspace by default. The Bundle Support
     configuration defines the
     [executions](https://maven.apache.org/guides/mini/guide-configuring-plugins.html#Using_the_executions_Tag)

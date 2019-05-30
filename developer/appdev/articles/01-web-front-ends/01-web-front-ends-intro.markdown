@@ -17,7 +17,7 @@ If you plan to write a new application and deploy it on @product@, you can use
 the frameworks you know along with the build tools (Gradle, Maven) you know.
 Liferay also offers its own development framework called MVC Portlet that it
 uses to develop applications. When you want to integrate with 
-[Liferay services](/docs/7-2/appdev/-/knowledge_base/appdev/services-development)
+[Liferay services](/docs/7-2/appdev/-/knowledge_base/a/services-development)
 and frameworks such as permissions, assets, and indexers, you'll find that these
 easily and seamlessly blend with your application to provide a great user
 experience.
@@ -30,18 +30,18 @@ to be a flexible platform that supports anything you need to write.
 Liferay gives you a head start on developing and deploying apps that use these
 popular Java and JavaScript-based technologies:
 
--   [Angular Widget](/docs/7-2/frameworks/-/knowledge_base/appdev/angular-widget)
--   [React Widget](/docs/7-2/frameworks/-/knowledge_base/appdev/react-widget) 
--   [Vue Widget](/docs/7-2/frameworks/-/knowledge_base/appdev/vue-widget)
--   [Bean Portlet](/docs/7-2/frameworks/-/knowledge_base/appdev/bean-portlet) 
--   [JSF Portlet](/docs/7-2/frameworks/-/knowledge_base/appdev/jsf-portlet)
--   [Spring Portlet MVC](/docs/7-2/frameworks/-/knowledge_base/appdev/spring-portlet-mvc)
--   [Liferay MVC Portlet](/docs/7-2/frameworks/-/knowledge_base/appdev/liferay-mvc-portlet)
+-   [Angular Widget](/docs/7-2/appdev/-/knowledge_base/a/angular-widget)
+-   [React Widget](/docs/7-2/appdev/-/knowledge_base/a/react-widget) 
+-   [Vue Widget](/docs/7-2/appdev/-/knowledge_base/a/vue-widget)
+-   [Bean Portlet](/docs/7-2/appdev/-/knowledge_base/a/bean-portlet) 
+-   [JSF Portlet](/docs/7-2/appdev/-/knowledge_base/a/jsf-portlet)
+-   [PortletMVC4Spring Portlet](/docs/7-2/appdev/-/knowledge_base/a/portlet-mvc-for-spring-portletmvc4spring)
+-   [Liferay MVC Portlet](/docs/7-2/appdev/-/knowledge_base/a/liferay-mvc-portlet)
 
-| **Note:** The
-| [Reference](/docs/7-2/reference)
-| section describes samples and templates for creating UIs using other 
-| technologies. 
+| **Note:** The Reference section describes
+| [sample projects](/docs/7-2/reference/-/knowledge_base/r/sample-projects) and 
+| [project templates](/docs/7-2/reference/-/knowledge_base/r/project-templates) 
+| for creating UIs using other technologies. 
 
 Angular, React, and Vue applications are written the same as you would outside of
 @product@---using
@@ -70,7 +70,7 @@ Bean Portlet is the only framework containing all of the Portlet 3 features:
 -   Asynchronous support 
 
 If you're a JavaServer Faces (JSF) developer, the
-[Liferay Faces Bridge](/develop/reference/-/knowledge_base/7-1/understanding-liferay-faces-bridge)
+[Liferay Faces Bridge](/docs/7-1/reference/-/knowledge_base/reference/understanding-liferay-faces-bridge)
 supports deploying JSF web apps as portlets without writing portlet-specific
 Java code. It also contains innovative features that make it possible to
 leverage the power of JSF 2.x inside a portlet application. 

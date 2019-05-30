@@ -9,12 +9,12 @@ header-id: building-a-theme-with-maven
 Liferay's Theme Builder is used to build @product@ theme files in your project.
 You can incorporate the Theme Builder into your Maven project to generate
 WAR-style
-[themes](/developer/frameworks/-/knowledge_base/7-2/themes-and-layout-templates)
+[themes](/docs/7-2/frameworks/-/knowledge_base/f/themes-and-layout-templates)
 deployable to @product@.
 
 The easiest way to create a Liferay theme with Maven is to create a new Maven
 project using Liferay's provided
-[Theme archetype](/developer/reference/-/knowledge_base/7-2/theme-template);
+[Theme archetype](/docs/7-2/reference/-/knowledge_base/r/theme-template);
 Theme Builder is configured in the new project by default. In some cases,
 however, this may not be convenient. For instance, if you have a legacy theme
 project and don't want to start over, generating a new project is not ideal. 
@@ -23,7 +23,7 @@ For cases like this, you should manually configure your Maven project to
 leverage Theme Builder. You'll learn how to do this next.
 
 1.  Configure Liferay's
-    [Theme Builder](/developer/reference/-/knowledge_base/7-2/theme-builder-plugin)
+    [Theme Builder](/docs/7-2/reference/-/knowledge_base/r/theme-builder-plugin)
     plugin in your project's `pom.xml` file:
 
     ```xml
@@ -67,7 +67,7 @@ leverage Theme Builder. You'll learn how to do this next.
     - The
       [configuration](https://maven.apache.org/pom.html#Plugins) defines tag
       several important properties. For more info on these properties, see the
-      [Theme Builder Plugin](/developer/reference/-/knowledge_base/7-2/theme-builder-plugin)
+      [Theme Builder Plugin](/docs/7-2/reference/-/knowledge_base/r/theme-builder-plugin)
       article.
 
 2.  Apply the CSS Builder plugin, which is required to use Theme Builder:
@@ -96,7 +96,7 @@ leverage Theme Builder. You'll learn how to do this next.
 
     You can learn more about the CSS Builder's Maven configuration by visiting
     the
-    [Compiling Sass Files in a Maven Project](/developer/reference/-/knowledge_base/7-2/compiling-sass-files-in-a-maven-project)
+    [Compiling Sass Files in a Maven Project](/docs/7-2/reference/-/knowledge_base/r/compiling-sass-files-in-a-maven-project)
     tutorial.
 
 3.  You can configure your project to exclude Sass files from being packaged in
@@ -128,7 +128,7 @@ leverage Theme Builder. You'll learn how to do this next.
     ```
 
 5.  Building themes requires certain dependencies. You can 
-    [configure these dependenices](/developer/customization/-/knowledge_base/7-2/configuring-dependencies) 
+    [configure these dependenices](/docs/7-2/customization/-/knowledge_base/c/configuring-dependencies) 
     in your project's `pom.xml` as directories or JAR files. If you choose to 
     use JARs, you must apply the 
     [maven-dependency-plugin](http://maven.apache.org/plugins/maven-dependency-plugin/) 

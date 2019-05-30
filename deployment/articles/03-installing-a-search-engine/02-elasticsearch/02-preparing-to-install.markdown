@@ -7,11 +7,11 @@ header-id: preparing-to-install-elasticsearch
 [TOC levels=1-4]
 
 By default, @product-ver@ and its 
-[embedded Elasticsearch engine](/7-2/deploy/-/knowledge_base/deploy/configuring-elasticsearch-for-liferay-0#embedded-vs-remote-operation-mode)
+[embedded Elasticsearch engine](/docs/7-2/deploy/-/knowledge_base/d/configuring-elasticsearch-for-liferay-0#embedded-vs-remote-operation-mode)
 run in the same JVM. Although this enables out-of-the-box search, it's only
 supported for development. For production use, Elasticsearch must run in a
 separate JVM. See the 
-[installation guide](/7-2/deploy/-/knowledge_base/deploy/installing-elasticsearch)
+[installation guide](/docs/7-2/deploy/-/knowledge_base/d/installing-elasticsearch)
 for information on installing a remote Elasticsearch cluster. 
 
 Because search engines benefit heavily from caching, their JVM memory profiles

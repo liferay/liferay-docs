@@ -8,16 +8,16 @@ header-id: preparing-for-install
 
 @product@ doesn't require much to deploy. You need a Java Development Kit (JDK)
 and a database. Several configuration topics (e.g.,
-[search engine integration]((/deployment/-/knowledge_base/7-2/installing-a-search-engine),
-[document repository configuration](/deployment/-/knowledge_base/7-2/document-repository-configuration),
-[security management](/deployment/-/knowledge_base/7-2/securing-product),
-[clustering](/deployment/-/knowledge_base/7-2/product-clustering),
+[search engine integration]((/docs/7-2/deploy/-/knowledge_base/d/installing-a-search-engine),
+[document repository configuration](/docs/7-2/deploy/-/knowledge_base/d/document-repository-configuration),
+[security management](/docs/7-2/deploy/-/knowledge_base/d/securing-product),
+[clustering](/docs/7-2/deploy/-/knowledge_base/d/product-clustering),
 and more) can be addressed *after* deploying @product@. 
 
 | **Note:** If you are installing @product@ to multiple machines (e.g., in a 
-| [cluster](/deployment/-/knowledge_base/7-2/product-clustering))
+| [cluster](/docs/7-2/deploy/-/knowledge_base/d/product-clustering))
 | or prefer centralizing configuration in a file, using portal properties in a
-| [`[LIFERAY_HOME]/portal-ext.properties` file](/deployment/reference/-/knowledge_base/7-2/portal-properties)
+| [`[LIFERAY_HOME]/portal-ext.properties` file](/docs/7-2/deploy/-/knowledge_base/d/portal-properties)
 | is the recommended way to configure. The install preparation topics here and
 | the configuration topics throughout this guide demonstrate using applicable
 | portal properties. 
@@ -25,7 +25,7 @@ and more) can be addressed *after* deploying @product@.
 | **Note:** `LIFERAY_HOME` is the location from which @product@ launches 
 | applications, applies configurations, loads JAR files, and generates logs.
 | Liferay Home is customizable and can differ between application servers. The
-| [Liferay Home reference](/deployment/-/knowledge_base/7-2/liferay-home)
+| [Liferay Home reference](/docs/7-2/deploy/-/knowledge_base/d/liferay-home)
 | describes its folder structure. 
 
 Start preparing for @product@ install by installing a supported Java
@@ -45,12 +45,71 @@ JDK 11 is backwards compatible with JDK 8 applications. Applications and
 customizations developed on JDK 8 run on JDK 8 or JDK 11 runtimes. This makes
 JDK 8 best for developing on @product-ver@. 
 
+If you're using JDK 11, you may see *Illegal Access* warnings like these:
+
+```
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.liferay.petra.reflect.ReflectionUtil (file:/Users/malei/dev/project/bundles/master-bundles/tomcat-9.0.10/lib/ext/com.liferay.petra.reflect.jar) to field java.lang.reflect.Field.modifiers
+WARNING: Please consider reporting this to the maintainers of com.liferay.petra.reflect.ReflectionUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+```
+
+This is a known issue: [LPS-87421](https://issues.liferay.com/browse/LPS-87421). As a workaround, you can eliminate these warnings by adding these properties after your application server JVM options:
+
+```properties
+ --add-opens=java.base/java.io=ALL-UNNAMED \
+ --add-opens=java.base/java.lang.reflect=ALL-UNNAMED \
+ --add-opens=java.base/java.lang=ALL-UNNAMED \
+ --add-opens=java.base/java.net=ALL-UNNAMED \
+ --add-opens=java.base/java.nio=ALL-UNNAMED \
+ --add-opens=java.base/java.text=ALL-UNNAMED \
+ --add-opens=java.base/java.util=ALL-UNNAMED \
+ --add-opens=java.base/sun.nio.ch=ALL-UNNAMED \
+ --add-opens=java.desktop/java.awt.font=ALL-UNNAMED \
+ --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED \
+ --add-opens=java.xml/com.sun.org.apache.xerces.internal.parsers=ALL-UNNAMED
+```
+
+If you're using JDK 11 on Linux or UNIX and are activating @product@ using an LCS 5.0.0 client, you may see an error like this:
+
+```
+ERROR [LCS Worker 2][BaseScheduledTask:92] java.lang.reflect.InaccessibleObjectException: Unable to make public long com.sun.management.internal.OperatingSystemImpl.getOpenFileDescriptorCount() accessible: module jdk.management does not
+ "opens com.sun.management.internal" to unnamed module @1a3325e5
+java.lang.reflect.InaccessibleObjectException: Unable to make public long com.sun.management.internal.OperatingSystemImpl.getOpenFileDescriptorCount() accessible: module jdk.management does not "opens com.sun.management.internal" to unnamed module @1a3325e5
+at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:
+at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:
+at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:198)
+at java.base/java.lang.reflect.Method.setAccessible(Method.java:192)
+```
+
+To workaround this issue, add this property after your application server JVM options:
+
+```properties
+ --add-opens=jdk.management/com.sun.management.internal=ALL-UNNAMED
+``` 
+
 ## JVM Requirements
 
 @product@ requires that the application server JVM use the GMT time zone and
 UTF-8 file encoding. Include these JVM arguments to set the required values. 
 
-    -Dfile.encoding=UTF8 -Duser.timezone=GMT
+```bash
+-Dfile.encoding=UTF8 -Duser.timezone=GMT
+````
+
+On JDK 11, it's recommended to add this JVM argument to display four-digit years.
+
+```bash
+-Djava.locale.providers=JRE,COMPAT,CLDR
+```
+
+| **Note:** Since JDK 9, the Unicode Common Locale Data Repository (CLDR) is the
+| default locales provider. CLDR, however, is not providing years in a
+| four-digit format (see
+| [LPS-87191](https://issues.liferay.com/browse/LPS-87191)).
+| The setting `java.locale.providers=JRE,COMPAT,CLDR` works around this issue by
+| using JDK 8's default locales provider. 
 
 It's time to prepare your database. 
 
@@ -70,7 +129,7 @@ The recommended way to set up your @product@ database is also the simplest.
     supported character sets.
 
     | **Note:** If you plan to migrate from one database vendor to another,
-    | [configure the database to use the default query result order you expect for entities @product@ lists](/developer/frameworks/-/knowledge_base/7-2/sort-order-changed-with-a-different-database). 
+    | [configure the database to use the default query result order you expect for entities @product@ lists](/docs/7-2/frameworks/-/knowledge_base/f/sort-order-changed-with-a-different-database). 
 
     | **Note:** If you use Sybase, configure the database to allow nulls by 
     | default. 
@@ -103,25 +162,25 @@ source (recommended) or using a data source you create on your app server.
 ### Using the Built-in Data Source
 
 You can configure the built-in data source from the
-[Basic Configuration page](/deployment/-/knowledge_base/7-2/installing-product#using-the-setup-wizard)
+[Basic Configuration page](/docs/7-2/deploy/-/knowledge_base/d/installing-product#using-the-setup-wizard)
 (available when @product@ starts up the first time) or by specifying it using 
 portal properties. 
 
 Here's how set it using portal properties:
 
 1.  Create a 
-    [`portal-ext.properties` file](/deployment/-/knowledge_base/7-2/portal-properties)
+    [`portal-ext.properties` file](/docs/7-2/deploy/-/knowledge_base/d/portal-properties)
     if you haven't created one already. 
 
 2.  Copy a set of `jdbc.*` properties from one of the
-    [JDBC templates](/deployment/-/knowledge_base/7-2/jdbc-templates)
+    [JDBC templates](/docs/7-2/deploy/-/knowledge_base/d/jdbc-templates)
     into your `portal-ext.properties` file.
 
 3.  Modify the `jdbc.*` property values to specify your database and database 
     user credentials. 
 
 4.  Put the `portal-ext.properties` file into your
-    [LIFERAY_HOME](/deployment/-/knowledge_base/7-2/liferay-home)
+    [LIFERAY_HOME](/docs/7-2/deploy/-/knowledge_base/d/liferay-home)
     once you've established it based on your installation. 
 
 @product@ connects to the data source on startup. 
@@ -138,7 +197,7 @@ Here's how to use your application server's data source:
     and your application server's documentation.
 
 2.  Create a
-    [`portal-ext.properties` file](/deployment/-/knowledge_base/7-2/portal-properties),
+    [`portal-ext.properties` file](/docs/7-2/deploy/-/knowledge_base/d/portal-properties),
     if you haven't created one already. 
 
 3.  Add the `jdbc.default.jndi.name` property set to the data source's JNDI 
@@ -149,7 +208,7 @@ Here's how to use your application server's data source:
     ```
 
 4.  Put the `portal-ext.properties` file into your
-    [LIFERAY_HOME](/deployment/reference/-/knowledge_base/7-2/liferay-home),
+    [LIFERAY_HOME](/docs/7-2/deploy/-/knowledge_base/d/liferay-home),
     once you've established your LIFERAY_HOME based on your installation. 
 
 @product@ connects to your data source on startup.
@@ -207,7 +266,7 @@ database before you attempt to install the plugins.
 
 @product@ has many more configurable features; but they
 can wait until *after* deployment. The
-[Configuring @product@](/deployment/deployment/-/knowledge_base/7-2/configuring-product)
+[Configuring @product@](/deployment/docs/7-2/deploy/-/knowledge_base/d/configuring-product)
 section explains them. 
 
 Now it's time to install @product@. 
