@@ -7,7 +7,7 @@ header-id: workflow-metrics-reports
 [TOC levels=1-4]
 
 As soon as you enter the Metrics screen (Control Panel &rarr; Workflow &rarr;
-Metrics) you're seeing metrics on each workflow installed in the system.
+Metrics) you see metrics on each workflow installed in the system.
 
 ![Figure 1: In this view, the only process with pending items is the Single Approver.](../../images/workflow-metrics-reports1.png)
 
@@ -38,7 +38,7 @@ Workload by Step.
 ### Pending Items
 
 Pending Items shows you the overview of items by their SLA status. Drill down by
-clicking on any of the statuses, to see the specific items that are enumerated
+clicking on any of the statuses to see the specific items that are enumerated
 in Pending Items.
 
 ### Workload by Step
@@ -92,7 +92,7 @@ Filter items based on whether they're Overdue, On Time, or Untracked.
 
 **Untracked**
 : Untracked items are items in the workflow process that aren't currently under
-the purview of a SLA. The can be in a task identified as a _Pause_ in the SLA,
+the purview of an SLA. The can be in a task identified as a _Pause_ in the SLA,
 or perhaps outside the scope of the SLA entirely, if the SLA isn't defined for
 the entire process (Process Begins to Process Ends in the SLA Definition
 screen).
@@ -102,17 +102,17 @@ screen).
 Filter items based on whether they're Pending or Completed in the workflow
 process.
 
-If filter by the Completed status, you'll get an additional filtering option
-appears: filter items by the Completion Period. Select from these time periods:
+If you filter by the Completed status, you'll get an additional filtering
+option: filter items by the Completion Period. Select from these time periods:
 
-Today
-Yesterday
-Last 7 Days
-Last 30 Days (default)
-Last 90 Days
-Last 180 Days
-Last Year
-All Time
+- Today
+- Yesterday
+- Last 7 Days
+- Last 30 Days (default)
+- Last 90 Days
+- Last 180 Days
+- Last Year
+- All Time
 
 ![Figure 4: Filter by Process Status and Completion Period.](../../images/workflow-reports-process-status-period.png)
 
@@ -125,11 +125,11 @@ all items in the Review task. This is different for each workflow definition.
 ### Combining Filters
 
 Use a combination of filters to find just the items you need to see. For
-example, the screenshot below shows all items in the Single Approver process's
-Review task, that have the status Completed or Pending, whether On time or
-Overdue. Untracked items aren't shown.
+example, below are all items in the Single Approver process's Review task that
+have the status Completed or Pending, whether On time or Overdue. Untracked
+items aren't shown.
 
-![Figure 5: Combine filters to see just the items you're interested in.](../../images/workflow-metrics-reports13.png)
+![Figure 5: Combine filters to see just the items you want.](../../images/workflow-metrics-reports13.png)
 
 ## Item Details
 
@@ -154,6 +154,6 @@ On Time.
 : The defined SLA goals are completed. Resolved items can be of status Overdue
 or On Time.
 
-From the overall metrics of a workflow process, down to the details on a single
+From the overall metrics of a workflow process down to the details on a single
 item in the workflow, the new Workflow Metrics functionality gives you insights
 into the time it takes to _get things done_ in @product@.
