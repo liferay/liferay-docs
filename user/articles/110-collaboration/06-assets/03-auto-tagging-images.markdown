@@ -7,11 +7,11 @@ header-id: auto-tagging-images
 [TOC levels=1-4]
 
 [Tags](/docs/7-2/user/-/knowledge_base/u/tagging-content) 
-let you find and organize files, including images. With 
+help you find and organize files, including images. With 
 [asset auto tagging enabled](/docs/7-2/user/-/knowledge_base/u/configuring-asset-auto-tagging), 
 you can also enable image auto tagging. Image auto tagging automatically tags 
 images uploaded to the Documents and Media Library. This lets you use tags 
-without requiring anyone to manually apply them. 
+without requiring anyone to apply them manually. 
 
 | **Note:** Currently, tags applied automatically are English only. 
 
@@ -21,9 +21,8 @@ Image auto tagging is disabled by default. To use it, you must do two things:
     [asset auto tagging](/docs/7-2/user/-/knowledge_base/u/configuring-asset-auto-tagging) 
     is enabled. Although it's enabled by default, administrators can disable it. 
 
-2.  Ensure that an image auto tagging provider is enabled in the portal. These 
-    providers are disabled by default. Here, you'll learn how to enable/disable 
-    them. 
+2.  Ensure that an image auto tagging provider is enabled. These providers are
+    disabled by default. Here, you'll learn how to enable/disable them. 
 
 Three such providers are available: 
 
@@ -53,10 +52,10 @@ Follow these steps to configure TensorFlow Image Auto Tagging:
 2.  Under *VIRTUAL INSTANCE SCOPE*, select *TensorFlow Image Auto Tagging*. The 
     following settings are available: 
 
-    **Enable TensorFlow Image Auto Tagging:** Whether image auto-tagging is 
-    enabled by default in any instance that has asset auto tagging enabled. Note 
-    that you can override this value for specific instances, as the next section 
-    shows. 
+    **Enable TensorFlow Image Auto Tagging:** Check this box to select whether
+    image auto-tagging is enabled by default in any instance that has asset auto
+    tagging enabled. Note that you can override this value for specific
+    instances, as the next section shows. 
 
     **Confidence Threshold:** TensorFlow assigns a confidence level between 0 
     and 1 for each tag, where 1 is the highest confidence and 0 is the lowest. 
@@ -66,12 +65,13 @@ Follow these steps to configure TensorFlow Image Auto Tagging:
 
 3.  Click *Save* to save your changes. 
 
-You can override these settings for each instance from *Control Panel* &rarr; *Configuration* &rarr; *Instance Settings* &rarr; *Documents and Media*. 
+You can override these settings for each instance from *Control Panel* &rarr;
+*Configuration* &rarr; *Instance Settings* &rarr; *Documents and Media*. 
 
 ![Figure 2: Configure TensorFlow image auto-tagging for your portal instances.](../../../images/auto-tagging-tensorflow.png)
 
 To optimize performance, you can also control the process that runs the 
-TensorFlow image auto tagging in the portal. Follow these steps to do so: 
+TensorFlow image auto tagging in @product@: 
 
 1.  Go to *Control Panel* &rarr; *Configuration* &rarr; *System Settings* &rarr; 
     *Documents and Media*. 
