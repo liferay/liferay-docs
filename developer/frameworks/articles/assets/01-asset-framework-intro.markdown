@@ -14,16 +14,16 @@ add tags, categories, or comments to make entries more self-descriptive. Using
 the asset framework is also the first step for integrating other important 
 frameworks like Segmentation and Personalization or Workflow.
 
-As background, the term *asset* refers to any type of content in the portal.
-This could be text, a file, a URL, an image, documents, blog entries, bookmarks,
-wiki pages, or anything you create in your applications. 
+As background, the term *asset* refers to any type of content: text, a file,
+a URL, an image, documents, blog entries, bookmarks, wiki pages, or anything you
+create in your applications. 
 
 The asset framework tutorials assume that you've used Liferay's Service Builder
 to generate your persistence layer, that you've implemented permissions on the
 entities that you're persisting, and that you've enabled them for search and
 indexing. You can learn more about Liferay's Service Builder and how to use it
 in the
-[Service Builder](/docs/7-2/appdev/-/knowledge_base/appdev/service-builder)
+[Service Builder](/docs/7-2/appdev/-/knowledge_base/a/service-builder)
 tutorial section. After that is completed, you can get started asset enabling 
 your application.
 
@@ -40,15 +40,15 @@ your app:
    create category hierarchies. 
 -  Relate assets to one another. 
 
-There are several steps to creating an asset an taking full advantage of the 
+There are several steps to creating an asset and taking full advantage of the 
 asset framework.
 
-##Persistence Operations for Assets 
+## Persistence Operations for Assets 
 
 To use Liferay's asset framework with an entity, you must inform the 
 asset framework about each entity instance you create, modify, and delete. In
 this sense, it's similar to informing 
-[Liferay's permissions framework](/docs/7-2/frameworks/-/knowledge_base/frameworks/defining-application-permissions)
+[Liferay's permissions framework](/docs/7-2/frameworks/-/knowledge_base/f/defining-application-permissions)
 about a new resource. All you have to do is invoke a method of the asset
 framework that associates an `AssetEntry` with the entity so Liferay can keep
 track of the entity as an asset. When it's time to update the entity, you update
@@ -81,14 +81,14 @@ application:
 
 2.  The application must contain at least one non-instanceable portlet. `Edit` 
     links for the asset cannot be generated without a non-instanceable portlet.
-    
+ 
 Some applications may consist of only one non-instanceable portlet, while others
 may consist of a both instanceable and non-instanceable portlets. If your 
 application does not currently include a non-instanceable portlet, adding a 
 configuration interface through a panel app both enhances the usability of 
 the application, and meets the requirement for adding a non-instanceable 
 portlet to the application. See our tutorial on 
-[Adding Custom Panel Apps](/docs/7-2/-/knowledge_base/customizing-the-product-menu#adding-custom-panel-apps)
+[Adding Custom Panel Apps](/docs/7-2/frameworks-/knowledge_base/f/customizing-the-product-menu#adding-custom-panel-apps)
 to learn how to add one.
 
 
@@ -100,15 +100,19 @@ get your asset renderer functioning properly for your asset:
 2.  Create an asset renderer factory to create an instance of the asset renderer
     for each asset entity.
 
-
-
 ## Asset Features
 
-Once you have done the necessary work to have your assets in the persistance layer, and render them, you can start integrating a number of other features, like Tags, Categories, and Related Assets.
+Once you have done the necessary work to persist your assets and render them,
+you can enable Tags, Categories, and Related Assets.
 
 ### Tags and Categories
 
-Tags and Categories are two ways that you can organize and connect assets. Tags are simple ah hoc groups. Anything two entities that have the same tag are connected by that tag. Categories are a form of hierarchical organization where an administrator can define a number of categories for organization content, images, or other types of assets and use those categories to help users find what they're looking for.
+Tags and Categories are two ways that you can organize and connect assets. Tags
+are simple *ad hoc* groups. Any two assets with the same tag are connected by
+that tag. Categories are a form of hierarchical organization where an
+administrator can define a number of categories for organization content,
+images, or other types of assets and use those categories to help users find
+what they're looking for.
 
 ![Figure 1: Adding category and tag input options lets authors aggregate and label custom entities.](../../images/asset-fw-categories-and-tags-options.png)
 
@@ -131,3 +135,5 @@ when creating or editing web content, users can assign a priority in the
 Metadata section's Priority field. 
 
 ![Figure 3: The Priority field lets users set an asset's priority.](../../images/web-content-categorization.png)
+
+Ready to implement assets? The rest of the tutorials show you how. 
