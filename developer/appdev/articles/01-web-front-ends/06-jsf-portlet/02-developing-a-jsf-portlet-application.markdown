@@ -1,6 +1,12 @@
+---
+header-id: developing-a-jsf-portlet-application
+---
+
 # Developing a JSF Portlet Application
 
-To run an existing JSF webapp on @product@, you must leverage the Liferay Faces
+[TOC levels=1-4]
+
+To run an existing JSF web app on @product@, you must leverage the Liferay Faces
 project. The
 [Liferay Faces Bridge](/docs/7-2/reference/-/knowledge_base/r/understanding-liferay-faces-bridge)
 enables you to deploy JSF web apps as portlets without writing portlet-specific
@@ -26,7 +32,7 @@ Follow these steps:
     - `com.liferay.faces.archetype.richfaces.portlet` (Liferay RichFaces
       portlet)
 
-    Choose the archetype that matches your webapp's JSF component suite. The
+    Choose the archetype that matches your web app's JSF component suite. The
     above archetypes support both Gradle and Maven development by providing a
     `build.gradle` and `pom.xml`, respectively. See the
     [Generating a JSF Portlet](/docs/7-2/appdev/-/knowledge_base/a/generating-a-jsf-portlet)
@@ -107,8 +113,8 @@ Follow these steps:
 
 5.  Add your frontend files (e.g., CSS, JS, etc.) that shouldn't be accessed
     directly by the browser to the `webapp/WEB-INF/resources/` folder. For
-    example, your webapp's CSS files would reside in the
-    `webapp/WEB-INF/resources/css` folder. 
+    example, your web app's CSS files would reside in the
+    `webapp/WEB-INF/resources/css` folder.
 
 6.  Add your image files to the `webapp/resources/images` folder.
 
@@ -125,11 +131,11 @@ Follow these steps:
     `faces-config.xml`).
 
 9.  Replace your new JSF portlet's `webapp/WEB-INF/faces-config.xml` with your
-    webapp's `faces-config.xml` file. The `faces-config.xml` file is a JSF
+    web app's `faces-config.xml` file. The `faces-config.xml` file is a JSF
     portlet's application configuration file, which is used to register and
     configure objects and navigation rules.
 
-10. Replace your new JSF portlet's `webapp/WEB-INF/web.xml` with your webapp's
+10. Replace your new JSF portlet's `webapp/WEB-INF/web.xml` with your web app's
     `web.xml` file. The `web.xml` file serves as a deployment descriptor that
     provides necessary configurations for your JSF portlet to deploy and
     function in @product@. You can see the
@@ -161,7 +167,8 @@ Follow these steps:
 
 13. Modify your `webapp/WEB-INF/liferay-display.xml` as desired. It configures 
     characteristics for displaying your portlet. For example, this
-    `liferay-display.xml` specifies the Widget category in the Add Widget menu: 
+    `liferay-display.xml` snippet specifies the Widget category in the Add
+    Widget menu: 
 
     ```xml
     <?xml version="1.0"?>
@@ -185,7 +192,7 @@ Follow these steps:
     ```
 
     This is useful if you want to include your own CDI implementation with your
-    JSF portlet.
+    JSF portlet and ignore @product@'s default CDI implementation.
 
     On deploying the WAR file, the
     [WAB Generator](/docs/7-2/customization/-/knowledge_base/c/deploying-wars-wab-generator)
@@ -215,4 +222,4 @@ the *Add* icon (![Add](../../../images/icon-add-app.png)) and navigating to
 *Widgets* and the category you specified (*Sample* is the default category).
 
 Great! You've successfully developed a Liferay JSF portlet and migrated your
-webapp logic to it.
+web app logic to it.
