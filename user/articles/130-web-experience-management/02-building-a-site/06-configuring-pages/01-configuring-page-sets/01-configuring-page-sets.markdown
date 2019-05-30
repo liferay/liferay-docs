@@ -22,7 +22,7 @@ You can apply themes to the entire Site or to individual pages. For the Site,
 go to *Pages* &rarr; the Site (public or private), and click the Gear icon. For
 individual pages, click *Configure* &rarr; *Define a specific look and feel for
 this page* option under the page's *Look and Feel* category. See the 
-[Themes and Layout Templates](/docs/7-1/tutorials/-/knowledge_base/t/themes-and-layout-templates) 
+[Themes and Layout Templates](/docs/7-2/tutorials/-/knowledge_base/t/themes-and-layout-templates) 
 tutorials section for information on creating and developing your own custom 
 themes.
 

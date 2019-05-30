@@ -24,7 +24,7 @@ Exporting widget data produces a `.lar` file that you can save and import into
 another widget of the same type. To import widget data, you must select a `.lar`
 file. Be careful not to confuse widget-specific `.lar` files with Site-specific
 `.lar` files. See the
-[Importing/Exporting Pages and Content](/docs/7-1/user/-/knowledge_base/u/importing-exporting-pages-and-content)
+[Importing/Exporting Pages and Content](/docs/7-2/user/-/knowledge_base/u/importing-exporting-pages-and-content)
 article for information on importing/exporting Site page data.
 
 There are two ways to export/import widget content. You can navigate to the
@@ -41,28 +41,28 @@ below.
     if you plan to export Web Content data, navigate to *Content* &rarr; *Web
     Content*.
 
-2.  Click the *Options* button (![Options](../../../images/icon-options.png))
+2.  Click the *Options* button (![Options](../../../../images/icon-options.png))
     from the top right of the page and select *Export/Import*.
 
 3.  Select the *Export* or *Import* tab to begin configuring the respective
     process.
 
-![Figure 1: You can access a widget's administrative *Export/Import* feature by selecting its Options menu.](../../../images/admin-app-export-import-feature.png)
+![Figure 1: You can access a widget's administrative *Export/Import* feature by selecting its Options menu.](../../../../images/admin-app-export-import-feature.png)
 
 To export or import data from a widget, follow the steps below:
 
 1.  Ensure the widget you're exporting/importing from is available on a page.
     You can add widgets from the *Add*
-    (![Add](../../../images/icon-add-app.png)) &rarr; *Widgets* menu.
+    (![Add](../../../../images/icon-add-app.png)) &rarr; *Widgets* menu.
 
 2.  Select the widget's *Options* button
-    (![Options](../../../images/icon-widget-options.png)) and select
+    (![Options](../../../../images/icon-widget-options.png)) and select
     *Export/Import*.
 
 3.  Select the *Export* or *Import* tab to begin configuring the respective
     process.
 
-![Figure 2: You can access a widget's *Export/Import* feature by selecting its Options menu.](../../../images/widget-export-import-feature.png)
+![Figure 2: You can access a widget's *Export/Import* feature by selecting its Options menu.](../../../../images/widget-export-import-feature.png)
 
 Now that you know how to navigate to the *Export/Import* menus, you can explore
 the export process.
@@ -104,7 +104,7 @@ selection of content types. Two familiar content types in your Liferay instance
 are *Comments* and *Ratings*. If you want to include these entities in your
 `.lar` file, select *Change* and select them from the checklist. For more
 information on managing content types, see the 
-[Managing Content Types in Staging](/docs/7-1/user/-/knowledge_base/u/managing-content-types-in-staging)
+[Managing Content Types in Staging](/docs/7-2/user/-/knowledge_base/u/managing-content-types-in-staging)
 article.
 
 Next, you can choose to export individual deletions. This lets delete operations
@@ -123,14 +123,14 @@ also download the exported `.lar` file from this tab.
 To import widget data, you can select the LAR using your file explorer or by
 dragging and dropping the file between the dotted lines.
 
-![Figure 3: When importing widget data, you can choose a LAR file using the file explorer or drag and drop the file between the dotted lines.](../../../images/import-menu.png)
+![Figure 3: When importing widget data, you can choose a LAR file using the file explorer or drag and drop the file between the dotted lines.](../../../../images/import-menu.png)
 
 Your LAR file is uploaded and displayed to you for review. Click *Continue*.
 
 Now that you've uploaded and confirmed your LAR file, you're given a similar
 screen to what you'd be offered during export. Several of these options are
 covered in great detail in the
-[Importing/Exporting Pages and Content](/docs/7-1/user/-/knowledge_base/u/importing-exporting-pages-and-content)
+[Importing/Exporting Pages and Content](/docs/7-2/user/-/knowledge_base/u/importing-exporting-pages-and-content)
 tutorial. There are some additional options available: *Update Data* and
 *Authorship of the Content*. Here's options and descriptions for each section:
 

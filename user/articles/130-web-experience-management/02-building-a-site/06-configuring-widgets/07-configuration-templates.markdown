@@ -14,18 +14,18 @@ widgets placed on a page. Applications available from the Product Menu do not
 provide configuration templates.
 
 To create a configuration template, click the *Options* icon
-(![Options](../../../images/icon-options.png)) from the menu in the widget's
+(![Options](../../../../images/icon-options.png)) from the menu in the widget's
 title bar and select *Configuration Templates*. If widget's current settings
 are the ones you want to save, click the *Save Current Configuration as
 Template* button. If not, change the settings until it's configured the way you
 want it, and then click the button.
 
-![Figure 1: Create a configuration template to save your app's configuration settings.](../../../images/configuration-template.png)
+![Figure 1: Create a configuration template to save your app's configuration settings.](../../../../images/configuration-template.png)
 
 There is only one field to fill out. Enter a name for your template and click
 *Save*. You should now see your configuration in the list. If you ever need to
 revert the app to these archived settings, you can click *Actions*
-(![Actions](../../../images/icon-actions.png)) &rarr; *Apply* next to the
+(![Actions](../../../../images/icon-actions.png)) &rarr; *Apply* next to the
 configuration template you want to apply.
 
 Unless otherwise noted, all widgets in @product@ support this feature. This is

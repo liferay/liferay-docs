@@ -44,7 +44,7 @@ a Site Template.
 *Categorization* helps administrators organize the Site and allows for users to 
 easily find your Site and its content through search and navigation. For more 
 information on using tags and categories, visit the
-[Organizing Content with Tags and Categories](/docs/7-1/user/-/knowledge_base/u/organizing-content-with-tags-and-categories) section.
+[Organizing Content with Tags and Categories](/docs/7-2/user/-/knowledge_base/u/organizing-content-with-tags-and-categories) section.
 
 ## Site URL
 

@@ -9,7 +9,7 @@ header-id: importing-exporting-pages-and-content
 Export/Import lets you backup and restore your Site and app data as a LAR
 (Liferay Archive). There are two primary places Export/Import is used: Sites
 and apps. You can learn more about exporting/importing app data in the
-[Exporting/Importing Widget Content](/docs/7-1/user/-/knowledge_base/u/exporting-importing-widget-data)
+[Exporting/Importing Widget Content](/docs/7-2/user/-/knowledge_base/u/exporting-importing-widget-data)
 section. In this section, you'll learn how to export and import content for
 Sites.
 
@@ -41,7 +41,7 @@ and move it all to a Site on another server with LARs. You can use LARs to
 import data onto production servers, but you should not make this a regular
 occurrence. If you want to regularly move pages from one server to another, you
 should use @product@'s staging environment. See 
-[Staging Content for Publication](/docs/7-1/user/-/knowledge_base/u/staging-content-for-publication).
+[Staging Content for Publication](/docs/7-2/user/-/knowledge_base/u/staging-content-for-publication).
 
 You can export LARs to use them as a backup. If you ever have to restore your
 Site, you must only import the latest LAR file. However, please be careful! If
@@ -64,7 +64,7 @@ categories are automatically renamed.
 exported from one version of Liferay into a Liferay server that's running a
 different version of Liferay. Also, note that periodically exporting LARs is
 *not* a complete backup solution; please refer to the
-[Backing up a Liferay Installation](/docs/7-1/deploy/-/knowledge_base/d/backing-up-a-liferay-installation)
+[Backing up a Liferay Installation](/docs/7-2/deploy/-/knowledge_base/d/backing-up-a-liferay-installation)
 section for information on backing up Liferay.
 
 $$$

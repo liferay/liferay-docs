@@ -46,7 +46,7 @@ Unless otherwise noted, all widgets support scoping by instance (global), Site
 your Liferay instance. You can configure the scope of an app with just a few
 simple steps.
 
-1.  Click the *Options* icon (![Options](../../../images/icon-options.png)) in
+1.  Click the *Options* icon (![Options](../../../../images/icon-options.png)) in
     the app window.
 
 2.  Select *Configuration*.
@@ -55,7 +55,7 @@ simple steps.
 
 4.  Use the drop-down menu to set the scope.
 
-![Figure 1: You can change the scope of your application by navigating to its Configuration menu.](../../../images/changing-widget-scope.png)
+![Figure 1: You can change the scope of your application by navigating to its Configuration menu.](../../../../images/changing-widget-scope.png)
 
 Once you've defined a page scope for an widget, the Menu provides a
 *Default Scope* dropdown that allows you to select the page.

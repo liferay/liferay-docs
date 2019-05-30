@@ -22,7 +22,7 @@ At the bottom of the page is *Mentions*, which lets you enable/disable
 Mentioning functionality, which is used to *mention* (notify and/or draw
 attention to) friends and colleagues by entering the "@" character followed by
 their user names. See the 
-[Mentioning Users](/docs/7-1/user/-/knowledge_base/u/mentioning-users) article for more
+[Mentioning Users](/docs/7-2/user/-/knowledge_base/u/mentioning-users) article for more
 information.
 
 ## Languages

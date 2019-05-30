@@ -17,10 +17,10 @@ of the widget's configuration dialog box. You can grant Roles permission to
 - Modify the widget's preferences
 - View the widget
 
-![Figure 1: Viewing the permissions configuration for a widget.](../../../images/widget-permissions.png)
+![Figure 1: Viewing the permissions configuration for a widget.](../../../../images/widget-permissions.png)
 
 To set these permissions, go to the widget's *Options* icon
-(![Options](../../../images/icon-options.png)) and click select *Permissions*.
+(![Options](../../../../images/icon-options.png)) and click select *Permissions*.
 This shows you a table of Roles. Use the check boxes to grant certain
 permissions to different Roles. Click *Save* after you've made your selections.
 

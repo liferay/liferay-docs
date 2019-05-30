@@ -8,7 +8,7 @@ header-id: look-and-feel-configuration
 
 To access the look and feel configuration menu of any widget,
 
-1.  Click *Options* (![Options](../../../images/icon-options.png)) in the top
+1.  Click *Options* (![Options](../../../../images/icon-options.png)) in the top
     right corner of the widget.
 
 2.  Select *Look and Feel Configuration*.
@@ -40,7 +40,7 @@ the default. Be careful about turning widget borders off; some themes assume
 widget borders are turned on and may not display correctly with them turned
 off.
 
-![Figure 1: The General tab of the Look and Feel Configuration menu allows you to define a custom widget title, link widget URLs to a specific page, and select the widget contrast option using decorators.](../../../images/look-and-feel-portlet-configuration-menu.png)
+![Figure 1: The General tab of the Look and Feel Configuration menu allows you to define a custom widget title, link widget URLs to a specific page, and select the widget contrast option using decorators.](../../../../images/look-and-feel-portlet-configuration-menu.png)
 
 ## Text Styles
 
@@ -60,7 +60,7 @@ the color palette.
 **Text Decoration:** Set to *Underline*, *Overline*, or *Strikethrough*. The
 default text decoration is *None*.
 
-![Figure 2: The Text Styles tab lets you configure the format of the text that appears in the widget.](../../../images/look-and-feel-text-styles.png)
+![Figure 2: The Text Styles tab lets you configure the format of the text that appears in the widget.](../../../../images/look-and-feel-text-styles.png)
 
 **Word Spacing:** Set from -1 em to 0.95 em, with 0.05 em increments. 0 em is
 the default.
@@ -77,7 +77,7 @@ The Background Styles tab specifies the widget's background color. When you
 select the text space, you're given a color palette to choose your background
 color or you can manually enter any six digit hex color code.
 
-![Figure 3: The Background Styles tab lets you specify the widget's background color.](../../../images/look-and-feel-background-styles.png)
+![Figure 3: The Background Styles tab lets you specify the widget's background color.](../../../../images/look-and-feel-background-styles.png)
 
 ## Border Styles
 
@@ -85,7 +85,7 @@ The Border Styles tab, configures your widget's border width, style, and color.
 For each of these attributes, leave the *Same for All* selector enabled to apply
 the same settings to top, right, bottom, and left borders.
 
-![Figure 4: The Border Styles tab lets you specify a border width, style, and color for each side of the widget.](../../../images/look-and-feel-border-styles.png)
+![Figure 4: The Border Styles tab lets you specify a border width, style, and color for each side of the widget.](../../../../images/look-and-feel-border-styles.png)
 
 For border width, you can specify any % value, em value, or px value. For
 border style, you can select Dashed, Double, Dotted, Groove, Hidden, Inset,
@@ -100,7 +100,7 @@ your widget. Just like for border styles, leave the *Same for All* selector
 enabled to apply the same settings to each side (top, right, bottom, and left)
 of the widget.
 
-![Figure 5: The Margin and Padding tab allows you to specify margin and padding lengths for the sides of your widget.](../../../images/look-and-feel-margin-and-padding.png)
+![Figure 5: The Margin and Padding tab allows you to specify margin and padding lengths for the sides of your widget.](../../../../images/look-and-feel-margin-and-padding.png)
 
 For both padding and margin, you can specify any % value, em value, or px
 value.
@@ -110,7 +110,7 @@ value.
 The Advanced Styling tab displays current information about your widget, 
 including your widget's Liferay ID and CSS classes.
 
-![Figure 6: The Advanced Styling tab displays your widget's Liferay ID and allows you to enter CSS code to customize the look and feel of your widget.](../../../images/look-and-feel-advanced-styling.png)
+![Figure 6: The Advanced Styling tab displays your widget's Liferay ID and allows you to enter CSS code to customize the look and feel of your widget.](../../../../images/look-and-feel-advanced-styling.png)
 
 You can also enter custom CSS class names for your widget and custom CSS code.
 Clicking the *Add a CSS rule for just this portlet* or *Add a CSS rule for all

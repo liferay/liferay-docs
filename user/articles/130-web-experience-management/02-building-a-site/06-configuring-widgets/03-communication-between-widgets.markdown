@@ -11,10 +11,10 @@ events. Public render parameters are easy to use and can be quite powerful.
 Some Liferay portlets provide a configuration UI to help you get the most out
 of this communication mechanism. To access this UI, open your portlet's
 configuration window by clicking on the *Options* icon
-(![Options](../../../images/icon-options.png)) and selecting *Configuration*.
+(![Options](../../../../images/icon-options.png)) and selecting *Configuration*.
 Then click on the *Communication* tab.
 
-![Figure 1: You can configure portlets to communicate with each other using public render parameters.](../../../images/app-communication-tab.png)
+![Figure 1: You can configure portlets to communicate with each other using public render parameters.](../../../../images/app-communication-tab.png)
 
 +$$$
 

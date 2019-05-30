@@ -10,7 +10,7 @@ On the Configure page are four tabs: General, SEO, Look and Feel, and
 Advanced. Options selected here have no effect on the rest of the 
 Site; just the page you've selected. Many of these options are the same as
 those that configure the complete page set, so you can view more details in the 
-[Configuring Page Sets](/docs/7-1/user/-/knowledge_base/u/configuring-page-sets) 
+[Configuring Page Sets](/docs/7-2/user/-/knowledge_base/u/configuring-page-sets) 
 article.
 
 Note that many of the options are localizable, so you can provide translations
@@ -72,10 +72,8 @@ page.
 *Look and Feel* lets you set a page-specific theme. You can inherit what you
 already have configured for your Page Set's theme, or you can define a theme per
 page. See 
-[Customizing the Look and Feel of Site Pages](/docs/7-1/user/-/knowledge_base/u/page-set-look-and-feel)
+[Customizing the Look and Feel of Site Pages](/docs/7-2/user/-/knowledge_base/u/page-set-look-and-feel)
 for more details.
-
-![Figure 2: Viewing the Look and Feel page configuration. .](../../../../../images/page-look-and-feel.png)
 
 ## Advanced Settings
 
@@ -108,10 +106,10 @@ the page.
 
 Widgets can be embedded on a page via web content template or fragment. To
 learn more about this, see 
-[Adding Templates](/docs/7-1/user/-/knowledge_base/u/adding-templates).
+[Adding Templates](/docs/7-2/user/-/knowledge_base/u/adding-templates).
 You can embed a widget on a page layout or theme programmatically. If you're
 interested in learning more about this, visit the
-[Embedding Portlets in Themes](develop/tutorials/-/knowledge_base/7-1/embedding-portlets-in-themes)
+[Embedding Portlets in Themes](develop/tutorials/-/knowledge_base/7-2/embedding-portlets-in-themes)
 tutorial.
 
 ### Customization Settings
@@ -119,7 +117,7 @@ tutorial.
 This configuration option in the *Advanced* tab lets you mark specific
 sections of the page you want users to be able to customize. You can learn more
 about page customizations in 
-[Personalizing Pages](/docs/7-1/user/-/knowledge_base/u/personalizing-pages).
+[Personalizing Pages](/docs/7-2/user/-/knowledge_base/u/personalizing-pages).
 
 ### JavaScript
 
@@ -130,7 +128,7 @@ JavaScript code remains in one place.
 
 This configuration option is also available for Page Sets like Public Pages and
 Private Pages. Visit 
-[Executing JavaScript in Site Pages](/docs/7-1/user/-/knowledge_base/u/creating-and-managing-pages#executing-javascript-in-site-pages)
+[Executing JavaScript in Site Pages](/docs/7-2/user/-/knowledge_base/u/creating-and-managing-pages#executing-javascript-in-site-pages)
 for more information on doing this for Page Sets.
 
 ### Mobile Device Rules

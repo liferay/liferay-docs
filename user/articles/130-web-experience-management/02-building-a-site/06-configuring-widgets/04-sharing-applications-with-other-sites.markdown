@@ -11,10 +11,10 @@ running on your Site into another website, such as Facebook. This opens up
 a whole new avenue of exposure to your web site that you would not have had
 otherwise. In fact, this is how all those Facebook games work.
 
-![Figure 1: The Sharing tab in your widget's Configuration menu lets you share your widget in a variety of ways.](../../../images/collaboration-app-configuration-sharing.png)
+![Figure 1: The Sharing tab in your widget's Configuration menu lets you share your widget in a variety of ways.](../../../../images/collaboration-app-configuration-sharing.png)
 
 To share one of your widgets, open the *Configuration* dialog box from
-the widget's *Options* icon (![Options](../../../images/icon-options.png)) and
+the widget's *Options* icon (![Options](../../../../images/icon-options.png)) and
 select the *Sharing* tab. There are five sub-tabs under sharing: Any Website,
 Facebook, OpenSocial Gadget, and Netvibes.
 

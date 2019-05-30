@@ -13,8 +13,8 @@ configuration (like creating a Google Analytics account) to use.
 
 *Default User Associations* configures Site roles and teams that newly assigned Site 
 members have by default. If you'd like to learn more about creating roles 
-and/or teams, visit the [Roles and Permissions](/docs/7-1/user/-/knowledge_base/u/roles-and-permissions)
-and [Creating Teams for Advanced Site Membership Management](/docs/7-1/user/-/knowledge_base/u/creating-teams-for-advanced-site-membership-management).
+and/or teams, visit the [Roles and Permissions](/docs/7-2/user/-/knowledge_base/u/roles-and-permissions)
+and [Creating Teams for Advanced Site Membership Management](/docs/7-2/user/-/knowledge_base/u/creating-teams-for-advanced-site-membership-management).
 
 ## Analytics
 
@@ -69,14 +69,14 @@ analytics data to your analytics platform.
 The *Maps* option configures the maps API provider used by your Liferay
 instance when displaying geolocalized assets. Geolocalized assets can be
 displayed for documents, web content articles, DDL records, etc. Maps is
-available under the Advanced tab. You can read more about Geolocation in [Geolocating Assets](/docs/7-1/user/-/knowledge_base/u/geolocating-assets).
+available under the Advanced tab. You can read more about Geolocation in [Geolocating Assets](/docs/7-2/user/-/knowledge_base/u/geolocating-assets).
 
 ### Recycle Bin
 
 The *Recycle Bin* option enables or disables the Recycle Bin for your Site. You
 can also regulate the age (in minutes) for which content is able to be stored
 in the Recycle Bin until it is permanently deleted. For a full explanation of
-the Recycle Bin, see [Restoring Deleted Assets](/docs/7-1/user/-/knowledge_base/u/restoring-deleted-assets).
+the Recycle Bin, see [Restoring Deleted Assets](/docs/7-2/user/-/knowledge_base/u/restoring-deleted-assets).
 
 ### Content Sharing
 

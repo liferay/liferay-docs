@@ -32,9 +32,9 @@ Administrators cannot create new Roles.
 
 **Note:** To create and apply permissions for a group of users to use across
 multiple Sites or Organizations in your Liferay instance, consider aggregating
-the Users into a [User Group](/docs/7-1/user/-/knowledge_base/u/user-groups)
+the Users into a [User Group](/docs/7-2/user/-/knowledge_base/u/user-groups)
 and assigning the User Group permissions via
-[Roles](/docs/7-1/user/-/knowledge_base/u/roles-and-permissions).
+[Roles](/docs/7-2/user/-/knowledge_base/u/roles-and-permissions).
 
 $$$
 
@@ -42,12 +42,12 @@ To create a team within a Site,
 
 1.  Go to the Site Administration page of your Site.
 
-2.  Select *Members* &rarr; *Site Teams*.
+2.  Select *People* &rarr; *Site Teams*.
 
     It's important to note that configuring other Site membership groupings, 
     such as *Users*, *Organizations*, and *User Groups* can be done in the 
     *Site Memberships* app, which is also in the Members tab. You can 
-    visit [User Management](/docs/7-1/user/-/knowledge_base/u/managing-users)
+    visit [User Management](/docs/7-2/user/-/knowledge_base/u/managing-users)
     for more information on how Site memberships work.
 
 3.  Finally, click the *Add Team* icon (![Add Team](../../../../images/icon-add.png)).

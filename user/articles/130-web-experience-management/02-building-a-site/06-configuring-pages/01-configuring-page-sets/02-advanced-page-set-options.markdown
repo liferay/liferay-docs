@@ -32,7 +32,7 @@ behaviors for specific mobile devices or types. Mobile device rules are
 inherited from your Public Pages, but you can define specific rules per page.
 You can edit the Look and Feel of specific pages for mobile devices, including
 the theme. This is explained in 
-[Mobile Device Rules](/docs/7-1/user/-/knowledge_base/u/mobile-device-rules).
+[Mobile Device Rules](/docs/7-2/user/-/knowledge_base/u/mobile-device-rules).
 
 ## Robots
 
