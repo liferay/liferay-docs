@@ -49,11 +49,12 @@ After you add the `lfr-editable` tag with the type `image` to a Fragment, when
 you add that Fragment to a page, you can then click on the editable image to 
 select an image or configure content mapping for the image.
 
-Most images can be handled like this, but to add an editable background image 
-you need toadd an additional property to set the background image ID, 
-`data-lfr-background-image-id`. The backgorund image ID is set in the main `div` for the Fragment and is the same as your editable image ID.
+Most images can be handled like this, but to add an editable background image
+you must add an additional property to set the background image ID,
+`data-lfr-background-image-id`. The background image ID is set in the main `div`
+for the Fragment and is the same as your editable image ID.
 
-```
+```html
 <div data-lfr-background-image-id="unique-id">
    <lfr-editable id="unique-id" type="image">
       <img src="...">

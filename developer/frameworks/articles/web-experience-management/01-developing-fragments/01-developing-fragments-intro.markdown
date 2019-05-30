@@ -13,9 +13,9 @@ at your disposal to accomplish your vision:
 **HTML**: The markup of the fragment. Fragments use standard HTML with 
 special tags to add dynamic behavior.
 
-**CSS**: CSS styles and positions the fragment's markup. 
+**CSS**: Styles and positions the fragment's markup. 
 
-**JavaScript**: JavaScript provides dynamic behavior to the fragment.
+**JavaScript**: Provides dynamic behavior to the fragment.
 
 The HTML, CSS, and JavaScript are all completely standard, but can be 
 enhanced with Liferay-specific features. You can specify text, images, and 
@@ -25,7 +25,7 @@ Fragments more dynamic than regular web content.
 
 ## Creating Page Fragments
 
-There are two types of Page Fragments, *Sections* and *Components*. A Section
+There are two types of Page Fragments: *Sections* and *Components*. A Section
 defines columns, padding, and spacing on the page. A Component contains content
 that is added to a Section.
 
@@ -33,8 +33,8 @@ Fragments are created inside of Collections. Collections provide an easy way to
 manage and share groups of related Fragments. Users navigate Collections when 
 selecting Fragments to add to a page. You can create and manage Fragments and
 Collections without using any external tools, but you can also use your
-preferred tools for Web Development. For an explanation of Fragment creation
-using Liferay's built in tools, see 
+preferred web development tools. For an explanation of Fragment creation using
+Liferay's built in tools, see 
 [Creating a Fragment](/docs/7-2/frameworks/-/knowledge_base/f/creating-fragments). 
 
 ### Fragment CLI
