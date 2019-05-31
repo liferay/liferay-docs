@@ -1,3 +1,13 @@
+# Maintenance Mode
+
+Maintenance Mode for a product or capability means we are no longer actively enhancing the product or capability.  Liferay will continue to provide bug fixes and provide full support in accordance to with Subscribers' subscription level and the end of service life policies of the compatible DXP version. 
+
+## Products & Features in Maintenance Mode
+* Liferay Connected Services
+* Liferay Mobile Experience (Liferay Screens, Liferay Mobile SDK, Liferay Push)
+* Staging 
+* Liferay Sync
+
 # Deprecated Apps in 7.2: What to Do 
 
 [TOC levels=1-4]
@@ -48,20 +58,20 @@ Here are the apps deprecated in @product-ver@.
 | App |  Availability |  Notes |
 | --- | ------------- | ------ |
 | RSS Publisher | Bundled | See [the article](/docs/7-1/user/-/knowledge_base/u/the-rss-publisher-widget) on enabling and using this widget. |
-| User Group Pages (Copy Mode) | TBD |  |
+| User Group Pages (Copy Mode) | Bundled | See the [Legacy User Group Sites Behavior article] for instructions on how to enable. |
 
 ## Security
 
 | App |  Availability |  Notes |
 | --- | ------------------ | ----------- |
-| Central Authentication Service | Bundled |   |
+| Central Authentication Service | Bundled | Migrate to SAML based authentication |
 | Google Login | Marketplace release planned | Replaced by [OpenID Connect](/docs/7-2/deploy/-/knowledge_base/d/authenticating-with-openid-connect). |
-| NTLM | Marketplace release planned. | Replaced by [Kerberos](/docs/7-2/deploy/-/knowledge_base/d/authenticating-with-kerberos). |
-| OAuth 1.0a | Marketplace release planned. | Replaced by OAuth 2.0, which is included in the bundle. |
-| OpenAM / OpenSSO | Bundled |  |
+| NTLM | Marketplace release planned | Replaced by [Kerberos](/docs/7-2/deploy/-/knowledge_base/d/authenticating-with-kerberos). |
+| OAuth 1.0a | Marketplace release planned | Replaced by OAuth 2.0, which is included in the bundle. |
+| OpenAM / OpenSSO | Bundled | Migrate to SAML based authentication |
 | OpenID | Marketplace release planned | Replaced by [OpenID Connect](/docs/7-2/deploy/-/knowledge_base/d/authenticating-with-openid-connect). |
 
 ## User and System Management
-| App |  Availability |  Notes |
-| --- | ------------------ | ----------- |
-| Live Users | Enabled through Portal Properties |  |
+| App |  Availability | 
+| --- | ------------------ |
+| Live Users | Enabled through Portal Properties | 
