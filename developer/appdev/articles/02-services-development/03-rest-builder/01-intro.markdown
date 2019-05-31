@@ -24,4 +24,4 @@ endpoints, parsing, XML generation, and advanced features like filtering or
 multipart (binary file) support. The developer only has to fill in the resource 
 implementations, calling @product@'s remote services. 
 
-
+Read on to learn how to generate REST services with REST Builder! 
