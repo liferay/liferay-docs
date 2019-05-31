@@ -1,16 +1,20 @@
-# Reading Scoped Configuration Values [](id=reading-scoped-configuration-values)
+---
+header-id: reading-scoped-configuration-values
+---
+
+# Reading Scoped Configuration Values
 
 If your configuration is scoped to anything other than `SYSTEM`, you have two
 options for reading configuration values.
 
--   Use `ConfigurationProvider`. This will work for any kind of configuration,
+-   Use `ConfigurationProvider`. This works for any kind of configuration,
     and is the only way to read configuration values at the `COMPANY` and
     `GROUP` scopes.
 
--   Use `PortletDisplay`. This is the recommended apporach for configurations
+-   Use `PortletDisplay`. This is the recommended approach for configurations
     at the `PORTLET_INSTANCE` scope, but only works at that scope.
 
-## Using the Configuration Provider [](id=using-the-configuration-provider)
+## Using the Configuration Provider
 
 When using the Configuration Provider, instead of receiving the configuration
 directly, the class that wants to access it must 
@@ -73,8 +77,8 @@ To retrieve the configuration, use one of the following methods of the provider:
 
 `getCompanyConfiguration()`
 : Used when you want to support different configurations per virtual instance.
-In this case, the configuration is usually entered by an admin through Control
-Panel &rarr; Configuration &rarr; Instance Settings. 
+In this case, the configuration is usually entered by an admin through *Control
+Panel* &rarr; *Configuration* &rarr; *Instance Settings*. 
 
 `getGroupConfiguration()`
 : Used when you want to support different configurations per site (or, if
@@ -84,7 +88,7 @@ administration menu. That UI is developed as a portlet configuration view.
 
 `getPortletInstanceConfiguration()`
 : Used to obtain the configuration for a specific portlet instance. Most often
-you should not be using this directly and use the convenience method in
+you should not be using this directly. Use the convenience method in
 `PortletDisplay` instead as shown below.
 
 `getSystemConfiguration`
@@ -107,7 +111,7 @@ MentionsGroupServiceConfiguration configuration =
 Next, you'll learn a nifty way to to access a portlet instance configuration
 from a JSP.
 
-## Accessing the Portlet Instance Configuration Through the PortletDisplay [](id=accessing-the-portlet-instance-configuration-through-the-portletdisplay)
+## Accessing the Portlet Instance Configuration Through the `PortletDisplay`
 
 Often you must access portlet instance settings from a JSP or from a Java class
 that isn't an OSGi component. To read the settings in these cases, a
