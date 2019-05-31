@@ -7,7 +7,7 @@ header-id: developing-a-react-application
 [TOC levels=1-4]
 
 Running an existing React app on @product@ makes the app available as a 
-widget for using on site pages. You must use the Liferay Bundle Generator and
+widget for using on site pages. You must use the Liferay JS Generator and
 Liferay npm Bundler to merge your files into a portlet bundle, adapt your static
 resource paths, and deploy your bundle. 
 
@@ -15,15 +15,15 @@ resource paths, and deploy your bundle.
 
 Follow these steps:
 
-1.  Using [npm](https://www.npmjs.com/), install the Liferay Bundle Generator:
+1.  Using [npm](https://www.npmjs.com/), install the Liferay JS Generator:
 
-        npm install -g yo generator-liferay-bundle
+        npm install -g yo generator-liferay-js
 
 2.  Generate a React based portlet bundle project for deploying your app to 
     your 
     [@product@ installation](/deployment/docs/installing-product). 
 
-        yo liferay-bundle
+        yo liferay-js
 
     Select `React based portlet` and opt for generating sample code. Here's the 
     bundle's structure: 
@@ -126,11 +126,8 @@ Follow these steps:
 
 7.  Merge your app `package.json` file's `dependencies` and `devDependencies` 
     into the bundle's `package.json`.
-
-8.  If you're building on Windows, set `"process-serially": true` in your 
-    bundle's `.npmbundlerrc` file. 
  
-9.  Finally, deploy your bundle:
+8.  Finally, deploy your bundle:
 
         npm run deploy
 
