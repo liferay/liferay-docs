@@ -6,10 +6,9 @@ header-id: manually-migrating-from-audience-targeting
 
 [TOC levels=1-4]
 
-As explained in the previous section, some Audience Targeting rules do not have 
+As explained in the previous article, some Audience Targeting rules do not have 
 a direct equivalent in @product@ 7.2 and, therefore, they cannot be 
-automatically migrated. In this section, you can view the recommended solution 
-for each rule type.
+migrated automatically. Here are the recommended solutions for each rule type.
 
 ## User Attribute Rules
 
@@ -22,9 +21,9 @@ and use that to define your new Segment.
 ## Session Rules
 
 For Session attributes that do not have a direct equivalent, the recommended 
-solution is to use either a URL field to use the current URL or a previously 
-visited URL on your site as criteria, or to use a Cookie for more advanced 
-session tracking needs.
+solution is to use a URL field for the current URL or a previously visited URL
+on your site as criteria, or to use a Cookie for more advanced session tracking
+needs.
 
 ## Behavior Rules
 
@@ -34,7 +33,7 @@ learn more about creating behavior based rules in the
 
 ## Migrating Custom Rules
 
-Audience Targeting segmentation features could be extended with custom rules. 
+Audience Targeting segmentation features could be extended using custom rules. 
 As part of the upgrade planning process, the function of any such rules should 
 be re-evaluated with the new Segmentation features of @product-ver@ in mind. 
 
@@ -61,7 +60,7 @@ for your use cases.
 The User Segment Content Display portlet was used to display existing content 
 based on segment membership rules. In @product-ver@, you can cover the same use 
 case by defining manual content sets with variations for your different 
-audiences, and applying it to an asset publisher. See the documentation for 
+audiences and applying it to an asset publisher. See the documentation for 
 [creating personalized Content Sets](/docs/7-2/user/-/knowledge_base/u/content-set-personalization).
 With this feature, you can assign any number of assets to the Content List for
 the given audience, and then use the Asset Publisher to define how content is
@@ -79,5 +78,5 @@ publisher.
 
 In addition, the new
 [Experience-based Content Page personalization](/docs/7-2/user/-/knowledge_base/u/content-page-personalization)
-may fulfill a use case that you were previously solving with one of the methods
-previously available.
+feature may fulfill a use case that you were previously solving with one of the
+methods previously available.
