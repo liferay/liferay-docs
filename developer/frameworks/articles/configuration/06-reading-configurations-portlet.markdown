@@ -4,6 +4,8 @@ header-id: reading-unscoped-configuration-values-from-an-mvc-portlet
 
 # Reading Unscoped Configuration Values from an MVC Portlet
 
+[TOC levels=1-4]
+
 If your configuration is scoped to `SYSTEM` or is unscoped (which amounts to
 the same thing), you have a couple of options for reading configuration values.
 There are two ways to do this:

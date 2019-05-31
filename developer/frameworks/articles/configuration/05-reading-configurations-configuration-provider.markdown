@@ -4,6 +4,8 @@ header-id: reading-scoped-configuration-values
 
 # Reading Scoped Configuration Values
 
+[TOC levels=1-4]
+
 If your configuration is scoped to anything other than `SYSTEM`, you have two
 options for reading configuration values.
 

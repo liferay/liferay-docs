@@ -23,9 +23,9 @@ private void addSegmentWithCriteria() {
     Criteria criteria = new Criteria();
 
     _userSegmentsCriteriaContributor.contribute(
-        criteria, “(jobTitle eq 'Developer')”, Criteria.Conjunction.AND);
+        criteria, "(jobTitle eq 'Developer')", Criteria.Conjunction.AND);
     _organizationCriteriaContributor.contribute(
-        criteria, “contains(name,'America')”, Criteria.Conjunction.OR);
+        criteria, "contains(name,'America')", Criteria.Conjunction.OR);
 
     segmentsEntryService.addSegmentsEntry(
         "segment-key", nameMap, descriptionMap, true, CriteriaSerializer.serialize(criteria),
