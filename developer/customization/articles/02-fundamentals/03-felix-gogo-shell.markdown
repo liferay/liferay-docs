@@ -1,8 +1,8 @@
 ---
-header-id: felix-gogo-shell
+header-id: using-the-felix-gogo-shell
 ---
 
-# Felix Gogo Shell
+# Using the Felix Gogo Shell
 
 [TOC levels=1-4]
 
