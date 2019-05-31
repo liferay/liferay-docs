@@ -15,7 +15,7 @@ Groups and Roles. You don't have to write a single line of code to accomplish
 this: it's defined in an XML document. If you're a Liferay Digital Experience
 Platform (DXP) customer, you also have access to a visual process builder.
 
-There are several steps to effective workflowing: 
+There are several steps to effective workflowing:
 
 - [Designing review processes in XML](/docs/7-2/reference/-/knowledge_base/r/crafting-xml-workflow-definitions)
 
@@ -29,8 +29,10 @@ There are several steps to effective workflowing:
 
 - [Sending assets through review](/docs/7-2/user/-/knowledge_base/u/reviewing-assets)
 
+- [Using Workflow Metrics](/docs/7-2/user/-/knowledge_base/u/workflow-metrics)
+
 After all that, you'll be familiar with using Liferay's workflow engine to set
-up approval processes for any 
+up approval processes for any
 [workflow-enabled content](/docs/7-2/user/-/knowledge_base/u/activating-workflow).
 
 ## What's New with Workflow?
@@ -42,7 +44,7 @@ There are some noteworthy enhancements to the workflow functionality:
 For DXP subscribers, the _Workflow Metrics_ feature was introduced. Configure
 one or more Service Level Agreements (SLAs; think of these as deadlines) on a
 workflow definition's events, and workflow submissions are accordingly tracked
-and reported as on time or overdue. 
+and reported as on time or overdue.
 
 #### Service Level Agreements (SLAs)
 
@@ -68,9 +70,9 @@ status _on time_ or _overdue_.
 
 ![Figure 2: See Workflow Reports generated based on your SLAs.](../../images/workflow-report.png)
 
-See the article on 
-[Workflow Metrics](/docs/7-2/user/-/knowledge_base/u/workflow-metrics) 
-to learn more about SLAs and available reports. 
+See the article on
+[Workflow Metrics](/docs/7-2/user/-/knowledge_base/u/workflow-metrics)
+to learn more about SLAs and available reports.
 
 ### Control Panel Reorganization
 
@@ -104,4 +106,4 @@ in
 They're also in your Liferay installation. Open your Liferay installation's
 `osgi/portal/com.liferay.portal.workflow.kaleo.runtime.impl.jar`, and then find
 and open the `com.liferay.workflow.kaleo.runtime.impl-[version].jar`. The
-definitions are in the `META-INF/definitions` folder. 
+definitions are in the `META-INF/definitions` folder.

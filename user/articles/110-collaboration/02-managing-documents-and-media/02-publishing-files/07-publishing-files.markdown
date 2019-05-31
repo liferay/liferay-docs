@@ -26,7 +26,7 @@ way, your media takes center stage.
 
 Follow these steps to create a page that contains a Media Gallery widget: 
 
-1.  [Create a page](/discover/portal/-/knowledge_base/7-2/creating-and-managing-pages) 
+1.  [Create a page](/docs/7-2/user/-/knowledge_base/u/creating-and-managing-pages) 
     and navigate to it in your site. 
 
 2.  At the top-right of the screen, click the *Add* icon

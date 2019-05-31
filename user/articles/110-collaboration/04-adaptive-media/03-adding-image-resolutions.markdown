@@ -20,7 +20,7 @@ resolutions.
 Once you create a resolution, Adaptive Media automatically generates copies of 
 newly uploaded images in that resolution. Images uploaded before you create the 
 resolution aren't affected and must be adapted separately (see the 
-[Generating Missing Image Resolutions](/discover/portal/-/knowledge_base/7-2/managing-image-resolutions#generating-missing-image-resolutions) 
+[Generating Missing Image Resolutions](/docs/7-2/user/-/knowledge_base/u/managing-image-resolutions#generating-missing-image-resolutions) 
 section for details). 
 
 ![Figure 1: Adaptive Media's image resolutions are listed in a table.](../../../images/adaptive-media-image-resolutions.png)

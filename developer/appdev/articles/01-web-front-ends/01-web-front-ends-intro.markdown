@@ -46,8 +46,8 @@ popular Java and JavaScript-based technologies:
 Angular, React, and Vue applications are written the same as you would outside of
 @product@---using
 [npm](https://www.npmjs.com/)
-and the webpack dev server. The Liferay Bundle Generator creates a portlet
-bundle (project) for developing and deploying each type of app. The bundle
+and the webpack dev server. The Liferay JS Generator creates a portlet bundle
+(project) for developing and deploying each type of app. The bundle
 project comes with npm commands for building, testing, and deploying the app. It
 packages the app's dependencies (including JavaScript packages), deploys the
 bundle as a JAR, and installs the bundle to @product@'s run time environment,

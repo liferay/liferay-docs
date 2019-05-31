@@ -53,7 +53,7 @@ it is the same. Follow these steps to complete the form:
 1.  Use the *Title* field to give the alert or announcement a title. Then create 
     your content in the field *Write your content here...*. For a detailed 
     explanation of the editor, see the 
-    [Blogs documentation](/discover/portal/-/knowledge_base/7-2/using-the-blog-entry-editor). 
+    [Blogs documentation](/docs/7-2/user/-/knowledge_base/u/using-the-blog-entry-editor). 
 
     ![Figure 2: Enter your alert or announcement's title and content.](../../../images/alerts-new-alert.png)
 
