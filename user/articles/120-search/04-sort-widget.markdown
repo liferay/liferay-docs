@@ -1,7 +1,13 @@
+---
+header-id: sorting-search-results-with-the-sort-widget
+---
+
 # Sorting Search Results with the Sort Widget
 
+[TOC levels=1-4]
+
 The Sort widget gives Users configurable control over the order of returned
-results, no code necessary.
+results: no code necessary.
 
 Add it to a page and begin sorting results.
 
@@ -33,7 +39,7 @@ To get started with the Sort widget,
 
 2.  From the Search section, drag a Sort widget onto the page.
 
-![Figure x: Users can re-order search results with the Sort widget.](../../images/search-sort.png)
+![Figure 1: Users can re-order search results with the Sort widget.](../../images/search-sort.png)
 
 ### Configuring the Sort Widget
 
@@ -43,8 +49,7 @@ Three things can be done from the Configuration screen:
 - Deleting options
 - Adding options
 
-![Figure x: From the Sort widget's configuration, add, edit, or remove Sort
-options.](../../images/search-sort-configuration.png)
+![Figure 2: From the Sort widget's configuration, add, edit, or remove Sort options.](../../images/search-sort-configuration.png)
 
 To access the widget configuration screen, open the widget Options menu
 (![Options](../../images/icon-app-options.png)) and click _Configuration_.
@@ -55,18 +60,18 @@ Each Sort option has two fields: _Label_ and _Field_.
 : Set the displayed label for the type of sort being configured.
 
 **Field**
-: The `fieldName` of the indexed field to provide sorting by. Most of the time
-this will be a
+: The `fieldName` of the indexed field to sort. Most of the time
+this is a
 [keyword](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/keyword.html)
-field. Other acceptable options are `date` and any [numeric
-datatype](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/number.html).
+field. Other acceptable options are `date` and any 
+[numeric datatype](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/number.html).
 There's even a way for persistent search administrators to coerce `text` fields
 into behaving with the Sort widget. Keep reading for details.
 
 #### Finding Sortable Fields
 
 To find the fields available for use in the Sort widget, Users with the proper
-permissions can navigate to Control Panel &rarr; Configuration &rarr; Search.
+permissions can navigate to *Control Panel* &rarr; *Configuration* &rarr; *Search*.
 From there, open the Field Mappings tab and browse the mappings for each index.
 Scroll to the `properties` section of the mapping, and find any `keyword` field,
 `date` field, or a field with any numeric datatype. The `type` field is
@@ -79,8 +84,8 @@ instructive:
     "type" : "long"
 
 What if you really need to sort by a `text` field? You can do it by adding a new
-version of the field to the index, with the type `keyword`. Don't worry, you
-won't need to code anything to do this. From the field mappings screen mentioned
+version of the field to the index, with the type `keyword`. Don't worry; you
+don't need to code anything to do this. From the field mappings screen mentioned
 above, look at the `firstName` field in the index called `liferay-[companyID]`.
 In fact, look at the next entry as well:
 
@@ -96,16 +101,17 @@ In fact, look at the next entry as well:
 ```
 
 There's a corresponding field with the suffix `_sortable`, and of the correct
-type for sorting (`keyword`). How did that get there? Via the [portal
-property](https://docs.liferay.com/portal/7.2-latest/propertiesdoc/portal.properties.html#Lucene%20Search) 
+type for sorting (`keyword`). How did that get there? Via the 
+[portal property](@platform-ref@/7.2-latest/propertiesdoc/portal.properties.html#Lucene%20Search) 
 
-```property
+```properties
 index.sortable.text.fields=firstName,jobTitle,lastName,name,screenName,title
 ```
 
-All the text fields listed here will have a `fieldName_sortable` counterpart
+All the text fields listed here have a `fieldName_sortable` counterpart
 created automatically in the index. To add more, copy this value into a
-`portal-ext.properties` file into your Liferay Home folder, add any new field
+[`portal-ext.properties`](/docs/7-2/deploy/-/knowledge_base/d/portal-properties) 
+file into your Liferay Home folder, add any new field
 names you need to sort by, and restart the server.
 
 #### Adding New Sort Options
@@ -136,12 +142,12 @@ and _Created (oldest first)_ to understand how it works:
 **Field:** `createDate-`
 
 The `-` sign following the field name indicates that the order is _descending_.
-Choosing to sort with this will bring search results created most recently to
+Choosing to sort with this brings search results created most recently to
 the top of the list.
 
 **Label:** _Created (oldest first)_
 **Field:** `createDate+`
 
 The `+` sign following the field name indicates that the order is _ascending_.
-Choosing to sort with this will bring the oldest (by creation date) results to
+Choosing to sort with this brings the oldest (by creation date) results to
 the top of the list.

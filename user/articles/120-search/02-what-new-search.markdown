@@ -1,4 +1,10 @@
+---
+header-id: whats-new-in-search
+---
+
 # What's New in Search
+
+[TOC levels=1-4]
 
 Lots of new and improved search capabilities are present in @product-ver@, from
 new widgets to new APIs and infrastructure. 
