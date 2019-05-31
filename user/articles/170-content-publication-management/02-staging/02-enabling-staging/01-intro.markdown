@@ -8,8 +8,8 @@ header-id: enabling-staging
 
 You have two different ways to set up staging:
 
-- [Local Live](/docs/7-2/user/-/knowledge_base/user/enabling-local-live-staging)
-- [Remote Live](/docs/7-2/user/-/knowledge_base/user/enabling-remote-live-staging)
+- [Local Live](/docs/7-2/user/-/knowledge_base/u/enabling-local-live-staging)
+- [Remote Live](/docs/7-2/user/-/knowledge_base/u/enabling-remote-live-staging)
 
 Whether you enable Local Live or Remote Live staging, the interface for managing
 and publishing staged pages is the same.

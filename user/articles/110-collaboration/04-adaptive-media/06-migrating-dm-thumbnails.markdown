@@ -59,7 +59,7 @@ Adaptive Media:
 existing thumbnails to the values in the Adaptive Media image resolutions, which 
 can take time depending on the number of images. We only recommend this approach 
 when there isn't a large number of thumbnails to process, or if you prefer to 
-generate your images from scratch. This approach is covered in more detail in 
+generate your images from scratch. This approach is covered in more detail in
 [Generating Missing Adapted Images](/docs/7-2/user/-/knowledge_base/u/managing-image-resolutions#generating-missing-image-resolutions). 
 
 **Execute a migrate process that reuses the existing thumbnails:** This copies 

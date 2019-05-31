@@ -109,7 +109,7 @@ Follow the steps below to configure your servers for Remote Live staging.
     administrator.
 
 That's all you need to do to configure Remote Live Staging! You can now
-[enable it](/discover/portal/-/knowledge_base/7-1/enabling-remote-live-staging)!
+[enable it](/docs/7-1/user/-/knowledge_base/u/enabling-remote-live-staging)!
 
 | **Note:** Never clone your @product@ database; doing this can duplicate
 | important data used by Staging (e.g., UUID), causing the Remote Publication
