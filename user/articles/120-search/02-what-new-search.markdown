@@ -6,7 +6,7 @@ new widgets to new APIs and infrastructure.
 ## New and Improved Widgets
 
 Add search widgets by clicking the Add
-(!Add](../../../../images/icon-add-widget.png)) icon on the page. Then expand
+([!Add](../../../../images/icon-add-widget.png)) icon on the page. Then expand
 the Widgets &rarr; Search section.
 
 ### Custom Filter
@@ -40,7 +40,7 @@ make sure it's a `keyword` field.
 **Improved**
 
 Past versions of Search Insights showed you the full query string sent to the
-search engine, but now it also displays the response from the search engine, and
+search engine, but now it also displays the response from the search engine with
 an explanation of the score for each search hit.
 
 ## New Search Admin Functionality
@@ -65,17 +65,16 @@ engine.
 
 ### Indexing Progress
 
-Indexing now displays a progress bar so you can see right in the UI when the
-reindexing action has completed.
+Indexing now displays a progress bar so you can see in the UI when the
+re-indexing action has completed.
 
 ## New System Settings
 
-Access the Search System Settings are found at Control Panel &rarr; Configuration
+Access the Search System Settings at Control Panel &rarr; Configuration
 &rarr; System Settings &rarr; Search.
 
-There's a new entry in the search category: _Title Field Query Builder_. It
-gives you some special ability to configure how search responds to matches on
-the Title field of a document.
+There's a new entry in the search category: _Title Field Query Builder_ for
+configuring how search responds to matches on the Title field of a document.
 
 **Exact Match boost:** Give an additional boost when searched keywords exactly
 match the `title` field of a document.
@@ -88,7 +87,7 @@ for more information.
 
 ## New Infrastructure
 
-There are some important search infrastructure changed to be aware of.
+There are some important search infrastructure changes to know.
 
 ### Elasticsearch 6.5.x Support
 
@@ -112,7 +111,7 @@ your code.
 
 Enhancements to the [search
 framework](/docs/7-2/frameworks/-/knowledge_base/f/liferays-search-framework#liferays-search-framework)
-APIs include:
+APIs include
 
 - Low level indexing and queries
 - Operations directly on indexed documents (no need for the Indexer framework)
