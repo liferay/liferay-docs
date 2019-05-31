@@ -49,6 +49,7 @@ Here are the apps deprecated in @product-ver@.
 | --- | ------------- | ------ |
 | RSS Publisher | Bundled | See [the article](/docs/7-1/user/-/knowledge_base/u/the-rss-publisher-widget) on enabling and using this widget. |
 | User Group Pages (Copy Mode) | TBD |  |
+| Resources Importer | Bundled | Deprecated as of 7.1 with no direct replacement |
 
 ## Security
 
