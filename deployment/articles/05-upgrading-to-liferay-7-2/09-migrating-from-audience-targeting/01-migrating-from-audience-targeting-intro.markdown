@@ -36,5 +36,5 @@ since the new Personalization features use different tools.
 
 Finally, you must migrate behavior-based features, but since Audience
 Targeting's analytics features are now part of Analytics Cloud, there isn't a
-direct path to upgrade. Follow the guide for
-[Migrating Behavior-Based Features]().
+direct path to upgrade. See the 
+[Analytics Cloud documentation](https://help.liferay.com/hc/en-us/articles/360006947671-Creating-Segments).
