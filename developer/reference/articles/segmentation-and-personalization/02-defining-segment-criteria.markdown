@@ -1,4 +1,10 @@
+---
+header-id: defining-segmentation-criteria
+---
+
 # Defining Segmentation Criteria
+
+[TOC levels=1-4]
 
 There are three categories for defining Segment criteria:
 
