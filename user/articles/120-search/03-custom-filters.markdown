@@ -1,16 +1,21 @@
+---
+header-id: filtering-search-results-with-the-custom-filter-widget
+---
+
 # Filtering Search Results with the Custom Filter Widget
+
+[TOC levels=1-4]
 
 You often need to exert control over the displayed search results. One viable
 approach is to develop your own search portlets using the @product@ APIs. That
 can be overkill if you just want to make a slight modification to how the search
-is executed, so many of the out-of-the-box search widgets are designed to give
-you this type of control without coding anything (Search Options, Custom Facet,
-and more). In @product-ver@, new widgets have been added: Sort and Custom
-Filter.
+is executed, so many of the out-of-the-box search widgets give you this type of
+control without coding anything (Search Options, Custom Facet, and more). In
+@product-ver@, new widgets have been added: Sort and Custom Filter.
 
-With Custom Filters, contribute queries to the main search query, exerting
-control over the search results. Make the filter widgets visible or invisible to
-the search Users, and decide if they're change-able or immutable.
+With Custom Filters, you can contribute queries to the main search query,
+exerting control over the search results. Make the filter widgets visible or
+invisible to the search Users, and decide if they're changeable or immutable.
 
 To explore all the options you have with the Custom Filter widget, you need one
 on the page.
@@ -24,7 +29,7 @@ To get started with Custom Filters,
 
 2.  From the Search section, drag a Custom Filter onto the page.
 
-![Figure x: A custom filter has no impact until it's configured.](../../images/search-custom-filter.png)
+![Figure 1: A custom filter has no impact until it's configured.](../../images/search-custom-filter.png)
 
 Custom filters can do so many things, it's impossible to list them all. What
 follows is a widget configuration tour. Separate documentation will be written
@@ -35,7 +40,7 @@ to provide a how-to demonstration of Custom Filters.
 Open the widget Options menu (![Options](../../images/icon-app-options.png)) and
 click _Configuration_.
 
-![Figure x: Once the Custom Filter is added to the page, mold it like soft clay into the beautiful sculpture you've envisioned.](../../images/search-custom-filter-configuration.png)
+![Figure 2: Once the Custom Filter is added to the page, mold it like soft clay into the beautiful sculpture you've envisioned.](../../images/search-custom-filter-configuration.png)
 
 
 **Filter Field (text)**
@@ -44,7 +49,7 @@ field to be filtered (for example, `title`). You won't need this if the Filter
 Query Type is set to a type that doesn't require a field, such as _Regexp_.
 
 **Filter Value (text)**
-: For most filters, you'll need to enter a text value here that specifies the
+: For most filters, you must enter a text value here that specifies the
 text to apply the filter on in the specified field (for example, set a _Match_
 query to the text _street_ on the `title_en_US` field). Some Filter Query Types
 require special notation, as in the case of the _Regexp_ filter. 
@@ -63,10 +68,9 @@ documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.5/query
 
 **Query Name (text)**
 : Set the name of the contributed query. This is unnecessary unless this filter
-acts as a parent query to other filter that will contribute child clauses; in
-that case you'll set this filter's Query Name as the child filter's this as the
-Parent Query Name. This parent/child behavior is only available for filters of
-type Bool.
+acts as a parent query to another filter that contributes child clauses; in
+that case set this filter's Query Name as the child filter's Parent Query Name.
+This parent/child behavior is only available for filters of type Bool.
 
 **Parent Query Name (text)**
 : When contributing a child clause to a Bool query, set this to match the Query
@@ -89,13 +93,13 @@ value is used.
 **Invisible (boolean)**
 : If checked, the widget is invisible to regular users. The Filter Value from
 the configuration is applied by default, but users can still filter for other
-values via URL Parameter. Don't worry, you can shut that down if you need to,
-with the Immutable setting.
+values via URL Parameter. Don't worry, you can shut that down if you need to
+with the Immutable setting (see below).
 
 **Immutable (boolean)**
-: Enable this to ensure that the Filter Value cannot be changed by regular users
-at all. The widget becomes invisible to them _and_ filter values set via URL
-parameter are not accepted. The Filter Value set in the widget configuration is
+: Enable this to ensure that the Filter Value cannot be changed by regular
+users. The widget becomes invisible to them _and_ filter values set via URL
+parameters are not accepted. The Filter Value set in the widget configuration is
 applied at all times (unless it's disabled).
 
 **Disabled (boolean)**
@@ -110,12 +114,12 @@ set, this widget participates on the default search. Values in this field
 typically match the name of an application-defined index.
 
 There are many use cases you can satisfy by incorporating Custom Filters into
-your search page. Two demonstrative articles are planned, to show you some of
+your search page. Two demonstrative articles are planned to show you some of
 the filtering capabilities at your disposal:
 
 - _Refine to One_ (or _Needle in a Haystack_) will show you how to add
-    user-operated filters to the page so results can be refined down to just the
-    result they were looking for.
+  user-operated filters to the page so results can be refined down to just the
+  result they were looking for.
 
 - _Complex filtering_ shows you some more advanced filters and how they work.
 
