@@ -5,12 +5,14 @@ header-id: reading-unscoped-configuration-values-from-a-component
 # Reading Unscoped Configuration Values from a Component
 
 Follow these steps to read `SYSTEM` scoped or unscoped configuration values from
-a Component that isn't part of an MVC portlet:
+a Component that isn't part of a portlet:
 
 1.  First set the `configurationPid` Component property as the fully qualified
     class name of the configuration class:
 
-        @Component(configurationPid = "com.liferay.dynamic.data.mapping.form.web.configuration.DDMFormWebConfiguration")
+    ```java
+    @Component(configurationPid = "com.liferay.dynamic.data.mapping.form.web.configuration.DDMFormWebConfiguration")
+    ```
 
 2.  Then provide an `activate` method, annotated with `@Activate` to ensure the
     method is invoked as soon as the Component is started, and `@Modified` so
@@ -44,8 +46,8 @@ a Component that isn't part of an MVC portlet:
 
     This is dummy code: don't try to find it in the Liferay source code. The
     String configuration value of `favoriteColor` is passed to the `order`
-    method call, presumably so that whatever model car is ordered will be
-    ordered in the configured favorite color.
+    method call, presumably so that whatever model car is ordered gets ordered
+    in the configured favorite color.
 
 | **Note:** The bnd library also provides a class called
 | `aQute.bnd.annotation.metatype.Configurable` with a `createConfigurable()`
