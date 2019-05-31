@@ -31,7 +31,7 @@ others need to be migrated. If a rule needs to be re-implemented, follow the
 You can check
 [the list of rules that are automatically migrated](/docs/7-2/deploy/-/knowledge_base/d/migrating-user-segments)
 to see how much additional work you have in story. You must also
-[migrate display widgets](/docs/7-2/deployment/-/knowledge_base/deployment/manual-migration)
+[migrate display widgets](/docs/7-2/deploy/-/knowledge_base/d/manually-migrating-from-audience-targeting)
 since the new Personalization features use different tools.
 
 Finally, you need to migrate behavior based features, but since Audience

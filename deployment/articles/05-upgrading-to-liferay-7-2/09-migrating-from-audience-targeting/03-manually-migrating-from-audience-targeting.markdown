@@ -1,4 +1,10 @@
+---
+header-id: manually-migrating-from-audience-targeting
+---
+
 # Manually Migrating from Audience Targeting
+
+[TOC levels=1-4]
 
 As explained in the previous section, some Audience Targeting rules do not have 
 a direct equivalent in @product@ 7.2 and, therefore, they cannot be 
@@ -33,7 +39,7 @@ As part of the upgrade planning process, the function of any such rules should
 be re-evaluated with the new Segmentation features of @product-ver@ in mind. 
 
 First, check the
-[Segmentation reference](/docs/7-2/user/-/knowledge_base/u/segmentation-personalization)
+[Segmentation reference](/docs/7-2/reference/-/knowledge_base/r/defining-segmentation-criteria)
 if any new criteria fields can replace their function. In particular, custom
 fields, URL fields, and cookies might help you migrate your custom rules with
 little to no additional development. 
