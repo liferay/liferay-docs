@@ -120,9 +120,9 @@ Follow these steps:
 
 7.  Add localized messages to the `resources/i18n.properties` file. The messages
     in the `i18n.properties` file can be accessed via the Expression Language
-    using the implicit `i18n` object provided by the Liferay Faces Util class.
-    The `i18n` object can access messages both from a resource bundle defined in
-    the portlet's `portlet.xml` file, and from @product@'s `Language.properties`
+    using the implicit `i18n` object provided by Liferay Faces Util. The `i18n`
+    object can access messages both from a resource bundle defined in the
+    portlet's `portlet.xml` file, and from @product@'s `Language.properties`
     file.
 
 8.  Configure your portlet's logging configuration as desired. The
@@ -185,14 +185,14 @@ Follow these steps:
     It describes the portlet application's packaging and version information
     and specifies any required OSGi metadata. For example, this
     `liferay-plugin-package.properties` snippet tells the OSGi container not to
-    scan for CDI annotations.
+    scan for CDI annotations in @product@.
 
     ```properties
     -cdiannotations:
     ```
 
-    This is useful if you want to include your own CDI implementation with your
-    JSF portlet and ignore @product@'s default CDI implementation.
+    This is required for JSF portlets leveraging CDI deployed to @product@. They
+    must reference their own included CDI implementation.
 
     On deploying the WAR file, the
     [WAB Generator](/docs/7-2/customization/-/knowledge_base/c/deploying-wars-wab-generator)

@@ -59,8 +59,7 @@ Here are some good reasons to use JSF and Liferay Faces:
   possible.
 - There are several JSF component suites available including Liferay Faces
   Alloy, Primefaces, ICEfaces, and RichFaces. Each of these component suites
-  fortify JSF with a variety of UI components and complimentary technologies
-  such as Ajax Push.
+  fortify JSF with a variety of UI components and complimentary technologies.
 - JSF is a good choice for server-side developers that need to build web user
   interfaces. This enables server-side developers to focus on their core
   competencies rather than being experts in HTML/CSS/JavaScript.
@@ -82,10 +81,9 @@ Here are some good reasons to use JSF and Liferay Faces:
 There are some reasons not to use JSF. For example, if you are a front-end
 developer who makes heavy use of HTML/CSS/JavaScript, you might find that JSF UI
 components render HTML in a manner that gives you less control over the overall
-HTML document. Sticking with JavaScript and leveraging AlloyUI or some other
-JavaScript framework may be better for you. Or, perhaps standards aren't a major
-consideration for you or you may simply prefer developing portlets using your
-current framework.
+HTML document. Sticking with a JavaScript framework may be better for you. Or,
+perhaps standards aren't a major consideration for you or you may simply prefer
+developing portlets using your current framework.
 
 Whether you develop your next portlet application with JSF and Liferay Faces or
 with HTML/CSS/JavaScript is entirely up to you. But you probably want to learn
