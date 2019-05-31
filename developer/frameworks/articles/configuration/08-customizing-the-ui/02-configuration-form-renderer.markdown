@@ -19,8 +19,8 @@ A generalized discussion on System Settings UI customization is found in a
 [separate section](/docs/7-2/frameworks/-/knowledge_base/f/customizing-the-system-settings-user-interface).
 
 This article demonstrates replacing the configuration UI for the _Language
-Template_ System Settings entry, found in  Control Panel &rarr; Configuration
-&rarr; System Settings &rarr; Localization &rarr; Language Template. The same
+Template_ System Settings entry, found in *Control Panel* &rarr; *Configuration*
+&rarr; *System Settings* &rarr; *Localization* &rarr; *Language Template*. The same
 steps apply when replacing your custom application's auto-generated UI. 
 
 ![Figure 1: The auto-generated UI for the Language Template configuration screen is sub-optimal. A select list with more human readable options is preferable.](../../../images/sys-settings-lang-template-default.png)
@@ -43,7 +43,6 @@ For this example, create a `LanguageTemplateConfigurationDisplayContext` class
 with these contents:
 
 ```java
-
 public class LanguageTemplateConfigurationDisplayContext {
 
     public void addTemplateValue(
@@ -77,7 +76,6 @@ public class LanguageTemplateConfigurationDisplayContext {
     private final List<String[]> _templateValues = new ArrayList<>();
 
 }
-
 ```
 
 Next implement the `ConfigurationFormRenderer`.
@@ -88,25 +86,22 @@ First create the component and class declarations. Set the `service` property
 to `ConfigurationFormRenderer.class`:
 
 ```java
-
 @Component(
     configurationPid = "com.liferay.site.navigation.language.web.configuration.SiteNavigationLanguageWebTemplateConfiguration",
     immediate = true, service = ConfigurationFormRenderer.class
 )
 public class LanguageTemplateConfigurationFormRenderer
     implements ConfigurationFormRenderer {
-
 ```
 
 Next, write an `activate` method (decorated with `@Activate` and `@Modified`)
-to to convert a map of the configuration's properties to a typed class. The
+to convert a map of the configuration's properties to a typed class. The
 configuration is stored in a volatile field. Don't forget to make it volatile
 to prevent thread safety problems. See the article on
 [reading configuration values from a component class](/docs/7-2/frameworks/-/knowledge_base/f/reading-configuration-values-from-a-component)
 for more information.
 
 ```java
-
 @Activate
 @Modified
 public void activate(Map<String, Object> properties) {
@@ -118,26 +113,22 @@ public void activate(Map<String, Object> properties) {
 
 private volatile SiteNavigationLanguageWebTemplateConfiguration
     _siteNavigationLanguageWebTemplateConfiguration;
-
 ```
 
 Next override the `getPid` and `getRequestParameters` methods:
 
 ```java
-
 @Override
 public String getPid() {
     return "com.liferay.site.navigation.language.web.configuration." +
         "SiteNavigationLanguageWebTemplateConfiguration";
 }
-
 ```
 
 Return the full configuration ID, as specified in the `*Configuration` class's
 `@Meta.OCD` annotation.
 
 ```java
-
 @Override
 public Map<String, Object> getRequestParameters(
     HttpServletRequest request) {
@@ -150,7 +141,6 @@ public Map<String, Object> getRequestParameters(
 
     return params;
 }
-
 ```
 
 In the `getRequestParameters` method, map the parameters sent by the custom form
@@ -170,7 +160,6 @@ label, and the redirect URL. Finally, call `renderJSP` and pass in the
 `servletContext`, request, response, and the path to the JSP: 
 
 ```java
-
 @Override
 public void render(HttpServletRequest request, HttpServletResponse response)
     throws IOException {
@@ -216,7 +205,6 @@ public void render(HttpServletRequest request, HttpServletResponse response)
         _servletContext, request, response,
         "/configuration/site_navigation_language_web_template.jsp");
 }
-
 ```
 
 Specify the required service references at the bottom of the class. Be careful
@@ -225,7 +213,6 @@ module (found in its `bnd.bnd` file) into the `osgi.web.symbolicname` property
 of the reference target:
 
 ```java
-
 @Reference
 private DDMTemplateLocalService _ddmTemplateLocalService;
 
@@ -243,7 +230,6 @@ private Portal _portal;
     unbind = "-"
 )
 private ServletContext _servletContext;
-
 ```
 
 Once the configuration form renderer is implemented, you can write the JSP
@@ -254,7 +240,6 @@ markup for the form.
 Now write the JSP:
 
 ```jsp
-
     <%@ include file="/init.jsp" %>
 
     <%
@@ -277,7 +262,6 @@ Admin: Instance Settings    String currentTemplateName = languageTemplateConfigu
         %>
 
     </aui:select>
-
 ```
 
 The opening scriptlet gets the display context object from the request so that
@@ -293,5 +277,5 @@ So what does this example look like when all is said and done?
 ![Figure 2: A select list provides a more user friendly configuration experience than a text field.](../../../images/sys-settings-lang-template-custom.png)
 
 Now, administrators encountering the Language Template entry in System Settings
-won't be handicappd by not knowing the available DDM Template Keys. Providing
+won't be handicapped by not knowing the available DDM Template Keys. Providing
 the available values in a select field wildly enhances the user experience.
