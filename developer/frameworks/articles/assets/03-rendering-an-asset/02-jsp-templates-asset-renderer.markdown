@@ -2,7 +2,7 @@
 header-id: configuring-jsp-templates-for-an-asset-renderer
 ---
 
-# Configuring JSP Templates for an Asset Renderer 
+# Configuring JSP Templates for an Asset Renderer
 
 [TOC levels=1-4]
 

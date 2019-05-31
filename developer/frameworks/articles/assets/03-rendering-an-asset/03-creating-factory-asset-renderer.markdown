@@ -2,7 +2,7 @@
 header-id: creating-a-factory-for-the-asset-renderer
 ---
 
-# Creating a Factory for the Asset Renderer 
+# Creating a Factory for the Asset Renderer
 
 [TOC levels=1-4]
 

@@ -4,6 +4,8 @@ header-id: reading-unscoped-configuration-values-from-a-component
 
 # Reading Unscoped Configuration Values from a Component
 
+[TOC levels=1-4]
+
 Follow these steps to read `SYSTEM` scoped or unscoped configuration values from
 a Component that isn't part of a portlet:
 
