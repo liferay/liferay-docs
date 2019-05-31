@@ -13,22 +13,22 @@ criteria. Alternatively, segments can be a static set of manually selected
 members. 
 
 In @product-ver@, the creation of user segments and experience personalization
-are now part of the product's core functionality. Up to Liferay Portal 7.1,
-these functionalities were provided through the Audience Targeting application.
+are now part of the product's core functionality. Up to @product@ 7.1,
+this functionality was provided through the Audience Targeting application.
 In addition to the administration features of Segmentation and Personalization,
-developers have access to integrate and extend it.
+developers can integrate and extend it.
 
 ## Managing segments
 
-The API to manage segments in @product@ is provided by the
-`com.liferay.segments.api module`. The `SegmentsEntryService` provides the
-methods to perform permission aware operations on segments. You can use the
-provided tools to assign members to segments and to extend segment criteria.
+The API to manage segments is provided by the `com.liferay.segments.api module`.
+The `SegmentsEntryService` provides the methods to perform permission aware
+operations on segments. You can use the provided tools to assign members to
+segments and to extend segment criteria.
 
 The `segmentsEntry` criteria field determines the conditions that a user must
 meet to be assigned to the segment. A condition represents a combination of
 properties, operations, target values, and conjunctions. For example, a
-condition for identifying Liferay Engineers for a Segment might look like this:
+condition identifying Liferay Engineers for a Segment might look like this:
 
 ```
 organization name EQUALS Liferay AND Job Title EQUALS Engineer
@@ -46,7 +46,7 @@ code in
 
 ## Extending Segment Criteria
 
-The default segment capabilities are robust enough to cover most use cases,  
+The default segment capabilities are robust enough to cover most use cases, 
 and many types of third party integration can be performed without developing a 
 code extension. Some cases, like retrieving an external segment or list can be 
 be handled by using the REST API.
@@ -55,13 +55,14 @@ be handled by using the REST API.
 
 On the other hand, if you want to segment users based on a field provided from
 an external source (for example, the number of followers a user has on
-Instagram), you can contribute an indexable custom field to the User entity and
-query the value using the Expando API. Your new field will automatically be
-available for its use as a profile-based criteria.
+Instagram), you can contribute an indexable 
+[custom field](/docs/7-2/user/-/knowledge_base/u/custom-fields) to the User entity and
+query the value using the Expando API. Your new field is automatically available
+for its use as a profile-based criteria.
 
 <!--TODO: provide link to Expando API when available. -->
 
-You  only need to develop a code extension if you must: 
+You must only develop a code extension if you must: 
  
 - Add a custom session property. This is done through the
   `RequestContextContributor`.
@@ -70,7 +71,7 @@ You  only need to develop a code extension if you must:
   entities or in custom model entities. This is done through the
   `SegmentsCriteriaContributor`.
 
-### RequestContextContributor
+### `RequestContextContributor`
 
 User and Organization properties are model-based properties. That means that 
 the available criteria for users and organizations are based on the attributes 
@@ -104,7 +105,7 @@ key-value pair to the context.
 To create a `RequestContextContributor` through the step by step process, see
 [Creating a Request Context Contributor](/docs/7-2/frameworks/-/knowledge_base/f/creating-a-request-context-contributor).
 
-### SegmentsCriteriaContributor
+### `SegmentsCriteriaContributor`
 
 The `SegmentsCriteriaContributor` interface provides a mechanism 
 to extend the segment criteria query. Each `SegmentsCriteriaContributor` 
@@ -118,20 +119,20 @@ figure:
 The following service properties describe a `SegmentsCriteriaContributor`:
 
 `segments.criteria.contributor.key`: the unique key that identifies the 
-contributor.  
+contributor.
 
 `segments.criteria.contributor.model.class.name`: the entity type the 
 contributor targets.
 
-`segments.criteria.contributor.priority`: the order the fields and queries are
-contributed.
+`segments.criteria.contributor.priority`: the order in which the fields and
+queries are contributed.
 
 The `UserOrganizationSegmentsCriteriaContributor` is a good 
 example of how a `SegmentsCriteriaContributor` works. It contributes new 
 organization-related fields (*Organization Properties*) to the segments 
 criteria editor, executes a query on the Organization based model, and finally
 contributes a subquery to the global user query (AND/OR the user belongs to the
-organizations found in the Organization model query). In summary, it lets you
+organizations found in the Organization model query). In summary, you can
 filter users based on aspects of a different but related entity, such as the
 organization.
 
