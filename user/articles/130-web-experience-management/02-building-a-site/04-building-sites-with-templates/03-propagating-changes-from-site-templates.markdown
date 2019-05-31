@@ -92,16 +92,12 @@ that has a Wiki app with lots of wiki articles, the wiki articles are copied
 from the Site template's scope to the Site's scope and the Site's Wiki app is
 updated with the IDs of the copied wiki articles.
 
-+$$$
-
-**Important:** App data, related resources, and permissions on resources are
-only copied from a Site template to a Site when that Site is *first* created
-based on the template. No changes made in a a template's portlet data, related
-resources, or permissions are propagated to the Site after the Site is created.
-Neither are such changes propagated to a Site by the *Reset* or *Reset and
-Propagate* features.
-
-$$$
+| **Important:** App data, related resources, and permissions on resources are
+| only copied from a Site template to a Site when that Site is *first* created
+| based on the template. No changes made in a a template's portlet data, related
+| resources, or permissions are propagated to the Site after the Site is created.
+| Neither are such changes propagated to a Site by the *Reset* or *Reset and
+| Propagate* features.
 
 For example, consider a Site template administrator who includes a Message
 Boards app as part of a Site template. They even create Message Board

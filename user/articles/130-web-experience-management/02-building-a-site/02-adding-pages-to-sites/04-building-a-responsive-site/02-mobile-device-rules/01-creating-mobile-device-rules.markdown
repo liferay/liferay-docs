@@ -14,20 +14,16 @@ detail about a device from the device type. @product@'s Mobile Device Rules can
 connect to device databases so that you can use their device characteristics in
 your rules. 
 
-+$$$
-
-**Important:** For the features described in this article to work, you must 
-install the Liferay Mobile Device Detection (LMDD) app from Liferay Marketplace.
-This app provides the device detection database that's required to detect which
-mobile devices are accessing it. Note that if you're running Liferay DXP, you
-must install 
-[the lite version of LMDD](https://web.liferay.com/marketplace/-/mp/application/92831494) 
-before you can install 
-[the enterprise version](https://web.liferay.com/marketplace/-/mp/application/35419014). 
-[Click here](/docs/7-1/user/-/knowledge_base/u/using-the-liferay-marketplace) 
-for instructions on using Liferay Marketplace to find and install apps. 
-
-$$$
+| **Important:** For the features described in this article to work, you must
+| install the Liferay Mobile Device Detection (LMDD) app from Liferay Marketplace.
+| This app provides the device detection database that's required to detect which
+| mobile devices are accessing it. Note that if you're running Liferay DXP, you
+| must install
+| [the lite version of LMDD](https://web.liferay.com/marketplace/-/mp/application/92831494)
+| before you can install
+| [the enterprise version](https://web.liferay.com/marketplace/-/mp/application/35419014).
+| [Click here](/docs/7-1/user/-/knowledge_base/u/using-the-liferay-marketplace)
+| for instructions on using Liferay Marketplace to find and install apps.
 
 You can develop plugins that integrate with other device databases. Even if you
 don't have a device database, you can still set up mobile device rules. They
@@ -94,19 +90,15 @@ you're ready to create some actions. The actions defined for a family determine
 what happens to a request when the device is detected and the family has been
 found to apply.
 
-+$$$
-
-**Tip:** The Audience Targeting application offers a *Device* rule that
-evaluates whether a User is accessing content using a particular device family.
-This rule is integrated with the Mobile Device Families app. 
-
-<!-- Add link once available (LRDOCS-4644)
-Visit the 
-[Liferay Audience Targeting Rules](discover/portal/-/knowledge_base/7-1/liferay-audience-targeting-rules#device)
-section for more details.
--->
-
-$$$
+| **Tip:** The Audience Targeting application offers a *Device* rule that
+| evaluates whether a User is accessing content using a particular device family.
+| This rule is integrated with the Mobile Device Families app.
+| 
+| <!-- Add link once available (LRDOCS-4644)
+| Visit the
+| [Liferay Audience Targeting Rules](discover/portal/-/knowledge_base/7-1/liferay-audience-targeting-rules#device)
+| section for more details.
+| -->
 
 You can add families to a Site, individual page, or page set from their
 respective configuration pages. To do it for a Page Set:

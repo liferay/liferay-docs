@@ -58,16 +58,12 @@ the friendly URL and incrementing until there's no collision. Similarly, if
 importing a LAR into a Site causes a category name collision, the imported
 categories are automatically renamed.
 
-+$$$
-
-**Note:** LAR files are version dependent. You can't import a LAR file that was
-exported from one version of Liferay into a Liferay server that's running a
-different version of Liferay. Also, note that periodically exporting LARs is
-*not* a complete backup solution; please refer to the
-[Backing up a Liferay Installation](/docs/7-2/deploy/-/knowledge_base/d/backing-up-a-liferay-installation)
-section for information on backing up Liferay.
-
-$$$
+| **Note:** LAR files are version dependent. You can't import a LAR file that was
+| exported from one version of Liferay into a Liferay server that's running a
+| different version of Liferay. Also, note that periodically exporting LARs is
+| *not* a complete backup solution; please refer to the
+| [Backing up a Liferay Installation](/docs/7-2/deploy/-/knowledge_base/d/backing-up-a-liferay-installation)
+| section for information on backing up Liferay.
 
 ## Page Export Example
 

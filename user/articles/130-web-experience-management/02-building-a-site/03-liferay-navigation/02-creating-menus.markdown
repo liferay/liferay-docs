@@ -29,13 +29,9 @@ just like any other option in your menu.
 Click on *Page* and you see a view of all the current pages on the current Site.
 Select a page and click *Add* to add that page to the menu.
 
-+$$$
-
-**Note:** When you click on a page, you select that page. Multiple pages can be
-selected by clicking on each page one at a time. To deselect a page, click on
-the page again.
-
-$$$
+| **Note:** When you click on a page, you select that page. Multiple pages can be
+| selected by clicking on each page one at a time. To deselect a page, click on
+| the page again.
 
 Now you see the menu management screen. From here, you can drag and drop menu
 elements to rearrange or nest them. You can also manage options for this menu by

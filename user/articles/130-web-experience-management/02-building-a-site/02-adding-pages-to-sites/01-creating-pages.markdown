@@ -21,17 +21,13 @@ everything you need with pages from Site Administration.
 
 From here, you'll create pages and page templates.
 
-+$$$
-
-Note: Pages are always part of page sets, and page sets are always associated
-with Sites. Even users' personal pages are part of their personal Sites. All
-pages belong to one of two types of page sets: public pages and private pages.
-By default, anyone can access public pages, even non-logged in users (guests).
-Only users who are members of the Site that owns the pages can access private
-pages. This means the private pages of an organization's Site are viewable only
-by Site members and members of the organization. 
-
-$$$
+| Note: Pages are always part of page sets, and page sets are always associated
+| with Sites. Even users' personal pages are part of their personal Sites. All
+| pages belong to one of two types of page sets: public pages and private pages.
+| By default, anyone can access public pages, even non-logged in users (guests).
+| Only users who are members of the Site that owns the pages can access private
+| pages. This means the private pages of an organization's Site are viewable only
+| by Site members and members of the organization.
 
 From *Site Pages* you can do several things:
 

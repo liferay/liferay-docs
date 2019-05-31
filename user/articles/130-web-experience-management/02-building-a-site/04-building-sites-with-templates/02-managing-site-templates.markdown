@@ -36,14 +36,10 @@ a Site using a Site template, the configuration of pages and apps is copied from
 the template to the Site. By default, all changes made to the Site template are
 automatically copied to Sites based on that template.
 
-+$$$
-
-**Tip:** If you want to publish a piece of web content to many Sites and ensure
-modifications are applied to all, don't use Site template content for that
-purpose. Instead, place the content in the global scope and then reference it
-from a *Web Content Display* application in each Site.
-
-$$$
+| **Tip:** If you want to publish a piece of web content to many Sites and ensure
+| modifications are applied to all, don't use Site template content for that
+| purpose. Instead, place the content in the global scope and then reference it
+| from a *Web Content Display* application in each Site.
 
 The Content section offers separate repositories for content related apps
 based on your Site Template. For instance, by clicking *Polls* from the Content

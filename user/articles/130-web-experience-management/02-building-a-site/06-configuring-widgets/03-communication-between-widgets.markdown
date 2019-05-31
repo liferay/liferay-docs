@@ -16,11 +16,7 @@ Then click on the *Communication* tab.
 
 ![Figure 1: You can configure portlets to communicate with each other using public render parameters.](../../../../images/app-communication-tab.png)
 
-+$$$
-
-**Note:** If your widget isn't a portlet, this feature isn't available.
-
-$$$
+| **Note:** If your widget isn't a portlet, this feature isn't available.
 
 The screenshot above is for the Wiki, which has six public render
 parameters: `categoryId`, `nodeId`, `nodeName`, `resetCur`, `tag`, and `title`.

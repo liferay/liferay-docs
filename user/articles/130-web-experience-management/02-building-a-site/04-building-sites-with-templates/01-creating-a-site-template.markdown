@@ -31,13 +31,9 @@ templates to be completely static, you should uncheck this.
 
 Now it's time to edit your Site template. This example, includes four pages.
 
-+$$$
-
-This section assumes knowledge of Liferay 7.2 page management. For more 
-information on how to create and manage pages in Liferay 7.2, see the 
-[Adding Pages to Sites tutorial](/docs/7-2/user/-/knowledge_base/u/creating-and-managing-pages).
-
-$$$
+| This section assumes knowledge of Liferay 7.2 page management. For more
+| information on how to create and manage pages in Liferay 7.2, see the
+| [Adding Pages to Sites tutorial](/docs/7-2/user/-/knowledge_base/u/creating-and-managing-pages).
 
 1.  Click the *Options* icon (![Options](../../../../images/icon-options.png)) 
     and select *Manage*.

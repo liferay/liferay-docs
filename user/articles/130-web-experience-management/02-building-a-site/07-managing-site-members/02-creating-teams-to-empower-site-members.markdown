@@ -28,15 +28,11 @@ features of Teams are that they are limited to their Sites and that they empower
 Site Administrators to manage permissions for their Sites since Site
 Administrators cannot create new Roles.
 
-+$$$
-
-**Note:** To create and apply permissions for a group of users to use across
-multiple Sites or Organizations in your Liferay instance, consider aggregating
-the Users into a [User Group](/docs/7-2/user/-/knowledge_base/u/user-groups)
-and assigning the User Group permissions via
-[Roles](/docs/7-2/user/-/knowledge_base/u/roles-and-permissions).
-
-$$$
+| **Note:** To create and apply permissions for a group of users to use across
+| multiple Sites or Organizations in your Liferay instance, consider aggregating
+| the Users into a [User Group](/docs/7-2/user/-/knowledge_base/u/user-groups)
+| and assigning the User Group permissions via
+| [Roles](/docs/7-2/user/-/knowledge_base/u/roles-and-permissions).
 
 To create a team within a Site,
 
