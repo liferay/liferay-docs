@@ -7,9 +7,9 @@ header-id: creating-a-request-context-contributor
 [TOC levels=1-4]
 
 To better understand the Request Context Contributor, you'll explore how to
-create one. First, you'll  create the `SampleRequestContentContributor` class
-file, which contains the  `contribute` method that contributes a new field to
-the context with a custom  attribute. You can view the
+create one. First, you'll create the `SampleRequestContentContributor` class
+file, which contains the `contribute` method that contributes a new field to
+the context with a custom attribute. You can view the
 [full project on Github](https://github.com/liferay/liferay-portal/tree/master/modules/apps/segments/segments-context-extension-sample).
 
 1.  [Create a new module](/docs/7-2/reference/-/knowledge_base/r/creating-a-project).
@@ -126,6 +126,6 @@ private static final List<String> _fieldNames = ListUtil.fromArray(
 Once you deploy your extensions, the session section of the segment criteria
 editor includes your new context-based field.
 
-![Figure 1: The sample field will display.](../../images/context-based-field.png)
+![Figure 1: The sample field appears.](../../images/context-based-field.png)
 
 Great! You've created a Request Context Contributor!
